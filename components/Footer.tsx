@@ -1,76 +1,64 @@
 // components/Footer.tsx
+import React from "react";
+
 export default function Footer() {
   return (
-    <section className="mx-auto max-w-6xl px-4 pt-8 pb-20">
-      <footer className="rounded-3xl border border-gray-200 bg-white px-5 py-6 shadow-sm sm:px-6 sm:py-7">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {/* Left Column */}
-          <div>
-            <div className="text-[13px] sm:text-[14px] font-semibold text-gray-900">
-              AtoC Korea
-            </div>
-            <div className="mt-1 text-[11px] sm:text-[12px] text-gray-600 leading-relaxed space-y-0.5">
-              <p>
-                <span className="font-medium text-gray-800">Business Registration Number:</span> 09898099
-              </p>
-              <p>
-                <span className="font-medium text-gray-800">E-commerce Registration Number:</span> Jeju Yeondong-0000
-              </p>
-              <p>
-                <span className="font-medium text-gray-800">Address:</span> Yeondong, Jeju City, xxxx, xxho
-              </p>
-              <p>
-                <span className="font-medium text-gray-800">Contact:</span> 010-8973-0913
-              </p>
-              <p>
-                <span className="font-medium text-gray-800">Email:</span>{" "}
-                <a href="mailto:support@atoc.kr" className="underline-offset-2 hover:underline">
-                  support@atoc.kr
-                </a>
-              </p>
-            </div>
+    <footer className="mt-8 px-4 pb-8 text-[13px] text-[#444]">
+      <div className="mx-auto max-w-xl rounded-2xl bg-white p-5 shadow-sm">
 
-            <div className="flex items-center gap-6 mt-4">
-              <span className="text-[11px] sm:text-[12px] text-gray-700 font-medium">
-                Contact: 010-8973-0913
-              </span>
+        <h2 className="text-[16px] font-semibold mb-2">AtoC Korea</h2>
 
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
-                className="h-5"
-                alt="PayPal"
-              />
+        <p className="mb-1">
+          <strong>Business Registration Number:</strong> 09898099
+        </p>
+        <p className="mb-1">
+          <strong>E-commerce Registration Number:</strong> Jeju Yeondong-0000
+        </p>
+        <p className="mb-1">
+          <strong>Address:</strong> Yeondong, Jeju City, xxxx, xxho
+        </p>
 
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Stripe_Logo%2C_revised_2016.png"
-                className="h-5"
-                alt="Stripe"
-              />
-            </div>
-          </div>
+        {/* Contact + Email (same line) */}
+        <p className="mb-2">
+          <strong>Contact:</strong> 010-8973-0913&nbsp;&nbsp;
+          <strong>Email:</strong> support@atoc.kr
+        </p>
 
-          {/* Right Column */}
-          <div className="flex flex-col justify-between">
-            <div className="flex flex-wrap gap-3 text-[11px] sm:text-[12px] text-gray-600 mt-1">
-              <button className="underline-offset-2 hover:underline">Terms of Service</button>
-              <span className="text-gray-300">|</span>
-              <button className="underline-offset-2 hover:underline">Privacy Policy</button>
-              <span className="text-gray-300 hidden sm:inline">|</span>
-              <span className="text-gray-500 hidden sm:inline">EN / 中文 / 日本語 support</span>
-            </div>
-
-            <div className="mt-5 border-t border-gray-100 pt-4">
-              <p className="text-[11px] sm:text-[12px] text-gray-700 font-medium">
-                Secure online payments processed via global providers.
-              </p>
-            </div>
-          </div>
+        {/* Payment Logos */}
+        <div className="flex items-center gap-4 mb-2">
+          <img
+            src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg"
+            alt="PayPal"
+            className="h-5"
+          />
+          <img
+            src="https://unpkg.com/simple-icons@latest/icons/stripe.svg"
+            alt="Stripe"
+            className="h-5"
+          />
         </div>
 
-        <p className="mt-6 text-[11px] sm:text-[12px] text-gray-500">
+        {/* Secure payment note */}
+        <p className="text-[12px] text-[#555] mb-2">
+          Secure online payments processed via global providers.
+        </p>
+
+        {/* Terms + Privacy */}
+        <div className="flex items-center gap-3 text-[13px] mb-2">
+          <a href="#" className="hover:underline">
+            Terms of Service
+          </a>
+          <span>|</span>
+          <a href="#" className="hover:underline">
+            Privacy Policy
+          </a>
+        </div>
+
+        {/* Bottom */}
+        <p className="text-[12px] text-[#777]">
           © AtoC Korea. All rights reserved.
         </p>
-      </footer>
-    </section>
+      </div>
+    </footer>
   );
 }
