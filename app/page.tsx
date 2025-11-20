@@ -53,23 +53,23 @@ function TrustBar() {
     <section className="mx-auto max-w-6xl px-4 pt-4">
       <div className="rounded-3xl border border-gray-200 bg-white px-5 py-3 shadow-sm">
         <div className="text-[13px] sm:text-[14px] font-semibold text-gray-900 tracking-tight">
-          Licensed Korea-based platform for Busan &amp; Jeju day tours.
+          Licensed Korea-based platform for Korea’s day tours.
         </div>
 
         <div className="mt-2 flex flex-wrap gap-2.5 text-[11px] sm:text-[12px] text-gray-800 font-medium">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5">
             <span className="text-[#0c66ff] text-xs">✓</span>
-            Licensed Korean travel agency
+            Licensed Korean travel agencies
           </span>
 
           <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5">
             <span className="text-[#0c66ff] text-xs">✓</span>
-            Vetted local guides &amp; drivers
+            Certificated local guides &amp; drivers
           </span>
 
           <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5">
             <span className="text-[#0c66ff] text-xs">✓</span>
-            Focus on Busan &amp; Jeju small-group &amp; private tours
+            Focus on group-tour &amp; private tours
           </span>
         </div>
       </div>
@@ -149,11 +149,7 @@ function Destinations({ selected, onChange }: DestinationsProps) {
       </div>
 
       {/* 예치금/결제 구조 설명: 히어로에서 내려온 내용 */}
-      <p className="mt-3 max-w-3xl text-[11px] sm:text-[12px] text-gray-600">
-        You pay a small deposit online to secure your spot, and then pay the
-        remaining balance directly to your local guide or driver on the tour
-        day.
-      </p>
+
     </section>
   );
 }
@@ -166,11 +162,10 @@ function PriceBanner() {
       <section className="mx-auto max-w-6xl px-4 mt-6">
         <div className="rounded-2xl bg-green-50 py-4 px-5 text-center">
           <h3 className="font-semibold text-[14px] text-gray-900">
-            Local price. No extra marketplace markups.
+            Local platform. Lower Price.
           </h3>
           <p className="text-[11px] mt-1 text-gray-600">
-            We work directly with local partners in Busan and Jeju, so prices
-            are often lower than global OTAs that add additional margins.
+        Direct partnership with local travel agencies allows us to offer lower prices than global OTAs.
           </p>
         </div>
       </section>
@@ -178,8 +173,9 @@ function PriceBanner() {
       <section className="mx-auto max-w-6xl px-4 mt-4">
         <div className="rounded-2xl border border-gray-200 bg-white py-4 px-5 text-center shadow-sm">
           <p className="text-[11px] sm:text-[12px] text-gray-700">
-            Each tour is operated by verified local partners with clear,
-            transparent inclusions and exclusions before you pay anything.
+            You pay a small deposit online to secure your spot, and then pay the
+        remaining balance directly to your local guide or driver on the tour
+        day.
           </p>
         </div>
       </section>
