@@ -5,6 +5,7 @@ import React, { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { detailedTours } from "../../../data/tours";
 
+// ===== 타입 정의 =====
 type Review = {
   id: number;
   author: string;
@@ -17,38 +18,64 @@ type Review = {
 
 type ReviewSort = "ratingDesc" | "ratingAsc" | "newest" | "oldest" | "helpful";
 
-type FAQItem = {
-  question: string;
-  answer: string;
-};
-
 type PageProps = {
   params: {
     slug: string;
   };
 };
 
+type FAQItem = {
+  question: string;
+  answer: string;
+};
+
+// ===== 페이지 컴포넌트 =====
 export default function JejuTourDetailPage({ params }: PageProps) {
   const router = useRouter();
   const { slug } = params;
 
-  // 이 페이지는 Jeju 전용
+  // slug로 투어 찾기 (도시 상관없이 slug만 기준)
   const tour = useMemo(
-    () => detailedTours.find((t) => t.city === "Jeju" && t.slug === slug),
+    () => detailedTours.find((t) => t.slug === slug),
     [slug]
   );
 
-  const [date, setDate] = useState<string>("");
-  const [guests, setGuests] = useState<number>(2);
+  // 투어 없을 때
+  if (!tour) {
+    return (
+      <div className="min-h-screen bg-[#f5f5f7] text-[#111] flex items-center justify-center">
+        <div className="rounded-2xl bg-white px-6 py-8 shadow-sm">
+          <h1 className="mb-2 text-lg font-semibold">Tour not found</h1>
+          <p className="text-sm text-[#555]">
+            The Jeju tour you are looking for does not exist or is no longer
+            available.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // ===== 기본 데이터 =====
+  const gallery =
+    tour.galleryImages && tour.galleryImages.length > 0
+      ? tour.galleryImages
+      : [tour.imageUrl];
+
+  const [selectedImage, setSelectedImage] = useState<string | null>(
+    gallery[0]
+  );
+  const heroImage = selectedImage ?? gallery[0];
+
+  const initialReviews: Review[] = (tour.reviews || []) as Review[];
+  const [reviews, setReviews] = useState<Review[]>(initialReviews);
+  const [showAllReviews, setShowAllReviews] = useState(false);
+  const [sortBy, setSortBy] = useState<ReviewSort>("ratingDesc");
 
   const [showFullItinerary, setShowFullItinerary] = useState(false);
   const [showAllPhotos, setShowAllPhotos] = useState(false);
 
-  const [showAllReviews, setShowAllReviews] = useState(false);
-  const [sortBy, setSortBy] = useState<ReviewSort>("ratingDesc");
-  const [reviews, setReviews] = useState<Review[]>(() =>
-    (tour?.reviews as Review[] | undefined) ?? []
-  );
+  const [date, setDate] = useState<string>("");
+  const [guests, setGuests] = useState<number>(2);
 
   const [newReview, setNewReview] = useState<{
     author: string;
@@ -62,36 +89,12 @@ export default function JejuTourDetailPage({ params }: PageProps) {
     content: "",
   });
 
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
-
-  if (!tour) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-[#f5f5f7] text-[#111]">
-        <div className="rounded-2xl bg-white px-6 py-8 shadow-sm">
-          <h1 className="mb-2 text-lg font-semibold">Tour not found</h1>
-          <p className="text-sm text-[#555]">
-            The Jeju tour you are looking for does not exist or is no longer
-            available.
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  const images =
-    tour.galleryImages && tour.galleryImages.length > 0
-      ? tour.galleryImages
-      : [tour.imageUrl];
-
-  const [selectedImage, setSelectedImage] = useState<string | null>(images[0]);
-
-  const heroImage = selectedImage ?? images[0];
-
   const averageRating =
     reviews.length === 0
       ? 0
       : reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
 
+  // 정렬된 리뷰
   const sortedReviews = useMemo(() => {
     const arr = [...reviews];
     switch (sortBy) {
@@ -99,13 +102,11 @@ export default function JejuTourDetailPage({ params }: PageProps) {
         return arr.sort((a, b) => a.rating - b.rating);
       case "newest":
         return arr.sort(
-          (a, b) =>
-            new Date(b.date).getTime() - new Date(a.date).getTime()
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
         );
       case "oldest":
         return arr.sort(
-          (a, b) =>
-            new Date(a.date).getTime() - new Date(b.date).getTime()
+          (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
         );
       case "helpful":
         return arr.sort((a, b) => b.helpfulVotes - a.helpfulVotes);
@@ -119,8 +120,33 @@ export default function JejuTourDetailPage({ params }: PageProps) {
     ? sortedReviews
     : sortedReviews.slice(0, 3);
 
-  const faqs: FAQItem[] = (tour.faqs as FAQItem[] | undefined) ?? [];
+  // FAQ – 간단 템플릿 (필요하면 나중에 slug별로 분기 가능)
+  const faqs: FAQItem[] = [
+    {
+      question: "What is the pickup time and location?",
+      answer:
+        "Pickup usually starts around 08:30–09:00 from Jeju City meeting points or your hotel (if included). Exact time and location will be confirmed in the confirmation email after booking.",
+    },
+    {
+      question: "Is lunch included?",
+      answer:
+        tour.lunchIncluded
+          ? "Lunch is included. Your guide will take you to a recommended local restaurant."
+          : "Lunch is not included. The guide will recommend local restaurants where you can choose and pay on the spot.",
+    },
+    {
+      question: "Can I join with a suitcase or luggage?",
+      answer:
+        "Yes, small and medium-size luggage can be stored in the vehicle. For very large luggage, please inform us in advance so we can prepare enough space.",
+    },
+    {
+      question: "What happens in case of bad weather?",
+      answer:
+        "For safety reasons, outdoor activities or Haenyeo shows may be cancelled or replaced with alternative spots. The itinerary can change depending on weather and traffic conditions.",
+    },
+  ];
 
+  // ===== 액션 핸들러 =====
   const handleBookNow = () => {
     if (!date) {
       alert("Please select a date first.");
@@ -162,197 +188,152 @@ export default function JejuTourDetailPage({ params }: PageProps) {
     });
   };
 
+  // ===== 렌더링 =====
   return (
     <div className="min-h-screen bg-[#f5f5f7] text-[#111]">
-      {/* ===== HERO SECTION (Apple style + Klook/Viator 느낌) ===== */}
-      <section className="bg-black">
-        <div className="mx-auto max-w-5xl">
-          <div className="relative overflow-hidden rounded-b-[28px] sm:rounded-b-[36px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={heroImage}
-              alt={tour.title}
-              className="h-[220px] w-full object-cover sm:h-[320px] md:h-[380px]"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
-
-            {/* 상단 오른쪽 작은 라벨들 (Klook/Viator 느낌) */}
-            <div className="absolute left-4 right-4 top-4 flex justify-between text-[11px] text-white sm:left-6 sm:right-6">
-              <span className="rounded-full bg-black/40 px-3 py-1">
-                Jeju · Korea
-              </span>
-              <span className="rounded-full bg-black/40 px-3 py-1">
-                Small-group &amp; private tours
-              </span>
-            </div>
-
-            {/* 하단 제목 + 평점 + 가격 */}
-            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
-              <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-[#f5f5f7]/80">
+      <main className="mx-auto max-w-5xl px-3 pb-20 pt-4 sm:px-6 sm:pb-28 lg:px-8">
+        {/* ===== 1. 상단 갤러리 + 기본 정보 (Apple 스타일) ===== */}
+        <section className="rounded-3xl bg-white shadow-sm">
+          {/* 메인 이미지 + 썸네일 스와이프 (모바일) */}
+          <div className="border-b border-[#eee]">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-t-3xl bg-black sm:aspect-[16/9]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={heroImage}
+                alt={tour.title}
+                className="h-full w-full object-cover"
+              />
+              {/* 작은 배지 */}
+              <div className="absolute bottom-3 left-3 rounded-full bg-black/60 px-3 py-1 text-[11px] text-white backdrop-blur-sm">
                 {tour.tag}
-              </p>
-              <h1 className="mt-1 text-[20px] font-semibold text-white sm:text-[24px]">
-                {tour.title}
-              </h1>
-              {tour.subtitle && (
-                <p className="mt-1 max-w-xl text-[12px] text-[#f5f5f7]/85 sm:text-[13px]">
-                  {tour.subtitle}
-                </p>
-              )}
-
-              <div className="mt-3 flex flex-wrap items-center gap-2 text-[12px] sm:text-[13px]">
-                <div className="flex items-center gap-1 rounded-full bg-black/45 px-3 py-1.5">
-                  <span>⭐</span>
-                  <span className="font-semibold">
-                    {averageRating.toFixed(1)}
-                  </span>
-                  <span className="text-[#d0d0d5]">
-                    &nbsp;· {reviews.length} reviews
-                  </span>
-                </div>
-                <span className="rounded-full bg-black/45 px-3 py-1.5 text-[#f5f5f7]">
-                  {tour.duration}
-                </span>
-                <span className="rounded-full bg-[#0c66ff] px-3 py-1.5 text-[11px] font-semibold text-white sm:text-[12px]">
-                  {tour.price}
-                </span>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ===== MAIN CONTENT ===== */}
-      <main className="mx-auto max-w-5xl px-4 pb-20 pt-4 sm:px-6 md:pt-6">
-        <section className="grid gap-6 md:grid-cols-[minmax(0,2.1fr)_minmax(280px,1fr)]">
-          {/* ------- LEFT COLUMN ------- */}
-          <div className="space-y-6">
-            {/* Photos strip (갤러리 스와이프) */}
-            <div className="rounded-2xl bg-white p-4 shadow-sm">
-              <h2 className="mb-3 text-[15px] font-semibold">Photos</h2>
-              <div className="flex gap-2 overflow-x-auto pb-1">
-                {images
-                  .slice(0, showAllPhotos ? images.length : 5)
-                  .map((url) => (
-                    <button
-                      key={url}
-                      type="button"
-                      onClick={() => setSelectedImage(url)}
-                      className={`relative h-20 w-28 flex-shrink-0 overflow-hidden rounded-xl border ${
-                        heroImage === url
-                          ? "border-[#0c66ff]"
-                          : "border-transparent"
-                      }`}
-                    >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={url}
-                        alt="Gallery thumbnail"
-                        className="h-full w-full object-cover"
-                      />
-                    </button>
-                  ))}
-              </div>
-              {images.length > 5 && (
+            {/* 썸네일 가로 스크롤 */}
+            <div className="flex gap-2 overflow-x-auto px-3 pb-3 pt-2 sm:px-4">
+              {gallery
+                .slice(0, showAllPhotos ? gallery.length : 6)
+                .map((url) => (
+                  <button
+                    key={url}
+                    type="button"
+                    onClick={() => setSelectedImage(url)}
+                    className={`relative h-16 w-24 flex-shrink-0 overflow-hidden rounded-2xl border ${
+                      heroImage === url
+                        ? "border-[#007aff]"
+                        : "border-[#e5e5ea]"
+                    }`}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={url}
+                      alt="Jeju tour thumbnail"
+                      className="h-full w-full object-cover"
+                    />
+                  </button>
+                ))}
+              {gallery.length > 6 && (
                 <button
                   type="button"
                   onClick={() => setShowAllPhotos((v) => !v)}
-                  className="mt-3 text-[13px] font-medium text-[#0c66ff]"
+                  className="flex h-16 w-20 flex-shrink-0 items-center justify-center rounded-2xl border border-dashed border-[#d1d1d6] text-[11px] text-[#555]"
                 >
-                  {showAllPhotos ? "Show fewer photos" : "Show more photos"}
+                  {showAllPhotos ? "Hide" : `+${gallery.length - 6} more`}
                 </button>
               )}
             </div>
+          </div>
 
-            {/* Why you’ll love this tour (Highlights) */}
-            <div className="rounded-2xl bg-white p-4 shadow-sm">
-              <h2 className="mb-2 text-[15px] font-semibold">
+          {/* 기본 정보 블럭 (Klook/Viator 느낌) */}
+          <div className="px-4 pb-4 pt-3 sm:px-6 sm:pb-5">
+            <h1 className="text-[20px] font-semibold sm:text-[24px]">
+              {tour.title}
+            </h1>
+            {tour.subtitle && (
+              <p className="mt-1 text-[13px] text-[#555] sm:text-[14px]">
+                {tour.subtitle}
+              </p>
+            )}
+
+            <div className="mt-2 flex flex-wrap items-center gap-3 text-[12px] sm:text-[13px]">
+              <div className="flex items-center gap-1">
+                <span className="text-[16px]">⭐</span>
+                <span className="font-semibold">
+                  {averageRating.toFixed(1)}
+                </span>
+                <span className="text-[#777]">
+                  &nbsp;· {reviews.length} reviews
+                </span>
+              </div>
+              <span className="rounded-full bg-[#f5f5f7] px-3 py-1 text-[#555]">
+                {tour.duration}
+              </span>
+              <span className="rounded-full bg-[#f5f5f7] px-3 py-1 text-[#111]">
+                {tour.price}
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== 2. 본문 레이아웃: Left 내용 + Right 예약 카드 (sticky) ===== */}
+        <section className="mt-4 grid gap-6 sm:mt-6 sm:grid-cols-[minmax(0,2fr)_minmax(260px,1fr)]">
+          {/* ----- LEFT: 내용 ----- */}
+          <div className="space-y-6">
+            {/* 하이라이트 */}
+            <section
+              id="highlights"
+              className="rounded-3xl bg-white p-4 shadow-sm sm:p-5"
+            >
+              <h2 className="text-[15px] font-semibold sm:text-[16px]">
                 Why you’ll love this tour
               </h2>
               {tour.description && (
-                <p className="mb-3 text-[13px] text-[#555]">
+                <p className="mt-2 text-[13px] text-[#555] sm:text-[14px]">
                   {tour.description}
                 </p>
               )}
               {tour.highlights && (
-                <ul className="space-y-1.5 text-[13px] text-[#333]">
+                <ul className="mt-3 space-y-1.5 text-[13px] text-[#444] sm:text-[14px]">
                   {tour.highlights.map((h) => (
                     <li key={h} className="flex gap-2">
-                      <span className="mt-[4px] text-[12px] text-[#0c66ff]">
-                        •
-                      </span>
+                      <span className="mt-[4px] h-1.5 w-1.5 rounded-full bg-[#0c66ff]" />
                       <span>{h}</span>
                     </li>
                   ))}
                 </ul>
               )}
-            </div>
+            </section>
 
-            {/* Includes / Not included */}
-            {(tour.includes || tour.excludes) && (
-              <div className="grid gap-4 rounded-2xl bg-white p-4 shadow-sm md:grid-cols-2">
-                {tour.includes && (
-                  <div>
-                    <h3 className="mb-2 text-[14px] font-semibold">
-                      What’s included
-                    </h3>
-                    <ul className="space-y-1 text-[13px] text-[#333]">
-                      {tour.includes.map((inc) => (
-                        <li key={inc} className="flex gap-2">
-                          <span className="mt-[2px] text-[11px] text-[#34c759]">
-                            ✓
-                          </span>
-                          <span>{inc}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                {tour.excludes && (
-                  <div>
-                    <h3 className="mb-2 text-[14px] font-semibold">
-                      Not included
-                    </h3>
-                    <ul className="space-y-1 text-[13px] text-[#333]">
-                      {tour.excludes.map((ex) => (
-                        <li key={ex} className="flex gap-2">
-                          <span className="mt-[2px] text-[11px] text-[#ff3b30]">
-                            ✕
-                          </span>
-                          <span>{ex}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* Itinerary (Klook 스타일 접기/펼치기 + Apple 타임라인 카드) */}
-            {tour.schedule && (
-              <div className="rounded-2xl bg-white p-4 shadow-sm">
+            {/* 일정표 – Klook/Viator 스타일 + Apple 카드 */}
+            {tour.schedule && tour.schedule.length > 0 && (
+              <section
+                id="itinerary"
+                className="rounded-3xl bg-white p-4 shadow-sm sm:p-5"
+              >
                 <div className="flex items-center justify-between">
-                  <h2 className="text-[15px] font-semibold">Itinerary</h2>
+                  <h2 className="text-[15px] font-semibold sm:text-[16px]">
+                    Itinerary
+                  </h2>
                   <button
                     type="button"
                     onClick={() => setShowFullItinerary((v) => !v)}
-                    className="text-[13px] font-medium text-[#0c66ff]"
+                    className="text-[12px] font-medium text-[#007aff]"
                   >
-                    {showFullItinerary ? "Hide full itinerary" : "Show full itinerary"}
+                    {showFullItinerary ? "Collapse" : "Show full itinerary"}
                   </button>
                 </div>
 
                 <div
-                  className={`mt-3 space-y-3 text-[13px] text-[#444] ${
-                    !showFullItinerary ? "max-h-48 overflow-hidden" : ""
+                  className={`mt-3 space-y-2 text-[13px] text-[#444] sm:text-[14px] ${
+                    !showFullItinerary ? "max-h-56 overflow-hidden" : ""
                   }`}
                 >
                   {tour.schedule.map((item) => (
                     <div
                       key={item.time + item.title}
-                      className="flex gap-3 rounded-xl bg-[#f8f8fa] px-3 py-2.5"
+                      className="flex gap-3 rounded-2xl bg-[#f8f8fa] px-3 py-2.5"
                     >
-                      <div className="mt-1 w-16 flex-shrink-0 text-[12px] font-semibold text-[#0c66ff]">
+                      <div className="mt-1 w-16 flex-shrink-0 text-[12px] font-semibold text-[#007aff]">
                         {item.time}
                       </div>
                       <div>
@@ -368,28 +349,75 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                 </div>
 
                 {!showFullItinerary && tour.schedule.length > 3 && (
-                  <div className="mt-2 text-[11px] text-[#999]">
+                  <p className="mt-2 text-[11px] text-[#999]">
                     Itinerary may change depending on weather and traffic.
-                  </div>
+                  </p>
                 )}
-              </div>
+              </section>
             )}
 
-            {/* Pickup info */}
-            <div className="rounded-2xl bg-white p-4 shadow-sm">
-              <h2 className="mb-2 text-[15px] font-semibold">Pickup & meeting point</h2>
-              <p className="text-[13px] text-[#444]">{tour.pickupInfo}</p>
-              {tour.notes && (
-                <p className="mt-2 text-[12px] text-[#888]">{tour.notes}</p>
-              )}
-            </div>
+            {/* 포함/불포함 */}
+            {(tour.includes || tour.excludes) && (
+              <section className="grid gap-4 rounded-3xl bg-white p-4 shadow-sm sm:grid-cols-2 sm:p-5">
+                {tour.includes && (
+                  <div>
+                    <h3 className="mb-2 text-[14px] font-semibold">
+                      What’s included
+                    </h3>
+                    <ul className="space-y-1.5 text-[13px] text-[#444] sm:text-[14px]">
+                      {tour.includes.map((inc) => (
+                        <li key={inc} className="flex gap-2">
+                          <span className="mt-[3px] text-[11px]">✓</span>
+                          <span>{inc}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {tour.excludes && (
+                  <div>
+                    <h3 className="mb-2 text-[14px] font-semibold">
+                      Not included
+                    </h3>
+                    <ul className="space-y-1.5 text-[13px] text-[#444] sm:text-[14px]">
+                      {tour.excludes.map((ex) => (
+                        <li key={ex} className="flex gap-2">
+                          <span className="mt-[3px] text-[11px]">✕</span>
+                          <span>{ex}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </section>
+            )}
 
-            {/* Reviews */}
-            <section className="rounded-2xl bg-white p-4 shadow-sm">
+            {/* 픽업 정보 */}
+            <section className="rounded-3xl bg-white p-4 shadow-sm sm:p-5">
+              <h2 className="mb-2 text-[15px] font-semibold sm:text-[16px]">
+                Pickup & drop-off
+              </h2>
+              <p className="text-[13px] text-[#444] sm:text-[14px]">
+                {tour.pickupInfo}
+              </p>
+              {tour.notes && (
+                <p className="mt-2 text-[12px] text-[#888] sm:text-[13px]">
+                  {tour.notes}
+                </p>
+              )}
+            </section>
+
+            {/* 리뷰 */}
+            <section
+              id="reviews"
+              className="rounded-3xl bg-white p-4 shadow-sm sm:p-5"
+            >
               <div className="flex flex-wrap items-end justify-between gap-3">
                 <div>
-                  <h2 className="text-[15px] font-semibold">Reviews</h2>
-                  <div className="mt-1 flex items-center gap-2 text-[13px]">
+                  <h2 className="text-[15px] font-semibold sm:text-[16px]">
+                    Reviews
+                  </h2>
+                  <div className="mt-1 flex items-center gap-2 text-[13px] sm:text-[14px]">
                     <span className="text-[18px]">⭐</span>
                     <span className="font-semibold">
                       {averageRating.toFixed(1)}
@@ -400,7 +428,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                   </div>
                 </div>
 
-                {showAllReviews && (
+                {showAllReviews && reviews.length > 0 && (
                   <div className="flex items-center gap-2 text-[12px]">
                     <span className="text-[#666]">Sort by</span>
                     <select
@@ -444,19 +472,26 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                     </div>
                   </article>
                 ))}
+
+                {reviews.length === 0 && (
+                  <p className="text-[13px] text-[#777]">
+                    There are no reviews yet. Be the first to share your
+                    experience.
+                  </p>
+                )}
               </div>
 
               {reviews.length > 3 && (
                 <button
                   type="button"
                   onClick={() => setShowAllReviews((v) => !v)}
-                  className="mt-3 w-full rounded-full border border-[#ddd] bg-white py-2 text-[13px] font-medium text-[#0c66ff]"
+                  className="mt-3 w-full rounded-full border border-[#ddd] bg-white py-2 text-[13px] font-medium text-[#007aff]"
                 >
                   {showAllReviews ? "Show top reviews only" : "View all reviews"}
                 </button>
               )}
 
-              {/* 리뷰 작성 (Klook/Viator 스타일 간단폼) */}
+              {/* 리뷰 작성 폼 */}
               <div className="mt-6 border-t border-[#f0f0f2] pt-4">
                 <h3 className="mb-2 text-[14px] font-semibold">
                   Write a review
@@ -479,7 +514,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                             author: e.target.value,
                           }))
                         }
-                        className="w-full rounded-xl border border-[#ddd] px-3 py-2 outline-none focus:border-[#0c66ff]"
+                        className="w-full rounded-xl border border-[#ddd] px-3 py-2 outline-none focus:border-[#007aff]"
                       />
                     </div>
                     <div>
@@ -494,7 +529,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                             rating: Number(e.target.value),
                           }))
                         }
-                        className="w-full rounded-xl border border-[#ddd] px-3 py-2 outline-none focus:border-[#0c66ff]"
+                        className="w-full rounded-xl border border-[#ddd] px-3 py-2 outline-none focus:border-[#007aff]"
                       >
                         {[5, 4, 3, 2, 1].map((r) => (
                           <option key={r} value={r}>
@@ -518,7 +553,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                           title: e.target.value,
                         }))
                       }
-                      className="w-full rounded-xl border border-[#ddd] px-3 py-2 outline-none focus:border-[#0c66ff]"
+                      className="w-full rounded-xl border border-[#ddd] px-3 py-2 outline-none focus:border-[#007aff]"
                     />
                   </div>
 
@@ -527,6 +562,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                       Your experience
                     </label>
                     <textarea
+                      rows={4}
                       value={newReview.content}
                       onChange={(e) =>
                         setNewReview((prev) => ({
@@ -534,8 +570,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                           content: e.target.value,
                         }))
                       }
-                      rows={4}
-                      className="w-full rounded-xl border border-[#ddd] px-3 py-2 outline-none focus:border-[#0c66ff]"
+                      className="w-full rounded-xl border border-[#ddd] px-3 py-2 outline-none focus:border-[#007aff]"
                     />
                   </div>
 
@@ -549,116 +584,100 @@ export default function JejuTourDetailPage({ params }: PageProps) {
               </div>
             </section>
 
-            {/* FAQ (Klook 스타일 아코디언) */}
-            {faqs.length > 0 && (
-              <section className="rounded-2xl bg-white p-4 shadow-sm">
-                <h2 className="mb-2 text-[15px] font-semibold">FAQs</h2>
-                <div className="divide-y divide-[#f0f0f2]">
-                  {faqs.map((faq, index) => {
-                    const open = openFaqIndex === index;
-                    return (
-                      <button
-                        key={faq.question}
-                        type="button"
-                        onClick={() =>
-                          setOpenFaqIndex(open ? null : index)
-                        }
-                        className="flex w-full flex-col items-stretch py-3 text-left"
-                      >
-                        <div className="flex items-center justify-between gap-2">
-                          <span className="text-[13px] font-medium text-[#111]">
-                            {faq.question}
-                          </span>
-                          <span className="text-[16px] text-[#999]">
-                            {open ? "–" : "+"}
-                          </span>
-                        </div>
-                        {open && (
-                          <p className="mt-1 text-[12px] text-[#555]">
-                            {faq.answer}
-                          </p>
-                        )}
-                      </button>
-                    );
-                  })}
-                </div>
-              </section>
-            )}
+            {/* FAQ */}
+            <section
+              id="faq"
+              className="rounded-3xl bg-white p-4 shadow-sm sm:p-5"
+            >
+              <h2 className="mb-2 text-[15px] font-semibold sm:text-[16px]">
+                FAQs
+              </h2>
+              <div className="divide-y divide-[#f0f0f2]">
+                {faqs.map((faq, idx) => (
+                  <details
+                    key={faq.question}
+                    className="py-2 text-[13px] sm:text-[14px]"
+                    open={idx === 0}
+                  >
+                    <summary className="cursor-pointer list-none font-medium text-[#111]">
+                      {faq.question}
+                    </summary>
+                    <p className="mt-1 text-[13px] text-[#555] sm:text-[14px]">
+                      {faq.answer}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </section>
           </div>
 
-          {/* ------- RIGHT COLUMN: Sticky 예약 카드 ------- */}
-          <aside className="self-start rounded-2xl bg-white p-4 shadow-md md:sticky md:top-4">
-            <div className="mb-1 text-[11px] font-medium uppercase tracking-[0.16em] text-[#888]">
-              Check availability
-            </div>
-
-            <div className="mb-1 text-[20px] font-semibold">
-              {tour.price}
-            </div>
-            <div className="mb-3 text-[12px] text-[#666]">
-              Free cancellation up to 24 hours before (local time).
-              <br />
-              Reserve now &amp; pay deposit online. Pay the balance in cash on
-              the tour day.
-            </div>
-
-            <div className="space-y-3 text-[13px]">
-              <div>
-                <label className="mb-1 block text-[12px] text-[#666]">
-                  Date
-                </label>
-                <input
-                  type="date"
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                  className="w-full rounded-xl border border-[#ddd] px-3 py-2 outline-none focus:border-[#0c66ff]"
-                />
+          {/* ----- RIGHT: 예약 카드 (sticky) ----- */}
+          <aside className="sm:sticky sm:top-24">
+            <div className="rounded-3xl bg-white p-4 shadow-md sm:p-5">
+              <div className="text-[11px] font-medium uppercase tracking-wide text-[#888]">
+                Check availability
               </div>
 
-              <div>
-                <label className="mb-1 block text-[12px] text-[#666]">
-                  Travelers
-                </label>
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setGuests((g) => (g > 1 ? g - 1 : 1))
-                    }
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-[#ddd]"
-                  >
-                    –
-                  </button>
-                  <div className="w-16 text-center text-[14px] font-medium">
-                    {guests}
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => setGuests((g) => g + 1)}
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-[#ddd]"
-                  >
-                    +
-                  </button>
+              <div className="mt-2 text-[20px] font-semibold sm:text-[22px]">
+                {tour.price}
+              </div>
+              <div className="mt-1 text-[12px] text-[#666]">
+                Free cancellation up to 24 hours before (local time).
+              </div>
+
+              <div className="mt-4 space-y-3 text-[13px]">
+                <div>
+                  <label className="mb-1 block text-[12px] text-[#666]">
+                    Date
+                  </label>
+                  <input
+                    type="date"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                    className="w-full rounded-xl border border-[#ddd] px-3 py-2 outline-none focus:border-[#007aff]"
+                  />
                 </div>
-              </div>
 
-              <button
-                type="button"
-                onClick={handleBookNow}
-                className="mt-2 w-full rounded-full bg-[#0c66ff] py-2.5 text-[14px] font-semibold text-white shadow-sm"
-              >
-                Check availability &amp; pay deposit
-              </button>
+                <div>
+                  <label className="mb-1 block text-[12px] text-[#666]">
+                    Travelers
+                  </label>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setGuests((g) => (g > 1 ? g - 1 : 1))
+                      }
+                      className="flex h-9 w-9 items-center justify-center rounded-full border border-[#ddd]"
+                    >
+                      –
+                    </button>
+                    <div className="w-16 text-center text-[14px] font-medium">
+                      {guests}
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setGuests((g) => g + 1)}
+                      className="flex h-9 w-9 items-center justify-center rounded-full border border-[#ddd]"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
 
-              <p className="mt-2 text-[11px] text-[#999]">
-                You’ll be redirected to the next step to complete your booking.
-                Remaining balance can be paid in cash on the tour day.
-              </p>
+                <button
+                  type="button"
+                  onClick={handleBookNow}
+                  className="mt-2 w-full rounded-full bg-[#007aff] py-2.5 text-[14px] font-semibold text-white shadow-sm"
+                >
+                  Check availability &amp; pay deposit
+                </button>
 
-              <div className="mt-3 space-y-1 text-[11px] text-[#777]">
-                <div>• Instant confirmation for available dates</div>
-                <div>• Mobile voucher accepted</div>
-                <div>• Live guide: English (other languages on request)</div>
+                <p className="mt-2 text-[11px] text-[#999]">
+                  You’ll be redirected to the next step to complete your
+                  booking. Remaining balance can be paid in cash on the tour
+                  day.
+                </p>
               </div>
             </div>
           </aside>
