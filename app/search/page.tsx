@@ -1,30 +1,23 @@
 // app/search/page.tsx
+"use client";
+
 import React from "react";
+import { useSearchParams } from "next/navigation";
 import TourCardDetail from "../../components/TourCardDetail";
 import { detailedTours } from "../../data/tours";
 
-// Next.js app router에서 page 컴포넌트는 이렇게 props로 searchParams를 받습니다.
-type SearchPageProps = {
-  searchParams?: {
-    city?: string;
-    q?: string;
-  };
-};
+export default function SearchPage() {
+  const searchParams = useSearchParams();
 
-export default function SearchPage({ searchParams }: SearchPageProps) {
-  // searchParams가 없을 수도 있으니 안전하게 처리
-  const cityRaw = searchParams?.city; // "Busan" | "Jeju" | "Seoul" | undefined
-  const qRaw = searchParams?.q;       // 키워드
+  const cityRaw = searchParams.get("city");
+  const qRaw = searchParams.get("q");
 
   const cityParam = cityRaw && cityRaw !== "All" ? cityRaw : null;
   const qParam = qRaw?.toLowerCase().trim() || "";
 
-  // 1) 도시 필터 + 2) 키워드 필터
   const results = detailedTours.filter((tour) => {
-    // 도시 조건
     if (cityParam && tour.city !== cityParam) return false;
 
-    // 키워드 조건 (제목, 태그, 비고, 픽업정보까지 포함해서 검색)
     if (qParam) {
       const haystack = (
         tour.title +
@@ -34,9 +27,7 @@ export default function SearchPage({ searchParams }: SearchPageProps) {
         (tour.notes || "") +
         " " +
         tour.pickupInfo
-      )
-        .toLowerCase()
-        .replace(/null|undefined/g, "");
+      ).toLowerCase();
 
       if (!haystack.includes(qParam)) return false;
     }
@@ -45,31 +36,63 @@ export default function SearchPage({ searchParams }: SearchPageProps) {
   });
 
   return (
-    <main className="min-h-screen bg-[#f5f5f7] py-4 sm:py-6">
-      <div className="mx-auto w-[90%] max-w-3xl">
-        <h1 className="mb-2 text-[16px] sm:text-[18px] font-semibold text-[#111]">
-          Search results
-        </h1>
-        <p className="mb-4 text-[12px] text-gray-500">
-          {cityParam && (
-            <>
-              Destination: <strong>{cityParam}</strong> ·{" "}
-            </>
-          )}
-          Keyword: <strong>{qParam || "—"}</strong> ·{" "}
-          {results.length} tour(s) found
-        </p>
-      </div>
+    <main className="min-h-screen bg-[#f5f5f7] pb-10">
+      {/* 상단 그라데이션 영역 */}
+      <section className="border-b border-[#e5e5ea]/70 bg-gradient-to-b from-white via-[#f9f9fb] to-[#f5f5f7]">
+        <div className="mx-auto flex max-w-5xl flex-col gap-3 px-4 pt-4 pb-4 sm:pt-6 sm:pb-5">
+          <div>
+            <h1 className="text-[20px] sm:text-[22px] font-semibold tracking-[-0.02em] text-[#111111]">
+              Search results
+            </h1>
+            <p className="mt-1 text-[12px] sm:text-[13px] text-[#6e6e73]">
+              Find the right tour in seconds. Refine by destination and keyword.
+            </p>
+          </div>
 
-      {results.length === 0 && (
-        <p className="mx-auto w-[90%] max-w-3xl text-[13px] text-gray-500">
-          검색 결과가 없습니다. 도시/키워드를 바꿔서 다시 검색해 주세요.
-        </p>
-      )}
+          {/* 요약/필터 상태 바 */}
+          <div className="flex flex-wrap items-center gap-2 rounded-3xl bg-white/80 px-3 py-2 shadow-[0_6px_18px_rgba(0,0,0,0.04)]">
+            <span className="rounded-full bg-[#f2f2f7] px-2.5 py-1 text-[11px] font-medium text-[#3a3a3c]">
+              {results.length} tour{results.length !== 1 && "s"} found
+            </span>
 
-      {results.map((tour) => (
-        <TourCardDetail key={tour.id} tour={tour} />
-      ))}
+            {cityParam ? (
+              <span className="rounded-full bg-[#0c66ff]/10 px-2.5 py-1 text-[11px] font-medium text-[#0c66ff]">
+                Destination: {cityParam}
+              </span>
+            ) : (
+              <span className="rounded-full bg-[#f2f2f7] px-2.5 py-1 text-[11px] text-[#6e6e73]">
+                Destination: All
+              </span>
+            )}
+
+            <span className="rounded-full bg-[#f2f2f7] px-2.5 py-1 text-[11px] text-[#6e6e73]">
+              Keyword: {qParam ? <b>{qParam}</b> : "—"}
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* 결과 리스트 영역 */}
+      <section className="mx-auto mt-4 w-full max-w-5xl px-2 sm:px-4">
+        {results.length === 0 ? (
+          <div className="mx-auto mt-10 w-[90%] max-w-3xl rounded-3xl bg-white/95 px-4 py-6 text-center text-[13px] text-[#6e6e73] shadow-[0_10px_30px_rgba(0,0,0,0.04)]">
+            <p className="font-medium text-[#111111]">
+              No tours match your search.
+            </p>
+            <p className="mt-1 text-[12px] text-[#6e6e73]">
+              Try removing some filters or using a broader keyword like
+              <span className="font-semibold"> “Busan”</span> or{" "}
+              <span className="font-semibold">“UNESCO”</span>.
+            </p>
+          </div>
+        ) : (
+          <div className="space-y-4 pt-1">
+            {results.map((tour) => (
+              <TourCardDetail key={tour.id} tour={tour} />
+            ))}
+          </div>
+        )}
+      </section>
     </main>
   );
 }

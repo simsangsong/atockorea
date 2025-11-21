@@ -1,21 +1,6 @@
 // components/TourCardDetail.tsx
 import React from "react";
-
-export type DetailedTour = {
-  id: number;
-  city: string;
-  tag: string;
-  title: string;
-  price: string;
-  imageUrl: string;
-
-  // Right-side info section
-  duration: string;        // "9:00–17:00 · 8 hours"
-  lunchIncluded: boolean;
-  ticketIncluded: boolean;
-  pickupInfo: string;      // "Hotel pickup in Haeundae / Seomyeon"
-  notes?: string;          // e.g. "Minimum 4 guests to depart"
-};
+import type { DetailedTour } from "../data/tours";
 
 type Props = {
   tour: DetailedTour;
@@ -38,13 +23,7 @@ export default function TourCardDetail({ tour }: Props) {
       >
         {/* ===== Left: image + title + price ===== */}
         <div className="flex w-full flex-col sm:w-[32%]">
-          {/* Image block */}
-          <div
-            className="
-              relative w-full overflow-hidden rounded-2xl
-              bg-[#f2f2f7]
-            "
-          >
+          <div className="relative w-full overflow-hidden rounded-2xl bg-[#f2f2f7]">
             <img
               src={tour.imageUrl}
               alt={tour.title}
@@ -58,7 +37,6 @@ export default function TourCardDetail({ tour }: Props) {
             />
           </div>
 
-          {/* Tag / title / price */}
           <div className="mt-2 sm:mt-3">
             <p className="text-[11px] sm:text-[11px] font-medium uppercase tracking-[0.06em] text-[#86868b]">
               {tour.tag}
@@ -72,71 +50,117 @@ export default function TourCardDetail({ tour }: Props) {
           </div>
         </div>
 
-        {/* ===== Right: details ===== */}
-        <div
-          className="
-            flex-1
-            text-[11px] sm:text-[13px]
-            text-[#1c1c1e]
-            sm:pl-1
-            mt-2 sm:mt-0
-          "
-        >
-          <ul className="space-y-1.5 sm:space-y-2">
-            <li className="flex items-start gap-1.5">
+        {/* ===== Right: details + Apple Travel-style schedule ===== */}
+        <div className="flex-1 text-[11px] sm:text-[13px] text-[#1c1c1e] sm:pl-1 mt-2 sm:mt-0">
+          {/* 2×2 Apple-style info cards */}
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-2 sm:mb-3">
+            {/* Duration */}
+            <div className="flex items-start gap-1.5 rounded-2xl bg-[#f5f5f7] px-3 py-2.5 sm:px-3.5 sm:py-3">
               <span className="mt-[3px] h-1.5 w-1.5 rounded-full bg-[#0c66ff]" />
               <div>
-                <span className="text-[11px] sm:text-[12px] font-semibold text-[#3a3a3c]">
+                <span className="block text-[11px] sm:text-[12px] font-semibold text-[#3a3a3c]">
                   Duration
                 </span>
-                <div className="text-[11px] sm:text-[13px] text-[#1c1c1e]">
+                <span className="text-[11px] sm:text-[13px] text-[#1c1c1e]">
                   {tour.duration}
-                </div>
+                </span>
               </div>
-            </li>
+            </div>
 
-            <li className="flex items-start gap-1.5">
+            {/* Lunch */}
+            <div className="flex items-start gap-1.5 rounded-2xl bg-[#f5f5f7] px-3 py-2.5 sm:px-3.5 sm:py-3">
               <span className="mt-[3px] h-1.5 w-1.5 rounded-full bg-[#34c759]" />
               <div>
-                <span className="text-[11px] sm:text-[12px] font-semibold text-[#3a3a3c]">
+                <span className="block text-[11px] sm:text-[12px] font-semibold text-[#3a3a3c]">
                   Lunch
                 </span>
-                <div className="text-[11px] sm:text-[13px] text-[#1c1c1e]">
-                  {tour.lunchIncluded ? "Lunch included" : "Not included"}
-                </div>
+                <span className="text-[11px] sm:text-[13px] text-[#1c1c1e]">
+                  {tour.lunchIncluded ? "Included" : "Not included"}
+                </span>
               </div>
-            </li>
+            </div>
 
-            <li className="flex items-start gap-1.5">
+            {/* Tickets */}
+            <div className="flex items-start gap-1.5 rounded-2xl bg-[#f5f5f7] px-3 py-2.5 sm:px-3.5 sm:py-3">
               <span className="mt-[3px] h-1.5 w-1.5 rounded-full bg-[#ff9500]" />
               <div>
-                <span className="text-[11px] sm:text-[12px] font-semibold text-[#3a3a3c]">
+                <span className="block text-[11px] sm:text-[12px] font-semibold text-[#3a3a3c]">
                   Tickets
                 </span>
-                <div className="text-[11px] sm:text-[13px] text-[#1c1c1e]">
-                  {tour.ticketIncluded ? "Tickets included" : "Not included"}
-                </div>
+                <span className="text-[11px] sm:text-[13px] text-[#1c1c1e]">
+                  {tour.ticketIncluded ? "Included" : "Not included"}
+                </span>
               </div>
-            </li>
+            </div>
 
-            <li className="flex items-start gap-1.5">
+            {/* Pickup */}
+            <div className="flex items-start gap-1.5 rounded-2xl bg-[#f5f5f7] px-3 py-2.5 sm:px-3.5 sm:py-3">
               <span className="mt-[3px] h-1.5 w-1.5 rounded-full bg-[#5856d6]" />
               <div>
-                <span className="text-[11px] sm:text-[12px] font-semibold text-[#3a3a3c]">
+                <span className="block text-[11px] sm:text-[12px] font-semibold text-[#3a3a3c]">
                   Pickup
                 </span>
-                <div className="text-[11px] sm:text-[13px] text-[#1c1c1e]">
+                <span className="text-[11px] sm:text-[13px] text-[#1c1c1e]">
                   {tour.pickupInfo}
-                </div>
+                </span>
               </div>
-            </li>
+            </div>
+          </div>
 
-            {tour.notes && (
-              <li className="mt-1 border-t border-[#e5e5ea] pt-2 text-[11px] sm:text-[12px] text-[#6e6e73]">
-                {tour.notes}
-              </li>
-            )}
-          </ul>
+          {tour.notes && (
+            <div className="mt-1 text-[11px] sm:text-[12px] text-[#6e6e73]">
+              {tour.notes}
+            </div>
+          )}
+
+          {/* ===== Apple Travel style schedule timeline ===== */}
+          {tour.schedule && tour.schedule.length > 0 && (
+            <div className="mt-3">
+              <span className="block text-[11px] sm:text-[12px] font-semibold text-[#3a3a3c] mb-1.5">
+                Sample day plan
+              </span>
+              <div className="rounded-2xl bg-[#f5f5f7] px-3 py-2 sm:px-3.5 sm:py-2.5">
+                <ol className="space-y-1.5">
+                  {tour.schedule.slice(0, 4).map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      {/* 타임라인 점 + 라인 */}
+                      <div className="flex flex-col items-center">
+                        <span className="mt-[2px] h-2 w-2 rounded-full bg-[#0c66ff]" />
+                        {index <
+                          Math.min(tour.schedule?.length ?? 0, 4) - 1 && (
+                          <span className="mt-0.5 h-5 w-px bg-[#d1d1d6]" />
+                        )}
+                      </div>
+
+                      {/* 시간 + 내용 */}
+                      <div className="flex-1">
+                        <div className="flex items-baseline justify-between gap-2">
+                          <span className="text-[11px] sm:text-[12px] font-medium text-[#111111]">
+                            {item.time}
+                          </span>
+                          <span className="flex-1 text-right sm:text-left text-[11px] sm:text-[12px] font-medium text-[#3a3a3c]">
+                            {item.title}
+                          </span>
+                        </div>
+                        {item.description && (
+                          <p className="mt-0.5 text-[11px] text-[#6e6e73]">
+                            {item.description}
+                          </p>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+
+                  {tour.schedule.length > 4 && (
+                    <li className="pt-1 text-[11px] text-[#6e6e73]">
+                      + {tour.schedule.length - 4} more stops in the full
+                      itinerary
+                    </li>
+                  )}
+                </ol>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </article>
