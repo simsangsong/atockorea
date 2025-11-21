@@ -5,18 +5,23 @@ import React, { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { detailedTours } from "../../../data/tours";
 
+type Review = {
+  id: number;
+  author: string;
+  rating: number;
+  title: string;
+  content: string;
+  date: string;
+  helpfulVotes: number;
+};
+
+type ReviewSort = "ratingDesc" | "ratingAsc" | "newest" | "oldest" | "helpful";
+
 type PageProps = {
   params: {
     slug: string;
   };
 };
-
-type ReviewSort =
-  | "ratingDesc"
-  | "ratingAsc"
-  | "newest"
-  | "oldest"
-  | "helpful";
 
 export default function JejuTourDetailPage({ params }: PageProps) {
   const router = useRouter();
@@ -38,8 +43,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
 
   const [showAllReviews, setShowAllReviews] = useState(false);
   const [sortBy, setSortBy] = useState<ReviewSort>("ratingDesc");
-
-  const [reviews, setReviews] = useState<any[]>(tour?.reviews ?? []);
+  const [reviews, setReviews] = useState<Review[]>(tour?.reviews ?? []);
 
   const [newReview, setNewReview] = useState<{
     author: string;
@@ -68,7 +72,9 @@ export default function JejuTourDetailPage({ params }: PageProps) {
   }
 
   const heroImage = selectedImage ?? tour.imageUrl;
-  const gallery = tour.galleryImages?.length ? tour.galleryImages : [tour.imageUrl];
+  const gallery = tour.galleryImages?.length
+    ? tour.galleryImages
+    : [tour.imageUrl];
 
   const averageRating =
     reviews.length === 0
@@ -82,13 +88,11 @@ export default function JejuTourDetailPage({ params }: PageProps) {
         return arr.sort((a, b) => a.rating - b.rating);
       case "newest":
         return arr.sort(
-          (a, b) =>
-            new Date(b.date).getTime() - new Date(a.date).getTime()
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
         );
       case "oldest":
         return arr.sort(
-          (a, b) =>
-            new Date(a.date).getTime() - new Date(b.date).getTime()
+          (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
         );
       case "helpful":
         return arr.sort((a, b) => b.helpfulVotes - a.helpfulVotes);
@@ -108,9 +112,8 @@ export default function JejuTourDetailPage({ params }: PageProps) {
       return;
     }
 
-    // 결제/체크아웃 단계로 이동 (나중에 Stripe 세션 생성 등으로 교체)
     const query = new URLSearchParams({
-      tourSlug: tour.slug,
+      tourSlug: tour.slug ?? "",
       date,
       guests: String(guests),
     }).toString();
@@ -131,7 +134,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
       rating: newReview.rating,
       title: newReview.title,
       content: newReview.content,
-      date: new Date().toISOString().slice(0, 10), // YYYY-MM-DD
+      date: new Date().toISOString().slice(0, 10),
       helpfulVotes: 0,
     };
 
@@ -147,10 +150,9 @@ export default function JejuTourDetailPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-[#f5f5f7] text-[#111]">
       <main className="mx-auto max-w-5xl pb-16 sm:pb-24">
-        {/* ===== HERO IMAGE ===== */}
+        {/* HERO */}
         <section className="relative">
           <div className="aspect-[16/10] w-full overflow-hidden bg-black sm:rounded-b-[32px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={heroImage}
               alt={tour.title}
@@ -158,7 +160,6 @@ export default function JejuTourDetailPage({ params }: PageProps) {
             />
           </div>
 
-          {/* 상단의 투어 기본정보 카드 */}
           <div className="mx-auto max-w-3xl px-4">
             <div className="-mt-8 rounded-2xl bg-white p-4 shadow-md sm:-mt-10 sm:p-6">
               <p className="text-[11px] font-medium uppercase tracking-wide text-[#888]">
@@ -194,17 +195,17 @@ export default function JejuTourDetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        {/* ===== MAIN LAYOUT: LEFT 내용 + RIGHT 예약 카드 ===== */}
+        {/* MAIN: LEFT 내용 + RIGHT 예약 카드 */}
         <section className="mt-4 grid gap-6 px-4 sm:mt-6 sm:grid-cols-[minmax(0,2fr)_minmax(260px,1fr)] sm:px-6 lg:px-8">
-          {/* ------- LEFT: 상세내용 ------- */}
+          {/* LEFT */}
           <div className="space-y-6">
-            {/* 갤러리 썸네일 */}
+            {/* Photos */}
             <div className="rounded-2xl bg-white p-4 shadow-sm">
               <h2 className="mb-3 text-[15px] font-semibold">Photos</h2>
               <div className="flex gap-2 overflow-x-auto pb-1">
                 {gallery
                   .slice(0, showAllPhotos ? gallery.length : 4)
-                  .map((url: string) => (
+                  .map((url) => (
                     <button
                       key={url}
                       type="button"
@@ -215,7 +216,6 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                           : "border-transparent"
                       }`}
                     >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={url}
                         alt="Jeju tour thumbnail"
@@ -235,7 +235,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
               )}
             </div>
 
-            {/* 하이라이트 */}
+            {/* Highlights */}
             <div className="rounded-2xl bg-white p-4 shadow-sm">
               <h2 className="mb-2 text-[15px] font-semibold">
                 Why you’ll love this tour
@@ -247,7 +247,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
               )}
               {tour.highlights && (
                 <ul className="space-y-1 text-[13px] text-[#444]">
-                  {tour.highlights.map((h: string) => (
+                  {tour.highlights.map((h) => (
                     <li key={h} className="flex gap-2">
                       <span className="mt-[3px] text-[12px]">•</span>
                       <span>{h}</span>
@@ -257,7 +257,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
               )}
             </div>
 
-            {/* 일정표 (토글) */}
+            {/* Itinerary */}
             {tour.schedule && (
               <div className="rounded-2xl bg-white p-4 shadow-sm">
                 <div className="flex items-center justify-between">
@@ -304,7 +304,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
               </div>
             )}
 
-            {/* 포함/불포함 */}
+            {/* Includes / Excludes */}
             {(tour.includes || tour.excludes) && (
               <div className="grid gap-4 rounded-2xl bg-white p-4 shadow-sm sm:grid-cols-2">
                 {tour.includes && (
@@ -313,7 +313,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                       What’s included
                     </h3>
                     <ul className="space-y-1 text-[13px] text-[#444]">
-                      {tour.includes.map((inc: string) => (
+                      {tour.includes.map((inc) => (
                         <li key={inc} className="flex gap-2">
                           <span className="mt-[2px] text-[11px]">✓</span>
                           <span>{inc}</span>
@@ -328,7 +328,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                       Not included
                     </h3>
                     <ul className="space-y-1 text-[13px] text-[#444]">
-                      {tour.excludes.map((ex: string) => (
+                      {tour.excludes.map((ex) => (
                         <li key={ex} className="flex gap-2">
                           <span className="mt-[2px] text-[11px]">✕</span>
                           <span>{ex}</span>
@@ -340,7 +340,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
               </div>
             )}
 
-            {/* 픽업 정보 */}
+            {/* Pickup */}
             <div className="rounded-2xl bg-white p-4 shadow-sm">
               <h2 className="mb-2 text-[15px] font-semibold">Pickup</h2>
               <p className="text-[13px] text-[#444]">{tour.pickupInfo}</p>
@@ -349,7 +349,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
               )}
             </div>
 
-            {/* 리뷰 섹션 */}
+            {/* Reviews */}
             <section className="rounded-2xl bg-white p-4 shadow-sm">
               <div className="flex flex-wrap items-end justify-between gap-3">
                 <div>
@@ -385,7 +385,6 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                 )}
               </div>
 
-              {/* 리뷰 카드들 */}
               <div className="mt-4 space-y-3">
                 {visibleReviews.map((r) => (
                   <article
@@ -422,7 +421,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                 </button>
               )}
 
-              {/* 리뷰 쓰기 폼 */}
+              {/* 리뷰 작성 폼 */}
               <div className="mt-6 border-t border-[#f0f0f2] pt-4">
                 <h3 className="mb-2 text-[14px] font-semibold">
                   Write a review
@@ -516,15 +515,13 @@ export default function JejuTourDetailPage({ params }: PageProps) {
             </section>
           </div>
 
-          {/* ------- RIGHT: 예약 카드 ------- */}
+          {/* RIGHT: 예약 카드 */}
           <aside className="self-start rounded-2xl bg-white p-4 shadow-md sm:sticky sm:top-4">
             <div className="mb-3 text-[12px] font-medium uppercase tracking-wide text-[#888]">
               Check availability
             </div>
 
-            <div className="mb-2 text-[20px] font-semibold">
-              {tour.price}
-            </div>
+            <div className="mb-2 text-[20px] font-semibold">{tour.price}</div>
             <div className="mb-4 text-[12px] text-[#666]">
               Free cancellation up to 24 hours before (local time).
             </div>
@@ -549,9 +546,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                 <div className="flex items-center gap-2">
                   <button
                     type="button"
-                    onClick={() =>
-                      setGuests((g) => (g > 1 ? g - 1 : 1))
-                    }
+                    onClick={() => setGuests((g) => (g > 1 ? g - 1 : 1))}
                     className="flex h-9 w-9 items-center justify-center rounded-full border border-[#ddd]"
                   >
                     –
@@ -578,9 +573,8 @@ export default function JejuTourDetailPage({ params }: PageProps) {
               </button>
 
               <p className="mt-2 text-[11px] text-[#999]">
-                You’ll be redirected to the next step to complete your
-                booking. Remaining balance can be paid in cash on the tour
-                day.
+                You’ll be redirected to the next step to complete your booking.
+                Remaining balance can be paid in cash on the tour day.
               </p>
             </div>
           </aside>

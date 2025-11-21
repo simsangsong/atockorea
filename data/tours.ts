@@ -131,4 +131,251 @@ export const detailedTours: DetailedTour[] = [
     ],
   },
   // 여기부터 계속 같은 형태로 상품 추가하면 됩니다.
+  {
+  id: 3,
+  city: "Jeju",
+  tag: "Jeju · Private / Small-group",
+  title: "Jeju Southwestern UNESCO & Nature Highlights",
+  price: "from US$85 / person",
+  imageUrl:
+    "https://images.pexels.com/photos/3732908/pexels-photo-3732908.jpeg?auto=compress&cs=tinysrgb&w=800",
+
+  duration: "09:00–18:00 · 9 hours",
+  lunchIncluded: false,
+  ticketIncluded: true,
+  pickupInfo: "Jeju City hotels / Shilla Duty Free / Airport pickup on request",
+  notes:
+    "Flexible itinerary. English / Chinese speaking guide available. Small-group or private option.",
+
+  slug: "jeju-southwest-unesco-tour",
+
+  galleryImages: [
+    "https://images.pexels.com/photos/3732908/pexels-photo-3732908.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/3662895/pexels-photo-3662895.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/4171216/pexels-photo-4171216.jpeg?auto=compress&cs=tinysrgb&w=800",
+  ],
+
+  subtitle: "Hallasan · Camellia Hill · Cheonjeyeon · Jusangjeolli · O'sulloc",
+
+  description:
+    "Discover the most beautiful sights in Jeju’s southwestern coast including the waterfalls, volcanic cliffs, botanical gardens, and Mt. Hallasan views. Enjoy a relaxed full-day experience with flexible stops and scenic photo spots.",
+
+  highlights: [
+    "See the panoramic view of Mt. Hallasan from the southern route",
+    "Visit Camellia Hill Botanical Garden with seasonal blooms",
+    "Gaze at volcanic lava rock formations at Jusangjeolli Cliff",
+    "Cheonjeyeon Falls — one of Jeju’s most iconic waterfalls",
+    "Relax at O'sulloc Tea Museum with green tea desserts",
+    "4 pickup & 4 drop-off locations for flexible travel",
+  ],
+
+  includes: [
+    "All entry tickets (admission fees)",
+    "UNESCO guided tour",
+    "English / Chinese-speaking guide",
+    "Parking fee",
+    "Fuel fee",
+    "No shopping guaranteed",
+  ],
+
+  excludes: [
+    "Food (Lunch fees)",
+    "Personal expenses",
+    "Travel insurance",
+  ],
+
+  schedule: [
+    {
+      time: "09:00",
+      title: "Hotel pickup",
+      description:
+        "Pickup in Jeju City, Shilla Duty Free, or airport on request.",
+    },
+    {
+      time: "09:40",
+      title: "Hallasan southern scenic point",
+      description: "Best photo spot for mountain view. Stay approx. 20 min.",
+    },
+    {
+      time: "10:30",
+      title: "Camellia Hill Botanical Garden",
+      description: "Guided walk. Seasonal flowers and forest paths.",
+    },
+    {
+      time: "12:00",
+      title: "Local restaurant",
+      description: "Lunch (own expense). Seafood / traditional Jeju dishes.",
+    },
+    {
+      time: "13:30",
+      title: "Cheonjeyeon Falls",
+      description: "Beautiful 3-tier waterfall and arched bridge.",
+    },
+    {
+      time: "15:00",
+      title: "Jusangjeolli Cliff",
+      description:
+        "Famous volcanic columnar joint cliff. Scenic ocean viewpoint.",
+    },
+    {
+      time: "16:00",
+      title: "O’sulloc Tea Museum",
+      description: "Free time, green tea ice cream, souvenirs.",
+    },
+    {
+      time: "17:40",
+      title: "Drop-off",
+      description:
+        "Return to hotel or Jeju City. Airport drop available upon request.",
+    },
+  ],
+
+  reviews: [
+    {
+      id: 1,
+      author: "Anna · United States",
+      rating: 5,
+      date: "2025-09-12",
+      title: "Amazing scenery!",
+      content:
+        "Hallasan view was unforgettable. The guide was super friendly and took great pictures for us.",
+      helpfulVotes: 12,
+    },
+    {
+      id: 2,
+      author: "Luis · Spain",
+      rating: 5,
+      date: "2025-08-30",
+      title: "Perfect southwest Jeju day",
+      content:
+        "The cliffs and waterfalls were the highlight. The timing was perfect and not rushed.",
+      helpfulVotes: 7,
+    },
+  ],
+},
+{
+  id: 4,
+  city: "Jeju",
+  slug: "jeju-east-unesco-explorer",
+  tag: "Jeju · Small-group",
+  title: "Jeju East UNESCO Explorer (Haenyeo Show Included)",
+  price: "from US$80 / person",
+  imageUrl:
+    "https://images.pexels.com/photos/3732908/pexels-photo-3732908.jpeg?auto=compress&cs=tinysrgb&w=800",
+
+  duration: "08:30–17:30 · 9 hours",
+  lunchIncluded: false,
+  ticketIncluded: true,
+  pickupInfo:
+    "Pickup from Lotte Duty Free Shop (Jeju Airport Branch) or Ocean Suites Jeju Hotel",
+  notes:
+    "Small-group guided tour. Haenyeo show included (subject to weather). English guide available.",
+
+
+
+  galleryImages: [
+    "https://images.pexels.com/photos/237211/pexels-photo-237211.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/248771/pexels-photo-248771.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=800",
+  ],
+
+  subtitle: "Hamdeok · Haenyeo Museum · Seongsan Ilchulbong · Seopjikoji · Seongeup Village",
+
+  description:
+    "Explore the best UNESCO and cultural highlights of eastern Jeju in one full-day guided trip. Visit Hamdeok Beach, watch the Haenyeo women diver show, climb Seongsan Ilchulbong, walk along Seopjikoji Cape, and explore the traditional Seongeup Folk Village.",
+
+  highlights: [
+    "Walk along the pristine white sand beach of Hamdeok",
+    "Watch the Haenyeo women divers' live performance (weather dependent)",
+    "Climb Seongsan Ilchulbong (UNESCO) for crater and ocean views",
+    "Visit Seopjikoji, one of Jeju’s most scenic coastal capes",
+    "Explore Seongeup Folk Village and experience local culture",
+    "Two pickup locations in Jeju City for convenience"
+  ],
+
+  includes: [
+    "English-speaking guide",
+    "Air-conditioned tour vehicle",
+    "All entry tickets",
+    "Parking fees",
+    "Toll fees",
+    "Haenyeo show admission",
+  ],
+
+  excludes: [
+    "Lunch",
+    "Personal expenses",
+    "Travel insurance",
+    "Tips",
+  ],
+
+  schedule: [
+    {
+      time: "08:30",
+      title: "Pickup – Lotte Duty Free Shop",
+      description: "Next to Lotte City Hotel, Jeju Airport area."
+    },
+    {
+      time: "08:50",
+      title: "Pickup – Ocean Suites Jeju Hotel",
+      description: "In front of the hotel entrance."
+    },
+    {
+      time: "09:20",
+      title: "Hamdeok Beach",
+      description: "Free walk along turquoise water. (1 hour)"
+    },
+    {
+      time: "10:40",
+      title: "Haenyeo Museum + Haenyeo Live Show",
+      description: "Learn Jeju Haenyeo culture and watch real divers. (40 minutes)"
+    },
+    {
+      time: "12:00",
+      title: "Seongsan Ilchulbong (UNESCO)",
+      description: "Hike to the tuff cone crater and enjoy ocean views. (2 hours)"
+    },
+    {
+      time: "14:10",
+      title: "Seopjikoji",
+      description: "Coastal walk & photo time at Jeju’s famous cape. (40 minutes)"
+    },
+    {
+      time: "15:30",
+      title: "Seongeup Folk Village",
+      description: "Explore a preserved traditional village. (1 hour)"
+    },
+    {
+      time: "17:30",
+      title: "Drop-off",
+      description: "Return to Lotte Duty Free or Ocean Suites."
+    },
+  ],
+
+  reviews: [
+    {
+      id: 1,
+      author: "Mia · Singapore",
+      rating: 5,
+      date: "2025-03-22",
+      title: "Perfect eastern Jeju tour",
+      content:
+        "Beautiful scenery and a very friendly guide. Seongsan Ilchulbong was the highlight!",
+      helpfulVotes: 9,
+    },
+    {
+      id: 2,
+      author: "Ken · USA",
+      rating: 5,
+      date: "2025-02-10",
+      title: "Great Haenyeo show experience",
+      content:
+        "The Haenyeo story was unforgettable. Highly recommend this tour for first-time visitors.",
+      helpfulVotes: 4,
+    },
+  ],
+},
+
 ];
+
