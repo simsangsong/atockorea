@@ -12,7 +12,6 @@ type Tour = {
   title: string;
   desc: string;
   price: string;
-  // 디테일 페이지 연결용 슬롯 (나중에 Link/router.push에 사용할 수 있음)
   href?: string;
 };
 
@@ -85,7 +84,6 @@ type DestinationArtProps = {
 
 function DestinationArt({ variant }: DestinationArtProps) {
   if (variant === "Seoul") {
-    // 南山塔 + 城市剪影
     return (
       <svg
         viewBox="0 0 400 260"
@@ -99,33 +97,26 @@ function DestinationArt({ variant }: DestinationArtProps) {
           </linearGradient>
         </defs>
         <rect width="400" height="260" fill="url(#seoulGrad)" />
-        {/* 远山 */}
         <path
           d="M0 170 C 60 140 110 145 170 165 C 230 185 280 175 340 160 C 370 152 390 150 400 152 L400 260 L0 260 Z"
           fill="#cadaf7"
         />
-        {/* 城市块状建筑 */}
         <rect x="40" y="140" width="30" height="50" fill="#b7c8f2" />
         <rect x="75" y="130" width="22" height="60" fill="#c3d0f4" />
         <rect x="110" y="150" width="26" height="40" fill="#b4c4f0" />
         <rect x="310" y="145" width="24" height="45" fill="#b4c4f0" />
         <rect x="336" y="135" width="20" height="55" fill="#c3d0f4" />
-        {/* 南山塔 */}
         <g transform="translate(210,60)">
-          {/* 山顶 */}
           <path
             d="M-80 140 C -40 110 40 110 80 140 L80 160 L-80 160 Z"
             fill="#b7c8f2"
           />
-          {/* 塔身 */}
           <rect x="4" y="30" width="4" height="80" fill="#9fb6ea" />
           <rect x="-16" y="60" width="40" height="20" rx="10" fill="#9fb6ea" />
-          {/* 上层 */}
           <rect x="5" y="10" width="2" height="40" fill="#9fb6ea" />
           <rect x="4" y="-10" width="4" height="20" fill="#9fb6ea" />
           <path d="M6 -25 L2 -10 L10 -10 Z" fill="#9fb6ea" />
         </g>
-        {/* 前景雾 */}
         <rect
           x="0"
           y="180"
@@ -144,7 +135,6 @@ function DestinationArt({ variant }: DestinationArtProps) {
   }
 
   if (variant === "Busan") {
-    // 广安大桥 + 바다
     return (
       <svg
         viewBox="0 0 400 260"
@@ -158,22 +148,12 @@ function DestinationArt({ variant }: DestinationArtProps) {
           </linearGradient>
         </defs>
         <rect width="400" height="260" fill="url(#busanGrad)" />
-        {/* 远山线 */}
         <path
           d="M0 150 C 70 135 120 130 190 140 C 250 148 300 145 360 138 C 380 135 395 135 400 136 L400 260 L0 260 Z"
           fill="#c3d9f7"
         />
-        {/* 大桥 */}
         <g transform="translate(30,130)">
-          {/* 海面 */}
-          <rect
-            x="-30"
-            y="60"
-            width="460"
-            height="80"
-            fill="#cfe3ff"
-          />
-          {/* 桥面 */}
+          <rect x="-30" y="60" width="460" height="80" fill="#cfe3ff" />
           <rect
             x="0"
             y="40"
@@ -182,14 +162,11 @@ function DestinationArt({ variant }: DestinationArtProps) {
             rx="4"
             fill="#b4c9f5"
           />
-          {/* 桥墩 */}
           <rect x="40" y="48" width="14" height="38" fill="#b4c9f5" />
           <rect x="170" y="48" width="14" height="38" fill="#b4c9f5" />
           <rect x="300" y="48" width="14" height="38" fill="#b4c9f5" />
-          {/* 主塔 */}
           <rect x="105" y="10" width="10" height="30" fill="#b4c9f5" />
           <rect x="225" y="10" width="10" height="30" fill="#b4c9f5" />
-          {/* 吊索曲线 */}
           <path
             d="M110 10 C 140 30 165 40 195 40"
             stroke="#b4c9f5"
@@ -203,14 +180,7 @@ function DestinationArt({ variant }: DestinationArtProps) {
             fill="none"
           />
         </g>
-        {/* 前景薄雾 */}
-        <rect
-          x="0"
-          y="190"
-          width="400"
-          height="70"
-          fill="url(#busanMist)"
-        />
+        <rect x="0" y="190" width="400" height="70" fill="url(#busanMist)" />
         <defs>
           <linearGradient id="busanMist" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#dceaff" stopOpacity="0.95" />
@@ -221,7 +191,6 @@ function DestinationArt({ variant }: DestinationArtProps) {
     );
   }
 
-  // Jeju：汉拿山 + 해안 + 해
   return (
     <svg
       viewBox="0 0 400 260"
@@ -235,29 +204,18 @@ function DestinationArt({ variant }: DestinationArtProps) {
         </linearGradient>
       </defs>
       <rect width="400" height="260" fill="url(#jejuGrad)" />
-      {/* 太阳 */}
       <circle cx="320" cy="70" r="26" fill="#ffe1a6" />
-      {/* 远山（汉拿山形） */}
       <path
         d="M0 170 C 60 150 110 130 170 135 C 210 138 240 150 280 140 C 320 130 355 138 400 152 L400 260 L0 260 Z"
         fill="#b9ddc6"
       />
-      {/* 海岸线 */}
       <path
         d="M0 190 C 80 195 150 200 230 198 C 290 196 340 192 400 188 L400 260 L0 260 Z"
         fill="#9fd7cf"
       />
-      {/* 돌 & 귤나무 느낌的小元素 */}
       <circle cx="90" cy="188" r="8" fill="#8cafa0" />
       <circle cx="105" cy="185" r="5" fill="#8cafa0" />
-      <rect
-        x="260"
-        y="178"
-        width="5"
-        height="18"
-        rx="2"
-        fill="#8fc39e"
-      />
+      <rect x="260" y="178" width="5" height="18" rx="2" fill="#8fc39e" />
       <circle cx="262.5" cy="176" r="7" fill="#78b78f" />
     </svg>
   );
@@ -272,18 +230,9 @@ type DestinationsProps = {
 
 function Destinations({ selected, onChange }: DestinationsProps) {
   const cards = [
-    {
-      key: "Busan" as Destination,
-      label: "Busan",
-    },
-    {
-      key: "Jeju" as Destination,
-      label: "Jeju",
-    },
-    {
-      key: "Seoul" as Destination,
-      label: "Seoul (Coming Soon)",
-    },
+    { key: "Busan" as Destination, label: "Busan" },
+    { key: "Jeju" as Destination, label: "Jeju" },
+    { key: "Seoul" as Destination, label: "Seoul (Coming Soon)" },
   ];
 
   return (
@@ -310,13 +259,11 @@ function Destinations({ selected, onChange }: DestinationsProps) {
                 isActive ? "ring-2 ring-black/80 scale-[1.02]" : "ring-0",
               ].join(" ")}
             >
-              {/* 纯代码“图片” */}
               <div className="absolute inset-0">
                 {card.key === "Busan" && <DestinationArt variant="Busan" />}
                 {card.key === "Jeju" && <DestinationArt variant="Jeju" />}
                 {card.key === "Seoul" && <DestinationArt variant="Seoul" />}
               </div>
-              {/* 暗渐变覆盖，突出文字 */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/30 to-black/5" />
               <div className="absolute inset-0 flex items-center justify-center px-4">
                 <span className="text-white text-[16px] sm:text-[18px] font-semibold drop-shadow">
@@ -407,7 +354,6 @@ function TourList({ selected }: TourListProps) {
               key={tour.id}
               className="min-w-[220px] max-w-[240px] rounded-3xl border border-gray-100 bg-white/95 shadow-sm flex-shrink-0 overflow-hidden transition transform hover:-translate-y-[3px] hover:shadow-md hover:shadow-gray-200"
             >
-              {/* 这里的图片区域用渐变块代替真图片 */}
               <div className="h-[110px] bg-gradient-to-br from-[#dde1ea] to-[#f5f5f7]" />
               <div className="p-4">
                 <div className="text-[10px] font-semibold text-blue-600">
@@ -426,7 +372,6 @@ function TourList({ selected }: TourListProps) {
                   className="mt-3 w-full rounded-xl border border-gray-200 py-2 text-[11px] font-semibold hover:bg-gray-50 transition"
                   type="button"
                   data-href={tour.href || ""}
-                  // TODO: 여기에서 router.push(tour.href) 또는 <Link>로 연결하면 디테일 페이지 이동 가능
                 >
                   See details
                 </button>
@@ -449,7 +394,6 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchHistory, setSearchHistory] = useState<string[]>([]);
 
-  // 검색 기록 localStorage에서 복원
   useEffect(() => {
     if (typeof window === "undefined") return;
     try {
@@ -465,12 +409,9 @@ export default function Home() {
           }
         }
       }
-    } catch {
-      // 실패해도 무시 (가볍게 유지)
-    }
+    } catch {}
   }, []);
 
-  // 검색 기록 localStorage에 저장
   useEffect(() => {
     if (typeof window === "undefined") return;
     try {
@@ -478,9 +419,7 @@ export default function Home() {
         "atoc-search-history",
         JSON.stringify(searchHistory)
       );
-    } catch {
-      // 실패해도 무시
-    }
+    } catch {}
   }, [searchHistory]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
@@ -493,40 +432,29 @@ export default function Home() {
       return next.slice(0, 10);
     });
 
-    // TODO: 여기서 실제 검색 로직이나 필터링을 연결할 수 있음
     setIsSearchOpen(false);
   };
 
   return (
     <main className="min-h-screen bg-[#f5f5f7] text-[#111]">
-      {/* ===== Apple 风 + 韩国要素 纯代码 HERO ===== */}
+      {/* ===== HERO (간결 버전) ===== */}
       <section className="relative w-full">
         <div className="mx-auto max-w-6xl px-4 pt-6">
-          <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-b from-[#f7f9ff] via-white to-[#e8f2ff] px-6 sm:px-8 pt-16 pb-10 shadow-[0_26px_60px_rgba(15,23,42,0.18)]">
-            {/* 光斑 */}
+          <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-b from-[#f7f9ff] via-white to-[#e8f2ff] px-6 sm:px-8 pt-12 pb-8 shadow-[0_26px_60px_rgba(15,23,42,0.18)]">
+            {/* 배경 광원 */}
             <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-white/70 blur-[120px]" />
             <div className="pointer-events-none absolute -right-20 top-0 h-64 w-64 rounded-full bg-[#0c66ff]/18 blur-[110px]" />
             <div className="pointer-events-none absolute bottom-[-40px] left-1/2 h-60 w-60 -translate-x-1/2 rounded-full bg-[#6aa8ff]/20 blur-[110px]" />
 
-            {/* 文案 */}
-            <div className="relative z-10 max-w-xl space-y-5">
-              <p className="text-[11px] uppercase tracking-[0.22em] text-gray-500">
-                AtoC Korea · Agency to Customer
-              </p>
-
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-snug">
+            {/* 텍스트 최소화 */}
+            <div className="relative z-10 max-w-xl space-y-4">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-snug">
                 Direct connection
                 <br />
                 to trusted Korea tours.
               </h1>
 
-              <p className="text-[13px] sm:text-[14px] text-gray-500">
-                Licensed Korean agencies, local guides and drivers — start with
-                Busan and Jeju, with Seoul coming soon. Minimal, modern and
-                transparent like an Apple product page.
-              </p>
-
-              <div className="flex flex-wrap items-center gap-3 pt-2 text-sm">
+              <div className="pt-1">
                 <button
                   className="inline-flex items-center justify-center rounded-full bg-[#0c66ff] px-6 py-2.5 text-[12px] font-medium text-white shadow hover:bg-[#0a54d0] transition"
                   type="button"
@@ -534,36 +462,24 @@ export default function Home() {
                 >
                   Find my day tour
                 </button>
-                <button
-                  className="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-6 py-2.5 text-[12px] font-medium text-[#111] hover:bg-gray-50 transition"
-                  type="button"
-                >
-                  Why AtoC?
-                </button>
-                <span className="text-[11px] text-gray-500">
-                  Local-based platform · Lower than global OTAs
-                </span>
               </div>
             </div>
 
-            {/* 韩国剪影：南山塔 + 广安大桥风格 */}
+            {/* 한국 실루엣 일러스트 */}
             <div className="pointer-events-none absolute inset-x-0 bottom-0">
               <svg
                 viewBox="0 0 1200 260"
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-40 w-full opacity-85"
               >
-                {/* 远山 */}
                 <path
                   d="M0 200 C 150 150 260 160 400 190 C 520 215 650 180 780 190 C 930 205 1040 185 1200 200 L1200 260 L0 260 Z"
                   fill="#dfe6fb"
                 />
-                {/* 中景山体 + 南山 */}
                 <path
                   d="M200 210 C 320 150 430 135 540 155 C 640 175 720 190 830 210 C 930 230 1030 230 1200 225 L1200 260 L0 260 Z"
                   fill="#cfd9f7"
                 />
-                {/* 南山塔 */}
                 <g transform="translate(540,70)">
                   <path
                     d="M-90 150 C -40 110 40 110 90 150 L90 170 L-90 170 Z"
@@ -582,7 +498,6 @@ export default function Home() {
                   <rect x="2" y="-60" width="4" height="20" fill="#9fb6ea" />
                   <path d="M4 -80 L0 -60 L8 -60 Z" fill="#9fb6ea" />
                 </g>
-                {/* 广安大桥风格 */}
                 <g transform="translate(80,150)">
                   <rect
                     x="0"
@@ -610,7 +525,6 @@ export default function Home() {
                     fill="none"
                   />
                 </g>
-                {/* 海雾 */}
                 <rect
                   x="0"
                   y="190"
@@ -641,7 +555,7 @@ export default function Home() {
       {/* TRUST BAR */}
       <TrustBar />
 
-      {/* DESTINATIONS (카드형, 纯代码插画) */}
+      {/* DESTINATIONS */}
       <Destinations
         selected={selectedDestination}
         onChange={setSelectedDestination}
