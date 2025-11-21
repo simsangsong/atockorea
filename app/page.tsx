@@ -76,151 +76,6 @@ function TrustBar() {
   );
 }
 
-/* =============== Destinations 纯代码插画 =============== */
-
-type DestinationArtProps = {
-  variant: "Seoul" | "Busan" | "Jeju";
-};
-
-function DestinationArt({ variant }: DestinationArtProps) {
-  if (variant === "Seoul") {
-    return (
-      <svg
-        viewBox="0 0 400 260"
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
-      >
-        <defs>
-          <linearGradient id="seoulGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#f7fbff" />
-            <stop offset="100%" stopColor="#dce7ff" />
-          </linearGradient>
-        </defs>
-        <rect width="400" height="260" fill="url(#seoulGrad)" />
-        <path
-          d="M0 170 C 60 140 110 145 170 165 C 230 185 280 175 340 160 C 370 152 390 150 400 152 L400 260 L0 260 Z"
-          fill="#cadaf7"
-        />
-        <rect x="40" y="140" width="30" height="50" fill="#b7c8f2" />
-        <rect x="75" y="130" width="22" height="60" fill="#c3d0f4" />
-        <rect x="110" y="150" width="26" height="40" fill="#b4c4f0" />
-        <rect x="310" y="145" width="24" height="45" fill="#b4c4f0" />
-        <rect x="336" y="135" width="20" height="55" fill="#c3d0f4" />
-        <g transform="translate(210,60)">
-          <path
-            d="M-80 140 C -40 110 40 110 80 140 L80 160 L-80 160 Z"
-            fill="#b7c8f2"
-          />
-          <rect x="4" y="30" width="4" height="80" fill="#9fb6ea" />
-          <rect x="-16" y="60" width="40" height="20" rx="10" fill="#9fb6ea" />
-          <rect x="5" y="10" width="2" height="40" fill="#9fb6ea" />
-          <rect x="4" y="-10" width="4" height="20" fill="#9fb6ea" />
-          <path d="M6 -25 L2 -10 L10 -10 Z" fill="#9fb6ea" />
-        </g>
-        <rect
-          x="0"
-          y="180"
-          width="400"
-          height="80"
-          fill="url(#seoulMist)"
-        />
-        <defs>
-          <linearGradient id="seoulMist" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#e3ecff" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#e3ecff" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-    );
-  }
-
-  if (variant === "Busan") {
-    return (
-      <svg
-        viewBox="0 0 400 260"
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
-      >
-        <defs>
-          <linearGradient id="busanGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#f5fbff" />
-            <stop offset="100%" stopColor="#cfe7ff" />
-          </linearGradient>
-        </defs>
-        <rect width="400" height="260" fill="url(#busanGrad)" />
-        <path
-          d="M0 150 C 70 135 120 130 190 140 C 250 148 300 145 360 138 C 380 135 395 135 400 136 L400 260 L0 260 Z"
-          fill="#c3d9f7"
-        />
-        <g transform="translate(30,130)">
-          <rect x="-30" y="60" width="460" height="80" fill="#cfe3ff" />
-          <rect
-            x="0"
-            y="40"
-            width="340"
-            height="8"
-            rx="4"
-            fill="#b4c9f5"
-          />
-          <rect x="40" y="48" width="14" height="38" fill="#b4c9f5" />
-          <rect x="170" y="48" width="14" height="38" fill="#b4c9f5" />
-          <rect x="300" y="48" width="14" height="38" fill="#b4c9f5" />
-          <rect x="105" y="10" width="10" height="30" fill="#b4c9f5" />
-          <rect x="225" y="10" width="10" height="30" fill="#b4c9f5" />
-          <path
-            d="M110 10 C 140 30 165 40 195 40"
-            stroke="#b4c9f5"
-            strokeWidth="2"
-            fill="none"
-          />
-          <path
-            d="M230 10 C 200 30 175 40 195 40"
-            stroke="#b4c9f5"
-            strokeWidth="2"
-            fill="none"
-          />
-        </g>
-        <rect x="0" y="190" width="400" height="70" fill="url(#busanMist)" />
-        <defs>
-          <linearGradient id="busanMist" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#dceaff" stopOpacity="0.95" />
-            <stop offset="100%" stopColor="#dceaff" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-    );
-  }
-
-  return (
-    <svg
-      viewBox="0 0 400 260"
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-full w-full"
-    >
-      <defs>
-        <linearGradient id="jejuGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#f6fff9" />
-          <stop offset="100%" stopColor="#d3f2e6" />
-        </linearGradient>
-      </defs>
-      <rect width="400" height="260" fill="url(#jejuGrad)" />
-      <circle cx="320" cy="70" r="26" fill="#ffe1a6" />
-      <path
-        d="M0 170 C 60 150 110 130 170 135 C 210 138 240 150 280 140 C 320 130 355 138 400 152 L400 260 L0 260 Z"
-        fill="#b9ddc6"
-      />
-      <path
-        d="M0 190 C 80 195 150 200 230 198 C 290 196 340 192 400 188 L400 260 L0 260 Z"
-        fill="#9fd7cf"
-      />
-      <circle cx="90" cy="188" r="8" fill="#8cafa0" />
-      <circle cx="105" cy="185" r="5" fill="#8cafa0" />
-      <rect x="260" y="178" width="5" height="18" rx="2" fill="#8fc39e" />
-      <circle cx="262.5" cy="176" r="7" fill="#78b78f" />
-    </svg>
-  );
-}
-
 /* ================= Destinations Cards ================= */
 
 type DestinationsProps = {
@@ -228,11 +83,29 @@ type DestinationsProps = {
   onChange: (d: Destination) => void;
 };
 
+type DestinationCard = {
+  key: Destination;
+  label: string;
+  imageUrl?: string; // 여기에 나중에 이미지 링크 넣으면 됨
+};
+
 function Destinations({ selected, onChange }: DestinationsProps) {
-  const cards = [
-    { key: "Busan" as Destination, label: "Busan" },
-    { key: "Jeju" as Destination, label: "Jeju" },
-    { key: "Seoul" as Destination, label: "Seoul (Coming Soon)" },
+  const cards: DestinationCard[] = [
+    {
+      key: "Busan",
+      label: "Busan",
+      imageUrl: "", // 예: "/images/busan.jpg"
+    },
+    {
+      key: "Jeju",
+      label: "Jeju",
+      imageUrl: "", // 예: "/images/jeju.jpg"
+    },
+    {
+      key: "Seoul",
+      label: "Seoul (Coming Soon)",
+      imageUrl: "", // 예: "/images/seoul.jpg"
+    },
   ];
 
   return (
@@ -259,11 +132,20 @@ function Destinations({ selected, onChange }: DestinationsProps) {
                 isActive ? "ring-2 ring-black/80 scale-[1.02]" : "ring-0",
               ].join(" ")}
             >
-              <div className="absolute inset-0">
-                {card.key === "Busan" && <DestinationArt variant="Busan" />}
-                {card.key === "Jeju" && <DestinationArt variant="Jeju" />}
-                {card.key === "Seoul" && <DestinationArt variant="Seoul" />}
+              {/* 배경 그라디언트 + 이미지 슬롯 */}
+              <div className="absolute inset-0 overflow-hidden">
+                <div className="h-full w-full bg-gradient-to-br from-[#dbe3ff] via-[#d2dbff] to-[#b9c7ff]" />
+                {/* 여기에 나중에 이미지 넣기 */}
+                {card.imageUrl && (
+                  <img
+                    src={card.imageUrl}
+                    alt={card.label}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                )}
               </div>
+
+              {/* 텍스트 오버레이 */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/30 to-black/5" />
               <div className="absolute inset-0 flex items-center justify-center px-4">
                 <span className="text-white text-[16px] sm:text-[18px] font-semibold drop-shadow">
@@ -437,117 +319,41 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#f5f5f7] text-[#111]">
-      {/* ===== HERO (간결 버전) ===== */}
+      {/* ===== HERO (그라디언트만, 그림 제거) ===== */}
       <section className="relative w-full">
         <div className="mx-auto max-w-6xl px-4 pt-6">
-          <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-b from-[#f7f9ff] via-white to-[#e8f2ff] px-6 sm:px-8 pt-12 pb-8 shadow-[0_26px_60px_rgba(15,23,42,0.18)]">
-            {/* 배경 광원 */}
-            <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-white/70 blur-[120px]" />
-            <div className="pointer-events-none absolute -right-20 top-0 h-64 w-64 rounded-full bg-[#0c66ff]/18 blur-[110px]" />
-            <div className="pointer-events-none absolute bottom-[-40px] left-1/2 h-60 w-60 -translate-x-1/2 rounded-full bg-[#6aa8ff]/20 blur-[110px]" />
+          <div
+            className="
+              relative overflow-hidden rounded-[32px]
+              bg-gradient-to-b from-[#dbe3ff] via-[#d2dbff] to-[#b9c7ff]
+              px-6 sm:px-8 pt-10 pb-8
+              shadow-[0_22px_50px_rgba(15,23,42,0.25)]
+            "
+          >
+            {/* 은은한 빛 효과만 유지 */}
+            <div className="pointer-events-none absolute -left-24 -top-24 h-64 w-64 rounded-full bg-white/40 blur-[110px]" />
+            <div className="pointer-events-none absolute -right-16 top-4 h-56 w-56 rounded-full bg-[#0c46c5]/25 blur-[100px]" />
+            <div className="pointer-events-none absolute bottom-[-60px] left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#405bff]/25 blur-[120px]" />
 
-            {/* 텍스트 최소화 */}
-            <div className="relative z-10 max-w-xl space-y-4">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-snug">
+            {/* 텍스트 블록 */}
+            <div className="relative z-10 max-w-xl space-y-3">
+              <h1 className="text-base sm:text-lg md:text-xl font-semibold leading-snug">
                 Direct connection
                 <br />
                 to trusted Korea tours.
               </h1>
 
-              <div className="pt-1">
+              <div className="pt-3">
                 <button
-                  className="inline-flex items-center justify-center rounded-full bg-[#0c66ff] px-6 py-2.5 text-[12px] font-medium text-white shadow hover:bg-[#0a54d0] transition"
                   type="button"
                   onClick={() => setIsSearchOpen(true)}
+                  className="inline-flex items-center justify-center rounded-full bg-[#0c66ff] px-6 py-2 text-[11px] font-medium text-white shadow hover:bg-[#0a54d0] transition"
                 >
                   Find my day tour
                 </button>
               </div>
             </div>
-
-            {/* 한국 실루엣 일러스트 */}
-            <div className="pointer-events-none absolute inset-x-0 bottom-0">
-              <svg
-                viewBox="0 0 1200 260"
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-40 w-full opacity-85"
-              >
-                <path
-                  d="M0 200 C 150 150 260 160 400 190 C 520 215 650 180 780 190 C 930 205 1040 185 1200 200 L1200 260 L0 260 Z"
-                  fill="#dfe6fb"
-                />
-                <path
-                  d="M200 210 C 320 150 430 135 540 155 C 640 175 720 190 830 210 C 930 230 1030 230 1200 225 L1200 260 L0 260 Z"
-                  fill="#cfd9f7"
-                />
-                <g transform="translate(540,70)">
-                  <path
-                    d="M-90 150 C -40 110 40 110 90 150 L90 170 L-90 170 Z"
-                    fill="#bcccf4"
-                  />
-                  <rect x="2" y="10" width="4" height="90" fill="#9fb6ea" />
-                  <rect
-                    x="-16"
-                    y="50"
-                    width="36"
-                    height="18"
-                    rx="8"
-                    fill="#9fb6ea"
-                  />
-                  <rect x="3" y="-40" width="2" height="50" fill="#9fb6ea" />
-                  <rect x="2" y="-60" width="4" height="20" fill="#9fb6ea" />
-                  <path d="M4 -80 L0 -60 L8 -60 Z" fill="#9fb6ea" />
-                </g>
-                <g transform="translate(80,150)">
-                  <rect
-                    x="0"
-                    y="40"
-                    width="520"
-                    height="8"
-                    rx="4"
-                    fill="#c2d4f7"
-                  />
-                  <rect x="40" y="48" width="18" height="42" fill="#c2d4f7" />
-                  <rect x="260" y="48" width="18" height="42" fill="#c2d4f7" />
-                  <rect x="480" y="48" width="18" height="42" fill="#c2d4f7" />
-                  <rect x="120" y="5" width="14" height="35" fill="#c2d4f7" />
-                  <rect x="340" y="5" width="14" height="35" fill="#c2d4f7" />
-                  <path
-                    d="M127 5 C 160 30 200 40 240 40"
-                    stroke="#c2d4f7"
-                    strokeWidth="2"
-                    fill="none"
-                  />
-                  <path
-                    d="M347 5 C 314 30 274 40 240 40"
-                    stroke="#c2d4f7"
-                    strokeWidth="2"
-                    fill="none"
-                  />
-                </g>
-                <rect
-                  x="0"
-                  y="190"
-                  width="1200"
-                  height="70"
-                  fill="url(#heroMist)"
-                />
-                <defs>
-                  <linearGradient id="heroMist" x1="0" y1="0" x2="0" y2="1">
-                    <stop
-                      offset="0%"
-                      stopColor="#e4efff"
-                      stopOpacity="0.9"
-                    />
-                    <stop
-                      offset="100%"
-                      stopColor="#e4efff"
-                      stopOpacity="0"
-                    />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
+            {/* 하단 그림 SVG 전부 제거됨 */}
           </div>
         </div>
       </section>
@@ -569,7 +375,7 @@ export default function Home() {
 
       {/* 검색 오버레이 */}
       {isSearchOpen && (
-        <div className="fixed inset-0 z-40 flex items-start justify-center bg-black/40">
+        <div className="fixed inset-0 z-40 flex items-start justify_center bg-black/40">
           <div className="mt-24 w-full max-w-md mx-4 rounded-2xl bg-white/90 backdrop-blur px-4 py-4 shadow-lg">
             <div className="mb-2 flex items-center justify-between">
               <h2 className="text-[13px] font-semibold text-gray-900">

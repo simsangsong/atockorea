@@ -3,11 +3,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-// 공통 레이아웃에 쓸 헤더/푸터 컴포넌트
-// components 폴더 위치에 따라 경로만 맞춰주면 된다.
-// (프로젝트 루트에 /components 있다면 아래처럼)
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import BottomNav from "../components/BottomNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,14 +33,19 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#f5f5f7] text-[#111] text-[13px] sm:text-[14px]`}
       >
         <div className="min-h-screen flex flex-col">
-          {/* 공통 헤더 */}
+          {/* 顶部 Header（含搜索图标） */}
           <Header />
 
-          {/* 페이지별 콘텐츠 영역 */}
-          <main className="flex-1 pb-16">{children}</main>
+          {/* 主内容区域 */}
+          <main className="flex-1 pb-14 sm:pb-16">
+            {children}
+          </main>
 
-          {/* 공통 푸터 */}
+          {/* 底部业务信息 Footer（滚动内容的一部分） */}
           <Footer />
+
+          {/* 固定在最底部的 Main / Tours / My Bar */}
+          <BottomNav />
         </div>
       </body>
     </html>
