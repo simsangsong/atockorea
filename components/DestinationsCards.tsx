@@ -50,13 +50,13 @@ export default function DestinationsCards() {
         </div>
         {/* Horizontal scroll for all devices */}
         <div className="overflow-x-auto pb-3 snap-x snap-mandatory scrollbar-custom -mx-4 px-4 md:mx-0 md:px-0">
-          <div className="flex gap-4 md:gap-6 lg:gap-8 min-w-max md:min-w-0">
+          <div className="flex gap-3 md:gap-6 lg:gap-8 min-w-max md:min-w-0">
             {destinations.map((destination) => (
               <div
                 key={destination.id}
-                className="group relative flex-shrink-0 w-[85vw] md:w-80 lg:w-96 overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 snap-start border border-white/40 backdrop-blur-sm"
+                className="group relative flex-shrink-0 w-[59.5vw] md:w-80 lg:w-96 overflow-hidden rounded-xl md:rounded-2xl shadow-lg md:shadow-xl hover:shadow-xl md:hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-y-2 snap-start border border-white/40 backdrop-blur-sm"
               >
-                <div className="relative h-64">
+                <div className="relative h-[179px] md:h-64">
                   <Image
                     src={destination.image}
                     alt={destination.name}
@@ -64,17 +64,17 @@ export default function DestinationsCards() {
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-2xl font-bold text-white mb-1">
+                  <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6">
+                    <h3 className="text-base md:text-2xl font-bold text-white mb-0.5 md:mb-1">
                       {destination.name}
                     </h3>
-                    <p className="text-white/90 text-sm">
+                    <p className="text-white/90 text-[10px] md:text-sm">
                       {destination.description}
                     </p>
                   </div>
                   {destination.available && (
-                  <div className="absolute top-4 right-4">
-                    <span className="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full shadow-lg drop-shadow-md">
+                  <div className="absolute top-2 md:top-4 right-2 md:right-4">
+                    <span className="px-1.5 md:px-3 py-0.5 md:py-1 bg-blue-600 text-white text-[9px] md:text-xs font-semibold rounded-full shadow-lg drop-shadow-md">
                       Available
                     </span>
                   </div>

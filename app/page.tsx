@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import TrustBar from "@/components/TrustBar";
 import DestinationsCards from "@/components/DestinationsCards";
+import SeasonalTours from "@/components/SeasonalTours";
 import TourList from "@/components/TourList";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
@@ -14,6 +15,7 @@ export default function Home() {
         <HeroSection />
         <TrustBar />
         <DestinationsCards />
+        <SeasonalTours />
         <TourList />
       </main>
       <Footer />
