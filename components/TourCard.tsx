@@ -18,7 +18,7 @@ export interface Tour {
 
 interface TourCardProps {
   id?: number;
-  title: string;
+  title?: string; // Optional when tour is provided
   location?: string;
   type?: string;
   duration?: string;
