@@ -19,7 +19,7 @@ const tourData = {
   reviewCount: 234,
   badges: ['Popular', 'Small-group'],
   price: 79,
-  priceType: 'person',
+  priceType: 'person' as const,
   images: [
     'https://images.unsplash.com/photo-1534008897995-27a23e859048?w=1200&q=80',
     'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=1200&q=80',

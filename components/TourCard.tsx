@@ -49,7 +49,7 @@ export default function TourCard({
   const [isAdding, setIsAdding] = useState(false);
 
   // Support both Tour type and individual props
-  const displayTitle = tour?.title || title;
+  const displayTitle = tour?.title || title || "";
   const displayLocation = tour?.city || location || "";
   const displayType = tour?.desc || type || "";
   const displayPrice = tour?.price || (price ? `from US$${price}` : "");
