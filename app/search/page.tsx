@@ -1,12 +1,12 @@
 // app/search/page.tsx
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import TourCardDetail from "../../components/TourCardDetail";
 import { detailedTours } from "../../data/tours";
 
-export default function SearchPage() {
+function SearchResults() {
   const searchParams = useSearchParams();
 
   const cityRaw = searchParams.get("city");
@@ -36,7 +36,7 @@ export default function SearchPage() {
   });
 
   return (
-    <main className="min-h-screen bg-[#f5f5f7] pb-10">
+    <>
       {/* 상단 그라데이션 영역 */}
       <section className="border-b border-[#e5e5ea]/70 bg-gradient-to-b from-white via-[#f9f9fb] to-[#f5f5f7]">
         <div className="mx-auto flex max-w-5xl flex-col gap-3 px-4 pt-4 pb-4 sm:pt-6 sm:pb-5">
@@ -81,8 +81,8 @@ export default function SearchPage() {
             </p>
             <p className="mt-1 text-[12px] text-[#6e6e73]">
               Try removing some filters or using a broader keyword like
-              <span className="font-semibold"> “Busan”</span> or{" "}
-              <span className="font-semibold">“UNESCO”</span>.
+              <span className="font-semibold"> "Busan"</span> or{" "}
+              <span className="font-semibold">"UNESCO"</span>.
             </p>
           </div>
         ) : (
@@ -93,6 +93,22 @@ export default function SearchPage() {
           </div>
         )}
       </section>
+    </>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <main className="min-h-screen bg-[#f5f5f7] pb-10">
+      <Suspense fallback={
+        <div className="min-h-screen bg-[#f5f5f7] pb-10 flex items-center justify-center">
+          <div className="text-center">
+            <p className="text-[#6e6e73]">Loading search results...</p>
+          </div>
+        </div>
+      }>
+        <SearchResults />
+      </Suspense>
     </main>
   );
 }
