@@ -51,7 +51,7 @@ export default function Footer() {
                 {/* Stripe Logo */}
                 <div className="px-3 py-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center justify-center h-10 min-w-[60px]">
                   <Image
-                    src="https://cdn.prod.website-files.com/5e6c01bb5212506d6c119069/5ee392f5c4e5e59d5f122b50_stripe-logo.png"
+                    src="https://cdn.brandfetch.io/idxAg10C0L/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1746435914582"
                     alt="Stripe"
                     width={60}
                     height={20}
