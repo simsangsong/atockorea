@@ -123,19 +123,21 @@ export async function POST(req: NextRequest) {
         merchant_id: merchant.id,
       });
 
-    // Create audit log entry
-    await supabase
-      .from('audit_logs')
-      .insert({
-        user_id: authData.user.id, // Admin user ID (from requireAdmin)
-        action: 'merchant_created',
-        resource_type: 'merchant',
-        resource_id: merchant.id,
-        details: { company_name, contact_email },
-      })
-      .catch(() => {
-        // Ignore audit log errors (table might not exist yet)
-      });
+    // Create audit log entry (ignore errors if table doesn't exist)
+    try {
+      await supabase
+        .from('audit_logs')
+        .insert({
+          user_id: authData.user.id, // Admin user ID (from requireAdmin)
+          action: 'merchant_created',
+          resource_type: 'merchant',
+          resource_id: merchant.id,
+          details: { company_name, contact_email },
+        });
+    } catch (error) {
+      // Ignore audit log errors (table might not exist yet)
+      console.warn('Failed to create audit log:', error);
+    }
 
     // TODO: Send email with login credentials
     // In production, use email service (SendGrid, AWS SES, etc.)

@@ -60,18 +60,20 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Create audit log
-    await supabase
-      .from('audit_logs')
-      .insert({
-        user_id: user.id,
-        action: 'password_changed',
-        resource_type: 'user',
-        resource_id: user.id,
-      })
-      .catch(() => {
-        // Ignore audit log errors
-      });
+    // Create audit log (ignore errors if table doesn't exist)
+    try {
+      await supabase
+        .from('audit_logs')
+        .insert({
+          user_id: user.id,
+          action: 'password_changed',
+          resource_type: 'user',
+          resource_id: user.id,
+        });
+    } catch (error) {
+      // Ignore audit log errors
+      console.warn('Failed to create audit log:', error);
+    }
 
     return NextResponse.json({
       message: 'Password changed successfully',

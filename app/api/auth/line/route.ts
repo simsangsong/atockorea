@@ -124,14 +124,16 @@ export async function POST(req: NextRequest) {
     // 格式：line_{userId}@line.local
     const lineEmail = email || `line_${profile.userId}@line.local`;
 
-    // 检查用户是否已存在
+    // 检查用户是否已存在（通过 listUsers 查找）
     let user;
     try {
-      const { data: existingUser, error: getUserError } = await supabase.auth.admin.getUserByEmail(lineEmail);
+      // 尝试通过 listUsers 查找用户
+      const { data: usersList, error: listError } = await supabase.auth.admin.listUsers();
+      const existingUser = usersList?.users?.find(u => u.email === lineEmail);
       
-      if (existingUser?.user && !getUserError) {
+      if (existingUser) {
         // 用户已存在
-        user = existingUser.user;
+        user = existingUser;
       } else {
         // 创建新用户
         const { data: newUser, error: createError } = await supabase.auth.admin.createUser({
@@ -146,20 +148,34 @@ export async function POST(req: NextRequest) {
         });
 
         if (createError || !newUser.user) {
-          return NextResponse.json(
-            { error: 'Failed to create user', details: createError },
-            { status: 400 }
-          );
+          // 如果创建失败，可能是用户已存在，尝试再次查找
+          if (createError?.message?.includes('already registered') || createError?.message?.includes('already exists')) {
+            const { data: usersList2 } = await supabase.auth.admin.listUsers();
+            const foundUser = usersList2?.users?.find(u => u.email === lineEmail);
+            if (foundUser) {
+              user = foundUser;
+            } else {
+              return NextResponse.json(
+                { error: 'Failed to create user', details: createError },
+                { status: 400 }
+              );
+            }
+          } else {
+            return NextResponse.json(
+              { error: 'Failed to create user', details: createError },
+              { status: 400 }
+            );
+          }
+        } else {
+          user = newUser.user;
+
+          // 创建用户资料
+          await supabase.from('user_profiles').insert({
+            id: user.id,
+            full_name: profile.displayName || 'LINE User',
+            avatar_url: profile.pictureUrl,
+          });
         }
-
-        user = newUser.user;
-
-        // 创建用户资料
-        await supabase.from('user_profiles').insert({
-          id: user.id,
-          full_name: profile.displayName || 'LINE User',
-          avatar_url: profile.pictureUrl,
-        });
       }
     } catch (error: any) {
       return NextResponse.json(

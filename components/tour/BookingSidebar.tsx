@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { MapIcon } from '@/components/Icons';
+import PickupPointSelector from '@/components/maps/PickupPointSelector';
 
 interface BookingSidebarProps {
   tour: {
@@ -17,6 +18,12 @@ export default function BookingSidebar({ tour }: BookingSidebarProps) {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [guestCount, setGuestCount] = useState(1);
   const [selectedPickup, setSelectedPickup] = useState<number | null>(null);
+  const [pickupType, setPickupType] = useState<'preset' | 'custom'>('preset');
+  const [customPickup, setCustomPickup] = useState<{
+    lat: number;
+    lng: number;
+    address: string;
+  } | null>(null);
 
   const calculatePrice = () => {
     if (tour.priceType === 'person') {
@@ -79,31 +86,77 @@ export default function BookingSidebar({ tour }: BookingSidebarProps) {
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Pickup Location
         </label>
-        <select
-          value={selectedPickup || ''}
-          onChange={(e) => setSelectedPickup(Number(e.target.value))}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none"
-        >
-          <option value="">Select pickup point</option>
-          {tour.pickupPoints.map((point) => (
-            <option key={point.id} value={point.id}>
-              {point.name}
-            </option>
-          ))}
-        </select>
-        {selectedPickup && (
-          <div className="mt-2 p-3 bg-gray-50 rounded-lg">
-            <div className="flex items-start gap-2">
-              <MapIcon className="w-5 h-5 text-indigo-600 mt-0.5" />
-              <div>
-                <p className="text-sm font-medium text-gray-900">
-                  {tour.pickupPoints.find((p) => p.id === selectedPickup)?.name}
-                </p>
-                <p className="text-xs text-gray-500">
-                  {tour.pickupPoints.find((p) => p.id === selectedPickup)?.address}
-                </p>
+        
+        {/* 选择类型：预设或自定义 */}
+        <div className="mb-3 flex gap-2">
+          <button
+            type="button"
+            onClick={() => {
+              setPickupType('preset');
+              setCustomPickup(null);
+            }}
+            className={`flex-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              pickupType === 'preset'
+                ? 'bg-indigo-600 text-white'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            }`}
+          >
+            选择预设地点
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setPickupType('custom');
+              setSelectedPickup(null);
+            }}
+            className={`flex-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              pickupType === 'custom'
+                ? 'bg-indigo-600 text-white'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            }`}
+          >
+            在地图上标注
+          </button>
+        </div>
+
+        {pickupType === 'preset' ? (
+          <>
+            <select
+              value={selectedPickup || ''}
+              onChange={(e) => setSelectedPickup(Number(e.target.value))}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none"
+            >
+              <option value="">Select pickup point</option>
+              {tour.pickupPoints.map((point) => (
+                <option key={point.id} value={point.id}>
+                  {point.name}
+                </option>
+              ))}
+            </select>
+            {selectedPickup && (
+              <div className="mt-2 p-3 bg-gray-50 rounded-lg">
+                <div className="flex items-start gap-2">
+                  <MapIcon className="w-5 h-5 text-indigo-600 mt-0.5" />
+                  <div>
+                    <p className="text-sm font-medium text-gray-900">
+                      {tour.pickupPoints.find((p) => p.id === selectedPickup)?.name}
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      {tour.pickupPoints.find((p) => p.id === selectedPickup)?.address}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
+          </>
+        ) : (
+          <div className="mt-2">
+            <PickupPointSelector
+              onLocationSelect={(location) => {
+                setCustomPickup(location);
+              }}
+              height="300px"
+            />
           </div>
         )}
       </div>
@@ -130,7 +183,21 @@ export default function BookingSidebar({ tour }: BookingSidebarProps) {
 
       {/* Check Availability Button */}
       <button
-        disabled={!selectedDate || !selectedPickup}
+        disabled={!selectedDate || (pickupType === 'preset' && !selectedPickup) || (pickupType === 'custom' && !customPickup)}
+        onClick={() => {
+          const pickupInfo = pickupType === 'preset' 
+            ? tour.pickupPoints.find((p) => p.id === selectedPickup)
+            : customPickup;
+          
+          // TODO: Handle booking with pickup info
+          console.log('Booking with:', {
+            date: selectedDate,
+            guests: guestCount,
+            pickup: pickupInfo,
+            totalPrice,
+          });
+          alert(`预订 ${guestCount} 位客人，日期：${selectedDate?.toLocaleDateString()}\n接送点：${pickupInfo?.address || pickupInfo?.name}`);
+        }}
         className="w-full px-6 py-4 bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg"
       >
         Check Availability
