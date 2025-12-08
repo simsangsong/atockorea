@@ -74,7 +74,7 @@ export default function TourCard({
   };
 
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 group h-full flex flex-col">
+    <div className="bg-white rounded-lg overflow-hidden transition-all duration-300 group h-full flex flex-col border border-gray-200/40 md:border-gray-200/30 shadow-[0_2px_20px_rgba(0,0,0,0.08),0_1px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.12),0_2px_12px_rgba(0,0,0,0.06)] hover:border-gray-200/50 transform hover:-translate-y-0.5">
       <Link href={displayHref} className="block flex-1 flex flex-col">
         <div className="relative w-full aspect-[4/3] overflow-hidden">
           <Image
@@ -100,7 +100,7 @@ export default function TourCard({
             </div>
           )}
         </div>
-        <div className="p-3 flex-1 flex flex-col">
+        <div className="p-3 flex-1 flex flex-col bg-gradient-to-b from-white to-gray-50/30">
           {/* Category label */}
           <p className="text-[11px] text-gray-500 mb-1">
             {displayCategory && displayType ? `${displayCategory} • ${displayType}` : displayCategory || "Tours"}

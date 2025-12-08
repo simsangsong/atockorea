@@ -38,7 +38,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="relative h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden">
+    <div className="relative w-full aspect-video md:aspect-[4/1] overflow-hidden">
       {/* Image Carousel */}
       <div className="relative w-full h-full">
         {heroImages.map((item, index) => (
@@ -59,13 +59,13 @@ export default function HeroSection() {
       </div>
 
       {/* Content Overlay */}
-      <div className="absolute inset-0 flex items-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 flex items-end">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-11 md:pb-16">
           <div className="max-w-2xl">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 drop-shadow-lg leading-tight">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 drop-shadow-lg leading-tight">
               {heroImages[currentIndex].title}
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 drop-shadow-md">
+            <p className="text-sm sm:text-base md:text-lg text-white/90 mb-4 sm:mb-6 drop-shadow-md">
               {heroImages[currentIndex].subtitle}
             </p>
             <button
@@ -77,7 +77,7 @@ export default function HeroSection() {
                   window.dispatchEvent(new CustomEvent('openSearch'));
                 }, 300);
               }}
-              className="px-6 py-3 sm:px-8 sm:py-4 bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base font-semibold rounded-xl transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:scale-105 drop-shadow-lg"
+              className="px-3 py-1 sm:px-4 sm:py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-[10px] sm:text-[14px] font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 drop-shadow-lg"
             >
               Find My Day Tour
             </button>
@@ -85,16 +85,20 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Dots Indicator */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
+      {/* Dots Indicator - Very small on mobile, original size on desktop */}
+      <div className="absolute bottom-2 md:bottom-6 left-1/2 transform -translate-x-1/2 flex gap-1 md:gap-1.5">
         {heroImages.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-2.5 h-2.5 rounded-full transition-all ${
+            className={`rounded-full transition-all scale-50 md:scale-100 ${
               index === currentIndex
-                ? "bg-white w-8"
-                : "bg-white/50 hover:bg-white/75"
+                ? 'w-[1px] h-[1px] md:w-8 md:h-2.5'
+                : 'w-[1px] h-[1px] md:w-2.5 md:h-2.5'
+            } ${
+              index === currentIndex
+                ? 'bg-white/30 md:bg-white'
+                : 'bg-white/20 md:bg-white/50 hover:bg-white/75'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

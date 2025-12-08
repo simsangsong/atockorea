@@ -1,55 +1,88 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef } from 'react';
 import { useParams } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
-import ImageGallery from '@/components/tour/ImageGallery';
-import BookingSidebar from '@/components/tour/BookingSidebar';
-import TourTabs from '@/components/tour/TourTabs';
-import { HeartSolidIcon, HeartIcon } from '@/components/Icons';
+import HeroImage from '@/components/tour/HeroImage';
+import KeyInfoBar from '@/components/tour/KeyInfoBar';
+import QuickFacts from '@/components/tour/QuickFacts';
+import GalleryGrid from '@/components/tour/GalleryGrid';
+import VisualItinerary from '@/components/tour/VisualItinerary';
+import MeetingPoint from '@/components/tour/MeetingPoint';
+import ActionButtons from '@/components/tour/ActionButtons';
+import EnhancedBookingSidebar from '@/components/tour/EnhancedBookingSidebar';
 
 // Sample tour data (in production, fetch from API)
 const tourData = {
   id: 1,
   title: 'Gamcheon Culture Village + Haeundae',
+  tagline: 'Explore colorful art district and relax at Korea\'s most famous beach',
   location: 'Busan',
   rating: 4.8,
   reviewCount: 234,
   badges: ['Popular', 'Small-group'],
   price: 79,
+  originalPrice: 99,
   priceType: 'person' as const,
+  availableSpots: 5,
+  duration: '8 hours',
+  difficulty: 'Easy',
+  groupSize: 'Max 12',
+  highlight: 'Waterfall Visit',
   images: [
-    'https://images.unsplash.com/photo-1534008897995-27a23e859048?w=1200&q=80',
-    'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=1200&q=80',
-    'https://images.unsplash.com/photo-1504817343863-5092a923803e?w=1200&q=80',
-    'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80',
-    'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80',
+    {
+      url: 'https://images.unsplash.com/photo-1534008897995-27a23e859048?w=1200&q=80',
+      title: 'Gamcheon Culture Village',
+      description: 'Explore the colorful art district known as "Korea\'s Santorini". This hillside village features vibrant murals, art galleries, and charming cafes. Walk through narrow alleys decorated with colorful houses and discover local art installations.',
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=1200&q=80',
+      title: 'Haeundae Beach',
+      description: 'Relax at Korea\'s most famous beach. Enjoy the pristine white sand, crystal-clear waters, and various water activities. The beach is perfect for swimming, sunbathing, or simply taking a leisurely stroll along the shore.',
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1504817343863-5092a923803e?w=1200&q=80',
+      title: 'Dongbaek Island',
+      description: 'Take a scenic walk along the coastal path on Dongbaek Island. This beautiful natural area offers stunning ocean views, lush greenery, and the famous Nurimaru APEC House. Perfect for photography and peaceful contemplation.',
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80',
+      title: 'Traditional Korean Lunch',
+      description: 'Experience authentic Korean cuisine at a local restaurant. Enjoy a variety of traditional dishes including kimchi, bulgogi, and fresh seafood. Our carefully selected restaurants offer the best local flavors.',
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80',
+      title: 'Busan City Views',
+      description: 'Capture panoramic views of Busan from various scenic spots. The city\'s unique blend of mountains, sea, and urban landscape creates breathtaking vistas that showcase the beauty of Korea\'s second-largest city.',
+    },
   ],
-  description: 'Explore the vibrant Gamcheon Culture Village, known as the "Machu Picchu of Busan", followed by a visit to the famous Haeundae Beach. This full-day tour combines art, culture, and coastal beauty.',
-  overview: `Experience the colorful Gamcheon Culture Village, a hillside community transformed into a vibrant art district. Wander through narrow alleys adorned with murals, sculptures, and art installations. Then, relax at Haeundae Beach, one of Korea's most famous beaches, known for its fine sand and clear waters.
-
-This tour offers a perfect blend of cultural immersion and coastal relaxation, making it ideal for first-time visitors to Busan.`,
+  quickFacts: [
+    'Small group tour with maximum 12 participants',
+    'Professional English-speaking guide included',
+    'Hotel pickup and drop-off service',
+    'Traditional Korean lunch included',
+  ],
   itinerary: [
-    { time: '09:00', title: 'Hotel Pickup', description: 'Pickup from your hotel in Busan' },
-    { time: '09:30', title: 'Gamcheon Culture Village', description: 'Explore the colorful village, visit art galleries and cafes' },
-    { time: '12:00', title: 'Lunch Break', description: 'Enjoy local Korean cuisine' },
-    { time: '13:30', title: 'Haeundae Beach', description: 'Relax at the beach, enjoy water activities' },
-    { time: '16:00', title: 'Dongbaek Island', description: 'Scenic walk along the coastal path' },
-    { time: '17:30', title: 'Return to Hotel', description: 'Drop-off at your hotel' },
+    { time: '09:00', title: 'Hotel Pickup', description: 'Pickup from your hotel in Busan', icon: '🚗' },
+    { time: '09:30', title: 'Gamcheon Culture Village', description: 'Explore the colorful village, visit art galleries and cafes', icon: '🏯' },
+    { time: '12:00', title: 'Lunch Break', description: 'Enjoy local Korean cuisine', icon: '🍜' },
+    { time: '13:30', title: 'Haeundae Beach', description: 'Relax at the beach, enjoy water activities', icon: '🏖️' },
+    { time: '16:00', title: 'Dongbaek Island', description: 'Scenic walk along the coastal path', icon: '🌊' },
+    { time: '17:30', title: 'Return to Hotel', description: 'Drop-off at your hotel', icon: '🏨' },
   ],
   inclusions: [
-    { icon: '✓', text: 'Hotel pickup and drop-off' },
-    { icon: '✓', text: 'Professional English-speaking guide' },
-    { icon: '✓', text: 'Entrance fees to all attractions' },
-    { icon: '✓', text: 'Lunch included' },
-    { icon: '✓', text: 'Transportation in air-conditioned vehicle' },
+    'Hotel pickup and drop-off',
+    'Professional English-speaking guide',
+    'Entrance fees to all attractions',
+    'Lunch included',
+    'Transportation in air-conditioned vehicle',
   ],
   exclusions: [
-    { icon: '✗', text: 'Personal expenses' },
-    { icon: '✗', text: 'Optional activities' },
-    { icon: '✗', text: 'Tips for guide and driver' },
+    'Personal expenses',
+    'Optional activities',
+    'Tips for guide and driver',
   ],
   pickupPoints: [
     { id: 1, name: 'Busan Station', address: 'Busan Station, Busan', lat: 35.1156, lng: 129.0422 },
@@ -57,128 +90,174 @@ This tour offers a perfect blend of cultural immersion and coastal relaxation, m
     { id: 3, name: 'Seomyeon Station', address: 'Seomyeon Station, Busan', lat: 35.1581, lng: 129.0594 },
     { id: 4, name: 'Gwangalli Beach', address: 'Gwangalli Beach, Busan', lat: 35.1532, lng: 129.1186 },
   ],
-  reviews: [
-    {
-      id: 1,
-      author: 'Sarah Johnson',
-      rating: 5,
-      date: '2025-01-15',
-      text: 'Amazing tour! The guide was very knowledgeable and the village was absolutely beautiful. Highly recommend!',
-      photos: ['https://images.unsplash.com/photo-1534008897995-27a23e859048?w=400&q=80'],
-    },
-    {
-      id: 2,
-      author: 'Michael Chen',
-      rating: 4,
-      date: '2025-01-10',
-      text: 'Great experience overall. The beach visit was relaxing and the village tour was interesting.',
-      photos: [],
-    },
-    {
-      id: 3,
-      author: 'Emma Wilson',
-      rating: 5,
-      date: '2025-01-08',
-      text: 'Perfect day trip! The itinerary was well-planned and we saw so much. The lunch was delicious too.',
-      photos: [
-        'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=400&q=80',
-        'https://images.unsplash.com/photo-1504817343863-5092a923803e?w=400&q=80',
-      ],
-    },
-  ],
 };
 
 export default function TourDetailPage() {
   const params = useParams();
   const tourId = params?.id;
-  const [isFavorite, setIsFavorite] = useState(false);
+  const bookingRef = useRef<HTMLDivElement>(null);
 
   // In production, fetch tour data based on tourId
+  // For now, use sample data
   const tour = tourData;
+
+  // Debug: Log tourId to console
+  if (typeof window !== 'undefined') {
+    console.log('Tour ID:', tourId);
+  }
+
+  const keyInfoItems = [
+    {
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      label: 'Duration',
+      value: tour.duration,
+    },
+    {
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      label: 'Difficulty',
+      value: tour.difficulty,
+    },
+    {
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+      label: 'Group Size',
+      value: tour.groupSize,
+    },
+    {
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+        </svg>
+      ),
+      label: 'Highlight',
+      value: tour.highlight,
+    },
+  ];
+
+  const handleCheckAvailability = () => {
+    bookingRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: tour.title,
+        text: tour.tagline,
+        url: window.location.href,
+      });
+    } else {
+      // Fallback: copy to clipboard
+      navigator.clipboard.writeText(window.location.href);
+      alert('Link copied to clipboard!');
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
       <Header />
-      <main>
-        {/* Image Gallery */}
-        <ImageGallery images={tour.images} />
+      <main className="pb-20 md:pb-0">
+        {/* 1. Hero Image */}
+        <HeroImage images={tour.images} />
 
-        {/* Main Content */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Left Content */}
-            <div className="flex-1">
-              {/* Title and Rating */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6 mb-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      {tour.badges.map((badge, idx) => (
-                        <span
-                          key={idx}
-                          className="px-3 py-1 bg-indigo-600 text-white text-xs font-semibold rounded-full"
-                        >
-                          {badge}
-                        </span>
-                      ))}
-                    </div>
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-                      {tour.title}
-                    </h1>
-                    <div className="flex items-center gap-4">
-                      <div className="flex items-center gap-2">
-                        <div className="flex items-center">
-                          <svg className="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 20 20">
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </svg>
-                          <span className="text-lg font-semibold text-gray-700 ml-1">{tour.rating}</span>
-                        </div>
-                        <span className="text-gray-500">({tour.reviewCount} reviews)</span>
-                      </div>
-                      <span className="text-gray-400">•</span>
-                      <span className="text-gray-600">{tour.location}</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <button
-                      onClick={() => setIsFavorite(!isFavorite)}
-                      className="p-3 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
-                    >
-                      {isFavorite ? (
-                        <HeartSolidIcon className="w-6 h-6 text-red-500" />
-                      ) : (
-                        <HeartIcon className="w-6 h-6 text-gray-600" />
-                      )}
-                    </button>
-                    <button className="p-3 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
-                      <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
+        {/* Title and Tagline Section - Modern Typography */}
+        <section className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-gray-900 via-indigo-800 to-gray-900 bg-clip-text text-transparent mb-4 leading-tight tracking-tight">
+              {tour.title}
+            </h1>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 font-medium leading-relaxed">
+              {tour.tagline}
+            </p>
+          </div>
+        </section>
 
-                {/* Price */}
-                <div className="pt-4 border-t border-gray-200">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-bold text-indigo-600">from ${tour.price}</span>
-                    <span className="text-lg text-gray-500">/ {tour.priceType}</span>
-                  </div>
-                </div>
-              </div>
+        {/* 2. Key Info Bar */}
+        <section className="container mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+          <KeyInfoBar items={keyInfoItems} />
+        </section>
 
-              {/* Tabs Content */}
-              <TourTabs tour={tour} />
+        {/* Main Content - Single Column Layout */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-8 pb-8">
+          {/* 3. Quick Facts */}
+          <QuickFacts facts={tour.quickFacts} />
+
+          {/* 4. Gallery Grid */}
+          <GalleryGrid images={tour.images} />
+
+          {/* Desktop: Booking Sidebar (hidden on mobile) */}
+          <div className="hidden lg:block lg:absolute lg:right-8 lg:top-[60vh] lg:w-96">
+            <div className="lg:sticky lg:top-20">
+              <EnhancedBookingSidebar tour={tour} />
             </div>
+          </div>
 
-            {/* Right Sidebar - Booking */}
-            <div className="lg:w-96 flex-shrink-0">
-              <div className="lg:sticky lg:top-20">
-                <BookingSidebar tour={tour} />
+          {/* 5. Itinerary */}
+          <VisualItinerary items={tour.itinerary} />
+
+          {/* 6. Inclusions/Exclusions */}
+          <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border border-gray-200/50 p-6">
+            <h2 className="text-xl font-bold text-gray-900 mb-6">What's Included</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                  <span className="text-green-600 text-2xl">✓</span>
+                  Included
+                </h3>
+                <ul className="space-y-3">
+                  {tour.inclusions.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                  <span className="text-red-600 text-2xl">✗</span>
+                  Not Included
+                </h3>
+                <ul className="space-y-3">
+                  {tour.exclusions.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
+
+          {/* 7. Meeting Point */}
+          <MeetingPoint points={tour.pickupPoints} />
+
+          {/* Mobile: Booking Section (scroll target) */}
+          <div ref={bookingRef} className="lg:hidden">
+            <EnhancedBookingSidebar tour={tour} />
+          </div>
         </div>
+
+        {/* Action Buttons - Fixed on mobile, normal on desktop */}
+        <ActionButtons
+          onCheckAvailability={handleCheckAvailability}
+          onShare={handleShare}
+        />
       </main>
       <Footer />
       <BottomNav />
@@ -186,4 +265,3 @@ export default function TourDetailPage() {
     </div>
   );
 }
-

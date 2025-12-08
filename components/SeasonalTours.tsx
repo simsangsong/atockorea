@@ -91,7 +91,7 @@ export default function SeasonalTours() {
             {seasonalTours.map((tour) => (
               <div
                 key={tour.id}
-                className="flex-shrink-0 w-[45.5vw] sm:w-[220px] lg:w-[240px]"
+                className="flex-shrink-0 w-[45.5vw] md:w-64 lg:w-72"
               >
                 <TourCard {...tour} />
               </div>

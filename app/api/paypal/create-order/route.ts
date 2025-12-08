@@ -1,8 +1,8 @@
 // app/api/paypal/create-order/route.ts
 import { NextRequest, NextResponse } from "next/server";
 
-const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID!;
-const PAYPAL_SECRET = process.env.PAYPAL_SECRET!;
+const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID || '';
+const PAYPAL_SECRET = process.env.PAYPAL_SECRET || '';
 const PAYPAL_API_BASE =
   process.env.PAYPAL_MODE === "live"
     ? "https://api-m.paypal.com"
@@ -26,6 +26,9 @@ async function getAccessToken() {
 
 export async function POST(req: NextRequest) {
   try {
+    if (!PAYPAL_CLIENT_ID || !PAYPAL_SECRET) {
+      return NextResponse.json({ error: 'PayPal credentials not configured' }, { status: 500 });
+    }
     const { amount, currency } = await req.json();
     const accessToken = await getAccessToken();
 

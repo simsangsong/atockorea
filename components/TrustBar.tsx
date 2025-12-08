@@ -42,7 +42,7 @@ export default function TrustBar() {
     <section className="py-6 sm:py-8 bg-transparent">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Card Container */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-xl border border-white/50 p-4 sm:p-6">
+        <div className="bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200/40 md:border-gray-200/30 p-4 sm:p-6 shadow-[0_2px_20px_rgba(0,0,0,0.08),0_1px_8px_rgba(0,0,0,0.04)]">
           <div className="text-center mb-4 sm:mb-6">
             <h2 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-1">
               Licensed Korea-based Platform
@@ -57,7 +57,7 @@ export default function TrustBar() {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 rounded-lg p-3 sm:p-4 hover:bg-gray-100 transition-all duration-300 border border-gray-200/50 shadow-md hover:shadow-lg"
+                  className="bg-gradient-to-br from-gray-50 to-white rounded-lg p-3 sm:p-4 hover:from-gray-100 hover:to-gray-50 transition-all duration-300 border border-gray-200/40 hover:border-indigo-200/50 shadow-[0_2px_16px_rgba(0,0,0,0.06),0_1px_6px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_24px_rgba(0,0,0,0.1),0_2px_10px_rgba(0,0,0,0.05)] transform hover:-translate-y-0.5"
                 >
                   <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-white mb-2 shadow-md">
                     <div className="w-3.5 h-3.5 sm:w-4 sm:h-4">

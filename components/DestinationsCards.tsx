@@ -28,7 +28,7 @@ const destinations = [
 
 export default function DestinationsCards() {
   return (
-    <section className="py-16 bg-transparent">
+    <section className="pt-6 pb-16 md:pt-8 md:pb-16 bg-transparent">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 mb-3">
@@ -54,7 +54,7 @@ export default function DestinationsCards() {
             {destinations.map((destination) => (
               <div
                 key={destination.id}
-                className="group relative flex-shrink-0 w-[59.5vw] md:w-80 lg:w-96 overflow-hidden rounded-xl md:rounded-2xl shadow-lg md:shadow-xl hover:shadow-xl md:hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-y-2 snap-start border border-white/40 backdrop-blur-sm"
+                className="group relative flex-shrink-0 w-[59.5vw] md:w-64 lg:w-72 overflow-hidden rounded-xl md:rounded-2xl transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-y-2 snap-start border border-gray-200/40 md:border-gray-200/30 bg-white/5 backdrop-blur-sm shadow-[0_2px_20px_rgba(0,0,0,0.08),0_1px_8px_rgba(0,0,0,0.04)] md:shadow-[0_4px_30px_rgba(0,0,0,0.06),0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_6px_40px_rgba(0,0,0,0.12),0_3px_16px_rgba(0,0,0,0.06)] md:hover:shadow-[0_8px_50px_rgba(0,0,0,0.1),0_4px_20px_rgba(0,0,0,0.05)]"
               >
                 <div className="relative h-[179px] md:h-64">
                   <Image
