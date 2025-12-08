@@ -196,7 +196,10 @@ export default function BookingSidebar({ tour }: BookingSidebarProps) {
             pickup: pickupInfo,
             totalPrice,
           });
-          alert(`预订 ${guestCount} 位客人，日期：${selectedDate?.toLocaleDateString()}\n接送点：${pickupInfo?.address || pickupInfo?.name}`);
+          const pickupDisplay = pickupInfo 
+            ? ('name' in pickupInfo ? pickupInfo.name : pickupInfo.address)
+            : '未选择';
+          alert(`预订 ${guestCount} 位客人，日期：${selectedDate?.toLocaleDateString()}\n接送点：${pickupDisplay}`);
         }}
         className="w-full px-6 py-4 bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg"
       >
