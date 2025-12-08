@@ -39,28 +39,22 @@ export default function Footer() {
               <p className="text-xs mb-2 font-semibold">Secure Payment Methods</p>
               <div className="flex items-center gap-3">
                 {/* PayPal Logo */}
-                <div className="px-3 py-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center justify-center h-10 min-w-[70px]">
-                  <svg width="70" height="20" viewBox="0 0 70 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* PayPal Double P Icon */}
-                    <g>
-                      {/* First P - Dark Blue */}
-                      <path d="M6 3H2V17H6C8.2 17 10 15.2 10 13C10 10.8 8.2 9 6 9H4V3H6Z" fill="#003087"/>
-                      <path d="M4 11H6C7.1 11 8 11.9 8 13C8 14.1 7.1 15 6 15H4V11Z" fill="#003087"/>
-                      {/* Second P - Light Blue (overlapping) */}
-                      <path d="M9 3H5V17H9C11.2 17 13 15.2 13 13C13 10.8 11.2 9 9 9H7V3H9Z" fill="#009CDE"/>
-                      <path d="M7 11H9C10.1 11 11 11.9 11 13C11 14.1 10.1 15 9 15H7V11Z" fill="#009CDE"/>
-                    </g>
-                    {/* PayPal Text */}
-                    <text x="18" y="14" fontSize="11" fontWeight="700" fill="#003087" fontFamily="system-ui, -apple-system, sans-serif" letterSpacing="-0.3">PayPal</text>
-                  </svg>
+                <div className="px-3 py-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center justify-center h-10 min-w-[80px]">
+                  <Image
+                    src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+                    alt="PayPal"
+                    width={80}
+                    height={22}
+                    className="object-contain max-w-full max-h-full"
+                  />
                 </div>
                 {/* Stripe Logo */}
-                <div className="px-3 py-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center justify-center h-10 overflow-hidden">
+                <div className="px-3 py-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center justify-center h-10 min-w-[60px]">
                   <Image
-                    src="https://cdn.worldvectorlogo.com/logos/stripe-4.svg"
+                    src="https://cdn.prod.website-files.com/5e6c01bb5212506d6c119069/5ee392f5c4e5e59d5f122b50_stripe-logo.png"
                     alt="Stripe"
-                    width={50}
-                    height={18}
+                    width={60}
+                    height={20}
                     className="object-contain max-w-full max-h-full"
                   />
                 </div>

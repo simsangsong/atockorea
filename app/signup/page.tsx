@@ -546,9 +546,11 @@ export default function SignUpPage() {
                     onClick={() => handleSocialLogin('kakao')}
                     className="w-full py-2.5 md:py-3 px-4 bg-white border border-gray-200 rounded-xl hover:border-gray-300 hover:shadow-md transition-all flex items-center justify-center gap-3 font-medium text-gray-700 shadow-sm hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98]"
                   >
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="#3C1E1E">
-                      <path d="M12 3C6.48 3 2 6.48 2 11c0 2.13 1.05 4.04 2.71 5.33L2 22l5.71-2.67C9.24 20.36 10.58 21 12 21c5.52 0 10-3.48 10-8s-4.48-8-10-8z" />
-                    </svg>
+                    <img 
+                      src="https://t1.kakaocdn.com/kakaocorp/kakaocorp/admin/service/65c0c0c800010000.png" 
+                      alt="KakaoTalk" 
+                      className="w-5 h-5 object-contain"
+                    />
                     <span className="text-sm md:text-base">Kakao</span>
                   </button>
 

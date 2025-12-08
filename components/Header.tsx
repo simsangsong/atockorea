@@ -81,16 +81,17 @@ export default function Header() {
             {/* Sign In - Premium Button Style */}
             <Link
               href="/signin"
-              className={`group flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
+              className={`group flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
                 isDarkPage 
                   ? 'bg-indigo-500/10 text-indigo-300 border border-indigo-400/30 hover:bg-indigo-500/20 hover:border-indigo-400/50' 
                   : 'bg-gray-50 text-gray-700 border border-gray-200 hover:bg-gray-100 hover:border-gray-300 hover:shadow-sm'
               }`}
+              title="Sign In"
             >
-              <UserIcon className={`w-4 h-4 transition-transform group-hover:scale-110 ${
+              <UserIcon className={`w-4 h-4 sm:w-4 sm:h-4 transition-transform group-hover:scale-110 flex-shrink-0 ${
                 isDarkPage ? 'text-indigo-300' : 'text-gray-600'
               }`} />
-              <span>Sign In</span>
+              <span className="hidden sm:inline">Sign In</span>
             </Link>
           </div>
         </div>
