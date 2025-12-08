@@ -547,7 +547,7 @@ export default function SignUpPage() {
                     className="w-full py-2.5 md:py-3 px-4 bg-white border border-gray-200 rounded-xl hover:border-gray-300 hover:shadow-md transition-all flex items-center justify-center gap-3 font-medium text-gray-700 shadow-sm hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98]"
                   >
                     <img 
-                      src="https://t1.kakaocdn.com/kakaocorp/kakaocorp/admin/service/65c0c0c800010000.png" 
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/KakaoTalk_logo.svg/500px-KakaoTalk_logo.svg.png" 
                       alt="KakaoTalk" 
                       className="w-5 h-5 object-contain"
                     />
