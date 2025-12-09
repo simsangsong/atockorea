@@ -12,7 +12,7 @@ export default function ActionButtons({ onCheckAvailability, onShare }: ActionBu
   const [isFavorite, setIsFavorite] = useState(false);
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 md:relative md:z-auto bg-white border-t border-gray-200 md:border-0 md:bg-transparent shadow-lg md:shadow-none">
+    <div className="fixed bottom-16 left-0 right-0 z-50 md:relative md:z-auto md:bottom-0 bg-white border-t border-gray-200 md:border-0 md:bg-transparent shadow-lg md:shadow-none">
       <div className="container mx-auto px-4 py-3 md:py-0 md:px-0">
         <div className="flex gap-3 md:flex-col md:gap-2">
           {/* Primary Action - Check Availability */}

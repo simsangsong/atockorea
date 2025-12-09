@@ -166,7 +166,7 @@ export default function TourDetailPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
       <Header />
-      <main className="pb-20 md:pb-0">
+      <main className="pb-32 md:pb-0">
         {/* 1. Hero Image */}
         <HeroImage images={tour.images} />
 
