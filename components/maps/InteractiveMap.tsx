@@ -68,7 +68,6 @@ export default function InteractiveMap({
         googleMapsApiKey={apiKey}
         libraries={['places']}
         loadingElement={<div style={{ height: '100%' }}>Loading...</div>}
-        errorElement={<div style={{ height: '100%' }}>Error loading map</div>}
       >
         <GoogleMap
           mapContainerStyle={{ width: '100%', height: '100%', minHeight: '200px' }}
