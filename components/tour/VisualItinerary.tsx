@@ -82,7 +82,7 @@ export default function VisualItinerary({ items }: VisualItineraryProps) {
                     </div>
                   ) : (
                     <p className="text-sm text-gray-600 leading-relaxed">
-                      {item.description}
+                      {'description' in item ? item.description : ''}
                     </p>
                   )}
                 </div>

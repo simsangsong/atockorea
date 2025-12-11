@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { StarIcon } from '@/components/Icons';
 
-export default function WriteReviewPage() {
+function WriteReviewForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const tourId = searchParams.get('tourId');
@@ -118,6 +118,23 @@ export default function WriteReviewPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function WriteReviewPage() {
+  return (
+    <Suspense fallback={
+      <div className="space-y-6">
+        <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-6">
+          <div className="animate-pulse">
+            <div className="h-8 bg-gray-200 rounded w-1/4 mb-4"></div>
+            <div className="h-6 bg-gray-200 rounded w-1/2"></div>
+          </div>
+        </div>
+      </div>
+    }>
+      <WriteReviewForm />
+    </Suspense>
   );
 }
 
