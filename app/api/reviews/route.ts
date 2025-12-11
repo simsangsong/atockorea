@@ -50,20 +50,27 @@ export async function GET(req: NextRequest) {
     }
 
     // Format reviews for frontend
-    const formattedReviews = reviews?.map((review: any) => ({
-      id: review.id,
-      author: review.is_anonymous ? '匿名用户' : (review.user_profiles?.full_name || 'Anonymous'),
-      avatar: review.is_anonymous ? null : (review.user_profiles?.avatar_url || null),
-      rating: review.rating,
-      title: review.title || '',
-      text: review.comment || '',
-      photos: review.photos || [],
-      isVerified: review.is_verified,
-      isAnonymous: review.is_anonymous || false,
-      date: review.created_at?.split('T')[0] || new Date().toISOString().split('T')[0],
-      likeCount: review.like_count || 0,
-      dislikeCount: review.dislike_count || 0,
-    })) || [];
+    const formattedReviews = reviews?.map((review: any) => {
+      // Handle user_profiles which might be an array or single object
+      const userProfile = Array.isArray(review.user_profiles) 
+        ? review.user_profiles[0] 
+        : review.user_profiles;
+      
+      return {
+        id: review.id,
+        author: review.is_anonymous ? '匿名用户' : (userProfile?.full_name || 'Anonymous'),
+        avatar: review.is_anonymous ? null : (userProfile?.avatar_url || null),
+        rating: review.rating,
+        title: review.title || '',
+        text: review.comment || '',
+        photos: review.photos || [],
+        isVerified: review.is_verified,
+        isAnonymous: review.is_anonymous || false,
+        date: review.created_at?.split('T')[0] || new Date().toISOString().split('T')[0],
+        likeCount: review.like_count || 0,
+        dislikeCount: review.dislike_count || 0,
+      };
+    }) || [];
 
     return NextResponse.json({ reviews: formattedReviews });
   } catch (error: any) {
@@ -198,10 +205,15 @@ export async function POST(req: NextRequest) {
     }
 
     // Format response
+    // Handle user_profiles which might be an array or single object
+    const userProfile = Array.isArray(review.user_profiles) 
+      ? review.user_profiles[0] 
+      : review.user_profiles;
+    
     const formattedReview = {
       id: review.id,
-      author: review.is_anonymous ? '匿名用户' : (review.user_profiles?.full_name || 'Anonymous'),
-      avatar: review.is_anonymous ? null : (review.user_profiles?.avatar_url || null),
+      author: review.is_anonymous ? '匿名用户' : (userProfile?.full_name || 'Anonymous'),
+      avatar: review.is_anonymous ? null : (userProfile?.avatar_url || null),
       rating: review.rating,
       title: review.title || '',
       text: review.comment || '',
