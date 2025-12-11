@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase';
+import { createServerClient } from '@/lib/supabase';
 import { withAuth } from '@/lib/middleware';
 
 // GET /api/admin/revenue - Get revenue data for admin
@@ -19,7 +19,7 @@ export async function GET(req: NextRequest) {
       const startDate = searchParams.get('startDate');
       const endDate = searchParams.get('endDate');
 
-      const supabase = createClient();
+      const supabase = createServerClient();
 
       try {
         // Calculate date range

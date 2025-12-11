@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase';
+import { createServerClient } from '@/lib/supabase';
 import { withMerchantIsolation } from '@/lib/middleware';
 import { PLATFORM_COMMISSION_RATE, calculatePlatformFee, calculateMerchantPayout } from '@/lib/constants';
 
@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
       const startDate = searchParams.get('startDate');
       const endDate = searchParams.get('endDate');
 
-      const supabase = createClient();
+      const supabase = createServerClient();
 
       try {
         // Calculate date range
