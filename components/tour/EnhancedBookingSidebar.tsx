@@ -17,7 +17,6 @@ interface EnhancedBookingSidebarProps {
 
 export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarProps) {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-  const [selectedTime, setSelectedTime] = useState<string>('');
   const [adultCount, setAdultCount] = useState(1);
   const [childCount, setChildCount] = useState(0);
   const [selectedPickup, setSelectedPickup] = useState<number | null>(null);
@@ -88,23 +87,6 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none"
             dateFormat="MMMM d, yyyy"
           />
-        </div>
-
-        {/* Time Selection */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Select Time
-          </label>
-          <select
-            value={selectedTime}
-            onChange={(e) => setSelectedTime(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none"
-          >
-            <option value="">Select time</option>
-            <option value="morning">Morning (9:00 AM)</option>
-            <option value="afternoon">Afternoon (2:00 PM)</option>
-            <option value="full-day">Full Day</option>
-          </select>
         </div>
 
         {/* Guest Count */}

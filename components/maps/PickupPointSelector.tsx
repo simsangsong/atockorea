@@ -114,9 +114,14 @@ export default function PickupPointSelector({
 
   return (
     <div className={`w-full ${className}`}>
-      {/* 搜索框 */}
-      <div className="mb-4">
-        <LoadScript googleMapsApiKey={apiKey} libraries={['places']}>
+      <LoadScript 
+        googleMapsApiKey={apiKey} 
+        libraries={['places']}
+        loadingElement={<div style={{ height: '100%' }}>Loading...</div>}
+        errorElement={<div style={{ height: '100%' }}>Error loading map</div>}
+      >
+        {/* 搜索框 */}
+        <div className="mb-4">
           <Autocomplete
             onLoad={onAutocompleteLoad}
             onPlaceChanged={onPlaceChanged}
@@ -132,14 +137,16 @@ export default function PickupPointSelector({
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
             />
           </Autocomplete>
-        </LoadScript>
-      </div>
+        </div>
 
-      {/* 地图 */}
-      <div className="rounded-lg overflow-hidden shadow-lg border border-gray-200" style={{ height }}>
-        <LoadScript googleMapsApiKey={apiKey} libraries={['places']}>
+        {/* 地图 */}
+        <div 
+          className="rounded-lg overflow-hidden shadow-lg border border-gray-200" 
+          style={{ height, minHeight: '200px' }}
+          data-map-container
+        >
           <GoogleMap
-            mapContainerStyle={{ width: '100%', height: '100%' }}
+            mapContainerStyle={{ width: '100%', height: '100%', minHeight: '200px' }}
             center={selectedLocation || defaultCenter}
             zoom={selectedLocation ? 15 : 13}
             onLoad={onMapLoad}
@@ -183,8 +190,8 @@ export default function PickupPointSelector({
               />
             )}
           </GoogleMap>
-        </LoadScript>
-      </div>
+        </div>
+      </LoadScript>
 
       {/* 选中位置信息 */}
       {selectedLocation && (

@@ -94,9 +94,8 @@ export default function MyBookingsPage() {
   };
 
   const handleReview = (booking: Booking) => {
-    // Navigate to review page or open review modal
-    alert(`Redirecting to review page for "${booking.title}"`);
-    // router.push(`/mypage/reviews?tour=${booking.tourId}`);
+    // Navigate to review page
+    window.location.href = `/mypage/reviews/write?tourId=${booking.tourId}&tour=${encodeURIComponent(booking.title)}`;
   };
 
   const completedBookings = bookings.filter((b) => b.status === 'Completed');
@@ -174,11 +173,22 @@ interface BookingCardProps {
 }
 
 function BookingCard({ booking, onCancel, onReview, canCancel = false, showReview = false }: BookingCardProps) {
+  const handleLinkClick = (e: React.MouseEvent, path: string) => {
+    if (window.innerWidth < 768) {
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.href = path;
+    }
+  };
+
   return (
     <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 overflow-hidden">
       <div className="flex flex-col md:flex-row">
         <div className="md:w-48 h-48 md:h-auto flex-shrink-0 relative">
-          <Link href={`/tour/${booking.tourId}`}>
+          <Link 
+            href={`/tour/${booking.tourId}`}
+            onClick={(e) => handleLinkClick(e, `/tour/${booking.tourId}`)}
+          >
             <Image
               src={booking.image}
               alt={booking.title}
@@ -190,7 +200,10 @@ function BookingCard({ booking, onCancel, onReview, canCancel = false, showRevie
         <div className="flex-1 p-5">
           <div className="flex items-start justify-between mb-3">
             <div className="flex-1">
-              <Link href={`/tour/${booking.tourId}`}>
+              <Link 
+                href={`/tour/${booking.tourId}`}
+                onClick={(e) => handleLinkClick(e, `/tour/${booking.tourId}`)}
+              >
                 <h3 className="text-lg font-bold text-gray-900 mb-2 hover:text-indigo-600 transition-colors">
                   {booking.title}
                 </h3>
@@ -227,6 +240,7 @@ function BookingCard({ booking, onCancel, onReview, canCancel = false, showRevie
           <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
             <Link
               href={`/tour/${booking.tourId}`}
+              onClick={(e) => handleLinkClick(e, `/tour/${booking.tourId}`)}
               className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium"
             >
               View Details
@@ -246,12 +260,13 @@ function BookingCard({ booking, onCancel, onReview, canCancel = false, showRevie
               </button>
             )}
             {showReview && onReview && (
-              <button
-                onClick={onReview}
-                className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium"
+              <Link
+                href={`/mypage/reviews/write?tourId=${booking.tourId}&tour=${encodeURIComponent(booking.title)}`}
+                onClick={(e) => handleLinkClick(e, `/mypage/reviews/write?tourId=${booking.tourId}&tour=${encodeURIComponent(booking.title)}`)}
+                className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium text-center"
               >
                 Write Review
-              </button>
+              </Link>
             )}
           </div>
           {onCancel && !canCancel && booking.status === 'Upcoming' && (

@@ -10,6 +10,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "AtoC Korea - Licensed Korea-based Platform for Day Tours",
   description: "Direct connection to trusted Korea tours. Licensed Korean travel agencies, certified guides, and lower prices through direct partnerships.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
 };
 
 export default function RootLayout({

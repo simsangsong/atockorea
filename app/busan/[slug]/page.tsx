@@ -2,10 +2,10 @@
 import { notFound } from "next/navigation";
 
 const busanTourData: Record<string, any> = {
-  "gamcheon-haeundae-small-group": {
-    title: "Gamcheon Culture Village + Haeundae",
-    duration: "8 hours",
-    price: "from US$79 / person",
+  "jeju-eastern-unesco-spots-day-tour": {
+    title: "Jeju: Eastern Jeju UNESCO Spots Day Tour",
+    duration: "10 hours",
+    price: "from €46 / person",
   },
   "gwangalli-night-food": {
     title: "Gwangalli Night View & Local Food",

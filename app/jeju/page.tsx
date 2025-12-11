@@ -3,6 +3,15 @@ import TourCard, { Tour } from "../../components/TourCard";
 
 const jejuTours: Tour[] = [
   {
+    slug: "jeju-eastern-unesco-spots-day-tour",
+    city: "Jeju",
+    tag: "Jeju · Day tour",
+    title: "Jeju: Eastern Jeju UNESCO Spots Day Tour",
+    desc: "Top rated · 4 pickup locations",
+    price: "from €46 / person",
+    href: "/jeju/jeju-eastern-unesco-spots-day-tour",
+  },
+  {
     slug: "jeju-southwest-unesco-tour",
     city: "Jeju",
     tag: "Jeju · Private / Small-group",

@@ -5,19 +5,19 @@ import { useState, useEffect } from "react";
 const heroImages = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=1920&q=80",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=80",
     title: "Discover Amazing Korea",
     subtitle: "Direct connection to trusted Korea tours",
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1504817343863-5092a923803e?w=1920&q=80",
+    image: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=1920&q=80",
     title: "Explore Jeju Island",
     subtitle: "Natural wonders and cultural experiences",
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1534008897995-27a23e859048?w=1920&q=80",
+    image: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=1920&q=80",
     title: "Experience Busan",
     subtitle: "Coastal beauty and vibrant culture",
   },

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { CalendarDateIcon, StarIcon, TrashIcon } from '@/components/Icons';
 
 interface Review {
@@ -37,34 +38,18 @@ export default function ReviewsPage() {
     { id: 2, tour: 'DMZ Tour', tourId: 4, date: '2024-12-10' },
   ]);
 
-  const [showReviewModal, setShowReviewModal] = useState(false);
-  const [selectedTour, setSelectedTour] = useState<{ id: number; tour: string; tourId: number } | null>(null);
-  const [reviewForm, setReviewForm] = useState({ rating: 5, comment: '' });
 
   const handleWriteReview = (tour: { id: number; tour: string; tourId: number }) => {
-    setSelectedTour(tour);
-    setReviewForm({ rating: 5, comment: '' });
-    setShowReviewModal(true);
+    // Always navigate to review page (mobile and desktop)
+    window.location.href = `/mypage/reviews/write?tourId=${tour.tourId}&tour=${encodeURIComponent(tour.tour)}`;
   };
 
-  const handleSubmitReview = () => {
-    if (!selectedTour || !reviewForm.comment.trim()) {
-      alert('Please fill in all fields');
-      return;
+  const handleLinkClick = (e: React.MouseEvent, path: string) => {
+    if (window.innerWidth < 768) {
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.href = path;
     }
-
-    const newReview: Review = {
-      id: writtenReviews.length + 1,
-      tour: selectedTour.tour,
-      tourId: selectedTour.tourId,
-      rating: reviewForm.rating,
-      comment: reviewForm.comment,
-      date: new Date().toISOString().split('T')[0],
-    };
-
-    setWrittenReviews([...writtenReviews, newReview]);
-    setShowReviewModal(false);
-    alert('Review submitted successfully!');
   };
 
   const handleDeleteReview = (id: number) => {
@@ -87,10 +72,16 @@ export default function ReviewsPage() {
           {writtenReviews.length > 0 ? (
             writtenReviews.map((review) => (
               <div key={review.id} className="p-4 bg-gray-50 rounded-lg">
-                <div className="flex items-start justify-between mb-2">
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-semibold text-gray-900">{review.tour}</h3>
+                    <div className="flex items-start justify-between mb-2">
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-2">
+                          <Link
+                            href={`/tour/${review.tourId}`}
+                            onClick={(e) => handleLinkClick(e, `/tour/${review.tourId}`)}
+                            className="font-semibold text-gray-900 hover:text-indigo-600 transition-colors"
+                          >
+                            {review.tour}
+                          </Link>
                       <button
                         onClick={() => handleDeleteReview(review.id)}
                         className="text-red-600 hover:text-red-700 text-sm"
@@ -152,61 +143,6 @@ export default function ReviewsPage() {
         </div>
       </div>
 
-      {showReviewModal && selectedTour && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl shadow-xl max-w-md w-full p-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Write a Review</h2>
-            <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-2">Tour</label>
-              <p className="text-gray-900 font-semibold">{selectedTour.tour}</p>
-            </div>
-            <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-2">Rating</label>
-              <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setReviewForm({ ...reviewForm, rating: i + 1 })}
-                    className="focus:outline-none"
-                  >
-                    <StarIcon
-                      className={`w-8 h-8 ${
-                        i < reviewForm.rating
-                          ? 'text-yellow-400 fill-yellow-400'
-                          : 'text-gray-300 fill-gray-300'
-                      }`}
-                    />
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-2">Comment</label>
-              <textarea
-                value={reviewForm.comment}
-                onChange={(e) => setReviewForm({ ...reviewForm, comment: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent"
-                rows={4}
-                placeholder="Share your experience..."
-              />
-            </div>
-            <div className="flex gap-3">
-              <button
-                onClick={() => setShowReviewModal(false)}
-                className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleSubmitReview}
-                className="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
-              >
-                Submit
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

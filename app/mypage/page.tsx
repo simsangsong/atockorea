@@ -1,14 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-
 export default function MyPage() {
-  const router = useRouter();
-
-  useEffect(() => {
-    router.replace('/mypage/dashboard');
-  }, [router]);
-
+  // 作为移动端入口页面，提供菜单跳转，不自动重定向
   return null;
 }

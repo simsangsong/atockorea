@@ -33,7 +33,7 @@ export default function MeetingPoint({ points }: MeetingPointProps) {
       <h2 className="text-xl font-bold text-gray-900 mb-4">Meeting Point</h2>
 
       {/* Map - 使用交互式地图（如果有 API Key）或回退到 iframe */}
-      <div className="relative w-full h-64 rounded-lg overflow-hidden mb-4 bg-gray-200">
+      <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden mb-4 bg-gray-200" style={{ minHeight: '200px' }}>
         {hasApiKey ? (
           <InteractiveMap
             locations={points.map(p => ({

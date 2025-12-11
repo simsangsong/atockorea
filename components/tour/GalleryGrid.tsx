@@ -41,37 +41,37 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
 
   return (
     <>
-      <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border border-gray-200/50 p-6 fade-in-delay-1">
-        <h2 className="text-xl font-bold text-gray-900 mb-6">Photo Gallery</h2>
-        <div className="space-y-8">
+      <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border border-gray-200/50 p-4 md:p-6 fade-in-delay-1">
+        <h2 className="text-lg md:text-xl font-semibold text-gray-900 mb-4 md:mb-5">Photo Gallery</h2>
+        <div className="space-y-6 md:grid md:grid-cols-2 md:gap-6 md:space-y-0">
           {normalizedImages.map((image, index) => (
-            <div key={index} className="space-y-4">
+            <div key={index} className="space-y-2.5 md:space-y-2">
               {/* Text Area Above Image */}
               {(image.title || image.description) && (
-                <div className="space-y-2">
+                <div className="space-y-1">
                   {image.title && (
-                    <h3 className="text-lg font-semibold text-gray-900">{image.title}</h3>
+                    <h3 className="text-sm md:text-xs font-medium text-gray-900">{image.title}</h3>
                   )}
                   {image.description && (
-                    <p className="text-sm text-gray-600 leading-relaxed">{image.description}</p>
+                    <p className="text-xs text-gray-500 leading-relaxed line-clamp-2">{image.description}</p>
                   )}
                 </div>
               )}
               
-              {/* Image - 16:9 Aspect Ratio */}
+              {/* Image - Smaller on desktop, refined aspect ratio */}
               <button
                 onClick={() => setSelectedImage(index)}
-                className="relative w-full aspect-video rounded-lg overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow"
+                className="relative w-full aspect-video md:aspect-[4/3] rounded-lg overflow-hidden group cursor-pointer shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <Image
                   src={image.url}
                   alt={image.title || `Gallery image ${index + 1}`}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                   loading="lazy"
-                  sizes="100vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
               </button>
             </div>
           ))}

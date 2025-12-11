@@ -59,13 +59,19 @@ export default function InteractiveMap({
   }
 
   return (
-    <div className="w-full rounded-lg overflow-hidden shadow-lg" style={{ height }}>
+    <div 
+      className="w-full rounded-lg overflow-hidden shadow-lg" 
+      style={{ height, minHeight: '200px' }}
+      data-map-container
+    >
       <LoadScript
         googleMapsApiKey={apiKey}
         libraries={['places']}
+        loadingElement={<div style={{ height: '100%' }}>Loading...</div>}
+        errorElement={<div style={{ height: '100%' }}>Error loading map</div>}
       >
         <GoogleMap
-          mapContainerStyle={{ width: '100%', height: '100%' }}
+          mapContainerStyle={{ width: '100%', height: '100%', minHeight: '200px' }}
           center={center}
           zoom={zoom}
           onLoad={onLoad}

@@ -4,13 +4,13 @@ import TourCard, { Tour } from "../../components/TourCard";
 
 const busanTours: Tour[] = [
   {
-    slug: "gamcheon-haeundae-small-group",
-    city: "Busan",
-    tag: "Busan · Day tour",
-    title: "Gamcheon Culture Village + Haeundae",
-    desc: "Small-group · hotel pickup",
-    price: "from US$79 / person",
-    href: "/busan/gamcheon-haeundae-small-group",
+    slug: "jeju-eastern-unesco-spots-day-tour",
+    city: "Jeju",
+    tag: "Jeju · Day tour",
+    title: "Jeju: Eastern Jeju UNESCO Spots Day Tour",
+    desc: "Top rated · 4 pickup locations",
+    price: "from €46 / person",
+    href: "/jeju/jeju-eastern-unesco-spots-day-tour",
   },
   {
     slug: "gwangalli-night-food",

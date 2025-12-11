@@ -20,6 +20,10 @@ export const mapOptions: google.maps.MapOptions = {
   streetViewControl: false,
   mapTypeControl: false,
   fullscreenControl: true,
+  // 移动端优化
+  gestureHandling: 'greedy', // 允许单指平移
+  clickableIcons: true,
+  keyboardShortcuts: false, // 移动端禁用键盘快捷键
   styles: [
     {
       featureType: 'poi',

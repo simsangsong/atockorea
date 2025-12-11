@@ -40,6 +40,24 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Google Maps mobile optimization */
+.gm-style {
+  font-family: inherit !important;
+}
+
+/* Fix for Google Maps container on mobile */
+.gm-style-cc {
+  display: none !important;
+}
+
+/* Ensure map containers have proper touch handling */
+[data-map-container] {
+  touch-action: pan-x pan-y;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 /* Custom scrollbar for desktop */
 .scrollbar-custom::-webkit-scrollbar {
   height: 8px;

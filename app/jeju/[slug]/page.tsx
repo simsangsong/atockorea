@@ -148,18 +148,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
 
   // ===== 액션 핸들러 =====
   const handleBookNow = () => {
-    if (!date) {
-      alert("Please select a date first.");
-      return;
-    }
-
-    const query = new URLSearchParams({
-      tourSlug: tour.slug ?? "",
-      date,
-      guests: String(guests),
-    }).toString();
-
-    router.push(`/checkout?${query}`);
+    router.push(`/jeju/${tour.slug}/availability`);
   };
 
   const handleSubmitReview = (e: React.FormEvent) => {

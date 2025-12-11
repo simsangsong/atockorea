@@ -5,14 +5,14 @@ import TourCard from "./TourCard";
 const tours = [
   {
     id: 1,
-    title: "Jeju UNESCO Original Day Tour",
+    title: "Jeju: Eastern UNESCO Join in Tour (Seongsan, Haenyeo Show)",
     location: "Jeju",
     type: "Day tour",
-    price: 80,
-    image: "https://images.unsplash.com/photo-1534008897995-27a23e859048?w=600&q=80",
-    badge: "Popular",
+    price: 46.81,
+    image: "https://images.unsplash.com/photo-1504817343863-5092a923803e?w=600&q=80",
+    badge: "Top rated",
     rating: 4.9,
-    reviewCount: 2766,
+    reviewCount: 89,
   },
   {
     id: 2,
