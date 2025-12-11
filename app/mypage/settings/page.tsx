@@ -473,7 +473,7 @@ export default function AccountSettingsPage() {
                 </div>
                 <input
                   type="checkbox"
-                  checked={privacy[item.key as keyof typeof privacy]}
+                  checked={!!(privacy[item.key as keyof typeof privacy] as boolean)}
                   onChange={(e) =>
                     setPrivacy({ ...privacy, [item.key]: e.target.checked })
                   }
