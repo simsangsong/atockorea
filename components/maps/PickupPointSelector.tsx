@@ -118,7 +118,6 @@ export default function PickupPointSelector({
         googleMapsApiKey={apiKey} 
         libraries={['places']}
         loadingElement={<div style={{ height: '100%' }}>Loading...</div>}
-        errorElement={<div style={{ height: '100%' }}>Error loading map</div>}
       >
         {/* 搜索框 */}
         <div className="mb-4">
