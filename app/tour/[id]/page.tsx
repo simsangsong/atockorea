@@ -16,6 +16,7 @@ import ActionButtons from '@/components/tour/ActionButtons';
 import EnhancedBookingSidebar from '@/components/tour/EnhancedBookingSidebar';
 import ReviewList from '@/components/reviews/ReviewList';
 import ReviewForm from '@/components/reviews/ReviewForm';
+import PaymentMethodsBanner from '@/components/PaymentMethodsBanner';
 
 // Sample tour data (fallback)
 const sampleTourData = {
@@ -299,6 +300,9 @@ export default function TourDetailPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-8 pb-8">
           {/* 3. Quick Facts */}
           <QuickFacts facts={tour.quickFacts} />
+
+          {/* Payment Methods */}
+          <PaymentMethodsBanner variant="card" />
 
           {/* 4. Gallery Grid */}
           <GalleryGrid images={tour.images} />
