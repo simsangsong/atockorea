@@ -32,8 +32,8 @@ export default function MeetingPoint({ points }: MeetingPointProps) {
     <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border border-gray-200/50 p-6">
       <h2 className="text-xl font-bold text-gray-900 mb-4">Meeting Point</h2>
 
-      {/* Map - 使用交互式地图（如果有 API Key）或回退到 iframe */}
-      <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden mb-4 bg-gray-200" style={{ minHeight: '200px' }}>
+      {/* Map - Use interactive map (if API Key available) or fallback to iframe */}
+      <div className="relative w-full h-64 rounded-lg overflow-hidden mb-4 bg-gray-200">
         {hasApiKey ? (
           <InteractiveMap
             locations={points.map(p => ({
@@ -64,7 +64,7 @@ export default function MeetingPoint({ points }: MeetingPointProps) {
 
       {/* Address */}
       <div className="flex items-start gap-3">
-        <MapIcon className="w-6 h-6 text-indigo-600 mt-0.5 flex-shrink-0" />
+        <MapIcon className="w-6 h-6 text-blue-600 mt-0.5 flex-shrink-0" />
         <div className="flex-1">
           <h3 className="font-semibold text-gray-900 mb-1">{primaryPoint.name}</h3>
           <p className="text-sm text-gray-600">{primaryPoint.address}</p>
@@ -73,7 +73,7 @@ export default function MeetingPoint({ points }: MeetingPointProps) {
           href={`https://www.google.com/maps?q=${primaryPoint.lat},${primaryPoint.lng}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-indigo-600 hover:text-indigo-700 text-sm font-medium whitespace-nowrap"
+          className="text-blue-600 hover:text-blue-700 text-sm font-medium whitespace-nowrap"
         >
           Directions →
         </a>
@@ -86,7 +86,7 @@ export default function MeetingPoint({ points }: MeetingPointProps) {
           <ul className="space-y-2">
             {points.slice(1).map((point) => (
               <li key={point.id} className="flex items-center gap-2 text-sm text-gray-600">
-                <span className="w-1.5 h-1.5 rounded-full bg-indigo-600" />
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
                 {point.name}
               </li>
             ))}

@@ -23,7 +23,7 @@ export default function KeyInfoBar({ items }: KeyInfoBarProps) {
             key={index}
             className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-sm border border-gray-200/50 min-w-[200px] sm:min-w-0 hover:shadow-md transition-shadow"
           >
-            <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center text-indigo-600">
+            <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center text-blue-600">
               {item.icon}
             </div>
             <div className="flex-1 min-w-0">

@@ -48,7 +48,7 @@ export default function BookingSidebar({ tour }: BookingSidebarProps) {
           onChange={(date) => setSelectedDate(date)}
           minDate={new Date()}
           placeholderText="Choose a date"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
           dateFormat="MMMM d, yyyy"
         />
       </div>
@@ -87,7 +87,7 @@ export default function BookingSidebar({ tour }: BookingSidebarProps) {
           Pickup Location
         </label>
         
-        {/* 选择类型：预设或自定义 */}
+        {/* Select type: preset or custom */}
         <div className="mb-3 flex gap-2">
           <button
             type="button"
@@ -97,11 +97,11 @@ export default function BookingSidebar({ tour }: BookingSidebarProps) {
             }}
             className={`flex-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
               pickupType === 'preset'
-                ? 'bg-indigo-600 text-white'
+                ? 'bg-blue-600 text-white'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
           >
-            选择预设地点
+            Select Preset Location
           </button>
           <button
             type="button"
@@ -111,11 +111,11 @@ export default function BookingSidebar({ tour }: BookingSidebarProps) {
             }}
             className={`flex-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
               pickupType === 'custom'
-                ? 'bg-indigo-600 text-white'
+                ? 'bg-blue-600 text-white'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
           >
-            在地图上标注
+            Mark on Map
           </button>
         </div>
 
@@ -124,7 +124,7 @@ export default function BookingSidebar({ tour }: BookingSidebarProps) {
             <select
               value={selectedPickup || ''}
               onChange={(e) => setSelectedPickup(Number(e.target.value))}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
             >
               <option value="">Select pickup point</option>
               {tour.pickupPoints.map((point) => (
@@ -136,7 +136,7 @@ export default function BookingSidebar({ tour }: BookingSidebarProps) {
             {selectedPickup && (
               <div className="mt-2 p-3 bg-gray-50 rounded-lg">
                 <div className="flex items-start gap-2">
-                  <MapIcon className="w-5 h-5 text-indigo-600 mt-0.5" />
+                  <MapIcon className="w-5 h-5 text-blue-600 mt-0.5" />
                   <div>
                     <p className="text-sm font-medium text-gray-900">
                       {tour.pickupPoints.find((p) => p.id === selectedPickup)?.name}
@@ -162,7 +162,7 @@ export default function BookingSidebar({ tour }: BookingSidebarProps) {
       </div>
 
       {/* Price Calculator */}
-      <div className="mb-6 p-4 bg-indigo-50 rounded-lg border border-indigo-200">
+      <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm text-gray-600">Price per {tour.priceType}</span>
           <span className="text-sm font-semibold text-gray-900">${tour.price}</span>
@@ -173,10 +173,10 @@ export default function BookingSidebar({ tour }: BookingSidebarProps) {
             <span className="text-sm font-semibold text-gray-900">{guestCount}</span>
           </div>
         )}
-        <div className="border-t border-indigo-200 pt-2 mt-2">
+        <div className="border-t border-blue-200 pt-2 mt-2">
           <div className="flex items-center justify-between">
             <span className="text-base font-bold text-gray-900">Total</span>
-            <span className="text-2xl font-bold text-indigo-600">${totalPrice}</span>
+            <span className="text-2xl font-bold text-blue-600">${totalPrice}</span>
           </div>
         </div>
       </div>
@@ -198,10 +198,10 @@ export default function BookingSidebar({ tour }: BookingSidebarProps) {
           });
           const pickupDisplay = pickupInfo 
             ? ('name' in pickupInfo ? pickupInfo.name : pickupInfo.address)
-            : '未选择';
-          alert(`预订 ${guestCount} 位客人，日期：${selectedDate?.toLocaleDateString()}\n接送点：${pickupDisplay}`);
+            : 'Not selected';
+          alert(`Booking ${guestCount} guest(s), Date: ${selectedDate?.toLocaleDateString()}\nPickup Point: ${pickupDisplay}`);
         }}
-        className="w-full px-6 py-4 bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg"
+        className="w-full px-6 py-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg"
       >
         Check Availability
       </button>

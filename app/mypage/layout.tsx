@@ -98,7 +98,7 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
               <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-8 transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
                 <div className="flex flex-col items-center">
                   {avatar ? (
-                    <div className="w-24 h-24 rounded-2xl overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center mb-4 shadow-[0_8px_20px_rgba(99,102,241,0.3)]">
+                    <div className="w-24 h-24 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-500 via-blue-600 to-orange-500 flex items-center justify-center mb-4 shadow-[0_8px_20px_rgba(59,130,246,0.3)]">
                       <Image
                         src={avatar}
                         alt="Profile"
@@ -108,7 +108,7 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                       />
                     </div>
                   ) : (
-                    <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white text-2xl font-bold mb-4 shadow-[0_8px_20px_rgba(99,102,241,0.3)]">
+                    <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-blue-500 via-blue-600 to-orange-500 flex items-center justify-center text-white text-2xl font-bold mb-4 shadow-[0_8px_20px_rgba(59,130,246,0.3)]">
                       {getInitials(userInfo.name)}
                     </div>
                   )}
@@ -129,14 +129,14 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                           href={item.path}
                           className={`w-full flex items-center gap-3.5 px-5 py-4 rounded-xl text-base font-medium transition-all duration-200 ${
                             isActive
-                              ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-[0_4px_12px_rgba(99,102,241,0.3)]'
+                              ? 'bg-gradient-to-r from-blue-600 to-orange-600 text-white shadow-[0_4px_12px_rgba(59,130,246,0.3)]'
                               : 'text-gray-700 hover:bg-gray-50/80 hover:shadow-sm active:bg-gray-100'
                           }`}
                         >
                           <div className={`w-6 h-6 rounded-lg flex items-center justify-center transition-all ${
                             isActive
                               ? 'bg-white/20 shadow-[0_2px_8px_rgba(255,255,255,0.2)]'
-                              : 'bg-gradient-to-br from-blue-500 to-indigo-600 shadow-[0_4px_12px_rgba(59,130,246,0.25)]'
+                              : 'bg-gradient-to-br from-blue-500 to-orange-500 shadow-[0_4px_12px_rgba(59,130,246,0.25)]'
                           }`}>
                             <div className="w-4 h-4">
                               <IconComponent className={`w-4 h-4 text-white`} />
@@ -179,7 +179,7 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
               <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-6">
                 <div className="flex items-center gap-4">
                   {avatar ? (
-                    <div className="w-16 h-16 rounded-xl overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-[0_8px_20px_rgba(99,102,241,0.3)]">
+                    <div className="w-16 h-16 rounded-xl overflow-hidden bg-gradient-to-br from-blue-500 via-blue-600 to-orange-500 flex items-center justify-center shadow-[0_8px_20px_rgba(59,130,246,0.3)]">
                       <Image
                         src={avatar}
                         alt="Profile"
@@ -189,7 +189,7 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                       />
                     </div>
                   ) : (
-                    <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white text-xl font-bold shadow-[0_8px_20px_rgba(99,102,241,0.3)]">
+                    <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 via-blue-600 to-orange-500 flex items-center justify-center text-white text-xl font-bold shadow-[0_8px_20px_rgba(59,130,246,0.3)]">
                       {getInitials(userInfo.name)}
                     </div>
                   )}
@@ -212,14 +212,14 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                           href={item.path}
                           className={`w-full flex items-center gap-3.5 px-5 py-4 rounded-xl text-base font-medium transition-all duration-200 ${
                             isActive
-                              ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-[0_4px_12px_rgba(99,102,241,0.3)]'
+                              ? 'bg-gradient-to-r from-blue-600 to-orange-600 text-white shadow-[0_4px_12px_rgba(59,130,246,0.3)]'
                               : 'text-gray-700 hover:bg-gray-50/80 hover:shadow-sm active:bg-gray-100'
                           }`}
                         >
                           <div className={`w-6 h-6 rounded-lg flex items-center justify-center transition-all ${
                             isActive
                               ? 'bg-white/20 shadow-[0_2px_8px_rgba(255,255,255,0.2)]'
-                              : 'bg-gradient-to-br from-blue-500 to-indigo-600 shadow-[0_4px_12px_rgba(59,130,246,0.25)]'
+                              : 'bg-gradient-to-br from-blue-500 to-orange-500 shadow-[0_4px_12px_rgba(59,130,246,0.25)]'
                           }`}>
                             <div className="w-4 h-4">
                               <IconComponent className={`w-4 h-4 text-white`} />
@@ -251,9 +251,9 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
           ) : (
             <div className="w-full space-y-4">
               <div className="flex items-center justify-between px-1">
-                <Link href="/mypage" className="text-sm text-indigo-600 font-semibold flex items-center gap-2">
+                <Link href="/mypage" className="text-sm text-blue-600 font-semibold flex items-center gap-2">
                   <span className="text-lg">←</span>
-                  返回我的页面
+                  Back to My Page
                 </Link>
                 <span className="text-sm text-gray-500">My Page</span>
               </div>

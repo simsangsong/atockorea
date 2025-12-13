@@ -23,6 +23,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
   const [promoCode, setPromoCode] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isBooking, setIsBooking] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState<'deposit' | 'full'>('deposit');
 
   const discount = tour.originalPrice ? tour.originalPrice - tour.price : 0;
   const discountPercent = tour.originalPrice ? Math.round((discount / tour.originalPrice) * 100) : 0;
@@ -55,7 +56,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
           </div>
         )}
         <div className="flex items-baseline gap-2">
-          <span className="text-3xl font-bold text-indigo-600">${tour.price}</span>
+          <span className="text-3xl font-bold text-blue-600">${tour.price}</span>
           <span className="text-sm text-gray-500">/ {tour.priceType}</span>
         </div>
         {tour.priceType === 'person' && (
@@ -84,7 +85,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
             onChange={(date) => setSelectedDate(date)}
             minDate={new Date()}
             placeholderText="Choose a date"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
             dateFormat="MMMM d, yyyy"
           />
         </div>
@@ -162,7 +163,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
           <select
             value={selectedPickup || ''}
             onChange={(e) => setSelectedPickup(Number(e.target.value))}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
           >
             <option value="">Select pickup point</option>
             {tour.pickupPoints.map((point) => (
@@ -174,7 +175,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
           {selectedPickup && (
             <div className="mt-2 p-3 bg-gray-50 rounded-lg">
               <div className="flex items-start gap-2">
-                <MapIcon className="w-5 h-5 text-indigo-600 mt-0.5" />
+                <MapIcon className="w-5 h-5 text-blue-600 mt-0.5" />
                 <div>
                   <p className="text-sm font-medium text-gray-900">
                     {tour.pickupPoints.find((p) => p.id === selectedPickup)?.name}
@@ -199,7 +200,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
               value={promoCode}
               onChange={(e) => setPromoCode(e.target.value.toUpperCase())}
               placeholder="Enter code"
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none"
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
             />
             <button className="px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-colors">
               Apply
@@ -212,7 +213,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
       </div>
 
       {/* Price Summary */}
-      <div className="mt-6 p-4 bg-indigo-50 rounded-lg border border-indigo-200">
+      <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
         <div className="space-y-2 mb-3">
           {tour.priceType === 'person' && (
             <>
@@ -235,42 +236,126 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
             </div>
           )}
         </div>
-        <div className="border-t border-indigo-200 pt-3">
+        <div className="border-t border-blue-200 pt-3">
           <div className="flex items-center justify-between">
             <span className="text-lg font-bold text-gray-900">Total</span>
-            <span className="text-2xl font-bold text-indigo-600">${totalPrice.toFixed(2)}</span>
+            <span className="text-2xl font-bold text-blue-600">${totalPrice.toFixed(2)}</span>
           </div>
         </div>
       </div>
+
+      {/* Payment Method Selection - Compact & Elegant */}
+      <div className="mt-5">
+        <label className="block text-xs font-medium text-gray-600 mb-2.5">
+          Payment Method <span className="text-red-500">*</span>
+        </label>
+        <div className="grid grid-cols-2 gap-2.5">
+          {/* Deposit + Cash on Site Button */}
+          <button
+            type="button"
+            onClick={() => setPaymentMethod('deposit')}
+            className={`relative px-3 py-3.5 rounded-lg font-semibold text-white transition-all duration-200 ${
+              paymentMethod === 'deposit'
+                ? 'bg-blue-600 ring-2 ring-blue-300 shadow-md'
+                : 'bg-blue-500 hover:bg-blue-600 shadow-sm hover:shadow-md'
+            }`}
+          >
+            <div className="flex flex-col items-center gap-0.5">
+              <span className="text-sm font-bold leading-tight">Deposit + Cash</span>
+              <span className="text-[10px] opacity-90 leading-tight">Pay deposit online</span>
+              <span className="text-[10px] opacity-90 leading-tight">Pay balance on site</span>
+            </div>
+            {paymentMethod === 'deposit' && (
+              <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-sm">
+                <svg className="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              </div>
+            )}
+          </button>
+
+          {/* Full Payment on Site Button */}
+          <button
+            type="button"
+            onClick={() => setPaymentMethod('full')}
+            className={`relative px-3 py-3.5 rounded-lg font-semibold text-white transition-all duration-200 ${
+              paymentMethod === 'full'
+                ? 'bg-orange-600 ring-2 ring-orange-300 shadow-md'
+                : 'bg-orange-500 hover:bg-orange-600 shadow-sm hover:shadow-md'
+            }`}
+          >
+            <div className="flex flex-col items-center gap-0.5">
+              <span className="text-sm font-bold leading-tight">Full Payment</span>
+              <span className="text-[10px] opacity-90 leading-tight">Pay on site</span>
+              <span className="text-[10px] opacity-90 leading-tight">Cash payment</span>
+            </div>
+            {paymentMethod === 'full' && (
+              <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-sm">
+                <svg className="w-3 h-3 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              </div>
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Payment Summary - Compact */}
+      {paymentMethod === 'deposit' && (
+        <div className="mt-3 p-2.5 bg-blue-50/80 rounded-lg border border-blue-200/60">
+          <div className="flex items-center justify-between text-xs">
+            <span className="text-gray-600 font-medium">Deposit (30%)</span>
+            <span className="font-semibold text-blue-700">${(totalPrice * 0.3).toFixed(2)}</span>
+          </div>
+          <div className="flex items-center justify-between text-xs mt-1.5">
+            <span className="text-gray-500">Balance (on site)</span>
+            <span className="font-semibold text-gray-700">${(totalPrice * 0.7).toFixed(2)}</span>
+          </div>
+        </div>
+      )}
 
       {/* Book Button */}
       <button
         onClick={handleCheckAvailability}
         disabled={!selectedDate || isLoading || isBooking}
-        className="w-full mt-6 px-6 py-4 bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg"
+        className="w-full mt-6 px-6 py-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg"
       >
-        {isLoading ? 'Checking...' : isBooking ? 'Booking...' : 'Check Availability & Book'}
+        {isLoading 
+          ? 'Checking...' 
+          : isBooking 
+          ? 'Booking...' 
+          : paymentMethod === 'deposit'
+          ? 'Pay Deposit & Book'
+          : 'Reserve & Pay on Site'}
       </button>
 
-      {/* Trust Badges */}
-      <div className="mt-6 pt-6 border-t border-gray-200 space-y-3">
-        <div className="flex items-center gap-2 text-sm text-gray-600">
-          <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span>Free cancellation up to 24 hours</span>
-        </div>
-        <div className="flex items-center gap-2 text-sm text-gray-600">
-          <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span>Instant confirmation</span>
-        </div>
-        <div className="flex items-center gap-2 text-sm text-gray-600">
-          <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-          </svg>
-          <span>24/7 customer support</span>
+      {/* Trust Badges - Compact & Elegant Design */}
+      <div className="mt-4 pt-4 border-t border-gray-100">
+        <div className="grid grid-cols-1 gap-2">
+          <div className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-green-50/50 hover:bg-green-50 transition-colors">
+            <div className="flex-shrink-0 w-4 h-4 rounded-full bg-green-100 flex items-center justify-center">
+              <svg className="w-2.5 h-2.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <span className="text-xs text-gray-600 font-medium">Free cancellation up to 24 hours</span>
+          </div>
+          <div className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-blue-50/50 hover:bg-blue-50 transition-colors">
+            <div className="flex-shrink-0 w-4 h-4 rounded-full bg-blue-100 flex items-center justify-center">
+              <svg className="w-2.5 h-2.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span className="text-xs text-gray-600 font-medium">Instant confirmation</span>
+          </div>
+          <div className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-purple-50/50 hover:bg-purple-50 transition-colors">
+            <div className="flex-shrink-0 w-4 h-4 rounded-full bg-purple-100 flex items-center justify-center">
+              <svg className="w-2.5 h-2.5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <span className="text-xs text-gray-600 font-medium">24/7 customer support</span>
+          </div>
         </div>
       </div>
     </div>

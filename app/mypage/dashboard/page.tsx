@@ -34,7 +34,7 @@ export default function DashboardPage() {
         >
           <div className="flex items-center justify-between mb-4">
             <span className="text-base font-medium text-gray-600 tracking-wide">Upcoming Tours</span>
-            <div className="w-7 h-7 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-white shadow-[0_4px_12px_rgba(59,130,246,0.3)] group-hover:scale-110 transition-transform duration-300">
+            <div className="w-7 h-7 bg-gradient-to-br from-blue-500 to-orange-500 rounded-lg flex items-center justify-center text-white shadow-[0_4px_12px_rgba(59,130,246,0.3)] group-hover:scale-110 transition-transform duration-300">
               <div className="w-4 h-4">
                 <CalendarIcon className="w-4 h-4" />
               </div>

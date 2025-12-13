@@ -107,7 +107,7 @@ export default function TourCard({
           </p>
           
           {/* Title */}
-          <h3 className="text-sm font-medium text-gray-900 mb-2 line-clamp-2 leading-snug group-hover:text-indigo-600 transition-colors">
+          <h3 className="text-sm font-medium text-gray-900 mb-2 line-clamp-2 leading-snug group-hover:text-blue-600 transition-colors">
             {displayTitle}
           </h3>
           

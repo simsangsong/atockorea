@@ -52,7 +52,7 @@ export default function PickupPointSelector({
       const lat = e.latLng.lat();
       const lng = e.latLng.lng();
 
-      // 反向地理编码获取地址
+      // Reverse geocoding to get address
       setIsGeocoding(true);
       try {
         const geocoder = new google.maps.Geocoder();
@@ -97,7 +97,7 @@ export default function PickupPointSelector({
     setSelectedLocation(location);
     onLocationSelect(location);
 
-    // 移动地图到选中位置
+    // Move map to selected location
     if (map) {
       map.setCenter({ lat, lng });
       map.setZoom(15);
@@ -114,38 +114,32 @@ export default function PickupPointSelector({
 
   return (
     <div className={`w-full ${className}`}>
-      <LoadScript 
-        googleMapsApiKey={apiKey} 
-        libraries={['places']}
-        loadingElement={<div style={{ height: '100%' }}>Loading...</div>}
-      >
-        {/* 搜索框 */}
-        <div className="mb-4">
+      {/* Search Box */}
+      <div className="mb-4">
+        <LoadScript googleMapsApiKey={apiKey} libraries={['places']}>
           <Autocomplete
             onLoad={onAutocompleteLoad}
             onPlaceChanged={onPlaceChanged}
             options={{
               types: ['establishment', 'geocode'],
-              componentRestrictions: { country: 'kr' }, // 限制为韩国
+              componentRestrictions: { country: 'kr' }, // Restrict to Korea
             }}
           >
             <input
               ref={searchInputRef}
               type="text"
-              placeholder="搜索地点或在地图上点击选择..."
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
+              placeholder="Search location or click on map to select..."
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
             />
           </Autocomplete>
-        </div>
+        </LoadScript>
+      </div>
 
-        {/* 地图 */}
-        <div 
-          className="rounded-lg overflow-hidden shadow-lg border border-gray-200" 
-          style={{ height, minHeight: '200px' }}
-          data-map-container
-        >
+      {/* Map */}
+      <div className="rounded-lg overflow-hidden shadow-lg border border-gray-200" style={{ height }}>
+        <LoadScript googleMapsApiKey={apiKey} libraries={['places']}>
           <GoogleMap
-            mapContainerStyle={{ width: '100%', height: '100%', minHeight: '200px' }}
+            mapContainerStyle={{ width: '100%', height: '100%' }}
             center={selectedLocation || defaultCenter}
             zoom={selectedLocation ? 15 : 13}
             onLoad={onMapLoad}
@@ -189,30 +183,30 @@ export default function PickupPointSelector({
               />
             )}
           </GoogleMap>
-        </div>
-      </LoadScript>
+        </LoadScript>
+      </div>
 
-      {/* 选中位置信息 */}
+      {/* Selected Location Info */}
       {selectedLocation && (
-        <div className="mt-4 p-4 bg-indigo-50 rounded-lg border border-indigo-200">
+        <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
           <div className="flex items-start gap-3">
             <div className="flex-1">
-              <p className="text-sm font-medium text-gray-700 mb-1">选中的接送点：</p>
+              <p className="text-sm font-medium text-gray-700 mb-1">Selected Pickup Point:</p>
               <p className="text-sm text-gray-900 font-semibold">{selectedLocation.address}</p>
               <p className="text-xs text-gray-500 mt-1">
-                坐标: {selectedLocation.lat.toFixed(6)}, {selectedLocation.lng.toFixed(6)}
+                Coordinates: {selectedLocation.lat.toFixed(6)}, {selectedLocation.lng.toFixed(6)}
               </p>
             </div>
             {isGeocoding && (
-              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-indigo-600"></div>
+              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
             )}
           </div>
         </div>
       )}
 
-      {/* 提示信息 */}
+      {/* Tip */}
       <p className="mt-2 text-xs text-gray-500">
-        💡 提示：在地图上点击选择位置，或使用搜索框搜索地点
+        💡 Tip: Click on the map to select a location, or use the search box to find a place
       </p>
     </div>
   );

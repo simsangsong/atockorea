@@ -52,7 +52,7 @@ export default function FAQ({ faqs }: FAQProps) {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search FAQs..."
-              className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none"
+              className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
             />
             <svg
               className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
@@ -66,7 +66,7 @@ export default function FAQ({ faqs }: FAQProps) {
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none"
+            className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
           >
             {categories.map((cat) => (
               <option key={cat} value={cat}>
@@ -80,7 +80,7 @@ export default function FAQ({ faqs }: FAQProps) {
         <div className="flex gap-2 mb-4">
           <button
             onClick={expandAll}
-            className="px-4 py-2 text-sm text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors"
+            className="px-4 py-2 text-sm text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
           >
             Expand All
           </button>
@@ -101,7 +101,7 @@ export default function FAQ({ faqs }: FAQProps) {
           filteredFAQs.map((faq, index) => (
             <div
               key={index}
-              className="border border-gray-200 rounded-lg overflow-hidden transition-all hover:border-indigo-300"
+              className="border border-gray-200 rounded-lg overflow-hidden transition-all hover:border-blue-300"
             >
               <button
                 onClick={() => toggleFAQ(index)}
@@ -127,7 +127,7 @@ export default function FAQ({ faqs }: FAQProps) {
                 <div className="px-5 py-4 bg-gray-50 border-t border-gray-200">
                   <p className="text-gray-700 leading-relaxed whitespace-pre-line">{faq.answer}</p>
                   <div className="mt-4 pt-4 border-t border-gray-200">
-                    <button className="text-sm text-indigo-600 hover:text-indigo-700 font-medium">
+                    <button className="text-sm text-blue-600 hover:text-blue-700 font-medium">
                       Was this helpful?
                     </button>
                   </div>

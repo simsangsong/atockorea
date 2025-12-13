@@ -13,7 +13,7 @@ export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
-  // 检测当前路径，判断是否在深色背景页面
+  // Detect current path to determine if on dark background page
   const isDarkPage = pathname === '/signin' || pathname === '/signup';
 
   // Listen for search open event
@@ -58,11 +58,11 @@ export default function Header() {
               onClick={toggleLanguage}
               className={`px-2 sm:px-3 py-1.5 text-xs sm:text-sm font-medium transition-colors ${
                 isDarkPage 
-                  ? 'text-gray-300 hover:text-indigo-400' 
-                  : 'text-gray-700 hover:text-indigo-600'
+                  ? 'text-gray-300 hover:text-blue-400' 
+                  : 'text-gray-700 hover:text-blue-600'
               }`}
             >
-              {language === "en" ? "EN" : "中文"}
+              {language === "en" ? "EN" : "CN"}
             </button>
 
             {/* Search Icon */}
@@ -70,8 +70,8 @@ export default function Header() {
               onClick={() => setIsSearchOpen(true)}
               className={`p-2 transition-colors ${
                 isDarkPage 
-                  ? 'text-gray-300 hover:text-indigo-400' 
-                  : 'text-gray-600 hover:text-indigo-600'
+                  ? 'text-gray-300 hover:text-blue-400' 
+                  : 'text-gray-600 hover:text-blue-600'
               }`}
               aria-label="Search"
             >
@@ -83,13 +83,13 @@ export default function Header() {
               href="/signin"
               className={`group flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
                 isDarkPage 
-                  ? 'bg-indigo-500/10 text-indigo-300 border border-indigo-400/30 hover:bg-indigo-500/20 hover:border-indigo-400/50' 
+                  ? 'bg-blue-500/10 text-blue-300 border border-blue-400/30 hover:bg-blue-500/20 hover:border-blue-400/50' 
                   : 'bg-gray-50 text-gray-700 border border-gray-200 hover:bg-gray-100 hover:border-gray-300 hover:shadow-sm'
               }`}
               title="Sign In"
             >
               <UserIcon className={`w-4 h-4 sm:w-4 sm:h-4 transition-transform group-hover:scale-110 flex-shrink-0 ${
-                isDarkPage ? 'text-indigo-300' : 'text-gray-600'
+                isDarkPage ? 'text-blue-300' : 'text-gray-600'
               }`} />
               <span className="hidden sm:inline">Sign In</span>
             </Link>
@@ -115,13 +115,13 @@ export default function Header() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search for tours, destinations..."
-                  className="w-full pl-10 sm:pl-12 pr-4 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm sm:text-base"
+                  className="w-full pl-10 sm:pl-12 pr-4 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm sm:text-base"
                   autoFocus
                 />
               </div>
               <button
                 type="submit"
-                className="px-4 sm:px-6 py-3 sm:py-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-semibold text-sm sm:text-base"
+                className="px-4 sm:px-6 py-3 sm:py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm sm:text-base"
               >
                 Search
               </button>

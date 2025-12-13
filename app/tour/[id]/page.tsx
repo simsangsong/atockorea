@@ -1,8 +1,7 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { useParams } from 'next/navigation';
-import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
@@ -14,95 +13,82 @@ import VisualItinerary from '@/components/tour/VisualItinerary';
 import MeetingPoint from '@/components/tour/MeetingPoint';
 import ActionButtons from '@/components/tour/ActionButtons';
 import EnhancedBookingSidebar from '@/components/tour/EnhancedBookingSidebar';
-import ReviewList from '@/components/reviews/ReviewList';
-import ReviewForm from '@/components/reviews/ReviewForm';
-import PaymentMethodsBanner from '@/components/PaymentMethodsBanner';
 
-// Sample tour data (fallback)
-const sampleTourData = {
+// Sample tour data (in production, fetch from API)
+const tourData = {
   id: 1,
-  title: 'Jeju: Eastern Jeju UNESCO Spots Day Tour',
-  tagline: 'Explore UNESCO sites and experience history, culture, and the nature of the Eastern and Northern parts of Jeju Island. Learn about the island\'s legendary Haenyeo and discover Micheongul Cave.',
-  location: 'Jeju',
-  rating: 4.9,
-  reviewCount: 991,
-  badges: ['Top rated'],
-  price: 46,
-  originalPrice: 0,
+  title: 'Gamcheon Culture Village + Haeundae',
+  tagline: 'Explore colorful art district and relax at Korea\'s most famous beach',
+  location: 'Busan',
+  rating: 4.8,
+  reviewCount: 234,
+  badges: ['Popular', 'Small-group'],
+  price: 79,
+  originalPrice: 99,
   priceType: 'person' as const,
-  availableSpots: 12,
-  duration: '10 hours',
+  availableSpots: 5,
+  duration: '8 hours',
   difficulty: 'Easy',
   groupSize: 'Max 12',
-  highlight: 'UNESCO World Heritage Sites',
+  highlight: 'Waterfall Visit',
   images: [
     {
-      url: 'https://images.unsplash.com/photo-1504817343863-5092a923803e?w=1200&q=80',
-      title: 'Hamdeok Beach',
-      description: 'One of Jeju\'s top three beaches, famous for its dazzling ocean colors. In spring, rapeseed flowers bloom beautifully along the coast.',
+      url: 'https://images.unsplash.com/photo-1534008897995-27a23e859048?w=1200&q=80',
+      title: 'Gamcheon Culture Village',
+      description: 'Explore the colorful art district known as "Korea\'s Santorini". This hillside village features vibrant murals, art galleries, and charming cafes. Walk through narrow alleys decorated with colorful houses and discover local art installations.',
     },
     {
       url: 'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=1200&q=80',
-      title: 'Seongsan Ilchulbong',
-      description: 'A UNESCO World Natural Heritage Site, this iconic volcanic tuff cone offers spectacular views and is a beloved landmark of Jeju Island.',
+      title: 'Haeundae Beach',
+      description: 'Relax at Korea\'s most famous beach. Enjoy the pristine white sand, crystal-clear waters, and various water activities. The beach is perfect for swimming, sunbathing, or simply taking a leisurely stroll along the shore.',
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1504817343863-5092a923803e?w=1200&q=80',
+      title: 'Dongbaek Island',
+      description: 'Take a scenic walk along the coastal path on Dongbaek Island. This beautiful natural area offers stunning ocean views, lush greenery, and the famous Nurimaru APEC House. Perfect for photography and peaceful contemplation.',
     },
     {
       url: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80',
-      title: 'Haenyeo Museum',
-      description: 'Learn about Jeju\'s legendary "Haenyeo"—female divers who collect seafood from the ocean floor. Their culture is recognized by UNESCO as an Intangible Cultural Heritage.',
+      title: 'Traditional Korean Lunch',
+      description: 'Experience authentic Korean cuisine at a local restaurant. Enjoy a variety of traditional dishes including kimchi, bulgogi, and fresh seafood. Our carefully selected restaurants offer the best local flavors.',
     },
     {
       url: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80',
-      title: 'Michiangul Cave at Ilchul Land',
-      description: 'Explore a fascinating lava tube system, a rare geological treasure. This cave system showcases the volcanic history of Jeju Island.',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1534008897995-27a23e859048?w=1200&q=80',
-      title: 'Seongeup Folk Village',
-      description: 'Step back in time and discover the history and culture of Jeju Island. This preserved traditional village offers insights into the island\'s unique heritage.',
+      title: 'Busan City Views',
+      description: 'Capture panoramic views of Busan from various scenic spots. The city\'s unique blend of mountains, sea, and urban landscape creates breathtaking vistas that showcase the beauty of Korea\'s second-largest city.',
     },
   ],
   quickFacts: [
-    'Free cancellation up to 24 hours in advance for a full refund',
-    'Reserve now & pay later - Keep your travel plans flexible',
-    'All admission fees included in one booking',
+    'Small group tour with maximum 12 participants',
     'Professional English-speaking guide included',
-    '4 convenient pickup locations across Jeju City',
+    'Hotel pickup and drop-off service',
+    'Traditional Korean lunch included',
   ],
   itinerary: [
-    { time: '08:30', title: 'Pickup - Ocean Suites Jeju Hotel', description: 'Pickup from Ocean Suites Jeju Hotel', icon: '🚗' },
-    { time: '08:45', title: 'Pickup - Jeju International Airport', description: 'Jeju Airport 3rd Floor, Gate 3 (Domestic Departures)', icon: '✈️' },
-    { time: '08:55', title: 'Pickup - LOTTE City Hotel Jeju', description: 'LOTTE City Hotel Jeju', icon: '🏨' },
-    { time: '09:05', title: 'Pickup - Shilla Duty-Free Jeju Store', description: 'Shilla Duty-Free Jeju Store', icon: '🛍️' },
-    { time: '10:25', title: 'Hamdeok Beach', description: 'Break time, Photo stop, Guided tour, Free time, Sightseeing, Walk, Scenic views (1 hour)', icon: '🏖️' },
-    { time: '11:45', title: 'Haenyeo Museum', description: 'Photo stop, Visit, Guided tour, Sightseeing, Arts & crafts market visit (50 minutes)', icon: '🏛️' },
-    { time: '13:00', title: 'Local Restaurant', description: 'Lunch (1 hour) Extra fee', icon: '🍜' },
-    { time: '14:30', title: 'Seongsan Ilchulbong', description: 'Photo stop, Visit, Guided tour, Free time, Sightseeing, Walk (1 hour)', icon: '🌋' },
-    { time: '15:45', title: 'Ilchul Land (Michiangul Cave)', description: 'Photo stop, Guided tour, Free time, Sightseeing, Walk (1 hour)', icon: '🕳️' },
-    { time: '17:00', title: 'Seongeup Folk Village', description: 'Photo stop, Visit, Guided tour, Free time, Sightseeing, Class (1 hour)', icon: '🏘️' },
-    { time: '18:30', title: 'Dongmun Traditional Market (Optional)', description: 'Hop-on Hop-off stop (5 minutes) Optional', icon: '🛒' },
-    { time: '18:35', title: 'Drop-off', description: 'Return to pickup locations or Jeju Dongmun Traditional Market', icon: '🏁' },
+    { time: '09:00', title: 'Hotel Pickup', description: 'Pickup from your hotel in Busan', icon: '🚗' },
+    { time: '09:30', title: 'Gamcheon Culture Village', description: 'Explore the colorful village, visit art galleries and cafes', icon: '🏯' },
+    { time: '12:00', title: 'Lunch Break', description: 'Enjoy local Korean cuisine', icon: '🍜' },
+    { time: '13:30', title: 'Haeundae Beach', description: 'Relax at the beach, enjoy water activities', icon: '🏖️' },
+    { time: '16:00', title: 'Dongbaek Island', description: 'Scenic walk along the coastal path', icon: '🌊' },
+    { time: '17:30', title: 'Return to Hotel', description: 'Drop-off at your hotel', icon: '🏨' },
   ],
   inclusions: [
-    'Admission to all admission fees',
-    'English-speaking professional guide',
-    'A vehicle (Van or Bus) & Driver',
-    'Toll fees',
-    'Parking fees',
-    'Fuel fees',
-    'No Shopping',
+    'Hotel pickup and drop-off',
+    'Professional English-speaking guide',
+    'Entrance fees to all attractions',
+    'Lunch included',
+    'Transportation in air-conditioned vehicle',
   ],
   exclusions: [
-    'Lunch (food) Fees',
     'Personal expenses',
-    'Tips or additional fees',
-    'Personal travel insurance',
+    'Optional activities',
+    'Tips for guide and driver',
   ],
   pickupPoints: [
-    { id: 1, name: 'Ocean Suites Jeju Hotel', address: 'Ocean Suites Jeju Hotel, Jeju', lat: 33.4996, lng: 126.5312 },
-    { id: 2, name: 'Jeju International Airport', address: 'Jeju Airport 3rd Floor, Gate 3 (Domestic Departures)', lat: 33.5113, lng: 126.4928 },
-    { id: 3, name: 'LOTTE City Hotel Jeju', address: 'LOTTE City Hotel Jeju, Jeju', lat: 33.5113, lng: 126.4928 },
-    { id: 4, name: 'Shilla Duty-Free Jeju Store', address: 'Shilla Duty-Free Jeju Store, Jeju', lat: 33.4996, lng: 126.5312 },
+    { id: 1, name: 'Busan Station', address: 'Busan Station, Busan', lat: 35.1156, lng: 129.0422 },
+    { id: 2, name: 'Haeundae Station', address: 'Haeundae Station, Busan', lat: 35.1631, lng: 129.1636 },
+    { id: 3, name: 'Seomyeon Station', address: 'Seomyeon Station, Busan', lat: 35.1581, lng: 129.0594 },
+    { id: 4, name: 'Gwangalli Beach', address: 'Gwangalli Beach, Busan', lat: 35.1532, lng: 129.1186 },
   ],
 };
 
@@ -110,105 +96,10 @@ export default function TourDetailPage() {
   const params = useParams();
   const tourId = params?.id;
   const bookingRef = useRef<HTMLDivElement>(null);
-  
-  const [tour, setTour] = useState<any>(sampleTourData);
-  const [reviews, setReviews] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [showReviewForm, setShowReviewForm] = useState(false);
-  const [userBookingId, setUserBookingId] = useState<string | null>(null);
 
-  // Fetch tour data and reviews
-  useEffect(() => {
-    if (tourId) {
-      fetchTourData();
-      fetchReviews();
-      checkUserBooking();
-    }
-  }, [tourId]);
-
-  const fetchTourData = async () => {
-    try {
-      const response = await fetch(`/api/tours/${tourId}`);
-      if (response.ok) {
-        const data = await response.json();
-        setTour(data.tour);
-      }
-    } catch (error) {
-      console.error('Error fetching tour:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const fetchReviews = async () => {
-    try {
-      const response = await fetch(`/api/reviews?tourId=${tourId}`);
-      if (response.ok) {
-        const data = await response.json();
-        setReviews(data.reviews || []);
-      }
-    } catch (error) {
-      console.error('Error fetching reviews:', error);
-    }
-  };
-
-  const checkUserBooking = async () => {
-    try {
-      const response = await fetch(`/api/bookings?tourId=${tourId}&status=completed`);
-      if (response.ok) {
-        const data = await response.json();
-        if (data.bookings && data.bookings.length > 0) {
-          const reviewedResponse = await fetch(`/api/reviews?tourId=${tourId}`);
-          if (reviewedResponse.ok) {
-            const reviewedData = await reviewedResponse.json();
-            const userReviewed = reviewedData.reviews?.some((r: any) => r.userId === data.bookings[0].user_id);
-            if (!userReviewed) {
-              setUserBookingId(data.bookings[0].id);
-            }
-          }
-        }
-      }
-    } catch (error) {
-      console.error('Error checking user booking:', error);
-    }
-  };
-
-  const handleReviewSubmit = async (reviewData: {
-    rating: number;
-    title: string;
-    comment: string;
-    photos: string[];
-    isAnonymous: boolean;
-  }) => {
-    try {
-      const response = await fetch('/api/reviews', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          tourId,
-          bookingId: userBookingId,
-          ...reviewData,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit review');
-      }
-
-      const data = await response.json();
-      setReviews([data.review, ...reviews]);
-      setShowReviewForm(false);
-      alert('评价提交成功！');
-      
-      // Refresh tour data to update rating
-      fetchTourData();
-    } catch (error) {
-      console.error('Error submitting review:', error);
-      alert('提交失败，请重试');
-    }
-  };
+  // In production, fetch tour data based on tourId
+  // For now, use sample data
+  const tour = tourData;
 
   // Debug: Log tourId to console
   if (typeof window !== 'undefined') {
@@ -273,19 +164,19 @@ export default function TourDetailPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
       <Header />
-      <main className="pb-32 md:pb-0">
+      <main className="pb-20 md:pb-0">
         {/* 1. Hero Image */}
         <HeroImage images={tour.images} />
 
-        {/* Title and Tagline Section - Refined Typography */}
+        {/* Title and Tagline Section - Modern Typography */}
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
           <div className="max-w-4xl">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 mb-3 leading-snug tracking-normal">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-gray-900 via-blue-800 to-orange-800 bg-clip-text text-transparent mb-4 leading-tight tracking-tight">
               {tour.title}
             </h1>
-            <p className="text-base sm:text-lg text-gray-600 font-normal leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 font-medium leading-relaxed">
               {tour.tagline}
             </p>
           </div>
@@ -300,9 +191,6 @@ export default function TourDetailPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-8 pb-8">
           {/* 3. Quick Facts */}
           <QuickFacts facts={tour.quickFacts} />
-
-          {/* Payment Methods */}
-          <PaymentMethodsBanner variant="card" />
 
           {/* 4. Gallery Grid */}
           <GalleryGrid images={tour.images} />
@@ -327,7 +215,7 @@ export default function TourDetailPage() {
                   Included
                 </h3>
                 <ul className="space-y-3">
-                  {tour.inclusions.map((item: string, index: number) => (
+                  {tour.inclusions.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <svg className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -343,7 +231,7 @@ export default function TourDetailPage() {
                   Not Included
                 </h3>
                 <ul className="space-y-3">
-                  {tour.exclusions.map((item: string, index: number) => (
+                  {tour.exclusions.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <svg className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

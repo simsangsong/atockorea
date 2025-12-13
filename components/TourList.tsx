@@ -5,14 +5,14 @@ import TourCard from "./TourCard";
 const tours = [
   {
     id: 1,
-    title: "Jeju: Eastern UNESCO Join in Tour (Seongsan, Haenyeo Show)",
+    title: "Jeju UNESCO Original Day Tour",
     location: "Jeju",
     type: "Day tour",
-    price: 46.81,
-    image: "https://images.unsplash.com/photo-1504817343863-5092a923803e?w=600&q=80",
-    badge: "Top rated",
+    price: 80,
+    image: "https://images.unsplash.com/photo-1534008897995-27a23e859048?w=600&q=80",
+    badge: "Popular",
     rating: 4.9,
-    reviewCount: 89,
+    reviewCount: 2766,
   },
   {
     id: 2,
@@ -84,7 +84,7 @@ export default function TourList() {
             </h2>
             <a
               href="/tours"
-              className="text-sm text-indigo-600 hover:text-indigo-700 font-medium"
+              className="text-sm text-blue-600 hover:text-blue-700 font-medium"
             >
               See more
             </a>

@@ -48,7 +48,7 @@ export default function DetailedTourCard({ tour }: DetailedTourCardProps) {
     <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 overflow-hidden hover:shadow-xl transition-shadow">
       {/* Mobile: 4-Grid Layout */}
       <div className="grid grid-cols-2 gap-2 p-3 sm:hidden">
-        {/* Top Left: Image (缩小) */}
+        {/* Top Left: Image (reduced size) */}
         <div className="col-span-1 row-span-1 relative">
           <Link href={`/tour/${tour.id}`}>
             <div className="relative h-full w-full min-h-[100px] rounded-lg overflow-hidden">
@@ -74,7 +74,7 @@ export default function DetailedTourCard({ tour }: DetailedTourCardProps) {
             <button
               onClick={handleAddToCart}
               disabled={isAdding}
-              className="p-1.5 bg-indigo-100 hover:bg-indigo-200 text-indigo-600 rounded-lg transition-all shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+              className="p-1.5 bg-blue-100 hover:bg-blue-200 text-blue-600 rounded-lg transition-all shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
               title="Add to Cart"
             >
               <CartIcon className="w-3.5 h-3.5" />
@@ -98,9 +98,9 @@ export default function DetailedTourCard({ tour }: DetailedTourCardProps) {
 
         {/* Bottom Left: Title & Price */}
         <div className="col-span-1 row-span-1 flex flex-col justify-start gap-1">
-          {/* Title (在上) */}
+          {/* Title (on top) */}
           <Link href={`/tour/${tour.id}`}>
-            <h2 className="text-xs font-bold text-gray-900 line-clamp-2 hover:text-indigo-600 transition-colors leading-tight">
+            <h2 className="text-xs font-bold text-gray-900 line-clamp-2 hover:text-blue-600 transition-colors leading-tight">
               {tour.title}
             </h2>
           </Link>
@@ -111,9 +111,9 @@ export default function DetailedTourCard({ tour }: DetailedTourCardProps) {
             <span className="text-[10px] font-semibold text-gray-700">{tour.rating}</span>
             <span className="text-[10px] text-gray-500">({tour.reviewCount})</span>
           </div>
-          {/* Price (在下) */}
+          {/* Price (below) */}
           <div className="flex items-baseline gap-1.5">
-            <span className="text-base font-bold text-indigo-600">${tour.price}</span>
+            <span className="text-base font-bold text-blue-600">${tour.price}</span>
             {hasDiscount && (
               <span className="text-xs text-gray-400 line-through">${tour.originalPrice}</span>
             )}
@@ -121,13 +121,13 @@ export default function DetailedTourCard({ tour }: DetailedTourCardProps) {
           </div>
         </div>
 
-        {/* Bottom Right: Itinerary Timeline (单排) */}
+        {/* Bottom Right: Itinerary Timeline (single row) */}
         <div className="col-span-1 row-span-1 flex flex-col justify-start">
           <div className="flex flex-col gap-1">
             {tour.itinerary.map((item, idx) => (
               <div key={idx} className="flex items-start gap-1.5">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="w-1.5 h-1.5 rounded-full bg-indigo-500"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
                 </div>
                 <span className="text-[12.96px] font-semibold text-gray-700 leading-snug flex-1">
                   {item}
@@ -166,7 +166,7 @@ export default function DetailedTourCard({ tour }: DetailedTourCardProps) {
             {/* Title and Rating */}
             <div className="mb-4">
               <Link href={`/tour/${tour.id}`}>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2 hover:text-indigo-600 transition-colors line-clamp-2">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors line-clamp-2">
                   {tour.title}
                 </h2>
               </Link>
@@ -190,7 +190,7 @@ export default function DetailedTourCard({ tour }: DetailedTourCardProps) {
             {/* Price */}
             <div className="mb-4">
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-bold text-indigo-600">${tour.price}</span>
+                <span className="text-4xl font-bold text-blue-600">${tour.price}</span>
                 {hasDiscount && (
                   <span className="text-lg text-gray-400 line-through">${tour.originalPrice}</span>
                 )}
@@ -237,7 +237,7 @@ export default function DetailedTourCard({ tour }: DetailedTourCardProps) {
             <button
               onClick={handleAddToCart}
               disabled={isAdding}
-              className="w-full px-4 py-3 bg-indigo-100 hover:bg-indigo-200 text-indigo-600 font-semibold rounded-lg transition-colors shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full px-4 py-3 bg-blue-100 hover:bg-blue-200 text-blue-600 font-semibold rounded-lg transition-colors shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               title="Add to Cart"
             >
               <CartIcon className="w-5 h-5" />
@@ -245,7 +245,7 @@ export default function DetailedTourCard({ tour }: DetailedTourCardProps) {
             </button>
             <Link
               href={`/tour/${tour.id}`}
-              className="w-full px-4 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg text-center text-base"
+              className="w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg text-center text-base"
             >
               View Details
             </Link>

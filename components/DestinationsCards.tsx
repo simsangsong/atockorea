@@ -32,20 +32,20 @@ export default function DestinationsCards() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 mb-3">
-            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
-            <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
-            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
+            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-gray-900 via-indigo-700 to-gray-900 bg-clip-text text-transparent mb-2">
+          <h2 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-gray-900 via-blue-700 to-orange-700 bg-clip-text text-transparent mb-2">
             Popular Destinations
           </h2>
           <p className="text-sm sm:text-base text-gray-500 font-medium">
             Discover the most beautiful places in Korea
           </p>
           <div className="inline-flex items-center gap-2 mt-3">
-            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
-            <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
-            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
+            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
           </div>
         </div>
         {/* Horizontal scroll for all devices */}

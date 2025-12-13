@@ -7,11 +7,9 @@ import { useState, useEffect } from 'react';
 
 const adminMenuItems = [
   { path: '/admin', label: 'Dashboard', icon: '📊' },
-  { path: '/admin/revenue', label: '매출내역', icon: '💰' },
   { path: '/admin/merchants', label: '商家管理', icon: '🏢' },
   { path: '/admin/products', label: '产品管理', icon: '🎫' },
   { path: '/admin/orders', label: '订单管理', icon: '📦' },
-  { path: '/admin/reports', label: '评价举报', icon: '🚨' },
   { path: '/admin/analytics', label: '数据分析', icon: '📈' },
   { path: '/admin/settings', label: '系统设置', icon: '⚙️' },
 ];

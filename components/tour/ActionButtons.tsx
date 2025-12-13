@@ -18,7 +18,7 @@ export default function ActionButtons({ onCheckAvailability, onShare }: ActionBu
           {/* Primary Action - Check Availability */}
           <button
             onClick={onCheckAvailability}
-            className="flex-1 md:w-full px-4 py-2 md:py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-center flex items-center justify-center"
+            className="flex-1 md:w-full px-4 py-2 md:py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-center flex items-center justify-center"
           >
             Check Availability
           </button>

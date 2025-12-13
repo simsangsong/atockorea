@@ -57,9 +57,9 @@ export default function TrustBar() {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-gray-50 to-white rounded-lg p-3 sm:p-4 hover:from-gray-100 hover:to-gray-50 transition-all duration-300 border border-gray-200/40 hover:border-indigo-200/50 shadow-[0_2px_16px_rgba(0,0,0,0.06),0_1px_6px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_24px_rgba(0,0,0,0.1),0_2px_10px_rgba(0,0,0,0.05)] transform hover:-translate-y-0.5"
+                  className="bg-gradient-to-br from-gray-50 to-white rounded-lg p-3 sm:p-4 hover:from-gray-100 hover:to-gray-50 transition-all duration-300 border border-gray-200/40 hover:border-blue-200/50 shadow-[0_2px_16px_rgba(0,0,0,0.06),0_1px_6px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_24px_rgba(0,0,0,0.1),0_2px_10px_rgba(0,0,0,0.05)] transform hover:-translate-y-0.5"
                 >
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-white mb-2 shadow-md">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-orange-500 rounded-lg flex items-center justify-center text-white mb-2 shadow-md">
                     <div className="w-3.5 h-3.5 sm:w-4 sm:h-4">
                       {feature.icon}
                     </div>

@@ -1,36 +1,24 @@
-"use client";
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import BottomNav from '@/components/BottomNav';
+import HeroSection from '@/components/HeroSection';
+import DestinationsCards from '@/components/DestinationsCards';
+import SeasonalTours from '@/components/SeasonalTours';
+import TrustBar from '@/components/TrustBar';
 
-import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
-import TrustBar from "@/components/TrustBar";
-import DestinationsCards from "@/components/DestinationsCards";
-import PaymentMethodsBanner from "@/components/PaymentMethodsBanner";
-import SeasonalTours from "@/components/SeasonalTours";
-import TourList from "@/components/TourList";
-import Footer from "@/components/Footer";
-import BottomNav from "@/components/BottomNav";
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
       <Header />
       <main>
         <HeroSection />
-        <TrustBar />
         <DestinationsCards />
-        <PaymentMethodsBanner />
         <SeasonalTours />
-        <TourList />
+        <TrustBar />
       </main>
       <Footer />
       <BottomNav />
-      {/* Add padding bottom for mobile to account for bottom nav */}
       <div className="h-16 md:hidden" />
     </div>
   );
 }
-
-
-
-
-

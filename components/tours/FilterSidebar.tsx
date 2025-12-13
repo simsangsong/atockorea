@@ -83,7 +83,7 @@ export default function FilterSidebar({ destinations, filters, onFiltersChange }
           <h2 className="text-lg font-bold text-gray-900">Filters</h2>
           <button
             onClick={clearFilters}
-            className="text-sm text-indigo-600 hover:text-indigo-700 font-medium"
+            className="text-sm text-blue-600 hover:text-blue-700 font-medium"
           >
             Clear All
           </button>
@@ -99,7 +99,7 @@ export default function FilterSidebar({ destinations, filters, onFiltersChange }
                   type="checkbox"
                   checked={filters.destinations.includes(destination)}
                   onChange={() => toggleDestination(destination)}
-                  className="w-4 h-4 text-indigo-600 rounded focus:ring-indigo-500"
+                  className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
                 />
                 <span className="text-sm text-gray-700">{destination}</span>
               </label>
@@ -116,7 +116,7 @@ export default function FilterSidebar({ destinations, filters, onFiltersChange }
                 type="number"
                 value={filters.priceRange[0]}
                 onChange={(e) => handlePriceChange(0, Number(e.target.value))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
                 placeholder="Min"
               />
               <span className="text-gray-500">-</span>
@@ -124,7 +124,7 @@ export default function FilterSidebar({ destinations, filters, onFiltersChange }
                 type="number"
                 value={filters.priceRange[1]}
                 onChange={(e) => handlePriceChange(1, Number(e.target.value))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
                 placeholder="Max"
               />
             </div>
@@ -149,7 +149,7 @@ export default function FilterSidebar({ destinations, filters, onFiltersChange }
                   type="checkbox"
                   checked={filters.duration.includes(duration)}
                   onChange={() => toggleDuration(duration)}
-                  className="w-4 h-4 text-indigo-600 rounded focus:ring-indigo-500"
+                  className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
                 />
                 <span className="text-sm text-gray-700">{duration}</span>
               </label>
@@ -167,7 +167,7 @@ export default function FilterSidebar({ destinations, filters, onFiltersChange }
                   type="checkbox"
                   checked={filters.features.includes(feature)}
                   onChange={() => toggleFeature(feature)}
-                  className="w-4 h-4 text-indigo-600 rounded focus:ring-indigo-500"
+                  className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
                 />
                 <span className="text-sm text-gray-700">{feature}</span>
               </label>

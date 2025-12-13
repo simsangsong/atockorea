@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,12 +10,6 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "AtoC Korea - Licensed Korea-based Platform for Day Tours",
   description: "Direct connection to trusted Korea tours. Licensed Korean travel agencies, certified guides, and lower prices through direct partnerships.",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
 };
 
 export default function RootLayout({
@@ -28,7 +21,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
         {children}
-        <SpeedInsights />
       </body>
     </html>
   );

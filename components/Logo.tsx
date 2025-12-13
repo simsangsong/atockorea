@@ -12,13 +12,11 @@ export default function Logo({ className = "w-auto h-10 sm:h-12" }: { className?
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
-            {/* Creative Multi-color Gradient */}
+            {/* Blue and Orange Gradient */}
             <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#0EA5E9" />
-              <stop offset="25%" stopColor="#3B82F6" />
-              <stop offset="50%" stopColor="#6366F1" />
-              <stop offset="75%" stopColor="#8B5CF6" />
-              <stop offset="100%" stopColor="#A855F7" />
+              <stop offset="0%" stopColor="#3B82F6" />
+              <stop offset="50%" stopColor="#2563EB" />
+              <stop offset="100%" stopColor="#F97316" />
             </linearGradient>
             
             {/* Radial gradient for depth */}
@@ -106,7 +104,7 @@ export default function Logo({ className = "w-auto h-10 sm:h-12" }: { className?
       
       {/* Company Name with Enhanced Typography */}
       <div className="flex flex-col justify-center">
-        <h1 className="text-base sm:text-xl md:text-2xl font-extrabold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent leading-tight tracking-tight">
+        <h1 className="text-base sm:text-xl md:text-2xl font-extrabold bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500 bg-clip-text text-transparent leading-tight tracking-tight">
           AtoC Korea
         </h1>
         <p className="text-[9px] sm:text-[10px] md:text-xs font-semibold text-gray-500 leading-tight tracking-wider uppercase">
