@@ -246,7 +246,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
 
           {/* 기본 정보 블럭 (Klook/Viator 느낌) */}
           <div className="px-4 pb-4 pt-3 sm:px-6 sm:pb-5">
-            <h1 className="text-[20px] font-semibold sm:text-[24px]">
+            <h1 className="text-[18px] font-bold text-gray-800 sm:text-[22px] leading-tight">
               {tour.title}
             </h1>
             {tour.subtitle && (

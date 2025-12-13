@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import DatePicker from 'react-datepicker';
 import { MapIcon } from '@/components/Icons';
 
@@ -12,13 +13,15 @@ interface EnhancedBookingSidebarProps {
     priceType: 'person' | 'group';
     pickupPoints: Array<{ id: number; name: string; address: string; lat: number; lng: number }>;
     availableSpots?: number;
+    depositAmountUSD?: number; // 固定定金金额（美元）
+    balanceAmountKRW?: number; // 当天现金支付的固定金额（韩元）
   };
 }
 
 export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarProps) {
+  const router = useRouter();
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-  const [adultCount, setAdultCount] = useState(1);
-  const [childCount, setChildCount] = useState(0);
+  const [guestCount, setGuestCount] = useState(1);
   const [selectedPickup, setSelectedPickup] = useState<number | null>(null);
   const [promoCode, setPromoCode] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -27,20 +30,39 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
 
   const discount = tour.originalPrice ? tour.originalPrice - tour.price : 0;
   const discountPercent = tour.originalPrice ? Math.round((discount / tour.originalPrice) * 100) : 0;
-  const totalGuests = adultCount + childCount;
-  const childPrice = tour.priceType === 'person' ? tour.price * 0.7 : 0; // 70% for children
-  const adultTotal = tour.priceType === 'person' ? tour.price * adultCount : tour.price;
-  const childTotal = tour.priceType === 'person' ? childPrice * childCount : 0;
-  const subtotal = adultTotal + childTotal;
+  const subtotal = tour.priceType === 'person' ? tour.price * guestCount : tour.price;
   const promoDiscount = promoCode === 'SAVE10' ? subtotal * 0.1 : 0;
   const totalPrice = subtotal - promoDiscount;
 
   const handleCheckAvailability = async () => {
+    if (!selectedDate) return;
+    
     setIsLoading(true);
-    // Simulate API call
+    // Simulate API call to check availability
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setIsLoading(false);
     setIsBooking(true);
+    
+    // After checking availability, redirect to checkout
+    setTimeout(() => {
+      const bookingData = {
+        tourId: tour.id,
+        date: selectedDate.toISOString(),
+        guests: guestCount,
+        pickup: selectedPickup,
+        paymentMethod,
+        depositAmountUSD: tour.depositAmountUSD,
+        balanceAmountKRW: tour.balanceAmountKRW,
+        totalPrice,
+        promoCode: promoCode || undefined,
+      };
+      
+      // Store booking data in sessionStorage
+      sessionStorage.setItem('bookingData', JSON.stringify(bookingData));
+      
+      // Redirect to checkout page
+      router.push(`/tour/${tour.id}/checkout`);
+    }, 500);
   };
 
   return (
@@ -95,62 +117,30 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Number of Guests <span className="text-red-500">*</span>
           </label>
-          <div className="space-y-3">
-            {/* Adults */}
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-gray-900">Adults</p>
-                <p className="text-xs text-gray-500">Age 13+</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={() => setAdultCount(Math.max(1, adultCount - 1))}
-                  className="w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
-                >
-                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
-                  </svg>
-                </button>
-                <span className="text-lg font-semibold text-gray-900 min-w-[3rem] text-center">
-                  {adultCount}
-                </span>
-                <button
-                  onClick={() => setAdultCount(adultCount + 1)}
-                  className="w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
-                >
-                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                  </svg>
-                </button>
-              </div>
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium text-gray-900">Guests</p>
             </div>
-            {/* Children */}
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-gray-900">Children</p>
-                <p className="text-xs text-gray-500">Age 2-12</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={() => setChildCount(Math.max(0, childCount - 1))}
-                  className="w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
-                >
-                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
-                  </svg>
-                </button>
-                <span className="text-lg font-semibold text-gray-900 min-w-[3rem] text-center">
-                  {childCount}
-                </span>
-                <button
-                  onClick={() => setChildCount(childCount + 1)}
-                  className="w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
-                >
-                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                  </svg>
-                </button>
-              </div>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setGuestCount(Math.max(1, guestCount - 1))}
+                className="w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+              >
+                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+                </svg>
+              </button>
+              <span className="text-lg font-semibold text-gray-900 min-w-[3rem] text-center">
+                {guestCount}
+              </span>
+              <button
+                onClick={() => setGuestCount(guestCount + 1)}
+                className="w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+              >
+                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -216,18 +206,10 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
       <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
         <div className="space-y-2 mb-3">
           {tour.priceType === 'person' && (
-            <>
-              <div className="flex items-center justify-between text-sm">
-                <span className="text-gray-600">Adults ({adultCount})</span>
-                <span className="font-semibold text-gray-900">${adultTotal.toFixed(2)}</span>
-              </div>
-              {childCount > 0 && (
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600">Children ({childCount})</span>
-                  <span className="font-semibold text-gray-900">${childTotal.toFixed(2)}</span>
-                </div>
-              )}
-            </>
+            <div className="flex items-center justify-between text-sm">
+              <span className="text-gray-600">Guests ({guestCount})</span>
+              <span className="font-semibold text-gray-900">${subtotal.toFixed(2)}</span>
+            </div>
           )}
           {promoDiscount > 0 && (
             <div className="flex items-center justify-between text-sm">
@@ -254,44 +236,43 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
           <button
             type="button"
             onClick={() => setPaymentMethod('deposit')}
-            className={`relative px-3 py-3.5 rounded-lg font-semibold text-white transition-all duration-200 ${
+            className={`relative px-3 py-3.5 rounded-xl font-semibold text-white transition-all duration-200 ${
               paymentMethod === 'deposit'
-                ? 'bg-blue-600 ring-2 ring-blue-300 shadow-md'
-                : 'bg-blue-500 hover:bg-blue-600 shadow-sm hover:shadow-md'
+                ? 'bg-[#007AFF] shadow-[0_4px_12px_rgba(0,122,255,0.4)] ring-2 ring-blue-300/50'
+                : 'bg-[#007AFF] hover:bg-[#0056CC] shadow-[0_2px_8px_rgba(0,122,255,0.3)] hover:shadow-[0_4px_12px_rgba(0,122,255,0.4)]'
             }`}
           >
             <div className="flex flex-col items-center gap-0.5">
-              <span className="text-sm font-bold leading-tight">Deposit + Cash</span>
-              <span className="text-[10px] opacity-90 leading-tight">Pay deposit online</span>
-              <span className="text-[10px] opacity-90 leading-tight">Pay balance on site</span>
+              <span className="text-sm font-bold leading-tight text-white">Deposit + Cash</span>
+              <span className="text-[10px] opacity-90 leading-tight text-white">Pay deposit online</span>
+              <span className="text-[10px] opacity-90 leading-tight text-white">Pay balance on site</span>
             </div>
             {paymentMethod === 'deposit' && (
-              <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-sm">
-                <svg className="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-lg">
+                <svg className="w-3 h-3 text-[#007AFF]" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
             )}
           </button>
 
-          {/* Full Payment on Site Button */}
+          {/* Full Payment on Website Button */}
           <button
             type="button"
             onClick={() => setPaymentMethod('full')}
-            className={`relative px-3 py-3.5 rounded-lg font-semibold text-white transition-all duration-200 ${
+            className={`relative px-3 py-3.5 rounded-xl font-semibold text-white transition-all duration-200 ${
               paymentMethod === 'full'
-                ? 'bg-orange-600 ring-2 ring-orange-300 shadow-md'
-                : 'bg-orange-500 hover:bg-orange-600 shadow-sm hover:shadow-md'
+                ? 'bg-[#FF9500] shadow-[0_4px_12px_rgba(255,149,0,0.4)] ring-2 ring-orange-300/50'
+                : 'bg-[#FF9500] hover:bg-[#CC7700] shadow-[0_2px_8px_rgba(255,149,0,0.3)] hover:shadow-[0_4px_12px_rgba(255,149,0,0.4)]'
             }`}
           >
             <div className="flex flex-col items-center gap-0.5">
-              <span className="text-sm font-bold leading-tight">Full Payment</span>
-              <span className="text-[10px] opacity-90 leading-tight">Pay on site</span>
-              <span className="text-[10px] opacity-90 leading-tight">Cash payment</span>
+              <span className="text-sm font-bold leading-tight text-white">Full Payment</span>
+              <span className="text-[10px] opacity-90 leading-tight text-white">Pay the full amount online in advance</span>
             </div>
             {paymentMethod === 'full' && (
-              <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-sm">
-                <svg className="w-3 h-3 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+              <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-lg">
+                <svg className="w-3 h-3 text-[#FF9500]" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
@@ -301,15 +282,15 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
       </div>
 
       {/* Payment Summary - Compact */}
-      {paymentMethod === 'deposit' && (
+      {paymentMethod === 'deposit' && tour.depositAmountUSD && tour.balanceAmountKRW && (
         <div className="mt-3 p-2.5 bg-blue-50/80 rounded-lg border border-blue-200/60">
           <div className="flex items-center justify-between text-xs">
-            <span className="text-gray-600 font-medium">Deposit (30%)</span>
-            <span className="font-semibold text-blue-700">${(totalPrice * 0.3).toFixed(2)}</span>
+            <span className="text-gray-600 font-medium">Deposit (USD)</span>
+            <span className="font-semibold text-blue-700">${tour.depositAmountUSD.toFixed(2)}</span>
           </div>
           <div className="flex items-center justify-between text-xs mt-1.5">
-            <span className="text-gray-500">Balance (on site)</span>
-            <span className="font-semibold text-gray-700">${(totalPrice * 0.7).toFixed(2)}</span>
+            <span className="text-gray-500">Balance (cash on site)</span>
+            <span className="font-semibold text-gray-700">₩{tour.balanceAmountKRW.toLocaleString()}</span>
           </div>
         </div>
       )}
@@ -326,7 +307,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
           ? 'Booking...' 
           : paymentMethod === 'deposit'
           ? 'Pay Deposit & Book'
-          : 'Reserve & Pay on Site'}
+          : 'Pay Full Amount on Website'}
       </button>
 
       {/* Trust Badges - Compact & Elegant Design */}

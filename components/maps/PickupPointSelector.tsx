@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback, useRef } from 'react';
-import { GoogleMap, LoadScript, Marker, Autocomplete } from '@react-google-maps/api';
+import { GoogleMap, useLoadScript, Marker, Autocomplete } from '@react-google-maps/api';
 import { mapOptions, defaultCenter } from '@/lib/google-maps';
 
 interface PickupPointSelectorProps {
@@ -36,6 +36,11 @@ export default function PickupPointSelector({
   const searchInputRef = useRef<HTMLInputElement>(null);
 
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: apiKey || '',
+    libraries: ['places'],
+  });
 
   const onMapLoad = useCallback((map: google.maps.Map) => {
     setMap(map);
@@ -112,78 +117,96 @@ export default function PickupPointSelector({
     );
   }
 
+  if (loadError) {
+    return (
+      <div className={`w-full bg-red-50 rounded-lg flex items-center justify-center border border-red-200 ${className}`} style={{ height }}>
+        <div className="text-center p-4">
+          <p className="text-red-600 font-semibold mb-1">Error loading Google Maps</p>
+          <p className="text-red-500 text-sm">{loadError.message || 'Failed to load Google Maps API'}</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!isLoaded) {
+    return (
+      <div className={`w-full bg-gray-100 rounded-lg flex items-center justify-center ${className}`} style={{ height }}>
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
+          <p className="text-gray-600 text-sm">Loading map...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={`w-full ${className}`}>
       {/* Search Box */}
       <div className="mb-4">
-        <LoadScript googleMapsApiKey={apiKey} libraries={['places']}>
-          <Autocomplete
-            onLoad={onAutocompleteLoad}
-            onPlaceChanged={onPlaceChanged}
-            options={{
-              types: ['establishment', 'geocode'],
-              componentRestrictions: { country: 'kr' }, // Restrict to Korea
-            }}
-          >
-            <input
-              ref={searchInputRef}
-              type="text"
-              placeholder="Search location or click on map to select..."
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
-            />
-          </Autocomplete>
-        </LoadScript>
+        <Autocomplete
+          onLoad={onAutocompleteLoad}
+          onPlaceChanged={onPlaceChanged}
+          options={{
+            types: ['establishment', 'geocode'],
+            componentRestrictions: { country: 'kr' }, // Restrict to Korea
+          }}
+        >
+          <input
+            ref={searchInputRef}
+            type="text"
+            placeholder="Search location or click on map to select..."
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+          />
+        </Autocomplete>
       </div>
 
       {/* Map */}
       <div className="rounded-lg overflow-hidden shadow-lg border border-gray-200" style={{ height }}>
-        <LoadScript googleMapsApiKey={apiKey} libraries={['places']}>
-          <GoogleMap
-            mapContainerStyle={{ width: '100%', height: '100%' }}
-            center={selectedLocation || defaultCenter}
-            zoom={selectedLocation ? 15 : 13}
-            onLoad={onMapLoad}
-            onUnmount={onMapUnmount}
-            onClick={onMapClick}
-            options={mapOptions}
-          >
-            {selectedLocation && (
-              <Marker
-                position={selectedLocation}
-                title={selectedLocation.address}
-                draggable={true}
-                onDragEnd={async (e) => {
-                  if (!e.latLng) return;
-                  const lat = e.latLng.lat();
-                  const lng = e.latLng.lng();
+        <GoogleMap
+          mapContainerStyle={{ width: '100%', height: '100%' }}
+          center={selectedLocation || defaultCenter}
+          zoom={selectedLocation ? 15 : 13}
+          onLoad={onMapLoad}
+          onUnmount={onMapUnmount}
+          onClick={onMapClick}
+          options={mapOptions}
+        >
+          {selectedLocation && (
+            <Marker
+              position={selectedLocation}
+              title={selectedLocation.address}
+              draggable={true}
+              onDragEnd={async (e) => {
+                if (!e.latLng) return;
+                const lat = e.latLng.lat();
+                const lng = e.latLng.lng();
 
-                  setIsGeocoding(true);
-                  try {
-                    const geocoder = new google.maps.Geocoder();
-                    const response = await geocoder.geocode({ location: { lat, lng } });
-                    
-                    const address =
-                      response.results && response.results.length > 0
-                        ? response.results[0].formatted_address
-                        : `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+                setIsGeocoding(true);
+                try {
+                  const geocoder = new google.maps.Geocoder();
+                  const response = await geocoder.geocode({ location: { lat, lng } });
+                  
+                  const address =
+                    response.results && response.results.length > 0
+                      ? response.results[0].formatted_address
+                      : `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
 
-                    const location = { lat, lng, address };
-                    setSelectedLocation(location);
-                    onLocationSelect(location);
-                  } catch (error) {
-                    console.error('Geocoding error:', error);
-                    const address = `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
-                    const location = { lat, lng, address };
-                    setSelectedLocation(location);
-                    onLocationSelect(location);
-                  } finally {
-                    setIsGeocoding(false);
-                  }
-                }}
-              />
-            )}
-          </GoogleMap>
-        </LoadScript>
+                  const location = { lat, lng, address };
+                  setSelectedLocation(location);
+                  onLocationSelect(location);
+                } catch (error) {
+                  console.error('Geocoding error:', error);
+                  const address = `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+                  const location = { lat, lng, address };
+                  setSelectedLocation(location);
+                  onLocationSelect(location);
+                } finally {
+                  setIsGeocoding(false);
+                }
+              }}
+            />
+          )}
+        </GoogleMap>
       </div>
 
       {/* Selected Location Info */}

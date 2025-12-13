@@ -10,6 +10,7 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const [language, setLanguage] = useState<"en" | "zh">("en");
+  const [currency, setCurrency] = useState<"USD" | "KRW">("USD");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -38,6 +39,10 @@ export default function Header() {
     setLanguage(language === "en" ? "zh" : "en");
   };
 
+  const toggleCurrency = () => {
+    setCurrency(currency === "USD" ? "KRW" : "USD");
+  };
+
   return (
     <header className={`sticky top-0 z-50 backdrop-blur-md border-b shadow-sm ${
       isDarkPage 
@@ -51,7 +56,7 @@ export default function Header() {
             <Logo className="h-8 sm:h-10 md:h-12" />
           </Link>
 
-          {/* Right Side - Language, Search, Sign In */}
+          {/* Right Side - Language, Currency, Search, Sign In */}
           <div className="flex items-center gap-3 sm:gap-4">
             {/* Language Toggle */}
             <button
@@ -63,6 +68,19 @@ export default function Header() {
               }`}
             >
               {language === "en" ? "EN" : "CN"}
+            </button>
+
+            {/* Currency Toggle */}
+            <button
+              onClick={toggleCurrency}
+              className={`px-2 sm:px-3 py-1.5 text-xs sm:text-sm font-medium transition-colors ${
+                isDarkPage 
+                  ? 'text-gray-300 hover:text-blue-400' 
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
+              title={currency === "USD" ? "USD" : "KRW"}
+            >
+              {currency === "USD" ? "USD" : "KRW"}
             </button>
 
             {/* Search Icon */}
@@ -139,4 +157,5 @@ export default function Header() {
     </header>
   );
 }
+
 

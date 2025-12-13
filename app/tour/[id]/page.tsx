@@ -27,6 +27,8 @@ const tourData = {
   originalPrice: 99,
   priceType: 'person' as const,
   availableSpots: 5,
+  depositAmountUSD: 20, // 固定定金金额（美元）
+  balanceAmountKRW: 50000, // 当天现金支付的固定金额（韩元）
   duration: '8 hours',
   difficulty: 'Easy',
   groupSize: 'Max 12',
@@ -171,12 +173,12 @@ export default function TourDetailPage() {
         <HeroImage images={tour.images} />
 
         {/* Title and Tagline Section - Modern Typography */}
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+        <section className="container mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4">
           <div className="max-w-4xl">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-gray-900 via-blue-800 to-orange-800 bg-clip-text text-transparent mb-4 leading-tight tracking-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 leading-tight tracking-normal">
               {tour.title}
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 font-medium leading-relaxed">
+            <p className="text-base sm:text-lg md:text-lg text-gray-600 font-normal leading-relaxed">
               {tour.tagline}
             </p>
           </div>

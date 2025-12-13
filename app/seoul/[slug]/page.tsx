@@ -25,7 +25,7 @@ export default function SeoulSlugPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-4">
-      <h1 className="text-[20px] font-semibold mb-2">{tour.title}</h1>
+      <h1 className="text-[18px] font-bold text-gray-800 sm:text-[22px] mb-2 leading-tight">{tour.title}</h1>
 
       <p className="text-[12px] text-gray-600 mb-4">
         ⏱ {tour.duration} · {tour.price}

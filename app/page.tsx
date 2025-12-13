@@ -3,7 +3,9 @@ import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
 import HeroSection from '@/components/HeroSection';
 import DestinationsCards from '@/components/DestinationsCards';
+import TourList from '@/components/TourList';
 import SeasonalTours from '@/components/SeasonalTours';
+import PaymentMethodInfo from '@/components/PaymentMethodInfo';
 import TrustBar from '@/components/TrustBar';
 
 export default function HomePage() {
@@ -13,7 +15,9 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <DestinationsCards />
+        <TourList />
         <SeasonalTours />
+        <PaymentMethodInfo />
         <TrustBar />
       </main>
       <Footer />
