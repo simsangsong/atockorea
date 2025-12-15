@@ -234,32 +234,51 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   );
 }
 
+// Default fallback context for when I18nProvider is not available
+const defaultContext: I18nContextType = {
+  locale: defaultLocale,
+  setLocale: async () => {
+    // No-op fallback
+  },
+  t: (key: string, params?: Record<string, string | number>) => {
+    const keys = key.split('.');
+    let value: any = messages[defaultLocale];
+    
+    for (const k of keys) {
+      value = value?.[k];
+      if (value === undefined) {
+        // Fallback to English
+        let fallbackValue: any = messages.en;
+        for (const fk of keys) {
+          fallbackValue = fallbackValue?.[fk];
+        }
+        value = fallbackValue || key;
+        break;
+      }
+    }
+    
+    if (typeof value !== 'string') {
+      return key;
+    }
+    
+    // Replace parameters
+    if (params) {
+      const paramRegex = /\{(\w+)\}/g;
+      return value.replace(paramRegex, (match, paramKey) => {
+        return params[paramKey]?.toString() || match;
+      });
+    }
+    
+    return value;
+  },
+  localeNames,
+};
+
 export function useI18n() {
   const context = useContext(I18nContext);
-  if (!context) {
-    // Fallback for server-side rendering or when provider is not available
-    if (typeof window === 'undefined') {
-      // Server-side: return default context
-      return {
-        locale: defaultLocale,
-        setLocale: async () => {},
-        t: (key: string) => {
-          const keys = key.split('.');
-          let value: any = messages[defaultLocale];
-          for (const k of keys) {
-            value = value?.[k];
-            if (value === undefined) {
-              return key;
-            }
-          }
-          return typeof value === 'string' ? value : key;
-        },
-        localeNames,
-      };
-    }
-    throw new Error('useI18n must be used within I18nProvider');
-  }
-  return context;
+  // Always return a context - use fallback if provider is not available
+  // This prevents errors during SSR and static generation
+  return context || defaultContext;
 }
 
 export function useTranslations(namespace?: string) {
