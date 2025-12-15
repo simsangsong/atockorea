@@ -50,6 +50,7 @@ export default function Footer() {
                     alt="PayPal"
                     width={80}
                     height={22}
+                    style={{ width: 'auto', height: 'auto' }}
                     className="object-contain max-w-full max-h-full"
                   />
                 </div>
@@ -60,6 +61,7 @@ export default function Footer() {
                     alt="Stripe"
                     width={60}
                     height={20}
+                    style={{ width: 'auto', height: 'auto' }}
                     className="object-contain max-w-full max-h-full"
                   />
                 </div>

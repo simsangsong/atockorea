@@ -83,6 +83,7 @@ export default function TourCard({
             src={displayImage}
             alt={displayTitle}
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover group-hover:scale-105 transition-transform duration-300"
           />
           {/* Badge overlay (like Klook's orange banner) */}
