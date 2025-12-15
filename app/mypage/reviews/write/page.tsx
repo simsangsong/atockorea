@@ -1,5 +1,8 @@
 'use client';
 
+// Force dynamic rendering to avoid I18nProvider issues during static generation
+export const dynamic = 'force-dynamic';
+
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { StarIcon } from '@/components/Icons';

@@ -1,5 +1,8 @@
 'use client';
 
+// Force dynamic rendering for error pages
+export const dynamic = 'force-dynamic';
+
 import { useEffect } from 'react';
 import { logger } from '@/lib/logger';
 

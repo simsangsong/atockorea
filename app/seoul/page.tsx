@@ -1,6 +1,9 @@
 // app/seoul/page.tsx
 import TourCard, { Tour } from "../../components/TourCard";
 
+// Force dynamic rendering to avoid I18nProvider issues during static generation
+export const dynamic = 'force-dynamic';
+
 const seoulTours: Tour[] = [
   {
     slug: "seoul-palace-market-tour",

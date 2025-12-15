@@ -70,6 +70,18 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Update HTML lang attribute and body class based on locale
+    if (typeof window !== 'undefined') {
+      document.documentElement.lang = locale;
+      document.body.setAttribute('lang', locale);
+      // Remove old locale classes
+      document.body.classList.remove('lang-en', 'lang-ko', 'lang-zh', 'lang-zh-TW', 'lang-es', 'lang-ja');
+      // Add current locale class
+      document.body.classList.add(`lang-${locale}`);
+    }
+  }, [locale]);
+
+  useEffect(() => {
     // Load saved locale from localStorage or user settings
     const loadLocale = async () => {
       try {

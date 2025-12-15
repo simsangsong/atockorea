@@ -20,7 +20,10 @@
     "confirm": "Confirmar",
     "close": "Cerrar",
     "yes": "Sí",
-    "no": "No"
+    "no": "No",
+    "tryAgain": "Intentar de nuevo",
+    "processing": "Procesando...",
+    "adding": "Añadiendo..."
   },
   "nav": {
     "home": "Inicio",
@@ -36,6 +39,9 @@
   },
   "tour": {
     "title": "Tours",
+    "allTours": "Todos los tours",
+    "discoverAmazing": "Descubre increíbles tours en Corea",
+    "noToursFound": "No se encontraron tours. Intenta ajustar tus filtros.",
     "search": "Buscar tours...",
     "filter": "Filtrar",
     "sort": "Ordenar por",
@@ -52,42 +58,77 @@
     "checkAvailability": "Verificar disponibilidad",
     "selectDate": "Seleccionar fecha",
     "numberOfGuests": "Número de huéspedes",
+    "guests": "Huéspedes",
     "pickupLocation": "Lugar de recogida",
+    "pickupPoints": "puntos de recogida",
+    "pickup": "Recogida",
     "promoCode": "Código promocional",
+    "promoCodeOptional": "Código promocional (Opcional)",
+    "enterCode": "Ingresar código",
     "apply": "Aplicar",
     "subtotal": "Subtotal",
     "total": "Total",
     "tax": "Impuesto",
     "discount": "Descuento",
+    "discountApplied": "descuento aplicado",
     "proceedToCheckout": "Proceder al pago",
     "secureCheckout": "Pago seguro",
     "freeCancellation": "Cancelación gratuita hasta 24 horas antes",
     "instantConfirmation": "Confirmación instantánea",
-    "customerSupport": "Soporte al cliente 24/7"
+    "customerSupport": "Soporte al cliente 24/7",
+    "backToTours": "Volver a tours",
+    "tourNotFound": "Tour no encontrado",
+    "tickets": "Entradas",
+    "meals": "Comidas",
+    "included": "Incluido",
+    "notIncluded": "No incluido",
+    "itinerary": "Itinerario",
+    "pricePerPerson": "Precio por persona",
+    "difficulty": "Dificultad",
+    "groupSize": "Tamaño del grupo",
+    "highlight": "Destacado",
+    "cart": "Carrito",
+    "adding": "Añadiendo...",
+    "chooseDate": "Elegir una fecha",
+    "selectPickupPoint": "Seleccionar punto de recogida",
+    "preferredChatApp": "Aplicación de chat preferida",
+    "pleaseSelect": "Por favor selecciona",
+    "chatAppContact": "Contacto de aplicación de chat",
+    "enterChatAppId": "Ingresa tu ID de aplicación de chat o contacto"
   },
   "booking": {
     "title": "Reserva",
     "bookingDetails": "Detalles de la reserva",
+    "bookingSummary": "Resumen de la reserva",
     "tourDate": "Fecha del tour",
     "numberOfGuests": "Número de huéspedes",
     "pickupPoint": "Punto de recogida",
     "paymentMethod": "Método de pago",
     "deposit": "Depósito",
     "fullPayment": "Pago completo",
+    "depositCash": "Depósito + Efectivo",
     "payDepositOnline": "Pagar depósito en línea",
     "payBalanceOnSite": "Pagar saldo en el lugar",
+    "payOnSite": "Pagar en el lugar",
     "payFullAmountOnline": "Pagar el monto completo en línea por adelantado",
     "depositAmount": "Depósito (USD)",
     "balanceAmount": "Saldo (efectivo en el lugar)",
     "totalPrice": "Precio total",
     "customerInfo": "Información del cliente",
+    "fullName": "Nombre completo",
+    "enterFullName": "Ingresa tu nombre completo",
     "name": "Nombre",
     "email": "Correo electrónico",
+    "enterEmail": "Ingresa tu dirección de correo electrónico",
     "phone": "Teléfono",
+    "enterPhone": "Ingresa tu número de contacto",
     "specialRequests": "Solicitudes especiales",
     "confirmBooking": "Confirmar reserva",
     "bookingConfirmed": "Reserva confirmada",
-    "bookingCancelled": "Reserva cancelada"
+    "bookingCancelled": "Reserva cancelada",
+    "payDeposit": "Pagar depósito",
+    "completeBooking": "Completar reserva",
+    "processing": "Procesando..."
   },
   "cart": {
     "title": "Carrito de compras",
@@ -132,7 +173,11 @@
     "history": "Historial",
     "upcoming": "Próximos",
     "settings": "Configuración",
-    "signOut": "Cerrar sesión"
+    "signOut": "Cerrar sesión",
+    "backToMyPage": "Volver a mi página",
+    "upcomingTours": "Tours próximos",
+    "totalBookings": "Total de reservas",
+    "reviews": "Reseñas"
   },
   "admin": {
     "title": "Panel de administración",
@@ -175,9 +220,90 @@
     "tryAgain": "Intentar de nuevo",
     "notFound": "No encontrado",
     "unauthorized": "No autorizado",
-    "forbidden": "Prohibido"
+    "forbidden": "Prohibido",
+    "pleaseEnter": "Por favor ingresa",
+    "pleaseSelect": "Por favor selecciona"
+  },
+  "home": {
+    "hero": {
+      "discoverKorea": "Descubre Corea Increíble",
+      "directConnection": "Conexión directa con tours confiables de Corea",
+      "exploreJeju": "Explora la Isla de Jeju",
+      "jejuSubtitle": "Maravillas naturales y experiencias culturales",
+      "experienceBusan": "Experimenta Busan",
+      "busanSubtitle": "Belleza costera y cultura vibrante",
+      "findTour": "Encuentra Mi Tour de Día"
+    },
+    "destinations": {
+      "title": "Destinos Populares",
+      "subtitle": "Descubre los lugares más hermosos de Corea",
+      "seoul": "Seúl",
+      "seoulDesc": "Capital con rica historia",
+      "busan": "Busan",
+      "busanDesc": "Ciudad costera con hermosas playas",
+      "jeju": "Isla de Jeju",
+      "jejuDesc": "Paraíso natural y sitios UNESCO",
+      "available": "Disponible"
+    },
+    "tourList": {
+      "title": "Selección de viajeros",
+      "seeMore": "Ver más"
+    },
+    "seasonal": {
+      "title": "Especiales de Temporada",
+      "subtitle": "Ofertas por tiempo limitado para las mejores experiencias estacionales"
+    },
+    "payment": {
+      "title": "Opciones de Pago",
+      "subtitle": "Elige el método de pago que mejor te funcione",
+      "depositCash": "Depósito + Efectivo el Día",
+      "depositCashDesc": "Paga un depósito en línea para asegurar tu reserva, luego paga el saldo restante en efectivo al guía el día del tour.",
+      "depositCashBenefit": "Opción de pago más flexible",
+      "fullAmount": "Monto Completo en Línea",
+      "fullAmountDesc": "Paga el monto completo en línea por adelantado. Rápido, seguro y conveniente. No necesitas preocuparte por el efectivo el día del tour.",
+      "fullAmountBenefit": "Todos los pagos procesados de forma segura"
+    },
+    "footer": {
+      "company": "AtoC Korea",
+      "description": "Plataforma con licencia basada en Corea para tours de día en Corea. Asociación directa con agencias de viajes locales.",
+      "businessReg": "Registro Comercial",
+      "ecommerceReg": "Registro de Comercio Electrónico",
+      "address": "Dirección",
+      "contact": "Contacto",
+      "email": "Correo electrónico",
+      "securePayment": "Métodos de Pago Seguros",
+      "aboutUs": "Acerca de Nosotros",
+      "ourStory": "Nuestra Historia",
+      "whyChooseUs": "Por Qué Elegirnos",
+      "partners": "Socios",
+      "careers": "Carreras",
+      "support": "Soporte",
+      "faq": "Preguntas Frecuentes",
+      "contactUs": "Contáctanos",
+      "bookingHelp": "Ayuda con Reservas",
+      "legal": "Legal",
+      "terms": "Términos de Servicio",
+      "privacy": "Política de Privacidad",
+      "cookies": "Política de Cookies",
+      "copyright": "© 2024 AtoC Korea. All rights reserved."
+    }
+  },
+  "trustBar": {
+    "title": "Plataforma con Licencia Basada en Corea",
+    "subtitle": "Tu socio confiable para tours de día en Corea",
+    "licensedAgencies": "Agencias de Viajes Coreanas con Licencia",
+    "licensedAgenciesDesc": "Asociados con agencias locales certificadas",
+    "certifiedGuides": "Guías y Conductores Locales Certificados",
+    "certifiedGuidesDesc": "Equipo profesional y experimentado",
+    "lowerPrices": "Precios Más Bajos",
+    "lowerPricesDesc": "Asociación directa significa mejores ofertas",
+    "localExpertise": "Experiencia en el Mercado Local",
+    "localExpertiseDesc": "Comprensión profunda del turismo en Corea"
+  },
+  "tourCard": {
+    "tours": "Tours",
+    "sale": "Oferta",
+    "off": "de descuento",
+    "addedToCart": "¡añadido al carrito!"
   }
 }
-
-
-

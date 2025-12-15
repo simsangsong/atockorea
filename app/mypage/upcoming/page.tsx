@@ -1,5 +1,8 @@
 'use client';
 
+// Force dynamic rendering to avoid I18nProvider issues during static generation
+export const dynamic = 'force-dynamic';
+
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';

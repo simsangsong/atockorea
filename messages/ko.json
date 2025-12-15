@@ -20,7 +20,10 @@
     "confirm": "확인",
     "close": "닫기",
     "yes": "예",
-    "no": "아니오"
+    "no": "아니오",
+    "tryAgain": "다시 시도",
+    "processing": "처리 중...",
+    "adding": "추가 중..."
   },
   "nav": {
     "home": "홈",
@@ -36,6 +39,9 @@
   },
   "tour": {
     "title": "투어",
+    "allTours": "모든 투어",
+    "discoverAmazing": "한국의 놀라운 투어를 발견하세요",
+    "noToursFound": "투어를 찾을 수 없습니다. 필터를 조정해 보세요.",
     "search": "투어 검색...",
     "filter": "필터",
     "sort": "정렬 기준",
@@ -52,42 +58,77 @@
     "checkAvailability": "가용성 확인",
     "selectDate": "날짜 선택",
     "numberOfGuests": "인원수",
+    "guests": "인원",
     "pickupLocation": "픽업 장소",
+    "pickupPoints": "개 픽업 지점",
+    "pickup": "픽업",
     "promoCode": "프로모 코드",
+    "promoCodeOptional": "프로모 코드 (선택사항)",
+    "enterCode": "코드 입력",
     "apply": "적용",
     "subtotal": "소계",
     "total": "총액",
     "tax": "세금",
     "discount": "할인",
+    "discountApplied": "할인 적용됨",
     "proceedToCheckout": "결제하기",
     "secureCheckout": "안전한 결제",
     "freeCancellation": "24시간 전까지 무료 취소",
     "instantConfirmation": "즉시 확인",
-    "customerSupport": "24/7 고객 지원"
+    "customerSupport": "24/7 고객 지원",
+    "backToTours": "투어로 돌아가기",
+    "tourNotFound": "투어를 찾을 수 없습니다",
+    "tickets": "티켓",
+    "meals": "식사",
+    "included": "포함",
+    "notIncluded": "포함되지 않음",
+    "itinerary": "일정",
+    "pricePerPerson": "1인당 가격",
+    "difficulty": "난이도",
+    "groupSize": "그룹 크기",
+    "highlight": "하이라이트",
+    "cart": "장바구니",
+    "adding": "추가 중...",
+    "chooseDate": "날짜 선택",
+    "selectPickupPoint": "픽업 지점 선택",
+    "preferredChatApp": "선호하는 채팅 앱",
+    "pleaseSelect": "선택해주세요",
+    "chatAppContact": "채팅 앱 연락처",
+    "enterChatAppId": "채팅 앱 ID 또는 연락처를 입력하세요"
   },
   "booking": {
     "title": "예약",
     "bookingDetails": "예약 상세",
+    "bookingSummary": "예약 요약",
     "tourDate": "투어 날짜",
     "numberOfGuests": "인원수",
     "pickupPoint": "픽업 지점",
     "paymentMethod": "결제 방법",
     "deposit": "보증금",
     "fullPayment": "전액 결제",
+    "depositCash": "보증금 + 현금",
     "payDepositOnline": "온라인으로 보증금 결제",
     "payBalanceOnSite": "현장에서 잔액 결제",
+    "payOnSite": "현장에서 결제",
     "payFullAmountOnline": "사전에 전액 온라인 결제",
     "depositAmount": "보증금 (USD)",
     "balanceAmount": "잔액 (현장 현금 결제)",
     "totalPrice": "총 가격",
     "customerInfo": "고객 정보",
+    "fullName": "성명",
+    "enterFullName": "성명을 입력하세요",
     "name": "이름",
     "email": "이메일",
+    "enterEmail": "이메일 주소를 입력하세요",
     "phone": "전화번호",
+    "enterPhone": "연락처 전화번호를 입력하세요",
     "specialRequests": "특별 요청사항",
     "confirmBooking": "예약 확인",
     "bookingConfirmed": "예약 확인됨",
-    "bookingCancelled": "예약 취소됨"
+    "bookingCancelled": "예약 취소됨",
+    "payDeposit": "보증금 결제",
+    "completeBooking": "예약 완료",
+    "processing": "처리 중..."
   },
   "cart": {
     "title": "장바구니",
@@ -132,7 +173,11 @@
     "history": "이력",
     "upcoming": "예정된 투어",
     "settings": "설정",
-    "signOut": "로그아웃"
+    "signOut": "로그아웃",
+    "backToMyPage": "마이페이지로 돌아가기",
+    "upcomingTours": "예정된 투어",
+    "totalBookings": "총 예약 수",
+    "reviews": "리뷰"
   },
   "admin": {
     "title": "관리자 대시보드",
@@ -175,9 +220,90 @@
     "tryAgain": "다시 시도",
     "notFound": "찾을 수 없음",
     "unauthorized": "인증되지 않음",
-    "forbidden": "권한 없음"
+    "forbidden": "권한 없음",
+    "pleaseEnter": "입력해주세요",
+    "pleaseSelect": "선택해주세요"
+  },
+  "home": {
+    "hero": {
+      "discoverKorea": "놀라운 한국을 발견하세요",
+      "directConnection": "신뢰할 수 있는 한국 투어로의 직접 연결",
+      "exploreJeju": "제주도를 탐험하세요",
+      "jejuSubtitle": "자연의 경이로움과 문화적 경험",
+      "experienceBusan": "부산을 경험하세요",
+      "busanSubtitle": "해안의 아름다움과 활기찬 문화",
+      "findTour": "나의 당일 투어 찾기"
+    },
+    "destinations": {
+      "title": "인기 목적지",
+      "subtitle": "한국에서 가장 아름다운 곳을 발견하세요",
+      "seoul": "서울",
+      "seoulDesc": "풍부한 역사를 가진 수도",
+      "busan": "부산",
+      "busanDesc": "아름다운 해변을 가진 해안 도시",
+      "jeju": "제주도",
+      "jejuDesc": "자연의 낙원과 유네스코 유적지",
+      "available": "예약 가능"
+    },
+    "tourList": {
+      "title": "여행자 추천",
+      "seeMore": "더 보기"
+    },
+    "seasonal": {
+      "title": "시즌 특가",
+      "subtitle": "최고의 계절 경험을 위한 한정 기간 특가"
+    },
+    "payment": {
+      "title": "결제 옵션",
+      "subtitle": "가장 적합한 결제 방법을 선택하세요",
+      "depositCash": "보증금 + 당일 현금",
+      "depositCashDesc": "온라인으로 보증금을 결제하여 예약을 확보하고, 당일 가이드에게 현금으로 잔액을 결제합니다.",
+      "depositCashBenefit": "더 유연한 결제 옵션",
+      "fullAmount": "전액 온라인",
+      "fullAmountDesc": "사전에 전액을 온라인으로 결제합니다. 빠르고 안전하며 편리합니다. 당일 현금 걱정이 없습니다.",
+      "fullAmountBenefit": "모든 결제가 안전하게 처리됩니다"
+    },
+    "footer": {
+      "company": "AtoC Korea",
+      "description": "한국의 당일 투어를 위한 라이선스 취득 한국 기반 플랫폼. 현지 여행사와의 직접 파트너십.",
+      "businessReg": "사업자 등록",
+      "ecommerceReg": "전자상거래 등록",
+      "address": "주소",
+      "contact": "연락처",
+      "email": "이메일",
+      "securePayment": "안전한 결제 방법",
+      "aboutUs": "회사 소개",
+      "ourStory": "우리의 이야기",
+      "whyChooseUs": "선택하는 이유",
+      "partners": "파트너",
+      "careers": "채용",
+      "support": "지원",
+      "faq": "자주 묻는 질문",
+      "contactUs": "문의하기",
+      "bookingHelp": "예약 도움말",
+      "legal": "법적 정보",
+      "terms": "서비스 약관",
+      "privacy": "개인정보 보호정책",
+      "cookies": "쿠키 정책",
+      "copyright": "© 2024 AtoC Korea. All rights reserved."
+    }
+  },
+  "trustBar": {
+    "title": "라이선스 취득 한국 기반 플랫폼",
+    "subtitle": "한국 당일 투어의 신뢰할 수 있는 파트너",
+    "licensedAgencies": "라이선스 취득 한국 여행사",
+    "licensedAgenciesDesc": "인증된 현지 여행사와 파트너십",
+    "certifiedGuides": "인증된 현지 가이드 및 드라이버",
+    "certifiedGuidesDesc": "전문적이고 경험이 풍부한 팀",
+    "lowerPrices": "낮은 가격",
+    "lowerPricesDesc": "직접 파트너십으로 더 나은 가격 제공",
+    "localExpertise": "현지 시장 전문성",
+    "localExpertiseDesc": "한국 관광에 대한 깊은 이해"
+  },
+  "tourCard": {
+    "tours": "투어",
+    "sale": "세일",
+    "off": "할인",
+    "addedToCart": "장바구니에 추가되었습니다!"
   }
 }
-
-
-

@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { getMerchantId, requireMerchant } from '@/lib/auth';
 
+// Force dynamic rendering for API routes that use headers
+export const dynamic = 'force-dynamic';
+
 // GET /api/merchant/products - Get merchant's products (data isolated)
 export async function GET(req: NextRequest) {
   try {

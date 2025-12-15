@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 
+// Force dynamic rendering for API routes that use headers
+export const dynamic = 'force-dynamic';
+
 /**
  * GET /api/user-settings
  * Get user settings

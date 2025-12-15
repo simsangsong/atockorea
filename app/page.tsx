@@ -9,6 +9,9 @@ import PaymentMethodInfo from '@/components/PaymentMethodInfo';
 import TrustBar from '@/components/TrustBar';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
+// Force dynamic rendering to avoid I18nProvider issues during static generation
+export const dynamic = 'force-dynamic';
+
 export const metadata = generateSEOMetadata({
   title: 'AtoC Korea - Licensed Korea-based Platform for Day Tours',
   description: 'Book authentic Korean day tours with licensed travel agencies. Explore Seoul, Busan, and Jeju with certified guides. Best prices guaranteed through direct partnerships.',
