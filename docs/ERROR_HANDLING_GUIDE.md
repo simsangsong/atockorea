@@ -309,3 +309,5 @@ API 라우트 작성 시:
 - `lib/hooks/useErrorHandler.ts`: 클라이언트 사이드 에러 핸들링
 - `lib/logger.ts`: 로깅 시스템
 
+
+

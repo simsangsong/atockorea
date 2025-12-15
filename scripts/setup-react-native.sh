@@ -57,3 +57,5 @@ echo "1. .env 파일에 Supabase 정보 입력"
 echo "2. cd $PROJECT_NAME"
 echo "3. npm run android"
 
+
+

@@ -206,3 +206,5 @@ CREATE POLICY "Users can view own promo usage"
   ON promo_code_usage FOR SELECT
   USING (auth.uid() = user_id);
 
+
+

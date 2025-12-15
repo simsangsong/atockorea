@@ -136,3 +136,5 @@ After running the SQL script, you should see:
 - **Weather Dependent:** Tour may be adjusted based on weather conditions
 - **Winter Focus:** Highlights Jeju's winter beauty with snow-covered trails, camellia blossoms, and tangerine picking
 
+
+

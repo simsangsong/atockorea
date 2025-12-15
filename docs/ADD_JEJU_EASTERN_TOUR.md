@@ -103,3 +103,5 @@ After running the SQL script, you should see:
 - No-show after 10 minutes may result in no refund
 - Tour does not include any shopping stops
 
+
+

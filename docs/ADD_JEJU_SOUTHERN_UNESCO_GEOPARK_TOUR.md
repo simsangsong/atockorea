@@ -128,3 +128,5 @@ After running the SQL script, you should see:
 - Not suitable for wheelchair users or people with mobility issues
 - WhatsApp communication is used for tour updates
 
+
+

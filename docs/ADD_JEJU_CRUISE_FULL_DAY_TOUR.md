@@ -133,3 +133,5 @@ After running the SQL script, you should see:
 - **Communication:** WhatsApp is essential for coordination with guide
 - **Port Selection:** Critical to select the correct port (Jeju Port or Seogwipo Gangjeong Port)
 
+
+

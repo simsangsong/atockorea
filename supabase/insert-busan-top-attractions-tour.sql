@@ -235,3 +235,5 @@ JOIN tours t ON t.id = pp.tour_id
 WHERE t.slug = 'busan-top-attractions-authentic-one-day-tour'
 ORDER BY pp.pickup_time;
 
+
+

@@ -252,7 +252,6 @@ NEXT_PUBLIC_APP_URL=https://atockorea.com
 ```
 
 ---
-
 ## 🎨 모바일 최적화
 
 ### 터치 친화적 UI
@@ -400,4 +399,6 @@ npx cap copy
 4. 기본 빌드 테스트
 5. 네이티브 기능 통합
 6. Play Store 제출 준비
+
+
 

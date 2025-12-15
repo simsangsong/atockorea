@@ -226,3 +226,5 @@ export default function AppNavigator() {
 - [ ] 타입 정의
 - [ ] 상태 관리 설정
 
+
+

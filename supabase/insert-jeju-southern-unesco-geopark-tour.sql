@@ -240,3 +240,5 @@ JOIN tours t ON t.id = pp.tour_id
 WHERE t.slug = 'jeju-southern-unesco-geopark-day-tour'
 ORDER BY pp.pickup_time;
 
+
+

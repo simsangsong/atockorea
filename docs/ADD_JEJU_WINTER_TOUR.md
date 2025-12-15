@@ -113,3 +113,5 @@ After running the SQL script, you should see:
 - Contact information will be provided 1-2 days before the tour
 - WhatsApp communication is recommended for faster service
 
+
+

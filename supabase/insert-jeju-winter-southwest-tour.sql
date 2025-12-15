@@ -200,3 +200,5 @@ JOIN tours t ON t.id = pp.tour_id
 WHERE t.slug = 'jeju-winter-southwest-tangerine-snow-camellia-tour'
 ORDER BY pp.pickup_time;
 
+
+

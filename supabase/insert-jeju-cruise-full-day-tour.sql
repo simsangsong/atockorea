@@ -192,3 +192,5 @@ JOIN tours t ON t.id = pp.tour_id
 WHERE t.slug = 'jeju-island-full-day-tour-cruise-passengers'
 ORDER BY pp.name;
 
+
+

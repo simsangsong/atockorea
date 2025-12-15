@@ -147,3 +147,5 @@ After running the SQL script, you should see:
 - **Optional Attractions:** Busan Tower and Songdo Sky Cable Car require on-site payment
 - **Communication:** WhatsApp is essential for coordination with guide
 
+
+

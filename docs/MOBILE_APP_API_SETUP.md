@@ -137,3 +137,5 @@ const config: CapacitorConfig = {
 2. 토큰 기반 인증 구현
 3. Secure Storage 사용 (`@capacitor/preferences`)
 
+
+

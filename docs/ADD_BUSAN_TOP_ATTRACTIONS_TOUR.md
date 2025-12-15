@@ -132,3 +132,5 @@ After running the SQL script, you should see:
 - Tour ending time may vary based on traffic and conditions
 - WhatsApp communication recommended for smooth coordination
 
+
+

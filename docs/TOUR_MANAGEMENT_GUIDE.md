@@ -178,3 +178,5 @@ ERROR: duplicate key value violates unique constraint "tours_slug_key"
 - [ ] 투어 템플릿 시스템
 - [ ] 이미지 자동 업로드 기능
 
+
+

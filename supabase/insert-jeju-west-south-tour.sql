@@ -246,3 +246,5 @@ JOIN tours t ON t.id = pp.tour_id
 WHERE t.slug = 'jeju-west-south-full-day-bus-tour'
 ORDER BY pp.pickup_time;
 
+
+

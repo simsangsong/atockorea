@@ -272,3 +272,5 @@ export async function sendBookingConfirmationEmail({ ... }) {
 2. 각 이메일 유형 테스트
 3. Cron Job 설정 (리마인더)
 
+
+

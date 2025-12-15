@@ -126,3 +126,5 @@ After running the SQL script, you should see:
 - The tour may be combined with the eastern tour for a complete Jeju experience
 - Weather-dependent locations may be substituted with alternatives
 
+
+

@@ -152,3 +152,5 @@ VALUES
   ('[tour_id]', 'Shilla Duty-Free Jeju Store', 'Shilla Duty-Free Jeju Store, Jeju-si, Jeju-do', 33.4996, 126.5312, '09:05:00', true);
 ```
 
+
+
