@@ -2,11 +2,18 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { createServerClient } from '@/lib/supabase';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2024-12-18.acacia',
-});
-
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+
+// Helper to get Stripe instance (lazy initialization to avoid build-time errors)
+const getStripe = () => {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) {
+    throw new Error('STRIPE_SECRET_KEY is not configured');
+  }
+  return new Stripe(key, {
+    apiVersion: '2025-11-17.clover',
+  });
+};
 
 /**
  * POST /api/stripe/checkout
@@ -82,6 +89,11 @@ export async function POST(req: NextRequest) {
     const customerEmail = bookingData?.customerInfo?.email || null;
     const customerName = bookingData?.customerInfo?.name || null;
 
+    // Extract tour data (handle both single object and array types)
+    const tour = Array.isArray(booking.tours) ? booking.tours[0] : booking.tours;
+    const tourTitle = tour?.title || 'Tour';
+    const tourImage = tour?.image_url;
+
     // Create Stripe Checkout Session
     const sessionParams: Stripe.Checkout.SessionCreateParams = {
       payment_method_types: ['card'],
@@ -90,9 +102,9 @@ export async function POST(req: NextRequest) {
           price_data: {
             currency: currency.toLowerCase(),
             product_data: {
-              name: `Tour Booking: ${booking.tours?.title || 'Tour'}`,
+              name: `Tour Booking: ${tourTitle}`,
               description: `Booking ID: ${bookingId}`,
-              images: booking.tours?.image_url ? [booking.tours.image_url] : undefined,
+              images: tourImage ? [tourImage] : undefined,
             },
             unit_amount: amountInCents,
           },
@@ -115,10 +127,11 @@ export async function POST(req: NextRequest) {
     }
 
     // Add customer name to metadata
-    if (customerName) {
+    if (customerName && sessionParams.metadata) {
       sessionParams.metadata.customer_name = customerName;
     }
 
+    const stripe = getStripe();
     const session = await stripe.checkout.sessions.create(sessionParams);
 
     // Update booking with Stripe session ID

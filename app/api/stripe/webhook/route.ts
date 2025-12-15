@@ -3,11 +3,18 @@ import Stripe from 'stripe';
 import { createServerClient } from '@/lib/supabase';
 import { headers } from 'next/headers';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2024-12-18.acacia',
-});
-
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
+
+// Helper to get Stripe instance (lazy initialization to avoid build-time errors)
+const getStripe = () => {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) {
+    throw new Error('STRIPE_SECRET_KEY is not configured');
+  }
+  return new Stripe(key, {
+    apiVersion: '2025-11-17.clover',
+  });
+};
 
 /**
  * POST /api/stripe/webhook
@@ -36,6 +43,7 @@ export async function POST(req: NextRequest) {
     let event: Stripe.Event;
 
     try {
+      const stripe = getStripe();
       event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
     } catch (err: any) {
       console.error('Webhook signature verification failed:', err.message);
@@ -84,9 +92,11 @@ export async function POST(req: NextRequest) {
             .select(`
               id,
               tour_id,
+              user_id,
               booking_date,
               number_of_guests,
               final_price,
+              pickup_point_id,
               tours (
                 id,
                 title

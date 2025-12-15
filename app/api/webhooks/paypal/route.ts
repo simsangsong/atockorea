@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
         // Find booking by PayPal order ID in payment_provider_data
         const { data: bookings } = await supabase
           .from('bookings')
-          .select('id, tour_id, booking_date, number_of_guests, final_price, pickup_point_id, user_profiles (email, full_name), tours (id, title)')
+          .select('id, tour_id, booking_date, number_of_guests, final_price, pickup_point_id, payment_provider_data, user_profiles (email, full_name), tours (id, title)')
           .eq('status', 'pending')
           .not('payment_provider_data', 'is', null);
 
@@ -127,7 +127,7 @@ export async function POST(req: NextRequest) {
         // Find and update booking if needed
         const { data: bookings } = await supabase
           .from('bookings')
-          .select('id')
+          .select('id, payment_provider_data')
           .eq('status', 'pending')
           .not('payment_provider_data', 'is', null);
 

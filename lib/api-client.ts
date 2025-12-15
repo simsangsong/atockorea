@@ -29,18 +29,20 @@ export const apiClient = {
     const baseUrl = getApiBaseUrl();
     const url = `${baseUrl}${endpoint}`;
     
-    const headers: HeadersInit = {
-      'Content-Type': 'application/json',
-      ...options.headers,
-    };
-
     // Add auth token if available (for mobile)
+    let authHeader = {};
     if (typeof window !== 'undefined') {
       const token = localStorage.getItem('auth_token');
       if (token) {
-        headers['Authorization'] = `Bearer ${token}`;
+        authHeader = { 'Authorization': `Bearer ${token}` };
       }
     }
+
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+      ...authHeader,
+      ...(options.headers as Record<string, string>),
+    };
 
     const response = await fetch(url, {
       ...options,
