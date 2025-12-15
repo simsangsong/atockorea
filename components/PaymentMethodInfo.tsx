@@ -20,7 +20,7 @@ export default function PaymentMethodInfo() {
           
           <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
             {/* Deposit + Cash on Day Option */}
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-lg p-3 sm:p-4 border border-blue-200/50">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-lg p-3 sm:p-4 border border-blue-200/50 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer">
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center text-white">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,7 +45,7 @@ export default function PaymentMethodInfo() {
             </div>
 
             {/* Full Amount Online Option */}
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100/50 rounded-lg p-3 sm:p-4 border border-orange-200/50">
+            <div className="bg-gradient-to-br from-orange-50 to-orange-100/50 rounded-lg p-3 sm:p-4 border border-orange-200/50 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer">
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 w-9 h-9 bg-orange-600 rounded-lg flex items-center justify-center text-white">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
