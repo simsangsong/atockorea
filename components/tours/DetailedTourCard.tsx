@@ -1,258 +1,376 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, memo, useMemo, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CheckIcon, MapIcon, CartIcon } from '@/components/Icons';
+import { CheckIcon, MapIcon, CartIcon, HeartIcon, HeartSolidIcon } from '@/components/Icons';
+import { isInWishlist, toggleWishlist } from '@/lib/wishlist';
+import { useRouter } from 'next/navigation';
+import { useTranslations } from '@/lib/i18n';
 
 interface DetailedTourCardProps {
   tour: {
-    id: number;
+    id: string | number;
     title: string;
     location: string;
     rating: number;
     reviewCount: number;
     price: number;
-    originalPrice: number;
+    originalPrice: number | null;
     priceType: 'person' | 'group';
     duration: string;
     image: string;
     features: string[];
     itinerary: string[];
-    pickupPoints: number;
-    dropoffPoints: number;
+    pickupPoints: any[];
+    pickupPointsCount: number;
+    dropoffPointsCount: number;
+    lunchIncluded: boolean;
+    ticketIncluded: boolean;
+    includes: string[];
+    excludes: string[];
+    schedule: Array<{ time: string; title: string; description?: string }>;
+    pickupInfo: string;
+    notes: string;
   };
 }
 
-export default function DetailedTourCard({ tour }: DetailedTourCardProps) {
-  const hasDiscount = tour.originalPrice > tour.price;
-  const discountPercent = hasDiscount
-    ? Math.round(((tour.originalPrice - tour.price) / tour.originalPrice) * 100)
-    : 0;
+function DetailedTourCard({ tour }: DetailedTourCardProps) {
+  const router = useRouter();
+  const t = useTranslations();
+  const hasDiscount = useMemo(() => 
+    tour.originalPrice && tour.originalPrice > tour.price,
+    [tour.originalPrice, tour.price]
+  );
+  const discountPercent = useMemo(() => 
+    hasDiscount && tour.originalPrice
+      ? Math.round(((tour.originalPrice - tour.price) / tour.originalPrice) * 100)
+      : 0,
+    [hasDiscount, tour.originalPrice, tour.price]
+  );
   const [isAdding, setIsAdding] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [wishlistLoading, setWishlistLoading] = useState(false);
+  const [checkingWishlist, setCheckingWishlist] = useState(true);
 
-  const handleAddToCart = (e: React.MouseEvent) => {
+  const checkWishlistStatus = useCallback(async () => {
+    try {
+      setCheckingWishlist(true);
+      const status = await isInWishlist(tour.id.toString());
+      setIsFavorite(status);
+    } catch (error) {
+      console.error('Error checking wishlist status:', error);
+    } finally {
+      setCheckingWishlist(false);
+    }
+  }, [tour.id]);
+
+  useEffect(() => {
+    checkWishlistStatus();
+  }, [checkWishlistStatus]);
+
+  const handleAddToCart = useCallback(async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     setIsAdding(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsAdding(false);
+    try {
+      // TODO: Implement actual cart API call
+      await new Promise(resolve => setTimeout(resolve, 500));
       alert(`${tour.title} added to cart!`);
-      // In production, add to cart state/API
-    }, 500);
+    } catch (error) {
+      console.error('Error adding to cart:', error);
+      alert('Failed to add to cart');
+    } finally {
+      setIsAdding(false);
+    }
+  }, [tour.title]);
+
+  const handleWishlistToggle = useCallback(async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    try {
+      setWishlistLoading(true);
+      const result = await toggleWishlist(tour.id.toString(), isFavorite);
+      
+      if (result.success) {
+        setIsFavorite(result.isInWishlist);
+      } else {
+        if (result.error?.includes('sign in')) {
+          router.push('/signin?redirect=' + window.location.pathname);
+        } else {
+          alert(result.error || 'Failed to update wishlist');
+        }
+      }
+    } catch (error: any) {
+      console.error('Error toggling wishlist:', error);
+      alert('Failed to update wishlist');
+    } finally {
+      setWishlistLoading(false);
+    }
+  }, [tour.id, isFavorite, router]);
+
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat('ko-KR', {
+      style: 'currency',
+      currency: 'KRW',
+      minimumFractionDigits: 0,
+    }).format(price);
   };
 
+  // Filter schedule to exclude pickup points (only main stops)
+  const mainStops = useMemo(() => {
+    if (!tour.schedule || tour.schedule.length === 0) return [];
+    return tour.schedule.filter((item) => {
+      const title = item.title?.toLowerCase() || '';
+      // Exclude pickup, dropoff, and lunch items
+      return !title.includes('pickup') && 
+             !title.includes('drop-off') && 
+             !title.includes('dropoff') &&
+             !title.includes('lunch');
+    });
+  }, [tour.schedule]);
+
+  // Color dots for each stop
+  const dotColors = ['bg-blue-500', 'bg-green-500', 'bg-orange-500', 'bg-purple-500', 'bg-pink-500', 'bg-indigo-500'];
+  const getDotColor = (index: number) => dotColors[index % dotColors.length];
+
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 overflow-hidden hover:shadow-xl transition-shadow">
-      {/* Mobile: 4-Grid Layout */}
-      <div className="grid grid-cols-2 gap-2 p-3 sm:hidden">
-        {/* Top Left: Image (reduced size) */}
-        <div className="col-span-1 row-span-1 relative">
-          <Link href={`/tour/${tour.id}`}>
-            <div className="relative h-full w-full min-h-[100px] rounded-lg overflow-hidden">
-              <Image
-                src={tour.image}
-                alt={tour.title}
-                fill
-                className="object-cover"
-              />
-              {hasDiscount && (
-                <div className="absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-red-500 text-white text-[10px] font-bold rounded shadow-md">
-                  -{discountPercent}%
+    <>
+      {/* 모바일: 컴팩트하고 고급스러운 디자인 */}
+      <article className="bg-white rounded-xl border border-gray-200/60 shadow-md overflow-hidden hover:shadow-lg transition-all duration-200 sm:hidden">
+        <div className="flex flex-row">
+          {/* LEFT: 38% - 위 절반 사진 + 아래 절반 제목/가격 */}
+          <div className="flex flex-col w-[38%] flex-shrink-0">
+            {/* 위 절반: 이미지 */}
+            <div className="relative w-full flex-1 min-h-[97px]">
+              <Link href={`/tour/${tour.id}`}>
+                <Image
+                  src={tour.image || '/placeholder-tour.jpg'}
+                  alt={tour.title}
+                  fill
+                  className="object-cover"
+                  sizes="38vw"
+                  loading="lazy"
+                />
+              </Link>
+              {hasDiscount && discountPercent > 0 ? (
+                <div className="absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-red-500 text-white text-[10px] font-bold rounded shadow z-10">
+                  {discountPercent}% OFF
                 </div>
-              )}
+              ) : null}
             </div>
-          </Link>
-        </div>
-
-        {/* Top Right: Features & Pickup Info */}
-        <div className="col-span-1 row-span-1 flex flex-col justify-start gap-1">
-          {/* Cart Button */}
-          <div className="flex justify-end mb-1">
-            <button
-              onClick={handleAddToCart}
-              disabled={isAdding}
-              className="p-1.5 bg-blue-100 hover:bg-blue-200 text-blue-600 rounded-lg transition-all shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
-              title="Add to Cart"
-            >
-              <CartIcon className="w-3.5 h-3.5" />
-            </button>
-          </div>
-          {/* Features */}
-          <div className="space-y-0.5">
-            {tour.features.slice(0, 2).map((feature, idx) => (
-              <div key={idx} className="flex items-center gap-1 text-[10px] text-gray-700">
-                <CheckIcon className="w-3 h-3 text-green-600 flex-shrink-0" />
-                <span className="truncate">{feature}</span>
+            
+            {/* 아래 절반: 제목 + 가격 (가격은 아래쪽 고정) */}
+            <div className="flex flex-col p-2 bg-gradient-to-b from-gray-50 to-white min-h-[97px]">
+              <h3 className="text-xs font-bold text-gray-900 mb-2 hover:text-indigo-600 transition-colors leading-tight line-clamp-2">
+                <Link href={`/tour/${tour.id}`}>{tour.title}</Link>
+              </h3>
+              <div className="flex flex-col gap-0.5 mt-auto">
+                {hasDiscount ? (
+                  <>
+                    <span className="text-[10px] text-gray-500 line-through">
+                      {formatPrice(tour.originalPrice!)}
+                    </span>
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-sm font-bold text-purple-600">
+                        {formatPrice(tour.price)}
+                      </span>
+                      <span className="text-[10px] text-gray-500">/{tour.priceType}</span>
+                    </div>
+                  </>
+                ) : (
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-sm font-bold text-purple-600">
+                      {formatPrice(tour.price)}
+                    </span>
+                    <span className="text-[10px] text-gray-500">/{tour.priceType}</span>
+                  </div>
+                )}
               </div>
-            ))}
+            </div>
           </div>
-          {/* Pickup/Dropoff */}
-          <div className="text-[10px] text-gray-600 mt-1">
-            <div>{tour.pickupPoints} pickup{tour.pickupPoints !== 1 ? 's' : ''}</div>
-            <div>{tour.dropoffPoints} dropoff{tour.dropoffPoints !== 1 ? 's' : ''}</div>
-          </div>
-        </div>
 
-        {/* Bottom Left: Title & Price */}
-        <div className="col-span-1 row-span-1 flex flex-col justify-start gap-1">
-          {/* Title (on top) */}
-          <Link href={`/tour/${tour.id}`}>
-            <h2 className="text-xs font-bold text-gray-900 line-clamp-2 hover:text-blue-600 transition-colors leading-tight">
-              {tour.title}
-            </h2>
-          </Link>
-          <div className="flex items-center gap-1">
-            <svg className="w-3 h-3 text-yellow-500 fill-current" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-            </svg>
-            <span className="text-[10px] font-semibold text-gray-700">{tour.rating}</span>
-            <span className="text-[10px] text-gray-500">({tour.reviewCount})</span>
-          </div>
-          {/* Price (below) */}
-          <div className="flex items-baseline gap-1.5">
-            <span className="text-base font-bold text-blue-600">${tour.price}</span>
-            {hasDiscount && (
-              <span className="text-xs text-gray-400 line-through">${tour.originalPrice}</span>
-            )}
-            <span className="text-[10px] text-gray-500">/{tour.priceType}</span>
-          </div>
-        </div>
-
-        {/* Bottom Right: Itinerary Timeline (single row) */}
-        <div className="col-span-1 row-span-1 flex flex-col justify-start">
-          <div className="flex flex-col gap-1">
-            {tour.itinerary.map((item, idx) => (
-              <div key={idx} className="flex items-start gap-1.5">
-                <div className="flex-shrink-0 mt-1">
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
-                </div>
-                <span className="text-[12.96px] font-semibold text-gray-700 leading-snug flex-1">
-                  {item}
+          {/* RIGHT: 62% - 포함사항 + 일정 + 버튼 */}
+          <div className="flex flex-col flex-1 p-2.5 min-w-0 bg-white">
+            {/* 포함사항 - 한 줄로 컴팩트하게 */}
+            <div className="mb-2">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="h-1.5 w-1.5 rounded-full bg-purple-500 flex-shrink-0" />
+                <span className="text-[11px] text-gray-700 font-medium">
+                  {tour.pickupPointsCount > 0 ? `${tour.pickupPointsCount} ${t('tour.pickupPoints')}` : t('tour.pickup')}
+                </span>
+                <span className="text-[10px] text-gray-500">•</span>
+                <span className={`text-[11px] ${tour.ticketIncluded ? 'text-green-600' : 'text-gray-500'}`}>
+                  🎫
+                </span>
+                <span className={`text-[11px] ${tour.lunchIncluded ? 'text-green-600' : 'text-gray-500'}`}>
+                  🍽
                 </span>
               </div>
-            ))}
+            </div>
+
+            {/* 일정 - 전체 표시 */}
+            {mainStops.length > 0 && (
+              <div className="mb-2 flex-1 min-h-0">
+                <div className="space-y-1">
+                  {mainStops.map((item, index) => (
+                    <div key={index} className="flex items-center gap-1.5">
+                      <span className={`h-1.5 w-1.5 rounded-full ${getDotColor(index)} flex-shrink-0`} />
+                      <span className="text-[11px] text-gray-900 leading-tight line-clamp-1">
+                        {item.title}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* 버튼 */}
+            <div className="flex gap-2 pt-2 border-t border-gray-100">
+              <button
+                onClick={handleWishlistToggle}
+                disabled={checkingWishlist || wishlistLoading}
+                className="w-9 h-9 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors disabled:opacity-50 flex items-center justify-center shrink-0"
+                title={isFavorite ? t('tour.removeFromWishlist') : t('tour.addToWishlist')}
+              >
+                {checkingWishlist || wishlistLoading ? (
+                  <div className="w-3.5 h-3.5 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
+                ) : isFavorite ? (
+                  <HeartSolidIcon className="w-4 h-4 text-red-500" />
+                ) : (
+                  <HeartIcon className="w-4 h-4" />
+                )}
+              </button>
+              <button
+                onClick={handleAddToCart}
+                disabled={isAdding}
+                className="flex-1 h-9 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-[11px] rounded-lg transition-colors shadow-sm hover:shadow disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-1"
+              >
+                <CartIcon className="w-4 h-4" />
+                <span>{isAdding ? t('common.adding') : t('tour.cart')}</span>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </article>
 
-      {/* Desktop: Horizontal Layout */}
-      <div className="hidden sm:flex flex-row">
-        {/* Left: Image */}
-        <div className="w-64 lg:w-80 flex-shrink-0 relative">
-          <Link href={`/tour/${tour.id}`}>
-            <div className="relative h-full w-full min-h-[280px]">
+      {/* 데스크탑: 원래 크기 */}
+      <article className="hidden sm:block bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+        <div className="flex flex-row gap-4 p-4">
+          {/* Image */}
+          <div className="w-48 h-48 flex-shrink-0 relative rounded-lg overflow-hidden">
+            <Link href={`/tour/${tour.id}`}>
               <Image
-                src={tour.image}
+                src={tour.image || '/placeholder-tour.jpg'}
                 alt={tour.title}
                 fill
-                className="object-cover"
+                className="object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                sizes="192px"
+                loading="lazy"
               />
-              {hasDiscount && (
-                <div className="absolute top-2 left-2 px-2 py-1 bg-red-500 text-white text-xs font-bold rounded shadow-lg">
-                  -{discountPercent}%
-                </div>
-              )}
-            </div>
-          </Link>
-        </div>
-
-        {/* Right: Content */}
-        <div className="flex-1 flex flex-col sm:flex-row p-6">
-          {/* Main Content */}
-          <div className="flex-1">
-            {/* Title and Rating */}
-            <div className="mb-4">
-              <Link href={`/tour/${tour.id}`}>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors line-clamp-2">
-                  {tour.title}
-                </h2>
-              </Link>
-              <div className="flex items-center gap-2 text-base">
-                <div className="flex items-center gap-1">
-                  <svg className="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <span className="font-semibold text-gray-700">{tour.rating}</span>
-                </div>
-                <span className="text-gray-400">•</span>
-                <span className="text-gray-500">({tour.reviewCount})</span>
-                <span className="text-gray-400">•</span>
-                <div className="flex items-center gap-1 text-gray-600">
-                  <MapIcon className="w-4 h-4" />
-                  <span>{tour.location}</span>
-                </div>
+            </Link>
+            {hasDiscount && (
+              <div className="absolute top-3 left-3 px-2 py-1 bg-red-500 text-white text-xs font-bold rounded shadow-md">
+                {discountPercent}% OFF
               </div>
-            </div>
+            )}
+          </div>
 
-            {/* Price */}
-            <div className="mb-4">
-              <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-bold text-blue-600">${tour.price}</span>
-                {hasDiscount && (
-                  <span className="text-lg text-gray-400 line-through">${tour.originalPrice}</span>
-                )}
-                <span className="text-base text-gray-500">/ {tour.priceType}</span>
-              </div>
-            </div>
-
-            {/* Features */}
-            <div className="mb-4">
-              <div className="grid grid-cols-2 gap-2.5">
-                {tour.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-base text-gray-700">
-                    <CheckIcon className="w-4 h-4 text-green-600 flex-shrink-0" />
-                    <span className="truncate">{feature}</span>
+          {/* Content */}
+          <div className="flex-1 flex flex-col justify-between">
+            <div>
+              {/* Header */}
+              <div className="flex items-start justify-between mb-2">
+                <Link href={`/tour/${tour.id}`} className="flex-1 pr-4">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1 hover:text-indigo-600 transition-colors line-clamp-2">
+                    {tour.title}
+                  </h3>
+                  <div className="flex items-center gap-3 text-sm text-gray-600">
+                    <div className="flex items-center gap-1">
+                      <MapIcon className="w-4 h-4" />
+                      <span>{tour.location}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <span className="text-yellow-500">★</span>
+                      <span className="font-medium">{tour.rating.toFixed(1)}</span>
+                      <span className="text-gray-400">({tour.reviewCount})</span>
+                    </div>
+                    <span>{tour.duration}</span>
                   </div>
-                ))}
+                </Link>
               </div>
-            </div>
 
-            {/* Itinerary */}
-            <div className="mb-4">
-              <div className="grid grid-cols-2 gap-2">
-                {tour.itinerary.map((item, idx) => (
-                  <span
-                    key={idx}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full text-center truncate"
-                  >
-                    {item}
+              {/* Features */}
+              <div className="flex flex-wrap gap-2 mb-3">
+                {tour.features.slice(0, 4).map((feature, idx) => (
+                  <span key={idx} className="px-2 py-1 bg-blue-50 text-blue-600 text-xs font-medium rounded">
+                    {feature}
                   </span>
                 ))}
               </div>
+
+              {/* Info */}
+              <div className="flex items-center gap-4 text-xs text-gray-600 mb-3">
+                <span>{tour.pickupPointsCount} pickup points</span>
+                <span>{tour.dropoffPointsCount} dropoff points</span>
+              </div>
             </div>
 
-            {/* Pickup/Dropoff Points */}
-            <div className="flex items-center gap-2 text-base text-gray-600">
-              <span>{tour.pickupPoints} pickup{tour.pickupPoints !== 1 ? 's' : ''}</span>
-              <span className="text-gray-400">•</span>
-              <span>{tour.dropoffPoints} dropoff{tour.dropoffPoints !== 1 ? 's' : ''}</span>
-            </div>
-          </div>
+            {/* Bottom Section: Price and Actions */}
+            <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+              {/* Price */}
+              <div className="flex items-baseline gap-2">
+                {hasDiscount && (
+                  <span className="text-sm text-gray-400 line-through">
+                    {formatPrice(tour.originalPrice!)}
+                  </span>
+                )}
+                <span className="text-2xl font-bold text-indigo-600">${tour.price}</span>
+                <span className="text-sm text-gray-500">/ {tour.priceType}</span>
+              </div>
 
-          {/* Action Buttons */}
-          <div className="w-36 lg:w-40 flex-shrink-0 flex flex-col items-end gap-3">
-            <button
-              onClick={handleAddToCart}
-              disabled={isAdding}
-              className="w-full px-4 py-3 bg-blue-100 hover:bg-blue-200 text-blue-600 font-semibold rounded-lg transition-colors shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-              title="Add to Cart"
-            >
-              <CartIcon className="w-5 h-5" />
-              <span className="text-base">Add to Cart</span>
-            </button>
-            <Link
-              href={`/tour/${tour.id}`}
-              className="w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg text-center text-base"
-            >
-              View Details
-            </Link>
+              {/* Action Buttons */}
+              <div className="w-36 lg:w-40 flex-shrink-0 flex flex-col items-end gap-3">
+                <div className="flex gap-2 w-full">
+                  <button
+                    onClick={handleWishlistToggle}
+                    disabled={checkingWishlist || wishlistLoading}
+                    className="px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors disabled:opacity-50 flex items-center justify-center"
+                    title={isFavorite ? t('tour.removeFromWishlist') : t('tour.addToWishlist')}
+                  >
+                    {checkingWishlist || wishlistLoading ? (
+                      <div className="w-4 h-4 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
+                    ) : isFavorite ? (
+                      <HeartSolidIcon className="w-5 h-5 text-red-500" />
+                    ) : (
+                      <HeartIcon className="w-5 h-5" />
+                    )}
+                  </button>
+                  <button
+                    onClick={handleAddToCart}
+                    disabled={isAdding}
+                    className="flex-1 px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-600 font-semibold rounded-lg transition-colors shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    title="Add to Cart"
+                  >
+                    <CartIcon className="w-5 h-5" />
+                    <span className="text-sm">{isAdding ? 'Adding...' : 'Cart'}</span>
+                  </button>
+                </div>
+                <Link
+                  href={`/tour/${tour.id}`}
+                  className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg text-center text-sm"
+                >
+                  View Details
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </article>
+    </>
   );
 }
 
+export default memo(DetailedTourCard);

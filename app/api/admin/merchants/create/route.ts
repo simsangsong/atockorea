@@ -139,9 +139,28 @@ export async function POST(req: NextRequest) {
       console.warn('Failed to create audit log:', error);
     }
 
-    // TODO: Send email with login credentials
-    // In production, use email service (SendGrid, AWS SES, etc.)
-    // For now, return credentials in response (remove in production!)
+    // Send welcome email with login credentials
+    try {
+      const { sendMerchantWelcomeEmail } = await import('@/lib/email');
+      const emailResult = await sendMerchantWelcomeEmail({
+        to: contact_email,
+        companyName: company_name,
+        contactPerson: contact_person,
+        loginEmail: contact_email,
+        temporaryPassword: tempPassword,
+        loginUrl: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/merchant/login`,
+      });
+
+      if (emailResult.success) {
+        console.log(`Welcome email sent to ${contact_email} for merchant ${merchant.id}`);
+      } else {
+        console.error(`Failed to send welcome email: ${emailResult.error}`);
+        // Continue even if email fails - credentials are still returned in response
+      }
+    } catch (emailError) {
+      console.error('Error sending merchant welcome email:', emailError);
+      // Continue even if email fails
+    }
     const credentials = {
       email: contact_email,
       temporaryPassword: tempPassword,

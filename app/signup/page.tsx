@@ -179,11 +179,25 @@ export default function SignUpPage() {
       }
 
       if (data.user) {
-        // 创建用户资料
-        await supabase.from('user_profiles').insert({
+        // 创建用户资料 - 确保数据保存成功
+        const { error: profileError } = await supabase.from('user_profiles').insert({
           id: data.user.id,
           full_name: formData.fullName,
+          role: 'customer', // 明确设置角色
         });
+
+        if (profileError) {
+          console.error('Error creating user profile:', profileError);
+          // 如果创建用户资料失败，尝试删除已创建的用户账户
+          try {
+            await supabase.auth.admin.deleteUser(data.user.id);
+          } catch (deleteError) {
+            console.error('Error deleting user after profile creation failure:', deleteError);
+          }
+          setErrors({ email: 'Failed to create user profile. Please try again.' });
+          setIsLoading(false);
+          return;
+        }
 
         alert('Account created successfully! Please check your email to verify your account.');
         router.push('/signin');

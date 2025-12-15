@@ -1,13 +1,14 @@
 // components/TourCardDetail.tsx
-import React from "react";
+import React, { memo } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import type { DetailedTour } from "../data/tours";
 
 type Props = {
   tour: DetailedTour;
 };
 
-export default function TourCardDetail({ tour }: Props) {
+function TourCardDetail({ tour }: Props) {
   // 도시별 상세페이지 라우트 자동 처리
   const basePath =
     tour.city === "Jeju"
@@ -35,18 +36,14 @@ export default function TourCardDetail({ tour }: Props) {
       >
         {/* LEFT: 이미지 + 타이틀 + 가격 */}
         <div className="flex w-full flex-col sm:w-[32%]">
-          <div className="relative w-full overflow-hidden rounded-2xl bg-[#f2f2f7]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+          <div className="relative w-full h-[180px] sm:h-[160px] md:h-[180px] overflow-hidden rounded-2xl bg-[#f2f2f7]">
+            <Image
               src={tour.imageUrl}
               alt={tour.title}
-              className="
-                h-[180px] w-full object-cover
-                sm:h-[160px]
-                md:h-[180px]
-                transition-transform duration-300
-                group-hover:scale-[1.02]
-              "
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+              sizes="(max-width: 640px) 100vw, 32vw"
+              loading="lazy"
             />
           </div>
 
@@ -183,3 +180,5 @@ export default function TourCardDetail({ tour }: Props) {
     </Link>
   );
 }
+
+export default memo(TourCardDetail);

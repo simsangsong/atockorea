@@ -102,21 +102,30 @@ function AuthCallbackContent() {
 
         if (data.user) {
           // 检查是否需要创建用户资料
-          const { data: profile } = await supabase
+          const { data: profile, error: profileError } = await supabase
             .from('user_profiles')
             .select('*')
             .eq('id', data.user.id)
             .single();
 
-          if (!profile) {
+          if (!profile || profileError) {
             // 创建用户资料
-            await supabase.from('user_profiles').insert({
+            const { error: insertError } = await supabase.from('user_profiles').insert({
               id: data.user.id,
               full_name: data.user.user_metadata?.full_name || 
                          data.user.user_metadata?.name ||
                          data.user.email?.split('@')[0] || 
                          'User',
+              avatar_url: data.user.user_metadata?.avatar_url || 
+                         data.user.user_metadata?.picture ||
+                         null,
+              role: 'customer', // 默认角色
             });
+
+            if (insertError) {
+              console.error('Error creating user profile:', insertError);
+              // 即使创建失败也允许登录，但记录错误
+            }
           }
 
           setStatus('success');

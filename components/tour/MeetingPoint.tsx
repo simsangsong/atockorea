@@ -4,9 +4,9 @@ import { MapIcon } from '@/components/Icons';
 import InteractiveMap from '@/components/maps/InteractiveMap';
 
 interface PickupPoint {
-  id: number;
+  id: string | number;
   name: string;
-  address: string;
+  address?: string;
   lat: number;
   lng: number;
 }
@@ -50,7 +50,7 @@ export default function MeetingPoint({ points }: MeetingPointProps) {
           />
         ) : (
           <iframe
-            src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.5!2d${primaryPoint.lng}!3d${primaryPoint.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDA2JzU2LjIiTiAxMjnCsDAyJzMyLjAiRQ!5e0!3m2!1sen!2sus!4v1234567890&q=${encodeURIComponent(primaryPoint.address)}`}
+            src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.5!2d${primaryPoint.lng}!3d${primaryPoint.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDA2JzU2LjIiTiAxMjnCsDAyJzMyLjAiRQ!5e0!3m2!1sen!2sus!4v1234567890&q=${encodeURIComponent(primaryPoint.address || primaryPoint.name)}`}
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -67,7 +67,7 @@ export default function MeetingPoint({ points }: MeetingPointProps) {
         <MapIcon className="w-6 h-6 text-blue-600 mt-0.5 flex-shrink-0" />
         <div className="flex-1">
           <h3 className="font-semibold text-gray-900 mb-1">{primaryPoint.name}</h3>
-          <p className="text-sm text-gray-600">{primaryPoint.address}</p>
+          <p className="text-sm text-gray-600">{primaryPoint.address || ''}</p>
         </div>
         <a
           href={`https://www.google.com/maps?q=${primaryPoint.lat},${primaryPoint.lng}`}
@@ -79,15 +79,15 @@ export default function MeetingPoint({ points }: MeetingPointProps) {
         </a>
       </div>
 
-      {/* Additional Pickup Points */}
-      {points.length > 1 && (
+      {/* All Pickup Points List */}
+      {points.length > 0 && (
         <div className="mt-4 pt-4 border-t border-gray-200">
-          <p className="text-sm text-gray-600 mb-2">Other pickup points available:</p>
+          <p className="text-sm font-medium text-gray-700 mb-3">All pickup points:</p>
           <ul className="space-y-2">
-            {points.slice(1).map((point) => (
+            {points.map((point) => (
               <li key={point.id} className="flex items-center gap-2 text-sm text-gray-600">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-                {point.name}
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0" />
+                <span>{point.name}</span>
               </li>
             ))}
           </ul>

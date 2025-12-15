@@ -1,7 +1,8 @@
 'use client';
 
-import { useRef } from 'react';
-import { useParams } from 'next/navigation';
+import { useRef, useState, useEffect, Suspense } from 'react';
+import { useParams, useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
@@ -12,100 +13,154 @@ import GalleryGrid from '@/components/tour/GalleryGrid';
 import VisualItinerary from '@/components/tour/VisualItinerary';
 import MeetingPoint from '@/components/tour/MeetingPoint';
 import ActionButtons from '@/components/tour/ActionButtons';
-import EnhancedBookingSidebar from '@/components/tour/EnhancedBookingSidebar';
+import { useTranslations } from '@/lib/i18n';
 
-// Sample tour data (in production, fetch from API)
-const tourData = {
-  id: 1,
-  title: 'Gamcheon Culture Village + Haeundae',
-  tagline: 'Explore colorful art district and relax at Korea\'s most famous beach',
-  location: 'Busan',
-  rating: 4.8,
-  reviewCount: 234,
-  badges: ['Popular', 'Small-group'],
-  price: 79,
-  originalPrice: 99,
-  priceType: 'person' as const,
-  availableSpots: 5,
-  depositAmountUSD: 20, // 固定定金金额（美元）
-  balanceAmountKRW: 50000, // 当天现金支付的固定金额（韩元）
-  duration: '8 hours',
-  difficulty: 'Easy',
-  groupSize: 'Max 12',
-  highlight: 'Waterfall Visit',
-  images: [
-    {
-      url: 'https://images.unsplash.com/photo-1534008897995-27a23e859048?w=1200&q=80',
-      title: 'Gamcheon Culture Village',
-      description: 'Explore the colorful art district known as "Korea\'s Santorini". This hillside village features vibrant murals, art galleries, and charming cafes. Walk through narrow alleys decorated with colorful houses and discover local art installations.',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=1200&q=80',
-      title: 'Haeundae Beach',
-      description: 'Relax at Korea\'s most famous beach. Enjoy the pristine white sand, crystal-clear waters, and various water activities. The beach is perfect for swimming, sunbathing, or simply taking a leisurely stroll along the shore.',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1504817343863-5092a923803e?w=1200&q=80',
-      title: 'Dongbaek Island',
-      description: 'Take a scenic walk along the coastal path on Dongbaek Island. This beautiful natural area offers stunning ocean views, lush greenery, and the famous Nurimaru APEC House. Perfect for photography and peaceful contemplation.',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80',
-      title: 'Traditional Korean Lunch',
-      description: 'Experience authentic Korean cuisine at a local restaurant. Enjoy a variety of traditional dishes including kimchi, bulgogi, and fresh seafood. Our carefully selected restaurants offer the best local flavors.',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80',
-      title: 'Busan City Views',
-      description: 'Capture panoramic views of Busan from various scenic spots. The city\'s unique blend of mountains, sea, and urban landscape creates breathtaking vistas that showcase the beauty of Korea\'s second-largest city.',
-    },
-  ],
-  quickFacts: [
-    'Small group tour with maximum 12 participants',
-    'Professional English-speaking guide included',
-    'Hotel pickup and drop-off service',
-    'Traditional Korean lunch included',
-  ],
-  itinerary: [
-    { time: '09:00', title: 'Hotel Pickup', description: 'Pickup from your hotel in Busan', icon: '🚗' },
-    { time: '09:30', title: 'Gamcheon Culture Village', description: 'Explore the colorful village, visit art galleries and cafes', icon: '🏯' },
-    { time: '12:00', title: 'Lunch Break', description: 'Enjoy local Korean cuisine', icon: '🍜' },
-    { time: '13:30', title: 'Haeundae Beach', description: 'Relax at the beach, enjoy water activities', icon: '🏖️' },
-    { time: '16:00', title: 'Dongbaek Island', description: 'Scenic walk along the coastal path', icon: '🌊' },
-    { time: '17:30', title: 'Return to Hotel', description: 'Drop-off at your hotel', icon: '🏨' },
-  ],
-  inclusions: [
-    'Hotel pickup and drop-off',
-    'Professional English-speaking guide',
-    'Entrance fees to all attractions',
-    'Lunch included',
-    'Transportation in air-conditioned vehicle',
-  ],
-  exclusions: [
-    'Personal expenses',
-    'Optional activities',
-    'Tips for guide and driver',
-  ],
-  pickupPoints: [
-    { id: 1, name: 'Busan Station', address: 'Busan Station, Busan', lat: 35.1156, lng: 129.0422 },
-    { id: 2, name: 'Haeundae Station', address: 'Haeundae Station, Busan', lat: 35.1631, lng: 129.1636 },
-    { id: 3, name: 'Seomyeon Station', address: 'Seomyeon Station, Busan', lat: 35.1581, lng: 129.0594 },
-    { id: 4, name: 'Gwangalli Beach', address: 'Gwangalli Beach, Busan', lat: 35.1532, lng: 129.1186 },
-  ],
-};
+// Lazy load heavy components
+const EnhancedBookingSidebar = dynamic(
+  () => import('@/components/tour/EnhancedBookingSidebar'),
+  { 
+    loading: () => <div className="animate-pulse bg-gray-200 rounded-lg h-96" />,
+    ssr: false 
+  }
+);
+
+const InteractiveMap = dynamic(
+  () => import('@/components/maps/InteractiveMap'),
+  { 
+    loading: () => <div className="animate-pulse bg-gray-200 rounded-lg h-96" />,
+    ssr: false 
+  }
+);
+
+interface Tour {
+  id: string;
+  title: string;
+  tagline: string;
+  location: string;
+  city: string;
+  rating: number;
+  reviewCount: number;
+  badges: string[];
+  price: number;
+  originalPrice: number | null;
+  priceType: 'person' | 'group';
+  availableSpots: number;
+  depositAmountUSD: number;
+  balanceAmountKRW: number;
+  duration: string;
+  difficulty: string;
+  groupSize: string;
+  highlight: string;
+  images: Array<{ url: string; title: string; description: string }>;
+  quickFacts: string[];
+  itinerary: Array<{ time: string; title: string; description: string; icon?: string }>;
+  inclusions: Array<string | { icon: string; text: string }>;
+  exclusions: Array<string | { icon: string; text: string }>;
+  pickupPoints: Array<{ id: string; name: string; address: string; lat: number; lng: number }>;
+}
 
 export default function TourDetailPage() {
   const params = useParams();
-  const tourId = params?.id;
+  const router = useRouter();
+  const t = useTranslations();
+  const tourId = params?.id as string;
   const bookingRef = useRef<HTMLDivElement>(null);
+  
+  const [tour, setTour] = useState<Tour | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  // In production, fetch tour data based on tourId
-  // For now, use sample data
-  const tour = tourData;
+  useEffect(() => {
+    if (!tourId) {
+      setError('Tour ID is required');
+      setLoading(false);
+      return;
+    }
 
-  // Debug: Log tourId to console
-  if (typeof window !== 'undefined') {
-    console.log('Tour ID:', tourId);
+    const fetchTour = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(`/api/tours/${tourId}`);
+        
+        if (!response.ok) {
+          if (response.status === 404) {
+            setError('Tour not found');
+          } else {
+            const data = await response.json();
+            setError(data.error || 'Failed to fetch tour');
+          }
+          setLoading(false);
+          return;
+        }
+
+        const data = await response.json();
+        
+        // Transform API data to match component expectations
+        const transformedTour: Tour = {
+          ...data.tour,
+          // Ensure default values for missing data
+          quickFacts: data.tour.quickFacts || [
+            data.tour.groupSize ? `Group size: ${data.tour.groupSize}` : '',
+            data.tour.difficulty ? `Difficulty: ${data.tour.difficulty}` : '',
+            data.tour.duration ? `Duration: ${data.tour.duration}` : '',
+          ].filter(Boolean),
+          itinerary: data.tour.itinerary || [],
+          inclusions: data.tour.inclusions || [],
+          exclusions: data.tour.exclusions || [],
+          pickupPoints: data.tour.pickupPoints || [],
+        };
+
+        setTour(transformedTour);
+      } catch (err: any) {
+        console.error('Error fetching tour:', err);
+        setError('Failed to load tour. Please try again later.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTour();
+  }, [tourId]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
+        <Header />
+        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex items-center justify-center min-h-[60vh]">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading tour...</p>
+            </div>
+          </div>
+        </main>
+        <Footer />
+        <BottomNav />
+      </div>
+    );
+  }
+
+  if (error || !tour) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
+        <Header />
+        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex items-center justify-center min-h-[60vh]">
+            <div className="text-center">
+              <p className="text-red-600 text-lg mb-4">{error || t('tour.tourNotFound')}</p>
+              <button
+                onClick={() => router.push('/tours')}
+                className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              >
+                {t('tour.backToTours')}
+              </button>
+            </div>
+          </div>
+        </main>
+        <Footer />
+        <BottomNav />
+      </div>
+    );
   }
 
   const keyInfoItems = [
@@ -115,7 +170,7 @@ export default function TourDetailPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      label: 'Duration',
+      label: t('tour.duration'),
       value: tour.duration,
     },
     {
@@ -124,7 +179,7 @@ export default function TourDetailPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      label: 'Difficulty',
+      label: t('tour.difficulty'),
       value: tour.difficulty,
     },
     {
@@ -133,7 +188,7 @@ export default function TourDetailPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       ),
-      label: 'Group Size',
+      label: t('tour.groupSize'),
       value: tour.groupSize,
     },
     {
@@ -142,7 +197,7 @@ export default function TourDetailPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
         </svg>
       ),
-      label: 'Highlight',
+      label: t('tour.highlight'),
       value: tour.highlight,
     },
   ];
@@ -205,7 +260,7 @@ export default function TourDetailPage() {
           </div>
 
           {/* 5. Itinerary */}
-          <VisualItinerary items={tour.itinerary} />
+          <VisualItinerary items={tour.itinerary} pickupPoints={tour.pickupPoints} />
 
           {/* 6. Inclusions/Exclusions */}
           <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border border-gray-200/50 p-6">
@@ -217,14 +272,17 @@ export default function TourDetailPage() {
                   Included
                 </h3>
                 <ul className="space-y-3">
-                  {tour.inclusions.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-gray-700">{item}</span>
-                    </li>
-                  ))}
+                  {tour.inclusions.map((item, index) => {
+                    const text = typeof item === 'string' ? item : item.text || '';
+                    return (
+                      <li key={index} className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-gray-700">{text}</span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
               <div>
@@ -233,14 +291,17 @@ export default function TourDetailPage() {
                   Not Included
                 </h3>
                 <ul className="space-y-3">
-                  {tour.exclusions.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                      <span className="text-gray-700">{item}</span>
-                    </li>
-                  ))}
+                  {tour.exclusions.map((item, index) => {
+                    const text = typeof item === 'string' ? item : item.text || '';
+                    return (
+                      <li key={index} className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        <span className="text-gray-700">{text}</span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
@@ -257,6 +318,7 @@ export default function TourDetailPage() {
 
         {/* Action Buttons - Fixed on mobile, normal on desktop */}
         <ActionButtons
+          tourId={tour.id}
           onCheckAvailability={handleCheckAvailability}
           onShare={handleShare}
         />

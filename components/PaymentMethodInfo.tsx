@@ -1,14 +1,20 @@
+"use client";
+
+import { useTranslations } from "@/lib/i18n";
+
 export default function PaymentMethodInfo() {
+  const t = useTranslations();
+  
   return (
     <section className="py-6 sm:py-8 bg-transparent">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white/80 backdrop-blur-sm rounded-lg border border-gray-200/40 md:border-gray-200/30 p-4 sm:p-5 shadow-[0_2px_20px_rgba(0,0,0,0.08),0_1px_8px_rgba(0,0,0,0.04)]">
           <div className="text-center mb-4">
             <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
-              Payment Options
+              {t('home.payment.title')}
             </h2>
             <p className="text-xs text-gray-600">
-              Choose the payment method that works best for you
+              {t('home.payment.subtitle')}
             </p>
           </div>
           
@@ -23,16 +29,16 @@ export default function PaymentMethodInfo() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-sm font-semibold text-gray-900 mb-1.5">
-                    Deposit + Cash on Day
+                    {t('home.payment.depositCash')}
                   </h3>
                   <p className="text-xs text-gray-700 mb-2 leading-relaxed">
-                    Pay a deposit online to secure your booking, then pay the remaining balance in cash to the guide on the day.
+                    {t('home.payment.depositCashDesc')}
                   </p>
                   <div className="flex items-center gap-1.5 text-xs text-gray-600">
                     <svg className="w-3.5 h-3.5 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span>More flexible payment option</span>
+                    <span>{t('home.payment.depositCashBenefit')}</span>
                   </div>
                 </div>
               </div>
@@ -48,16 +54,16 @@ export default function PaymentMethodInfo() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-sm font-semibold text-gray-900 mb-1.5">
-                    Full Amount Online
+                    {t('home.payment.fullAmount')}
                   </h3>
                   <p className="text-xs text-gray-700 mb-2 leading-relaxed">
-                    Pay the full amount online in advance. Quick, secure, and convenient. No need to worry about cash on the day.
+                    {t('home.payment.fullAmountDesc')}
                   </p>
                   <div className="flex items-center gap-1.5 text-xs text-gray-600">
                     <svg className="w-3.5 h-3.5 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span>All payments processed securely</span>
+                    <span>{t('home.payment.fullAmountBenefit')}</span>
                   </div>
                 </div>
               </div>

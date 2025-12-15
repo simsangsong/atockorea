@@ -1,15 +1,59 @@
 'use client';
 
-import { useState } from 'react';
-import { HeartSolidIcon, HeartIcon } from '@/components/Icons';
+import { useState, useEffect } from 'react';
+import { HeartIcon, HeartSolidIcon, ShareIcon } from '@/components/Icons';
+import { isInWishlist, toggleWishlist } from '@/lib/wishlist';
+import { useRouter } from 'next/navigation';
 
 interface ActionButtonsProps {
+  tourId: string;
   onCheckAvailability: () => void;
   onShare: () => void;
 }
 
-export default function ActionButtons({ onCheckAvailability, onShare }: ActionButtonsProps) {
+export default function ActionButtons({ tourId, onCheckAvailability, onShare }: ActionButtonsProps) {
+  const router = useRouter();
   const [isFavorite, setIsFavorite] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [checking, setChecking] = useState(true);
+
+  useEffect(() => {
+    checkWishlistStatus();
+  }, [tourId]);
+
+  const checkWishlistStatus = async () => {
+    try {
+      setChecking(true);
+      const status = await isInWishlist(tourId);
+      setIsFavorite(status);
+    } catch (error) {
+      console.error('Error checking wishlist status:', error);
+    } finally {
+      setChecking(false);
+    }
+  };
+
+  const handleWishlistToggle = async () => {
+    try {
+      setLoading(true);
+      const result = await toggleWishlist(tourId, isFavorite);
+      
+      if (result.success) {
+        setIsFavorite(result.isInWishlist);
+      } else {
+        if (result.error?.includes('sign in')) {
+          router.push('/signin?redirect=' + window.location.pathname);
+        } else {
+          alert(result.error || 'Failed to update wishlist');
+        }
+      }
+    } catch (error: any) {
+      console.error('Error toggling wishlist:', error);
+      alert('Failed to update wishlist');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="fixed bottom-16 left-0 right-0 z-50 md:relative md:z-auto md:bottom-0 bg-white border-t border-gray-200 md:border-0 md:bg-transparent shadow-lg md:shadow-none">
@@ -25,11 +69,14 @@ export default function ActionButtons({ onCheckAvailability, onShare }: ActionBu
 
           {/* Secondary Actions */}
           <button
-            onClick={() => setIsFavorite(!isFavorite)}
-            className="px-3 py-2 md:py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors flex items-center justify-center md:w-full"
-            aria-label="Save to wishlist"
+            onClick={handleWishlistToggle}
+            disabled={checking || loading}
+            className="px-3 py-2 md:py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors flex items-center justify-center md:w-full disabled:opacity-50"
+            aria-label={isFavorite ? "Remove from wishlist" : "Add to wishlist"}
           >
-            {isFavorite ? (
+            {checking || loading ? (
+              <div className="w-5 h-5 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
+            ) : isFavorite ? (
               <HeartSolidIcon className="w-5 h-5 text-red-500" />
             ) : (
               <HeartIcon className="w-5 h-5" />
@@ -42,9 +89,7 @@ export default function ActionButtons({ onCheckAvailability, onShare }: ActionBu
             className="px-3 py-2 md:py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors flex items-center justify-center md:w-full"
             aria-label="Share tour"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-            </svg>
+            <ShareIcon className="w-5 h-5" />
             <span className="ml-1.5 md:hidden text-sm">Share</span>
           </button>
         </div>
@@ -52,4 +97,3 @@ export default function ActionButtons({ onCheckAvailability, onShare }: ActionBu
     </div>
   );
 }
-

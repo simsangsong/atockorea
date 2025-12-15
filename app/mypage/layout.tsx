@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
+import { useTranslations } from '@/lib/i18n';
 import {
   DashboardIcon,
   CalendarIcon,
@@ -19,35 +20,81 @@ import {
   MapIcon,
 } from '@/components/Icons';
 
-const menuItems = [
-  { id: 'dashboard', label: 'Dashboard', icon: DashboardIcon, path: '/mypage/dashboard' },
-  { id: 'mybookings', label: 'My Bookings', icon: MapIcon, path: '/mypage/mybookings' },
-  { id: 'upcoming', label: 'Upcoming Tours', icon: CalendarIcon, path: '/mypage/upcoming' },
-  { id: 'history', label: 'Booking History', icon: HistoryIcon, path: '/mypage/history' },
-  { id: 'reviews', label: 'Reviews', icon: StarIcon, path: '/mypage/reviews' },
-  { id: 'wishlist', label: 'Wishlist', icon: HeartIcon, path: '/mypage/wishlist' },
-  { id: 'settings', label: 'Account Settings', icon: SettingsIcon, path: '/mypage/settings' },
-];
-
 export default function MyPageLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
+  const t = useTranslations();
   const [avatar, setAvatar] = useState<string | null>(null);
+  
+  const menuItems = [
+    { id: 'dashboard', label: t('mypage.dashboard'), icon: DashboardIcon, path: '/mypage/dashboard' },
+    { id: 'mybookings', label: t('mypage.myBookings'), icon: MapIcon, path: '/mypage/mybookings' },
+    { id: 'upcoming', label: t('mypage.upcomingTours'), icon: CalendarIcon, path: '/mypage/upcoming' },
+    { id: 'history', label: t('mypage.history'), icon: HistoryIcon, path: '/mypage/history' },
+    { id: 'reviews', label: t('mypage.reviews'), icon: StarIcon, path: '/mypage/reviews' },
+    { id: 'wishlist', label: t('mypage.wishlist'), icon: HeartIcon, path: '/mypage/wishlist' },
+    { id: 'settings', label: t('mypage.settings'), icon: SettingsIcon, path: '/mypage/settings' },
+  ];
   const [userInfo, setUserInfo] = useState({
     name: 'John Doe',
     email: 'john.doe@example.com',
   });
 
-  // Load avatar from localStorage (in production, load from database)
+  // Load user data from Supabase and localStorage
   useEffect(() => {
-    const loadUserData = () => {
-      const savedAvatar = localStorage.getItem('userAvatar');
-      const savedName = localStorage.getItem('userName');
-      const savedEmail = localStorage.getItem('userEmail');
-      
-      if (savedAvatar) setAvatar(savedAvatar);
-      if (savedName) setUserInfo(prev => ({ ...prev, name: savedName }));
-      if (savedEmail) setUserInfo(prev => ({ ...prev, email: savedEmail }));
+    const loadUserData = async () => {
+      try {
+        // Try to get from Supabase first
+        const { supabase } = await import('@/lib/supabase');
+        if (supabase) {
+          const { data: { session } } = await supabase.auth.getSession();
+          
+          if (session?.user) {
+            // Get user profile from database
+            const { data: profile } = await supabase
+              .from('user_profiles')
+              .select('full_name, avatar_url')
+              .eq('id', session.user.id)
+              .single();
+
+            if (profile) {
+              setUserInfo({
+                name: profile.full_name || session.user.email?.split('@')[0] || 'User',
+                email: session.user.email || '',
+              });
+              
+              if (profile.avatar_url) {
+                setAvatar(profile.avatar_url);
+              }
+            } else {
+              // Fallback to session data
+              setUserInfo({
+                name: session.user.email?.split('@')[0] || 'User',
+                email: session.user.email || '',
+              });
+            }
+          } else {
+            // No session, try localStorage as fallback
+            const savedAvatar = localStorage.getItem('userAvatar');
+            const savedName = localStorage.getItem('userName');
+            const savedEmail = localStorage.getItem('userEmail');
+            
+            if (savedAvatar) setAvatar(savedAvatar);
+            if (savedName) setUserInfo(prev => ({ ...prev, name: savedName }));
+            if (savedEmail) setUserInfo(prev => ({ ...prev, email: savedEmail }));
+          }
+        }
+      } catch (error) {
+        console.error('Error loading user data:', error);
+        // Fallback to localStorage
+        const savedAvatar = localStorage.getItem('userAvatar');
+        const savedName = localStorage.getItem('userName');
+        const savedEmail = localStorage.getItem('userEmail');
+        
+        if (savedAvatar) setAvatar(savedAvatar);
+        if (savedName) setUserInfo(prev => ({ ...prev, name: savedName }));
+        if (savedEmail) setUserInfo(prev => ({ ...prev, email: savedEmail }));
+      }
     };
 
     loadUserData();
@@ -71,9 +118,22 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
       .slice(0, 2);
   };
 
-  const handleLogout = () => {
-    if (confirm('Are you sure you want to logout?')) {
-      router.push('/');
+  const handleLogout = async () => {
+    if (confirm(t('mypage.signOut') + '?')) {
+      try {
+        const { supabase } = await import('@/lib/supabase');
+        if (supabase) {
+          await supabase.auth.signOut();
+        }
+        // Clear localStorage
+        localStorage.removeItem('userAvatar');
+        localStorage.removeItem('userName');
+        localStorage.removeItem('userEmail');
+        router.push('/');
+      } catch (error) {
+        console.error('Error logging out:', error);
+        router.push('/');
+      }
     }
   };
 
@@ -98,7 +158,7 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
               <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-8 transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
                 <div className="flex flex-col items-center">
                   {avatar ? (
-                    <div className="w-24 h-24 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-500 via-blue-600 to-orange-500 flex items-center justify-center mb-4 shadow-[0_8px_20px_rgba(59,130,246,0.3)]">
+                    <div className="w-24 h-24 rounded-2xl overflow-hidden bg-indigo-600 flex items-center justify-center mb-4 shadow-lg">
                       <Image
                         src={avatar}
                         alt="Profile"
@@ -108,7 +168,7 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                       />
                     </div>
                   ) : (
-                    <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-blue-500 via-blue-600 to-orange-500 flex items-center justify-center text-white text-2xl font-bold mb-4 shadow-[0_8px_20px_rgba(59,130,246,0.3)]">
+                    <div className="w-24 h-24 rounded-2xl bg-indigo-600 flex items-center justify-center text-white text-2xl font-bold mb-4 shadow-lg">
                       {getInitials(userInfo.name)}
                     </div>
                   )}
@@ -129,17 +189,17 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                           href={item.path}
                           className={`w-full flex items-center gap-3.5 px-5 py-4 rounded-xl text-base font-medium transition-all duration-200 ${
                             isActive
-                              ? 'bg-gradient-to-r from-blue-600 to-orange-600 text-white shadow-[0_4px_12px_rgba(59,130,246,0.3)]'
-                              : 'text-gray-700 hover:bg-gray-50/80 hover:shadow-sm active:bg-gray-100'
+                              ? 'bg-indigo-600 text-white shadow-md'
+                              : 'text-gray-700 hover:bg-gray-50 active:bg-gray-100'
                           }`}
                         >
                           <div className={`w-6 h-6 rounded-lg flex items-center justify-center transition-all ${
                             isActive
-                              ? 'bg-white/20 shadow-[0_2px_8px_rgba(255,255,255,0.2)]'
-                              : 'bg-gradient-to-br from-blue-500 to-orange-500 shadow-[0_4px_12px_rgba(59,130,246,0.25)]'
+                              ? 'bg-white/20'
+                              : 'bg-indigo-50 text-indigo-600'
                           }`}>
                             <div className="w-4 h-4">
-                              <IconComponent className={`w-4 h-4 text-white`} />
+                              <IconComponent className={`w-4 h-4 ${isActive ? 'text-white' : 'text-indigo-600'}`} />
                             </div>
                           </div>
                           <span className="tracking-wide">{item.label}</span>
@@ -153,14 +213,14 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                   <div className="border-b border-gray-200/50 mx-2 my-1"></div>
                   <button
                     onClick={handleLogout}
-                    className="w-full flex items-center gap-3.5 px-5 py-4 rounded-xl text-base font-medium text-red-600 hover:bg-red-50/80 hover:shadow-sm transition-all duration-200"
+                    className="w-full flex items-center gap-3.5 px-5 py-4 rounded-xl text-base font-medium text-gray-700 hover:bg-gray-50 active:bg-gray-100 transition-all duration-200"
                   >
-                    <div className="w-6 h-6 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white shadow-[0_4px_12px_rgba(239,68,68,0.25)]">
+                    <div className="w-6 h-6 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600">
                       <div className="w-4 h-4">
                         <LogoutIcon className="w-4 h-4" />
                       </div>
                     </div>
-                    <span className="tracking-wide">Logout</span>
+                    <span className="tracking-wide">{t('mypage.signOut')}</span>
                   </button>
                 </nav>
               </div>
@@ -179,7 +239,7 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
               <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-6">
                 <div className="flex items-center gap-4">
                   {avatar ? (
-                    <div className="w-16 h-16 rounded-xl overflow-hidden bg-gradient-to-br from-blue-500 via-blue-600 to-orange-500 flex items-center justify-center shadow-[0_8px_20px_rgba(59,130,246,0.3)]">
+                    <div className="w-16 h-16 rounded-xl overflow-hidden bg-indigo-600 flex items-center justify-center shadow-lg">
                       <Image
                         src={avatar}
                         alt="Profile"
@@ -189,7 +249,7 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                       />
                     </div>
                   ) : (
-                    <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 via-blue-600 to-orange-500 flex items-center justify-center text-white text-xl font-bold shadow-[0_8px_20px_rgba(59,130,246,0.3)]">
+                    <div className="w-16 h-16 rounded-xl bg-indigo-600 flex items-center justify-center text-white text-xl font-bold shadow-lg">
                       {getInitials(userInfo.name)}
                     </div>
                   )}
@@ -212,17 +272,17 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                           href={item.path}
                           className={`w-full flex items-center gap-3.5 px-5 py-4 rounded-xl text-base font-medium transition-all duration-200 ${
                             isActive
-                              ? 'bg-gradient-to-r from-blue-600 to-orange-600 text-white shadow-[0_4px_12px_rgba(59,130,246,0.3)]'
-                              : 'text-gray-700 hover:bg-gray-50/80 hover:shadow-sm active:bg-gray-100'
+                              ? 'bg-indigo-600 text-white shadow-md'
+                              : 'text-gray-700 hover:bg-gray-50 active:bg-gray-100'
                           }`}
                         >
                           <div className={`w-6 h-6 rounded-lg flex items-center justify-center transition-all ${
                             isActive
-                              ? 'bg-white/20 shadow-[0_2px_8px_rgba(255,255,255,0.2)]'
-                              : 'bg-gradient-to-br from-blue-500 to-orange-500 shadow-[0_4px_12px_rgba(59,130,246,0.25)]'
+                              ? 'bg-white/20'
+                              : 'bg-indigo-50 text-indigo-600'
                           }`}>
                             <div className="w-4 h-4">
-                              <IconComponent className={`w-4 h-4 text-white`} />
+                              <IconComponent className={`w-4 h-4 ${isActive ? 'text-white' : 'text-indigo-600'}`} />
                             </div>
                           </div>
                           <span className="tracking-wide">{item.label}</span>
@@ -236,14 +296,14 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                   <div className="border-b border-gray-200/50 mx-2 my-1"></div>
                   <button
                     onClick={handleLogout}
-                    className="w-full flex items-center gap-3.5 px-5 py-4 rounded-xl text-base font-medium text-red-600 hover:bg-red-50/80 active:bg-red-100 hover:shadow-sm transition-all duration-200"
+                    className="w-full flex items-center gap-3.5 px-5 py-4 rounded-xl text-base font-medium text-gray-700 hover:bg-gray-50 active:bg-gray-100 transition-all duration-200"
                   >
-                    <div className="w-6 h-6 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white shadow-[0_4px_12px_rgba(239,68,68,0.25)]">
+                    <div className="w-6 h-6 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600">
                       <div className="w-4 h-4">
                         <LogoutIcon className="w-4 h-4" />
                       </div>
                     </div>
-                    <span className="tracking-wide">Logout</span>
+                    <span className="tracking-wide">{t('mypage.signOut')}</span>
                   </button>
                 </nav>
               </div>
@@ -253,7 +313,7 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
               <div className="flex items-center justify-between px-1">
                 <Link href="/mypage" className="text-sm text-blue-600 font-semibold flex items-center gap-2">
                   <span className="text-lg">←</span>
-                  Back to My Page
+                  {t('mypage.backToMyPage')}
                 </Link>
                 <span className="text-sm text-gray-500">My Page</span>
               </div>

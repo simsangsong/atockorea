@@ -7,6 +7,14 @@ import TourList from '@/components/TourList';
 import SeasonalTours from '@/components/SeasonalTours';
 import PaymentMethodInfo from '@/components/PaymentMethodInfo';
 import TrustBar from '@/components/TrustBar';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
+
+export const metadata = generateSEOMetadata({
+  title: 'AtoC Korea - Licensed Korea-based Platform for Day Tours',
+  description: 'Book authentic Korean day tours with licensed travel agencies. Explore Seoul, Busan, and Jeju with certified guides. Best prices guaranteed through direct partnerships.',
+  url: '/',
+  tags: ['Korea tours', 'Seoul tours', 'Busan tours', 'Jeju tours', 'day tours', 'travel Korea'],
+});
 
 export default function HomePage() {
   return (

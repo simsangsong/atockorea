@@ -32,6 +32,40 @@ export default function ConfirmationPage() {
   const [bookingData, setBookingData] = useState<BookingData | null>(null);
 
   useEffect(() => {
+    // Check if redirected from Stripe
+    const urlParams = new URLSearchParams(window.location.search);
+    const sessionId = urlParams.get('session_id');
+    const bookingId = urlParams.get('booking_id');
+
+    if (sessionId && bookingId) {
+      // Payment completed via Stripe, fetch booking details
+      fetch(`/api/bookings/${bookingId}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.booking) {
+            // Store booking data for display
+            sessionStorage.setItem('bookingData', JSON.stringify({
+              tourId: data.booking.tour_id,
+              bookingId: data.booking.id,
+              paymentStatus: data.booking.payment_status,
+            }));
+            // Reload to show confirmation
+            window.location.href = `/tour/${params.id}/confirmation?booking_id=${bookingId}`;
+          }
+        })
+        .catch(err => {
+          console.error('Error fetching booking:', err);
+          // Fallback to sessionStorage
+          const stored = sessionStorage.getItem('bookingData');
+          if (stored) {
+            setBookingData(JSON.parse(stored));
+          } else {
+            router.push(`/tour/${params.id}`);
+          }
+        });
+      return;
+    }
+
     // Get booking data from sessionStorage
     const stored = sessionStorage.getItem('bookingData');
     if (stored) {

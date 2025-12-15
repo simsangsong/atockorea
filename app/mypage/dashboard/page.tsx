@@ -1,27 +1,159 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { CheckIcon, CalendarIcon, HistoryIcon, StarIcon } from '@/components/Icons';
+import { supabase } from '@/lib/supabase';
+
+interface Activity {
+  action: string;
+  tour: string;
+  date: string;
+  tourId: string;
+}
 
 export default function DashboardPage() {
-  const upcomingTours = 3;
-  const totalBookings = 12;
-  const reviews = 8;
+  const router = useRouter();
+  const [upcomingTours, setUpcomingTours] = useState(0);
+  const [totalBookings, setTotalBookings] = useState(0);
+  const [reviews, setReviews] = useState(0);
+  const [recentActivity, setRecentActivity] = useState<Activity[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [userName, setUserName] = useState('User');
+
+  useEffect(() => {
+    fetchDashboardData();
+  }, []);
+
+  const fetchDashboardData = async () => {
+    try {
+      setLoading(true);
+      
+      if (!supabase) {
+        console.error('Supabase client not initialized');
+        router.push('/signin');
+        return;
+      }
+
+      const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+      
+      if (sessionError || !session) {
+        console.error('Session error:', sessionError);
+        router.push('/signin');
+        return;
+      }
+
+      // Get user profile
+      const { data: profile, error: profileError } = await supabase
+        .from('user_profiles')
+        .select('full_name')
+        .eq('id', session.user.id)
+        .single();
+
+      if (!profileError && profile?.full_name) {
+        setUserName(profile.full_name);
+      } else if (session.user.email) {
+        // Fallback to email username
+        setUserName(session.user.email.split('@')[0]);
+      }
+
+      // Fetch bookings
+      const bookingsResponse = await fetch(`/api/bookings?userId=${session.user.id}`);
+      const bookingsData = await bookingsResponse.json();
+
+      if (bookingsResponse.ok && bookingsData.bookings) {
+        const bookings = bookingsData.bookings;
+        const now = new Date();
+        
+        // Count upcoming tours (status is 'confirmed' or 'pending' and tour_date is in the future)
+        const upcoming = bookings.filter((booking: any) => {
+          const tourDate = new Date(booking.booking_date || booking.tour_date || booking.created_at);
+          return (booking.status === 'confirmed' || booking.status === 'pending') && tourDate >= now;
+        });
+        
+        setUpcomingTours(upcoming.length);
+        setTotalBookings(bookings.length);
+
+        // Get recent activity (last 5 bookings)
+        const recent = bookings
+          .slice(0, 5)
+          .map((booking: any) => ({
+            action: booking.status === 'completed' ? 'Completed' : 
+                   booking.status === 'cancelled' ? 'Cancelled' : 'Booked',
+            tour: booking.tours?.title || 'Tour',
+            date: formatRelativeDate(booking.created_at),
+            tourId: booking.tour_id,
+          }));
+        
+        setRecentActivity(recent);
+      }
+
+      // Fetch reviews
+      try {
+        const reviewsResponse = await fetch(`/api/reviews?userId=${session.user.id}`);
+        const reviewsData = await reviewsResponse.json();
+
+        if (reviewsResponse.ok && reviewsData.reviews) {
+          setReviews(reviewsData.reviews.length);
+        }
+      } catch (reviewError) {
+        console.error('Error fetching reviews:', reviewError);
+        // Don't fail the whole dashboard if reviews fail
+      }
+    } catch (err: any) {
+      console.error('Error fetching dashboard data:', err);
+      // If it's an auth error, redirect to signin
+      if (err?.message?.includes('session') || err?.message?.includes('auth')) {
+        router.push('/signin');
+        return;
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const formatRelativeDate = (dateString: string) => {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffInMs = now.getTime() - date.getTime();
+    const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+
+    if (diffInDays === 0) return 'Today';
+    if (diffInDays === 1) return 'Yesterday';
+    if (diffInDays < 7) return `${diffInDays} days ago`;
+    if (diffInDays < 30) return `${Math.floor(diffInDays / 7)} weeks ago`;
+    return `${Math.floor(diffInDays / 30)} months ago`;
+  };
 
   const handleNavigation = (e: React.MouseEvent, path: string) => {
-    // On mobile, force full page navigation
     if (window.innerWidth < 768) {
       e.preventDefault();
       e.stopPropagation();
-      window.location.href = path;
+      router.push(path);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="space-y-8">
+        <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-8 md:p-10">
+          <div className="flex items-center justify-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+            <p className="ml-3 text-gray-600">Loading dashboard...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-8">
       {/* Welcome Section */}
       <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-8 md:p-10 transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
-        <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3 tracking-tight">Welcome back, John!</h1>
+        <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3 tracking-tight">
+          Welcome back, {userName}!
+        </h1>
         <p className="text-[15px] text-gray-600 font-medium">Here's what's happening with your bookings</p>
       </div>
 
@@ -87,39 +219,38 @@ export default function DashboardPage() {
           </Link>
         </div>
         <div className="space-y-3">
-          {[
-            { action: 'Booked', tour: 'Seoul City Tour', date: '2 days ago', tourId: 1 },
-            { action: 'Reviewed', tour: 'Jeju Island Adventure', date: '5 days ago', tourId: 2 },
-            { action: 'Cancelled', tour: 'Busan Beach Tour', date: '1 week ago', tourId: 3 },
-          ].map((activity, idx) => (
-            <Link
-              key={idx}
-              href={`/tour/${activity.tourId}`}
-              onClick={(e) => {
-                if (window.innerWidth < 768) {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  window.location.href = `/tour/${activity.tourId}`;
-                }
-              }}
-              className="flex items-center gap-4 p-5 bg-gradient-to-r from-gray-50/80 to-gray-50/40 rounded-xl hover:from-gray-100/80 hover:to-gray-100/40 transition-all duration-200 cursor-pointer border border-gray-200/40 hover:border-gray-300/60 hover:shadow-sm"
-            >
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-white shadow-[0_4px_12px_rgba(59,130,246,0.25)]">
-                <div className="w-4 h-4">
-                  <CheckIcon className="w-4 h-4" />
+          {recentActivity.length > 0 ? (
+            recentActivity.map((activity, idx) => (
+              <Link
+                key={idx}
+                href={`/tour/${activity.tourId}`}
+                onClick={(e) => {
+                  if (window.innerWidth < 768) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    router.push(`/tour/${activity.tourId}`);
+                  }
+                }}
+                className="flex items-center gap-4 p-5 bg-gradient-to-r from-gray-50/80 to-gray-50/40 rounded-xl hover:from-gray-100/80 hover:to-gray-100/40 transition-all duration-200 cursor-pointer border border-gray-200/40 hover:border-gray-300/60 hover:shadow-sm"
+              >
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-white shadow-[0_4px_12px_rgba(59,130,246,0.25)]">
+                  <div className="w-4 h-4">
+                    <CheckIcon className="w-4 h-4" />
+                  </div>
                 </div>
-              </div>
-              <div className="flex-1">
-                <p className="font-semibold text-gray-900 text-base mb-1">
-                  {activity.action} {activity.tour}
-                </p>
-                <p className="text-sm text-gray-500 font-medium">{activity.date}</p>
-              </div>
-            </Link>
-          ))}
+                <div className="flex-1">
+                  <p className="font-semibold text-gray-900 text-base mb-1">
+                    {activity.action} {activity.tour}
+                  </p>
+                  <p className="text-sm text-gray-500 font-medium">{activity.date}</p>
+                </div>
+              </Link>
+            ))
+          ) : (
+            <p className="text-gray-500 text-center py-4">No recent activity</p>
+          )}
         </div>
       </div>
     </div>
   );
 }
-

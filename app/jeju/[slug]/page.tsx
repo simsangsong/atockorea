@@ -3,6 +3,7 @@
 
 import React, { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { detailedTours } from "../../../data/tours";
 
 // ===== 타입 정의 =====
@@ -197,11 +198,13 @@ export default function JejuTourDetailPage({ params }: PageProps) {
           {/* 메인 이미지 + 썸네일 스와이프 (모바일) */}
           <div className="border-b border-[#eee]">
             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-t-3xl bg-black sm:aspect-[16/9]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={heroImage}
                 alt={tour.title}
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
+                priority
+                sizes="100vw"
               />
               {/* 작은 배지 */}
               <div className="absolute bottom-3 left-3 rounded-full bg-black/60 px-3 py-1 text-[11px] text-white backdrop-blur-sm">

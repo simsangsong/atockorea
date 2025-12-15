@@ -1,32 +1,36 @@
 "use client";
 
 import Image from "next/image";
-
-const destinations = [
-  {
-    id: 1,
-    name: "Seoul",
-    description: "Capital city with rich history",
-    image: "https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=800&q=80",
-    available: true,
-  },
-  {
-    id: 2,
-    name: "Busan",
-    description: "Coastal city with beautiful beaches",
-    image: "https://images.unsplash.com/photo-1534008897995-27a23e859048?w=800&q=80",
-    available: true,
-  },
-  {
-    id: 3,
-    name: "Jeju Island",
-    description: "Natural paradise and UNESCO sites",
-    image: "https://images.unsplash.com/photo-1504817343863-5092a923803e?w=800&q=80",
-    available: true,
-  },
-];
+import { useTranslations } from "@/lib/i18n";
+import { useMemo } from "react";
 
 export default function DestinationsCards() {
+  const t = useTranslations();
+  
+  const destinations = useMemo(() => [
+    {
+      id: 1,
+      name: t('home.destinations.seoul'),
+      description: t('home.destinations.seoulDesc'),
+      image: "https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=800&q=80",
+      available: true,
+    },
+    {
+      id: 2,
+      name: t('home.destinations.busan'),
+      description: t('home.destinations.busanDesc'),
+      image: "https://images.unsplash.com/photo-1534008897995-27a23e859048?w=800&q=80",
+      available: true,
+    },
+    {
+      id: 3,
+      name: t('home.destinations.jeju'),
+      description: t('home.destinations.jejuDesc'),
+      image: "https://images.unsplash.com/photo-1504817343863-5092a923803e?w=800&q=80",
+      available: true,
+    },
+  ], [t]);
+  
   return (
     <section className="pt-6 pb-16 md:pt-8 md:pb-16 bg-transparent">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,10 +41,10 @@ export default function DestinationsCards() {
             <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-gray-900 via-blue-700 to-orange-700 bg-clip-text text-transparent mb-2">
-            Popular Destinations
+            {t('home.destinations.title')}
           </h2>
           <p className="text-sm sm:text-base text-gray-500 font-medium">
-            Discover the most beautiful places in Korea
+            {t('home.destinations.subtitle')}
           </p>
           <div className="inline-flex items-center gap-2 mt-3">
             <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
@@ -75,7 +79,7 @@ export default function DestinationsCards() {
                   {destination.available && (
                   <div className="absolute top-2 md:top-4 right-2 md:right-4">
                     <span className="px-1.5 md:px-3 py-0.5 md:py-1 bg-blue-600 text-white text-[9px] md:text-xs font-semibold rounded-full shadow-lg drop-shadow-md">
-                      Available
+                      {t('home.destinations.available')}
                     </span>
                   </div>
                   )}

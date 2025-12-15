@@ -2,13 +2,14 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { supabase } from '@/lib/supabase';
 
 export default function CreateMerchantPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
-  const [credentials, setCredentials] = useState<any>(null);
   const [formData, setFormData] = useState({
     company_name: '',
     business_registration_number: '',
@@ -28,25 +29,37 @@ export default function CreateMerchantPage() {
     setLoading(true);
     setError('');
     setSuccess(false);
-    setCredentials(null);
 
     try {
-      // Get admin session token (in production, use secure httpOnly cookies)
-      const adminSession = localStorage.getItem('admin_session');
-      if (!adminSession) {
+      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
+      
+      if (!session) {
         setError('Please login as admin first');
-        setLoading(false);
+        router.push('/signin?redirect=/admin/merchants/create');
         return;
       }
 
-      const session = JSON.parse(adminSession);
-      const response = await fetch('/api/admin/merchants/create', {
+      // Create merchant (API will create user account)
+      const response = await fetch('/api/admin/merchants', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${session.access_token}`,
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          createUser: true, // Request API to create user account
+          companyName: formData.company_name,
+          businessRegistrationNumber: formData.business_registration_number || null,
+          contactPerson: formData.contact_person,
+          contactEmail: formData.contact_email,
+          contactPhone: formData.contact_phone,
+          addressLine1: formData.address_line1 || null,
+          addressLine2: formData.address_line2 || null,
+          city: formData.city || null,
+          province: formData.province || null,
+          postalCode: formData.postal_code || null,
+          country: formData.country,
+        }),
       });
 
       const data = await response.json();
@@ -58,7 +71,8 @@ export default function CreateMerchantPage() {
       }
 
       setSuccess(true);
-      setCredentials(data.credentials);
+      alert(`Merchant created successfully!\n\nLogin Email: ${formData.contact_email}\n\nPlease send login credentials to the merchant securely.`);
+      
       // Reset form
       setFormData({
         company_name: '',
@@ -73,8 +87,14 @@ export default function CreateMerchantPage() {
         postal_code: '',
         country: 'South Korea',
       });
+
+      // Redirect to merchants list after 2 seconds
+      setTimeout(() => {
+        router.push('/admin/merchants');
+      }, 2000);
     } catch (err: any) {
-      setError('Network error. Please try again.');
+      console.error('Error creating merchant:', err);
+      setError(err.message || 'Network error. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -83,8 +103,14 @@ export default function CreateMerchantPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">创建新商家</h1>
-        <p className="text-gray-600 mt-2">为新的旅行社创建账户</p>
+        <Link
+          href="/admin/merchants"
+          className="text-indigo-600 hover:text-indigo-700 text-sm mb-2 inline-block"
+        >
+          ← Back to Merchants
+        </Link>
+        <h1 className="text-3xl font-bold text-gray-900">Create New Merchant</h1>
+        <p className="text-gray-600 mt-2">Create account for a new travel agency</p>
       </div>
 
       {error && (
@@ -93,33 +119,22 @@ export default function CreateMerchantPage() {
         </div>
       )}
 
-      {success && credentials && (
+      {success && (
         <div className="p-6 bg-green-50 border border-green-200 rounded-lg">
-          <h3 className="text-lg font-semibold text-green-900 mb-4">商家账户创建成功！</h3>
-          <div className="space-y-2 text-sm">
-            <p><strong>登录邮箱：</strong>{credentials.email}</p>
-            <p><strong>临时密码：</strong>
-              <span className="font-mono bg-white px-2 py-1 rounded border">{credentials.temporaryPassword}</span>
-            </p>
-            <p><strong>登录地址：</strong>
-              <a href={credentials.loginUrl} className="text-indigo-600 hover:underline">
-                {credentials.loginUrl}
-              </a>
-            </p>
-            <p className="text-gray-600 mt-4">
-              ⚠️ 请将登录凭证安全地发送给商家。商家首次登录时需要修改密码。
-            </p>
-          </div>
+          <h3 className="text-lg font-semibold text-green-900 mb-2">Merchant account created successfully!</h3>
+          <p className="text-sm text-gray-600">
+            Redirecting to merchants list...
+          </p>
         </div>
       )}
 
       <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 space-y-6">
         <div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">基本信息</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">Company Information</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                公司名称 *
+                Company Name *
               </label>
               <input
                 type="text"
@@ -131,7 +146,7 @@ export default function CreateMerchantPage() {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                营业执照号
+                Business Registration Number
               </label>
               <input
                 type="text"
@@ -144,11 +159,11 @@ export default function CreateMerchantPage() {
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">联系人信息</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">Contact Information</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                联系人姓名 *
+                Contact Person *
               </label>
               <input
                 type="text"
@@ -160,7 +175,7 @@ export default function CreateMerchantPage() {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                联系邮箱 * (将作为登录账号)
+                Contact Email * (will be used as login)
               </label>
               <input
                 type="email"
@@ -172,7 +187,7 @@ export default function CreateMerchantPage() {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                联系电话 *
+                Contact Phone *
               </label>
               <input
                 type="tel"
@@ -186,11 +201,11 @@ export default function CreateMerchantPage() {
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">地址信息</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">Address Information</h2>
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                地址行1
+                Address Line 1
               </label>
               <input
                 type="text"
@@ -202,7 +217,7 @@ export default function CreateMerchantPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  城市
+                  City
                 </label>
                 <input
                   type="text"
@@ -213,7 +228,7 @@ export default function CreateMerchantPage() {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  省份
+                  Province
                 </label>
                 <input
                   type="text"
@@ -224,7 +239,7 @@ export default function CreateMerchantPage() {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  邮编
+                  Postal Code
                 </label>
                 <input
                   type="text"
@@ -243,18 +258,17 @@ export default function CreateMerchantPage() {
             onClick={() => router.back()}
             className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
           >
-            取消
+            Cancel
           </button>
           <button
             type="submit"
             disabled={loading}
             className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors disabled:opacity-50"
           >
-            {loading ? '创建中...' : '创建商家账户'}
+            {loading ? 'Creating...' : 'Create Merchant Account'}
           </button>
         </div>
       </form>
     </div>
   );
 }
-

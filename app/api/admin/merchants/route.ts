@@ -2,95 +2,233 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
 
-// GET /api/admin/merchants - Get all merchants
+/**
+ * GET /api/admin/merchants
+ * Get all merchants (admin only)
+ */
 export async function GET(req: NextRequest) {
   try {
+    // Check admin authentication
     await requireAdmin(req);
+    
     const supabase = createServerClient();
+    const { searchParams } = new URL(req.url);
 
-    const { data: merchants, error } = await supabase
+    const status = searchParams.get('status');
+    const search = searchParams.get('search');
+
+    let query = supabase
       .from('merchants')
-      .select('*')
+      .select(`
+        *,
+        user_profiles (
+          id,
+          full_name,
+          email
+        )
+      `)
       .order('created_at', { ascending: false });
 
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
+    if (status) {
+      query = query.eq('status', status);
     }
 
-    return NextResponse.json({ merchants });
-  } catch (error: any) {
-    if (error.message === 'Unauthorized' || error.message.includes('Forbidden')) {
-      return NextResponse.json({ error: error.message }, { status: 403 });
+    if (search) {
+      query = query.or(`company_name.ilike.%${search}%,contact_email.ilike.%${search}%,contact_person.ilike.%${search}%`);
     }
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+
+    const { data: merchants, error } = await query;
+
+    if (error) {
+      console.error('Error fetching merchants:', error);
+      return NextResponse.json(
+        { error: 'Failed to fetch merchants', details: error.message },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({ merchants: merchants || [] });
+  } catch (error: any) {
+    console.error('Error fetching merchants:', error);
+    
+    if (error.message === 'Unauthorized' || error.message.includes('Forbidden')) {
+      return NextResponse.json(
+        { error: 'Admin access required' },
+        { status: 403 }
+      );
+    }
+    
+    return NextResponse.json(
+      { error: 'Internal server error', details: error.message },
+      { status: 500 }
+    );
   }
 }
 
-// POST /api/admin/merchants - Create new merchant
+/**
+ * POST /api/admin/merchants
+ * Create a new merchant (admin only)
+ */
 export async function POST(req: NextRequest) {
   try {
+    // Check admin authentication
     await requireAdmin(req);
+    
     const supabase = createServerClient();
     const body = await req.json();
 
-    // First create user account
-    const { data: authData, error: authError } = await supabase.auth.admin.createUser({
-      email: body.contact_email,
-      password: body.password || 'TempPassword123!',
-      email_confirm: true,
-    });
+    const {
+      userId,
+      companyName,
+      businessRegistrationNumber,
+      contactPerson,
+      contactEmail,
+      contactPhone,
+      addressLine1,
+      addressLine2,
+      city,
+      province,
+      postalCode,
+      country,
+      createUser, // If true, create user account first
+    } = body;
 
-    if (authError || !authData.user) {
-      return NextResponse.json({ error: 'Failed to create user account' }, { status: 400 });
+    if (!companyName || !contactPerson || !contactEmail || !contactPhone) {
+      return NextResponse.json(
+        { error: 'Missing required fields: companyName, contactPerson, contactEmail, contactPhone' },
+        { status: 400 }
+      );
     }
 
-    // Create user profile with merchant role
-    const { error: profileError } = await supabase
-      .from('user_profiles')
-      .insert({
-        id: authData.user.id,
-        full_name: body.contact_person,
-        role: 'merchant',
+    let finalUserId = userId;
+
+    // Create user account if requested
+    if (createUser && !userId) {
+      // Generate temporary password
+      const tempPassword = `Temp${Math.random().toString(36).slice(-8)}!`;
+      
+      const { data: authData, error: authError } = await supabase.auth.admin.createUser({
+        email: contactEmail,
+        password: tempPassword,
+        email_confirm: true,
       });
 
-    if (profileError) {
-      return NextResponse.json({ error: 'Failed to create user profile' }, { status: 400 });
+      if (authError || !authData.user) {
+        return NextResponse.json(
+          { error: 'Failed to create user account', details: authError?.message },
+          { status: 500 }
+        );
+      }
+
+      finalUserId = authData.user.id;
+
+      // Create user profile
+      await supabase
+        .from('user_profiles')
+        .insert({
+          id: finalUserId,
+          full_name: contactPerson,
+          role: 'merchant',
+        });
+    } else if (userId) {
+      // Check if user exists
+      const { data: user } = await supabase.auth.admin.getUserById(userId);
+      if (!user) {
+        return NextResponse.json(
+          { error: 'User not found' },
+          { status: 404 }
+        );
+      }
+    } else {
+      return NextResponse.json(
+        { error: 'Either userId or createUser must be provided' },
+        { status: 400 }
+      );
     }
 
-    // Create merchant record
-    const { data: merchant, error: merchantError } = await supabase
+    // Create merchant
+    const { data: merchant, error } = await supabase
       .from('merchants')
       .insert({
-        user_id: authData.user.id,
-        company_name: body.company_name,
-        business_registration_number: body.business_registration_number,
-        contact_person: body.contact_person,
-        contact_email: body.contact_email,
-        contact_phone: body.contact_phone,
-        address_line1: body.address_line1,
-        city: body.city,
+        user_id: finalUserId,
+        company_name: companyName,
+        business_registration_number: businessRegistrationNumber || null,
+        contact_person: contactPerson,
+        contact_email: contactEmail,
+        contact_phone: contactPhone,
+        address_line1: addressLine1 || null,
+        address_line2: addressLine2 || null,
+        city: city || null,
+        province: province || null,
+        postal_code: postalCode || null,
+        country: country || 'South Korea',
         status: 'pending',
+        is_verified: false,
       })
-      .select()
+      .select(`
+        *,
+        user_profiles (
+          id,
+          full_name,
+          email
+        )
+      `)
       .single();
 
-    if (merchantError) {
-      return NextResponse.json({ error: merchantError.message }, { status: 400 });
+    if (error) {
+      console.error('Error creating merchant:', error);
+      return NextResponse.json(
+        { error: 'Failed to create merchant', details: error.message },
+        { status: 500 }
+      );
     }
 
-    // Create default merchant settings
+    // Update user profile role to merchant
     await supabase
-      .from('merchant_settings')
-      .insert({
-        merchant_id: merchant.id,
-      });
+      .from('user_profiles')
+      .update({ role: 'merchant' })
+      .eq('id', finalUserId);
 
-    return NextResponse.json({ merchant }, { status: 201 });
-  } catch (error: any) {
-    if (error.message === 'Unauthorized' || error.message.includes('Forbidden')) {
-      return NextResponse.json({ error: error.message }, { status: 403 });
+    // Send welcome email with login credentials
+    if (createUser) {
+      try {
+        const { data: authData } = await supabase.auth.admin.getUserById(finalUserId);
+        // Note: Supabase doesn't return the password after creation, so we need to generate a new one
+        // In production, you might want to use a password reset link instead
+        const temporaryPassword = `Temp${Math.random().toString(36).slice(-8)}!`;
+        
+        const { sendMerchantWelcomeEmail } = await import('@/lib/email');
+        await sendMerchantWelcomeEmail({
+          to: contactEmail,
+          companyName: companyName,
+          contactPerson: contactPerson,
+          loginEmail: contactEmail,
+          temporaryPassword: temporaryPassword,
+          loginUrl: `${process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com'}/merchant/login`,
+        });
+      } catch (emailError) {
+        // Log error but don't fail merchant creation
+        console.error('Error sending welcome email:', emailError);
+      }
     }
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+
+    return NextResponse.json(
+      { merchant, message: 'Merchant created successfully' },
+      { status: 201 }
+    );
+  } catch (error: any) {
+    console.error('Error creating merchant:', error);
+    
+    if (error.message === 'Unauthorized' || error.message.includes('Forbidden')) {
+      return NextResponse.json(
+        { error: 'Admin access required' },
+        { status: 403 }
+      );
+    }
+    
+    return NextResponse.json(
+      { error: 'Internal server error', details: error.message },
+      { status: 500 }
+    );
   }
 }
-

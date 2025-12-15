@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CartIcon } from "./Icons";
+import { useTranslations } from "@/lib/i18n";
 
 // Export Tour type for use in other files
 export interface Tour {
@@ -48,12 +49,13 @@ export default function TourCard({
   discount,
   tour,
 }: TourCardProps) {
+  const t = useTranslations();
   const [isAdding, setIsAdding] = useState(false);
 
   // Support both Tour type and individual props
   const displayTitle = tour?.title || title || "";
   const displayLocation = tour?.city || location || "";
-  const displayCategory = tour?.tag?.split(" · ")[0] || location || "Tours";
+  const displayCategory = tour?.tag?.split(" · ")[0] || location || t('tourCard.tours');
   const displayType = tour?.tag?.split(" · ")[1] || type || "";
   const displayPrice = tour?.price || (price ? `₩ ${(price * 1000).toLocaleString()}` : "");
   const displayHref = tour?.href || `/tour/${id || 1}`;
@@ -68,7 +70,7 @@ export default function TourCard({
     // Simulate API call
     setTimeout(() => {
       setIsAdding(false);
-      alert(`${displayTitle} added to cart!`);
+      alert(`${displayTitle} ${t('tourCard.addedToCart')}`);
       // In production, add to cart state/API
     }, 500);
   };
@@ -95,7 +97,7 @@ export default function TourCard({
           {discount && (
             <div className="absolute top-2 right-2">
               <span className="px-2 py-0.5 bg-red-500 text-white text-[10px] font-semibold rounded shadow-sm">
-                Sale {discount}% off
+                {t('tourCard.sale')} {discount}% {t('tourCard.off')}
               </span>
             </div>
           )}
@@ -103,7 +105,7 @@ export default function TourCard({
         <div className="p-3 flex-1 flex flex-col bg-gradient-to-b from-white to-gray-50/30">
           {/* Category label */}
           <p className="text-[11px] text-gray-500 mb-1">
-            {displayCategory && displayType ? `${displayCategory} • ${displayType}` : displayCategory || "Tours"}
+            {displayCategory && displayType ? `${displayCategory} • ${displayType}` : displayCategory || t('tourCard.tours')}
           </p>
           
           {/* Title */}

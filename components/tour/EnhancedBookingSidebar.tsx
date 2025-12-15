@@ -1,45 +1,179 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import DatePicker from 'react-datepicker';
 import { MapIcon } from '@/components/Icons';
+import { useTranslations } from '@/lib/i18n';
+import 'react-datepicker/dist/react-datepicker.css';
 
 interface EnhancedBookingSidebarProps {
   tour: {
-    id: number;
+    id: string | number;
     price: number;
-    originalPrice?: number;
+    originalPrice?: number | null;
     priceType: 'person' | 'group';
-    pickupPoints: Array<{ id: number; name: string; address: string; lat: number; lng: number }>;
+    pickupPoints: Array<{ id: string | number; name: string; address: string; lat: number; lng: number }>;
     availableSpots?: number;
-    depositAmountUSD?: number; // 固定定金金额（美元）
-    balanceAmountKRW?: number; // 当天现金支付的固定金额（韩元）
+    depositAmountUSD?: number;
+    balanceAmountKRW?: number;
   };
+}
+
+interface AvailabilityData {
+  available: boolean;
+  availableSpots: number;
+  maxCapacity: number | null;
+  requestedGuests: number;
+  canAccommodate: boolean;
+  price: number;
+  priceOverride: number | null;
+  date: string;
 }
 
 export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarProps) {
   const router = useRouter();
+  const t = useTranslations();
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [guestCount, setGuestCount] = useState(1);
-  const [selectedPickup, setSelectedPickup] = useState<number | null>(null);
+  const [selectedPickup, setSelectedPickup] = useState<string | number | null>(null);
   const [promoCode, setPromoCode] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isBooking, setIsBooking] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState<'deposit' | 'full'>('deposit');
+  const [applyDiscount, setApplyDiscount] = useState(true); // 할인율 자동 적용 (기본값 true)
+  
+  // Availability state
+  const [availability, setAvailability] = useState<AvailabilityData | null>(null);
+  const [checkingAvailability, setCheckingAvailability] = useState(false);
+  const [availabilityError, setAvailabilityError] = useState<string | null>(null);
+  const [disabledDates, setDisabledDates] = useState<Date[]>([]);
 
-  const discount = tour.originalPrice ? tour.originalPrice - tour.price : 0;
-  const discountPercent = tour.originalPrice ? Math.round((discount / tour.originalPrice) * 100) : 0;
-  const subtotal = tour.priceType === 'person' ? tour.price * guestCount : tour.price;
+  // Fetch availability when date or guest count changes
+  useEffect(() => {
+    if (selectedDate) {
+      checkAvailability();
+    } else {
+      setAvailability(null);
+      setAvailabilityError(null);
+    }
+  }, [selectedDate, guestCount, tour.id]);
+
+  // Fetch date range availability to disable unavailable dates
+  useEffect(() => {
+    fetchDateRangeAvailability();
+  }, [tour.id]);
+
+  const fetchDateRangeAvailability = async () => {
+    try {
+      const response = await fetch(`/api/tours/${tour.id}/availability/range?days=90`);
+      if (response.ok) {
+        const data = await response.json();
+        const unavailableDates: Date[] = [];
+        
+        Object.entries(data.availability).forEach(([dateStr, avail]: [string, any]) => {
+          if (!avail.available || avail.availableSpots === 0) {
+            unavailableDates.push(new Date(dateStr));
+          }
+        });
+        
+        setDisabledDates(unavailableDates);
+      }
+    } catch (err) {
+      console.error('Error fetching date range availability:', err);
+    }
+  };
+
+  const checkAvailability = useCallback(async () => {
+    if (!selectedDate) return;
+
+    try {
+      setCheckingAvailability(true);
+      setAvailabilityError(null);
+
+      const dateStr = selectedDate.toISOString().split('T')[0];
+      const response = await fetch(
+        `/api/tours/${tour.id}/availability?date=${dateStr}&guests=${guestCount}`
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to check availability');
+      }
+
+      setAvailability(data);
+    } catch (err: any) {
+      console.error('Error checking availability:', err);
+      setAvailabilityError(err.message);
+      setAvailability(null);
+    } finally {
+      setCheckingAvailability(false);
+    }
+  }, [selectedDate, guestCount, tour.id]);
+
+  const hasDiscount = tour.originalPrice !== null && tour.originalPrice !== undefined && tour.originalPrice > tour.price;
+  const discount = hasDiscount && tour.originalPrice ? tour.originalPrice - tour.price : 0;
+  const discountPercent = hasDiscount && tour.originalPrice ? Math.round((discount / tour.originalPrice) * 100) : 0;
+  
+  // Format price as KRW
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat('ko-KR', {
+      style: 'currency',
+      currency: 'KRW',
+      minimumFractionDigits: 0,
+    }).format(price);
+  };
+  
+  // Calculate base price (use original price if discount is not applied, otherwise use discounted price)
+  const basePrice = applyDiscount && hasDiscount ? tour.price : (tour.originalPrice || tour.price);
+  // Use availability price if available, otherwise use base price
+  const effectivePrice = availability?.price || basePrice;
+  const subtotal = tour.priceType === 'person' ? effectivePrice * guestCount : effectivePrice;
   const promoDiscount = promoCode === 'SAVE10' ? subtotal * 0.1 : 0;
   const totalPrice = subtotal - promoDiscount;
+  
+  // Calculate deposit and balance for deposit payment method
+  // Deposit: ₩10,000, Balance: totalPrice - ₩10,000
+  const depositAmountKRW = 10000;
+  const balanceAmountKRW = totalPrice - depositAmountKRW;
 
   const handleCheckAvailability = async () => {
     if (!selectedDate) return;
     
+    // Re-check availability before booking
+    await checkAvailability();
+    
+    if (!availability || !availability.canAccommodate) {
+      alert(`Sorry, only ${availability?.availableSpots || 0} spots available for this date.`);
+      return;
+    }
+    
     setIsLoading(true);
-    // Simulate API call to check availability
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    
+    // Reserve spots (optional - can be done in booking API)
+    try {
+      const dateStr = selectedDate.toISOString().split('T')[0];
+      const reserveResponse = await fetch(`/api/tours/${tour.id}/availability`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          date: dateStr,
+          guests: guestCount,
+        }),
+      });
+
+      if (!reserveResponse.ok) {
+        const data = await reserveResponse.json();
+        throw new Error(data.error || 'Failed to reserve spots');
+      }
+    } catch (err: any) {
+      console.error('Error reserving spots:', err);
+      alert(`Failed to reserve spots: ${err.message}`);
+      setIsLoading(false);
+      return;
+    }
+    
     setIsLoading(false);
     setIsBooking(true);
     
@@ -51,10 +185,11 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
         guests: guestCount,
         pickup: selectedPickup,
         paymentMethod,
-        depositAmountUSD: tour.depositAmountUSD,
-        balanceAmountKRW: tour.balanceAmountKRW,
+        depositAmountKRW: paymentMethod === 'deposit' ? depositAmountKRW : undefined,
+        balanceAmountKRW: paymentMethod === 'deposit' ? balanceAmountKRW : undefined,
         totalPrice,
         promoCode: promoCode || undefined,
+        availability: availability,
       };
       
       // Store booking data in sessionStorage
@@ -65,33 +200,87 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
     }, 500);
   };
 
+  // Update guest count with availability check
+  const handleGuestCountChange = (newCount: number) => {
+    if (newCount < 1) return;
+    
+    // Check if new count exceeds availability
+    if (availability && newCount > availability.availableSpots) {
+      alert(`Only ${availability.availableSpots} spots available for this date.`);
+      return;
+    }
+    
+    setGuestCount(newCount);
+  };
+
   return (
     <div className="bg-white rounded-xl shadow-lg border border-gray-200/50 p-6 lg:sticky lg:top-20">
       {/* Price Display */}
       <div className="mb-6 pb-6 border-b border-gray-200">
-        {tour.originalPrice && (
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-lg text-gray-400 line-through">${tour.originalPrice}</span>
-            <span className="px-2 py-0.5 bg-red-100 text-red-600 text-xs font-semibold rounded">
-              Save {discountPercent}%
-            </span>
+        {/* Original Price */}
+        {hasDiscount && tour.originalPrice && (
+          <div className="mb-2">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-lg text-gray-400 line-through">{formatPrice(tour.originalPrice)}</span>
+            </div>
+            {/* Discount Toggle */}
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={applyDiscount}
+                onChange={(e) => setApplyDiscount(e.target.checked)}
+                className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+              />
+              <span className="text-sm text-gray-700">
+                {discountPercent}% {t('tour.discountApplied')}
+              </span>
+            </label>
           </div>
         )}
+        {/* Final Price */}
         <div className="flex items-baseline gap-2">
-          <span className="text-3xl font-bold text-blue-600">${tour.price}</span>
+          <span className="text-3xl font-bold text-blue-600">
+            {formatPrice(availability?.priceOverride || (applyDiscount && hasDiscount ? tour.price : (tour.originalPrice || tour.price)))}
+          </span>
           <span className="text-sm text-gray-500">/ {tour.priceType}</span>
         </div>
+        {availability?.priceOverride && (
+          <p className="text-xs text-orange-600 mt-1">이 날짜 특가</p>
+        )}
         {tour.priceType === 'person' && (
-          <p className="text-xs text-gray-500 mt-1">Per person pricing</p>
+          <p className="text-xs text-gray-500 mt-1">{t('tour.pricePerPerson')}</p>
         )}
       </div>
 
-      {/* Stock Alert */}
-      {tour.availableSpots !== undefined && tour.availableSpots < 10 && (
-        <div className="mb-6 p-3 bg-orange-50 border border-orange-200 rounded-lg">
-          <p className="text-sm font-medium text-orange-800">
-            ⚠️ Only {tour.availableSpots} spots left!
-          </p>
+      {/* Availability Alert */}
+      {availability && (
+        <div className={`mb-6 p-3 rounded-lg border ${
+          availability.canAccommodate
+            ? availability.availableSpots < 10
+              ? 'bg-orange-50 border-orange-200'
+              : 'bg-green-50 border-green-200'
+            : 'bg-red-50 border-red-200'
+        }`}>
+          {availability.canAccommodate ? (
+            <p className={`text-sm font-medium ${
+              availability.availableSpots < 10 ? 'text-orange-800' : 'text-green-800'
+            }`}>
+              {availability.availableSpots < 10 
+                ? `⚠️ Only ${availability.availableSpots} spots left!`
+                : `✓ ${availability.availableSpots} spots available`
+              }
+            </p>
+          ) : (
+            <p className="text-sm font-medium text-red-800">
+              ❌ Not enough spots available. Only {availability.availableSpots} spots left.
+            </p>
+          )}
+        </div>
+      )}
+
+      {availabilityError && (
+        <div className="mb-6 p-3 bg-red-50 border border-red-200 rounded-lg">
+          <p className="text-sm font-medium text-red-800">Error: {availabilityError}</p>
         </div>
       )}
 
@@ -100,30 +289,38 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
         {/* Date Picker */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Select Date <span className="text-red-500">*</span>
+            {t('tour.selectDate')} <span className="text-red-500">*</span>
           </label>
           <DatePicker
             selected={selectedDate}
             onChange={(date) => setSelectedDate(date)}
             minDate={new Date()}
-            placeholderText="Choose a date"
+            placeholderText={t('tour.chooseDate')}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
             dateFormat="MMMM d, yyyy"
+            excludeDates={disabledDates}
+            filterDate={(date) => {
+              // Additional client-side filtering if needed
+              return true;
+            }}
           />
+          {checkingAvailability && selectedDate && (
+            <p className="mt-2 text-xs text-gray-500">Checking availability...</p>
+          )}
         </div>
 
         {/* Guest Count */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Number of Guests <span className="text-red-500">*</span>
+            {t('tour.numberOfGuests')} <span className="text-red-500">*</span>
           </label>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-900">Guests</p>
+              <p className="text-sm font-medium text-gray-900">{t('tour.guests')}</p>
             </div>
             <div className="flex items-center gap-3">
               <button
-                onClick={() => setGuestCount(Math.max(1, guestCount - 1))}
+                onClick={() => handleGuestCountChange(guestCount - 1)}
                 className="w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
               >
                 <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -134,8 +331,9 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
                 {guestCount}
               </span>
               <button
-                onClick={() => setGuestCount(guestCount + 1)}
-                className="w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                onClick={() => handleGuestCountChange(guestCount + 1)}
+                disabled={availability ? guestCount >= availability.availableSpots : false}
+                className="w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -143,19 +341,24 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
               </button>
             </div>
           </div>
+          {availability && availability.availableSpots < guestCount && (
+            <p className="mt-2 text-xs text-red-600">
+                  {t('tour.guests')}: {availability.availableSpots}
+            </p>
+          )}
         </div>
 
         {/* Pickup Point */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Pickup Location
+            {t('tour.pickupLocation')}
           </label>
           <select
             value={selectedPickup || ''}
-            onChange={(e) => setSelectedPickup(Number(e.target.value))}
+            onChange={(e) => setSelectedPickup(e.target.value)}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
           >
-            <option value="">Select pickup point</option>
+              <option value="">{t('tour.selectPickupPoint')}</option>
             {tour.pickupPoints.map((point) => (
               <option key={point.id} value={point.id}>
                 {point.name}
@@ -182,18 +385,18 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
         {/* Promo Code */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Promo Code (Optional)
+            {t('tour.promoCodeOptional')}
           </label>
           <div className="flex gap-2">
             <input
               type="text"
               value={promoCode}
               onChange={(e) => setPromoCode(e.target.value.toUpperCase())}
-              placeholder="Enter code"
+              placeholder={t('tour.enterCode')}
               className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
             />
             <button className="px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-colors">
-              Apply
+              {t('tour.apply')}
             </button>
           </div>
           {promoCode === 'SAVE10' && (
@@ -207,21 +410,21 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
         <div className="space-y-2 mb-3">
           {tour.priceType === 'person' && (
             <div className="flex items-center justify-between text-sm">
-              <span className="text-gray-600">Guests ({guestCount})</span>
-              <span className="font-semibold text-gray-900">${subtotal.toFixed(2)}</span>
+              <span className="text-gray-600">{t('tour.guests')} ({guestCount})</span>
+              <span className="font-semibold text-gray-900">{formatPrice(subtotal)}</span>
             </div>
           )}
           {promoDiscount > 0 && (
             <div className="flex items-center justify-between text-sm">
               <span className="text-green-600">Promo Discount</span>
-              <span className="font-semibold text-green-600">-${promoDiscount.toFixed(2)}</span>
+              <span className="font-semibold text-green-600">-{formatPrice(promoDiscount)}</span>
             </div>
           )}
         </div>
         <div className="border-t border-blue-200 pt-3">
           <div className="flex items-center justify-between">
-            <span className="text-lg font-bold text-gray-900">Total</span>
-            <span className="text-2xl font-bold text-blue-600">${totalPrice.toFixed(2)}</span>
+            <span className="text-lg font-bold text-gray-900">{t('tour.total')}</span>
+            <span className="text-2xl font-bold text-blue-600">{formatPrice(totalPrice)}</span>
           </div>
         </div>
       </div>
@@ -243,9 +446,9 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
             }`}
           >
             <div className="flex flex-col items-center gap-0.5">
-              <span className="text-sm font-bold leading-tight text-white">Deposit + Cash</span>
-              <span className="text-[10px] opacity-90 leading-tight text-white">Pay deposit online</span>
-              <span className="text-[10px] opacity-90 leading-tight text-white">Pay balance on site</span>
+              <span className="text-sm font-bold leading-tight text-white">{t('booking.depositCash')}</span>
+              <span className="text-[10px] opacity-90 leading-tight text-white">{t('booking.payDepositOnline')}</span>
+              <span className="text-[10px] opacity-90 leading-tight text-white">{t('booking.payBalanceOnSite')}</span>
             </div>
             {paymentMethod === 'deposit' && (
               <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-lg">
@@ -267,8 +470,8 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
             }`}
           >
             <div className="flex flex-col items-center gap-0.5">
-              <span className="text-sm font-bold leading-tight text-white">Full Payment</span>
-              <span className="text-[10px] opacity-90 leading-tight text-white">Pay the full amount online in advance</span>
+              <span className="text-sm font-bold leading-tight text-white">{t('booking.fullPayment')}</span>
+              <span className="text-[10px] opacity-90 leading-tight text-white">{t('booking.payFullAmountOnline')}</span>
             </div>
             {paymentMethod === 'full' && (
               <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-lg">
@@ -282,15 +485,15 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
       </div>
 
       {/* Payment Summary - Compact */}
-      {paymentMethod === 'deposit' && tour.depositAmountUSD && tour.balanceAmountKRW && (
+      {paymentMethod === 'deposit' && (
         <div className="mt-3 p-2.5 bg-blue-50/80 rounded-lg border border-blue-200/60">
           <div className="flex items-center justify-between text-xs">
-            <span className="text-gray-600 font-medium">Deposit (USD)</span>
-            <span className="font-semibold text-blue-700">${tour.depositAmountUSD.toFixed(2)}</span>
+            <span className="text-gray-600 font-medium">{t('booking.deposit')}</span>
+            <span className="font-semibold text-blue-700">{formatPrice(depositAmountKRW)}</span>
           </div>
           <div className="flex items-center justify-between text-xs mt-1.5">
-            <span className="text-gray-500">Balance (cash on site)</span>
-            <span className="font-semibold text-gray-700">₩{tour.balanceAmountKRW.toLocaleString()}</span>
+            <span className="text-gray-500">{t('booking.payOnSite')}</span>
+            <span className="font-semibold text-gray-700">{formatPrice(balanceAmountKRW)}</span>
           </div>
         </div>
       )}
@@ -298,15 +501,17 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
       {/* Book Button */}
       <button
         onClick={handleCheckAvailability}
-        disabled={!selectedDate || isLoading || isBooking}
+        disabled={!selectedDate || isLoading || isBooking || (availability ? !availability.canAccommodate : false)}
         className="w-full mt-6 px-6 py-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg"
       >
         {isLoading 
-          ? 'Checking...' 
+          ? t('common.loading')
           : isBooking 
-          ? 'Booking...' 
+          ? t('common.processing')
+          : availability && !availability.canAccommodate
+          ? t('tour.checkAvailability')
           : paymentMethod === 'deposit'
-          ? 'Pay Deposit & Book'
+          ? t('booking.payDeposit') + ' & ' + t('booking.confirmBooking')
           : 'Pay Full Amount on Website'}
       </button>
 
@@ -342,4 +547,3 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
     </div>
   );
 }
-

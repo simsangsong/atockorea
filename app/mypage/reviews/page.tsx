@@ -1,63 +1,202 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { CalendarDateIcon, StarIcon, TrashIcon } from '@/components/Icons';
+import { CalendarDateIcon, StarIcon, TrashIcon, EditIcon } from '@/components/Icons';
+import { supabase } from '@/lib/supabase';
 
 interface Review {
-  id: number;
-  tour: string;
-  tourId: number;
+  id: string;
+  tour_id: string;
   rating: number;
-  comment: string;
-  date: string;
+  comment: string | null;
+  title: string | null;
+  images: string[] | null;
+  created_at: string;
+  tours: {
+    id: string;
+    title: string;
+  } | null;
+}
+
+interface CanReviewTour {
+  id: string;
+  tour_id: string;
+  booking_date: string;
+  tours: {
+    id: string;
+    title: string;
+  } | null;
 }
 
 export default function ReviewsPage() {
-  const [writtenReviews, setWrittenReviews] = useState<Review[]>([
-    {
-      id: 1,
-      tour: 'Seoul City Tour',
-      tourId: 1,
-      rating: 5,
-      comment: 'Amazing experience! The guide was very knowledgeable.',
-      date: '2025-01-12',
-    },
-    {
-      id: 2,
-      tour: 'Jeju Island Adventure',
-      tourId: 2,
-      rating: 4,
-      comment: 'Great tour, beautiful scenery.',
-      date: '2024-12-22',
-    },
-  ]);
+  const router = useRouter();
+  const [writtenReviews, setWrittenReviews] = useState<Review[]>([]);
+  const [canReview, setCanReview] = useState<CanReviewTour[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
-  const [canReview] = useState([
-    { id: 1, tour: 'Busan Beach Tour', tourId: 3, date: '2025-01-05' },
-    { id: 2, tour: 'DMZ Tour', tourId: 4, date: '2024-12-10' },
-  ]);
+  // Fetch user reviews
+  useEffect(() => {
+    fetchReviews();
+  }, []);
 
+  // Fetch can review tours after reviews are loaded
+  useEffect(() => {
+    if (writtenReviews.length >= 0) {
+      fetchCanReviewTours();
+    }
+  }, [writtenReviews.length]);
 
-  const handleWriteReview = (tour: { id: number; tour: string; tourId: number }) => {
-    // Always navigate to review page (mobile and desktop)
-    window.location.href = `/mypage/reviews/write?tourId=${tour.tourId}&tour=${encodeURIComponent(tour.tour)}`;
+  const fetchReviews = async () => {
+    try {
+      setLoading(true);
+      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
+      
+      if (!session) {
+        router.push('/signin');
+        return;
+      }
+
+      const response = await fetch(`/api/reviews?userId=${session.user.id}`);
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to fetch reviews');
+      }
+
+      setWrittenReviews(data.reviews || []);
+    } catch (err: any) {
+      console.error('Error fetching reviews:', err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const fetchCanReviewTours = async () => {
+    try {
+      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
+      
+      if (!session) {
+        return;
+      }
+
+      // Fetch completed bookings that haven't been reviewed
+      const response = await fetch(`/api/bookings?userId=${session.user.id}&status=completed`);
+      const data = await response.json();
+
+      if (response.ok && data.bookings) {
+        // Get reviewed tour IDs
+        const reviewedTourIds = writtenReviews.map(r => r.tour_id);
+        
+        // Filter out tours that already have reviews and remove duplicates
+        const tourMap = new Map();
+        data.bookings.forEach((booking: any) => {
+          if (!reviewedTourIds.includes(booking.tour_id) && booking.tours) {
+            if (!tourMap.has(booking.tour_id)) {
+              tourMap.set(booking.tour_id, {
+                id: booking.id,
+                tour_id: booking.tour_id,
+                booking_date: booking.booking_date || booking.created_at,
+                tours: booking.tours,
+              });
+            }
+          }
+        });
+        
+        setCanReview(Array.from(tourMap.values()));
+      }
+    } catch (err: any) {
+      console.error('Error fetching can review tours:', err);
+    }
+  };
+
+  const handleWriteReview = (tour: { tour_id: string; tours: { title: string } | null }) => {
+    const tourTitle = tour.tours?.title || 'Tour';
+    router.push(`/mypage/reviews/write?tourId=${tour.tour_id}&tour=${encodeURIComponent(tourTitle)}`);
+  };
+
+  const handleEditReview = (review: Review) => {
+    router.push(`/mypage/reviews/edit?id=${review.id}&tourId=${review.tour_id}`);
+  };
+
+  const handleDeleteReview = async (id: string) => {
+    if (!confirm('Are you sure you want to delete this review?')) {
+      return;
+    }
+
+    try {
+      setDeletingId(id);
+      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
+      
+      if (!session) {
+        alert('Please sign in to delete reviews');
+        return;
+      }
+
+      const response = await fetch(`/api/reviews/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${session.access_token}`,
+        },
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || 'Failed to delete review');
+      }
+
+      // Remove from local state
+      setWrittenReviews(writtenReviews.filter((review) => review.id !== id));
+      alert('Review deleted successfully');
+      
+      // Refresh can review list
+      fetchCanReviewTours();
+    } catch (err: any) {
+      console.error('Error deleting review:', err);
+      alert(`Failed to delete review: ${err.message}`);
+    } finally {
+      setDeletingId(null);
+    }
   };
 
   const handleLinkClick = (e: React.MouseEvent, path: string) => {
     if (window.innerWidth < 768) {
       e.preventDefault();
       e.stopPropagation();
-      window.location.href = path;
+      router.push(path);
     }
   };
 
-  const handleDeleteReview = (id: number) => {
-    if (confirm('Are you sure you want to delete this review?')) {
-      setWrittenReviews(writtenReviews.filter((review) => review.id !== id));
-      alert('Review deleted successfully');
-    }
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
   };
+
+  if (loading) {
+    return (
+      <div className="space-y-6">
+        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Reviews</h1>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="space-y-6">
+        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Reviews</h1>
+          <p className="text-red-600">Error: {error}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -72,23 +211,37 @@ export default function ReviewsPage() {
           {writtenReviews.length > 0 ? (
             writtenReviews.map((review) => (
               <div key={review.id} className="p-4 bg-gray-50 rounded-lg">
-                    <div className="flex items-start justify-between mb-2">
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <Link
-                            href={`/tour/${review.tourId}`}
-                            onClick={(e) => handleLinkClick(e, `/tour/${review.tourId}`)}
-                            className="font-semibold text-gray-900 hover:text-indigo-600 transition-colors"
-                          >
-                            {review.tour}
-                          </Link>
-                      <button
-                        onClick={() => handleDeleteReview(review.id)}
-                        className="text-red-600 hover:text-red-700 text-sm"
+                <div className="flex items-start justify-between mb-2">
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-2">
+                      <Link
+                        href={`/tour/${review.tour_id}`}
+                        onClick={(e) => handleLinkClick(e, `/tour/${review.tour_id}`)}
+                        className="font-semibold text-gray-900 hover:text-indigo-600 transition-colors"
                       >
-                        <TrashIcon className="w-4 h-4" />
-                      </button>
+                        {review.tours?.title || 'Tour'}
+                      </Link>
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => handleEditReview(review)}
+                          className="text-indigo-600 hover:text-indigo-700 text-sm"
+                          title="Edit review"
+                        >
+                          <EditIcon className="w-4 h-4" />
+                        </button>
+                        <button
+                          onClick={() => handleDeleteReview(review.id)}
+                          disabled={deletingId === review.id}
+                          className="text-red-600 hover:text-red-700 text-sm disabled:opacity-50"
+                          title="Delete review"
+                        >
+                          <TrashIcon className="w-4 h-4" />
+                        </button>
+                      </div>
                     </div>
+                    {review.title && (
+                      <h3 className="font-semibold text-gray-800 mb-1">{review.title}</h3>
+                    )}
                     <div className="flex items-center gap-0.5 mb-2">
                       {[...Array(5)].map((_, i) => (
                         <StarIcon
@@ -101,10 +254,24 @@ export default function ReviewsPage() {
                         />
                       ))}
                     </div>
-                    <p className="text-gray-600 mb-2">{review.comment}</p>
+                    {review.comment && (
+                      <p className="text-gray-600 mb-2">{review.comment}</p>
+                    )}
+                    {review.images && review.images.length > 0 && (
+                      <div className="flex gap-2 mb-2">
+                        {review.images.slice(0, 3).map((image, idx) => (
+                          <img
+                            key={idx}
+                            src={image}
+                            alt={`Review image ${idx + 1}`}
+                            className="w-16 h-16 object-cover rounded"
+                          />
+                        ))}
+                      </div>
+                    )}
                     <p className="text-sm text-gray-500 flex items-center gap-1.5">
                       <CalendarDateIcon className="w-4 h-4" />
-                      {review.date}
+                      {formatDate(review.created_at)}
                     </p>
                   </div>
                 </div>
@@ -123,10 +290,10 @@ export default function ReviewsPage() {
             canReview.map((item) => (
               <div key={item.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                 <div>
-                  <h3 className="font-semibold text-gray-900">{item.tour}</h3>
+                  <h3 className="font-semibold text-gray-900">{item.tours?.title || 'Tour'}</h3>
                   <p className="text-sm text-gray-500 flex items-center gap-1.5">
                     <CalendarDateIcon className="w-4 h-4" />
-                    {item.date}
+                    {formatDate(item.booking_date)}
                   </p>
                 </div>
                 <button
@@ -142,8 +309,6 @@ export default function ReviewsPage() {
           )}
         </div>
       </div>
-
     </div>
   );
 }
-

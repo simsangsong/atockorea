@@ -5,25 +5,106 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import Logo from "./Logo";
 import { SearchIcon, UserIcon } from "./Icons";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslations } from "@/lib/i18n";
+import { supabase } from "@/lib/supabase";
+
+interface UserProfile {
+  id: string;
+  full_name: string | null;
+  avatar_url: string | null;
+  role: string;
+}
 
 export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
-  const [language, setLanguage] = useState<"en" | "zh">("en");
+  const t = useTranslations();
   const [currency, setCurrency] = useState<"USD" | "KRW">("USD");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [user, setUser] = useState<UserProfile | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Detect current path to determine if on dark background page
   const isDarkPage = pathname === '/signin' || pathname === '/signup';
 
-  // Listen for search open event
+  // Load user session and profile
   useEffect(() => {
+    const loadUser = async () => {
+      if (!supabase) {
+        setIsLoading(false);
+        return;
+      }
+
+      try {
+        // Get current session
+        const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+        
+        if (sessionError || !session?.user) {
+          setUser(null);
+          setIsLoading(false);
+          return;
+        }
+
+        // Get user profile
+        const { data: profile, error: profileError } = await supabase
+          .from('user_profiles')
+          .select('id, full_name, avatar_url, role')
+          .eq('id', session.user.id)
+          .single();
+
+        if (profileError || !profile) {
+          // If profile doesn't exist, create it
+          const { data: newProfile } = await supabase
+            .from('user_profiles')
+            .insert({
+              id: session.user.id,
+              full_name: session.user.user_metadata?.full_name || 
+                         session.user.email?.split('@')[0] || 
+                         'User',
+              role: 'customer',
+            })
+            .select()
+            .single();
+
+          if (newProfile) {
+            setUser(newProfile);
+          } else {
+            setUser(null);
+          }
+        } else {
+          setUser(profile);
+        }
+      } catch (error) {
+        console.error('Error loading user:', error);
+        setUser(null);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadUser();
+
+    // Listen for auth state changes
+    const { data: { subscription } } = supabase?.auth.onAuthStateChange((_event, session) => {
+      if (session?.user) {
+        loadUser();
+      } else {
+        setUser(null);
+      }
+    }) || { data: { subscription: null } };
+
+    // Listen for search open event
     const handleOpenSearch = () => {
       setIsSearchOpen(true);
     };
     window.addEventListener("openSearch", handleOpenSearch);
-    return () => window.removeEventListener("openSearch", handleOpenSearch);
+
+    return () => {
+      subscription?.unsubscribe();
+      window.removeEventListener("openSearch", handleOpenSearch);
+    };
   }, []);
 
   const handleSearch = (e: React.FormEvent) => {
@@ -33,10 +114,6 @@ export default function Header() {
       setIsSearchOpen(false);
       setSearchQuery("");
     }
-  };
-
-  const toggleLanguage = () => {
-    setLanguage(language === "en" ? "zh" : "en");
   };
 
   const toggleCurrency = () => {
@@ -56,19 +133,50 @@ export default function Header() {
             <Logo className="h-8 sm:h-10 md:h-12" />
           </Link>
 
-          {/* Right Side - Language, Currency, Search, Sign In */}
-          <div className="flex items-center gap-3 sm:gap-4">
-            {/* Language Toggle */}
-            <button
-              onClick={toggleLanguage}
-              className={`px-2 sm:px-3 py-1.5 text-xs sm:text-sm font-medium transition-colors ${
-                isDarkPage 
-                  ? 'text-gray-300 hover:text-blue-400' 
-                  : 'text-gray-700 hover:text-blue-600'
+          {/* Desktop Navigation Menu */}
+          <nav className="hidden md:flex items-center gap-1">
+            <Link
+              href="/"
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                pathname === '/'
+                  ? 'bg-blue-50 text-blue-600'
+                  : isDarkPage
+                  ? 'text-gray-300 hover:text-blue-400 hover:bg-white/5'
+                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
               }`}
             >
-              {language === "en" ? "EN" : "CN"}
-            </button>
+              Home
+            </Link>
+            <Link
+              href="/tours"
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                pathname === '/tours' || pathname.startsWith('/tours/')
+                  ? 'bg-blue-50 text-blue-600'
+                  : isDarkPage
+                  ? 'text-gray-300 hover:text-blue-400 hover:bg-white/5'
+                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+              }`}
+            >
+              Tours
+            </Link>
+            <Link
+              href="/cart"
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors relative ${
+                pathname === '/cart'
+                  ? 'bg-blue-50 text-blue-600'
+                  : isDarkPage
+                  ? 'text-gray-300 hover:text-blue-400 hover:bg-white/5'
+                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+              }`}
+            >
+              Cart
+            </Link>
+          </nav>
+
+          {/* Right Side - Language, Currency, Search, Sign In */}
+          <div className="flex items-center gap-3 sm:gap-4">
+            {/* Language Switcher */}
+            <LanguageSwitcher />
 
             {/* Currency Toggle */}
             <button
@@ -96,21 +204,96 @@ export default function Header() {
               <SearchIcon className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
-            {/* Sign In - Premium Button Style */}
-            <Link
-              href="/signin"
-              className={`group flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
-                isDarkPage 
-                  ? 'bg-blue-500/10 text-blue-300 border border-blue-400/30 hover:bg-blue-500/20 hover:border-blue-400/50' 
-                  : 'bg-gray-50 text-gray-700 border border-gray-200 hover:bg-gray-100 hover:border-gray-300 hover:shadow-sm'
-              }`}
-              title="Sign In"
-            >
-              <UserIcon className={`w-4 h-4 sm:w-4 sm:h-4 transition-transform group-hover:scale-110 flex-shrink-0 ${
+            {/* User Menu or Sign In Button */}
+            {isLoading ? (
+              <div className={`px-2.5 sm:px-4 py-1.5 sm:py-2 ${
                 isDarkPage ? 'text-blue-300' : 'text-gray-600'
-              }`} />
-              <span className="hidden sm:inline">Sign In</span>
-            </Link>
+              }`}>
+                <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+              </div>
+            ) : user ? (
+              <div className="relative group">
+                <Link
+                  href="/mypage"
+                  className={`group flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
+                    isDarkPage 
+                      ? 'bg-blue-500/10 text-blue-300 border border-blue-400/30 hover:bg-blue-500/20 hover:border-blue-400/50' 
+                      : 'bg-gray-50 text-gray-700 border border-gray-200 hover:bg-gray-100 hover:border-gray-300 hover:shadow-sm'
+                  }`}
+                  title={user.full_name || 'My Account'}
+                >
+                  {user.avatar_url ? (
+                    <img 
+                      src={user.avatar_url} 
+                      alt={user.full_name || 'User'} 
+                      className="w-4 h-4 sm:w-5 sm:h-5 rounded-full object-cover"
+                    />
+                  ) : (
+                    <UserIcon className={`w-4 h-4 sm:w-4 sm:h-4 transition-transform group-hover:scale-110 flex-shrink-0 ${
+                      isDarkPage ? 'text-blue-300' : 'text-gray-600'
+                    }`} />
+                  )}
+                  <span className="hidden sm:inline max-w-[100px] truncate">
+                    {user.full_name || t('nav.mypage')}
+                  </span>
+                </Link>
+                {/* Dropdown Menu */}
+                <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="py-2">
+                    <Link
+                      href="/mypage"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                    >
+                      {t('nav.mypage')}
+                    </Link>
+                    {user.role === 'merchant' && (
+                      <Link
+                        href="/merchant"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                      >
+                        Merchant Dashboard
+                      </Link>
+                    )}
+                    {user.role === 'admin' && (
+                      <Link
+                        href="/admin"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                      >
+                        Admin Dashboard
+                      </Link>
+                    )}
+                    <div className="border-t border-gray-200 my-1" />
+                    <button
+                      onClick={async () => {
+                        if (supabase) {
+                          await supabase.auth.signOut();
+                          setUser(null);
+                          router.push('/');
+                        }
+                      }}
+                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                    >
+                      {t('nav.signout') || 'Sign Out'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link
+                href="/signin"
+                className={`group flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
+                  isDarkPage 
+                    ? 'bg-blue-500/10 text-blue-300 border border-blue-400/30 hover:bg-blue-500/20 hover:border-blue-400/50' 
+                    : 'bg-gray-50 text-gray-700 border border-gray-200 hover:bg-gray-100 hover:border-gray-300 hover:shadow-sm'
+                }`}
+                title="Sign In"
+              >
+                <UserIcon className={`w-4 h-4 sm:w-4 sm:h-4 transition-transform group-hover:scale-110 flex-shrink-0 ${
+                  isDarkPage ? 'text-blue-300' : 'text-gray-600'
+                }`} />
+                <span className="hidden sm:inline">{t('nav.signin')}</span>
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -132,7 +315,7 @@ export default function Header() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search for tours, destinations..."
+                  placeholder={t('tour.search')}
                   className="w-full pl-10 sm:pl-12 pr-4 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm sm:text-base"
                   autoFocus
                 />
@@ -141,14 +324,14 @@ export default function Header() {
                 type="submit"
                 className="px-4 sm:px-6 py-3 sm:py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm sm:text-base"
               >
-                Search
+                {t('common.search')}
               </button>
               <button
                 type="button"
                 onClick={() => setIsSearchOpen(false)}
                 className="px-4 py-3 sm:py-4 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium text-sm sm:text-base"
               >
-                Cancel
+                {t('common.cancel')}
               </button>
             </form>
           </div>

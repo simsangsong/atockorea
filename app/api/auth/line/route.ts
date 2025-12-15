@@ -170,11 +170,17 @@ export async function POST(req: NextRequest) {
           user = newUser.user;
 
           // 创建用户资料
-          await supabase.from('user_profiles').insert({
+          const { error: profileInsertError } = await supabase.from('user_profiles').insert({
             id: user.id,
             full_name: profile.displayName || 'LINE User',
             avatar_url: profile.pictureUrl,
+            role: 'customer', // 默认角色
           });
+
+          if (profileInsertError) {
+            console.error('Error creating user profile:', profileInsertError);
+            // 即使创建失败也继续，但记录错误
+          }
         }
       }
     } catch (error: any) {

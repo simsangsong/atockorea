@@ -1,18 +1,23 @@
+'use client';
+
 import Image from 'next/image';
+import { useTranslations } from '@/lib/i18n';
 
 export default function Footer() {
+  const t = useTranslations();
+  
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-300 border-t border-gray-700/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* Company Info */}
         <div className="mb-6">
-          <h3 className="text-white font-bold text-lg mb-3">AtoC Korea</h3>
+          <h3 className="text-white font-bold text-lg mb-3">{t('home.footer.company')}</h3>
           <p className="text-xs mb-3">
-            Licensed Korea-based platform for Korea's day tours. Direct partnership with local travel agencies.
+            {t('home.footer.description')}
           </p>
           <div className="space-y-1 text-xs">
-            <p>Business Registration: 09898099</p>
-            <p>E-commerce Registration: Jeju Yeondong-0000</p>
+            <p>{t('home.footer.businessReg')}: 09898099</p>
+            <p>{t('home.footer.ecommerceReg')}: Jeju Yeondong-0000</p>
           </div>
         </div>
 
@@ -22,21 +27,21 @@ export default function Footer() {
             {/* Address */}
             <div>
               <p className="text-xs">
-                <span className="font-semibold">Address:</span> Yeondong, Jeju City, xxxx, xxho
+                <span className="font-semibold">{t('home.footer.address')}:</span> Yeondong, Jeju City, xxxx, xxho
               </p>
             </div>
             {/* Contact */}
             <div>
               <p className="text-xs mb-1">
-                <span className="font-semibold">Contact:</span> 010-8973-0913
+                <span className="font-semibold">{t('home.footer.contact')}:</span> 010-8973-0913
               </p>
               <p className="text-xs">
-                <span className="font-semibold">Email:</span> support@atoc.kr
+                <span className="font-semibold">{t('home.footer.email')}:</span> support@atoc.kr
               </p>
             </div>
             {/* Payment Methods */}
             <div>
-              <p className="text-xs mb-2 font-semibold">Secure Payment Methods</p>
+              <p className="text-xs mb-2 font-semibold">{t('home.footer.securePayment')}</p>
               <div className="flex items-center gap-3">
                 {/* PayPal Logo */}
                 <div className="px-3 py-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center justify-center h-10 min-w-[80px]">
@@ -67,26 +72,26 @@ export default function Footer() {
         <div className="grid grid-cols-3 gap-3 sm:gap-6 mb-6">
           {/* About */}
           <div>
-            <h3 className="text-white font-semibold mb-2 sm:mb-3 text-xs sm:text-sm">About Us</h3>
+            <h3 className="text-white font-semibold mb-2 sm:mb-3 text-xs sm:text-sm">{t('home.footer.aboutUs')}</h3>
             <ul className="space-y-1 sm:space-y-1.5 text-[10px] sm:text-xs">
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Our Story
+                  {t('home.footer.ourStory')}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Why Choose Us
+                  {t('home.footer.whyChooseUs')}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Partners
+                  {t('home.footer.partners')}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Careers
+                  {t('home.footer.careers')}
                 </a>
               </li>
             </ul>
@@ -94,26 +99,21 @@ export default function Footer() {
 
           {/* Support */}
           <div>
-            <h3 className="text-white font-semibold mb-2 sm:mb-3 text-xs sm:text-sm">Support</h3>
+            <h3 className="text-white font-semibold mb-2 sm:mb-3 text-xs sm:text-sm">{t('home.footer.support')}</h3>
             <ul className="space-y-1 sm:space-y-1.5 text-[10px] sm:text-xs">
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Help Center
+                  {t('home.footer.bookingHelp')}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Contact Us
+                  {t('home.footer.contactUs')}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  FAQs
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Cancellation Policy
+                  {t('home.footer.faq')}
                 </a>
               </li>
             </ul>
@@ -121,21 +121,21 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="text-white font-semibold mb-2 sm:mb-3 text-xs sm:text-sm">Legal</h3>
+            <h3 className="text-white font-semibold mb-2 sm:mb-3 text-xs sm:text-sm">{t('home.footer.legal')}</h3>
             <ul className="space-y-1 sm:space-y-1.5 text-[10px] sm:text-xs">
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Terms of Service
+                  {t('home.footer.terms')}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Privacy Policy
+                  {t('home.footer.privacy')}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Cookie Policy
+                  {t('home.footer.cookies')}
                 </a>
               </li>
             </ul>
@@ -144,7 +144,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center text-xs text-gray-400 pt-4 border-t border-gray-800">
-          <p>© 2025 AtoC Korea. All rights reserved.</p>
+          <p>{t('home.footer.copyright')}</p>
         </div>
       </div>
     </footer>

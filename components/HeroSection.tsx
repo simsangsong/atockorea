@@ -1,30 +1,32 @@
 "use client";
 
-import { useState, useEffect } from "react";
-
-const heroImages = [
-  {
-    id: 1,
-    image: "https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=1920&q=80",
-    title: "Discover Amazing Korea",
-    subtitle: "Direct connection to trusted Korea tours",
-  },
-  {
-    id: 2,
-    image: "https://images.unsplash.com/photo-1504817343863-5092a923803e?w=1920&q=80",
-    title: "Explore Jeju Island",
-    subtitle: "Natural wonders and cultural experiences",
-  },
-  {
-    id: 3,
-    image: "https://images.unsplash.com/photo-1534008897995-27a23e859048?w=1920&q=80",
-    title: "Experience Busan",
-    subtitle: "Coastal beauty and vibrant culture",
-  },
-];
+import { useState, useEffect, useMemo } from "react";
+import { useTranslations } from "@/lib/i18n";
 
 export default function HeroSection() {
+  const t = useTranslations();
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const heroImages = useMemo(() => [
+    {
+      id: 1,
+      image: "https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=1920&q=80",
+      title: t('home.hero.discoverKorea'),
+      subtitle: t('home.hero.directConnection'),
+    },
+    {
+      id: 2,
+      image: "https://images.unsplash.com/photo-1504817343863-5092a923803e?w=1920&q=80",
+      title: t('home.hero.exploreJeju'),
+      subtitle: t('home.hero.jejuSubtitle'),
+    },
+    {
+      id: 3,
+      image: "https://images.unsplash.com/photo-1534008897995-27a23e859048?w=1920&q=80",
+      title: t('home.hero.experienceBusan'),
+      subtitle: t('home.hero.busanSubtitle'),
+    },
+  ], [t]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -79,7 +81,7 @@ export default function HeroSection() {
               }}
               className="px-3 py-1 sm:px-4 sm:py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-[10px] sm:text-[14px] font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 drop-shadow-lg"
             >
-              Find My Day Tour
+              {t('home.hero.findTour')}
             </button>
           </div>
         </div>

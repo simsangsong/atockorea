@@ -1,106 +1,178 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { CalendarDateIcon, ClockIcon, MapIcon, TrashIcon } from '@/components/Icons';
+import { supabase } from '@/lib/supabase';
 
 interface Booking {
-  id: number;
-  title: string;
-  location: string;
-  date: string;
-  time: string;
-  status: 'Upcoming' | 'Completed' | 'Cancelled';
-  image: string;
-  tourId: number;
-  bookingDate: string; // When the booking was made
-  tourDate: string; // When the tour is/was scheduled
+  id: string;
+  tour_id: string;
+  booking_date: string;
+  tour_date?: string;
+  number_of_guests: number;
+  final_price: number;
+  status: string;
+  payment_status: string;
+  tours: {
+    id: string;
+    title: string;
+    city: string;
+    image_url: string;
+  } | null;
+  pickup_points?: {
+    name: string;
+    address: string;
+  } | null;
 }
 
 export default function MyBookingsPage() {
-  const [bookings, setBookings] = useState<Booking[]>([
-    {
-      id: 1,
-      title: 'Seoul City Tour',
-      location: 'Seoul',
-      date: '2025-01-10',
-      time: '09:00 AM',
-      status: 'Completed',
-      image: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=400',
-      tourId: 1,
-      bookingDate: '2025-01-05',
-      tourDate: '2025-01-10',
-    },
-    {
-      id: 2,
-      title: 'Jeju Island Adventure',
-      location: 'Jeju',
-      date: '2025-01-15',
-      time: '08:00 AM',
-      status: 'Completed',
-      image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400',
-      tourId: 2,
-      bookingDate: '2025-01-08',
-      tourDate: '2025-01-15',
-    },
-    {
-      id: 3,
-      title: 'Busan Beach Tour',
-      location: 'Busan',
-      date: '2025-03-20',
-      time: '10:00 AM',
-      status: 'Upcoming',
-      image: 'https://images.unsplash.com/photo-1534008897995-27a23e859048?w=400',
-      tourId: 3,
-      bookingDate: '2025-01-12',
-      tourDate: '2025-03-20',
-    },
-    {
-      id: 4,
-      title: 'DMZ Tour',
-      location: 'DMZ',
-      date: '2025-01-08',
-      time: '09:00 AM',
-      status: 'Completed',
-      image: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=400',
-      tourId: 4,
-      bookingDate: '2025-01-03',
-      tourDate: '2025-01-08',
-    },
-  ]);
+  const router = useRouter();
+  const [bookings, setBookings] = useState<Booking[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  // Check if booking can be cancelled (more than 24 hours before tour)
+  useEffect(() => {
+    fetchBookings();
+  }, []);
+
+  const fetchBookings = async () => {
+    try {
+      setLoading(true);
+      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
+      
+      if (!session) {
+        router.push('/signin');
+        return;
+      }
+
+      const response = await fetch(`/api/bookings?userId=${session.user.id}`);
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to fetch bookings');
+      }
+
+      setBookings(data.bookings || []);
+    } catch (err: any) {
+      console.error('Error fetching bookings:', err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const canCancel = (booking: Booking): boolean => {
-    if (booking.status !== 'Upcoming') return false;
+    if (booking.status !== 'confirmed' && booking.status !== 'pending') return false;
     
-    const tourDateTime = new Date(`${booking.tourDate}T${booking.time}`);
+    const tourDate = new Date(booking.tour_date || booking.booking_date);
     const now = new Date();
-    const hoursUntilTour = (tourDateTime.getTime() - now.getTime()) / (1000 * 60 * 60);
+    const hoursUntilTour = (tourDate.getTime() - now.getTime()) / (1000 * 60 * 60);
     
     return hoursUntilTour > 24;
   };
 
-  const handleCancel = (booking: Booking) => {
+  const handleCancel = async (booking: Booking) => {
     if (!canCancel(booking)) {
       alert('Cancellation is not allowed within 24 hours of the tour. Please contact customer support for assistance.');
       return;
     }
 
-    if (confirm('Are you sure you want to cancel this booking?')) {
-      setBookings(bookings.map((b) => (b.id === booking.id ? { ...b, status: 'Cancelled' as const } : b)));
+    if (!confirm('Are you sure you want to cancel this booking?')) {
+      return;
+    }
+
+    try {
+      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
+      
+      if (!session) {
+        alert('Please sign in to cancel bookings');
+        return;
+      }
+
+      const response = await fetch(`/api/bookings/${booking.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session.access_token}`,
+        },
+        body: JSON.stringify({
+          status: 'cancelled',
+        }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || 'Failed to cancel booking');
+      }
+
       alert('Booking cancelled successfully');
+      fetchBookings();
+    } catch (err: any) {
+      console.error('Error cancelling booking:', err);
+      alert(`Failed to cancel booking: ${err.message}`);
     }
   };
 
   const handleReview = (booking: Booking) => {
-    // Navigate to review page
-    window.location.href = `/mypage/reviews/write?tourId=${booking.tourId}&tour=${encodeURIComponent(booking.title)}`;
+    const tourTitle = booking.tours?.title || 'Tour';
+    router.push(`/mypage/reviews/write?tourId=${booking.tour_id}&tour=${encodeURIComponent(tourTitle)}`);
   };
 
-  const completedBookings = bookings.filter((b) => b.status === 'Completed');
-  const upcomingBookings = bookings.filter((b) => b.status === 'Upcoming');
-  const cancelledBookings = bookings.filter((b) => b.status === 'Cancelled');
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  };
+
+  const getStatusLabel = (status: string) => {
+    const statusMap: Record<string, string> = {
+      'pending': 'Pending',
+      'confirmed': 'Confirmed',
+      'completed': 'Completed',
+      'cancelled': 'Cancelled',
+    };
+    return statusMap[status] || status;
+  };
+
+  const getStatusColor = (status: string) => {
+    const colorMap: Record<string, string> = {
+      'completed': 'bg-green-100 text-green-700',
+      'confirmed': 'bg-blue-100 text-blue-700',
+      'pending': 'bg-yellow-100 text-yellow-700',
+      'cancelled': 'bg-gray-100 text-gray-700',
+    };
+    return colorMap[status] || 'bg-gray-100 text-gray-700';
+  };
+
+  const now = new Date();
+  const upcomingBookings = bookings.filter((b) => {
+    const tourDate = new Date(b.tour_date || b.booking_date);
+    return (b.status === 'confirmed' || b.status === 'pending') && tourDate >= now;
+  });
+  const completedBookings = bookings.filter((b) => b.status === 'completed');
+  const cancelledBookings = bookings.filter((b) => b.status === 'cancelled');
+
+  if (loading) {
+    return (
+      <div className="space-y-6">
+        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="space-y-6">
+        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
+          <p className="text-red-600">Error: {error}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -120,6 +192,9 @@ export default function MyBookingsPage() {
                 booking={booking}
                 onCancel={() => handleCancel(booking)}
                 canCancel={canCancel(booking)}
+                formatDate={formatDate}
+                getStatusLabel={getStatusLabel}
+                getStatusColor={getStatusColor}
               />
             ))}
           </div>
@@ -137,6 +212,9 @@ export default function MyBookingsPage() {
                 booking={booking}
                 onReview={() => handleReview(booking)}
                 showReview={true}
+                formatDate={formatDate}
+                getStatusLabel={getStatusLabel}
+                getStatusColor={getStatusColor}
               />
             ))}
           </div>
@@ -149,7 +227,13 @@ export default function MyBookingsPage() {
           <h2 className="text-xl font-bold text-gray-900 mb-4">Cancelled Tours</h2>
           <div className="space-y-4">
             {cancelledBookings.map((booking) => (
-              <BookingCard key={booking.id} booking={booking} />
+              <BookingCard
+                key={booking.id}
+                booking={booking}
+                formatDate={formatDate}
+                getStatusLabel={getStatusLabel}
+                getStatusColor={getStatusColor}
+              />
             ))}
           </div>
         </div>
@@ -170,28 +254,45 @@ interface BookingCardProps {
   onReview?: () => void;
   canCancel?: boolean;
   showReview?: boolean;
+  formatDate: (date: string) => string;
+  getStatusLabel: (status: string) => string;
+  getStatusColor: (status: string) => string;
 }
 
-function BookingCard({ booking, onCancel, onReview, canCancel = false, showReview = false }: BookingCardProps) {
+function BookingCard({ 
+  booking, 
+  onCancel, 
+  onReview, 
+  canCancel = false, 
+  showReview = false,
+  formatDate,
+  getStatusLabel,
+  getStatusColor,
+}: BookingCardProps) {
+  const router = useRouter();
+
   const handleLinkClick = (e: React.MouseEvent, path: string) => {
     if (window.innerWidth < 768) {
       e.preventDefault();
       e.stopPropagation();
-      window.location.href = path;
+      router.push(path);
     }
   };
+
+  const tourDate = booking.tour_date || booking.booking_date;
+  const imageUrl = booking.tours?.image_url || 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=400';
 
   return (
     <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 overflow-hidden">
       <div className="flex flex-col md:flex-row">
         <div className="md:w-48 h-48 md:h-auto flex-shrink-0 relative">
           <Link 
-            href={`/tour/${booking.tourId}`}
-            onClick={(e) => handleLinkClick(e, `/tour/${booking.tourId}`)}
+            href={`/tour/${booking.tour_id}`}
+            onClick={(e) => handleLinkClick(e, `/tour/${booking.tour_id}`)}
           >
             <Image
-              src={booking.image}
-              alt={booking.title}
+              src={imageUrl}
+              alt={booking.tours?.title || 'Tour'}
               fill
               className="object-cover cursor-pointer hover:opacity-90 transition-opacity"
             />
@@ -201,46 +302,42 @@ function BookingCard({ booking, onCancel, onReview, canCancel = false, showRevie
           <div className="flex items-start justify-between mb-3">
             <div className="flex-1">
               <Link 
-                href={`/tour/${booking.tourId}`}
-                onClick={(e) => handleLinkClick(e, `/tour/${booking.tourId}`)}
+                href={`/tour/${booking.tour_id}`}
+                onClick={(e) => handleLinkClick(e, `/tour/${booking.tour_id}`)}
               >
                 <h3 className="text-lg font-bold text-gray-900 mb-2 hover:text-indigo-600 transition-colors">
-                  {booking.title}
+                  {booking.tours?.title || 'Tour'}
                 </h3>
               </Link>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-gray-600 mb-3">
                 <div className="flex items-center gap-1">
                   <MapIcon className="w-3.5 h-3.5" />
-                  <span>{booking.location}</span>
+                  <span>{booking.tours?.city || 'N/A'}</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <CalendarDateIcon className="w-3.5 h-3.5" />
-                  <span>{booking.date}</span>
+                  <span>{formatDate(tourDate)}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <ClockIcon className="w-3.5 h-3.5" />
-                  <span>{booking.time}</span>
+                  <span>Guests: {booking.number_of_guests}</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span>${parseFloat(booking.final_price.toString()).toFixed(2)}</span>
                 </div>
               </div>
             </div>
             <span
-              className={`px-3 py-1 rounded-full text-xs font-semibold flex-shrink-0 ${
-                booking.status === 'Completed'
-                  ? 'bg-green-100 text-green-700'
-                  : booking.status === 'Upcoming'
-                  ? 'bg-blue-100 text-blue-700'
-                  : 'bg-gray-100 text-gray-700'
-              }`}
+              className={`px-3 py-1 rounded-full text-xs font-semibold flex-shrink-0 ${getStatusColor(booking.status)}`}
             >
-              {booking.status}
+              {getStatusLabel(booking.status)}
             </span>
           </div>
 
           {/* Action Buttons */}
           <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
             <Link
-              href={`/tour/${booking.tourId}`}
-              onClick={(e) => handleLinkClick(e, `/tour/${booking.tourId}`)}
+              href={`/tour/${booking.tour_id}`}
+              onClick={(e) => handleLinkClick(e, `/tour/${booking.tour_id}`)}
               className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium"
             >
               View Details
@@ -260,16 +357,15 @@ function BookingCard({ booking, onCancel, onReview, canCancel = false, showRevie
               </button>
             )}
             {showReview && onReview && (
-              <Link
-                href={`/mypage/reviews/write?tourId=${booking.tourId}&tour=${encodeURIComponent(booking.title)}`}
-                onClick={(e) => handleLinkClick(e, `/mypage/reviews/write?tourId=${booking.tourId}&tour=${encodeURIComponent(booking.title)}`)}
-                className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium text-center"
+              <button
+                onClick={onReview}
+                className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium"
               >
                 Write Review
-              </Link>
+              </button>
             )}
           </div>
-          {onCancel && !canCancel && booking.status === 'Upcoming' && (
+          {onCancel && !canCancel && (booking.status === 'confirmed' || booking.status === 'pending') && (
             <p className="text-xs text-red-600 mt-2">
               * Cancellation is not allowed within 24 hours of the tour
             </p>
@@ -279,4 +375,3 @@ function BookingCard({ booking, onCancel, onReview, canCancel = false, showRevie
     </div>
   );
 }
-

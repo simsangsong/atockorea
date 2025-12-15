@@ -1,39 +1,75 @@
 // app/search/page.tsx
 "use client";
 
-import React, { Suspense } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import TourCardDetail from "../../components/TourCardDetail";
-import { detailedTours } from "../../data/tours";
 
 function SearchResults() {
   const searchParams = useSearchParams();
+  const [results, setResults] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const cityRaw = searchParams.get("city");
   const qRaw = searchParams.get("q");
 
   const cityParam = cityRaw && cityRaw !== "All" ? cityRaw : null;
-  const qParam = qRaw?.toLowerCase().trim() || "";
+  const qParam = qRaw?.trim() || "";
 
-  const results = detailedTours.filter((tour) => {
-    if (cityParam && tour.city !== cityParam) return false;
+  useEffect(() => {
+    const fetchTours = async () => {
+      try {
+        setLoading(true);
+        const params = new URLSearchParams();
+        
+        if (cityParam) {
+          params.append('city', cityParam);
+        }
+        
+        if (qParam) {
+          params.append('search', qParam);
+        }
 
-    if (qParam) {
-      const haystack = (
-        tour.title +
-        " " +
-        tour.tag +
-        " " +
-        (tour.notes || "") +
-        " " +
-        tour.pickupInfo
-      ).toLowerCase();
+        const response = await fetch(`/api/tours?${params.toString()}`);
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch tours');
+        }
 
-      if (!haystack.includes(qParam)) return false;
-    }
+        const data = await response.json();
+        
+        // Transform API data to match TourCardDetail expectations
+        const transformedTours = data.tours.map((tour: any) => ({
+          id: tour.id,
+          title: tour.title,
+          city: tour.city,
+          tag: tour.badges?.join(', ') || '',
+          price: tour.price,
+          originalPrice: tour.originalPrice,
+          priceType: tour.priceType,
+          image: tour.image,
+          duration: tour.duration,
+          rating: tour.rating,
+          reviewCount: tour.reviewCount,
+          notes: tour.description || '',
+          pickupInfo: tour.pickupPoints?.length > 0 
+            ? `${tour.pickupPoints.length} pickup point${tour.pickupPoints.length > 1 ? 's' : ''}`
+            : 'No pickup points',
+          slug: tour.id, // Use ID as slug for now
+        }));
 
-    return true;
-  });
+        setResults(transformedTours);
+      } catch (err: any) {
+        console.error('Error fetching tours:', err);
+        setError(err.message || 'Failed to load tours');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTours();
+  }, [cityParam, qParam]);
 
   return (
     <>
@@ -74,7 +110,22 @@ function SearchResults() {
 
       {/* 결과 리스트 영역 */}
       <section className="mx-auto mt-4 w-full max-w-5xl px-2 sm:px-4">
-        {results.length === 0 ? (
+        {loading ? (
+          <div className="mx-auto mt-10 w-[90%] max-w-3xl rounded-3xl bg-white/95 px-4 py-6 text-center text-[13px] text-[#6e6e73] shadow-[0_10px_30px_rgba(0,0,0,0.04)]">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+            <p className="text-[#111111]">Loading search results...</p>
+          </div>
+        ) : error ? (
+          <div className="mx-auto mt-10 w-[90%] max-w-3xl rounded-3xl bg-white/95 px-4 py-6 text-center text-[13px] text-[#6e6e73] shadow-[0_10px_30px_rgba(0,0,0,0.04)]">
+            <p className="font-medium text-red-600 mb-2">{error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm"
+            >
+              Retry
+            </button>
+          </div>
+        ) : results.length === 0 ? (
           <div className="mx-auto mt-10 w-[90%] max-w-3xl rounded-3xl bg-white/95 px-4 py-6 text-center text-[13px] text-[#6e6e73] shadow-[0_10px_30px_rgba(0,0,0,0.04)]">
             <p className="font-medium text-[#111111]">
               No tours match your search.

@@ -86,6 +86,11 @@ RESEND_WEBHOOK_SECRET=你的Webhook_Secret
 NEXT_PUBLIC_SUPABASE_URL=你的Supabase项目URL
 NEXT_PUBLIC_SUPABASE_ANON_KEY=你的Supabase匿名Key
 SUPABASE_SERVICE_ROLE_KEY=你的Supabase服务角色Key
+
+# Stripe (결제)
+STRIPE_SECRET_KEY=sk_test_你的Stripe密钥
+STRIPE_WEBHOOK_SECRET=whsec_你的Webhook密钥
+STRIPE_PUBLISHABLE_KEY=pk_test_你的Publishable密钥 (선택사항, 클라이언트용)
 ```
 
 **用途：** 本地开发测试
