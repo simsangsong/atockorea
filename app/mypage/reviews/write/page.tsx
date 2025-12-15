@@ -3,12 +3,12 @@
 // Force dynamic rendering to avoid I18nProvider issues during static generation
 export const dynamic = 'force-dynamic';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { StarIcon } from '@/components/Icons';
 import { supabase } from '@/lib/supabase';
 
-export default function WriteReviewPage() {
+function WriteReviewContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const tourId = searchParams?.get('tourId');
@@ -256,5 +256,19 @@ export default function WriteReviewPage() {
         </form>
       </div>
     </div>
+  );
+}
+
+export default function WriteReviewPage() {
+  return (
+    <Suspense fallback={
+      <div className="max-w-2xl mx-auto">
+        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    }>
+      <WriteReviewContent />
+    </Suspense>
   );
 }
