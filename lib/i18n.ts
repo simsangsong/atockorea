@@ -66,8 +66,9 @@ interface I18nContextType {
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
 export function I18nProvider({ children }: { children: ReactNode }) {
+  // Initialize with default locale immediately to avoid SSR issues
   const [locale, setLocaleState] = useState<Locale>(defaultLocale);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false); // Start with false for immediate context provision
 
   useEffect(() => {
     // Update HTML lang attribute and body class based on locale
@@ -155,7 +156,13 @@ export function I18nProvider({ children }: { children: ReactNode }) {
       }
     };
 
-    loadLocale();
+    // Only load locale on client side
+    if (typeof window !== 'undefined') {
+      loadLocale();
+    } else {
+      // Server-side: use default locale immediately
+      setLoading(false);
+    }
   }, []);
 
   const setLocale = async (newLocale: Locale) => {
@@ -212,13 +219,17 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     return value;
   };
 
-  if (loading) {
-    return React.createElement(React.Fragment, null, children);
-  }
+  // Always provide context, even during loading
+  const contextValue: I18nContextType = {
+    locale,
+    setLocale,
+    t,
+    localeNames,
+  };
 
   return React.createElement(
     I18nContext.Provider,
-    { value: { locale, setLocale, t, localeNames } },
+    { value: contextValue },
     children
   );
 }
@@ -226,16 +237,76 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 export function useI18n() {
   const context = useContext(I18nContext);
   if (!context) {
+    // Fallback for server-side rendering or when provider is not available
+    if (typeof window === 'undefined') {
+      // Server-side: return default context
+      return {
+        locale: defaultLocale,
+        setLocale: async () => {},
+        t: (key: string) => {
+          const keys = key.split('.');
+          let value: any = messages[defaultLocale];
+          for (const k of keys) {
+            value = value?.[k];
+            if (value === undefined) {
+              return key;
+            }
+          }
+          return typeof value === 'string' ? value : key;
+        },
+        localeNames,
+      };
+    }
     throw new Error('useI18n must be used within I18nProvider');
   }
   return context;
 }
 
 export function useTranslations(namespace?: string) {
-  const { t } = useI18n();
+  // Safe translation function that works in both client and server contexts
+  const getTranslation = (key: string, params?: Record<string, string | number>): string => {
+    const fullKey = namespace ? `${namespace}.${key}` : key;
+    const keys = fullKey.split('.');
+    let value: any = messages[defaultLocale];
+    
+    for (const k of keys) {
+      value = value?.[k];
+      if (value === undefined) {
+        // Fallback to English
+        let fallbackValue: any = messages.en;
+        for (const fk of keys) {
+          fallbackValue = fallbackValue?.[fk];
+        }
+        value = fallbackValue || key;
+        break;
+      }
+    }
+    
+    if (typeof value !== 'string') {
+      return key;
+    }
+    
+    if (params) {
+      const paramRegex = /\{(\w+)\}/g;
+      return value.replace(paramRegex, (match, paramKey) => {
+        return params[paramKey]?.toString() || match;
+      });
+    }
+    
+    return value;
+  };
+  
+  // Try to get context, but provide fallback for SSR
+  const context = useContext(I18nContext);
+  
+  // If context is available, use it; otherwise use fallback
+  const t = context?.t || getTranslation;
   
   return (key: string, params?: Record<string, string | number>) => {
     const fullKey = namespace ? `${namespace}.${key}` : key;
-    return t(fullKey, params);
+    if (context) {
+      return context.t(fullKey, params);
+    }
+    return getTranslation(fullKey, params);
   };
 }
