@@ -10,24 +10,27 @@ export default function DestinationsCards() {
   const destinations = useMemo(() => [
     {
       id: 1,
-      name: t('home.destinations.seoul'),
-      description: t('home.destinations.seoulDesc'),
-      image: "https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=800&q=80",
+      name: t('home.destinations.jeju'),
+      description: t('home.destinations.jejuDesc'),
+      image: "/images/destinations/jeju-card.jpg", // 제주 - 한라산 설경
       available: true,
+      isLightImage: true, // 흰색 배경 이미지 플래그
     },
     {
       id: 2,
-      name: t('home.destinations.busan'),
-      description: t('home.destinations.busanDesc'),
-      image: "https://images.unsplash.com/photo-1534008897995-27a23e859048?w=800&q=80",
+      name: t('home.destinations.seoul'),
+      description: t('home.destinations.seoulDesc'),
+      image: "/images/destinations/seoul-card.jpg", // 서울 - 경복궁 야경
       available: true,
+      isLightImage: false,
     },
     {
       id: 3,
-      name: t('home.destinations.jeju'),
-      description: t('home.destinations.jejuDesc'),
-      image: "https://images.unsplash.com/photo-1504817343863-5092a923803e?w=800&q=80",
+      name: t('home.destinations.busan'),
+      description: t('home.destinations.busanDesc'),
+      image: "/images/destinations/busan-card.jpg", // 부산 - 감천문화마을
       available: true,
+      isLightImage: false,
     },
   ], [t]);
   
@@ -68,12 +71,31 @@ export default function DestinationsCards() {
                     sizes="(max-width: 768px) 59.5vw, 256px"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  {/* 흰색 이미지(제주)의 경우 더 강한 그라디언트 오버레이 */}
+                  <div 
+                    className={`absolute inset-0 ${
+                      destination.isLightImage 
+                        ? 'bg-gradient-to-t from-black/85 via-black/50 to-black/20' 
+                        : 'bg-gradient-to-t from-black/70 via-black/20 to-transparent'
+                    }`} 
+                  />
                   <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6">
-                    <h3 className="text-base md:text-2xl font-bold text-white mb-0.5 md:mb-1">
+                    <h3 
+                      className={`text-base md:text-2xl font-bold mb-0.5 md:mb-1 ${
+                        destination.isLightImage
+                          ? 'text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8),0_0_8px_rgba(0,0,0,0.6)]'
+                          : 'text-white'
+                      }`}
+                    >
                       {destination.name}
                     </h3>
-                    <p className="text-white/90 text-[10px] md:text-sm">
+                    <p 
+                      className={`text-[10px] md:text-sm ${
+                        destination.isLightImage
+                          ? 'text-white/95 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8),0_0_6px_rgba(0,0,0,0.6)]'
+                          : 'text-white/90'
+                      }`}
+                    >
                       {destination.description}
                     </p>
                   </div>

@@ -123,3 +123,113 @@ export async function GET(
   }
 }
 
+/**
+ * PATCH /api/tours/[id]
+ * Update a tour (Admin only)
+ */
+export async function PATCH(
+  req: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  try {
+    const { requireAdmin } = await import('@/lib/auth');
+    await requireAdmin(req);
+    
+    const supabase = createServerClient();
+    const tourId = params.id;
+    const body = await req.json();
+
+    if (!tourId) {
+      return ErrorResponses.validationError('Tour ID is required');
+    }
+
+    // Prepare update data
+    const updateData: any = {};
+    if (body.title !== undefined) updateData.title = body.title;
+    if (body.slug !== undefined) updateData.slug = body.slug;
+    if (body.city !== undefined) updateData.city = body.city;
+    if (body.price !== undefined) updateData.price = parseFloat(body.price);
+    if (body.original_price !== undefined) updateData.original_price = body.original_price ? parseFloat(body.original_price) : null;
+    if (body.price_type !== undefined) updateData.price_type = body.price_type;
+    if (body.image_url !== undefined) updateData.image_url = body.image_url;
+    if (body.description !== undefined) updateData.description = body.description;
+    if (body.is_active !== undefined) updateData.is_active = body.is_active;
+    if (body.is_featured !== undefined) updateData.is_featured = body.is_featured;
+    if (body.gallery_images !== undefined) updateData.gallery_images = body.gallery_images;
+    if (body.highlights !== undefined) updateData.highlights = body.highlights;
+    if (body.includes !== undefined) updateData.includes = body.includes;
+    if (body.excludes !== undefined) updateData.excludes = body.excludes;
+    if (body.schedule !== undefined) updateData.schedule = body.schedule;
+    if (body.faqs !== undefined) updateData.faqs = body.faqs;
+
+    const { data: tour, error: updateError } = await supabase
+      .from('tours')
+      .update(updateData)
+      .eq('id', tourId)
+      .select()
+      .single();
+
+    if (updateError) {
+      return handleApiError(updateError);
+    }
+
+    return NextResponse.json({
+      success: true,
+      data: tour,
+      message: 'Tour updated successfully',
+    });
+  } catch (error: any) {
+    if (error.message === 'Unauthorized' || error.message.includes('Forbidden')) {
+      return ErrorResponses.forbidden('Admin access required');
+    }
+    return handleApiError(error, req);
+  }
+}
+
+/**
+ * DELETE /api/tours/[id]
+ * Delete a tour (Admin only)
+ */
+export async function DELETE(
+  req: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  try {
+    const { requireAdmin } = await import('@/lib/auth');
+    await requireAdmin(req);
+    
+    const supabase = createServerClient();
+    const tourId = params.id;
+
+    if (!tourId) {
+      return ErrorResponses.validationError('Tour ID is required');
+    }
+
+    // Delete pickup points first
+    await supabase
+      .from('pickup_points')
+      .delete()
+      .eq('tour_id', tourId);
+
+    // Delete the tour
+    const { error: deleteError } = await supabase
+      .from('tours')
+      .delete()
+      .eq('id', tourId);
+
+    if (deleteError) {
+      return handleApiError(deleteError);
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: 'Tour deleted successfully',
+    });
+  } catch (error: any) {
+    if (error.message === 'Unauthorized' || error.message.includes('Forbidden')) {
+      return ErrorResponses.forbidden('Admin access required');
+    }
+    return handleApiError(error, req);
+  }
+}
+

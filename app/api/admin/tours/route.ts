@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { handleApiError, ErrorResponses } from '@/lib/error-handler';
+import { requireAdmin } from '@/lib/auth';
 
 /**
  * POST /api/admin/tours
@@ -14,24 +15,26 @@ import { handleApiError, ErrorResponses } from '@/lib/error-handler';
  */
 export async function POST(request: NextRequest) {
   try {
-    const supabase = createServerClient();
+    console.log('🔍 [POST /api/admin/tours] Request received');
     
-    // Check authentication
-    const { data: { session } } = await supabase.auth.getSession();
-    if (!session) {
-      return ErrorResponses.unauthorized('Authentication required');
+    // Check admin authentication using requireAdmin
+    // This handles cookie-based authentication properly
+    let user;
+    try {
+      user = await requireAdmin(request);
+      console.log('✅ [POST /api/admin/tours] User authenticated:', user.id, user.role);
+    } catch (authError: any) {
+      console.error('❌ [POST /api/admin/tours] Auth error:', authError.message);
+      if (authError.message === 'Unauthorized') {
+        return ErrorResponses.unauthorized('Authentication required');
+      }
+      if (authError.message.includes('Forbidden')) {
+        return ErrorResponses.forbidden('Admin access required');
+      }
+      return ErrorResponses.unauthorized(authError.message || 'Authentication failed');
     }
-
-    // Check if user is admin or merchant
-    const { data: profile, error: profileError } = await supabase
-      .from('user_profiles')
-      .select('role')
-      .eq('id', session.user.id)
-      .single();
-
-    if (profileError || (profile?.role !== 'admin' && profile?.role !== 'merchant')) {
-      return ErrorResponses.forbidden('Admin or merchant access required');
-    }
+    
+    const supabase = createServerClient();
 
     const body = await request.json();
 
@@ -123,24 +126,11 @@ export async function POST(request: NextRequest) {
  */
 export async function GET(request: NextRequest) {
   try {
-    const supabase = createServerClient();
+    // Check admin authentication using requireAdmin
+    // This handles cookie-based authentication properly
+    const user = await requireAdmin(request);
     
-    // Check authentication
-    const { data: { session } } = await supabase.auth.getSession();
-    if (!session) {
-      return ErrorResponses.unauthorized('Authentication required');
-    }
-
-    // Check if user is admin
-    const { data: profile } = await supabase
-      .from('user_profiles')
-      .select('role')
-      .eq('id', session.user.id)
-      .single();
-
-    if (profile?.role !== 'admin' && profile?.role !== 'merchant') {
-      return ErrorResponses.forbidden('Admin or merchant access required');
-    }
+    const supabase = createServerClient();
 
     const { searchParams } = new URL(request.url);
     const isActive = searchParams.get('is_active');

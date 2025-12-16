@@ -10,21 +10,21 @@ export default function HeroSection() {
   const heroImages = useMemo(() => [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=1920&q=80",
-      title: t('home.hero.discoverKorea'),
-      subtitle: t('home.hero.directConnection'),
-    },
-    {
-      id: 2,
-      image: "https://images.unsplash.com/photo-1504817343863-5092a923803e?w=1920&q=80",
+      image: "/images/hero/jeju-hero.jpg", // 제주 - 유채꽃과 벚꽃
       title: t('home.hero.exploreJeju'),
       subtitle: t('home.hero.jejuSubtitle'),
     },
     {
-      id: 3,
-      image: "https://images.unsplash.com/photo-1534008897995-27a23e859048?w=1920&q=80",
+      id: 2,
+      image: "/images/hero/busan-hero.jpg", // 부산 - 블루라인파크 스카이캡슐
       title: t('home.hero.experienceBusan'),
       subtitle: t('home.hero.busanSubtitle'),
+    },
+    {
+      id: 3,
+      image: "/images/hero/seoul-hero.jpg", // 서울 - 경복궁과 현대 빌딩
+      title: t('home.hero.discoverKorea'),
+      subtitle: t('home.hero.directConnection'),
     },
   ], [t]);
 

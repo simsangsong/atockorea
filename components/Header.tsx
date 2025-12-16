@@ -126,15 +126,15 @@ export default function Header() {
         ? 'bg-gray-900/80 border-white/10' 
         : 'bg-white/80 border-gray-200/50'
     }`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 md:h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
+      <div className="container mx-auto px-2 sm:px-4 lg:px-8">
+        <div className="flex items-center justify-between h-14 md:h-16 gap-2">
+          {/* Logo - Smaller on mobile */}
+          <Link href="/" className="flex items-center flex-shrink-0">
             <Logo className="h-8 sm:h-10 md:h-12" />
           </Link>
 
           {/* Desktop Navigation Menu */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-1 flex-shrink-0">
             <Link
               href="/"
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
@@ -174,14 +174,16 @@ export default function Header() {
           </nav>
 
           {/* Right Side - Language, Currency, Search, Sign In */}
-          <div className="flex items-center gap-3 sm:gap-4">
-            {/* Language Switcher */}
-            <LanguageSwitcher />
+          <div className="flex items-center gap-1.5 sm:gap-3 md:gap-4 flex-shrink-0">
+            {/* Language Switcher - Smaller on mobile */}
+            <div className="scale-90 sm:scale-100">
+              <LanguageSwitcher />
+            </div>
 
-            {/* Currency Toggle */}
+            {/* Currency Toggle - Smaller on mobile */}
             <button
               onClick={toggleCurrency}
-              className={`px-2 sm:px-3 py-1.5 text-xs sm:text-sm font-medium transition-colors ${
+              className={`px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs md:text-sm font-medium transition-colors whitespace-nowrap ${
                 isDarkPage 
                   ? 'text-gray-300 hover:text-blue-400' 
                   : 'text-gray-700 hover:text-blue-600'
@@ -191,22 +193,22 @@ export default function Header() {
               {currency === "USD" ? "USD" : "KRW"}
             </button>
 
-            {/* Search Icon */}
+            {/* Search Icon - Smaller on mobile */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className={`p-2 transition-colors ${
+              className={`p-1.5 sm:p-2 transition-colors flex-shrink-0 ${
                 isDarkPage 
                   ? 'text-gray-300 hover:text-blue-400' 
                   : 'text-gray-600 hover:text-blue-600'
               }`}
               aria-label="Search"
             >
-              <SearchIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+              <SearchIcon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </button>
 
-            {/* User Menu or Sign In Button */}
+            {/* User Menu or Sign In Button - Icon only on mobile */}
             {isLoading ? (
-              <div className={`px-2.5 sm:px-4 py-1.5 sm:py-2 ${
+              <div className={`px-2 sm:px-2.5 md:px-4 py-1.5 sm:py-2 ${
                 isDarkPage ? 'text-blue-300' : 'text-gray-600'
               }`}>
                 <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
@@ -215,7 +217,7 @@ export default function Header() {
               <div className="relative group">
                 <Link
                   href="/mypage"
-                  className={`group flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
+                  className={`group flex items-center justify-center gap-1 sm:gap-1.5 md:gap-2 px-2 sm:px-2.5 md:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap flex-shrink-0 ${
                     isDarkPage 
                       ? 'bg-blue-500/10 text-blue-300 border border-blue-400/30 hover:bg-blue-500/20 hover:border-blue-400/50' 
                       : 'bg-gray-50 text-gray-700 border border-gray-200 hover:bg-gray-100 hover:border-gray-300 hover:shadow-sm'
@@ -226,14 +228,14 @@ export default function Header() {
                     <img 
                       src={user.avatar_url} 
                       alt={user.full_name || 'User'} 
-                      className="w-4 h-4 sm:w-5 sm:h-5 rounded-full object-cover"
+                      className="w-4 h-4 sm:w-5 sm:h-5 rounded-full object-cover flex-shrink-0"
                     />
                   ) : (
-                    <UserIcon className={`w-4 h-4 sm:w-4 sm:h-4 transition-transform group-hover:scale-110 flex-shrink-0 ${
+                    <UserIcon className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110 flex-shrink-0 ${
                       isDarkPage ? 'text-blue-300' : 'text-gray-600'
                     }`} />
                   )}
-                  <span className="hidden sm:inline max-w-[100px] truncate">
+                  <span className="hidden md:inline max-w-[100px] truncate">
                     {user.full_name || t('nav.mypage')}
                   </span>
                 </Link>
@@ -281,17 +283,17 @@ export default function Header() {
             ) : (
               <Link
                 href="/signin"
-                className={`group flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
+                className={`group flex items-center justify-center gap-1 sm:gap-1.5 md:gap-2 px-2 sm:px-2.5 md:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap flex-shrink-0 ${
                   isDarkPage 
                     ? 'bg-blue-500/10 text-blue-300 border border-blue-400/30 hover:bg-blue-500/20 hover:border-blue-400/50' 
                     : 'bg-gray-50 text-gray-700 border border-gray-200 hover:bg-gray-100 hover:border-gray-300 hover:shadow-sm'
                 }`}
                 title="Sign In"
               >
-                <UserIcon className={`w-4 h-4 sm:w-4 sm:h-4 transition-transform group-hover:scale-110 flex-shrink-0 ${
+                <UserIcon className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110 flex-shrink-0 ${
                   isDarkPage ? 'text-blue-300' : 'text-gray-600'
                 }`} />
-                <span className="hidden sm:inline">{t('nav.signin')}</span>
+                <span className="hidden md:inline">{t('nav.signin')}</span>
               </Link>
             )}
           </div>

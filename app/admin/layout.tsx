@@ -10,6 +10,7 @@ const adminMenuItems = [
   { path: '/admin/merchants', label: '商家管理', icon: '🏢' },
   { path: '/admin/products', label: '产品管理', icon: '🎫' },
   { path: '/admin/orders', label: '订单管理', icon: '📦' },
+  { path: '/admin/upload', label: '이미지 업로드', icon: '📷' },
   { path: '/admin/analytics', label: '数据分析', icon: '📈' },
   { path: '/admin/settings', label: '系统设置', icon: '⚙️' },
 ];
@@ -28,33 +29,101 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const checkAuth = async () => {
     try {
       setIsLoading(true);
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
       
-      if (!session) {
+      if (!supabase) {
+        console.error('Supabase client not initialized');
         setIsAuthenticated(false);
         router.push('/signin?redirect=/admin');
         return;
       }
 
-      // Check if user is admin
-      const { data: profile } = await supabase
-        ?.from('user_profiles')
-        .select('role')
-        .eq('id', session.user.id)
-        .single() || { data: null };
-
-      if (profile?.role !== 'admin') {
+      const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+      
+      if (sessionError) {
+        console.error('Session error:', sessionError);
         setIsAuthenticated(false);
-        alert('Access denied. Admin privileges required.');
+        router.push('/signin?redirect=/admin');
+        return;
+      }
+      
+      if (!session) {
+        console.log('No session found');
+        setIsAuthenticated(false);
+        router.push('/signin?redirect=/admin');
+        return;
+      }
+
+      console.log('Session found, user ID:', session.user.id);
+
+      // Check if user is admin
+      const { data: profile, error: profileError } = await supabase
+        .from('user_profiles')
+        .select('id, full_name, role')
+        .eq('id', session.user.id)
+        .single();
+
+      console.log('Profile query result:', { profile, profileError });
+
+      if (profileError) {
+        console.error('Profile query error:', profileError);
+        // If profile doesn't exist, try to create it
+        if (profileError.code === 'PGRST116') {
+          console.log('Profile not found, creating default profile...');
+          const { data: newProfile, error: insertError } = await supabase
+            .from('user_profiles')
+            .insert({
+              id: session.user.id,
+              full_name: session.user.user_metadata?.full_name || session.user.email?.split('@')[0] || 'User',
+              role: 'customer',
+            })
+            .select()
+            .single();
+          
+          if (insertError) {
+            console.error('Failed to create profile:', insertError);
+            alert(`프로필 조회 실패: ${insertError.message}\n\nSupabase RLS 정책을 확인하세요.`);
+            setIsAuthenticated(false);
+            router.push('/');
+            return;
+          }
+          
+          alert('프로필이 생성되었지만 admin 권한이 없습니다.\n\nSupabase에서 role을 admin으로 설정해주세요.');
+          setIsAuthenticated(false);
+          router.push('/');
+          return;
+        }
+        
+        alert(`프로필 조회 실패: ${profileError.message}\n\n콘솔을 확인하세요.`);
+        setIsAuthenticated(false);
         router.push('/');
         return;
       }
 
+      if (!profile) {
+        console.error('Profile is null');
+        setIsAuthenticated(false);
+        alert('프로필을 찾을 수 없습니다.');
+        router.push('/');
+        return;
+      }
+
+      console.log('Profile role:', profile.role);
+
+      if (profile.role !== 'admin') {
+        console.warn('User is not admin. Role:', profile.role);
+        setIsAuthenticated(false);
+        alert(`Access denied. Admin privileges required.\n\n현재 역할: ${profile.role || '없음'}\n\nSupabase에서 user_profiles 테이블의 role을 'admin'으로 설정해주세요.`);
+        router.push('/');
+        return;
+      }
+
+      console.log('Admin access granted');
       setUser(session.user);
       setIsAuthenticated(true);
     } catch (err: any) {
       console.error('Auth check error:', err);
       setIsAuthenticated(false);
+      alert(`인증 오류: ${err.message}\n\n콘솔을 확인하세요.`);
       router.push('/signin?redirect=/admin');
     } finally {
       setIsLoading(false);

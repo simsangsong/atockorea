@@ -134,24 +134,67 @@ const tourData = {
   is_featured: true
 };
 
-// API 호출
-fetch('/api/admin/tours', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  credentials: 'include',
-  body: JSON.stringify(tourData)
-})
-  .then(response => response.json())
-  .then(result => {
-    if (result.data) {
-      console.log('✅ 투어 생성 성공!', result.data);
-      console.log(`🌐 투어 확인: /tour/${result.data.slug}`);
-    } else {
-      console.error('❌ 투어 생성 실패:', result.error);
+// API 호출 (세션 토큰 포함)
+(async () => {
+  // Get session from Supabase (use global supabase if available, or get from cookies)
+  let accessToken = null;
+  
+  // Try to get from global supabase object
+  if (typeof supabase !== 'undefined' && supabase?.auth) {
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.access_token) {
+        accessToken = session.access_token;
+      }
+    } catch (e) {
+      console.warn('Could not get session from supabase:', e);
     }
-  })
-  .catch(error => {
-    console.error('❌ 에러 발생:', error);
+  }
+  
+  // Fallback: Try to get from cookies
+  if (!accessToken) {
+    const cookies = document.cookie.split(';');
+    for (const cookie of cookies) {
+      const [name, value] = cookie.trim().split('=');
+      if (name.includes('auth') && name.includes('token')) {
+        try {
+          const parsed = JSON.parse(decodeURIComponent(value));
+          accessToken = parsed?.access_token || parsed?.accessToken;
+          if (accessToken) break;
+        } catch (e) {
+          // Not JSON, might be direct token
+          if (value && value.length > 50) {
+            accessToken = decodeURIComponent(value);
+            break;
+          }
+        }
+      }
+    }
+  }
+  
+  if (!accessToken) {
+    console.error('❌ 로그인이 필요합니다. 세션을 찾을 수 없습니다.');
+    alert('❌ 로그인이 필요합니다.\n\n먼저 로그인한 후 다시 시도해주세요.');
+    return;
+  }
+  
+  const response = await fetch('/api/admin/tours', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${accessToken}`
+    },
+    credentials: 'include',
+    body: JSON.stringify(tourData)
   });
+  const result = await response.json();
+  
+  if (result.data) {
+    console.log('✅ 투어 생성 성공!', result.data);
+    console.log(`🌐 투어 확인: /tour/${result.data.slug}`);
+    alert('✅ 투어 생성 성공!\n\n투어 ID: ' + result.data.id + '\n제목: ' + result.data.title);
+  } else {
+    console.error('❌ 투어 생성 실패:', result.error);
+    alert('❌ 투어 생성 실패: ' + (result.error || 'Unknown error'));
+  }
+})();

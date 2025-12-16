@@ -13,6 +13,7 @@ import GalleryGrid from '@/components/tour/GalleryGrid';
 import VisualItinerary from '@/components/tour/VisualItinerary';
 import MeetingPoint from '@/components/tour/MeetingPoint';
 import ActionButtons from '@/components/tour/ActionButtons';
+import CollapsibleSection from '@/components/tour/CollapsibleSection';
 import { useTranslations } from '@/lib/i18n';
 
 // Lazy load heavy components
@@ -57,6 +58,7 @@ interface Tour {
   inclusions: Array<string | { icon: string; text: string }>;
   exclusions: Array<string | { icon: string; text: string }>;
   pickupPoints: Array<{ id: string; name: string; address: string; lat: number; lng: number }>;
+  overview?: string;
 }
 
 export default function TourDetailPage() {
@@ -227,15 +229,12 @@ export default function TourDetailPage() {
         {/* 1. Hero Image */}
         <HeroImage images={tour.images} />
 
-        {/* Title and Tagline Section - Modern Typography */}
+        {/* Title Section - Modern Typography */}
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4">
           <div className="max-w-4xl">
             <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 leading-tight tracking-normal">
               {tour.title}
             </h1>
-            <p className="text-base sm:text-lg md:text-lg text-gray-600 font-normal leading-relaxed">
-              {tour.tagline}
-            </p>
           </div>
         </section>
 
@@ -259,53 +258,69 @@ export default function TourDetailPage() {
             </div>
           </div>
 
-          {/* 5. Itinerary */}
-          <VisualItinerary items={tour.itinerary} pickupPoints={tour.pickupPoints} />
+          {/* 5. Description (collapsible) */}
+          {tour.overview && (
+            <CollapsibleSection title="Description">
+              <div className="text-gray-700 leading-relaxed whitespace-pre-line">
+                {tour.overview}
+              </div>
+            </CollapsibleSection>
+          )}
 
-          {/* 6. Inclusions/Exclusions */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border border-gray-200/50 p-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-6">What's Included</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <span className="text-green-600 text-2xl">✓</span>
-                  Included
-                </h3>
-                <ul className="space-y-3">
-                  {tour.inclusions.map((item, index) => {
-                    const text = typeof item === 'string' ? item : item.text || '';
-                    return (
-                      <li key={index} className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span className="text-gray-700">{text}</span>
-                      </li>
-                    );
-                  })}
-                </ul>
+          {/* 6. Itinerary (collapsible) */}
+          <CollapsibleSection title="Itinerary">
+            <VisualItinerary items={tour.itinerary} pickupPoints={tour.pickupPoints} />
+          </CollapsibleSection>
+
+          {/* 7. What's Included (collapsible) */}
+          {(tour.inclusions.length > 0 || tour.exclusions.length > 0) && (
+            <CollapsibleSection title="What's Included">
+              <div className="grid md:grid-cols-2 gap-8">
+                {tour.inclusions.length > 0 && (
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                      <span className="text-green-600 text-2xl">✓</span>
+                      Included
+                    </h3>
+                    <ul className="space-y-3">
+                      {tour.inclusions.map((item, index) => {
+                        const text = typeof item === 'string' ? item : item.text || '';
+                        return (
+                          <li key={index} className="flex items-start gap-3">
+                            <svg className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span className="text-gray-700">{text}</span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                )}
+                {tour.exclusions.length > 0 && (
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                      <span className="text-red-600 text-2xl">✗</span>
+                      Not Included
+                    </h3>
+                    <ul className="space-y-3">
+                      {tour.exclusions.map((item, index) => {
+                        const text = typeof item === 'string' ? item : item.text || '';
+                        return (
+                          <li key={index} className="flex items-start gap-3">
+                            <svg className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            <span className="text-gray-700">{text}</span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                )}
               </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <span className="text-red-600 text-2xl">✗</span>
-                  Not Included
-                </h3>
-                <ul className="space-y-3">
-                  {tour.exclusions.map((item, index) => {
-                    const text = typeof item === 'string' ? item : item.text || '';
-                    return (
-                      <li key={index} className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                        <span className="text-gray-700">{text}</span>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </div>
-          </div>
+            </CollapsibleSection>
+          )}
 
           {/* 7. Meeting Point */}
           <MeetingPoint points={tour.pickupPoints} />

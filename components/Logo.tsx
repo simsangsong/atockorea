@@ -102,8 +102,8 @@ export default function Logo({ className = "w-auto h-10 sm:h-12" }: { className?
         </svg>
       </div>
       
-      {/* Company Name with Enhanced Typography */}
-      <div className="flex flex-col justify-center">
+      {/* Company Name with Enhanced Typography - Hidden on mobile */}
+      <div className="hidden sm:flex flex-col justify-center">
         <h1 className="text-base sm:text-xl md:text-2xl font-extrabold bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500 bg-clip-text text-transparent leading-tight tracking-tight">
           AtoC Korea
         </h1>

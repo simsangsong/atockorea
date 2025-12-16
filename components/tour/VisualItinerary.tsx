@@ -73,8 +73,7 @@ export default function VisualItinerary({ items, pickupPoints = [] }: VisualItin
   });
 
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border border-gray-200/50 p-6 fade-in-delay-2">
-      <h2 className="text-xl font-bold text-gray-900 mb-6">Itinerary</h2>
+    <div className="fade-in-delay-2">
       <div className="relative">
         {/* Vertical Timeline Line */}
         <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-300 via-blue-400 to-orange-400" />
