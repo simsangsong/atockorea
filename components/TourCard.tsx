@@ -18,7 +18,8 @@ export interface Tour {
 }
 
 interface TourCardProps {
-  id?: number;
+  id?: number | string;
+  slug?: string;
   title?: string; // Optional when tour is provided
   location?: string;
   type?: string;
@@ -36,6 +37,7 @@ interface TourCardProps {
 
 export default function TourCard({
   id,
+  slug,
   title,
   location,
   type,
@@ -58,7 +60,8 @@ export default function TourCard({
   const displayCategory = tour?.tag?.split(" · ")[0] || location || t('tourCard.tours');
   const displayType = tour?.tag?.split(" · ")[1] || type || "";
   const displayPrice = tour?.price || (price ? `₩ ${(price * 1000).toLocaleString()}` : "");
-  const displayHref = tour?.href || `/tour/${id || 1}`;
+  // Use slug if available, otherwise fall back to id
+  const displayHref = tour?.href || (slug ? `/tour/${slug}` : (id ? `/tour/${id}` : '/tours'));
   const displayImage = image || "https://images.unsplash.com/photo-1534008897995-27a23e859048?w=600&q=80";
   const displayBadge = badge || tour?.tag?.split(" · ")[1] || "";
 

@@ -127,14 +127,15 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
     // Transform data to match frontend expectations
     let transformedTours = tours?.map((tour) => ({
       id: tour.id,
+      slug: tour.slug,
       title: tour.title,
       location: tour.city,
       city: tour.city,
       price: parseFloat(tour.price.toString()),
       originalPrice: tour.original_price ? parseFloat(tour.original_price.toString()) : null,
       priceType: tour.price_type,
-      image: tour.image_url || (tour.images && Array.isArray(tour.images) && tour.images[0]) || '',
-      images: tour.images || [],
+      image: tour.image_url || (tour.gallery_images && Array.isArray(tour.gallery_images) && tour.gallery_images.length > 0 ? tour.gallery_images[0] : '') || '',
+      images: tour.gallery_images || [],
       rating: tour.rating ? parseFloat(tour.rating.toString()) : 0,
       reviewCount: tour.review_count || 0,
       duration: tour.duration || '',

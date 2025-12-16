@@ -159,3 +159,4 @@
     alert('❌ 에러 발생: ' + error.message);
   }
 })();
+

@@ -54,3 +54,4 @@
     console.error('❌ 네트워크 에러:', error);
   }
 })();
+

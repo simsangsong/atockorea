@@ -72,8 +72,8 @@ export async function GET(
       difficulty: tour.difficulty || '',
       groupSize: tour.group_size || '',
       highlight: tour.highlight || '',
-      images: tour.images && tour.images.length > 0 
-        ? tour.images.map((img: string, index: number) => ({
+      images: tour.gallery_images && Array.isArray(tour.gallery_images) && tour.gallery_images.length > 0 
+        ? tour.gallery_images.map((img: string, index: number) => ({
             url: img,
             title: `${tour.title} - Image ${index + 1}`,
             description: '',

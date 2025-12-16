@@ -36,6 +36,7 @@ export default function TourList() {
         // Transform API response to match our interface
         const transformedTours = (data.tours || []).map((tour: any) => ({
           id: tour.id,
+          slug: tour.slug,
           title: tour.title,
           city: tour.location || tour.city,
           price: tour.price,
@@ -123,6 +124,7 @@ export default function TourList() {
               <TourCard
                 key={tour.id}
                 id={tour.id}
+                slug={tour.slug}
                 title={tour.title}
                 location={tour.city}
                 type={tour.duration || "Day tour"}

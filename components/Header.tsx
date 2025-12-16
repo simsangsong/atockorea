@@ -133,8 +133,8 @@ export default function Header() {
       <div className="container mx-auto px-2 sm:px-3 md:px-4 lg:px-8">
         <div className="flex items-center justify-between h-14 md:h-16 gap-1 sm:gap-1.5 md:gap-2 lg:gap-3">
           {/* Logo - Responsive sizing with text always visible */}
-          <Link href="/" className="flex items-center flex-shrink-0 min-w-0 max-w-[60%] sm:max-w-none">
-            <Logo className="h-9 sm:h-10 md:h-12" />
+          <Link href="/" className="flex items-center flex-shrink-0 min-w-0 max-w-[65%] sm:max-w-none">
+            <Logo className="h-10 sm:h-10 md:h-12" />
           </Link>
 
           {/* Desktop Navigation Menu */}
