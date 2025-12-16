@@ -34,9 +34,6 @@ export async function getAuthUser(req: NextRequest): Promise<AuthUser | null> {
       // Get all cookies
       const cookies = req.cookies;
       
-      // Debug: Log all cookies
-      console.log('🔍 [getAuthUser] All cookies:', Array.from(cookies.entries()).map(([k, v]) => `${k}: ${v.value?.substring(0, 50)}...`));
-      
       // Try to find Supabase auth token in cookies
       // Supabase stores session in cookies with pattern: sb-<project-ref>-auth-token
       const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
@@ -128,19 +125,23 @@ export async function getAuthUser(req: NextRequest): Promise<AuthUser | null> {
         }
       }
       
-      // Fallback: Try to get session from all cookies by looking for access_token
-      if (!user) {
-        console.log('🔍 [getAuthUser] Trying fallback: checking all cookies for auth/token');
-        for (const [name, cookie] of cookies.entries()) {
-          if (name.includes('auth') || name.includes('token')) {
-            console.log(`🔍 [getAuthUser] Checking cookie: ${name}`);
+      // Fallback: Try common cookie names for auth tokens
+      if (!user && projectRef) {
+        const fallbackCookieNames = [
+          'sb-auth-token',
+          'supabase-auth-token',
+          'auth-token',
+        ];
+        
+        for (const cookieName of fallbackCookieNames) {
+          const cookie = cookies.get(cookieName);
+          if (cookie) {
             try {
               const parsed = JSON.parse(cookie.value);
               const accessToken = parsed?.access_token || parsed?.accessToken;
               if (accessToken) {
                 const { data: { user: authUser }, error } = await supabase.auth.getUser(accessToken);
                 if (!error && authUser) {
-                  console.log('✅ [getAuthUser] User authenticated from fallback cookie');
                   user = authUser;
                   break;
                 }

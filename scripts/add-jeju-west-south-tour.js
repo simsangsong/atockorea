@@ -25,7 +25,7 @@
   
   const tourData = {
     // ===== 필수 필드 =====
-    title: "Jeju: West & South Full-Day Authentic Bus Tour",
+    title: "제주 서부&남부 올데이 버스 투어",
     slug: "jeju-west-south-full-day-bus-tour",
     city: "Jeju",
     price: 70000,
@@ -35,7 +35,7 @@
     // ===== 선택 필드 =====
     tag: "Full Day",
     subtitle: "Top rated",
-    description: "Explore Jeju's west and south in one day with a licensed guide. Enjoy scenic trails, green tea views, local activities, and coastal waterfalls while experiencing Jeju's nature and culture. Discover the natural wonders, cultural treasures, and modern charms of Jeju Island on this Western Highlights Day Tour. From breathtaking UNESCO World Heritage sites to trendy seaside cafes, this full-day journey offers the perfect mix of nature, culture, and relaxation.",
+    description: "제주 서부와 남부를 하루에 둘러보는 투어. 산책로, 녹차밭, 지역 체험, 해안 폭포를 즐기며 제주의 자연과 문화를 경험하세요.",
     original_price: 80000,
     duration: "10 hours",
     lunch_included: false,

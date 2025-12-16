@@ -62,7 +62,12 @@ export default function OrderDetailPage() {
   const fetchOrder = async () => {
     try {
       setLoading(true);
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
+      
+      if (!supabase) {
+        throw new Error('Supabase client not initialized');
+      }
+      
+      const { data: { session } } = await supabase.auth.getSession();
       
       if (!session) {
         router.push('/signin?redirect=/admin/orders/' + orderId);
@@ -117,7 +122,13 @@ export default function OrderDetailPage() {
 
     try {
       setUpdating(true);
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
+      
+      if (!supabase) {
+        alert('Supabase client not initialized');
+        return;
+      }
+      
+      const { data: { session } } = await supabase.auth.getSession();
       
       if (!session) {
         alert('Please sign in');

@@ -25,7 +25,7 @@
   
   const tourData = {
     // ===== 필수 필드 =====
-    title: "Jeju: Eastern Jeju UNESCO Spots Day Bus Tour",
+    title: "제주 동부 유네스코 명소 버스 투어",
     slug: "jeju-eastern-unesco-spots-bus-tour",
     city: "Jeju",
     price: 80000,
@@ -35,7 +35,7 @@
     // ===== 선택 필드 =====
     tag: "UNESCO",
     subtitle: "Top rated",
-    description: "Explore UNESCO sites and experience history, culture, and the nature of the Eastern and Northern parts of Jeju Island. Learn about the island's legendary Haenyeo and discover Micheongul Cave. Discover the enchanting beauty of Jeju Island with our all-inclusive Eastern Euphoria One Day Tour. Jeju, the largest island in Korea, is filled with breathtaking landscapes, UNESCO World Heritage Sites, and unique cultural treasures—and we bring them all to you in one seamless journey.",
+    description: "제주 동부와 북부의 유네스코 명소를 둘러보세요. 해녀 문화와 미천굴을 체험합니다. 제주 최대 섬의 자연과 문화를 한 번에 만나보세요.",
     original_price: 80000,
     duration: "10 hours",
     lunch_included: false,

@@ -25,7 +25,7 @@
   
   const tourData = {
     // ===== 필수 필드 =====
-    title: "Jeju: Southern UNESCO Geopark Day Tour",
+    title: "제주 남부 유네스코 지질공원 투어",
     slug: "jeju-southern-unesco-geopark-day-tour",
     city: "Jeju",
     price: 80000,
@@ -35,7 +35,7 @@
     // ===== 선택 필드 =====
     tag: "UNESCO",
     subtitle: "Top rated",
-    description: "Enjoy a comfortable bus tour of the UNESCO area of Jeju Island. Visit Hallasan Mountain, the O'sulloc Tea Museum, the Jusangjeolli Cliff, and the Cheonjiyeon Waterfall. Discover UNESCO Jeju South - One Perfect Day of Beauty and Wonder. Experience Jeju's UNESCO Treasures in Comfort: an all-inclusive one-day tour through the UNESCO-designated southern region of Jeju Island. This journey combines breathtaking scenery, cultural heritage, and natural wonders with ease, comfort, and convenience. Licensed guides, air-conditioned vehicles, and admission fees included.",
+    description: "제주 남부의 유네스코 지질공원을 편안한 버스 투어로 탐방하세요. 한라산, 오설록 차 박물관, 주상절리대, 천지연폭포를 방문합니다. 모든 입장권과 가이드가 포함되어 있습니다.",
     original_price: 80000,
     duration: "10 hours",
     lunch_included: false,

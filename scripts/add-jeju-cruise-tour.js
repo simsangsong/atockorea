@@ -16,7 +16,7 @@
 
 const tourData = {
   // ===== 필수 필드 =====
-  title: "Jeju Island: Full Day Tour for Cruise Ship Passengers",
+  title: "제주 크루즈 승객 전용 일일 투어",
   slug: "jeju-island-full-day-tour-cruise-passengers",
   city: "Jeju",
   price: 88000,
@@ -26,7 +26,7 @@ const tourData = {
   // ===== 기본 정보 =====
   tag: "Cruise",
   subtitle: "Top rated",
-  description: "Exclusive Jeju tour for cruise guests. Pickup & drop-off strictly on time at the cruise terminal. Two itineraries are available for Jeju's two ports, with full details in the description. Welcome to all cruise passengers visiting Jeju Island! This tour is specifically designed for travelers arriving in Jeju by cruise ship for a layover (port stop, stopover). Although the tour time is set at 8:00 AM on the product page, booking is flexible regardless of arrival time. Pickup is arranged based on the cruise ship's schedule to ensure return to the port well before departure.",
+  description: "크루즈 여행객을 위한 특별 투어. 크루즈 일정에 맞춘 맞춤형 스케줄. 제주 두 항구에 따라 다른 코스가 제공됩니다. 정시 픽업과 하차가 보장됩니다.",
   original_price: 88000,
   
   // ===== 이미지 =====
