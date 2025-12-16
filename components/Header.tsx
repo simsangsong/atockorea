@@ -39,7 +39,7 @@ export default function Header() {
 
       try {
         // Get current session
-        const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+        const { data: { session }, error: sessionError } = await supabase.auth.getSession() || { data: { session: null }, error: null };
         
         if (sessionError || !session?.user) {
           setUser(null);
@@ -87,13 +87,17 @@ export default function Header() {
     loadUser();
 
     // Listen for auth state changes
-    const { data: { subscription } } = supabase?.auth.onAuthStateChange((_event, session) => {
-      if (session?.user) {
-        loadUser();
-      } else {
-        setUser(null);
-      }
-    }) || { data: { subscription: null } };
+    let subscription: { unsubscribe: () => void } | null = null;
+    if (supabase) {
+      const authStateChangeResult = supabase.auth.onAuthStateChange((_event, session) => {
+        if (session?.user) {
+          loadUser();
+        } else {
+          setUser(null);
+        }
+      });
+      subscription = authStateChangeResult?.data?.subscription || null;
+    }
 
     // Listen for search open event
     const handleOpenSearch = () => {
@@ -174,7 +178,7 @@ export default function Header() {
           </nav>
 
           {/* Right Side - Language, Currency, Search, Sign In */}
-          <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2 lg:gap-3 flex-shrink-0">
+          <div className="flex items-center gap-0.5 sm:gap-1 md:gap-1.5 lg:gap-2 flex-shrink-0">
             {/* Language Switcher - Optimized for mobile */}
             <div className="flex-shrink-0">
               <LanguageSwitcher />
@@ -183,7 +187,7 @@ export default function Header() {
             {/* Currency Toggle - Compact on mobile */}
             <button
               onClick={toggleCurrency}
-              className={`px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs md:text-sm font-medium transition-colors whitespace-nowrap flex-shrink-0 ${
+              className={`px-1 sm:px-1.5 md:px-2 lg:px-3 py-1 sm:py-1.5 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-medium transition-colors whitespace-nowrap flex-shrink-0 ${
                 isDarkPage 
                   ? 'text-gray-300 hover:text-blue-400' 
                   : 'text-gray-700 hover:text-blue-600'
@@ -196,14 +200,14 @@ export default function Header() {
             {/* Search Icon - Optimized sizing */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className={`p-1.5 sm:p-1.5 md:p-2 transition-colors flex-shrink-0 ${
+              className={`p-1 sm:p-1.5 md:p-2 transition-colors flex-shrink-0 ${
                 isDarkPage 
                   ? 'text-gray-300 hover:text-blue-400' 
                   : 'text-gray-600 hover:text-blue-600'
               }`}
               aria-label="Search"
             >
-              <SearchIcon className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+              <SearchIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
             </button>
 
             {/* User Menu or Sign In Button - Icon only on mobile */}
