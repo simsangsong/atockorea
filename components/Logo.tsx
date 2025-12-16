@@ -1,15 +1,14 @@
-export default function Logo({ className = "w-auto h-10 sm:h-12" }: { className?: string }) {
+export default function Logo({ className }: { className?: string }) {
   return (
-    <div className={`flex items-center gap-2.5 sm:gap-3 ${className}`}>
+    <div className={`flex items-center gap-2.5 sm:gap-3 ${className || ''}`}>
       {/* Premium Circular Logo with Creative Design */}
       <div className="relative flex-shrink-0">
         <svg
-          width="40"
-          height="40"
-          className="sm:w-12 sm:h-12"
+          className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
           viewBox="0 0 48 48"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid meet"
         >
           <defs>
             {/* Blue and Orange Gradient */}

@@ -130,7 +130,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-14 md:h-16 gap-2">
           {/* Logo - Smaller on mobile */}
           <Link href="/" className="flex items-center flex-shrink-0">
-            <Logo className="h-8 sm:h-10 md:h-12" />
+            <Logo />
           </Link>
 
           {/* Desktop Navigation Menu */}

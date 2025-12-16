@@ -18,8 +18,8 @@ export async function GET(
       return ErrorResponses.validationError('Tour ID is required');
     }
 
-    // Fetch tour with pickup points
-    const { data: tour, error: tourError } = await supabase
+    // Try to fetch by ID first (UUID), then by slug if not found
+    let query = supabase
       .from('tours')
       .select(`
         *,
@@ -32,9 +32,18 @@ export async function GET(
           pickup_time
         )
       `)
-      .eq('id', tourId)
-      .eq('is_active', true)
-      .single();
+      .eq('is_active', true);
+
+    // Check if tourId is a UUID (contains hyphens) or a slug
+    const isUUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(tourId);
+    
+    if (isUUID) {
+      query = query.eq('id', tourId);
+    } else {
+      query = query.eq('slug', tourId);
+    }
+
+    const { data: tour, error: tourError } = await query.single();
 
     if (tourError || !tour) {
       if (tourError?.code === 'PGRST116') {
