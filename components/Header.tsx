@@ -126,11 +126,11 @@ export default function Header() {
         ? 'bg-gray-900/80 border-white/10' 
         : 'bg-white/80 border-gray-200/50'
     }`}>
-      <div className="container mx-auto px-2 sm:px-4 lg:px-8">
-        <div className="flex items-center justify-between h-14 md:h-16 gap-2">
-          {/* Logo - Smaller on mobile */}
-          <Link href="/" className="flex items-center flex-shrink-0">
-            <Logo />
+      <div className="container mx-auto px-2 sm:px-3 md:px-4 lg:px-8">
+        <div className="flex items-center justify-between h-14 md:h-16 gap-1 sm:gap-1.5 md:gap-2 lg:gap-3">
+          {/* Logo - Responsive sizing with text always visible */}
+          <Link href="/" className="flex items-center flex-shrink-0 min-w-0 max-w-[60%] sm:max-w-none">
+            <Logo className="h-9 sm:h-10 md:h-12" />
           </Link>
 
           {/* Desktop Navigation Menu */}
@@ -174,16 +174,16 @@ export default function Header() {
           </nav>
 
           {/* Right Side - Language, Currency, Search, Sign In */}
-          <div className="flex items-center gap-1.5 sm:gap-3 md:gap-4 flex-shrink-0">
-            {/* Language Switcher - Smaller on mobile */}
-            <div className="scale-90 sm:scale-100">
+          <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2 lg:gap-3 flex-shrink-0">
+            {/* Language Switcher - Optimized for mobile */}
+            <div className="flex-shrink-0">
               <LanguageSwitcher />
             </div>
 
-            {/* Currency Toggle - Smaller on mobile */}
+            {/* Currency Toggle - Compact on mobile */}
             <button
               onClick={toggleCurrency}
-              className={`px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs md:text-sm font-medium transition-colors whitespace-nowrap ${
+              className={`px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs md:text-sm font-medium transition-colors whitespace-nowrap flex-shrink-0 ${
                 isDarkPage 
                   ? 'text-gray-300 hover:text-blue-400' 
                   : 'text-gray-700 hover:text-blue-600'
@@ -193,17 +193,17 @@ export default function Header() {
               {currency === "USD" ? "USD" : "KRW"}
             </button>
 
-            {/* Search Icon - Smaller on mobile */}
+            {/* Search Icon - Optimized sizing */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className={`p-1.5 sm:p-2 transition-colors flex-shrink-0 ${
+              className={`p-1.5 sm:p-1.5 md:p-2 transition-colors flex-shrink-0 ${
                 isDarkPage 
                   ? 'text-gray-300 hover:text-blue-400' 
                   : 'text-gray-600 hover:text-blue-600'
               }`}
               aria-label="Search"
             >
-              <SearchIcon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+              <SearchIcon className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5" />
             </button>
 
             {/* User Menu or Sign In Button - Icon only on mobile */}

@@ -40,13 +40,13 @@ export default function LanguageSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 bg-white border border-gray-300 rounded-lg text-xs font-semibold text-gray-800 hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-md hover:shadow-lg"
+        className="flex items-center gap-0.5 sm:gap-1 md:gap-1.5 px-1 sm:px-1.5 md:px-2 lg:px-3 py-0.5 sm:py-1 md:py-1.5 lg:py-2 bg-white border border-gray-300 rounded-lg text-xs font-semibold text-gray-800 hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-md hover:shadow-lg flex-shrink-0"
       >
-        <span className="text-xs sm:text-sm">{localeFlags[locale]}</span>
-        <span className="hidden md:inline">{localeNames[locale]}</span>
-        <span className="hidden sm:inline md:hidden">{locale.toUpperCase()}</span>
+        <span className="text-xs sm:text-sm flex-shrink-0">{localeFlags[locale]}</span>
+        <span className="hidden md:inline whitespace-nowrap">{localeNames[locale]}</span>
+        <span className="hidden sm:inline md:hidden whitespace-nowrap">{locale.toUpperCase()}</span>
         <svg
-          className={`w-2.5 h-2.5 sm:w-3 sm:h-3 text-gray-500 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-2.5 h-2.5 sm:w-3 sm:h-3 text-gray-500 transition-transform duration-200 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

@@ -1,14 +1,15 @@
-export default function Logo({ className }: { className?: string }) {
+export default function Logo({ className = "w-auto h-10 sm:h-12" }: { className?: string }) {
   return (
-    <div className={`flex items-center gap-2.5 sm:gap-3 ${className || ''}`}>
+    <div className={`flex items-center gap-1.5 sm:gap-2 md:gap-2.5 lg:gap-3 ${className}`}>
       {/* Premium Circular Logo with Creative Design */}
       <div className="relative flex-shrink-0">
         <svg
-          className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
+          width="40"
+          height="40"
+          className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex-shrink-0"
           viewBox="0 0 48 48"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMid meet"
         >
           <defs>
             {/* Blue and Orange Gradient */}
@@ -101,12 +102,12 @@ export default function Logo({ className }: { className?: string }) {
         </svg>
       </div>
       
-      {/* Company Name with Enhanced Typography - Hidden on mobile */}
-      <div className="hidden sm:flex flex-col justify-center">
-        <h1 className="text-base sm:text-xl md:text-2xl font-extrabold bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500 bg-clip-text text-transparent leading-tight tracking-tight">
+      {/* Company Name with Enhanced Typography - Visible on all screens */}
+      <div className="flex flex-col justify-center min-w-0">
+        <h1 className="text-[11px] sm:text-sm md:text-xl lg:text-2xl font-extrabold bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500 bg-clip-text text-transparent leading-tight tracking-tight whitespace-nowrap">
           AtoC Korea
         </h1>
-        <p className="text-[9px] sm:text-[10px] md:text-xs font-semibold text-gray-500 leading-tight tracking-wider uppercase">
+        <p className="text-[7px] sm:text-[8px] md:text-[10px] lg:text-xs font-semibold text-gray-500 leading-tight tracking-wider uppercase whitespace-nowrap hidden sm:block">
           Agency to Customer
         </p>
       </div>
