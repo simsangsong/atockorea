@@ -5,7 +5,8 @@ import TourCard from "./TourCard";
 import { useTranslations } from "@/lib/i18n";
 
 interface Tour {
-  id: number;
+  id: number | string;
+  slug?: string;
   title: string;
   city: string;
   price: number;
