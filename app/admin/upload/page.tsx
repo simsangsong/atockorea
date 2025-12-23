@@ -159,3 +159,4 @@ gallery_images = '[
     </div>
   );
 }
+

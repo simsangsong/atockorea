@@ -346,3 +346,4 @@ WHERE slug = 'jeju-island-full-day-tour-cruise-passengers';
 ```
 
 이 방식이면 브라우저 콘솔이나 API 인증 없이도 Supabase에서 직접 투어를 관리할 수 있습니다!
+

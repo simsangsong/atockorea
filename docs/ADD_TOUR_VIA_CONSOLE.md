@@ -74,3 +74,4 @@ Chrome/Edge에서 보안 경고를 비활성화하려면:
 **가장 간단한 방법**: `scripts/add-jeju-cruise-tour-step-by-step.js` 파일의 STEP 1, STEP 2, STEP 3을 순서대로 실행하세요.
 
 각 단계는 작은 코드 조각이므로 보안 경고가 나타나더라도 붙여넣기가 가능합니다.
+

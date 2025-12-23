@@ -198,3 +198,4 @@ const tourData = {
     alert('❌ 투어 생성 실패: ' + (result.error || 'Unknown error'));
   }
 })();
+
