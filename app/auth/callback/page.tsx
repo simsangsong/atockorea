@@ -159,47 +159,6 @@ function AuthCallbackContent() {
           }, 1000);
           return;
         }
-
-        if (error) {
-          throw error;
-        }
-
-        if (data.user) {
-          // 检查是否需要创建用户资料
-          const { data: profile, error: profileError } = await supabase
-            .from('user_profiles')
-            .select('*')
-            .eq('id', data.user.id)
-            .single();
-
-          if (!profile || profileError) {
-            // 创建用户资料
-            const { error: insertError } = await supabase.from('user_profiles').insert({
-              id: data.user.id,
-              full_name: data.user.user_metadata?.full_name || 
-                         data.user.user_metadata?.name ||
-                         data.user.email?.split('@')[0] || 
-                         'User',
-              avatar_url: data.user.user_metadata?.avatar_url || 
-                         data.user.user_metadata?.picture ||
-                         null,
-              role: 'customer', // 默认角色
-            });
-
-            if (insertError) {
-              console.error('Error creating user profile:', insertError);
-              // 即使创建失败也允许登录，但记录错误
-            }
-          }
-
-          setStatus('success');
-          setMessage('Authentication successful! Redirecting...');
-          
-          // 重定向到目标页面
-          setTimeout(() => {
-            router.push(next);
-          }, 1000);
-        }
       } catch (error: any) {
         console.error('OAuth callback error:', error);
         setStatus('error');
