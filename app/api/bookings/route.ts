@@ -384,7 +384,6 @@ export async function POST(req: NextRequest) {
   } catch (error: any) {
     console.error('Unexpected error in POST /api/bookings:', error);
     console.error('Error stack:', error.stack);
-    console.error('Request body:', body);
     return NextResponse.json(
       { 
         error: 'Internal server error', 
