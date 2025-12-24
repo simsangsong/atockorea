@@ -760,7 +760,7 @@ export default function ProductsPage() {
                     </label>
                     <input
                       type="text"
-                      value={Array.isArray(formData.keywords) ? formData.keywords.join(', ') : (formData.keywords as string) || ''}
+                      value={Array.isArray(formData.keywords) ? formData.keywords.join(', ') : (formData.keywords ?? '')}
                       onChange={(e) => {
                         const keywords = e.target.value.split(',').map(k => k.trim()).filter(k => k.length > 0);
                         setFormData({ ...formData, keywords });
