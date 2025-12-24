@@ -80,6 +80,8 @@ export async function POST(req: NextRequest) {
   try {
     const supabase = createServerClient();
     const body = await req.json();
+    
+    console.log('Received booking request:', JSON.stringify(body, null, 2));
 
     // Validate required fields
     const {
@@ -94,15 +96,16 @@ export async function POST(req: NextRequest) {
     } = body;
 
     if (!tourId || !bookingDate || !numberOfGuests || !finalPrice) {
+      console.error('Missing required fields:', { tourId, bookingDate, numberOfGuests, finalPrice });
       return ErrorResponses.validationError(
         'Missing required fields: tourId, bookingDate, numberOfGuests, finalPrice'
       );
     }
 
-    // Get tour to fetch merchant_id
+    // Get tour to fetch merchant_id and price info
     const { data: tour, error: tourError } = await supabase
       .from('tours')
-      .select('id, merchant_id')
+      .select('id, merchant_id, price, price_type')
       .eq('id', tourId)
       .single();
 
@@ -172,16 +175,38 @@ export async function POST(req: NextRequest) {
     }
 
     // Create booking
+    // Convert bookingDate to DATE format (YYYY-MM-DD)
+    const bookingDateFormatted = bookingDate.includes('T') 
+      ? bookingDate.split('T')[0] 
+      : bookingDate.split(' ')[0]; // Handle both ISO and date strings
+    
+    // Ensure tour_id is a string (UUID)
+    const tourIdStr = String(tourId);
+    
+    // Calculate unit_price and total_price
+    // unit_price: price per person/group (base tour price)
+    // total_price: unit_price * number_of_guests (if person) or unit_price (if group)
+    // final_price: total_price after discounts (already calculated)
+    const unitPrice = parseFloat(String(tour.price || finalPrice));
+    const totalPrice = tour.price_type === 'person' 
+      ? unitPrice * parseInt(String(numberOfGuests), 10)
+      : unitPrice;
+    
     const bookingData: any = {
-      tour_id: tourId,
-      merchant_id: tour.merchant_id,
-      booking_date: bookingDate,
-      number_of_guests: numberOfGuests,
-      final_price: finalPrice,
+      tour_id: tourIdStr,
+      merchant_id: tour.merchant_id || null, // Allow null if merchant_id is not set
+      booking_date: bookingDateFormatted, // Use formatted date string (date when booking was created)
+      tour_date: bookingDateFormatted, // Use formatted date string (date when tour will happen) - required field
+      number_of_guests: parseInt(String(numberOfGuests), 10), // Ensure it's an integer
+      unit_price: unitPrice, // Price per person/group (base tour price)
+      total_price: totalPrice, // Total price before discounts
+      final_price: parseFloat(String(finalPrice)), // Final price after discounts
       payment_method: paymentMethod || 'pending',
       payment_status: 'pending',
       status: 'pending',
     };
+    
+    console.log('Prepared booking data:', bookingData);
 
     if (userId) {
       bookingData.user_id = userId;
@@ -203,6 +228,8 @@ export async function POST(req: NextRequest) {
       });
     }
 
+    console.log('Creating booking with data:', bookingData);
+    
     const { data: booking, error: bookingError } = await supabase
       .from('bookings')
       .insert(bookingData)
@@ -211,11 +238,14 @@ export async function POST(req: NextRequest) {
 
     if (bookingError) {
       console.error('Error creating booking:', bookingError);
+      console.error('Booking data that failed:', JSON.stringify(bookingData, null, 2));
       return NextResponse.json(
-        { error: 'Failed to create booking', details: bookingError.message },
+        { error: 'Failed to create booking', details: bookingError.message, code: bookingError.code },
         { status: 500 }
       );
     }
+    
+    console.log('Booking created successfully:', booking);
 
     // Update inventory after successful booking
     try {
@@ -352,9 +382,15 @@ export async function POST(req: NextRequest) {
       { status: 201 }
     );
   } catch (error: any) {
-    console.error('Unexpected error:', error);
+    console.error('Unexpected error in POST /api/bookings:', error);
+    console.error('Error stack:', error.stack);
+    console.error('Request body:', body);
     return NextResponse.json(
-      { error: 'Internal server error', details: error.message },
+      { 
+        error: 'Internal server error', 
+        details: error.message,
+        stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      },
       { status: 500 }
     );
   }

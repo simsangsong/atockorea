@@ -3,9 +3,11 @@
 import Image from "next/image";
 import { useTranslations } from "@/lib/i18n";
 import { useMemo } from "react";
+import { useRouter } from "next/navigation";
 
 export default function DestinationsCards() {
   const t = useTranslations();
+  const router = useRouter();
   
   const destinations = useMemo(() => [
     {
@@ -15,6 +17,7 @@ export default function DestinationsCards() {
       image: "/images/destinations/jeju-card.jpg", // 제주 - 한라산 설경
       available: true,
       isLightImage: true, // 흰색 배경 이미지 플래그
+      city: 'Jeju',
     },
     {
       id: 2,
@@ -23,6 +26,7 @@ export default function DestinationsCards() {
       image: "/images/destinations/seoul-card.jpg", // 서울 - 경복궁 야경
       available: true,
       isLightImage: false,
+      city: 'Seoul',
     },
     {
       id: 3,
@@ -31,8 +35,13 @@ export default function DestinationsCards() {
       image: "/images/destinations/busan-card.jpg", // 부산 - 감천문화마을
       available: true,
       isLightImage: false,
+      city: 'Busan',
     },
   ], [t]);
+
+  const handleDestinationClick = (city: string) => {
+    router.push(`/tours?city=${city}`);
+  };
   
   return (
     <section className="pt-6 pb-16 md:pt-8 md:pb-16 bg-transparent">
@@ -61,7 +70,8 @@ export default function DestinationsCards() {
             {destinations.map((destination) => (
               <div
                 key={destination.id}
-                className="group relative flex-shrink-0 w-[59.5vw] md:w-64 lg:w-72 overflow-hidden rounded-xl md:rounded-2xl transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-y-2 snap-start border border-gray-200/40 md:border-gray-200/30 bg-white/5 backdrop-blur-sm shadow-[0_2px_20px_rgba(0,0,0,0.08),0_1px_8px_rgba(0,0,0,0.04)] md:shadow-[0_4px_30px_rgba(0,0,0,0.06),0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_6px_40px_rgba(0,0,0,0.12),0_3px_16px_rgba(0,0,0,0.06)] md:hover:shadow-[0_8px_50px_rgba(0,0,0,0.1),0_4px_20px_rgba(0,0,0,0.05)]"
+                onClick={() => handleDestinationClick(destination.city)}
+                className="group relative flex-shrink-0 w-[59.5vw] md:w-64 lg:w-72 overflow-hidden rounded-xl md:rounded-2xl transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-y-2 snap-start border border-gray-200/40 md:border-gray-200/30 bg-white/5 backdrop-blur-sm shadow-[0_2px_20px_rgba(0,0,0,0.08),0_1px_8px_rgba(0,0,0,0.04)] md:shadow-[0_4px_30px_rgba(0,0,0,0.06),0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_6px_40px_rgba(0,0,0,0.12),0_3px_16px_rgba(0,0,0,0.06)] md:hover:shadow-[0_8px_50px_rgba(0,0,0,0.1),0_4px_20px_rgba(0,0,0,0.05)] cursor-pointer"
               >
                 <div className="relative h-[179px] md:h-64">
                   <Image

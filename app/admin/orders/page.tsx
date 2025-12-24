@@ -7,9 +7,11 @@ import { supabase } from '@/lib/supabase';
 
 interface Booking {
   id: string;
-  tour_date: string;
-  number_of_people: number;
-  total_price: number;
+  booking_date?: string;
+  tour_date?: string;
+  number_of_guests?: number;
+  number_of_people?: number;
+  total_price?: number;
   final_price: number;
   status: 'pending' | 'confirmed' | 'completed' | 'cancelled';
   payment_status: string;
@@ -63,6 +65,8 @@ export default function OrdersPage() {
       }
 
       const data = await response.json();
+      console.log('📊 Admin orders - Received data:', data);
+      console.log('📊 Admin orders - Recent bookings:', data.recentBookings);
       setBookings(data.recentBookings || []);
     } catch (err: any) {
       console.error('Error fetching bookings:', err);
@@ -180,14 +184,17 @@ export default function OrdersPage() {
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {bookings.length === 0 ? (
+              {bookings.filter((booking) => !statusFilter || booking.status === statusFilter).length === 0 ? (
                 <tr>
                   <td colSpan={8} className="px-6 py-8 text-center text-gray-500">
                     No orders found
+                    {statusFilter && ` (filtered by: ${statusFilter})`}
                   </td>
                 </tr>
               ) : (
-                bookings.map((booking) => (
+                bookings
+                  .filter((booking) => !statusFilter || booking.status === statusFilter)
+                  .map((booking) => (
                   <tr key={booking.id} className="hover:bg-gray-50">
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-500">
                       {booking.id.substring(0, 8)}...
@@ -209,7 +216,7 @@ export default function OrdersPage() {
                       {formatDate(booking.tour_date || booking.created_at)}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {booking.number_of_people}
+                      {booking.number_of_guests || booking.number_of_people || 1}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="text-sm font-medium text-gray-900">
@@ -239,5 +246,6 @@ export default function OrdersPage() {
     </div>
   );
 }
+
 
 

@@ -17,19 +17,18 @@ export default function KeyInfoBar({ items }: KeyInfoBarProps) {
 
   return (
     <div className="w-full overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
-      <div className="flex gap-4 min-w-max sm:min-w-0 sm:grid sm:grid-cols-4">
+      <div className="flex flex-wrap gap-2 sm:gap-3">
         {items.map((item, index) => (
           <div
             key={index}
-            className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-sm border border-gray-200/50 min-w-[200px] sm:min-w-0 hover:shadow-md transition-shadow"
+            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-br from-white via-blue-50/80 to-indigo-50/80 rounded-full border-2 border-blue-200/60 shadow-md hover:shadow-lg hover:border-blue-400 hover:scale-105 transition-all backdrop-blur-sm"
           >
-            <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center text-blue-600">
+            <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 text-blue-600">
               {item.icon}
             </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-xs text-gray-500 mb-0.5">{item.label}</p>
-              <p className="text-sm font-semibold text-gray-900 truncate">{item.value}</p>
-            </div>
+            <span className="text-xs sm:text-sm font-semibold text-gray-800 whitespace-nowrap">
+              {item.value || item.label}
+            </span>
           </div>
         ))}
       </div>

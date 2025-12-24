@@ -56,12 +56,16 @@ export async function GET(req: NextRequest) {
       sum + parseFloat(booking.final_price.toString()), 0
     ) || 0;
 
-    // Get recent bookings (last 10)
-    const { data: recentBookings } = await supabase
+    // Get recent bookings (last 20 for better visibility)
+    const { data: recentBookings, error: bookingsError } = await supabase
       .from('bookings')
       .select(`
         id,
         created_at,
+        booking_date,
+        tour_date,
+        number_of_guests,
+        number_of_people,
         final_price,
         status,
         payment_status,
@@ -71,11 +75,22 @@ export async function GET(req: NextRequest) {
         ),
         user_profiles (
           id,
-          full_name
+          full_name,
+          email
         )
       `)
       .order('created_at', { ascending: false })
-      .limit(10);
+      .limit(20);
+    
+    if (bookingsError) {
+      console.error('❌ Error fetching recent bookings:', bookingsError);
+      console.error('Error details:', JSON.stringify(bookingsError, null, 2));
+    } else {
+      console.log(`✅ Fetched ${recentBookings?.length || 0} recent bookings for admin dashboard`);
+      if (recentBookings && recentBookings.length > 0) {
+        console.log('Sample booking:', JSON.stringify(recentBookings[0], null, 2));
+      }
+    }
 
     return NextResponse.json({
       stats: {

@@ -141,63 +141,51 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
   const handleCheckAvailability = async () => {
     if (!selectedDate) return;
     
-    // Re-check availability before booking
-    await checkAvailability();
-    
-    if (!availability || !availability.canAccommodate) {
-      alert(`Sorry, only ${availability?.availableSpots || 0} spots available for this date.`);
-      return;
-    }
-    
     setIsLoading(true);
     
-    // Reserve spots (optional - can be done in booking API)
+    // Optional: Check availability (can be skipped for now)
     try {
-      const dateStr = selectedDate.toISOString().split('T')[0];
-      const reserveResponse = await fetch(`/api/tours/${tour.id}/availability`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          date: dateStr,
-          guests: guestCount,
-        }),
-      });
-
-      if (!reserveResponse.ok) {
-        const data = await reserveResponse.json();
-        throw new Error(data.error || 'Failed to reserve spots');
+      await checkAvailability();
+      
+      if (availability && !availability.canAccommodate) {
+        alert(`Sorry, only ${availability?.availableSpots || 0} spots available for this date.`);
+        setIsLoading(false);
+        return;
       }
-    } catch (err: any) {
-      console.error('Error reserving spots:', err);
-      alert(`Failed to reserve spots: ${err.message}`);
+    } catch (err) {
+      console.warn('Availability check failed, proceeding anyway:', err);
+      // Continue to checkout even if availability check fails
+    }
+    
+    // Prepare booking data
+    const bookingData = {
+      tourId: tour.id,
+      date: selectedDate.toISOString(),
+      guests: guestCount,
+      pickup: selectedPickup,
+      paymentMethod,
+      depositAmountKRW: paymentMethod === 'deposit' ? depositAmountKRW : undefined,
+      balanceAmountKRW: paymentMethod === 'deposit' ? balanceAmountKRW : undefined,
+      totalPrice,
+      promoCode: promoCode || undefined,
+      availability: availability,
+    };
+    
+    // Store booking data in sessionStorage immediately
+    try {
+      sessionStorage.setItem('bookingData', JSON.stringify(bookingData));
+      console.log('Booking data stored in sessionStorage:', bookingData);
+    } catch (error) {
+      console.error('Error storing booking data:', error);
+      alert('Failed to save booking data. Please try again.');
       setIsLoading(false);
       return;
     }
     
     setIsLoading(false);
-    setIsBooking(true);
     
-    // After checking availability, redirect to checkout
-    setTimeout(() => {
-      const bookingData = {
-        tourId: tour.id,
-        date: selectedDate.toISOString(),
-        guests: guestCount,
-        pickup: selectedPickup,
-        paymentMethod,
-        depositAmountKRW: paymentMethod === 'deposit' ? depositAmountKRW : undefined,
-        balanceAmountKRW: paymentMethod === 'deposit' ? balanceAmountKRW : undefined,
-        totalPrice,
-        promoCode: promoCode || undefined,
-        availability: availability,
-      };
-      
-      // Store booking data in sessionStorage
-      sessionStorage.setItem('bookingData', JSON.stringify(bookingData));
-      
-      // Redirect to checkout page
-      router.push(`/tour/${tour.id}/checkout`);
-    }, 500);
+    // Redirect to checkout page immediately (API connection not required)
+    router.push(`/tour/${tour.id}/checkout`);
   };
 
   // Update guest count with availability check
@@ -214,9 +202,9 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg border border-gray-200/50 p-6 lg:sticky lg:top-20">
+    <div className="bg-white/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/30 p-4 sm:p-5 lg:sticky lg:top-24">
       {/* Price Display */}
-      <div className="mb-6 pb-6 border-b border-gray-200">
+      <div className="mb-4 pb-4 border-b-2 border-blue-200/40">
         {/* Original Price */}
         {hasDiscount && tour.originalPrice && (
           <div className="mb-2">
@@ -239,13 +227,13 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
         )}
         {/* Final Price */}
         <div className="flex items-baseline gap-2">
-          <span className="text-3xl font-bold text-blue-600">
+          <span className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
             {formatPrice(availability?.priceOverride || (applyDiscount && hasDiscount ? tour.price : (tour.originalPrice || tour.price)))}
           </span>
-          <span className="text-sm text-gray-500">/ {tour.priceType}</span>
+          <span className="text-xs sm:text-sm text-gray-600 font-medium">/ {tour.priceType}</span>
         </div>
         {availability?.priceOverride && (
-          <p className="text-xs text-orange-600 mt-1">이 날짜 특가</p>
+          <p className="text-xs font-medium text-orange-600 mt-1">Special price for this date</p>
         )}
         {tour.priceType === 'person' && (
           <p className="text-xs text-gray-500 mt-1">{t('tour.pricePerPerson')}</p>
@@ -285,10 +273,10 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
       )}
 
       {/* Booking Form */}
-      <div className="space-y-5">
+      <div className="space-y-3.5">
         {/* Date Picker */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-xs font-bold text-gray-900 mb-1.5 uppercase tracking-wide">
             {t('tour.selectDate')} <span className="text-red-500">*</span>
           </label>
           <DatePicker
@@ -296,7 +284,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
             onChange={(date) => setSelectedDate(date)}
             minDate={new Date()}
             placeholderText={t('tour.chooseDate')}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
+            className="w-full px-3.5 py-2.5 text-sm font-medium text-gray-900 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none bg-white shadow-sm hover:border-blue-400 transition-colors"
             dateFormat="MMMM d, yyyy"
             excludeDates={disabledDates}
             filterDate={(date) => {
@@ -305,58 +293,61 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
             }}
           />
           {checkingAvailability && selectedDate && (
-            <p className="mt-2 text-xs text-gray-500">Checking availability...</p>
+            <p className="mt-1.5 text-xs text-blue-600 font-medium flex items-center gap-1">
+              <svg className="w-3 h-3 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              Checking availability...
+            </p>
           )}
         </div>
 
         {/* Guest Count */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-xs font-bold text-gray-900 mb-1.5 uppercase tracking-wide">
             {t('tour.numberOfGuests')} <span className="text-red-500">*</span>
           </label>
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-gray-900">{t('tour.guests')}</p>
-            </div>
-            <div className="flex items-center gap-3">
+          <div className="flex items-center justify-between bg-white rounded-xl border-2 border-gray-300 p-2.5 shadow-sm hover:border-blue-400 transition-colors">
+            <span className="text-xs font-bold text-gray-900 uppercase tracking-wide">{t('tour.guests')}</span>
+            <div className="flex items-center gap-1.5">
               <button
                 onClick={() => handleGuestCountChange(guestCount - 1)}
-                className="w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                className="w-3 h-3 rounded bg-gray-100 hover:bg-gray-200 border border-gray-300 flex items-center justify-center transition-colors active:scale-95"
               >
-                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+                <svg className="w-1.5 h-1.5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M20 12H4" />
                 </svg>
               </button>
-              <span className="text-lg font-semibold text-gray-900 min-w-[3rem] text-center">
+              <span className="text-base font-bold text-gray-900 min-w-[1.5rem] text-center">
                 {guestCount}
               </span>
               <button
                 onClick={() => handleGuestCountChange(guestCount + 1)}
                 disabled={availability ? guestCount >= availability.availableSpots : false}
-                className="w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-3 h-3 rounded bg-gray-100 hover:bg-gray-200 border border-gray-300 flex items-center justify-center transition-colors disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
               >
-                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                <svg className="w-1.5 h-1.5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" />
                 </svg>
               </button>
             </div>
           </div>
           {availability && availability.availableSpots < guestCount && (
-            <p className="mt-2 text-xs text-red-600">
-                  {t('tour.guests')}: {availability.availableSpots}
+            <p className="mt-1.5 text-xs text-red-600 font-bold">
+              Only {availability.availableSpots} spots available
             </p>
           )}
         </div>
 
         {/* Pickup Point */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-xs font-bold text-gray-900 mb-1.5 uppercase tracking-wide">
             {t('tour.pickupLocation')}
           </label>
           <select
             value={selectedPickup || ''}
             onChange={(e) => setSelectedPickup(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
+            className="w-full px-3.5 py-2.5 text-sm font-medium text-gray-900 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none bg-white shadow-sm hover:border-blue-400 transition-colors"
           >
               <option value="">{t('tour.selectPickupPoint')}</option>
             {tour.pickupPoints.map((point) => (
@@ -366,14 +357,14 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
             ))}
           </select>
           {selectedPickup && (
-            <div className="mt-2 p-3 bg-gray-50 rounded-lg">
+            <div className="mt-2 p-2.5 bg-blue-50/50 rounded-lg border border-blue-200">
               <div className="flex items-start gap-2">
-                <MapIcon className="w-5 h-5 text-blue-600 mt-0.5" />
+                <MapIcon className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-sm font-medium text-gray-900">
+                  <p className="text-xs font-bold text-gray-900">
                     {tour.pickupPoints.find((p) => p.id === selectedPickup)?.name}
                   </p>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-gray-700 mt-0.5 font-medium">
                     {tour.pickupPoints.find((p) => p.id === selectedPickup)?.address}
                   </p>
                 </div>
@@ -381,50 +372,28 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
             </div>
           )}
         </div>
-
-        {/* Promo Code */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            {t('tour.promoCodeOptional')}
-          </label>
-          <div className="flex gap-2">
-            <input
-              type="text"
-              value={promoCode}
-              onChange={(e) => setPromoCode(e.target.value.toUpperCase())}
-              placeholder={t('tour.enterCode')}
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
-            />
-            <button className="px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-colors">
-              {t('tour.apply')}
-            </button>
-          </div>
-          {promoCode === 'SAVE10' && (
-            <p className="mt-2 text-sm text-green-600">✓ Promo code applied! 10% off</p>
-          )}
-        </div>
       </div>
 
       {/* Price Summary */}
-      <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-        <div className="space-y-2 mb-3">
+      <div className="mt-4 p-3.5 bg-gradient-to-br from-blue-50 via-indigo-50/50 to-purple-50/30 rounded-xl border-2 border-blue-300/50 shadow-md">
+        <div className="space-y-1.5 mb-2.5">
           {tour.priceType === 'person' && (
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-gray-600">{t('tour.guests')} ({guestCount})</span>
-              <span className="font-semibold text-gray-900">{formatPrice(subtotal)}</span>
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-gray-600 font-medium">{t('tour.guests')} ({guestCount})</span>
+              <span className="font-bold text-gray-900">{formatPrice(subtotal)}</span>
             </div>
           )}
           {promoDiscount > 0 && (
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-green-600">Promo Discount</span>
-              <span className="font-semibold text-green-600">-{formatPrice(promoDiscount)}</span>
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-green-700 font-semibold">Promo Discount</span>
+              <span className="font-bold text-green-700">-{formatPrice(promoDiscount)}</span>
             </div>
           )}
         </div>
-        <div className="border-t border-blue-200 pt-3">
+        <div className="border-t-2 border-blue-300/50 pt-2.5">
           <div className="flex items-center justify-between">
-            <span className="text-lg font-bold text-gray-900">{t('tour.total')}</span>
-            <span className="text-2xl font-bold text-blue-600">{formatPrice(totalPrice)}</span>
+            <span className="text-sm font-bold text-gray-900 uppercase tracking-wide">{t('tour.total')}</span>
+            <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">{formatPrice(totalPrice)}</span>
           </div>
         </div>
       </div>
@@ -502,7 +471,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
       <button
         onClick={handleCheckAvailability}
         disabled={!selectedDate || isLoading || isBooking || (availability ? !availability.canAccommodate : false)}
-        className="w-full mt-6 px-6 py-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg"
+        className="w-full mt-4 px-5 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-bold text-sm rounded-xl transition-all shadow-lg hover:shadow-xl active:scale-98 disabled:shadow-none"
       >
         {isLoading 
           ? t('common.loading')

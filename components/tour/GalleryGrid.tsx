@@ -41,38 +41,35 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
 
   return (
     <>
-      <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border border-gray-200/50 p-4 md:p-6 fade-in-delay-1">
-        <h2 className="text-lg md:text-xl font-semibold text-gray-900 mb-4 md:mb-5">Photo Gallery</h2>
-        <div className="space-y-6 md:grid md:grid-cols-2 md:gap-6 md:space-y-0">
+      <div className="rounded-xl bg-white border-2 border-gray-200 shadow-md p-4 sm:p-5">
+        <h2 className="text-lg font-semibold text-gray-900 mb-4">Photo Gallery</h2>
+        <div className="space-y-4">
           {normalizedImages.map((image, index) => (
-            <div key={index} className="space-y-2.5 md:space-y-2">
-              {/* Text Area Above Image */}
-              {(image.title || image.description) && (
-                <div className="space-y-1">
-                  {image.title && (
-                    <h3 className="text-sm md:text-xs font-medium text-gray-900">{image.title}</h3>
-                  )}
-                  {image.description && (
-                    <p className="text-xs text-gray-500 leading-relaxed line-clamp-2">{image.description}</p>
-                  )}
-                </div>
-              )}
-              
-              {/* Image - Smaller on desktop, refined aspect ratio */}
+            <div key={index} className="w-full">
               <button
                 onClick={() => setSelectedImage(index)}
-                className="relative w-full aspect-video md:aspect-[4/3] rounded-lg overflow-hidden group cursor-pointer shadow-sm hover:shadow-md transition-all duration-300"
+                className="relative w-full aspect-video lg:max-h-[225px] rounded-lg overflow-hidden group cursor-pointer border-2 border-gray-200 hover:border-blue-500 transition-all duration-300 shadow-sm hover:shadow-lg"
               >
                 <Image
                   src={image.url}
                   alt={image.title || `Gallery image ${index + 1}`}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="100vw"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </button>
+              {(image.title || image.description) && (
+                <div className="mt-2 px-1">
+                  {image.title && (
+                    <h3 className="text-sm font-semibold text-gray-900 mb-1">{image.title}</h3>
+                  )}
+                  {image.description && (
+                    <p className="text-xs text-gray-600 leading-relaxed">{image.description}</p>
+                  )}
+                </div>
+              )}
             </div>
           ))}
         </div>

@@ -56,42 +56,47 @@ export default function ActionButtons({ tourId, onCheckAvailability, onShare }: 
   };
 
   return (
-    <div className="fixed bottom-16 left-0 right-0 z-50 md:relative md:z-auto md:bottom-0 bg-white border-t border-gray-200 md:border-0 md:bg-transparent shadow-lg md:shadow-none">
-      <div className="container mx-auto px-4 py-2 md:py-0 md:px-0">
-        <div className="flex gap-2 md:flex-col md:gap-2">
+    <div className="fixed bottom-16 left-0 right-0 z-50 md:relative md:z-auto md:bottom-0 bg-white border-t-2 border-gray-200 md:border-0 md:bg-transparent shadow-xl md:shadow-none">
+      <div className="container mx-auto px-4 py-3 md:py-0 md:px-0">
+        <div className="flex gap-3 md:flex-col md:gap-3">
           {/* Primary Action - Check Availability */}
           <button
             onClick={onCheckAvailability}
-            className="flex-1 md:w-full px-4 py-2 md:py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-center flex items-center justify-center"
+            className="flex-1 md:w-full px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white text-base font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl text-center flex items-center justify-center gap-2"
           >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
             Check Availability
           </button>
 
           {/* Secondary Actions */}
-          <button
-            onClick={handleWishlistToggle}
-            disabled={checking || loading}
-            className="px-3 py-2 md:py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors flex items-center justify-center md:w-full disabled:opacity-50"
-            aria-label={isFavorite ? "Remove from wishlist" : "Add to wishlist"}
-          >
-            {checking || loading ? (
-              <div className="w-5 h-5 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
-            ) : isFavorite ? (
-              <HeartSolidIcon className="w-5 h-5 text-red-500" />
-            ) : (
-              <HeartIcon className="w-5 h-5" />
-            )}
-            <span className="ml-1.5 md:hidden text-sm">Wishlist</span>
-          </button>
+          <div className="flex gap-2 md:w-full">
+            <button
+              onClick={handleWishlistToggle}
+              disabled={checking || loading}
+              className="px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl transition-colors flex items-center justify-center flex-1 md:w-full disabled:opacity-50 border border-gray-200"
+              aria-label={isFavorite ? "Remove from wishlist" : "Add to wishlist"}
+            >
+              {checking || loading ? (
+                <div className="w-5 h-5 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
+              ) : isFavorite ? (
+                <HeartSolidIcon className="w-5 h-5 text-red-500" />
+              ) : (
+                <HeartIcon className="w-5 h-5" />
+              )}
+              <span className="ml-2 md:hidden text-sm font-medium">Wishlist</span>
+            </button>
 
-          <button
-            onClick={onShare}
-            className="px-3 py-2 md:py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors flex items-center justify-center md:w-full"
-            aria-label="Share tour"
-          >
-            <ShareIcon className="w-5 h-5" />
-            <span className="ml-1.5 md:hidden text-sm">Share</span>
-          </button>
+            <button
+              onClick={onShare}
+              className="px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl transition-colors flex items-center justify-center flex-1 md:w-full border border-gray-200"
+              aria-label="Share tour"
+            >
+              <ShareIcon className="w-5 h-5" />
+              <span className="ml-2 md:hidden text-sm font-medium">Share</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

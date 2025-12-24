@@ -46,9 +46,18 @@ export default function CheckoutPage() {
     // Get booking data from sessionStorage
     const stored = sessionStorage.getItem('bookingData');
     if (stored) {
-      setBookingData(JSON.parse(stored));
+      try {
+        const parsed = JSON.parse(stored);
+        console.log('Loaded booking data from sessionStorage:', parsed);
+        setBookingData(parsed);
+      } catch (error) {
+        console.error('Error parsing booking data:', error);
+        alert('Invalid booking data. Please try again.');
+        router.push(`/tour/${params.id}`);
+      }
     } else {
       // If no booking data, redirect back
+      console.warn('No booking data found in sessionStorage');
       router.push(`/tour/${params.id}`);
     }
   }, [params.id, router]);
@@ -124,10 +133,14 @@ export default function CheckoutPage() {
 
       if (!bookingResponse.ok) {
         const errorData = await bookingResponse.json();
-        throw new Error(errorData.error || 'Failed to create booking');
+        console.error('Booking API error response:', errorData);
+        const errorMessage = errorData.details || errorData.error || 'Failed to create booking';
+        throw new Error(errorMessage);
       }
 
       const bookingResult = await bookingResponse.json();
+      
+      console.log('✅ Booking created successfully in Supabase:', bookingResult.booking);
       
       // Save booking ID and customer info to sessionStorage for confirmation page
       const completeBookingData = {
@@ -159,15 +172,17 @@ export default function CheckoutPage() {
           window.location.href = paymentData.url;
           return;
         } else {
-          // If Stripe is not implemented, proceed to confirmation
-          console.warn('Stripe checkout not available, proceeding to confirmation');
-          router.push(`/tour/${params.id}/confirmation`);
+          // If Stripe is not implemented, stay on checkout page
+          // Don't redirect to confirmation - let user complete payment on checkout page
+          console.warn('Stripe checkout not available, staying on checkout page');
+          alert('Payment processing will be available soon. Your booking has been saved.');
+          setIsProcessing(false);
           return;
         }
       } catch (error) {
         console.error('Payment error:', error);
-        // Even if payment fails, booking is created, so proceed to confirmation
-        router.push(`/tour/${params.id}/confirmation`);
+        // Even if payment fails, stay on checkout page
+        setIsProcessing(false);
         return;
       }
     } catch (error: any) {

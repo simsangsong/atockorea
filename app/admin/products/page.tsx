@@ -15,7 +15,7 @@ interface Tour {
   original_price: number | null;
   price_type: 'person' | 'group';
   image_url: string;
-  gallery_images?: string[];
+  gallery_images?: Array<string | { url: string; title?: string; description?: string }>;
   tag?: string;
   subtitle?: string;
   description?: string;
@@ -29,6 +29,7 @@ interface Tour {
   excludes?: string[];
   schedule?: Array<{ time: string; title: string; description: string }>;
   faqs?: Array<{ question: string; answer: string }>;
+  keywords?: string[];
   is_active: boolean;
   is_featured: boolean;
   rating: number;
@@ -144,6 +145,7 @@ export default function ProductsPage() {
       excludes: tour.excludes || [],
       schedule: tour.schedule || [],
       faqs: tour.faqs || [],
+      keywords: tour.keywords || [],
       is_active: tour.is_active,
       is_featured: tour.is_featured,
       pickup_points: tour.pickup_points || [],
@@ -252,6 +254,18 @@ export default function ProductsPage() {
   const handleRemoveGalleryImage = (index: number) => {
     const gallery = formData.gallery_images || [];
     setFormData({ ...formData, gallery_images: gallery.filter((_, i) => i !== index) });
+  };
+
+  const handleUpdateGalleryImage = (index: number, field: 'title' | 'description', value: string) => {
+    const gallery = formData.gallery_images || [];
+    const updatedGallery = gallery.map((img, i) => {
+      if (i === index) {
+        const imageObj = typeof img === 'string' ? { url: img, title: '', description: '' } : img;
+        return { ...imageObj, [field]: value };
+      }
+      return img;
+    });
+    setFormData({ ...formData, gallery_images: updatedGallery });
   };
 
   const handleSave = async () => {
@@ -641,7 +655,7 @@ export default function ProductsPage() {
               >
                 ×
               </button>
-            </div>
+    </div>
 
             {/* Tabs */}
             <div className="border-b border-gray-200 px-6">
@@ -739,6 +753,24 @@ export default function ProductsPage() {
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                       />
                     </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Keywords (comma-separated)
+                    </label>
+                    <input
+                      type="text"
+                      value={Array.isArray(formData.keywords) ? formData.keywords.join(', ') : (formData.keywords as string) || ''}
+                      onChange={(e) => {
+                        const keywords = e.target.value.split(',').map(k => k.trim()).filter(k => k.length > 0);
+                        setFormData({ ...formData, keywords });
+                      }}
+                      placeholder="e.g., Duration: 9 hours, Difficulty: Easy, Group Size: Up to 6"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    />
+                    <p className="mt-1 text-xs text-gray-500">
+                      Enter keywords separated by commas. Format: "Label: Value" (e.g., "Duration: 9 hours")
+                    </p>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -930,22 +962,55 @@ export default function ProductsPage() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Gallery Images
                     </label>
-                    <div className="grid grid-cols-4 gap-4 mb-4">
-                      {(formData.gallery_images || []).map((url, index) => (
-                        <div key={index} className="relative">
-                          <img
-                            src={url}
-                            alt={`Gallery ${index + 1}`}
-                            className="w-full h-24 object-cover rounded-lg"
-                          />
-                          <button
-                            onClick={() => handleRemoveGalleryImage(index)}
-                            className="absolute top-1 right-1 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs hover:bg-red-600"
-                          >
-                            ×
-                          </button>
-                        </div>
-                      ))}
+                    <div className="space-y-4 mb-4">
+                      {(formData.gallery_images || []).map((img, index) => {
+                        const imageUrl = typeof img === 'string' ? img : img.url;
+                        const imageTitle = typeof img === 'string' ? '' : (img.title || '');
+                        const imageDesc = typeof img === 'string' ? '' : (img.description || '');
+                        return (
+                          <div key={index} className="border border-gray-200 rounded-lg p-3">
+                            <div className="relative mb-3">
+                              <img
+                                src={imageUrl}
+                                alt={`Gallery ${index + 1}`}
+                                className="w-full h-32 object-cover rounded-lg"
+                              />
+                              <button
+                                onClick={() => handleRemoveGalleryImage(index)}
+                                className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs hover:bg-red-600"
+                              >
+                                ×
+                              </button>
+                            </div>
+                            <div className="space-y-2">
+                              <div>
+                                <label className="block text-xs font-medium text-gray-600 mb-1">
+                                  Image Title
+                                </label>
+                                <input
+                                  type="text"
+                                  value={imageTitle}
+                                  onChange={(e) => handleUpdateGalleryImage(index, 'title', e.target.value)}
+                                  placeholder="Enter image title"
+                                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                                />
+                              </div>
+                              <div>
+                                <label className="block text-xs font-medium text-gray-600 mb-1">
+                                  Image Description
+                                </label>
+                                <textarea
+                                  value={imageDesc}
+                                  onChange={(e) => handleUpdateGalleryImage(index, 'description', e.target.value)}
+                                  placeholder="Enter image description"
+                                  rows={2}
+                                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
                     <input
                       type="file"
