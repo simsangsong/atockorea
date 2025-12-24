@@ -38,6 +38,9 @@ export type DetailedTour = {
 
   // FAQ (선택)
   faqs?: { question: string; answer: string }[];
+
+  // Pricing
+  priceType?: 'person' | 'group';
 };
 
 export const detailedTours: DetailedTour[] = [
