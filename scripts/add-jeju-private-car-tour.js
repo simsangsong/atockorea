@@ -1,8 +1,10 @@
 // ============================================
-// Add Jeju: Private Car Charter Tour (15% Discount)
+// Add Jeju: Private Car Charter Tour
 // ============================================
 // This script creates a private tour via API
 // Run this in browser console after logging in as admin
+// 이미지 정보는 이미지에서 추출한 텍스트만 사용합니다.
+// 썸네일과 갤러리 이미지는 나중에 별도로 업로드합니다.
 
 (async () => {
   // localStorage에서 토큰 가져오기
@@ -23,150 +25,195 @@
     return;
   }
   
-  // 가격 계산: 원래 가격 ₩117,875 (1인당), 15% 할인
-  const originalPrice = 117875;
-  const discountedPrice = Math.round(originalPrice * 0.85); // ₩100,194 → ₩100,200
+  // 가격 설정: 이미지에서 추출한 정보
+  // "From ₩399,000 per group up to 6" (6명 기준)
+  // 제주 시내 픽업: ₩399,000 (6명 기준, 1인당 ₩66,500)
+  // 제주 시외 픽업: ₩471,500 (6명 기준, 1인당 ₩78,583)
+  const basePrice = 399000; // 6명 기준 기본 가격 (제주 시내 픽업)
+  const originalPrice = 471500; // 6명 기준 원가 (제주 시외 픽업 기준으로 설정)
   
+  // 새로 생성하기 위해 타임스탬프를 slug에 추가
+  const timestamp = Date.now();
+  const newSlug = `jeju-private-car-charter-tour-${timestamp}`;
+  
+  // ============================================
+  // 이미지 경로 설정
+  // ============================================
+  // 대화창에 업로드한 이미지들을 Supabase에 업로드한 후 경로를 여기에 삽입하세요
+  // 
+  // 이미지 순서:
+  // 1. 돌하르방과 바다 (갤러리)
+  // 2. 해녀 행진 (갤러리)
+  // 3. 눈 덮인 풍경에서 말 타는 사진 (갤러리)
+  // 4. 핑크 뮬리 풀 (갤러리)
+  // 5. 검은색 미니밴이 해안 도로를 달리는 사진 (썸네일) ⭐
+  // 6. 일출/일몰 다리 (갤러리)
+  // 7. 성산일출봉 (갤러리)
+  //
+  // 아래 경로는 임시 경로입니다. 실제 업로드 후 경로로 교체하세요.
+  
+  // 5번째 사진: 검은색 미니밴이 해안 도로를 달리는 사진 (썸네일/首图)
+  const thumbnailImage = ""; // TODO: Supabase 업로드 후 경로 삽입
+  
+  // 갤러리 이미지: 나머지 6장 사진들 (5번째 제외)
+  const galleryImages = [
+    "", // 1번: Dol hareubang stone statue on Jeju coast (돌하르방과 바다) - TODO: 경로 삽입
+    "", // 2번: Haenyeo parade (해녀 행진) - TODO: 경로 삽입
+    "", // 3번: Horses in snow (눈 덮인 풍경에서 말 타는 사진) - TODO: 경로 삽입
+    "", // 4번: Pink Muhly grass with Dol hareubang (핑크 뮬리 풀) - TODO: 경로 삽입
+    "", // 6번: Sunset/sunrise bridge scene (일출/일몰 다리) - TODO: 경로 삽입
+    ""  // 7번: Seongsan Ilchulbong Peak scene (성산일출봉) - TODO: 경로 삽입
+  ].filter(url => url !== ""); // 빈 문자열 제거
+  
+  // 이미지에서 추출한 텍스트 정보로 투어 데이터 생성
   const tourData = {
     // ===== 필수 필드 =====
-    title: "제주 프라이빗 전용차 투어 (기사-가이드 포함)",
-    slug: "jeju-private-car-charter-tour",
+    title: "Jeju Island: Private Car Charter Tour",
+    slug: newSlug,
     city: "Jeju",
-    price: discountedPrice,
-    price_type: "person",
-    image_url: "/images/tours/jeju-private-car-tour-cover.png",
+    price: basePrice,
+    price_type: "group", // 그룹당 가격
+    image_url: thumbnailImage, // 5번째 사진: Black minivan on coastal road
     
     // ===== 선택 필드 =====
-    tag: "Private Tour",
+    tag: "Private Tour · Day tour",
     subtitle: "Customized Experience",
-    description: "제주도 최고의 명소들을 프라이빗 투어로 탐방하세요. 전문 기사-가이드와 함께 편안한 전용차로 원하시는 장소를 자유롭게 방문할 수 있습니다. 맞춤형 일정으로 제주만의 특별한 경험을 즐기세요.",
+    description: "Hire a car and licensed guide for a day and make seeing the top sights in Jeju a breeze for this largest island in Korea. Travel in an air-conditioned car with plenty of space. Relax and let your driver take you to the sights that interest you most. Skip the hassle of public transportation. Begin your customized tour of Jeju at the time that best fits you and benefit from an itinerary that can be altered and adjusted according to your interests. With a wealth of attractions on offer at all the major sightseeing spots, your guided tour will give you a personalized experience in paradise.",
     original_price: originalPrice,
     duration: "9 hours",
     lunch_included: false,
     ticket_included: false,
     
-    gallery_images: [
-      "/images/tours/jeju-private-car-tour-cover.png",
-      "/images/tours/jeju-private-tour-waterfall.png",
-      "/images/tours/jeju-private-tour-people.png",
-      "/images/tours/jeju-private-tour-coast.png",
-      "/images/tours/jeju-private-tour-road.png",
-      "/images/tours/jeju-private-tour-coastal-view.png"
-    ],
+    // 갤러리: 6장의 이미지 (1, 2, 3, 4, 6, 7번 사진)
+    gallery_images: galleryImages,
     
-    pickup_info: "호텔 로비에서 투어 시작 10분 전에 대기해 주세요. 제주시 내 도심 지역(제주공항에서 6km 이내, 예: 노형동, 연동) 픽업은 기본 가격에 포함됩니다. 제주시 외곽 지역(서귀포, 애월, 한림, 성산, 한경, 조천, 표선, 남원, 안덕, 대정 등) 픽업은 추가 요금이 발생할 수 있습니다. 공항 픽업 및 드롭오프 서비스가 필요한 경우 예약 시 알려주시면 무료로 제공됩니다. 정확한 승객 수와 짐 개수를 예약 시 알려주세요.",
+    pickup_info: "Please wait in the hotel lobby 10 minutes before your scheduled pickup time. Pickup within Jeju Downtown Area (within 6km from Jeju Airport, e.g., Nohyeong-dong or Yeon-dong) is included in the base price. Pickup outside of Jeju City (Seogwipo, Aewol, Hanlim, Seongsan, Hangyeong, Jochon, Pyoseon, Namwon, Andeok, Daejeong, etc.) incurs an additional fee. Airport pickup and drop-off services on the tour date are free of charge if requested. Please provide the exact number of passengers and luggage when booking.",
     
-    notes: "이 투어는 맞춤형 프라이빗 투어입니다. 원하시는 장소를 방문할 수 있으며, 시간도 자유롭게 조정 가능합니다. 9시간을 초과하여 차량을 사용하는 경우 시간당 25,000원의 추가 요금이 발생하며, 현금으로 기사에게 직접 지불하시면 됩니다. 효율적인 시간 활용을 위해 하루 동안 한 지역(동부/서부/남부 중 선택)만 방문하는 것을 권장합니다. 여러 지역을 하루에 방문하는 경우 전일 주행 추가 비용 60,000원이 발생합니다. 투어 전날 저녁 8시까지 WhatsApp으로 연락이 없으면 저희에게 연락해 주세요. WhatsApp 번호를 남겨주시면 투어 진행이 더 원활합니다. 무료 취소: 투어 시작 24시간 전까지 취소 가능 시 전액 환불됩니다.",
+    notes: `Important Information - Know before you go:
+
+There will be overtime charge if you use the vehicle over 9 hours, an additional hour fee is 25,000 won per hour, please pay in cash to the driver.
+
+In order to make the most of your time, your private customized itineraries are limited to visit in one area (ex. Eastern tour in one day / Southern tour in one day), otherwise you will waste a lot of time on the road. If you want to visit two different parts of island in a day, extra costs KRW 60,000 will be incurred as round island charge.
+
+Let us know if you need airport sending and pick up services on the tour date and it's free of charge.
+
+Please provide the exact number of passengers and luggages when you make your booking.
+
+Our staff will contact you via WhatsApp the day before the tour date, if you didn't receive our message until 8pm, please contact us.
+
+Leave a WhatsApp number will make your tour easier.
+
+Free cancellation: Cancel up to 24 hours in advance for a full refund.`,
     
     highlights: [
-      "그룹 투어에서 느낄 수 없는 편안하고 프라이빗한 경험",
-      "10년 이상 경력의 전문 기사-가이드가 함께합니다",
-      "호텔 픽업 및 드롭오프 서비스로 교통 걱정 없이 즐기세요",
-      "제주 유네스코 명소와 숨겨진 명소를 쉽게 방문하세요",
-      "나만의 맞춤형 일정으로 원하는 장소를 자유롭게 선택 가능"
+      "Comfortable feeling that you can't be felt in a group tour",
+      "With over 10-years experienced professional driver-guides will company you",
+      "Provide hotel pick-up and drop off service, put aside all the hassle",
+      "Visit Jeju UNESCO sites and hidden gems with ease"
     ],
     
     includes: [
-      "호텔 픽업 및 드롭오프",
-      "프라이빗 전용차량 (에어컨, 넓은 공간)",
-      "중국어/영어 가능한 전문 기사-가이드",
-      "연료비",
-      "통행료",
-      "주차비",
-      "세금",
-      "공항 픽업 및 드롭오프 (투어 당일, 무료)"
+      "Hotel pick up and drop off",
+      "Private vehicle (air-conditioned, spacious)",
+      "Chinese/English Professional speaking driver-guide",
+      "Fuel fees",
+      "Toll fees",
+      "Parking fees",
+      "Tax",
+      "Airport pickup and drop-off (on tour date, free)"
     ],
     
     excludes: [
-      "관광지 입장료",
-      "식사 및 음료",
-      "팁",
-      "개인 여행 보험"
+      "Admissions to attractions",
+      "Meals and beverages",
+      "Tips",
+      "Personal travel insurance"
     ],
     
     schedule: [
       {
         time: "09:00",
-        title: "호텔 픽업",
-        description: "호텔 로비에서 투어 시작 10분 전 대기. 투어 시간은 고객 요청에 따라 조정 가능합니다."
+        title: "Hotel Pickup",
+        description: "Please wait in the hotel lobby 10 minutes before your scheduled pickup time. Tour start time can be adjusted upon request."
       },
       {
         time: "09:00-18:00",
-        title: "맞춤형 투어 (선택 가능한 코스)",
-        description: "동부 코스: 우도, 성산일출봉, 섭지코지, 만장굴, 해녀촌, 카멜리아힐 등 / 서부 코스: 애월해안도로, 협재해변, 한담해변, 협재카페거리, 오설록, 허브동산 등 / 남부 코스: 천지연폭포, 정방폭포, 주상절리대, 산방산, 한라산 등"
+        title: "Customized Tour (Choose Your Route)",
+        description: "Eastern Route: Udo Island, Seongsan Ilchulbong Peak, Jeju Aquarium Planet, Cape Seokjikoji, Seongeup Folk Village, ECO Land Theme Park, Sangumburi Crater, Manjanggul cave, Hamdeok Beach, Ilchul Land, Bijarim Forest, Nanta show. Western Route: Aewol Seaside Cafe, Hyeopjae Beach, Hallim Park, Green Tea Field. Southern Route: Cheonjiyeon waterfall, Yak-cheon-sa Temple, Seogwipo Maeil Olle Market, Columnar Joint, Jeongbang Waterfall, Camellia hill, Teddy Bear Safari, Sanbangsan Mountain, Marado submarine, Songaksan Mountain, Cafe the Cliff, 4D Alive Museum, Jeju Speed boat, Dolphin Yachat tour."
       },
       {
         time: "13:00",
-        title: "점심 식사 (선택사항)",
-        description: "로컬 레스토랑에서 제주 특산품을 즐기실 수 있습니다. 식사 비용은 별도입니다."
+        title: "Lunch (Optional)",
+        description: "Enjoy local Jeju specialties at a local restaurant. Meal costs are separate."
       },
       {
         time: "18:00",
-        title: "호텔 드롭오프",
-        description: "투어 종료 후 호텔로 안전하게 드롭오프됩니다."
+        title: "Hotel Drop-off",
+        description: "Safe drop-off at your hotel after the tour ends."
       }
     ],
     
     faqs: [
       {
-        question: "프라이빗 투어의 장점은 무엇인가요?",
-        answer: "그룹 투어와 달리 본인만의 일정으로 자유롭게 여행할 수 있으며, 원하는 장소에 충분한 시간을 투자할 수 있습니다. 전문 기사-가이드가 안내하므로 교통이나 길 찾기 걱정 없이 편안하게 제주를 즐기실 수 있습니다."
+        question: "What are the advantages of a private tour?",
+        answer: "Unlike group tours, you can travel freely with your own schedule and spend enough time at places you want to visit. With a professional driver-guide, you can enjoy Jeju comfortably without worrying about transportation or finding directions."
       },
       {
-        question: "투어 시간을 변경할 수 있나요?",
-        answer: "네, 투어 시작 시간은 고객의 요청에 따라 조정 가능합니다. 예약 시 원하시는 시간을 알려주세요."
+        question: "Can I change the tour time?",
+        answer: "Yes, the tour start time can be adjusted according to your request. Please let us know your preferred time when booking."
       },
       {
-        question: "어떤 지역을 방문할 수 있나요?",
-        answer: "동부, 서부, 남부 등 제주 전역을 방문할 수 있습니다. 효율적인 시간 활용을 위해 하루에 한 지역(동부/서부/남부 중 선택)만 방문하는 것을 권장합니다."
+        question: "What areas can I visit?",
+        answer: "You can visit all areas of Jeju including Eastern, Western, and Southern routes. For efficient time management, we recommend visiting one area per day (choose from Eastern/Western/Southern)."
       },
       {
-        question: "9시간을 초과하면 어떻게 되나요?",
-        answer: "9시간을 초과하여 차량을 사용하는 경우 시간당 25,000원의 추가 요금이 발생합니다. 현금으로 기사에게 직접 지불하시면 됩니다."
+        question: "What happens if we exceed 9 hours?",
+        answer: "An overtime charge of 25,000 won per hour applies if the vehicle is used over 9 hours, payable in cash to the driver."
       },
       {
-        question: "여러 지역을 하루에 방문할 수 있나요?",
-        answer: "가능하지만, 시간이 많이 소요됩니다. 여러 지역을 하루에 방문하는 경우 전일 주행 추가 비용 60,000원이 발생합니다."
+        question: "Can I visit multiple areas in one day?",
+        answer: "Yes, but it takes a lot of time. Visiting multiple areas in one day incurs an extra KRW 60,000 'round island charge'."
       },
       {
-        question: "공항 픽업이 가능한가요?",
-        answer: "네, 투어 당일 공항 픽업 및 드롭오프 서비스를 무료로 제공합니다. 예약 시 알려주시면 됩니다."
+        question: "Is airport pickup available?",
+        answer: "Yes, airport pickup and drop-off services on the tour date are free of charge. Please let us know when booking."
       },
       {
-        question: "취소 정책은 어떻게 되나요?",
-        answer: "투어 시작 24시간 전까지 취소하시면 전액 환불됩니다. 예를 들어, 1월 1일 09:00 투어인 경우 12월 31일 09:00 이전에 취소하시면 전액 환불됩니다."
+        question: "What is the cancellation policy?",
+        answer: "Cancel up to 24 hours in advance for a full refund. For example, if your tour is on January 1 at 09:00, cancel before December 31 at 09:00 for a full refund."
       },
       {
-        question: "예약 후 언제 연락을 받나요?",
-        answer: "투어 전날 저녁 8시까지 WhatsApp으로 연락을 드립니다. 연락이 없으면 저희에게 직접 연락해 주세요. WhatsApp 번호를 남겨주시면 더 원활한 소통이 가능합니다."
+        question: "When will I be contacted after booking?",
+        answer: "Our staff will contact you via WhatsApp the day before the tour date by 8 pm. If you don't receive a message, please contact us. Providing a WhatsApp number is recommended for easier communication."
       },
       {
-        question: "입장료와 식사는 포함되어 있나요?",
-        answer: "입장료와 식사는 포함되어 있지 않습니다. 관광지 입장료와 식사 비용은 별도로 지불하셔야 합니다."
+        question: "Are admission fees and meals included?",
+        answer: "Admission fees and meals are not included. You need to pay separately for attraction entrance fees and meal costs."
       },
       {
-        question: "제주시 외곽 지역에서 픽업이 가능한가요?",
-        answer: "가능합니다. 제주시 외곽 지역(서귀포, 애월, 한림, 성산 등)에서 픽업하는 경우 추가 요금이 발생할 수 있습니다. 예약 시 픽업 장소를 알려주시면 정확한 가격을 안내해 드립니다."
+        question: "Is pickup available from areas outside Jeju City?",
+        answer: "Yes. Pickup from areas outside Jeju City (Seogwipo, Aewol, Hanlim, Seongsan, etc.) may incur additional fees. Please let us know your pickup location when booking for accurate pricing."
       }
     ],
     
     pickup_points: [
       {
-        name: "제주시 내 도심 지역 (기본)",
-        address: "제주공항에서 6km 이내 지역 (노형동, 연동 등)",
+        name: "Pickup within Jeju Downtown Area",
+        address: "Within 6km from Jeju Airport (e.g., Nohyeong-dong or Yeon-dong)",
         lat: 33.4996,
         lng: 126.5312,
         pickup_time: "09:00"
       },
       {
-        name: "제주시 외곽 지역 (추가 요금)",
-        address: "서귀포, 애월, 한림, 성산, 한경, 조천, 표선, 남원, 안덕, 대정 등",
+        name: "Pickup outside of Jeju City",
+        address: "Seogwipo, Aewol, Hanlim, Seongsan, Hangyeong, Jochon, Pyoseon, Namwon, Andeok, Daejeong, etc.",
         lat: 33.2500,
         lng: 126.5600,
         pickup_time: "09:00"
       }
     ],
     
+    badges: ["Top rated", "Free cancellation", "Reserve now & pay later"],
     rating: 4.8,
     review_count: 154,
     pickup_points_count: 2,
@@ -175,11 +222,22 @@
     is_featured: true
   };
   
-  console.log('🚀 프라이빗 투어 추가 시작...');
+  console.log('🚀 프라이빗 투어 새로 생성 시작...');
   console.log('📦 투어 제목:', tourData.title);
-  console.log('🏷️  Slug:', tourData.slug);
-  console.log('💰 원래 가격:', originalPrice.toLocaleString(), '원 (1인당)');
-  console.log('💰 할인된 가격:', discountedPrice.toLocaleString(), '원 (1인당, 15% 할인)');
+  console.log('🏷️  Slug (새로 생성):', tourData.slug);
+  console.log('⭐ 평점:', tourData.rating, '(', tourData.review_count, 'reviews)');
+  console.log('💰 기본 가격 (6명 기준, 제주 시내 픽업):', basePrice.toLocaleString(), '원');
+  console.log('💰 시외 픽업 가격 (6명 기준):', originalPrice.toLocaleString(), '원');
+  console.log('📸 메인 썸네일 (5번째 사진 - Black minivan on coastal road):', tourData.image_url);
+  console.log('📸 갤러리 사진 개수:', tourData.gallery_images.length, '장');
+  console.log('📸 갤러리 사진 목록:');
+  tourData.gallery_images.forEach((img, index) => {
+    console.log(`   ${index + 1}. ${img}`);
+  });
+  console.log('📋 Highlights:', tourData.highlights.length, '개');
+  console.log('📋 Includes:', tourData.includes.length, '개');
+  console.log('📋 Excludes:', tourData.excludes.length, '개');
+  console.log('📋 FAQs:', tourData.faqs.length, '개');
   
   try {
     const headers = {

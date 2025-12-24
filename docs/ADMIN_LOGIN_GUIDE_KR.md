@@ -354,3 +354,4 @@ Admin 권한 획득을 위한 체크리스트:
 - `docs/TOUR_API_COMPLETE_GUIDE.md` - 투어 API 완전 가이드
 - `docs/ACCESS_GUIDE.md` - 접근 가이드
 
+

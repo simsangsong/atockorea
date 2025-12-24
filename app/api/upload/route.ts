@@ -3,6 +3,62 @@ import { createServerClient } from '@/lib/supabase';
 import { validateFile, validateFiles, productImageOptions, galleryImageOptions } from '@/lib/file-upload';
 import { getAuthUser } from '@/lib/auth';
 
+// Ensure Node.js runtime for sharp
+export const runtime = 'nodejs';
+
+// Dynamic import for image compression to handle potential import errors
+async function compressImageIfNeeded(buffer: Buffer, maxSizeBytes: number): Promise<{ buffer: Buffer; contentType: string; fileExt: string; wasCompressed: boolean; originalSize: number }> {
+  const originalSize = buffer.length;
+  
+  // If already under size limit, return as-is
+  if (buffer.length <= maxSizeBytes) {
+    return {
+      buffer,
+      contentType: 'image/jpeg',
+      fileExt: 'jpg',
+      wasCompressed: false,
+      originalSize,
+    };
+  }
+
+  try {
+    // Dynamically import compressImage to handle potential errors
+    const { compressImage, getMimeType } = await import('@/lib/image-compress');
+    
+    const compressionResult = await compressImage(buffer, {
+      maxSizeBytes,
+      maxWidth: 1920,
+      maxHeight: 1920,
+      quality: 85,
+      format: 'jpeg',
+    });
+
+    const contentType = getMimeType(compressionResult.format);
+    const fileExt = compressionResult.format === 'webp' ? 'webp' : 'jpg';
+
+    console.log(`Image compressed: ${(originalSize / 1024 / 1024).toFixed(2)}MB → ${(compressionResult.compressedSize / 1024 / 1024).toFixed(2)}MB`);
+
+    return {
+      buffer: compressionResult.buffer,
+      contentType,
+      fileExt,
+      wasCompressed: true,
+      originalSize,
+    };
+  } catch (error: any) {
+    console.error('Image compression failed:', error);
+    console.error('Error details:', error.message, error.stack);
+    // Return original buffer if compression fails
+    return {
+      buffer,
+      contentType: 'image/jpeg',
+      fileExt: 'jpg',
+      wasCompressed: false,
+      originalSize,
+    };
+  }
+}
+
 /**
  * POST /api/upload
  * Upload image(s) to Supabase Storage
@@ -30,31 +86,41 @@ export async function POST(req: NextRequest) {
     const uploadOptions = type === 'gallery' ? galleryImageOptions : productImageOptions;
     const bucketName = type === 'gallery' ? 'tour-gallery' : 'tour-images';
 
-    // Validate files
+    // Validate files (size check is now handled in uploadFile with auto-compression)
     if (file) {
       // Single file upload
-      const validation = validateFile(file, uploadOptions);
-      if (!validation.valid) {
+      // Check file type only (size will be handled by auto-compression)
+      if (!uploadOptions.allowedTypes.includes(file.type)) {
         return NextResponse.json(
-          { error: validation.error },
+          { error: `File type not allowed. Allowed types: ${uploadOptions.allowedTypes.join(', ')}` },
           { status: 400 }
         );
       }
 
-      // Upload single file
+      // Upload single file (auto-compression will handle size)
       const result = await uploadFile(supabase, file, bucketName, folder, userId);
       return NextResponse.json(result);
     } else if (files.length > 0) {
       // Multiple files upload
-      const validation = validateFiles(files, uploadOptions);
-      if (!validation.valid) {
+      // Check file types and count only (size will be handled by auto-compression)
+      if (uploadOptions.maxFiles && files.length > uploadOptions.maxFiles) {
         return NextResponse.json(
-          { error: validation.error },
+          { error: `Maximum ${uploadOptions.maxFiles} files allowed` },
           { status: 400 }
         );
       }
 
-      // Upload all files
+      // Check file types
+      for (const file of files) {
+        if (!uploadOptions.allowedTypes.includes(file.type)) {
+          return NextResponse.json(
+            { error: `File type not allowed. Allowed types: ${uploadOptions.allowedTypes.join(', ')}` },
+            { status: 400 }
+          );
+        }
+      }
+
+      // Upload all files (auto-compression will handle size)
       const uploadPromises = files.map((file) =>
         uploadFile(supabase, file, bucketName, folder, userId)
       );
@@ -81,6 +147,7 @@ export async function POST(req: NextRequest) {
 
 /**
  * Upload a single file to Supabase Storage
+ * Automatically compresses images if they exceed 5MB
  */
 async function uploadFile(
   supabase: any,
@@ -88,23 +155,42 @@ async function uploadFile(
   bucketName: string,
   folder: string,
   userId: string | null
-): Promise<{ url: string; path: string; name: string }> {
+): Promise<{ url: string; path: string; name: string; originalSize?: number; compressedSize?: number; wasCompressed?: boolean }> {
+  // Convert File to ArrayBuffer
+  const arrayBuffer = await file.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
+  
+  // Check if it's an image
+  const isImage = file.type.startsWith('image/');
+  const maxSizeBytes = 5 * 1024 * 1024; // 5MB
+  let finalBuffer = buffer;
+  let contentType = file.type;
+  let fileExt = file.name.split('.').pop()?.toLowerCase() || 'jpg';
+  let wasCompressed = false;
+  let originalSize = buffer.length;
+  let compressedSize = buffer.length;
+
+  // Compress image if it exceeds 5MB
+  if (isImage && buffer.length > maxSizeBytes) {
+    const compressionResult = await compressImageIfNeeded(buffer, maxSizeBytes);
+    finalBuffer = compressionResult.buffer;
+    contentType = compressionResult.contentType;
+    fileExt = compressionResult.fileExt;
+    wasCompressed = compressionResult.wasCompressed;
+    compressedSize = compressionResult.buffer.length;
+  }
+
   // Generate unique filename
-  const fileExt = file.name.split('.').pop();
   const timestamp = Date.now();
   const randomString = Math.random().toString(36).substring(2, 15);
   const fileName = `${timestamp}-${randomString}.${fileExt}`;
   const filePath = userId ? `${folder}/${userId}/${fileName}` : `${folder}/${fileName}`;
 
-  // Convert File to ArrayBuffer
-  const arrayBuffer = await file.arrayBuffer();
-  const buffer = Buffer.from(arrayBuffer);
-
   // Upload to Supabase Storage
   const { data, error } = await supabase.storage
     .from(bucketName)
-    .upload(filePath, buffer, {
-      contentType: file.type,
+    .upload(filePath, finalBuffer, {
+      contentType,
       upsert: false, // Don't overwrite existing files
     });
 
@@ -127,6 +213,11 @@ async function uploadFile(
     url: urlData.publicUrl,
     path: filePath,
     name: file.name,
+    ...(wasCompressed && {
+      originalSize,
+      compressedSize,
+      wasCompressed: true,
+    }),
   };
 }
 
@@ -182,6 +273,7 @@ export async function DELETE(req: NextRequest) {
     );
   }
 }
+
 
 
 

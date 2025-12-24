@@ -81,13 +81,17 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
       {/* Lightbox Modal */}
       {selectedImage !== null && (
         <div
-          className="fixed inset-0 z-50 bg-black flex items-center justify-center p-4"
+          className="fixed inset-0 z-[100] bg-black flex items-center justify-center p-4"
           onClick={() => setSelectedImage(null)}
         >
           <button
-            onClick={() => setSelectedImage(null)}
-            className="absolute top-4 right-4 z-60 p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedImage(null);
+            }}
+            className="absolute top-4 right-4 z-[101] p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors cursor-pointer"
             aria-label="Close"
+            type="button"
           >
             <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

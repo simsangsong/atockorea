@@ -168,3 +168,125 @@ export async function GET(request: NextRequest) {
   }
 }
 
+/**
+ * PATCH /api/admin/tours
+ * Update a tour (Admin only)
+ * 
+ * Query params:
+ * - id: tour ID (required)
+ * 
+ * Body: Partial tour data (only fields to update)
+ */
+export async function PATCH(request: NextRequest) {
+  try {
+    const user = await requireAdmin(request);
+    const supabase = createServerClient();
+
+    const { searchParams } = new URL(request.url);
+    const tourId = searchParams.get('id');
+
+    if (!tourId) {
+      return ErrorResponses.validationError('Tour ID is required');
+    }
+
+    const body = await request.json();
+
+    // Prepare update data (only include provided fields)
+    const updateData: any = {};
+
+    if (body.title !== undefined) updateData.title = body.title;
+    if (body.slug !== undefined) updateData.slug = body.slug;
+    if (body.city !== undefined) updateData.city = body.city;
+    if (body.tag !== undefined) updateData.tag = body.tag;
+    if (body.subtitle !== undefined) updateData.subtitle = body.subtitle;
+    if (body.description !== undefined) updateData.description = body.description;
+    if (body.price !== undefined) updateData.price = parseFloat(body.price);
+    if (body.original_price !== undefined) {
+      updateData.original_price = body.original_price ? parseFloat(body.original_price) : null;
+    }
+    if (body.price_type !== undefined) updateData.price_type = body.price_type;
+    if (body.image_url !== undefined) updateData.image_url = body.image_url;
+    if (body.gallery_images !== undefined) updateData.gallery_images = body.gallery_images;
+    if (body.duration !== undefined) updateData.duration = body.duration;
+    if (body.lunch_included !== undefined) updateData.lunch_included = body.lunch_included;
+    if (body.ticket_included !== undefined) updateData.ticket_included = body.ticket_included;
+    if (body.pickup_info !== undefined) updateData.pickup_info = body.pickup_info;
+    if (body.notes !== undefined) updateData.notes = body.notes;
+    if (body.highlights !== undefined) updateData.highlights = body.highlights;
+    if (body.includes !== undefined) updateData.includes = body.includes;
+    if (body.excludes !== undefined) updateData.excludes = body.excludes;
+    if (body.schedule !== undefined) updateData.schedule = body.schedule;
+    if (body.faqs !== undefined) updateData.faqs = body.faqs;
+    if (body.rating !== undefined) updateData.rating = parseFloat(body.rating);
+    if (body.review_count !== undefined) updateData.review_count = body.review_count;
+    if (body.pickup_points_count !== undefined) updateData.pickup_points_count = body.pickup_points_count;
+    if (body.dropoff_points_count !== undefined) updateData.dropoff_points_count = body.dropoff_points_count;
+    if (body.is_active !== undefined) updateData.is_active = body.is_active;
+    if (body.is_featured !== undefined) updateData.is_featured = body.is_featured;
+
+    // Update tour
+    const { data: tour, error: tourError } = await supabase
+      .from('tours')
+      .update(updateData)
+      .eq('id', tourId)
+      .select()
+      .single();
+
+    if (tourError) {
+      return handleApiError(tourError);
+    }
+
+    // Update pickup points if provided
+    if (body.pickup_points !== undefined && Array.isArray(body.pickup_points)) {
+      // Delete existing pickup points
+      await supabase
+        .from('pickup_points')
+        .delete()
+        .eq('tour_id', tourId);
+
+      // Insert new pickup points if any
+      if (body.pickup_points.length > 0) {
+        const pickupPoints = body.pickup_points.map((pp: any) => ({
+          tour_id: tourId,
+          name: pp.name,
+          address: pp.address || '',
+          lat: pp.lat ? parseFloat(pp.lat) : null,
+          lng: pp.lng ? parseFloat(pp.lng) : null,
+          pickup_time: pp.pickup_time || null,
+        }));
+
+        const { error: ppError } = await supabase
+          .from('pickup_points')
+          .insert(pickupPoints);
+
+        if (ppError) {
+          console.error('Error updating pickup points:', ppError);
+        }
+      }
+    }
+
+    // Fetch updated tour with pickup points
+    const { data: updatedTour, error: fetchError } = await supabase
+      .from('tours')
+      .select(`
+        *,
+        pickup_points (*)
+      `)
+      .eq('id', tourId)
+      .single();
+
+    if (fetchError) {
+      return handleApiError(fetchError);
+    }
+
+    return NextResponse.json({
+      success: true,
+      data: updatedTour,
+      message: 'Tour updated successfully',
+    });
+
+  } catch (error) {
+    return handleApiError(error);
+  }
+}
+

@@ -162,6 +162,8 @@ export async function PATCH(
     if (body.price_type !== undefined) updateData.price_type = body.price_type;
     if (body.image_url !== undefined) updateData.image_url = body.image_url;
     if (body.description !== undefined) updateData.description = body.description;
+    if (body.pickup_info !== undefined) updateData.pickup_info = body.pickup_info;
+    if (body.notes !== undefined) updateData.notes = body.notes;
     if (body.is_active !== undefined) updateData.is_active = body.is_active;
     if (body.is_featured !== undefined) updateData.is_featured = body.is_featured;
     if (body.gallery_images !== undefined) updateData.gallery_images = body.gallery_images;

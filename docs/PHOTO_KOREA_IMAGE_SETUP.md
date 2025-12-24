@@ -57,3 +57,4 @@
 3. `components/DestinationsCards.tsx` 파일 열기
 4. `destinations` 배열의 `image` 속성 값 변경
 
+

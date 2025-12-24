@@ -65,6 +65,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(
     gallery[0]
   );
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const heroImage = selectedImage ?? gallery[0];
 
   const initialReviews: Review[] = (tour.reviews || []) as Review[];
@@ -197,7 +198,10 @@ export default function JejuTourDetailPage({ params }: PageProps) {
         <section className="rounded-3xl bg-white shadow-sm">
           {/* 메인 이미지 + 썸네일 스와이프 (모바일) */}
           <div className="border-b border-[#eee]">
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-t-3xl bg-black sm:aspect-[16/9]">
+            <div 
+              className="relative aspect-[16/10] w-full overflow-hidden rounded-t-3xl bg-black sm:aspect-[16/9] cursor-pointer"
+              onClick={() => setIsImageModalOpen(true)}
+            >
               <Image
                 src={heroImage}
                 alt={tour.title}
@@ -686,6 +690,75 @@ export default function JejuTourDetailPage({ params }: PageProps) {
           </aside>
         </section>
       </main>
+
+      {/* Image Modal */}
+      {isImageModalOpen && (
+        <div
+          className="fixed inset-0 z-[100] bg-black flex items-center justify-center"
+          onClick={() => setIsImageModalOpen(false)}
+        >
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsImageModalOpen(false);
+            }}
+            className="absolute top-4 right-4 z-[101] p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors cursor-pointer"
+            aria-label="Close"
+            type="button"
+          >
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <div 
+            className="relative w-full h-full flex items-center justify-center p-4" 
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={heroImage}
+              alt={tour.title}
+              fill
+              className="object-contain"
+              sizes="100vw"
+            />
+            {gallery.length > 1 && (
+              <>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const currentIndex = gallery.indexOf(heroImage);
+                    const prevIndex = currentIndex > 0 ? currentIndex - 1 : gallery.length - 1;
+                    setSelectedImage(gallery[prevIndex]);
+                  }}
+                  className="absolute left-4 p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors z-10"
+                  type="button"
+                >
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const currentIndex = gallery.indexOf(heroImage);
+                    const nextIndex = currentIndex < gallery.length - 1 ? currentIndex + 1 : 0;
+                    setSelectedImage(gallery[nextIndex]);
+                  }}
+                  className="absolute right-4 p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors z-10"
+                  type="button"
+                >
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-black/50 backdrop-blur-sm rounded-full text-white text-sm z-10">
+                  {gallery.indexOf(heroImage) + 1} / {gallery.length}
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

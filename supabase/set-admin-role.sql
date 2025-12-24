@@ -19,3 +19,4 @@ SELECT id, full_name, role, created_at
 FROM user_profiles
 WHERE id = '39ab927c-9acb-4f52-a4fb-08d9153f0c05';
 
+

@@ -18,8 +18,15 @@ function AuthCallbackContent() {
         }
 
         const code = searchParams.get('code');
+        const error = searchParams.get('error');
+        const errorDescription = searchParams.get('error_description');
         const provider = searchParams.get('provider');
         const next = searchParams.get('next') || '/mypage';
+
+        // OAuth 에러 체크 (구글, 페이스북 등)
+        if (error) {
+          throw new Error(errorDescription || error || 'OAuth authentication failed');
+        }
 
         // 处理 LINE OAuth（自定义实现）
         if (provider === 'line') {
@@ -89,12 +96,69 @@ function AuthCallbackContent() {
         }
 
         // 处理其他 OAuth 提供商（Google, Facebook, Kakao）
-        if (!code) {
-          throw new Error('No authorization code received');
-        }
+        // Supabase OAuth의 경우 code가 없을 수도 있음 (이미 세션이 있을 수 있음)
+        if (code) {
+          // Exchange code for session
+          const { data, error } = await supabase.auth.exchangeCodeForSession(code);
 
-        // Exchange code for session
-        const { data, error } = await supabase.auth.exchangeCodeForSession(code);
+          if (error) {
+            throw error;
+          }
+
+          if (data.user) {
+            // 检查是否需要创建用户资料
+            const { data: profile, error: profileError } = await supabase
+              .from('user_profiles')
+              .select('*')
+              .eq('id', data.user.id)
+              .single();
+
+            if (!profile || profileError) {
+              // 创建用户资料
+              const { error: insertError } = await supabase.from('user_profiles').insert({
+                id: data.user.id,
+                full_name: data.user.user_metadata?.full_name || 
+                           data.user.user_metadata?.name ||
+                           data.user.email?.split('@')[0] || 
+                           'User',
+                avatar_url: data.user.user_metadata?.avatar_url || 
+                           data.user.user_metadata?.picture ||
+                           null,
+                role: 'customer', // 默认角色
+              });
+
+              if (insertError) {
+                console.error('Error creating user profile:', insertError);
+                // 即使创建失败也允许登录，但记录错误
+              }
+            }
+
+            setStatus('success');
+            setMessage('Authentication successful! Redirecting...');
+            
+            // 重定向到目标页面
+            setTimeout(() => {
+              router.push(next);
+            }, 1000);
+            return;
+          }
+        } else {
+          // code가 없으면 현재 세션 확인 (이미 로그인되어 있을 수 있음)
+          const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+          
+          if (sessionError || !session) {
+            throw new Error('No authorization code received. Please try signing in again.');
+          }
+
+          // 세션이 있으면 성공 처리
+          setStatus('success');
+          setMessage('Authentication successful! Redirecting...');
+          
+          setTimeout(() => {
+            router.push(next);
+          }, 1000);
+          return;
+        }
 
         if (error) {
           throw error;

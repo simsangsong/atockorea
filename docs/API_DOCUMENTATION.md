@@ -72,6 +72,147 @@ Authorization: Bearer <token>
 }
 ```
 
+### 上传图片文件
+
+**POST** `/api/admin/upload`
+
+**权限：** Admin only
+
+**请求：** multipart/form-data
+
+**FormData字段：**
+- `file`: File (单文件上传)
+- `files`: File[] (多文件上传，可多次append)
+- `type`: string (可选，'product' | 'gallery'，默认: 'product')
+- `folder`: string (可选，存储文件夹路径，默认: 'uploads')
+
+**单文件上传响应：**
+```json
+{
+  "success": true,
+  "url": "https://...supabase.co/storage/v1/object/public/tour-images/uploads/user-id/filename.jpg",
+  "path": "uploads/user-id/filename.jpg",
+  "name": "original-filename.jpg"
+}
+```
+
+**多文件上传响应：**
+```json
+{
+  "success": true,
+  "files": [
+    {
+      "url": "https://...",
+      "path": "uploads/user-id/file1.jpg",
+      "name": "file1.jpg"
+    },
+    {
+      "url": "https://...",
+      "path": "uploads/user-id/file2.jpg",
+      "name": "file2.jpg"
+    }
+  ],
+  "count": 2
+}
+```
+
+**文件限制：**
+- 产品图片：最大5MB，允许格式：JPEG, JPG, PNG, WebP
+- 画廊图片：最大10MB，允许格式：JPEG, JPG, PNG, WebP
+- 产品图片最多10个文件
+- 画廊图片最多20个文件
+
+**使用示例：**
+
+```javascript
+// 单文件上传（产品图片）
+const formData = new FormData();
+formData.append('file', fileInput.files[0]);
+formData.append('type', 'product');
+formData.append('folder', 'tours');
+
+const response = await fetch('/api/admin/upload', {
+  method: 'POST',
+  headers: {
+    'Authorization': `Bearer ${token}`
+  },
+  body: formData
+});
+
+const result = await response.json();
+const imageUrl = result.url; // 用于产品创建API
+
+// 多文件上传（画廊图片）
+const formData = new FormData();
+for (let file of galleryFiles) {
+  formData.append('files', file);
+}
+formData.append('type', 'gallery');
+formData.append('folder', 'tours/gallery');
+
+const response = await fetch('/api/admin/upload', {
+  method: 'POST',
+  headers: {
+    'Authorization': `Bearer ${token}`
+  },
+  body: formData
+});
+
+const result = await response.json();
+const galleryUrls = result.files.map(f => f.url); // 用于产品创建API
+```
+
+**删除文件：**
+
+**DELETE** `/api/admin/upload?path=<file_path>&bucket=<bucket_name>`
+
+**权限：** Admin only
+
+**查询参数：**
+- `path`: string (必需) - 文件在存储中的路径
+- `bucket`: string (可选，默认: 'tour-images') - 存储桶名称
+
+**响应：**
+```json
+{
+  "success": true,
+  "message": "File deleted successfully"
+}
+```
+
+**完整工作流程：**
+
+1. 上传图片 → 获取URL
+2. 使用URL创建产品
+
+```javascript
+// 1. 上传图片
+const uploadResponse = await fetch('/api/admin/upload', {
+  method: 'POST',
+  headers: { 'Authorization': `Bearer ${token}` },
+  body: formData
+});
+const { url } = await uploadResponse.json();
+
+// 2. 创建产品（使用上传的URL）
+const productResponse = await fetch('/api/admin/tours', {
+  method: 'POST',
+  headers: {
+    'Authorization': `Bearer ${token}`,
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    title: 'New Tour',
+    slug: 'new-tour',
+    city: 'Jeju',
+    price: 80000,
+    price_type: 'person',
+    image_url: url, // 使用上传返回的URL
+    // ... 其他字段
+  })
+});
+```
+
 ## 商家认证API
 
 ### 商家登录
