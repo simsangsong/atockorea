@@ -593,7 +593,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                         <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-semibold flex-shrink-0">
                           {index + 1}
                         </div>
-                        {index < tour.schedule.length - 1 && (
+                        {tour.schedule && index < tour.schedule.length - 1 && (
                           <div className="w-0.5 h-full bg-gray-200 my-2" />
                         )}
                       </div>
@@ -612,7 +612,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                   ))}
                 </div>
 
-                {!showFullItinerary && tour.schedule.length > 3 && (
+                {!showFullItinerary && tour.schedule && tour.schedule.length > 3 && (
                   <p className="mt-3 text-xs text-gray-500">
                     Itinerary may change depending on weather and traffic.
                   </p>
