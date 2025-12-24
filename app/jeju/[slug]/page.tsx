@@ -1,10 +1,10 @@
 // app/jeju/[slug]/page.tsx
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { detailedTours } from "../../../data/tours";
+import { detailedTours, DetailedTour } from "../../../data/tours";
 import GalleryGrid from "@/components/tour/GalleryGrid";
 
 // ===== 타입 정의 =====
@@ -161,15 +161,118 @@ function DescriptionContent({ description }: { description: string }) {
 export default function JejuTourDetailPage({ params }: PageProps) {
   const router = useRouter();
   const { slug } = params;
+  const [tour, setTour] = useState<DetailedTour | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  // slug로 투어 찾기 (도시 상관없이 slug만 기준)
-  const tour = useMemo(
-    () => detailedTours.find((t) => t.slug === slug),
-    [slug]
-  );
+  // Fetch tour from API
+  useEffect(() => {
+    const fetchTour = async () => {
+      try {
+        setLoading(true);
+        setError(null);
 
-  // 투어 없을 때
-  if (!tour) {
+        // Try to fetch from API first
+        const response = await fetch(`/api/tours/${slug}`);
+        
+        if (response.ok) {
+          const data = await response.json();
+          const apiTour = data.tour;
+
+          // Convert UUID string to a numeric hash for id field (DetailedTour expects number)
+          const stringToNumber = (str: string): number => {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+              const char = str.charCodeAt(i);
+              hash = ((hash << 5) - hash) + char;
+              hash = hash & hash; // Convert to 32-bit integer
+            }
+            return Math.abs(hash);
+          };
+
+          // Transform API data to DetailedTour format
+          const transformedTour: DetailedTour = {
+            id: typeof apiTour.id === 'string' ? stringToNumber(apiTour.id) : apiTour.id,
+            city: (apiTour.city || "Jeju") as "Jeju" | "Seoul" | "Busan",
+            tag: apiTour.tag || apiTour.badges?.[0] || "Jeju Tour",
+            title: apiTour.title,
+            price: apiTour.originalPrice
+              ? `₩${new Intl.NumberFormat('ko-KR').format(apiTour.originalPrice)} → ₩${new Intl.NumberFormat('ko-KR').format(apiTour.price)}`
+              : `₩${new Intl.NumberFormat('ko-KR').format(apiTour.price)}`,
+            imageUrl: apiTour.images?.[0]?.url || apiTour.image || '',
+            duration: apiTour.duration || '',
+            lunchIncluded: apiTour.lunchIncluded || false,
+            ticketIncluded: apiTour.ticketIncluded || false,
+            pickupInfo: apiTour.pickupInfo || '',
+            notes: apiTour.notes || '',
+            schedule: apiTour.itinerary?.map((item: any) => ({
+              time: item.time || '',
+              title: item.title || '',
+              description: item.description || '',
+            })) || [],
+            slug: slug,
+            reviews: [],
+            galleryImages: apiTour.images?.map((img: any) => img.url) || [],
+            subtitle: apiTour.tagline || '',
+            description: apiTour.overview || apiTour.description || '',
+            highlights: apiTour.inclusions?.map((inc: any) => inc.text || inc) || apiTour.highlights || [],
+            includes: apiTour.inclusions?.map((inc: any) => inc.text || inc) || [],
+            excludes: apiTour.exclusions?.map((exc: any) => exc.text || exc) || [],
+            faqs: apiTour.faqs || [],
+            priceType: apiTour.priceType || 'person',
+          };
+
+          setTour(transformedTour);
+        } else if (response.status === 404) {
+          // Fallback to static data if not found in API
+          const staticTour = detailedTours.find((t) => t.slug === slug);
+          if (staticTour) {
+            setTour(staticTour);
+          } else {
+            setError('Tour not found');
+          }
+        } else {
+          // Try static data as fallback
+          const staticTour = detailedTours.find((t) => t.slug === slug);
+          if (staticTour) {
+            setTour(staticTour);
+          } else {
+            setError('Failed to fetch tour');
+          }
+        }
+      } catch (err) {
+        console.error('Error fetching tour:', err);
+        // Fallback to static data
+        const staticTour = detailedTours.find((t) => t.slug === slug);
+        if (staticTour) {
+          setTour(staticTour);
+        } else {
+          setError('Failed to load tour');
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTour();
+  }, [slug]);
+
+  // Loading state
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[#f5f5f7] text-[#111] flex items-center justify-center">
+        <div className="rounded-2xl bg-white px-6 py-8 shadow-sm">
+          <div className="animate-pulse">
+            <div className="h-6 bg-gray-200 rounded w-48 mb-4"></div>
+            <div className="h-4 bg-gray-200 rounded w-64"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Error state or tour not found
+  if (error || !tour) {
     return (
       <div className="min-h-screen bg-[#f5f5f7] text-[#111] flex items-center justify-center">
         <div className="rounded-2xl bg-white px-6 py-8 shadow-sm">

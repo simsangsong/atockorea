@@ -116,6 +116,8 @@ export async function GET(
           }))
         : [],
       overview: tour.description || '',
+      pickupInfo: tour.pickup_info || '',
+      notes: tour.notes || '',
       pickupPoints: (tour.pickup_points || []).map((point: any) => ({
         id: point.id,
         name: point.name,
@@ -124,6 +126,7 @@ export async function GET(
         lng: point.lng ? parseFloat(point.lng.toString()) : 0,
         pickup_time: point.pickup_time || null,
       })),
+      faqs: Array.isArray(tour.faqs) ? tour.faqs : [],
     };
 
     return NextResponse.json({ tour: transformedTour });
