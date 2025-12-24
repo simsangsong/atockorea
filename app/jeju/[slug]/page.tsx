@@ -168,15 +168,44 @@ export default function JejuTourDetailPage({ params }: PageProps) {
   // Fetch tour from API
   useEffect(() => {
     const fetchTour = async () => {
+      if (!slug) {
+        setError('Invalid tour slug');
+        setLoading(false);
+        return;
+      }
+
       try {
         setLoading(true);
         setError(null);
 
+        // Use absolute URL for better mobile compatibility
+        const apiUrl = typeof window !== 'undefined' 
+          ? `${window.location.origin}/api/tours/${encodeURIComponent(slug)}`
+          : `/api/tours/${encodeURIComponent(slug)}`;
+
+        console.log('[JejuTourDetail] Fetching tour:', { slug, apiUrl });
+
         // Try to fetch from API first
-        const response = await fetch(`/api/tours/${slug}`);
-        
+        const response = await fetch(apiUrl, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          // Ensure credentials are included for cookies/auth
+          credentials: 'same-origin',
+        });
+
+        console.log('[JejuTourDetail] API response status:', response.status);
+
         if (response.ok) {
           const data = await response.json();
+          console.log('[JejuTourDetail] API response data:', { hasTour: !!data.tour, keys: Object.keys(data) });
+
+          if (!data.tour) {
+            console.error('[JejuTourDetail] API returned OK but no tour data:', data);
+            throw new Error('Tour data not found in API response');
+          }
+
           const apiTour = data.tour;
 
           // Convert UUID string to a numeric hash for id field (DetailedTour expects number)
@@ -222,32 +251,47 @@ export default function JejuTourDetailPage({ params }: PageProps) {
             priceType: apiTour.priceType || 'person',
           };
 
+          console.log('[JejuTourDetail] Tour transformed successfully:', { id: transformedTour.id, title: transformedTour.title });
           setTour(transformedTour);
-        } else if (response.status === 404) {
+        } else {
+          // Get error details from response
+          let errorMessage = `API returned ${response.status}`;
+          try {
+            const errorData = await response.json();
+            errorMessage = errorData.error || errorData.message || errorMessage;
+            console.error('[JejuTourDetail] API error response:', errorData);
+          } catch (e) {
+            const text = await response.text();
+            console.error('[JejuTourDetail] API error text:', text);
+          }
+
+          console.warn('[JejuTourDetail] API fetch failed, trying static data fallback:', { status: response.status, error: errorMessage });
+
           // Fallback to static data if not found in API
           const staticTour = detailedTours.find((t) => t.slug === slug);
           if (staticTour) {
+            console.log('[JejuTourDetail] Using static tour data as fallback');
             setTour(staticTour);
           } else {
-            setError('Tour not found');
-          }
-        } else {
-          // Try static data as fallback
-          const staticTour = detailedTours.find((t) => t.slug === slug);
-          if (staticTour) {
-            setTour(staticTour);
-          } else {
-            setError('Failed to fetch tour');
+            console.error('[JejuTourDetail] Tour not found in API or static data:', slug);
+            setError(`Tour not found: ${errorMessage}`);
           }
         }
-      } catch (err) {
-        console.error('Error fetching tour:', err);
+      } catch (err: any) {
+        console.error('[JejuTourDetail] Error fetching tour:', err);
+        console.error('[JejuTourDetail] Error details:', { 
+          message: err.message, 
+          stack: err.stack,
+          slug 
+        });
+
         // Fallback to static data
         const staticTour = detailedTours.find((t) => t.slug === slug);
         if (staticTour) {
+          console.log('[JejuTourDetail] Using static tour data as error fallback');
           setTour(staticTour);
         } else {
-          setError('Failed to load tour');
+          setError(`Failed to load tour: ${err.message || 'Unknown error'}`);
         }
       } finally {
         setLoading(false);

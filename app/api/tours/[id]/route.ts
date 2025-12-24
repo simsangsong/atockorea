@@ -2,21 +2,31 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { handleApiError, ErrorResponses } from '@/lib/error-handler';
 
+// Force dynamic rendering to ensure fresh data
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 /**
  * GET /api/tours/[id]
  * Get a single tour by ID with all related data
  */
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> | { id: string } }
 ) {
   try {
     const supabase = createServerClient();
-    const tourId = params.id;
+    
+    // Handle Next.js 14 params as Promise
+    const resolvedParams = params instanceof Promise ? await params : params;
+    const tourId = resolvedParams.id;
 
     if (!tourId) {
+      console.error('[API /tours/[id]] Tour ID is missing');
       return ErrorResponses.validationError('Tour ID is required');
     }
+
+    console.log('[API /tours/[id]] Fetching tour:', { tourId, url: req.url });
 
     // Try to fetch by ID first (UUID), then by slug if not found
     let query = supabase
@@ -46,11 +56,26 @@ export async function GET(
     const { data: tour, error: tourError } = await query.single();
 
     if (tourError || !tour) {
+      console.error('[API /tours/[id]] Tour fetch error:', { 
+        tourId, 
+        error: tourError?.message, 
+        code: tourError?.code,
+        details: tourError 
+      });
+      
       if (tourError?.code === 'PGRST116') {
+        console.log('[API /tours/[id]] Tour not found (PGRST116):', tourId);
         return ErrorResponses.notFound('Tour');
       }
       throw tourError || new Error('Tour not found');
     }
+
+    console.log('[API /tours/[id]] Tour found:', { 
+      id: tour.id, 
+      title: tour.title, 
+      slug: tour.slug,
+      city: tour.city 
+    });
 
     // Transform data to match frontend expectations
     const transformedTour = {
@@ -129,8 +154,20 @@ export async function GET(
       faqs: Array.isArray(tour.faqs) ? tour.faqs : [],
     };
 
+    console.log('[API /tours/[id]] Returning transformed tour:', { 
+      id: transformedTour.id, 
+      title: transformedTour.title,
+      hasImages: transformedTour.images?.length > 0,
+      hasFaqs: transformedTour.faqs?.length > 0
+    });
+
     return NextResponse.json({ tour: transformedTour });
   } catch (error: any) {
+    console.error('[API /tours/[id]] Unexpected error:', {
+      message: error.message,
+      stack: error.stack,
+      url: req.url
+    });
     return handleApiError(error, req);
   }
 }
@@ -141,14 +178,15 @@ export async function GET(
  */
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> | { id: string } }
 ) {
   try {
     const { requireAdmin } = await import('@/lib/auth');
     await requireAdmin(req);
     
     const supabase = createServerClient();
-    const tourId = params.id;
+    const resolvedParams = params instanceof Promise ? await params : params;
+    const tourId = resolvedParams.id;
     const body = await req.json();
 
     if (!tourId) {
@@ -206,14 +244,15 @@ export async function PATCH(
  */
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> | { id: string } }
 ) {
   try {
     const { requireAdmin } = await import('@/lib/auth');
     await requireAdmin(req);
     
     const supabase = createServerClient();
-    const tourId = params.id;
+    const resolvedParams = params instanceof Promise ? await params : params;
+    const tourId = resolvedParams.id;
 
     if (!tourId) {
       return ErrorResponses.validationError('Tour ID is required');
