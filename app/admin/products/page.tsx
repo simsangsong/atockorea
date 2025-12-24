@@ -172,10 +172,10 @@ export default function ProductsPage() {
         return;
       }
 
-      const formData = new FormData();
-      formData.append('file', file);
-      formData.append('type', 'product');
-      formData.append('folder', 'tours');
+      const uploadFormData = new FormData();
+      uploadFormData.append('file', file);
+      uploadFormData.append('type', 'product');
+      uploadFormData.append('folder', 'tours');
 
       const response = await fetch('/api/admin/upload', {
         method: 'POST',
@@ -183,7 +183,7 @@ export default function ProductsPage() {
           'Authorization': `Bearer ${session.access_token}`,
         },
         credentials: 'include',
-        body: formData,
+        body: uploadFormData,
       });
 
       if (!response.ok) {
@@ -192,7 +192,7 @@ export default function ProductsPage() {
       }
 
       const result = await response.json();
-      setFormData({ ...formData, image_url: result.url });
+      setFormData((prev) => ({ ...prev, image_url: result.url }));
       alert('Thumbnail uploaded successfully!');
     } catch (err: any) {
       console.error('Error uploading image:', err);
@@ -215,12 +215,12 @@ export default function ProductsPage() {
         return;
       }
 
-      const formData = new FormData();
+      const uploadFormData = new FormData();
       for (let i = 0; i < files.length; i++) {
-        formData.append('files', files[i]);
+        uploadFormData.append('files', files[i]);
       }
-      formData.append('type', 'gallery');
-      formData.append('folder', 'tours/gallery');
+      uploadFormData.append('type', 'gallery');
+      uploadFormData.append('folder', 'tours/gallery');
 
       const response = await fetch('/api/admin/upload', {
         method: 'POST',
@@ -228,7 +228,7 @@ export default function ProductsPage() {
           'Authorization': `Bearer ${session.access_token}`,
         },
         credentials: 'include',
-        body: formData,
+        body: uploadFormData,
       });
 
       if (!response.ok) {
