@@ -173,7 +173,7 @@ async function uploadFile(
   // Compress image if it exceeds 5MB
   if (isImage && buffer.length > maxSizeBytes) {
     const compressionResult = await compressImageIfNeeded(buffer, maxSizeBytes);
-    finalBuffer = compressionResult.buffer;
+    finalBuffer = Buffer.from(compressionResult.buffer); // Ensure proper Buffer type
     contentType = compressionResult.contentType;
     fileExt = compressionResult.fileExt;
     wasCompressed = compressionResult.wasCompressed;
