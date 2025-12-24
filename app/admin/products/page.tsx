@@ -1127,6 +1127,7 @@ export default function ProductsPage() {
                         <PickupPointSelector
                           onLocationSelect={(location) => {
                             const newPoint = {
+                              id: `temp-${Date.now()}`, // Temporary ID for new points
                               name: '',
                               address: location.address,
                               lat: location.lat,
