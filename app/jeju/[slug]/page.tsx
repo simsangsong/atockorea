@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useMemo, useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import Image from "next/image";
 import { detailedTours, DetailedTour } from "../../../data/tours";
 import GalleryGrid from "@/components/tour/GalleryGrid";
@@ -160,15 +160,29 @@ function DescriptionContent({ description }: { description: string }) {
 // ===== 페이지 컴포넌트 =====
 export default function JejuTourDetailPage({ params }: PageProps) {
   const router = useRouter();
-  const { slug } = params;
+  const urlParams = useParams(); // Fallback to useParams if params doesn't work
+  const slug = params?.slug || urlParams?.slug as string;
   const [tour, setTour] = useState<DetailedTour | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Debug logging
+  useEffect(() => {
+    console.log('[JejuTourDetail] Component mounted:', { 
+      slug, 
+      paramsFromProps: params?.slug,
+      paramsFromHook: urlParams?.slug,
+      windowLocation: typeof window !== 'undefined' ? window.location.href : 'server'
+    });
+  }, [slug, params, urlParams]);
+
   // Fetch tour from API
   useEffect(() => {
     const fetchTour = async () => {
-      if (!slug) {
+      const currentSlug = slug;
+      
+      if (!currentSlug || typeof currentSlug !== 'string') {
+        console.error('[JejuTourDetail] Invalid slug:', { currentSlug, type: typeof currentSlug });
         setError('Invalid tour slug');
         setLoading(false);
         return;
@@ -180,10 +194,15 @@ export default function JejuTourDetailPage({ params }: PageProps) {
 
         // Use absolute URL for better mobile compatibility
         const apiUrl = typeof window !== 'undefined' 
-          ? `${window.location.origin}/api/tours/${encodeURIComponent(slug)}`
-          : `/api/tours/${encodeURIComponent(slug)}`;
+          ? `${window.location.origin}/api/tours/${encodeURIComponent(currentSlug)}`
+          : `/api/tours/${encodeURIComponent(currentSlug)}`;
 
-        console.log('[JejuTourDetail] Fetching tour:', { slug, apiUrl });
+        console.log('[JejuTourDetail] Fetching tour:', { 
+          slug: currentSlug, 
+          apiUrl,
+          origin: typeof window !== 'undefined' ? window.location.origin : 'server',
+          pathname: typeof window !== 'undefined' ? window.location.pathname : 'server'
+        });
 
         // Try to fetch from API first
         const response = await fetch(apiUrl, {
@@ -239,7 +258,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
               title: item.title || '',
               description: item.description || '',
             })) || [],
-            slug: slug,
+            slug: currentSlug,
             reviews: [],
             galleryImages: apiTour.images?.map((img: any) => img.url) || [],
             subtitle: apiTour.tagline || '',
@@ -265,16 +284,24 @@ export default function JejuTourDetailPage({ params }: PageProps) {
             console.error('[JejuTourDetail] API error text:', text);
           }
 
-          console.warn('[JejuTourDetail] API fetch failed, trying static data fallback:', { status: response.status, error: errorMessage });
+          console.warn('[JejuTourDetail] API fetch failed, trying static data fallback:', { 
+            status: response.status, 
+            error: errorMessage,
+            slug: currentSlug
+          });
 
           // Fallback to static data if not found in API
-          const staticTour = detailedTours.find((t) => t.slug === slug);
+          const staticTour = detailedTours.find((t) => t.slug === currentSlug);
           if (staticTour) {
             console.log('[JejuTourDetail] Using static tour data as fallback');
             setTour(staticTour);
           } else {
-            console.error('[JejuTourDetail] Tour not found in API or static data:', slug);
-            setError(`Tour not found: ${errorMessage}`);
+            console.error('[JejuTourDetail] Tour not found in API or static data:', { 
+              slug: currentSlug,
+              availableStaticSlugs: detailedTours.map(t => t.slug),
+              apiUrl
+            });
+            setError(`Tour not found: ${errorMessage} (slug: ${currentSlug})`);
           }
         }
       } catch (err: any) {
@@ -282,11 +309,12 @@ export default function JejuTourDetailPage({ params }: PageProps) {
         console.error('[JejuTourDetail] Error details:', { 
           message: err.message, 
           stack: err.stack,
-          slug 
+          slug: currentSlug,
+          errorType: err.constructor.name
         });
 
         // Fallback to static data
-        const staticTour = detailedTours.find((t) => t.slug === slug);
+        const staticTour = detailedTours.find((t) => t.slug === currentSlug);
         if (staticTour) {
           console.log('[JejuTourDetail] Using static tour data as error fallback');
           setTour(staticTour);
@@ -299,7 +327,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
     };
 
     fetchTour();
-  }, [slug]);
+  }, [slug, urlParams]);
 
   // Loading state
   if (loading) {
@@ -315,16 +343,31 @@ export default function JejuTourDetailPage({ params }: PageProps) {
     );
   }
 
-  // Error state or tour not found
-  if (error || !tour) {
+  // Error state or tour not found (only show if not loading)
+  if (!loading && (error || !tour)) {
     return (
-      <div className="min-h-screen bg-[#f5f5f7] text-[#111] flex items-center justify-center">
-        <div className="rounded-2xl bg-white px-6 py-8 shadow-sm">
+      <div className="min-h-screen bg-[#f5f5f7] text-[#111] flex items-center justify-center p-4">
+        <div className="rounded-2xl bg-white px-6 py-8 shadow-sm max-w-md w-full">
           <h1 className="mb-2 text-lg font-semibold">Tour not found</h1>
-          <p className="text-sm text-[#555]">
-            The Jeju tour you are looking for does not exist or is no longer
-            available.
+          <p className="text-sm text-[#555] mb-4">
+            The Jeju tour you are looking for does not exist or is no longer available.
           </p>
+          {error && (
+            <p className="text-xs text-[#888] mb-2 break-all">
+              Error: {error}
+            </p>
+          )}
+          {slug && (
+            <p className="text-xs text-[#888] mb-4 break-all">
+              Slug: {slug}
+            </p>
+          )}
+          <button
+            onClick={() => router.back()}
+            className="text-sm text-blue-600 hover:text-blue-700 underline"
+          >
+            Go back
+          </button>
         </div>
       </div>
     );
