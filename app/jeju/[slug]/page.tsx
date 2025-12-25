@@ -212,20 +212,34 @@ export default function JejuTourDetailPage({ params }: PageProps) {
           },
           // Ensure credentials are included for cookies/auth
           credentials: 'same-origin',
+          cache: 'no-store', // Prevent caching
         });
 
-        console.log('[JejuTourDetail] API response status:', response.status);
+        console.log('[JejuTourDetail] API response status:', response.status, 'for slug:', currentSlug);
 
         if (response.ok) {
           const data = await response.json();
-          console.log('[JejuTourDetail] API response data:', { hasTour: !!data.tour, keys: Object.keys(data) });
+          console.log('[JejuTourDetail] API response data:', { 
+            hasTour: !!data.tour, 
+            keys: Object.keys(data),
+            tourTitle: data.tour?.title,
+            tourSlug: data.tour?.slug 
+          });
 
-          if (!data.tour) {
-            console.error('[JejuTourDetail] API returned OK but no tour data:', data);
+          // Handle both response formats: { tour: {...} } or direct tour object
+          let apiTour = data.tour || data;
+          
+          if (!apiTour || (!apiTour.id && !apiTour.title)) {
+            console.error('[JejuTourDetail] API returned OK but no valid tour data:', data);
             throw new Error('Tour data not found in API response');
           }
 
-          const apiTour = data.tour;
+          console.log('[JejuTourDetail] Using tour data:', { 
+            id: apiTour.id, 
+            title: apiTour.title, 
+            slug: apiTour.slug,
+            responseFormat: data.tour ? 'wrapped' : 'direct'
+          });
 
           // Convert UUID string to a numeric hash for id field (DetailedTour expects number)
           const stringToNumber = (str: string): number => {

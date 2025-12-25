@@ -47,22 +47,30 @@ export async function GET(
     // Check if tourId is a UUID (contains hyphens) or a slug
     const isUUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(tourId);
     
-    console.log('[API /tours/[id]] Query params:', { tourId, isUUID, url: req.url });
+    // Decode URL-encoded slug
+    const decodedTourId = decodeURIComponent(tourId);
+    
+    console.log('[API /tours/[id]] Query params:', { 
+      tourId, 
+      decodedTourId,
+      isUUID, 
+      url: req.url 
+    });
     
     if (isUUID) {
       query = query.eq('id', tourId);
       console.log('[API /tours/[id]] Querying by UUID:', tourId);
     } else {
-      // Use ilike for case-insensitive slug matching, or exact match
-      query = query.eq('slug', tourId);
-      console.log('[API /tours/[id]] Querying by slug:', tourId);
+      // Use exact match first (case-sensitive for slug)
+      query = query.eq('slug', decodedTourId);
+      console.log('[API /tours/[id]] Querying by slug (exact):', decodedTourId);
     }
 
     let { data: tour, error: tourError } = await query.single();
     
     // If exact match fails and it's a slug, try case-insensitive search
     if (tourError && !isUUID && tourError.code === 'PGRST116') {
-      console.log('[API /tours/[id]] Exact slug match failed, trying case-insensitive:', tourId);
+      console.log('[API /tours/[id]] Exact slug match failed, trying case-insensitive:', decodedTourId);
       const { data: tourCaseInsensitive, error: errorCaseInsensitive } = await supabase
         .from('tours')
         .select(`
@@ -77,7 +85,7 @@ export async function GET(
           )
         `)
         .eq('is_active', true)
-        .ilike('slug', tourId)
+        .ilike('slug', decodedTourId)
         .single();
       
       if (tourCaseInsensitive && !errorCaseInsensitive) {
