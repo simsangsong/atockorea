@@ -391,6 +391,8 @@ export default function TourDetailPage() {
   };
 
   const handleShare = () => {
+    if (!tour) return;
+    
     if (navigator.share) {
       navigator.share({
         title: tour.title,
@@ -403,6 +405,11 @@ export default function TourDetailPage() {
       alert('Link copied to clipboard!');
     }
   };
+
+  // TypeScript guard: tour should not be null at this point
+  if (!tour) {
+    return null; // This should never happen due to earlier checks, but TypeScript needs it
+  }
 
   return (
     <div className="min-h-screen bg-white">
