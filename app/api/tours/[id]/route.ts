@@ -15,8 +15,6 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> | { id: string } }
 ) {
   try {
-    const supabase = createServerClient();
-    
     // Handle Next.js 14 params as Promise
     const resolvedParams = params instanceof Promise ? await params : params;
     const tourId = resolvedParams.id;
@@ -24,6 +22,27 @@ export async function GET(
     if (!tourId) {
       console.error('[API /tours/[id]] Tour ID is missing');
       return ErrorResponses.validationError('Tour ID is required');
+    }
+
+    // Create Supabase client with error handling
+    let supabase;
+    try {
+      supabase = createServerClient();
+    } catch (supabaseError: any) {
+      console.error('[API /tours/[id]] Supabase client creation failed:', {
+        error: supabaseError.message,
+        hasUrl: !!process.env.NEXT_PUBLIC_SUPABASE_URL,
+        hasServiceKey: !!process.env.SUPABASE_SERVICE_ROLE_KEY,
+        url: req.url
+      });
+      return NextResponse.json(
+        {
+          error: 'Database connection failed. Please check environment variables.',
+          code: 'SUPABASE_CONNECTION_ERROR',
+          details: process.env.NODE_ENV === 'development' ? supabaseError.message : undefined
+        },
+        { status: 500 }
+      );
     }
 
     console.log('[API /tours/[id]] Fetching tour:', { tourId, url: req.url });
@@ -134,7 +153,7 @@ export async function GET(
           .select('id, title, slug, city, is_active')
           .limit(100);
         
-        console.log('[API /tours/[id]] Debug info:', {
+        const debugInfo = {
           requestedTourId: tourId,
           decodedTourId,
           isUUID,
@@ -146,9 +165,23 @@ export async function GET(
           matchingTours: isUUID 
             ? allTours?.filter(t => t.id === tourId) || []
             : allTours?.filter(t => t.slug === tourId || t.slug?.toLowerCase() === tourId.toLowerCase()) || []
-        });
+        };
         
-        return ErrorResponses.notFound('Tour');
+        console.log('[API /tours/[id]] Debug info:', debugInfo);
+        
+        // Include helpful debug info in development
+        const isDevelopment = process.env.NODE_ENV === 'development';
+        return NextResponse.json(
+          {
+            error: 'Tour not found',
+            code: 'NOT_FOUND',
+            ...(isDevelopment && { debug: debugInfo }),
+            ...(inactiveTour && { 
+              hint: 'Tour exists but is inactive (is_active = false). Activate it to make it accessible.' 
+            })
+          },
+          { status: 404 }
+        );
       }
       throw tourError || new Error('Tour not found');
     }
