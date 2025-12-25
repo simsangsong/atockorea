@@ -47,13 +47,47 @@ export async function GET(
     // Check if tourId is a UUID (contains hyphens) or a slug
     const isUUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(tourId);
     
+    console.log('[API /tours/[id]] Query params:', { tourId, isUUID, url: req.url });
+    
     if (isUUID) {
       query = query.eq('id', tourId);
+      console.log('[API /tours/[id]] Querying by UUID:', tourId);
     } else {
+      // Use ilike for case-insensitive slug matching, or exact match
       query = query.eq('slug', tourId);
+      console.log('[API /tours/[id]] Querying by slug:', tourId);
     }
 
-    const { data: tour, error: tourError } = await query.single();
+    let { data: tour, error: tourError } = await query.single();
+    
+    // If exact match fails and it's a slug, try case-insensitive search
+    if (tourError && !isUUID && tourError.code === 'PGRST116') {
+      console.log('[API /tours/[id]] Exact slug match failed, trying case-insensitive:', tourId);
+      const { data: tourCaseInsensitive, error: errorCaseInsensitive } = await supabase
+        .from('tours')
+        .select(`
+          *,
+          pickup_points (
+            id,
+            name,
+            address,
+            lat,
+            lng,
+            pickup_time
+          )
+        `)
+        .eq('is_active', true)
+        .ilike('slug', tourId)
+        .single();
+      
+      if (tourCaseInsensitive && !errorCaseInsensitive) {
+        console.log('[API /tours/[id]] Found tour with case-insensitive slug match');
+        // Use the case-insensitive match result
+        tour = tourCaseInsensitive;
+        tourError = null;
+        console.log('[API /tours/[id]] Using case-insensitive match result, slug:', tour.slug);
+      }
+    }
 
     if (tourError || !tour) {
       console.error('[API /tours/[id]] Tour fetch error:', { 
@@ -65,6 +99,23 @@ export async function GET(
       
       if (tourError?.code === 'PGRST116') {
         console.log('[API /tours/[id]] Tour not found (PGRST116):', tourId);
+        
+        // Debug: Get all active Jeju tours to help diagnose
+        if (!isUUID && tourId.toLowerCase().includes('jeju')) {
+          const { data: allJejuTours } = await supabase
+            .from('tours')
+            .select('id, title, slug, city, is_active')
+            .eq('city', 'Jeju')
+            .eq('is_active', true)
+            .limit(50);
+          
+          console.log('[API /tours/[id]] Available Jeju tours:', {
+            requestedSlug: tourId,
+            availableSlugs: allJejuTours?.map(t => t.slug) || [],
+            tourCount: allJejuTours?.length || 0
+          });
+        }
+        
         return ErrorResponses.notFound('Tour');
       }
       throw tourError || new Error('Tour not found');
