@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect, Suspense, useMemo } from 'react';
+import { useRef, useState, useEffect, Suspense, useMemo, useCallback } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import Header from '@/components/Header';
@@ -68,14 +68,26 @@ export default function TourDetailPage() {
   const params = useParams();
   const router = useRouter();
   const t = useTranslations();
-  const tourId = params?.id as string;
+  
+  // Memoize tourId to prevent unnecessary re-renders
+  const tourId = useMemo(() => {
+    const id = params?.id;
+    return typeof id === 'string' ? id : Array.isArray(id) ? id[0] : '';
+  }, [params?.id]);
+  
   const bookingRef = useRef<HTMLDivElement>(null);
   
   const [tour, setTour] = useState<Tour | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const prevTourIdRef = useRef<string | null>(null);
 
   useEffect(() => {
+    // Prevent duplicate fetches for the same tourId
+    if (prevTourIdRef.current === tourId) {
+      return;
+    }
+    prevTourIdRef.current = tourId;
     if (!tourId) {
       setError('Tour ID is required');
       setLoading(false);
