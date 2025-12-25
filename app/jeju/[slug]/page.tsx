@@ -373,6 +373,11 @@ export default function JejuTourDetailPage({ params }: PageProps) {
     );
   }
 
+  // Type guard: tour must exist at this point
+  if (!tour) {
+    return null; // Should not reach here due to check above, but TypeScript needs it
+  }
+
   // ===== 기본 데이터 =====
   const gallery =
     tour.galleryImages && tour.galleryImages.length > 0
