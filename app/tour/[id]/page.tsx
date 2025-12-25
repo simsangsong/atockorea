@@ -85,11 +85,15 @@ export default function TourDetailPage() {
 
   useEffect(() => {
     // Prevent duplicate fetches for the same tourId
-    if (!tourId || prevTourIdRef.current === tourId) {
-      if (!tourId) {
-        setError('Tour ID is required');
-        setLoading(false);
-      }
+    if (!tourId) {
+      setError('Tour ID is required');
+      setLoading(false);
+      prevTourIdRef.current = null;
+      return;
+    }
+    
+    // Prevent duplicate fetches for the same tourId
+    if (prevTourIdRef.current === tourId) {
       return;
     }
     
