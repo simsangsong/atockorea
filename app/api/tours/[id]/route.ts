@@ -100,19 +100,27 @@ export async function GET(
       if (tourError?.code === 'PGRST116') {
         console.log('[API /tours/[id]] Tour not found (PGRST116):', tourId);
         
-        // Debug: Get all active Jeju tours to help diagnose
-        if (!isUUID && tourId.toLowerCase().includes('jeju')) {
-          const { data: allJejuTours } = await supabase
+        // Debug: Get all active tours to help diagnose (not just Jeju, to be comprehensive)
+        if (!isUUID) {
+          // First try to find tours with similar slug
+          const { data: allTours } = await supabase
             .from('tours')
             .select('id, title, slug, city, is_active')
-            .eq('city', 'Jeju')
             .eq('is_active', true)
-            .limit(50);
+            .limit(100);
           
-          console.log('[API /tours/[id]] Available Jeju tours:', {
+          const exactSlugMatch = allTours?.find(t => t.slug === tourId);
+          const similarSlugs = allTours?.filter(t => 
+            t.slug.toLowerCase().includes(tourId.toLowerCase()) || 
+            tourId.toLowerCase().includes(t.slug.toLowerCase())
+          ) || [];
+          
+          console.log('[API /tours/[id]] Tour lookup debug info:', {
             requestedSlug: tourId,
-            availableSlugs: allJejuTours?.map(t => t.slug) || [],
-            tourCount: allJejuTours?.length || 0
+            exactMatch: exactSlugMatch ? { id: exactSlugMatch.id, slug: exactSlugMatch.slug, title: exactSlugMatch.title } : null,
+            similarSlugs: similarSlugs.map(t => ({ id: t.id, slug: t.slug, title: t.title })),
+            allSlugs: allTours?.map(t => t.slug) || [],
+            totalActiveTours: allTours?.length || 0
           });
         }
         
