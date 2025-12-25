@@ -14,12 +14,10 @@ export const revalidate = 0;
  */
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } | Promise<{ id: string }> }
+  { params }: { params: { id: string } }
 ) {
   try {
-    // Handle Next.js params (may be Promise in Next.js 15+)
-    const resolvedParams = await Promise.resolve(params);
-    const tourId = resolvedParams.id;
+    const tourId = params.id;
 
     if (!tourId) {
       console.error('[API /tours/[id]] Tour ID is missing');
@@ -295,15 +293,14 @@ export async function GET(
  */
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { id: string } | Promise<{ id: string }> }
+  { params }: { params: { id: string } }
 ) {
   try {
     const { requireAdmin } = await import('@/lib/auth');
     await requireAdmin(req);
     
     const supabase = createServerClient();
-    const resolvedParams = await Promise.resolve(params);
-    const tourId = resolvedParams.id;
+    const tourId = params.id;
     const body = await req.json();
 
     if (!tourId) {
@@ -361,15 +358,14 @@ export async function PATCH(
  */
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } | Promise<{ id: string }> }
+  { params }: { params: { id: string } }
 ) {
   try {
     const { requireAdmin } = await import('@/lib/auth');
     await requireAdmin(req);
     
     const supabase = createServerClient();
-    const resolvedParams = await Promise.resolve(params);
-    const tourId = resolvedParams.id;
+    const tourId = params.id;
 
     if (!tourId) {
       return ErrorResponses.validationError('Tour ID is required');
