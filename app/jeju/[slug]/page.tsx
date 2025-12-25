@@ -166,6 +166,105 @@ export default function JejuTourDetailPage({ params }: PageProps) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // All hooks must be called before any early returns (React Hooks rules)
+  // Initialize state hooks with safe default values
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
+  const initialReviews: Review[] = [];
+  const [reviews, setReviews] = useState<Review[]>(initialReviews);
+  const [showAllReviews, setShowAllReviews] = useState(false);
+  const [sortBy, setSortBy] = useState<ReviewSort>("ratingDesc");
+  const [showFullItinerary, setShowFullItinerary] = useState(false);
+  const [showAllPhotos, setShowAllPhotos] = useState(false);
+  const [date, setDate] = useState<string>("");
+  const [guests, setGuests] = useState<number>(2);
+  const [newReview, setNewReview] = useState<{
+    author: string;
+    rating: number;
+    title: string;
+    content: string;
+  }>({
+    author: "",
+    rating: 5,
+    title: "",
+    content: "",
+  });
+
+  // Memoized calculations (must be before early returns)
+  const gallery = useMemo(() => {
+    if (!tour) return [];
+    return tour.galleryImages && tour.galleryImages.length > 0
+      ? tour.galleryImages
+      : [tour.imageUrl];
+  }, [tour]);
+
+  const heroImage = useMemo(() => {
+    return selectedImage ?? gallery[0] ?? null;
+  }, [selectedImage, gallery]);
+
+  const averageRating = useMemo(() => {
+    return reviews.length === 0
+      ? 0
+      : reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
+  }, [reviews]);
+
+  // 정렬된 리뷰
+  const sortedReviews = useMemo(() => {
+    const arr = [...reviews];
+    switch (sortBy) {
+      case "ratingAsc":
+        return arr.sort((a, b) => a.rating - b.rating);
+      case "newest":
+        return arr.sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        );
+      case "oldest":
+        return arr.sort(
+          (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+        );
+      case "helpful":
+        return arr.sort((a, b) => b.helpfulVotes - a.helpfulVotes);
+      case "ratingDesc":
+      default:
+        return arr.sort((a, b) => b.rating - a.rating);
+    }
+  }, [reviews, sortBy]);
+
+  const visibleReviews = useMemo(() => {
+    return showAllReviews
+      ? sortedReviews
+      : sortedReviews.slice(0, 3);
+  }, [showAllReviews, sortedReviews]);
+
+  // FAQ - Use tour.faqs if available, otherwise use default
+  const faqs: FAQItem[] = useMemo(() => {
+    if (!tour) return [];
+    return tour.faqs && tour.faqs.length > 0 
+      ? tour.faqs.map((faq: any) => ({
+          question: faq.question || '',
+          answer: faq.answer || '',
+        }))
+      : [
+          {
+            question: "What is the pickup time and location?",
+            answer:
+              "Pickup usually starts around 08:30–09:00 from Jeju City meeting points or your hotel (if included). Exact time and location will be confirmed in the confirmation email after booking.",
+          },
+          {
+            question: "Is lunch included?",
+            answer:
+              tour.lunchIncluded
+                ? "Lunch is included. Your guide will take you to a recommended local restaurant."
+                : "Lunch is not included. The guide will recommend local restaurants where you can choose and pay on the spot.",
+          },
+          {
+            question: "Can I cancel or modify my booking?",
+            answer:
+              "Yes, you can cancel or modify your booking up to 24 hours before the tour starts. Please contact us for cancellation or modification requests.",
+          },
+        ];
+  }, [tour]);
+
   // Debug logging
   useEffect(() => {
     console.log('[JejuTourDetail] Component mounted:', { 
@@ -343,6 +442,22 @@ export default function JejuTourDetailPage({ params }: PageProps) {
     fetchTour();
   }, [slug, urlParams]);
 
+  // Update state when tour data loads
+  useEffect(() => {
+    if (tour) {
+      // Update selected image when tour loads
+      const firstImage = gallery[0];
+      if (firstImage && !selectedImage) {
+        setSelectedImage(firstImage);
+      }
+      
+      // Update reviews when tour loads
+      if (tour.reviews && tour.reviews.length > 0 && reviews.length === 0) {
+        setReviews(tour.reviews as Review[]);
+      }
+    }
+  }, [tour, gallery, selectedImage, reviews.length]);
+
   // Loading state
   if (loading) {
     return (
@@ -391,103 +506,6 @@ export default function JejuTourDetailPage({ params }: PageProps) {
   if (!tour) {
     return null; // Should not reach here due to check above, but TypeScript needs it
   }
-
-  // ===== 기본 데이터 =====
-  const gallery =
-    tour.galleryImages && tour.galleryImages.length > 0
-      ? tour.galleryImages
-      : [tour.imageUrl];
-
-  const [selectedImage, setSelectedImage] = useState<string | null>(
-    gallery[0]
-  );
-  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
-  const heroImage = selectedImage ?? gallery[0];
-
-  const initialReviews: Review[] = (tour.reviews || []) as Review[];
-  const [reviews, setReviews] = useState<Review[]>(initialReviews);
-  const [showAllReviews, setShowAllReviews] = useState(false);
-  const [sortBy, setSortBy] = useState<ReviewSort>("ratingDesc");
-
-  const [showFullItinerary, setShowFullItinerary] = useState(false);
-  const [showAllPhotos, setShowAllPhotos] = useState(false);
-
-  const [date, setDate] = useState<string>("");
-  const [guests, setGuests] = useState<number>(2);
-
-  const [newReview, setNewReview] = useState<{
-    author: string;
-    rating: number;
-    title: string;
-    content: string;
-  }>({
-    author: "",
-    rating: 5,
-    title: "",
-    content: "",
-  });
-
-  const averageRating =
-    reviews.length === 0
-      ? 0
-      : reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
-
-  // 정렬된 리뷰
-  const sortedReviews = useMemo(() => {
-    const arr = [...reviews];
-    switch (sortBy) {
-      case "ratingAsc":
-        return arr.sort((a, b) => a.rating - b.rating);
-      case "newest":
-        return arr.sort(
-          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-        );
-      case "oldest":
-        return arr.sort(
-          (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
-        );
-      case "helpful":
-        return arr.sort((a, b) => b.helpfulVotes - a.helpfulVotes);
-      case "ratingDesc":
-      default:
-        return arr.sort((a, b) => b.rating - a.rating);
-    }
-  }, [reviews, sortBy]);
-
-  const visibleReviews = showAllReviews
-    ? sortedReviews
-    : sortedReviews.slice(0, 3);
-
-  // FAQ - Use tour.faqs if available, otherwise use default
-  const faqs: FAQItem[] = tour.faqs && tour.faqs.length > 0 
-    ? tour.faqs.map(faq => ({
-        question: faq.question || '',
-        answer: faq.answer || '',
-      }))
-    : [
-        {
-          question: "What is the pickup time and location?",
-          answer:
-            "Pickup usually starts around 08:30–09:00 from Jeju City meeting points or your hotel (if included). Exact time and location will be confirmed in the confirmation email after booking.",
-        },
-        {
-          question: "Is lunch included?",
-          answer:
-            tour.lunchIncluded
-              ? "Lunch is included. Your guide will take you to a recommended local restaurant."
-              : "Lunch is not included. The guide will recommend local restaurants where you can choose and pay on the spot.",
-        },
-        {
-          question: "Can I join with a suitcase or luggage?",
-          answer:
-            "Yes, small and medium-size luggage can be stored in the vehicle. For very large luggage, please inform us in advance so we can prepare enough space.",
-        },
-        {
-          question: "What happens in case of bad weather?",
-          answer:
-            "For safety reasons, outdoor activities or Haenyeo shows may be cancelled or replaced with alternative spots. The itinerary can change depending on weather and traffic conditions.",
-        },
-      ];
 
   // ===== 액션 핸들러 =====
   const handleBookNow = () => {
