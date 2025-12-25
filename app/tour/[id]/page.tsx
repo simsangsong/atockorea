@@ -104,11 +104,6 @@ export default function TourDetailPage() {
     
     prevTourIdRef.current = tourId;
     fetchingRef.current = true;
-    if (!tourId) {
-      setError('Tour ID is required');
-      setLoading(false);
-      return;
-    }
 
     let isMounted = true; // Track if component is still mounted
 
