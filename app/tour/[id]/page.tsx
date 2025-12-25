@@ -88,21 +88,23 @@ export default function TourDetailPage() {
     if (!tourId) {
       setError('Tour ID is required');
       setLoading(false);
+      fetchingRef.current = false;
       prevTourIdRef.current = null;
       return;
     }
     
-    // Prevent duplicate fetches for the same tourId
-    if (prevTourIdRef.current === tourId) {
-      return;
+    // Reset previous tour when tourId changes
+    if (prevTourIdRef.current !== tourId) {
+      setTour(null);
+      setError(null);
+      prevTourIdRef.current = tourId;
+    } else {
+      // If same tourId and already fetching, don't fetch again
+      if (fetchingRef.current) {
+        return;
+      }
     }
     
-    // Prevent concurrent fetches
-    if (fetchingRef.current) {
-      return;
-    }
-    
-    prevTourIdRef.current = tourId;
     fetchingRef.current = true;
 
     let isMounted = true; // Track if component is still mounted
@@ -119,7 +121,10 @@ export default function TourDetailPage() {
           cache: 'no-store', // Prevent caching
         });
         
-        if (!isMounted) return; // Don't update state if component unmounted
+        if (!isMounted) {
+          fetchingRef.current = false;
+          return; // Don't update state if component unmounted
+        }
         
         if (!response.ok) {
           if (response.status === 404) {
@@ -133,16 +138,21 @@ export default function TourDetailPage() {
             }
           }
           setLoading(false);
+          fetchingRef.current = false;
           return;
         }
 
         const data = await response.json();
         
-        if (!isMounted) return; // Don't update state if component unmounted
+        if (!isMounted) {
+          fetchingRef.current = false;
+          return; // Don't update state if component unmounted
+        }
         
         if (!data.tour) {
           setError('Tour data not found in response');
           setLoading(false);
+          fetchingRef.current = false;
           return;
         }
         
@@ -220,6 +230,9 @@ export default function TourDetailPage() {
         if (isMounted) {
           setError('Failed to load tour. Please try again later.');
           setLoading(false);
+          fetchingRef.current = false;
+        } else {
+          // Ensure ref is reset even if unmounted
           fetchingRef.current = false;
         }
       }
@@ -321,6 +334,17 @@ export default function TourDetailPage() {
     });
   }, [tour, t]);
 
+  // Update page title - MUST be before any conditional returns to follow React Hooks rules
+  useEffect(() => {
+    if (tour) {
+      document.title = tour.title || 'Tour Details';
+    } else if (error) {
+      document.title = 'Tour Not Found';
+    } else {
+      document.title = 'Loading Tour...';
+    }
+  }, [tour, error]);
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
@@ -339,7 +363,7 @@ export default function TourDetailPage() {
     );
   }
 
-  if (error || !tour) {
+  if (error || (!loading && !tour)) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
         <Header />
