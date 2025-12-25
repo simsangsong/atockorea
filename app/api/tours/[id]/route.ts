@@ -9,6 +9,8 @@ export const revalidate = 0;
 /**
  * GET /api/tours/[id]
  * Get a single tour by ID with all related data
+ * 
+ * This endpoint handles both UUID and slug-based tour lookups.
  */
 export async function GET(
   req: NextRequest,
