@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect, Suspense } from 'react';
+import { useRef, useState, useEffect, Suspense, useMemo } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import Header from '@/components/Header';
@@ -85,7 +85,10 @@ export default function TourDetailPage() {
     const fetchTour = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`/api/tours/${tourId}`);
+        const apiUrl = typeof window !== 'undefined' 
+          ? `${window.location.origin}/api/tours/${encodeURIComponent(tourId)}`
+          : `/api/tours/${encodeURIComponent(tourId)}`;
+        const response = await fetch(apiUrl);
         
         if (!response.ok) {
           if (response.status === 404) {
@@ -176,49 +179,13 @@ export default function TourDetailPage() {
     fetchTour();
   }, [tourId]);
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
-        <Header />
-        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex items-center justify-center min-h-[60vh]">
-            <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-              <p className="text-gray-600">Loading tour...</p>
-            </div>
-          </div>
-        </main>
-        <Footer />
-        <BottomNav />
-      </div>
-    );
-  }
-
-  if (error || !tour) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
-        <Header />
-        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex items-center justify-center min-h-[60vh]">
-            <div className="text-center">
-              <p className="text-red-600 text-lg mb-4">{error || t('tour.tourNotFound')}</p>
-              <button
-                onClick={() => router.push('/tours')}
-                className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-              >
-                {t('tour.backToTours')}
-              </button>
-            </div>
-          </div>
-        </main>
-        <Footer />
-        <BottomNav />
-      </div>
-    );
-  }
-
-  // Parse keywords from tour data
-  const parseKeywords = (keywords?: string[]): Array<{ icon: React.ReactNode; label: string; value: string }> => {
+  // Parse keywords from tour data (memoized to prevent infinite loops)
+  // MUST be called before any early returns to follow React Hooks rules
+  const keyInfoItems = useMemo(() => {
+    if (!tour) return [];
+    
+    const keywords = (tour as any).keywords;
+    
     if (!keywords || keywords.length === 0) {
       // Fallback to default items if no keywords (excluding duration)
       return [
@@ -275,9 +242,9 @@ export default function TourDetailPage() {
       );
     };
 
-    return keywords.map((keyword) => {
+    return keywords.map((keyword: string) => {
       // Parse "Label: Value" format
-      const parts = keyword.split(':').map(p => p.trim());
+      const parts = keyword.split(':').map((p: string) => p.trim());
       const label = parts[0] || '';
       const value = parts.length > 1 ? parts.slice(1).join(':').trim() : keyword;
 
@@ -286,7 +253,7 @@ export default function TourDetailPage() {
         label,
         value,
       };
-    }).filter(item => {
+    }).filter((item: { icon: React.ReactNode; label: string; value: string }) => {
       // Filter out duration/time related items
       if (!item.value) return false;
       const lowerLabel = item.label.toLowerCase();
@@ -297,9 +264,48 @@ export default function TourDetailPage() {
       }
       return true;
     });
-  };
+  }, [tour, t]);
 
-  const keyInfoItems = parseKeywords((tour as any).keywords);
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
+        <Header />
+        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex items-center justify-center min-h-[60vh]">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading tour...</p>
+            </div>
+          </div>
+        </main>
+        <Footer />
+        <BottomNav />
+      </div>
+    );
+  }
+
+  if (error || !tour) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
+        <Header />
+        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex items-center justify-center min-h-[60vh]">
+            <div className="text-center">
+              <p className="text-red-600 text-lg mb-4">{error || t('tour.tourNotFound')}</p>
+              <button
+                onClick={() => router.push('/tours')}
+                className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              >
+                {t('tour.backToTours')}
+              </button>
+            </div>
+          </div>
+        </main>
+        <Footer />
+        <BottomNav />
+      </div>
+    );
+  }
 
   const handleCheckAvailability = () => {
     bookingRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
