@@ -102,35 +102,51 @@ export async function GET(
         tourId, 
         error: tourError?.message, 
         code: tourError?.code,
-        details: tourError 
+        details: tourError,
+        isUUID,
+        url: req.url
       });
       
       if (tourError?.code === 'PGRST116') {
         console.log('[API /tours/[id]] Tour not found (PGRST116):', tourId);
         
-        // Debug: Get all active tours to help diagnose (not just Jeju, to be comprehensive)
-        if (!isUUID) {
-          // First try to find tours with similar slug
-          const { data: allTours } = await supabase
+        // Debug: Check if tour exists but is inactive (bypass is_active filter)
+        let inactiveTour = null;
+        if (isUUID) {
+          const { data } = await supabase
             .from('tours')
             .select('id, title, slug, city, is_active')
-            .eq('is_active', true)
-            .limit(100);
-          
-          const exactSlugMatch = allTours?.find(t => t.slug === tourId);
-          const similarSlugs = allTours?.filter(t => 
-            t.slug.toLowerCase().includes(tourId.toLowerCase()) || 
-            tourId.toLowerCase().includes(t.slug.toLowerCase())
-          ) || [];
-          
-          console.log('[API /tours/[id]] Tour lookup debug info:', {
-            requestedSlug: tourId,
-            exactMatch: exactSlugMatch ? { id: exactSlugMatch.id, slug: exactSlugMatch.slug, title: exactSlugMatch.title } : null,
-            similarSlugs: similarSlugs.map(t => ({ id: t.id, slug: t.slug, title: t.title })),
-            allSlugs: allTours?.map(t => t.slug) || [],
-            totalActiveTours: allTours?.length || 0
-          });
+            .eq('id', tourId)
+            .maybeSingle();
+          inactiveTour = data;
+        } else {
+          const { data } = await supabase
+            .from('tours')
+            .select('id, title, slug, city, is_active')
+            .eq('slug', decodedTourId)
+            .maybeSingle();
+          inactiveTour = data;
         }
+        
+        // Debug: Get all tours to help diagnose
+        const { data: allTours, error: allToursError } = await supabase
+          .from('tours')
+          .select('id, title, slug, city, is_active')
+          .limit(100);
+        
+        console.log('[API /tours/[id]] Debug info:', {
+          requestedTourId: tourId,
+          decodedTourId,
+          isUUID,
+          inactiveTour: inactiveTour || null,
+          allToursCount: allTours?.length || 0,
+          allToursError: allToursError?.message || null,
+          activeToursCount: allTours?.filter(t => t.is_active).length || 0,
+          inactiveToursCount: allTours?.filter(t => !t.is_active).length || 0,
+          matchingTours: isUUID 
+            ? allTours?.filter(t => t.id === tourId) || []
+            : allTours?.filter(t => t.slug === tourId || t.slug?.toLowerCase() === tourId.toLowerCase()) || []
+        });
         
         return ErrorResponses.notFound('Tour');
       }

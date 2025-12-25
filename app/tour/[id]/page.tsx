@@ -69,10 +69,12 @@ export default function TourDetailPage() {
   const router = useRouter();
   const t = useTranslations();
   
-  // Memoize tourId to prevent unnecessary re-renders
+  // Extract tourId directly from params - use useMemo to stabilize the value
   const tourId = useMemo(() => {
     const id = params?.id;
-    return typeof id === 'string' ? id : Array.isArray(id) ? id[0] : '';
+    if (typeof id === 'string') return id;
+    if (Array.isArray(id) && id.length > 0) return id[0];
+    return '';
   }, [params?.id]);
   
   const bookingRef = useRef<HTMLDivElement>(null);
@@ -82,27 +84,43 @@ export default function TourDetailPage() {
   const [error, setError] = useState<string | null>(null);
   const prevTourIdRef = useRef<string | null>(null);
   const fetchingRef = useRef(false); // Prevent concurrent fetches
+  const hasFetchedRef = useRef<string | null>(null); // Track which tourId has been fetched
 
   useEffect(() => {
     // Prevent duplicate fetches for the same tourId
     if (!tourId) {
-      setError('Tour ID is required');
-      setLoading(false);
+      if (error !== 'Tour ID is required') {
+        setError('Tour ID is required');
+        setLoading(false);
+      }
       fetchingRef.current = false;
       prevTourIdRef.current = null;
+      hasFetchedRef.current = null;
+      return;
+    }
+    
+    // If we've already successfully fetched this tour, don't fetch again
+    if (hasFetchedRef.current === tourId) {
       return;
     }
     
     // Reset previous tour when tourId changes
-    if (prevTourIdRef.current !== tourId) {
-      setTour(null);
-      setError(null);
-      prevTourIdRef.current = tourId;
-    } else {
-      // If same tourId and already fetching, don't fetch again
-      if (fetchingRef.current) {
-        return;
+    const tourIdChanged = prevTourIdRef.current !== tourId;
+    
+    if (tourIdChanged) {
+      // Only reset state if tourId actually changed
+      if (prevTourIdRef.current !== null) {
+        setTour(null);
+        setError(null);
       }
+      setLoading(true);
+      prevTourIdRef.current = tourId;
+      hasFetchedRef.current = null;
+    }
+    
+    // If already fetching, don't fetch again
+    if (fetchingRef.current) {
+      return;
     }
     
     fetchingRef.current = true;
@@ -224,6 +242,7 @@ export default function TourDetailPage() {
           setTour(transformedTour);
           setLoading(false);
           fetchingRef.current = false;
+          hasFetchedRef.current = tourId; // Mark this tourId as successfully fetched
         }
       } catch (err: any) {
         console.error('Error fetching tour:', err);
@@ -245,6 +264,8 @@ export default function TourDetailPage() {
       isMounted = false;
       fetchingRef.current = false;
     };
+    // Only depend on tourId, not on tour or error to prevent infinite loops
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tourId]);
 
   // Parse keywords from tour data (memoized to prevent infinite loops)

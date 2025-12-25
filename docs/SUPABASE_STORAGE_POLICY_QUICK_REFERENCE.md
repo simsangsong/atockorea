@@ -142,3 +142,6 @@
 4. ❌ `tour-gallery`에도 `tour-images`로 입력
    - ✅ bucket 이름을 정확히 입력
 
+
+
+

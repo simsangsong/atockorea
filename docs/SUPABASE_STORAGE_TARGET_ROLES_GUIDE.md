@@ -152,3 +152,6 @@ Target roles는 정책이 적용될 사용자 역할을 지정합니다. Supabas
 - Target roles: ✅ `authenticated` 선택
 - 드롭다운 클릭 → `authenticated` 찾아서 클릭
 
+
+
+

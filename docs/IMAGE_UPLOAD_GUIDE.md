@@ -202,3 +202,6 @@ curl -X DELETE "http://localhost:3000/api/upload?path=tours/1234567890-abc123.jp
 4. **이미지 최적화**: 업로드 전에 이미지를 최적화하면 로딩 속도가 빨라집니다
 
 
+
+
+
