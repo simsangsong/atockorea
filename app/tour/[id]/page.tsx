@@ -82,26 +82,46 @@ export default function TourDetailPage() {
       return;
     }
 
+    let isMounted = true; // Track if component is still mounted
+
     const fetchTour = async () => {
       try {
         setLoading(true);
+        setError(null); // Clear previous errors
         const apiUrl = typeof window !== 'undefined' 
           ? `${window.location.origin}/api/tours/${encodeURIComponent(tourId)}`
           : `/api/tours/${encodeURIComponent(tourId)}`;
-        const response = await fetch(apiUrl);
+        
+        const response = await fetch(apiUrl, {
+          cache: 'no-store', // Prevent caching
+        });
+        
+        if (!isMounted) return; // Don't update state if component unmounted
         
         if (!response.ok) {
           if (response.status === 404) {
             setError('Tour not found');
           } else {
-            const data = await response.json();
-            setError(data.error || 'Failed to fetch tour');
+            try {
+              const errorData = await response.json();
+              setError(errorData.error || 'Failed to fetch tour');
+            } catch {
+              setError(`Failed to fetch tour (${response.status})`);
+            }
           }
           setLoading(false);
           return;
         }
 
         const data = await response.json();
+        
+        if (!isMounted) return; // Don't update state if component unmounted
+        
+        if (!data.tour) {
+          setError('Tour data not found in response');
+          setLoading(false);
+          return;
+        }
         
         // Helper function to remove recommended routes from any text field
         const removeRoutes = (text: string | null | undefined): string => {
@@ -167,16 +187,25 @@ export default function TourDetailPage() {
           faqs: data.tour.faqs || [],
         };
 
-        setTour(transformedTour);
+        if (isMounted) {
+          setTour(transformedTour);
+          setLoading(false);
+        }
       } catch (err: any) {
         console.error('Error fetching tour:', err);
-        setError('Failed to load tour. Please try again later.');
-      } finally {
-        setLoading(false);
+        if (isMounted) {
+          setError('Failed to load tour. Please try again later.');
+          setLoading(false);
+        }
       }
     };
 
     fetchTour();
+    
+    // Cleanup function to prevent state updates after unmount
+    return () => {
+      isMounted = false;
+    };
   }, [tourId]);
 
   // Parse keywords from tour data (memoized to prevent infinite loops)
