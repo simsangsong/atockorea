@@ -5,6 +5,7 @@ import { handleApiError, ErrorResponses } from '@/lib/error-handler';
 // Force dynamic rendering to ensure fresh data
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
+export const runtime = 'nodejs';
 
 /**
  * GET /api/tours/[id]
