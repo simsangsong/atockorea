@@ -69,6 +69,7 @@ export async function GET(req: NextRequest) {
         final_price,
         status,
         payment_status,
+        pickup_point_id,
         tours (
           id,
           title
@@ -77,6 +78,11 @@ export async function GET(req: NextRequest) {
           id,
           full_name,
           email
+        ),
+        pickup_points (
+          id,
+          name,
+          address
         )
       `)
       .order('created_at', { ascending: false })

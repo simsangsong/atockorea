@@ -441,8 +441,8 @@ export default function ProductsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Product Management</h1>
-          <p className="text-gray-600 mt-2">Manage all tours and products</p>
+          <h1 className="text-2xl font-bold text-gray-900">상품 관리</h1>
+          <p className="text-sm text-gray-600 mt-1">모든 투어 및 상품 관리</p>
         </div>
         <div className="flex gap-3">
           <button
@@ -660,17 +660,24 @@ export default function ProductsPage() {
             {/* Tabs */}
             <div className="border-b border-gray-200 px-6">
               <div className="flex gap-1">
-                {['basic', 'pricing', 'images', 'details', 'pickup', 'content'].map((tab) => (
+                {[
+                  { id: 'basic', label: '기본 정보' },
+                  { id: 'pricing', label: '가격' },
+                  { id: 'images', label: '이미지' },
+                  { id: 'details', label: '상세 정보' },
+                  { id: 'pickup', label: '픽업장소' },
+                  { id: 'content', label: '콘텐츠' }
+                ].map((tab) => (
                   <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    className={`px-4 py-2 text-sm font-medium capitalize transition-colors ${
-                      activeTab === tab
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`px-4 py-2 text-sm font-medium transition-colors ${
+                      activeTab === tab.id
                         ? 'text-indigo-600 border-b-2 border-indigo-600'
                         : 'text-gray-500 hover:text-gray-700'
                     }`}
                   >
-                    {tab === 'basic' ? 'Basic Info' : tab === 'pricing' ? 'Pricing' : tab === 'images' ? 'Images' : tab === 'details' ? 'Details' : tab === 'pickup' ? 'Pickup Points' : 'Content'}
+                    {tab.label}
                   </button>
                 ))}
               </div>
@@ -1065,15 +1072,15 @@ export default function ProductsPage() {
               {activeTab === 'pickup' && (
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Pickup Points
+                    <label className="block text-sm font-semibold text-gray-900 mb-3">
+                      픽업장소 관리
                     </label>
                     <div className="space-y-4">
                       {(formData.pickup_points || []).map((point, index) => (
-                        <div key={index} className="border border-gray-200 rounded-lg p-4">
-                          <div className="grid grid-cols-2 gap-4 mb-2">
+                        <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50/50">
+                          <div className="grid grid-cols-2 gap-4 mb-3">
                             <div>
-                              <label className="block text-xs font-medium text-gray-600 mb-1">Name</label>
+                              <label className="block text-xs font-medium text-gray-700 mb-1.5">장소명</label>
                               <input
                                 type="text"
                                 value={point.name}
@@ -1082,11 +1089,12 @@ export default function ProductsPage() {
                                   updated[index] = { ...updated[index], name: e.target.value };
                                   setFormData({ ...formData, pickup_points: updated });
                                 }}
-                                className="w-full px-2 py-1 text-sm border border-gray-300 rounded"
+                                placeholder="예: 제주공항, 호텔 로비"
+                                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                               />
                             </div>
                             <div>
-                              <label className="block text-xs font-medium text-gray-600 mb-1">Pickup Time</label>
+                              <label className="block text-xs font-medium text-gray-700 mb-1.5">픽업 시간</label>
                               <input
                                 type="time"
                                 value={point.pickup_time || ''}
@@ -1095,12 +1103,12 @@ export default function ProductsPage() {
                                   updated[index] = { ...updated[index], pickup_time: e.target.value };
                                   setFormData({ ...formData, pickup_points: updated });
                                 }}
-                                className="w-full px-2 py-1 text-sm border border-gray-300 rounded"
+                                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                               />
                             </div>
                           </div>
-                          <div className="mb-2">
-                            <label className="block text-xs font-medium text-gray-600 mb-1">Address</label>
+                          <div className="mb-3">
+                            <label className="block text-xs font-medium text-gray-700 mb-1.5">주소</label>
                             <input
                               type="text"
                               value={point.address}
@@ -1109,7 +1117,8 @@ export default function ProductsPage() {
                                 updated[index] = { ...updated[index], address: e.target.value };
                                 setFormData({ ...formData, pickup_points: updated });
                               }}
-                              className="w-full px-2 py-1 text-sm border border-gray-300 rounded"
+                              placeholder="주소를 입력하거나 지도에서 선택하세요"
+                              className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             />
                           </div>
                           <button
@@ -1117,13 +1126,14 @@ export default function ProductsPage() {
                               const updated = (formData.pickup_points || []).filter((_, i) => i !== index);
                               setFormData({ ...formData, pickup_points: updated });
                             }}
-                            className="text-red-600 text-sm hover:text-red-800"
+                            className="px-3 py-1.5 text-xs font-medium text-red-600 bg-red-50 rounded-lg hover:bg-red-100 transition-colors"
                           >
-                            Remove
+                            삭제
                           </button>
                         </div>
                       ))}
-                      <div className="border-2 border-dashed border-gray-300 rounded-lg p-4">
+                      <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 bg-gray-50/30">
+                        <p className="text-xs font-medium text-gray-700 mb-2">새 픽업장소 추가</p>
                         <PickupPointSelector
                           onLocationSelect={(location) => {
                             const newPoint = {
@@ -1142,7 +1152,7 @@ export default function ProductsPage() {
                           height="300px"
                         />
                         <p className="text-xs text-gray-500 mt-2">
-                          Search for a location on the map above to add a new pickup point
+                          지도에서 위치를 검색하여 새 픽업장소를 추가하세요
                         </p>
                       </div>
                     </div>
