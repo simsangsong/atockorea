@@ -111,7 +111,6 @@ export async function GET(
       
       if (tourCaseInsensitive && !errorCaseInsensitive) {
         console.log('[API /tours/[id]] Found tour with case-insensitive slug match');
-        // Use the case-insensitive match result
         tour = tourCaseInsensitive;
         tourError = null;
         console.log('[API /tours/[id]] Using case-insensitive match result, slug:', tour.slug);
@@ -208,9 +207,9 @@ export async function GET(
       price: parseFloat(tour.price.toString()),
       originalPrice: tour.original_price ? parseFloat(tour.original_price.toString()) : null,
       priceType: tour.price_type,
-      availableSpots: undefined, // Will be checked per date in frontend
-      depositAmountUSD: 20, // TODO: Get from tour settings or merchant settings
-      balanceAmountKRW: 50000, // TODO: Get from tour settings or merchant settings
+      availableSpots: undefined,
+      depositAmountUSD: 20,
+      balanceAmountKRW: 50000,
       duration: tour.duration || '',
       difficulty: tour.difficulty || '',
       groupSize: tour.group_size || '',
