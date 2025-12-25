@@ -81,13 +81,25 @@ export default function TourDetailPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const prevTourIdRef = useRef<string | null>(null);
+  const fetchingRef = useRef(false); // Prevent concurrent fetches
 
   useEffect(() => {
     // Prevent duplicate fetches for the same tourId
-    if (prevTourIdRef.current === tourId) {
+    if (!tourId || prevTourIdRef.current === tourId) {
+      if (!tourId) {
+        setError('Tour ID is required');
+        setLoading(false);
+      }
       return;
     }
+    
+    // Prevent concurrent fetches
+    if (fetchingRef.current) {
+      return;
+    }
+    
     prevTourIdRef.current = tourId;
+    fetchingRef.current = true;
     if (!tourId) {
       setError('Tour ID is required');
       setLoading(false);
@@ -202,12 +214,14 @@ export default function TourDetailPage() {
         if (isMounted) {
           setTour(transformedTour);
           setLoading(false);
+          fetchingRef.current = false;
         }
       } catch (err: any) {
         console.error('Error fetching tour:', err);
         if (isMounted) {
           setError('Failed to load tour. Please try again later.');
           setLoading(false);
+          fetchingRef.current = false;
         }
       }
     };
@@ -217,6 +231,7 @@ export default function TourDetailPage() {
     // Cleanup function to prevent state updates after unmount
     return () => {
       isMounted = false;
+      fetchingRef.current = false;
     };
   }, [tourId]);
 
