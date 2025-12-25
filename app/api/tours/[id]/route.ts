@@ -14,11 +14,11 @@ export const revalidate = 0;
  */
 export async function GET(
   req: NextRequest,
-  { params }: { params: Promise<{ id: string }> | { id: string } }
+  { params }: { params: { id: string } | Promise<{ id: string }> }
 ) {
   try {
-    // Handle Next.js 14 params as Promise
-    const resolvedParams = params instanceof Promise ? await params : params;
+    // Handle Next.js params (may be Promise in Next.js 15+)
+    const resolvedParams = await Promise.resolve(params);
     const tourId = resolvedParams.id;
 
     if (!tourId) {
@@ -296,14 +296,14 @@ export async function GET(
  */
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: Promise<{ id: string }> | { id: string } }
+  { params }: { params: { id: string } | Promise<{ id: string }> }
 ) {
   try {
     const { requireAdmin } = await import('@/lib/auth');
     await requireAdmin(req);
     
     const supabase = createServerClient();
-    const resolvedParams = params instanceof Promise ? await params : params;
+    const resolvedParams = await Promise.resolve(params);
     const tourId = resolvedParams.id;
     const body = await req.json();
 
@@ -362,14 +362,14 @@ export async function PATCH(
  */
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: Promise<{ id: string }> | { id: string } }
+  { params }: { params: { id: string } | Promise<{ id: string }> }
 ) {
   try {
     const { requireAdmin } = await import('@/lib/auth');
     await requireAdmin(req);
     
     const supabase = createServerClient();
-    const resolvedParams = params instanceof Promise ? await params : params;
+    const resolvedParams = await Promise.resolve(params);
     const tourId = resolvedParams.id;
 
     if (!tourId) {
