@@ -86,3 +86,5 @@ npm run build
 - `app/api/tours/route.ts` - 정상 작동하는 비교 파일
 - `app/api/admin/emails/[id]/route.ts` - 다른 동적 라우트 (비교용)
 
+
+

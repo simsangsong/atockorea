@@ -78,3 +78,5 @@ CREATE POLICY "Only admins can update contact inquiries"
     )
   );
 
+
+

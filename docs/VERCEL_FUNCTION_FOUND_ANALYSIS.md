@@ -77,3 +77,5 @@ Vercel Dashboard에서 직접 Function 호출해보기
 
 이는 Next.js의 내부 라우팅 로직 문제일 가능성이 높습니다.
 
+
+

@@ -72,3 +72,5 @@ npm run build
 2. ✅ 다른 API 엔드포인트가 작동하는지 테스트
 3. ✅ 로컬에서 `npm run build` 실행하여 API 라우트가 빌드되는지 확인
 
+
+

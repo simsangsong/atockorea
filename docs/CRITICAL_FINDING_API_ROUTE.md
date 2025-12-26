@@ -69,3 +69,5 @@ app/api/tours/[id]/route.ts
 - `app/api/tours/route.ts` - 정상 작동하는 목록 API (비교용)
 - `scripts/test-all-production-apis.js` - 테스트 스크립트
 
+
+

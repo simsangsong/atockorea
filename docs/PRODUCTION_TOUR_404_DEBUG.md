@@ -163,3 +163,5 @@ node scripts/check-tour-in-production.js d7691042-120b-4699-90b7-9cd0ac013898
 - `scripts/test-production-tour-api.js` - 프로덕션 API 테스트 스크립트
 - `scripts/check-tour-in-production.js` - 로컬 DB 진단 스크립트
 
+
+

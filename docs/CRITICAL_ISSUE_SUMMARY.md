@@ -74,3 +74,5 @@ const tour = allTours.tours.find(t => t.id === tourId);
 
 **권장 조치:** Vercel 지원팀에 문의하여 플랫폼 레벨 이슈인지 확인
 
+
+

@@ -139,3 +139,5 @@ async function updateContact(req: NextRequest, user: any) {
 export const GET = withAuth(getContacts);
 export const PATCH = withAuth(updateContact);
 
+
+

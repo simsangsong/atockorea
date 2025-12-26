@@ -161,3 +161,5 @@ Supabase Dashboard → Table Editor → tours 테이블에서 해당 투어 ID �
 2. **원인 파악:** 로그 내용에 따라 위의 해결 방법 적용
 3. **검증:** 문제 해결 후 프로덕션에서 테스트
 
+
+
