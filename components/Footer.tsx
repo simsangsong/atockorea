@@ -77,22 +77,22 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-2 sm:mb-3 text-xs sm:text-sm">{t('home.footer.aboutUs')}</h3>
             <ul className="space-y-1 sm:space-y-1.5 text-[10px] sm:text-xs">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/about" className="hover:text-white transition-colors">
                   {t('home.footer.ourStory')}
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/about" className="hover:text-white transition-colors">
                   {t('home.footer.whyChooseUs')}
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/about" className="hover:text-white transition-colors">
                   {t('home.footer.partners')}
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/about" className="hover:text-white transition-colors">
                   {t('home.footer.careers')}
                 </a>
               </li>
@@ -104,17 +104,17 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-2 sm:mb-3 text-xs sm:text-sm">{t('home.footer.support')}</h3>
             <ul className="space-y-1 sm:space-y-1.5 text-[10px] sm:text-xs">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/support" className="hover:text-white transition-colors">
                   {t('home.footer.bookingHelp')}
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/support" className="hover:text-white transition-colors">
                   {t('home.footer.contactUs')}
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/support" className="hover:text-white transition-colors">
                   {t('home.footer.faq')}
                 </a>
               </li>
@@ -126,17 +126,17 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-2 sm:mb-3 text-xs sm:text-sm">{t('home.footer.legal')}</h3>
             <ul className="space-y-1 sm:space-y-1.5 text-[10px] sm:text-xs">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/legal" className="hover:text-white transition-colors">
                   {t('home.footer.terms')}
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/legal" className="hover:text-white transition-colors">
                   {t('home.footer.privacy')}
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/legal" className="hover:text-white transition-colors">
                   {t('home.footer.cookies')}
                 </a>
               </li>
