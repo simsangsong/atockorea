@@ -9,6 +9,14 @@
     {
       "source": "/api/tours/:id",
       "destination": "/api/tours/[id]"
+    },
+    {
+      "source": "/api/tours/:id/availability",
+      "destination": "/api/tours/[id]/availability"
+    },
+    {
+      "source": "/api/tours/:id/availability/range",
+      "destination": "/api/tours/[id]/availability/range"
     }
   ]
 }
