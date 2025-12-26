@@ -4,6 +4,12 @@
       "path": "/api/emails/reminders",
       "schedule": "0 9 * * *"
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/tours/:id",
+      "destination": "/api/tours/[id]"
+    }
   ]
 }
 
