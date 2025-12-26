@@ -92,9 +92,19 @@ Vercel Dashboard → Project → Functions 탭
 - `/api/tours/[id]` Function이 실제로 생성되었는지 확인
 - 호출 시 에러 로그 확인
 
-### 2. Vercel 빌드 캐시 삭제
+### 2. Vercel 캐시 삭제
+
+**방법 1: Caches 섹션에서 삭제**
 ```
-Vercel Dashboard → Project → Settings → General → Clear Build Cache
+Vercel Dashboard → Project (atockorea) → Settings → Caches
+- "Purge CDN Cache" 버튼 클릭
+- "Purge Data Cache" 버튼 클릭
+```
+
+**방법 2: Build and Deployment에서 빌드 캐시 삭제**
+```
+Vercel Dashboard → Project → Settings → Build and Deployment
+- "Clear Build Cache" 옵션 찾기
 ```
 
 ### 3. Next.js 버전 확인
