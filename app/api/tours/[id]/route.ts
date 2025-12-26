@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
-import { handleApiError, ErrorResponses } from '@/lib/error-handler';
+import { withErrorHandler, AppError, ErrorResponses } from '@/lib/error-handler';
+import { createServerLogger } from '@/lib/logger';
 
 // Force dynamic rendering to ensure fresh data
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
-export const runtime = 'nodejs';
 
 /**
  * GET /api/tours/[id]
@@ -13,40 +13,19 @@ export const runtime = 'nodejs';
  * 
  * This endpoint handles both UUID and slug-based tour lookups.
  */
-export async function GET(
+export const GET = withErrorHandler(async (
   req: NextRequest,
   { params }: { params: { id: string } }
-) {
-  try {
-    const tourId = params.id;
+) => {
+  const logger = createServerLogger(req);
+  const tourId = params.id;
 
     if (!tourId) {
-      console.error('[API /tours/[id]] Tour ID is missing');
-      return ErrorResponses.validationError('Tour ID is required');
+      throw new AppError('Tour ID is required', 400, 'VALIDATION_ERROR');
     }
 
-    // Create Supabase client with error handling
-    let supabase;
-    try {
-      supabase = createServerClient();
-    } catch (supabaseError: any) {
-      console.error('[API /tours/[id]] Supabase client creation failed:', {
-        error: supabaseError.message,
-        hasUrl: !!process.env.NEXT_PUBLIC_SUPABASE_URL,
-        hasServiceKey: !!process.env.SUPABASE_SERVICE_ROLE_KEY,
-        url: req.url
-      });
-      return NextResponse.json(
-        {
-          error: 'Database connection failed. Please check environment variables.',
-          code: 'SUPABASE_CONNECTION_ERROR',
-          details: process.env.NODE_ENV === 'development' ? supabaseError.message : undefined
-        },
-        { status: 500 }
-      );
-    }
-
-    console.log('[API /tours/[id]] Fetching tour:', { tourId, url: req.url });
+    const supabase = createServerClient();
+    logger.info('Fetching tour', { tourId });
 
     // Try to fetch by ID first (UUID), then by slug if not found
     let query = supabase
@@ -70,27 +49,17 @@ export async function GET(
     // Decode URL-encoded slug
     const decodedTourId = decodeURIComponent(tourId);
     
-    console.log('[API /tours/[id]] Query params:', { 
-      tourId, 
-      decodedTourId,
-      isUUID, 
-      url: req.url 
-    });
-    
     if (isUUID) {
       query = query.eq('id', tourId);
-      console.log('[API /tours/[id]] Querying by UUID:', tourId);
     } else {
       // Use exact match first (case-sensitive for slug)
       query = query.eq('slug', decodedTourId);
-      console.log('[API /tours/[id]] Querying by slug (exact):', decodedTourId);
     }
 
     let { data: tour, error: tourError } = await query.single();
     
     // If exact match fails and it's a slug, try case-insensitive search
     if (tourError && !isUUID && tourError.code === 'PGRST116') {
-      console.log('[API /tours/[id]] Exact slug match failed, trying case-insensitive:', decodedTourId);
       const { data: tourCaseInsensitive, error: errorCaseInsensitive } = await supabase
         .from('tours')
         .select(`
@@ -109,89 +78,24 @@ export async function GET(
         .single();
       
       if (tourCaseInsensitive && !errorCaseInsensitive) {
-        console.log('[API /tours/[id]] Found tour with case-insensitive slug match');
         tour = tourCaseInsensitive;
         tourError = null;
-        console.log('[API /tours/[id]] Using case-insensitive match result, slug:', tour.slug);
       }
     }
 
     if (tourError || !tour) {
-      console.error('[API /tours/[id]] Tour fetch error:', { 
-        tourId, 
-        error: tourError?.message, 
-        code: tourError?.code,
-        details: tourError,
-        isUUID,
-        url: req.url
-      });
-      
       if (tourError?.code === 'PGRST116') {
-        console.log('[API /tours/[id]] Tour not found (PGRST116):', tourId);
-        
-        // Debug: Check if tour exists but is inactive (bypass is_active filter)
-        let inactiveTour = null;
-        if (isUUID) {
-          const { data } = await supabase
-            .from('tours')
-            .select('id, title, slug, city, is_active')
-            .eq('id', tourId)
-            .maybeSingle();
-          inactiveTour = data;
-        } else {
-          const { data } = await supabase
-            .from('tours')
-            .select('id, title, slug, city, is_active')
-            .eq('slug', decodedTourId)
-            .maybeSingle();
-          inactiveTour = data;
-        }
-        
-        // Debug: Get all tours to help diagnose
-        const { data: allTours, error: allToursError } = await supabase
-          .from('tours')
-          .select('id, title, slug, city, is_active')
-          .limit(100);
-        
-        const debugInfo = {
-          requestedTourId: tourId,
-          decodedTourId,
-          isUUID,
-          inactiveTour: inactiveTour || null,
-          allToursCount: allTours?.length || 0,
-          allToursError: allToursError?.message || null,
-          activeToursCount: allTours?.filter(t => t.is_active).length || 0,
-          inactiveToursCount: allTours?.filter(t => !t.is_active).length || 0,
-          matchingTours: isUUID 
-            ? allTours?.filter(t => t.id === tourId) || []
-            : allTours?.filter(t => t.slug === tourId || t.slug?.toLowerCase() === tourId.toLowerCase()) || []
-        };
-        
-        console.log('[API /tours/[id]] Debug info:', debugInfo);
-        
-        // Include helpful debug info in development
-        const isDevelopment = process.env.NODE_ENV === 'development';
-        return NextResponse.json(
-          {
-            error: 'Tour not found',
-            code: 'NOT_FOUND',
-            ...(isDevelopment && { debug: debugInfo }),
-            ...(inactiveTour && { 
-              hint: 'Tour exists but is inactive (is_active = false). Activate it to make it accessible.' 
-            })
-          },
-          { status: 404 }
-        );
+        throw new AppError('Tour not found', 404, 'NOT_FOUND');
       }
-      throw tourError || new Error('Tour not found');
+      logger.error('Error fetching tour', undefined, { 
+        tourId, 
+        error: tourError?.message,
+        code: tourError?.code 
+      });
+      throw new AppError('Failed to fetch tour', 500, 'TOUR_FETCH_ERROR', tourError?.message);
     }
 
-    console.log('[API /tours/[id]] Tour found:', { 
-      id: tour.id, 
-      title: tour.title, 
-      slug: tour.slug,
-      city: tour.city 
-    });
+    logger.info('Tour found', { id: tour.id, title: tour.title });
 
     // Transform data to match frontend expectations
     const transformedTour = {
@@ -270,43 +174,28 @@ export async function GET(
       faqs: Array.isArray(tour.faqs) ? tour.faqs : [],
     };
 
-    console.log('[API /tours/[id]] Returning transformed tour:', { 
-      id: transformedTour.id, 
-      title: transformedTour.title,
-      hasImages: transformedTour.images?.length > 0,
-      hasFaqs: transformedTour.faqs?.length > 0
-    });
-
     return NextResponse.json({ tour: transformedTour });
-  } catch (error: any) {
-    console.error('[API /tours/[id]] Unexpected error:', {
-      message: error.message,
-      stack: error.stack,
-      url: req.url
-    });
-    return handleApiError(error, req);
-  }
-}
+});
 
 /**
  * PATCH /api/tours/[id]
  * Update a tour (Admin only)
  */
-export async function PATCH(
+export const PATCH = withErrorHandler(async (
   req: NextRequest,
   { params }: { params: { id: string } }
-) {
-  try {
-    const { requireAdmin } = await import('@/lib/auth');
-    await requireAdmin(req);
-    
-    const supabase = createServerClient();
-    const tourId = params.id;
-    const body = await req.json();
+) => {
+  const { requireAdmin } = await import('@/lib/auth');
+  await requireAdmin(req);
+  
+  const logger = createServerLogger(req);
+  const supabase = createServerClient();
+  const tourId = params.id;
+  const body = await req.json();
 
-    if (!tourId) {
-      return ErrorResponses.validationError('Tour ID is required');
-    }
+  if (!tourId) {
+    throw new AppError('Tour ID is required', 400, 'VALIDATION_ERROR');
+  }
 
     // Prepare update data
     const updateData: any = {};
@@ -337,66 +226,58 @@ export async function PATCH(
       .single();
 
     if (updateError) {
-      return handleApiError(updateError);
+      logger.error('Error updating tour', undefined, { error: updateError.message });
+      throw new AppError('Failed to update tour', 500, 'TOUR_UPDATE_ERROR', updateError.message);
     }
 
+    logger.info('Tour updated successfully', { tourId });
     return NextResponse.json({
       success: true,
       data: tour,
       message: 'Tour updated successfully',
     });
-  } catch (error: any) {
-    if (error.message === 'Unauthorized' || error.message.includes('Forbidden')) {
-      return ErrorResponses.forbidden('Admin access required');
-    }
-    return handleApiError(error, req);
-  }
-}
+});
 
 /**
  * DELETE /api/tours/[id]
  * Delete a tour (Admin only)
  */
-export async function DELETE(
+export const DELETE = withErrorHandler(async (
   req: NextRequest,
   { params }: { params: { id: string } }
-) {
-  try {
-    const { requireAdmin } = await import('@/lib/auth');
-    await requireAdmin(req);
-    
-    const supabase = createServerClient();
-    const tourId = params.id;
+) => {
+  const { requireAdmin } = await import('@/lib/auth');
+  await requireAdmin(req);
+  
+  const logger = createServerLogger(req);
+  const supabase = createServerClient();
+  const tourId = params.id;
 
-    if (!tourId) {
-      return ErrorResponses.validationError('Tour ID is required');
-    }
-
-    // Delete pickup points first
-    await supabase
-      .from('pickup_points')
-      .delete()
-      .eq('tour_id', tourId);
-
-    // Delete the tour
-    const { error: deleteError } = await supabase
-      .from('tours')
-      .delete()
-      .eq('id', tourId);
-
-    if (deleteError) {
-      return handleApiError(deleteError);
-    }
-
-    return NextResponse.json({
-      success: true,
-      message: 'Tour deleted successfully',
-    });
-  } catch (error: any) {
-    if (error.message === 'Unauthorized' || error.message.includes('Forbidden')) {
-      return ErrorResponses.forbidden('Admin access required');
-    }
-    return handleApiError(error, req);
+  if (!tourId) {
+    throw new AppError('Tour ID is required', 400, 'VALIDATION_ERROR');
   }
-}
+
+  // Delete pickup points first
+  await supabase
+    .from('pickup_points')
+    .delete()
+    .eq('tour_id', tourId);
+
+  // Delete the tour
+  const { error: deleteError } = await supabase
+    .from('tours')
+    .delete()
+    .eq('id', tourId);
+
+  if (deleteError) {
+    logger.error('Error deleting tour', undefined, { error: deleteError.message });
+    throw new AppError('Failed to delete tour', 500, 'TOUR_DELETE_ERROR', deleteError.message);
+  }
+
+  logger.info('Tour deleted successfully', { tourId });
+  return NextResponse.json({
+    success: true,
+    message: 'Tour deleted successfully',
+  });
+});
 
