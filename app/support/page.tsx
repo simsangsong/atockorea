@@ -38,7 +38,7 @@ export default function SupportPage() {
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li><strong>Email:</strong> <a href="mailto:support@atockorea.com" className="text-blue-600 hover:underline">support@atockorea.com</a></li>
-                <li><strong>Website contact form</strong></li>
+                <li><strong>Website contact form:</strong> <a href="/contact" className="text-blue-600 hover:underline">Contact Us</a></li>
               </ul>
               <p>
                 We aim to respond within 24–48 business hours.
