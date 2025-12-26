@@ -31,8 +31,11 @@
    ```
    http://localhost:3000/*
    https://atockorea.com/*
+   https://www.atockorea.com/*
    https://*.vercel.app/*
    ```
+   
+   ⚠️ **重要:** `www.atockorea.com` 和 `atockorea.com` **都需要**添加！
 
 3. **格式说明：**
    - `http://localhost:3000/*` - 本地开发环境
