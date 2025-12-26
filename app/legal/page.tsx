@@ -65,6 +65,17 @@ export default function LegalPage() {
               </p>
             </div>
           </section>
+
+          {/* DSA Information */}
+          <section>
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">DSA (EU) Information</h2>
+            <div className="bg-white rounded-lg shadow-md p-6 space-y-4 text-gray-700">
+              <p>
+                For information according to the Digital Services Act (EU), please visit our{' '}
+                <a href="/dsa" className="text-blue-600 hover:underline">DSA Information page</a>.
+              </p>
+            </div>
+          </section>
         </div>
       </main>
       <Footer />

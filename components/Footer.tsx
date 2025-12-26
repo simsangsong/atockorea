@@ -140,8 +140,20 @@ export default function Footer() {
                   {t('home.footer.cookies')}
                 </a>
               </li>
+              <li>
+                <a href="/refund-policy" className="hover:text-white transition-colors">
+                  Refund Policy
+                </a>
+              </li>
             </ul>
           </div>
+        </div>
+
+        {/* Legal Summary */}
+        <div className="text-center text-xs text-gray-400 mb-4 pt-4 border-t border-gray-800">
+          <p>
+            ATOC KOREA LLC operates solely as a booking intermediary and does not provide tour services. Tours are delivered by independent third-party providers.
+          </p>
         </div>
 
         {/* Copyright */}
