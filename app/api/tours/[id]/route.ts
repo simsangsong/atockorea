@@ -217,6 +217,7 @@ export const PATCH = withErrorHandler(async (
     if (body.excludes !== undefined) updateData.excludes = body.excludes;
     if (body.schedule !== undefined) updateData.schedule = body.schedule;
     if (body.faqs !== undefined) updateData.faqs = body.faqs;
+    if (body.translations !== undefined) updateData.translations = body.translations;
 
     const { data: tour, error: updateError } = await supabase
       .from('tours')

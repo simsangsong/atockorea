@@ -144,7 +144,7 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
           {/* LEFT: 38% - 위 절반 사진 + 아래 절반 제목/가격 */}
           <div className="flex flex-col w-[38%] flex-shrink-0">
             {/* 위 절반: 이미지 */}
-            <div className="relative w-full flex-1 min-h-[97px]">
+            <div className="relative w-full h-[97px]">
               <Link href={`/tour/${tour.id}`}>
                 <Image
                   src={tour.image || '/placeholder-tour.jpg'}
@@ -260,13 +260,14 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
       <article className="hidden sm:block bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
         <div className="flex flex-row gap-4 p-4">
           {/* Image */}
-          <div className="w-48 h-48 flex-shrink-0 relative rounded-lg overflow-hidden">
+          <div className="w-48 h-48 flex-shrink-0 relative rounded-lg overflow-hidden bg-gray-100">
             <Link href={`/tour/${tour.id}`}>
               <Image
                 src={tour.image || '/placeholder-tour.jpg'}
                 alt={tour.title}
                 fill
                 className="object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                sizes="192px"
                 sizes="192px"
                 loading="lazy"
               />
