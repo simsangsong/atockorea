@@ -268,7 +268,6 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
                 fill
                 className="object-cover cursor-pointer hover:opacity-90 transition-opacity"
                 sizes="192px"
-                sizes="192px"
                 loading="lazy"
               />
             </Link>
