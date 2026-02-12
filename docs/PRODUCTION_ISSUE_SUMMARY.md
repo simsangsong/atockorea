@@ -163,3 +163,6 @@ Supabase Dashboard → Table Editor → tours 테이블에서 해당 투어 ID �
 
 
 
+
+
+

@@ -15,10 +15,6 @@ export default function Footer() {
           <p className="text-xs mb-3">
             {t('home.footer.description')}
           </p>
-          <div className="space-y-1 text-xs">
-            <p>{t('home.footer.businessReg')}: 09898099</p>
-            <p>{t('home.footer.ecommerceReg')}: Jeju Yeondong-0000</p>
-          </div>
         </div>
 
         {/* Contact & Payment Info - Single Row */}
@@ -27,7 +23,7 @@ export default function Footer() {
             {/* Address */}
             <div>
               <p className="text-xs">
-                <span className="font-semibold">{t('home.footer.address')}:</span> Yeondong, Jeju City, xxxx, xxho
+                <span className="font-semibold">{t('home.footer.address')}:</span> 302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do
               </p>
             </div>
             {/* Contact */}
@@ -36,7 +32,8 @@ export default function Footer() {
                 <span className="font-semibold">{t('home.footer.contact')}:</span> 010-8973-0913
               </p>
               <p className="text-xs">
-                <span className="font-semibold">{t('home.footer.email')}:</span> support@atoc.kr
+                <span className="font-semibold">{t('home.footer.email')}:</span>{' '}
+                <a href="https://atockorea.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">atockorea.com</a>
               </p>
             </div>
             {/* Payment Methods */}

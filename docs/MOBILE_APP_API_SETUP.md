@@ -146,3 +146,6 @@ const config: CapacitorConfig = {
 
 
 
+
+
+
