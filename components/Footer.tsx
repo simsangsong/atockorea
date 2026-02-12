@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useTranslations } from '@/lib/i18n';
 
 export default function Footer() {
@@ -17,9 +16,9 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Contact & Payment Info - Single Row */}
+        {/* Contact Info - Single Row */}
         <div className="mb-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Address */}
             <div>
               <p className="text-xs">
@@ -35,34 +34,6 @@ export default function Footer() {
                 <span className="font-semibold">{t('home.footer.email')}:</span>{' '}
                 <a href="https://atockorea.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">atockorea.com</a>
               </p>
-            </div>
-            {/* Payment Methods */}
-            <div>
-              <p className="text-xs mb-2 font-semibold">{t('home.footer.securePayment')}</p>
-              <div className="flex items-center gap-3">
-                {/* PayPal Logo */}
-                <div className="px-3 py-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center justify-center h-10 min-w-[80px]">
-                  <Image
-                    src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
-                    alt="PayPal"
-                    width={80}
-                    height={22}
-                    style={{ width: 'auto', height: 'auto' }}
-                    className="object-contain max-w-full max-h-full"
-                  />
-                </div>
-                {/* Stripe Logo */}
-                <div className="px-3 py-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center justify-center h-10 min-w-[60px]">
-                  <Image
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Stripe_logo%2C_revised_2014.png/960px-Stripe_logo%2C_revised_2014.png"
-                    alt="Stripe"
-                    width={60}
-                    height={20}
-                    style={{ width: 'auto', height: 'auto' }}
-                    className="object-contain max-w-full max-h-full"
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </div>
