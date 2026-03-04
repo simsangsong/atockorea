@@ -218,8 +218,10 @@ export default function AdminContactsPage() {
   return (
     <div className="space-y-5">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Contact Inquiries</h1>
-        <p className="text-sm text-gray-600 mt-1">Manage customer contact form submissions</p>
+        <h1 className="text-2xl font-bold text-gray-900">문의 관리</h1>
+        <p className="text-sm text-gray-600 mt-1">
+          support@atockorea.com 으로 접수된 문의입니다. 사이트 Contact 폼 제출 건이 여기에 표시됩니다.
+        </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">

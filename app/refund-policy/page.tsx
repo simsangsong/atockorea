@@ -3,73 +3,103 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
+import { useTranslations } from '@/lib/i18n';
 
 export default function RefundPolicyPage() {
+  const t = useTranslations();
   return (
     <>
       <Header />
       <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 pt-20 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">Refund Policy</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">{t('refund.title')}</h1>
+          <p className="text-sm text-gray-500 mb-8">{t('refund.lastUpdated')}: March 2025</p>
 
           <div className="bg-white rounded-lg shadow-md p-6 sm:p-8 space-y-6 text-gray-700">
-            <p>
-              This Refund Policy applies to booking and reservation services facilitated through the platform.
-            </p>
-            <p className="font-semibold text-gray-900">
-              ATOC KOREA LLC acts solely as an intermediary and does not provide tour services directly. Tour services are provided by independent third-party tour operators.
-            </p>
+            <p>{t('refund.intro')}</p>
+            <p className="font-semibold text-gray-900">{t('refund.scope')}</p>
 
-            {/* Booking Fees vs. Tour Fees */}
+            {/* Definitions */}
             <section>
-              <h2 className="text-xl font-semibold text-gray-900 mb-3">Booking Fees vs. Tour Fees</h2>
-              <p className="mb-3">Payments made through the platform may include:</p>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">{t('refund.definitions.title')}</h2>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Booking / reservation service fees (platform services)</li>
-                <li>Tour service fees (provided by third-party tour operators)</li>
-              </ul>
-              <p className="mt-3">These components may be subject to different refund rules.</p>
-            </section>
-
-            {/* Platform Service Fees */}
-            <section>
-              <h2 className="text-xl font-semibold text-gray-900 mb-3">Platform Service Fees</h2>
-              <p className="mb-3 font-semibold">Once a booking is confirmed:</p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Platform service fees are generally non-refundable</li>
-                <li>These fees cover reservation processing, payment handling, and administrative services</li>
-              </ul>
-              <p className="mt-3 mb-3 font-semibold">Platform service fees may be refunded only if:</p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>The booking cannot be confirmed due to a system error, or</li>
-                <li>The tour provider cancels the tour before confirmation</li>
+                <li><span className="font-medium">Booking:</span> {t('refund.definitions.booking')}</li>
+                <li><span className="font-medium">Platform service fees:</span> {t('refund.definitions.platformFees')}</li>
+                <li><span className="font-medium">Tour service fees:</span> {t('refund.definitions.tourFees')}</li>
               </ul>
             </section>
 
-            {/* Tour Service Refunds */}
+            {/* Booking vs Tour */}
             <section>
-              <h2 className="text-xl font-semibold text-gray-900 mb-3">Tour Service Refunds</h2>
-              <p className="mb-3">Refund eligibility for tour services depends on:</p>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">{t('refund.bookingVsTour.title')}</h2>
+              <p>{t('refund.bookingVsTour.p')}</p>
+            </section>
+
+            {/* Platform Fees */}
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">{t('refund.platformFees.title')}</h2>
+              <p className="mb-3">{t('refund.platformFees.nonRefundable')}</p>
+              <p>{t('refund.platformFees.refundableOnly')}</p>
+            </section>
+
+            {/* Tour Refunds */}
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">{t('refund.tourRefunds.title')}</h2>
+              <p className="mb-3">{t('refund.tourRefunds.p1')}</p>
+              <p className="mb-3">{t('refund.tourRefunds.p2')}</p>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>The tour provider's cancellation policy</li>
-                <li>The timing of the cancellation</li>
+                <li>{t('refund.tourRefunds.li1')}</li>
+                <li>{t('refund.tourRefunds.li2')}</li>
+                <li>{t('refund.tourRefunds.li3')}</li>
               </ul>
-              <p className="mt-3 mb-3">Applicable cancellation and refund conditions are:</p>
+            </section>
+
+            {/* Cancellation by You */}
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">{t('refund.cancellationByYou.title')}</h2>
+              <p>{t('refund.cancellationByYou.p')}</p>
+            </section>
+
+            {/* Cancellation by Operator */}
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">{t('refund.cancellationByOperator.title')}</h2>
+              <p>{t('refund.cancellationByOperator.p')}</p>
+            </section>
+
+            {/* No-Show */}
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">{t('refund.noShow.title')}</h2>
+              <p>{t('refund.noShow.p')}</p>
+            </section>
+
+            {/* Refund Process */}
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">{t('refund.process.title')}</h2>
+              <p className="mb-3">{t('refund.process.p1')}</p>
+              <p>{t('refund.process.p2')}</p>
+            </section>
+
+            {/* Exclusions */}
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">{t('refund.exclusions.title')}</h2>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Displayed before booking</li>
-                <li>Included in the booking confirmation</li>
+                <li>{t('refund.exclusions.li1')}</li>
+                <li>{t('refund.exclusions.li2')}</li>
+                <li>{t('refund.exclusions.li3')}</li>
+                <li>{t('refund.exclusions.li4')}</li>
               </ul>
-              <p className="mt-3 font-semibold text-gray-900">
-                ATOC KOREA LLC does not override tour provider refund policies.
-              </p>
             </section>
 
             {/* Chargebacks */}
             <section>
-              <h2 className="text-xl font-semibold text-gray-900 mb-3">Chargebacks</h2>
-              <p>
-                Customers are encouraged to contact support before initiating a chargeback. Chargebacks that conflict with clearly disclosed and accepted policies may be disputed.
-              </p>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">{t('refund.chargebacks.title')}</h2>
+              <p>{t('refund.chargebacks.p')}</p>
+            </section>
+
+            {/* Contact */}
+            <section>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">{t('refund.contact.title')}</h2>
+              <p>{t('refund.contact.p')}</p>
             </section>
           </div>
         </div>
@@ -79,9 +109,3 @@ export default function RefundPolicyPage() {
     </>
   );
 }
-
-
-
-
-
-

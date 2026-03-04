@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Noto_Sans_SC, Noto_Sans_TC } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
+import { CurrencyProvider } from "@/lib/currency";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 const inter = Inter({
@@ -57,7 +58,9 @@ export default function RootLayout({
         />
         <ErrorBoundary>
           <I18nProvider>
-            {children}
+            <CurrencyProvider>
+              {children}
+            </CurrencyProvider>
           </I18nProvider>
         </ErrorBoundary>
       </body>

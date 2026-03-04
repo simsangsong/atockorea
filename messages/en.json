@@ -279,13 +279,21 @@
       "fullAmountBenefit": "All payments processed securely"
     },
     "footer": {
-      "company": "AtoC Korea",
+      "company": "Company",
+      "name": "Name",
+      "companyName": "AtoC Korea",
+      "entity": "LLC",
+      "state": "Wyoming",
+      "registeredAddress": "30 N Gould St, STE R, Sheridan, WY 82801, USA",
+      "industry": "Travel agency",
+      "companyDescription": "Online booking and sales of tours for travelers to Korea",
       "description": "Licensed Korea-based platform for Korea's day tours. Direct partnership with local travel agencies.",
       "businessReg": "Business Registration",
       "ecommerceReg": "E-commerce Registration",
       "address": "Address",
       "contact": "Contact",
       "email": "Email",
+      "customerServiceEmail": "Customer service",
       "securePayment": "Secure Payment Methods",
       "aboutUs": "About Us",
       "ourStory": "Our Story",
@@ -300,6 +308,7 @@
       "terms": "Terms of Service",
       "privacy": "Privacy Policy",
       "cookies": "Cookie Policy",
+      "refundPolicy": "Refund Policy",
       "copyright": "© 2024 AtoC Korea. All rights reserved."
     }
   },
@@ -320,5 +329,115 @@
     "sale": "Sale",
     "off": "off",
     "addedToCart": "added to cart!"
+  },
+  "about": {
+    "title": "About Us",
+    "ourStory": {
+      "title": "Our Story",
+      "p1": "ATOC KOREA LLC operates an online travel booking platform acting solely as an intermediary between travelers and independent tour providers.",
+      "p2": "Our platform enables customers to discover, compare, and reserve travel experiences offered by third-party tour operators and professional guides.",
+      "facilitate": "We facilitate the booking process by:",
+      "li1": "Displaying tour information provided by tour operators",
+      "li2": "Processing online payments for booking and reservation services",
+      "li3": "Issuing booking confirmations",
+      "li4": "Supporting communication related to bookings",
+      "disclaimer": "ATOC KOREA LLC does not operate tours, employ guides or drivers, or provide on-site travel services. All tours and experiences are delivered by independent third-party providers."
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us",
+      "clearModel": "Clear Intermediary Model",
+      "clearModelP": "Our platform is designed around a transparent intermediary structure. We handle bookings and payments; tour providers deliver the experience.",
+      "verified": "Verified Independent Providers",
+      "verifiedP": "We work with independent tour providers who are responsible for holding required licenses, permits, and insurance.",
+      "transparent": "Transparent Booking & Pricing",
+      "transparentP": "Before booking, customers are clearly informed of:",
+      "transparentLi1": "Payment structure (deposit or full payment)",
+      "transparentLi2": "Inclusions and exclusions",
+      "transparentLi3": "Cancellation and refund conditions",
+      "secure": "Secure Online Payments",
+      "secureP": "Payments are processed through trusted third-party payment processors using industry-standard security practices.",
+      "support": "Platform-Level Support",
+      "supportP": "We provide customer support for bookings, payments, and confirmations, ensuring a reliable booking experience."
+    },
+    "partners": {
+      "title": "Partners",
+      "p1": "We collaborate with independent tour operators, guides, and travel service providers who wish to reach international travelers through our platform.",
+      "allPartners": "All partners:",
+      "li1": "Operate independently",
+      "li2": "Remain responsible for tour execution and compliance",
+      "li3": "Are not employees or agents of ATOC KOREA LLC",
+      "contactBefore": "For partnership inquiries, please contact us via the ",
+      "contactAfter": " page."
+    },
+    "careers": {
+      "title": "Careers",
+      "p1": "ATOC KOREA LLC is a technology-driven booking platform focused on building reliable and transparent travel infrastructure.",
+      "weSeek": "We occasionally seek professionals in:",
+      "li1": "Platform operations",
+      "li2": "Customer support",
+      "li3": "Product and technology",
+      "openPositions": "Open positions, if any, will be listed on our website."
+    }
+  },
+  "refund": {
+    "title": "Refund Policy",
+    "lastUpdated": "Last updated",
+    "intro": "This Refund Policy applies to booking and reservation services facilitated through the ATOC KOREA LLC platform. By making a booking, you agree to this policy.",
+    "scope": "ATOC KOREA LLC acts solely as an intermediary and does not operate tours or provide tour services directly. Tour services are delivered by independent third-party operators. Refund eligibility and amounts may depend on both platform terms and the operator's cancellation policy.",
+    "definitions": {
+      "title": "Definitions",
+      "booking": "Booking means a reservation made through our platform for a tour or activity.",
+      "platformFees": "Platform service fees mean fees charged for reservation processing, payment handling, and administrative services.",
+      "tourFees": "Tour service fees mean amounts paid for the actual tour or experience, which are passed to the tour operator."
+    },
+    "bookingVsTour": {
+      "title": "Booking Fees vs. Tour Fees",
+      "p": "Payments may include platform service fees and tour service fees. These may be subject to different refund rules."
+    },
+    "platformFees": {
+      "title": "Platform Service Fees",
+      "nonRefundable": "Once a booking is confirmed, platform service fees are generally non-refundable. They cover reservation processing, payment handling, and administrative services.",
+      "refundableOnly": "Platform fees may be refunded only if: (a) the booking could not be confirmed due to a system or platform error, or (b) the tour operator cancels the tour before the booking is fulfilled."
+    },
+    "tourRefunds": {
+      "title": "Tour Service Refunds",
+      "p1": "Refund eligibility for tour services depends on the tour operator's cancellation policy and the timing of the cancellation. We do not override the operator's policy.",
+      "p2": "Cancellation and refund conditions are displayed before booking and included in your booking confirmation. Common timeframes (set by each operator) may include:",
+      "li1": "Full refund if cancelled at least 24–48 hours before the tour start.",
+      "li2": "Partial or no refund if cancelled within 24–48 hours of the tour start.",
+      "li3": "No refund for no-shows or late cancellations as defined in the product page."
+    },
+    "cancellationByYou": {
+      "title": "Cancellation by You",
+      "p": "To request a cancellation or refund, contact us at support@atockorea.com with your booking reference. We will process your request according to the applicable operator policy and the timing of your request."
+    },
+    "cancellationByOperator": {
+      "title": "Cancellation by the Tour Operator",
+      "p": "If the operator cancels your tour (e.g. weather, safety, insufficient participants), we will work with them to offer a full refund of tour fees or an alternative date/experience where possible. Platform fees may be refunded at our discretion in such cases."
+    },
+    "noShow": {
+      "title": "No-Show",
+      "p": "If you do not attend the tour without prior cancellation, you are not entitled to a refund. No-show terms are as stated on the product page and in your confirmation."
+    },
+    "process": {
+      "title": "Refund Process",
+      "p1": "Refunds, when approved, will be made to the original payment method within 5–10 business days (or as required by your card issuer). Currency and any fees are as per the payment provider's terms.",
+      "p2": "We will confirm the outcome of your refund request by email."
+    },
+    "exclusions": {
+      "title": "What Is Not Refundable",
+      "li1": "Platform service fees except where stated in this policy.",
+      "li2": "No-shows or late cancellations beyond the allowed window.",
+      "li3": "Partial use of a tour (e.g. leaving mid-tour).",
+      "li4": "Services or add-ons not provided through our platform."
+    },
+    "chargebacks": {
+      "title": "Chargebacks",
+      "p": "We ask that you contact us at support@atockorea.com before initiating a chargeback. Chargebacks that conflict with clearly disclosed and accepted policies may be disputed, and we may provide relevant booking and policy information to the payment provider."
+    },
+    "contact": {
+      "title": "Contact",
+      "p": "For refund requests or questions about this policy, email support@atockorea.com with your booking reference and reason for the request."
+    }
   }
 }

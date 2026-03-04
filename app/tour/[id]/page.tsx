@@ -13,7 +13,9 @@ import VisualItinerary from '@/components/tour/VisualItinerary';
 import MeetingPoint from '@/components/tour/MeetingPoint';
 import ActionButtons from '@/components/tour/ActionButtons';
 import CollapsibleSection from '@/components/tour/CollapsibleSection';
+import TourOverviewContent from '@/components/tour/TourOverviewContent';
 import { useTranslations, useI18n } from '@/lib/i18n';
+import { useCurrencyOptional } from '@/lib/currency';
 
 // Lazy load heavy components
 const EnhancedBookingSidebar = dynamic(
@@ -68,6 +70,7 @@ export default function TourDetailPage() {
   const router = useRouter();
   const t = useTranslations();
   const { locale } = useI18n();
+  const currencyCtx = useCurrencyOptional();
   
   // Extract tourId directly from params - use useMemo to stabilize the value
   const tourId = useMemo(() => {
@@ -433,7 +436,8 @@ export default function TourDetailPage() {
     return null; // This should never happen due to earlier checks, but TypeScript needs it
   }
 
-  const formatPrice = (n: number) => new Intl.NumberFormat('ko-KR', { maximumFractionDigits: 0 }).format(n);
+  const formatPrice = (n: number) =>
+    currencyCtx ? currencyCtx.formatPrice(n) : `₩${new Intl.NumberFormat('ko-KR', { maximumFractionDigits: 0 }).format(n)}`;
 
   return (
     <div className="min-h-screen bg-[#fafafa]">
@@ -482,9 +486,7 @@ export default function TourDetailPage() {
             {/* 5. Description (collapsible) */}
             {tour.overview && (
               <CollapsibleSection title={t('tour.fullDescription')}>
-                <div className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
-                  {tour.overview}
-                </div>
+                <TourOverviewContent content={tour.overview} />
               </CollapsibleSection>
             )}
 
@@ -600,9 +602,9 @@ export default function TourDetailPage() {
           <div>
             <p className="text-[11px] text-gray-500 uppercase tracking-wider">From</p>
             <p className="text-lg font-semibold text-gray-900">
-              ₩{formatPrice(tour.originalPrice && tour.originalPrice > tour.price ? tour.price : tour.price)}
+              {formatPrice(tour.originalPrice && tour.originalPrice > tour.price ? tour.price : tour.price)}
               {tour.originalPrice != null && tour.originalPrice > tour.price && (
-                <span className="ml-2 text-sm font-normal text-gray-400 line-through">₩{formatPrice(tour.originalPrice)}</span>
+                <span className="ml-2 text-sm font-normal text-gray-400 line-through">{formatPrice(tour.originalPrice)}</span>
               )}
             </p>
           </div>

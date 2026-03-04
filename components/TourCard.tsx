@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CartIcon } from "./Icons";
 import { useTranslations } from "@/lib/i18n";
+import { useCurrencyOptional } from "@/lib/currency";
 
 // Export Tour type for use in other files
 export interface Tour {
@@ -52,14 +53,21 @@ export default function TourCard({
   tour,
 }: TourCardProps) {
   const t = useTranslations();
+  const currencyCtx = useCurrencyOptional();
   const [isAdding, setIsAdding] = useState(false);
 
-  // Support both Tour type and individual props
+  // Support both Tour type and individual props. Price: prop can be in thousands (price*1000 = KRW), or tour.price can be numeric KRW.
   const displayTitle = tour?.title || title || "";
   const displayLocation = tour?.city || location || "";
   const displayCategory = tour?.tag?.split(" · ")[0] || location || t('tourCard.tours');
   const displayType = tour?.tag?.split(" · ")[1] || type || "";
-  const displayPrice = tour?.price || (price ? `₩ ${(price * 1000).toLocaleString()}` : "");
+  // price prop: some callers pass KRW/1000 (e.g. TourList), others pass full KRW (e.g. RelatedTours). Use magnitude to infer.
+  const priceKRW = price != null
+    ? (price > 10000 ? price : price * 1000)
+    : (typeof (tour as any)?.price === 'number' ? (tour as any).price : 0);
+  const displayPrice = currencyCtx && priceKRW > 0
+    ? currencyCtx.formatPrice(priceKRW)
+    : (tour?.price || (price ? `₩ ${(price * 1000).toLocaleString()}` : ""));
   
   // Generate href based on available data
   // Priority: tour.href > /tour/[id] for API tours > city+slug route for static tours

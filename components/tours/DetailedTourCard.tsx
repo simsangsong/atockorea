@@ -7,6 +7,7 @@ import { CheckIcon, MapIcon, CartIcon, HeartIcon, HeartSolidIcon } from '@/compo
 import { isInWishlist, toggleWishlist } from '@/lib/wishlist';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from '@/lib/i18n';
+import { useCurrencyOptional } from '@/lib/currency';
 
 interface DetailedTourCardProps {
   tour: {
@@ -38,6 +39,7 @@ interface DetailedTourCardProps {
 function DetailedTourCard({ tour }: DetailedTourCardProps) {
   const router = useRouter();
   const t = useTranslations();
+  const currencyCtx = useCurrencyOptional();
   const hasDiscount = useMemo(() => 
     tour.originalPrice && tour.originalPrice > tour.price,
     [tour.originalPrice, tour.price]
@@ -112,11 +114,8 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
   }, [tour.id, isFavorite, router]);
 
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('ko-KR', {
-      style: 'currency',
-      currency: 'KRW',
-      minimumFractionDigits: 0,
-    }).format(price);
+    if (currencyCtx) return currencyCtx.formatPrice(price);
+    return new Intl.NumberFormat('ko-KR', { style: 'currency', currency: 'KRW', minimumFractionDigits: 0 }).format(price);
   };
 
   // Filter schedule to exclude pickup points (only main stops)
@@ -327,7 +326,7 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
                     {formatPrice(tour.originalPrice!)}
                   </span>
                 )}
-                <span className="text-2xl font-bold text-indigo-600">${tour.price}</span>
+                <span className="text-2xl font-bold text-indigo-600">{formatPrice(tour.price)}</span>
                 <span className="text-sm text-gray-500">/ {tour.priceType}</span>
               </div>
 

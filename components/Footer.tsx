@@ -11,12 +11,17 @@ export default function Footer() {
         {/* Company Info */}
         <div className="mb-6">
           <h3 className="text-white font-bold text-lg mb-3">{t('home.footer.company')}</h3>
-          <p className="text-xs mb-3">
-            {t('home.footer.description')}
-          </p>
+          <div className="text-xs space-y-1.5 mb-3">
+            <p><span className="font-semibold">{t('home.footer.name')}:</span> {t('home.footer.companyName')}</p>
+            <p><span className="font-semibold">Entity:</span> {t('home.footer.entity')}</p>
+            <p><span className="font-semibold">State:</span> {t('home.footer.state')}</p>
+            <p><span className="font-semibold">Registered address:</span> {t('home.footer.registeredAddress')}</p>
+            <p><span className="font-semibold">Industry:</span> {t('home.footer.industry')}</p>
+            <p>{t('home.footer.companyDescription')}</p>
+          </div>
         </div>
 
-        {/* Contact Info - Single Row */}
+        {/* Contact Info - Single Row (연락처 그대로) */}
         <div className="mb-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Address */}
@@ -31,8 +36,8 @@ export default function Footer() {
                 <span className="font-semibold">{t('home.footer.contact')}:</span> 010-8973-0913
               </p>
               <p className="text-xs">
-                <span className="font-semibold">{t('home.footer.email')}:</span>{' '}
-                <a href="https://atockorea.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">atockorea.com</a>
+                <span className="font-semibold">{t('home.footer.customerServiceEmail')}:</span>{' '}
+                <a href="mailto:support@atockorea.com" className="hover:text-white transition-colors">support@atockorea.com</a>
               </p>
             </div>
           </div>
@@ -110,7 +115,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="/refund-policy" className="hover:text-white transition-colors">
-                  Refund Policy
+                  {t('home.footer.refundPolicy')}
                 </a>
               </li>
             </ul>

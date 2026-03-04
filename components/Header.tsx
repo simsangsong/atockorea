@@ -7,6 +7,7 @@ import Logo from "./Logo";
 import { SearchIcon, UserIcon } from "./Icons";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "@/lib/i18n";
+import { useCurrency } from "@/lib/currency";
 import { supabase } from "@/lib/supabase";
 
 interface UserProfile {
@@ -20,7 +21,7 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const t = useTranslations();
-  const [currency, setCurrency] = useState<"USD" | "KRW">("USD");
+  const { currency, setCurrency } = useCurrency();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [user, setUser] = useState<UserProfile | null>(null);
@@ -123,6 +124,7 @@ export default function Header() {
   const toggleCurrency = () => {
     setCurrency(currency === "USD" ? "KRW" : "USD");
   };
+  const currencyLabel = currency === "USD" ? "USD" : "KRW";
 
   return (
     <header className={`sticky top-0 z-50 backdrop-blur-md border-b shadow-sm ${
@@ -192,9 +194,9 @@ export default function Header() {
                   ? 'text-gray-300 hover:text-blue-400' 
                   : 'text-gray-700 hover:text-blue-600'
               }`}
-              title={currency === "USD" ? "USD" : "KRW"}
+              title={currencyLabel}
             >
-              {currency === "USD" ? "USD" : "KRW"}
+              {currencyLabel}
             </button>
 
             {/* Search Icon - Optimized sizing */}

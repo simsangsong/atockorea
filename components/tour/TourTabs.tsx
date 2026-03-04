@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { MapIcon, ClockIcon, CalendarDateIcon } from '@/components/Icons';
+import TourOverviewContent from '@/components/tour/TourOverviewContent';
 
 interface TourTabsProps {
   tour: {
@@ -77,7 +78,7 @@ export default function TourTabs({ tour }: TourTabsProps) {
         {/* Overview */}
         {activeTab === 'overview' && (
           <div>
-            <p className="text-gray-700 leading-relaxed whitespace-pre-line">{tour.overview}</p>
+            <TourOverviewContent content={tour.overview} />
           </div>
         )}
 

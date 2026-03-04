@@ -3,6 +3,12 @@
 // ============================================
 // You do NOT need to translate each description by hand. Run this script once
 // (or when you add new tours) to auto-fill tours.translations for all languages.
+// 번역 대상: title, description, itinerary(schedule), includes, excludes, highlights, faqs, pickup_info, notes
+// (상세 설명·일정·포함/미포함·하이라이트·FAQ 등 상세페이지 텍스트 전부)
+//
+// 제목이 "영어 절반 + 중국어 절반"처럼 섞이면:
+// - DB의 tours.title은 반드시 100% 영어로 두세요. 한/중/일이 섞여 있으면 번역이 꼬입니다.
+// - FORCE_RETRANSLATE = true 로 바꾼 뒤 스크립트를 다시 실행하면 기존 번역을 덮어씁니다.
 //
 // 사용 방법 (How to use):
 // 1. Get a Google Cloud Translation API key (see docs/batch-translation-guide.md)
@@ -20,15 +26,27 @@ const TRANSLATE_API_URL = 'https://translation.googleapis.com/language/translate
 // 번역할 언어 목록 (matches site locales: en is source, others are translated)
 const TARGET_LANGUAGES = ['zh', 'zh-TW', 'ko', 'ja', 'es'];
 
-// true로 하면 "이미 번역 있음"인 투어도 다시 번역함 (번역이 비었거나 수정 후 재실행 시)
+// true로 하면 "이미 번역 있음"인 투어도 다시 번역함 (영어+현지어 섞인 문제 수정 시 true로 재실행 권장)
 const FORCE_RETRANSLATE = false;
 
-// ============================================
-// 번역 함수
-// ============================================
+// 번역 결과가 여전히 영어가 많이 섞여 있는지 확인 (아시아 언어용)
+function hasTooMuchLatin(str, maxLatinRatio = 0.35) {
+  if (!str || str.length === 0) return false;
+  const latin = (str.match(/[a-zA-Z]/g) || []).length;
+  return latin / str.length > maxLatinRatio;
+}
+
+// 제목 등 짧은 문장: 아시아 언어로 번역 후에도 라틴 문자가 많으면 한 번 더 번역 시도 (전체 번역 유도)
+const ASIAN_LANGS = ['zh', 'zh-TW', 'ko', 'ja'];
+
 async function translateText(text, targetLang) {
   if (!text || text.trim() === '') return text;
-  
+  // 원문에 이미 한중일 문자가 많으면 번역 소스로 쓰지 않음 (영어만 사용해야 전체 번역됨)
+  const nonLatin = (text.match(/[\u3040-\u30FF\u4E00-\u9FFF\uAC00-\uD7AF]/g) || []).length;
+  if (nonLatin > 2) {
+    console.warn(`  ⚠️ 제목/텍스트에 이미 한·중·일 문자가 있습니다. DB의 title을 영어로 맞춘 뒤 다시 실행하세요: "${text.slice(0, 50)}..."`);
+  }
+
   try {
     const response = await fetch(`${TRANSLATE_API_URL}?key=${GOOGLE_TRANSLATE_API_KEY}`, {
       method: 'POST',
@@ -38,20 +56,32 @@ async function translateText(text, targetLang) {
       body: JSON.stringify({
         q: text,
         target: targetLang === 'zh-TW' ? 'zh-TW' : targetLang,
-        source: 'en'
+        source: 'en',
+        format: 'text'
       })
     });
-    
+
     if (!response.ok) {
       throw new Error(`Translation API error: ${response.status}`);
     }
-    
+
     const data = await response.json();
     return data.data.translations[0].translatedText;
   } catch (error) {
     console.error(`번역 실패 (${targetLang}):`, error);
-    return text; // 번역 실패 시 원문 반환
+    return text;
   }
+}
+
+// 제목 전용: 아시아 언어에서 결과가 영어가 많이 섞이면 원문(영어)으로 한 번 더 번역 시도
+async function translateTitle(title, targetLang) {
+  let result = await translateText(title, targetLang);
+  if (ASIAN_LANGS.includes(targetLang) && hasTooMuchLatin(result) && title.match(/^[a-zA-Z\s\-:,'%.]+$/)) {
+    await new Promise(r => setTimeout(r, 200));
+    const retry = await translateText(title, targetLang);
+    if (!hasTooMuchLatin(retry)) result = retry;
+  }
+  return result;
 }
 
 // ============================================
@@ -64,9 +94,9 @@ async function translateTour(tour) {
     console.log(`  📝 ${lang} 번역 중...`);
     
     translations[lang] = {
-      title: await translateText(tour.title, lang),
-      tag: await translateText(tour.tag || '', lang),
-      subtitle: await translateText(tour.subtitle || '', lang),
+      title: await translateTitle(tour.title, lang),
+      tag: await translateTitle(tour.tag || '', lang),
+      subtitle: await translateTitle(tour.subtitle || '', lang),
       description: await translateText(tour.description || '', lang),
       pickup_info: await translateText(tour.pickup_info || '', lang),
       notes: await translateText(tour.notes || '', lang),
@@ -181,16 +211,21 @@ async function translateTour(tour) {
     
     for (const tour of tours) {
       try {
-        // 이미 번역이 있는지 확인 (FORCE_RETRANSLATE면 건너뛰지 않음)
-        if (!FORCE_RETRANSLATE && tour.translations && Object.keys(tour.translations).length > 0) {
-          console.log(`⏭️  ${tour.title} - 이미 번역이 있습니다. 건너뜁니다.`);
-          continue;
-        }
-        
         console.log(`🔄 ${tour.title} 번역 중...`);
         
-        // 번역 생성
+        // 번역 생성 (description, schedule, includes, highlights, excludes, faqs 등 전체 필드)
         const translations = await translateTour(tour);
+        
+        // 이미 번역이 있으면 기존 값 위에 새 번역을 병합 (누락된 필드만 채움)
+        // FORCE_RETRANSLATE면 새 번역으로 완전히 덮어씀
+        let payload = translations;
+        if (!FORCE_RETRANSLATE && tour.translations && typeof tour.translations === 'object') {
+          payload = {};
+          for (const lang of TARGET_LANGUAGES) {
+            const existing = tour.translations[lang] || {};
+            payload[lang] = { ...existing, ...translations[lang] };
+          }
+        }
         
         // API 호출
         const updateResponse = await fetch(`/api/admin/tours/${tour.id}`, {
@@ -200,7 +235,7 @@ async function translateTour(tour) {
             'Authorization': `Bearer ${token}`
           },
           body: JSON.stringify({
-            translations: translations
+            translations: payload
           })
         });
         
@@ -210,8 +245,8 @@ async function translateTour(tour) {
         }
         
         console.log(`✅ ${tour.title} - 번역 완료!`);
-        console.log(`   중국어: ${translations.zh.title}`);
-        console.log(`   한국어: ${translations.ko.title}`);
+        console.log(`   중국어: ${payload.zh?.title}`);
+        console.log(`   한국어: ${payload.ko?.title}`);
         console.log('');
         
         successCount++;

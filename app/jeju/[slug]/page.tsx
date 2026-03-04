@@ -6,6 +6,7 @@ import { useRouter, useParams } from "next/navigation";
 import Image from "next/image";
 import { detailedTours, DetailedTour } from "../../../data/tours";
 import GalleryGrid from "@/components/tour/GalleryGrid";
+import TourOverviewContent from "@/components/tour/TourOverviewContent";
 import { useI18n } from "@/lib/i18n";
 
 // ===== 타입 정의 =====
@@ -150,12 +151,7 @@ function DescriptionContent({ description }: { description: string }) {
     .replace(/[\s\S]*Seongsan Ilchulbong[\s\S]*$/i, '')
     .trim();
 
-  // Just display the cleaned description without routes
-  return (
-    <div className="text-sm sm:text-base text-gray-700 leading-relaxed whitespace-pre-line">
-      {mainDescription}
-    </div>
-  );
+  return <TourOverviewContent content={mainDescription} />;
 }
 
 // ===== 페이지 컴포넌트 =====
@@ -748,9 +744,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
                 <h2 className="text-xl font-semibold text-gray-900 mb-4">
                   Full Description
                 </h2>
-                <div className="prose prose-sm max-w-none">
-                  <DescriptionContent description={tour.description} />
-                </div>
+                <DescriptionContent description={tour.description} />
               </section>
             )}
 

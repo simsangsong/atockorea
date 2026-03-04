@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import DatePicker from 'react-datepicker';
 import { MapIcon } from '@/components/Icons';
 import { useTranslations } from '@/lib/i18n';
+import { useCurrencyOptional } from '@/lib/currency';
 import 'react-datepicker/dist/react-datepicker.css';
 
 interface EnhancedBookingSidebarProps {
@@ -34,6 +35,7 @@ interface AvailabilityData {
 export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarProps) {
   const router = useRouter();
   const t = useTranslations();
+  const currencyCtx = useCurrencyOptional();
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [guestCount, setGuestCount] = useState(1);
   const [selectedPickup, setSelectedPickup] = useState<string | number | null>(null);
@@ -116,13 +118,10 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
   const discount = hasDiscount && tour.originalPrice ? tour.originalPrice - tour.price : 0;
   const discountPercent = hasDiscount && tour.originalPrice ? Math.round((discount / tour.originalPrice) * 100) : 0;
   
-  // Format price as KRW
+  // Format price in current currency (USD/KRW with real-time rate)
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('ko-KR', {
-      style: 'currency',
-      currency: 'KRW',
-      minimumFractionDigits: 0,
-    }).format(price);
+    if (currencyCtx) return currencyCtx.formatPrice(price);
+    return new Intl.NumberFormat('ko-KR', { style: 'currency', currency: 'KRW', minimumFractionDigits: 0 }).format(price);
   };
   
   // Calculate base price (use original price if discount is not applied, otherwise use discounted price)
