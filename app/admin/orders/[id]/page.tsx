@@ -62,49 +62,24 @@ export default function OrderDetailPage() {
   const fetchOrder = async () => {
     try {
       setLoading(true);
-      
       if (!supabase) {
         throw new Error('Supabase client not initialized');
       }
-      
       const { data: { session } } = await supabase.auth.getSession();
-      
       if (!session) {
         router.push('/signin?redirect=/admin/orders/' + orderId);
         return;
       }
-
-      // Fetch booking with related data
-      const { data, error: fetchError } = await supabase
-        .from('bookings')
-        .select(`
-          *,
-          tours (
-            id,
-            title,
-            slug,
-            city
-          ),
-          user_profiles (
-            id,
-            full_name,
-            email,
-            phone
-          ),
-          pickup_points (
-            id,
-            name,
-            address
-          )
-        `)
-        .eq('id', orderId)
-        .single();
-
-      if (fetchError) {
-        throw new Error('Failed to fetch order');
+      const res = await fetch(`/api/admin/orders/${orderId}`, {
+        headers: { 'Authorization': `Bearer ${session.access_token}` },
+        credentials: 'include',
+      });
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        throw new Error(errData.error || 'Failed to fetch order');
       }
-
-      setBooking(data as any);
+      const { booking: data } = await res.json();
+      setBooking(data as Booking);
     } catch (err: any) {
       console.error('Error fetching order:', err);
       setError(err.message);
@@ -135,7 +110,7 @@ export default function OrderDetailPage() {
         return;
       }
 
-      const response = await fetch(`/api/bookings/${orderId}`, {
+      const response = await fetch(`/api/admin/orders/${orderId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

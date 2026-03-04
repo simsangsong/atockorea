@@ -106,37 +106,64 @@ function AuthCallbackContent() {
           }
 
           if (data.user) {
-            // 检查是否需要创建用户资料
-            const { data: profile, error: profileError } = await supabase
+            const meta = data.user.user_metadata || {};
+            // 구글/소셜 이름: name > full_name > given_name + family_name > 이메일 앞부분
+            const displayName =
+              meta.name ||
+              meta.full_name ||
+              [meta.given_name, meta.family_name].filter(Boolean).join(' ').trim() ||
+              data.user.email?.split('@')[0] ||
+              'User';
+            const avatarUrl = meta.avatar_url || meta.picture || null;
+            const provider = data.user.app_metadata?.provider || meta.provider || 'email';
+
+            const { data: existing } = await supabase
               .from('user_profiles')
-              .select('*')
+              .select('id')
               .eq('id', data.user.id)
               .single();
 
-            if (!profile || profileError) {
-              // 创建用户资料
+            if (existing) {
+              const { error: updateErr } = await supabase
+                .from('user_profiles')
+                .update({
+                  full_name: displayName,
+                  avatar_url: avatarUrl,
+                  updated_at: new Date().toISOString(),
+                })
+                .eq('id', data.user.id);
+              if (updateErr) console.error('Error updating user profile:', updateErr);
+              // 저장된 가입자 내역용: email, auth_provider (마이그레이션 후 컬럼 있으면 저장)
+              await supabase
+                .from('user_profiles')
+                .update({
+                  email: data.user.email ?? null,
+                  auth_provider: provider,
+                } as Record<string, unknown>)
+                .eq('id', data.user.id);
+            } else {
               const { error: insertError } = await supabase.from('user_profiles').insert({
                 id: data.user.id,
-                full_name: data.user.user_metadata?.full_name || 
-                           data.user.user_metadata?.name ||
-                           data.user.email?.split('@')[0] || 
-                           'User',
-                avatar_url: data.user.user_metadata?.avatar_url || 
-                           data.user.user_metadata?.picture ||
-                           null,
-                role: 'customer', // 默认角色
-              });
-
+                full_name: displayName,
+                avatar_url: avatarUrl,
+                role: 'customer',
+                ...(data.user.email != null && { email: data.user.email }),
+                ...(provider && { auth_provider: provider }),
+              } as Record<string, unknown>);
               if (insertError) {
-                console.error('Error creating user profile:', insertError);
-                // 即使创建失败也允许登录，但记录错误
+                const withoutExtra = await supabase.from('user_profiles').insert({
+                  id: data.user.id,
+                  full_name: displayName,
+                  avatar_url: avatarUrl,
+                  role: 'customer',
+                });
+                if (withoutExtra.error) console.error('Error creating user profile:', withoutExtra.error);
               }
             }
 
             setStatus('success');
             setMessage('Authentication successful! Redirecting...');
-            
-            // 重定向到目标页面
+
             setTimeout(() => {
               router.push(next);
             }, 1000);

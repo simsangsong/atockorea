@@ -39,7 +39,7 @@ export default function HeroImage({ images, title, tagline }: HeroImageProps) {
   }, [safeImages.length]);
 
   return (
-    <div className="relative w-full aspect-video md:aspect-[4/1] overflow-hidden">
+    <div className="relative w-full aspect-[16/10] md:aspect-auto md:h-[320px] overflow-hidden bg-gray-100">
       {/* Image Carousel */}
       <div className="relative w-full h-full">
         {safeImages.map((image, index) => (

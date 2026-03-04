@@ -18,15 +18,15 @@ export default function CollapsibleSection({
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className={`rounded-xl bg-white border-2 border-gray-200 shadow-md hover:shadow-lg overflow-hidden transition-all ${className}`}>
+    <div className={`rounded-2xl border border-gray-100 bg-white overflow-hidden transition-colors hover:border-gray-200 ${className}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-4 py-3 flex items-center justify-between text-left hover:bg-gray-50/50 transition-colors"
+        className="w-full px-4 py-3.5 flex items-center justify-between text-left text-[15px] font-medium text-gray-900 active:bg-gray-50/80 transition-colors"
       >
-        <h2 className="text-base font-semibold text-gray-900">{title}</h2>
+        <span>{title}</span>
         <svg
-          className={`w-4 h-4 text-gray-500 flex-shrink-0 transition-transform duration-200 ${
-            isOpen ? 'transform rotate-180' : ''
+          className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200 ${
+            isOpen ? 'rotate-180' : ''
           }`}
           fill="none"
           stroke="currentColor"
@@ -36,18 +36,14 @@ export default function CollapsibleSection({
         </svg>
       </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`overflow-hidden transition-all duration-200 ease-out ${
           isOpen ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="px-4 pb-4 pt-2">
+        <div className="px-4 pb-4 pt-1 border-t border-gray-50">
           {children}
         </div>
       </div>
     </div>
   );
 }
-
-
-
-

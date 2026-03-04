@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import TourCard from "./TourCard";
-import { useTranslations } from "@/lib/i18n";
+import { useTranslations, useI18n } from "@/lib/i18n";
 
 interface Tour {
   id: number | string;
@@ -22,6 +22,7 @@ interface Tour {
 
 export default function TourList() {
   const t = useTranslations();
+  const { locale } = useI18n();
   const [tours, setTours] = useState<Tour[]>([]);
   const [loading, setLoading] = useState(true);
   
@@ -29,7 +30,7 @@ export default function TourList() {
     const fetchTours = async () => {
       try {
         setLoading(true);
-        const response = await fetch('/api/tours?limit=8&sortBy=rating&sortOrder=desc&isActive=true');
+        const response = await fetch(`/api/tours?limit=8&sortBy=rating&sortOrder=desc&isActive=true&locale=${encodeURIComponent(locale)}`);
         if (!response.ok) {
           throw new Error('Failed to fetch tours');
         }
@@ -59,7 +60,7 @@ export default function TourList() {
     };
     
     fetchTours();
-  }, []);
+  }, [locale]);
   
   if (loading) {
     return (

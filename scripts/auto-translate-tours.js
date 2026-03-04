@@ -1,14 +1,15 @@
 // ============================================
 // Google Translate API를 사용한 자동 번역 스크립트
 // ============================================
-// 브라우저 콘솔(F12)에서 실행하세요 (admin 로그인 필요)
+// You do NOT need to translate each description by hand. Run this script once
+// (or when you add new tours) to auto-fill tours.translations for all languages.
 //
-// 사용 방법:
-// 1. Google Cloud Console에서 Translation API 키 발급
-// 2. 아래 API_KEY에 키 입력
-// 3. /admin에서 로그인
-// 4. 브라우저 콘솔(F12) 열기
-// 5. 이 스크립트를 복사해서 붙여넣고 실행
+// 사용 방법 (How to use):
+// 1. Get a Google Cloud Translation API key (see docs/batch-translation-guide.md)
+// 2. Set GOOGLE_TRANSLATE_API_KEY below
+// 3. Log in at /admin
+// 4. Open browser DevTools (F12) → Console
+// 5. Copy-paste this entire script and run it
 
 // ============================================
 // 설정
@@ -16,8 +17,11 @@
 const GOOGLE_TRANSLATE_API_KEY = 'YOUR_GOOGLE_TRANSLATE_API_KEY_HERE';
 const TRANSLATE_API_URL = 'https://translation.googleapis.com/language/translate/v2';
 
-// 번역할 언어 목록
-const TARGET_LANGUAGES = ['zh', 'zh-TW', 'ko'];
+// 번역할 언어 목록 (matches site locales: en is source, others are translated)
+const TARGET_LANGUAGES = ['zh', 'zh-TW', 'ko', 'ja', 'es'];
+
+// true로 하면 "이미 번역 있음"인 투어도 다시 번역함 (번역이 비었거나 수정 후 재실행 시)
+const FORCE_RETRANSLATE = false;
 
 // ============================================
 // 번역 함수
@@ -177,8 +181,8 @@ async function translateTour(tour) {
     
     for (const tour of tours) {
       try {
-        // 이미 번역이 있는지 확인
-        if (tour.translations && Object.keys(tour.translations).length > 0) {
+        // 이미 번역이 있는지 확인 (FORCE_RETRANSLATE면 건너뛰지 않음)
+        if (!FORCE_RETRANSLATE && tour.translations && Object.keys(tour.translations).length > 0) {
           console.log(`⏭️  ${tour.title} - 이미 번역이 있습니다. 건너뜁니다.`);
           continue;
         }

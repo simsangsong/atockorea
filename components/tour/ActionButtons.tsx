@@ -9,9 +9,13 @@ interface ActionButtonsProps {
   tourId: string;
   onCheckAvailability: () => void;
   onShare: () => void;
+  /** When true, render only wishlist + share icons (e.g. for hero overlay) */
+  compact?: boolean;
+  /** For compact mode: use 'overlay' for white icons on dark background */
+  variant?: 'default' | 'overlay';
 }
 
-export default function ActionButtons({ tourId, onCheckAvailability, onShare }: ActionButtonsProps) {
+export default function ActionButtons({ tourId, onCheckAvailability, onShare, compact, variant = 'default' }: ActionButtonsProps) {
   const router = useRouter();
   const [isFavorite, setIsFavorite] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -55,31 +59,57 @@ export default function ActionButtons({ tourId, onCheckAvailability, onShare }: 
     }
   };
 
+  const isOverlay = variant === 'overlay';
+  const btnClass = compact && isOverlay
+    ? 'p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors text-white'
+    : 'px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors flex items-center justify-center flex-1 md:w-full border border-gray-200';
+
+  if (compact) {
+    return (
+      <div className="flex items-center gap-1">
+        <button
+          onClick={handleWishlistToggle}
+          disabled={checking || loading}
+          className={`${btnClass} disabled:opacity-50 flex-shrink-0`}
+          aria-label={isFavorite ? "Remove from wishlist" : "Add to wishlist"}
+        >
+          {checking || loading ? (
+            <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin opacity-70" />
+          ) : isFavorite ? (
+            <HeartSolidIcon className={`w-5 h-5 ${isOverlay ? 'text-red-300' : 'text-red-500'}`} />
+          ) : (
+            <HeartIcon className="w-5 h-5" />
+          )}
+        </button>
+        <button onClick={onShare} className={btnClass} aria-label="Share tour">
+          <ShareIcon className="w-5 h-5" />
+        </button>
+      </div>
+    );
+  }
+
   return (
-    <div className="fixed bottom-16 left-0 right-0 z-50 md:relative md:z-auto md:bottom-0 bg-white border-t-2 border-gray-200 md:border-0 md:bg-transparent shadow-xl md:shadow-none">
+    <div className="fixed bottom-16 left-0 right-0 z-50 md:relative md:z-auto md:bottom-0 bg-white border-t border-gray-100 md:border-0 md:bg-transparent shadow-[0_-4px_20px_rgba(0,0,0,0.06)] md:shadow-none">
       <div className="container mx-auto px-4 py-2 md:py-0 md:px-0">
         <div className="flex gap-2 md:flex-col md:gap-2">
-          {/* Primary Action - Check Availability */}
           <button
             onClick={onCheckAvailability}
-            className="flex-1 md:w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-center flex items-center justify-center gap-1.5"
+            className="flex-1 md:w-full px-4 py-2.5 bg-gray-900 hover:bg-gray-800 text-white text-sm font-semibold rounded-xl transition-colors text-center flex items-center justify-center gap-1.5"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             Check Availability
           </button>
-
-          {/* Secondary Actions */}
           <div className="flex gap-2 md:w-full">
             <button
               onClick={handleWishlistToggle}
               disabled={checking || loading}
-              className="px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors flex items-center justify-center flex-1 md:w-full disabled:opacity-50 border border-gray-200"
+              className="px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl transition-colors flex items-center justify-center flex-1 md:w-full disabled:opacity-50 border border-gray-100"
               aria-label={isFavorite ? "Remove from wishlist" : "Add to wishlist"}
             >
               {checking || loading ? (
-                <div className="w-4 h-4 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-4 h-4 border-2 border-gray-400 border-t-transparent rounded-full animate-spin" />
               ) : isFavorite ? (
                 <HeartSolidIcon className="w-4 h-4 text-red-500" />
               ) : (
@@ -87,10 +117,9 @@ export default function ActionButtons({ tourId, onCheckAvailability, onShare }: 
               )}
               <span className="ml-1.5 md:hidden text-xs font-medium">Wishlist</span>
             </button>
-
             <button
               onClick={onShare}
-              className="px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors flex items-center justify-center flex-1 md:w-full border border-gray-200"
+              className="px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl transition-colors flex items-center justify-center flex-1 md:w-full border border-gray-100"
               aria-label="Share tour"
             >
               <ShareIcon className="w-4 h-4" />

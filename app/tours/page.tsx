@@ -10,7 +10,7 @@ import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
 import FilterSidebar from '@/components/tours/FilterSidebar';
 import DetailedTourCard from '@/components/tours/DetailedTourCard';
-import { useTranslations } from '@/lib/i18n';
+import { useTranslations, useI18n } from '@/lib/i18n';
 
 interface Tour {
   id: string;
@@ -45,6 +45,7 @@ function ToursContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const t = useTranslations();
+  const { locale } = useI18n();
   const [allTours, setAllTours] = useState<Tour[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -80,7 +81,7 @@ function ToursContent() {
     }
 
     fetchTours(city || undefined, q || undefined, minPrice || undefined, maxPrice || undefined);
-  }, [searchParams]);
+  }, [searchParams, locale]);
 
   const fetchTours = async (
     city?: string,
@@ -97,6 +98,7 @@ function ToursContent() {
       if (searchQuery) params.append('q', searchQuery);
       if (minPrice) params.append('minPrice', minPrice);
       if (maxPrice) params.append('maxPrice', maxPrice);
+      params.set('locale', locale);
 
       const response = await fetch(`/api/tours?${params.toString()}`);
       if (!response.ok) {

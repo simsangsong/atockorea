@@ -8,13 +8,12 @@ import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
 import HeroImage from '@/components/tour/HeroImage';
 import KeyInfoBar from '@/components/tour/KeyInfoBar';
-import QuickFacts from '@/components/tour/QuickFacts';
 import GalleryGrid from '@/components/tour/GalleryGrid';
 import VisualItinerary from '@/components/tour/VisualItinerary';
 import MeetingPoint from '@/components/tour/MeetingPoint';
 import ActionButtons from '@/components/tour/ActionButtons';
 import CollapsibleSection from '@/components/tour/CollapsibleSection';
-import { useTranslations } from '@/lib/i18n';
+import { useTranslations, useI18n } from '@/lib/i18n';
 
 // Lazy load heavy components
 const EnhancedBookingSidebar = dynamic(
@@ -68,6 +67,7 @@ export default function TourDetailPage() {
   const params = useParams();
   const router = useRouter();
   const t = useTranslations();
+  const { locale } = useI18n();
   
   // Extract tourId directly from params - use useMemo to stabilize the value
   const tourId = useMemo(() => {
@@ -99,17 +99,18 @@ export default function TourDetailPage() {
       return;
     }
     
-    // If we've already successfully fetched this tour, don't fetch again
-    if (hasFetchedRef.current === tourId) {
+    // Refetch when tourId or locale changes (so we get the right translation)
+    const fetchKey = `${tourId}:${locale}`;
+    if (hasFetchedRef.current === fetchKey) {
       return;
     }
     
-    // Reset previous tour when tourId changes
+    // Reset previous tour when tourId or locale changes
     const tourIdChanged = prevTourIdRef.current !== tourId;
+    const localeChanged = prevTourIdRef.current !== null && hasFetchedRef.current !== null && hasFetchedRef.current !== fetchKey;
     
-    if (tourIdChanged) {
-      // Only reset state if tourId actually changed
-      if (prevTourIdRef.current !== null) {
+    if (tourIdChanged || localeChanged) {
+      if (tourIdChanged && prevTourIdRef.current !== null) {
         setTour(null);
         setError(null);
       }
@@ -132,8 +133,8 @@ export default function TourDetailPage() {
         setLoading(true);
         setError(null); // Clear previous errors
         const apiUrl = typeof window !== 'undefined' 
-          ? `${window.location.origin}/api/tours/${encodeURIComponent(tourId)}`
-          : `/api/tours/${encodeURIComponent(tourId)}`;
+          ? `${window.location.origin}/api/tours/${encodeURIComponent(tourId)}?locale=${encodeURIComponent(locale)}`
+          : `/api/tours/${encodeURIComponent(tourId)}?locale=${encodeURIComponent(locale)}`;
         
         const response = await fetch(apiUrl, {
           cache: 'no-store', // Prevent caching
@@ -242,7 +243,7 @@ export default function TourDetailPage() {
           setTour(transformedTour);
           setLoading(false);
           fetchingRef.current = false;
-          hasFetchedRef.current = tourId; // Mark this tourId as successfully fetched
+          hasFetchedRef.current = `${tourId}:${locale}`; // Mark this tour+locale as fetched
         }
       } catch (err: any) {
         console.error('Error fetching tour:', err);
@@ -264,9 +265,9 @@ export default function TourDetailPage() {
       isMounted = false;
       fetchingRef.current = false;
     };
-    // Only depend on tourId, not on tour or error to prevent infinite loops
+    // Refetch when tourId or locale changes so content language updates
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tourId]);
+  }, [tourId, locale]);
 
   // Parse keywords from tour data (memoized to prevent infinite loops)
   // MUST be called before any early returns to follow React Hooks rules
@@ -432,147 +433,85 @@ export default function TourDetailPage() {
     return null; // This should never happen due to earlier checks, but TypeScript needs it
   }
 
+  const formatPrice = (n: number) => new Intl.NumberFormat('ko-KR', { maximumFractionDigits: 0 }).format(n);
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#fafafa]">
       <Header />
-      <main className="pb-20 md:pb-0">
-        {/* 1. Hero Image */}
-        <HeroImage images={tour.images} />
-
-        {/* Title Section */}
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4">
-          <div className="max-w-4xl">
-            <div className="flex items-start justify-between gap-4 mb-3">
-              <div className="flex-1">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2 leading-tight">
-                  {tour.title}
-                </h1>
-                <div className="flex items-center gap-4 text-sm">
-                  <div className="flex items-center gap-1.5">
-                    <svg className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                    </svg>
-                    <span className="font-semibold text-gray-900">
-                      {tour.rating.toFixed(1)}
-                    </span>
-                    <span className="text-gray-500">
-                      ({tour.reviewCount} reviews)
-                    </span>
-                  </div>
-                  {tour.badges && tour.badges.length > 0 && (
-                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold">
-                      {tour.badges[0]}
-                    </span>
-                  )}
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <button className="p-2 rounded-full hover:bg-gray-100 transition-colors">
-                  <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                </button>
-                <button 
-                  onClick={handleShare}
-                  className="p-2 rounded-full hover:bg-gray-100 transition-colors"
-                >
-                  <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
+      <main className="pb-24 md:pb-0">
+        {/* Hero (배너 높이 데스크톱에서 제한) */}
+        <section className="relative">
+          <HeroImage images={tour.images} />
         </section>
 
-        {/* 2. About this activity */}
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 mb-6">
-          <div className="max-w-4xl rounded-xl bg-gradient-to-br from-blue-50 via-indigo-50/50 to-purple-50/30 border-2 border-blue-200 shadow-lg p-4 sm:p-5">
-            <h2 className="text-base font-bold text-gray-900 mb-3 flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-sm">
-                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              About this activity
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-2.5">
-              <div className="flex items-start gap-2 p-2.5 rounded-lg bg-white/80 border border-blue-100 shadow-sm">
-                <div className="w-5 h-5 rounded-md bg-green-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
-                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-sm font-bold text-gray-900 mb-0.5">Free cancellation</div>
-                  <div className="text-xs text-gray-600 leading-relaxed">Cancel up to 24 hours in advance for a full refund</div>
-                </div>
-              </div>
-              <div className="flex items-start gap-2 p-2.5 rounded-lg bg-white/80 border border-blue-100 shadow-sm">
-                <div className="w-5 h-5 rounded-md bg-green-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
-                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-sm font-bold text-gray-900 mb-0.5">Reserve now & pay later</div>
-                  <div className="text-xs text-gray-600 leading-relaxed">Keep your travel plans flexible</div>
-                </div>
+        {/* 제목·평점·배지 (항상 보이도록 히어로 아래 고정) */}
+        <section className="container mx-auto px-4 sm:px-6 lg:px-8 pt-5 pb-3 max-w-4xl">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900 leading-tight tracking-tight">
+                {tour.title}
+              </h1>
+              <div className="flex items-center gap-3 mt-2 text-sm text-gray-600">
+                <span className="flex items-center gap-1">
+                  <svg className="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  {tour.rating.toFixed(1)}
+                </span>
+                <span>{tour.reviewCount} reviews</span>
+                {tour.badges?.[0] && (
+                  <span className="px-2 py-0.5 rounded-md bg-gray-100 text-gray-700 text-xs font-medium">{tour.badges[0]}</span>
+                )}
               </div>
             </div>
+            <div className="flex items-center gap-1 flex-shrink-0">
+              <ActionButtons compact variant="default" tourId={tour.id} onCheckAvailability={() => {}} onShare={handleShare} />
+            </div>
           </div>
-        </section>
-
-        {/* 2. Key Info Bar */}
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-          <KeyInfoBar items={keyInfoItems} />
+          <p className="text-xs text-gray-500 mt-3">Free cancellation · Reserve now & pay later</p>
+          <div className="mt-3">
+            <KeyInfoBar items={keyInfoItems} />
+          </div>
         </section>
 
         {/* Main Content */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-8 lg:grid lg:grid-cols-[1fr_400px] lg:gap-8 lg:items-start">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-8 lg:grid lg:grid-cols-[1fr_360px] lg:gap-10 lg:items-start max-w-6xl">
           {/* Left Column: Content */}
-          <div className="space-y-3 sm:space-y-4">
-            {/* 3. Quick Facts */}
-            <QuickFacts facts={tour.quickFacts} />
-
-            {/* 4. Gallery Grid */}
+          <div className="space-y-5">
+            {/* Gallery */}
             <GalleryGrid images={tour.images} />
 
             {/* 5. Description (collapsible) */}
             {tour.overview && (
-              <CollapsibleSection title="Full Description">
-                <div className="text-sm sm:text-base text-gray-700 leading-relaxed whitespace-pre-line">
+              <CollapsibleSection title={t('tour.fullDescription')}>
+                <div className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
                   {tour.overview}
                 </div>
               </CollapsibleSection>
             )}
 
             {/* 6. Itinerary (collapsible) */}
-            <CollapsibleSection title="Itinerary">
+            <CollapsibleSection title={t('tour.itinerary')}>
               <VisualItinerary items={tour.itinerary} pickupPoints={tour.pickupPoints} />
             </CollapsibleSection>
 
             {/* 7. What's Included (collapsible) */}
             {(tour.inclusions.length > 0 || tour.exclusions.length > 0) && (
-              <CollapsibleSection title="What's Included">
-                  <div className="grid md:grid-cols-2 gap-6">
+              <CollapsibleSection title={t('tour.whatsIncluded')}>
+                  <div className="grid sm:grid-cols-2 gap-5">
                     {tour.inclusions.length > 0 && (
                       <div>
-                        <h3 className="text-base font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                          <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          Included
+                        <h3 className="text-sm font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                          <span className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
+                            <svg className="w-3 h-3 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                          </span>
+                          {t('tour.included')}
                         </h3>
-                        <ul className="space-y-2.5">
+                        <ul className="space-y-1.5">
                           {tour.inclusions.map((item, index) => {
                             const text = typeof item === 'string' ? item : item.text || '';
                             return (
-                              <li key={index} className="flex items-start gap-3">
-                                <svg className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span className="text-sm text-gray-700">{text}</span>
+                              <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
+                                <span className="w-1 h-1 rounded-full bg-emerald-500 mt-1.5 flex-shrink-0" />
+                                {text}
                               </li>
                             );
                           })}
@@ -581,21 +520,19 @@ export default function TourDetailPage() {
                     )}
                     {tour.exclusions.length > 0 && (
                       <div>
-                        <h3 className="text-base font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                          <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                          </svg>
-                          Not Included
+                        <h3 className="text-sm font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                          <span className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center">
+                            <svg className="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                          </span>
+                          {t('tour.notIncluded')}
                         </h3>
-                        <ul className="space-y-2.5">
+                        <ul className="space-y-1.5">
                           {tour.exclusions.map((item, index) => {
                             const text = typeof item === 'string' ? item : item.text || '';
                             return (
-                              <li key={index} className="flex items-start gap-3">
-                                <svg className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                                <span className="text-sm text-gray-700">{text}</span>
+                              <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
+                                <span className="w-1 h-1 rounded-full bg-gray-400 mt-1.5 flex-shrink-0" />
+                                {text}
                               </li>
                             );
                           })}
@@ -608,13 +545,11 @@ export default function TourDetailPage() {
 
             {/* Highlights */}
             {tour.highlights && tour.highlights.length > 0 && (
-              <CollapsibleSection title="Highlights" defaultOpen={true}>
-                <ul className="space-y-3 text-sm sm:text-base text-gray-700">
+              <CollapsibleSection title={t('tour.highlights')} defaultOpen={true}>
+                <ul className="space-y-2 text-sm text-gray-600">
                   {tour.highlights.map((highlight, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-gray-300 mt-1.5 flex-shrink-0" />
                       <span>{highlight}</span>
                     </li>
                   ))}
@@ -624,21 +559,17 @@ export default function TourDetailPage() {
 
             {/* FAQ */}
             {tour.faqs && tour.faqs.length > 0 && (
-              <CollapsibleSection title="Frequently Asked Questions" defaultOpen={false}>
-                <div className="divide-y divide-gray-200">
+              <CollapsibleSection title={t('tour.faq')} defaultOpen={false}>
+                <div className="divide-y divide-gray-100">
                   {tour.faqs.map((faq, idx) => (
-                    <details
-                      key={idx}
-                      className="py-4 first:pt-0"
-                      open={idx === 0}
-                    >
-                      <summary className="cursor-pointer list-none font-semibold text-gray-900 hover:text-blue-600 transition-colors flex items-center justify-between">
-                        <span>{faq.question}</span>
-                        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <details key={idx} className="py-3 first:pt-0 group">
+                      <summary className="cursor-pointer list-none text-sm font-medium text-gray-900 flex items-center justify-between gap-2">
+                        <span className="group-open:text-gray-900">{faq.question}</span>
+                        <svg className="w-4 h-4 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
                       </summary>
-                      <p className="mt-3 text-sm text-gray-700 leading-relaxed pl-6">
+                      <p className="mt-2 text-sm text-gray-600 leading-relaxed pl-0">
                         {faq.answer}
                       </p>
                     </details>
@@ -664,16 +595,37 @@ export default function TourDetailPage() {
           </div>
         </div>
 
-        {/* Action Buttons - Fixed on mobile, normal on desktop */}
-        <ActionButtons
-          tourId={tour.id}
-          onCheckAvailability={handleCheckAvailability}
-          onShare={handleShare}
-        />
+        {/* Mobile: Sticky price bar (Klook style) */}
+        <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden flex items-center justify-between gap-4 px-4 py-3 bg-white border-t border-gray-100 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] safe-area-pb">
+          <div>
+            <p className="text-[11px] text-gray-500 uppercase tracking-wider">From</p>
+            <p className="text-lg font-semibold text-gray-900">
+              ₩{formatPrice(tour.originalPrice && tour.originalPrice > tour.price ? tour.price : tour.price)}
+              {tour.originalPrice != null && tour.originalPrice > tour.price && (
+                <span className="ml-2 text-sm font-normal text-gray-400 line-through">₩{formatPrice(tour.originalPrice)}</span>
+              )}
+            </p>
+          </div>
+          <button
+            onClick={handleCheckAvailability}
+            className="flex-1 max-w-[200px] py-3 px-5 rounded-xl bg-gray-900 text-white text-sm font-semibold hover:bg-gray-800 active:scale-[0.98] transition-transform"
+          >
+            {t('tour.checkAvailability')}
+          </button>
+        </div>
+
+        {/* Desktop: Action buttons */}
+        <div className="hidden md:block">
+          <ActionButtons
+            tourId={tour.id}
+            onCheckAvailability={handleCheckAvailability}
+            onShare={handleShare}
+          />
+        </div>
       </main>
       <Footer />
       <BottomNav />
-      <div className="h-16 md:hidden" />
+      <div className="h-20 md:h-16 md:hidden" />
     </div>
   );
 }

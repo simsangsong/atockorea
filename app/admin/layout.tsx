@@ -4,6 +4,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
+import { useTranslations } from '@/lib/i18n';
 
 const adminMenuItems = [
   { 
@@ -85,6 +86,7 @@ const adminMenuItems = [
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
+  const t = useTranslations();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState<any>(null);
@@ -133,14 +135,30 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
       if (profileError) {
         console.error('Profile query error:', profileError);
+        // JWT 만료: 세션 정리 후 로그인 페이지로
+        const isJwtExpired = (profileError.message || '').toLowerCase().includes('jwt expired');
+        if (isJwtExpired) {
+          await supabase.auth.signOut();
+          setIsAuthenticated(false);
+          alert('로그인이 만료되었습니다. 다시 로그인해 주세요.');
+          router.push('/signin?redirect=/admin');
+          return;
+        }
         // If profile doesn't exist, try to create it
         if (profileError.code === 'PGRST116') {
           console.log('Profile not found, creating default profile...');
+          const meta = session.user.user_metadata || {};
+          const displayName =
+            meta.name ||
+            meta.full_name ||
+            [meta.given_name, meta.family_name].filter(Boolean).join(' ').trim() ||
+            session.user.email?.split('@')[0] ||
+            'User';
           const { data: newProfile, error: insertError } = await supabase
             .from('user_profiles')
             .insert({
               id: session.user.id,
-              full_name: session.user.user_metadata?.full_name || session.user.email?.split('@')[0] || 'User',
+              full_name: displayName,
               role: 'customer',
             })
             .select()
@@ -169,7 +187,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       if (!profile) {
         console.error('Profile is null');
         setIsAuthenticated(false);
-        alert('프로필을 찾을 수 없습니다.');
+        alert(t('admin.profileNotFound'));
         router.push('/');
         return;
       }
@@ -179,7 +197,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       if (profile.role !== 'admin') {
         console.warn('User is not admin. Role:', profile.role);
         setIsAuthenticated(false);
-        alert(`Access denied. Admin privileges required.\n\n현재 역할: ${profile.role || '없음'}\n\nSupabase에서 user_profiles 테이블의 role을 'admin'으로 설정해주세요.`);
+        const roleLabel = profile.role || '—';
+        alert(`${t('admin.accessDenied')}\n\n${t('admin.currentRole')}: ${roleLabel}\n\n${t('admin.setRoleInSupabase')}`);
         router.push('/');
         return;
       }

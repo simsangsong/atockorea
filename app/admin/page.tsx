@@ -20,6 +20,7 @@ interface RecentBooking {
   final_price: number;
   status: string;
   payment_status: string;
+  contact_name?: string | null;
   tours: {
     id: string;
     title: string;
@@ -267,7 +268,7 @@ export default function AdminDashboard() {
                     새 예약: {booking.tours?.title || '투어'}
                   </p>
                   <p className="text-xs text-gray-500 mt-0.5">
-                    {booking.user_profiles?.full_name || '게스트'} • {formatDate(booking.created_at)} • 
+                    {booking.user_profiles?.full_name || booking.contact_name || '게스트'} • {formatDate(booking.created_at)} • 
                     ₩{parseFloat(booking.final_price.toString()).toLocaleString()}
                   </p>
                 </div>

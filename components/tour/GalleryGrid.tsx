@@ -41,35 +41,24 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
 
   return (
     <>
-      <div className="rounded-xl bg-white border-2 border-gray-200 shadow-md p-4 sm:p-5">
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">Photo Gallery</h2>
-        <div className="space-y-4">
+      <div>
+        <h2 className="text-sm font-semibold text-gray-900 mb-3">Photos</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
           {normalizedImages.map((image, index) => (
-            <div key={index} className="w-full">
+            <div key={index}>
               <button
                 onClick={() => setSelectedImage(index)}
-                className="relative w-full aspect-video lg:max-h-[225px] rounded-lg overflow-hidden group cursor-pointer border-2 border-gray-200 hover:border-blue-500 transition-all duration-300 shadow-sm hover:shadow-lg"
+                className="relative w-full aspect-[4/3] rounded-xl overflow-hidden group cursor-pointer bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-1"
               >
                 <Image
                   src={image.url}
                   alt={image.title || `Gallery image ${index + 1}`}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                   loading="lazy"
-                  sizes="100vw"
+                  sizes="(max-width: 640px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </button>
-              {(image.title || image.description) && (
-                <div className="mt-2 px-1">
-                  {image.title && (
-                    <h3 className="text-sm font-semibold text-gray-900 mb-1">{image.title}</h3>
-                  )}
-                  {image.description && (
-                    <p className="text-xs text-gray-600 leading-relaxed">{image.description}</p>
-                  )}
-                </div>
-              )}
             </div>
           ))}
         </div>

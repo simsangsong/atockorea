@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import TourCard from "./TourCard";
-import { useTranslations } from "@/lib/i18n";
+import { useTranslations, useI18n } from "@/lib/i18n";
 
 interface Tour {
   id: number;
@@ -21,6 +21,7 @@ interface Tour {
 
 export default function SeasonalTours() {
   const t = useTranslations();
+  const { locale } = useI18n();
   const [seasonalTours, setSeasonalTours] = useState<Tour[]>([]);
   const [loading, setLoading] = useState(true);
   
@@ -28,8 +29,7 @@ export default function SeasonalTours() {
     const fetchSeasonalTours = async () => {
       try {
         setLoading(true);
-        // Fetch tours that might be seasonal (you can add a filter for seasonal tours in the future)
-        const response = await fetch('/api/tours?limit=6&sortBy=created_at&sortOrder=desc&isActive=true');
+        const response = await fetch(`/api/tours?limit=6&sortBy=created_at&sortOrder=desc&isActive=true&locale=${encodeURIComponent(locale)}`);
         if (!response.ok) {
           throw new Error('Failed to fetch tours');
         }
@@ -58,7 +58,7 @@ export default function SeasonalTours() {
     };
     
     fetchSeasonalTours();
-  }, []);
+  }, [locale]);
   
   if (loading) {
     return (

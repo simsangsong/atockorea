@@ -4,9 +4,11 @@
 import React, { Suspense, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import TourCardDetail from "../../components/TourCardDetail";
+import { useI18n } from "@/lib/i18n";
 
 function SearchResults() {
   const searchParams = useSearchParams();
+  const { locale } = useI18n();
   const [results, setResults] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -30,6 +32,7 @@ function SearchResults() {
         if (qParam) {
           params.append('search', qParam);
         }
+        params.set('locale', locale);
 
         const response = await fetch(`/api/tours?${params.toString()}`);
         
@@ -69,7 +72,7 @@ function SearchResults() {
     };
 
     fetchTours();
-  }, [cityParam, qParam]);
+  }, [cityParam, qParam, locale]);
 
   return (
     <>

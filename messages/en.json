@@ -94,7 +94,18 @@
     "preferredChatApp": "Preferred Chat App",
     "pleaseSelect": "Please select",
     "chatAppContact": "Chat App Contact",
-    "enterChatAppId": "Enter your chat app ID or contact"
+    "enterChatAppId": "Enter your chat app ID or contact",
+    "fullDescription": "Full Description",
+    "whatsIncluded": "What's Included",
+    "highlights": "Highlights",
+    "faq": "Frequently Asked Questions",
+    "allPickupPoints": "All pickup points:",
+    "pickupMeetupInfo": "Pick-up & Meet-up Information",
+    "noPickupPoints": "No pickup points available.",
+    "directions": "Directions",
+    "showFullItinerary": "Show full itinerary",
+    "collapse": "Collapse",
+    "itineraryMayChange": "Itinerary may change depending on weather and traffic."
   },
   "booking": {
     "title": "Booking",
@@ -196,7 +207,11 @@
     "quickActions": "Quick Actions",
     "addNewMerchant": "Add New Merchant",
     "viewReports": "View Reports",
-    "systemSettings": "System Settings"
+    "systemSettings": "System Settings",
+    "accessDenied": "Access denied. Admin privileges required.",
+    "currentRole": "Current role",
+    "setRoleInSupabase": "In Supabase, set the role in the user_profiles table to 'admin'.",
+    "profileNotFound": "Profile not found."
   },
   "auth": {
     "signIn": "Sign In",

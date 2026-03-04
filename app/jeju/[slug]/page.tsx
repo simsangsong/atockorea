@@ -6,6 +6,7 @@ import { useRouter, useParams } from "next/navigation";
 import Image from "next/image";
 import { detailedTours, DetailedTour } from "../../../data/tours";
 import GalleryGrid from "@/components/tour/GalleryGrid";
+import { useI18n } from "@/lib/i18n";
 
 // ===== 타입 정의 =====
 type Review = {
@@ -161,6 +162,7 @@ function DescriptionContent({ description }: { description: string }) {
 export default function JejuTourDetailPage({ params }: PageProps) {
   const router = useRouter();
   const urlParams = useParams(); // Fallback to useParams if params doesn't work
+  const { locale } = useI18n();
   const slug = params?.slug || urlParams?.slug as string;
   const [tour, setTour] = useState<DetailedTour | null>(null);
   const [loading, setLoading] = useState(true);
@@ -291,10 +293,10 @@ export default function JejuTourDetailPage({ params }: PageProps) {
         setLoading(true);
         setError(null);
 
-        // Use absolute URL for better mobile compatibility
+        // Use absolute URL for better mobile compatibility; pass locale for translated content
         const apiUrl = typeof window !== 'undefined' 
-          ? `${window.location.origin}/api/tours/${encodeURIComponent(currentSlug)}`
-          : `/api/tours/${encodeURIComponent(currentSlug)}`;
+          ? `${window.location.origin}/api/tours/${encodeURIComponent(currentSlug)}?locale=${encodeURIComponent(locale)}`
+          : `/api/tours/${encodeURIComponent(currentSlug)}?locale=${encodeURIComponent(locale)}`;
 
         console.log('[JejuTourDetail] Fetching tour:', { 
           slug: currentSlug, 
@@ -440,7 +442,7 @@ export default function JejuTourDetailPage({ params }: PageProps) {
     };
 
     fetchTour();
-  }, [slug, urlParams]);
+  }, [slug, urlParams, locale]);
 
   // Update state when tour data loads
   useEffect(() => {

@@ -19,6 +19,8 @@ export default function SignInPage() {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showGoogleChoice, setShowGoogleChoice] = useState(false);
+  const [isSocialLoading, setIsSocialLoading] = useState(false);
 
   // 检查 URL 参数中的错误
   useEffect(() => {
@@ -63,13 +65,17 @@ export default function SignInPage() {
           .single();
 
         if (!profile || profileError) {
-          // 如果用户资料不存在，创建用户资料
+          const meta = data.user.user_metadata || {};
+          const displayName =
+            meta.name ||
+            meta.full_name ||
+            [meta.given_name, meta.family_name].filter(Boolean).join(' ').trim() ||
+            data.user.email?.split('@')[0] ||
+            'User';
           const { error: insertError } = await supabase.from('user_profiles').insert({
             id: data.user.id,
-            full_name: data.user.user_metadata?.full_name || 
-                       data.user.email?.split('@')[0] || 
-                       'User',
-            role: 'customer', // 默认角色
+            full_name: displayName,
+            role: 'customer',
           });
 
           if (insertError) {
@@ -87,28 +93,65 @@ export default function SignInPage() {
     }
   };
 
-  const handleSocialLogin = async (provider: 'google' | 'facebook' | 'kakao' | 'line') => {
+  const startGoogleOAuth = async (mode: 'default' | 'select_account') => {
     try {
-      // LINE OAuth 使用自定义实现
-      if (provider === 'line') {
-        // 重定向到自定义 LINE OAuth API
-        window.location.href = '/api/auth/line';
-        return;
-      }
-
-      // 其他提供商使用 Supabase OAuth
       if (!supabase) {
         throw new Error('Supabase client not initialized');
       }
 
-      // 获取当前页面的 URL 作为 redirect_to
+      const redirectTo = `${window.location.origin}/auth/callback`;
+      const options: { redirectTo: string; queryParams?: { prompt: string } } = { redirectTo };
+      if (mode === 'select_account') {
+        options.queryParams = { prompt: 'select_account' };
+      }
+
+      setIsSocialLoading(true);
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options,
+      });
+
+      if (error) {
+        setError(error.message);
+        setIsSocialLoading(false);
+        return;
+      }
+
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        setIsSocialLoading(false);
+      }
+    } catch (err: any) {
+      setError(err.message);
+      setIsSocialLoading(false);
+    }
+  };
+
+  const handleSocialLogin = async (provider: 'google' | 'facebook' | 'kakao' | 'line') => {
+    try {
+      // Google: 먼저 저장된 계정 / 계정 전환 선택 모달 표시
+      if (provider === 'google') {
+        setShowGoogleChoice(true);
+        return;
+      }
+
+      // LINE OAuth 使用自定义实现
+      if (provider === 'line') {
+        window.location.href = '/api/auth/line';
+        return;
+      }
+
+      // 其他提供商使用 Supabase OAuth (Facebook, Kakao)
+      if (!supabase) {
+        throw new Error('Supabase client not initialized');
+      }
+
       const redirectTo = `${window.location.origin}/auth/callback`;
 
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider,
-        options: {
-          redirectTo,
-        },
+        options: { redirectTo },
       });
 
       if (error) {
@@ -116,7 +159,6 @@ export default function SignInPage() {
         return;
       }
 
-      // 如果返回了 URL，说明需要跳转到 OAuth 提供商
       if (data.url) {
         window.location.href = data.url;
       }
@@ -308,6 +350,52 @@ export default function SignInPage() {
       <Footer />
       <BottomNav />
       <div className="h-16 md:hidden" />
+
+      {/* Google 계정 선택 모달 */}
+      {showGoogleChoice && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+          <div className="bg-white rounded-2xl shadow-2xl border border-gray-200/70 w-full max-w-sm mx-4 p-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-2">
+              Google 계정 선택
+            </h2>
+            <p className="text-sm text-gray-600 mb-4">
+              이전에 로그인한 Google 계정으로 계속할지, 다른 계정으로 전환할지 선택하세요.
+            </p>
+            <div className="space-y-3">
+              <button
+                type="button"
+                onClick={() => {
+                  setShowGoogleChoice(false);
+                  startGoogleOAuth('default');
+                }}
+                disabled={isSocialLoading}
+                className="w-full py-2.5 rounded-xl bg-gray-900 text-white text-sm font-semibold hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSocialLoading ? '처리 중...' : '저장된 Google 계정으로 계속'}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowGoogleChoice(false);
+                  startGoogleOAuth('select_account');
+                }}
+                disabled={isSocialLoading}
+                className="w-full py-2.5 rounded-xl border border-gray-300 text-sm font-semibold text-gray-900 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                다른 Google 계정으로 로그인
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowGoogleChoice(false)}
+                disabled={isSocialLoading}
+                className="w-full py-2 text-xs text-gray-500 hover:text-gray-700"
+              >
+                취소
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

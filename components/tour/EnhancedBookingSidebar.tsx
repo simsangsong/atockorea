@@ -202,9 +202,9 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
   };
 
   return (
-    <div className="bg-white/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/30 p-4 sm:p-5 lg:sticky lg:top-24">
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4 sm:p-5 lg:sticky lg:top-24">
       {/* Price Display */}
-      <div className="mb-4 pb-4 border-b-2 border-blue-200/40">
+      <div className="mb-4 pb-4 border-b border-gray-100">
         {/* Original Price */}
         {hasDiscount && tour.originalPrice && (
           <div className="mb-2">

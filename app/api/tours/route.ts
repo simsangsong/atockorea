@@ -3,14 +3,26 @@ import { createServerClient } from '@/lib/supabase';
 import { withErrorHandler, AppError } from '@/lib/error-handler';
 import { createServerLogger } from '@/lib/logger';
 
+const SUPPORTED_LOCALES = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'] as const;
+type SupportedLocale = typeof SUPPORTED_LOCALES[number];
+
+function parseLocale(value: string | null): SupportedLocale | null {
+  if (!value) return null;
+  const normalized = value.trim();
+  if (SUPPORTED_LOCALES.includes(normalized as SupportedLocale)) return normalized as SupportedLocale;
+  return null;
+}
+
 /**
  * GET /api/tours
- * Get all tours with optional filtering (server-side)
+ * Get all tours with optional filtering (server-side).
+ * Optional ?locale= en|ko|zh|zh-TW|es|ja returns translated title/description from tours.translations when available.
  */
 export const GET = withErrorHandler(async (req: NextRequest) => {
   const logger = createServerLogger(req);
   const supabase = createServerClient();
     const { searchParams } = new URL(req.url);
+    const localeParam = parseLocale(searchParams.get('locale'));
 
     // Query parameters
     const city = searchParams.get('city');
@@ -124,41 +136,46 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       throw new AppError('Failed to fetch tours', 500, 'TOURS_FETCH_ERROR', error.message);
     }
 
-    // Transform data to match frontend expectations
-    let transformedTours = tours?.map((tour) => ({
-      id: tour.id,
-      slug: tour.slug,
-      title: tour.title,
-      location: tour.city,
-      city: tour.city,
-      price: parseFloat(tour.price.toString()),
-      originalPrice: tour.original_price ? parseFloat(tour.original_price.toString()) : null,
-      priceType: tour.price_type,
-      image: tour.image_url || (tour.gallery_images && Array.isArray(tour.gallery_images) && tour.gallery_images.length > 0 ? tour.gallery_images[0] : '') || '',
-      images: tour.gallery_images || [],
-      rating: tour.rating ? parseFloat(tour.rating.toString()) : 0,
-      reviewCount: tour.review_count || 0,
-      duration: tour.duration || '',
-      difficulty: tour.difficulty || '',
-      groupSize: tour.group_size || '',
-      highlight: tour.highlight || '',
-      badges: tour.badges || [],
-      description: tour.description || '',
-      location_detail: tour.location || '',
-      pickupPoints: tour.pickup_points || [],
-      pickupPointsCount: tour.pickup_points_count || 0,
-      dropoffPointsCount: tour.dropoff_points_count || 0,
-      lunchIncluded: tour.lunch_included || false,
-      ticketIncluded: tour.ticket_included || false,
-      includes: tour.includes || [],
-      excludes: tour.excludes || [],
-      schedule: tour.schedule || [],
-      pickupInfo: tour.pickup_info || '',
-      notes: tour.notes || '',
-      isActive: tour.is_active,
-      createdAt: tour.created_at,
-      updatedAt: tour.updated_at,
-    })) || [];
+    // Transform data to match frontend expectations; use translations[locale] when available
+    let transformedTours = tours?.map((tour: any) => {
+      const tr = (localeParam && tour.translations && typeof tour.translations === 'object' && tour.translations[localeParam]) || null;
+      const title = (tr?.title ?? tour.title) as string;
+      const description = (tr?.description ?? tour.description ?? '') as string;
+      return {
+        id: tour.id,
+        slug: tour.slug,
+        title,
+        location: tour.city,
+        city: tour.city,
+        price: parseFloat(tour.price.toString()),
+        originalPrice: tour.original_price ? parseFloat(tour.original_price.toString()) : null,
+        priceType: tour.price_type,
+        image: tour.image_url || (tour.gallery_images && Array.isArray(tour.gallery_images) && tour.gallery_images.length > 0 ? tour.gallery_images[0] : '') || '',
+        images: tour.gallery_images || [],
+        rating: tour.rating ? parseFloat(tour.rating.toString()) : 0,
+        reviewCount: tour.review_count || 0,
+        duration: tour.duration || '',
+        difficulty: tour.difficulty || '',
+        groupSize: tour.group_size || '',
+        highlight: (tr?.highlight ?? tour.highlight ?? '') as string,
+        badges: tour.badges || [],
+        description,
+        location_detail: tour.location || '',
+        pickupPoints: tour.pickup_points || [],
+        pickupPointsCount: tour.pickup_points_count || 0,
+        dropoffPointsCount: tour.dropoff_points_count || 0,
+        lunchIncluded: tour.lunch_included || false,
+        ticketIncluded: tour.ticket_included || false,
+        includes: (Array.isArray(tr?.includes) ? tr.includes : tour.includes) || [],
+        excludes: (Array.isArray(tr?.excludes) ? tr.excludes : tour.excludes) || [],
+        schedule: tour.schedule || [],
+        pickupInfo: (tr?.pickup_info ?? tour.pickup_info ?? '') as string,
+        notes: (tr?.notes ?? tour.notes ?? '') as string,
+        isActive: tour.is_active,
+        createdAt: tour.created_at,
+        updatedAt: tour.updated_at,
+      };
+    }) || [];
 
     // Apply features filter in JavaScript (since JSONB queries are complex)
     if (features) {

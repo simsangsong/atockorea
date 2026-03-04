@@ -220,7 +220,14 @@ export async function POST(req: NextRequest) {
       bookingData.special_requests = specialRequests;
     }
 
-    // Store customer info in special_requests if no user_id
+    // Store contact info for guest and display in admin
+    if (customerInfo) {
+      bookingData.contact_name = customerInfo.name || null;
+      bookingData.contact_email = customerInfo.email || null;
+      bookingData.contact_phone = customerInfo.phone || null;
+    }
+
+    // Store customer info in special_requests if no user_id (legacy)
     if (!userId && customerInfo) {
       bookingData.special_requests = JSON.stringify({
         ...customerInfo,

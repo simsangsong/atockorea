@@ -7,11 +7,20 @@ import { createServerLogger } from '@/lib/logger';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
+const SUPPORTED_LOCALES = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'] as const;
+type SupportedLocale = typeof SUPPORTED_LOCALES[number];
+
+function parseLocale(value: string | null): SupportedLocale | null {
+  if (!value) return null;
+  const normalized = value.trim();
+  if (SUPPORTED_LOCALES.includes(normalized as SupportedLocale)) return normalized as SupportedLocale;
+  return null;
+}
+
 /**
  * GET /api/tours/[id]
- * Get a single tour by ID with all related data
- * 
- * This endpoint handles both UUID and slug-based tour lookups.
+ * Get a single tour by ID with all related data.
+ * Optional ?locale= en|ko|zh|zh-TW|es|ja returns translated content from tours.translations when available.
  */
 export const GET = withErrorHandler(async (
   req: NextRequest,
@@ -19,13 +28,15 @@ export const GET = withErrorHandler(async (
 ) => {
   const logger = createServerLogger(req);
   const tourId = params.id;
+  const { searchParams } = new URL(req.url);
+  const localeParam = parseLocale(searchParams.get('locale'));
 
     if (!tourId) {
       throw new AppError('Tour ID is required', 400, 'VALIDATION_ERROR');
     }
 
     const supabase = createServerClient();
-    logger.info('Fetching tour', { tourId });
+    logger.info('Fetching tour', { tourId, locale: localeParam ?? 'default' });
 
     // Try to fetch by ID first (UUID), then by slug if not found
     let query = supabase
@@ -97,11 +108,34 @@ export const GET = withErrorHandler(async (
 
     logger.info('Tour found', { id: tour.id, title: tour.title });
 
+    // Use translated content when locale is requested and translations exist
+    const tr = (localeParam && tour.translations && typeof tour.translations === 'object' && (tour.translations as Record<string, unknown>)[localeParam] as Record<string, unknown> | undefined) || null;
+    const baseTitle = tour.title;
+    const baseDescription = tour.description || '';
+    const baseSchedule = Array.isArray(tour.schedule) ? tour.schedule : [];
+    const baseIncludes = Array.isArray(tour.includes) ? tour.includes : (Array.isArray(tour.highlights) ? tour.highlights : []);
+    const baseExcludes = Array.isArray(tour.excludes) ? tour.excludes : [];
+    const baseFaqs = Array.isArray(tour.faqs) ? tour.faqs : [];
+    const baseHighlight = tour.highlight || '';
+    const basePickupInfo = tour.pickup_info || '';
+    const baseNotes = tour.notes || '';
+
+    const title = (tr?.title as string) ?? baseTitle;
+    const tagline = (tr?.description as string) ?? (tr?.subtitle as string) ?? baseDescription;
+    const overview = (tr?.description as string) ?? baseDescription;
+    const schedule = Array.isArray(tr?.schedule) ? (tr.schedule as any[]) : baseSchedule;
+    const includes = Array.isArray(tr?.includes) ? (tr.includes as string[]) : baseIncludes;
+    const excludes = Array.isArray(tr?.excludes) ? (tr.excludes as string[]) : baseExcludes;
+    const faqs = Array.isArray(tr?.faqs) ? (tr.faqs as Array<{ question: string; answer: string }>) : baseFaqs;
+    const highlights = Array.isArray(tr?.highlights) ? (tr.highlights as string[]) : (Array.isArray(tour.highlights) ? tour.highlights : []);
+    const pickupInfo = (tr?.pickup_info as string) ?? basePickupInfo;
+    const notes = (tr?.notes as string) ?? baseNotes;
+
     // Transform data to match frontend expectations
     const transformedTour = {
       id: tour.id,
-      title: tour.title,
-      tagline: tour.description || '',
+      title,
+      tagline,
       location: tour.city,
       city: tour.city,
       rating: tour.rating ? parseFloat(tour.rating.toString()) : 0,
@@ -116,18 +150,18 @@ export const GET = withErrorHandler(async (
       duration: tour.duration || '',
       difficulty: tour.difficulty || '',
       groupSize: tour.group_size || '',
-      highlight: tour.highlight || '',
+      highlight: (tr?.highlight as string) ?? baseHighlight,
       images: tour.gallery_images && Array.isArray(tour.gallery_images) && tour.gallery_images.length > 0 
         ? tour.gallery_images.map((img: string, index: number) => ({
             url: img,
-            title: `${tour.title} - Image ${index + 1}`,
+            title: `${title} - Image ${index + 1}`,
             description: '',
           }))
         : tour.image_url 
           ? [{
               url: tour.image_url,
-              title: tour.title,
-              description: tour.description || '',
+              title,
+              description: overview,
             }]
           : [],
       quickFacts: [
@@ -135,34 +169,23 @@ export const GET = withErrorHandler(async (
         tour.difficulty ? `Difficulty: ${tour.difficulty}` : '',
         tour.duration ? `Duration: ${tour.duration}` : '',
       ].filter(Boolean),
-      itinerary: Array.isArray(tour.schedule) 
-        ? tour.schedule.map((item: any) => ({
-            time: item.time || '',
-            title: item.title || '',
-            description: item.description || '',
-            icon: item.icon || '📍',
-          }))
-        : [],
-      inclusions: Array.isArray(tour.includes)
-        ? tour.includes.map((item: string) => ({
-            icon: '✓',
-            text: item,
-          }))
-        : Array.isArray(tour.highlights)
-        ? tour.highlights.map((item: string) => ({
-            icon: '✓',
-            text: item,
-          }))
-        : [],
-      exclusions: Array.isArray(tour.excludes)
-        ? tour.excludes.map((item: string) => ({
-            icon: '✗',
-            text: item,
-          }))
-        : [],
-      overview: tour.description || '',
-      pickupInfo: tour.pickup_info || '',
-      notes: tour.notes || '',
+      itinerary: schedule.map((item: any) => ({
+        time: item.time || '',
+        title: item.title || '',
+        description: item.description || '',
+        icon: item.icon || '📍',
+      })),
+      inclusions: includes.map((item: string) => ({
+        icon: '✓',
+        text: item,
+      })),
+      exclusions: excludes.map((item: string) => ({
+        icon: '✗',
+        text: item,
+      })),
+      overview,
+      pickupInfo,
+      notes,
       pickupPoints: (tour.pickup_points || []).map((point: any) => ({
         id: point.id,
         name: point.name,
@@ -171,7 +194,8 @@ export const GET = withErrorHandler(async (
         lng: point.lng ? parseFloat(point.lng.toString()) : 0,
         pickup_time: point.pickup_time || null,
       })),
-      faqs: Array.isArray(tour.faqs) ? tour.faqs : [],
+      faqs,
+      highlights: highlights.length > 0 ? highlights : (Array.isArray(tour.highlights) ? tour.highlights : []),
     };
 
     return NextResponse.json({ tour: transformedTour });
