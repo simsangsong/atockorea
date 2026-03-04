@@ -40,7 +40,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="relative w-full aspect-video md:aspect-[4/1] overflow-hidden">
+    <div className="relative w-full aspect-video md:aspect-[4/1] overflow-hidden md:rounded-b-2xl md:mx-4 md:shadow-xl">
       {/* Image Carousel */}
       <div className="relative w-full h-full">
         {heroImages.map((item, index) => (

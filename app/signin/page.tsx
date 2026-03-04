@@ -99,7 +99,13 @@ export default function SignInPage() {
         throw new Error('Supabase client not initialized');
       }
 
-      const redirectTo = `${window.location.origin}/auth/callback`;
+      // Always redirect to canonical site URL so mobile/real users land on the live site (not localhost/null)
+      const canonicalUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
+      const origin = typeof window !== 'undefined' ? window.location.origin : '';
+      const baseUrl = (origin && (origin.startsWith('http://localhost') || origin.startsWith('http://127.0.0.1')))
+        ? origin
+        : canonicalUrl.replace(/\/$/, '');
+      const redirectTo = `${baseUrl}/auth/callback`;
       const options: { redirectTo: string; queryParams?: { prompt: string } } = { redirectTo };
       if (mode === 'select_account') {
         options.queryParams = { prompt: 'select_account' };
@@ -147,7 +153,12 @@ export default function SignInPage() {
         throw new Error('Supabase client not initialized');
       }
 
-      const redirectTo = `${window.location.origin}/auth/callback`;
+      const canonicalUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
+      const origin = typeof window !== 'undefined' ? window.location.origin : '';
+      const baseUrl = (origin && (origin.startsWith('http://localhost') || origin.startsWith('http://127.0.0.1')))
+        ? origin
+        : canonicalUrl.replace(/\/$/, '');
+      const redirectTo = `${baseUrl}/auth/callback`;
 
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider,

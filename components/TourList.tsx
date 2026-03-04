@@ -64,24 +64,14 @@ export default function TourList() {
   
   if (loading) {
     return (
-      <section className="py-8 sm:py-12 bg-transparent">
+      <section className="py-10 sm:py-14 bg-white/80 backdrop-blur-sm border-y border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-6">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
-                {t('home.tourList.title')}
-              </h2>
-              <a
-                href="/tours"
-                className="text-sm text-blue-600 hover:text-blue-700 font-medium"
-              >
-                {t('home.tourList.seeMore')}
-              </a>
-            </div>
+          <div className="text-center mb-8">
+            <div className="h-11 w-48 bg-gray-200 rounded-full animate-pulse mx-auto" />
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
             {[...Array(4)].map((_, i) => (
-              <div key={i} className="bg-gray-200 rounded-lg animate-pulse aspect-[4/5]" />
+              <div key={i} className="bg-gray-200 rounded-2xl animate-pulse aspect-[5/5.32]" />
             ))}
           </div>
         </div>
@@ -94,32 +84,29 @@ export default function TourList() {
   }
   
   return (
-    <section className="py-8 sm:py-12 bg-transparent">
+    <section className="py-10 sm:py-14 bg-white/80 backdrop-blur-sm border-y border-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Title Section */}
-        <div className="mb-6">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
-              {t('home.tourList.title')}
-            </h2>
-            <a
-              href="/tours"
-              className="text-sm text-blue-600 hover:text-blue-700 font-medium"
-            >
-              {t('home.tourList.seeMore')}
-            </a>
-          </div>
+        {/* View all tours — logo-matching blue–orange gradient (above cards) */}
+        <div className="text-center mb-8">
+          <a
+            href="/tours"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-blue-500 via-blue-600 to-orange-500 hover:from-blue-600 hover:via-blue-700 hover:to-orange-500 shadow-md hover:shadow-lg transition-all duration-300"
+          >
+            {t('home.tourList.seeMore')}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
         </div>
-        
-        {/* Grid Layout: mobile 2 columns, desktop 3-4 columns */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+
+        {/* Grid: mobile 2 cols, desktop 3–4 cols */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
           {tours.map((tour) => {
             const hasDiscount = tour.original_price && tour.original_price > tour.price;
             const discount = hasDiscount && tour.original_price 
               ? Math.round(((tour.original_price - tour.price) / tour.original_price) * 100) 
               : undefined;
             
-            // Get image from tour data (image or first image in images array)
             const tourImage = tour.image || (tour.images && tour.images[0]) || "https://images.unsplash.com/photo-1534008897995-27a23e859048?w=600&q=80";
             
             return (
@@ -130,13 +117,16 @@ export default function TourList() {
                 title={tour.title}
                 location={tour.city}
                 type={tour.duration || "Day tour"}
-                price={tour.price / 1000} // TourCard expects price in thousands (80 for 80000)
+                price={tour.price / 1000}
+                originalPriceKRW={tour.original_price && tour.original_price > tour.price ? tour.original_price : undefined}
                 priceType={tour.price_type || "person"}
                 image={tourImage}
-                badge={tour.badges?.[0] || "Popular"}
+                badge={tour.badges?.[0] || "Day tour"}
                 rating={tour.rating || 4.5}
                 reviewCount={tour.review_count || 0}
                 discount={discount}
+                badgeVariant="brand"
+                variant="home"
               />
             );
           })}

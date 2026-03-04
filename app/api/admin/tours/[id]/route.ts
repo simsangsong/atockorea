@@ -178,6 +178,51 @@ export async function PATCH(
 }
 
 /**
+ * DELETE /api/admin/tours/[id]
+ * Delete a tour (admin only). Removes pickup_points first, then the tour.
+ */
+export async function DELETE(
+  req: NextRequest,
+  { params }: { params: Promise<{ id: string }> | { id: string } }
+) {
+  try {
+    await requireAdmin(req);
+    const resolvedParams = params instanceof Promise ? await params : params;
+    const tourId = resolvedParams.id;
+    const supabase = createServerClient();
+
+    const { data: existing } = await supabase
+      .from('tours')
+      .select('id')
+      .eq('id', tourId)
+      .single();
+
+    if (!existing) {
+      return NextResponse.json({ error: 'Tour not found' }, { status: 404 });
+    }
+
+    await supabase.from('pickup_points').delete().eq('tour_id', tourId);
+    const { error } = await supabase.from('tours').delete().eq('id', tourId);
+
+    if (error) {
+      return NextResponse.json(
+        { error: 'Failed to delete tour', details: error.message },
+        { status: 400 }
+      );
+    }
+    return NextResponse.json({ success: true, message: 'Tour deleted' });
+  } catch (error: any) {
+    if (error.message === 'Unauthorized' || error.message.includes('Forbidden')) {
+      return NextResponse.json({ error: 'Admin access required' }, { status: 403 });
+    }
+    return NextResponse.json(
+      { error: 'Internal server error', details: error.message },
+      { status: 500 }
+    );
+  }
+}
+
+/**
  * GET /api/admin/tours/[id]
  * Get a single tour (admin only)
  */

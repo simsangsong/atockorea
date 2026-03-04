@@ -26,9 +26,12 @@ interface TourCardProps {
   type?: string;
   duration?: string;
   price?: number;
+  originalPriceKRW?: number; // 할인 전 가격 (원가) — 있으면 카드에 표시
   priceType?: "person" | "group";
   image?: string;
   badge?: string;
+  badgeVariant?: "default" | "brand"; // brand = blue (AtoC), default = orange
+  variant?: "default" | "home"; // home = different layout for homepage
   rating?: number;
   reviewCount?: number;
   discount?: number; // Discount percentage (e.g., 20 for 20% off)
@@ -44,9 +47,12 @@ export default function TourCard({
   type,
   duration,
   price,
+  originalPriceKRW,
   priceType,
   image,
   badge,
+  badgeVariant = "default",
+  variant = "default",
   rating = 4.5,
   reviewCount = 0,
   discount,
@@ -68,6 +74,9 @@ export default function TourCard({
   const displayPrice = currencyCtx && priceKRW > 0
     ? currencyCtx.formatPrice(priceKRW)
     : (tour?.price || (price ? `₩ ${(price * 1000).toLocaleString()}` : ""));
+  const displayOriginalPrice = originalPriceKRW != null && originalPriceKRW > priceKRW
+    ? (currencyCtx ? currencyCtx.formatPrice(originalPriceKRW) : `₩ ${originalPriceKRW.toLocaleString()}`)
+    : null;
   
   // Generate href based on available data
   // Priority: tour.href > /tour/[id] for API tours > city+slug route for static tours
@@ -128,6 +137,52 @@ export default function TourCard({
     }, 500);
   };
 
+  // Home variant: image-heavy card, title on image, location + price below
+  if (variant === "home") {
+    return (
+      <div className="group h-full flex flex-col rounded-2xl overflow-hidden border border-gray-200/50 shadow-[0_4px_24px_rgba(0,0,0,0.06),0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1),0_4px_12px_rgba(0,0,0,0.06)] hover:border-gray-200 transition-all duration-300 transform hover:-translate-y-1">
+        <Link href={displayHref} className="block flex-1 flex flex-col">
+          <div className="relative w-full aspect-[5/5.32] overflow-hidden">
+            <Image
+              src={displayImage}
+              alt={displayTitle}
+              fill
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+            {displayBadge && (
+              <span className={`absolute top-2.5 left-2.5 px-2 py-0.5 text-white text-[10px] font-semibold rounded-full shadow-lg ${
+                badgeVariant === "brand" ? "bg-blue-600/90" : "bg-orange-500/90"
+              }`}>
+                {displayBadge}
+              </span>
+            )}
+            {discount && (
+              <span className="absolute top-2.5 right-2.5 px-2 py-0.5 bg-red-500/90 text-white text-[10px] font-semibold rounded-full shadow-lg">
+                -{discount}%
+              </span>
+            )}
+            <div className="absolute bottom-0 left-0 right-0 p-2.5 sm:p-3">
+              <h3 className="text-base sm:text-lg font-semibold text-white line-clamp-3 drop-shadow-md group-hover:text-white/95 leading-snug">
+                {displayTitle}
+              </h3>
+            </div>
+          </div>
+          <div className="flex items-center justify-between gap-2 px-3 py-3.5 sm:py-4 bg-white border-t border-gray-100 min-h-[3rem]">
+            <span className="text-sm text-gray-500 truncate">{displayLocation || displayCategory}</span>
+            <span className="text-right shrink-0 flex items-baseline gap-1.5">
+              {displayOriginalPrice && (
+                <span className="text-sm text-gray-400 line-through">{displayOriginalPrice}</span>
+              )}
+              <span className="text-base sm:text-lg font-bold text-gray-900 whitespace-nowrap">{displayPrice}</span>
+            </span>
+          </div>
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white rounded-lg overflow-hidden transition-all duration-300 group h-full flex flex-col border border-gray-200/40 md:border-gray-200/30 shadow-[0_2px_20px_rgba(0,0,0,0.08),0_1px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.12),0_2px_12px_rgba(0,0,0,0.06)] hover:border-gray-200/50 transform hover:-translate-y-0.5">
       <Link href={displayHref} className="block flex-1 flex flex-col">
@@ -139,10 +194,12 @@ export default function TourCard({
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover group-hover:scale-105 transition-transform duration-300"
           />
-          {/* Badge overlay (like Klook's orange banner) */}
+          {/* Badge overlay: brand = blue (AtoC), default = orange */}
           {displayBadge && (
             <div className="absolute top-2 left-2">
-              <span className="px-2 py-0.5 bg-orange-500 text-white text-[10px] font-semibold rounded shadow-sm">
+              <span className={`px-2 py-0.5 text-white text-[10px] font-semibold rounded shadow-sm ${
+                badgeVariant === "brand" ? "bg-blue-600" : "bg-orange-500"
+              }`}>
                 {displayBadge}
               </span>
             </div>
@@ -181,6 +238,9 @@ export default function TourCard({
           {/* Price */}
           <div className="mt-auto">
             <p className="text-sm font-semibold text-gray-900">
+              {displayOriginalPrice && (
+                <span className="text-xs text-gray-400 line-through mr-1.5">{displayOriginalPrice}</span>
+              )}
               {displayPrice}
             </p>
           </div>
