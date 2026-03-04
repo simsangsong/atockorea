@@ -135,6 +135,11 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
   const dotColors = ['bg-blue-500', 'bg-green-500', 'bg-orange-500', 'bg-purple-500', 'bg-pink-500', 'bg-indigo-500'];
   const getDotColor = (index: number) => dotColors[index % dotColors.length];
 
+  // 모바일에서 일정 표시 개수 제한 (카드 컴팩트하게)
+  const MOBILE_STOPS_VISIBLE = 3;
+  const mobileStops = useMemo(() => mainStops.slice(0, MOBILE_STOPS_VISIBLE), [mainStops]);
+  const remainingStopsCount = mainStops.length - MOBILE_STOPS_VISIBLE;
+
   return (
     <>
       {/* 모바일: 컴팩트하고 고급스러운 디자인 */}
@@ -191,47 +196,55 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
             </div>
           </div>
 
-          {/* RIGHT: 62% - 포함사항 + 일정 + 버튼 */}
-          <div className="flex flex-col flex-1 p-2.5 min-w-0 bg-white">
-            {/* 포함사항 - 한 줄로 컴팩트하게 */}
-            <div className="mb-2">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="h-1.5 w-1.5 rounded-full bg-purple-500 flex-shrink-0" />
-                <span className="text-[11px] text-gray-700 font-medium">
-                  {tour.pickupPointsCount > 0 ? `${tour.pickupPointsCount} ${t('tour.pickupPoints')}` : t('tour.pickup')}
-                </span>
-                <span className="text-[10px] text-gray-500">•</span>
-                <span className={`text-[11px] ${tour.ticketIncluded ? 'text-green-600' : 'text-gray-500'}`}>
-                  🎫
-                </span>
-                <span className={`text-[11px] ${tour.lunchIncluded ? 'text-green-600' : 'text-gray-500'}`}>
-                  🍽
-                </span>
-              </div>
+          {/* RIGHT: 62% - 포함사항 + 일정(최대 3개) + 버튼 */}
+          <div className="flex flex-col flex-1 p-2 min-w-0 bg-white">
+            {/* 포함사항 - 한 줄 초컴팩트 */}
+            <div className="flex items-center gap-1.5 mb-1.5">
+              <span className="h-1 w-1 rounded-full bg-purple-500 flex-shrink-0" />
+              <span className="text-[10px] text-gray-600 truncate">
+                {tour.pickupPointsCount > 0 ? `${tour.pickupPointsCount} pickup` : t('tour.pickup')}
+              </span>
+              {tour.ticketIncluded && <span className="text-[10px] opacity-80">🎫</span>}
+              {tour.lunchIncluded && <span className="text-[10px] opacity-80">🍽</span>}
             </div>
 
-            {/* 일정 - 전체 표시 */}
-            {mainStops.length > 0 && (
+            {/* 일정 - 모바일에서는 최대 3개만 표시 + "N more" */}
+            {(mobileStops.length > 0 || (mainStops.length === 0 && tour.features?.length > 0)) && (
               <div className="mb-2 flex-1 min-h-0">
-                <div className="space-y-1">
-                  {mainStops.map((item, index) => (
-                    <div key={index} className="flex items-center gap-1.5">
-                      <span className={`h-1.5 w-1.5 rounded-full ${getDotColor(index)} flex-shrink-0`} />
-                      <span className="text-[11px] text-gray-900 leading-tight line-clamp-1">
-                        {item.title}
-                      </span>
-                    </div>
-                  ))}
+                <div className="space-y-0.5">
+                  {mobileStops.length > 0
+                    ? mobileStops.map((item, index) => (
+                        <div key={index} className="flex items-center gap-1.5">
+                          <span className={`h-1 w-1 rounded-full ${getDotColor(index)} flex-shrink-0`} />
+                          <span className="text-[10px] text-gray-700 leading-tight line-clamp-1 truncate">
+                            {item.title}
+                          </span>
+                        </div>
+                      ))
+                    : tour.features?.slice(0, MOBILE_STOPS_VISIBLE).map((feature, index) => (
+                        <div key={index} className="flex items-center gap-1.5">
+                          <span className={`h-1 w-1 rounded-full ${getDotColor(index)} flex-shrink-0`} />
+                          <span className="text-[10px] text-gray-700 leading-tight line-clamp-1 truncate">
+                            {feature}
+                          </span>
+                        </div>
+                      ))}
+                  {remainingStopsCount > 0 && (
+                    <p className="text-[10px] text-gray-500 pl-2.5 pt-0.5">+{remainingStopsCount} more</p>
+                  )}
+                  {mainStops.length === 0 && tour.features?.length > MOBILE_STOPS_VISIBLE && (
+                    <p className="text-[10px] text-gray-500 pl-2.5 pt-0.5">+{tour.features.length - MOBILE_STOPS_VISIBLE} more</p>
+                  )}
                 </div>
               </div>
             )}
 
             {/* 버튼 */}
-            <div className="flex gap-2 pt-2 border-t border-gray-100">
+            <div className="flex gap-1.5 pt-1.5 mt-auto border-t border-gray-100">
               <button
                 onClick={handleWishlistToggle}
                 disabled={checkingWishlist || wishlistLoading}
-                className="w-9 h-9 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors disabled:opacity-50 flex items-center justify-center shrink-0"
+                className="w-8 h-8 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors disabled:opacity-50 flex items-center justify-center shrink-0"
                 title={isFavorite ? t('tour.removeFromWishlist') : t('tour.addToWishlist')}
               >
                 {checkingWishlist || wishlistLoading ? (
@@ -245,9 +258,9 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
               <button
                 onClick={handleAddToCart}
                 disabled={isAdding}
-                className="flex-1 h-9 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-[11px] rounded-lg transition-colors shadow-sm hover:shadow disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-1"
+                className="flex-1 h-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-[10px] rounded-lg transition-colors shadow-sm hover:shadow disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-1"
               >
-                <CartIcon className="w-4 h-4" />
+                <CartIcon className="w-3.5 h-3.5" />
                 <span>{isAdding ? t('common.adding') : t('tour.cart')}</span>
               </button>
             </div>

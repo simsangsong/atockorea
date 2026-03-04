@@ -159,7 +159,7 @@ export async function sendBookingConfirmationEmail({
           </p>
         </div>
         <div class="footer">
-          <p>© 2024 AtoCKorea. All rights reserved.</p>
+          <p>© 2026 AtoCKorea. All rights reserved.</p>
           <p>This email was sent from ${fromEmail}</p>
         </div>
       </div>
@@ -261,7 +261,7 @@ export async function sendBookingCancellationEmail({
           <p>We're sorry to see you go. If you have any questions or would like to book another tour, please don't hesitate to contact us.</p>
         </div>
         <div class="footer">
-          <p>© 2024 AtoCKorea. All rights reserved.</p>
+          <p>© 2026 AtoCKorea. All rights reserved.</p>
           <p>This email was sent from ${fromEmail}</p>
         </div>
       </div>
@@ -387,7 +387,7 @@ export async function sendBookingReminderEmail({
           <p>We look forward to seeing you soon!</p>
         </div>
         <div class="footer">
-          <p>© 2024 AtoCKorea. All rights reserved.</p>
+          <p>© 2026 AtoCKorea. All rights reserved.</p>
           <p>This email was sent from ${fromEmail}</p>
         </div>
       </div>
@@ -470,7 +470,7 @@ export async function sendMerchantWelcomeEmail({
           <p>If you have any questions or need assistance, please don't hesitate to contact our support team.</p>
         </div>
         <div class="footer">
-          <p>© 2024 AtoCKorea. All rights reserved.</p>
+          <p>© 2026 AtoCKorea. All rights reserved.</p>
           <p>This email was sent from ${fromEmail}</p>
         </div>
       </div>
