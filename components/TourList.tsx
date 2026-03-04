@@ -71,7 +71,7 @@ export default function TourList() {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
             {[...Array(4)].map((_, i) => (
-              <div key={i} className="bg-gray-200 rounded-2xl animate-pulse aspect-[5/5.32]" />
+              <div key={i} className="bg-gray-200 rounded-2xl animate-pulse aspect-[5/4.6]" />
             ))}
           </div>
         </div>

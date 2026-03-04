@@ -10,21 +10,18 @@ export default function HeroSection() {
   const heroImages = useMemo(() => [
     {
       id: 1,
-      image: "/images/hero/jeju-hero.jpg", // 제주 - 유채꽃과 벚꽃
+      image: "/images/hero/jeju-hero.jpg",
       title: t('home.hero.exploreJeju'),
-      subtitle: t('home.hero.jejuSubtitle'),
     },
     {
       id: 2,
-      image: "/images/hero/busan-hero.jpg", // 부산 - 블루라인파크 스카이캡슐
+      image: "/images/hero/busan-hero.jpg",
       title: t('home.hero.experienceBusan'),
-      subtitle: t('home.hero.busanSubtitle'),
     },
     {
       id: 3,
-      image: "/images/hero/seoul-hero.jpg", // 서울 - 경복궁과 현대 빌딩
+      image: "/images/hero/seoul-hero.jpg",
       title: t('home.hero.discoverKorea'),
-      subtitle: t('home.hero.directConnection'),
     },
   ], [t]);
 
@@ -64,12 +61,9 @@ export default function HeroSection() {
       <div className="absolute inset-0 flex items-end">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-11 md:pb-16">
           <div className="max-w-2xl">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 drop-shadow-lg leading-tight">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-5 drop-shadow-lg leading-tight">
               {heroImages[currentIndex].title}
             </h1>
-            <p className="text-sm sm:text-base md:text-lg text-white/90 mb-4 sm:mb-6 drop-shadow-md">
-              {heroImages[currentIndex].subtitle}
-            </p>
             <button
               onClick={() => {
                 // Scroll to top and trigger search

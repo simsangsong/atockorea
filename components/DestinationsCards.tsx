@@ -44,80 +44,60 @@ export default function DestinationsCards() {
   };
   
   return (
-    <section className="pt-6 pb-16 md:pt-8 md:pb-16 bg-transparent">
+    <section className="pt-6 pb-12 md:pt-8 md:pb-14 bg-gradient-to-b from-white via-slate-50/20 to-transparent">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 mb-3">
-            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
-            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-gray-900 via-blue-700 to-orange-700 bg-clip-text text-transparent mb-2">
+        <div className="text-center mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold tracking-tight mb-1 bg-gradient-to-r from-blue-500 via-blue-600 to-orange-500 bg-clip-text text-transparent">
             {t('home.destinations.title')}
           </h2>
-          <p className="text-sm sm:text-base text-gray-500 font-medium">
+          <p className="text-xs sm:text-sm text-gray-500">
             {t('home.destinations.subtitle')}
           </p>
-          <div className="inline-flex items-center gap-2 mt-3">
-            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
-            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
-          </div>
         </div>
-        {/* Horizontal scroll for all devices */}
         <div className="overflow-x-auto pb-3 snap-x snap-mandatory scrollbar-custom -mx-4 px-4 md:mx-0 md:px-0">
-          <div className="flex gap-3 md:gap-6 lg:gap-8 min-w-max md:min-w-0">
+          <div className="flex gap-3 md:gap-4 min-w-max md:min-w-0 md:justify-center">
             {destinations.map((destination) => (
-              <div
+              <button
+                type="button"
                 key={destination.id}
                 onClick={() => handleDestinationClick(destination.city)}
-                className="group relative flex-shrink-0 w-[59.5vw] md:w-64 lg:w-72 overflow-hidden rounded-xl md:rounded-2xl transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-y-2 snap-start border border-gray-200/40 md:border-gray-200/30 bg-white/5 backdrop-blur-sm shadow-[0_2px_20px_rgba(0,0,0,0.08),0_1px_8px_rgba(0,0,0,0.04)] md:shadow-[0_4px_30px_rgba(0,0,0,0.06),0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_6px_40px_rgba(0,0,0,0.12),0_3px_16px_rgba(0,0,0,0.06)] md:hover:shadow-[0_8px_50px_rgba(0,0,0,0.1),0_4px_20px_rgba(0,0,0,0.05)] cursor-pointer"
+                className="group relative flex-shrink-0 w-[40vw] sm:w-36 md:w-[23.8rem] lg:w-[27.2rem] overflow-hidden rounded-xl transition-all duration-300 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 snap-start cursor-pointer text-left bg-white border border-slate-200/70 shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] hover:border-slate-200"
               >
-                <div className="relative h-[179px] md:h-64">
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 via-blue-600 to-orange-500 z-10" />
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={destination.image}
                     alt={destination.name}
                     fill
-                    sizes="(max-width: 768px) 59.5vw, 256px"
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 640px) 40vw, (max-width: 768px) 144px, (max-width: 1024px) 381px, 435px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
-                  {/* 흰색 이미지(제주)의 경우 더 강한 그라디언트 오버레이 */}
-                  <div 
+                  <div
                     className={`absolute inset-0 ${
-                      destination.isLightImage 
-                        ? 'bg-gradient-to-t from-black/85 via-black/50 to-black/20' 
+                      destination.isLightImage
+                        ? 'bg-gradient-to-t from-black/80 via-black/25 to-transparent'
                         : 'bg-gradient-to-t from-black/70 via-black/20 to-transparent'
-                    }`} 
+                    }`}
                   />
-                  <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6">
-                    <h3 
-                      className={`text-base md:text-2xl font-bold mb-0.5 md:mb-1 ${
-                        destination.isLightImage
-                          ? 'text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8),0_0_8px_rgba(0,0,0,0.6)]'
-                          : 'text-white'
-                      }`}
-                    >
+                  <div className="absolute bottom-0 left-0 right-0 p-2.5 sm:p-3">
+                    <h3 className="text-sm sm:text-base font-bold text-white tracking-tight drop-shadow-md leading-tight">
                       {destination.name}
                     </h3>
-                    <p 
-                      className={`text-[10px] md:text-sm ${
-                        destination.isLightImage
-                          ? 'text-white/95 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8),0_0_6px_rgba(0,0,0,0.6)]'
-                          : 'text-white/90'
-                      }`}
-                    >
+                    <p className="text-[10px] sm:text-xs text-white/90 mt-0.5 line-clamp-2 drop-shadow-sm">
                       {destination.description}
                     </p>
-                  </div>
-                  {destination.available && (
-                  <div className="absolute top-2 md:top-4 right-2 md:right-4">
-                    <span className="px-1.5 md:px-3 py-0.5 md:py-1 bg-blue-600 text-white text-[9px] md:text-xs font-semibold rounded-full shadow-lg drop-shadow-md">
-                      {t('home.destinations.available')}
+                    <span className="inline-flex items-center gap-1 mt-1.5 text-white/90 text-[10px] font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      {t('home.destinations.viewTours')}
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                     </span>
                   </div>
+                  {destination.available && (
+                    <span className="absolute top-2 right-2 px-1.5 py-0.5 bg-white/90 text-slate-700 text-[9px] font-semibold rounded-full shadow-sm">
+                      {t('home.destinations.available')}
+                    </span>
                   )}
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>

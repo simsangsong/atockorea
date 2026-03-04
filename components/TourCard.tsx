@@ -137,49 +137,57 @@ export default function TourCard({
     }, 500);
   };
 
-  // Home variant: image-heavy card, title on image, location + price below
+  // Home variant: one card — image with soft fade into content (harmonious)
   if (variant === "home") {
     return (
-      <div className="group h-full flex flex-col rounded-2xl overflow-hidden border border-gray-200/50 shadow-[0_4px_24px_rgba(0,0,0,0.06),0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1),0_4px_12px_rgba(0,0,0,0.06)] hover:border-gray-200 transition-all duration-300 transform hover:-translate-y-1">
-        <Link href={displayHref} className="block flex-1 flex flex-col">
-          <div className="relative w-full aspect-[5/5.32] overflow-hidden">
-            <Image
-              src={displayImage}
-              alt={displayTitle}
-              fill
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-            {displayBadge && (
-              <span className={`absolute top-2.5 left-2.5 px-2 py-0.5 text-white text-[10px] font-semibold rounded-full shadow-lg ${
-                badgeVariant === "brand" ? "bg-blue-600/90" : "bg-orange-500/90"
-              }`}>
-                {displayBadge}
-              </span>
-            )}
-            {discount && (
-              <span className="absolute top-2.5 right-2.5 px-2 py-0.5 bg-red-500/90 text-white text-[10px] font-semibold rounded-full shadow-lg">
-                -{discount}%
-              </span>
-            )}
-            <div className="absolute bottom-0 left-0 right-0 p-2.5 sm:p-3">
-              <h3 className="text-base sm:text-lg font-semibold text-white line-clamp-3 drop-shadow-md group-hover:text-white/95 leading-snug">
-                {displayTitle}
-              </h3>
-            </div>
+      <Link
+        href={displayHref}
+        className="group block h-full rounded-2xl overflow-hidden bg-white border border-gray-200/60 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_36px_rgba(0,0,0,0.1)] hover:border-gray-200 transition-all duration-300 transform hover:-translate-y-0.5"
+      >
+        {/* Image + gradient bridge into content */}
+        <div className="relative w-full aspect-[5/4.6] overflow-hidden">
+          <Image
+            src={displayImage}
+            alt={displayTitle}
+            fill
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          {/* Soft fade to white so image and content feel one */}
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+          {displayBadge && (
+            <span className={`absolute top-3 left-3 px-2.5 py-1 text-white text-[10px] font-semibold rounded-full shadow-md ${
+              badgeVariant === "brand" ? "bg-blue-600/95" : "bg-orange-500/95"
+            }`}>
+              {displayBadge}
+            </span>
+          )}
+          {discount && (
+            <span className="absolute top-3 right-3 px-2.5 py-1 bg-red-500/95 text-white text-[10px] font-semibold rounded-full shadow-md">
+              -{discount}%
+            </span>
+          )}
+        </div>
+
+        {/* Content: same card, no gap — left accent on hover keeps the creative touch */}
+        <div className="relative px-4 pt-3 pb-4 border-l-4 border-l-transparent group-hover:border-l-blue-500/50 transition-colors">
+          <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-400/80 shrink-0" aria-hidden />
+            <span className="truncate">{displayLocation || displayCategory}</span>
           </div>
-          <div className="flex items-center justify-between gap-2 px-3 py-3.5 sm:py-4 bg-white border-t border-gray-100 min-h-[3rem]">
-            <span className="text-sm text-gray-500 truncate">{displayLocation || displayCategory}</span>
-            <span className="text-right shrink-0 flex items-baseline gap-1.5">
-              {displayOriginalPrice && (
-                <span className="text-sm text-gray-400 line-through">{displayOriginalPrice}</span>
-              )}
-              <span className="text-base sm:text-lg font-bold text-gray-900 whitespace-nowrap">{displayPrice}</span>
+          <h3 className="text-sm sm:text-base font-bold text-gray-900 line-clamp-3 leading-snug mb-3 group-hover:text-blue-700 transition-colors">
+            {displayTitle}
+          </h3>
+          <div className="flex items-baseline justify-between gap-2 flex-wrap">
+            {displayOriginalPrice && (
+              <span className="text-sm text-gray-400 line-through">{displayOriginalPrice}</span>
+            )}
+            <span className="text-lg sm:text-xl font-bold text-slate-700 ml-auto">
+              {displayPrice}
             </span>
           </div>
-        </Link>
-      </div>
+        </div>
+      </Link>
     );
   }
 
