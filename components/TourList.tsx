@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import TourCard from "./TourCard";
 import { useTranslations, useI18n } from "@/lib/i18n";
+import type { Locale } from "@/lib/i18n";
 
 interface Tour {
   id: number | string;
@@ -20,12 +21,18 @@ interface Tour {
   duration?: string;
 }
 
-export default function TourList() {
+interface TourListProps {
+  /** URL 기준 locale. [locale] 페이지에서 넘기면 첫 요청부터 올바른 언어로 조회됨 */
+  localeOverride?: Locale;
+}
+
+export default function TourList({ localeOverride }: TourListProps = {}) {
   const t = useTranslations();
-  const { locale } = useI18n();
+  const { locale: contextLocale } = useI18n();
   const [tours, setTours] = useState<Tour[]>([]);
   const [loading, setLoading] = useState(true);
-  
+  const locale = localeOverride ?? contextLocale;
+
   useEffect(() => {
     const fetchTours = async () => {
       try {

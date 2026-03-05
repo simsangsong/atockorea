@@ -13,15 +13,15 @@ const localeFlags: Record<Locale, string> = {
   ja: '🇯🇵',
 };
 
-type RouteLocale = 'en' | 'zh-CN' | 'ja' | 'es' | 'ko';
+type RouteLocale = 'en' | 'zh-CN' | 'zh-TW' | 'ja' | 'es' | 'ko';
 
-const routeLocales: RouteLocale[] = ['en', 'zh-CN', 'ja', 'es', 'ko'];
+const routeLocales: RouteLocale[] = ['en', 'zh-CN', 'zh-TW', 'ja', 'es', 'ko'];
 
 const localeToRouteLocale: Partial<Record<Locale, RouteLocale>> = {
   en: 'en',
   ko: 'ko',
-  zh: 'zh-CN',    // Simplified Chinese path
-  'zh-TW': 'zh-CN', // Share path with zh-CN, different content via i18n/API
+  zh: 'zh-CN',     // 简体中文
+  'zh-TW': 'zh-TW', // 繁體中文
   es: 'es',
   ja: 'ja',
 };

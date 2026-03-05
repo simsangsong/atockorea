@@ -4,7 +4,7 @@ import { useEffect, type ReactNode } from 'react';
 import { useI18n } from '@/lib/i18n';
 
 type LocaleHomeClientProps = {
-  locale: 'ko' | 'zh' | 'ja' | 'es';
+  locale: 'ko' | 'zh' | 'zh-TW' | 'ja' | 'es';
   children: ReactNode;
 };
 

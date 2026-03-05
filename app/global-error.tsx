@@ -4,7 +4,6 @@
 export const dynamic = 'force-dynamic';
 
 import { useEffect } from 'react';
-import { logger } from '@/lib/logger';
 
 interface GlobalErrorProps {
   error: Error & { digest?: string };
@@ -13,12 +12,11 @@ interface GlobalErrorProps {
 
 export default function GlobalError({ error, reset }: GlobalErrorProps) {
   useEffect(() => {
-    // Log critical error
-    logger.error('Global error', error, {
-      digest: error.digest,
-      name: error.name,
-      critical: true,
-    });
+    try {
+      console.error('Global error', error?.message, error?.digest);
+    } catch {
+      // Do not throw; error UI must always render
+    }
   }, [error]);
 
   return (

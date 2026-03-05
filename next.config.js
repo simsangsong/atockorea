@@ -6,10 +6,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   // Static export for Capacitor (uncomment when building for mobile)
   // output: 'export',
-  i18n: {
-    locales: ['en', 'zh-CN', 'ja', 'es', 'ko'],
-    defaultLocale: 'en',
-  },
+  // i18n is handled by middleware + app/[locale] (next.config i18n breaks App Router)
   images: {
     unoptimized: process.env.NODE_ENV === 'production' && process.env.BUILD_FOR_MOBILE === 'true',
     remotePatterns: [

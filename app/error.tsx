@@ -4,7 +4,6 @@
 export const dynamic = 'force-dynamic';
 
 import { useEffect } from 'react';
-import { logger } from '@/lib/logger';
 
 interface ErrorProps {
   error: Error & { digest?: string };
@@ -13,11 +12,11 @@ interface ErrorProps {
 
 export default function Error({ error, reset }: ErrorProps) {
   useEffect(() => {
-    // Log error
-    logger.error('Page error', error, {
-      digest: error.digest,
-      name: error.name,
-    });
+    try {
+      console.error('Page error', error?.message, error?.digest);
+    } catch {
+      // Avoid breaking the error UI if logging fails
+    }
   }, [error]);
 
   return (

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 
-const SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'ja', 'es'];
+const SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'zh-TW', 'ja', 'es'];
 const DEFAULT_LOCALE = 'en';
 
 function getLocale(request: NextRequest): string {
@@ -17,6 +17,13 @@ function getLocale(request: NextRequest): string {
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // 0. 잘못된 정적 경로 수정: /next/ → /_next/ (일부 환경에서 생성되는 오타 보정)
+  if (pathname.startsWith('/next/')) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/_next/${pathname.slice(6)}`;
+    return NextResponse.rewrite(url);
+  }
 
   // 1. 제외할 경로 (API, Next 내부, 정적 파일 등)
   if (

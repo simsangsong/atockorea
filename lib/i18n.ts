@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, createContext, useContext, ReactNode } from 'react';
-import { supabase } from './supabase';
+// Do not static-import supabase here: it triggers server bundle of @supabase/supabase-js
+// and causes "Cannot find module './vendor-chunks/@supabase.js'". Use dynamic import in client-only code.
 
 export type Locale = 'en' | 'ko' | 'zh' | 'zh-TW' | 'es' | 'ja';
 
@@ -101,26 +102,31 @@ export function I18nProvider({ children }: { children: ReactNode }) {
           return;
         }
 
-        // Try to get from user settings if logged in
-        if (supabase) {
-          const { data: { session } } = await supabase.auth.getSession();
-          if (session) {
-            const { data: profile } = await supabase
-              .from('user_profiles')
-              .select('language_preference')
-              .eq('id', session.user.id)
-              .single();
+        // Try to get from user settings if logged in (dynamic import to avoid server bundle)
+        try {
+          const { supabase } = await import('./supabase');
+          if (supabase) {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (session) {
+              const { data: profile } = await supabase
+                .from('user_profiles')
+                .select('language_preference')
+                .eq('id', session.user.id)
+                .single();
 
-            if (profile?.language_preference && locales.includes(profile.language_preference as Locale)) {
-              const userLocale = profile.language_preference as Locale;
-              setLocaleState(userLocale);
-              if (typeof window !== 'undefined') {
-                localStorage.setItem('locale', userLocale);
+              if (profile?.language_preference && locales.includes(profile.language_preference as Locale)) {
+                const userLocale = profile.language_preference as Locale;
+                setLocaleState(userLocale);
+                if (typeof window !== 'undefined') {
+                  localStorage.setItem('locale', userLocale);
+                }
+                setLoading(false);
+                return;
               }
-              setLoading(false);
-              return;
             }
           }
+        } catch (_) {
+          // Supabase not available or not configured; continue with localStorage/browser locale
         }
 
         // Use browser language (only on client side)
@@ -171,9 +177,10 @@ export function I18nProvider({ children }: { children: ReactNode }) {
       localStorage.setItem('locale', newLocale);
     }
 
-    // Update user settings if logged in
-    if (supabase) {
-      try {
+    // Update user settings if logged in (dynamic import to avoid server bundle)
+    try {
+      const { supabase } = await import('./supabase');
+      if (supabase) {
         const { data: { session } } = await supabase.auth.getSession();
         if (session) {
           await supabase
@@ -181,9 +188,9 @@ export function I18nProvider({ children }: { children: ReactNode }) {
             .update({ language_preference: newLocale })
             .eq('id', session.user.id);
         }
-      } catch (error) {
-        console.error('Error updating user language preference:', error);
       }
+    } catch (error) {
+      console.error('Error updating user language preference:', error);
     }
   };
 
