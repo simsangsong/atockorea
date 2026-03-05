@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { useI18n, Locale } from '@/lib/i18n';
 
 const localeFlags: Record<Locale, string> = {
@@ -12,8 +13,24 @@ const localeFlags: Record<Locale, string> = {
   ja: '🇯🇵',
 };
 
+type RouteLocale = 'en' | 'zh-CN' | 'ja' | 'es' | 'ko';
+
+const routeLocales: RouteLocale[] = ['en', 'zh-CN', 'ja', 'es', 'ko'];
+
+const localeToRouteLocale: Partial<Record<Locale, RouteLocale>> = {
+  en: 'en',
+  ko: 'ko',
+  zh: 'zh-CN',    // Simplified Chinese path
+  'zh-TW': 'zh-CN', // Share path with zh-CN, different content via i18n/API
+  es: 'es',
+  ja: 'ja',
+};
+
 export default function LanguageSwitcher() {
   const { locale, setLocale, localeNames } = useI18n();
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const locales: Locale[] = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'];
@@ -31,8 +48,39 @@ export default function LanguageSwitcher() {
     }
   }, [isOpen]);
 
+  const navigateWithLocale = (newLocale: Locale) => {
+    if (!pathname) return;
+
+    const targetRouteLocale = localeToRouteLocale[newLocale];
+    if (!targetRouteLocale) return;
+
+    const segments = pathname.split('/').filter(Boolean);
+    const currentHasLocalePrefix =
+      segments.length > 0 && routeLocales.includes(segments[0] as RouteLocale);
+
+    const restSegments = currentHasLocalePrefix ? segments.slice(1) : segments;
+
+    let nextPath: string;
+    if (targetRouteLocale === 'en') {
+      nextPath = '/' + restSegments.join('/');
+    } else {
+      nextPath =
+        '/' +
+        targetRouteLocale +
+        (restSegments.length ? '/' + restSegments.join('/') : '');
+    }
+
+    const search = searchParams?.toString();
+    if (search) {
+      nextPath += `?${search}`;
+    }
+
+    router.push(nextPath || '/');
+  };
+
   const handleSelect = (newLocale: Locale) => {
     setLocale(newLocale);
+    navigateWithLocale(newLocale);
     setIsOpen(false);
   };
 

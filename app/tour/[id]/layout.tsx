@@ -1,7 +1,23 @@
 import { ReactNode } from 'react';
 import { Metadata } from 'next';
+import { headers } from 'next/headers';
 import { generateMetadata as generateSEOMetadata, generateStructuredData } from '@/lib/seo';
 import { createServerClient } from '@/lib/supabase';
+
+type MetadataLocale = 'en' | 'ko' | 'zh' | 'zh-TW' | 'es' | 'ja';
+
+function detectRequestLocale(): MetadataLocale {
+  const h = headers();
+  const acceptLanguage = h.get('accept-language')?.toLowerCase() || '';
+
+  if (acceptLanguage.includes('ko')) return 'ko';
+  if (acceptLanguage.includes('zh-tw') || acceptLanguage.includes('zh-hant')) return 'zh-TW';
+  if (acceptLanguage.includes('zh')) return 'zh';
+  if (acceptLanguage.includes('es')) return 'es';
+  if (acceptLanguage.includes('ja')) return 'ja';
+
+  return 'en';
+}
 
 export async function generateMetadata(
   { params }: { params: { id: string } }
@@ -12,7 +28,7 @@ export async function generateMetadata(
 
     const { data: tour, error } = await supabase
       .from('tours')
-      .select('id, title, description, city, image_url, price, rating, review_count')
+      .select('id, title, description, city, image_url, price, rating, review_count, translations')
       .eq('id', tourId)
       .eq('is_active', true)
       .single();
@@ -28,15 +44,38 @@ export async function generateMetadata(
 
     const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
     const imageUrl = tour.image_url || `${siteUrl}/og-image.jpg`;
-    const description = tour.description || `Book ${tour.title} in ${tour.city}. Experience the best of Korea with our licensed tour guides.`;
+
+    const requestLocale = detectRequestLocale();
+    const translations = (tour.translations || {}) as Record<string, any>;
+    const tr = translations[requestLocale] as Record<string, any> | undefined;
+
+    const baseTitle = tour.title || '';
+    const baseDescription =
+      tour.description ||
+      `Book ${tour.title} in ${tour.city}. Experience the best of Korea with our licensed tour guides.`;
+
+    const localizedTitle = (tr?.title as string) || baseTitle;
+    const localizedDescription = (tr?.description as string) || baseDescription;
+
+    const path = `/tour/${tourId}`;
+
+    const languages: Record<string, string> = {
+      en: `${siteUrl}${path}`,
+      'zh-CN': `${siteUrl}/zh-CN${path}`,
+      ja: `${siteUrl}/ja${path}`,
+      es: `${siteUrl}/es${path}`,
+      ko: `${siteUrl}/ko${path}`,
+      'x-default': `${siteUrl}${path}`,
+    };
 
     return generateSEOMetadata({
-      title: tour.title,
-      description,
+      title: localizedTitle,
+      description: localizedDescription,
       image: imageUrl,
-      url: `/tour/${tourId}`,
+      url: path,
       type: 'website',
       tags: [tour.city, 'Korea tours', 'day tours'],
+      languages,
     });
   } catch (error) {
     console.error('Error generating metadata:', error);

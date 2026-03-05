@@ -18,6 +18,7 @@ export interface SEOConfig {
   tags?: string[];
   noindex?: boolean;
   nofollow?: boolean;
+  languages?: Record<string, string>;
 }
 
 export function generateMetadata(config: SEOConfig): Metadata {
@@ -34,6 +35,7 @@ export function generateMetadata(config: SEOConfig): Metadata {
     tags,
     noindex = false,
     nofollow = false,
+    languages,
   } = config;
 
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
@@ -87,6 +89,7 @@ export function generateMetadata(config: SEOConfig): Metadata {
     },
     alternates: {
       canonical: fullUrl,
+      ...(languages ? { languages } : {}),
     },
     metadataBase: new URL(siteUrl),
   };

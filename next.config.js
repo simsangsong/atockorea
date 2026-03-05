@@ -6,6 +6,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   // Static export for Capacitor (uncomment when building for mobile)
   // output: 'export',
+  i18n: {
+    locales: ['en', 'zh-CN', 'ja', 'es', 'ko'],
+    defaultLocale: 'en',
+  },
   images: {
     unoptimized: process.env.NODE_ENV === 'production' && process.env.BUILD_FOR_MOBILE === 'true',
     remotePatterns: [

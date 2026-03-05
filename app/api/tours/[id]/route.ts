@@ -7,14 +7,63 @@ import { createServerLogger } from '@/lib/logger';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-const SUPPORTED_LOCALES = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'] as const;
+const SUPPORTED_LOCALES = ['en', 'ko', 'zh', 'zh-CN', 'zh-TW', 'es', 'ja'] as const;
 type SupportedLocale = typeof SUPPORTED_LOCALES[number];
 
 function parseLocale(value: string | null): SupportedLocale | null {
   if (!value) return null;
   const normalized = value.trim();
-  if (SUPPORTED_LOCALES.includes(normalized as SupportedLocale)) return normalized as SupportedLocale;
+  const lower = normalized.toLowerCase();
+
+  // Normalize common variants (e.g. zh-cn → zh-CN)
+  if (lower === 'zh-cn') return 'zh-CN';
+  if (lower === 'zh-tw') return 'zh-TW';
+  if (lower === 'zh') return 'zh';
+
+  if (SUPPORTED_LOCALES.includes(normalized as SupportedLocale)) {
+    return normalized as SupportedLocale;
+  }
+  if (SUPPORTED_LOCALES.includes(lower as SupportedLocale)) {
+    return lower as SupportedLocale;
+  }
+
   return null;
+}
+
+const LOCALE_SUFFIX_MAP: Record<SupportedLocale, string> = {
+  en: 'en',
+  ko: 'ko',
+  zh: 'zh_cn',
+  'zh-CN': 'zh_cn',
+  'zh-TW': 'zh_tw',
+  es: 'es',
+  ja: 'ja',
+};
+
+function getLocalizedString(
+  baseValue: string,
+  tour: Record<string, any>,
+  field: string,
+  locale: SupportedLocale | null
+): string {
+  if (!locale) return baseValue;
+
+  const suffix = LOCALE_SUFFIX_MAP[locale];
+  if (!suffix) return baseValue;
+
+  const localized = tour[`${field}_${suffix}`];
+  if (typeof localized === 'string' && localized.trim() !== '') {
+    return localized;
+  }
+
+  // Fallback to English-specific column if available
+  const english = tour[`${field}_en`];
+  if (typeof english === 'string' && english.trim() !== '') {
+    return english;
+  }
+
+  // Final fallback: original base value (usually English)
+  return baseValue;
 }
 
 /**
@@ -110,7 +159,7 @@ export const GET = withErrorHandler(async (
 
     // Use translated content when locale is requested and translations exist
     const tr = (localeParam && tour.translations && typeof tour.translations === 'object' && (tour.translations as Record<string, unknown>)[localeParam] as Record<string, unknown> | undefined) || null;
-    const baseTitle = tour.title;
+    const baseTitle = tour.title || '';
     const baseDescription = tour.description || '';
     const baseSchedule = Array.isArray(tour.schedule) ? tour.schedule : [];
     const baseIncludes = Array.isArray(tour.includes) ? tour.includes : (Array.isArray(tour.highlights) ? tour.highlights : []);
@@ -120,16 +169,24 @@ export const GET = withErrorHandler(async (
     const basePickupInfo = tour.pickup_info || '';
     const baseNotes = tour.notes || '';
 
-    const title = (tr?.title as string) ?? baseTitle;
-    const tagline = (tr?.description as string) ?? (tr?.subtitle as string) ?? baseDescription;
-    const overview = (tr?.description as string) ?? baseDescription;
+    const trTitle = (tr?.title as string) || '';
+    const trDescription = (tr?.description as string) || '';
+    const trSubtitle = (tr?.subtitle as string) || '';
+    const trPickupInfo = (tr?.pickup_info as string) || '';
+    const trNotes = (tr?.notes as string) || '';
+
+    const title = getLocalizedString(trTitle || baseTitle, tour, 'title', localeParam);
+    const tagline = getLocalizedString(trSubtitle || trDescription || baseDescription, tour, 'subtitle', localeParam);
+    const overview = getLocalizedString(trDescription || baseDescription, tour, 'description', localeParam);
     const schedule = Array.isArray(tr?.schedule) ? (tr.schedule as any[]) : baseSchedule;
     const includes = Array.isArray(tr?.includes) ? (tr.includes as string[]) : baseIncludes;
     const excludes = Array.isArray(tr?.excludes) ? (tr.excludes as string[]) : baseExcludes;
     const faqs = Array.isArray(tr?.faqs) ? (tr.faqs as Array<{ question: string; answer: string }>) : baseFaqs;
-    const highlights = Array.isArray(tr?.highlights) ? (tr.highlights as string[]) : (Array.isArray(tour.highlights) ? tour.highlights : []);
-    const pickupInfo = (tr?.pickup_info as string) ?? basePickupInfo;
-    const notes = (tr?.notes as string) ?? baseNotes;
+    const highlights = Array.isArray(tr?.highlights)
+      ? (tr.highlights as string[])
+      : (Array.isArray(tour.highlights) ? tour.highlights : []);
+    const pickupInfo = getLocalizedString(trPickupInfo || basePickupInfo, tour, 'pickup_info', localeParam);
+    const notes = getLocalizedString(trNotes || baseNotes, tour, 'notes', localeParam);
 
     // Transform data to match frontend expectations
     const transformedTour = {
