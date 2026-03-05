@@ -8,9 +8,18 @@ import { createServerClient } from '@/lib/supabase';
 
 const LINE_CHANNEL_ID = process.env.LINE_CHANNEL_ID;
 const LINE_CHANNEL_SECRET = process.env.LINE_CHANNEL_SECRET;
-const LINE_REDIRECT_URI = process.env.NEXT_PUBLIC_APP_URL 
-  ? `${process.env.NEXT_PUBLIC_APP_URL}/auth/callback?provider=line`
-  : 'http://localhost:3000/auth/callback?provider=line';
+
+function getLineRedirectUri(req: NextRequest): string {
+  const fromEnv = process.env.NEXT_PUBLIC_APP_URL;
+  if (fromEnv) return `${fromEnv.replace(/\/$/, '')}/auth/callback?provider=line`;
+  const origin = req.nextUrl?.origin
+    || (req.headers.get('x-forwarded-proto') && req.headers.get('x-forwarded-host')
+      ? `${req.headers.get('x-forwarded-proto')}://${req.headers.get('x-forwarded-host')}`
+      : null)
+    || (req.headers.get('host') ? `https://${req.headers.get('host')}` : null);
+  if (origin && origin.startsWith('http')) return `${origin.replace(/\/$/, '')}/auth/callback?provider=line`;
+  return 'https://atockorea.com/auth/callback?provider=line';
+}
 
 /**
  * GET /api/auth/line
@@ -25,11 +34,13 @@ export async function GET(req: NextRequest) {
     return NextResponse.redirect(errorUrl.toString());
   }
 
+  const redirectUri = getLineRedirectUri(req);
+
   // LINE OAuth 授权 URL
   const authUrl = new URL('https://access.line.me/oauth2/v2.1/authorize');
   authUrl.searchParams.set('response_type', 'code');
   authUrl.searchParams.set('client_id', LINE_CHANNEL_ID);
-  authUrl.searchParams.set('redirect_uri', LINE_REDIRECT_URI);
+  authUrl.searchParams.set('redirect_uri', redirectUri);
   authUrl.searchParams.set('state', 'line_oauth_state'); // 可以添加随机字符串增强安全性
   authUrl.searchParams.set('scope', 'profile openid email');
   authUrl.searchParams.set('bot_prompt', 'normal');
@@ -60,6 +71,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const redirectUri = getLineRedirectUri(req);
+
     // 1. 交换 code 获取 access token
     const tokenResponse = await fetch('https://api.line.me/oauth2/v2.1/token', {
       method: 'POST',
@@ -69,7 +82,7 @@ export async function POST(req: NextRequest) {
       body: new URLSearchParams({
         grant_type: 'authorization_code',
         code,
-        redirect_uri: LINE_REDIRECT_URI,
+        redirect_uri: redirectUri,
         client_id: LINE_CHANNEL_ID,
         client_secret: LINE_CHANNEL_SECRET,
       }),

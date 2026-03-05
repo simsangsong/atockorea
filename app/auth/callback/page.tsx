@@ -21,7 +21,7 @@ function AuthCallbackContent() {
         const error = searchParams.get('error');
         const errorDescription = searchParams.get('error_description');
         const provider = searchParams.get('provider');
-        const next = searchParams.get('next') || '/mypage';
+        const next = (searchParams.get('next') || '/mypage').replace(/^null$/i, '') || '/mypage';
 
         // OAuth 에러 체크 (구글, 페이스북 등)
         if (error) {

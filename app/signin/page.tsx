@@ -93,18 +93,22 @@ export default function SignInPage() {
     }
   };
 
+  // 휴대폰/외부에서 접속 시 현재 origin으로 콜백 돌아오게 (null·localhost 방지)
+  const getRedirectBase = (): string => {
+    if (typeof window === 'undefined') return 'https://atockorea.com';
+    const o = window.location.origin;
+    if (o && (o.startsWith('http://') || o.startsWith('https://'))) return o.replace(/\/$/, '');
+    const env = process.env.NEXT_PUBLIC_APP_URL;
+    return (env && env.replace(/\/$/, '')) || 'https://atockorea.com';
+  };
+
   const startGoogleOAuth = async (mode: 'default' | 'select_account') => {
     try {
       if (!supabase) {
         throw new Error('Supabase client not initialized');
       }
 
-      // Always redirect to canonical site URL so mobile/real users land on the live site (not localhost/null)
-      const canonicalUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
-      const origin = typeof window !== 'undefined' ? window.location.origin : '';
-      const baseUrl = (origin && (origin.startsWith('http://localhost') || origin.startsWith('http://127.0.0.1')))
-        ? origin
-        : canonicalUrl.replace(/\/$/, '');
+      const baseUrl = getRedirectBase();
       const redirectTo = `${baseUrl}/auth/callback`;
       const options: { redirectTo: string; queryParams?: { prompt: string } } = { redirectTo };
       if (mode === 'select_account') {
@@ -153,11 +157,7 @@ export default function SignInPage() {
         throw new Error('Supabase client not initialized');
       }
 
-      const canonicalUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
-      const origin = typeof window !== 'undefined' ? window.location.origin : '';
-      const baseUrl = (origin && (origin.startsWith('http://localhost') || origin.startsWith('http://127.0.0.1')))
-        ? origin
-        : canonicalUrl.replace(/\/$/, '');
+      const baseUrl = getRedirectBase();
       const redirectTo = `${baseUrl}/auth/callback`;
 
       const { data, error } = await supabase.auth.signInWithOAuth({
