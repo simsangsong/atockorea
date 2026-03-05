@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Inter, Noto_Sans_SC, Noto_Sans_TC } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
@@ -56,13 +57,15 @@ export default function RootLayout({
             __html: JSON.stringify(websiteStructuredData),
           }}
         />
-        <ErrorBoundary>
-          <I18nProvider>
-            <CurrencyProvider>
-              {children}
-            </CurrencyProvider>
-          </I18nProvider>
-        </ErrorBoundary>
+        <Suspense fallback={null}>
+          <ErrorBoundary>
+            <I18nProvider>
+              <CurrencyProvider>
+                {children}
+              </CurrencyProvider>
+            </I18nProvider>
+          </ErrorBoundary>
+        </Suspense>
       </body>
     </html>
   );
