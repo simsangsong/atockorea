@@ -47,55 +47,29 @@ function AuthCallbackContent() {
             throw new Error(data.error || 'LINE authentication failed');
           }
 
-          // 如果返回了 magic link，使用它自动登录
-          if (data.magicLink) {
-            // 使用 magic link 登录
-            const { error: signInError } = await supabase.auth.signInWithOtp({
-              email: data.user.email,
-              options: {
-                emailRedirectTo: `${window.location.origin}/auth/callback?provider=line&auto=true`,
-              },
-            });
-
-            if (signInError) {
-              // 如果 magic link 失败，尝试使用 email 查找用户
-              // 由于 LINE 用户没有密码，我们需要使用其他方式
-              setStatus('success');
-              setMessage('LINE login successful! Redirecting...');
-              
-              // 存储用户信息到 localStorage，让应用知道用户已登录
-              if (data.user) {
-                localStorage.setItem('line_user', JSON.stringify(data.user));
-              }
-              
-              setTimeout(() => {
-                router.push('/mypage');
-              }, 1000);
-            } else {
-              setStatus('success');
-              setMessage('Authentication successful! Redirecting...');
-              setTimeout(() => {
-                router.push('/mypage');
-              }, 1000);
-            }
-          } else {
-            // 没有 magic link，手动处理
+          // API가 준 magic link( Supabase action_link )로 이동하면 세션이 설정됨. signInWithOtp 호출하면 안 됨.
+          if (data.magicLink && typeof data.magicLink === 'string') {
             setStatus('success');
-            setMessage('LINE login successful! Redirecting...');
-            
-            // 存储用户信息
-            if (data.user) {
-              localStorage.setItem('line_user', JSON.stringify(data.user));
-            }
-            
-            setTimeout(() => {
-              router.push('/mypage');
-            }, 1000);
+            setMessage('LINE 로그인 완료. 이동 중...');
+            window.location.href = data.magicLink;
+            return;
           }
+
+          // magic link 없을 때: 세션 없이 user만 반환된 경우. localStorage만 저장하면 앱이 Supabase 세션을 보므로 로그아웃처럼 보일 수 있음.
+          setStatus('success');
+          setMessage('LINE 로그인 완료. 이동 중...');
+          if (data.user) {
+            try {
+              localStorage.setItem('line_user', JSON.stringify(data.user));
+            } catch (_) {}
+          }
+          setTimeout(() => {
+            router.push('/mypage');
+          }, 800);
           return;
         }
 
-        // 处理其他 OAuth 提供商（Google, Facebook, Kakao）
+        // 处理其他 OAuth 提供商（Google）
         // Supabase OAuth의 경우 code가 없을 수도 있음 (이미 세션이 있을 수 있음)
         if (code) {
           // Exchange code for session

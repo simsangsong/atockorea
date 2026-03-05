@@ -207,11 +207,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 5. 生成 magic link 用于自动登录
-    // 由于无法直接创建 session，我们返回一个 token 让前端处理
+    // 5. Magic link 생성 (방문 시 Supabase가 세션 설정 후 redirectTo로 보냄)
+    const baseUrl = (process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com').replace(/\/$/, '');
+    const redirectTo = `${baseUrl}/mypage`;
     const { data: linkData, error: linkError } = await supabase.auth.admin.generateLink({
       type: 'magiclink',
       email: lineEmail,
+      options: { redirectTo },
     });
 
     if (linkError || !linkData) {

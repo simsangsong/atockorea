@@ -28,25 +28,6 @@ export default function SignUpPage() {
       ),
     },
     {
-      key: "facebook",
-      label: "Facebook",
-      icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2" />
-        </svg>
-      ),
-    },
-    {
-      key: "kakao",
-      label: "Kakao",
-      icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <rect width="24" height="24" rx="12" fill="#FEE500" />
-          <path d="M12 8C9.243 8 7 9.79 7 12c0 1.4.7 2.66 1.8 3.5L8 17l2.2-1.2c.3.05.6.1.8.1 2.757 0 5-1.79 5-4s-2.243-4-5-4z" fill="#000000" />
-        </svg>
-      ),
-    },
-    {
       key: "line",
       label: "LINE",
       icon: (

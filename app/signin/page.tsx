@@ -138,40 +138,15 @@ export default function SignInPage() {
     }
   };
 
-  const handleSocialLogin = async (provider: 'google' | 'facebook' | 'kakao' | 'line') => {
+  const handleSocialLogin = async (provider: 'google' | 'line') => {
     try {
-      // Google: 먼저 저장된 계정 / 계정 전환 선택 모달 표시
       if (provider === 'google') {
         setShowGoogleChoice(true);
         return;
       }
-
-      // LINE OAuth 使用自定义实现
       if (provider === 'line') {
         window.location.href = '/api/auth/line';
         return;
-      }
-
-      // 其他提供商使用 Supabase OAuth (Facebook, Kakao)
-      if (!supabase) {
-        throw new Error('Supabase client not initialized');
-      }
-
-      const baseUrl = getRedirectBase();
-      const redirectTo = `${baseUrl}/auth/callback`;
-
-      const { data, error } = await supabase.auth.signInWithOAuth({
-        provider,
-        options: { redirectTo },
-      });
-
-      if (error) {
-        setError(error.message);
-        return;
-      }
-
-      if (data.url) {
-        window.location.href = data.url;
       }
     } catch (error: any) {
       setError(error.message);
@@ -304,32 +279,6 @@ export default function SignInPage() {
                     />
                   </svg>
                   <span className="text-sm md:text-base">Google</span>
-                </span>
-              </button>
-
-              <button
-                onClick={() => handleSocialLogin('facebook')}
-                className="w-full max-w-[360px] flex justify-center px-5 py-3 bg-white border border-gray-200 rounded-xl hover:border-gray-300 hover:shadow-md transition-all font-medium text-gray-700 shadow-sm hover:shadow-lg"
-              >
-                <span className="grid grid-cols-[24px_auto] items-center gap-3">
-                  <svg className="w-5 h-5 flex-shrink-0" fill="#1877F2" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                  </svg>
-                  <span className="text-sm md:text-base">Facebook</span>
-                </span>
-              </button>
-
-              <button
-                onClick={() => handleSocialLogin('kakao')}
-                className="w-full max-w-[360px] flex justify-center px-5 py-3 bg-white border border-gray-200 rounded-xl hover:border-gray-300 hover:shadow-md transition-all font-medium text-gray-700 shadow-sm hover:shadow-lg"
-              >
-                <span className="grid grid-cols-[24px_auto] items-center gap-3">
-                  <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/KakaoTalk_logo.svg/500px-KakaoTalk_logo.svg.png" 
-                    alt="KakaoTalk" 
-                    className="w-5 h-5 object-contain flex-shrink-0"
-                  />
-                  <span className="text-sm md:text-base">Kakao</span>
                 </span>
               </button>
 
