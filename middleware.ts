@@ -4,6 +4,7 @@ import Negotiator from 'negotiator';
 
 const SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'zh-TW', 'ja', 'es'];
 const DEFAULT_LOCALE = 'en';
+const LOCALE_COOKIE = 'NEXT_LOCALE';
 
 function getLocale(request: NextRequest): string {
   const negotiatorHeaders: Record<string, string> = {};
@@ -13,6 +14,12 @@ function getLocale(request: NextRequest): string {
 
   const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
   return match(languages, SUPPORTED_LOCALES, DEFAULT_LOCALE);
+}
+
+function getLocaleFromCookie(request: NextRequest): string | null {
+  const value = request.cookies.get(LOCALE_COOKIE)?.value;
+  if (value && SUPPORTED_LOCALES.includes(value)) return value;
+  return null;
 }
 
 export function middleware(request: NextRequest) {
@@ -40,9 +47,10 @@ export function middleware(request: NextRequest) {
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
   );
 
-  // 3. 언어 접두사가 없을 때: Accept-Language 기반 자동 감지 후 리다이렉트
+  // 3. 언어 접두사가 없을 때: 쿠키 우선, 없으면 Accept-Language 기반 자동 감지
   if (!pathnameHasLocale) {
-    const locale = getLocale(request);
+    const cookieLocale = getLocaleFromCookie(request);
+    const locale = cookieLocale ?? getLocale(request);
 
     if (locale !== DEFAULT_LOCALE) {
       const newUrl = new URL(request.url);

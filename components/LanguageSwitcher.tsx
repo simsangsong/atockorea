@@ -54,6 +54,9 @@ export default function LanguageSwitcher() {
     const targetRouteLocale = localeToRouteLocale[newLocale];
     if (!targetRouteLocale) return;
 
+    // 영어 선택 시 미들웨어가 Accept-Language로 다시 /ko 리다이렉트하지 않도록 쿠키 설정
+    document.cookie = `NEXT_LOCALE=${targetRouteLocale}; path=/; max-age=31536000; SameSite=Lax`;
+
     const segments = pathname.split('/').filter(Boolean);
     const currentHasLocalePrefix =
       segments.length > 0 && routeLocales.includes(segments[0] as RouteLocale);

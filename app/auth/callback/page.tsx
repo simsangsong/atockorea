@@ -35,7 +35,7 @@ function AuthCallbackContent() {
           }
 
           // 调用自定义 LINE OAuth API
-          const response = await fetch('/api/auth/line/callback', {
+          const response = await fetch('/api/auth/line', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ code }),

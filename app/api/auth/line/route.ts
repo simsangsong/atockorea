@@ -9,16 +9,20 @@ import { createServerClient } from '@/lib/supabase';
 const LINE_CHANNEL_ID = process.env.LINE_CHANNEL_ID;
 const LINE_CHANNEL_SECRET = process.env.LINE_CHANNEL_SECRET;
 
+// LINE은 redirect_uri가 1글자만 달라도 400 Invalid redirect_uri. 반드시 LINE 개발자 콘솔에 등록한 값과 동일해야 함.
+const LINE_CALLBACK_PATH = '/auth/callback?provider=line';
+
 function getLineRedirectUri(req: NextRequest): string {
-  const fromEnv = process.env.NEXT_PUBLIC_APP_URL;
-  if (fromEnv) return `${fromEnv.replace(/\/$/, '')}/auth/callback?provider=line`;
-  const origin = req.nextUrl?.origin
-    || (req.headers.get('x-forwarded-proto') && req.headers.get('x-forwarded-host')
-      ? `${req.headers.get('x-forwarded-proto')}://${req.headers.get('x-forwarded-host')}`
-      : null)
-    || (req.headers.get('host') ? `https://${req.headers.get('host')}` : null);
-  if (origin && origin.startsWith('http')) return `${origin.replace(/\/$/, '')}/auth/callback?provider=line`;
-  return 'https://atockorea.com/auth/callback?provider=line';
+  const base = (process.env.NEXT_PUBLIC_APP_URL || '').replace(/\/$/, '');
+  if (base && (base.startsWith('http://') || base.startsWith('https://'))) {
+    return `${base}${LINE_CALLBACK_PATH}`;
+  }
+  const host = req.headers.get('x-forwarded-host') || req.headers.get('host') || '';
+  const proto = req.headers.get('x-forwarded-proto') || 'https';
+  if (host && !host.includes(':')) {
+    return `${proto}://${host}${LINE_CALLBACK_PATH}`;
+  }
+  return `https://atockorea.com${LINE_CALLBACK_PATH}`;
 }
 
 /**

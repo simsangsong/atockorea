@@ -73,6 +73,16 @@ NEXT_PUBLIC_APP_URL=https://yourdomain.com
    LINE_CHANNEL_SECRET=...
    ```
 
+### LINE에서 "Invalid redirect_uri" 400 에러가 날 때
+
+- LINE은 **redirect_uri**를 1글자라도 다르면 400을 냅니다.
+- Vercel에 **NEXT_PUBLIC_APP_URL** 을 반드시 설정하세요. (예: `https://atockorea.com` — 끝에 `/` 없이)
+- LINE 개발자 콘솔 **Callback URL**에는 아래를 **복사해서 그대로** 한 줄만 넣으세요:
+  ```text
+  https://atockorea.com/auth/callback?provider=line
+  ```
+- `www` 사용 중이면 `https://www.atockorea.com/auth/callback?provider=line` 으로 통일하고, 콘솔에도 동일하게 등록하세요.
+
 ---
 
 ## 5. 코드에서 수정한 내용 (요약)
