@@ -46,7 +46,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // 4. 이미 접두사가 있는 경우: 기존 rewrite (locale 제거 후 내부 경로로 전달)
+  // 4. 이미 접두사가 있는 경우
   const matchedLocale = SUPPORTED_LOCALES.find(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
   );
@@ -55,6 +55,12 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // 4a. 경로가 정확히 /ko, /zh-CN 등이면 rewrite 하지 않고 app/[locale]/page.tsx 로 처리
+  if (pathname === `/${matchedLocale}`) {
+    return NextResponse.next();
+  }
+
+  // 4b. /ko/tours, /ko/tour/123 등: rewrite (locale 제거 후 내부 경로로 전달)
   const pathWithoutLocale = pathname.replace(`/${matchedLocale}`, '') || '/';
   const url = request.nextUrl.clone();
   url.pathname = pathWithoutLocale;
