@@ -16,12 +16,14 @@
     "mobile:setup": "node scripts/setup-react-native.sh"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.8.1",
     "@react-google-maps/api": "^2.20.7",
     "@stripe/stripe-js": "^8.5.3",
     "@supabase/supabase-js": "^2.39.0",
     "@types/google.maps": "^3.58.1",
     "@types/react-datepicker": "^6.2.0",
     "@vercel/speed-insights": "^1.3.1",
+    "negotiator": "^1.0.0",
     "next": "^14",
     "next-intl": "^4.6.0",
     "react": "^18",
@@ -41,6 +43,7 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^30.0.0",
+    "@types/negotiator": "^0.6.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

@@ -20,6 +20,9 @@
 // ============================================
 // 설정
 // ============================================
+// IMPORTANT: 실제 키는 코드에 직접 넣지 말고, 브라우저 콘솔에서
+// const GOOGLE_TRANSLATE_API_KEY = '...'; 를 직접 입력해서 사용하세요.
+// 이 파일에는 플레이스홀더만 유지합니다.
 const GOOGLE_TRANSLATE_API_KEY = 'YOUR_GOOGLE_TRANSLATE_API_KEY_HERE';
 const TRANSLATE_API_URL = 'https://translation.googleapis.com/language/translate/v2';
 

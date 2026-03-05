@@ -1,24 +1,52 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
+import { match } from '@formatjs/intl-localematcher';
+import Negotiator from 'negotiator';
 
-const SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'ja', 'es'] as const;
+const SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'ja', 'es'];
+const DEFAULT_LOCALE = 'en';
 
-const PUBLIC_FILE = /\.(.*)$/;
+function getLocale(request: NextRequest): string {
+  const negotiatorHeaders: Record<string, string> = {};
+  request.headers.forEach((value, key) => {
+    negotiatorHeaders[key] = value;
+  });
+
+  const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
+  return match(languages, SUPPORTED_LOCALES, DEFAULT_LOCALE);
+}
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Skip API routes, Next.js internals, and static files
+  // 1. 제외할 경로 (API, Next 내부, 정적 파일 등)
   if (
     pathname.startsWith('/api') ||
     pathname.startsWith('/_next') ||
     pathname.startsWith('/static') ||
-    PUBLIC_FILE.test(pathname)
+    pathname.includes('.')
   ) {
     return NextResponse.next();
   }
 
-  // Detect if the path starts with a supported locale subpath
+  // 2. 이미 지원 언어 접두사가 붙은 경로인지 확인
+  const pathnameHasLocale = SUPPORTED_LOCALES.some(
+    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
+  );
+
+  // 3. 언어 접두사가 없을 때: Accept-Language 기반 자동 감지 후 리다이렉트
+  if (!pathnameHasLocale) {
+    const locale = getLocale(request);
+
+    if (locale !== DEFAULT_LOCALE) {
+      const newUrl = new URL(request.url);
+      newUrl.pathname = `/${locale}${pathname === '/' ? '' : pathname}`;
+      return NextResponse.redirect(newUrl);
+    }
+
+    return NextResponse.next();
+  }
+
+  // 4. 이미 접두사가 있는 경우: 기존 rewrite (locale 제거 후 내부 경로로 전달)
   const matchedLocale = SUPPORTED_LOCALES.find(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
   );
@@ -27,12 +55,9 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Strip the locale prefix from the pathname
   const pathWithoutLocale = pathname.replace(`/${matchedLocale}`, '') || '/';
-
   const url = request.nextUrl.clone();
   url.pathname = pathWithoutLocale;
-  // Optionally expose the locale to the app via query param
   url.searchParams.set('locale', matchedLocale);
 
   return NextResponse.rewrite(url);
@@ -41,4 +66,3 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: ['/((?!_next|api|.*\\..*).*)'],
 };
-
