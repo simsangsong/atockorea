@@ -1,8 +1,11 @@
 'use client';
 
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { GoogleMap, useLoadScript, Marker, Autocomplete } from '@react-google-maps/api';
-import { mapOptions, defaultCenter } from '@/lib/google-maps';
+import { mapOptions, defaultCenter, libraries } from '@/lib/google-maps';
+
+// Places API (New) PlaceAutocompleteElement - gmp-select event type
+type GmpSelectEvent = Event & { placePrediction?: { toPlace: () => Promise<google.maps.places.Place> } };
 
 interface PickupPointSelectorProps {
   onLocationSelect: (location: { lat: number; lng: number; address: string }) => void;
@@ -32,14 +35,16 @@ export default function PickupPointSelector({
   );
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const [autocomplete, setAutocomplete] = useState<google.maps.places.Autocomplete | null>(null);
+  const [useLegacyAutocomplete, setUseLegacyAutocomplete] = useState(false);
   const [isGeocoding, setIsGeocoding] = useState(false);
-  const searchInputRef = useRef<HTMLInputElement>(null);
+  const autocompleteContainerRef = useRef<HTMLDivElement>(null);
 
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
+  // Load Maps API (no version=weekly so legacy Autocomplete is always available as fallback)
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: apiKey || '',
-    libraries: ['places'],
+    libraries,
   });
 
   const onMapLoad = useCallback((map: google.maps.Map) => {
@@ -57,12 +62,11 @@ export default function PickupPointSelector({
       const lat = e.latLng.lat();
       const lng = e.latLng.lng();
 
-      // Reverse geocoding to get address
       setIsGeocoding(true);
       try {
         const geocoder = new google.maps.Geocoder();
         const response = await geocoder.geocode({ location: { lat, lng } });
-        
+
         const address =
           response.results && response.results.length > 0
             ? response.results[0].formatted_address
@@ -84,30 +88,85 @@ export default function PickupPointSelector({
     [onLocationSelect]
   );
 
-  const onAutocompleteLoad = (autocomplete: google.maps.places.Autocomplete) => {
-    setAutocomplete(autocomplete);
-  };
+  // Legacy Autocomplete (Places API): when user selects a place from search
+  const onAutocompleteLoad = useCallback((ac: google.maps.places.Autocomplete) => {
+    setAutocomplete(ac);
+  }, []);
 
   const onPlaceChanged = useCallback(async () => {
     if (!autocomplete) return;
-
     const place = autocomplete.getPlace();
-    if (!place.geometry || !place.geometry.location) return;
-
+    if (!place.geometry?.location) return;
     const lat = place.geometry.location.lat();
     const lng = place.geometry.location.lng();
     const address = place.formatted_address || place.name || '';
-
     const location = { lat, lng, address };
     setSelectedLocation(location);
     onLocationSelect(location);
-
-    // Move map to selected location
     if (map) {
       map.setCenter({ lat, lng });
       map.setZoom(15);
     }
   }, [autocomplete, map, onLocationSelect]);
+
+  // Try PlaceAutocompleteElement (Places API New); if not available, use legacy Autocomplete
+  useEffect(() => {
+    if (!isLoaded || !apiKey || !autocompleteContainerRef.current || typeof google === 'undefined') return;
+
+    const PlacesLibrary = google.maps.places;
+    const PlaceAutocompleteElement = (PlacesLibrary as unknown as { PlaceAutocompleteElement?: new (opts?: object) => HTMLElement })
+      .PlaceAutocompleteElement;
+
+    if (!PlaceAutocompleteElement) {
+      setUseLegacyAutocomplete(true);
+      return;
+    }
+
+    const container = autocompleteContainerRef.current;
+    const placeAutocomplete = new PlaceAutocompleteElement({
+      locationBias: new google.maps.Circle({
+        center: defaultCenter,
+        radius: 50000, // Places API (New) max: 50,000m (50km)
+      }),
+      includedRegionCodes: ['kr'],
+    }) as HTMLElement;
+
+    placeAutocomplete.id = 'place-autocomplete-pickup';
+    container.innerHTML = '';
+    container.appendChild(placeAutocomplete);
+
+    const handleSelect = async (ev: Event) => {
+      const e = ev as GmpSelectEvent;
+      if (!e.placePrediction) return;
+      try {
+        const place = await e.placePrediction.toPlace();
+        await place.fetchFields({
+          fields: ['displayName', 'formattedAddress', 'location'],
+        });
+        const loc = place.location;
+        if (!loc) return;
+        const lat = typeof loc.lat === 'function' ? loc.lat() : (loc as { lat: number }).lat;
+        const lng = typeof loc.lng === 'function' ? loc.lng() : (loc as { lng: number }).lng;
+        const address =
+          (place.formattedAddress as string) || (place.displayName as string) || `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+        const location = { lat: Number(lat), lng: Number(lng), address };
+        setSelectedLocation(location);
+        onLocationSelect(location);
+        if (map) {
+          map.setCenter({ lat: location.lat, lng: location.lng });
+          map.setZoom(15);
+        }
+      } catch (err) {
+        console.error('Place fetchFields error:', err);
+      }
+    };
+
+    placeAutocomplete.addEventListener('gmp-select', handleSelect);
+    return () => {
+      placeAutocomplete.removeEventListener('gmp-select', handleSelect);
+      if (container.contains(placeAutocomplete)) container.removeChild(placeAutocomplete);
+    };
+  }, [isLoaded, apiKey, onLocationSelect, map]);
 
   if (!apiKey) {
     return (
@@ -141,23 +200,29 @@ export default function PickupPointSelector({
 
   return (
     <div className={`w-full ${className}`}>
-      {/* Search Box */}
+      {/* Search: PlaceAutocompleteElement (New) or legacy Autocomplete (Places API) */}
       <div className="mb-4">
-        <Autocomplete
-          onLoad={onAutocompleteLoad}
-          onPlaceChanged={onPlaceChanged}
-          options={{
-            types: ['establishment', 'geocode'],
-            componentRestrictions: { country: 'kr' }, // Restrict to Korea
-          }}
-        >
-          <input
-            ref={searchInputRef}
-            type="text"
-            placeholder="Search location or click on map to select..."
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+        {useLegacyAutocomplete ? (
+          <Autocomplete
+            onLoad={onAutocompleteLoad}
+            onPlaceChanged={onPlaceChanged}
+            options={{
+              types: ['establishment', 'geocode'],
+              componentRestrictions: { country: 'kr' },
+            }}
+          >
+            <input
+              type="text"
+              placeholder="Search location or click on map to select..."
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+            />
+          </Autocomplete>
+        ) : (
+          <div
+            className="[&_.gmp-place-autocomplete]:!w-full [&_.gmp-place-autocomplete]:!rounded-lg [&_.gmp-place-autocomplete]:!border [&_.gmp-place-autocomplete]:!border-gray-300 [&_.gmp-place-autocomplete]:!min-h-[48px]"
+            ref={autocompleteContainerRef}
           />
-        </Autocomplete>
+        )}
       </div>
 
       {/* Map */}
@@ -185,7 +250,7 @@ export default function PickupPointSelector({
                 try {
                   const geocoder = new google.maps.Geocoder();
                   const response = await geocoder.geocode({ location: { lat, lng } });
-                  
+
                   const address =
                     response.results && response.results.length > 0
                       ? response.results[0].formatted_address
@@ -209,7 +274,6 @@ export default function PickupPointSelector({
         </GoogleMap>
       </div>
 
-      {/* Selected Location Info */}
       {selectedLocation && (
         <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
           <div className="flex items-start gap-3">
@@ -227,11 +291,9 @@ export default function PickupPointSelector({
         </div>
       )}
 
-      {/* Tip */}
       <p className="mt-2 text-xs text-gray-500">
         💡 Tip: Click on the map to select a location, or use the search box to find a place
       </p>
     </div>
   );
 }
-

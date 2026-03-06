@@ -192,21 +192,7 @@ export default function DashboardPage() {
           </div>
           <p className="text-4xl font-bold text-gray-900 tracking-tight">{totalBookings}</p>
         </Link>
-        <Link
-          href="/mypage/reviews"
-          onClick={(e) => handleNavigation(e, '/mypage/reviews')}
-          className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-7 hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-all duration-300 cursor-pointer group"
-        >
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-base font-medium text-gray-600 tracking-wide">Reviews</span>
-            <div className="w-7 h-7 bg-gradient-to-br from-purple-500 to-violet-600 rounded-lg flex items-center justify-center text-white shadow-[0_4px_12px_rgba(139,92,246,0.3)] group-hover:scale-110 transition-transform duration-300">
-              <div className="w-4 h-4">
-                <StarIcon className="w-4 h-4" />
-              </div>
-            </div>
-          </div>
-          <p className="text-4xl font-bold text-gray-900 tracking-tight">{reviews}</p>
-        </Link>
+        {/* Reviews 카드 제거 (리뷰는 My Bookings 화면에서 진입) */}
       </div>
 
       {/* Recent Activity */}

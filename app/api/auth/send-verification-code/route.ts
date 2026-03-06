@@ -41,12 +41,14 @@ export async function POST(req: NextRequest) {
       .delete()
       .eq('email', email);
 
-    // 插入新验证码
+    // 插入新验证码（与 complete-database-schema 的 verification_codes 一致：code_type NOT NULL, is_used）
     const { error: insertError } = await supabase
       .from('verification_codes')
       .insert({
         email,
         code: verificationCode,
+        code_type: 'email_verification',
+        is_used: false,
         expires_at: expiresAt.toISOString(),
       });
 

@@ -174,7 +174,7 @@ export async function POST(req: NextRequest) {
 
 /**
  * Upload a single file to Supabase Storage
- * Automatically compresses images if they exceed 5MB
+ * 상품용 사진: 3MB 초과 시 자동 다운사이징 후 업로드
  */
 async function uploadFile(
   supabase: any,
@@ -189,7 +189,7 @@ async function uploadFile(
   
   // Check if it's an image
   const isImage = file.type.startsWith('image/');
-  const maxSizeBytes = 5 * 1024 * 1024; // 5MB
+  const maxSizeBytes = 3 * 1024 * 1024; // 3MB — 상품 이미지 한 장당 기준, 초과 시 자동 압축
   let finalBuffer = buffer;
   let contentType = file.type;
   let fileExt = file.name.split('.').pop()?.toLowerCase() || 'jpg';
@@ -197,7 +197,7 @@ async function uploadFile(
   let originalSize = buffer.length;
   let compressedSize = buffer.length;
 
-  // Compress image if it exceeds 5MB
+  // 3MB 초과 이미지는 자동 다운사이징 후 업로드
   if (isImage && buffer.length > maxSizeBytes) {
     const compressionResult = await compressImageIfNeeded(buffer, maxSizeBytes);
     finalBuffer = Buffer.from(compressionResult.buffer); // Ensure proper Buffer type

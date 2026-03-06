@@ -4,6 +4,8 @@
 
 이 오류는 Google Maps API 키 설정 문제로 발생합니다.
 
+**지도는 보이는데 주소 검색/핀 꽂기가 안 되고** 위 메시지가 뜨거나, 콘솔에 `You're calling a legacy API, which is not enabled` 가 보이면 → 아래 **"You're calling a legacy API"** 항목으로 이동하세요.
+
 ## ✅ 해결 방법
 
 ### 1. API 키 확인
@@ -116,6 +118,53 @@ Google Maps API error: ApiNotActivatedMapError
 ```
 
 **해결**: Google Cloud Console에서 Maps JavaScript API와 Places API 활성화
+
+### "You're calling a legacy API, which is not enabled" / 주소 검색·핀 꽂기 실패
+
+지도는 보이지만 **주소 검색창에 입력하거나 지도에서 위치를 선택할 때** "Google 지도를 제대로 로드할 수 없습니다" 또는 콘솔에 다음 오류가 나오는 경우:
+
+```
+You're calling a legacy API, which is not enabled for your project.
+```
+
+**원인**: 해당 프로젝트에서 **Places API**(주소 자동완성·장소 검색용)가 사용 설정되지 않았습니다.
+
+**해결**:
+
+1. **Google Cloud Console** 접속  
+   - https://console.cloud.google.com/  
+   - 픽업장소/지도에 사용 중인 **같은 프로젝트** 선택
+
+2. **API 라이브러리** 이동  
+   - 왼쪽 메뉴: **APIs & Services** → **Library**
+
+3. **Places API** 사용 설정  
+   - 검색창에 **"Places API"** 입력  
+   - **Places API** (이름만 "Places API", "New"가 아닌 것) 선택  
+   - **Enable** 클릭
+
+4. **Maps JavaScript API** 확인  
+   - 라이브러리에서 **"Maps JavaScript API"** 검색 후 선택  
+   - 이미 사용 설정되어 있지 않으면 **Enable** 클릭
+
+5. **API 키 제한**에 포함되었는지 확인  
+   - **APIs & Services** → **Credentials** → 사용 중인 API 키 편집  
+   - **API restrictions**에서 **Restrict key** 사용 시  
+     - **Maps JavaScript API**, **Places API**, **Geocoding API** 가 목록에 포함되어 있는지 확인
+
+6. 브라우저에서 **캐시 삭제 후 새로고침** (Ctrl+Shift+R) 후 픽업장소 관리 화면에서 다시 주소 검색·핀 선택을 시도하세요.
+
+---
+
+### Places API (New) 사용 시 (권장)
+
+이 프로젝트는 **Places API (New)** 와 **PlaceAutocompleteElement** 를 사용하도록 되어 있습니다.
+
+1. **Google Cloud Console** → **APIs & Services** → **Library**
+2. **"Places API (New)"** 검색 후 **Enable** 클릭
+3. 기존 **Maps JavaScript API** 도 사용 설정되어 있어야 합니다
+4. 스크립트는 `version: 'weekly'` 로 로드되므로 새 Place Autocomplete 위젯을 사용할 수 있습니다
+5. API 키 제한에서 **Places API (New)** 또는 **Places API** 가 허용 목록에 포함되어 있는지 확인하세요
 
 ### 결제 계정이 없는 경우
 

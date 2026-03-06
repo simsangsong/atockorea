@@ -12,6 +12,7 @@ function WriteReviewContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const tourId = searchParams?.get('tourId');
+  const bookingId = searchParams?.get('bookingId');
   const tourName = searchParams?.get('tour') || 'Tour';
 
   const [rating, setRating] = useState(0);
@@ -23,10 +24,10 @@ function WriteReviewContent() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!tourId) {
-      router.push('/mypage/reviews');
+    if (!tourId || !bookingId) {
+      router.push('/mypage/mybookings');
     }
-  }, [tourId, router]);
+  }, [tourId, bookingId, router]);
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -106,6 +107,7 @@ function WriteReviewContent() {
         },
         body: JSON.stringify({
           tourId,
+          bookingId,
           rating,
           title: title.trim() || null,
           comment: comment.trim(),
@@ -120,7 +122,7 @@ function WriteReviewContent() {
       }
 
       alert('Review created successfully!');
-      router.push('/mypage/reviews');
+      router.push('/mypage/mybookings');
     } catch (err: any) {
       console.error('Error creating review:', err);
       setError(err.message);

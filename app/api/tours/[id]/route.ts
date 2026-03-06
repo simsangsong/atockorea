@@ -231,6 +231,7 @@ export const GET = withErrorHandler(async (
         title: item.title || '',
         description: item.description || '',
         icon: item.icon || '📍',
+        images: Array.isArray(item.images) ? item.images : undefined,
       })),
       inclusions: includes.map((item: string) => ({
         icon: '✓',
@@ -253,6 +254,22 @@ export const GET = withErrorHandler(async (
       })),
       faqs,
       highlights: highlights.length > 0 ? highlights : (Array.isArray(tour.highlights) ? tour.highlights : []),
+      itineraryDetails: Array.isArray(tour.itinerary_details)
+        ? (tour.itinerary_details as any[]).map((item: any) => ({
+            time: item.time ?? '',
+            activity: item.activity ?? item.title ?? '',
+            description: item.description ?? '',
+            images: Array.isArray(item.images) ? item.images : undefined,
+          }))
+        : undefined,
+      seoTitle: tour.seo_title ?? null,
+      metaDescription: tour.meta_description ?? null,
+      childEligibility: Array.isArray(tour.child_eligibility) ? tour.child_eligibility : [],
+      suggestedToBring: Array.isArray(tour.suggested_to_bring) ? tour.suggested_to_bring : [],
+      accessibilityFacilities:
+        tour.accessibility_facilities && typeof tour.accessibility_facilities === 'object'
+          ? tour.accessibility_facilities
+          : undefined,
     };
 
     return NextResponse.json({ tour: transformedTour });
@@ -298,6 +315,9 @@ export const PATCH = withErrorHandler(async (
     if (body.excludes !== undefined) updateData.excludes = body.excludes;
     if (body.schedule !== undefined) updateData.schedule = body.schedule;
     if (body.faqs !== undefined) updateData.faqs = body.faqs;
+    if (body.child_eligibility !== undefined) updateData.child_eligibility = body.child_eligibility;
+    if (body.suggested_to_bring !== undefined) updateData.suggested_to_bring = body.suggested_to_bring;
+    if (body.accessibility_facilities !== undefined) updateData.accessibility_facilities = body.accessibility_facilities;
     if (body.translations !== undefined) updateData.translations = body.translations;
 
     const { data: tour, error: updateError } = await supabase

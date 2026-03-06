@@ -12,6 +12,14 @@ interface PickupPoint {
   lng: number;
 }
 
+function hasValidCoords(lat: number, lng: number): boolean {
+  const la = Number(lat);
+  const ln = Number(lng);
+  if (Number.isNaN(la) || Number.isNaN(ln)) return false;
+  if (la === 0 && ln === 0) return false;
+  return la >= -90 && la <= 90 && ln >= -180 && ln <= 180;
+}
+
 interface MeetingPointProps {
   points: PickupPoint[];
 }
@@ -28,29 +36,32 @@ export default function MeetingPoint({ points }: MeetingPointProps) {
   }
 
   const primaryPoint = points[0];
+  const pointsWithCoords = points.filter((p) => hasValidCoords(p.lat, p.lng));
   const hasApiKey = !!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+  const canShowMap = hasApiKey && pointsWithCoords.length > 0;
+  const mapCenterPoint = pointsWithCoords.length > 0 ? pointsWithCoords[0] : primaryPoint;
 
   return (
-    <div className="rounded-2xl border border-gray-100 bg-white p-4">
-      <h2 className="text-sm font-semibold text-gray-900 mb-3">{t('tour.pickupMeetupInfo')}</h2>
+    <div className="rounded-2xl border border-gray-200/50 bg-white p-4 sm:p-5 shadow-[0_2px_16px_rgba(0,0,0,0.06),0_1px_6px_rgba(0,0,0,0.03)]">
+      <h2 className="text-sm font-semibold text-gray-900 mb-3 tracking-tight">{t('tour.pickupMeetupInfo')}</h2>
 
-      {/* Map */}
+      {/* Map: show pins only when we have valid lat/lng */}
       <div className="relative w-full h-40 sm:h-52 rounded-xl overflow-hidden mb-3 bg-gray-50 border border-gray-100">
-        {hasApiKey ? (
+        {canShowMap ? (
           <InteractiveMap
-            locations={points.map(p => ({
-              lat: p.lat,
-              lng: p.lng,
+            locations={pointsWithCoords.map((p) => ({
+              lat: Number(p.lat),
+              lng: Number(p.lng),
               name: p.name,
               address: p.address,
               id: p.id,
             }))}
-            center={{ lat: primaryPoint.lat, lng: primaryPoint.lng }}
-            zoom={points.length > 1 ? 12 : 15}
+            center={{ lat: Number(mapCenterPoint.lat), lng: Number(mapCenterPoint.lng) }}
+            zoom={pointsWithCoords.length > 1 ? 12 : 15}
             height="100%"
             showInfoWindow={true}
           />
-        ) : (
+        ) : !hasApiKey ? (
           <iframe
             src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.5!2d${primaryPoint.lng}!3d${primaryPoint.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDA2JzU2LjIiTiAxMjnCsDAyJzMyLjAiRQ!5e0!3m2!1sen!2sus!4v1234567890&q=${encodeURIComponent(primaryPoint.address || primaryPoint.name)}`}
             width="100%"
@@ -61,6 +72,15 @@ export default function MeetingPoint({ points }: MeetingPointProps) {
             referrerPolicy="no-referrer-when-downgrade"
             className="absolute inset-0"
           />
+        ) : (
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(primaryPoint.address || primaryPoint.name)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute inset-0 flex items-center justify-center bg-gray-100 text-gray-600 text-sm font-medium hover:bg-gray-200 transition-colors"
+          >
+            {t('tour.directions')} – {primaryPoint.name}
+          </a>
         )}
       </div>
 
@@ -74,7 +94,9 @@ export default function MeetingPoint({ points }: MeetingPointProps) {
           <p className="text-xs text-gray-500 truncate">{primaryPoint.address || ''}</p>
         </div>
         <a
-          href={`https://www.google.com/maps?q=${primaryPoint.lat},${primaryPoint.lng}`}
+          href={hasValidCoords(primaryPoint.lat, primaryPoint.lng)
+            ? `https://www.google.com/maps?q=${primaryPoint.lat},${primaryPoint.lng}`
+            : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(primaryPoint.address || primaryPoint.name)}`}
           target="_blank"
           rel="noopener noreferrer"
           className="flex-shrink-0 px-3 py-1.5 rounded-full bg-gray-900 text-white text-xs font-medium hover:bg-gray-800 transition-colors whitespace-nowrap"

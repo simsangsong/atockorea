@@ -28,7 +28,7 @@ export async function generateMetadata(
 
     const { data: tour, error } = await supabase
       .from('tours')
-      .select('id, title, description, city, image_url, price, rating, review_count, translations')
+      .select('id, title, description, city, image_url, price, rating, review_count, translations, seo_title, meta_description')
       .eq('id', tourId)
       .eq('is_active', true)
       .single();
@@ -49,13 +49,15 @@ export async function generateMetadata(
     const translations = (tour.translations || {}) as Record<string, any>;
     const tr = translations[requestLocale] as Record<string, any> | undefined;
 
-    const baseTitle = tour.title || '';
+    const baseTitle = (tour.seo_title as string) || tour.title || '';
     const baseDescription =
+      (tour.meta_description as string) ||
       tour.description ||
       `Book ${tour.title} in ${tour.city}. Experience the best of Korea with our licensed tour guides.`;
 
-    const localizedTitle = (tr?.title as string) || baseTitle;
-    const localizedDescription = (tr?.description as string) || baseDescription;
+    const localizedTitle = (tr?.title as string) || (tour.seo_title as string) || tour.title || '';
+    const localizedDescription =
+      (tr?.description as string) || (tour.meta_description as string) || tour.description || baseDescription;
 
     const path = `/tour/${tourId}`;
 

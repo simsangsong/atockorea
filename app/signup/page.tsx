@@ -128,6 +128,7 @@ export default function SignUpPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
+    setError(null);
 
     // Validation
     if (!formData.fullName.trim()) {
@@ -182,31 +183,46 @@ export default function SignUpPage() {
       }
 
       if (data.user) {
-        // 创建用户资料 - 确保数据保存成功
-        const { error: profileError } = await supabase.from('user_profiles').insert({
-          id: data.user.id,
-          full_name: formData.fullName,
-          role: 'customer', // 明确设置角色
+        const accessToken = data.session?.access_token ?? (await supabase.auth.getSession()).data?.session?.access_token;
+        // 프로필은 서버 API에서 생성 (accessToken 없어도 방금 가입한 사용자면 서버에서 허용)
+        const res = await fetch('/api/auth/create-profile', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            userId: data.user.id,
+            full_name: formData.fullName,
+            accessToken: accessToken ?? undefined,
+          }),
         });
+        const resData = await res.json().catch(() => ({}));
 
-        if (profileError) {
-          console.error('Error creating user profile:', profileError);
-          // 如果创建用户资料失败，尝试删除已创建的用户账户
-          try {
-            await supabase.auth.admin.deleteUser(data.user.id);
-          } catch (deleteError) {
-            console.error('Error deleting user after profile creation failure:', deleteError);
+        if (!res.ok) {
+          console.error('Error creating user profile:', resData.error ?? res.status);
+          if (res.status !== 409) {
+            try {
+              await fetch('/api/auth/delete-user-without-profile', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
+                body: JSON.stringify({ userId: data.user.id, accessToken: accessToken ?? undefined }),
+              });
+            } catch (deleteError) {
+              console.error('Error deleting user after profile creation failure:', deleteError);
+            }
           }
-          setErrors({ email: 'Failed to create user profile. Please try again.' });
+          setError(resData.error ?? 'Failed to create user profile. Please try again.');
           setIsLoading(false);
           return;
         }
 
         alert('Account created successfully! Please check your email to verify your account.');
         router.push('/signin');
+      } else {
+        setError('Sign up did not return a user. Please try again.');
+        setIsLoading(false);
       }
     } catch (error: any) {
-      setErrors({ email: error.message });
+      setError(error?.message ?? 'Something went wrong. Please try again.');
       setIsLoading(false);
     }
   };

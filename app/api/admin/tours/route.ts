@@ -216,13 +216,18 @@ export async function PATCH(request: NextRequest) {
     if (body.includes !== undefined) updateData.includes = body.includes;
     if (body.excludes !== undefined) updateData.excludes = body.excludes;
     if (body.schedule !== undefined) updateData.schedule = body.schedule;
+    if (body.itinerary_details !== undefined) updateData.itinerary_details = body.itinerary_details;
     if (body.faqs !== undefined) updateData.faqs = body.faqs;
+    if (body.child_eligibility !== undefined) updateData.child_eligibility = body.child_eligibility;
+    if (body.suggested_to_bring !== undefined) updateData.suggested_to_bring = body.suggested_to_bring;
+    if (body.accessibility_facilities !== undefined) updateData.accessibility_facilities = body.accessibility_facilities;
     if (body.rating !== undefined) updateData.rating = parseFloat(body.rating);
     if (body.review_count !== undefined) updateData.review_count = body.review_count;
     if (body.pickup_points_count !== undefined) updateData.pickup_points_count = body.pickup_points_count;
     if (body.dropoff_points_count !== undefined) updateData.dropoff_points_count = body.dropoff_points_count;
     if (body.is_active !== undefined) updateData.is_active = body.is_active;
     if (body.is_featured !== undefined) updateData.is_featured = body.is_featured;
+    if (body.translations !== undefined) updateData.translations = body.translations;
 
     // Update tour
     const { data: tour, error: tourError } = await supabase

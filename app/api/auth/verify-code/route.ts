@@ -18,13 +18,13 @@ export async function POST(req: NextRequest) {
 
     const supabase = createServerClient();
 
-    // 查找验证码
+    // 查找验证码（complete-database-schema 使用 is_used）
     const { data: verificationData, error: findError } = await supabase
       .from('verification_codes')
       .select('*')
       .eq('email', email)
       .eq('code', code)
-      .eq('used', false)
+      .eq('is_used', false)
       .gt('expires_at', new Date().toISOString())
       .order('created_at', { ascending: false })
       .limit(1)
@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
     // 标记验证码为已使用
     await supabase
       .from('verification_codes')
-      .update({ used: true })
+      .update({ is_used: true })
       .eq('id', verificationData.id);
 
     return NextResponse.json({

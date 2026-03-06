@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
+const INITIAL_VISIBLE = 3;
+
 interface ImageWithDescription {
   url: string;
   description?: string;
@@ -15,18 +17,13 @@ interface GalleryGridProps {
 
 export default function GalleryGrid({ images }: GalleryGridProps) {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
-  // Ensure images array is not empty
   const safeImages = images && images.length > 0 ? images : [];
 
-  // Normalize images to have consistent structure
   const normalizedImages = safeImages.map((img, index) => {
     if (typeof img === 'string') {
-      return {
-        url: img,
-        title: `Attraction ${index + 1}`,
-        description: '',
-      };
+      return { url: img, title: `Attraction ${index + 1}`, description: '' };
     }
     return {
       url: img.url,
@@ -35,33 +32,56 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
     };
   });
 
-  if (safeImages.length === 0) {
-    return null;
-  }
+  if (safeImages.length === 0) return null;
+
+  const hasMore = normalizedImages.length > INITIAL_VISIBLE;
+  const visibleImages = showAll ? normalizedImages : normalizedImages.slice(0, INITIAL_VISIBLE);
 
   return (
     <>
       <div>
         <h2 className="text-sm font-semibold text-gray-900 mb-3">Photos</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-          {normalizedImages.map((image, index) => (
-            <div key={index}>
-              <button
-                onClick={() => setSelectedImage(index)}
-                className="relative w-full aspect-[4/3] rounded-xl overflow-hidden group cursor-pointer bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-1"
-              >
-                <Image
-                  src={image.url}
-                  alt={image.title || `Gallery image ${index + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                  loading="lazy"
-                  sizes="(max-width: 640px) 50vw, 33vw"
-                />
-              </button>
-            </div>
-          ))}
+        <div className="flex gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 flex-1 min-w-0">
+            {visibleImages.map((image, index) => (
+              <div key={index}>
+                <button
+                  onClick={() => setSelectedImage(showAll ? index : index)}
+                  className="relative w-full aspect-[4/3] rounded-xl overflow-hidden group cursor-pointer bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-1"
+                >
+                  <Image
+                    src={image.url}
+                    alt={image.title || `Gallery image ${index + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    loading="lazy"
+                    sizes="(max-width: 640px) 50vw, 33vw"
+                  />
+                </button>
+              </div>
+            ))}
+          </div>
+          {hasMore && !showAll && (
+            <button
+              type="button"
+              onClick={() => setShowAll(true)}
+              className="flex-shrink-0 flex flex-col items-center justify-center min-w-[56px] w-14 rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 hover:bg-gray-100 hover:border-gray-400 transition-colors text-gray-600"
+              aria-label="더 보기"
+            >
+              <span className="text-xl font-bold tracking-tighter rotate-90 origin-center">»</span>
+              <span className="text-[10px] font-medium mt-1 uppercase tracking-wider">More</span>
+            </button>
+          )}
         </div>
+        {hasMore && showAll && (
+          <button
+            type="button"
+            onClick={() => setShowAll(false)}
+            className="mt-2 text-xs text-gray-500 hover:text-gray-700"
+          >
+            접기
+          </button>
+        )}
       </div>
 
       {/* Lightbox Modal */}

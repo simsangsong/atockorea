@@ -46,6 +46,12 @@ export async function GET(req: NextRequest) {
       .gte('created_at', `${today}T00:00:00`)
       .lte('created_at', `${today}T23:59:59`);
 
+    // Pending bookings (for dashboard "Pending items")
+    const { count: pendingOrders } = await supabase
+      .from('bookings')
+      .select('*', { count: 'exact', head: true })
+      .eq('status', 'pending');
+
     // Get total revenue (sum of all paid bookings)
     const { data: bookings } = await supabase
       .from('bookings')
@@ -105,6 +111,7 @@ export async function GET(req: NextRequest) {
         totalProducts: totalProducts || 0,
         totalOrders: totalOrders || 0,
         todayOrders: todayOrders || 0,
+        pendingOrders: pendingOrders || 0,
         totalRevenue,
       },
       recentBookings: recentBookings || [],

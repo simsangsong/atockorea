@@ -13,7 +13,10 @@
     "test:coverage": "jest --coverage",
     "analyze": "ANALYZE=true next build",
     "create-merchant": "node scripts/create-merchant.js",
-    "mobile:setup": "node scripts/setup-react-native.sh"
+    "mobile:setup": "node scripts/setup-react-native.sh",
+    "android:add": "npx cap add android",
+    "android:sync": "npx cap sync android",
+    "android:open": "npx cap open android"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.8.1",

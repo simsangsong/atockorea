@@ -3,7 +3,8 @@ import { createServerClient } from '@/lib/supabase';
 
 /**
  * GET /api/reviews
- * Get reviews with optional filtering
+ * Get reviews with optional filtering.
+ * Note: reviews has FK to tours but not to user_profiles; we fetch profiles separately.
  */
 export async function GET(req: NextRequest) {
   try {
@@ -19,11 +20,6 @@ export async function GET(req: NextRequest) {
       .from('reviews')
       .select(`
         *,
-        user_profiles (
-          id,
-          full_name,
-          avatar_url
-        ),
         tours (
           id,
           title
@@ -51,7 +47,31 @@ export async function GET(req: NextRequest) {
       );
     }
 
-    return NextResponse.json({ reviews: reviews || [] });
+    const list = reviews || [];
+    const userIds = [...new Set(list.map((r: any) => r.user_id).filter(Boolean))] as string[];
+    let profilesMap: Record<string, { id: string; full_name: string | null; avatar_url: string | null }> = {};
+
+    if (userIds.length > 0) {
+      const { data: profiles } = await supabase
+        .from('user_profiles')
+        .select('id, full_name, avatar_url')
+        .in('id', userIds);
+      if (profiles) {
+        profilesMap = Object.fromEntries(profiles.map((p: any) => [p.id, p]));
+      }
+    }
+
+    const sanitized = list.map((r: any) => {
+      const userProfile = r.user_id ? profilesMap[r.user_id] : null;
+      const attach = {
+        user_profiles: r.is_anonymous
+          ? { id: null, full_name: 'Anonymous', avatar_url: null }
+          : (userProfile || { id: r.user_id, full_name: null, avatar_url: null }),
+      };
+      return { ...r, ...attach };
+    });
+
+    return NextResponse.json({ reviews: sanitized });
   } catch (error: any) {
     console.error('Unexpected error:', error);
     return NextResponse.json(
@@ -70,12 +90,12 @@ export async function POST(req: NextRequest) {
     const supabase = createServerClient();
     const body = await req.json();
 
-    const { tourId, bookingId, rating, title, comment, images } = body;
+    const { tourId, bookingId, rating, title, comment, images, is_anonymous } = body;
 
     // Validate required fields
-    if (!tourId || !rating) {
+    if (!bookingId || !rating) {
       return NextResponse.json(
-        { error: 'tourId and rating are required' },
+        { error: 'bookingId and rating are required' },
         { status: 400 }
       );
     }
@@ -106,56 +126,57 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Check if user already reviewed this tour/booking
-    let existingReviewQuery = supabase
-      .from('reviews')
-      .select('id')
+    // Fetch booking and ensure it belongs to user and is completed
+    const { data: booking, error: bookingError } = await supabase
+      .from('bookings')
+      .select('id, user_id, status, tour_id')
+      .eq('id', bookingId)
       .eq('user_id', userId)
-      .eq('tour_id', tourId);
+      .single();
 
-    if (bookingId) {
-      existingReviewQuery = existingReviewQuery.eq('booking_id', bookingId);
-    }
-
-    const { data: existingReview } = await existingReviewQuery.single();
-
-    if (existingReview) {
+    if (bookingError || !booking) {
       return NextResponse.json(
-        { error: 'You have already reviewed this tour' },
-        { status: 409 }
+        { error: 'Booking not found' },
+        { status: 404 }
       );
     }
 
-    // Check if booking exists and belongs to user (for verification)
-    let isVerified = false;
-    if (bookingId) {
-      const { data: booking } = await supabase
-        .from('bookings')
-        .select('id, user_id, status')
-        .eq('id', bookingId)
-        .eq('user_id', userId)
-        .single();
+    if (booking.status !== 'completed') {
+      return NextResponse.json(
+        { error: 'Only completed bookings can be reviewed' },
+        { status: 400 }
+      );
+    }
 
-      if (booking && booking.status === 'completed') {
-        isVerified = true;
-      }
+    const finalTourId = booking.tour_id;
+
+    // Check if this booking already has a review
+    const { data: existingReview } = await supabase
+      .from('reviews')
+      .select('id')
+      .eq('booking_id', bookingId)
+      .single();
+
+    if (existingReview) {
+      return NextResponse.json(
+        { error: 'You have already reviewed this booking' },
+        { status: 409 }
+      );
     }
 
     // Create review
     const reviewData: any = {
       user_id: userId,
-      tour_id: tourId,
+      tour_id: finalTourId,
+      booking_id: bookingId,
       rating,
       comment: comment || null,
       title: title || null,
-      images: images || [],
-      is_verified: isVerified,
+      images: Array.isArray(images) ? images : [],
+      is_anonymous: !!is_anonymous,
+      is_verified: true,
       is_visible: true,
     };
-
-    if (bookingId) {
-      reviewData.booking_id = bookingId;
-    }
 
     const { data: review, error } = await supabase
       .from('reviews')

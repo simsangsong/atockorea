@@ -29,11 +29,20 @@ export default function MerchantLayout({ children }: { children: React.ReactNode
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-gray-600 mb-4">Please sign in to access merchant dashboard</p>
-          <Link href="/signin" className="text-indigo-600 hover:text-indigo-700">
-            Sign In
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-50/30 p-4">
+        <div className="max-w-sm w-full bg-white rounded-2xl border border-gray-200/60 shadow-lg p-8 text-center">
+          <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50 flex items-center justify-center">
+            <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <h2 className="text-lg font-semibold text-gray-900 mb-1">商家后台</h2>
+          <p className="text-gray-500 text-sm mb-6">请登录后访问商家管理后台。</p>
+          <Link
+            href="/signin"
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-700 transition-colors"
+          >
+            登录
           </Link>
         </div>
       </div>

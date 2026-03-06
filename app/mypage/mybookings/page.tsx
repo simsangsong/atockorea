@@ -121,7 +121,7 @@ export default function MyBookingsPage() {
 
   const handleReview = (booking: Booking) => {
     const tourTitle = booking.tours?.title || 'Tour';
-    router.push(`/mypage/reviews/write?tourId=${booking.tour_id}&tour=${encodeURIComponent(tourTitle)}`);
+    router.push(`/mypage/reviews/write?tourId=${booking.tour_id}&bookingId=${booking.id}&tour=${encodeURIComponent(tourTitle)}`);
   };
 
   const formatDate = (dateString: string) => {

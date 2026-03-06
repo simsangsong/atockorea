@@ -21,12 +21,12 @@ export default function KeyInfoBar({ items }: KeyInfoBarProps) {
         {items.map((item, index) => (
           <div
             key={index}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-50 text-gray-700 flex-shrink-0"
+            className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-50/80 border border-slate-200/50 text-slate-700 flex-shrink-0 shadow-sm"
           >
-            <span className="flex-shrink-0 w-4 h-4 text-gray-500 [&>svg]:w-4 [&>svg]:h-4">
+            <span className="flex-shrink-0 w-4 h-4 text-slate-500 [&>svg]:w-4 [&>svg]:h-4">
               {item.icon}
             </span>
-            <span className="text-xs font-medium whitespace-nowrap">
+            <span className="text-xs font-medium whitespace-nowrap tracking-tight">
               {item.value || item.label}
             </span>
           </div>

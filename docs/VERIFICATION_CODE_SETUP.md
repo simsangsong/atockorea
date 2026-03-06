@@ -10,27 +10,11 @@
 
 ### 步骤1：创建验证码表
 
-在 Supabase SQL Editor 中执行 `docs/VERIFICATION_CODE_DATABASE.sql` 文件中的 SQL，或直接执行以下 SQL：
+在 Supabase SQL Editor 中执行 **`supabase/verification_codes_table.sql`**（与 API 使用的 `code_type`、`is_used` 列一致）。
 
-```sql
--- 创建验证码表
-CREATE TABLE IF NOT EXISTS verification_codes (
-  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  email TEXT NOT NULL,
-  code TEXT NOT NULL,
-  used BOOLEAN DEFAULT FALSE,
-  expires_at TIMESTAMPTZ NOT NULL,
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
+若表已存在但为旧版（仅有 `used`、无 `code_type`），需先删除该表或执行完整 schema 再运行上述脚本，否则会出现 “Failed to store verification code” 或 500 错误。
 
--- 创建索引以提高查询性能
-CREATE INDEX IF NOT EXISTS idx_verification_codes_email ON verification_codes(email);
-CREATE INDEX IF NOT EXISTS idx_verification_codes_code ON verification_codes(code);
-CREATE INDEX IF NOT EXISTS idx_verification_codes_expires ON verification_codes(expires_at);
-CREATE INDEX IF NOT EXISTS idx_verification_codes_email_code ON verification_codes(email, code);
-```
-
-**详细 SQL 脚本：** 查看 `docs/VERIFICATION_CODE_DATABASE.sql`
+**SQL 脚本路径：** `supabase/verification_codes_table.sql`
 
 ---
 

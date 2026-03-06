@@ -7,6 +7,7 @@ interface ItineraryItem {
   title: string;
   description: string;
   icon?: string;
+  images?: string[];
 }
 
 interface PickupPoint {
@@ -113,17 +114,34 @@ export default function VisualItinerary({ items, pickupPoints = [] }: VisualItin
                 </div>
               );
             } else if (processed.type === 'normal' && processed.item) {
+              const item = processed.item;
               return (
                 <div key={idx} className="relative flex gap-3 pl-10">
                   <div className={`absolute left-0 top-2.5 w-2.5 h-2.5 rounded-full ${colorClass} border-2 border-white z-10 -translate-x-[5px]`} />
                   <div className="flex-1 pb-2">
                     <div className="rounded-xl bg-gray-50 border border-gray-100 p-3">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs font-semibold text-gray-600 bg-gray-100 px-2 py-0.5 rounded-md">{processed.item.time}</span>
-                        <h3 className="text-sm font-medium text-gray-900">{processed.item.title}</h3>
+                        <span className="text-xs font-semibold text-gray-600 bg-gray-100 px-2 py-0.5 rounded-md">{item.time}</span>
+                        <h3 className="text-sm font-medium text-gray-900">{item.title}</h3>
                       </div>
-                      {processed.item.description && (
-                        <p className="text-xs text-gray-600 leading-relaxed mt-1">{processed.item.description}</p>
+                      {item.description && (
+                        <p className="text-xs text-gray-600 leading-relaxed mt-1">{item.description}</p>
+                      )}
+                      {item.images && item.images.length > 0 && (
+                        <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
+                          {item.images.map((imgUrl, i) => (
+                            <a
+                              key={i}
+                              href={imgUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="relative flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border border-gray-200 hover:opacity-90"
+                            >
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img src={imgUrl} alt="" className="w-full h-full object-cover" />
+                            </a>
+                          ))}
+                        </div>
                       )}
                     </div>
                   </div>

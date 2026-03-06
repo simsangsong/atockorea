@@ -313,12 +313,22 @@ export default function CartPage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
         <Header />
-        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
-          <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
-            <p className="text-red-800 mb-4">{error}</p>
+        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 flex items-center justify-center min-h-[60vh]">
+          <div className="max-w-md w-full bg-white/90 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.08)] p-8 text-center">
+            <div className="w-14 h-14 mx-auto mb-5 rounded-full bg-slate-100 flex items-center justify-center">
+              <svg className="w-7 h-7 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </div>
+            <h2 className="text-xl font-semibold text-gray-900 mb-2">
+              {t('cart.signInToView') || 'Sign in to view your cart'}
+            </h2>
+            <p className="text-gray-500 text-sm mb-6">
+              {t('cart.signInToViewDesc') || 'Log in to see your saved items and continue booking.'}
+            </p>
             <Link
               href="/signin?redirect=/cart"
-              className="inline-block px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors shadow-sm"
             >
               {t('auth.signIn')}
             </Link>

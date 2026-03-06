@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import PickupPointSelector from '@/components/maps/PickupPointSelector';
+import { CHILD_ELIGIBILITY_RULES, CHILD_SEAT_OPTIONS, STROLLER_WHEELCHAIR_OPTIONS } from '@/lib/participant-rules';
 
 interface Tour {
   id: string;
@@ -27,14 +28,26 @@ interface Tour {
   highlights?: string[];
   includes?: string[];
   excludes?: string[];
-  schedule?: Array<{ time: string; title: string; description: string }>;
+  schedule?: Array<{ time: string; title: string; description: string; images?: string[] }>;
+  itinerary_details?: Array<{ time: string; activity: string; description: string; images?: string[] }>;
   faqs?: Array<{ question: string; answer: string }>;
+  child_eligibility?: Array<{ id: string; num?: number; num1?: number; num2?: number; num3?: number; text?: string }>;
+  suggested_to_bring?: string[];
+  accessibility_facilities?: {
+    note_children_counted?: boolean;
+    child_seat?: string;
+    child_seat_custom?: { num1?: number; num2?: number; num3?: number };
+    stroller?: string;
+    wheelchair?: string;
+    stroller_wheelchair?: string;
+  };
   keywords?: string[];
   is_active: boolean;
   is_featured: boolean;
   rating: number;
   review_count: number;
   created_at: string;
+  translations?: Record<string, { title?: string; description?: string; subtitle?: string }>;
   pickup_points?: Array<{
     id: string;
     name: string;
@@ -62,8 +75,19 @@ export default function ProductsPage() {
   const [formData, setFormData] = useState<Partial<Tour>>({});
   const [saving, setSaving] = useState(false);
   const [activeTab, setActiveTab] = useState('basic');
+  const [editLocale, setEditLocale] = useState<string>('en');
   const [currency, setCurrency] = useState('KRW');
   const [discountPercent, setDiscountPercent] = useState<number | null>(null);
+  const [editingPickupIndex, setEditingPickupIndex] = useState<number | null>(null);
+
+  const SUPPORTED_LOCALES = [
+    { code: 'en', label: 'English' },
+    { code: 'ko', label: '한국어' },
+    { code: 'zh', label: '中文' },
+    { code: 'zh-TW', label: '繁體中文' },
+    { code: 'ja', label: '日本語' },
+    { code: 'es', label: 'Español' },
+  ] as const;
 
   useEffect(() => {
     fetchTours();
@@ -144,10 +168,15 @@ export default function ProductsPage() {
       includes: tour.includes || [],
       excludes: tour.excludes || [],
       schedule: tour.schedule || [],
+      itinerary_details: tour.itinerary_details || [],
       faqs: tour.faqs || [],
+      child_eligibility: tour.child_eligibility || [],
+      suggested_to_bring: tour.suggested_to_bring || [],
+      accessibility_facilities: tour.accessibility_facilities || {},
       keywords: tour.keywords || [],
       is_active: tour.is_active,
       is_featured: tour.is_featured,
+      translations: tour.translations || {},
       pickup_points: tour.pickup_points || [],
     });
     setDiscountPercent(discount);
@@ -643,60 +672,77 @@ export default function ProductsPage() {
         </div>
       </div>
 
-      {/* Edit Modal */}
+      {/* Edit Modal - Premium */}
       {isEditModalOpen && editingTour && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl shadow-xl max-w-6xl w-full max-h-[90vh] overflow-hidden flex flex-col">
-            <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-gray-900">Edit Tour</h2>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <div className="bg-white w-full max-w-6xl max-h-[90vh] overflow-hidden flex flex-col rounded-2xl shadow-2xl border border-gray-200/80">
+            {/* Header */}
+            <div className="flex-shrink-0 flex items-center justify-between px-6 py-4 bg-gradient-to-r from-slate-50 to-indigo-50/30 border-b border-gray-200/80">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center shadow-sm">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold text-gray-900">Edit Tour</h2>
+                  <p className="text-sm text-gray-500">{editingTour.title}</p>
+                </div>
+              </div>
               <button
                 onClick={handleCloseModal}
-                className="text-gray-400 hover:text-gray-600 text-2xl"
+                className="p-2.5 rounded-xl text-gray-500 hover:text-gray-700 hover:bg-white/80 transition-colors"
+                aria-label="Close"
               >
-                ×
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
               </button>
-    </div>
+            </div>
 
             {/* Tabs */}
-            <div className="border-b border-gray-200 px-6">
-              <div className="flex gap-1">
+            <div className="flex-shrink-0 border-b border-gray-200 bg-white/95 px-6">
+              <div className="flex gap-0.5 overflow-x-auto py-1 scrollbar-thin">
                 {[
-                  { id: 'basic', label: '기본 정보' },
-                  { id: 'pricing', label: '가격' },
-                  { id: 'images', label: '이미지' },
-                  { id: 'details', label: '상세 정보' },
-                  { id: 'pickup', label: '픽업장소' },
-                  { id: 'content', label: '콘텐츠' }
+                  { id: 'basic', label: '기본 정보', icon: '📋' },
+                  { id: 'pricing', label: '가격', icon: '💰' },
+                  { id: 'images', label: '이미지', icon: '🖼️' },
+                  { id: 'details', label: '상세 정보', icon: '📄' },
+                  { id: 'itinerary', label: '일정', icon: '🗓️' },
+                  { id: 'pickup', label: '픽업장소', icon: '📍' },
+                  { id: 'content', label: '콘텐츠', icon: '📝' },
+                  { id: 'languages', label: '다국어', icon: '🌐' },
                 ].map((tab) => (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`px-4 py-2 text-sm font-medium transition-colors ${
+                    className={`flex items-center gap-1.5 px-4 py-3 text-sm font-medium rounded-t-lg whitespace-nowrap transition-all ${
                       activeTab === tab.id
-                        ? 'text-indigo-600 border-b-2 border-indigo-600'
-                        : 'text-gray-500 hover:text-gray-700'
+                        ? 'text-indigo-600 bg-indigo-50/80 border-b-2 border-indigo-600 -mb-px'
+                        : 'text-gray-500 hover:text-gray-800 hover:bg-gray-50'
                     }`}
                   >
+                    <span aria-hidden>{tab.icon}</span>
                     {tab.label}
                   </button>
                 ))}
               </div>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-6 space-y-6">
+            <div className="flex-1 overflow-y-auto p-6 bg-gray-50/40 min-h-0">
               {/* Basic Info Tab */}
               {activeTab === 'basic' && (
-                <div className="space-y-4">
+                <div className="space-y-6">
+                  <section className="rounded-2xl border border-gray-200/80 bg-white p-6 shadow-sm">
+                    <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                      <span className="text-indigo-600">📋</span> 기본 정보
+                    </h3>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
                         Title *
                       </label>
                       <input
                         type="text"
                         value={formData.title || ''}
                         onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow"
                       />
                     </div>
                     <div>
@@ -828,6 +874,7 @@ export default function ProductsPage() {
                       <span className="text-sm font-medium text-gray-700">Featured</span>
                     </label>
                   </div>
+                  </section>
                 </div>
               )}
 
@@ -1065,6 +1112,200 @@ export default function ProductsPage() {
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     />
                   </div>
+
+                  {/* 아동 자격 / 儿童资格 */}
+                  <div className="border-t border-gray-200 pt-6">
+                    <h3 className="text-sm font-semibold text-gray-900 mb-1">* 儿童资格 (아동 자격) <span className="text-gray-500 font-normal">Suggested to add</span></h3>
+                    <div className="space-y-2 mt-3">
+                      {CHILD_ELIGIBILITY_RULES.map((rule) => {
+                        const current = (formData.child_eligibility || []).find((r) => r.id === rule.id) || null;
+                        const checked = !!current;
+                        return (
+                          <div key={rule.id} className="flex flex-wrap items-start gap-2 py-1.5">
+                            <label className="flex items-center gap-2 cursor-pointer">
+                              <input
+                                type="checkbox"
+                                checked={checked}
+                                onChange={(e) => {
+                                  const list = formData.child_eligibility || [];
+                                  if (e.target.checked) {
+                                    setFormData({ ...formData, child_eligibility: [...list.filter((r) => r.id !== rule.id), { id: rule.id }] });
+                                  } else {
+                                    setFormData({ ...formData, child_eligibility: list.filter((r) => r.id !== rule.id) });
+                                  }
+                                }}
+                                className="rounded border-gray-300"
+                              />
+                              <span className="text-sm text-gray-700">{rule.labelKo}</span>
+                            </label>
+                            {checked && rule.params.length > 0 && (
+                              <div className="flex flex-wrap gap-2 ml-6">
+                                {rule.params.includes('num') && (
+                                  <input
+                                    type="number"
+                                    placeholder="num"
+                                    value={current?.num ?? ''}
+                                    onChange={(e) => {
+                                      const list = [...(formData.child_eligibility || [])];
+                                      const i = list.findIndex((r) => r.id === rule.id);
+                                      if (i >= 0) list[i] = { ...list[i], num: e.target.value ? parseInt(e.target.value, 10) : undefined };
+                                      setFormData({ ...formData, child_eligibility: list });
+                                    }}
+                                    className="w-16 px-2 py-1 text-sm border rounded"
+                                  />
+                                )}
+                                {rule.params.includes('num1') && (
+                                  <input
+                                    type="number"
+                                    placeholder="num1"
+                                    value={current?.num1 ?? ''}
+                                    onChange={(e) => {
+                                      const list = [...(formData.child_eligibility || [])];
+                                      const i = list.findIndex((r) => r.id === rule.id);
+                                      if (i >= 0) list[i] = { ...list[i], num1: e.target.value ? parseInt(e.target.value, 10) : undefined };
+                                      setFormData({ ...formData, child_eligibility: list });
+                                    }}
+                                    className="w-16 px-2 py-1 text-sm border rounded"
+                                  />
+                                )}
+                                {rule.params.includes('num2') && (
+                                  <input
+                                    type="number"
+                                    placeholder="num2"
+                                    value={current?.num2 ?? ''}
+                                    onChange={(e) => {
+                                      const list = [...(formData.child_eligibility || [])];
+                                      const i = list.findIndex((r) => r.id === rule.id);
+                                      if (i >= 0) list[i] = { ...list[i], num2: e.target.value ? parseInt(e.target.value, 10) : undefined };
+                                      setFormData({ ...formData, child_eligibility: list });
+                                    }}
+                                    className="w-16 px-2 py-1 text-sm border rounded"
+                                  />
+                                )}
+                                {rule.params.includes('text') && (
+                                  <input
+                                    type="text"
+                                    placeholder="text"
+                                    value={current?.text ?? ''}
+                                    onChange={(e) => {
+                                      const list = [...(formData.child_eligibility || [])];
+                                      const i = list.findIndex((r) => r.id === rule.id);
+                                      if (i >= 0) list[i] = { ...list[i], text: e.target.value };
+                                      setFormData({ ...formData, child_eligibility: list });
+                                    }}
+                                    className="min-w-[120px] px-2 py-1 text-sm border rounded"
+                                  />
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* 建议携带 / 권장 휴대품 */}
+                  <div className="border-t border-gray-200 pt-6">
+                    <h3 className="text-sm font-semibold text-gray-900 mb-1">建议携带 (권장 휴대품) <span className="text-gray-500 font-normal">Suggested to add</span></h3>
+                    <div className="space-y-2 mt-3">
+                      {(formData.suggested_to_bring || []).map((item, index) => (
+                        <div key={index} className="flex gap-2">
+                          <input
+                            type="text"
+                            value={item}
+                            onChange={(e) => {
+                              const list = [...(formData.suggested_to_bring || [])];
+                              list[index] = e.target.value;
+                              setFormData({ ...formData, suggested_to_bring: list });
+                            }}
+                            placeholder="{{what_to_bring}}"
+                            className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-lg"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => setFormData({ ...formData, suggested_to_bring: (formData.suggested_to_bring || []).filter((_, i) => i !== index) })}
+                            className="text-red-600 text-sm"
+                          >
+                            삭제
+                          </button>
+                        </div>
+                      ))}
+                      <button
+                        type="button"
+                        onClick={() => setFormData({ ...formData, suggested_to_bring: [...(formData.suggested_to_bring || []), ''] })}
+                        className="text-indigo-600 text-sm hover:text-indigo-800"
+                      >
+                        + Add new
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* 无障碍设施 / 접근성 시설 */}
+                  <div className="border-t border-gray-200 pt-6">
+                    <h3 className="text-sm font-semibold text-gray-900 mb-1">无障碍设施 (접근성 시설) <span className="text-gray-500 font-normal">Suggested to add</span></h3>
+                    <p className="text-xs text-gray-500 mb-3">注意:婴幼儿和儿童将被计为乘客人数</p>
+                    <div className="space-y-4">
+                      <label className="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          checked={!!formData.accessibility_facilities?.note_children_counted}
+                          onChange={(e) => setFormData({
+                            ...formData,
+                            accessibility_facilities: { ...formData.accessibility_facilities, note_children_counted: e.target.checked },
+                          })}
+                          className="rounded border-gray-300"
+                        />
+                        <span className="text-sm text-gray-700">注意:婴幼儿和儿童将被计为乘客人数</span>
+                      </label>
+                      <div>
+                        <label className="block text-xs font-medium text-gray-700 mb-2">儿童座椅 (Child seat)</label>
+                        <div className="space-y-2">
+                          {CHILD_SEAT_OPTIONS.map((opt) => (
+                            <label key={opt.value} className="flex items-center gap-2">
+                              <input
+                                type="radio"
+                                name="child_seat"
+                                checked={(formData.accessibility_facilities?.child_seat || '') === opt.value}
+                                onChange={() => setFormData({
+                                  ...formData,
+                                  accessibility_facilities: { ...formData.accessibility_facilities, child_seat: opt.value },
+                                })}
+                                className="border-gray-300"
+                              />
+                              <span className="text-sm text-gray-700">{opt.labelKo}</span>
+                            </label>
+                          ))}
+                        </div>
+                        {(formData.accessibility_facilities?.child_seat === 'custom') && (
+                          <div className="flex gap-2 mt-2 ml-4">
+                            <input type="number" placeholder="num1" value={formData.accessibility_facilities?.child_seat_custom?.num1 ?? ''} onChange={(e) => setFormData({ ...formData, accessibility_facilities: { ...formData.accessibility_facilities, child_seat_custom: { ...formData.accessibility_facilities?.child_seat_custom, num1: e.target.value ? parseInt(e.target.value, 10) : undefined } } })} className="w-20 px-2 py-1 text-sm border rounded" />
+                            <input type="number" placeholder="num2" value={formData.accessibility_facilities?.child_seat_custom?.num2 ?? ''} onChange={(e) => setFormData({ ...formData, accessibility_facilities: { ...formData.accessibility_facilities, child_seat_custom: { ...formData.accessibility_facilities?.child_seat_custom, num2: e.target.value ? parseInt(e.target.value, 10) : undefined } } })} className="w-20 px-2 py-1 text-sm border rounded" />
+                            <input type="number" placeholder="num3(cm)" value={formData.accessibility_facilities?.child_seat_custom?.num3 ?? ''} onChange={(e) => setFormData({ ...formData, accessibility_facilities: { ...formData.accessibility_facilities, child_seat_custom: { ...formData.accessibility_facilities?.child_seat_custom, num3: e.target.value ? parseInt(e.target.value, 10) : undefined } } })} className="w-24 px-2 py-1 text-sm border rounded" />
+                          </div>
+                        )}
+                      </div>
+                      <div>
+                        <label className="block text-xs font-medium text-gray-700 mb-2">此活动 (Stroller / Wheelchair)</label>
+                        <div className="space-y-2">
+                          {STROLLER_WHEELCHAIR_OPTIONS.map((opt) => (
+                            <label key={opt.value} className="flex items-center gap-2">
+                              <input
+                                type="radio"
+                                name="stroller_wheelchair"
+                                checked={(formData.accessibility_facilities?.stroller_wheelchair || formData.accessibility_facilities?.stroller || formData.accessibility_facilities?.wheelchair || '') === opt.value}
+                                onChange={() => setFormData({
+                                  ...formData,
+                                  accessibility_facilities: { ...formData.accessibility_facilities, stroller_wheelchair: opt.value, stroller: undefined, wheelchair: undefined },
+                                })}
+                                className="border-gray-300"
+                              />
+                              <span className="text-sm text-gray-700">{opt.labelKo}</span>
+                            </label>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               )}
 
@@ -1120,16 +1361,35 @@ export default function ProductsPage() {
                               placeholder="주소를 입력하거나 지도에서 선택하세요"
                               className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             />
+                            {(point.lat != null && point.lng != null) && (
+                              <p className="mt-1 text-[11px] text-gray-500">
+                                좌표: {Number(point.lat).toFixed(5)}, {Number(point.lng).toFixed(5)}
+                              </p>
+                            )}
                           </div>
-                          <button
-                            onClick={() => {
-                              const updated = (formData.pickup_points || []).filter((_, i) => i !== index);
-                              setFormData({ ...formData, pickup_points: updated });
-                            }}
-                            className="px-3 py-1.5 text-xs font-medium text-red-600 bg-red-50 rounded-lg hover:bg-red-100 transition-colors"
-                          >
-                            삭제
-                          </button>
+                          <div className="flex flex-wrap items-center gap-2">
+                            <button
+                              type="button"
+                              onClick={() => setEditingPickupIndex(index)}
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 rounded-lg hover:bg-blue-100 border border-blue-200/60 transition-colors"
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                              </svg>
+                              지도에서 핀 설정
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                const updated = (formData.pickup_points || []).filter((_, i) => i !== index);
+                                setFormData({ ...formData, pickup_points: updated });
+                              }}
+                              className="px-3 py-1.5 text-xs font-medium text-red-600 bg-red-50 rounded-lg hover:bg-red-100 transition-colors"
+                            >
+                              삭제
+                            </button>
+                          </div>
                         </div>
                       ))}
                       <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 bg-gray-50/30">
@@ -1157,6 +1417,76 @@ export default function ProductsPage() {
                       </div>
                     </div>
                   </div>
+                </div>
+              )}
+
+              {/* Itinerary Tab */}
+              {activeTab === 'itinerary' && (
+                <div className="space-y-6">
+                  <section className="rounded-2xl border border-gray-200/80 bg-white p-6 shadow-sm">
+                    <h3 className="text-sm font-semibold text-gray-900 mb-1 flex items-center gap-2">
+                      <span className="text-indigo-600">🗓️</span> Schedule
+                    </h3>
+                    <p className="text-xs text-gray-500 mb-4">Time, title, description and optional photos per step.</p>
+                    <div className="space-y-4">
+                      {(formData.schedule || []).map((item, index) => (
+                        <div key={index} className="border border-gray-200 rounded-xl p-4 bg-gray-50/50">
+                          <div className="grid grid-cols-3 gap-3 mb-3">
+                            <div>
+                              <label className="block text-xs font-medium text-gray-600 mb-1">Time</label>
+                              <input type="text" value={item.time || ''} onChange={(e) => { const u = [...(formData.schedule || [])]; u[index] = { ...u[index], time: e.target.value }; setFormData({ ...formData, schedule: u }); }} placeholder="09:00" className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
+                            </div>
+                            <div className="col-span-2">
+                              <label className="block text-xs font-medium text-gray-600 mb-1">Title</label>
+                              <input type="text" value={item.title || ''} onChange={(e) => { const u = [...(formData.schedule || [])]; u[index] = { ...u[index], title: e.target.value }; setFormData({ ...formData, schedule: u }); }} placeholder="Hotel Pickup" className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
+                            </div>
+                          </div>
+                          <div className="mb-2">
+                            <label className="block text-xs font-medium text-gray-600 mb-1">Description</label>
+                            <textarea value={item.description || ''} onChange={(e) => { const u = [...(formData.schedule || [])]; u[index] = { ...u[index], description: e.target.value }; setFormData({ ...formData, schedule: u }); }} rows={2} className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
+                          </div>
+                          <div className="mb-2">
+                            <label className="block text-xs font-medium text-gray-600 mb-1">Photos (one URL per line)</label>
+                            <textarea value={(item.images || []).join('\n')} onChange={(e) => { const u = [...(formData.schedule || [])]; const imgs = e.target.value.split('\n').map(s => s.trim()).filter(Boolean); u[index] = { ...u[index], images: imgs }; setFormData({ ...formData, schedule: u }); }} rows={2} placeholder="https://..." className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
+                          </div>
+                          <button type="button" onClick={() => setFormData({ ...formData, schedule: (formData.schedule || []).filter((_, i) => i !== index) })} className="text-red-600 text-sm hover:text-red-800">Remove</button>
+                        </div>
+                      ))}
+                      <button type="button" onClick={() => setFormData({ ...formData, schedule: [...(formData.schedule || []), { time: '', title: '', description: '', images: [] }] })} className="text-indigo-600 text-sm font-medium hover:text-indigo-800">+ Add Schedule Item</button>
+                    </div>
+                  </section>
+                  <section className="rounded-2xl border border-gray-200/80 bg-white p-6 shadow-sm">
+                    <h3 className="text-sm font-semibold text-gray-900 mb-1 flex items-center gap-2">
+                      <span className="text-indigo-600">📍</span> Itinerary details (timeline on detail page)
+                    </h3>
+                    <p className="text-xs text-gray-500 mb-4">If set, the detail page shows this as the timeline. Each item: time, activity, description, optional photos.</p>
+                    <div className="space-y-4">
+                      {(formData.itinerary_details || []).map((item, index) => (
+                        <div key={index} className="border border-gray-200 rounded-xl p-4 bg-gray-50/50">
+                          <div className="grid grid-cols-3 gap-3 mb-3">
+                            <div>
+                              <label className="block text-xs font-medium text-gray-600 mb-1">Time</label>
+                              <input type="text" value={item.time || ''} onChange={(e) => { const u = [...(formData.itinerary_details || [])]; u[index] = { ...u[index], time: e.target.value }; setFormData({ ...formData, itinerary_details: u }); }} placeholder="09:00" className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
+                            </div>
+                            <div className="col-span-2">
+                              <label className="block text-xs font-medium text-gray-600 mb-1">Activity</label>
+                              <input type="text" value={item.activity || ''} onChange={(e) => { const u = [...(formData.itinerary_details || [])]; u[index] = { ...u[index], activity: e.target.value }; setFormData({ ...formData, itinerary_details: u }); }} placeholder="e.g., Gamcheon Village" className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
+                            </div>
+                          </div>
+                          <div className="mb-2">
+                            <label className="block text-xs font-medium text-gray-600 mb-1">Description</label>
+                            <textarea value={item.description || ''} onChange={(e) => { const u = [...(formData.itinerary_details || [])]; u[index] = { ...u[index], description: e.target.value }; setFormData({ ...formData, itinerary_details: u }); }} rows={2} className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
+                          </div>
+                          <div className="mb-2">
+                            <label className="block text-xs font-medium text-gray-600 mb-1">Photos (one URL per line)</label>
+                            <textarea value={(item.images || []).join('\n')} onChange={(e) => { const u = [...(formData.itinerary_details || [])]; u[index] = { ...u[index], images: e.target.value.split('\n').map(s => s.trim()).filter(Boolean) }; setFormData({ ...formData, itinerary_details: u }); }} rows={2} placeholder="https://..." className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
+                          </div>
+                          <button type="button" onClick={() => setFormData({ ...formData, itinerary_details: (formData.itinerary_details || []).filter((_, i) => i !== index) })} className="text-red-600 text-sm hover:text-red-800">Remove</button>
+                        </div>
+                      ))}
+                      <button type="button" onClick={() => setFormData({ ...formData, itinerary_details: [...(formData.itinerary_details || []), { time: '', activity: '', description: '', images: [] }] })} className="text-indigo-600 text-sm font-medium hover:text-indigo-800">+ Add Itinerary detail</button>
+                    </div>
+                  </section>
                 </div>
               )}
 
@@ -1276,80 +1606,6 @@ export default function ProductsPage() {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Itinerary / Schedule
-                    </label>
-                    <div className="space-y-4">
-                      {(formData.schedule || []).map((item, index) => (
-                        <div key={index} className="border border-gray-200 rounded-lg p-4">
-                          <div className="grid grid-cols-3 gap-3 mb-3">
-                            <div>
-                              <label className="block text-xs font-medium text-gray-600 mb-1">Time</label>
-                              <input
-                                type="text"
-                                value={item.time || ''}
-                                onChange={(e) => {
-                                  const updated = [...(formData.schedule || [])];
-                                  updated[index] = { ...updated[index], time: e.target.value };
-                                  setFormData({ ...formData, schedule: updated });
-                                }}
-                                placeholder="e.g., 09:00-18:00"
-                                className="w-full px-2 py-1 text-sm border border-gray-300 rounded"
-                              />
-                            </div>
-                            <div className="col-span-2">
-                              <label className="block text-xs font-medium text-gray-600 mb-1">Title</label>
-                              <input
-                                type="text"
-                                value={item.title || ''}
-                                onChange={(e) => {
-                                  const updated = [...(formData.schedule || [])];
-                                  updated[index] = { ...updated[index], title: e.target.value };
-                                  setFormData({ ...formData, schedule: updated });
-                                }}
-                                placeholder="e.g., Hotel Pickup"
-                                className="w-full px-2 py-1 text-sm border border-gray-300 rounded"
-                              />
-                            </div>
-                          </div>
-                          <div className="mb-2">
-                            <label className="block text-xs font-medium text-gray-600 mb-1">Description</label>
-                            <textarea
-                              value={item.description || ''}
-                              onChange={(e) => {
-                                const updated = [...(formData.schedule || [])];
-                                updated[index] = { ...updated[index], description: e.target.value };
-                                setFormData({ ...formData, schedule: updated });
-                              }}
-                              rows={2}
-                              placeholder="Detailed description..."
-                              className="w-full px-2 py-1 text-sm border border-gray-300 rounded"
-                            />
-                          </div>
-                          <button
-                            onClick={() => {
-                              const updated = (formData.schedule || []).filter((_, i) => i !== index);
-                              setFormData({ ...formData, schedule: updated });
-                            }}
-                            className="text-red-600 text-sm hover:text-red-800"
-                          >
-                            Remove Schedule Item
-                          </button>
-                        </div>
-                      ))}
-                      <button
-                        onClick={() => setFormData({ 
-                          ...formData, 
-                          schedule: [...(formData.schedule || []), { time: '', title: '', description: '' }] 
-                        })}
-                        className="text-indigo-600 text-sm hover:text-indigo-800"
-                      >
-                        + Add Schedule Item
-                      </button>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       FAQs
                     </label>
                     <div className="space-y-4">
@@ -1408,22 +1664,161 @@ export default function ProductsPage() {
                 </div>
               )}
 
+              {/* Languages Tab (다국어) */}
+              {activeTab === 'languages' && (
+                <div className="space-y-6">
+                  <section className="rounded-2xl border border-gray-200/80 bg-white p-6 shadow-sm">
+                    <h3 className="text-sm font-semibold text-gray-900 mb-1 flex items-center gap-2">
+                      <span className="text-indigo-600">🌐</span> 다국어 편집
+                    </h3>
+                    <p className="text-xs text-gray-500 mb-4">Select a language and edit title, subtitle, and description for that locale. Used on the tour detail page when the user chooses that language.</p>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {SUPPORTED_LOCALES.map(({ code, label }) => (
+                        <button
+                          key={code}
+                          type="button"
+                          onClick={() => setEditLocale(code)}
+                          className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+                            editLocale === code
+                              ? 'bg-indigo-600 text-white shadow-sm'
+                              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                          }`}
+                        >
+                          {label}
+                        </button>
+                      ))}
+                    </div>
+                    {(() => {
+                      const tr = (formData.translations || {})[editLocale] || {};
+                      return (
+                        <div className="space-y-4">
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">Title ({editLocale})</label>
+                            <input
+                              type="text"
+                              value={tr.title ?? ''}
+                              onChange={(e) => setFormData({
+                                ...formData,
+                                translations: {
+                                  ...(formData.translations || {}),
+                                  [editLocale]: { ...tr, title: e.target.value || undefined },
+                                },
+                              })}
+                              placeholder={formData.title || 'Default title'}
+                              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">Subtitle ({editLocale})</label>
+                            <input
+                              type="text"
+                              value={tr.subtitle ?? ''}
+                              onChange={(e) => setFormData({
+                                ...formData,
+                                translations: {
+                                  ...(formData.translations || {}),
+                                  [editLocale]: { ...tr, subtitle: e.target.value || undefined },
+                                },
+                              })}
+                              placeholder={formData.subtitle || 'Optional subtitle'}
+                              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1.5">Description ({editLocale})</label>
+                            <textarea
+                              value={tr.description ?? ''}
+                              onChange={(e) => setFormData({
+                                ...formData,
+                                translations: {
+                                  ...(formData.translations || {}),
+                                  [editLocale]: { ...tr, description: e.target.value || undefined },
+                                },
+                              })}
+                              rows={6}
+                              placeholder={formData.description ? formData.description.slice(0, 80) + '...' : 'Default description'}
+                              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                        </div>
+                      );
+                    })()}
+                  </section>
+                </div>
+              )}
+
             </div>
 
             {/* Action Buttons */}
-            <div className="sticky bottom-0 bg-white border-t border-gray-200 px-6 py-4 flex justify-end gap-3">
+            <div className="sticky bottom-0 flex justify-end gap-3 px-6 py-4 bg-white/95 border-t border-gray-200/80 backdrop-blur-sm">
               <button
                 onClick={handleCloseModal}
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50"
+                className="px-5 py-2.5 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 font-medium transition-colors"
               >
                 Cancel
               </button>
               <button
                 onClick={handleSave}
                 disabled={saving}
-                className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 py-2.5 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed font-medium shadow-sm transition-colors"
               >
                 {saving ? 'Saving...' : 'Save Changes'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 픽업장소 지도 핀 설정 모달 */}
+      {editingPickupIndex !== null && formData.pickup_points && formData.pickup_points[editingPickupIndex] != null && (
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-[60] p-4">
+          <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+            <div className="px-4 py-3 border-b border-gray-200 flex items-center justify-between">
+              <h3 className="text-lg font-semibold text-gray-900">
+                지도에서 픽업 장소 핀 설정
+              </h3>
+              <button
+                type="button"
+                onClick={() => setEditingPickupIndex(null)}
+                className="p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100"
+                aria-label="닫기"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+            </div>
+            <div className="p-4 overflow-y-auto flex-1">
+              <PickupPointSelector
+                initialLocation={
+                  (() => {
+                    const p = formData.pickup_points![editingPickupIndex];
+                    if (p.lat != null && p.lng != null) return { lat: p.lat, lng: p.lng, address: p.address };
+                    return undefined;
+                  })()
+                }
+                onLocationSelect={(location) => {
+                  const updated = [...(formData.pickup_points || [])];
+                  updated[editingPickupIndex] = {
+                    ...updated[editingPickupIndex],
+                    address: location.address,
+                    lat: location.lat,
+                    lng: location.lng,
+                  };
+                  setFormData({ ...formData, pickup_points: updated });
+                  setEditingPickupIndex(null);
+                }}
+                height="360px"
+              />
+              <p className="mt-2 text-xs text-gray-500">
+                지도를 클릭하거나 검색창에 주소를 입력한 뒤 선택하면 해당 위치에 핀이 설정됩니다.
+              </p>
+            </div>
+            <div className="px-4 py-3 border-t border-gray-200 flex justify-end">
+              <button
+                type="button"
+                onClick={() => setEditingPickupIndex(null)}
+                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200"
+              >
+                닫기
               </button>
             </div>
           </div>
