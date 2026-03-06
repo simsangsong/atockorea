@@ -61,8 +61,8 @@ export default function PlaceSearch({
         });
         const loc = place.location;
         if (!loc) return;
-        const lat = typeof loc.lat === 'function' ? loc.lat() : (loc as { lat: number }).lat;
-        const lng = typeof loc.lng === 'function' ? loc.lng() : (loc as { lng: number }).lng;
+        const lat = typeof loc.lat === 'function' ? loc.lat() : (loc as unknown as { lat: number }).lat;
+        const lng = typeof loc.lng === 'function' ? loc.lng() : (loc as unknown as { lng: number }).lng;
         // Legacy PlaceResult-like shape for compatibility
         onPlaceSelect({
           name: (place.displayName as string) || undefined,
