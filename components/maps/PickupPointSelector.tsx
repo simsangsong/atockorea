@@ -145,8 +145,8 @@ export default function PickupPointSelector({
         });
         const loc = place.location;
         if (!loc) return;
-        const lat = typeof loc.lat === 'function' ? loc.lat() : (loc as { lat: number }).lat;
-        const lng = typeof loc.lng === 'function' ? loc.lng() : (loc as { lng: number }).lng;
+        const lat = typeof loc.lat === 'function' ? loc.lat() : (loc as unknown as { lat: number }).lat;
+        const lng = typeof loc.lng === 'function' ? loc.lng() : (loc as unknown as { lng: number }).lng;
         const address =
           (place.formattedAddress as string) || (place.displayName as string) || `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
         const location = { lat: Number(lat), lng: Number(lng), address };
