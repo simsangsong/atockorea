@@ -42,12 +42,23 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // 2. 이미 지원 언어 접두사가 붙은 경로인지 확인
+  // 2. 쿼리 ?locale=en 등으로 명시적 선택 시 쿠키 설정 후 리다이렉트 (모바일에서 쿠키 누락 대비)
+  const localeFromQuery = request.nextUrl.searchParams.get('locale');
+  if (localeFromQuery && SUPPORTED_LOCALES.includes(localeFromQuery)) {
+    const targetUrl = new URL(request.url);
+    targetUrl.pathname = pathname === '/' ? '/' : pathname;
+    targetUrl.searchParams.delete('locale');
+    const res = NextResponse.redirect(targetUrl);
+    res.cookies.set(LOCALE_COOKIE, localeFromQuery, { path: '/', maxAge: 31536000, sameSite: 'lax' });
+    return res;
+  }
+
+  // 3. 이미 지원 언어 접두사가 붙은 경로인지 확인
   const pathnameHasLocale = SUPPORTED_LOCALES.some(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
   );
 
-  // 3. 언어 접두사가 없을 때: 쿠키 우선, 없으면 Accept-Language 기반 자동 감지
+  // 4. 언어 접두사가 없을 때: 쿠키 우선, 없으면 Accept-Language 기반 자동 감지
   if (!pathnameHasLocale) {
     const cookieLocale = getLocaleFromCookie(request);
     const locale = cookieLocale ?? getLocale(request);
@@ -61,7 +72,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // 4. 이미 접두사가 있는 경우
+  // 5. 이미 접두사가 있는 경우
   const matchedLocale = SUPPORTED_LOCALES.find(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
   );

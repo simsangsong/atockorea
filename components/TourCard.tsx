@@ -153,8 +153,8 @@ export default function TourCard({
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
-          {/* Soft fade to white so image and content feel one */}
-          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+          {/* 짧은 그라데이션: 사진과 흰 영역 경계만 살짝 연결 */}
+          <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-white/90 via-white/30 to-transparent pointer-events-none" />
           {displayBadge && (
             <span className={`absolute top-3 left-3 px-2.5 py-1 text-white text-[10px] font-semibold rounded-full shadow-md ${
               badgeVariant === "brand" ? "bg-blue-600/95" : "bg-orange-500/95"

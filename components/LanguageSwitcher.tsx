@@ -54,8 +54,16 @@ export default function LanguageSwitcher() {
     const targetRouteLocale = localeToRouteLocale[newLocale];
     if (!targetRouteLocale) return;
 
-    // 영어 선택 시 미들웨어가 Accept-Language로 다시 /ko 리다이렉트하지 않도록 쿠키 설정
-    document.cookie = `NEXT_LOCALE=${targetRouteLocale}; path=/; max-age=31536000; SameSite=Lax`;
+    // 쿠키 먼저 설정 (모바일에서 직후 요청에 쿠키가 포함되도록)
+    const isSecure = typeof window !== 'undefined' && window.location?.protocol === 'https:';
+    const cookieParts = [
+      `NEXT_LOCALE=${targetRouteLocale}`,
+      'path=/',
+      'max-age=31536000',
+      'SameSite=Lax',
+      ...(isSecure ? ['Secure'] : []),
+    ];
+    document.cookie = cookieParts.join('; ');
 
     const segments = pathname.split('/').filter(Boolean);
     const currentHasLocalePrefix =
@@ -73,12 +81,22 @@ export default function LanguageSwitcher() {
         (restSegments.length ? '/' + restSegments.join('/') : '');
     }
 
+    // 영어로 전환 시 서버가 쿠키를 설정하도록 ?locale=en 사용 (모바일에서 클라이언트 쿠키 누락 방지)
+    const pathToOpen = nextPath || '/';
+    const separator = pathToOpen.includes('?') ? '&' : '?';
+    if (targetRouteLocale === 'en') {
+      const withLocaleParam = `${pathToOpen}${separator}locale=en`;
+      setTimeout(() => router.push(withLocaleParam), 0);
+      return;
+    }
+
     const search = searchParams?.toString();
     if (search) {
       nextPath += `?${search}`;
     }
 
-    router.push(nextPath || '/');
+    // 모바일에서 쿠키가 다음 요청에 포함되도록 네비게이션을 한 틱 지연
+    setTimeout(() => router.push(nextPath || '/'), 0);
   };
 
   const handleSelect = (newLocale: Locale) => {

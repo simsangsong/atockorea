@@ -452,17 +452,20 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
         </div>
       </div>
 
-      {/* Payment Summary - Compact */}
+      {/* Payment Summary - Deposit + Cash (larger labels/prices + short description) */}
       {paymentMethod === 'deposit' && (
-        <div className="mt-3 p-2.5 bg-blue-50/80 rounded-lg border border-blue-200/60">
-          <div className="flex items-center justify-between text-xs">
-            <span className="text-gray-600 font-medium">{t('booking.deposit')}</span>
-            <span className="font-semibold text-blue-700">{formatPrice(depositAmountKRW)}</span>
+        <div className="mt-3 p-3 bg-blue-50/80 rounded-lg border border-blue-200/60">
+          <div className="flex items-center justify-between text-sm">
+            <span className="text-gray-700 font-semibold">{t('booking.deposit')}</span>
+            <span className="font-bold text-blue-700">{formatPrice(depositAmountKRW)}</span>
           </div>
-          <div className="flex items-center justify-between text-xs mt-1.5">
-            <span className="text-gray-500">{t('booking.payOnSite')}</span>
-            <span className="font-semibold text-gray-700">{formatPrice(balanceAmountKRW)}</span>
+          <div className="flex items-center justify-between text-sm mt-2">
+            <span className="text-gray-600 font-semibold">{t('booking.payOnSite')}</span>
+            <span className="font-bold text-gray-800">{formatPrice(balanceAmountKRW)}</span>
           </div>
+          <p className="text-xs text-gray-500 mt-2.5 leading-snug">
+            {t('booking.depositCashShortDesc')}
+          </p>
         </div>
       )}
 
