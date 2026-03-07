@@ -7,8 +7,8 @@ import { useState } from 'react';
 
 export default function AccountSettingsPage() {
   const [formData, setFormData] = useState({
-    name: 'John Doe',
-    email: 'john.doe@example.com',
+    name: 'Guest',
+    email: '',
     phone: '+82 10-1234-5678',
     birthday: '1990-01-01',
     gender: '',

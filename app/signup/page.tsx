@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
@@ -20,6 +20,45 @@ function validatePassword(pwd: string): { valid: boolean; message?: string } {
 }
 
 const CURRENT_YEAR = new Date().getFullYear();
+
+// 국가 목록 (이름 + 국가번호) - 검색·선택용
+const COUNTRY_LIST: { name: string; dialCode: string }[] = [
+  { name: 'South Korea', dialCode: '+82' }, { name: 'United States', dialCode: '+1' }, { name: 'Japan', dialCode: '+81' },
+  { name: 'China', dialCode: '+86' }, { name: 'Taiwan', dialCode: '+886' }, { name: 'Hong Kong', dialCode: '+852' },
+  { name: 'Thailand', dialCode: '+66' }, { name: 'Vietnam', dialCode: '+84' }, { name: 'Singapore', dialCode: '+65' },
+  { name: 'Malaysia', dialCode: '+60' }, { name: 'Indonesia', dialCode: '+62' }, { name: 'Philippines', dialCode: '+63' },
+  { name: 'India', dialCode: '+91' }, { name: 'United Kingdom', dialCode: '+44' }, { name: 'Germany', dialCode: '+49' },
+  { name: 'France', dialCode: '+33' }, { name: 'Italy', dialCode: '+39' }, { name: 'Spain', dialCode: '+34' },
+  { name: 'Australia', dialCode: '+61' }, { name: 'Canada', dialCode: '+1' }, { name: 'Mexico', dialCode: '+52' },
+  { name: 'Brazil', dialCode: '+55' }, { name: 'Russia', dialCode: '+7' }, { name: 'Netherlands', dialCode: '+31' },
+  { name: 'Switzerland', dialCode: '+41' }, { name: 'Sweden', dialCode: '+46' }, { name: 'Poland', dialCode: '+48' },
+  { name: 'Turkey', dialCode: '+90' }, { name: 'Saudi Arabia', dialCode: '+966' }, { name: 'UAE', dialCode: '+971' },
+  { name: 'Israel', dialCode: '+972' }, { name: 'South Africa', dialCode: '+27' }, { name: 'Egypt', dialCode: '+20' },
+  { name: 'Nigeria', dialCode: '+234' }, { name: 'Kenya', dialCode: '+254' }, { name: 'New Zealand', dialCode: '+64' },
+  { name: 'Argentina', dialCode: '+54' }, { name: 'Chile', dialCode: '+56' }, { name: 'Colombia', dialCode: '+57' },
+  { name: 'Belgium', dialCode: '+32' }, { name: 'Austria', dialCode: '+43' }, { name: 'Portugal', dialCode: '+351' },
+  { name: 'Greece', dialCode: '+30' }, { name: 'Czech Republic', dialCode: '+420' }, { name: 'Romania', dialCode: '+40' },
+  { name: 'Hungary', dialCode: '+36' }, { name: 'Ireland', dialCode: '+353' }, { name: 'Denmark', dialCode: '+45' },
+  { name: 'Norway', dialCode: '+47' }, { name: 'Finland', dialCode: '+358' }, { name: 'Pakistan', dialCode: '+92' },
+  { name: 'Bangladesh', dialCode: '+880' }, { name: 'Sri Lanka', dialCode: '+94' }, { name: 'Nepal', dialCode: '+977' },
+  { name: 'Myanmar', dialCode: '+95' }, { name: 'Cambodia', dialCode: '+855' }, { name: 'Mongolia', dialCode: '+976' },
+  { name: 'Kazakhstan', dialCode: '+7' }, { name: 'Ukraine', dialCode: '+380' }, { name: 'Belarus', dialCode: '+375' },
+  { name: 'Croatia', dialCode: '+385' }, { name: 'Serbia', dialCode: '+381' }, { name: 'Bulgaria', dialCode: '+359' },
+  { name: 'Morocco', dialCode: '+212' }, { name: 'Tunisia', dialCode: '+216' }, { name: 'Ghana', dialCode: '+233' },
+  { name: 'Ethiopia', dialCode: '+251' }, { name: 'Tanzania', dialCode: '+255' }, { name: 'Uganda', dialCode: '+256' },
+  { name: 'Peru', dialCode: '+51' }, { name: 'Ecuador', dialCode: '+593' }, { name: 'Venezuela', dialCode: '+58' },
+  { name: 'Costa Rica', dialCode: '+506' }, { name: 'Panama', dialCode: '+507' }, { name: 'Cuba', dialCode: '+53' },
+  { name: 'Dominican Republic', dialCode: '+1' }, { name: 'Jamaica', dialCode: '+1' }, { name: 'Puerto Rico', dialCode: '+1' },
+  { name: 'Iceland', dialCode: '+354' }, { name: 'Luxembourg', dialCode: '+352' }, { name: 'Slovakia', dialCode: '+421' },
+  { name: 'Slovenia', dialCode: '+386' }, { name: 'Lithuania', dialCode: '+370' }, { name: 'Latvia', dialCode: '+371' },
+  { name: 'Estonia', dialCode: '+372' }, { name: 'Iran', dialCode: '+98' }, { name: 'Iraq', dialCode: '+964' },
+  { name: 'Kuwait', dialCode: '+965' }, { name: 'Qatar', dialCode: '+974' }, { name: 'Bahrain', dialCode: '+973' },
+  { name: 'Oman', dialCode: '+968' }, { name: 'Jordan', dialCode: '+962' }, { name: 'Lebanon', dialCode: '+961' },
+  { name: 'Syria', dialCode: '+963' }, { name: 'Yemen', dialCode: '+967' }, { name: 'Afghanistan', dialCode: '+93' },
+  { name: 'Albania', dialCode: '+355' }, { name: 'Armenia', dialCode: '+374' }, { name: 'Azerbaijan', dialCode: '+994' },
+  { name: 'Georgia', dialCode: '+995' }, { name: 'Cyprus', dialCode: '+357' }, { name: 'Malta', dialCode: '+356' },
+  { name: 'Macau', dialCode: '+853' }, { name: 'Brunei', dialCode: '+673' },
+].sort((a, b) => a.name.localeCompare(b.name));
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -42,6 +81,19 @@ export default function SignUpPage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [error, setError] = useState<string | null>(null);
   const [emailVerified, setEmailVerified] = useState(false);
+  const [countryDropdownOpen, setCountryDropdownOpen] = useState(false);
+  const [countrySearch, setCountrySearch] = useState('');
+  const countryDropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (countryDropdownRef.current && !countryDropdownRef.current.contains(e.target as Node)) {
+        setCountryDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -344,18 +396,56 @@ export default function SignUpPage() {
                   <input type="number" id="birthYear" value={formData.birthYear} onChange={(e) => setFormData({ ...formData, birthYear: e.target.value })} min={1900} max={CURRENT_YEAR} className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-gray-900 placeholder:text-gray-400" placeholder={String(CURRENT_YEAR - 30)} />
                   {errors.birthYear && <p className="mt-1 text-sm text-red-600">{errors.birthYear}</p>}
                 </div>
-                <div>
-                  <label htmlFor="nationality" className="block text-sm font-semibold text-gray-700 mb-2">Nationality <span className="text-red-500">*</span></label>
-                  <input type="text" id="nationality" value={formData.nationality} onChange={(e) => setFormData({ ...formData, nationality: e.target.value })} required className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-gray-900 placeholder:text-gray-400" placeholder="e.g. South Korea, USA" />
+                <div ref={countryDropdownRef} className="relative">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Nationality <span className="text-red-500">*</span></label>
+                  <button
+                    type="button"
+                    onClick={() => setCountryDropdownOpen((o) => !o)}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-left text-gray-900 flex items-center justify-between"
+                  >
+                    <span className={formData.nationality ? 'text-gray-900' : 'text-gray-400'}>{formData.nationality || 'Select country'}</span>
+                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                  {countryDropdownOpen && (
+                    <div className="absolute z-20 mt-1 w-full bg-white border border-gray-200 rounded-xl shadow-lg max-h-64 overflow-hidden">
+                      <div className="p-2 border-b border-gray-100">
+                        <input
+                          type="text"
+                          value={countrySearch}
+                          onChange={(e) => setCountrySearch(e.target.value)}
+                          placeholder="Search country..."
+                          className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
+                        />
+                      </div>
+                      <div className="overflow-y-auto max-h-52">
+                        {COUNTRY_LIST.filter((c) => c.name.toLowerCase().includes(countrySearch.toLowerCase().trim())).map((c) => (
+                          <button
+                            key={c.name}
+                            type="button"
+                            onClick={() => {
+                              setFormData((prev) => ({ ...prev, nationality: c.name, phone: c.dialCode + ' ' }));
+                              setCountryDropdownOpen(false);
+                              setCountrySearch('');
+                            }}
+                            className="w-full px-4 py-2.5 text-left text-sm hover:bg-indigo-50 flex justify-between items-center"
+                          >
+                            <span>{c.name}</span>
+                            <span className="text-gray-500 font-medium">{c.dialCode}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                   {errors.nationality && <p className="mt-1 text-sm text-red-600">{errors.nationality}</p>}
                 </div>
                 <div>
                   <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">Phone (optional, for booking)</label>
-                  <input type="tel" id="phone" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-gray-900 placeholder:text-gray-400" placeholder="+82 10 1234 5678" />
+                  <input type="tel" id="phone" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-gray-900 placeholder:text-gray-400" placeholder="e.g. +82 10 1234 5678" />
                 </div>
                 <div>
                   <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-2">Password <span className="text-red-500">*</span></label>
                   <input type="password" id="password" value={formData.password} onChange={(e) => setFormData({ ...formData, password: e.target.value })} required className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-gray-900 placeholder:text-gray-400 ${errors.password ? 'border-red-300' : 'border-gray-200'}`} placeholder="Letters, numbers, special chars, 8+ characters" />
+                  <p className="mt-1.5 text-xs text-gray-500">Please set a password with 8+ characters using letters, numbers, and special characters.</p>
                   {errors.password && <p className="mt-1 text-sm text-red-600">{errors.password}</p>}
                 </div>
                 <div>

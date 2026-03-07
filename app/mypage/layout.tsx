@@ -36,8 +36,8 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
     { id: 'settings', label: t('mypage.settings'), icon: SettingsIcon, path: '/mypage/settings' },
   ];
   const [userInfo, setUserInfo] = useState({
-    name: 'John Doe',
-    email: 'john.doe@example.com',
+    name: 'Guest',
+    email: '',
   });
 
   // Load user data from Supabase and localStorage
