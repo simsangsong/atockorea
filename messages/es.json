@@ -281,13 +281,25 @@
       "fullAmountBenefit": "Todos los pagos procesados de forma segura"
     },
     "footer": {
-      "company": "AtoC Korea",
+      "company": "Empresa",
+      "name": "Nombre",
+      "companyName": "AtoC Korea",
+      "entity": "LLC",
+      "entityLabel": "Entidad",
+      "state": "Wyoming",
+      "stateLabel": "Estado",
+      "registeredAddress": "30 N Gould St, STE R, Sheridan, WY 82801, USA",
+      "registeredAddressLabel": "Domicilio social",
+      "industry": "Agencia de viajes",
+      "industryLabel": "Sector",
+      "companyDescription": "Reserva y venta en línea de tours para viajeros a Corea",
       "description": "Plataforma con licencia basada en Corea para tours de día en Corea. Asociación directa con agencias de viajes locales.",
       "businessReg": "Registro Comercial",
       "ecommerceReg": "Registro de Comercio Electrónico",
       "address": "Dirección",
       "contact": "Contacto",
       "email": "Correo electrónico",
+      "customerServiceEmail": "Atención al cliente",
       "securePayment": "Métodos de Pago Seguros",
       "aboutUs": "Acerca de Nosotros",
       "ourStory": "Nuestra Historia",
@@ -303,7 +315,8 @@
       "privacy": "Política de Privacidad",
       "cookies": "Política de Cookies",
       "refundPolicy": "Política de reembolso",
-      "copyright": "© 2026 AtoC Korea. All rights reserved."
+      "legalSummary": "ATOC KOREA LLC actúa únicamente como intermediario de reservas y no presta servicios de tours. Los tours son realizados por proveedores terceros independientes.",
+      "copyright": "© 2026 AtoC Korea. Todos los derechos reservados."
     }
   },
   "trustBar": {

@@ -87,56 +87,45 @@ export const GET = withErrorHandler(async (
     const supabase = createServerClient();
     logger.info('Fetching tour', { tourId, locale: localeParam ?? 'default' });
 
-    // Try to fetch by ID first (UUID), then by slug if not found
-    let query = supabase
-      .from('tours')
-      .select(`
-        *,
-        pickup_points (
-          id,
-          name,
-          address,
-          lat,
-          lng,
-          pickup_time
-        )
-      `)
-      .eq('is_active', true);
-
     // Check if tourId is a UUID (contains hyphens) or a slug
     const isUUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(tourId);
-    
-    // Decode URL-encoded slug
     const decodedTourId = decodeURIComponent(tourId);
-    
+
+    const pickupPointsSelect = `id, name, address, lat, lng, pickup_time`;
+    const pickupPointsSelectWithImage = `id, name, address, lat, lng, pickup_time, image_url`;
+
+    let query = supabase
+      .from('tours')
+      .select(`*, pickup_points (${pickupPointsSelectWithImage})`)
+      .eq('is_active', true);
+
     if (isUUID) {
       query = query.eq('id', tourId);
     } else {
-      // Use exact match first (case-sensitive for slug)
       query = query.eq('slug', decodedTourId);
     }
 
     let { data: tour, error: tourError } = await query.single();
-    
-    // If exact match fails and it's a slug, try case-insensitive search
+
+    if (tourError && /column.*does not exist|image_url/.test(tourError.message || '')) {
+      query = supabase
+        .from('tours')
+        .select(`*, pickup_points (${pickupPointsSelect})`)
+        .eq('is_active', true);
+      if (isUUID) query = query.eq('id', tourId);
+      else query = query.eq('slug', decodedTourId);
+      const fallback = await query.single();
+      tour = fallback.data;
+      tourError = fallback.error;
+    }
+
     if (tourError && !isUUID && tourError.code === 'PGRST116') {
       const { data: tourCaseInsensitive, error: errorCaseInsensitive } = await supabase
         .from('tours')
-        .select(`
-          *,
-          pickup_points (
-            id,
-            name,
-            address,
-            lat,
-            lng,
-            pickup_time
-          )
-        `)
+        .select(`*, pickup_points (${pickupPointsSelect})`)
         .eq('is_active', true)
         .ilike('slug', decodedTourId)
         .single();
-      
       if (tourCaseInsensitive && !errorCaseInsensitive) {
         tour = tourCaseInsensitive;
         tourError = null;
@@ -251,6 +240,7 @@ export const GET = withErrorHandler(async (
         lat: point.lat ? parseFloat(point.lat.toString()) : 0,
         lng: point.lng ? parseFloat(point.lng.toString()) : 0,
         pickup_time: point.pickup_time || null,
+        image_url: point.image_url || null,
       })),
       faqs,
       highlights: highlights.length > 0 ? highlights : (Array.isArray(tour.highlights) ? tour.highlights : []),

@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect, Suspense, useMemo, useCallback } from 'react';
+import { useRef, useState, useEffect, Suspense, useMemo } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import Header from '@/components/Header';
@@ -252,6 +252,23 @@ export default function TourDetailPage() {
     // Refetch when tourId or locale changes so content language updates
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tourId, locale]);
+
+  // 제주 프라이빗 / 부산 프라이빗만 Highlights에 'Hotel pickup & drop-off' 표시
+  const isJejuOrBusanPrivate = useMemo(() => {
+    if (!tour?.badges?.some((b: string) => /private/i.test(b))) return false;
+    const city = (tour.city || '').toLowerCase();
+    const title = (tour.title || '').toLowerCase();
+    if (/jeju|제주/.test(city) || /jeju|제주/.test(title)) return true;
+    if (/busan|부산/.test(city) || /busan|부산/.test(title)) return true;
+    return false;
+  }, [tour?.badges, tour?.city, tour?.title]);
+
+  const highlightsToShow = useMemo(() => {
+    if (!tour?.highlights?.length) return [];
+    const pickupDropoffPattern = /hotel\s*pickup|pickup\s*&\s*drop-?off|drop-?off\s*included|픽업|드롭오프|接车|接送|ピックアップ/i;
+    if (isJejuOrBusanPrivate) return tour.highlights;
+    return tour.highlights.filter((h: string) => !pickupDropoffPattern.test(h));
+  }, [tour?.highlights, isJejuOrBusanPrivate]);
 
   // Parse keywords from tour data (memoized to prevent infinite loops)
   // MUST be called before any early returns to follow React Hooks rules
@@ -550,11 +567,11 @@ export default function TourDetailPage() {
                 </CollapsibleSection>
             )}
 
-            {/* Highlights */}
-            {tour.highlights && tour.highlights.length > 0 && (
+            {/* Highlights (제주/부산 프라이빗만 'Hotel pickup & drop-off' 항목 표시) */}
+            {highlightsToShow.length > 0 && (
               <CollapsibleSection title={t('tour.highlights')} defaultOpen={true}>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  {tour.highlights.map((highlight, index) => (
+                  {highlightsToShow.map((highlight, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-gray-300 mt-1.5 flex-shrink-0" />
                       <span>{highlight}</span>

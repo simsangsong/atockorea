@@ -97,6 +97,7 @@ export async function POST(request: NextRequest) {
         lat: pp.lat ? parseFloat(pp.lat) : null,
         lng: pp.lng ? parseFloat(pp.lng) : null,
         pickup_time: pp.pickup_time || null,
+        image_url: pp.image_url && String(pp.image_url).trim() ? String(pp.image_url).trim() : null,
       }));
 
       const { error: ppError } = await supabase
@@ -258,6 +259,7 @@ export async function PATCH(request: NextRequest) {
           lat: pp.lat ? parseFloat(pp.lat) : null,
           lng: pp.lng ? parseFloat(pp.lng) : null,
           pickup_time: pp.pickup_time || null,
+          image_url: pp.image_url && String(pp.image_url).trim() ? String(pp.image_url).trim() : null,
         }));
 
         const { error: ppError } = await supabase

@@ -13,10 +13,10 @@ export default function Footer() {
           <h3 className="text-white font-bold text-lg mb-3">{t('home.footer.company')}</h3>
           <div className="text-xs space-y-1.5 mb-3">
             <p><span className="font-semibold">{t('home.footer.name')}:</span> {t('home.footer.companyName')}</p>
-            <p><span className="font-semibold">Entity:</span> {t('home.footer.entity')}</p>
-            <p><span className="font-semibold">State:</span> {t('home.footer.state')}</p>
-            <p><span className="font-semibold">Registered address:</span> {t('home.footer.registeredAddress')}</p>
-            <p><span className="font-semibold">Industry:</span> {t('home.footer.industry')}</p>
+            <p><span className="font-semibold">{t('home.footer.entityLabel')}:</span> {t('home.footer.entity')}</p>
+            <p><span className="font-semibold">{t('home.footer.stateLabel')}:</span> {t('home.footer.state')}</p>
+            <p><span className="font-semibold">{t('home.footer.registeredAddressLabel')}:</span> {t('home.footer.registeredAddress')}</p>
+            <p><span className="font-semibold">{t('home.footer.industryLabel')}:</span> {t('home.footer.industry')}</p>
             <p>{t('home.footer.companyDescription')}</p>
           </div>
         </div>
@@ -124,9 +124,7 @@ export default function Footer() {
 
         {/* Legal Summary */}
         <div className="text-center text-xs text-gray-400 mb-4 pt-4 border-t border-gray-800">
-          <p>
-            ATOC KOREA LLC operates solely as a booking intermediary and does not provide tour services. Tours are delivered by independent third-party providers.
-          </p>
+          <p>{t('home.footer.legalSummary')}</p>
         </div>
 
         {/* Copyright */}

@@ -4,7 +4,7 @@ import { createServerClient } from '@/lib/supabase';
 /**
  * POST /api/auth/create-profile
  * 회원가입 직후 user_profiles 행 생성. 서버(service role)에서 insert 하므로 RLS 영향 없음.
- * body: { userId, full_name, accessToken } — accessToken 있으면 검증, 없으면 바로 insert 시도.
+ * body: { userId, full_name, accessToken?, phone?, birth_year?, nationality? }
  */
 export async function POST(req: NextRequest) {
   try {
@@ -12,6 +12,9 @@ export async function POST(req: NextRequest) {
     const userId = body?.userId;
     const fullName = body?.full_name ?? body?.fullName ?? '';
     const accessToken = body?.accessToken;
+    const phone = body?.phone ?? null;
+    const birthYear = body?.birth_year != null ? Number(body.birth_year) : null;
+    const nationality = body?.nationality ?? null;
 
     if (!userId || typeof userId !== 'string') {
       return NextResponse.json(
@@ -31,13 +34,22 @@ export async function POST(req: NextRequest) {
         );
       }
     }
-    // accessToken 없을 때: 바로 insert. auth.users에 없으면 FK(23503)로 실패
 
-    const { error: insertError } = await supabase.from('user_profiles').insert({
+    const basePayload: Record<string, unknown> = {
       id: userId,
       full_name: fullName || null,
       role: 'customer',
-    });
+      phone: phone && String(phone).trim() ? String(phone).trim() : null,
+    };
+    const fullPayload = { ...basePayload };
+    if (birthYear != null && !Number.isNaN(birthYear)) fullPayload.birth_year = birthYear;
+    if (nationality != null && String(nationality).trim()) fullPayload.nationality = String(nationality).trim();
+
+    let insertError = (await supabase.from('user_profiles').insert(fullPayload)).error;
+
+    if (insertError && /birth_year|nationality/.test(insertError.message || '')) {
+      insertError = (await supabase.from('user_profiles').insert(basePayload)).error;
+    }
 
     if (insertError) {
       if (insertError.code === '23505') {

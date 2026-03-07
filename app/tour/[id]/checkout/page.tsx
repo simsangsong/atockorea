@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
 import { useTranslations } from '@/lib/i18n';
+import { supabase } from '@/lib/supabase';
 
 interface BookingData {
   tourId: number;
@@ -43,12 +44,10 @@ export default function CheckoutPage() {
   const [errors, setErrors] = useState<Partial<Record<keyof CustomerInfo, string>>>({});
 
   useEffect(() => {
-    // Get booking data from sessionStorage
     const stored = sessionStorage.getItem('bookingData');
     if (stored) {
       try {
         const parsed = JSON.parse(stored);
-        console.log('Loaded booking data from sessionStorage:', parsed);
         setBookingData(parsed);
       } catch (error) {
         console.error('Error parsing booking data:', error);
@@ -56,11 +55,31 @@ export default function CheckoutPage() {
         router.push(`/tour/${params.id}`);
       }
     } else {
-      // If no booking data, redirect back
-      console.warn('No booking data found in sessionStorage');
       router.push(`/tour/${params.id}`);
     }
   }, [params.id, router]);
+
+  // 로그인 시 회원 정보(이름, 이메일, 전화번호) 자동 입력
+  useEffect(() => {
+    if (!supabase || !bookingData) return;
+    let mounted = true;
+    (async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!mounted || !session?.user) return;
+      const name = (session.user.user_metadata?.full_name as string) || '';
+      const email = session.user.email || '';
+      if (!name && !email) return;
+      const { data: profile } = await supabase.from('user_profiles').select('full_name, phone').eq('id', session.user.id).single();
+      if (!mounted) return;
+      setCustomerInfo((prev) => ({
+        ...prev,
+        name: prev.name || (profile?.full_name ?? name) || '',
+        email: prev.email || email || '',
+        phone: prev.phone || (profile?.phone ?? '') || '',
+      }));
+    })();
+    return () => { mounted = false; };
+  }, [bookingData]);
 
   const validateForm = (): boolean => {
     const newErrors: Partial<Record<keyof CustomerInfo, string>> = {};

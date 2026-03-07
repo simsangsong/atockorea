@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { MapIcon } from '@/components/Icons';
 import InteractiveMap from '@/components/maps/InteractiveMap';
 import { useTranslations } from '@/lib/i18n';
@@ -10,6 +11,7 @@ interface PickupPoint {
   address?: string;
   lat: number;
   lng: number;
+  image_url?: string | null;
 }
 
 function hasValidCoords(lat: number, lng: number): boolean {
@@ -84,11 +86,24 @@ export default function MeetingPoint({ points }: MeetingPointProps) {
         )}
       </div>
 
-      {/* Address */}
+      {/* Address + optional image */}
       <div className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 border border-gray-100">
-        <div className="flex-shrink-0 w-9 h-9 rounded-full bg-gray-200 flex items-center justify-center">
-          <MapIcon className="w-4 h-4 text-gray-600" />
-        </div>
+        {primaryPoint.image_url ? (
+          <div className="flex-shrink-0 w-16 h-16 sm:w-[4.5rem] sm:h-[4.5rem] rounded-lg overflow-hidden bg-gray-200 border border-gray-200/80 shadow-sm">
+            <Image
+              src={primaryPoint.image_url}
+              alt={primaryPoint.name}
+              width={72}
+              height={72}
+              className="w-full h-full object-cover"
+              unoptimized={primaryPoint.image_url.startsWith('http')}
+            />
+          </div>
+        ) : (
+          <div className="flex-shrink-0 w-9 h-9 rounded-full bg-gray-200 flex items-center justify-center">
+            <MapIcon className="w-4 h-4 text-gray-600" />
+          </div>
+        )}
         <div className="flex-1 min-w-0">
           <p className="text-sm font-medium text-gray-900">{primaryPoint.name}</p>
           <p className="text-xs text-gray-500 truncate">{primaryPoint.address || ''}</p>
@@ -109,10 +124,23 @@ export default function MeetingPoint({ points }: MeetingPointProps) {
       {points.length > 1 && (
         <div className="mt-3 pt-3 border-t border-gray-100">
           <p className="text-[11px] font-medium text-gray-500 uppercase tracking-wider mb-2">{t('tour.allPickupPoints')}</p>
-          <ul className="space-y-1">
+          <ul className="space-y-2">
             {points.map((point) => (
-              <li key={point.id} className="flex items-center gap-2 py-1.5">
-                <div className="w-1 h-1 rounded-full bg-gray-300 flex-shrink-0" />
+              <li key={point.id} className="flex items-center gap-2.5 py-1.5">
+                {point.image_url ? (
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg overflow-hidden bg-gray-100 border border-gray-200/60">
+                    <Image
+                      src={point.image_url}
+                      alt={point.name}
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-cover"
+                      unoptimized={point.image_url.startsWith('http')}
+                    />
+                  </div>
+                ) : (
+                  <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-gray-300" />
+                )}
                 <div className="flex-1 min-w-0">
                   <span className="text-xs font-medium text-gray-800">{point.name}</span>
                   {point.address && (

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
@@ -55,6 +55,7 @@ interface Tour {
     lat?: number;
     lng?: number;
     pickup_time?: string;
+    image_url?: string;
   }>;
 }
 
@@ -72,6 +73,8 @@ export default function ProductsPage() {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [uploadingImage, setUploadingImage] = useState(false);
   const [uploadingGallery, setUploadingGallery] = useState(false);
+  const [uploadingPickupImageIndex, setUploadingPickupImageIndex] = useState<number | null>(null);
+  const pickupImageInputRef = useRef<HTMLInputElement>(null);
   const [formData, setFormData] = useState<Partial<Tour>>({});
   const [saving, setSaving] = useState(false);
   const [activeTab, setActiveTab] = useState('basic');
@@ -283,6 +286,52 @@ export default function ProductsPage() {
   const handleRemoveGalleryImage = (index: number) => {
     const gallery = formData.gallery_images || [];
     setFormData({ ...formData, gallery_images: gallery.filter((_, i) => i !== index) });
+  };
+
+  const handlePickupImageUploadClick = (index: number) => {
+    setUploadingPickupImageIndex(index);
+    setTimeout(() => pickupImageInputRef.current?.click(), 0);
+  };
+
+  const handlePickupImageFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    const index = uploadingPickupImageIndex;
+    if (!file || index == null) {
+      setUploadingPickupImageIndex(null);
+      e.target.value = '';
+      return;
+    }
+    try {
+      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
+      if (!session) {
+        alert('로그인이 필요합니다.');
+        return;
+      }
+      const uploadFormData = new FormData();
+      uploadFormData.append('file', file);
+      uploadFormData.append('type', 'product');
+      uploadFormData.append('folder', 'tours/pickup');
+      const response = await fetch('/api/admin/upload', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${session.access_token}` },
+        credentials: 'include',
+        body: uploadFormData,
+      });
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || '업로드 실패');
+      }
+      const result = await response.json();
+      const updated = [...(formData.pickup_points || [])];
+      updated[index] = { ...updated[index], image_url: result.url };
+      setFormData({ ...formData, pickup_points: updated });
+    } catch (err: any) {
+      console.error('Pickup image upload error:', err);
+      alert(err.message || '사진 업로드에 실패했습니다.');
+    } finally {
+      setUploadingPickupImageIndex(null);
+      e.target.value = '';
+    }
   };
 
   const handleUpdateGalleryImage = (index: number, field: 'title' | 'description', value: string) => {
@@ -1312,6 +1361,13 @@ export default function ProductsPage() {
               {/* Pickup Points Tab */}
               {activeTab === 'pickup' && (
                 <div className="space-y-4">
+                  <input
+                    ref={pickupImageInputRef}
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={handlePickupImageFileChange}
+                  />
                   <div>
                     <label className="block text-sm font-semibold text-gray-900 mb-3">
                       픽업장소 관리
@@ -1367,6 +1423,30 @@ export default function ProductsPage() {
                               </p>
                             )}
                           </div>
+                          <div className="mb-3">
+                            <label className="block text-xs font-medium text-gray-700 mb-1.5">사진 URL (선택)</label>
+                            <div className="flex gap-2">
+                              <input
+                                type="url"
+                                value={point.image_url || ''}
+                                onChange={(e) => {
+                                  const updated = [...(formData.pickup_points || [])];
+                                  updated[index] = { ...updated[index], image_url: e.target.value };
+                                  setFormData({ ...formData, pickup_points: updated });
+                                }}
+                                placeholder="https://... 또는 아래 업로드"
+                                className="flex-1 min-w-0 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                              />
+                              <button
+                                type="button"
+                                onClick={() => handlePickupImageUploadClick(index)}
+                                disabled={uploadingPickupImageIndex === index}
+                                className="flex-shrink-0 px-3 py-2 text-xs font-medium text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg hover:bg-indigo-100 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                              >
+                                {uploadingPickupImageIndex === index ? '업로드 중…' : '사진 업로드'}
+                              </button>
+                            </div>
+                          </div>
                           <div className="flex flex-wrap items-center gap-2">
                             <button
                               type="button"
@@ -1397,12 +1477,13 @@ export default function ProductsPage() {
                         <PickupPointSelector
                           onLocationSelect={(location) => {
                             const newPoint = {
-                              id: `temp-${Date.now()}`, // Temporary ID for new points
+                              id: `temp-${Date.now()}`,
                               name: '',
                               address: location.address,
                               lat: location.lat,
                               lng: location.lng,
                               pickup_time: '',
+                              image_url: '',
                             };
                             setFormData({
                               ...formData,

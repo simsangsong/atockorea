@@ -226,7 +226,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
         )}
         {/* Final Price */}
         <div className="flex items-baseline gap-2">
-          <span className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <span className="text-3xl sm:text-4xl font-bold text-slate-800 tracking-tight">
             {formatPrice(availability?.priceOverride || (applyDiscount && hasDiscount ? tour.price : (tour.originalPrice || tour.price)))}
           </span>
           <span className="text-xs sm:text-sm text-gray-600 font-medium">/ {tour.priceType}</span>
@@ -374,7 +374,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
       </div>
 
       {/* Price Summary */}
-      <div className="mt-4 p-3.5 bg-gradient-to-br from-blue-50 via-indigo-50/50 to-purple-50/30 rounded-xl border-2 border-blue-300/50 shadow-md">
+      <div className="mt-4 p-3.5 bg-slate-50/80 rounded-xl border border-slate-200/80 shadow-sm">
         <div className="space-y-1.5 mb-2.5">
           {tour.priceType === 'person' && (
             <div className="flex items-center justify-between text-xs">
@@ -389,10 +389,10 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
             </div>
           )}
         </div>
-        <div className="border-t-2 border-blue-300/50 pt-2.5">
+        <div className="border-t border-slate-200 pt-2.5">
           <div className="flex items-center justify-between">
             <span className="text-sm font-bold text-gray-900 uppercase tracking-wide">{t('tour.total')}</span>
-            <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">{formatPrice(totalPrice)}</span>
+            <span className="text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight">{formatPrice(totalPrice)}</span>
           </div>
         </div>
       </div>
