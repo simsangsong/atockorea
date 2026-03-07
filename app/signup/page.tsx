@@ -241,43 +241,9 @@ export default function SignUpPage() {
         return;
       }
 
-      const session = data.session ?? (await supabase.auth.getSession()).data?.session;
-      const accessToken = session?.access_token ?? undefined;
-
-      const profileRes = await fetch('/api/auth/create-profile', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          userId: data.user.id,
-          full_name: formData.fullName.trim(),
-          phone: formData.phone?.trim() || undefined,
-          birth_year: birthYearNum,
-          nationality: formData.nationality.trim(),
-          accessToken: accessToken ?? undefined,
-        }),
-      });
-      const profileData = await profileRes.json().catch(() => ({}));
-
-      if (!profileRes.ok) {
-        if (profileRes.status === 409) {
-          setError('This account already exists. Please sign in.');
-          setIsLoading(false);
-          return;
-        }
-        try {
-          await fetch('/api/auth/delete-user-without-profile', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            credentials: 'include',
-            body: JSON.stringify({ userId: data.user.id, accessToken: accessToken ?? undefined }),
-          });
-        } catch (_) {}
-        setError(profileData.error || 'Failed to create profile. Please try again.');
-        setIsLoading(false);
-        return;
-      }
-
-      alert('Account created successfully. You can sign in with your email and password.');
+      // 이메일 인증(Confirm sign up) 사용 시: 프로필은 인증 링크 클릭 후 콜백에서 생성함.
+      setError('');
+      alert('Please check your email and click the confirmation link to complete your sign up.');
       router.push('/signin');
     } catch (e: any) {
       setError(e?.message ?? 'Something went wrong. Please try again.');

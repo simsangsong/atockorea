@@ -3,14 +3,14 @@
 // Force dynamic rendering to avoid I18nProvider issues during static generation
 export const dynamic = 'force-dynamic';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function AccountSettingsPage() {
   const [formData, setFormData] = useState({
     name: 'Guest',
     email: '',
-    phone: '+82 10-1234-5678',
-    birthday: '1990-01-01',
+    phone: '',
+    birthday: '',
     gender: '',
     country: 'South Korea',
     city: 'Seoul',
@@ -34,9 +34,69 @@ export default function AccountSettingsPage() {
     push: true,
     marketing: false,
   });
+  const [profileLoading, setProfileLoading] = useState(true);
+  const [savePersonalLoading, setSavePersonalLoading] = useState(false);
 
-  const handleSavePersonalInfo = () => {
-    alert('Personal information saved successfully!');
+  useEffect(() => {
+    const loadProfile = async () => {
+      try {
+        const { supabase } = await import('@/lib/supabase');
+        if (!supabase) return;
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session?.user) return;
+        const { data: profile } = await supabase
+          .from('user_profiles')
+          .select('full_name, phone, birth_year, nationality')
+          .eq('id', session.user.id)
+          .single();
+        setFormData((prev) => ({
+          ...prev,
+          name: profile?.full_name?.trim() || session.user.email?.split('@')[0] || 'Guest',
+          email: session.user.email ?? '',
+          phone: profile?.phone?.trim() ?? '',
+          birthday: profile?.birth_year ? `${profile.birth_year}-01-01` : '',
+          country: profile?.nationality?.trim() || 'South Korea',
+        }));
+      } catch (_) {}
+      setProfileLoading(false);
+    };
+    loadProfile();
+  }, []);
+
+  const handleSavePersonalInfo = async () => {
+    if (!formData.name?.trim()) {
+      alert('Full name is required.');
+      return;
+    }
+    setSavePersonalLoading(true);
+    try {
+      const { supabase } = await import('@/lib/supabase');
+      if (!supabase) throw new Error('Not available');
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session?.access_token) throw new Error('Please sign in again.');
+      const birthYear = formData.birthday ? new Date(formData.birthday).getFullYear() : undefined;
+      const res = await fetch('/api/auth/update-profile', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${session.access_token}` },
+        body: JSON.stringify({
+          full_name: formData.name.trim(),
+          phone: formData.phone?.trim() || null,
+          birth_year: birthYear,
+          nationality: formData.country?.trim() || null,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        alert(data.error || 'Failed to save.');
+        return;
+      }
+      alert('Personal information saved successfully!');
+      if (typeof window !== 'undefined') window.dispatchEvent(new Event('userDataUpdated'));
+    } catch (e: any) {
+      alert(e?.message || 'Failed to save.');
+    } finally {
+      setSavePersonalLoading(false);
+    }
   };
 
   const handleUpdatePassword = () => {
@@ -132,9 +192,10 @@ export default function AccountSettingsPage() {
         </div>
         <button
           onClick={handleSavePersonalInfo}
-          className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl transition-all shadow-md hover:shadow-lg font-semibold"
+          disabled={profileLoading || savePersonalLoading}
+          className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl transition-all shadow-md hover:shadow-lg font-semibold disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          Save Changes
+          {savePersonalLoading ? 'Saving...' : 'Save Changes'}
         </button>
       </div>
 

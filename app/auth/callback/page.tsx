@@ -116,22 +116,52 @@ function AuthCallbackContent() {
                 } as Record<string, unknown>)
                 .eq('id', data.user.id);
             } else {
-              const { error: insertError } = await supabase.from('user_profiles').insert({
-                id: data.user.id,
-                full_name: displayName,
-                avatar_url: avatarUrl,
-                role: 'customer',
-                ...(data.user.email != null && { email: data.user.email }),
-                ...(provider && { auth_provider: provider }),
-              } as Record<string, unknown>);
-              if (insertError) {
-                const withoutExtra = await supabase.from('user_profiles').insert({
-                  id: data.user.id,
-                  full_name: displayName,
-                  avatar_url: avatarUrl,
-                  role: 'customer',
-                });
-                if (withoutExtra.error) console.error('Error creating user profile:', withoutExtra.error);
+              // 이메일 인증 후 진입 시 user_metadata(full_name, phone, birth_year, nationality)로 프로필 생성
+              const session = data.session;
+              const createRes = await fetch('/api/auth/create-profile', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  userId: data.user.id,
+                  full_name: meta.full_name ?? displayName,
+                  phone: meta.phone ?? undefined,
+                  birth_year: meta.birth_year ?? undefined,
+                  nationality: meta.nationality ?? undefined,
+                  accessToken: session?.access_token ?? undefined,
+                }),
+              });
+              if (!createRes.ok) {
+                const { status } = createRes;
+                // 409 = 이미 프로필 있음. 404/기타 시 클라이언트 insert 시도 (세션은 이미 있음)
+                if (status !== 409) {
+                  const insertPayload = {
+                    id: data.user.id,
+                    full_name: displayName,
+                    avatar_url: avatarUrl,
+                    role: 'customer',
+                    ...(data.user.email != null && { email: data.user.email }),
+                    ...(provider && { auth_provider: provider }),
+                  } as Record<string, unknown>;
+                  const { error: insertError } = await supabase.from('user_profiles').insert(insertPayload);
+                  if (insertError) {
+                    const { error: fallbackErr } = await supabase.from('user_profiles').insert({
+                      id: data.user.id,
+                      full_name: displayName,
+                      avatar_url: avatarUrl,
+                      role: 'customer',
+                    });
+                    if (fallbackErr) console.error('Error creating user profile:', fallbackErr);
+                  }
+                }
+              } else {
+                await supabase
+                  .from('user_profiles')
+                  .update({
+                    email: data.user.email ?? null,
+                    auth_provider: provider,
+                    ...(avatarUrl && { avatar_url: avatarUrl }),
+                  } as Record<string, unknown>)
+                  .eq('id', data.user.id);
               }
             }
 

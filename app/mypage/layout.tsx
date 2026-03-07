@@ -53,7 +53,7 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
             // Get user profile from database
             const { data: profile } = await supabase
               .from('user_profiles')
-              .select('full_name, avatar_url')
+              .select('full_name, avatar_url, phone, birth_year, nationality')
               .eq('id', session.user.id)
               .single();
 
@@ -62,9 +62,29 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                 name: profile.full_name || session.user.email?.split('@')[0] || 'User',
                 email: session.user.email || '',
               });
-              
-              if (profile.avatar_url) {
-                setAvatar(profile.avatar_url);
+              if (profile.avatar_url) setAvatar(profile.avatar_url);
+
+              // 프로필에 비어 있는 항목을 user_metadata(가입 시 입력)로 보충
+              const meta = session.user.user_metadata || {};
+              const supplement: Record<string, string | number | null> = {};
+              if (!profile.full_name?.trim() && (meta.full_name != null && String(meta.full_name).trim()))
+                supplement.full_name = String(meta.full_name).trim();
+              if (!profile.phone?.trim() && (meta.phone != null && String(meta.phone).trim()))
+                supplement.phone = String(meta.phone).trim();
+              if (profile.birth_year == null && meta.birth_year != null) {
+                const y = Number(meta.birth_year);
+                if (!Number.isNaN(y)) supplement.birth_year = y;
+              }
+              if (!profile.nationality?.trim() && (meta.nationality != null && String(meta.nationality).trim()))
+                supplement.nationality = String(meta.nationality).trim();
+              if (Object.keys(supplement).length > 0 && session.access_token) {
+                try {
+                  await fetch('/api/auth/update-profile', {
+                    method: 'PATCH',
+                    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${session.access_token}` },
+                    body: JSON.stringify(supplement),
+                  });
+                } catch (_) {}
               }
             } else {
               // Fallback to session data
