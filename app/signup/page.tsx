@@ -227,7 +227,7 @@ export default function SignUpPage() {
       if (signUpError) {
         const msg = signUpError.message || '';
         if (/already registered|already exists|already been registered/i.test(msg)) {
-          setError('This email is already registered. If you signed up with Google, please sign in with Google.');
+          setError('이미 가입되어 있는 이메일 주소입니다. 다른 이메일 주소를 사용하세요. (구글 등으로 가입된 계정일 수 있습니다.)');
         } else {
           setErrors((prev) => ({ ...prev, email: msg }));
         }
@@ -241,9 +241,56 @@ export default function SignUpPage() {
         return;
       }
 
-      // 이메일 인증(Confirm sign up) 사용 시: 프로필은 인증 링크 클릭 후 콜백에서 생성함.
+      // 인증번호로 이미 이메일 검증 완료 → 방금 생성된 계정에 프로필(이름·국적·나이·전화 등) 바로 추가
+      const session = data.session ?? (await supabase.auth.getSession()).data?.session;
+      const accessToken = session?.access_token ?? undefined;
+      const createProfilePayload = {
+        userId: data.user.id,
+        full_name: formData.fullName.trim(),
+        phone: formData.phone?.trim() || undefined,
+        birth_year: birthYearNum,
+        nationality: formData.nationality.trim(),
+        accessToken: accessToken ?? undefined,
+      };
+
+      let profileRes = await fetch('/api/auth/create-profile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(createProfilePayload),
+      });
+      let profileData = await profileRes.json().catch(() => ({}));
+
+      if (!profileRes.ok && profileRes.status === 404) {
+        await new Promise((r) => setTimeout(r, 2000));
+        profileRes = await fetch('/api/auth/create-profile', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(createProfilePayload),
+        });
+        profileData = await profileRes.json().catch(() => ({}));
+      }
+
+      if (!profileRes.ok) {
+        if (profileRes.status === 409) {
+          setError('This account already exists. Please sign in.');
+          setIsLoading(false);
+          return;
+        }
+        try {
+          await fetch('/api/auth/delete-user-without-profile', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({ userId: data.user.id, accessToken: accessToken ?? undefined }),
+          });
+        } catch (_) {}
+        setError(profileData.error || 'Failed to create profile. Please try again.');
+        setIsLoading(false);
+        return;
+      }
+
       setError('');
-      alert('Please check your email and click the confirmation link to complete your sign up.');
+      alert('Account created successfully. You can sign in with your email and password.');
       router.push('/signin');
     } catch (e: any) {
       setError(e?.message ?? 'Something went wrong. Please try again.');

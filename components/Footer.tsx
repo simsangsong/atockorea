@@ -33,7 +33,7 @@ export default function Footer() {
             {/* Contact */}
             <div>
               <p className="text-xs mb-1">
-                <span className="font-semibold">{t('home.footer.contact')}:</span> 010-8973-0913
+                <span className="font-semibold">{t('home.footer.contact')}:</span> +82 10 9780 8027
               </p>
               <p className="text-xs">
                 <span className="font-semibold">{t('home.footer.customerServiceEmail')}:</span>{' '}
