@@ -2,95 +2,113 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import crypto from 'crypto';
 
+/** Resend sends from/to as "Name <email@domain.com>" - parse to { name, email } */
+function parseEmailAddress(value: string | undefined): { email: string; name: string | null } {
+  if (!value || typeof value !== 'string') return { email: '', name: null };
+  const match = value.trim().match(/^(.+?)\s*<([^>]+)>$/);
+  if (match) {
+    const name = match[1].trim().replace(/^["']|["']$/g, '') || null;
+    const email = match[2].trim().toLowerCase();
+    return { email, name: name || null };
+  }
+  return { email: value.trim().toLowerCase(), name: null };
+}
+
 /**
  * POST /api/webhooks/resend
- * 接收 Resend 的邮件 webhook
- * 
- * Resend 会在收到邮件时发送 webhook 到这个端点
+ * Resend Inbound 수신 메일 웹훅 (email.received)
  */
 export async function POST(req: NextRequest) {
   try {
-    // 验证 webhook 签名（如果 Resend 提供了签名验证）
     const signature = req.headers.get('resend-signature');
     const webhookSecret = process.env.RESEND_WEBHOOK_SECRET;
-    
     if (webhookSecret && signature) {
-      // 验证签名逻辑（根据 Resend 文档实现）
-      // 这里先跳过，实际使用时需要根据 Resend 的签名算法实现
+      // TODO: Resend signing secret 검증 구현
     }
 
     const body = await req.json();
-    
-    // Resend webhook 事件类型
-    const eventType = body.type; // 'email.received', 'email.delivered', etc.
-    
-    // 只处理收到的邮件事件
-    if (eventType === 'email.received' || body.event === 'email.received') {
-      const emailData = body.data || body;
-      
-      // 提取邮件信息
-      const messageId = emailData.id || emailData.message_id || crypto.randomUUID();
-      const fromEmail = emailData.from?.email || emailData.from_email || emailData.from;
-      const fromName = emailData.from?.name || emailData.from_name || null;
-      const toEmail = emailData.to?.[0] || emailData.to_email || emailData.to;
-      const subject = emailData.subject || '(No Subject)';
-      const textContent = emailData.text || emailData.text_content || '';
-      const htmlContent = emailData.html || emailData.html_content || '';
-      const headers = emailData.headers || {};
-      const attachments = emailData.attachments || [];
-      
-      // 只处理发送到 support@atockorea.com 的邮件
-      if (!toEmail || !toEmail.includes('support@atockorea.com')) {
-        return NextResponse.json({ 
-          message: 'Email not for support@atockorea.com, ignoring' 
-        }, { status: 200 });
-      }
-      
-      // 保存到数据库
-      const supabase = createServerClient();
-      
-      const { data, error } = await supabase
-        .from('received_emails')
-        .insert({
-          message_id: messageId,
-          from_email: fromEmail,
-          from_name: fromName,
-          to_email: toEmail,
-          subject: subject,
-          text_content: textContent,
-          html_content: htmlContent,
-          headers: headers,
-          attachments: attachments.map((att: any) => ({
-            filename: att.filename || att.name,
-            content_type: att.content_type || att.type,
-            size: att.size || 0,
-          })),
-          category: categorizeEmail(subject, textContent),
-        })
-        .select()
-        .single();
-      
-      if (error) {
-        console.error('Error saving email to database:', error);
-        return NextResponse.json(
-          { error: 'Failed to save email', details: error.message },
-          { status: 500 }
-        );
-      }
-      
-      return NextResponse.json({ 
-        success: true, 
-        message: 'Email received and saved',
-        email_id: data.id 
-      }, { status: 200 });
+    const eventType = body.type ?? body.event;
+
+    if (eventType !== 'email.received') {
+      return NextResponse.json({ message: 'Webhook received', event_type: eventType }, { status: 200 });
     }
-    
-    // 其他事件类型，简单确认
-    return NextResponse.json({ 
-      message: 'Webhook received',
-      event_type: eventType 
+
+    const emailData = body.data || body;
+
+    // Resend 문서: from = "Name <email@domain.com>", to = ["delivered@resend.dev"], email_id 사용
+    const messageId = emailData.email_id || emailData.message_id || emailData.id || crypto.randomUUID();
+    const fromParsed = parseEmailAddress(
+      typeof emailData.from === 'string' ? emailData.from : (emailData.from?.email || emailData.from_email)
+    );
+    const fromEmail = fromParsed.email || (emailData.from?.email ?? emailData.from_email ?? '');
+    const fromName = fromParsed.name ?? emailData.from?.name ?? emailData.from_name ?? null;
+
+    const toRaw = emailData.to?.[0] ?? emailData.to_email ?? emailData.to;
+    const toParsed = parseEmailAddress(typeof toRaw === 'string' ? toRaw : toRaw?.[0]);
+    const toEmail = toParsed.email || (Array.isArray(emailData.to) ? emailData.to[0] : toRaw) || '';
+
+    const subject = emailData.subject ?? '(No Subject)';
+    const textContent = emailData.text ?? emailData.text_content ?? '';
+    const htmlContent = emailData.html ?? emailData.html_content ?? '';
+    const attachments = emailData.attachments ?? [];
+
+    if (!toEmail || !toEmail.includes('support@atockorea.com')) {
+      return NextResponse.json({ message: 'Email not for support@atockorea.com, ignoring' }, { status: 200 });
+    }
+    const supabase = createServerClient();
+
+    const insertPayload = {
+      message_id: String(messageId),
+      from_email: fromEmail || 'unknown@unknown',
+      from_name: fromName,
+      to_email: toEmail,
+      subject,
+      text_content: textContent || null,
+      html_content: htmlContent || null,
+      attachments: attachments.map((att: any) => ({
+        filename: att.filename ?? att.name,
+        content_type: att.content_type ?? att.type,
+        size: att.size ?? 0,
+      })),
+      category: categorizeEmail(subject, textContent),
+    };
+
+    const { data, error } = await supabase
+      .from('received_emails')
+      .insert(insertPayload)
+      .select()
+      .single();
+
+    if (error) {
+      const isDuplicate = error.code === '23505';
+      if (isDuplicate) {
+        return NextResponse.json({ success: true, message: 'Email already stored' }, { status: 200 });
+      }
+      console.error('Error saving email to database:', error);
+      return NextResponse.json(
+        { error: 'Failed to save email', details: error.message },
+        { status: 500 }
+      );
+    }
+
+    const messageForInquiry = (textContent || htmlContent || '').slice(0, 50000);
+    await supabase.from('contact_inquiries').insert({
+      full_name: fromName || fromEmail?.split('@')[0] || 'Unknown',
+      email: fromEmail,
+      subject,
+      message: messageForInquiry,
+      privacy_consent: true,
+      status: 'new',
+      is_read: false,
+    }).then(({ error: inquiryErr }) => {
+      if (inquiryErr) console.error('Error saving to contact_inquiries:', inquiryErr);
+    });
+
+    return NextResponse.json({
+      success: true,
+      message: 'Email received and saved',
+      email_id: data.id,
     }, { status: 200 });
-    
   } catch (error: any) {
     console.error('Resend webhook error:', error);
     return NextResponse.json(

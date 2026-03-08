@@ -220,7 +220,7 @@ export default function AdminContactsPage() {
       <div>
         <h1 className="text-2xl font-bold text-gray-900">문의 관리</h1>
         <p className="text-sm text-gray-600 mt-1">
-          support@atockorea.com 으로 접수된 문의입니다. 사이트 Contact 폼 제출 건이 여기에 표시됩니다.
+          사이트 Contact 폼 제출 건과 support@atockorea.com 으로 수신된 메일이 여기에 표시됩니다. support@ 로 보낸 메일이 보이려면 Resend 수신 메일(MX) 및 웹훅이 설정되어 있어야 합니다.
         </p>
       </div>
 

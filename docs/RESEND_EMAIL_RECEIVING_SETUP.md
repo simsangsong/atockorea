@@ -122,8 +122,24 @@ CREATE INDEX IF NOT EXISTS idx_received_emails_is_read ON received_emails(is_rea
    - 查看是否有新邮件记录
 
 4. **检查管理界面**
-   - 访问 `/admin/emails`
+   - 访问 `/admin/emails`（사이드바 **받은 메일**）
    - 查看邮件列表
+
+### 웹훅만 실패할 때 (Resend에는 보이는데 Admin에는 안 보일 때)
+
+1. **Resend Dashboard → Webhooks → 해당 웹훅 → Logs**
+   - 웹훅 요청이 전송됐는지, **응답 코드**가 200인지 확인
+   - 4xx/5xx 이면 우리 서버에서 에러 발생 → Vercel 로그 확인
+
+2. **웹훅 URL**
+   - 반드시 **프로덕션 URL**: `https://atockorea.com/api/webhooks/resend`
+   - `localhost`는 Resend 서버가 접속할 수 없음
+
+3. **이벤트**
+   - Events에 **email.received** 가 선택돼 있는지 확인
+
+4. **재배포**
+   - 웹훅 코드 수정 후 Vercel에 배포가 완료됐는지 확인
 
 ---
 

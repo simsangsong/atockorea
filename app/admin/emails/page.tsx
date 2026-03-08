@@ -57,7 +57,7 @@ export default function AdminEmailsPage() {
         ...(filters.search && { search: filters.search }),
       });
 
-      const response = await fetch(`/api/admin/emails?${params}`);
+      const response = await fetch(`/api/admin/emails?${params}`, { credentials: 'include' });
       const data = await response.json();
 
       if (response.ok) {
@@ -85,6 +85,7 @@ export default function AdminEmailsPage() {
       try {
         await fetch(`/api/admin/emails`, {
           method: 'PATCH',
+          credentials: 'include',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             email_id: email.id,
@@ -105,6 +106,7 @@ export default function AdminEmailsPage() {
     try {
       await fetch(`/api/admin/emails`, {
         method: 'PATCH',
+        credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email_id: emailId,
@@ -130,6 +132,7 @@ export default function AdminEmailsPage() {
       setSendingReply(true);
       const response = await fetch(`/api/admin/emails/${selectedEmail.id}/reply`, {
         method: 'POST',
+        credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           subject: replySubject,
@@ -180,8 +183,8 @@ export default function AdminEmailsPage() {
       <Header />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Received Emails</h1>
-          <p className="text-gray-600">Manage emails sent to support@atockorea.com</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">받은 메일</h1>
+          <p className="text-gray-600">support@atockorea.com으로 수신된 메일입니다. Resend Inbound + 웹훅 설정 시 여기에 표시됩니다.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

@@ -268,6 +268,10 @@ export async function PATCH(request: NextRequest) {
 
         if (ppError) {
           console.error('Error updating pickup points:', ppError);
+          return NextResponse.json(
+            { error: 'Failed to save pickup locations', details: ppError.message },
+            { status: 400 }
+          );
         }
       }
     }

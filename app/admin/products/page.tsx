@@ -47,7 +47,21 @@ interface Tour {
   rating: number;
   review_count: number;
   created_at: string;
-  translations?: Record<string, { title?: string; description?: string; subtitle?: string }>;
+  translations?: Record<string, {
+    title?: string;
+    subtitle?: string;
+    description?: string;
+    tag?: string;
+    duration?: string;
+    pickup_info?: string;
+    notes?: string;
+    highlights?: string[];
+    includes?: string[];
+    excludes?: string[];
+    schedule?: Array<{ time: string; title: string; description: string; images?: string[] }>;
+    faqs?: Array<{ question: string; answer: string }>;
+    pickup_points?: Array<{ id: string; name: string }>;
+  }>;
   pickup_points?: Array<{
     id: string;
     name: string;
@@ -79,6 +93,8 @@ export default function ProductsPage() {
   const [saving, setSaving] = useState(false);
   const [activeTab, setActiveTab] = useState('basic');
   const [editLocale, setEditLocale] = useState<string>('en');
+  const [localeBulkJson, setLocaleBulkJson] = useState('');
+  const [localeBulkError, setLocaleBulkError] = useState<string | null>(null);
   const [currency, setCurrency] = useState('KRW');
   const [discountPercent, setDiscountPercent] = useState<number | null>(null);
   const [editingPickupIndex, setEditingPickupIndex] = useState<number | null>(null);
@@ -348,6 +364,14 @@ export default function ProductsPage() {
 
   const handleSave = async () => {
     if (!editingTour) return;
+
+    const points = formData.pickup_points || [];
+    const emptyNameIndex = points.findIndex((p) => !String(p.name || '').trim());
+    if (emptyNameIndex !== -1) {
+      alert(`픽업장소 ${emptyNameIndex + 1}번의 장소명을 입력하세요.`);
+      setActiveTab('pickup');
+      return;
+    }
 
     try {
       setSaving(true);
@@ -1745,14 +1769,14 @@ export default function ProductsPage() {
                 </div>
               )}
 
-              {/* Languages Tab (다국어) */}
+              {/* Languages Tab (다국어) - 기본정보·상세정보·일정·콘텐츠 전체 번역 */}
               {activeTab === 'languages' && (
                 <div className="space-y-6">
                   <section className="rounded-2xl border border-gray-200/80 bg-white p-6 shadow-sm">
                     <h3 className="text-sm font-semibold text-gray-900 mb-1 flex items-center gap-2">
                       <span className="text-indigo-600">🌐</span> 다국어 편집
                     </h3>
-                    <p className="text-xs text-gray-500 mb-4">Select a language and edit title, subtitle, and description for that locale. Used on the tour detail page when the user chooses that language.</p>
+                    <p className="text-xs text-gray-500 mb-4">언어를 선택하면 해당 언어의 제목·부제·설명·상세정보·일정·콘텐츠(하이라이트·포함·미포함·FAQ)를 모두 편집할 수 있습니다. 저장 시 선택한 언어 번역만 반영됩니다.</p>
                     <div className="flex flex-wrap gap-2 mb-6">
                       {SUPPORTED_LOCALES.map(({ code, label }) => (
                         <button
@@ -1771,55 +1795,269 @@ export default function ProductsPage() {
                     </div>
                     {(() => {
                       const tr = (formData.translations || {})[editLocale] || {};
+                      const setTr = (key: string, value: unknown) => setFormData({
+                        ...formData,
+                        translations: {
+                          ...(formData.translations || {}),
+                          [editLocale]: { ...tr, [key]: value },
+                        },
+                      });
+                      const arr = (key: 'highlights' | 'includes' | 'excludes') => tr[key] ?? formData[key] ?? [];
+                      const scheduleArr = tr.schedule ?? formData.schedule ?? [];
+                      const faqsArr = tr.faqs ?? formData.faqs ?? [];
+                      const pickupPointsList = formData.pickup_points || [];
+                      const trPickupPoints = tr.pickup_points ?? [];
+                      const getPickupTr = (pointId: string) => trPickupPoints.find((p: { id: string }) => p.id === pointId);
+                      const handleExportLocaleJson = () => {
+                        const obj = {
+                          title: tr.title ?? formData.title ?? '',
+                          tag: tr.tag ?? formData.tag ?? '',
+                          subtitle: tr.subtitle ?? formData.subtitle ?? '',
+                          duration: tr.duration ?? formData.duration ?? '',
+                          description: tr.description ?? formData.description ?? '',
+                          pickup_info: tr.pickup_info ?? formData.pickup_info ?? '',
+                          notes: tr.notes ?? formData.notes ?? '',
+                          pickup_points: pickupPointsList.map((p) => {
+                            const t = getPickupTr(p.id);
+                            return { id: p.id, name: t?.name ?? p.name };
+                          }),
+                          highlights: arr('highlights') as string[],
+                          includes: arr('includes') as string[],
+                          excludes: arr('excludes') as string[],
+                          schedule: scheduleArr.map((s: { time?: string; title?: string; description?: string }) => ({ time: s.time ?? '', title: s.title ?? '', description: s.description ?? '' })),
+                          faqs: faqsArr.map((f: { question?: string; answer?: string }) => ({ question: f.question ?? '', answer: f.answer ?? '' })),
+                        };
+                        setLocaleBulkJson(JSON.stringify(obj, null, 2));
+                        setLocaleBulkError(null);
+                      };
+                      const handleApplyLocaleJson = () => {
+                        setLocaleBulkError(null);
+                        if (!localeBulkJson.trim()) {
+                          setLocaleBulkError('JSON을 붙여넣은 뒤 적용하세요.');
+                          return;
+                        }
+                        let parsed: Record<string, unknown>;
+                        try {
+                          parsed = JSON.parse(localeBulkJson);
+                        } catch (e: unknown) {
+                          setLocaleBulkError(e instanceof Error ? e.message : 'JSON 형식이 올바르지 않습니다.');
+                          return;
+                        }
+                        const next: Record<string, unknown> = { ...tr };
+                        if (parsed.title !== undefined) next.title = typeof parsed.title === 'string' ? parsed.title : '';
+                        if (parsed.tag !== undefined) next.tag = typeof parsed.tag === 'string' ? parsed.tag : '';
+                        if (parsed.subtitle !== undefined) next.subtitle = typeof parsed.subtitle === 'string' ? parsed.subtitle : '';
+                        if (parsed.duration !== undefined) next.duration = typeof parsed.duration === 'string' ? parsed.duration : '';
+                        if (parsed.description !== undefined) next.description = typeof parsed.description === 'string' ? parsed.description : '';
+                        if (parsed.pickup_info !== undefined) next.pickup_info = typeof parsed.pickup_info === 'string' ? parsed.pickup_info : '';
+                        if (parsed.notes !== undefined) next.notes = typeof parsed.notes === 'string' ? parsed.notes : '';
+                        if (Array.isArray(parsed.highlights)) next.highlights = parsed.highlights.map((x) => (typeof x === 'string' ? x : String(x)));
+                        if (Array.isArray(parsed.includes)) next.includes = parsed.includes.map((x) => (typeof x === 'string' ? x : String(x)));
+                        if (Array.isArray(parsed.excludes)) next.excludes = parsed.excludes.map((x) => (typeof x === 'string' ? x : String(x)));
+                        if (Array.isArray(parsed.schedule)) next.schedule = parsed.schedule.map((s: unknown) => {
+                          const t = s && typeof s === 'object' ? s as Record<string, unknown> : {};
+                          return { time: String(t.time ?? ''), title: String(t.title ?? ''), description: String(t.description ?? ''), images: [] };
+                        });
+                        if (Array.isArray(parsed.faqs)) next.faqs = parsed.faqs.map((f: unknown) => {
+                          const o = f && typeof f === 'object' ? f as Record<string, unknown> : {};
+                          return { question: String(o.question ?? ''), answer: String(o.answer ?? '') };
+                        });
+                        if (Array.isArray(parsed.pickup_points)) next.pickup_points = parsed.pickup_points.map((p: unknown) => {
+                          const o = p && typeof p === 'object' ? p as Record<string, unknown> : {};
+                          return { id: String(o.id ?? ''), name: String(o.name ?? '') };
+                        });
+                        setFormData({
+                          ...formData,
+                          translations: {
+                            ...(formData.translations || {}),
+                            [editLocale]: next,
+                          },
+                        });
+                        setLocaleBulkError(null);
+                      };
                       return (
-                        <div className="space-y-4">
-                          <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1.5">Title ({editLocale})</label>
-                            <input
-                              type="text"
-                              value={tr.title ?? ''}
-                              onChange={(e) => setFormData({
-                                ...formData,
-                                translations: {
-                                  ...(formData.translations || {}),
-                                  [editLocale]: { ...tr, title: e.target.value || undefined },
-                                },
-                              })}
-                              placeholder={formData.title || 'Default title'}
-                              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1.5">Subtitle ({editLocale})</label>
-                            <input
-                              type="text"
-                              value={tr.subtitle ?? ''}
-                              onChange={(e) => setFormData({
-                                ...formData,
-                                translations: {
-                                  ...(formData.translations || {}),
-                                  [editLocale]: { ...tr, subtitle: e.target.value || undefined },
-                                },
-                              })}
-                              placeholder={formData.subtitle || 'Optional subtitle'}
-                              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1.5">Description ({editLocale})</label>
+                        <div className="space-y-8">
+                          {/* 한 번에 JSON 내보내기 / 가져오기 */}
+                          <div className="rounded-xl border-2 border-dashed border-indigo-200 bg-indigo-50/50 p-4">
+                            <h4 className="text-sm font-semibold text-gray-900 mb-2">한 번에 복사·붙여넣기 (JSON)</h4>
+                            <p className="text-xs text-gray-600 mb-3">현재 선택한 언어를 JSON으로 내보낸 뒤 LLM 등으로 번역하고, 번역된 JSON을 붙여넣어 적용하면 모든 필드가 한 번에 채워집니다.</p>
+                            <div className="flex flex-wrap gap-2 mb-2">
+                              <button type="button" onClick={handleExportLocaleJson} className="px-3 py-2 bg-white border border-indigo-300 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-50">
+                                현재 언어 → JSON으로 내보내기
+                              </button>
+                              <button type="button" onClick={handleApplyLocaleJson} className="px-3 py-2 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700">
+                                아래 JSON 적용
+                              </button>
+                            </div>
+                            {localeBulkError && <p className="text-sm text-red-600 mb-2">{localeBulkError}</p>}
                             <textarea
-                              value={tr.description ?? ''}
-                              onChange={(e) => setFormData({
-                                ...formData,
-                                translations: {
-                                  ...(formData.translations || {}),
-                                  [editLocale]: { ...tr, description: e.target.value || undefined },
-                                },
-                              })}
-                              rows={6}
-                              placeholder={formData.description ? formData.description.slice(0, 80) + '...' : 'Default description'}
-                              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500"
+                              value={localeBulkJson}
+                              onChange={(e) => { setLocaleBulkJson(e.target.value); setLocaleBulkError(null); }}
+                              placeholder='{"title":"...","pickup_info":"...","notes":"...","pickup_points":[{"id":"...","name":"..."}],"highlights":["..."],"schedule":[...],"faqs":[...]}'
+                              rows={12}
+                              className="w-full px-3 py-2 border border-gray-300 rounded-lg font-mono text-xs focus:ring-2 focus:ring-indigo-500"
                             />
+                          </div>
+                          {/* 기본 정보 */}
+                          <div>
+                            <h4 className="text-xs font-semibold text-gray-600 mb-3 uppercase">기본 정보 ({editLocale})</h4>
+                            <div className="grid grid-cols-2 gap-4">
+                              <div className="col-span-2">
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Title</label>
+                                <input type="text" value={tr.title ?? formData.title ?? ''} onChange={(e) => setTr('title', e.target.value || undefined)} placeholder={formData.title || 'Default title'} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500" />
+                              </div>
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Tag</label>
+                                <input type="text" value={tr.tag ?? formData.tag ?? ''} onChange={(e) => setTr('tag', e.target.value || undefined)} placeholder={formData.tag || ''} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500" />
+                              </div>
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Subtitle</label>
+                                <input type="text" value={tr.subtitle ?? formData.subtitle ?? ''} onChange={(e) => setTr('subtitle', e.target.value || undefined)} placeholder={formData.subtitle || ''} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500" />
+                              </div>
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Duration</label>
+                                <input type="text" value={tr.duration ?? formData.duration ?? ''} onChange={(e) => setTr('duration', e.target.value || undefined)} placeholder={formData.duration || 'e.g. 9 hours'} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500" />
+                              </div>
+                              <div className="col-span-2">
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                                <textarea value={tr.description ?? formData.description ?? ''} onChange={(e) => setTr('description', e.target.value || undefined)} rows={5} placeholder={formData.description ? formData.description.slice(0, 80) + '...' : ''} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500" />
+                              </div>
+                            </div>
+                          </div>
+                          {/* 상세 정보 */}
+                          <div>
+                            <h4 className="text-xs font-semibold text-gray-600 mb-3 uppercase">상세 정보 – Pickup Info / Notes ({editLocale})</h4>
+                            <div className="space-y-4">
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Pickup Info</label>
+                                <textarea value={tr.pickup_info ?? formData.pickup_info ?? ''} onChange={(e) => setTr('pickup_info', e.target.value || undefined)} rows={4} placeholder={formData.pickup_info ? formData.pickup_info.slice(0, 60) + '...' : 'Pickup information...'} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500" />
+                              </div>
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Notes / Important Information</label>
+                                <textarea value={tr.notes ?? formData.notes ?? ''} onChange={(e) => setTr('notes', e.target.value || undefined)} rows={5} placeholder={formData.notes ? formData.notes.slice(0, 60) + '...' : 'Important information...'} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500" />
+                              </div>
+                            </div>
+                          </div>
+                          {/* 픽업장소 (장소명만) */}
+                          <div>
+                            <h4 className="text-xs font-semibold text-gray-600 mb-3 uppercase">픽업장소 – 장소명 ({editLocale})</h4>
+                            <p className="text-xs text-gray-500 mb-3">픽업장소 탭에서 추가한 각 장소의 이름만 이 언어로 입력하세요. JSON 내보내기/적용에도 포함됩니다.</p>
+                            <div className="space-y-4">
+                              {pickupPointsList.length === 0 ? (
+                                <p className="text-sm text-gray-500">등록된 픽업장소가 없습니다. 상단 픽업장소 탭에서 먼저 추가하세요.</p>
+                              ) : pickupPointsList.map((point) => {
+                                const t = getPickupTr(point.id);
+                                const updateName = (value: string) => {
+                                  const existing = trPickupPoints.find((p: { id: string }) => p.id === point.id);
+                                  const next = existing
+                                    ? trPickupPoints.map((p: { id: string; name: string }) => p.id === point.id ? { ...p, name: value } : p)
+                                    : [...trPickupPoints, { id: point.id, name: value }];
+                                  setTr('pickup_points', next);
+                                };
+                                return (
+                                  <div key={point.id} className="border border-gray-200 rounded-xl p-4 bg-gray-50/50">
+                                    <p className="text-xs text-gray-500 mb-2">기본: {point.name}</p>
+                                    <div>
+                                      <label className="block text-xs font-medium text-gray-700 mb-1">장소명</label>
+                                      <input
+                                        type="text"
+                                        value={t?.name ?? point.name}
+                                        onChange={(e) => updateName(e.target.value)}
+                                        placeholder={point.name}
+                                        className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500"
+                                      />
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                          {/* 일정 */}
+                          <div>
+                            <h4 className="text-xs font-semibold text-gray-600 mb-3 uppercase">일정 Schedule ({editLocale})</h4>
+                            <div className="space-y-3">
+                              {scheduleArr.map((item: { time?: string; title?: string; description?: string; images?: string[] }, index: number) => (
+                                <div key={index} className="border border-gray-200 rounded-xl p-4 bg-gray-50/50">
+                                  <div className="grid grid-cols-3 gap-3 mb-2">
+                                    <div>
+                                      <label className="block text-xs font-medium text-gray-600 mb-1">Time</label>
+                                      <input type="text" value={item.time || ''} onChange={(e) => { const u = [...scheduleArr]; u[index] = { ...u[index], time: e.target.value }; setTr('schedule', u); }} placeholder="09:00" className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
+                                    </div>
+                                    <div className="col-span-2">
+                                      <label className="block text-xs font-medium text-gray-600 mb-1">Title</label>
+                                      <input type="text" value={item.title || ''} onChange={(e) => { const u = [...scheduleArr]; u[index] = { ...u[index], title: e.target.value }; setTr('schedule', u); }} placeholder="Hotel Pickup" className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
+                                    </div>
+                                  </div>
+                                  <div className="mb-2">
+                                    <label className="block text-xs font-medium text-gray-600 mb-1">Description</label>
+                                    <textarea value={item.description || ''} onChange={(e) => { const u = [...scheduleArr]; u[index] = { ...u[index], description: e.target.value }; setTr('schedule', u); }} rows={2} className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
+                                  </div>
+                                  <button type="button" onClick={() => setTr('schedule', scheduleArr.filter((_: unknown, i: number) => i !== index))} className="text-red-600 text-sm hover:text-red-800">Remove</button>
+                                </div>
+                              ))}
+                              <button type="button" onClick={() => setTr('schedule', [...scheduleArr, { time: '', title: '', description: '', images: [] }])} className="text-indigo-600 text-sm font-medium hover:text-indigo-800">+ Add Schedule Item</button>
+                            </div>
+                          </div>
+                          {/* 콘텐츠: Highlights, Includes, Excludes, FAQs */}
+                          <div>
+                            <h4 className="text-xs font-semibold text-gray-600 mb-3 uppercase">콘텐츠 – Highlights / Includes / Excludes / FAQs ({editLocale})</h4>
+                            <div className="space-y-4">
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-2">Highlights</label>
+                                <div className="space-y-2">
+                                  {(arr('highlights') as string[]).map((highlight: string, index: number) => (
+                                    <div key={index} className="flex gap-2">
+                                      <input type="text" value={highlight} onChange={(e) => { const u = [...(arr('highlights') as string[])]; u[index] = e.target.value; setTr('highlights', u); }} className="flex-1 px-3 py-2 border border-gray-300 rounded-lg" />
+                                      <button type="button" onClick={() => setTr('highlights', (arr('highlights') as string[]).filter((_: string, i: number) => i !== index))} className="px-3 py-2 text-red-600 hover:text-red-800 text-sm">Remove</button>
+                                    </div>
+                                  ))}
+                                  <button type="button" onClick={() => setTr('highlights', [...(arr('highlights') as string[]), ''])} className="text-indigo-600 text-sm hover:text-indigo-800">+ Add Highlight</button>
+                                </div>
+                              </div>
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-2">Includes</label>
+                                <div className="space-y-2">
+                                  {(arr('includes') as string[]).map((item: string, index: number) => (
+                                    <div key={index} className="flex gap-2">
+                                      <input type="text" value={item} onChange={(e) => { const u = [...(arr('includes') as string[])]; u[index] = e.target.value; setTr('includes', u); }} className="flex-1 px-3 py-2 border border-gray-300 rounded-lg" />
+                                      <button type="button" onClick={() => setTr('includes', (arr('includes') as string[]).filter((_: string, i: number) => i !== index))} className="px-3 py-2 text-red-600 hover:text-red-800 text-sm">Remove</button>
+                                    </div>
+                                  ))}
+                                  <button type="button" onClick={() => setTr('includes', [...(arr('includes') as string[]), ''])} className="text-indigo-600 text-sm hover:text-indigo-800">+ Add Include</button>
+                                </div>
+                              </div>
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-2">Excludes</label>
+                                <div className="space-y-2">
+                                  {(arr('excludes') as string[]).map((item: string, index: number) => (
+                                    <div key={index} className="flex gap-2">
+                                      <input type="text" value={item} onChange={(e) => { const u = [...(arr('excludes') as string[])]; u[index] = e.target.value; setTr('excludes', u); }} className="flex-1 px-3 py-2 border border-gray-300 rounded-lg" />
+                                      <button type="button" onClick={() => setTr('excludes', (arr('excludes') as string[]).filter((_: string, i: number) => i !== index))} className="px-3 py-2 text-red-600 hover:text-red-800 text-sm">Remove</button>
+                                    </div>
+                                  ))}
+                                  <button type="button" onClick={() => setTr('excludes', [...(arr('excludes') as string[]), ''])} className="text-indigo-600 text-sm hover:text-indigo-800">+ Add Exclude</button>
+                                </div>
+                              </div>
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-2">FAQs</label>
+                                <div className="space-y-4">
+                                  {faqsArr.map((item: { question?: string; answer?: string }, index: number) => (
+                                    <div key={index} className="border border-gray-200 rounded-lg p-4">
+                                      <div className="mb-2">
+                                        <label className="block text-xs font-medium text-gray-600 mb-1">Question</label>
+                                        <input type="text" value={item.question || ''} onChange={(e) => { const u = [...faqsArr]; u[index] = { ...u[index], question: e.target.value }; setTr('faqs', u); }} className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
+                                      </div>
+                                      <div className="mb-2">
+                                        <label className="block text-xs font-medium text-gray-600 mb-1">Answer</label>
+                                        <textarea value={item.answer || ''} onChange={(e) => { const u = [...faqsArr]; u[index] = { ...u[index], answer: e.target.value }; setTr('faqs', u); }} rows={2} className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
+                                      </div>
+                                      <button type="button" onClick={() => setTr('faqs', faqsArr.filter((_: unknown, i: number) => i !== index))} className="text-red-600 text-sm hover:text-red-800">Remove FAQ</button>
+                                    </div>
+                                  ))}
+                                  <button type="button" onClick={() => setTr('faqs', [...faqsArr, { question: '', answer: '' }])} className="text-indigo-600 text-sm hover:text-indigo-800">+ Add FAQ</button>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       );
