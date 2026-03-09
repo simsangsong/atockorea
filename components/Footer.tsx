@@ -7,7 +7,7 @@ export default function Footer() {
   
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-300 border-t border-gray-700/50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 pb-20 md:pb-6">
         {/* Company Info */}
         <div className="mb-6">
           <h3 className="text-white font-bold text-lg mb-3">{t('home.footer.company')}</h3>
@@ -122,28 +122,28 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Stripe: 로고 위, powered by 뱃지 아래 (작은 사이즈) */}
-        <div className="flex flex-wrap items-center justify-center py-4 border-t border-gray-800">
+        {/* Stripe: 로고 위, powered by 뱃지 아래 (모바일에서도 항상 노출) */}
+        <div className="flex flex-wrap items-center justify-center py-4 min-h-[72px] border-t border-gray-800 w-full">
           <a
             href="https://stripe.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex flex-col items-center gap-1.5 opacity-90 hover:opacity-100 transition-opacity"
+            className="inline-flex flex-col items-center gap-2 opacity-90 hover:opacity-100 transition-opacity"
             aria-label="Powered by Stripe"
           >
             <img
               src="/images/stripe/stripe-wordmark.svg"
               alt="Stripe"
-              width={72}
-              height={30}
-              className="h-7 w-auto object-contain"
+              width={80}
+              height={32}
+              className="h-7 sm:h-8 w-auto max-w-[72px] sm:max-w-none object-contain"
             />
             <img
               src="/images/stripe/powered-by-stripe.svg"
               alt="Powered by Stripe"
-              width={120}
-              height={26}
-              className="h-5 w-auto object-contain"
+              width={128}
+              height={28}
+              className="h-5 sm:h-6 w-auto max-w-[120px] sm:max-w-none object-contain"
             />
           </a>
         </div>
