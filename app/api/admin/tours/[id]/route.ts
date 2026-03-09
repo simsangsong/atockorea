@@ -153,6 +153,41 @@ export async function PATCH(
       );
     }
 
+    // Tour Mode: replace tour_guide_spots if provided
+    if (Array.isArray(body.tour_guide_spots)) {
+      await supabase.from('tour_guide_spots').delete().eq('tour_id', tourId);
+      if (body.tour_guide_spots.length > 0) {
+        const spots = body.tour_guide_spots.map((s: Record<string, unknown>, i: number) => ({
+          tour_id: tourId,
+          title: s.title ?? '',
+          description: s.description ?? null,
+          audio_url: s.audio_url ?? null,
+          latitude: Number(s.latitude),
+          longitude: Number(s.longitude),
+          trigger_radius_m: Number(s.trigger_radius_m) || 80,
+          sort_order: Number(s.sort_order) ?? i,
+        }));
+        await supabase.from('tour_guide_spots').insert(spots);
+      }
+    }
+
+    // Tour Mode: replace tour_facilities if provided
+    if (Array.isArray(body.tour_facilities)) {
+      await supabase.from('tour_facilities').delete().eq('tour_id', tourId);
+      if (body.tour_facilities.length > 0) {
+        const facilities = body.tour_facilities.map((f: Record<string, unknown>, i: number) => ({
+          tour_id: tourId,
+          type: f.type ?? 'other',
+          name: f.name ?? '',
+          latitude: Number(f.latitude),
+          longitude: Number(f.longitude),
+          details: f.details ?? {},
+          sort_order: Number(f.sort_order) ?? i,
+        }));
+        await supabase.from('tour_facilities').insert(facilities);
+      }
+    }
+
     return NextResponse.json(
       { data: updatedTour, message: 'Tour updated successfully' },
       { status: 200 }

@@ -111,7 +111,7 @@ export default function BookingHistoryPage() {
   return (
     <div className="space-y-6">
       <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">Booking History</h1>
+        <h1 className="text-xl font-medium text-gray-900 mb-2">Booking History</h1>
         <p className="text-gray-600">View your past bookings</p>
       </div>
 
@@ -143,7 +143,7 @@ export default function BookingHistoryPage() {
                       <div className="flex-1 p-6">
                         <div className="flex items-start justify-between mb-4">
                           <div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">
+                            <h3 className="text-base font-medium text-gray-900 mb-2">
                               {booking.tours?.title || 'Tour'}
                             </h3>
                             <p className="text-sm text-gray-600 flex items-center gap-1.5">

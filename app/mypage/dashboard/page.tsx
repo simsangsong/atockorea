@@ -143,11 +143,11 @@ export default function DashboardPage() {
 
   if (loading) {
     return (
-      <div className="space-y-8">
-        <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-8 md:p-10">
+      <div className="space-y-6">
+        <div className="bg-white/90 backdrop-blur-xl rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-gray-200/50 p-8">
           <div className="flex items-center justify-center">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-            <p className="ml-3 text-gray-600">Loading dashboard...</p>
+            <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-indigo-500"></div>
+            <p className="ml-3 text-sm text-gray-500">Loading dashboard...</p>
           </div>
         </div>
       </div>
@@ -155,63 +155,62 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       {/* Welcome Section */}
-      <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-8 md:p-10 transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
-        <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3 tracking-tight">
-          Welcome back, {userName}!
+      <div className="bg-white/90 backdrop-blur-xl rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-gray-200/50 p-6 md:p-8 transition-all">
+        <h1 className="text-xl md:text-2xl font-medium text-gray-900 mb-2 tracking-tight">
+          Welcome back, {userName}
         </h1>
-        <p className="text-[15px] text-gray-600 font-medium">Here's what's happening with your bookings</p>
+        <p className="text-sm text-gray-500">Here's what's happening with your bookings</p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Link
           href="/mypage/upcoming"
           onClick={(e) => handleNavigation(e, '/mypage/upcoming')}
-          className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-7 hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-all duration-300 cursor-pointer group"
+          className="bg-white/90 backdrop-blur-xl rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-gray-200/50 p-5 hover:border-gray-200 transition-all duration-200 cursor-pointer group"
         >
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-base font-medium text-gray-600 tracking-wide">Upcoming Tours</span>
-            <div className="w-7 h-7 bg-gradient-to-br from-blue-500 to-orange-500 rounded-lg flex items-center justify-center text-white shadow-[0_4px_12px_rgba(59,130,246,0.3)] group-hover:scale-110 transition-transform duration-300">
-              <div className="w-4 h-4">
-                <CalendarIcon className="w-4 h-4" />
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-sm font-medium text-gray-500">Upcoming Tours</span>
+            <div className="w-6 h-6 bg-indigo-500/10 rounded-lg flex items-center justify-center text-indigo-600 group-hover:bg-indigo-500/20 transition-colors">
+              <div className="w-3.5 h-3.5">
+                <CalendarIcon className="w-3.5 h-3.5" />
               </div>
             </div>
           </div>
-          <p className="text-4xl font-bold text-gray-900 tracking-tight">{upcomingTours}</p>
+          <p className="text-2xl font-medium text-gray-900 tracking-tight">{upcomingTours}</p>
         </Link>
         <Link
           href="/mypage/mybookings"
           onClick={(e) => handleNavigation(e, '/mypage/mybookings')}
-          className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-7 hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-all duration-300 cursor-pointer group"
+          className="bg-white/90 backdrop-blur-xl rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-gray-200/50 p-5 hover:border-gray-200 transition-all duration-200 cursor-pointer group"
         >
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-base font-medium text-gray-600 tracking-wide">Total Bookings</span>
-            <div className="w-7 h-7 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center text-white shadow-[0_4px_12px_rgba(16,185,129,0.3)] group-hover:scale-110 transition-transform duration-300">
-              <div className="w-4 h-4">
-                <HistoryIcon className="w-4 h-4" />
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-sm font-medium text-gray-500">Total Bookings</span>
+            <div className="w-6 h-6 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-600 group-hover:bg-emerald-500/20 transition-colors">
+              <div className="w-3.5 h-3.5">
+                <HistoryIcon className="w-3.5 h-3.5" />
               </div>
             </div>
           </div>
-          <p className="text-4xl font-bold text-gray-900 tracking-tight">{totalBookings}</p>
+          <p className="text-2xl font-medium text-gray-900 tracking-tight">{totalBookings}</p>
         </Link>
-        {/* Reviews 카드 제거 (리뷰는 My Bookings 화면에서 진입) */}
       </div>
 
       {/* Recent Activity */}
-      <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-8 transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-semibold text-gray-900 tracking-tight">Recent Activity</h2>
+      <div className="bg-white/90 backdrop-blur-xl rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-gray-200/50 p-6 transition-all">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-medium text-gray-900 tracking-tight">Recent Activity</h2>
           <Link
             href="/mypage/mybookings"
             onClick={(e) => handleNavigation(e, '/mypage/mybookings')}
-            className="text-sm text-indigo-600 hover:text-indigo-700 font-medium tracking-wide transition-colors"
+            className="text-sm text-indigo-600 hover:text-indigo-700 font-medium transition-colors"
           >
             View All →
           </Link>
         </div>
-        <div className="space-y-3">
+        <div className="space-y-2">
           {recentActivity.length > 0 ? (
             recentActivity.map((activity, idx) => (
               <Link
@@ -224,23 +223,23 @@ export default function DashboardPage() {
                     router.push(`/tour/${activity.tourId}`);
                   }
                 }}
-                className="flex items-center gap-4 p-5 bg-gradient-to-r from-gray-50/80 to-gray-50/40 rounded-xl hover:from-gray-100/80 hover:to-gray-100/40 transition-all duration-200 cursor-pointer border border-gray-200/40 hover:border-gray-300/60 hover:shadow-sm"
+                className="flex items-center gap-3 p-4 bg-gray-50/50 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer border border-transparent hover:border-gray-100"
               >
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-white shadow-[0_4px_12px_rgba(59,130,246,0.25)]">
-                  <div className="w-4 h-4">
-                    <CheckIcon className="w-4 h-4" />
+                <div className="w-7 h-7 bg-indigo-500/10 rounded-md flex items-center justify-center text-indigo-600">
+                  <div className="w-3.5 h-3.5">
+                    <CheckIcon className="w-3.5 h-3.5" />
                   </div>
                 </div>
-                <div className="flex-1">
-                  <p className="font-semibold text-gray-900 text-base mb-1">
+                <div className="flex-1 min-w-0">
+                  <p className="font-medium text-gray-900 text-sm mb-0.5 truncate">
                     {activity.action} {activity.tour}
                   </p>
-                  <p className="text-sm text-gray-500 font-medium">{activity.date}</p>
+                  <p className="text-xs text-gray-500">{activity.date}</p>
                 </div>
               </Link>
             ))
           ) : (
-            <p className="text-gray-500 text-center py-4">No recent activity</p>
+            <p className="text-sm text-gray-500 text-center py-6">No recent activity</p>
           )}
         </div>
       </div>

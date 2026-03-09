@@ -70,7 +70,7 @@ export default function ReviewsPage() {
     return (
       <div className="space-y-6">
         <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">My Reviews</h1>
+          <h1 className="text-xl font-medium text-gray-900 mb-2">My Reviews</h1>
           <p className="text-gray-600">Loading...</p>
         </div>
       </div>
@@ -81,7 +81,7 @@ export default function ReviewsPage() {
     return (
       <div className="space-y-6">
         <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">My Reviews</h1>
+          <h1 className="text-xl font-medium text-gray-900 mb-2">My Reviews</h1>
           <p className="text-red-600">Error: {error}</p>
         </div>
       </div>
@@ -91,14 +91,14 @@ export default function ReviewsPage() {
   return (
     <div className="space-y-6">
       <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">My Reviews</h1>
+        <h1 className="text-xl font-medium text-gray-900 mb-2">My Reviews</h1>
         <p className="text-gray-600">
           You can write new reviews from your completed bookings. Existing reviews are shown below and cannot be edited or deleted.
         </p>
       </div>
 
       <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-        <h2 className="text-xl font-bold text-gray-900 mb-4">Your Reviews</h2>
+        <h2 className="text-lg font-medium text-gray-900 mb-4">Your Reviews</h2>
         {reviews.length === 0 ? (
           <p className="text-gray-500 text-center py-4">You have not written any reviews yet.</p>
         ) : (
@@ -109,7 +109,7 @@ export default function ReviewsPage() {
                   <div className="flex-1">
                     <Link
                       href={`/tour/${review.tour_id}`}
-                      className="font-semibold text-gray-900 hover:text-indigo-600 transition-colors"
+                      className="font-medium text-gray-900 hover:text-indigo-600 transition-colors"
                     >
                       {review.tours?.title || 'Tour'}
                     </Link>
@@ -124,7 +124,7 @@ export default function ReviewsPage() {
                       ))}
                     </div>
                     {review.title && (
-                      <h3 className="font-semibold text-gray-800 mb-1">{review.title}</h3>
+                      <h3 className="font-medium text-gray-800 mb-1">{review.title}</h3>
                     )}
                     {review.comment && (
                       <p className="text-gray-600 mb-2">{review.comment}</p>

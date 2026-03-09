@@ -46,11 +46,11 @@ export default function MyPage() {
       {/* Mobile User Profile */}
       <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-6">
         <div className="flex items-center gap-4">
-          <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 via-blue-600 to-orange-500 flex items-center justify-center text-white text-xl font-bold shadow-[0_8px_20px_rgba(59,130,246,0.3)]">
+          <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 via-blue-600 to-orange-500 flex items-center justify-center text-white text-lg font-medium shadow-[0_8px_20px_rgba(59,130,246,0.3)]">
             MP
           </div>
           <div className="flex-1">
-            <h2 className="text-lg font-semibold text-gray-900">My Page</h2>
+            <h2 className="text-base font-medium text-gray-900">My Page</h2>
             <p className="text-sm text-gray-500">Select an option below</p>
           </div>
         </div>

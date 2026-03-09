@@ -261,7 +261,12 @@
     "forbidden": "Forbidden",
     "pleaseEnter": "Please enter",
     "pleaseSelect": "Please select",
-    "invalidPhone": "Phone number can only contain digits and +"
+    "invalidPhone": "Phone number can only contain digits and +",
+    "invalidName": "Name must be at least 2 characters",
+    "nameTooLong": "Name must be at most 100 characters",
+    "phoneTooShort": "Phone must have at least 8 digits",
+    "phoneTooLong": "Phone must have at most 15 digits",
+    "emailTooLong": "Email is too long"
   },
   "home": {
     "hero": {

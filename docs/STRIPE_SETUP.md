@@ -2,7 +2,11 @@
 
 ## 📋 개요
 
-Stripe를 사용한 결제 시스템이 구현되었습니다. 이 가이드는 Stripe 설정 및 사용 방법을 설명합니다.
+**모든 결제는 Stripe로만 진행됩니다.** (웹·앱 동일)
+
+- **웹**: 투어 예약 시 `POST /api/bookings` → `POST /api/stripe/checkout` → Stripe 결제 페이지 리다이렉트 → 결제 완료 시 웹훅으로 예약 확정·이메일 발송.
+- **앱**: 동일한 API 사용. 예약 생성 후 Stripe URL을 브라우저로 열어 결제 완료.
+- PayPal·Paddle 등 다른 결제 수단은 사용하지 않습니다. (관련 API는 레거시/미사용 가능)
 
 ## 🔑 환경 변수 설정
 
@@ -135,6 +139,12 @@ Stripe Checkout 페이지에서 결제가 완료되면:
 2. Stripe가 웹훅으로 `checkout.session.completed` 이벤트 전송
 3. 웹훅 핸들러가 예약 상태를 `confirmed`, `paid`로 업데이트
 4. 확인 이메일 발송
+
+### 4. 웹·앱 공통
+
+- **웹** `/tour/[id]/checkout`: 고객 정보 입력 → 예약 생성 → Stripe 결제 리다이렉트.
+- **앱** `mobile/app/tour/[id]/checkout.tsx`: 동일하게 `POST /api/bookings` → `POST /api/stripe/checkout` → Stripe URL을 브라우저로 오픈.
+- **통합 진입** `/checkout`: 쿼리(tourSlug/tourId, date, guests) 또는 장바구니 첫 상품으로 `/tour/[id]/checkout`으로 보내 동일 Stripe 플로우로 결제.
 
 ## 🔄 API 엔드포인트
 

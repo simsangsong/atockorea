@@ -168,7 +168,7 @@ export default function WishlistPage() {
   return (
     <div className="space-y-6">
       <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">My Wishlist</h1>
+        <h1 className="text-xl font-medium text-gray-900 mb-2">My Wishlist</h1>
         <p className="text-gray-600">
           {wishlistItems.length} {wishlistItems.length === 1 ? 'tour' : 'tours'} saved
         </p>
@@ -177,11 +177,11 @@ export default function WishlistPage() {
       {wishlistItems.length === 0 ? (
         <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-12 text-center">
           <HeartSolidIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-          <h2 className="text-xl font-bold text-gray-900 mb-2">{t('wishlist.empty')}</h2>
+          <h2 className="text-lg font-medium text-gray-900 mb-2">{t('wishlist.empty')}</h2>
           <p className="text-gray-600 mb-6">{t('wishlist.emptyDescription')}</p>
           <Link
             href="/tours"
-            className="inline-block px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-semibold"
+            className="inline-block px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium"
           >
             {t('wishlist.browseTours')}
           </Link>
@@ -221,7 +221,7 @@ export default function WishlistPage() {
                 </div>
                 <div className="p-4">
                   <Link href={`/tour/${item.tour_id}`}>
-                    <h3 className="font-bold text-gray-900 mb-2 hover:text-indigo-600 transition-colors line-clamp-2">
+                    <h3 className="font-medium text-gray-900 mb-2 hover:text-indigo-600 transition-colors line-clamp-2">
                       {item.tours?.title || 'Tour'}
                     </h3>
                   </Link>
@@ -265,7 +265,7 @@ export default function WishlistPage() {
                           ${originalPrice}
                         </span>
                       )}
-                      <span className="text-xl font-bold text-indigo-600">
+                      <span className="text-lg font-medium text-indigo-600">
                         ${getPrice(item)}
                       </span>
                       <span className="text-xs text-gray-500">

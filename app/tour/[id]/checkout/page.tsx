@@ -83,19 +83,37 @@ export default function CheckoutPage() {
 
   const validateForm = (): boolean => {
     const newErrors: Partial<Record<keyof CustomerInfo, string>> = {};
-    
-    if (!customerInfo.name.trim()) {
+    const name = customerInfo.name.trim();
+    const phone = customerInfo.phone.trim();
+    const email = customerInfo.email.trim();
+
+    if (!name) {
       newErrors.name = t('errors.pleaseEnter') + ' ' + t('booking.fullName').toLowerCase();
+    } else if (name.length < 2) {
+      newErrors.name = t('errors.invalidName') || 'Name must be at least 2 characters';
+    } else if (name.length > 100) {
+      newErrors.name = t('errors.nameTooLong') || 'Name must be at most 100 characters';
     }
-    if (!customerInfo.phone.trim()) {
+
+    if (!phone) {
       newErrors.phone = t('errors.pleaseEnter') + ' ' + t('booking.phone').toLowerCase();
-    } else if (!/^[0-9+]+$/.test(customerInfo.phone.trim())) {
-      newErrors.phone = t('errors.invalidPhone');
+    } else {
+      const digitsOnly = phone.replace(/\D/g, '');
+      if (digitsOnly.length < 8) {
+        newErrors.phone = t('errors.phoneTooShort') || 'Phone must have at least 8 digits';
+      } else if (digitsOnly.length > 15) {
+        newErrors.phone = t('errors.phoneTooLong') || 'Phone must have at most 15 digits';
+      } else if (!/^[0-9+\s\-()]+$/.test(phone)) {
+        newErrors.phone = t('errors.invalidPhone');
+      }
     }
-    if (!customerInfo.email.trim()) {
+
+    if (!email) {
       newErrors.email = t('errors.pleaseEnter') + ' ' + t('booking.email').toLowerCase();
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customerInfo.email)) {
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       newErrors.email = t('errors.invalidEmail');
+    } else if (email.length > 254) {
+      newErrors.email = t('errors.emailTooLong') || 'Email is too long';
     }
     if (!customerInfo.preferredChatApp.trim()) {
       newErrors.preferredChatApp = t('errors.pleaseSelect') + ' ' + t('tour.preferredChatApp').toLowerCase();

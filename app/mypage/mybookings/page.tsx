@@ -182,14 +182,14 @@ export default function MyBookingsPage() {
   return (
     <div className="space-y-6">
       <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">My Bookings</h1>
+        <h1 className="text-xl font-medium text-gray-900 mb-2">My Bookings</h1>
         <p className="text-gray-600">Manage all your tour bookings</p>
       </div>
 
       {/* Upcoming Bookings */}
       {upcomingBookings.length > 0 && (
         <div>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Upcoming Tours</h2>
+          <h2 className="text-lg font-medium text-gray-900 mb-4">Upcoming Tours</h2>
           <div className="space-y-4">
             {upcomingBookings.map((booking) => (
               <BookingCard
@@ -209,7 +209,7 @@ export default function MyBookingsPage() {
       {/* Completed Bookings */}
       {completedBookings.length > 0 && (
         <div>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Completed Tours</h2>
+          <h2 className="text-lg font-medium text-gray-900 mb-4">Completed Tours</h2>
           <div className="space-y-4">
             {completedBookings.map((booking) => (
               <BookingCard
@@ -229,7 +229,7 @@ export default function MyBookingsPage() {
       {/* Cancelled Bookings */}
       {cancelledBookings.length > 0 && (
         <div>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Cancelled Tours</h2>
+          <h2 className="text-lg font-medium text-gray-900 mb-4">Cancelled Tours</h2>
           <div className="space-y-4">
             {cancelledBookings.map((booking) => (
               <BookingCard
@@ -310,7 +310,7 @@ function BookingCard({
                 href={`/tour/${booking.tour_id}`}
                 onClick={(e) => handleLinkClick(e, `/tour/${booking.tour_id}`)}
               >
-                <h3 className="text-lg font-bold text-gray-900 mb-2 hover:text-indigo-600 transition-colors">
+                <h3 className="text-base font-medium text-gray-900 mb-2 hover:text-indigo-600 transition-colors">
                   {booking.tours?.title || 'Tour'}
                 </h3>
               </Link>

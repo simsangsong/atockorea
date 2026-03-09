@@ -2,7 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { handleApiError, ErrorResponses } from '@/lib/error-handler';
 import { getAuthUser } from '@/lib/auth';
-import { getMissingRequiredFields } from '@/lib/validation';
+import {
+  getMissingRequiredFields,
+  validateBookingCustomerInfo,
+  validateNumberOfGuests,
+  validateBookingDate,
+} from '@/lib/validation';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 
 /**
@@ -88,6 +93,24 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Validate booking date (no past dates)
+    const dateValidation = validateBookingDate(bookingDate);
+    if (!dateValidation.valid) {
+      return NextResponse.json(
+        { error: dateValidation.errors[0], code: 'INVALID_BOOKING_DATE' },
+        { status: 400 }
+      );
+    }
+
+    // Validate number of guests (1–50)
+    const guestsValidation = validateNumberOfGuests(numberOfGuests);
+    if (!guestsValidation.valid) {
+      return NextResponse.json(
+        { error: guestsValidation.errors[0], code: 'INVALID_GUESTS' },
+        { status: 400 }
+      );
+    }
+
     // Get tour to fetch merchant_id and price info
     const { data: tour, error: tourError } = await supabase
       .from('tours')
@@ -108,6 +131,21 @@ export async function POST(req: NextRequest) {
       const { data: { user }, error } = await supabase.auth.getUser(token);
       if (!error && user) {
         userId = user.id;
+      }
+    }
+
+    // When customerInfo is provided, validate format (name length, email format, phone digits). Reduces spam and invalid orders.
+    if (customerInfo && typeof customerInfo === 'object') {
+      const customerValidation = validateBookingCustomerInfo(customerInfo);
+      if (!customerValidation.valid) {
+        return NextResponse.json(
+          {
+            error: customerValidation.errors[0],
+            code: 'INVALID_CUSTOMER_INFO',
+            details: customerValidation.errors,
+          },
+          { status: 400 }
+        );
       }
     }
 
