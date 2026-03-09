@@ -256,59 +256,64 @@ export async function PUT(
       }
     }
 
-    // Send confirmation email if status changed to confirmed
+    // Send confirmation email only when status changed to confirmed AND payment is completed (결제 완료 시에만)
     if (currentBooking && body.status === 'confirmed' && currentBooking.status !== 'confirmed') {
-      try {
-        const { data: bookingWithDetails } = await supabase
-          .from('bookings')
-          .select(`
-            *,
-            tours (title),
-            pickup_points (name, address),
-            user_profiles (email, full_name)
-          `)
-          .eq('id', bookingId)
-          .single();
+      const { data: bookingWithDetails } = await supabase
+        .from('bookings')
+        .select('payment_status, booking_date, number_of_guests, final_price, payment_method, special_requests, tour_id, pickup_point_id, user_id')
+        .eq('id', bookingId)
+        .single();
 
-        if (bookingWithDetails) {
-          const tour = bookingWithDetails.tours as any;
-          const pickupPoint = bookingWithDetails.pickup_points as any;
-          const userProfile = bookingWithDetails.user_profiles as any;
-          
-          let customerEmail = null;
-          let customerName = 'Guest';
-          
-          if (userProfile) {
-            customerEmail = userProfile.email;
-            customerName = userProfile.full_name || customerName;
-          } else {
-            // Try to get from special_requests
-            try {
-              const specialRequests = JSON.parse(bookingWithDetails.special_requests || '{}');
-              customerEmail = specialRequests.email || specialRequests.customer_email;
-              customerName = specialRequests.name || specialRequests.customer_name || customerName;
-            } catch (e) {
-              // Ignore parse errors
+      const isPaid = bookingWithDetails?.payment_status === 'paid';
+      if (isPaid) {
+        try {
+          const { data: fullBooking } = await supabase
+            .from('bookings')
+            .select(`
+              *,
+              tours (id, title, image_url),
+              pickup_points (name, address),
+              user_profiles (email, full_name)
+            `)
+            .eq('id', bookingId)
+            .single();
+
+          if (fullBooking) {
+            const tour = fullBooking.tours as any;
+            const pickupPoint = fullBooking.pickup_points as any;
+            const userProfile = fullBooking.user_profiles as any;
+            let customerEmail = userProfile?.email ?? null;
+            let customerName = userProfile?.full_name || 'Guest';
+            if (!customerEmail) {
+              try {
+                const sr = JSON.parse(fullBooking.special_requests || '{}');
+                customerEmail = sr.email || sr.customer_email;
+                customerName = sr.name || sr.customer_name || customerName;
+              } catch {
+                // ignore
+              }
+            }
+            if (customerEmail && tour) {
+              const { sendBookingConfirmationEmail } = await import('@/lib/email');
+              await sendBookingConfirmationEmail({
+                to: customerEmail,
+                bookingId: bookingId,
+                tourTitle: tour.title,
+                bookingDate: fullBooking.booking_date,
+                numberOfGuests: fullBooking.number_of_guests || 1,
+                totalPrice: parseFloat(fullBooking.final_price.toString()),
+                pickupPoint: pickupPoint?.name || pickupPoint?.address || undefined,
+                paymentMethod: fullBooking.payment_method || 'pending',
+                paymentStatus: 'paid',
+                customerName,
+                tourId: tour.id,
+                tourImageUrl: tour.image_url,
+              });
             }
           }
-
-          if (customerEmail && tour) {
-            const { sendBookingConfirmationEmail } = await import('@/lib/email');
-            await sendBookingConfirmationEmail({
-              to: customerEmail,
-              bookingId: bookingId,
-              tourTitle: tour.title,
-              bookingDate: bookingWithDetails.booking_date,
-              numberOfGuests: bookingWithDetails.number_of_guests || 1,
-              totalPrice: parseFloat(bookingWithDetails.final_price.toString()),
-              pickupPoint: pickupPoint?.name || pickupPoint?.address || undefined,
-              paymentMethod: bookingWithDetails.payment_method || 'pending',
-              customerName,
-            });
-          }
+        } catch (emailError) {
+          console.error('Error sending confirmation email:', emailError);
         }
-      } catch (emailError) {
-        console.error('Error sending confirmation email:', emailError);
       }
     }
 

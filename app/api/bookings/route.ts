@@ -1,37 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { handleApiError, ErrorResponses } from '@/lib/error-handler';
+import { getAuthUser } from '@/lib/auth';
 
 /**
  * GET /api/bookings
- * Get user's bookings (requires authentication)
+ * Get current user's bookings (authentication required; userId from session only)
  */
 export async function GET(req: NextRequest) {
   try {
+    const user = await getAuthUser(req);
+    if (!user) {
+      return ErrorResponses.unauthorized('Authentication required');
+    }
+
     const supabase = createServerClient();
-    
-    // Get auth token from Authorization header or cookie
-    const authHeader = req.headers.get('authorization');
-    let userId: string | null = null;
-
-    if (authHeader?.startsWith('Bearer ')) {
-      const token = authHeader.substring(7);
-      const { data: { user }, error } = await supabase.auth.getUser(token);
-      if (!error && user) {
-        userId = user.id;
-      }
-    }
-
-    // If no auth, try to get from session (for client-side calls)
-    // For now, allow unauthenticated requests but filter by user_id if provided
     const { searchParams } = new URL(req.url);
-    const requestedUserId = searchParams.get('userId');
-
-    if (!userId && !requestedUserId) {
-      return ErrorResponses.unauthorized('Authentication required or userId parameter required');
-    }
-
-    const targetUserId = userId || requestedUserId;
     const status = searchParams.get('status');
 
     // Build query
@@ -53,7 +37,7 @@ export async function GET(req: NextRequest) {
           address
         )
       `)
-      .eq('user_id', targetUserId)
+      .eq('user_id', user.id)
       .order('created_at', { ascending: false });
 
     if (status) {
@@ -80,8 +64,6 @@ export async function POST(req: NextRequest) {
   try {
     const supabase = createServerClient();
     const body = await req.json();
-    
-    console.log('Received booking request:', JSON.stringify(body, null, 2));
 
     // Validate required fields
     const {
@@ -292,75 +274,8 @@ export async function POST(req: NextRequest) {
       console.error('Error updating inventory:', inventoryError);
     }
 
-    // Send confirmation email based on payment method
-    // For deposit payments, send email immediately
-    // For full payments, email will be sent after payment confirmation (via Stripe webhook)
-    const shouldSendEmail = booking.status === 'confirmed' || 
-                            paymentMethod === 'deposit' || 
-                            paymentMethod === 'full' && booking.payment_status === 'paid';
-
-    if (shouldSendEmail) {
-      try {
-        // Get tour details for email
-        const { data: tourData } = await supabase
-          .from('tours')
-          .select('title, image_url')
-          .eq('id', tourId)
-          .single();
-
-        // Get pickup point details if available
-        let pickupPointName = null;
-        if (pickupPointId) {
-          const { data: pickupData } = await supabase
-            .from('pickup_points')
-            .select('name, address')
-            .eq('id', pickupPointId)
-            .single();
-          pickupPointName = pickupData?.name || pickupData?.address || null;
-        }
-
-        // Get customer email
-        let customerEmail = null;
-        let customerName = 'Guest';
-        
-        if (userId) {
-          const { data: userProfile } = await supabase
-            .from('user_profiles')
-            .select('email, full_name')
-            .eq('id', userId)
-            .single();
-          customerEmail = userProfile?.email;
-          customerName = userProfile?.full_name || customerName;
-        } else if (customerInfo) {
-          customerEmail = customerInfo.email;
-          customerName = customerInfo.name || customerName;
-        }
-
-        if (customerEmail && tourData) {
-          const { sendBookingConfirmationEmail } = await import('@/lib/email');
-          const emailResult = await sendBookingConfirmationEmail({
-            to: customerEmail,
-            bookingId: booking.id,
-            tourTitle: tourData.title,
-            bookingDate: bookingDate,
-            numberOfGuests: numberOfGuests,
-            totalPrice: parseFloat(finalPrice.toString()),
-            pickupPoint: pickupPointName || undefined,
-            paymentMethod: paymentMethod || 'pending',
-            customerName,
-          });
-
-          if (emailResult.success) {
-            console.log(`Confirmation email sent to ${customerEmail} for booking ${booking.id}`);
-          } else {
-            console.error(`Failed to send confirmation email: ${emailResult.error}`);
-          }
-        }
-      } catch (emailError) {
-        // Log error but don't fail the booking
-        console.error('Error sending confirmation email:', emailError);
-      }
-    }
+    // Confirmation email: only sent on payment success (Stripe/PayPal webhooks).
+    // Do not send here on booking create — 결제 완료 시에만 확인 메일 발송.
 
     // Create notification for booking creation
     if (userId) {
