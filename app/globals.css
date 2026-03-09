@@ -118,6 +118,11 @@ body.lang-ja {
   opacity: 0;
 }
 
+/* Formal content pages (about, support, legal) – serif for a polished look */
+.font-content {
+  font-family: var(--font-lora), Georgia, "Times New Roman", serif;
+}
+
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;

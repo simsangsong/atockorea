@@ -186,18 +186,22 @@ export default function CheckoutPage() {
         
         const paymentData = await paymentResponse.json();
         
-        if (paymentData.url) {
+        if (paymentResponse.ok && paymentData.url) {
           // Redirect to Stripe checkout
           window.location.href = paymentData.url;
           return;
+        }
+        // API error or no URL (Stripe not configured / failed)
+        if (!paymentResponse.ok) {
+          console.error('Stripe checkout API error:', paymentResponse.status, paymentData);
+          const msg = paymentData?.error || 'Payment could not be started.';
+          alert(`${msg} Your booking has been saved. Please try again or contact support.`);
         } else {
-          // If Stripe is not implemented, stay on checkout page
-          // Don't redirect to confirmation - let user complete payment on checkout page
           console.warn('Stripe checkout not available, staying on checkout page');
           alert('Payment processing will be available soon. Your booking has been saved.');
-          setIsProcessing(false);
-          return;
         }
+        setIsProcessing(false);
+        return;
       } catch (error) {
         console.error('Payment error:', error);
         // Even if payment fails, stay on checkout page
