@@ -86,19 +86,19 @@ stripe listen --forward-to localhost:3000/api/stripe/webhook
 
 ### 1. 예약 생성
 
-고객이 예약을 생성하면 `POST /api/bookings`가 호출됩니다.
+고객이 체크아웃에서 정보 입력 후 결제 버튼을 누르면 `POST /api/bookings`로 예약이 생성되고, 고객 정보(이름, 이메일, 전화번호, 채팅앱, 연락처)는 Supabase `bookings` 테이블(contact_*, special_requests)과 Admin 대시보드에 저장됩니다.
 
 ### 2. Stripe Checkout Session 생성
 
-결제가 필요한 경우 `POST /api/stripe/checkout`를 호출:
+이어서 `POST /api/stripe/checkout`를 호출해 Stripe 결제 페이지 URL을 받아 리다이렉트합니다. **결제 통화는 KRW(원화)** 를 사용합니다.
 
 ```typescript
 const response = await fetch('/api/stripe/checkout', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
-    amount: 100.00, // USD
-    currency: 'usd',
+    amount: 10000,   // KRW (원)
+    currency: 'krw',
     bookingId: 'booking-uuid',
     bookingData: {
       customerInfo: {

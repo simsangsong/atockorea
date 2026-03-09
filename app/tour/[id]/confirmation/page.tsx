@@ -32,33 +32,57 @@ export default function ConfirmationPage() {
   const [bookingData, setBookingData] = useState<BookingData | null>(null);
 
   useEffect(() => {
-    // Check if redirected from Stripe
     const urlParams = new URLSearchParams(window.location.search);
     const sessionId = urlParams.get('session_id');
     const bookingId = urlParams.get('booking_id');
 
+    // Redirected from Stripe: fetch full booking and build confirmation data
     if (sessionId && bookingId) {
-      // Payment completed via Stripe, fetch booking details
       fetch(`/api/bookings/${bookingId}`)
-        .then(res => res.json())
-        .then(data => {
+        .then((res) => res.json())
+        .then((data) => {
           if (data.booking) {
-            // Store booking data for display
-            sessionStorage.setItem('bookingData', JSON.stringify({
-              tourId: data.booking.tour_id,
-              bookingId: data.booking.id,
-              paymentStatus: data.booking.payment_status,
-            }));
-            // Reload to show confirmation
-            window.location.href = `/tour/${params.id}/confirmation?booking_id=${bookingId}`;
+            const b = data.booking;
+            let specialRequests: { preferredChatApp?: string; chatAppContact?: string } = {};
+            try {
+              if (b.special_requests) {
+                specialRequests = typeof b.special_requests === 'string' ? JSON.parse(b.special_requests) : b.special_requests;
+              }
+            } catch (_) {}
+            const built: BookingData = {
+              tourId: Number(b.tour_id),
+              date: b.booking_date || b.tour_date || '',
+              guests: b.number_of_guests ?? b.number_of_people ?? 1,
+              pickup: b.pickup_point_id ? Number(b.pickup_point_id) : null,
+              paymentMethod: b.payment_method === 'deposit' ? 'deposit' : 'full',
+              totalPrice: parseFloat(String(b.final_price ?? 0)),
+              customerInfo: {
+                name: b.contact_name || '',
+                phone: b.contact_phone || '',
+                email: b.contact_email || '',
+                preferredChatApp: specialRequests.preferredChatApp || '',
+                chatAppContact: specialRequests.chatAppContact || '',
+              },
+            };
+            if (b.payment_method === 'deposit') {
+              built.depositAmountUSD = undefined;
+              built.balanceAmountKRW = undefined;
+            }
+            setBookingData(built);
+            sessionStorage.setItem('bookingData', JSON.stringify({ ...built, bookingId: b.id }));
+          } else {
+            router.push(`/tour/${params.id}`);
           }
         })
-        .catch(err => {
+        .catch((err) => {
           console.error('Error fetching booking:', err);
-          // Fallback to sessionStorage
           const stored = sessionStorage.getItem('bookingData');
           if (stored) {
-            setBookingData(JSON.parse(stored));
+            try {
+              setBookingData(JSON.parse(stored));
+            } catch {
+              router.push(`/tour/${params.id}`);
+            }
           } else {
             router.push(`/tour/${params.id}`);
           }
@@ -66,12 +90,14 @@ export default function ConfirmationPage() {
       return;
     }
 
-    // Get booking data from sessionStorage
     const stored = sessionStorage.getItem('bookingData');
     if (stored) {
-      setBookingData(JSON.parse(stored));
+      try {
+        setBookingData(JSON.parse(stored));
+      } catch {
+        router.push(`/tour/${params.id}`);
+      }
     } else {
-      // If no booking data, redirect back to tour page
       router.push(`/tour/${params.id}`);
     }
   }, [params.id, router]);
@@ -185,7 +211,7 @@ export default function ConfirmationPage() {
               <div className="flex justify-between items-center py-3">
                 <span className="text-lg font-bold text-gray-900">Total</span>
                 <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
-                  ${bookingData.totalPrice.toFixed(2)}
+                  ₩{Math.round(bookingData.totalPrice).toLocaleString()}
                 </span>
               </div>
             </div>

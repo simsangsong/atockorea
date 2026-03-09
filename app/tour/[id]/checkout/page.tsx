@@ -178,7 +178,7 @@ export default function CheckoutPage() {
           },
           body: JSON.stringify({
             amount: paymentAmount,
-            currency: 'usd',
+            currency: 'krw',
             bookingId: bookingResult.booking.id,
             bookingData: completeBookingData,
           }),

@@ -99,17 +99,17 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-2 sm:mb-3 text-xs sm:text-sm">{t('home.footer.legal')}</h3>
             <ul className="space-y-1 sm:space-y-1.5 text-[10px] sm:text-xs">
               <li>
-                <a href="/legal" className="hover:text-white transition-colors">
+                <a href="/terms" className="hover:text-white transition-colors">
                   {t('home.footer.terms')}
                 </a>
               </li>
               <li>
-                <a href="/legal" className="hover:text-white transition-colors">
+                <a href="/privacy" className="hover:text-white transition-colors">
                   {t('home.footer.privacy')}
                 </a>
               </li>
               <li>
-                <a href="/legal" className="hover:text-white transition-colors">
+                <a href="/cookies" className="hover:text-white transition-colors">
                   {t('home.footer.cookies')}
                 </a>
               </li>

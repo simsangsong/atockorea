@@ -64,6 +64,21 @@ export default function AboutPage() {
             </div>
           </section>
 
+          {/* Trust & Policies */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">{t('about.trust.title')}</h2>
+            <div className="bg-white rounded-lg shadow-md p-6 space-y-4 text-gray-700">
+              <p>{t('about.trust.intro')}</p>
+              <ul className="list-disc list-inside space-y-2 ml-4">
+                <li><Link href="/terms" className="text-blue-600 hover:underline">{t('home.footer.terms')}</Link> — {t('about.trust.li1')}</li>
+                <li><Link href="/privacy" className="text-blue-600 hover:underline">{t('home.footer.privacy')}</Link> — {t('about.trust.li2')}</li>
+                <li><Link href="/refund-policy" className="text-blue-600 hover:underline">{t('home.footer.refundPolicy')}</Link> — {t('about.trust.li3')}</li>
+                <li><Link href="/cookies" className="text-blue-600 hover:underline">{t('home.footer.cookies')}</Link> — {t('about.trust.li4')}</li>
+              </ul>
+              <p className="text-sm text-gray-600">{t('about.trust.note')}</p>
+            </div>
+          </section>
+
           {/* Partners */}
           <section className="mb-12">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">{t('about.partners.title')}</h2>

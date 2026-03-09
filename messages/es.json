@@ -319,6 +319,412 @@
       "copyright": "© 2026 AtoC Korea. Todos los derechos reservados."
     }
   },
+  "about": {
+    "title": "Acerca de Nosotros",
+    "ourStory": {
+      "title": "Nuestra Historia",
+      "p1": "ATOC KOREA LLC opera una plataforma de reservas de viajes en línea actuando únicamente como intermediario entre viajeros y proveedores de tours independientes.",
+      "p2": "Nuestra plataforma permite a los clientes descubrir, comparar y reservar experiencias de viaje ofrecidas por operadores de tours y guías profesionales terceros.",
+      "facilitate": "Facilitamos el proceso de reserva mediante:",
+      "li1": "Mostrar la información de tours proporcionada por los operadores",
+      "li2": "Cuando ofrecemos pago en línea, facilitar el pago a través de proveedores de pago terceros de confianza (no almacenamos el número completo de su tarjeta)",
+      "li3": "Emitir confirmaciones de reserva con datos del proveedor y condiciones de cancelación",
+      "li4": "Apoyar la comunicación relacionada con las reservas",
+      "disclaimer": "ATOC KOREA LLC no opera tours, no emplea guías ni conductores ni presta servicios de viaje in situ. Todos los tours y experiencias son proporcionados por proveedores terceros independientes. La responsabilidad de la ejecución del tour, la seguridad y la calidad del servicio recae en el proveedor del tour."
+    },
+    "whyChooseUs": {
+      "title": "Por Qué Elegirnos",
+      "clearModel": "Modelo de intermediación claro",
+      "clearModelP": "Nuestra plataforma está diseñada con una estructura de intermediación transparente. Gestionamos las reservas y, cuando ofrecemos pago en línea, facilitamos el pago a través de nuestro proveedor de pago elegido; los proveedores de tours entregan la experiencia. No somos el operador del tour.",
+      "verified": "Proveedores independientes verificados",
+      "verifiedP": "Trabajamos con proveedores de tours independientes responsables de contar con las licencias, permisos y seguros requeridos. Los proveedores de tours no son nuestros empleados ni agentes; operan de forma independiente y son responsables de la ejecución del tour y del cumplimiento normativo.",
+      "transparent": "Reserva y precios transparentes",
+      "transparentP": "Antes de reservar, revelamos claramente:",
+      "transparentLi1": "Precio total y estructura de pago (p. ej. depósito o pago completo)",
+      "transparentLi2": "Qué está incluido y qué no",
+      "transparentLi3": "Condiciones de cancelación y reembolso (véase nuestra Política de reembolso)",
+      "secure": "Pagos en línea seguros",
+      "secureP": "Cuando ofrecemos pago en línea o con tarjeta, los pagos se procesan a través de proveedores de pago terceros de confianza que aplican prácticas de seguridad estándar del sector. No almacenamos el número completo de su tarjeta de pago; los datos de la tarjeta los gestiona el procesador conforme a sus términos y estándares aplicables.",
+      "support": "Soporte a nivel de plataforma",
+      "supportP": "Ofrecemos atención al cliente para reservas, consultas de pago, cancelaciones y confirmaciones. Nuestros Términos de Servicio, Política de Privacidad y Política de reembolso establecen claramente sus derechos y nuestras obligaciones."
+    },
+    "partners": {
+      "title": "Socios",
+      "p1": "Colaboramos con operadores de tours, guías y proveedores de servicios de viajes independientes que deseen llegar a viajeros internacionales a través de nuestra plataforma.",
+      "allPartners": "Todos los socios:",
+      "li1": "Operan de forma independiente",
+      "li2": "Siguen siendo responsables de la ejecución del tour y del cumplimiento normativo",
+      "li3": "No son empleados ni agentes de ATOC KOREA LLC",
+      "contactBefore": "Para consultas de colaboración, contáctenos a través de la página ",
+      "contactAfter": "."
+    },
+    "careers": {
+      "title": "Carreras",
+      "p1": "ATOC KOREA LLC es una plataforma de reservas impulsada por la tecnología centrada en construir una infraestructura de viajes fiable y transparente.",
+      "weSeek": "En ocasiones buscamos profesionales en:",
+      "li1": "Operaciones de plataforma",
+      "li2": "Atención al cliente",
+      "li3": "Producto y tecnología",
+      "openPositions": "Las vacantes, si las hay, se publicarán en nuestro sitio web."
+    },
+    "trust": {
+      "title": "Confianza y transparencia",
+      "intro": "Sus derechos y nuestras obligaciones están claramente establecidos en nuestros documentos legales. Le animamos a leerlos antes de reservar.",
+      "li1": "Acuerdo, reservas, pagos, cancelación y resolución de disputas",
+      "li2": "Cómo recopilamos y usamos sus datos (conforme a normativa de Corea y EE. UU.)",
+      "li3": "Tarifas de plataforma frente a tarifas de tour, normas de cancelación y proceso de reembolso",
+      "li4": "Cómo usamos cookies y tecnologías similares",
+      "note": "No vendemos su información personal. Cuando ofrecemos pago en línea, usamos proveedores de pago terceros de confianza y no almacenamos el número completo de su tarjeta."
+    }
+  },
+  "support": {
+    "title": "Soporte",
+    "introBefore": "Encuentre respuestas sobre reservas, pagos, cancelaciones y sus derechos. Nuestros ",
+    "introAfter": " ofrecen todos los detalles.",
+    "bookingHelpTitle": "Ayuda con Reservas",
+    "bookingHelpP1": "Actuamos únicamente como intermediario de reservas. No operamos tours, no empleamos guías ni conductores ni proporcionamos el tour o la experiencia real. Ofrecemos una plataforma donde puede descubrir y reservar tours y actividades ofrecidos por proveedores terceros independientes (Proveedores de tours). El contrato del tour es entre usted y el Proveedor de tours; nosotros facilitamos la reserva y, cuando ofrecemos pago en línea, facilitamos el pago a través de nuestro proveedor de pago elegido.",
+    "bookingHelpWhen": "Cuando reserva a través de nuestro sitio web:",
+    "bookingHelpLi1": "Realiza una reserva de un tour o actividad operada por un Proveedor de tours independiente (no por nosotros).",
+    "bookingHelpLi2": "Cuando ofrecemos pago en línea, el pago puede procesarse a través del proveedor de pago tercero que utilizamos para ese fin. No almacenamos el número completo de su tarjeta de pago; los datos de la tarjeta los gestiona el procesador conforme a sus términos y estándares aplicables.",
+    "bookingHelpLi3": "Se emite una confirmación de reserva con los datos del Proveedor de tours, fecha, hora, punto de encuentro y las condiciones de cancelación/reembolso aplicables a su reserva.",
+    "bookingHelpP2Before": "El precio total (incluidas las tarifas de plataforma y de tour) y la estructura de pago varían según el producto y se revelan claramente antes de completar su reserva. Al reservar, acepta nuestros ",
+    "bookingHelpP2After": " y Política de reembolso.",
+    "cancellationsTitle": "Cancelaciones y Reembolsos",
+    "cancellationsP1Before": "La elegibilidad de cancelación y reembolso se rige por (a) la política de cancelación del Proveedor de tours (mostrada antes de reservar y en su confirmación) y (b) nuestra ",
+    "cancellationsP1After": ". No anulamos la política del Proveedor de tours. Las reglas típicas (establecidas por cada proveedor) pueden incluir reembolso total si cancela antes de cierto momento (p. ej. 24–48 horas antes del tour) y sin reembolso por no presentarse o cancelación tardía.",
+    "cancellationsP2Before": "Para solicitar una cancelación o reembolso, contáctenos en ",
+    "cancellationsP2Between": " con su referencia de reserva (número de confirmación) y motivo. Procesaremos su solicitud según la política y el momento aplicables. Los reembolsos, cuando se aprueben, se realizarán al método de pago original dentro del plazo indicado en nuestra Política de reembolso (p. ej. 5–10 días laborables, según el proveedor de pago que usemos para esa transacción, si aplica).",
+    "contactTitle": "Contáctenos",
+    "contactIntro": "Para preguntas sobre reservas, consultas de pago, solicitudes de cancelación o reembolso, problemas de cuenta o consultas de privacidad y legales, contáctenos:",
+    "contactEmail": "Correo electrónico:",
+    "contactEmailNote": "(para solicitudes de reembolso, incluya su referencia de reserva)",
+    "contactForm": "Formulario de contacto:",
+    "contactPhone": "Teléfono:",
+    "contactEntity": "Entidad:",
+    "contactAddress": "Dirección:",
+    "contactResponse": "Nos esforzamos por responder en 24–48 horas laborables. Para solicitudes formales de privacidad (p. ej. acceso, corrección, eliminación), puede usar el asunto \"Solicitud de privacidad\" y responderemos dentro del plazo que exija la ley aplicable.",
+    "faqTitle": "Preguntas Frecuentes",
+    "faqOperateQ": "¿Operan ustedes los tours?",
+    "faqOperateA": "No. Solo actuamos como intermediario de reservas. Los tours y experiencias son operados por Proveedores de tours terceros independientes. No empleamos guías ni conductores ni proporcionamos el servicio de tour real. La responsabilidad de la ejecución del tour, la seguridad y la calidad del servicio recae en el Proveedor de tours. Consulte nuestros Términos de Servicio (Sección 3) para la descripción completa de nuestro papel.",
+    "faqPaymentQ": "¿Quién procesa mi pago?",
+    "faqPaymentA": "Cuando ofrecemos pago en línea o con tarjeta, el pago es procesado por el proveedor de pago tercero que contratamos para ese fin. No almacenamos el número completo de su tarjeta de pago; los datos de la tarjeta los gestiona el procesador conforme a sus términos y estándares de pago aplicables. Para más detalle sobre cómo manejamos los datos relacionados con el pago, consulte nuestra Política de Privacidad y Política de Cookies.",
+    "faqResponsibleQ": "¿Quién es responsable del servicio del tour?",
+    "faqResponsibleA": "El Proveedor de tours indicado en su confirmación de reserva es responsable de la ejecución, seguridad, calidad, horario y contenido del tour. No somos responsables de los actos, omisiones o políticas del Proveedor de tours. Cualquier reclamación derivada del tour (p. ej. lesión, insatisfacción) debe dirigirse al Proveedor de tours, según la ley aplicable. Nuestra responsabilidad está limitada como se indica en nuestros Términos de Servicio (Sección 11).",
+    "faqCancelQ": "¿Puedo cancelar mi reserva? ¿Cómo obtengo un reembolso?",
+    "faqCancelA": "Sí, puede solicitar la cancelación. Si recibe reembolso y cuánto depende de la política de cancelación del Proveedor de tours (revelada antes de reservar y en su confirmación) y de nuestra Política de reembolso. No anulamos la política del Proveedor de tours. Para solicitar cancelación o reembolso, escríbanos a support@atockorea.com con su referencia de reserva y motivo. Los reembolsos, cuando se aprueben, se realizarán al método de pago original. No presentarse (no asistir sin cancelar antes) normalmente no da derecho a reembolso.",
+    "faqSellQ": "¿Venden mis datos personales?",
+    "faqSellA": "No. No vendemos su información personal. Solo compartimos información como se describe en nuestra Política de Privacidad (p. ej. con Proveedores de tours para la prestación, con procesadores de pago cuando ofrecemos pago en línea, o según exija la ley). No compartimos información personal para publicidad conductual entre contextos.",
+    "faqCookiesQ": "¿Cómo usan las cookies?",
+    "faqCookiesA": "Usamos cookies y tecnologías similares para funcionalidad esencial (sesión, autenticación, seguridad), preferencias (idioma) y, cuando ofrecemos pago en línea, nuestro proveedor de pago puede establecer cookies durante el pago para el procesamiento y la prevención del fraude. No usamos cookies para publicidad dirigida. Puede controlar las cookies desde su navegador o en nuestro sitio donde ofrecemos una herramienta de preferencias. Para más detalles, consulte nuestra Política de Cookies.",
+    "faqWhereQ": "¿Dónde puedo encontrar sus Términos, Política de Privacidad y Política de reembolso?",
+    "legalTitle": "Legal y Políticas",
+    "legalIntro": "Para los términos completos y legalmente vinculantes, lea:",
+    "legalLi1": "acuerdo, reservas, pagos, responsabilidad, resolución de disputas",
+    "legalLi2": "datos que recopilamos, cómo los usamos, sus derechos (PIPA Corea, leyes estatales EE. UU.)",
+    "legalLi3": "tarifas de plataforma frente a tarifas de tour, cancelación, no presentarse, proceso de reembolso",
+    "legalLi4": "cookies y tecnologías similares, cookies relacionadas con el pago cuando usamos un proveedor de pago"
+  },
+  "terms": {
+    "title": "Términos del Servicio",
+    "introPrefix": "Última actualización: ",
+    "introSuffix": ". Estos términos se aplican a su uso de la plataforma ATOC KOREA LLC y tienen la intención de cumplir con la ley aplicable en la República de Corea y los Estados Unidos.",
+    "s1": {
+      "title": "1. Aceptación de los Términos",
+      "p1Before": "Estos Términos del Servicio (\"Términos\") son un acuerdo vinculante entre usted (\"Usuario\", \"usted\", \"su\") y ATOC KOREA LLC (\"Empresa\", \"nosotros\", \"nuestro\"), una sociedad de responsabilidad limitada de Wyoming. Al acceder o utilizar nuestro sitio atockorea.com, nuestra plataforma de reservas, experiencia móvil o servicios relacionados (en conjunto, la \"Plataforma\"), usted acepta quedar obligado por estos Términos y nuestra ",
+      "p1After": ". Si no está de acuerdo, no utilice la Plataforma.",
+      "p2": "Podemos actualizar estos Términos de vez en cuando. Publicaremos los Términos actualizados en esta página y actualizaremos la fecha de \"Última actualización\". Los cambios materiales pueden comunicarse por correo electrónico o un aviso destacado en la Plataforma. El uso continuado después de la fecha efectiva de los cambios constituye la aceptación de los Términos revisados. Si es un consumidor en una jurisdicción que requiere consentimiento explícito para términos modificados, podemos solicitar dicho consentimiento cuando corresponda.",
+      "p3": "Usted declara que tiene al menos 18 años (o la mayoría de edad en su jurisdicción) y tiene la capacidad legal para celebrar este acuerdo. Si reserva en nombre de otros, declara que tiene autoridad para obligarlos y que aceptan estos Términos."
+    },
+    "s2": {
+      "title": "2. Definiciones",
+      "platform": "Plataforma significa el sitio web, las aplicaciones y los sistemas relacionados operados por la Empresa para navegar y reservar tours y actividades.",
+      "services": "Servicio(s) significa los servicios de intermediación que proporcionamos (listar tours, procesar reservas, facilitar pagos cuando ofrecemos dicha opción y facilitar la comunicación entre Usuarios y Proveedores de Tours).",
+      "tourProvider": "Proveedor de Tour (también \"Operador\", \"Comerciante\") significa el tercero independiente que opera el tour, actividad o experiencia. Los Proveedores de Tours no son empleados ni agentes de la Empresa.",
+      "booking": "Reserva significa una reservación que usted realiza a través de la Plataforma para un tour o actividad suministrada por un Proveedor de Tour.",
+      "tourService": "Servicio de Tour significa el tour, actividad o experiencia real entregada por el Proveedor de Tour.",
+      "platformFees": "Tarifas de Plataforma significan las tarifas que cobramos por nuestros servicios de intermediación (p. ej., procesamiento de reservas, manejo de pagos, servicios administrativos).",
+      "tourFees": "Tarifas de Tour significan los montos pagados por el Servicio de Tour, que nosotros o nuestro proveedor de pago designado cobramos en nombre del Proveedor de Tour (menos nuestras Tarifas de Plataforma y las tarifas del procesador de pagos aplicables cuando usamos un procesador tercero)."
+    },
+    "s3": {
+      "title": "3. Naturaleza de Nuestro Servicio: Solo Somos un Intermediario",
+      "p1": "Operamos únicamente como intermediario de reservas. No operamos tours, no empleamos guías ni conductores, ni proporcionamos los servicios reales de viaje, tour o experiencia. Proporcionamos una plataforma tecnológica que le permite descubrir y reservar tours y actividades ofrecidos por Proveedores de Tours independientes. El contrato del Servicio de Tour es entre usted y el Proveedor de Tour; nosotros facilitamos la transacción y, cuando ofrecemos pago en línea, facilitamos el pago a través de nuestro(s) proveedor(es) de pago elegido(s) y transmitimos la información relevante al Proveedor de Tour para su cumplimiento.",
+      "p2": "La responsabilidad de la ejecución, seguridad, calidad, horario y contenido del Servicio de Tour recae en el Proveedor de Tour. No somos responsables de los actos, omisiones, representaciones o políticas del Proveedor de Tour. Esto no excluye ni limita nuestra responsabilidad cuando no puede ser excluida o limitada según la ley aplicable (p. ej., ciertas leyes de protección al consumidor en Corea o Estados Unidos).",
+      "p3": "Los listados en la Plataforma se basan en información proporcionada por los Proveedores de Tours. No garantizamos la exactitud, integridad o legalidad de los listados ni la conducta de los Proveedores de Tours. Usted utiliza la Plataforma y celebra Reservas bajo su propio riesgo, sujeto a estos Términos y las políticas de cancelación/reembolso aplicables divulgadas en el momento de la reserva."
+    },
+    "s4": {
+      "title": "4. Registro de Cuenta y Elegibilidad",
+      "p1": "Para realizar una Reserva o usar ciertas funciones, puede que necesite registrar una cuenta. Usted acepta proporcionar información precisa, actual y completa y actualizarla según sea necesario. Es responsable de mantener la confidencialidad de las credenciales de su cuenta y de toda la actividad bajo su cuenta.",
+      "p2": "Podemos suspender o terminar su cuenta si incumple estos Términos o por otras razones legítimas (p. ej., fraude, abuso o según lo exija la ley). Puede cerrar su cuenta en cualquier momento contactándonos; el cierre no afecta las obligaciones ya incurridas (p. ej., pago por una Reserva ya realizada)."
+    },
+    "s5": {
+      "title": "5. Reservas",
+      "p1": "Cuando realiza una Reserva, está haciendo una oferta de contrato con el Proveedor de Tour para el Servicio de Tour, sujeta al precio, fecha, hora y términos de cancelación/reembolso mostrados en el pago. Un contrato para el Servicio de Tour se forma cuando nosotros (o el Proveedor de Tour) confirmamos la reserva (p. ej., por correo o confirmación en la aplicación). Nos reservamos el derecho de rechazar o cancelar una Reserva (p. ej., por errores de precio, fraude o no disponibilidad) y reembolsaremos cualquier pago realizado si cancelamos.",
+      "p2Before": "Es responsable de revisar la página del producto y la confirmación para la fecha, hora, punto de encuentro correctos y cualquier requisito especial (p. ej., edad, salud, equipo). Las condiciones de cancelación y reembolso las establece el Proveedor de Tour y se muestran antes de completar la Reserva; también se resumen en nuestra ",
+      "p2After": ".",
+      "p3": "Los precios se muestran en la moneda indicada en la Plataforma (p. ej., KRW, USD). Los impuestos, si los hay, pueden estar incluidos o añadirse en el pago según la ley aplicable. No garantizamos que los precios no cambiarán después de haberlos visto; el precio en el momento en que completa la Reserva es el precio vinculante a menos que hayamos cometido un error y lo corrijamos según lo permita la ley."
+    },
+    "s6": {
+      "title": "6. Términos de Pago",
+      "p1": "Usted acepta pagar todos los montos adeudados en el momento de la Reserva (o según se indique en el pago). Cuando ofrecemos pago en línea, el pago puede procesarse a través de procesadores de pago terceros que contratamos para ese fin. Donde se ofrezca pago con tarjeta, no almacenamos el número completo de su tarjeta de pago; los datos de la tarjeta los maneja el procesador de acuerdo con sus términos y los estándares de tarjetas de pago aplicables. Al proporcionar información de pago en relación con una Reserva, usted nos autoriza a nosotros y a cualquier procesador de pagos que usemos a cobrar el monto indicado.",
+      "p2Before": "Su pago puede incluir Tarifas de Plataforma y Tarifas de Tour. Las Tarifas de Plataforma generalmente no son reembolsables una vez confirmada la Reserva, excepto como se indica en nuestra ",
+      "p2After": ". Las Tarifas de Tour están sujetas a la política de cancelación del Proveedor de Tour y nuestra Política de Reembolso. La conversión de moneda y cualquier tarifa impuesta por su banco o emisor de tarjeta son su responsabilidad.",
+      "p3": "Si el pago falla o se revierte (p. ej., chargeback) de una manera que determinemos inconsistente con estos Términos o la política de cancelación aplicable, podemos cancelar la Reserva, suspender su cuenta y buscar la recuperación de los montos adeudados en la medida permitida por la ley."
+    },
+    "s7": {
+      "title": "7. Cancelación y Reembolsos",
+      "p1Before": "La elegibilidad de cancelación y reembolso se rige por (a) la política de cancelación del Proveedor de Tour divulgada en el momento de la Reserva y en su confirmación, y (b) nuestra ",
+      "p1Between": ". No anulamos la política del Proveedor de Tour. Para solicitar una cancelación o reembolso, contáctenos en ",
+      "p1After": " con su referencia de reserva. Los reembolsos, cuando se aprueben, se realizarán al método de pago original dentro del plazo indicado en nuestra Política de Reembolso (p. ej., 5–10 días hábiles, sujeto al proveedor de pago que usemos para esa transacción, si corresponde).",
+      "p2": "No presentarse (no asistir sin cancelación previa) típicamente resulta en ningún reembolso, como se indica en la página del producto y en su confirmación. Si el Proveedor de Tour cancela el tour (p. ej., clima, seguridad, participantes insuficientes), trabajaremos con ellos para ofrecer un reembolso completo de las Tarifas de Tour o una fecha/experiencia alternativa cuando sea posible; las Tarifas de Plataforma pueden reembolsarse a nuestra discreción en tales casos."
+    },
+    "s8": {
+      "title": "8. Conducta del Usuario y Usos Prohibidos",
+      "agreeNotTo": "Usted acepta no:",
+      "li1": "Usar la Plataforma para ningún propósito ilegal o en violación de cualquier ley aplicable o estos Términos.",
+      "li2": "Suplantar a cualquier persona o entidad o falsear su afiliación.",
+      "li3": "Interferir o interrumpir la Plataforma, servidores o redes, o intentar obtener acceso no autorizado a cualquier sistema o datos.",
+      "li4": "Raspear, cosechar o usar medios automatizados para recopilar datos de la Plataforma sin nuestro consentimiento previo por escrito.",
+      "li5": "Usar la Plataforma para transmitir malware, spam o contenido dañino u ofensivo.",
+      "li6": "Revender o explotar comercialmente las confirmaciones de Reserva o el contenido de la Plataforma (p. ej., descripciones de tours) excepto para su propio uso legítimo de reserva.",
+      "li7": "Eludir nuestras tarifas o proceso de reserva (p. ej., contactar a Proveedores de Tours para reservar directamente después de encontrarlos en nuestra Plataforma con el propósito de evitar tarifas) de una manera que viole estos Términos o la ley aplicable.",
+      "p2": "Podemos suspender o terminar su acceso y tomar otras medidas apropiadas (incluido recurso legal) por incumplimiento de esta sección o cualquier otra parte de estos Términos."
+    },
+    "s9": {
+      "title": "9. Propiedad Intelectual",
+      "p1": "La Plataforma y su contenido (incluyendo pero no limitado a texto, gráficos, logotipos, diseño, software y diseño) son propiedad de la Empresa o nuestros licenciantes y están protegidos por derechos de autor, marcas registradas y otras leyes de propiedad intelectual. No puede copiar, modificar, distribuir o crear obras derivadas de nuestro contenido sin nuestro consentimiento previo por escrito, excepto para uso personal limitado (p. ej., visualización, impresión para sus propios registros). Las descripciones e imágenes de tours pueden ser proporcionadas por los Proveedores de Tours; no reclamamos propiedad de su contenido pero podemos mostrarlo y usarlo de acuerdo con nuestros acuerdos con ellos."
+    },
+    "s10": {
+      "title": "10. Descargos de Responsabilidad",
+      "p1": "LA PLATAFORMA Y NUESTROS SERVICIOS SE PROPORCIONAN \"TAL CUAL\" Y \"SEGÚN DISPONIBILIDAD\". EN LA MÁXIMA MEDIDA PERMITIDA POR LA LEY APLICABLE, RENUNCIAMOS A TODAS LAS GARANTÍAS, EXPRESAS O IMPLÍCITAS, INCLUYENDO PERO NO LIMITADO A GARANTÍAS IMPLÍCITAS DE COMERCIABILIDAD, IDONEIDAD PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. NO GARANTIZAMOS QUE LA PLATAFORMA SERÁ ININTERRUMPIDA, LIBRE DE ERRORES O LIBRE DE COMPONENTES DAÑINOS.",
+      "p2": "No operamos, controlamos ni respaldamos a los Proveedores de Tours ni a los Servicios de Tour. Cualquier descripción, calificación u otra información sobre tours es solo para información general y no constituye nuestro respaldo ni una garantía de calidad, seguridad o legalidad. Usted asume todo el riesgo al elegir y participar en cualquier Servicio de Tour. Donde la ley del consumidor en su jurisdicción no permita la exclusión de ciertas garantías, esas exclusiones pueden no aplicarse a usted."
+    },
+    "s11": {
+      "title": "11. Limitación de Responsabilidad",
+      "p1": "EN LA MÁXIMA MEDIDA PERMITIDA POR LA LEY APLICABLE:",
+      "li1": "NOSOTROS (Y NUESTRAS AFILIADAS, DIRECTORES, EMPLEADOS Y AGENTES) NO SEREMOS RESPONSABLES POR NINGÚN DAÑO INDIRECTO, INCIDENTAL, ESPECIAL, CONSECUENTE O PUNITIVO (INCLUYENDO PÉRDIDA DE BENEFICIOS, DATOS, USO O PLUSVALÍA) QUE SURJA DE O ESTÉ RELACIONADO CON SU USO DE LA PLATAFORMA, SU RESERVA O CUALQUIER SERVICIO DE TOUR, INCLUSO SI NOS HAN ADVERTIDO DE LA POSIBILIDAD DE DICHOS DAÑOS.",
+      "li2": "NUESTRA RESPONSABILIDAD AGREGADA TOTAL POR TODAS LAS RECLAMACIONES QUE SURJAN DE O ESTÉN RELACIONADAS CON ESTOS TÉRMINOS, LA PLATAFORMA O NUESTROS SERVICIOS NO EXCEDERÁ EL MAYOR DE (A) EL MONTO QUE USTED NOS PAGÓ EN LOS 12 MESES ANTERIORES A LA RECLAMACIÓN, O (B) CIEN DÓLARES ESTADOUNIDENSES (USD 100).",
+      "li3": "No somos responsables de los actos, omisiones o conducta de los Proveedores de Tours, incluyendo pero no limitado a lesiones personales, daños a la propiedad o falla en realizar el Servicio de Tour. Cualquier reclamación que surja del Servicio de Tour en sí debe dirigirse al Proveedor de Tour, sujeto a la ley aplicable.",
+      "p2": "Algunas jurisdicciones (incluyendo la República de Corea y ciertos estados de EE. UU.) no permiten la exclusión o limitación de daños incidentales o consecuentes o de garantías implícitas, por lo que las limitaciones anteriores pueden no aplicarse a usted en su totalidad. En tales casos, nuestra responsabilidad se limitará al máximo permitido por la ley."
+    },
+    "s12": {
+      "title": "12. Indemnización",
+      "p1": "Usted acepta indemnizar, defender y mantener indemnes a la Empresa y sus afiliadas, directores, empleados, agentes y licenciantes de y contra todas y cada una de las reclamaciones, daños, pérdidas, responsabilidades, costos y gastos (incluyendo honorarios razonables de abogados) que surjan de o estén relacionados con (a) su uso de la Plataforma, (b) su Reserva o participación en cualquier Servicio de Tour, (c) su incumplimiento de estos Términos o cualquier ley aplicable, o (d) su violación de los derechos de cualquier tercero. Nos reservamos el derecho de asumir la defensa y el control exclusivos de cualquier asunto sujeto a indemnización por usted, a su cargo."
+    },
+    "s13": {
+      "title": "13. Terminación",
+      "p1": "Podemos suspender o terminar su acceso a la Plataforma y su cuenta en cualquier momento, con o sin causa o aviso, en la medida permitida por la ley. Usted puede dejar de usar la Plataforma y cerrar su cuenta en cualquier momento contactándonos.",
+      "p2": "Al terminar, su derecho a usar la Plataforma cesa. Las disposiciones que por su naturaleza deban sobrevivir (incluyendo las Secciones 2 (Definiciones según se usan en disposiciones sobrevivientes), 9 (Propiedad Intelectual), 10 (Descargos), 11 (Limitación de Responsabilidad), 12 (Indemnización), 14 (Ley Aplicable y Resolución de Disputas) y 15 (General)) sobrevivirán a la terminación."
+    },
+    "s14": {
+      "title": "14. Ley Aplicable y Resolución de Disputas",
+      "governingLabel": "Ley aplicable:",
+      "p1": "Estos Términos se rigen por las leyes del Estado de Wyoming, Estados Unidos, sin tener en cuenta sus principios de conflicto de leyes. Si es un consumidor residente habitual en la República de Corea, las disposiciones obligatorias de la ley coreana también pueden aplicarse en la medida en que no puedan ser derogadas por acuerdo.",
+      "disputesLabel": "Disputas:",
+      "p2Before": "Le animamos a contactarnos primero en ",
+      "p2After": " para resolver cualquier disputa de buena fe. Si no podemos resolver la disputa dentro de un tiempo razonable (p. ej., 30 días), entonces:",
+      "li1": "Para usuarios en Estados Unidos: Cualquier acción o procedimiento legal se presentará exclusivamente en los tribunales estatales o federales ubicados en Wyoming, y usted consiente a la jurisdicción personal de dichos tribunales.",
+      "li2": "Para usuarios en la República de Corea: Puede presentar reclamaciones en los tribunales de su lugar de residencia o en los tribunales de Jeju-si, República de Corea, según lo permita la ley coreana. Nada en estos Términos le priva de la protección de los mecanismos obligatorios de resolución de disputas de consumidores bajo la ley coreana (p. ej., Agencia de Consumidores de Corea, resolución de disputas de comercio electrónico).",
+      "li3": "Para usuarios en otras jurisdicciones: Cualquier acción o procedimiento legal puede presentarse en los tribunales de Wyoming o en los tribunales de su lugar de residencia, según lo permita la ley aplicable.",
+      "p3": "Donde la ley aplicable requiera una ley aplicable o foro diferente para disputas de consumidores (p. ej., protección obligatoria al consumidor de la UE o Corea), esa ley o foro se aplicará en la medida requerida."
+    },
+    "s15": {
+      "title": "15. Disposiciones Generales",
+      "entireLabel": "Acuerdo completo:",
+      "entire": "Estos Términos, junto con nuestra Política de Privacidad y Política de Reembolso (y cualquier otra política que referenciemos), constituyen el acuerdo completo entre usted y la Empresa con respecto a la Plataforma y reemplazan cualquier acuerdo o entendimiento previo.",
+      "severabilityLabel": "Separabilidad:",
+      "severability": "Si alguna disposición de estos Términos se considera inválida o inaplicable, las disposiciones restantes permanecerán en vigor.",
+      "waiverLabel": "Renuncia:",
+      "waiver": "Nuestra falta de aplicación de cualquier derecho o disposición no constituye una renuncia a ese derecho o disposición.",
+      "assignmentLabel": "Cesión:",
+      "assignment": "Usted no puede ceder o transferir estos Términos o su cuenta sin nuestro consentimiento por escrito. Podemos ceder nuestros derechos y obligaciones sin restricción.",
+      "noticesLabel": "Avisos:",
+      "noticesBefore": "Podemos dar aviso por correo electrónico a su dirección registrada o publicando en la Plataforma. Usted puede darnos aviso en ",
+      "noticesAfter": " o en nuestra dirección a continuación.",
+      "forceLabel": "Fuerza mayor:",
+      "force": "No somos responsables por fallas o retrasos en el cumplimiento debido a circunstancias más allá de nuestro control razonable (p. ej., desastre natural, guerra, pandemia, acción gubernamental, falla de infraestructura de terceros)."
+    },
+    "s16": {
+      "title": "16. Contacto",
+      "p1": "Para preguntas sobre estos Términos, su Reserva o la Plataforma, contáctenos:",
+      "entity": "Entidad:",
+      "email": "Correo electrónico:",
+      "phone": "Teléfono:",
+      "address": "Dirección:",
+      "registered": "Dirección registrada:"
+    },
+    "backToLegal": "Volver a Legal"
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "introPrefix": "Última actualización: ",
+    "introSuffix": ". Esta política está diseñada para cumplir con las leyes de privacidad aplicables, incluidas la Ley de Protección de Información Personal (PIPA) de la República de Corea y las leyes de privacidad de los estados de EE. UU. (p. ej., CCPA/CPRA de California, Virginia, Colorado, Connecticut, Utah).",
+    "s1": {
+      "title": "1. Responsable del Tratamiento y Alcance",
+      "p1": "Responsable del tratamiento de datos (operador): ATOC KOREA LLC (\"nosotros\", \"nuestro\"), una sociedad de responsabilidad limitada de Wyoming. A efectos de la Ley de Protección de Información Personal (PIPA) de la República de Corea, somos el responsable del tratamiento de información personal por el tratamiento descrito en esta política.",
+      "li1": "Dirección registrada: 30 N Gould St, STE R, Sheridan, WY 82801, USA",
+      "li2": "Dirección operativa/de contacto: 302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do, República de Corea",
+      "li3": "Contacto: +82 10 9780 8027; support@atockorea.com",
+      "p2": "Esta Política de Privacidad se aplica a la información personal que recopilamos a través de nuestro sitio web atockorea.com, nuestra plataforma de reservas, formularios de contacto, correo electrónico (incluido support@atockorea.com) y cualquier servicio vinculado que operemos. Se aplica a usuarios y visitantes en la República de Corea, Estados Unidos (incluidos residentes de California y otros estados con leyes integrales de privacidad) y otras jurisdicciones donde ofrecemos servicios."
+    },
+    "s2": {
+      "title": "2. Información que Recopilamos",
+      "p1": "Solo recopilamos la información personal necesaria para prestar nuestros servicios, cumplir contratos y cumplir la ley. A continuación describimos las categorías de información personal que hemos podido recopilar en los últimos 12 meses (para fines de divulgación en EE. UU.) y los tipos de datos que tratamos (para claridad bajo las leyes coreana y otras).",
+      "li1": "Identificadores: Nombre, dirección de correo electrónico, número de teléfono, dirección IP, identificadores de dispositivo, ID de cuenta.",
+      "li2": "Información comercial: Historial de reservas, información relacionada con pagos (cuando ofrecemos pago con tarjeta o en línea, no almacenamos números completos de tarjeta; el procesamiento de pagos lo realiza el procesador externo que utilizamos para ese fin).",
+      "li3": "Actividad en internet o red: Datos de navegación y uso en nuestro sitio (p. ej., páginas visitadas, URL de referencia), registros relacionados con acceso y errores.",
+      "li4": "Datos de geolocalización: Ubicación aproximada desde IP o configuración del dispositivo cuando utiliza nuestro sitio o aplicación, solo cuando sea necesario para el servicio.",
+      "li5": "Inferencias: No creamos perfiles para publicidad dirigida; cualquier preferencia (p. ej., idioma) se utiliza solo para operar el servicio.",
+      "li6": "Comunicaciones: Contenido de los mensajes que nos envía (formulario de contacto, correo de soporte, consulta) y metadatos (p. ej., hora, canal).",
+      "li7": "Información personal sensible (cuando la defina la ley): No recopilamos a sabiendas categorías sensibles (p. ej., geolocalización precisa para seguimiento, salud, credenciales de cuenta financiera para nuestro propio almacenamiento) más allá de lo estrictamente necesario para reservas y soporte. Cuando ofrecemos pago con tarjeta, los datos de la tarjeta los procesa el procesador de pagos que utilizamos; no conservamos números completos de tarjeta.",
+      "p2": "Fuentes de información: Recopilamos información (1) directamente de usted (registro de cuenta, reserva, formularios de contacto, correos, preferencias), (2) automáticamente cuando utiliza nuestro sitio web (cookies, registros, datos de dispositivo), y (3) de terceros solo cuando sea necesario (p. ej., cuando usamos un procesador de pagos, estado de ese procesador; proveedor de tours para cumplimiento)."
+    },
+    "s3": {
+      "title": "3. Fines de Recopilación y Uso (Tratamiento)",
+      "p1": "Tratamos la información personal para los siguientes fines:",
+      "li1": "Crear y gestionar su cuenta y autenticarle.",
+      "li2": "Procesar, confirmar y gestionar reservas y facilitar pagos cuando ofrecemos esa opción.",
+      "li3": "Comunicarnos con usted sobre sus reservas, actualizaciones, cancelaciones y mensajes esenciales del servicio.",
+      "li4": "Responder a consultas, quejas y solicitudes de soporte (incluidos correos a support@atockorea.com).",
+      "li5": "Cumplir obligaciones legales, regulatorias, fiscales y contables (p. ej., conservación de registros de transacciones).",
+      "li6": "Operar, asegurar y mejorar nuestro sitio web y plataforma (p. ej., análisis, supervisión de errores, prevención de fraude).",
+      "li7": "Hacer cumplir nuestros Términos de Servicio y proteger nuestros derechos y los de terceros.",
+      "li8": "Enviar comunicaciones de marketing o promocionales solo cuando haya dado su consentimiento o cuando lo permita la ley, con fácil exclusión.",
+      "p2": "No utilizamos su información personal para fines sustancialmente diferentes de los aquí descritos sin notificarle y, cuando la ley lo exija, obtener su consentimiento."
+    },
+    "s4": {
+      "title": "4. Período de Conservación y Uso",
+      "p1": "Conservamos la información personal solo el tiempo necesario para cumplir los fines anteriores o lo que exija la ley. A menos que una ley específica exija un período mayor:",
+      "li1": "Datos de cuenta: Durante la vigencia de su cuenta más un período razonable tras el cierre para resolución de disputas y cumplimiento legal (p. ej., hasta la prescripción aplicable o lo que exija la ley fiscal/contable).",
+      "li2": "Datos de reserva y transacción: Según lo requerido para el cumplimiento del contrato, reembolsos y obligaciones legales/contables (normalmente varios años según la ley aplicable).",
+      "li3": "Datos de contacto y consulta: Hasta que se resuelva la consulta y durante un período limitado después con fines de calidad y legales.",
+      "li4": "Consentimiento de marketing y preferencias: Hasta que retire el consentimiento o se excluya, momento en el que dejamos de usar y eliminamos o anonimizamos según nuestro calendario de conservación.",
+      "li5": "Registros y datos técnicos: Durante un período limitado necesario para seguridad y resolución de problemas (p. ej., hasta 12–24 meses a menos que la ley exija un período mayor).",
+      "p2": "Cuando la conservación ya no sea necesaria, eliminamos o anonimizamos la información de acuerdo con nuestros procedimientos de destrucción (Sección 5)."
+    },
+    "s5": {
+      "title": "5. Procedimientos y Métodos de Destrucción",
+      "p1": "Cuando la información personal ya no sea necesaria para los fines para los que se recopiló o cuando haya expirado el período de conservación (y ninguna excepción legal requiera una conservación adicional), la destruimos de la siguiente manera:",
+      "li1": "Datos electrónicos: Eliminación mediante medios técnicos que impidan la recuperación, o sobrescritura segura; cuando los datos los conserve un procesador, exigimos los mismos estándares por contrato.",
+      "li2": "Registros en papel o físicos: Trituración, incineración u otra destrucción segura para que la información no pueda reconstruirse.",
+      "li3": "Momento: La destrucción se realiza en un período razonable (p. ej., en 30 días) después de cumplirse el fin o de finalizar el período de conservación, a menos que la ley nos exija conservar los datos."
+    },
+    "s6": {
+      "title": "6. Cómo Compartimos Información",
+      "p1": "No vendemos su información personal. Solo compartimos información personal como se describe a continuación. Según la ley coreana, se distingue entre (a) provisión a terceros (제3자 제공) y (b) encargo/externalización (위탁); describimos ambos.",
+      "h31": "6.1 Provisión a terceros (제3자 제공)",
+      "p2": "Podemos proporcionar información personal a las siguientes categorías de terceros para los fines indicados:",
+      "li1": "Proveedores de tours/experiencias: Para cumplir su reserva (p. ej., nombre, contacto, detalles de reserva). Son operadores independientes; su uso de sus datos se rige por sus propias políticas y nuestros acuerdos con ellos.",
+      "li2": "Procesadores de pago: Cuando ofrecemos pago en línea o con tarjeta, podemos proporcionar información al procesador de pagos que utilizamos (p. ej., información de facturación según requiera el procesador). No almacenamos números completos de tarjeta de pago.",
+      "li3": "Autoridades legales y regulatorias: Cuando lo exija la ley, orden judicial o solicitud gubernamental, o para proteger nuestros derechos y seguridad.",
+      "h32": "6.2 Encargo / externalización (위탁)",
+      "p3": "Encargamos las siguientes actividades a proveedores de servicios que tratan información personal en nuestro nombre bajo contrato. Los seleccionamos con cuidado y exigimos salvaguardas y limitaciones de uso apropiadas:",
+      "li4": "Alojamiento e infraestructura: Proveedores de nube y alojamiento (p. ej., Vercel, Supabase o similares) para alojamiento de sitio web y base de datos.",
+      "li5": "Correo y comunicaciones: Herramientas de entrega de correo y soporte (p. ej., Resend) para correos transaccionales y de soporte.",
+      "li6": "Análisis y supervisión: Servicios que nos ayudan a entender el uso y corregir errores (p. ej., análisis, seguimiento de errores), configurados para minimizar la identificación.",
+      "p4": "No permitimos que nuestros proveedores de servicios utilicen su información personal para su propio marketing ni la vendan. Solo divulgamos lo necesario para el servicio contratado."
+    },
+    "s7": {
+      "title": "7. No Vendemos ni Compartimos para Publicidad Conductual de Contexto Cruzado",
+      "p1": "No vendemos información personal según la definición de la Ley de Privacidad del Consumidor de California (CCPA) y leyes similares de estados de EE. UU. No \"compartimos\" información personal para publicidad conductual de contexto cruzado. No tenemos conocimiento real de que vendamos o compartamos información personal de consumidores menores de 16 años."
+    },
+    "s8": {
+      "title": "8. Cookies y Tecnologías Similares (Recopilación Automática)",
+      "p1": "Utilizamos cookies y tecnologías similares (p. ej., almacenamiento local, píxeles) para:",
+      "li1": "Habilitar la funcionalidad esencial del sitio web y la plataforma (p. ej., sesión, autenticación, preferencias).",
+      "li2": "Mejorar el rendimiento y la experiencia del usuario (p. ej., equilibrio de carga, idioma/localidad).",
+      "li3": "Analizar cómo se utiliza nuestro sitio (p. ej., análisis) y detectar y prevenir fraude o abuso, cuando la ley lo permita.",
+      "p2": "Puede controlar las cookies mediante la configuración de su navegador y, cuando lo ofrezcamos, mediante un mecanismo de preferencia o consentimiento de cookies en nuestro sitio web (p. ej., en el pie de página). Bloquear ciertas cookies puede afectar algunas funciones del sitio."
+    },
+    "s9": {
+      "title": "9. Medidas de Seguridad",
+      "p1": "Implementamos medidas técnicas y organizativas para proteger la información personal contra acceso, alteración, divulgación o destrucción no autorizados, incluyendo:",
+      "li1": "Cifrado en tránsito (p. ej., TLS) y, cuando corresponda, en reposo.",
+      "li2": "Controles de acceso y autenticación (p. ej., acceso basado en roles, contraseñas seguras).",
+      "li3": "Requisitos contractuales y de supervisión para los procesadores que manejan información personal.",
+      "li4": "Revisión periódica de nuestras prácticas y, cuando corresponda, actualización de las medidas de seguridad.",
+      "p2": "Ningún método de transmisión o almacenamiento es 100% seguro. Le animamos a usar una contraseña segura y a evitar compartir credenciales de cuenta."
+    },
+    "s10": {
+      "title": "10. Transferencias Internacionales",
+      "p1": "Operamos en la República de Corea y Estados Unidos. La información personal puede almacenarse o procesarse en cualquiera de las jurisdicciones o en otros países donde operan nuestros proveedores de servicios. Cuando transferimos datos desde Corea, la UE u otras jurisdicciones que restringen las transferencias, implementamos salvaguardas apropiadas (p. ej., cláusulas contractuales estándar, decisiones de adecuación u otros mecanismos reconocidos por la autoridad competente) para garantizar que sus datos reciban un nivel adecuado de protección."
+    },
+    "s11": {
+      "title": "11. Sus Derechos y Cómo Ejercerlos",
+      "p1": "Según su ubicación, puede tener los siguientes derechos. No le discriminaremos por ejercer estos derechos.",
+      "h31": "Derechos bajo la ley coreana (PIPA)",
+      "li1": "Acceso: Solicitar acceso a la información personal que conservamos sobre usted.",
+      "li2": "Rectificación: Solicitar la corrección de información personal inexacta o incompleta.",
+      "li3": "Supresión: Solicitar la eliminación de su información personal, con sujeción a las excepciones exigidas por la ley.",
+      "li4": "Suspensión del tratamiento: Solicitar que suspendamos el tratamiento de su información personal en determinadas circunstancias.",
+      "li5": "Retirada del consentimiento: Cuando el tratamiento se base en el consentimiento, puede retirar el consentimiento en cualquier momento.",
+      "h32": "Derechos bajo las leyes estatales de EE. UU. (p. ej., CCPA/CPRA de California)",
+      "li6": "Derecho a saber: Solicitar la divulgación de las categorías y piezas específicas de información personal que hemos recopilado, las categorías de fuentes, fines y categorías de terceros con los que compartimos.",
+      "li7": "Derecho a eliminar: Solicitar la eliminación de su información personal, con sujeción a las excepciones aplicables.",
+      "li8": "Derecho a corregir: Solicitar la corrección de información personal inexacta.",
+      "li9": "Derecho a optar por no participar en venta/compartición: No vendemos ni compartimos para publicidad conductual de contexto cruzado; si eso cambia, proporcionaremos una opción de exclusión.",
+      "li10": "Derecho a limitar el uso de información personal sensible: Cuando utilicemos información personal sensible más allá de lo necesario para prestar el servicio, puede tener derecho a limitar dicho uso (solo usamos datos sensibles cuando es necesario).",
+      "li11": "Derecho a no discriminación: No le discriminaremos por ejercer sus derechos de privacidad.",
+      "h33": "Cómo ejercer sus derechos",
+      "p2": "Para ejercer cualquiera de los derechos anteriores, contáctenos en:",
+      "li12": "Correo electrónico: support@atockorea.com (asunto: \"Solicitud de Privacidad\")",
+      "li13": "Teléfono: +82 10 9780 8027",
+      "li14": "Correo: ATOC KOREA LLC, 302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do, República de Corea",
+      "p3": "Verificaremos su identidad antes de procesar su solicitud y responderemos dentro del plazo exigido por la ley aplicable (p. ej., 30–45 días para solicitudes CCPA, o según exija la ley coreana). Si es residente de California y no está satisfecho con nuestra respuesta, puede contactar al Fiscal General de California o presentar una queja ante la Agencia de Protección de Privacidad de California. En Corea, puede contactar a la Comisión de Protección de Información Personal (PIPC) o la autoridad competente."
+    },
+    "s12": {
+      "title": "12. Privacidad de Menores",
+      "p1": "Nuestros servicios no están dirigidos a menores de 16 años (o la edad de consentimiento aplicable en su jurisdicción). No recopilamos a sabiendas información personal de menores. Si cree que hemos recopilado información de un menor, contáctenos en support@atockorea.com y la eliminaremos con prontitud. No tenemos conocimiento real de que vendamos o compartamos información personal de consumidores menores de 16 años."
+    },
+    "s13": {
+      "title": "13. Cambios en Esta Política",
+      "p1": "Podemos actualizar esta Política de Privacidad de vez en cuando. Publicaremos la política actualizada en esta página y actualizaremos la fecha de \"Última actualización\". Para cambios materiales que afecten cómo usamos su información personal, proporcionaremos aviso adicional (p. ej., por correo o un aviso destacado en nuestro sitio) y, cuando la ley lo exija, obtendremos su consentimiento. Le animamos a revisar esta política periódicamente."
+    },
+    "s14": {
+      "title": "14. Oficial de Privacidad y Contacto",
+      "p1": "Para preguntas sobre esta Política de Privacidad, ejercer sus derechos o reportar una inquietud, puede contactar a nuestro contacto de privacidad:",
+      "li1": "Entidad: ATOC KOREA LLC",
+      "li2": "Contacto: support@atockorea.com (para asuntos de privacidad puede usar el asunto \"Privacidad\" o \"Protección de Datos\")",
+      "li3": "Teléfono: +82 10 9780 8027",
+      "li4": "Dirección: 302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do, República de Corea",
+      "p2": "A efectos de la Ley de Protección de Información Personal de la República de Corea, el contacto anterior sirve como punto de contacto para consultas relacionadas con información personal. Responderemos a las solicitudes legítimas de acuerdo con la ley aplicable."
+    },
+    "backToLegal": "Volver a Legal"
+  },
+  "cookiePolicy": {
+    "title": "Política de Cookies",
+    "introPrefix": "Última actualización: ",
+    "introSuffix": ". Esta Política de Cookies explica cómo ATOC KOREA LLC utiliza cookies y tecnologías similares en nuestra plataforma y cómo puede gestionar sus preferencias. Tiene la intención de cumplir con los requisitos de transparencia bajo la ley aplicable (incluyendo GDPR, ePrivacy y leyes de privacidad estatales de EE. UU.). Cuando utilicemos proveedores de pago terceros para el pago, divulgaremos sus prácticas de cookies aquí para que tenga información clara sobre las cookies de pago y prevención de fraude.",
+    "s1": { "title": "1. Introducción y alcance", "p1": "ATOC KOREA LLC (\"nosotros\") opera el sitio web y la plataforma de reservas en atockorea.com. Esta Política de Cookies se aplica a todos los visitantes y usuarios de nuestra plataforma, incluyendo cuando navega por nuestro sitio, crea una cuenta, hace una reserva o completa un pago. Describe:", "li1": "Qué son las cookies y tecnologías similares", "li2": "Qué cookies utilizamos nosotros y nuestros proveedores de servicios, y por qué", "li3": "Cómo se pueden utilizar las cookies en relación con el procesamiento de pagos y la prevención de fraude cuando usamos proveedores de pago terceros", "li4": "Cómo puede controlar o eliminar las cookies", "p2Before": "Esta política debe leerse junto con nuestra ", "p2After": ", que explica cómo recopilamos, usamos y protegemos su información personal en general." },
+    "s2": { "title": "2. ¿Qué son las cookies y tecnologías similares?", "p1": "Las cookies son pequeños archivos de texto que se colocan en su dispositivo (computadora, tableta o móvil) cuando visita un sitio web. Se utilizan ampliamente para que los sitios web funcionen de manera más eficiente, recordar sus preferencias y proporcionar información al propietario del sitio. Las cookies pueden ser \"de primer lado\" (establecidas por nosotros cuando usa nuestro sitio) o \"de terceros\" (establecidas por otro dominio, como nuestros proveedores de pago o análisis).", "p2": "Las tecnologías similares incluyen almacenamiento local, almacenamiento de sesión, etiquetas de píxeles (web beacons) y secuencias de comandos que almacenan o acceden a información en su dispositivo. Para los fines de esta política, usamos el término \"cookies\" para referirnos a las cookies y estas tecnologías similares cuando se utilizan para fines similares.", "p3": "Las cookies pueden clasificarse por duración (las cookies de sesión se eliminan cuando cierra el navegador; las cookies persistentes permanecen por un período establecido o hasta que las elimine) y por propósito (p. ej., estrictamente necesarias, funcionales, rendimiento, marketing). Describimos los propósitos y categorías que usamos a continuación." },
+    "s3": { "title": "3. Categorías de cookies que utilizamos", "p1": "Utilizamos las siguientes categorías de cookies en nuestra plataforma:", "h31": "3.1 Cookies estrictamente necesarias", "p2": "Estas cookies son esenciales para el funcionamiento de nuestro sitio web y plataforma. Habilitan funcionalidad básica como seguridad, gestión de red, estado de sesión e inicio de sesión, y acceso a áreas seguras. No puede optar por no recibir estas cookies sin afectar el funcionamiento del sitio; en algunas jurisdicciones no requieren consentimiento porque son estrictamente necesarias.", "li1": "Autenticación y sesión: Utilizamos cookies (incluyendo a través de nuestro proveedor de autenticación) para mantenerlo conectado y mantener su sesión de forma segura al navegar entre páginas.", "li2": "Seguridad y prevención de fraude: Nosotros y nuestros proveedores de servicios utilizamos cookies y tecnologías similares para ayudar a detectar y prevenir fraude, abuso y acceso no autorizado.", "li3": "Equilibrio de carga y enrutamiento: Las cookies pueden utilizarse para garantizar que las solicitudes se manejen correctamente por nuestra infraestructura.", "h32": "3.2 Cookies funcionales", "p3": "Estas cookies permiten funcionalidad mejorada y personalización, como recordar su preferencia de idioma o configuración regional.", "li4": "Preferencia de idioma/configuración regional: Almacenamos el idioma elegido (p. ej., inglés, coreano) para que el sitio se muestre en su idioma preferido en visitas posteriores.", "h33": "3.3 Cookies de rendimiento y análisis", "p4": "Podemos utilizar cookies para entender cómo los visitantes usan nuestra plataforma (p. ej., qué páginas se visitan, cuánto tiempo permanecen los usuarios) para mejorar el rendimiento y corregir errores. Cuando utilizamos análisis de terceros, los configuramos para minimizar la identificación y cumplir con nuestra Política de Privacidad.", "h34": "3.4 Cookies de marketing", "p5": "Actualmente no utilizamos cookies para publicidad dirigida ni para rastrearlo en otros sitios web con fines de marketing. Si introducimos tales cookies en el futuro, actualizaremos esta política y, cuando lo exija la ley, obtendremos su consentimiento antes de usarlas." },
+    "s4": { "title": "4. Nuestras cookies de primer lado", "p1": "La siguiente tabla describe las principales cookies de primer lado que establecemos cuando utiliza nuestra plataforma. Los nombres y duraciones de las cookies pueden cambiar con las actualizaciones de nuestra tecnología.", "tablePurpose": "Propósito", "tableCategory": "Categoría", "tableDuration": "Duración", "row1Purpose": "Sesión y autenticación (p. ej., estado de inicio de sesión)", "row1Category": "Estrictamente necesarias", "row1Duration": "Sesión o según nuestro proveedor de autenticación", "row2Purpose": "Preferencia de idioma/configuración regional (p. ej., NEXT_LOCALE)", "row2Category": "Funcionales", "row2Duration": "Hasta 1 año", "row3Purpose": "Seguridad y prevención de fraude", "row3Category": "Estrictamente necesarias", "row3Duration": "Sesión o de corta duración" },
+    "s5": { "title": "5. Procesamiento de pagos y cookies de terceros", "p1": "Cuando ofrecemos pago con tarjeta o en línea en nuestra plataforma, podemos utilizar uno o más proveedores de servicios de pago terceros. Al utilizar el pago, puede ser dirigido o interactuar con las páginas o secuencias de comandos de ese proveedor. El proveedor de pago puede establecer y utilizar sus propias cookies y tecnologías similares para:", "li1": "Procesamiento de pagos: Completar su transacción de forma segura y comunicarse con nuestro servidor sobre el estado del pago.", "li2": "Prevención y detección de fraude: Recopilar información sobre el dispositivo y navegador utilizados para acceder al pago, detectar y prevenir transacciones fraudulentas o no autorizadas, y cumplir con los requisitos de la industria de tarjetas de pago y regulatorios. Bloquear estas cookies puede impedirle completar un pago.", "li3": "Seguridad: Proteger sus datos de pago y garantizar la integridad de la sesión de pago.", "p2": "No controlamos las cookies establecidas por los proveedores de pago; se establecen cuando interactúa con los servicios del proveedor. No utilizamos dichas cookies para publicidad. Cuando habilitemos un proveedor de pago específico, divulgaremos su nombre y enlace a sus políticas de cookies y privacidad en esta sección para que pueda revisarlas antes de pagar." },
+    "s6": { "title": "6. Otras cookies de terceros", "p1": "Podemos utilizar otros servicios de terceros (p. ej., alojamiento, análisis, monitoreo de errores) que establecen cookies o tecnologías similares. Elegimos proveedores que se comprometen con estándares apropiados de seguridad y privacidad. No permitimos que terceros utilicen cookies en nuestro sitio para publicidad entre sitios o para vender sus datos." },
+    "s7": { "title": "7. ¿Cuánto duran las cookies?", "p1": "Las cookies de sesión se eliminan cuando cierra su navegador. Las cookies persistentes permanecen durante el tiempo establecido cuando se colocan (p. ej., desde unos días hasta un año, según el propósito). Nuestra cookie de idioma/configuración regional se establece por hasta un año para recordar su preferencia. Las cookies relacionadas con autenticación y seguridad típicamente duran la duración de su sesión o según la configuración de nuestro proveedor de autenticación. Las duraciones de cookies de cualquier proveedor de pago tercero las establece ese proveedor y se describen en su política de cookies." },
+    "s8": { "title": "8. Cómo puede controlar las cookies", "p1": "Configuración del navegador: La mayoría de los navegadores web permiten gestionar las cookies a través de su configuración. Normalmente puede rechazar o eliminar algunas o todas las cookies. Bloquear o eliminar las cookies estrictamente necesarias puede impedirle iniciar sesión, permanecer conectado o utilizar ciertas funciones. Bloquear o eliminar las cookies utilizadas por nuestro proveedor de pago durante el pago puede impedirle completar un pago en nuestro sitio.", "p2": "Nuestro sitio: Donde ofrecemos un mecanismo de preferencia o consentimiento de cookies (p. ej., en el pie de página o en un banner), puede usarlo para gestionar sus preferencias para cookies no esenciales. Las cookies esenciales y relacionadas con el pago son necesarias para que la plataforma y el pago funcionen y no son opcionales.", "p3": "Cuando utilicemos un proveedor de pago específico, enlazaremos a su configuración de cookies y consentimiento en esta política para que pueda gestionar las cookies establecidas por ese proveedor. Desactivar las cookies del proveedor de pago puede impedirle completar pagos en nuestro sitio cuando se utilice ese proveedor.", "p4": "Do Not Track / Global Privacy Control: Algunos navegadores o extensiones envían señales \"Do Not Track\" o \"Global Privacy Control\". Respetamos dichas señales cuando es técnicamente y legalmente factible; sin embargo, las cookies esenciales y relacionadas con el pago pueden seguir utilizándose para que el sitio y el pago puedan funcionar." },
+    "s9": { "title": "9. Actualizaciones de esta Política de Cookies", "p1": "Podemos actualizar esta Política de Cookies de vez en cuando para reflejar cambios en nuestras prácticas, tecnología o requisitos legales. Publicaremos la política actualizada en esta página y actualizaremos la fecha de \"Última actualización\". Cuando la ley lo exija, obtendremos su consentimiento antes de utilizar nuevas cookies no esenciales. Le animamos a revisar esta política periódicamente." },
+    "s10": { "title": "10. Contáctenos", "p1": "Si tiene preguntas sobre esta Política de Cookies o nuestro uso de cookies, contáctenos:", "entity": "Entidad:", "email": "Correo electrónico:", "phone": "Teléfono:", "address": "Dirección:" },
+    "backToLegal": "Volver a Legal"
+  },
+  "refund": {
+    "title": "Política de reembolsos",
+    "introPrefix": "Última actualización: ",
+    "introSuffix": ". Esta política de reembolsos se aplica a las reservas realizadas a través de la plataforma de ATOC KOREA LLC y pretende cumplir con la legislación aplicable en Corea y EE. UU. Léala junto con nuestros ",
+    "introAfterTerms": " y ",
+    "introAfter": ".",
+    "s1": { "title": "1. Alcance y nuestro papel", "p1": "Esta política de reembolsos se aplica a todas las reservas («Reservas») que realice a través de atockorea.com y nuestra plataforma de reservas («Plataforma») para tours, actividades o experiencias («Servicios de tour») ofrecidos por terceros independientes («Proveedores de tour»). Reservar implica aceptar esta política.", "p2": "Actuamos únicamente como intermediarios de reservas. No operamos tours ni prestamos servicios de tour. El contrato del servicio de tour es entre usted y el proveedor. Facilitamos la reserva y, cuando ofrecemos pago en línea, cobramos en nombre del proveedor. La elegibilidad y el importe del reembolso se rigen por (a) esta política, (b) los Términos de servicio y (c) la política de cancelación del proveedor mostrada al reservar y en el correo de confirmación.", "p3": "Cuando la ley local le otorgue derechos que no puedan limitarse por contrato, esos derechos se aplican además de esta política. Esta política no pretende excluir ni limitar esos derechos imperativos." },
+    "s2": { "title": "2. Definiciones", "booking": "Reserva: la reserva que realiza a través de la Plataforma de un Servicio de tour ofrecido por un Proveedor de tour.", "platform": "Plataforma: el sitio web, la aplicación y los sistemas relacionados operados por ATOC KOREA LLC para consultar y reservar tours y actividades.", "tourProvider": "Proveedor de tour (operador, comerciante): el tercero independiente que opera el Servicio de tour. No es empleado ni agente nuestro.", "platformFees": "Tarifas de plataforma: lo que cobramos por nuestro servicio de intermediación.", "tourFees": "Tarifas de tour: el importe pagado por el Servicio de tour, cobrado por nosotros o por un proveedor de pago designado en nombre del Proveedor de tour.", "totalPrice": "Precio total: lo que paga al finalizar la compra, que puede incluir tarifas de plataforma y tarifas de tour (e impuestos aplicables)." },
+    "s3": { "title": "3. Ley aplicable y derechos del consumidor", "p1": "Corea: si es consumidor según la ley coreana, puede tener derecho a desistir o rescindir determinados contratos en los plazos legales. Mostramos las condiciones de cancelación y reembolso con claridad antes de completar la reserva.", "p2": "EE. UU.: los derechos de reembolso y cancelación pueden estar sujetos a la ley estatal. Mostramos la política de reembolsos con claridad antes de la compra.", "p3": "Las disputas sobre reembolsos se rigen por los Términos de servicio. También puede interponer reclamaciones ante organismos de protección al consumidor o utilizar mecanismos de resolución de disputas cuando proceda." },
+    "s4": { "title": "4. Tarifas de plataforma: cuándo son reembolsables", "p1": "Las tarifas de plataforma cubren nuestro servicio de intermediación. Tras la confirmación de la reserva, por regla general no son reembolsables, salvo en los siguientes casos:", "li1": "Error de nuestro sistema o de la Plataforma por el que la reserva no se confirmó y no se prestó el Servicio de tour.", "li2": "El Proveedor de tour cancela antes de la fecha prevista. Podemos reembolsar total o parcialmente las tarifas de plataforma a nuestra discreción.", "li3": "Nosotros cancelamos la reserva antes de la prestación del Servicio de tour. Reembolsaremos todo lo pagado (incluidas las tarifas de plataforma).", "li4": "La ley aplicable nos obliga a reembolsar.", "p2": "Las tarifas de plataforma no se reembolsan únicamente por cancelación voluntaria, no presentación (no-show) o insatisfacción tras la prestación del servicio." },
+    "s5": { "title": "5. Tarifas de tour: cuándo son reembolsables", "p1": "La elegibilidad para el reembolso de las tarifas de tour la determina la política de cancelación del Proveedor de tour, que mostramos antes de completar la reserva y resumimos en el correo de confirmación.", "li1": "Cancelación antes de la fecha/hora indicada: reembolso total de las tarifas de tour.", "li2": "Cancelación dentro del plazo indicado: reembolso parcial o ninguno.", "li3": "No-show o cancelación tardía: sin reembolso.", "p2": "Si el Proveedor de tour cancela el Servicio de tour, colaboraremos para ofrecer reembolso total de las tarifas de tour o fecha/experiencia alternativa.", "p3": "Cuando la ley imperativa le otorgue derecho a desistir y obtener reembolso en un plazo legal, tramitaremos el reembolso de las tarifas de tour conforme a la ley." },
+    "s6": { "title": "6. Cómo solicitar cancelación o reembolso", "p1Before": "Para solicitar cancelación o reembolso, póngase en contacto con nosotros en ", "p1After": " indicando el número de reserva y el motivo. Procesaremos según (a) la política de cancelación del proveedor, (b) esta política de reembolsos y (c) el momento de la solicitud.", "p2": "Solicite la cancelación lo antes posible. Confirmaremos el resultado por correo electrónico." },
+    "s7": { "title": "7. No-show y cancelación tardía", "p1": "No-show significa no asistir al Servicio de tour sin haber cancelado con antelación según la política del Proveedor de tour. Normalmente no hay reembolso de tarifas de tour ni de plataforma.", "p2": "Cancelación tardía es cancelar después del plazo de reembolso total o parcial fijado por el Proveedor de tour. Las consecuencias las establece el proveedor y se muestran antes de la reserva." },
+    "s8": { "title": "8. Cómo procesamos los reembolsos", "p1": "Una vez aprobada la solicitud de reembolso, devolvemos el importe correspondiente al método de pago original. Cuando usamos un proveedor de pago tercero, el reembolso se procesa a través de dicho proveedor. Suele acreditarse en 5-10 días laborables.", "p2": "Confirmaremos por correo que el reembolso se ha procesado. Si no ve el reembolso en el plazo esperado, contacte primero con su banco o emisor de la tarjeta.", "p3": "Cuando la ley aplicable establezca plazos de reembolso, los cumpliremos en la medida aplicable." },
+    "s9": { "title": "9. Qué no es reembolsable", "p1": "Salvo lo dispuesto en esta política o por ley, no se reembolsa:", "li1": "Tarifas de plataforma una vez confirmada la reserva.", "li2": "Tarifas de tour en caso de no-show o cancelación tardía según la política del proveedor.", "li3": "La parte del Servicio de tour ya consumida.", "li4": "Servicios o complementos comprados fuera de nuestra Plataforma.", "li5": "Importes que ya hayamos pagado o comprometido a pagar al proveedor según nuestro acuerdo y el momento de la cancelación." },
+    "s10": { "title": "10. Contracargos y disputas", "p1": "Si considera que tiene derecho a reembolso, contacte primero en support@atockorea.com con el número de reserva y el motivo antes de iniciar un contracargo o disputa con su banco o emisor.", "p2": "Los contracargos o disputas que contradigan las condiciones de cancelación y reembolso mostradas y aceptadas al reservar pueden ser impugnados." },
+    "s11": { "title": "11. Cambios en esta política y contacto", "p1": "Podemos actualizar esta política de reembolsos periódicamente. La versión actualizada se publicará en esta página y se actualizará la fecha de «Última actualización».", "p2": "Solicitudes de reembolso, consultas sobre la política o disputas:", "email": "Correo electrónico:", "emailNote": " (indique número de reserva y motivo)", "phone": "Teléfono:", "entity": "Entidad:", "address": "Dirección:" },
+    "backToLegal": "Volver a Legal"
+  },
   "trustBar": {
     "title": "Plataforma Segura de Reservas para Tours en Corea",
     "subtitle": "Conectamos a los viajeros con operadores locales verificados. Los pagos se procesan de forma segura en línea.",

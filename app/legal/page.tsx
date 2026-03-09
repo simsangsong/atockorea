@@ -16,17 +16,14 @@ export default function LegalPage() {
           <section className="mb-12">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Terms of Service</h2>
             <div className="bg-white rounded-lg shadow-md p-6 space-y-4 text-gray-700">
-              <p>ATOC KOREA LLC operates as a booking intermediary.</p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>We facilitate reservations and payments for booking services</li>
-                <li>We are not the tour operator or service provider</li>
-                <li>Tour services are delivered by independent third parties</li>
-              </ul>
-              <p className="font-semibold">
-                Responsibility for tour execution, safety, and service quality rests with the tour provider.
+              <p>
+                Our full Terms of Service are designed for our tour booking intermediary platform and to align with applicable law in the Republic of Korea and the United States. They cover your agreement with us, definitions, bookings, payments, cancellations and refunds, user conduct, disclaimers, limitation of liability, dispute resolution, and more.
               </p>
               <p>
-                Full terms govern booking, payments, cancellations, liability limitations, and dispute handling.
+                <a href="/terms" className="text-blue-600 hover:underline font-semibold">Read the full Terms of Service →</a>
+              </p>
+              <p className="text-sm text-gray-600">
+                Summary: ATOC KOREA LLC operates only as a booking intermediary. We do not operate tours; tour services are delivered by independent third parties. Responsibility for tour execution, safety, and service quality rests with the tour provider. Full terms govern booking, payments, cancellations, liability limitations, and dispute handling.
               </p>
             </div>
           </section>
@@ -35,18 +32,13 @@ export default function LegalPage() {
           <section className="mb-12">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Privacy Policy</h2>
             <div className="bg-white rounded-lg shadow-md p-6 space-y-4 text-gray-700">
-              <p>We collect personal data only as necessary to:</p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Process bookings</li>
-                <li>Communicate essential information</li>
-                <li>Comply with legal and accounting obligations</li>
-              </ul>
-              <p className="font-semibold">Personal data may be shared with:</p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Payment processors</li>
-                <li>Assigned tour providers (limited to booking fulfillment)</li>
-              </ul>
-              <p className="font-semibold">We do not sell personal data.</p>
+              <p>
+                Our full Privacy Policy is designed to comply with the Republic of Korea’s Personal Information Protection Act (PIPA) and U.S. state privacy laws (e.g., California CCPA/CPRA). It covers data we collect, purposes, retention, your rights (access, correction, deletion, opt-out, etc.), and how to contact us.
+              </p>
+              <p>
+                <a href="/privacy" className="text-blue-600 hover:underline font-semibold">Read the full Privacy Policy →</a>
+              </p>
+              <p className="text-sm text-gray-600">Summary: We collect data only as needed for bookings, communications, and legal compliance. We share with payment processors and tour providers for fulfillment. We do not sell your personal data.</p>
             </div>
           </section>
 
@@ -54,14 +46,14 @@ export default function LegalPage() {
           <section>
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Cookie Policy</h2>
             <div className="bg-white rounded-lg shadow-md p-6 space-y-4 text-gray-700">
-              <p>We use cookies and similar technologies to:</p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Enable essential website functionality</li>
-                <li>Improve platform performance</li>
-                <li>Support analytics and marketing (where permitted)</li>
-              </ul>
               <p>
-                You can manage cookie preferences at any time through the website footer.
+                Our full Cookie Policy describes in detail how we and our service providers use cookies and similar technologies for essential functionality, security, fraud prevention, payment processing (when we use third-party payment providers), and preferences. It is designed to meet transparency requirements under applicable law.
+              </p>
+              <p>
+                <a href="/cookies" className="text-blue-600 hover:underline font-semibold">Read the full Cookie Policy →</a>
+              </p>
+              <p className="text-sm text-gray-600">
+                Summary: We use strictly necessary cookies (session, auth, security, fraud prevention), functional cookies (e.g., language preference), and may use performance/analytics cookies. When we offer online payment, our payment provider may set cookies during checkout. You can manage cookies via your browser or our site where we offer a preference tool; blocking essential or payment-related cookies may affect login or checkout.
               </p>
             </div>
           </section>

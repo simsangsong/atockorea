@@ -11,7 +11,8 @@ interface Booking {
   tour_id: string;
   tour_date: string;
   tour_time: string | null;
-  number_of_people: number;
+  number_of_people?: number;
+  number_of_guests?: number;
   pickup_point_id: string | null;
   unit_price: number;
   total_price: number;
@@ -24,6 +25,7 @@ interface Booking {
   contact_name: string | null;
   contact_email: string | null;
   contact_phone: string | null;
+  special_requests: string | null;
   created_at: string;
   tours: {
     id: string;
@@ -305,6 +307,32 @@ export default function OrderDetailPage() {
                 {booking.user_profiles?.phone || booking.contact_phone || 'N/A'}
               </span>
             </div>
+            {(() => {
+              try {
+                const sr = booking.special_requests ? JSON.parse(booking.special_requests) : {};
+                const chatApp = sr.preferredChatApp || sr.preferred_chat_app;
+                const chatContact = sr.chatAppContact || sr.chat_app_contact;
+                if (!chatApp && !chatContact) return null;
+                return (
+                  <>
+                    {chatApp && (
+                      <div className="flex justify-between">
+                        <span className="text-gray-600">Chat App:</span>
+                        <span className="text-gray-900 capitalize">{String(chatApp)}</span>
+                      </div>
+                    )}
+                    {chatContact && (
+                      <div className="flex justify-between">
+                        <span className="text-gray-600">Chat Contact:</span>
+                        <span className="text-gray-900">{String(chatContact)}</span>
+                      </div>
+                    )}
+                  </>
+                );
+              } catch {
+                return null;
+              }
+            })()}
           </div>
         </div>
 
@@ -314,7 +342,7 @@ export default function OrderDetailPage() {
           <div className="space-y-3">
             <div className="flex justify-between">
               <span className="text-gray-600">Number of People:</span>
-              <span className="text-gray-900">{booking.number_of_people}</span>
+              <span className="text-gray-900">{booking.number_of_people ?? booking.number_of_guests ?? '—'}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">Unit Price:</span>

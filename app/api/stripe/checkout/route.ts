@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const { amount, currency = 'usd', bookingId, bookingData } = body;
+    const { amount, currency = 'krw', bookingId, bookingData } = body;
 
     // Validate required fields
     if (!amount || !bookingId) {
@@ -75,10 +75,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Convert amount to cents (Stripe uses smallest currency unit)
-    const amountInCents = Math.round(parseFloat(amount) * 100);
+    const cur = (currency || 'krw').toLowerCase();
+    // KRW is zero-decimal (1 unit = 1 KRW); USD is cents (1 unit = 0.01 USD)
+    const unitAmount = cur === 'krw'
+      ? Math.round(Number(amount))
+      : Math.round(Number(amount) * 100);
 
-    if (amountInCents <= 0) {
+    if (unitAmount <= 0) {
       return NextResponse.json(
         { error: 'Invalid amount' },
         { status: 400 }
@@ -94,19 +97,19 @@ export async function POST(req: NextRequest) {
     const tourTitle = tour?.title || 'Tour';
     const tourImage = tour?.image_url;
 
-    // Create Stripe Checkout Session
+    // Create Stripe Checkout Session (Stripe-hosted page per https://docs.stripe.com/payments/accept-a-payment)
     const sessionParams: Stripe.Checkout.SessionCreateParams = {
       payment_method_types: ['card'],
       line_items: [
         {
           price_data: {
-            currency: currency.toLowerCase(),
+            currency: cur,
             product_data: {
               name: `Tour Booking: ${tourTitle}`,
               description: `Booking ID: ${bookingId}`,
               images: tourImage ? [tourImage] : undefined,
             },
-            unit_amount: amountInCents,
+            unit_amount: unitAmount,
           },
           quantity: 1,
         },
@@ -134,11 +137,12 @@ export async function POST(req: NextRequest) {
     const stripe = getStripe();
     const session = await stripe.checkout.sessions.create(sessionParams);
 
-    // Update booking with Stripe session ID
+    // Update booking with Stripe session ID (customer info already saved by POST /api/bookings)
     await supabase
       .from('bookings')
       .update({
         payment_method: 'stripe',
+        payment_reference: session.id,
         updated_at: new Date().toISOString(),
       })
       .eq('id', bookingId);

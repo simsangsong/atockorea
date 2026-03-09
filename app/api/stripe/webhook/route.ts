@@ -66,12 +66,14 @@ export async function POST(req: NextRequest) {
           break;
         }
 
-        // Update booking payment status
+        // Update booking payment status and store Stripe session reference
         const { error: updateError } = await supabase
           .from('bookings')
           .update({
             payment_status: 'paid',
             payment_method: 'stripe',
+            payment_reference: session.id,
+            payment_date: new Date().toISOString(),
             status: 'confirmed',
             updated_at: new Date().toISOString(),
           })
