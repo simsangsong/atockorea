@@ -95,6 +95,8 @@
     "pleaseSelect": "請選擇",
     "chatAppContact": "聊天應用聯絡方式",
     "enterChatAppId": "輸入您的聊天應用ID或聯絡方式",
+    "lineNotice": "LINE 跨國帳戶無法透過 ID 或電話號碼添加。請填寫您的 LINE 聊天連結，或稍後旅遊供應商將發送郵件給您，請注意查收。",
+    "enterLineLink": "請輸入您的 LINE 聊天連結（例如 line.me/ti/p/...）",
     "fullDescription": "詳細說明",
     "whatsIncluded": "包含內容",
     "highlights": "亮點",
@@ -105,7 +107,25 @@
     "directions": "導航",
     "showFullItinerary": "顯示完整行程",
     "collapse": "收合",
-    "itineraryMayChange": "行程可能因天氣與交通狀況有所調整。"
+    "itineraryMayChange": "行程可能因天氣與交通狀況有所調整。",
+    "filters": {
+      "all": "全部",
+      "destination": "目的地",
+      "tourType": "線路類型",
+      "busTours": "巴士遊",
+      "privateTours": "私人訂製",
+      "cruiseTours": "郵輪岸上",
+      "priceRange": "價格範圍",
+      "minPrice": "最低（×1000 ₩）",
+      "maxPrice": "最高（×1000 ₩）",
+      "duration": "時長",
+      "halfDay": "半日",
+      "fullDay": "一日",
+      "hours2to3": "2–3小時",
+      "hours4": "4小時+",
+      "multiDay": "多日",
+      "clearAll": "清除篩選"
+    }
   },
   "booking": {
     "title": "預訂",
@@ -235,7 +255,8 @@
     "unauthorized": "未授權",
     "forbidden": "禁止存取",
     "pleaseEnter": "請輸入",
-    "pleaseSelect": "請選擇"
+    "pleaseSelect": "請選擇",
+    "invalidPhone": "電話號碼只能包含數字與 + 號"
   },
   "home": {
     "hero": {
@@ -245,7 +266,28 @@
       "jejuSubtitle": "自然奇觀和文化體驗",
       "experienceBusan": "體驗釜山",
       "busanSubtitle": "海岸美景和充滿活力的文化",
-      "findTour": "探索我的一日遊"
+      "findTour": "探索我的一日遊",
+      "searchTitle": "找到您的完美韓國之旅",
+      "destination": "目的地",
+      "destinationPlaceholder": "目的地",
+      "travelDate": "出行日期",
+      "travelers": "人數",
+      "findTours": "查找行程",
+      "destinations": {
+        "seoul": "首爾",
+        "busan": "釜山",
+        "jeju": "濟州島"
+      }
+    },
+    "heroTrustBar": {
+      "happyTravelersTitle": "10,000+ 滿意旅客",
+      "happyTravelersDesc": "深受全球旅客信賴",
+      "hotelPickupTitle": "含酒店接送",
+      "hotelPickupDesc": "從您的酒店或集合點便捷接送",
+      "securePaymentTitle": "安全支付",
+      "securePaymentDesc": "使用銀行卡或當日定金+現金安全支付",
+      "localGuidesTitle": "當地專家導遊",
+      "localGuidesDesc": "熟悉韓國的資深導遊"
     },
     "destinations": {
       "title": "Where to start",
@@ -259,6 +301,13 @@
       "available": "可預訂",
       "viewTours": "查看行程"
     },
+    "sections": {
+      "popularTours": "人氣線路",
+      "privateTours": "私人訂製",
+      "bestValueTours": "超值精選",
+      "cruiseShoreTours": "郵輪岸上觀光",
+      "seeAll": "查看全部"
+    },
     "tourList": {
       "eyebrow": "韓國一日遊",
       "title": "嚴選當地體驗",
@@ -270,12 +319,13 @@
       "subtitle": "限時提供的最佳季節體驗"
     },
     "payment": {
-      "title": "付款方式",
+      "title": "靈活付款方式",
       "subtitle": "選擇最適合您的付款方式",
+      "highlightBenefit": "今日支付少量訂金即可預訂，餘款在遊覽當日向導遊支付。",
       "depositCash": "訂金 + 當日現金",
       "depositCashDesc": "線上支付訂金以確認預訂，然後在當天以現金向導遊支付剩餘餘額。",
       "depositCashBenefit": "更靈活的付款選擇",
-      "fullAmount": "全額線上支付",
+      "fullAmount": "全額線上付款",
       "fullAmountDesc": "提前線上支付全額。快速、安全、方便。無需擔心當日現金。",
       "fullAmountBenefit": "所有付款均安全處理"
     },
@@ -624,6 +674,8 @@
     "tours": "旅遊",
     "sale": "特價",
     "off": "折扣",
-    "addedToCart": "已加入購物車！"
+    "addedToCart": "已加入購物車！",
+    "booked": "已預訂",
+    "save": "收藏"
   }
 }

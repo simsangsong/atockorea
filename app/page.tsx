@@ -2,10 +2,11 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
 import HeroSection from '@/components/HeroSection';
+import HeroPaymentStrip from '@/components/HeroPaymentStrip';
+import CompactTrustBar from '@/components/CompactTrustBar';
 import DestinationsCards from '@/components/DestinationsCards';
+import HomeTourSections from '@/components/HomeTourSections';
 import TourList from '@/components/TourList';
-import PaymentMethodInfo from '@/components/PaymentMethodInfo';
-import TrustBar from '@/components/TrustBar';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 // Force dynamic rendering to avoid I18nProvider issues during static generation
@@ -24,10 +25,11 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroSection />
+        <HeroPaymentStrip />
+        <CompactTrustBar />
         <DestinationsCards />
+        <HomeTourSections />
         <TourList />
-        <PaymentMethodInfo />
-        <TrustBar />
       </main>
       <Footer />
       <BottomNav />

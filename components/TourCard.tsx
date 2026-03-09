@@ -1,11 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CartIcon } from "./Icons";
 import { useTranslations } from "@/lib/i18n";
 import { useCurrencyOptional } from "@/lib/currency";
+import { isInWishlistLocal, toggleWishlistLocal } from "@/lib/wishlist";
+
+// Format duration string for display (e.g. "9 hours" -> "9h", "30 min" -> "30m")
+function formatDuration(duration: string | null | undefined): string {
+  if (!duration || !duration.trim()) return "";
+  const s = duration.trim().toLowerCase();
+  const hourMatch = s.match(/(\d+)\s*h(?:our)?s?/);
+  const minMatch = s.match(/(\d+)\s*m(?:in)?(?:ute)?s?/);
+  if (hourMatch && minMatch) return `${hourMatch[1]}h ${minMatch[1]}m`;
+  if (hourMatch) return `${hourMatch[1]}h`;
+  if (minMatch) return `${minMatch[1]}m`;
+  if (/^\d+h$/i.test(s) || /^\d+m$/i.test(s)) return s;
+  return duration.length <= 12 ? duration : "";
+}
+
+// Format booking count for display (e.g. 1200 -> "1.2k", 50000 -> "50k")
+function formatBookingCount(n: number): string {
+  if (n >= 1000000) return `${(n / 1000000).toFixed(1).replace(/\.0$/, "")}M`;
+  if (n >= 1000) return `${(n / 1000).toFixed(1).replace(/\.0$/, "")}k`;
+  return n.toLocaleString();
+}
 
 // Export Tour type for use in other files
 export interface Tour {
@@ -34,6 +55,7 @@ interface TourCardProps {
   variant?: "default" | "home"; // home = different layout for homepage
   rating?: number;
   reviewCount?: number;
+  bookingCount?: number; // Optional; hidden when not available
   discount?: number; // Discount percentage (e.g., 20 for 20% off)
   // Support for Tour type
   tour?: Tour;
@@ -55,18 +77,30 @@ export default function TourCard({
   variant = "default",
   rating = 4.5,
   reviewCount = 0,
+  bookingCount,
   discount,
   tour,
 }: TourCardProps) {
   const t = useTranslations();
   const currencyCtx = useCurrencyOptional();
   const [isAdding, setIsAdding] = useState(false);
+  const tourKey = id != null ? String(id) : (slug ?? "");
+  const [saved, setSaved] = useState(false);
+
+  useEffect(() => {
+    if (!tourKey) return;
+    setSaved(isInWishlistLocal(tourKey));
+  }, [tourKey]);
 
   // Support both Tour type and individual props. Price: prop can be in thousands (price*1000 = KRW), or tour.price can be numeric KRW.
   const displayTitle = tour?.title || title || "";
   const displayLocation = tour?.city || location || "";
   const displayCategory = tour?.tag?.split(" · ")[0] || location || t('tourCard.tours');
   const displayType = tour?.tag?.split(" · ")[1] || type || "";
+  const displayDuration = formatDuration(duration || (tour as Tour & { duration?: string })?.duration);
+  const displayRating = rating ?? 4.5;
+  const displayReviewCount = reviewCount ?? 0;
+  const showBookingCount = bookingCount != null && bookingCount > 0;
   // price prop: some callers pass KRW/1000 (e.g. TourList), others pass full KRW (e.g. RelatedTours). Use magnitude to infer.
   const tourPriceNum = tour && typeof (tour as Tour & { price?: number }).price === 'number' ? (tour as Tour & { price?: number }).price : 0;
   const priceKRW = price != null
@@ -78,7 +112,15 @@ export default function TourCard({
   const displayOriginalPrice = originalPriceKRW != null && originalPriceKRW > priceKRW
     ? (currencyCtx ? currencyCtx.formatPrice(originalPriceKRW) : `₩ ${originalPriceKRW.toLocaleString()}`)
     : null;
-  
+  // Discount %: use prop or derive from original vs current price; hide badge when 0
+  const displayDiscountPercent =
+    discount != null && discount > 0
+      ? discount
+      : originalPriceKRW != null && priceKRW > 0 && originalPriceKRW > priceKRW
+        ? Math.round(((originalPriceKRW - priceKRW) / originalPriceKRW) * 100)
+        : 0;
+  const showDiscountBadge = displayDiscountPercent > 0;
+
   // Generate href based on available data
   // Priority: tour.href > /tour/[id] for API tours > city+slug route for static tours
   let displayHref = '/tours';
@@ -138,6 +180,13 @@ export default function TourCard({
     }, 500);
   };
 
+  const handleWishlistClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!tourKey) return;
+    setSaved(toggleWishlistLocal(tourKey));
+  };
+
   // Home variant: one card — image with soft fade into content (harmonious)
   if (variant === "home") {
     return (
@@ -163,22 +212,62 @@ export default function TourCard({
               {displayBadge}
             </span>
           )}
-          {discount && (
-            <span className="absolute top-3 right-3 px-2.5 py-1 bg-red-500/95 text-white text-[10px] font-semibold rounded-full shadow-md">
-              -{discount}%
-            </span>
-          )}
+          <div className="absolute top-3 right-3 flex items-center gap-1.5">
+            {showDiscountBadge && (
+              <span className="bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded shadow-md">
+                {displayDiscountPercent}% OFF
+              </span>
+            )}
+            {tourKey && (
+              <button
+                type="button"
+                onClick={handleWishlistClick}
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-white/90 hover:bg-white shadow-md border border-gray-200/80 text-gray-600 hover:text-red-500 transition-colors touch-manipulation"
+                aria-label={saved ? t("tour.removeFromWishlist") : t("tourCard.save")}
+              >
+                {saved ? (
+                  <svg className="w-5 h-5 text-red-500 fill-current" viewBox="0 0 24 24" aria-hidden>
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                  </svg>
+                ) : (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                )}
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Content: same card, no gap — left accent on hover keeps the creative touch */}
         <div className="relative px-4 pt-3 pb-4 border-l-4 border-l-transparent group-hover:border-l-blue-500/50 transition-colors">
           <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400/80 shrink-0" aria-hidden />
+            <span className="shrink-0" aria-hidden>📍</span>
             <span className="truncate">{displayLocation || displayCategory}</span>
           </div>
-          <h3 className="text-sm sm:text-base font-bold text-gray-900 line-clamp-3 leading-snug mb-3 group-hover:text-blue-700 transition-colors">
+          <h3 className="text-sm sm:text-base font-bold text-gray-900 line-clamp-3 leading-snug mb-2 group-hover:text-blue-700 transition-colors">
             {displayTitle}
           </h3>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-gray-600 mb-2">
+            <span className="flex items-center gap-1">
+              <span className="text-yellow-500" aria-hidden>⭐</span>
+              <span className="font-semibold text-gray-900">{displayRating.toFixed(1)}</span>
+              {displayReviewCount > 0 && (
+                <span className="text-gray-500">({displayReviewCount.toLocaleString()})</span>
+              )}
+            </span>
+            {displayDuration && (
+              <span className="flex items-center gap-1">
+                <span aria-hidden>🕒</span>
+                <span>{displayDuration}</span>
+              </span>
+            )}
+          </div>
+          {showBookingCount && (
+            <p className="text-[11px] text-gray-500 mb-2">
+              {formatBookingCount(bookingCount!)}{" "}{t("tourCard.booked")}
+            </p>
+          )}
           <div className="flex items-baseline justify-between gap-2 flex-wrap">
             {displayOriginalPrice && (
               <span className="text-sm text-gray-400 line-through">{displayOriginalPrice}</span>
@@ -213,37 +302,73 @@ export default function TourCard({
               </span>
             </div>
           )}
-          {/* Discount tag */}
-          {discount && (
-            <div className="absolute top-2 right-2">
-              <span className="px-2 py-0.5 bg-red-500 text-white text-[10px] font-semibold rounded shadow-sm">
-                {t('tourCard.sale')} {discount}% {t('tourCard.off')}
+          {/* Discount + wishlist: top-right */}
+          <div className="absolute top-2 right-2 flex items-center gap-1.5">
+            {showDiscountBadge && (
+              <span className="bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded shadow-sm">
+                {displayDiscountPercent}% OFF
               </span>
-            </div>
-          )}
+            )}
+            {tourKey && (
+              <button
+                type="button"
+                onClick={handleWishlistClick}
+                className="flex items-center justify-center w-8 h-8 rounded-full bg-white/90 hover:bg-white shadow-sm border border-gray-200/80 text-gray-600 hover:text-red-500 transition-colors touch-manipulation"
+                aria-label={saved ? t("tour.removeFromWishlist") : t("tourCard.save")}
+              >
+                {saved ? (
+                  <svg className="w-4 h-4 text-red-500 fill-current" viewBox="0 0 24 24" aria-hidden>
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                  </svg>
+                ) : (
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                )}
+              </button>
+            )}
+          </div>
         </div>
         <div className="p-3 flex-1 flex flex-col bg-gradient-to-b from-white to-gray-50/30">
-          {/* Category label */}
+          {/* Badge / Category */}
           <p className="text-[11px] text-gray-500 mb-1">
-            {displayCategory && displayType ? `${displayCategory} • ${displayType}` : displayCategory || t('tourCard.tours')}
+            {displayBadge || (displayCategory && displayType ? `${displayCategory} • ${displayType}` : displayCategory || t('tourCard.tours'))}
           </p>
-          
+          {/* Location */}
+          {displayLocation && (
+            <div className="flex items-center gap-1 text-[11px] text-gray-500 mb-1">
+              <span aria-hidden>📍</span>
+              <span className="truncate">{displayLocation}</span>
+            </div>
+          )}
           {/* Title */}
           <h3 className="text-sm font-medium text-gray-900 mb-2 line-clamp-2 leading-snug group-hover:text-blue-600 transition-colors">
             {displayTitle}
           </h3>
-          
-          {/* Rating */}
-          <div className="flex items-center gap-1 mb-2">
-            <svg className="w-3.5 h-3.5 text-yellow-500 fill-current" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-            </svg>
-            <span className="text-xs font-semibold text-gray-900">{rating}</span>
-            {reviewCount > 0 && (
-              <span className="text-xs text-gray-500">({reviewCount.toLocaleString()})</span>
+          {/* Rating + Duration */}
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-gray-600 mb-1">
+            <span className="flex items-center gap-1">
+              <svg className="w-3.5 h-3.5 text-yellow-500 fill-current shrink-0" viewBox="0 0 20 20" aria-hidden>
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <span className="font-semibold text-gray-900">{displayRating.toFixed(1)}</span>
+              {displayReviewCount > 0 && (
+                <span className="text-gray-500">({displayReviewCount.toLocaleString()})</span>
+              )}
+            </span>
+            {displayDuration && (
+              <span className="flex items-center gap-1">
+                <span aria-hidden>🕒</span>
+                <span>{displayDuration}</span>
+              </span>
             )}
           </div>
-          
+          {/* Booking count (optional) */}
+          {showBookingCount && (
+            <p className="text-[11px] text-gray-500 mb-2">
+              {formatBookingCount(bookingCount!)}{" "}{t("tourCard.booked")}
+            </p>
+          )}
           {/* Price */}
           <div className="mt-auto">
             <p className="text-sm font-semibold text-gray-900">

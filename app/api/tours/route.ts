@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { withErrorHandler, AppError } from '@/lib/error-handler';
 import { createServerLogger } from '@/lib/logger';
+import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 
 const SUPPORTED_LOCALES = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'] as const;
 type SupportedLocale = typeof SUPPORTED_LOCALES[number];
@@ -51,6 +52,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
     const features = searchParams.get('features'); // Comma-separated feature keywords
     const sortBy = searchParams.get('sortBy') || 'created_at'; // created_at, price, rating
     const sortOrder = searchParams.get('sortOrder') || 'desc'; // asc, desc
+    const useScoreSort = searchParams.get('useScoreSort') !== 'false'; // when false, keep requested sortBy/sortOrder
     const limit = parseInt(searchParams.get('limit') || '100');
     const offset = parseInt(searchParams.get('offset') || '0');
 
@@ -202,6 +204,77 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
             return false;
           });
         });
+      }
+    }
+
+    // Compute recommendation score for each tour and sort by score (higher first), unless useScoreSort=false
+    if (transformedTours.length > 0 && useScoreSort) {
+      try {
+        const tourIds = transformedTours.map((tour) => tour.id).filter(Boolean);
+        const bookingCounts: Record<string, number> = {};
+
+        if (tourIds.length > 0) {
+          const { data: bookings, error: bookingsError } = await supabase
+            .from('bookings')
+            .select('id, tour_id, status')
+            .in('tour_id', tourIds)
+            .in('status', [...ACTIVE_BOOKING_STATUSES]);
+
+          if (!bookingsError && bookings) {
+            for (const b of bookings) {
+              const tid = String((b as any).tour_id);
+              bookingCounts[tid] = (bookingCounts[tid] || 0) + 1;
+            }
+          } else if (bookingsError) {
+            logger.warn?.('Failed to load booking counts for recommendation score', { error: bookingsError.message });
+          }
+        }
+
+        const now = Date.now();
+
+        transformedTours = transformedTours
+          .map((tour) => {
+            const bookingCount = bookingCounts[String(tour.id)] || 0;
+            const rating = typeof tour.rating === 'number' ? tour.rating : Number(tour.rating ?? 0) || 0;
+
+            const price = typeof tour.price === 'number' ? tour.price : Number(tour.price ?? 0) || 0;
+            const originalPrice = tour.originalPrice != null ? Number(tour.originalPrice) : null;
+            const discountPercent =
+              originalPrice != null && originalPrice > price && price > 0
+                ? Math.round(((originalPrice - price) / originalPrice) * 100)
+                : 0;
+
+            let newness = 0;
+            if (tour.createdAt) {
+              const createdTime = new Date(tour.createdAt as string).getTime();
+              if (!Number.isNaN(createdTime)) {
+                const daysSince = (now - createdTime) / (1000 * 60 * 60 * 24);
+                // New tours (recent days) get higher newness; older tours decay towards 0
+                newness = Math.max(0, 90 - daysSince);
+              }
+            }
+
+            const score =
+              bookingCount * 0.4 +
+              rating * 0.3 +
+              discountPercent * 0.2 +
+              newness * 0.1;
+
+            return {
+              ...tour,
+              bookingCount,
+              discountPercent,
+              score,
+            };
+          })
+          .sort((a, b) => {
+            // Sort by score descending; stable fallback on rating then createdAt
+            if (b.score !== a.score) return (b.score || 0) - (a.score || 0);
+            if ((b.rating || 0) !== (a.rating || 0)) return (b.rating || 0) - (a.rating || 0);
+            return String(b.createdAt || '').localeCompare(String(a.createdAt || ''));
+          });
+      } catch (scoreError) {
+        logger.warn?.('Failed to compute recommendation scores for tours', { error: (scoreError as Error).message });
       }
     }
 

@@ -95,6 +95,8 @@
     "pleaseSelect": "Por favor selecciona",
     "chatAppContact": "Contacto de aplicación de chat",
     "enterChatAppId": "Ingresa tu ID de aplicación de chat o contacto",
+    "lineNotice": "Las cuentas LINE entre países no se pueden agregar por ID o número de teléfono. Ingrese su enlace de chat de LINE o el proveedor del tour le enviará un correo más tarde; revise su bandeja de entrada.",
+    "enterLineLink": "Ingrese su enlace de chat de LINE (ej. line.me/ti/p/...)",
     "fullDescription": "Descripción completa",
     "whatsIncluded": "Qué incluye",
     "highlights": "Destacados",
@@ -105,7 +107,25 @@
     "directions": "Cómo llegar",
     "showFullItinerary": "Ver itinerario completo",
     "collapse": "Contraer",
-    "itineraryMayChange": "El itinerario puede cambiar según el clima y el tráfico."
+    "itineraryMayChange": "El itinerario puede cambiar según el clima y el tráfico.",
+    "filters": {
+      "all": "Todos",
+      "destination": "Destino",
+      "tourType": "Tipo de tour",
+      "busTours": "Tours en bus",
+      "privateTours": "Tours privados",
+      "cruiseTours": "Tours desde crucero",
+      "priceRange": "Rango de precio",
+      "minPrice": "Mín (×1000 ₩)",
+      "maxPrice": "Máx (×1000 ₩)",
+      "duration": "Duración",
+      "halfDay": "Medio día",
+      "fullDay": "Día completo",
+      "hours2to3": "2–3 horas",
+      "hours4": "4+ horas",
+      "multiDay": "Varios días",
+      "clearAll": "Borrar filtros"
+    }
   },
   "booking": {
     "title": "Reserva",
@@ -236,7 +256,8 @@
     "unauthorized": "No autorizado",
     "forbidden": "Prohibido",
     "pleaseEnter": "Por favor ingresa",
-    "pleaseSelect": "Por favor selecciona"
+    "pleaseSelect": "Por favor selecciona",
+    "invalidPhone": "El teléfono solo puede contener dígitos y +"
   },
   "home": {
     "hero": {
@@ -246,7 +267,28 @@
       "jejuSubtitle": "Maravillas naturales y experiencias culturales",
       "experienceBusan": "Experimenta Busan",
       "busanSubtitle": "Belleza costera y cultura vibrante",
-      "findTour": "Encuentra Mi Tour de Día"
+      "findTour": "Encuentra Mi Tour de Día",
+      "searchTitle": "Encuentra tu tour perfecto por Corea",
+      "destination": "Destino",
+      "destinationPlaceholder": "Destino",
+      "travelDate": "Fecha de viaje",
+      "travelers": "Viajeros",
+      "findTours": "Buscar tours",
+      "destinations": {
+        "seoul": "Seúl",
+        "busan": "Busan",
+        "jeju": "Jeju"
+      }
+    },
+    "heroTrustBar": {
+      "happyTravelersTitle": "Más de 10.000 viajeros felices",
+      "happyTravelersDesc": "Con la confianza de viajeros de todo el mundo",
+      "hotelPickupTitle": "Recogida en hotel incluida",
+      "hotelPickupDesc": "Recogida cómoda desde su hotel o punto de encuentro",
+      "securePaymentTitle": "Pago seguro",
+      "securePaymentDesc": "Pague con tarjeta o depósito + efectivo el mismo día",
+      "localGuidesTitle": "Guías expertos locales",
+      "localGuidesDesc": "Guías con experiencia que conocen Corea al dedillo"
     },
     "destinations": {
       "title": "Where to start",
@@ -260,6 +302,13 @@
       "available": "Disponible",
       "viewTours": "Ver tours"
     },
+    "sections": {
+      "popularTours": "Tours populares",
+      "privateTours": "Tours privados",
+      "bestValueTours": "Mejor relación calidad-precio",
+      "cruiseShoreTours": "Tours desde crucero",
+      "seeAll": "Ver todo"
+    },
     "tourList": {
       "eyebrow": "Tours en Corea",
       "title": "Experiencias seleccionadas",
@@ -271,12 +320,13 @@
       "subtitle": "Ofertas por tiempo limitado para las mejores experiencias estacionales"
     },
     "payment": {
-      "title": "Opciones de Pago",
+      "title": "Opciones de Pago Flexibles",
       "subtitle": "Elige el método de pago que mejor te funcione",
+      "highlightBenefit": "Reserva hoy con un depósito pequeño. Paga el saldo restante al guía el día del tour.",
       "depositCash": "Depósito + Efectivo el Día",
       "depositCashDesc": "Paga un depósito en línea para asegurar tu reserva, luego paga el saldo restante en efectivo al guía el día del tour.",
       "depositCashBenefit": "Opción de pago más flexible",
-      "fullAmount": "Monto Completo en Línea",
+      "fullAmount": "Pago Completo en Línea",
       "fullAmountDesc": "Paga el monto completo en línea por adelantado. Rápido, seguro y conveniente. No necesitas preocuparte por el efectivo el día del tour.",
       "fullAmountBenefit": "Todos los pagos procesados de forma segura"
     },
@@ -741,7 +791,9 @@
     "tours": "Tours",
     "sale": "Oferta",
     "off": "de descuento",
-    "addedToCart": "¡añadido al carrito!"
+    "addedToCart": "¡añadido al carrito!",
+    "booked": "reservado",
+    "save": "Guardar"
   }
 }
 

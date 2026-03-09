@@ -3,13 +3,17 @@
 // Force dynamic rendering to avoid I18nProvider issues during static generation
 export const dynamic = 'force-dynamic';
 
-import { useState, useEffect, Suspense, useCallback } from 'react';
+import { useState, useEffect, Suspense, useCallback, useMemo } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
 import FilterSidebar from '@/components/tours/FilterSidebar';
 import DetailedTourCard from '@/components/tours/DetailedTourCard';
+import TourListFilterBar, {
+  type TourListFilterState,
+  filterToursByState,
+} from '@/components/tours/TourListFilterBar';
 import { useTranslations, useI18n } from '@/lib/i18n';
 
 interface Tour {
@@ -39,6 +43,7 @@ interface Tour {
   notes: string;
   destinations: string[];
   priceRange: [number, number];
+  badges?: string[];
 }
 
 function ToursContent() {
@@ -55,29 +60,35 @@ function ToursContent() {
     duration: [] as string[],
     features: [] as string[],
   });
+  const [barFilters, setBarFilters] = useState<TourListFilterState>({
+    destination: 'all',
+    tourType: 'all',
+    priceMin: 0,
+    priceMax: 500,
+    duration: '',
+  });
 
-  // Get initial filters from URL
+  // Get initial filters from URL (city, q, minPrice, maxPrice, date, people from hero search)
   useEffect(() => {
     const city = searchParams.get('city');
     const q = searchParams.get('q');
     const minPrice = searchParams.get('minPrice');
     const maxPrice = searchParams.get('maxPrice');
+    // date and people are preserved from hero search for future use (e.g. pre-fill booking)
 
     if (city) {
       setFilters((prev) => ({
         ...prev,
         destinations: [city],
       }));
+      setBarFilters((prev) => ({ ...prev, destination: city }));
     }
 
     if (minPrice || maxPrice) {
-      setFilters((prev) => ({
-        ...prev,
-        priceRange: [
-          minPrice ? parseInt(minPrice) : 0,
-          maxPrice ? parseInt(maxPrice) : 500,
-        ],
-      }));
+      const min = minPrice ? parseInt(minPrice, 10) : 0;
+      const max = maxPrice ? parseInt(maxPrice, 10) : 500;
+      setFilters((prev) => ({ ...prev, priceRange: [min, max] }));
+      setBarFilters((prev) => ({ ...prev, priceMin: min, priceMax: max }));
     }
 
     fetchTours(city || undefined, q || undefined, minPrice || undefined, maxPrice || undefined);
@@ -133,6 +144,7 @@ function ToursContent() {
         notes: String(tour.notes ?? ''),
         destinations: [String(tour.city ?? '')],
         priceRange: [0, parseFloat(String(tour.price ?? '500'))],
+        badges: Array.isArray(tour.badges) ? (tour.badges as string[]) : [],
       }));
 
       setAllTours(transformedTours);
@@ -164,7 +176,14 @@ function ToursContent() {
   }, [router]);
 
   // Extract unique destinations from tours
-  const destinations = Array.from(new Set(allTours.map((tour) => tour.city)));
+  const destinations = Array.from(new Set(allTours.map((tour) => tour.city).filter(Boolean))).sort();
+  const priceRangeBounds: [number, number] = allTours.length
+    ? [0, Math.max(500, ...allTours.map((t) => Math.ceil((t.price || 0) / 1000)))]
+    : [0, 500];
+  const filteredTours = useMemo(
+    () => filterToursByState(allTours, barFilters, priceRangeBounds),
+    [allTours, barFilters, priceRangeBounds]
+  );
 
   if (loading) {
     return (
@@ -215,8 +234,8 @@ function ToursContent() {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-6">
-          {/* Filter Sidebar */}
-          <div className="lg:w-64 flex-shrink-0">
+          {/* Filter Sidebar (desktop) */}
+          <div className="lg:w-64 flex-shrink-0 hidden lg:block">
             <FilterSidebar
               destinations={destinations}
               filters={filters}
@@ -224,9 +243,15 @@ function ToursContent() {
             />
           </div>
 
-          {/* Tour List */}
-          <div className="flex-1">
-            {allTours.length === 0 ? (
+          {/* Filter bar + Tour List */}
+          <div className="flex-1 min-w-0">
+            <TourListFilterBar
+              destinations={destinations}
+              filters={barFilters}
+              onFiltersChange={setBarFilters}
+              priceRangeBounds={priceRangeBounds}
+            />
+            {filteredTours.length === 0 ? (
               <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-12 text-center">
                 <div className="max-w-md mx-auto">
                   <svg
@@ -243,9 +268,7 @@ function ToursContent() {
                     />
                   </svg>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {searchParams.get('city') 
-                      ? `${searchParams.get('city')} ${t('tour.noToursFound') || 'No tours found'}`
-                      : t('tour.noToursFound') || 'No tours found'}
+                    {t('tour.noToursFound')}
                   </h3>
                   <p className="text-gray-600 mb-6">
                     {searchParams.get('city')
@@ -262,7 +285,7 @@ function ToursContent() {
               </div>
             ) : (
               <div className="space-y-4">
-                {allTours.map((tour) => (
+                {filteredTours.map((tour) => (
                   <DetailedTourCard key={tour.id} tour={tour} />
                 ))}
               </div>

@@ -95,6 +95,8 @@
     "pleaseSelect": "選択してください",
     "chatAppContact": "チャットアプリ連絡先",
     "enterChatAppId": "チャットアプリのIDまたは連絡先を入力",
+    "lineNotice": "LINEは国境をまたぐアカウントはIDや電話番号では追加できません。LINEチャットリンクを入力するか、後ほど旅行会社からメールが届きますのでご確認ください。",
+    "enterLineLink": "LINEチャットリンクを入力（例：line.me/ti/p/...）",
     "fullDescription": "詳細説明",
     "whatsIncluded": "含まれるもの",
     "highlights": "ハイライト",
@@ -105,7 +107,25 @@
     "directions": "経路",
     "showFullItinerary": "全日程を表示",
     "collapse": "閉じる",
-    "itineraryMayChange": "天候・交通状況により日程が変更になる場合があります。"
+    "itineraryMayChange": "天候・交通状況により日程が変更になる場合があります。",
+    "filters": {
+      "all": "すべて",
+      "destination": "目的地",
+      "tourType": "ツアー種別",
+      "busTours": "バスツアー",
+      "privateTours": "プライベートツアー",
+      "cruiseTours": "クルーズ寄港地",
+      "priceRange": "価格帯",
+      "minPrice": "最低（×1000 ₩）",
+      "maxPrice": "最高（×1000 ₩）",
+      "duration": "所要時間",
+      "halfDay": "半日",
+      "fullDay": "終日",
+      "hours2to3": "2–3時間",
+      "hours4": "4時間以上",
+      "multiDay": "複数日",
+      "clearAll": "フィルターをクリア"
+    }
   },
   "booking": {
     "title": "予約",
@@ -236,7 +256,8 @@
     "unauthorized": "認証されていません",
     "forbidden": "アクセスが拒否されました",
     "pleaseEnter": "入力してください",
-    "pleaseSelect": "選択してください"
+    "pleaseSelect": "選択してください",
+    "invalidPhone": "電話番号は数字と+のみ入力できます"
   },
   "home": {
     "hero": {
@@ -246,7 +267,28 @@
       "jejuSubtitle": "自然の驚異と文化的体験",
       "experienceBusan": "釜山を体験",
       "busanSubtitle": "海岸の美しさと活気ある文化",
-      "findTour": "日帰りツアーを見つける"
+      "findTour": "日帰りツアーを見つける",
+      "searchTitle": "あなたにぴったりの韓国ツアーを見つけよう",
+      "destination": "目的地",
+      "destinationPlaceholder": "目的地",
+      "travelDate": "旅行日",
+      "travelers": "人数",
+      "findTours": "ツアーを検索",
+      "destinations": {
+        "seoul": "ソウル",
+        "busan": "釜山",
+        "jeju": "済州島"
+      }
+    },
+    "heroTrustBar": {
+      "happyTravelersTitle": "10,000人以上の満足した旅行者",
+      "happyTravelersDesc": "世界中の旅行者に信頼されています",
+      "hotelPickupTitle": "ホテル送迎付き",
+      "hotelPickupDesc": "ホテルまたは集合場所から便利な送迎",
+      "securePaymentTitle": "安全な支払い",
+      "securePaymentDesc": "カードまたは当日デポジット+現金で安全に支払い",
+      "localGuidesTitle": "現地専門ガイド",
+      "localGuidesDesc": "韓国に精通したベテランガイド"
     },
     "destinations": {
       "title": "Where to start",
@@ -260,6 +302,13 @@
       "available": "予約可能",
       "viewTours": "ツアーを見る"
     },
+    "sections": {
+      "popularTours": "人気ツアー",
+      "privateTours": "プライベートツアー",
+      "bestValueTours": "お得なツアー",
+      "cruiseShoreTours": "クルーズ寄港地ツアー",
+      "seeAll": "すべて見る"
+    },
     "tourList": {
       "eyebrow": "韓国デイツアー",
       "title": "厳選された現地ツアー",
@@ -271,12 +320,13 @@
       "subtitle": "最高の季節体験のための期間限定オファー"
     },
     "payment": {
-      "title": "支払いオプション",
+      "title": "柔軟な支払いオプション",
       "subtitle": "最適な支払い方法を選択",
+      "highlightBenefit": "少額のデポジットで今日予約。残金はツアー当日にガイドへお支払いください。",
       "depositCash": "デポジット+当日現金",
       "depositCashDesc": "オンラインでデポジットを支払って予約を確保し、残額は当日ガイドに現金で支払います。",
       "depositCashBenefit": "より柔軟な支払いオプション",
-      "fullAmount": "全額オンライン",
+      "fullAmount": "全額オンライン決済",
       "fullAmountDesc": "事前に全額をオンラインで支払います。迅速、安全、便利です。当日の現金を心配する必要はありません。",
       "fullAmountBenefit": "すべての支払いが安全に処理されます"
     },
@@ -741,7 +791,9 @@
     "tours": "ツアー",
     "sale": "セール",
     "off": "オフ",
-    "addedToCart": "カートに追加されました！"
+    "addedToCart": "カートに追加されました！",
+    "booked": "予約済み",
+    "save": "保存"
   }
 }
 

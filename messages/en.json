@@ -95,6 +95,8 @@
     "pleaseSelect": "Please select",
     "chatAppContact": "Chat App Contact",
     "enterChatAppId": "Enter your chat app ID or contact",
+    "lineNotice": "LINE cross-border accounts cannot be added by ID or phone number. Please enter your LINE chat link, or the tour supplier will email you later—please check your inbox.",
+    "enterLineLink": "Enter your LINE chat link (e.g. line.me/ti/p/...)",
     "fullDescription": "Full Description",
     "whatsIncluded": "What's Included",
     "highlights": "Highlights",
@@ -105,7 +107,25 @@
     "directions": "Directions",
     "showFullItinerary": "Show full itinerary",
     "collapse": "Collapse",
-    "itineraryMayChange": "Itinerary may change depending on weather and traffic."
+    "itineraryMayChange": "Itinerary may change depending on weather and traffic.",
+    "filters": {
+      "all": "All",
+      "destination": "Destination",
+      "tourType": "Tour type",
+      "busTours": "Bus tours",
+      "privateTours": "Private tours",
+      "cruiseTours": "Cruise tours",
+      "priceRange": "Price range",
+      "minPrice": "Min (×1000 ₩)",
+      "maxPrice": "Max (×1000 ₩)",
+      "duration": "Duration",
+      "halfDay": "Half day",
+      "fullDay": "Full day",
+      "hours2to3": "2–3 hours",
+      "hours4": "4+ hours",
+      "multiDay": "Multi-day",
+      "clearAll": "Clear all filters"
+    }
   },
   "booking": {
     "title": "Booking",
@@ -240,7 +260,8 @@
     "unauthorized": "Unauthorized",
     "forbidden": "Forbidden",
     "pleaseEnter": "Please enter",
-    "pleaseSelect": "Please select"
+    "pleaseSelect": "Please select",
+    "invalidPhone": "Phone number can only contain digits and +"
   },
   "home": {
     "hero": {
@@ -250,7 +271,28 @@
       "jejuSubtitle": "Natural wonders and cultural experiences",
       "experienceBusan": "Experience Busan",
       "busanSubtitle": "Coastal beauty and vibrant culture",
-      "findTour": "Find My Day Tour"
+      "findTour": "Find My Day Tour",
+      "searchTitle": "Find your perfect Korea tour",
+      "destination": "Destination",
+      "destinationPlaceholder": "Destination",
+      "travelDate": "Travel date",
+      "travelers": "Travelers",
+      "findTours": "Find Tours",
+      "destinations": {
+        "seoul": "Seoul",
+        "busan": "Busan",
+        "jeju": "Jeju"
+      }
+    },
+    "heroTrustBar": {
+      "happyTravelersTitle": "10,000+ happy travelers",
+      "happyTravelersDesc": "Trusted by travelers worldwide",
+      "hotelPickupTitle": "Hotel pickup included",
+      "hotelPickupDesc": "Convenient pickup from your hotel or meet-up point",
+      "securePaymentTitle": "Secure payment",
+      "securePaymentDesc": "Pay safely with card or deposit + cash on the day",
+      "localGuidesTitle": "Local expert guides",
+      "localGuidesDesc": "Experienced guides who know Korea inside out"
     },
     "destinations": {
       "title": "Where to start",
@@ -264,6 +306,13 @@
       "available": "Available",
       "viewTours": "View tours"
     },
+    "sections": {
+      "popularTours": "Popular Tours",
+      "privateTours": "Private Tours",
+      "bestValueTours": "Best Value Tours",
+      "cruiseShoreTours": "Cruise Shore Tours",
+      "seeAll": "See all"
+    },
     "tourList": {
       "eyebrow": "Korea day tours",
       "title": "Hand-picked experiences",
@@ -275,12 +324,13 @@
       "subtitle": "Limited-time offers for the best seasonal experiences"
     },
     "payment": {
-      "title": "Payment Options",
+      "title": "Flexible Payment Options",
       "subtitle": "Choose the payment method that works best for you",
+      "highlightBenefit": "Reserve today with a small deposit. Pay the remaining balance to the guide on the tour day.",
       "depositCash": "Deposit + Cash on Day",
       "depositCashDesc": "Pay a deposit online to secure your booking, then pay the remaining balance in cash to the guide on the day.",
       "depositCashBenefit": "More flexible payment option",
-      "fullAmount": "Full Amount Online",
+      "fullAmount": "Full Payment Online",
       "fullAmountDesc": "Pay the full amount online in advance. Quick, secure, and convenient. No need to worry about cash on the day.",
       "fullAmountBenefit": "All payments processed securely"
     },
@@ -339,7 +389,9 @@
     "tours": "Tours",
     "sale": "Sale",
     "off": "off",
-    "addedToCart": "added to cart!"
+    "addedToCart": "added to cart!",
+    "booked": "booked",
+    "save": "Save"
   },
   "about": {
     "title": "About Us",

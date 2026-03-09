@@ -105,6 +105,56 @@ export async function toggleWishlist(tourId: string, currentStatus: boolean): Pr
   }
 }
 
+// --- localStorage wishlist (MVP: no auth required; later sync with database) ---
+
+const WISHLIST_STORAGE_KEY = 'atockorea_wishlist_ids';
+
+function getStorage(): string[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = window.localStorage.getItem(WISHLIST_STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed.filter((id): id is string => typeof id === 'string') : [];
+  } catch {
+    return [];
+  }
+}
+
+function setStorage(ids: string[]): void {
+  if (typeof window === 'undefined') return;
+  try {
+    window.localStorage.setItem(WISHLIST_STORAGE_KEY, JSON.stringify(ids));
+  } catch {
+    // ignore
+  }
+}
+
+/** Get tour IDs saved in localStorage wishlist */
+export function getWishlistIdsLocal(): string[] {
+  return getStorage();
+}
+
+/** Check if tour is in localStorage wishlist (client-only) */
+export function isInWishlistLocal(tourId: string): boolean {
+  return getStorage().includes(String(tourId));
+}
+
+/** Toggle tour in localStorage wishlist; returns new saved state (true = now saved) */
+export function toggleWishlistLocal(tourId: string): boolean {
+  const id = String(tourId);
+  const ids = getStorage();
+  const idx = ids.indexOf(id);
+  if (idx >= 0) {
+    ids.splice(idx, 1);
+    setStorage(ids);
+    return false;
+  }
+  ids.push(id);
+  setStorage(ids);
+  return true;
+}
+
 
 
 

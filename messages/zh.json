@@ -94,7 +94,27 @@
     "preferredChatApp": "首选聊天应用",
     "pleaseSelect": "请选择",
     "chatAppContact": "聊天应用联系方式",
-    "enterChatAppId": "输入您的聊天应用ID或联系方式"
+    "enterChatAppId": "输入您的聊天应用ID或联系方式",
+    "lineNotice": "LINE 跨国账户无法通过 ID 或电话号码添加。请填写您的 LINE 聊天链接，或稍后旅游供应商会发送邮件给您，请注意查收。",
+    "enterLineLink": "请输入您的 LINE 聊天链接（例如 line.me/ti/p/...）",
+    "filters": {
+      "all": "全部",
+      "destination": "目的地",
+      "tourType": "线路类型",
+      "busTours": "巴士游",
+      "privateTours": "私人定制",
+      "cruiseTours": "邮轮岸上",
+      "priceRange": "价格范围",
+      "minPrice": "最低（×1000 ₩）",
+      "maxPrice": "最高（×1000 ₩）",
+      "duration": "时长",
+      "halfDay": "半日",
+      "fullDay": "一日",
+      "hours2to3": "2–3小时",
+      "hours4": "4小时+",
+      "multiDay": "多日",
+      "clearAll": "清除筛选"
+    }
   },
   "booking": {
     "title": "预订",
@@ -222,7 +242,8 @@
     "unauthorized": "未授权",
     "forbidden": "禁止访问",
     "pleaseEnter": "请输入",
-    "pleaseSelect": "请选择"
+    "pleaseSelect": "请选择",
+    "invalidPhone": "电话号码只能包含数字和 + 号"
   },
   "home": {
     "hero": {
@@ -232,7 +253,28 @@
       "jejuSubtitle": "自然奇观和文化体验",
       "experienceBusan": "体验釜山",
       "busanSubtitle": "海岸美景和充满活力的文化",
-      "findTour": "探索我的一日游"
+      "findTour": "探索我的一日游",
+      "searchTitle": "找到您的完美韩国之旅",
+      "destination": "目的地",
+      "destinationPlaceholder": "目的地",
+      "travelDate": "出行日期",
+      "travelers": "人数",
+      "findTours": "查找行程",
+      "destinations": {
+        "seoul": "首尔",
+        "busan": "釜山",
+        "jeju": "济州岛"
+      }
+    },
+    "heroTrustBar": {
+      "happyTravelersTitle": "10,000+ 满意旅客",
+      "happyTravelersDesc": "深受全球旅客信赖",
+      "hotelPickupTitle": "含酒店接送",
+      "hotelPickupDesc": "从您的酒店或集合点便捷接送",
+      "securePaymentTitle": "安全支付",
+      "securePaymentDesc": "使用银行卡或当日定金+现金安全支付",
+      "localGuidesTitle": "当地专家导游",
+      "localGuidesDesc": "熟悉韩国的资深导游"
     },
     "destinations": {
       "title": "Where to start",
@@ -246,6 +288,13 @@
       "available": "可预订",
       "viewTours": "查看行程"
     },
+    "sections": {
+      "popularTours": "人气线路",
+      "privateTours": "私人定制",
+      "bestValueTours": "超值精选",
+      "cruiseShoreTours": "邮轮岸上观光",
+      "seeAll": "查看全部"
+    },
     "tourList": {
       "eyebrow": "韩国一日游",
       "title": "精选当地体验",
@@ -257,12 +306,13 @@
       "subtitle": "限时提供的最佳季节体验"
     },
     "payment": {
-      "title": "支付方式",
+      "title": "灵活支付方式",
       "subtitle": "选择最适合您的支付方式",
+      "highlightBenefit": "今日支付少量定金即可预订，余款在游览当日向导游支付。",
       "depositCash": "定金 + 当日现金",
       "depositCashDesc": "在线支付定金以确认预订，然后在当天以现金向导游支付剩余余额。",
       "depositCashBenefit": "更灵活的支付选择",
-      "fullAmount": "全额在线支付",
+      "fullAmount": "全额在线付款",
       "fullAmountDesc": "提前在线支付全额。快速、安全、方便。无需担心当日现金。",
       "fullAmountBenefit": "所有支付均安全处理"
     },
@@ -727,6 +777,8 @@
     "tours": "旅游",
     "sale": "特价",
     "off": "折扣",
-    "addedToCart": "已加入购物车！"
+    "addedToCart": "已加入购物车！",
+    "booked": "已预订",
+    "save": "收藏"
   }
 }
