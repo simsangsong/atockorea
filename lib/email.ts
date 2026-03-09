@@ -69,17 +69,16 @@ export async function sendEmail({
 /**
  * Booking confirmation email
  */
-export async function sendBookingConfirmationEmail({
-  to,
-  bookingId,
-  tourTitle,
-  bookingDate,
-  numberOfGuests,
-  totalPrice,
-  pickupPoint,
-  paymentMethod,
-  customerName,
-}: {
+/** 결제상태 표시 라벨 (Payment status labels) */
+const PAYMENT_STATUS_LABELS: Record<string, string> = {
+  pending: '결제대기 (Payment Pending)',
+  paid: '결제 완료 (Payment Completed)',
+  failed: '결제실패 (Payment Failed)',
+  refunded: '환불됨 (Refunded)',
+};
+
+/** Parameters for booking confirmation email (exported for type safety across dynamic imports) */
+export interface SendBookingConfirmationEmailParams {
   to: string;
   bookingId: string;
   tourTitle: string;
@@ -88,8 +87,40 @@ export async function sendBookingConfirmationEmail({
   totalPrice: number;
   pickupPoint?: string;
   paymentMethod: string;
+  paymentStatus?: 'pending' | 'paid' | 'failed' | 'refunded';
   customerName: string;
-}) {
+  tourImageUrl?: string;
+  tourId?: string;
+}
+
+/** UUID에서 짧은 부킹 표시 ID 생성 (e.g. ATK-37787A34) */
+function shortBookingId(bookingId: string): string {
+  const hex = bookingId.replace(/-/g, '').slice(0, 8).toUpperCase();
+  return `ATK-${hex}`;
+}
+
+export async function sendBookingConfirmationEmail(params: SendBookingConfirmationEmailParams) {
+  const {
+    to,
+    bookingId,
+    tourTitle,
+    bookingDate,
+    numberOfGuests,
+    totalPrice,
+    pickupPoint,
+    paymentMethod,
+    customerName,
+    tourImageUrl,
+    tourId,
+  } = params;
+  const paymentStatus = params.paymentStatus ?? 'pending';
+  const paymentStatusLabel = PAYMENT_STATUS_LABELS[paymentStatus] ?? PAYMENT_STATUS_LABELS.pending;
+  const displayBookingId = shortBookingId(bookingId);
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
+  const reviewWriteUrl = tourId
+    ? `${baseUrl}/mypage/reviews/write?tourId=${encodeURIComponent(tourId)}&bookingId=${encodeURIComponent(bookingId)}&tour=${encodeURIComponent(tourTitle)}`
+    : `${baseUrl}/mypage/reviews`;
+
   const formattedDate = new Date(bookingDate).toLocaleDateString('en-US', {
     weekday: 'long',
     year: 'numeric',
@@ -102,7 +133,10 @@ export async function sendBookingConfirmationEmail({
     <html>
     <head>
       <meta charset="UTF-8">
-      <style>${baseStyles}</style>
+      <style>${baseStyles}
+  .tour-thumb { width: 100%; max-width: 320px; height: auto; border-radius: 8px; margin: 0 0 16px 0; display: block; }
+  .review-link { margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; }
+      </style>
     </head>
     <body>
       <div class="container">
@@ -112,12 +146,16 @@ export async function sendBookingConfirmationEmail({
         <div class="content">
           <p>Dear ${customerName},</p>
           <p>Thank you for your booking! We're excited to have you join us.</p>
-          
+          ${tourImageUrl ? `
+          <p style="margin: 0 0 16px 0;">
+            <img src="${tourImageUrl}" alt="${tourTitle.replace(/"/g, '&quot;')}" class="tour-thumb" />
+          </p>
+          ` : ''}
           <div class="content-box">
             <h2 style="margin-top: 0; color: #667eea;">Booking Details</h2>
             <div class="info-row">
               <span class="info-label">Booking ID:</span>
-              <span class="info-value">${bookingId}</span>
+              <span class="info-value">${displayBookingId}</span>
             </div>
             <div class="info-row">
               <span class="info-label">Tour:</span>
@@ -141,6 +179,10 @@ export async function sendBookingConfirmationEmail({
               <span class="info-label">Payment Method:</span>
               <span class="info-value">${paymentMethod}</span>
             </div>
+            <div class="info-row">
+              <span class="info-label">결제상태 (Payment Status):</span>
+              <span class="info-value">${paymentStatusLabel}</span>
+            </div>
             <div class="info-row" style="border-bottom: none; padding-top: 15px;">
               <span class="info-label" style="font-size: 18px;">Total Amount:</span>
               <span class="info-value" style="font-size: 18px; color: #667eea; font-weight: bold;">₩${totalPrice.toLocaleString()}</span>
@@ -155,8 +197,16 @@ export async function sendBookingConfirmationEmail({
           </ul>
 
           <p style="margin-top: 30px;">
-            <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com'}/mypage/mybookings" class="button">View My Bookings</a>
+            <a href="${baseUrl}/mypage/mybookings" class="button">View My Bookings</a>
           </p>
+
+          <div class="review-link">
+            <p><strong>Enjoyed your tour?</strong></p>
+            <p>Share your experience and help other travelers — write a review for <strong>${tourTitle}</strong>.</p>
+            <p>
+              <a href="${reviewWriteUrl}" class="button" style="background: #10b981;">Write a Review / 리뷰 작성</a>
+            </p>
+          </div>
         </div>
         <div class="footer">
           <p>© 2026 AtoCKorea. All rights reserved.</p>
