@@ -21,15 +21,10 @@ export async function PATCH(
     
     // Check admin authentication
     const adminUser = await requireAdmin(req);
-    console.log('✅ [PATCH /api/admin/tours/[id]] Admin authenticated:', adminUser.id);
-    
     const supabase = createServerClient();
     const body = await req.json();
-    
-    console.log('🔍 [PATCH /api/admin/tours/[id]] Request body keys:', Object.keys(body));
 
     // Check if tour exists
-    console.log('🔍 [PATCH /api/admin/tours/[id]] Checking if tour exists...');
     
     // translations 컬럼이 없을 수 있으므로 먼저 id만 확인
     const { data: existingTour, error: fetchError } = await supabase
@@ -39,7 +34,9 @@ export async function PATCH(
       .single();
 
     if (fetchError) {
-      console.error('❌ [PATCH /api/admin/tours/[id]] Fetch error:', fetchError);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('[PATCH /api/admin/tours/[id]] Fetch error:', fetchError);
+      }
       return NextResponse.json(
         { error: 'Tour not found', details: fetchError.message },
         { status: 404 }

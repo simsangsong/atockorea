@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 
 /**
  * GET /api/tours/[id]/availability
@@ -71,7 +72,7 @@ export async function GET(
       .select('number_of_guests, status')
       .eq('tour_id', tourId)
       .eq('booking_date', date)
-      .in('status', ['pending', 'confirmed']); // Only count active bookings
+      .in('status', [...ACTIVE_BOOKING_STATUSES]); // Only count active bookings
 
     if (!bookingsError && bookings) {
       const bookedGuests = bookings.reduce((sum, booking) => 

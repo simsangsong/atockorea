@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import type { TourRelation, UserProfileRelation, PickupPointRelation } from '@/lib/db-relations';
 
 /**
  * GET /api/bookings/[id]
@@ -48,10 +49,10 @@ export async function GET(
     }
 
     return NextResponse.json({ booking });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Unexpected error:', error);
     return NextResponse.json(
-      { error: 'Internal server error', details: error.message },
+      { error: 'Internal server error', details: error instanceof Error ? error.message : String(error) },
       { status: 500 }
     );
   }
@@ -126,7 +127,7 @@ export async function PUT(
     }
 
     // Update booking
-    const updateData: any = {};
+    const updateData: { status?: string; payment_status?: string } = {};
     if (body.status !== undefined) {
       updateData.status = body.status;
     }
@@ -167,7 +168,9 @@ export async function PUT(
     // Update inventory if booking was cancelled
     if (currentBooking && body.status === 'cancelled' && currentBooking.status !== 'cancelled') {
       try {
-        const dateStr = currentBooking.booking_date.split('T')[0];
+        const rawDate = currentBooking.booking_date;
+        const dateStr = rawDate != null ? String(rawDate).split('T')[0] : null;
+        if (dateStr) {
         const { data: inventory } = await supabase
           .from('product_inventory')
           .select('*')
@@ -186,6 +189,7 @@ export async function PUT(
             })
             .eq('id', inventory.id);
         }
+        }
       } catch (inventoryError) {
         console.error('Error updating inventory on cancellation:', inventoryError);
       }
@@ -203,8 +207,8 @@ export async function PUT(
           .single();
 
         if (bookingWithDetails) {
-          const tour = bookingWithDetails.tours as any;
-          const userProfile = bookingWithDetails.user_profiles as any;
+          const tour = bookingWithDetails.tours as TourRelation | null | undefined;
+          const userProfile = bookingWithDetails.user_profiles as UserProfileRelation | null | undefined;
           
           let customerEmail = null;
           let customerName = 'Guest';
@@ -228,9 +232,9 @@ export async function PUT(
             await sendBookingCancellationEmail({
               to: customerEmail,
               bookingId: bookingId,
-              tourTitle: tour.title,
+              tourTitle: tour?.title ?? 'Booking',
               bookingDate: bookingWithDetails.booking_date,
-              refundAmount: parseFloat(bookingWithDetails.final_price.toString()),
+              refundAmount: parseFloat(String(bookingWithDetails.final_price ?? 0)),
               refundEligible: bookingWithDetails.refund_eligible !== false,
               customerName,
             });
@@ -240,11 +244,12 @@ export async function PUT(
           if (bookingWithDetails.user_id) {
             try {
               const { notifyBookingCancelled } = await import('@/lib/notifications');
+              const tourTitleForNotification = tour?.title ?? 'Booking';
               await notifyBookingCancelled(
                 bookingId,
                 bookingWithDetails.user_id,
-                tour.title,
-                bookingWithDetails.refund_eligible ? parseFloat(bookingWithDetails.final_price.toString()) : undefined
+                tourTitleForNotification,
+                bookingWithDetails.refund_eligible ? parseFloat(String(bookingWithDetails.final_price ?? 0)) : undefined
               );
             } catch (notificationError) {
               console.error('Error creating notification:', notificationError);
@@ -279,9 +284,9 @@ export async function PUT(
             .single();
 
           if (fullBooking) {
-            const tour = fullBooking.tours as any;
-            const pickupPoint = fullBooking.pickup_points as any;
-            const userProfile = fullBooking.user_profiles as any;
+            const tour = fullBooking.tours as TourRelation | null | undefined;
+            const pickupPoint = fullBooking.pickup_points as PickupPointRelation | null | undefined;
+            const userProfile = fullBooking.user_profiles as UserProfileRelation | null | undefined;
             let customerEmail = userProfile?.email ?? null;
             let customerName = userProfile?.full_name || 'Guest';
             if (!customerEmail) {
@@ -298,15 +303,15 @@ export async function PUT(
               await sendBookingConfirmationEmail({
                 to: customerEmail,
                 bookingId: bookingId,
-                tourTitle: tour.title,
+                tourTitle: tour.title ?? '',
                 bookingDate: fullBooking.booking_date,
                 numberOfGuests: fullBooking.number_of_guests || 1,
-                totalPrice: parseFloat(fullBooking.final_price.toString()),
+                totalPrice: parseFloat(String(fullBooking.final_price ?? 0)),
                 pickupPoint: pickupPoint?.name || pickupPoint?.address || undefined,
                 paymentMethod: fullBooking.payment_method || 'pending',
                 paymentStatus: 'paid',
                 customerName,
-                tourId: tour.id,
+                tourId: tour.id != null ? String(tour.id) : undefined,
                 tourImageUrl: tour.image_url,
               });
             }
@@ -318,10 +323,10 @@ export async function PUT(
     }
 
     return NextResponse.json({ booking, message: 'Booking updated successfully' });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Unexpected error:', error);
     return NextResponse.json(
-      { error: 'Internal server error', details: error.message },
+      { error: 'Internal server error', details: error instanceof Error ? error.message : String(error) },
       { status: 500 }
     );
   }

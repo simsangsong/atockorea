@@ -68,9 +68,10 @@ export default function TourCard({
   const displayCategory = tour?.tag?.split(" · ")[0] || location || t('tourCard.tours');
   const displayType = tour?.tag?.split(" · ")[1] || type || "";
   // price prop: some callers pass KRW/1000 (e.g. TourList), others pass full KRW (e.g. RelatedTours). Use magnitude to infer.
+  const tourPriceNum = tour && typeof (tour as Tour & { price?: number }).price === 'number' ? (tour as Tour & { price?: number }).price : 0;
   const priceKRW = price != null
     ? (price > 10000 ? price : price * 1000)
-    : (typeof (tour as any)?.price === 'number' ? (tour as any).price : 0);
+    : tourPriceNum;
   const displayPrice = currencyCtx && priceKRW > 0
     ? currencyCtx.formatPrice(priceKRW)
     : (tour?.price || (price ? `₩ ${(price * 1000).toLocaleString()}` : ""));

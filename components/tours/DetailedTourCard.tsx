@@ -23,7 +23,7 @@ interface DetailedTourCardProps {
     image: string;
     features: string[];
     itinerary: string[];
-    pickupPoints: any[];
+    pickupPoints: Array<{ id?: string; name?: string; address?: string }>;
     pickupPointsCount: number;
     dropoffPointsCount: number;
     lunchIncluded: boolean;

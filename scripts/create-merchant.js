@@ -161,7 +161,8 @@ async function createMerchant() {
     console.log('='.repeat(60));
     console.log('\n📋 Login Credentials:');
     console.log('   Email:', merchantData.contact_email);
-    console.log('   Password:', tempPassword);
+    console.log('   Password: (stored securely — do not log; deliver via secure channel)');
+    console.log('\n⚠️  Save the temporary password from this script\'s return value or set RESEND to email it.');
     console.log('\n🌐 Login URL:');
     console.log('   http://localhost:3000/merchant/login');
     console.log('\n⚠️  IMPORTANT:');

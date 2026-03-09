@@ -1,38 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { getAuthUser } from '@/lib/auth';
 
 /**
  * GET /api/cart
- * Get user's cart items
+ * Get current user's cart items (authentication required)
  */
 export async function GET(req: NextRequest) {
   try {
-    const supabase = createServerClient();
-    
-    // Get user from auth
-    const authHeader = req.headers.get('authorization');
-    let userId: string | null = null;
-
-    if (authHeader?.startsWith('Bearer ')) {
-      const token = authHeader.substring(7);
-      const { data: { user }, error: authError } = await supabase.auth.getUser(token);
-      if (!authError && user) {
-        userId = user.id;
-      }
-    }
-
-    // Fallback: get from query params
-    if (!userId) {
-      const { searchParams } = new URL(req.url);
-      userId = searchParams.get('userId');
-    }
-
-    if (!userId) {
+    const user = await getAuthUser(req);
+    if (!user) {
       return NextResponse.json(
-        { error: 'Authentication required or userId parameter required' },
+        { error: 'Authentication required' },
         { status: 401 }
       );
     }
+
+    const supabase = createServerClient();
+    const userId = user.id;
 
     const { data: cartItems, error } = await supabase
       .from('cart_items')
@@ -82,9 +67,16 @@ export async function GET(req: NextRequest) {
  */
 export async function POST(req: NextRequest) {
   try {
+    const user = await getAuthUser(req);
+    if (!user) {
+      return NextResponse.json(
+        { error: 'Authentication required' },
+        { status: 401 }
+      );
+    }
+
     const supabase = createServerClient();
     const body = await req.json();
-
     const { tourId, bookingDate, numberOfGuests, pickupPointId } = body;
 
     if (!tourId || !bookingDate || !numberOfGuests) {
@@ -94,24 +86,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Get user from auth
-    const authHeader = req.headers.get('authorization');
-    let userId: string | null = null;
-
-    if (authHeader?.startsWith('Bearer ')) {
-      const token = authHeader.substring(7);
-      const { data: { user }, error: authError } = await supabase.auth.getUser(token);
-      if (!authError && user) {
-        userId = user.id;
-      }
-    }
-
-    if (!userId) {
-      return NextResponse.json(
-        { error: 'Authentication required' },
-        { status: 401 }
-      );
-    }
+    const userId = user.id;
 
     // Get tour info for pricing
     const { data: tour, error: tourError } = await supabase
@@ -245,6 +220,14 @@ export async function POST(req: NextRequest) {
  */
 export async function DELETE(req: NextRequest) {
   try {
+    const user = await getAuthUser(req);
+    if (!user) {
+      return NextResponse.json(
+        { error: 'Authentication required' },
+        { status: 401 }
+      );
+    }
+
     const supabase = createServerClient();
     const { searchParams } = new URL(req.url);
     const cartItemId = searchParams.get('id');
@@ -256,24 +239,7 @@ export async function DELETE(req: NextRequest) {
       );
     }
 
-    // Get user from auth
-    const authHeader = req.headers.get('authorization');
-    let userId: string | null = null;
-
-    if (authHeader?.startsWith('Bearer ')) {
-      const token = authHeader.substring(7);
-      const { data: { user }, error: authError } = await supabase.auth.getUser(token);
-      if (!authError && user) {
-        userId = user.id;
-      }
-    }
-
-    if (!userId) {
-      return NextResponse.json(
-        { error: 'Authentication required' },
-        { status: 401 }
-      );
-    }
+    const userId = user.id;
 
     // Verify cart item belongs to user
     const { data: cartItem, error: fetchError } = await supabase

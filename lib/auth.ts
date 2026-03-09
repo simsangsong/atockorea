@@ -38,9 +38,8 @@ export async function getAuthUser(req: NextRequest): Promise<AuthUser | null> {
       // Supabase stores session in cookies with pattern: sb-<project-ref>-auth-token
       const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
       const projectRef = supabaseUrl.match(/https:\/\/([^.]+)\.supabase\.co/)?.[1];
-      
-      console.log('🔍 [getAuthUser] Project ref:', projectRef);
-      
+      const isDev = process.env.NODE_ENV === 'development';
+
       if (projectRef) {
         // Try different cookie name patterns
         const cookieNames = [
@@ -49,74 +48,63 @@ export async function getAuthUser(req: NextRequest): Promise<AuthUser | null> {
           `sb-${projectRef}-auth-token.0`,
           `sb-${projectRef}-auth-token.1`,
         ];
-        
-        console.log('🔍 [getAuthUser] Looking for cookies:', cookieNames);
-        
+
         // Collect all matching cookies (may be split into multiple parts)
         const matchingCookies: Array<{ name: string; value: string }> = [];
         for (const cookieName of cookieNames) {
           const cookie = cookies.get(cookieName);
           if (cookie) {
-            console.log(`✅ [getAuthUser] Found cookie: ${cookieName} (length: ${cookie.value.length})`);
             matchingCookies.push({ name: cookieName, value: cookie.value });
           }
         }
-        
+
         // Try to combine split cookies or parse individually
         if (matchingCookies.length > 0) {
           // Sort by name to ensure correct order for split cookies
           matchingCookies.sort((a, b) => a.name.localeCompare(b.name));
-          
+
           // Try combined value first (for split cookies like .0, .1, etc.)
           const combinedValue = matchingCookies.map(c => c.value).join('');
-          console.log(`🔍 [getAuthUser] Combined cookie value length: ${combinedValue.length}`);
-          
+
           try {
             const sessionData = JSON.parse(combinedValue);
-            console.log('🔍 [getAuthUser] Parsed session data keys:', Object.keys(sessionData));
             const accessToken = sessionData?.access_token || sessionData?.accessToken || sessionData?.session?.access_token;
-            
-            console.log('🔍 [getAuthUser] Parsed combined session data, has access_token:', !!accessToken);
-            
+
             if (accessToken) {
               const { data: { user: authUser }, error } = await supabase.auth.getUser(accessToken);
               if (!error && authUser) {
-                console.log('✅ [getAuthUser] User authenticated from combined cookie:', authUser.id);
                 user = authUser;
-              } else {
-                console.error('❌ [getAuthUser] Error getting user from combined token:', error);
+              } else if (isDev) {
+                console.warn('[getAuthUser] Token validation failed:', error?.message);
               }
-            } else {
-              console.warn('⚠️ [getAuthUser] No access_token found in session data. Structure:', JSON.stringify(sessionData).substring(0, 500));
             }
           } catch (e: any) {
-            console.warn('⚠️ [getAuthUser] Combined cookie parse error:', e.message);
-            console.warn('⚠️ [getAuthUser] Cookie value (first 500 chars):', combinedValue.substring(0, 500));
+            if (isDev) {
+              console.warn('[getAuthUser] Cookie parse error:', e.message);
+            }
             
             // Try each cookie individually
             for (const cookie of matchingCookies) {
               try {
                 const sessionData = JSON.parse(cookie.value);
                 const accessToken = sessionData?.access_token || sessionData?.accessToken;
-                
+
                 if (accessToken) {
                   const { data: { user: authUser }, error } = await supabase.auth.getUser(accessToken);
                   if (!error && authUser) {
-                    console.log('✅ [getAuthUser] User authenticated from individual cookie:', authUser.id);
                     user = authUser;
                     break;
                   }
                 }
-              } catch (e2) {
+              } catch {
                 // Not JSON, try as direct token
                 try {
                   const { data: { user: authUser }, error } = await supabase.auth.getUser(cookie.value);
                   if (!error && authUser) {
-                    console.log('✅ [getAuthUser] User authenticated from direct token');
                     user = authUser;
                     break;
                   }
-                } catch (e3) {
+                } catch {
                   // Skip this cookie
                 }
               }
@@ -124,7 +112,7 @@ export async function getAuthUser(req: NextRequest): Promise<AuthUser | null> {
           }
         }
       }
-      
+
       // Fallback: Try common cookie names for auth tokens
       if (!user && projectRef) {
         const fallbackCookieNames = [
@@ -153,9 +141,6 @@ export async function getAuthUser(req: NextRequest): Promise<AuthUser | null> {
         }
       }
       
-      if (!user) {
-        console.error('❌ [getAuthUser] No user found from cookies');
-      }
     }
     
     if (!user) {
@@ -187,7 +172,9 @@ export async function getAuthUser(req: NextRequest): Promise<AuthUser | null> {
       merchantId,
     };
   } catch (error) {
-    console.error('Auth error:', error);
+    if (process.env.NODE_ENV === 'development') {
+      console.error('[getAuthUser] Error:', error);
+    }
     return null;
   }
 }
@@ -229,7 +216,9 @@ export async function getAuthUserFromToken(token: string): Promise<AuthUser | nu
       merchantId,
     };
   } catch (error) {
-    console.error('Auth error:', error);
+    if (process.env.NODE_ENV === 'development') {
+      console.error('[getAuthUserFromToken] Error:', error);
+    }
     return null;
   }
 }

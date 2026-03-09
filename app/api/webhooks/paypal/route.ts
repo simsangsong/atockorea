@@ -1,29 +1,95 @@
 // app/api/webhooks/paypal/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from '@/lib/supabase';
-import crypto from 'crypto';
+import { getPayPalAccessToken, getPayPalApiBaseUrl } from '@/lib/paypal';
 
 const PAYPAL_WEBHOOK_ID = process.env.PAYPAL_WEBHOOK_ID || '';
+const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID || '';
+const PAYPAL_SECRET = process.env.PAYPAL_SECRET || '';
+
+/** Verify PayPal webhook signature via PayPal API */
+async function verifyPayPalWebhook(
+  rawBody: string,
+  headers: Headers
+): Promise<boolean> {
+  if (!PAYPAL_WEBHOOK_ID || !PAYPAL_CLIENT_ID || !PAYPAL_SECRET) {
+    return false;
+  }
+  const transmissionId = headers.get('paypal-transmission-id');
+  const transmissionSig = headers.get('paypal-transmission-sig');
+  const transmissionTime = headers.get('paypal-transmission-time');
+  const authAlgo = headers.get('paypal-auth-algo');
+  const certUrl = headers.get('paypal-cert-url');
+  if (!transmissionId || !transmissionSig || !transmissionTime || !authAlgo || !certUrl) {
+    return false;
+  }
+  const token = await getPayPalAccessToken();
+  const apiBase = getPayPalApiBaseUrl();
+  const verifyRes = await fetch(`${apiBase}/v1/notifications/verify-webhook-signature`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      transmission_id: transmissionId,
+      transmission_time: transmissionTime,
+      cert_url: certUrl,
+      auth_algo: authAlgo,
+      transmission_sig: transmissionSig,
+      webhook_id: PAYPAL_WEBHOOK_ID,
+      webhook_event: JSON.parse(rawBody),
+    }),
+  });
+  if (!verifyRes.ok) {
+    return false;
+  }
+  const result = await verifyRes.json();
+  return result.verification_status === 'SUCCESS';
+}
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.text();
     const headers = req.headers;
 
-    // Verify webhook signature (in production, verify PayPal webhook signature)
-    // For now, we'll trust webhook ID matching
-    const webhookId = headers.get('paypal-webhook-id');
-    
-    if (PAYPAL_WEBHOOK_ID && webhookId !== PAYPAL_WEBHOOK_ID) {
-      console.warn('PayPal webhook ID mismatch');
-      // In production, should verify signature properly
-    }
-
     const event = JSON.parse(body);
     const eventType = event.event_type;
-    const resource = event.resource;
 
-    console.log(`PayPal webhook received: ${eventType}`);
+    // Payment events require full credentials and signature verification (no weak webhook-id-only path)
+    if (eventType && String(eventType).startsWith('PAYMENT.')) {
+      if (!PAYPAL_WEBHOOK_ID || !PAYPAL_CLIENT_ID || !PAYPAL_SECRET) {
+        return NextResponse.json(
+          { error: 'Webhook not configured for payment events' },
+          { status: 503 }
+        );
+      }
+      const verified = await verifyPayPalWebhook(body, headers);
+      if (!verified) {
+        return NextResponse.json(
+          { error: 'Webhook signature verification failed' },
+          { status: 401 }
+        );
+      }
+    } else if (PAYPAL_WEBHOOK_ID && PAYPAL_CLIENT_ID && PAYPAL_SECRET) {
+      const verified = await verifyPayPalWebhook(body, headers);
+      if (!verified) {
+        return NextResponse.json(
+          { error: 'Webhook signature verification failed' },
+          { status: 401 }
+        );
+      }
+    } else if (PAYPAL_WEBHOOK_ID) {
+      const webhookId = headers.get('paypal-webhook-id');
+      if (webhookId !== PAYPAL_WEBHOOK_ID) {
+        return NextResponse.json(
+          { error: 'Webhook ID mismatch' },
+          { status: 401 }
+        );
+      }
+    }
+
+    const resource = event.resource;
 
     const supabase = createServerClient();
 
@@ -38,7 +104,7 @@ export async function POST(req: NextRequest) {
         // Find booking by PayPal order ID in payment_provider_data
         const { data: bookings } = await supabase
           .from('bookings')
-          .select('id, tour_id, booking_date, number_of_guests, final_price, pickup_point_id, payment_provider_data, user_profiles (email, full_name), tours (id, title)')
+          .select('id, tour_id, booking_date, number_of_guests, final_price, pickup_point_id, payment_provider_data, user_profiles (email, full_name), tours (id, title, image_url)')
           .eq('status', 'pending')
           .not('payment_provider_data', 'is', null);
 
@@ -80,8 +146,9 @@ export async function POST(req: NextRequest) {
             let customerName = resource.payer?.name?.given_name || 'Guest';
 
             if (!customerEmail && targetBooking.user_profiles) {
-              customerEmail = (targetBooking.user_profiles as any).email;
-              customerName = (targetBooking.user_profiles as any).full_name || customerName;
+              const profile = targetBooking.user_profiles as { email?: string; full_name?: string } | null;
+              customerEmail = profile?.email;
+              customerName = profile?.full_name || customerName;
             }
 
             if (customerEmail && targetBooking.tours) {
@@ -96,24 +163,27 @@ export async function POST(req: NextRequest) {
                 pickupPointName = pickupData?.name || pickupData?.address || null;
               }
 
+              const tour = targetBooking.tours as { id?: number; title?: string; image_url?: string } | null;
               const { sendBookingConfirmationEmail } = await import('@/lib/email');
               await sendBookingConfirmationEmail({
                 to: customerEmail,
                 bookingId: targetBooking.id,
-                tourTitle: (targetBooking.tours as any).title,
+                tourTitle: tour?.title ?? '',
                 bookingDate: targetBooking.booking_date,
                 numberOfGuests: targetBooking.number_of_guests,
-                totalPrice: parseFloat(targetBooking.final_price.toString()),
+                totalPrice: parseFloat(String(targetBooking.final_price ?? 0)),
                 pickupPoint: pickupPointName || undefined,
                 paymentMethod: 'paypal',
+                paymentStatus: 'paid',
                 customerName,
+                tourId: tour?.id != null ? String(tour.id) : undefined,
+                tourImageUrl: tour?.image_url,
               });
             }
           } catch (emailError) {
             console.error('Error sending confirmation email:', emailError);
           }
 
-          console.log(`Booking ${targetBooking.id} payment confirmed via PayPal webhook`);
         }
 
         break;
@@ -166,7 +236,7 @@ export async function POST(req: NextRequest) {
       }
 
       default:
-        console.log(`Unhandled PayPal webhook event: ${eventType}`);
+        break;
     }
 
     return NextResponse.json({ received: true });

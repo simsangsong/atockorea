@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { getAuthUser } from '@/lib/auth';
 
 /**
  * GET /api/reviews
  * Get reviews with optional filtering.
- * Note: reviews has FK to tours but not to user_profiles; we fetch profiles separately.
+ * Filtering by userId is only allowed for the authenticated user (own reviews).
  */
 export async function GET(req: NextRequest) {
   try {
@@ -12,9 +13,22 @@ export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
 
     const tourId = searchParams.get('tourId');
-    const userId = searchParams.get('userId');
-    const limit = parseInt(searchParams.get('limit') || '50');
-    const offset = parseInt(searchParams.get('offset') || '0');
+    const requestedUserId = searchParams.get('userId');
+    const limit = Math.min(Math.max(parseInt(searchParams.get('limit') || '50', 10), 1), 100);
+    const offset = Math.max(parseInt(searchParams.get('offset') || '0', 10), 0);
+
+    // If client asks for a specific user's reviews, require auth and only allow own id
+    let filterUserId: string | null = null;
+    if (requestedUserId) {
+      const user = await getAuthUser(req);
+      if (!user || user.id !== requestedUserId) {
+        return NextResponse.json(
+          { error: 'Authentication required to filter by user' },
+          { status: 401 }
+        );
+      }
+      filterUserId = requestedUserId;
+    }
 
     let query = supabase
       .from('reviews')
@@ -33,8 +47,8 @@ export async function GET(req: NextRequest) {
       query = query.eq('tour_id', tourId);
     }
 
-    if (userId) {
-      query = query.eq('user_id', userId);
+    if (filterUserId) {
+      query = query.eq('user_id', filterUserId);
     }
 
     const { data: reviews, error } = await query;

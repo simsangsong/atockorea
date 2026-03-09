@@ -47,7 +47,9 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
     try {
       const stored = localStorage.getItem(STORAGE_KEY) as CurrencyCode | null;
       if (stored === 'USD' || stored === 'KRW') setCurrencyState(stored);
-    } catch (_) {}
+    } catch {
+      // localStorage unavailable (SSR or private mode)
+    }
   }, []);
 
   const fetchRate = useCallback(async () => {
@@ -82,7 +84,9 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
     setCurrencyState(c);
     try {
       localStorage.setItem(STORAGE_KEY, c);
-    } catch (_) {}
+    } catch {
+      // localStorage unavailable
+    }
   }, []);
 
   const effectiveRate = rate ?? DEFAULT_RATE;

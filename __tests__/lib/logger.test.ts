@@ -9,15 +9,16 @@ const mockConsole = {
 };
 
 describe('logger', () => {
+  const env = process.env as NodeJS.ProcessEnv & { NODE_ENV?: string };
+
   beforeEach(() => {
     jest.clearAllMocks();
     global.console = mockConsole as any;
-    // Force development mode for testing
-    process.env.NODE_ENV = 'development';
+    env.NODE_ENV = 'development';
   });
 
   afterEach(() => {
-    process.env.NODE_ENV = 'test';
+    env.NODE_ENV = 'test';
   });
 
   describe('logger methods', () => {
@@ -73,11 +74,11 @@ describe('logger', () => {
 
   describe('log levels in production', () => {
     beforeEach(() => {
-      process.env.NODE_ENV = 'production';
+      env.NODE_ENV = 'production';
     });
 
     afterEach(() => {
-      process.env.NODE_ENV = 'test';
+      env.NODE_ENV = 'test';
     });
 
     it('should not log debug in production', () => {

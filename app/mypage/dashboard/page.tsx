@@ -62,7 +62,9 @@ export default function DashboardPage() {
       }
 
       // Fetch bookings
-      const bookingsResponse = await fetch(`/api/bookings?userId=${session.user.id}`);
+      const bookingsResponse = await fetch(`/api/bookings?userId=${session.user.id}`, {
+        headers: { Authorization: `Bearer ${session.access_token}` },
+      });
       const bookingsData = await bookingsResponse.json();
 
       if (bookingsResponse.ok && bookingsData.bookings) {
@@ -94,7 +96,9 @@ export default function DashboardPage() {
 
       // Fetch reviews
       try {
-        const reviewsResponse = await fetch(`/api/reviews?userId=${session.user.id}`);
+        const reviewsResponse = await fetch(`/api/reviews?userId=${session.user.id}`, {
+          headers: { Authorization: `Bearer ${session.access_token}` },
+        });
         const reviewsData = await reviewsResponse.json();
 
         if (reviewsResponse.ok && reviewsData.reviews) {

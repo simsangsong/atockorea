@@ -73,18 +73,19 @@ describe('error-handler', () => {
     });
 
     it('should not expose stack traces in production', async () => {
-      const originalEnv = process.env.NODE_ENV;
-      process.env.NODE_ENV = 'production';
-      
+      const env = process.env as NodeJS.ProcessEnv & { NODE_ENV?: string };
+      const originalEnv = env.NODE_ENV;
+      env.NODE_ENV = 'production';
+
       try {
         const error = new Error('Test error');
         const response = handleApiError(error);
         const data = await response.json();
-        
+
         expect(data.error).toBe('Internal server error');
         expect(data.stack).toBeUndefined();
       } finally {
-        process.env.NODE_ENV = originalEnv;
+        env.NODE_ENV = originalEnv;
       }
     });
   });

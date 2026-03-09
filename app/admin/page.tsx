@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
+import { BookingStatusBadge } from '@/components/admin/BookingStatusBadge';
 
 interface Stats {
   totalMerchants: number;
@@ -291,13 +292,7 @@ export default function AdminDashboard() {
                     {booking.user_profiles?.full_name || booking.contact_name || '게스트'} · {formatDate(booking.created_at)} · ₩{parseFloat(booking.final_price.toString()).toLocaleString()}
                   </p>
                 </div>
-                <span className={`px-2 py-1 text-xs font-medium rounded-lg flex-shrink-0 ${
-                  booking.status === 'confirmed' ? 'bg-green-100 text-green-800' :
-                  booking.status === 'pending' ? 'bg-amber-100 text-amber-800' :
-                  'bg-slate-100 text-slate-700'
-                }`}>
-                  {booking.status === 'confirmed' ? '확정' : booking.status === 'pending' ? '대기' : booking.status}
-                </span>
+                <BookingStatusBadge status={booking.status} className="rounded-lg flex-shrink-0" />
               </Link>
             ))
           ) : (

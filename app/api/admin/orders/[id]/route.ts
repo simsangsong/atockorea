@@ -164,7 +164,9 @@ export async function PUT(
               const sr = JSON.parse((b as any).special_requests);
               customerEmail = sr.email || sr.customer_email;
               customerName = sr.name || sr.customer_name || customerName;
-            } catch (_) {}
+            } catch (e) {
+              // special_requests may be invalid JSON; use existing customerEmail/customerName
+            }
           }
           if (customerEmail && tour?.title) {
             const { sendBookingCancellationEmail } = await import('@/lib/email');

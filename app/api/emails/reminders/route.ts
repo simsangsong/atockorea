@@ -1,14 +1,35 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { sendBookingReminderEmail } from '@/lib/email';
+import type { TourRelation, UserProfileRelation, PickupPointRelation } from '@/lib/db-relations';
+
+const CRON_SECRET = process.env.CRON_SECRET || process.env.VERCEL_CRON_SECRET;
 
 /**
  * POST /api/emails/reminders
- * Send reminder emails for bookings happening tomorrow
- * This should be called by a cron job or scheduled task
+ * Send reminder emails for bookings happening tomorrow.
+ * Must be called by a cron job with CRON_SECRET (Bearer token or X-Cron-Secret header).
  */
 export async function POST(req: NextRequest) {
   try {
+    if (!CRON_SECRET) {
+      return NextResponse.json(
+        { error: 'Cron endpoint not configured' },
+        { status: 503 }
+      );
+    }
+
+    const authHeader = req.headers.get('authorization');
+    const cronHeader = req.headers.get('x-cron-secret');
+    const token = authHeader?.startsWith('Bearer ') ? authHeader.slice(7) : cronHeader;
+
+    if (token !== CRON_SECRET) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      );
+    }
+
     const supabase = createServerClient();
     
     // Get tomorrow's date
@@ -59,9 +80,9 @@ export async function POST(req: NextRequest) {
     const results = [];
     for (const booking of bookings) {
       try {
-        const tour = booking.tours as any;
-        const pickupPoint = booking.pickup_points as any;
-        const userProfile = booking.user_profiles as any;
+        const tour = booking.tours as TourRelation | null | undefined;
+        const pickupPoint = booking.pickup_points as PickupPointRelation | null | undefined;
+        const userProfile = booking.user_profiles as UserProfileRelation | null | undefined;
 
         let customerEmail = null;
         let customerName = 'Guest';
@@ -86,7 +107,7 @@ export async function POST(req: NextRequest) {
           const result = await sendBookingReminderEmail({
             to: customerEmail,
             bookingId: booking.id,
-            tourTitle: tour.title,
+            tourTitle: tour.title ?? '',
             bookingDate: booking.booking_date,
             bookingTime: booking.tour_time || undefined,
             numberOfGuests: booking.number_of_guests || 1,
@@ -111,12 +132,12 @@ export async function POST(req: NextRequest) {
             error: 'No email address found',
           });
         }
-      } catch (err: any) {
+      } catch (err: unknown) {
         console.error(`Error sending reminder for booking ${booking.id}:`, err);
         results.push({
           bookingId: booking.id,
           success: false,
-          error: err.message,
+          error: err instanceof Error ? err.message : String(err),
         });
       }
     }
@@ -132,10 +153,10 @@ export async function POST(req: NextRequest) {
       failed: failureCount,
       results,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Unexpected error:', error);
     return NextResponse.json(
-      { error: 'Internal server error', details: error.message },
+      { error: 'Internal server error', details: error instanceof Error ? error.message : String(error) },
       { status: 500 }
     );
   }

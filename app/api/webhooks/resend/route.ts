@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import crypto from 'crypto';
+import { Webhook } from 'svix';
 
 /** Resend sends from/to as "Name <email@domain.com>" - parse to { name, email } */
 function parseEmailAddress(value: string | undefined): { email: string; name: string | null } {
@@ -17,16 +18,44 @@ function parseEmailAddress(value: string | undefined): { email: string; name: st
 /**
  * POST /api/webhooks/resend
  * Resend Inbound 수신 메일 웹훅 (email.received)
+ * Requires RESEND_WEBHOOK_SECRET and verifies Svix signature.
  */
 export async function POST(req: NextRequest) {
   try {
-    const signature = req.headers.get('resend-signature');
     const webhookSecret = process.env.RESEND_WEBHOOK_SECRET;
-    if (webhookSecret && signature) {
-      // TODO: Resend signing secret 검증 구현
+    if (!webhookSecret) {
+      return NextResponse.json(
+        { error: 'Webhook not configured' },
+        { status: 503 }
+      );
     }
 
-    const body = await req.json();
+    const rawBody = await req.text();
+
+    const svixId = req.headers.get('svix-id');
+    const svixTimestamp = req.headers.get('svix-timestamp');
+    const svixSignature = req.headers.get('svix-signature');
+    if (!svixId || !svixTimestamp || !svixSignature) {
+      return NextResponse.json(
+        { error: 'Missing webhook signature headers' },
+        { status: 401 }
+      );
+    }
+    try {
+      const wh = new Webhook(webhookSecret);
+      wh.verify(rawBody, {
+        'svix-id': svixId,
+        'svix-timestamp': svixTimestamp,
+        'svix-signature': svixSignature,
+      });
+    } catch (e) {
+      return NextResponse.json(
+        { error: 'Invalid webhook signature' },
+        { status: 401 }
+      );
+    }
+
+    const body = JSON.parse(rawBody);
     const eventType = body.type ?? body.event;
 
     if (eventType !== 'email.received') {
@@ -65,7 +94,7 @@ export async function POST(req: NextRequest) {
       subject,
       text_content: textContent || null,
       html_content: htmlContent || null,
-      attachments: attachments.map((att: any) => ({
+      attachments: attachments.map((att: { filename?: string; name?: string; content_type?: string; type?: string; size?: number }) => ({
         filename: att.filename ?? att.name,
         content_type: att.content_type ?? att.type,
         size: att.size ?? 0,
@@ -92,7 +121,7 @@ export async function POST(req: NextRequest) {
     }
 
     const messageForInquiry = (textContent || htmlContent || '').slice(0, 50000);
-    await supabase.from('contact_inquiries').insert({
+    const { error: inquiryErr } = await supabase.from('contact_inquiries').insert({
       full_name: fromName || fromEmail?.split('@')[0] || 'Unknown',
       email: fromEmail,
       subject,
@@ -100,19 +129,25 @@ export async function POST(req: NextRequest) {
       privacy_consent: true,
       status: 'new',
       is_read: false,
-    }).then(({ error: inquiryErr }) => {
-      if (inquiryErr) console.error('Error saving to contact_inquiries:', inquiryErr);
     });
+
+    if (inquiryErr) {
+      console.error('Error saving to contact_inquiries:', inquiryErr);
+      return NextResponse.json(
+        { error: 'Failed to save inquiry', details: inquiryErr.message },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({
       success: true,
       message: 'Email received and saved',
       email_id: data.id,
     }, { status: 200 });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Resend webhook error:', error);
     return NextResponse.json(
-      { error: 'Webhook processing failed', details: error.message },
+      { error: 'Webhook processing failed', details: error instanceof Error ? error.message : String(error) },
       { status: 500 }
     );
   }
@@ -150,12 +185,9 @@ function categorizeEmail(subject: string, content: string): string {
 
 /**
  * GET /api/webhooks/resend
- * Webhook 验证（某些服务需要验证端点）
+ * Method not allowed (webhook accepts POST only; avoids endpoint enumeration).
  */
-export async function GET(req: NextRequest) {
-  return NextResponse.json({ 
-    message: 'Resend webhook endpoint is active',
-    timestamp: new Date().toISOString()
-  });
+export async function GET() {
+  return new NextResponse(null, { status: 405 });
 }
 

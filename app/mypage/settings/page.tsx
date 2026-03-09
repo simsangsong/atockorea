@@ -57,7 +57,11 @@ export default function AccountSettingsPage() {
           birthday: profile?.birth_year ? `${profile.birth_year}-01-01` : '',
           country: profile?.nationality?.trim() || 'South Korea',
         }));
-      } catch (_) {}
+      } catch (e) {
+        if (process.env.NODE_ENV === 'development') {
+          console.warn('[mypage/settings] Load failed:', e);
+        }
+      }
       setProfileLoading(false);
     };
     loadProfile();

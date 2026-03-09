@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
+import { BookingStatusBadge } from '@/components/admin/BookingStatusBadge';
 
 interface Booking {
   id: string;
@@ -117,16 +118,6 @@ export default function OrdersPage() {
     const keys = Array.from(map.keys()).sort((a, b) => (orderDir === 'desc' ? b.localeCompare(a) : a.localeCompare(b)));
     return keys.map((key) => ({ date: key, items: map.get(key)! }));
   }, [bookings, orderDir]);
-
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'confirmed': return 'bg-green-100 text-green-800';
-      case 'pending': return 'bg-yellow-100 text-yellow-800';
-      case 'completed': return 'bg-blue-100 text-blue-800';
-      case 'cancelled': return 'bg-red-100 text-red-800';
-      default: return 'bg-gray-100 text-gray-800';
-    }
-  };
 
   const exportToExcel = () => {
     setExporting(true);
@@ -302,9 +293,7 @@ export default function OrdersPage() {
                             </div>
                           </td>
                           <td className="px-5 py-4 whitespace-nowrap">
-                            <span className={`px-2 py-1 text-xs font-semibold rounded-md ${getStatusColor(booking.status)}`}>
-                              {booking.status === 'confirmed' ? '확정' : booking.status === 'pending' ? '대기' : booking.status === 'completed' ? '완료' : booking.status === 'cancelled' ? '취소' : booking.status}
-                            </span>
+                            <BookingStatusBadge status={booking.status} className="font-semibold" />
                           </td>
                           <td className="px-5 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <Link href={`/admin/orders/${booking.id}`} className="text-indigo-600 hover:text-indigo-700 font-medium">

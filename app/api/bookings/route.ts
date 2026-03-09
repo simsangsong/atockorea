@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { handleApiError, ErrorResponses } from '@/lib/error-handler';
 import { getAuthUser } from '@/lib/auth';
+import { getMissingRequiredFields } from '@/lib/validation';
+import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 
 /**
  * GET /api/bookings
@@ -77,10 +79,12 @@ export async function POST(req: NextRequest) {
       customerInfo, // { name, email, phone, preferredChatApp, chatAppContact }
     } = body;
 
-    if (!tourId || !bookingDate || !numberOfGuests || !finalPrice) {
-      console.error('Missing required fields:', { tourId, bookingDate, numberOfGuests, finalPrice });
+    const requiredKeys = ['tourId', 'bookingDate', 'numberOfGuests', 'finalPrice'];
+    const missing = getMissingRequiredFields(body, requiredKeys);
+    if (missing.length) {
+      console.error('Missing required fields:', body);
       return ErrorResponses.validationError(
-        'Missing required fields: tourId, bookingDate, numberOfGuests, finalPrice'
+        `Missing required fields: ${missing.join(', ')}`
       );
     }
 
@@ -95,7 +99,7 @@ export async function POST(req: NextRequest) {
       return ErrorResponses.notFound('Tour');
     }
 
-    // Try to get user from auth (optional - guest bookings allowed)
+    // Try to get user from auth (optional - guest bookings allowed with full guest info)
     const authHeader = req.headers.get('authorization');
     let userId: string | null = null;
 
@@ -105,6 +109,26 @@ export async function POST(req: NextRequest) {
       if (!error && user) {
         userId = user.id;
       }
+    }
+
+    // Require either authenticated user OR complete guest info (full_name, email, phone). Prevents anonymous/unlimited orders.
+    const hasGuestInfo =
+      customerInfo &&
+      typeof customerInfo === 'object' &&
+      [customerInfo.name, customerInfo.email, customerInfo.phone].every(
+        (v) => v != null && String(v).trim() !== ''
+      ) &&
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(customerInfo.email).trim());
+
+    if (!userId && !hasGuestInfo) {
+      return NextResponse.json(
+        {
+          error: 'Authentication or guest information required',
+          code: 'AUTH_OR_GUEST_REQUIRED',
+          message: 'Please sign in or provide full name, email, and phone number to place a booking.',
+        },
+        { status: 403 }
+      );
     }
 
     // Check availability before creating booking
@@ -125,7 +149,7 @@ export async function POST(req: NextRequest) {
       .select('number_of_guests')
       .eq('tour_id', tourId)
       .eq('booking_date', dateStr)
-      .in('status', ['pending', 'confirmed']);
+      .in('status', [...ACTIVE_BOOKING_STATUSES]);
 
     // Calculate available spots
     const bookedGuests = existingBookings?.reduce((sum, b) => sum + (b.number_of_guests || 1), 0) || 0;
@@ -202,18 +226,26 @@ export async function POST(req: NextRequest) {
       bookingData.special_requests = specialRequests;
     }
 
-    // Store contact info for guest and display in admin
+    // Store contact info for guest and display in admin; ensure every booking is linked to user_id or contact_email
     if (customerInfo) {
-      bookingData.contact_name = customerInfo.name || null;
-      bookingData.contact_email = customerInfo.email || null;
-      bookingData.contact_phone = customerInfo.phone || null;
+      bookingData.contact_name = (customerInfo.name ?? '').trim() || null;
+      bookingData.contact_email = (customerInfo.email ?? '').trim() || null;
+      bookingData.contact_phone = (customerInfo.phone ?? '').trim() || null;
     }
 
-    // Store customer info in special_requests if no user_id (legacy)
+    // Guest orders: generate unique guest_id and store in special_requests for traceability
     if (!userId && customerInfo) {
+      const guestId = crypto.randomUUID();
+      const baseRequests =
+        typeof specialRequests === 'string'
+          ? { requests: specialRequests }
+          : typeof specialRequests === 'object' && specialRequests !== null
+            ? specialRequests
+            : {};
       bookingData.special_requests = JSON.stringify({
+        guest_id: guestId,
         ...customerInfo,
-        ...(specialRequests ? { requests: specialRequests } : {}),
+        ...baseRequests,
       });
     }
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Header from '@/components/Header';
@@ -30,8 +30,12 @@ export default function ConfirmationPage() {
   const params = useParams();
   const router = useRouter();
   const [bookingData, setBookingData] = useState<BookingData | null>(null);
+  const [fetchError, setFetchError] = useState<string | null>(null);
+  const isMountedRef = useRef(true);
 
   useEffect(() => {
+    isMountedRef.current = true;
+    setFetchError(null);
     const urlParams = new URLSearchParams(window.location.search);
     const sessionId = urlParams.get('session_id');
     const bookingId = urlParams.get('booking_id');
@@ -39,8 +43,12 @@ export default function ConfirmationPage() {
     // Redirected from Stripe: fetch full booking and build confirmation data
     if (sessionId && bookingId) {
       fetch(`/api/bookings/${bookingId}`)
-        .then((res) => res.json())
+        .then((res) => {
+          if (!res.ok) throw new Error(res.status === 404 ? 'Booking not found' : `Request failed (${res.status})`);
+          return res.json();
+        })
         .then((data) => {
+          if (!isMountedRef.current) return;
           if (data.booking) {
             const b = data.booking;
             let specialRequests: { preferredChatApp?: string; chatAppContact?: string } = {};
@@ -48,7 +56,11 @@ export default function ConfirmationPage() {
               if (b.special_requests) {
                 specialRequests = typeof b.special_requests === 'string' ? JSON.parse(b.special_requests) : b.special_requests;
               }
-            } catch (_) {}
+            } catch (e) {
+              if (process.env.NODE_ENV === 'development') {
+                console.warn('[confirmation] Fetch booking failed:', e);
+              }
+            }
             const built: BookingData = {
               tourId: Number(b.tour_id),
               date: b.booking_date || b.tour_date || '',
@@ -71,11 +83,12 @@ export default function ConfirmationPage() {
             setBookingData(built);
             sessionStorage.setItem('bookingData', JSON.stringify({ ...built, bookingId: b.id }));
           } else {
-            router.push(`/tour/${params.id}`);
+            if (isMountedRef.current) router.push(`/tour/${params.id}`);
           }
         })
         .catch((err) => {
           console.error('Error fetching booking:', err);
+          if (!isMountedRef.current) return;
           const stored = sessionStorage.getItem('bookingData');
           if (stored) {
             try {
@@ -84,10 +97,10 @@ export default function ConfirmationPage() {
               router.push(`/tour/${params.id}`);
             }
           } else {
-            router.push(`/tour/${params.id}`);
+            setFetchError(err instanceof Error ? err.message : 'Failed to load confirmation');
           }
         });
-      return;
+      return () => { isMountedRef.current = false; };
     }
 
     const stored = sessionStorage.getItem('bookingData');
@@ -98,8 +111,9 @@ export default function ConfirmationPage() {
         router.push(`/tour/${params.id}`);
       }
     } else {
-      router.push(`/tour/${params.id}`);
+      if (isMountedRef.current) router.push(`/tour/${params.id}`);
     }
+    return () => { isMountedRef.current = false; };
   }, [params.id, router]);
 
   if (!bookingData) {
@@ -108,7 +122,19 @@ export default function ConfirmationPage() {
         <Header />
         <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-2xl mx-auto">
-            <p className="text-center text-gray-600">Loading confirmation...</p>
+            {fetchError ? (
+              <div className="text-center space-y-4">
+                <p className="text-gray-600">{fetchError}</p>
+                <Link
+                  href={`/tour/${params.id}`}
+                  className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                >
+                  Back to tour
+                </Link>
+              </div>
+            ) : (
+              <p className="text-center text-gray-600">Loading confirmation...</p>
+            )}
           </div>
         </main>
         <Footer />

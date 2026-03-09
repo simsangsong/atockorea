@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 
 /**
  * GET /api/tours/[id]/availability/range
@@ -47,7 +48,7 @@ export async function GET(
       .eq('tour_id', tourId)
       .gte('booking_date', start.toISOString().split('T')[0])
       .lte('booking_date', end.toISOString().split('T')[0])
-      .in('status', ['pending', 'confirmed']);
+      .in('status', [...ACTIVE_BOOKING_STATUSES]);
 
     // Group bookings by date
     const bookingsByDate: Record<string, number> = {};

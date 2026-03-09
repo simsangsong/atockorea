@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS user_profiles (
   avatar_url TEXT,
   phone TEXT,
   role TEXT DEFAULT 'customer' CHECK (role IN ('customer', 'merchant', 'admin')),
-  language_preference TEXT DEFAULT 'ko' CHECK (language_preference IN ('en', 'zh', 'ko')),
+  language_preference TEXT DEFAULT 'ko' CHECK (language_preference IN ('en', 'zh', 'ko', 'zh-TW', 'es', 'ja')),
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );

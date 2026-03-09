@@ -40,7 +40,9 @@ export default function ReviewsPage() {
           return;
         }
 
-        const response = await fetch(`/api/reviews?userId=${session.user.id}`);
+        const response = await fetch(`/api/reviews?userId=${session.user.id}`, {
+          headers: { Authorization: `Bearer ${session.access_token}` },
+        });
         const data = await response.json();
 
         if (!response.ok) {

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
+import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 
 /**
  * GET /api/admin/merchants/[id]
@@ -160,7 +161,7 @@ export async function DELETE(
       .from('bookings')
       .select('id')
       .eq('merchant_id', merchantId)
-      .in('status', ['pending', 'confirmed'])
+      .in('status', [...ACTIVE_BOOKING_STATUSES])
       .limit(1);
 
     if (bookings && bookings.length > 0) {

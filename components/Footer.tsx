@@ -122,6 +122,32 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Stripe: 로고 위, powered by 뱃지 아래 (작은 사이즈) */}
+        <div className="flex flex-wrap items-center justify-center py-4 border-t border-gray-800">
+          <a
+            href="https://stripe.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex flex-col items-center gap-1.5 opacity-90 hover:opacity-100 transition-opacity"
+            aria-label="Powered by Stripe"
+          >
+            <img
+              src="/images/stripe/stripe-wordmark.svg"
+              alt="Stripe"
+              width={72}
+              height={30}
+              className="h-7 w-auto object-contain"
+            />
+            <img
+              src="/images/stripe/powered-by-stripe.svg"
+              alt="Powered by Stripe"
+              width={120}
+              height={26}
+              className="h-5 w-auto object-contain"
+            />
+          </a>
+        </div>
+
         {/* Legal Summary */}
         <div className="text-center text-xs text-gray-400 mb-4 pt-4 border-t border-gray-800">
           <p>{t('home.footer.legalSummary')}</p>

@@ -27,7 +27,7 @@ interface Tour {
   images: string[];
   features: string[];
   itinerary: string[];
-  pickupPoints: any[];
+  pickupPoints: Array<{ id?: string; name?: string; address?: string }>;
   pickupPointsCount: number;
   dropoffPointsCount: number;
   lunchIncluded: boolean;
@@ -105,40 +105,40 @@ function ToursContent() {
         throw new Error('Failed to fetch tours');
       }
 
-      const data = await response.json();
-      const transformedTours: Tour[] = (data.tours || []).map((tour: any) => ({
-        id: tour.id,
-        title: tour.title,
-        location: tour.city,
-        city: tour.city,
-        rating: tour.rating || 0,
-        reviewCount: tour.reviewCount || tour.review_count || 0,
-        price: parseFloat(tour.price?.toString() || '0'),
-        originalPrice: tour.originalPrice || (tour.original_price ? parseFloat(tour.original_price.toString()) : null),
-        priceType: tour.priceType || tour.price_type || 'person',
-        duration: tour.duration || '',
-        image: tour.image || tour.image_url || (tour.images && tour.images[0]) || '',
-        images: tour.images || [],
-        features: tour.highlights || [],
-        itinerary: tour.schedule || [],
-        pickupPoints: tour.pickupPoints || tour.pickup_points || [],
-        pickupPointsCount: tour.pickupPointsCount || tour.pickup_points_count || 0,
-        dropoffPointsCount: tour.dropoffPointsCount || tour.dropoff_points_count || 0,
-        lunchIncluded: tour.lunchIncluded !== undefined ? tour.lunchIncluded : (tour.lunch_included || false),
-        ticketIncluded: tour.ticketIncluded !== undefined ? tour.ticketIncluded : (tour.ticket_included || false),
-        includes: tour.includes || [],
-        excludes: tour.excludes || [],
-        schedule: tour.schedule || [],
-        pickupInfo: tour.pickupInfo || tour.pickup_info || '',
-        notes: tour.notes || '',
-        destinations: [tour.city],
-        priceRange: [0, parseFloat(tour.price?.toString() || '500')],
+      const data = await response.json() as { tours?: Record<string, unknown>[] };
+      const transformedTours: Tour[] = (data.tours || []).map((tour) => ({
+        id: tour.id as string,
+        title: tour.title as string,
+        location: (tour.city as string) ?? '',
+        city: (tour.city as string) ?? '',
+        rating: Number(tour.rating) || 0,
+        reviewCount: Number(tour.reviewCount ?? tour.review_count) || 0,
+        price: parseFloat(String(tour.price ?? 0)),
+        originalPrice: (tour.originalPrice ?? (tour.original_price != null ? parseFloat(String(tour.original_price)) : null)) as number | null,
+        priceType: (tour.priceType ?? tour.price_type ?? 'person') as 'person' | 'group',
+        duration: String(tour.duration ?? ''),
+        image: String(tour.image ?? tour.image_url ?? (Array.isArray(tour.images) ? tour.images[0] : '') ?? ''),
+        images: Array.isArray(tour.images) ? (tour.images as string[]) : [],
+        features: Array.isArray(tour.highlights) ? (tour.highlights as string[]) : [],
+        itinerary: Array.isArray(tour.schedule) ? (tour.schedule as string[]) : [],
+        pickupPoints: Array.isArray(tour.pickupPoints) ? (tour.pickupPoints as Tour['pickupPoints']) : (Array.isArray(tour.pickup_points) ? (tour.pickup_points as Tour['pickupPoints']) : []),
+        pickupPointsCount: Number(tour.pickupPointsCount ?? tour.pickup_points_count) || 0,
+        dropoffPointsCount: Number(tour.dropoffPointsCount ?? tour.dropoff_points_count) || 0,
+        lunchIncluded: tour.lunchIncluded !== undefined ? Boolean(tour.lunchIncluded) : Boolean(tour.lunch_included),
+        ticketIncluded: tour.ticketIncluded !== undefined ? Boolean(tour.ticketIncluded) : Boolean(tour.ticket_included),
+        includes: Array.isArray(tour.includes) ? (tour.includes as string[]) : [],
+        excludes: Array.isArray(tour.excludes) ? (tour.excludes as string[]) : [],
+        schedule: Array.isArray(tour.schedule) ? (tour.schedule as Tour['schedule']) : [],
+        pickupInfo: String(tour.pickupInfo ?? tour.pickup_info ?? ''),
+        notes: String(tour.notes ?? ''),
+        destinations: [String(tour.city ?? '')],
+        priceRange: [0, parseFloat(String(tour.price ?? '500'))],
       }));
 
       setAllTours(transformedTours);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Error fetching tours:', err);
-      setError(err.message || 'Failed to load tours');
+      setError(err instanceof Error ? err.message : 'Failed to load tours');
     } finally {
       setLoading(false);
     }

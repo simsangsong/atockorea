@@ -1,41 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { getAuthUser } from '@/lib/auth';
 
 // Force dynamic rendering for API routes that use headers
 export const dynamic = 'force-dynamic';
 
 /**
  * GET /api/user-settings
- * Get user settings
+ * Get current user's settings (authentication required)
  */
 export async function GET(req: NextRequest) {
   try {
-    const supabase = createServerClient();
-    
-    // Get user from auth
-    const authHeader = req.headers.get('authorization');
-    let userId: string | null = null;
-
-    if (authHeader?.startsWith('Bearer ')) {
-      const token = authHeader.substring(7);
-      const { data: { user }, error: authError } = await supabase.auth.getUser(token);
-      if (!authError && user) {
-        userId = user.id;
-      }
-    }
-
-    // Fallback: get from query params
-    if (!userId) {
-      const { searchParams } = new URL(req.url);
-      userId = searchParams.get('userId');
-    }
-
-    if (!userId) {
+    const user = await getAuthUser(req);
+    if (!user) {
       return NextResponse.json(
-        { error: 'Authentication required or userId parameter required' },
+        { error: 'Authentication required' },
         { status: 401 }
       );
     }
+
+    const supabase = createServerClient();
+    const userId = user.id;
 
     const { data: settings, error } = await supabase
       .from('user_settings')
@@ -76,31 +61,21 @@ export async function GET(req: NextRequest) {
 
 /**
  * PUT /api/user-settings
- * Update user settings
+ * Update current user's settings (authentication required)
  */
 export async function PUT(req: NextRequest) {
   try {
-    const supabase = createServerClient();
-    const body = await req.json();
-
-    // Get user from auth
-    const authHeader = req.headers.get('authorization');
-    let userId: string | null = null;
-
-    if (authHeader?.startsWith('Bearer ')) {
-      const token = authHeader.substring(7);
-      const { data: { user }, error: authError } = await supabase.auth.getUser(token);
-      if (!authError && user) {
-        userId = user.id;
-      }
-    }
-
-    if (!userId) {
+    const user = await getAuthUser(req);
+    if (!user) {
       return NextResponse.json(
         { error: 'Authentication required' },
         { status: 401 }
       );
     }
+
+    const supabase = createServerClient();
+    const body = await req.json();
+    const userId = user.id;
 
     const {
       language,

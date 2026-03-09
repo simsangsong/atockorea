@@ -21,7 +21,15 @@ function AuthCallbackContent() {
         const error = searchParams.get('error');
         const errorDescription = searchParams.get('error_description');
         const provider = searchParams.get('provider');
-        const next = (searchParams.get('next') || '/mypage').replace(/^null$/i, '') || '/mypage';
+        // Restrict redirect to same-origin path only (prevent open redirect)
+        const rawNext = (searchParams.get('next') || '/mypage').replace(/^null$/i, '') || '/mypage';
+        const next =
+          typeof rawNext === 'string' &&
+          rawNext.startsWith('/') &&
+          !rawNext.includes(':') &&
+          rawNext.length <= 500
+            ? rawNext
+            : '/mypage';
 
         // OAuth 에러 체크 (구글, 페이스북 등)
         if (error) {
@@ -61,7 +69,9 @@ function AuthCallbackContent() {
           if (data.user) {
             try {
               localStorage.setItem('line_user', JSON.stringify(data.user));
-            } catch (_) {}
+            } catch (e) {
+              if (typeof console !== 'undefined') console.warn('[auth/callback] localStorage set failed:', e);
+            }
           }
           setTimeout(() => {
             router.push('/mypage');

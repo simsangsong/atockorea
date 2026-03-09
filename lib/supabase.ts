@@ -150,7 +150,9 @@ export type Database = {
           full_name: string | null;
           avatar_url: string | null;
           phone: string | null;
-          language_preference: 'en' | 'zh' | 'ko';
+          birth_year: number | null;
+          nationality: string | null;
+          language_preference: 'en' | 'zh' | 'ko' | 'zh-TW' | 'es' | 'ja';
           created_at: string;
           updated_at: string;
         };

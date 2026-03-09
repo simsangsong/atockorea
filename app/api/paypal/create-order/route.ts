@@ -1,41 +1,13 @@
 // app/api/paypal/create-order/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from '@/lib/supabase';
-
-const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID || '';
-const PAYPAL_SECRET = process.env.PAYPAL_SECRET || '';
-const PAYPAL_API_BASE =
-  process.env.PAYPAL_MODE === "live"
-    ? "https://api-m.paypal.com"
-    : "https://api-m.sandbox.paypal.com";
+import { getPayPalAccessToken, getPayPalApiBaseUrl } from '@/lib/paypal';
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 
-async function getAccessToken(): Promise<string> {
-  const auth = Buffer.from(`${PAYPAL_CLIENT_ID}:${PAYPAL_SECRET}`).toString(
-    "base64"
-  );
-  const res = await fetch(`${PAYPAL_API_BASE}/v1/oauth2/token`, {
-    method: "POST",
-    headers: {
-      Authorization: `Basic ${auth}`,
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: "grant_type=client_credentials",
-  });
-
-  if (!res.ok) {
-    const error = await res.text();
-    throw new Error(`Failed to get PayPal access token: ${error}`);
-  }
-
-  const data = await res.json();
-  return data.access_token;
-}
-
 export async function POST(req: NextRequest) {
   try {
-    if (!PAYPAL_CLIENT_ID || !PAYPAL_SECRET) {
+    if (!process.env.PAYPAL_CLIENT_ID || !process.env.PAYPAL_SECRET) {
       return NextResponse.json(
         { error: 'PayPal credentials not configured' },
         { status: 500 }
@@ -73,10 +45,11 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const accessToken = await getAccessToken();
+    const accessToken = await getPayPalAccessToken();
+    const apiBase = getPayPalApiBaseUrl();
 
     // Create PayPal order
-    const response = await fetch(`${PAYPAL_API_BASE}/v2/checkout/orders`, {
+    const response = await fetch(`${apiBase}/v2/checkout/orders`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${accessToken}`,

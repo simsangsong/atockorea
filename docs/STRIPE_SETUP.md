@@ -48,21 +48,34 @@ NEXT_PUBLIC_APP_URL=https://atockorea.com
    - Live keys 복사
    - ⚠️ 프로덕션에서는 Live keys 사용
 
-### 3. 웹훅 설정
+### 3. 웹훅(Webhook) 생성
 
-1. Dashboard → Developers → Webhooks
-2. "Add endpoint" 클릭
-3. Endpoint URL 입력:
-   ```
-   https://atockorea.com/api/stripe/webhook
-   ```
-4. Events to listen to 선택:
+Stripe가 결제 완료/실패 시 우리 서버에 알려주려면 **웹훅 엔드포인트**를 등록해야 합니다.
+
+1. **Stripe Dashboard** 접속  
+   - [https://dashboard.stripe.com](https://dashboard.stripe.com)  
+   - 프로덕션용이면 **Live 모드**(우측 상단 토글), 로컬/테스트용이면 **Test 모드**로 둡니다.
+
+2. **Developers → Webhooks** 메뉴로 이동 후 **"Add endpoint"** 클릭.
+
+3. **Endpoint URL** 입력  
+   - 프로덕션: `https://www.atockorea.com/api/stripe/webhook`  
+   - 또는 사용 중인 도메인: `https://<your-domain>/api/stripe/webhook`  
+   - 로컬 테스트는 Stripe CLI로 포워딩 (아래 "로컬 개발용" 참고).
+
+4. **Listen to**에서 **"Select events"** 클릭 후 아래 4개 이벤트 선택:
    - `checkout.session.completed`
    - `checkout.session.async_payment_succeeded`
    - `checkout.session.async_payment_failed`
    - `payment_intent.payment_failed`
-5. "Add endpoint" 클릭
-6. **Signing secret** 복사 → `STRIPE_WEBHOOK_SECRET` (whsec_로 시작)
+
+5. **"Add endpoint"** 클릭 후 생성된 엔드포인트 상세로 들어갑니다.
+
+6. **Signing secret** 복사  
+   - "Reveal" 또는 "Click to reveal"로 **Signing secret** 표시 (예: `whsec_...`).  
+   - 이 값을 **Vercel(또는 배포 환경) 환경 변수** `STRIPE_WEBHOOK_SECRET`에 넣고 재배포합니다.
+
+**참고:** Test 모드와 Live 모드는 각각 별도 엔드포인트를 만들 수 있습니다. 프로덕션 사이트에는 Live 모드 웹훅을 등록하고, 그 때 나오는 Signing secret을 프로덕션 `STRIPE_WEBHOOK_SECRET`에 사용하세요.
 
 ### 4. 로컬 개발용 웹훅 테스트
 

@@ -2,29 +2,34 @@
 // Handle PayPal callback after payment approval/cancellation
 import { NextRequest, NextResponse } from "next/server";
 
+/** Allow only safe bookingId for redirect path (UUID or numeric) to avoid path traversal. */
+function isValidBookingId(value: string | null): boolean {
+  if (!value || typeof value !== 'string') return false;
+  if (/^\d+$/.test(value)) return value.length <= 20;
+  return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);
+}
+
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
   const success = searchParams.get('success');
   const canceled = searchParams.get('canceled');
-  const bookingId = searchParams.get('bookingId');
+  const rawBookingId = searchParams.get('bookingId');
+  const bookingId = isValidBookingId(rawBookingId) ? rawBookingId : null;
   const token = searchParams.get('token'); // PayPal order ID
 
   if (canceled === 'true') {
-    // User canceled the payment
     return NextResponse.redirect(
-      new URL(`/tour/${bookingId ? `?booking=canceled&id=${bookingId}` : '?payment=canceled'}`, req.nextUrl.origin)
+      new URL(bookingId ? `/tour?booking=canceled&id=${bookingId}` : '/?payment=canceled', req.nextUrl.origin)
     );
   }
 
   if (success === 'true' && token) {
-    // User approved the payment, redirect to confirmation page
-    // The frontend should handle capturing the order
-    return NextResponse.redirect(
-      new URL(`/tour/${bookingId}/confirmation?payment=processing&orderId=${token}`, req.nextUrl.origin)
-    );
+    const path = bookingId
+      ? `/tour/${bookingId}/confirmation?payment=processing&orderId=${encodeURIComponent(token)}`
+      : `/?payment=processing&orderId=${encodeURIComponent(token)}`;
+    return NextResponse.redirect(new URL(path, req.nextUrl.origin));
   }
 
-  // Default redirect
   return NextResponse.redirect(new URL('/', req.nextUrl.origin));
 }
 

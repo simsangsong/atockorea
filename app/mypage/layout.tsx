@@ -84,7 +84,11 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${session.access_token}` },
                     body: JSON.stringify(supplement),
                   });
-                } catch (_) {}
+                } catch (e) {
+                  if (process.env.NODE_ENV === 'development') {
+                    console.warn('[mypage/layout] Failed to supplement profile:', e);
+                  }
+                }
               }
             } else {
               // Fallback to session data

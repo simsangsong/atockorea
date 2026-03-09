@@ -1,19 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { logger, createServerLogger } from './logger';
 
-export interface ApiError {
-  message: string;
-  code?: string;
-  statusCode: number;
-  details?: any;
-}
-
 export class AppError extends Error {
   statusCode: number;
   code?: string;
-  details?: any;
+  details?: unknown;
 
-  constructor(message: string, statusCode: number = 500, code?: string, details?: any) {
+  constructor(message: string, statusCode: number = 500, code?: string, details?: unknown) {
     super(message);
     this.name = 'AppError';
     this.statusCode = statusCode;
@@ -49,7 +42,7 @@ export function handleApiError(error: unknown, req?: NextRequest): NextResponse 
 
   // Supabase errors
   if (error && typeof error === 'object' && 'code' in error) {
-    const supabaseError = error as { code: string; message: string; details?: any };
+    const supabaseError = error as { code: string; message: string; details?: unknown };
     
     serverLogger.error('Supabase error', undefined, {
       code: supabaseError.code,
@@ -128,7 +121,7 @@ export function createErrorResponse(
   message: string,
   statusCode: number = 500,
   code?: string,
-  details?: any
+  details?: unknown
 ): NextResponse {
   return NextResponse.json(
     {
@@ -145,7 +138,7 @@ export function createErrorResponse(
  * Create standardized success responses
  */
 export function createSuccessResponse(
-  data: any,
+  data: unknown,
   statusCode: number = 200,
   message?: string
 ): NextResponse {
@@ -206,13 +199,13 @@ export const ErrorResponses = {
   notFound: (resource: string = 'Resource') =>
     createErrorResponse(`${resource} not found`, 404, ErrorCodes.NOT_FOUND),
   
-  validationError: (message: string, details?: any) =>
+  validationError: (message: string, details?: unknown) =>
     createErrorResponse(message, 400, ErrorCodes.VALIDATION_ERROR, details),
   
   conflict: (message: string) =>
     createErrorResponse(message, 409, ErrorCodes.CONFLICT),
   
-  internalError: (message: string = 'Internal server error', details?: any) =>
+  internalError: (message: string = 'Internal server error', details?: unknown) =>
     createErrorResponse(message, 500, ErrorCodes.INTERNAL_ERROR, details),
   
   serviceUnavailable: (message: string = 'Service temporarily unavailable') =>

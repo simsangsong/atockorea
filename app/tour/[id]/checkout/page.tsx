@@ -142,18 +142,25 @@ export default function CheckoutPage() {
         },
       };
 
+      const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+      const { data: { session } } = await supabase?.auth.getSession() ?? { data: { session: null } };
+      if (session?.access_token) {
+        headers['Authorization'] = `Bearer ${session.access_token}`;
+      }
+
       const bookingResponse = await fetch('/api/bookings', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers,
         body: JSON.stringify(bookingPayload),
       });
 
+      const errorData = bookingResponse.ok ? null : await bookingResponse.json().catch(() => ({}));
       if (!bookingResponse.ok) {
-        const errorData = await bookingResponse.json();
         console.error('Booking API error response:', errorData);
-        const errorMessage = errorData.details || errorData.error || 'Failed to create booking';
+        const errorMessage =
+          bookingResponse.status === 403 && errorData?.message
+            ? errorData.message
+            : errorData?.details || errorData?.error || 'Failed to create booking';
         throw new Error(errorMessage);
       }
 

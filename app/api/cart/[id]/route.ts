@@ -67,13 +67,13 @@ export async function PUT(
     // Calculate new total price
     const unitPrice = parseFloat(existingItem.unit_price.toString());
     const guests = numberOfGuests !== undefined ? numberOfGuests : (existingItem.number_of_guests || 1);
-    const tour = existingItem.tours as any;
+    const tour = existingItem.tours as { price_type?: 'person' | 'group' } | null | undefined;
     const totalPrice = tour?.price_type === 'person'
       ? unitPrice * guests
       : unitPrice;
 
     // Update cart item
-    const updateData: any = {
+    const updateData: { total_price: number; number_of_guests?: number; booking_date?: string; pickup_point_id?: string | null } = {
       total_price: totalPrice,
     };
 

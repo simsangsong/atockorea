@@ -66,6 +66,12 @@ export async function POST(req: NextRequest) {
           break;
         }
 
+        // Only activate booking when payment succeeded (prevents unpaid or incomplete sessions from confirming)
+        if (session.payment_status !== 'paid') {
+          console.warn('Stripe checkout.session.completed ignored: payment_status is not paid', session.payment_status);
+          break;
+        }
+
         // Update booking payment status and store Stripe session reference
         const { error: updateError } = await supabase
           .from('bookings')
@@ -101,7 +107,8 @@ export async function POST(req: NextRequest) {
               pickup_point_id,
               tours (
                 id,
-                title
+                title,
+                image_url
               ),
               user_profiles (
                 email,
@@ -117,8 +124,9 @@ export async function POST(req: NextRequest) {
             let customerName = session.metadata?.customer_name || 'Guest';
 
             if (!customerEmail && booking.user_profiles) {
-              customerEmail = (booking.user_profiles as any).email;
-              customerName = (booking.user_profiles as any).full_name || customerName;
+              const profile = booking.user_profiles as { email?: string; full_name?: string } | null;
+              customerEmail = profile?.email ?? customerEmail ?? null;
+              customerName = profile?.full_name || customerName;
             }
 
             if (customerEmail && booking.tours) {
@@ -133,17 +141,21 @@ export async function POST(req: NextRequest) {
                 pickupPointName = pickupData?.name || pickupData?.address || null;
               }
 
+              const tour = booking.tours as { id?: number; title?: string; image_url?: string } | null;
               const { sendBookingConfirmationEmail } = await import('@/lib/email');
               const emailResult = await sendBookingConfirmationEmail({
                 to: customerEmail,
                 bookingId: booking.id,
-                tourTitle: (booking.tours as any).title,
+                tourTitle: tour?.title ?? '',
                 bookingDate: booking.booking_date,
                 numberOfGuests: booking.number_of_guests,
-                totalPrice: parseFloat(booking.final_price.toString()),
+                totalPrice: parseFloat(String(booking.final_price ?? 0)),
                 pickupPoint: pickupPointName || undefined,
                 paymentMethod: 'stripe',
+                paymentStatus: 'paid',
                 customerName,
+                tourId: tour?.id != null ? String(tour.id) : undefined,
+                tourImageUrl: tour?.image_url,
               });
 
               if (emailResult.success) {
@@ -157,8 +169,9 @@ export async function POST(req: NextRequest) {
             if (booking.user_id) {
               try {
                 const { notifyPaymentCompleted, notifyBookingConfirmed } = await import('@/lib/notifications');
-                await notifyPaymentCompleted(booking.id, booking.user_id, parseFloat(booking.final_price.toString()));
-                await notifyBookingConfirmed(booking.id, booking.user_id, (booking.tours as any).title);
+                await notifyPaymentCompleted(booking.id, booking.user_id, parseFloat(String(booking.final_price ?? 0)));
+                const tourTitle = (booking.tours as { title?: string } | null)?.title ?? 'Booking';
+                await notifyBookingConfirmed(booking.id, booking.user_id, tourTitle);
               } catch (notificationError) {
                 console.error('Error creating notification:', notificationError);
               }

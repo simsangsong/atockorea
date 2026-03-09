@@ -283,7 +283,11 @@ export default function SignUpPage() {
             credentials: 'include',
             body: JSON.stringify({ userId: data.user.id, accessToken: accessToken ?? undefined }),
           });
-        } catch (_) {}
+        } catch (e) {
+          if (process.env.NODE_ENV === 'development') {
+            console.warn('[signup] delete-user-without-profile failed:', e);
+          }
+        }
         setError(profileData.error || 'Failed to create profile. Please try again.');
         setIsLoading(false);
         return;

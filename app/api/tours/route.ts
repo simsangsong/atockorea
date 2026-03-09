@@ -13,6 +13,20 @@ function parseLocale(value: string | null): SupportedLocale | null {
   return null;
 }
 
+/** Escape ILIKE special characters (%, _) to avoid injection or unintended wildcards */
+function escapeIlike(value: string): string {
+  return value
+    .replace(/\\/g, '\\\\')
+    .replace(/%/g, '\\%')
+    .replace(/_/g, '\\_');
+}
+
+/** Sanitize feature/duration keyword for use in filters (max length, no quotes) */
+function sanitizeKeyword(value: string, maxLen = 80): string {
+  const s = value.slice(0, maxLen).replace(/["\\]/g, '');
+  return s;
+}
+
 /**
  * GET /api/tours
  * Get all tours with optional filtering (server-side).
@@ -78,41 +92,30 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       query = query.lte('price', parseFloat(maxPrice));
     }
 
-    // Search filter (title, description, city)
-    if (search) {
-      query = query.or(`title.ilike.%${search}%,description.ilike.%${search}%,city.ilike.%${search}%`);
+    // Search filter (title, description, city) - escape ILIKE special chars
+    if (search && search.trim()) {
+      const escaped = escapeIlike(search.trim());
+      query = query.or(`title.ilike.%${escaped}%,description.ilike.%${escaped}%,city.ilike.%${escaped}%`);
     }
 
-    // Duration filter (search in duration field)
+    // Duration filter (search in duration field) - escape ILIKE special chars
     if (durations) {
-      const durationList = durations.split(',').map(d => d.trim()).filter(Boolean);
+      const durationList = durations.split(',').map(d => sanitizeKeyword(d.trim().toLowerCase())).filter(Boolean);
       if (durationList.length > 0) {
-        // Build OR conditions for duration matching
         const durationConditions = durationList.map(duration => {
-          // Match duration keywords like "Half day", "Full day", "3-4 hours", "2 Days"
-          const normalizedDuration = duration.toLowerCase();
-          return `duration.ilike.%${normalizedDuration}%`;
+          const escaped = escapeIlike(duration);
+          return `duration.ilike.%${escaped}%`;
         }).join(',');
         query = query.or(durationConditions);
       }
     }
 
-    // Features filter (search in badges or includes field)
+    // Features filter - sanitize to prevent injection in JSONB path
     if (features) {
-      const featureList = features.split(',').map(f => f.trim()).filter(Boolean);
+      const featureList = features.split(',').map(f => sanitizeKeyword(f.trim().toLowerCase())).filter(Boolean);
       if (featureList.length > 0) {
-        // For each feature, check if it exists in badges JSONB array
-        // We'll filter in JavaScript after fetching, or use JSONB contains
-        // For now, we'll use a more flexible approach with multiple OR conditions
-        const featureConditions = featureList.map(feature => {
-          const normalizedFeature = feature.toLowerCase();
-          // Check in badges (JSONB array)
-          return `badges.cs.["${feature}"]`;
-        }).join(',');
-        
-        // Since Supabase doesn't support complex JSONB queries easily, we'll filter after fetch
-        // But we can still try to use JSONB contains
-        // For simplicity, we'll filter in the transformation step
+        const featureConditions = featureList.map(feature => `badges.cs.["${feature}"]`).join(',');
+        query = query.or(featureConditions);
       }
     }
 

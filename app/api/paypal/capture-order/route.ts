@@ -1,39 +1,12 @@
 // app/api/paypal/capture-order/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from '@/lib/supabase';
-
-const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID || '';
-const PAYPAL_SECRET = process.env.PAYPAL_SECRET || '';
-const PAYPAL_API_BASE =
-  process.env.PAYPAL_MODE === "live"
-    ? "https://api-m.paypal.com"
-    : "https://api-m.sandbox.paypal.com";
-
-async function getAccessToken(): Promise<string> {
-  const auth = Buffer.from(`${PAYPAL_CLIENT_ID}:${PAYPAL_SECRET}`).toString(
-    "base64"
-  );
-  const res = await fetch(`${PAYPAL_API_BASE}/v1/oauth2/token`, {
-    method: "POST",
-    headers: {
-      Authorization: `Basic ${auth}`,
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: "grant_type=client_credentials",
-  });
-
-  if (!res.ok) {
-    const error = await res.text();
-    throw new Error(`Failed to get PayPal access token: ${error}`);
-  }
-
-  const data = await res.json();
-  return data.access_token;
-}
+import { getPayPalAccessToken, getPayPalApiBaseUrl } from '@/lib/paypal';
+import type { TourRelation, UserProfileRelation } from '@/lib/db-relations';
 
 export async function POST(req: NextRequest) {
   try {
-    if (!PAYPAL_CLIENT_ID || !PAYPAL_SECRET) {
+    if (!process.env.PAYPAL_CLIENT_ID || !process.env.PAYPAL_SECRET) {
       return NextResponse.json(
         { error: 'PayPal credentials not configured' },
         { status: 500 }
@@ -49,11 +22,12 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const accessToken = await getAccessToken();
+    const accessToken = await getPayPalAccessToken();
+    const apiBase = getPayPalApiBaseUrl();
 
     // Capture PayPal order
     const response = await fetch(
-      `${PAYPAL_API_BASE}/v2/checkout/orders/${orderId}/capture`,
+      `${apiBase}/v2/checkout/orders/${orderId}/capture`,
       {
         method: "POST",
         headers: {
@@ -90,7 +64,8 @@ export async function POST(req: NextRequest) {
           pickup_point_id,
           tours (
             id,
-            title
+            title,
+            image_url
           ),
           user_profiles (
             email,
@@ -124,11 +99,13 @@ export async function POST(req: NextRequest) {
           let customerName = captureData.payer?.name?.given_name || 'Guest';
 
           if (!customerEmail && booking.user_profiles) {
-            customerEmail = (booking.user_profiles as any).email;
-            customerName = (booking.user_profiles as any).full_name || customerName;
+            const profile = booking.user_profiles as UserProfileRelation | null;
+            customerEmail = profile?.email;
+            customerName = profile?.full_name ?? customerName;
           }
 
           if (customerEmail && booking.tours) {
+            const tour = booking.tours as TourRelation | null;
             // Get pickup point if available
             let pickupPointName = null;
             if (booking.pickup_point_id) {
@@ -144,13 +121,16 @@ export async function POST(req: NextRequest) {
             const emailResult = await sendBookingConfirmationEmail({
               to: customerEmail,
               bookingId: booking.id,
-              tourTitle: (booking.tours as any).title,
+              tourTitle: tour?.title ?? '',
               bookingDate: booking.booking_date,
               numberOfGuests: booking.number_of_guests,
-              totalPrice: parseFloat(booking.final_price.toString()),
+              totalPrice: parseFloat(String(booking.final_price ?? 0)),
               pickupPoint: pickupPointName || undefined,
               paymentMethod: 'paypal',
+              paymentStatus: 'paid',
               customerName,
+              tourId: tour?.id != null ? String(tour.id) : undefined,
+              tourImageUrl: tour?.image_url,
             });
 
             if (emailResult.success) {
@@ -172,10 +152,10 @@ export async function POST(req: NextRequest) {
       status: captureData.status,
       details: captureData,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('PayPal capture order error:', error);
     return NextResponse.json(
-      { error: 'Internal server error', details: error.message },
+      { error: 'Internal server error', details: error instanceof Error ? error.message : String(error) },
       { status: 500 }
     );
   }

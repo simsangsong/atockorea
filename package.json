@@ -35,7 +35,8 @@
     "recharts": "^3.5.1",
     "resend": "^6.5.2",
     "sharp": "^0.34.5",
-    "stripe": "^20.0.0"
+    "stripe": "^20.0.0",
+    "svix": "^1.86.0"
   },
   "devDependencies": {
     "@capacitor/android": "^8.0.0",

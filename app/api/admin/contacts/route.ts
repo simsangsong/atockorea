@@ -41,7 +41,9 @@ async function getContacts(req: NextRequest, user: any) {
     }
 
     if (search) {
-      query = query.or(`full_name.ilike.%${search}%,email.ilike.%${search}%,subject.ilike.%${search}%`);
+      // Limit length and escape single quotes to reduce injection risk in filter
+      const safeSearch = String(search).slice(0, 200).replace(/'/g, "''");
+      query = query.or(`full_name.ilike.%${safeSearch}%,email.ilike.%${safeSearch}%,subject.ilike.%${safeSearch}%`);
     }
 
     // Apply pagination
