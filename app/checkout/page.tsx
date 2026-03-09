@@ -51,7 +51,8 @@ export default function CheckoutPage() {
 
     const guestNum = resolvedGuests;
     const idOrSlug = resolvedTourId || tourSlug;
-    if (!idOrSlug) {
+    const dateValue = resolvedDate;
+    if (!idOrSlug || !dateValue) {
       router.replace('/cart');
       return;
     }
@@ -72,9 +73,10 @@ export default function CheckoutPage() {
         const totalPrice = tour.price_type === 'person' ? tour.price * guestNum : tour.price;
         const depositAmountKRW = DEPOSIT_KRW;
         const balanceAmountKRW = totalPrice - depositAmountKRW;
+        const dateStr = dateValue.includes('T') ? dateValue : new Date(dateValue).toISOString();
         const bookingData = {
           tourId: tour.id,
-          date: date.includes('T') ? date : new Date(date).toISOString(),
+          date: dateStr,
           guests: guestNum,
           pickup: null,
           paymentMethod: 'deposit',
