@@ -90,16 +90,16 @@ export default function ConfirmationPage() {
                   : stored?.paymentMethod ?? 'full',
               totalPrice: parseFloat(String(b.final_price ?? stored?.totalPrice ?? 0)),
               // If the backend ever stores deposit/balance, prefer those;
-              // otherwise keep what we had from checkout or fall back to 10,000 KRW deposit.
+              // otherwise keep what we had from checkout or fall back to 1,000 KRW deposit.
               depositAmountKRW:
                 b.deposit_amount_krw ??
                 stored?.depositAmountKRW ??
-                (b.payment_method === 'deposit' ? 10000 : undefined),
+                (b.payment_method === 'deposit' ? 1000 : undefined),
               balanceAmountKRW:
                 b.balance_amount_krw ??
                 stored?.balanceAmountKRW ??
                 (b.payment_method === 'deposit'
-                  ? Math.max(0, parseFloat(String(b.final_price ?? stored?.totalPrice ?? 0)) - 10000)
+                  ? Math.max(0, parseFloat(String(b.final_price ?? stored?.totalPrice ?? 0)) - 1000)
                   : undefined),
               customerInfo: {
                 name: b.contact_name || stored?.customerInfo?.name || '',

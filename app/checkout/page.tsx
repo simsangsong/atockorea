@@ -12,7 +12,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
 
-const DEPOSIT_KRW = 10000;
+const DEPOSIT_KRW = 1000;
 
 export default function CheckoutPage() {
   const router = useRouter();

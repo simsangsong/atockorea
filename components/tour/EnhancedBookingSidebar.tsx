@@ -134,7 +134,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
   
   // Calculate deposit and balance for deposit payment method
   // Deposit: ₩10,000, Balance: totalPrice - ₩10,000
-  const depositAmountKRW = 10000;
+  const depositAmountKRW = 1000;
   const balanceAmountKRW = totalPrice - depositAmountKRW;
 
   const handleCheckAvailability = async () => {

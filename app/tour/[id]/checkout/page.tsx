@@ -143,7 +143,7 @@ export default function CheckoutPage() {
     try {
       // Determine payment amount: deposit if deposit method selected, otherwise full price
       const paymentAmount = bookingData.paymentMethod === 'deposit'
-        ? (bookingData.depositAmountKRW || 10000)
+        ? (bookingData.depositAmountKRW || 1000)
         : bookingData.totalPrice;
       
       // Create booking in database
@@ -508,7 +508,7 @@ export default function CheckoutPage() {
                       <span className="text-base font-bold text-gray-900">{t('tour.total')}</span>
                       <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
                         {bookingData.paymentMethod === 'deposit'
-                          ? formatPrice(bookingData.depositAmountKRW || 10000)
+                          ? formatPrice(bookingData.depositAmountKRW || 1000)
                           : formatPrice(bookingData.totalPrice)
                         }
                       </span>
