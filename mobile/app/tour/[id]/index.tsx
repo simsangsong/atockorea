@@ -167,6 +167,28 @@ export default function TourDetailScreen() {
       .finally(() => setReviewsLoading(false));
   }, [id]);
 
+  const keyInfoItems = useMemo(() => {
+    if (!tour) return [];
+    const kw = (tour as any).keywords;
+    if (kw && Array.isArray(kw) && kw.length > 0) {
+      return kw
+        .map((k: string) => {
+          const parts = String(k).split(':').map((p: string) => p.trim());
+          const label = parts[0] || '';
+          const value = parts.length > 1 ? parts.slice(1).join(':').trim() : k;
+          const lower = label.toLowerCase();
+          if (lower.includes('duration') || lower.includes('time')) return null;
+          if (!value) return null;
+          return { label, value };
+        })
+        .filter(Boolean) as { label: string; value: string }[];
+    }
+    const out: { label: string; value: string }[] = [];
+    if (tour.difficulty) out.push({ label: 'Difficulty', value: tour.difficulty });
+    if (tour.groupSize) out.push({ label: 'Group size', value: tour.groupSize });
+    return out;
+  }, [tour]);
+
   if (loading) {
     return (
       <View style={styles.centered}>
@@ -228,28 +250,6 @@ export default function TourDetailScreen() {
   const days = nextDays(90);
   const rating = tour.rating ?? 0;
   const reviewCount = tour.reviewCount ?? tour.review_count ?? 0;
-
-  const keyInfoItems = useMemo(() => {
-    if (!tour) return [];
-    const kw = (tour as any).keywords;
-    if (kw && Array.isArray(kw) && kw.length > 0) {
-      return kw
-        .map((k: string) => {
-          const parts = String(k).split(':').map((p: string) => p.trim());
-          const label = parts[0] || '';
-          const value = parts.length > 1 ? parts.slice(1).join(':').trim() : k;
-          const lower = label.toLowerCase();
-          if (lower.includes('duration') || lower.includes('time')) return null;
-          if (!value) return null;
-          return { label, value };
-        })
-        .filter(Boolean) as { label: string; value: string }[];
-    }
-    const out: { label: string; value: string }[] = [];
-    if (tour.difficulty) out.push({ label: 'Difficulty', value: tour.difficulty });
-    if (tour.groupSize) out.push({ label: 'Group size', value: tour.groupSize });
-    return out;
-  }, [tour]);
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>

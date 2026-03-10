@@ -2,6 +2,14 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 
+function isJejuEastTour(tour: { city?: string | null; slug?: string | null; title?: string | null }) {
+  const city = (tour.city || '').toLowerCase();
+  const slug = (tour.slug || '').toLowerCase();
+  const title = (tour.title || '').toLowerCase();
+  if (!city.includes('jeju')) return false;
+  return slug.includes('east') || title.includes('east');
+}
+
 /**
  * GET /api/tours/[id]/availability/range
  * Get availability for a date range
@@ -30,6 +38,15 @@ export async function GET(
       end = new Date();
       end.setDate(end.getDate() + days);
     }
+
+    // Get tour info once (for Jeju East Monday rule)
+    const { data: tour } = await supabase
+      .from('tours')
+      .select('id, title, slug, city')
+      .eq('id', tourId)
+      .single();
+
+    const isJejuEast = tour ? isJejuEastTour(tour) : false;
 
     // Get all inventory records for the date range
     const { data: inventory, error: inventoryError } = await supabase
@@ -95,7 +112,17 @@ export async function GET(
       const dateStr = currentDate.toISOString().split('T')[0];
       dates.push(dateStr);
 
-      if (!availabilityMap[dateStr]) {
+      // Business rule: Jeju East tours are not bookable on Mondays
+      const weekday = currentDate.getUTCDay(); // 0=Sun, 1=Mon, ...
+      if (weekday === 1 && isJejuEast) {
+        availabilityMap[dateStr] = {
+          available: false,
+          availableSpots: 0,
+          maxCapacity: availabilityMap[dateStr]?.maxCapacity ?? null,
+          priceOverride: availabilityMap[dateStr]?.priceOverride ?? null,
+          reason: 'This Jeju East tour is not available on Mondays.',
+        };
+      } else if (!availabilityMap[dateStr]) {
         // No inventory record, check bookings only
         const bookedGuests = bookingsByDate[dateStr] || 0;
         const defaultMaxCapacity = 50; // Default capacity

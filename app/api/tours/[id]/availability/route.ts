@@ -2,6 +2,14 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 
+function isJejuEastTour(tour: { city?: string | null; slug?: string | null; title?: string | null }) {
+  const city = (tour.city || '').toLowerCase();
+  const slug = (tour.slug || '').toLowerCase();
+  const title = (tour.title || '').toLowerCase();
+  if (!city.includes('jeju')) return false;
+  return slug.includes('east') || title.includes('east');
+}
+
 /**
  * GET /api/tours/[id]/availability
  * Check availability for a specific tour and date
@@ -24,10 +32,10 @@ export async function GET(
       );
     }
 
-    // Get tour info
+    // Get tour info (include city/slug for Jeju East Monday rule)
     const { data: tour, error: tourError } = await supabase
       .from('tours')
-      .select('id, title, price, price_type')
+      .select('id, title, slug, city, price, price_type')
       .eq('id', tourId)
       .eq('is_active', true)
       .single();
@@ -37,6 +45,23 @@ export async function GET(
         { error: 'Tour not found or inactive' },
         { status: 404 }
       );
+    }
+
+    // Business rule: Jeju East tours are not bookable on Mondays
+    const weekday = new Date(date).getUTCDay(); // 0=Sun, 1=Mon, ...
+    if (weekday === 1 && isJejuEastTour(tour)) {
+      return NextResponse.json({
+        available: false,
+        availableSpots: 0,
+        maxCapacity: null,
+        requestedGuests: guests,
+        canAccommodate: false,
+        price: parseFloat(tour.price.toString()),
+        priceOverride: null,
+        date,
+        tourId,
+        reason: 'This Jeju East tour is not available on Mondays.',
+      });
     }
 
     // Check inventory for the specific date
