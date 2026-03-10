@@ -21,7 +21,8 @@ export const supabase = supabaseUrl && supabaseAnonKey
 export const createServerClient = () => {
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!supabaseUrl || !serviceRoleKey) {
-    throw new Error('Missing Supabase environment variables. Please configure NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in Vercel.');
+    const missing = [!supabaseUrl && 'NEXT_PUBLIC_SUPABASE_URL', !serviceRoleKey && 'SUPABASE_SERVICE_ROLE_KEY'].filter(Boolean).join(', ');
+    throw new Error(`Missing Supabase env: ${missing}. Set them in Vercel Project Settings → Environment Variables.`);
   }
   return createClient(supabaseUrl, serviceRoleKey, {
     auth: {

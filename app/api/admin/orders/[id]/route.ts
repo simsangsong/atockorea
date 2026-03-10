@@ -33,7 +33,6 @@ export async function GET(
         user_profiles (
           id,
           full_name,
-          email,
           phone
         ),
         pickup_points (
@@ -107,7 +106,7 @@ export async function PUT(
       .select(`
         *,
         tours ( id, title, slug, city, image_url, price, price_type ),
-        user_profiles ( id, full_name, email, phone ),
+        user_profiles ( id, full_name, phone ),
         pickup_points ( id, name, address )
       `)
       .single();
@@ -147,7 +146,7 @@ export async function PUT(
       try {
         const { data: b } = await supabase
           .from('bookings')
-          .select('*, tours(title), user_profiles(email, full_name)')
+          .select('*, tours(title), user_profiles(full_name)')
           .eq('id', id)
           .single();
         if (b) {

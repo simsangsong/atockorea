@@ -65,7 +65,7 @@ export async function GET(req: NextRequest) {
           ? supabase.from('tours').select('id, title').in('id', tourIds)
           : Promise.resolve({ data: [] as any[] }),
         userIds.length
-          ? supabase.from('user_profiles').select('id, full_name, email').in('id', userIds)
+          ? supabase.from('user_profiles').select('id, full_name').in('id', userIds)
           : Promise.resolve({ data: [] as any[] }),
         pickupIds.length
           ? supabase.from('pickup_points').select('id, name, address').in('id', pickupIds)
@@ -74,7 +74,7 @@ export async function GET(req: NextRequest) {
 
       (toursRes.data || []).forEach((t: any) => tourMap.set(t.id, { id: t.id, title: t.title || '' }));
       (profilesRes.data || []).forEach((p: any) =>
-        profileMap.set(p.id, { id: p.id, full_name: p.full_name || '', email: p.email || '' })
+        profileMap.set(p.id, { id: p.id, full_name: p.full_name || '', email: (p as any).email || '' })
       );
       (pickupsRes.data || []).forEach((p: any) =>
         pickupMap.set(p.id, { id: p.id, name: p.name || '', address: p.address || '' })

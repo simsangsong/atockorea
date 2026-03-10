@@ -20,6 +20,7 @@ import {
 import { useRouter } from 'expo-router';
 import { theme } from '@/constants/theme';
 import { supabase } from '@/lib/supabase';
+import { signInWithGoogle } from '@/lib/googleAuth';
 import { BASE_URL } from '@/api/client';
 
 const CURRENT_YEAR = new Date().getFullYear();
@@ -62,6 +63,7 @@ export default function SignUpScreen() {
   const [sendingCode, setSendingCode] = useState(false);
   const [verifying, setVerifying] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [googleSigningUp, setGoogleSigningUp] = useState(false);
   const [countdown, setCountdown] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [fieldError, setFieldError] = useState<string | null>(null);
@@ -107,6 +109,19 @@ export default function SignUpScreen() {
       setFieldError(e instanceof Error ? e.message : 'Invalid or expired code.');
     } finally {
       setVerifying(false);
+    }
+  };
+
+  const handleGoogleSignUp = async () => {
+    setGoogleSigningUp(true);
+    setError(null);
+    setFieldError(null);
+    const result = await signInWithGoogle();
+    setGoogleSigningUp(false);
+    if (result.ok) {
+      router.replace('/(tabs)/profile');
+    } else {
+      setError(result.error);
     }
   };
 
@@ -252,6 +267,26 @@ export default function SignUpScreen() {
         <Text style={styles.title}>Create account</Text>
         <Text style={styles.subtitle}>Create your account in the app.</Text>
 
+        <Pressable
+          style={[styles.googleBtn, googleSigningUp && styles.btnDisabled]}
+          onPress={handleGoogleSignUp}
+          disabled={googleSigningUp}
+        >
+          {googleSigningUp ? (
+            <ActivityIndicator color={theme.colors.text} size="small" />
+          ) : (
+            <>
+              <Text style={styles.googleIcon}>G</Text>
+              <Text style={styles.googleBtnText}>Continue with Google</Text>
+            </>
+          )}
+        </Pressable>
+        <View style={styles.divider}>
+          <View style={styles.dividerLine} />
+          <Text style={styles.dividerText}>or sign up with email</Text>
+          <View style={styles.dividerLine} />
+        </View>
+
         <View style={styles.steps}>
           {(['email', 'verify', 'info'] as Step[]).map((s, i) => (
             <View key={s} style={styles.stepDot}>
@@ -386,4 +421,21 @@ const styles = StyleSheet.create({
   checkLabel: { flex: 1, fontSize: 14, color: theme.colors.text },
   signInLink: { marginTop: 16, alignItems: 'center' },
   signInLinkText: { fontSize: 14, color: theme.colors.primary, fontWeight: '500' },
+  googleBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 10,
+    paddingVertical: 12,
+    borderRadius: 10,
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: theme.colors.border,
+    marginBottom: 12,
+  },
+  googleIcon: { fontSize: 18, fontWeight: '700', color: '#4285F4' },
+  googleBtnText: { color: theme.colors.text, fontWeight: '500', fontSize: 15 },
+  divider: { flexDirection: 'row', alignItems: 'center', marginVertical: 12 },
+  dividerLine: { flex: 1, height: 1, backgroundColor: theme.colors.border },
+  dividerText: { marginHorizontal: 10, fontSize: 13, color: theme.colors.textMuted },
 });

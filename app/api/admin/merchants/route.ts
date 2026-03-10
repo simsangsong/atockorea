@@ -23,8 +23,7 @@ export async function GET(req: NextRequest) {
         *,
         user_profiles (
           id,
-          full_name,
-          email
+          full_name
         )
       `)
       .order('created_at', { ascending: false });
@@ -169,8 +168,7 @@ export async function POST(req: NextRequest) {
         *,
         user_profiles (
           id,
-          full_name,
-          email
+          full_name
         )
       `)
       .single();
