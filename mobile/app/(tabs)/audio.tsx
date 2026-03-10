@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   View,
   Text,
@@ -14,10 +14,13 @@ import {
 import { theme } from '@/constants/theme';
 import { useAuth } from '@/contexts/AuthContext';
 import { apiGet } from '@/api/client';
-import { useAudioPlayback } from '@/hooks/useAudioPlayback';
-import { useLocationTrigger } from '@/hooks/useLocationTrigger';
-import { useDepartureAlarms } from '@/hooks/useDepartureAlarms';
-import AudioPlayer from '@/components/audio-guide/AudioPlayer';
+// Temporarily disable native audio + GPS features on mobile
+// so that the app can load even when expo-av native module isn't available.
+// When native modules are fully configured, restore these imports.
+// import { useAudioPlayback } from '@/hooks/useAudioPlayback';
+// import { useLocationTrigger } from '@/hooks/useLocationTrigger';
+// import { useDepartureAlarms } from '@/hooks/useDepartureAlarms';
+// import AudioPlayer from '@/components/audio-guide/AudioPlayer';
 import type { TourSpot } from '@/constants/mockTourSpots';
 import type {
   TourModeBookingSummary,
@@ -85,44 +88,28 @@ export default function TourModeScreen() {
     ? guideSpotsToTourSpots(content.tour_guide_spots)
     : [];
 
-  const {
-    currentSpot,
-    isPlaying,
-    positionMillis,
-    durationMillis,
-    play,
-    pause,
-    playSpot,
-    next,
-    previous,
-    seekTo,
-    isLoading,
-    error: playbackError,
-  } = useAudioPlayback({
-    spots,
-    onSpotChange: () => {},
-  });
+  // Audio playback is disabled for now on the mobile dev build.
+  const currentSpot = null;
+  const isPlaying = false;
+  const positionMillis = 0;
+  const durationMillis = 0;
+  const isLoading = false;
+  const playbackError: string | null = null;
 
-  const onEnterSpot = useCallback(
-    (spot: TourSpot) => {
-      playSpot(spot);
-    },
-    [playSpot]
-  );
+  const onEnterSpot = useCallback((_spot: TourSpot) => {
+    // Audio disabled: no-op
+  }, []);
 
-  const { locationError, requestPermission } = useLocationTrigger({
-    spots,
-    onEnterSpot,
-    enabled: gpsEnabled && content !== null,
-    minMovementMeters: 15,
-  });
+  // Location/GPS disabled for now (no expo-av native module)
+  const locationError: string | null = null;
+  const requestPermission = useCallback(async () => false, []);
 
-  useDepartureAlarms(
-    content?.schedule ?? [],
-    content?.booking.tour_date ?? '',
-    onBus,
-    !!content && !!content.schedule?.length
-  );
+  // useDepartureAlarms(
+  //   content?.schedule ?? [],
+  //   content?.booking.tour_date ?? '',
+  //   onBus,
+  //   !!content && !!content.schedule?.length
+  // );
 
   const fetchBookings = useCallback(async () => {
     if (!token) {
@@ -155,6 +142,20 @@ export default function TourModeScreen() {
       setBookings([]);
     }
   }, [token, fetchBookings]);
+
+  // 로그인 시 예약이 있으면 첫 번째(가장 가까운) 예약 내용을 자동으로 불러와 바로 투어 정보 표시 (한 번만)
+  const hasAutoLoadedRef = useRef(false);
+  useEffect(() => {
+    if (!token || loading || bookings.length === 0 || hasAutoLoadedRef.current) return;
+    hasAutoLoadedRef.current = true;
+    const sorted = [...bookings].sort(
+      (a, b) => new Date(a.tour_date).getTime() - new Date(b.tour_date).getTime()
+    );
+    loadContent(sorted[0].id);
+  }, [token, loading, bookings, loadContent]);
+  useEffect(() => {
+    if (!token) hasAutoLoadedRef.current = false;
+  }, [token]);
 
   const loadContent = useCallback(
     async (bookingId: string, contactName?: string, contactEmail?: string) => {
@@ -244,7 +245,7 @@ export default function TourModeScreen() {
 
           {content.bus_detail && (
             <View style={styles.card}>
-              <Text style={styles.cardTitle}>Bus details</Text>
+              <Text style={styles.cardTitle}>버스 정보</Text>
               {content.bus_detail.payload.bus_number && (
                 <Text style={styles.cardRow}>Bus: {content.bus_detail.payload.bus_number}</Text>
               )}
@@ -278,7 +279,7 @@ export default function TourModeScreen() {
 
           {content.schedule && content.schedule.length > 0 && (
             <View style={styles.card}>
-              <Text style={styles.cardTitle}>Schedule</Text>
+              <Text style={styles.cardTitle}>일정</Text>
               {content.schedule.map((item: ScheduleItem, i: number) => (
                 <View key={i} style={styles.scheduleRow}>
                   <Text style={styles.scheduleTime}>{item.time ?? item.departure_time ?? '–'}</Text>
@@ -308,20 +309,8 @@ export default function TourModeScreen() {
                 <Text style={styles.locationError}>{locationError}</Text>
               ) : null}
 
-              <AudioPlayer
-                spot={currentSpot}
-                isPlaying={isPlaying}
-                positionMillis={positionMillis}
-                durationMillis={durationMillis}
-                onPlay={play}
-                onPause={pause}
-                onNext={next}
-                onPrevious={previous}
-                onSeek={seekTo}
-                isLoading={isLoading}
-                error={playbackError}
-              />
-              <Text style={styles.listTitle}>Tour spots</Text>
+              {/* Audio player disabled in this build */}
+              <Text style={styles.listTitle}>관광지</Text>
               {spots.map((spot) => (
                 <Pressable
                   key={spot.id}
@@ -330,7 +319,7 @@ export default function TourModeScreen() {
                     currentSpot?.id === spot.id && styles.spotCardActive,
                     pressed && styles.spotCardPressed,
                   ]}
-                  onPress={() => playSpot(spot)}
+                  onPress={() => {}}
                 >
                   <Text style={styles.spotTitle} numberOfLines={1}>
                     {spot.title}
@@ -346,24 +335,47 @@ export default function TourModeScreen() {
             </>
           )}
 
-          {content.tour_facilities && content.tour_facilities.length > 0 && (
-            <>
-              <Text style={styles.listTitle}>Facilities</Text>
-              {content.tour_facilities.map((f: TourFacility) => (
-                <View key={f.id} style={styles.facilityCard}>
-                  <Text style={styles.facilityType}>
-                    {FACILITY_LABELS[f.type] ?? f.type}
-                  </Text>
-                  <Text style={styles.facilityName}>{f.name}</Text>
-                  {f.details && typeof f.details === 'object' && Object.keys(f.details).length > 0 && (
-                    <Text style={styles.facilityDetails}>
-                      {JSON.stringify(f.details)}
-                    </Text>
-                  )}
-                </View>
-              ))}
-            </>
-          )}
+          {content.tour_facilities && content.tour_facilities.length > 0 && (() => {
+            const restaurants = content.tour_facilities.filter((f: TourFacility) => f.type === 'restaurant');
+            const others = content.tour_facilities.filter((f: TourFacility) => f.type !== 'restaurant');
+            return (
+              <>
+                {restaurants.length > 0 && (
+                  <>
+                    <Text style={styles.listTitle}>관광지 주변 식당</Text>
+                    {restaurants.map((f: TourFacility) => (
+                      <View key={f.id} style={styles.facilityCard}>
+                        <Text style={styles.facilityName}>{f.name}</Text>
+                        {f.details && typeof f.details === 'object' && Object.keys(f.details).length > 0 && (
+                          <Text style={styles.facilityDetails}>
+                            {JSON.stringify(f.details)}
+                          </Text>
+                        )}
+                      </View>
+                    ))}
+                  </>
+                )}
+                {others.length > 0 && (
+                  <>
+                    <Text style={styles.listTitle}>기타 시설</Text>
+                    {others.map((f: TourFacility) => (
+                      <View key={f.id} style={styles.facilityCard}>
+                        <Text style={styles.facilityType}>
+                          {FACILITY_LABELS[f.type] ?? f.type}
+                        </Text>
+                        <Text style={styles.facilityName}>{f.name}</Text>
+                        {f.details && typeof f.details === 'object' && Object.keys(f.details).length > 0 && (
+                          <Text style={styles.facilityDetails}>
+                            {JSON.stringify(f.details)}
+                          </Text>
+                        )}
+                      </View>
+                    ))}
+                  </>
+                )}
+              </>
+            );
+          })()}
         </ScrollView>
       </View>
     );

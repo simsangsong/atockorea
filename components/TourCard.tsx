@@ -205,20 +205,28 @@ export default function TourCard({
           />
           {/* 짧은 그라데이션: 사진과 흰 영역 경계만 살짝 연결 */}
           <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-white/90 via-white/30 to-transparent pointer-events-none" />
-          {displayBadge && (
-            <span className={`absolute top-3 left-3 px-2.5 py-1 text-white text-[10px] font-semibold rounded-full shadow-md ${
-              badgeVariant === "brand" ? "bg-blue-600/95" : "bg-orange-500/95"
-            }`}>
-              {displayBadge}
-            </span>
-          )}
-          <div className="absolute top-3 right-3 flex items-center gap-1.5">
+
+          {/* 좌측 상단: 파란 Day tour 뱃지 + 그 아래 빨간 할인 뱃지 */}
+          <div className="absolute top-3 left-3 flex flex-col gap-1 items-start">
+            {displayBadge && (
+              <span
+                className={`px-2.5 py-1 text-white text-[10px] font-semibold rounded-full shadow-md ${
+                  badgeVariant === "brand" ? "bg-blue-600/95" : "bg-orange-500/95"
+                }`}
+              >
+                {displayBadge}
+              </span>
+            )}
             {showDiscountBadge && (
               <span className="bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded shadow-md">
                 {displayDiscountPercent}% OFF
               </span>
             )}
-            {tourKey && (
+          </div>
+
+          {/* 우측 상단: 위시리스트 하트 버튼만 */}
+          {tourKey && (
+            <div className="absolute top-3 right-3">
               <button
                 type="button"
                 onClick={handleWishlistClick}
@@ -235,8 +243,8 @@ export default function TourCard({
                   </svg>
                 )}
               </button>
-            )}
-          </div>
+            </div>
+          )}
         </div>
 
         {/* Content: same card, no gap — left accent on hover keeps the creative touch */}

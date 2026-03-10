@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
 import { useTranslations } from '@/lib/i18n';
 import { supabase } from '@/lib/supabase';
+import { useCurrencyOptional } from '@/lib/currency';
 
 interface BookingData {
   tourId: number;
@@ -32,6 +33,7 @@ export default function CheckoutPage() {
   const params = useParams();
   const router = useRouter();
   const t = useTranslations();
+  const currencyCtx = useCurrencyOptional();
   const [bookingData, setBookingData] = useState<BookingData | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo>({
@@ -126,6 +128,9 @@ export default function CheckoutPage() {
     return Object.keys(newErrors).length === 0;
   };
 
+  const formatPrice = (priceKRW: number) =>
+    currencyCtx ? currencyCtx.formatPrice(priceKRW) : `₩${Math.round(priceKRW).toLocaleString('ko-KR')}`;
+
   const handlePayment = async () => {
     if (!bookingData) return;
     
@@ -137,8 +142,8 @@ export default function CheckoutPage() {
     
     try {
       // Determine payment amount: deposit if deposit method selected, otherwise full price
-      const paymentAmount = bookingData.paymentMethod === 'deposit' 
-        ? (bookingData.depositAmountKRW || 10000) 
+      const paymentAmount = bookingData.paymentMethod === 'deposit'
+        ? (bookingData.depositAmountKRW || 10000)
         : bookingData.totalPrice;
       
       // Create booking in database
@@ -205,6 +210,7 @@ export default function CheckoutPage() {
           },
           body: JSON.stringify({
             amount: paymentAmount,
+            // Payments are processed in KRW; prices on screen follow the selected display currency.
             currency: 'krw',
             bookingId: bookingResult.booking.id,
             bookingData: completeBookingData,
@@ -482,11 +488,15 @@ export default function CheckoutPage() {
                       <div className="space-y-3">
                         <div className="flex justify-between items-center">
                           <span className="text-sm text-gray-600">{t('booking.deposit')}</span>
-                          <span className="text-sm font-bold text-blue-600">₩{bookingData.depositAmountKRW.toLocaleString()}</span>
+                          <span className="text-sm font-bold text-blue-600">
+                            {formatPrice(bookingData.depositAmountKRW)}
+                          </span>
                         </div>
                         <div className="flex justify-between items-center">
                           <span className="text-sm text-gray-600">{t('booking.payOnSite')}</span>
-                          <span className="text-sm font-bold text-gray-900">₩{bookingData.balanceAmountKRW.toLocaleString()}</span>
+                          <span className="text-sm font-bold text-gray-900">
+                            {formatPrice(bookingData.balanceAmountKRW)}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -497,9 +507,9 @@ export default function CheckoutPage() {
                     <div className="flex justify-between items-center">
                       <span className="text-base font-bold text-gray-900">{t('tour.total')}</span>
                       <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
-                        {bookingData.paymentMethod === 'deposit' 
-                          ? `₩${(bookingData.depositAmountKRW || 10000).toLocaleString()}`
-                          : `₩${bookingData.totalPrice.toLocaleString()}`
+                        {bookingData.paymentMethod === 'deposit'
+                          ? formatPrice(bookingData.depositAmountKRW || 10000)
+                          : formatPrice(bookingData.totalPrice)
                         }
                       </span>
                     </div>
