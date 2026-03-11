@@ -107,9 +107,7 @@ Overtime charges (including extended durations at spots, traffic jams) are payab
 
 The driver will try to find free parking; paid parking charges will be claimed based on receipt and settled in cash at the end of the tour.
 
-Free cancellation: Cancel up to 24 hours in advance for a full refund.
-
-Reserve now & pay later: Keep your travel plans flexible — book your spot and pay nothing today.`,
+Free cancellation: Cancel up to 24 hours in advance for a full refund.`,
   
   // ============================================
   // 다국어 번역 필드 (translations)
@@ -386,9 +384,7 @@ Reserve now & pay later: Keep your travel plans flexible — book your spot and 
 
 운전사는 무료 주차를 찾으려고 노력하며; 유료 주차 요금은 영수증을 기준으로 청구되며 투어 종료 시 현금으로 정산됩니다.
 
-무료 취소: 24시간 전에 취소하면 전액 환불됩니다.
-
-지금 예약하고 나중에 결제: 여행 계획을 유연하게 유지하세요 — 지금 자리를 예약하고 오늘은 아무것도 지불하지 않으세요.`
+무료 취소: 24시간 전에 취소하면 전액 환불됩니다.`
     }
   }
 };

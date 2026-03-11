@@ -37,7 +37,7 @@
     subtitle: 'Loved by English speakers · 97% perfect score',
     description: `If you only have one day in Busan, this is the tour you've been waiting for. No complicated choices, no confusing options—unlike other tours, we offer just one carefully designed itinerary. It's simple, easy, and guaranteed to show you the very best of Busan.
 
-Explore the key attractions of Busan City with a certified English-speaking guide: Gamcheon Culture Village, UN Memorial Cemetery, Haedong Yonggungsa Temple, Cheongsapo, Blue Line Park, and Jagalchi Market. Skip the ticket line and enjoy highly-rated transport. Free cancellation up to 24 hours in advance. Reserve now & pay later—book your spot and pay nothing today.`,
+Explore the key attractions of Busan City with a certified English-speaking guide: Gamcheon Culture Village, UN Memorial Cemetery, Haedong Yonggungsa Temple, Cheongsapo, Blue Line Park, and Jagalchi Market. Skip the ticket line and enjoy highly-rated transport. Free cancellation up to 24 hours in advance.`,
     duration: '9.5 hours',
     lunch_included: false,
     ticket_included: false,
@@ -78,7 +78,6 @@ Know before you go: Please leave accurate contact information so we can reach yo
     faqs: [
       { question: 'Is lunch included?', answer: 'Lunch break is included in the itinerary, but lunch is at your own expense.' },
       { question: 'What is the cancellation policy?', answer: 'Cancel up to 24 hours in advance for a full refund.' },
-      { question: 'Do I pay when I book?', answer: 'Reserve now & pay later—book your spot and pay nothing today. Keep your travel plans flexible.' },
       { question: 'How will you contact me?', answer: 'Please leave accurate contact information. We will contact you via WhatsApp for a smooth tour.' },
       { question: 'Can the itinerary change?', answer: 'The time spent at each attraction may change, or locations may be substituted due to local weather and traffic conditions.' }
     ],

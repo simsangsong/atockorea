@@ -88,9 +88,7 @@ Overtime charges (including extended durations at spots, traffic jams) are payab
 
 The driver will try to find free parking; paid parking charges will be claimed based on receipt and settled in cash at the end of the tour.
 
-Free cancellation: Cancel up to 24 hours in advance for a full refund.
-
-Reserve now & pay later: Keep your travel plans flexible — book your spot and pay nothing today.`,
+Free cancellation: Cancel up to 24 hours in advance for a full refund.`,
     
     highlights: [
       "See Alpaca World, Seoraksan National Park, Sokcho City, Chuncheon, and more",

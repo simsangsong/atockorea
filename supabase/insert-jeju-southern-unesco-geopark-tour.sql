@@ -54,7 +54,7 @@ WITH new_tour AS (
     false,
     true,
     '**Pick up information:** 1.Ocean Suites Jeju 08:30, 2.Jeju Airport Gate 1st Floor at 8:45, 3.Lotte city Hotel jeju 08:55, 4.Shilla Duty-Free Jeju Store at 09:05. A guide or vehicle holding a LOVE KOREA sign will be waiting for you at the designated location. Please arrive at least 10 minutes early. Thank you! Once your reservation is confirmed, we will contact you one day before the tour with detailed information about pick-up, vehicle, and guide via Whatsapp. If you have WhatsApp, we can conveniently create a group chat there. If you haven''t received any contact, please install WhatsApp or contact us via WhatsApp.',
-    'Relax. Explore. Fall in Love with Jeju. Discover the heart of Jeju''s UNESCO heritage with us — a perfect blend of culture, nature, and comfort. Book now and experience why travelers around the world fall in love with the southern beauty of Jeju Island. We recommend that you bring personal travel insurance. Outdoor activities involve various risks and dangers. Tour ending time may vary based on traffic or weather.',
+    'Relax. Explore. Fall in Love with Jeju. Discover the heart of Jeju''s UNESCO heritage with us — a perfect blend of culture, nature, and comfort. Experience why travelers around the world fall in love with the southern beauty of Jeju Island. We recommend that you bring personal travel insurance. Outdoor activities involve various risks and dangers. Tour ending time may vary based on traffic or weather.',
     '[
       "Discover Jeju''s UNESCO wonders — World Heritage, Biosphere Reserve, Geopark",
       "Hike Hallasan''s Eoseungsangak Trail and feel Jeju''s calm volcanic beauty",

@@ -225,10 +225,6 @@ Customize your Jeju trip based on your personal interests and time. Enjoy a pers
       answer: "Yes, cancel up to 24 hours in advance for a full refund.",
     },
     {
-      question: "Can I reserve now and pay later?",
-      answer: "Yes, keep your travel plans flexible. Book your spot now and pay nothing today.",
-    },
-    {
       question: "Is the tour wheelchair accessible?",
       answer: "Yes, the tour is wheelchair accessible. Please inform us in advance so we can make necessary arrangements.",
     },

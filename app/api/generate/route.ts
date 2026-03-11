@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import Anthropic from '@anthropic-ai/sdk';
-import { Client } from '@googlemaps/google-maps-services-js';
+import { Client, TravelMode } from '@googlemaps/google-maps-services-js';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY ?? '');
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY ?? '' });
@@ -53,7 +53,7 @@ export async function POST(req: Request) {
           origins: addresses.slice(0, -1),
           destinations: addresses.slice(1),
           key: process.env.GOOGLE_MAPS_API_KEY,
-          mode: 'driving',
+          mode: TravelMode.driving,
         },
         timeout: 5000,
       });

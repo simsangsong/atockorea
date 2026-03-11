@@ -9,7 +9,7 @@
 UPDATE tours
 SET
   seo_title = 'Busan Top Attractions One-Day Tour | Gamcheon, Skywalk, Temple & More',
-  meta_description = 'Explore Busan in one day: Gamcheon Culture Village, Oryukdo Skywalk, Haedong Yonggungsa Temple, and local markets. Licensed guide, hotel pickup. Book now.',
+  meta_description = 'Explore Busan in one day: Gamcheon Culture Village, Oryukdo Skywalk, Haedong Yonggungsa Temple, and local markets. Licensed guide, hotel pickup.',
   highlights = '[
     "Gamcheon Culture Village (감천문화마을)",
     "Oryukdo Skywalk (오륙도 스카이워크)",

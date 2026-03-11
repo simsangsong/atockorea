@@ -88,9 +88,7 @@ It is recommended to book according to your pickup time. If your pickup is at 09
 • Option 1: 30 minutes later → Mipo to Cheongsapo (09:30-10:00)
 • Option 2: (If Option 1 is sold out) 2 hours later → Cheongsapo to Mipo (11:00-11:30)
 
-Free cancellation: Cancel up to 24 hours in advance for a full refund.
-
-Reserve now & pay later: Keep your travel plans flexible — book your spot and pay nothing today.`,
+Free cancellation: Cancel up to 24 hours in advance for a full refund.`,
     
     highlights: [
       "Discover the beauty of Busan on a private guided tour of the city",

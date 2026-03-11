@@ -331,7 +331,7 @@ Free cancellation: Cancel up to 24 hours in advance for a full refund.`,
         }
       ],
       
-      badges: ["Top rated", "Free cancellation", "Reserve now & pay later"],
+      badges: ["Top rated", "Free cancellation"],
       rating: 4.8,
       review_count: 154,
       pickup_points_count: 2,
