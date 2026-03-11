@@ -44,6 +44,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
   const [isBooking, setIsBooking] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState<'deposit' | 'full'>('deposit');
   const [applyDiscount, setApplyDiscount] = useState(true); // 할인율 자동 적용 (기본값 true)
+  const [preferredLanguage, setPreferredLanguage] = useState<'en' | 'zh' | 'ko'>('en');
   
   // Availability state
   const [availability, setAvailability] = useState<AvailabilityData | null>(null);
@@ -163,6 +164,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
       guests: guestCount,
       pickup: selectedPickup,
       paymentMethod,
+      preferredLanguage,
       depositAmountKRW: paymentMethod === 'deposit' ? depositAmountKRW : undefined,
       balanceAmountKRW: paymentMethod === 'deposit' ? balanceAmountKRW : undefined,
       totalPrice,
@@ -370,6 +372,22 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
               </div>
             </div>
           )}
+        </div>
+
+        {/* Preferred language (guide) */}
+        <div>
+          <label className="block text-xs font-bold text-gray-900 mb-1.5 uppercase tracking-wide">
+            Preferred language
+          </label>
+          <select
+            value={preferredLanguage}
+            onChange={(e) => setPreferredLanguage(e.target.value as 'en' | 'zh' | 'ko')}
+            className="w-full px-3.5 py-2.5 text-sm font-medium text-neutral-900 rounded-xl focus:ring-2 focus:ring-neutral-200 outline-none bg-[#F9F8F6] border-none shadow-inner appearance-none"
+          >
+            <option value="en">English</option>
+            <option value="zh">中文 (Chinese)</option>
+            <option value="ko">한국어 (Korean)</option>
+          </select>
         </div>
       </div>
 

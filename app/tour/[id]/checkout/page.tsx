@@ -15,6 +15,7 @@ interface BookingData {
   guests: number;
   pickup: number | null;
   paymentMethod: 'deposit' | 'full';
+  preferredLanguage?: 'en' | 'zh' | 'ko';
   depositAmountKRW?: number;
   balanceAmountKRW?: number;
   totalPrice: number;
@@ -154,6 +155,7 @@ export default function CheckoutPage() {
         pickupPointId: bookingData.pickup ? bookingData.pickup.toString() : null,
         finalPrice: bookingData.totalPrice, // Keep total price for booking record
         paymentMethod: bookingData.paymentMethod === 'deposit' ? 'deposit' : 'full',
+        preferredLanguage: bookingData.preferredLanguage || 'en',
         specialRequests: JSON.stringify({
           preferredChatApp: customerInfo.preferredChatApp,
           chatAppContact: customerInfo.chatAppContact,

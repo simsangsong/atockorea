@@ -80,6 +80,7 @@ export async function POST(req: NextRequest) {
       pickupPointId,
       finalPrice,
       paymentMethod,
+      preferredLanguage,
       specialRequests,
       customerInfo, // { name, email, phone, preferredChatApp, chatAppContact }
     } = body;
@@ -262,6 +263,10 @@ export async function POST(req: NextRequest) {
 
     if (specialRequests) {
       bookingData.special_requests = specialRequests;
+    }
+
+    if (preferredLanguage && ['en', 'zh', 'ko'].includes(String(preferredLanguage))) {
+      bookingData.preferred_language = String(preferredLanguage);
     }
 
     // Store contact info for guest and display in admin; ensure every booking is linked to user_id or contact_email

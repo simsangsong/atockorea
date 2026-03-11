@@ -31,7 +31,7 @@ const InteractiveMap = dynamic(
 );
 
 import type { TourDetail, ItineraryDetail } from '@/types/tour';
-import { Star, Shield, Award, Users, Clock, Globe, Check, X, ChevronRight, MapPin, Navigation } from 'lucide-react';
+import { Star, Shield, Award, Users, Clock, Globe, Check, X, ChevronRight, MapPin, Navigation, AlertCircle, Plane } from 'lucide-react';
 
 const poppins = Poppins({ weight: ['300', '400', '500', '600', '700'], subsets: ['latin'] });
 
@@ -663,7 +663,7 @@ export default function TourDetailPage() {
             <div className="flex flex-col items-center" id="pickup-info">
               <span className="bg-indigo-50 text-indigo-500 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-inner">Logistics</span>
               <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 sm:mb-8 text-neutral-900">Meeting & Pickup</h2>
-              <div className="w-full bg-white rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-8 shadow-sm border border-neutral-100 flex flex-col lg:flex-row gap-8 items-stretch lg:px-8">
+              <div className="w-full bg-white rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-8 shadow-sm border border-neutral-100 flex flex-col lg:flex-row flex-wrap gap-8 items-stretch lg:px-8">
                 <div className="flex-1 flex flex-col justify-center space-y-6">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
@@ -705,10 +705,6 @@ export default function TourDetailPage() {
                       </li>
                     </ul>
                   )}
-                  <div className="bg-indigo-50/50 rounded-xl p-4 flex items-center gap-3 mt-2">
-                    <Navigation className="w-5 h-5 text-indigo-400 shrink-0" />
-                    <span className="text-xs font-medium text-neutral-600 leading-relaxed">Exact pickup times will be communicated 1 day prior to the tour.</span>
-                  </div>
                 </div>
                 <div className="flex-1 w-full min-h-[250px]">
                   {tour.pickupPoints?.length > 0 && (() => {
@@ -736,6 +732,33 @@ export default function TourDetailPage() {
                       className="w-full h-full min-h-[250px] object-cover rounded-[1.5rem] shadow-inner border border-neutral-100"
                     />
                   )}
+                </div>
+                {/* 픽업 안내 (지도 밑 – 데스크탑·모바일 공통) */}
+                <div className="w-full mt-6 space-y-2.5">
+                  <div className="flex items-center gap-2.5 rounded-2xl py-2.5 px-3.5 bg-indigo-50/90 border border-indigo-100">
+                    <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center shrink-0">
+                      <Navigation className="w-4 h-4 text-indigo-600" />
+                    </div>
+                    <p className="text-[13px] leading-snug font-medium text-neutral-800">Exact pickup times will be communicated 1 day prior to the tour.</p>
+                  </div>
+                  <div className="flex items-center gap-2.5 rounded-2xl py-2.5 px-3.5 bg-emerald-50/90 border border-emerald-100">
+                    <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center shrink-0">
+                      <Clock className="w-4 h-4 text-emerald-600" />
+                    </div>
+                    <p className="text-[13px] leading-snug font-medium text-neutral-800">Kindly arrive 10 minutes early for a smooth and relaxed pickup.</p>
+                  </div>
+                  <div className="flex items-center gap-2.5 rounded-2xl py-2.5 px-3.5 bg-blue-50/90 border border-blue-100">
+                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
+                      <AlertCircle className="w-4 h-4 text-blue-600" />
+                    </div>
+                    <p className="text-[13px] leading-snug font-medium text-neutral-800">Please note that a 10-minute delay counts as a non-refundable no-show.</p>
+                  </div>
+                  <div className="flex items-center gap-2.5 rounded-2xl py-2.5 px-3.5 bg-violet-50/90 border border-violet-100">
+                    <div className="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
+                      <Plane className="w-4 h-4 text-violet-600" />
+                    </div>
+                    <p className="text-[13px] leading-snug font-medium text-neutral-800">Convenient airport pickup and drop-off services are available.</p>
+                  </div>
                 </div>
               </div>
             </div>
