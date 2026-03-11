@@ -8,6 +8,8 @@ import { theme } from '@/constants/theme';
  */
 export default function BusinessSection() {
   const openEmail = () => Linking.openURL('mailto:support@atockorea.com');
+  const openTelKr = () => Linking.openURL('tel:+821097808027');
+  const openTelUs = () => Linking.openURL('tel:+13075332194');
 
   return (
     <View style={styles.section}>
@@ -31,7 +33,8 @@ export default function BusinessSection() {
 
       <View style={styles.block}>
         <Text style={styles.label}>Contact</Text>
-        <Text style={styles.value}>+82 10 9780 8027</Text>
+        <Text style={[styles.value, styles.link]} onPress={openTelKr}>+82 10 9780 8027</Text>
+        <Text style={[styles.value, styles.link]} onPress={openTelUs}>+1 (307) 533 2194</Text>
         <Text style={styles.link} onPress={openEmail}>
           support@atockorea.com
         </Text>
