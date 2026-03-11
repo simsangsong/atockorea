@@ -216,7 +216,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
                 type="checkbox"
                 checked={applyDiscount}
                 onChange={(e) => setApplyDiscount(e.target.checked)}
-                className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+                className="w-4 h-4 text-neutral-700 rounded focus:ring-neutral-300"
               />
               <span className="text-sm text-gray-700">
                 {discountPercent}% {t('tour.discountApplied')}
@@ -283,7 +283,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
             onChange={(date) => setSelectedDate(date)}
             minDate={new Date()}
             placeholderText={t('tour.chooseDate')}
-            className="w-full px-3.5 py-2.5 text-sm font-medium text-gray-900 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none bg-white shadow-sm hover:border-blue-400 transition-colors"
+            className="w-full px-3.5 py-2.5 text-sm font-medium text-neutral-900 rounded-xl focus:ring-2 focus:ring-neutral-200 outline-none bg-[#F9F8F6] border-none shadow-inner transition-colors"
             dateFormat="MMMM d, yyyy"
             excludeDates={disabledDates}
             filterDate={(date) => {
@@ -292,7 +292,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
             }}
           />
           {checkingAvailability && selectedDate && (
-            <p className="mt-1.5 text-xs text-blue-600 font-medium flex items-center gap-1">
+            <p className="mt-1.5 text-xs text-neutral-600 font-medium flex items-center gap-1">
               <svg className="w-3 h-3 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
               </svg>
@@ -306,7 +306,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
           <label className="block text-xs font-bold text-gray-900 mb-1.5 uppercase tracking-wide">
             {t('tour.numberOfGuests')} <span className="text-red-500">*</span>
           </label>
-          <div className="flex items-center justify-between bg-white rounded-xl border-2 border-gray-300 p-2.5 shadow-sm hover:border-blue-400 transition-colors">
+          <div className="flex items-center justify-between bg-[#F9F8F6] rounded-xl p-2.5 shadow-inner border-none">
             <span className="text-xs font-bold text-gray-900 uppercase tracking-wide">{t('tour.guests')}</span>
             <div className="flex items-center gap-1.5">
               <button
@@ -346,7 +346,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
           <select
             value={selectedPickup || ''}
             onChange={(e) => setSelectedPickup(e.target.value)}
-            className="w-full px-3.5 py-2.5 text-sm font-medium text-gray-900 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none bg-white shadow-sm hover:border-blue-400 transition-colors"
+            className="w-full px-3.5 py-2.5 text-sm font-medium text-neutral-900 rounded-xl focus:ring-2 focus:ring-neutral-200 outline-none bg-[#F9F8F6] border-none shadow-inner appearance-none"
           >
               <option value="">{t('tour.selectPickupPoint')}</option>
             {tour.pickupPoints.map((point) => (
@@ -356,9 +356,9 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
             ))}
           </select>
           {selectedPickup && (
-            <div className="mt-2 p-2.5 bg-blue-50/50 rounded-lg border border-blue-200">
+            <div className="mt-2 p-2.5 bg-[#EEF2F6]/80 rounded-xl border border-neutral-200">
               <div className="flex items-start gap-2">
-                <MapIcon className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                <MapIcon className="w-4 h-4 text-neutral-600 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs font-bold text-gray-900">
                     {tour.pickupPoints.find((p) => p.id === selectedPickup)?.name}
@@ -397,83 +397,66 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
         </div>
       </div>
 
-      {/* Payment Method Selection - Compact & Elegant */}
-      <div className="mt-5">
-        <label className="block text-xs font-medium text-gray-600 mb-2.5">
-          Payment Method <span className="text-red-500">*</span>
+      {/* Payment Option (Sand & Sky tone - no bright blue/orange) */}
+      <div className="mt-5 space-y-3">
+        <label className="block text-[10px] font-bold text-neutral-500 uppercase tracking-widest">
+          Payment Option
         </label>
-        <div className="grid grid-cols-2 gap-2.5">
-          {/* Deposit + Cash on Site Button */}
-          <button
-            type="button"
-            onClick={() => setPaymentMethod('deposit')}
-            className={`relative px-3 py-3.5 rounded-xl font-semibold text-white transition-all duration-200 ${
-              paymentMethod === 'deposit'
-                ? 'bg-[#007AFF] shadow-[0_4px_12px_rgba(0,122,255,0.4)] ring-2 ring-blue-300/50'
-                : 'bg-[#007AFF] hover:bg-[#0056CC] shadow-[0_2px_8px_rgba(0,122,255,0.3)] hover:shadow-[0_4px_12px_rgba(0,122,255,0.4)]'
-            }`}
-          >
-            <div className="flex flex-col items-center gap-0.5">
-              <span className="text-sm font-bold leading-tight text-white">{t('booking.depositCash')}</span>
-              <span className="text-[10px] opacity-90 leading-tight text-white">{t('booking.payDepositOnline')}</span>
-              <span className="text-[10px] opacity-90 leading-tight text-white">{t('booking.payBalanceOnSite')}</span>
+        <label className="relative flex cursor-pointer rounded-xl border border-sky-100 bg-[#EEF2F6] p-4 focus:outline-none transition-colors">
+          <input
+            type="radio"
+            name="payment"
+            checked={paymentMethod === 'deposit'}
+            onChange={() => setPaymentMethod('deposit')}
+            className="sr-only"
+          />
+          <div className="flex items-center space-x-3">
+            <div className={`w-5 h-5 rounded-full border-[5px] bg-white shadow-sm flex-shrink-0 ${paymentMethod === 'deposit' ? 'border-neutral-900' : 'border-neutral-300'}`} />
+            <div>
+              <p className="font-bold text-neutral-900 text-sm">{t('booking.depositCash')}</p>
+              <p className="text-xs text-neutral-500 font-medium mt-0.5">{t('booking.payDepositOnline')} / {t('booking.payBalanceOnSite')}</p>
             </div>
-            {paymentMethod === 'deposit' && (
-              <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-lg">
-                <svg className="w-3 h-3 text-[#007AFF]" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-              </div>
-            )}
-          </button>
-
-          {/* Full Payment on Website Button */}
-          <button
-            type="button"
-            onClick={() => setPaymentMethod('full')}
-            className={`relative px-3 py-3.5 rounded-xl font-semibold text-white transition-all duration-200 ${
-              paymentMethod === 'full'
-                ? 'bg-[#FF9500] shadow-[0_4px_12px_rgba(255,149,0,0.4)] ring-2 ring-orange-300/50'
-                : 'bg-[#FF9500] hover:bg-[#CC7700] shadow-[0_2px_8px_rgba(255,149,0,0.3)] hover:shadow-[0_4px_12px_rgba(255,149,0,0.4)]'
-            }`}
-          >
-            <div className="flex flex-col items-center gap-0.5">
-              <span className="text-sm font-bold leading-tight text-white">{t('booking.fullPayment')}</span>
-              <span className="text-[10px] opacity-90 leading-tight text-white">{t('booking.payFullAmountOnline')}</span>
+          </div>
+        </label>
+        <label className="relative flex cursor-pointer rounded-xl border border-transparent bg-[#F4F1EA] p-4 focus:outline-none hover:border-neutral-200 transition-colors">
+          <input
+            type="radio"
+            name="payment"
+            checked={paymentMethod === 'full'}
+            onChange={() => setPaymentMethod('full')}
+            className="sr-only"
+          />
+          <div className="flex items-center space-x-3">
+            <div className={`w-5 h-5 rounded-full border-2 bg-white shadow-sm flex-shrink-0 ${paymentMethod === 'full' ? 'border-neutral-900 border-[5px]' : 'border-neutral-300'}`} />
+            <div>
+              <p className="font-bold text-neutral-900 text-sm">{t('booking.fullPayment')}</p>
+              <p className="text-xs text-neutral-500 font-medium mt-0.5">{t('booking.payFullAmountOnline')}</p>
             </div>
-            {paymentMethod === 'full' && (
-              <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-lg">
-                <svg className="w-3 h-3 text-[#FF9500]" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-              </div>
-            )}
-          </button>
-        </div>
+          </div>
+        </label>
       </div>
 
-      {/* Payment Summary - Deposit + Cash (larger labels/prices + short description) */}
       {paymentMethod === 'deposit' && (
-        <div className="mt-3 p-3 bg-blue-50/80 rounded-lg border border-blue-200/60">
+        <div className="mt-3 p-3 bg-[#EEF2F6]/80 rounded-xl border border-neutral-200/60">
           <div className="flex items-center justify-between text-sm">
-            <span className="text-gray-700 font-semibold">{t('booking.deposit')}</span>
-            <span className="font-bold text-blue-700">{formatPrice(depositAmountKRW)}</span>
+            <span className="text-neutral-700 font-semibold">{t('booking.deposit')}</span>
+            <span className="font-bold text-neutral-900">{formatPrice(depositAmountKRW)}</span>
           </div>
           <div className="flex items-center justify-between text-sm mt-2">
-            <span className="text-gray-600 font-semibold">{t('booking.payOnSite')}</span>
-            <span className="font-bold text-gray-800">{formatPrice(balanceAmountKRW)}</span>
+            <span className="text-neutral-600 font-semibold">{t('booking.payOnSite')}</span>
+            <span className="font-bold text-neutral-800">{formatPrice(balanceAmountKRW)}</span>
           </div>
-          <p className="text-xs text-gray-500 mt-2.5 leading-snug">
+          <p className="text-xs text-neutral-500 mt-2.5 leading-snug">
             {t('booking.depositCashShortDesc')}
           </p>
         </div>
       )}
 
-      {/* Book Button */}
+      {/* Book Button - black CTA */}
       <button
         onClick={handleCheckAvailability}
         disabled={!selectedDate || isLoading || isBooking || (availability ? !availability.canAccommodate : false)}
-        className="w-full mt-4 px-5 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-bold text-sm rounded-xl transition-all shadow-lg hover:shadow-xl active:scale-98 disabled:shadow-none"
+        className="w-full mt-4 px-5 py-3.5 bg-neutral-900 hover:bg-neutral-800 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold text-sm rounded-xl transition-all shadow-lg shadow-neutral-900/20 hover:shadow-xl active:scale-[0.98] disabled:shadow-none"
       >
         {isLoading 
           ? t('common.loading')

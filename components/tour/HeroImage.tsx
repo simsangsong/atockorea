@@ -13,9 +13,11 @@ interface HeroImageProps {
   images: string[] | ImageWithDescription[];
   title?: string;
   tagline?: string;
+  /** Optional wrapper className; e.g. "h-48 md:h-[320px]" for smaller mobile hero */
+  className?: string;
 }
 
-export default function HeroImage({ images, title, tagline }: HeroImageProps) {
+export default function HeroImage({ images, title, tagline, className }: HeroImageProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -39,7 +41,7 @@ export default function HeroImage({ images, title, tagline }: HeroImageProps) {
   }, [safeImages.length]);
 
   return (
-    <div className="relative w-full aspect-[16/10] md:aspect-auto md:h-[320px] overflow-hidden bg-gray-100">
+    <div className={`relative w-full overflow-hidden bg-gray-100 ${className || 'aspect-[16/10] md:aspect-auto md:h-[320px]'}`}>
       {/* Image Carousel */}
       <div className="relative w-full h-full">
         {safeImages.map((image, index) => (

@@ -1,7 +1,5 @@
 'use client';
 
-import Image from 'next/image';
-import { MapIcon } from '@/components/Icons';
 import InteractiveMap from '@/components/maps/InteractiveMap';
 import { useTranslations } from '@/lib/i18n';
 
@@ -12,6 +10,7 @@ interface PickupPoint {
   lat: number;
   lng: number;
   image_url?: string | null;
+  pickup_time?: string;
 }
 
 function hasValidCoords(lat: number, lng: number): boolean {
@@ -43,12 +42,58 @@ export default function MeetingPoint({ points }: MeetingPointProps) {
   const canShowMap = hasApiKey && pointsWithCoords.length > 0;
   const mapCenterPoint = pointsWithCoords.length > 0 ? pointsWithCoords[0] : primaryPoint;
 
+  const pickupPointWithTime = (p: PickupPoint) => p as PickupPoint & { pickup_time?: string };
+
   return (
     <div className="rounded-2xl border border-gray-200/50 bg-white p-4 sm:p-5 shadow-[0_2px_16px_rgba(0,0,0,0.06),0_1px_6px_rgba(0,0,0,0.03)]">
-      <h2 className="text-sm font-semibold text-gray-900 mb-3 tracking-tight">{t('tour.pickupMeetupInfo')}</h2>
+      {/* Header: bus icon + Pickup Points */}
+      <div className="flex items-center gap-2 mb-4">
+        <span className="flex items-center justify-center w-9 h-9 rounded-lg bg-blue-100 text-blue-600">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7v8m0 0v-8m0 0h8M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+          </svg>
+        </span>
+        <h2 className="text-base font-bold text-gray-900 tracking-tight">{t('tour.pickupMeetupInfo')}</h2>
+      </div>
+
+      {/* Pickup point cards — light blue style */}
+      <div className="space-y-3 mb-4">
+        {points.map((point) => {
+          const detail = [point.address, pickupPointWithTime(point).pickup_time].filter(Boolean).join(' · ') || undefined;
+          return (
+            <div
+              key={point.id}
+              className="rounded-xl bg-blue-50/80 border border-blue-100 p-4 flex items-start gap-3 shadow-sm"
+            >
+              <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 mt-0.5">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </span>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-bold text-gray-900">{point.name}</p>
+                {(detail || point.address) && (
+                  <p className="text-xs text-gray-600 mt-0.5">{detail || point.address}</p>
+                )}
+              </div>
+              <a
+                href={hasValidCoords(point.lat, point.lng)
+                  ? `https://www.google.com/maps?q=${point.lat},${point.lng}`
+                  : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(point.address || point.name)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-medium hover:bg-blue-700 transition-colors whitespace-nowrap"
+              >
+                {t('tour.directions')}
+              </a>
+            </div>
+          );
+        })}
+      </div>
 
       {/* Map: show pins only when we have valid lat/lng */}
-      <div className="relative w-full h-40 sm:h-52 rounded-xl overflow-hidden mb-3 bg-gray-50 border border-gray-100">
+      <div className="relative w-full h-40 sm:h-52 rounded-xl overflow-hidden bg-gray-50 border border-gray-100">
         {canShowMap ? (
           <InteractiveMap
             locations={pointsWithCoords.map((p) => ({
@@ -79,79 +124,12 @@ export default function MeetingPoint({ points }: MeetingPointProps) {
             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(primaryPoint.address || primaryPoint.name)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute inset-0 flex items-center justify-center bg-gray-100 text-gray-600 text-sm font-medium hover:bg-gray-200 transition-colors"
+            className="absolute inset-0 flex items-center justify-center bg-gray-100 text-gray-600 text-sm font-medium hover:bg-gray-200 transition-colors rounded-xl"
           >
             {t('tour.directions')} – {primaryPoint.name}
           </a>
         )}
       </div>
-
-      {/* Address + optional image */}
-      <div className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 border border-gray-100">
-        {primaryPoint.image_url ? (
-          <div className="flex-shrink-0 w-16 h-16 sm:w-[4.5rem] sm:h-[4.5rem] rounded-lg overflow-hidden bg-gray-200 border border-gray-200/80 shadow-sm">
-            <Image
-              src={primaryPoint.image_url}
-              alt={primaryPoint.name}
-              width={72}
-              height={72}
-              className="w-full h-full object-cover"
-              unoptimized={primaryPoint.image_url.startsWith('http')}
-            />
-          </div>
-        ) : (
-          <div className="flex-shrink-0 w-9 h-9 rounded-full bg-gray-200 flex items-center justify-center">
-            <MapIcon className="w-4 h-4 text-gray-600" />
-          </div>
-        )}
-        <div className="flex-1 min-w-0">
-          <p className="text-sm font-medium text-gray-900">{primaryPoint.name}</p>
-          <p className="text-xs text-gray-500 truncate">{primaryPoint.address || ''}</p>
-        </div>
-        <a
-          href={hasValidCoords(primaryPoint.lat, primaryPoint.lng)
-            ? `https://www.google.com/maps?q=${primaryPoint.lat},${primaryPoint.lng}`
-            : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(primaryPoint.address || primaryPoint.name)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-shrink-0 px-3 py-1.5 rounded-full bg-gray-900 text-white text-xs font-medium hover:bg-gray-800 transition-colors whitespace-nowrap"
-        >
-          {t('tour.directions')}
-        </a>
-      </div>
-
-      {/* All Pickup Points List */}
-      {points.length > 1 && (
-        <div className="mt-3 pt-3 border-t border-gray-100">
-          <p className="text-[11px] font-medium text-gray-500 uppercase tracking-wider mb-2">{t('tour.allPickupPoints')}</p>
-          <ul className="space-y-2">
-            {points.map((point) => (
-              <li key={point.id} className="flex items-center gap-2.5 py-1.5">
-                {point.image_url ? (
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg overflow-hidden bg-gray-100 border border-gray-200/60">
-                    <Image
-                      src={point.image_url}
-                      alt={point.name}
-                      width={40}
-                      height={40}
-                      className="w-full h-full object-cover"
-                      unoptimized={point.image_url.startsWith('http')}
-                    />
-                  </div>
-                ) : (
-                  <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-gray-300" />
-                )}
-                <div className="flex-1 min-w-0">
-                  <span className="text-xs font-medium text-gray-800">{point.name}</span>
-                  {point.address && (
-                    <p className="text-[11px] text-gray-500 truncate">{point.address}</p>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </div>
   );
 }

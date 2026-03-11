@@ -71,10 +71,12 @@ export interface TourDetail {
   itineraryDetails?: ItineraryDetail[];
   inclusions: Array<string | { icon: string; text: string }>;
   exclusions: Array<string | { icon: string; text: string }>;
-  pickupPoints: Array<{ id: string; name: string; address: string; lat: number; lng: number }>;
+  pickupPoints: Array<{ id: string; name: string; address: string; lat: number; lng: number; pickup_time?: string | null; image_url?: string | null }>;
   overview?: string;
   highlights?: string[];
   faqs?: Faq[];
+  /** 일정표 상단 히어로 배너 이미지 URL (16:9). 없으면 갤러리 첫 이미지 사용 */
+  schedule_hero_image_url?: string | null;
   /** SEO: 검색 엔진용 제목 */
   seoTitle?: string | null;
   /** SEO: 메타 설명 (160자 이내 권장) */

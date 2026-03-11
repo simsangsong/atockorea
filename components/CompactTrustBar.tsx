@@ -4,16 +4,14 @@ import { useTranslations } from '@/lib/i18n';
 
 type IconType = 'star' | 'hotel' | 'card' | 'pin' | 'badge' | 'people' | 'currency' | 'chart';
 
-/** Two items per box: icon + text each → 4 boxes total. Flat list for even grid. */
+/** Three cards only, 2 items per card. First card: Transparent Pricing + Secure payment; then Local guides + Licensed; then Certified + Lower prices. */
 const ITEMS: Array<{ icon: IconType; titleKey: string }> = [
-  { icon: 'star', titleKey: 'home.heroTrustBar.happyTravelersTitle' },
-  { icon: 'hotel', titleKey: 'home.heroTrustBar.hotelPickupTitle' },
+  { icon: 'currency', titleKey: 'home.heroTrustBar.transparentPricingTitle' },
   { icon: 'card', titleKey: 'home.heroTrustBar.securePaymentTitle' },
   { icon: 'pin', titleKey: 'home.heroTrustBar.localGuidesTitle' },
   { icon: 'badge', titleKey: 'trustBar.licensedAgencies' },
   { icon: 'people', titleKey: 'trustBar.certifiedGuides' },
-  { icon: 'currency', titleKey: 'trustBar.lowerPrices' },
-  { icon: 'chart', titleKey: 'trustBar.localExpertise' },
+  { icon: 'chart', titleKey: 'trustBar.lowerPrices' },
 ];
 
 function Icon({ type }: { type: IconType }) {
@@ -33,10 +31,10 @@ export default function CompactTrustBar() {
   const t = useTranslations();
 
   return (
-    <section className="py-2.5 sm:py-5 border-b border-gray-100 bg-slate-50/50" aria-label="Why book with us">
+    <section className="py-4 sm:py-6 border-b border-gray-100 bg-slate-50/50" aria-label="Why book with us">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-          {[0, 1, 2, 3].map((boxIndex) => (
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
+          {[0, 1, 2].map((boxIndex) => (
             <div
               key={boxIndex}
               className="rounded-xl border border-gray-200/80 bg-white p-3 sm:p-4 shadow-sm hover:shadow-md hover:border-gray-300/80 transition-all duration-200"

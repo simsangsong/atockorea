@@ -6,16 +6,20 @@ import { createServerClient } from '@/lib/supabase';
 
 type MetadataLocale = 'en' | 'ko' | 'zh' | 'zh-TW' | 'es' | 'ja';
 
-function detectRequestLocale(): MetadataLocale {
-  const h = headers();
-  const acceptLanguage = h.get('accept-language')?.toLowerCase() || '';
+async function detectRequestLocale(): Promise<MetadataLocale> {
+  try {
+    const h = await Promise.resolve(headers());
+    if (h == null || typeof (h as Headers).get !== 'function') return 'en';
+    const acceptLanguage = (h as Headers).get('accept-language')?.toLowerCase() || '';
 
-  if (acceptLanguage.includes('ko')) return 'ko';
-  if (acceptLanguage.includes('zh-tw') || acceptLanguage.includes('zh-hant')) return 'zh-TW';
-  if (acceptLanguage.includes('zh')) return 'zh';
-  if (acceptLanguage.includes('es')) return 'es';
-  if (acceptLanguage.includes('ja')) return 'ja';
-
+    if (acceptLanguage.includes('ko')) return 'ko';
+    if (acceptLanguage.includes('zh-tw') || acceptLanguage.includes('zh-hant')) return 'zh-TW';
+    if (acceptLanguage.includes('zh')) return 'zh';
+    if (acceptLanguage.includes('es')) return 'es';
+    if (acceptLanguage.includes('ja')) return 'ja';
+  } catch {
+    // headers() can be unavailable in some contexts (e.g. static generation)
+  }
   return 'en';
 }
 
@@ -45,7 +49,7 @@ export async function generateMetadata(
     const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
     const imageUrl = tour.image_url || `${siteUrl}/og-image.jpg`;
 
-    const requestLocale = detectRequestLocale();
+    const requestLocale = await detectRequestLocale();
     const translations = (tour.translations || {}) as Record<string, any>;
     const tr = translations[requestLocale] as Record<string, any> | undefined;
 

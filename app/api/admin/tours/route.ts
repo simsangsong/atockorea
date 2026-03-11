@@ -208,6 +208,7 @@ export async function PATCH(request: NextRequest) {
     if (body.price_type !== undefined) updateData.price_type = body.price_type;
     if (body.image_url !== undefined) updateData.image_url = body.image_url;
     if (body.gallery_images !== undefined) updateData.gallery_images = body.gallery_images;
+    if (body.schedule_hero_image_url !== undefined) updateData.schedule_hero_image_url = body.schedule_hero_image_url;
     if (body.duration !== undefined) updateData.duration = body.duration;
     if (body.lunch_included !== undefined) updateData.lunch_included = body.lunch_included;
     if (body.ticket_included !== undefined) updateData.ticket_included = body.ticket_included;

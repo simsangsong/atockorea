@@ -134,3 +134,319 @@ button, a {
   min-width: 44px;
 }
 
+/* ========== Tour Detail CRO (Conversion Rate Optimization) Layout ========== */
+.tour-detail-cro {
+  --cro-primary: #00bcd4;
+  --cro-bg: #ffffff;
+  --cro-bg-accent: #f8f9fa;
+  --cro-text-main: #333333;
+  --cro-text-light: #777777;
+  --cro-border: #dddddd;
+  --cro-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  font-family: 'Poppins', var(--font-inter), sans-serif;
+  color: var(--cro-text-main);
+  line-height: 1.6;
+  background-color: var(--cro-bg);
+}
+.tour-detail-cro h1, .tour-detail-cro h2, .tour-detail-cro h3 { font-weight: 600; }
+
+.tour-detail-cro .global-toggle-btn {
+  display: flex; justify-content: center; margin: 40px auto;
+}
+.tour-detail-cro .global-toggle-btn button {
+  background-color: #fff; border: 1px solid rgb(229 229 229); color: rgb(38 38 38);
+  padding: 12px 28px; font-weight: 500; font-size: 15px;
+  border-radius: 12px; cursor: pointer; transition: all 0.2s ease;
+}
+.tour-detail-cro .global-toggle-btn button:hover { background-color: rgb(250 250 250); border-color: rgb(212 212 212); }
+
+.tour-detail-cro .section-divider {
+  height: 1px; background-color: var(--cro-border); width: 80%; margin: 20px auto;
+}
+
+.tour-detail-cro .hero-gallery {
+  display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; height: 50vh; padding: 8px;
+}
+.tour-detail-cro .hero-gallery .main-img {
+  grid-row: span 2; border-radius: 8px; position: relative; overflow: hidden; background-color: #eee;
+}
+.tour-detail-cro .hero-gallery .sub-img {
+  background-size: cover; background-position: center; border-radius: 8px; position: relative; overflow: hidden; background-color: #eee;
+}
+
+.tour-detail-cro .tour-header { padding: 30px 20px; text-align: center; }
+.tour-detail-cro .tour-header h1 { font-size: 28px; margin-bottom: 10px; color: #1a1a1a; }
+.tour-detail-cro .tour-header .rating { color: var(--cro-text-light); font-size: 15px; }
+.tour-detail-cro .tour-header .rating .star { color: #ffc107; margin-right: 5px; }
+
+.tour-detail-cro .trust-bar {
+  background-color: #ffffff; display: flex; justify-content: space-around; padding: 25px 20px; margin-bottom: 20px;
+  box-shadow: var(--cro-shadow);
+}
+.tour-detail-cro .trust-item { text-align: center; max-width: 30%; }
+.tour-detail-cro .trust-item i, .tour-detail-cro .trust-item svg { color: var(--cro-primary); font-size: 28px; margin-bottom: 12px; display: block; }
+.tour-detail-cro .trust-item h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.tour-detail-cro .trust-item p { font-size: 13px; color: var(--cro-text-light); }
+
+.tour-detail-cro .details-wrapper { padding: 0 20px; }
+.tour-detail-cro .section-heading {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;
+}
+.tour-detail-cro .section-heading h2 { font-size: 20px; }
+.tour-detail-cro .section-heading i, .tour-detail-cro .section-heading svg { color: var(--cro-text-light); font-size: 16px; cursor: pointer; transition: transform 0.3s ease; }
+
+.tour-detail-cro .individual-toggles {
+  display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap;
+}
+.tour-detail-cro .individual-toggles button {
+  background-color: var(--cro-bg-accent); border: 1px solid var(--cro-border); color: var(--cro-text-main);
+  padding: 8px 18px; font-family: 'Poppins', sans-serif; font-size: 14px; border-radius: 20px;
+  cursor: pointer; transition: background 0.2s ease;
+}
+.tour-detail-cro .individual-toggles button:hover { background-color: #ffffff; box-shadow: var(--cro-shadow); }
+
+.tour-detail-cro .details-content-container { display: none; }
+.tour-detail-cro .details-content-container.is-expanded { display: block; }
+
+/* 일정표 히어로: 배너(16:9) + 겹치는 결제 안내(너비 80%) + 하단 흰색 그라데이션 */
+.tour-detail-cro .schedule-hero-wrap {
+  position: relative; margin-bottom: 0; border-radius: 12px; overflow: hidden;
+}
+.tour-detail-cro .schedule-hero-banner {
+  position: relative; width: 100%;
+}
+.tour-detail-cro .schedule-hero-banner-16x9 {
+  aspect-ratio: 16/9; width: 100%; min-height: 180px;
+}
+.tour-detail-cro .schedule-hero-placeholder {
+  width: 100%; height: 100%; background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+}
+.tour-detail-cro .schedule-hero-overlap-box {
+  position: relative; margin-top: -48px; z-index: 2; padding: 0 10%; display: flex; justify-content: center;
+}
+.tour-detail-cro .schedule-hero-overlap-inner {
+  width: 80%; max-width: 100%; background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.tour-detail-cro .schedule-hero-gradient {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 80px; z-index: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.5) 30%, rgba(255,255,255,1) 100%);
+  pointer-events: none;
+}
+.tour-detail-cro .schedule-hero-overlap-item {
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.tour-detail-cro .schedule-hero-overlap-icon {
+  width: 28px; height: 28px; flex-shrink: 0; color: var(--cro-primary);
+}
+.tour-detail-cro .schedule-hero-overlap-item h4 {
+  margin: 0 0 6px; font-size: 15px; font-weight: 600; color: var(--cro-text-main);
+}
+.tour-detail-cro .schedule-hero-overlap-item p {
+  margin: 0; font-size: 13px; color: var(--cro-text-light); line-height: 1.5;
+}
+
+.tour-detail-cro .details-section {
+  background-color: #ffffff; border-radius: 8px; padding: 25px; margin-bottom: 25px;
+  box-shadow: var(--cro-shadow); border: 1px solid rgba(0,0,0,0.03);
+}
+
+.tour-detail-cro .timeline {
+  position: relative; padding-left: 20px; border-left: 2px solid var(--cro-border); list-style: none;
+}
+.tour-detail-cro .timeline-item { position: relative; margin-bottom: 30px; }
+.tour-detail-cro .timeline-item::before {
+  content: ""; position: absolute; left: -26px; top: 10px; background-color: var(--cro-bg);
+  border: 2px solid var(--cro-border); width: 12px; height: 12px; border-radius: 50%;
+}
+.tour-detail-cro .timeline-item.active::before { border-color: var(--cro-primary); background-color: var(--cro-primary); }
+
+.tour-detail-cro .timeline-card { display: flex; gap: 15px; align-items: start; }
+.tour-detail-cro .timeline-card .stop-photo {
+  width: 100px; height: 100px; background-size: cover; background-position: center; border-radius: 8px;
+  flex-shrink: 0; box-shadow: var(--cro-shadow); position: relative; overflow: hidden;
+}
+.tour-detail-cro .timeline-card .card-content { flex-grow: 1; }
+.tour-detail-cro .timeline-card .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+.tour-detail-cro .timeline-card .stop-title { font-size: 16px; font-weight: 600; }
+.tour-detail-cro .timeline-card .stop-time {
+  color: var(--cro-primary); font-weight: 500; font-size: 14px;
+  background: rgba(0,188,212,0.08); padding: 2px 6px; border-radius: 4px;
+}
+.tour-detail-cro .stop-description {
+  color: var(--cro-text-light); font-size: 14px; overflow: hidden;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; transition: all 0.3s ease;
+}
+.tour-detail-cro .stop-description.expanded { -webkit-line-clamp: unset; display: block; }
+.tour-detail-cro .read-more-text {
+  color: var(--cro-primary); font-size: 13px; font-weight: 500; cursor: pointer; display: block; margin-top: 2px;
+}
+
+/* 픽업 지역: 사진 슬롯 없이 리스트만, 작은 글씨 세로 나열 */
+.tour-detail-cro .itinerary-pickup-list-card {
+  background: var(--cro-bg-accent); border: 1px solid var(--cro-border); border-radius: 12px;
+  padding: 14px 18px; margin-bottom: 24px; box-shadow: var(--cro-shadow);
+}
+.tour-detail-cro .itinerary-pickup-list {
+  list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px;
+}
+.tour-detail-cro .itinerary-pickup-list-item {
+  display: flex; flex-direction: column; gap: 4px; padding-bottom: 10px; border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 12px; color: var(--cro-text-main); line-height: 1.4;
+}
+.tour-detail-cro .itinerary-pickup-list-item:last-child { padding-bottom: 0; border-bottom: none; }
+.tour-detail-cro .itinerary-pickup-list-time {
+  font-size: 11px; color: #e85d04; font-weight: 600;
+  background: rgba(232,93,4,0.1); padding: 2px 8px; border-radius: 4px; width: fit-content;
+}
+.tour-detail-cro .itinerary-pickup-list-name { font-weight: 600; font-size: 13px; }
+.tour-detail-cro .itinerary-pickup-label {
+  font-size: 12px; font-weight: 600; color: var(--cro-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;
+}
+
+/* 일정 타임라인: 왼쪽 채색 막대 + 시간(카드 위) + 포토카드 */
+.tour-detail-cro .itinerary-timeline-wrap {
+  position: relative; display: flex; flex-direction: column; gap: 28px; padding-left: 20px;
+}
+.tour-detail-cro .itinerary-timeline-bar {
+  position: absolute; left: 0; top: 0; bottom: 0; width: 6px;
+  background: linear-gradient(180deg, #1e3a5f 0%, #2d5a87 20%, #e85d04 45%, #dc2f02 70%, #9d0208 100%);
+  border-radius: 4px; pointer-events: none; box-shadow: 0 0 0 1px rgba(0,0,0,0.06);
+}
+.tour-detail-cro .itinerary-timeline-row {
+  position: relative; z-index: 1;
+}
+.tour-detail-cro .itinerary-timeline-content {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.tour-detail-cro .itinerary-time-above {
+  font-size: 13px; font-weight: 600; color: #e85d04; padding-left: 4px;
+}
+.tour-detail-cro .itinerary-photo-card {
+  background: #fff; border-radius: 12px; overflow: hidden; box-shadow: var(--cro-shadow); border: 1px solid rgba(0,0,0,0.06);
+}
+.tour-detail-cro .itinerary-photo-card-half {
+  max-width: 40%; width: 80%;
+}
+@media (min-width: 769px) {
+  .tour-detail-cro .itinerary-photo-card-half {
+    max-width: 52%; width: 90%;
+  }
+  .tour-detail-cro .itinerary-photo-card-body {
+    padding: 7px 16px 10px;
+  }
+  .tour-detail-cro .itinerary-photo-card-desc {
+    font-size: 13px; margin: 0 0 4px;
+  }
+  .tour-detail-cro .itinerary-read-more-btn {
+    margin-top: 2px;
+  }
+}
+.tour-detail-cro .itinerary-photo-card-image-wrap {
+  position: relative; width: 100%; background: #e5e7eb;
+}
+.tour-detail-cro .itinerary-photo-card-image-wrap.aspect-video { aspect-ratio: 16/9; }
+.tour-detail-cro .itinerary-photo-card-image-small {
+  aspect-ratio: 16/9; width: 100%; height: auto;
+}
+.tour-detail-cro .itinerary-photo-card-placeholder {
+  width: 100%; height: 100%; background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+}
+.tour-detail-cro .itinerary-photo-card-title-overlay {
+  position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%); display: flex; align-items: flex-end; padding: 16px;
+}
+.tour-detail-cro .itinerary-photo-card-title {
+  margin: 0; font-size: 18px; font-weight: 600; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+.tour-detail-cro .itinerary-photo-card-body { padding: 14px 16px; }
+.tour-detail-cro .itinerary-photo-card-desc {
+  color: var(--cro-text-light); font-size: 14px; margin: 0 0 8px; overflow: hidden;
+  display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; transition: all 0.3s ease;
+}
+.tour-detail-cro .itinerary-photo-card-desc.expanded { -webkit-line-clamp: unset; display: block; }
+.tour-detail-cro .itinerary-read-more-btn {
+  background: none; border: none; color: var(--cro-primary); font-size: 13px; font-weight: 600; cursor: pointer; padding: 0;
+}
+.tour-detail-cro .itinerary-read-more-btn:hover { text-decoration: underline; }
+
+/* 픽업 정보 한 카드 (글자만, 사진 없음) */
+.tour-detail-cro .pickup-one-card {
+  background: var(--cro-bg-accent); border: 1px solid var(--cro-border); border-radius: 12px;
+  padding: 18px 20px; margin-top: 12px; box-shadow: var(--cro-shadow);
+}
+.tour-detail-cro .pickup-one-card-list {
+  list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px;
+}
+.tour-detail-cro .pickup-one-card-item {
+  display: flex; flex-direction: column; gap: 4px; padding-bottom: 14px; border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.tour-detail-cro .pickup-one-card-item:last-child { padding-bottom: 0; border-bottom: none; }
+.tour-detail-cro .pickup-one-card-name { font-size: 15px; font-weight: 600; color: var(--cro-text-main); }
+.tour-detail-cro .pickup-one-card-time {
+  font-size: 13px; color: var(--cro-primary); font-weight: 500;
+  background: rgba(0,188,212,0.08); padding: 2px 8px; border-radius: 4px; display: inline-block; width: fit-content;
+}
+.tour-detail-cro .pickup-one-card-address { font-size: 13px; color: var(--cro-text-light); line-height: 1.4; }
+
+.tour-detail-cro .at-a-glance { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px; }
+.tour-detail-cro .glance-item { display: flex; align-items: center; gap: 10px; }
+.tour-detail-cro .glance-item svg { color: var(--cro-primary); width: 18px; height: 18px; flex-shrink: 0; }
+.tour-detail-cro .glance-item h4 { font-size: 14px; color: var(--cro-text-main); font-weight: 500; }
+.tour-detail-cro .glance-item p { font-size: 13px; color: var(--cro-text-light); }
+
+.tour-detail-cro .pickup-points { margin-top: 15px; }
+.tour-detail-cro .pickup-points h3 { font-size: 16px; margin-bottom: 10px; }
+.tour-detail-cro .pickup-points-list { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.tour-detail-cro .pickup-item { display: flex; align-items: center; gap: 10px; }
+.tour-detail-cro .pickup-item img { width: 40px; height: 40px; border-radius: 5px; object-fit: cover; box-shadow: var(--cro-shadow); }
+.tour-detail-cro .pickup-item .location-name { font-size: 14px; font-weight: 500; }
+
+.tour-detail-cro .bottom-section {
+  background-color: var(--cro-bg-accent); padding: 30px 20px; border-top: 1px solid var(--cro-border);
+}
+.tour-detail-cro .tour-reviews-section {
+  margin-top: 0; margin-bottom: 40px; padding: 28px 24px; border-radius: 16px;
+  background: #fff; border: 1px solid rgb(245 245 245); box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.tour-detail-cro .bottom-section h2 { font-size: 18px; margin-bottom: 15px; }
+
+/* 하단 섹션 카드: 경계 뚜렷 + 기본 접힌 버튼형 */
+.tour-detail-cro .bottom-section-card {
+  margin-bottom: 16px; border-radius: 16px; overflow: hidden;
+  background: #fff; border: 1px solid rgb(245 245 245); box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.tour-detail-cro .bottom-section-card-head {
+  display: flex; align-items: center; justify-content: space-between; width: 100%;
+  padding: 16px 20px; text-align: left; cursor: pointer; border: none; background: #fff;
+  font: inherit; color: rgb(23 23 23); transition: background 0.2s ease;
+}
+.tour-detail-cro .bottom-section-card-head:hover {
+  background: rgb(250 250 250);
+}
+.tour-detail-cro .bottom-section-card-head h2 {
+  margin: 0; font-size: 18px; font-weight: 600; color: rgb(23 23 23);
+}
+.tour-detail-cro .bottom-section-card-icon {
+  font-size: 12px; color: rgb(115 115 115); flex-shrink: 0; margin-left: 12px;
+}
+.tour-detail-cro .bottom-section-card-body {
+  padding: 16px 20px 20px; border-top: 1px solid rgb(245 245 245);
+}
+
+.tour-detail-cro .faq-item { margin-bottom: 15px; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 10px; }
+.tour-detail-cro .faq-q { font-weight: 500; font-size: 15px; color: var(--cro-text-main); }
+.tour-detail-cro .faq-a { color: var(--cro-text-light); font-size: 14px; }
+
+@media (max-width: 768px) {
+  .tour-detail-cro .hero-gallery { height: 35vh; }
+  .tour-detail-cro .hero-gallery .main-img { border-radius: 8px 0 0 8px; }
+  .tour-detail-cro .hero-gallery .sub-img { border-radius: 0 8px 8px 0; grid-column: 2; grid-row: span 1; }
+  .tour-detail-cro .tour-header h1 { font-size: 22px; }
+  .tour-detail-cro .timeline-card { flex-direction: row; align-items: center; }
+  .tour-detail-cro .timeline-card .stop-photo { width: 70px; height: 70px; }
+  .tour-detail-cro .pickup-points-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .tour-detail-cro .schedule-hero-overlap-inner { width: 88%; }
+  .tour-detail-cro .itinerary-photo-card-half { max-width: 80%; width: 80%; }
+  .tour-detail-cro .itinerary-photo-card-title { font-size: 16px; }
+}
+

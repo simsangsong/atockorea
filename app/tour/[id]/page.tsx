@@ -1,21 +1,16 @@
 'use client';
 
-import { useRef, useState, useEffect, Suspense, useMemo } from 'react';
+import { useRef, useState, useEffect, useMemo, useCallback } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
+import { Poppins } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
-import HeroImage from '@/components/tour/HeroImage';
-import KeyInfoBar from '@/components/tour/KeyInfoBar';
-import GalleryGrid from '@/components/tour/GalleryGrid';
-import VisualItinerary from '@/components/tour/VisualItinerary';
-import MeetingPoint from '@/components/tour/MeetingPoint';
-import ActionButtons from '@/components/tour/ActionButtons';
-import CollapsibleSection from '@/components/tour/CollapsibleSection';
 import TourOverviewContent from '@/components/tour/TourOverviewContent';
 import FaqAccordion from '@/components/tour/FaqAccordion';
-import ItineraryTimeline from '@/components/tour/ItineraryTimeline';
+import ImportantNotesContent from '@/components/tour/ImportantNotesContent';
 import { useTranslations, useI18n } from '@/lib/i18n';
 import { formatChildEligibilityRule, CHILD_SEAT_OPTIONS, STROLLER_WHEELCHAIR_OPTIONS } from '@/lib/participant-rules';
 import TourReviewsSection from '@/components/tour/TourReviewsSection';
@@ -31,14 +26,14 @@ const EnhancedBookingSidebar = dynamic(
 );
 
 const InteractiveMap = dynamic(
-  () => import('@/components/maps/InteractiveMap'),
-  { 
-    loading: () => <div className="animate-pulse bg-gray-200 rounded-lg h-96" />,
-    ssr: false 
-  }
+  () => import('@/components/maps/InteractiveMap').then((m) => m.default),
+  { ssr: false, loading: () => <div className="h-64 bg-gray-100 rounded-lg animate-pulse" /> }
 );
 
-import type { TourDetail } from '@/types/tour';
+import type { TourDetail, ItineraryDetail } from '@/types/tour';
+import { Star, Shield, Award, Users, Clock, Globe, Check, X, ChevronRight, MapPin, Navigation } from 'lucide-react';
+
+const poppins = Poppins({ weight: ['300', '400', '500', '600', '700'], subsets: ['latin'] });
 
 type Tour = TourDetail & {
   availableSpots?: number;
@@ -53,7 +48,6 @@ export default function TourDetailPage() {
   const { locale } = useI18n();
   const currencyCtx = useCurrencyOptional();
   
-  // Extract tourId directly from params - use useMemo to stabilize the value
   const tourId = useMemo(() => {
     const id = params?.id;
     if (typeof id === 'string') return id;
@@ -66,6 +60,31 @@ export default function TourDetailPage() {
   const [tour, setTour] = useState<Tour | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  /** CRO: global "상세정보 펼쳐보기" expanded state; when true, details container is visible and individual buttons hidden */
+  const [detailsExpanded, setDetailsExpanded] = useState(false);
+  /** CRO: which timeline description ids are expanded (Read more) */
+  const [readMoreExpanded, setReadMoreExpanded] = useState<Record<string, boolean>>({});
+  /** 하단 섹션(Highlights, Full Description, FAQ, Child eligibility) 접기/펼치기 */
+  const [bottomSectionOpen, setBottomSectionOpen] = useState<Record<string, boolean>>({});
+
+  const toggleBottomSection = useCallback((id: string) => {
+    setBottomSectionOpen((prev) => ({ ...prev, [id]: !prev[id] }));
+  }, []);
+
+  const globalExpandAll = useCallback(() => {
+    setDetailsExpanded((prev) => !prev);
+  }, []);
+  const toggleSection = useCallback((_sectionId: string) => {
+    setDetailsExpanded(true);
+    setTimeout(() => {
+      const el = document.getElementById(_sectionId);
+      el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }, []);
+  const toggleReadMore = useCallback((descId: string) => {
+    setReadMoreExpanded((prev) => ({ ...prev, [descId]: !prev[descId] }));
+  }, []);
+
   const prevTourIdRef = useRef<string | null>(null);
   const fetchingRef = useRef(false); // Prevent concurrent fetches
   const hasFetchedRef = useRef<string | null>(null); // Track which tourId has been fetched
@@ -415,293 +434,507 @@ export default function TourDetailPage() {
 
   const handleShare = () => {
     if (!tour) return;
-    
     if (navigator.share) {
-      navigator.share({
-        title: tour.title,
-        text: tour.tagline,
-        url: window.location.href,
-      });
+      navigator.share({ title: tour.title, text: tour.tagline, url: window.location.href });
     } else {
-      // Fallback: copy to clipboard
       navigator.clipboard.writeText(window.location.href);
       alert('Link copied to clipboard!');
     }
   };
 
-  // TypeScript guard: tour should not be null at this point
-  if (!tour) {
-    return null; // This should never happen due to earlier checks, but TypeScript needs it
-  }
+  if (!tour) return null;
 
   const formatPrice = (n: number) =>
     currencyCtx ? currencyCtx.formatPrice(n) : `₩${new Intl.NumberFormat('ko-KR', { maximumFractionDigits: 0 }).format(n)}`;
 
+  /** 목적지 일정만 (픽업 제외). 픽업 항목은 상단 리스트로만 표시하고 타임라인 카드에서는 제거 */
+  const isPickupItem = (title: string, description?: string) => {
+    const t = (title || '').trim().toLowerCase();
+    const d = (description || '').trim().toLowerCase();
+    const pickupTitle = /^pickup\s*[-–—:]|픽업\s*[-–—:]?|pickup\s*point/i.test(t)
+      || tour.pickupPoints?.some((p) => t.includes((p.name || '').toLowerCase()));
+    const pickupDesc = /first\s*pickup|second\s*pickup|third\s*pickup|fourth\s*pickup|pickup\s*point/i.test(d);
+    return pickupTitle || pickupDesc;
+  };
+  const rawDestinationItems: Array<{ time: string; title: string; description: string; image?: string }> = tour.itineraryDetails?.length
+    ? tour.itineraryDetails.map((d: ItineraryDetail) => ({ time: d.time, title: d.activity, description: d.description || '', image: d.images?.[0] }))
+    : (tour.itinerary || []).map((i) => ({ time: i.time || '', title: i.title || '', description: i.description || '', image: i.images?.[0] }));
+  const destinationItems = rawDestinationItems.filter((item) => !isPickupItem(item.title, item.description));
+
+  const images = tour.images || [];
+  const mainImage = images[0]?.url || (typeof images[0] === 'string' ? images[0] : '');
+  const sub1 = images[1]?.url || (typeof images[1] === 'string' ? images[1] : '');
+  const sub2 = images[2]?.url || (typeof images[2] === 'string' ? images[2] : '');
+  const nextGalleryImage = images[3]?.url || (typeof images[3] === 'string' ? images[3] : '') || sub2 || mainImage;
+
+  const READ_MORE_LENGTH = 120;
+
+  const fullStars = Math.min(5, Math.floor(tour.rating) + (tour.rating % 1 >= 0.5 ? 1 : 0));
+  const starDisplay = '★'.repeat(fullStars) + '☆'.repeat(5 - fullStars);
+
+  const imageCount = images.length || 1;
+
+  const timelineDotColors = ['#E85D22', '#0EA5E9', '#F59E0B'] as const;
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
+    <div className={`tour-detail-cro min-h-screen bg-[#F9FAFB] text-neutral-900 pb-32 lg:pb-24 ${poppins.className}`}>
       <Header />
-      <main className="pb-28 md:pb-0">
-        {/* Hero — 메인처럼 데스크톱에서 둥근 카드 + 그림자 */}
-        <section className="px-4 sm:px-6 lg:px-8 pt-4 md:pt-6">
-          <div className="container mx-auto max-w-6xl">
-            <div className="rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.08),0_1px_8px_rgba(0,0,0,0.04)] md:shadow-xl">
-              <HeroImage images={tour.images} />
+      <main className="bg-[#F9FAFB]">
+        {/* ================= HERO (Full Width, Dark Overlay) ================= */}
+        <div className="relative w-full h-[380px] sm:h-[450px] lg:h-[550px]">
+          <div className="absolute inset-0 bg-cover bg-center" aria-hidden>
+            {mainImage ? (
+              <Image src={mainImage} alt="" fill className="object-cover" sizes="100vw" priority />
+            ) : (
+              <div className="w-full h-full bg-neutral-300" />
+            )}
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pt-4 sm:pt-10">
+            <span className="bg-[#E85D22] text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-3 sm:px-4 py-1.5 rounded-full mb-3 sm:mb-4 shadow-lg">
+              Trusted by 50,000+ Travelers
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4 drop-shadow-md px-2 max-w-4xl leading-tight">
+              {tour.title}
+            </h1>
+            <div className="flex items-center justify-center space-x-2 sm:space-x-3 text-white/90 drop-shadow-sm px-4">
+              <div className="flex items-center space-x-1 text-amber-400">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} className={`w-4 h-4 sm:w-5 sm:h-5 ${i <= fullStars ? 'fill-current' : ''}`} />
+                ))}
+              </div>
+              <span className="text-base sm:text-lg font-bold">{tour.rating != null ? Number(tour.rating).toFixed(1) : '—'}</span>
+              <span className="text-xs sm:text-sm font-medium opacity-90">({tour.reviewCount ?? 0} {t('tour.reviews')})</span>
             </div>
           </div>
-        </section>
+        </div>
 
-        {/* 제목·평점·트러스트 — 메인 TrustBar 스타일 카드 */}
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 -mt-2 md:-mt-4 max-w-6xl relative z-10">
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-[0_2px_20px_rgba(0,0,0,0.08),0_1px_8px_rgba(0,0,0,0.04)] p-4 sm:p-5 md:p-6">
-            <div className="flex items-start justify-between gap-4">
-              <div className="min-w-0 flex-1">
-                <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 leading-tight tracking-tight">
-                  {tour.title}
-                </h1>
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-sm text-gray-600">
-                  <span className="flex items-center gap-1 font-medium">
-                    <svg className="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
-                    {tour.rating.toFixed(1)}
-                  </span>
-                  <span>{tour.reviewCount} {t('tour.reviews') || 'reviews'}</span>
-                  {tour.badges?.[0] && (
-                    <span className="px-2.5 py-0.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-medium border border-slate-200/60">
-                      {tour.badges[0]}
-                    </span>
-                  )}
+        {/* ================= MAIN CONTENT & SIDEBAR (Overlap Hero) ================= */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 -mt-16 sm:-mt-24 lg:-mt-32 flex flex-col lg:flex-row gap-8 lg:gap-12">
+          {/* LEFT: MAIN CONTENT */}
+          <div className="lg:w-2/3 flex flex-col gap-10 sm:gap-16">
+            {/* 1. Why Choose Us (너비·높이 5% 확대, 글씨 약간 확대) */}
+            <div className="w-[75%] max-w-full mx-auto bg-white rounded-2xl sm:rounded-full py-3.5 px-4 sm:py-4 sm:px-7 shadow-[0_8px_30px_rgba(0,0,0,0.06)] flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-5 text-center">
+              <div className="flex flex-row items-center gap-3 sm:gap-3.5">
+                <div className="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center shrink-0">
+                  <Shield className="w-4 h-4 text-orange-500" />
+                </div>
+                <div className="text-left">
+                  <h3 className="font-extrabold text-[13px] sm:text-sm text-neutral-900 leading-tight">Secure Deposit</h3>
+                  <p className="text-[11px] sm:text-xs text-neutral-500 mt-1 font-medium leading-tight">Pay the rest on site</p>
                 </div>
               </div>
-              <div className="flex items-center gap-1 flex-shrink-0">
-                <ActionButtons compact variant="default" tourId={tour.id} onCheckAvailability={() => {}} onShare={handleShare} />
+              <div className="hidden sm:block w-px h-7 bg-neutral-100" />
+              <div className="flex flex-row items-center gap-3 sm:gap-3.5">
+                <div className="w-8 h-8 rounded-full bg-sky-50 flex items-center justify-center shrink-0">
+                  <Clock className="w-4 h-4 text-sky-500" />
+                </div>
+                <div className="text-left">
+                  <h3 className="font-extrabold text-[13px] sm:text-sm text-neutral-900 leading-tight">Expert Local Guides</h3>
+                  <p className="text-[11px] sm:text-xs text-neutral-500 mt-1 font-medium leading-tight">Experienced local professionals</p>
+                </div>
+              </div>
+              <div className="hidden sm:block w-px h-7 bg-neutral-100" />
+              <div className="flex flex-row items-center gap-3 sm:gap-3.5">
+                <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
+                  <Globe className="w-4 h-4 text-emerald-500" />
+                </div>
+                <div className="text-left">
+                  <h3 className="font-extrabold text-[13px] sm:text-sm text-neutral-900 leading-tight">Verified LLC</h3>
+                  <p className="text-[11px] sm:text-xs text-neutral-500 mt-1 font-medium leading-tight">Globally standardized</p>
+                </div>
               </div>
             </div>
-            {/* Trust strip — 클룩/애플 스타일 간결 */}
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-4 pt-4 border-t border-gray-100">
-              <span className="flex items-center gap-1.5 text-xs text-gray-500">
-                <svg className="w-4 h-4 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                Free cancellation
-              </span>
-              <span className="flex items-center gap-1.5 text-xs text-gray-500">
-                <svg className="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                Reserve now & pay later
-              </span>
-            </div>
-            <div className="mt-4">
-              <KeyInfoBar items={keyInfoItems} />
-            </div>
-          </div>
-        </section>
 
-        {/* Main Content */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 pb-8 lg:grid lg:grid-cols-[1fr_360px] lg:gap-8 lg:items-start max-w-6xl">
-          {/* Left Column: Content — 카드 간격 통일 */}
-          <div className="space-y-4 md:space-y-5">
-            {/* Gallery */}
-            <div className="rounded-2xl overflow-hidden border border-gray-200/50 bg-white shadow-[0_2px_16px_rgba(0,0,0,0.06),0_1px_6px_rgba(0,0,0,0.03)] p-4 sm:p-5">
-              <GalleryGrid images={tour.images} />
-            </div>
-
-            {/* 5. Description (collapsible) */}
-            {tour.overview && (
-              <CollapsibleSection title={t('tour.fullDescription')}>
-                <TourOverviewContent content={tour.overview} />
-              </CollapsibleSection>
-            )}
-
-            {/* 6. Itinerary (collapsible): itinerary_details 타임라인 또는 기존 schedule */}
-            <CollapsibleSection title={t('tour.itinerary')}>
-              {tour.itineraryDetails && tour.itineraryDetails.length > 0 ? (
-                <ItineraryTimeline items={tour.itineraryDetails} />
-              ) : (
-                <VisualItinerary items={tour.itinerary} pickupPoints={tour.pickupPoints} />
-              )}
-            </CollapsibleSection>
-
-            {/* 7. What's Included (collapsible) */}
-            {(tour.inclusions.length > 0 || tour.exclusions.length > 0) && (
-              <CollapsibleSection title={t('tour.whatsIncluded')}>
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    {tour.inclusions.length > 0 && (
-                      <div>
-                        <h3 className="text-sm font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                          <span className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
-                            <svg className="w-3 h-3 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                          </span>
-                          {t('tour.included')}
-                        </h3>
-                        <ul className="space-y-1.5">
-                          {tour.inclusions.map((item, index) => {
-                            const text = typeof item === 'string' ? item : item.text || '';
-                            return (
-                              <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
-                                <span className="w-1 h-1 rounded-full bg-emerald-500 mt-1.5 flex-shrink-0" />
-                                {text}
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                    )}
-                    {tour.exclusions.length > 0 && (
-                      <div>
-                        <h3 className="text-sm font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                          <span className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center">
-                            <svg className="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-                          </span>
-                          {t('tour.notIncluded')}
-                        </h3>
-                        <ul className="space-y-1.5">
-                          {tour.exclusions.map((item, index) => {
-                            const text = typeof item === 'string' ? item : item.text || '';
-                            return (
-                              <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
-                                <span className="w-1 h-1 rounded-full bg-gray-400 mt-1.5 flex-shrink-0" />
-                                {text}
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
+            {/* 2. Photo Gallery (asymmetric grid, +N Photos) */}
+            <div className="flex flex-col items-center mt-2 sm:mt-4">
+              <span className="bg-rose-50 text-rose-500 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-inner">Gallery</span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 sm:mb-8 text-neutral-900">Captured Moments</h2>
+              <div className="w-full grid grid-cols-2 sm:grid-cols-2 gap-2 sm:gap-4 lg:px-6 grid-rows-[1fr_1fr_auto] sm:grid-rows-none">
+                {/* Left: big image (mobile row-span-2, sm single row) */}
+                <div className="relative row-span-2 sm:row-span-1 h-48 min-h-[180px] sm:min-h-0 sm:h-80 w-full rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-sm">
+                  {mainImage ? (
+                    <Image src={mainImage} alt={tour.title} fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="(max-width:640px) 50vw, 50vw" />
+                  ) : (
+                    <div className="w-full h-full bg-neutral-200" />
+                  )}
+                </div>
+                {/* Mobile only: right top small */}
+                <div className="relative h-24 min-h-[90px] sm:hidden w-full rounded-xl overflow-hidden shadow-sm">
+                  {sub1 ? (
+                    <Image src={sub1} alt="" fill className="object-cover" sizes="50vw" />
+                  ) : (
+                    <div className="w-full h-full bg-neutral-200" />
+                  )}
+                </div>
+                {/* Mobile only: right bottom small */}
+                <div className="relative h-24 min-h-[90px] sm:hidden w-full rounded-xl overflow-hidden shadow-sm">
+                  {sub2 ? (
+                    <Image src={sub2} alt="" fill className="object-cover" sizes="50vw" />
+                  ) : (
+                    <div className="w-full h-full bg-neutral-200" />
+                  )}
+                </div>
+                {/* sm+: right column (two stacked + overlay on bottom) */}
+                <div className="hidden sm:grid sm:grid-rows-2 sm:gap-4 sm:h-80 w-full">
+                  <div className="relative w-full h-full rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-sm">
+                    {sub1 ? (
+                      <Image src={sub1} alt="" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="50vw" />
+                    ) : (
+                      <div className="w-full h-full bg-neutral-200" />
                     )}
                   </div>
-                </CollapsibleSection>
-            )}
+                  <div className="relative w-full h-full rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-sm cursor-pointer group">
+                    {nextGalleryImage ? (
+                      <Image src={nextGalleryImage} alt="" fill className="object-cover" sizes="50vw" />
+                    ) : (
+                      <div className="w-full h-full bg-neutral-200" />
+                    )}
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-colors">
+                      <span className="text-white font-extrabold text-lg tracking-wide">+{Math.max(0, imageCount - 3)} Photos</span>
+                    </div>
+                  </div>
+                </div>
+                {/* Mobile only: +N Photos card full width below (배경: 갤러리 다음 사진) */}
+                <div className="col-span-2 row-start-3 sm:hidden relative h-24 min-h-[90px] w-full rounded-xl overflow-hidden shadow-sm cursor-pointer group flex items-center justify-center bg-neutral-200">
+                  {nextGalleryImage ? (
+                    <>
+                      <Image src={nextGalleryImage} alt="" fill className="object-cover" sizes="100vw" />
+                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-colors z-[1]" />
+                    </>
+                  ) : null}
+                  <span className={`relative z-10 font-extrabold text-lg tracking-wide ${nextGalleryImage ? 'text-white drop-shadow-md' : 'text-neutral-600'}`}>+{Math.max(0, imageCount - 3)} Photos</span>
+                </div>
+              </div>
+            </div>
 
-            {/* Highlights (제주/부산 프라이빗만 'Hotel pickup & drop-off' 항목 표시) */}
-            {highlightsToShow.length > 0 && (
-              <CollapsibleSection title={t('tour.highlights')} defaultOpen={true}>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  {highlightsToShow.map((highlight, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-gray-300 mt-1.5 flex-shrink-0" />
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CollapsibleSection>
-            )}
+            {/* 3. The Adventure Unfolds (Timeline) */}
+            <div className="flex flex-col items-center" id="details-content">
+              <span className="bg-sky-50 text-sky-400 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-inner">Your Day at a Glance</span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold mb-2 text-center text-neutral-900">The Adventure Unfolds</h2>
+              <p className="text-sm sm:text-base text-neutral-500 font-medium text-center mb-8 sm:mb-12">A cinematic day trip through Korea&apos;s most iconic landscapes</p>
+              {tour.pickupPoints?.length > 0 && (
+                <p className="text-sm text-neutral-500 mb-4">{tour.pickupPoints.length} pickup points / 픽업지역 {tour.pickupPoints.length}개</p>
+              )}
+              {destinationItems.length === 0 ? (
+                <p className="text-neutral-500 text-sm">{t('tour.itinerary')} — {t('tour.noPickupPoints') || 'No schedule data.'}</p>
+              ) : (
+                <div className="w-full max-w-4xl relative border-l-2 border-neutral-200 ml-4 sm:ml-8 space-y-8 sm:space-y-12" id="tour-timeline">
+                  {destinationItems.map((step, index) => {
+                    const descId = `desc-${index}`;
+                    const isExpanded = readMoreExpanded[descId];
+                    const hasDescription = step.description.length > 0;
+                    const dotColor = timelineDotColors[index % timelineDotColors.length];
+                    const stepImage = step.image || mainImage;
+                    return (
+                      <div key={index} className="pl-6 sm:pl-8 relative w-full">
+                        <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full shadow-sm border-4 border-[#F9FAFB]" style={{ backgroundColor: dotColor }} />
+                        <div className="font-extrabold text-xs sm:text-sm text-neutral-900 mb-2 sm:mb-3">{step.time || '—'}</div>
+                        <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm overflow-hidden border-l-4" style={{ borderLeftColor: dotColor }}>
+                          <div className="relative h-48 sm:h-56 w-full">
+                            {stepImage ? (
+                              <Image src={stepImage} alt={step.title} fill className="object-cover" sizes="(max-width:640px) 100vw, 672px" />
+                            ) : (
+                              <div className="w-full h-full bg-neutral-200" />
+                            )}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4 sm:p-6">
+                              <h3 className="font-extrabold text-white text-lg sm:text-2xl drop-shadow-md tracking-tight">{step.title}</h3>
+                            </div>
+                          </div>
+                          <div className="p-4 sm:p-6">
+                            <div className={`text-xs sm:text-sm text-neutral-600 leading-relaxed font-medium transition-all duration-300 ${isExpanded ? '' : 'line-clamp-1'}`} id={descId}>
+                              {step.description || '—'}
+                            </div>
+                            {hasDescription && (
+                              <button type="button" onClick={() => toggleReadMore(descId)} className="mt-2 text-sky-600 font-bold text-[11px] sm:text-xs hover:text-sky-800 transition-colors focus:outline-none">
+                                {isExpanded ? '접기' : '더 보기'}
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
 
-            {/* FAQ (아코디언) */}
-            {tour.faqs && tour.faqs.length > 0 && (
-              <CollapsibleSection title={t('tour.faq')} defaultOpen={false}>
-                <FaqAccordion items={tour.faqs} />
-              </CollapsibleSection>
-            )}
-
-            {/* 아동 자격 / Children's eligibility */}
-            {tour.childEligibility && tour.childEligibility.length > 0 && (
-              <CollapsibleSection title="儿童资格 / Child eligibility" defaultOpen={false}>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  {tour.childEligibility.map((rule, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 flex-shrink-0" />
-                      {formatChildEligibilityRule(rule, 'ko')}
-                    </li>
-                  ))}
-                </ul>
-              </CollapsibleSection>
-            )}
-
-            {/* 권장 휴대품 / Suggested to bring */}
-            {tour.suggestedToBring && tour.suggestedToBring.length > 0 && (
-              <CollapsibleSection title="建议携带 / Suggested to bring" defaultOpen={false}>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  {tour.suggestedToBring.filter(Boolean).map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </CollapsibleSection>
-            )}
-
-            {/* 접근성 시설 / Accessibility */}
-            {tour.accessibilityFacilities && (tour.accessibilityFacilities.note_children_counted || tour.accessibilityFacilities.child_seat || tour.accessibilityFacilities.stroller_wheelchair) && (
-              <CollapsibleSection title="无障碍设施 / Accessibility" defaultOpen={false}>
-                <div className="space-y-3 text-sm text-gray-700">
-                  {tour.accessibilityFacilities.note_children_counted && (
-                    <p className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 flex-shrink-0" />
-                      注意:婴幼儿和儿童将被计为乘客人数
-                    </p>
+            {/* 4. Meeting & Pickup */}
+            <div className="flex flex-col items-center" id="pickup-info">
+              <span className="bg-indigo-50 text-indigo-500 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-inner">Logistics</span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 sm:mb-8 text-neutral-900">Meeting & Pickup</h2>
+              <div className="w-full bg-white rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-8 shadow-sm border border-neutral-100 flex flex-col lg:flex-row gap-8 items-stretch lg:px-8">
+                <div className="flex-1 flex flex-col justify-center space-y-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
+                      <MapPin className="w-5 h-5 text-indigo-500" />
+                    </div>
+                    <h3 className="font-extrabold text-lg sm:text-xl text-neutral-900">Pickup Points</h3>
+                  </div>
+                  {tour.pickupPoints?.length > 0 ? (
+                    <ul className="space-y-4">
+                      {tour.pickupPoints.map((point, idx) => {
+                        const timeStr = point.pickup_time ? String(point.pickup_time).replace(/(\d{1,2}:\d{2})(:\d{2})?$/, '$1') : '';
+                        return (
+                          <li key={point.id || idx} className="flex items-center gap-4 p-4 rounded-2xl bg-[#F9F8F6] border border-neutral-100 transition-colors hover:border-indigo-200">
+                            <div className="w-6 h-6 rounded-full bg-white border border-neutral-200 flex items-center justify-center font-bold text-xs shrink-0 text-neutral-700 shadow-sm">{idx + 1}</div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="font-bold text-sm text-neutral-900">{point.name}</h4>
+                              <p className="text-xs text-neutral-500 mt-1 font-medium">{timeStr || (point.address ?? '')}</p>
+                            </div>
+                            <div className="w-20 h-14 sm:w-24 sm:h-16 rounded-xl overflow-hidden bg-neutral-200 border border-neutral-100 shrink-0 flex items-center justify-center">
+                              {point.image_url ? (
+                                <Image src={point.image_url} alt={point.name} width={96} height={64} className="w-full h-full object-cover" />
+                              ) : (
+                                <span className="text-[10px] font-medium text-neutral-400">Photo</span>
+                              )}
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  ) : (
+                    <ul className="text-sm text-neutral-600 leading-relaxed space-y-2 list-none">
+                      <li className="flex items-start gap-2">
+                        <span className="text-base shrink-0">⏰</span>
+                        <span><strong className="text-neutral-800 font-semibold">Arrive 10 min early</strong> — Spots can get busy.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-base shrink-0">⚠️</span>
+                        <span><strong className="text-neutral-800 font-semibold">No-show after 10 min</strong> — Refunds may not be available.</span>
+                      </li>
+                    </ul>
                   )}
-                  {tour.accessibilityFacilities.child_seat && (
-                    <p className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 flex-shrink-0" />
-                      {CHILD_SEAT_OPTIONS.find((o) => o.value === tour.accessibilityFacilities?.child_seat)?.labelKo ||
-                        tour.accessibilityFacilities.child_seat}
-                      {tour.accessibilityFacilities.child_seat === 'custom' && tour.accessibilityFacilities.child_seat_custom && (
-                        <span>
-                          {' '}({tour.accessibilityFacilities.child_seat_custom.num1}–{tour.accessibilityFacilities.child_seat_custom.num2}岁, 身高{tour.accessibilityFacilities.child_seat_custom.num3}cm以下)
-                        </span>
-                      )}
-                    </p>
-                  )}
-                  {tour.accessibilityFacilities.stroller_wheelchair && (
-                    <p className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 flex-shrink-0" />
-                      {STROLLER_WHEELCHAIR_OPTIONS.find((o) => o.value === tour.accessibilityFacilities?.stroller_wheelchair)?.labelKo ||
-                        tour.accessibilityFacilities.stroller_wheelchair}
-                    </p>
+                  <div className="bg-indigo-50/50 rounded-xl p-4 flex items-center gap-3 mt-2">
+                    <Navigation className="w-5 h-5 text-indigo-400 shrink-0" />
+                    <span className="text-xs font-medium text-neutral-600 leading-relaxed">Exact pickup times will be communicated 1 day prior to the tour.</span>
+                  </div>
+                </div>
+                <div className="flex-1 w-full min-h-[250px]">
+                  {tour.pickupPoints?.length > 0 && (() => {
+                    const pointsWithCoords = tour.pickupPoints.filter((p: any) => typeof p.lat === 'number' && typeof p.lng === 'number' && !Number.isNaN(p.lat) && !Number.isNaN(p.lng));
+                    return pointsWithCoords.length > 0 ? (
+                      <div className="w-full h-full min-h-[250px] rounded-[1.5rem] overflow-hidden shadow-inner border border-neutral-100">
+                        <InteractiveMap
+                          locations={pointsWithCoords.map((p: any) => ({ id: p.id, name: p.name, address: p.address, lat: p.lat, lng: p.lng }))}
+                          height="280px"
+                          zoom={11}
+                        />
+                      </div>
+                    ) : (
+                      <img
+                        src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80"
+                        alt="Map Location"
+                        className="w-full h-full min-h-[250px] object-cover rounded-[1.5rem] shadow-inner border border-neutral-100"
+                      />
+                    );
+                  })()}
+                  {!tour.pickupPoints?.length && (
+                    <img
+                      src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80"
+                      alt="Map Location Placeholder"
+                      className="w-full h-full min-h-[250px] object-cover rounded-[1.5rem] shadow-inner border border-neutral-100"
+                    />
                   )}
                 </div>
-              </CollapsibleSection>
-            )}
-
-            {/* Reviews */}
-            <div className="rounded-2xl border border-gray-200/50 bg-white shadow-[0_2px_16px_rgba(0,0,0,0.06),0_1px_6px_rgba(0,0,0,0.03)] p-4 sm:p-5">
-              <TourReviewsSection tourId={tour.id} tourTitle={tour.title} />
+              </div>
             </div>
 
-            {/* 7. Meeting Point */}
-            <MeetingPoint points={tour.pickupPoints} />
-
-            {/* Mobile: Booking Section (scroll target) */}
-            <div ref={bookingRef} className="lg:hidden">
-              <EnhancedBookingSidebar tour={tour} />
+            {/* 5. At a Glance (맨 아래) */}
+            <div className="flex flex-col items-center">
+              <span className="bg-yellow-50 text-amber-500 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-inner">Quick Info</span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 sm:mb-8 text-neutral-900">At a Glance</h2>
+              <div className="w-full grid grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4 lg:px-6">
+                <div className="bg-white rounded-[1.5rem] sm:rounded-[2rem] p-4 sm:p-6 flex flex-col items-center justify-center text-center shadow-sm border border-neutral-100">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-orange-50 flex items-center justify-center mb-2 sm:mb-3 shadow-inner">
+                    <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
+                  </div>
+                  <span className="text-[9px] sm:text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1">Duration</span>
+                  <span className="font-extrabold text-sm sm:text-base text-neutral-900">{tour.duration || '—'}</span>
+                </div>
+                <div className="bg-white rounded-[1.5rem] sm:rounded-[2rem] p-4 sm:p-6 flex flex-col items-center justify-center text-center shadow-sm border border-neutral-100">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-sky-50 flex items-center justify-center mb-2 sm:mb-3 shadow-inner">
+                    <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-sky-500" />
+                  </div>
+                  <span className="text-[9px] sm:text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1">Languages</span>
+                  <span className="font-extrabold text-xs sm:text-base text-neutral-900">En, 中文, KR</span>
+                </div>
+              </div>
+              <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:px-6">
+                <div className="bg-[#F0FDF4] rounded-[1.5rem] sm:rounded-[2rem] p-5 sm:p-6 border border-emerald-100/50 shadow-sm">
+                  <h3 className="font-bold flex items-center gap-2 mb-3 sm:mb-4 text-sm sm:text-base text-neutral-900">
+                    <Check className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500" /> {t('tour.included')}
+                  </h3>
+                  <ul className="space-y-2 sm:space-y-3">
+                    {(tour.inclusions?.length ? tour.inclusions : ['Round-trip Transport', 'Professional Guide']).map((item: string | { text?: string }, i: number) => (
+                      <li key={i} className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-neutral-700 font-medium">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" /> {typeof item === 'string' ? item : (item as { text?: string }).text}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="bg-[#FEF2F2] rounded-[1.5rem] sm:rounded-[2rem] p-5 sm:p-6 border border-red-100/50 shadow-sm">
+                  <h3 className="font-bold flex items-center gap-2 mb-3 sm:mb-4 text-sm sm:text-base text-neutral-900">
+                    <X className="w-4 h-4 sm:w-5 sm:h-5 text-red-500" /> {t('tour.notIncluded')}
+                  </h3>
+                  <ul className="space-y-2 sm:space-y-3">
+                    {(tour.exclusions?.length ? tour.exclusions : ['Personal Expenses', 'Meals & Snacks']).map((item: string | { text?: string }, i: number) => (
+                      <li key={i} className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-neutral-700 font-medium">
+                        <div className="w-1.5 h-1.5 rounded-full bg-red-400 shrink-0" /> {typeof item === 'string' ? item : (item as { text?: string }).text}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Right Column: Desktop Booking Sidebar (sticky on scroll) */}
-          <div className="hidden lg:block">
-            <div className="lg:sticky lg:top-24">
-              <EnhancedBookingSidebar tour={tour} />
-            </div>
-          </div>
-        </div>
+        <div className="bottom-section bg-neutral-50 border-t border-neutral-200">
+          <section className="tour-reviews-section" aria-label="Reviews">
+            <TourReviewsSection tourId={tour.id} tourTitle={tour.title} />
+          </section>
 
-        {/* Mobile: Sticky price bar — 클룩/애플 스타일 */}
-        <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden flex items-center justify-between gap-4 px-4 py-3.5 bg-white/95 backdrop-blur-md border-t border-gray-200/80 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] safe-area-pb">
-          <div>
-            <p className="text-[10px] text-gray-500 uppercase tracking-widest font-medium">From</p>
-            <p className="text-lg font-bold text-gray-900 tracking-tight">
-              {formatPrice(tour.originalPrice && tour.originalPrice > tour.price ? tour.price : tour.price)}
-              {tour.originalPrice != null && tour.originalPrice > tour.price && (
-                <span className="ml-2 text-sm font-normal text-gray-400 line-through">{formatPrice(tour.originalPrice)}</span>
+          {highlightsToShow.length > 0 && (
+            <section className="bottom-section-card">
+              <button
+                type="button"
+                className="bottom-section-card-head"
+                onClick={() => toggleBottomSection('highlights')}
+                aria-expanded={bottomSectionOpen['highlights']}
+              >
+                <h2>Highlights</h2>
+                <span className="bottom-section-card-icon" aria-hidden>
+                  {bottomSectionOpen['highlights'] ? '▼' : '▶'}
+                </span>
+              </button>
+              {bottomSectionOpen['highlights'] && (
+                <div className="bottom-section-card-body">
+                  <ul style={{ margin: 0, paddingLeft: 20, color: 'var(--cro-text-light)', fontSize: 14, lineHeight: 1.8 }}>
+                    {highlightsToShow.map((h, i) => (
+                      <li key={i} style={{ marginBottom: i < highlightsToShow.length - 1 ? 10 : 0 }}>{h}</li>
+                    ))}
+                  </ul>
+                </div>
               )}
-            </p>
-          </div>
-          <button
-            onClick={handleCheckAvailability}
-            className="flex-1 max-w-[200px] py-3.5 px-5 rounded-xl bg-gray-900 text-white text-sm font-semibold hover:bg-gray-800 active:scale-[0.98] transition-all shadow-lg"
-          >
-            {t('tour.checkAvailability')}
-          </button>
+            </section>
+          )}
+
+          {tour.overview && (
+            <section className="bottom-section-card">
+              <button
+                type="button"
+                className="bottom-section-card-head"
+                onClick={() => toggleBottomSection('description')}
+                aria-expanded={bottomSectionOpen['description']}
+              >
+                <h2>Full Description</h2>
+                <span className="bottom-section-card-icon" aria-hidden>
+                  {bottomSectionOpen['description'] ? '▼' : '▶'}
+                </span>
+              </button>
+              {bottomSectionOpen['description'] && (
+                <div className="bottom-section-card-body" style={{ lineHeight: 1.85 }}>
+                  <TourOverviewContent content={tour.overview} />
+                </div>
+              )}
+            </section>
+          )}
+
+          {tour.faqs && tour.faqs.length > 0 && (
+            <section className="bottom-section-card">
+              <button
+                type="button"
+                className="bottom-section-card-head"
+                onClick={() => toggleBottomSection('faq')}
+                aria-expanded={bottomSectionOpen['faq']}
+              >
+                <h2>FAQ</h2>
+                <span className="bottom-section-card-icon" aria-hidden>
+                  {bottomSectionOpen['faq'] ? '▼' : '▶'}
+                </span>
+              </button>
+              {bottomSectionOpen['faq'] && (
+                <div className="bottom-section-card-body" style={{ lineHeight: 1.85 }}>
+                  <FaqAccordion items={tour.faqs} />
+                </div>
+              )}
+            </section>
+          )}
+
+          <section className="bottom-section-card">
+            <button
+              type="button"
+              className="bottom-section-card-head"
+              onClick={() => toggleBottomSection('warnings')}
+              aria-expanded={bottomSectionOpen['warnings']}
+            >
+              <h2>Important Notes</h2>
+              <span className="bottom-section-card-icon" aria-hidden>
+                {bottomSectionOpen['warnings'] ? '▼' : '▶'}
+              </span>
+            </button>
+            {bottomSectionOpen['warnings'] && (
+              <div className="bottom-section-card-body">
+                <ImportantNotesContent />
+              </div>
+            )}
+          </section>
+
+          {tour.childEligibility && tour.childEligibility.length > 0 && (
+            <section className="bottom-section-card">
+              <button
+                type="button"
+                className="bottom-section-card-head"
+                onClick={() => toggleBottomSection('child')}
+                aria-expanded={bottomSectionOpen['child']}
+              >
+                <h2>儿童资格 / Child eligibility</h2>
+                <span className="bottom-section-card-icon" aria-hidden>
+                  {bottomSectionOpen['child'] ? '▼' : '▶'}
+                </span>
+              </button>
+              {bottomSectionOpen['child'] && (
+                <div className="bottom-section-card-body">
+                  <ul style={{ margin: 0, paddingLeft: 20, fontSize: 14, color: 'var(--cro-text-light)' }}>
+                    {tour.childEligibility.map((rule, idx) => <li key={idx}>{formatChildEligibilityRule(rule, 'ko')}</li>)}
+                  </ul>
+                </div>
+              )}
+            </section>
+          )}
         </div>
 
-        {/* Desktop: Action buttons */}
-        <div className="hidden md:block">
-          <ActionButtons
-            tourId={tour.id}
-            onCheckAvailability={handleCheckAvailability}
-            onShare={handleShare}
-          />
+            </div>
+
+            {/* ================= RIGHT / CHECKOUT FORM (Desktop Sticky) ================= */}
+            <div ref={bookingRef} className="lg:w-1/3 mt-4 lg:mt-0">
+              <div className="sticky top-8 bg-white p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-neutral-100 overflow-hidden">
+                <EnhancedBookingSidebar tour={tour} />
+              </div>
+            </div>
+        </div>
+
+        {/* ================= MOBILE STICKY BOTTOM BAR (Glassmorphism) ================= */}
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-t border-neutral-200/50 p-4 safe-area-pb shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
+          <div className="flex items-center justify-between gap-4 max-w-md mx-auto">
+            <div className="flex-1">
+              <div className="flex items-baseline space-x-1">
+                <span className="text-lg font-bold text-neutral-900">
+                  {formatPrice(tour.originalPrice && tour.originalPrice > tour.price ? tour.price : tour.price)}
+                </span>
+                <span className="text-xs text-neutral-500 font-medium">/ person</span>
+              </div>
+              <p className="text-[10px] text-emerald-600 font-medium mt-0.5">Deposit Today</p>
+            </div>
+            <button type="button" onClick={handleCheckAvailability} className="flex-1 bg-neutral-900 text-white rounded-xl py-4 font-bold tracking-wide flex items-center justify-center space-x-2 hover:bg-neutral-800 transition-colors shadow-lg shadow-neutral-900/20">
+              <span>Book Now</span>
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </main>
-        <Footer />
-        <BottomNav />
-      <div className="h-24 md:h-20 md:hidden" />
+      <Footer />
+      <BottomNav />
+      <div className="h-28 md:hidden" />
     </div>
   );
 }

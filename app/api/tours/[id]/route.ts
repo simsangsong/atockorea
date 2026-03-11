@@ -244,14 +244,21 @@ export const GET = withErrorHandler(async (
       })),
       faqs,
       highlights: highlights.length > 0 ? highlights : (Array.isArray(tour.highlights) ? tour.highlights : []),
-      itineraryDetails: Array.isArray(tour.itinerary_details)
-        ? (tour.itinerary_details as any[]).map((item: any) => ({
-            time: item.time ?? '',
-            activity: item.activity ?? item.title ?? '',
-            description: item.description ?? '',
+      itineraryDetails: (() => {
+        const base = Array.isArray(tour.itinerary_details) ? (tour.itinerary_details as any[]) : [];
+        const trList = Array.isArray(tr?.itinerary_details) ? (tr.itinerary_details as any[]) : [];
+        if (base.length === 0) return undefined;
+        return base.map((item: any, i: number) => {
+          const t = trList[i];
+          return {
+            time: (t?.time ?? item.time) ?? '',
+            activity: (t?.activity ?? item.activity ?? item.title) ?? '',
+            description: (t?.description ?? item.description) ?? '',
             images: Array.isArray(item.images) ? item.images : undefined,
-          }))
-        : undefined,
+          };
+        });
+      })(),
+      schedule_hero_image_url: tour.schedule_hero_image_url ?? null,
       seoTitle: tour.seo_title ?? null,
       metaDescription: tour.meta_description ?? null,
       childEligibility: Array.isArray(tour.child_eligibility) ? tour.child_eligibility : [],
@@ -300,6 +307,7 @@ export const PATCH = withErrorHandler(async (
     if (body.is_active !== undefined) updateData.is_active = body.is_active;
     if (body.is_featured !== undefined) updateData.is_featured = body.is_featured;
     if (body.gallery_images !== undefined) updateData.gallery_images = body.gallery_images;
+    if (body.schedule_hero_image_url !== undefined) updateData.schedule_hero_image_url = body.schedule_hero_image_url;
     if (body.highlights !== undefined) updateData.highlights = body.highlights;
     if (body.includes !== undefined) updateData.includes = body.includes;
     if (body.excludes !== undefined) updateData.excludes = body.excludes;

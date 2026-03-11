@@ -17,6 +17,7 @@ interface Tour {
   price_type: 'person' | 'group';
   image_url: string;
   gallery_images?: Array<string | { url: string; title?: string; description?: string }>;
+  schedule_hero_image_url?: string | null;
   tag?: string;
   subtitle?: string;
   description?: string;
@@ -59,6 +60,7 @@ interface Tour {
     includes?: string[];
     excludes?: string[];
     schedule?: Array<{ time: string; title: string; description: string; images?: string[] }>;
+    itinerary_details?: Array<{ time: string; activity: string; description: string; images?: string[] }>;
     faqs?: Array<{ question: string; answer: string }>;
     pickup_points?: Array<{ id: string; name: string }>;
   }>;
@@ -175,6 +177,7 @@ export default function ProductsPage() {
       price_type: tour.price_type,
       image_url: tour.image_url,
       gallery_images: tour.gallery_images || [],
+      schedule_hero_image_url: tour.schedule_hero_image_url ?? undefined,
       tag: tour.tag,
       subtitle: tour.subtitle,
       description: tour.description,
@@ -1529,6 +1532,27 @@ export default function ProductsPage() {
               {activeTab === 'itinerary' && (
                 <div className="space-y-6">
                   <section className="rounded-2xl border border-gray-200/80 bg-white p-6 shadow-sm">
+                    <h3 className="text-sm font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                      <span className="text-indigo-600">🖼️</span> 일정표 히어로 이미지
+                    </h3>
+                    <p className="text-xs text-gray-500 mb-3">상세페이지 일정표 상단 배너(16:9)에 사용됩니다. 비워두면 갤러리 첫 이미지를 사용합니다.</p>
+                    <div className="flex flex-col gap-2">
+                      <input
+                        type="url"
+                        value={formData.schedule_hero_image_url || ''}
+                        onChange={(e) => setFormData({ ...formData, schedule_hero_image_url: e.target.value || undefined })}
+                        placeholder="https://... (선택)"
+                        className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      />
+                      {formData.schedule_hero_image_url && (
+                        <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden bg-gray-100">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={formData.schedule_hero_image_url} alt="Schedule hero" className="w-full h-full object-cover" />
+                        </div>
+                      )}
+                    </div>
+                  </section>
+                  <section className="rounded-2xl border border-gray-200/80 bg-white p-6 shadow-sm">
                     <h3 className="text-sm font-semibold text-gray-900 mb-1 flex items-center gap-2">
                       <span className="text-indigo-600">🗓️</span> Schedule
                     </h3>
@@ -1804,6 +1828,7 @@ export default function ProductsPage() {
                       });
                       const arr = (key: 'highlights' | 'includes' | 'excludes') => tr[key] ?? formData[key] ?? [];
                       const scheduleArr = tr.schedule ?? formData.schedule ?? [];
+                      const itineraryDetailsArr = tr.itinerary_details ?? formData.itinerary_details ?? [];
                       const faqsArr = tr.faqs ?? formData.faqs ?? [];
                       const pickupPointsList = formData.pickup_points || [];
                       const trPickupPoints = tr.pickup_points ?? [];
@@ -1825,6 +1850,7 @@ export default function ProductsPage() {
                           includes: arr('includes') as string[],
                           excludes: arr('excludes') as string[],
                           schedule: scheduleArr.map((s: { time?: string; title?: string; description?: string }) => ({ time: s.time ?? '', title: s.title ?? '', description: s.description ?? '' })),
+                          itinerary_details: itineraryDetailsArr.map((d: { time?: string; activity?: string; description?: string }) => ({ time: d.time ?? '', activity: d.activity ?? '', description: d.description ?? '' })),
                           faqs: faqsArr.map((f: { question?: string; answer?: string }) => ({ question: f.question ?? '', answer: f.answer ?? '' })),
                         };
                         setLocaleBulkJson(JSON.stringify(obj, null, 2));
@@ -1857,6 +1883,12 @@ export default function ProductsPage() {
                         if (Array.isArray(parsed.schedule)) next.schedule = parsed.schedule.map((s: unknown) => {
                           const t = s && typeof s === 'object' ? s as Record<string, unknown> : {};
                           return { time: String(t.time ?? ''), title: String(t.title ?? ''), description: String(t.description ?? ''), images: [] };
+                        });
+                        if (Array.isArray(parsed.itinerary_details)) next.itinerary_details = parsed.itinerary_details.map((d: unknown, idx: number) => {
+                          const o = d && typeof d === 'object' ? d as Record<string, unknown> : {};
+                          const base = (formData.itinerary_details || [])[idx];
+                          const baseImages = base && typeof base === 'object' && Array.isArray((base as { images?: string[] }).images) ? (base as { images: string[] }).images : [];
+                          return { time: String(o.time ?? ''), activity: String(o.activity ?? ''), description: String(o.description ?? ''), images: baseImages };
                         });
                         if (Array.isArray(parsed.faqs)) next.faqs = parsed.faqs.map((f: unknown) => {
                           const o = f && typeof f === 'object' ? f as Record<string, unknown> : {};
@@ -1893,7 +1925,7 @@ export default function ProductsPage() {
                             <textarea
                               value={localeBulkJson}
                               onChange={(e) => { setLocaleBulkJson(e.target.value); setLocaleBulkError(null); }}
-                              placeholder='{"title":"...","pickup_info":"...","notes":"...","pickup_points":[{"id":"...","name":"..."}],"highlights":["..."],"schedule":[...],"faqs":[...]}'
+                              placeholder='{"title":"...","pickup_info":"...","notes":"...","pickup_points":[{"id":"...","name":"..."}],"highlights":["..."],"schedule":[...],"itinerary_details":[{"time":"09:00","activity":"...","description":"..."}],"faqs":[...]}'
                               rows={12}
                               className="w-full px-3 py-2 border border-gray-300 rounded-lg font-mono text-xs focus:ring-2 focus:ring-indigo-500"
                             />
@@ -1996,6 +2028,33 @@ export default function ProductsPage() {
                                 </div>
                               ))}
                               <button type="button" onClick={() => setTr('schedule', [...scheduleArr, { time: '', title: '', description: '', images: [] }])} className="text-indigo-600 text-sm font-medium hover:text-indigo-800">+ Add Schedule Item</button>
+                            </div>
+                          </div>
+                          {/* 일정 상세 (타임라인) - 상세페이지 타임라인 표시용 */}
+                          <div>
+                            <h4 className="text-xs font-semibold text-gray-600 mb-3 uppercase">일정 상세 · 타임라인 Itinerary details ({editLocale})</h4>
+                            <p className="text-xs text-gray-500 mb-3">상세페이지 타임라인에 표시되는 활동명·설명을 이 언어로 입력하세요. JSON 내보내기/적용에 포함됩니다.</p>
+                            <div className="space-y-3">
+                              {itineraryDetailsArr.map((item: { time?: string; activity?: string; description?: string; images?: string[] }, index: number) => (
+                                <div key={index} className="border border-gray-200 rounded-xl p-4 bg-gray-50/50">
+                                  <div className="grid grid-cols-3 gap-3 mb-2">
+                                    <div>
+                                      <label className="block text-xs font-medium text-gray-600 mb-1">Time</label>
+                                      <input type="text" value={item.time || ''} onChange={(e) => { const u = [...itineraryDetailsArr]; u[index] = { ...u[index], time: e.target.value }; setTr('itinerary_details', u); }} placeholder="09:00" className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
+                                    </div>
+                                    <div className="col-span-2">
+                                      <label className="block text-xs font-medium text-gray-600 mb-1">Activity</label>
+                                      <input type="text" value={item.activity || ''} onChange={(e) => { const u = [...itineraryDetailsArr]; u[index] = { ...u[index], activity: e.target.value }; setTr('itinerary_details', u); }} placeholder="e.g., Gamcheon Village" className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
+                                    </div>
+                                  </div>
+                                  <div className="mb-2">
+                                    <label className="block text-xs font-medium text-gray-600 mb-1">Description</label>
+                                    <textarea value={item.description || ''} onChange={(e) => { const u = [...itineraryDetailsArr]; u[index] = { ...u[index], description: e.target.value }; setTr('itinerary_details', u); }} rows={2} className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
+                                  </div>
+                                  <button type="button" onClick={() => setTr('itinerary_details', itineraryDetailsArr.filter((_: unknown, i: number) => i !== index))} className="text-red-600 text-sm hover:text-red-800">Remove</button>
+                                </div>
+                              ))}
+                              <button type="button" onClick={() => setTr('itinerary_details', [...itineraryDetailsArr, { time: '', activity: '', description: '', images: [] }])} className="text-indigo-600 text-sm font-medium hover:text-indigo-800">+ Add Itinerary detail</button>
                             </div>
                           </div>
                           {/* 콘텐츠: Highlights, Includes, Excludes, FAQs */}
