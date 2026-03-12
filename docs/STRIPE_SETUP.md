@@ -22,6 +22,9 @@ STRIPE_WEBHOOK_SECRET=whsec_xxxxxxxxxxxxx
 
 # App URL (웹훅 및 리다이렉트용)
 NEXT_PUBLIC_APP_URL=https://atockorea.com
+
+# (선택) AI 맞춤 조인 투어 결제용 투어 ID. DB의 tours 테이블에 "Custom Join Tour" 상품 한 건을 만든 뒤 해당 id를 넣으면, 일정 생성 후 결제창에서 Stripe 결제까지 진행됩니다. 없으면 발의만 저장되고 결제는 건너뜁니다.
+# NEXT_PUBLIC_CUSTOM_JOIN_TOUR_TOUR_ID=123
 ```
 
 ### Vercel 환경 변수

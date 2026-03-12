@@ -293,6 +293,22 @@ export default function SignUpPage() {
         return;
       }
 
+      // 커스텀 인증번호로 이미 이메일 검증했으므로, Supabase에서도 이메일 확정 처리해 로그인 가능하게 함
+      try {
+        const confirmRes = await fetch('/api/auth/confirm-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId: data.user.id, accessToken: accessToken ?? undefined }),
+        });
+        if (!confirmRes.ok) {
+          console.warn('[signup] confirm-email failed:', await confirmRes.text());
+        }
+      } catch (e) {
+        if (process.env.NODE_ENV === 'development') {
+          console.warn('[signup] confirm-email request failed:', e);
+        }
+      }
+
       setError('');
       alert('Account created successfully. You can sign in with your email and password.');
       router.push('/signin');

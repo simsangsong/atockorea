@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
+import { useTranslations } from '@/lib/i18n';
 
 export interface ReviewItem {
   id: string;
@@ -38,6 +39,7 @@ function StarRating({ value, size = 'md' }: { value: number; size?: 'sm' | 'md' 
 }
 
 export default function TourReviewsSection({ tourId, tourTitle, className = '' }: TourReviewsSectionProps) {
+  const t = useTranslations();
   const [reviews, setReviews] = useState<ReviewItem[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -64,7 +66,7 @@ export default function TourReviewsSection({ tourId, tourTitle, className = '' }
     <div className={className}>
       <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
         <h2 className="text-lg font-semibold text-gray-900">
-          Reviews
+          {t('tour.reviews')}
           {reviews.length > 0 && (
             <span className="ml-2 text-sm font-normal text-gray-500">({reviews.length})</span>
           )}
@@ -77,7 +79,7 @@ export default function TourReviewsSection({ tourId, tourTitle, className = '' }
         </div>
       ) : reviews.length === 0 ? (
         <div className="py-8 text-center text-gray-500 text-sm rounded-2xl bg-gray-50/80 border border-gray-100">
-          No reviews yet for this tour.
+          {t('tour.noReviewsYet')}
         </div>
       ) : (
         <ul className="space-y-5">

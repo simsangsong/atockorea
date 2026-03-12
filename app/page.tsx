@@ -2,7 +2,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
 import HeroSection from '@/components/HeroSection';
-import HeroPaymentStrip from '@/components/HeroPaymentStrip';
 import CompactTrustBar from '@/components/CompactTrustBar';
 import DestinationsCards from '@/components/DestinationsCards';
 import HomeTourSections from '@/components/HomeTourSections';
@@ -25,7 +24,6 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroSection />
-        <HeroPaymentStrip />
         <CompactTrustBar />
         <DestinationsCards />
         <HomeTourSections />

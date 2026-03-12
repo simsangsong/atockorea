@@ -34,8 +34,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'GEMINI_API_KEY is not configured.' }, { status: 500 });
     }
 
-    // STEP 1: Gemini 1.5 Flash — draft itinerary
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    // STEP 1: Gemini — draft itinerary (2.5-flash: 무료 등급 한도 사용)
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     const geminiPrompt = `Create a luxury travel itinerary in Jeju for a ${durationNum}-day trip with a "${theme}" theme. Return strictly a JSON object with a single key "places", which is an array of objects, each with "name" and "address" (full address in Jeju, South Korea). Example: {"places":[{"name":"Seongsan Ilchulbong","address":"284 Ilchul-ro, Seogwipo-si, Jeju-do"}]}. Return only valid JSON, no markdown or code fences.`;
     const geminiResult = await model.generateContent(geminiPrompt);
     const rawText = geminiResult.response.text();

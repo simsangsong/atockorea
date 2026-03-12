@@ -4,14 +4,13 @@ import { useTranslations } from '@/lib/i18n';
 
 type IconType = 'star' | 'hotel' | 'card' | 'pin' | 'badge' | 'people' | 'currency' | 'chart';
 
-/** Three cards only, 2 items per card. First card: Transparent Pricing + Secure payment; then Local guides + Licensed; then Certified + Lower prices. */
-const ITEMS: Array<{ icon: IconType; titleKey: string }> = [
+/** 5개 트러스트 항목 (Transparent Pricing 중복 제거) */
+const TRUST_ITEMS: Array<{ icon: IconType; titleKey: string }> = [
   { icon: 'currency', titleKey: 'home.heroTrustBar.transparentPricingTitle' },
   { icon: 'card', titleKey: 'home.heroTrustBar.securePaymentTitle' },
   { icon: 'pin', titleKey: 'home.heroTrustBar.localGuidesTitle' },
   { icon: 'badge', titleKey: 'trustBar.licensedAgencies' },
   { icon: 'people', titleKey: 'trustBar.certifiedGuides' },
-  { icon: 'chart', titleKey: 'trustBar.lowerPrices' },
 ];
 
 function Icon({ type }: { type: IconType }) {
@@ -31,28 +30,43 @@ export default function CompactTrustBar() {
   const t = useTranslations();
 
   return (
-    <section className="py-4 sm:py-6 border-b border-gray-100 bg-slate-50/50" aria-label="Why book with us">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
-          {[0, 1, 2].map((boxIndex) => (
-            <div
-              key={boxIndex}
-              className="rounded-xl border border-gray-200/80 bg-white p-3 sm:p-4 shadow-sm hover:shadow-md hover:border-gray-300/80 transition-all duration-200"
-            >
-              <div className="flex flex-col gap-3">
-                {ITEMS.slice(boxIndex * 2, boxIndex * 2 + 2).map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 min-h-[1.75rem]">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center">
-                      <Icon type={item.icon} />
-                    </div>
-                    <p className="text-[11px] sm:text-sm font-bold text-gray-800 leading-snug flex-1 min-w-0">
-                      {t(item.titleKey)}
-                    </p>
-                  </div>
-                ))}
-              </div>
+    <section className="relative z-10 py-4 sm:py-6 -mt-6" aria-label="Why book with us">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="bg-white/70 backdrop-blur-md border border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-2xl p-4 sm:p-5">
+          {/* 결제 옵션: 한 줄로 정리 */}
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 mb-4 sm:mb-5 pb-4 sm:pb-5 border-b border-slate-200/60">
+            <p className="text-xs font-semibold text-slate-700 w-full sm:w-auto text-center sm:text-left">
+              {t('home.payment.highlightBenefit')}
+            </p>
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 w-full sm:w-auto">
+              <span className="inline-flex items-center gap-1.5 rounded-lg bg-blue-50 border border-blue-200/70 px-2.5 py-1.5 text-xs font-semibold text-blue-800">
+                <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                {t('home.payment.depositCash')}
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-lg bg-orange-50 border border-orange-200/70 px-2.5 py-1.5 text-xs font-semibold text-orange-800">
+                <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                </svg>
+                {t('home.payment.fullAmount')}
+              </span>
             </div>
-          ))}
+          </div>
+
+          {/* 트러스트 5항목: 동일 스타일 그리드 */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
+            {TRUST_ITEMS.map((item, i) => (
+              <div key={i} className="flex items-center gap-2.5 min-w-0">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center [&_svg]:text-slate-600">
+                  <Icon type={item.icon} />
+                </div>
+                <p className="text-xs font-semibold text-slate-700 leading-tight truncate">
+                  {t(item.titleKey)}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

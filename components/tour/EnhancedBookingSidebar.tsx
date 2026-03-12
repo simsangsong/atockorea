@@ -8,9 +8,23 @@ import { useTranslations } from '@/lib/i18n';
 import { useCurrencyOptional } from '@/lib/currency';
 import 'react-datepicker/dist/react-datepicker.css';
 
+function isJejuPrivateCarTour(title: string | undefined): boolean {
+  if (!title || typeof title !== 'string') return false;
+  const s = title.toLowerCase().trim();
+  return (
+    /jeju\s+private\s+car|private\s+car\s+charter/i.test(s) ||
+    /제주\s*프라이빗\s*차|프라이빗\s*차\s*차터/i.test(s) ||
+    /济州\s*私人\s*包车|济州\s*私人\s*汽车|私人\s*包车|私人\s*汽车/i.test(s) ||
+    /濟州\s*私人\s*包車|私人\s*包車/i.test(s) ||
+    /済州\s*プライベート|プライベート\s*チャーター|済州\s*貸切/i.test(s) ||
+    /jeju\s+coche\s+privado|charter\s+privado/i.test(s)
+  );
+}
+
 interface EnhancedBookingSidebarProps {
   tour: {
     id: string | number;
+    title?: string;
     price: number;
     originalPrice?: number | null;
     priceType: 'person' | 'group';
@@ -115,9 +129,19 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
     }
   }, [selectedDate, guestCount, tour.id]);
 
+  const isJejuPriceOverride = isJejuPrivateCarTour(tour.title) && (preferredLanguage === 'en' || preferredLanguage === 'zh');
   const hasDiscount = tour.originalPrice !== null && tour.originalPrice !== undefined && tour.originalPrice > tour.price;
   const discount = hasDiscount && tour.originalPrice ? tour.originalPrice - tour.price : 0;
   const discountPercent = hasDiscount && tour.originalPrice ? Math.round((discount / tour.originalPrice) * 100) : 0;
+  // 제주: 원가 45만원 고정, 할인율 표시 (영어 35만 → 22%, 중국어 25만 → 44%)
+  const JEJU_ORIGINAL_PRICE = 450000;
+  const jejuDiscountPercent = isJejuPriceOverride
+    ? preferredLanguage === 'en'
+      ? Math.round(((JEJU_ORIGINAL_PRICE - 350000) / JEJU_ORIGINAL_PRICE) * 100)
+      : Math.round(((JEJU_ORIGINAL_PRICE - 250000) / JEJU_ORIGINAL_PRICE) * 100)
+    : 0;
+  const showOriginalPrice = hasDiscount && tour.originalPrice && !isJejuPriceOverride ? true : isJejuPriceOverride;
+  const displayOriginalPrice = isJejuPriceOverride ? JEJU_ORIGINAL_PRICE : (hasDiscount ? tour.originalPrice! : 0);
   
   // Format price in current currency (USD/KRW with real-time rate)
   const formatPrice = (price: number) => {
@@ -132,11 +156,19 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
   const subtotal = tour.priceType === 'person' ? effectivePrice * guestCount : effectivePrice;
   const promoDiscount = promoCode === 'SAVE10' ? subtotal * 0.1 : 0;
   const totalPrice = subtotal - promoDiscount;
-  
+
+  // 제주 프라이빗 차 투어: 예약폼 언어 선택에 따라 총액 적용 (영어 35만원, 중국어 25만원)
+  const displayTotalPrice =
+    isJejuPrivateCarTour(tour.title) && (preferredLanguage === 'en' || preferredLanguage === 'zh')
+      ? preferredLanguage === 'en'
+        ? 350000
+        : 250000
+      : totalPrice;
+
   // Calculate deposit and balance for deposit payment method
   // Deposit: ₩10,000, Balance: totalPrice - ₩10,000
   const depositAmountKRW = 1000;
-  const balanceAmountKRW = totalPrice - depositAmountKRW;
+  const balanceAmountKRW = displayTotalPrice - depositAmountKRW;
 
   const handleCheckAvailability = async () => {
     if (!selectedDate) return;
@@ -167,7 +199,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
       preferredLanguage,
       depositAmountKRW: paymentMethod === 'deposit' ? depositAmountKRW : undefined,
       balanceAmountKRW: paymentMethod === 'deposit' ? balanceAmountKRW : undefined,
-      totalPrice,
+      totalPrice: displayTotalPrice,
       promoCode: promoCode || undefined,
       availability: availability,
     };
@@ -206,30 +238,40 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
     <div className="bg-white rounded-2xl border border-gray-200/50 shadow-[0_2px_20px_rgba(0,0,0,0.08),0_1px_8px_rgba(0,0,0,0.04)] p-4 sm:p-5 lg:sticky lg:top-24">
       {/* Price Display */}
       <div className="mb-4 pb-4 border-b border-gray-100">
-        {/* Original Price */}
-        {hasDiscount && tour.originalPrice && (
+        {/* Original Price: 파란색 원가 + 빨간색 가로선 두 줄 */}
+        {showOriginalPrice && displayOriginalPrice != null && displayOriginalPrice > 0 && (
           <div className="mb-2">
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-lg text-gray-400 line-through">{formatPrice(tour.originalPrice)}</span>
-            </div>
-            {/* Discount Toggle */}
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={applyDiscount}
-                onChange={(e) => setApplyDiscount(e.target.checked)}
-                className="w-4 h-4 text-neutral-700 rounded focus:ring-neutral-300"
-              />
-              <span className="text-sm text-gray-700">
-                {discountPercent}% {t('tour.discountApplied')}
+              <span className="relative inline-block text-lg font-semibold text-blue-600">
+                {formatPrice(displayOriginalPrice)}
+                {/* 빨간색 가로선 두 줄 */}
+                <span className="absolute left-0 right-0 top-[42%] block h-0 border-t-2 border-red-500 pointer-events-none" aria-hidden />
+                <span className="absolute left-0 right-0 top-[58%] block h-0 border-t-2 border-red-500 pointer-events-none" aria-hidden />
               </span>
-            </label>
+            </div>
+            {isJejuPriceOverride ? (
+              <span className="text-sm text-gray-700">
+                {jejuDiscountPercent}% {t('tour.discountApplied')}
+              </span>
+            ) : hasDiscount ? (
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={applyDiscount}
+                  onChange={(e) => setApplyDiscount(e.target.checked)}
+                  className="w-4 h-4 text-neutral-700 rounded focus:ring-neutral-300"
+                />
+                <span className="text-sm text-gray-700">
+                  {discountPercent}% {t('tour.discountApplied')}
+                </span>
+              </label>
+            ) : null}
           </div>
         )}
-        {/* Final Price */}
+        {/* Final Price: 제주는 35만/25만 통일 */}
         <div className="flex items-baseline gap-2">
           <span className="text-3xl sm:text-4xl font-bold text-slate-800 tracking-tight">
-            {formatPrice(availability?.priceOverride || (applyDiscount && hasDiscount ? tour.price : (tour.originalPrice || tour.price)))}
+            {formatPrice(isJejuPriceOverride ? displayTotalPrice : (availability?.priceOverride || (applyDiscount && hasDiscount ? tour.price : (tour.originalPrice || tour.price))))}
           </span>
           <span className="text-xs sm:text-sm text-gray-600 font-medium">/ {tour.priceType}</span>
         </div>
@@ -397,7 +439,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
           {tour.priceType === 'person' && (
             <div className="flex items-center justify-between text-xs">
               <span className="text-gray-600 font-medium">{t('tour.guests')} ({guestCount})</span>
-              <span className="font-bold text-gray-900">{formatPrice(subtotal)}</span>
+              <span className="font-bold text-gray-900">{formatPrice(isJejuPrivateCarTour(tour.title) && (preferredLanguage === 'en' || preferredLanguage === 'zh') ? displayTotalPrice : subtotal)}</span>
             </div>
           )}
           {promoDiscount > 0 && (
@@ -410,7 +452,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
         <div className="border-t border-slate-200 pt-2.5">
           <div className="flex items-center justify-between">
             <span className="text-sm font-bold text-gray-900 uppercase tracking-wide">{t('tour.total')}</span>
-            <span className="text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight">{formatPrice(totalPrice)}</span>
+            <span className="text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight">{formatPrice(displayTotalPrice)}</span>
           </div>
         </div>
       </div>

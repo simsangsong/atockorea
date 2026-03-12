@@ -1,39 +1,50 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { MapPin, Check, X, Shield, Clock, Globe, ChevronRight, Star, Navigation } from 'lucide-react';
 import { useTranslations } from '@/lib/i18n';
 
-// ================= TIMELINE CARD COMPONENT =================
-function TimelineCard({ time, title, image, subtitle, description, dotClass, borderClass, textClass }: any) {
-  const [isExpanded, setIsExpanded] = useState(false);
+// ================= STYLED TIMELINE CARD COMPONENT =================
+function StyledTimelineCard({ time, title, image, isLeft, details }: any) {
+  const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div className="pl-6 sm:pl-8 relative w-full">
-      <div className={`absolute -left-[9px] top-0 w-4 h-4 ${dotClass} border-4 border-[#F9FAFB] rounded-full shadow-sm`} />
-      <div className="font-extrabold text-xs sm:text-sm text-neutral-900 mb-2 sm:mb-3">{time}</div>
-      
-      <div className={`bg-white rounded-xl sm:rounded-2xl shadow-sm border-l-4 ${borderClass} overflow-hidden`}>
-        <div className="relative h-48 sm:h-56 w-full">
-          <img src={image} alt={title} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4 sm:p-6">
-            <h3 className="font-extrabold text-white text-lg sm:text-2xl drop-shadow-md tracking-tight">{title}</h3>
+    <div className={`flex w-full mb-12 sm:mb-24 items-center ${isLeft ? 'flex-row' : 'flex-row-reverse'}`}>
+      <div className="w-[45%] group relative">
+        <div className="bg-white rounded-[1.8rem] shadow-xl shadow-black/5 overflow-hidden transition-all duration-500 hover:shadow-2xl border border-neutral-100 relative">
+          <div className="relative aspect-[4/3] w-full overflow-hidden">
+            <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            {showDetails && (
+              <div className="absolute inset-0 bg-white/90 backdrop-blur-md p-6 flex flex-col justify-center items-start z-20 animate-in fade-in zoom-in duration-300">
+                <button type="button" onClick={() => setShowDetails(false)} className="absolute top-4 right-4 text-neutral-400 hover:text-neutral-900" aria-label="Close">
+                  <X className="w-5 h-5" />
+                </button>
+                <h4 className="text-[10px] font-bold text-sky-500 uppercase tracking-widest mb-2">Detailed Information</h4>
+                <p className="text-sm text-neutral-700 font-medium leading-relaxed">{details}</p>
+              </div>
+            )}
           </div>
-        </div>
-        
-        <div className="p-4 sm:p-6">
-          <p className={`text-[9px] sm:text-[10px] font-bold uppercase tracking-wider mb-2 ${textClass}`}>{subtitle}</p>
-          <div className={`text-xs sm:text-sm text-neutral-600 leading-relaxed font-medium transition-all duration-300 ${isExpanded ? '' : 'line-clamp-1'}`}>
-            {description}
+          <div className="p-4 sm:p-5 bg-white">
+            <div className="flex justify-between items-start gap-3 mb-3">
+              <h3 className="font-black text-neutral-900 text-[14px] sm:text-[16px] tracking-tight leading-tight">{title}</h3>
+              <span className="bg-[#F3F4F6] text-neutral-600 text-[9px] sm:text-[10px] font-bold px-2 py-1 rounded-full border border-neutral-200 shrink-0">{time}</span>
+            </div>
+            <button
+              type="button"
+              onClick={() => setShowDetails(true)}
+              className="flex items-center gap-1.5 text-sky-600 font-bold text-[11px] uppercase tracking-wider hover:text-sky-800 transition-colors"
+            >
+              <span>View Details</span>
+              <ChevronRight className="w-3 h-3" />
+            </button>
           </div>
-          <button 
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="mt-2 text-sky-600 font-bold text-[11px] sm:text-xs hover:text-sky-800 transition-colors focus:outline-none"
-          >
-            {isExpanded ? '접기' : '더 보기'}
-          </button>
         </div>
       </div>
+      <div className="w-[10%] flex justify-center relative">
+        <div className="w-3.5 h-3.5 bg-neutral-900 rounded-full z-10 shadow-[0_0_0_5px_white]" />
+      </div>
+      <div className="w-[45%]" />
     </div>
   );
 }
@@ -43,33 +54,27 @@ export default function TourDetailPage() {
   const timelineData = [
     {
       time: "09:00 AM",
-      title: "Hotel Pickup & Departure",
-      image: "https://images.unsplash.com/photo-1542314831-c6a4d1424b91?auto=format&fit=crop&q=80",
-      subtitle: "Jeju City Center",
-      description: "Relax on a scenic drive through the beautiful island as we head south. Our comfortable, air-conditioned vehicle and expert guide ensure a pleasant and informative start to your day.",
-      dotClass: "bg-[#E85D22]",
-      borderClass: "border-[#E85D22]",
-      textClass: "text-[#E85D22]"
+      title: "Haedong Yonggungsa Temple",
+      image: "https://images.unsplash.com/photo-1590603740183-980e7f6920eb?auto=format&fit=crop&q=80",
+      details: "Built in 1376, this is one of the rare temples in Korea located by the sea. Known for its breathtaking ocean views and spiritual atmosphere."
     },
     {
-      time: "10:30 AM",
-      title: "Jeongbang Waterfall",
-      image: "https://images.unsplash.com/photo-1543731068-7e0f5beff43a?auto=format&fit=crop&q=80",
-      subtitle: "Ocean-bound Waterfall",
-      description: "Experience the only waterfall in Asia that falls directly into the ocean. Feel the mist, hear the crashing waves, and capture breathtaking photos by the majestic basalt cliffs.",
-      dotClass: "bg-[#0EA5E9]",
-      borderClass: "border-[#0EA5E9]",
-      textClass: "text-[#0EA5E9]"
+      time: "11:00 AM",
+      title: "Cheongsapo Skywalk",
+      image: "https://images.unsplash.com/photo-1621532025800-478096230f0e?auto=format&fit=crop&q=80",
+      details: "Walk 20 meters above the ocean on a transparent glass floor. Enjoy the panoramic view of the coastline and the colorful Beach Train passing by."
     },
     {
       time: "13:00 PM",
-      title: "Camellia Hill",
-      image: "https://images.unsplash.com/photo-1617066927352-780c102a0b33?auto=format&fit=crop&q=80",
-      subtitle: "Jeju's Blossoming Paradise",
-      description: "Home to over 6,000 camellia trees, this sprawling botanical garden blooms magnificently from winter to spring. Take an optional tangerine-picking experience and stroll through beautifully curated floral paths.",
-      dotClass: "bg-[#F59E0B]",
-      borderClass: "border-[#F59E0B]",
-      textClass: "text-[#F59E0B]"
+      title: "UN Memorial Cemetery",
+      image: "https://images.unsplash.com/photo-1543731068-7e0f5beff43a?auto=format&fit=crop&q=80",
+      details: "The only UN memorial cemetery in the world. A peaceful and solemn park honoring soldiers from 16 countries who fell during the Korean War."
+    },
+    {
+      time: "15:00 PM",
+      title: "Gamcheon Culture Village",
+      image: "https://images.unsplash.com/photo-1516025068211-1a40307ecbd5?auto=format&fit=crop&q=80",
+      details: "Known as the 'Machu Picchu of Busan', this village is famous for its colorful houses, narrow alleys, and vibrant street art."
     }
   ];
 
@@ -173,9 +178,9 @@ export default function TourDetailPage() {
             <h2 className="text-2xl sm:text-3xl font-extrabold mb-2 text-center text-neutral-900">The Adventure Unfolds</h2>
             <p className="text-sm sm:text-base text-neutral-500 font-medium text-center mb-8 sm:mb-12">A cinematic day trip through Korea's most iconic landscapes</p>
             
-            <div className="w-full max-w-4xl relative border-l-2 border-neutral-200 ml-4 sm:ml-8 space-y-8 sm:space-y-12">
+            <div className="w-full max-w-4xl relative flex flex-col items-center">
               {timelineData.map((item, index) => (
-                <TimelineCard key={index} {...item} />
+                <StyledTimelineCard key={index} {...item} isLeft={index % 2 === 0} />
               ))}
             </div>
           </div>
@@ -219,7 +224,7 @@ export default function TourDetailPage() {
                 </div>
               </div>
 
-              {/* 우측: 깔끔한 지도 이미지 */}
+              {/* ?�측: 깔끔??지???��?지 */}
               <div className="flex-1 w-full min-h-[250px]">
                 <img 
                   src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80" 
@@ -248,7 +253,7 @@ export default function TourDetailPage() {
                   <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-sky-500" />
                 </div>
                 <span className="text-[9px] sm:text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1">Languages</span>
-                <span className="font-extrabold text-xs sm:text-base text-neutral-900">En, 中文, KR</span>
+                <span className="font-extrabold text-xs sm:text-base text-neutral-900">En, �?��, KR</span>
               </div>
             </div>
 
@@ -289,16 +294,16 @@ export default function TourDetailPage() {
             {/* Price Header */}
             <div className="mb-8">
               <div className="flex items-center space-x-2 text-neutral-400 mb-1">
-                <span className="line-through text-lg">₩80,000</span>
+                <span className="line-through text-lg">??0,000</span>
                 <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md shadow-inner">13% Off</span>
               </div>
               <div className="flex items-baseline space-x-2">
-                <span className="text-4xl font-extrabold tracking-tight text-neutral-900">₩70,000</span>
+                <span className="text-4xl font-extrabold tracking-tight text-neutral-900">??0,000</span>
                 <span className="text-neutral-500 font-medium">/ person</span>
               </div>
             </div>
 
-            {/* Form Inputs (샌드톤 배경) */}
+            {/* Form Inputs (?�드??배경) */}
             <div className="space-y-4 mb-8">
               <div className="space-y-2">
                 <label className="text-[10px] font-bold uppercase tracking-widest text-neutral-500">Select Date</label>
@@ -323,7 +328,7 @@ export default function TourDetailPage() {
               </div>
             </div>
 
-            {/* Payment Methods (샌드 & 스카이 톤) */}
+            {/* Payment Methods (?�드 & ?�카???? */}
             <div className="space-y-3 mb-8">
               <label className="text-[10px] font-bold uppercase tracking-widest text-neutral-500">Payment Option</label>
               <label className="relative flex cursor-pointer rounded-xl border border-sky-100 bg-[#EEF2F6] p-4 focus:outline-none transition-colors">
@@ -332,7 +337,7 @@ export default function TourDetailPage() {
                   <div className="w-5 h-5 rounded-full border-[5px] border-neutral-900 bg-white shadow-sm" />
                   <div>
                     <p className="font-bold text-neutral-900 text-sm">Deposit + Cash</p>
-                    <p className="text-xs text-neutral-500 font-medium mt-0.5">Pay ₩1,000 now, rest on site</p>
+                    <p className="text-xs text-neutral-500 font-medium mt-0.5">Pay ??,000 now, rest on site</p>
                   </div>
                 </div>
               </label>
@@ -342,7 +347,7 @@ export default function TourDetailPage() {
                   <div className="w-5 h-5 rounded-full border-2 border-neutral-300 bg-white shadow-sm" />
                   <div>
                     <p className="font-bold text-neutral-900 text-sm">Full Payment</p>
-                    <p className="text-xs text-neutral-500 font-medium mt-0.5">Pay ₩70,000 online now</p>
+                    <p className="text-xs text-neutral-500 font-medium mt-0.5">Pay ??0,000 online now</p>
                   </div>
                 </div>
               </label>
@@ -352,7 +357,7 @@ export default function TourDetailPage() {
             <div className="border-t border-neutral-100 pt-6 hidden lg:block">
               <div className="flex items-center justify-between mb-6">
                 <span className="text-neutral-500 font-medium">Due Today (Deposit)</span>
-                <span className="text-2xl font-extrabold text-neutral-900">₩1,000</span>
+                <span className="text-2xl font-extrabold text-neutral-900">??,000</span>
               </div>
               <button className="w-full bg-neutral-900 text-white rounded-xl py-4 font-bold tracking-wide flex items-center justify-center space-x-2 hover:bg-neutral-800 transition-colors shadow-lg shadow-neutral-900/20">
                 <span>Confirm Booking</span>
@@ -365,15 +370,15 @@ export default function TourDetailPage() {
 
       </div>
 
-      {/* ================= 🔵 MOBILE STICKY BOTTOM BAR ================= */}
+      {/* ================= ?�� MOBILE STICKY BOTTOM BAR ================= */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-t border-neutral-200/50 p-4 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
         <div className="flex items-center justify-between gap-4">
           <div className="flex-1">
             <div className="flex items-baseline space-x-1">
-              <span className="text-lg font-bold text-neutral-900">₩70,000</span>
+              <span className="text-lg font-bold text-neutral-900">??0,000</span>
               <span className="text-xs text-neutral-500 font-medium">/ person</span>
             </div>
-            <p className="text-[10px] text-emerald-600 font-medium">₩1,000 Deposit Today</p>
+            <p className="text-[10px] text-emerald-600 font-medium">??,000 Deposit Today</p>
           </div>
           <button className="flex-1 bg-neutral-900 text-white rounded-xl py-4 font-bold tracking-wide flex items-center justify-center space-x-2 hover:bg-neutral-800 transition-colors shadow-lg shadow-neutral-900/20">
             <span>Book Now</span>

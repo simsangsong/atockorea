@@ -47,36 +47,37 @@ export default function TrustBar() {
 
   return (
     <section className="py-6 sm:py-8 bg-transparent">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Card Container */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200/40 md:border-gray-200/30 p-4 sm:p-6 shadow-[0_2px_20px_rgba(0,0,0,0.08),0_1px_8px_rgba(0,0,0,0.04)]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        {/* Main Card Container — 글래스모피즘 & 신뢰감 */}
+        <div className="bg-white/70 backdrop-blur-md border border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-2xl p-5 sm:p-6">
           <div className="text-center mb-4 sm:mb-6">
-            <h2 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-1">
+            <h2 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 tracking-tight mb-1">
               {t('trustBar.title')}
             </h2>
-            <p className="text-[10px] sm:text-xs text-gray-600">
+            <p className="text-[10px] sm:text-xs text-slate-500">
               {t('trustBar.subtitle')}
             </p>
           </div>
-          
-          {/* 2x2 Grid for all devices */}
-          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+          {/* 2x2 Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-gray-50 to-white rounded-lg p-3 sm:p-4 hover:from-gray-100 hover:to-gray-50 transition-all duration-300 border border-gray-200/40 hover:border-blue-200/50 shadow-[0_2px_16px_rgba(0,0,0,0.06),0_1px_6px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_24px_rgba(0,0,0,0.1),0_2px_10px_rgba(0,0,0,0.05)] transform hover:-translate-y-0.5"
+                  className="flex items-start space-x-3"
                 >
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 mb-3 shadow-sm">
+                  <div className="flex-shrink-0 bg-blue-50/80 p-2.5 rounded-full text-blue-600">
                     <div className="w-4 h-4 sm:w-5 sm:h-5">
                       {feature.icon}
                     </div>
                   </div>
-                  <h3 className="text-xs sm:text-sm font-semibold text-gray-900 mb-1">
-                    {feature.title}
-                  </h3>
-                  <p className="text-[10px] sm:text-xs text-gray-600 leading-relaxed">
-                    {feature.description}
-                  </p>
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold text-slate-800 tracking-tight">
+                      {feature.title}
+                    </h3>
+                    <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
               ))}
           </div>

@@ -31,9 +31,103 @@ const InteractiveMap = dynamic(
 );
 
 import type { TourDetail, ItineraryDetail } from '@/types/tour';
-import { Star, Shield, Award, Users, Clock, Globe, Check, X, ChevronRight, MapPin, Navigation, AlertCircle, Plane } from 'lucide-react';
+import { Star, Shield, Award, Users, Clock, Globe, Check, X, ChevronRight, MapPin, Navigation, AlertCircle, Plane, Banknote } from 'lucide-react';
 
 const poppins = Poppins({ weight: ['300', '400', '500', '600', '700'], subsets: ['latin'] });
+
+// 타임라인 마커 채색: 하늘색·주황 위주 (마커 수 줄여서 2개만 표시 시 사용)
+const TIMELINE_PIN_COLORS = ['#0EA5E9', '#f97316'] as const;
+
+// 제주 프라이빗 차 투어 상품 여부 (영어·한국어·중국어·일본어 등 제목 모두 인식)
+function isJejuPrivateCarTour(title: string | undefined): boolean {
+  if (!title || typeof title !== 'string') return false;
+  const s = title.toLowerCase().trim();
+  return (
+    /jeju\s+private\s+car|private\s+car\s+charter/i.test(s) ||
+    /제주\s*프라이빗\s*차|프라이빗\s*차\s*차터/i.test(s) ||
+    /济州\s*私人\s*包车|济州\s*私人\s*汽车|私人\s*包车|私人\s*汽车/i.test(s) ||
+    /濟州\s*私人\s*包車|私人\s*包車/i.test(s) ||
+    /済州\s*プライベート|プライベート\s*チャーター|済州\s*貸切/i.test(s) ||
+    /jeju\s+coche\s+privado|charter\s+privado/i.test(s)
+  );
+}
+
+// Styled timeline card: 모바일 스타일(스쿠시, 이미지+그라데이션, 제목+시간 뱃지), View Details·팝업
+function StyledTimelineCard({
+  time,
+  title,
+  image,
+  isLeft,
+  details,
+  pinColor,
+  isFirst,
+  showPin,
+}: {
+  time: string;
+  title: string;
+  image: string | undefined;
+  isLeft: boolean;
+  details: string;
+  pinColor?: string;
+  isFirst?: boolean;
+  showPin?: boolean;
+}) {
+  const [showDetails, setShowDetails] = useState(false);
+  return (
+    <div className={`flex w-full mb-1 sm:mb-2 items-center ${isLeft ? 'flex-row' : 'flex-row-reverse'} ${!isFirst ? '-mt-20 sm:-mt-28' : ''}`}>
+      <div className="w-[42%] sm:w-[45%] group relative">
+        <div className="bg-white rounded-[1.75rem] sm:rounded-[1.8rem] shadow-lg shadow-black/5 overflow-visible transition-all duration-500 hover:shadow-xl border border-neutral-100 relative">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-t-[1.75rem] sm:rounded-t-[1.8rem]">
+            {image ? (
+              <Image src={image} alt={title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width:640px) 45vw, 400px" />
+            ) : (
+              <div className="w-full h-full bg-neutral-200" />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+          </div>
+          <div className="px-2.5 py-1.5 sm:px-4 sm:py-2 bg-white rounded-b-[1.75rem] sm:rounded-b-[1.8rem]">
+            <div className="flex justify-between items-start gap-2 sm:gap-3 mb-0.5 sm:mb-1">
+              <h3 className="font-black text-neutral-900 text-[13px] sm:text-[16px] tracking-tight leading-tight flex-1 min-w-0">{title}</h3>
+              <span className="bg-[#F3F4F6] text-neutral-600 text-[11px] sm:text-[12px] font-bold px-2 py-0.5 sm:py-1 rounded-full border border-neutral-200 shrink-0">{time || '—'}</span>
+            </div>
+            <button
+              type="button"
+              onClick={() => setShowDetails(true)}
+              className="flex items-center gap-0.5 text-sky-600 font-bold text-[8px] sm:text-[9px] uppercase tracking-wider hover:text-sky-800 transition-colors"
+            >
+              <span>View Details</span>
+              <ChevronRight className="w-2.5 h-2.5" />
+            </button>
+          </div>
+        </div>
+        {showDetails && (
+          <div
+            className={`absolute top-0 z-30 w-[220px] sm:w-[380px] min-h-[140px] bg-white rounded-[1.75rem] shadow-xl border border-neutral-100 flex flex-col animate-in fade-in duration-200 ${isLeft ? 'left-full ml-2 sm:ml-3' : 'right-full mr-2 sm:mr-3'}`}
+          >
+            <div className="flex items-center justify-between p-2 sm:p-3 border-b border-neutral-100 shrink-0">
+              <h4 className="text-[9px] sm:text-[10px] font-bold text-sky-500 uppercase tracking-widest">Detailed Information</h4>
+              <button type="button" onClick={() => setShowDetails(false)} className="text-neutral-400 hover:text-neutral-900 p-0.5" aria-label="Close">
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+            <div className="p-2 sm:p-3">
+              <p className="text-[10px] sm:text-[11px] text-neutral-700 font-medium leading-relaxed whitespace-pre-wrap">{details || '—'}</p>
+            </div>
+          </div>
+        )}
+      </div>
+      <div className="w-[16%] sm:w-[10%] flex justify-center relative z-10 shrink-0">
+        {showPin !== false && (
+          <svg className="w-6 h-7 flex-shrink-0" viewBox="0 0 24 28" fill="none" aria-hidden>
+            <path d="M12 0C7.58 0 4 3.58 4 8c0 5.25 8 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8z" fill={pinColor || TIMELINE_PIN_COLORS[0]} />
+            <circle cx="12" cy="8" r="3" fill="white" />
+          </svg>
+        )}
+      </div>
+      <div className="w-[42%] sm:w-[45%]" />
+    </div>
+  );
+}
 
 type Tour = TourDetail & {
   availableSpots?: number;
@@ -619,45 +713,64 @@ export default function TourDetailPage() {
               {destinationItems.length === 0 ? (
                 <p className="text-neutral-500 text-sm">{t('tour.itinerary')} — {t('tour.noPickupPoints') || 'No schedule data.'}</p>
               ) : (
-                <div className="w-full max-w-4xl relative border-l-2 border-neutral-200 ml-4 sm:ml-8 space-y-8 sm:space-y-12" id="tour-timeline">
-                  {destinationItems.map((step, index) => {
-                    const descId = `desc-${index}`;
-                    const isExpanded = readMoreExpanded[descId];
-                    const hasDescription = step.description.length > 0;
-                    const dotColor = timelineDotColors[index % timelineDotColors.length];
-                    const stepImage = step.image || mainImage;
-                    return (
-                      <div key={index} className="pl-6 sm:pl-8 relative w-full">
-                        <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full shadow-sm border-4 border-[#F9FAFB]" style={{ backgroundColor: dotColor }} />
-                        <div className="font-extrabold text-xs sm:text-sm text-neutral-900 mb-2 sm:mb-3">{step.time || '—'}</div>
-                        <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm overflow-hidden border-l-4" style={{ borderLeftColor: dotColor }}>
-                          <div className="relative h-48 sm:h-56 w-full">
-                            {stepImage ? (
-                              <Image src={stepImage} alt={step.title} fill className="object-cover" sizes="(max-width:640px) 100vw, 672px" />
-                            ) : (
-                              <div className="w-full h-full bg-neutral-200" />
-                            )}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4 sm:p-6">
-                              <h3 className="font-extrabold text-white text-lg sm:text-2xl drop-shadow-md tracking-tight">{step.title}</h3>
-                            </div>
-                          </div>
-                          <div className="p-4 sm:p-6">
-                            <div className={`text-xs sm:text-sm text-neutral-600 leading-relaxed font-medium transition-all duration-300 ${isExpanded ? '' : 'line-clamp-1'}`} id={descId}>
-                              {step.description || '—'}
-                            </div>
-                            {hasDescription && (
-                              <button type="button" onClick={() => toggleReadMore(descId)} className="mt-2 text-sky-600 font-bold text-[11px] sm:text-xs hover:text-sky-800 transition-colors focus:outline-none">
-                                {isExpanded ? '접기' : '더 보기'}
-                              </button>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
+                <div className="w-full max-w-4xl relative flex flex-col items-center px-2 sm:px-4" id="tour-timeline">
+                  {/* 가운데 채색 물결 곡선: 하늘/주황 교차, 반투명, 굵기 50%, 50% 더 꺾임 */}
+                  <div className="absolute left-1/2 top-0 bottom-0 w-8 -translate-x-1/2 pointer-events-none z-0 opacity-90" aria-hidden>
+                    <svg className="w-full h-full" viewBox="0 0 24 400" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="timeline-curve-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stopColor="#0EA5E9" />
+                          <stop offset="25%" stopColor="#f97316" />
+                          <stop offset="50%" stopColor="#0EA5E9" />
+                          <stop offset="75%" stopColor="#f97316" />
+                          <stop offset="100%" stopColor="#0EA5E9" />
+                        </linearGradient>
+                      </defs>
+                      {/* 상단 점선 */}
+                      <path d="M 12 0 L 12 12" fill="none" stroke="url(#timeline-curve-gradient)" strokeWidth="2" strokeLinecap="round" strokeDasharray="6 5" />
+                      {/* 가운데 더 꺾인 물결 실선 (하늘/주황, 굵기 50%) */}
+                      <path
+                        d="M 12 12 Q 24 32 12 52 Q 0 72 12 92 Q 24 112 12 132 Q 0 152 12 172 Q 24 192 12 212 Q 0 232 12 252 Q 24 272 12 292 Q 0 312 12 332 Q 24 352 12 372"
+                        fill="none"
+                        stroke="url(#timeline-curve-gradient)"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  {destinationItems.map((step, index) => (
+                    <StyledTimelineCard
+                      key={index}
+                      time={step.time || '—'}
+                      title={step.title}
+                      image={step.image || mainImage}
+                      isLeft={index % 2 === 0}
+                      details={step.description || '—'}
+                      pinColor={TIMELINE_PIN_COLORS[index % 2]}
+                      isFirst={index === 0}
+                      showPin={index % 2 === 0}
+                    />
+                  ))}
                 </div>
               )}
             </div>
+
+            {/* 제주 프라이빗 차 투어 전용: 타임라인 ↔ Logistics 사이 안내 */}
+            {isJejuPrivateCarTour(tour.title) && (
+              <div className="w-full max-w-4xl px-2 sm:px-4 mt-4 sm:mt-6 mb-2 sm:mb-4">
+                <p className="text-center text-neutral-700 font-semibold text-[12px] sm:text-[13px] mb-1.5">
+                  {t('tour.jejuNoticeTitle')}
+                </p>
+                <p className="text-center text-[12px] sm:text-[13px] text-neutral-600 font-medium leading-relaxed px-4 py-3 rounded-xl bg-amber-50/80 border border-amber-100">
+                  {(() => {
+                    const raw = t('tour.jejuOneRegionPerDayNotice');
+                    const parts = raw.split(/\*\*(.*?)\*\*/g);
+                    return parts.map((seg, i) => (i % 2 === 1 ? <strong key={i} className="font-bold text-neutral-700">{seg}</strong> : seg));
+                  })()}
+                </p>
+              </div>
+            )}
 
             {/* 4. Meeting & Pickup */}
             <div className="flex flex-col items-center" id="pickup-info">
@@ -693,72 +806,57 @@ export default function TourDetailPage() {
                         );
                       })}
                     </ul>
-                  ) : (
-                    <ul className="text-sm text-neutral-600 leading-relaxed space-y-2 list-none">
-                      <li className="flex items-start gap-2">
-                        <span className="text-base shrink-0">⏰</span>
-                        <span><strong className="text-neutral-800 font-semibold">{t('tour.arrive10MinEarly')}</strong> — {t('tour.spotsCanGetBusy')}</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-base shrink-0">⚠️</span>
-                        <span><strong className="text-neutral-800 font-semibold">{t('tour.noShowAfter10Min')}</strong> — {t('tour.refundsMayNotBeAvailable')}</span>
-                      </li>
-                    </ul>
-                  )}
+                  ) : null}
                 </div>
                 <div className="flex-1 w-full min-h-[250px]">
-                  {tour.pickupPoints?.length > 0 && (() => {
-                    const pointsWithCoords = tour.pickupPoints.filter((p: any) => typeof p.lat === 'number' && typeof p.lng === 'number' && !Number.isNaN(p.lat) && !Number.isNaN(p.lng));
-                    return pointsWithCoords.length > 0 ? (
+                  {(() => {
+                    const pointsWithCoords = (tour.pickupPoints || []).filter((p: any) => typeof p.lat === 'number' && typeof p.lng === 'number' && !Number.isNaN(p.lat) && !Number.isNaN(p.lng));
+                    const locations = pointsWithCoords.map((p: any) => ({ id: p.id, name: p.name, address: p.address, lat: p.lat, lng: p.lng }));
+                    return (
                       <div className="w-full h-full min-h-[250px] rounded-[1.5rem] overflow-hidden shadow-inner border border-neutral-100">
                         <InteractiveMap
-                          locations={pointsWithCoords.map((p: any) => ({ id: p.id, name: p.name, address: p.address, lat: p.lat, lng: p.lng }))}
+                          locations={locations}
+                          zoom={locations.length > 0 ? 11 : 10}
                           height="280px"
-                          zoom={11}
                         />
                       </div>
-                    ) : (
-                      <img
-                        src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80"
-                        alt="Map Location"
-                        className="w-full h-full min-h-[250px] object-cover rounded-[1.5rem] shadow-inner border border-neutral-100"
-                      />
                     );
                   })()}
-                  {!tour.pickupPoints?.length && (
-                    <img
-                      src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80"
-                      alt="Map Location Placeholder"
-                      className="w-full h-full min-h-[250px] object-cover rounded-[1.5rem] shadow-inner border border-neutral-100"
-                    />
-                  )}
                 </div>
                 {/* 픽업 안내 (지도 밑 – 데스크탑·모바일 공통) */}
-                <div className="w-full mt-6 space-y-2.5">
-                  <div className="flex items-center gap-2.5 rounded-2xl py-2.5 px-3.5 bg-indigo-50/90 border border-indigo-100">
-                    <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center shrink-0">
-                      <Navigation className="w-4 h-4 text-indigo-600" />
+                <div className="w-full mt-5 space-y-2">
+                  <div className="flex items-center gap-2 rounded-xl py-2 px-3 bg-indigo-50/90 border border-indigo-100">
+                    <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center shrink-0">
+                      <Navigation className="w-3.5 h-3.5 text-indigo-600" />
                     </div>
-                    <p className="text-[13px] leading-snug font-medium text-neutral-800">{t('tour.pickupNoticeExactTimes')}</p>
+                    <p className="text-[10px] leading-snug font-medium text-neutral-800">{t('tour.pickupNoticeExactTimes')}</p>
                   </div>
-                  <div className="flex items-center gap-2.5 rounded-2xl py-2.5 px-3.5 bg-emerald-50/90 border border-emerald-100">
-                    <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center shrink-0">
-                      <Clock className="w-4 h-4 text-emerald-600" />
+                  <div className="flex items-center gap-2 rounded-xl py-2 px-3 bg-emerald-50/90 border border-emerald-100">
+                    <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center shrink-0">
+                      <Clock className="w-3.5 h-3.5 text-emerald-600" />
                     </div>
-                    <p className="text-[13px] leading-snug font-medium text-neutral-800">{t('tour.pickupNoticeArriveEarly')}</p>
+                    <p className="text-[10px] leading-snug font-medium text-neutral-800">{t('tour.pickupNoticeArriveEarly')}</p>
                   </div>
-                  <div className="flex items-center gap-2.5 rounded-2xl py-2.5 px-3.5 bg-blue-50/90 border border-blue-100">
-                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
-                      <AlertCircle className="w-4 h-4 text-blue-600" />
+                  <div className="flex items-center gap-2 rounded-xl py-2 px-3 bg-blue-50/90 border border-blue-100">
+                    <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
+                      <AlertCircle className="w-3.5 h-3.5 text-blue-600" />
                     </div>
-                    <p className="text-[13px] leading-snug font-medium text-neutral-800">{t('tour.pickupNoticeNoShow')}</p>
+                    <p className="text-[10px] leading-snug font-medium text-neutral-800">{t('tour.pickupNoticeNoShow')}</p>
                   </div>
-                  <div className="flex items-center gap-2.5 rounded-2xl py-2.5 px-3.5 bg-violet-50/90 border border-violet-100">
-                    <div className="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
-                      <Plane className="w-4 h-4 text-violet-600" />
+                  <div className="flex items-center gap-2 rounded-xl py-2 px-3 bg-violet-50/90 border border-violet-100">
+                    <div className="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
+                      <Plane className="w-3.5 h-3.5 text-violet-600" />
                     </div>
-                    <p className="text-[13px] leading-snug font-medium text-neutral-800">{t('tour.pickupNoticeAirport')}</p>
+                    <p className="text-[10px] leading-snug font-medium text-neutral-800">{t('tour.pickupNoticeAirport')}</p>
                   </div>
+                  {isJejuPrivateCarTour(tour.title) && (
+                    <div className="flex items-center gap-2 rounded-xl py-2 px-3 bg-amber-50/90 border border-amber-100">
+                      <div className="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center shrink-0">
+                        <Banknote className="w-3.5 h-3.5 text-amber-600" />
+                      </div>
+                      <p className="text-[10px] leading-snug font-medium text-neutral-800">{t('tour.pickupNoticeJejuOutsideCityCost')}</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -812,7 +910,7 @@ export default function TourDetailPage() {
             </div>
 
         <div className="bottom-section bg-neutral-50 border-t border-neutral-200">
-          <section className="tour-reviews-section" aria-label="Reviews">
+          <section className="tour-reviews-section" aria-label={t('tour.reviews')}>
             <TourReviewsSection tourId={tour.id} tourTitle={tour.title} />
           </section>
 
@@ -824,7 +922,7 @@ export default function TourDetailPage() {
                 onClick={() => toggleBottomSection('highlights')}
                 aria-expanded={bottomSectionOpen['highlights']}
               >
-                <h2>Highlights</h2>
+                <h2>{t('tour.highlights')}</h2>
                 <span className="bottom-section-card-icon" aria-hidden>
                   {bottomSectionOpen['highlights'] ? '▼' : '▶'}
                 </span>
@@ -849,7 +947,7 @@ export default function TourDetailPage() {
                 onClick={() => toggleBottomSection('description')}
                 aria-expanded={bottomSectionOpen['description']}
               >
-                <h2>Full Description</h2>
+                <h2>{t('tour.fullDescription')}</h2>
                 <span className="bottom-section-card-icon" aria-hidden>
                   {bottomSectionOpen['description'] ? '▼' : '▶'}
                 </span>
@@ -870,7 +968,7 @@ export default function TourDetailPage() {
                 onClick={() => toggleBottomSection('faq')}
                 aria-expanded={bottomSectionOpen['faq']}
               >
-                <h2>FAQ</h2>
+                <h2>{t('tour.faqShort')}</h2>
                 <span className="bottom-section-card-icon" aria-hidden>
                   {bottomSectionOpen['faq'] ? '▼' : '▶'}
                 </span>
@@ -890,7 +988,7 @@ export default function TourDetailPage() {
               onClick={() => toggleBottomSection('warnings')}
               aria-expanded={bottomSectionOpen['warnings']}
             >
-              <h2>Important Notes</h2>
+              <h2>{t('tour.importantNotesSection')}</h2>
               <span className="bottom-section-card-icon" aria-hidden>
                 {bottomSectionOpen['warnings'] ? '▼' : '▶'}
               </span>

@@ -101,6 +101,10 @@
     "whatsIncluded": "Qué incluye",
     "highlights": "Destacados",
     "faq": "Preguntas frecuentes",
+    "faqShort": "FAQ",
+    "importantNotesSection": "Notas importantes",
+    "reviews": "Reseñas",
+    "noReviewsYet": "Aún no hay reseñas para este tour.",
     "allPickupPoints": "Todos los puntos de recogida:",
     "pickupMeetupInfo": "Información de recogida y encuentro",
     "noPickupPoints": "No hay puntos de recogida disponibles.",
@@ -123,12 +127,15 @@
     "pickupPointsCount": "{count} puntos de recogida",
     "meetingPickup": "Encuentro y recogida",
     "logisticsTag": "Logística",
+    "jejuNoticeTitle": "Aviso importante",
+    "jejuOneRegionPerDayNotice": "En los tours de Jeju solo se puede visitar **una zona por día** (**este O suroeste**). Si se visitan ambas o el recorrido supera **150 km** en un día, aplica un **suplemento de 70.000 KRW**.",
     "pickupPointsTitle": "Puntos de recogida",
     "photoPlaceholder": "Foto",
     "pickupNoticeExactTimes": "La hora exacta de recogida se comunicará 1 día antes del tour.",
     "pickupNoticeArriveEarly": "Llegue 10 minutos antes para una recogida tranquila.",
     "pickupNoticeNoShow": "Un retraso de 10 minutos se considera no presentación y no es reembolsable.",
     "pickupNoticeAirport": "Servicio de recogida y regreso al aeropuerto disponible.",
+    "pickupNoticeJejuOutsideCityCost": "Recogida en hotel fuera del centro de Jeju tiene un coste adicional de 60.000 KRW.",
     "arrive10MinEarly": "Llegar 10 min antes",
     "spotsCanGetBusy": "Los puntos pueden estar concurridos.",
     "noShowAfter10Min": "No presentación tras 10 min",
@@ -235,8 +242,7 @@
     "signOut": "Cerrar sesión",
     "backToMyPage": "Volver a mi página",
     "upcomingTours": "Tours próximos",
-    "totalBookings": "Total de reservas",
-    "reviews": "Reseñas"
+    "totalBookings": "Total de reservas"
   },
   "admin": {
     "title": "Panel de administración",
@@ -317,7 +323,7 @@
       "localGuidesDesc": "Guías con experiencia que conocen Corea al dedillo"
     },
     "destinations": {
-      "title": "Where to start",
+      "title": "Diseña tu tour con IA",
       "subtitle": "Tours de un día desde Seúl, Busan y Jeju",
       "seoul": "Seúl",
       "seoulDesc": "Capital con rica historia",
@@ -326,7 +332,36 @@
       "jeju": "Isla de Jeju",
       "jejuDesc": "Paraíso natural y sitios UNESCO",
       "available": "Disponible",
-      "viewTours": "Ver tours"
+      "viewTours": "Ver tours",
+      "aiCustomizingTitle": "Tour en grupo con IA (Semi-F.I.T)",
+      "aiCustomizingDesc": "Indica tema y fechas y la IA crea tu itinerario. 3–13 personas, furgoneta o minibús.",
+      "aiCustomizingCta": "Crear itinerario a medida",
+      "fixedItineraryTitle": "Tours con itinerario fijo",
+      "fixedItinerarySubtitle": "Rutas populares para unirte con facilidad",
+      "aiStep1": "La IA crea tu borrador de itinerario",
+      "aiStep2": "Verificación, distancia y aviso de extras",
+      "aiStep3": "3–13 personas · Furgoneta o minibús",
+      "aiStep1Title": "Cuéntanos tu estilo",
+      "aiStep2Title": "La IA diseña tu ruta",
+      "aiStep3Title": "Únete y explora",
+      "aiCtaSubtext": "Menos de 1 minuto · 3–13 personas"
+    },
+    "customJoinTour": {
+      "start": "Empezar",
+      "startDesc": "Indica tus preferencias y la IA creará un itinerario a medida.",
+      "chatPlaceholder": "Tema, lugares, días... (ej.: Jeju 2 noches, Hallasan, Seongsan, Udo)",
+      "duration": "Días de viaje",
+      "participants": "Participantes",
+      "generateItinerary": "Generar itinerario",
+      "regenerate": "Regenerar",
+      "dayLabel": "Día {{n}}",
+      "editPlace": "Editar lugar",
+      "addPlace": "Añadir lugar",
+      "removePlace": "Eliminar",
+      "confirmItinerary": "Confirmar itinerario",
+      "confirmSuccess": "Itinerario confirmado",
+      "jejuExtraNotice": "Visitar este y oeste de Jeju el mismo día tiene coste adicional; pago en efectivo al guía.",
+      "viewFixedTours": "Ver tours con itinerario fijo"
     },
     "sections": {
       "popularTours": "Tours populares",
@@ -770,16 +805,89 @@
     "title": "Política de Cookies",
     "introPrefix": "Última actualización: ",
     "introSuffix": ". Esta Política de Cookies explica cómo ATOC KOREA LLC utiliza cookies y tecnologías similares en nuestra plataforma y cómo puede gestionar sus preferencias. Tiene la intención de cumplir con los requisitos de transparencia bajo la ley aplicable (incluyendo GDPR, ePrivacy y leyes de privacidad estatales de EE. UU.). Cuando utilicemos proveedores de pago terceros para el pago, divulgaremos sus prácticas de cookies aquí para que tenga información clara sobre las cookies de pago y prevención de fraude.",
-    "s1": { "title": "1. Introducción y alcance", "p1": "ATOC KOREA LLC (\"nosotros\") opera el sitio web y la plataforma de reservas en atockorea.com. Esta Política de Cookies se aplica a todos los visitantes y usuarios de nuestra plataforma, incluyendo cuando navega por nuestro sitio, crea una cuenta, hace una reserva o completa un pago. Describe:", "li1": "Qué son las cookies y tecnologías similares", "li2": "Qué cookies utilizamos nosotros y nuestros proveedores de servicios, y por qué", "li3": "Cómo se pueden utilizar las cookies en relación con el procesamiento de pagos y la prevención de fraude cuando usamos proveedores de pago terceros", "li4": "Cómo puede controlar o eliminar las cookies", "p2Before": "Esta política debe leerse junto con nuestra ", "p2After": ", que explica cómo recopilamos, usamos y protegemos su información personal en general." },
-    "s2": { "title": "2. ¿Qué son las cookies y tecnologías similares?", "p1": "Las cookies son pequeños archivos de texto que se colocan en su dispositivo (computadora, tableta o móvil) cuando visita un sitio web. Se utilizan ampliamente para que los sitios web funcionen de manera más eficiente, recordar sus preferencias y proporcionar información al propietario del sitio. Las cookies pueden ser \"de primer lado\" (establecidas por nosotros cuando usa nuestro sitio) o \"de terceros\" (establecidas por otro dominio, como nuestros proveedores de pago o análisis).", "p2": "Las tecnologías similares incluyen almacenamiento local, almacenamiento de sesión, etiquetas de píxeles (web beacons) y secuencias de comandos que almacenan o acceden a información en su dispositivo. Para los fines de esta política, usamos el término \"cookies\" para referirnos a las cookies y estas tecnologías similares cuando se utilizan para fines similares.", "p3": "Las cookies pueden clasificarse por duración (las cookies de sesión se eliminan cuando cierra el navegador; las cookies persistentes permanecen por un período establecido o hasta que las elimine) y por propósito (p. ej., estrictamente necesarias, funcionales, rendimiento, marketing). Describimos los propósitos y categorías que usamos a continuación." },
-    "s3": { "title": "3. Categorías de cookies que utilizamos", "p1": "Utilizamos las siguientes categorías de cookies en nuestra plataforma:", "h31": "3.1 Cookies estrictamente necesarias", "p2": "Estas cookies son esenciales para el funcionamiento de nuestro sitio web y plataforma. Habilitan funcionalidad básica como seguridad, gestión de red, estado de sesión e inicio de sesión, y acceso a áreas seguras. No puede optar por no recibir estas cookies sin afectar el funcionamiento del sitio; en algunas jurisdicciones no requieren consentimiento porque son estrictamente necesarias.", "li1": "Autenticación y sesión: Utilizamos cookies (incluyendo a través de nuestro proveedor de autenticación) para mantenerlo conectado y mantener su sesión de forma segura al navegar entre páginas.", "li2": "Seguridad y prevención de fraude: Nosotros y nuestros proveedores de servicios utilizamos cookies y tecnologías similares para ayudar a detectar y prevenir fraude, abuso y acceso no autorizado.", "li3": "Equilibrio de carga y enrutamiento: Las cookies pueden utilizarse para garantizar que las solicitudes se manejen correctamente por nuestra infraestructura.", "h32": "3.2 Cookies funcionales", "p3": "Estas cookies permiten funcionalidad mejorada y personalización, como recordar su preferencia de idioma o configuración regional.", "li4": "Preferencia de idioma/configuración regional: Almacenamos el idioma elegido (p. ej., inglés, coreano) para que el sitio se muestre en su idioma preferido en visitas posteriores.", "h33": "3.3 Cookies de rendimiento y análisis", "p4": "Podemos utilizar cookies para entender cómo los visitantes usan nuestra plataforma (p. ej., qué páginas se visitan, cuánto tiempo permanecen los usuarios) para mejorar el rendimiento y corregir errores. Cuando utilizamos análisis de terceros, los configuramos para minimizar la identificación y cumplir con nuestra Política de Privacidad.", "h34": "3.4 Cookies de marketing", "p5": "Actualmente no utilizamos cookies para publicidad dirigida ni para rastrearlo en otros sitios web con fines de marketing. Si introducimos tales cookies en el futuro, actualizaremos esta política y, cuando lo exija la ley, obtendremos su consentimiento antes de usarlas." },
-    "s4": { "title": "4. Nuestras cookies de primer lado", "p1": "La siguiente tabla describe las principales cookies de primer lado que establecemos cuando utiliza nuestra plataforma. Los nombres y duraciones de las cookies pueden cambiar con las actualizaciones de nuestra tecnología.", "tablePurpose": "Propósito", "tableCategory": "Categoría", "tableDuration": "Duración", "row1Purpose": "Sesión y autenticación (p. ej., estado de inicio de sesión)", "row1Category": "Estrictamente necesarias", "row1Duration": "Sesión o según nuestro proveedor de autenticación", "row2Purpose": "Preferencia de idioma/configuración regional (p. ej., NEXT_LOCALE)", "row2Category": "Funcionales", "row2Duration": "Hasta 1 año", "row3Purpose": "Seguridad y prevención de fraude", "row3Category": "Estrictamente necesarias", "row3Duration": "Sesión o de corta duración" },
-    "s5": { "title": "5. Procesamiento de pagos y cookies de terceros", "p1": "Cuando ofrecemos pago con tarjeta o en línea en nuestra plataforma, podemos utilizar uno o más proveedores de servicios de pago terceros. Al utilizar el pago, puede ser dirigido o interactuar con las páginas o secuencias de comandos de ese proveedor. El proveedor de pago puede establecer y utilizar sus propias cookies y tecnologías similares para:", "li1": "Procesamiento de pagos: Completar su transacción de forma segura y comunicarse con nuestro servidor sobre el estado del pago.", "li2": "Prevención y detección de fraude: Recopilar información sobre el dispositivo y navegador utilizados para acceder al pago, detectar y prevenir transacciones fraudulentas o no autorizadas, y cumplir con los requisitos de la industria de tarjetas de pago y regulatorios. Bloquear estas cookies puede impedirle completar un pago.", "li3": "Seguridad: Proteger sus datos de pago y garantizar la integridad de la sesión de pago.", "p2": "No controlamos las cookies establecidas por los proveedores de pago; se establecen cuando interactúa con los servicios del proveedor. No utilizamos dichas cookies para publicidad. Cuando habilitemos un proveedor de pago específico, divulgaremos su nombre y enlace a sus políticas de cookies y privacidad en esta sección para que pueda revisarlas antes de pagar." },
-    "s6": { "title": "6. Otras cookies de terceros", "p1": "Podemos utilizar otros servicios de terceros (p. ej., alojamiento, análisis, monitoreo de errores) que establecen cookies o tecnologías similares. Elegimos proveedores que se comprometen con estándares apropiados de seguridad y privacidad. No permitimos que terceros utilicen cookies en nuestro sitio para publicidad entre sitios o para vender sus datos." },
-    "s7": { "title": "7. ¿Cuánto duran las cookies?", "p1": "Las cookies de sesión se eliminan cuando cierra su navegador. Las cookies persistentes permanecen durante el tiempo establecido cuando se colocan (p. ej., desde unos días hasta un año, según el propósito). Nuestra cookie de idioma/configuración regional se establece por hasta un año para recordar su preferencia. Las cookies relacionadas con autenticación y seguridad típicamente duran la duración de su sesión o según la configuración de nuestro proveedor de autenticación. Las duraciones de cookies de cualquier proveedor de pago tercero las establece ese proveedor y se describen en su política de cookies." },
-    "s8": { "title": "8. Cómo puede controlar las cookies", "p1": "Configuración del navegador: La mayoría de los navegadores web permiten gestionar las cookies a través de su configuración. Normalmente puede rechazar o eliminar algunas o todas las cookies. Bloquear o eliminar las cookies estrictamente necesarias puede impedirle iniciar sesión, permanecer conectado o utilizar ciertas funciones. Bloquear o eliminar las cookies utilizadas por nuestro proveedor de pago durante el pago puede impedirle completar un pago en nuestro sitio.", "p2": "Nuestro sitio: Donde ofrecemos un mecanismo de preferencia o consentimiento de cookies (p. ej., en el pie de página o en un banner), puede usarlo para gestionar sus preferencias para cookies no esenciales. Las cookies esenciales y relacionadas con el pago son necesarias para que la plataforma y el pago funcionen y no son opcionales.", "p3": "Cuando utilicemos un proveedor de pago específico, enlazaremos a su configuración de cookies y consentimiento en esta política para que pueda gestionar las cookies establecidas por ese proveedor. Desactivar las cookies del proveedor de pago puede impedirle completar pagos en nuestro sitio cuando se utilice ese proveedor.", "p4": "Do Not Track / Global Privacy Control: Algunos navegadores o extensiones envían señales \"Do Not Track\" o \"Global Privacy Control\". Respetamos dichas señales cuando es técnicamente y legalmente factible; sin embargo, las cookies esenciales y relacionadas con el pago pueden seguir utilizándose para que el sitio y el pago puedan funcionar." },
-    "s9": { "title": "9. Actualizaciones de esta Política de Cookies", "p1": "Podemos actualizar esta Política de Cookies de vez en cuando para reflejar cambios en nuestras prácticas, tecnología o requisitos legales. Publicaremos la política actualizada en esta página y actualizaremos la fecha de \"Última actualización\". Cuando la ley lo exija, obtendremos su consentimiento antes de utilizar nuevas cookies no esenciales. Le animamos a revisar esta política periódicamente." },
-    "s10": { "title": "10. Contáctenos", "p1": "Si tiene preguntas sobre esta Política de Cookies o nuestro uso de cookies, contáctenos:", "entity": "Entidad:", "email": "Correo electrónico:", "phone": "Teléfono:", "address": "Dirección:" },
+    "s1": {
+      "title": "1. Introducción y alcance",
+      "p1": "ATOC KOREA LLC (\"nosotros\") opera el sitio web y la plataforma de reservas en atockorea.com. Esta Política de Cookies se aplica a todos los visitantes y usuarios de nuestra plataforma, incluyendo cuando navega por nuestro sitio, crea una cuenta, hace una reserva o completa un pago. Describe:",
+      "li1": "Qué son las cookies y tecnologías similares",
+      "li2": "Qué cookies utilizamos nosotros y nuestros proveedores de servicios, y por qué",
+      "li3": "Cómo se pueden utilizar las cookies en relación con el procesamiento de pagos y la prevención de fraude cuando usamos proveedores de pago terceros",
+      "li4": "Cómo puede controlar o eliminar las cookies",
+      "p2Before": "Esta política debe leerse junto con nuestra ",
+      "p2After": ", que explica cómo recopilamos, usamos y protegemos su información personal en general."
+    },
+    "s2": {
+      "title": "2. ¿Qué son las cookies y tecnologías similares?",
+      "p1": "Las cookies son pequeños archivos de texto que se colocan en su dispositivo (computadora, tableta o móvil) cuando visita un sitio web. Se utilizan ampliamente para que los sitios web funcionen de manera más eficiente, recordar sus preferencias y proporcionar información al propietario del sitio. Las cookies pueden ser \"de primer lado\" (establecidas por nosotros cuando usa nuestro sitio) o \"de terceros\" (establecidas por otro dominio, como nuestros proveedores de pago o análisis).",
+      "p2": "Las tecnologías similares incluyen almacenamiento local, almacenamiento de sesión, etiquetas de píxeles (web beacons) y secuencias de comandos que almacenan o acceden a información en su dispositivo. Para los fines de esta política, usamos el término \"cookies\" para referirnos a las cookies y estas tecnologías similares cuando se utilizan para fines similares.",
+      "p3": "Las cookies pueden clasificarse por duración (las cookies de sesión se eliminan cuando cierra el navegador; las cookies persistentes permanecen por un período establecido o hasta que las elimine) y por propósito (p. ej., estrictamente necesarias, funcionales, rendimiento, marketing). Describimos los propósitos y categorías que usamos a continuación."
+    },
+    "s3": {
+      "title": "3. Categorías de cookies que utilizamos",
+      "p1": "Utilizamos las siguientes categorías de cookies en nuestra plataforma:",
+      "h31": "3.1 Cookies estrictamente necesarias",
+      "p2": "Estas cookies son esenciales para el funcionamiento de nuestro sitio web y plataforma. Habilitan funcionalidad básica como seguridad, gestión de red, estado de sesión e inicio de sesión, y acceso a áreas seguras. No puede optar por no recibir estas cookies sin afectar el funcionamiento del sitio; en algunas jurisdicciones no requieren consentimiento porque son estrictamente necesarias.",
+      "li1": "Autenticación y sesión: Utilizamos cookies (incluyendo a través de nuestro proveedor de autenticación) para mantenerlo conectado y mantener su sesión de forma segura al navegar entre páginas.",
+      "li2": "Seguridad y prevención de fraude: Nosotros y nuestros proveedores de servicios utilizamos cookies y tecnologías similares para ayudar a detectar y prevenir fraude, abuso y acceso no autorizado.",
+      "li3": "Equilibrio de carga y enrutamiento: Las cookies pueden utilizarse para garantizar que las solicitudes se manejen correctamente por nuestra infraestructura.",
+      "h32": "3.2 Cookies funcionales",
+      "p3": "Estas cookies permiten funcionalidad mejorada y personalización, como recordar su preferencia de idioma o configuración regional.",
+      "li4": "Preferencia de idioma/configuración regional: Almacenamos el idioma elegido (p. ej., inglés, coreano) para que el sitio se muestre en su idioma preferido en visitas posteriores.",
+      "h33": "3.3 Cookies de rendimiento y análisis",
+      "p4": "Podemos utilizar cookies para entender cómo los visitantes usan nuestra plataforma (p. ej., qué páginas se visitan, cuánto tiempo permanecen los usuarios) para mejorar el rendimiento y corregir errores. Cuando utilizamos análisis de terceros, los configuramos para minimizar la identificación y cumplir con nuestra Política de Privacidad.",
+      "h34": "3.4 Cookies de marketing",
+      "p5": "Actualmente no utilizamos cookies para publicidad dirigida ni para rastrearlo en otros sitios web con fines de marketing. Si introducimos tales cookies en el futuro, actualizaremos esta política y, cuando lo exija la ley, obtendremos su consentimiento antes de usarlas."
+    },
+    "s4": {
+      "title": "4. Nuestras cookies de primer lado",
+      "p1": "La siguiente tabla describe las principales cookies de primer lado que establecemos cuando utiliza nuestra plataforma. Los nombres y duraciones de las cookies pueden cambiar con las actualizaciones de nuestra tecnología.",
+      "tablePurpose": "Propósito",
+      "tableCategory": "Categoría",
+      "tableDuration": "Duración",
+      "row1Purpose": "Sesión y autenticación (p. ej., estado de inicio de sesión)",
+      "row1Category": "Estrictamente necesarias",
+      "row1Duration": "Sesión o según nuestro proveedor de autenticación",
+      "row2Purpose": "Preferencia de idioma/configuración regional (p. ej., NEXT_LOCALE)",
+      "row2Category": "Funcionales",
+      "row2Duration": "Hasta 1 año",
+      "row3Purpose": "Seguridad y prevención de fraude",
+      "row3Category": "Estrictamente necesarias",
+      "row3Duration": "Sesión o de corta duración"
+    },
+    "s5": {
+      "title": "5. Procesamiento de pagos y cookies de terceros",
+      "p1": "Cuando ofrecemos pago con tarjeta o en línea en nuestra plataforma, podemos utilizar uno o más proveedores de servicios de pago terceros. Al utilizar el pago, puede ser dirigido o interactuar con las páginas o secuencias de comandos de ese proveedor. El proveedor de pago puede establecer y utilizar sus propias cookies y tecnologías similares para:",
+      "li1": "Procesamiento de pagos: Completar su transacción de forma segura y comunicarse con nuestro servidor sobre el estado del pago.",
+      "li2": "Prevención y detección de fraude: Recopilar información sobre el dispositivo y navegador utilizados para acceder al pago, detectar y prevenir transacciones fraudulentas o no autorizadas, y cumplir con los requisitos de la industria de tarjetas de pago y regulatorios. Bloquear estas cookies puede impedirle completar un pago.",
+      "li3": "Seguridad: Proteger sus datos de pago y garantizar la integridad de la sesión de pago.",
+      "p2": "No controlamos las cookies establecidas por los proveedores de pago; se establecen cuando interactúa con los servicios del proveedor. No utilizamos dichas cookies para publicidad. Cuando habilitemos un proveedor de pago específico, divulgaremos su nombre y enlace a sus políticas de cookies y privacidad en esta sección para que pueda revisarlas antes de pagar."
+    },
+    "s6": {
+      "title": "6. Otras cookies de terceros",
+      "p1": "Podemos utilizar otros servicios de terceros (p. ej., alojamiento, análisis, monitoreo de errores) que establecen cookies o tecnologías similares. Elegimos proveedores que se comprometen con estándares apropiados de seguridad y privacidad. No permitimos que terceros utilicen cookies en nuestro sitio para publicidad entre sitios o para vender sus datos."
+    },
+    "s7": {
+      "title": "7. ¿Cuánto duran las cookies?",
+      "p1": "Las cookies de sesión se eliminan cuando cierra su navegador. Las cookies persistentes permanecen durante el tiempo establecido cuando se colocan (p. ej., desde unos días hasta un año, según el propósito). Nuestra cookie de idioma/configuración regional se establece por hasta un año para recordar su preferencia. Las cookies relacionadas con autenticación y seguridad típicamente duran la duración de su sesión o según la configuración de nuestro proveedor de autenticación. Las duraciones de cookies de cualquier proveedor de pago tercero las establece ese proveedor y se describen en su política de cookies."
+    },
+    "s8": {
+      "title": "8. Cómo puede controlar las cookies",
+      "p1": "Configuración del navegador: La mayoría de los navegadores web permiten gestionar las cookies a través de su configuración. Normalmente puede rechazar o eliminar algunas o todas las cookies. Bloquear o eliminar las cookies estrictamente necesarias puede impedirle iniciar sesión, permanecer conectado o utilizar ciertas funciones. Bloquear o eliminar las cookies utilizadas por nuestro proveedor de pago durante el pago puede impedirle completar un pago en nuestro sitio.",
+      "p2": "Nuestro sitio: Donde ofrecemos un mecanismo de preferencia o consentimiento de cookies (p. ej., en el pie de página o en un banner), puede usarlo para gestionar sus preferencias para cookies no esenciales. Las cookies esenciales y relacionadas con el pago son necesarias para que la plataforma y el pago funcionen y no son opcionales.",
+      "p3": "Cuando utilicemos un proveedor de pago específico, enlazaremos a su configuración de cookies y consentimiento en esta política para que pueda gestionar las cookies establecidas por ese proveedor. Desactivar las cookies del proveedor de pago puede impedirle completar pagos en nuestro sitio cuando se utilice ese proveedor.",
+      "p4": "Do Not Track / Global Privacy Control: Algunos navegadores o extensiones envían señales \"Do Not Track\" o \"Global Privacy Control\". Respetamos dichas señales cuando es técnicamente y legalmente factible; sin embargo, las cookies esenciales y relacionadas con el pago pueden seguir utilizándose para que el sitio y el pago puedan funcionar."
+    },
+    "s9": {
+      "title": "9. Actualizaciones de esta Política de Cookies",
+      "p1": "Podemos actualizar esta Política de Cookies de vez en cuando para reflejar cambios en nuestras prácticas, tecnología o requisitos legales. Publicaremos la política actualizada en esta página y actualizaremos la fecha de \"Última actualización\". Cuando la ley lo exija, obtendremos su consentimiento antes de utilizar nuevas cookies no esenciales. Le animamos a revisar esta política periódicamente."
+    },
+    "s10": {
+      "title": "10. Contáctenos",
+      "p1": "Si tiene preguntas sobre esta Política de Cookies o nuestro uso de cookies, contáctenos:",
+      "entity": "Entidad:",
+      "email": "Correo electrónico:",
+      "phone": "Teléfono:",
+      "address": "Dirección:"
+    },
     "backToLegal": "Volver a Legal"
   },
   "refund": {
@@ -788,17 +896,86 @@
     "introSuffix": ". Esta política de reembolsos se aplica a las reservas realizadas a través de la plataforma de ATOC KOREA LLC y pretende cumplir con la legislación aplicable en Corea y EE. UU. Léala junto con nuestros ",
     "introAfterTerms": " y ",
     "introAfter": ".",
-    "s1": { "title": "1. Alcance y nuestro papel", "p1": "Esta política de reembolsos se aplica a todas las reservas («Reservas») que realice a través de atockorea.com y nuestra plataforma de reservas («Plataforma») para tours, actividades o experiencias («Servicios de tour») ofrecidos por terceros independientes («Proveedores de tour»). Reservar implica aceptar esta política.", "p2": "Actuamos únicamente como intermediarios de reservas. No operamos tours ni prestamos servicios de tour. El contrato del servicio de tour es entre usted y el proveedor. Facilitamos la reserva y, cuando ofrecemos pago en línea, cobramos en nombre del proveedor. La elegibilidad y el importe del reembolso se rigen por (a) esta política, (b) los Términos de servicio y (c) la política de cancelación del proveedor mostrada al reservar y en el correo de confirmación.", "p3": "Cuando la ley local le otorgue derechos que no puedan limitarse por contrato, esos derechos se aplican además de esta política. Esta política no pretende excluir ni limitar esos derechos imperativos." },
-    "s2": { "title": "2. Definiciones", "booking": "Reserva: la reserva que realiza a través de la Plataforma de un Servicio de tour ofrecido por un Proveedor de tour.", "platform": "Plataforma: el sitio web, la aplicación y los sistemas relacionados operados por ATOC KOREA LLC para consultar y reservar tours y actividades.", "tourProvider": "Proveedor de tour (operador, comerciante): el tercero independiente que opera el Servicio de tour. No es empleado ni agente nuestro.", "platformFees": "Tarifas de plataforma: lo que cobramos por nuestro servicio de intermediación.", "tourFees": "Tarifas de tour: el importe pagado por el Servicio de tour, cobrado por nosotros o por un proveedor de pago designado en nombre del Proveedor de tour.", "totalPrice": "Precio total: lo que paga al finalizar la compra, que puede incluir tarifas de plataforma y tarifas de tour (e impuestos aplicables)." },
-    "s3": { "title": "3. Ley aplicable y derechos del consumidor", "p1": "Corea: si es consumidor según la ley coreana, puede tener derecho a desistir o rescindir determinados contratos en los plazos legales. Mostramos las condiciones de cancelación y reembolso con claridad antes de completar la reserva.", "p2": "EE. UU.: los derechos de reembolso y cancelación pueden estar sujetos a la ley estatal. Mostramos la política de reembolsos con claridad antes de la compra.", "p3": "Las disputas sobre reembolsos se rigen por los Términos de servicio. También puede interponer reclamaciones ante organismos de protección al consumidor o utilizar mecanismos de resolución de disputas cuando proceda." },
-    "s4": { "title": "4. Tarifas de plataforma: cuándo son reembolsables", "p1": "Las tarifas de plataforma cubren nuestro servicio de intermediación. Tras la confirmación de la reserva, por regla general no son reembolsables, salvo en los siguientes casos:", "li1": "Error de nuestro sistema o de la Plataforma por el que la reserva no se confirmó y no se prestó el Servicio de tour.", "li2": "El Proveedor de tour cancela antes de la fecha prevista. Podemos reembolsar total o parcialmente las tarifas de plataforma a nuestra discreción.", "li3": "Nosotros cancelamos la reserva antes de la prestación del Servicio de tour. Reembolsaremos todo lo pagado (incluidas las tarifas de plataforma).", "li4": "La ley aplicable nos obliga a reembolsar.", "p2": "Las tarifas de plataforma no se reembolsan únicamente por cancelación voluntaria, no presentación (no-show) o insatisfacción tras la prestación del servicio." },
-    "s5": { "title": "5. Tarifas de tour: cuándo son reembolsables", "p1": "La elegibilidad para el reembolso de las tarifas de tour la determina la política de cancelación del Proveedor de tour, que mostramos antes de completar la reserva y resumimos en el correo de confirmación.", "li1": "Cancelación antes de la fecha/hora indicada: reembolso total de las tarifas de tour.", "li2": "Cancelación dentro del plazo indicado: reembolso parcial o ninguno.", "li3": "No-show o cancelación tardía: sin reembolso.", "p2": "Si el Proveedor de tour cancela el Servicio de tour, colaboraremos para ofrecer reembolso total de las tarifas de tour o fecha/experiencia alternativa.", "p3": "Cuando la ley imperativa le otorgue derecho a desistir y obtener reembolso en un plazo legal, tramitaremos el reembolso de las tarifas de tour conforme a la ley." },
-    "s6": { "title": "6. Cómo solicitar cancelación o reembolso", "p1Before": "Para solicitar cancelación o reembolso, póngase en contacto con nosotros en ", "p1After": " indicando el número de reserva y el motivo. Procesaremos según (a) la política de cancelación del proveedor, (b) esta política de reembolsos y (c) el momento de la solicitud.", "p2": "Solicite la cancelación lo antes posible. Confirmaremos el resultado por correo electrónico." },
-    "s7": { "title": "7. No-show y cancelación tardía", "p1": "No-show significa no asistir al Servicio de tour sin haber cancelado con antelación según la política del Proveedor de tour. Normalmente no hay reembolso de tarifas de tour ni de plataforma.", "p2": "Cancelación tardía es cancelar después del plazo de reembolso total o parcial fijado por el Proveedor de tour. Las consecuencias las establece el proveedor y se muestran antes de la reserva." },
-    "s8": { "title": "8. Cómo procesamos los reembolsos", "p1": "Una vez aprobada la solicitud de reembolso, devolvemos el importe correspondiente al método de pago original. Cuando usamos un proveedor de pago tercero, el reembolso se procesa a través de dicho proveedor. Suele acreditarse en 5-10 días laborables.", "p2": "Confirmaremos por correo que el reembolso se ha procesado. Si no ve el reembolso en el plazo esperado, contacte primero con su banco o emisor de la tarjeta.", "p3": "Cuando la ley aplicable establezca plazos de reembolso, los cumpliremos en la medida aplicable." },
-    "s9": { "title": "9. Qué no es reembolsable", "p1": "Salvo lo dispuesto en esta política o por ley, no se reembolsa:", "li1": "Tarifas de plataforma una vez confirmada la reserva.", "li2": "Tarifas de tour en caso de no-show o cancelación tardía según la política del proveedor.", "li3": "La parte del Servicio de tour ya consumida.", "li4": "Servicios o complementos comprados fuera de nuestra Plataforma.", "li5": "Importes que ya hayamos pagado o comprometido a pagar al proveedor según nuestro acuerdo y el momento de la cancelación." },
-    "s10": { "title": "10. Contracargos y disputas", "p1": "Si considera que tiene derecho a reembolso, contacte primero en support@atockorea.com con el número de reserva y el motivo antes de iniciar un contracargo o disputa con su banco o emisor.", "p2": "Los contracargos o disputas que contradigan las condiciones de cancelación y reembolso mostradas y aceptadas al reservar pueden ser impugnados." },
-    "s11": { "title": "11. Cambios en esta política y contacto", "p1": "Podemos actualizar esta política de reembolsos periódicamente. La versión actualizada se publicará en esta página y se actualizará la fecha de «Última actualización».", "p2": "Solicitudes de reembolso, consultas sobre la política o disputas:", "email": "Correo electrónico:", "emailNote": " (indique número de reserva y motivo)", "phone": "Teléfono:", "entity": "Entidad:", "address": "Dirección:" },
+    "s1": {
+      "title": "1. Alcance y nuestro papel",
+      "p1": "Esta política de reembolsos se aplica a todas las reservas («Reservas») que realice a través de atockorea.com y nuestra plataforma de reservas («Plataforma») para tours, actividades o experiencias («Servicios de tour») ofrecidos por terceros independientes («Proveedores de tour»). Reservar implica aceptar esta política.",
+      "p2": "Actuamos únicamente como intermediarios de reservas. No operamos tours ni prestamos servicios de tour. El contrato del servicio de tour es entre usted y el proveedor. Facilitamos la reserva y, cuando ofrecemos pago en línea, cobramos en nombre del proveedor. La elegibilidad y el importe del reembolso se rigen por (a) esta política, (b) los Términos de servicio y (c) la política de cancelación del proveedor mostrada al reservar y en el correo de confirmación.",
+      "p3": "Cuando la ley local le otorgue derechos que no puedan limitarse por contrato, esos derechos se aplican además de esta política. Esta política no pretende excluir ni limitar esos derechos imperativos."
+    },
+    "s2": {
+      "title": "2. Definiciones",
+      "booking": "Reserva: la reserva que realiza a través de la Plataforma de un Servicio de tour ofrecido por un Proveedor de tour.",
+      "platform": "Plataforma: el sitio web, la aplicación y los sistemas relacionados operados por ATOC KOREA LLC para consultar y reservar tours y actividades.",
+      "tourProvider": "Proveedor de tour (operador, comerciante): el tercero independiente que opera el Servicio de tour. No es empleado ni agente nuestro.",
+      "platformFees": "Tarifas de plataforma: lo que cobramos por nuestro servicio de intermediación.",
+      "tourFees": "Tarifas de tour: el importe pagado por el Servicio de tour, cobrado por nosotros o por un proveedor de pago designado en nombre del Proveedor de tour.",
+      "totalPrice": "Precio total: lo que paga al finalizar la compra, que puede incluir tarifas de plataforma y tarifas de tour (e impuestos aplicables)."
+    },
+    "s3": {
+      "title": "3. Ley aplicable y derechos del consumidor",
+      "p1": "Corea: si es consumidor según la ley coreana, puede tener derecho a desistir o rescindir determinados contratos en los plazos legales. Mostramos las condiciones de cancelación y reembolso con claridad antes de completar la reserva.",
+      "p2": "EE. UU.: los derechos de reembolso y cancelación pueden estar sujetos a la ley estatal. Mostramos la política de reembolsos con claridad antes de la compra.",
+      "p3": "Las disputas sobre reembolsos se rigen por los Términos de servicio. También puede interponer reclamaciones ante organismos de protección al consumidor o utilizar mecanismos de resolución de disputas cuando proceda."
+    },
+    "s4": {
+      "title": "4. Tarifas de plataforma: cuándo son reembolsables",
+      "p1": "Las tarifas de plataforma cubren nuestro servicio de intermediación. Tras la confirmación de la reserva, por regla general no son reembolsables, salvo en los siguientes casos:",
+      "li1": "Error de nuestro sistema o de la Plataforma por el que la reserva no se confirmó y no se prestó el Servicio de tour.",
+      "li2": "El Proveedor de tour cancela antes de la fecha prevista. Podemos reembolsar total o parcialmente las tarifas de plataforma a nuestra discreción.",
+      "li3": "Nosotros cancelamos la reserva antes de la prestación del Servicio de tour. Reembolsaremos todo lo pagado (incluidas las tarifas de plataforma).",
+      "li4": "La ley aplicable nos obliga a reembolsar.",
+      "p2": "Las tarifas de plataforma no se reembolsan únicamente por cancelación voluntaria, no presentación (no-show) o insatisfacción tras la prestación del servicio."
+    },
+    "s5": {
+      "title": "5. Tarifas de tour: cuándo son reembolsables",
+      "p1": "La elegibilidad para el reembolso de las tarifas de tour la determina la política de cancelación del Proveedor de tour, que mostramos antes de completar la reserva y resumimos en el correo de confirmación.",
+      "li1": "Cancelación antes de la fecha/hora indicada: reembolso total de las tarifas de tour.",
+      "li2": "Cancelación dentro del plazo indicado: reembolso parcial o ninguno.",
+      "li3": "No-show o cancelación tardía: sin reembolso.",
+      "p2": "Si el Proveedor de tour cancela el Servicio de tour, colaboraremos para ofrecer reembolso total de las tarifas de tour o fecha/experiencia alternativa.",
+      "p3": "Cuando la ley imperativa le otorgue derecho a desistir y obtener reembolso en un plazo legal, tramitaremos el reembolso de las tarifas de tour conforme a la ley."
+    },
+    "s6": {
+      "title": "6. Cómo solicitar cancelación o reembolso",
+      "p1Before": "Para solicitar cancelación o reembolso, póngase en contacto con nosotros en ",
+      "p1After": " indicando el número de reserva y el motivo. Procesaremos según (a) la política de cancelación del proveedor, (b) esta política de reembolsos y (c) el momento de la solicitud.",
+      "p2": "Solicite la cancelación lo antes posible. Confirmaremos el resultado por correo electrónico."
+    },
+    "s7": {
+      "title": "7. No-show y cancelación tardía",
+      "p1": "No-show significa no asistir al Servicio de tour sin haber cancelado con antelación según la política del Proveedor de tour. Normalmente no hay reembolso de tarifas de tour ni de plataforma.",
+      "p2": "Cancelación tardía es cancelar después del plazo de reembolso total o parcial fijado por el Proveedor de tour. Las consecuencias las establece el proveedor y se muestran antes de la reserva."
+    },
+    "s8": {
+      "title": "8. Cómo procesamos los reembolsos",
+      "p1": "Una vez aprobada la solicitud de reembolso, devolvemos el importe correspondiente al método de pago original. Cuando usamos un proveedor de pago tercero, el reembolso se procesa a través de dicho proveedor. Suele acreditarse en 5-10 días laborables.",
+      "p2": "Confirmaremos por correo que el reembolso se ha procesado. Si no ve el reembolso en el plazo esperado, contacte primero con su banco o emisor de la tarjeta.",
+      "p3": "Cuando la ley aplicable establezca plazos de reembolso, los cumpliremos en la medida aplicable."
+    },
+    "s9": {
+      "title": "9. Qué no es reembolsable",
+      "p1": "Salvo lo dispuesto en esta política o por ley, no se reembolsa:",
+      "li1": "Tarifas de plataforma una vez confirmada la reserva.",
+      "li2": "Tarifas de tour en caso de no-show o cancelación tardía según la política del proveedor.",
+      "li3": "La parte del Servicio de tour ya consumida.",
+      "li4": "Servicios o complementos comprados fuera de nuestra Plataforma.",
+      "li5": "Importes que ya hayamos pagado o comprometido a pagar al proveedor según nuestro acuerdo y el momento de la cancelación."
+    },
+    "s10": {
+      "title": "10. Contracargos y disputas",
+      "p1": "Si considera que tiene derecho a reembolso, contacte primero en support@atockorea.com con el número de reserva y el motivo antes de iniciar un contracargo o disputa con su banco o emisor.",
+      "p2": "Los contracargos o disputas que contradigan las condiciones de cancelación y reembolso mostradas y aceptadas al reservar pueden ser impugnados."
+    },
+    "s11": {
+      "title": "11. Cambios en esta política y contacto",
+      "p1": "Podemos actualizar esta política de reembolsos periódicamente. La versión actualizada se publicará en esta página y se actualizará la fecha de «Última actualización».",
+      "p2": "Solicitudes de reembolso, consultas sobre la política o disputas:",
+      "email": "Correo electrónico:",
+      "emailNote": " (indique número de reserva y motivo)",
+      "phone": "Teléfono:",
+      "entity": "Entidad:",
+      "address": "Dirección:"
+    },
     "backToLegal": "Volver a Legal"
   },
   "trustBar": {
@@ -822,4 +999,3 @@
     "save": "Guardar"
   }
 }
-

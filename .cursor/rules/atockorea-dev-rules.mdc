@@ -1,0 +1,29 @@
+---
+description: ATOCKOREA.com 프로젝트 개발 규칙 (스택, 컴포넌트, 에러처리, 환경변수)
+alwaysApply: true
+---
+
+# ATOCKOREA.COM 프로젝트 개발 규칙
+
+## 기본 스택
+- **Frontend**: Next.js 14 (App Router 필수), TypeScript, Tailwind CSS
+- **Backend (Data Pipeline)**: Python 3, Pandas, BeautifulSoup4
+- **Database**: Supabase (PostgreSQL, pgvector)
+- **AI**: OpenAI (Embedding), Gemini/Claude (Chat)
+
+## 코드 작성 규칙
+
+### UI / 프론트엔드
+- UI 구성 요소는 최대한 작게 쪼개서 Component로 만들고, 재사용 가능하게 작성할 것.
+
+### Python (Data Pipeline)
+- 반드시 에러 처리(try-except)를 포함할 것.
+- 터미널에 진행 상황을 `print`로 출력할 것.
+
+### 환경 변수
+- API Key 등 환경 변수는 코드에 직접 적지 말 것.
+- **JS/TS**: `process.env.변수명` 사용.
+- **Python**: `os.getenv("변수명")` 사용.
+
+### 답변/코드 스타일
+- 불필요한 서론 없이, 바로 작동하는 전체 코드를 제시할 것.
