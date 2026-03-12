@@ -4,8 +4,6 @@ import BottomNav from '@/components/BottomNav';
 import HeroSection from '@/components/HeroSection';
 import CompactTrustBar from '@/components/CompactTrustBar';
 import DestinationsCards from '@/components/DestinationsCards';
-import HomeTourSections from '@/components/HomeTourSections';
-import TourList from '@/components/TourList';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 // Force dynamic rendering to avoid I18nProvider issues during static generation
@@ -26,8 +24,6 @@ export default function HomePage() {
         <HeroSection />
         <CompactTrustBar />
         <DestinationsCards />
-        <HomeTourSections />
-        <TourList />
       </main>
       <Footer />
       <BottomNav />

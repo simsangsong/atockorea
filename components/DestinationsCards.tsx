@@ -240,13 +240,13 @@ export default function DestinationsCards() {
           </div>
 
           {toursLoading ? (
-            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
               {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="bg-gray-100 rounded-xl aspect-[4/3] animate-pulse" />
+                <div key={i} className="bg-gray-100 rounded-lg aspect-[4/3] animate-pulse" />
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
               {tours.map((tour) => {
                 const hasDiscount = tour.original_price != null && tour.original_price > tour.price;
                 const discount =
@@ -275,7 +275,6 @@ export default function DestinationsCards() {
                     reviewCount={tour.review_count ?? 0}
                     discount={discount}
                     badgeVariant="brand"
-                    variant="home"
                   />
                 );
               })}
