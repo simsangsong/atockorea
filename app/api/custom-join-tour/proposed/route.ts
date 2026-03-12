@@ -30,7 +30,7 @@ export async function GET() {
     }
 
     const proposedTours: ProposedTourItem[] = (data || []).map((row: Record<string, unknown>) => ({
-      id: row.id,
+      id: String(row.id ?? ''),
       title: String(row.title ?? ''),
       summary: row.summary != null ? String(row.summary) : null,
       schedule: Array.isArray(row.schedule) ? row.schedule as ProposedTourItem['schedule'] : [],
