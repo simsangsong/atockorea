@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { MapPin, Check, X, Shield, Clock, Globe, ChevronRight, Star, Navigation } from 'lucide-react';
+import { useTranslations } from '@/lib/i18n';
 
 // ================= TIMELINE CARD COMPONENT =================
 function TimelineCard({ time, title, image, subtitle, description, dotClass, borderClass, textClass }: any) {
@@ -38,7 +39,7 @@ function TimelineCard({ time, title, image, subtitle, description, dotClass, bor
 }
 
 export default function TourDetailPage() {
-  
+  const t = useTranslations();
   const timelineData = [
     {
       time: "09:00 AM",
@@ -181,8 +182,8 @@ export default function TourDetailPage() {
 
           {/* 4. Meeting & Pickup Details (새롭고 깔끔한 레이아웃) */}
           <div className="flex flex-col items-center">
-            <span className="bg-indigo-50 text-indigo-500 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-inner">Logistics</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 sm:mb-8 text-neutral-900">Meeting & Pickup</h2>
+            <span className="bg-indigo-50 text-indigo-500 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-inner">{t('tour.logisticsTag')}</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 sm:mb-8 text-neutral-900">{t('tour.meetingPickup')}</h2>
             
             <div className="w-full bg-white rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-8 shadow-sm border border-neutral-100 flex flex-col lg:flex-row gap-8 items-stretch lg:px-8">
               
@@ -192,7 +193,7 @@ export default function TourDetailPage() {
                   <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5 text-indigo-500" />
                   </div>
-                  <h3 className="font-extrabold text-lg sm:text-xl text-neutral-900">Pickup Points</h3>
+                  <h3 className="font-extrabold text-lg sm:text-xl text-neutral-900">{t('tour.pickupPointsTitle')}</h3>
                 </div>
                 
                 <ul className="space-y-4">
@@ -214,7 +215,7 @@ export default function TourDetailPage() {
 
                 <div className="bg-indigo-50/50 rounded-xl p-4 flex items-center gap-3 mt-2">
                   <Navigation className="w-5 h-5 text-indigo-400 shrink-0" />
-                  <span className="text-xs font-medium text-neutral-600 leading-relaxed">Exact pickup times will be communicated 1 day prior to the tour.</span>
+                  <span className="text-xs font-medium text-neutral-600 leading-relaxed">{t('tour.pickupNoticeExactTimes')}</span>
                 </div>
               </div>
 

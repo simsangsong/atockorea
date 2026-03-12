@@ -7,6 +7,14 @@ import { supabase } from '@/lib/supabase';
 import PickupPointSelector from '@/components/maps/PickupPointSelector';
 import { CHILD_ELIGIBILITY_RULES, CHILD_SEAT_OPTIONS, STROLLER_WHEELCHAIR_OPTIONS } from '@/lib/participant-rules';
 
+/** Default Important Notes (same as ImportantNotesContent). Export/import uses this when notes is empty. */
+const DEFAULT_IMPORTANT_NOTES = [
+  'Your guide will contact you the day before the tour to confirm your pickup location and time.',
+  'Please arrive at the pickup point at least 10 minutes early and wait for the guide.',
+  'If you are more than 10 minutes late, you will be considered a no-show and no refund will be provided.',
+  'Guests who have paid a deposit must pay the remaining balance in cash directly to the guide on the day of the tour. Please bring sufficient cash; card payments are not accepted.',
+];
+
 interface Tour {
   id: string;
   title: string;
@@ -1176,18 +1184,9 @@ export default function ProductsPage() {
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     />
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Notes / Important Information
-                    </label>
-                    <textarea
-                      value={formData.notes || ''}
-                      onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                      rows={6}
-                      placeholder="Important information, cancellation policy, etc..."
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                    />
-                  </div>
+                  <p className="text-sm text-gray-500 bg-gray-50 rounded-lg p-3 border border-gray-200">
+                    <strong>Important Notes</strong> on the tour page are the same for all tours (pickup confirmation, 10 min early, no-show, cash balance). They are managed in <code className="text-xs bg-gray-200 px-1 rounded">components/tour/ImportantNotesContent.tsx</code>, not per product.
+                  </p>
 
                   {/* 아동 자격 / 儿童资格 */}
                   <div className="border-t border-gray-200 pt-6">
@@ -1841,7 +1840,11 @@ export default function ProductsPage() {
                           duration: tr.duration ?? formData.duration ?? '',
                           description: tr.description ?? formData.description ?? '',
                           pickup_info: tr.pickup_info ?? formData.pickup_info ?? '',
-                          notes: tr.notes ?? formData.notes ?? '',
+                          important_notes: (tr.notes ?? formData.notes)
+                            ? (typeof (tr.notes ?? formData.notes) === 'string' && (tr.notes ?? formData.notes)!.includes('\n')
+                              ? (tr.notes ?? formData.notes)!.split('\n')
+                              : [tr.notes ?? formData.notes])
+                            : DEFAULT_IMPORTANT_NOTES,
                           pickup_points: pickupPointsList.map((p) => {
                             const t = getPickupTr(p.id);
                             return { id: p.id, name: t?.name ?? p.name };
@@ -1876,7 +1879,15 @@ export default function ProductsPage() {
                         if (parsed.duration !== undefined) next.duration = typeof parsed.duration === 'string' ? parsed.duration : '';
                         if (parsed.description !== undefined) next.description = typeof parsed.description === 'string' ? parsed.description : '';
                         if (parsed.pickup_info !== undefined) next.pickup_info = typeof parsed.pickup_info === 'string' ? parsed.pickup_info : '';
-                        if (parsed.notes !== undefined) next.notes = typeof parsed.notes === 'string' ? parsed.notes : '';
+                        if (parsed.important_notes !== undefined) {
+                          next.notes = Array.isArray(parsed.important_notes)
+                            ? (parsed.important_notes as string[]).map((x) => typeof x === 'string' ? x : String(x)).join('\n')
+                            : typeof parsed.important_notes === 'string'
+                              ? parsed.important_notes
+                              : '';
+                        } else if (parsed.notes !== undefined) {
+                          next.notes = typeof parsed.notes === 'string' ? parsed.notes : '';
+                        }
                         if (Array.isArray(parsed.highlights)) next.highlights = parsed.highlights.map((x) => (typeof x === 'string' ? x : String(x)));
                         if (Array.isArray(parsed.includes)) next.includes = parsed.includes.map((x) => (typeof x === 'string' ? x : String(x)));
                         if (Array.isArray(parsed.excludes)) next.excludes = parsed.excludes.map((x) => (typeof x === 'string' ? x : String(x)));
@@ -1925,7 +1936,7 @@ export default function ProductsPage() {
                             <textarea
                               value={localeBulkJson}
                               onChange={(e) => { setLocaleBulkJson(e.target.value); setLocaleBulkError(null); }}
-                              placeholder='{"title":"...","pickup_info":"...","notes":"...","pickup_points":[{"id":"...","name":"..."}],"highlights":["..."],"schedule":[...],"itinerary_details":[{"time":"09:00","activity":"...","description":"..."}],"faqs":[...]}'
+                              placeholder='{"title":"...","pickup_info":"...","important_notes":["...","...","...","..."],"pickup_points":[{"id":"...","name":"..."}],"highlights":["..."],"schedule":[...],"itinerary_details":[{"time":"09:00","activity":"...","description":"..."}],"faqs":[...]}'
                               rows={12}
                               className="w-full px-3 py-2 border border-gray-300 rounded-lg font-mono text-xs focus:ring-2 focus:ring-indigo-500"
                             />
@@ -1958,15 +1969,12 @@ export default function ProductsPage() {
                           </div>
                           {/* 상세 정보 */}
                           <div>
-                            <h4 className="text-xs font-semibold text-gray-600 mb-3 uppercase">상세 정보 – Pickup Info / Notes ({editLocale})</h4>
+                            <h4 className="text-xs font-semibold text-gray-600 mb-3 uppercase">상세 정보 – Pickup Info ({editLocale})</h4>
+                            <p className="text-xs text-gray-500 mb-3">Tour page &quot;Important Notes&quot; is global content (ImportantNotesContent), not edited here.</p>
                             <div className="space-y-4">
                               <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-1">Pickup Info</label>
                                 <textarea value={tr.pickup_info ?? formData.pickup_info ?? ''} onChange={(e) => setTr('pickup_info', e.target.value || undefined)} rows={4} placeholder={formData.pickup_info ? formData.pickup_info.slice(0, 60) + '...' : 'Pickup information...'} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500" />
-                              </div>
-                              <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">Notes / Important Information</label>
-                                <textarea value={tr.notes ?? formData.notes ?? ''} onChange={(e) => setTr('notes', e.target.value || undefined)} rows={5} placeholder={formData.notes ? formData.notes.slice(0, 60) + '...' : 'Important information...'} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500" />
                               </div>
                             </div>
                           </div>

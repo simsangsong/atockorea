@@ -520,8 +520,8 @@ export default function TourDetailPage() {
                   <Shield className="w-4 h-4 text-orange-500" />
                 </div>
                 <div className="text-left">
-                  <h3 className="font-extrabold text-[13px] sm:text-sm text-neutral-900 leading-tight">Secure Deposit</h3>
-                  <p className="text-[11px] sm:text-xs text-neutral-500 mt-1 font-medium leading-tight">Pay the rest on site</p>
+                  <h3 className="font-extrabold text-[13px] sm:text-sm text-neutral-900 leading-tight">{t('tour.secureDeposit')}</h3>
+                  <p className="text-[11px] sm:text-xs text-neutral-500 mt-1 font-medium leading-tight">{t('tour.secureDepositSub')}</p>
                 </div>
               </div>
               <div className="hidden sm:block w-px h-7 bg-neutral-100" />
@@ -530,8 +530,8 @@ export default function TourDetailPage() {
                   <Clock className="w-4 h-4 text-sky-500" />
                 </div>
                 <div className="text-left">
-                  <h3 className="font-extrabold text-[13px] sm:text-sm text-neutral-900 leading-tight">Expert Local Guides</h3>
-                  <p className="text-[11px] sm:text-xs text-neutral-500 mt-1 font-medium leading-tight">Experienced local professionals</p>
+                  <h3 className="font-extrabold text-[13px] sm:text-sm text-neutral-900 leading-tight">{t('tour.expertLocalGuides')}</h3>
+                  <p className="text-[11px] sm:text-xs text-neutral-500 mt-1 font-medium leading-tight">{t('tour.expertLocalGuidesSub')}</p>
                 </div>
               </div>
               <div className="hidden sm:block w-px h-7 bg-neutral-100" />
@@ -540,16 +540,16 @@ export default function TourDetailPage() {
                   <Globe className="w-4 h-4 text-emerald-500" />
                 </div>
                 <div className="text-left">
-                  <h3 className="font-extrabold text-[13px] sm:text-sm text-neutral-900 leading-tight">Verified LLC</h3>
-                  <p className="text-[11px] sm:text-xs text-neutral-500 mt-1 font-medium leading-tight">Globally standardized</p>
+                  <h3 className="font-extrabold text-[13px] sm:text-sm text-neutral-900 leading-tight">{t('tour.verifiedLLC')}</h3>
+                  <p className="text-[11px] sm:text-xs text-neutral-500 mt-1 font-medium leading-tight">{t('tour.verifiedLLCSub')}</p>
                 </div>
               </div>
             </div>
 
             {/* 2. Photo Gallery (asymmetric grid, +N Photos) */}
             <div className="flex flex-col items-center mt-2 sm:mt-4">
-              <span className="bg-rose-50 text-rose-500 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-inner">Gallery</span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 sm:mb-8 text-neutral-900">Captured Moments</h2>
+              <span className="bg-rose-50 text-rose-500 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-inner">{t('tour.galleryTag')}</span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 sm:mb-8 text-neutral-900">{t('tour.capturedMoments')}</h2>
               <div className="w-full grid grid-cols-2 sm:grid-cols-2 gap-2 sm:gap-4 lg:px-6 grid-rows-[1fr_1fr_auto] sm:grid-rows-none">
                 {/* Left: big image (mobile row-span-2, sm single row) */}
                 <div className="relative row-span-2 sm:row-span-1 h-48 min-h-[180px] sm:min-h-0 sm:h-80 w-full rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-sm">
@@ -591,7 +591,7 @@ export default function TourDetailPage() {
                       <div className="w-full h-full bg-neutral-200" />
                     )}
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-colors">
-                      <span className="text-white font-extrabold text-lg tracking-wide">+{Math.max(0, imageCount - 3)} Photos</span>
+                      <span className="text-white font-extrabold text-lg tracking-wide">{t('tour.morePhotos', { count: Math.max(0, imageCount - 3) })}</span>
                     </div>
                   </div>
                 </div>
@@ -603,18 +603,18 @@ export default function TourDetailPage() {
                       <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-colors z-[1]" />
                     </>
                   ) : null}
-                  <span className={`relative z-10 font-extrabold text-lg tracking-wide ${nextGalleryImage ? 'text-white drop-shadow-md' : 'text-neutral-600'}`}>+{Math.max(0, imageCount - 3)} Photos</span>
+                  <span className={`relative z-10 font-extrabold text-lg tracking-wide ${nextGalleryImage ? 'text-white drop-shadow-md' : 'text-neutral-600'}`}>{t('tour.morePhotos', { count: Math.max(0, imageCount - 3) })}</span>
                 </div>
               </div>
             </div>
 
             {/* 3. The Adventure Unfolds (Timeline) */}
             <div className="flex flex-col items-center" id="details-content">
-              <span className="bg-sky-50 text-sky-400 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-inner">Your Day at a Glance</span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold mb-2 text-center text-neutral-900">The Adventure Unfolds</h2>
-              <p className="text-sm sm:text-base text-neutral-500 font-medium text-center mb-8 sm:mb-12">A cinematic day trip through Korea&apos;s most iconic landscapes</p>
+              <span className="bg-sky-50 text-sky-400 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-inner">{t('tour.yourDayAtGlance')}</span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold mb-2 text-center text-neutral-900">{t('tour.theAdventureUnfolds')}</h2>
+              <p className="text-sm sm:text-base text-neutral-500 font-medium text-center mb-8 sm:mb-12">{t('tour.cinematicDayTrip')}</p>
               {tour.pickupPoints?.length > 0 && (
-                <p className="text-sm text-neutral-500 mb-4">{tour.pickupPoints.length} pickup points / 픽업지역 {tour.pickupPoints.length}개</p>
+                <p className="text-sm text-neutral-500 mb-4">{t('tour.pickupPointsCount', { count: tour.pickupPoints.length })}</p>
               )}
               {destinationItems.length === 0 ? (
                 <p className="text-neutral-500 text-sm">{t('tour.itinerary')} — {t('tour.noPickupPoints') || 'No schedule data.'}</p>
@@ -661,15 +661,15 @@ export default function TourDetailPage() {
 
             {/* 4. Meeting & Pickup */}
             <div className="flex flex-col items-center" id="pickup-info">
-              <span className="bg-indigo-50 text-indigo-500 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-inner">Logistics</span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 sm:mb-8 text-neutral-900">Meeting & Pickup</h2>
+              <span className="bg-indigo-50 text-indigo-500 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-inner">{t('tour.logisticsTag')}</span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 sm:mb-8 text-neutral-900">{t('tour.meetingPickup')}</h2>
               <div className="w-full bg-white rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-8 shadow-sm border border-neutral-100 flex flex-col lg:flex-row flex-wrap gap-8 items-stretch lg:px-8">
                 <div className="flex-1 flex flex-col justify-center space-y-6">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
                       <MapPin className="w-5 h-5 text-indigo-500" />
                     </div>
-                    <h3 className="font-extrabold text-lg sm:text-xl text-neutral-900">Pickup Points</h3>
+                    <h3 className="font-extrabold text-lg sm:text-xl text-neutral-900">{t('tour.pickupPointsTitle')}</h3>
                   </div>
                   {tour.pickupPoints?.length > 0 ? (
                     <ul className="space-y-4">
@@ -686,7 +686,7 @@ export default function TourDetailPage() {
                               {point.image_url ? (
                                 <Image src={point.image_url} alt={point.name} width={96} height={64} className="w-full h-full object-cover" />
                               ) : (
-                                <span className="text-[10px] font-medium text-neutral-400">Photo</span>
+                                <span className="text-[10px] font-medium text-neutral-400">{t('tour.photoPlaceholder')}</span>
                               )}
                             </div>
                           </li>
@@ -697,11 +697,11 @@ export default function TourDetailPage() {
                     <ul className="text-sm text-neutral-600 leading-relaxed space-y-2 list-none">
                       <li className="flex items-start gap-2">
                         <span className="text-base shrink-0">⏰</span>
-                        <span><strong className="text-neutral-800 font-semibold">Arrive 10 min early</strong> — Spots can get busy.</span>
+                        <span><strong className="text-neutral-800 font-semibold">{t('tour.arrive10MinEarly')}</strong> — {t('tour.spotsCanGetBusy')}</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-base shrink-0">⚠️</span>
-                        <span><strong className="text-neutral-800 font-semibold">No-show after 10 min</strong> — Refunds may not be available.</span>
+                        <span><strong className="text-neutral-800 font-semibold">{t('tour.noShowAfter10Min')}</strong> — {t('tour.refundsMayNotBeAvailable')}</span>
                       </li>
                     </ul>
                   )}
@@ -739,25 +739,25 @@ export default function TourDetailPage() {
                     <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center shrink-0">
                       <Navigation className="w-4 h-4 text-indigo-600" />
                     </div>
-                    <p className="text-[13px] leading-snug font-medium text-neutral-800">Exact pickup times will be communicated 1 day prior to the tour.</p>
+                    <p className="text-[13px] leading-snug font-medium text-neutral-800">{t('tour.pickupNoticeExactTimes')}</p>
                   </div>
                   <div className="flex items-center gap-2.5 rounded-2xl py-2.5 px-3.5 bg-emerald-50/90 border border-emerald-100">
                     <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center shrink-0">
                       <Clock className="w-4 h-4 text-emerald-600" />
                     </div>
-                    <p className="text-[13px] leading-snug font-medium text-neutral-800">Kindly arrive 10 minutes early for a smooth and relaxed pickup.</p>
+                    <p className="text-[13px] leading-snug font-medium text-neutral-800">{t('tour.pickupNoticeArriveEarly')}</p>
                   </div>
                   <div className="flex items-center gap-2.5 rounded-2xl py-2.5 px-3.5 bg-blue-50/90 border border-blue-100">
                     <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
                       <AlertCircle className="w-4 h-4 text-blue-600" />
                     </div>
-                    <p className="text-[13px] leading-snug font-medium text-neutral-800">Please note that a 10-minute delay counts as a non-refundable no-show.</p>
+                    <p className="text-[13px] leading-snug font-medium text-neutral-800">{t('tour.pickupNoticeNoShow')}</p>
                   </div>
                   <div className="flex items-center gap-2.5 rounded-2xl py-2.5 px-3.5 bg-violet-50/90 border border-violet-100">
                     <div className="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
                       <Plane className="w-4 h-4 text-violet-600" />
                     </div>
-                    <p className="text-[13px] leading-snug font-medium text-neutral-800">Convenient airport pickup and drop-off services are available.</p>
+                    <p className="text-[13px] leading-snug font-medium text-neutral-800">{t('tour.pickupNoticeAirport')}</p>
                   </div>
                 </div>
               </div>
