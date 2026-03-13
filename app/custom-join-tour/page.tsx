@@ -455,8 +455,8 @@ export default function CustomJoinTourPage() {
     setError(null);
     const title =
       schedule.length > 0 && schedule[0].places?.length > 0
-        ? `${schedule[0].places[0].name || '留욎땄'} ??${schedule.length}??
-        : `留욎땄 ?ъ뼱 ${schedule.length}??;
+        ? `${schedule[0].places[0].name || '맞춤'} 투어 ${schedule.length}일`
+        : `맞춤 투어 ${schedule.length}일`;
     try {
       const res = await fetch('/api/custom-join-tour/proposed', {
         method: 'POST',
