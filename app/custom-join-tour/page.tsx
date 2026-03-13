@@ -48,9 +48,9 @@ const ROBOT_ICON = '/images/robot-icon.png';
 
 type Step = 'start' | 'ask_participants' | 'ask_vehicle' | 'ask_destination' | 'ask_date' | 'ask_language_date' | 'chat' | 'itinerary' | 'checkout' | 'confirmed';
 
-/** 중요 구절을 볼드로 감싸서 렌더 (48 hours, 24 hours, cancelled and fully refunded 등) */
+/** 중요 구절??볼드�?감싸???�더 (48 hours, 24 hours, cancelled and fully refunded ?? */
 function GuaranteeBodyWithBold({ text }: { text: string }) {
-  const phrases = ['48 hours', '24 hours', 'cancelled and fully refunded', '48시간', '24시간', '취소되며 전액 환불', '전액 환불'];
+  const phrases = ['48 hours', '24 hours', 'cancelled and fully refunded', '48?�간', '24?�간', '취소?�며 ?�액 ?�불', '?�액 ?�불'];
   const result: React.ReactNode[] = [];
   let remaining = text;
   let key = 0;
@@ -77,7 +77,7 @@ function GuaranteeBodyWithBold({ text }: { text: string }) {
   return <>{result}</>;
 }
 
-/** Tour theme keywords — cyber-tag color variant per label (visual only) */
+/** Tour theme keywords ??cyber-tag color variant per label (visual only) */
 const TOUR_THEME_KEYWORDS: Array<{ label: string; cyberColor: 'yellow' | 'orange' | 'pink' | 'green' | 'teal' }> = [
   { label: 'UNESCO Heritage', cyberColor: 'yellow' },
   { label: 'Sunrise & Sunset', cyberColor: 'orange' },
@@ -86,7 +86,7 @@ const TOUR_THEME_KEYWORDS: Array<{ label: string; cyberColor: 'yellow' | 'orange
   { label: 'Nature & Healing', cyberColor: 'teal' },
 ];
 
-/** 사이버펑크 HUD 스타일 밴 아이콘 (측면, 창문·헤드라이트·바퀴 털) */
+/** ?�이버펑??HUD ?��???�??�이�?(측면, 창문·?�드?�이?�·바???? */
 function VanIconWireframe({ active, large }: { active: boolean; large?: boolean }) {
   const s = active ? '#00f0ff' : '#7a8fa6';
   const sf = active ? 'rgba(0,240,255,0.07)' : 'rgba(255,255,255,0.04)';
@@ -94,22 +94,22 @@ function VanIconWireframe({ active, large }: { active: boolean; large?: boolean 
   const sd = active ? 'rgba(0,240,255,0.35)' : 'rgba(255,255,255,0.18)';
 
   if (!large) {
-    // Staria: slanted nose, high roof, short hood — diagonal windshield
+    // Staria: slanted nose, high roof, short hood ??diagonal windshield
     // Body outline: left side rises steeply, roof is flat-high, rear is square
     // viewBox 0 0 76 46
     return (
       <g fill="none" stroke={s} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        {/* main body silhouette — slanted front nose */}
+        {/* main body silhouette ??slanted front nose */}
         <path
           d="M4 38 L4 28 Q4 24 7 22 L16 10 Q19 6 24 6 L66 6 Q70 6 70 10 L70 38 Z"
           fill={sf}
         />
-        {/* windshield — diagonal slant (front A-pillar) */}
+        {/* windshield ??diagonal slant (front A-pillar) */}
         <path
           d="M7 22 L16 10 Q19 6 24 6 L24 18 L10 18 Z"
           fill={sw}
         />
-        {/* side windows — 3 windows behind A-pillar */}
+        {/* side windows ??3 windows behind A-pillar */}
         <rect x="26" y="8" width="12" height="9" rx="1.5" fill={sw} />
         <rect x="40" y="8" width="12" height="9" rx="1.5" fill={sw} />
         <rect x="54" y="8" width="12" height="9" rx="1.5" fill={sw} />
@@ -118,7 +118,7 @@ function VanIconWireframe({ active, large }: { active: boolean; large?: boolean 
         <line x1="52" y1="6" x2="52" y2="38" strokeWidth="1" stroke={sd} />
         {/* body crease */}
         <line x1="10" y1="27" x2="70" y2="27" strokeWidth="0.7" stroke={sd} />
-        {/* headlight — on slanted nose */}
+        {/* headlight ??on slanted nose */}
         <path d="M5 28 L9 22" strokeWidth="2.5" stroke={s} opacity="0.85" strokeLinecap="round" />
         {/* taillight */}
         <rect x="66" y="20" width="3.5" height="6" rx="1" fill={s} opacity="0.8" />
@@ -144,17 +144,17 @@ function VanIconWireframe({ active, large }: { active: boolean; large?: boolean 
   // viewBox 0 0 90 50
   return (
     <g fill="none" stroke={s} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-      {/* main body — long van with slanted front */}
+      {/* main body ??long van with slanted front */}
       <path
         d="M4 42 L4 30 Q4 26 7 23 L14 12 Q17 8 22 8 L80 8 Q84 8 84 12 L84 42 Z"
         fill={sf}
       />
-      {/* windshield — diagonal slant */}
+      {/* windshield ??diagonal slant */}
       <path
         d="M7 23 L14 12 Q17 8 22 8 L22 22 L9 22 Z"
         fill={sw}
       />
-      {/* side windows — 4 windows */}
+      {/* side windows ??4 windows */}
       <rect x="24" y="10" width="13" height="10" rx="1.5" fill={sw} />
       <rect x="39" y="10" width="13" height="10" rx="1.5" fill={sw} />
       <rect x="54" y="10" width="13" height="10" rx="1.5" fill={sw} />
@@ -164,7 +164,7 @@ function VanIconWireframe({ active, large }: { active: boolean; large?: boolean 
       <line x1="67" y1="8" x2="67" y2="42" strokeWidth="1" stroke={sd} />
       {/* body crease */}
       <line x1="9" y1="31" x2="84" y2="31" strokeWidth="0.7" stroke={sd} />
-      {/* headlight — on slanted nose */}
+      {/* headlight ??on slanted nose */}
       <path d="M5 30 L9 23" strokeWidth="2.5" stroke={s} opacity="0.85" strokeLinecap="round" />
       {/* taillight */}
       <rect x="80" y="22" width="3.5" height="7" rx="1" fill={s} opacity="0.8" />
@@ -204,7 +204,7 @@ interface ConfirmResult {
   pricing: { totalPriceKrw: number; vehicleLabelKo: string } | null;
 }
 
-/** Format price in KRW for display: numeric (no "만"). Uses currency context for USD when selected. */
+/** Format price in KRW for display: numeric (no "�?). Uses currency context for USD when selected. */
 function usePriceFormat() {
   const currency = useCurrencyOptional();
   const { locale } = useI18n();
@@ -259,7 +259,7 @@ export default function CustomJoinTourPage() {
     chatAppContact: '',
   });
   const [checkoutErrors, setCheckoutErrors] = useState<Partial<Record<keyof CustomerInfo, string>>>({});
-  /** 선택된 테마 키워드 (토글용 배열) */
+  /** ?�택???�마 ?�워??(?��???배열) */
   const [selectedKeywords, setSelectedKeywords] = useState<string[]>([]);
 
   const toggleKeyword = (kw: string) => {
@@ -281,7 +281,7 @@ export default function CustomJoinTourPage() {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [step, schedule]);
 
-  /** 새 창에서 열었을 때 localStorage에서 일정 복원 */
+  /** ??창에???�었????localStorage?�서 ?�정 복원 */
   useEffect(() => {
     if (searchParams.get('open') !== 'itinerary') return;
     try {
@@ -308,7 +308,7 @@ export default function CustomJoinTourPage() {
       return;
     }
     if (participants < CUSTOM_JOIN_TOUR.MIN_PARTICIPANTS || participants > CUSTOM_JOIN_TOUR.MAX_PARTICIPANTS) {
-      setError(t('home.customJoinTour.errorParticipantsRange') || `Please enter ${CUSTOM_JOIN_TOUR.MIN_PARTICIPANTS}–${CUSTOM_JOIN_TOUR.MAX_PARTICIPANTS} guests.`);
+      setError(t('home.customJoinTour.errorParticipantsRange') || `Please enter ${CUSTOM_JOIN_TOUR.MIN_PARTICIPANTS}??{CUSTOM_JOIN_TOUR.MAX_PARTICIPANTS} guests.`);
       return;
     }
     if (!tourDate) {
@@ -331,7 +331,7 @@ export default function CustomJoinTourPage() {
       });
       const data = await res.json();
       if (!res.ok) {
-        setError(data.error || '일정 생성에 실패했습니다.');
+        setError(data.error || '?�정 ?�성???�패?�습?�다.');
         return;
       }
       setSchedule((data.schedule || []).map((d: DaySchedule, di: number) => ({
@@ -343,7 +343,7 @@ export default function CustomJoinTourPage() {
       setExtraFeeNotice(data.extraFeeNotice ?? null);
       setPricing(data.pricing ? { totalPriceKrw: data.pricing.totalPriceKrw, vehicleLabelKo: data.pricing.vehicleLabelKo, participants: data.pricing.participants } : null);
       const removedNotice = Array.isArray(data.removedPlaces) && data.removedPlaces.length > 0
-        ? ` (운영 규칙으로 제외된 장소: ${(data.removedPlaces as Array<{ name: string; reason: string }>).map((r) => `${r.name}`).join(', ')})`
+        ? ` (?�영 규칙?�로 ?�외???�소: ${(data.removedPlaces as Array<{ name: string; reason: string }>).map((r) => `${r.name}`).join(', ')})`
         : '';
       setGuideMessage((data.guideMessage || '') + removedNotice);
       const payload = {
@@ -364,7 +364,7 @@ export default function CustomJoinTourPage() {
         setShowGenerateOverlay(false);
       }
     } catch (e) {
-      setError(e instanceof Error ? e.message : '일정 생성에 실패했습니다.');
+      setError(e instanceof Error ? e.message : '?�정 ?�성???�패?�습?�다.');
       setShowGenerateOverlay(false);
     } finally {
       setLoading(false);
@@ -437,13 +437,13 @@ export default function CustomJoinTourPage() {
       });
       const data = await res.json();
       if (!res.ok) {
-        setError(data.error || '확정 처리에 실패했습니다.');
+        setError(data.error || '?�정 처리???�패?�습?�다.');
         return;
       }
       setConfirmResult(data);
       setStep('confirmed');
     } catch (e) {
-      setError(e instanceof Error ? e.message : '확정 처리에 실패했습니다.');
+      setError(e instanceof Error ? e.message : '?�정 처리???�패?�습?�다.');
     } finally {
       setLoading(false);
     }
@@ -455,8 +455,8 @@ export default function CustomJoinTourPage() {
     setError(null);
     const title =
       schedule.length > 0 && schedule[0].places?.length > 0
-        ? `${schedule[0].places[0].name || '맞춤'} 외 ${schedule.length}일`
-        : `맞춤 투어 ${schedule.length}일`;
+        ? `${schedule[0].places[0].name || '맞춤'} ??${schedule.length}??
+        : `맞춤 ?�어 ${schedule.length}??;
     try {
       const res = await fetch('/api/custom-join-tour/proposed', {
         method: 'POST',
@@ -470,11 +470,11 @@ export default function CustomJoinTourPage() {
         }),
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || '발의에 실패했습니다.');
+      if (!res.ok) throw new Error(data.error || '발의???�패?�습?�다.');
       setProposedDone(true);
       router.push('/custom-join-tour/proposed');
     } catch (e) {
-      setError(e instanceof Error ? e.message : '발의에 실패했습니다.');
+      setError(e instanceof Error ? e.message : '발의???�패?�습?�다.');
     } finally {
       setLoading(false);
     }
@@ -493,7 +493,7 @@ export default function CustomJoinTourPage() {
     return d;
   })();
 
-  /** Format time "HH:mm" for display with localized AM/PM (e.g. "오전 09:00", "09:00 AM"). */
+  /** Format time "HH:mm" for display with localized AM/PM (e.g. "?�전 09:00", "09:00 AM"). */
   const formatTimeDisplay = (timeStr: string) => {
     if (!timeStr) return '';
     const [hStr, mStr] = timeStr.split(':');
@@ -663,13 +663,13 @@ export default function CustomJoinTourPage() {
   const labelClass = 'block text-[11px] font-bold text-black uppercase tracking-wider mb-1.5 ml-1';
 
   return (
-    <div className={`min-h-screen ${isDarkTheme ? 'tour-planner-page bg-[#050B18] text-white' : 'bg-white text-neutral-900'}`}>
+    <div className={`min-h-screen ${isDarkTheme ? 'tour-planner-page bg-[#0d1a2e] text-white' : 'bg-white text-neutral-900'}`}>
       <Header />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 max-w-3xl">
         {/* Single-column form */}
         {showDashboard && (
           <div className="flex flex-col gap-6">
-            {/* Tour Design Form — glassmorphism */}
+            {/* Tour Design Form ??glassmorphism */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -680,7 +680,7 @@ export default function CustomJoinTourPage() {
               {isPropose && (
                 <div className="mb-4">
                   <Link href="/custom-join-tour/proposed" className="text-xs text-cyan-400 hover:text-cyan-300 font-medium">
-                    ← {t('home.customJoinTour.backToProposed')}
+                    ??{t('home.customJoinTour.backToProposed')}
                   </Link>
                 </div>
               )}
@@ -699,9 +699,9 @@ export default function CustomJoinTourPage() {
 
               <label className="text-base font-bold text-cyan-400 uppercase tracking-widest block mb-4">{t('home.customJoinTour.destinationLabel')}</label>
               </div>
-              {/* Destination map — full-width */}
+              {/* Destination map ??full-width */}
               <div className="tour-map-block w-full relative" style={{
-                background: '#050B18',
+                background: '#0d1a2e',
                 backgroundImage: 'linear-gradient(to bottom, transparent 50%, rgba(0, 255, 255, 0.02) 50%)',
                 backgroundSize: '100% 4px',
               }}>
@@ -763,10 +763,10 @@ export default function CustomJoinTourPage() {
                   value={language}
                   onChange={setLanguage}
                   options={[
-                    { value: 'ko', label: `🇰🇷 ${t('home.customJoinTour.guideKorean')}` },
-                    { value: 'en', label: `🇺🇸 ${t('home.customJoinTour.guideEnglish')}` },
-                    { value: 'zh', label: `🇨🇳 ${t('home.customJoinTour.guideChinese')}` },
-                    { value: 'ja', label: `🇯🇵 ${t('home.customJoinTour.guideJapanese')}` },
+                    { value: 'ko', label: `?��?�� ${t('home.customJoinTour.guideKorean')}` },
+                    { value: 'en', label: `?��?�� ${t('home.customJoinTour.guideEnglish')}` },
+                    { value: 'zh', label: `?��?�� ${t('home.customJoinTour.guideChinese')}` },
+                    { value: 'ja', label: `?��?�� ${t('home.customJoinTour.guideJapanese')}` },
                   ]}
                 />
               </div>
@@ -794,7 +794,7 @@ export default function CustomJoinTourPage() {
                     <div className="text-[10px] opacity-60 text-center">{t('home.customJoinTour.vehicleVanPrice')}</div>
                     {participants <= 6 && (
                       <div className="text-xs font-bold text-cyan-300 text-center mt-0.5">
-                        {t('home.customJoinTour.vehicleTotalSummary').replace('{{n}}', String(participants)).replace('{{price}}', `₩${(participants * CUSTOM_JOIN_TOUR.VAN.PRICE_PER_PERSON_KRW).toLocaleString()}`)}
+                        {t('home.customJoinTour.vehicleTotalSummary').replace('{{n}}', String(participants)).replace('{{price}}', `??{(participants * CUSTOM_JOIN_TOUR.VAN.PRICE_PER_PERSON_KRW).toLocaleString()}`)}
                       </div>
                     )}
                   </div>
@@ -809,7 +809,7 @@ export default function CustomJoinTourPage() {
                     <div className="text-[10px] opacity-60 text-center">{t('home.customJoinTour.vehicleLargeVanPrice')}</div>
                     {participants >= 7 && (
                       <div className="text-xs font-bold text-cyan-300 text-center mt-0.5">
-                        {t('home.customJoinTour.vehicleTotalSummary').replace('{{n}}', String(participants)).replace('{{price}}', `₩${(participants * CUSTOM_JOIN_TOUR.LARGE_VAN.PRICE_PER_PERSON_KRW).toLocaleString()}`)}
+                        {t('home.customJoinTour.vehicleTotalSummary').replace('{{n}}', String(participants)).replace('{{price}}', `??{(participants * CUSTOM_JOIN_TOUR.LARGE_VAN.PRICE_PER_PERSON_KRW).toLocaleString()}`)}
                       </div>
                     )}
                   </div>
@@ -828,7 +828,7 @@ export default function CustomJoinTourPage() {
               <label className="text-[10px] text-gray-400 uppercase tracking-wider block mb-2">{t('home.customJoinTour.describeLabel')}</label>
               <div className="relative mb-5">
                 <textarea rows={4} value={customerInput} onChange={(e) => setCustomerInput(e.target.value)} placeholder={t('home.customJoinTour.describePlaceholder')} className="glass-input w-full min-h-[100px] p-3 text-sm text-white placeholder:text-gray-500 resize-none" />
-                <span className="absolute bottom-2 right-2 text-[10px] text-cyan-400/80">AI Powered ✨</span>
+                <span className="absolute bottom-2 right-2 text-[10px] text-cyan-400/80">AI Powered ??/span>
               </div>
 
               {error && <p className="text-xs text-rose-400 mb-3">{error}</p>}
@@ -849,15 +849,14 @@ export default function CustomJoinTourPage() {
                 className="w-full py-3.5 rounded-xl font-bold text-sm bg-cyan-500/20 border border-cyan-400 text-cyan-300 hover:bg-cyan-500/30 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition-all disabled:opacity-50 inline-flex items-center justify-center gap-2"
               >
                 {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : null}
-                {t('home.customJoinTour.generateButton')} ✨
-              </button>
+                {t('home.customJoinTour.generateButton')} ??              </button>
               </div>{/* end px-6 lg:px-8 pb-6 lg:pb-8 */}
             </motion.div>
 
           </div>
         )}
 
-        {/* Step: Itinerary — new tab view */}
+        {/* Step: Itinerary ??new tab view */}
         {step === 'itinerary' && (
           <motion.div
             ref={itineraryRef}
@@ -888,7 +887,7 @@ export default function CustomJoinTourPage() {
                 >
                   <div className="flex items-center gap-2 mb-3 pl-8">
                     <span className="px-2.5 py-1 rounded border border-cyan-500/50 text-cyan-400 text-xs font-bold">{t('home.customJoinTour.dayLabel').replace('{{n}}', String(daySchedule.day))}</span>
-                    {dailyDistancesKm[dayIndex] != null && <span className="text-[11px] text-gray-400">이동 거리 약 {dailyDistancesKm[dayIndex]} km</span>}
+                    {dailyDistancesKm[dayIndex] != null && <span className="text-[11px] text-gray-400">?�동 거리 ??{dailyDistancesKm[dayIndex]} km</span>}
                   </div>
                   <ul className="space-y-4">
                     <AnimatePresence initial={false}>
@@ -903,7 +902,7 @@ export default function CustomJoinTourPage() {
                         transition={{ layout: { type: 'spring', stiffness: 400, damping: 35 }, opacity: { duration: 0.3 }, x: { duration: 0.3 } }}
                         className="relative pl-8"
                       >
-                        <div className="absolute left-0 top-4 w-6 h-6 rounded-full bg-[#050B18] border-2 border-cyan-400 flex items-center justify-center shadow-[0_0_8px_rgba(0,255,255,0.4)] z-10">
+                        <div className="absolute left-0 top-4 w-6 h-6 rounded-full bg-[#0d1a2e] border-2 border-cyan-400 flex items-center justify-center shadow-[0_0_8px_rgba(0,255,255,0.4)] z-10">
                           <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full" />
                         </div>
                         <div className="glass-input p-3 rounded-lg border-white/10 hover:border-cyan-400/40 transition-colors">
@@ -917,7 +916,7 @@ export default function CustomJoinTourPage() {
                               <div className="flex items-center gap-2 flex-wrap">
                                 <input type="text" value={place.name} onChange={(e) => updatePlace(dayIndex, placeIndex, 'name', e.target.value)} placeholder={t('home.customJoinTour.placeName')} className="w-full min-w-0 bg-transparent border-none px-0 py-0.5 text-sm font-semibold text-white placeholder:text-gray-500 outline-none focus:ring-0" />
                                 {(place as { type?: string }).type === 'restaurant' && (
-                                  <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded border border-amber-500/50 text-amber-400 shrink-0"><UtensilsCrossed size={10} /> 식당</span>
+                                  <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded border border-amber-500/50 text-amber-400 shrink-0"><UtensilsCrossed size={10} /> ?�당</span>
                                 )}
                               </div>
                               <input type="text" value={place.address} onChange={(e) => updatePlace(dayIndex, placeIndex, 'address', e.target.value)} placeholder={t('home.customJoinTour.address')} className="w-full mt-1 bg-transparent border-none px-0 py-0 text-xs text-gray-400 placeholder:text-gray-500 outline-none focus:ring-0" />
@@ -952,12 +951,12 @@ export default function CustomJoinTourPage() {
               className="mt-4 w-full py-3.5 rounded-xl font-semibold text-sm bg-cyan-500/20 border border-cyan-400 text-cyan-300 hover:bg-cyan-500/30 hover:shadow-[0_0_16px_rgba(0,255,255,0.2)] disabled:opacity-50 inline-flex items-center justify-center gap-2"
             >
               {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Check className="w-4 h-4" />}
-              {loading ? '검수 중…' : t('home.customJoinTour.confirmItinerary')}
+              {loading ? '검??중�? : t('home.customJoinTour.confirmItinerary')}
             </motion.button>
           </motion.div>
         )}
 
-        {/* Step: Checkout — 사이버 다크 테마 */}
+        {/* Step: Checkout ???�이�??�크 ?�마 */}
         {step === 'checkout' && confirmResult && (
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -966,7 +965,7 @@ export default function CustomJoinTourPage() {
             ref={itineraryRef}
             className="space-y-5"
           >
-            {/* 안내 배너 */}
+            {/* ?�내 배너 */}
             <div className="rounded-xl bg-amber-500/10 border border-amber-400/40 p-4">
               <h3 className="text-sm font-bold text-amber-300 mb-1.5">{t('home.customJoinTour.noticeTitle')}</h3>
               <ul className="text-xs text-amber-200/80 space-y-1 list-disc list-inside">
@@ -976,7 +975,7 @@ export default function CustomJoinTourPage() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-5">
-              {/* 고객 정보 */}
+              {/* 고객 ?�보 */}
               <div className="md:col-span-2">
                 <div className="glass-card p-5 sm:p-6">
                   <h2 className="text-base font-bold bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent mb-4">{t('booking.customerInfo')}</h2>
@@ -1034,7 +1033,7 @@ export default function CustomJoinTourPage() {
                 </div>
               </div>
 
-              {/* 결제 요약 */}
+              {/* 결제 ?�약 */}
               <div>
                 <div className="glass-card p-5 sticky top-24">
                   <h2 className="text-base font-bold bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent mb-4">{t('booking.bookingSummary')}</h2>
@@ -1062,7 +1061,7 @@ export default function CustomJoinTourPage() {
                   <div className="space-y-2 text-xs pt-3 border-t border-white/10">
                     <div className="flex justify-between text-gray-400">
                       <span>{t('booking.tourDate')}</span>
-                      <span className="text-white font-medium">{tourDate || '—'} {departureTime}</span>
+                      <span className="text-white font-medium">{tourDate || '??} {departureTime}</span>
                     </div>
                     <div className="flex justify-between text-gray-400">
                       <span>{t('tour.guests')}</span>
@@ -1090,7 +1089,7 @@ export default function CustomJoinTourPage() {
           </motion.div>
         )}
 
-        {/* Step: Confirmed — 사이버 다크 테마 */}
+        {/* Step: Confirmed ???�이�??�크 ?�마 */}
         {step === 'confirmed' && confirmResult && (
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -1098,7 +1097,7 @@ export default function CustomJoinTourPage() {
             transition={{ duration: 0.5, ease: 'easeOut' }}
             className="glass-card tech-scanline p-5 sm:p-6 space-y-4"
           >
-            {/* 성공 아이콘 */}
+            {/* ?�공 ?�이�?*/}
             <motion.div
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -1114,7 +1113,7 @@ export default function CustomJoinTourPage() {
               <p className="text-xs text-cyan-100/70">{t('home.customJoinTour.confirmSuccessDesc')}</p>
             </motion.div>
 
-            {/* 요금 요약 */}
+            {/* ?�금 ?�약 */}
             {confirmResult.pricing && (
               <motion.div
                 initial={{ opacity: 0, x: -12 }}
@@ -1122,11 +1121,11 @@ export default function CustomJoinTourPage() {
                 transition={{ delay: 0.25, duration: 0.35 }}
                 className="glass-input px-4 py-3 text-xs text-cyan-100/80 border-cyan-500/20"
               >
-                {confirmResult.pricing.vehicleLabelKo} · 총 {formatPrice(confirmResult.pricing.totalPriceKrw)}
+                {confirmResult.pricing.vehicleLabelKo} · �?{formatPrice(confirmResult.pricing.totalPriceKrw)}
               </motion.div>
             )}
 
-            {/* 제주 동서 추가요금 */}
+            {/* ?�주 ?�서 추�??�금 */}
             {confirmResult.jejuCrossRegion && confirmResult.jejuCrossRegionNotice && (
               <motion.div
                 initial={{ opacity: 0, x: -12 }}
@@ -1144,7 +1143,7 @@ export default function CustomJoinTourPage() {
               </motion.div>
             )}
 
-            {/* CTA 버튼들 */}
+            {/* CTA 버튼??*/}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -1187,7 +1186,7 @@ export default function CustomJoinTourPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[9999] bg-[#050B18] flex flex-col items-center justify-center overflow-hidden"
+            className="fixed inset-0 z-[9999] bg-[#0d1a2e] flex flex-col items-center justify-center overflow-hidden"
           >
             <div className="transition-circuit-bg absolute inset-0 opacity-40" aria-hidden />
             <div className="transition-scanline absolute inset-0 pointer-events-none" aria-hidden />

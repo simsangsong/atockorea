@@ -458,7 +458,7 @@ button, a {
 
 .tour-planner-page {
   animation: page-fadein 0.55s ease-out both;
-  --tour-bg: #050B18;
+  --tour-bg: #0d1a2e;
   --tour-cyan: #00FFFF;
   --tour-cyan-glow: rgba(0, 255, 255, 0.5);
   --tour-purple: #BF5AF2;
@@ -466,11 +466,11 @@ button, a {
 
 .tour-planner-page .glass-card {
   @apply backdrop-blur-md rounded-xl;
-  border-top: 1px solid rgba(34, 211, 238, 0.2);
-  border-bottom: 1px solid rgba(34, 211, 238, 0.2);
+  border-top: 1px solid rgba(34, 211, 238, 0.25);
+  border-bottom: 1px solid rgba(34, 211, 238, 0.25);
   border-left: none;
   border-right: none;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   box-shadow: none;
 }
 
@@ -490,8 +490,8 @@ button, a {
 
 .tour-planner-page .glass-input {
   @apply backdrop-blur-sm rounded-lg border border-cyan-500/30 outline-none transition-colors;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 8px rgba(0, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.06);
 }
 
 .tour-planner-page .glass-input:focus {
@@ -520,7 +520,7 @@ button, a {
 }
 
 .transition-circuit-bg {
-  background-color: #050B18;
+  background-color: #0d1a2e;
   background-image:
     linear-gradient(rgba(0, 255, 255, 0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 255, 255, 0.06) 1px, transparent 1px),
@@ -576,7 +576,7 @@ button, a {
 .tour-planner-page .react-datepicker-popper { z-index: 50; }
 .tour-planner-page .react-datepicker {
   font-family: inherit;
-  background: #0a1628 !important;
+  background: #0f2040 !important;
   border: 1px solid rgba(0, 255, 255, 0.3) !important;
   border-radius: 12px !important;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.15) !important;
@@ -603,7 +603,7 @@ button, a {
 .tour-planner-page .react-datepicker__day--in-selecting-range,
 .tour-planner-page .react-datepicker__day--in-range {
   background: rgba(0, 255, 255, 0.4) !important;
-  color: #050B18 !important;
+  color: #0d1a2e !important;
 }
 .tour-planner-page .react-datepicker__day--outside-month {
   color: rgb(107 114 128) !important;
@@ -623,26 +623,26 @@ button, a {
 :root {
   --cyan: #00f0ff;
   --cyan-glow: rgba(0, 240, 255, 0.4);
-  --dark-bg: #0a0f1e;
+  --dark-bg: #111827;
   --border-dim: rgba(0, 240, 255, 0.35);
 }
 
 .tour-planner-page .cyber-input-container {
   position: relative;
-  background: rgba(5, 11, 24, 0.85);
-  border: 1px solid rgba(0, 240, 255, 0.25);
+  background: rgba(15, 25, 50, 0.75);
+  border: 1px solid rgba(0, 240, 255, 0.3);
   border-radius: 10px;
   padding: 11px 14px;
   color: white;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4), inset 0 0 6px rgba(0, 240, 255, 0.03);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3), inset 0 0 6px rgba(0, 240, 255, 0.04);
   transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
   cursor: pointer;
 }
 .tour-planner-page .cyber-input-container:focus-within,
 .tour-planner-page .cyber-input-container:hover {
-  border-color: rgba(0, 240, 255, 0.55);
-  background: rgba(5, 15, 35, 0.92);
-  box-shadow: 0 0 16px rgba(0, 240, 255, 0.15), inset 0 0 8px rgba(0, 240, 255, 0.05);
+  border-color: rgba(0, 240, 255, 0.6);
+  background: rgba(15, 30, 60, 0.88);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.18), inset 0 0 8px rgba(0, 240, 255, 0.06);
 }
 /* allow native select dropdown to show outside */
 .tour-planner-page .cyber-input-container.cyber-input-select {
@@ -675,8 +675,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(10, 15, 30, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 25, 50, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 4px;
   padding: 16px 8px;
   gap: 8px;
@@ -739,7 +739,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .tour-planner-page select option {
-  background: #0a0f1e;
+  background: #0d1a2e;
   color: #fff;
 }
 
@@ -747,7 +747,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .react-datepicker-tour-dark.react-datepicker-popper { z-index: 9999; }
 .react-datepicker-tour-dark .react-datepicker {
   font-family: inherit;
-  background: #0a1628 !important;
+  background: #0f2040 !important;
   border: 1px solid rgba(0, 255, 255, 0.3) !important;
   border-radius: 12px !important;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.15) !important;
@@ -768,7 +768,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .react-datepicker-tour-dark .react-datepicker__day--selected,
 .react-datepicker-tour-dark .react-datepicker__day--in-range {
   background: rgba(0, 255, 255, 0.4) !important;
-  color: #050B18 !important;
+  color: #0d1a2e !important;
 }
 .react-datepicker-tour-dark .react-datepicker__day--outside-month { color: rgb(107 114 128) !important; }
 .react-datepicker-tour-dark .react-datepicker__day--disabled { color: rgb(75 85 99) !important; }
