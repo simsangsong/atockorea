@@ -288,7 +288,7 @@ export default function CustomJoinTourPage() {
       const raw = typeof window !== 'undefined' ? window.localStorage.getItem(STORAGE_KEY_ITINERARY) : null;
       if (!raw) return;
       const data = JSON.parse(raw) as { schedule: DaySchedule[]; dailyDistancesKm: number[]; overLimitDays: number[]; extraFeeNotice: string | null; pricing: GenerateResult['pricing']; guideMessage: string };
-      setSchedule((data.schedule || []).map((d, di) => ({
+      setSchedule((data.schedule || []).map((d: DaySchedule, di: number) => ({
         ...d,
         places: d.places.map((p, pi) => ({ ...p, _uid: (p as { _uid?: string })._uid ?? `p-${di}-${pi}-${Date.now()}` })),
       })));
