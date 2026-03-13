@@ -48,9 +48,9 @@ const ROBOT_ICON = '/images/robot-icon.png';
 
 type Step = 'start' | 'ask_participants' | 'ask_vehicle' | 'ask_destination' | 'ask_date' | 'ask_language_date' | 'chat' | 'itinerary' | 'checkout' | 'confirmed';
 
-/** 중요 구절??볼드�?감싸???�더 (48 hours, 24 hours, cancelled and fully refunded ?? */
+/** 以묒슂 援ъ젅??蹂쇰뱶濡?媛먯떥???뚮뜑 (48 hours, 24 hours, cancelled and fully refunded ?? */
 function GuaranteeBodyWithBold({ text }: { text: string }) {
-  const phrases = ['48 hours', '24 hours', 'cancelled and fully refunded', '48?�간', '24?�간', '취소?�며 ?�액 ?�불', '?�액 ?�불'];
+  const phrases = ['48 hours', '24 hours', 'cancelled and fully refunded', '48?쒓컙', '24?쒓컙', '痍⑥냼?섎ŉ ?꾩븸 ?섎텋', '?꾩븸 ?섎텋'];
   const result: React.ReactNode[] = [];
   let remaining = text;
   let key = 0;
@@ -86,7 +86,7 @@ const TOUR_THEME_KEYWORDS: Array<{ label: string; cyberColor: 'yellow' | 'orange
   { label: 'Nature & Healing', cyberColor: 'teal' },
 ];
 
-/** ?�이버펑??HUD ?��???�??�이�?(측면, 창문·?�드?�이?�·바???? */
+/** ?ъ씠踰꾪럱??HUD ?ㅽ???諛??꾩씠肄?(痢〓㈃, 李쎈Ц쨌?ㅻ뱶?쇱씠?맞룸컮???? */
 function VanIconWireframe({ active, large }: { active: boolean; large?: boolean }) {
   const s = active ? '#00f0ff' : '#7a8fa6';
   const sf = active ? 'rgba(0,240,255,0.07)' : 'rgba(255,255,255,0.04)';
@@ -204,7 +204,7 @@ interface ConfirmResult {
   pricing: { totalPriceKrw: number; vehicleLabelKo: string } | null;
 }
 
-/** Format price in KRW for display: numeric (no "�?). Uses currency context for USD when selected. */
+/** Format price in KRW for display: numeric (no "留?). Uses currency context for USD when selected. */
 function usePriceFormat() {
   const currency = useCurrencyOptional();
   const { locale } = useI18n();
@@ -259,7 +259,7 @@ export default function CustomJoinTourPage() {
     chatAppContact: '',
   });
   const [checkoutErrors, setCheckoutErrors] = useState<Partial<Record<keyof CustomerInfo, string>>>({});
-  /** ?�택???�마 ?�워??(?��???배열) */
+  /** ?좏깮???뚮쭏 ?ㅼ썙??(?좉???諛곗뿴) */
   const [selectedKeywords, setSelectedKeywords] = useState<string[]>([]);
 
   const toggleKeyword = (kw: string) => {
@@ -281,7 +281,7 @@ export default function CustomJoinTourPage() {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [step, schedule]);
 
-  /** ??창에???�었????localStorage?�서 ?�정 복원 */
+  /** ??李쎌뿉???댁뿀????localStorage?먯꽌 ?쇱젙 蹂듭썝 */
   useEffect(() => {
     if (searchParams.get('open') !== 'itinerary') return;
     try {
@@ -331,7 +331,7 @@ export default function CustomJoinTourPage() {
       });
       const data = await res.json();
       if (!res.ok) {
-        setError(data.error || '?�정 ?�성???�패?�습?�다.');
+        setError(data.error || '?쇱젙 ?앹꽦???ㅽ뙣?덉뒿?덈떎.');
         return;
       }
       setSchedule((data.schedule || []).map((d: DaySchedule, di: number) => ({
@@ -343,7 +343,7 @@ export default function CustomJoinTourPage() {
       setExtraFeeNotice(data.extraFeeNotice ?? null);
       setPricing(data.pricing ? { totalPriceKrw: data.pricing.totalPriceKrw, vehicleLabelKo: data.pricing.vehicleLabelKo, participants: data.pricing.participants } : null);
       const removedNotice = Array.isArray(data.removedPlaces) && data.removedPlaces.length > 0
-        ? ` (?�영 규칙?�로 ?�외???�소: ${(data.removedPlaces as Array<{ name: string; reason: string }>).map((r) => `${r.name}`).join(', ')})`
+        ? ` (?댁쁺 洹쒖튃?쇰줈 ?쒖쇅???μ냼: ${(data.removedPlaces as Array<{ name: string; reason: string }>).map((r) => `${r.name}`).join(', ')})`
         : '';
       setGuideMessage((data.guideMessage || '') + removedNotice);
       const payload = {
@@ -364,7 +364,7 @@ export default function CustomJoinTourPage() {
         setShowGenerateOverlay(false);
       }
     } catch (e) {
-      setError(e instanceof Error ? e.message : '?�정 ?�성???�패?�습?�다.');
+      setError(e instanceof Error ? e.message : '?쇱젙 ?앹꽦???ㅽ뙣?덉뒿?덈떎.');
       setShowGenerateOverlay(false);
     } finally {
       setLoading(false);
@@ -437,13 +437,13 @@ export default function CustomJoinTourPage() {
       });
       const data = await res.json();
       if (!res.ok) {
-        setError(data.error || '?�정 처리???�패?�습?�다.');
+        setError(data.error || '?뺤젙 泥섎━???ㅽ뙣?덉뒿?덈떎.');
         return;
       }
       setConfirmResult(data);
       setStep('confirmed');
     } catch (e) {
-      setError(e instanceof Error ? e.message : '?�정 처리???�패?�습?�다.');
+      setError(e instanceof Error ? e.message : '?뺤젙 泥섎━???ㅽ뙣?덉뒿?덈떎.');
     } finally {
       setLoading(false);
     }
@@ -470,11 +470,11 @@ export default function CustomJoinTourPage() {
         }),
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || '발의???�패?�습?�다.');
+      if (!res.ok) throw new Error(data.error || '諛쒖쓽???ㅽ뙣?덉뒿?덈떎.');
       setProposedDone(true);
       router.push('/custom-join-tour/proposed');
     } catch (e) {
-      setError(e instanceof Error ? e.message : '발의???�패?�습?�다.');
+      setError(e instanceof Error ? e.message : '諛쒖쓽???ㅽ뙣?덉뒿?덈떎.');
     } finally {
       setLoading(false);
     }
@@ -493,7 +493,7 @@ export default function CustomJoinTourPage() {
     return d;
   })();
 
-  /** Format time "HH:mm" for display with localized AM/PM (e.g. "?�전 09:00", "09:00 AM"). */
+  /** Format time "HH:mm" for display with localized AM/PM (e.g. "?ㅼ쟾 09:00", "09:00 AM"). */
   const formatTimeDisplay = (timeStr: string) => {
     if (!timeStr) return '';
     const [hStr, mStr] = timeStr.split(':');
@@ -763,10 +763,10 @@ export default function CustomJoinTourPage() {
                   value={language}
                   onChange={setLanguage}
                   options={[
-                    { value: 'ko', label: `?��?�� ${t('home.customJoinTour.guideKorean')}` },
-                    { value: 'en', label: `?��?�� ${t('home.customJoinTour.guideEnglish')}` },
-                    { value: 'zh', label: `?��?�� ${t('home.customJoinTour.guideChinese')}` },
-                    { value: 'ja', label: `?��?�� ${t('home.customJoinTour.guideJapanese')}` },
+                    { value: 'ko', label: `?눖?눟 ${t('home.customJoinTour.guideKorean')}` },
+                    { value: 'en', label: `?눣?눡 ${t('home.customJoinTour.guideEnglish')}` },
+                    { value: 'zh', label: `?눊?눛 ${t('home.customJoinTour.guideChinese')}` },
+                    { value: 'ja', label: `?눓?눝 ${t('home.customJoinTour.guideJapanese')}` },
                   ]}
                 />
               </div>
@@ -874,7 +874,7 @@ export default function CustomJoinTourPage() {
             </motion.div>
             {guideMessage && <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.35 }} className="glass-input px-4 py-3 text-xs text-cyan-100/90 mb-3 border-cyan-500/30">{guideMessage}</motion.div>}
             {extraFeeNotice && <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.19, duration: 0.35 }} className="px-4 py-3 text-xs text-amber-300 border border-amber-500/40 rounded-lg bg-amber-500/10 mb-3">{extraFeeNotice}</motion.div>}
-            {pricing && <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.26, duration: 0.35 }} className="glass-input px-4 py-3 text-xs text-gray-300 mb-4">{pricing.vehicleLabelKo} · {t('home.customJoinTour.vehicleTotalSummary').replace('{{n}}', String(participants)).replace('{{price}}', formatPrice(pricing.totalPriceKrw))}</motion.div>}
+            {pricing && <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.26, duration: 0.35 }} className="glass-input px-4 py-3 text-xs text-gray-300 mb-4">{pricing.vehicleLabelKo} 쨌 {t('home.customJoinTour.vehicleTotalSummary').replace('{{n}}', String(participants)).replace('{{price}}', formatPrice(pricing.totalPriceKrw))}</motion.div>}
             <div className="space-y-6 relative">
               <div className="absolute left-3 top-2 bottom-2 w-[2px] bg-cyan-500/30 rounded-full" />
               {schedule.map((daySchedule, dayIndex) => (
@@ -887,7 +887,7 @@ export default function CustomJoinTourPage() {
                 >
                   <div className="flex items-center gap-2 mb-3 pl-8">
                     <span className="px-2.5 py-1 rounded border border-cyan-500/50 text-cyan-400 text-xs font-bold">{t('home.customJoinTour.dayLabel').replace('{{n}}', String(daySchedule.day))}</span>
-                    {dailyDistancesKm[dayIndex] != null && <span className="text-[11px] text-gray-400">?�동 거리 ??{dailyDistancesKm[dayIndex]} km</span>}
+                    {dailyDistancesKm[dayIndex] != null && <span className="text-[11px] text-gray-400">?대룞 嫄곕━ ??{dailyDistancesKm[dayIndex]} km</span>}
                   </div>
                   <ul className="space-y-4">
                     <AnimatePresence initial={false}>
@@ -916,7 +916,7 @@ export default function CustomJoinTourPage() {
                               <div className="flex items-center gap-2 flex-wrap">
                                 <input type="text" value={place.name} onChange={(e) => updatePlace(dayIndex, placeIndex, 'name', e.target.value)} placeholder={t('home.customJoinTour.placeName')} className="w-full min-w-0 bg-transparent border-none px-0 py-0.5 text-sm font-semibold text-white placeholder:text-gray-500 outline-none focus:ring-0" />
                                 {(place as { type?: string }).type === 'restaurant' && (
-                                  <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded border border-amber-500/50 text-amber-400 shrink-0"><UtensilsCrossed size={10} /> ?�당</span>
+                                  <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded border border-amber-500/50 text-amber-400 shrink-0"><UtensilsCrossed size={10} /> ?앸떦</span>
                                 )}
                               </div>
                               <input type="text" value={place.address} onChange={(e) => updatePlace(dayIndex, placeIndex, 'address', e.target.value)} placeholder={t('home.customJoinTour.address')} className="w-full mt-1 bg-transparent border-none px-0 py-0 text-xs text-gray-400 placeholder:text-gray-500 outline-none focus:ring-0" />
@@ -951,12 +951,12 @@ export default function CustomJoinTourPage() {
               className="mt-4 w-full py-3.5 rounded-xl font-semibold text-sm bg-cyan-500/20 border border-cyan-400 text-cyan-300 hover:bg-cyan-500/30 hover:shadow-[0_0_16px_rgba(0,255,255,0.2)] disabled:opacity-50 inline-flex items-center justify-center gap-2"
             >
               {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Check className="w-4 h-4" />}
-              {loading ? '검??중�? : t('home.customJoinTour.confirmItinerary')}
+              {loading ? '寃??以묅? : t('home.customJoinTour.confirmItinerary')}
             </motion.button>
           </motion.div>
         )}
 
-        {/* Step: Checkout ???�이�??�크 ?�마 */}
+        {/* Step: Checkout ???ъ씠踰??ㅽ겕 ?뚮쭏 */}
         {step === 'checkout' && confirmResult && (
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -965,7 +965,7 @@ export default function CustomJoinTourPage() {
             ref={itineraryRef}
             className="space-y-5"
           >
-            {/* ?�내 배너 */}
+            {/* ?덈궡 諛곕꼫 */}
             <div className="rounded-xl bg-amber-500/10 border border-amber-400/40 p-4">
               <h3 className="text-sm font-bold text-amber-300 mb-1.5">{t('home.customJoinTour.noticeTitle')}</h3>
               <ul className="text-xs text-amber-200/80 space-y-1 list-disc list-inside">
@@ -975,7 +975,7 @@ export default function CustomJoinTourPage() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-5">
-              {/* 고객 ?�보 */}
+              {/* 怨좉컼 ?뺣낫 */}
               <div className="md:col-span-2">
                 <div className="glass-card p-5 sm:p-6">
                   <h2 className="text-base font-bold bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent mb-4">{t('booking.customerInfo')}</h2>
@@ -1033,7 +1033,7 @@ export default function CustomJoinTourPage() {
                 </div>
               </div>
 
-              {/* 결제 ?�약 */}
+              {/* 寃곗젣 ?붿빟 */}
               <div>
                 <div className="glass-card p-5 sticky top-24">
                   <h2 className="text-base font-bold bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent mb-4">{t('booking.bookingSummary')}</h2>
@@ -1089,7 +1089,7 @@ export default function CustomJoinTourPage() {
           </motion.div>
         )}
 
-        {/* Step: Confirmed ???�이�??�크 ?�마 */}
+        {/* Step: Confirmed ???ъ씠踰??ㅽ겕 ?뚮쭏 */}
         {step === 'confirmed' && confirmResult && (
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -1097,7 +1097,7 @@ export default function CustomJoinTourPage() {
             transition={{ duration: 0.5, ease: 'easeOut' }}
             className="glass-card tech-scanline p-5 sm:p-6 space-y-4"
           >
-            {/* ?�공 ?�이�?*/}
+            {/* ?깃났 ?꾩씠肄?*/}
             <motion.div
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -1113,7 +1113,7 @@ export default function CustomJoinTourPage() {
               <p className="text-xs text-cyan-100/70">{t('home.customJoinTour.confirmSuccessDesc')}</p>
             </motion.div>
 
-            {/* ?�금 ?�약 */}
+            {/* ?붽툑 ?붿빟 */}
             {confirmResult.pricing && (
               <motion.div
                 initial={{ opacity: 0, x: -12 }}
@@ -1121,11 +1121,11 @@ export default function CustomJoinTourPage() {
                 transition={{ delay: 0.25, duration: 0.35 }}
                 className="glass-input px-4 py-3 text-xs text-cyan-100/80 border-cyan-500/20"
               >
-                {confirmResult.pricing.vehicleLabelKo} · �?{formatPrice(confirmResult.pricing.totalPriceKrw)}
+                {confirmResult.pricing.vehicleLabelKo} 쨌 珥?{formatPrice(confirmResult.pricing.totalPriceKrw)}
               </motion.div>
             )}
 
-            {/* ?�주 ?�서 추�??�금 */}
+            {/* ?쒖＜ ?숈꽌 異붽??붽툑 */}
             {confirmResult.jejuCrossRegion && confirmResult.jejuCrossRegionNotice && (
               <motion.div
                 initial={{ opacity: 0, x: -12 }}
@@ -1143,7 +1143,7 @@ export default function CustomJoinTourPage() {
               </motion.div>
             )}
 
-            {/* CTA 버튼??*/}
+            {/* CTA 踰꾪듉??*/}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
