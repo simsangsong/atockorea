@@ -308,7 +308,7 @@ export default function CustomJoinTourPage() {
       return;
     }
     if (participants < CUSTOM_JOIN_TOUR.MIN_PARTICIPANTS || participants > CUSTOM_JOIN_TOUR.MAX_PARTICIPANTS) {
-      setError(t('home.customJoinTour.errorParticipantsRange') || `Please enter ${CUSTOM_JOIN_TOUR.MIN_PARTICIPANTS}??{CUSTOM_JOIN_TOUR.MAX_PARTICIPANTS} guests.`);
+      setError(t('home.customJoinTour.errorParticipantsRange') || `Please enter ${CUSTOM_JOIN_TOUR.MIN_PARTICIPANTS}-${CUSTOM_JOIN_TOUR.MAX_PARTICIPANTS} guests.`);
       return;
     }
     if (!tourDate) {
@@ -680,7 +680,7 @@ export default function CustomJoinTourPage() {
               {isPropose && (
                 <div className="mb-4">
                   <Link href="/custom-join-tour/proposed" className="text-xs text-cyan-400 hover:text-cyan-300 font-medium">
-                    ??{t('home.customJoinTour.backToProposed')}
+                    ← {t('home.customJoinTour.backToProposed')}
                   </Link>
                 </div>
               )}
@@ -828,7 +828,7 @@ export default function CustomJoinTourPage() {
               <label className="text-[10px] text-gray-400 uppercase tracking-wider block mb-2">{t('home.customJoinTour.describeLabel')}</label>
               <div className="relative mb-5">
                 <textarea rows={4} value={customerInput} onChange={(e) => setCustomerInput(e.target.value)} placeholder={t('home.customJoinTour.describePlaceholder')} className="glass-input w-full min-h-[100px] p-3 text-sm text-white placeholder:text-gray-500 resize-none" />
-                <span className="absolute bottom-2 right-2 text-[10px] text-cyan-400/80">AI Powered ??/span>
+                <span className="absolute bottom-2 right-2 text-[10px] text-cyan-400/80">AI Powered</span>
               </div>
 
               {error && <p className="text-xs text-rose-400 mb-3">{error}</p>}
@@ -849,7 +849,8 @@ export default function CustomJoinTourPage() {
                 className="w-full py-3.5 rounded-xl font-bold text-sm bg-cyan-500/20 border border-cyan-400 text-cyan-300 hover:bg-cyan-500/30 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition-all disabled:opacity-50 inline-flex items-center justify-center gap-2"
               >
                 {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : null}
-                {t('home.customJoinTour.generateButton')} ??              </button>
+                {t('home.customJoinTour.generateButton')}
+              </button>
               </div>{/* end px-6 lg:px-8 pb-6 lg:pb-8 */}
             </motion.div>
 
@@ -1061,7 +1062,7 @@ export default function CustomJoinTourPage() {
                   <div className="space-y-2 text-xs pt-3 border-t border-white/10">
                     <div className="flex justify-between text-gray-400">
                       <span>{t('booking.tourDate')}</span>
-                      <span className="text-white font-medium">{tourDate || '??} {departureTime}</span>
+                      <span className="text-white font-medium">{tourDate || '-'} {departureTime}</span>
                     </div>
                     <div className="flex justify-between text-gray-400">
                       <span>{t('tour.guests')}</span>
