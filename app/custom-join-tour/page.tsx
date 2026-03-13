@@ -356,9 +356,8 @@ export default function CustomJoinTourPage() {
       };
       try {
         window.localStorage.setItem(STORAGE_KEY_ITINERARY, JSON.stringify(payload));
-        // open itinerary in new tab; keep form page as-is
         setTimeout(() => {
-          window.open(`${window.location.pathname}?open=itinerary`, '_blank');
+          router.push(`${window.location.pathname}?open=itinerary`);
           setShowGenerateOverlay(false);
         }, 1800);
       } catch {
