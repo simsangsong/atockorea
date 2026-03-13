@@ -108,7 +108,7 @@ export async function getPlaceEnrichment(
     }
 
     if (rows) {
-      const url = rows.image_url && String(rows.image_url).trim();
+      const url = rows.image_url ? String(rows.image_url).trim() : '';
       result.image_url = url || null;
       const raw = rows.overview && String(rows.overview).trim();
       if (raw) {

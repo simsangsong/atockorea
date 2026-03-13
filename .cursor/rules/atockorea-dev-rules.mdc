@@ -27,3 +27,17 @@ alwaysApply: true
 
 ### 답변/코드 스타일
 - 불필요한 서론 없이, 바로 작동하는 전체 코드를 제시할 것.
+
+## 코드 수정 후 필수 검증 규칙
+
+### TypeScript / Next.js 파일 수정 시
+- 파일을 수정한 직후 반드시 `ReadLints` 도구로 해당 파일의 lint/type 오류를 확인할 것.
+- 오류가 있으면 즉시 수정하고, 오류가 없음을 확인한 후 다음 작업으로 넘어갈 것.
+- 특히 아래 패턴은 TypeScript 빌드 오류를 유발하므로 주의:
+  - `&&` 단축평가로 얻은 값을 타입이 엄격한 변수에 바로 할당 (`val && String(val)` → `val ? String(val) : ''` 사용)
+  - Framer Motion `transition` 객체의 `ease` 값은 반드시 `as const` 또는 `Easing` 타입으로 명시
+  - `.map((item) => ...)` 콜백에서 파라미터 타입은 반드시 명시 (`(item: MyType) => ...`)
+  - `SupabaseClient` 제네릭 타입은 `createClient<any, any, any>` 형태로 느슨하게 지정
+
+### Git Push 전 체크리스트
+- 수정한 모든 파일에 `ReadLints`를 실행하여 오류 0개 확인 후 push할 것.
