@@ -4,6 +4,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 const nextConfig = {
+  generateBuildId: async () => `build-${Date.now()}`,
   // Static export for Capacitor (uncomment when building for mobile)
   // output: 'export',
   // i18n is handled by middleware + app/[locale] (next.config i18n breaks App Router)
