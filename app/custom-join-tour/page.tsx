@@ -493,7 +493,7 @@ export default function CustomJoinTourPage() {
     return d;
   })();
 
-  /** Format time "HH:mm" for display with localized AM/PM (e.g. "?ㅼ쟾 09:00", "09:00 AM"). */
+  /** Format time "HH:mm" for display with localized AM/PM (e.g. "오전 09:00", "09:00 AM"). */
   const formatTimeDisplay = (timeStr: string) => {
     if (!timeStr) return '';
     const [hStr, mStr] = timeStr.split(':');
@@ -975,7 +975,7 @@ export default function CustomJoinTourPage() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-5">
-              {/* 怨좉컼 ?뺣낫 */}
+              {/* customer info */}
               <div className="md:col-span-2">
                 <div className="glass-card p-5 sm:p-6">
                   <h2 className="text-base font-bold bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent mb-4">{t('booking.customerInfo')}</h2>
