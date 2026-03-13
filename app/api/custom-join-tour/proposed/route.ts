@@ -28,7 +28,9 @@ export async function GET() {
       .limit(50);
 
     if (error) {
-      if (error.code === '42P01') return NextResponse.json({ proposedTours: [] });
+      if (error.code === '42P01' || error.message?.includes("schema cache") || error.message?.includes("proposed_tours")) {
+        return NextResponse.json({ proposedTours: [] });
+      }
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
