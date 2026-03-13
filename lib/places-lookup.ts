@@ -18,7 +18,8 @@ export interface PlaceEnrichment {
   overview: string | null;
 }
 
-type SupabaseClient = ReturnType<typeof import('@supabase/supabase-js').createClient>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type SupabaseClient = ReturnType<typeof import('@supabase/supabase-js').createClient<any, any, any>>;
 
 /** 괄호 앞 메인 이름. "아르떼뮤지엄 제주 (ARTE Museum Jeju)" → "아르떼뮤지엄 제주" */
 function getPrimaryName(name: string): string {

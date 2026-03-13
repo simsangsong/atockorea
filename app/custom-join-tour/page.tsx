@@ -91,86 +91,97 @@ function VanIconWireframe({ active, large }: { active: boolean; large?: boolean 
   const s = active ? '#00f0ff' : '#7a8fa6';
   const sf = active ? 'rgba(0,240,255,0.07)' : 'rgba(255,255,255,0.04)';
   const sw = active ? 'rgba(0,240,255,0.15)' : 'rgba(255,255,255,0.08)';
-  const sd = active ? 'rgba(0,240,255,0.4)' : 'rgba(255,255,255,0.2)';
+  const sd = active ? 'rgba(0,240,255,0.35)' : 'rgba(255,255,255,0.18)';
 
   if (!large) {
-    // Staria: tall boxy SUV-van — flat roof, short hood, square body
+    // Staria: slanted nose, high roof, short hood — diagonal windshield
+    // Body outline: left side rises steeply, roof is flat-high, rear is square
+    // viewBox 0 0 76 46
     return (
       <g fill="none" stroke={s} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        {/* main body — tall boxy shape */}
-        <path d="M6 36 L6 10 Q6 6 10 6 L64 6 Q68 6 68 10 L68 36 Z" fill={sf} />
-        {/* front hood step (short) */}
-        <path d="M6 10 L6 18 L14 18 L14 6" fill="none" stroke={s} strokeWidth="1.2" opacity="0.5" />
-        {/* windshield — near-vertical */}
-        <path d="M14 6 L14 18 L22 18 L22 6 Z" fill={sw} />
-        {/* side windows row */}
-        <rect x="24" y="8" width="12" height="9" rx="1.5" fill={sw} />
-        <rect x="38" y="8" width="12" height="9" rx="1.5" fill={sw} />
-        <rect x="52" y="8" width="10" height="9" rx="1.5" fill={sw} />
+        {/* main body silhouette — slanted front nose */}
+        <path
+          d="M4 38 L4 28 Q4 24 7 22 L16 10 Q19 6 24 6 L66 6 Q70 6 70 10 L70 38 Z"
+          fill={sf}
+        />
+        {/* windshield — diagonal slant (front A-pillar) */}
+        <path
+          d="M7 22 L16 10 Q19 6 24 6 L24 18 L10 18 Z"
+          fill={sw}
+        />
+        {/* side windows — 3 windows behind A-pillar */}
+        <rect x="26" y="8" width="12" height="9" rx="1.5" fill={sw} />
+        <rect x="40" y="8" width="12" height="9" rx="1.5" fill={sw} />
+        <rect x="54" y="8" width="12" height="9" rx="1.5" fill={sw} />
         {/* door dividers */}
-        <line x1="36" y1="6" x2="36" y2="36" strokeWidth="1" stroke={sd} />
-        <line x1="50" y1="6" x2="50" y2="36" strokeWidth="1" stroke={sd} />
-        {/* body crease line */}
-        <line x1="6" y1="26" x2="68" y2="26" strokeWidth="0.7" stroke={sd} />
-        {/* headlight — square */}
-        <rect x="6" y="19" width="6" height="5" rx="1" fill={s} opacity="0.8" />
+        <line x1="38" y1="6" x2="38" y2="38" strokeWidth="1" stroke={sd} />
+        <line x1="52" y1="6" x2="52" y2="38" strokeWidth="1" stroke={sd} />
+        {/* body crease */}
+        <line x1="10" y1="27" x2="70" y2="27" strokeWidth="0.7" stroke={sd} />
+        {/* headlight — on slanted nose */}
+        <path d="M5 28 L9 22" strokeWidth="2.5" stroke={s} opacity="0.85" strokeLinecap="round" />
         {/* taillight */}
-        <rect x="63" y="19" width="4" height="5" rx="1" fill={s} opacity="0.8" />
-        {/* front bumper bar */}
-        <line x1="6" y1="33" x2="14" y2="33" strokeWidth="1.2" stroke={s} opacity="0.5" />
-        {/* rear bumper bar */}
-        <line x1="58" y1="33" x2="68" y2="33" strokeWidth="1.2" stroke={s} opacity="0.5" />
+        <rect x="66" y="20" width="3.5" height="6" rx="1" fill={s} opacity="0.8" />
+        {/* front bumper */}
+        <path d="M4 34 Q5 38 10 38" strokeWidth="1.2" stroke={s} opacity="0.5" />
+        {/* rear bumper */}
+        <line x1="62" y1="36" x2="70" y2="36" strokeWidth="1.2" stroke={s} opacity="0.5" />
         {/* front wheel */}
-        <circle cx="19" cy="36" r="6.5" fill="#0a0f1e" />
-        <circle cx="19" cy="36" r="6.5" />
-        <circle cx="19" cy="36" r="3.2" strokeWidth="1" />
-        <circle cx="19" cy="36" r="1.1" fill={s} stroke="none" />
+        <circle cx="18" cy="38" r="6.5" fill="#0a0f1e" />
+        <circle cx="18" cy="38" r="6.5" />
+        <circle cx="18" cy="38" r="3.2" strokeWidth="1" />
+        <circle cx="18" cy="38" r="1.1" fill={s} stroke="none" />
         {/* rear wheel */}
-        <circle cx="55" cy="36" r="6.5" fill="#0a0f1e" />
-        <circle cx="55" cy="36" r="6.5" />
-        <circle cx="55" cy="36" r="3.2" strokeWidth="1" />
-        <circle cx="55" cy="36" r="1.1" fill={s} stroke="none" />
+        <circle cx="56" cy="38" r="6.5" fill="#0a0f1e" />
+        <circle cx="56" cy="38" r="6.5" />
+        <circle cx="56" cy="38" r="3.2" strokeWidth="1" />
+        <circle cx="56" cy="38" r="1.1" fill={s} stroke="none" />
       </g>
     );
   }
 
-  // Solati: long high-roof bus-van — flat front face, panoramic windshield, many windows
+  // Solati (Hyundai H350): slanted windshield, short hood, long high-roof body
+  // viewBox 0 0 90 50
   return (
     <g fill="none" stroke={s} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-      {/* main body — long flat box */}
-      <path d="M4 38 L4 8 Q4 4 8 4 L78 4 Q82 4 82 8 L82 38 Z" fill={sf} />
-      {/* flat front face */}
-      <line x1="4" y1="8" x2="4" y2="32" strokeWidth="1" stroke={sd} />
-      {/* large front windshield — nearly full-width front */}
-      <rect x="5" y="5" width="14" height="14" rx="1" fill={sw} />
-      {/* side windows — 4 uniform windows */}
-      <rect x="22" y="7" width="12" height="10" rx="1.5" fill={sw} />
-      <rect x="36" y="7" width="12" height="10" rx="1.5" fill={sw} />
-      <rect x="50" y="7" width="12" height="10" rx="1.5" fill={sw} />
-      <rect x="64" y="7" width="12" height="10" rx="1.5" fill={sw} />
+      {/* main body — long van with slanted front */}
+      <path
+        d="M4 42 L4 30 Q4 26 7 23 L14 12 Q17 8 22 8 L80 8 Q84 8 84 12 L84 42 Z"
+        fill={sf}
+      />
+      {/* windshield — diagonal slant */}
+      <path
+        d="M7 23 L14 12 Q17 8 22 8 L22 22 L9 22 Z"
+        fill={sw}
+      />
+      {/* side windows — 4 windows */}
+      <rect x="24" y="10" width="13" height="10" rx="1.5" fill={sw} />
+      <rect x="39" y="10" width="13" height="10" rx="1.5" fill={sw} />
+      <rect x="54" y="10" width="13" height="10" rx="1.5" fill={sw} />
+      <rect x="69" y="10" width="11" height="10" rx="1.5" fill={sw} />
       {/* door dividers */}
-      <line x1="20" y1="4" x2="20" y2="38" strokeWidth="1" stroke={sd} />
-      <line x1="62" y1="4" x2="62" y2="38" strokeWidth="1" stroke={sd} />
-      {/* body crease line */}
-      <line x1="4" y1="28" x2="82" y2="28" strokeWidth="0.7" stroke={sd} />
-      {/* headlight — rectangular */}
-      <rect x="5" y="21" width="7" height="5" rx="1" fill={s} opacity="0.8" />
+      <line x1="37" y1="8" x2="37" y2="42" strokeWidth="1" stroke={sd} />
+      <line x1="67" y1="8" x2="67" y2="42" strokeWidth="1" stroke={sd} />
+      {/* body crease */}
+      <line x1="9" y1="31" x2="84" y2="31" strokeWidth="0.7" stroke={sd} />
+      {/* headlight — on slanted nose */}
+      <path d="M5 30 L9 23" strokeWidth="2.5" stroke={s} opacity="0.85" strokeLinecap="round" />
       {/* taillight */}
-      <rect x="76" y="21" width="5" height="5" rx="1" fill={s} opacity="0.8" />
+      <rect x="80" y="22" width="3.5" height="7" rx="1" fill={s} opacity="0.8" />
       {/* front bumper */}
-      <line x1="4" y1="35" x2="18" y2="35" strokeWidth="1.2" stroke={s} opacity="0.5" />
+      <path d="M4 38 Q5 42 10 42" strokeWidth="1.2" stroke={s} opacity="0.5" />
       {/* rear bumper */}
-      <line x1="66" y1="35" x2="82" y2="35" strokeWidth="1.2" stroke={s} opacity="0.5" />
+      <line x1="70" y1="40" x2="84" y2="40" strokeWidth="1.2" stroke={s} opacity="0.5" />
       {/* front wheel */}
-      <circle cx="20" cy="38" r="7" fill="#0a0f1e" />
-      <circle cx="20" cy="38" r="7" />
-      <circle cx="20" cy="38" r="3.5" strokeWidth="1" />
-      <circle cx="20" cy="38" r="1.2" fill={s} stroke="none" />
+      <circle cx="20" cy="42" r="7.5" fill="#0a0f1e" />
+      <circle cx="20" cy="42" r="7.5" />
+      <circle cx="20" cy="42" r="3.8" strokeWidth="1" />
+      <circle cx="20" cy="42" r="1.3" fill={s} stroke="none" />
       {/* rear wheel */}
-      <circle cx="66" cy="38" r="7" fill="#0a0f1e" />
-      <circle cx="66" cy="38" r="7" />
-      <circle cx="66" cy="38" r="3.5" strokeWidth="1" />
-      <circle cx="66" cy="38" r="1.2" fill={s} stroke="none" />
+      <circle cx="68" cy="42" r="7.5" fill="#0a0f1e" />
+      <circle cx="68" cy="42" r="7.5" />
+      <circle cx="68" cy="42" r="3.8" strokeWidth="1" />
+      <circle cx="68" cy="42" r="1.3" fill={s} stroke="none" />
     </g>
   );
 }
@@ -768,7 +779,7 @@ export default function CustomJoinTourPage() {
                 <label className="cursor-pointer">
                   <input type="radio" name="vehicle" className="peer sr-only" checked={participants <= 6} onChange={() => setParticipants((p) => Math.min(6, p))} />
                   <div className={`cyber-vehicle-card ${participants <= 6 ? 'selected' : ''}`}>
-                    <svg viewBox="0 0 74 46" className="w-20 h-auto shrink-0" style={{ filter: participants <= 6 ? 'drop-shadow(0 0 6px rgba(0, 240, 255, 0.7))' : 'drop-shadow(0 0 4px rgba(255,255,255,0.2))' }} fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <svg viewBox="0 0 76 48" className="w-20 h-auto shrink-0" style={{ filter: participants <= 6 ? 'drop-shadow(0 0 6px rgba(0, 240, 255, 0.7))' : 'drop-shadow(0 0 4px rgba(255,255,255,0.2))' }} fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
                       <VanIconWireframe active={participants <= 6} />
                     </svg>
                     <div className="text-sm font-bold text-center">{t('home.customJoinTour.vehicleVanLabel')}</div>
@@ -778,7 +789,7 @@ export default function CustomJoinTourPage() {
                 <label className="cursor-pointer">
                   <input type="radio" name="vehicle" className="peer sr-only" checked={participants >= 7} onChange={() => setParticipants((p) => Math.max(7, p))} />
                   <div className={`cyber-vehicle-card ${participants >= 7 ? 'selected' : ''}`}>
-                    <svg viewBox="0 0 86 50" className="w-20 h-auto shrink-0" style={{ filter: participants >= 7 ? 'drop-shadow(0 0 6px rgba(0, 240, 255, 0.7))' : 'drop-shadow(0 0 4px rgba(255,255,255,0.2))' }} fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <svg viewBox="0 0 90 52" className="w-20 h-auto shrink-0" style={{ filter: participants >= 7 ? 'drop-shadow(0 0 6px rgba(0, 240, 255, 0.7))' : 'drop-shadow(0 0 4px rgba(255,255,255,0.2))' }} fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
                       <VanIconWireframe active={participants >= 7} large />
                     </svg>
                     <div className="text-sm font-bold text-center">{t('home.customJoinTour.vehicleLargeVanLabel')}</div>
