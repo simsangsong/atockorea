@@ -455,8 +455,8 @@ export default function CustomJoinTourPage() {
     setError(null);
     const title =
       schedule.length > 0 && schedule[0].places?.length > 0
-        ? `${schedule[0].places[0].name || '맞춤'} 투어 ${schedule.length}일`
-        : `맞춤 투어 ${schedule.length}일`;
+        ? `${schedule[0].places[0].name || '留욎땄'} ??${schedule.length}??
+        : `留욎땄 ?ъ뼱 ${schedule.length}??;
     try {
       const res = await fetch('/api/custom-join-tour/proposed', {
         method: 'POST',
@@ -794,7 +794,7 @@ export default function CustomJoinTourPage() {
                     <div className="text-[10px] opacity-60 text-center">{t('home.customJoinTour.vehicleVanPrice')}</div>
                     {participants <= 6 && (
                       <div className="text-xs font-bold text-cyan-300 text-center mt-0.5">
-                        {t('home.customJoinTour.vehicleTotalSummary').replace('{{n}}', String(participants)).replace('{{price}}', `??{(participants * CUSTOM_JOIN_TOUR.VAN.PRICE_PER_PERSON_KRW).toLocaleString()}`)}
+                        {t('home.customJoinTour.vehicleTotalSummary').replace('{{n}}', String(participants)).replace('{{price}}', `₩${(participants * CUSTOM_JOIN_TOUR.VAN.PRICE_PER_PERSON_KRW).toLocaleString()}`)}
                       </div>
                     )}
                   </div>
@@ -809,7 +809,7 @@ export default function CustomJoinTourPage() {
                     <div className="text-[10px] opacity-60 text-center">{t('home.customJoinTour.vehicleLargeVanPrice')}</div>
                     {participants >= 7 && (
                       <div className="text-xs font-bold text-cyan-300 text-center mt-0.5">
-                        {t('home.customJoinTour.vehicleTotalSummary').replace('{{n}}', String(participants)).replace('{{price}}', `??{(participants * CUSTOM_JOIN_TOUR.LARGE_VAN.PRICE_PER_PERSON_KRW).toLocaleString()}`)}
+                        {t('home.customJoinTour.vehicleTotalSummary').replace('{{n}}', String(participants)).replace('{{price}}', `₩${(participants * CUSTOM_JOIN_TOUR.LARGE_VAN.PRICE_PER_PERSON_KRW).toLocaleString()}`)}
                       </div>
                     )}
                   </div>
