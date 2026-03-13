@@ -311,6 +311,10 @@ export default function CustomJoinTourPage() {
       setError(t('home.customJoinTour.errorParticipantsRange') || `Please enter ${CUSTOM_JOIN_TOUR.MIN_PARTICIPANTS}–${CUSTOM_JOIN_TOUR.MAX_PARTICIPANTS} guests.`);
       return;
     }
+    if (!tourDate) {
+      setError(t('home.customJoinTour.errorSelectDate') || 'Please select a tour date.');
+      return;
+    }
     setError(null);
     setLoading(true);
     try {
@@ -322,6 +326,7 @@ export default function CustomJoinTourPage() {
           duration: '1',
           numberOfParticipants: participants,
           destination: destination ?? 'jeju',
+          ...(tourDate ? { tourStartDate: tourDate } : {}),
         }),
       });
       const data = await res.json();
@@ -337,14 +342,17 @@ export default function CustomJoinTourPage() {
       setOverLimitDays(data.overLimitDays || []);
       setExtraFeeNotice(data.extraFeeNotice ?? null);
       setPricing(data.pricing ? { totalPriceKrw: data.pricing.totalPriceKrw, vehicleLabelKo: data.pricing.vehicleLabelKo, participants: data.pricing.participants } : null);
-      setGuideMessage(data.guideMessage || '');
+      const removedNotice = Array.isArray(data.removedPlaces) && data.removedPlaces.length > 0
+        ? ` (운영 규칙으로 제외된 장소: ${(data.removedPlaces as Array<{ name: string; reason: string }>).map((r) => `${r.name}`).join(', ')})`
+        : '';
+      setGuideMessage((data.guideMessage || '') + removedNotice);
       const payload = {
         schedule: data.schedule || [],
         dailyDistancesKm: data.dailyDistancesKm || [],
         overLimitDays: data.overLimitDays || [],
         extraFeeNotice: data.extraFeeNotice ?? null,
         pricing: data.pricing ? { totalPriceKrw: data.pricing.totalPriceKrw, vehicleLabelKo: data.pricing.vehicleLabelKo, participants: data.pricing.participants } : null,
-        guideMessage: data.guideMessage || '',
+        guideMessage: (data.guideMessage || '') + removedNotice,
       };
       try {
         window.localStorage.setItem(STORAGE_KEY_ITINERARY, JSON.stringify(payload));
@@ -650,7 +658,7 @@ export default function CustomJoinTourPage() {
 
   /** One-page form: show when not yet on itinerary, checkout, or confirmed */
   const showDashboard = step !== 'itinerary' && step !== 'checkout' && step !== 'confirmed';
-  const isDarkTheme = step !== 'checkout' && step !== 'confirmed';
+  const isDarkTheme = true;
 
   const fieldClass = 'w-full bg-white border-none rounded-xl px-4 py-3 text-sm font-medium text-slate-800 shadow-sm focus:ring-2 focus:ring-slate-900 outline-none appearance-none cursor-pointer transition-colors';
   const labelClass = 'block text-[11px] font-bold text-black uppercase tracking-wider mb-1.5 ml-1';
@@ -693,7 +701,7 @@ export default function CustomJoinTourPage() {
               <label className="text-base font-bold text-cyan-400 uppercase tracking-widest block mb-4">{t('home.customJoinTour.destinationLabel')}</label>
               </div>
               {/* Destination map — full-width */}
-              <div className="tour-map-block w-full relative overflow-hidden" style={{
+              <div className="tour-map-block w-full relative" style={{
                 background: '#050B18',
                 backgroundImage: 'linear-gradient(to bottom, transparent 50%, rgba(0, 255, 255, 0.02) 50%)',
                 backgroundSize: '100% 4px',
@@ -710,20 +718,21 @@ export default function CustomJoinTourPage() {
                   backgroundImage: 'linear-gradient(to bottom, transparent 50%, rgba(0, 255, 255, 0.02) 50%)',
                   backgroundSize: '100% 4px',
                 }} />
-                <div className="flex flex-col items-center gap-1 py-3 px-6 lg:px-8 relative z-20">
+                <div className="flex flex-col items-center gap-1 py-3 px-6 lg:px-8 relative z-[9999]">
                   <p className="text-[#00ffff] text-lg font-bold text-center" style={{ textShadow: '0 0 8px rgba(0,255,255,0.6)' }}>
                     {destination === 'busan' ? 'Busan' : destination === 'seoul' ? 'Seoul' : 'Jeju Island'}
                   </p>
-                  <select
-                    value={destination ?? 'jeju'}
-                    onChange={(e) => setDestination((e.target.value as 'jeju' | 'busan' | 'seoul') || null)}
-                    className="mt-1 text-sm text-[#00f0ff] bg-transparent border border-[rgba(0,240,255,0.3)] rounded px-2 py-1 cursor-pointer outline-none focus:ring-1 focus:ring-[#00f0ff]"
-                    aria-label={t('home.customJoinTour.destinationLabel')}
-                  >
-                    <option value="jeju">Jeju Island</option>
-                    <option value="busan" disabled>Busan ({t('home.customJoinTour.comingSoon')})</option>
-                    <option value="seoul" disabled>Seoul ({t('home.customJoinTour.comingSoon')})</option>
-                  </select>
+                  <div className="mt-1 w-44">
+                    <CustomSelect
+                      value={destination ?? 'jeju'}
+                      onChange={(v) => setDestination((v as 'jeju' | 'busan' | 'seoul') || null)}
+                      options={[
+                        { value: 'jeju', label: 'Jeju Island' },
+                        { value: 'busan', label: 'Busan' },
+                        { value: 'seoul', label: 'Seoul' },
+                      ]}
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -783,7 +792,12 @@ export default function CustomJoinTourPage() {
                       <VanIconWireframe active={participants <= 6} />
                     </svg>
                     <div className="text-sm font-bold text-center">{t('home.customJoinTour.vehicleVanLabel')}</div>
-                    <div className="text-[10px] opacity-80 text-center">{t('home.customJoinTour.vehicleVanPrice')}</div>
+                    <div className="text-[10px] opacity-60 text-center">₩100,000 / person</div>
+                    {participants <= 6 && (
+                      <div className="text-xs font-bold text-cyan-300 text-center mt-0.5">
+                        {participants}명 · 총 {(participants * CUSTOM_JOIN_TOUR.VAN.PRICE_PER_PERSON_KRW).toLocaleString()}원
+                      </div>
+                    )}
                   </div>
                 </label>
                 <label className="cursor-pointer">
@@ -793,7 +807,12 @@ export default function CustomJoinTourPage() {
                       <VanIconWireframe active={participants >= 7} large />
                     </svg>
                     <div className="text-sm font-bold text-center">{t('home.customJoinTour.vehicleLargeVanLabel')}</div>
-                    <div className="text-[10px] opacity-80 text-center">₩90,000 / person</div>
+                    <div className="text-[10px] opacity-60 text-center">₩90,000 / person</div>
+                    {participants >= 7 && (
+                      <div className="text-xs font-bold text-cyan-300 text-center mt-0.5">
+                        {participants}명 · 총 {(participants * CUSTOM_JOIN_TOUR.LARGE_VAN.PRICE_PER_PERSON_KRW).toLocaleString()}원
+                      </div>
+                    )}
                   </div>
                 </label>
               </div>
@@ -873,12 +892,16 @@ export default function CustomJoinTourPage() {
                     {dailyDistancesKm[dayIndex] != null && <span className="text-[11px] text-gray-400">이동 거리 약 {dailyDistancesKm[dayIndex]} km</span>}
                   </div>
                   <ul className="space-y-4">
+                    <AnimatePresence initial={false}>
                     {daySchedule.places.map((place, placeIndex) => (
                       <motion.li
                         key={(place as { _uid?: string })._uid ?? `day-${dayIndex}-${placeIndex}`}
+                        layoutId={(place as { _uid?: string })._uid ?? `day-${dayIndex}-${placeIndex}`}
+                        layout
                         initial={{ opacity: 0, x: -24 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.4 + dayIndex * 0.15 + placeIndex * 0.1, duration: 0.4, ease: 'easeOut' }}
+                        exit={{ opacity: 0, x: 24, transition: { duration: 0.2 } }}
+                        transition={{ layout: { type: 'spring', stiffness: 400, damping: 35 }, opacity: { duration: 0.3 }, x: { duration: 0.3 } }}
                         className="relative pl-8"
                       >
                         <div className="absolute left-0 top-4 w-6 h-6 rounded-full bg-[#050B18] border-2 border-cyan-400 flex items-center justify-center shadow-[0_0_8px_rgba(0,255,255,0.4)] z-10">
@@ -910,6 +933,7 @@ export default function CustomJoinTourPage() {
                         </div>
                       </motion.li>
                     ))}
+                    </AnimatePresence>
                   </ul>
                   <button type="button" onClick={() => addPlace(dayIndex)} className="mt-3 ml-8 flex items-center gap-1.5 text-xs text-cyan-400 hover:text-cyan-300 font-medium"><Plus className="w-3.5 h-3.5" /> {t('home.customJoinTour.addPlace')}</button>
                 </motion.div>
@@ -934,194 +958,225 @@ export default function CustomJoinTourPage() {
           </motion.div>
         )}
 
-        {/* Step: Checkout — Notice + customer form + payment */}
+        {/* Step: Checkout — 사이버 다크 테마 */}
         {step === 'checkout' && confirmResult && (
-          <div ref={itineraryRef} className="space-y-6">
-            <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5">
-              <h3 className="text-sm font-bold text-amber-900 mb-2">{t('home.customJoinTour.noticeTitle')}</h3>
-              <ul className="text-sm text-amber-800 space-y-1.5 list-disc list-inside">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: 'easeOut' }}
+            ref={itineraryRef}
+            className="space-y-5"
+          >
+            {/* 안내 배너 */}
+            <div className="rounded-xl bg-amber-500/10 border border-amber-400/40 p-4">
+              <h3 className="text-sm font-bold text-amber-300 mb-1.5">{t('home.customJoinTour.noticeTitle')}</h3>
+              <ul className="text-xs text-amber-200/80 space-y-1 list-disc list-inside">
                 <li>{t('home.customJoinTour.notice24hCancel')}</li>
                 <li>{t('home.customJoinTour.notice48hProposal')}</li>
               </ul>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-5">
+              {/* 고객 정보 */}
               <div className="md:col-span-2">
-                <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-neutral-100 p-5 sm:p-6">
-                  <h2 className="text-lg font-bold text-neutral-900 mb-4">{t('booking.customerInfo')}</h2>
+                <div className="glass-card p-5 sm:p-6">
+                  <h2 className="text-base font-bold bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent mb-4">{t('booking.customerInfo')}</h2>
                   <div className="space-y-4">
+                    {[
+                      { label: t('booking.fullName'), key: 'name' as const, type: 'text', placeholder: t('booking.enterFullName') },
+                      { label: t('booking.phone'), key: 'phone' as const, type: 'tel', placeholder: t('booking.enterPhone') },
+                      { label: t('booking.email'), key: 'email' as const, type: 'email', placeholder: t('booking.enterEmail') },
+                    ].map(({ label, key, type, placeholder }) => (
+                      <div key={key}>
+                        <label className="block text-xs font-bold text-cyan-400/80 uppercase tracking-wider mb-1.5">{label} <span className="text-red-400">*</span></label>
+                        <input
+                          type={type}
+                          value={customerInfo[key]}
+                          onChange={(e) => {
+                            const v = key === 'phone' ? e.target.value.replace(/[^0-9+]/g, '') : e.target.value;
+                            setCustomerInfo((c) => ({ ...c, [key]: v }));
+                            setCheckoutErrors((err) => ({ ...err, [key]: undefined }));
+                          }}
+                          className={`glass-input w-full px-4 py-2.5 text-sm text-white placeholder:text-gray-500 ${checkoutErrors[key] ? 'border-red-400/60' : ''}`}
+                          placeholder={placeholder}
+                        />
+                        {checkoutErrors[key] && <p className="mt-1 text-xs text-red-400">{checkoutErrors[key]}</p>}
+                      </div>
+                    ))}
                     <div>
-                      <label className="block text-sm font-semibold text-gray-800 mb-1">{t('booking.fullName')} <span className="text-red-500">*</span></label>
-                      <input
-                        type="text"
-                        value={customerInfo.name}
-                        onChange={(e) => { setCustomerInfo((c) => ({ ...c, name: e.target.value })); setCheckoutErrors((e) => ({ ...e, name: undefined })); }}
-                        className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none bg-gray-50/50 focus:bg-white ${checkoutErrors.name ? 'border-red-400 bg-red-50/50' : 'border-gray-200'}`}
-                        placeholder={t('booking.enterFullName')}
-                      />
-                      {checkoutErrors.name && <p className="mt-1 text-sm text-red-500">{checkoutErrors.name}</p>}
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-800 mb-1">{t('booking.phone')} <span className="text-red-500">*</span></label>
-                      <input
-                        type="tel"
-                        value={customerInfo.phone}
-                        onChange={(e) => { const v = e.target.value.replace(/[^0-9+]/g, ''); setCustomerInfo((c) => ({ ...c, phone: v })); setCheckoutErrors((e) => ({ ...e, phone: undefined })); }}
-                        className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none bg-gray-50/50 focus:bg-white ${checkoutErrors.phone ? 'border-red-400 bg-red-50/50' : 'border-gray-200'}`}
-                        placeholder={t('booking.enterPhone')}
-                      />
-                      {checkoutErrors.phone && <p className="mt-1 text-sm text-red-500">{checkoutErrors.phone}</p>}
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-800 mb-1">{t('booking.email')} <span className="text-red-500">*</span></label>
-                      <input
-                        type="email"
-                        value={customerInfo.email}
-                        onChange={(e) => { setCustomerInfo((c) => ({ ...c, email: e.target.value })); setCheckoutErrors((e) => ({ ...e, email: undefined })); }}
-                        className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none bg-gray-50/50 focus:bg-white ${checkoutErrors.email ? 'border-red-400 bg-red-50/50' : 'border-gray-200'}`}
-                        placeholder={t('booking.enterEmail')}
-                      />
-                      {checkoutErrors.email && <p className="mt-1 text-sm text-red-500">{checkoutErrors.email}</p>}
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-800 mb-1">{t('tour.preferredChatApp')} <span className="text-red-500">*</span></label>
+                      <label className="block text-xs font-bold text-cyan-400/80 uppercase tracking-wider mb-1.5">{t('tour.preferredChatApp')} <span className="text-red-400">*</span></label>
                       <select
                         value={customerInfo.preferredChatApp}
-                        onChange={(e) => { setCustomerInfo((c) => ({ ...c, preferredChatApp: e.target.value })); setCheckoutErrors((e) => ({ ...e, preferredChatApp: undefined })); }}
-                        className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none bg-gray-50/50 focus:bg-white appearance-none ${checkoutErrors.preferredChatApp ? 'border-red-400 bg-red-50/50' : 'border-gray-200'}`}
+                        onChange={(e) => { setCustomerInfo((c) => ({ ...c, preferredChatApp: e.target.value })); setCheckoutErrors((err) => ({ ...err, preferredChatApp: undefined })); }}
+                        className={`glass-input w-full px-4 py-2.5 text-sm text-white appearance-none ${checkoutErrors.preferredChatApp ? 'border-red-400/60' : ''}`}
                       >
-                        <option value="">{t('tour.pleaseSelect')}</option>
-                        <option value="kakao">KakaoTalk</option>
-                        <option value="line">LINE</option>
-                        <option value="wechat">WeChat</option>
-                        <option value="whatsapp">WhatsApp</option>
-                        <option value="telegram">Telegram</option>
-                        <option value="other">Other</option>
+                        <option value="" className="bg-[#0a1628]">{t('tour.pleaseSelect')}</option>
+                        <option value="kakao" className="bg-[#0a1628]">KakaoTalk</option>
+                        <option value="line" className="bg-[#0a1628]">LINE</option>
+                        <option value="wechat" className="bg-[#0a1628]">WeChat</option>
+                        <option value="whatsapp" className="bg-[#0a1628]">WhatsApp</option>
+                        <option value="telegram" className="bg-[#0a1628]">Telegram</option>
+                        <option value="other" className="bg-[#0a1628]">Other</option>
                       </select>
-                      {checkoutErrors.preferredChatApp && <p className="mt-1 text-sm text-red-500">{checkoutErrors.preferredChatApp}</p>}
+                      {checkoutErrors.preferredChatApp && <p className="mt-1 text-xs text-red-400">{checkoutErrors.preferredChatApp}</p>}
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-gray-800 mb-1">{t('tour.chatAppContact')} <span className="text-red-500">*</span></label>
+                      <label className="block text-xs font-bold text-cyan-400/80 uppercase tracking-wider mb-1.5">{t('tour.chatAppContact')} <span className="text-red-400">*</span></label>
                       <input
                         type="text"
                         value={customerInfo.chatAppContact}
-                        onChange={(e) => { setCustomerInfo((c) => ({ ...c, chatAppContact: e.target.value })); setCheckoutErrors((e) => ({ ...e, chatAppContact: undefined })); }}
-                        className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none bg-gray-50/50 focus:bg-white ${checkoutErrors.chatAppContact ? 'border-red-400 bg-red-50/50' : 'border-gray-200'}`}
+                        onChange={(e) => { setCustomerInfo((c) => ({ ...c, chatAppContact: e.target.value })); setCheckoutErrors((err) => ({ ...err, chatAppContact: undefined })); }}
+                        className={`glass-input w-full px-4 py-2.5 text-sm text-white placeholder:text-gray-500 ${checkoutErrors.chatAppContact ? 'border-red-400/60' : ''}`}
                         placeholder={customerInfo.preferredChatApp === 'line' ? t('tour.enterLineLink') : t('tour.enterChatAppId')}
                       />
-                      {checkoutErrors.chatAppContact && <p className="mt-1 text-sm text-red-500">{checkoutErrors.chatAppContact}</p>}
+                      {checkoutErrors.chatAppContact && <p className="mt-1 text-xs text-red-400">{checkoutErrors.chatAppContact}</p>}
                     </div>
                   </div>
                 </div>
               </div>
+
+              {/* 결제 요약 */}
               <div>
-                <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-neutral-100 p-5 sticky top-24">
-                  <h2 className="text-lg font-bold text-neutral-900 mb-4">{t('booking.bookingSummary')}</h2>
+                <div className="glass-card p-5 sticky top-24">
+                  <h2 className="text-base font-bold bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent mb-4">{t('booking.bookingSummary')}</h2>
                   <div className="space-y-3 mb-4">
                     <div>
-                      <label className="block text-xs font-medium text-gray-500 mb-1">{t('booking.tourDate')}</label>
+                      <label className="block text-[10px] font-bold text-cyan-400/70 uppercase tracking-wider mb-1">{t('booking.tourDate')}</label>
                       <input
                         type="date"
                         min={getMinTourDate()}
                         value={tourDate}
                         onChange={(e) => setTourDate(e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm"
+                        className="glass-input w-full px-3 py-2 text-sm text-white"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-medium text-gray-500 mb-1">{t('home.customJoinTour.departureTime')}</label>
+                      <label className="block text-[10px] font-bold text-cyan-400/70 uppercase tracking-wider mb-1">{t('home.customJoinTour.departureTime')}</label>
                       <input
                         type="time"
                         value={departureTime}
                         onChange={(e) => setDepartureTime(e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm"
+                        className="glass-input w-full px-3 py-2 text-sm text-white"
                       />
                     </div>
                   </div>
-                  <div className="space-y-3 text-sm pt-2 border-t border-gray-100">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">{t('booking.tourDate')}</span>
-                      <span className="font-semibold text-gray-900">
-                        {tourDate || '—'} {departureTime}
-                      </span>
+                  <div className="space-y-2 text-xs pt-3 border-t border-white/10">
+                    <div className="flex justify-between text-gray-400">
+                      <span>{t('booking.tourDate')}</span>
+                      <span className="text-white font-medium">{tourDate || '—'} {departureTime}</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">{t('tour.guests')}</span>
-                      <span className="font-semibold text-gray-900">{participants}</span>
+                    <div className="flex justify-between text-gray-400">
+                      <span>{t('tour.guests')}</span>
+                      <span className="text-white font-medium">{participants}</span>
                     </div>
                     {confirmResult.pricing && (
-                      <div className="flex justify-between pt-2 border-t border-gray-200">
-                        <span className="text-gray-600">{t('tour.total')}</span>
-                        <span className="text-lg font-bold text-gray-900">{formatPrice(confirmResult.pricing.totalPriceKrw)}</span>
+                      <div className="flex justify-between pt-2 border-t border-white/10">
+                        <span className="text-gray-400">{t('tour.total')}</span>
+                        <span className="text-base font-bold text-cyan-300">{formatPrice(confirmResult.pricing.totalPriceKrw)}</span>
                       </div>
                     )}
                   </div>
-                  {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
+                  {error && <p className="mt-3 text-xs text-red-400">{error}</p>}
                   <button
                     type="button"
                     onClick={handleCheckoutSubmit}
                     disabled={loading}
-                    className="mt-4 w-full py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-bold rounded-xl transition-all shadow-[0_4px_12px_rgba(37,99,235,0.4)]"
+                    className="mt-4 w-full py-3 rounded-xl text-sm font-bold text-white bg-cyan-500/20 border border-cyan-400/60 shadow-[0_0_18px_rgba(0,255,255,0.25)] hover:bg-cyan-500/30 hover:shadow-[0_0_28px_rgba(0,255,255,0.45)] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                   >
                     {loading ? <Loader2 className="w-5 h-5 animate-spin mx-auto" /> : t('home.customJoinTour.proceedToPayment')}
                   </button>
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
 
-        {/* Step: Confirmed — 확정 결과 + 제주 동서 추가요금 안내 */}
+        {/* Step: Confirmed — 사이버 다크 테마 */}
         {step === 'confirmed' && confirmResult && (
-          <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-neutral-100 p-5 sm:p-6 space-y-4">
-            <div className="text-center py-4">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 mb-3">
-                <Check className="w-6 h-6" />
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            className="glass-card tech-scanline p-5 sm:p-6 space-y-4"
+          >
+            {/* 성공 아이콘 */}
+            <motion.div
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.15, type: 'spring', stiffness: 260, damping: 20 }}
+              className="text-center pt-2"
+            >
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-cyan-500/15 border-2 border-cyan-400/60 shadow-[0_0_20px_rgba(0,255,255,0.35)] mb-3">
+                <Check className="w-7 h-7 text-cyan-400" />
               </div>
-              <h2 className="text-base font-bold text-neutral-900 mb-1">{t('home.customJoinTour.confirmSuccess')}</h2>
-              <p className="text-sm text-neutral-600">{confirmResult.guideMessage}</p>
-            </div>
+              <h2 className="text-base font-bold bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent mb-1">
+                {t('home.customJoinTour.confirmSuccess')}
+              </h2>
+              <p className="text-xs text-cyan-100/70">{t('home.customJoinTour.confirmSuccessDesc')}</p>
+            </motion.div>
+
+            {/* 요금 요약 */}
             {confirmResult.pricing && (
-              <div className="rounded-xl bg-neutral-100 px-4 py-3 text-xs text-neutral-800">
+              <motion.div
+                initial={{ opacity: 0, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.25, duration: 0.35 }}
+                className="glass-input px-4 py-3 text-xs text-cyan-100/80 border-cyan-500/20"
+              >
                 {confirmResult.pricing.vehicleLabelKo} · 총 {formatPrice(confirmResult.pricing.totalPriceKrw)}
-              </div>
+              </motion.div>
             )}
+
+            {/* 제주 동서 추가요금 */}
             {confirmResult.jejuCrossRegion && confirmResult.jejuCrossRegionNotice && (
-              <div className="rounded-xl bg-amber-50 border border-amber-200 px-4 py-3">
-                <p className="text-xs font-semibold text-amber-900 mb-1">{t('home.customJoinTour.jejuCrossRegionTitle')}</p>
-                <p className="text-[11px] text-amber-800">{confirmResult.jejuCrossRegionNotice}</p>
+              <motion.div
+                initial={{ opacity: 0, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3, duration: 0.35 }}
+                className="rounded-xl bg-amber-500/10 border border-amber-400/40 px-4 py-3"
+              >
+                <p className="text-xs font-semibold text-amber-300 mb-1">{t('home.customJoinTour.jejuCrossRegionTitle')}</p>
+                <p className="text-[11px] text-amber-200/80">{confirmResult.jejuCrossRegionNotice}</p>
                 {confirmResult.jejuCrossRegionExtraFeeKrw != null && (
-                  <p className="text-[11px] font-medium text-amber-900 mt-2">
+                  <p className="text-[11px] font-medium text-amber-300 mt-2">
                     {t('home.customJoinTour.jejuCrossRegionExtraFee', { amount: locale === 'ko' ? (confirmResult.jejuCrossRegionExtraFeeKrw / 10000).toFixed(0) : formatPrice(confirmResult.jejuCrossRegionExtraFeeKrw) })}
                   </p>
                 )}
-              </div>
+              </motion.div>
             )}
-            {!proposedDone ? (
-              <button
-                type="button"
-                onClick={handlePropose}
-                disabled={loading}
-                className="w-full py-3 rounded-xl text-sm font-semibold text-white bg-neutral-900/90 backdrop-blur-md border border-white/10 shadow-lg shadow-black/20 hover:bg-neutral-800/95 disabled:opacity-70 transition-colors"
+
+            {/* CTA 버튼들 */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.35 }}
+              className="space-y-3 pt-1"
+            >
+              {!proposedDone ? (
+                <button
+                  type="button"
+                  onClick={() => setStep('checkout')}
+                  className="w-full py-3 rounded-xl text-sm font-bold text-white bg-cyan-500/20 backdrop-blur-md border border-cyan-400/60 shadow-[0_0_18px_rgba(0,255,255,0.25)] hover:bg-cyan-500/30 hover:shadow-[0_0_28px_rgba(0,255,255,0.45)] transition-all"
+                >
+                  {t('home.customJoinTour.proposeThisTour')}
+                </button>
+              ) : (
+                <p className="text-xs text-emerald-400 font-medium py-2 text-center">{t('home.customJoinTour.proposedDone')}</p>
+              )}
+              <Link
+                href="/custom-join-tour/proposed"
+                className="block w-full text-center py-2.5 rounded-xl text-sm font-semibold text-cyan-400 border border-cyan-500/40 hover:border-cyan-400/70 hover:bg-cyan-500/10 transition-all"
               >
-                {loading ? '처리 중…' : t('home.customJoinTour.proposeThisTour')}
-              </button>
-            ) : (
-              <p className="text-xs text-emerald-600 font-medium py-2">{t('home.customJoinTour.proposedDone')}</p>
-            )}
-            <Link
-              href="/custom-join-tour/proposed"
-              className="block w-full text-center py-3 rounded-xl text-sm font-semibold text-sky-600 border-2 border-sky-500 hover:bg-sky-50 transition"
-            >
-              {t('home.proposedTours.viewAll')}
-            </Link>
-            <Link
-              href="/tours"
-              className="block w-full text-center py-2 rounded-xl text-xs text-neutral-600 hover:underline"
-            >
-              {t('home.customJoinTour.viewFixedTours')}
-            </Link>
-          </div>
+                {t('home.proposedTours.viewAll')}
+              </Link>
+              <Link
+                href="/tours"
+                className="block w-full text-center py-2 rounded-xl text-xs text-gray-500 hover:text-gray-300 transition-colors"
+              >
+                {t('home.customJoinTour.viewFixedTours')}
+              </Link>
+            </motion.div>
+          </motion.div>
         )}
       </main>
       <Footer />

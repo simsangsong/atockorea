@@ -13,15 +13,15 @@ export const CUSTOM_JOIN_TOUR = {
   /** 참가 인원 최대 */
   MAX_PARTICIPANTS: 13,
 
-  /** 1~6인: 일반 밴 (고정 요금) */
+  /** 1~6인: 일반 밴 (인당 요금) */
   VAN: {
     MIN_PAX: 1,
     MAX_PAX: 6,
     LABEL_KO: '일반 밴',
     LABEL_EN: 'Van',
-    /** 고정 요금 (원) */
-    PRICE_KRW: 100_000,
-    PRICE_TYPE: 'group' as const,
+    /** 인당 요금 (원) */
+    PRICE_PER_PERSON_KRW: 100_000,
+    PRICE_TYPE: 'person' as const,
   },
 
   /** 7~13인: 대형 밴 (인당 요금) */
@@ -54,16 +54,18 @@ export interface CustomJoinTourPricing {
   vehicleType: VehicleType;
   vehicleLabelKo: string;
   vehicleLabelEn: string;
-  priceType: 'group' | 'person';
-  /** 그룹일 때 총액, 인당일 때 1인 단가 */
+  priceType: 'person';
+  /** 1인 단가 (원) */
   unitPriceKrw: number;
   participants: number;
-  /** 총 결제 금액 (원) */
+  /** 총 결제 금액 = unitPriceKrw × participants */
   totalPriceKrw: number;
 }
 
 /**
- * 참가 인원에 따른 차량 및 요금 계산
+ * 참가 인원에 따른 차량 및 요금 계산 (모두 인당 요금)
+ * - 1~6인: 밴, 인당 ₩100,000
+ * - 7~13인: 대형 밴, 인당 ₩90,000
  */
 export function getCustomJoinTourPricing(participants: number): CustomJoinTourPricing | null {
   if (participants < CUSTOM_JOIN_TOUR.MIN_PARTICIPANTS || participants > CUSTOM_JOIN_TOUR.MAX_PARTICIPANTS) {
@@ -74,13 +76,12 @@ export function getCustomJoinTourPricing(participants: number): CustomJoinTourPr
       vehicleType: 'van',
       vehicleLabelKo: CUSTOM_JOIN_TOUR.VAN.LABEL_KO,
       vehicleLabelEn: CUSTOM_JOIN_TOUR.VAN.LABEL_EN,
-      priceType: 'group',
-      unitPriceKrw: CUSTOM_JOIN_TOUR.VAN.PRICE_KRW,
+      priceType: 'person',
+      unitPriceKrw: CUSTOM_JOIN_TOUR.VAN.PRICE_PER_PERSON_KRW,
       participants,
-      totalPriceKrw: CUSTOM_JOIN_TOUR.VAN.PRICE_KRW,
+      totalPriceKrw: participants * CUSTOM_JOIN_TOUR.VAN.PRICE_PER_PERSON_KRW,
     };
   }
-  const total = participants * CUSTOM_JOIN_TOUR.LARGE_VAN.PRICE_PER_PERSON_KRW;
   return {
     vehicleType: 'large_van',
     vehicleLabelKo: CUSTOM_JOIN_TOUR.LARGE_VAN.LABEL_KO,
@@ -88,6 +89,6 @@ export function getCustomJoinTourPricing(participants: number): CustomJoinTourPr
     priceType: 'person',
     unitPriceKrw: CUSTOM_JOIN_TOUR.LARGE_VAN.PRICE_PER_PERSON_KRW,
     participants,
-    totalPriceKrw: total,
+    totalPriceKrw: participants * CUSTOM_JOIN_TOUR.LARGE_VAN.PRICE_PER_PERSON_KRW,
   };
 }

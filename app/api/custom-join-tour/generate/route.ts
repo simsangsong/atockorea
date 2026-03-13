@@ -7,6 +7,10 @@ import {
   getCustomJoinTourPricing,
   type CustomJoinTourPricing,
 } from '@/lib/constants/custom-join-tour';
+import {
+  buildPlaceOperatingRulesPrompt,
+  filterUnavailablePlaces,
+} from '@/lib/constants/place-operating-rules';
 import { createServerClient } from '@/lib/supabase';
 import { getPlaceEnrichment } from '@/lib/places-lookup';
 
@@ -26,6 +30,8 @@ export interface CustomJoinTourGenerateRequest {
   destination?: 'jeju' | 'busan' | 'seoul';
   /** 일정 보강(사진·설명)에 쓸 places 언어. 없으면 'ko'(이미 수집된 국문) 사용 */
   placeLang?: 'ko' | 'en';
+  /** 여행 시작 날짜 (ISO 8601, 예: "2025-04-07"). 있으면 요일별 휴장 필터 적용 */
+  tourStartDate?: string;
 }
 
 /** 일정 내 한 장소 (관광지 또는 식당). image_url/overview는 places 테이블 보강 시 채워짐 */
@@ -73,6 +79,8 @@ export interface CustomJoinTourGenerateResponse {
   guideMessage: string;
   /** 클라이언트 표시용 요약 (선택) */
   summary?: string;
+  /** 운영 규칙으로 제거된 장소 목록 (클라이언트 안내용) */
+  removedPlaces?: Array<{ day: number; name: string; reason: string }>;
 }
 
 function parseDuration(durationInput: string | undefined): number {
@@ -127,6 +135,13 @@ export async function POST(req: NextRequest) {
     const numberOfParticipants = Number(body.numberOfParticipants);
     const destination = body.destination === 'busan' || body.destination === 'seoul' ? body.destination : 'jeju';
 
+    // 여행 시작 날짜 파싱 (요일별 휴장 필터용)
+    let tourStartDate: Date | undefined;
+    if (typeof body.tourStartDate === 'string' && body.tourStartDate) {
+      const parsed = new Date(body.tourStartDate);
+      if (!isNaN(parsed.getTime())) tourStartDate = parsed;
+    }
+
     if (!customerInput) {
       return NextResponse.json(
         { error: 'customerInput is required.' },
@@ -162,6 +177,9 @@ export async function POST(req: NextRequest) {
           ? 'DESTINATION IS BUSAN ONLY. Every single place MUST be in Busan (부산). Do NOT include Jeju, Seoul, or other regions. All addresses must be in Busan, South Korea.'
           : 'DESTINATION IS SEOUL ONLY. Every single place MUST be in Seoul (서울). Do NOT include Jeju, Busan, or other regions. All addresses must be in Seoul, South Korea.';
 
+    // 운영 규칙 프롬프트 생성 (영구 폐쇄 + 요일 휴장)
+    const operatingRulesPrompt = buildPlaceOperatingRulesPrompt(tourStartDate);
+
     const geminiPrompt = `You are a travel itinerary planner for Korea. The customer wants a custom join tour.
 
 **IMPORTANT: ${regionRule}**
@@ -174,10 +192,11 @@ Plan a ${durationNum}-day itinerary in ${destination === 'jeju' ? 'Jeju Island' 
 STRICT RULES:
 1. REGION: ${regionRule}
 2. REAL PLACES ONLY: Every place must be real, existing venues with correct names and addresses. For restaurants, use actual well-known real restaurants in the chosen region.
-3. Each day: exactly 4 or 5 places. Include 1 or 2 restaurant recommendations per day between sightseeing spots. Use "type":"restaurant" or "type":"attraction".
+3. Each day: exactly 4 or 5 places. Include EXACTLY 1 restaurant per day (no more, no less) placed between sightseeing spots for lunch. Use "type":"restaurant" or "type":"attraction".
 4. Order places in a logical visiting order.
 5. If destination is Jeju: Do NOT put East Jeju and West Jeju on the same day. West + South CAN be combined in one day.
-6. Return only the JSON object.`;
+6. Return only the JSON object.
+${operatingRulesPrompt ? `\nOPERATING RESTRICTIONS (MUST FOLLOW):\n${operatingRulesPrompt}` : ''}`;
 
     let rawText: string;
     try {
@@ -225,8 +244,10 @@ ${JSON.stringify(verifiedSchedule, null, 2)}
 Tasks:
 1. Check that place names and addresses are realistic for Korea (Seoul, Busan, Jeju, etc.).
 2. Check that the order of places each day is logical (e.g. nearby spots together).
-3. If something is wrong or unclear, correct it. Keep the same JSON structure with "type":"attraction" or "type":"restaurant" for each place: {"days":[{"day":1,"places":[{"name":"...","address":"...","type":"attraction"|"restaurant"}]},...]}.
-4. Return ONLY the corrected JSON object, no markdown or code fences. If the itinerary is already good, return it unchanged.`;
+3. Each day must have EXACTLY 1 restaurant (type:"restaurant"). If a day has 0 or 2+ restaurants, fix it: keep the best one and convert extras to attractions, or add one if missing.
+4. If something is wrong or unclear, correct it. Keep the same JSON structure with "type":"attraction" or "type":"restaurant" for each place: {"days":[{"day":1,"places":[{"name":"...","address":"...","type":"attraction"|"restaurant"}]},...]}.
+5. Return ONLY the corrected JSON object, no markdown or code fences. If the itinerary is already good, return it unchanged.
+${operatingRulesPrompt ? `\nOPERATING RESTRICTIONS — Remove or replace any place that violates these rules:\n${operatingRulesPrompt}` : ''}`;
 
       try {
         const claudeResponse = await anthropic.messages.create({
@@ -251,6 +272,33 @@ Tasks:
         // Keep Gemini draft if Claude fails
       }
     }
+
+    // --- STEP 2.5: 후처리 필터링 — 영구 폐쇄 및 요일 휴장 장소 제거 ---
+    const { filtered: filteredSchedule, removed: removedPlaces } = filterUnavailablePlaces(
+      verifiedSchedule,
+      tourStartDate
+    );
+    if (removedPlaces.length > 0) {
+      console.info(
+        '[custom-join-tour/generate] 운영 규칙으로 제거된 장소:',
+        removedPlaces.map((r) => `Day${r.day} ${r.name} (${r.reason})`).join(', ')
+      );
+    }
+    verifiedSchedule = filteredSchedule;
+
+    // --- STEP 2.6: 후처리 — 하루 식당 수를 정확히 1개로 강제 조정 ---
+    verifiedSchedule = verifiedSchedule.map((daySchedule) => {
+      const restaurants = daySchedule.places.filter((p) => p.type === 'restaurant');
+      if (restaurants.length <= 1) return daySchedule;
+      // 식당이 2개 이상이면 첫 번째만 남기고 나머지는 제거
+      let restaurantKept = false;
+      const places = daySchedule.places.filter((p) => {
+        if (p.type !== 'restaurant') return true;
+        if (!restaurantKept) { restaurantKept = true; return true; }
+        return false;
+      });
+      return { ...daySchedule, places };
+    });
 
     // --- STEP 3: Distance Matrix — 일별 이동 거리(km) 계산 ---
     const dailyDistancesKm: number[] = [];
@@ -313,6 +361,7 @@ Tasks:
       extraFeeNotice,
       pricing,
       guideMessage,
+      ...(removedPlaces.length > 0 && { removedPlaces }),
     };
 
     return NextResponse.json(response);

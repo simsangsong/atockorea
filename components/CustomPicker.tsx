@@ -173,7 +173,7 @@ export function CustomSelect({ value, onChange, options, placeholder, align = 'l
             variants={POPUP_VARIANTS} initial="initial" animate="animate" exit="exit"
             transition={POPUP_TRANSITION}
             className="absolute z-[9999] mt-2 rounded-xl overflow-hidden w-full"
-            style={{ ...POPUP_STYLE, bottom: '110%', [align === 'right' ? 'right' : 'left']: 0 }}
+            style={{ ...POPUP_STYLE, top: '100%', [align === 'right' ? 'right' : 'left']: 0 }}
           >
             {options.map(opt => {
               const isSel = opt.value === value;
