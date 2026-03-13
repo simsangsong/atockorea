@@ -334,7 +334,7 @@ export default function CustomJoinTourPage() {
         setError(data.error || '일정 생성에 실패했습니다.');
         return;
       }
-      setSchedule((data.schedule || []).map((d, di) => ({
+      setSchedule((data.schedule || []).map((d: DaySchedule, di: number) => ({
         ...d,
         places: d.places.map((p, pi) => ({ ...p, _uid: `p-${di}-${pi}-${Date.now()}-${Math.random().toString(36).slice(2)}` })),
       })));
