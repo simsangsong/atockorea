@@ -1,6 +1,6 @@
 /**
  * AI 커스터마이즈 조인 투어 상수
- * - 차량: 3~6인 밴, 7~13인 대형밴
+ * - 차량: 1~6인 밴, 7~13인 대형밴
  * - 일일 이동 거리 150km 초과 시 추가요금 안내
  */
 
@@ -9,13 +9,13 @@ export const CUSTOM_JOIN_TOUR = {
   DAILY_DISTANCE_KM_LIMIT: 150,
 
   /** 참가 인원 최소 */
-  MIN_PARTICIPANTS: 3,
+  MIN_PARTICIPANTS: 1,
   /** 참가 인원 최대 */
   MAX_PARTICIPANTS: 13,
 
-  /** 3~6인: 일반 밴 (고정 요금) */
+  /** 1~6인: 일반 밴 (고정 요금) */
   VAN: {
-    MIN_PAX: 3,
+    MIN_PAX: 1,
     MAX_PAX: 6,
     LABEL_KO: '일반 밴',
     LABEL_EN: 'Van',

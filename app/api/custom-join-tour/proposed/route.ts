@@ -5,7 +5,10 @@ export interface ProposedTourItem {
   id: string;
   title: string;
   summary: string | null;
-  schedule: Array<{ day: number; places: Array<{ name: string; address: string }> }>;
+  schedule: Array<{
+    day: number;
+    places: Array<{ name: string; address: string; image_url?: string | null; overview?: string | null }>;
+  }>;
   participants: number;
   vehicle_type: 'van' | 'large_van';
   total_price_krw: number;
@@ -58,9 +61,9 @@ export async function POST(req: NextRequest) {
     const vehicle_type = body.vehicle_type === 'large_van' ? 'large_van' : 'van';
     const total_price_krw = Number(body.total_price_krw) || 0;
 
-    if (!title || participants < 3 || participants > 13 || total_price_krw <= 0) {
+    if (!title || participants < 1 || participants > 13 || total_price_krw <= 0) {
       return NextResponse.json(
-        { error: 'title, participants (3-13), and total_price_krw are required.' },
+        { error: 'title, participants (1-13), and total_price_krw are required.' },
         { status: 400 }
       );
     }

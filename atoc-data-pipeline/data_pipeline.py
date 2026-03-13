@@ -36,13 +36,26 @@ EMBEDDING_DIM = 3072
 BASE_URL = "https://apis.data.go.kr/B551011"
 
 # 다국어 엔드포인트만 (국문 KorService2 제외) → (서비스명, DB lang_type, 로그 표시명)
-# ChsService2(중어 간체), JpnService2(일어), EngService2(영어), ChtService2(중어 번체)
-LANG_CONFIG: list[tuple[str, str, str]] = [
-    ("ChsService2", "chs", "중문(간체)"),
-    ("JpnService2", "ja", "일문"),
+# EngService2(영어), ChsService2(중어 간체), ChtService2(중어 번체), JpnService2(일어)
+_LANG_CONFIG_FULL: list[tuple[str, str, str]] = [
     ("EngService2", "en", "영문"),
+    ("ChsService2", "chs", "중문(간체)"),
     ("ChtService2", "cht", "중문(번체)"),
+    ("JpnService2", "ja", "일문"),
 ]
+
+
+def _get_lang_config() -> list[tuple[str, str, str]]:
+    """LANG_FILTER(예: en)가 있으면 해당 언어만, 없으면 전체."""
+    lang_filter = (os.getenv("LANG_FILTER") or "").strip().lower()
+    if not lang_filter:
+        return _LANG_CONFIG_FULL
+    return [t for t in _LANG_CONFIG_FULL if t[1] == lang_filter]
+
+
+# 런타임에 LANG_FILTER 반영된 설정 사용
+def _lang_config() -> list[tuple[str, str, str]]:
+    return _get_lang_config()
 
 # 수집 지역: (areaCode, sigunguCode, 표시명)
 # 2026.01.12~ 요청은 lDongRegnCd/lDongSignguCd 사용 권장(areaCode/sigunguCode 미표출)
@@ -262,13 +275,13 @@ def _save_lang_file(service_name: str, lang_rows: list[dict[str, Any]]) -> None:
 def collect_places() -> pd.DataFrame:
     """다국어·지역별 수집 (국문 제외). totalCount 기반 전 페이지 수집, 언어별 개별 파일 저장."""
     print("\n[1단계] 다국어 데이터 수집 (Tour API Service2, 국문 제외)")
-    print("  - 대상: ChsService2(중어 간체), JpnService2(일어), EngService2(영어), ChtService2(중어 번체)")
+    print("  - 대상: EngService2(영어), ChsService2(중어 간체), ChtService2(중어 번체), JpnService2(일어)")
     print("  - 지역: 서울·인천·부산·경기·제주 전체 + 강원(강릉/속초/정선/평창), 경북(경주)")
     print(f"  - 저장: 언어별 {OUTPUT_DIR}/<엔드포인트명>.json")
 
     rows: list[dict[str, Any]] = []
 
-    for service_name, lang_type, lang_label in LANG_CONFIG:
+    for service_name, lang_type, lang_label in _lang_config():
         lang_rows: list[dict[str, Any]] = []
         try:
             list_url = f"{BASE_URL}/{service_name}/areaBasedList2"
@@ -530,7 +543,7 @@ def create_embeddings(df: pd.DataFrame) -> pd.DataFrame:
     batch_size = 100
     batch_delay_sec = 1.2
 
-    for _service_name, lang_type, lang_label in LANG_CONFIG:
+    for _service_name, lang_type, lang_label in _lang_config():
         sub = df[df["lang_type"] == lang_type]
         if sub.empty:
             continue

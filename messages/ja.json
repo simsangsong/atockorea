@@ -358,6 +358,8 @@
       "editPlace": "場所を編集",
       "addPlace": "場所を追加",
       "removePlace": "削除",
+      "moveUp": "上へ",
+      "moveDown": "下へ",
       "confirmItinerary": "行程を確定",
       "confirmSuccess": "行程を確定しました",
       "jejuExtraNotice": "済州で東・西両方訪問の場合は追加料金が発生し、当日ガイドに現金でお支払いください。",
@@ -367,7 +369,18 @@
       "optionVan": "3〜6名 バン",
       "optionLargeVan": "7〜13名 大型バン",
       "proposeThisTour": "このツアーを発議する",
-      "proposedDone": "発議しました。他の旅行者が参加できます。"
+      "proposedDone": "発議しました。他の旅行者が参加できます。",
+      "tourDateLabel": "ツアー日",
+      "departureTime": "出発時刻",
+      "datePlaceholder": "年-月-日",
+      "timeAM": "午前",
+      "timePM": "午後",
+      "timePlaceholder": "午前 09:00",
+      "guideLanguage": "ガイド言語",
+      "guideKorean": "韓国語ガイド",
+      "guideEnglish": "英語ガイド",
+      "guideChinese": "中国語ガイド",
+      "guideJapanese": "日本語ガイド"
     },
     "proposedTours": {
       "sectionTitle": "現在発議中のツアー",

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -126,12 +127,27 @@ export default function ProposedToursPage() {
                         <p className="text-xs font-semibold text-gray-500 mb-1">
                           {t('home.proposedTours.dayCount').replace('{{n}}', String(day.day))}
                         </p>
-                        <ul className="space-y-0.5">
-                          {(day.places || []).map((place: { name?: string; address?: string }, i: number) => (
-                            <li key={i} className="flex items-start gap-1.5 text-sm">
-                              <MapPin className="w-3.5 h-3.5 text-gray-400 mt-0.5 shrink-0" />
-                              <span className="text-gray-800">{place.name || '-'}</span>
-                              {place.address && <span className="text-xs text-gray-500 block truncate">{place.address}</span>}
+                        <ul className="space-y-2">
+                          {(day.places || []).map((place: { name?: string; address?: string; image_url?: string | null; overview?: string | null }, i: number) => (
+                            <li key={i} className="flex gap-2 items-start text-sm">
+                              {place.image_url ? (
+                                <div className="w-14 h-14 rounded-lg overflow-hidden bg-gray-100 shrink-0">
+                                  <Image
+                                    src={place.image_url}
+                                    alt={place.name || ''}
+                                    width={56}
+                                    height={56}
+                                    className="w-full h-full object-cover"
+                                  />
+                                </div>
+                              ) : (
+                                <MapPin className="w-3.5 h-3.5 text-gray-400 mt-0.5 shrink-0" />
+                              )}
+                              <div className="min-w-0 flex-1">
+                                <span className="text-gray-800 font-medium">{place.name || '-'}</span>
+                                {place.address && <span className="text-xs text-gray-500 block truncate">{place.address}</span>}
+                                {place.overview && <p className="text-xs text-gray-500 mt-0.5 line-clamp-2">{place.overview}</p>}
+                              </div>
                             </li>
                           ))}
                         </ul>

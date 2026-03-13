@@ -1,12 +1,14 @@
 'use client';
 
-import { useState, useCallback, useEffect, useMemo } from 'react';
+import { useState, useCallback, useEffect, useMemo, useRef } from 'react';
 import { GoogleMap, useLoadScript, Marker, Autocomplete } from '@react-google-maps/api';
 import { mapOptions, defaultCenter, libraries, geocodeAddress } from '@/lib/google-maps';
 import { useTranslations } from '@/lib/i18n';
 
 const JEJU_CENTER = { lat: 33.4996, lng: 126.5312 };
 const GEOCODE_LIMIT = 20;
+
+type GmpSelectEvent = Event & { placePrediction?: { toPlace: () => Promise<google.maps.places.Place> } };
 
 interface SchedulePlace {
   name: string;
@@ -42,10 +44,12 @@ export default function ItineraryMapWithSearch({
   const t = useTranslations();
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const [autocomplete, setAutocomplete] = useState<google.maps.places.Autocomplete | null>(null);
+  const [useLegacyAutocomplete, setUseLegacyAutocomplete] = useState(false);
   const [selectedPlace, setSelectedPlace] = useState<{ name: string; address: string } | null>(null);
   const [selectedDayIndex, setSelectedDayIndex] = useState(0);
   const [mapLocations, setMapLocations] = useState<MapLocation[]>([]);
   const [isGeocoding, setIsGeocoding] = useState(false);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
 
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
   const { isLoaded, loadError } = useLoadScript({
@@ -129,6 +133,58 @@ export default function ItineraryMapWithSearch({
     }
   }, [autocomplete, map]);
 
+  // Places API (New) PlaceAutocompleteElement — Legacy API 대체로 콘솔 오류 해소
+  useEffect(() => {
+    if (!isLoaded || !apiKey || !searchContainerRef.current || typeof google === 'undefined' || useLegacyAutocomplete) return;
+
+    const PlacesLibrary = google.maps.places;
+    const PlaceAutocompleteElement = (PlacesLibrary as unknown as { PlaceAutocompleteElement?: new (opts?: object) => HTMLElement }).PlaceAutocompleteElement;
+
+    if (!PlaceAutocompleteElement) {
+      setUseLegacyAutocomplete(true);
+      return;
+    }
+
+    const center = mapCenter;
+    const container = searchContainerRef.current;
+    const placeAutocomplete = new PlaceAutocompleteElement({
+      locationBias: new google.maps.Circle({ center, radius: 50000 }),
+      includedRegionCodes: ['kr'],
+    }) as HTMLElement;
+
+    placeAutocomplete.id = 'place-autocomplete-itinerary';
+    container.innerHTML = '';
+    container.appendChild(placeAutocomplete);
+
+    const handleSelect = async (ev: Event) => {
+      const e = ev as GmpSelectEvent;
+      if (!e.placePrediction) return;
+      try {
+        const place = await e.placePrediction.toPlace();
+        await place.fetchFields({ fields: ['displayName', 'formattedAddress', 'location'] });
+        const name = (place.displayName as string) || '';
+        const address = (place.formattedAddress as string) || '';
+        if (!name && !address) return;
+        setSelectedPlace({ name, address });
+        const loc = place.location;
+        if (map && loc) {
+          const lat = typeof loc.lat === 'function' ? loc.lat() : (loc as unknown as { lat: number }).lat;
+          const lng = typeof loc.lng === 'function' ? loc.lng() : (loc as unknown as { lng: number }).lng;
+          map.setCenter({ lat: Number(lat), lng: Number(lng) });
+          map.setZoom(15);
+        }
+      } catch (err) {
+        console.error('Place fetchFields error:', err);
+      }
+    };
+
+    placeAutocomplete.addEventListener('gmp-select', handleSelect);
+    return () => {
+      placeAutocomplete.removeEventListener('gmp-select', handleSelect);
+      if (container.contains(placeAutocomplete)) container.removeChild(placeAutocomplete);
+    };
+  }, [isLoaded, apiKey, mapCenter, map, useLegacyAutocomplete]);
+
   const handleAddToItinerary = useCallback(() => {
     if (!selectedPlace) return;
     onAddPlace(selectedDayIndex, selectedPlace.name, selectedPlace.address);
@@ -172,22 +228,26 @@ export default function ItineraryMapWithSearch({
       <div className="p-4 border-b border-neutral-100">
         <h3 className="text-sm font-bold text-neutral-900 mb-3">{t('home.customJoinTour.mapSearchTitle')}</h3>
         <div className="flex flex-col sm:flex-row gap-2">
-          <div className="flex-1 min-w-0">
-            <Autocomplete
-              onLoad={onAutocompleteLoad}
-              onPlaceChanged={onPlaceChanged}
-              options={{
-                types: ['establishment', 'geocode'],
-                componentRestrictions: { country: destination === 'jeju' ? 'kr' : 'kr' },
-                fields: ['name', 'formatted_address', 'geometry', 'vicinity'],
-              }}
-            >
-              <input
-                type="text"
-                placeholder={t('home.customJoinTour.mapSearchPlaceholder')}
-                className="w-full px-3 py-2.5 text-sm border border-neutral-200 rounded-xl focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none"
-              />
-            </Autocomplete>
+          <div className="flex-1 min-w-0" ref={searchContainerRef}>
+            {useLegacyAutocomplete ? (
+              <Autocomplete
+                onLoad={onAutocompleteLoad}
+                onPlaceChanged={onPlaceChanged}
+                options={{
+                  types: ['establishment', 'geocode'],
+                  componentRestrictions: { country: 'kr' },
+                  fields: ['name', 'formatted_address', 'geometry', 'vicinity'],
+                }}
+              >
+                <input
+                  type="text"
+                  placeholder={t('home.customJoinTour.mapSearchPlaceholder')}
+                  className="w-full px-3 py-2.5 text-sm border border-neutral-200 rounded-xl focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none"
+                />
+              </Autocomplete>
+            ) : (
+              <div className="min-h-[42px]" />
+            )}
           </div>
           {selectedPlace && (
             <>

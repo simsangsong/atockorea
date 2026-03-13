@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations, useI18n } from "@/lib/i18n";
+import { ProposeTransitionLink } from "@/components/ProposeButton";
 import { useState, useEffect, useCallback } from "react";
 import TourCard from "@/components/TourCard";
 
@@ -107,11 +108,11 @@ export default function DestinationsCards() {
           </p>
         </div>
 
-        {/* AI 커스터마이징 조인 투어 — 모던 & 테크(科技感) */}
+        {/* AI 커스터마이징 조인 투어 — 로봇 전환 오버레이 + circuit grid + glitch */}
         <div className="mb-6 sm:mb-8 max-w-7xl mx-auto">
-          <Link
+          <ProposeTransitionLink
             href="/custom-join-tour"
-            className="group block relative overflow-hidden rounded-3xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.15)] bg-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:ring-offset-2 focus:ring-offset-slate-900"
+            className="group block relative overflow-hidden rounded-3xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.15)] bg-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:ring-offset-2 focus:ring-offset-slate-900 cursor-pointer"
           >
             {/* 배경 이미지 + 호버 줌 */}
             <div className="absolute inset-0 z-0">
@@ -159,22 +160,45 @@ export default function DestinationsCards() {
                     {t("home.destinations.aiStep3")}
                   </li>
                 </ul>
-                <span className="inline-flex items-center gap-1.5 mt-2 text-white font-semibold text-sm group-hover:gap-2 transition-all w-fit">
-                  {t("home.destinations.aiCustomizingCta")}
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </span>
-              </div>
-              <div className="hidden md:flex flex-col justify-center">
-                <div className="w-full max-w-sm bg-white/10 p-1.5 rounded-2xl backdrop-blur-md border border-white/20">
-                  <div className="rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 font-semibold text-white text-center shadow-[0_0_15px_rgba(6,182,212,0.4)] transition-transform group-hover:scale-105">
+                {/* HUD CTA — left panel */}
+                <div className="hud-cta-btn mt-2 w-fit">
+                  <span className="hud-icon">
+                    <svg width="18" height="18" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                      <path d="M20 40C20 25 35 15 50 15C65 15 80 25 80 40V65C80 75 70 85 50 85C30 85 20 75 20 65V40Z" stroke="#00ffff" strokeWidth="2.5"/>
+                      <path d="M25 45C25 38 35 33 50 33C65 33 75 38 75 45V60C75 67 65 72 50 72C35 72 25 67 25 60V45Z" fill="rgba(0,255,255,0.07)" stroke="#9d00ff" strokeWidth="1.5"/>
+                      <rect x="35" y="48" width="30" height="8" rx="4" fill="#00ffff" opacity="0.9"/>
+                      <circle cx="37" cy="42" r="4" fill="#00ffff" opacity="0.85"/>
+                      <circle cx="63" cy="42" r="4" fill="#00ffff" opacity="0.85"/>
+                      <circle cx="50" cy="6" r="3" fill="#9d00ff"/>
+                    </svg>
+                  </span>
+                  <span className="hud-text">
                     {t("home.destinations.aiCustomizingCta")}
-                  </div>
+                    <span className="hud-arrow">→</span>
+                  </span>
+                </div>
+              </div>
+              {/* HUD CTA — right panel (desktop) */}
+              <div className="hidden md:flex flex-col justify-center items-center">
+                <div className="hud-cta-btn">
+                  <span className="hud-icon">
+                    <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                      <path d="M20 40C20 25 35 15 50 15C65 15 80 25 80 40V65C80 75 70 85 50 85C30 85 20 75 20 65V40Z" stroke="#00ffff" strokeWidth="2.5"/>
+                      <path d="M25 45C25 38 35 33 50 33C65 33 75 38 75 45V60C75 67 65 72 50 72C35 72 25 67 25 60V45Z" fill="rgba(0,255,255,0.07)" stroke="#9d00ff" strokeWidth="1.5"/>
+                      <rect x="35" y="48" width="30" height="8" rx="4" fill="#00ffff" opacity="0.9"/>
+                      <circle cx="37" cy="42" r="4" fill="#00ffff" opacity="0.85"/>
+                      <circle cx="63" cy="42" r="4" fill="#00ffff" opacity="0.85"/>
+                      <circle cx="50" cy="6" r="3" fill="#9d00ff"/>
+                    </svg>
+                  </span>
+                  <span className="hud-text">
+                    {t("home.destinations.aiCustomizingCta")}
+                    <span className="hud-arrow">→</span>
+                  </span>
                 </div>
               </div>
             </div>
-          </Link>
+          </ProposeTransitionLink>
         </div>
 
         {/* 현재 발의된 투어 (실시간 갱신) */}

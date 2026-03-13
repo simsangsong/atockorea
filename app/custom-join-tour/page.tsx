@@ -7,8 +7,13 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
-import { useTranslations } from '@/lib/i18n';
-import { Loader2, Plus, Trash2, Check } from 'lucide-react';
+import { useTranslations, useI18n } from '@/lib/i18n';
+import { useCurrencyOptional } from '@/lib/currency';
+import { Loader2, Plus, Trash2, Check, ChevronUp, ChevronDown, Calendar, Clock, Bot, UtensilsCrossed } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { RobotMascot } from '@/components/RobotMascot';
+import CustomCalendar from '@/components/CustomCalendar';
+import { CustomTimePicker, CustomSelect } from '@/components/CustomPicker';
 import dynamic from 'next/dynamic';
 
 const ItineraryMapWithSearch = dynamic(
@@ -18,6 +23,26 @@ const ItineraryMapWithSearch = dynamic(
 import type { DaySchedule } from '@/app/api/custom-join-tour/generate/route';
 import { CUSTOM_JOIN_TOUR, getCustomJoinTourBookingTourId } from '@/lib/constants/custom-join-tour';
 import { supabase } from '@/lib/supabase';
+
+const STORAGE_KEY_ITINERARY = 'customJoinTourGenerated'; // localStorage so new tab can read
+
+function playGlitchSound() {
+  if (typeof window === 'undefined') return;
+  try {
+    const ctx = new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
+    const buf = ctx.createBuffer(1, ctx.sampleRate * 0.15, ctx.sampleRate);
+    const data = buf.getChannelData(0);
+    for (let i = 0; i < data.length; i++) data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.03));
+    const src = ctx.createBufferSource();
+    src.buffer = buf;
+    const gain = ctx.createGain();
+    gain.gain.setValueAtTime(0.12, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
+    src.connect(gain);
+    gain.connect(ctx.destination);
+    src.start(0);
+  } catch { /* ignore */ }
+}
 
 const ROBOT_ICON = '/images/robot-icon.png';
 
@@ -52,14 +77,103 @@ function GuaranteeBodyWithBold({ text }: { text: string }) {
   return <>{result}</>;
 }
 
-/** Tour theme keywords (pill buttons, English) with per-keyword color theme */
-const TOUR_THEME_KEYWORDS: Array<{ label: string; unselected: string; selected: string }> = [
-  { label: 'UNESCO Heritage', unselected: 'bg-amber-50 text-amber-800 border-amber-200 hover:bg-amber-100 hover:border-amber-300', selected: 'bg-amber-200/90 text-amber-900 border-amber-400 shadow-sm' },
-  { label: 'Sunrise & Sunset', unselected: 'bg-orange-50 text-orange-700 border-orange-200 hover:bg-orange-100 hover:border-orange-300', selected: 'bg-orange-200/90 text-orange-900 border-orange-400 shadow-sm' },
-  { label: 'K-Drama Locations', unselected: 'bg-rose-50 text-rose-700 border-rose-200 hover:bg-rose-100 hover:border-rose-300', selected: 'bg-rose-200/90 text-rose-900 border-rose-400 shadow-sm' },
-  { label: 'Local Food & Cafes', unselected: 'bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-300', selected: 'bg-emerald-200/90 text-emerald-900 border-emerald-400 shadow-sm' },
-  { label: 'Nature & Healing', unselected: 'bg-teal-50 text-teal-700 border-teal-200 hover:bg-teal-100 hover:border-teal-300', selected: 'bg-teal-200/90 text-teal-900 border-teal-400 shadow-sm' },
+/** Tour theme keywords — cyber-tag color variant per label (visual only) */
+const TOUR_THEME_KEYWORDS: Array<{ label: string; cyberColor: 'yellow' | 'orange' | 'pink' | 'green' | 'teal' }> = [
+  { label: 'UNESCO Heritage', cyberColor: 'yellow' },
+  { label: 'Sunrise & Sunset', cyberColor: 'orange' },
+  { label: 'K-Drama Locations', cyberColor: 'pink' },
+  { label: 'Local Food & Cafes', cyberColor: 'green' },
+  { label: 'Nature & Healing', cyberColor: 'teal' },
 ];
+
+/** 사이버펑크 HUD 스타일 밴 아이콘 (측면, 창문·헤드라이트·바퀴 털) */
+function VanIconWireframe({ active, large }: { active: boolean; large?: boolean }) {
+  const s = active ? '#00f0ff' : '#7a8fa6';
+  const sf = active ? 'rgba(0,240,255,0.07)' : 'rgba(255,255,255,0.04)';
+  const sw = active ? 'rgba(0,240,255,0.15)' : 'rgba(255,255,255,0.08)';
+  const sd = active ? 'rgba(0,240,255,0.4)' : 'rgba(255,255,255,0.2)';
+
+  if (!large) {
+    // Staria: tall boxy SUV-van — flat roof, short hood, square body
+    return (
+      <g fill="none" stroke={s} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        {/* main body — tall boxy shape */}
+        <path d="M6 36 L6 10 Q6 6 10 6 L64 6 Q68 6 68 10 L68 36 Z" fill={sf} />
+        {/* front hood step (short) */}
+        <path d="M6 10 L6 18 L14 18 L14 6" fill="none" stroke={s} strokeWidth="1.2" opacity="0.5" />
+        {/* windshield — near-vertical */}
+        <path d="M14 6 L14 18 L22 18 L22 6 Z" fill={sw} />
+        {/* side windows row */}
+        <rect x="24" y="8" width="12" height="9" rx="1.5" fill={sw} />
+        <rect x="38" y="8" width="12" height="9" rx="1.5" fill={sw} />
+        <rect x="52" y="8" width="10" height="9" rx="1.5" fill={sw} />
+        {/* door dividers */}
+        <line x1="36" y1="6" x2="36" y2="36" strokeWidth="1" stroke={sd} />
+        <line x1="50" y1="6" x2="50" y2="36" strokeWidth="1" stroke={sd} />
+        {/* body crease line */}
+        <line x1="6" y1="26" x2="68" y2="26" strokeWidth="0.7" stroke={sd} />
+        {/* headlight — square */}
+        <rect x="6" y="19" width="6" height="5" rx="1" fill={s} opacity="0.8" />
+        {/* taillight */}
+        <rect x="63" y="19" width="4" height="5" rx="1" fill={s} opacity="0.8" />
+        {/* front bumper bar */}
+        <line x1="6" y1="33" x2="14" y2="33" strokeWidth="1.2" stroke={s} opacity="0.5" />
+        {/* rear bumper bar */}
+        <line x1="58" y1="33" x2="68" y2="33" strokeWidth="1.2" stroke={s} opacity="0.5" />
+        {/* front wheel */}
+        <circle cx="19" cy="36" r="6.5" fill="#0a0f1e" />
+        <circle cx="19" cy="36" r="6.5" />
+        <circle cx="19" cy="36" r="3.2" strokeWidth="1" />
+        <circle cx="19" cy="36" r="1.1" fill={s} stroke="none" />
+        {/* rear wheel */}
+        <circle cx="55" cy="36" r="6.5" fill="#0a0f1e" />
+        <circle cx="55" cy="36" r="6.5" />
+        <circle cx="55" cy="36" r="3.2" strokeWidth="1" />
+        <circle cx="55" cy="36" r="1.1" fill={s} stroke="none" />
+      </g>
+    );
+  }
+
+  // Solati: long high-roof bus-van — flat front face, panoramic windshield, many windows
+  return (
+    <g fill="none" stroke={s} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      {/* main body — long flat box */}
+      <path d="M4 38 L4 8 Q4 4 8 4 L78 4 Q82 4 82 8 L82 38 Z" fill={sf} />
+      {/* flat front face */}
+      <line x1="4" y1="8" x2="4" y2="32" strokeWidth="1" stroke={sd} />
+      {/* large front windshield — nearly full-width front */}
+      <rect x="5" y="5" width="14" height="14" rx="1" fill={sw} />
+      {/* side windows — 4 uniform windows */}
+      <rect x="22" y="7" width="12" height="10" rx="1.5" fill={sw} />
+      <rect x="36" y="7" width="12" height="10" rx="1.5" fill={sw} />
+      <rect x="50" y="7" width="12" height="10" rx="1.5" fill={sw} />
+      <rect x="64" y="7" width="12" height="10" rx="1.5" fill={sw} />
+      {/* door dividers */}
+      <line x1="20" y1="4" x2="20" y2="38" strokeWidth="1" stroke={sd} />
+      <line x1="62" y1="4" x2="62" y2="38" strokeWidth="1" stroke={sd} />
+      {/* body crease line */}
+      <line x1="4" y1="28" x2="82" y2="28" strokeWidth="0.7" stroke={sd} />
+      {/* headlight — rectangular */}
+      <rect x="5" y="21" width="7" height="5" rx="1" fill={s} opacity="0.8" />
+      {/* taillight */}
+      <rect x="76" y="21" width="5" height="5" rx="1" fill={s} opacity="0.8" />
+      {/* front bumper */}
+      <line x1="4" y1="35" x2="18" y2="35" strokeWidth="1.2" stroke={s} opacity="0.5" />
+      {/* rear bumper */}
+      <line x1="66" y1="35" x2="82" y2="35" strokeWidth="1.2" stroke={s} opacity="0.5" />
+      {/* front wheel */}
+      <circle cx="20" cy="38" r="7" fill="#0a0f1e" />
+      <circle cx="20" cy="38" r="7" />
+      <circle cx="20" cy="38" r="3.5" strokeWidth="1" />
+      <circle cx="20" cy="38" r="1.2" fill={s} stroke="none" />
+      {/* rear wheel */}
+      <circle cx="66" cy="38" r="7" fill="#0a0f1e" />
+      <circle cx="66" cy="38" r="7" />
+      <circle cx="66" cy="38" r="3.5" strokeWidth="1" />
+      <circle cx="66" cy="38" r="1.2" fill={s} stroke="none" />
+    </g>
+  );
+}
 
 interface GenerateResult {
   schedule: DaySchedule[];
@@ -79,8 +193,20 @@ interface ConfirmResult {
   pricing: { totalPriceKrw: number; vehicleLabelKo: string } | null;
 }
 
+/** Format price in KRW for display: numeric (no "만"). Uses currency context for USD when selected. */
+function usePriceFormat() {
+  const currency = useCurrencyOptional();
+  const { locale } = useI18n();
+  return (priceKRW: number) => {
+    if (currency?.formatPrice) return currency.formatPrice(priceKRW);
+    return new Intl.NumberFormat(locale === 'ko' ? 'ko-KR' : 'en-US', { style: 'currency', currency: 'KRW', maximumFractionDigits: 0 }).format(priceKRW);
+  };
+}
+
 export default function CustomJoinTourPage() {
   const t = useTranslations();
+  const { locale } = useI18n();
+  const formatPrice = usePriceFormat();
   const searchParams = useSearchParams();
   const router = useRouter();
   const isPropose = searchParams.get('propose') === '1';
@@ -103,6 +229,8 @@ export default function CustomJoinTourPage() {
   const [error, setError] = useState<string | null>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
   const itineraryRef = useRef<HTMLDivElement>(null);
+  const [showGenerateOverlay, setShowGenerateOverlay] = useState(false);
+  const generateOverlayPlayedSound = useRef(false);
 
   /** Checkout: customer form (same as tour checkout) */
   interface CustomerInfo {
@@ -142,6 +270,26 @@ export default function CustomJoinTourPage() {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [step, schedule]);
 
+  /** 새 창에서 열었을 때 localStorage에서 일정 복원 */
+  useEffect(() => {
+    if (searchParams.get('open') !== 'itinerary') return;
+    try {
+      const raw = typeof window !== 'undefined' ? window.localStorage.getItem(STORAGE_KEY_ITINERARY) : null;
+      if (!raw) return;
+      const data = JSON.parse(raw) as { schedule: DaySchedule[]; dailyDistancesKm: number[]; overLimitDays: number[]; extraFeeNotice: string | null; pricing: GenerateResult['pricing']; guideMessage: string };
+      setSchedule((data.schedule || []).map((d, di) => ({
+        ...d,
+        places: d.places.map((p, pi) => ({ ...p, _uid: (p as { _uid?: string })._uid ?? `p-${di}-${pi}-${Date.now()}` })),
+      })));
+      setDailyDistancesKm(data.dailyDistancesKm || []);
+      setOverLimitDays(data.overLimitDays || []);
+      setExtraFeeNotice(data.extraFeeNotice ?? null);
+      setPricing(data.pricing ?? null);
+      setGuideMessage(data.guideMessage || '');
+      setStep('itinerary');
+    } catch { /* ignore */ }
+  }, [searchParams]);
+
   const handleGenerate = async () => {
     const input = customerInput.trim();
     if (!input) {
@@ -170,28 +318,36 @@ export default function CustomJoinTourPage() {
         setError(data.error || '일정 생성에 실패했습니다.');
         return;
       }
-      setSchedule(data.schedule || []);
+      setSchedule((data.schedule || []).map((d, di) => ({
+        ...d,
+        places: d.places.map((p, pi) => ({ ...p, _uid: `p-${di}-${pi}-${Date.now()}-${Math.random().toString(36).slice(2)}` })),
+      })));
       setDailyDistancesKm(data.dailyDistancesKm || []);
       setOverLimitDays(data.overLimitDays || []);
       setExtraFeeNotice(data.extraFeeNotice ?? null);
       setPricing(data.pricing ? { totalPriceKrw: data.pricing.totalPriceKrw, vehicleLabelKo: data.pricing.vehicleLabelKo, participants: data.pricing.participants } : null);
       setGuideMessage(data.guideMessage || '');
-      // Confirm immediately and go straight to checkout (skip itinerary editing)
-      const confirmRes = await fetch('/api/custom-join-tour/confirm', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ schedule: data.schedule || [], numberOfParticipants: participants }),
-      });
-      const confirmData = await confirmRes.json();
-      if (confirmRes.ok && confirmData.pricing) {
-        setConfirmResult(confirmData);
-        setStep('checkout');
-      } else {
-        setStep('itinerary');
+      const payload = {
+        schedule: data.schedule || [],
+        dailyDistancesKm: data.dailyDistancesKm || [],
+        overLimitDays: data.overLimitDays || [],
+        extraFeeNotice: data.extraFeeNotice ?? null,
+        pricing: data.pricing ? { totalPriceKrw: data.pricing.totalPriceKrw, vehicleLabelKo: data.pricing.vehicleLabelKo, participants: data.pricing.participants } : null,
+        guideMessage: data.guideMessage || '',
+      };
+      try {
+        window.localStorage.setItem(STORAGE_KEY_ITINERARY, JSON.stringify(payload));
+        // open itinerary in new tab; keep form page as-is
+        setTimeout(() => {
+          window.open(`${window.location.pathname}?open=itinerary`, '_blank');
+          setShowGenerateOverlay(false);
+        }, 1800);
+      } catch {
+        setShowGenerateOverlay(false);
       }
-      itineraryRef.current?.scrollIntoView({ behavior: 'smooth' });
     } catch (e) {
       setError(e instanceof Error ? e.message : '일정 생성에 실패했습니다.');
+      setShowGenerateOverlay(false);
     } finally {
       setLoading(false);
     }
@@ -213,7 +369,7 @@ export default function CustomJoinTourPage() {
   const addPlace = (dayIndex: number) => {
     setSchedule((prev) =>
       prev.map((d, i) =>
-        i === dayIndex ? { ...d, places: [...d.places, { name: '', address: '' }] } : d
+        i === dayIndex ? { ...d, places: [...d.places, { name: '', address: '', _uid: `p-${dayIndex}-${Date.now()}-${Math.random().toString(36).slice(2)}` }] } : d
       )
     );
   };
@@ -223,7 +379,23 @@ export default function CustomJoinTourPage() {
       prev.map((d, i) => {
         if (i !== dayIndex) return d;
         const places = d.places.filter((_, j) => j !== placeIndex);
-        return { ...d, places: places.length ? places : [{ name: '', address: '' }] };
+        return {
+          ...d,
+          places: places.length ? places : [{ name: '', address: '', _uid: `p-${dayIndex}-${Date.now()}-${Math.random().toString(36).slice(2)}` }],
+        };
+      })
+    );
+  };
+
+  const movePlace = (dayIndex: number, fromIndex: number, direction: 'up' | 'down') => {
+    setSchedule((prev) =>
+      prev.map((d, i) => {
+        if (i !== dayIndex) return d;
+        const places = [...d.places];
+        const toIndex = direction === 'up' ? fromIndex - 1 : fromIndex + 1;
+        if (toIndex < 0 || toIndex >= places.length) return d;
+        [places[fromIndex], places[toIndex]] = [places[toIndex], places[fromIndex]];
+        return { ...d, places };
       })
     );
   };
@@ -231,7 +403,7 @@ export default function CustomJoinTourPage() {
   const addPlaceFromSearch = (dayIndex: number, name: string, address: string) => {
     setSchedule((prev) =>
       prev.map((d, i) =>
-        i === dayIndex ? { ...d, places: [...d.places, { name, address }] } : d
+        i === dayIndex ? { ...d, places: [...d.places, { name, address, _uid: `p-${dayIndex}-${Date.now()}-${Math.random().toString(36).slice(2)}` }] } : d
       )
     );
   };
@@ -294,6 +466,26 @@ export default function CustomJoinTourPage() {
     const d = new Date();
     d.setDate(d.getDate() + 2);
     return d.toISOString().slice(0, 10);
+  };
+
+  const minDateForPicker = (() => {
+    const d = new Date();
+    d.setDate(d.getDate() + 2);
+    d.setHours(0, 0, 0, 0);
+    return d;
+  })();
+
+  /** Format time "HH:mm" for display with localized AM/PM (e.g. "오전 09:00", "09:00 AM"). */
+  const formatTimeDisplay = (timeStr: string) => {
+    if (!timeStr) return '';
+    const [hStr, mStr] = timeStr.split(':');
+    const h = parseInt(hStr ?? '0', 10);
+    const m = parseInt(mStr ?? '0', 10);
+    const isAM = h < 12;
+    const displayH = h === 0 ? 12 : h > 12 ? h - 12 : h;
+    const ampm = isAM ? (t('home.customJoinTour.timeAM') || 'AM') : (t('home.customJoinTour.timePM') || 'PM');
+    const pad = (n: number) => String(n).padStart(2, '0');
+    return `${ampm} ${pad(displayH)}:${pad(m)}`;
   };
 
   /** Checkout: validate 48h before tour start (proposal deadline) */
@@ -447,301 +639,288 @@ export default function CustomJoinTourPage() {
 
   /** One-page form: show when not yet on itinerary, checkout, or confirmed */
   const showDashboard = step !== 'itinerary' && step !== 'checkout' && step !== 'confirmed';
+  const isDarkTheme = step !== 'checkout' && step !== 'confirmed';
 
   const fieldClass = 'w-full bg-white border-none rounded-xl px-4 py-3 text-sm font-medium text-slate-800 shadow-sm focus:ring-2 focus:ring-slate-900 outline-none appearance-none cursor-pointer transition-colors';
   const labelClass = 'block text-[11px] font-bold text-black uppercase tracking-wider mb-1.5 ml-1';
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900">
+    <div className={`min-h-screen ${isDarkTheme ? 'tour-planner-page bg-[#050B18] text-white' : 'bg-white text-neutral-900'}`}>
       <Header />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 max-w-6xl">
-        {/* App-like Dashboard */}
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 max-w-3xl">
+        {/* Single-column form */}
         {showDashboard && (
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-[2rem] shadow-[0_10px_40px_rgb(0,0,0,0.06)] overflow-hidden border border-slate-100">
+          <div className="flex flex-col gap-6">
+            {/* Tour Design Form — glassmorphism */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="glass-card tech-scanline h-fit overflow-hidden"
+            >
+              <div className="px-6 lg:px-8 pt-6 lg:pt-8">
               {isPropose && (
-                <div className="px-6 pt-6">
-                  <Link href="/custom-join-tour/proposed" className="text-[11px] text-sky-600 hover:underline font-medium">
+                <div className="mb-4">
+                  <Link href="/custom-join-tour/proposed" className="text-xs text-cyan-400 hover:text-cyan-300 font-medium">
                     ← {t('home.customJoinTour.backToProposed')}
                   </Link>
                 </div>
               )}
-
-              {/* Header: 이전 스타일 (다크 바) */}
-              <div className="bg-slate-900 px-5 py-4 border-b border-slate-800 flex items-center">
-                <span className="bg-cyan-500/20 text-cyan-400 p-1.5 rounded-lg mr-3" aria-hidden>🤖</span>
-                <h2 className="text-lg font-bold text-white tracking-tight">{t('home.customJoinTour.pageTitle')}</h2>
+              <div className="flex items-center gap-3 mb-6">
+                <motion.div
+                  animate={{ scale: [1, 1.08, 1] }}
+                  transition={{ repeat: Infinity, duration: 2 }}
+                  className="p-2 bg-cyan-500/20 rounded-lg border border-cyan-400/50 shadow-[0_0_12px_rgba(0,255,255,0.2)]"
+                >
+                  <Bot className="text-cyan-400" size={24} />
+                </motion.div>
+                <h2 className="text-lg font-bold tracking-tight bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent">
+                  {t('home.customJoinTour.pageTitle')}
+                </h2>
               </div>
 
-              <div className="p-6 md:p-10">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-                {/* 1. 기본 정보 (좌측) */}
-                <div className="lg:col-span-5 space-y-5">
-                  <div className="bg-slate-50 rounded-2xl p-4 space-y-4 border border-slate-100">
-                    <div>
-                      <label className={labelClass}>{t('home.customJoinTour.destinationLabel')}</label>
-                      <select
-                        value={destination ?? 'jeju'}
-                        onChange={(e) => setDestination((e.target.value as 'jeju' | 'busan' | 'seoul') || null)}
-                        className={fieldClass}
-                      >
-                        <option value="jeju">📍 {t('home.customJoinTour.cityJejuOption')}</option>
-                        <option value="busan" disabled>📍 {t('home.customJoinTour.cityBusanOption')} ({t('home.customJoinTour.comingSoon')})</option>
-                        <option value="seoul" disabled>📍 {t('home.customJoinTour.citySeoulOption')} ({t('home.customJoinTour.comingSoon')})</option>
-                      </select>
-                    </div>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div>
-                        <label className={labelClass}>{t('home.customJoinTour.tourDateLabel')}</label>
-                        <input
-                          type="date"
-                          min={getMinTourDate()}
-                          value={tourDate}
-                          onChange={(e) => setTourDate(e.target.value)}
-                          className={fieldClass}
-                        />
-                      </div>
-                      <div>
-                        <label className={labelClass}>{t('home.customJoinTour.departureTime')}</label>
-                        <input
-                          type="time"
-                          value={departureTime}
-                          onChange={(e) => setDepartureTime(e.target.value)}
-                          className={fieldClass}
-                          title={t('home.customJoinTour.departureTime')}
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label className={labelClass}>{t('home.customJoinTour.guideLanguage')}</label>
-                      <select
-                        value={language}
-                        onChange={(e) => setLanguage(e.target.value)}
-                        className={fieldClass}
-                      >
-                        <option value="ko">🇰🇷 {t('home.customJoinTour.guideKorean')}</option>
-                        <option value="en">🇺🇸 {t('home.customJoinTour.guideEnglish')}</option>
-                        <option value="zh">🇨🇳 {t('home.customJoinTour.guideChinese')}</option>
-                        <option value="ja">🇯🇵 日本語</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="flex items-center justify-between mb-2 ml-1">
-                      <label className="text-[11px] font-bold text-black uppercase tracking-wider">{t('home.customJoinTour.guestsAndVehicleLabel')}</label>
-                      <input
-                        type="number"
-                        min={CUSTOM_JOIN_TOUR.MIN_PARTICIPANTS}
-                        max={CUSTOM_JOIN_TOUR.MAX_PARTICIPANTS}
-                        value={participants}
-                        onChange={(e) => setParticipants(Math.min(CUSTOM_JOIN_TOUR.MAX_PARTICIPANTS, Math.max(CUSTOM_JOIN_TOUR.MIN_PARTICIPANTS, Number(e.target.value) || 5)))}
-                        className="w-16 bg-slate-100 border-none rounded-lg px-2 py-1.5 text-center text-sm font-bold text-slate-900 outline-none focus:ring-2 focus:ring-slate-900"
-                      />
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      <label className="cursor-pointer group">
-                        <input
-                          type="radio"
-                          name="vehicle"
-                          className="peer sr-only"
-                          checked={participants <= 6}
-                          onChange={() => setParticipants((p) => Math.min(6, p))}
-                        />
-                        <div className="p-3 border-2 border-slate-100 rounded-xl peer-checked:border-slate-900 peer-checked:bg-slate-900 transition-all text-center text-slate-800 group-has-[:checked]:text-white">
-                          <div className="font-bold text-sm mb-0.5 group-has-[:checked]:text-white">{t('home.customJoinTour.vehicleVanLabel')}</div>
-                          <div className="text-[11px] text-slate-500 group-has-[:checked]:text-slate-200">{t('home.customJoinTour.vehicleVanPrice')}</div>
-                        </div>
-                      </label>
-                      <label className="cursor-pointer group">
-                        <input
-                          type="radio"
-                          name="vehicle"
-                          className="peer sr-only"
-                          checked={participants >= 7}
-                          onChange={() => setParticipants((p) => Math.max(7, p))}
-                        />
-                        <div className="p-3 border-2 border-slate-100 rounded-xl peer-checked:border-slate-900 peer-checked:bg-slate-900 transition-all text-center text-slate-800 group-has-[:checked]:text-white">
-                          <div className="font-bold text-sm mb-0.5 group-has-[:checked]:text-white">{t('home.customJoinTour.vehicleLargeVanLabel')}</div>
-                          <div className="text-[11px] text-slate-500 group-has-[:checked]:text-slate-200">{t('home.customJoinTour.vehicleLargeVanPrice')}</div>
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 2. AI 취향 (우측) */}
-                <div className="lg:col-span-7 flex flex-col">
-                  <div className="mb-5">
-                    <label className={`${labelClass} mb-2`}>{t('home.customJoinTour.themeLabel')}</label>
-                    <div className="flex flex-wrap gap-1.5">
-                      {TOUR_THEME_KEYWORDS.map(({ label, unselected, selected }) => (
-                        <button
-                          key={label}
-                          type="button"
-                          onClick={() => toggleKeyword(label)}
-                          className={`px-2.5 py-1 rounded-lg text-[11px] font-medium transition-colors border ${
-                            selectedKeywords.includes(label) ? selected : unselected
-                          }`}
-                        >
-                          {label}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="flex-grow flex flex-col mb-6">
-                    <label className={`${labelClass} mb-2`}>{t('home.customJoinTour.describeLabel')}</label>
-                    <div className="relative flex-grow min-h-[120px]">
-                      <textarea
-                        rows={5}
-                        value={customerInput}
-                        onChange={(e) => setCustomerInput(e.target.value)}
-                        placeholder={t('home.customJoinTour.describePlaceholder')}
-                        className="w-full h-full min-h-[140px] bg-slate-50 border border-slate-100 rounded-2xl p-4 text-sm text-slate-700 focus:ring-2 focus:ring-slate-900 focus:bg-white outline-none resize-none transition-colors placeholder:text-slate-400 placeholder:text-sm"
-                      />
-                      <div className="absolute bottom-3 right-3 text-[10px] text-slate-400 font-medium bg-white px-2 py-1 rounded-md shadow-sm border border-slate-100">AI Powered ✨</div>
-                    </div>
-                  </div>
-
-                  {error && <p className="text-xs text-red-600 mb-2">{error}</p>}
-
-                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mt-auto pt-4 border-t border-slate-100">
-                    <p className="text-xs text-black leading-snug flex-1">
-                      <strong>{t('home.customJoinTour.departureGuaranteeTitle')}</strong>{' '}
-                      <GuaranteeBodyWithBold text={t('home.customJoinTour.departureGuaranteeBody')} />
-                      {' '}
-                      {t('home.customJoinTour.departureGuaranteeMinPax')}
-                    </p>
-                    <button
-                      type="button"
-                      onClick={handleGenerate}
-                      disabled={loading}
-                      className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-slate-900 to-slate-800 text-white text-sm font-bold rounded-xl hover:shadow-lg hover:-translate-y-0.5 transition-all disabled:opacity-70 inline-flex items-center justify-center gap-2"
-                    >
-                      {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : null}
-                      {t('home.customJoinTour.generateButton')} ✨
-                    </button>
-                  </div>
-                </div>
+              <label className="text-base font-bold text-cyan-400 uppercase tracking-widest block mb-4">{t('home.customJoinTour.destinationLabel')}</label>
               </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Step: Itinerary — 편집 가능 일정 */}
-        {step === 'itinerary' && (
-          <div ref={itineraryRef} className="space-y-4">
-            <div className="flex items-center justify-between flex-wrap gap-2">
-            <button type="button" onClick={() => setStep('chat')} className="text-xs text-sky-600 hover:underline font-medium">
-              ← {t('home.customJoinTour.editRequirements')}
-            </button>
-              <button
-                type="button"
-                onClick={handleGenerate}
-                disabled={loading}
-                className="text-xs text-neutral-600 hover:text-neutral-900 font-medium"
-              >
-                {t('home.customJoinTour.regenerate')}
-              </button>
-            </div>
-            <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-neutral-100 p-5 sm:p-6">
-              <h2 className="text-base font-bold text-neutral-900 mb-4">{t('home.customJoinTour.itineraryTitle')}</h2>
-              {guideMessage && (
-                <div className="rounded-xl bg-sky-50 border border-sky-100 px-4 py-3 text-xs text-sky-800 mb-4">
-                  {guideMessage}
-                </div>
-              )}
-              {extraFeeNotice && (
-                <div className="rounded-xl bg-amber-50 border border-amber-200 px-4 py-3 text-xs text-amber-800 mb-4">
-                  {extraFeeNotice}
-                </div>
-              )}
-              {pricing && (
-                <div className="rounded-xl bg-neutral-100 px-4 py-3 text-xs text-neutral-800 mb-4">
-                  {pricing.vehicleLabelKo} · {participants}명 · 총 {(pricing.totalPriceKrw / 10000).toFixed(0)}만 원
-                </div>
-              )}
-              <div className="space-y-4">
-                {schedule.map((daySchedule, dayIndex) => (
-                  <div key={daySchedule.day} className="rounded-xl border border-neutral-200 bg-neutral-50/50 p-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-bold text-gray-900">
-                      {t('home.customJoinTour.dayLabel').replace('{{n}}', String(daySchedule.day))}
-                    </h3>
-                    {dailyDistancesKm[dayIndex] != null && (
-                      <span className="text-xs text-gray-500">이동 거리 약 {dailyDistancesKm[dayIndex]} km</span>
-                    )}
-                  </div>
-                  <ul className="space-y-3">
-                    {daySchedule.places.map((place, placeIndex) => (
-                      <li key={placeIndex} className="flex gap-2 items-start border-b border-gray-100 pb-3 last:border-0 last:pb-0">
-                        <span className="text-gray-400 mt-2 w-6 shrink-0">{placeIndex + 1}.</span>
-                        <div className="flex-1 space-y-1">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <input
-                              type="text"
-                              value={place.name}
-                              onChange={(e) => updatePlace(dayIndex, placeIndex, 'name', e.target.value)}
-                              placeholder={t('home.customJoinTour.placeName')}
-                              className="flex-1 min-w-0 rounded border border-gray-200 px-2 py-1.5 text-sm"
-                            />
-                            {(place as { type?: string }).type === 'restaurant' && (
-                              <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 shrink-0">식당</span>
-                            )}
-                          </div>
-                          <input
-                            type="text"
-                            value={place.address}
-                            onChange={(e) => updatePlace(dayIndex, placeIndex, 'address', e.target.value)}
-                            placeholder={t('home.customJoinTour.address')}
-                            className="w-full rounded border border-gray-200 px-2 py-1.5 text-xs text-gray-600"
-                          />
-                        </div>
-                        <button
-                          type="button"
-                          onClick={() => removePlace(dayIndex, placeIndex)}
-                          className="p-1.5 text-gray-400 hover:text-red-600 rounded"
-                          aria-label={t('home.customJoinTour.removePlace')}
-                        >
-                          <Trash2 className="w-4 h-4" />
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                  <button
-                    type="button"
-                    onClick={() => addPlace(dayIndex)}
-                    className="mt-2 flex items-center gap-1 text-xs text-sky-600 hover:text-sky-800 font-medium"
+              {/* Destination map — full-width */}
+              <div className="tour-map-block w-full relative overflow-hidden" style={{
+                background: '#050B18',
+                backgroundImage: 'linear-gradient(to bottom, transparent 50%, rgba(0, 255, 255, 0.02) 50%)',
+                backgroundSize: '100% 4px',
+              }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={destination === 'busan' ? '/images/busan-hologram.png' : destination === 'seoul' ? '/images/seoul-hologram.png' : '/images/jeju-hologram.png'}
+                  alt={destination === 'busan' ? 'Busan' : destination === 'seoul' ? 'Seoul' : 'Jeju Island'}
+                  className="block mx-auto"
+                  style={{ display: 'block', boxShadow: 'none', border: 'none', outline: 'none', width: '90%', mixBlendMode: 'screen' }}
+                />
+                {/* scanline overlay */}
+                <div className="absolute inset-0 pointer-events-none" style={{
+                  backgroundImage: 'linear-gradient(to bottom, transparent 50%, rgba(0, 255, 255, 0.02) 50%)',
+                  backgroundSize: '100% 4px',
+                }} />
+                <div className="flex flex-col items-center gap-1 py-3 px-6 lg:px-8 relative z-20">
+                  <p className="text-[#00ffff] text-lg font-bold text-center" style={{ textShadow: '0 0 8px rgba(0,255,255,0.6)' }}>
+                    {destination === 'busan' ? 'Busan' : destination === 'seoul' ? 'Seoul' : 'Jeju Island'}
+                  </p>
+                  <select
+                    value={destination ?? 'jeju'}
+                    onChange={(e) => setDestination((e.target.value as 'jeju' | 'busan' | 'seoul') || null)}
+                    className="mt-1 text-sm text-[#00f0ff] bg-transparent border border-[rgba(0,240,255,0.3)] rounded px-2 py-1 cursor-pointer outline-none focus:ring-1 focus:ring-[#00f0ff]"
+                    aria-label={t('home.customJoinTour.destinationLabel')}
                   >
-                    <Plus className="w-3.5 h-3.5" />
-                    {t('home.customJoinTour.addPlace')}
-                  </button>
+                    <option value="jeju">Jeju Island</option>
+                    <option value="busan" disabled>Busan ({t('home.customJoinTour.comingSoon')})</option>
+                    <option value="seoul" disabled>Seoul ({t('home.customJoinTour.comingSoon')})</option>
+                  </select>
                 </div>
-              ))}
               </div>
 
-              <div className="mt-6">
-                <ItineraryMapWithSearch
-                  schedule={schedule}
-                  onAddPlace={addPlaceFromSearch}
-                  destination={destination ?? 'jeju'}
+              <div className="px-6 lg:px-8 pb-6 lg:pb-8 pt-4">
+              <div className="grid grid-cols-2 gap-4 mb-5">
+                <div className="space-y-1">
+                  <label className="text-[10px] text-gray-400 uppercase tracking-wider">{t('home.customJoinTour.tourDateLabel')}</label>
+                  <CustomCalendar
+                    value={tourDate}
+                    onChange={setTourDate}
+                    min={minDateForPicker ? minDateForPicker.toISOString().slice(0, 10) : undefined}
+                    placeholder={t('home.customJoinTour.datePlaceholder')}
+                  />
+                </div>
+                <div className="space-y-1">
+                  <label className="text-[10px] text-gray-400 uppercase tracking-wider">{t('home.customJoinTour.departureTime')}</label>
+                  <CustomTimePicker
+                    value={departureTime}
+                    onChange={setDepartureTime}
+                    placeholder={t('home.customJoinTour.timePlaceholder') || '09:00 AM'}
+                    formatDisplay={formatTimeDisplay}
+                  />
+                </div>
+              </div>
+
+              <label className="text-[10px] text-gray-400 uppercase tracking-wider block mb-2">{t('home.customJoinTour.guideLanguage')}</label>
+              <div className="mb-5">
+                <CustomSelect
+                  value={language}
+                  onChange={setLanguage}
+                  options={[
+                    { value: 'ko', label: `🇰🇷 ${t('home.customJoinTour.guideKorean')}` },
+                    { value: 'en', label: `🇺🇸 ${t('home.customJoinTour.guideEnglish')}` },
+                    { value: 'zh', label: `🇨🇳 ${t('home.customJoinTour.guideChinese')}` },
+                    { value: 'ja', label: `🇯🇵 ${t('home.customJoinTour.guideJapanese')}` },
+                  ]}
                 />
               </div>
 
-              {error && <p className="text-xs text-red-600 mt-2">{error}</p>}
+              <label className="text-[10px] text-gray-400 uppercase tracking-wider block mb-2">{t('home.customJoinTour.guestsAndVehicleLabel')}</label>
+              <div className="flex items-center gap-3 mb-3 w-24">
+                <CustomSelect
+                  value={String(participants)}
+                  onChange={(v) => setParticipants(Number(v))}
+                  options={Array.from(
+                    { length: CUSTOM_JOIN_TOUR.MAX_PARTICIPANTS - CUSTOM_JOIN_TOUR.MIN_PARTICIPANTS + 1 },
+                    (_, i) => ({ value: String(CUSTOM_JOIN_TOUR.MIN_PARTICIPANTS + i), label: String(CUSTOM_JOIN_TOUR.MIN_PARTICIPANTS + i) })
+                  )}
+                  align="left"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-3 mb-5">
+                <label className="cursor-pointer">
+                  <input type="radio" name="vehicle" className="peer sr-only" checked={participants <= 6} onChange={() => setParticipants((p) => Math.min(6, p))} />
+                  <div className={`cyber-vehicle-card ${participants <= 6 ? 'selected' : ''}`}>
+                    <svg viewBox="0 0 74 46" className="w-20 h-auto shrink-0" style={{ filter: participants <= 6 ? 'drop-shadow(0 0 6px rgba(0, 240, 255, 0.7))' : 'drop-shadow(0 0 4px rgba(255,255,255,0.2))' }} fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                      <VanIconWireframe active={participants <= 6} />
+                    </svg>
+                    <div className="text-sm font-bold text-center">{t('home.customJoinTour.vehicleVanLabel')}</div>
+                    <div className="text-[10px] opacity-80 text-center">{t('home.customJoinTour.vehicleVanPrice')}</div>
+                  </div>
+                </label>
+                <label className="cursor-pointer">
+                  <input type="radio" name="vehicle" className="peer sr-only" checked={participants >= 7} onChange={() => setParticipants((p) => Math.max(7, p))} />
+                  <div className={`cyber-vehicle-card ${participants >= 7 ? 'selected' : ''}`}>
+                    <svg viewBox="0 0 86 50" className="w-20 h-auto shrink-0" style={{ filter: participants >= 7 ? 'drop-shadow(0 0 6px rgba(0, 240, 255, 0.7))' : 'drop-shadow(0 0 4px rgba(255,255,255,0.2))' }} fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                      <VanIconWireframe active={participants >= 7} large />
+                    </svg>
+                    <div className="text-sm font-bold text-center">{t('home.customJoinTour.vehicleLargeVanLabel')}</div>
+                    <div className="text-[10px] opacity-80 text-center">₩90,000 / person</div>
+                  </div>
+                </label>
+              </div>
+
+              <label className="text-[10px] text-gray-400 uppercase tracking-wider block mb-2">{t('home.customJoinTour.themeLabel')}</label>
+              <div className="flex flex-wrap gap-2 mb-5">
+                {TOUR_THEME_KEYWORDS.map(({ label, cyberColor }) => (
+                  <button key={label} type="button" onClick={() => toggleKeyword(label)} className={`cyber-tag ${cyberColor} ${selectedKeywords.includes(label) ? 'selected' : ''}`}>
+                    {label}
+                  </button>
+                ))}
+              </div>
+
+              <label className="text-[10px] text-gray-400 uppercase tracking-wider block mb-2">{t('home.customJoinTour.describeLabel')}</label>
+              <div className="relative mb-5">
+                <textarea rows={4} value={customerInput} onChange={(e) => setCustomerInput(e.target.value)} placeholder={t('home.customJoinTour.describePlaceholder')} className="glass-input w-full min-h-[100px] p-3 text-sm text-white placeholder:text-gray-500 resize-none" />
+                <span className="absolute bottom-2 right-2 text-[10px] text-cyan-400/80">AI Powered ✨</span>
+              </div>
+
+              {error && <p className="text-xs text-rose-400 mb-3">{error}</p>}
+              <p className="text-[11px] text-gray-400 mb-4 leading-relaxed">
+                <strong className="text-gray-300">{t('home.customJoinTour.departureGuaranteeTitle')}</strong> <GuaranteeBodyWithBold text={t('home.customJoinTour.departureGuaranteeBody')} /> {t('home.customJoinTour.departureGuaranteeMinPax')}
+              </p>
               <button
                 type="button"
-                onClick={handleConfirm}
+                onClick={() => {
+                  setShowGenerateOverlay(true);
+                  if (!generateOverlayPlayedSound.current) {
+                    generateOverlayPlayedSound.current = true;
+                    playGlitchSound();
+                  }
+                  handleGenerate();
+                }}
                 disabled={loading}
-                className="mt-4 w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold text-white bg-neutral-900/90 backdrop-blur-md border border-white/10 shadow-lg shadow-black/20 hover:bg-neutral-800/95 disabled:opacity-70 transition-colors"
+                className="w-full py-3.5 rounded-xl font-bold text-sm bg-cyan-500/20 border border-cyan-400 text-cyan-300 hover:bg-cyan-500/30 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition-all disabled:opacity-50 inline-flex items-center justify-center gap-2"
               >
-                {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Check className="w-4 h-4" />}
-                {loading ? '검수 중…' : t('home.customJoinTour.confirmItinerary')}
+                {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : null}
+                {t('home.customJoinTour.generateButton')} ✨
               </button>
-            </div>
+              </div>{/* end px-6 lg:px-8 pb-6 lg:pb-8 */}
+            </motion.div>
+
           </div>
+        )}
+
+        {/* Step: Itinerary — new tab view */}
+        {step === 'itinerary' && (
+          <motion.div
+            ref={itineraryRef}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className="glass-card tech-scanline p-6 lg:p-8 relative overflow-hidden"
+          >
+            <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent shadow-[0_0_10px_rgba(0,255,255,0.6)]" />
+            <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05, duration: 0.35 }} className="flex items-center justify-between flex-wrap gap-2 mb-4">
+              <h3 className="text-sm font-bold text-cyan-400 flex items-center gap-2">
+                <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+                {t('home.customJoinTour.itineraryTitle')}
+              </h3>
+            </motion.div>
+            {guideMessage && <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.35 }} className="glass-input px-4 py-3 text-xs text-cyan-100/90 mb-3 border-cyan-500/30">{guideMessage}</motion.div>}
+            {extraFeeNotice && <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.19, duration: 0.35 }} className="px-4 py-3 text-xs text-amber-300 border border-amber-500/40 rounded-lg bg-amber-500/10 mb-3">{extraFeeNotice}</motion.div>}
+            {pricing && <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.26, duration: 0.35 }} className="glass-input px-4 py-3 text-xs text-gray-300 mb-4">{pricing.vehicleLabelKo} · {participants}명 · 총 {formatPrice(pricing.totalPriceKrw)}</motion.div>}
+            <div className="space-y-6 relative">
+              <div className="absolute left-3 top-2 bottom-2 w-[2px] bg-cyan-500/30 rounded-full" />
+              {schedule.map((daySchedule, dayIndex) => (
+                <motion.div
+                  key={daySchedule.day}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.33 + dayIndex * 0.15, duration: 0.45, ease: 'easeOut' }}
+                  className="relative"
+                >
+                  <div className="flex items-center gap-2 mb-3 pl-8">
+                    <span className="px-2.5 py-1 rounded border border-cyan-500/50 text-cyan-400 text-xs font-bold">{t('home.customJoinTour.dayLabel').replace('{{n}}', String(daySchedule.day))}</span>
+                    {dailyDistancesKm[dayIndex] != null && <span className="text-[11px] text-gray-400">이동 거리 약 {dailyDistancesKm[dayIndex]} km</span>}
+                  </div>
+                  <ul className="space-y-4">
+                    {daySchedule.places.map((place, placeIndex) => (
+                      <motion.li
+                        key={(place as { _uid?: string })._uid ?? `day-${dayIndex}-${placeIndex}`}
+                        initial={{ opacity: 0, x: -24 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.4 + dayIndex * 0.15 + placeIndex * 0.1, duration: 0.4, ease: 'easeOut' }}
+                        className="relative pl-8"
+                      >
+                        <div className="absolute left-0 top-4 w-6 h-6 rounded-full bg-[#050B18] border-2 border-cyan-400 flex items-center justify-center shadow-[0_0_8px_rgba(0,255,255,0.4)] z-10">
+                          <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full" />
+                        </div>
+                        <div className="glass-input p-3 rounded-lg border-white/10 hover:border-cyan-400/40 transition-colors">
+                          <div className="flex gap-3 items-start">
+                            {(place as { image_url?: string | null }).image_url && (
+                              <div className="w-16 h-16 rounded-lg overflow-hidden bg-white/5 shrink-0">
+                                <Image src={(place as { image_url: string }).image_url} alt={place.name} width={64} height={64} className="w-full h-full object-cover" />
+                              </div>
+                            )}
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2 flex-wrap">
+                                <input type="text" value={place.name} onChange={(e) => updatePlace(dayIndex, placeIndex, 'name', e.target.value)} placeholder={t('home.customJoinTour.placeName')} className="w-full min-w-0 bg-transparent border-none px-0 py-0.5 text-sm font-semibold text-white placeholder:text-gray-500 outline-none focus:ring-0" />
+                                {(place as { type?: string }).type === 'restaurant' && (
+                                  <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded border border-amber-500/50 text-amber-400 shrink-0"><UtensilsCrossed size={10} /> 식당</span>
+                                )}
+                              </div>
+                              <input type="text" value={place.address} onChange={(e) => updatePlace(dayIndex, placeIndex, 'address', e.target.value)} placeholder={t('home.customJoinTour.address')} className="w-full mt-1 bg-transparent border-none px-0 py-0 text-xs text-gray-400 placeholder:text-gray-500 outline-none focus:ring-0" />
+                              {(place as { overview?: string | null }).overview && <p className="text-[11px] text-gray-500 line-clamp-2 mt-1">{(place as { overview: string }).overview}</p>}
+                            </div>
+                            <div className="flex flex-col gap-0.5 shrink-0">
+                              <button type="button" onClick={() => movePlace(dayIndex, placeIndex, 'up')} disabled={placeIndex === 0} className="p-1 text-gray-400 hover:text-cyan-400 rounded disabled:opacity-30" aria-label={t('home.customJoinTour.moveUp')}><ChevronUp className="w-4 h-4" /></button>
+                              <button type="button" onClick={() => movePlace(dayIndex, placeIndex, 'down')} disabled={placeIndex === daySchedule.places.length - 1} className="p-1 text-gray-400 hover:text-cyan-400 rounded disabled:opacity-30" aria-label={t('home.customJoinTour.moveDown')}><ChevronDown className="w-4 h-4" /></button>
+                              <button type="button" onClick={() => removePlace(dayIndex, placeIndex)} className="p-1 text-gray-400 hover:text-rose-400 rounded" aria-label={t('home.customJoinTour.removePlace')}><Trash2 className="w-4 h-4" /></button>
+                            </div>
+                          </div>
+                        </div>
+                      </motion.li>
+                    ))}
+                  </ul>
+                  <button type="button" onClick={() => addPlace(dayIndex)} className="mt-3 ml-8 flex items-center gap-1.5 text-xs text-cyan-400 hover:text-cyan-300 font-medium"><Plus className="w-3.5 h-3.5" /> {t('home.customJoinTour.addPlace')}</button>
+                </motion.div>
+              ))}
+            </div>
+            <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.33 + schedule.length * 0.15, duration: 0.35 }} className="mt-6">
+              <ItineraryMapWithSearch schedule={schedule} onAddPlace={addPlaceFromSearch} destination={destination ?? 'jeju'} />
+            </motion.div>
+            {error && <p className="text-xs text-rose-400 mt-3">{error}</p>}
+            <motion.button
+              type="button"
+              onClick={handleConfirm}
+              disabled={loading}
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 + schedule.length * 0.15, duration: 0.35 }}
+              className="mt-4 w-full py-3.5 rounded-xl font-semibold text-sm bg-cyan-500/20 border border-cyan-400 text-cyan-300 hover:bg-cyan-500/30 hover:shadow-[0_0_16px_rgba(0,255,255,0.2)] disabled:opacity-50 inline-flex items-center justify-center gap-2"
+            >
+              {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Check className="w-4 h-4" />}
+              {loading ? '검수 중…' : t('home.customJoinTour.confirmItinerary')}
+            </motion.button>
+          </motion.div>
         )}
 
         {/* Step: Checkout — Notice + customer form + payment */}
@@ -862,7 +1041,7 @@ export default function CustomJoinTourPage() {
                     {confirmResult.pricing && (
                       <div className="flex justify-between pt-2 border-t border-gray-200">
                         <span className="text-gray-600">{t('tour.total')}</span>
-                        <span className="text-lg font-bold text-gray-900">₩{(confirmResult.pricing.totalPriceKrw / 10000).toFixed(0)}만</span>
+                        <span className="text-lg font-bold text-gray-900">{formatPrice(confirmResult.pricing.totalPriceKrw)}</span>
                       </div>
                     )}
                   </div>
@@ -893,7 +1072,7 @@ export default function CustomJoinTourPage() {
             </div>
             {confirmResult.pricing && (
               <div className="rounded-xl bg-neutral-100 px-4 py-3 text-xs text-neutral-800">
-                {confirmResult.pricing.vehicleLabelKo} · 총 {(confirmResult.pricing.totalPriceKrw / 10000).toFixed(0)}만 원
+                {confirmResult.pricing.vehicleLabelKo} · 총 {formatPrice(confirmResult.pricing.totalPriceKrw)}
               </div>
             )}
             {confirmResult.jejuCrossRegion && confirmResult.jejuCrossRegionNotice && (
@@ -902,7 +1081,7 @@ export default function CustomJoinTourPage() {
                 <p className="text-[11px] text-amber-800">{confirmResult.jejuCrossRegionNotice}</p>
                 {confirmResult.jejuCrossRegionExtraFeeKrw != null && (
                   <p className="text-[11px] font-medium text-amber-900 mt-2">
-                    {t('home.customJoinTour.jejuCrossRegionExtraFee', { amount: (confirmResult.jejuCrossRegionExtraFeeKrw / 10000).toFixed(0) })}
+                    {t('home.customJoinTour.jejuCrossRegionExtraFee', { amount: locale === 'ko' ? (confirmResult.jejuCrossRegionExtraFeeKrw / 10000).toFixed(0) : formatPrice(confirmResult.jejuCrossRegionExtraFeeKrw) })}
                   </p>
                 )}
               </div>
@@ -937,6 +1116,35 @@ export default function CustomJoinTourPage() {
       <Footer />
       <BottomNav />
       <div className="h-16 md:hidden" />
+      <AnimatePresence>
+        {showGenerateOverlay && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[9999] bg-[#050B18] flex flex-col items-center justify-center overflow-hidden"
+          >
+            <div className="transition-circuit-bg absolute inset-0 opacity-40" aria-hidden />
+            <div className="transition-scanline absolute inset-0 pointer-events-none" aria-hidden />
+            <motion.div
+              initial={{ y: 20, scale: 0.8 }}
+              animate={{ y: [0, -20, 0], scale: 1 }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+              className="w-32 h-32 relative z-10"
+            >
+              <RobotMascot className="w-full h-full" />
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="mt-6 text-cyan-400 font-mono tracking-tighter text-sm relative z-10"
+            >
+              AI ANALYZING YOUR PREFERENCES...
+            </motion.p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

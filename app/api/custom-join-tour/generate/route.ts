@@ -7,6 +7,8 @@ import {
   getCustomJoinTourPricing,
   type CustomJoinTourPricing,
 } from '@/lib/constants/custom-join-tour';
+import { createServerClient } from '@/lib/supabase';
+import { getPlaceEnrichment } from '@/lib/places-lookup';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY ?? '');
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY ?? '' });
@@ -22,14 +24,19 @@ export interface CustomJoinTourGenerateRequest {
   numberOfParticipants: number;
   /** 목적지: 제주만 사용 시 모든 장소가 제주도 내에 있어야 함 */
   destination?: 'jeju' | 'busan' | 'seoul';
+  /** 일정 보강(사진·설명)에 쓸 places 언어. 없으면 'ko'(이미 수집된 국문) 사용 */
+  placeLang?: 'ko' | 'en';
 }
 
-/** 일정 내 한 장소 (관광지 또는 식당) */
+/** 일정 내 한 장소 (관광지 또는 식당). image_url/overview는 places 테이블 보강 시 채워짐 */
 export interface SchedulePlace {
   name: string;
   address: string;
   /** attraction(관광지) | restaurant(식당). 없으면 attraction */
   type?: 'attraction' | 'restaurant';
+  /** places 테이블 매칭 시 채움 (일정 옆 사진·간략 설명용) */
+  image_url?: string | null;
+  overview?: string | null;
 }
 
 /** 일별 일정 (Day 1, 2, ...) */
@@ -83,26 +90,27 @@ function parseDuration(durationInput: string | undefined): number {
   return 3;
 }
 
-/** 일별 연속 구간 거리 합산 (meters → km) */
+/** 일별 연속 구간 거리 합산 (meters → km)
+ *  A→B→C→D 순서로 각 구간을 개별 요청하여 합산
+ */
 async function getDailyDistanceKm(addresses: string[]): Promise<number> {
   if (addresses.length < 2 || !process.env.GOOGLE_MAPS_API_KEY) return 0;
   try {
-    const distanceResponse = await mapsClient.distancematrix({
-      params: {
-        origins: addresses.slice(0, -1),
-        destinations: addresses.slice(1),
-        key: process.env.GOOGLE_MAPS_API_KEY,
-        mode: TravelMode.driving,
-      },
-      timeout: 8000,
-    });
     let totalMeters = 0;
-    const rows = distanceResponse.data?.rows ?? [];
-    for (const row of rows) {
-      for (const el of row.elements ?? []) {
-        if (el.status === 'OK' && el.distance?.value) {
-          totalMeters += el.distance.value;
-        }
+    // 각 구간을 1:1로 요청 (A→B, B→C, C→D …)
+    for (let i = 0; i < addresses.length - 1; i++) {
+      const segResponse = await mapsClient.distancematrix({
+        params: {
+          origins: [addresses[i]],
+          destinations: [addresses[i + 1]],
+          key: process.env.GOOGLE_MAPS_API_KEY,
+          mode: TravelMode.driving,
+        },
+        timeout: 8000,
+      });
+      const el = segResponse.data?.rows?.[0]?.elements?.[0];
+      if (el?.status === 'OK' && el.distance?.value) {
+        totalMeters += el.distance.value;
       }
     }
     return Math.round((totalMeters / 1000) * 10) / 10;
@@ -250,6 +258,37 @@ Tasks:
       const addresses = daySchedule.places.map((p) => p.address).filter(Boolean);
       const km = await getDailyDistanceKm(addresses);
       dailyDistancesKm.push(km);
+    }
+
+    // --- STEP 4: places 테이블 보강 — 관광지 사진·간략 설명 (attraction만). ko → en → ja/chs/cht 순으로 매칭 ---
+    try {
+      const supabase = createServerClient();
+      const langType = body.placeLang === 'en' ? 'en' : 'ko';
+      const allPlaces = verifiedSchedule.flatMap((d) => d.places);
+      const enrichments = await Promise.all(
+        allPlaces.map((p) =>
+          p.type === 'restaurant'
+            ? Promise.resolve({ image_url: null, overview: null })
+            : getPlaceEnrichment(supabase, p.name, p.address, langType)
+        )
+      );
+      let idx = 0;
+      let enrichedCount = 0;
+      for (const daySchedule of verifiedSchedule) {
+        for (const place of daySchedule.places) {
+          const e = enrichments[idx++];
+          if (e && (e.image_url || e.overview)) {
+            place.image_url = e.image_url ?? undefined;
+            place.overview = e.overview ?? undefined;
+            enrichedCount++;
+          }
+        }
+      }
+      if (allPlaces.filter((p) => p.type !== 'restaurant').length > 0 && enrichedCount === 0) {
+        console.warn('[custom-join-tour/generate] places 보강 0건: Supabase places 테이블에 데이터가 없거나 이름/주소 매칭 실패. 파이프라인(LANG_FILTER=en 등) 실행 후 재시도.');
+      }
+    } catch (err) {
+      console.warn('[custom-join-tour/generate] places 보강 실패:', err instanceof Error ? err.message : err);
     }
 
     const limitKm = CUSTOM_JOIN_TOUR.DAILY_DISTANCE_KM_LIMIT;

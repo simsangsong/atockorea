@@ -450,3 +450,427 @@ button, a {
   .tour-detail-cro .itinerary-photo-card-title { font-size: 16px; }
 }
 
+/* AI Tour Planner — futuristic theme (custom-join-tour page) */
+@keyframes page-fadein {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tour-planner-page {
+  animation: page-fadein 0.55s ease-out both;
+  --tour-bg: #050B18;
+  --tour-cyan: #00FFFF;
+  --tour-cyan-glow: rgba(0, 255, 255, 0.5);
+  --tour-purple: #BF5AF2;
+}
+
+.tour-planner-page .glass-card {
+  @apply backdrop-blur-md rounded-xl;
+  border-top: 1px solid rgba(34, 211, 238, 0.2);
+  border-bottom: 1px solid rgba(34, 211, 238, 0.2);
+  border-left: none;
+  border-right: none;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: none;
+}
+
+.tour-planner-page .tour-map-area {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.tour-planner-page .tour-map-block {
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 -8px 20px 4px rgba(0, 5, 18, 0.9), 0 8px 20px 4px rgba(0, 5, 18, 0.9);
+}
+.tour-planner-page .tour-map-block:hover {
+  box-shadow: 0 -12px 32px 8px rgba(0, 5, 18, 0.98), 0 12px 32px 8px rgba(0, 5, 18, 0.98),
+              0 0 40px 2px rgba(0, 255, 255, 0.06);
+}
+
+.tour-planner-page .glass-input {
+  @apply backdrop-blur-sm rounded-lg border border-cyan-500/30 outline-none transition-colors;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.05);
+}
+
+.tour-planner-page .glass-input:focus {
+  border-color: rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
+}
+
+.tour-planner-page .neon-border {
+  border: 1px solid rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 10px var(--tour-cyan-glow);
+}
+
+.tour-planner-page .tech-scanline {
+  background-image: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 255, 255, 0.02) 50%
+  );
+  background-size: 100% 4px;
+}
+
+/* ProposeButton transition overlay — circuit board grid + scanline */
+.transition-overlay {
+  --tour-cyan: #00FFFF;
+  --tour-purple: #BF5AF2;
+}
+
+.transition-circuit-bg {
+  background-color: #050B18;
+  background-image:
+    linear-gradient(rgba(0, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(rgba(191, 90, 242, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(191, 90, 242, 0.04) 1px, transparent 1px);
+  background-size:
+    24px 24px,
+    24px 24px,
+    48px 48px,
+    48px 48px;
+  background-position:
+    0 0,
+    0 0,
+    0 0,
+    0 0;
+  animation: circuit-grid-move 8s linear infinite;
+}
+
+@keyframes circuit-grid-move {
+  0% { background-position: 0 0, 0 0, 0 0, 0 0; }
+  100% { background-position: 24px 0, 0 24px, 48px 0, 0 48px; }
+}
+
+.transition-scanline {
+  background-image: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 255, 255, 0.03) 50%
+  );
+  background-size: 100% 6px;
+  animation: scanline-drift 0.15s linear infinite;
+}
+
+@keyframes scanline-drift {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 6px; }
+}
+
+/* Custom-join-tour: DatePicker dark/glass theme */
+.tour-planner-page .react-datepicker-wrapper { width: 100%; display: block; }
+.tour-planner-page .react-datepicker__input-container { width: 100%; display: block; }
+.tour-planner-page .react-datepicker__input-container input {
+  background: transparent !important;
+  color: #fff !important;
+  font-size: 0.875rem !important;
+  width: 100% !important;
+  outline: none !important;
+  border: none !important;
+}
+.tour-planner-page .react-datepicker__input-container input::placeholder {
+  color: rgb(156 163 175);
+}
+.tour-planner-page .react-datepicker-popper { z-index: 50; }
+.tour-planner-page .react-datepicker {
+  font-family: inherit;
+  background: #0a1628 !important;
+  border: 1px solid rgba(0, 255, 255, 0.3) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15) !important;
+}
+.tour-planner-page .react-datepicker__header {
+  background: rgba(0, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2) !important;
+  padding-top: 12px !important;
+}
+.tour-planner-page .react-datepicker__current-month,
+.tour-planner-page .react-datepicker-time__header,
+.tour-planner-page .react-datepicker__day-name {
+  color: rgba(0, 255, 255, 0.9) !important;
+}
+.tour-planner-page .react-datepicker__day {
+  color: #e5e7eb !important;
+}
+.tour-planner-page .react-datepicker__day:hover,
+.tour-planner-page .react-datepicker__day--keyboard-selected {
+  background: rgba(0, 255, 255, 0.2) !important;
+  color: #fff !important;
+}
+.tour-planner-page .react-datepicker__day--selected,
+.tour-planner-page .react-datepicker__day--in-selecting-range,
+.tour-planner-page .react-datepicker__day--in-range {
+  background: rgba(0, 255, 255, 0.4) !important;
+  color: #050B18 !important;
+}
+.tour-planner-page .react-datepicker__day--outside-month {
+  color: rgb(107 114 128) !important;
+}
+.tour-planner-page .react-datepicker__day--disabled {
+  color: rgb(75 85 99) !important;
+}
+.tour-planner-page .react-datepicker__navigation-icon::before {
+  border-color: rgba(0, 255, 255, 0.7) !important;
+}
+.tour-planner-page .react-datepicker__navigation:hover .react-datepicker__navigation-icon::before {
+  border-color: #00FFFF !important;
+}
+.tour-planner-page .react-datepicker__month-container { float: none; }
+
+/* ========== Cyberpunk HUD (custom-join-tour) ========== */
+:root {
+  --cyan: #00f0ff;
+  --cyan-glow: rgba(0, 240, 255, 0.4);
+  --dark-bg: #0a0f1e;
+  --border-dim: rgba(0, 240, 255, 0.35);
+}
+
+.tour-planner-page .cyber-input-container {
+  position: relative;
+  background: rgba(5, 11, 24, 0.85);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: 10px;
+  padding: 11px 14px;
+  color: white;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4), inset 0 0 6px rgba(0, 240, 255, 0.03);
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+  cursor: pointer;
+}
+.tour-planner-page .cyber-input-container:focus-within,
+.tour-planner-page .cyber-input-container:hover {
+  border-color: rgba(0, 240, 255, 0.55);
+  background: rgba(5, 15, 35, 0.92);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.15), inset 0 0 8px rgba(0, 240, 255, 0.05);
+}
+/* allow native select dropdown to show outside */
+.tour-planner-page .cyber-input-container.cyber-input-select {
+  overflow: visible;
+}
+
+/* Native date/time picker popup fade-in animation */
+@keyframes popup-fadein {
+  from { opacity: 0; transform: translateY(6px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.tour-planner-page input[type="date"],
+.tour-planner-page input[type="time"] {
+  color-scheme: dark;
+}
+/* Popup container animation via dialog selector (Chrome) */
+::-webkit-datetime-edit-fields-wrapper { animation: popup-fadein 0.22s ease; }
+
+.tour-planner-page .cyber-vehicle-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 15, 30, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 16px 8px;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.tour-planner-page .cyber-vehicle-card.selected {
+  border-color: var(--cyan);
+  box-shadow: inset 0 0 15px rgba(0, 240, 255, 0.2), 0 0 10px rgba(0, 240, 255, 0.3);
+  background: linear-gradient(180deg, rgba(0, 240, 255, 0.05) 0%, rgba(0, 240, 255, 0.1) 100%);
+}
+
+.tour-planner-page .cyber-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  font-size: 12px;
+  background: transparent;
+  cursor: pointer;
+  clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
+  border: 1px solid;
+  transition: opacity 0.2s, box-shadow 0.2s;
+}
+.tour-planner-page .cyber-tag.yellow {
+  border-color: #ffd700;
+  color: #ffd700;
+  box-shadow: inset 0 0 8px rgba(255, 215, 0, 0.3);
+  text-shadow: 0 0 5px #ffd700;
+}
+.tour-planner-page .cyber-tag.pink {
+  border-color: #ff00ff;
+  color: #ff00ff;
+  box-shadow: inset 0 0 8px rgba(255, 0, 255, 0.3);
+  text-shadow: 0 0 5px #ff00ff;
+}
+.tour-planner-page .cyber-tag.green {
+  border-color: #00ff7f;
+  color: #00ff7f;
+  box-shadow: inset 0 0 8px rgba(0, 255, 127, 0.3);
+  text-shadow: 0 0 5px #00ff7f;
+}
+.tour-planner-page .cyber-tag.orange {
+  border-color: #ff8c00;
+  color: #ff8c00;
+  box-shadow: inset 0 0 8px rgba(255, 140, 0, 0.3);
+  text-shadow: 0 0 5px #ff8c00;
+}
+.tour-planner-page .cyber-tag.teal {
+  border-color: #00f0ff;
+  color: #00f0ff;
+  box-shadow: inset 0 0 8px rgba(0, 240, 255, 0.3);
+  text-shadow: 0 0 5px #00f0ff;
+}
+.tour-planner-page .cyber-tag:not(.selected) {
+  opacity: 0.75;
+}
+.tour-planner-page .cyber-tag.selected {
+  opacity: 1;
+}
+
+.tour-planner-page select option {
+  background: #0a0f1e;
+  color: #fff;
+}
+
+/* DatePicker popper (rendered in portal — not under .tour-planner-page) */
+.react-datepicker-tour-dark.react-datepicker-popper { z-index: 9999; }
+.react-datepicker-tour-dark .react-datepicker {
+  font-family: inherit;
+  background: #0a1628 !important;
+  border: 1px solid rgba(0, 255, 255, 0.3) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15) !important;
+}
+.react-datepicker-tour-dark .react-datepicker__header {
+  background: rgba(0, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2) !important;
+  padding-top: 12px !important;
+}
+.react-datepicker-tour-dark .react-datepicker__current-month,
+.react-datepicker-tour-dark .react-datepicker__day-name { color: rgba(0, 255, 255, 0.9) !important; }
+.react-datepicker-tour-dark .react-datepicker__day { color: #e5e7eb !important; }
+.react-datepicker-tour-dark .react-datepicker__day:hover,
+.react-datepicker-tour-dark .react-datepicker__day--keyboard-selected {
+  background: rgba(0, 255, 255, 0.2) !important;
+  color: #fff !important;
+}
+.react-datepicker-tour-dark .react-datepicker__day--selected,
+.react-datepicker-tour-dark .react-datepicker__day--in-range {
+  background: rgba(0, 255, 255, 0.4) !important;
+  color: #050B18 !important;
+}
+.react-datepicker-tour-dark .react-datepicker__day--outside-month { color: rgb(107 114 128) !important; }
+.react-datepicker-tour-dark .react-datepicker__day--disabled { color: rgb(75 85 99) !important; }
+.react-datepicker-tour-dark .react-datepicker__navigation-icon::before { border-color: rgba(0, 255, 255, 0.7) !important; }
+.react-datepicker-tour-dark .react-datepicker__navigation:hover .react-datepicker__navigation-icon::before { border-color: #00FFFF !important; }
+
+/* ========== HUD CTA Button (DestinationsCards) ========== */
+:root {
+  --hud-cyan: #00ffff;
+  --hud-purple: #9d00ff;
+}
+
+@keyframes hud-glow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 6px var(--hud-cyan),
+      0 0 14px rgba(0,255,255,0.35),
+      0 0 6px var(--hud-purple),
+      0 0 14px rgba(157,0,255,0.25),
+      inset 0 0 8px rgba(0,255,255,0.04);
+  }
+  50% {
+    box-shadow:
+      0 0 10px var(--hud-cyan),
+      0 0 24px rgba(0,255,255,0.5),
+      0 0 10px var(--hud-purple),
+      0 0 24px rgba(157,0,255,0.4),
+      inset 0 0 12px rgba(0,255,255,0.08);
+  }
+}
+
+@keyframes hud-robot-pulse {
+  0%, 100% { filter: drop-shadow(0 0 3px var(--hud-cyan)); transform: scale(1); }
+  50%       { filter: drop-shadow(0 0 6px var(--hud-cyan)); transform: scale(1.08); }
+}
+
+@keyframes hud-scanline-drift {
+  from { background-position: 0 0; }
+  to   { background-position: 0 40px; }
+}
+
+.hud-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 22px;
+  background: rgba(0, 5, 20, 0.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0,255,255,0.45);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.3s, background 0.3s;
+  animation: hud-glow-pulse 3s ease-in-out infinite;
+}
+.hud-cta-btn:hover {
+  background: rgba(0, 10, 35, 0.75);
+  border-color: rgba(0,255,255,0.8);
+}
+/* scanline overlay */
+.hud-cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(0deg, transparent 50%, rgba(255,255,255,0.03) 50%);
+  background-size: 100% 4px;
+  animation: hud-scanline-drift 4s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+/* gradient border corners */
+.hud-cta-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(0,255,255,0.12) 0%, transparent 50%, rgba(157,0,255,0.08) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hud-cta-btn .hud-icon {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  animation: hud-robot-pulse 2.5s ease-in-out infinite;
+}
+.hud-cta-btn .hud-text {
+  position: relative;
+  z-index: 1;
+  color: var(--hud-cyan);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 6px var(--hud-cyan), 0 0 14px rgba(0,255,255,0.4);
+  white-space: nowrap;
+}
+.hud-cta-btn .hud-arrow {
+  margin-left: 4px;
+  transition: margin-left 0.2s;
+}
+.hud-cta-btn:hover .hud-arrow {
+  margin-left: 8px;
+}
+
