@@ -792,10 +792,10 @@ export default function CustomJoinTourPage() {
                       <VanIconWireframe active={participants <= 6} />
                     </svg>
                     <div className="text-sm font-bold text-center">{t('home.customJoinTour.vehicleVanLabel')}</div>
-                    <div className="text-[10px] opacity-60 text-center">₩100,000 / person</div>
+                    <div className="text-[10px] opacity-60 text-center">{t('home.customJoinTour.vehicleVanPrice')}</div>
                     {participants <= 6 && (
                       <div className="text-xs font-bold text-cyan-300 text-center mt-0.5">
-                        {participants}명 · 총 {(participants * CUSTOM_JOIN_TOUR.VAN.PRICE_PER_PERSON_KRW).toLocaleString()}원
+                        {t('home.customJoinTour.vehicleTotalSummary').replace('{{n}}', String(participants)).replace('{{price}}', `₩${(participants * CUSTOM_JOIN_TOUR.VAN.PRICE_PER_PERSON_KRW).toLocaleString()}`)}
                       </div>
                     )}
                   </div>
@@ -807,10 +807,10 @@ export default function CustomJoinTourPage() {
                       <VanIconWireframe active={participants >= 7} large />
                     </svg>
                     <div className="text-sm font-bold text-center">{t('home.customJoinTour.vehicleLargeVanLabel')}</div>
-                    <div className="text-[10px] opacity-60 text-center">₩90,000 / person</div>
+                    <div className="text-[10px] opacity-60 text-center">{t('home.customJoinTour.vehicleLargeVanPrice')}</div>
                     {participants >= 7 && (
                       <div className="text-xs font-bold text-cyan-300 text-center mt-0.5">
-                        {participants}명 · 총 {(participants * CUSTOM_JOIN_TOUR.LARGE_VAN.PRICE_PER_PERSON_KRW).toLocaleString()}원
+                        {t('home.customJoinTour.vehicleTotalSummary').replace('{{n}}', String(participants)).replace('{{price}}', `₩${(participants * CUSTOM_JOIN_TOUR.LARGE_VAN.PRICE_PER_PERSON_KRW).toLocaleString()}`)}
                       </div>
                     )}
                   </div>
@@ -876,7 +876,7 @@ export default function CustomJoinTourPage() {
             </motion.div>
             {guideMessage && <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.35 }} className="glass-input px-4 py-3 text-xs text-cyan-100/90 mb-3 border-cyan-500/30">{guideMessage}</motion.div>}
             {extraFeeNotice && <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.19, duration: 0.35 }} className="px-4 py-3 text-xs text-amber-300 border border-amber-500/40 rounded-lg bg-amber-500/10 mb-3">{extraFeeNotice}</motion.div>}
-            {pricing && <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.26, duration: 0.35 }} className="glass-input px-4 py-3 text-xs text-gray-300 mb-4">{pricing.vehicleLabelKo} · {participants}명 · 총 {formatPrice(pricing.totalPriceKrw)}</motion.div>}
+            {pricing && <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.26, duration: 0.35 }} className="glass-input px-4 py-3 text-xs text-gray-300 mb-4">{pricing.vehicleLabelKo} · {t('home.customJoinTour.vehicleTotalSummary').replace('{{n}}', String(participants)).replace('{{price}}', formatPrice(pricing.totalPriceKrw))}</motion.div>}
             <div className="space-y-6 relative">
               <div className="absolute left-3 top-2 bottom-2 w-[2px] bg-cyan-500/30 rounded-full" />
               {schedule.map((daySchedule, dayIndex) => (

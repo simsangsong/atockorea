@@ -9,7 +9,7 @@ const POPUP_VARIANTS = {
   animate: { opacity: 1, y: 0, scale: 1 },
   exit:    { opacity: 0, y: 6, scale: 0.97 },
 };
-const POPUP_TRANSITION = { duration: 0.2, ease: 'easeOut' };
+const POPUP_TRANSITION = { duration: 0.2, ease: 'easeOut' as const };
 
 const POPUP_STYLE: React.CSSProperties = {
   background: 'rgba(5, 11, 28, 0.97)',

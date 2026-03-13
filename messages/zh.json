@@ -366,7 +366,12 @@
       "guideKorean": "韩语导游",
       "guideEnglish": "英语导游",
       "guideChinese": "中文导游",
-      "guideJapanese": "日语导游"
+      "guideJapanese": "日语导游",
+      "vehicleVanLabel": "1–6人 面包车",
+      "vehicleVanPrice": "₩100,000 / 人",
+      "vehicleLargeVanLabel": "7–13人 大型面包车",
+      "vehicleLargeVanPrice": "₩90,000 / 人",
+      "vehicleTotalSummary": "{{n}}人 · 合计 {{price}}"
     },
     "proposedTours": {
       "sectionTitle": "当前招募中的行程",

@@ -381,7 +381,12 @@
       "guideKorean": "韓国語ガイド",
       "guideEnglish": "英語ガイド",
       "guideChinese": "中国語ガイド",
-      "guideJapanese": "日本語ガイド"
+      "guideJapanese": "日本語ガイド",
+      "vehicleVanLabel": "1〜6名 バン",
+      "vehicleVanPrice": "₩100,000 / 人",
+      "vehicleLargeVanLabel": "7〜13名 大型バン",
+      "vehicleLargeVanPrice": "₩90,000 / 人",
+      "vehicleTotalSummary": "{{n}}名 · 合計 {{price}}"
     },
     "proposedTours": {
       "sectionTitle": "現在募集中のツアー",
