@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import Logo from "./Logo";
 import { SearchIcon, UserIcon } from "./Icons";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "@/lib/i18n";
-import { useCurrency } from "@/lib/currency";
+import { useCurrency, CURRENCY_LIST, type CurrencyCode } from "@/lib/currency";
 import { supabase } from "@/lib/supabase";
 
 interface UserProfile {
@@ -22,6 +22,8 @@ export default function Header() {
   const pathname = usePathname();
   const t = useTranslations();
   const { currency, setCurrency } = useCurrency();
+  const [isCurrencyOpen, setIsCurrencyOpen] = useState(false);
+  const currencyDropdownRef = useRef<HTMLDivElement>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [user, setUser] = useState<UserProfile | null>(null);
@@ -121,10 +123,19 @@ export default function Header() {
     }
   };
 
-  const toggleCurrency = () => {
-    setCurrency(currency === "USD" ? "KRW" : "USD");
-  };
-  const currencyLabel = currency === "USD" ? "USD" : "KRW";
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (currencyDropdownRef.current && !currencyDropdownRef.current.contains(e.target as Node)) {
+        setIsCurrencyOpen(false);
+      }
+    };
+    if (isCurrencyOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [isCurrencyOpen]);
+
+  const currencyLabel = CURRENCY_LIST.find((c) => c.code === currency)?.code ?? currency;
 
   return (
     <header className={`sticky top-0 z-50 backdrop-blur-md border-b shadow-sm ${
@@ -186,18 +197,52 @@ export default function Header() {
               <LanguageSwitcher />
             </div>
 
-            {/* Currency Toggle - Compact on mobile */}
-            <button
-              onClick={toggleCurrency}
-              className={`px-1 sm:px-1.5 md:px-2 lg:px-3 py-1 sm:py-1.5 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-medium transition-colors whitespace-nowrap flex-shrink-0 ${
-                isDarkPage 
-                  ? 'text-gray-300 hover:text-blue-400' 
-                  : 'text-gray-700 hover:text-blue-600'
-              }`}
-              title={currencyLabel}
-            >
-              {currencyLabel}
-            </button>
+            {/* Currency selector - world major currencies */}
+            <div className="relative flex-shrink-0" ref={currencyDropdownRef}>
+              <button
+                onClick={() => setIsCurrencyOpen((o) => !o)}
+                className={`px-1 sm:px-1.5 md:px-2 lg:px-3 py-1 sm:py-1.5 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-medium transition-colors whitespace-nowrap flex items-center gap-0.5 ${
+                  isDarkPage
+                    ? "text-gray-300 hover:text-blue-400"
+                    : "text-gray-700 hover:text-blue-600"
+                }`}
+                title={currencyLabel}
+                aria-expanded={isCurrencyOpen}
+                aria-haspopup="listbox"
+              >
+                {currencyLabel}
+                <svg className="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isCurrencyOpen ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"} />
+                </svg>
+              </button>
+              {isCurrencyOpen && (
+                <div
+                  className="absolute right-0 top-full mt-1 py-1 w-44 max-h-[70vh] overflow-y-auto bg-white rounded-xl border border-gray-200 shadow-lg z-[100]"
+                  role="listbox"
+                >
+                  {CURRENCY_LIST.map((c) => (
+                    <button
+                      key={c.code}
+                      type="button"
+                      role="option"
+                      aria-selected={currency === c.code}
+                      onClick={() => {
+                        setCurrency(c.code as CurrencyCode);
+                        setIsCurrencyOpen(false);
+                      }}
+                      className={`w-full px-3 py-2 text-left text-sm flex items-center justify-between gap-2 ${
+                        currency === c.code
+                          ? "bg-blue-50 text-blue-700 font-medium"
+                          : "text-gray-700 hover:bg-gray-50"
+                      }`}
+                    >
+                      <span>{c.code}</span>
+                      <span className="text-gray-500 text-xs">{c.symbol}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
             {/* Search Icon - Optimized sizing */}
             <button

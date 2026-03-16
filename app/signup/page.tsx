@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 import { supabase } from '@/lib/supabase';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -20,6 +21,11 @@ function validatePassword(pwd: string): { valid: boolean; message?: string } {
 }
 
 const CURRENT_YEAR = new Date().getFullYear();
+const BIRTH_YEAR_START = 1900;
+const BIRTH_YEARS = Array.from(
+  { length: CURRENT_YEAR - BIRTH_YEAR_START + 1 },
+  (_, i) => CURRENT_YEAR - i
+);
 
 // 국가 목록 (이름 + 국가번호) - 검색·선택용
 const COUNTRY_LIST: { name: string; dialCode: string }[] = [
@@ -83,12 +89,17 @@ export default function SignUpPage() {
   const [emailVerified, setEmailVerified] = useState(false);
   const [countryDropdownOpen, setCountryDropdownOpen] = useState(false);
   const [countrySearch, setCountrySearch] = useState('');
+  const [birthYearPickerOpen, setBirthYearPickerOpen] = useState(false);
   const countryDropdownRef = useRef<HTMLDivElement>(null);
+  const birthYearPickerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (countryDropdownRef.current && !countryDropdownRef.current.contains(e.target as Node)) {
         setCountryDropdownOpen(false);
+      }
+      if (birthYearPickerRef.current && !birthYearPickerRef.current.contains(e.target as Node)) {
+        setBirthYearPickerOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -144,6 +155,21 @@ export default function SignUpPage() {
     setErrors({});
     setError(null);
     try {
+      // 이미 가입된 이메일인지 검사
+      const checkRes = await fetch('/api/auth/check-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: formData.email.trim() }),
+      });
+      const checkData = await checkRes.json().catch(() => ({}));
+      if (checkData.exists) {
+        setErrors({
+          email: 'This email is already registered. Please sign in instead.',
+        });
+        setIsSendingCode(false);
+        return;
+      }
+
       const origin = typeof window !== 'undefined' ? window.location.origin : '';
       const { error: otpError } = await supabase.auth.signInWithOtp({
         email: formData.email.trim(),
@@ -354,10 +380,10 @@ export default function SignUpPage() {
                     type="text"
                     id="verificationCode"
                     value={formData.verificationCode}
-                    onChange={(e) => setFormData({ ...formData, verificationCode: e.target.value.replace(/\D/g, '').slice(0, 6) })}
-                    maxLength={6}
+                    onChange={(e) => setFormData({ ...formData, verificationCode: e.target.value.replace(/\D/g, '').slice(0, 8) })}
+                    maxLength={8}
                     className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-gray-900 text-center text-2xl tracking-widest"
-                    placeholder="000000"
+                    placeholder="00000000"
                   />
                   {errors.verificationCode && <p className="mt-1 text-sm text-red-600">{errors.verificationCode}</p>}
                   <p className="mt-2 text-xs text-gray-500 text-center">Sent to <span className="font-semibold text-gray-700">{formData.email}</span></p>
@@ -378,10 +404,67 @@ export default function SignUpPage() {
                   <input type="text" id="fullName" value={formData.fullName} onChange={(e) => setFormData({ ...formData, fullName: e.target.value })} required className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-gray-900 placeholder:text-gray-400" placeholder="John Doe" />
                   {errors.fullName && <p className="mt-1 text-sm text-red-600">{errors.fullName}</p>}
                 </div>
-                <div>
+                <div ref={birthYearPickerRef}>
                   <label htmlFor="birthYear" className="block text-sm font-semibold text-gray-700 mb-2">Birth Year <span className="text-red-500">*</span></label>
-                  <input type="number" id="birthYear" value={formData.birthYear} onChange={(e) => setFormData({ ...formData, birthYear: e.target.value })} min={1900} max={CURRENT_YEAR} className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-gray-900 placeholder:text-gray-400" placeholder={String(CURRENT_YEAR - 30)} />
+                  <button
+                    type="button"
+                    id="birthYear"
+                    onClick={() => setBirthYearPickerOpen(true)}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-left text-gray-900 flex items-center justify-between"
+                  >
+                    <span className={formData.birthYear ? 'text-gray-900' : 'text-gray-400'}>{formData.birthYear || `e.g. ${CURRENT_YEAR - 30}`}</span>
+                    <svg className="w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
                   {errors.birthYear && <p className="mt-1 text-sm text-red-600">{errors.birthYear}</p>}
+
+                  <AnimatePresence>
+                    {birthYearPickerOpen && (
+                      <>
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.2, ease: 'easeOut' }}
+                          className="fixed inset-0 z-[100] bg-black/40 backdrop-blur-sm"
+                          onClick={() => setBirthYearPickerOpen(false)}
+                          aria-hidden
+                        />
+                        <motion.div
+                          initial={{ opacity: 0, y: 24 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 24 }}
+                          transition={{ duration: 0.25, ease: [0.32, 0.72, 0, 1] as const }}
+                          className="fixed left-4 right-4 bottom-4 z-[101] max-h-[70vh] flex flex-col bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <div className="px-4 py-3 border-b border-gray-100 flex items-center justify-between shrink-0">
+                            <span className="text-sm font-semibold text-gray-700">Select birth year</span>
+                            <button type="button" onClick={() => setBirthYearPickerOpen(false)} className="p-2 -m-2 rounded-lg hover:bg-gray-100 text-gray-500" aria-label="Close">
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                            </button>
+                          </div>
+                          <div className="overflow-y-auto overscroll-contain flex-1 min-h-0 py-2">
+                            {BIRTH_YEARS.map((year) => {
+                              const isSelected = formData.birthYear === String(year);
+                              return (
+                                <button
+                                  key={year}
+                                  type="button"
+                                  onClick={() => {
+                                    setFormData((prev) => ({ ...prev, birthYear: String(year) }));
+                                    setBirthYearPickerOpen(false);
+                                  }}
+                                  className={`w-full px-4 py-3 text-left text-base transition-colors ${isSelected ? 'bg-indigo-50 text-indigo-700 font-semibold' : 'text-gray-800 hover:bg-gray-50'}`}
+                                >
+                                  {year}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </motion.div>
+                      </>
+                    )}
+                  </AnimatePresence>
                 </div>
                 <div ref={countryDropdownRef} className="relative">
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Nationality <span className="text-red-500">*</span></label>

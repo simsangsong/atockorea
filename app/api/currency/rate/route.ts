@@ -3,81 +3,124 @@ import { NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-/** Cache in memory to avoid hitting external API on every request (serverless may cold-start) */
+/** World major currencies to support (ISO 4217). API returns USD-based rates. */
+export const MAJOR_CURRENCIES = [
+  'USD',
+  'KRW',
+  'EUR',
+  'GBP',
+  'JPY',
+  'CNY',
+  'HKD',
+  'SGD',
+  'THB',
+  'AUD',
+  'CAD',
+  'CHF',
+  'TWD',
+  'INR',
+  'MXN',
+  'PHP',
+  'IDR',
+  'VND',
+] as const;
+
 const CACHE_MS = 60 * 60 * 1000; // 1 hour
-let cached: { rate: number; updatedAt: string } | null = null;
+type Cached = { rates: Record<string, number>; updatedAt: string };
+let cached: Cached | null = null;
 
 /**
  * GET /api/currency/rate
- * Returns USD → KRW exchange rate for display/conversion.
- * - With EXCHANGE_RATE_API_KEY: exchangerate-api.com (v6 with key)
- * - Without key: open.er-api.com (free, no key, supports KRW). Attribution: https://www.exchangerate-api.com
+ * Returns USD-based exchange rates for major world currencies.
+ * Used for display/conversion (prices are stored in KRW).
+ * - With EXCHANGE_RATE_API_KEY: exchangerate-api.com
+ * - Without key: open.er-api.com (free, no key)
  */
 export async function GET() {
   try {
     if (cached && Date.now() - new Date(cached.updatedAt).getTime() < CACHE_MS) {
       return NextResponse.json({
-        rate: cached.rate,
         base: 'USD',
-        target: 'KRW',
+        rates: cached.rates,
         updatedAt: cached.updatedAt,
         source: 'cache',
       });
     }
 
     const apiKey = process.env.EXCHANGE_RATE_API_KEY;
-    let rate: number;
+    let rates: Record<string, number>;
     let updatedAt: string;
 
     if (apiKey) {
-      // exchangerate-api.com (optional, more control / higher limits with key)
       const res = await fetch(
-        `https://v6.exchangerate-api.com/v6/${apiKey}/pair/USD/KRW`,
+        `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`,
         { next: { revalidate: 3600 } }
       );
       if (!res.ok) throw new Error(`ExchangeRate API error: ${res.status}`);
       const data = await res.json();
-      if (data.result !== 'success' || data.conversion_rate == null) {
+      if (data.result !== 'success' || !data.conversion_rates) {
         throw new Error('Invalid response from ExchangeRate API');
       }
-      rate = data.conversion_rate;
+      rates = data.conversion_rates as Record<string, number>;
       updatedAt = new Date().toISOString();
     } else {
-      // open.er-api.com (free, no API key, supports KRW; daily update)
-      const res = await fetch(
-        'https://open.er-api.com/v6/latest/USD',
-        { next: { revalidate: 3600 } }
-      );
+      const res = await fetch('https://open.er-api.com/v6/latest/USD', {
+        next: { revalidate: 3600 },
+      });
       if (!res.ok) throw new Error(`Open ER API error: ${res.status}`);
       const data = await res.json();
-      if (data.result !== 'success' || data.rates?.KRW == null) {
-        throw new Error('KRW rate not in response');
+      if (data.result !== 'success' || !data.rates) {
+        throw new Error('Rates not in response');
       }
-      rate = data.rates.KRW;
+      rates = data.rates as Record<string, number>;
       updatedAt = data.time_last_update_utc
         ? new Date(data.time_last_update_utc).toISOString()
         : new Date().toISOString();
     }
 
-    cached = { rate, updatedAt };
+    if (rates.USD == null) rates.USD = 1;
+    const filtered: Record<string, number> = {};
+    for (const code of MAJOR_CURRENCIES) {
+      if (typeof rates[code] === 'number') filtered[code] = rates[code];
+    }
+    if (filtered.KRW == null) filtered.KRW = 1350;
+    if (filtered.USD == null) filtered.USD = 1;
+
+    cached = { rates: filtered, updatedAt };
 
     return NextResponse.json({
-      rate,
       base: 'USD',
-      target: 'KRW',
+      rates: filtered,
       updatedAt,
       source: apiKey ? 'exchangerate-api' : 'open-er-api',
     });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Failed to fetch exchange rate';
     console.error('[currency/rate]', message);
-    // Return a fallback rate so the UI still works (e.g. 1350)
-    const fallbackRate = 1350;
+    const fallbackRates: Record<string, number> = {
+      USD: 1,
+      KRW: 1350,
+      EUR: 0.92,
+      GBP: 0.79,
+      JPY: 149,
+      CNY: 7.24,
+      HKD: 7.82,
+      SGD: 1.34,
+      THB: 35,
+      AUD: 1.53,
+      CAD: 1.36,
+      CHF: 0.88,
+      TWD: 31.5,
+      INR: 83,
+      MXN: 17.1,
+      PHP: 56,
+      IDR: 15700,
+      VND: 24500,
+    };
     return NextResponse.json(
       {
-        rate: fallbackRate,
         base: 'USD',
-        target: 'KRW',
+        rates: fallbackRates,
         updatedAt: new Date().toISOString(),
         source: 'fallback',
         error: message,

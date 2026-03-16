@@ -325,11 +325,11 @@ export default function SignUpScreen() {
             <Text style={styles.label}>Verification code *</Text>
             <TextInput
               style={inputStyle}
-              placeholder="000000"
+              placeholder="00000000"
               placeholderTextColor={theme.colors.textMuted}
               value={code}
-              onChangeText={(t) => setCode(t.replace(/\D/g, '').slice(0, 6))}
-              maxLength={6}
+              onChangeText={(t) => setCode(t.replace(/\D/g, '').slice(0, 8))}
+              maxLength={8}
               keyboardType="number-pad"
             />
             <Text style={styles.hint}>Sent to {email}</Text>
