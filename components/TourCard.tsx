@@ -194,8 +194,8 @@ export default function TourCard({
         href={displayHref}
         className="group block h-full rounded-2xl overflow-hidden bg-white border border-gray-200/60 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_36px_rgba(0,0,0,0.1)] hover:border-gray-200 transition-all duration-300 transform hover:-translate-y-0.5"
       >
-        {/* Image + gradient bridge into content */}
-        <div className="relative w-full aspect-[5/4.6] overflow-hidden">
+        {/* Image + gradient bridge into content (taller image) */}
+        <div className="relative w-full aspect-[4/3.2] sm:aspect-[4/3.5] overflow-hidden shrink-0">
           <Image
             src={displayImage}
             alt={displayTitle}
@@ -203,14 +203,14 @@ export default function TourCard({
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
-          {/* 짧은 그라데이션: 사진과 흰 영역 경계만 살짝 연결 */}
-          <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-white/90 via-white/30 to-transparent pointer-events-none" />
+          {/* 사진과 흰 영역 경계 그라데이션 (축소) */}
+          <div className="absolute inset-x-0 bottom-0 h-5 bg-gradient-to-t from-white/80 via-white/25 to-transparent pointer-events-none" />
 
-          {/* 좌측 상단: 파란 Day tour 뱃지 + 그 아래 빨간 할인 뱃지 */}
-          <div className="absolute top-3 left-3 flex flex-col gap-1 items-start">
+          {/* 좌측 상단: Day 뱃지 + 할인 뱃지 세로 배치, 겹치지 않게 */}
+          <div className="absolute top-2.5 left-2.5 flex flex-col gap-1.5 items-start">
             {displayBadge && (
               <span
-                className={`px-2.5 py-1 text-white text-[10px] font-semibold rounded-full shadow-md ${
+                className={`px-2 py-1 text-white text-[10px] font-semibold rounded-md shadow-sm leading-none ${
                   badgeVariant === "brand" ? "bg-blue-600/95" : "bg-orange-500/95"
                 }`}
               >
@@ -218,7 +218,7 @@ export default function TourCard({
               </span>
             )}
             {showDiscountBadge && (
-              <span className="bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded shadow-md">
+              <span className="bg-red-500 text-white text-[10px] font-semibold px-2 py-1 rounded-md shadow-sm leading-none">
                 {displayDiscountPercent}% OFF
               </span>
             )}
@@ -247,16 +247,16 @@ export default function TourCard({
           )}
         </div>
 
-        {/* Content: same card, no gap — left accent on hover keeps the creative touch */}
-        <div className="relative px-4 pt-3 pb-4 border-l-4 border-l-transparent group-hover:border-l-blue-500/50 transition-colors">
-          <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-1.5">
+        {/* Content: compact — left accent on hover */}
+        <div className="relative px-4 pt-2 pb-3 border-l-4 border-l-transparent group-hover:border-l-blue-500/50 transition-colors">
+          <div className="flex items-center gap-1.5 text-[11px] text-gray-500 mb-1">
             <span className="shrink-0" aria-hidden>📍</span>
             <span className="truncate">{displayLocation || displayCategory}</span>
           </div>
-          <h3 className="text-sm sm:text-base font-bold text-gray-900 line-clamp-3 leading-snug mb-2 group-hover:text-blue-700 transition-colors">
+          <h3 className="text-sm font-bold text-gray-900 line-clamp-2 leading-snug mb-1.5 group-hover:text-blue-700 transition-colors">
             {displayTitle}
           </h3>
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-gray-600 mb-2">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[11px] text-gray-600 mb-1">
             <span className="flex items-center gap-1">
               <span className="text-yellow-500" aria-hidden>⭐</span>
               <span className="font-semibold text-gray-900">{displayRating.toFixed(1)}</span>
@@ -272,15 +272,15 @@ export default function TourCard({
             )}
           </div>
           {showBookingCount && (
-            <p className="text-[11px] text-gray-500 mb-2">
+            <p className="text-[10px] text-gray-500 mb-1">
               {formatBookingCount(bookingCount!)}{" "}{t("tourCard.booked")}
             </p>
           )}
-          <div className="flex items-baseline justify-between gap-2 flex-wrap">
+          <div className="flex items-center gap-2 flex-nowrap min-w-0">
             {displayOriginalPrice && (
-              <span className="text-sm text-gray-400 line-through">{displayOriginalPrice}</span>
+              <span className="text-[11px] text-gray-400 line-through shrink-0">{displayOriginalPrice}</span>
             )}
-            <span className="text-lg sm:text-xl font-bold text-slate-700 ml-auto">
+            <span className="text-sm font-bold text-slate-700 truncate">
               {displayPrice}
             </span>
           </div>
@@ -290,34 +290,39 @@ export default function TourCard({
   }
 
   return (
-    <div className="bg-white rounded-lg overflow-hidden transition-all duration-300 group h-full flex flex-col border border-gray-200/40 md:border-gray-200/30 shadow-[0_2px_20px_rgba(0,0,0,0.08),0_1px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.12),0_2px_12px_rgba(0,0,0,0.06)] hover:border-gray-200/50 transform hover:-translate-y-0.5">
-      <Link href={displayHref} className="block flex-1 flex flex-col">
-        <div className="relative w-full aspect-[4/3] overflow-hidden">
+    <div className="bg-white rounded-2xl overflow-hidden transition-all duration-300 group h-full flex flex-col border border-gray-200/40 md:border-gray-200/30 shadow-[0_2px_20px_rgba(0,0,0,0.08),0_1px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.12),0_2px_12px_rgba(0,0,0,0.06)] hover:border-gray-200/50 transform hover:-translate-y-0.5 min-h-0 min-w-0">
+      <Link href={displayHref} className="block flex-1 flex flex-col min-h-0">
+        {/* 이미지 영역: 높이 비율 확대 */}
+        <div className="relative w-full aspect-[4/3] sm:aspect-[4/3.2] overflow-hidden shrink-0">
           <Image
             src={displayImage}
             alt={displayTitle}
             fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover group-hover:scale-105 transition-transform duration-300"
           />
-          {/* Badge overlay: brand = blue (AtoC), default = orange */}
-          {displayBadge && (
-            <div className="absolute top-2 left-2">
-              <span className={`px-2 py-0.5 text-white text-[10px] font-semibold rounded shadow-sm ${
-                badgeVariant === "brand" ? "bg-blue-600" : "bg-orange-500"
-              }`}>
+          {/* 사진과 흰색 영역 경계 그라데이션 (축소) */}
+          <div className="absolute inset-x-0 bottom-0 h-5 bg-gradient-to-t from-white/80 via-white/25 to-transparent pointer-events-none" />
+          {/* 좌측 상단: Day 뱃지 + 할인 뱃지 세로 배치, 겹치지 않게 */}
+          <div className="absolute top-2.5 left-2.5 flex flex-col gap-1.5 items-start">
+            {displayBadge && (
+              <span
+                className={`px-2 py-1 text-white text-[10px] font-semibold rounded-md shadow-sm leading-none ${
+                  badgeVariant === "brand" ? "bg-blue-600" : "bg-orange-500"
+                }`}
+              >
                 {displayBadge}
               </span>
-            </div>
-          )}
-          {/* Discount + wishlist: top-right */}
-          <div className="absolute top-2 right-2 flex items-center gap-1.5">
+            )}
             {showDiscountBadge && (
-              <span className="bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded shadow-sm">
+              <span className="bg-red-500 text-white text-[10px] font-semibold px-2 py-1 rounded-md shadow-sm leading-none">
                 {displayDiscountPercent}% OFF
               </span>
             )}
-            {tourKey && (
+          </div>
+          {/* 우측 상단: 위시리스트만 */}
+          {tourKey && (
+            <div className="absolute top-2.5 right-2.5">
               <button
                 type="button"
                 onClick={handleWishlistClick}
@@ -334,27 +339,27 @@ export default function TourCard({
                   </svg>
                 )}
               </button>
-            )}
-          </div>
+            </div>
+          )}
         </div>
-        <div className="p-3 flex-1 flex flex-col bg-gradient-to-b from-white to-gray-50/30">
+        <div className="p-2.5 flex-1 flex flex-col min-h-0 bg-white">
           {/* Badge / Category */}
-          <p className="text-[11px] text-gray-500 mb-1">
+          <p className="text-[11px] text-gray-500 mb-0.5">
             {displayBadge || (displayCategory && displayType ? `${displayCategory} • ${displayType}` : displayCategory || t('tourCard.tours'))}
           </p>
           {/* Location */}
           {displayLocation && (
-            <div className="flex items-center gap-1 text-[11px] text-gray-500 mb-1">
+            <div className="flex items-center gap-1 text-[11px] text-gray-500 mb-0.5">
               <span aria-hidden>📍</span>
               <span className="truncate">{displayLocation}</span>
             </div>
           )}
           {/* Title */}
-          <h3 className="text-sm font-medium text-gray-900 mb-2 line-clamp-2 leading-snug group-hover:text-blue-600 transition-colors">
+          <h3 className="text-sm font-medium text-gray-900 mb-1.5 line-clamp-2 leading-snug group-hover:text-blue-600 transition-colors">
             {displayTitle}
           </h3>
           {/* Rating + Duration */}
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-gray-600 mb-1">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[11px] text-gray-600 mb-0.5">
             <span className="flex items-center gap-1">
               <svg className="w-3.5 h-3.5 text-yellow-500 fill-current shrink-0" viewBox="0 0 20 20" aria-hidden>
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -373,17 +378,17 @@ export default function TourCard({
           </div>
           {/* Booking count (optional) */}
           {showBookingCount && (
-            <p className="text-[11px] text-gray-500 mb-2">
+            <p className="text-[10px] text-gray-500 mb-1">
               {formatBookingCount(bookingCount!)}{" "}{t("tourCard.booked")}
             </p>
           )}
-          {/* Price */}
+          {/* Price — one line, smaller font */}
           <div className="mt-auto">
-            <p className="text-sm font-semibold text-gray-900">
+            <p className="text-xs font-semibold text-gray-900 flex items-center gap-2 flex-nowrap min-w-0">
               {displayOriginalPrice && (
-                <span className="text-xs text-gray-400 line-through mr-1.5">{displayOriginalPrice}</span>
+                <span className="text-[11px] text-gray-400 line-through shrink-0">{displayOriginalPrice}</span>
               )}
-              {displayPrice}
+              <span className="truncate">{displayPrice}</span>
             </p>
           </div>
         </div>

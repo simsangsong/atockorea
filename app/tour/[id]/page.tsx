@@ -118,10 +118,12 @@ function StyledTimelineCard({
       </div>
       <div className="w-[16%] sm:w-[10%] flex justify-center relative z-10 shrink-0">
         {showPin !== false && (
-          <svg className="w-6 h-7 flex-shrink-0" viewBox="0 0 24 28" fill="none" aria-hidden>
-            <path d="M12 0C7.58 0 4 3.58 4 8c0 5.25 8 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8z" fill={pinColor || TIMELINE_PIN_COLORS[0]} />
-            <circle cx="12" cy="8" r="3" fill="white" />
-          </svg>
+          <div className="rounded-full p-0.5 shadow-[0_0_0_2px_rgba(255,255,255,0.95),0_0_8px_4px_rgba(255,255,255,0.8)]" aria-hidden>
+            <svg className="w-6 h-7 flex-shrink-0 block" viewBox="0 0 24 28" fill="none">
+              <path d="M12 0C7.58 0 4 3.58 4 8c0 5.25 8 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8z" fill={pinColor || TIMELINE_PIN_COLORS[0]} />
+              <circle cx="12" cy="8" r="3" fill="white" />
+            </svg>
+          </div>
         )}
       </div>
       <div className="w-[42%] sm:w-[45%]" />
@@ -541,14 +543,16 @@ export default function TourDetailPage() {
   const formatPrice = (n: number) =>
     currencyCtx ? currencyCtx.formatPrice(n) : `₩${new Intl.NumberFormat('ko-KR', { maximumFractionDigits: 0 }).format(n)}`;
 
-  /** 목적지 일정만 (픽업 제외). 픽업 항목은 상단 리스트로만 표시하고 타임라인 카드에서는 제거 */
+  /** 목적지 일정만 (픽업 제외). 픽업 항목은 Meeting & Pickup 단일 텍스트 카드로만 표시하고 타임라인 카드에서는 제거 */
   const isPickupItem = (title: string, description?: string) => {
-    const t = (title || '').trim().toLowerCase();
+    const t = (title || '').trim();
+    const tLower = t.toLowerCase();
     const d = (description || '').trim().toLowerCase();
-    const pickupTitle = /^pickup\s*[-–—:]|픽업\s*[-–—:]?|pickup\s*point/i.test(t)
-      || tour.pickupPoints?.some((p) => t.includes((p.name || '').toLowerCase()));
+    const pickupTitleEnKo = /^pickup\s*[-–—:]|픽업\s*[-–—:]?|pickup\s*point/i.test(tLower)
+      || tour.pickupPoints?.some((p) => tLower.includes((p.name || '').toLowerCase()));
+    const pickupTitleZh = /接送地點|接送地点|接機|接机|取貨地點|取货地点|接車|接车/i.test(t);
     const pickupDesc = /first\s*pickup|second\s*pickup|third\s*pickup|fourth\s*pickup|pickup\s*point/i.test(d);
-    return pickupTitle || pickupDesc;
+    return pickupTitleEnKo || pickupTitleZh || pickupDesc;
   };
   const rawDestinationItems: Array<{ time: string; title: string; description: string; image?: string }> = tour.itineraryDetails?.length
     ? tour.itineraryDetails.map((d: ItineraryDetail) => ({ time: d.time, title: d.activity, description: d.description || '', image: d.images?.[0] }))
@@ -714,31 +718,11 @@ export default function TourDetailPage() {
                 <p className="text-neutral-500 text-sm">{t('tour.itinerary')} — {t('tour.noPickupPoints') || 'No schedule data.'}</p>
               ) : (
                 <div className="w-full max-w-4xl relative flex flex-col items-center px-2 sm:px-4" id="tour-timeline">
-                  {/* 가운데 채색 물결 곡선: 하늘/주황 교차, 반투명, 굵기 50%, 50% 더 꺾임 */}
-                  <div className="absolute left-1/2 top-0 bottom-0 w-8 -translate-x-1/2 pointer-events-none z-0 opacity-90" aria-hidden>
-                    <svg className="w-full h-full" viewBox="0 0 24 400" preserveAspectRatio="none">
-                      <defs>
-                        <linearGradient id="timeline-curve-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                          <stop offset="0%" stopColor="#0EA5E9" />
-                          <stop offset="25%" stopColor="#f97316" />
-                          <stop offset="50%" stopColor="#0EA5E9" />
-                          <stop offset="75%" stopColor="#f97316" />
-                          <stop offset="100%" stopColor="#0EA5E9" />
-                        </linearGradient>
-                      </defs>
-                      {/* 상단 점선 */}
-                      <path d="M 12 0 L 12 12" fill="none" stroke="url(#timeline-curve-gradient)" strokeWidth="2" strokeLinecap="round" strokeDasharray="6 5" />
-                      {/* 가운데 더 꺾인 물결 실선 (하늘/주황, 굵기 50%) */}
-                      <path
-                        d="M 12 12 Q 24 32 12 52 Q 0 72 12 92 Q 24 112 12 132 Q 0 152 12 172 Q 24 192 12 212 Q 0 232 12 252 Q 24 272 12 292 Q 0 312 12 332 Q 24 352 12 372"
-                        fill="none"
-                        stroke="url(#timeline-curve-gradient)"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
+                  {/* 가운데 직선: 컨테이너 전체 높이에 맞춰 표시 (CSS 그라데이션) */}
+                  <div
+                    className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 pointer-events-none z-0 opacity-90 bg-gradient-to-b from-[#0EA5E9] via-[#f97316] to-[#0EA5E9]"
+                    aria-hidden
+                  />
                   {destinationItems.map((step, index) => (
                     <StyledTimelineCard
                       key={index}
@@ -785,27 +769,23 @@ export default function TourDetailPage() {
                     <h3 className="font-extrabold text-lg sm:text-xl text-neutral-900">{t('tour.pickupPointsTitle')}</h3>
                   </div>
                   {tour.pickupPoints?.length > 0 ? (
-                    <ul className="space-y-4">
-                      {tour.pickupPoints.map((point, idx) => {
-                        const timeStr = point.pickup_time ? String(point.pickup_time).replace(/(\d{1,2}:\d{2})(:\d{2})?$/, '$1') : '';
-                        return (
-                          <li key={point.id || idx} className="flex items-center gap-4 p-4 rounded-2xl bg-[#F9F8F6] border border-neutral-100 transition-colors hover:border-indigo-200">
-                            <div className="w-6 h-6 rounded-full bg-white border border-neutral-200 flex items-center justify-center font-bold text-xs shrink-0 text-neutral-700 shadow-sm">{idx + 1}</div>
-                            <div className="flex-1 min-w-0">
-                              <h4 className="font-bold text-sm text-neutral-900">{point.name}</h4>
-                              <p className="text-xs text-neutral-500 mt-1 font-medium">{timeStr || (point.address ?? '')}</p>
-                            </div>
-                            <div className="w-20 h-14 sm:w-24 sm:h-16 rounded-xl overflow-hidden bg-neutral-200 border border-neutral-100 shrink-0 flex items-center justify-center">
-                              {point.image_url ? (
-                                <Image src={point.image_url} alt={point.name} width={96} height={64} className="w-full h-full object-cover" />
-                              ) : (
-                                <span className="text-[10px] font-medium text-neutral-400">{t('tour.photoPlaceholder')}</span>
-                              )}
-                            </div>
-                          </li>
-                        );
-                      })}
-                    </ul>
+                    <div className="p-4 sm:p-5 rounded-2xl bg-[#F9F8F6] border border-neutral-100">
+                      <ul className="space-y-2">
+                        {tour.pickupPoints.map((point, idx) => {
+                          const timeStr = point.pickup_time ? String(point.pickup_time).replace(/(\d{1,2}:\d{2})(:\d{2})?$/, '$1') : '';
+                          const pickupLabel = locale === 'zh-TW' ? '接送地點' : '接送地点';
+                          const rawName = point.name || point.address || '';
+                          const name = rawName.replace(/取货地点|取貨地點|接机|接機/g, pickupLabel);
+                          return (
+                            <li key={point.id || idx} className="flex items-baseline gap-2 text-sm">
+                              {timeStr ? <span className="font-semibold text-neutral-700 shrink-0">{timeStr}</span> : null}
+                              {timeStr && name ? <span className="text-neutral-500"> · </span> : null}
+                              <span className="text-neutral-900 font-medium">{name || '—'}</span>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
                   ) : null}
                 </div>
                 <div className="flex-1 w-full min-h-[250px]">

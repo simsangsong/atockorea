@@ -3,7 +3,7 @@
  * 서버 전용: createServerClient()로 호출.
  */
 
-const OVERVIEW_MAX_LENGTH = 150;
+const OVERVIEW_MAX_LENGTH = 350;
 
 function escapeIlike(s: string): string {
   return s
@@ -16,6 +16,23 @@ function escapeIlike(s: string): string {
 export interface PlaceEnrichment {
   image_url: string | null;
   overview: string | null;
+  /** 개폐장시간 (LOD open_time) */
+  open_time?: string | null;
+  /** 이용요금 (LOD use_fee) */
+  use_fee?: string | null;
+  /** 연락처 (LOD tel) */
+  tel?: string | null;
+  /** 위도 (places.mapy) */
+  mapy?: number | null;
+  /** 경도 (places.mapx) */
+  mapx?: number | null;
+  /** 요청 언어에 없어서 국문(ko)으로 찾은 경우. 이때 overview는 국문이므로 요청 언어로 번역해 출력 권장 */
+  from_fallback_lang?: 'ko';
+  /** 매칭된 places 행의 id (번역 저장 시 동일 id로 요청 언어 행 upsert용) */
+  place_id?: number;
+  /** 매칭된 행의 title/address (번역 행 저장 시 사용) */
+  place_title?: string | null;
+  place_address?: string | null;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -50,7 +67,7 @@ export async function getPlaceEnrichment(
   langType: string = 'en'
 ): Promise<PlaceEnrichment> {
   const result: PlaceEnrichment = { image_url: null, overview: null };
-  const safeLang = ['en', 'ko', 'ja', 'chs', 'cht'].includes(langType) ? langType : 'en';
+  const safeLang = ['en', 'ko', 'ja', 'chs', 'cht', 'es'].includes(langType) ? langType : 'en';
   const fullName = escapeIlike(name).slice(0, 80);
   const primaryName = escapeIlike(getPrimaryName(name)).slice(0, 80);
   const secondaryName = escapeIlike(getSecondaryName(name)).slice(0, 80);
@@ -59,10 +76,15 @@ export async function getPlaceEnrichment(
   const baseCandidates = primaryName && primaryName !== fullName ? [primaryName, fullName] : [fullName].filter(Boolean);
   if (baseCandidates.length === 0 && !secondaryName && !addrPart) return result;
 
-  const langsToTry: string[] = safeLang === 'ko' ? ['ko', 'en', 'ja', 'chs', 'cht'] : [safeLang];
+  /** 요청 언어 우선, 없으면 국문(ko) 폴백 — 사진·상세 등 다른 언어에 없을 때 국문에서 찾기 위함 */
+  const langsToTry: string[] =
+    safeLang === 'ko'
+      ? ['ko', 'en', 'ja', 'chs', 'cht']
+      : [safeLang, 'ko'];
 
   try {
-    let rows: { image_url: unknown; overview: unknown } | null = null;
+    let rows: { id?: unknown; title?: unknown; address?: unknown; image_url?: unknown; overview?: unknown; open_time?: unknown; use_fee?: unknown; tel?: unknown; mapx?: unknown; mapy?: unknown } | null = null;
+    let foundLang: string | null = null;
 
     for (const lang of langsToTry) {
       const nameCandidates =
@@ -74,24 +96,30 @@ export async function getPlaceEnrichment(
         if (!namePart) continue;
         const { data } = await supabase
           .from('places')
-          .select('image_url, overview')
+          .select('id, title, address, image_url, overview, open_time, use_fee, tel, mapx, mapy')
           .eq('lang_type', lang)
           .ilike('title', `%${namePart}%`)
           .limit(1);
         rows = data?.[0] ?? null;
-        if (rows) break;
+        if (rows) {
+          foundLang = lang;
+          break;
+        }
       }
       if (rows) break;
 
       if (addrPart) {
         const { data: byAddr } = await supabase
           .from('places')
-          .select('image_url, overview')
+          .select('id, title, address, image_url, overview, open_time, use_fee, tel, mapx, mapy')
           .eq('lang_type', lang)
           .ilike('address', `%${addrPart}%`)
           .limit(1);
         rows = byAddr?.[0] ?? null;
-        if (rows) break;
+        if (rows) {
+          foundLang = lang;
+          break;
+        }
       }
       if (rows) break;
 
@@ -99,15 +127,17 @@ export async function getPlaceEnrichment(
         const shortAddr = addrPart.slice(0, 40);
         const { data: byShortAddr } = await supabase
           .from('places')
-          .select('image_url, overview')
+          .select('id, title, address, image_url, overview, open_time, use_fee, tel, mapx, mapy')
           .eq('lang_type', lang)
           .ilike('address', `%${shortAddr}%`)
           .limit(1);
         rows = byShortAddr?.[0] ?? null;
+        if (rows) foundLang = lang;
       }
     }
 
     if (rows) {
+      if (foundLang === 'ko' && safeLang !== 'ko') result.from_fallback_lang = 'ko';
       const url = rows.image_url ? String(rows.image_url).trim() : '';
       result.image_url = url || null;
       const raw = rows.overview ? String(rows.overview).trim() : '';
@@ -117,9 +147,51 @@ export async function getPlaceEnrichment(
             ? raw
             : raw.slice(0, OVERVIEW_MAX_LENGTH).replace(/\s+\S*$/, '') + '…';
       }
+      if (typeof rows.id === 'number') result.place_id = rows.id;
+      if (rows.title != null) result.place_title = rows.title ? String(rows.title).trim() : null;
+      if (rows.address != null) result.place_address = rows.address ? String(rows.address).trim() : null;
+      if (rows.open_time != null && String(rows.open_time).trim()) result.open_time = String(rows.open_time).trim();
+      if (rows.use_fee != null && String(rows.use_fee).trim()) result.use_fee = String(rows.use_fee).trim();
+      if (rows.tel != null && String(rows.tel).trim()) result.tel = String(rows.tel).trim();
+      const numMapx = rows.mapx != null && rows.mapx !== '' ? Number(rows.mapx) : NaN;
+      const numMapy = rows.mapy != null && rows.mapy !== '' ? Number(rows.mapy) : NaN;
+      if (!Number.isNaN(numMapx)) result.mapx = numMapx;
+      if (!Number.isNaN(numMapy)) result.mapy = numMapy;
     }
   } catch {
     // 조회 실패 시 빈 값 반환
   }
   return result;
+}
+
+/**
+ * 번역한 overview를 places 테이블에 저장. 같은 id + lang_type으로 다음 요청 시 조회됨.
+ * embedding은 null로 두고, 필요 시 파이프라인에서 backfill 가능.
+ */
+export async function savePlaceTranslation(
+  supabase: SupabaseClient,
+  payload: {
+    id: number;
+    lang_type: string;
+    title: string;
+    address: string | null;
+    image_url: string | null;
+    overview: string;
+  }
+): Promise<void> {
+  try {
+    await supabase.from('places').upsert(
+      {
+        id: payload.id,
+        lang_type: payload.lang_type,
+        title: payload.title.slice(0, 200),
+        address: payload.address?.slice(0, 500) ?? null,
+        image_url: payload.image_url?.slice(0, 1000) ?? null,
+        overview: payload.overview.slice(0, 5000),
+      },
+      { onConflict: 'id,lang_type', ignoreDuplicates: false }
+    );
+  } catch {
+    // 저장 실패 시 무시 (다음 요청에 다시 번역)
+  }
 }

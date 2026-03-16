@@ -93,6 +93,13 @@ function TourCard({
           <p className="text-sm text-gray-500 line-clamp-2 mb-3">{tour.summary}</p>
         )}
 
+        {/* Hotel / Pickup */}
+        {tour.hotel_address && (
+          <p className="text-xs text-gray-500 mb-3 flex items-start gap-1.5">
+            <MapPin className="w-3.5 h-3.5 shrink-0 mt-0.5" />
+            <span className="line-clamp-2">{tour.hotel_address}</span>
+          </p>
+        )}
         {/* Meta chips */}
         <div className="flex flex-wrap gap-1.5 mb-4">
           <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-gray-100 text-gray-600 text-xs font-medium">
@@ -156,9 +163,13 @@ function TourCard({
                         {place.address && (
                           <p className="text-xs text-gray-400 truncate">{place.address}</p>
                         )}
-                        {place.overview && (
-                          <p className="text-xs text-gray-500 mt-0.5 line-clamp-2">{place.overview}</p>
-                        )}
+                        <div className="mt-0.5 min-h-[2rem]">
+                          {place.overview ? (
+                            <p className="text-sm text-gray-600 line-clamp-3 leading-snug">{place.overview}</p>
+                          ) : (
+                            <p className="text-sm text-gray-400/60 italic">—</p>
+                          )}
+                        </div>
                       </div>
                     </li>
                   ))}
@@ -168,9 +179,9 @@ function TourCard({
           </div>
         )}
 
-        {/* CTA */}
+        {/* CTA: join this specific tour (hotel distance check on target page) */}
         <Link
-          href={`/custom-join-tour?propose=1`}
+          href={`/custom-join-tour?join=${tour.id}`}
           className="mt-4 w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-700 text-white text-sm font-bold transition-all"
         >
           <Sparkles className="w-4 h-4" />
@@ -184,7 +195,7 @@ function TourCard({
 export default function ProposedToursPage() {
   const t = useTranslations();
   const searchParams = useSearchParams();
-  const idFromQuery = searchParams.get('id');
+  const idFromQuery = searchParams?.get('id') ?? null;
 
   const [list, setList] = useState<ProposedTourItem[]>([]);
   const [loading, setLoading] = useState(true);

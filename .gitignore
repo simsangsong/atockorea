@@ -45,3 +45,12 @@ next-env.d.ts
 /android
 /ios
 /.capacitor
+
+# data pipeline: large/generated files (GitHub 100MB limit)
+atoc-data-pipeline/visitkorea.nt
+atoc-data-pipeline/**/places.db
+atoc-data-pipeline/**/__pycache__/
+atoc-data-pipeline/lod/etl_log.txt
+atoc-data-pipeline/lod/etl_progress.txt
+atoc-data-pipeline/lod/etl_error_log.txt
+atoc-data-pipeline/lod/etl_skipped_lines.log

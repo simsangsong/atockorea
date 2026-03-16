@@ -1,15 +1,34 @@
+'use client';
 // components/TourCardDetail.tsx
-import React, { memo } from "react";
+import React, { memo, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import type { DetailedTour } from "../data/tours";
+import type { DetailedTour, ScheduleItem } from "../data/tours";
+import { useTranslations } from "@/lib/i18n";
 
 type Props = {
   tour: DetailedTour;
+  /** When provided (e.g. for API tours), use this link instead of city/slug path */
+  detailHref?: string;
 };
 
-function TourCardDetail({ tour }: Props) {
-  // 도시별 상세페이지 라우트 자동 처리
+/** 픽업 항목 제외한 일정만 (제목·일정 이름 나열용) */
+function isPickupScheduleItem(title: string): boolean {
+  const t = (title || "").trim().toLowerCase();
+  return (
+    /^pickup\s|hotel\s*pickup|픽업|接送|接機|接机|取貨|取货/i.test(t) ||
+    t.includes("pickup point") ||
+    t.includes("meeting point")
+  );
+}
+
+const TIMELINE_DOT_COLORS = ["#0EA5E9", "#f97316"] as const;
+/** 사진 높이에 맞춰 표시할 일정 개수, 초과분은 "+n more spots"로 요약 */
+const MAX_VISIBLE_ITINERARY = 4;
+
+function TourCardDetail({ tour, detailHref }: Props) {
+  const t = useTranslations();
+
   const basePath =
     tour.city === "Jeju"
       ? "/jeju"
@@ -17,14 +36,26 @@ function TourCardDetail({ tour }: Props) {
       ? "/busan"
       : "/seoul";
 
-  const href = tour.slug ? `${basePath}/${tour.slug}` : "#";
-  const clickable = Boolean(tour.slug);
+  const href = detailHref ?? (tour.slug ? `${basePath}/${tour.slug}` : "#");
+  const clickable = Boolean(detailHref || tour.slug);
+
+  /** 픽업 제외 일정 이름만 (오른쪽 타임라인용) */
+  const scheduleNamesOnly = useMemo(() => {
+    if (!tour.schedule || tour.schedule.length === 0) return [];
+    return tour.schedule
+      .filter((item: ScheduleItem) => !isPickupScheduleItem(item.title))
+      .map((item: ScheduleItem) => item.title);
+  }, [tour.schedule]);
+
+  /** 픽업: 수동 키 → 번역, 수동 문구 → 그대로, 없으면 개수 표시 (다국어) */
+  const pickupCount = tour.pickupPointsCount ?? 0;
+  const pickupLabel = tour.pickupDisplayKey ? t(`tourCard.${tour.pickupDisplayKey}`) : (tour.pickupDisplay ?? (pickupCount === 1 ? t("tourCard.pickupPointsCountOne", { count: 1 }) : t("tourCard.pickupPointsCountOther", { count: pickupCount })));
 
   const CardInner = (
     <article className="mx-auto mb-4 w-[90%] max-w-3xl">
       <div
         className="
-          group flex flex-col sm:flex-row
+          group flex flex-col
           gap-3 sm:gap-4
           rounded-3xl bg-white/95
           border border-[#e5e5ea]
@@ -34,139 +65,134 @@ function TourCardDetail({ tour }: Props) {
           px-3 py-3 sm:px-4 sm:py-4
         "
       >
-        {/* LEFT: 이미지 + 타이틀 + 가격 */}
-        <div className="flex w-full flex-col sm:w-[32%]">
-          <div className="relative w-full h-[180px] sm:h-[160px] md:h-[180px] overflow-hidden rounded-2xl bg-[#f2f2f7]">
+        {/* 제목 위: 좌 사진(모바일에서도 축소), 우 일정 이름 + 타임라인 */}
+        <div className="flex flex-row gap-2 sm:gap-4">
+          <div className="relative w-[46%] sm:w-[43%] aspect-[4/3] sm:aspect-[4/3.5] overflow-hidden rounded-xl sm:rounded-2xl bg-[#f2f2f7] flex-shrink-0 max-h-[120px] sm:max-h-none">
             <Image
               src={tour.imageUrl}
               alt={tour.title}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-              sizes="(max-width: 640px) 100vw, 32vw"
+              sizes="(max-width: 640px) 46vw, 43vw"
               loading="lazy"
             />
           </div>
-
-          <div className="mt-2 sm:mt-3">
-            <p className="text-[11px] font-medium uppercase tracking-[0.06em] text-[#86868b]">
-              {tour.tag}
-            </p>
-            <h3 className="mt-0.5 line-clamp-2 text-[14px] sm:text-[15px] font-semibold text-[#111111]">
-              {tour.title}
-            </h3>
-            <p className="mt-1 text-[12px] sm:text-[13px] font-semibold text-[#0c66ff]">
-              {tour.price}
-            </p>
+          <div className="flex-1 min-w-0 flex flex-col justify-center overflow-hidden">
+            {scheduleNamesOnly.length === 0 ? (
+              <p className="text-[11px] text-[#6e6e73]">{t("tourCard.noItinerary")}</p>
+            ) : (
+              <>
+                <ul className="flex flex-col">
+                  {scheduleNamesOnly
+                    .slice(0, MAX_VISIBLE_ITINERARY)
+                    .map((name, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <div className="flex flex-col items-center flex-shrink-0 pt-0.5">
+                          <span
+                            className="w-2 h-2.5 sm:w-2.5 sm:h-3 rounded-full flex-shrink-0"
+                            style={{
+                              backgroundColor: TIMELINE_DOT_COLORS[index % 2],
+                            }}
+                            aria-hidden
+                          />
+                          {index < Math.min(scheduleNamesOnly.length, MAX_VISIBLE_ITINERARY) - 1 && (
+                            <span
+                              className="w-px h-4 sm:h-5 mt-0.5 bg-[#d1d1d6] flex-shrink-0"
+                              aria-hidden
+                            />
+                          )}
+                        </div>
+                        <span className="text-[11px] sm:text-[12px] font-medium text-[#1c1c1e] pt-px">
+                          {name}
+                        </span>
+                      </li>
+                    ))}
+                </ul>
+                {scheduleNamesOnly.length > MAX_VISIBLE_ITINERARY && (
+                  <p className="text-[11px] text-[#6e6e73] mt-1.5 pl-[22px] sm:pl-7">
+                    {t("tourCard.moreSpots", { count: scheduleNamesOnly.length - MAX_VISIBLE_ITINERARY })}
+                  </p>
+                )}
+              </>
+            )}
           </div>
         </div>
 
-        {/* RIGHT: 정보 카드 + 샘플 일정 */}
-        <div className="mt-2 flex-1 text-[11px] text-[#1c1c1e] sm:mt-0 sm:pl-1 sm:text-[13px]">
-          {/* 2×2 info cards */}
-          <div className="mb-2 grid grid-cols-2 gap-3 sm:mb-3 sm:gap-4">
-            {/* Duration */}
-            <div className="flex items-start gap-1.5 rounded-2xl bg-[#f5f5f7] px-3 py-2.5 sm:px-3.5 sm:py-3">
-              <span className="mt-[3px] h-1.5 w-1.5 rounded-full bg-[#0c66ff]" />
-              <div>
-                <span className="block text-[11px] font-semibold text-[#3a3a3c] sm:text-[12px]">
-                  Duration
+        {/* 제목 + 가격 (가격은 오른쪽 정렬, 할인전·할인후·할인율) */}
+        <div>
+          <p className="text-[11px] font-medium uppercase tracking-[0.06em] text-[#86868b]">
+            {tour.tag}
+          </p>
+          <h3 className="mt-0.5 line-clamp-2 text-[14px] sm:text-[15px] font-semibold text-[#111111]">
+            {tour.title}
+          </h3>
+          <div className="mt-1 flex flex-wrap items-baseline justify-end gap-x-2 gap-y-0.5 text-right">
+            {tour.originalPrice && (
+              <span className="text-[12px] sm:text-[13px] text-[#86868b] line-through">
+                {tour.originalPrice}
+              </span>
+            )}
+            <span className="text-[13px] sm:text-[14px] font-semibold text-[#0c66ff]">
+              {tour.price}
+            </span>
+            {tour.discountPercent != null && tour.discountPercent > 0 && (() => {
+              const label = t("tourCard.discountOff", { percent: tour.discountPercent });
+              const display = (label && label !== "tourCard.discountOff") ? label : `${tour.discountPercent}% OFF`;
+              return (
+                <span className="text-[11px] sm:text-[12px] font-semibold text-red-500">
+                  {display}
                 </span>
-                <span className="text-[11px] text-[#1c1c1e] sm:text-[13px]">
-                  {tour.duration}
-                </span>
-              </div>
-            </div>
+              );
+            })()}
+          </div>
+        </div>
 
-            {/* Lunch */}
-            <div className="flex items-start gap-1.5 rounded-2xl bg-[#f5f5f7] px-3 py-2.5 sm:px-3.5 sm:py-3">
-              <span className="mt-[3px] h-1.5 w-1.5 rounded-full bg-[#34c759]" />
-              <div>
-                <span className="block text-[11px] font-semibold text-[#3a3a3c] sm:text-[12px]">
-                  Lunch
-                </span>
-                <span className="text-[11px] text-[#1c1c1e] sm:text-[13px]">
-                  {tour.lunchIncluded ? "Included" : "Not included"}
-                </span>
-              </div>
-            </div>
-
-            {/* Tickets */}
-            <div className="flex items-start gap-1.5 rounded-2xl bg-[#f5f5f7] px-3 py-2.5 sm:px-3.5 sm:py-3">
-              <span className="mt-[3px] h-1.5 w-1.5 rounded-full bg-[#ff9500]" />
-              <div>
-                <span className="block text-[11px] font-semibold text-[#3a3a3c] sm:text-[12px]">
-                  Tickets
-                </span>
-                <span className="text-[11px] text-[#1c1c1e] sm:text-[13px]">
-                  {tour.ticketIncluded ? "Included" : "Not included"}
-                </span>
-              </div>
-            </div>
-
-            {/* Pickup */}
-            <div className="flex items-start gap-1.5 rounded-2xl bg-[#f5f5f7] px-3 py-2.5 sm:px-3.5 sm:py-3">
-              <span className="mt-[3px] h-1.5 w-1.5 rounded-full bg-[#5856d6]" />
-              <div>
-                <span className="block text-[11px] font-semibold text-[#3a3a3c] sm:text-[12px]">
-                  Pickup
-                </span>
-                <span className="text-[11px] text-[#1c1c1e] sm:text-[13px]">
-                  {tour.pickupInfo}
-                </span>
-              </div>
+        {/* 제목 밑: Duration, Lunch, Tickets, Pickup 지역 갯수 */}
+        <div className="grid grid-cols-2 gap-3 sm:gap-4">
+          <div className="flex items-start gap-1.5 rounded-2xl bg-[#f5f5f7] px-3 py-2.5 sm:px-3.5 sm:py-3">
+            <span className="mt-[3px] h-1.5 w-1.5 rounded-full bg-[#0c66ff] shrink-0" />
+            <div>
+              <span className="block text-[11px] font-semibold text-[#3a3a3c] sm:text-[12px]">
+                {t("tourCard.duration")}
+              </span>
+              <span className="text-[11px] text-[#1c1c1e] sm:text-[13px]">
+                {tour.duration}
+              </span>
             </div>
           </div>
-
-          {tour.notes && (
-            <div className="mt-1 text-[11px] text-[#6e6e73] sm:text-[12px]">
-              {tour.notes}
-            </div>
-          )}
-
-          {/* Sample day plan */}
-          {tour.schedule && tour.schedule.length > 0 && (
-            <div className="mt-3">
-              <span className="mb-1.5 block text-[11px] font-semibold text-[#3a3a3c] sm:text-[12px]">
-                Sample day plan
+          <div className="flex items-start gap-1.5 rounded-2xl bg-[#f5f5f7] px-3 py-2.5 sm:px-3.5 sm:py-3">
+            <span className="mt-[3px] h-1.5 w-1.5 rounded-full bg-[#34c759] shrink-0" />
+            <div>
+              <span className="block text-[11px] font-semibold text-[#3a3a3c] sm:text-[12px]">
+                {t("tourCard.lunch")}
               </span>
-              <div className="rounded-2xl bg-[#f5f5f7] px-3 py-2 sm:px-3.5 sm:py-2.5">
-                <ol className="space-y-1.5">
-                  {tour.schedule.slice(0, 4).map((item, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <div className="flex flex-col items-center">
-                        <span className="mt-[2px] h-2 w-2 rounded-full bg-[#0c66ff]" />
-                        {index <
-                          Math.min(tour.schedule?.length ?? 0, 4) - 1 && (
-                          <span className="mt-0.5 h-5 w-px bg-[#d1d1d6]" />
-                        )}
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-baseline justify-between gap-2">
-                          <span className="text-[11px] font-medium text-[#111111] sm:text-[12px]">
-                            {item.time}
-                          </span>
-                          <span className="flex-1 text-right text-[11px] font-medium text-[#3a3a3c] sm:text-[12px] sm:text-left">
-                            {item.title}
-                          </span>
-                        </div>
-                        {item.description && (
-                          <p className="mt-0.5 text-[11px] text-[#6e6e73]">
-                            {item.description}
-                          </p>
-                        )}
-                      </div>
-                    </li>
-                  ))}
-                  {tour.schedule.length > 4 && (
-                    <li className="pt-1 text-[11px] text-[#6e6e73]">
-                      + {tour.schedule.length - 4} more stops in the full
-                      itinerary
-                    </li>
-                  )}
-                </ol>
-              </div>
+              <span className="text-[11px] text-[#1c1c1e] sm:text-[13px]">
+                {tour.lunchIncluded ? t("tourCard.included") : t("tourCard.notIncluded")}
+              </span>
             </div>
-          )}
+          </div>
+          <div className="flex items-start gap-1.5 rounded-2xl bg-[#f5f5f7] px-3 py-2.5 sm:px-3.5 sm:py-3">
+            <span className="mt-[3px] h-1.5 w-1.5 rounded-full bg-[#ff9500] shrink-0" />
+            <div>
+              <span className="block text-[11px] font-semibold text-[#3a3a3c] sm:text-[12px]">
+                {t("tourCard.tickets")}
+              </span>
+              <span className="text-[11px] text-[#1c1c1e] sm:text-[13px]">
+                {tour.ticketIncluded ? t("tourCard.included") : t("tourCard.notIncluded")}
+              </span>
+            </div>
+          </div>
+          <div className="flex items-start gap-1.5 rounded-2xl bg-[#f5f5f7] px-3 py-2.5 sm:px-3.5 sm:py-3">
+            <span className="mt-[3px] h-1.5 w-1.5 rounded-full bg-[#5856d6] shrink-0" />
+            <div>
+              <span className="block text-[11px] font-semibold text-[#3a3a3c] sm:text-[12px]">
+                {t("tourCard.pickup")}
+              </span>
+              <span className="text-[11px] text-[#1c1c1e] sm:text-[13px]">
+                {pickupLabel}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </article>

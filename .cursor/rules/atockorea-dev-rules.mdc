@@ -39,5 +39,11 @@ alwaysApply: true
   - `.map((item) => ...)` 콜백에서 파라미터 타입은 반드시 명시 (`(item: MyType) => ...`)
   - `SupabaseClient` 제네릭 타입은 `createClient<any, any, any>` 형태로 느슨하게 지정
 
+### Google Maps / Places API
+- **Places API는 반드시 최신 버전(Places API (New))만 사용할 것.**
+- 장소 검색/자동완성에는 `google.maps.places.PlaceAutocompleteElement`와 `gmp-select` 이벤트만 사용.
+- **레거시 API 호출 금지**: `google.maps.places.Autocomplete`, `Autocomplete` 컴포넌트(@react-google-maps/api) 사용하지 말 것. 신규 코드에 레거시 fallback 추가 금지.
+- Google Cloud Console에서 **Places API (New)** 사용 설정 후, 스크립트는 `libraries: ['places']` 로 로드.
+
 ### Git Push 전 체크리스트
 - 수정한 모든 파일에 `ReadLints`를 실행하여 오류 0개 확인 후 push할 것.

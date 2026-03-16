@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Anthropic from '@anthropic-ai/sdk';
-import { CUSTOM_JOIN_TOUR, getCustomJoinTourPricing } from '@/lib/constants/custom-join-tour';
+import { CUSTOM_JOIN_TOUR, getCustomJoinTourPricing, type HotelLocation } from '@/lib/constants/custom-join-tour';
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY ?? '' });
 
@@ -17,6 +17,8 @@ export interface DaySchedule {
 export interface CustomJoinTourConfirmRequest {
   schedule: DaySchedule[];
   numberOfParticipants: number;
+  /** 호텔(숙소) 위치 — 서귀포 시내/시외 시 인당 +1.5만 원 */
+  hotelLocation?: HotelLocation;
 }
 
 export interface CustomJoinTourConfirmResponse {
@@ -38,6 +40,9 @@ export async function POST(req: NextRequest) {
     const body = (await req.json()) as CustomJoinTourConfirmRequest;
     const schedule = Array.isArray(body.schedule) ? body.schedule : [];
     const numberOfParticipants = Number(body.numberOfParticipants) || 0;
+    const hotelLocation = body.hotelLocation && ['jeju_city', 'jeju_outside', 'seogwipo_city', 'seogwipo_outside'].includes(body.hotelLocation)
+      ? (body.hotelLocation as HotelLocation)
+      : undefined;
 
     if (schedule.length === 0) {
       return NextResponse.json({ error: 'Schedule is required.' }, { status: 400 });
@@ -104,7 +109,7 @@ ${JSON.stringify(schedule, null, 2)}`;
       jejuCrossRegionNotice = `제주도에서 하루에 동쪽·서쪽 양쪽을 방문하시는 경우 추가 요금 ${(EXTRA_FEE / 10000).toFixed(0)}만 원이 발생합니다. 당일 가이드에게 현금으로 지불해 주시기 바랍니다.`;
     }
 
-    const pricing = getCustomJoinTourPricing(numberOfParticipants);
+    const pricing = getCustomJoinTourPricing(numberOfParticipants, hotelLocation);
 
     const response: CustomJoinTourConfirmResponse = {
       success: true,

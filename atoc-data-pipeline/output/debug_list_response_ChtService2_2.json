@@ -1,0 +1,25 @@
+{
+  "reason": "items 타입이 dict 아님",
+  "list_url": "https://apis.data.go.kr/B551011/ChtService2/areaBasedSyncList2",
+  "request_params": {
+    "contentTypeId": 12,
+    "pageNo": 1,
+    "numOfRows": 100,
+    "arrange": "C",
+    "lDongRegnCd": 50
+  },
+  "response": {
+    "response": {
+      "header": {
+        "resultCode": "0000",
+        "resultMsg": "OK"
+      },
+      "body": {
+        "items": "",
+        "numOfRows": 0,
+        "pageNo": 1,
+        "totalCount": 0
+      }
+    }
+  }
+}

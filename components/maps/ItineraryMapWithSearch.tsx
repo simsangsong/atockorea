@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback, useEffect, useMemo, useRef } from 'react';
-import { GoogleMap, useLoadScript, Marker, Autocomplete } from '@react-google-maps/api';
+import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import { mapOptions, defaultCenter, libraries, geocodeAddress } from '@/lib/google-maps';
 import { useTranslations } from '@/lib/i18n';
 
@@ -43,8 +43,7 @@ export default function ItineraryMapWithSearch({
 }: ItineraryMapWithSearchProps) {
   const t = useTranslations();
   const [map, setMap] = useState<google.maps.Map | null>(null);
-  const [autocomplete, setAutocomplete] = useState<google.maps.places.Autocomplete | null>(null);
-  const [useLegacyAutocomplete, setUseLegacyAutocomplete] = useState(false);
+  const [placeApiNewUnavailable, setPlaceApiNewUnavailable] = useState(false);
   const [selectedPlace, setSelectedPlace] = useState<{ name: string; address: string } | null>(null);
   const [selectedDayIndex, setSelectedDayIndex] = useState(0);
   const [mapLocations, setMapLocations] = useState<MapLocation[]>([]);
@@ -114,34 +113,15 @@ export default function ItineraryMapWithSearch({
     };
   }, [isLoaded, allPlaces]);
 
-  const onAutocompleteLoad = useCallback((ac: google.maps.places.Autocomplete) => {
-    setAutocomplete(ac);
-  }, []);
-
-  const onPlaceChanged = useCallback(() => {
-    if (!autocomplete) return;
-    const place = autocomplete.getPlace();
-    const name = place.name || '';
-    const address = place.formatted_address || place.vicinity || '';
-    if (!name && !address) return;
-    setSelectedPlace({ name, address });
-    if (map && place.geometry?.location) {
-      const lat = place.geometry.location.lat();
-      const lng = place.geometry.location.lng();
-      map.setCenter({ lat, lng });
-      map.setZoom(15);
-    }
-  }, [autocomplete, map]);
-
-  // Places API (New) PlaceAutocompleteElement — Legacy API 대체로 콘솔 오류 해소
+  // Places API (New) only — PlaceAutocompleteElement. Legacy Autocomplete 사용 금지.
   useEffect(() => {
-    if (!isLoaded || !apiKey || !searchContainerRef.current || typeof google === 'undefined' || useLegacyAutocomplete) return;
+    if (!isLoaded || !apiKey || !searchContainerRef.current || typeof google === 'undefined') return;
 
     const PlacesLibrary = google.maps.places;
     const PlaceAutocompleteElement = (PlacesLibrary as unknown as { PlaceAutocompleteElement?: new (opts?: object) => HTMLElement }).PlaceAutocompleteElement;
 
     if (!PlaceAutocompleteElement) {
-      setUseLegacyAutocomplete(true);
+      setPlaceApiNewUnavailable(true);
       return;
     }
 
@@ -183,7 +163,7 @@ export default function ItineraryMapWithSearch({
       placeAutocomplete.removeEventListener('gmp-select', handleSelect);
       if (container.contains(placeAutocomplete)) container.removeChild(placeAutocomplete);
     };
-  }, [isLoaded, apiKey, mapCenter, map, useLegacyAutocomplete]);
+  }, [isLoaded, apiKey, mapCenter, map]);
 
   const handleAddToItinerary = useCallback(() => {
     if (!selectedPlace) return;
@@ -228,25 +208,11 @@ export default function ItineraryMapWithSearch({
       <div className="p-4 border-b border-neutral-100">
         <h3 className="text-sm font-bold text-neutral-900 mb-3">{t('home.customJoinTour.mapSearchTitle')}</h3>
         <div className="flex flex-col sm:flex-row gap-2">
-          <div className="flex-1 min-w-0" ref={searchContainerRef}>
-            {useLegacyAutocomplete ? (
-              <Autocomplete
-                onLoad={onAutocompleteLoad}
-                onPlaceChanged={onPlaceChanged}
-                options={{
-                  types: ['establishment', 'geocode'],
-                  componentRestrictions: { country: 'kr' },
-                  fields: ['name', 'formatted_address', 'geometry', 'vicinity'],
-                }}
-              >
-                <input
-                  type="text"
-                  placeholder={t('home.customJoinTour.mapSearchPlaceholder')}
-                  className="w-full px-3 py-2.5 text-sm border border-neutral-200 rounded-xl focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none"
-                />
-              </Autocomplete>
+          <div className="flex-1 min-w-0 min-h-[42px]">
+            {placeApiNewUnavailable ? (
+              <p className="text-amber-600 text-sm py-1">Places API (New)를 사용할 수 없습니다.</p>
             ) : (
-              <div className="min-h-[42px]" />
+              <div className="w-full min-h-[42px]" ref={searchContainerRef} />
             )}
           </div>
           {selectedPlace && (

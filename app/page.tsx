@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
 import HeroSection from '@/components/HeroSection';
 import CompactTrustBar from '@/components/CompactTrustBar';
+import HomeTourSections from '@/components/HomeTourSections';
 import DestinationsCards from '@/components/DestinationsCards';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
@@ -24,6 +25,7 @@ export default function HomePage() {
         <HeroSection />
         <CompactTrustBar />
         <DestinationsCards />
+        <HomeTourSections />
       </main>
       <Footer />
       <BottomNav />

@@ -20,10 +20,10 @@ export default function CheckoutPage() {
   const [status, setStatus] = useState<'loading' | 'redirect' | 'error'>('loading');
 
   useEffect(() => {
-    const tourSlug = searchParams.get('tourSlug');
-    const tourId = searchParams.get('tourId');
-    const date = searchParams.get('date');
-    const guests = searchParams.get('guests');
+    const tourSlug = searchParams?.get('tourSlug');
+    const tourId = searchParams?.get('tourId');
+    const date = searchParams?.get('date');
+    const guests = searchParams?.get('guests');
 
     let resolvedTourId: string | null = tourId || null;
     let resolvedDate = date || null;

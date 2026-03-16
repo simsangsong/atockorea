@@ -1,0 +1,54 @@
+{
+  "items": {
+    "item": [
+      {
+        "code": "AC",
+        "name": "宿泊",
+        "rnum": 1
+      },
+      {
+        "code": "EV",
+        "name": "フェスティバル/パフォーマンス/イベント",
+        "rnum": 2
+      },
+      {
+        "code": "EX",
+        "name": "体験観光",
+        "rnum": 3
+      },
+      {
+        "code": "FD",
+        "name": "グルメ",
+        "rnum": 4
+      },
+      {
+        "code": "HS",
+        "name": "歴史観光",
+        "rnum": 5
+      },
+      {
+        "code": "LS",
+        "name": "レジャースポーツ",
+        "rnum": 6
+      },
+      {
+        "code": "NA",
+        "name": "自然観光",
+        "rnum": 7
+      },
+      {
+        "code": "SH",
+        "name": "ショッピング",
+        "rnum": 8
+      },
+      {
+        "code": "VE",
+        "name": "文化観光",
+        "rnum": 9
+      }
+    ]
+  },
+  "numOfRows": 9,
+  "pageNo": 1,
+  "totalCount": 9
+}

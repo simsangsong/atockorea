@@ -17,7 +17,9 @@ function getLocale(request: NextRequest): string {
 }
 
 function getLocaleFromCookie(request: NextRequest): string | null {
-  const value = request.cookies.get(LOCALE_COOKIE)?.value;
+  const cookies = request.cookies;
+  if (!cookies || typeof cookies.get !== 'function') return null;
+  const value = cookies.get(LOCALE_COOKIE)?.value;
   if (value && SUPPORTED_LOCALES.includes(value)) return value;
   return null;
 }

@@ -290,6 +290,27 @@
     "pleaseSelect": "選択してください",
     "invalidPhone": "電話番号は数字と+のみ入力できます"
   },
+  "tourCard": {
+    "noItinerary": "行程なし",
+    "moreSpots": "あと{count}スポット",
+    "duration": "所要時間",
+    "lunch": "昼食",
+    "tickets": "チケット",
+    "pickup": "ピックアップ",
+    "included": "含む",
+    "notIncluded": "含まれない",
+    "discountOff": "{percent}% OFF",
+    "pickupPointsCountOne": "ピックアップ{count}箇所",
+    "pickupPointsCountOther": "ピックアップ{count}箇所",
+    "hotelPickup": "ホテル送迎",
+    "cruiseTerminalPickup": "クルーズターミナル送迎"
+  },
+  "toursList": {
+    "subtitle": "行程付き全ツアー、1行1カード表示。",
+    "loadingTours": "ツアーを読み込み中...",
+    "noToursFound": "ツアーが見つかりません。",
+    "loadFailed": "ツアーの読み込みに失敗しました"
+  },
   "home": {
     "hero": {
       "discoverKorea": "素晴らしい韓国を発見",
@@ -363,6 +384,7 @@
       "confirmItinerary": "行程を確定",
       "confirmSuccess": "行程の準備ができました",
       "confirmSuccessDesc": "お支払い完了後、ツアーが登録され他の旅行者が参加できるようになります。",
+      "verifySuccessJa": "行程が検証されました。良い旅を！",
       "jejuExtraNotice": "済州で東・西両方訪問の場合は追加料金が発生し、当日ガイドに現金でお支払いください。",
       "viewFixedTours": "固定行程ツアーを見る",
       "askParticipants": "何人ですか？（3〜13名）",
@@ -382,11 +404,31 @@
       "guideEnglish": "英語ガイド",
       "guideChinese": "中国語ガイド",
       "guideJapanese": "日本語ガイド",
+      "hotelLocationLabel": "宿泊地",
+      "hotelJejuCity": "済州市内",
+      "hotelJejuOutside": "済州郊外（+1万/人）",
+      "hotelSeogwipoCity": "西帰浦市内（+1.5万/人）",
+      "hotelSeogwipoOutside": "西帰浦郊外（+1.5万/人）",
       "vehicleVanLabel": "1〜6名 バン",
       "vehicleVanPrice": "₩100,000 / 人",
       "vehicleLargeVanLabel": "7〜13名 大型バン",
       "vehicleLargeVanPrice": "₩90,000 / 人",
-      "vehicleTotalSummary": "{{n}}名 · 合計 {{price}}"
+      "vehicleTotalSummary": "{{n}}名 · 合計 {{price}}",
+      "vehicleVan": "スタンダードバン",
+      "vehicleLargeVan": "大型バン",
+      "restaurant": "レストラン",
+      "themeTagUnesco": "ユネスコ遺産",
+      "themeTagSunrise": "日の出・日の入り",
+      "themeTagKdrama": "Kドラマロケ地",
+      "themeTagFood": "地元グルメ・カフェ",
+      "themeTagNature": "自然・ヒーリング",
+      "placeName": "施設名",
+      "address": "住所",
+      "placeDescriptionPlaceholder": "簡単な説明がここに表示されます。",
+      "openTime": "営業時間:",
+      "useFee": "入場料:",
+      "tel": "TEL:",
+      "coordinates": "緯度/経度:"
     },
     "proposedTours": {
       "sectionTitle": "現在募集中のツアー",
@@ -415,6 +457,7 @@
     },
     "sections": {
       "popularTours": "人気ツアー",
+      "standardBusDayTour": "スタンダードバスデイツアー",
       "privateTours": "プライベートツアー",
       "bestValueTours": "お得なツアー",
       "cruiseShoreTours": "クルーズ寄港地ツアー",

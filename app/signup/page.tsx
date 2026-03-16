@@ -113,23 +113,26 @@ export default function SignUpPage() {
     }
   }, [countdown]);
 
+  // Supabase가 인증 번호를 만들고 SMTP(Resend)로 발송. 우리가 만든 번호로 verifyOtp 호출하면 인증 실패함.
   const handleSendVerificationCode = async () => {
     if (!formData.email?.trim()) {
       setErrors({ email: 'Please enter your email address.' });
+      return;
+    }
+    if (!supabase) {
+      setErrors({ email: 'Service unavailable. Please try again later.' });
       return;
     }
     setIsSendingCode(true);
     setErrors({});
     setError(null);
     try {
-      const res = await fetch('/api/auth/send-verification-code', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: formData.email.trim() }),
+      const { error: otpError } = await supabase.auth.signInWithOtp({
+        email: formData.email.trim(),
+        options: { shouldCreateUser: true },
       });
-      const data = await res.json();
-      if (!res.ok) {
-        setErrors({ email: data.error || 'Failed to send verification code.' });
+      if (otpError) {
+        setErrors({ email: otpError.message || 'Failed to send verification code.' });
         setIsSendingCode(false);
         return;
       }
@@ -147,17 +150,20 @@ export default function SignUpPage() {
       setErrors({ verificationCode: 'Please enter the verification code.' });
       return;
     }
+    if (!supabase) {
+      setErrors({ verificationCode: 'Service unavailable.' });
+      return;
+    }
     setIsVerifying(true);
     setErrors({});
     try {
-      const res = await fetch('/api/auth/verify-code', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: formData.email.trim(), code: formData.verificationCode.trim() }),
+      const { data, error: verifyError } = await supabase.auth.verifyOtp({
+        email: formData.email.trim(),
+        token: formData.verificationCode.trim(),
+        type: 'email',
       });
-      const data = await res.json();
-      if (!res.ok) {
-        setErrors({ verificationCode: data.error || 'Invalid verification code.' });
+      if (verifyError) {
+        setErrors({ verificationCode: verifyError.message || 'Invalid or expired verification code.' });
         setIsVerifying(false);
         return;
       }
@@ -189,15 +195,6 @@ export default function SignUpPage() {
       return;
     }
 
-    const pwdCheck = validatePassword(formData.password);
-    if (!pwdCheck.valid) {
-      setErrors((prev) => ({ ...prev, password: pwdCheck.message! }));
-      return;
-    }
-    if (formData.password !== formData.confirmPassword) {
-      setErrors((prev) => ({ ...prev, confirmPassword: 'Passwords do not match.' }));
-      return;
-    }
     if (!agreedToTerms) {
       setError('Please agree to the Terms of Service and Privacy Policy.');
       return;
@@ -209,48 +206,22 @@ export default function SignUpPage() {
         throw new Error('Service unavailable. Please try again later.');
       }
 
-      // 로그인 아이디 = 인증된 이메일 (별도 아이디 필드 없음). 비밀번호로 가입.
-      const { data, error: signUpError } = await supabase.auth.signUp({
-        email: formData.email.trim(),
-        password: formData.password,
-        options: {
-          emailRedirectTo: `${typeof window !== 'undefined' ? window.location.origin : ''}/auth/callback`,
-          data: {
-            full_name: formData.fullName.trim(),
-            birth_year: birthYearNum,
-            nationality: formData.nationality.trim(),
-            phone: formData.phone?.trim() || null,
-          },
-        },
-      });
-
-      if (signUpError) {
-        const msg = signUpError.message || '';
-        if (/already registered|already exists|already been registered/i.test(msg)) {
-          setError('이미 가입되어 있는 이메일 주소입니다. 다른 이메일 주소를 사용하세요. (구글 등으로 가입된 계정일 수 있습니다.)');
-        } else {
-          setErrors((prev) => ({ ...prev, email: msg }));
-        }
+      // OTP 인증 후 세션 있음. 트리거가 user_profiles 행을 이미 만들었을 수 있음 → create-profile이 upsert 처리
+      const { data: sessionData } = await supabase.auth.getSession();
+      const session = sessionData?.session;
+      if (!session?.user) {
+        setError('Session expired. Please verify your email again from the first step.');
         setIsLoading(false);
         return;
       }
 
-      if (!data?.user) {
-        setError('Sign up did not return a user. Please try again.');
-        setIsLoading(false);
-        return;
-      }
-
-      // 인증번호로 이미 이메일 검증 완료 → 방금 생성된 계정에 프로필(이름·국적·나이·전화 등) 바로 추가
-      const session = data.session ?? (await supabase.auth.getSession()).data?.session;
-      const accessToken = session?.access_token ?? undefined;
       const createProfilePayload = {
-        userId: data.user.id,
+        userId: session.user.id,
         full_name: formData.fullName.trim(),
         phone: formData.phone?.trim() || undefined,
         birth_year: birthYearNum,
         nationality: formData.nationality.trim(),
-        accessToken: accessToken ?? undefined,
+        accessToken: session.access_token ?? undefined,
       };
 
       let profileRes = await fetch('/api/auth/create-profile', {
@@ -271,47 +242,13 @@ export default function SignUpPage() {
       }
 
       if (!profileRes.ok) {
-        if (profileRes.status === 409) {
-          setError('This account already exists. Please sign in.');
-          setIsLoading(false);
-          return;
-        }
-        try {
-          await fetch('/api/auth/delete-user-without-profile', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            credentials: 'include',
-            body: JSON.stringify({ userId: data.user.id, accessToken: accessToken ?? undefined }),
-          });
-        } catch (e) {
-          if (process.env.NODE_ENV === 'development') {
-            console.warn('[signup] delete-user-without-profile failed:', e);
-          }
-        }
-        setError(profileData.error || 'Failed to create profile. Please try again.');
+        setError(profileData.error || 'Failed to save profile. Please try again.');
         setIsLoading(false);
         return;
       }
 
-      // 커스텀 인증번호로 이미 이메일 검증했으므로, Supabase에서도 이메일 확정 처리해 로그인 가능하게 함
-      try {
-        const confirmRes = await fetch('/api/auth/confirm-email', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ userId: data.user.id, accessToken: accessToken ?? undefined }),
-        });
-        if (!confirmRes.ok) {
-          console.warn('[signup] confirm-email failed:', await confirmRes.text());
-        }
-      } catch (e) {
-        if (process.env.NODE_ENV === 'development') {
-          console.warn('[signup] confirm-email request failed:', e);
-        }
-      }
-
       setError('');
-      alert('Account created successfully. You can sign in with your email and password.');
-      router.push('/signin');
+      router.push('/');
     } catch (e: any) {
       setError(e?.message ?? 'Something went wrong. Please try again.');
       setIsLoading(false);
@@ -471,17 +408,7 @@ export default function SignUpPage() {
                   <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">Phone (optional, for booking)</label>
                   <input type="tel" id="phone" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-gray-900 placeholder:text-gray-400" placeholder="e.g. +82 10 1234 5678" />
                 </div>
-                <div>
-                  <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-2">Password <span className="text-red-500">*</span></label>
-                  <input type="password" id="password" value={formData.password} onChange={(e) => setFormData({ ...formData, password: e.target.value })} required className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-gray-900 placeholder:text-gray-400 ${errors.password ? 'border-red-300' : 'border-gray-200'}`} placeholder="Letters, numbers, special chars, 8+ characters" />
-                  <p className="mt-1.5 text-xs text-gray-500">Please set a password with 8+ characters using letters, numbers, and special characters.</p>
-                  {errors.password && <p className="mt-1 text-sm text-red-600">{errors.password}</p>}
-                </div>
-                <div>
-                  <label htmlFor="confirmPassword" className="block text-sm font-semibold text-gray-700 mb-2">Confirm Password <span className="text-red-500">*</span></label>
-                  <input type="password" id="confirmPassword" value={formData.confirmPassword} onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })} required className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-gray-900 placeholder:text-gray-400 ${errors.confirmPassword ? 'border-red-300' : 'border-gray-200'}`} placeholder="Re-enter password" />
-                  {errors.confirmPassword && <p className="mt-1 text-sm text-red-600">{errors.confirmPassword}</p>}
-                </div>
+                <p className="text-xs text-gray-500">You will sign in with the verification code sent to your email next time.</p>
                 <div className="flex items-start">
                   <input type="checkbox" id="terms" checked={agreedToTerms} onChange={(e) => setAgreedToTerms(e.target.checked)} className="mt-1 w-4 h-4 text-indigo-600 rounded focus:ring-indigo-500 bg-white border-gray-300" />
                   <label htmlFor="terms" className="ml-3 text-sm text-gray-700">I agree to the <Link href="/terms" className="text-indigo-600 hover:text-indigo-700 font-medium">Terms of Service</Link> and <Link href="/privacy" className="text-indigo-600 hover:text-indigo-700 font-medium">Privacy Policy</Link></label>

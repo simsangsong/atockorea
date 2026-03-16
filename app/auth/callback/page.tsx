@@ -17,12 +17,12 @@ function AuthCallbackContent() {
           throw new Error('Supabase client not initialized');
         }
 
-        const code = searchParams.get('code');
-        const error = searchParams.get('error');
-        const errorDescription = searchParams.get('error_description');
-        const provider = searchParams.get('provider');
+        const code = searchParams?.get('code');
+        const error = searchParams?.get('error');
+        const errorDescription = searchParams?.get('error_description');
+        const provider = searchParams?.get('provider');
         // Restrict redirect to same-origin path only (prevent open redirect)
-        const rawNext = (searchParams.get('next') || '/mypage').replace(/^null$/i, '') || '/mypage';
+        const rawNext = (searchParams?.get('next') || '/mypage').replace(/^null$/i, '') || '/mypage';
         const next =
           typeof rawNext === 'string' &&
           rawNext.startsWith('/') &&

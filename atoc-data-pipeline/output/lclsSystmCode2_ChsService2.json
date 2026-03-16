@@ -1,0 +1,54 @@
+{
+  "items": {
+    "item": [
+      {
+        "code": "AC",
+        "name": "住宿",
+        "rnum": 1
+      },
+      {
+        "code": "EV",
+        "name": "庆典/表演/活动",
+        "rnum": 2
+      },
+      {
+        "code": "EX",
+        "name": "体验旅游",
+        "rnum": 3
+      },
+      {
+        "code": "FD",
+        "name": "饮食",
+        "rnum": 4
+      },
+      {
+        "code": "HS",
+        "name": "历史旅游",
+        "rnum": 5
+      },
+      {
+        "code": "LS",
+        "name": "休闲运动",
+        "rnum": 6
+      },
+      {
+        "code": "NA",
+        "name": "自然旅游",
+        "rnum": 7
+      },
+      {
+        "code": "SH",
+        "name": "购物",
+        "rnum": 8
+      },
+      {
+        "code": "VE",
+        "name": "文化旅游",
+        "rnum": 9
+      }
+    ]
+  },
+  "numOfRows": 9,
+  "pageNo": 1,
+  "totalCount": 9
+}

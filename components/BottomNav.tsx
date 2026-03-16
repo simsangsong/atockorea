@@ -20,7 +20,7 @@ const navItems = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
       </svg>
     ),
-    path: "/tours",
+    path: "/custom-join-tour/proposed",
   },
   {
     name: "Cart",
@@ -49,7 +49,9 @@ export default function BottomNav() {
     <nav className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-white/40 z-50 md:hidden shadow-lg">
       <div className="flex items-center justify-around h-16">
         {navItems.map((item) => {
-          const isActive = pathname === item.path;
+          const isActive = item.path === "/custom-join-tour/proposed"
+            ? pathname === item.path || pathname.includes("custom-join-tour")
+            : pathname === item.path;
           return (
             <Link
               key={item.name}

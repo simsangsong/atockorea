@@ -4,11 +4,10 @@ import { useTranslations } from '@/lib/i18n';
 
 type IconType = 'star' | 'hotel' | 'card' | 'pin' | 'badge' | 'people' | 'currency' | 'chart';
 
-/** 5개 트러스트 항목 (Transparent Pricing 중복 제거) */
+/** 4개 트러스트 항목 (Transparent Pricing 중복 제거, localGuides 제거) */
 const TRUST_ITEMS: Array<{ icon: IconType; titleKey: string }> = [
   { icon: 'currency', titleKey: 'home.heroTrustBar.transparentPricingTitle' },
   { icon: 'card', titleKey: 'home.heroTrustBar.securePaymentTitle' },
-  { icon: 'pin', titleKey: 'home.heroTrustBar.localGuidesTitle' },
   { icon: 'badge', titleKey: 'trustBar.licensedAgencies' },
   { icon: 'people', titleKey: 'trustBar.certifiedGuides' },
 ];
@@ -54,8 +53,8 @@ export default function CompactTrustBar() {
             </div>
           </div>
 
-          {/* 트러스트 5항목: 동일 스타일 그리드 */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
+          {/* 트러스트 4항목: 동일 스타일 그리드 */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             {TRUST_ITEMS.map((item, i) => (
               <div key={i} className="flex items-center gap-2.5 min-w-0">
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center [&_svg]:text-slate-600">

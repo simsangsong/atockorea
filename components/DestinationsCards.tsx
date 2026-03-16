@@ -2,12 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslations, useI18n } from "@/lib/i18n";
+import { useTranslations } from "@/lib/i18n";
 import { ProposeTransitionLink } from "@/components/ProposeButton";
 import { useState, useEffect, useCallback } from "react";
-import TourCard from "@/components/TourCard";
 
-const FIXED_TOURS_LIMIT = 4;
 const PROPOSED_POLL_MS = 20000;
 const PROPOSED_PREVIEW_LIMIT = 3;
 
@@ -22,27 +20,8 @@ interface ProposedTour {
   created_at: string;
 }
 
-interface Tour {
-  id: number | string;
-  slug?: string;
-  title: string;
-  city: string;
-  price: number;
-  original_price?: number | null;
-  image?: string;
-  images?: string[];
-  rating?: number;
-  review_count?: number;
-  badges?: string[];
-  price_type?: "person" | "group";
-  duration?: string;
-}
-
 export default function DestinationsCards() {
   const t = useTranslations();
-  const { locale } = useI18n();
-  const [tours, setTours] = useState<Tour[]>([]);
-  const [toursLoading, setToursLoading] = useState(true);
   const [proposedTours, setProposedTours] = useState<ProposedTour[]>([]);
 
   const fetchProposed = useCallback(async () => {
@@ -60,41 +39,6 @@ export default function DestinationsCards() {
     const interval = setInterval(fetchProposed, PROPOSED_POLL_MS);
     return () => clearInterval(interval);
   }, [fetchProposed]);
-
-  useEffect(() => {
-    const fetchTours = async () => {
-      try {
-        setToursLoading(true);
-        const response = await fetch(
-          `/api/tours?limit=${FIXED_TOURS_LIMIT}&sortBy=rating&sortOrder=desc&isActive=true&locale=${encodeURIComponent(locale)}`
-        );
-        if (!response.ok) throw new Error("Failed to fetch tours");
-        const data = await response.json();
-        const list = data.tours || [];
-        const transformed: Tour[] = list.slice(0, FIXED_TOURS_LIMIT).map((tour: Record<string, unknown>) => ({
-          id: tour.id,
-          slug: tour.slug,
-          title: String(tour.title ?? ""),
-          city: String(tour.location ?? tour.city ?? ""),
-          price: Number(tour.price ?? 0),
-          original_price: tour.originalPrice != null ? Number(tour.originalPrice) : null,
-          image: tour.image as string | undefined,
-          images: tour.images as string[] | undefined,
-          rating: tour.rating != null ? Number(tour.rating) : undefined,
-          review_count: tour.reviewCount != null ? Number(tour.reviewCount) : undefined,
-          badges: tour.badges as string[] | undefined,
-          price_type: (tour.priceType as "person" | "group") ?? "person",
-          duration: tour.duration as string | undefined,
-        }));
-        setTours(transformed);
-      } catch (err) {
-        console.error("DestinationsCards fetch error:", err);
-      } finally {
-        setToursLoading(false);
-      }
-    };
-    fetchTours();
-  }, [locale]);
 
   return (
     <section className="pt-6 pb-12 md:pt-8 md:pb-14 bg-gradient-to-b from-white via-slate-50/20 to-transparent">
@@ -126,7 +70,7 @@ export default function DestinationsCards() {
             </div>
             {/* 다크 그라데이션 오버레이 */}
             <div className="absolute inset-0 z-[1] bg-gradient-to-r from-slate-900/90 via-indigo-900/80 to-slate-900/90 backdrop-blur-[2px]" />
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1.1fr_1fr] min-h-[160px] sm:min-h-[180px] md:min-h-[200px] p-6 sm:p-8 md:p-10">
+            <div className="relative z-10 grid grid-cols-1 min-h-[160px] sm:min-h-[180px] md:min-h-[200px] p-6 sm:p-8 md:p-10">
               <div className="flex flex-col justify-center text-left">
                 <span className="inline-flex items-center px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-semibold mb-4 backdrop-blur-sm w-fit">
                   <span className="w-2 h-2 rounded-full bg-cyan-400 mr-2 animate-pulse" aria-hidden />
@@ -164,25 +108,6 @@ export default function DestinationsCards() {
                 <div className="hud-cta-btn mt-2 w-fit">
                   <span className="hud-icon">
                     <svg width="18" height="18" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                      <path d="M20 40C20 25 35 15 50 15C65 15 80 25 80 40V65C80 75 70 85 50 85C30 85 20 75 20 65V40Z" stroke="#00ffff" strokeWidth="2.5"/>
-                      <path d="M25 45C25 38 35 33 50 33C65 33 75 38 75 45V60C75 67 65 72 50 72C35 72 25 67 25 60V45Z" fill="rgba(0,255,255,0.07)" stroke="#9d00ff" strokeWidth="1.5"/>
-                      <rect x="35" y="48" width="30" height="8" rx="4" fill="#00ffff" opacity="0.9"/>
-                      <circle cx="37" cy="42" r="4" fill="#00ffff" opacity="0.85"/>
-                      <circle cx="63" cy="42" r="4" fill="#00ffff" opacity="0.85"/>
-                      <circle cx="50" cy="6" r="3" fill="#9d00ff"/>
-                    </svg>
-                  </span>
-                  <span className="hud-text">
-                    {t("home.destinations.aiCustomizingCta")}
-                    <span className="hud-arrow">→</span>
-                  </span>
-                </div>
-              </div>
-              {/* HUD CTA — right panel (desktop) */}
-              <div className="hidden md:flex flex-col justify-center items-center">
-                <div className="hud-cta-btn">
-                  <span className="hud-icon">
-                    <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
                       <path d="M20 40C20 25 35 15 50 15C65 15 80 25 80 40V65C80 75 70 85 50 85C30 85 20 75 20 65V40Z" stroke="#00ffff" strokeWidth="2.5"/>
                       <path d="M25 45C25 38 35 33 50 33C65 33 75 38 75 45V60C75 67 65 72 50 72C35 72 25 67 25 60V45Z" fill="rgba(0,255,255,0.07)" stroke="#9d00ff" strokeWidth="1.5"/>
                       <rect x="35" y="48" width="30" height="8" rx="4" fill="#00ffff" opacity="0.9"/>
@@ -241,69 +166,6 @@ export default function DestinationsCards() {
               </ul>
             )}
           </div>
-        </div>
-
-        {/* Fixed Itinerary Tours — 2열 2줄 */}
-        <div>
-          <div className="flex items-end justify-between gap-4 mb-4 sm:mb-5">
-            <div>
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900">
-                {t("home.destinations.fixedItineraryTitle")}
-              </h3>
-              <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
-                {t("home.destinations.fixedItinerarySubtitle")}
-              </p>
-            </div>
-            <Link
-              href="/tours"
-              className="text-sm font-semibold text-blue-600 hover:text-blue-700 whitespace-nowrap flex items-center gap-1"
-            >
-              {t("home.tourList.seeMore")}
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-            </Link>
-          </div>
-
-          {toursLoading ? (
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="bg-gray-100 rounded-lg aspect-[4/3] animate-pulse" />
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
-              {tours.map((tour) => {
-                const hasDiscount = tour.original_price != null && tour.original_price > tour.price;
-                const discount =
-                  hasDiscount && tour.original_price
-                    ? Math.round(((tour.original_price - tour.price) / tour.original_price) * 100)
-                    : undefined;
-                const tourImage =
-                  tour.image ||
-                  (tour.images && tour.images[0]) ||
-                  "https://images.unsplash.com/photo-1534008897995-27a23e859048?w=600&q=80";
-                return (
-                  <TourCard
-                    key={tour.id}
-                    id={tour.id}
-                    slug={tour.slug}
-                    title={tour.title}
-                    location={tour.city}
-                    type={tour.duration ?? "Day tour"}
-                    duration={tour.duration}
-                    price={tour.price / 1000}
-                    originalPriceKRW={tour.original_price != null && tour.original_price > tour.price ? tour.original_price : undefined}
-                    priceType={tour.price_type ?? "person"}
-                    image={tourImage}
-                    badge={tour.badges?.[0] ?? "Day tour"}
-                    rating={tour.rating ?? 4.5}
-                    reviewCount={tour.review_count ?? 0}
-                    discount={discount}
-                    badgeVariant="brand"
-                  />
-                );
-              })}
-            </div>
-          )}
         </div>
       </div>
     </section>

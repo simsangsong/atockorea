@@ -35,16 +35,6 @@ export default function HeroTrustBar() {
         titleKey: 'home.heroTrustBar.securePaymentTitle' as const,
         descKey: 'home.heroTrustBar.securePaymentDesc' as const,
       },
-      {
-        icon: (
-          <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-        ),
-        titleKey: 'home.heroTrustBar.localGuidesTitle' as const,
-        descKey: 'home.heroTrustBar.localGuidesDesc' as const,
-      },
     ],
     []
   );
@@ -52,7 +42,7 @@ export default function HeroTrustBar() {
   return (
     <section className="py-4 sm:py-6 bg-transparent" aria-label="Why book with us">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {items.map((item, index) => (
             <div
               key={index}

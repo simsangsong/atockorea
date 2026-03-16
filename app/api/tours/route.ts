@@ -167,7 +167,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
         description,
         location_detail: tour.location || '',
         pickupPoints: tour.pickup_points || [],
-        pickupPointsCount: tour.pickup_points_count || 0,
+        pickupPointsCount: (tour.pickup_points && Array.isArray(tour.pickup_points) ? tour.pickup_points.length : 0) || tour.pickup_points_count || 0,
         dropoffPointsCount: tour.dropoff_points_count || 0,
         lunchIncluded: tour.lunch_included || false,
         ticketIncluded: tour.ticket_included || false,

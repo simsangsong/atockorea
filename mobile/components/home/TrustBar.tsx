@@ -11,7 +11,6 @@ const BOXES: Array<Array<{ icon: IconType; title: string }>> = [
   ],
   [
     { icon: 'card', title: 'Secure payment' },
-    { icon: 'pin', title: 'Local expert guides' },
   ],
   [
     { icon: 'badge', title: 'Verified Tour Operators' },

@@ -9,7 +9,7 @@ export type ScheduleItem = {
 };
 
 export type DetailedTour = {
-  id: number;
+  id: number | string;
   city: Destination;
   tag: string;
   title: string;
@@ -21,6 +21,12 @@ export type DetailedTour = {
   lunchIncluded: boolean;
   ticketIncluded: boolean;
   pickupInfo: string;
+  /** 픽업 지역 개수 표시용 (예: 4 pickup points) */
+  pickupPointsCount?: number;
+  /** 픽업 문구 수동 오버라이드 (있으면 개수 대신 이 문구 표시) */
+  pickupDisplay?: string;
+  /** 픽업 문구 번역 키 (설정 시 tourCard.hotelPickup / cruiseTerminalPickup 사용) */
+  pickupDisplayKey?: 'hotelPickup' | 'cruiseTerminalPickup';
   notes?: string;
 
   // Apple Travel style 일정표
@@ -41,6 +47,10 @@ export type DetailedTour = {
 
   // Pricing
   priceType?: 'person' | 'group';
+  /** 할인 전 가격 (포맷된 문자열, 카드에서 취소선 표시) */
+  originalPrice?: string;
+  /** 할인율 (예: 11 → "11% OFF") */
+  discountPercent?: number;
 };
 
 export const detailedTours: DetailedTour[] = [

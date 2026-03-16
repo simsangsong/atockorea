@@ -109,6 +109,11 @@ export default function ProductsPage() {
   const [discountPercent, setDiscountPercent] = useState<number | null>(null);
   const [editingPickupIndex, setEditingPickupIndex] = useState<number | null>(null);
 
+  const closePickupMapModal = () => {
+    setEditingPickupIndex(null);
+    setTimeout(() => (document.activeElement as HTMLElement)?.blur(), 0);
+  };
+
   const SUPPORTED_LOCALES = [
     { code: 'en', label: 'English' },
     { code: 'ko', label: '한국어' },
@@ -2165,7 +2170,7 @@ export default function ProductsPage() {
               </h3>
               <button
                 type="button"
-                onClick={() => setEditingPickupIndex(null)}
+                onClick={closePickupMapModal}
                 className="p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100"
                 aria-label="닫기"
               >
@@ -2190,7 +2195,7 @@ export default function ProductsPage() {
                     lng: location.lng,
                   };
                   setFormData({ ...formData, pickup_points: updated });
-                  setEditingPickupIndex(null);
+                  closePickupMapModal();
                 }}
                 height="360px"
               />
@@ -2201,7 +2206,7 @@ export default function ProductsPage() {
             <div className="px-4 py-3 border-t border-gray-200 flex justify-end">
               <button
                 type="button"
-                onClick={() => setEditingPickupIndex(null)}
+                onClick={closePickupMapModal}
                 className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200"
               >
                 닫기

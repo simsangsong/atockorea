@@ -1,7 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import { useTranslations } from '@/lib/i18n';
+import { useTranslations, useI18n } from '@/lib/i18n';
+
+function normalizePickupName(name: string, locale: string): string {
+  const label = locale === 'zh-TW' ? '接送地點' : '接送地点';
+  return name.replace(/取货地点|取貨地點|接机|接機/g, label);
+}
 
 interface ItineraryItem {
   time: string;
@@ -27,6 +32,7 @@ const DOT_COLORS = ['bg-orange-500', 'bg-blue-500', 'bg-orange-500', 'bg-blue-50
 
 export default function VisualItinerary({ items, pickupPoints = [] }: VisualItineraryProps) {
   const t = useTranslations();
+  const { locale } = useI18n();
   if (!items || items.length === 0) {
     return null;
   }
@@ -80,17 +86,19 @@ export default function VisualItinerary({ items, pickupPoints = [] }: VisualItin
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="rounded-xl bg-gray-50/90 border border-gray-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] p-4">
-                    <h4 className="text-base font-bold text-gray-900 mb-2">{t('tour.pickup')}</h4>
+                    <h4 className="text-base font-bold text-gray-900 mb-2">{t('tour.pickupPointsTitle')}</h4>
                     <ul className="space-y-2">
-                      {processed.pickupPoints.map((point) => (
-                        <li key={point.id} className="flex items-center gap-2 text-sm text-gray-600">
-                          <span className="w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0" />
-                          <span className="font-medium text-gray-800">{point.name}</span>
-                          {point.pickup_time && (
-                            <span className="text-gray-500">· {point.pickup_time}</span>
-                          )}
-                        </li>
-                      ))}
+                      {processed.pickupPoints.map((point) => {
+                        const timeStr = point.pickup_time ? String(point.pickup_time).replace(/(\d{1,2}:\d{2})(:\d{2})?$/, '$1') : '';
+                        const name = normalizePickupName(point.name || '', locale);
+                        return (
+                          <li key={point.id} className="flex items-baseline gap-2 text-sm text-gray-600">
+                            {timeStr ? <span className="font-semibold text-gray-700 tabular-nums">{timeStr}</span> : null}
+                            {timeStr && name ? <span className="text-gray-400"> · </span> : null}
+                            <span className="font-medium text-gray-800">{name || '—'}</span>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 </div>

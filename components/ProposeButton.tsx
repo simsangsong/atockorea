@@ -162,7 +162,7 @@ export default function ProposeButton({ href = '/custom-join-tour', children, cl
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="transition-overlay fixed inset-0 z-[9999] bg-[#050B18] flex flex-col items-center justify-center overflow-hidden"
+            className="transition-overlay fixed inset-0 z-[9999] bg-[#050B18] grid place-items-center overflow-hidden p-0 min-h-[100dvh] h-[100dvh]"
           >
             {/* Moving circuit board grid background */}
             <div className="transition-circuit-bg absolute inset-0 opacity-40" aria-hidden />
@@ -173,31 +173,33 @@ export default function ProposeButton({ href = '/custom-join-tour', children, cl
               aria-hidden
             />
 
-            <motion.div
-              initial={{ y: 20, scale: 0.8 }}
-              animate={{
-                y: [0, -20, 0],
-                scale: 1,
-                filter: [
-                  `drop-shadow(0 0 5px ${CYAN})`,
-                  `drop-shadow(0 0 20px ${PURPLE})`,
-                  `drop-shadow(0 0 5px ${CYAN})`,
-                ],
-              }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-              className="w-32 h-32 relative z-10"
-            >
-              <RobotMascot className="w-full h-full" />
-            </motion.div>
+            <div className="flex flex-col items-center justify-center relative z-10">
+              <motion.div
+                initial={{ y: 20, scale: 0.8 }}
+                animate={{
+                  y: [0, -20, 0],
+                  scale: 1,
+                  filter: [
+                    `drop-shadow(0 0 5px ${CYAN})`,
+                    `drop-shadow(0 0 20px ${PURPLE})`,
+                    `drop-shadow(0 0 5px ${CYAN})`,
+                  ],
+                }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                className="w-32 h-32"
+              >
+                <RobotMascot className="w-full h-full" />
+              </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: [0, 1, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="mt-6 text-cyan-400 font-mono tracking-tighter text-sm relative z-10"
-            >
-              AI ANALYZING YOUR PREFERENCES...
-            </motion.p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: [0, 1, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+                className="mt-6 text-cyan-400 font-mono tracking-tighter text-sm"
+              >
+                AI ANALYZING YOUR PREFERENCES...
+              </motion.p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

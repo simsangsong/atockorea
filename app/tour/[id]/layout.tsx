@@ -9,8 +9,8 @@ type MetadataLocale = 'en' | 'ko' | 'zh' | 'zh-TW' | 'es' | 'ja';
 async function detectRequestLocale(): Promise<MetadataLocale> {
   try {
     const h = await Promise.resolve(headers());
-    if (h == null || typeof (h as Headers).get !== 'function') return 'en';
-    const acceptLanguage = (h as Headers).get('accept-language')?.toLowerCase() || '';
+    if (h == null || typeof (h as Headers)?.get !== 'function') return 'en';
+    const acceptLanguage = (h as Headers).get?.('accept-language')?.toLowerCase() || '';
 
     if (acceptLanguage.includes('ko')) return 'ko';
     if (acceptLanguage.includes('zh-tw') || acceptLanguage.includes('zh-hant')) return 'zh-TW';

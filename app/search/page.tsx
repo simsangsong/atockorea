@@ -13,8 +13,8 @@ function SearchResults() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const cityRaw = searchParams.get("city");
-  const qRaw = searchParams.get("q");
+  const cityRaw = searchParams?.get("city");
+  const qRaw = searchParams?.get("q");
 
   const cityParam = cityRaw && cityRaw !== "All" ? cityRaw : null;
   const qParam = qRaw?.trim() || "";

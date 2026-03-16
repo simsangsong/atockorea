@@ -1,0 +1,54 @@
+{
+  "items": {
+    "item": [
+      {
+        "code": "AC",
+        "name": "Accommodation",
+        "rnum": 1
+      },
+      {
+        "code": "EV",
+        "name": "Festivals/Performances/Events",
+        "rnum": 2
+      },
+      {
+        "code": "EX",
+        "name": "Experiential Tourism",
+        "rnum": 3
+      },
+      {
+        "code": "FD",
+        "name": "Food",
+        "rnum": 4
+      },
+      {
+        "code": "HS",
+        "name": "Historical Tourism",
+        "rnum": 5
+      },
+      {
+        "code": "LS",
+        "name": "Leisure Sports",
+        "rnum": 6
+      },
+      {
+        "code": "NA",
+        "name": "Nature Tourism",
+        "rnum": 7
+      },
+      {
+        "code": "SH",
+        "name": "Shopping",
+        "rnum": 8
+      },
+      {
+        "code": "VE",
+        "name": "Cultural Tourism",
+        "rnum": 9
+      }
+    ]
+  },
+  "numOfRows": 9,
+  "pageNo": 1,
+  "totalCount": 9
+}

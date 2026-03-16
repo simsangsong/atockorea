@@ -9,8 +9,8 @@ const SECTIONS: Array<{
   fetchParams: TourSectionFetchParams;
 }> = [
   {
-    titleKey: 'home.sections.popularTours',
-    seeAllHref: '/tours?sortBy=rating&sortOrder=desc',
+    titleKey: 'home.sections.standardBusDayTour',
+    seeAllHref: '/tours/list',
     fetchParams: { limit: 4, sortBy: 'rating', sortOrder: 'desc' },
   },
 ];

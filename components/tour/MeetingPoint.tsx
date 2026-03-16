@@ -1,7 +1,7 @@
 'use client';
 
 import InteractiveMap from '@/components/maps/InteractiveMap';
-import { useTranslations } from '@/lib/i18n';
+import { useTranslations, useI18n } from '@/lib/i18n';
 
 interface PickupPoint {
   id: string | number;
@@ -25,8 +25,17 @@ interface MeetingPointProps {
   points: PickupPoint[];
 }
 
+const PICKUP_LABEL_ZH = '接送地点';
+const PICKUP_LABEL_ZH_TW = '接送地點';
+
+function normalizePickupName(name: string, locale: string): string {
+  const label = locale === 'zh-TW' ? PICKUP_LABEL_ZH_TW : PICKUP_LABEL_ZH;
+  return name.replace(/取货地点|取貨地點|接机|接機/g, label);
+}
+
 export default function MeetingPoint({ points }: MeetingPointProps) {
   const t = useTranslations();
+  const { locale } = useI18n();
   if (!points || points.length === 0) {
     return (
       <div className="rounded-2xl border border-gray-100 bg-white p-4">
@@ -56,40 +65,23 @@ export default function MeetingPoint({ points }: MeetingPointProps) {
         <h2 className="text-base font-bold text-gray-900 tracking-tight">{t('tour.pickupMeetupInfo')}</h2>
       </div>
 
-      {/* Pickup point cards — light blue style */}
-      <div className="space-y-3 mb-4">
-        {points.map((point) => {
-          const detail = [point.address, pickupPointWithTime(point).pickup_time].filter(Boolean).join(' · ') || undefined;
-          return (
-            <div
-              key={point.id}
-              className="rounded-xl bg-blue-50/80 border border-blue-100 p-4 flex items-start gap-3 shadow-sm"
-            >
-              <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 mt-0.5">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </span>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-bold text-gray-900">{point.name}</p>
-                {(detail || point.address) && (
-                  <p className="text-xs text-gray-600 mt-0.5">{detail || point.address}</p>
-                )}
-              </div>
-              <a
-                href={hasValidCoords(point.lat, point.lng)
-                  ? `https://www.google.com/maps?q=${point.lat},${point.lng}`
-                  : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(point.address || point.name)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0 px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-medium hover:bg-blue-700 transition-colors whitespace-nowrap"
-              >
-                {t('tour.directions')}
-              </a>
-            </div>
-          );
-        })}
+      {/* Single text-only card: time · place name */}
+      <div className="rounded-xl bg-blue-50/80 border border-blue-100 p-4 mb-4">
+        <ul className="space-y-2">
+          {points.map((point) => {
+            const timeStr = pickupPointWithTime(point).pickup_time
+              ? String(pickupPointWithTime(point).pickup_time).replace(/(\d{1,2}:\d{2})(:\d{2})?$/, '$1')
+              : '';
+            const name = normalizePickupName(point.name || point.address || '', locale);
+            return (
+              <li key={point.id} className="flex items-baseline gap-2 text-sm">
+                {timeStr ? <span className="font-semibold text-gray-700 shrink-0">{timeStr}</span> : null}
+                {timeStr && name ? <span className="text-gray-500"> · </span> : null}
+                <span className="text-gray-900 font-medium">{name || point.address || '—'}</span>
+              </li>
+            );
+          })}
+        </ul>
       </div>
 
       {/* Map: show pins only when we have valid lat/lng */}

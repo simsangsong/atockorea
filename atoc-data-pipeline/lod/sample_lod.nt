@@ -1,0 +1,20 @@
+# 샘플 NT (국문관광정보 LOD 형식 가정). 실제 LOD predicate는 데이터 확인 후 수정.
+# 형식: <주제> <속성> "값" 또는 <객체> .
+<http://api.visitkorea.or.kr/lod/place/125405> <http://www.w3.org/2000/01/rdf-schema#label> "제주국제공항" .
+<http://api.visitkorea.or.kr/lod/place/125405> <http://schema.org/address> "제주특별자치도 제주시 공항로 2" .
+<http://api.visitkorea.or.kr/lod/place/125405> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "33.5068" .
+<http://api.visitkorea.or.kr/lod/place/125405> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "126.4928" .
+<http://api.visitkorea.or.kr/lod/place/125405> <http://schema.org/description> "제주 국제선과 국내선을 모두 이용할 수 있는 공항입니다." .
+<http://api.visitkorea.or.kr/lod/place/125405> <http://schema.org/image> "https://example.com/jeju-airport.jpg" .
+<http://api.visitkorea.or.kr/lod/place/126438> <http://www.w3.org/2000/01/rdf-schema#label> "성산일출봉" .
+<http://api.visitkorea.or.kr/lod/place/126438> <http://schema.org/address> "제주특별자치도 서귀포시 성산읍 성산리 1" .
+<http://api.visitkorea.or.kr/lod/place/126438> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "33.4584" .
+<http://api.visitkorea.or.kr/lod/place/126438> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "126.9422" .
+<http://api.visitkorea.or.kr/lod/place/126438> <http://schema.org/description> "유네스코 세계자연유산으로 지정된 화산체입니다." .
+<http://api.visitkorea.or.kr/lod/place/126438> <http://schema.org/image> "https://example.com/sungsan.jpg" .
+<http://api.visitkorea.or.kr/lod/place/128303> <http://www.w3.org/2000/01/rdf-schema#label> "한라산 국립공원" .
+<http://api.visitkorea.or.kr/lod/place/128303> <http://schema.org/address> "제주특별자치도 제주시 오등동 1100로 2070-61" .
+<http://api.visitkorea.or.kr/lod/place/128303> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "33.3628" .
+<http://api.visitkorea.or.kr/lod/place/128303> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "126.5342" .
+<http://api.visitkorea.or.kr/lod/place/128303> <http://schema.org/description> "한반도 최남단에 위치한 한라산을 포함한 국립공원." .
+<http://api.visitkorea.or.kr/lod/place/128303> <http://schema.org/image> "" .

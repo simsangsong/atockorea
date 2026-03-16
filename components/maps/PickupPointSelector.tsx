@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { GoogleMap, useLoadScript, Marker, Autocomplete } from '@react-google-maps/api';
+import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import { mapOptions, defaultCenter, libraries } from '@/lib/google-maps';
 
 // Places API (New) PlaceAutocompleteElement - gmp-select event type
@@ -34,14 +34,12 @@ export default function PickupPointSelector({
       : null
   );
   const [map, setMap] = useState<google.maps.Map | null>(null);
-  const [autocomplete, setAutocomplete] = useState<google.maps.places.Autocomplete | null>(null);
-  const [useLegacyAutocomplete, setUseLegacyAutocomplete] = useState(false);
+  const [placeApiNewUnavailable, setPlaceApiNewUnavailable] = useState(false);
   const [isGeocoding, setIsGeocoding] = useState(false);
   const autocompleteContainerRef = useRef<HTMLDivElement>(null);
 
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
-  // Load Maps API (no version=weekly so legacy Autocomplete is always available as fallback)
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: apiKey || '',
     libraries,
@@ -88,28 +86,7 @@ export default function PickupPointSelector({
     [onLocationSelect]
   );
 
-  // Legacy Autocomplete (Places API): when user selects a place from search
-  const onAutocompleteLoad = useCallback((ac: google.maps.places.Autocomplete) => {
-    setAutocomplete(ac);
-  }, []);
-
-  const onPlaceChanged = useCallback(async () => {
-    if (!autocomplete) return;
-    const place = autocomplete.getPlace();
-    if (!place.geometry?.location) return;
-    const lat = place.geometry.location.lat();
-    const lng = place.geometry.location.lng();
-    const address = place.formatted_address || place.name || '';
-    const location = { lat, lng, address };
-    setSelectedLocation(location);
-    onLocationSelect(location);
-    if (map) {
-      map.setCenter({ lat, lng });
-      map.setZoom(15);
-    }
-  }, [autocomplete, map, onLocationSelect]);
-
-  // Try PlaceAutocompleteElement (Places API New); if not available, use legacy Autocomplete
+  // Places API (New) only — PlaceAutocompleteElement. Legacy Autocomplete 사용 금지.
   useEffect(() => {
     if (!isLoaded || !apiKey || !autocompleteContainerRef.current || typeof google === 'undefined') return;
 
@@ -118,7 +95,7 @@ export default function PickupPointSelector({
       .PlaceAutocompleteElement;
 
     if (!PlaceAutocompleteElement) {
-      setUseLegacyAutocomplete(true);
+      setPlaceApiNewUnavailable(true);
       return;
     }
 
@@ -126,7 +103,7 @@ export default function PickupPointSelector({
     const placeAutocomplete = new PlaceAutocompleteElement({
       locationBias: new google.maps.Circle({
         center: defaultCenter,
-        radius: 50000, // Places API (New) max: 50,000m (50km)
+        radius: 50000,
       }),
       includedRegionCodes: ['kr'],
     }) as HTMLElement;
@@ -200,23 +177,9 @@ export default function PickupPointSelector({
 
   return (
     <div className={`w-full ${className}`}>
-      {/* Search: PlaceAutocompleteElement (New) or legacy Autocomplete (Places API) */}
       <div className="mb-4">
-        {useLegacyAutocomplete ? (
-          <Autocomplete
-            onLoad={onAutocompleteLoad}
-            onPlaceChanged={onPlaceChanged}
-            options={{
-              types: ['establishment', 'geocode'],
-              componentRestrictions: { country: 'kr' },
-            }}
-          >
-            <input
-              type="text"
-              placeholder="Search location or click on map to select..."
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
-            />
-          </Autocomplete>
+        {placeApiNewUnavailable ? (
+          <p className="text-amber-600 text-sm py-2">Places API (New)를 사용할 수 없습니다. Google Cloud Console에서 활성화해 주세요.</p>
         ) : (
           <div
             className="[&_.gmp-place-autocomplete]:!w-full [&_.gmp-place-autocomplete]:!rounded-lg [&_.gmp-place-autocomplete]:!border [&_.gmp-place-autocomplete]:!border-gray-300 [&_.gmp-place-autocomplete]:!min-h-[48px]"

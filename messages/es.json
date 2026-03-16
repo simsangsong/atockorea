@@ -290,6 +290,27 @@
     "pleaseSelect": "Por favor selecciona",
     "invalidPhone": "El teléfono solo puede contener dígitos y +"
   },
+  "tourCard": {
+    "noItinerary": "Sin itinerario",
+    "moreSpots": "+{count} lugares más",
+    "duration": "Duración",
+    "lunch": "Comida",
+    "tickets": "Entradas",
+    "pickup": "Recogida",
+    "included": "Incluido",
+    "notIncluded": "No incluido",
+    "discountOff": "{percent}% OFF",
+    "pickupPointsCountOne": "{count} punto de recogida",
+    "pickupPointsCountOther": "{count} puntos de recogida",
+    "hotelPickup": "Recogida en hotel",
+    "cruiseTerminalPickup": "Recogida en terminal de cruceros"
+  },
+  "toursList": {
+    "subtitle": "Todos los tours con itinerario, una ficha por línea.",
+    "loadingTours": "Cargando tours...",
+    "noToursFound": "No se encontraron tours.",
+    "loadFailed": "Error al cargar los tours"
+  },
   "home": {
     "hero": {
       "discoverKorea": "Descubre Corea Increíble",
@@ -363,6 +384,7 @@
       "confirmItinerary": "Confirmar itinerario",
       "confirmSuccess": "Itinerario listo",
       "confirmSuccessDesc": "Una vez completado el pago, el tour se publicará y otros viajeros podrán unirse.",
+      "verifySuccessEs": "Tu itinerario ha sido verificado. ¡Buen viaje!",
       "jejuExtraNotice": "Visitar este y oeste de Jeju el mismo día tiene coste adicional; pago en efectivo al guía.",
       "viewFixedTours": "Ver tours con itinerario fijo",
       "tourDateLabel": "Fecha del tour",
@@ -376,11 +398,31 @@
       "guideEnglish": "Guía en inglés",
       "guideChinese": "Guía en chino",
       "guideJapanese": "Guía en japonés",
+      "hotelLocationLabel": "Ubicación del hotel",
+      "hotelJejuCity": "Jeju ciudad",
+      "hotelJejuOutside": "Jeju afueras (+10.000/persona)",
+      "hotelSeogwipoCity": "Seogwipo ciudad (+15.000/persona)",
+      "hotelSeogwipoOutside": "Seogwipo afueras (+15.000/persona)",
       "vehicleVanLabel": "1–6 personas Van",
       "vehicleVanPrice": "₩100,000 / persona",
       "vehicleLargeVanLabel": "7–13 personas Van grande",
       "vehicleLargeVanPrice": "₩90,000 / persona",
-      "vehicleTotalSummary": "{{n}} personas · Total {{price}}"
+      "vehicleTotalSummary": "{{n}} personas · Total {{price}}",
+      "vehicleVan": "Furgoneta estándar",
+      "vehicleLargeVan": "Furgoneta grande",
+      "restaurant": "Restaurante",
+      "themeTagUnesco": "Patrimonio UNESCO",
+      "themeTagSunrise": "Amanecer y atardecer",
+      "themeTagKdrama": "Locaciones K-Drama",
+      "themeTagFood": "Comida local y cafés",
+      "themeTagNature": "Naturaleza y bienestar",
+      "placeName": "Nombre del lugar",
+      "address": "Dirección",
+      "placeDescriptionPlaceholder": "La descripción breve aparecerá aquí.",
+      "openTime": "Horario:",
+      "useFee": "Entrada:",
+      "tel": "Tel:",
+      "coordinates": "Lat/Long:"
     },
     "proposedTours": {
       "sectionTitle": "Tours en proceso de inscripción",
@@ -409,6 +451,7 @@
     },
     "sections": {
       "popularTours": "Tours populares",
+      "standardBusDayTour": "Tour estándar en autobús",
       "privateTours": "Tours privados",
       "bestValueTours": "Mejor relación calidad-precio",
       "cruiseShoreTours": "Tours desde crucero",
