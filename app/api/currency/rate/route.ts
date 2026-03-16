@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 /** World major currencies to support (ISO 4217). API returns USD-based rates. */
-export const MAJOR_CURRENCIES = [
+const MAJOR_CURRENCIES = [
   'USD',
   'KRW',
   'EUR',
