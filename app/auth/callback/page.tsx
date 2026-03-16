@@ -23,13 +23,17 @@ function AuthCallbackContent() {
         const provider = searchParams?.get('provider');
         // Restrict redirect to same-origin path only (prevent open redirect)
         const rawNext = (searchParams?.get('next') || '/mypage').replace(/^null$/i, '') || '/mypage';
-        const next =
+        let next =
           typeof rawNext === 'string' &&
           rawNext.startsWith('/') &&
           !rawNext.includes(':') &&
           rawNext.length <= 500
             ? rawNext
             : '/mypage';
+        // Magic link로 회원가입 들어온 경우 프로필 입력 단계로
+        if (next === '/signup' || (next && next.includes('signup'))) {
+          next = '/signup?step=info';
+        }
 
         // OAuth 에러 체크 (구글, 페이스북 등)
         if (error) {

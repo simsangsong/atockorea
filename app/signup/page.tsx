@@ -106,6 +106,23 @@ export default function SignUpPage() {
     }
   }, []);
 
+  // Magic link 클릭 후 콜백에서 /signup?step=info 로 보낸 경우: 세션 있으면 프로필 입력 단계로
+  useEffect(() => {
+    if (!supabase || step !== 'email') return;
+    const params = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
+    if (params.get('step') !== 'info') return;
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session?.user) {
+        setStep('info');
+        setEmailVerified(true);
+        if (session.user.email && !formData.email) {
+          setFormData((prev) => ({ ...prev, email: session.user.email ?? '' }));
+        }
+        window.history.replaceState({}, '', window.location.pathname);
+      }
+    });
+  }, [supabase, step]);
+
   useEffect(() => {
     if (countdown > 0) {
       const t = setTimeout(() => setCountdown(countdown - 1), 1000);
@@ -127,9 +144,13 @@ export default function SignUpPage() {
     setErrors({});
     setError(null);
     try {
+      const origin = typeof window !== 'undefined' ? window.location.origin : '';
       const { error: otpError } = await supabase.auth.signInWithOtp({
         email: formData.email.trim(),
-        options: { shouldCreateUser: true },
+        options: {
+          shouldCreateUser: true,
+          emailRedirectTo: `${origin}/auth/callback?next=/signup`,
+        },
       });
       if (otpError) {
         setErrors({ email: otpError.message || 'Failed to send verification code.' });
