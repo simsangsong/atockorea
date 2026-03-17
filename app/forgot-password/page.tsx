@@ -1,6 +1,5 @@
 'use client';
 
-// Force dynamic rendering to avoid I18nProvider issues during static generation
 export const dynamic = 'force-dynamic';
 
 import { useState } from 'react';
@@ -8,21 +7,33 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
+import { supabase } from '@/lib/supabase';
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
     setIsLoading(true);
-
-    // Simulate API call (in production, use Supabase Auth)
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
+      if (!supabase) {
+        throw new Error('Service unavailable. Please try again later.');
+      }
+      const origin = typeof window !== 'undefined' ? window.location.origin : '';
+      const { error: err } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+        redirectTo: `${origin}/auth/callback?next=/reset-password`,
+      });
+      if (err) throw err;
       setIsSubmitted(true);
-    }, 1000);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Failed to send reset link.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -40,6 +51,9 @@ export default function ForgotPasswordPage() {
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {error && (
+                    <p className="text-sm text-red-600 bg-red-50 px-3 py-2 rounded-lg">{error}</p>
+                  )}
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                       Email

@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
 
     const supabase = createServerClient();
 
-    // Verify booking exists
+    // Verify booking exists (contact_email/contact_name for guest checkout)
     const { data: booking, error: bookingError } = await supabase
       .from('bookings')
       .select(`
@@ -51,6 +51,8 @@ export async function POST(req: NextRequest) {
         final_price,
         payment_status,
         status,
+        contact_email,
+        contact_name,
         tours (
           id,
           title,
@@ -88,9 +90,11 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Get customer info from bookingData or booking
-    const customerEmail = bookingData?.customerInfo?.email || null;
-    const customerName = bookingData?.customerInfo?.name || null;
+    // Get customer info: request body first, then DB (guest bookings have contact_email/contact_name)
+    const customerEmail =
+      bookingData?.customerInfo?.email ?? (booking as { contact_email?: string }).contact_email ?? null;
+    const customerName =
+      bookingData?.customerInfo?.name ?? (booking as { contact_name?: string }).contact_name ?? null;
 
     // Extract tour data (handle both single object and array types)
     const tour = Array.isArray(booking.tours) ? booking.tours[0] : booking.tours;

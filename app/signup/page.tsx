@@ -380,10 +380,10 @@ export default function SignUpPage() {
                     type="text"
                     id="verificationCode"
                     value={formData.verificationCode}
-                    onChange={(e) => setFormData({ ...formData, verificationCode: e.target.value.replace(/\D/g, '').slice(0, 8) })}
-                    maxLength={8}
+                    onChange={(e) => setFormData({ ...formData, verificationCode: e.target.value.replace(/\D/g, '').slice(0, 6) })}
+                    maxLength={6}
                     className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-gray-900 text-center text-2xl tracking-widest"
-                    placeholder="00000000"
+                    placeholder="000000"
                   />
                   {errors.verificationCode && <p className="mt-1 text-sm text-red-600">{errors.verificationCode}</p>}
                   <p className="mt-2 text-xs text-gray-500 text-center">Sent to <span className="font-semibold text-gray-700">{formData.email}</span></p>

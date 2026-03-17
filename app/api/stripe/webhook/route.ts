@@ -18,7 +18,11 @@ const getStripe = () => {
 
 /**
  * POST /api/stripe/webhook
- * Handle Stripe webhook events (payment success, failure, etc.)
+ * Stripe webhook: payment success → update booking (confirmed, paid) + send confirmation email via Resend.
+ * - Signature verified with STRIPE_WEBHOOK_SECRET (required; never skip).
+ * - Idempotent: if booking is already paid, skip update and email.
+ * Local test: stripe listen --forward-to localhost:3000/api/stripe/webhook
+ * Then set .env.local STRIPE_WEBHOOK_SECRET to the printed whsec_... value.
  */
 export async function POST(req: NextRequest) {
   try {
@@ -72,8 +76,20 @@ export async function POST(req: NextRequest) {
           break;
         }
 
-        // Update booking payment status and store Stripe session reference
-        const { error: updateError } = await supabase
+        // Idempotency: if already paid, skip update and email (Stripe may send the webhook more than once)
+        const { data: existingBooking } = await supabase
+          .from('bookings')
+          .select('id, payment_status')
+          .eq('id', bookingId)
+          .single();
+
+        if (existingBooking?.payment_status === 'paid') {
+          console.log(`Booking ${bookingId} already confirmed (idempotent), skipping`);
+          break;
+        }
+
+        // Update booking payment status and store Stripe session reference (atomic: only if still pending)
+        const { data: updatedRow, error: updateError } = await supabase
           .from('bookings')
           .update({
             payment_status: 'paid',
@@ -83,7 +99,10 @@ export async function POST(req: NextRequest) {
             status: 'confirmed',
             updated_at: new Date().toISOString(),
           })
-          .eq('id', bookingId);
+          .eq('id', bookingId)
+          .eq('payment_status', 'pending')
+          .select()
+          .single();
 
         if (updateError) {
           console.error('Error updating booking:', updateError);
@@ -93,7 +112,13 @@ export async function POST(req: NextRequest) {
           );
         }
 
-        // Send confirmation email
+        // Only send email if we actually updated (avoid duplicate when Stripe retries or race)
+        if (!updatedRow) {
+          console.log(`Booking ${bookingId} already updated (idempotent), skipping email`);
+          break;
+        }
+
+        // Send confirmation email (Resend via sendBookingConfirmationEmail)
         try {
           const { data: booking } = await supabase
             .from('bookings')
@@ -105,6 +130,8 @@ export async function POST(req: NextRequest) {
               number_of_guests,
               final_price,
               pickup_point_id,
+              contact_email,
+              contact_name,
               tours (
                 id,
                 title,
@@ -119,14 +146,21 @@ export async function POST(req: NextRequest) {
             .single();
 
           if (booking) {
-            // Get customer email
-            let customerEmail = session.customer_email;
-            let customerName = session.metadata?.customer_name || 'Guest';
+            // Customer email/name: Stripe session → user_profiles → booking contact (guest fallback)
+            const sessionEmail = session.customer_details?.email ?? session.customer_email ?? null;
+            let customerEmail: string | null = sessionEmail;
+            let customerName = (session.metadata?.customer_name as string) || 'Guest';
 
             if (!customerEmail && booking.user_profiles) {
               const profile = booking.user_profiles as { email?: string; full_name?: string } | null;
-              customerEmail = profile?.email ?? customerEmail ?? null;
+              customerEmail = profile?.email ?? null;
               customerName = profile?.full_name || customerName;
+            }
+            if (!customerEmail && (booking as { contact_email?: string }).contact_email) {
+              customerEmail = (booking as { contact_email: string }).contact_email;
+            }
+            if ((!customerName || customerName === 'Guest') && (booking as { contact_name?: string }).contact_name) {
+              customerName = (booking as { contact_name: string }).contact_name;
             }
 
             if (customerEmail && booking.tours) {
@@ -187,19 +221,25 @@ export async function POST(req: NextRequest) {
       }
 
       case 'checkout.session.async_payment_succeeded': {
-        // Handle async payment methods (e.g., bank transfers)
         const session = event.data.object as Stripe.Checkout.Session;
         const bookingId = session.client_reference_id || session.metadata?.booking_id;
 
         if (bookingId) {
-          await supabase
+          const { data: existing } = await supabase
             .from('bookings')
-            .update({
-              payment_status: 'paid',
-              status: 'confirmed',
-              updated_at: new Date().toISOString(),
-            })
-            .eq('id', bookingId);
+            .select('payment_status')
+            .eq('id', bookingId)
+            .single();
+          if (existing?.payment_status !== 'paid') {
+            await supabase
+              .from('bookings')
+              .update({
+                payment_status: 'paid',
+                status: 'confirmed',
+                updated_at: new Date().toISOString(),
+              })
+              .eq('id', bookingId);
+          }
         }
         break;
       }

@@ -95,7 +95,7 @@
 - 스크립트가 성공하면 **`scripts/email-template-confirm-signup.html`** 파일이 생성되거나 덮어써집니다.
 - 이 파일을 열어보면:
   - `img src="https://...supabase.co/.../atoc-logo-email.png"` 처럼 **Logo URL이 이미 들어가 있고**
-  - 인증 코드 안내 문구가 **8-digit**로 되어 있으며 (Supabase 호스팅 기준 8자리 발급)
+  - 인증 코드 안내 문구가 **6-digit**로 되어 있음
   - 만료 안내가 **3 minutes** (Supabase에서 설정한 180초와 동일)로 되어 있습니다.
   - Supabase 이메일 템플릿 변수 `{{ .Token }}` 이 그대로 있습니다.
 - 이 HTML **전체**를 다음 단계에서 Supabase에 붙여넣습니다.

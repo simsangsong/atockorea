@@ -21,15 +21,18 @@ export default function SignInPage() {
   const [error, setError] = useState<string | null>(null);
   const [showGoogleChoice, setShowGoogleChoice] = useState(false);
   const [isSocialLoading, setIsSocialLoading] = useState(false);
+  const [passwordUpdated, setPasswordUpdated] = useState(false);
 
-  // 检查 URL 参数中的错误
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const errorParam = params.get('error');
       if (errorParam) {
         setError(errorParam);
-        // 清除 URL 参数
+        window.history.replaceState({}, '', window.location.pathname);
+      }
+      if (params.get('password_updated') === '1') {
+        setPasswordUpdated(true);
         window.history.replaceState({}, '', window.location.pathname);
       }
     }
@@ -169,6 +172,12 @@ export default function SignInPage() {
               <p className="text-gray-600 text-sm md:text-base">Welcome back to AtoCKorea</p>
             </div>
 
+            {/* Password updated success */}
+            {passwordUpdated && (
+              <div className="bg-green-50 border-l-4 border-green-500 text-green-800 px-4 py-3 rounded-lg mb-6 shadow-sm" role="alert">
+                <p className="text-sm font-medium">Password updated. Sign in with your new password.</p>
+              </div>
+            )}
             {/* Error Message */}
             {error && (
               <div className="bg-red-50 border-l-4 border-red-400 text-red-700 px-4 py-3 rounded-lg mb-6 shadow-sm" role="alert">
@@ -279,12 +288,17 @@ export default function SignInPage() {
               </button>
             </div>
 
-            {/* Sign Up Link */}
-            <div className="mt-6 md:mt-8 text-center">
+            {/* Sign Up & Forgot Password Links */}
+            <div className="mt-6 md:mt-8 text-center space-y-2">
               <p className="text-gray-600 text-sm">
                 Don't have an account?{' '}
                 <Link href="/signup" className="text-indigo-600 hover:text-indigo-700 font-semibold transition-colors">
                   Sign Up
+                </Link>
+              </p>
+              <p className="text-gray-600 text-sm">
+                <Link href="/forgot-password" className="text-indigo-600 hover:text-indigo-700 font-medium transition-colors">
+                  Forgot password?
                 </Link>
               </p>
             </div>
