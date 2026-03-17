@@ -1,38 +1,33 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
-import { useTranslations } from "@/lib/i18n";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { COPY } from "@/src/design/copy";
+import { analytics } from "@/src/design/analytics";
+
+const HERO_IMAGES = [
+  { id: 1, image: "/images/hero/jeju-hero.jpg", alt: "Jeju" },
+  { id: 2, image: "/images/hero/busan-hero.jpg", alt: "Busan" },
+  { id: 3, image: "/images/hero/seoul-hero.jpg", alt: "Seoul" },
+];
+
+const CTA_HREF = "/custom-join-tour";
 
 export default function HeroSection() {
-  const t = useTranslations();
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const heroImages = useMemo(
-    () => [
-      { id: 1, image: "/images/hero/jeju-hero.jpg", title: t("home.hero.exploreJeju") },
-      { id: 2, image: "/images/hero/busan-hero.jpg", title: t("home.hero.experienceBusan") },
-      { id: 3, image: "/images/hero/seoul-hero.jpg", title: t("home.hero.discoverKorea") },
-    ],
-    [t]
-  );
-
-  const currentSlide = heroImages[currentIndex];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % heroImages.length);
+      setCurrentIndex((prev) => (prev + 1) % HERO_IMAGES.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, [heroImages.length]);
-
-  const goToSlide = (index: number) => setCurrentIndex(index);
+  }, []);
 
   return (
-    <section className="relative">
-      {/* Hero: 앱과 동일 — 이미지 + 어두운 오버레이 + 좌하단 타이틀/서브타이틀 + 도트 */}
-      <div className="relative w-full aspect-video md:aspect-[4/1] overflow-hidden md:rounded-b-2xl md:mx-4 md:shadow-xl">
+    <section className="relative" aria-label="Hero">
+      <div className="relative w-full aspect-video md:aspect-[21/8] overflow-hidden md:rounded-b-2xl md:mx-4 md:shadow-xl bg-[#0A1F44]">
         <div className="relative w-full h-full">
-          {heroImages.map((item, index) => (
+          {HERO_IMAGES.map((item, index) => (
             <div
               key={item.id}
               className={`absolute inset-0 transition-opacity duration-1000 ${
@@ -43,31 +38,43 @@ export default function HeroSection() {
                 className="w-full h-full bg-cover bg-center"
                 style={{ backgroundImage: `url(${item.image})` }}
               >
-                <div className="absolute inset-0 bg-black/40" aria-hidden />
+                <div className="absolute inset-0 bg-[#0A1F44]/60" aria-hidden />
               </div>
             </div>
           ))}
         </div>
 
-        {/* 텍스트 좌하단 (앱 스타일) */}
-        <div className="absolute inset-0 flex items-end justify-start">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-6 pt-4 md:pb-8 md:pt-6">
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
-              {currentSlide?.title}
-            </h1>
-            <p className="text-sm sm:text-base text-white/95 mt-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
-              {t("home.hero.searchTitle")}
-            </p>
+        <div className="absolute inset-0 flex flex-col justify-end">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-6 pt-6 md:pb-8 md:pt-8">
+            <div className="max-w-xl">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
+                {COPY.hero.headline}
+              </h1>
+              <p className="text-sm sm:text-base text-white/95 mt-2 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
+                {COPY.hero.sub}
+              </p>
+              <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs sm:text-sm text-white/90" aria-label="Why book with us">
+                {COPY.hero.trust.map((text, i) => (
+                  <li key={i}>{text}</li>
+                ))}
+              </ul>
+              <Link
+                href={CTA_HREF}
+                className="mt-6 inline-flex items-center justify-center font-semibold min-h-[44px] px-6 py-3 text-base rounded-lg bg-[#1E4EDF] text-white hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0A1F44]"
+                onClick={() => analytics.heroFormStart()}
+              >
+                {COPY.hero.cta}
+              </Link>
+            </div>
           </div>
         </div>
 
-        {/* Dots — 하단 중앙 */}
         <div className="absolute bottom-2 md:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 items-center">
-          {heroImages.map((_, index) => (
+          {HERO_IMAGES.map((_, index) => (
             <button
               key={index}
               type="button"
-              onClick={() => goToSlide(index)}
+              onClick={() => setCurrentIndex(index)}
               className={`rounded-full transition-all ${
                 index === currentIndex ? "bg-white w-2.5 h-2 sm:w-3 sm:h-2" : "bg-white/50 w-2 h-2 sm:w-2 sm:h-2 hover:bg-white/70"
               }`}

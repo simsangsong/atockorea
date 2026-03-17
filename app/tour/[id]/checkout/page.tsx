@@ -8,6 +8,9 @@ import BottomNav from '@/components/BottomNav';
 import { useTranslations } from '@/lib/i18n';
 import { supabase } from '@/lib/supabase';
 import { useCurrencyOptional } from '@/lib/currency';
+import { BookingTimelineSection } from '@/components/tour/BookingTimelineSection';
+import { COPY } from '@/src/design/copy';
+import { analytics } from '@/src/design/analytics';
 
 interface BookingData {
   tourId: number;
@@ -52,6 +55,7 @@ export default function CheckoutPage() {
       try {
         const parsed = JSON.parse(stored);
         setBookingData(parsed);
+        analytics.checkoutStarted('unknown', (parsed as { pickupAreaLabel?: string })?.pickupAreaLabel ?? 'Unknown');
       } catch (error) {
         console.error('Error parsing booking data:', error);
         alert('Invalid booking data. Please try again.');
@@ -432,10 +436,10 @@ export default function CheckoutPage() {
               </div>
             </div>
 
-            {/* Right Column - Booking Summary */}
+            {/* Right Column - Order summary, timeline (server or static), reassurance, CTA */}
             <div className="lg:col-span-1">
               <div className="sticky top-24 space-y-6">
-                {/* Booking Summary */}
+                {/* Order Summary */}
                 <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-6">
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
@@ -443,7 +447,7 @@ export default function CheckoutPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                       </svg>
                     </div>
-                    <h2 className="text-xl font-bold text-gray-900">{t('booking.bookingSummary')}</h2>
+                    <h2 className="text-xl font-bold text-gray-900">{COPY.checkout.orderSummary}</h2>
                   </div>
                   <div className="space-y-4 pb-4 border-b border-gray-200">
                     <div className="flex justify-between items-start">
@@ -453,7 +457,7 @@ export default function CheckoutPage() {
                         </svg>
                         {t('booking.tourDate')}
                       </span>
-                      <span className="text-sm font-semibold text-gray-900 text-right">
+                      <span className="text-sm font-semibold text-gray-900 text-right tabular-nums">
                         {new Date(bookingData.date).toLocaleDateString('en-US', {
                           weekday: 'short',
                           month: 'short',
@@ -469,7 +473,7 @@ export default function CheckoutPage() {
                         </svg>
                         {t('tour.guests')}
                       </span>
-                      <span className="text-sm font-semibold text-gray-900">{bookingData.guests}</span>
+                      <span className="text-sm font-semibold text-gray-900 tabular-nums">{bookingData.guests}</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-600 flex items-center gap-2">
@@ -484,45 +488,57 @@ export default function CheckoutPage() {
                     </div>
                   </div>
 
-                  {/* Payment Details */}
-                  {bookingData.paymentMethod === 'deposit' && bookingData.depositAmountKRW && bookingData.balanceAmountKRW && (
-                    <div className="mt-4 pt-4 border-t border-gray-200">
-                      <div className="space-y-3">
-                        <div className="flex justify-between items-center">
-                          <span className="text-sm text-gray-600">{t('booking.deposit')}</span>
-                          <span className="text-sm font-bold text-blue-600">
-                            {formatPrice(bookingData.depositAmountKRW)}
-                          </span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-sm text-gray-600">{t('booking.payOnSite')}</span>
-                          <span className="text-sm font-bold text-gray-900">
-                            {formatPrice(bookingData.balanceAmountKRW)}
-                          </span>
-                        </div>
-                      </div>
+                  {/* Price lines: base, subtotal, deposit/balance, total */}
+                  <div className="mt-4 pt-4 border-t border-gray-200 space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-600">{COPY.checkout.basePrice}</span>
+                      <span className="font-medium text-gray-900 tabular-nums">{formatPrice(bookingData.totalPrice)}</span>
                     </div>
-                  )}
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-600">{COPY.checkout.subtotal}</span>
+                      <span className="font-medium text-gray-900 tabular-nums">{formatPrice(bookingData.totalPrice)}</span>
+                    </div>
+                    {bookingData.paymentMethod === 'deposit' && bookingData.depositAmountKRW != null && bookingData.balanceAmountKRW != null && (
+                      <>
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-600">{COPY.checkout.depositDueToday}</span>
+                          <span className="font-bold text-blue-600 tabular-nums">{formatPrice(bookingData.depositAmountKRW)}</span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-600">{COPY.checkout.remainingBalanceLater}</span>
+                          <span className="font-medium text-gray-900 tabular-nums">{formatPrice(bookingData.balanceAmountKRW)}</span>
+                        </div>
+                      </>
+                    )}
+                  </div>
 
-                  {/* Total */}
                   <div className="mt-5 pt-5 border-t-2 border-gray-200">
                     <div className="flex justify-between items-center">
-                      <span className="text-base font-bold text-gray-900">{t('tour.total')}</span>
-                      <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
+                      <span className="text-base font-bold text-gray-900">{COPY.checkout.total}</span>
+                      <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent tabular-nums">
                         {bookingData.paymentMethod === 'deposit'
-                          ? formatPrice(bookingData.depositAmountKRW || 1000)
-                          : formatPrice(bookingData.totalPrice)
-                        }
+                          ? formatPrice(bookingData.depositAmountKRW ?? 1000)
+                          : formatPrice(bookingData.totalPrice)}
                       </span>
                     </div>
                   </div>
                 </div>
 
-                {/* Payment Button */}
+                {/* Booking timeline: server-only or static copy (no client-computed deadlines) */}
+                <BookingTimelineSection allowClientFallback={false} />
+
+                {/* Reassurance box */}
+                <div className="rounded-2xl border border-gray-200/60 bg-white/90 backdrop-blur-sm p-5 shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
+                  <h3 className="text-base font-bold text-gray-900 mb-2">{COPY.checkout.whyDepositTitle}</h3>
+                  <p className="text-sm text-gray-600">{COPY.checkout.whyDepositBody}</p>
+                  <p className="mt-3 text-sm font-medium text-gray-800">{COPY.checkout.autoChargeWarning}</p>
+                </div>
+
+                {/* Primary CTA */}
                 <button
                   onClick={handlePayment}
                   disabled={isProcessing || !customerInfo.name || !customerInfo.phone || !customerInfo.email || !customerInfo.preferredChatApp || !customerInfo.chatAppContact}
-                  className="w-full py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-bold rounded-xl transition-all shadow-[0_4px_12px_rgba(37,99,235,0.4)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.5)] text-lg transform hover:-translate-y-0.5 disabled:transform-none"
+                  className="w-full min-h-[44px] py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-bold rounded-xl transition-all shadow-[0_4px_12px_rgba(37,99,235,0.4)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.5)] text-lg transform hover:-translate-y-0.5 disabled:transform-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 >
                   {isProcessing ? (
                     <span className="flex items-center justify-center gap-2">
@@ -532,7 +548,7 @@ export default function CheckoutPage() {
                       </svg>
                       {t('booking.processing')}
                     </span>
-                  ) : bookingData.paymentMethod === 'deposit' ? t('booking.payDeposit') : t('booking.completeBooking')}
+                  ) : bookingData.paymentMethod === 'deposit' ? COPY.checkout.payDeposit : COPY.checkout.completeBooking}
                 </button>
               </div>
             </div>

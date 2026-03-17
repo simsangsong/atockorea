@@ -30,7 +30,12 @@ const InteractiveMap = dynamic(
   { ssr: false, loading: () => <div className="h-64 bg-gray-100 rounded-lg animate-pulse" /> }
 );
 
-import type { TourDetail, ItineraryDetail } from '@/types/tour';
+import type { ItineraryDetail } from '@/types/tour';
+import type { TourDetailViewModel } from '@/src/types/tours';
+import { adaptTourDetailResponse } from '@/src/lib/adapters/tours-adapter';
+import { BookingTimelineSection } from '@/components/tour/BookingTimelineSection';
+import { COPY } from '@/src/design/copy';
+import { analytics } from '@/src/design/analytics';
 import { Star, Shield, Award, Users, Clock, Globe, Check, X, ChevronRight, MapPin, Navigation, AlertCircle, Plane, Banknote } from 'lucide-react';
 
 const poppins = Poppins({ weight: ['300', '400', '500', '600', '700'], subsets: ['latin'] });
@@ -131,12 +136,6 @@ function StyledTimelineCard({
   );
 }
 
-type Tour = TourDetail & {
-  availableSpots?: number;
-  depositAmountUSD?: number;
-  balanceAmountKRW?: number;
-};
-
 export default function TourDetailPage() {
   const params = useParams();
   const router = useRouter();
@@ -153,9 +152,10 @@ export default function TourDetailPage() {
   
   const bookingRef = useRef<HTMLDivElement>(null);
   
-  const [tour, setTour] = useState<Tour | null>(null);
+  const [tour, setTour] = useState<TourDetailViewModel | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [timelineSelectedDate, setTimelineSelectedDate] = useState<Date | null>(null);
   /** CRO: global "상세정보 펼쳐보기" expanded state; when true, details container is visible and individual buttons hidden */
   const [detailsExpanded, setDetailsExpanded] = useState(false);
   /** CRO: which timeline description ids are expanded (Read more) */
@@ -267,82 +267,20 @@ export default function TourDetailPage() {
           return; // Don't update state if component unmounted
         }
         
-        if (!data.tour) {
+        const viewModel = adaptTourDetailResponse(data);
+        if (!viewModel) {
           setError('Tour data not found in response');
           setLoading(false);
           fetchingRef.current = false;
           return;
         }
-        
-        // Helper function to remove recommended routes from any text field
-        const removeRoutes = (text: string | null | undefined): string => {
-          if (!text) return '';
-          let cleaned = String(text);
-          
-          // Remove everything from "Recommended Routes" onwards
-          const routePatterns = [
-            /\*\*Recommended Routes?:\*\*[\s\S]*/i,
-            /\*\*추천 루트:\*\*[\s\S]*/i,
-            /Recommended Routes?:[\s\S]*/i,
-            /추천 루트:[\s\S]*/i,
-            /\*\*(East|West|South) Route:\*\*[\s\S]*/i,
-            /\*\*동부 루트:[\s\S]*/i,
-            /\*\*서부 루트:[\s\S]*/i,
-            /\*\*남부 루트:[\s\S]*/i,
-          ];
-          
-          for (const pattern of routePatterns) {
-            const match = cleaned.search(pattern);
-            if (match !== -1) {
-              cleaned = cleaned.substring(0, match).trim();
-              break;
-            }
-          }
-          
-          return cleaned;
-        };
-        
-        // Transform gallery_images to images format
-        const transformImages = (gallery: any[]): Array<{ url: string; title: string; description: string }> => {
-          if (!gallery || gallery.length === 0) return [];
-          return gallery.map((img, index) => {
-            if (typeof img === 'string') {
-              return { url: img, title: `Image ${index + 1}`, description: '' };
-            }
-            return {
-              url: img.url || img,
-              title: img.title || `Image ${index + 1}`,
-              description: img.description || '',
-            };
-          });
-        };
-
-        // Transform API data to match component expectations
-        const transformedTour: Tour = {
-          ...data.tour,
-          title: removeRoutes(data.tour.title),
-          tagline: removeRoutes(data.tour.tagline || data.tour.subtitle),
-          overview: removeRoutes(data.tour.overview || data.tour.description),
-          images: transformImages(data.tour.gallery_images || data.tour.images || []),
-          // Ensure default values for missing data
-          quickFacts: data.tour.quickFacts || [
-            data.tour.groupSize ? `Group size: ${data.tour.groupSize}` : '',
-            data.tour.difficulty ? `Difficulty: ${data.tour.difficulty}` : '',
-            data.tour.duration ? `Duration: ${data.tour.duration}` : '',
-          ].filter(Boolean),
-          itinerary: data.tour.itinerary || [],
-          inclusions: data.tour.inclusions || [],
-          exclusions: data.tour.exclusions || [],
-          pickupPoints: data.tour.pickupPoints || [],
-          highlights: data.tour.highlights || [],
-          faqs: data.tour.faqs || [],
-        };
 
         if (isMounted) {
-          setTour(transformedTour);
+          setTour(viewModel);
           setLoading(false);
           fetchingRef.current = false;
-          hasFetchedRef.current = `${tourId}:${locale}`; // Mark this tour+locale as fetched
+          hasFetchedRef.current = `${tourId}:${locale}`;
+          analytics.detailViewed(viewModel.type, viewModel.pickup?.areaLabel ?? 'Unknown');
         }
       } catch (err: any) {
         console.error('Error fetching tour:', err);
@@ -643,6 +581,51 @@ export default function TourDetailPage() {
                 </div>
               </div>
             </div>
+
+            {/* Why this fits you (ViewModel) */}
+            {tour.whyThisFitsYou?.length > 0 && (
+              <div className="w-full rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-neutral-100">
+                <h2 className="text-lg font-extrabold text-neutral-900 mb-3">{COPY.detail.whyThisFitsYou}</h2>
+                <ul className="space-y-2">
+                  {tour.whyThisFitsYou.map((line, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-neutral-700">
+                      <Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <span>{line}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Booking timeline: prefer server-provided (tour.bookingTimeline); fallback to client-computed only when server has none */}
+            <div className="w-full">
+              <BookingTimelineSection
+                serverTimeline={tour.bookingTimeline ?? undefined}
+                selectedDateForFallback={timelineSelectedDate}
+              />
+            </div>
+
+            {/* Cancellation policy (centralized copy) */}
+            <div className="w-full rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-neutral-100">
+              <h2 className="text-lg font-extrabold text-neutral-900 mb-2">{COPY.detail.cancellationPolicy}</h2>
+              <p className="text-sm text-neutral-600">{tour.cancellationPolicy}</p>
+              <p className="mt-2 text-xs text-neutral-500">{COPY.checkout.autoChargeWarning}</p>
+            </div>
+
+            {/* Who this is best for (ViewModel) */}
+            {tour.whoThisIsBestFor?.length > 0 && (
+              <div className="w-full rounded-2xl bg-white p-4 sm:p-6 shadow-sm border border-neutral-100">
+                <h2 className="text-lg font-extrabold text-neutral-900 mb-3">{COPY.detail.whoThisIsBestFor}</h2>
+                <ul className="space-y-1.5">
+                  {tour.whoThisIsBestFor.map((line, i) => (
+                    <li key={i} className="text-sm text-neutral-700 flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 shrink-0" />
+                      {line}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* 2. Photo Gallery (asymmetric grid, +N Photos) */}
             <div className="flex flex-col items-center mt-2 sm:mt-4">
@@ -1009,7 +992,7 @@ export default function TourDetailPage() {
             {/* ================= RIGHT / CHECKOUT FORM (Desktop Sticky) ================= */}
             <div ref={bookingRef} className="lg:w-1/3 mt-4 lg:mt-0">
               <div className="sticky top-8 bg-white p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-neutral-100 overflow-hidden">
-                <EnhancedBookingSidebar tour={tour} />
+                <EnhancedBookingSidebar tour={tour} onDateSelect={setTimelineSelectedDate} />
               </div>
             </div>
         </div>

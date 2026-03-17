@@ -11,8 +11,9 @@ import { useTranslations, useI18n } from '@/lib/i18n';
 import { useCurrencyOptional } from '@/lib/currency';
 import { Loader2, Plus, Trash2, Check, ChevronUp, ChevronDown, Calendar, Clock, Bot, UtensilsCrossed } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { RobotMascot } from '@/components/RobotMascot';
+import BuilderLoadingOverlay from '@/components/BuilderLoadingOverlay';
 import CustomCalendar from '@/components/CustomCalendar';
+import { COPY } from '@/src/design/copy';
 import { CustomTimePicker, CustomSelect } from '@/components/CustomPicker';
 import dynamic from 'next/dynamic';
 
@@ -243,6 +244,7 @@ export default function CustomJoinTourPage() {
   const chatEndRef = useRef<HTMLDivElement>(null);
   const itineraryRef = useRef<HTMLDivElement>(null);
   const [showGenerateOverlay, setShowGenerateOverlay] = useState(false);
+  const [generateSuccess, setGenerateSuccess] = useState(false);
   const generateOverlayPlayedSound = useRef(false);
 
   /** Checkout: customer form (same as tour checkout) */
@@ -439,7 +441,9 @@ export default function CustomJoinTourPage() {
       };
       try {
         window.localStorage.setItem(STORAGE_KEY_ITINERARY, JSON.stringify(payload));
+        setGenerateSuccess(true);
         setTimeout(() => {
+          setGenerateSuccess(false);
           router.push(`${window.location.pathname}?open=itinerary`);
           setShowGenerateOverlay(false);
         }, 1800);
@@ -766,10 +770,10 @@ export default function CustomJoinTourPage() {
   return (
     <div className={isDarkTheme ? 'min-h-screen tour-planner-page bg-[#0d1a2e] text-white' : 'min-h-screen bg-white text-neutral-900'}>
       <Header />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 max-w-3xl">
-        {/* Single-column form */}
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 max-w-3xl lg:max-w-5xl">
         {showDashboard && (
-          <div className="flex flex-col gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr,minmax(260px,300px)] gap-6 lg:gap-8">
+          <div className="flex flex-col gap-6 min-w-0">
             {/* Join mode: select hotel and check distance before proceeding to checkout */}
             {proposedTourToJoin && !joinProposedId && (
               <motion.div
@@ -873,6 +877,31 @@ export default function CustomJoinTourPage() {
               </div>
 
               <div className="px-6 lg:px-8 pb-6 lg:pb-8 pt-4">
+              {/* Hotel area (spec order: destination → hotel → date) — data from existing state only */}
+              <label className="text-[10px] text-gray-400 uppercase tracking-wider block mb-2">{t('home.customJoinTour.hotelLocationLabel')}</label>
+              <div className="mb-4">
+                <button
+                  type="button"
+                  onClick={() => setHotelMapOpen(true)}
+                  className="w-full text-left px-3 py-2.5 rounded-lg bg-white/5 border border-cyan-500/30 text-sm text-white placeholder:text-gray-500 hover:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400 outline-none truncate"
+                >
+                  {hotelInfo ? (hotelInfo.placeName ?? hotelInfo.address) : t('home.customJoinTour.hotelInformationPlaceholder')}
+                </button>
+                {hotelInfo && (
+                  <p className="mt-2 text-xs text-cyan-300/90">
+                    {COPY.pickupMatch.good}
+                    {hotelLocation !== 'jeju_city' && (
+                      <span className="text-amber-300/90 ml-1.5">· {COPY.surcharge.short}</span>
+                    )}
+                  </p>
+                )}
+              </div>
+              <HotelMapPicker
+                open={hotelMapOpen}
+                onClose={() => setHotelMapOpen(false)}
+                onConfirm={(info) => { setHotelInfo(info); setHotelMapOpen(false); }}
+              />
+
               <div className="grid grid-cols-2 gap-4 mb-5">
                 <div className="space-y-1">
                   <label className="text-[10px] text-gray-400 uppercase tracking-wider">{t('home.customJoinTour.tourDateLabel')}</label>
@@ -919,21 +948,8 @@ export default function CustomJoinTourPage() {
                   )}
                   align="left"
                 />
-                <span className="text-[10px] text-gray-400 uppercase tracking-wider">{t('home.customJoinTour.hotelLocationLabel')}</span>
-                <button
-                  type="button"
-                  onClick={() => setHotelMapOpen(true)}
-                  className="flex-1 min-w-0 text-left px-3 py-2.5 rounded-lg bg-white/5 border border-cyan-500/30 text-sm text-white placeholder:text-gray-500 hover:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400 outline-none truncate"
-                >
-                  {hotelInfo ? (hotelInfo.placeName ?? hotelInfo.address) : t('home.customJoinTour.hotelInformationPlaceholder')}
-                </button>
               </div>
-              <HotelMapPicker
-                open={hotelMapOpen}
-                onClose={() => setHotelMapOpen(false)}
-                onConfirm={(info) => { setHotelInfo(info); setHotelMapOpen(false); }}
-              />
-              </div>
+
               {(() => {
                 const vanPricing = getCustomJoinTourPricing(participants <= 6 ? participants : 6, hotelLocation);
                 const largeVanPricing = getCustomJoinTourPricing(participants >= 7 ? participants : 7, hotelLocation);
@@ -1013,6 +1029,19 @@ export default function CustomJoinTourPage() {
               </p>
 
               {error && <p className="text-xs text-rose-400 mb-3">{error}</p>}
+              {/* Live summary (mobile): from existing state only */}
+              <div className="lg:hidden rounded-lg border border-cyan-500/20 bg-white/5 px-4 py-3 mb-4">
+                <p className="text-[10px] text-cyan-400/80 uppercase tracking-wider mb-2">Summary</p>
+                <p className="text-xs text-gray-300">
+                  {destination === 'busan' ? 'Busan' : destination === 'seoul' ? 'Seoul' : 'Jeju'}
+                  {hotelInfo ? ` · ${COPY.builderPickupArea[hotelLocation]}` : ''}
+                  {tourDate ? ` · ${tourDate}` : ''} · {participants} {locale === 'ko' ? '명' : 'guests'}
+                </p>
+                {hotelLocation !== 'jeju_city' && hotelInfo && (
+                  <p className="text-[11px] text-amber-300/90 mt-1">{COPY.surcharge.short}</p>
+                )}
+                <p className="text-[11px] text-gray-400 mt-1.5">{COPY.builderSummary.depositNote}</p>
+              </div>
               <p className="text-[11px] text-gray-400 mb-4 leading-relaxed">
                 <strong className="text-gray-300">{t('home.customJoinTour.departureGuaranteeTitle')}</strong> <GuaranteeBodyWithBold text={t('home.customJoinTour.departureGuaranteeBody')} /> {t('home.customJoinTour.departureGuaranteeMinPax')}
               </p>
@@ -1025,9 +1054,29 @@ export default function CustomJoinTourPage() {
                 {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Bot className="w-4 h-4 text-cyan-300" />}
                 {t('home.customJoinTour.generateButton')}
               </button>
+              </div>
             </motion.div>
             )}
 
+          </div>
+          {/* Live summary panel (desktop): sticky right, existing state only */}
+          {(!proposedTourToJoin || joinProposedId) && (
+            <aside className="hidden lg:block sticky top-24 self-start">
+              <div className="rounded-xl border border-cyan-500/20 bg-white/5 p-4">
+                <p className="text-[10px] text-cyan-400/80 uppercase tracking-wider mb-3">Summary</p>
+                <ul className="text-xs text-gray-300 space-y-1.5">
+                  <li><span className="text-gray-500">Destination</span> {destination === 'busan' ? 'Busan' : destination === 'seoul' ? 'Seoul' : 'Jeju'}</li>
+                  <li><span className="text-gray-500">Hotel area</span> {hotelInfo ? COPY.builderPickupArea[hotelLocation] : '—'}</li>
+                  <li><span className="text-gray-500">Date</span> {tourDate || '—'}</li>
+                  <li><span className="text-gray-500">Guests</span> {participants}</li>
+                </ul>
+                {hotelLocation !== 'jeju_city' && hotelInfo && (
+                  <p className="text-[11px] text-amber-300/90 mt-2">{COPY.surcharge.short}</p>
+                )}
+                <p className="text-[11px] text-gray-400 mt-2">{COPY.builderSummary.depositNote}</p>
+              </div>
+            </aside>
+          )}
           </div>
         )}
 
@@ -1397,37 +1446,11 @@ export default function CustomJoinTourPage() {
       <Footer />
       <BottomNav />
       <div className="h-16 md:hidden" />
-      <AnimatePresence>
-        {showGenerateOverlay && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[9999] bg-[#0d1a2e] grid place-items-center overflow-hidden p-0 min-h-[100dvh] h-[100dvh]"
-          >
-            <div className="transition-circuit-bg absolute inset-0 opacity-40" aria-hidden />
-            <div className="transition-scanline absolute inset-0 pointer-events-none" aria-hidden />
-            <div className="flex flex-col items-center justify-center relative z-10">
-              <motion.div
-                initial={{ y: 20, scale: 0.8 }}
-                animate={{ y: [0, -20, 0], scale: 1 }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-                className="w-32 h-32"
-              >
-                <RobotMascot className="w-full h-full" />
-              </motion.div>
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: [0, 1, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                className="mt-6 text-cyan-400 font-mono tracking-tighter text-sm"
-              >
-                AI ANALYZING YOUR PREFERENCES...
-              </motion.p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <BuilderLoadingOverlay
+        visible={showGenerateOverlay}
+        areaLabel={hotelInfo ? (COPY.builderPickupArea[hotelLocation] ?? null) : null}
+        success={generateSuccess}
+      />
     </div>
   );
 }

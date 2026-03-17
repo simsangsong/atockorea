@@ -17,7 +17,7 @@ const SECTIONS: Array<{
 
 export default function HomeTourSections() {
   return (
-    <div className="bg-white/80 backdrop-blur-sm border-y border-gray-100">
+    <div className="bg-[#F5F7FA]/50 border-y border-[#E1E5EA]">
       {SECTIONS.map(({ titleKey, seeAllHref, fetchParams }) => (
         <TourSectionRow
           key={titleKey}

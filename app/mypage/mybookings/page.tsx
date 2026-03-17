@@ -7,8 +7,12 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { CalendarDateIcon, ClockIcon, MapIcon, TrashIcon } from '@/components/Icons';
+import { CalendarDateIcon, MapIcon } from '@/components/Icons';
 import { supabase } from '@/lib/supabase';
+import { StatusBanner } from '@/src/components/ui/status-banner';
+import { rawBookingStatusToDisplayStatus } from '@/src/design/status';
+import type { BookingStatus } from '@/src/types/booking';
+import { COPY } from '@/src/design/copy';
 
 interface Booking {
   id: string;
@@ -131,25 +135,9 @@ export default function MyBookingsPage() {
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
   };
 
-  const getStatusLabel = (status: string) => {
-    const statusMap: Record<string, string> = {
-      'pending': 'Pending',
-      'confirmed': 'Confirmed',
-      'completed': 'Completed',
-      'cancelled': 'Cancelled',
-    };
-    return statusMap[status] || status;
-  };
-
-  const getStatusColor = (status: string) => {
-    const colorMap: Record<string, string> = {
-      'completed': 'bg-green-100 text-green-700',
-      'confirmed': 'bg-blue-100 text-blue-700',
-      'pending': 'bg-yellow-100 text-yellow-700',
-      'cancelled': 'bg-gray-100 text-gray-700',
-    };
-    return colorMap[status] || 'bg-gray-100 text-gray-700';
-  };
+  /** Display-only: map raw API status to spec status for StatusBanner. Do not use for actionable logic. */
+  const getDisplayStatus = (status: string): BookingStatus =>
+    rawBookingStatusToDisplayStatus[status] ?? "pending";
 
   const now = new Date();
   const upcomingBookings = bookings.filter((b) => {
@@ -182,7 +170,7 @@ export default function MyBookingsPage() {
   return (
     <div className="space-y-6">
       <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-        <h1 className="text-xl font-medium text-gray-900 mb-2">My Bookings</h1>
+        <h1 className="text-xl font-medium text-gray-900 mb-2">{COPY.myTour.title}</h1>
         <p className="text-gray-600">Manage all your tour bookings</p>
       </div>
 
@@ -198,8 +186,7 @@ export default function MyBookingsPage() {
                 onCancel={() => handleCancel(booking)}
                 canCancel={canCancel(booking)}
                 formatDate={formatDate}
-                getStatusLabel={getStatusLabel}
-                getStatusColor={getStatusColor}
+                displayStatus={getDisplayStatus(booking.status)}
               />
             ))}
           </div>
@@ -218,8 +205,7 @@ export default function MyBookingsPage() {
                 onReview={() => handleReview(booking)}
                 showReview={true}
                 formatDate={formatDate}
-                getStatusLabel={getStatusLabel}
-                getStatusColor={getStatusColor}
+                displayStatus={getDisplayStatus(booking.status)}
               />
             ))}
           </div>
@@ -236,8 +222,7 @@ export default function MyBookingsPage() {
                 key={booking.id}
                 booking={booking}
                 formatDate={formatDate}
-                getStatusLabel={getStatusLabel}
-                getStatusColor={getStatusColor}
+                displayStatus={getDisplayStatus(booking.status)}
               />
             ))}
           </div>
@@ -260,19 +245,17 @@ interface BookingCardProps {
   canCancel?: boolean;
   showReview?: boolean;
   formatDate: (date: string) => string;
-  getStatusLabel: (status: string) => string;
-  getStatusColor: (status: string) => string;
+  displayStatus: BookingStatus;
 }
 
-function BookingCard({ 
-  booking, 
-  onCancel, 
-  onReview, 
-  canCancel = false, 
+function BookingCard({
+  booking,
+  onCancel,
+  onReview,
+  canCancel = false,
   showReview = false,
   formatDate,
-  getStatusLabel,
-  getStatusColor,
+  displayStatus,
 }: BookingCardProps) {
   const router = useRouter();
 
@@ -291,7 +274,7 @@ function BookingCard({
     <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 overflow-hidden">
       <div className="flex flex-col md:flex-row">
         <div className="md:w-48 h-48 md:h-auto flex-shrink-0 relative">
-          <Link 
+          <Link
             href={`/tour/${booking.tour_id}`}
             onClick={(e) => handleLinkClick(e, `/tour/${booking.tour_id}`)}
           >
@@ -304,9 +287,9 @@ function BookingCard({
           </Link>
         </div>
         <div className="flex-1 p-5">
-          <div className="flex items-start justify-between mb-3">
-            <div className="flex-1">
-              <Link 
+          <div className="flex items-start justify-between gap-3 mb-3">
+            <div className="flex-1 min-w-0">
+              <Link
                 href={`/tour/${booking.tour_id}`}
                 onClick={(e) => handleLinkClick(e, `/tour/${booking.tour_id}`)}
               >
@@ -316,44 +299,41 @@ function BookingCard({
               </Link>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-gray-600 mb-3">
                 <div className="flex items-center gap-1">
-                  <MapIcon className="w-3.5 h-3.5" />
+                  <MapIcon className="w-3.5 h-3.5 flex-shrink-0" />
                   <span>{booking.tours?.city || 'N/A'}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <CalendarDateIcon className="w-3.5 h-3.5" />
-                  <span>{formatDate(tourDate)}</span>
+                  <CalendarDateIcon className="w-3.5 h-3.5 flex-shrink-0" />
+                  <span className="tabular-nums">{formatDate(tourDate)}</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <span>Guests: {booking.number_of_guests}</span>
                 </div>
-                <div className="flex items-center gap-1">
-                  <span>${parseFloat(booking.final_price.toString()).toFixed(2)}</span>
+                <div className="flex items-center gap-1 tabular-nums">
+                  <span>₩{Math.round(Number(booking.final_price)).toLocaleString('ko-KR')}</span>
                 </div>
               </div>
             </div>
-            <span
-              className={`px-3 py-1 rounded-full text-xs font-semibold flex-shrink-0 ${getStatusColor(booking.status)}`}
-            >
-              {getStatusLabel(booking.status)}
-            </span>
           </div>
 
-          {/* Action Buttons */}
-          <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
+          <StatusBanner status={displayStatus} className="mb-3" />
+
+          <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-gray-100">
             <Link
               href={`/tour/${booking.tour_id}`}
               onClick={(e) => handleLinkClick(e, `/tour/${booking.tour_id}`)}
-              className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium"
+              className="min-h-[44px] inline-flex items-center justify-center px-4 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
-              View Details
+              {COPY.myTour.viewDetails}
             </Link>
             {onCancel && (
               <button
+                type="button"
                 onClick={onCancel}
                 disabled={!canCancel}
-                className={`px-4 py-2 rounded-lg transition-colors text-sm font-medium ${
+                className={`min-h-[44px] px-4 py-2.5 rounded-lg transition-colors text-sm font-medium focus:ring-2 focus:ring-offset-2 ${
                   canCancel
-                    ? 'bg-red-50 text-red-600 hover:bg-red-100'
+                    ? 'bg-red-50 text-red-600 hover:bg-red-100 focus:ring-red-500'
                     : 'bg-gray-100 text-gray-400 cursor-not-allowed'
                 }`}
                 title={!canCancel ? 'Cancellation not allowed within 24 hours' : 'Cancel Booking'}
@@ -363,8 +343,9 @@ function BookingCard({
             )}
             {showReview && onReview && (
               <button
+                type="button"
                 onClick={onReview}
-                className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium"
+                className="min-h-[44px] px-4 py-2.5 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
               >
                 Write Review
               </button>

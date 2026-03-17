@@ -3,8 +3,14 @@ import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
 import HeroSection from '@/components/HeroSection';
 import CompactTrustBar from '@/components/CompactTrustBar';
-import HomeTourSections from '@/components/HomeTourSections';
+import ComparisonSection from '@/components/ComparisonSection';
+import TourTypeCards from '@/components/TourTypeCards';
+import HowItWorksSection from '@/components/HowItWorksSection';
+import PreviewItineraryCard from '@/components/PreviewItineraryCard';
 import DestinationsCards from '@/components/DestinationsCards';
+import ClassicBusSection from '@/components/ClassicBusSection';
+import ReviewsSection from '@/components/ReviewsSection';
+import FinalCTASection from '@/components/FinalCTASection';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 // Force dynamic rendering to avoid I18nProvider issues during static generation
@@ -24,8 +30,14 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <CompactTrustBar />
+        <ComparisonSection />
+        <TourTypeCards />
+        <HowItWorksSection />
+        <PreviewItineraryCard />
         <DestinationsCards />
-        <HomeTourSections />
+        <ClassicBusSection />
+        <ReviewsSection />
+        <FinalCTASection />
       </main>
       <Footer />
       <BottomNav />

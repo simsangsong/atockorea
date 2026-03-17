@@ -33,6 +33,8 @@ interface EnhancedBookingSidebarProps {
     depositAmountUSD?: number;
     balanceAmountKRW?: number;
   };
+  /** Optional: notify parent when selected date changes (e.g. for booking timeline). */
+  onDateSelect?: (date: Date | null) => void;
 }
 
 interface AvailabilityData {
@@ -46,11 +48,19 @@ interface AvailabilityData {
   date: string;
 }
 
-export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarProps) {
+export default function EnhancedBookingSidebar({ tour, onDateSelect }: EnhancedBookingSidebarProps) {
   const router = useRouter();
   const t = useTranslations();
   const currencyCtx = useCurrencyOptional();
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+
+  const handleDateChange = useCallback(
+    (date: Date | null) => {
+      setSelectedDate(date);
+      onDateSelect?.(date);
+    },
+    [onDateSelect]
+  );
   const [guestCount, setGuestCount] = useState(1);
   const [selectedPickup, setSelectedPickup] = useState<string | number | null>(null);
   const [promoCode, setPromoCode] = useState('');
@@ -324,7 +334,7 @@ export default function EnhancedBookingSidebar({ tour }: EnhancedBookingSidebarP
           </label>
           <DatePicker
             selected={selectedDate}
-            onChange={(date) => setSelectedDate(date)}
+            onChange={(date) => handleDateChange(date ?? null)}
             minDate={new Date()}
             placeholderText={t('tour.chooseDate')}
             className="w-full px-3.5 py-2.5 text-sm font-medium text-neutral-900 rounded-xl focus:ring-2 focus:ring-neutral-200 outline-none bg-[#F9F8F6] border-none shadow-inner transition-colors"

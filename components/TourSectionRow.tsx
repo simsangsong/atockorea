@@ -71,10 +71,10 @@ export default function TourSectionRow({
     return (
       <section className="py-6 sm:py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-7 w-48 bg-gray-200 rounded-full animate-pulse mb-4" />
+          <div className="h-7 w-48 bg-[#E1E5EA] rounded-full animate-pulse mb-4" />
           <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="flex-shrink-0 w-[44vw] sm:w-44 lg:w-52 aspect-[5/4.6] bg-gray-200 rounded-xl animate-pulse" />
+              <div key={i} className="flex-shrink-0 w-[44vw] sm:w-44 lg:w-52 aspect-[5/4.6] bg-[#E1E5EA] rounded-xl animate-pulse" />
             ))}
           </div>
         </div>
@@ -88,13 +88,13 @@ export default function TourSectionRow({
     <section className="py-4 sm:py-6">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4 mb-3">
-          <h2 className="text-base sm:text-lg font-bold text-gray-900">
+          <h2 className="text-base sm:text-lg font-bold text-[#1A1A1A]">
             {t(titleKey)}
           </h2>
           {seeAllHref && (
             <a
               href={seeAllHref}
-              className="text-xs sm:text-sm font-semibold text-blue-600 hover:text-blue-700 whitespace-nowrap"
+              className="text-sm font-semibold text-[#1E4EDF] hover:underline whitespace-nowrap min-h-[44px] inline-flex items-center"
             >
               {t('home.sections.seeAll')}
             </a>

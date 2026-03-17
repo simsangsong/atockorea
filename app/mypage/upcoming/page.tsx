@@ -9,6 +9,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CalendarDateIcon, ClockIcon } from '@/components/Icons';
 import { supabase } from '@/lib/supabase';
+import { StatusBanner } from '@/src/components/ui/status-banner';
+import { rawBookingStatusToDisplayStatus } from '@/src/design/status';
+import type { BookingStatus } from '@/src/types/booking';
+import { COPY } from '@/src/design/copy';
 
 interface UpcomingTour {
   id: string;
@@ -126,11 +130,8 @@ export default function UpcomingToursPage() {
     return timeString;
   };
 
-  const getStatusColor = (status: string) => {
-    return status === 'confirmed'
-      ? 'bg-green-100 text-green-700'
-      : 'bg-yellow-100 text-yellow-700';
-  };
+  const getDisplayStatus = (status: string): BookingStatus =>
+    rawBookingStatusToDisplayStatus[status] ?? "pending";
 
   if (loading) {
     return (
@@ -180,40 +181,35 @@ export default function UpcomingToursPage() {
                     />
                   </div>
                   <div className="flex-1 p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <h3 className="text-base font-medium text-gray-900 mb-2">
-                          {tour.tours?.title || 'Tour'}
-                        </h3>
-                        <div className="flex items-center gap-4 text-sm text-gray-600">
+                    <div className="mb-3">
+                      <h3 className="text-base font-medium text-gray-900 mb-2">
+                        {tour.tours?.title || 'Tour'}
+                      </h3>
+                      <div className="flex items-center gap-4 text-sm text-gray-600">
+                        <span className="flex items-center gap-1.5 tabular-nums">
+                          <CalendarDateIcon className="w-4 h-4 flex-shrink-0" />
+                          {formatDate(tourDate)}
+                        </span>
+                        {tour.pickup_points?.pickup_time && (
                           <span className="flex items-center gap-1.5">
-                            <CalendarDateIcon className="w-4 h-4" />
-                            {formatDate(tourDate)}
+                            <ClockIcon className="w-4 h-4 flex-shrink-0" />
+                            {formatTime(tour.pickup_points.pickup_time)}
                           </span>
-                          {tour.pickup_points?.pickup_time && (
-                            <span className="flex items-center gap-1.5">
-                              <ClockIcon className="w-4 h-4" />
-                              {formatTime(tour.pickup_points.pickup_time)}
-                            </span>
-                          )}
-                        </div>
+                        )}
                       </div>
-                      <span
-                        className={`px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(tour.status)}`}
-                      >
-                        {tour.status === 'confirmed' ? 'Confirmed' : 'Pending'}
-                      </span>
                     </div>
-                    <div className="flex gap-3">
+                    <StatusBanner status={getDisplayStatus(tour.status)} className="mb-4" />
+                    <div className="flex flex-wrap items-center gap-3">
                       <Link
                         href={`/tour/${tour.tour_id}`}
-                        className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium"
+                        className="min-h-[44px] inline-flex items-center justify-center px-4 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       >
-                        View Details
+                        {COPY.myTour.viewDetails}
                       </Link>
                       <button
+                        type="button"
                         onClick={() => handleCancel(tour.id)}
-                        className="px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors text-sm font-medium"
+                        className="min-h-[44px] px-4 py-2.5 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors text-sm font-medium focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                       >
                         Cancel Booking
                       </button>
