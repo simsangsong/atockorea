@@ -1,3 +1,7 @@
+/**
+ * Centralized copy: one primary message per section, supporting text max 2 lines,
+ * product cards one-line descriptions. Trust and payment rules remain visible.
+ */
 export const COPY = {
   brand: {
     support: "Starting with Jeju, expanding across Korea.",
@@ -12,16 +16,28 @@ export const COPY = {
     help: "Help",
   },
 
+  /** Hero: one primary (headline), sub max 2 lines, trust strip visible. */
   hero: {
     headline: "Plan less. Enjoy more of Jeju.",
-    sub: "Tell us your hotel, date, and travel style. We'll help you find the right Jeju tour — private, small-group, or budget-friendly.",
+    sub: "Hotel, date, and style — we find your right tour. Private, small-group, or classic bus.",
+    /** Extended subtitle for floating card (image_22 style). */
+    subCard: "Tell us your hotel, date, and travel style — we find your right tour. Private, small-group, or traditional bus.",
     cta: "Plan My Trip",
+    badge: "EXPERTISE CRAFTED BY PROFESSIONAL GUIDES",
     trust: [
       "AI-built itinerary in minutes",
       "Smarter pickup flow",
       "3–13 travelers only",
       "Transparent deposit and balance rules",
     ],
+    /** Subtitles for hero floating card value props (title + subtitle per row). */
+    valuePropSubtitles: [
+      "Personalized in minutes",
+      "Area-aware hotel matching",
+      "Secure deposit & balance",
+    ],
+    /** Short trust line under CTA (deposit/balance). */
+    trustCta: "No automatic balance charge. Free cancellation until 24h before.",
   },
 
   howItWorks: {
@@ -32,19 +48,19 @@ export const COPY = {
     step4: "Travel with less hassle",
   },
 
+  /** Comparison: concise, customer-facing; primary = title, bullets short. */
   comparison: {
-    title: "Why travelers choose this over crowded bus tours or expensive private charters",
+    title: "Why choose this over bus tours or private charters",
     bullets: [
-      "Less planning effort — we suggest the route",
-      "Small groups (3–13 travelers) — not crowded buses",
-      "Smarter pickup flow — hotel-area aware",
-      "More comfortable vehicles and pacing",
-      "Flexible booking — clear deposit and balance",
-      "Transparent pricing — no hidden fees",
-      "Better value than full private charter",
+      "Less planning — we suggest the route",
+      "Small groups (3–13) — not crowded buses",
+      "Hotel-area pickup — smoother flow",
+      "Clear deposit and balance — no hidden fees",
+      "Better value than full private",
     ],
   },
 
+  /** Preview itinerary: one primary (title), supporting max 2 lines. */
   previewItinerary: {
     title: "Example Jeju day tour",
     pickupArea: "City core",
@@ -53,6 +69,8 @@ export const COPY = {
     vehicleType: "Premium van",
     depositNote: "20% deposit to reserve",
     balanceNote: "Balance opens 24h before departure",
+    /** Single line for card: travelers · vehicle · deposit rule. */
+    oneLine: "4 travelers · Premium van · 20% deposit, balance 24h before.",
   },
 
   reviews: {
@@ -65,29 +83,28 @@ export const COPY = {
     ],
   },
 
+  /** Tour type cards: one-line description per product; points optional for expand. */
   tourTypes: {
     privateTitle: "AI Private Tour",
-    privateBody: "AI plans the route. Your group confirms instantly.",
+    privateBody: "Your group only. AI plans the route; you confirm instantly.",
     privatePoints: [
       "Your group only",
       "Instant confirmation",
-      "Best for families and friends",
-      "Private comfort",
+      "Best for families & friends",
     ],
     privateCta: "Start Private Tour",
 
     joinTitle: "AI Small-Group Join Tour",
-    joinBody: "AI plans the route. Enjoy a smoother, more comfortable shared tour.",
+    joinBody: "Small-group comfort, hotel-area pickup, transparent deposit.",
     joinPoints: [
       "Small-group comfort",
       "Better pickup flow",
-      "More affordable than private",
       "Transparent deposit timeline",
     ],
     joinCta: "Join Small Group",
 
     busTitle: "Classic Bus Tour",
-    busBody: "A standard group option for travelers who prefer the most traditional format.",
+    busBody: "Fixed itineraries, traditional group format.",
     busCta: "View Classic Bus Tours",
   },
 
@@ -123,11 +140,12 @@ export const COPY = {
     joinUnavailable: "This route is currently not open for join bookings.",
   },
 
+  /** Checkout/detail: trust and payment rules remain visible; body max 2 lines. */
   checkout: {
     title: "Checkout",
     whyDepositTitle: "Secure Your Seat with a 20% Deposit",
     whyDepositBody:
-      "Pay a small deposit today to reserve your spot. No automatic balance charge. Free cancellation until 24 hours before departure.",
+      "Pay a small deposit today. Free cancellation until 24h before. We never auto-charge the balance — you pay the rest in My Tours.",
     autoChargeWarning:
       "We will never charge your card automatically for the remaining balance. You need to complete it manually in My Tours.",
     cta: "Reserve My Spot",
@@ -135,7 +153,7 @@ export const COPY = {
     completeBooking: "Complete Booking",
     /** Shown when server does not provide timeline (no client-computed dates). */
     timelineStaticCopy:
-      "Deposit refundable until 24h before departure; balance due 18h before.",
+      "Deposit refundable until 24h before; balance due 18h before.",
     orderSummary: "Order summary",
     basePrice: "Base tour price",
     pickupSurcharge: "Pickup surcharge",
@@ -165,12 +183,14 @@ export const COPY = {
     depositBalanceNote: "20% deposit · Balance in My Tours",
   },
 
-  /** Detail: badges and sections */
+  /** Detail page: one primary per section; cancellation + payment rules visible. */
   detail: {
     whyThisFitsYou: "Why this fits you",
     whoThisIsBestFor: "Who this is best for",
     cancellationPolicy: "Cancellation policy",
-    cancellationPolicyBody: "Free cancellation until 24 hours before departure. After that, deposit may be non-refundable.",
+    cancellationPolicyBody: "Free cancellation until 24h before departure. After that, deposit may be non-refundable.",
+    /** Single line for pickup tips block (detail page). */
+    pickupTipsIntro: "Exact times in confirmation. Arrive early; no-shows are non-refundable.",
     badgeAiPlanned: "AI Planned",
     badgeSmallGroup: "Small Group",
     badgePrivate: "Private",
@@ -215,8 +235,9 @@ export const COPY = {
     },
   },
 
+  /** Destinations: one primary (title); each destination one line. */
   destinations: {
-    title: "Jeju is live now. More Korea destinations are on the way.",
+    title: "Jeju is live. More Korea destinations coming.",
     jeju: "Available now",
     busan: "Coming soon",
     seoul: "Coming soon",

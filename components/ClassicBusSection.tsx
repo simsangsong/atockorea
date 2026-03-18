@@ -10,9 +10,9 @@ import HomeTourSections from "@/components/HomeTourSections";
  */
 export default function ClassicBusSection() {
   return (
-    <section className="pt-10 pb-6 px-4 sm:px-6 lg:px-8 bg-white" aria-labelledby="classic-bus-heading">
+    <section className="py-6 sm:py-8 md:py-12 px-4 sm:px-6 lg:px-8 bg-white" aria-labelledby="classic-bus-heading">
       <div className="container mx-auto mb-4">
-        <h2 id="classic-bus-heading" className="text-xl md:text-2xl font-bold text-[#1A1A1A]">
+        <h2 id="classic-bus-heading" className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900">
           {COPY.fallback.title}
         </h2>
       </div>

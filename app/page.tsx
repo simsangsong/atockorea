@@ -1,16 +1,15 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
-import HeroSection from '@/components/HeroSection';
-import CompactTrustBar from '@/components/CompactTrustBar';
-import ComparisonSection from '@/components/ComparisonSection';
-import TourTypeCards from '@/components/TourTypeCards';
-import HowItWorksSection from '@/components/HowItWorksSection';
-import PreviewItineraryCard from '@/components/PreviewItineraryCard';
+import HeroPremium from '@/src/components/home/HeroPremium';
+import TrustStripPremium from '@/src/components/home/TrustStripPremium';
+import ComparisonPanelPremium from '@/src/components/home/ComparisonPanelPremium';
+import ProductCardsPremium from '@/src/components/home/ProductCardsPremium';
+import HowItWorksPremium from '@/src/components/home/HowItWorksPremium';
 import DestinationsCards from '@/components/DestinationsCards';
 import ClassicBusSection from '@/components/ClassicBusSection';
-import ReviewsSection from '@/components/ReviewsSection';
-import FinalCTASection from '@/components/FinalCTASection';
+import ReviewsPremium from '@/src/components/home/ReviewsPremium';
+import FinalCtaPremium from '@/src/components/home/FinalCtaPremium';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 // Force dynamic rendering to avoid I18nProvider issues during static generation
@@ -28,16 +27,15 @@ export default function HomePage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
       <Header />
       <main>
-        <HeroSection />
-        <CompactTrustBar />
-        <ComparisonSection />
-        <TourTypeCards />
-        <HowItWorksSection />
-        <PreviewItineraryCard />
-        <DestinationsCards />
+        <HeroPremium />
+        <TrustStripPremium />
+        <ComparisonPanelPremium />
+        <ProductCardsPremium />
+        <HowItWorksPremium />
+        <DestinationsCards hideLegacyBlocks />
         <ClassicBusSection />
-        <ReviewsSection />
-        <FinalCTASection />
+        <ReviewsPremium />
+        <FinalCtaPremium />
       </main>
       <Footer />
       <BottomNav />

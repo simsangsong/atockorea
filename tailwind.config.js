@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        // sans 기본을 Pretendard로 (globals.css CDN + font-sans 유틸)
+        sans: ['Pretendard', 'sans-serif'],
+      },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',

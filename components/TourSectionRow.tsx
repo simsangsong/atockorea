@@ -39,6 +39,34 @@ export default function TourSectionRow({
   const locale = localeOverride ?? contextLocale;
   const [tours, setTours] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [fetchError, setFetchError] = useState(false);
+
+  const fetchTours = () => {
+    setLoading(true);
+    setFetchError(false);
+    const params = new URLSearchParams();
+    params.set('limit', String(fetchParams.limit ?? 4));
+    params.set('isActive', 'true');
+    params.set('locale', locale);
+    if (fetchParams.sortBy) params.set('sortBy', fetchParams.sortBy);
+    if (fetchParams.sortOrder) params.set('sortOrder', fetchParams.sortOrder);
+    if (fetchParams.features) params.set('features', fetchParams.features);
+    if (fetchParams.city) params.set('city', fetchParams.city);
+    if (fetchParams.useRequestedSort) params.set('useScoreSort', 'false');
+
+    fetch(`/api/tours?${params.toString()}`)
+      .then((res) => (res.ok ? res.json() : { tours: [] }))
+      .then((data) => {
+        setTours(Array.isArray(data.tours) ? data.tours : []);
+      })
+      .catch(() => {
+        setTours([]);
+        setFetchError(true);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
 
   useEffect(() => {
     let mounted = true;
@@ -57,9 +85,13 @@ export default function TourSectionRow({
       .then((data) => {
         if (!mounted) return;
         setTours(Array.isArray(data.tours) ? data.tours : []);
+        setFetchError(false);
       })
       .catch(() => {
-        if (mounted) setTours([]);
+        if (mounted) {
+          setTours([]);
+          setFetchError(true);
+        }
       })
       .finally(() => {
         if (mounted) setLoading(false);
@@ -82,7 +114,50 @@ export default function TourSectionRow({
     );
   }
 
-  if (tours.length === 0) return null;
+  // Empty or error: keep section visible with title + "See all" so the block doesn't disappear (no "white hole")
+  if (tours.length === 0) {
+    return (
+      <section className="py-4 sm:py-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
+            <h2 className="text-base sm:text-lg font-bold text-slate-900">
+              {t(titleKey)}
+            </h2>
+            {seeAllHref && (
+              <a
+                href={seeAllHref}
+                className="text-sm font-semibold text-[#1E4EDF] hover:underline whitespace-nowrap min-h-[44px] inline-flex items-center"
+              >
+                {t('home.sections.seeAll')}
+              </a>
+            )}
+          </div>
+          <div className="rounded-xl border border-[#E1E5EA] bg-[#F5F7FA] px-4 py-6 text-center">
+            <p className="text-sm text-slate-600 mb-3">
+              {fetchError ? t('errors.somethingWentWrong') : t('listDetail.noToursFound')}
+            </p>
+            {fetchError && (
+              <button
+                type="button"
+                onClick={fetchTours}
+                className="text-sm font-semibold text-[#1E4EDF] hover:underline min-h-[44px]"
+              >
+                {t('common.tryAgain')}
+              </button>
+            )}
+            {seeAllHref && !fetchError && (
+              <a
+                href={seeAllHref}
+                className="inline-block text-sm font-semibold text-[#1E4EDF] hover:underline min-h-[44px] leading-[44px]"
+              >
+                {t('home.sections.seeAll')}
+              </a>
+            )}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-4 sm:py-6">

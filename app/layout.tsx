@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { Inter, Noto_Sans_SC, Noto_Sans_TC } from "next/font/google";
+import { Inter, Noto_Sans_SC, Noto_Sans_TC, Geist } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
 import { CurrencyProvider } from "@/lib/currency";
@@ -27,6 +27,9 @@ const notoSansTC = Noto_Sans_TC({
 });
 
 import { generateMetadata as generateSEOMetadata, generateStructuredData } from '@/lib/seo';
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata = generateSEOMetadata({
   title: "AtoC Korea - Licensed Korea-based Platform for Day Tours",
@@ -43,8 +46,10 @@ export default function RootLayout({
   const websiteStructuredData = generateStructuredData('WebSite', {});
 
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${notoSansSC.variable} ${notoSansTC.variable} antialiased`}>
+    <html lang="en" className={cn("font-sans", geist.variable)}>
+      <body
+        className={`${inter.variable} ${notoSansSC.variable} ${notoSansTC.variable} font-sans antialiased`}
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
