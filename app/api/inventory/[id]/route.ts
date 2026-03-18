@@ -7,11 +7,11 @@ import { createServerClient } from '@/lib/supabase';
  */
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id: inventoryId } = await params;
     const supabase = createServerClient();
-    const inventoryId = params.id;
     const body = await req.json();
 
     const {
@@ -74,11 +74,11 @@ export async function PUT(
  */
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id: inventoryId } = await params;
     const supabase = createServerClient();
-    const inventoryId = params.id;
 
     const { data: inventory, error } = await supabase
       .from('product_inventory')

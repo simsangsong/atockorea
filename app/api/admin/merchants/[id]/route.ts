@@ -9,13 +9,13 @@ import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
  */
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id: merchantId } = await params;
     await requireAdmin(req);
-    
+
     const supabase = createServerClient();
-    const merchantId = params.id;
 
     const { data: merchant, error } = await supabase
       .from('merchants')
@@ -76,13 +76,13 @@ export async function GET(
  */
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id: merchantId } = await params;
     await requireAdmin(req);
-    
+
     const supabase = createServerClient();
-    const merchantId = params.id;
     const body = await req.json();
 
     const {
@@ -148,13 +148,13 @@ export async function PUT(
  */
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id: merchantId } = await params;
     await requireAdmin(req);
-    
+
     const supabase = createServerClient();
-    const merchantId = params.id;
 
     // Check if merchant has active bookings
     const { data: bookings } = await supabase

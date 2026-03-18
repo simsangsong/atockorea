@@ -16,11 +16,11 @@ function isJejuEastTour(tour: { city?: string | null; slug?: string | null; titl
  */
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id: tourId } = await params;
     const supabase = createServerClient();
-    const tourId = params.id;
     const { searchParams } = new URL(req.url);
     const date = searchParams.get('date');
     const guests = parseInt(searchParams.get('guests') || '1');
@@ -148,11 +148,11 @@ export async function GET(
  */
 export async function POST(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id: tourId } = await params;
     const supabase = createServerClient();
-    const tourId = params.id;
     const body = await req.json();
 
     const { date, guests } = body;

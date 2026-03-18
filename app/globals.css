@@ -4,8 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* React DatePicker Styles */
-@import 'react-datepicker/dist/react-datepicker.css';
+/* Webpack 빌드(`next build --webpack`)에서 PostCSS가 처리 */
+@import "react-datepicker/dist/react-datepicker.css";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
@@ -912,6 +912,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
+    /* Next.js 14: Geist 미지원 → Pretendard(CDN) + 시스템 폰트 */
+    --font-sans: "Pretendard", ui-sans-serif, system-ui, sans-serif;
   }
   .dark {
     --background: oklch(0.145 0 0);
@@ -945,12 +947,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
-  }
-  .theme {
-    --font-sans: var(--font-sans);
+    --font-sans: "Pretendard", ui-sans-serif, system-ui, sans-serif;
   }
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--border);
+    outline-color: var(--ring);
   }
   body {
     @apply bg-background text-foreground;

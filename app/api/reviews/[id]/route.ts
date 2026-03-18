@@ -7,11 +7,11 @@ import { createServerClient } from '@/lib/supabase';
  */
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id: reviewId } = await params;
     const supabase = createServerClient();
-    const reviewId = params.id;
 
     const { data: review, error } = await supabase
       .from('reviews')
@@ -60,9 +60,10 @@ export async function GET(
  */
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    await params;
     // Editing reviews has been disabled for end-users
     return NextResponse.json(
       { error: 'Editing reviews is not allowed' },
@@ -83,9 +84,10 @@ export async function PUT(
  */
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    await params;
     // Deleting reviews has been disabled for end-users
     return NextResponse.json(
       { error: 'Deleting reviews is not allowed' },

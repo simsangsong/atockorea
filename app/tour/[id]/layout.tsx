@@ -8,7 +8,7 @@ type MetadataLocale = 'en' | 'ko' | 'zh' | 'zh-TW' | 'es' | 'ja';
 
 async function detectRequestLocale(): Promise<MetadataLocale> {
   try {
-    const h = await Promise.resolve(headers());
+    const h = await headers();
     if (h == null || typeof (h as Headers)?.get !== 'function') return 'en';
     const acceptLanguage = (h as Headers).get?.('accept-language')?.toLowerCase() || '';
 
@@ -24,11 +24,11 @@ async function detectRequestLocale(): Promise<MetadataLocale> {
 }
 
 export async function generateMetadata(
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ): Promise<Metadata> {
+  const { id: tourId } = await params;
   try {
     const supabase = createServerClient();
-    const tourId = params.id;
 
     const { data: tour, error } = await supabase
       .from('tours')
@@ -88,7 +88,7 @@ export async function generateMetadata(
     return generateSEOMetadata({
       title: 'Tour Details',
       description: 'View tour details and book your Korea adventure.',
-      url: `/tour/${params.id}`,
+      url: `/tour/${tourId}`,
     });
   }
 }
@@ -129,9 +129,10 @@ export default async function TourLayout({
   params,
 }: {
   children: ReactNode;
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const structuredData = await generateStructuredDataForTour(params.id);
+  const { id } = await params;
+  const structuredData = await generateStructuredDataForTour(id);
 
   return (
     <>

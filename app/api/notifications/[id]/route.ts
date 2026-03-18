@@ -7,22 +7,21 @@ import { createServerClient } from '@/lib/supabase';
  */
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id: notificationId } = await params;
     const supabase = createServerClient();
-    
+
     // Get current user
     const { data: { user }, error: authError } = await supabase.auth.getUser();
-    
+
     if (authError || !user) {
       return NextResponse.json(
         { error: 'Unauthorized' },
         { status: 401 }
       );
     }
-
-    const notificationId = params.id;
     const body = await req.json();
     const { isRead, isDeleted } = body;
 

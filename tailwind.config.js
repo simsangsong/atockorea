@@ -15,6 +15,9 @@ module.exports = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        border: 'var(--border)',
+        ring: 'var(--ring)',
+        input: 'var(--input)',
         // Design system semantic colors (src/design/tokens.ts)
         brand: {
           navy: '#0A1F44',

@@ -22,12 +22,6 @@ type Review = {
 
 type ReviewSort = "ratingDesc" | "ratingAsc" | "newest" | "oldest" | "helpful";
 
-type PageProps = {
-  params: {
-    slug: string;
-  };
-};
-
 type FAQItem = {
   question: string;
   answer: string;
@@ -155,11 +149,11 @@ function DescriptionContent({ description }: { description: string }) {
 }
 
 // ===== 페이지 컴포넌트 =====
-export default function JejuTourDetailPage({ params }: PageProps) {
+export default function JejuTourDetailPage() {
   const router = useRouter();
-  const urlParams = useParams(); // Fallback to useParams if params doesn't work
+  const urlParams = useParams();
   const { locale } = useI18n();
-  const slug = params?.slug || urlParams?.slug as string;
+  const slug = (urlParams?.slug as string) || "";
   const [tour, setTour] = useState<DetailedTour | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -267,11 +261,11 @@ export default function JejuTourDetailPage({ params }: PageProps) {
   useEffect(() => {
     console.log('[JejuTourDetail] Component mounted:', { 
       slug, 
-      paramsFromProps: params?.slug,
+      paramsFromProps: undefined,
       paramsFromHook: urlParams?.slug,
       windowLocation: typeof window !== 'undefined' ? window.location.href : 'server'
     });
-  }, [slug, params, urlParams]);
+  }, [slug, urlParams]);
 
   // Fetch tour from API
   useEffect(() => {

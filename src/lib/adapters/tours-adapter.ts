@@ -250,14 +250,18 @@ export function adaptTourDetailResponse(raw: unknown): TourDetailViewModel | nul
 }
 
 function getDefaultWhyThisFitsYou(type: TourType): string[] {
-  if (type === "private") return [COPY.comparison.bullets[6], COPY.tourTypes.privatePoints[3]];
-  if (type === "join") return [COPY.tourTypes.joinPoints[1], COPY.tourTypes.joinPoints[2]];
-  return [COPY.comparison.bullets[1], COPY.comparison.bullets[4]];
+  if (type === "private")
+    return [COPY.comparison.bullets[4]!, COPY.tourTypes.privatePoints[2]!];
+  if (type === "join")
+    return [COPY.tourTypes.joinPoints[1]!, COPY.tourTypes.joinPoints[2]!];
+  return [COPY.comparison.bullets[1]!, COPY.comparison.bullets[4]!];
 }
 
 function getDefaultWhoThisIsBestFor(type: TourType): string[] {
-  if (type === "private")   return [COPY.tourTypes.privatePoints[2], COPY.tourTypes.privatePoints[3]];
-  if (type === "join") return [COPY.tourTypes.joinPoints[0], COPY.tourTypes.joinPoints[2]];
+  if (type === "private")
+    return [COPY.tourTypes.privatePoints[1]!, COPY.tourTypes.privatePoints[2]!];
+  if (type === "join")
+    return [COPY.tourTypes.joinPoints[0]!, COPY.tourTypes.joinPoints[2]!];
   return [COPY.detail.whoBus];
 }
 

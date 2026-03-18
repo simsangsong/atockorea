@@ -17,10 +17,10 @@ import { handleApiError, ErrorResponses } from '@/lib/error-handler';
  */
 export async function GET(
   req: NextRequest,
-  { params }: { params: Promise<{ id: string }> | { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const resolvedParams = params instanceof Promise ? await params : params;
+    const resolvedParams = await params;
     const bookingId = resolvedParams.id;
     const supabase = createServerClient();
     const user = await getAuthUser(req);

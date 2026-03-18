@@ -8,11 +8,11 @@ import type { TourRelation, UserProfileRelation, PickupPointRelation } from '@/l
  */
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id: bookingId } = await params;
     const supabase = createServerClient();
-    const bookingId = params.id;
 
     const { data: booking, error } = await supabase
       .from('bookings')
@@ -64,11 +64,11 @@ export async function GET(
  */
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id: bookingId } = await params;
     const supabase = createServerClient();
-    const bookingId = params.id;
     const body = await req.json();
 
     // Get user from auth

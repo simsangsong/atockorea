@@ -7,11 +7,11 @@ import { createServerClient } from '@/lib/supabase';
  */
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id: cartItemId } = await params;
     const supabase = createServerClient();
-    const cartItemId = params.id;
     const body = await req.json();
 
     const { numberOfGuests, bookingDate, pickupPointId } = body;
@@ -136,11 +136,11 @@ export async function PUT(
  */
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id: cartItemId } = await params;
     const supabase = createServerClient();
-    const cartItemId = params.id;
 
     // Get user from auth
     const authHeader = req.headers.get('authorization');

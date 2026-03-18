@@ -15,11 +15,12 @@ const seoulTourData: Record<string, any> = {
 };
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-export default function SeoulSlugPage({ params }: Props) {
-  const tour = seoulTourData[params.slug];
+export default async function SeoulSlugPage({ params }: Props) {
+  const { slug } = await params;
+  const tour = seoulTourData[slug];
 
   if (!tour) return notFound();
 

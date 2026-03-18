@@ -8,13 +8,13 @@ import { requireAdmin } from '@/lib/auth';
  */
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: Promise<{ id: string }> | { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     console.log('🔍 [PATCH /api/admin/tours/[id]] Request received');
     
     // Handle both Promise and direct params (Next.js 15 compatibility)
-    const resolvedParams = params instanceof Promise ? await params : params;
+    const resolvedParams = await params;
     const tourId = resolvedParams.id;
     
     console.log('🔍 [PATCH /api/admin/tours/[id]] Tour ID:', tourId);
@@ -215,11 +215,11 @@ export async function PATCH(
  */
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: Promise<{ id: string }> | { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await requireAdmin(req);
-    const resolvedParams = params instanceof Promise ? await params : params;
+    const resolvedParams = await params;
     const tourId = resolvedParams.id;
     const supabase = createServerClient();
 
@@ -260,14 +260,14 @@ export async function DELETE(
  */
 export async function GET(
   req: NextRequest,
-  { params }: { params: Promise<{ id: string }> | { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     // Check admin authentication
     await requireAdmin(req);
     
     // Handle both Promise and direct params (Next.js 15 compatibility)
-    const resolvedParams = params instanceof Promise ? await params : params;
+    const resolvedParams = await params;
     
     const supabase = createServerClient();
     const tourId = resolvedParams.id;

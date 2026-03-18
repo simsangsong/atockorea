@@ -15,11 +15,12 @@ const busanTourData: Record<string, any> = {
 };
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-export default function BusanSlugPage({ params }: Props) {
-  const tour = busanTourData[params.slug];
+export default async function BusanSlugPage({ params }: Props) {
+  const { slug } = await params;
+  const tour = busanTourData[slug];
 
   if (!tour) return notFound();
 

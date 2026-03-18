@@ -21,14 +21,8 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
   },
-  // Enable compression
   compress: true,
-  // Optimize production builds
-  swcMinify: true,
-  // Enable React strict mode
   reactStrictMode: true,
-  // Optimize fonts
-  optimizeFonts: true,
   // Production source maps (optional, for debugging)
   productionBrowserSourceMaps: false,
   // Experimental features for better performance

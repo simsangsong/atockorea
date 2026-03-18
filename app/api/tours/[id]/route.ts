@@ -73,10 +73,10 @@ function getLocalizedString(
  */
 export const GET = withErrorHandler(async (
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) => {
   const logger = createServerLogger(req);
-  const tourId = params.id;
+  const { id: tourId } = await params;
   const { searchParams } = new URL(req.url);
   const localeParam = parseLocale(searchParams.get('locale'));
 
@@ -278,14 +278,14 @@ export const GET = withErrorHandler(async (
  */
 export const PATCH = withErrorHandler(async (
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) => {
   const { requireAdmin } = await import('@/lib/auth');
   await requireAdmin(req);
-  
+
   const logger = createServerLogger(req);
   const supabase = createServerClient();
-  const tourId = params.id;
+  const { id: tourId } = await params;
   const body = await req.json();
 
   if (!tourId) {
@@ -344,14 +344,14 @@ export const PATCH = withErrorHandler(async (
  */
 export const DELETE = withErrorHandler(async (
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) => {
   const { requireAdmin } = await import('@/lib/auth');
   await requireAdmin(req);
-  
+
   const logger = createServerLogger(req);
   const supabase = createServerClient();
-  const tourId = params.id;
+  const { id: tourId } = await params;
 
   if (!tourId) {
     throw new AppError('Tour ID is required', 400, 'VALIDATION_ERROR');

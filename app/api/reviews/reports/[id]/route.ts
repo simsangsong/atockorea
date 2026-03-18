@@ -7,11 +7,11 @@ import { createServerClient } from '@/lib/supabase';
  */
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id: reportId } = await params;
     const supabase = createServerClient();
-    const reportId = params.id;
     const body = await req.json();
 
     const { status, adminNotes } = body;

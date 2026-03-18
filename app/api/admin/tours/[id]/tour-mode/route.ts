@@ -8,11 +8,11 @@ import { requireAdmin } from '@/lib/auth';
  */
 export async function GET(
   req: NextRequest,
-  { params }: { params: Promise<{ id: string }> | { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await requireAdmin(req);
-    const resolvedParams = params instanceof Promise ? await params : params;
+    const resolvedParams = await params;
     const tourId = resolvedParams.id;
     const supabase = createServerClient();
 

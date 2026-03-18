@@ -9,11 +9,11 @@ import { requireAdmin } from '@/lib/auth';
  */
 export async function POST(
   req: NextRequest,
-  { params }: { params: Promise<{ id: string }> | { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const adminUser = await requireAdmin(req);
-    const resolvedParams = params instanceof Promise ? await params : params;
+    const resolvedParams = await params;
     const tourId = resolvedParams.id;
     const supabase = createServerClient();
     const body = await req.json();
@@ -82,11 +82,11 @@ export async function POST(
  */
 export async function GET(
   req: NextRequest,
-  { params }: { params: Promise<{ id: string }> | { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await requireAdmin(req);
-    const resolvedParams = params instanceof Promise ? await params : params;
+    const resolvedParams = await params;
     const tourId = resolvedParams.id;
     const { searchParams } = new URL(req.url);
     const tourDate = searchParams.get('tour_date');
