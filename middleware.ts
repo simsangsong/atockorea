@@ -6,6 +6,39 @@ const SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'zh-TW', 'ja', 'es'];
 const DEFAULT_LOCALE = 'en';
 const LOCALE_COOKIE = 'NEXT_LOCALE';
 
+/**
+ * 메인 홈을 볼 수 있는 호스트: 오직 로컬 루프백만 (localhost / 127.0.0.1 / ::1).
+ * 0.0.0.0 바인딩 후 LAN IP(192.168.x 등)로 접속하면 막힘 — 개발은 http://localhost:3000 권장.
+ */
+function isLocalRequest(request: NextRequest): boolean {
+  const host = (request.headers.get('host') ?? '').toLowerCase();
+  const hostname = request.nextUrl.hostname.toLowerCase();
+  return (
+    hostname === 'localhost' ||
+    hostname === '127.0.0.1' ||
+    hostname === '::1' ||
+    host.startsWith('localhost:') ||
+    host.startsWith('127.0.0.1:') ||
+    host.startsWith('[::1]:')
+  );
+}
+
+/**
+ * 메인( / 및 로케일 루트): 외부에서는 비공개. localhost 계열만 실제 홈.
+ * 배포 후 잠깐 전체 공개: SITE_HOME_PUBLIC=true
+ */
+function isHomeLocked(request: NextRequest): boolean {
+  if (process.env.SITE_HOME_PUBLIC === 'true' || process.env.SITE_HOME_PUBLIC === '1') {
+    return false;
+  }
+  return !isLocalRequest(request);
+}
+
+function isLocaleHomePath(pathname: string): boolean {
+  if (pathname === '/') return true;
+  return SUPPORTED_LOCALES.some((locale) => pathname === `/${locale}`);
+}
+
 function getLocale(request: NextRequest): string {
   const negotiatorHeaders: Record<string, string> = {};
   request.headers.forEach((value, key) => {
@@ -42,6 +75,18 @@ export function middleware(request: NextRequest) {
     pathname.includes('.')
   ) {
     return NextResponse.next();
+  }
+
+  // 1b. 메인 비공개 전용 페이지 (rewrite 대상 — 루프 방지)
+  if (pathname === '/home-private' || pathname.startsWith('/home-private/')) {
+    return NextResponse.next();
+  }
+
+  // 1c. / 및 /ko 등 메인 루트만: localhost 가 아니면 비공개(rewrite)
+  if (isHomeLocked(request) && isLocaleHomePath(pathname)) {
+    const url = request.nextUrl.clone();
+    url.pathname = '/home-private';
+    return NextResponse.rewrite(url);
   }
 
   // 2. 쿼리 ?locale=en 등으로 명시적 선택 시 쿠키 설정 후 리다이렉트 (모바일에서 쿠키 누락 대비)
