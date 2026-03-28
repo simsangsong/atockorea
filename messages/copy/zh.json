@@ -1,0 +1,285 @@
+{
+  "brand": {
+    "support": "从济州出发，走向韩国全境。"
+  },
+  "nav": {
+    "aiTours": "AI 行程",
+    "privateTours": "私人团",
+    "joinTours": "小团拼车",
+    "busTours": "经典巴士游",
+    "myTour": "我的行程",
+    "help": "帮助"
+  },
+  "hero": {
+    "headline": "济州巴士价，私人团舒适",
+    "sub": "专业导游让您的济州之旅更特别。",
+    "pills": [
+      "Jeju",
+      "Tour",
+      "Private",
+      "Group",
+      "Bus"
+    ],
+    "featuredEyebrow": "拼团",
+    "featuredTitleLines": [
+      "AI-PLANNED",
+      "JOIN TOUR"
+    ],
+    "featuredDetails": [
+      {
+        "label": "最多人数",
+        "value": "3–13 人"
+      },
+      {
+        "label": "价格",
+        "value": "每人 ₩50,000 起 · 定金 20%"
+      },
+      {
+        "label": "行程",
+        "value": "AI 精选东西线亮点"
+      },
+      {
+        "label": "接送",
+        "value": "济州市区酒店区域接送"
+      }
+    ],
+    "featuredCta": "创建我的拼团",
+    "subCard": "告诉我们酒店、日期和风格 — 为您匹配合适行程。私人、小团或传统巴士。",
+    "cta": "立即预订",
+    "badge": "专业导游打造",
+    "trust": [
+      "AI-built itinerary in minutes",
+      "Smarter pickup flow",
+      "3–13 travelers only",
+      "Clear pricing before you pay"
+    ],
+    "valuePropSubtitles": [
+      "Personalized in minutes",
+      "Area-aware hotel matching",
+      "Secure checkout"
+    ],
+    "trustCta": "尾款不会自动扣款。出发前 24 小时前可免费取消。",
+    "glassCard": {
+      "brandPill": "AtoC Korea",
+      "blueEyebrow": "AI 规划韩国路线",
+      "headline": "一日游价格，私人团舒适",
+      "subheadline": "一键生成行程",
+      "description": "用 AI 规划路线、更清晰的一日游形式，以及本地执行的酒店接送方案，让韩国之旅更顺畅。"
+    }
+  },
+  "howItWorks": {
+    "eyebrow": "为韩国旅行设计",
+    "title": "如何运作",
+    "subtitle": "先规划，再选择适合您一天的方式。",
+    "step1": "输入酒店",
+    "step2": "我们规划最佳路线",
+    "step3": "选择舒适程度",
+    "step4": "少折腾，轻松出行"
+  },
+  "comparison": {
+    "title": "相比巴士游或包车，为何选我们",
+    "bullets": [
+      "Less planning — we suggest the route",
+      "Small groups (3–13) — not crowded buses",
+      "Hotel-area pickup — smoother flow",
+      "Transparent pricing — no hidden fees",
+      "Better value than full private"
+    ]
+  },
+  "previewItinerary": {
+    "title": "示例济州一日游",
+    "pickupArea": "市区核心",
+    "hotelFitHint": "与您的酒店匹配良好",
+    "travelerCount": "4 位旅客",
+    "vehicleType": "高端商务车",
+    "oneLine": "4 人 · 高端车 · 定金 20%，尾款出发前 24 小时。",
+    "paymentNote": "Pay in full online to confirm · Free cancellation until 24h before"
+  },
+  "reviews": {
+    "title": "旅客怎么说",
+    "quotes": [
+      "Much easier than planning it myself.",
+      "More comfortable than a regular bus tour.",
+      "The pickup route made much more sense.",
+      "Felt smoother than I expected for a join tour."
+    ]
+  },
+  "homeTrust": {
+    "eyebrow": "信任与安全",
+    "title": "为什么选择 AtoC Korea",
+    "cards": [
+      {
+        "title": "持证韩国合作方",
+        "description": "一日游通过持证旅行社与经核实的本地运营商安排。"
+      },
+      {
+        "title": "价格透明",
+        "description": "付款前即可查看定金、包含项目与尾款规则 — 无隐藏条款。"
+      },
+      {
+        "title": "安全支付",
+        "description": "结账采用行业级加密与可信支付服务商。"
+      }
+    ]
+  },
+  "tourTypes": {
+    "privateTitle": "AI 私人团",
+    "privateBody": "仅您同行。AI 规划路线，即时确认。",
+    "privatePoints": [
+      "Your group only",
+      "Instant confirmation",
+      "Best for families & friends"
+    ],
+    "privateCta": "开始私人团",
+    "joinTitle": "AI 小团拼团游",
+    "joinBody": "小团舒适、酒店区域接送、定金透明。",
+    "joinPoints": [
+      "Small-group comfort",
+      "Better pickup flow",
+      "Simple booking flow"
+    ],
+    "joinCta": "加入小团",
+    "busTitle": "经典巴士游",
+    "busBody": "固定行程，传统团体形式。",
+    "busCta": "查看经典巴士游"
+  },
+  "surcharge": {
+    "short": "可能收取接送附加费",
+    "title": "让路线更顺畅",
+    "body": "若酒店位于主要接送区外，可能收取附加费，以便全体旅客动线更顺畅。",
+    "final": "以所选酒店为准",
+    "included": "含接送"
+  },
+  "pickupMatch": {
+    "great": "接送匹配度很高",
+    "good": "接送匹配良好",
+    "slight": "可能需额外移动时间"
+  },
+  "joinStatus": {
+    "waiting": "等待更多乘客",
+    "balanceOpen": "可支付尾款",
+    "confirmed": "已确认",
+    "missedDeadline": "已错过截止时间",
+    "privateOnly": "建议私人团",
+    "joinUnavailable": "此路线暂不支持拼团"
+  },
+  "joinStatusHelp": {
+    "waiting": "开放尾款前需要更多乘客加入。",
+    "balanceOpen": "您现在可以在「我的行程」中支付尾款。",
+    "confirmed": "行程已确认，可以出发。",
+    "missedDeadline": "尾款支付截止时间已过。",
+    "privateOnly": "该区域更适合私人团。",
+    "joinUnavailable": "此路线目前未开放拼团预订。"
+  },
+  "checkout": {
+    "title": "结账",
+    "cta": "锁定座位",
+    "completeBooking": "完成预订",
+    "timelineStaticCopy": "定金在出发前 24 小时前可退；尾款建议在出发前 18 小时前完成。",
+    "orderSummary": "订单摘要",
+    "basePrice": "基础行程价",
+    "pickupSurcharge": "接送附加费",
+    "subtotal": "小计",
+    "total": "合计",
+    "secureCheckoutTitle": "Secure checkout",
+    "secureCheckoutBody": "Pay the full tour price online to complete your booking. Free cancellation until 24 hours before departure.",
+    "confirmationEmailNote": "You will receive a confirmation email after payment."
+  },
+  "listDetail": {
+    "summaryToursFound": "找到 {{count}} 个行程",
+    "destination": "目的地",
+    "destinationAll": "全部",
+    "hotelArea": "酒店区域",
+    "date": "日期",
+    "guests": "人数",
+    "styleTags": "旅行风格",
+    "editSearch": "编辑搜索",
+    "refine": "筛选",
+    "tourTypeAll": "全部",
+    "noToursFound": "未找到行程",
+    "loadingTours": "加载中…",
+    "viewTour": "查看行程",
+    "viewDetails": "查看详情",
+    "joinThisTour": "加入此团",
+    "listPaymentNote": "Pay in full online · Manage in My Tours"
+  },
+  "detail": {
+    "atAGlance": "一览",
+    "planEssentials": "行程要点",
+    "whyThisFitsYou": "为何适合您",
+    "whoThisIsBestFor": "适合谁",
+    "cancellationPolicy": "取消政策",
+    "cancellationPolicyBody": "出发前 24 小时前可免费取消。之后定金可能不予退还。",
+    "pickupTipsIntro": "准确时间在确认函中。请提前到达；未到场不予退款。",
+    "badgeAiPlanned": "AI 规划",
+    "badgeSmallGroup": "小团",
+    "badgePrivate": "私人",
+    "badgeVerifiedGuide": "认证本地导游",
+    "badgeTransparentBooking": "透明预订规则",
+    "badgeClassicBus": "经典巴士",
+    "selectDateToSeeTimeline": "在上方选择日期可查看预订时间线",
+    "whoBus": "偏好传统团体行程的旅客"
+  },
+  "timeline": {
+    "title": "预订时间线",
+    "refundTitle": "免费取消截止",
+    "refundSub": "与尾款开放同时",
+    "balanceTitle": "尾款截止",
+    "balanceSub": "在「我的行程」手动完成",
+    "startTitle": "行程开始",
+    "startSub": "预订已关闭",
+    "reserveTitle": "Book online",
+    "reserveSub": "Pay in full to confirm"
+  },
+  "myTour": {
+    "title": "我的行程",
+    "payBalance": "立即支付尾款",
+    "viewDetails": "查看预订详情",
+    "viewPickup": "查看接送信息",
+    "rebook": "再订一单",
+    "confirmed": "已确认",
+    "awaitingBalance": "待付尾款",
+    "nextStep": "下一步",
+    "status": {
+      "pending": "待处理",
+      "awaitingBalance": "待付尾款",
+      "balanceDue": "需付尾款",
+      "confirmed": "已确认",
+      "completed": "已完成",
+      "cancelled": "已取消",
+      "refunded": "已退款",
+      "deadlineMissed": "已错过期限",
+      "paymentReceived": "Payment received"
+    }
+  },
+  "destinations": {
+    "title": "济州已上线，更多韩国目的地即将推出。",
+    "jeju": "现已开放",
+    "busan": "即将上线",
+    "seoul": "即将上线",
+    "notify": "提醒我"
+  },
+  "fallback": {
+    "title": "更喜欢传统团体游？"
+  },
+  "finalCta": {
+    "title": "准备好更聪明地规划济州之旅了吗？",
+    "cta": "规划我的行程"
+  },
+  "builderLoading": {
+    "stage1WithArea": "正在检查 [Area] 附近接送…",
+    "stage1Generic": "正在为酒店区域寻找最佳路线…",
+    "stage2": "正在匹配最适合的行程…",
+    "stage3": "马上就好…",
+    "end": "行程已就绪"
+  },
+  "builderPickupArea": {
+    "jeju_city": "市区核心",
+    "jeju_outside": "近郊",
+    "seogwipo_city": "西归浦区域",
+    "seogwipo_outside": "外围"
+  },
+  "builderSummary": {
+    "paymentNote": "Pay in full online · Free cancellation until 24h before departure"
+  }
+}

@@ -24,19 +24,13 @@ function isLocalRequest(request: NextRequest): boolean {
 }
 
 /**
- * 메인( / 및 로케일 루트): 외부에서는 비공개. localhost 계열만 실제 홈.
- * 배포 후 잠깐 전체 공개: SITE_HOME_PUBLIC=true
+ * 비로컬 호스트: 기본 전면 비공개(SITE_HOME_PUBLIC 미설정 시). 공개 시 SITE_HOME_PUBLIC=true
  */
-function isHomeLocked(request: NextRequest): boolean {
+function isSiteGated(request: NextRequest): boolean {
   if (process.env.SITE_HOME_PUBLIC === 'true' || process.env.SITE_HOME_PUBLIC === '1') {
     return false;
   }
   return !isLocalRequest(request);
-}
-
-function isLocaleHomePath(pathname: string): boolean {
-  if (pathname === '/') return true;
-  return SUPPORTED_LOCALES.some((locale) => pathname === `/${locale}`);
 }
 
 function getLocale(request: NextRequest): string {
@@ -82,8 +76,8 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // 1c. / 및 /ko 등 메인 루트만: localhost 가 아니면 비공개(rewrite)
-  if (isHomeLocked(request) && isLocaleHomePath(pathname)) {
+  // 1c. 비로컬: 투어·마이페이지 등 포함 전 경로 비공개(rewrite). URL 바는 유지.
+  if (isSiteGated(request)) {
     const url = request.nextUrl.clone();
     url.pathname = '/home-private';
     return NextResponse.rewrite(url);

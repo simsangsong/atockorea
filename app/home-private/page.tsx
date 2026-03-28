@@ -16,10 +16,10 @@ export default function HomePrivatePage() {
         AtoC Korea
       </p>
       <h1 className="mt-4 text-2xl font-semibold text-white sm:text-3xl">
-        메인 페이지 준비 중입니다
+        페이지 업그레이드 중입니다
       </h1>
       <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-400">
-        공개 전 업데이트 중입니다. 내부 개발은 브라우저에서 localhost:3000 으로 접속해 주세요.
+        atockorea.com 공개 서비스는 준비 중입니다. 내부 작업은 브라우저에서 localhost:3000 으로 접속해 주세요.
       </p>
     </div>
   );

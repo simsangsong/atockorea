@@ -1,0 +1,285 @@
+{
+  "brand": {
+    "support": "제주에서 시작해 한국 전역으로 확장합니다."
+  },
+  "nav": {
+    "aiTours": "AI 투어",
+    "privateTours": "프라이빗 투어",
+    "joinTours": "소그룹 조인",
+    "busTours": "클래식 버스 투어",
+    "myTour": "내 투어",
+    "help": "도움말"
+  },
+  "hero": {
+    "headline": "버스 투어 제주, 프라이빗 투어 편안함",
+    "sub": "전문 가이드와 함께 제주 여행을 더 특별하게.",
+    "pills": [
+      "Jeju",
+      "Tour",
+      "Private",
+      "Group",
+      "Bus"
+    ],
+    "featuredEyebrow": "조인 투어",
+    "featuredTitleLines": [
+      "AI-PLANNED",
+      "JOIN TOUR"
+    ],
+    "featuredDetails": [
+      {
+        "label": "최대 인원",
+        "value": "3–13명"
+      },
+      {
+        "label": "가격",
+        "value": "1인 ₩50,000부터 · 온라인 전액 결제"
+      },
+      {
+        "label": "일정",
+        "value": "AI 큐레이션 동·서부 하이라이트"
+      },
+      {
+        "label": "픽업",
+        "value": "제주 시내 호텔권 픽업"
+      }
+    ],
+    "featuredCta": "조인 투어 만들기",
+    "subCard": "호텔·일정·스타일을 알려주시면 맞는 투어를 찾아 드립니다. 프라이빗, 소그룹, 전통 버스까지.",
+    "cta": "예약하기",
+    "badge": "전문 가이드가 만든 경험",
+    "trust": [
+      "몇 분 만에 AI 일정",
+      "더 똑똑한 픽업 동선",
+      "3–13명 소그룹",
+      "결제 전 가격 명확"
+    ],
+    "valuePropSubtitles": [
+      "몇 분 만에 맞춤",
+      "호텔 구역 맞춤",
+      "안전한 결제"
+    ],
+    "trustCta": "출발 24시간 전까지 무료 취소.",
+    "glassCard": {
+      "brandPill": "AtoC Korea",
+      "blueEyebrow": "AI 기반 한국 루트",
+      "headline": "버스 투어 가격, 프라이빗 투어 편안함",
+      "subheadline": "원클릭 일정 생성",
+      "description": "AI로 짜는 동선, 명확한 투어 형식, 현지 픽업 기반 옵션으로 한국 여행 하루를 더 매끄럽게."
+    }
+  },
+  "howItWorks": {
+    "eyebrow": "한국 여행에 맞춘 흐름",
+    "title": "이용 방법",
+    "subtitle": "먼저 계획하고, 하루에 맞는 형식을 고릅니다.",
+    "step1": "호텔 입력",
+    "step2": "최적 동선 제안",
+    "step3": "편안함 수준 선택",
+    "step4": "덜 번거롭게 여행"
+  },
+  "comparison": {
+    "title": "버스·전세 대비 왜 이 방식인가요",
+    "bullets": [
+      "덜 고민 — 동선을 제안",
+      "소그룹(3–13) — 붐비는 버스 아님",
+      "호텔권 픽업 — 동선 매끄럽게",
+      "투명한 가격 — 숨은 비용 없음",
+      "풀 프라이빗보다 합리적"
+    ]
+  },
+  "previewItinerary": {
+    "title": "예시 제주 당일투어",
+    "pickupArea": "시내",
+    "hotelFitHint": "호텔과 잘 맞는 동선",
+    "travelerCount": "4명",
+    "vehicleType": "프리미엄 밴",
+    "oneLine": "4명 · 프리미엄 밴 · 온라인 전액 결제 · 출발 24시간 전 무료 취소",
+    "paymentNote": "온라인 전액 결제로 확정 · 출발 24시간 전까지 무료 취소"
+  },
+  "reviews": {
+    "title": "여행자 후기",
+    "quotes": [
+      "Much easier than planning it myself.",
+      "More comfortable than a regular bus tour.",
+      "The pickup route made much more sense.",
+      "Felt smoother than I expected for a join tour."
+    ]
+  },
+  "homeTrust": {
+    "eyebrow": "신뢰·안전",
+    "title": "AtoC Korea를 선택하는 이유",
+    "cards": [
+      {
+        "title": "라이선스 한국 파트너",
+        "description": "데이투어는 허가 여행사·검증 현지 운영사를 통해 진행됩니다."
+      },
+      {
+        "title": "투명한 가격",
+        "description": "결제 전 포함·총액을 확인 — 뒤늦은 조건 변경 없음."
+      },
+      {
+        "title": "안전한 결제",
+        "description": "업계 표준 암호화와 신뢰 결제사로 결제합니다."
+      }
+    ]
+  },
+  "tourTypes": {
+    "privateTitle": "AI 프라이빗 투어",
+    "privateBody": "우리 일행만. AI가 동선 제안, 바로 확정.",
+    "privatePoints": [
+      "Your group only",
+      "Instant confirmation",
+      "Best for families & friends"
+    ],
+    "privateCta": "프라이빗 시작",
+    "joinTitle": "AI 소그룹 조인 투어",
+    "joinBody": "소그룹 편안함, 호텔권 픽업, 가격 명확.",
+    "joinPoints": [
+      "Small-group comfort",
+      "Better pickup flow",
+      "Simple booking flow"
+    ],
+    "joinCta": "소그룹 참여",
+    "busTitle": "클래식 버스 투어",
+    "busBody": "정해진 일정, 전통적인 단체 형식.",
+    "busCta": "버스 투어 보기"
+  },
+  "surcharge": {
+    "short": "픽업 추가 요금이 있을 수 있음",
+    "title": "모두에게 더 편한 동선",
+    "body": "주요 픽업 구역 밖 호텔에는 추가 픽업비가 발생할 수 있습니다. 전체 동선을 더 매끄럽게 하기 위함입니다.",
+    "final": "선택 호텔 기준 확정",
+    "included": "픽업 포함"
+  },
+  "pickupMatch": {
+    "great": "픽업 매칭 매우 좋음",
+    "good": "픽업 매칭 좋음",
+    "slight": "이동 시간이 약간 더 걸릴 수 있음"
+  },
+  "joinStatus": {
+    "waiting": "추가 모객 대기 중",
+    "balanceOpen": "잔금 결제 가능",
+    "confirmed": "확정",
+    "missedDeadline": "기한 경과",
+    "privateOnly": "프라이빗 투어 권장",
+    "joinUnavailable": "이 경로는 아직 조인 불가"
+  },
+  "joinStatusHelp": {
+    "waiting": "잔금 결제가 열리려면 더 많은 모객이 필요합니다.",
+    "balanceOpen": "이제 내 투어에서 잔금을 결제할 수 있습니다.",
+    "confirmed": "투어가 확정되어 출발 준비가 되었습니다.",
+    "missedDeadline": "잔금 결제 마감이 지났습니다.",
+    "privateOnly": "이 호텔 구역은 프라이빗 투어에 더 적합합니다.",
+    "joinUnavailable": "이 경로는 현재 조인 예약이 열려 있지 않습니다."
+  },
+  "checkout": {
+    "title": "결제",
+    "cta": "좌석 예약하기",
+    "completeBooking": "예약 완료",
+    "timelineStaticCopy": "출발 24시간 전까지 무료 취소. 결제 후 확인 메일을 보내 드립니다.",
+    "orderSummary": "주문 요약",
+    "basePrice": "기본 투어 가격",
+    "pickupSurcharge": "픽업 추가 요금",
+    "subtotal": "소계",
+    "total": "합계",
+    "secureCheckoutTitle": "안전한 결제",
+    "secureCheckoutBody": "투어 금액 전액을 온라인으로 결제하면 예약이 완료됩니다. 출발 24시간 전까지 무료 취소 가능합니다.",
+    "confirmationEmailNote": "결제 후 확인 이메일을 보내 드립니다."
+  },
+  "listDetail": {
+    "summaryToursFound": "투어 {{count}}건",
+    "destination": "목적지",
+    "destinationAll": "전체",
+    "hotelArea": "호텔 구역",
+    "date": "날짜",
+    "guests": "인원",
+    "styleTags": "여행 스타일",
+    "editSearch": "검색 수정",
+    "refine": "필터",
+    "tourTypeAll": "전체",
+    "noToursFound": "투어가 없습니다",
+    "loadingTours": "투어 불러오는 중…",
+    "viewTour": "투어 보기",
+    "viewDetails": "상세 보기",
+    "joinThisTour": "이 투어 참여",
+    "listPaymentNote": "온라인 전액 결제 · 내 투어에서 관리"
+  },
+  "detail": {
+    "atAGlance": "한눈에 보기",
+    "planEssentials": "일정 요약",
+    "whyThisFitsYou": "왜 맞는 선택인가요",
+    "whoThisIsBestFor": "이런 분께 추천",
+    "cancellationPolicy": "취소·환불 정책",
+    "cancellationPolicyBody": "출발 24시간 전까지 무료 취소. 이후에는 운영 정책에 따라 수수료가 적용될 수 있습니다.",
+    "pickupTipsIntro": "정확한 시간은 확인서에 안내됩니다. 미리 도착하세요; 노쇼는 환불 불가입니다.",
+    "badgeAiPlanned": "AI 설계",
+    "badgeSmallGroup": "소그룹",
+    "badgePrivate": "프라이빗",
+    "badgeVerifiedGuide": "검증된 현지 가이드",
+    "badgeTransparentBooking": "투명한 예약 규정",
+    "badgeClassicBus": "클래식 버스",
+    "selectDateToSeeTimeline": "위에서 날짜를 선택하면 예약 타임라인을 볼 수 있습니다",
+    "whoBus": "클래식 단체 투어를 선호하는 여행자"
+  },
+  "timeline": {
+    "title": "예약 타임라인",
+    "refundTitle": "무료 취소까지",
+    "refundSub": "출발 24시간 전",
+    "balanceTitle": "잔금 결제 마감",
+    "balanceSub": "해당 시 내 투어에서 완료(조인 투어 등)",
+    "startTitle": "투어 시작",
+    "startSub": "예약 마감",
+    "reserveTitle": "온라인 예약",
+    "reserveSub": "전액 결제로 확정"
+  },
+  "myTour": {
+    "title": "내 투어",
+    "payBalance": "잔금 결제하기",
+    "viewDetails": "예약 상세 보기",
+    "viewPickup": "픽업 정보 보기",
+    "rebook": "다른 투어 예약",
+    "confirmed": "확정",
+    "awaitingBalance": "잔금 대기 중",
+    "nextStep": "다음 단계",
+    "status": {
+      "pending": "대기",
+      "awaitingBalance": "잔금 대기",
+      "balanceDue": "잔금 결제 필요",
+      "confirmed": "확정",
+      "completed": "완료",
+      "cancelled": "취소",
+      "refunded": "환불 완료",
+      "deadlineMissed": "기한 경과",
+      "paymentReceived": "결제 완료"
+    }
+  },
+  "destinations": {
+    "title": "제주는 이용 가능. 다른 한국 도시는 곧.",
+    "jeju": "지금 이용",
+    "busan": "곧 오픈",
+    "seoul": "곧 오픈",
+    "notify": "알림 받기"
+  },
+  "fallback": {
+    "title": "클래식 단체 투어가 더 맞으세요?"
+  },
+  "finalCta": {
+    "title": "제주 여행, 더 똑똑하게 짜볼 준비 되셨나요?",
+    "cta": "내 일정 짜기"
+  },
+  "builderLoading": {
+    "stage1WithArea": "[Area] 근처 픽업 동선 확인 중…",
+    "stage1Generic": "호텔 구역에 맞는 최적 경로를 찾는 중…",
+    "stage2": "가장 맞는 투어를 찾는 중…",
+    "stage3": "거의 완료…",
+    "end": "일정이 준비되었습니다"
+  },
+  "builderPickupArea": {
+    "jeju_city": "시내 중심",
+    "jeju_outside": "근교",
+    "seogwipo_city": "서귀포 일대",
+    "seogwipo_outside": "외곽"
+  },
+  "builderSummary": {
+    "paymentNote": "온라인 전액 결제 · 출발 24시간 전까지 무료 취소"
+  }
+}

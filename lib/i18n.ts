@@ -1,6 +1,8 @@
 'use client';
 
-import React, { useState, useEffect, createContext, useContext, ReactNode } from 'react';
+import React, { useState, useEffect, useMemo, createContext, useContext, ReactNode } from 'react';
+import { getCopy } from '@/lib/copy-messages';
+import type { Copy } from '@/src/design/copy';
 // Do not static-import supabase here: it triggers server bundle of @supabase/supabase-js
 // and causes "Cannot find module './vendor-chunks/@supabase.js'". Use dynamic import in client-only code.
 
@@ -286,6 +288,12 @@ export function useI18n() {
   // Always return a context - use fallback if provider is not available
   // This prevents errors during SSR and static generation
   return context || defaultContext;
+}
+
+/** Locale-aware marketing / product copy (replaces static `COPY` in client components). */
+export function useCopy(): Copy {
+  const { locale } = useI18n();
+  return useMemo(() => getCopy(locale), [locale]);
 }
 
 export function useTranslations(namespace?: string) {

@@ -1,0 +1,285 @@
+{
+  "brand": {
+    "support": "Empezando por Jeju, expandiéndonos por Corea."
+  },
+  "nav": {
+    "aiTours": "Tours con IA",
+    "privateTours": "Tours privados",
+    "joinTours": "Grupo reducido",
+    "busTours": "Tours en autobús",
+    "myTour": "Mis tours",
+    "help": "Ayuda"
+  },
+  "hero": {
+    "headline": "Jeju en autobús, comodidad de tour privado",
+    "sub": "Haga su viaje a Jeju más especial con nuestros guías profesionales.",
+    "pills": [
+      "Jeju",
+      "Tour",
+      "Private",
+      "Group",
+      "Bus"
+    ],
+    "featuredEyebrow": "JOIN",
+    "featuredTitleLines": [
+      "AI-PLANNED",
+      "JOIN TOUR"
+    ],
+    "featuredDetails": [
+      {
+        "label": "Tamaño máximo del grupo",
+        "value": "3–13 viajeros"
+      },
+      {
+        "label": "Precio",
+        "value": "Desde ₩50,000 / persona · pago completo en línea"
+      },
+      {
+        "label": "Itinerario",
+        "value": "Lo mejor del este y oeste con IA"
+      },
+      {
+        "label": "Recogida",
+        "value": "Zona hotelera de Ciudad de Jeju"
+      }
+    ],
+    "featuredCta": "Crear mi tour compartido",
+    "subCard": "Indíquenos hotel, fechas y estilo: le proponemos el tour adecuado. Privado, grupo reducido o autobús tradicional.",
+    "cta": "Reservar",
+    "badge": "EXPERIENCIA CREADA POR GUÍAS PROFESIONALES",
+    "trust": [
+      "AI-built itinerary in minutes",
+      "Smarter pickup flow",
+      "3–13 travelers only",
+      "Clear pricing before you pay"
+    ],
+    "valuePropSubtitles": [
+      "Personalized in minutes",
+      "Area-aware hotel matching",
+      "Secure checkout"
+    ],
+    "trustCta": "Sin cargo automático del saldo. Cancelación gratuita hasta 24 h antes.",
+    "glassCard": {
+      "brandPill": "AtoC Korea",
+      "blueEyebrow": "RUTAS POR COREA PLANIFICADAS CON IA",
+      "headline": "Precio de tour en autobús, comodidad de tour privado",
+      "subheadline": "Itinerario en un clic",
+      "description": "Organice un día más fluido en Corea con rutas planificadas por IA, formatos de tour más claros y opciones de recogida con ejecución local."
+    }
+  },
+  "howItWorks": {
+    "eyebrow": "Diseñado para viajar por Corea",
+    "title": "Cómo funciona",
+    "subtitle": "Un flujo breve: primero planifica, luego elige el formato que encaje con tu día.",
+    "step1": "Introduce tu hotel",
+    "step2": "Planificamos la mejor ruta",
+    "step3": "Elige tu nivel de comodidad",
+    "step4": "Viaja con menos complicaciones"
+  },
+  "comparison": {
+    "title": "Por qué elegir esto frente a autobuses o furgonetas privadas",
+    "bullets": [
+      "Less planning — we suggest the route",
+      "Small groups (3–13) — not crowded buses",
+      "Hotel-area pickup — smoother flow",
+      "Transparent pricing — no hidden fees",
+      "Better value than full private"
+    ]
+  },
+  "previewItinerary": {
+    "title": "Ejemplo de tour de un día en Jeju",
+    "pickupArea": "Centro urbano",
+    "hotelFitHint": "Buena coincidencia con su hotel",
+    "travelerCount": "4 viajeros",
+    "vehicleType": "Monovolumen premium",
+    "oneLine": "4 viajeros · Monovolumen premium · Pago en línea · Cancelación gratis 24 h antes",
+    "paymentNote": "Pay in full online to confirm · Free cancellation until 24h before"
+  },
+  "reviews": {
+    "title": "Lo que dicen los viajeros",
+    "quotes": [
+      "Much easier than planning it myself.",
+      "More comfortable than a regular bus tour.",
+      "The pickup route made much more sense.",
+      "Felt smoother than I expected for a join tour."
+    ]
+  },
+  "homeTrust": {
+    "eyebrow": "Confianza y seguridad",
+    "title": "Por qué reservan con AtoC Korea",
+    "cards": [
+      {
+        "title": "Socios coreanos autorizados",
+        "description": "Los tours de un día se organizan a través de agencias autorizadas y operadores locales verificados."
+      },
+      {
+        "title": "Precios transparentes",
+        "description": "Consulte inclusiones y precio total antes de pagar — sin letras pequeñas."
+      },
+      {
+        "title": "Pagos seguros",
+        "description": "El pago usa cifrado estándar del sector y proveedores de confianza."
+      }
+    ]
+  },
+  "tourTypes": {
+    "privateTitle": "Tour privado con IA",
+    "privateBody": "Solo su grupo. La IA planifica la ruta; usted confirma al instante.",
+    "privatePoints": [
+      "Your group only",
+      "Instant confirmation",
+      "Best for families & friends"
+    ],
+    "privateCta": "Empezar tour privado",
+    "joinTitle": "Tour compartido en grupo reducido con IA",
+    "joinBody": "Comodidad de grupo reducido, recogida en zona hotelera, precios claros.",
+    "joinPoints": [
+      "Small-group comfort",
+      "Better pickup flow",
+      "Simple booking flow"
+    ],
+    "joinCta": "Unirme al grupo reducido",
+    "busTitle": "Tour clásico en autobús",
+    "busBody": "Itinerarios fijos, formato tradicional de grupo.",
+    "busCta": "Ver tours en autobús"
+  },
+  "surcharge": {
+    "short": "Puede aplicarse suplemento de recogida",
+    "title": "Una ruta más fluida para todos",
+    "body": "Si su hotel está fuera de la zona principal de recogida, puede aplicarse un suplemento para mantener la ruta más fluida.",
+    "final": "Definitivo según el hotel elegido",
+    "included": "Recogida incluida"
+  },
+  "pickupMatch": {
+    "great": "Recogida muy bien ajustada",
+    "good": "Recogida bien ajustada",
+    "slight": "Puede aplicarse algo más de tiempo de traslado"
+  },
+  "joinStatus": {
+    "waiting": "Esperando más viajeros",
+    "balanceOpen": "Pago del saldo abierto",
+    "confirmed": "Confirmado",
+    "missedDeadline": "Plazo vencido",
+    "privateOnly": "Se recomienda tour privado",
+    "joinUnavailable": "Join no disponible aún en esta ruta"
+  },
+  "joinStatusHelp": {
+    "waiting": "Este tour necesita más viajeros antes de abrir el pago del saldo.",
+    "balanceOpen": "Ya puede pagar el saldo restante en Mis tours.",
+    "confirmed": "El tour está confirmado y listo.",
+    "missedDeadline": "Ha pasado el plazo de pago del saldo.",
+    "privateOnly": "Esta zona hotelera encaja mejor con un tour privado.",
+    "joinUnavailable": "Esta ruta no está abierta a reservas join por ahora."
+  },
+  "checkout": {
+    "title": "Pago",
+    "cta": "Reservar mi plaza",
+    "completeBooking": "Completar reserva",
+    "timelineStaticCopy": "Depósito reembolsable hasta 24 h antes; saldo debido 18 h antes.",
+    "orderSummary": "Resumen del pedido",
+    "basePrice": "Precio base del tour",
+    "pickupSurcharge": "Suplemento de recogida",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "secureCheckoutTitle": "Secure checkout",
+    "secureCheckoutBody": "Pay the full tour price online to complete your booking. Free cancellation until 24 hours before departure.",
+    "confirmationEmailNote": "You will receive a confirmation email after payment."
+  },
+  "listDetail": {
+    "summaryToursFound": "{{count}} tour(s) encontrado(s)",
+    "destination": "Destino",
+    "destinationAll": "Todos",
+    "hotelArea": "Zona del hotel",
+    "date": "Fecha",
+    "guests": "Viajeros",
+    "styleTags": "Estilo de viaje",
+    "editSearch": "Editar búsqueda",
+    "refine": "Refinar",
+    "tourTypeAll": "Todos",
+    "noToursFound": "No se encontraron tours",
+    "loadingTours": "Cargando tours…",
+    "viewTour": "Ver tour",
+    "viewDetails": "Ver detalles",
+    "joinThisTour": "Unirse a este tour",
+    "listPaymentNote": "Pay in full online · Manage in My Tours"
+  },
+  "detail": {
+    "atAGlance": "De un vistazo",
+    "planEssentials": "Lo esencial del plan",
+    "whyThisFitsYou": "Por qué le encaja",
+    "whoThisIsBestFor": "Para quién es mejor",
+    "cancellationPolicy": "Política de cancelación",
+    "cancellationPolicyBody": "Cancelación gratuita hasta 24 h antes de la salida. Después, pueden aplicarse tasas según la política del operador.",
+    "pickupTipsIntro": "Horarios exactos en la confirmación. Llegue con antelación; las ausencias no son reembolsables.",
+    "badgeAiPlanned": "Planificado con IA",
+    "badgeSmallGroup": "Grupo reducido",
+    "badgePrivate": "Privado",
+    "badgeVerifiedGuide": "Guía local verificado",
+    "badgeTransparentBooking": "Reglas de reserva transparentes",
+    "badgeClassicBus": "Autobús clásico",
+    "selectDateToSeeTimeline": "Seleccione una fecha arriba para ver su cronología de reserva",
+    "whoBus": "Viajeros que prefieren un tour de grupo clásico"
+  },
+  "timeline": {
+    "title": "Cronología de la reserva",
+    "refundTitle": "Cancelación gratuita hasta",
+    "refundSub": "El saldo se abre al mismo tiempo",
+    "balanceTitle": "Plazo de pago del saldo",
+    "balanceSub": "Complételo manualmente en Mis tours",
+    "startTitle": "Comienza el tour",
+    "startSub": "La reserva está cerrada",
+    "reserveTitle": "Book online",
+    "reserveSub": "Pay in full to confirm"
+  },
+  "myTour": {
+    "title": "Mis tours",
+    "payBalance": "Pagar saldo ahora",
+    "viewDetails": "Ver detalles de la reserva",
+    "viewPickup": "Ver información de recogida",
+    "rebook": "Reservar otro tour",
+    "confirmed": "Confirmado",
+    "awaitingBalance": "Saldo pendiente",
+    "nextStep": "Siguiente paso",
+    "status": {
+      "pending": "Pendiente",
+      "awaitingBalance": "Saldo pendiente",
+      "balanceDue": "Saldo requerido",
+      "confirmed": "Confirmado",
+      "completed": "Completado",
+      "cancelled": "Cancelado",
+      "refunded": "Reembolsado",
+      "deadlineMissed": "Plazo vencido",
+      "paymentReceived": "Payment received"
+    }
+  },
+  "destinations": {
+    "title": "Jeju disponible. Más destinos en Corea próximamente.",
+    "jeju": "Disponible ya",
+    "busan": "Próximamente",
+    "seoul": "Próximamente",
+    "notify": "Avísenme"
+  },
+  "fallback": {
+    "title": "¿Prefiere un tour de grupo clásico?"
+  },
+  "finalCta": {
+    "title": "¿Listo para organizar su viaje a Jeju de forma más inteligente?",
+    "cta": "Planificar mi viaje"
+  },
+  "builderLoading": {
+    "stage1WithArea": "Comprobando la recogida cerca de [Area]…",
+    "stage1Generic": "Buscando la mejor ruta para su zona hotelera…",
+    "stage2": "Buscando el tour que mejor encaje…",
+    "stage3": "Casi listo…",
+    "end": "Su viaje está listo"
+  },
+  "builderPickupArea": {
+    "jeju_city": "Centro urbano",
+    "jeju_outside": "Cercanías",
+    "seogwipo_city": "Zona de Seogwipo",
+    "seogwipo_outside": "Periferia"
+  },
+  "builderSummary": {
+    "paymentNote": "Pay in full online · Free cancellation until 24h before departure"
+  }
+}

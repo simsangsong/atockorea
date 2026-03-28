@@ -1,0 +1,285 @@
+{
+  "brand": {
+    "support": "済州から始まり、韓国各地へ広がります。"
+  },
+  "nav": {
+    "aiTours": "AIツアー",
+    "privateTours": "プライベートツアー",
+    "joinTours": "少人数ジョイン",
+    "busTours": "クラシックバスツアー",
+    "myTour": "マイツアー",
+    "help": "ヘルプ"
+  },
+  "hero": {
+    "headline": "バスツアー済州、プライベートの快適さ",
+    "sub": "プロのガイドと、より特別な済州旅行を。",
+    "pills": [
+      "Jeju",
+      "Tour",
+      "Private",
+      "Group",
+      "Bus"
+    ],
+    "featuredEyebrow": "ジョイン",
+    "featuredTitleLines": [
+      "AI-PLANNED",
+      "JOIN TOUR"
+    ],
+    "featuredDetails": [
+      {
+        "label": "最大人数",
+        "value": "3〜13名"
+      },
+      {
+        "label": "料金",
+        "value": "1人 ₩50,000〜・頭金20%"
+      },
+      {
+        "label": "行程",
+        "value": "AI厳選の東部・西部ハイライト"
+      },
+      {
+        "label": "ピックアップ",
+        "value": "済州市内ホテルエリア"
+      }
+    ],
+    "featuredCta": "ジョインツアーを作る",
+    "subCard": "ホテル・日程・スタイルを教えていただければ最適なツアーをご提案。プライベート、少人数、伝統バスまで。",
+    "cta": "予約する",
+    "badge": "プロフェッショナルガイドが届ける体験",
+    "trust": [
+      "AI-built itinerary in minutes",
+      "Smarter pickup flow",
+      "3–13 travelers only",
+      "Clear pricing before you pay"
+    ],
+    "valuePropSubtitles": [
+      "Personalized in minutes",
+      "Area-aware hotel matching",
+      "Secure checkout"
+    ],
+    "trustCta": "残金の自動課金はありません。出発24時間前まで無料キャンセル。",
+    "glassCard": {
+      "brandPill": "AtoC Korea",
+      "blueEyebrow": "AI設計の韓国ルート",
+      "headline": "バスツアー価格、プライベートツアーの快適さ",
+      "subheadline": "ワンクリックで行程作成",
+      "description": "AIが組むルート、分かりやすいツアー形式、現地ピックアップに基づくオプションで、韓国旅行の一日をよりスムーズに。"
+    }
+  },
+  "howItWorks": {
+    "eyebrow": "韓国旅行に合わせた流れ",
+    "title": "ご利用の流れ",
+    "subtitle": "まず計画し、一日に合う形式を選びます。",
+    "step1": "ホテルを入力",
+    "step2": "最適ルートを提案",
+    "step3": "快適さのレベルを選択",
+    "step4": "手間を減らして旅する"
+  },
+  "comparison": {
+    "title": "バス・貸切と比べて選ぶ理由",
+    "bullets": [
+      "Less planning — we suggest the route",
+      "Small groups (3–13) — not crowded buses",
+      "Hotel-area pickup — smoother flow",
+      "Transparent pricing — no hidden fees",
+      "Better value than full private"
+    ]
+  },
+  "previewItinerary": {
+    "title": "例：済州日帰りツアー",
+    "pickupArea": "シティコア",
+    "hotelFitHint": "お宿に合った動線",
+    "travelerCount": "4名",
+    "vehicleType": "プレミアムバン",
+    "oneLine": "4名 · プレミアムバン · 頭金20%、残金は出発24時間前。",
+    "paymentNote": "Pay in full online to confirm · Free cancellation until 24h before"
+  },
+  "reviews": {
+    "title": "旅行者の声",
+    "quotes": [
+      "Much easier than planning it myself.",
+      "More comfortable than a regular bus tour.",
+      "The pickup route made much more sense.",
+      "Felt smoother than I expected for a join tour."
+    ]
+  },
+  "homeTrust": {
+    "eyebrow": "信頼・安全",
+    "title": "AtoC Koreaが選ばれる理由",
+    "cards": [
+      {
+        "title": "認可を受けた韓国パートナー",
+        "description": "デイツアーは認可旅行会社・審査済みの現地オペレーターを通じて手配されます。"
+      },
+      {
+        "title": "透明な料金",
+        "description": "お支払い前に頭金・含まれるもの・残金ルールを確認 — 後出し条件はありません。"
+      },
+      {
+        "title": "安全な決済",
+        "description": "業界標準の暗号化と信頼できる決済事業者を利用します。"
+      }
+    ]
+  },
+  "tourTypes": {
+    "privateTitle": "AIプライベートツアー",
+    "privateBody": "ご同行のみ。AIがルートを提案し、その場で確定。",
+    "privatePoints": [
+      "Your group only",
+      "Instant confirmation",
+      "Best for families & friends"
+    ],
+    "privateCta": "プライベートを始める",
+    "joinTitle": "AI少人数ジョインツアー",
+    "joinBody": "少人数の快適さ、ホテルエリア送迎、明確な頭金。",
+    "joinPoints": [
+      "Small-group comfort",
+      "Better pickup flow",
+      "Simple booking flow"
+    ],
+    "joinCta": "少人数に参加",
+    "busTitle": "クラシックバスツアー",
+    "busBody": "固定行程、伝統的な団体形式。",
+    "busCta": "バスツアーを見る"
+  },
+  "surcharge": {
+    "short": "送迎追加料金がかかる場合があります",
+    "title": "全員にスムーズなルートのために",
+    "body": "メインピックアップエリア外のホテルには追加送迎料が発生することがあります。",
+    "final": "選択したホテルで確定",
+    "included": "送迎込み"
+  },
+  "pickupMatch": {
+    "great": "送迎マッチ非常に良好",
+    "good": "送迎マッチ良好",
+    "slight": "移動時間がやや長くなる場合があります"
+  },
+  "joinStatus": {
+    "waiting": "追加の参加者を待っています",
+    "balanceOpen": "残金支払い可能",
+    "confirmed": "確定",
+    "missedDeadline": "期限を過ぎました",
+    "privateOnly": "プライベートツアーをおすすめします",
+    "joinUnavailable": "このルートはまだジョイン予約不可"
+  },
+  "joinStatusHelp": {
+    "waiting": "残金が開く前に、さらに参加者が必要です。",
+    "balanceOpen": "マイツアーで残金をお支払いいただけます。",
+    "confirmed": "ツアーは確定し、出発の準備ができています。",
+    "missedDeadline": "残金の支払い期限が過ぎました。",
+    "privateOnly": "このホテルエリアはプライベートツアーに適しています。",
+    "joinUnavailable": "このルートは現在ジョイン予約を受け付けていません。"
+  },
+  "checkout": {
+    "title": "決済",
+    "cta": "席を確保する",
+    "completeBooking": "予約を完了",
+    "timelineStaticCopy": "頭金は出発24時間前まで返金可; 残金は出発18時間前が目安。",
+    "orderSummary": "注文概要",
+    "basePrice": "基本ツアー料金",
+    "pickupSurcharge": "送迎追加料金",
+    "subtotal": "小計",
+    "total": "合計",
+    "secureCheckoutTitle": "Secure checkout",
+    "secureCheckoutBody": "Pay the full tour price online to complete your booking. Free cancellation until 24 hours before departure.",
+    "confirmationEmailNote": "You will receive a confirmation email after payment."
+  },
+  "listDetail": {
+    "summaryToursFound": "ツアー{{count}}件",
+    "destination": "目的地",
+    "destinationAll": "すべて",
+    "hotelArea": "ホテルエリア",
+    "date": "日付",
+    "guests": "人数",
+    "styleTags": "旅行スタイル",
+    "editSearch": "検索を編集",
+    "refine": "絞り込む",
+    "tourTypeAll": "すべて",
+    "noToursFound": "ツアーが見つかりません",
+    "loadingTours": "読み込み中…",
+    "viewTour": "ツアーを見る",
+    "viewDetails": "詳細を見る",
+    "joinThisTour": "このツアーに参加",
+    "listPaymentNote": "Pay in full online · Manage in My Tours"
+  },
+  "detail": {
+    "atAGlance": "概要",
+    "planEssentials": "プランの要点",
+    "whyThisFitsYou": "なぜこのツアーか",
+    "whoThisIsBestFor": "こんな方におすすめ",
+    "cancellationPolicy": "キャンセル規定",
+    "cancellationPolicyBody": "出発24時間前まで無料キャンセル。以降は頭金が返金不可の場合があります。",
+    "pickupTipsIntro": "正確な時間は確認書に記載。早めにご集合ください; ノーショーは返金不可です。",
+    "badgeAiPlanned": "AI設計",
+    "badgeSmallGroup": "少人数",
+    "badgePrivate": "プライベート",
+    "badgeVerifiedGuide": "認証済み現地ガイド",
+    "badgeTransparentBooking": "透明な予約ルール",
+    "badgeClassicBus": "クラシックバス",
+    "selectDateToSeeTimeline": "上で日付を選ぶと予約タイムラインが表示されます",
+    "whoBus": "クラシックな団体ツアーを好む旅行者"
+  },
+  "timeline": {
+    "title": "予約タイムライン",
+    "refundTitle": "無料キャンセル期限",
+    "refundSub": "残金オープンと同時",
+    "balanceTitle": "残金支払い期限",
+    "balanceSub": "マイツアーで手動完了",
+    "startTitle": "ツアー開始",
+    "startSub": "予約締切",
+    "reserveTitle": "Book online",
+    "reserveSub": "Pay in full to confirm"
+  },
+  "myTour": {
+    "title": "マイツアー",
+    "payBalance": "残金を支払う",
+    "viewDetails": "予約詳細を見る",
+    "viewPickup": "送迎情報を見る",
+    "rebook": "別のツアーを予約",
+    "confirmed": "確定",
+    "awaitingBalance": "残金待ち",
+    "nextStep": "次のステップ",
+    "status": {
+      "pending": "保留中",
+      "awaitingBalance": "残金待ち",
+      "balanceDue": "残金要支払い",
+      "confirmed": "確定",
+      "completed": "完了",
+      "cancelled": "キャンセル",
+      "refunded": "返金済み",
+      "deadlineMissed": "期限超過",
+      "paymentReceived": "Payment received"
+    }
+  },
+  "destinations": {
+    "title": "済州は利用可能。他の韓国エリアは近日公開。",
+    "jeju": "利用可能",
+    "busan": "近日公開",
+    "seoul": "近日公開",
+    "notify": "通知を受け取る"
+  },
+  "fallback": {
+    "title": "クラシックな団体ツアーの方がお好みですか？"
+  },
+  "finalCta": {
+    "title": "済州旅行を、もっと賢く組み立てませんか？",
+    "cta": "旅程を作る"
+  },
+  "builderLoading": {
+    "stage1WithArea": "[Area] 周辺の送迎動線を確認中…",
+    "stage1Generic": "ホテルエリアに最適なルートを検索中…",
+    "stage2": "最適なツアーを探しています…",
+    "stage3": "もうすぐ完了…",
+    "end": "旅行の準備ができました"
+  },
+  "builderPickupArea": {
+    "jeju_city": "シティコア",
+    "jeju_outside": "市外",
+    "seogwipo_city": "西帰浦エリア",
+    "seogwipo_outside": "郊外"
+  },
+  "builderSummary": {
+    "paymentNote": "Pay in full online · Free cancellation until 24h before departure"
+  }
+}
