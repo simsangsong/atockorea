@@ -1331,9 +1331,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
       background-position: 0 0;
     }
   }
+  /* Keep z-index like light mode so in-flow app content stays above body::before when themes toggle */
   html.dark body {
     @apply bg-background;
-    z-index: auto;
+    position: relative;
+    z-index: 1;
   }
   html.dark body::before {
     display: none;

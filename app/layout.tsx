@@ -71,7 +71,9 @@ export default function RootLayout({
             <ErrorBoundary>
               <I18nProvider>
                 <CurrencyProvider>
-                  {children}
+                  <div className="relative z-[1] min-h-dvh min-h-[100dvh] flex flex-col">
+                    {children}
+                  </div>
                 </CurrencyProvider>
               </I18nProvider>
             </ErrorBoundary>

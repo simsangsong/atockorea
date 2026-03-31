@@ -57,26 +57,6 @@ function shouldTreatBareSegmentAsTourSlug(seg: string): boolean {
   return false;
 }
 
-/**
- * 전면 비공개(모든 UI → /home-private rewrite)는 **명시적으로 켤 때만**.
- * 기본은 공개 — Vercel에 SITE_HOME_PUBLIC 누락 시 라이브 도메인에서 홈·투어가 통째로 사라지는 문제를 막기 위함.
- *
- * 켜기: `SITE_GATED=true` 또는 `SITE_HOME_PRIVATE=true` (또는 `1`)
- * 레거시: `SITE_HOME_PUBLIC=true` 가 있으면 항상 공개(게이트 무시).
- */
-function isSiteGated(): boolean {
-  if (process.env.SITE_HOME_PUBLIC === 'true' || process.env.SITE_HOME_PUBLIC === '1') {
-    return false;
-  }
-  if (process.env.SITE_GATED === 'true' || process.env.SITE_GATED === '1') {
-    return true;
-  }
-  if (process.env.SITE_HOME_PRIVATE === 'true' || process.env.SITE_HOME_PRIVATE === '1') {
-    return true;
-  }
-  return false;
-}
-
 function getLocale(request: NextRequest): string {
   try {
     const negotiatorHeaders: Record<string, string> = {};
@@ -121,19 +101,12 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // 1b. 메인 비공개 전용 페이지 (rewrite 대상 — 루프 방지)
+  // 1b. 정적 안내 페이지 (locale 접두사 리다이렉트 대상에서 제외)
   if (pathname === '/home-private' || pathname.startsWith('/home-private/')) {
     return NextResponse.next();
   }
 
-  // 1c. 비로컬: 투어·마이페이지 등 포함 전 경로 비공개(rewrite). URL 바는 유지.
-  if (isSiteGated()) {
-    const url = request.nextUrl.clone();
-    url.pathname = '/home-private';
-    return NextResponse.rewrite(url);
-  }
-
-  // 1d. /product-slug → /tour/product-slug (single segment; not a locale or app route)
+  // 1c. /product-slug → /tour/product-slug (single segment; not a locale or app route)
   const bareSeg = singlePathSegment(pathname);
   if (bareSeg && shouldTreatBareSegmentAsTourSlug(bareSeg)) {
     const u = request.nextUrl.clone();
