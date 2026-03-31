@@ -37,8 +37,21 @@ export function adaptBuildTourResponse(raw: unknown): BuildTourResponse {
   return parsed.data;
 }
 
-/** Infer tour type from API title/badges. Server is source of truth; this is fallback for classic list API. */
-function inferTourType(item: { title?: string; badges?: string[] }): TourType {
+/**
+ * Small-group (join) SKUs identified by slug — titles vary by locale/SEO and may not match title regexes.
+ */
+function isKnownJoinTourSlug(slug: string | undefined | null): boolean {
+  const s = (slug ?? "").trim().toLowerCase();
+  if (!s) return false;
+  if (s === "east-signature-nature-core") return true;
+  if (s.startsWith("east-signature-nature-core-")) return true;
+  if (s === "jeju-east-small-group-template-preview") return true;
+  return false;
+}
+
+/** Infer tour type from API title/badges/slug. No DB `tour_type` column yet — slug is the stable join signal. */
+function inferTourType(item: { title?: string; badges?: string[]; slug?: string }): TourType {
+  if (isKnownJoinTourSlug(item.slug)) return "join";
   const title = (item.title ?? "").toLowerCase();
   const badges = (item.badges ?? []).map((b) => String(b).toLowerCase());
   if (
@@ -89,9 +102,11 @@ export function adaptToursListResponse(raw: unknown): TourCardViewModel[] {
     const title = typeof item?.title === "string" ? item.title : "";
     if (!id && !title) continue;
 
+    const listSlug = typeof item?.slug === "string" ? item.slug.trim() : undefined;
     const type = inferTourType({
       title: item?.title,
       badges: item?.badges,
+      slug: listSlug,
     });
     const priceFrom =
       typeof item?.price === "number"
@@ -186,9 +201,12 @@ export function adaptTourDetailResponse(raw: unknown): TourDetailViewModel | nul
   const title = typeof tour.title === "string" ? tour.title : "";
   if (!id) return null;
 
+  const slugEarly =
+    typeof tour.slug === "string" && tour.slug.trim() !== "" ? tour.slug.trim() : undefined;
   const type = inferTourType({
     title: tour.title as string,
     badges: (tour.badges as string[]) ?? [],
+    slug: slugEarly,
   });
   const price = typeof tour.price === "number" ? tour.price : Number(tour.price) || 0;
   const originalPrice =
@@ -235,8 +253,7 @@ export function adaptTourDetailResponse(raw: unknown): TourDetailViewModel | nul
       }))
     : [];
 
-  const slugRaw = tour.slug;
-  const slug = typeof slugRaw === 'string' && slugRaw.trim() !== '' ? slugRaw.trim() : undefined;
+  const slug = slugEarly;
 
   const view = {
     id,
