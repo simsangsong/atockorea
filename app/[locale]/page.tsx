@@ -5,11 +5,13 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
-import HeroSection from '@/components/HeroSection';
-import DestinationsCards from '@/components/DestinationsCards';
-import TourList from '@/components/TourList';
-import PaymentMethodInfo from '@/components/PaymentMethodInfo';
-import TrustBar from '@/components/TrustBar';
+import HeroPremium from '@/src/components/home/HeroPremium';
+import ProductCardsPremium from '@/src/components/home/ProductCardsPremium';
+import SmallGroupValuePremium from '@/src/components/home/SmallGroupValuePremium';
+import HowItWorksPremium from '@/src/components/home/HowItWorksPremium';
+import TrustAndReviewsSection from '@/src/components/home/TrustAndReviewsSection';
+import ClassicBusSection from '@/components/ClassicBusSection';
+import FinalCtaPremium from '@/src/components/home/FinalCtaPremium';
 import { LocaleHomeClient } from '@/components/LocaleHomeClient';
 
 const SUPPORTED_LOCALE_ROUTES = ['ko', 'zh-CN', 'zh-TW', 'ja', 'es'];
@@ -48,7 +50,9 @@ export default function LocaleHomePage() {
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
           <p className="text-gray-600 mb-4">Locale not found</p>
-          <Link href="/" className="text-blue-600 hover:underline">Go home</Link>
+          <Link href="/" className="text-blue-600 hover:underline">
+            Go home
+          </Link>
         </div>
       </div>
     );
@@ -58,18 +62,22 @@ export default function LocaleHomePage() {
 
   return (
     <LocaleHomeClient locale={i18nLocale}>
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
-        <Header />
-        <main>
-          <HeroSection />
-          <DestinationsCards />
-          <TourList localeOverride={i18nLocale} />
-          <PaymentMethodInfo />
-          <TrustBar />
-        </main>
-        <Footer />
-        <BottomNav />
-        <div className="h-16 md:hidden" />
+      <div className="relative min-h-screen overflow-x-hidden bg-transparent text-slate-900 selection:bg-blue-100">
+        <div className="relative z-10">
+          <Header />
+          <main className="bg-transparent">
+            <HeroPremium />
+            <ProductCardsPremium />
+            <SmallGroupValuePremium />
+            <HowItWorksPremium />
+            <TrustAndReviewsSection />
+            <ClassicBusSection />
+            <FinalCtaPremium />
+          </main>
+          <Footer />
+          <BottomNav />
+          <div className="h-16 md:hidden" aria-hidden />
+        </div>
       </div>
     </LocaleHomeClient>
   );

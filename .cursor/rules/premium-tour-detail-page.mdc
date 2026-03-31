@@ -1,0 +1,27 @@
+---
+description: Premium mobile-first tour detail page — preserve IA/logic, luxury polish, step-scoped edits
+alwaysApply: true
+---
+
+# Premium tour detail page (agent constraints)
+
+Use these constraints when the user’s task touches the **premium mobile-first tour detail** experience (e.g. `app/tour`, `components/tour`, `components/tour-detail-template`, `mobile/app/tour`, tour APIs used only by that flow). For unrelated areas, still follow **inspect-before-edit**, **one step at a time**, and **post-edit reporting** where applicable; skip tour-only bullets unless the change affects that flow.
+
+## Non-negotiable rules
+
+1. Do not rebuild the page from scratch.
+2. Do not downgrade the current premium feel.
+3. Keep the current information architecture unless the step explicitly asks for refinement.
+4. Preserve all booking logic, data bindings, itinerary toggle behavior, FAQ behavior, and existing API contracts.
+5. Inspect the actual repo before editing and adapt to the real components, class names, and files.
+6. The itinerary section is intentionally collapsed by default and expands only when the user presses the button. Preserve that behavior.
+7. Upgrade visual hierarchy, polish, surface quality, card rhythm, spacing, typography, and section transitions without making the design flatter or more generic.
+8. Avoid cheap UI patterns: plain gray blocks, generic SaaS cards, toy-like rounded tiles, over-muted typography, inconsistent spacing, or template-looking layouts.
+9. Use a restrained luxury travel-commerce direction: refined off-white backgrounds, clean layered cards, subtle borders, controlled shadows, elegant spacing, and premium typography hierarchy.
+10. Do only the requested step. Do not implement future steps.
+
+## After editing, report
+
+- What files were changed.
+- What exact UI problem was solved.
+- How the premium quality was improved without reducing richness.

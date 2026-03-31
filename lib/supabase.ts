@@ -32,6 +32,21 @@ export const createServerClient = () => {
   });
 };
 
+/** Server-only anon client (no user session). Use in Route Handlers for auth actions that must not use the service role, e.g. signInWithOtp. */
+export const createAnonServerClient = () => {
+  if (!supabaseUrl || !supabaseAnonKey) {
+    const missing = [!supabaseUrl && 'NEXT_PUBLIC_SUPABASE_URL', !supabaseAnonKey && 'NEXT_PUBLIC_SUPABASE_ANON_KEY'].filter(Boolean).join(', ');
+    throw new Error(`Missing Supabase env: ${missing}`);
+  }
+  return createClient(supabaseUrl, supabaseAnonKey, {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+      detectSessionInUrl: false,
+    },
+  });
+};
+
 // Database types (will be generated from Supabase later)
 export type Database = {
   public: {

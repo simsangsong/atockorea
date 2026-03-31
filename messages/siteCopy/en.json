@@ -1,0 +1,357 @@
+{
+  "brand": {
+    "support": "Starting with Jeju, expanding across Korea."
+  },
+  "nav": {
+    "aiTours": "AI Tours",
+    "privateTours": "Private Tours",
+    "joinTours": "Small-Group Join",
+    "busTours": "Classic Bus Tours",
+    "myTour": "My Tour",
+    "help": "Help"
+  },
+  "hero": {
+    "eyebrow": "AI-planned Korea routes",
+    "headline": "Bus tour price,\nPrivate tour comfort",
+    "sub": "1-Click Itinerary Generation",
+    "subCard": "Build a smoother Korea travel day with AI-planned routing, clearer tour formats, and locally executed pickup-based options.",
+    "cta": "Plan My Trip",
+    "badge": "EXPERTISE CRAFTED BY PROFESSIONAL GUIDES",
+    "trust": [
+      "AI-built itinerary in minutes",
+      "Smarter pickup flow",
+      "3–13 travelers only",
+      "Clear pricing before you pay"
+    ],
+    "valuePropSubtitles": [
+      "Personalized in minutes",
+      "Area-aware hotel matching",
+      "Secure checkout"
+    ],
+    "trustCta": "Free cancellation until 24h before departure.",
+    "tags": ["Jeju", "Busan", "Seoul", "Small Group", "Private"],
+    "featureEyebrow": "JOIN TOUR",
+    "featureHeadline": "AI-PLANNED\nJOIN TOUR",
+    "featureBullets": [
+      {
+        "label": "Max group size",
+        "valueSegments": [{ "text": "13", "emphasis": true }]
+      },
+      {
+        "label": "Price",
+        "valueSegments": [
+          { "text": "From " },
+          { "text": "$58/person", "emphasis": true },
+          { "text": " — lower when more travelers join" }
+        ]
+      },
+      {
+        "label": "Itinerary",
+        "valueSegments": [
+          { "text": "AI-generated " },
+          { "text": "based on your preferences", "emphasis": true }
+        ]
+      },
+      {
+        "label": "Guide",
+        "valueSegments": [
+          { "text": "Led by an experienced " },
+          { "text": "local driver-guide", "emphasis": true }
+        ]
+      }
+    ],
+    "featureCta": "Build My Join Tour"
+  },
+  "howItWorks": {
+    "sectionEyebrow": "Designed for smart Korea travel",
+    "sectionSubtitle": "Share your travel preferences and stay details. Based on real local tour experience, we build an itinerary that fits your day.",
+    "title": "How it works",
+    "step1": "Share your travel needs",
+    "step2": "Get your best-fit itinerary",
+    "step3": "Review and adjust",
+    "step4": "Book and meet your guide"
+  },
+  "comparison": {
+    "title": "Why choose this over bus tours or private charters",
+    "bullets": [
+      "Less planning — we suggest the route",
+      "Small groups (3–13) — not crowded buses",
+      "Hotel-area pickup — smoother flow",
+      "Transparent pricing — no hidden fees",
+      "Better value than full private"
+    ]
+  },
+  "previewItinerary": {
+    "sectionHeading": "Example itinerary",
+    "title": "Example Jeju day tour",
+    "pickupArea": "City core",
+    "hotelFitHint": "Good match for your hotel",
+    "travelerCount": "4 travelers",
+    "vehicleType": "Premium van",
+    "paymentNote": "Pay in full online to confirm · Free cancellation until 24h before",
+    "oneLine": "4 travelers · Premium van · Pay online · Free cancel 24h before."
+  },
+  "reviews": {
+    "title": "What travelers say",
+    "intro": "Snippets from verified bookings and post-tour feedback. More structured reviews will appear here as they accumulate.",
+    "quotes": [
+      "Much easier than planning it myself.",
+      "More comfortable than a regular bus tour.",
+      "The pickup route made much more sense.",
+      "Felt smoother than I expected for a join tour."
+    ]
+  },
+  "homepageBookWithConfidence": {
+    "eyebrow": "TRUST",
+    "title": "Book With Confidence",
+    "cards": [
+      {
+        "icon": "mapPinned",
+        "headline": "Clear Pickup & Area Rules",
+        "tagline": "",
+        "body": "See hotel-area matching and pickup notes before booking, so there are fewer surprises later.",
+        "footer": "Hotel area check shown in the booking flow",
+        "footerNote": ""
+      },
+      {
+        "icon": "usersRound",
+        "headline": "Small-Group Comfort",
+        "tagline": "Smarter than a crowded bus",
+        "body": "Enjoy a more comfortable day with easier pacing, simpler pickup, and a smaller group feel.",
+        "footer": "Built for comfort and value",
+        "footerNote": ""
+      },
+      {
+        "icon": "landmark",
+        "headline": "Local operator logic",
+        "tagline": "",
+        "body": "Designed around real tour operations, hotel pickup flow, and day-trip practicality.",
+        "footer": "Made for actual on-the-ground travel",
+        "footerNote": "The practical middle option"
+      }
+    ]
+  },
+  "tourTypes": {
+    "privateTitle": "AI Private Tour",
+    "privateBody": "Your group only. AI plans the route; you confirm instantly.",
+    "privatePoints": [
+      "Your group only",
+      "Instant confirmation",
+      "Best for families & friends"
+    ],
+    "privateCta": "Start Private Tour",
+    "joinTitle": "AI Small-Group Join Tour",
+    "joinBody": "Small-group comfort, hotel-area pickup, clear pricing.",
+    "joinPoints": [
+      "Small-group comfort",
+      "Better pickup flow",
+      "Simple booking flow"
+    ],
+    "joinCta": "Join Small Group",
+    "busTitle": "Classic Bus Tour",
+    "busBody": "Fixed itineraries, traditional group format.",
+    "busCta": "View Classic Bus Tours"
+  },
+  "surcharge": {
+    "short": "Pickup surcharge may apply",
+    "title": "Smoother Route for Everyone",
+    "body": "Because your hotel is outside the main pickup area, an additional pickup fee applies. This helps keep the route smoother for all travelers.",
+    "final": "Final for your selected hotel",
+    "included": "Pickup included"
+  },
+  "pickupMatch": {
+    "great": "Great pickup match",
+    "good": "Good pickup match",
+    "slight": "Slight extra travel time may apply"
+  },
+  "joinStatus": {
+    "waiting": "Waiting for more travelers",
+    "balanceOpen": "Balance payment open",
+    "confirmed": "Confirmed",
+    "missedDeadline": "Missed deadline",
+    "privateOnly": "Private tour recommended",
+    "joinUnavailable": "Join not available for this route yet"
+  },
+  "joinStatusHelp": {
+    "waiting": "This tour needs more travelers before balance payment opens.",
+    "balanceOpen": "You can now pay the remaining balance in My Tours.",
+    "confirmed": "This tour is confirmed and ready to go.",
+    "missedDeadline": "The balance payment deadline has passed.",
+    "privateOnly": "This hotel area is better suited for a private tour.",
+    "joinUnavailable": "This route is currently not open for join bookings."
+  },
+  "checkout": {
+    "title": "Checkout",
+    "secureCheckoutTitle": "Secure checkout",
+    "secureCheckoutBody": "Pay the full tour price online to complete your booking. Free cancellation until 24 hours before departure.",
+    "confirmationEmailNote": "You will receive a confirmation email after payment.",
+    "cta": "Reserve My Spot",
+    "completeBooking": "Complete Booking",
+    "timelineStaticCopy": "Free cancellation until 24h before departure. You will receive a confirmation email after payment.",
+    "orderSummary": "Order summary",
+    "basePrice": "Base tour price",
+    "pickupSurcharge": "Pickup surcharge",
+    "subtotal": "Subtotal",
+    "total": "Total"
+  },
+  "listDetail": {
+    "summaryToursFound": "{{count}} tour(s) found",
+    "destination": "Destination",
+    "destinationAll": "All",
+    "hotelArea": "Hotel area",
+    "date": "Date",
+    "guests": "Guests",
+    "styleTags": "Travel style",
+    "editSearch": "Edit search",
+    "refine": "Refine",
+    "tourTypeAll": "All",
+    "noToursFound": "No tours found",
+    "loadingTours": "Loading tours…",
+    "viewTour": "View tour",
+    "viewDetails": "View details",
+    "joinThisTour": "Join this tour",
+    "listPaymentNote": "Pay in full online · Manage in My Tours",
+    "pickupPointsCount": "{count} pickup point(s)"
+  },
+  "detail": {
+    "whyThisFitsYou": "Why this fits you",
+    "whoThisIsBestFor": "Who this is best for",
+    "cancellationPolicy": "Cancellation policy",
+    "cancellationPolicyBody": "Free cancellation until 24h before departure. After that, fees may apply per operator policy.",
+    "pickupTipsIntro": "Exact times in confirmation. Arrive early; no-shows are non-refundable.",
+    "badgeAiPlanned": "AI Planned",
+    "badgeSmallGroup": "Small Group",
+    "badgePrivate": "Private",
+    "badgeVerifiedGuide": "Verified Local Guide",
+    "badgeTransparentBooking": "Transparent Booking Rules",
+    "badgeClassicBus": "Classic Bus",
+    "selectDateToSeeTimeline": "Select a date above to see your booking timeline",
+    "whoBus": "Travelers who prefer a classic group format"
+  },
+  "timeline": {
+    "title": "Booking timeline",
+    "reserveTitle": "Book online",
+    "reserveSub": "Pay in full to confirm",
+    "refundTitle": "Free cancellation until",
+    "refundSub": "24h before departure",
+    "balanceTitle": "Balance payment deadline",
+    "balanceSub": "Complete manually in My Tours (if applicable)",
+    "startTitle": "Tour begins",
+    "startSub": "Booking is closed"
+  },
+  "myTour": {
+    "title": "My Tours",
+    "payBalance": "Pay Balance Now",
+    "viewDetails": "View Booking Details",
+    "viewPickup": "View Pickup Information",
+    "rebook": "Rebook Another Tour",
+    "confirmed": "Confirmed",
+    "awaitingBalance": "Awaiting Balance Payment",
+    "nextStep": "Next step",
+    "status": {
+      "pending": "Pending",
+      "paymentReceived": "Payment received",
+      "awaitingBalance": "Awaiting Balance Payment",
+      "balanceDue": "Balance Payment Required",
+      "confirmed": "Confirmed",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "refunded": "Refunded",
+      "deadlineMissed": "Deadline Missed"
+    }
+  },
+  "destinations": {
+    "title": "Jeju is live. More Korea destinations coming.",
+    "jeju": "Available now",
+    "busan": "Coming soon",
+    "seoul": "Coming soon",
+    "notify": "Notify Me"
+  },
+  "fallback": {
+    "title": "Prefer a classic group tour instead?"
+  },
+  "finalCta": {
+    "sectionEyebrow": "Plan now",
+    "sectionSubtitle": "Start with the AI planner, then choose the format that fits your day best.",
+    "secondaryCta": "View classic bus tours",
+    "title": "Ready to build your Jeju trip the smarter way?",
+    "cta": "Plan My Trip"
+  },
+  "builderLoading": {
+    "stage1WithArea": "Checking pickup flow near [Area]…",
+    "stage1Generic": "Finding the best route for your hotel area…",
+    "stage2": "Looking for the best tour fit…",
+    "stage3": "Almost there…",
+    "end": "Your trip is ready"
+  },
+  "builderPickupArea": {
+    "jeju_city": "City Core",
+    "jeju_outside": "Near-city",
+    "seogwipo_city": "Seogwipo area",
+    "seogwipo_outside": "Outer"
+  },
+  "builderSummary": {
+    "paymentNote": "Pay in full online · Free cancellation until 24h before departure"
+  },
+  "planner": {
+    "hotelAreaLabel": "Hotel area"
+  },
+  "productCards": {
+    "busExtraBullet": "Classic bus · meeting-point pickup",
+    "badgeJoin": "Most balanced",
+    "badgePrivate": "Most flexible",
+    "badgeBus": "Best budget",
+    "sectionEyebrow": "Tour formats",
+    "sectionTitle": "Choose your style",
+    "swipeToCompare": "Swipe to compare"
+  },
+  "homepageComparison": {
+    "eyebrow": "Compare travel styles",
+    "title": "Find the Korea travel\nstyle that fits you",
+    "subtitle": "Bus routes, AI-planned small-group, or fully private custom travel.",
+    "rows": [
+      { "label": "Price", "ai": "Mid-range", "private": "Premium", "bus": "Lowest" },
+      { "label": "Group", "ai": "Small group", "private": "Private only", "bus": "Large shared" },
+      { "label": "Route", "ai": "AI-planned", "private": "Custom", "bus": "Fixed" },
+      { "label": "Pickup", "ai": "Hotel", "private": "Hotel", "bus": "Meeting point" },
+      { "label": "Best for", "ai": "Smart value", "private": "Full freedom", "bus": "Budget" }
+    ],
+    "cards": [
+      {
+        "valueKey": "ai",
+        "categoryLabel": "AI-POWERED",
+        "title": "Small Group",
+        "description": "Comfort + value with AI routes",
+        "ctaLabel": "Plan Now",
+        "ctaHref": "/custom-join-tour",
+        "highlight": true,
+        "badge": "BEST BALANCE"
+      },
+      {
+        "valueKey": "bus",
+        "categoryLabel": "CLASSIC",
+        "title": "Bus Tour",
+        "description": "Fixed-route sightseeing at lowest cost",
+        "ctaLabel": "Explore",
+        "ctaHref": "/tours/list",
+        "highlight": false
+      },
+      {
+        "valueKey": "private",
+        "categoryLabel": "PREMIUM",
+        "title": "Private Tour",
+        "description": "Maximum freedom, fully custom",
+        "ctaLabel": "Build Tour",
+        "ctaHref": "/tours",
+        "highlight": false
+      }
+    ]
+  },
+  "homepageAiPrices": {
+    "privatePriceLabel": "From ₩398,000 / group",
+    "privatePriceSub": "1–6 travelers · 7–13 pax higher",
+    "joinPriceLabel": "From ₩50,000 / person",
+    "joinPriceSub": "Pay in full online at checkout",
+    "busPriceLabel": "From ₩59,000 / person"
+  }
+}

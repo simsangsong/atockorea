@@ -7,18 +7,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { supabase } from '@/lib/supabase';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import BottomNav from '@/components/BottomNav';
-
-// 비밀번호: 영문+숫자+특수문자 조합 8자 이상
-function validatePassword(pwd: string): { valid: boolean; message?: string } {
-  if (pwd.length < 8) return { valid: false, message: 'Password must be at least 8 characters.' };
-  if (!/[a-zA-Z]/.test(pwd)) return { valid: false, message: 'Password must include at least one letter.' };
-  if (!/[0-9]/.test(pwd)) return { valid: false, message: 'Password must include at least one number.' };
-  if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?`~]/.test(pwd)) return { valid: false, message: 'Password must include at least one special character.' };
-  return { valid: true };
-}
+import { SitePageShell } from '@/src/components/layout/SitePageShell';
+import { useTranslations } from '@/lib/i18n';
+import { getPasswordStrengthTier, validateAppPassword } from '@/lib/password-policy';
+import { PasswordStrengthBar } from '@/components/auth/PasswordStrengthBar';
 
 const CURRENT_YEAR = new Date().getFullYear();
 const BIRTH_YEAR_START = 1900;
@@ -68,6 +60,7 @@ const COUNTRY_LIST: { name: string; dialCode: string }[] = [
 
 export default function SignUpPage() {
   const router = useRouter();
+  const t = useTranslations();
   const [step, setStep] = useState<'email' | 'verify' | 'info'>('email');
   const [formData, setFormData] = useState({
     email: '',
@@ -80,6 +73,7 @@ export default function SignUpPage() {
     confirmPassword: '',
   });
   const [agreedToTerms, setAgreedToTerms] = useState(false);
+  const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isSendingCode, setIsSendingCode] = useState(false);
   const [isVerifying, setIsVerifying] = useState(false);
@@ -117,22 +111,19 @@ export default function SignUpPage() {
     }
   }, []);
 
-  // Magic link 클릭 후 콜백에서 /signup?step=info 로 보낸 경우: 세션 있으면 프로필 입력 단계로
+  // 콜백에서 링크 처리 후 ?step=verify&email= 로 보냄 — 코드 입력 단계로 (세션은 콜백에서 이미 종료됨)
   useEffect(() => {
-    if (!supabase || step !== 'email') return;
-    const params = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
-    if (params.get('step') !== 'info') return;
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session?.user) {
-        setStep('info');
-        setEmailVerified(true);
-        if (session.user.email && !formData.email) {
-          setFormData((prev) => ({ ...prev, email: session.user.email ?? '' }));
-        }
-        window.history.replaceState({}, '', window.location.pathname);
-      }
-    });
-  }, [supabase, step]);
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('step') !== 'verify') return;
+    const em = params.get('email');
+    if (em) {
+      const decoded = decodeURIComponent(em);
+      setFormData((prev) => ({ ...prev, email: decoded }));
+      setStep('verify');
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+  }, []);
 
   useEffect(() => {
     if (countdown > 0) {
@@ -144,33 +135,47 @@ export default function SignUpPage() {
   // Supabase가 인증 번호를 만들고 SMTP(Resend)로 발송. 우리가 만든 번호로 verifyOtp 호출하면 인증 실패함.
   const handleSendVerificationCode = async () => {
     if (!formData.email?.trim()) {
-      setErrors({ email: 'Please enter your email address.' });
+      setErrors({ email: t('signup.errorEmailRequired') });
       return;
     }
     if (!supabase) {
-      setErrors({ email: 'Service unavailable. Please try again later.' });
+      setErrors({ email: t('signup.errorServiceUnavailable') });
       return;
     }
     setIsSendingCode(true);
     setErrors({});
     setError(null);
     try {
-      // 이미 가입된 이메일인지 검사
+      // auth.users 기준 중복: 이미 있으면 OTP 발송하지 않음
       const checkRes = await fetch('/api/auth/check-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: formData.email.trim() }),
+        body: JSON.stringify({ email: formData.email.trim().toLowerCase() }),
       });
-      const checkData = await checkRes.json().catch(() => ({}));
-      if (checkData.exists) {
+      const checkData = await checkRes.json().catch(() => ({} as { exists?: boolean; checkFailed?: boolean }));
+
+      if (!checkRes.ok) {
+        setErrors({ email: t('signup.errorEmailCheckFailed') });
+        setIsSendingCode(false);
+        return;
+      }
+
+      if (checkData.checkFailed === true) {
+        setErrors({ email: t('signup.errorEmailCheckFailed') });
+        setIsSendingCode(false);
+        return;
+      }
+
+      if (checkData.exists === true) {
         setErrors({
-          email: 'This email is already registered. Please sign in instead.',
+          email: t('signup.errorEmailExists'),
         });
         setIsSendingCode(false);
         return;
       }
 
       const origin = typeof window !== 'undefined' ? window.location.origin : '';
+      // 콜백 URL에 next=/signup 을 넣어 이메일 링크를 눌렀을 때 가입 플로우로만 처리(세션 후 즉시 로그아웃·인증 단계로 보냄). 본문은 OTP 템플릿으로 링크 없음.
       const { error: otpError } = await supabase.auth.signInWithOtp({
         email: formData.email.trim(),
         options: {
@@ -179,14 +184,14 @@ export default function SignUpPage() {
         },
       });
       if (otpError) {
-        setErrors({ email: otpError.message || 'Failed to send verification code.' });
+        setErrors({ email: otpError.message || t('signup.errorSendCodeFailed') });
         setIsSendingCode(false);
         return;
       }
       setCountdown(60);
       setStep('verify');
     } catch (e: any) {
-      setErrors({ email: e?.message || 'Failed to send verification code.' });
+      setErrors({ email: e?.message || t('signup.errorSendCodeFailed') });
     } finally {
       setIsSendingCode(false);
     }
@@ -194,11 +199,11 @@ export default function SignUpPage() {
 
   const handleVerifyCode = async () => {
     if (!formData.verificationCode?.trim()) {
-      setErrors({ verificationCode: 'Please enter the verification code.' });
+      setErrors({ verificationCode: t('signup.errorVerificationRequired') });
       return;
     }
     if (!supabase) {
-      setErrors({ verificationCode: 'Service unavailable.' });
+      setErrors({ verificationCode: t('signup.errorServiceUnavailableShort') });
       return;
     }
     setIsVerifying(true);
@@ -210,14 +215,14 @@ export default function SignUpPage() {
         type: 'email',
       });
       if (verifyError) {
-        setErrors({ verificationCode: verifyError.message || 'Invalid or expired verification code.' });
+        setErrors({ verificationCode: verifyError.message || t('signup.errorInvalidVerificationCode') });
         setIsVerifying(false);
         return;
       }
       setEmailVerified(true);
       setStep('info');
     } catch (e: any) {
-      setErrors({ verificationCode: e?.message || 'Failed to verify code.' });
+      setErrors({ verificationCode: e?.message || t('signup.errorVerifyFailed') });
     } finally {
       setIsVerifying(false);
     }
@@ -229,35 +234,64 @@ export default function SignUpPage() {
     setError(null);
 
     if (!formData.fullName?.trim()) {
-      setErrors((prev) => ({ ...prev, fullName: 'Full name is required.' }));
+      setErrors((prev) => ({ ...prev, fullName: t('signup.errorFullNameRequired') }));
       return;
     }
     const birthYearNum = formData.birthYear ? parseInt(formData.birthYear, 10) : NaN;
     if (!formData.birthYear || Number.isNaN(birthYearNum) || birthYearNum < 1900 || birthYearNum > CURRENT_YEAR) {
-      setErrors((prev) => ({ ...prev, birthYear: `Please enter a valid birth year (1900–${CURRENT_YEAR}).` }));
+      setErrors((prev) => ({
+        ...prev,
+        birthYear: t('signup.errorBirthYearInvalid', { maxYear: CURRENT_YEAR }),
+      }));
       return;
     }
     if (!formData.nationality?.trim()) {
-      setErrors((prev) => ({ ...prev, nationality: 'Nationality is required.' }));
+      setErrors((prev) => ({ ...prev, nationality: t('signup.errorNationalityRequired') }));
       return;
     }
 
-    if (!agreedToTerms) {
-      setError('Please agree to the Terms of Service and Privacy Policy.');
+    if (!agreedToTerms || !agreedToPrivacy) {
+      setError(t('signup.errorTerms'));
+      return;
+    }
+
+    const pwd = formData.password?.trim() ?? '';
+    const pwdConfirm = formData.confirmPassword?.trim() ?? '';
+    if (!pwd) {
+      setErrors((prev) => ({ ...prev, password: t('signup.errorPasswordRequired') }));
+      return;
+    }
+    const pwdCheck = validateAppPassword(pwd);
+    if (!pwdCheck.valid) {
+      setErrors((prev) => ({
+        ...prev,
+        password: pwdCheck.message ?? t('signup.errorPasswordInvalid'),
+      }));
+      return;
+    }
+    if (pwd !== pwdConfirm) {
+      setErrors((prev) => ({ ...prev, confirmPassword: t('signup.errorPasswordMismatch') }));
       return;
     }
 
     setIsLoading(true);
     try {
       if (!supabase) {
-        throw new Error('Service unavailable. Please try again later.');
+        throw new Error(t('signup.errorServiceUnavailable'));
       }
 
       // OTP 인증 후 세션 있음. 트리거가 user_profiles 행을 이미 만들었을 수 있음 → create-profile이 upsert 처리
       const { data: sessionData } = await supabase.auth.getSession();
       const session = sessionData?.session;
       if (!session?.user) {
-        setError('Session expired. Please verify your email again from the first step.');
+        setError(t('signup.errorSessionExpired'));
+        setIsLoading(false);
+        return;
+      }
+
+      const { error: pwdErr } = await supabase.auth.updateUser({ password: pwd });
+      if (pwdErr) {
+        setError(pwdErr.message || t('signup.errorPasswordInvalid'));
         setIsLoading(false);
         return;
       }
@@ -289,7 +323,7 @@ export default function SignUpPage() {
       }
 
       if (!profileRes.ok) {
-        setError(profileData.error || 'Failed to save profile. Please try again.');
+        setError(profileData.error || t('signup.errorProfileSave'));
         setIsLoading(false);
         return;
       }
@@ -297,7 +331,7 @@ export default function SignUpPage() {
       setError('');
       router.push('/');
     } catch (e: any) {
-      setError(e?.message ?? 'Something went wrong. Please try again.');
+      setError(e?.message ?? t('signup.errorGeneric'));
       setIsLoading(false);
     }
   };
@@ -317,27 +351,45 @@ export default function SignUpPage() {
         if (data?.url) window.location.href = data.url;
       }
     } catch (e: any) {
-      setError(e?.message ?? 'Login failed.');
+      setError(e?.message ?? t('signup.errorLoginFailed'));
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-100 via-neutral-50 to-slate-100 relative">
-      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.1) 10px, rgba(0,0,0,0.1) 20px)' }} />
-      <Header />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 relative z-10">
-        <div className="max-w-md mx-auto">
-          <div className="bg-white/70 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 p-8 md:p-10 transition-all">
-            <div className="text-center mb-8">
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Sign Up</h1>
-              <p className="text-gray-600 text-sm md:text-base">Create your AtoCKorea account (login with your email)</p>
-              <div className="flex items-center justify-center mt-6 mb-4">
-                {['email', 'verify', 'info'].map((s, i) => (
-                  <div key={s} className="flex items-center">
-                    {i > 0 && <div className={`w-12 h-0.5 mx-2 ${step === s || (step === 'info' && s === 'verify') ? 'bg-indigo-600' : 'bg-gray-200'}`} />}
-                    <div className={`flex items-center ${step === s ? 'text-indigo-600' : 'text-gray-400'}`}>
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${step === s ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-500'}`}>{i + 1}</div>
-                      <span className="ml-2 text-xs font-medium hidden sm:inline capitalize">{s}</span>
+    <SitePageShell>
+      <main className="relative z-10 container mx-auto px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+        <div className="mx-auto max-w-md">
+          <div className="rounded-[1.75rem] border border-white/25 bg-white/55 p-8 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.18)] backdrop-blur-xl transition-all md:p-10">
+            <div className="mb-8 text-center">
+              <h1 className="mb-2 text-3xl font-bold text-slate-900 md:text-4xl">{t('auth.signUp')}</h1>
+              <p className="text-sm text-slate-600 md:text-base">{t('signup.subtitle')}</p>
+              <div className="mb-4 mt-6 flex items-center justify-center">
+                {(
+                  [
+                    { id: 'email' as const, label: t('signup.stepEmail') },
+                    { id: 'verify' as const, label: t('signup.stepVerify') },
+                    { id: 'info' as const, label: t('signup.stepInfo') },
+                  ]
+                ).map((stepItem, i) => (
+                  <div key={stepItem.id} className="flex items-center">
+                    {i > 0 && (
+                      <div
+                        className={`mx-2 h-0.5 w-12 ${
+                          step === stepItem.id || (step === 'info' && stepItem.id === 'verify')
+                            ? 'bg-slate-900'
+                            : 'bg-slate-200'
+                        }`}
+                      />
+                    )}
+                    <div className={`flex items-center ${step === stepItem.id ? 'text-blue-600' : 'text-slate-400'}`}>
+                      <div
+                        className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold ${
+                          step === stepItem.id ? 'bg-slate-900 text-white' : 'bg-slate-200 text-slate-500'
+                        }`}
+                      >
+                        {i + 1}
+                      </div>
+                      <span className="ml-2 hidden text-xs font-medium sm:inline">{stepItem.label}</span>
                     </div>
                   </div>
                 ))}
@@ -354,66 +406,167 @@ export default function SignUpPage() {
             {step === 'email' && (
               <div className="space-y-5">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">Email (Login ID) <span className="text-red-500">*</span></label>
+                  <label htmlFor="email" className="mb-2 block text-sm font-semibold text-slate-700">
+                    {t('signup.emailLoginId')} <span className="text-red-500">*</span>
+                  </label>
                   <input
                     type="email"
                     id="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-gray-900 placeholder:text-gray-400"
-                    placeholder="you@example.com"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 outline-none bg-white/80 text-slate-900 placeholder:text-slate-400"
+                    placeholder={t('signup.emailPlaceholder')}
                   />
                   {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
                 </div>
-                <button type="button" onClick={handleSendVerificationCode} disabled={isSendingCode || !formData.email?.trim()} className="w-full py-3.5 bg-gray-900 text-white rounded-xl hover:bg-gray-800 font-semibold shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
-                  {isSendingCode ? 'Sending...' : 'Send Verification Code'}
-                </button>
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={handleSendVerificationCode}
+                    disabled={isSendingCode || !formData.email?.trim()}
+                    className="min-w-0 flex-1 rounded-xl bg-slate-900 py-3.5 font-semibold text-white shadow-lg transition-colors hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    {isSendingCode ? t('signup.sending') : t('signup.sendCode')}
+                  </button>
+                  {countdown > 0 && (
+                    <div className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-blue-100 bg-blue-50/90 px-3 py-2 text-sm shadow-sm">
+                      <span className="text-slate-600">{t('signup.resendIn')}</span>
+                      <span className="min-w-[2.75ch] text-right text-lg font-bold tabular-nums text-blue-700">{countdown}s</span>
+                    </div>
+                  )}
+                </div>
               </div>
             )}
 
             {step === 'verify' && (
               <div className="space-y-5">
                 <div>
-                  <label htmlFor="verificationCode" className="block text-sm font-semibold text-gray-700 mb-2">Verification Code <span className="text-red-500">*</span></label>
+                  <label htmlFor="verificationCode" className="mb-2 block text-sm font-semibold text-slate-700">
+                    {t('signup.verificationCode')} <span className="text-red-500">*</span>
+                  </label>
                   <input
                     type="text"
                     id="verificationCode"
                     value={formData.verificationCode}
                     onChange={(e) => setFormData({ ...formData, verificationCode: e.target.value.replace(/\D/g, '').slice(0, 6) })}
                     maxLength={6}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-gray-900 text-center text-2xl tracking-widest"
-                    placeholder="000000"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 outline-none bg-white/80 text-slate-900 text-center text-2xl tracking-widest"
+                    placeholder={t('signup.verificationPlaceholder')}
                   />
                   {errors.verificationCode && <p className="mt-1 text-sm text-red-600">{errors.verificationCode}</p>}
-                  <p className="mt-2 text-xs text-gray-500 text-center">Sent to <span className="font-semibold text-gray-700">{formData.email}</span></p>
+                  <p className="mt-2 text-center text-xs text-slate-500">
+                    {t('signup.sentTo')} <span className="font-semibold text-slate-700">{formData.email}</span>
+                  </p>
+                  <p className="mt-3 rounded-xl border border-slate-200/80 bg-slate-50/90 p-3 text-left text-xs leading-relaxed text-slate-600">
+                    {t('signup.verifyLinkFallback')}
+                  </p>
                 </div>
                 <div className="flex gap-3">
-                  <button type="button" onClick={() => setStep('email')} className="flex-1 py-3 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 font-medium">Back</button>
-                  <button type="button" onClick={handleVerifyCode} disabled={isVerifying || !formData.verificationCode?.trim()} className="flex-1 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 font-semibold disabled:opacity-50 disabled:cursor-not-allowed">{isVerifying ? 'Verifying...' : 'Verify'}</button>
+                  <button type="button" onClick={() => setStep('email')} className="flex-1 rounded-xl border border-slate-200/80 py-3 font-medium text-slate-700 hover:bg-white/60">
+                    {t('signup.back')}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleVerifyCode}
+                    disabled={isVerifying || !formData.verificationCode?.trim()}
+                    className="flex-1 rounded-xl bg-slate-900 py-3 font-semibold text-white transition-colors hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    {isVerifying ? t('signup.verifying') : t('signup.verify')}
+                  </button>
                 </div>
-                {countdown > 0 ? <p className="text-center text-sm text-gray-500">Resend in <span className="font-semibold text-indigo-600">{countdown}s</span></p> : <button type="button" onClick={handleSendVerificationCode} className="w-full text-sm text-indigo-600 hover:text-indigo-700 font-medium">Resend Verification Code</button>}
+                {countdown > 0 ? (
+                  <div className="flex items-center justify-center gap-2 text-sm text-slate-500">
+                    <span>{t('signup.resendIn')}</span>
+                    <span className="min-w-[3ch] text-lg font-bold tabular-nums text-blue-600">{countdown}s</span>
+                  </div>
+                ) : (
+                  <button type="button" onClick={handleSendVerificationCode} className="w-full text-sm font-medium text-blue-600 hover:text-blue-700">
+                    {t('signup.resendCode')}
+                  </button>
+                )}
               </div>
             )}
 
             {step === 'info' && (
               <form onSubmit={handleSubmit} className="space-y-5">
-                <p className="text-xs text-gray-500 mb-2">Login ID: <span className="font-semibold text-gray-700">{formData.email}</span></p>
                 <div>
-                  <label htmlFor="fullName" className="block text-sm font-semibold text-gray-700 mb-2">Full Name <span className="text-red-500">*</span></label>
-                  <input type="text" id="fullName" value={formData.fullName} onChange={(e) => setFormData({ ...formData, fullName: e.target.value })} required className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-gray-900 placeholder:text-gray-400" placeholder="John Doe" />
+                  <label htmlFor="signup-email-readonly" className="mb-2 block text-sm font-semibold text-slate-700">
+                    {t('signup.emailLoginId')} <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="signup-email-readonly"
+                    readOnly
+                    disabled
+                    value={formData.email}
+                    className="w-full cursor-not-allowed rounded-xl border border-slate-200/80 bg-slate-100/90 px-4 py-3 text-slate-600 outline-none"
+                    aria-readonly="true"
+                  />
+                  <p className="mt-1 text-xs text-slate-500">{t('signup.emailLockedHint')}</p>
+                </div>
+                <div>
+                  <label htmlFor="fullName" className="mb-2 block text-sm font-semibold text-slate-700">
+                    {t('signup.fullName')} <span className="text-red-500">*</span>
+                  </label>
+                  <input type="text" id="fullName" value={formData.fullName} onChange={(e) => setFormData({ ...formData, fullName: e.target.value })} required className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 outline-none bg-white/80 text-slate-900 placeholder:text-slate-400" placeholder={t('signup.fullNamePlaceholder')} />
                   {errors.fullName && <p className="mt-1 text-sm text-red-600">{errors.fullName}</p>}
                 </div>
+                <div>
+                  <label htmlFor="password" className="mb-2 block text-sm font-semibold text-slate-700">
+                    {t('signup.password')} <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="password"
+                    id="password"
+                    value={formData.password}
+                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                    required
+                    autoComplete="new-password"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 outline-none bg-white/80 text-slate-900 placeholder:text-slate-400"
+                    placeholder={t('signup.passwordHint')}
+                  />
+                  <PasswordStrengthBar
+                    tier={getPasswordStrengthTier(formData.password)}
+                    weakLabel={t('signup.passwordStrengthWeak')}
+                    strongLabel={t('signup.passwordStrengthStrong')}
+                  />
+                  {errors.password && <p className="mt-1 text-sm text-red-600">{errors.password}</p>}
+                </div>
+                <div>
+                  <label htmlFor="confirmPassword" className="mb-2 block text-sm font-semibold text-slate-700">
+                    {t('signup.confirmPassword')} <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="password"
+                    id="confirmPassword"
+                    value={formData.confirmPassword}
+                    onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                    required
+                    autoComplete="new-password"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 outline-none bg-white/80 text-slate-900 placeholder:text-slate-400"
+                  />
+                  <PasswordStrengthBar
+                    tier={getPasswordStrengthTier(formData.confirmPassword)}
+                    weakLabel={t('signup.passwordStrengthWeak')}
+                    strongLabel={t('signup.passwordStrengthStrong')}
+                  />
+                  {errors.confirmPassword && <p className="mt-1 text-sm text-red-600">{errors.confirmPassword}</p>}
+                </div>
                 <div ref={birthYearPickerRef}>
-                  <label htmlFor="birthYear" className="block text-sm font-semibold text-gray-700 mb-2">Birth Year <span className="text-red-500">*</span></label>
+                  <label htmlFor="birthYear" className="mb-2 block text-sm font-semibold text-slate-700">
+                    {t('signup.birthYear')} <span className="text-red-500">*</span>
+                  </label>
                   <button
                     type="button"
                     id="birthYear"
                     onClick={() => setBirthYearPickerOpen(true)}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-left text-gray-900 flex items-center justify-between"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 outline-none bg-white/80 text-left text-slate-900 flex items-center justify-between"
                   >
-                    <span className={formData.birthYear ? 'text-gray-900' : 'text-gray-400'}>{formData.birthYear || `e.g. ${CURRENT_YEAR - 30}`}</span>
-                    <svg className="w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    <span className={formData.birthYear ? 'text-slate-900' : 'text-slate-400'}>
+                      {formData.birthYear || t('signup.birthYearExample', { year: CURRENT_YEAR - 30 })}
+                    </span>
+                    <svg className="w-5 h-5 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                   </button>
                   {errors.birthYear && <p className="mt-1 text-sm text-red-600">{errors.birthYear}</p>}
 
@@ -424,7 +577,7 @@ export default function SignUpPage() {
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
-                          transition={{ duration: 0.2, ease: 'easeOut' }}
+                          transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] as const }}
                           className="fixed inset-0 z-[100] bg-black/40 backdrop-blur-sm"
                           onClick={() => setBirthYearPickerOpen(false)}
                           aria-hidden
@@ -434,12 +587,12 @@ export default function SignUpPage() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 24 }}
                           transition={{ duration: 0.25, ease: [0.32, 0.72, 0, 1] as const }}
-                          className="fixed left-4 right-4 bottom-4 z-[101] max-h-[70vh] flex flex-col bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden"
+                          className="fixed bottom-4 left-4 right-4 z-[101] flex max-h-[70vh] flex-col overflow-hidden rounded-[1.75rem] border border-white/25 bg-white/95 shadow-xl backdrop-blur-xl"
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <div className="px-4 py-3 border-b border-gray-100 flex items-center justify-between shrink-0">
-                            <span className="text-sm font-semibold text-gray-700">Select birth year</span>
-                            <button type="button" onClick={() => setBirthYearPickerOpen(false)} className="p-2 -m-2 rounded-lg hover:bg-gray-100 text-gray-500" aria-label="Close">
+                          <div className="flex shrink-0 items-center justify-between border-b border-white/20 px-4 py-3">
+                            <span className="text-sm font-semibold text-slate-700">{t('signup.selectBirthYear')}</span>
+                            <button type="button" onClick={() => setBirthYearPickerOpen(false)} className="p-2 -m-2 rounded-lg hover:bg-slate-100 text-slate-500" aria-label={t('common.close')}>
                               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                             </button>
                           </div>
@@ -454,7 +607,7 @@ export default function SignUpPage() {
                                     setFormData((prev) => ({ ...prev, birthYear: String(year) }));
                                     setBirthYearPickerOpen(false);
                                   }}
-                                  className={`w-full px-4 py-3 text-left text-base transition-colors ${isSelected ? 'bg-indigo-50 text-indigo-700 font-semibold' : 'text-gray-800 hover:bg-gray-50'}`}
+                                  className={`w-full px-4 py-3 text-left text-base transition-colors ${isSelected ? 'bg-blue-50/90 font-semibold text-blue-800' : 'text-slate-800 hover:bg-slate-50'}`}
                                 >
                                   {year}
                                 </button>
@@ -467,24 +620,28 @@ export default function SignUpPage() {
                   </AnimatePresence>
                 </div>
                 <div ref={countryDropdownRef} className="relative">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Nationality <span className="text-red-500">*</span></label>
+                  <label className="mb-2 block text-sm font-semibold text-slate-700">
+                    {t('signup.nationality')} <span className="text-red-500">*</span>
+                  </label>
                   <button
                     type="button"
                     onClick={() => setCountryDropdownOpen((o) => !o)}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-left text-gray-900 flex items-center justify-between"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 outline-none bg-white/80 text-left text-slate-900 flex items-center justify-between"
                   >
-                    <span className={formData.nationality ? 'text-gray-900' : 'text-gray-400'}>{formData.nationality || 'Select country'}</span>
-                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    <span className={formData.nationality ? 'text-slate-900' : 'text-slate-400'}>
+                      {formData.nationality || t('signup.selectCountry')}
+                    </span>
+                    <svg className="h-5 w-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                   </button>
                   {countryDropdownOpen && (
-                    <div className="absolute z-20 mt-1 w-full bg-white border border-gray-200 rounded-xl shadow-lg max-h-64 overflow-hidden">
-                      <div className="p-2 border-b border-gray-100">
+                    <div className="absolute z-20 mt-1 max-h-64 w-full overflow-hidden rounded-xl border border-white/25 bg-white/95 shadow-lg backdrop-blur-xl">
+                      <div className="border-b border-white/20 p-2">
                         <input
                           type="text"
                           value={countrySearch}
                           onChange={(e) => setCountrySearch(e.target.value)}
-                          placeholder="Search country..."
-                          className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
+                          placeholder={t('signup.searchCountry')}
+                          className="w-full rounded-lg border border-slate-200/80 px-3 py-2 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30"
                         />
                       </div>
                       <div className="overflow-y-auto max-h-52">
@@ -497,10 +654,10 @@ export default function SignUpPage() {
                               setCountryDropdownOpen(false);
                               setCountrySearch('');
                             }}
-                            className="w-full px-4 py-2.5 text-left text-sm hover:bg-indigo-50 flex justify-between items-center"
+                            className="flex w-full items-center justify-between px-4 py-2.5 text-left text-sm hover:bg-blue-50/80"
                           >
                             <span>{c.name}</span>
-                            <span className="text-gray-500 font-medium">{c.dialCode}</span>
+                            <span className="font-medium text-slate-500">{c.dialCode}</span>
                           </button>
                         ))}
                       </div>
@@ -509,16 +666,46 @@ export default function SignUpPage() {
                   {errors.nationality && <p className="mt-1 text-sm text-red-600">{errors.nationality}</p>}
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">Phone (optional, for booking)</label>
-                  <input type="tel" id="phone" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none bg-white/80 text-gray-900 placeholder:text-gray-400" placeholder="e.g. +82 10 1234 5678" />
+                  <label htmlFor="phone" className="mb-2 block text-sm font-semibold text-slate-700">
+                    {t('signup.phoneOptional')}
+                  </label>
+                  <input type="tel" id="phone" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 outline-none bg-white/80 text-slate-900 placeholder:text-slate-400" placeholder={t('signup.phonePlaceholder')} />
                 </div>
-                <p className="text-xs text-gray-500">You will sign in with the verification code sent to your email next time.</p>
-                <div className="flex items-start">
-                  <input type="checkbox" id="terms" checked={agreedToTerms} onChange={(e) => setAgreedToTerms(e.target.checked)} className="mt-1 w-4 h-4 text-indigo-600 rounded focus:ring-indigo-500 bg-white border-gray-300" />
-                  <label htmlFor="terms" className="ml-3 text-sm text-gray-700">I agree to the <Link href="/terms" className="text-indigo-600 hover:text-indigo-700 font-medium">Terms of Service</Link> and <Link href="/privacy" className="text-indigo-600 hover:text-indigo-700 font-medium">Privacy Policy</Link></label>
+                <p className="text-xs text-slate-500">{t('signup.otpHint')}</p>
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="terms-agree"
+                    checked={agreedToTerms}
+                    onChange={(e) => setAgreedToTerms(e.target.checked)}
+                    className="mt-1 h-4 w-4 shrink-0 rounded border-slate-300 bg-white text-blue-600 focus:ring-2 focus:ring-blue-500/30"
+                  />
+                  <label htmlFor="terms-agree" className="text-sm text-slate-700 leading-relaxed">
+                    <span className="text-red-500">*</span>{' '}
+                    {t('signup.agreeTermsCheckbox')}{' '}
+                    <Link href="/terms" className="font-medium text-blue-600 hover:text-blue-700" target="_blank" rel="noopener noreferrer">
+                      {t('signup.termsLink')}
+                    </Link>
+                  </label>
                 </div>
-                <button type="submit" disabled={isLoading} className="w-full py-3.5 bg-gray-900 text-white rounded-xl hover:bg-gray-800 font-semibold shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
-                  {isLoading ? 'Creating account...' : 'Sign Up'}
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="privacy-agree"
+                    checked={agreedToPrivacy}
+                    onChange={(e) => setAgreedToPrivacy(e.target.checked)}
+                    className="mt-1 h-4 w-4 shrink-0 rounded border-slate-300 bg-white text-blue-600 focus:ring-2 focus:ring-blue-500/30"
+                  />
+                  <label htmlFor="privacy-agree" className="text-sm text-slate-700 leading-relaxed">
+                    <span className="text-red-500">*</span>{' '}
+                    {t('signup.agreePrivacyCheckbox')}{' '}
+                    <Link href="/privacy" className="font-medium text-blue-600 hover:text-blue-700" target="_blank" rel="noopener noreferrer">
+                      {t('signup.privacyLink')}
+                    </Link>
+                  </label>
+                </div>
+                <button type="submit" disabled={isLoading} className="w-full rounded-xl bg-slate-900 py-3.5 font-semibold text-white shadow-lg transition-colors hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50">
+                  {isLoading ? t('signup.creatingAccount') : t('signup.signUpCta')}
                 </button>
               </form>
             )}
@@ -526,29 +713,31 @@ export default function SignUpPage() {
             {step === 'email' && (
               <>
                 <div className="relative my-6 md:my-8">
-                  <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-gray-200" /></div>
-                  <div className="relative flex justify-center text-sm"><span className="px-4 bg-transparent text-gray-400 font-medium">or</span></div>
+                  <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/25" /></div>
+                  <div className="relative flex justify-center text-sm"><span className="bg-transparent px-4 font-medium text-slate-400">{t('auth.or')}</span></div>
                 </div>
                 <div className="space-y-2.5 md:space-y-3">
-                  <button onClick={() => handleSocialLogin('google')} className="w-full max-w-[360px] flex justify-center px-5 py-3 bg-white border border-gray-200 rounded-xl hover:border-gray-300 hover:shadow-md font-medium text-gray-700 shadow-sm">
+                  <button onClick={() => handleSocialLogin('google')} className="flex w-full max-w-[360px] justify-center rounded-xl border border-white/25 bg-white/80 px-5 py-3 font-medium text-slate-700 shadow-sm transition-all hover:border-slate-200/60 hover:shadow-md">
                     <span className="grid grid-cols-[24px_auto] items-center gap-3">
                       <svg className="w-5 h-5" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
-                      <span className="text-sm md:text-base">Google</span>
+                      <span className="text-sm md:text-base">{t('auth.google')}</span>
                     </span>
                   </button>
                 </div>
               </>
             )}
 
-            <div className="mt-6 md:mt-8 text-center">
-              <p className="text-gray-600 text-sm">Already have an account? <Link href="/signin" className="text-indigo-600 hover:text-indigo-700 font-semibold">Sign In</Link></p>
+            <div className="mt-6 text-center md:mt-8">
+              <p className="text-sm text-slate-600">
+                {t('auth.alreadyHaveAccount')}{' '}
+                <Link href="/signin" className="font-semibold text-blue-600 hover:text-blue-700">
+                  {t('auth.signIn')}
+                </Link>
+              </p>
             </div>
           </div>
         </div>
       </main>
-      <Footer />
-      <BottomNav />
-      <div className="h-16 md:hidden" />
-    </div>
+    </SitePageShell>
   );
 }

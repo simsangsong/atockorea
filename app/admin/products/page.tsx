@@ -12,7 +12,7 @@ const DEFAULT_IMPORTANT_NOTES = [
   'Your guide will contact you the day before the tour to confirm your pickup location and time.',
   'Please arrive at the pickup point at least 10 minutes early and wait for the guide.',
   'If you are more than 10 minutes late, you will be considered a no-show and no refund will be provided.',
-  'Guests who have paid a deposit must pay the remaining balance in cash directly to the guide on the day of the tour. Please bring sufficient cash; card payments are not accepted.',
+  'Tour fees are paid in full online at booking. Guests should bring cash only for personal expenses on the day if needed.',
 ];
 
 interface Tour {

@@ -146,6 +146,17 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       const tr = (localeParam && tour.translations && typeof tour.translations === 'object' && tour.translations[localeParam]) || null;
       const title = (tr?.title ?? tour.title) as string;
       const description = (tr?.description ?? tour.description ?? '') as string;
+      const badgesRaw = tour.badges;
+      const trBadges = tr && Array.isArray((tr as { badges?: unknown }).badges) ? (tr as { badges: string[] }).badges : null;
+      const badges =
+        localeParam && trBadges && trBadges.length > 0
+          ? trBadges
+          : Array.isArray(badgesRaw)
+            ? badgesRaw
+            : [];
+      const trDur = tr && typeof (tr as { duration?: unknown }).duration === 'string' ? String((tr as { duration: string }).duration).trim() : '';
+      const durationStr =
+        localeParam && trDur ? trDur : (tour.duration || '');
       return {
         id: tour.id,
         slug: tour.slug,
@@ -159,11 +170,11 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
         images: tour.gallery_images || [],
         rating: tour.rating ? parseFloat(tour.rating.toString()) : 0,
         reviewCount: tour.review_count || 0,
-        duration: tour.duration || '',
+        duration: durationStr,
         difficulty: tour.difficulty || '',
         groupSize: tour.group_size || '',
         highlight: (tr?.highlight ?? tour.highlight ?? '') as string,
-        badges: tour.badges || [],
+        badges,
         description,
         location_detail: tour.location || '',
         pickupPoints: tour.pickup_points || [],

@@ -10,11 +10,9 @@ import BottomNav from '@/components/BottomNav';
 import TourOverviewContent from '@/components/tour/TourOverviewContent';
 import FaqAccordion from '@/components/tour/FaqAccordion';
 import ImportantNotesContent from '@/components/tour/ImportantNotesContent';
-import { useTranslations, useI18n, useCopy } from '@/lib/i18n';
+import { useTranslations, useI18n, useCopy, defaultLocale, type Locale } from '@/lib/i18n';
 import { formatChildEligibilityRule, CHILD_SEAT_OPTIONS, STROLLER_WHEELCHAIR_OPTIONS } from '@/lib/participant-rules';
 import TourReviewsSection from '@/components/tour/TourReviewsSection';
-import { TourDetailHeroShell } from '@/components/tour/TourDetailHeroShell';
-import { TourDetailHeroOverlapCard } from '@/components/tour/TourDetailHeroOverlapCard';
 import { TourDetailKeyInfoGrid } from '@/components/tour/TourDetailKeyInfoGrid';
 import { useCurrencyOptional } from '@/lib/currency';
 
@@ -50,7 +48,9 @@ import {
 } from '@/components/tour/BusTourInclusionsSection';
 import { analytics } from '@/src/design/analytics';
 import { SmallGroupTourDetailTemplate, buildSmallGroupDetailContent } from '@/components/tour/small-group';
-import { Star, Shield, Award, Users, Clock, Globe, Check, X, ChevronRight, MapPin, Navigation, AlertCircle, Plane, Banknote } from 'lucide-react';
+import { TourDetailTemplateView } from '@/components/tour-detail-template';
+import { tourUsesDetailTemplateView } from '@/lib/tour-detail-template-slugs';
+import { Star, Shield, Award, Users, Clock, Globe, Check, X, ChevronRight, MapPin, Navigation, AlertCircle, Plane, Banknote, Footprints } from 'lucide-react';
 
 /** Timeline pins — blue + slate (homepage accent alignment) */
 const TIMELINE_PIN_COLORS = ['#2563eb', '#64748b'] as const;
@@ -149,6 +149,19 @@ function StyledTimelineCard({
   );
 }
 
+/** Middleware rewrite adds `?locale=`; use it so the first fetch matches URL before I18n hydrates from localStorage. */
+function localeQueryForTourApi(urlParam: string | null, ctx: Locale): string {
+  if (urlParam && urlParam.trim()) {
+    const raw = urlParam.trim();
+    const lower = raw.toLowerCase();
+    if (lower === 'zh-cn' || lower === 'zh_cn') return 'zh-CN';
+    if (lower === 'zh-tw' || lower === 'zh_tw') return 'zh-TW';
+    if (lower === 'en' || lower === 'ko' || lower === 'zh' || lower === 'es' || lower === 'ja') return lower;
+    if (raw === 'zh-TW') return 'zh-TW';
+  }
+  return ctx;
+}
+
 export default function TourDetailPage() {
   const params = useParams();
   const router = useRouter();
@@ -196,32 +209,36 @@ export default function TourDetailPage() {
   }, []);
 
   const prevTourIdRef = useRef<string | null>(null);
-  const fetchingRef = useRef(false); // Prevent concurrent fetches
-  const hasFetchedRef = useRef<string | null>(null); // Track which tourId has been fetched
+  const hasFetchedRef = useRef<string | null>(null);
 
   useEffect(() => {
-    // Prevent duplicate fetches for the same tourId
     if (!tourId) {
       if (error !== 'Tour ID is required') {
         setError('Tour ID is required');
         setLoading(false);
       }
-      fetchingRef.current = false;
       prevTourIdRef.current = null;
       hasFetchedRef.current = null;
       return;
     }
-    
-    // Refetch when tourId or locale changes (so we get the right translation)
-    const fetchKey = `${tourId}:${locale}`;
+
+    const urlLocale =
+      typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('locale') : null;
+    /** URL `?locale=` (middleware) applies before I18n reads localStorage; after user picks a language, trust context. */
+    const apiLocale =
+      locale === defaultLocale ? localeQueryForTourApi(urlLocale, locale) : locale;
+    const fetchKey = `${tourId}:${apiLocale}`;
+
     if (hasFetchedRef.current === fetchKey) {
       return;
     }
-    
-    // Reset previous tour when tourId or locale changes
+
     const tourIdChanged = prevTourIdRef.current !== tourId;
-    const localeChanged = prevTourIdRef.current !== null && hasFetchedRef.current !== null && hasFetchedRef.current !== fetchKey;
-    
+    const localeChanged =
+      prevTourIdRef.current !== null &&
+      hasFetchedRef.current !== null &&
+      hasFetchedRef.current !== fetchKey;
+
     if (tourIdChanged || localeChanged) {
       if (tourIdChanged && prevTourIdRef.current !== null) {
         setTour(null);
@@ -231,33 +248,25 @@ export default function TourDetailPage() {
       prevTourIdRef.current = tourId;
       hasFetchedRef.current = null;
     }
-    
-    // If already fetching, don't fetch again
-    if (fetchingRef.current) {
-      return;
-    }
-    
-    fetchingRef.current = true;
 
-    let isMounted = true; // Track if component is still mounted
+    const ac = new AbortController();
 
     const fetchTour = async () => {
       try {
         setLoading(true);
-        setError(null); // Clear previous errors
-        const apiUrl = typeof window !== 'undefined' 
-          ? `${window.location.origin}/api/tours/${encodeURIComponent(tourId)}?locale=${encodeURIComponent(locale)}`
-          : `/api/tours/${encodeURIComponent(tourId)}?locale=${encodeURIComponent(locale)}`;
-        
+        setError(null);
+        const apiUrl =
+          typeof window !== 'undefined'
+            ? `${window.location.origin}/api/tours/${encodeURIComponent(tourId)}?locale=${encodeURIComponent(apiLocale)}`
+            : `/api/tours/${encodeURIComponent(tourId)}?locale=${encodeURIComponent(apiLocale)}`;
+
         const response = await fetch(apiUrl, {
-          cache: 'no-store', // Prevent caching
+          cache: 'no-store',
+          signal: ac.signal,
         });
-        
-        if (!isMounted) {
-          fetchingRef.current = false;
-          return; // Don't update state if component unmounted
-        }
-        
+
+        if (ac.signal.aborted) return;
+
         if (!response.ok) {
           if (response.status === 404) {
             setError('Tour not found');
@@ -270,53 +279,38 @@ export default function TourDetailPage() {
             }
           }
           setLoading(false);
-          fetchingRef.current = false;
           return;
         }
 
         const data = await response.json();
-        
-        if (!isMounted) {
-          fetchingRef.current = false;
-          return; // Don't update state if component unmounted
-        }
-        
+
+        if (ac.signal.aborted) return;
+
         const viewModel = adaptTourDetailResponse(data);
         if (!viewModel) {
           setError('Tour data not found in response');
           setLoading(false);
-          fetchingRef.current = false;
           return;
         }
 
-        if (isMounted) {
-          setTour(viewModel);
-          setLoading(false);
-          fetchingRef.current = false;
-          hasFetchedRef.current = `${tourId}:${locale}`;
-          analytics.detailViewed(viewModel.type, viewModel.pickup?.areaLabel ?? 'Unknown');
-        }
-      } catch (err: any) {
+        setTour(viewModel);
+        setLoading(false);
+        hasFetchedRef.current = fetchKey;
+        analytics.detailViewed(viewModel.type, viewModel.pickup?.areaLabel ?? 'Unknown');
+      } catch (err: unknown) {
+        if (err instanceof DOMException && err.name === 'AbortError') return;
+        if (ac.signal.aborted) return;
         console.error('Error fetching tour:', err);
-        if (isMounted) {
-          setError('Failed to load tour. Please try again later.');
-          setLoading(false);
-          fetchingRef.current = false;
-        } else {
-          // Ensure ref is reset even if unmounted
-          fetchingRef.current = false;
-        }
+        setError('Failed to load tour. Please try again later.');
+        setLoading(false);
       }
     };
 
-    fetchTour();
-    
-    // Cleanup function to prevent state updates after unmount
+    void fetchTour();
+
     return () => {
-      isMounted = false;
-      fetchingRef.current = false;
+      ac.abort();
     };
-    // Refetch when tourId or locale changes so content language updates
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tourId, locale]);
 
@@ -424,6 +418,23 @@ export default function TourDetailPage() {
     });
   }, [tour, t]);
 
+  /** Bus / private classic layout: compact hero chips (join tours use their own template). */
+  const classicHeroChips = useMemo((): Array<{ key: string; Icon: typeof Clock; text: string }> => {
+    if (!tour || tour.type === 'join') return [];
+    const chips: Array<{ key: string; Icon: typeof Clock; text: string }> = [];
+    const dur = tour.duration?.trim();
+    if (dur) chips.push({ key: 'dur', Icon: Clock, text: dur });
+    const city = tour.city?.trim();
+    if (city) chips.push({ key: 'city', Icon: MapPin, text: city });
+    const grp = tour.groupSize?.trim();
+    if (grp) chips.push({ key: 'grp', Icon: Users, text: grp });
+    const diff = tour.difficulty?.trim();
+    if (diff) chips.push({ key: 'walk', Icon: Footprints, text: diff });
+    const typeLabel = tour.type === 'bus' ? 'Bus tour' : 'Private tour';
+    chips.push({ key: 'type', Icon: Navigation, text: typeLabel });
+    return chips;
+  }, [tour]);
+
   // Update page title - MUST be before any conditional returns to follow React Hooks rules
   useEffect(() => {
     if (tour) {
@@ -459,8 +470,22 @@ export default function TourDetailPage() {
         <Header />
         <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex items-center justify-center min-h-[60vh]">
-            <div className="text-center">
+            <div className="text-center max-w-lg mx-auto">
               <p className="text-red-600 text-lg mb-4">{error || t('tour.tourNotFound')}</p>
+              {process.env.NODE_ENV === 'development' && error === 'Tour not found' ? (
+                <p className="text-sm text-slate-600 mb-4 text-left rounded-lg bg-slate-100 px-4 py-3">
+                  <span className="font-medium text-slate-800">Dev hint:</span> This URL loads the tour from your Supabase{' '}
+                  <code className="rounded bg-white px-1">tours</code> row (<code className="rounded bg-white px-1">slug</code> or{' '}
+                  <code className="rounded bg-white px-1">id</code>, <code className="rounded bg-white px-1">is_active = true</code>).
+                  For <code className="rounded bg-white px-1">east-signature-nature-core</code>, run{' '}
+                  <code className="rounded bg-white px-1 text-[11px]">supabase/manual/insert-east-signature-nature-core-product.sql</code>{' '}
+                  in the SQL Editor. Until then, try{' '}
+                  <a className="text-blue-600 underline" href="/tour/jeju-east-small-group-template-preview">
+                    /tour/jeju-east-small-group-template-preview
+                  </a>{' '}
+                  if that seed exists.
+                </p>
+              ) : null}
               <button
                 onClick={() => router.push('/tours')}
                 className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
@@ -476,10 +501,6 @@ export default function TourDetailPage() {
     );
   }
 
-  const handleCheckAvailability = () => {
-    bookingRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   const handleShare = () => {
     if (!tour) return;
     if (navigator.share) {
@@ -490,29 +511,52 @@ export default function TourDetailPage() {
     }
   };
 
+  /** Classic tour layout: scroll to desktop booking column on mobile CTA tap. */
+  const handleCheckAvailability = () => {
+    bookingRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   if (!tour) return null;
 
   const formatPrice = (n: number) =>
     currencyCtx ? currencyCtx.formatPrice(n) : `₩${new Intl.NumberFormat('ko-KR', { maximumFractionDigits: 0 }).format(n)}`;
 
   if (tour.type === 'join') {
+    if (tourUsesDetailTemplateView(tour.slug)) {
+      const checkoutHref = `/tour/${encodeURIComponent(tourId)}/checkout`;
+      return (
+        <div className="relative min-h-screen overflow-x-hidden bg-transparent text-slate-900">
+          <Header premiumTourDetail />
+          <main className="bg-transparent">
+            {tour.slug === 'jeju-east-small-group-template-preview' ? (
+              <div className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-center text-[11px] font-medium text-amber-950">
+                Internal preview slug — live product URL:{' '}
+                <code className="rounded bg-amber-100/80 px-1">/tour/east-signature-nature-core</code>
+              </div>
+            ) : null}
+            <TourDetailTemplateView tour={tour} checkoutHref={checkoutHref} />
+          </main>
+          <Footer />
+          <BottomNav />
+        </div>
+      );
+    }
+
     const smallGroupContent = buildSmallGroupDetailContent(tour);
     return (
-      <div className="tour-detail-premium min-h-screen pb-[max(8.5rem,calc(7rem+env(safe-area-inset-bottom,0px)))] lg:pb-24">
-        <Header />
+      <div className="relative min-h-screen overflow-x-hidden bg-transparent text-slate-900 tour-detail-premium pb-[max(11.5rem,calc(10rem+env(safe-area-inset-bottom,0px)))] lg:pb-24">
+        <Header premiumTourDetail />
         <main className="bg-transparent">
           <SmallGroupTourDetailTemplate
             tour={tour}
             content={smallGroupContent}
             bookingRef={bookingRef}
             onDateSelect={setTimelineSelectedDate}
-            onScrollToBooking={handleCheckAvailability}
             formatPrice={formatPrice}
           />
         </main>
-        <Footer />
+        <Footer premiumHandoff />
         <BottomNav />
-        <div className="h-[7.5rem] md:hidden" aria-hidden />
       </div>
     );
   }
@@ -574,121 +618,118 @@ export default function TourDetailPage() {
 
   const imageCount = images.length || 1;
 
-  const heroOverlapText = (tour.tagline?.trim() || tour.highlight?.trim() || '') || '';
-
   return (
-    <div className="tour-detail-cro min-h-screen bg-neutral-50 text-slate-900 pb-32 lg:pb-24">
+    <div className="tour-detail-cro min-h-screen text-slate-900 pb-32 lg:pb-24">
       <Header />
-      <main className="bg-neutral-50">
-        <TourDetailHeroShell
-          imageUrl={mainImage || null}
-          imageAlt={tour.title || 'Tour'}
-          title={tour.title}
-          badge={
-            tour.badges && tour.badges.length > 0 ? (
-              <>
-                {tour.badges.slice(0, 2).map((badge: string, idx: number) => (
-                  <span
-                    key={`${badge}-${idx}`}
-                    className={
-                      idx === 0
-                        ? 'inline-flex items-center rounded-full bg-white px-3 py-1.5 text-[11px] font-medium tracking-wide text-neutral-900'
-                        : 'inline-flex items-center rounded-full border border-white/30 bg-white/20 px-3 py-1.5 text-[11px] font-medium tracking-wide text-white backdrop-blur-md'
-                    }
-                  >
-                    {badge}
-                  </span>
-                ))}
-              </>
+      <main className="bg-transparent">
+        {/* ================= HERO — title + route line on image; facts + rating on bright strip ================= */}
+        <div className="relative h-[368px] w-full sm:h-[432px] lg:h-[528px]">
+          <div className="absolute inset-0 bg-cover bg-center" aria-hidden>
+            {mainImage ? (
+              <Image src={mainImage} alt="" fill className="object-cover" sizes="100vw" priority />
             ) : (
-              <span className="rounded-full bg-blue-600 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white shadow-lg shadow-blue-600/25">
-                Trusted by 50,000+ Travelers
-              </span>
-            )
-          }
-          meta={
-            <>
-              <span className="flex items-center gap-0.5">
-                {[1, 2, 3, 4, 5].map((i: number) => (
-                  <Star
-                    key={i}
-                    className={`h-4 w-4 ${i <= fullStars ? 'fill-white text-white' : 'text-white/35'}`}
-                  />
-                ))}
-              </span>
-              <span className="font-semibold text-white">
-                {tour.rating != null ? Number(tour.rating).toFixed(1) : '—'}
-              </span>
-              <span className="text-white/60">
-                ({tour.reviewCount ?? 0} {t('tour.reviews')})
-              </span>
-              {tour.duration ? (
-                <>
-                  <span className="hidden h-3 w-px bg-white/30 sm:block" aria-hidden />
-                  <span className="flex items-center gap-1.5 text-white/95">
-                    <Clock className="h-4 w-4 shrink-0 text-white/70" aria-hidden />
-                    {tour.duration}
-                  </span>
-                </>
-              ) : null}
-            </>
-          }
-        />
-
-        {heroOverlapText ? (
-          <TourDetailHeroOverlapCard>
-            <p className="text-[15px] leading-relaxed tracking-[-0.01em] text-neutral-600">{heroOverlapText}</p>
-          </TourDetailHeroOverlapCard>
-        ) : null}
+              <div className="h-full w-full bg-neutral-300" />
+            )}
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/48 via-black/26 to-black/74" aria-hidden />
+          <div className="absolute inset-0 flex flex-col justify-end px-5 pb-10 pt-20 text-left sm:px-8 sm:pb-9 lg:px-10 lg:pb-10">
+            <h1 className="max-w-[min(100%,22rem)] text-[1.625rem] font-semibold leading-[1.12] tracking-[-0.02em] text-white text-balance drop-shadow-[0_2px_20px_rgba(0,0,0,0.35)] sm:max-w-4xl sm:text-4xl lg:text-[2.65rem] lg:leading-[1.08]">
+              {tour.title}
+            </h1>
+            {tour.tagline?.trim() ? (
+              <p className="mt-2.5 max-w-2xl text-[14px] font-medium leading-snug tracking-tight text-white/85 line-clamp-2 sm:mt-3 sm:text-[15px]">
+                {tour.tagline.trim()}
+              </p>
+            ) : null}
+            <span className="mt-2.5 inline-flex w-fit max-w-full items-center rounded-full border border-white/22 bg-white/[0.09] px-2.5 py-1 text-[8px] font-semibold uppercase tracking-[0.12em] text-white/88 backdrop-blur-md sm:mt-3 sm:px-3 sm:py-1.5 sm:text-[9px] sm:tracking-[0.13em] md:text-[10px]">
+              Trusted by 50,000+ Travelers
+            </span>
+          </div>
+        </div>
 
         {/* ================= MAIN CONTENT & SIDEBAR (Overlap Hero) ================= */}
-        <div className="relative z-10 mx-auto -mt-14 flex max-w-7xl flex-col gap-8 px-4 sm:-mt-20 sm:px-6 lg:-mt-24 lg:flex-row lg:gap-12">
+        <div className="relative z-10 mx-auto -mt-8 flex max-w-7xl flex-col gap-5 px-4 pt-0.5 sm:-mt-20 sm:px-6 sm:pt-0 lg:-mt-28 lg:flex-row lg:gap-8 lg:px-8">
           {/* LEFT: MAIN CONTENT */}
-          <div className="mt-2 flex flex-col gap-10 rounded-t-3xl bg-white px-0 pt-2 sm:gap-16 lg:mt-0 lg:w-2/3 lg:rounded-none lg:bg-transparent lg:pt-0">
+          <div className="flex flex-col gap-4 sm:gap-5 lg:w-2/3">
+            <div className="td-card-b td-card-b--hero-handoff px-4 pb-3 pt-3.5 backdrop-blur-[2px] supports-[backdrop-filter]:bg-white/80 sm:px-5 sm:py-3.5">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2.5">
+                {classicHeroChips.map((c) => {
+                  const ChipIcon = c.Icon;
+                  return (
+                    <span
+                      key={c.key}
+                      className="inline-flex max-w-full items-center gap-1 rounded-full border border-neutral-200/80 bg-neutral-50/88 px-2.5 py-1 text-[10px] font-medium tracking-tight text-neutral-700 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset] sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-[11px] sm:font-semibold sm:text-neutral-800 md:text-[12px]"
+                    >
+                      <ChipIcon className="h-3 w-3 shrink-0 text-neutral-400 sm:h-3.5 sm:w-3.5 sm:text-neutral-500" strokeWidth={1.75} aria-hidden />
+                      <span className="min-w-0 truncate">{c.text}</span>
+                    </span>
+                  );
+                })}
+              </div>
+              <div className="mt-2.5 flex flex-wrap items-center gap-1.5 border-t border-neutral-200/65 pt-2.5 text-neutral-600 sm:mt-3 sm:gap-2 sm:border-neutral-200/80 sm:pt-3 sm:text-neutral-700">
+                <div className="flex items-center gap-0.5 text-amber-500/95" aria-hidden>
+                  {[1, 2, 3, 4, 5].map((i: number) => (
+                    <Star
+                      key={i}
+                      className={`h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 ${
+                        i <= fullStars ? 'fill-amber-500 text-amber-500' : 'fill-transparent text-amber-500/40'
+                      }`}
+                      strokeWidth={i <= fullStars ? 0 : 1.35}
+                    />
+                  ))}
+                </div>
+                <span className="text-[12px] font-semibold tabular-nums text-neutral-800 sm:text-[13px] sm:font-bold sm:text-neutral-900 md:text-sm">
+                  {tour.rating != null ? Number(tour.rating).toFixed(1) : '—'}
+                </span>
+                <span className="text-[10px] font-medium text-neutral-500 sm:text-[11px] md:text-[12px]">
+                  ({tour.reviewCount ?? 0} {t('tour.reviews')})
+                </span>
+              </div>
+            </div>
             {keyInfoItems.length > 0 ? (
               <TourDetailKeyInfoGrid title={copy.detail.atAGlance} items={keyInfoItems} />
             ) : null}
             {/* 1. Why Choose Us (너비·높이 5% 확대, 글씨 약간 확대) */}
-            <div className="w-[75%] max-w-full mx-auto rounded-design-lg sm:rounded-full py-3.5 px-4 sm:py-4 sm:px-7 itinerary-glass-card flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-5 text-center">
-              <div className="flex flex-row items-center gap-3 sm:gap-3.5">
-                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
-                  <Shield className="w-4 h-4 text-blue-600" />
+            <div className="td-card-b mx-auto flex w-[75%] max-w-full flex-col items-center justify-center gap-2 rounded-design-lg py-2.5 px-3 text-center font-sans sm:flex-row sm:gap-4 sm:rounded-full sm:py-3 sm:px-5">
+              <div className="flex flex-row items-center gap-2.5 sm:gap-3">
+                <div className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                  <Shield className="w-3.5 h-3.5 text-blue-600" />
                 </div>
                 <div className="text-left">
-                  <h3 className="font-extrabold text-[13px] sm:text-sm text-slate-900 leading-tight">{t('tour.securePaymentTitle')}</h3>
-                  <p className="text-[11px] sm:text-xs text-slate-500 mt-1 font-medium leading-tight">{t('tour.securePaymentSub')}</p>
+                  <h3 className="font-semibold text-[12px] sm:text-[13px] text-slate-900 leading-tight tracking-tight">{t('tour.securePaymentTitle')}</h3>
+                  <p className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5 font-medium leading-snug">{t('tour.securePaymentSub')}</p>
                 </div>
               </div>
-              <div className="hidden sm:block w-px h-7 bg-slate-200" />
-              <div className="flex flex-row items-center gap-3 sm:gap-3.5">
-                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shrink-0">
-                  <Clock className="w-4 h-4 text-slate-600" />
+              <div className="hidden sm:block w-px h-6 bg-slate-200" />
+              <div className="flex flex-row items-center gap-2.5 sm:gap-3">
+                <div className="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center shrink-0">
+                  <Clock className="w-3.5 h-3.5 text-slate-600" />
                 </div>
                 <div className="text-left">
-                  <h3 className="font-extrabold text-[13px] sm:text-sm text-slate-900 leading-tight">{t('tour.expertLocalGuides')}</h3>
-                  <p className="text-[11px] sm:text-xs text-slate-500 mt-1 font-medium leading-tight">{t('tour.expertLocalGuidesSub')}</p>
+                  <h3 className="font-semibold text-[12px] sm:text-[13px] text-slate-900 leading-tight tracking-tight">{t('tour.expertLocalGuides')}</h3>
+                  <p className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5 font-medium leading-snug">{t('tour.expertLocalGuidesSub')}</p>
                 </div>
               </div>
-              <div className="hidden sm:block w-px h-7 bg-slate-200" />
-              <div className="flex flex-row items-center gap-3 sm:gap-3.5">
-                <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
-                  <Globe className="w-4 h-4 text-emerald-600" />
+              <div className="hidden sm:block w-px h-6 bg-slate-200" />
+              <div className="flex flex-row items-center gap-2.5 sm:gap-3">
+                <div className="w-7 h-7 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
+                  <Globe className="w-3.5 h-3.5 text-emerald-600" />
                 </div>
                 <div className="text-left">
-                  <h3 className="font-extrabold text-[13px] sm:text-sm text-slate-900 leading-tight">{t('tour.verifiedLLC')}</h3>
-                  <p className="text-[11px] sm:text-xs text-slate-500 mt-1 font-medium leading-tight">{t('tour.verifiedLLCSub')}</p>
+                  <h3 className="font-semibold text-[12px] sm:text-[13px] text-slate-900 leading-tight tracking-tight">{t('tour.verifiedLLC')}</h3>
+                  <p className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5 font-medium leading-snug">{t('tour.verifiedLLCSub')}</p>
                 </div>
               </div>
             </div>
 
             {/* Why this fits you (ViewModel) */}
             {tour.whyThisFitsYou?.length > 0 && (
-              <div className="w-full p-4 sm:p-6 rounded-design-lg itinerary-glass-card">
-                <h2 className="mb-3 text-base font-semibold tracking-tight text-neutral-900">{copy.detail.whyThisFitsYou}</h2>
-                <ul className="space-y-2">
+              <div className="w-full p-3 sm:p-4 rounded-design-lg itinerary-glass-card font-sans">
+                <h2 className="mb-2 text-[15px] font-semibold tracking-tight text-neutral-900">{copy.detail.whyThisFitsYou}</h2>
+                <ul className="space-y-1.5">
                   {tour.whyThisFitsYou.map((line, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
-                      <Check className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                    <li key={i} className="flex items-start gap-2 text-[13px] leading-snug text-slate-700">
+                      <Check className="w-3.5 h-3.5 text-blue-600 shrink-0 mt-0.5" />
                       <span>{line}</span>
                     </li>
                   ))}
@@ -706,19 +747,19 @@ export default function TourDetailPage() {
             </div>
 
             {/* Cancellation policy (centralized copy) */}
-            <div className="w-full p-4 sm:p-6 rounded-design-lg itinerary-glass-card">
-              <h2 className="mb-2 text-base font-semibold tracking-tight text-neutral-900">{copy.detail.cancellationPolicy}</h2>
-              <p className="text-sm text-slate-600">{tour.cancellationPolicy}</p>
-              <p className="mt-2 text-xs text-slate-500">{copy.checkout.confirmationEmailNote}</p>
+            <div className="w-full p-3 sm:p-4 rounded-design-lg itinerary-glass-card font-sans">
+              <h2 className="mb-1.5 text-[15px] font-semibold tracking-tight text-neutral-900">{copy.detail.cancellationPolicy}</h2>
+              <p className="text-[13px] leading-snug text-slate-600">{tour.cancellationPolicy}</p>
+              <p className="mt-1.5 text-[11px] leading-snug text-slate-500">{copy.checkout.confirmationEmailNote}</p>
             </div>
 
             {/* Who this is best for (ViewModel) */}
             {tour.whoThisIsBestFor?.length > 0 && (
-              <div className="w-full p-4 sm:p-6 rounded-design-lg itinerary-glass-card">
-                <h2 className="mb-3 text-base font-semibold tracking-tight text-neutral-900">{copy.detail.whoThisIsBestFor}</h2>
-                <ul className="space-y-1.5">
+              <div className="w-full p-3 sm:p-4 rounded-design-lg itinerary-glass-card font-sans">
+                <h2 className="mb-2 text-[15px] font-semibold tracking-tight text-neutral-900">{copy.detail.whoThisIsBestFor}</h2>
+                <ul className="space-y-1">
                   {tour.whoThisIsBestFor.map((line, i) => (
-                    <li key={i} className="text-sm text-slate-700 flex items-center gap-2">
+                    <li key={i} className="text-[13px] leading-snug text-slate-700 flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0" />
                       {line}
                     </li>
@@ -790,7 +831,14 @@ export default function TourDetailPage() {
             </div>
 
             {/* 3. The Adventure Unfolds (Timeline) — 버스투어: 프리미엄 일정 UI(샌드박스 동일) */}
-            <div className={tour.type === 'bus' ? 'w-full' : 'flex flex-col items-center'} id="details-content">
+            <div
+              className={
+                tour.type === 'bus'
+                  ? 'w-full -mx-3 px-0 sm:-mx-4 sm:px-0 lg:mx-0 lg:px-0'
+                  : 'flex flex-col items-center'
+              }
+              id="details-content"
+            >
               {tour.type === 'bus' && busTourPremiumStops ? (
                 <BusTourItinerarySection
                   stops={busTourPremiumStops}
@@ -1005,14 +1053,14 @@ export default function TourDetailPage() {
 
         <div className="bottom-section border-t border-slate-200">
           <section
-            className="tour-reviews-section p-6 rounded-design-lg itinerary-glass-card"
+            className="tour-reviews-section td-card-a rounded-design-lg p-6"
             aria-label={t('tour.reviews')}
           >
             <TourReviewsSection tourId={tour.id} tourTitle={tour.title} />
           </section>
 
           {highlightsToShow.length > 0 && (
-            <section className="bottom-section-card itinerary-glass-card">
+            <section className="bottom-section-card td-card-c">
               <button
                 type="button"
                 className="bottom-section-card-head"
@@ -1037,7 +1085,7 @@ export default function TourDetailPage() {
           )}
 
           {tour.overview && (
-            <section className="bottom-section-card itinerary-glass-card">
+            <section className="bottom-section-card td-card-c">
               <button
                 type="button"
                 className="bottom-section-card-head"
@@ -1058,7 +1106,7 @@ export default function TourDetailPage() {
           )}
 
           {tour.faqs && tour.faqs.length > 0 && (
-            <section className="bottom-section-card itinerary-glass-card">
+            <section className="bottom-section-card td-card-c">
               <button
                 type="button"
                 className="bottom-section-card-head"
@@ -1080,7 +1128,7 @@ export default function TourDetailPage() {
             </section>
           )}
 
-          <section className="bottom-section-card itinerary-glass-card">
+          <section className="bottom-section-card td-card-c">
             <button
               type="button"
               className="bottom-section-card-head"
@@ -1100,7 +1148,7 @@ export default function TourDetailPage() {
           </section>
 
           {tour.childEligibility && tour.childEligibility.length > 0 && (
-            <section className="bottom-section-card itinerary-glass-card">
+            <section className="bottom-section-card td-card-c">
               <button
                 type="button"
                 className="bottom-section-card-head"

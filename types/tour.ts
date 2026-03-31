@@ -57,8 +57,6 @@ export interface TourDetail {
   originalPrice: number | null;
   priceType: 'person' | 'group';
   availableSpots?: number;
-  depositAmountUSD?: number;
-  balanceAmountKRW?: number;
   duration: string;
   difficulty?: string;
   groupSize?: string;

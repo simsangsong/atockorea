@@ -10,11 +10,11 @@ export default function PaymentStrip() {
     <View style={styles.outer}>
       <View style={styles.card}>
         <Text style={styles.benefit} numberOfLines={2}>
-          Reserve today with a small deposit. Pay the remaining balance to the guide on the tour day.
+          Pay the full tour price securely online when you book. Free cancellation until 24h before departure.
         </Text>
         <View style={styles.badges}>
           <View style={[styles.badge, styles.badgeDeposit]}>
-            <Text style={styles.badgeText}>Deposit + Cash on Day</Text>
+            <Text style={styles.badgeText}>Full payment online</Text>
           </View>
           <View style={[styles.badge, styles.badgeFull]}>
             <Text style={styles.badgeText}>Full Payment Online</Text>

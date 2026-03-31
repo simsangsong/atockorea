@@ -1,0 +1,331 @@
+/**
+ * V0-inspired visual tokens & utilities (presentation only).
+ * All custom properties and classes are prefixed with `v0` / `v0-` to avoid clashes.
+ * Does not contain business logic — use with AppBackground, GlassPanel, SectionShell, or className.
+ */
+
+:root {
+  /* Radii (match V0 rounded-[1.5rem] … rounded-[2.5rem]) */
+  --v0-radius-md: 1.25rem;
+  --v0-radius-lg: 1.5rem;
+  --v0-radius-xl: 1.75rem;
+  --v0-radius-2xl: 2rem;
+  --v0-radius-3xl: 2.5rem;
+
+  /* Glass surfaces */
+  --v0-glass-surface: rgba(255, 255, 255, 0.6);
+  --v0-glass-surface-strong: rgba(255, 255, 255, 0.7);
+  --v0-glass-border: rgba(255, 255, 255, 0.3);
+  --v0-glass-border-soft: rgba(255, 255, 255, 0.7);
+  --v0-blur-frost: 50px;
+  --v0-blur-glass: 24px;
+  --v0-blur-glass-strong: 40px;
+
+  /* Shadows */
+  --v0-shadow-glass: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --v0-shadow-card: 0 12px 40px rgba(0, 0, 0, 0.06);
+  --v0-shadow-elevated: 0 8px 32px rgba(15, 23, 42, 0.07);
+
+  /* Section gradients (V0 compare strip) */
+  --v0-gradient-compare: linear-gradient(180deg, #d8e2eb 0%, #c4d1de 50%, #d8e2eb 100%);
+  --v0-gradient-compare-overlay: radial-gradient(
+      ellipse at 30% 20%,
+      rgba(255, 255, 255, 0.5) 0%,
+      transparent 50%
+    ),
+    radial-gradient(ellipse at 70% 80%, rgba(255, 255, 255, 0.35) 0%, transparent 45%);
+
+  /* App shell: very narrow cool band (~half the previous); peach rises sooner */
+  --v0-app-frost: linear-gradient(
+    180deg,
+    rgba(228, 235, 240, 0.8) 0%,
+    rgba(229, 235, 239, 0.76) 3%,
+    rgba(230, 235, 239, 0.72) 6%,
+    rgba(233, 236, 237, 0.7) 9%,
+    rgba(237, 237, 235, 0.71) 11%,
+    rgba(240, 238, 235, 0.73) 14%,
+    rgba(242, 239, 235, 0.75) 20%,
+    rgba(244, 241, 234, 0.77) 28%,
+    rgba(244, 241, 234, 0.78) 100%
+  );
+  /** Very subtle sky-blue veil on the frost (keep opacity low — easy to overdo) */
+  --v0-app-sky-tint: linear-gradient(
+    180deg,
+    rgba(224, 242, 254, 0.22) 0%,
+    rgba(240, 249, 255, 0.11) 36%,
+    transparent 70%
+  );
+  --v0-selection: rgba(191, 219, 254, 1);
+
+  /* Stacking — align with existing BottomNav (z-50) & full-screen overlays */
+  --v0-z-bottom-nav: 50;
+  --v0-z-modal: 100;
+  --v0-z-modal-content: 101;
+  --v0-z-modal-busy: 110;
+
+  /* One full-viewport photo for the whole site (Classic Bus / third homepage card asset) */
+  --v0-global-bg-image: url("/images/hero/busan-hero.jpg");
+}
+
+/**
+ * Global frosted photo canvas: single image, no tiling; viewport-fixed via fixed ::before/::after
+ * (same visual goal as `background-attachment: fixed` on body).
+ * Solid body background override: `app/globals.css` → `body.v0-global-bg`.
+ */
+body.v0-global-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: var(--v0-global-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.95);
+  pointer-events: none;
+}
+
+body.v0-global-bg::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    var(--v0-app-sky-tint),
+    var(--v0-app-frost);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  backdrop-filter: blur(var(--v0-blur-frost));
+  -webkit-backdrop-filter: blur(var(--v0-blur-frost));
+  pointer-events: none;
+}
+
+/* Planner modal panel (glass card, max height) */
+.v0-planner-panel {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 36rem;
+  height: 85vh;
+  max-height: 85vh;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+/* Inline planner: flows with page scroll; no fixed viewport height */
+.v0-planner-panel--inline {
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  overflow: visible;
+  /* Modal variant keeps max-width: 36rem; inline must use full container width (custom tour two-column layout). */
+  max-width: none;
+}
+
+/* Progress bar track / fill (visual only; width set inline or via ProgressShell) */
+.v0-progress-track {
+  height: 0.2rem;
+  width: 100%;
+  border-radius: 9999px;
+  background: rgb(226 232 240);
+}
+
+.v0-progress-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: rgb(37 99 235);
+  box-shadow: none;
+  transition: width 0.28s ease-out;
+}
+
+/* Optional: scope selection when a parent uses .v0-app-root */
+.v0-app-root {
+  color: rgb(15 23 42);
+}
+
+.v0-app-root ::selection {
+  background: var(--v0-selection);
+}
+
+/* Full-width background layers (use inside AppBackground or manually) */
+.v0-app-bg__shell {
+  /* Single viewport-sized canvas — no vertical tiling when scrolling */
+  background-color: transparent;
+}
+
+.v0-app-bg__photo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.v0-app-bg__frost {
+  background: var(--v0-app-frost);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  backdrop-filter: blur(var(--v0-blur-frost));
+  -webkit-backdrop-filter: blur(var(--v0-blur-frost));
+}
+
+/* Glass panel — V0 glassStyle baseline */
+.v0-glass-panel {
+  background: var(--v0-glass-surface);
+  border: 1px solid var(--v0-glass-border);
+  border-radius: var(--v0-radius-3xl);
+  box-shadow: var(--v0-shadow-glass);
+  backdrop-filter: blur(var(--v0-blur-glass-strong));
+  -webkit-backdrop-filter: blur(var(--v0-blur-glass-strong));
+}
+
+.v0-glass-panel--soft {
+  background: var(--v0-glass-surface-strong);
+  border-color: var(--v0-glass-border-soft);
+  border-radius: var(--v0-radius-2xl);
+  box-shadow: var(--v0-shadow-elevated);
+  backdrop-filter: blur(var(--v0-blur-glass));
+  -webkit-backdrop-filter: blur(var(--v0-blur-glass));
+}
+
+.v0-glass-panel--tight {
+  border-radius: var(--v0-radius-lg);
+}
+
+/**
+ * Composed elevation for GlassPanel soft/tight — reduces duplicated Tailwind on MyPage & tours list.
+ * (1rem matches Tailwind rounded-2xl; overrides default glass radius when both apply.)
+ */
+.v0-shell-elevated {
+  border-radius: 1rem !important;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06);
+}
+
+.v0-shell-elevated-sm {
+  border-radius: 1rem !important;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+}
+
+/* Section: compare strip */
+.v0-surface-compare {
+  background: var(--v0-gradient-compare);
+  position: relative;
+}
+
+.v0-surface-compare__overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  background-image: var(--v0-gradient-compare-overlay);
+}
+
+/* Card chrome for image / product blocks */
+.v0-card-image-shell {
+  border-radius: var(--v0-radius-xl);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Badge pill on dark image cards */
+.v0-badge-on-image {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.625rem;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgb(255 255 255);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Presentational button surfaces only — use with <button> or role="button"; wire handlers in app code */
+.v0-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-weight: 700;
+  background: rgb(255 255 255);
+  color: rgb(15 23 42);
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.v0-btn-pill:hover {
+  opacity: 0.95;
+}
+
+.v0-btn-pill-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-weight: 600;
+  background: rgb(15 23 42);
+  color: rgb(255 255 255);
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.v0-btn-pill-dark:hover {
+  opacity: 0.9;
+}
+
+/* Bottom bar shell (visual only; use existing BottomNav for links) */
+.v0-bottom-bar-shell {
+  border-top: 1px solid rgb(243 244 246);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* Section spacing — mobile-first max width like V0 max-w-md stack */
+.v0-section-shell {
+  width: 100%;
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .v0-section-shell {
+    max-width: 42rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .v0-section-shell {
+    max-width: 56rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.v0-section-shell--wide {
+  max-width: 72rem;
+}
+
+/* Beat `.v0-section-shell` breakpoint max-widths (same specificity + 2 classes) */
+@media (min-width: 640px) {
+  .v0-section-shell.v0-section-shell--wide {
+    max-width: 72rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .v0-section-shell.v0-section-shell--wide {
+    max-width: 72rem;
+  }
+}

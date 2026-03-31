@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import type { TourRelation, UserProfileRelation, PickupPointRelation } from '@/lib/db-relations';
+import {
+  bookingCancelBlockedReason,
+  canCancelBookingByPolicy,
+} from '@/lib/booking-cancel-policy';
 
 /**
  * GET /api/bookings/[id]
@@ -29,7 +33,8 @@ export async function GET(
         pickup_points (
           id,
           name,
-          address
+          address,
+          pickup_time
         )
       `)
       .eq('id', bookingId)
@@ -115,7 +120,7 @@ export async function PUT(
     // We already have existingBooking with user_id, now get full details
     const { data: currentBooking, error: currentBookingError } = await supabase
       .from('bookings')
-      .select('status, booking_date, number_of_guests, tour_id')
+      .select('status, booking_date, tour_date, number_of_guests, tour_id')
       .eq('id', bookingId)
       .single();
 
@@ -123,6 +128,21 @@ export async function PUT(
       return NextResponse.json(
         { error: 'Booking not found' },
         { status: 404 }
+      );
+    }
+
+    if (
+      body.status === 'cancelled' &&
+      currentBooking.status !== 'cancelled' &&
+      !canCancelBookingByPolicy({
+        status: currentBooking.status,
+        tour_date: (currentBooking as { tour_date?: string | null }).tour_date,
+        booking_date: (currentBooking as { booking_date?: string | null }).booking_date,
+      })
+    ) {
+      return NextResponse.json(
+        { error: bookingCancelBlockedReason(), code: 'CANCEL_TOO_LATE' },
+        { status: 403 }
       );
     }
 
@@ -152,7 +172,8 @@ export async function PUT(
         pickup_points (
           id,
           name,
-          address
+          address,
+          pickup_time
         )
       `)
       .single();

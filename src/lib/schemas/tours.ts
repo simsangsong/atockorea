@@ -28,6 +28,7 @@ export const TourCardViewModelSchema = z.object({
   type: z.enum(["private", "join", "bus"]),
   tags: z.array(z.string()),
   priceFrom: z.number(),
+  originalPrice: z.number().nullable().optional(),
   currency: z.string(),
   pickup: PickupInfoSchema,
   matchQuality: z.enum(["great", "good", "slight"]).optional(),
@@ -44,6 +45,11 @@ export const TourCardViewModelSchema = z.object({
   travelersJoined: z.number().optional(),
   maxTravelers: z.number().optional(),
   imageUrl: z.string().optional(),
+  duration: z.string().optional(),
+  city: z.string().optional(),
+  rating: z.number().optional(),
+  reviewCount: z.number().optional(),
+  bookingCount: z.number().optional(),
 });
 
 export const BuildTourResponseSchema = z.object({
@@ -79,6 +85,8 @@ const PickupPointSchema = z.object({
 
 export const TourDetailViewModelSchema = z.object({
   id: z.string(),
+  /** DB slug — used to pick v0 detail template vs classic small-group layout */
+  slug: z.string().optional(),
   title: z.string(),
   type: z.enum(["private", "join", "bus"]),
   tagline: z.string().optional(),

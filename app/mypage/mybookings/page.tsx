@@ -12,7 +12,8 @@ import { supabase } from '@/lib/supabase';
 import { StatusBanner } from '@/src/components/ui/status-banner';
 import { rawBookingStatusToDisplayStatus } from '@/src/design/status';
 import type { BookingStatus } from '@/src/types/booking';
-import { COPY } from '@/src/design/copy';
+import { useCopy } from '@/lib/i18n';
+import { canCancelBookingByPolicy } from '@/lib/booking-cancel-policy';
 
 interface Booking {
   id: string;
@@ -37,6 +38,7 @@ interface Booking {
 
 export default function MyBookingsPage() {
   const router = useRouter();
+  const copy = useCopy();
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -73,15 +75,12 @@ export default function MyBookingsPage() {
     }
   };
 
-  const canCancel = (booking: Booking): boolean => {
-    if (booking.status !== 'confirmed' && booking.status !== 'pending') return false;
-    
-    const tourDate = new Date(booking.tour_date || booking.booking_date);
-    const now = new Date();
-    const hoursUntilTour = (tourDate.getTime() - now.getTime()) / (1000 * 60 * 60);
-    
-    return hoursUntilTour > 24;
-  };
+  const canCancel = (booking: Booking): boolean =>
+    canCancelBookingByPolicy({
+      status: booking.status,
+      tour_date: booking.tour_date,
+      booking_date: booking.booking_date,
+    });
 
   const handleCancel = async (booking: Booking) => {
     if (!canCancel(booking)) {
@@ -170,7 +169,7 @@ export default function MyBookingsPage() {
   return (
     <div className="space-y-6">
       <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-        <h1 className="text-xl font-medium text-gray-900 mb-2">{COPY.myTour.title}</h1>
+        <h1 className="text-xl font-medium text-gray-900 mb-2">{copy.myTour.title}</h1>
         <p className="text-gray-600">Manage all your tour bookings</p>
       </div>
 
@@ -258,6 +257,7 @@ function BookingCard({
   displayStatus,
 }: BookingCardProps) {
   const router = useRouter();
+  const copy = useCopy();
 
   const handleLinkClick = (e: React.MouseEvent, path: string) => {
     if (window.innerWidth < 768) {
@@ -324,7 +324,7 @@ function BookingCard({
               onClick={(e) => handleLinkClick(e, `/tour/${booking.tour_id}`)}
               className="min-h-[44px] inline-flex items-center justify-center px-4 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
-              {COPY.myTour.viewDetails}
+              {copy.myTour.viewDetails}
             </Link>
             {onCancel && (
               <button

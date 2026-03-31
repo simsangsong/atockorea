@@ -196,7 +196,6 @@ export default function CartScreen() {
               onPress={() => {
                 const first = items[0];
                 if (!first?.tour_id) return;
-                const deposit = 10000;
                 router.push({
                   pathname: '/tour/[id]/checkout',
                   params: {
@@ -204,10 +203,8 @@ export default function CartScreen() {
                     date: first.booking_date,
                     guests: String(first.number_of_guests),
                     pickup: '',
-                    paymentMethod: 'deposit',
+                    paymentMethod: 'full',
                     totalPrice: String(first.total_price),
-                    depositAmountKRW: String(deposit),
-                    balanceAmountKRW: String(Math.max(0, first.total_price - deposit)),
                   },
                 });
               }}

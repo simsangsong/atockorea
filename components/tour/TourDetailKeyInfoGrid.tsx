@@ -20,8 +20,8 @@ export function TourDetailKeyInfoGrid({ title, items }: TourDetailKeyInfoGridPro
   const highlightFirst = items.length >= 2;
 
   return (
-    <section className="px-4 py-6 lg:px-6" aria-label={title}>
-      <h2 className="mb-4 text-base font-semibold tracking-tight text-neutral-900">{title}</h2>
+    <section className="px-3 py-4 font-sans lg:px-5" aria-label={title}>
+      <h2 className="mb-3 text-[15px] font-semibold tracking-tight text-neutral-900">{title}</h2>
 
       <div className="grid grid-cols-3 gap-2 md:hidden">
         {items.map((item, index) => {

@@ -5,9 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import BottomNav from '@/components/BottomNav';
+import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { useTranslations } from '@/lib/i18n';
 import {
   DashboardIcon,
@@ -18,7 +16,9 @@ import {
   SettingsIcon,
   LogoutIcon,
   MapIcon,
+  BookmarkIcon,
 } from '@/components/Icons';
+import { MyPageAuthGate } from '@/components/mypage/MyPageAuthGate';
 
 export default function MyPageLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -33,6 +33,7 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
     { id: 'history', label: t('mypage.history'), icon: HistoryIcon, path: '/mypage/history' },
     { id: 'reviews', label: t('mypage.reviews'), icon: StarIcon, path: '/mypage/reviews' },
     { id: 'wishlist', label: t('mypage.wishlist'), icon: HeartIcon, path: '/mypage/wishlist' },
+    { id: 'saved-itineraries', label: t('mypage.savedItineraries'), icon: BookmarkIcon, path: '/mypage/saved-itineraries' },
     { id: 'settings', label: t('mypage.settings'), icon: SettingsIcon, path: '/mypage/settings' },
   ];
   const [userInfo, setUserInfo] = useState({
@@ -165,24 +166,19 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
   const isPathActive = (path: string) => pathname === path || pathname.startsWith(`${path}/`);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 via-neutral-50/80 to-slate-50 relative">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 opacity-[0.015]" style={{
-        backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(0,0,0,0.03) 20px, rgba(0,0,0,0.03) 40px)`
-      }}></div>
-      
-      <Header />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12 relative z-10">
+    <SitePageShell>
+      <MyPageAuthGate>
+      <main className="relative z-10 container mx-auto px-4 py-6 sm:px-6 md:py-12 lg:px-8">
         {/* Desktop Layout: Sidebar + Main Content (Adaptive from Mobile) */}
         <div className="hidden md:flex md:flex-row gap-8">
           {/* Desktop Sidebar */}
           <aside className="w-72 flex-shrink-0">
             <div className="sticky top-24 space-y-5">
               {/* User Profile */}
-              <div className="bg-white/90 backdrop-blur-xl rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-gray-200/50 p-6 transition-all">
+              <div className="rounded-[1.75rem] border border-white/25 bg-white/55 p-6 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.14)] backdrop-blur-xl transition-all">
                 <div className="flex flex-col items-center">
                   {avatar ? (
-                    <div className="w-20 h-20 rounded-xl overflow-hidden bg-indigo-500/10 flex items-center justify-center mb-3">
+                    <div className="mb-3 flex h-20 w-20 items-center justify-center overflow-hidden rounded-xl bg-blue-500/10">
                       <Image
                         src={avatar}
                         alt="Profile"
@@ -192,17 +188,17 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                       />
                     </div>
                   ) : (
-                    <div className="w-20 h-20 rounded-xl bg-indigo-500/20 flex items-center justify-center text-indigo-600 text-lg font-medium mb-3">
+                    <div className="mb-3 flex h-20 w-20 items-center justify-center rounded-xl bg-blue-500/15 text-lg font-medium text-blue-700">
                       {getInitials(userInfo.name)}
                     </div>
                   )}
-                  <h2 className="text-base font-medium text-gray-900 mb-0.5">{userInfo.name}</h2>
-                  <p className="text-sm text-gray-500">{userInfo.email}</p>
+                  <h2 className="mb-0.5 text-base font-medium text-slate-900">{userInfo.name}</h2>
+                  <p className="text-sm text-slate-600">{userInfo.email}</p>
                 </div>
               </div>
 
               {/* Navigation Menu - Unified Card */}
-              <div className="bg-white/90 backdrop-blur-xl rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-gray-200/50 p-2">
+              <div className="rounded-[1.75rem] border border-white/25 bg-white/55 p-2 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl">
                 <nav className="space-y-0">
                   {menuItems.map((item, index) => {
                     const IconComponent = item.icon;
@@ -211,37 +207,37 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                       <div key={item.id}>
                         <Link
                           href={item.path}
-                          className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+                          className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200 ${
                             isActive
-                              ? 'bg-indigo-500 text-white'
-                              : 'text-gray-600 hover:bg-gray-50 active:bg-gray-100'
+                              ? 'bg-slate-900 text-white shadow-sm'
+                              : 'text-slate-600 hover:bg-white/50 active:bg-white/70'
                           }`}
                         >
-                          <div className={`w-5 h-5 rounded-md flex items-center justify-center transition-all ${
+                          <div className={`flex h-5 w-5 items-center justify-center rounded-md transition-all ${
                             isActive
                               ? 'bg-white/20'
-                              : 'bg-gray-100 text-gray-600'
+                              : 'bg-slate-100 text-slate-600'
                           }`}>
-                            <div className="w-3.5 h-3.5">
-                              <IconComponent className={`w-3.5 h-3.5 ${isActive ? 'text-white' : 'text-gray-600'}`} />
+                            <div className="h-3.5 w-3.5">
+                              <IconComponent className={`h-3.5 w-3.5 ${isActive ? 'text-white' : 'text-slate-600'}`} />
                             </div>
                           </div>
                           <span>{item.label}</span>
                         </Link>
                         {index < menuItems.length - 1 && (
-                          <div className="border-b border-gray-100 mx-2"></div>
+                          <div className="mx-2 border-b border-white/20" />
                         )}
                       </div>
                     );
                   })}
-                  <div className="border-b border-gray-100 mx-2 my-0.5"></div>
+                  <div className="mx-2 my-0.5 border-b border-white/20" />
                   <button
                     onClick={handleLogout}
-                    className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 active:bg-gray-100 transition-all duration-200"
+                    className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition-all duration-200 hover:bg-white/50 active:bg-white/70"
                   >
-                    <div className="w-5 h-5 bg-gray-100 rounded-md flex items-center justify-center text-gray-500">
-                      <div className="w-3.5 h-3.5">
-                        <LogoutIcon className="w-3.5 h-3.5" />
+                    <div className="flex h-5 w-5 items-center justify-center rounded-md bg-slate-100 text-slate-500">
+                      <div className="h-3.5 w-3.5">
+                        <LogoutIcon className="h-3.5 w-3.5" />
                       </div>
                     </div>
                     <span>{t('mypage.signOut')}</span>
@@ -260,10 +256,10 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
           {isMyPageRoot ? (
             <>
               {/* Mobile User Profile */}
-              <div className="bg-white/90 backdrop-blur-xl rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-gray-200/50 p-5">
+              <div className="rounded-[1.75rem] border border-white/25 bg-white/55 p-5 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.14)] backdrop-blur-xl">
                 <div className="flex items-center gap-3">
                   {avatar ? (
-                    <div className="w-14 h-14 rounded-xl overflow-hidden bg-indigo-500/10 flex items-center justify-center">
+                    <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl bg-blue-500/10">
                       <Image
                         src={avatar}
                         alt="Profile"
@@ -273,19 +269,19 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                       />
                     </div>
                   ) : (
-                    <div className="w-14 h-14 rounded-xl bg-indigo-500/20 flex items-center justify-center text-indigo-600 text-base font-medium">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-blue-500/15 text-base font-medium text-blue-700">
                       {getInitials(userInfo.name)}
                     </div>
                   )}
                   <div className="flex-1">
-                    <h2 className="text-base font-medium text-gray-900">{userInfo.name}</h2>
-                    <p className="text-sm text-gray-500">{userInfo.email}</p>
+                    <h2 className="text-base font-medium text-slate-900">{userInfo.name}</h2>
+                    <p className="text-sm text-slate-600">{userInfo.email}</p>
                   </div>
                 </div>
               </div>
 
               {/* Mobile Navigation Menu */}
-              <div className="bg-white/90 backdrop-blur-xl rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-gray-200/50 p-2">
+              <div className="rounded-[1.75rem] border border-white/25 bg-white/55 p-2 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl">
                 <nav className="space-y-0">
                   {menuItems.map((item, index) => {
                     const IconComponent = item.icon;
@@ -294,37 +290,37 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                       <div key={item.id}>
                         <Link
                           href={item.path}
-                          className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+                          className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200 ${
                             isActive
-                              ? 'bg-indigo-500 text-white'
-                              : 'text-gray-600 hover:bg-gray-50 active:bg-gray-100'
+                              ? 'bg-slate-900 text-white shadow-sm'
+                              : 'text-slate-600 hover:bg-white/50 active:bg-white/70'
                           }`}
                         >
-                          <div className={`w-5 h-5 rounded-md flex items-center justify-center transition-all ${
+                          <div className={`flex h-5 w-5 items-center justify-center rounded-md transition-all ${
                             isActive
                               ? 'bg-white/20'
-                              : 'bg-gray-100 text-gray-600'
+                              : 'bg-slate-100 text-slate-600'
                           }`}>
-                            <div className="w-3.5 h-3.5">
-                              <IconComponent className={`w-3.5 h-3.5 ${isActive ? 'text-white' : 'text-gray-600'}`} />
+                            <div className="h-3.5 w-3.5">
+                              <IconComponent className={`h-3.5 w-3.5 ${isActive ? 'text-white' : 'text-slate-600'}`} />
                             </div>
                           </div>
                           <span>{item.label}</span>
                         </Link>
                         {index < menuItems.length - 1 && (
-                          <div className="border-b border-gray-100 mx-2"></div>
+                          <div className="mx-2 border-b border-white/20" />
                         )}
                       </div>
                     );
                   })}
-                  <div className="border-b border-gray-100 mx-2 my-0.5"></div>
+                  <div className="mx-2 my-0.5 border-b border-white/20" />
                   <button
                     onClick={handleLogout}
-                    className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 active:bg-gray-100 transition-all duration-200"
+                    className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition-all duration-200 hover:bg-white/50 active:bg-white/70"
                   >
-                    <div className="w-5 h-5 bg-gray-100 rounded-md flex items-center justify-center text-gray-500">
-                      <div className="w-3.5 h-3.5">
-                        <LogoutIcon className="w-3.5 h-3.5" />
+                    <div className="flex h-5 w-5 items-center justify-center rounded-md bg-slate-100 text-slate-500">
+                      <div className="h-3.5 w-3.5">
+                        <LogoutIcon className="h-3.5 w-3.5" />
                       </div>
                     </div>
                     <span>{t('mypage.signOut')}</span>
@@ -339,7 +335,7 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                   <span className="text-lg">←</span>
                   {t('mypage.backToMyPage')}
                 </Link>
-                <span className="text-sm text-gray-500">My Page</span>
+                <span className="text-sm text-slate-500">My Page</span>
               </div>
               <div className="w-full">
                 {children}
@@ -348,10 +344,8 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
           )}
         </div>
       </main>
-      <Footer />
-      <BottomNav />
-      <div className="h-16 md:hidden" />
-    </div>
+      </MyPageAuthGate>
+    </SitePageShell>
   );
 }
 

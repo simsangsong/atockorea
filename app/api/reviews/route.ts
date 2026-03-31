@@ -39,9 +39,13 @@ export async function GET(req: NextRequest) {
           title
         )
       `)
-      .eq('is_visible', true)
       .order('created_at', { ascending: false })
       .range(offset, offset + limit - 1);
+
+    // Public / tour pages: only moderated-visible reviews. Own list: include hidden/moderated rows.
+    if (!filterUserId) {
+      query = query.eq('is_visible', true);
+    }
 
     if (tourId) {
       query = query.eq('tour_id', tourId);

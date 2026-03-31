@@ -53,7 +53,7 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
                     src={image.url}
                     alt={image.title || `Gallery image ${index + 1}`}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                     loading="lazy"
                     sizes="(max-width: 640px) 50vw, 33vw"
                   />

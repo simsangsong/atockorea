@@ -42,8 +42,6 @@ export default function CheckoutScreen() {
     pickup: string;
     paymentMethod: string;
     totalPrice: string;
-    depositAmountKRW: string;
-    balanceAmountKRW: string;
   }>();
   const router = useRouter();
   const { session, profile } = useAuth();
@@ -62,10 +60,7 @@ export default function CheckoutScreen() {
   const date = params.date;
   const guests = parseInt(params.guests || '1', 10);
   const pickup = params.pickup || null;
-  const paymentMethod = (params.paymentMethod === 'full' ? 'full' : 'deposit') as 'deposit' | 'full';
   const totalPrice = parseFloat(params.totalPrice || '0');
-  const depositAmountKRW = parseFloat(params.depositAmountKRW || '10000');
-  const balanceAmountKRW = parseFloat(params.balanceAmountKRW || '0');
 
   // Prefill from auth profile when logged in (same as web)
   useEffect(() => {
@@ -120,7 +115,7 @@ export default function CheckoutScreen() {
         numberOfGuests: guests,
         pickupPointId: pickup || null,
         finalPrice: totalPrice,
-        paymentMethod: paymentMethod === 'deposit' ? 'deposit' : 'full',
+        paymentMethod: 'full',
         specialRequests: JSON.stringify({
           preferredChatApp: customerInfo.preferredChatApp,
           chatAppContact: customerInfo.chatAppContact,
@@ -153,12 +148,11 @@ export default function CheckoutScreen() {
       const bookingId = bookingData.booking?.id;
       if (!bookingId) throw new Error('Booking created but no ID returned');
 
-      const paymentAmount = paymentMethod === 'deposit' ? depositAmountKRW : totalPrice;
       const stripeRes = await fetch(`${BASE_URL.replace(/\/$/, '')}/api/stripe/checkout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          amount: paymentAmount,
+          amount: totalPrice,
           currency: 'krw',
           bookingId,
           bookingData: {
@@ -205,7 +199,6 @@ export default function CheckoutScreen() {
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
   };
 
-  const paymentAmount = paymentMethod === 'deposit' ? depositAmountKRW : totalPrice;
   const dateStr = date ? new Date(date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }) : '';
 
   return (
@@ -285,11 +278,11 @@ export default function CheckoutScreen() {
           </View>
           <View style={styles.summaryRow}>
             <Text style={styles.summaryLabel}>Payment</Text>
-            <Text style={styles.summaryValue}>{paymentMethod === 'deposit' ? 'Deposit' : 'Full payment'}</Text>
+            <Text style={styles.summaryValue}>Full payment</Text>
           </View>
           <View style={[styles.summaryRow, styles.totalRow]}>
             <Text style={styles.totalLabel}>Total</Text>
-            <Text style={styles.totalValue}>₩{paymentAmount.toLocaleString()}</Text>
+            <Text style={styles.totalValue}>₩{totalPrice.toLocaleString()}</Text>
           </View>
         </View>
 
@@ -301,7 +294,7 @@ export default function CheckoutScreen() {
           {isProcessing ? (
             <ActivityIndicator color="#fff" />
           ) : (
-            <Text style={styles.payBtnText}>{paymentMethod === 'deposit' ? 'Pay deposit' : 'Complete booking'}</Text>
+            <Text style={styles.payBtnText}>Complete booking</Text>
           )}
         </Pressable>
       </ScrollView>

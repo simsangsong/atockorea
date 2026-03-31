@@ -2,11 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslations } from "@/lib/i18n";
+import { useTranslations, useCopy } from "@/lib/i18n";
 import { ProposeTransitionLink } from "@/components/ProposeButton";
 import { useState, useEffect, useCallback } from "react";
-import { COPY } from "@/src/design/copy";
-
 const PROPOSED_POLL_MS = 20000;
 const PROPOSED_PREVIEW_LIMIT = 3;
 
@@ -28,6 +26,7 @@ interface DestinationsCardsProps {
 
 export default function DestinationsCards({ hideLegacyBlocks = true }: DestinationsCardsProps) {
   const t = useTranslations();
+  const copy = useCopy();
   const [proposedTours, setProposedTours] = useState<ProposedTour[]>([]);
 
   const fetchProposed = useCallback(async () => {
@@ -50,10 +49,10 @@ export default function DestinationsCards({ hideLegacyBlocks = true }: Destinati
   }, [fetchProposed, hideLegacyBlocks]);
 
   return (
-    <section className="py-6 sm:py-8 md:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-[#F5F7FA]/30 to-transparent">
+    <section className="relative py-6 sm:py-8 md:py-12 px-4 sm:px-6 lg:px-8 bg-transparent">
       <div className="container mx-auto max-w-7xl">
         <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">
-          {COPY.destinations.title}
+          {copy.destinations.title}
         </h2>
 
         {/* Destination cards: Jeju (live), Busan / Seoul (coming soon) */}
@@ -63,7 +62,7 @@ export default function DestinationsCards({ hideLegacyBlocks = true }: Destinati
             className="block rounded-xl border-2 border-[#1E4EDF]/30 bg-white p-4 sm:p-5 shadow-[0_4px_10px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-[#1E4EDF] focus:ring-offset-2 min-h-[44px]"
           >
             <h3 className="text-base sm:text-lg font-semibold text-slate-900">Jeju</h3>
-            <p className="text-sm font-medium text-[#1E4EDF] mt-1">{COPY.destinations.jeju}</p>
+            <p className="text-sm font-medium text-[#1E4EDF] mt-1">{copy.destinations.jeju}</p>
             <p className="text-sm text-[#666666] mt-2 leading-snug">AI tours available now.</p>
           </ProposeTransitionLink>
           <Link
@@ -71,9 +70,9 @@ export default function DestinationsCards({ hideLegacyBlocks = true }: Destinati
             className="block rounded-xl border border-[#E1E5EA] bg-[#F5F7FA] p-4 sm:p-5 text-left focus:outline-none focus:ring-2 focus:ring-[#1E4EDF] focus:ring-offset-2 min-h-[44px]"
           >
             <h3 className="text-base sm:text-lg font-semibold text-slate-600">Busan</h3>
-            <p className="text-sm text-[#666666] mt-1 leading-snug">{COPY.destinations.busan}</p>
+            <p className="text-sm text-[#666666] mt-1 leading-snug">{copy.destinations.busan}</p>
             <span className="inline-block mt-3 text-sm font-semibold text-[#1E4EDF] min-h-[44px] inline-flex items-center">
-              {COPY.destinations.notify}
+              {copy.destinations.notify}
             </span>
           </Link>
           <Link
@@ -81,9 +80,9 @@ export default function DestinationsCards({ hideLegacyBlocks = true }: Destinati
             className="block rounded-xl border border-[#E1E5EA] bg-[#F5F7FA] p-4 sm:p-5 text-left focus:outline-none focus:ring-2 focus:ring-[#1E4EDF] focus:ring-offset-2 min-h-[44px]"
           >
             <h3 className="text-base sm:text-lg font-semibold text-slate-600">Seoul</h3>
-            <p className="text-sm text-[#666666] mt-1 leading-snug">{COPY.destinations.seoul}</p>
+            <p className="text-sm text-[#666666] mt-1 leading-snug">{copy.destinations.seoul}</p>
             <span className="inline-block mt-3 text-sm font-semibold text-[#1E4EDF] min-h-[44px] inline-flex items-center">
-              {COPY.destinations.notify}
+              {copy.destinations.notify}
             </span>
           </Link>
         </div>

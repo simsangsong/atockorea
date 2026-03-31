@@ -7,12 +7,12 @@ import { SearchSummaryBar } from '@/components/list/SearchSummaryBar';
 import { adaptToursListResponse } from '@/src/lib/adapters/tours-adapter';
 import type { TourCardViewModel } from '@/src/types/tours';
 import { useCurrencyOptional } from '@/lib/currency';
-import { useI18n } from '@/lib/i18n';
-import { COPY } from '@/src/design/copy';
+import { useI18n, useCopy } from '@/lib/i18n';
 
 function SearchResults() {
   const searchParams = useSearchParams();
   const { locale } = useI18n();
+  const copy = useCopy();
   const [results, setResults] = useState<TourCardViewModel[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -81,7 +81,7 @@ function SearchResults() {
         {loading ? (
           <div className="mx-auto mt-10 w-[90%] max-w-3xl rounded-3xl bg-white/95 px-4 py-6 text-center text-[13px] text-[#6e6e73] shadow-[0_10px_30px_rgba(0,0,0,0.04)]">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4" />
-            <p className="text-[#111111]">{COPY.listDetail.loadingTours}</p>
+            <p className="text-[#111111]">{copy.listDetail.loadingTours}</p>
           </div>
         ) : error ? (
           <div className="mx-auto mt-10 w-[90%] max-w-3xl rounded-3xl bg-white/95 px-4 py-6 text-center text-[13px] text-[#6e6e73] shadow-[0_10px_30px_rgba(0,0,0,0.04)]">
@@ -96,13 +96,13 @@ function SearchResults() {
           </div>
         ) : results.length === 0 ? (
           <div className="mx-auto mt-10 w-[90%] max-w-3xl rounded-3xl bg-white/95 px-4 py-6 text-center text-[13px] text-[#6e6e73] shadow-[0_10px_30px_rgba(0,0,0,0.04)]">
-            <p className="font-medium text-[#111111]">{COPY.listDetail.noToursFound}</p>
+            <p className="font-medium text-[#111111]">{copy.listDetail.noToursFound}</p>
             <p className="mt-1 text-[12px] text-[#6e6e73]">
               Try removing some filters or using a broader keyword.
             </p>
           </div>
         ) : (
-          <div className="space-y-4 pt-1">
+          <div className="grid grid-cols-2 gap-x-3 gap-y-4 pt-1 sm:gap-x-4 sm:gap-y-5 md:gap-x-5 md:gap-y-6">
             {results.map((tour) => (
               <TourListCard
                 key={tour.id}
@@ -119,13 +119,14 @@ function SearchResults() {
 }
 
 export default function SearchPage() {
+  const copy = useCopy();
   return (
     <main className="min-h-screen bg-[#f5f5f7] pb-10">
       <Suspense
         fallback={
           <div className="min-h-screen bg-[#f5f5f7] pb-10 flex items-center justify-center">
             <div className="text-center">
-              <p className="text-[#6e6e73]">{COPY.listDetail.loadingTours}</p>
+              <p className="text-[#6e6e73]">{copy.listDetail.loadingTours}</p>
             </div>
           </div>
         }

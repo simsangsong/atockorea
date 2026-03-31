@@ -34,13 +34,19 @@ function isSiteGated(request: NextRequest): boolean {
 }
 
 function getLocale(request: NextRequest): string {
-  const negotiatorHeaders: Record<string, string> = {};
-  request.headers.forEach((value, key) => {
-    negotiatorHeaders[key] = value;
-  });
+  try {
+    const negotiatorHeaders: Record<string, string> = {};
+    request.headers.forEach((value, key) => {
+      negotiatorHeaders[key] = value;
+    });
 
-  const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
-  return match(languages, SUPPORTED_LOCALES, DEFAULT_LOCALE);
+    const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
+    if (!languages?.length) return DEFAULT_LOCALE;
+    return match(languages, SUPPORTED_LOCALES, DEFAULT_LOCALE);
+  } catch {
+    // Invalid Accept-Language tokens can make intl-localematcher throw (RangeError).
+    return DEFAULT_LOCALE;
+  }
 }
 
 function getLocaleFromCookie(request: NextRequest): string | null {

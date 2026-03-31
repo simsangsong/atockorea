@@ -2,7 +2,8 @@
 
 import { type ReactNode } from "react";
 import { clsx } from "clsx";
-import { bookingStatusConfig } from "@/src/design/status";
+import { useI18n } from "@/lib/i18n";
+import { getBookingStatusConfig } from "@/src/design/status";
 import type { BookingStatus } from "@/src/types/booking";
 
 export interface StatusBannerProps {
@@ -26,6 +27,8 @@ const toneClasses: Record<string, string> = {
  * Status is server-driven; do not derive status in the client.
  */
 export function StatusBanner({ status, children, className }: StatusBannerProps) {
+  const { locale } = useI18n();
+  const bookingStatusConfig = getBookingStatusConfig(locale);
   const config = bookingStatusConfig[status];
   const tone = config?.tone ?? "neutral";
   const label = config?.label ?? status;

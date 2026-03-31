@@ -8,16 +8,18 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { CheckIcon, CalendarIcon, HistoryIcon, StarIcon } from '@/components/Icons';
 import { supabase } from '@/lib/supabase';
+import { useTranslations } from '@/lib/i18n';
 
 interface Activity {
-  action: string;
+  action: 'completed' | 'cancelled' | 'booked';
   tour: string;
-  date: string;
+  createdAt: string;
   tourId: string;
 }
 
 export default function DashboardPage() {
   const router = useRouter();
+  const t = useTranslations();
   const [upcomingTours, setUpcomingTours] = useState(0);
   const [totalBookings, setTotalBookings] = useState(0);
   const [reviews, setReviews] = useState(0);
@@ -84,10 +86,14 @@ export default function DashboardPage() {
         const recent = bookings
           .slice(0, 5)
           .map((booking: any) => ({
-            action: booking.status === 'completed' ? 'Completed' : 
-                   booking.status === 'cancelled' ? 'Cancelled' : 'Booked',
+            action:
+              booking.status === 'completed'
+                ? 'completed'
+                : booking.status === 'cancelled'
+                  ? 'cancelled'
+                  : 'booked',
             tour: booking.tours?.title || 'Tour',
-            date: formatRelativeDate(booking.created_at),
+            createdAt: booking.created_at,
             tourId: booking.tour_id,
           }));
         
@@ -126,11 +132,17 @@ export default function DashboardPage() {
     const diffInMs = now.getTime() - date.getTime();
     const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 
-    if (diffInDays === 0) return 'Today';
-    if (diffInDays === 1) return 'Yesterday';
-    if (diffInDays < 7) return `${diffInDays} days ago`;
-    if (diffInDays < 30) return `${Math.floor(diffInDays / 7)} weeks ago`;
-    return `${Math.floor(diffInDays / 30)} months ago`;
+    if (diffInDays === 0) return t('mypage.dateToday');
+    if (diffInDays === 1) return t('mypage.dateYesterday');
+    if (diffInDays < 7) return t('mypage.dateDaysAgo', { days: diffInDays });
+    if (diffInDays < 30) return t('mypage.dateWeeksAgo', { weeks: Math.floor(diffInDays / 7) });
+    return t('mypage.dateMonthsAgo', { months: Math.floor(diffInDays / 30) });
+  };
+
+  const activityLabel = (action: Activity['action']) => {
+    if (action === 'completed') return t('mypage.activityCompleted');
+    if (action === 'cancelled') return t('mypage.activityCancelled');
+    return t('mypage.activityBooked');
   };
 
   const handleNavigation = (e: React.MouseEvent, path: string) => {
@@ -144,10 +156,10 @@ export default function DashboardPage() {
   if (loading) {
     return (
       <div className="space-y-6">
-        <div className="bg-white/90 backdrop-blur-xl rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-gray-200/50 p-8">
+        <div className="rounded-[1.75rem] border border-white/25 bg-white/55 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl p-8">
           <div className="flex items-center justify-center">
-            <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-indigo-500"></div>
-            <p className="ml-3 text-sm text-gray-500">Loading dashboard...</p>
+            <div className="h-6 w-6 animate-spin rounded-full border-2 border-blue-500 border-t-transparent" />
+            <p className="ml-3 text-sm text-slate-600">{t('mypage.loadingDashboard')}</p>
           </div>
         </div>
       </div>
@@ -157,11 +169,11 @@ export default function DashboardPage() {
   return (
     <div className="space-y-6">
       {/* Welcome Section */}
-      <div className="bg-white/90 backdrop-blur-xl rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-gray-200/50 p-6 md:p-8 transition-all">
-        <h1 className="text-xl md:text-2xl font-medium text-gray-900 mb-2 tracking-tight">
-          Welcome back, {userName}
+      <div className="rounded-[1.75rem] border border-white/25 bg-white/55 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl p-6 md:p-8 transition-all">
+        <h1 className="mb-2 text-xl font-semibold tracking-tight text-slate-900 md:text-2xl">
+          {t('mypage.welcomeBack', { name: userName })}
         </h1>
-        <p className="text-sm text-gray-500">Here's what's happening with your bookings</p>
+        <p className="text-sm text-slate-600">{t('mypage.dashboardSubtitle')}</p>
       </div>
 
       {/* Stats Grid */}
@@ -169,45 +181,60 @@ export default function DashboardPage() {
         <Link
           href="/mypage/upcoming"
           onClick={(e) => handleNavigation(e, '/mypage/upcoming')}
-          className="bg-white/90 backdrop-blur-xl rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-gray-200/50 p-5 hover:border-gray-200 transition-all duration-200 cursor-pointer group"
+          className="group cursor-pointer rounded-[1.75rem] border border-white/25 bg-white/55 p-5 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl transition-all duration-200 hover:border-white/40 hover:shadow-[0_18px_48px_-14px_rgba(15,23,42,0.14)]"
         >
           <div className="flex items-center justify-between mb-3">
-            <span className="text-sm font-medium text-gray-500">Upcoming Tours</span>
-            <div className="w-6 h-6 bg-indigo-500/10 rounded-lg flex items-center justify-center text-indigo-600 group-hover:bg-indigo-500/20 transition-colors">
+            <span className="text-sm font-medium text-slate-600">{t('mypage.upcomingTours')}</span>
+            <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-blue-500/10 text-blue-600 transition-colors group-hover:bg-blue-500/15">
               <div className="w-3.5 h-3.5">
                 <CalendarIcon className="w-3.5 h-3.5" />
               </div>
             </div>
           </div>
-          <p className="text-2xl font-medium text-gray-900 tracking-tight">{upcomingTours}</p>
+          <p className="text-2xl font-semibold tracking-tight text-slate-900">{upcomingTours}</p>
         </Link>
         <Link
           href="/mypage/mybookings"
           onClick={(e) => handleNavigation(e, '/mypage/mybookings')}
-          className="bg-white/90 backdrop-blur-xl rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-gray-200/50 p-5 hover:border-gray-200 transition-all duration-200 cursor-pointer group"
+          className="group cursor-pointer rounded-[1.75rem] border border-white/25 bg-white/55 p-5 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl transition-all duration-200 hover:border-white/40 hover:shadow-[0_18px_48px_-14px_rgba(15,23,42,0.14)]"
         >
           <div className="flex items-center justify-between mb-3">
-            <span className="text-sm font-medium text-gray-500">Total Bookings</span>
+            <span className="text-sm font-medium text-slate-600">{t('mypage.totalBookings')}</span>
             <div className="w-6 h-6 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-600 group-hover:bg-emerald-500/20 transition-colors">
               <div className="w-3.5 h-3.5">
                 <HistoryIcon className="w-3.5 h-3.5" />
               </div>
             </div>
           </div>
-          <p className="text-2xl font-medium text-gray-900 tracking-tight">{totalBookings}</p>
+          <p className="text-2xl font-semibold tracking-tight text-slate-900">{totalBookings}</p>
+        </Link>
+        <Link
+          href="/mypage/reviews"
+          onClick={(e) => handleNavigation(e, '/mypage/reviews')}
+          className="group cursor-pointer rounded-[1.75rem] border border-white/25 bg-white/55 p-5 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl transition-all duration-200 hover:border-white/40 hover:shadow-[0_18px_48px_-14px_rgba(15,23,42,0.14)]"
+        >
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-sm font-medium text-slate-600">{t('mypage.reviewsWritten')}</span>
+            <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-amber-500/10 text-amber-600 transition-colors group-hover:bg-amber-500/15">
+              <div className="w-3.5 h-3.5">
+                <StarIcon className="w-3.5 h-3.5" />
+              </div>
+            </div>
+          </div>
+          <p className="text-2xl font-semibold tracking-tight text-slate-900">{reviews}</p>
         </Link>
       </div>
 
       {/* Recent Activity */}
-      <div className="bg-white/90 backdrop-blur-xl rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-gray-200/50 p-6 transition-all">
+      <div className="rounded-[1.75rem] border border-white/25 bg-white/55 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl p-6 transition-all">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-medium text-gray-900 tracking-tight">Recent Activity</h2>
+          <h2 className="text-lg font-semibold tracking-tight text-slate-900">{t('mypage.dashboardRecentActivity')}</h2>
           <Link
             href="/mypage/mybookings"
             onClick={(e) => handleNavigation(e, '/mypage/mybookings')}
-            className="text-sm text-indigo-600 hover:text-indigo-700 font-medium transition-colors"
+            className="text-sm font-medium text-blue-600 transition-colors hover:text-blue-700"
           >
-            View All →
+            {t('mypage.viewAll')} →
           </Link>
         </div>
         <div className="space-y-2">
@@ -223,23 +250,23 @@ export default function DashboardPage() {
                     router.push(`/tour/${activity.tourId}`);
                   }
                 }}
-                className="flex items-center gap-3 p-4 bg-gray-50/50 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer border border-transparent hover:border-gray-100"
+                className="flex cursor-pointer items-center gap-3 rounded-xl border border-transparent bg-white/40 p-4 transition-colors hover:border-white/30 hover:bg-white/60"
               >
-                <div className="w-7 h-7 bg-indigo-500/10 rounded-md flex items-center justify-center text-indigo-600">
-                  <div className="w-3.5 h-3.5">
-                    <CheckIcon className="w-3.5 h-3.5" />
+                <div className="flex h-7 w-7 items-center justify-center rounded-md bg-blue-500/10 text-blue-600">
+                  <div className="h-3.5 w-3.5">
+                    <CheckIcon className="h-3.5 w-3.5" />
                   </div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-medium text-gray-900 text-sm mb-0.5 truncate">
-                    {activity.action} {activity.tour}
+                <div className="min-w-0 flex-1">
+                  <p className="mb-0.5 truncate text-sm font-medium text-slate-900">
+                    {activityLabel(activity.action)} · {activity.tour}
                   </p>
-                  <p className="text-xs text-gray-500">{activity.date}</p>
+                  <p className="text-xs text-slate-500">{formatRelativeDate(activity.createdAt)}</p>
                 </div>
               </Link>
             ))
           ) : (
-            <p className="text-sm text-gray-500 text-center py-6">No recent activity</p>
+            <p className="py-6 text-center text-sm text-slate-600">{t('mypage.noRecentActivity')}</p>
           )}
         </div>
       </div>

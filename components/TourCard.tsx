@@ -4,22 +4,10 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CartIcon } from "./Icons";
-import { useTranslations } from "@/lib/i18n";
+import { useTranslations, useI18n } from "@/lib/i18n";
+import { formatTourDurationForCard } from "@/lib/tour-duration-display";
 import { useCurrencyOptional } from "@/lib/currency";
 import { isInWishlistLocal, toggleWishlistLocal } from "@/lib/wishlist";
-
-// Format duration string for display (e.g. "9 hours" -> "9h", "30 min" -> "30m")
-function formatDuration(duration: string | null | undefined): string {
-  if (!duration || !duration.trim()) return "";
-  const s = duration.trim().toLowerCase();
-  const hourMatch = s.match(/(\d+)\s*h(?:our)?s?/);
-  const minMatch = s.match(/(\d+)\s*m(?:in)?(?:ute)?s?/);
-  if (hourMatch && minMatch) return `${hourMatch[1]}h ${minMatch[1]}m`;
-  if (hourMatch) return `${hourMatch[1]}h`;
-  if (minMatch) return `${minMatch[1]}m`;
-  if (/^\d+h$/i.test(s) || /^\d+m$/i.test(s)) return s;
-  return duration.length <= 12 ? duration : "";
-}
 
 // Format booking count for display (e.g. 1200 -> "1.2k", 50000 -> "50k")
 function formatBookingCount(n: number): string {
@@ -82,6 +70,7 @@ export default function TourCard({
   tour,
 }: TourCardProps) {
   const t = useTranslations();
+  const { locale } = useI18n();
   const currencyCtx = useCurrencyOptional();
   const [isAdding, setIsAdding] = useState(false);
   const tourKey = id != null ? String(id) : (slug ?? "");
@@ -97,7 +86,10 @@ export default function TourCard({
   const displayLocation = tour?.city || location || "";
   const displayCategory = tour?.tag?.split(" · ")[0] || location || t('tourCard.tours');
   const displayType = tour?.tag?.split(" · ")[1] || type || "";
-  const displayDuration = formatDuration(duration || (tour as Tour & { duration?: string })?.duration);
+  const displayDuration = formatTourDurationForCard(
+    duration || (tour as Tour & { duration?: string })?.duration,
+    locale
+  );
   const displayRating = rating ?? 4.5;
   const displayReviewCount = reviewCount ?? 0;
   const showBookingCount = bookingCount != null && bookingCount > 0;
@@ -219,7 +211,7 @@ export default function TourCard({
             )}
             {showDiscountBadge && (
               <span className="bg-red-500 text-white text-[10px] font-semibold px-2 py-1 rounded-md shadow-sm leading-none">
-                {displayDiscountPercent}% OFF
+                {t("tourCard.discountOff", { percent: displayDiscountPercent })}
               </span>
             )}
           </div>
@@ -316,7 +308,7 @@ export default function TourCard({
             )}
             {showDiscountBadge && (
               <span className="bg-red-500 text-white text-[10px] font-semibold px-2 py-1 rounded-md shadow-sm leading-none">
-                {displayDiscountPercent}% OFF
+                {t("tourCard.discountOff", { percent: displayDiscountPercent })}
               </span>
             )}
           </div>

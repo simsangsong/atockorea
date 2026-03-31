@@ -1,29 +1,44 @@
 "use client";
 
 import Link from "next/link";
-import { COPY } from "@/src/design/copy";
+import { useTranslations } from "@/lib/i18n";
 
-const CTA_HREF = "/custom-join-tour";
+const JOIN_HREF = "/custom-join-tour";
+const PRIVATE_INTENT = "Private tour day";
 
 export default function FinalCtaPremium() {
+  const t = useTranslations("home");
+  const privateHref = `${JOIN_HREF}?intent=${encodeURIComponent(PRIVATE_INTENT)}`;
+
   return (
     <section
-      className="py-8 sm:py-10 md:py-14 px-4 sm:px-6 lg:px-8 bg-[#0A1F44]"
+      className="home-section-y-tight home-section-divide relative px-4 sm:px-6 lg:px-8"
       aria-labelledby="final-cta-premium-heading"
     >
-      <div className="container mx-auto max-w-2xl text-center">
-        <h2
-          id="final-cta-premium-heading"
-          className="text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight mb-5 sm:mb-6 leading-snug"
-        >
-          {COPY.finalCta.title}
-        </h2>
-        <Link
-          href={CTA_HREF}
-          className="inline-flex items-center justify-center font-semibold min-h-[44px] px-6 sm:px-8 py-3 text-base rounded-full bg-[#1E4EDF] text-white shadow-lg shadow-[#1E4EDF]/30 hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0A1F44] transition-opacity duration-200 ease-out"
-        >
-          {COPY.finalCta.cta}
-        </Link>
+      <div className="container mx-auto max-w-2xl">
+        <div className="home-panel-closing rounded-[2rem] px-6 py-9 text-center sm:px-9 sm:py-10 md:py-11">
+          <p className="home-support-micro text-slate-500">{t("premium.finalCta.eyebrow")}</p>
+          <h2
+            id="final-cta-premium-heading"
+            className="home-type-display mb-4 mt-3 text-[1.28rem] leading-[1.12] sm:mb-5 sm:text-[1.45rem] md:text-[1.65rem]"
+          >
+            {t("premium.finalCta.title")}
+          </h2>
+          <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-3.5">
+            <Link
+              href={JOIN_HREF}
+              className="home-btn-primary flex-1 sm:min-w-[12rem] sm:flex-none sm:px-9 sm:text-base"
+            >
+              {t("premium.finalCta.cta")}
+            </Link>
+            <Link
+              href={privateHref}
+              className="home-btn-secondary flex-1 sm:min-w-[12rem] sm:flex-none sm:px-9 sm:text-base"
+            >
+              {t("premium.finalCta.ctaPrivate")}
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

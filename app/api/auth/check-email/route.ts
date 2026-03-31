@@ -21,10 +21,16 @@ export async function POST(req: NextRequest) {
     const supabase = createServerClient();
 
     // getUserByEmail (Supabase JS v2.39+)
-    const admin = supabase.auth.admin as { getUserByEmail?: (email: string) => Promise<{ data: { user: unknown }; error: unknown }> };
+    const admin = supabase.auth.admin as {
+      getUserByEmail?: (email: string) => Promise<{ data: { user: unknown }; error: unknown }>;
+    };
     if (typeof admin.getUserByEmail === 'function') {
-      const { data: userData } = await admin.getUserByEmail(email);
-      return NextResponse.json({ exists: !!userData?.user });
+      const { data: userData, error: lookupErr } = await admin.getUserByEmail(email);
+      if (lookupErr) {
+        console.error('[check-email] getUserByEmail', lookupErr);
+        return NextResponse.json({ exists: false, checkFailed: true }, { status: 200 });
+      }
+      return NextResponse.json({ exists: !!userData?.user, checkFailed: false });
     }
 
     // Fallback: paginate listUsers and search by email
@@ -32,17 +38,21 @@ export async function POST(req: NextRequest) {
     const perPage = 50;
     while (true) {
       const { data: listData, error: listError } = await supabase.auth.admin.listUsers({ page, perPage });
-      if (listError || !listData?.users?.length) {
-        return NextResponse.json({ exists: false });
+      if (listError) {
+        console.error('[check-email] listUsers', listError);
+        return NextResponse.json({ exists: false, checkFailed: true }, { status: 200 });
+      }
+      if (!listData?.users?.length) {
+        return NextResponse.json({ exists: false, checkFailed: false });
       }
       const found = listData.users.some((u: { email?: string }) => (u.email || '').toLowerCase() === email);
-      if (found) return NextResponse.json({ exists: true });
-      if (listData.users.length < perPage) return NextResponse.json({ exists: false });
+      if (found) return NextResponse.json({ exists: true, checkFailed: false });
+      if (listData.users.length < perPage) return NextResponse.json({ exists: false, checkFailed: false });
       page += 1;
-      if (page > 20) return NextResponse.json({ exists: false });
+      if (page > 20) return NextResponse.json({ exists: false, checkFailed: false });
     }
   } catch (e) {
     console.error('[check-email]', e);
-    return NextResponse.json({ exists: false }, { status: 200 });
+    return NextResponse.json({ exists: false, checkFailed: true }, { status: 200 });
   }
 }

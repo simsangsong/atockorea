@@ -7,9 +7,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import BottomNav from '@/components/BottomNav';
+import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { TrashIcon, HeartIcon, CalendarDateIcon, MapIcon, ClockIcon } from '@/components/Icons';
 import { supabase } from '@/lib/supabase';
 import { useTranslations } from '@/lib/i18n';
@@ -295,67 +293,59 @@ export default function CartPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
-        <Header />
+      <SitePageShell>
         <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
           <div className="text-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
-            <p className="text-gray-600">{t('common.loading')}</p>
+            <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-2 border-blue-500 border-t-transparent" />
+            <p className="text-slate-600">{t('common.loading')}</p>
           </div>
         </main>
-        <Footer />
-        <BottomNav />
-      </div>
+      </SitePageShell>
     );
   }
 
   if (error && cartItems.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
-        <Header />
-        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 flex items-center justify-center min-h-[60vh]">
-          <div className="max-w-md w-full bg-white/90 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.08)] p-8 text-center">
-            <div className="w-14 h-14 mx-auto mb-5 rounded-full bg-slate-100 flex items-center justify-center">
-              <svg className="w-7 h-7 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+      <SitePageShell>
+        <main className="container mx-auto flex min-h-[60vh] items-center justify-center px-4 py-12 sm:px-6 lg:px-8 md:py-16">
+          <div className="w-full max-w-md rounded-[1.75rem] border border-white/25 bg-white/55 p-8 text-center shadow-[0_14px_44px_-10px_rgba(15,23,42,0.18)] backdrop-blur-xl">
+            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-slate-100">
+              <svg className="h-7 w-7 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
             </div>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">
+            <h2 className="mb-2 text-xl font-semibold text-slate-900">
               {t('cart.signInToView') || 'Sign in to view your cart'}
             </h2>
-            <p className="text-gray-500 text-sm mb-6">
+            <p className="mb-6 text-sm text-slate-600">
               {t('cart.signInToViewDesc') || 'Log in to see your saved items and continue booking.'}
             </p>
             <Link
               href="/signin?redirect=/cart"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors shadow-sm"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-6 py-3.5 font-medium text-white shadow-sm transition-colors hover:bg-slate-800"
             >
               {t('auth.signIn')}
             </Link>
           </div>
         </main>
-        <Footer />
-        <BottomNav />
-      </div>
+      </SitePageShell>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
-      <Header />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+    <SitePageShell>
+      <main className="container mx-auto px-4 py-6 sm:px-6 md:py-8 lg:px-8">
         <div className="mb-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">{t('cart.title')}</h1>
-          <p className="text-gray-600">
+          <h1 className="mb-2 text-3xl font-bold text-slate-900">{t('cart.title')}</h1>
+          <p className="text-slate-600">
             {cartItems.length} {cartItems.length === 1 ? t('cart.item') : t('cart.items')} {t('cart.inYourCart')}
           </p>
         </div>
 
         {cartItems.length === 0 ? (
-          // Empty Cart
-          <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-12 text-center">
+          <div className="rounded-[1.75rem] border border-white/25 bg-white/55 p-12 text-center shadow-[0_14px_44px_-10px_rgba(15,23,42,0.16)] backdrop-blur-xl">
             <svg
-              className="w-24 h-24 text-gray-300 mx-auto mb-6"
+              className="w-24 h-24 text-slate-300 mx-auto mb-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -367,11 +357,11 @@ export default function CartPage() {
                 d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
               />
             </svg>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('cart.empty')}</h2>
-            <p className="text-gray-600 mb-8">{t('cart.emptyDescription')}</p>
+            <h2 className="mb-2 text-2xl font-bold text-slate-900">{t('cart.empty')}</h2>
+            <p className="mb-8 text-slate-600">{t('cart.emptyDescription')}</p>
             <Link
               href="/tours"
-              className="inline-block px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-semibold shadow-md hover:shadow-lg"
+              className="inline-block rounded-xl bg-slate-900 px-6 py-3 font-semibold text-white shadow-md transition-colors hover:bg-slate-800 hover:shadow-lg"
             >
               {t('cart.browseTours')}
             </Link>
@@ -388,7 +378,7 @@ export default function CartPage() {
                 return (
                   <div
                     key={item.id}
-                    className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 overflow-hidden"
+                    className="overflow-hidden rounded-[1.75rem] border border-white/25 bg-white/55 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.14)] backdrop-blur-xl"
                   >
                     <div className="flex flex-col md:flex-row">
                       {/* Image */}
@@ -413,7 +403,7 @@ export default function CartPage() {
                         {/* Header: Title and Actions */}
                         <div className="flex items-start justify-between mb-3">
                           <Link href={`/tour/${item.tourId}`} className="flex-1 pr-3">
-                            <h3 className="text-base md:text-lg font-bold text-gray-900 mb-1.5 hover:text-indigo-600 transition-colors line-clamp-2 leading-tight">
+                            <h3 className="text-base md:text-lg font-bold text-slate-900 mb-1.5 hover:text-blue-600 transition-colors line-clamp-2 leading-tight">
                               {item.title}
                             </h3>
                           </Link>
@@ -421,14 +411,14 @@ export default function CartPage() {
                           <div className="flex items-center gap-1.5 flex-shrink-0">
                             <button
                               onClick={() => handleMoveToWishlist(item)}
-                              className="p-1.5 text-gray-500 hover:text-red-600 transition-colors rounded hover:bg-red-50"
+                              className="p-1.5 text-slate-500 hover:text-red-600 transition-colors rounded hover:bg-red-50"
                               title={t('cart.moveToWishlist')}
                             >
                               <HeartIcon className="w-4 h-4" />
                             </button>
                             <button
                               onClick={() => handleRemove(item.id)}
-                              className="p-1.5 text-gray-500 hover:text-red-600 transition-colors rounded hover:bg-red-50"
+                              className="p-1.5 text-slate-500 hover:text-red-600 transition-colors rounded hover:bg-red-50"
                               title={t('cart.remove')}
                             >
                               <TrashIcon className="w-4 h-4" />
@@ -437,7 +427,7 @@ export default function CartPage() {
                         </div>
 
                         {/* Info Grid: Location, Date, Time, Duration */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-3 text-xs text-gray-600">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-3 text-xs text-slate-600">
                           <div className="flex items-center gap-1">
                             <MapIcon className="w-3.5 h-3.5 flex-shrink-0" />
                             <span className="truncate">{item.location}</span>
@@ -458,24 +448,24 @@ export default function CartPage() {
                         </div>
 
                         {item.pickupPoint && (
-                          <div className="mb-3 text-xs text-gray-600">
+                          <div className="mb-3 text-xs text-slate-600">
                             <span className="font-medium">{t('tour.pickupLocation')}:</span> {item.pickupPoint}
                           </div>
                         )}
 
                         {/* Bottom Section: Price, Quantity, Subtotal */}
-                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 pt-3 border-t border-gray-100">
+                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 pt-3 border-t border-white/20">
                           {/* Price Section */}
                           <div className="flex items-baseline gap-2">
                             {hasDiscount && (
-                              <span className="text-sm text-gray-400 line-through">
+                              <span className="text-sm text-slate-400 line-through">
                                 ${item.originalPrice}
                               </span>
                             )}
-                            <span className="text-xl md:text-2xl font-bold text-indigo-600">
+                            <span className="text-xl md:text-2xl font-bold text-blue-600">
                               ${item.price}
                             </span>
-                            <span className="text-xs text-gray-500">/ {item.priceType}</span>
+                            <span className="text-xs text-slate-500">/ {item.priceType}</span>
                             {itemDiscount > 0 && (
                               <span className="ml-2 px-2 py-0.5 bg-green-100 text-green-700 text-xs font-medium rounded">
                                 {t('tour.discount')} ${itemDiscount.toFixed(2)}
@@ -487,20 +477,20 @@ export default function CartPage() {
                           <div className="flex items-center gap-4">
                             {/* Quantity Selector */}
                             <div className="flex items-center gap-2">
-                              <span className="text-xs font-medium text-gray-600 hidden sm:inline">{t('cart.quantity')}:</span>
-                              <div className="flex items-center border border-gray-300 rounded-md">
+                              <span className="hidden text-xs font-medium text-slate-600 sm:inline">{t('cart.quantity')}:</span>
+                              <div className="flex items-center rounded-md border border-slate-200/80">
                                 <button
                                   onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
-                                  className="px-2.5 py-1.5 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 transition-colors text-sm"
+                                  className="px-2.5 py-1.5 text-slate-600 hover:text-blue-600 hover:bg-blue-50/80 transition-colors text-sm"
                                 >
                                   −
                                 </button>
-                                <span className="px-3 py-1.5 min-w-[2.5rem] text-center font-semibold text-gray-900 text-sm border-x border-gray-300">
+                                <span className="px-3 py-1.5 min-w-[2.5rem] text-center font-semibold text-slate-900 text-sm border-x border-slate-200/80">
                                   {item.quantity}
                                 </span>
                                 <button
                                   onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
-                                  className="px-2.5 py-1.5 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 transition-colors text-sm"
+                                  className="px-2.5 py-1.5 text-slate-600 hover:text-blue-600 hover:bg-blue-50/80 transition-colors text-sm"
                                 >
                                   +
                                 </button>
@@ -509,8 +499,8 @@ export default function CartPage() {
 
                             {/* Subtotal */}
                             <div className="text-right min-w-[80px]">
-                              <p className="text-xs text-gray-500 mb-0.5">{t('cart.subtotal')}</p>
-                              <p className="text-base md:text-lg font-bold text-gray-900">
+                              <p className="text-xs text-slate-500 mb-0.5">{t('cart.subtotal')}</p>
+                              <p className="text-base md:text-lg font-bold text-slate-900">
                                 ${itemSubtotal.toFixed(2)}
                               </p>
                             </div>
@@ -523,10 +513,10 @@ export default function CartPage() {
               })}
 
               {/* Continue Shopping */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
+              <div className="rounded-[1.75rem] border border-white/25 bg-white/55 p-6 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl">
                 <Link
                   href="/tours"
-                  className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-semibold transition-colors"
+                  className="inline-flex items-center gap-2 font-semibold text-blue-600 transition-colors hover:text-blue-700"
                 >
                   <svg
                     className="w-5 h-5"
@@ -548,12 +538,12 @@ export default function CartPage() {
 
             {/* Order Summary */}
             <div className="lg:w-96 flex-shrink-0">
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6 sticky top-20">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('cart.orderSummary')}</h2>
+              <div className="sticky top-20 rounded-[1.75rem] border border-white/25 bg-white/55 p-6 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.14)] backdrop-blur-xl">
+                <h2 className="mb-6 text-2xl font-bold text-slate-900">{t('cart.orderSummary')}</h2>
 
                 {/* Promo Code */}
                 <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">{t('cart.promoCode')}</label>
+                  <label className="block mb-2 text-sm font-medium text-slate-700">{t('cart.promoCode')}</label>
                   {appliedPromo ? (
                     <div className="flex items-center justify-between p-3 bg-green-50 border-2 border-green-200 rounded-lg">
                       <div>
@@ -579,12 +569,12 @@ export default function CartPage() {
                           }
                         }}
                         placeholder={t('cart.enterCode')}
-                        className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none text-sm"
+                        className="flex-1 rounded-lg border border-slate-200/80 bg-white/80 px-4 py-2 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30"
                       />
                       <button
                         onClick={handleApplyPromo}
                         disabled={validatingPromo}
-                        className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium whitespace-nowrap disabled:opacity-50"
+                        className="whitespace-nowrap rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-800 disabled:opacity-50"
                       >
                         {validatingPromo ? '...' : t('tour.apply')}
                       </button>
@@ -593,39 +583,39 @@ export default function CartPage() {
                 </div>
 
                 {/* Price Breakdown */}
-                <div className="space-y-3 mb-6 pb-6 border-b border-gray-200">
+                <div className="space-y-3 mb-6 pb-6 border-b border-white/20">
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-600">{t('cart.subtotal')}</span>
-                    <span className="text-gray-900 font-medium">${subtotal.toFixed(2)}</span>
+                    <span className="text-slate-600">{t('cart.subtotal')}</span>
+                    <span className="font-medium text-slate-900">${subtotal.toFixed(2)}</span>
                   </div>
                   {totalDiscount > 0 && (
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">{t('tour.discount')}</span>
+                      <span className="text-slate-600">{t('tour.discount')}</span>
                       <span className="text-green-600 font-medium">-${totalDiscount.toFixed(2)}</span>
                     </div>
                   )}
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-600">{t('cart.tax')}</span>
-                    <span className="text-gray-900 font-medium">${tax.toFixed(2)}</span>
+                    <span className="text-slate-600">{t('cart.tax')}</span>
+                    <span className="font-medium text-slate-900">${tax.toFixed(2)}</span>
                   </div>
                 </div>
 
                 {/* Total */}
                 <div className="flex justify-between items-center mb-6">
-                  <span className="text-lg font-bold text-gray-900">{t('cart.total')}</span>
-                  <span className="text-2xl font-bold text-indigo-600">${total.toFixed(2)}</span>
+                  <span className="text-lg font-bold text-slate-900">{t('cart.total')}</span>
+                  <span className="text-2xl font-bold text-blue-600">${total.toFixed(2)}</span>
                 </div>
 
                 {/* Checkout Button */}
                 <button
                   onClick={handleCheckout}
-                  className="w-full py-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-semibold shadow-md hover:shadow-lg text-lg mb-4"
+                  className="mb-4 w-full rounded-xl bg-slate-900 py-4 text-lg font-semibold text-white shadow-md transition-colors hover:bg-slate-800 hover:shadow-lg"
                 >
                   {t('cart.proceedToCheckout')}
                 </button>
 
                 {/* Security Badge */}
-                <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
+                <div className="flex items-center justify-center gap-2 text-xs text-slate-500">
                   <svg
                     className="w-4 h-4"
                     fill="none"
@@ -646,9 +636,6 @@ export default function CartPage() {
           </div>
         )}
       </main>
-      <Footer />
-      <BottomNav />
-      <div className="h-16 md:hidden" />
-    </div>
+    </SitePageShell>
   );
 }

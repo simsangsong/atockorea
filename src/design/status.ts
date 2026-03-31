@@ -1,4 +1,5 @@
-import { COPY } from "./copy";
+import { getCopy } from "@/lib/copy-messages";
+import type { Locale } from "@/lib/locale";
 import type { BookingStatus } from "@/src/types/booking";
 
 /**
@@ -14,47 +15,53 @@ export const rawBookingStatusToDisplayStatus: Record<string, BookingStatus> = {
   refunded: "refunded",
 };
 
-export const joinStatusConfig = {
-  waiting: {
-    label: COPY.joinStatus.waiting,
-    help: COPY.joinStatusHelp.waiting,
-    tone: "warning",
-  },
-  balance_open: {
-    label: COPY.joinStatus.balanceOpen,
-    help: COPY.joinStatusHelp.balanceOpen,
-    tone: "info",
-  },
-  confirmed: {
-    label: COPY.joinStatus.confirmed,
-    help: COPY.joinStatusHelp.confirmed,
-    tone: "success",
-  },
-  missed_deadline: {
-    label: COPY.joinStatus.missedDeadline,
-    help: COPY.joinStatusHelp.missedDeadline,
-    tone: "error",
-  },
-  private_only: {
-    label: COPY.joinStatus.privateOnly,
-    help: COPY.joinStatusHelp.privateOnly,
-    tone: "neutral",
-  },
-  join_unavailable: {
-    label: COPY.joinStatus.joinUnavailable,
-    help: COPY.joinStatusHelp.joinUnavailable,
-    tone: "neutral",
-  },
-} as const;
+export function getJoinStatusConfig(locale: Locale) {
+  const c = getCopy(locale);
+  return {
+    waiting: {
+      label: c.joinStatus.waiting,
+      help: c.joinStatusHelp.waiting,
+      tone: "warning",
+    },
+    balance_open: {
+      label: c.joinStatus.balanceOpen,
+      help: c.joinStatusHelp.balanceOpen,
+      tone: "info",
+    },
+    confirmed: {
+      label: c.joinStatus.confirmed,
+      help: c.joinStatusHelp.confirmed,
+      tone: "success",
+    },
+    missed_deadline: {
+      label: c.joinStatus.missedDeadline,
+      help: c.joinStatusHelp.missedDeadline,
+      tone: "error",
+    },
+    private_only: {
+      label: c.joinStatus.privateOnly,
+      help: c.joinStatusHelp.privateOnly,
+      tone: "neutral",
+    },
+    join_unavailable: {
+      label: c.joinStatus.joinUnavailable,
+      help: c.joinStatusHelp.joinUnavailable,
+      tone: "neutral",
+    },
+  } as const;
+}
 
-export const bookingStatusConfig = {
-  pending: { label: COPY.myTour.status.pending, tone: "neutral" as const },
-  deposit_paid: { label: COPY.myTour.status.depositPaid, tone: "info" as const },
-  awaiting_balance: { label: COPY.myTour.status.awaitingBalance, tone: "warning" as const },
-  balance_due: { label: COPY.myTour.status.balanceDue, tone: "warning" as const },
-  confirmed: { label: COPY.myTour.status.confirmed, tone: "success" as const },
-  completed: { label: COPY.myTour.status.completed, tone: "neutral" as const },
-  cancelled: { label: COPY.myTour.status.cancelled, tone: "neutral" as const },
-  refunded: { label: COPY.myTour.status.refunded, tone: "neutral" as const },
-  deadline_missed: { label: COPY.myTour.status.deadlineMissed, tone: "error" as const },
-} as const;
+export function getBookingStatusConfig(locale: Locale) {
+  const c = getCopy(locale);
+  return {
+    pending: { label: c.myTour.status.pending, tone: "neutral" as const },
+    deposit_paid: { label: c.myTour.status.paymentReceived, tone: "info" as const },
+    awaiting_balance: { label: c.myTour.status.awaitingBalance, tone: "warning" as const },
+    balance_due: { label: c.myTour.status.balanceDue, tone: "warning" as const },
+    confirmed: { label: c.myTour.status.confirmed, tone: "success" as const },
+    completed: { label: c.myTour.status.completed, tone: "neutral" as const },
+    cancelled: { label: c.myTour.status.cancelled, tone: "neutral" as const },
+    refunded: { label: c.myTour.status.refunded, tone: "neutral" as const },
+    deadline_missed: { label: c.myTour.status.deadlineMissed, tone: "error" as const },
+  } as const;
+}

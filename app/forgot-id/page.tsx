@@ -1,6 +1,5 @@
 'use client';
 
-// Force dynamic rendering to avoid I18nProvider issues during static generation
 export const dynamic = 'force-dynamic';
 
 import { useState } from 'react';
@@ -8,34 +7,36 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
+import { useTranslations } from '@/lib/i18n';
 
 export default function ForgotIDPage() {
+  const t = useTranslations();
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [foundEmail, setFoundEmail] = useState<string | null>(null);
-
-  // Function to mask email (e.g., abc***xyz@email.com)
-  const maskEmail = (email: string) => {
-    const [localPart, domain] = email.split('@');
-    if (localPart.length <= 3) {
-      return `${localPart[0]}***@${domain}`;
-    }
-    const visibleStart = localPart.substring(0, 3);
-    const visibleEnd = localPart.substring(localPart.length - 3);
-    return `${visibleStart}***${visibleEnd}@${domain}`;
-  };
+  const [submitted, setSubmitted] = useState(false);
+  const [clientError, setClientError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setClientError(null);
     setIsLoading(true);
-
-    // Simulate API call to find email
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/auth/forgot-id', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim() }),
+      });
+      if (!res.ok) {
+        setClientError(t('forgotIdPage.errorGeneric'));
+        setIsLoading(false);
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setClientError(t('forgotIdPage.errorGeneric'));
+    } finally {
       setIsLoading(false);
-      // In production, this would check if the email exists in the database
-      // For demo purposes, we'll use the entered email
-      setFoundEmail(email);
-    }, 1000);
+    }
   };
 
   return (
@@ -43,19 +44,21 @@ export default function ForgotIDPage() {
       <Header />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="max-w-md mx-auto">
-          {/* Forgot ID Card */}
           <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-8">
-            {!foundEmail ? (
+            {!submitted ? (
               <>
-                <h1 className="text-3xl font-bold text-gray-900 mb-2 text-center">Forgot ID?</h1>
-                <p className="text-gray-600 text-center mb-8">
-                  Enter your email address to find your account ID.
-                </p>
+                <h1 className="text-3xl font-bold text-gray-900 mb-2 text-center">
+                  {t('forgotIdPage.title')}
+                </h1>
+                <p className="text-gray-600 text-center mb-8">{t('forgotIdPage.subtitle')}</p>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {clientError && (
+                    <p className="text-sm text-red-600 bg-red-50 px-3 py-2 rounded-lg">{clientError}</p>
+                  )}
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email
+                      {t('auth.email')}
                     </label>
                     <input
                       type="email"
@@ -64,7 +67,8 @@ export default function ForgotIDPage() {
                       onChange={(e) => setEmail(e.target.value)}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition-all"
-                      placeholder="your.email@example.com"
+                      placeholder={t('auth.emailPlaceholder')}
+                      autoComplete="email"
                     />
                   </div>
 
@@ -73,7 +77,7 @@ export default function ForgotIDPage() {
                     disabled={isLoading}
                     className="w-full py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-semibold shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isLoading ? 'Searching...' : 'Find My ID'}
+                    {isLoading ? t('forgotIdPage.submitting') : t('forgotIdPage.submit')}
                   </button>
                 </form>
 
@@ -82,7 +86,7 @@ export default function ForgotIDPage() {
                     href="/signin"
                     className="text-indigo-600 hover:text-indigo-700 font-medium transition-colors"
                   >
-                    Back to Sign In
+                    {t('forgotIdPage.backToSignIn')}
                   </Link>
                 </div>
               </>
@@ -103,31 +107,24 @@ export default function ForgotIDPage() {
                     />
                   </svg>
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Account Found</h2>
-                <p className="text-gray-600 mb-4">Your account email is:</p>
-                <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-4 mb-6">
-                  <p className="text-lg font-mono font-semibold text-indigo-900">
-                    {maskEmail(foundEmail)}
-                  </p>
-                </div>
-                <p className="text-sm text-gray-500 mb-6">
-                  This is a masked version of your email for security purposes.
-                </p>
+                <h2 className="text-2xl font-bold text-gray-900 mb-3">{t('forgotIdPage.successTitle')}</h2>
+                <p className="text-gray-600 mb-6 text-sm leading-relaxed">{t('forgotIdPage.successBody')}</p>
                 <div className="space-y-3">
                   <Link
-                    href="/signin"
+                    href={`/signin?mode=otp&email=${encodeURIComponent(email.trim())}`}
                     className="block w-full py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-semibold shadow-md hover:shadow-lg text-center"
                   >
-                    Back to Sign In
+                    {t('forgotIdPage.signInWithCode')}
                   </Link>
                   <button
+                    type="button"
                     onClick={() => {
-                      setFoundEmail(null);
+                      setSubmitted(false);
                       setEmail('');
                     }}
                     className="w-full py-3 border-2 border-gray-300 text-gray-700 rounded-lg hover:border-gray-400 transition-colors font-semibold"
                   >
-                    Search Again
+                    {t('forgotIdPage.tryAnotherEmail')}
                   </button>
                 </div>
               </div>
@@ -141,4 +138,3 @@ export default function ForgotIDPage() {
     </div>
   );
 }
-

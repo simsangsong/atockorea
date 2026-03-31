@@ -73,8 +73,6 @@ function nextDays(n: number): Date[] {
   return out;
 }
 
-const DEPOSIT_KRW = 10000;
-
 function hasValidCoords(lat?: number, lng?: number): boolean {
   const la = Number(lat);
   const ln = Number(lng);
@@ -115,7 +113,6 @@ export default function TourDetailScreen() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [guestCount, setGuestCount] = useState(1);
   const [selectedPickup, setSelectedPickup] = useState<string | null>(null);
-  const [paymentMethod, setPaymentMethod] = useState<'deposit' | 'full'>('deposit');
   const [dateModalVisible, setDateModalVisible] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
@@ -212,10 +209,6 @@ export default function TourDetailScreen() {
   const priceType = tour.priceType || 'person';
   const basePrice = tour.price;
   const totalPrice = priceType === 'person' ? basePrice * guestCount : basePrice;
-  const depositAmountKRW = DEPOSIT_KRW;
-  const balanceAmountKRW = totalPrice - depositAmountKRW;
-  const paymentAmount = paymentMethod === 'deposit' ? depositAmountKRW : totalPrice;
-
   const images = Array.isArray(tour.images) ? tour.images : [];
   const firstImg = images[0];
   const firstUrl =
@@ -239,10 +232,8 @@ export default function TourDetailScreen() {
         date: selectedDate.toISOString(),
         guests: String(guestCount),
         pickup: selectedPickup || '',
-        paymentMethod,
+        paymentMethod: 'full',
         totalPrice: String(totalPrice),
-        depositAmountKRW: String(depositAmountKRW),
-        balanceAmountKRW: String(balanceAmountKRW),
       },
     });
   };
@@ -531,29 +522,14 @@ export default function TourDetailScreen() {
         )}
 
         <Text style={styles.label}>Payment</Text>
-        <View style={styles.paymentRow}>
-          <Pressable
-            style={[styles.paymentBtn, paymentMethod === 'deposit' && styles.paymentBtnSelected]}
-            onPress={() => setPaymentMethod('deposit')}
-          >
-            <Text style={[styles.paymentBtnText, paymentMethod === 'deposit' && styles.paymentBtnTextSelected]}>
-              Deposit (₩{depositAmountKRW.toLocaleString()})
-            </Text>
-            <Text style={styles.paymentBtnSub}>Balance on site</Text>
-          </Pressable>
-          <Pressable
-            style={[styles.paymentBtn, paymentMethod === 'full' && styles.paymentBtnSelected]}
-            onPress={() => setPaymentMethod('full')}
-          >
-            <Text style={[styles.paymentBtnText, paymentMethod === 'full' && styles.paymentBtnTextSelected]}>
-              Full (₩{totalPrice.toLocaleString()})
-            </Text>
-          </Pressable>
+        <View style={styles.paymentFullCard}>
+          <Text style={styles.paymentFullTitle}>Full payment online</Text>
+          <Text style={styles.paymentFullSub}>Pay the total when you complete booking (card).</Text>
         </View>
 
         <View style={styles.totalRow}>
           <Text style={styles.totalLabel}>Total</Text>
-          <Text style={styles.totalValue}>₩{paymentAmount.toLocaleString()}</Text>
+          <Text style={styles.totalValue}>₩{totalPrice.toLocaleString()}</Text>
         </View>
 
         <Pressable
@@ -673,12 +649,16 @@ const styles = StyleSheet.create({
   pickupChipText: { fontSize: 13, color: theme.colors.text },
   pickupChipTextSelected: { color: theme.colors.primary, fontWeight: '500' },
 
-  paymentRow: { flexDirection: 'row', gap: 10, marginBottom: 16 },
-  paymentBtn: { flex: 1, padding: 12, borderRadius: 10, borderWidth: 1.5, borderColor: '#ddd', alignItems: 'center' },
-  paymentBtnSelected: { borderColor: theme.colors.primary, backgroundColor: 'rgba(37,99,235,0.08)' },
-  paymentBtnText: { fontSize: 14, fontWeight: '500', color: theme.colors.text },
-  paymentBtnTextSelected: { color: theme.colors.primary },
-  paymentBtnSub: { fontSize: 11, color: theme.colors.textMuted, marginTop: 2 },
+  paymentFullCard: {
+    padding: 14,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    backgroundColor: '#f9fafb',
+    marginBottom: 16,
+  },
+  paymentFullTitle: { fontSize: 15, fontWeight: '600', color: theme.colors.text },
+  paymentFullSub: { fontSize: 12, color: theme.colors.textMuted, marginTop: 4 },
 
   totalRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingTop: 12, borderTopWidth: 1, borderTopColor: '#eee', marginBottom: 16 },
   totalLabel: { fontSize: 16, fontWeight: '600', color: theme.colors.text },

@@ -1,16 +1,17 @@
 "use client";
 
-import { COPY } from "@/src/design/copy";
+import { useCopy } from "@/lib/i18n";
 
 export default function ComparisonSection() {
+  const copy = useCopy();
   return (
     <section className="py-10 md:py-14 px-4 sm:px-6 lg:px-8 bg-white" aria-labelledby="comparison-heading">
       <div className="container mx-auto max-w-4xl">
         <h2 id="comparison-heading" className="text-xl md:text-2xl font-semibold text-gray-900 mb-8 text-center">
-          {COPY.comparison.title}
+          {copy.comparison.title}
         </h2>
         <ul className="grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-1">
-          {COPY.comparison.bullets.map((text, i) => (
+          {copy.comparison.bullets.map((text, i) => (
             <li
               key={i}
               className="flex items-start gap-3 p-4 rounded-xl bg-[#F5F7FA] border border-[#E1E5EA] text-[#1A1A1A]"

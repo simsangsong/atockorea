@@ -1,10 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { mergeMypagePreferences } from '@/lib/mypage-preferences-merge';
+
+const ALLOWED_LANGUAGE_PREFERENCE = new Set(['en', 'ko', 'zh', 'zh-TW', 'es', 'ja']);
 
 /**
  * PATCH /api/auth/update-profile
- * 이미 생성된 프로필에 고객정보 보충. 인증된 사용자만 본인 프로필 수정 가능.
- * body: { full_name?, phone?, birth_year?, nationality? } — 보내진 필드만 업데이트.
+ * 인증된 사용자만 본인 프로필 수정.
+ * body: { full_name?, phone?, birth_year?, nationality?, language_preference?, mypage_preferences? } — 보내진 필드만 반영.
+ * mypage_preferences 는 기존 JSON과 병합(알림·비상연락처 등 중첩 필드 병합).
  */
 export async function PATCH(req: NextRequest) {
   try {
@@ -35,6 +39,37 @@ export async function PATCH(req: NextRequest) {
     }
     if (body.nationality !== undefined) {
       updates.nationality = body.nationality != null && String(body.nationality).trim() ? String(body.nationality).trim() : null;
+    }
+
+    if (body.language_preference !== undefined) {
+      const v = String(body.language_preference).trim();
+      if (ALLOWED_LANGUAGE_PREFERENCE.has(v)) {
+        updates.language_preference = v;
+      }
+    }
+
+    if (
+      body.mypage_preferences !== undefined &&
+      typeof body.mypage_preferences === 'object' &&
+      body.mypage_preferences !== null &&
+      !Array.isArray(body.mypage_preferences)
+    ) {
+      const { data: row, error: prefFetchErr } = await supabase
+        .from('user_profiles')
+        .select('mypage_preferences')
+        .eq('id', user.id)
+        .single();
+
+      if (prefFetchErr) {
+        console.error('update-profile fetch mypage_preferences:', prefFetchErr);
+        return NextResponse.json({ error: prefFetchErr.message }, { status: 500 });
+      }
+
+      const prev = row?.mypage_preferences as Record<string, unknown> | null | undefined;
+      updates.mypage_preferences = mergeMypagePreferences(
+        prev ?? null,
+        body.mypage_preferences as Record<string, unknown>,
+      );
     }
 
     if (Object.keys(updates).length === 0) {

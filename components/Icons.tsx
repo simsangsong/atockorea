@@ -145,3 +145,42 @@ export function ShareIcon({ className = "w-5 h-5" }: { className?: string }) {
   );
 }
 
+export function BookmarkIcon({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+    </svg>
+  );
+}
+
+/**
+ * AI / enhancement sparkle (reference: rounded 4-point star + small + + dot).
+ * Stroke-based; use `text-*` or `text-blue-600` on the wrapper for color.
+ */
+export function AiInputSparkleIcon({ className = "h-3 w-3" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
+      <path
+        d="M12 3.75C13.9 8.4 15.4 10.3 17.5 12 15.4 13.7 13.9 15.6 12 20.25 10.1 15.6 8.6 13.7 6.5 12 8.6 10.3 10.1 8.4 12 3.75z"
+        stroke="currentColor"
+        strokeWidth={1.75}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M18.2 5.55v3.15M16.62 7.12h3.15"
+        stroke="currentColor"
+        strokeWidth={1.75}
+        strokeLinecap="round"
+      />
+      <circle cx="6.55" cy="17.05" r="1.35" fill="currentColor" />
+    </svg>
+  );
+}
+

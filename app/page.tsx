@@ -1,15 +1,11 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import BottomNav from '@/components/BottomNav';
 import HeroPremium from '@/src/components/home/HeroPremium';
-import TrustStripPremium from '@/src/components/home/TrustStripPremium';
-import ComparisonPanelPremium from '@/src/components/home/ComparisonPanelPremium';
 import ProductCardsPremium from '@/src/components/home/ProductCardsPremium';
+import SmallGroupValuePremium from '@/src/components/home/SmallGroupValuePremium';
 import HowItWorksPremium from '@/src/components/home/HowItWorksPremium';
-import DestinationsCards from '@/components/DestinationsCards';
+import TrustAndReviewsSection from '@/src/components/home/TrustAndReviewsSection';
 import ClassicBusSection from '@/components/ClassicBusSection';
-import ReviewsPremium from '@/src/components/home/ReviewsPremium';
 import FinalCtaPremium from '@/src/components/home/FinalCtaPremium';
+import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 // Force dynamic rendering to avoid I18nProvider issues during static generation
@@ -24,22 +20,16 @@ export const metadata = generateSEOMetadata({
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
-      <Header />
-      <main>
+    <SitePageShell>
+      <main className="bg-transparent">
         <HeroPremium />
-        <TrustStripPremium />
-        <ComparisonPanelPremium />
         <ProductCardsPremium />
+        <SmallGroupValuePremium />
         <HowItWorksPremium />
-        <DestinationsCards hideLegacyBlocks />
+        <TrustAndReviewsSection />
         <ClassicBusSection />
-        <ReviewsPremium />
         <FinalCtaPremium />
       </main>
-      <Footer />
-      <BottomNav />
-      <div className="h-16 md:hidden" />
-    </div>
+    </SitePageShell>
   );
 }

@@ -41,7 +41,8 @@ export async function GET(req: NextRequest) {
         pickup_points (
           id,
           name,
-          address
+          address,
+          pickup_time
         )
       `)
       .eq('user_id', user.id)

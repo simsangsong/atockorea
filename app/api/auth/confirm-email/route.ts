@@ -3,9 +3,9 @@ import { createServerClient } from '@/lib/supabase';
 
 /**
  * POST /api/auth/confirm-email
- * 커스텀 이메일 인증(인증번호)으로 가입한 사용자의 Supabase 이메일을 확정 처리합니다.
- * 가입 직후에만 호출하며, signInWithPassword 시 "Email not confirmed"가 나오지 않도록 합니다.
- * body: { userId: string, accessToken?: string }
+ * Service role로 `email_confirm`을 강제합니다. 웹 회원가입은 Supabase OTP(verifyOtp)로
+ * 이미 이메일이 확정되는 경우가 많아 호출이 필수는 아닙니다. 모바일/커스텀 가입 경로에서
+ * 필요하면 클라이언트에서 호출하세요. body: { userId: string, accessToken?: string }
  */
 export async function POST(req: NextRequest) {
   try {

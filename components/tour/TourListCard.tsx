@@ -1,33 +1,20 @@
 'use client';
 
-import React, { memo } from 'react';
+import React, { memo, useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import type { TourCardViewModel, JoinVisibleStatus } from '@/src/types/tours';
-import { COPY } from '@/src/design/copy';
+import type { TourCardViewModel } from '@/src/types/tours';
+import { useTranslations, useCopy, useI18n } from '@/lib/i18n';
+import { formatTourDurationForCard } from '@/lib/tour-duration-display';
+import { isInWishlistLocal, toggleWishlistLocal } from '@/lib/wishlist';
 
-const JOIN_STATUS_COPY: Record<JoinVisibleStatus, string> = {
-  waiting: COPY.joinStatus.waiting,
-  balance_open: COPY.joinStatus.balanceOpen,
-  confirmed: COPY.joinStatus.confirmed,
-  missed_deadline: COPY.joinStatus.missedDeadline,
-  private_only: COPY.joinStatus.privateOnly,
-  join_unavailable: COPY.joinStatus.joinUnavailable,
-};
+function formatBookingCount(n: number): string {
+  if (n >= 1000000) return `${(n / 1000000).toFixed(1).replace(/\.0$/, '')}M`;
+  if (n >= 1000) return `${(n / 1000).toFixed(1).replace(/\.0$/, '')}k`;
+  return n.toLocaleString();
+}
 
-const TYPE_BADGE_COPY = {
-  private: COPY.detail.badgePrivate,
-  join: COPY.detail.badgeSmallGroup,
-  bus: COPY.detail.badgeClassicBus,
-} as const;
-
-const MATCH_QUALITY_COPY = {
-  great: COPY.pickupMatch.great,
-  good: COPY.pickupMatch.good,
-  slight: COPY.pickupMatch.slight,
-} as const;
-
-function formatPrice(priceFrom: number, currency: string): string {
+function fallbackPrice(priceFrom: number, currency: string): string {
   if (currency === 'KRW') return `₩${Math.round(priceFrom).toLocaleString('ko-KR')}`;
   return `₩${Math.round(priceFrom).toLocaleString('ko-KR')}`;
 }
@@ -39,90 +26,145 @@ export interface TourListCardProps {
 }
 
 function TourListCard({ tour, detailHref, formatPriceFn }: TourListCardProps) {
-  const priceStr = formatPriceFn ? formatPriceFn(tour.priceFrom) : formatPrice(tour.priceFrom, tour.currency);
-  const typeLabel = TYPE_BADGE_COPY[tour.type];
-  const matchLabel = tour.matchQuality ? MATCH_QUALITY_COPY[tour.matchQuality] : null;
-  const joinStatusLabel = tour.joinStatus ? JOIN_STATUS_COPY[tour.joinStatus] : null;
-  const imageUrl = tour.imageUrl || '';
+  const t = useTranslations();
+  const { locale } = useI18n();
+  const copy = useCopy();
+  const typeBadgeCopy = {
+    private: copy.detail.badgePrivate,
+    join: copy.detail.badgeSmallGroup,
+    bus: copy.detail.badgeClassicBus,
+  } as const;
+  const tourKey = tour.id;
+  const [saved, setSaved] = useState(false);
 
-  const cardInner = (
-    <article className="mx-auto mb-4 w-[90%] max-w-3xl">
-      <div
-        className="group flex flex-col gap-3 sm:gap-4 rounded-3xl bg-white/95 border border-[#e5e5ea] shadow-[0_8px_24px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.06)] transition-shadow duration-200 px-3 py-3 sm:px-4 sm:py-4"
-      >
-        <div className="flex flex-row gap-2 sm:gap-4">
-          <div className="relative w-[46%] sm:w-[43%] aspect-[4/3] overflow-hidden rounded-xl sm:rounded-2xl bg-[#f2f2f7] flex-shrink-0 max-h-[120px] sm:max-h-none">
-            {imageUrl ? (
-              <Image
-                src={imageUrl}
-                alt={tour.title}
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                sizes="(max-width: 640px) 46vw, 43vw"
-                loading="lazy"
-              />
-            ) : (
-              <div className="absolute inset-0 bg-[#e5e5ea]" aria-hidden />
-            )}
-          </div>
-          <div className="flex-1 min-w-0 flex flex-col justify-center gap-1">
-            <span
-              className={`inline-flex w-fit rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
-                tour.type === 'private'
-                  ? 'bg-violet-100 text-violet-700'
-                  : tour.type === 'join'
-                    ? 'bg-sky-100 text-sky-700'
-                    : 'bg-gray-100 text-gray-700'
-              }`}
-            >
-              {typeLabel}
-            </span>
-            {tour.tags.length > 0 && (
-              <p className="text-[11px] text-[#6e6e73] line-clamp-1">
-                {tour.tags.slice(0, 3).join(' · ')}
-              </p>
-            )}
-            <p className="text-[11px] text-[#3a3a3c]">{tour.pickup.areaLabel}</p>
-            {matchLabel && (
-              <p className="text-[10px] font-medium text-emerald-600">{matchLabel}</p>
-            )}
-            {tour.type === 'join' && joinStatusLabel && (
-              <p className="text-[10px] font-medium text-[#0c66ff]">{joinStatusLabel}</p>
-            )}
-            {tour.type === 'join' && tour.travelersJoined != null && tour.maxTravelers != null && (
-              <p className="text-[11px] text-[#6e6e73]">
-                {tour.travelersJoined} / {tour.maxTravelers} travelers
-              </p>
-            )}
-          </div>
-        </div>
+  useEffect(() => {
+    if (!tourKey) return;
+    setSaved(isInWishlistLocal(tourKey));
+  }, [tourKey]);
 
-        <div>
-          <h3 className="line-clamp-2 text-[14px] sm:text-[15px] font-semibold text-[#111111]">
-            {tour.title}
-          </h3>
-          {tour.pickup.surchargeLabel && (
-            <p className="mt-0.5 text-[11px] text-[#6e6e73]">{tour.pickup.surchargeLabel}</p>
-          )}
-          <p className="mt-0.5 text-[11px] text-[#6e6e73]">{COPY.listDetail.depositBalanceNote}</p>
-          <div className="mt-1 flex items-baseline justify-end">
-            <span className="text-[13px] sm:text-[14px] font-semibold text-[#0c66ff]">
-              {priceStr}
-            </span>
-          </div>
-          <div className="mt-2 flex justify-end">
-            <span className="text-[12px] font-medium text-[#0c66ff]">
-              {tour.type === 'join' ? COPY.listDetail.joinThisTour : COPY.listDetail.viewDetails}
-            </span>
-          </div>
-        </div>
-      </div>
-    </article>
-  );
+  const handleWishlistClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!tourKey) return;
+    setSaved(toggleWishlistLocal(tourKey));
+  };
+
+  const priceStr = formatPriceFn ? formatPriceFn(tour.priceFrom) : fallbackPrice(tour.priceFrom, tour.currency);
+  const original = tour.originalPrice;
+  const hasDiscount =
+    original != null && original > tour.priceFrom && tour.priceFrom > 0;
+  const discountPct =
+    hasDiscount && original != null
+      ? Math.round(((original - tour.priceFrom) / original) * 100)
+      : 0;
+  const showDiscountBadge = discountPct > 0;
+  const originalStr =
+    hasDiscount && original != null
+      ? formatPriceFn
+        ? formatPriceFn(original)
+        : fallbackPrice(original, tour.currency)
+      : null;
+
+  const typeLabel = typeBadgeCopy[tour.type];
+  const displayBadge =
+    (tour.tags[0] && String(tour.tags[0]).trim()) || typeLabel;
+  const displayLocation = tour.city ?? tour.pickup.areaLabel ?? '';
+  const displayTitle = tour.title;
+  const displayImage =
+    tour.imageUrl || 'https://images.unsplash.com/photo-1534008897995-27a23e859048?w=600&q=80';
+  const displayRating = tour.rating ?? 4.5;
+  const displayReviewCount = tour.reviewCount ?? 0;
+  const displayDuration = formatTourDurationForCard(tour.duration, locale);
+  const showBookingCount = tour.bookingCount != null && tour.bookingCount > 0;
 
   return (
-    <Link href={detailHref} className="block">
-      {cardInner}
+    <Link
+      href={detailHref}
+      className="group block h-full rounded-2xl overflow-hidden bg-white border border-gray-200/60 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_36px_rgba(0,0,0,0.1)] hover:border-gray-200 transition-all duration-300 transform hover:-translate-y-0.5"
+    >
+      <div className="relative w-full aspect-[4/3.2] sm:aspect-[4/3.5] overflow-hidden shrink-0">
+        <Image
+          src={displayImage}
+          alt={displayTitle}
+          fill
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+        />
+        <div className="absolute inset-x-0 bottom-0 h-5 bg-gradient-to-t from-white/80 via-white/25 to-transparent pointer-events-none" />
+        <div className="absolute top-2.5 left-2.5 flex flex-col gap-1.5 items-start">
+          {displayBadge ? (
+            <span className="px-2 py-1 text-white text-[10px] font-semibold rounded-md shadow-sm leading-none bg-blue-600/95">
+              {displayBadge}
+            </span>
+          ) : null}
+          {showDiscountBadge ? (
+            <span className="bg-red-500 text-white text-[10px] font-semibold px-2 py-1 rounded-md shadow-sm leading-none">
+              {t('tourCard.discountOff', { percent: discountPct })}
+            </span>
+          ) : null}
+        </div>
+        {tourKey ? (
+          <div className="absolute top-3 right-3">
+            <button
+              type="button"
+              onClick={handleWishlistClick}
+              className="flex items-center justify-center w-9 h-9 rounded-full bg-white/90 hover:bg-white shadow-md border border-gray-200/80 text-gray-600 hover:text-red-500 transition-colors touch-manipulation"
+              aria-label={saved ? t('tour.removeFromWishlist') : t('tourCard.save')}
+            >
+              {saved ? (
+                <svg className="w-5 h-5 text-red-500 fill-current" viewBox="0 0 24 24" aria-hidden>
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              )}
+            </button>
+          </div>
+        ) : null}
+      </div>
+      <div className="relative px-4 pt-2 pb-3 border-l-4 border-l-transparent group-hover:border-l-blue-500/50 transition-colors">
+        <div className="flex items-center gap-1.5 text-[11px] text-gray-500 mb-1">
+          <span className="shrink-0" aria-hidden>
+            📍
+          </span>
+          <span className="truncate">{displayLocation}</span>
+        </div>
+        <h3 className="text-sm font-bold text-gray-900 line-clamp-2 leading-snug mb-1.5 group-hover:text-blue-700 transition-colors">
+          {displayTitle}
+        </h3>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[11px] text-gray-600 mb-1">
+          <span className="flex items-center gap-1">
+            <span className="text-yellow-500" aria-hidden>
+              ⭐
+            </span>
+            <span className="font-semibold text-gray-900">{displayRating.toFixed(1)}</span>
+            {displayReviewCount > 0 ? (
+              <span className="text-gray-500">({displayReviewCount.toLocaleString()})</span>
+            ) : null}
+          </span>
+          {displayDuration ? (
+            <span className="flex items-center gap-1">
+              <span aria-hidden>🕒</span>
+              <span>{displayDuration}</span>
+            </span>
+          ) : null}
+        </div>
+        {showBookingCount ? (
+          <p className="text-[10px] text-gray-500 mb-1">
+            {formatBookingCount(tour.bookingCount!)}{' '}
+            {t('tourCard.booked')}
+          </p>
+        ) : null}
+        <div className="flex items-center gap-2 flex-nowrap min-w-0">
+          {originalStr ? (
+            <span className="text-[11px] text-gray-400 line-through shrink-0">{originalStr}</span>
+          ) : null}
+          <span className="text-sm font-bold text-slate-700 truncate">{priceStr}</span>
+        </div>
+      </div>
     </Link>
   );
 }

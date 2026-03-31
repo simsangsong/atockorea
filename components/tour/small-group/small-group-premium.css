@@ -1,0 +1,3847 @@
+/* Small-group tour detail — scoped visual system (not bus-tour CRO styles) */
+.tour-detail-premium {
+  /* Non–sg-dp-theme: optional shell only; `.sg-dp-theme` sets its own page canvas. */
+  --sg-bg: transparent;
+  --sg-surface: #ffffff;
+  --sg-ink: #1c1917;
+  --sg-body: #44403c;
+  --sg-muted: #78716c;
+  --sg-faint: #a8a29e;
+  --sg-line: rgba(28, 25, 23, 0.06);
+  --sg-line-strong: rgba(28, 25, 23, 0.1);
+  --sg-shadow: 0 1px 0 rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.04);
+  --sg-shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --sg-radius-card: 1.125rem;
+  --sg-radius-panel: 1.25rem;
+  --sg-radius-section: 1.375rem;
+  --sg-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Mobile: BottomNav (4rem) + booking strip (~5.5rem) + safe area */
+  --sg-sticky-clear: calc(4rem + 5.75rem + env(safe-area-inset-bottom, 0px));
+  background-color: var(--sg-bg);
+  color: var(--sg-ink);
+  font-feature-settings: "kern" 1, "liga" 1;
+  scroll-padding-bottom: var(--sg-sticky-clear);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Editorial measure — long-form blocks */
+.tour-detail-premium .sg-measure {
+  max-width: min(100%, 40rem);
+}
+
+.tour-detail-premium .sg-surface-panel {
+  border-radius: var(--sg-radius-panel);
+  background-color: #ffffff;
+  border: 1px solid #f0f0f0;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 2px 6px rgba(0, 0, 0, 0.04),
+    0 24px 56px -18px rgba(0, 0, 0, 0.14),
+    0 48px 96px -32px rgba(0, 0, 0, 0.08);
+}
+
+/* Floating white cards on pure white page — hairline edge + depth */
+.tour-detail-premium .sg-section-card.sg-float-card {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: var(--sg-radius-section);
+  border: 1px solid #f2f2f2;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.98) inset,
+    0 2px 6px rgba(0, 0, 0, 0.035),
+    0 18px 44px -14px rgba(0, 0, 0, 0.13),
+    0 42px 88px -28px rgba(0, 0, 0, 0.09);
+  padding: 1.5rem 1.125rem 1.625rem;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium .sg-section-card.sg-float-card {
+    padding: 2rem 1.625rem 2.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tour-detail-premium .sg-section-card.sg-float-card {
+    padding: 2.125rem 1.875rem 2.25rem;
+  }
+}
+
+.tour-detail-premium .sg-collapsible-roll {
+  transition: grid-template-rows 0.55s var(--sg-ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-detail-premium .sg-collapsible-roll {
+    transition: none;
+  }
+}
+
+/* Hero: image + overlapping editorial sheet */
+.tour-detail-premium .sg-hero-sheet {
+  position: relative;
+  z-index: 2;
+  margin-top: -1.375rem;
+  background-color: #ffffff;
+  border-radius: var(--sg-radius-section);
+  border: 1px solid #f0f0f0;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.98) inset,
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    0 22px 50px -16px rgba(0, 0, 0, 0.15),
+    0 48px 100px -36px rgba(0, 0, 0, 0.1);
+  padding: 1.375rem 1.125rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium .sg-hero-sheet {
+    margin-top: -2.25rem;
+    padding: 1.75rem 1.75rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tour-detail-premium .sg-hero-sheet {
+    margin-top: 0;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.98) inset,
+      0 2px 6px rgba(0, 0, 0, 0.035),
+      0 20px 48px -16px rgba(0, 0, 0, 0.12),
+      0 40px 80px -28px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.tour-detail-premium .sg-hero-stat-well {
+  margin-top: 0.25rem;
+  padding: 1rem 1rem 1.125rem;
+  border-radius: 1rem;
+  background-color: rgba(245, 245, 244, 0.65);
+  border: 1px solid rgba(28, 25, 23, 0.05);
+}
+
+/* Itinerary stop — pure white card + photo band, strong float */
+.tour-detail-premium .sg-stop-card {
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: var(--sg-radius-card);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.95) inset,
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    0 16px 40px -12px rgba(0, 0, 0, 0.12),
+    0 32px 64px -24px rgba(0, 0, 0, 0.07);
+}
+
+/* Itinerary CTA — slow shifting border light + soft outer glow (reduced motion: static) */
+.tour-detail-premium .sg-itin-cta-orbit {
+  padding: 1px;
+  border-radius: 1rem;
+  background: linear-gradient(
+    118deg,
+    rgba(15, 23, 42, 0.07),
+    rgba(59, 130, 246, 0.11),
+    rgba(165, 180, 252, 0.15),
+    rgba(14, 165, 233, 0.1),
+    rgba(99, 102, 241, 0.08),
+    rgba(15, 23, 42, 0.07)
+  );
+  background-size: 320% 320%;
+  animation:
+    sg-itin-border-flow 16s ease-in-out infinite,
+    sg-itin-glow-soft 5.5s ease-in-out infinite;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium .sg-itin-cta-orbit {
+    border-radius: 1.35rem;
+  }
+}
+
+@keyframes sg-itin-border-flow {
+  0%,
+  100% {
+    background-position: 8% 42%;
+  }
+  35% {
+    background-position: 72% 58%;
+  }
+  70% {
+    background-position: 48% 88%;
+  }
+}
+
+@keyframes sg-itin-glow-soft {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 transparent,
+      0 8px 26px -10px rgba(15, 23, 42, 0.06);
+  }
+  50% {
+    box-shadow:
+      0 0 22px -8px rgba(59, 130, 246, 0.14),
+      0 12px 34px -12px rgba(15, 23, 42, 0.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-detail-premium .sg-itin-cta-orbit {
+    animation: none;
+    background-position: 50% 50%;
+    box-shadow: 0 8px 26px -10px rgba(15, 23, 42, 0.06);
+  }
+}
+
+.tour-detail-premium .sg-stop-card-body {
+  padding: 1.125rem 1rem 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .tour-detail-premium .sg-stop-card-body {
+    padding: 1.25rem 1.125rem 1.375rem;
+  }
+}
+
+.tour-detail-premium .sg-index-rail {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Mobile-only soft cards — one tint system */
+.tour-detail-premium .sg-mobile-card {
+  border-radius: var(--sg-radius-card);
+  background-color: rgba(250, 250, 249, 0.85);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium .sg-mobile-card {
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
+
+/* Disclosure rows — calm hover affordance */
+.tour-detail-premium .sg-disclosure-summary {
+  border-radius: 0.375rem;
+  transition: background-color 0.2s var(--sg-ease-out), color 0.2s var(--sg-ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-detail-premium .sg-disclosure-summary {
+    transition: none;
+  }
+}
+
+.tour-detail-premium .sg-disclosure-summary:hover {
+  background-color: rgba(245, 245, 244, 0.75);
+  color: rgb(28 25 23);
+}
+
+.tour-detail-premium details[open] > .sg-disclosure-summary {
+  background-color: transparent;
+}
+
+/* Thumbnail strip — restrained depth (desktop / coarse pointer) */
+@media (prefers-reduced-motion: no-preference) {
+  @media (min-width: 640px) {
+    .tour-detail-premium .sg-thumb-wrap {
+      transition: transform 0.5s var(--sg-ease-out);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .tour-detail-premium .sg-thumb-row .sg-thumb-wrap:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .tour-detail-premium {
+    scroll-padding-bottom: 0;
+  }
+}
+
+.tour-detail-premium .sg-surface {
+  background-color: var(--sg-surface);
+}
+
+/* Subtle entrance — respects reduced motion via keyframes only when allowed */
+@media (prefers-reduced-motion: no-preference) {
+  .tour-detail-premium .sg-reveal {
+    animation: sg-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-detail-premium .sg-reveal {
+    animation: none;
+  }
+}
+
+@keyframes sg-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Primary CTA — shared motion (hero + sticky) */
+.tour-detail-premium .sg-cta-solid {
+  transition: background-color 0.2s var(--sg-ease-out), box-shadow 0.2s var(--sg-ease-out),
+    transform 0.15s var(--sg-ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-detail-premium .sg-cta-solid {
+    transition: background-color 0.15s ease;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tour-detail-premium .sg-cta-solid:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .tour-detail-premium .sg-cta-solid:active {
+    transform: scale(0.99);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-detail-premium .sg-cta-solid:active {
+    transform: none;
+  }
+}
+
+/* ─── Detailpage (v0) parity skin — scoped under .sg-dp-theme ─── */
+/*
+ * OTA body layer tokens (Phase 0–1): use --sg-ota-* / .sg-ota-card in scroll content;
+ * keep glass (.sg-dp-glass-elevated) for hero sheet + booking rail (+ optional mobile bar).
+ * 8pt grid in TSX: p-4 (16px) mobile, p-5–p-6 desktop.
+ *
+ * Typography roles (review checklist):
+ * - Serif (.sg-dp-serif): page H1 only.
+ * - Section H2: .sg-dp-section-h2 (sans).
+ * - Card / stop / accordion titles: sans semibold — .sg-dp-card-title or text-[15px] sm:text-[16px] font-semibold.
+ * - Label rows: .sg-dp-label-row (+ --primary variant).
+ */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap");
+
+.tour-detail-premium.sg-dp-theme {
+  /* Single premium page canvas — warm/cool off-white; depth lives on cards, not section bands. */
+  /* Contrast pair for inverted CTAs (text on dark fills). Do not use `transparent` here. */
+  --dp-bg: #ffffff;
+  --dp-fg: oklch(0.12 0.01 30);
+  /* Body vs label: calm contrast — readable on mobile without harsh ink */
+  --dp-muted: oklch(0.398 0.008 30);
+  --dp-muted-strong: oklch(0.304 0.012 30);
+  --dp-border: oklch(0.94 0.002 90);
+  --dp-primary: oklch(0.28 0.045 170);
+  --dp-secondary: oklch(0.97 0.002 90);
+  /* Warm charcoal ink — primary CTAs & dark markers (quieter than neutral-950 / #0f) */
+  --sg-premium-ink-top: #2f2b29;
+  --sg-premium-ink-mid: #252322;
+  --sg-premium-ink-bottom: #1c1a18;
+  --sg-premium-ink-border: color-mix(in oklab, #3f3936 30%, transparent);
+  --sg-premium-ink-hover-top: #3a3531;
+  --sg-premium-ink-hover-bottom: #292624;
+  /* OTA matte surfaces */
+  --sg-ota-surface: #ffffff;
+  --sg-ota-surface-hover: #fafafa;
+  --sg-ota-border: #eaeaea;
+  --sg-ota-border-hover: #d4d4d4;
+  /* Labels / captions: one step darker than legacy gray-500 for editorial scan */
+  --sg-ota-label: oklch(0.465 0.014 265);
+  /* Typography scale — tiered commerce hierarchy (major / support / body / meta) */
+  --sg-type-h2: 1.5625rem;
+  --sg-type-h2-lg: 1.8125rem;
+  --sg-type-h3: 1.0625rem;
+  --sg-type-h3-lg: 1.125rem;
+  --sg-type-body: 0.875rem;
+  --sg-type-body-sm: 0.8125rem;
+  --sg-type-body-lg: 0.9375rem;
+  --sg-type-caption: 0.6875rem;
+  --sg-type-meta: 0.75rem;
+  --sg-type-meta-lg: 0.8125rem;
+  /* Vertical rhythm — 4px grid for mid-page sections (major / secondary / utility) */
+  --sg-v-xs: 0.5rem;
+  --sg-v-sm: 0.75rem;
+  --sg-v-md: 1rem;
+  --sg-v-lg: 1.25rem;
+  --sg-v-xl: 1.5rem;
+  --sg-v-2xl: 2rem;
+  --sg-v-2xl-plus: 2.25rem;
+  --sg-v-3xl: 2.5rem;
+  --sg-v-band-major: 2.75rem;
+  --sg-v-band-major-lg: 3.25rem;
+  --sg-v-band-chapter: 3rem;
+  --sg-v-band-chapter-lg: 3.5rem;
+  --sg-v-band-secondary: 2rem;
+  --sg-v-band-secondary-lg: 2.25rem;
+  --sg-v-band-utility: 1.5rem;
+  --sg-v-band-utility-lg: 1.75rem;
+  --sg-v-band-utility-tight: 1.25rem;
+  /* Card system — radii / stroke / elevation (Step 3) */
+  --sg-card-r-panel: 1.125rem;
+  --sg-card-r-step: 1.25rem;
+  --sg-card-r-nested: 0.75rem;
+  --sg-card-stroke: rgba(28, 25, 23, 0.08);
+  --sg-card-stroke-soft: rgba(28, 25, 23, 0.062);
+  /* Hairlines & frame edges — one scale (Step 7 micro-polish) */
+  --sg-rule-whisper: color-mix(in oklab, var(--sg-card-stroke) 36%, transparent);
+  --sg-rule-subtle: color-mix(in oklab, var(--sg-card-stroke) 38%, transparent);
+  --sg-rule-soft: color-mix(in oklab, var(--sg-card-stroke) 48%, transparent);
+  --sg-rule-mid: color-mix(in oklab, var(--sg-card-stroke) 58%, transparent);
+  --sg-rule-strong: color-mix(in oklab, var(--sg-card-stroke) 68%, transparent);
+  --sg-rule-bar: color-mix(in oklab, var(--sg-card-stroke) 78%, transparent);
+  --sg-rule-fade: color-mix(in oklab, var(--sg-card-stroke) 82%, transparent);
+  --sg-glance-frame: color-mix(in oklab, var(--sg-card-stroke) 88%, rgba(28, 25, 23, 0.05));
+  --sg-faq-shell-edge: color-mix(in oklab, var(--sg-card-stroke) 78%, rgba(28, 25, 23, 0.04));
+  --sg-step-border-hover: rgba(28, 25, 23, 0.102);
+  --sg-shadow-hero-intro:
+    0 1px 0 rgba(255, 255, 255, 0.99) inset,
+    0 1px 2px rgba(15, 23, 42, 0.028),
+    0 14px 42px -12px rgba(15, 23, 42, 0.11),
+    0 34px 70px -26px rgba(15, 23, 42, 0.078);
+  --sg-shadow-surface:
+    0 1px 0 rgba(255, 255, 255, 0.94) inset,
+    0 1px 2px rgba(15, 23, 42, 0.038),
+    0 12px 36px -14px rgba(15, 23, 42, 0.1);
+  --sg-shadow-surface-hover:
+    0 1px 0 rgba(255, 255, 255, 0.97) inset,
+    0 2px 5px rgba(15, 23, 42, 0.045),
+    0 18px 44px -16px rgba(15, 23, 42, 0.13);
+  --sg-shadow-step:
+    0 1px 0 rgba(255, 255, 255, 0.92) inset,
+    0 2px 6px rgba(15, 23, 42, 0.048),
+    0 16px 42px -14px rgba(15, 23, 42, 0.12);
+  --sg-shadow-step-hover:
+    0 1px 0 rgba(255, 255, 255, 0.96) inset,
+    0 4px 12px rgba(15, 23, 42, 0.06),
+    0 22px 52px -18px rgba(15, 23, 42, 0.15);
+  /* Card tiers — same chrome language, different elevation (luxury hierarchy) */
+  --sg-shadow-card-explanatory:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 1px 2px rgba(15, 23, 42, 0.034),
+    0 8px 26px -12px rgba(15, 23, 42, 0.076);
+  --sg-shadow-card-utility:
+    0 1px 0 rgba(255, 255, 255, 0.93) inset,
+    0 1px 2px rgba(15, 23, 42, 0.03);
+  --sg-shadow-card-support:
+    0 1px 0 rgba(255, 255, 255, 0.88) inset,
+    0 1px 2px rgba(15, 23, 42, 0.022);
+  --sg-shadow-card-discovery:
+    0 1px 0 rgba(255, 255, 255, 0.93) inset,
+    0 1px 3px rgba(15, 23, 42, 0.038),
+    0 10px 30px -14px rgba(15, 23, 42, 0.085);
+  /* Card families: Info = .sg-ota-card / .sg-dp-glance-panel / muted; Expandable = .sg-dp-expand-shell + triggers;
+     Step/media = .sg-dp-surface-step; Wells = .sg-dp-icon-well*; Itinerary CTA = .sg-dp-itin-cta-inner */
+  --sg-ota-radius: var(--sg-card-r-panel);
+  --sg-hero-radius: 16px;
+  /** Matches `Header` premium inner row: `h-[3.25rem] sm:h-14 md:h-[3.75rem]` — hero media clears sticky bar */
+  --sg-premium-site-header-h: 3.25rem;
+  --sg-ota-shadow: var(--sg-shadow-surface);
+  --sg-type-lead: 1rem;
+  --sg-type-h1: 1.875rem;
+  font-family: "DM Sans", var(--font-inter, system-ui), sans-serif;
+  background-color: #f8f8f5;
+  background-image: linear-gradient(180deg, #fdfdfc 0%, #fafaf8 36%, #f5f6f3 100%);
+  color: var(--dp-fg);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme {
+    --sg-premium-site-header-h: 3.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme {
+    --sg-premium-site-header-h: 3.75rem;
+  }
+}
+
+/**
+ * Hero: tuck under sticky premium bar (same height as Header inner row).
+ * Use margin only — do NOT add padding-top on this box: with overflow:hidden, the top
+ * padding band would show only bg-stone-900 (letterbox). Poster stack gets its own top pad.
+ */
+.tour-detail-premium.sg-dp-theme .sg-dp-hero-media-root {
+  margin-top: calc(-1 * var(--sg-premium-site-header-h));
+}
+
+/** Title/meta clears the opaque header; keeps mobile + md rhythm */
+.tour-detail-premium.sg-dp-theme .sg-dp-hero-poster-stack {
+  padding-top: max(2rem, calc(var(--sg-premium-site-header-h) + 0.35rem));
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-hero-poster-stack {
+    padding-top: max(2.25rem, calc(var(--sg-premium-site-header-h) + 0.4rem));
+  }
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-hero-poster-stack {
+    padding-top: max(2.5rem, calc(var(--sg-premium-site-header-h) + 0.45rem));
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-serif {
+  font-family: "DM Serif Display", Georgia, serif;
+}
+
+/**
+ * Step 2 — editorial page grammar: one horizontal inset + column measures.
+ * Matches Tailwind px-5 / md:px-8 / lg:px-10 + max-w-3xl (48rem) / max-w-4xl (56rem).
+ */
+.tour-detail-premium.sg-dp-theme .sg-dp-page-gutter {
+  box-sizing: border-box;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-page-gutter {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-page-gutter {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-page-column {
+  width: 100%;
+  min-width: 0;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-page-column-wide {
+  width: 100%;
+  min-width: 0;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/** Supporting sections (Practical / FAQ): title stack → first control — one step on the spacing scale */
+.tour-detail-premium.sg-dp-theme .sg-dp-supporting-section-head {
+  margin-bottom: var(--sg-v-md);
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-supporting-section-head {
+    margin-bottom: var(--sg-v-lg);
+  }
+}
+
+/* ─── Card families (Info / Expandable shell / Step–timeline) ─── */
+.tour-detail-premium.sg-dp-theme .sg-ota-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fcfcfb 100%);
+  border: 1px solid var(--sg-card-stroke);
+  border-radius: var(--sg-card-r-panel);
+  box-shadow: var(--sg-shadow-surface);
+  transition:
+    background-color 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-detail-premium.sg-dp-theme .sg-ota-card {
+    transition: none;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-ota-card--interactive:hover {
+  background: linear-gradient(180deg, #fefefe 0%, #fafaf9 100%);
+  border-color: var(--sg-ota-border-hover);
+  box-shadow: var(--sg-shadow-surface-hover);
+}
+
+/** Tier: core product facts — strongest lift in scroll content */
+.tour-detail-premium.sg-dp-theme .sg-ota-card.sg-dp-ota-card--core {
+  box-shadow: var(--sg-shadow-surface-hover);
+}
+
+/** Tier: reassurance / proof cards — warmer, flatter than core */
+.tour-detail-premium.sg-dp-theme .sg-ota-card.sg-dp-ota-card--support {
+  background: linear-gradient(180deg, #fdfdfc 0%, #f7f7f4 100%);
+  border-color: color-mix(in oklab, var(--sg-card-stroke) 72%, transparent);
+  box-shadow: var(--sg-shadow-card-support);
+}
+
+/**
+ * Step 5 — shared scroll-card frames (same radius / border grammar as .sg-ota-card).
+ * Use for route fit, nested callouts, weather shell.
+ */
+.tour-detail-premium.sg-dp-theme .sg-dp-card-frame {
+  border-radius: var(--sg-card-r-panel);
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 90%, transparent);
+  background: linear-gradient(180deg, #ffffff 0%, #fcfcfb 100%);
+  box-shadow: var(--sg-shadow-surface);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-card-frame--tint-warm {
+  background: linear-gradient(180deg, #fefefe 0%, #fafaf8 52%, #f5f5f2 100%);
+  border-color: color-mix(in oklab, var(--sg-card-stroke) 86%, transparent);
+}
+
+/** Nested tiles (weather day cells, timeline meta chips) */
+.tour-detail-premium.sg-dp-theme .sg-dp-card-nested {
+  border-radius: var(--sg-card-r-nested);
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 68%, transparent);
+  background: linear-gradient(180deg, #ffffff 0%, #fafaf8 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.96) inset,
+    0 1px 2px rgba(15, 23, 42, 0.032);
+}
+
+/** Premium weather block — replaces ad hoc .td-card-b in small-group cluster */
+.tour-detail-premium.sg-dp-theme .sg-dp-weather-premium {
+  border-radius: var(--sg-card-r-panel);
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 88%, transparent);
+  background: linear-gradient(180deg, #fefefe 0%, #f7f7f4 100%);
+  box-shadow: var(--sg-shadow-surface);
+  padding: 0.625rem 0.625rem 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-weather-premium {
+    padding: 0.75rem 0.75rem 0.875rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-weather-premium-day {
+  border-radius: calc(var(--sg-card-r-nested) + 2px);
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 65%, transparent);
+  background: linear-gradient(180deg, #ffffff 0%, #fafaf8 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.96) inset,
+    0 1px 2px rgba(15, 23, 42, 0.034);
+}
+
+/** At a Glance — one framed product summary; Type A lift vs accordion shells */
+.tour-detail-premium.sg-dp-theme .sg-dp-glance-panel {
+  border-radius: var(--sg-card-r-panel);
+  border: 1px solid var(--sg-glance-frame);
+  background-color: var(--sg-rule-soft);
+  box-shadow: var(--sg-shadow-surface);
+  padding: 1px;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-glance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  border-radius: calc(var(--sg-card-r-panel) - 1px);
+  overflow: hidden;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-glance-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-glance-cell {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  min-width: 0;
+  padding: 0.6875rem 0.8125rem;
+  text-align: left;
+  background: linear-gradient(180deg, #ffffff 0%, #fafaf8 100%);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-glance-cell {
+    gap: 0.6875rem;
+    padding: 0.75rem 0.9375rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-glance-cell--lead {
+  background: linear-gradient(
+    165deg,
+    var(--sg-premium-ink-top) 0%,
+    var(--sg-premium-ink-bottom) 100%
+  );
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-glance-icon-slot {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.4375rem;
+  border: 1px solid var(--sg-card-stroke-soft);
+  background: linear-gradient(180deg, #ffffff 0%, #f4f4f2 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.96) inset;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-glance-icon-slot--inverse {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
+}
+
+/** Expandable group shell + row hover (accordions, disclosure headers) — Type C: flatter than .sg-ota-card */
+.tour-detail-premium.sg-dp-theme .sg-dp-expand-shell {
+  overflow: hidden;
+  border-radius: var(--sg-card-r-panel);
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 82%, transparent);
+  background: linear-gradient(180deg, #fdfdfc 0%, #f9f9f6 100%);
+  box-shadow: var(--sg-shadow-card-utility);
+}
+
+/** Tier: explanatory stacks (route reasons, adjustments) — softer than default expand-shell */
+.tour-detail-premium.sg-dp-theme .sg-dp-expand-shell.sg-dp-expand-shell--explanatory {
+  background: linear-gradient(180deg, #fdfdfb 0%, #f9f9f6 100%);
+  border-color: var(--sg-card-stroke-soft);
+  box-shadow: var(--sg-shadow-card-explanatory);
+}
+
+/** “Why this route works” — logic cards (native <details> disclosure) */
+/** “How we shape the day” — three-pillar micro-editorial module */
+.tour-detail-premium.sg-dp-theme .sg-dp-day-shape-module {
+  border-radius: var(--sg-card-r-panel);
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 90%, transparent);
+  background: linear-gradient(165deg, #ffffff 0%, #fcfcfa 48%, #f8f8f5 100%);
+  box-shadow: var(--sg-shadow-surface);
+  padding: 1.125rem 1rem 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-day-shape-module {
+    padding: 1.25rem 1.25rem 1.375rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-day-shape-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-day-shape-grid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  .tour-detail-premium.sg-dp-theme .sg-dp-day-shape-grid[data-shape-count="2"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tour-detail-premium.sg-dp-theme .sg-dp-day-shape-grid[data-shape-count="1"] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-day-principle-card {
+  height: 100%;
+  border-radius: calc(var(--sg-card-r-panel) - 2px);
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 78%, transparent);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(252, 252, 250, 0.94) 100%);
+  box-shadow: var(--sg-shadow-card-support);
+  padding: 0.875rem 0.875rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-day-principle-card {
+    padding: 1rem 1rem 1.125rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-day-principle-card__icon {
+  display: flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.625rem;
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 85%, transparent);
+  background: linear-gradient(180deg, #ffffff 0%, #fafaf8 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 1) inset;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-day-principle-card__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-day-principle-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-day-principle-list > li + li {
+  margin-top: 0.625rem;
+  padding-top: 0.625rem;
+  border-top: 1px solid var(--sg-rule-whisper);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-day-principle-list > li + li {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-route-logic-details > summary {
+  list-style: none;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-route-logic-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/** Shared disclosure chrome — premium calm, not help-center accordion rows */
+.tour-detail-premium.sg-dp-theme .sg-dp-disclosure-summary {
+  list-style: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-disclosure-summary::-webkit-details-marker {
+  display: none;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-disclosure-summary:focus-visible {
+  outline: none;
+  border-radius: 0.375rem;
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--dp-fg) 14%, transparent);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-after-book-step-frame {
+  cursor: default;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-after-book-step-frame:hover {
+  background-color: transparent;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-after-book-step-frame:focus-visible {
+  outline: none;
+}
+
+/** FAQ — support layer: rail + lowest lift vs product shells (Step 7: framed list, calmer dividers) */
+.tour-detail-premium.sg-dp-theme .sg-dp-expand-shell--faq {
+  min-width: 0;
+  border: 1px solid var(--sg-faq-shell-edge);
+  border-left: 3px solid color-mix(in oklab, var(--dp-primary) 28%, var(--sg-card-stroke));
+  padding-left: 1px;
+  border-radius: calc(var(--sg-card-r-nested) + 2px);
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8f8f5 0%, #f3f4f1 55%, #f5f5f2 100%);
+  box-shadow: var(--sg-shadow-card-support);
+}
+
+/** FAQ accordion — hairline rhythm between rows (replaces generic divide-y) */
+.tour-detail-premium.sg-dp-theme .sg-dp-faq-accordion > [data-slot='accordion-item'] + [data-slot='accordion-item'] {
+  border-top: 1px solid color-mix(in oklab, var(--sg-rule-mid) 26%, var(--sg-rule-soft) 74%);
+}
+
+/** Practical — utility clusters: flatter, tighter read than narrative expandables */
+.tour-detail-premium.sg-dp-theme .sg-dp-expand-shell--practical-cluster {
+  background: linear-gradient(180deg, #fcfcfa 0%, #f9f9f6 100%);
+  border-color: color-mix(in oklab, var(--sg-card-stroke) 78%, transparent);
+  box-shadow: var(--sg-shadow-card-utility);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-practical-cluster-head {
+  margin: 0;
+  padding: 0.5625rem 1rem 0.625rem;
+  border-bottom: 1px solid var(--sg-rule-soft);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-secondary) 16%, #ffffff) 0%,
+    color-mix(in oklab, var(--dp-secondary) 9%, #ffffff) 100%
+  );
+  font-size: var(--sg-type-caption);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--sg-ota-label) 86%, var(--dp-fg) 14%);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-practical-cluster-head {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-practical-intro-well {
+  border-radius: var(--sg-card-r-nested);
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 62%, transparent);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-secondary) 20%, #ffffff) 0%,
+    color-mix(in oklab, var(--dp-secondary) 11%, #ffffff) 100%
+  );
+  padding: 0.875rem 1rem;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.96) inset,
+    0 1px 2px rgba(15, 23, 42, 0.032);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-practical-intro-well {
+    padding: 1rem 1.125rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-practical-intro-well .sg-dp-practical-intro-lead {
+  line-height: 1.64;
+  color: color-mix(in oklab, var(--dp-fg) 86%, var(--dp-muted) 14%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-faq-intro-block {
+  margin-bottom: var(--sg-v-md);
+  padding-bottom: var(--sg-v-md);
+  border-bottom: 1px solid var(--sg-rule-subtle);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-faq-intro-block > .sg-dp-type-meta {
+  max-width: 36rem;
+  line-height: 1.5;
+  color: color-mix(in oklab, var(--dp-muted) 78%, var(--dp-fg) 22%);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-faq-intro-block {
+    margin-bottom: var(--sg-v-lg);
+    padding-bottom: var(--sg-v-lg);
+  }
+}
+
+/** Practical: spaced clusters break the “infinite accordion” rhythm */
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-cluster {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-cluster-label {
+  margin: 0;
+  padding: 0 0.125rem;
+  font-size: var(--sg-type-caption);
+  font-weight: 600;
+  line-height: 1.38;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--sg-ota-label) 72%, var(--dp-fg) 28%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-cluster-label--faq {
+  letter-spacing: 0.07em;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-accordion-stack {
+    gap: 1.5rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-stack--practical {
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-accordion-stack--practical {
+    gap: 1.875rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-item-trigger {
+  transition:
+    background-color 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-item-trigger:hover {
+  background-color: color-mix(in oklab, var(--dp-secondary) 36%, transparent);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-item-trigger[aria-expanded="true"] {
+  background-color: color-mix(in oklab, var(--dp-secondary) 48%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in oklab, #ffffff 55%, transparent);
+}
+
+.tour-detail-premium.sg-dp-theme [data-slot="accordion-trigger"].sg-dp-accordion-item-trigger:focus-visible {
+  outline: none;
+}
+
+.tour-detail-premium.sg-dp-theme
+  [data-slot="accordion-trigger"].sg-dp-accordion-item-trigger:focus-visible:not([aria-expanded="true"]) {
+  box-shadow: inset 0 0 0 2px color-mix(in oklab, var(--dp-fg) 16%, transparent);
+}
+
+.tour-detail-premium.sg-dp-theme
+  [data-slot="accordion-trigger"].sg-dp-accordion-item-trigger:focus-visible[aria-expanded="true"] {
+  box-shadow:
+    inset 0 0 0 2px color-mix(in oklab, var(--dp-fg) 14%, transparent),
+    inset 0 1px 0 color-mix(in oklab, #ffffff 55%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-accordion-item-trigger {
+    transition: none;
+  }
+}
+
+/** Quiet row alternation inside a shell (collapsed scan) */
+.tour-detail-premium.sg-dp-theme [data-slot="accordion-item"].sg-dp-accordion-item:nth-child(even) .sg-dp-accordion-item-trigger {
+  background-color: color-mix(in oklab, var(--dp-secondary) 10%, transparent);
+}
+
+.tour-detail-premium.sg-dp-theme
+  [data-slot="accordion-item"].sg-dp-accordion-item:nth-child(even)
+  .sg-dp-accordion-item-trigger:hover {
+  background-color: color-mix(in oklab, var(--dp-secondary) 40%, transparent);
+}
+
+.tour-detail-premium.sg-dp-theme
+  [data-slot="accordion-item"].sg-dp-accordion-item:nth-child(even)
+  .sg-dp-accordion-item-trigger[aria-expanded="true"] {
+  background-color: color-mix(in oklab, var(--dp-secondary) 52%, transparent);
+}
+
+/** Step 5 — practical: no zebra; calmer scan while scrolling */
+.tour-detail-premium.sg-dp-theme
+  [data-accordion-context="practical"]
+  [data-slot="accordion-item"].sg-dp-accordion-item:nth-child(even)
+  .sg-dp-accordion-item-trigger {
+  background-color: transparent;
+}
+
+.tour-detail-premium.sg-dp-theme
+  [data-accordion-context="practical"]
+  [data-slot="accordion-item"].sg-dp-accordion-item:nth-child(even)
+  .sg-dp-accordion-item-trigger:hover {
+  background-color: color-mix(in oklab, var(--dp-secondary) 36%, transparent);
+}
+
+.tour-detail-premium.sg-dp-theme
+  [data-accordion-context="practical"]
+  [data-slot="accordion-item"].sg-dp-accordion-item:nth-child(even)
+  .sg-dp-accordion-item-trigger[aria-expanded="true"] {
+  background-color: color-mix(in oklab, var(--dp-secondary) 48%, transparent);
+}
+
+/** FAQ: uniform quiet base — support Q&A, not spreadsheet rows */
+.tour-detail-premium.sg-dp-theme [data-accordion-context="faq"] .sg-dp-accordion-item-trigger {
+  background-color: color-mix(in oklab, var(--dp-secondary) 7%, transparent);
+}
+
+.tour-detail-premium.sg-dp-theme
+  [data-accordion-context="faq"]
+  [data-slot="accordion-item"].sg-dp-accordion-item:nth-child(even)
+  .sg-dp-accordion-item-trigger {
+  background-color: color-mix(in oklab, var(--dp-secondary) 7%, transparent);
+}
+
+.tour-detail-premium.sg-dp-theme [data-accordion-context="faq"] .sg-dp-accordion-item-trigger:hover {
+  background-color: color-mix(in oklab, var(--dp-secondary) 34%, transparent);
+}
+
+.tour-detail-premium.sg-dp-theme
+  [data-accordion-context="faq"]
+  .sg-dp-accordion-item-trigger[aria-expanded="true"] {
+  background-color: color-mix(in oklab, var(--dp-secondary) 44%, transparent);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-content-panel {
+  border-top: 1px solid var(--sg-rule-strong);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-secondary) 18%, transparent) 0%,
+    transparent 0.85rem
+  );
+}
+
+/**
+ * Accordion panel motion — tw-animate-css reads --tw-duration / --tw-ease (premium ease, slightly longer).
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .tour-detail-premium.sg-dp-theme [data-slot="accordion-content"] {
+    --tw-duration: 0.34s;
+    --tw-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-content-panel--practical {
+  padding-top: 0.375rem;
+  padding-bottom: 1.125rem;
+  border-top-color: var(--sg-rule-mid);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-secondary) 14%, transparent) 0%,
+    transparent 1.1rem
+  );
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-accordion-content-panel--practical {
+    padding-bottom: 1.25rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-content-panel--practical .sg-dp-type-meta {
+  max-width: 42rem;
+  line-height: 1.5;
+  color: color-mix(in oklab, var(--dp-muted) 80%, var(--dp-fg) 20%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-content-panel--faq {
+  padding-top: 0.6875rem;
+  padding-bottom: 1.4375rem;
+  border-top-color: color-mix(in oklab, var(--sg-rule-mid) 22%, var(--sg-rule-soft) 78%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-primary) 5%, transparent) 0%,
+    color-mix(in oklab, var(--dp-secondary) 12%, transparent) 0.5rem,
+    transparent 1.25rem
+  );
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-accordion-content-panel--faq {
+    padding-top: 0.75rem;
+    padding-bottom: 1.5625rem;
+  }
+}
+
+/** Step 9 — FAQ: open/closed rhythm (panel owns vertical air; inner wrapper stays flush) */
+.tour-detail-premium.sg-dp-theme .sg-dp-expand-shell--faq [data-slot="accordion-content"] > div {
+  padding-bottom: 0;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-content-panel--faq .sg-dp-type-body {
+  max-width: 42rem;
+  line-height: 1.7;
+  color: color-mix(in oklab, var(--dp-muted) 78%, var(--dp-fg) 22%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-faq-question-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-right: 0.75rem;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-faq-answer {
+  padding-top: 0.0625rem;
+  padding-bottom: 0.125rem;
+}
+
+/** Practical + FAQ section subtitles — aligned meta rhythm */
+.tour-detail-premium.sg-dp-theme .sg-dp-supporting-section-subtitle {
+  max-width: 36rem;
+  line-height: 1.58;
+  color: color-mix(in oklab, var(--dp-muted) 74%, var(--dp-fg) 26%);
+}
+
+/** Step 9 — Practical clusters: block rhythm, disclosure scan line */
+.tour-detail-premium.sg-dp-theme .sg-dp-practical-block {
+  padding: 1rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-practical-block {
+    padding: 1.125rem 1.25rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-practical-block-title {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.42;
+  letter-spacing: -0.014em;
+  color: var(--dp-fg);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-practical-block-body {
+  margin: 0.625rem 0 0;
+  max-width: 42rem;
+  line-height: 1.66;
+  white-space: pre-line;
+  color: color-mix(in oklab, var(--dp-muted) 78%, var(--dp-fg) 22%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-practical-disclosure {
+  margin-top: 0.875rem;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-practical-disclosure-summary {
+  gap: 0.375rem;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  cursor: pointer;
+  list-style: none;
+  font-size: var(--sg-type-caption);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--sg-ota-label) 82%, var(--dp-fg) 18%);
+  transition: color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-practical-disclosure-summary:hover {
+  color: color-mix(in oklab, var(--dp-fg) 70%, var(--sg-ota-label) 30%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-practical-disclosure-summary::-webkit-details-marker {
+  display: none;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-practical-disclosure-chevron {
+  color: color-mix(in oklab, var(--sg-ota-label) 70%, var(--dp-muted) 30%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-practical-disclosure-body {
+  margin-top: 0.5rem;
+  max-width: 42rem;
+  line-height: 1.62;
+  white-space: pre-line;
+  color: color-mix(in oklab, var(--dp-muted) 76%, var(--dp-fg) 24%);
+}
+
+/** Step 10 — ink tokens (no raw neutral-900 in premium chrome) */
+.tour-detail-premium.sg-dp-theme .sg-dp-itin-cta-icon {
+  color: color-mix(in oklab, var(--sg-ota-label) 58%, var(--dp-fg) 42%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-itin-condensed-marker {
+  color: color-mix(in oklab, var(--dp-fg) 91%, var(--dp-muted) 9%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-duration-pill {
+  color: color-mix(in oklab, var(--dp-fg) 84%, var(--dp-muted) 16%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-highlight-chip {
+  color: color-mix(in oklab, var(--dp-fg) 72%, var(--dp-muted) 28%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-media-duration-pill {
+  color: color-mix(in oklab, var(--dp-fg) 92%, var(--dp-muted) 8%);
+}
+
+/** Stop photo — stay/duration overlay: glassy warm ink (not flat black/72) */
+.tour-detail-premium.sg-dp-theme .sg-dp-media-stay-pill {
+  background: color-mix(in oklab, var(--sg-premium-ink-mid) 72%, transparent);
+  border: 1px solid color-mix(in oklab, white 14%, transparent);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.11) inset,
+    0 2px 12px -4px rgba(0, 0, 0, 0.22);
+}
+
+/** Route timeline — stop index: lifted warm ink + hairline (replaces flat neutral-950) */
+.tour-detail-premium.sg-dp-theme .sg-dp-stop-index-marker {
+  background: linear-gradient(165deg, var(--sg-premium-ink-hover-top) 0%, var(--sg-premium-ink-bottom) 100%);
+  border: 1px solid color-mix(in oklab, white 12%, transparent);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.11) inset,
+    0 2px 8px -3px rgba(0, 0, 0, 0.2);
+  color: #fafaf8;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-route-badge {
+  color: color-mix(in oklab, var(--dp-fg) 93%, var(--dp-muted) 7%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-lead {
+  color: color-mix(in oklab, var(--dp-muted) 64%, var(--dp-fg) 36%);
+  line-height: 1.62;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-stop-detail-lead {
+  color: color-mix(in oklab, var(--dp-fg) 86%, var(--dp-muted) 14%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-stop-highlight-list {
+  color: color-mix(in oklab, var(--dp-fg) 74%, var(--dp-muted) 26%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-trigger {
+  transition: background-color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-trigger:hover {
+  background-color: color-mix(in oklab, var(--dp-secondary) 38%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-accordion-trigger {
+    transition: none;
+  }
+}
+
+/** Step / timeline / rich media cards (itinerary stops, related tours) */
+.tour-detail-premium.sg-dp-theme .sg-dp-surface-step {
+  overflow: hidden;
+  border-radius: var(--sg-card-r-step);
+  border: 1px solid var(--sg-card-stroke);
+  background: linear-gradient(180deg, #ffffff 0%, #fcfcfb 100%);
+  box-shadow: var(--sg-shadow-step);
+  transition:
+    box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tour-detail-premium.sg-dp-theme button.sg-dp-surface-step--interactive:focus-visible {
+  box-shadow: var(--sg-shadow-step-hover);
+  border-color: var(--sg-step-border-hover);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-surface-step--interactive:hover {
+  box-shadow: var(--sg-shadow-step-hover);
+  border-color: var(--sg-step-border-hover);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-surface-step--interactive:hover,
+  .tour-detail-premium.sg-dp-theme button.sg-dp-surface-step--interactive:focus-visible {
+    transform: translateY(-1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-surface-step {
+    transition: none;
+  }
+
+  .tour-detail-premium.sg-dp-theme button.sg-dp-surface-step--interactive:focus-visible {
+    transform: none;
+  }
+}
+
+/** Itinerary stop cards — sequence label, tone variants, narrative well (Step 2) */
+.tour-detail-premium.sg-dp-theme .sg-dp-stop-sequence {
+  margin: 0;
+  font-size: var(--sg-type-caption);
+  font-weight: 600;
+  line-height: 1.38;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--sg-ota-label) 72%, var(--dp-fg) 28%);
+}
+
+/** Full itinerary timeline — vertical rail + index disc */
+.tour-detail-premium.sg-dp-theme .sg-dp-timeline-rail-line {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--sg-card-stroke) 92%, transparent) 0%,
+    color-mix(in oklab, var(--sg-card-stroke) 52%, transparent) 45%,
+    color-mix(in oklab, var(--sg-card-stroke) 22%, transparent) 100%
+  );
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-stop-index-marker {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
+    0 2px 10px rgba(15, 23, 42, 0.16);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-itin-condensed-marker {
+  font-variant-numeric: tabular-nums;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-stop-card.sg-dp-stop-card--tone-highlight {
+  border-color: color-mix(in oklab, var(--sg-card-stroke) 52%, rgba(120, 113, 108, 0.16));
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-stop-card.sg-dp-stop-card--tone-opener {
+  border-color: color-mix(in oklab, var(--sg-card-stroke) 54%, rgba(28, 25, 23, 0.07));
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-stop-card.sg-dp-stop-card--tone-finale {
+  border-color: color-mix(in oklab, var(--sg-card-stroke) 62%, rgba(28, 25, 23, 0.09));
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-stop-card.sg-dp-stop-card--tone-photo {
+  border-color: color-mix(in oklab, var(--sg-card-stroke) 68%, rgba(59, 130, 246, 0.07));
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-stop-card.sg-dp-stop-card--tone-pace {
+  border-color: color-mix(in oklab, var(--sg-card-stroke) 65%, rgba(87, 83, 78, 0.11));
+}
+
+/** In-stop editorial well — nested tier, warmer fill than flat stone-50 */
+.tour-detail-premium.sg-dp-theme .sg-dp-stop-narrative-well {
+  border-radius: var(--sg-card-r-nested);
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 58%, transparent);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, #fafaf8 92%, #ffffff) 0%,
+    color-mix(in oklab, #f5f5f2 78%, #ffffff) 100%
+  );
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.96) inset,
+    0 1px 2px rgba(15, 23, 42, 0.032);
+}
+
+/** Seasonal chip rail — Step 10: mobile bleed matches related rail + page gutter */
+.tour-detail-premium.sg-dp-theme .sg-dp-seasonal-chip-track {
+  box-sizing: border-box;
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  scroll-padding-inline: 1.25rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-seasonal-chip-track {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    scroll-padding-inline: 0;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-seasonal-detail-card {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-seasonal-card-hero {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  max-height: 5.5rem;
+  min-height: 4rem;
+  border-bottom: 1px solid color-mix(in oklab, var(--sg-card-stroke) 55%, transparent);
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--dp-secondary) 45%, white) 0%,
+    color-mix(in oklab, var(--dp-secondary) 22%, white) 48%,
+    color-mix(in oklab, var(--dp-secondary) 35%, white) 100%
+  );
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-seasonal-card-hero {
+    max-height: 6rem;
+    min-height: 4.25rem;
+  }
+}
+
+/** Secondary / tinted info (long-form callouts) */
+.tour-detail-premium.sg-dp-theme .sg-dp-surface-muted {
+  border-radius: var(--sg-card-r-panel);
+  border: 1px solid var(--sg-card-stroke-soft);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-secondary) 52%, white) 0%,
+    color-mix(in oklab, var(--dp-secondary) 38%, white) 100%
+  );
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.75) inset,
+    0 1px 2px rgba(15, 23, 42, 0.03);
+}
+
+/** Tier: explanatory tinted panels (seasonal body, route deep-dive) */
+.tour-detail-premium.sg-dp-theme .sg-dp-surface-muted.sg-dp-surface-muted--explanatory {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-secondary) 56%, white) 0%,
+    color-mix(in oklab, var(--dp-secondary) 40%, white) 100%
+  );
+  border-color: color-mix(in oklab, var(--sg-card-stroke-soft) 90%, transparent);
+  box-shadow: var(--sg-shadow-card-explanatory);
+}
+
+/** Tier: nested support wells (timeline detail inside reassurance flow) */
+.tour-detail-premium.sg-dp-theme .sg-dp-surface-muted.sg-dp-surface-muted--support {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-secondary) 38%, white) 0%,
+    color-mix(in oklab, var(--dp-secondary) 26%, white) 100%
+  );
+  border-color: var(--sg-rule-whisper);
+  box-shadow: var(--sg-shadow-card-support);
+}
+
+/** Trust pillars — one framed grid (hairline dividers), not four floating cards (Step 7) */
+.tour-detail-premium.sg-dp-theme .sg-dp-expand-shell.sg-dp-trust-pillars-shell {
+  background: linear-gradient(180deg, #fafaf8 0%, #f5f5f2 100%);
+  border-color: color-mix(in oklab, var(--sg-card-stroke) 68%, transparent);
+  box-shadow: var(--sg-shadow-card-explanatory);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-trust-pillar-cell {
+  min-height: 0;
+  background: linear-gradient(180deg, #fcfcfa 0%, #f6f6f3 100%);
+  padding: 1rem 1rem 1.125rem;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-trust-pillar-cell {
+    padding: 1.125rem 1.125rem 1.25rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-trust-pillars-shell--layered {
+  box-shadow: var(--sg-shadow-card-utility);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-trust-pillar-cell--promise {
+  padding: 0.875rem 1rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-trust-pillar-cell--promise {
+    padding: 1rem 1.125rem 1.125rem;
+  }
+}
+
+/** After booking — process rail: utility tier (not merchandising cards) */
+.tour-detail-premium.sg-dp-theme .sg-dp-after-book-shell.sg-dp-surface-muted {
+  box-shadow: var(--sg-shadow-card-utility);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-secondary) 48%, white) 0%,
+    color-mix(in oklab, var(--dp-secondary) 34%, white) 100%
+  );
+  border-color: color-mix(in oklab, var(--sg-card-stroke-soft) 88%, transparent);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-after-book-step-trigger {
+  display: block;
+  width: 100%;
+  /* Reserve gutter for absolutely positioned .sg-dp-after-book-step-index (1.75rem) + air */
+  padding: 1rem 1rem 1.25rem 2.5rem;
+  margin: 0;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-after-book-step-trigger {
+    padding-top: 1.125rem;
+    padding-bottom: 1.375rem;
+    padding-left: 2.75rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-after-book-step-trigger:hover {
+  background-color: color-mix(in oklab, var(--dp-secondary) 22%, transparent);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-after-book-step-trigger:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--dp-primary) 45%, transparent);
+  outline-offset: 2px;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-after-book-step-index {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  border: 1px solid var(--sg-card-stroke-soft);
+  background: linear-gradient(180deg, #ffffff 0%, #f6f6f4 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 1px 2px rgba(15, 23, 42, 0.04);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--dp-fg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-after-book-step-trigger {
+    transition: none;
+  }
+}
+
+/** Icon wells — squircle, not toy-round */
+.tour-detail-premium.sg-dp-theme .sg-dp-icon-well {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--sg-card-stroke-soft);
+  background: linear-gradient(180deg, #fafafa 0%, #f3f3f2 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-icon-well--lg {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.6875rem;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-icon-well--xl {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-icon-well--sm {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+}
+
+/** Itinerary CTA inner — path affordance; default flatter than core product cards */
+.tour-detail-premium.sg-dp-theme .sg-dp-itin-cta-inner {
+  border-radius: calc(var(--sg-card-r-panel) - 2px);
+  background: linear-gradient(180deg, #ffffff 0%, #fcfcfb 100%);
+  border: 1px solid var(--sg-card-stroke-soft);
+  box-shadow: var(--sg-shadow-card-explanatory);
+  transition:
+    box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-itin-cta-inner:hover {
+    box-shadow: var(--sg-shadow-surface-hover);
+  }
+
+  .tour-detail-premium.sg-dp-theme .sg-dp-itin-cta-inner:active {
+    transform: scale(0.995);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-itin-cta-inner {
+    transition: none;
+  }
+
+  .tour-detail-premium.sg-dp-theme .sg-dp-itin-cta-inner:active {
+    transform: none;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-itin-cta-inner:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px color-mix(in oklab, var(--dp-fg) 12%, transparent),
+    var(--sg-shadow-surface-hover);
+  border-color: color-mix(in oklab, var(--sg-card-stroke-soft) 88%, var(--dp-fg) 12%);
+}
+
+/** Related tours — same step grammar as itinerary; hover still elevates */
+.tour-detail-premium.sg-dp-theme .sg-dp-related-section .sg-dp-surface-step {
+  border-color: color-mix(in oklab, var(--sg-card-stroke) 92%, transparent);
+  box-shadow: var(--sg-shadow-step);
+}
+
+/* Related tours: lift when parent Link is hovered or focus-visible */
+.tour-detail-premium.sg-dp-theme a.group:hover .sg-dp-surface-step--link,
+.tour-detail-premium.sg-dp-theme a.group:focus-visible .sg-dp-surface-step--link {
+  box-shadow: var(--sg-shadow-step-hover);
+  border-color: rgba(28, 25, 23, 0.1);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-section .sg-dp-related-card-link:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px color-mix(in oklab, #f9f9f6 96%, #ffffff),
+    0 0 0 4px color-mix(in oklab, var(--dp-fg) 22%, transparent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-related-section a.group:active .sg-dp-surface-step--link {
+    transform: translateY(0);
+    transition-duration: 0.12s;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-section .sg-dp-related-discovery-card.sg-dp-surface-step {
+  background: linear-gradient(180deg, #ffffff 0%, #fafaf8 52%, #f5f5f2 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.94) inset,
+    0 1px 2px rgba(15, 23, 42, 0.034),
+    0 14px 40px -18px rgba(15, 23, 42, 0.09);
+}
+
+/** Step 8 — related tours: equal-height grid + curated composition */
+/** Step 10 — snap rail: scroll padding matches gutter so first/last cards align; Step 7 — wider card gap */
+.tour-detail-premium.sg-dp-theme .sg-dp-related-rail {
+  scroll-padding-inline: 1.35rem;
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-related-rail {
+    scroll-padding-inline: 0;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-card-article {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-related-card-article {
+    height: 100%;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-card-media {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: linear-gradient(160deg, #eceae7 0%, #ddd9d4 48%, #e8e6e2 100%);
+  border-bottom: 1px solid color-mix(in oklab, var(--sg-card-stroke) 52%, transparent);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-card-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 0%, transparent 38%, rgba(15, 23, 42, 0.1) 100%);
+  z-index: 1;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-card-title {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: 2.625rem;
+  line-height: 1.28;
+  letter-spacing: -0.021em;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dp-fg);
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-related-card-title {
+    font-size: 1.0625rem;
+    min-height: 2.75rem;
+    line-height: 1.26;
+    letter-spacing: -0.022em;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-card-route {
+  margin-top: 0.625rem;
+  min-height: 0;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-related-card-route {
+    margin-top: 0.75rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-card-route .sg-dp-type-body {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: 2.375rem;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-meta-row {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem 0.5rem;
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-related-meta-row {
+    margin-top: 0.875rem;
+    gap: 0.5rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3125rem 0.625rem;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 72%, transparent);
+  background: linear-gradient(180deg, #ffffff 0%, #f7f7f4 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.96) inset;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  font-variant-numeric: tabular-nums;
+  color: color-mix(in oklab, var(--dp-muted-strong) 28%, var(--dp-fg) 72%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-meta-pill svg {
+  color: color-mix(in oklab, var(--sg-ota-label) 88%, var(--dp-fg) 12%);
+  opacity: 0.92;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-card-spacer {
+  flex: 1 1 auto;
+  min-height: 0.5rem;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-card-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1.0625rem;
+  padding-top: 1.0625rem;
+  border-top: 1px solid color-mix(in oklab, var(--sg-card-stroke) 38%, var(--sg-rule-soft) 62%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-price-label {
+  margin: 0 0 0.125rem;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-price {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.024em;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1, 'kern' 1;
+  color: var(--dp-fg);
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-related-price {
+    font-size: 1.125rem;
+    letter-spacing: -0.026em;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-arrow {
+  display: flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 78%, transparent);
+  background: linear-gradient(180deg, #ffffff 0%, #fafaf8 100%);
+  color: color-mix(in oklab, var(--sg-ota-label) 70%, var(--dp-fg) 30%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.98) inset;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tour-detail-premium.sg-dp-theme a.group:hover .sg-dp-related-arrow,
+.tour-detail-premium.sg-dp-theme a.group:focus-visible .sg-dp-related-arrow {
+  border-color: color-mix(in oklab, var(--sg-card-stroke) 92%, var(--dp-fg) 8%);
+  color: var(--dp-fg);
+  background: linear-gradient(180deg, #ffffff 0%, #f3f3f0 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 2px 6px rgba(15, 23, 42, 0.05);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-view-all {
+  color: color-mix(in oklab, var(--dp-muted-strong) 45%, var(--dp-fg) 55%);
+  transition: color 0.18s ease;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-view-all:hover {
+  color: var(--dp-fg);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-related-discovery-card .sg-dp-related-card-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
+  padding: 1.0625rem 1.0625rem 1.1875rem;
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-related-discovery-card .sg-dp-related-card-body {
+    padding: 1.125rem 1.25rem 1.4375rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-section-card.sg-float-card {
+  border-radius: var(--sg-card-r-panel);
+  border-color: var(--sg-card-stroke);
+  box-shadow: var(--sg-shadow-surface);
+}
+
+/* Hero policy chips — matte OTA pills inside glass sheet (Phase 4) */
+.tour-detail-premium.sg-dp-theme .sg-dp-policy-chip {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0.375rem 0.625rem;
+  border-radius: 10px;
+  border: 1px solid var(--sg-ota-border);
+  background-color: var(--sg-ota-surface);
+  box-shadow: var(--sg-ota-shadow);
+  font-size: var(--sg-type-caption);
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--dp-fg);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-caption {
+  font-size: var(--sg-type-caption);
+  line-height: 1.44;
+  font-weight: 500;
+  color: color-mix(in oklab, var(--sg-ota-label) 76%, var(--dp-fg) 24%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-lead {
+  font-size: var(--sg-type-lead);
+}
+
+/* ─── Type roles (Step 4 + Step 6 editorial hierarchy) ─── */
+.tour-detail-premium.sg-dp-theme .sg-dp-type-hero-title {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(2rem, 5vw + 0.82rem, 2.9375rem);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.034em;
+  text-wrap: balance;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.12),
+    0 8px 28px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-hero-title {
+    line-height: 1.08;
+    letter-spacing: -0.032em;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-hero-meta {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.48;
+  letter-spacing: -0.012em;
+  font-variant-numeric: tabular-nums;
+}
+
+/** Poster deck: supporting line under title — calm measure, controlled clamp */
+.tour-detail-premium.sg-dp-theme .sg-dp-hero-poster-dek {
+  line-height: 1.54;
+  color: color-mix(in oklab, white 90%, transparent);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-hero-meta {
+    font-size: 0.875rem;
+  }
+
+  .tour-detail-premium.sg-dp-theme .sg-dp-hero-poster-dek {
+    line-height: 1.6;
+    -webkit-line-clamp: 3;
+  }
+}
+
+/** Single optical column: hero stack aligns to page gutter start (mobile) */
+.tour-detail-premium.sg-dp-theme .sg-dp-hero-poster-column {
+  min-width: 0;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-hero-card {
+  font-size: var(--sg-type-body-lg);
+  line-height: 1.65;
+  letter-spacing: -0.011em;
+  font-weight: 400;
+  color: color-mix(in oklab, var(--dp-muted-strong) 82%, var(--dp-fg) 18%);
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-hero-card {
+    font-size: 1rem;
+    line-height: 1.64;
+    max-width: 42rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-section-h2 {
+  margin: 0;
+  font-size: var(--sg-type-h2);
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.024em;
+  color: var(--dp-fg);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-section-h2 {
+    font-size: var(--sg-type-h2-lg);
+    line-height: 1.14;
+  }
+}
+
+/** Section chrome from SmallGroupSectionHeader — same tier as .sg-dp-section-h2 */
+.tour-detail-premium.sg-dp-theme .sg-dp-type-section-eyebrow {
+  font-size: var(--sg-type-caption);
+  font-weight: 600;
+  line-height: 1.38;
+  text-transform: uppercase;
+  letter-spacing: 0.088em;
+  color: color-mix(in oklab, var(--sg-ota-label) 72%, var(--dp-fg) 28%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-section-title {
+  margin: 0;
+  font-size: var(--sg-type-h2);
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.024em;
+  color: var(--dp-fg);
+  text-wrap: balance;
+}
+
+@media (max-width: 639px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-section-title {
+    font-size: 1.625rem;
+    letter-spacing: -0.026em;
+    line-height: 1.15;
+  }
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-section-title {
+    font-size: var(--sg-type-h2-lg);
+    line-height: 1.14;
+  }
+}
+
+/** Secondary narrative H2 — between full feature title and card H3 (Seasonal, At a Glance) */
+.tour-detail-premium.sg-dp-theme .sg-dp-type-section-title-secondary {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.26;
+  letter-spacing: -0.02em;
+  color: color-mix(in oklab, var(--dp-fg) 96%, var(--dp-muted-strong));
+  text-wrap: balance;
+}
+
+@media (max-width: 639px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-section-title-secondary {
+    font-size: 1.1875rem;
+    line-height: 1.27;
+    letter-spacing: -0.018em;
+    font-weight: 600;
+    color: color-mix(in oklab, var(--dp-fg) 95%, var(--dp-muted-strong));
+  }
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-section-title-secondary {
+    font-size: 1.375rem;
+    line-height: 1.24;
+  }
+}
+
+/** Support / utility section titles (Practical, FAQ, related) — calmer than narrative H2 */
+.tour-detail-premium.sg-dp-theme .sg-dp-type-section-heading-support {
+  margin: 0;
+  font-size: var(--sg-type-h3);
+  font-weight: 600;
+  line-height: 1.32;
+  letter-spacing: -0.017em;
+  color: color-mix(in oklab, var(--dp-fg) 96%, var(--dp-muted-strong));
+  text-wrap: pretty;
+}
+
+@media (max-width: 639px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-section-heading-support {
+    font-size: 1rem;
+    line-height: 1.36;
+    letter-spacing: -0.014em;
+    font-weight: 600;
+    color: color-mix(in oklab, var(--dp-fg) 94%, var(--dp-muted-strong));
+  }
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-section-heading-support {
+    font-size: var(--sg-type-h3-lg);
+    line-height: 1.3;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-utility-section-eyebrow {
+  font-size: var(--sg-type-caption);
+  font-weight: 600;
+  line-height: 1.38;
+  text-transform: uppercase;
+  letter-spacing: 0.085em;
+  color: color-mix(in oklab, var(--sg-ota-label) 74%, var(--dp-fg) 26%);
+}
+
+@media (max-width: 639px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-utility-section-eyebrow {
+    font-size: 0.65625rem;
+    letter-spacing: 0.082em;
+    color: color-mix(in oklab, var(--sg-ota-label) 76%, var(--dp-fg) 24%);
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-section-desc {
+  margin: 0;
+  margin-top: 0.625rem;
+  font-size: var(--sg-type-body-lg);
+  line-height: 1.6;
+  font-weight: 400;
+  color: color-mix(in oklab, var(--dp-muted) 86%, var(--dp-fg) 14%);
+  text-wrap: pretty;
+  max-width: 40rem;
+}
+
+@media (max-width: 639px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-section-desc {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.58;
+  }
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-section-desc {
+    margin-top: 0.75rem;
+    font-size: 0.9375rem;
+    line-height: 1.62;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-section-lead {
+  font-size: var(--sg-type-body-lg);
+  line-height: 1.6;
+  font-weight: 400;
+  color: color-mix(in oklab, var(--dp-muted) 86%, var(--dp-fg) 14%);
+  max-width: 40rem;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-section-lead {
+    font-size: 1rem;
+    line-height: 1.62;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-subsection {
+  margin: 0;
+  font-size: var(--sg-type-h3);
+  font-weight: 600;
+  line-height: 1.32;
+  letter-spacing: -0.019em;
+  color: color-mix(in oklab, var(--dp-fg) 97%, var(--dp-muted-strong));
+}
+
+@media (max-width: 639px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-subsection {
+    font-size: 1rem;
+    line-height: 1.34;
+    letter-spacing: -0.016em;
+    font-weight: 600;
+    color: color-mix(in oklab, var(--dp-fg) 95%, var(--dp-muted-strong));
+  }
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-subsection {
+    font-size: var(--sg-type-h3-lg);
+    line-height: 1.3;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-card-title {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.38;
+  letter-spacing: -0.016em;
+  color: var(--dp-fg);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-card-title {
+    font-size: 1rem;
+  }
+}
+
+/** Featured stop / product-style card titles (timeline, related tours) */
+.tour-detail-premium.sg-dp-theme .sg-dp-card-title--feature {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.32;
+  letter-spacing: -0.021em;
+  color: var(--dp-fg);
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-card-title--feature {
+    font-size: 1.0625rem;
+    line-height: 1.28;
+    letter-spacing: -0.022em;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-body {
+  font-size: var(--sg-type-body-sm);
+  line-height: 1.65;
+  font-weight: 400;
+  color: color-mix(in oklab, var(--dp-muted) 86%, var(--dp-fg) 14%);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-body {
+    font-size: var(--sg-type-body);
+    line-height: 1.66;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-body-strong {
+  font-size: var(--sg-type-body-sm);
+  line-height: 1.65;
+  font-weight: 400;
+  color: color-mix(in oklab, var(--dp-muted-strong) 84%, var(--dp-fg) 16%);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-body-strong {
+    font-size: var(--sg-type-body);
+    line-height: 1.66;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-meta {
+  font-size: var(--sg-type-meta);
+  line-height: 1.48;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: color-mix(in oklab, var(--sg-ota-label) 78%, var(--dp-fg) 22%);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-meta {
+    font-size: var(--sg-type-meta-lg);
+    line-height: 1.47;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-label-caps {
+  font-size: var(--sg-type-caption);
+  font-weight: 600;
+  line-height: 1.38;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+  color: color-mix(in oklab, var(--sg-ota-label) 72%, var(--dp-fg) 28%);
+}
+
+/** Itinerary CTA eyebrow — slightly more ink than generic label-caps (Step 10) */
+.tour-detail-premium.sg-dp-theme .sg-dp-type-label-caps.sg-dp-itin-cta-eyebrow {
+  color: color-mix(in oklab, var(--dp-fg) 86%, var(--sg-ota-label) 14%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-accordion {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.38;
+  letter-spacing: -0.012em;
+  color: var(--dp-fg);
+}
+
+@media (max-width: 639px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-accordion {
+    font-size: 0.875rem;
+    line-height: 1.42;
+    letter-spacing: -0.01em;
+    color: color-mix(in oklab, var(--dp-fg) 97%, var(--dp-muted-strong));
+  }
+}
+
+/** Accordion trigger variants — after .sg-dp-type-accordion so sizing wins (Step 5) */
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-item-trigger.sg-dp-accordion-trigger--practical {
+  font-size: 0.875rem;
+  letter-spacing: -0.014em;
+  line-height: 1.38;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-accordion-item-trigger.sg-dp-accordion-trigger--practical {
+    font-size: 0.9375rem;
+    line-height: 1.36;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-accordion-item-trigger.sg-dp-accordion-trigger--faq {
+  line-height: 1.42;
+  letter-spacing: -0.016em;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-itin-cta {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.022em;
+  color: var(--dp-fg);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-itin-cta {
+    font-size: 1.125rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-itin-sub {
+  font-size: var(--sg-type-body-sm);
+  line-height: 1.48;
+  font-weight: 500;
+  color: color-mix(in oklab, var(--dp-muted-strong) 88%, var(--dp-fg) 12%);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-itin-sub {
+    font-size: var(--sg-type-body);
+  }
+}
+
+/** Guest quotes — no italic; quiet editorial emphasis */
+.tour-detail-premium.sg-dp-theme .sg-dp-pullquote {
+  font-style: normal;
+  letter-spacing: -0.012em;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-body-strong.sg-dp-pullquote {
+  color: color-mix(in oklab, var(--dp-fg) 90%, var(--dp-muted-strong) 10%);
+}
+
+/** Muted footnotes / cross-links row — readable, still secondary to body */
+.tour-detail-premium.sg-dp-theme .sg-dp-type-support-note {
+  font-size: var(--sg-type-meta);
+  line-height: 1.5;
+  font-weight: 500;
+  color: color-mix(in oklab, var(--dp-muted) 66%, var(--dp-fg) 34%);
+  max-width: 42rem;
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-support-note--center-md {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-inline-text-link {
+  font-weight: 600;
+  color: color-mix(in oklab, var(--dp-muted-strong) 42%, var(--dp-fg) 58%);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--sg-card-stroke) 50%, var(--dp-fg) 50%);
+  text-underline-offset: 2px;
+  transition:
+    color 0.15s ease,
+    text-decoration-color 0.15s ease;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-inline-text-link:hover {
+  color: var(--dp-fg);
+  text-decoration-color: color-mix(in oklab, var(--dp-fg) 50%, transparent);
+}
+
+/** Under standard-tier section titles — calmer than full section desc */
+.tour-detail-premium.sg-dp-theme .sg-dp-type-body-quiet {
+  line-height: 1.64;
+  color: color-mix(in oklab, var(--dp-muted) 88%, var(--dp-fg) 12%);
+}
+
+/** At a Glance: label/value — aligned with stop-sequence caps + commerce stat scan */
+.tour-detail-premium.sg-dp-theme .sg-dp-type-glance-dimension {
+  margin: 0;
+  font-size: var(--sg-type-caption);
+  font-weight: 600;
+  line-height: 1.38;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--sg-ota-label) 72%, var(--dp-fg) 28%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-glance-stat {
+  margin: 0.25rem 0 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.34;
+  letter-spacing: -0.022em;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1, 'kern' 1, 'liga' 1;
+  color: var(--dp-fg);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-glance-stat {
+    font-size: 0.875rem;
+    line-height: 1.3;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-glance-dimension--inverse {
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-glance-stat--inverse {
+  color: rgba(255, 255, 255, 0.97);
+}
+
+/** Legacy glance type names — kept for any external use; prefer dimension/stat in grid */
+.tour-detail-premium.sg-dp-theme .sg-dp-type-glance-label {
+  font-size: var(--sg-type-body-sm);
+  font-weight: 600;
+  line-height: 1.28;
+  letter-spacing: -0.014em;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-glance-label {
+    font-size: var(--sg-type-body);
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-glance-meta {
+  font-size: var(--sg-type-meta);
+  line-height: 1.48;
+  font-weight: 500;
+  color: color-mix(in oklab, var(--dp-muted) 82%, var(--dp-fg) 18%);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-type-glance-meta {
+    font-size: var(--sg-type-meta-lg);
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-glance-label--inverse {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-type-glance-meta--inverse {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-sticky-label {
+  font-size: var(--sg-type-caption);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--sg-ota-label) 86%, var(--dp-fg) 14%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-sticky-price {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.22;
+  letter-spacing: -0.021em;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1, 'kern' 1;
+  color: var(--dp-fg);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-sticky-meta {
+  font-size: var(--sg-type-meta-lg);
+  font-weight: 500;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1, 'kern' 1;
+  color: color-mix(in oklab, var(--dp-muted) 76%, var(--dp-fg) 24%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-sticky-total {
+  font-size: var(--sg-type-body-sm);
+  font-weight: 600;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+  color: var(--dp-fg);
+}
+
+/** Mobile sticky booking bar — aligned with page card language (Step 8) */
+.tour-detail-premium.sg-dp-theme .sg-dp-sticky-bar {
+  border-top: 1px solid var(--sg-rule-bar);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(252, 252, 251, 0.995) 100%);
+  backdrop-filter: blur(22px) saturate(1.04);
+  -webkit-backdrop-filter: blur(22px) saturate(1.04);
+  box-shadow:
+    0 -1px 0 rgba(255, 255, 255, 0.94),
+    0 -10px 38px -12px rgba(15, 23, 42, 0.11),
+    0 -4px 16px -6px rgba(15, 23, 42, 0.065);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-sticky-bar-inner {
+  padding-top: 0.875rem;
+  padding-bottom: max(0.875rem, env(safe-area-inset-bottom, 0px));
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-sticky-bar-inner {
+    padding-top: 1rem;
+    padding-bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-sticky-total-row {
+  margin-top: 0.25rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--sg-rule-soft);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-sticky-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.125rem;
+  padding: 0.8125rem 1.375rem;
+  border-radius: 0.9375rem;
+  border: 1px solid var(--sg-premium-ink-border);
+  background: linear-gradient(
+    180deg,
+    var(--sg-premium-ink-top) 0%,
+    var(--sg-premium-ink-bottom) 100%
+  );
+  box-shadow:
+    0 3px 14px -5px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.13);
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.18s ease-out;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-sticky-cta:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px color-mix(in oklab, #f8f8f5 92%, #ffffff),
+    0 0 0 4px color-mix(in oklab, var(--dp-fg) 22%, transparent),
+    0 5px 18px -6px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-sticky-cta:hover {
+  background: linear-gradient(
+    180deg,
+    var(--sg-premium-ink-hover-top) 0%,
+    var(--sg-premium-ink-hover-bottom) 100%
+  );
+  border-color: color-mix(in oklab, var(--sg-premium-ink-hover-top) 36%, transparent);
+  box-shadow:
+    0 6px 22px -8px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-sticky-cta:active {
+  transform: translateY(1px) scale(0.99);
+  opacity: 0.97;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-sticky-cta {
+    transition: none;
+  }
+
+  .tour-detail-premium.sg-dp-theme .sg-dp-sticky-cta:active {
+    transform: none;
+  }
+}
+
+/** Related / page tail — intentional close before site footer (Step 7 + Step 8: width lock with main grid) */
+.tour-detail-premium.sg-dp-theme .sg-dp-related-section {
+  min-width: 0;
+  border-top: 1px solid var(--sg-rule-whisper);
+  border-bottom: 1px solid color-mix(in oklab, var(--sg-rule-mid) 55%, var(--sg-card-stroke) 45%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-secondary) 22%, transparent) 0%,
+    transparent 30%,
+    transparent 78%,
+    color-mix(in oklab, #0f172a 4.5%, transparent) 100%
+  );
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-label-row {
+  font-size: var(--sg-type-caption);
+  font-weight: 600;
+  line-height: 1.38;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: color-mix(in oklab, var(--sg-ota-label) 78%, var(--dp-fg) 22%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-label-row--primary {
+  color: var(--dp-primary);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.02),
+    0 4px 16px -4px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-glass-elevated {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.02),
+    0 8px 32px -8px rgba(0, 0, 0, 0.08),
+    0 24px 48px -12px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/** Step 7 — desktop booking rail: conversion module inside glass */
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-rail-inner {
+  position: relative;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.55) inset,
+    0 1px 0 rgba(255, 255, 255, 0.98) inset;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-block {
+  --sg-booking-pad-x: 0;
+  padding-left: var(--sg-booking-pad-x);
+  padding-right: var(--sg-booking-pad-x);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-price-well {
+  margin-bottom: 1.25rem;
+  padding: 0.9375rem 1rem 1.0625rem;
+  border-radius: calc(var(--sg-card-r-nested) + 3px);
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 72%, transparent);
+  background: linear-gradient(165deg, #ffffff 0%, #fafaf8 55%, #f5f5f2 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.97) inset,
+    0 1px 2px rgba(15, 23, 42, 0.028),
+    0 10px 28px -12px rgba(15, 23, 42, 0.07);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-price-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.5rem;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-price-figure {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.034em;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1, 'kern' 1;
+  color: var(--dp-fg);
+}
+
+@media (min-width: 1024px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-booking-price-figure {
+    font-size: 2.125rem;
+    letter-spacing: -0.036em;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-price-suffix {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.38;
+  color: color-mix(in oklab, var(--dp-muted) 76%, var(--dp-fg) 24%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-total-preview {
+  margin: 0.625rem 0 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+  color: var(--dp-fg);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-scarcity {
+  margin: 0.5rem 0 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.42;
+  font-variant-numeric: tabular-nums;
+  color: color-mix(in oklab, var(--dp-muted-strong) 48%, var(--dp-fg) 52%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-scarcity--urgent {
+  color: color-mix(in oklab, oklch(0.45 0.14 35) 75%, var(--dp-fg) 25%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-scarcity--alert {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: color-mix(in oklab, oklch(0.48 0.16 25) 82%, var(--dp-fg) 18%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-field-label {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-input {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.625rem;
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 85%, transparent);
+  background: linear-gradient(180deg, #ffffff 0%, #fcfcfb 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.96) inset, 0 1px 2px rgba(15, 23, 42, 0.022);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--dp-fg);
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-input:focus {
+  border-color: color-mix(in oklab, var(--dp-primary) 42%, var(--sg-card-stroke));
+  box-shadow:
+    0 0 0 2px color-mix(in oklab, var(--dp-primary) 18%, transparent),
+    0 1px 0 rgba(255, 255, 255, 0.96) inset;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-inset {
+  border-radius: 0.625rem;
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 70%, transparent);
+  background: linear-gradient(180deg, #ffffff 0%, #fafaf8 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.94) inset, 0 1px 2px rgba(15, 23, 42, 0.02);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-stepper-value {
+  min-width: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+  color: var(--dp-fg);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-icon-btn {
+  display: flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.625rem;
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 78%, transparent);
+  background: linear-gradient(180deg, #ffffff 0%, #f4f4f1 100%);
+  color: var(--dp-fg);
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-icon-btn:hover:not(:disabled) {
+  background: linear-gradient(180deg, #fafaf8 0%, #eceae7 100%);
+  border-color: color-mix(in oklab, var(--sg-card-stroke) 92%, transparent);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-icon-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-booking-icon-btn:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-pickup-detail {
+  margin-top: 0.5rem;
+  padding: 0.75rem 0.875rem;
+  border-radius: 0.625rem;
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 70%, transparent);
+  background: linear-gradient(180deg, #ffffff 0%, #fafaf8 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.94) inset, 0 1px 2px rgba(15, 23, 42, 0.02);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-pickup-detail .sg-dp-booking-pickup-name {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+  color: var(--dp-fg);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-pickup-detail .sg-dp-booking-pickup-address {
+  margin: 0.25rem 0 0;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: color-mix(in oklab, var(--dp-muted) 88%, var(--dp-fg) 12%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-card-group {
+  margin-top: 1.25rem;
+  overflow: hidden;
+  border-radius: calc(var(--sg-card-r-nested) + 4px);
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 68%, transparent);
+  background: linear-gradient(180deg, #fdfdfc 0%, #f6f6f3 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.94) inset,
+    0 1px 2px rgba(15, 23, 42, 0.026),
+    0 8px 24px -10px rgba(15, 23, 42, 0.06);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-ledger-pane {
+  padding: 1rem 1rem 0.875rem;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-ledger-pane + .sg-dp-booking-ledger-pane {
+  border-top: 1px solid var(--sg-rule-soft);
+  padding-top: 0.875rem;
+  padding-bottom: 1rem;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-ledger-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: color-mix(in oklab, var(--dp-muted) 85%, var(--dp-fg) 15%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-ledger-row strong,
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-ledger-row .tabular-nums {
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+  color: var(--dp-fg);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-ledger-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--sg-rule-mid);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-ledger-total-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--sg-ota-label) 72%, var(--dp-fg) 28%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-ledger-total-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+  color: var(--dp-fg);
+}
+
+@media (min-width: 1024px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-booking-ledger-total-value {
+    font-size: 1.625rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-payment-eyebrow {
+  margin: 0 0 0.375rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--sg-ota-label) 75%, var(--dp-fg) 25%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-payment-title {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.014em;
+  color: var(--dp-fg);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-payment-note {
+  margin: 0.25rem 0 0;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: color-mix(in oklab, var(--dp-muted) 88%, var(--dp-fg) 12%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-trust-footnotes {
+  margin-top: 1rem;
+  padding-top: 0.875rem;
+  border-top: 1px solid var(--sg-rule-whisper);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-trust-line {
+  margin: 0;
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: color-mix(in oklab, var(--sg-ota-label) 82%, var(--dp-fg) 18%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-trust-line + .sg-dp-booking-trust-line {
+  margin-top: 0.5rem;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-primary-cta {
+  margin-top: 1.125rem;
+  width: 100%;
+  min-height: 3.125rem;
+  padding: 0.9375rem 1.375rem;
+  border-radius: 0.9375rem;
+  border: 1px solid var(--sg-premium-ink-border);
+  background: linear-gradient(
+    180deg,
+    var(--sg-premium-ink-top) 0%,
+    var(--sg-premium-ink-bottom) 100%
+  );
+  color: var(--dp-bg);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.016em;
+  line-height: 1.25;
+  box-shadow:
+    0 4px 20px -7px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition:
+    opacity 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-primary-cta:hover:not(:disabled) {
+  background: linear-gradient(
+    180deg,
+    var(--sg-premium-ink-hover-top) 0%,
+    var(--sg-premium-ink-hover-bottom) 100%
+  );
+  border-color: color-mix(in oklab, var(--sg-premium-ink-hover-top) 34%, transparent);
+  box-shadow:
+    0 8px 26px -10px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.13);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-primary-cta:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-primary-cta:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px color-mix(in oklab, #f8f8f5 92%, #ffffff),
+    0 0 0 4px color-mix(in oklab, var(--dp-fg) 22%, transparent),
+    0 6px 22px -8px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-booking-primary-cta:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+}
+
+/** Mobile sheet — primary confirm aligned with desktop CTA (Step 8: same min height as rail primary) */
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-sheet-primary-cta {
+  min-height: 3.125rem;
+  flex: 1.2;
+  border-radius: 0.9375rem;
+  border: 1px solid var(--sg-premium-ink-border);
+  background: linear-gradient(
+    180deg,
+    var(--sg-premium-ink-top) 0%,
+    var(--sg-premium-ink-bottom) 100%
+  );
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.014em;
+  color: var(--dp-bg);
+  box-shadow:
+    0 5px 22px -9px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition:
+    opacity 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-sheet-primary-cta:hover:not(:disabled) {
+  background: linear-gradient(
+    180deg,
+    var(--sg-premium-ink-hover-top) 0%,
+    var(--sg-premium-ink-hover-bottom) 100%
+  );
+  border-color: color-mix(in oklab, var(--sg-premium-ink-hover-top) 34%, transparent);
+  box-shadow:
+    0 8px 28px -12px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.13);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-sheet-primary-cta:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-booking-sheet-primary-cta:active:not(:disabled) {
+    transform: scale(0.99);
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-sheet-secondary-cta {
+  min-height: 3rem;
+  flex: 1;
+  border-radius: 0.875rem;
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 80%, transparent);
+  background: linear-gradient(180deg, #ffffff 0%, #fafaf8 100%);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--dp-fg);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.96) inset, 0 1px 2px rgba(15, 23, 42, 0.04);
+  transition: background-color 0.18s ease;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-sheet-secondary-cta:hover {
+  background: linear-gradient(180deg, #fcfcfb 0%, #f3f3f0 100%);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-sheet-total-pill {
+  margin-bottom: 0.5rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.625rem;
+  border: 1px solid color-mix(in oklab, var(--sg-card-stroke) 65%, transparent);
+  background: linear-gradient(165deg, #ffffff 0%, #f7f7f4 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-booking-sheet-total-pill p {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+  color: var(--dp-fg);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--sg-rule-fade) 50%,
+    transparent 100%
+  );
+}
+
+/** Step 4 — mid/lower section pacing: tiered vertical rhythm + softer separators */
+.tour-detail-premium.sg-dp-theme .sg-dp-section-rule-soft {
+  border-top: 1px solid var(--sg-rule-whisper);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-section-band-primary {
+  padding-top: var(--sg-v-band-major);
+  padding-bottom: var(--sg-v-band-major);
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-section-band-primary {
+    padding-top: var(--sg-v-band-major-lg);
+    padding-bottom: var(--sg-v-band-major-lg);
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-section-band-secondary {
+  padding-top: var(--sg-v-band-secondary);
+  padding-bottom: var(--sg-v-band-secondary);
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-section-band-secondary {
+    padding-top: var(--sg-v-band-secondary-lg);
+    padding-bottom: var(--sg-v-band-secondary-lg);
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-section-band-utility {
+  padding-top: var(--sg-v-band-utility);
+  padding-bottom: var(--sg-v-band-utility);
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-section-band-utility {
+    padding-top: var(--sg-v-band-utility-lg);
+    padding-bottom: var(--sg-v-band-utility-lg);
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-section-band-reassurance {
+  padding-top: var(--sg-v-band-major);
+  padding-bottom: var(--sg-v-band-major);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-secondary) 38%, transparent) 0%,
+    color-mix(in oklab, var(--dp-secondary) 12%, transparent) 28%,
+    transparent 72%
+  );
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-section-band-reassurance {
+    padding-top: var(--sg-v-band-major-lg);
+    padding-bottom: var(--sg-v-band-major-lg);
+  }
+}
+
+/** Step 7 — reassurance → FAQ: a touch more foot room so the trust chapter doesn’t feel rushed */
+.tour-detail-premium.sg-dp-theme section.sg-dp-mid-slot-reassurance.sg-dp-section-band-reassurance {
+  padding-bottom: calc(var(--sg-v-band-major) + 0.375rem);
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme section.sg-dp-mid-slot-reassurance.sg-dp-section-band-reassurance {
+    padding-bottom: calc(var(--sg-v-band-major-lg) + 0.5rem);
+  }
+}
+
+/** Hero image — layered scrims: keep photo readable, stabilize type without a flat muddy wash */
+.tour-detail-premium.sg-dp-theme .sg-dp-hero-scrim-stack {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-hero-scrim-stack > * {
+  position: absolute;
+  inset: 0;
+}
+
+/* Soft top cap — reduces sky blowout, stays transparent mid-frame */
+.tour-detail-premium.sg-dp-theme .sg-dp-hero-scrim-top {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, #0c0b0a 38%, transparent) 0%,
+    transparent 42%
+  );
+}
+
+/* Gentle side depth — editorial frame, very light */
+.tour-detail-premium.sg-dp-theme .sg-dp-hero-scrim-sides {
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, #0c0b0a 22%, transparent) 0%,
+    transparent 18%,
+    transparent 82%,
+    color-mix(in oklab, #0c0b0a 22%, transparent) 100%
+  );
+}
+
+/* Bottom lift for legibility — warm neutral, not pure black */
+.tour-detail-premium.sg-dp-theme .sg-dp-hero-scrim-base {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 32%,
+    color-mix(in oklab, #1c1917 12%, transparent) 58%,
+    color-mix(in oklab, #1c1917 28%, transparent) 78%,
+    color-mix(in oklab, #1c1917 52%, transparent) 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-hero-scrim-base {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 40%,
+      color-mix(in oklab, #1c1917 10%, transparent) 64%,
+      color-mix(in oklab, #1c1917 22%, transparent) 82%,
+      color-mix(in oklab, #1c1917 46%, transparent) 100%
+    );
+  }
+}
+
+/** Step 1 — hero → intro card: image fades into page canvas (no hard cut to body) */
+.tour-detail-premium.sg-dp-theme .sg-dp-hero-canvas-fade {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  height: min(42%, 7rem);
+  background: linear-gradient(
+    180deg,
+    rgba(253, 253, 252, 0) 0%,
+    rgba(248, 248, 245, 0.06) 22%,
+    rgba(248, 248, 245, 0.42) 58%,
+    #f8f8f5 100%
+  );
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-hero-canvas-fade {
+    height: min(44%, 10rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-hero-canvas-fade {
+    height: min(38%, 11.5rem);
+  }
+}
+
+/** Subtitle card: slightly deeper deck read vs body cards; seams into hero fade */
+.tour-detail-premium.sg-dp-theme .sg-dp-hero-intro-card.sg-ota-card {
+  box-shadow: var(--sg-shadow-hero-intro);
+  border-color: color-mix(in oklab, var(--sg-card-stroke) 94%, rgba(28, 25, 23, 0.04));
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbf9 100%);
+  border-radius: calc(var(--sg-card-r-panel) + 2px);
+}
+
+/** Pull itinerary CTA into the same vertical stack as hero intro card */
+.tour-detail-premium.sg-dp-theme .sg-dp-intro-itinerary-wrap {
+  margin-top: -0.375rem;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-intro-itinerary-wrap {
+    margin-top: -0.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-intro-itinerary-wrap {
+    margin-top: -0.625rem;
+  }
+}
+
+/** At a Glance: softer than flat section-rule — tint + whisper border */
+.tour-detail-premium.sg-dp-theme .sg-dp-intro-to-glance-rule {
+  border-top: 1px solid var(--sg-rule-subtle);
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-secondary) 28%, transparent) 0%,
+    transparent 1.25rem
+  );
+}
+
+/** Hero + intro card + itinerary CTA + glance — one composed product column (mobile-first) */
+.tour-detail-premium.sg-dp-theme .sg-dp-product-intro-system {
+  position: relative;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-product-intro-system .sg-dp-intro-itinerary-wrap {
+  margin-top: -0.625rem;
+  padding-bottom: 0;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-product-intro-system .sg-dp-intro-itinerary-wrap {
+    margin-top: -0.5625rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-product-intro-system .sg-dp-intro-itinerary-wrap {
+    margin-top: -0.6875rem;
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-product-intro-system .sg-dp-type-hero-card {
+  color: color-mix(in oklab, var(--dp-fg) 82%, var(--dp-muted-strong));
+}
+
+/** Hero intro card (below fold): softer deck read — no near-black body */
+.tour-detail-premium.sg-dp-theme
+  .sg-dp-product-intro-system
+  .sg-dp-hero-intro-card.sg-ota-card
+  .sg-dp-type-hero-card {
+  color: var(--dp-muted-strong);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-product-intro-system .sg-dp-itin-cta-inner {
+  padding-top: 0.8125rem;
+  padding-bottom: 0.8125rem;
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-product-intro-system .sg-dp-itin-cta-inner {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/** Glance following itinerary: softer seam + tighter vertical rhythm */
+.tour-detail-premium.sg-dp-theme .sg-dp-glance--product-intro {
+  border-top: 1px solid var(--sg-rule-whisper);
+  padding-top: var(--sg-v-lg);
+  padding-bottom: var(--sg-v-2xl);
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-secondary) 22%, transparent) 0%,
+    transparent var(--sg-v-md)
+  );
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-glance--product-intro {
+    padding-top: var(--sg-v-xl);
+    padding-bottom: var(--sg-v-2xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-glance--product-intro {
+    padding-top: var(--sg-v-xl);
+    padding-bottom: var(--sg-v-2xl);
+  }
+}
+
+/**
+ * At a Glance in the product-intro stack: base section also carries .sg-dp-intro-to-glance-rule,
+ * which duplicated border-top + gradients. Unify to one calm seam after itinerary.
+ */
+.tour-detail-premium.sg-dp-theme section.sg-dp-glance--product-intro.sg-dp-intro-to-glance-rule {
+  border-top: 1px solid var(--sg-rule-whisper);
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-secondary) 18%, transparent) 0%,
+    transparent 1.125rem
+  );
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-glance--product-intro .sg-dp-glance-panel {
+  box-shadow: var(--sg-shadow-surface-hover);
+}
+
+/* Section rhythm — optional top rule when removing full-bleed section tints */
+.tour-detail-premium.sg-dp-theme .sg-dp-section-rule {
+  border-top: 1px solid var(--sg-rule-soft);
+}
+
+/* ─── Narrative pacing (mid-page: major vs support vs policy tail) ─── */
+
+/** Extra air before the first major editorial chapter after the intro stack */
+.tour-detail-premium.sg-dp-theme .sg-dp-narrative-chapter-major {
+  padding-top: var(--sg-v-md);
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-narrative-chapter-major {
+    padding-top: var(--sg-v-lg);
+  }
+}
+
+/** Major selling: hero-adjacent stack — small tail of air before “Why this route” */
+@media (max-width: 639px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-major-selling-intro {
+    padding-bottom: var(--sg-v-xs);
+  }
+}
+
+/** Major chapter: “Why this route works” — slightly more vertical presence than utility bands */
+.tour-detail-premium.sg-dp-theme .sg-dp-narrative-chapter-major .sg-dp-section-band-primary {
+  padding-top: var(--sg-v-band-chapter);
+  padding-bottom: var(--sg-v-band-chapter);
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-narrative-chapter-major .sg-dp-section-band-primary {
+    padding-top: var(--sg-v-band-chapter-lg);
+    padding-bottom: var(--sg-v-band-chapter-lg);
+  }
+}
+
+/** Supporting informational mid-page: utility bands without slot classes only */
+@media (max-width: 639px) {
+  .tour-detail-premium.sg-dp-theme
+    section.sg-dp-section-supporting-mid.sg-dp-section-band-utility:not(.sg-dp-mid-slot-practical):not(.sg-dp-mid-slot-faq) {
+    padding-top: var(--sg-v-band-utility-tight);
+    padding-bottom: var(--sg-v-band-utility-tight);
+  }
+
+  .tour-detail-premium.sg-dp-theme section.sg-dp-mid-slot-faq .sg-dp-faq-intro-block {
+    margin-bottom: var(--sg-v-md);
+    padding-bottom: var(--sg-v-sm);
+    border-bottom: 1px solid color-mix(in oklab, var(--sg-rule-subtle) 68%, transparent);
+  }
+}
+
+/** Seasonal inside conditions cluster: nudge hue only (size handled by .sg-dp-type-section-title-secondary mobile) */
+.tour-detail-premium.sg-dp-theme .sg-dp-conditions-supporting-chapter .sg-dp-type-section-title-secondary {
+  color: color-mix(in oklab, var(--dp-fg) 91%, var(--dp-muted-strong));
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-conditions-supporting-chapter .sg-dp-type-section-title-secondary {
+    color: color-mix(in oklab, var(--dp-fg) 94%, var(--dp-muted-strong));
+  }
+}
+
+/** Weather + seasonal read as one “conditions” chapter (lighter, grouped) */
+.tour-detail-premium.sg-dp-theme .sg-dp-narrative-cluster-conditions {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: var(--sg-v-lg);
+  padding-bottom: var(--sg-v-md);
+  border-radius: 0;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-secondary) 10%, transparent) 0%,
+    color-mix(in oklab, var(--dp-secondary) 3.5%, transparent) 52%,
+    transparent 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-narrative-cluster-conditions {
+    padding-top: var(--sg-v-xl);
+    padding-bottom: var(--sg-v-lg);
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-narrative-cluster-conditions .sg-dp-section-rule-soft {
+  border-top-width: 0;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-narrative-cluster-conditions .sg-dp-section-band-secondary {
+  padding-top: var(--sg-v-sm);
+  padding-bottom: var(--sg-v-lg);
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-narrative-cluster-conditions .sg-dp-section-band-secondary {
+    padding-top: var(--sg-v-md);
+    padding-bottom: var(--sg-v-xl);
+  }
+}
+
+/** Weather: chrome lives on .sg-dp-weather-premium (TourWeatherSection premium) */
+
+/** Practical (utility) before reassurance: slightly tighter handoff to trust chapter */
+.tour-detail-premium.sg-dp-theme section.sg-dp-section-band-utility:has(+ section.sg-dp-section-band-reassurance) {
+  padding-bottom: var(--sg-v-lg);
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme section.sg-dp-section-band-utility:has(+ section.sg-dp-section-band-reassurance) {
+    padding-bottom: var(--sg-v-xl);
+  }
+}
+
+/** FAQ immediately after reassurance: single soft join, no double hairline */
+.tour-detail-premium.sg-dp-theme section.sg-dp-section-band-reassurance + section.sg-dp-narrative-faq-placed.sg-dp-section-rule-soft {
+  border-top-width: 0;
+}
+
+.tour-detail-premium.sg-dp-theme section.sg-dp-section-band-reassurance + section.sg-dp-narrative-faq-placed {
+  padding-top: var(--sg-v-lg);
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme section.sg-dp-section-band-reassurance + section.sg-dp-narrative-faq-placed {
+    padding-top: 1.375rem;
+  }
+}
+
+/** Handoff from editorial tail to related tours */
+.tour-detail-premium.sg-dp-theme .sg-dp-related-section.sg-dp-narrative-related-anchor {
+  padding-top: var(--sg-v-band-chapter);
+  border-top: 1px solid var(--sg-rule-soft);
+  margin-top: var(--sg-v-xs);
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-related-section.sg-dp-narrative-related-anchor {
+    padding-top: var(--sg-v-band-chapter-lg);
+  }
+}
+
+/**
+ * Step 5 — mid-scroll editorial pacing (below first fold through FAQ):
+ * subtle spacing + restrained tone shifts so long mobile scroll reads as chapters, not identical cards.
+ */
+.tour-detail-premium.sg-dp-theme .sg-dp-mid-scroll-rhythm {
+  position: relative;
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-mid-scroll-rhythm > .sg-dp-narrative-chapter-major {
+  padding-bottom: var(--sg-v-sm);
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-mid-scroll-rhythm > .sg-dp-narrative-chapter-major {
+    padding-bottom: var(--sg-v-md);
+  }
+}
+
+/**
+ * Conditions cluster inside mid-scroll: pause after “Why this route” + slightly richer tint
+ * than the base .sg-dp-narrative-cluster-conditions (editorial “conditions” chapter).
+ */
+.tour-detail-premium.sg-dp-theme
+  .sg-dp-mid-scroll-rhythm
+  > .sg-dp-narrative-chapter-major
+  + .sg-dp-narrative-cluster-conditions {
+  margin-top: var(--sg-v-sm);
+  padding-top: calc(var(--sg-v-xl) + 0.375rem);
+  padding-bottom: calc(var(--sg-v-lg) + 0.375rem);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-secondary) 15%, transparent) 0%,
+    color-mix(in oklab, var(--dp-secondary) 5.5%, transparent) 48%,
+    transparent 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme
+    .sg-dp-mid-scroll-rhythm
+    > .sg-dp-narrative-chapter-major
+    + .sg-dp-narrative-cluster-conditions {
+    padding-top: calc(1.375rem + var(--sg-v-sm));
+    padding-bottom: calc(var(--sg-v-lg) + 0.3125rem);
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-mid-scroll-rhythm .sg-dp-cluster-weather-slot--paced {
+  padding-bottom: 0.375rem;
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme .sg-dp-mid-scroll-rhythm .sg-dp-cluster-weather-slot--paced {
+    padding-bottom: 0.5rem;
+  }
+}
+
+/** Practical: planning spec — soft cool lift + slightly stronger rule into utility stack */
+.tour-detail-premium.sg-dp-theme section.sg-dp-mid-slot-practical.sg-dp-section-rule-soft {
+  border-top-color: color-mix(in oklab, var(--sg-rule-subtle) 55%, var(--sg-rule-whisper) 45%);
+}
+
+.tour-detail-premium.sg-dp-theme section.sg-dp-mid-slot-practical {
+  padding-top: calc(var(--sg-v-band-utility) + 0.5rem);
+  padding-bottom: calc(var(--sg-v-band-utility) + 0.375rem);
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--dp-secondary) 12%, transparent) 0%,
+    transparent 58%
+  );
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme section.sg-dp-mid-slot-practical {
+    padding-top: calc(var(--sg-v-band-utility-lg) + 0.375rem);
+    padding-bottom: calc(var(--sg-v-band-utility-lg) + 0.25rem);
+  }
+}
+
+/** Reassurance: clean rule after practical (tint remains on band-reassurance) */
+.tour-detail-premium.sg-dp-theme section.sg-dp-mid-slot-reassurance.sg-dp-section-rule-soft {
+  border-top-color: var(--sg-rule-soft);
+}
+
+/** FAQ: policy tail — foot room + whisper close gradient (Step 7: slightly more air before related) */
+.tour-detail-premium.sg-dp-theme section.sg-dp-mid-slot-faq {
+  padding-bottom: calc(var(--sg-v-band-utility) + var(--sg-v-md) + 0.25rem);
+  background-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 52%,
+    color-mix(in oklab, var(--dp-secondary) 7.5%, transparent) 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .tour-detail-premium.sg-dp-theme section.sg-dp-mid-slot-faq {
+    padding-bottom: calc(var(--sg-v-band-utility-lg) + var(--sg-v-sm) + 0.375rem);
+  }
+}
+
+@media (min-width: 640px) {
+  .tour-detail-premium.sg-dp-theme section.sg-dp-mid-slot-faq .sg-dp-faq-intro-block {
+    margin-bottom: var(--sg-v-md);
+  }
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-text-muted {
+  color: var(--dp-muted);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-primary {
+  color: var(--dp-primary);
+}
+
+.tour-detail-premium.sg-dp-theme .sg-dp-bg-secondary-soft {
+  background-color: color-mix(in oklab, var(--dp-secondary) 40%, transparent);
+}
+
+/* Hotel map picker — light tone uses DM Sans with detailpage tokens */
+.hotel-map-picker-glass.tour-detail-premium.sg-dp-theme {
+  font-family: "DM Sans", var(--font-inter, system-ui), sans-serif;
+}
+
+/* Datepicker popper — slow reveal (open); unmount is instant (library limitation) */
+.sg-datepicker-popper-fade.react-datepicker-popper {
+  animation: sg-datepicker-reveal 0.62s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform-origin: top center;
+}
+
+@keyframes sg-datepicker-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Premium calendar skin — booking slate (popper carries .react-datepicker-booking-slate) */
+.react-datepicker-booking-slate .react-datepicker {
+  font-family: "DM Sans", var(--font-inter, system-ui), sans-serif;
+  border: 1px solid rgba(28, 25, 23, 0.08);
+  border-radius: 1rem;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.95) inset,
+    0 4px 6px rgba(0, 0, 0, 0.03),
+    0 24px 48px -12px rgba(0, 0, 0, 0.14),
+    0 48px 80px -24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.react-datepicker-booking-slate .react-datepicker__header {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(250, 250, 249, 0.96) 100%);
+  border-bottom: 1px solid rgba(28, 25, 23, 0.06);
+  padding-top: 0.85rem;
+}
+
+.react-datepicker-booking-slate .react-datepicker__current-month {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: oklch(0.12 0.01 30);
+  margin-bottom: 0.5rem;
+}
+
+.react-datepicker-booking-slate .react-datepicker__day-names {
+  margin-top: 0.25rem;
+}
+
+.react-datepicker-booking-slate .react-datepicker__day-name {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: oklch(0.45 0.01 30);
+  width: 2.25rem;
+  line-height: 2.25rem;
+}
+
+.react-datepicker-booking-slate .react-datepicker__day {
+  width: 2.25rem;
+  line-height: 2.25rem;
+  margin: 0.1rem;
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: oklch(0.2 0.01 30);
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.react-datepicker-booking-slate .react-datepicker__day:hover,
+.react-datepicker-booking-slate .react-datepicker__day--keyboard-selected {
+  background-color: color-mix(in oklab, oklch(0.28 0.045 170) 12%, transparent) !important;
+  color: oklch(0.12 0.01 30) !important;
+}
+
+.react-datepicker-booking-slate .react-datepicker__day--selected,
+.react-datepicker-booking-slate .react-datepicker__day--in-selecting-range,
+.react-datepicker-booking-slate .react-datepicker__day--in-range {
+  background: oklch(0.28 0.045 170) !important;
+  color: #fff !important;
+  font-weight: 600;
+  box-shadow: 0 4px 14px -4px color-mix(in oklab, oklch(0.28 0.045 170) 55%, transparent);
+}
+
+.react-datepicker-booking-slate .react-datepicker__day--outside-month {
+  color: oklch(0.72 0.01 30) !important;
+}
+
+.react-datepicker-booking-slate .react-datepicker__day--disabled {
+  color: oklch(0.78 0.01 30) !important;
+  opacity: 0.55;
+}
+
+.react-datepicker-booking-slate .react-datepicker__navigation {
+  top: 0.85rem;
+}
+
+.react-datepicker-booking-slate .react-datepicker__navigation-icon::before {
+  border-color: oklch(0.42 0.02 30) !important;
+}
+
+.react-datepicker-booking-slate .react-datepicker__navigation:hover .react-datepicker__navigation-icon::before {
+  border-color: oklch(0.28 0.045 170) !important;
+}
+
+.react-datepicker-booking-slate .react-datepicker__month-container {
+  float: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sg-datepicker-popper-fade.react-datepicker-popper {
+    animation: none;
+  }
+
+  .sg-mobile-booking-fade {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile booking sheet — panel motion (class applied in TSX) */
+@media (prefers-reduced-motion: no-preference) {
+  .sg-mobile-booking-panel {
+    transition:
+      opacity 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.52s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sg-mobile-booking-panel {
+    transition: opacity 0.15s ease;
+  }
+}
+
+/* Seasonal / “right for you” — editorial serif titles + floated panels */
+.tour-detail-premium .sg-editorial-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  font-feature-settings: "kern" 1, "liga" 1;
+  letter-spacing: -0.03em;
+}
+
+.tour-detail-premium .sg-section-float {
+  border-radius: 1.5rem;
+  border: 1px solid rgba(28, 25, 23, 0.065);
+  background-color: #ffffff;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.98) inset,
+    0 2px 8px rgba(0, 0, 0, 0.032),
+    0 20px 48px -16px rgba(0, 0, 0, 0.09),
+    0 40px 88px -32px rgba(0, 0, 0, 0.06);
+}

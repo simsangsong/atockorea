@@ -6,7 +6,18 @@ import DatePicker from 'react-datepicker';
 import { MapIcon } from '@/components/Icons';
 import { useTranslations } from '@/lib/i18n';
 import { useCurrencyOptional } from '@/lib/currency';
+import { BOOKING_CANCELLATION_SUMMARY_LINE } from '@/components/tour/bookingPolicy';
 import 'react-datepicker/dist/react-datepicker.css';
+
+export type BookingPanelSummary = {
+  hasDate: boolean;
+  guestCount: number;
+  unitPriceFormatted: string;
+  /** Raw KRW unit (before guest multiplier) for dual-currency sticky bar, etc. */
+  unitPriceKRW: number;
+  totalFormatted: string | null;
+  priceType: 'person' | 'group';
+};
 
 function isJejuPrivateCarTour(title: string | undefined): boolean {
   if (!title || typeof title !== 'string') return false;
@@ -30,11 +41,15 @@ interface EnhancedBookingSidebarProps {
     priceType: 'person' | 'group';
     pickupPoints: Array<{ id: string | number; name: string; address: string; lat: number; lng: number }>;
     availableSpots?: number;
-    depositAmountUSD?: number;
-    balanceAmountKRW?: number;
+    /** Server-only social proof; shown only when positive and smallGroup shell. */
+    recentBookings24h?: number | null;
   };
   /** Optional: notify parent when selected date changes (e.g. for booking timeline). */
   onDateSelect?: (date: Date | null) => void;
+  /** Optional: sync mobile bar / parent with formatted totals (small-group detail). */
+  onBookingSummaryChange?: (summary: BookingPanelSummary) => void;
+  /** Visual shell: `smallGroup` uses detail-page tokens for borders + CTA. */
+  bookingShell?: 'default' | 'smallGroup';
 }
 
 interface AvailabilityData {
@@ -48,7 +63,12 @@ interface AvailabilityData {
   date: string;
 }
 
-export default function EnhancedBookingSidebar({ tour, onDateSelect }: EnhancedBookingSidebarProps) {
+export default function EnhancedBookingSidebar({
+  tour,
+  onDateSelect,
+  onBookingSummaryChange,
+  bookingShell = 'default',
+}: EnhancedBookingSidebarProps) {
   const router = useRouter();
   const t = useTranslations();
   const currencyCtx = useCurrencyOptional();
@@ -66,7 +86,6 @@ export default function EnhancedBookingSidebar({ tour, onDateSelect }: EnhancedB
   const [promoCode, setPromoCode] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isBooking, setIsBooking] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState<'deposit' | 'full'>('deposit');
   const [applyDiscount, setApplyDiscount] = useState(true); // 할인율 자동 적용 (기본값 true)
   const [preferredLanguage, setPreferredLanguage] = useState<'en' | 'zh' | 'ko'>('en');
   
@@ -175,10 +194,56 @@ export default function EnhancedBookingSidebar({ tour, onDateSelect }: EnhancedB
         : 250000
       : totalPrice;
 
-  // Calculate deposit and balance for deposit payment method
-  // Deposit: ₩10,000, Balance: totalPrice - ₩10,000
-  const depositAmountKRW = 1000;
-  const balanceAmountKRW = displayTotalPrice - depositAmountKRW;
+  const unitPriceAmount = isJejuPriceOverride
+    ? displayTotalPrice
+    : availability?.priceOverride ?? (applyDiscount && hasDiscount ? tour.price : (tour.originalPrice || tour.price));
+
+  useEffect(() => {
+    if (!onBookingSummaryChange) return;
+    onBookingSummaryChange({
+      hasDate: selectedDate != null,
+      guestCount,
+      unitPriceFormatted: formatPrice(unitPriceAmount),
+      unitPriceKRW: unitPriceAmount,
+      totalFormatted: selectedDate != null ? formatPrice(displayTotalPrice) : null,
+      priceType: tour.priceType,
+    });
+  }, [
+    onBookingSummaryChange,
+    selectedDate,
+    guestCount,
+    unitPriceAmount,
+    displayTotalPrice,
+    tour.priceType,
+    currencyCtx,
+    applyDiscount,
+    hasDiscount,
+    tour.price,
+    tour.originalPrice,
+    availability?.priceOverride,
+    isJejuPriceOverride,
+  ]);
+
+  const isSg = bookingShell === 'smallGroup';
+  const shellBorder = isSg ? 'border-[var(--dp-border)]/60' : 'border-slate-200/90';
+  const fromLabelClass = isSg
+    ? 'text-[11px] font-semibold uppercase tracking-[0.12em] text-[color-mix(in_oklab,var(--sg-ota-label)_78%,var(--dp-fg)_22%)]'
+    : 'text-[11px] font-semibold text-slate-500 uppercase tracking-[0.14em]';
+  const fieldLabelClass = isSg
+    ? 'sg-dp-booking-field-label block text-[11px] font-semibold text-[var(--sg-ota-label)] uppercase tracking-[0.12em]'
+    : 'block text-[11px] font-semibold text-slate-600 mb-1.5 uppercase tracking-[0.12em]';
+  const inputSurfaceClass = isSg
+    ? 'sg-dp-booking-input w-full min-h-touch px-3.5 py-2.5 text-sm font-medium'
+    : 'w-full min-h-touch px-3.5 py-2.5 text-sm font-medium text-slate-900 rounded-design-md bg-white border border-slate-200/90 shadow-sm outline-none transition-colors duration-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-400/55';
+  const insetCardClass = isSg
+    ? 'sg-dp-booking-inset'
+    : 'rounded-design-md border border-slate-200/80 bg-white shadow-sm';
+  const panelClass = isSg
+    ? 'rounded-design-lg border border-[var(--dp-border)]/50 bg-white/95 shadow-sm'
+    : 'rounded-design-lg border border-slate-200/80 bg-white shadow-sm';
+  const ctaClass = isSg
+    ? 'sg-dp-booking-primary-cta disabled:cursor-not-allowed'
+    : 'w-full mt-4 min-h-touch px-5 py-3 bg-slate-900 hover:bg-slate-800 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-bold text-sm rounded-design-md transition-all duration-200 shadow-design-md active:scale-[0.98] disabled:shadow-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2';
 
   const handleCheckAvailability = async () => {
     if (!selectedDate) return;
@@ -205,10 +270,8 @@ export default function EnhancedBookingSidebar({ tour, onDateSelect }: EnhancedB
       date: selectedDate.toISOString(),
       guests: guestCount,
       pickup: selectedPickup,
-      paymentMethod,
+      paymentMethod: 'full' as const,
       preferredLanguage,
-      depositAmountKRW: paymentMethod === 'deposit' ? depositAmountKRW : undefined,
-      balanceAmountKRW: paymentMethod === 'deposit' ? balanceAmountKRW : undefined,
       totalPrice: displayTotalPrice,
       promoCode: promoCode || undefined,
       availability: availability,
@@ -244,23 +307,25 @@ export default function EnhancedBookingSidebar({ tour, onDateSelect }: EnhancedB
     setGuestCount(newCount);
   };
 
+  const priceSuffix = tour.priceType === 'person' ? '/ guest' : '/ group';
+
   return (
-    <div className="bg-white rounded-2xl border border-gray-200/50 shadow-[0_2px_20px_rgba(0,0,0,0.08),0_1px_8px_rgba(0,0,0,0.04)] p-4 sm:p-5 lg:sticky lg:top-24">
-      {/* Price Display */}
-      <div className="mb-4 pb-4 border-b border-gray-100">
-        {/* Original Price: 파란색 원가 + 빨간색 가로선 두 줄 */}
+    <div
+      className={`booking-sidebar-cro bg-transparent p-0 antialiased ${isSg ? 'sg-dp-booking-block text-[var(--dp-fg)]' : 'text-slate-900'}`}
+    >
+      {/* Price header — OTA scan: From + unit + optional total when date selected */}
+      <div className={isSg ? 'sg-dp-booking-price-well' : `mb-4 pb-4 border-b ${shellBorder}`}>
         {showOriginalPrice && displayOriginalPrice != null && displayOriginalPrice > 0 && (
-          <div className="mb-2">
+          <div className="mb-3">
             <div className="flex items-center gap-2 mb-2">
-              <span className="relative inline-block text-lg font-semibold text-blue-600">
+              <span className="relative inline-block text-base font-semibold text-slate-500 tabular-nums">
                 {formatPrice(displayOriginalPrice)}
-                {/* 빨간색 가로선 두 줄 */}
                 <span className="absolute left-0 right-0 top-[42%] block h-0 border-t-2 border-red-500 pointer-events-none" aria-hidden />
                 <span className="absolute left-0 right-0 top-[58%] block h-0 border-t-2 border-red-500 pointer-events-none" aria-hidden />
               </span>
             </div>
             {isJejuPriceOverride ? (
-              <span className="text-sm text-gray-700">
+              <span className="text-sm text-slate-700 font-medium">
                 {jejuDiscountPercent}% {t('tour.discountApplied')}
               </span>
             ) : hasDiscount ? (
@@ -269,75 +334,119 @@ export default function EnhancedBookingSidebar({ tour, onDateSelect }: EnhancedB
                   type="checkbox"
                   checked={applyDiscount}
                   onChange={(e) => setApplyDiscount(e.target.checked)}
-                  className="w-4 h-4 text-neutral-700 rounded focus:ring-neutral-300"
+                  className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-2 focus:ring-blue-500/25 focus:ring-offset-0"
                 />
-                <span className="text-sm text-gray-700">
+                <span className="text-sm text-slate-700 font-medium">
                   {discountPercent}% {t('tour.discountApplied')}
                 </span>
               </label>
             ) : null}
           </div>
         )}
-        {/* Final Price: 제주는 35만/25만 통일 */}
-        <div className="flex items-baseline gap-2">
-          <span className="text-3xl sm:text-4xl font-bold text-slate-800 tracking-tight">
-            {formatPrice(isJejuPriceOverride ? displayTotalPrice : (availability?.priceOverride || (applyDiscount && hasDiscount ? tour.price : (tour.originalPrice || tour.price))))}
+        <div className={isSg ? 'sg-dp-booking-price-row' : 'flex flex-wrap items-baseline gap-x-2 gap-y-0.5'}>
+          <span className={fromLabelClass}>From</span>
+          <span
+            className={
+              isSg
+                ? 'sg-dp-booking-price-figure'
+                : 'text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight tabular-nums'
+            }
+          >
+            {formatPrice(unitPriceAmount)}
           </span>
-          <span className="text-xs sm:text-sm text-gray-600 font-medium">/ {tour.priceType}</span>
+          <span className={isSg ? 'sg-dp-booking-price-suffix' : 'text-sm text-slate-600 font-medium'}>
+            {priceSuffix}
+          </span>
         </div>
-        {availability?.priceOverride && (
-          <p className="text-xs font-medium text-orange-600 mt-1">Special price for this date</p>
-        )}
-        {tour.priceType === 'person' && (
-          <p className="text-xs text-gray-500 mt-1">{t('tour.pricePerPerson')}</p>
-        )}
+        {selectedDate ? (
+          <p className={isSg ? 'sg-dp-booking-total-preview' : 'mt-2 text-sm font-semibold text-slate-900 tabular-nums'}>
+            {tour.priceType === 'person' ? (
+              <>
+                Total for {guestCount} {guestCount === 1 ? 'guest' : 'guests'} · {formatPrice(displayTotalPrice)}
+              </>
+            ) : (
+              <>
+                Total · {formatPrice(displayTotalPrice)}
+              </>
+            )}
+          </p>
+        ) : null}
+        {availability?.priceOverride ? (
+          <p
+            className={
+              isSg ? 'sg-dp-booking-scarcity sg-dp-booking-scarcity--urgent' : 'mt-1.5 text-xs font-semibold text-amber-700'
+            }
+          >
+            Special price for this date
+          </p>
+        ) : null}
+        {isSg && selectedDate && availability && availability.canAccommodate ? (
+          <p className="sg-dp-booking-scarcity tabular-nums">
+            Seats left: {availability.availableSpots}
+          </p>
+        ) : null}
+        {isSg && selectedDate && availability && !availability.canAccommodate ? (
+          <p className="sg-dp-booking-scarcity--alert">Not enough seats for your group on this date.</p>
+        ) : null}
       </div>
 
-      {/* Availability Alert */}
-      {availability && (
-        <div className={`mb-6 p-3 rounded-lg border ${
-          availability.canAccommodate
-            ? availability.availableSpots < 10
-              ? 'bg-orange-50 border-orange-200'
-              : 'bg-green-50 border-green-200'
-            : 'bg-red-50 border-red-200'
-        }`}>
+      {/* Availability Alert — default tours only; smallGroup uses compact line in price header */}
+      {availability && !isSg ? (
+        <div
+          className={`mb-6 rounded-design-md border p-3 ${
+            availability.canAccommodate
+              ? availability.availableSpots < 10
+                ? 'border-amber-200/90 bg-amber-50/90'
+                : 'border-emerald-200/90 bg-emerald-50/90'
+              : 'border-red-200/90 bg-red-50/90'
+          }`}
+        >
           {availability.canAccommodate ? (
-            <p className={`text-sm font-medium ${
-              availability.availableSpots < 10 ? 'text-orange-800' : 'text-green-800'
-            }`}>
-              {availability.availableSpots < 10 
+            <p
+              className={`text-sm font-semibold ${
+                availability.availableSpots < 10 ? 'text-amber-900' : 'text-emerald-900'
+              }`}
+            >
+              {availability.availableSpots < 10
                 ? `⚠️ Only ${availability.availableSpots} spots left!`
-                : `✓ ${availability.availableSpots} spots available`
-              }
+                : `✓ ${availability.availableSpots} spots available`}
             </p>
           ) : (
-            <p className="text-sm font-medium text-red-800">
+            <p className="text-sm font-semibold text-red-900">
               ❌ Not enough spots available. Only {availability.availableSpots} spots left.
             </p>
           )}
         </div>
-      )}
+      ) : null}
 
       {availabilityError && (
-        <div className="mb-6 p-3 bg-red-50 border border-red-200 rounded-lg">
-          <p className="text-sm font-medium text-red-800">Error: {availabilityError}</p>
+        <div
+          className={
+            isSg
+              ? 'mb-5 rounded-[0.625rem] border border-red-200/80 bg-red-50/85 px-3 py-2.5'
+              : 'mb-6 rounded-design-md border border-red-200/90 bg-red-50/90 p-3'
+          }
+        >
+          <p className={isSg ? 'm-0 text-[13px] font-semibold leading-snug text-red-900' : 'text-sm font-semibold text-red-900'}>
+            Error: {availabilityError}
+          </p>
         </div>
       )}
 
       {/* Booking Form */}
-      <div className="space-y-3.5">
+      <div className={isSg ? 'sg-dp-booking-form-stack' : 'space-y-4'}>
         {/* Date Picker */}
         <div>
-          <label className="block text-xs font-bold text-gray-900 mb-1.5 uppercase tracking-wide">
-            {t('tour.selectDate')} <span className="text-red-500">*</span>
+          <label className={fieldLabelClass}>
+            {t('tour.selectDate')} <span className="text-rose-600">*</span>
           </label>
           <DatePicker
             selected={selectedDate}
             onChange={(date) => handleDateChange(date ?? null)}
             minDate={new Date()}
             placeholderText={t('tour.chooseDate')}
-            className="w-full px-3.5 py-2.5 text-sm font-medium text-neutral-900 rounded-xl focus:ring-2 focus:ring-neutral-200 outline-none bg-[#F9F8F6] border-none shadow-inner transition-colors"
+            className={inputSurfaceClass}
+            popperClassName={`react-datepicker-booking-slate${isSg ? ' sg-datepicker-popper-fade' : ''}`}
             dateFormat="MMMM d, yyyy"
             excludeDates={disabledDates}
             filterDate={(date) => {
@@ -346,7 +455,13 @@ export default function EnhancedBookingSidebar({ tour, onDateSelect }: EnhancedB
             }}
           />
           {checkingAvailability && selectedDate && (
-            <p className="mt-1.5 text-xs text-neutral-600 font-medium flex items-center gap-1">
+            <p
+              className={
+                isSg
+                  ? 'mt-1.5 flex items-center gap-1.5 text-[11px] font-medium text-[color-mix(in_oklab,var(--dp-muted)_82%,var(--dp-fg)_18%)]'
+                  : 'mt-1.5 flex items-center gap-1 text-xs font-medium text-slate-600'
+              }
+            >
               <svg className="w-3 h-3 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
               </svg>
@@ -357,36 +472,54 @@ export default function EnhancedBookingSidebar({ tour, onDateSelect }: EnhancedB
 
         {/* Guest Count */}
         <div>
-          <label className="block text-xs font-bold text-gray-900 mb-1.5 uppercase tracking-wide">
-            {t('tour.numberOfGuests')} <span className="text-red-500">*</span>
+          <label className={fieldLabelClass}>
+            {t('tour.numberOfGuests')} <span className="text-rose-600">*</span>
           </label>
-          <div className="flex items-center justify-between bg-[#F9F8F6] rounded-xl p-2.5 shadow-inner border-none">
-            <span className="text-xs font-bold text-gray-900 uppercase tracking-wide">{t('tour.guests')}</span>
-            <div className="flex items-center gap-1.5">
+          <div className={`flex min-h-touch items-center justify-between gap-3 p-2.5 ${insetCardClass}`}>
+            <span
+              className={
+                isSg
+                  ? 'text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--sg-ota-label)]'
+                  : 'text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-600'
+              }
+            >
+              {t('tour.guests')}
+            </span>
+            <div className="flex items-center gap-2">
               <button
+                type="button"
                 onClick={() => handleGuestCountChange(guestCount - 1)}
-                className="w-3 h-3 rounded bg-gray-100 hover:bg-gray-200 border border-gray-300 flex items-center justify-center transition-colors active:scale-95"
+                className={isSg ? 'sg-dp-booking-icon-btn' : 'flex h-10 w-10 shrink-0 items-center justify-center rounded-design-md border border-slate-200/90 bg-slate-50 text-slate-800 transition-colors duration-200 hover:bg-slate-100 active:scale-[0.98]'}
+                aria-label="Decrease guests"
               >
-                <svg className="w-1.5 h-1.5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M20 12H4" />
+                <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M20 12H4" />
                 </svg>
               </button>
-              <span className="text-base font-bold text-gray-900 min-w-[1.5rem] text-center">
+              <span
+                className={isSg ? 'sg-dp-booking-stepper-value' : 'min-w-[2rem] text-center text-base font-bold tabular-nums text-slate-900'}
+              >
                 {guestCount}
               </span>
               <button
+                type="button"
                 onClick={() => handleGuestCountChange(guestCount + 1)}
                 disabled={availability ? guestCount >= availability.availableSpots : false}
-                className="w-3 h-3 rounded bg-gray-100 hover:bg-gray-200 border border-gray-300 flex items-center justify-center transition-colors disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+                className={
+                  isSg
+                    ? 'sg-dp-booking-icon-btn'
+                    : 'flex h-10 w-10 shrink-0 items-center justify-center rounded-design-md border border-slate-200/90 bg-slate-50 text-slate-800 transition-colors duration-200 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-45 active:scale-[0.98]'
+                }
+                aria-label="Increase guests"
               >
-                <svg className="w-1.5 h-1.5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" />
+                <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" />
                 </svg>
               </button>
             </div>
           </div>
           {availability && availability.availableSpots < guestCount && (
-            <p className="mt-1.5 text-xs text-red-600 font-bold">
+            <p className="mt-1.5 text-xs font-semibold text-red-700">
               Only {availability.availableSpots} spots available
             </p>
           )}
@@ -394,13 +527,15 @@ export default function EnhancedBookingSidebar({ tour, onDateSelect }: EnhancedB
 
         {/* Pickup Point */}
         <div>
-          <label className="block text-xs font-bold text-gray-900 mb-1.5 uppercase tracking-wide">
-            {t('tour.pickupLocation')}
-          </label>
+          <label className={fieldLabelClass}>{t('tour.pickupLocation')}</label>
           <select
             value={selectedPickup || ''}
             onChange={(e) => setSelectedPickup(e.target.value)}
-            className="w-full px-3.5 py-2.5 text-sm font-medium text-neutral-900 rounded-xl focus:ring-2 focus:ring-neutral-200 outline-none bg-[#F9F8F6] border-none shadow-inner appearance-none"
+            className={`${inputSurfaceClass} appearance-none bg-[length:1rem_1rem] bg-[right_0.65rem_center] bg-no-repeat pr-10`}
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E\")",
+            }}
           >
               <option value="">{t('tour.selectPickupPoint')}</option>
             {tour.pickupPoints.map((point) => (
@@ -410,14 +545,26 @@ export default function EnhancedBookingSidebar({ tour, onDateSelect }: EnhancedB
             ))}
           </select>
           {selectedPickup && (
-            <div className="mt-2 p-2.5 bg-[#EEF2F6]/80 rounded-xl border border-neutral-200">
-              <div className="flex items-start gap-2">
-                <MapIcon className="w-4 h-4 text-neutral-600 mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-xs font-bold text-gray-900">
+            <div className={isSg ? 'sg-dp-booking-pickup-detail' : `mt-2 p-3 ${insetCardClass}`}>
+              <div className="flex items-start gap-2.5">
+                <MapIcon
+                  className={`mt-0.5 h-4 w-4 shrink-0 ${isSg ? 'text-[var(--sg-ota-label)]' : 'text-slate-500'}`}
+                />
+                <div className="min-w-0">
+                  <p
+                    className={
+                      isSg
+                        ? 'sg-dp-booking-pickup-name'
+                        : 'text-sm font-semibold text-slate-900'
+                    }
+                  >
                     {tour.pickupPoints.find((p) => p.id === selectedPickup)?.name}
                   </p>
-                  <p className="text-xs text-gray-700 mt-0.5 font-medium">
+                  <p
+                    className={
+                      isSg ? 'sg-dp-booking-pickup-address' : 'mt-0.5 text-xs font-medium leading-relaxed text-slate-600'
+                    }
+                  >
                     {tour.pickupPoints.find((p) => p.id === selectedPickup)?.address}
                   </p>
                 </div>
@@ -428,13 +575,15 @@ export default function EnhancedBookingSidebar({ tour, onDateSelect }: EnhancedB
 
         {/* Preferred language (guide) */}
         <div>
-          <label className="block text-xs font-bold text-gray-900 mb-1.5 uppercase tracking-wide">
-            Preferred language
-          </label>
+          <label className={fieldLabelClass}>Preferred language</label>
           <select
             value={preferredLanguage}
             onChange={(e) => setPreferredLanguage(e.target.value as 'en' | 'zh' | 'ko')}
-            className="w-full px-3.5 py-2.5 text-sm font-medium text-neutral-900 rounded-xl focus:ring-2 focus:ring-neutral-200 outline-none bg-[#F9F8F6] border-none shadow-inner appearance-none"
+            className={`${inputSurfaceClass} appearance-none bg-[length:1rem_1rem] bg-[right_0.65rem_center] bg-no-repeat pr-10`}
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E\")",
+            }}
           >
             <option value="en">English</option>
             <option value="zh">中文 (Chinese)</option>
@@ -443,131 +592,120 @@ export default function EnhancedBookingSidebar({ tour, onDateSelect }: EnhancedB
         </div>
       </div>
 
-      {/* Price Summary */}
-      <div className="mt-4 p-3.5 bg-slate-50/80 rounded-xl border border-slate-200/80 shadow-sm">
-        <div className="space-y-1.5 mb-2.5">
-          {tour.priceType === 'person' && (
-            <div className="flex items-center justify-between text-xs">
-              <span className="text-gray-600 font-medium">{t('tour.guests')} ({guestCount})</span>
-              <span className="font-bold text-gray-900">{formatPrice(isJejuPrivateCarTour(tour.title) && (preferredLanguage === 'en' || preferredLanguage === 'zh') ? displayTotalPrice : subtotal)}</span>
+      {/* Price summary + payment — merged premium ledger on small-group */}
+      {isSg ? (
+        <div className="sg-dp-booking-card-group">
+          <div className="sg-dp-booking-ledger-pane">
+            <div className="mb-2.5 space-y-1.5">
+              {tour.priceType === 'person' && (
+                <div className="sg-dp-booking-ledger-row">
+                  <span>
+                    {t('tour.guests')} ({guestCount})
+                  </span>
+                  <span className="tabular-nums">
+                    {formatPrice(
+                      isJejuPrivateCarTour(tour.title) && (preferredLanguage === 'en' || preferredLanguage === 'zh')
+                        ? displayTotalPrice
+                        : subtotal
+                    )}
+                  </span>
+                </div>
+              )}
+              {promoDiscount > 0 && (
+                <div className="sg-dp-booking-ledger-row">
+                  <span className="font-semibold text-emerald-700">Promo Discount</span>
+                  <span className="font-semibold tabular-nums text-emerald-700">-{formatPrice(promoDiscount)}</span>
+                </div>
+              )}
             </div>
-          )}
-          {promoDiscount > 0 && (
-            <div className="flex items-center justify-between text-xs">
-              <span className="text-green-700 font-semibold">Promo Discount</span>
-              <span className="font-bold text-green-700">-{formatPrice(promoDiscount)}</span>
+            <div className="sg-dp-booking-ledger-total">
+              <span className="sg-dp-booking-ledger-total-label">{t('tour.total')}</span>
+              <span className="sg-dp-booking-ledger-total-value">{formatPrice(displayTotalPrice)}</span>
             </div>
-          )}
-        </div>
-        <div className="border-t border-slate-200 pt-2.5">
-          <div className="flex items-center justify-between">
-            <span className="text-sm font-bold text-gray-900 uppercase tracking-wide">{t('tour.total')}</span>
-            <span className="text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight">{formatPrice(displayTotalPrice)}</span>
+          </div>
+          <div className="sg-dp-booking-ledger-pane">
+            <p className="sg-dp-booking-payment-eyebrow">{t('booking.paymentMethod')}</p>
+            <p className="sg-dp-booking-payment-title">{t('booking.fullPayment')}</p>
+            <p className="sg-dp-booking-payment-note">{t('booking.payFullAmountOnline')}</p>
           </div>
         </div>
-      </div>
+      ) : (
+        <>
+          <div className={`mt-5 p-4 ${panelClass}`}>
+            <div className="mb-2.5 space-y-1.5">
+              {tour.priceType === 'person' && (
+                <div className="flex items-center justify-between text-xs">
+                  <span className="font-medium text-slate-600">
+                    {t('tour.guests')} ({guestCount})
+                  </span>
+                  <span className="font-semibold tabular-nums text-slate-900">
+                    {formatPrice(
+                      isJejuPrivateCarTour(tour.title) && (preferredLanguage === 'en' || preferredLanguage === 'zh')
+                        ? displayTotalPrice
+                        : subtotal
+                    )}
+                  </span>
+                </div>
+              )}
+              {promoDiscount > 0 && (
+                <div className="flex items-center justify-between text-xs">
+                  <span className="font-semibold text-emerald-700">Promo Discount</span>
+                  <span className="font-semibold tabular-nums text-emerald-700">-{formatPrice(promoDiscount)}</span>
+                </div>
+              )}
+            </div>
+            <div className="border-t border-slate-200/90 pt-2.5">
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-sm font-bold uppercase tracking-[0.12em] text-slate-600">{t('tour.total')}</span>
+                <span className="text-2xl font-bold tracking-tight text-slate-900 tabular-nums sm:text-3xl">
+                  {formatPrice(displayTotalPrice)}
+                </span>
+              </div>
+            </div>
+          </div>
 
-      {/* Payment Option (Sand & Sky tone - no bright blue/orange) */}
-      <div className="mt-5 space-y-3">
-        <label className="block text-[10px] font-bold text-neutral-500 uppercase tracking-widest">
-          Payment Option
-        </label>
-        <label className="relative flex cursor-pointer rounded-xl border border-sky-100 bg-[#EEF2F6] p-4 focus:outline-none transition-colors">
-          <input
-            type="radio"
-            name="payment"
-            checked={paymentMethod === 'deposit'}
-            onChange={() => setPaymentMethod('deposit')}
-            className="sr-only"
-          />
-          <div className="flex items-center space-x-3">
-            <div className={`w-5 h-5 rounded-full border-[5px] bg-white shadow-sm flex-shrink-0 ${paymentMethod === 'deposit' ? 'border-neutral-900' : 'border-neutral-300'}`} />
-            <div>
-              <p className="font-bold text-neutral-900 text-sm">{t('booking.depositCash')}</p>
-              <p className="text-xs text-neutral-500 font-medium mt-0.5">{t('booking.payDepositOnline')} / {t('booking.payBalanceOnSite')}</p>
-            </div>
+          <div className={`mt-5 p-4 ${panelClass}`}>
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
+              {t('booking.paymentMethod')}
+            </p>
+            <p className="text-sm font-bold text-slate-900">{t('booking.fullPayment')}</p>
+            <p className="mt-0.5 text-xs font-medium leading-relaxed text-slate-600">{t('booking.payFullAmountOnline')}</p>
           </div>
-        </label>
-        <label className="relative flex cursor-pointer rounded-xl border border-transparent bg-[#F4F1EA] p-4 focus:outline-none hover:border-neutral-200 transition-colors">
-          <input
-            type="radio"
-            name="payment"
-            checked={paymentMethod === 'full'}
-            onChange={() => setPaymentMethod('full')}
-            className="sr-only"
-          />
-          <div className="flex items-center space-x-3">
-            <div className={`w-5 h-5 rounded-full border-2 bg-white shadow-sm flex-shrink-0 ${paymentMethod === 'full' ? 'border-neutral-900 border-[5px]' : 'border-neutral-300'}`} />
-            <div>
-              <p className="font-bold text-neutral-900 text-sm">{t('booking.fullPayment')}</p>
-              <p className="text-xs text-neutral-500 font-medium mt-0.5">{t('booking.payFullAmountOnline')}</p>
-            </div>
-          </div>
-        </label>
-      </div>
-
-      {paymentMethod === 'deposit' && (
-        <div className="mt-3 p-3 bg-[#EEF2F6]/80 rounded-xl border border-neutral-200/60">
-          <div className="flex items-center justify-between text-sm">
-            <span className="text-neutral-700 font-semibold">{t('booking.deposit')}</span>
-            <span className="font-bold text-neutral-900">{formatPrice(depositAmountKRW)}</span>
-          </div>
-          <div className="flex items-center justify-between text-sm mt-2">
-            <span className="text-neutral-600 font-semibold">{t('booking.payOnSite')}</span>
-            <span className="font-bold text-neutral-800">{formatPrice(balanceAmountKRW)}</span>
-          </div>
-          <p className="text-xs text-neutral-500 mt-2.5 leading-snug">
-            {t('booking.depositCashShortDesc')}
-          </p>
-        </div>
+        </>
       )}
 
-      {/* Book Button - black CTA */}
+      <div className={isSg ? 'sg-dp-booking-trust-footnotes' : ''}>
+        <p
+          className={
+            isSg
+              ? 'sg-dp-booking-trust-line'
+              : 'mt-4 text-[11px] sm:text-xs leading-relaxed text-slate-600'
+          }
+        >
+          {BOOKING_CANCELLATION_SUMMARY_LINE}
+        </p>
+        {isSg && tour.recentBookings24h != null && tour.recentBookings24h > 0 ? (
+          <p className="sg-dp-booking-trust-line">
+            Booked {tour.recentBookings24h}{' '}
+            {tour.recentBookings24h === 1 ? 'time' : 'times'} in the last 24 hours
+          </p>
+        ) : null}
+      </div>
+
       <button
+        type="button"
         onClick={handleCheckAvailability}
         disabled={!selectedDate || isLoading || isBooking || (availability ? !availability.canAccommodate : false)}
-        className="w-full mt-4 px-5 py-3.5 bg-neutral-900 hover:bg-neutral-800 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold text-sm rounded-xl transition-all shadow-lg shadow-neutral-900/20 hover:shadow-xl active:scale-[0.98] disabled:shadow-none"
+        className={ctaClass}
       >
-        {isLoading 
+        {isLoading
           ? t('common.loading')
-          : isBooking 
-          ? t('common.processing')
-          : availability && !availability.canAccommodate
-          ? t('tour.checkAvailability')
-          : paymentMethod === 'deposit'
-          ? t('booking.payDeposit') + ' & ' + t('booking.confirmBooking')
-          : 'Pay Full Amount on Website'}
+          : isBooking
+            ? t('common.processing')
+            : availability && !availability.canAccommodate
+              ? t('tour.checkAvailability')
+              : t('booking.confirmBookingPayOnline')}
       </button>
-
-      {/* Trust Badges - Compact & Elegant Design */}
-      <div className="mt-4 pt-4 border-t border-gray-100">
-        <div className="grid grid-cols-1 gap-2">
-          <div className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-green-50/50 hover:bg-green-50 transition-colors">
-            <div className="flex-shrink-0 w-4 h-4 rounded-full bg-green-100 flex items-center justify-center">
-              <svg className="w-2.5 h-2.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-            </div>
-            <span className="text-xs text-gray-600 font-medium">Free cancellation up to 24 hours</span>
-          </div>
-          <div className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-blue-50/50 hover:bg-blue-50 transition-colors">
-            <div className="flex-shrink-0 w-4 h-4 rounded-full bg-blue-100 flex items-center justify-center">
-              <svg className="w-2.5 h-2.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <span className="text-xs text-gray-600 font-medium">Instant confirmation</span>
-          </div>
-          <div className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-purple-50/50 hover:bg-purple-50 transition-colors">
-            <div className="flex-shrink-0 w-4 h-4 rounded-full bg-purple-100 flex items-center justify-center">
-              <svg className="w-2.5 h-2.5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-              </svg>
-            </div>
-            <span className="text-xs text-gray-600 font-medium">24/7 customer support</span>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

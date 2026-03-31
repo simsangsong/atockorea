@@ -1,0 +1,77 @@
+<!--
+  Sign-in OTP (6-digit code). In Supabase this is under the template slot named
+  "Magic Link" — that label is only for developers; guests only see whatever you
+  put in the Subject field (e.g. "Your sign-in code" or "Your AtoC Korea sign-in code").
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your sign-in code</title>
+</head>
+<body style="margin:0;padding:0;background-color:#e2e8f0;-webkit-font-smoothing:antialiased;">
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">
+    Your AtoC Korea sign-in code is in this email. Enter it in the app.
+  </div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#e2e8f0;">
+    <tr>
+      <td align="center" style="padding:36px 12px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width:560px;margin:0 auto;">
+          <tr>
+            <td style="background:linear-gradient(145deg,#0f172a 0%,#1e293b 100%);border-radius:20px 20px 0 0;padding:28px 24px 24px;text-align:center;">
+              <img
+                src="{{ .SiteURL }}/logo-full.svg"
+                width="200"
+                height="48"
+                alt="AtoC Korea"
+                style="display:block;margin:0 auto 16px;height:auto;max-width:200px;border:0;"
+              />
+              <p style="margin:0;font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:600;color:#f1f5f9;">
+                Sign in
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#ffffff;border:1px solid #cbd5e1;border-top:none;border-radius:0 0 20px 20px;padding:0 0 32px;box-shadow:0 24px 48px -12px rgba(15,23,42,0.18);">
+              <p style="margin:0;padding:28px 28px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-size:15px;color:#475569;line-height:1.65;text-align:center;">
+                Enter this <strong style="color:#0f172a;">one-time code</strong> on the sign-in screen. No link is required.
+              </p>
+
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:0 20px 24px;">
+                <tr>
+                  <td align="center" style="padding:0 16px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-radius:16px;overflow:hidden;box-shadow:0 0 0 2px #0f172a,0 12px 40px rgba(15,23,42,0.25);">
+                      <tr>
+                        <td align="center" style="background-color:#0f172a;padding:28px 16px 22px;">
+                          <p style="margin:0 0 14px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.2em;">
+                            Verification code
+                          </p>
+                          <p style="margin:0;font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;font-size:44px;font-weight:800;color:#ffffff;letter-spacing:0.42em;line-height:1.15;text-shadow:0 2px 24px rgba(0,0,0,0.35);">
+                            {{ .Token }}
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin:0 28px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-size:13px;color:#94a3b8;line-height:1.6;text-align:center;">
+                If you didn&rsquo;t request this, you can ignore this email.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:24px 12px 0;text-align:center;">
+              <p style="margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-size:11px;color:#64748b;">
+                &copy; AtoC Korea &middot; support@atockorea.com
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

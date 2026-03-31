@@ -68,8 +68,8 @@ export const analytics = {
       pickupAreaLabel,
     }),
 
-  depositPaid: (tourType: string, pickupAreaLabel: string) =>
-    trackEvent("deposit_paid", {
+  checkoutPaymentCompleted: (tourType: string, pickupAreaLabel: string) =>
+    trackEvent("checkout_payment_completed", {
       tourType,
       pickupAreaLabel,
     }),

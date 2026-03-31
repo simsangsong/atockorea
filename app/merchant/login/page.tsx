@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { validateAppPassword } from '@/lib/password-policy';
 
 export default function MerchantLoginPage() {
   const router = useRouter();
@@ -64,8 +65,9 @@ export default function MerchantLoginPage() {
       return;
     }
 
-    if (newPassword.length < 8) {
-      setError('Password must be at least 8 characters');
+    const policy = validateAppPassword(newPassword);
+    if (!policy.valid) {
+      setError(policy.message ?? 'Invalid password');
       return;
     }
 

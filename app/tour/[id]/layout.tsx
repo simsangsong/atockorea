@@ -6,6 +6,46 @@ import { createServerClient } from '@/lib/supabase';
 
 type MetadataLocale = 'en' | 'ko' | 'zh' | 'zh-TW' | 'es' | 'ja';
 
+const UUID_RE =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+/** Match GET /api/tours/[id]: UUID → id, else slug (and ilike fallback). */
+async function fetchActiveTourForLayout(tourId: string) {
+  const supabase = createServerClient();
+  const decoded = decodeURIComponent(tourId);
+  const isUUID = UUID_RE.test(decoded);
+
+  let query = supabase
+    .from('tours')
+    .select(
+      'id, slug, title, description, city, image_url, price, rating, review_count, translations, seo_title, meta_description, duration'
+    )
+    .eq('is_active', true);
+
+  if (isUUID) {
+    query = query.eq('id', decoded);
+  } else {
+    query = query.eq('slug', decoded);
+  }
+
+  let { data: tour, error } = await query.single();
+
+  if (error && !isUUID && error.code === 'PGRST116') {
+    const fallback = await supabase
+      .from('tours')
+      .select(
+        'id, slug, title, description, city, image_url, price, rating, review_count, translations, seo_title, meta_description, duration'
+      )
+      .eq('is_active', true)
+      .ilike('slug', decoded)
+      .single();
+    tour = fallback.data;
+    error = fallback.error;
+  }
+
+  return { tour, error };
+}
+
 async function detectRequestLocale(): Promise<MetadataLocale> {
   try {
     const h = await headers();
@@ -28,14 +68,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { id: tourId } = await params;
   try {
-    const supabase = createServerClient();
-
-    const { data: tour, error } = await supabase
-      .from('tours')
-      .select('id, title, description, city, image_url, price, rating, review_count, translations, seo_title, meta_description')
-      .eq('id', tourId)
-      .eq('is_active', true)
-      .single();
+    const { tour, error } = await fetchActiveTourForLayout(tourId);
 
     if (error || !tour) {
       return generateSEOMetadata({
@@ -95,23 +128,21 @@ export async function generateMetadata(
 
 async function generateStructuredDataForTour(tourId: string) {
   try {
-    const supabase = createServerClient();
-    const { data: tour } = await supabase
-      .from('tours')
-      .select('id, title, description, city, image_url, price, rating, review_count, duration')
-      .eq('id', tourId)
-      .eq('is_active', true)
-      .single();
+    const { tour } = await fetchActiveTourForLayout(tourId);
 
     if (!tour) return null;
 
     const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
-    
+    const pathSlug =
+      typeof (tour as { slug?: string }).slug === 'string' && (tour as { slug: string }).slug.trim() !== ''
+        ? (tour as { slug: string }).slug
+        : tour.id;
+
     return generateStructuredData('Tour', {
       name: tour.title,
       description: tour.description || `Experience ${tour.title} in ${tour.city}`,
       image: tour.image_url || `${siteUrl}/og-image.jpg`,
-      url: `${siteUrl}/tour/${tour.id}`,
+      url: `${siteUrl}/tour/${pathSlug}`,
       price: parseFloat(tour.price?.toString() || '0'),
       rating: tour.rating ? parseFloat(tour.rating.toString()) : undefined,
       reviewCount: tour.review_count || 0,

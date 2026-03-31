@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { COPY } from '@/src/design/copy';
+import { useCopy } from '@/lib/i18n';
 
 export interface BuilderLoadingOverlayProps {
   /** When true, overlay is visible. */
@@ -17,10 +17,11 @@ const STAGE_INTERVAL_MS = 1500;
 
 /**
  * Builder generate loading overlay. Max 3 stages + end.
- * Copy from COPY.builderLoading only; no real-time matching claims.
+ * Copy from localized builder loading strings only; no real-time matching claims.
  * If areaLabel is set, stage 1 may show area-specific copy; otherwise generic only.
  */
 export default function BuilderLoadingOverlay({ visible, areaLabel, success }: BuilderLoadingOverlayProps) {
+  const copyRoot = useCopy();
   const [stage, setStage] = useState(0);
 
   useEffect(() => {
@@ -37,7 +38,7 @@ export default function BuilderLoadingOverlay({ visible, areaLabel, success }: B
 
   if (!visible) return null;
 
-  const copy = COPY.builderLoading;
+  const copy = copyRoot.builderLoading;
   const stage1Text =
     areaLabel != null && areaLabel !== ''
       ? copy.stage1WithArea.replace('[Area]', areaLabel)

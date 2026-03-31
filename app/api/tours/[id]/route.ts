@@ -180,6 +180,7 @@ export const GET = withErrorHandler(async (
     // Transform data to match frontend expectations
     const transformedTour = {
       id: tour.id,
+      slug: typeof tour.slug === 'string' ? tour.slug : '',
       title,
       tagline,
       location: tour.city,
@@ -191,8 +192,6 @@ export const GET = withErrorHandler(async (
       originalPrice: tour.original_price ? parseFloat(tour.original_price.toString()) : null,
       priceType: tour.price_type,
       availableSpots: undefined,
-      depositAmountUSD: 20,
-      balanceAmountKRW: 50000,
       duration: tour.duration || '',
       difficulty: tour.difficulty || '',
       groupSize: tour.group_size || '',

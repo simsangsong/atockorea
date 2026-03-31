@@ -30,10 +30,6 @@ function AuthCallbackContent() {
           rawNext.length <= 500
             ? rawNext
             : '/mypage';
-        // Magic link로 회원가입 들어온 경우 프로필 입력 단계로
-        if (next === '/signup' || (next && next.includes('signup'))) {
-          next = '/signup?step=info';
-        }
 
         // OAuth 에러 체크 (구글, 페이스북 등)
         if (error) {
@@ -94,6 +90,25 @@ function AuthCallbackContent() {
           }
 
           if (data.user) {
+            const rawNextParam = (searchParams?.get('next') || '').replace(/^null$/i, '') || '';
+            const signupFlag = searchParams?.get('signup') === '1';
+            const isSignupEmailCallback =
+              signupFlag ||
+              rawNextParam === '/signup' ||
+              rawNextParam.startsWith('/signup') ||
+              (rawNextParam.length > 0 && rawNextParam.includes('signup'));
+
+            if (isSignupEmailCallback) {
+              const email = data.user.email ?? '';
+              await supabase.auth.signOut();
+              setStatus('success');
+              setMessage('Redirecting to sign up...');
+              setTimeout(() => {
+                router.replace(`/signup?step=verify&email=${encodeURIComponent(email)}`);
+              }, 400);
+              return;
+            }
+
             const meta = data.user.user_metadata || {};
             // 구글/소셜 이름: name > full_name > given_name + family_name > 이메일 앞부분
             const displayName =

@@ -341,6 +341,7 @@ export function useTranslations(namespace?: string) {
     if (context) {
       return context.t(fullKey, params);
     }
-    return getTranslation(fullKey, params);
+    // getTranslation() already prefixes `namespace`; pass the short key only.
+    return getTranslation(key, params);
   };
 }

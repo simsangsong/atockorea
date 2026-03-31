@@ -1,146 +1,337 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { Network, MapPin, ShieldCheck, Star } from "lucide-react";
-import { COPY } from "@/src/design/copy";
-import { tokens } from "@/src/design/tokens";
+import { useTranslations } from "@/lib/i18n";
 import { analytics } from "@/src/design/analytics";
+import {
+  DEFAULT_HOMEPAGE_PRODUCT_CARD_IMAGES,
+  type HomepageProductCardImages,
+} from "@/lib/homepage-product-card-images.shared";
+import { CardFilmGrain, ProductCardCheckIcon } from "@/src/components/home/product-card-glass";
+import { HOME_STYLE_OPTIONS } from "@/src/components/home/home-style-options";
 
-const CTA_HREF = "/custom-join-tour";
+const CUSTOM_JOIN_HREF = "/custom-join-tour";
+/** Live East Jeju small-group product (join tour detail). */
+const EAST_JEJU_SMALL_GROUP_TOUR_HREF = "/tour/east-signature-nature-core";
 
-const HERO_IMAGES = [
-  { id: 1, image: "/images/hero/jeju-hero.jpg", alt: "Jeju" },
-  { id: 2, image: "/images/hero/busan-hero.jpg", alt: "Busan" },
-  { id: 3, image: "/images/hero/seoul-hero.jpg", alt: "Seoul" },
-];
+type HeroDestination = "jeju" | "seoul" | "busan";
 
-const BADGE_ORANGE = "#E85D22";
+function isResolvedJoinImage(data: unknown): data is Pick<HomepageProductCardImages, "join"> {
+  if (data == null || typeof data !== "object") return false;
+  const j = (data as { join?: unknown }).join;
+  return typeof j === "string" && j.length > 0;
+}
 
-/** Value props: icon + title (bold) + subtitle (regular), matching reference layout. */
-const VALUE_PROPS = [
-  { icon: Network, title: COPY.hero.trust[0], subtitle: COPY.hero.valuePropSubtitles[0], circle: "bg-orange-50", iconColor: "text-orange-500" },
-  { icon: MapPin, title: COPY.hero.trust[1], subtitle: COPY.hero.valuePropSubtitles[1], circle: "bg-sky-50", iconColor: "text-sky-500" },
-  { icon: ShieldCheck, title: COPY.hero.trust[3], subtitle: COPY.hero.valuePropSubtitles[2], circle: "bg-emerald-50", iconColor: "text-emerald-500" },
-] as const;
+function isResolvedImages(v: unknown): v is HomepageProductCardImages {
+  if (v == null || typeof v !== "object") return false;
+  const o = v as Record<string, unknown>;
+  return typeof o.join === "string" && typeof o.private === "string" && typeof o.bus === "string";
+}
 
+/**
+ * Above-the-fold Korea day-tour matching: destination first, Jeju preferences, then best-match preview.
+ * Secondary formats stay on the preview card (no duplicate recommendation block below).
+ */
 export default function HeroPremium() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const t = useTranslations("home");
+  const [destination, setDestination] = useState<HeroDestination>("jeju");
+  const [intent, setIntent] = useState("");
+  const [matchBgSrc, setMatchBgSrc] = useState<string>(DEFAULT_HOMEPAGE_PRODUCT_CARD_IMAGES.join);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 5000);
-    return () => clearInterval(interval);
+    let cancelled = false;
+    fetch("/api/homepage-product-card-images")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data: unknown) => {
+        if (cancelled) return;
+        if (isResolvedImages(data)) {
+          setMatchBgSrc(data.join);
+          return;
+        }
+        if (isResolvedJoinImage(data)) {
+          setMatchBgSrc(data.join);
+        }
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
+  const appendChip = useCallback((phrase: string) => {
+    setIntent((prev) => {
+      const p = prev.trim();
+      if (!p) return phrase;
+      if (p.includes(phrase)) return p;
+      return `${p}, ${phrase}`;
+    });
+  }, []);
+
+  const continueHref = useMemo(() => {
+    const params = new URLSearchParams();
+    if (destination === "jeju") params.set("destination", "jeju");
+    const q = intent.trim();
+    if (q) params.set("intent", q);
+    const s = params.toString();
+    return s ? `${CUSTOM_JOIN_HREF}?${s}` : CUSTOM_JOIN_HREF;
+  }, [intent, destination]);
+
+  const bestMatchLines = useMemo(
+    () => [t("premium.hero.bestMatchLine1"), t("premium.hero.bestMatchLine2")],
+    [t]
+  );
+
   return (
-    <section className="relative w-full" aria-label="Hero">
-      {/* 1. Background: dark gradient (darker top/bottom, lighter middle), badge + headline + rating */}
-      <div className="relative w-full h-[380px] sm:h-[450px] lg:h-[550px] overflow-hidden rounded-b-[40px] md:mx-4 bg-[#0A1F44]">
-        <div className="relative w-full h-full">
-          {HERO_IMAGES.map((item, index) => (
-            <div
-              key={item.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
-                index === currentIndex ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              <div
-                className="w-full h-full bg-cover bg-center"
-                style={{ backgroundImage: `url(${item.image})` }}
-              />
-            </div>
-          ))}
-        </div>
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.28) 40%, rgba(0,0,0,0.28) 60%, rgba(0,0,0,0.6) 100%)",
-          }}
-          aria-hidden
-        />
-
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pt-4 sm:pt-10">
-          <span
-            className="text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-3 sm:mb-4 shadow-[0_2px_8px_rgba(0,0,0,0.15)]"
-            style={{ backgroundColor: BADGE_ORANGE }}
-          >
-            {COPY.hero.badge}
-          </span>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)] px-2 max-w-4xl leading-tight">
-            {COPY.hero.headline}
+    <section className="home-hero-stack relative w-full bg-transparent" aria-label="Hero">
+      <div className="mx-auto max-w-4xl space-y-5 sm:space-y-6">
+        <header className="mx-auto flex max-w-2xl flex-col items-center px-1 text-center sm:px-2">
+          <p className="home-hero-kicker">{t("premium.hero.glassBrandPill")}</p>
+          {t("premium.hero.matchEyebrow").trim() ? (
+            <p className="home-hero-match-eyebrow">{t("premium.hero.matchEyebrow")}</p>
+          ) : null}
+          <h1 className="home-type-display mt-2 text-balance text-[1.7rem] leading-[1.05] sm:text-[1.95rem] md:text-[2.1rem]">
+            <span className="block">{t("premium.hero.headlineLine1")}</span>
+            {t("premium.hero.headlineLine2").trim() ? (
+              <span className="mt-0.5 block">{t("premium.hero.headlineLine2")}</span>
+            ) : null}
           </h1>
-          <div className="flex items-center justify-center gap-2 sm:gap-3 text-white/95">
-            <div className="flex items-center gap-0.5 text-amber-400">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
-              ))}
-            </div>
-            <span className="text-base sm:text-lg font-bold">5.0</span>
-            <span className="text-xs sm:text-sm font-normal opacity-90">(20 Reviews)</span>
-          </div>
-        </div>
+          <p className="home-type-body mx-auto mt-2.5 max-w-[26rem] whitespace-pre-line text-center leading-snug sm:mt-3 sm:leading-relaxed">
+            {t("premium.hero.matchSubtitle")}
+          </p>
+        </header>
 
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 items-center z-10">
-          {HERO_IMAGES.map((_, index) => (
-            <button
-              key={index}
-              type="button"
-              onClick={() => setCurrentIndex(index)}
-              className={`rounded-full transition-all duration-200 ${
-                index === currentIndex ? "bg-white w-2.5 h-2 sm:w-3 sm:h-2" : "bg-white/50 w-2 h-2 hover:bg-white/70"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* 2. Floating card: 32px radius, soft diffuse shadow, generous padding, title + subtitle per row */}
-      <div className="relative w-full -mt-16 sm:-mt-24 lg:-mt-32 px-4 sm:px-6 lg:px-8 z-10">
-        <div className="w-full max-w-4xl mx-auto">
-          <div
-            className="rounded-[32px] bg-white p-6 sm:p-8 md:p-10 border border-neutral-100/80"
-            style={{ boxShadow: "0 25px 50px -12px rgba(0,0,0,0.12), 0 12px 24px -8px rgba(0,0,0,0.08)" }}
-          >
-            <p className="text-sm sm:text-base text-neutral-600 font-normal leading-snug mb-6 sm:mb-8">
-              {COPY.hero.subCard}
+        {/* Intent panel — destination segment + travel-style input (logic unchanged) */}
+        <div className="hero-planner-surface p-4 sm:p-5 md:p-6" data-hero-intent-panel>
+          <div className="hero-planner-flow-step">
+            <p className="hero-planner-section-title hero-planner-section-title--compact">
+              {t("premium.hero.destinationSectionTitle")}
             </p>
+            <div
+              className="hero-destination-segmented mt-2"
+              role="group"
+              aria-label={t("premium.hero.destinationSectionTitle")}
+            >
+              <button
+                type="button"
+                aria-pressed={destination === "jeju"}
+                onClick={() => setDestination("jeju")}
+                className={
+                  destination === "jeju"
+                    ? "hero-destination-segment hero-destination-segment--active"
+                    : "hero-destination-segment"
+                }
+              >
+                <span className="hero-destination-segment__name">{t("premium.hero.destJeju")}</span>
+                <span className="hero-destination-segment__badge hero-destination-segment__badge--live">
+                  {t("premium.hero.destSegmentLabelAvailable")}
+                </span>
+              </button>
+              <button
+                type="button"
+                disabled
+                tabIndex={-1}
+                aria-disabled="true"
+                aria-label={`${t("premium.hero.destSeoul")}, ${t("premium.hero.destStatusComingSoon")}`}
+                className="hero-destination-segment hero-destination-segment--disabled"
+              >
+                <span className="hero-destination-segment__name">{t("premium.hero.destSeoul")}</span>
+                <span className="hero-destination-segment__badge hero-destination-segment__badge--stacked">
+                  <span className="hero-destination-segment__badge-line">
+                    {t("premium.hero.destComingSoonLine1")}
+                  </span>
+                  <span className="hero-destination-segment__badge-line">
+                    {t("premium.hero.destComingSoonLine2")}
+                  </span>
+                </span>
+              </button>
+              <button
+                type="button"
+                disabled
+                tabIndex={-1}
+                aria-disabled="true"
+                aria-label={`${t("premium.hero.destBusan")}, ${t("premium.hero.destStatusComingSoon")}`}
+                className="hero-destination-segment hero-destination-segment--disabled"
+              >
+                <span className="hero-destination-segment__name">{t("premium.hero.destBusan")}</span>
+                <span className="hero-destination-segment__badge hero-destination-segment__badge--stacked">
+                  <span className="hero-destination-segment__badge-line">
+                    {t("premium.hero.destComingSoonLine1")}
+                  </span>
+                  <span className="hero-destination-segment__badge-line">
+                    {t("premium.hero.destComingSoonLine2")}
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
 
-            <ul className="space-y-6 sm:space-y-8 mb-8 sm:mb-10">
-              {VALUE_PROPS.map(({ icon: Icon, title, subtitle, circle, iconColor }) => (
-                <li key={title} className="flex items-start gap-4 sm:gap-5">
-                  <div className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center ${circle}`}>
-                    <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${iconColor}`} aria-hidden />
-                  </div>
-                  <div className="min-w-0 pt-0.5">
-                    <p className="font-bold text-base sm:text-lg text-neutral-900 leading-tight">
-                      {title}
-                    </p>
-                    <p className="text-sm sm:text-base text-neutral-500 font-normal mt-1 leading-snug">
-                      {subtitle}
-                    </p>
-                  </div>
+          {destination === "jeju" ? (
+            <div className="hero-planner-flow-step hero-planner-flow-step--preferences mt-5 border-t border-slate-200/65 pt-5 sm:mt-6 sm:pt-6">
+              <label htmlFor="hero-intent-input" className="hero-planner-field-label">
+                {t("premium.hero.textareaLabelJeju")}
+              </label>
+              <div className="hero-planner-desk-well mt-2">
+                <textarea
+                  id="hero-intent-input"
+                  name="intent"
+                  value={intent}
+                  onChange={(e) => setIntent(e.target.value)}
+                  rows={3}
+                  placeholder={t("premium.hero.inputPlaceholder")}
+                  className="hero-planner-field hero-planner-field--hero-primary"
+                  autoComplete="off"
+                />
+              </div>
+
+              <p className="hero-planner-chips-label hero-planner-chips-label--compact mt-4 text-center sm:mt-4 sm:text-left">
+                {t("premium.hero.chipsLegend")}
+              </p>
+              <div
+                className="hero-planner-chip-row--hero mt-2 flex flex-wrap justify-center gap-1 sm:justify-start sm:gap-1.5"
+                role="group"
+                aria-label={t("premium.comparison.chipsAria")}
+              >
+                {HOME_STYLE_OPTIONS.map(({ id, labelKey }) => {
+                  const label = t(`premium.comparison.${labelKey}`);
+                  const isActive = intent.includes(label);
+                  return (
+                    <button
+                      key={id}
+                      type="button"
+                      aria-pressed={isActive}
+                      onClick={() => appendChip(label)}
+                      className={
+                        isActive
+                          ? "hero-planner-chip hero-planner-chip--pill hero-planner-chip--active"
+                          : "hero-planner-chip hero-planner-chip--pill"
+                      }
+                    >
+                      {label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          ) : null}
+
+          <div
+            className="hero-planner-trust-strip mt-5 px-3.5 py-3 sm:mt-6 sm:px-5 sm:py-3.5"
+            aria-label={t("premium.hero.pricingRowLabel")}
+          >
+            <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 text-[11px] text-slate-800 sm:justify-between sm:gap-x-2.5 sm:text-[12px]">
+              <span className="home-type-price-anchor whitespace-nowrap text-slate-900">{t("premium.hero.priceSmallGroup")}</span>
+              <span
+                className="hidden h-1 w-1 shrink-0 rounded-full bg-slate-300/90 sm:inline"
+                aria-hidden
+              />
+              <span className="home-type-price-anchor whitespace-nowrap text-slate-900">{t("premium.hero.pricePrivate")}</span>
+              <span
+                className="hidden h-1 w-1 shrink-0 rounded-full bg-slate-300/90 sm:inline"
+                aria-hidden
+              />
+              <span className="home-type-price-anchor whitespace-nowrap text-slate-900">{t("premium.hero.priceBus")}</span>
+              <span
+                className="hidden h-1 w-1 shrink-0 rounded-full bg-slate-300/90 sm:inline"
+                aria-hidden
+              />
+              <span className="home-type-price-anchor whitespace-nowrap text-slate-800">{t("premium.hero.minGuests")}</span>
+            </div>
+          </div>
+
+          <Link
+            href={continueHref}
+            className="hero-planner-cta hero-planner-cta--hero-primary mt-5 text-center sm:mt-6"
+            onClick={() => analytics.heroFormStart()}
+          >
+            {t("premium.hero.findMatchCta")}
+          </Link>
+        </div>
+
+        {/* Single best-match preview card — same glass language as product cards */}
+        <article
+          className="group relative isolate flex min-h-[19rem] flex-col overflow-hidden rounded-home-card border border-white/48 bg-white/[0.06] shadow-home-hero-match ring-1 ring-sky-400/52 transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform hover:-translate-y-0.5 hover:border-white/58 hover:shadow-home-hero-match-hover sm:min-h-[21rem] md:min-h-[22rem]"
+          aria-labelledby="hero-best-match-title"
+        >
+          <Image
+            src={matchBgSrc}
+            alt=""
+            fill
+            sizes="(max-width: 768px) 100vw, 896px"
+            className="z-0 object-cover object-center transition duration-500 ease-out group-hover:scale-[1.02]"
+            priority
+          />
+          <div
+            className="pointer-events-none absolute inset-0 z-[2] rounded-home-card bg-gradient-to-b from-slate-900/40 via-slate-900/14 to-slate-950/[0.86] backdrop-blur-[10px] backdrop-saturate-[1.22]"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] h-[76%] rounded-b-home-card bg-gradient-to-t from-black/62 via-black/28 to-transparent"
+            aria-hidden
+          />
+          <CardFilmGrain id="hero-best-match-grain" className="rounded-home-card opacity-[0.28]" />
+          <div
+            className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-px rounded-t-home-card bg-gradient-to-r from-transparent via-white/55 to-transparent opacity-95"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-px rounded-b-home-card bg-gradient-to-r from-transparent via-white/26 to-transparent opacity-78"
+            aria-hidden
+          />
+
+          <Link
+            href={EAST_JEJU_SMALL_GROUP_TOUR_HREF}
+            className="absolute inset-0 z-[11] rounded-home-card outline-none ring-inset focus-visible:ring-2 focus-visible:ring-white/80"
+            aria-label={`${t("premium.hero.bestMatchTitleLine1")} ${t("premium.hero.bestMatchTitleLine2")} — ${t("premium.hero.bestMatchCta")}`}
+            onClick={() => analytics.heroFormStart()}
+          />
+
+          <div className="relative z-[12] flex h-full min-h-[19rem] flex-1 flex-col justify-end p-5 text-white pointer-events-none sm:min-h-[21rem] sm:p-6 md:min-h-[22rem] md:p-7">
+            <span className="home-pill-badge-on-image home-pill-badge-on-image--cool">
+              {t("premium.hero.bestMatchBadge")}
+            </span>
+            <h2
+              id="hero-best-match-title"
+              className="mt-3 text-[1.74rem] font-black leading-[1.02] tracking-[-0.038em] text-white drop-shadow-[0_3px_28px_rgba(0,0,0,0.48)] sm:text-[1.95rem]"
+            >
+              <span className="block">{t("premium.hero.bestMatchTitleLine1")}</span>
+              <span className="block">{t("premium.hero.bestMatchTitleLine2")}</span>
+            </h2>
+            <ul className="mt-4 space-y-2.5 text-[12px] font-semibold leading-[1.55] tracking-[-0.012em] text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)] sm:text-[13px] sm:leading-[1.58]">
+              {bestMatchLines.map((line) => (
+                <li key={line} className="flex items-start gap-2">
+                  <ProductCardCheckIcon />
+                  <span>{line}</span>
                 </li>
               ))}
             </ul>
+            <span className="offer-card-cta offer-card-cta--hero-match mt-4 inline-flex cursor-pointer sm:mt-5">
+              {t("premium.hero.bestMatchCta")}
+            </span>
 
-            <div className="flex flex-col gap-3">
+            <p className="pointer-events-auto mt-4 border-t border-white/20 pt-3.5 text-center text-[10px] font-semibold leading-[1.5] tracking-[-0.01em] text-white/80 sm:text-[11px] sm:leading-[1.55]">
+              <span className="mr-1.5 font-extrabold uppercase tracking-[0.2em] text-white/50 sm:tracking-[0.22em]">
+                {t("premium.hero.alsoConsiderLabel")}
+              </span>
               <Link
-                href={CTA_HREF}
-                className="inline-flex items-center justify-center font-bold min-h-[52px] px-8 py-3.5 text-base rounded-2xl text-white shadow-lg hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-neutral-100 w-full sm:w-auto sm:px-10 transition-opacity"
-                style={{ backgroundColor: tokens.color.brand.blue }}
-                onClick={() => analytics.heroFormStart()}
+                href={CUSTOM_JOIN_HREF}
+                className="inline-flex min-h-[40px] items-center text-white underline-offset-2 hover:text-white hover:underline sm:min-h-0"
               >
-                {COPY.hero.cta}
+                {t("premium.hero.alsoConsiderPrivate")}
               </Link>
-              <p className="text-xs sm:text-sm text-neutral-500 font-normal">
-                {COPY.hero.trustCta}
-              </p>
-            </div>
+              <span className="mx-1.5 text-white/35 sm:mx-2" aria-hidden>
+                ·
+              </span>
+              <Link
+                href="/tours/list"
+                className="inline-flex min-h-[40px] items-center text-white underline-offset-2 hover:text-white hover:underline sm:min-h-0"
+              >
+                {t("premium.hero.alsoConsiderBus")}
+              </Link>
+            </p>
           </div>
-        </div>
+        </article>
       </div>
     </section>
   );

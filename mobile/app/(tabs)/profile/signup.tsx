@@ -1,8 +1,8 @@
 /**
- * Sign up flow – same logic as web (app/signup/page.tsx):
- * 1. Email → send verification code (POST /api/auth/send-verification-code)
- * 2. Enter code → verify (POST /api/auth/verify-code)
- * 3. Full name, birth year, nationality, phone, password → signUp + create-profile
+ * Sign up flow — 웹(app/signup/page.tsx)과 동일:
+ * 1. Email → POST /api/auth/check-email 후 supabase.auth.signInWithOtp (Supabase가 OTP 발송)
+ * 2. 코드 입력 → supabase.auth.verifyOtp({ type: 'email' })
+ * 3. 프로필 → POST /api/auth/create-profile (세션의 accessToken)
  */
 import React, { useState, useEffect } from 'react';
 import {
@@ -25,15 +25,7 @@ import { BASE_URL } from '@/api/client';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
-function validatePassword(pwd: string): { valid: boolean; message?: string } {
-  if (pwd.length < 8) return { valid: false, message: 'Password must be at least 8 characters.' };
-  if (!/[a-zA-Z]/.test(pwd)) return { valid: false, message: 'Password must include at least one letter.' };
-  if (!/[0-9]/.test(pwd)) return { valid: false, message: 'Password must include at least one number.' };
-  if (!/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?`~]/.test(pwd)) return { valid: false, message: 'Password must include at least one special character.' };
-  return { valid: true };
-}
-
-async function apiPost(path: string, body: object) {
+async function apiPost<T = Record<string, unknown>>(path: string, body: object): Promise<T> {
   const url = `${BASE_URL.replace(/\/$/, '')}${path}`;
   const res = await fetch(url, {
     method: 'POST',
@@ -41,8 +33,8 @@ async function apiPost(path: string, body: object) {
     body: JSON.stringify(body),
   });
   const data = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(data.error || res.statusText);
-  return data;
+  if (!res.ok) throw new Error((data as { error?: string }).error || res.statusText);
+  return data as T;
 }
 
 type Step = 'email' | 'verify' | 'info';
@@ -56,8 +48,6 @@ export default function SignUpScreen() {
   const [birthYear, setBirthYear] = useState('');
   const [nationality, setNationality] = useState('');
   const [phone, setPhone] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
   const [agreedToTerms, setAgreedToTerms] = useState(false);
 
   const [sendingCode, setSendingCode] = useState(false);
@@ -80,11 +70,34 @@ export default function SignUpScreen() {
       setFieldError('Please enter your email.');
       return;
     }
+    if (!supabase) {
+      setFieldError('Auth not configured.');
+      return;
+    }
     setError(null);
     setFieldError(null);
     setSendingCode(true);
     try {
-      await apiPost('/api/auth/send-verification-code', { email: email.trim() });
+      const checkData = await apiPost<{ exists?: boolean }>('/api/auth/check-email', { email: email.trim() });
+      if (checkData.exists) {
+        setFieldError('This email is already registered. Sign in or use another email.');
+        return;
+      }
+
+      const base = BASE_URL.replace(/\/$/, '');
+      const { error: otpError } = await supabase.auth.signInWithOtp({
+        email: email.trim(),
+        options: {
+          shouldCreateUser: true,
+          emailRedirectTo: `${base}/auth/callback?next=/signup`,
+        },
+      });
+
+      if (otpError) {
+        setFieldError(otpError.message || 'Failed to send verification code.');
+        return;
+      }
+
       setCountdown(60);
       setStep('verify');
     } catch (e) {
@@ -99,14 +112,26 @@ export default function SignUpScreen() {
       setFieldError('Please enter the verification code.');
       return;
     }
+    if (!supabase) {
+      setFieldError('Auth not configured.');
+      return;
+    }
     setError(null);
     setFieldError(null);
     setVerifying(true);
     try {
-      await apiPost('/api/auth/verify-code', { email: email.trim(), code: code.trim() });
+      const { error: verifyError } = await supabase.auth.verifyOtp({
+        email: email.trim(),
+        token: code.trim(),
+        type: 'email',
+      });
+      if (verifyError) {
+        setFieldError(verifyError.message || 'Invalid or expired code.');
+        return;
+      }
       setStep('info');
     } catch (e) {
-      setFieldError(e instanceof Error ? e.message : 'Invalid or expired code.');
+      setFieldError(e instanceof Error ? e.message : 'Verification failed.');
     } finally {
       setVerifying(false);
     }
@@ -142,15 +167,6 @@ export default function SignUpScreen() {
       setFieldError('Nationality is required.');
       return;
     }
-    const pwdCheck = validatePassword(password);
-    if (!pwdCheck.valid) {
-      setFieldError(pwdCheck.message!);
-      return;
-    }
-    if (password !== confirmPassword) {
-      setFieldError('Passwords do not match.');
-      return;
-    }
     if (!agreedToTerms) {
       setError('Please agree to the Terms of Service and Privacy Policy.');
       return;
@@ -163,66 +179,40 @@ export default function SignUpScreen() {
 
     setSubmitting(true);
     try {
-      const { data, error: signUpError } = await supabase.auth.signUp({
-        email: email.trim(),
-        password,
-        options: {
-          data: {
-            full_name: fullName.trim(),
-            birth_year: birthNum,
-            nationality: nationality.trim(),
-            phone: phone.trim() || null,
-          },
-        },
-      });
-
-      if (signUpError) {
-        const msg = signUpError.message || '';
-        if (/already registered|already exists|already been registered/i.test(msg)) {
-          setError('This email is already registered. Try signing in or use another email.');
-        } else {
-          setError(msg);
-        }
+      const { data: sessionData } = await supabase.auth.getSession();
+      const session = sessionData?.session;
+      if (!session?.user) {
+        setError('Session expired. Please verify your email again.');
         setSubmitting(false);
         return;
       }
 
-      if (!data?.user) {
-        setError('Sign up did not return a user. Please try again.');
-        setSubmitting(false);
-        return;
-      }
+      const accessToken = session.access_token;
+      const userId = session.user.id;
 
-      const session = data.session ?? (await supabase.auth.getSession()).data?.session;
-      const accessToken = session?.access_token;
+      const createProfilePayload = {
+        userId,
+        full_name: fullName.trim(),
+        phone: phone.trim() || undefined,
+        birth_year: birthNum,
+        nationality: nationality.trim(),
+        accessToken: accessToken ?? undefined,
+      };
 
-      let profileRes = await fetch(`${BASE_URL.replace(/\/$/, '')}/api/auth/create-profile`, {
+      const apiBase = BASE_URL.replace(/\/$/, '');
+      let profileRes = await fetch(`${apiBase}/api/auth/create-profile`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          userId: data.user.id,
-          full_name: fullName.trim(),
-          phone: phone.trim() || undefined,
-          birth_year: birthNum,
-          nationality: nationality.trim(),
-          accessToken: accessToken ?? undefined,
-        }),
+        body: JSON.stringify(createProfilePayload),
       });
       let profileData = await profileRes.json().catch(() => ({}));
 
       if (!profileRes.ok && profileRes.status === 404) {
         await new Promise((r) => setTimeout(r, 2000));
-        profileRes = await fetch(`${BASE_URL.replace(/\/$/, '')}/api/auth/create-profile`, {
+        profileRes = await fetch(`${apiBase}/api/auth/create-profile`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            userId: data.user.id,
-            full_name: fullName.trim(),
-            phone: phone.trim() || undefined,
-            birth_year: birthNum,
-            nationality: nationality.trim(),
-            accessToken: accessToken ?? undefined,
-          }),
+          body: JSON.stringify(createProfilePayload),
         });
         profileData = await profileRes.json().catch(() => ({}));
       }
@@ -234,18 +224,18 @@ export default function SignUpScreen() {
           return;
         }
         try {
-          await fetch(`${BASE_URL.replace(/\/$/, '')}/api/auth/delete-user-without-profile`, {
+          await fetch(`${apiBase}/api/auth/delete-user-without-profile`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ userId: data.user.id, accessToken: accessToken ?? undefined }),
+            body: JSON.stringify({ userId, accessToken: accessToken ?? undefined }),
           });
         } catch (_) {}
-        setError(profileData.error || 'Failed to create profile. Please try again.');
+        setError((profileData as { error?: string }).error || 'Failed to save profile. Please try again.');
         setSubmitting(false);
         return;
       }
 
-      Alert.alert('Account created', 'You can now sign in with your email and password.', [
+      Alert.alert('Welcome', 'Your account is ready.', [
         { text: 'OK', onPress: () => router.replace('/(tabs)/profile') },
       ]);
     } catch (e) {
@@ -314,8 +304,16 @@ export default function SignUpScreen() {
               autoCapitalize="none"
               keyboardType="email-address"
             />
-            <Pressable style={[styles.primaryBtn, (!email.trim() || sendingCode) && styles.btnDisabled]} onPress={sendCode} disabled={sendingCode || countdown > 0}>
-              {sendingCode ? <ActivityIndicator color="#fff" size="small" /> : <Text style={styles.primaryBtnText}>{countdown > 0 ? `Resend in ${countdown}s` : 'Send verification code'}</Text>}
+            <Pressable
+              style={[styles.primaryBtn, (!email.trim() || sendingCode || countdown > 0) && styles.btnDisabled]}
+              onPress={sendCode}
+              disabled={sendingCode || countdown > 0}
+            >
+              {sendingCode ? (
+                <ActivityIndicator color="#fff" size="small" />
+              ) : (
+                <Text style={styles.primaryBtnText}>{countdown > 0 ? `Resend in ${countdown}s` : 'Send verification code'}</Text>
+              )}
             </Pressable>
           </View>
         )}
@@ -325,14 +323,15 @@ export default function SignUpScreen() {
             <Text style={styles.label}>Verification code *</Text>
             <TextInput
               style={inputStyle}
-              placeholder="00000000"
+              placeholder="000000"
               placeholderTextColor={theme.colors.textMuted}
               value={code}
-              onChangeText={(t) => setCode(t.replace(/\D/g, '').slice(0, 8))}
-              maxLength={8}
+              onChangeText={(t) => setCode(t.replace(/\D/g, '').slice(0, 6))}
+              maxLength={6}
               keyboardType="number-pad"
             />
             <Text style={styles.hint}>Sent to {email}</Text>
+            <Text style={styles.hintSmall}>Enter the 6-digit code from your email (Supabase Auth).</Text>
             <View style={styles.row}>
               <Pressable style={styles.secondaryBtn} onPress={() => setStep('email')}>
                 <Text style={styles.secondaryBtnText}>Back</Text>
@@ -341,11 +340,19 @@ export default function SignUpScreen() {
                 {verifying ? <ActivityIndicator color="#fff" size="small" /> : <Text style={styles.primaryBtnText}>Verify</Text>}
               </Pressable>
             </View>
+            {countdown > 0 ? (
+              <Text style={styles.resendHint}>Resend in {countdown}s</Text>
+            ) : (
+              <Pressable onPress={sendCode} disabled={sendingCode}>
+                <Text style={styles.resendLink}>{sendingCode ? 'Sending…' : 'Resend code'}</Text>
+              </Pressable>
+            )}
           </View>
         )}
 
         {step === 'info' && (
           <View style={styles.section}>
+            <Text style={styles.loginIdHint}>Login ID: {email}</Text>
             <Text style={styles.label}>Full name *</Text>
             <TextInput style={inputStyle} placeholder="Your name" placeholderTextColor={theme.colors.textMuted} value={fullName} onChangeText={setFullName} />
             <Text style={styles.label}>Birth year * (1900–{CURRENT_YEAR})</Text>
@@ -354,9 +361,7 @@ export default function SignUpScreen() {
             <TextInput style={inputStyle} placeholder="e.g. South Korea" placeholderTextColor={theme.colors.textMuted} value={nationality} onChangeText={setNationality} />
             <Text style={styles.label}>Phone (optional)</Text>
             <TextInput style={inputStyle} placeholder="+82 10 1234 5678" placeholderTextColor={theme.colors.textMuted} value={phone} onChangeText={setPhone} keyboardType="phone-pad" />
-            <Text style={styles.label}>Password * (8+ chars, letter, number, special)</Text>
-            <TextInput style={inputStyle} placeholder="Password" placeholderTextColor={theme.colors.textMuted} value={password} onChangeText={setPassword} secureTextEntry />
-            <TextInput style={inputStyle} placeholder="Confirm password" placeholderTextColor={theme.colors.textMuted} value={confirmPassword} onChangeText={setConfirmPassword} secureTextEntry />
+            <Text style={styles.hintSmall}>You can set a password later in the app or on the website (forgot password).</Text>
             <Pressable style={styles.checkRow} onPress={() => setAgreedToTerms(!agreedToTerms)}>
               <View style={[styles.checkbox, agreedToTerms && styles.checkboxChecked]} />
               <Text style={styles.checkLabel}>I agree to the Terms of Service and Privacy Policy</Text>
@@ -388,6 +393,7 @@ const styles = StyleSheet.create({
   backText: { fontSize: 16, color: theme.colors.primary, fontWeight: '600' },
   title: { fontSize: 18, fontWeight: '500', color: theme.colors.text },
   subtitle: { fontSize: 13, color: theme.colors.textMuted, marginTop: 4, marginBottom: 16 },
+  loginIdHint: { fontSize: 12, color: theme.colors.textMuted, marginBottom: 10 },
   steps: { flexDirection: 'row', alignItems: 'center', marginBottom: 20 },
   stepDot: { flexDirection: 'row', alignItems: 'center' },
   dot: { width: 10, height: 10, borderRadius: 5, backgroundColor: theme.colors.border },
@@ -407,7 +413,10 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   inputError: { borderColor: '#dc2626' },
-  hint: { fontSize: 12, color: theme.colors.textMuted, marginBottom: 12 },
+  hint: { fontSize: 12, color: theme.colors.textMuted, marginBottom: 8 },
+  hintSmall: { fontSize: 11, color: theme.colors.textMuted, marginBottom: 12, lineHeight: 16 },
+  resendHint: { textAlign: 'center', fontSize: 13, color: theme.colors.textMuted, marginTop: 8 },
+  resendLink: { textAlign: 'center', fontSize: 14, color: theme.colors.primary, fontWeight: '600', marginTop: 10 },
   primaryBtn: { backgroundColor: theme.colors.primary, paddingVertical: 14, borderRadius: 12, alignItems: 'center', marginBottom: 10 },
   primaryBtnText: { color: '#fff', fontWeight: '500', fontSize: 15 },
   secondaryBtn: { paddingVertical: 14, borderRadius: 12, alignItems: 'center', borderWidth: 1, borderColor: theme.colors.border, marginRight: 10 },

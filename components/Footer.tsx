@@ -1,13 +1,25 @@
 'use client';
 
 import { useTranslations } from '@/lib/i18n';
+import { cn } from '@/lib/utils';
 
-export default function Footer() {
+export type FooterProps = {
+  /** Softer hierarchy and spacing after premium light tour-detail pages (small-group). */
+  premiumHandoff?: boolean;
+};
+
+export default function Footer({ premiumHandoff }: FooterProps) {
   const t = useTranslations();
-  
+
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-300 border-t border-gray-700/50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <footer
+      data-footer-variant={premiumHandoff ? 'premium-handoff' : undefined}
+      className={cn(
+        'relative z-10 border-t border-slate-800/80 bg-slate-950 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-300 [color-scheme:dark]',
+        premiumHandoff && 'at-footer-premium-handoff'
+      )}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 pb-[max(5.5rem,calc(1rem+env(safe-area-inset-bottom,0px)+4.5rem))] md:pb-4">
 
         {/* Company Info — 2열 그리드 */}
         <div className="mb-3">
@@ -46,7 +58,7 @@ export default function Footer() {
         </div>
 
         {/* About, Support, Legal */}
-        <div className="grid grid-cols-3 gap-3 sm:gap-6 mb-3 pt-3 border-t border-gray-800">
+        <div className="grid grid-cols-3 gap-3 sm:gap-6 mb-3 pt-3 border-t border-slate-800">
           <div>
             <h3 className="text-white font-semibold mb-1.5 text-xs">{t('home.footer.aboutUs')}</h3>
             <ul className="space-y-0.5 text-[10px] sm:text-xs">
@@ -76,7 +88,7 @@ export default function Footer() {
         </div>
 
         {/* Stripe */}
-        <div className="flex items-center justify-center py-2 border-t border-gray-800">
+        <div className="flex items-center justify-center py-2 border-t border-slate-800">
           <a
             href="https://stripe.com"
             target="_blank"
@@ -90,7 +102,7 @@ export default function Footer() {
         </div>
 
         {/* Legal Summary + Copyright */}
-        <div className="border-t border-gray-800 pt-2 text-center text-xs text-gray-400 space-y-1">
+        <div className="border-t border-slate-800 pt-2 text-center text-xs text-slate-500 space-y-1">
           <p>{t('home.footer.legalSummary')}</p>
           <p>{t('home.footer.copyright')}</p>
         </div>

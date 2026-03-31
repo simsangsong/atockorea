@@ -12,7 +12,8 @@ import { supabase } from '@/lib/supabase';
 import { StatusBanner } from '@/src/components/ui/status-banner';
 import { rawBookingStatusToDisplayStatus } from '@/src/design/status';
 import type { BookingStatus } from '@/src/types/booking';
-import { COPY } from '@/src/design/copy';
+import { useCopy } from '@/lib/i18n';
+import { canCancelBookingByPolicy } from '@/lib/booking-cancel-policy';
 
 interface UpcomingTour {
   id: string;
@@ -27,12 +28,13 @@ interface UpcomingTour {
   } | null;
   pickup_points?: {
     name: string;
-    pickup_time?: string;
+    pickup_time?: string | null;
   } | null;
 }
 
 export default function UpcomingToursPage() {
   const router = useRouter();
+  const copy = useCopy();
   const [tours, setTours] = useState<UpcomingTour[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -83,7 +85,20 @@ export default function UpcomingToursPage() {
     }
   };
 
-  const handleCancel = async (bookingId: string) => {
+  const canCancel = (booking: UpcomingTour) =>
+    canCancelBookingByPolicy({
+      status: booking.status,
+      tour_date: booking.tour_date,
+      booking_date: booking.booking_date,
+    });
+
+  const handleCancel = async (booking: UpcomingTour) => {
+    if (!canCancel(booking)) {
+      alert(
+        'Cancellation is not allowed within 24 hours of the tour. Please contact customer support for assistance.',
+      );
+      return;
+    }
     if (!confirm('Are you sure you want to cancel this booking?')) {
       return;
     }
@@ -96,7 +111,7 @@ export default function UpcomingToursPage() {
         return;
       }
 
-      const response = await fetch(`/api/bookings/${bookingId}`, {
+      const response = await fetch(`/api/bookings/${booking.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -164,6 +179,7 @@ export default function UpcomingToursPage() {
         {tours.length > 0 ? (
           tours.map((tour) => {
             const tourDate = tour.tour_date || tour.booking_date;
+            const cancelOk = canCancel(tour);
             const imageUrl = tour.tours?.image_url || 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=400';
             
             return (
@@ -204,16 +220,31 @@ export default function UpcomingToursPage() {
                         href={`/tour/${tour.tour_id}`}
                         className="min-h-[44px] inline-flex items-center justify-center px-4 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       >
-                        {COPY.myTour.viewDetails}
+                        {copy.myTour.viewDetails}
                       </Link>
                       <button
                         type="button"
-                        onClick={() => handleCancel(tour.id)}
-                        className="min-h-[44px] px-4 py-2.5 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors text-sm font-medium focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                        onClick={() => void handleCancel(tour)}
+                        disabled={!cancelOk}
+                        title={
+                          !cancelOk
+                            ? 'Cancellation is not allowed within 24 hours of the tour'
+                            : 'Cancel Booking'
+                        }
+                        className={`min-h-[44px] px-4 py-2.5 rounded-lg text-sm font-medium focus:ring-2 focus:ring-offset-2 transition-colors ${
+                          cancelOk
+                            ? 'bg-red-50 text-red-600 hover:bg-red-100 focus:ring-red-500'
+                            : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                        }`}
                       >
                         Cancel Booking
                       </button>
                     </div>
+                    {!cancelOk && (
+                      <p className="text-xs text-red-600 mt-2">
+                        * Cancellation is not allowed within 24 hours of the tour
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>

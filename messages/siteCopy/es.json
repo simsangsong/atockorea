@@ -1,0 +1,410 @@
+{
+  "brand": {
+    "support": "Desde Jeju, expandiéndonos por toda Corea."
+  },
+  "nav": {
+    "aiTours": "Itinerarios inteligentes",
+    "privateTours": "Experiencias privadas",
+    "joinTours": "Grupo reducido premium",
+    "busTours": "Circuitos clásicos en autobús",
+    "myTour": "Mis reservas",
+    "help": "Centro de ayuda"
+  },
+  "hero": {
+    "eyebrow": "Itinerarios inteligentes · Corea",
+    "headline": "Precio de circuito en autobús,\ncomodidad de experiencia privada",
+    "sub": "Itinerario en un solo clic",
+    "subCard": "Un día en Corea más fluido: rutas optimizadas, propuestas claras y recogida en hotel coordinada localmente.",
+    "cta": "Diseñar mi viaje",
+    "badge": "SABER HACER DE GUÍAS PROFESIONALES",
+    "trust": [
+      "AI-built itinerary in minutes",
+      "Smarter pickup flow",
+      "3–13 travelers only",
+      "Clear pricing before you pay"
+    ],
+    "valuePropSubtitles": [
+      "Personalized in minutes",
+      "Area-aware hotel matching",
+      "Secure checkout"
+    ],
+    "trustCta": "Sin cargo automático del saldo. Cancelación gratuita hasta 24 h antes de la salida.",
+    "tags": [
+      "Jeju",
+      "Busan",
+      "Seoul",
+      "Small Group",
+      "Private"
+    ],
+    "featureEyebrow": "EXCURSIÓN COMPARTIDA",
+    "featureHeadline": "EXCURSIÓN COMPARTIDA\nPLANIFICADA CON IA",
+    "featureBullets": [
+      {
+        "label": "Tamaño máx. del grupo",
+        "valueSegments": [
+          {
+            "text": "13",
+            "emphasis": true
+          }
+        ]
+      },
+      {
+        "label": "Precio",
+        "valueSegments": [
+          {
+            "text": "Desde "
+          },
+          {
+            "text": "$58/persona",
+            "emphasis": true
+          },
+          {
+            "text": " — más barato con más viajeros"
+          }
+        ]
+      },
+      {
+        "label": "Itinerario",
+        "valueSegments": [
+          {
+            "text": "Generado por IA "
+          },
+          {
+            "text": "según tus preferencias",
+            "emphasis": true
+          }
+        ]
+      },
+      {
+        "label": "Guía",
+        "valueSegments": [
+          {
+            "text": "Acompañados por un "
+          },
+          {
+            "text": "conductor-guía local",
+            "emphasis": true
+          }
+        ]
+      }
+    ],
+    "featureCta": "Personalizar mi excursión compartida"
+  },
+  "howItWorks": {
+    "sectionEyebrow": "Diseñado para viajar por Corea",
+    "sectionSubtitle": "Un recorrido claro: define el itinerario y elige la modalidad que mejor se adapte a tu día.",
+    "title": "Cómo funciona",
+    "step1": "Indica tu hotel",
+    "step2": "Planeamos la mejor ruta",
+    "step3": "Elige tu nivel de comodidad",
+    "step4": "Viaja con menos complicaciones"
+  },
+  "comparison": {
+    "title": "Por qué elegirnos frente a circuitos en autobús o vehículos privados",
+    "bullets": [
+      "Less planning — we suggest the route",
+      "Small groups (3–13) — not crowded buses",
+      "Hotel-area pickup — smoother flow",
+      "Transparent pricing — no hidden fees",
+      "Better value than full private"
+    ]
+  },
+  "previewItinerary": {
+    "sectionHeading": "Itinerario de ejemplo",
+    "title": "Ejemplo de jornada en Jeju",
+    "pickupArea": "Centro urbano",
+    "hotelFitHint": "Ubicación alineada con tu hotel",
+    "travelerCount": "4 viajeros",
+    "vehicleType": "Monovolumen de gama alta",
+    "oneLine": "4 viajeros · Monovolumen de gama alta · 20% de depósito, saldo 24 h antes de la salida.",
+    "paymentNote": "Pay in full online to confirm · Free cancellation until 24h before"
+  },
+  "reviews": {
+    "title": "Lo que dicen los viajeros",
+    "intro": "Fragmentos de reservas reales y comentarios tras la experiencia. Ampliaremos este apartado a medida que crezcan las valoraciones.",
+    "quotes": [
+      "Much easier than planning it myself.",
+      "More comfortable than a regular bus tour.",
+      "The pickup route made much more sense.",
+      "Felt smoother than I expected for a join tour."
+    ]
+  },
+  "homepageBookWithConfidence": {
+    "eyebrow": "TRANQUILIDAD",
+    "title": "Reserve con total tranquilidad",
+    "cards": [
+      {
+        "icon": "mapPinned",
+        "headline": "Recogidas y zonas, todo transparente",
+        "tagline": "",
+        "body": "Antes de reservar, revisa la compatibilidad de la zona de tu hotel y las condiciones de recogida para evitar imprevistos.",
+        "footer": "Verificación de zona integrada en la reserva",
+        "footerNote": ""
+      },
+      {
+        "icon": "usersRound",
+        "headline": "Comodidad en grupo reducido",
+        "tagline": "Un paso por encima de los autobuses saturados",
+        "body": "Ritmo relajado, recogidas ágiles y la calidez de un grupo reducido para disfrutar el día con calma.",
+        "footer": "Confort y excelente relación calidad-precio",
+        "footerNote": ""
+      },
+      {
+        "icon": "landmark",
+        "headline": "Criterios de un operador local",
+        "tagline": "",
+        "body": "Concebido a partir de operaciones reales, recogidas en hotel y la lógica práctica de una jornada completa.",
+        "footer": "Pensado para el viajero exigente",
+        "footerNote": "La opción equilibrada entre prestaciones y presupuesto"
+      }
+    ]
+  },
+  "tourTypes": {
+    "privateTitle": "Experiencia privada con IA",
+    "privateBody": "Exclusivo para su grupo. La IA diseña la ruta y usted confirma al momento.",
+    "privatePoints": [
+      "Your group only",
+      "Instant confirmation",
+      "Best for families & friends"
+    ],
+    "privateCta": "Iniciar experiencia privada",
+    "joinTitle": "Excursión compartida premium con IA",
+    "joinBody": "Grupo reducido, recogida en zona hotelera y depósito con condiciones transparentes.",
+    "joinPoints": [
+      "Small-group comfort",
+      "Better pickup flow",
+      "Simple booking flow"
+    ],
+    "joinCta": "Unirme al grupo reducido",
+    "busTitle": "Circuito clásico en autobús",
+    "busBody": "Itinerarios fijos, formato de grupo tradicional.",
+    "busCta": "Descubrir circuitos clásicos"
+  },
+  "surcharge": {
+    "short": "Puede aplicarse suplemento de recogida",
+    "title": "Una ruta más fluida para todos",
+    "body": "Si tu hotel está fuera de la zona principal de recogida, se aplica un suplemento. Ayuda a mantener la ruta más fluida para todos.",
+    "final": "Final según el hotel seleccionado",
+    "included": "Recogida incluida"
+  },
+  "pickupMatch": {
+    "great": "Recogida óptima",
+    "good": "Recogida adecuada",
+    "slight": "Traslado ligeramente más largo"
+  },
+  "joinStatus": {
+    "waiting": "Esperando más viajeros",
+    "balanceOpen": "Pago del saldo abierto",
+    "confirmed": "Confirmado",
+    "missedDeadline": "Plazo vencido",
+    "privateOnly": "Se recomienda experiencia privada",
+    "joinUnavailable": "Modalidad compartida no disponible aún en esta ruta"
+  },
+  "joinStatusHelp": {
+    "waiting": "Se necesitan más viajeros antes de abrir el pago del saldo.",
+    "balanceOpen": "Ya puede completar el saldo en Mis reservas.",
+    "confirmed": "La salida está confirmada y lista.",
+    "missedDeadline": "El plazo para pagar el saldo ha pasado.",
+    "privateOnly": "Esta zona hotelera se presta mejor a una experiencia privada.",
+    "joinUnavailable": "Esta ruta aún no admite la modalidad compartida."
+  },
+  "checkout": {
+    "title": "Pago",
+    "cta": "Reservar mi plaza",
+    "completeBooking": "Completar reserva",
+    "timelineStaticCopy": "Depósito reembolsable hasta 24 h antes; saldo debido 18 h antes.",
+    "orderSummary": "Resumen del pedido",
+    "basePrice": "Precio base del circuito",
+    "pickupSurcharge": "Suplemento de recogida",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "secureCheckoutTitle": "Secure checkout",
+    "secureCheckoutBody": "Pay the full tour price online to complete your booking. Free cancellation until 24 hours before departure.",
+    "confirmationEmailNote": "You will receive a confirmation email after payment."
+  },
+  "listDetail": {
+    "summaryToursFound": "{{count}} circuito(s) disponible(s)",
+    "destination": "Destino",
+    "destinationAll": "Todos",
+    "hotelArea": "Zona del hotel",
+    "date": "Fecha",
+    "guests": "Viajeros",
+    "styleTags": "Estilo de viaje",
+    "editSearch": "Editar búsqueda",
+    "refine": "Afinar",
+    "tourTypeAll": "Todos",
+    "noToursFound": "Sin resultados",
+    "loadingTours": "Cargando itinerarios…",
+    "viewTour": "Ver circuito",
+    "viewDetails": "Ver detalles",
+    "joinThisTour": "Unirme a esta salida",
+    "pickupPointsCount": "{count} punto(s) de recogida",
+    "listPaymentNote": "Pay in full online · Manage in My Tours"
+  },
+  "detail": {
+    "whyThisFitsYou": "Por qué te encaja",
+    "whoThisIsBestFor": "Para quién es mejor",
+    "cancellationPolicy": "Política de cancelación",
+    "cancellationPolicyBody": "Cancelación gratuita hasta 24 h antes de la salida. Después, el depósito puede no ser reembolsable.",
+    "pickupTipsIntro": "Horarios exactos en la confirmación. Llega con tiempo; las ausencias no se reembolsan.",
+    "badgeAiPlanned": "Plan IA",
+    "badgeSmallGroup": "Grupo reducido",
+    "badgePrivate": "Privado",
+    "badgeVerifiedGuide": "Guía local acreditado",
+    "badgeTransparentBooking": "Reglas de reserva transparentes",
+    "badgeClassicBus": "Autobús clásico",
+    "selectDateToSeeTimeline": "Elija una fecha arriba para ver el calendario de su reserva",
+    "whoBus": "Viajeros que prefieren el formato de grupo clásico"
+  },
+  "timeline": {
+    "title": "Hitos de su reserva",
+    "refundTitle": "Cancelación gratuita hasta",
+    "refundSub": "El saldo se abre al mismo tiempo",
+    "balanceTitle": "Plazo de pago del saldo",
+    "balanceSub": "Complételo manualmente en Mis reservas",
+    "startTitle": "Inicio de la experiencia",
+    "startSub": "Reserva cerrada",
+    "reserveTitle": "Book online",
+    "reserveSub": "Pay in full to confirm"
+  },
+  "myTour": {
+    "title": "Mis reservas",
+    "payBalance": "Pagar saldo ahora",
+    "viewDetails": "Ver detalles de la reserva",
+    "viewPickup": "Ver información de recogida",
+    "rebook": "Nueva reserva",
+    "confirmed": "Confirmado",
+    "awaitingBalance": "Pendiente de saldo",
+    "nextStep": "Siguiente paso",
+    "status": {
+      "pending": "Pendiente",
+      "awaitingBalance": "Pendiente de saldo",
+      "balanceDue": "Saldo requerido",
+      "confirmed": "Confirmado",
+      "completed": "Completado",
+      "cancelled": "Cancelado",
+      "refunded": "Reembolsado",
+      "deadlineMissed": "Plazo vencido",
+      "paymentReceived": "Payment received"
+    }
+  },
+  "destinations": {
+    "title": "Jeju ya disponible. Próximamente, nuevos destinos en Corea.",
+    "jeju": "Disponible ahora",
+    "busan": "Próximamente",
+    "seoul": "Próximamente",
+    "notify": "Avísame"
+  },
+  "fallback": {
+    "title": "¿Prefiere un circuito en grupo clásico?"
+  },
+  "finalCta": {
+    "sectionEyebrow": "Empiece ahora",
+    "sectionSubtitle": "Diseñe primero su itinerario con IA y elija la modalidad que mejor se adapte a su jornada.",
+    "secondaryCta": "Explorar circuitos clásicos en autobús",
+    "title": "¿Preparado para descubrir Jeju con un itinerario a medida?",
+    "cta": "Diseñar mi viaje"
+  },
+  "builderLoading": {
+    "stage1WithArea": "Comprobando recogida cerca de [Area]…",
+    "stage1Generic": "Buscando la mejor ruta para tu zona hotelera…",
+    "stage2": "Buscando la propuesta que mejor se adapte a usted…",
+    "stage3": "Casi listo…",
+    "end": "Tu viaje está listo"
+  },
+  "builderPickupArea": {
+    "jeju_city": "Centro urbano",
+    "jeju_outside": "Cercanías",
+    "seogwipo_city": "Zona de Seogwipo",
+    "seogwipo_outside": "Periferia"
+  },
+  "builderSummary": {
+    "paymentNote": "Pay in full online · Free cancellation until 24h before departure"
+  },
+  "planner": {
+    "hotelAreaLabel": "Zona del hotel"
+  },
+  "productCards": {
+    "busExtraBullet": "Autobús clásico · salida desde punto de encuentro",
+    "badgeJoin": "Equilibrado",
+    "badgePrivate": "Máxima flexibilidad",
+    "badgeBus": "Mejor precio",
+    "sectionEyebrow": "Modalidades",
+    "sectionTitle": "El estilo que define su viaje",
+    "swipeToCompare": "Deslice para comparar"
+  },
+  "homepageComparison": {
+    "eyebrow": "Compare modalidades",
+    "title": "El ritmo de viaje por Corea\nque mejor le define",
+    "subtitle": "Circuitos en autobús, grupo reducido con IA o experiencia privada a medida.",
+    "rows": [
+      {
+        "label": "Precio",
+        "ai": "Medio",
+        "private": "Premium",
+        "bus": "Más bajo"
+      },
+      {
+        "label": "Grupo",
+        "ai": "Grupo reducido",
+        "private": "Solo privado",
+        "bus": "Gran grupo compartido"
+      },
+      {
+        "label": "Ruta",
+        "ai": "Plan IA",
+        "private": "A medida",
+        "bus": "Fija"
+      },
+      {
+        "label": "Recogida",
+        "ai": "Hotel",
+        "private": "Hotel",
+        "bus": "Punto de encuentro"
+      },
+      {
+        "label": "Ideal si",
+        "ai": "Buena relación calidad-precio",
+        "private": "Máxima libertad",
+        "bus": "Presupuesto"
+      }
+    ],
+    "cards": [
+      {
+        "valueKey": "ai",
+        "categoryLabel": "CON IA",
+        "title": "Grupo reducido",
+        "description": "Confort y valor con itinerarios inteligentes",
+        "ctaLabel": "Diseñar ahora",
+        "ctaHref": "/custom-join-tour",
+        "highlight": true,
+        "badge": "MEJOR EQUILIBRIO"
+      },
+      {
+        "valueKey": "bus",
+        "categoryLabel": "CLÁSICO",
+        "title": "Circuito en autobús",
+        "description": "Itinerario fijo, inversión mínima",
+        "ctaLabel": "Explorar",
+        "ctaHref": "/tours/list",
+        "highlight": false
+      },
+      {
+        "valueKey": "private",
+        "categoryLabel": "PREMIUM",
+        "title": "Experiencia privada",
+        "description": "Libertad absoluta, propuesta a medida",
+        "ctaLabel": "Diseñar experiencia",
+        "ctaHref": "/tours",
+        "highlight": false
+      }
+    ]
+  },
+  "homepageAiPrices": {
+    "privatePriceLabel": "Desde ₩398.000 / grupo",
+    "privatePriceSub": "1–6 viajeros · 7–13 con suplemento",
+    "joinPriceLabel": "Desde ₩50.000 / persona",
+    "joinPriceSub": "20% de depósito · saldo en Mis reservas",
+    "busPriceLabel": "Desde ₩59.000 / persona"
+  }
+}

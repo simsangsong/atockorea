@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireMerchant } from '@/lib/auth';
+import { validateAppPassword } from '@/lib/password-policy';
 
 /**
  * POST /api/auth/merchant/change-password
@@ -18,12 +19,9 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Validate new password strength
-    if (newPassword.length < 8) {
-      return NextResponse.json(
-        { error: 'New password must be at least 8 characters' },
-        { status: 400 }
-      );
+    const policy = validateAppPassword(newPassword);
+    if (!policy.valid) {
+      return NextResponse.json({ error: policy.message ?? 'Invalid password' }, { status: 400 });
     }
 
     const supabase = createServerClient();

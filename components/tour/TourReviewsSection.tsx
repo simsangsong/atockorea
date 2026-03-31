@@ -78,13 +78,13 @@ export default function TourReviewsSection({ tourId, tourTitle, className = '' }
           <div className="w-8 h-8 border-2 border-gray-200 border-t-gray-900 rounded-full animate-spin" />
         </div>
       ) : reviews.length === 0 ? (
-        <div className="py-8 text-center text-gray-500 text-sm rounded-2xl bg-gray-50/80 border border-gray-100">
+        <div className="py-8 text-center text-gray-500 text-sm rounded-design-lg itinerary-glass-card-subtle">
           {t('tour.noReviewsYet')}
         </div>
       ) : (
         <ul className="space-y-5">
           {reviews.map((review) => (
-            <li key={review.id} className="rounded-2xl border border-gray-200/60 bg-white p-4 sm:p-5 shadow-sm">
+            <li key={review.id} className="rounded-design-lg p-4 sm:p-5 itinerary-glass-card-subtle">
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden">
                   {review.is_anonymous ? (

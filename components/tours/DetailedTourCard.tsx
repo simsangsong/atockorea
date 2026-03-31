@@ -3,11 +3,12 @@
 import { useState, useEffect, memo, useMemo, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CheckIcon, MapIcon, CartIcon, HeartIcon, HeartSolidIcon } from '@/components/Icons';
+import { MapIcon, CartIcon, HeartIcon, HeartSolidIcon } from '@/components/Icons';
 import { isInWishlist, toggleWishlist } from '@/lib/wishlist';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from '@/lib/i18n';
 import { useCurrencyOptional } from '@/lib/currency';
+import TourCardScheduleTimeline from '@/components/tours/TourCardScheduleTimeline';
 
 interface DetailedTourCardProps {
   tour: {
@@ -131,14 +132,12 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
     });
   }, [tour.schedule]);
 
-  // Color dots for each stop
-  const dotColors = ['bg-blue-500', 'bg-green-500', 'bg-orange-500', 'bg-purple-500', 'bg-pink-500', 'bg-indigo-500'];
-  const getDotColor = (index: number) => dotColors[index % dotColors.length];
-
   // 모바일에서 일정 표시 개수 제한 (카드 컴팩트하게)
   const MOBILE_STOPS_VISIBLE = 3;
-  const mobileStops = useMemo(() => mainStops.slice(0, MOBILE_STOPS_VISIBLE), [mainStops]);
-  const remainingStopsCount = mainStops.length - MOBILE_STOPS_VISIBLE;
+  const cardTimelineStops = useMemo(() => {
+    if (mainStops.length > 0) return mainStops;
+    return tour.features.map((f: string) => ({ title: f }));
+  }, [mainStops, tour.features]);
 
   return (
     <>
@@ -208,36 +207,16 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
               {tour.lunchIncluded && <span className="text-[10px] opacity-80">🍽</span>}
             </div>
 
-            {/* 일정 - 모바일에서는 최대 3개만 표시 + "N more" */}
-            {(mobileStops.length > 0 || (mainStops.length === 0 && tour.features?.length > 0)) && (
-              <div className="mb-2 flex-1 min-h-0">
-                <div className="space-y-0.5">
-                  {mobileStops.length > 0
-                    ? mobileStops.map((item, index) => (
-                        <div key={index} className="flex items-center gap-1.5">
-                          <span className={`h-1 w-1 rounded-full ${getDotColor(index)} flex-shrink-0`} />
-                          <span className="text-[10px] text-gray-700 leading-tight line-clamp-1 truncate">
-                            {item.title}
-                          </span>
-                        </div>
-                      ))
-                    : tour.features?.slice(0, MOBILE_STOPS_VISIBLE).map((feature, index) => (
-                        <div key={index} className="flex items-center gap-1.5">
-                          <span className={`h-1 w-1 rounded-full ${getDotColor(index)} flex-shrink-0`} />
-                          <span className="text-[10px] text-gray-700 leading-tight line-clamp-1 truncate">
-                            {feature}
-                          </span>
-                        </div>
-                      ))}
-                  {remainingStopsCount > 0 && (
-                    <p className="text-[10px] text-gray-500 pl-2.5 pt-0.5">+{remainingStopsCount} more</p>
-                  )}
-                  {mainStops.length === 0 && tour.features?.length > MOBILE_STOPS_VISIBLE && (
-                    <p className="text-[10px] text-gray-500 pl-2.5 pt-0.5">+{tour.features.length - MOBILE_STOPS_VISIBLE} more</p>
-                  )}
-                </div>
+            {cardTimelineStops.length > 0 ? (
+              <div className="mb-2 flex-1 min-h-0 overflow-hidden">
+                <TourCardScheduleTimeline
+                  stops={cardTimelineStops}
+                  title={t('tour.itinerary')}
+                  density="compact"
+                  maxVisible={MOBILE_STOPS_VISIBLE}
+                />
               </div>
-            )}
+            ) : null}
 
             {/* 버튼 */}
             <div className="flex gap-1.5 pt-1.5 mt-auto border-t border-gray-100">
@@ -270,9 +249,9 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
 
       {/* 데스크탑: 원래 크기 */}
       <article className="hidden sm:block bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-        <div className="flex flex-row gap-4 p-4">
+        <div className="flex flex-row gap-4 p-4 items-stretch">
           {/* Image */}
-          <div className="w-48 h-48 flex-shrink-0 relative rounded-lg overflow-hidden bg-gray-100">
+          <div className="w-48 h-48 flex-shrink-0 relative rounded-lg overflow-hidden bg-gray-100 self-start">
             <Link href={`/tour/${tour.id}`}>
               <Image
                 src={tour.image || '/placeholder-tour.jpg'}
@@ -291,7 +270,7 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
           </div>
 
           {/* Content */}
-          <div className="flex-1 flex flex-col justify-between">
+          <div className="flex-1 flex flex-col justify-between min-w-0">
             <div>
               {/* Header */}
               <div className="flex items-start justify-between mb-2">
@@ -379,6 +358,12 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
               </div>
             </div>
           </div>
+
+          {cardTimelineStops.length > 0 ? (
+            <aside className="hidden md:flex flex-col w-[200px] lg:w-[228px] shrink-0 border-l border-gray-100 pl-4 ml-1 bg-gradient-to-b from-slate-50/50 via-white to-white rounded-r-xl">
+              <TourCardScheduleTimeline stops={cardTimelineStops} title={t('tour.itinerary')} density="comfortable" />
+            </aside>
+          ) : null}
         </div>
       </article>
     </>

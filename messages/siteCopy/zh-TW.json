@@ -1,0 +1,410 @@
+{
+  "brand": {
+    "support": "從濟州出發，拓展至韓國各地。"
+  },
+  "nav": {
+    "aiTours": "智能行程",
+    "privateTours": "私家團",
+    "joinTours": "精品小團共乘",
+    "busTours": "經典巴士行程",
+    "myTour": "我的行程",
+    "help": "客服中心"
+  },
+  "hero": {
+    "eyebrow": "智能規劃 · 韓國行程",
+    "headline": "巴士團的價格，\n私人團的舒適",
+    "sub": "一鍵生成行程",
+    "subCard": "智能規劃路線、行程一目了然，搭配飯店上門接送，讓韓國之旅從容又省心。",
+    "cta": "訂製行程",
+    "badge": "資深導遊團隊臻選呈現",
+    "trust": [
+      "AI-built itinerary in minutes",
+      "Smarter pickup flow",
+      "3–13 travelers only",
+      "Clear pricing before you pay"
+    ],
+    "valuePropSubtitles": [
+      "Personalized in minutes",
+      "Area-aware hotel matching",
+      "Secure checkout"
+    ],
+    "trustCta": "尾款不會自動扣款；出發前滿 24 小時可免費取消。",
+    "tags": [
+      "Jeju",
+      "Busan",
+      "Seoul",
+      "Small Group",
+      "Private"
+    ],
+    "featureEyebrow": "共乘團",
+    "featureHeadline": "智能規劃\n共乘團",
+    "featureBullets": [
+      {
+        "label": "最多人數",
+        "valueSegments": [
+          {
+            "text": "13 人",
+            "emphasis": true
+          }
+        ]
+      },
+      {
+        "label": "價格",
+        "valueSegments": [
+          {
+            "text": "人均 "
+          },
+          {
+            "text": "$58 起",
+            "emphasis": true
+          },
+          {
+            "text": " — 人數越多越划算"
+          }
+        ]
+      },
+      {
+        "label": "行程",
+        "valueSegments": [
+          {
+            "text": "依您偏好 "
+          },
+          {
+            "text": "智能生成",
+            "emphasis": true
+          }
+        ]
+      },
+      {
+        "label": "導遊",
+        "valueSegments": [
+          {
+            "text": "由經驗豐富的 "
+          },
+          {
+            "text": "在地司導帶隊",
+            "emphasis": true
+          }
+        ]
+      }
+    ],
+    "featureCta": "訂製我的共乘行程"
+  },
+  "howItWorks": {
+    "sectionEyebrow": "專為韓國深度旅設計",
+    "sectionSubtitle": "四步完成：先規劃路線，再挑選最符合您當日節奏的出行方式。",
+    "title": "服務流程",
+    "step1": "輸入您的飯店",
+    "step2": "我們為您規劃最佳路線",
+    "step3": "選擇您想要的舒適度",
+    "step4": "從容出發"
+  },
+  "comparison": {
+    "title": "相較傳統大巴或包車，為何選我們",
+    "bullets": [
+      "Less planning — we suggest the route",
+      "Small groups (3–13) — not crowded buses",
+      "Hotel-area pickup — smoother flow",
+      "Transparent pricing — no hidden fees",
+      "Better value than full private"
+    ]
+  },
+  "previewItinerary": {
+    "sectionHeading": "行程範例",
+    "title": "濟州一日遊範例",
+    "pickupArea": "市區核心",
+    "hotelFitHint": "與下榻飯店位置契合",
+    "travelerCount": "4 位旅客",
+    "vehicleType": "高級保母車",
+    "oneLine": "4 人 · 高級保母車 · 訂金 20%，尾款於出發 24 小時前結清。",
+    "paymentNote": "Pay in full online to confirm · Free cancellation until 24h before"
+  },
+  "reviews": {
+    "title": "旅客怎麼說",
+    "intro": "節錄自真實預訂與行後回饋；隨口碑累積，將持續為您呈現更豐富的評價內容。",
+    "quotes": [
+      "Much easier than planning it myself.",
+      "More comfortable than a regular bus tour.",
+      "The pickup route made much more sense.",
+      "Felt smoother than I expected for a join tour."
+    ]
+  },
+  "homepageBookWithConfidence": {
+    "eyebrow": "安心之選",
+    "title": "放心預訂",
+    "cards": [
+      {
+        "icon": "mapPinned",
+        "headline": "接送與區域規則一目了然",
+        "tagline": "",
+        "body": "下單前即可了解飯店區域是否適配及接送細則，少一份不確定。",
+        "footer": "預訂流程內同步顯示飯店區域核對",
+        "footerNote": ""
+      },
+      {
+        "icon": "usersRound",
+        "headline": "小團舒適",
+        "tagline": "告別擁擠大巴的從容之選",
+        "body": "節奏舒緩、接送簡明、小團氛圍，讓一整天都更輕鬆。",
+        "footer": "舒適與價值兼得",
+        "footerNote": ""
+      },
+      {
+        "icon": "landmark",
+        "headline": "深耕在地的服務標準",
+        "tagline": "",
+        "body": "依真實發團經驗、飯店接送銜接與一日出遊動線量身設計。",
+        "footer": "貼合在地出行情境",
+        "footerNote": "品質與預算兼顧之選"
+      }
+    ]
+  },
+  "tourTypes": {
+    "privateTitle": "智能私家團",
+    "privateBody": "獨立成團，智能規劃路線，即時確認。",
+    "privatePoints": [
+      "Your group only",
+      "Instant confirmation",
+      "Best for families & friends"
+    ],
+    "privateCta": "開啟私家團",
+    "joinTitle": "智能精品共乘",
+    "joinBody": "精品小團、飯店區域上門接送、訂金規則清楚可查。",
+    "joinPoints": [
+      "Small-group comfort",
+      "Better pickup flow",
+      "Simple booking flow"
+    ],
+    "joinCta": "加入精品團",
+    "busTitle": "經典巴士行程",
+    "busBody": "固定路線，傳統跟團形式。",
+    "busCta": "瀏覽經典巴士路線"
+  },
+  "surcharge": {
+    "short": "可能收取接送附加費",
+    "title": "讓路線對每個人都更順暢",
+    "body": "您的飯店位於主要接送區之外時，將收取額外接送費。這有助於為所有旅客保持更順暢的路線。",
+    "final": "以您所選飯店為準",
+    "included": "含接送"
+  },
+  "pickupMatch": {
+    "great": "接送銜接極佳",
+    "good": "接送銜接良好",
+    "slight": "車程可能略長"
+  },
+  "joinStatus": {
+    "waiting": "等待更多旅客",
+    "balanceOpen": "已開放尾款付款",
+    "confirmed": "已確認",
+    "missedDeadline": "已錯過截止",
+    "privateOnly": "建議改選私家團",
+    "joinUnavailable": "該路線暫不支援共乘預訂"
+  },
+  "joinStatusHelp": {
+    "waiting": "開放尾款前需要更多旅客加入。",
+    "balanceOpen": "您現在可以在「我的行程」中支付尾款。",
+    "confirmed": "行程已確認，可以出發。",
+    "missedDeadline": "尾款付款截止時間已過。",
+    "privateOnly": "該區域更適合私家團出行。",
+    "joinUnavailable": "該路線目前不開放共乘預訂。"
+  },
+  "checkout": {
+    "title": "結帳",
+    "cta": "預訂我的名額",
+    "completeBooking": "完成預訂",
+    "timelineStaticCopy": "出發 24 小時前訂金可退；尾款請於出發 18 小時前支付。",
+    "orderSummary": "訂單摘要",
+    "basePrice": "基本團費",
+    "pickupSurcharge": "接送附加費",
+    "subtotal": "小計",
+    "total": "合計",
+    "secureCheckoutTitle": "Secure checkout",
+    "secureCheckoutBody": "Pay the full tour price online to complete your booking. Free cancellation until 24 hours before departure.",
+    "confirmationEmailNote": "You will receive a confirmation email after payment."
+  },
+  "listDetail": {
+    "summaryToursFound": "共 {{count}} 個行程",
+    "destination": "目的地",
+    "destinationAll": "全部",
+    "hotelArea": "飯店區域",
+    "date": "日期",
+    "guests": "人數",
+    "styleTags": "旅行風格",
+    "editSearch": "修改搜尋",
+    "refine": "篩選",
+    "tourTypeAll": "全部",
+    "noToursFound": "暫無行程",
+    "loadingTours": "載入行程中…",
+    "viewTour": "查看行程",
+    "viewDetails": "查看詳情",
+    "joinThisTour": "加入此行程",
+    "pickupPointsCount": "{count} 個接送點",
+    "listPaymentNote": "Pay in full online · Manage in My Tours"
+  },
+  "detail": {
+    "whyThisFitsYou": "為什麼適合您",
+    "whoThisIsBestFor": "最適合誰",
+    "cancellationPolicy": "取消政策",
+    "cancellationPolicyBody": "出發 24 小時前可免費取消。之後訂金可能不予退還。",
+    "pickupTipsIntro": "具體時間見確認函。請提前到達；未出席不予退款。",
+    "badgeAiPlanned": "AI 規劃",
+    "badgeSmallGroup": "小團",
+    "badgePrivate": "私人",
+    "badgeVerifiedGuide": "嚴選在地司導",
+    "badgeTransparentBooking": "透明預訂規則",
+    "badgeClassicBus": "經典巴士",
+    "selectDateToSeeTimeline": "在上方選定日期即可查看完整預訂節點",
+    "whoBus": "偏好傳統團體形式的旅客"
+  },
+  "timeline": {
+    "title": "預訂時間軸",
+    "refundTitle": "免費取消截止",
+    "refundSub": "尾款同時開放",
+    "balanceTitle": "尾款付款截止",
+    "balanceSub": "在「我的行程」中手動完成",
+    "startTitle": "行程開始",
+    "startSub": "預訂已關閉",
+    "reserveTitle": "Book online",
+    "reserveSub": "Pay in full to confirm"
+  },
+  "myTour": {
+    "title": "我的行程",
+    "payBalance": "立即支付尾款",
+    "viewDetails": "查看預訂詳情",
+    "viewPickup": "查看接送資訊",
+    "rebook": "再訂一單",
+    "confirmed": "已確認",
+    "awaitingBalance": "待付尾款",
+    "nextStep": "下一步",
+    "status": {
+      "pending": "待處理",
+      "awaitingBalance": "待付尾款",
+      "balanceDue": "需付尾款",
+      "confirmed": "已確認",
+      "completed": "已完成",
+      "cancelled": "已取消",
+      "refunded": "已退款",
+      "deadlineMissed": "已錯過截止",
+      "paymentReceived": "Payment received"
+    }
+  },
+  "destinations": {
+    "title": "濟州站已開通，更多韓國目的地陸續上線。",
+    "jeju": "即刻可訂",
+    "busan": "敬請期待",
+    "seoul": "敬請期待",
+    "notify": "訂閱提醒"
+  },
+  "fallback": {
+    "title": "更偏好經典跟團遊？"
+  },
+  "finalCta": {
+    "sectionEyebrow": "即刻啟程",
+    "sectionSubtitle": "先完成智能規劃，再挑選最符合您當日節奏的出行方式。",
+    "secondaryCta": "瀏覽經典巴士路線",
+    "title": "準備以更從容的方式開啟濟州之旅？",
+    "cta": "訂製行程"
+  },
+  "builderLoading": {
+    "stage1WithArea": "正在核對 [Area] 周邊接送…",
+    "stage1Generic": "正在為您的飯店區域優選路線…",
+    "stage2": "正在為您配對最合適的行程…",
+    "stage3": "馬上就好…",
+    "end": "行程已就緒"
+  },
+  "builderPickupArea": {
+    "jeju_city": "市區核心",
+    "jeju_outside": "近郊",
+    "seogwipo_city": "西歸浦一帶",
+    "seogwipo_outside": "外圍"
+  },
+  "builderSummary": {
+    "paymentNote": "Pay in full online · Free cancellation until 24h before departure"
+  },
+  "planner": {
+    "hotelAreaLabel": "飯店區域"
+  },
+  "productCards": {
+    "busExtraBullet": "經典巴士 · 集合點上車",
+    "badgeJoin": "口碑之選",
+    "badgePrivate": "私享自由",
+    "badgeBus": "高性價比",
+    "sectionEyebrow": "出行方式",
+    "sectionTitle": "擇您所享",
+    "swipeToCompare": "左右滑動比較"
+  },
+  "homepageComparison": {
+    "eyebrow": "出行方式一覽",
+    "title": "哪一種方式\n最懂您的韓國之旅",
+    "subtitle": "經典巴士、智能精品共乘，或私家訂製，隨心而選。",
+    "rows": [
+      {
+        "label": "價格",
+        "ai": "中等",
+        "private": "高端",
+        "bus": "最低"
+      },
+      {
+        "label": "團體",
+        "ai": "小團",
+        "private": "僅私人",
+        "bus": "大型合乘"
+      },
+      {
+        "label": "路線",
+        "ai": "AI 規劃",
+        "private": "訂製",
+        "bus": "固定"
+      },
+      {
+        "label": "接送",
+        "ai": "飯店",
+        "private": "飯店",
+        "bus": "集合點"
+      },
+      {
+        "label": "適合",
+        "ai": "品質之選",
+        "private": "私享自由",
+        "bus": "預算優先"
+      }
+    ],
+    "cards": [
+      {
+        "valueKey": "ai",
+        "categoryLabel": "智能規劃",
+        "title": "精品共乘",
+        "description": "智能路線，舒適與價值兼得",
+        "ctaLabel": "立即訂製",
+        "ctaHref": "/custom-join-tour",
+        "highlight": true,
+        "badge": "口碑推薦"
+      },
+      {
+        "valueKey": "bus",
+        "categoryLabel": "經典",
+        "title": "巴士觀光",
+        "description": "固定路線，入門之選",
+        "ctaLabel": "瀏覽路線",
+        "ctaHref": "/tours/list",
+        "highlight": false
+      },
+      {
+        "valueKey": "private",
+        "categoryLabel": "尊尚",
+        "title": "私家訂製",
+        "description": "行程自由，尊尚私享",
+        "ctaLabel": "訂製行程",
+        "ctaHref": "/tours",
+        "highlight": false
+      }
+    ]
+  },
+  "homepageAiPrices": {
+    "privatePriceLabel": "₩398,000 起 / 團",
+    "privatePriceSub": "1–6 人 · 7–13 人另計",
+    "joinPriceLabel": "₩50,000 起 / 人",
+    "joinPriceSub": "訂金 20% · 尾款在「我的行程」",
+    "busPriceLabel": "₩59,000 起 / 人"
+  }
+}

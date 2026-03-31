@@ -9,14 +9,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
 import { supabase } from '@/lib/supabase';
-
-function validatePassword(pwd: string): { valid: boolean; message?: string } {
-  if (pwd.length < 8) return { valid: false, message: 'Password must be at least 8 characters.' };
-  if (!/[a-zA-Z]/.test(pwd)) return { valid: false, message: 'Password must include at least one letter.' };
-  if (!/[0-9]/.test(pwd)) return { valid: false, message: 'Password must include at least one number.' };
-  if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?`~]/.test(pwd)) return { valid: false, message: 'Password must include at least one special character.' };
-  return { valid: true };
-}
+import { validateAppPassword } from '@/lib/password-policy';
 
 export default function ResetPasswordPage() {
   const router = useRouter();
@@ -31,18 +24,45 @@ export default function ResetPasswordPage() {
       setHasSession(false);
       return;
     }
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setHasSession(!!session);
-      if (!session) {
-        router.replace('/signin?next=/reset-password');
-      }
+    const client = supabase;
+    let cancelled = false;
+
+    const {
+      data: { subscription },
+    } = client.auth.onAuthStateChange((_event, session) => {
+      if (cancelled) return;
+      if (session) setHasSession(true);
     });
+
+    client.auth.getSession().then(({ data: { session } }) => {
+      if (cancelled) return;
+      if (session) setHasSession(true);
+    });
+
+    const t = setTimeout(() => {
+      if (cancelled) return;
+      client.auth.getSession().then(({ data: { session } }) => {
+        if (cancelled) return;
+        if (session) {
+          setHasSession(true);
+        } else {
+          setHasSession(false);
+          router.replace('/signin?next=/reset-password');
+        }
+      });
+    }, 2000);
+
+    return () => {
+      cancelled = true;
+      clearTimeout(t);
+      subscription.unsubscribe();
+    };
   }, [router]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
-    const pwdCheck = validatePassword(password);
+    const pwdCheck = validateAppPassword(password);
     if (!pwdCheck.valid) {
       setError(pwdCheck.message ?? 'Invalid password');
       return;
@@ -108,7 +128,7 @@ export default function ResetPasswordPage() {
                   required
                   minLength={8}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition-all"
-                  placeholder="At least 8 characters, letter, number, special character"
+                  placeholder="8+ characters, letters and numbers (special chars optional)"
                 />
               </div>
               <div>

@@ -5,6 +5,9 @@ import { createServerClient } from '@/lib/supabase';
  * POST /api/auth/create-profile
  * 회원가입 직후 user_profiles 행 생성. 서버(service role)에서 insert 하므로 RLS 영향 없음.
  * body: { userId, full_name, accessToken?, phone?, birth_year?, nationality? }
+ *
+ * DB: `birth_year`, `nationality`, `role` 등은 supabase/migrations 아래 해당 마이그레이션이
+ * 프로덕션에 적용되어 있어야 합니다. 기본 schema.sql만 있으면 insert 시 컬럼 누락 분기가 동작합니다.
  */
 export async function POST(req: NextRequest) {
   try {

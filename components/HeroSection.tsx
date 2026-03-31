@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { COPY } from "@/src/design/copy";
+import { useCopy } from "@/lib/i18n";
 import { analytics } from "@/src/design/analytics";
 
 const HERO_IMAGES = [
@@ -14,6 +14,7 @@ const HERO_IMAGES = [
 const CTA_HREF = "/custom-join-tour";
 
 export default function HeroSection() {
+  const copy = useCopy();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -48,13 +49,13 @@ export default function HeroSection() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-6 pt-6 md:pb-8 md:pt-8">
             <div className="max-w-xl">
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
-                {COPY.hero.headline}
+                {copy.hero.headline}
               </h1>
               <p className="text-sm sm:text-base text-white/95 mt-2 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
-                {COPY.hero.sub}
+                {copy.hero.sub}
               </p>
               <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs sm:text-sm text-white/90" aria-label="Why book with us">
-                {COPY.hero.trust.map((text, i) => (
+                {copy.hero.trust.map((text, i) => (
                   <li key={i}>{text}</li>
                 ))}
               </ul>
@@ -63,7 +64,7 @@ export default function HeroSection() {
                 className="mt-6 inline-flex items-center justify-center font-semibold min-h-[44px] px-6 py-3 text-base rounded-lg bg-[#1E4EDF] text-white hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0A1F44]"
                 onClick={() => analytics.heroFormStart()}
               >
-                {COPY.hero.cta}
+                {copy.hero.cta}
               </Link>
             </div>
           </div>

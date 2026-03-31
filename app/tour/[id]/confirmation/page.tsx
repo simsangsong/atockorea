@@ -12,12 +12,8 @@ interface BookingData {
   date: string;
   guests: number;
   pickup: number | null;
-  paymentMethod: 'deposit' | 'full';
+  paymentMethod: 'full';
   preferredLanguage?: 'en' | 'zh' | 'ko';
-  /** Amount actually charged online (in KRW) */
-  depositAmountKRW?: number;
-  /** Remaining balance to be paid in cash on the tour day (in KRW) */
-  balanceAmountKRW?: number;
   totalPrice: number;
   promoCode?: string;
   customerInfo?: {
@@ -55,8 +51,6 @@ export default function ConfirmationPage() {
           if (data.booking) {
             const b = data.booking;
 
-            // Try to merge with any booking data we already stored on the client
-            // (this preserves deposit/balance information calculated at checkout).
             let stored: BookingData | null = null;
             const storedRaw = sessionStorage.getItem('bookingData');
             if (storedRaw) {
@@ -78,32 +72,15 @@ export default function ConfirmationPage() {
               }
             }
             const built: BookingData = {
-              // Prefer client-side values first so we keep deposit/balance,
-              // then override with authoritative values from the server.
               ...stored,
               tourId: Number(b.tour_id ?? stored?.tourId ?? 0),
               date: b.booking_date || b.tour_date || stored?.date || '',
               guests: b.number_of_guests ?? b.number_of_people ?? stored?.guests ?? 1,
               pickup: b.pickup_point_id ? Number(b.pickup_point_id) : stored?.pickup ?? null,
-              paymentMethod:
-                b.payment_method === 'deposit'
-                  ? 'deposit'
-                  : stored?.paymentMethod ?? 'full',
+              paymentMethod: 'full',
               preferredLanguage:
                 (b.preferred_language as 'en' | 'zh' | 'ko') || stored?.preferredLanguage || 'en',
               totalPrice: parseFloat(String(b.final_price ?? stored?.totalPrice ?? 0)),
-              // If the backend ever stores deposit/balance, prefer those;
-              // otherwise keep what we had from checkout or fall back to 1,000 KRW deposit.
-              depositAmountKRW:
-                b.deposit_amount_krw ??
-                stored?.depositAmountKRW ??
-                (b.payment_method === 'deposit' ? 1000 : undefined),
-              balanceAmountKRW:
-                b.balance_amount_krw ??
-                stored?.balanceAmountKRW ??
-                (b.payment_method === 'deposit'
-                  ? Math.max(0, parseFloat(String(b.final_price ?? stored?.totalPrice ?? 0)) - 1000)
-                  : undefined),
               customerInfo: {
                 name: b.contact_name || stored?.customerInfo?.name || '',
                 phone: b.contact_phone || stored?.customerInfo?.phone || '',
@@ -251,9 +228,7 @@ export default function ConfirmationPage() {
                   </svg>
                   Payment Method
                 </span>
-                <span className="text-gray-900 font-semibold">
-                  {bookingData.paymentMethod === 'deposit' ? 'Deposit + Cash' : 'Full Payment'}
-                </span>
+                <span className="text-gray-900 font-semibold">Full payment (online)</span>
               </div>
 
               {/* Preferred language */}
@@ -268,26 +243,6 @@ export default function ConfirmationPage() {
                   {bookingData.preferredLanguage === 'zh' ? '中文 (Chinese)' : bookingData.preferredLanguage === 'ko' ? '한국어 (Korean)' : 'English'}
                 </span>
               </div>
-
-              {/* Payment Details */}
-              {bookingData.paymentMethod === 'deposit' &&
-                bookingData.depositAmountKRW != null &&
-                bookingData.balanceAmountKRW != null && (
-                  <>
-                    <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                      <span className="text-gray-600">Amount Paid Now</span>
-                      <span className="text-green-600 font-semibold">
-                        ₩{Math.round(bookingData.depositAmountKRW).toLocaleString()}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                      <span className="text-gray-600">Remaining Balance (cash on tour day)</span>
-                      <span className="text-gray-900 font-semibold">
-                        ₩{Math.round(bookingData.balanceAmountKRW).toLocaleString()}
-                      </span>
-                    </div>
-                  </>
-                )}
 
               {/* Total */}
               <div className="flex justify-between items-center py-3">
@@ -349,12 +304,6 @@ export default function ConfirmationPage() {
                 <span className="text-blue-600 mt-0.5">•</span>
                 <span>A confirmation email has been sent to your email address.</span>
               </li>
-              {bookingData.paymentMethod === 'deposit' && (
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-0.5">•</span>
-                  <span>Please bring the remaining balance in cash on the tour day.</span>
-                </li>
-              )}
               <li className="flex items-start gap-2">
                 <span className="text-blue-600 mt-0.5">•</span>
                 <span>You can cancel your booking up to 24 hours before the tour for a full refund.</span>

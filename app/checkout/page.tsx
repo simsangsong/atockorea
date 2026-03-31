@@ -12,8 +12,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
 
-const DEPOSIT_KRW = 1000;
-
 export default function CheckoutPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -71,17 +69,13 @@ export default function CheckoutPage() {
           return;
         }
         const totalPrice = tour.price_type === 'person' ? tour.price * guestNum : tour.price;
-        const depositAmountKRW = DEPOSIT_KRW;
-        const balanceAmountKRW = totalPrice - depositAmountKRW;
         const dateStr = dateValue.includes('T') ? dateValue : new Date(dateValue).toISOString();
         const bookingData = {
           tourId: tour.id,
           date: dateStr,
           guests: guestNum,
           pickup: null,
-          paymentMethod: 'deposit',
-          depositAmountKRW,
-          balanceAmountKRW,
+          paymentMethod: 'full' as const,
           totalPrice,
         };
         if (typeof sessionStorage !== 'undefined') {

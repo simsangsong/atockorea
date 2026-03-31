@@ -46,24 +46,25 @@ function inferTourType(item: { title?: string; badges?: string[] }): TourType {
     badges.some((b) => b.includes("private"))
   )
     return "private";
+  const rawTitle = item.title ?? "";
   if (
     /join|small.?group|소그룹|拼团|少人数|grupo pequeño/i.test(title) ||
+    // English small-group SKU (East Signature Nature Core)
+    /east\s*signature\s*nature\s*core/i.test(title) ||
+    // Korean small-group SKU titles that omit “소그룹” in the name
+    /동부\s*시그니처|시그니처\s*네이처|네이처\s*코어/.test(rawTitle) ||
     badges.some((b) => b.includes("join") || b.includes("small group"))
   )
     return "join";
   return "bus";
 }
 
-/** Build PickupInfo from API list item. */
+/** Build PickupInfo from API list item. List cards use a short label only — not full pickupInfo (long marketing copy). */
 function pickupFromListItem(item: {
   city?: string;
-  pickupInfo?: string;
   pickupPoints?: unknown[];
 }): PickupInfo {
-  const areaLabel =
-    (item.pickupInfo && String(item.pickupInfo).trim()) ||
-    item.city ||
-    "—";
+  const areaLabel = (item.city && String(item.city).trim()) || "—";
   const count = Array.isArray(item.pickupPoints) ? item.pickupPoints.length : 0;
   return {
     areaLabel,
@@ -96,9 +97,18 @@ export function adaptToursListResponse(raw: unknown): TourCardViewModel[] {
       typeof item?.price === "number"
         ? item.price
         : Number(item?.price) || 0;
+    const rawOriginal =
+      item?.originalPrice != null
+        ? Number(item.originalPrice)
+        : item?.original_price != null
+          ? Number(item.original_price)
+          : NaN;
+    const originalPrice =
+      Number.isFinite(rawOriginal) && rawOriginal > priceFrom && priceFrom > 0
+        ? rawOriginal
+        : null;
     const pickup = pickupFromListItem({
       city: item?.city ?? item?.location,
-      pickupInfo: item?.pickupInfo,
       pickupPoints: item?.pickupPoints ?? item?.pickup_points,
     });
     const tags = Array.isArray(item?.badges) ? item.badges.map(String) : [];
@@ -110,15 +120,47 @@ export function adaptToursListResponse(raw: unknown): TourCardViewModel[] {
         : Array.isArray(item?.images) && item.images[0]
           ? (typeof item.images[0] === "string" ? item.images[0] : (item.images[0] as { url?: string })?.url)
           : undefined;
+    const duration =
+      typeof item?.duration === "string" && item.duration.trim()
+        ? item.duration.trim()
+        : undefined;
+    const cityRaw = item?.city ?? item?.location;
+    const city =
+      typeof cityRaw === "string" && cityRaw.trim() ? cityRaw.trim() : undefined;
+    const ratingNum = item?.rating;
+    const rating =
+      typeof ratingNum === "number" && !Number.isNaN(ratingNum)
+        ? ratingNum
+        : typeof ratingNum === "string" && !Number.isNaN(Number(ratingNum))
+          ? Number(ratingNum)
+          : undefined;
+    const rc = item?.reviewCount ?? item?.review_count;
+    const reviewCount =
+      typeof rc === "number" && !Number.isNaN(rc)
+        ? rc
+        : typeof rc === "string" && !Number.isNaN(Number(rc))
+          ? Number(rc)
+          : undefined;
+    const bc = item?.bookingCount;
+    const bookingCount =
+      typeof bc === "number" && !Number.isNaN(bc) && bc > 0
+        ? bc
+        : undefined;
     const view: TourCardViewModel = {
       id,
       title,
       type,
       tags,
       priceFrom,
+      originalPrice,
       currency: "KRW",
       pickup,
       imageUrl: imageUrl ?? undefined,
+      ...(duration ? { duration } : {}),
+      ...(city ? { city } : {}),
+      ...(rating !== undefined ? { rating } : {}),
+      ...(reviewCount !== undefined ? { reviewCount } : {}),
+      ...(bookingCount !== undefined ? { bookingCount } : {}),
     };
     const parsed = TourCardViewModelSchema.safeParse(view);
     if (parsed.success) result.push(parsed.data);
@@ -193,8 +235,12 @@ export function adaptTourDetailResponse(raw: unknown): TourDetailViewModel | nul
       }))
     : [];
 
+  const slugRaw = tour.slug;
+  const slug = typeof slugRaw === 'string' && slugRaw.trim() !== '' ? slugRaw.trim() : undefined;
+
   const view = {
     id,
+    ...(slug ? { slug } : {}),
     title,
     type,
     tagline: tour.tagline as string | undefined,
@@ -211,11 +257,16 @@ export function adaptTourDetailResponse(raw: unknown): TourDetailViewModel | nul
     highlight: tour.highlight as string | undefined,
     images: images.length > 0 ? images : [{ url: (tour.image_url as string) || (tour.image as string) || "" }],
     itinerary,
-    itineraryDetails: Array.isArray(tour.itineraryDetails) ? (tour.itineraryDetails as Array<{ time?: string; activity?: string; description?: string }>).map((d) => ({
-      time: d?.time ?? "",
-      activity: d?.activity ?? "",
-      description: d?.description ?? "",
-    })) : undefined,
+    itineraryDetails: Array.isArray(tour.itineraryDetails)
+      ? (tour.itineraryDetails as Array<{ time?: string; activity?: string; description?: string; images?: string[] }>).map(
+          (d) => ({
+            time: d?.time ?? "",
+            activity: d?.activity ?? "",
+            description: d?.description ?? "",
+            ...(Array.isArray(d?.images) && d.images.length > 0 ? { images: d.images.map(String) } : {}),
+          })
+        )
+      : undefined,
     overview: (tour.overview as string) ?? (tour.description as string) ?? "",
     pickup,
     pickupPoints,

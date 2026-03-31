@@ -1,0 +1,42 @@
+[
+  {
+    "sourceName": "에코랜드 테마파크",
+    "matchedTitle": "에코랜드테마파크",
+    "contentId": "1146121",
+    "contentTypeId": "12",
+    "addr1": "제주특별자치도 제주시 조천읍 번영로 1278-169",
+    "addr2": null,
+    "overview": "에코랜드 테마파크는 1800년대 증기기관차인 볼드윈 기종을 모델화하여 영국에서 수제품으로 제작된 링컨 기차를 타고 3만 평의 곶자왈 원시림을 체험하는 테마파크이다. 에코랜드 테마파크가 위치한 곳은 교래 곶자왈로 지하수 함양은 물론, 보온, 보습 효과가 높아 북방한계 식물과 남방한계 식물이 공존하는 신비의 숲이다. 용암의 바위 위에 처절하고 치열한 생명의 힘으로 바위를 덮고 하늘을 막아 동식물의 낙원으로 만든 숲의 위대함을 느낄 수 있으며, 4.5㎞의 기차여행을 즐기는 동안 신비의 숲 곶자왈에서 서식하는 곤충과 동물 그리고 다양한 식물을 체험할 수 있어 자연이 우리에게 주는 무한한 혜택을 학습할 수 있는 공간이다. 에코랜드 테마파크는 자연의 섭리를 어기지 않고 풀 한 포기도 소중히 여기며 인간과 자연을 하나로 이어주는 다리가 되고자 한다. 돌과 바위의 화산 땅에 뿌리를 길게게 바위틈으로 내리고 한줄기 빛을 찾기 위해 가지를 하늘로 뻗어 질긴 생명력을 이어가는 나무를 보며 자연의 위대함을 배웠다. 그 위대함을 표현하기에 아직 표현력이 부족하지만 자연과 인간의 공존이라는 대명제를 향하여 멈추지 않고 달려갈 것이다.",
+    "firstImage": "http://tong.visitkorea.or.kr/cms/resource/43/3396943_image2_1.jpg",
+    "firstImage2": "http://tong.visitkorea.or.kr/cms/resource/43/3396943_image3_1.jpg",
+    "mapx": "126.6670616591",
+    "mapy": "33.4564874302",
+    "tel": null,
+    "homepage": "<a href=\"http://theme.ecolandjeju.co.kr\" target=\"_blank\" title=\"새창: 에코랜드 홈페이지로 이동\">theme.ecolandjeju.co.kr</a>",
+    "openingHoursRaw": "08:30~18:20",
+    "admissionFeeRaw": "캔들 만들기, 숲힐링, 맨발워크, 연 날리기 등<br>\n※ 프로그램 시간은 계절에 따라 변동될 수 있음",
+    "businessStatusNote": null,
+    "reservationInfo": null,
+    "parkingInfo": "가능",
+    "restDate": "연중무휴",
+    "useTimeText": "08:30~18:20",
+    "feeText": "캔들 만들기, 숲힐링, 맨발워크, 연 날리기 등<br> ※ 프로그램 시간은 계절에 따라 변동될 수 있음",
+    "introRawJson": "{\"contentid\":\"1146121\",\"contenttypeid\":\"12\",\"heritage1\":\"0\",\"heritage2\":\"0\",\"heritage3\":\"0\",\"infocenter\":\"064-802-8000\",\"opendate\":\"\",\"restdate\":\"연중무휴\",\"expguide\":\"캔들 만들기, 숲힐링, 맨발워크, 연 날리기 등<br>\\n※ 프로그램 시간은 계절에 따라 변동될 수 있음\",\"expagerange\":\"\",\"accomcount\":\"\",\"useseason\":\"\",\"usetime\":\"08:30~18:20\",\"parking\":\"가능\",\"chkbabycarriage\":\"없음\",\"chkpet\":\"\",\"chkcreditcard\":\"가능\"}",
+    "score": 180,
+    "matchReason": [
+      "exact_normalized_title_match",
+      "addr1_contains_jeju",
+      "title_contains_query",
+      "has_first_image",
+      "search_query:에코랜드",
+      "detailCommon2:merged",
+      "detailInfo2:attached",
+      "intro_has_use_time",
+      "intro_has_fee",
+      "openingHoursRaw_fields:usetime",
+      "admissionFeeRaw_fields:expguide"
+    ],
+    "sourceApi": "KorService2",
+    "fetchedAt": "2026-03-22T12:21:01.869Z"
+  }
+]

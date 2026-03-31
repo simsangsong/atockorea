@@ -26,9 +26,7 @@ export default function ImportantNotesContent() {
         If you are more than 10 minutes late, you will be considered a <strong>no-show</strong> and <strong>no refund</strong> will be provided.
       </li>
       <li style={{ marginBottom: 0 }}>
-        Guests who have paid a deposit must pay the <strong>remaining balance in cash</strong> directly to the guide on the day of the tour.
-        <br />
-        Please bring sufficient cash; <strong>card payments are not accepted</strong>.
+        Tour fees are paid in full online at booking. On the day, bring cash only for personal expenses (meals, optional entries) if needed.
       </li>
     </ul>
   );

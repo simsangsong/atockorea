@@ -1,6 +1,6 @@
 "use client";
 
-import { COPY } from "@/src/design/copy";
+import { useCopy } from "@/lib/i18n";
 
 export interface TimelineItem {
   title: string;
@@ -11,6 +11,8 @@ export interface TimelineItem {
 export interface TimelineProps {
   title?: string;
   items: TimelineItem[];
+  /** Tour detail: match itinerary glass cards */
+  variant?: "default" | "glass";
 }
 
 function formatDateTime(value: string): string {
@@ -21,42 +23,100 @@ function formatDateTime(value: string): string {
  * Generic timeline for ordered steps with title, subtitle, and date.
  * Use for booking timeline or other step-based flows.
  */
-export function Timeline({ title, items }: TimelineProps) {
+export function Timeline({ title, items, variant = "default" }: TimelineProps) {
+  const isGlass = variant === "glass";
+  const wrapperClass = isGlass
+    ? "rounded-design-lg p-3 sm:p-4 td-card-b font-sans"
+    : "rounded-design-lg border border-gray-200 bg-white p-5 shadow-design-sm";
   return (
-    <div className="rounded-design-lg border border-gray-200 bg-white p-5 shadow-design-sm">
+    <div className={wrapperClass}>
       {title ? (
-        <div className="mb-4 text-sm font-semibold text-gray-900">{title}</div>
+        <div
+          className={
+            isGlass
+              ? "mb-2 text-[15px] font-semibold tracking-tight text-gray-900"
+              : "mb-4 text-sm font-semibold text-gray-900"
+          }
+        >
+          {title}
+        </div>
       ) : null}
 
-      <div className="hidden md:grid md:gap-4 md:grid-cols-[repeat(auto-fill,minmax(140px,1fr))]">
+      <div
+        className={
+          isGlass
+            ? "hidden md:grid md:gap-3 md:grid-cols-[repeat(auto-fill,minmax(128px,1fr))]"
+            : "hidden md:grid md:gap-4 md:grid-cols-[repeat(auto-fill,minmax(140px,1fr))]"
+        }
+      >
         {items.map((item: TimelineItem) => (
           <div key={item.title} className="relative">
-            <div className="mb-3 h-2 rounded-full bg-gray-200" />
-            <div className="text-sm font-semibold text-gray-900">
+            <div className={`${isGlass ? "mb-2" : "mb-3"} h-2 rounded-full bg-gray-200`} />
+            <div
+              className={
+                isGlass
+                  ? "text-[13px] font-semibold leading-snug text-gray-900"
+                  : "text-sm font-semibold text-gray-900"
+              }
+            >
               {item.title}
             </div>
             {item.subtitle ? (
-              <div className="mt-1 text-sm text-gray-600">{item.subtitle}</div>
+              <div
+                className={
+                  isGlass
+                    ? "mt-0.5 text-[12px] leading-snug text-gray-600"
+                    : "mt-1 text-sm text-gray-600"
+                }
+              >
+                {item.subtitle}
+              </div>
             ) : null}
-            <div className="mt-2 text-xs text-gray-500 tabular-nums">
+            <div
+              className={
+                isGlass
+                  ? "mt-1.5 text-[11px] text-gray-500 tabular-nums"
+                  : "mt-2 text-xs text-gray-500 tabular-nums"
+              }
+            >
               {formatDateTime(item.date)}
             </div>
           </div>
         ))}
       </div>
 
-      <div className="space-y-4 md:hidden">
+      <div className={isGlass ? "space-y-2.5 md:hidden" : "space-y-4 md:hidden"}>
         {items.map((item: TimelineItem) => (
-          <div key={item.title} className="flex gap-3">
+          <div key={item.title} className="flex gap-2.5">
             <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-brand-blue" aria-hidden />
             <div>
-              <div className="text-sm font-semibold text-gray-900">
+              <div
+                className={
+                  isGlass
+                    ? "text-[13px] font-semibold leading-snug text-gray-900"
+                    : "text-sm font-semibold text-gray-900"
+                }
+              >
                 {item.title}
               </div>
               {item.subtitle ? (
-                <div className="text-sm text-gray-600">{item.subtitle}</div>
+                <div
+                  className={
+                    isGlass
+                      ? "text-[12px] leading-snug text-gray-600"
+                      : "text-sm text-gray-600"
+                  }
+                >
+                  {item.subtitle}
+                </div>
               ) : null}
-              <div className="mt-1 text-xs text-gray-500 tabular-nums">
+              <div
+                className={
+                  isGlass
+                    ? "mt-0.5 text-[11px] text-gray-500 tabular-nums"
+                    : "mt-1 text-xs text-gray-500 tabular-nums"
+                }
+              >
                 {formatDateTime(item.date)}
               </div>
             </div>
@@ -74,6 +134,7 @@ export interface BookingTimelineProps {
   balanceOpensAt: string;
   balanceDueAt: string;
   tourStartAt: string;
+  variant?: "default" | "glass";
 }
 
 /**
@@ -85,29 +146,31 @@ export function BookingTimeline({
   balanceOpensAt,
   balanceDueAt,
   tourStartAt,
+  variant = "default",
 }: BookingTimelineProps) {
+  const copy = useCopy();
   const items: TimelineItem[] = [
     {
-      title: COPY.timeline.depositTitle,
-      subtitle: COPY.timeline.depositSub,
+      title: copy.timeline.reserveTitle,
+      subtitle: copy.timeline.reserveSub,
       date: now,
     },
     {
-      title: COPY.timeline.refundTitle,
-      subtitle: COPY.timeline.refundSub,
+      title: copy.timeline.refundTitle,
+      subtitle: copy.timeline.refundSub,
       date: refundDeadlineAt || balanceOpensAt,
     },
     {
-      title: COPY.timeline.balanceTitle,
-      subtitle: COPY.timeline.balanceSub,
+      title: copy.timeline.balanceTitle,
+      subtitle: copy.timeline.balanceSub,
       date: balanceDueAt,
     },
     {
-      title: COPY.timeline.startTitle,
-      subtitle: COPY.timeline.startSub,
+      title: copy.timeline.startTitle,
+      subtitle: copy.timeline.startSub,
       date: tourStartAt,
     },
   ];
 
-  return <Timeline title={COPY.timeline.title} items={items} />;
+  return <Timeline title={copy.timeline.title} items={items} variant={variant} />;
 }

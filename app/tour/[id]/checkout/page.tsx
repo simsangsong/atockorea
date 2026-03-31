@@ -5,22 +5,19 @@ import { useParams, useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
-import { useTranslations } from '@/lib/i18n';
+import { useTranslations, useCopy } from '@/lib/i18n';
 import { supabase } from '@/lib/supabase';
 import { useCurrencyOptional } from '@/lib/currency';
 import { BookingTimelineSection } from '@/components/tour/BookingTimelineSection';
-import { COPY } from '@/src/design/copy';
 import { analytics } from '@/src/design/analytics';
 
 interface BookingData {
   tourId: number;
   date: string;
   guests: number;
-  pickup: number | null;
-  paymentMethod: 'deposit' | 'full';
+  pickup: number | string | null;
+  paymentMethod: 'full';
   preferredLanguage?: 'en' | 'zh' | 'ko';
-  depositAmountKRW?: number;
-  balanceAmountKRW?: number;
   totalPrice: number;
   promoCode?: string;
 }
@@ -37,6 +34,7 @@ export default function CheckoutPage() {
   const params = useParams();
   const router = useRouter();
   const t = useTranslations();
+  const copy = useCopy();
   const currencyCtx = useCurrencyOptional();
   const [bookingData, setBookingData] = useState<BookingData | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -53,8 +51,11 @@ export default function CheckoutPage() {
     const stored = sessionStorage.getItem('bookingData');
     if (stored) {
       try {
-        const parsed = JSON.parse(stored);
-        setBookingData(parsed);
+        const parsed = JSON.parse(stored) as BookingData & { paymentMethod?: string; depositAmountKRW?: number };
+        setBookingData({
+          ...parsed,
+          paymentMethod: 'full',
+        });
         analytics.checkoutStarted('unknown', (parsed as { pickupAreaLabel?: string })?.pickupAreaLabel ?? 'Unknown');
       } catch (error) {
         console.error('Error parsing booking data:', error);
@@ -146,19 +147,16 @@ export default function CheckoutPage() {
     setIsProcessing(true);
     
     try {
-      // Determine payment amount: deposit if deposit method selected, otherwise full price
-      const paymentAmount = bookingData.paymentMethod === 'deposit'
-        ? (bookingData.depositAmountKRW || 1000)
-        : bookingData.totalPrice;
+      const paymentAmount = bookingData.totalPrice;
       
       // Create booking in database
       const bookingPayload = {
         tourId: bookingData.tourId.toString(),
         bookingDate: bookingData.date,
         numberOfGuests: bookingData.guests,
-        pickupPointId: bookingData.pickup ? bookingData.pickup.toString() : null,
+        pickupPointId: bookingData.pickup != null ? String(bookingData.pickup) : null,
         finalPrice: bookingData.totalPrice, // Keep total price for booking record
-        paymentMethod: bookingData.paymentMethod === 'deposit' ? 'deposit' : 'full',
+        paymentMethod: 'full',
         preferredLanguage: bookingData.preferredLanguage || 'en',
         specialRequests: JSON.stringify({
           preferredChatApp: customerInfo.preferredChatApp,
@@ -207,7 +205,7 @@ export default function CheckoutPage() {
       };
       sessionStorage.setItem('bookingData', JSON.stringify(completeBookingData));
       
-      // Redirect to Stripe checkout for both deposit and full payment
+      // Redirect to Stripe checkout (full payment)
       try {
         const paymentResponse = await fetch('/api/stripe/checkout', {
           method: 'POST',
@@ -447,7 +445,7 @@ export default function CheckoutPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                       </svg>
                     </div>
-                    <h2 className="text-xl font-bold text-gray-900">{COPY.checkout.orderSummary}</h2>
+                    <h2 className="text-xl font-bold text-gray-900">{copy.checkout.orderSummary}</h2>
                   </div>
                   <div className="space-y-4 pb-4 border-b border-gray-200">
                     <div className="flex justify-between items-start">
@@ -483,42 +481,28 @@ export default function CheckoutPage() {
                         {t('booking.paymentMethod')}
                       </span>
                       <span className="text-sm font-semibold text-gray-900">
-                        {bookingData.paymentMethod === 'deposit' ? t('booking.depositCash') : t('booking.fullPayment')}
+                        {t('booking.fullPayment')}
                       </span>
                     </div>
                   </div>
 
-                  {/* Price lines: base, subtotal, deposit/balance, total */}
+                  {/* Price lines: base, subtotal, total */}
                   <div className="mt-4 pt-4 border-t border-gray-200 space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">{COPY.checkout.basePrice}</span>
+                      <span className="text-gray-600">{copy.checkout.basePrice}</span>
                       <span className="font-medium text-gray-900 tabular-nums">{formatPrice(bookingData.totalPrice)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">{COPY.checkout.subtotal}</span>
+                      <span className="text-gray-600">{copy.checkout.subtotal}</span>
                       <span className="font-medium text-gray-900 tabular-nums">{formatPrice(bookingData.totalPrice)}</span>
                     </div>
-                    {bookingData.paymentMethod === 'deposit' && bookingData.depositAmountKRW != null && bookingData.balanceAmountKRW != null && (
-                      <>
-                        <div className="flex justify-between text-sm">
-                          <span className="text-gray-600">{COPY.checkout.depositDueToday}</span>
-                          <span className="font-bold text-blue-600 tabular-nums">{formatPrice(bookingData.depositAmountKRW)}</span>
-                        </div>
-                        <div className="flex justify-between text-sm">
-                          <span className="text-gray-600">{COPY.checkout.remainingBalanceLater}</span>
-                          <span className="font-medium text-gray-900 tabular-nums">{formatPrice(bookingData.balanceAmountKRW)}</span>
-                        </div>
-                      </>
-                    )}
                   </div>
 
                   <div className="mt-5 pt-5 border-t-2 border-gray-200">
                     <div className="flex justify-between items-center">
-                      <span className="text-base font-bold text-gray-900">{COPY.checkout.total}</span>
+                      <span className="text-base font-bold text-gray-900">{copy.checkout.total}</span>
                       <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent tabular-nums">
-                        {bookingData.paymentMethod === 'deposit'
-                          ? formatPrice(bookingData.depositAmountKRW ?? 1000)
-                          : formatPrice(bookingData.totalPrice)}
+                        {formatPrice(bookingData.totalPrice)}
                       </span>
                     </div>
                   </div>
@@ -529,9 +513,9 @@ export default function CheckoutPage() {
 
                 {/* Reassurance box */}
                 <div className="rounded-2xl border border-gray-200/60 bg-white/90 backdrop-blur-sm p-5 shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
-                  <h3 className="text-base font-bold text-gray-900 mb-2">{COPY.checkout.whyDepositTitle}</h3>
-                  <p className="text-sm text-gray-600">{COPY.checkout.whyDepositBody}</p>
-                  <p className="mt-3 text-sm font-medium text-gray-800">{COPY.checkout.autoChargeWarning}</p>
+                  <h3 className="text-base font-bold text-gray-900 mb-2">{copy.checkout.secureCheckoutTitle}</h3>
+                  <p className="text-sm text-gray-600">{copy.checkout.secureCheckoutBody}</p>
+                  <p className="mt-3 text-sm font-medium text-gray-800">{copy.checkout.confirmationEmailNote}</p>
                 </div>
 
                 {/* Primary CTA */}
@@ -548,7 +532,7 @@ export default function CheckoutPage() {
                       </svg>
                       {t('booking.processing')}
                     </span>
-                  ) : bookingData.paymentMethod === 'deposit' ? COPY.checkout.payDeposit : COPY.checkout.completeBooking}
+                  ) : copy.checkout.completeBooking}
                 </button>
               </div>
             </div>

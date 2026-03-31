@@ -123,8 +123,8 @@ export default function TourDetailPage() {
                 <Shield className="w-4 h-4 text-orange-500" />
               </div>
               <div>
-                <h3 className="font-extrabold text-xs text-neutral-900 leading-none">Secure Deposit</h3>
-                <p className="text-[10px] text-neutral-500 mt-1 font-medium">Pay the rest on site</p>
+                <h3 className="font-extrabold text-xs text-neutral-900 leading-none">Secure payment</h3>
+                <p className="text-[10px] text-neutral-500 mt-1 font-medium">Pay online at booking</p>
               </div>
             </div>
             <div className="hidden sm:block w-px h-8 bg-neutral-100"></div>
@@ -328,35 +328,23 @@ export default function TourDetailPage() {
               </div>
             </div>
 
-            {/* Payment Methods (?�드 & ?�카???? */}
             <div className="space-y-3 mb-8">
-              <label className="text-[10px] font-bold uppercase tracking-widest text-neutral-500">Payment Option</label>
-              <label className="relative flex cursor-pointer rounded-xl border border-sky-100 bg-[#EEF2F6] p-4 focus:outline-none transition-colors">
-                <input type="radio" name="payment" className="sr-only" defaultChecked />
+              <label className="text-[10px] font-bold uppercase tracking-widest text-neutral-500">Payment</label>
+              <div className="rounded-xl border border-sky-100 bg-[#EEF2F6] p-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-5 h-5 rounded-full border-[5px] border-neutral-900 bg-white shadow-sm" />
                   <div>
-                    <p className="font-bold text-neutral-900 text-sm">Deposit + Cash</p>
-                    <p className="text-xs text-neutral-500 font-medium mt-0.5">Pay ??,000 now, rest on site</p>
+                    <p className="font-bold text-neutral-900 text-sm">Full payment online</p>
+                    <p className="text-xs text-neutral-500 font-medium mt-0.5">Pay the total when you complete booking</p>
                   </div>
                 </div>
-              </label>
-              <label className="relative flex cursor-pointer rounded-xl border border-transparent bg-[#F4F1EA] p-4 focus:outline-none hover:border-neutral-200 transition-colors">
-                <input type="radio" name="payment" className="sr-only" />
-                <div className="flex items-center space-x-3">
-                  <div className="w-5 h-5 rounded-full border-2 border-neutral-300 bg-white shadow-sm" />
-                  <div>
-                    <p className="font-bold text-neutral-900 text-sm">Full Payment</p>
-                    <p className="text-xs text-neutral-500 font-medium mt-0.5">Pay ??0,000 online now</p>
-                  </div>
-                </div>
-              </label>
+              </div>
             </div>
 
             {/* Desktop CTA */}
             <div className="border-t border-neutral-100 pt-6 hidden lg:block">
               <div className="flex items-center justify-between mb-6">
-                <span className="text-neutral-500 font-medium">Due Today (Deposit)</span>
+                <span className="text-neutral-500 font-medium">Total due</span>
                 <span className="text-2xl font-extrabold text-neutral-900">??,000</span>
               </div>
               <button className="w-full bg-neutral-900 text-white rounded-xl py-4 font-bold tracking-wide flex items-center justify-center space-x-2 hover:bg-neutral-800 transition-colors shadow-lg shadow-neutral-900/20">
@@ -378,7 +366,7 @@ export default function TourDetailPage() {
               <span className="text-lg font-bold text-neutral-900">??0,000</span>
               <span className="text-xs text-neutral-500 font-medium">/ person</span>
             </div>
-            <p className="text-[10px] text-emerald-600 font-medium">??,000 Deposit Today</p>
+            <p className="text-[10px] text-emerald-600 font-medium">Pay online to confirm</p>
           </div>
           <button className="flex-1 bg-neutral-900 text-white rounded-xl py-4 font-bold tracking-wide flex items-center justify-center space-x-2 hover:bg-neutral-800 transition-colors shadow-lg shadow-neutral-900/20">
             <span>Book Now</span>

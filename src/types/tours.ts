@@ -24,6 +24,8 @@ export interface TourCardViewModel {
   type: TourType;
   tags: string[];
   priceFrom: number;
+  /** List API: 할인 전 가격(원가). `priceFrom`보다 클 때만 표시. */
+  originalPrice?: number | null;
   currency: string;
   pickup: PickupInfo;
   matchQuality?: MatchQuality;
@@ -32,6 +34,13 @@ export interface TourCardViewModel {
   maxTravelers?: number;
   /** Optional for list display; set by list adapter from API image. */
   imageUrl?: string;
+  /** Short duration string from API (e.g. list card badges). */
+  duration?: string;
+  /** City / region label for list card (e.g. home TourCard 📍 row). */
+  city?: string;
+  rating?: number;
+  reviewCount?: number;
+  bookingCount?: number;
 }
 
 /** Build tour request (client → server). Server is source of truth for pricing and availability. */
@@ -76,6 +85,8 @@ export interface BookingTimelineViewModel {
 /** Detail page ViewModel. Consume via detail adapter only. */
 export interface TourDetailViewModel {
   id: string;
+  /** Present when API returns tour.slug — selects v0 detail template on `/tour/[id]`. */
+  slug?: string;
   title: string;
   type: TourType;
   tagline?: string;
@@ -113,4 +124,9 @@ export interface TourDetailViewModel {
   childEligibility?: Array<{ id: string; num?: number; num1?: number; num2?: number; num3?: number; text?: string }>;
   /** Optional: server-provided booking timeline. When present, UI must use this; do not use client-computed timeline as source of truth. */
   bookingTimeline?: BookingTimelineViewModel | null;
+  /**
+   * Optional: verified count of bookings in the last 24 hours from server analytics.
+   * UI shows social-proof line only when present and greater than zero.
+   */
+  recentBookings24h?: number | null;
 }
