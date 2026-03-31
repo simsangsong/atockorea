@@ -58,30 +58,23 @@ function shouldTreatBareSegmentAsTourSlug(seg: string): boolean {
 }
 
 /**
- * 메인 홈을 볼 수 있는 호스트: 오직 로컬 루프백만 (localhost / 127.0.0.1 / ::1).
- * 0.0.0.0 바인딩 후 LAN IP(192.168.x 등)로 접속하면 막힘 — 개발은 http://localhost:3000 권장.
+ * 전면 비공개(모든 UI → /home-private rewrite)는 **명시적으로 켤 때만**.
+ * 기본은 공개 — Vercel에 SITE_HOME_PUBLIC 누락 시 라이브 도메인에서 홈·투어가 통째로 사라지는 문제를 막기 위함.
+ *
+ * 켜기: `SITE_GATED=true` 또는 `SITE_HOME_PRIVATE=true` (또는 `1`)
+ * 레거시: `SITE_HOME_PUBLIC=true` 가 있으면 항상 공개(게이트 무시).
  */
-function isLocalRequest(request: NextRequest): boolean {
-  const host = (request.headers.get('host') ?? '').toLowerCase();
-  const hostname = request.nextUrl.hostname.toLowerCase();
-  return (
-    hostname === 'localhost' ||
-    hostname === '127.0.0.1' ||
-    hostname === '::1' ||
-    host.startsWith('localhost:') ||
-    host.startsWith('127.0.0.1:') ||
-    host.startsWith('[::1]:')
-  );
-}
-
-/**
- * 비로컬 호스트: 기본 전면 비공개(SITE_HOME_PUBLIC 미설정 시). 공개 시 SITE_HOME_PUBLIC=true
- */
-function isSiteGated(request: NextRequest): boolean {
+function isSiteGated(): boolean {
   if (process.env.SITE_HOME_PUBLIC === 'true' || process.env.SITE_HOME_PUBLIC === '1') {
     return false;
   }
-  return !isLocalRequest(request);
+  if (process.env.SITE_GATED === 'true' || process.env.SITE_GATED === '1') {
+    return true;
+  }
+  if (process.env.SITE_HOME_PRIVATE === 'true' || process.env.SITE_HOME_PRIVATE === '1') {
+    return true;
+  }
+  return false;
 }
 
 function getLocale(request: NextRequest): string {
@@ -134,7 +127,7 @@ export function middleware(request: NextRequest) {
   }
 
   // 1c. 비로컬: 투어·마이페이지 등 포함 전 경로 비공개(rewrite). URL 바는 유지.
-  if (isSiteGated(request)) {
+  if (isSiteGated()) {
     const url = request.nextUrl.clone();
     url.pathname = '/home-private';
     return NextResponse.rewrite(url);
