@@ -12,7 +12,7 @@ import { TourCardViewModelSchema } from "../schemas/tours";
 import { TourDetailViewModelSchema } from "../schemas/tours";
 import { BookingTimelineSchema } from "../schemas/booking";
 import { COPY } from "@/src/design/copy";
-import { isEastSignatureNatureCoreTour } from "@/components/tour/small-group/products/eastSignatureNatureCore";
+import { shouldCoerceEastSignatureNatureCoreJoin } from "@/src/lib/east-signature-nature-core-match";
 
 export function adaptBuildTourResponse(raw: unknown): BuildTourResponse {
   const parsed = BuildTourResponseSchema.safeParse(raw);
@@ -330,7 +330,7 @@ export function adaptTourDetailResponse(raw: unknown, routeTourId?: string | nul
   } as unknown as TourDetailViewModel;
 
   let coercedView = view;
-  if (isEastSignatureNatureCoreTour(coercedView, routeTourId)) {
+  if (shouldCoerceEastSignatureNatureCoreJoin(routeTourId, slugEarly, title)) {
     const hadSlug = Boolean(coercedView.slug?.trim());
     const slugFix =
       coercedView.slug?.trim() ||

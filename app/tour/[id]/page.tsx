@@ -33,6 +33,10 @@ const InteractiveMap = dynamic(
 import type { ItineraryDetail } from '@/types/tour';
 import type { TourDetailViewModel } from '@/src/types/tours';
 import { adaptTourDetailResponse } from '@/src/lib/adapters/tours-adapter';
+import {
+  extractTourRouteSegmentFromPathname,
+  matchesEastSignatureSlugSegment,
+} from '@/src/lib/east-signature-nature-core-match';
 import { BookingTimelineSection } from '@/components/tour/BookingTimelineSection';
 import {
   BusTourItinerarySection,
@@ -286,7 +290,18 @@ export default function TourDetailPage() {
 
         if (ac.signal.aborted) return;
 
-        const viewModel = adaptTourDetailResponse(data, tourId);
+        const pathSeg =
+          typeof window !== 'undefined'
+            ? extractTourRouteSegmentFromPathname(window.location.pathname)
+            : null;
+        const routeForAdapter =
+          pathSeg &&
+          matchesEastSignatureSlugSegment(pathSeg) &&
+          !matchesEastSignatureSlugSegment(tourId)
+            ? pathSeg
+            : tourId;
+
+        const viewModel = adaptTourDetailResponse(data, routeForAdapter);
         if (!viewModel) {
           setError('Tour data not found in response');
           setLoading(false);

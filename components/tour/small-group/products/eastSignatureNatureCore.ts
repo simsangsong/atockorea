@@ -1,4 +1,5 @@
 import type { TourDetailViewModel } from '@/src/types/tours';
+import { shouldCoerceEastSignatureNatureCoreJoin } from '@/src/lib/east-signature-nature-core-match';
 import type {
   SmallGroupDetailContent,
   SmallGroupInsightCard,
@@ -37,20 +38,7 @@ export function isEastSignatureNatureCoreTour(
   /** `/tour/[id]` segment when DB slug is missing or mismatched */
   routeTourId?: string | null
 ): boolean {
-  const route = (routeTourId ?? '').trim().toLowerCase();
-  if (route === 'east-signature-nature-core' || route.startsWith('east-signature-nature-core-')) {
-    return true;
-  }
-  const slug = (tour.slug || '').trim().toLowerCase();
-  if (slug === 'east-signature-nature-core' || slug.startsWith('east-signature-nature-core-')) {
-    return true;
-  }
-  const raw = (tour.title || '').trim();
-  const lower = raw.toLowerCase().replace(/\s+/g, ' ');
-  if (/east signature nature core/i.test(lower)) return true;
-  const compact = raw.replace(/\s+/g, '');
-  if (compact === '동부시그니처네이처코어') return true;
-  return /시그니처/.test(raw) && /네이처/.test(raw) && /동부/.test(raw);
+  return shouldCoerceEastSignatureNatureCoreJoin(routeTourId, tour.slug, tour.title);
 }
 
 /**
