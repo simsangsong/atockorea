@@ -6,6 +6,57 @@ const SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'zh-TW', 'ja', 'es'];
 const DEFAULT_LOCALE = 'en';
 const LOCALE_COOKIE = 'NEXT_LOCALE';
 
+/** First path segment is not a tour slug (app routes + locales). */
+const RESERVED_ROOT_SEGMENTS = new Set([
+  'about',
+  'admin',
+  'auth',
+  'busan',
+  'cart',
+  'checkout',
+  'contact',
+  'custom-join-tour',
+  'dashboard',
+  'dsa',
+  'forgot-id',
+  'forgot-password',
+  'home-private',
+  'itinerary',
+  'jeju',
+  'legal',
+  'merchant',
+  'my',
+  'mypage',
+  'refund-policy',
+  'reset-password',
+  'reviews',
+  'search',
+  'seoul',
+  'signin',
+  'signup',
+  'support',
+  'test',
+  'test-admin',
+  'tours',
+  'tour',
+]);
+
+function singlePathSegment(pathname: string): string | null {
+  if (!pathname || pathname === '/') return null;
+  const parts = pathname.split('/').filter(Boolean);
+  if (parts.length !== 1) return null;
+  return parts[0];
+}
+
+/** Marketing links sometimes omit /tour — avoid matching app/[locale]/page.tsx as a fake "locale". */
+function shouldTreatBareSegmentAsTourSlug(seg: string): boolean {
+  if (!seg || RESERVED_ROOT_SEGMENTS.has(seg)) return false;
+  if (SUPPORTED_LOCALES.includes(seg)) return false;
+  if (/^[a-z0-9]+(-[a-z0-9]+)+$/i.test(seg)) return true;
+  if (/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(seg)) return true;
+  return false;
+}
+
 /**
  * 메인 홈을 볼 수 있는 호스트: 오직 로컬 루프백만 (localhost / 127.0.0.1 / ::1).
  * 0.0.0.0 바인딩 후 LAN IP(192.168.x 등)로 접속하면 막힘 — 개발은 http://localhost:3000 권장.
@@ -89,6 +140,14 @@ export function middleware(request: NextRequest) {
     return NextResponse.rewrite(url);
   }
 
+  // 1d. /product-slug → /tour/product-slug (single segment; not a locale or app route)
+  const bareSeg = singlePathSegment(pathname);
+  if (bareSeg && shouldTreatBareSegmentAsTourSlug(bareSeg)) {
+    const u = request.nextUrl.clone();
+    u.pathname = `/tour/${bareSeg}`;
+    return NextResponse.redirect(u, 307);
+  }
+
   // 2. 쿼리 ?locale=en 등으로 명시적 선택 시 쿠키 설정 후 리다이렉트 (모바일에서 쿠키 누락 대비)
   const localeFromQuery = request.nextUrl.searchParams.get('locale');
   if (localeFromQuery && SUPPORTED_LOCALES.includes(localeFromQuery)) {
@@ -134,7 +193,11 @@ export function middleware(request: NextRequest) {
   }
 
   // 4b. /ko/tours, /ko/tour/123 등: rewrite (locale 제거 후 내부 경로로 전달)
-  const pathWithoutLocale = pathname.replace(`/${matchedLocale}`, '') || '/';
+  let pathWithoutLocale = pathname.replace(`/${matchedLocale}`, '') || '/';
+  const innerBare = singlePathSegment(pathWithoutLocale);
+  if (innerBare && shouldTreatBareSegmentAsTourSlug(innerBare)) {
+    pathWithoutLocale = `/tour/${innerBare}`;
+  }
   const url = request.nextUrl.clone();
   url.pathname = pathWithoutLocale;
   url.searchParams.set('locale', matchedLocale);
