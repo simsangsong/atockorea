@@ -57,6 +57,28 @@ function shouldTreatBareSegmentAsTourSlug(seg: string): boolean {
   return false;
 }
 
+/**
+ * 실제 홈·투어 UI는 localhost / 127.0.0.1 / ::1 만 (포트 무관).
+ * `next dev -H 0.0.0.0` 후 PC IP로 접속하면 비공개 — http://localhost:3000 권장.
+ */
+function isLocalRequest(request: NextRequest): boolean {
+  const host = (request.headers.get('host') ?? '').toLowerCase();
+  const hostname = request.nextUrl.hostname.toLowerCase();
+  return (
+    hostname === 'localhost' ||
+    hostname === '127.0.0.1' ||
+    hostname === '::1' ||
+    host.startsWith('localhost:') ||
+    host.startsWith('127.0.0.1:') ||
+    host.startsWith('[::1]:')
+  );
+}
+
+/** 라이브 공개 시 Vercel 등에 SITE_HOME_PUBLIC=true */
+function isSiteUiPublic(): boolean {
+  return process.env.SITE_HOME_PUBLIC === 'true' || process.env.SITE_HOME_PUBLIC === '1';
+}
+
 function getLocale(request: NextRequest): string {
   try {
     const negotiatorHeaders: Record<string, string> = {};
@@ -106,7 +128,14 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // 1c. /product-slug → /tour/product-slug (single segment; not a locale or app route)
+  // 1c. 비로컬 + 공개 플래그 없음 → 전체 UI를 /home-private 로만 제공 (URL 표시줄은 유지)
+  if (!isSiteUiPublic() && !isLocalRequest(request)) {
+    const url = request.nextUrl.clone();
+    url.pathname = '/home-private';
+    return NextResponse.rewrite(url);
+  }
+
+  // 1d. /product-slug → /tour/product-slug (single segment; not a locale or app route)
   const bareSeg = singlePathSegment(pathname);
   if (bareSeg && shouldTreatBareSegmentAsTourSlug(bareSeg)) {
     const u = request.nextUrl.clone();
