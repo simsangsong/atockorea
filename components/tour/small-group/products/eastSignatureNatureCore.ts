@@ -32,8 +32,19 @@ const TEMPLATE_CHROME: SmallGroupTemplateSectionChrome = {
     'Frequently asked questions for this experience will appear here.',
 };
 
-export function isEastSignatureNatureCoreTour(tour: TourDetailViewModel): boolean {
-  if ((tour.slug || '').trim() === 'east-signature-nature-core') return true;
+export function isEastSignatureNatureCoreTour(
+  tour: TourDetailViewModel,
+  /** `/tour/[id]` segment when DB slug is missing or mismatched */
+  routeTourId?: string | null
+): boolean {
+  const route = (routeTourId ?? '').trim().toLowerCase();
+  if (route === 'east-signature-nature-core' || route.startsWith('east-signature-nature-core-')) {
+    return true;
+  }
+  const slug = (tour.slug || '').trim().toLowerCase();
+  if (slug === 'east-signature-nature-core' || slug.startsWith('east-signature-nature-core-')) {
+    return true;
+  }
   const raw = (tour.title || '').trim();
   const lower = raw.toLowerCase().replace(/\s+/g, ' ');
   if (/east signature nature core/i.test(lower)) return true;

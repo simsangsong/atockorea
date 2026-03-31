@@ -12,6 +12,7 @@ import { TourCardViewModelSchema } from "../schemas/tours";
 import { TourDetailViewModelSchema } from "../schemas/tours";
 import { BookingTimelineSchema } from "../schemas/booking";
 import { COPY } from "@/src/design/copy";
+import { isEastSignatureNatureCoreTour } from "@/components/tour/small-group/products/eastSignatureNatureCore";
 
 export function adaptBuildTourResponse(raw: unknown): BuildTourResponse {
   const parsed = BuildTourResponseSchema.safeParse(raw);
@@ -328,7 +329,28 @@ export function adaptTourDetailResponse(raw: unknown, routeTourId?: string | nul
     bookingTimeline: mapServerBookingTimeline(tour.bookingTimeline ?? tour.timeline) ?? undefined,
   } as unknown as TourDetailViewModel;
 
-  const parsed = TourDetailViewModelSchema.safeParse(view);
+  let coercedView = view;
+  if (isEastSignatureNatureCoreTour(coercedView, routeTourId)) {
+    const hadSlug = Boolean(coercedView.slug?.trim());
+    const slugFix =
+      coercedView.slug?.trim() ||
+      (routeTourId && !isUuidTourId(routeTourId) ? routeTourId.trim() : "");
+    const prevType = coercedView.type;
+    coercedView = {
+      ...coercedView,
+      type: "join",
+      pickup: { ...coercedView.pickup, joinAvailable: true },
+      ...(slugFix && !hadSlug ? { slug: slugFix } : {}),
+      ...(prevType !== "join"
+        ? {
+            whyThisFitsYou: getDefaultWhyThisFitsYou("join"),
+            whoThisIsBestFor: getDefaultWhoThisIsBestFor("join"),
+          }
+        : {}),
+    };
+  }
+
+  const parsed = TourDetailViewModelSchema.safeParse(coercedView);
   if (!parsed.success) {
     console.error("[adapter] tour detail parse failed", parsed.error.flatten());
     return null;
