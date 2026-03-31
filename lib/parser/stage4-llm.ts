@@ -18,7 +18,7 @@
  * has no direct dependency on Gemini/Claude SDKs.
  */
 import { LlmSlotOutputSchema } from '@/lib/parser/schema';
-import type { ParserStageResult } from '@/lib/parser/types';
+import type { ParserStageResult, SlotMap, SlotValue } from '@/lib/parser/types';
 
 /**
  * The exact prompt sent to the LLM slot filler.
@@ -126,12 +126,12 @@ export async function runLlmSlotFiller(params: {
     };
   }
 
-  const values: Record<string, unknown> = {};
+  const values: SlotMap = {};
   const perSlotConfidence: Record<string, number> = {};
   const perSlotSource: Record<string, string> = {};
 
   for (const [slotKey, slotValue] of Object.entries(parsed.data.values)) {
-    values[slotKey] = slotValue;
+    values[slotKey] = slotValue as SlotValue;
     perSlotConfidence[slotKey] =
       parsed.data.confidence[slotKey as keyof typeof parsed.data.confidence] ??
       0.55;

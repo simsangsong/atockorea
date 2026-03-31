@@ -84,3 +84,12 @@ export const galleryImageOptions: FileUploadOptions = {
   maxFiles: 20,
 };
 
+/** Review photo uploads (client + API validation). */
+export const REVIEW_IMAGE_MAX_BYTES = 4 * 1024 * 1024; // 4MB
+
+export const reviewImageOptions: FileUploadOptions = {
+  maxSize: REVIEW_IMAGE_MAX_BYTES,
+  allowedTypes: ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'],
+  maxFiles: 5,
+};
+

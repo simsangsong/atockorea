@@ -10,7 +10,7 @@
  * All matched group_keys are recorded for auditability.
  */
 import { fetchActiveSynonymGroups } from '@/lib/parser/repository';
-import type { ParserStageResult } from '@/lib/parser/types';
+import type { ParserStageResult, SlotMap, SlotValue } from '@/lib/parser/types';
 
 export async function runSynonymStage(
   rawText: string,
@@ -39,7 +39,7 @@ export async function runSynonymStage(
     };
   }
 
-  const values: Record<string, unknown> = {};
+  const values: SlotMap = {};
   const perSlotConfidence: Record<string, number> = {};
   const perSlotSource: Record<string, string> = {};
   const matchedSynonyms: string[] = [];
@@ -58,7 +58,7 @@ export async function runSynonymStage(
     const confidence = Number(group.confidence ?? 0.85);
 
     if ((perSlotConfidence[slotKey] ?? -1) < confidence) {
-      values[slotKey] = group.slot_value;
+      values[slotKey] = group.slot_value as SlotValue;
       perSlotConfidence[slotKey] = confidence;
       perSlotSource[slotKey] = `synonym:${group.group_key}`;
     }

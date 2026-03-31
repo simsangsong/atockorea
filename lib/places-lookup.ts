@@ -168,6 +168,86 @@ export async function getPlaceEnrichment(
  * 번역한 overview를 places 테이블에 저장. 같은 id + lang_type으로 다음 요청 시 조회됨.
  * embedding은 null로 두고, 필요 시 파이프라인에서 backfill 가능.
  */
+/** Map app locale to `places.lang_type` column values. */
+export function localeToPlaceLang(locale?: string): string {
+  const raw = (locale || 'en').trim().toLowerCase().replace(/_/g, '-');
+  if (raw === 'ko') return 'ko';
+  if (raw === 'ja') return 'ja';
+  if (raw === 'zh-tw' || raw === 'zh-hant') return 'cht';
+  if (raw === 'zh' || raw === 'zh-cn' || raw === 'zh-hans') return 'chs';
+  if (raw === 'es') return 'es';
+  return 'en';
+}
+
+type PlaceDetailOpts = { mapx?: number; mapy?: number; placeId?: number };
+
+/**
+ * Full `places` row when possible; otherwise enrichment fields (for itinerary “View details”).
+ */
+export async function getPlaceDetailFull(
+  supabase: SupabaseClient,
+  name: string,
+  address: string,
+  langType: string,
+  opts?: PlaceDetailOpts
+): Promise<Record<string, unknown> | null> {
+  const safeLang = ['en', 'ko', 'ja', 'chs', 'cht', 'es'].includes(langType) ? langType : 'en';
+
+  if (opts?.placeId != null && Number.isFinite(opts.placeId)) {
+    const { data: byId } = await supabase
+      .from('places')
+      .select('*')
+      .eq('id', opts.placeId)
+      .eq('lang_type', safeLang)
+      .maybeSingle();
+    if (byId) return byId as Record<string, unknown>;
+    const { data: byIdKo } = await supabase
+      .from('places')
+      .select('*')
+      .eq('id', opts.placeId)
+      .eq('lang_type', 'ko')
+      .maybeSingle();
+    if (byIdKo) return byIdKo as Record<string, unknown>;
+  }
+
+  const enrichment = await getPlaceEnrichment(supabase, name, address, safeLang);
+  if (enrichment.place_id != null) {
+    const { data: full } = await supabase
+      .from('places')
+      .select('*')
+      .eq('id', enrichment.place_id)
+      .eq('lang_type', safeLang)
+      .maybeSingle();
+    if (full) return full as Record<string, unknown>;
+    const { data: fullKo } = await supabase
+      .from('places')
+      .select('*')
+      .eq('id', enrichment.place_id)
+      .eq('lang_type', 'ko')
+      .maybeSingle();
+    if (fullKo) return fullKo as Record<string, unknown>;
+  }
+
+  if (!enrichment.image_url && !enrichment.overview && enrichment.place_id == null) {
+    return null;
+  }
+
+  return {
+    id: enrichment.place_id ?? null,
+    title: enrichment.place_title ?? name,
+    address: enrichment.place_address ?? address,
+    image_url: enrichment.image_url,
+    overview: enrichment.overview,
+    open_time: enrichment.open_time ?? null,
+    use_fee: enrichment.use_fee ?? null,
+    tel: enrichment.tel ?? null,
+    mapx: enrichment.mapx ?? null,
+    mapy: enrichment.mapy ?? null,
+    lang_type: safeLang,
+    from_fallback_lang: enrichment.from_fallback_lang ?? null,
+  };
+}
+
 export async function savePlaceTranslation(
   supabase: SupabaseClient,
   payload: {

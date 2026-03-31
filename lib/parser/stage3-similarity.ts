@@ -13,7 +13,7 @@
  * cosine similarity without changing the stage interface.
  */
 import { fetchActiveIntentExamples } from '@/lib/parser/repository';
-import type { ParserStageResult } from '@/lib/parser/types';
+import type { ParserStageResult, SlotMap, SlotValue } from '@/lib/parser/types';
 
 const JACCARD_THRESHOLD = 0.25;
 
@@ -58,7 +58,7 @@ export async function runSimilarityStage(
 
   const inputTokens = tokenize(rawText);
 
-  const values: Record<string, unknown> = {};
+  const values: SlotMap = {};
   const perSlotConfidence: Record<string, number> = {};
   const perSlotSource: Record<string, string> = {};
   const matchedExamples: Array<string | number> = [];
@@ -74,7 +74,7 @@ export async function runSimilarityStage(
     const confidence = Math.min(Number(ex.confidence ?? 0.75), score);
 
     if ((perSlotConfidence[slotKey] ?? -1) < confidence) {
-      values[slotKey] = ex.slot_value;
+      values[slotKey] = ex.slot_value as SlotValue;
       perSlotConfidence[slotKey] = confidence;
       perSlotSource[slotKey] = `example:${ex.id}`;
     }

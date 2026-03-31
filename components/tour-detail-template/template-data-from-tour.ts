@@ -42,7 +42,7 @@ export function buildRouteStopsFromTour(tour: TourDetailViewModel): TemplateRout
     firstImageUrl(tour) ||
     "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&h=500&fit=crop";
 
-  const fromDetails = tour.itineraryDetails?.filter((r) => (r.activity || r.title || "").trim() !== "");
+  const fromDetails = tour.itineraryDetails?.filter((r) => (r.activity || "").trim() !== "");
   if (fromDetails && fromDetails.length > 0) {
     return fromDetails.map((row, i) => {
       const title = (row.activity || "").trim() || `Stop ${i + 1}`;

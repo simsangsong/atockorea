@@ -47,6 +47,31 @@ export const createAnonServerClient = () => {
   });
 };
 
+/** Alias for service-role server client (itinerary cache, admin batch jobs). */
+export const createServiceRoleClient = createServerClient;
+
+/**
+ * Anon Supabase client with the caller's JWT — respects RLS as that user.
+ */
+export function createUserSupabaseClient(accessToken: string) {
+  if (!supabaseUrl || !supabaseAnonKey) {
+    const missing = [!supabaseUrl && 'NEXT_PUBLIC_SUPABASE_URL', !supabaseAnonKey && 'NEXT_PUBLIC_SUPABASE_ANON_KEY']
+      .filter(Boolean)
+      .join(', ');
+    throw new Error(`Missing Supabase env: ${missing}`);
+  }
+  return createClient(supabaseUrl, supabaseAnonKey, {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+      detectSessionInUrl: false,
+    },
+    global: {
+      headers: { Authorization: `Bearer ${accessToken}` },
+    },
+  });
+}
+
 // Database types (will be generated from Supabase later)
 export type Database = {
   public: {

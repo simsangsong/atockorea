@@ -27,7 +27,7 @@
  *   - ui_hint slots are excluded from the parserConfidence average so that
  *     only text-derived slots influence the confidence score.
  */
-import type { MergedParserResult, ParserStageResult } from '@/lib/parser/types';
+import type { MergedParserResult, ParserStageResult, SlotMap, SlotValue } from '@/lib/parser/types';
 
 /**
  * Slots that parserHints from the UI are allowed to override.
@@ -70,7 +70,7 @@ export function mergeParserStages(params: {
   stages: Array<{ name: string; result: ParserStageResult }>;
   parserHints?: Record<string, unknown>;
 }): MergedParserResult {
-  const values: Record<string, unknown> = {};
+  const values: SlotMap = {};
   const perSlotConfidence: Record<string, number> = {};
   const perSlotSource: Record<string, string> = {};
 
@@ -128,7 +128,7 @@ export function mergeParserStages(params: {
     // Only apply if the deterministic parser did not already set this slot
     // with high confidence (< 0.99 threshold)
     if (existingConfidence < 0.99) {
-      values[slotKey] = hintValue;
+      values[slotKey] = hintValue as SlotValue;
       // Keep existing confidence if it's already higher (e.g. text matched same slot)
       perSlotConfidence[slotKey] = Math.max(existingConfidence, UI_HINT_CONFIDENCE);
       perSlotSource[slotKey] = 'ui_hint';

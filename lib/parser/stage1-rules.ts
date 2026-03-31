@@ -9,7 +9,7 @@
  * All matched rule ids are recorded regardless of whether they won.
  */
 import { fetchActivePhraseRules } from '@/lib/parser/repository';
-import type { ParserStageResult } from '@/lib/parser/types';
+import type { ParserStageResult, SlotMap, SlotValue } from '@/lib/parser/types';
 
 export async function runRuleStage(
   rawText: string,
@@ -39,7 +39,7 @@ export async function runRuleStage(
     };
   }
 
-  const values: Record<string, unknown> = {};
+  const values: SlotMap = {};
   const perSlotConfidence: Record<string, number> = {};
   const perSlotSource: Record<string, string> = {};
   const matchedRules: Array<string | number> = [];
@@ -71,7 +71,7 @@ export async function runRuleStage(
 
     // Highest-confidence rule wins per slot
     if ((perSlotConfidence[slotKey] ?? -1) < confidence) {
-      values[slotKey] = rule.slot_value;
+      values[slotKey] = rule.slot_value as SlotValue;
       perSlotConfidence[slotKey] = confidence;
       perSlotSource[slotKey] = `rule:${rule.id}`;
     }

@@ -1,5 +1,5 @@
 import { createServerClient } from './supabase';
-import { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 export type UserRole = 'customer' | 'merchant' | 'admin';
 
@@ -8,6 +8,65 @@ export interface AuthUser {
   email: string;
   role: UserRole;
   merchantId?: string;
+}
+
+/** Thrown by `requireAdmin` when admin routes should return JSON error bodies (see `adminAuthJsonResponse`). */
+export class AdminAuthFailure extends Error {
+  readonly status: number;
+  readonly code: string;
+
+  constructor(status: number, message: string, code = 'AUTH') {
+    super(message);
+    this.name = 'AdminAuthFailure';
+    this.status = status;
+    this.code = code;
+  }
+}
+
+export function adminAuthJsonResponse(e: AdminAuthFailure): NextResponse {
+  return NextResponse.json({ ok: false, code: e.code, message: e.message }, { status: e.status });
+}
+
+/**
+ * Bearer token or Supabase session cookie `access_token` (for user-scoped Supabase clients).
+ */
+export function getAccessTokenFromRequest(req: NextRequest): string | null {
+  const authHeader = req.headers.get('authorization');
+  if (authHeader?.startsWith('Bearer ')) {
+    const t = authHeader.slice(7).trim();
+    if (t) return t;
+  }
+
+  const cookies = req.cookies;
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+  const projectRef = supabaseUrl.match(/https:\/\/([^.]+)\.supabase\.co/)?.[1];
+  if (!projectRef) return null;
+
+  const cookieNames = [
+    `sb-${projectRef}-auth-token`,
+    `sb-${projectRef}-auth-token.0`,
+    `sb-${projectRef}-auth-token.1`,
+  ];
+  const parts: string[] = [];
+  for (const name of cookieNames) {
+    const c = cookies.get(name);
+    if (c?.value) parts.push(c.value);
+  }
+  if (parts.length === 0) return null;
+
+  const combined = parts.join('');
+  try {
+    const sessionData = JSON.parse(combined) as {
+      access_token?: string;
+      accessToken?: string;
+      session?: { access_token?: string };
+    };
+    const accessToken =
+      sessionData?.access_token || sessionData?.accessToken || sessionData?.session?.access_token;
+    return typeof accessToken === 'string' && accessToken ? accessToken : null;
+  } catch {
+    return null;
+  }
 }
 
 /**
@@ -249,10 +308,17 @@ export async function requireRole(
 }
 
 /**
- * Require admin role
+ * Require admin role (throws {@link AdminAuthFailure} for consistent JSON error handling on admin APIs).
  */
 export async function requireAdmin(req: NextRequest): Promise<AuthUser> {
-  return requireRole(req, ['admin']);
+  const user = await getAuthUser(req);
+  if (!user) {
+    throw new AdminAuthFailure(401, 'Unauthorized', 'UNAUTHORIZED');
+  }
+  if (user.role !== 'admin') {
+    throw new AdminAuthFailure(403, 'Forbidden: Insufficient permissions', 'FORBIDDEN');
+  }
+  return user;
 }
 
 /**

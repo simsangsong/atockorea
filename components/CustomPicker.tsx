@@ -18,6 +18,14 @@ const POPUP_STYLE: React.CSSProperties = {
   backdropFilter: 'blur(16px)',
 };
 
+/** Shared glass surfaces for premium custom-join / calendar (light OTA, not cyber theme). */
+export const PREMIUM_GLASS_SURFACE =
+  'rounded-xl border border-stone-200/80 bg-white/85 backdrop-blur-md shadow-[0_1px_0_rgba(255,255,255,0.9)_inset]';
+
+export const PREMIUM_GLASS_TEXTAREA_CLASS = `${PREMIUM_GLASS_SURFACE} w-full min-h-[120px] resize-y px-3 py-2.5 text-sm text-slate-800 outline-none focus:ring-2 focus:ring-blue-500/25`;
+
+export const PREMIUM_GLASS_TRIGGER_CLASS = `${PREMIUM_GLASS_SURFACE} flex min-h-[42px] cursor-pointer items-center justify-between gap-2 px-3 py-2 text-sm text-slate-800 shadow-sm`;
+
 function useOutsideClose(ref: React.RefObject<HTMLDivElement | null>, onClose: () => void, open: boolean) {
   useEffect(() => {
     if (!open) return;
@@ -37,9 +45,16 @@ interface TimePickerProps {
   onChange: (v: string) => void;
   placeholder?: string;
   formatDisplay?: (v: string) => string;
+  variant?: 'default' | 'premium';
 }
 
-export function CustomTimePicker({ value, onChange, placeholder = '09:00 AM', formatDisplay }: TimePickerProps) {
+export function CustomTimePicker({
+  value,
+  onChange,
+  placeholder = '09:00 AM',
+  formatDisplay,
+  variant = 'default',
+}: TimePickerProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   useOutsideClose(ref, () => setOpen(false), open);
@@ -47,6 +62,7 @@ export function CustomTimePicker({ value, onChange, placeholder = '09:00 AM', fo
   const [h, m] = value ? value.split(':').map(Number) : [9, 0];
   const isPM = h >= 12;
   const hour12 = h % 12 === 0 ? 12 : h % 12;
+  const premium = variant === 'premium';
 
   const setHour12 = (v: number) => {
     const h24 = isPM ? (v === 12 ? 12 : v + 12) : (v === 12 ? 0 : v);
@@ -65,9 +81,16 @@ export function CustomTimePicker({ value, onChange, placeholder = '09:00 AM', fo
 
   return (
     <div ref={ref} className="relative w-full">
-      <div className="cyber-input-container flex items-center justify-between gap-2 cursor-pointer" onClick={() => setOpen(o => !o)}>
-        <span className="text-sm text-white select-none">{displayText}</span>
-        <Clock size={14} className="text-[#00f0ff] shrink-0" aria-hidden />
+      <div
+        className={
+          premium
+            ? `${PREMIUM_GLASS_TRIGGER_CLASS}`
+            : 'cyber-input-container flex cursor-pointer items-center justify-between gap-2'
+        }
+        onClick={() => setOpen((o) => !o)}
+      >
+        <span className={`text-sm select-none ${premium ? 'text-slate-800' : 'text-white'}`}>{displayText}</span>
+        <Clock size={14} className={`shrink-0 ${premium ? 'text-stone-500' : 'text-[#00f0ff]'}`} aria-hidden />
       </div>
       <AnimatePresence>
         {open && (
@@ -150,21 +173,41 @@ interface CustomSelectProps {
   placeholder?: string;
   align?: 'left' | 'right';
   className?: string;
+  /** Light glass trigger (custom join premium) vs default cyber styling. */
+  variant?: 'default' | 'premium';
 }
 
-export function CustomSelect({ value, onChange, options, placeholder, align = 'left', className = '' }: CustomSelectProps) {
+export function CustomSelect({
+  value,
+  onChange,
+  options,
+  placeholder,
+  align = 'left',
+  className = '',
+  variant = 'default',
+}: CustomSelectProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   useOutsideClose(ref, () => setOpen(false), open);
 
   const selected = options.find(o => o.value === value);
+  const premium = variant === 'premium';
 
   return (
     <div ref={ref} className={`relative w-full ${className}`}>
-      <div className="cyber-input-container flex items-center justify-between gap-2 cursor-pointer min-h-[42px]" onClick={() => setOpen(o => !o)}>
-        <span className="text-sm text-white select-none">{selected?.label ?? placeholder ?? ''}</span>
+      <div
+        className={
+          premium
+            ? `${PREMIUM_GLASS_TRIGGER_CLASS}`
+            : 'cyber-input-container flex min-h-[42px] cursor-pointer items-center justify-between gap-2'
+        }
+        onClick={() => setOpen((o) => !o)}
+      >
+        <span className={`text-sm select-none ${premium ? 'text-slate-800' : 'text-white'}`}>
+          {selected?.label ?? placeholder ?? ''}
+        </span>
         <motion.div animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }}>
-          <ChevronDown size={14} className="text-[#00f0ff] shrink-0" />
+          <ChevronDown size={14} className={`shrink-0 ${premium ? 'text-stone-500' : 'text-[#00f0ff]'}`} />
         </motion.div>
       </div>
       <AnimatePresence>
