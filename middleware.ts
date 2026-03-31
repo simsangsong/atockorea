@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
+import { isPublicEastSignatureTourDetailPathForSiteGate } from '@/src/lib/east-signature-nature-core-match';
 
 const SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'zh-TW', 'ja', 'es'];
 const DEFAULT_LOCALE = 'en';
@@ -128,8 +129,12 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // 1c. 비로컬 + 공개 플래그 없음 → 전체 UI를 /home-private 로만 제공 (URL 표시줄은 유지)
-  if (!isSiteUiPublic() && !isLocalRequest(request)) {
+  // 1c. 비로컬 + 공개 플래그 없음 → 기본은 /home-private 단, East Signature 소규모 투어 **상세**만 예외
+  if (
+    !isSiteUiPublic() &&
+    !isLocalRequest(request) &&
+    !isPublicEastSignatureTourDetailPathForSiteGate(pathname)
+  ) {
     const url = request.nextUrl.clone();
     url.pathname = '/home-private';
     return NextResponse.rewrite(url);

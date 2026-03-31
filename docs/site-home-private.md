@@ -9,6 +9,7 @@
 | **localhost**, **127.0.0.1**, **::1** (`:3000` 등) | **정상 앱** |
 | **그 외** (atockorea.com, Vercel Preview, LAN IP 등) | **`/home-private`로 rewrite** (주소창은 요청 경로 유지, `noindex`) |
 
+- **예외 (비공개 유지 중에도 공개)**: **East Signature 소규모 투어 상세** — ` /tour/east-signature-nature-core` 및 동일 슬러그 접두(`east-signature-nature-core-*`), locale 접두 경로(` /ko/tour/...` 등). **체크아웃·확인 하위 경로**(`/tour/.../checkout` 등)는 비공개.
 - **`/api/*`**, **`/_next/*`**, **확장자 있는 정적 파일**은 rewrite 없이 통과.
 - `next dev -H 0.0.0.0` 후 **휴대폰에서 PC IP로 접속**하면 비공개 화면 → **`http://localhost:3000`** 또는 **`http://127.0.0.1:3000`** 사용.
 

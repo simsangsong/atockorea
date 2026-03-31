@@ -41,3 +41,48 @@ export function extractTourRouteSegmentFromPathname(pathname: string): string | 
     return raw;
   }
 }
+
+/** Locale segments used in `middleware` for `/xx/tour/...` */
+const PATH_LOCALE_PREFIXES = new Set(["en", "ko", "zh-CN", "zh-TW", "ja", "es"]);
+
+/**
+ * 사이트 전체 비공개(`home-private` rewrite) 중에도 **동부 소규모(East Signature) 투어 상세**만 통과.
+ * - `/tour/east-signature-nature-core` 및 `east-signature-nature-core-*` (세그먼트 2개만)
+ * - `/ko/tour/...` 등 locale 접두 동일 규칙
+ * - 루트 단일 세그먼트 `east-signature-nature-core…` (이후 미들웨어가 `/tour/…`로 리다이렉트)
+ * 체크아웃·확인 등 하위 경로는 비공개 유지.
+ */
+export function isPublicEastSignatureTourDetailPathForSiteGate(pathname: string): boolean {
+  const parts = pathname.split("/").filter(Boolean);
+  if (parts.length === 0) return false;
+
+  if (parts.length === 1) {
+    let seg = parts[0]!;
+    try {
+      seg = decodeURIComponent(seg);
+    } catch {
+      /* keep */
+    }
+    return matchesEastSignatureSlugSegment(seg);
+  }
+
+  let tourId: string | undefined;
+  if (parts[0] === "tour" && parts.length === 2) {
+    tourId = parts[1];
+  } else if (
+    parts.length === 3 &&
+    PATH_LOCALE_PREFIXES.has(parts[0]!) &&
+    parts[1] === "tour"
+  ) {
+    tourId = parts[2];
+  } else {
+    return false;
+  }
+
+  try {
+    tourId = decodeURIComponent(tourId!);
+  } catch {
+    /* keep */
+  }
+  return matchesEastSignatureSlugSegment(tourId);
+}
