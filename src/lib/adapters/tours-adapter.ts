@@ -49,6 +49,22 @@ function isKnownJoinTourSlug(slug: string | undefined | null): boolean {
   return false;
 }
 
+function isUuidTourId(value: string): boolean {
+  return /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(value.trim());
+}
+
+/**
+ * DB sometimes leaves `tours.slug` null; the client still loads by `/tour/east-signature-nature-core`.
+ * Use URL segment for join/premium routing when API slug is missing.
+ */
+function slugForJoinInference(apiSlug: string | undefined, routeTourId?: string | null): string | undefined {
+  const fromApi = apiSlug?.trim();
+  if (fromApi) return fromApi;
+  const r = (routeTourId ?? "").trim();
+  if (!r || isUuidTourId(r)) return undefined;
+  return r;
+}
+
 /** Infer tour type from API title/badges/slug. No DB `tour_type` column yet — slug is the stable join signal. */
 function inferTourType(item: { title?: string; badges?: string[]; slug?: string }): TourType {
   if (isKnownJoinTourSlug(item.slug)) return "join";
@@ -187,8 +203,10 @@ export function adaptToursListResponse(raw: unknown): TourCardViewModel[] {
 /**
  * Adapt GET /api/tours/[id] response to TourDetailViewModel.
  * Uses centralized copy for cancellationPolicy, whoThisIsBestFor, whyThisFitsYou when not from server.
+ *
+ * @param routeTourId - `params.id` from `/tour/[id]` (slug or UUID). When API omits `slug`, this preserves join/premium routing.
  */
-export function adaptTourDetailResponse(raw: unknown): TourDetailViewModel | null {
+export function adaptTourDetailResponse(raw: unknown, routeTourId?: string | null): TourDetailViewModel | null {
   const tour =
     raw && typeof raw === "object" && "tour" in raw
       ? (raw as { tour: Record<string, unknown> }).tour
@@ -203,10 +221,11 @@ export function adaptTourDetailResponse(raw: unknown): TourDetailViewModel | nul
 
   const slugEarly =
     typeof tour.slug === "string" && tour.slug.trim() !== "" ? tour.slug.trim() : undefined;
+  const slugForInference = slugForJoinInference(slugEarly, routeTourId);
   const type = inferTourType({
     title: tour.title as string,
     badges: (tour.badges as string[]) ?? [],
-    slug: slugEarly,
+    slug: slugForInference,
   });
   const price = typeof tour.price === "number" ? tour.price : Number(tour.price) || 0;
   const originalPrice =
@@ -253,7 +272,7 @@ export function adaptTourDetailResponse(raw: unknown): TourDetailViewModel | nul
       }))
     : [];
 
-  const slug = slugEarly;
+  const slug = slugEarly ?? slugForJoinInference(undefined, routeTourId);
 
   const view = {
     id,

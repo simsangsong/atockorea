@@ -50,7 +50,7 @@ export default async function TourTemplatePreviewPage({
       error = res.status === 404 ? 'Tour not found' : `Failed to load tour (${res.status})`;
     } else {
       const data = await res.json();
-      tour = adaptTourDetailResponse(data);
+      tour = adaptTourDetailResponse(data, slug);
       if (!tour) {
         error = 'Tour data could not be adapted (check server console for zod errors).';
       }

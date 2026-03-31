@@ -146,6 +146,13 @@ export const GET = withErrorHandler(async (
 
     logger.info('Tour found', { id: tour.id, title: tour.title });
 
+    const resolvedSlug =
+      typeof tour.slug === 'string' && tour.slug.trim() !== ''
+        ? tour.slug.trim()
+        : !isUUID
+          ? decodedTourId.trim()
+          : '';
+
     // Use translated content when locale is requested and translations exist
     const tr = (localeParam && tour.translations && typeof tour.translations === 'object' && (tour.translations as Record<string, unknown>)[localeParam] as Record<string, unknown> | undefined) || null;
     const baseTitle = tour.title || '';
@@ -180,7 +187,7 @@ export const GET = withErrorHandler(async (
     // Transform data to match frontend expectations
     const transformedTour = {
       id: tour.id,
-      slug: typeof tour.slug === 'string' ? tour.slug : '',
+      slug: resolvedSlug,
       title,
       tagline,
       location: tour.city,

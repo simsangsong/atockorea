@@ -286,7 +286,7 @@ export default function TourDetailPage() {
 
         if (ac.signal.aborted) return;
 
-        const viewModel = adaptTourDetailResponse(data);
+        const viewModel = adaptTourDetailResponse(data, tourId);
         if (!viewModel) {
           setError('Tour data not found in response');
           setLoading(false);
