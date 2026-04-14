@@ -5,13 +5,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
-import HeroPremium from '@/src/components/home/HeroPremium';
-import ProductCardsPremium from '@/src/components/home/ProductCardsPremium';
-import SmallGroupValuePremium from '@/src/components/home/SmallGroupValuePremium';
-import HowItWorksPremium from '@/src/components/home/HowItWorksPremium';
-import TrustAndReviewsSection from '@/src/components/home/TrustAndReviewsSection';
-import ClassicBusSection from '@/components/ClassicBusSection';
-import FinalCtaPremium from '@/src/components/home/FinalCtaPremium';
+import { HomeMainBody } from '@/components/home/HomeMainBody';
 import { LocaleHomeClient } from '@/components/LocaleHomeClient';
 
 const SUPPORTED_LOCALE_ROUTES = ['ko', 'zh-CN', 'zh-TW', 'ja', 'es'];
@@ -66,13 +60,7 @@ export default function LocaleHomePage() {
         <div className="relative z-10">
           <Header />
           <main className="bg-transparent">
-            <HeroPremium />
-            <ProductCardsPremium />
-            <SmallGroupValuePremium />
-            <HowItWorksPremium />
-            <TrustAndReviewsSection />
-            <ClassicBusSection />
-            <FinalCtaPremium />
+            <HomeMainBody />
           </main>
           <Footer />
           <BottomNav />

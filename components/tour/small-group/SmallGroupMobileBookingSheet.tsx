@@ -1,13 +1,17 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useRouter } from 'next/navigation';
 import DatePicker from 'react-datepicker';
 import { MapPin } from 'lucide-react';
 import { useTranslations } from '@/lib/i18n';
 import { useCurrencyOptional } from '@/lib/currency';
+import type { BookingPanelSummary } from '@/components/tour/EnhancedBookingSidebar';
+import { computeJoinTourBookingPanelSummary } from '@/lib/tour-detail/join-tour/compute-booking-panel-summary';
+import { isJejuPrivateCarTourJoin } from '@/lib/tour-detail/join-tour/join-tour-helpers';
+import type { JoinTourAvailabilityData } from '@/lib/tour-detail/join-tour/types';
 import type { HotelInfo } from '@/components/maps/HotelMapPicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './small-group-premium.css';
@@ -45,18 +49,7 @@ function nearestPickupPoint(
   return best;
 }
 
-type AvailabilityData = {
-  available: boolean;
-  availableSpots: number;
-  maxCapacity: number | null;
-  requestedGuests: number;
-  canAccommodate: boolean;
-  price: number;
-  priceOverride: number | null;
-  date: string;
-  /** Server-side rule, e.g. Jeju East not on Mondays */
-  reason?: string;
-};
+type AvailabilityData = JoinTourAvailabilityData & { reason?: string };
 
 export type SmallGroupMobileBookingSheetTour = {
   id: string | number;
@@ -73,22 +66,29 @@ type SmallGroupMobileBookingSheetProps = {
   tour: SmallGroupMobileBookingSheetTour;
   checkoutPath: string;
   onDateSelect?: (date: Date | null) => void;
+  /** Sync pricing / date state to parent (e.g. East v2 sticky bar) — same math as `EnhancedBookingSidebar`. */
+  onBookingSummaryChange?: (summary: BookingPanelSummary) => void;
+  /** Availability + gate errors for parent UI (retry-safe; parent may show notices outside the sheet). */
+  onBookingAvailabilitySync?: (state: {
+    checkingAvailability: boolean;
+    availabilityError: string | null;
+    availability: AvailabilityData | null;
+    gateError: string | null;
+  }) => void;
 };
 
-function isJejuPrivateCarTour(title: string | undefined): boolean {
-  if (!title || typeof title !== 'string') return false;
-  const s = title.toLowerCase().trim();
+const OVERLAY_MS = 520;
+
+function bookingPanelSummariesEqual(a: BookingPanelSummary, b: BookingPanelSummary): boolean {
   return (
-    /jeju\s+private\s+car|private\s+car\s+charter/i.test(s) ||
-    /제주\s*프라이빗\s*차|프라이빗\s*차\s*차터/i.test(s) ||
-    /济州\s*私人\s*包车|济州\s*私人\s*汽车|私人\s*包车|私人\s*汽车/i.test(s) ||
-    /濟州\s*私人\s*包車|私人\s*包車/i.test(s) ||
-    /済州\s*プライベート|プライベート\s*チャーター|済州\s*貸切/i.test(s) ||
-    /jeju\s+coche\s+privado|charter\s+privado/i.test(s)
+    a.hasDate === b.hasDate &&
+    a.guestCount === b.guestCount &&
+    a.unitPriceFormatted === b.unitPriceFormatted &&
+    a.unitPriceUsd === b.unitPriceUsd &&
+    a.totalFormatted === b.totalFormatted &&
+    a.priceType === b.priceType
   );
 }
-
-const OVERLAY_MS = 520;
 
 export default function SmallGroupMobileBookingSheet({
   open,
@@ -96,6 +96,8 @@ export default function SmallGroupMobileBookingSheet({
   tour,
   checkoutPath,
   onDateSelect,
+  onBookingSummaryChange,
+  onBookingAvailabilitySync,
 }: SmallGroupMobileBookingSheetProps) {
   const router = useRouter();
   const t = useTranslations();
@@ -128,7 +130,7 @@ export default function SmallGroupMobileBookingSheet({
 
   const hasDiscount =
     tour.originalPrice !== null && tour.originalPrice !== undefined && tour.originalPrice > tour.price;
-  const isJejuPrivate = isJejuPrivateCarTour(tour.title);
+  const isJejuPrivate = isJejuPrivateCarTourJoin(tour.title);
   const basePrice = applyDiscount && hasDiscount ? tour.price : (tour.originalPrice ?? tour.price);
   const effectivePrice = availability?.price ?? basePrice;
   const subtotal = tour.priceType === 'person' ? effectivePrice * guestCount : effectivePrice;
@@ -248,6 +250,55 @@ export default function SmallGroupMobileBookingSheet({
       cancelled = true;
     };
   }, [tour.id]);
+
+  const lastBookingSummaryEmitRef = useRef<{
+    tourId: string | number;
+    summary: BookingPanelSummary;
+  } | null>(null);
+
+  useEffect(() => {
+    if (!onBookingSummaryChange) return;
+    const summary = computeJoinTourBookingPanelSummary({
+      tour,
+      selectedDate,
+      guestCount,
+      availability,
+      applyDiscount,
+      promoCode: '',
+      preferredLanguage: 'en',
+      formatPrice,
+    });
+    const prev = lastBookingSummaryEmitRef.current;
+    if (prev && prev.tourId === tour.id && bookingPanelSummariesEqual(prev.summary, summary)) {
+      return;
+    }
+    lastBookingSummaryEmitRef.current = { tourId: tour.id, summary };
+    onBookingSummaryChange(summary);
+  }, [
+    onBookingSummaryChange,
+    tour,
+    selectedDate,
+    guestCount,
+    availability,
+    applyDiscount,
+    formatPrice,
+  ]);
+
+  useEffect(() => {
+    if (!onBookingAvailabilitySync) return;
+    onBookingAvailabilitySync({
+      checkingAvailability,
+      availabilityError,
+      availability,
+      gateError,
+    });
+  }, [
+    onBookingAvailabilitySync,
+    checkingAvailability,
+    availabilityError,
+    availability,
+    gateError,
+  ]);
 
   const handleGuestDelta = (delta: number) => {
     const next = guestCount + delta;

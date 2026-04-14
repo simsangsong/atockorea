@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const { amount, currency = 'krw', bookingId, bookingData } = body;
+    const { amount, currency = 'usd', bookingId, bookingData } = body;
 
     // Validate required fields
     if (!amount || !bookingId) {
@@ -77,8 +77,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const cur = (currency || 'krw').toLowerCase();
-    // KRW is zero-decimal (1 unit = 1 KRW); USD is cents (1 unit = 0.01 USD)
+    const cur = (currency || 'usd').toLowerCase();
+    // KRW: zero-decimal (1 unit = 1 KRW). USD: amount is dollars → Stripe cents.
     const unitAmount = cur === 'krw'
       ? Math.round(Number(amount))
       : Math.round(Number(amount) * 100);

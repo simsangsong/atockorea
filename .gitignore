@@ -22,6 +22,8 @@ venv/
 
 # misc
 .DS_Store
+.tmp/
+supabase/.temp/
 *.pem
 
 # debug
@@ -54,3 +56,5 @@ atoc-data-pipeline/lod/etl_log.txt
 atoc-data-pipeline/lod/etl_progress.txt
 atoc-data-pipeline/lod/etl_error_log.txt
 atoc-data-pipeline/lod/etl_skipped_lines.log
+atoc-data-pipeline/output/
+/nul

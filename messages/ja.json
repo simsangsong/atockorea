@@ -114,6 +114,27 @@
     "importantNotesSection": "ご注意事項",
     "reviews": "レビュー",
     "noReviewsYet": "このツアーのレビューはまだありません。",
+    "heroDecision": {
+      "walk": "歩行",
+      "rain": "雨・天候",
+      "fit": "向いている方",
+      "pickup": "送迎",
+      "value": "含む・別途",
+      "route": "ルート"
+    },
+    "routeFlow": {
+      "eyebrow": "ルート構成",
+      "title": "この日の流れ",
+      "lead": "{count}か所の停留所—行程表と同じ順番、左から右へ。",
+      "flowListLabel": "この日の停留所の順番",
+      "moodStripLabel": "1日のリズム（3区間）",
+      "morning": "午前",
+      "midday": "昼頃",
+      "coast": "海岸で締め",
+      "stopRange": "{from}–{to}番",
+      "stopSingle": "{n}番",
+      "unnamedStop": "停留所"
+    },
     "allPickupPoints": "全ピックアップ場所：",
     "pickupMeetupInfo": "ピックアップ・集合案内",
     "noPickupPoints": "ピックアップ場所はありません。",
@@ -419,10 +440,12 @@
         "destComingSoonLine1": "近日",
         "destComingSoonLine2": "公開",
         "textareaLabelJeju": "旅のスタイルと、この日に求めることを教えてください",
-        "textareaHelperJeju": "同行者、歩きやすさ、景色やカフェの好み、ペース、プライベート／少人数の希望などを含めてください。",
+        "textareaHelperJeju": "ペース・歩きやすさ・景色・ジョインかプライベートかを一行でどうぞ。",
         "inputLabel": "済州でどんな一日にしたいか教えてください",
-        "inputPlaceholder": "例：初めての済州、景色重視、歩き少なめ、ご両親同伴、カフェに立ち寄り、雨でも安心。最適なプランを提案してください。",
+        "inputPlaceholder": "例：初済州・景色・歩き少なめ・両親・カフェ — 最適プランを提案。",
         "chipsLegend": "よく使う条件（任意）",
+        "chipsShowMore": "タグをさらに表示",
+        "chipsShowLess": "タグを閉じる",
         "findMatchCta": "最適なツアーを見つける",
         "pricingRowLabel": "目安料金と最少人数",
         "priceSmallGroup": "少人数 $58〜",
@@ -437,7 +460,23 @@
         "bestMatchCta": "このマッチを見る",
         "alsoConsiderLabel": "ほかの選択肢",
         "alsoConsiderPrivate": "プライベート車両",
-        "alsoConsiderBus": "定番バスツアー"
+        "alsoConsiderBus": "定番バスツアー",
+        "plannerOutcomeEyebrow": "受け取れるもの",
+        "plannerOutcomeDestTitle": "最適な目的地",
+        "plannerOutcomeDestMicro": "旅に合うエリアを先にご提案。",
+        "plannerOutcomeStyleTitle": "ツアースタイル",
+        "plannerOutcomeStyleMicro": "ジョイン・プライベート・バスから最適を。",
+        "plannerOutcomePaceTitle": "ペースとプラン",
+        "plannerOutcomePaceMicro": "内容に合わせたルートと立ち寄り。",
+        "introVideoAria": "プランナー紹介の短い動画",
+        "introDismissAria": "紹介動画を閉じる",
+        "introPlayAria": "紹介動画を再生",
+        "matchLoadingAnalyzing": "ご希望を分析しています…",
+        "matchLoadingMatching": "ツアーを照合しています…",
+        "matchLoadingComplete": "マッチング完了",
+        "matchResultRecommendLine": "初めての済州島向けのおすすめで、ゆったりしたペースと海岸の景色のバランスが良いコースです。",
+        "seeOtherToursCta": "他のツアーを見る",
+        "matchResultBackCta": "プランナーに戻る"
       },
       "comparison": {
         "eyebrow": "旅のスタイル",
@@ -548,20 +587,22 @@
       "reviews": {
         "eyebrow": "旅行者の声",
         "title": "フィット・明瞭さ・ペース",
-        "quote1": "待ち合わせがはっきりしていて迷いませんでした。",
-        "quote2": "初の済州でも一日が急かされず快適でした。",
-        "quote3": "両親同伴でも歩きが短くて大丈夫でした。"
+        "quote1": "ホテルゾーンと待ち合わせ場所が具体的に書かれていて、角を探し回らなくて済みました。",
+        "quote1Tag": "済州東部 · 少人数ジョイン",
+        "quote2": "初めての済州でしたが、行程は詰まっていても一日のテンポは息苦しくありませんでした。",
+        "quote2Tag": "デイツアー参加"
       },
       "classicBus": {
-        "eyebrow": "別の選択肢",
-        "title": "固定路線のバスツアーは、コスト最優先のときにどうぞ。",
-        "cta": "定番バスツアーを見る"
+        "eyebrow": "コスト優先",
+        "title": "費用優先なら、定路線バスツアーは別リストにまとめています。",
+        "cta": "路線バスツアーを見る"
       },
       "finalCta": {
-        "eyebrow": "今すぐ計画",
-        "title": "済州旅行を、もっと賢く組み立てませんか？",
+        "eyebrow": "次のステップ",
+        "title": "済州の一日を決める—ジョインか専用車か。",
         "cta": "ツアーを探す",
-        "ctaPrivate": "プライベートツアーを見る"
+        "ctaPrivate": "専用車で進む",
+        "divider": "または"
       }
     },
     "destinations": {

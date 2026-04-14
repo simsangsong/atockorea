@@ -1,6 +1,7 @@
 import type { TourDetailViewModel } from '@/src/types/tours';
 import { mapTourToRouteStopCards } from './mapTourToRouteStops';
 import { applySmallGroupProductOverlay } from './applyProductContentOverlay';
+import { applyDetailPageV2ToContent } from '@/lib/tour-detail/v2/detail-page-v2';
 
 /** Premium badge in the hero row (e.g. “Small group”, “Licensed guide”). */
 export interface SmallGroupPremiumBadge {
@@ -27,6 +28,80 @@ export interface SmallGroupInsightCard {
   id: string;
   title: string;
   body: string;
+}
+
+/** FAQ row; optional rank for conversion-first ordering on small-group detail. */
+export interface SmallGroupFaqItem {
+  /** Stable key for client lists (optional on CMS/API rows). */
+  id?: string;
+  question: string;
+  answer: string;
+  /** 1–5 = primary “before you book” questions (lower numbers first). */
+  decisionRank?: number;
+}
+
+const FAQ_TOP_DECISION_N = 5;
+
+/** When `decisionRank` is missing, bias toward common booking objections (English-oriented fallback). */
+function faqKeywordTier(question: string): number {
+  const q = question.toLowerCase();
+  const patterns = [
+    /first[-\s]?time|first visit|never been|new to jeju/i,
+    /walk|difficult|hard|stairs|steep|mobility|terrain|^how hard/i,
+    /rain|weather|still run|if it rains|wet/i,
+    /family|families|senior|parent|children|kid|stroller/i,
+    /lunch|pickup|included|meal|meet up|hotel lobby/i,
+  ];
+  for (let i = 0; i < patterns.length; i++) {
+    if (patterns[i]!.test(q)) return i;
+  }
+  return patterns.length;
+}
+
+/**
+ * Up to five primary questions (ranked), remainder for “More questions”.
+ * Shared by small-group FAQ UI and East v0 adapter (same ordering rules).
+ */
+export function partitionFaqItems(items: SmallGroupFaqItem[]): { top: SmallGroupFaqItem[]; more: SmallGroupFaqItem[] } {
+  if (items.length === 0) return { top: [], more: [] };
+  if (items.length <= FAQ_TOP_DECISION_N) return { top: items, more: [] };
+
+  const ranked = items
+    .filter((i) => i.decisionRank != null && i.decisionRank >= 1)
+    .sort((a, b) => (a.decisionRank ?? 99) - (b.decisionRank ?? 99));
+
+  const top: SmallGroupFaqItem[] = [];
+  const used = new Set<SmallGroupFaqItem>();
+
+  for (const it of ranked) {
+    if (top.length >= FAQ_TOP_DECISION_N) break;
+    top.push(it);
+    used.add(it);
+  }
+
+  const unranked = items.filter((i) => !used.has(i));
+  unranked.sort((a, b) => {
+    const d = faqKeywordTier(a.question) - faqKeywordTier(b.question);
+    if (d !== 0) return d;
+    return items.indexOf(a) - items.indexOf(b);
+  });
+
+  for (const it of unranked) {
+    if (top.length >= FAQ_TOP_DECISION_N) break;
+    top.push(it);
+    used.add(it);
+  }
+
+  for (const it of items) {
+    if (top.length >= FAQ_TOP_DECISION_N) break;
+    if (used.has(it)) continue;
+    top.push(it);
+    used.add(it);
+  }
+
+  const topSlice = top.slice(0, FAQ_TOP_DECISION_N);
+  const more = items.filter((i) => !topSlice.includes(i));
+  return { top: topSlice, more };
 }
 
 /** Expanded stop copy (card uses `cardSummary` + `cardFacts`; expanded uses this when set). */
@@ -104,6 +179,14 @@ export interface SmallGroupSeasonalBlock {
 /** Editorial cluster for Practical Details accordions (Step 6). */
 export type SmallGroupPracticalGroupKey = 'before' | 'day' | 'booking';
 
+/** Top-level Practical details accordion (single merged section). */
+export type SmallGroupPracticalAccordionKey =
+  | 'pickup'
+  | 'walkingTerrain'
+  | 'weatherClosure'
+  | 'wearBring'
+  | 'includedNotIncluded';
+
 /** Practical info subsection (G). */
 export interface SmallGroupPracticalBlock {
   id: string;
@@ -111,8 +194,10 @@ export interface SmallGroupPracticalBlock {
   body: string;
   /** Extra lines behind `<details>` so the default row stays short. */
   moreDetails?: string;
-  /** Expandable group; when omitted, inferred from `id` for known CMS keys. */
+  /** Legacy cluster (before / on the day / booking); superseded by `panelKey` for accordion UI. */
   group?: SmallGroupPracticalGroupKey;
+  /** When set, places this block in a specific Practical details accordion panel. */
+  panelKey?: SmallGroupPracticalAccordionKey;
 }
 
 const PRACTICAL_GROUP_ORDER: SmallGroupPracticalGroupKey[] = ['before', 'day', 'booking'];
@@ -139,6 +224,69 @@ const PRACTICAL_ID_TO_GROUP: Record<string, SmallGroupPracticalGroupKey> = {
   notIncluded: 'booking',
   delayPolicy: 'booking',
 };
+
+/** Maps block ids to the unified Practical details accordion (five panels). */
+const PRACTICAL_ID_TO_ACCORDION: Record<string, SmallGroupPracticalAccordionKey> = {
+  pickupDrop: 'pickup',
+  whatToWear: 'wearBring',
+  whatToBring: 'wearBring',
+  walkingStairs: 'walkingTerrain',
+  kids: 'walkingTerrain',
+  seniors: 'walkingTerrain',
+  restrooms: 'walkingTerrain',
+  weather: 'weatherClosure',
+  delayPolicy: 'weatherClosure',
+  meal: 'includedNotIncluded',
+  lunch: 'includedNotIncluded',
+  included: 'includedNotIncluded',
+  notIncluded: 'includedNotIncluded',
+  not_included: 'includedNotIncluded',
+  extras: 'includedNotIncluded',
+};
+
+const PRACTICAL_ACCORDION_ORDER: SmallGroupPracticalAccordionKey[] = [
+  'pickup',
+  'walkingTerrain',
+  'weatherClosure',
+  'wearBring',
+  'includedNotIncluded',
+];
+
+const PRACTICAL_ACCORDION_LABEL: Record<SmallGroupPracticalAccordionKey, string> = {
+  pickup: 'Pickup & drop-off',
+  walkingTerrain: 'Walking & terrain',
+  weatherClosure: 'Weather / closure handling',
+  wearBring: 'What to wear & bring',
+  includedNotIncluded: 'Included / not included',
+};
+
+export function resolvePracticalAccordionKey(block: SmallGroupPracticalBlock): SmallGroupPracticalAccordionKey {
+  if (block.panelKey) return block.panelKey;
+  return PRACTICAL_ID_TO_ACCORDION[block.id] ?? 'walkingTerrain';
+}
+
+/** Buckets for the five Practical details accordions (stable product order). */
+export function groupPracticalBlocksByAccordion(blocks: SmallGroupPracticalBlock[]): Array<{
+  key: SmallGroupPracticalAccordionKey;
+  label: string;
+  blocks: SmallGroupPracticalBlock[];
+}> {
+  const buckets: Record<SmallGroupPracticalAccordionKey, SmallGroupPracticalBlock[]> = {
+    pickup: [],
+    walkingTerrain: [],
+    weatherClosure: [],
+    wearBring: [],
+    includedNotIncluded: [],
+  };
+  for (const b of blocks) {
+    buckets[resolvePracticalAccordionKey(b)].push(b);
+  }
+  return PRACTICAL_ACCORDION_ORDER.map((key) => ({
+    key,
+    label: PRACTICAL_ACCORDION_LABEL[key],
+    blocks: buckets[key],
+  }));
+}
 
 export function resolvePracticalBlockGroup(block: SmallGroupPracticalBlock): SmallGroupPracticalGroupKey {
   if (block.group) return block.group;
@@ -299,6 +447,10 @@ export interface SmallGroupTemplateSectionChrome {
   routeTimelineSubtitle?: string;
   /** Under subtitle: e.g. “Short card summary first…” */
   routeTimelineCardHint?: string;
+  /** Compact route-flow strip between itinerary and “Why this tour works”. */
+  routeFlowStripEyebrow?: string;
+  routeFlowStripTitle?: string;
+  routeFlowStripLead?: string;
   seasonalSubtitle?: string;
   practicalSubtitle?: string;
   trustSubtitle?: string;
@@ -328,7 +480,7 @@ export interface SmallGroupDetailContent {
   seasonalBlocks: SmallGroupSeasonalBlock[];
   practicalBlocks: SmallGroupPracticalBlock[];
   afterBookingItems: SmallGroupSupportItem[];
-  faqs: Array<{ question: string; answer: string }>;
+  faqs: SmallGroupFaqItem[];
   relatedTours: SmallGroupRelatedTourCard[];
   /** One editorial sentence under Practical Details H2; omit when empty. */
   practicalIntro?: string;
@@ -587,5 +739,9 @@ export function buildSmallGroupDetailContent(tour: TourDetailViewModel): SmallGr
     practicalIntro: practicalIntroFromTourOverview(tour),
   };
 
-  return applySmallGroupProductOverlay(tour, base);
+  let merged = applySmallGroupProductOverlay(tour, base);
+  if (tour.detailPageV2 != null) {
+    merged = applyDetailPageV2ToContent(merged, tour.detailPageV2);
+  }
+  return merged;
 }

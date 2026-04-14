@@ -1,0 +1,832 @@
+{
+  "slug": "east-signature-nature-core",
+  "locale": "ko",
+  "page": {
+    "title": "제주 동부 화산·해안·민속마을 소그룹 투어",
+    "subtitle": "돌에서 바다로. 분화구에서 정원과 마을로.",
+    "region_label": "제주 동부",
+    "duration_label": "8시간",
+    "card_short_description": "제주의 돌과 화산 맥락에서 시작해 동부 해안과 성산일출봉을 거치고, 일출랜드와 성읍민속마을로 마무리하는 구조감 좋은 제주 동부 하루 코스입니다.",
+    "seo_title": "제주 동부 화산·해안·민속마을 소그룹 투어 | AtoC Korea",
+    "meta_description": "제주의 돌과 화산 이야기를 시작으로 동부 해안과 성산일출봉을 지나 일출랜드와 성읍민속마을로 마무리하는 균형감 좋은 제주 동부 소그룹 투어입니다.",
+    "headline_line_1": "제주 동부 화산·해안·민속마을",
+    "headline_line_2": "소그룹 투어",
+    "badges": [
+      "제주 첫 여행 추천",
+      "제주 동부"
+    ],
+    "detail_payload": {
+      "schema_version": 1,
+      "hero": {
+        "imageUrl": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
+        "imagePosition": "center 35%",
+        "tagline": "돌에서 바다로. 분화구에서 정원과 마을로.",
+        "pills": [
+          "제주 첫 여행 추천",
+          "제주 동부"
+        ],
+        "meta": {
+          "duration": "8시간",
+          "region": "제주 동부",
+          "stops": "6개 정차",
+          "rating": 4.8,
+          "ratingStars": 4
+        }
+      },
+      "subnavItems": [
+        {
+          "id": "overview",
+          "label": "개요"
+        },
+        {
+          "id": "itinerary",
+          "label": "일정"
+        },
+        {
+          "id": "details",
+          "label": "상세정보"
+        },
+        {
+          "id": "faq",
+          "label": "FAQ"
+        },
+        {
+          "id": "reviews",
+          "label": "후기"
+        }
+      ],
+      "glanceItems": [
+        {
+          "icon": "camera",
+          "label": "사진 매력도",
+          "value": "높음"
+        },
+        {
+          "icon": "mountain",
+          "label": "경관 강도",
+          "value": "높음"
+        },
+        {
+          "icon": "footprints",
+          "label": "도보 강도",
+          "value": "중간"
+        },
+        {
+          "icon": "cloud-rain",
+          "label": "우천 대응",
+          "value": "보통"
+        },
+        {
+          "icon": "users",
+          "label": "가족 여행 적합도",
+          "value": "좋음"
+        },
+        {
+          "icon": "scale",
+          "label": "일정 밸런스",
+          "value": "균형형"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "video",
+          "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1200&q=80",
+          "location": "루트 개요",
+          "atmosphere": "하루의 흐름 한눈에",
+          "alt": "제주 동부 해안 루트 개요"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
+          "location": "돌 풍경 오프닝",
+          "atmosphere": "아침의 화산 지형",
+          "alt": "제주돌문화공원 돌 풍경"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+          "location": "일출랜드 용암동굴 정원",
+          "atmosphere": "서늘한 동굴 질감",
+          "alt": "일출랜드 용암동굴 정원 내부"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=800&q=80",
+          "location": "마을의 결",
+          "atmosphere": "생활감이 느껴지는 문화 풍경",
+          "alt": "성읍민속마을"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
+          "location": "화산 분화구 해안",
+          "atmosphere": "가장 드라마틱한 하이라이트",
+          "alt": "성산일출봉 분화구"
+        },
+        {
+          "id": 6,
+          "type": "video",
+          "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80",
+          "location": "탁 트인 해안 능선",
+          "atmosphere": "바람이 기분을 여는 구간",
+          "alt": "섭지코지 해안 산책로"
+        }
+      ],
+      "itineraryStops": [
+        {
+          "number": 1,
+          "time": "09:00",
+          "duration": "60분",
+          "name": "제주돌문화공원",
+          "category": "지질·돌문화",
+          "description": "하루의 흐름을 가장 잘 열어주는 출발점입니다. 돌문화공원에서 제주의 화산섬 정체성을 먼저 이해하고 나면, 이후 해안과 분화구, 동굴과 마을 풍경이 더 또렷하게 이어집니다.",
+          "image": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
+          "highlights": [
+            "돌 조형물과 석탑, 넓게 열린 야외 공간",
+            "제주 특유의 돌문화를 이해하기 좋은 장소",
+            "시야가 넓어 사진 구도가 깔끔함",
+            "실내 전시가 지질·화산 이야기를 보완해 줌"
+          ],
+          "timeUsed": [
+            "메인 돌 구역을 중심으로 짧은 오리엔테이션",
+            "야외 돌 풍경 구역에서 사진 및 설명 시간",
+            "박물관 구간 또는 마무리 해설 후 출발"
+          ],
+          "whyOnRoute": "여기서 시작하면 뒤이어 만나는 해안, 분화구, 용암동굴 풍경이 더 잘 연결됩니다.",
+          "visitBasics": {
+            "hours": "09:00-18:00",
+            "closed": "월요일",
+            "admission": "성인 5,000원 / 청소년 3,500원",
+            "walking": "쉬움~보통"
+          },
+          "convenience": {
+            "restroom": "입구 및 박물관 구역",
+            "parking": "주차 가능"
+          },
+          "smartNotes": {
+            "photo": "여기는 인물 클로즈업보다 넓은 구도와 공간감 있는 사진이 더 잘 나옵니다.",
+            "facilities": "초반 동선 중 화장실과 실내 편의시설이 가장 좋은 편입니다.",
+            "tip": "이곳은 서두르기보다 차분하게 하루를 여는 첫 정차지로 잡는 것이 좋습니다."
+          }
+        },
+        {
+          "number": 2,
+          "time": "10:40",
+          "duration": "60분",
+          "name": "섭지코지",
+          "category": "오픈 릿지 해안선",
+          "description": "돌문화공원 이후 일정이 바깥으로 확 열립니다. 섭지코지는 바닷바람과 능선 뷰, 동부 해안의 개방감을 끌어오며 점심 이후 성산일출봉으로 이어질 분위기를 미리 깔아줍니다.",
+          "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80",
+          "highlights": [
+            "탁 트인 해안 능선과 바다를 향한 산책로",
+            "계절에 따라 달라지는 꽃 풍경",
+            "등대 포인트와 넓은 오션뷰 프레이밍",
+            "돌문화공원과 대비되는 시원한 시각 전환"
+          ],
+          "timeUsed": [
+            "입구 구간에서 간단한 동선 설명",
+            "메인 해안 산책로 위주로 걷기",
+            "사진 촬영 후 여유 있게 되돌아오기"
+          ],
+          "whyOnRoute": "오후의 성산일출봉이 더 강하게 느껴지도록 먼저 바다의 분위기를 열어줍니다.",
+          "visitBasics": {
+            "hours": "24시간 개방",
+            "closed": "없음",
+            "admission": "무료(주차비 별도)",
+            "walking": "쉬움~보통"
+          },
+          "convenience": {
+            "restroom": "입구 구역",
+            "parking": "유료 주차"
+          },
+          "smartNotes": {
+            "photo": "바람과 하늘이 크게 열려 있어 정면 포즈보다 측면 구도나 자연스러운 워킹샷이 더 좋습니다.",
+            "facilities": "편의시설은 많지 않고 화장실은 주로 입구 쪽에 있습니다.",
+            "tip": "이전 정차지보다 햇빛과 바람 노출이 커서 체감이 더 강하게 느껴질 수 있습니다."
+          }
+        },
+        {
+          "number": 3,
+          "time": "12:00",
+          "duration": "60분",
+          "name": "점심",
+          "category": "중간 리셋",
+          "description": "점심은 단순한 식사가 아니라 하루 리듬을 정리하는 핵심 구간입니다. 여기서 체력을 정돈하고 나면 오후의 성산일출봉을 훨씬 편하게 즐길 수 있습니다.",
+          "image": "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=800&q=80",
+          "highlights": [
+            "가장 필요한 시점에 에너지를 회복",
+            "해안 산책과 오후 메인 하이라이트를 자연스럽게 연결",
+            "연령대가 섞인 그룹에도 유리한 템포",
+            "후반부 리듬을 더 깔끔하게 정리"
+          ],
+          "timeUsed": [
+            "도착 후 착석 및 준비",
+            "식사와 짧은 휴식",
+            "성산일출봉 이동 전 재정비"
+          ],
+          "whyOnRoute": "점심을 이 시점에 두면 성산일출봉을 더 여유 있게 볼 수 있습니다.",
+          "visitBasics": {
+            "hours": "식당 영업시간 기준",
+            "closed": "매장별 상이",
+            "admission": "포함 또는 현장 개별 결제",
+            "walking": "매우 적음"
+          },
+          "convenience": {
+            "restroom": "식당 시설",
+            "parking": "주차 가능"
+          },
+          "smartNotes": {
+            "photo": "음식 사진을 좋아한다면 이 구간에서 제주 향토 음식 컷을 남기기 좋습니다.",
+            "facilities": "식당 편의시설 완비.",
+            "tip": "이 구간의 핵심은 속도가 아니라 후반부를 더 편하게 만드는 정리 시간입니다."
+          }
+        },
+        {
+          "number": 4,
+          "time": "13:15",
+          "duration": "90분",
+          "name": "성산일출봉",
+          "category": "분화구 산책과 해녀 문화",
+          "description": "하루 중 가장 대표적인 메인 하이라이트입니다. 성산일출봉은 분화구 지형과 해안의 스케일, 제주를 상징하는 풍경이 한곳에 모이는 장소이며, 시간대가 맞으면 해녀 공연 맥락까지 더해져 제주다움이 더 또렷해집니다.",
+          "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
+          "highlights": [
+            "유네스코급 화산 분화구 경관",
+            "기슭과 오르막 구간 모두 시야층이 강한 편",
+            "제주의 대표적인 화산 지형과 해안 스케일",
+            "해녀 문화 맥락까지 더해지는 상징성"
+          ],
+          "timeUsed": [
+            "도착 후 동선과 루트 설명",
+            "그룹 컨디션에 맞춘 메인 도보 구간 진행",
+            "분화구 또는 기슭 조망, 해녀 공연 시간대 반영"
+          ],
+          "whyOnRoute": "점심 이후 이곳을 배치하면 체력과 감정선, 풍경 밀도가 가장 좋을 때 메인 하이라이트를 올릴 수 있습니다.",
+          "visitBasics": {
+            "hours": "07:00-20:00(하절기) / 07:30-19:00(동절기)",
+            "closed": "연중 운영",
+            "admission": "성인 5,000원 / 청소년 2,500원",
+            "walking": "정상 등반 시 다소 도전적"
+          },
+          "convenience": {
+            "restroom": "기슭 및 정상 인근",
+            "parking": "대형 주차장"
+          },
+          "smartNotes": {
+            "photo": "대부분의 경우 정상 인증샷만보다 분화구와 해안선이 함께 보이는 넓은 구도가 더 인상적입니다.",
+            "facilities": "기슭 편의시설은 좋고, 높은 쪽은 비교적 기본적입니다.",
+            "tip": "당일 날씨와 인파, 그룹 보행 속도에 따라 이 구간은 등반 중심일 수도, 조망 중심일 수도 있습니다."
+          }
+        },
+        {
+          "number": 5,
+          "time": "15:00",
+          "duration": "55분",
+          "name": "일출랜드",
+          "category": "용암동굴 정원 산책",
+          "description": "성산일출봉 이후 일정의 리듬을 부드럽게 낮춰주는 구간입니다. 앞선 해안과 분화구의 개방감 이후, 이곳은 더 서늘하고 차분하며 정원형 동선의 편안함이 살아납니다.",
+          "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+          "highlights": [
+            "용암동굴 감성을 품은 정원형 공간",
+            "앞선 정차지와 대비되는 차분한 분위기",
+            "그늘과 완만한 흐름이 있어 한 템포 쉬어가기 좋음",
+            "하이라이트 이후 마무리 흐름으로 전환하기 좋은 지점"
+          ],
+          "timeUsed": [
+            "정원 입구에서 간단한 루트 설명",
+            "메인 동굴 또는 실내 테마 구간 관람",
+            "짧은 정원 산책 후 재집결"
+          ],
+          "whyOnRoute": "성산일출봉 뒤에 놓일 때 가장 잘 작동합니다. 이곳은 하루의 메인 오프닝이 아니라, 하이라이트 이후 호흡을 정리하는 전환 구간입니다.",
+          "visitBasics": {
+            "hours": "09:00-18:00",
+            "closed": "현장 상황에 따라 변동",
+            "admission": "성인 4,000원 / 청소년 2,000원",
+            "walking": "보통"
+          },
+          "convenience": {
+            "restroom": "입구 구역",
+            "parking": "주차 가능"
+          },
+          "smartNotes": {
+            "photo": "실내외 광량 차가 커서 노출만 잘 맞추면 분위기 있는 사진이 잘 나옵니다.",
+            "facilities": "입구 쪽 기본 편의시설 이용 가능.",
+            "tip": "성산 뒤에 오면 그늘과 동선 집중도가 있어 체감상 훨씬 편하게 느껴집니다."
+          }
+        },
+        {
+          "number": 6,
+          "time": "16:20",
+          "duration": "40분",
+          "name": "성읍민속마을",
+          "category": "마을의 결·생활 문화",
+          "description": "마지막은 또 다른 강한 절경보다 생활감 있는 문화 풍경으로 닫습니다. 돌과 해안, 분화구와 용암동굴을 지나온 뒤, 이 마을은 하루를 더 차분하고 지역감 있게 마무리해 줍니다.",
+          "image": "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=800&q=80",
+          "highlights": [
+            "초가집과 돌담이 남아 있는 전통 마을 풍경",
+            "단순 조망지보다 문화와 생활감이 살아 있음",
+            "걷는 템포가 느려 디테일을 보기 좋음",
+            "자연 하이라이트와 대비되는 안정감 있는 마무리"
+          ],
+          "timeUsed": [
+            "도착 후 마을 배경 설명",
+            "주요 골목과 건축 포인트 중심 산책",
+            "마무리 설명과 가벼운 자유 시간"
+          ],
+          "whyOnRoute": "마지막을 이곳에 두면 하루가 더 사람 냄새 나고 제주다운 분위기 속에서 끝납니다.",
+          "visitBasics": {
+            "hours": "주간 개방",
+            "closed": "없음",
+            "admission": "무료",
+            "walking": "쉬움, 대부분 평지"
+          },
+          "convenience": {
+            "restroom": "마을 중심부",
+            "parking": "인근 주차 가능"
+          },
+          "smartNotes": {
+            "photo": "중앙 정면컷보다 지붕선과 돌담 질감, 골목의 깊이를 살리는 구도가 더 좋습니다.",
+            "facilities": "마을 내 편의시설은 비교적 기본적입니다.",
+            "tip": "이 구간은 서두르지 않을수록 하루의 마무리 감도가 더 좋아집니다."
+          }
+        }
+      ],
+      "routeFlowStops": [
+        {
+          "id": "01",
+          "name": "돌문화공원",
+          "theme": "돌문화"
+        },
+        {
+          "id": "02",
+          "name": "섭지코지",
+          "theme": "해안"
+        },
+        {
+          "id": "03",
+          "name": "점심",
+          "theme": "리셋"
+        },
+        {
+          "id": "04",
+          "name": "성산일출봉",
+          "theme": "분화구"
+        },
+        {
+          "id": "05",
+          "name": "일출랜드",
+          "theme": "정원"
+        },
+        {
+          "id": "06",
+          "name": "민속마을",
+          "theme": "문화"
+        }
+      ],
+      "routePhases": [
+        {
+          "label": "오전",
+          "range": "1-2",
+          "theme": "돌문화에서 해안으로",
+          "bgClass": "bg-sky-50/70",
+          "textClass": "text-sky-700",
+          "dotClass": "bg-sky-500"
+        },
+        {
+          "label": "중반",
+          "range": "3-4",
+          "theme": "점심과 성산 하이라이트",
+          "bgClass": "bg-amber-50/70",
+          "textClass": "text-amber-700",
+          "dotClass": "bg-amber-500"
+        },
+        {
+          "label": "마무리",
+          "range": "5-6",
+          "theme": "정원과 민속마을",
+          "bgClass": "bg-emerald-50/70",
+          "textClass": "text-emerald-700",
+          "dotClass": "bg-emerald-500"
+        }
+      ],
+      "routeShapeIntro": {
+        "title": "이 하루가 흘러가는 방식",
+        "subtitle": "돌문화에서 해안으로, 점심 후 성산 하이라이트를 보고 정원과 마을로 마무리합니다. 09:00~17:00."
+      },
+      "whyTourWorks": {
+        "bestFor": [
+          "제주 첫 여행자",
+          "커플·부부",
+          "설명을 들으며 여행하는 분",
+          "활동성 있는 시니어"
+        ],
+        "lessIdeal": [
+          "계단이나 동굴을 피하고 싶은 분",
+          "유모차 비중이 큰 가족",
+          "너무 어린 아이와의 풀데이 일정"
+        ],
+        "routeLogicSections": [
+          {
+            "title": "속도와 구조",
+            "icon": "sun",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "items": [
+              {
+                "label": "돌문화부터 시작해 제주의 맥락을 먼저 잡습니다",
+                "detail": "바다부터 바로 들어가지 않고, 돌문화공원에서 제주의 배경을 먼저 이해하게 합니다."
+              },
+              {
+                "label": "점심 타이밍이 가장 필요한 지점에 놓여 있습니다",
+                "detail": "중간에 체력을 정리한 뒤 성산으로 들어가면 오후 흐름이 훨씬 안정적입니다."
+              },
+              {
+                "label": "메인 하이라이트를 점심 뒤로 배치했습니다",
+                "detail": "성산일출봉을 가장 컨디션이 좋은 타이밍에 배치해 풍경과 감정선이 함께 올라갑니다."
+              }
+            ]
+          },
+          {
+            "title": "루트의 층위",
+            "icon": "mountain",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "items": [
+              {
+                "label": "먼저 해안을 열고, 이후 분화구를 올립니다",
+                "detail": "섭지코지로 바다의 무드를 먼저 열고, 성산일출봉으로 가장 강한 화산 하이라이트를 이어갑니다."
+              },
+              {
+                "label": "하이라이트 뒤에는 정원으로 속도를 눕힙니다",
+                "detail": "성산 뒤의 일출랜드가 오후의 리듬을 한 템포 부드럽게 낮춰 줍니다."
+              },
+              {
+                "label": "마지막은 절경보다 지역감 있는 마을입니다",
+                "detail": "성읍민속마을로 마무리해 하루를 더 생활감 있고 제주다운 분위기로 닫습니다."
+              }
+            ]
+          },
+          {
+            "title": "현장 변수에 대응하는 방식",
+            "icon": "wind",
+            "iconBg": "bg-slate-50/80",
+            "iconColor": "text-slate-600",
+            "items": [
+              {
+                "label": "월요일은 운영하지 않습니다",
+                "detail": "이 루트는 월요일 출발이 없습니다."
+              },
+              {
+                "label": "해안과 성산 구간이 가장 날씨 영향을 많이 받습니다",
+                "detail": "섭지코지와 성산일출봉이 바람과 날씨의 영향을 가장 크게 받는 구간입니다."
+              },
+              {
+                "label": "도보 강도는 현장 상황에 따라 조절됩니다",
+                "detail": "성산 구간은 그룹 체력, 날씨, 현장 상황에 따라 보행 리듬을 조정할 수 있습니다."
+              }
+            ]
+          }
+        ]
+      },
+      "practicalAccordionItems": [
+        {
+          "id": "pickup",
+          "title": "픽업 & 드롭오프",
+          "preview": "제주시권 호텔 로비 픽업",
+          "content": [
+            "08:30-09:00 사이 호텔 로비 픽업",
+            "17:30-18:00경 드롭오프",
+            "요청 시 공항 픽업 가능",
+            "정확한 픽업 시간은 전날 저녁 확정"
+          ]
+        },
+        {
+          "id": "walking",
+          "title": "도보 & 지형",
+          "preview": "전체적으로 중간 난이도, 대부분 무난",
+          "content": [
+            "전체 도보량은 대략 4-6km",
+            "돌문화공원: 대체로 평지이나 일부 노면이 고르지 않음",
+            "일출랜드: 동굴과 정원 동선이 섞여 있고 일부 구간은 젖어 있거나 울퉁불퉁할 수 있음",
+            "성산일출봉: 선택 시 정상 등반 약 20분, 경사가 가파른 편",
+            "미끄럼 방지 기능이 있는 편한 신발 권장"
+          ]
+        },
+        {
+          "id": "weather",
+          "title": "날씨 & 운영 조정",
+          "preview": "대부분의 날씨에 진행, 필요 시 미세 조정",
+          "content": [
+            "가벼운 비에는 정상 진행",
+            "비가 강하면 야외 노출 구간이 줄어들고 일출랜드 비중이 커질 수 있음",
+            "강풍 시 섭지코지 체류 시간이 짧아질 수 있음",
+            "현장 폐쇄 시 대체 정차지가 적용될 수 있음"
+          ]
+        },
+        {
+          "id": "wear",
+          "title": "복장 & 준비물",
+          "preview": "편한 신발, 겹쳐 입기, 가벼운 겉옷",
+          "content": [
+            "접지력 있는 워킹화",
+            "온도 변화에 대응할 레이어드 복장",
+            "가벼운 방풍 재킷",
+            "모자와 자외선 차단제",
+            "물병"
+          ]
+        },
+        {
+          "id": "included",
+          "title": "포함 / 불포함",
+          "preview": "가이드, 차량, 픽업, 입장료",
+          "variant": "included",
+          "content": [
+            "전문 영어 가이드",
+            "소그룹 차량 또는 전용 차량 이동",
+            "제주시권 호텔 픽업·드롭오프",
+            "전 일정 입장료",
+            "생수",
+            "점심(식당에서 개별 결제)",
+            "개인 쇼핑",
+            "매너팁"
+          ]
+        }
+      ],
+      "practicalWeatherStatic": {
+        "today": {
+          "temp": "11°",
+          "label": "오늘 · 맑음"
+        },
+        "tomorrow": {
+          "temp": "18°/13°",
+          "label": "내일 · 가벼운 비"
+        }
+      },
+      "seasonalVariations": [
+        {
+          "name": "봄",
+          "icon": "flower",
+          "description": "유채꽃이 해안을 노랗게 물들이는 시기",
+          "tag": "꽃 풍경 피크",
+          "bgClass": "bg-spring",
+          "iconColor": "text-pink-500"
+        },
+        {
+          "name": "여름",
+          "icon": "sun",
+          "description": "일조 시간이 길고 녹음이 가장 짙은 계절",
+          "tag": "가장 긴 낮",
+          "bgClass": "bg-summer",
+          "iconColor": "text-sky-500"
+        },
+        {
+          "name": "가을",
+          "icon": "leaf",
+          "description": "하늘이 맑고 시야가 가장 깨끗한 시즌",
+          "tag": "최고의 조망",
+          "bgClass": "bg-autumn",
+          "iconColor": "text-amber-600"
+        },
+        {
+          "name": "겨울",
+          "icon": "snow",
+          "description": "사람이 적고 루트 분위기가 더 차분한 시기",
+          "tag": "조용한 무드",
+          "bgClass": "bg-winter",
+          "iconColor": "text-slate-500"
+        }
+      ],
+      "bookingTrustItems": [
+        {
+          "icon": "check-circle",
+          "title": "합법 로컬 운영",
+          "description": "제주 동선에 익숙한 운영",
+          "iconBg": "bg-emerald-50/80",
+          "iconColor": "text-emerald-600"
+        },
+        {
+          "icon": "route",
+          "title": "성숙한 루트 설계",
+          "description": "동부 코스 리듬 최적화",
+          "iconBg": "bg-sky-50/80",
+          "iconColor": "text-sky-600"
+        },
+        {
+          "icon": "users",
+          "title": "소그룹의 편안함",
+          "description": "최대 8명",
+          "iconBg": "bg-amber-50/80",
+          "iconColor": "text-amber-600"
+        }
+      ],
+      "bookingSupportSteps": [
+        {
+          "timing": "예약 직후",
+          "title": "즉시 확정",
+          "detail": "예약 확인 및 일정 요약 발송"
+        },
+        {
+          "timing": "출발 12시간 전",
+          "title": "12시간 전 리마인드",
+          "detail": "날씨 업데이트 및 필요 조정 안내"
+        },
+        {
+          "timing": "전날 저녁",
+          "title": "최종 픽업 안내",
+          "detail": "정확한 픽업 시간과 기사 연락처 전달"
+        },
+        {
+          "timing": "투어 당일 아침",
+          "title": "당일 루트 노트",
+          "detail": "현장 상황 기반 간단 브리핑"
+        },
+        {
+          "timing": "투어 진행 중",
+          "title": "정차지별 안내",
+          "detail": "각 포인트별 실시간 가이드"
+        },
+        {
+          "timing": "투어 종료 후",
+          "title": "사후 지원",
+          "detail": "후속 추천과 추가 안내"
+        }
+      ],
+      "staticQuestions": [
+        {
+          "id": "first-time",
+          "question": "제주가 처음인데 이 코스가 잘 맞을까요?",
+          "answer": "네. 제주의 돌문화, 동부 해안 풍경, 대표 랜드마크가 균형 있게 이어져 첫 제주 여행자에게 잘 맞습니다."
+        },
+        {
+          "id": "walking",
+          "question": "많이 걷는 편인가요?",
+          "answer": "전체적으로는 무난한 편이지만, 가장 체력 소모가 큰 구간은 성산일출봉 정상 선택 시의 오르막입니다. 나머지 정차지는 대부분 보통 수준입니다."
+        },
+        {
+          "id": "rain",
+          "question": "비가 와도 진행되나요?",
+          "answer": "네. 비가 오면 해안 노출 구간은 더 신중하게 운영하고, 날씨 영향을 덜 받는 일출랜드 비중이 커질 수 있습니다."
+        },
+        {
+          "id": "parents",
+          "question": "부모님과 함께 가도 괜찮을까요?",
+          "answer": "네. 전체 리듬은 비교적 편안한 편이며, 바람이 강하거나 노출이 큰 구간은 현장 상황에 맞춰 조정할 수 있습니다."
+        },
+        {
+          "id": "children",
+          "question": "아이와 함께 참여할 수 있나요?",
+          "answer": "가능합니다. 다만 중간 정도의 도보량과 하루 일정 템포를 소화할 수 있는 8세 이상 아이에게 더 잘 맞습니다."
+        },
+        {
+          "id": "order",
+          "question": "정차 순서가 바뀔 수도 있나요?",
+          "answer": "네. 해안 구간은 바람, 교통, 현장 혼잡도의 영향을 받기 때문에 전체 흐름을 더 좋게 만들기 위한 부분 조정이 있을 수 있습니다."
+        },
+        {
+          "id": "lunch",
+          "question": "점심이 포함되나요?",
+          "answer": "점심 포함 여부는 예약한 상품 구성에 따라 다릅니다. 다만 이 루트에는 중간 점심 시간이 반드시 포함됩니다."
+        },
+        {
+          "id": "why-stone-park",
+          "question": "왜 첫 정차지가 돌문화공원인가요?",
+          "answer": "이곳에서 시작하면 하루의 배경이 가장 잘 잡힙니다. 제주의 돌과 화산 맥락을 먼저 알고 나면 이후 해안, 분화구, 마을 풍경이 더 잘 연결됩니다."
+        },
+        {
+          "id": "why-seopjikoji",
+          "question": "왜 섭지코지를 앞쪽에 배치했나요?",
+          "answer": "먼저 바다의 감정을 열고, 더 강한 화산 하이라이트인 성산일출봉을 뒤에 배치해 하루의 층위를 살리기 위해서입니다."
+        },
+        {
+          "id": "why-lunch",
+          "question": "왜 점심 타이밍이 그 시점인가요?",
+          "answer": "성산일출봉 전에 체력과 리듬을 정리하면 오후가 훨씬 편해지기 때문입니다."
+        },
+        {
+          "id": "later-structure",
+          "question": "왜 후반부는 이런 구조인가요?",
+          "answer": "성산 이후 일출랜드로 속도를 부드럽게 낮추고, 성읍민속마을로 사람 냄새 나는 마무리를 주기 위해서입니다."
+        }
+      ],
+      "guestReviews": [
+        {
+          "id": 1,
+          "author": "Sarah M.",
+          "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+          "location": "싱가포르",
+          "date": "2024년 3월",
+          "rating": 5,
+          "title": "하루의 리듬이 정말 잘 짜여 있었어요",
+          "text": "돌문화공원에서 시작하니 뒤에 보는 모든 풍경이 더 이해되더라고요. 가이드가 지질 이야기를 잘 풀어줘서 성산과 일출랜드도 단순 관광지가 아니라 이야기로 이어졌습니다. 점심 타이밍도 좋았고 성산을 걸을 체력도 남아 있었습니다.",
+          "helpful": 24,
+          "verified": true,
+          "tripType": "커플",
+          "photos": [
+            "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=400&q=80",
+            "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80"
+          ]
+        },
+        {
+          "id": 2,
+          "author": "James K.",
+          "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+          "location": "홍콩",
+          "date": "2024년 3월",
+          "rating": 5,
+          "title": "제주 동부를 하루에 보기엔 이 구성이 가장 좋았습니다",
+          "text": "한국에서 여러 투어를 해봤지만 이 코스는 순서가 정말 잘 짜여 있었어요. 언제 천천히 보고 언제 밀어줘야 하는지 가이드가 잘 알고 있었습니다. 마지막을 민속마을로 마무리한 것도 자연 풍경만 보는 하루가 아니어서 좋았어요.",
+          "helpful": 18,
+          "verified": true,
+          "tripType": "가족",
+          "photos": []
+        },
+        {
+          "id": 3,
+          "author": "Yuki T.",
+          "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+          "location": "도쿄",
+          "date": "2024년 2월",
+          "rating": 4,
+          "title": "전체 구성은 훌륭했지만 성산 시간이 조금 더 있었으면 좋겠어요",
+          "text": "전체적으로 정말 만족스러웠습니다. 돌문화공원은 기대 이상으로 흥미로웠고, 성산 다음에 일출랜드를 넣은 것도 좋았어요. 다만 성산에서 15분 정도만 더 있었으면 좋았겠다는 아쉬움은 있습니다. 그래도 전체 일정상 왜 그런지 이해는 됩니다.",
+          "helpful": 12,
+          "verified": true,
+          "tripType": "혼자 여행",
+          "photos": [
+            "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80"
+          ]
+        },
+        {
+          "id": 4,
+          "author": "Michael R.",
+          "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+          "location": "시드니",
+          "date": "2024년 2월",
+          "rating": 5,
+          "title": "기대 이상으로 완성도 높은 하루였습니다",
+          "text": "처음엔 풍경 때문에 예약했는데, 기억에 남은 건 오히려 전체 루트의 스토리감이었어요. 가이드가 각 정차지를 연결해서 설명해줘서 단순 체크리스트 투어가 아니라 하나의 흐름으로 느껴졌습니다. 점심 장소도 좋았고 소그룹이라 설명 듣기 편했습니다.",
+          "helpful": 31,
+          "verified": true,
+          "tripType": "친구",
+          "photos": []
+        }
+      ],
+      "reviewsSummary": {
+        "averageRating": 4.8,
+        "totalReviews": 127,
+        "ratingDistribution": [
+          {
+            "stars": 5,
+            "count": 98,
+            "percentage": 77
+          },
+          {
+            "stars": 4,
+            "count": 21,
+            "percentage": 17
+          },
+          {
+            "stars": 3,
+            "count": 6,
+            "percentage": 5
+          },
+          {
+            "stars": 2,
+            "count": 1,
+            "percentage": 1
+          },
+          {
+            "stars": 1,
+            "count": 1,
+            "percentage": 1
+          }
+        ],
+        "highlights": [
+          {
+            "label": "풍경",
+            "count": 89
+          },
+          {
+            "label": "가이드",
+            "count": 76
+          },
+          {
+            "label": "리듬",
+            "count": 54
+          },
+          {
+            "label": "포토 스팟",
+            "count": 48
+          }
+        ]
+      }
+    },
+    "price_per": "인",
+    "price_amount_label": "58",
+    "price_currency": "USD"
+  }
+}

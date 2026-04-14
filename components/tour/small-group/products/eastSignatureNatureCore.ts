@@ -1,5 +1,5 @@
 import type { TourDetailViewModel } from '@/src/types/tours';
-import { shouldCoerceEastSignatureNatureCoreJoin } from '@/src/lib/east-signature-nature-core-match';
+import { isEastSignatureNatureCoreDetailTour } from '@/lib/tour-detail/east/east-sku';
 import type {
   SmallGroupDetailContent,
   SmallGroupInsightCard,
@@ -17,18 +17,22 @@ import {
 } from './eastSignatureDetailPageLayer';
 
 /** English SKU title (DB base title). KO locale can override via `translations.ko.title`. */
-const FALLBACK_TITLE_EN = 'East Signature Nature Core';
+const FALLBACK_TITLE_EN = 'Jeju East Volcano, Coast & Village Small Group Tour';
 
 const TEMPLATE_CHROME: SmallGroupTemplateSectionChrome = {
   routeTimelineTitle: 'Your Day, Stop by Stop',
-  routeTimelineSubtitle: 'A geology-to-coast route through East Jeju',
+  routeTimelineSubtitle: 'See the full day at a glance, then open only the stops you care about.',
   routeTimelineCardHint: 'Short card summary first, deeper details only when expanded',
+  routeFlowStripEyebrow: 'Route shape',
+  routeFlowStripTitle: 'How this day moves',
+  routeFlowStripLead:
+    'Geology and village texture build context before the coast—each stop hands off to the next.',
   seasonalSubtitle:
-    'The same route feels different depending on wind, light, and closure-day conditions',
-  practicalSubtitle: 'What matters before you go',
+    'Texture and daylight through the year—distinct from live forecast or closure-day operations.',
+  practicalSubtitle: 'Pickup, walking, weather, packing, and inclusions — one place for answers.',
   trustSubtitle: 'Clear route logic and clear operating expectations',
   afterBookSubtitle: 'The support you receive before, during, and after your experience',
-  faqSubtitle: 'Common questions from guests considering this route',
+  faqSubtitle: 'The few questions that usually decide it—plus more detail if you want to dig in.',
   faqEmptyState:
     'Frequently asked questions for this experience will appear here.',
 };
@@ -38,7 +42,7 @@ export function isEastSignatureNatureCoreTour(
   /** `/tour/[id]` segment when DB slug is missing or mismatched */
   routeTourId?: string | null
 ): boolean {
-  return shouldCoerceEastSignatureNatureCoreJoin(routeTourId, tour.slug, tour.title);
+  return isEastSignatureNatureCoreDetailTour(tour, routeTourId);
 }
 
 /**

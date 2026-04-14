@@ -1,0 +1,1755 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 1,
+  "slug": "southwest-hallasan-osulloc-aewol",
+  "locale": "zh-CN",
+  "seo": {
+    "pageTitle": "济州西南部汉拿山・柱状节理・O’Sulloc・涯月精品小团一日游 | AtoC Korea",
+    "metaDescription": "一天走访济州西南部热门路线：汉拿山御乘生岳轻徒步、大浦柱状节理带、天帝渊瀑布、O’Sulloc 茶博物馆与涯月咖啡街；节奏舒服，第一次来济州也能玩得明白。"
+  },
+  "catalog_card": {
+    "slug": "southwest-hallasan-osulloc-aewol",
+    "title": "济州西南部 汉拿山・O’Sulloc・涯月精品小团一日游",
+    "subtitle": "汉拿山轻徒步、海岸柱状节理、森林瀑布步道、茶园风景，最后在涯月海景咖啡街轻松收尾。",
+    "region": "济州西南部",
+    "duration": "8 小时",
+    "stopsCount": 6,
+    "rating": 4.8,
+    "reviewCount": 127,
+    "badges": [
+      "第一次来济州也很合适",
+      "济州西南部"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
+    "priceLabel": "US$58 / 人起",
+    "shortCardDescription": "这是一条节奏非常舒服的济州西南部一日路线：先从汉拿山短程步道出发，再串联柱状节理、瀑布森林与 O’Sulloc 茶园，最后用涯月海景咖啡街收尾，内容完整，玩起来也不会太赶。"
+  },
+  "headlineLine1": "济州西南部 汉拿山・茶园・涯月",
+  "headlineLine2": "精品小团一日游",
+  "price": {
+    "amountLabel": "58",
+    "currency": "USD",
+    "per": "人"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "imagePosition": "center 35%",
+    "tagline": "汉拿山轻徒步、海岸柱状节理、森林瀑布步道、茶园风景，最后在涯月海景咖啡街轻松收尾。",
+    "pills": [
+      "第一次来济州也很合适",
+      "济州西南部"
+    ],
+    "meta": {
+      "duration": "8 小时",
+      "region": "济州西南部",
+      "stops": "6个停靠点",
+      "rating": 4.8,
+      "ratingStars": 4
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "行程概览"
+    },
+    {
+      "id": "itinerary",
+      "label": "行程安排"
+    },
+    {
+      "id": "details",
+      "label": "参团信息"
+    },
+    {
+      "id": "faq",
+      "label": "常见问题"
+    },
+    {
+      "id": "reviews",
+      "label": "用户评价"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "拍照指数",
+      "value": "高"
+    },
+    {
+      "icon": "mountain",
+      "label": "风景表现",
+      "value": "高"
+    },
+    {
+      "icon": "footprints",
+      "label": "步行强度",
+      "value": "中等"
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "雨天适合度",
+      "value": "中等"
+    },
+    {
+      "icon": "users",
+      "label": "亲子友善度",
+      "value": "不错"
+    },
+    {
+      "icon": "scale",
+      "label": "行程平衡度",
+      "value": "均衡"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "video",
+      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+      "location": "路线总览",
+      "atmosphere": "一眼掌握今天的行程气氛",
+      "alt": "济州西南部路线总览"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+      "location": "汉拏山开场",
+      "atmosphere": "清爽山景与高地空气",
+      "alt": "汉拏山御乘生岳步道景观"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+      "location": "海岸火山地形",
+      "atmosphere": "柱状节理与海浪交会",
+      "alt": "大浦柱状节理带海岸景观"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      "location": "瀑布森林步道",
+      "atmosphere": "绿意与水景的转场",
+      "alt": "天帝渊瀑布步道景观"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+      "location": "茶园与茶文化",
+      "atmosphere": "开阔茶田与悠闲节奏",
+      "alt": "O’Sulloc 茶博物馆与茶园景观"
+    },
+    {
+      "id": 6,
+      "type": "video",
+      "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+      "location": "涯月海岸收尾",
+      "atmosphere": "海景咖啡街的轻松尾声",
+      "alt": "涯月咖啡街与海岸景色"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "09:00",
+      "duration": "70 分",
+      "name": "汉拏山 御乘生岳",
+      "category": "汉拏山短程步道",
+      "description": "一天的节奏从汉拏山开始最对味。早上的空气更清爽，体力也最充足，御乘生岳又是汉拏山相对好走、距离较短的路线之一，能让旅程真正从山林开场，但不会把整天变成高强度登山。",
+      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+      "highlights": [
+        "短时间也能走出登上汉拏山的成就感",
+        "可眺望济州市区、火山丘陵与汉拏山上部景色",
+        "比单纯路边观景更有层次的自然开场",
+        "活动感与可参与度之间拿捏得刚刚好"
+      ],
+      "timeUsed": [
+        "抵达后进行步道说明与简单节奏确认",
+        "主要上坡步行至观景点",
+        "短暂停留拍照后下行返回"
+      ],
+      "whyOnRoute": "把第一站放在这里，最能善用早上的体力，也让整天从高地一路走向海岸的故事线更清楚。",
+      "visitBasics": {
+        "hours": "05:00 起可入山；实际截入时间依季节调整",
+        "closed": "可能因天候或步道管制而调整",
+        "admission": "免费",
+        "walking": "中等；距离不长，但阶梯较多"
+      },
+      "convenience": {
+        "restroom": "御里牧入口一带",
+        "parking": "可停车"
+      },
+      "smartNotes": {
+        "photo": "走到较高的观景位置后，开阔山棱与远景比近距离特写更好拍。",
+        "facilities": "较完整的设施集中在步道入口，路线途中相对简单。",
+        "tip": "把这一站当成节奏明快的短程山景健行，体感会比一路走走停停更轻松。"
+      }
+    },
+    {
+      "number": 2,
+      "time": "10:50",
+      "duration": "40 分",
+      "name": "大浦柱状节理带",
+      "category": "玄武岩海岸景观",
+      "description": "从汉拏山下来后，行程会很有戏剧感地打开到海边。柱状节理带是济州最具代表性的火山海岸地形之一，六角形岩柱与海浪同框，会让这一天很快进入第一个真正有震撼感的海景高点。",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+      "highlights": [
+        "济州最具代表性的六角柱状玄武岩景观",
+        "山线之后立刻接上海岸，视觉反差很强",
+        "停留时间不长，但风景回报很高",
+        "火山地形的故事线能自然延续自汉拏山"
+      ],
+      "timeUsed": [
+        "抵达入口后进行简短导览说明",
+        "沿海岸观景平台步行欣赏",
+        "拍照后集合出发前往下一站"
+      ],
+      "whyOnRoute": "这样安排能把早上的山地地形自然接到济州代表性的火山海岸，不会让整条路线失去地质主线。",
+      "visitBasics": {
+        "hours": "09:00-18:00（最晚入场 17:40）",
+        "closed": "全年开放",
+        "admission": "成人 2,000 韩元／儿童・青少年 1,000 韩元",
+        "walking": "容易"
+      },
+      "convenience": {
+        "restroom": "入口区域",
+        "parking": "付费停车"
+      },
+      "smartNotes": {
+        "photo": "侧角度通常比正面构图更能拍出柱状节理的纹理和海浪层次。",
+        "facilities": "入口附近设施不算多，但使用起来算方便。",
+        "tip": "这一站受海风和海雾影响很快，步调通常会控制得比其他站更俐落。"
+      }
+    },
+    {
+      "number": 3,
+      "time": "11:50",
+      "duration": "60 分",
+      "name": "午餐",
+      "category": "中段节奏重整",
+      "description": "午餐安排在前半段较有活动感的山线与海线之后，刚好能当成真正的中场重整。早上的小健行和海岸观景结束后，先好好吃一顿，再把节奏带进更柔和的瀑布、茶园和涯月收尾，整体会舒服很多。",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+      "highlights": [
+        "衔接汉拏山与柱状节理后最刚好的休息点",
+        "更适合亲子与不同年龄层一起走",
+        "让后半段瀑布与茶园节奏衔接更顺",
+        "也能让最后的涯月停留保有放松感，不会太赶"
+      ],
+      "timeUsed": [
+        "抵达餐厅并入座",
+        "用餐与短暂休息",
+        "整理后出发前往下一个景点"
+      ],
+      "whyOnRoute": "午餐放在这里，能让整天节奏更平均，也避免前半段活动感过强。",
+      "visitBasics": {
+        "hours": "依餐厅营业时间",
+        "closed": "依店家而异",
+        "admission": "含餐或自理，依商品方案而定",
+        "walking": "极少"
+      },
+      "convenience": {
+        "restroom": "餐厅设施",
+        "parking": "可停车"
+      },
+      "smartNotes": {
+        "photo": "如果想拍生活感照片，这一站最适合拍餐点与用餐氛围。",
+        "facilities": "餐厅设施完整，使用最方便。",
+        "tip": "中午好好休息比硬挤几分钟行程更值得，后半段体感会明显更顺。"
+      }
+    },
+    {
+      "number": 4,
+      "time": "13:00",
+      "duration": "50 分",
+      "name": "天帝渊瀑布",
+      "category": "瀑布与森林步道",
+      "description": "经过较曝晒的海岸段之后，天帝渊会把整体氛围拉回更凉爽、更绿意的节奏。桥梁、林荫步道与瀑布观景点交错，让路线多了一层柔和又有层次的风景，也替接下来的茶园与西北海岸铺出更舒服的转场。",
+      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      "highlights": [
+        "瀑布观景点氛围较安静，也更有遮荫感",
+        "桥梁与森林步道让整天的景观层次更丰富",
+        "在南岸海风吹拂之后，这一站体感更清凉",
+        "很适合作为茶园与海景咖啡街之前的转场"
+      ],
+      "timeUsed": [
+        "抵达入口后进行简短路线说明",
+        "主要步行穿过瀑布园区",
+        "在观景点停留拍照后返回"
+      ],
+      "whyOnRoute": "放在柱状节理之后，能先把节奏降温，再顺势过渡到更柔和的午后路线。",
+      "visitBasics": {
+        "hours": "09:00-17:50（最晚入场 17:10）",
+        "closed": "全年开放",
+        "admission": "成人 2,500 韩元／青少年・儿童 1,350 韩元",
+        "walking": "中等；有阶梯，地面可能偏湿"
+      },
+      "convenience": {
+        "restroom": "入口区域",
+        "parking": "可停车"
+      },
+      "smartNotes": {
+        "photo": "桥梁、树林与瀑布的层次构图，通常比想把所有元素一次塞进画面更好看。",
+        "facilities": "主要设施集中在入口附近。",
+        "tip": "这一站用稳稳的步调走最舒服，因为阶梯和较湿滑的路面本来就会让速度自然慢下来。"
+      }
+    },
+    {
+      "number": 5,
+      "time": "14:20",
+      "duration": "60 分",
+      "name": "O’Sulloc 茶博物馆",
+      "category": "茶园与茶文化停留",
+      "description": "瀑布步道之后，O’Sulloc 会把路线打开成更平静、更有生活感的茶园节奏。茶博物馆、商店与周边绿茶田景观，会让后半天从纯风景慢慢转向更悠闲的旅行感，也替最后的涯月海岸收尾做出很自然的铺陈。",
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+      "highlights": [
+        "茶园视野开阔，整体氛围比前段更舒展",
+        "在森林步道之后，茶文化停留显得更轻松",
+        "绿色茶田、现代建筑与甜点都很有拍照表现",
+        "很适合作为风景观光转入涯月放松段的过渡"
+      ],
+      "timeUsed": [
+        "抵达后在博物馆区域简短说明",
+        "欣赏茶园、自由逛馆或商店，也可安排咖啡茶点时间",
+        "集合后前往涯月"
+      ],
+      "whyOnRoute": "先用 O’Sulloc 把午后节奏放慢，最后到涯月时才会真的有放松收尾的感觉，而不是一路赶行程。",
+      "visitBasics": {
+        "hours": "通常 09:00-18:00；实际时间可能依季节调整",
+        "closed": "全年开放",
+        "admission": "免费",
+        "walking": "容易"
+      },
+      "convenience": {
+        "restroom": "博物馆与咖啡区",
+        "parking": "可停车"
+      },
+      "smartNotes": {
+        "photo": "拍茶田时，宽景构图和侧角度咖啡馆画面通常比只拍单一商品更耐看。",
+        "facilities": "这是后半天最舒服的一站之一，洗手间、饮品和座位都相对完整。",
+        "tip": "把这一站当成带有弹性的景观停留最刚好，不必把节奏压成只逛博物馆。"
+      }
+    },
+    {
+      "number": 6,
+      "time": "15:50",
+      "duration": "60 分",
+      "name": "涯月咖啡街",
+      "category": "海景咖啡街收尾",
+      "description": "涯月是很适合收尾的一站。经过山景、火山海岸、瀑布步道和茶园之后，最后把节奏放进海景、露台咖啡馆与更悠闲的海岸散步，整天会有一种慢慢松开来的感觉，作为结尾非常讨喜。",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+      "highlights": [
+        "海景咖啡馆与轻松散步的午后氛围",
+        "涵潭海岸一带风景，收尾感比前段更生活化",
+        "可弹性安排咖啡、拍照与慢慢走的时间",
+        "和早上较有活动感的路段形成很好的对比"
+      ],
+      "timeUsed": [
+        "抵达后进行区域简短说明",
+        "自由安排咖啡或海岸散步时间",
+        "集合后返回市区"
+      ],
+      "whyOnRoute": "涯月最适合当成整天最后的情绪收尾，步调可以自然放开，行程也能在没有压力的状态下结束。",
+      "visitBasics": {
+        "hours": "区域全天开放；各家咖啡馆营业时间不同",
+        "closed": "区域本身无固定休息",
+        "admission": "免费",
+        "walking": "容易"
+      },
+      "convenience": {
+        "restroom": "依各店家设施为主",
+        "parking": "区域周边可停车"
+      },
+      "smartNotes": {
+        "photo": "接近日落时的光线，以及面向侧海景的露台位置，通常最容易拍出好照片。",
+        "facilities": "舒适度会依选择的咖啡馆而不同，所以这一站本来就保留较高弹性。",
+        "tip": "这一站最适合松一点的节奏，不需要像前面几站那样紧密带领，体验反而更好。"
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "id": "01",
+      "name": "汉拏山",
+      "theme": "山景"
+    },
+    {
+      "id": "02",
+      "name": "柱状节理",
+      "theme": "海岸"
+    },
+    {
+      "id": "03",
+      "name": "午餐",
+      "theme": "重整"
+    },
+    {
+      "id": "04",
+      "name": "天帝渊",
+      "theme": "瀑布"
+    },
+    {
+      "id": "05",
+      "name": "O’Sulloc",
+      "theme": "茶园"
+    },
+    {
+      "id": "06",
+      "name": "涯月",
+      "theme": "收尾"
+    }
+  ],
+  "routePhases": [
+    {
+      "label": "上午",
+      "range": "1-2",
+      "theme": "汉拏山到海岸",
+      "bgClass": "bg-sky-50/70",
+      "textClass": "text-sky-700",
+      "dotClass": "bg-sky-500"
+    },
+    {
+      "label": "中段",
+      "range": "3-4",
+      "theme": "午餐与瀑布",
+      "bgClass": "bg-amber-50/70",
+      "textClass": "text-amber-700",
+      "dotClass": "bg-amber-500"
+    },
+    {
+      "label": "尾声",
+      "range": "5-6",
+      "theme": "茶园与涯月",
+      "bgClass": "bg-emerald-50/70",
+      "textClass": "text-emerald-700",
+      "dotClass": "bg-emerald-500"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "这一天怎么安排",
+    "subtitle": "从汉拿山到玄武岩海岸，中午稍作休整后进入瀑布、茶园与涯月海景收尾段。09:00 至 17:30。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "第一次到济州的旅客、情侣",
+      "成人家庭同行",
+      "喜欢自然、茶园和放松收尾的人",
+      "活动力不错的熟龄旅客"
+    ],
+    "lessIdeal": [
+      "不想走阶梯或短上坡的人",
+      "婴儿车需求较高的团体",
+      "年纪很小的孩子"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "节奏与结构",
+        "icon": "sun",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "先上汉拏山，体力最好用在前段",
+            "detail": "御乘生岳最适合放在一开始，趁大家精神和体力都还在线时，先完成短程上坡，再进入后面的海岸段。"
+          },
+          {
+            "label": "午餐放中间，刚好把节奏拉顺",
+            "detail": "午餐把早上较曝露、较有活动感的段落切开，为后半段更柔和的瀑布与茶园路线做好重整。"
+          },
+          {
+            "label": "O’Sulloc 之后用涯月轻松收尾",
+            "detail": "先经过茶园，再走进涯月，整体会自然松下来，最后能用咖啡、海景和悠闲节奏把一天漂亮收尾。"
+          }
+        ]
+      },
+      {
+        "title": "路线安排逻辑",
+        "icon": "mountain",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "先山后海",
+            "detail": "用汉拏山开场，先建立地形高度与山线质感，再把视野打开到柱状节理的海岸段。"
+          },
+          {
+            "label": "先瀑布，再进茶园",
+            "detail": "天帝渊先把前段的节奏降温，接著 O’Sulloc 再用更开阔、好走的茶园氛围把步调放松。"
+          },
+          {
+            "label": "最后留给海景咖啡街",
+            "detail": "涯月不是另一段高强度步行，而是生活感更强、适合收尾的海岸停留。"
+          }
+        ]
+      },
+      {
+        "title": "遇到现场条件变化时",
+        "icon": "wind",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-600",
+        "items": [
+          {
+            "label": "汉拏山天候很重要",
+            "detail": "御乘生岳可能因突发天气或步道管制而调整。"
+          },
+          {
+            "label": "海岸风势影响较明显",
+            "detail": "柱状节理和涯月比内陆段更容易受到强风影响。"
+          },
+          {
+            "label": "步行量仍需留意",
+            "detail": "整体对多数旅客算可接受，但御乘生岳和天帝渊仍有阶梯与短上坡，体感不能完全忽略。"
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "接送信息",
+      "preview": "济州市区酒店接送",
+      "content": [
+        "08:20-08:50 之间在酒店接您",
+        "约 17:50-18:20 返回市区下车",
+        "如需机场接送，可提前咨询",
+        "最终接送时间会在前一晚确认"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "步行与路况",
+      "preview": "整体为中等强度，大多数游客都能轻松跟上",
+      "content": [
+        "全日总步行约 4.5-5.5 公里",
+        "御乘生岳：短程上坡步道，台阶较多",
+        "柱状节理：海岸观景步道，步行轻松",
+        "天帝渊：森林步道、台阶较多，部分路面可能偏湿",
+        "O’Sulloc 和涯月：步行轻松，停留节奏也更灵活",
+        "建议穿防滑、好走的鞋子"
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "天气与行程调整",
+      "preview": "大多数天气都能正常出发，必要时会微调行程",
+      "content": [
+        "小雨通常照常出发",
+        "大雨或步道管制时，御乘生岳停留可能缩短或调整",
+        "若风势较强，柱状节理或涯月海岸段的停留时间可能缩短",
+        "若下午天气较差，O’Sulloc 在整条线路中的停留比重可能提高",
+        "若景点临时关闭，将视情况安排替代停靠点"
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "穿什么、带什么",
+      "preview": "好走的鞋、分层穿搭、轻薄外套",
+      "content": [
+        "建议穿抓地力更好的步行鞋",
+        "建议采用适合山区与海边温差的分层穿搭",
+        "轻薄防风外套",
+        "帽子与防晒用品",
+        "饮用水"
+      ]
+    },
+    {
+      "id": "included",
+      "title": "费用包含 / 不含",
+      "preview": "导览、车辆、接送、门票",
+      "variant": "included",
+      "content": [
+        "专业英文导游",
+        "小团车辆或专车安排",
+        "济州市区酒店接送",
+        "所有景点门票",
+        "瓶装水",
+        "午餐（现场自理）",
+        "个人购物支出",
+        "小费"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "11°",
+      "label": "今天・晴"
+    },
+    "tomorrow": {
+      "temp": "18°/13°",
+      "label": "明天・毛毛雨"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "name": "春季",
+      "icon": "flower",
+      "description": "海岸边金黄油菜花盛开",
+      "tag": "花景最美",
+      "bgClass": "bg-spring",
+      "iconColor": "text-pink-500"
+    },
+    {
+      "name": "夏季",
+      "icon": "sun",
+      "description": "日照时间长，绿意也最饱满",
+      "tag": "白天最长",
+      "bgClass": "bg-summer",
+      "iconColor": "text-sky-500"
+    },
+    {
+      "name": "秋季",
+      "icon": "leaf",
+      "description": "天空清透，视野通常最好",
+      "tag": "景观最佳",
+      "bgClass": "bg-autumn",
+      "iconColor": "text-amber-600"
+    },
+    {
+      "name": "冬季",
+      "icon": "snow",
+      "description": "路线更安静，日照较短",
+      "tag": "氛围清静",
+      "bgClass": "bg-winter",
+      "iconColor": "text-slate-500"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "合法在地营运",
+      "description": "持济州合法导览资格",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600"
+    },
+    {
+      "icon": "route",
+      "title": "熟悉路线节奏",
+      "description": "依西南线动线细致安排",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600"
+    },
+    {
+      "icon": "users",
+      "title": "精品小团",
+      "description": "最多 8 位旅客",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "完成预订后",
+      "title": "即时确认",
+      "detail": "立即收到订单与行程摘要"
+    },
+    {
+      "timing": "出发前 12 小时",
+      "title": "12 小时提醒",
+      "detail": "提供天气更新与必要调整"
+    },
+    {
+      "timing": "前一晚",
+      "title": "最终接送通知",
+      "detail": "确认实际接人时间与司导联络方式"
+    },
+    {
+      "timing": "出发当天早上",
+      "title": "当日路线提醒",
+      "detail": "依现场条件提供晨间说明"
+    },
+    {
+      "timing": "行程进行中",
+      "title": "逐站贴心提醒",
+      "detail": "于各景点提供即时引导"
+    },
+    {
+      "timing": "行程结束后",
+      "title": "行后协助",
+      "detail": "后续资讯与延伸推荐"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "first-time",
+      "question": "第一次来济州，适合报名这条线路吗？",
+      "answer": "很适合。这条路线把汉拿山山线、代表性的火山海岸、经典瀑布、茶园氛围和涯月海景收尾都串在一起，第一次来也能玩得很完整。"
+    },
+    {
+      "id": "walking",
+      "question": "步行会不会很累？",
+      "answer": "整体不算太累。真正比较吃体力的是御乘生岳，虽然路程不长，但台阶不少；其余大多数停靠点对一般游客来说都属于中等强度。"
+    },
+    {
+      "id": "rain",
+      "question": "下雨还能成行吗？",
+      "answer": "可以。遇到下雨或天气不稳定时，我们会更谨慎安排御乘生岳与海岸段的停留时间，必要时也会提高 O’Sulloc 这类更稳定停靠点的比重。"
+    },
+    {
+      "id": "parents",
+      "question": "带长辈一起参加可以吗？",
+      "answer": "可以。这条线路对成人家庭整体比较友好，但仍建议同行者具备上下台阶与短上坡步行的能力。"
+    },
+    {
+      "id": "children",
+      "question": "可以带小朋友一起参加吗？",
+      "answer": "可以，但会更适合 8 岁以上、能接受短程徒步和一整天观光节奏的孩子。"
+    },
+    {
+      "id": "order",
+      "question": "行程顺序会变吗？",
+      "answer": "有可能。山区天气、风势、交通和现场人流都可能影响顺序，尤其是御乘生岳与海岸段。"
+    },
+    {
+      "id": "lunch",
+      "question": "午餐有包含吗？",
+      "answer": "是否包含午餐，取决于您预订的方案；这条路线一定会安排中段午餐时间。"
+    },
+    {
+      "id": "why-eoseungsaengak",
+      "question": "为什么第一站安排御乘生岳？",
+      "answer": "因为把它放在开场，最能趁体力最好的时候走进汉拿山山线，同时又不会让整天变成高强度登山行程。"
+    },
+    {
+      "id": "why-jusangjeolli",
+      "question": "为什么从汉拿山之后接柱状节理？",
+      "answer": "这样安排能让火山地形的故事一路延续，从山地地貌自然衔接到济州最具代表性的玄武岩海岸。"
+    },
+    {
+      "id": "why-osulloc",
+      "question": "为什么先去 O’Sulloc，再到涯月？",
+      "answer": "O’Sulloc 很适合作为瀑布段之后的缓冲，先把步调放慢，最后到涯月时才会真正有轻松收尾的感觉。"
+    },
+    {
+      "id": "later-structure",
+      "question": "后半段为什么要这样安排？",
+      "answer": "午餐和天帝渊先把早上较曝晒、较有活动感的节奏放柔，接着再安排 O’Sulloc 的轻松茶园停留，最后用涯月海景收尾，就不会让整天越走越累。"
+    }
+  ],
+  "guestReviews": [
+    {
+      "id": 1,
+      "author": "Sarah M.",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+      "location": "新加坡",
+      "date": "2024 年 3 月",
+      "rating": 5,
+      "title": "一条安排得非常平衡的济州西南线",
+      "text": "整条路线的节奏非常顺，从御乘生岳开场就把汉拿山的山线感带出来了。导游对地形与景观之间的串联讲得很清楚，所以后面的柱状节理和瀑布段会更有感觉。午餐时间也安排得刚刚好，下午玩起来不会太赶。",
+      "helpful": 24,
+      "verified": true,
+      "tripType": "情侣",
+      "photos": [
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
+      ]
+    },
+    {
+      "id": 2,
+      "author": "James K.",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "location": "香港",
+      "date": "2024 年 3 月",
+      "rating": 5,
+      "title": "路线很棒，而且最后收得很舒服",
+      "text": "这条线路最大的优点就是顺。先上山、再看海岸、再进瀑布和茶园，最后到涯月收尾，整天都很自然。导游知道什么时候该放慢，什么时候该往下走，不会让人觉得拖，也不会觉得赶。",
+      "helpful": 18,
+      "verified": true,
+      "tripType": "家庭",
+      "photos": []
+    },
+    {
+      "id": 3,
+      "author": "Yuki T.",
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+      "location": "东京",
+      "date": "2024 年 2 月",
+      "rating": 4,
+      "title": "最喜欢最后的涯月段",
+      "text": "整体体验很好。御乘生岳比想象中更值得去，O’Sulloc 也确实把后半段节奏放松了下来。唯一的小遗憾是如果在涯月能再多留十几分钟就更完美了，不过整体还是很满意。",
+      "helpful": 12,
+      "verified": true,
+      "tripType": "独旅",
+      "photos": [
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=80"
+      ]
+    },
+    {
+      "id": 4,
+      "author": "Michael R.",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+      "location": "雪梨",
+      "date": "2024 年 2 月",
+      "rating": 5,
+      "title": "比想像中更有层次的一天",
+      "text": "原本是冲着风景来的，最后最惊喜的是整条线路的完成度。每一站之间都有逻辑，不是单纯把几个景点拼在一起。午餐点不错，小团人数也刚好，听讲解和拍照都更舒服。",
+      "helpful": 31,
+      "verified": true,
+      "tripType": "朋友",
+      "photos": []
+    }
+  ],
+  "reviewsSummary": {
+    "averageRating": 4.8,
+    "totalReviews": 127,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 98,
+        "percentage": 77
+      },
+      {
+        "stars": 4,
+        "count": 21,
+        "percentage": 17
+      },
+      {
+        "stars": 3,
+        "count": 6,
+        "percentage": 5
+      },
+      {
+        "stars": 2,
+        "count": 1,
+        "percentage": 1
+      },
+      {
+        "stars": 1,
+        "count": 1,
+        "percentage": 1
+      }
+    ],
+    "highlights": [
+      {
+        "label": "风景",
+        "count": 89
+      },
+      {
+        "label": "导游",
+        "count": 76
+      },
+      {
+        "label": "节奏安排",
+        "count": 54
+      },
+      {
+        "label": "涯月收尾",
+        "count": 41
+      }
+    ]
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "price": {
+      "amountLabel": "58",
+      "currency": "USD",
+      "per": "人"
+    }
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "济州西南部 汉拿山・茶园・涯月",
+        "headlineLine2": "精品小团一日游",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+          "imagePosition": "center 35%",
+          "tagline": "汉拿山轻徒步、海岸柱状节理、森林瀑布步道、茶园风景，最后在涯月海景咖啡街轻松收尾。",
+          "pills": [
+            "第一次来济州也很合适",
+            "济州西南部"
+          ],
+          "meta": {
+            "duration": "8 小时",
+            "region": "济州西南部",
+            "stops": "6个停靠点",
+            "rating": 4.8,
+            "ratingStars": 4
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "行程概览"
+          },
+          {
+            "id": "itinerary",
+            "label": "行程安排"
+          },
+          {
+            "id": "details",
+            "label": "参团信息"
+          },
+          {
+            "id": "faq",
+            "label": "常见问题"
+          },
+          {
+            "id": "reviews",
+            "label": "用户评价"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "camera",
+            "label": "拍照指数",
+            "value": "高"
+          },
+          {
+            "icon": "mountain",
+            "label": "风景表现",
+            "value": "高"
+          },
+          {
+            "icon": "footprints",
+            "label": "步行强度",
+            "value": "中等"
+          },
+          {
+            "icon": "cloud-rain",
+            "label": "雨天适合度",
+            "value": "中等"
+          },
+          {
+            "icon": "users",
+            "label": "亲子友善度",
+            "value": "不错"
+          },
+          {
+            "icon": "scale",
+            "label": "行程平衡度",
+            "value": "均衡"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": 1,
+            "type": "video",
+            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+            "location": "路线总览",
+            "atmosphere": "一眼掌握今天的行程气氛",
+            "alt": "济州西南部路线总览"
+          },
+          {
+            "id": 2,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "location": "汉拏山开场",
+            "atmosphere": "清爽山景与高地空气",
+            "alt": "汉拏山御乘生岳步道景观"
+          },
+          {
+            "id": 3,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "location": "海岸火山地形",
+            "atmosphere": "柱状节理与海浪交会",
+            "alt": "大浦柱状节理带海岸景观"
+          },
+          {
+            "id": 4,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "location": "瀑布森林步道",
+            "atmosphere": "绿意与水景的转场",
+            "alt": "天帝渊瀑布步道景观"
+          },
+          {
+            "id": 5,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+            "location": "茶园与茶文化",
+            "atmosphere": "开阔茶田与悠闲节奏",
+            "alt": "O’Sulloc 茶博物馆与茶园景观"
+          },
+          {
+            "id": 6,
+            "type": "video",
+            "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+            "location": "涯月海岸收尾",
+            "atmosphere": "海景咖啡街的轻松尾声",
+            "alt": "涯月咖啡街与海岸景色"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "09:00",
+            "duration": "70 分",
+            "name": "汉拏山 御乘生岳",
+            "category": "汉拏山短程步道",
+            "description": "一天的节奏从汉拏山开始最对味。早上的空气更清爽，体力也最充足，御乘生岳又是汉拏山相对好走、距离较短的路线之一，能让旅程真正从山林开场，但不会把整天变成高强度登山。",
+            "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "highlights": [
+              "短时间也能走出登上汉拏山的成就感",
+              "可眺望济州市区、火山丘陵与汉拏山上部景色",
+              "比单纯路边观景更有层次的自然开场",
+              "活动感与可参与度之间拿捏得刚刚好"
+            ],
+            "timeUsed": [
+              "抵达后进行步道说明与简单节奏确认",
+              "主要上坡步行至观景点",
+              "短暂停留拍照后下行返回"
+            ],
+            "whyOnRoute": "把第一站放在这里，最能善用早上的体力，也让整天从高地一路走向海岸的故事线更清楚。",
+            "visitBasics": {
+              "hours": "05:00 起可入山；实际截入时间依季节调整",
+              "closed": "可能因天候或步道管制而调整",
+              "admission": "免费",
+              "walking": "中等；距离不长，但阶梯较多"
+            },
+            "convenience": {
+              "restroom": "御里牧入口一带",
+              "parking": "可停车"
+            },
+            "smartNotes": {
+              "photo": "走到较高的观景位置后，开阔山棱与远景比近距离特写更好拍。",
+              "facilities": "较完整的设施集中在步道入口，路线途中相对简单。",
+              "tip": "把这一站当成节奏明快的短程山景健行，体感会比一路走走停停更轻松。"
+            }
+          },
+          {
+            "number": 2,
+            "time": "10:50",
+            "duration": "40 分",
+            "name": "大浦柱状节理带",
+            "category": "玄武岩海岸景观",
+            "description": "从汉拏山下来后，行程会很有戏剧感地打开到海边。柱状节理带是济州最具代表性的火山海岸地形之一，六角形岩柱与海浪同框，会让这一天很快进入第一个真正有震撼感的海景高点。",
+            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "highlights": [
+              "济州最具代表性的六角柱状玄武岩景观",
+              "山线之后立刻接上海岸，视觉反差很强",
+              "停留时间不长，但风景回报很高",
+              "火山地形的故事线能自然延续自汉拏山"
+            ],
+            "timeUsed": [
+              "抵达入口后进行简短导览说明",
+              "沿海岸观景平台步行欣赏",
+              "拍照后集合出发前往下一站"
+            ],
+            "whyOnRoute": "这样安排能把早上的山地地形自然接到济州代表性的火山海岸，不会让整条路线失去地质主线。",
+            "visitBasics": {
+              "hours": "09:00-18:00（最晚入场 17:40）",
+              "closed": "全年开放",
+              "admission": "成人 2,000 韩元／儿童・青少年 1,000 韩元",
+              "walking": "容易"
+            },
+            "convenience": {
+              "restroom": "入口区域",
+              "parking": "付费停车"
+            },
+            "smartNotes": {
+              "photo": "侧角度通常比正面构图更能拍出柱状节理的纹理和海浪层次。",
+              "facilities": "入口附近设施不算多，但使用起来算方便。",
+              "tip": "这一站受海风和海雾影响很快，步调通常会控制得比其他站更俐落。"
+            }
+          },
+          {
+            "number": 3,
+            "time": "11:50",
+            "duration": "60 分",
+            "name": "午餐",
+            "category": "中段节奏重整",
+            "description": "午餐安排在前半段较有活动感的山线与海线之后，刚好能当成真正的中场重整。早上的小健行和海岸观景结束后，先好好吃一顿，再把节奏带进更柔和的瀑布、茶园和涯月收尾，整体会舒服很多。",
+            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+            "highlights": [
+              "衔接汉拏山与柱状节理后最刚好的休息点",
+              "更适合亲子与不同年龄层一起走",
+              "让后半段瀑布与茶园节奏衔接更顺",
+              "也能让最后的涯月停留保有放松感，不会太赶"
+            ],
+            "timeUsed": [
+              "抵达餐厅并入座",
+              "用餐与短暂休息",
+              "整理后出发前往下一个景点"
+            ],
+            "whyOnRoute": "午餐放在这里，能让整天节奏更平均，也避免前半段活动感过强。",
+            "visitBasics": {
+              "hours": "依餐厅营业时间",
+              "closed": "依店家而异",
+              "admission": "含餐或自理，依商品方案而定",
+              "walking": "极少"
+            },
+            "convenience": {
+              "restroom": "餐厅设施",
+              "parking": "可停车"
+            },
+            "smartNotes": {
+              "photo": "如果想拍生活感照片，这一站最适合拍餐点与用餐氛围。",
+              "facilities": "餐厅设施完整，使用最方便。",
+              "tip": "中午好好休息比硬挤几分钟行程更值得，后半段体感会明显更顺。"
+            }
+          },
+          {
+            "number": 4,
+            "time": "13:00",
+            "duration": "50 分",
+            "name": "天帝渊瀑布",
+            "category": "瀑布与森林步道",
+            "description": "经过较曝晒的海岸段之后，天帝渊会把整体氛围拉回更凉爽、更绿意的节奏。桥梁、林荫步道与瀑布观景点交错，让路线多了一层柔和又有层次的风景，也替接下来的茶园与西北海岸铺出更舒服的转场。",
+            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "highlights": [
+              "瀑布观景点氛围较安静，也更有遮荫感",
+              "桥梁与森林步道让整天的景观层次更丰富",
+              "在南岸海风吹拂之后，这一站体感更清凉",
+              "很适合作为茶园与海景咖啡街之前的转场"
+            ],
+            "timeUsed": [
+              "抵达入口后进行简短路线说明",
+              "主要步行穿过瀑布园区",
+              "在观景点停留拍照后返回"
+            ],
+            "whyOnRoute": "放在柱状节理之后，能先把节奏降温，再顺势过渡到更柔和的午后路线。",
+            "visitBasics": {
+              "hours": "09:00-17:50（最晚入场 17:10）",
+              "closed": "全年开放",
+              "admission": "成人 2,500 韩元／青少年・儿童 1,350 韩元",
+              "walking": "中等；有阶梯，地面可能偏湿"
+            },
+            "convenience": {
+              "restroom": "入口区域",
+              "parking": "可停车"
+            },
+            "smartNotes": {
+              "photo": "桥梁、树林与瀑布的层次构图，通常比想把所有元素一次塞进画面更好看。",
+              "facilities": "主要设施集中在入口附近。",
+              "tip": "这一站用稳稳的步调走最舒服，因为阶梯和较湿滑的路面本来就会让速度自然慢下来。"
+            }
+          },
+          {
+            "number": 5,
+            "time": "14:20",
+            "duration": "60 分",
+            "name": "O’Sulloc 茶博物馆",
+            "category": "茶园与茶文化停留",
+            "description": "瀑布步道之后，O’Sulloc 会把路线打开成更平静、更有生活感的茶园节奏。茶博物馆、商店与周边绿茶田景观，会让后半天从纯风景慢慢转向更悠闲的旅行感，也替最后的涯月海岸收尾做出很自然的铺陈。",
+            "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+            "highlights": [
+              "茶园视野开阔，整体氛围比前段更舒展",
+              "在森林步道之后，茶文化停留显得更轻松",
+              "绿色茶田、现代建筑与甜点都很有拍照表现",
+              "很适合作为风景观光转入涯月放松段的过渡"
+            ],
+            "timeUsed": [
+              "抵达后在博物馆区域简短说明",
+              "欣赏茶园、自由逛馆或商店，也可安排咖啡茶点时间",
+              "集合后前往涯月"
+            ],
+            "whyOnRoute": "先用 O’Sulloc 把午后节奏放慢，最后到涯月时才会真的有放松收尾的感觉，而不是一路赶行程。",
+            "visitBasics": {
+              "hours": "通常 09:00-18:00；实际时间可能依季节调整",
+              "closed": "全年开放",
+              "admission": "免费",
+              "walking": "容易"
+            },
+            "convenience": {
+              "restroom": "博物馆与咖啡区",
+              "parking": "可停车"
+            },
+            "smartNotes": {
+              "photo": "拍茶田时，宽景构图和侧角度咖啡馆画面通常比只拍单一商品更耐看。",
+              "facilities": "这是后半天最舒服的一站之一，洗手间、饮品和座位都相对完整。",
+              "tip": "把这一站当成带有弹性的景观停留最刚好，不必把节奏压成只逛博物馆。"
+            }
+          },
+          {
+            "number": 6,
+            "time": "15:50",
+            "duration": "60 分",
+            "name": "涯月咖啡街",
+            "category": "海景咖啡街收尾",
+            "description": "涯月是很适合收尾的一站。经过山景、火山海岸、瀑布步道和茶园之后，最后把节奏放进海景、露台咖啡馆与更悠闲的海岸散步，整天会有一种慢慢松开来的感觉，作为结尾非常讨喜。",
+            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+            "highlights": [
+              "海景咖啡馆与轻松散步的午后氛围",
+              "涵潭海岸一带风景，收尾感比前段更生活化",
+              "可弹性安排咖啡、拍照与慢慢走的时间",
+              "和早上较有活动感的路段形成很好的对比"
+            ],
+            "timeUsed": [
+              "抵达后进行区域简短说明",
+              "自由安排咖啡或海岸散步时间",
+              "集合后返回市区"
+            ],
+            "whyOnRoute": "涯月最适合当成整天最后的情绪收尾，步调可以自然放开，行程也能在没有压力的状态下结束。",
+            "visitBasics": {
+              "hours": "区域全天开放；各家咖啡馆营业时间不同",
+              "closed": "区域本身无固定休息",
+              "admission": "免费",
+              "walking": "容易"
+            },
+            "convenience": {
+              "restroom": "依各店家设施为主",
+              "parking": "区域周边可停车"
+            },
+            "smartNotes": {
+              "photo": "接近日落时的光线，以及面向侧海景的露台位置，通常最容易拍出好照片。",
+              "facilities": "舒适度会依选择的咖啡馆而不同，所以这一站本来就保留较高弹性。",
+              "tip": "这一站最适合松一点的节奏，不需要像前面几站那样紧密带领，体验反而更好。"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "id": "01",
+            "name": "汉拏山",
+            "theme": "山景"
+          },
+          {
+            "id": "02",
+            "name": "柱状节理",
+            "theme": "海岸"
+          },
+          {
+            "id": "03",
+            "name": "午餐",
+            "theme": "重整"
+          },
+          {
+            "id": "04",
+            "name": "天帝渊",
+            "theme": "瀑布"
+          },
+          {
+            "id": "05",
+            "name": "O’Sulloc",
+            "theme": "茶园"
+          },
+          {
+            "id": "06",
+            "name": "涯月",
+            "theme": "收尾"
+          }
+        ],
+        "routePhases": [
+          {
+            "label": "上午",
+            "range": "1-2",
+            "theme": "汉拏山到海岸",
+            "bgClass": "bg-sky-50/70",
+            "textClass": "text-sky-700",
+            "dotClass": "bg-sky-500"
+          },
+          {
+            "label": "中段",
+            "range": "3-4",
+            "theme": "午餐与瀑布",
+            "bgClass": "bg-amber-50/70",
+            "textClass": "text-amber-700",
+            "dotClass": "bg-amber-500"
+          },
+          {
+            "label": "尾声",
+            "range": "5-6",
+            "theme": "茶园与涯月",
+            "bgClass": "bg-emerald-50/70",
+            "textClass": "text-emerald-700",
+            "dotClass": "bg-emerald-500"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "这一天怎么安排",
+          "subtitle": "从汉拿山到玄武岩海岸，中午稍作休整后进入瀑布、茶园与涯月海景收尾段。09:00 至 17:30。"
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "第一次到济州的旅客、情侣",
+            "成人家庭同行",
+            "喜欢自然、茶园和放松收尾的人",
+            "活动力不错的熟龄旅客"
+          ],
+          "lessIdeal": [
+            "不想走阶梯或短上坡的人",
+            "婴儿车需求较高的团体",
+            "年纪很小的孩子"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "节奏与结构",
+              "icon": "sun",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "先上汉拏山，体力最好用在前段",
+                  "detail": "御乘生岳最适合放在一开始，趁大家精神和体力都还在线时，先完成短程上坡，再进入后面的海岸段。"
+                },
+                {
+                  "label": "午餐放中间，刚好把节奏拉顺",
+                  "detail": "午餐把早上较曝露、较有活动感的段落切开，为后半段更柔和的瀑布与茶园路线做好重整。"
+                },
+                {
+                  "label": "O’Sulloc 之后用涯月轻松收尾",
+                  "detail": "先经过茶园，再走进涯月，整体会自然松下来，最后能用咖啡、海景和悠闲节奏把一天漂亮收尾。"
+                }
+              ]
+            },
+            {
+              "title": "路线安排逻辑",
+              "icon": "mountain",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "先山后海",
+                  "detail": "用汉拏山开场，先建立地形高度与山线质感，再把视野打开到柱状节理的海岸段。"
+                },
+                {
+                  "label": "先瀑布，再进茶园",
+                  "detail": "天帝渊先把前段的节奏降温，接著 O’Sulloc 再用更开阔、好走的茶园氛围把步调放松。"
+                },
+                {
+                  "label": "最后留给海景咖啡街",
+                  "detail": "涯月不是另一段高强度步行，而是生活感更强、适合收尾的海岸停留。"
+                }
+              ]
+            },
+            {
+              "title": "遇到现场条件变化时",
+              "icon": "wind",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-600",
+              "items": [
+                {
+                  "label": "汉拏山天候很重要",
+                  "detail": "御乘生岳可能因突发天气或步道管制而调整。"
+                },
+                {
+                  "label": "海岸风势影响较明显",
+                  "detail": "柱状节理和涯月比内陆段更容易受到强风影响。"
+                },
+                {
+                  "label": "步行量仍需留意",
+                  "detail": "整体对多数旅客算可接受，但御乘生岳和天帝渊仍有阶梯与短上坡，体感不能完全忽略。"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "接送信息",
+            "preview": "济州市区酒店接送",
+            "content": [
+              "08:20-08:50 之间在酒店接您",
+              "约 17:50-18:20 返回市区下车",
+              "如需机场接送，可提前咨询",
+              "最终接送时间会在前一晚确认"
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "步行与路况",
+            "preview": "整体为中等强度，大多数游客都能轻松跟上",
+            "content": [
+              "全日总步行约 4.5-5.5 公里",
+              "御乘生岳：短程上坡步道，台阶较多",
+              "柱状节理：海岸观景步道，步行轻松",
+              "天帝渊：森林步道、台阶较多，部分路面可能偏湿",
+              "O’Sulloc 和涯月：步行轻松，停留节奏也更灵活",
+              "建议穿防滑、好走的鞋子"
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "天气与行程调整",
+            "preview": "大多数天气都能正常出发，必要时会微调行程",
+            "content": [
+              "小雨通常照常出发",
+              "大雨或步道管制时，御乘生岳停留可能缩短或调整",
+              "若风势较强，柱状节理或涯月海岸段的停留时间可能缩短",
+              "若下午天气较差，O’Sulloc 在整条线路中的停留比重可能提高",
+              "若景点临时关闭，将视情况安排替代停靠点"
+            ]
+          },
+          {
+            "id": "wear",
+            "title": "穿什么、带什么",
+            "preview": "好走的鞋、分层穿搭、轻薄外套",
+            "content": [
+              "建议穿抓地力更好的步行鞋",
+              "建议采用适合山区与海边温差的分层穿搭",
+              "轻薄防风外套",
+              "帽子与防晒用品",
+              "饮用水"
+            ]
+          },
+          {
+            "id": "included",
+            "title": "费用包含 / 不含",
+            "preview": "导览、车辆、接送、门票",
+            "variant": "included",
+            "content": [
+              "专业英文导游",
+              "小团车辆或专车安排",
+              "济州市区酒店接送",
+              "所有景点门票",
+              "瓶装水",
+              "午餐（现场自理）",
+              "个人购物支出",
+              "小费"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "11°",
+            "label": "今天・晴"
+          },
+          "tomorrow": {
+            "temp": "18°/13°",
+            "label": "明天・毛毛雨"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "name": "春季",
+            "icon": "flower",
+            "description": "海岸边金黄油菜花盛开",
+            "tag": "花景最美",
+            "bgClass": "bg-spring",
+            "iconColor": "text-pink-500"
+          },
+          {
+            "name": "夏季",
+            "icon": "sun",
+            "description": "日照时间长，绿意也最饱满",
+            "tag": "白天最长",
+            "bgClass": "bg-summer",
+            "iconColor": "text-sky-500"
+          },
+          {
+            "name": "秋季",
+            "icon": "leaf",
+            "description": "天空清透，视野通常最好",
+            "tag": "景观最佳",
+            "bgClass": "bg-autumn",
+            "iconColor": "text-amber-600"
+          },
+          {
+            "name": "冬季",
+            "icon": "snow",
+            "description": "路线更安静，日照较短",
+            "tag": "氛围清静",
+            "bgClass": "bg-winter",
+            "iconColor": "text-slate-500"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "合法在地营运",
+            "description": "持济州合法导览资格",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "route",
+            "title": "熟悉路线节奏",
+            "description": "依西南线动线细致安排",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          },
+          {
+            "icon": "users",
+            "title": "精品小团",
+            "description": "最多 8 位旅客",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "完成预订后",
+            "title": "即时确认",
+            "detail": "立即收到订单与行程摘要"
+          },
+          {
+            "timing": "出发前 12 小时",
+            "title": "12 小时提醒",
+            "detail": "提供天气更新与必要调整"
+          },
+          {
+            "timing": "前一晚",
+            "title": "最终接送通知",
+            "detail": "确认实际接人时间与司导联络方式"
+          },
+          {
+            "timing": "出发当天早上",
+            "title": "当日路线提醒",
+            "detail": "依现场条件提供晨间说明"
+          },
+          {
+            "timing": "行程进行中",
+            "title": "逐站贴心提醒",
+            "detail": "于各景点提供即时引导"
+          },
+          {
+            "timing": "行程结束后",
+            "title": "行后协助",
+            "detail": "后续资讯与延伸推荐"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "first-time",
+            "question": "第一次来济州，适合报名这条线路吗？",
+            "answer": "很适合。这条路线把汉拿山山线、代表性的火山海岸、经典瀑布、茶园氛围和涯月海景收尾都串在一起，第一次来也能玩得很完整。"
+          },
+          {
+            "id": "walking",
+            "question": "步行会不会很累？",
+            "answer": "整体不算太累。真正比较吃体力的是御乘生岳，虽然路程不长，但台阶不少；其余大多数停靠点对一般游客来说都属于中等强度。"
+          },
+          {
+            "id": "rain",
+            "question": "下雨还能成行吗？",
+            "answer": "可以。遇到下雨或天气不稳定时，我们会更谨慎安排御乘生岳与海岸段的停留时间，必要时也会提高 O’Sulloc 这类更稳定停靠点的比重。"
+          },
+          {
+            "id": "parents",
+            "question": "带长辈一起参加可以吗？",
+            "answer": "可以。这条线路对成人家庭整体比较友好，但仍建议同行者具备上下台阶与短上坡步行的能力。"
+          },
+          {
+            "id": "children",
+            "question": "可以带小朋友一起参加吗？",
+            "answer": "可以，但会更适合 8 岁以上、能接受短程徒步和一整天观光节奏的孩子。"
+          },
+          {
+            "id": "order",
+            "question": "行程顺序会变吗？",
+            "answer": "有可能。山区天气、风势、交通和现场人流都可能影响顺序，尤其是御乘生岳与海岸段。"
+          },
+          {
+            "id": "lunch",
+            "question": "午餐有包含吗？",
+            "answer": "是否包含午餐，取决于您预订的方案；这条路线一定会安排中段午餐时间。"
+          },
+          {
+            "id": "why-eoseungsaengak",
+            "question": "为什么第一站安排御乘生岳？",
+            "answer": "因为把它放在开场，最能趁体力最好的时候走进汉拿山山线，同时又不会让整天变成高强度登山行程。"
+          },
+          {
+            "id": "why-jusangjeolli",
+            "question": "为什么从汉拿山之后接柱状节理？",
+            "answer": "这样安排能让火山地形的故事一路延续，从山地地貌自然衔接到济州最具代表性的玄武岩海岸。"
+          },
+          {
+            "id": "why-osulloc",
+            "question": "为什么先去 O’Sulloc，再到涯月？",
+            "answer": "O’Sulloc 很适合作为瀑布段之后的缓冲，先把步调放慢，最后到涯月时才会真正有轻松收尾的感觉。"
+          },
+          {
+            "id": "later-structure",
+            "question": "后半段为什么要这样安排？",
+            "answer": "午餐和天帝渊先把早上较曝晒、较有活动感的节奏放柔，接着再安排 O’Sulloc 的轻松茶园停留，最后用涯月海景收尾，就不会让整天越走越累。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [
+          {
+            "id": 1,
+            "author": "Sarah M.",
+            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+            "location": "新加坡",
+            "date": "2024 年 3 月",
+            "rating": 5,
+            "title": "一条安排得非常平衡的济州西南线",
+            "text": "整条路线的节奏非常顺，从御乘生岳开场就把汉拿山的山线感带出来了。导游对地形与景观之间的串联讲得很清楚，所以后面的柱状节理和瀑布段会更有感觉。午餐时间也安排得刚刚好，下午玩起来不会太赶。",
+            "helpful": 24,
+            "verified": true,
+            "tripType": "情侣",
+            "photos": [
+              "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
+              "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
+            ]
+          },
+          {
+            "id": 2,
+            "author": "James K.",
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+            "location": "香港",
+            "date": "2024 年 3 月",
+            "rating": 5,
+            "title": "路线很棒，而且最后收得很舒服",
+            "text": "这条线路最大的优点就是顺。先上山、再看海岸、再进瀑布和茶园，最后到涯月收尾，整天都很自然。导游知道什么时候该放慢，什么时候该往下走，不会让人觉得拖，也不会觉得赶。",
+            "helpful": 18,
+            "verified": true,
+            "tripType": "家庭",
+            "photos": []
+          },
+          {
+            "id": 3,
+            "author": "Yuki T.",
+            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+            "location": "东京",
+            "date": "2024 年 2 月",
+            "rating": 4,
+            "title": "最喜欢最后的涯月段",
+            "text": "整体体验很好。御乘生岳比想象中更值得去，O’Sulloc 也确实把后半段节奏放松了下来。唯一的小遗憾是如果在涯月能再多留十几分钟就更完美了，不过整体还是很满意。",
+            "helpful": 12,
+            "verified": true,
+            "tripType": "独旅",
+            "photos": [
+              "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=80"
+            ]
+          },
+          {
+            "id": 4,
+            "author": "Michael R.",
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+            "location": "雪梨",
+            "date": "2024 年 2 月",
+            "rating": 5,
+            "title": "比想像中更有层次的一天",
+            "text": "原本是冲着风景来的，最后最惊喜的是整条线路的完成度。每一站之间都有逻辑，不是单纯把几个景点拼在一起。午餐点不错，小团人数也刚好，听讲解和拍照都更舒服。",
+            "helpful": 31,
+            "verified": true,
+            "tripType": "朋友",
+            "photos": []
+          }
+        ],
+        "reviewsSummary": {
+          "averageRating": 4.8,
+          "totalReviews": 127,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 98,
+              "percentage": 77
+            },
+            {
+              "stars": 4,
+              "count": 21,
+              "percentage": 17
+            },
+            {
+              "stars": 3,
+              "count": 6,
+              "percentage": 5
+            },
+            {
+              "stars": 2,
+              "count": 1,
+              "percentage": 1
+            },
+            {
+              "stars": 1,
+              "count": 1,
+              "percentage": 1
+            }
+          ],
+          "highlights": [
+            {
+              "label": "风景",
+              "count": 89
+            },
+            {
+              "label": "导游",
+              "count": 76
+            },
+            {
+              "label": "节奏安排",
+              "count": 54
+            },
+            {
+              "label": "涯月收尾",
+              "count": 41
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "price": {
+          "amountLabel": "58",
+          "currency": "USD",
+          "per": "人"
+        }
+      }
+    }
+  ]
+}

@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { useI18n, Locale } from '@/lib/i18n';
+import { CANONICAL_EAST_SIGNATURE_PRODUCT_PATH } from '@/lib/tour-consumer-visibility';
 import { cn } from '@/lib/utils';
 
 const localeFlags: Record<Locale, string> = {
@@ -71,6 +72,28 @@ export default function LanguageSwitcher({ premiumTourDetail = false }: Language
     ];
     document.cookie = cookieParts.join('; ');
 
+    /** 이 페이지는 `app/tour-product/...`만 존재 — 접두 `/ko/...` 경로는 404. 쿠키만 바꾸고 같은 URL에서 RSC 갱신 */
+    const pathOnly = pathname.split('?')[0];
+    const pathSegments = pathOnly.split('/').filter(Boolean);
+    const withoutLocalePrefix =
+      pathSegments[0] && routeLocales.includes(pathSegments[0] as RouteLocale)
+        ? '/' + pathSegments.slice(1).join('/')
+        : pathOnly;
+    if (withoutLocalePrefix === CANONICAL_EAST_SIGNATURE_PRODUCT_PATH) {
+      const search = searchParams?.toString();
+      const target = search
+        ? `${CANONICAL_EAST_SIGNATURE_PRODUCT_PATH}?${search}`
+        : CANONICAL_EAST_SIGNATURE_PRODUCT_PATH;
+      setTimeout(() => {
+        if (pathOnly !== CANONICAL_EAST_SIGNATURE_PRODUCT_PATH) {
+          router.replace(target);
+        } else {
+          router.refresh();
+        }
+      }, 0);
+      return;
+    }
+
     const segments = pathname.split('/').filter(Boolean);
     const currentHasLocalePrefix =
       segments.length > 0 && routeLocales.includes(segments[0] as RouteLocale);
@@ -119,7 +142,7 @@ export default function LanguageSwitcher({ premiumTourDetail = false }: Language
           'flex flex-shrink-0 items-center gap-0.5 rounded-[10px] text-xs font-medium transition-colors duration-200 focus:outline-none sm:gap-1 md:gap-1.5',
           premiumTourDetail
             ? 'border border-stone-200/75 bg-white/65 px-2 py-1.5 text-stone-700 hover:border-stone-300/90 hover:bg-white/95 md:px-2.5 md:py-2 lg:px-3 focus-visible:ring-2 focus-visible:ring-stone-400/25 focus-visible:ring-offset-1'
-            : 'border border-gray-300 bg-white px-1 py-0.5 font-semibold text-gray-800 shadow-md hover:border-gray-400 hover:bg-gray-50 hover:shadow-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-500 sm:px-1.5 sm:py-1 md:px-2 md:py-1.5 lg:px-3 lg:py-2'
+            : 'min-h-10 border border-gray-200/55 bg-white/88 px-1.5 py-1 font-semibold text-gray-800 shadow-[0_1px_2px_rgba(15,23,42,0.04)] hover:border-gray-300/75 hover:bg-white focus-visible:border-blue-400/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/25 focus-visible:ring-offset-1 sm:min-h-0 sm:px-1.5 sm:py-1 md:px-2 md:py-1.5 lg:px-3 lg:py-2'
         )}
       >
         <span className={cn('flex-shrink-0', premiumTourDetail ? 'text-[13px] sm:text-sm' : 'text-xs sm:text-sm')}>

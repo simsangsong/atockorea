@@ -3,6 +3,7 @@ import type {
   SmallGroupAtAGlanceCard,
   SmallGroupBestForLine,
   SmallGroupEditorialDetail,
+  SmallGroupFaqItem,
   SmallGroupFlowAdjustment,
   SmallGroupFlowReason,
   SmallGroupRelatedTourCard,
@@ -24,46 +25,46 @@ export const EAST_DETAILPAGE_ROUTE_STOPS: SmallGroupRouteStop[] = [
     sequenceLabel: 'First Stop',
     highlightLabel: 'Geology & Stone Culture',
     cardSummary:
-      'Rows of stone figures, stacked stone towers, and an underground museum that helps guests understand how Jeju was formed.',
-    cardFacts: ['Stay 60–75 min', 'Easy to moderate walking', 'Best opening stop for route context'],
+      "This is where the day begins to make sense. Stone Park gives the group a clear introduction to Jeju's volcanic identity before the route opens into coast, crater, cave, and village landscapes.",
+    cardFacts: ['60 min', 'Easy to moderate walking', 'Opens the route with geology context'],
     description:
-      'Rows of stone figures, stacked stone towers, and an underground museum that helps guests understand how Jeju was formed.',
-    whyIncluded: 'Starting here gives the cave and crater stops more meaning later in the day.',
-    stayDuration: '60–75 min',
-    walkingLevel: 'Easy to moderate walking',
-    photoTip: '',
-    restroom: '',
+      "This is where the day begins to make sense. Stone Park gives the group a clear introduction to Jeju's volcanic identity before the route opens into coast, crater, cave, and village landscapes.",
+    whyIncluded:
+      'Starting here gives the later coastal, crater, and lava-tube stops a clearer frame.',
+    stayDuration: '60 min',
+    walkingLevel: 'Easy to moderate',
+    photoTip: 'Wide compositions work better here than tight close-ups.',
+    restroom: 'Entrance and museum area',
     weatherNote: '',
     delayNote: '',
     tags: ['Stone rows', 'Museum', 'Geology'],
     imageUrl: 'https://images.unsplash.com/photo-1544077960-604201fe74bc?w=800&q=85',
     detailLayer: {
       detailIntro:
-        'This is not just a sculpture park. It works best as the route\'s opening because it explains why stone matters in Jeju before the group starts looking at the island\'s other landscapes.',
+        "This is where the day begins to make sense. Stone Park gives the group a clear introduction to Jeju's volcanic identity before the route opens into coast, crater, cave, and village landscapes.",
       highlights: [
-        'Long rows of stone figures',
-        'Stacked stone towers and open stone grounds',
-        'Photogenic reflective water area near the museum zone',
-        'Underground museum focused on Jeju\'s stone culture and island identity',
+        'Stone figures, towers, and wide open grounds',
+        "Strong introduction to Jeju's stone culture",
+        'Clean photo zones with broad visual spacing',
+        'Indoor museum elements that deepen the geology story',
       ],
       experienceFlow: [
-        'Short outdoor introduction walk',
-        'Main photo area around the stone rows and open grounds',
-        'Museum section for the explanation-heavy part of the stop',
+        'Short orientation walk through the main stone zone',
+        'Photo and explanation time around the open stone fields',
+        'Museum section or closing interpretation before departure',
       ],
-      routeReason: 'Starting here gives the cave and crater stops more meaning later in the day.',
+      routeReason:
+        'Starting here gives the later coastal, crater, and lava-tube stops a clearer frame.',
       practicalDetails: {
         officialHours: '09:00–18:00',
         holiday: 'Mondays',
-        fee: 'Adults 5,000 KRW / Teenagers 3,500 KRW',
-        restroom: 'Available at the entrance and museum area',
+        fee: 'Adults 5,000 / Teens 3,500 KRW',
+        restroom: 'Entrance and museum area',
         parking: 'Available',
       },
-      photoDetails:
-        'The best frames are not close-up statue portraits. Use the longer stone lines and the reflective water area with some breathing space in front.',
-      facilityDetails: 'This stop has the cleanest restroom and museum support in the early part of the route.',
-      smartTip:
-        'If the day is running tight, keep the walk focused on the main outdoor line plus the museum core instead of trying to cover the full grounds.',
+      photoDetails: 'Wide compositions work better here than tight close-ups.',
+      facilityDetails: 'Clean restroom and museum support in the early part of the route.',
+      smartTip: 'This stop works best as a calm opener, not a rushed photo stop.',
       commonReaction:
         'Guests often expect a simple photo stop, but the museum makes the stop feel more substantial than expected.',
       skipNote:
@@ -458,18 +459,17 @@ const TRUST_POINTS: SmallGroupTrustPoint[] = [
   {
     id: 'tp1',
     title: 'Licensed local operation',
-    description: 'Built around real Jeju day routing instead of generic destination copy',
+    description: 'Jeju-licensed guiding and vehicles—routing built for this coast, not generic lists.',
   },
   {
     id: 'tp2',
     title: 'Experienced route handling',
-    description: 'Timing and walking balance matter more than adding extra place names',
+    description: 'Pacing and walking balance tuned to how this east route actually runs.',
   },
-  { id: 'tp3', title: 'Small Groups', description: 'Maximum 8 guests per tour' },
   {
-    id: 'tp4',
-    title: 'Direct day-of support',
-    description: 'Clear pickup and operating updates before the tour day',
+    id: 'tp3',
+    title: 'Small-group comfort',
+    description: 'Capped at eight guests so the day stays readable and calm.',
   },
 ];
 
@@ -521,7 +521,38 @@ const AFTER_STEPS: SmallGroupAfterBookingStep[] = [
   },
 ];
 
-const DETAILPAGE_FAQS = [
+/** Primary stack uses `decisionRank` 1–5; remaining rows surface under “More questions”. */
+const DETAILPAGE_FAQS: SmallGroupFaqItem[] = [
+  {
+    decisionRank: 1,
+    question: 'Is this East Jeju route good for first-time visitors?',
+    answer:
+      'Yes. The day is structured so geology and village context land before the big coastal stops—ideal when Jeju is new and you want one coherent east-coast story, not a random checklist.',
+  },
+  {
+    decisionRank: 2,
+    question: 'Is the walking difficult?',
+    answer:
+      'Most of the route is moderate. Seongsan is the main variable: the paid summit stairs are the hardest stretch if you choose them; the free coastal side is much lighter. Micheongul is darker and a bit uneven underfoot but short.',
+  },
+  {
+    decisionRank: 3,
+    question: 'Can the tour still run if it rains?',
+    answer:
+      'Usually yes. The morning half stays more usable thanks to indoor and cave time; exposed coastal sections may be shortened or adjusted if wind and conditions demand it.',
+  },
+  {
+    decisionRank: 4,
+    question: 'Is this okay for families and seniors?',
+    answer:
+      'Often a strong fit for older children and active seniors—especially when Seongsan is handled via the easier side. Stroller-heavy groups or guests avoiding stairs and caves may find the day tight.',
+  },
+  {
+    decisionRank: 5,
+    question: 'Is lunch included—and how does pickup work?',
+    answer:
+      'Lunch is not included in the rate; we usually place it between Seongeup and Seongsan so the group reaches the main walking choice with better energy. Pickup is hotel-lobby style in the Jeju City area, typically between 8:20–9:00 AM depending on where you stay—exact timing is confirmed before the day.',
+  },
   {
     question: 'What time does the tour start and end?',
     answer:
@@ -550,15 +581,6 @@ const DETAILPAGE_FAQS = [
     question: 'Is Micheongul Cave difficult?',
     answer:
       'It is manageable for most guests, but darker and slightly more uneven than a normal museum path.',
-  },
-  {
-    question: 'Is this good for children?',
-    answer: 'Yes, especially for children around 8 and up.',
-  },
-  {
-    question: 'What happens if it rains?',
-    answer:
-      'The morning half remains more usable because of the museum and cave, while the final coastal stops may be shortened.',
   },
 ];
 
@@ -615,7 +637,7 @@ export function getEastSignatureDetailPageEditorial(): SmallGroupEditorialDetail
   };
 }
 
-export function getEastDetailPageFaqs() {
+export function getEastDetailPageFaqs(): SmallGroupFaqItem[] {
   return DETAILPAGE_FAQS;
 }
 

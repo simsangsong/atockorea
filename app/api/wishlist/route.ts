@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
+import { mapNestedTourRowsToUsd, mapNestedTourToUsdRow } from '@/lib/tour-list-price-usd.server';
 import { getAuthUser } from '@/lib/auth';
 
 /**
@@ -29,6 +31,7 @@ export async function GET(req: NextRequest) {
           city,
           price,
           original_price,
+          price_currency,
           price_type,
           image_url,
           images,
@@ -48,7 +51,8 @@ export async function GET(req: NextRequest) {
       );
     }
 
-    return NextResponse.json({ wishlist: wishlist || [] });
+    const mapped = await mapNestedTourRowsToUsd(wishlist || []);
+    return NextResponse.json({ wishlist: mapped });
   } catch (error: any) {
     console.error('Unexpected error:', error);
     return NextResponse.json(
@@ -130,6 +134,7 @@ export async function POST(req: NextRequest) {
           city,
           price,
           original_price,
+          price_currency,
           price_type,
           image_url,
           images,
@@ -148,8 +153,11 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const krwPerUsd = await getKrwPerUsd();
+    const mappedItem = wishlistItem ? mapNestedTourToUsdRow(wishlistItem, krwPerUsd) : wishlistItem;
+
     return NextResponse.json(
-      { wishlistItem, message: 'Added to wishlist successfully' },
+      { wishlistItem: mappedItem, message: 'Added to wishlist successfully' },
       { status: 201 }
     );
   } catch (error: any) {

@@ -48,6 +48,14 @@ export function generateMetadata(config: SEOConfig): Metadata {
     authors: author ? [{ name: author }] : undefined,
     creator: siteName,
     publisher: siteName,
+    /** Brand mark only (square symbol); `app/icon.svg`, `app/icon.png`, `app/apple-icon.png` are generated from the same artwork */
+    icons: {
+      icon: [
+        { url: '/icon.svg', type: 'image/svg+xml' },
+        { url: '/icon.png', type: 'image/png', sizes: '32x32' },
+      ],
+      apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
+    },
     robots: {
       index: !noindex,
       follow: !nofollow,
@@ -112,7 +120,7 @@ export function generateStructuredData(type: 'Tour' | 'Organization' | 'WebSite'
         offers: {
           '@type': 'Offer',
           price: data.price,
-          priceCurrency: 'USD',
+          priceCurrency: data.priceCurrency ?? 'USD',
           availability: data.availability || 'https://schema.org/InStock',
           validFrom: data.validFrom || new Date().toISOString(),
         },
@@ -137,7 +145,7 @@ export function generateStructuredData(type: 'Tour' | 'Organization' | 'WebSite'
         ...baseStructuredData,
         name: siteName,
         url: siteUrl,
-        logo: `${siteUrl}/logo.png`,
+        logo: `${siteUrl}/brand-mark.svg`,
         contactPoint: {
           '@type': 'ContactPoint',
           contactType: 'Customer Service',

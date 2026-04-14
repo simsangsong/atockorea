@@ -2,24 +2,40 @@
 
 import Image from 'next/image';
 import {
-  Award,
+  BadgeCheck,
   ChevronDown,
-  MessageCircle,
-  Shield,
+  MapPinned,
   Star,
-  Users,
+  UsersRound,
   type LucideIcon,
 } from 'lucide-react';
-import type { SmallGroupAfterBookingStep, SmallGroupTrustPoint, SmallGroupTrustReview } from '../smallGroupDetailContent';
+import type {
+  SmallGroupAfterBookingStep,
+  SmallGroupTrustPoint,
+  SmallGroupTrustReview,
+} from '../smallGroupDetailContent';
 
-const POINT_ICONS: Record<string, LucideIcon> = {
-  tp1: Shield,
-  tp2: Award,
-  tp3: Users,
-  tp4: MessageCircle,
+const TRUST_MAX = 3;
+
+/** Quiet editorial icons — not a corporate feature grid */
+const TRUST_ICONS: Record<string, LucideIcon> = {
+  tp1: BadgeCheck,
+  tp2: MapPinned,
+  tp3: UsersRound,
 };
 
-const TRUST_PRIMARY_VISIBLE = 3;
+function foldSupportText(
+  text: string,
+  budget: number,
+): { short: true; text: string } | { short: false; preview: string; full: string } {
+  const t = text.trim();
+  if (!t || t.length <= budget) return { short: true, text: t };
+  const first = t.split(/(?<=[.!?])\s+/)[0]?.trim() ?? '';
+  if (first.length >= 14 && first.length < t.length && first.length <= budget + 35) {
+    return { short: false, preview: first, full: t };
+  }
+  return { short: false, preview: `${t.slice(0, Math.min(budget, 96)).trim()}…`, full: t };
+}
 
 function aggregateLabel(rating: number | null, count: number | null): string | null {
   if (rating != null && count != null && count > 0) {
@@ -34,12 +50,6 @@ function aggregateLabel(rating: number | null, count: number | null): string | n
   return null;
 }
 
-function primaryTrustGridClass(count: number): string {
-  if (count >= 3) return 'sm:grid-cols-3';
-  if (count === 2) return 'sm:grid-cols-2';
-  return 'sm:grid-cols-1';
-}
-
 export interface SmallGroupBookWithConfidenceSectionProps {
   points: SmallGroupTrustPoint[];
   reviews: SmallGroupTrustReview[];
@@ -51,143 +61,162 @@ export interface SmallGroupBookWithConfidenceSectionProps {
 }
 
 /**
- * Trust stack — Layer 1: three scan-first promises (+ optional extra in disclosure).
- * Layer 2: compact after-book grid. Layer 3: FAQ / Practical via page anchors + review depth.
+ * Booking & support — Layer 1: trust (max 3, editorial). Layer 2: after-booking timeline (compact).
+ * Distinct visual rhythm between layers; reviews sit with trust as social proof.
  */
 export default function SmallGroupBookWithConfidenceSection({
   points,
   reviews,
   aggregateRating,
   reviewCount,
-  leadSubtitle = 'Trusted by thousands of travelers',
-  afterSteps,
-  afterSubtitle = 'The support you receive before, during, and after your experience',
+  leadSubtitle = 'Credible operation, clear next steps after you reserve.',
+  afterSteps = [],
+  afterSubtitle = 'A calm sequence from confirmation to day-of—expand only what you need.',
 }: SmallGroupBookWithConfidenceSectionProps) {
-  const hasTrust = points.length > 0 || reviews.length > 0;
-  const hasAfter = afterSteps.length > 0;
+  const trustLayer = points.slice(0, TRUST_MAX);
+  const hasTrustLayer = trustLayer.length > 0;
+  const hasReviews = reviews.length > 0;
+  const hasAfterLayer = afterSteps.length > 0;
 
-  if (!hasTrust && !hasAfter) {
+  if (!hasTrustLayer && !hasReviews && !hasAfterLayer) {
     return null;
   }
 
   const summary = aggregateLabel(aggregateRating, reviewCount);
   const leadSnippet = reviews[0]?.text?.trim() ?? '';
-  const primaryTrust = points.slice(0, TRUST_PRIMARY_VISIBLE);
-  const extraTrust = points.slice(TRUST_PRIMARY_VISIBLE);
-  const gridClass = primaryTrustGridClass(primaryTrust.length);
   const showReviewDepth = reviews.length > 1;
+  const qFold = leadSnippet ? foldSupportText(leadSnippet, 100) : { short: true as const, text: '' };
 
   return (
     <section
-      id="trust-reviews"
+      id="sg-booking-support"
       className="sg-dp-mid-slot-reassurance sg-dp-section-rule-soft sg-dp-section-band-reassurance sg-dp-page-gutter scroll-mt-[var(--sg-sticky-clear)] font-sans antialiased"
-      aria-labelledby="book-confidence-heading"
+      aria-labelledby="booking-support-heading"
     >
       <div className="sg-dp-page-column-wide">
-        {hasTrust ? (
-          <div>
-            <p className="sg-dp-type-utility-section-eyebrow m-0 mb-1.5">Know before you book</p>
-            <h2 id="book-confidence-heading" className="sg-dp-type-section-title m-0 max-w-[min(100%,36rem)] text-pretty">
-              Book with confidence
-            </h2>
-            <p className="sg-dp-type-body m-0 mt-2 max-w-xl sm:mt-2.5">
-              {leadSubtitle}
-            </p>
+        <h2
+          id="booking-support-heading"
+          className="sg-dp-type-section-title m-0 max-w-[min(100%,36rem)] text-pretty"
+        >
+          Booking &amp; support
+        </h2>
+        <p className="sg-dp-type-body m-0 mt-2 max-w-xl text-[13px] leading-snug text-neutral-700 sm:mt-2.5 sm:text-[14px] sm:leading-normal">
+          {leadSubtitle}
+        </p>
 
-            {primaryTrust.length > 0 ? (
-              <div className="sg-dp-expand-shell sg-dp-trust-pillars-shell sg-dp-trust-pillars-shell--layered mt-4 overflow-hidden p-0 sm:mt-5">
-                <div
-                  className={`grid grid-cols-1 gap-px bg-[color:var(--sg-rule-mid)] ${gridClass}`}
-                >
-                  {primaryTrust.map((point: SmallGroupTrustPoint) => {
-                    const Icon = POINT_ICONS[point.id] ?? Shield;
-                    return (
-                      <div
-                        key={point.id}
-                        className="sg-dp-trust-pillar-cell sg-dp-trust-pillar-cell--promise flex min-h-0 flex-col items-start gap-2 text-left"
-                      >
-                        <div className="sg-dp-icon-well sg-dp-icon-well--sm shrink-0" aria-hidden>
-                          <Icon className="h-3.5 w-3.5 text-neutral-600" strokeWidth={1.75} />
-                        </div>
-                        <h3 className="sg-dp-card-title m-0 text-[14px] sm:text-[14.5px]">
-                          {point.title}
-                        </h3>
-                        <p className="sg-dp-type-body m-0 max-w-[20rem] text-[12.5px] sm:text-[13px] sm:leading-relaxed">
-                          {point.description}
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
+        {/* —— Layer 1: Trust summary (editorial column, not a feature grid) —— */}
+        {hasTrustLayer || hasReviews ? (
+          <div className="mt-6 sm:mt-7">
+            {hasTrustLayer ? (
+              <p className="sg-dp-type-label-caps m-0 !text-[10px] !tracking-[0.14em] text-neutral-500">
+                Trust summary
+              </p>
+            ) : null}
 
-                {extraTrust.length > 0 ? (
-                  <details className="group border-t border-[color:var(--sg-rule-mid)] bg-[color:color-mix(in_oklab,var(--dp-secondary)_18%,white)]">
-                    <summary className="sg-dp-disclosure-summary flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-left sm:px-5 sm:py-3.5">
-                      <span className="sg-dp-type-label-caps">
-                        {extraTrust.length === 1
-                          ? 'One more assurance'
-                          : `More assurances (${extraTrust.length})`}
-                      </span>
-                      <ChevronDown
-                        className="h-4 w-4 shrink-0 text-neutral-400 transition-transform duration-200 group-open:rotate-180"
-                        strokeWidth={2}
+            {hasTrustLayer ? (
+              <div className="mt-3 max-w-xl border-t border-stone-200/55">
+                {trustLayer.map((point: SmallGroupTrustPoint, index: number) => {
+                  const Icon = TRUST_ICONS[point.id] ?? BadgeCheck;
+                  const desc = foldSupportText(point.description, 88);
+                  const isLast = index === trustLayer.length - 1;
+                  return (
+                    <div
+                      key={point.id}
+                      className={`flex gap-3 py-4 sm:gap-3.5 sm:py-5 ${!isLast ? 'border-b border-stone-200/45' : ''}`}
+                    >
+                      <Icon
+                        className="mt-0.5 h-[15px] w-[15px] shrink-0 text-stone-500/90 sm:h-4 sm:w-4"
+                        strokeWidth={1.65}
                         aria-hidden
                       />
-                    </summary>
-                    <div className="grid grid-cols-1 gap-px border-t border-[color:var(--sg-rule-mid)] bg-[color:var(--sg-rule-mid)] sm:grid-cols-2">
-                      {extraTrust.map((point: SmallGroupTrustPoint) => {
-                        const Icon = POINT_ICONS[point.id] ?? Shield;
-                        return (
-                          <div
-                            key={point.id}
-                            className="sg-dp-trust-pillar-cell sg-dp-trust-pillar-cell--promise flex min-h-0 flex-col items-start gap-2 bg-[linear-gradient(180deg,#fcfcfa_0%,#f7f7f4_100%)] p-4 text-left sm:p-4"
-                          >
-                            <div className="sg-dp-icon-well sg-dp-icon-well--sm shrink-0" aria-hidden>
-                              <Icon className="h-3.5 w-3.5 text-neutral-600" strokeWidth={1.75} />
-                            </div>
-                            <h3 className="sg-dp-card-title m-0 text-[14px]">{point.title}</h3>
-                            <p className="sg-dp-type-body m-0 max-w-prose text-[12.5px] sm:text-[13px]">
-                              {point.description}
+                      <div className="min-w-0 flex-1">
+                        <h3 className="sg-dp-type-subsection m-0 text-[15px] font-semibold leading-snug tracking-[-0.02em] text-stone-900 sm:text-[15.5px]">
+                          {point.title}
+                        </h3>
+                        {desc.short ? (
+                          <p className="sg-dp-type-body m-0 mt-1.5 text-[13px] leading-relaxed text-neutral-600 sm:mt-2 sm:text-[13.5px]">
+                            {desc.text}
+                          </p>
+                        ) : (
+                          <>
+                            <p className="sg-dp-type-body m-0 mt-1.5 text-[13px] leading-snug text-neutral-600 sm:mt-2 sm:text-[13.5px]">
+                              {desc.preview}
                             </p>
-                          </div>
-                        );
-                      })}
+                            <details className="group mt-2">
+                              <summary className="sg-dp-disclosure-summary flex cursor-pointer list-none items-center gap-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-neutral-500">
+                                <ChevronDown
+                                  className="h-3 w-3 shrink-0 text-neutral-400 transition-transform duration-200 group-open:rotate-180"
+                                  strokeWidth={2}
+                                  aria-hidden
+                                />
+                                Read more
+                              </summary>
+                              <p className="sg-dp-type-body m-0 mt-1.5 border-t border-stone-200/50 pt-2 text-[13px] leading-relaxed text-neutral-600">
+                                {desc.full}
+                              </p>
+                            </details>
+                          </>
+                        )}
+                      </div>
                     </div>
-                  </details>
-                ) : null}
+                  );
+                })}
               </div>
             ) : null}
 
-            {reviews.length > 0 ? (
-              <div className="mt-5 sm:mt-6 md:mt-6">
-                <p className="sg-dp-label-row mb-0">Guest reviews</p>
-                <div className="mt-2.5 rounded-[var(--sg-card-r-panel)] border border-[color:color-mix(in_oklab,var(--sg-card-stroke)_85%,transparent)] bg-white/90 px-3.5 py-3 shadow-[0_1px_0_rgba(255,255,255,1)_inset,0_1px_2px_rgba(15,23,42,0.03)] sm:px-4 sm:py-3.5">
-                  <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
-                    <div className="flex items-center gap-1" aria-hidden>
+            {hasReviews ? (
+              <div className={`${hasTrustLayer ? 'mt-6 sm:mt-7' : 'mt-0'} max-w-xl`}>
+                <p className="sg-dp-type-label-caps m-0 !text-[10px] !tracking-[0.14em] text-neutral-500">
+                  Guest voices
+                </p>
+                <div className="mt-2.5 rounded-[var(--sg-card-r-panel)] border border-[color:color-mix(in_oklab,var(--sg-card-stroke)_82%,transparent)] bg-white/88 px-3 py-2.5 shadow-[0_1px_0_rgba(255,255,255,1)_inset] sm:px-4 sm:py-3">
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                    <div className="flex items-center gap-0.5" aria-hidden>
                       {([0, 1, 2, 3, 4] as const).map((i: number) => (
                         <Star
                           key={i}
-                          className="h-3.5 w-3.5 fill-[var(--dp-fg)]/80 text-[var(--dp-fg)]/80"
+                          className="h-3.5 w-3.5 fill-[var(--dp-fg)]/75 text-[var(--dp-fg)]/75"
                         />
                       ))}
                     </div>
                     {summary ? (
-                      <span className="sg-dp-type-meta tabular-nums">{summary}</span>
+                      <span className="sg-dp-type-meta tabular-nums text-neutral-600">{summary}</span>
                     ) : (
-                      <span className="sg-dp-type-meta">From recent guests</span>
+                      <span className="sg-dp-type-meta text-neutral-600">From recent guests</span>
                     )}
                   </div>
                   {leadSnippet ? (
-                    <p className="sg-dp-type-body-strong sg-dp-pullquote mt-2.5 m-0 line-clamp-2 max-w-prose text-[13px] leading-relaxed sm:text-[14px]">
-                      &ldquo;{leadSnippet}&rdquo;
-                    </p>
+                    qFold.short ? (
+                      <p className="sg-dp-type-body-strong sg-dp-pullquote m-0 mt-2 line-clamp-2 max-w-prose text-[13px] leading-snug sm:text-[14px]">
+                        &ldquo;{qFold.text}&rdquo;
+                      </p>
+                    ) : (
+                      <div className="mt-2">
+                        <p className="sg-dp-type-body-strong sg-dp-pullquote m-0 max-w-prose text-[13px] leading-snug sm:text-[14px]">
+                          &ldquo;{qFold.preview}&rdquo;
+                        </p>
+                        <details className="group mt-1.5">
+                          <summary className="sg-dp-disclosure-summary inline-flex list-none items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-neutral-500">
+                            <ChevronDown
+                              className="h-3 w-3 shrink-0 text-neutral-400 transition-transform group-open:rotate-180"
+                              strokeWidth={2}
+                              aria-hidden
+                            />
+                            Full quote
+                          </summary>
+                          <p className="sg-dp-type-body-strong sg-dp-pullquote m-0 mt-1.5 max-w-prose text-[13px] leading-relaxed sm:text-[14px]">
+                            &ldquo;{qFold.full}&rdquo;
+                          </p>
+                        </details>
+                      </div>
+                    )
                   ) : null}
                 </div>
 
                 {showReviewDepth ? (
                   <details className="group mt-3">
-                    <summary className="sg-dp-disclosure-summary flex cursor-pointer list-none items-center justify-between gap-2 rounded-[10px] border border-transparent px-1 py-2 text-left transition-colors hover:border-neutral-200/80 hover:bg-stone-50/80">
-                      <span className="sg-dp-type-meta font-semibold">
+                    <summary className="sg-dp-disclosure-summary flex cursor-pointer list-none items-center justify-between gap-2 rounded-[10px] border border-transparent px-1 py-2 text-left transition-colors hover:border-stone-200/80 hover:bg-stone-50/70">
+                      <span className="sg-dp-type-meta font-semibold text-neutral-700">
                         All guest reviews ({reviews.length})
                       </span>
                       <ChevronDown
@@ -229,11 +258,8 @@ export default function SmallGroupBookWithConfidenceSection({
                       ))}
                     </div>
                   </details>
-                ) : (
-                  <div
-                    id="trust-review-cards"
-                    className="mt-3 grid scroll-mt-[var(--sg-sticky-clear)] gap-3 md:grid-cols-2"
-                  >
+                ) : reviews.length === 1 ? (
+                  <div id="trust-review-cards" className="mt-3 scroll-mt-[var(--sg-sticky-clear)]">
                     {reviews.map((review: SmallGroupTrustReview) => (
                       <article key={review.id} className="sg-ota-card sg-dp-ota-card--support p-4 lg:p-5">
                         <p className="sg-dp-type-body-strong sg-dp-pullquote mb-3 m-0 leading-relaxed">
@@ -262,92 +288,91 @@ export default function SmallGroupBookWithConfidenceSection({
                       </article>
                     ))}
                   </div>
-                )}
+                ) : null}
               </div>
             ) : null}
           </div>
         ) : null}
 
-        {hasAfter ? (
-          <div
-            className={
-              hasTrust
-                ? 'mt-6 border-t border-[color:var(--sg-rule-mid)] pt-6 sm:mt-7 sm:pt-7 md:pt-8'
-                : ''
-            }
-          >
-            <div className="sg-dp-page-column">
-              {hasTrust ? (
-                <p className="sg-dp-type-utility-section-eyebrow m-0 mb-1">After you reserve</p>
-              ) : null}
-              {hasTrust ? (
-                <h3 className="sg-dp-type-subsection m-0 mb-0.5 font-medium tracking-tight text-[var(--dp-muted-strong)]">
-                  What happens next
-                </h3>
-              ) : (
-                <h2 id="book-confidence-heading" className="sg-dp-section-h2 mb-2">
-                  What happens next
-                </h2>
-              )}
-              <p className="sg-dp-type-body m-0 mb-3 max-w-prose md:mb-4">
-                {afterSubtitle}
+        {/* —— Layer 2: After booking (timeline rhythm ≠ trust pillar rhythm) —— */}
+        {hasAfterLayer ? (
+          <div className="mt-8 border-t border-[color:var(--sg-rule-mid)] pt-7 sm:mt-9 sm:pt-8">
+            <p className="sg-dp-type-label-caps m-0 !text-[10px] !tracking-[0.14em] text-neutral-500">After booking</p>
+            {afterSubtitle?.trim() ? (
+              <p className="sg-dp-type-meta m-0 mt-2 max-w-xl text-[12.5px] leading-snug text-neutral-600 sm:text-[13px]">
+                {afterSubtitle.trim()}
               </p>
+            ) : null}
 
-              <div className="sg-dp-after-book-compact-grid grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3 lg:gap-3.5">
-                {afterSteps.map((step: SmallGroupAfterBookingStep, index: number) => {
-                  const detailTrim = step.detail?.trim() ?? '';
-                  return (
-                    <div
-                      key={step.id}
-                      className="relative flex min-h-0 flex-col rounded-[var(--sg-card-r-nested)] border border-[color:color-mix(in_oklab,var(--sg-card-stroke)_82%,transparent)] bg-gradient-to-b from-white to-stone-50/50 p-3.5 shadow-[0_1px_0_rgba(255,255,255,1)_inset] sm:p-4"
-                    >
-                      <span
-                        className="absolute right-3 top-3 font-mono text-[10px] font-semibold tabular-nums text-neutral-300 sm:right-3.5 sm:top-3.5"
-                        aria-hidden
-                      >
-                        {String(index + 1).padStart(2, '0')}
+            <ol className="m-0 mt-4 list-none space-y-0 p-0 sm:mt-5">
+              {afterSteps.map((step: SmallGroupAfterBookingStep, index: number) => {
+                const detailTrim = step.detail?.trim() ?? '';
+                const bodyTrim = step.description.trim();
+                const hasDepth = bodyTrim.length > 0 || detailTrim.length > 0;
+                const isLast = index === afterSteps.length - 1;
+                return (
+                  <li
+                    key={step.id}
+                    className={`relative flex gap-3 py-3 sm:gap-4 sm:py-3.5 ${!isLast ? 'border-b border-stone-200/40' : ''}`}
+                  >
+                    <div className="flex w-7 shrink-0 flex-col items-center pt-0.5" aria-hidden>
+                      <span className="flex h-6 w-6 items-center justify-center rounded-full border border-stone-300/80 bg-white text-[10px] font-semibold tabular-nums text-stone-500">
+                        {index + 1}
                       </span>
-                      {step.timing ? (
-                        <p className="sg-dp-type-meta m-0 mb-1 max-w-[85%] tabular-nums">{step.timing}</p>
+                      {!isLast ? (
+                        <span className="mt-1 min-h-[1rem] w-px flex-1 bg-gradient-to-b from-stone-300/50 to-transparent" />
                       ) : null}
-                      <h4 className="sg-dp-card-title m-0 pr-7 text-[14px] leading-snug">{step.title}</h4>
-                      <p className="sg-dp-type-body m-0 mt-1.5 flex-1 text-[13px] leading-snug">
-                        {step.description}
-                      </p>
-                      {detailTrim ? (
-                        <details className="group mt-2.5 border-t border-neutral-100/90 pt-2">
-                          <summary className="sg-dp-disclosure-summary inline-flex items-center gap-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-neutral-500 transition-colors hover:text-neutral-700">
+                    </div>
+                    <div className="min-w-0 flex-1 pb-0.5 pt-0.5">
+                      <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                        {step.timing ? (
+                          <span className="sg-dp-type-meta text-[10px] font-semibold uppercase tracking-[0.1em] text-neutral-500">
+                            {step.timing}
+                          </span>
+                        ) : null}
+                        <span className="sg-dp-type-body-strong text-[14px] leading-snug text-stone-900">{step.title}</span>
+                      </div>
+                      {hasDepth ? (
+                        <details className="group mt-1.5">
+                          <summary className="sg-dp-disclosure-summary inline-flex cursor-pointer list-none items-center gap-1 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-neutral-500 hover:text-neutral-700">
                             <ChevronDown
                               className="h-3 w-3 shrink-0 text-neutral-400 transition-transform duration-200 group-open:rotate-180"
                               strokeWidth={2}
                               aria-hidden
                             />
-                            More detail
+                            Step detail
                           </summary>
-                          <p className="sg-dp-type-meta m-0 mt-1.5 leading-relaxed">
-                            {detailTrim}
-                          </p>
+                          <div className="mt-2 border-l-2 border-stone-200/90 pl-3">
+                            {bodyTrim ? (
+                              <p className="sg-dp-type-body m-0 text-[13px] leading-relaxed text-neutral-700">{bodyTrim}</p>
+                            ) : null}
+                            {detailTrim ? (
+                              <p className="sg-dp-type-meta m-0 mt-2 text-[12.5px] leading-relaxed text-neutral-600">
+                                {detailTrim}
+                              </p>
+                            ) : null}
+                          </div>
                         </details>
                       ) : null}
                     </div>
-                  );
-                })}
-              </div>
-
-              <p className="sg-dp-type-support-note sg-dp-type-support-note--center-md m-0 mt-6 md:mt-7">
-                Questions before booking? <span className="sg-dp-primary font-medium">Message us anytime</span>
-              </p>
-            </div>
+                  </li>
+                );
+              })}
+            </ol>
           </div>
         ) : null}
 
-        <p className="sg-dp-type-support-note sg-dp-type-support-note--center-md m-0 mt-6 max-w-prose border-t border-[color:var(--sg-rule-soft)] pt-5 md:mt-7 md:max-w-2xl md:pt-6 mx-auto md:text-balance">
-          Pickup windows, inclusions, and policies — see{' '}
-          <a href="#tour-detail-practical" className="sg-dp-inline-text-link">
+        <p className="sg-dp-type-support-note sg-dp-type-support-note--center-md m-0 mt-6 md:mt-7">
+          Questions before booking? <span className="sg-dp-primary font-medium">Message us anytime</span>
+        </p>
+
+        <p className="sg-dp-type-support-note sg-dp-type-support-note--center-md m-0 mt-5 max-w-prose border-t border-[color:var(--sg-rule-soft)] pt-4 md:mt-6 md:max-w-2xl md:pt-5 mx-auto md:text-balance">
+          Pickup, inclusions, and weather handling — see{' '}
+          <a href="#sg-details" className="sg-dp-inline-text-link">
             Practical details
-          </a>{' '}
-          and{' '}
-          <a href="#tour-detail-faq" className="sg-dp-inline-text-link">
+          </a>
+          . Common questions —{' '}
+          <a href="#sg-faq" className="sg-dp-inline-text-link">
             Questions
           </a>
           .

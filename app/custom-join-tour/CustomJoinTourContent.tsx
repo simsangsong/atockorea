@@ -19,7 +19,15 @@ const ItineraryMapWithSearch = dynamic(
   { ssr: false, loading: () => <div className="w-full h-64 rounded-2xl bg-neutral-100 animate-pulse" /> }
 );
 import type { DaySchedule } from '@/app/api/custom-join-tour/generate/route';
-import { CUSTOM_JOIN_TOUR, getCustomJoinTourBookingTourId, getHotelLocationFromAddress, haversineDistanceKm, CUSTOM_JOIN_TOUR_MAX_HOTEL_DISTANCE_KM, type HotelLocation } from '@/lib/constants/custom-join-tour';
+import {
+  CUSTOM_JOIN_TOUR,
+  getCustomJoinTourBookingTourId,
+  getHotelLocationFromAddress,
+  haversineDistanceKm,
+  CUSTOM_JOIN_TOUR_MAX_HOTEL_DISTANCE_KM,
+  krwToUsdForCustomJoinList,
+  type HotelLocation,
+} from '@/lib/constants/custom-join-tour';
 import type { HotelInfo } from '@/components/maps/HotelMapPicker';
 import type { ProposedTourItem } from '@/app/api/custom-join-tour/proposed/route';
 
@@ -47,6 +55,11 @@ function playGlitchSound() {
 }
 
 const ROBOT_ICON = '/images/robot-icon.png';
+
+function customJoinPricingDisplayUsd(p: { totalPriceKrw: number; totalPriceUsd?: number }): number {
+  if (p.totalPriceUsd != null && p.totalPriceUsd > 0) return p.totalPriceUsd;
+  return krwToUsdForCustomJoinList(p.totalPriceKrw);
+}
 
 type Step = 'start' | 'ask_participants' | 'ask_vehicle' | 'ask_destination' | 'ask_date' | 'ask_language_date' | 'chat' | 'itinerary' | 'checkout' | 'confirmed';
 
@@ -84,7 +97,12 @@ interface GenerateResult {
   dailyDistancesKm: number[];
   overLimitDays: number[];
   extraFeeNotice: string | null;
-  pricing: { totalPriceKrw: number; vehicleLabelKo: string; participants: number } | null;
+  pricing: {
+    totalPriceKrw: number;
+    totalPriceUsd: number;
+    vehicleLabelKo: string;
+    participants: number;
+  } | null;
   guideMessage: string;
   success: boolean;
 }
@@ -94,16 +112,20 @@ interface ConfirmResult {
   jejuCrossRegion: boolean;
   jejuCrossRegionExtraFeeKrw: number | null;
   jejuCrossRegionNotice: string | null;
-  pricing: { totalPriceKrw: number; vehicleLabelKo: string } | null;
+  pricing: { totalPriceKrw: number; totalPriceUsd: number; vehicleLabelKo: string } | null;
 }
 
-/** Format price in KRW for display: numeric. Uses currency context for USD when selected. */
+/** Format list/checkout amounts (USD major units) into the selected display currency. */
 function usePriceFormat() {
   const currency = useCurrencyOptional();
   const { locale } = useI18n();
-  return (priceKRW: number) => {
-    if (currency?.formatPrice) return currency.formatPrice(priceKRW);
-    return new Intl.NumberFormat(locale === 'ko' ? 'ko-KR' : 'en-US', { style: 'currency', currency: 'KRW', maximumFractionDigits: 0 }).format(priceKRW);
+  return (amountUsd: number) => {
+    if (currency?.formatPrice) return currency.formatPrice(amountUsd);
+    return new Intl.NumberFormat(locale === 'ko' ? 'ko-KR' : 'en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0,
+    }).format(amountUsd);
   };
 }
 
@@ -220,6 +242,7 @@ export default function CustomJoinTourContent() {
       jejuCrossRegionNotice: null,
       pricing: {
         totalPriceKrw: proposedTourToJoin.total_price_krw,
+        totalPriceUsd: krwToUsdForCustomJoinList(proposedTourToJoin.total_price_krw),
         vehicleLabelKo: proposedTourToJoin.vehicle_type === 'large_van' ? CUSTOM_JOIN_TOUR.LARGE_VAN.LABEL_KO : CUSTOM_JOIN_TOUR.VAN.LABEL_KO,
       },
     });
@@ -234,7 +257,14 @@ export default function CustomJoinTourContent() {
     try {
       const raw = typeof window !== 'undefined' ? window.localStorage.getItem(STORAGE_KEY_ITINERARY) : null;
       if (!raw) return;
-      const data = JSON.parse(raw) as { schedule: DaySchedule[]; dailyDistancesKm: number[]; overLimitDays: number[]; extraFeeNotice: string | null; pricing: GenerateResult['pricing']; guideMessage: string };
+      const data = JSON.parse(raw) as {
+        schedule: DaySchedule[];
+        dailyDistancesKm: number[];
+        overLimitDays: number[];
+        extraFeeNotice: string | null;
+        pricing: GenerateResult['pricing'];
+        guideMessage: string;
+      };
       setSchedule((data.schedule || []).map((d: DaySchedule, di: number) => ({
         ...d,
         places: d.places.map((p, pi) => ({ ...p, _uid: (p as { _uid?: string })._uid ?? `p-${di}-${pi}-${Date.now()}` })),
@@ -242,7 +272,16 @@ export default function CustomJoinTourContent() {
       setDailyDistancesKm(data.dailyDistancesKm || []);
       setOverLimitDays(data.overLimitDays || []);
       setExtraFeeNotice(data.extraFeeNotice ?? null);
-      setPricing(data.pricing ?? null);
+      setPricing(
+        data.pricing
+          ? {
+              totalPriceKrw: data.pricing.totalPriceKrw,
+              totalPriceUsd: customJoinPricingDisplayUsd(data.pricing),
+              vehicleLabelKo: data.pricing.vehicleLabelKo,
+              participants: data.pricing.participants,
+            }
+          : null
+      );
       setGuideMessage(data.guideMessage || '');
       setStep('itinerary');
     } catch { /* ignore */ }
@@ -309,7 +348,17 @@ export default function CustomJoinTourContent() {
       setDailyDistancesKm(data.dailyDistancesKm || []);
       setOverLimitDays(data.overLimitDays || []);
       setExtraFeeNotice(data.extraFeeNotice ?? null);
-      setPricing(data.pricing ? { totalPriceKrw: data.pricing.totalPriceKrw, vehicleLabelKo: data.pricing.vehicleLabelKo, participants: data.pricing.participants } : null);
+      setPricing(
+        data.pricing
+          ? {
+              totalPriceKrw: data.pricing.totalPriceKrw,
+              totalPriceUsd:
+                data.pricing.totalPriceUsd ?? krwToUsdForCustomJoinList(data.pricing.totalPriceKrw),
+              vehicleLabelKo: data.pricing.vehicleLabelKo,
+              participants: data.pricing.participants,
+            }
+          : null
+      );
       const removedNotice = Array.isArray(data.removedPlaces) && data.removedPlaces.length > 0
         ? ` (제외된 장소: ${(data.removedPlaces as Array<{ name: string; reason: string }>).map((r) => `${r.name}`).join(', ')})`
         : '';
@@ -334,7 +383,15 @@ export default function CustomJoinTourContent() {
         dailyDistancesKm: data.dailyDistancesKm || [],
         overLimitDays: data.overLimitDays || [],
         extraFeeNotice: data.extraFeeNotice ?? null,
-        pricing: data.pricing ? { totalPriceKrw: data.pricing.totalPriceKrw, vehicleLabelKo: data.pricing.vehicleLabelKo, participants: data.pricing.participants } : null,
+        pricing: data.pricing
+          ? {
+              totalPriceKrw: data.pricing.totalPriceKrw,
+              totalPriceUsd:
+                data.pricing.totalPriceUsd ?? krwToUsdForCustomJoinList(data.pricing.totalPriceKrw),
+              vehicleLabelKo: data.pricing.vehicleLabelKo,
+              participants: data.pricing.participants,
+            }
+          : null,
         guideMessage: (data.guideMessage || '') + removedNotice,
       };
       try {
@@ -425,7 +482,14 @@ export default function CustomJoinTourContent() {
         setError(data.error || '결제 처리에 실패했습니다.');
         return;
       }
-      setConfirmResult(data);
+      const pricing = data.pricing
+        ? {
+            ...data.pricing,
+            totalPriceUsd:
+              data.pricing.totalPriceUsd ?? krwToUsdForCustomJoinList(data.pricing.totalPriceKrw),
+          }
+        : null;
+      setConfirmResult({ ...data, pricing });
       setStep('confirmed');
     } catch (e) {
       setError(e instanceof Error ? e.message : '결제 처리에 실패했습니다.');
@@ -575,7 +639,7 @@ export default function CustomJoinTourContent() {
         bookingDate: bookingDateIso,
         numberOfGuests: participants,
         pickupPointId: null,
-        finalPrice: confirmResult.pricing.totalPriceKrw,
+        finalPrice: confirmResult.pricing.totalPriceUsd,
         paymentMethod: 'full',
         preferredLanguage: language || 'en',
         specialRequests: JSON.stringify({
@@ -614,8 +678,8 @@ export default function CustomJoinTourContent() {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            amount: confirmResult.pricing.totalPriceKrw,
-            currency: 'krw',
+            amount: confirmResult.pricing.totalPriceUsd,
+            currency: 'usd',
             bookingId,
             bookingData: { ...bookingPayload, bookingId, customerInfo },
           }),
@@ -682,7 +746,7 @@ export default function CustomJoinTourContent() {
                 </div>
                 <h3 className="text-base font-bold text-slate-900 mb-1">{proposedTourToJoin.title}</h3>
                 <p className="text-sm font-semibold text-blue-800 mb-4">
-                  {formatPrice(proposedTourToJoin.total_price_krw)} · {proposedTourToJoin.participants}명
+                  {formatPrice(krwToUsdForCustomJoinList(proposedTourToJoin.total_price_krw))} · {proposedTourToJoin.participants}명
                 </p>
                 <label className="mb-2 block text-sm font-semibold text-slate-900">{t('home.customJoinTour.hotelLocationLabel')}</label>
                 <button
@@ -933,7 +997,7 @@ export default function CustomJoinTourContent() {
             {extraFeeNotice && <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.19, duration: 0.35 }} className="mb-3 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-900">{extraFeeNotice}</motion.div>}
             {pricing && (
               <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.26, duration: 0.35 }} className="mb-4 rounded-xl border border-slate-200/90 bg-white/80 px-4 py-3 text-xs text-slate-700">
-                {locale === 'ko' ? pricing.vehicleLabelKo : (pricing.vehicleLabelKo === CUSTOM_JOIN_TOUR.VAN.LABEL_KO ? t('home.customJoinTour.vehicleVan') : t('home.customJoinTour.vehicleLargeVan'))} · {t('home.customJoinTour.vehicleTotalSummary').replace('{{n}}', String(participants)).replace('{{price}}', formatPrice(pricing.totalPriceKrw))}
+                {locale === 'ko' ? pricing.vehicleLabelKo : (pricing.vehicleLabelKo === CUSTOM_JOIN_TOUR.VAN.LABEL_KO ? t('home.customJoinTour.vehicleVan') : t('home.customJoinTour.vehicleLargeVan'))} · {t('home.customJoinTour.vehicleTotalSummary').replace('{{n}}', String(participants)).replace('{{price}}', formatPrice(customJoinPricingDisplayUsd(pricing)))}
               </motion.div>
             )}
             <div className="relative space-y-6">
@@ -1174,7 +1238,7 @@ export default function CustomJoinTourContent() {
                     {confirmResult.pricing && (
                       <div className="flex justify-between border-t border-slate-200/80 pt-2">
                         <span className="text-slate-500">{t('tour.total')}</span>
-                        <span className="text-base font-bold text-blue-700">{formatPrice(confirmResult.pricing.totalPriceKrw)}</span>
+                        <span className="text-base font-bold text-blue-700">{formatPrice(customJoinPricingDisplayUsd(confirmResult.pricing))}</span>
                       </div>
                     )}
                   </div>
@@ -1223,7 +1287,7 @@ export default function CustomJoinTourContent() {
                 transition={{ delay: 0.25, duration: 0.35 }}
                 className="rounded-xl border border-slate-200/90 bg-white/80 px-4 py-3 text-xs text-slate-700"
               >
-                {locale === 'ko' ? confirmResult.pricing.vehicleLabelKo : (confirmResult.pricing.vehicleLabelKo === CUSTOM_JOIN_TOUR.VAN.LABEL_KO ? t('home.customJoinTour.vehicleVan') : t('home.customJoinTour.vehicleLargeVan'))} · {formatPrice(confirmResult.pricing.totalPriceKrw)}
+                {locale === 'ko' ? confirmResult.pricing.vehicleLabelKo : (confirmResult.pricing.vehicleLabelKo === CUSTOM_JOIN_TOUR.VAN.LABEL_KO ? t('home.customJoinTour.vehicleVan') : t('home.customJoinTour.vehicleLargeVan'))} · {formatPrice(customJoinPricingDisplayUsd(confirmResult.pricing))}
               </motion.div>
             )}
 
@@ -1239,7 +1303,12 @@ export default function CustomJoinTourContent() {
                 <p className="text-[11px] text-amber-900/85">{confirmResult.jejuCrossRegionNotice}</p>
                 {confirmResult.jejuCrossRegionExtraFeeKrw != null && (
                   <p className="mt-2 text-[11px] font-medium text-amber-900">
-                    {t('home.customJoinTour.jejuCrossRegionExtraFee', { amount: locale === 'ko' ? (confirmResult.jejuCrossRegionExtraFeeKrw / 10000).toFixed(0) : formatPrice(confirmResult.jejuCrossRegionExtraFeeKrw) })}
+                    {t('home.customJoinTour.jejuCrossRegionExtraFee', {
+                      amount:
+                        locale === 'ko'
+                          ? (confirmResult.jejuCrossRegionExtraFeeKrw / 10000).toFixed(0)
+                          : formatPrice(krwToUsdForCustomJoinList(confirmResult.jejuCrossRegionExtraFeeKrw)),
+                    })}
                   </p>
                 )}
               </motion.div>

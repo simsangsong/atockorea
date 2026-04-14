@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { getAuthUser } from '@/lib/auth';
+import {
+  isReviewWriteWindowOpen,
+  normalizeBookingTourDateYmd,
+  REVIEW_WINDOW_NOT_OPEN_MESSAGE,
+} from '@/lib/review-write-window';
 
 /**
  * GET /api/reviews
@@ -147,7 +152,7 @@ export async function POST(req: NextRequest) {
     // Fetch booking and ensure it belongs to user and is completed
     const { data: booking, error: bookingError } = await supabase
       .from('bookings')
-      .select('id, user_id, status, tour_id')
+      .select('id, user_id, status, tour_id, tour_date')
       .eq('id', bookingId)
       .eq('user_id', userId)
       .single();
@@ -163,6 +168,22 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(
         { error: 'Only completed bookings can be reviewed' },
         { status: 400 }
+      );
+    }
+
+    const tourDateYmd = normalizeBookingTourDateYmd(
+      (booking as { tour_date?: string | null }).tour_date,
+    );
+    if (!tourDateYmd) {
+      return NextResponse.json(
+        { error: 'Booking is missing a valid tour date', code: 'INVALID_TOUR_DATE' },
+        { status: 400 },
+      );
+    }
+    if (!isReviewWriteWindowOpen(tourDateYmd)) {
+      return NextResponse.json(
+        { error: REVIEW_WINDOW_NOT_OPEN_MESSAGE, code: 'REVIEW_WINDOW_NOT_OPEN' },
+        { status: 400 },
       );
     }
 

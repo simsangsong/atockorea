@@ -1,0 +1,108 @@
+================================================================================
+Tour product 페이지 (/tour-product/east-signature-nature-core) Supabase 연동 체크리스트
+================================================================================
+
+[자동으로 레포에 포함된 것]
+- 마이그레이션: supabase/migrations/20260412120000_tour_product_pages_and_offers.sql
+- 시드 생성 스크립트: npm run gen:tour-product-seed
+  → supabase/manual/generated/east-signature-nature-core-detail-payload.json
+  → supabase/manual/generated/insert-tour-product-page-east-signature.generated.sql
+- 앱: TOUR_PRODUCT_USE_SUPABASE=1 일 때 anon 클라이언트로 공개 행만 조회 (RLS)
+- 조립 로직: lib/tour-product/loadTourProductPage.ts
+
+--------------------------------------------------------------------------------
+당신이 수동으로 할 일 (순서대로)
+--------------------------------------------------------------------------------
+
+1) Supabase 프로젝트에 마이그레이션 적용
+   - Supabase Dashboard → SQL Editor 에서 파일 내용 실행
+     또는 CLI: supabase db push / migration 파일 배포
+   - 대상 파일: 20260412120000_tour_product_pages_and_offers.sql
+
+2) (권장) 동일 슬러그의 기존 tours 행 존재 확인
+   - insert 스크립트는 tour_id 를
+     (SELECT id FROM tours WHERE slug = 'east-signature-nature-core')
+     로 채웁니다.
+   - 해당 투어가 없으면 tour_id 는 NULL 로 들어갑니다(예약·리뷰 연동은 나중에 가능).
+
+3) 시드 SQL 실행
+   - 로컬에서 정적 데이터 반영 후 최신 파일을 쓰려면:
+       npm run gen:tour-product-seed
+   - 생성물:
+       supabase/manual/generated/insert-tour-product-page-east-signature.generated.sql
+   - Supabase SQL Editor 에서 위 파일 전체를 붙여넣어 실행.
+   - 결과: tour_product_pages 1행 + 기본 is_default 오퍼 1행(이미 있으면 스킵).
+
+4) 공개(anon) 조회 확인
+   - tour_product_pages.is_published = TRUE 인지 확인.
+   - Table Editor에서 행이 보이는지, 또는 SQL:
+       select slug, is_published from tour_product_pages where slug = 'east-signature-nature-core';
+
+5) 앱 환경 변수 (.env.local)
+   - 이미 있어야 함: NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY
+   - 라이브 데이터 사용 시 추가:
+       TOUR_PRODUCT_USE_SUPABASE=1
+   - 서비스 롤 키는 이 페이지 로드에 필요 없음(anon + RLS).
+
+6) 로컬 검증
+   - npm run dev 후
+       http://localhost:3000/tour-product/east-signature-nature-core
+   - TOUR_PRODUCT_USE_SUPABASE=0 또는 미설정 → 번들 정적 데이터
+   - =1 이고 DB에 행이 있으면 → DB에서 조립한 동일 UI
+
+7) /tour-product/east-signature 스티키 "Book Now"
+   - 기존 `/tour/{tours.id}/checkout` + POST /api/bookings + Stripe 로 이어짐.
+   - 결제 금액은 `tours.price` × 인원(기본 1명) — 마케팅용 "From" 표시와 다를 수 있음.
+   - slug 조회 실패 시 .env: TOUR_PRODUCT_EAST_SIGNATURE_TOUR_ID + TOUR_PRODUCT_EAST_SIGNATURE_UNIT_PRICE_KRW
+
+8) Stripe 연동 시 (나중)
+   - tour_product_offers.stripe_price_id 업데이트
+   - 결제 플로우는 기존 bookings/tours 와 별도로 설계 시 tour_id 매핑 유지
+
+9) 콘텐츠 수정 워크플로
+   - 소스 오브 트루스를 코드에 두려면: staticProductData 수정 → npm run gen:tour-product-seed → SQL 재실행
+   - CMS만 쓰려면: Supabase에서 detail_payload JSON 편집(스키마_version 1 유지)
+
+10) Southwest 상품 (southwest-hallasan-osulloc-aewol)
+   - JSON 수정 후 SQL 재생성: npm run gen:southwest-tour-product-sql
+   - Supabase SQL Editor 에서 실행:
+       supabase/manual/insert-southwest-hallasan-osulloc-aewol-product.sql
+   - 내용: tours + pickup_points + tour_product_pages (en) + tour_product_offers + tour_matching_profiles
+   - 검증: http://localhost:3000/tour-product/southwest-hallasan-osulloc-aewol (TOUR_PRODUCT_USE_SUPABASE=1)
+
+11) Southwest 번체중국어 (zh-TW)
+   - 카피 수정: components/.../southwest-tour-product-full-page.zh-TW.json
+   - SQL 재생성: npm run gen:southwest-tour-product-zh-TW-sql
+   - Supabase SQL Editor 에서 실행 (en/tours 시드 후):
+       supabase/manual/upsert-southwest-hallasan-osulloc-aewol-zh-TW.sql
+   - 앱 로케일이 zh-TW 일 때 동일 URL에서 DB 번체 본문 로드
+
+12) Southwest 간체중국어 (zh-CN → DB locale `zh`)
+   - 카피 수정: components/.../southwest-tour-product-full-page.zh-CN.json
+   - SQL 재생성: npm run gen:southwest-tour-product-zh-CN-sql
+   - Supabase SQL Editor:
+       supabase/manual/upsert-southwest-hallasan-osulloc-aewol-zh.sql
+   - 쿠키 NEXT_LOCALE=zh-CN 이면 resolveTourProductDbLocale() 가 `zh` 행 조회
+
+13) Southwest 한국어 (ko)
+   - 카피 수정: components/.../southwest-tour-product-full-page.ko.json
+   - SQL 재생성: npm run gen:southwest-tour-product-ko-sql
+   - Supabase SQL Editor:
+       supabase/manual/upsert-southwest-hallasan-osulloc-aewol-ko.sql
+   - NEXT_LOCALE=ko 일 때 동일 slug 행 조회
+
+14) Southwest 일본어 (ja)
+   - 카피 수정: components/.../southwest-tour-product-full-page.ja.json
+   - SQL 재생성: npm run gen:southwest-tour-product-ja-sql
+   - Supabase SQL Editor:
+       supabase/manual/upsert-southwest-hallasan-osulloc-aewol-ja.sql
+   - NEXT_LOCALE=ja 일 때 동일 slug 행 조회
+
+15) Southwest 스페인어 (es)
+   - 카피 수정: components/.../southwest-tour-product-full-page.es.json
+   - SQL 재생성: npm run gen:southwest-tour-product-es-sql
+   - Supabase SQL Editor:
+       supabase/manual/upsert-southwest-hallasan-osulloc-aewol-es.sql
+   - NEXT_LOCALE=es 일 때 동일 slug 행 조회
+
+================================================================================

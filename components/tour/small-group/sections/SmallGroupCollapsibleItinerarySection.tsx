@@ -5,6 +5,11 @@ import { motion } from 'framer-motion';
 import { ChevronDown, Route } from 'lucide-react';
 import SmallGroupRouteTimelineSection from './SmallGroupRouteTimelineSection';
 import type { SmallGroupDetailContent, SmallGroupRouteStop } from '../smallGroupDetailContent';
+import {
+  itineraryPlaceholder,
+  itineraryStayChipLabel,
+  stopPurposePreview,
+} from '../itineraryScanHelpers';
 
 const ITIN_EXPAND_EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -16,28 +21,10 @@ export interface SmallGroupCollapsibleItinerarySectionProps {
   sectionCardHint?: string;
 }
 
-function isPlaceholder(value: string | undefined): boolean {
-  const t = (value ?? '').trim();
-  return t === '' || t === '—';
-}
-
-/** Match timeline: first numeric chunk + min label when possible */
-function stayChipLabel(stay: string): string {
-  const m = stay.trim().match(/(\d+)/);
-  if (m) return `${m[1]} min`;
-  const t = stay.trim();
-  return t || '';
-}
-
 function condensedSequenceLabel(stop: SmallGroupRouteStop, index: number, total: number): string {
   const raw = stop.sequenceLabel?.trim();
   if (raw) return raw;
   return `Stop ${index + 1} of ${total}`;
-}
-
-function condensedSummaryLine(stop: SmallGroupRouteStop): string {
-  const s = (stop.cardSummary ?? stop.description).trim();
-  return s || '—';
 }
 
 /**
@@ -46,46 +33,55 @@ function condensedSummaryLine(stop: SmallGroupRouteStop): string {
 function SmallGroupItineraryCondensedList({ stops }: { stops: SmallGroupRouteStop[] }) {
   const total = stops.length;
   return (
-    <div className="sg-dp-itin-condensed relative px-1 pb-0.5 pt-1 sm:px-1.5">
+    <div className="sg-dp-itin-condensed relative px-1 pb-0.5 pt-0.5 sm:px-1.5">
       <div
-        className="pointer-events-none absolute bottom-2 left-[0.875rem] top-2 w-px bg-gradient-to-b from-neutral-200 via-neutral-200/70 to-neutral-100/40 sm:left-[0.9375rem]"
+        className="pointer-events-none absolute bottom-1.5 left-[0.8125rem] top-1.5 w-px bg-gradient-to-b from-neutral-200 via-neutral-200/70 to-neutral-100/40 sm:left-[0.875rem]"
         aria-hidden
       />
       <ul className="m-0 list-none divide-y divide-neutral-100/90 p-0" role="list">
         {stops.map((stop: SmallGroupRouteStop, index: number) => {
           const stayRaw = stop.stayDuration;
-          const stayShow = !isPlaceholder(stayRaw) ? stayChipLabel(stayRaw) : '';
-          const summary = condensedSummaryLine(stop);
+          const stayShow = !itineraryPlaceholder(stayRaw) ? itineraryStayChipLabel(stayRaw) : '';
+          const purpose = stopPurposePreview(stop);
           const seq = condensedSequenceLabel(stop, index, total);
+          const tagOnly =
+            !stop.highlightLabel?.trim() ? stop.tags?.find((x: string) => x.trim())?.trim() ?? '' : '';
           return (
             <li key={stop.id} className="relative m-0">
-              <div className="flex min-w-0 gap-2.5 sm:gap-3">
-                <div className="relative z-[1] flex w-7 shrink-0 justify-center pt-2.5 sm:w-8 sm:pt-3">
+              <div className="flex min-w-0 gap-2 sm:gap-2.5">
+                <div className="relative z-[1] flex w-6 shrink-0 justify-center pt-2 sm:w-7 sm:pt-2.5">
                   <span
-                    className="sg-dp-itin-condensed-marker flex h-7 w-7 items-center justify-center rounded-full border border-neutral-200/90 bg-gradient-to-b from-white to-stone-50 text-[10px] font-semibold tabular-nums shadow-[0_1px_0_rgba(255,255,255,1)_inset,0_1px_2px_rgba(15,23,42,0.05)] sm:h-7 sm:w-7 sm:text-[11px]"
+                    className="sg-dp-itin-condensed-marker flex h-6 w-6 items-center justify-center rounded-full border border-neutral-200/90 bg-gradient-to-b from-white to-stone-50 text-[9px] font-semibold tabular-nums shadow-[0_1px_0_rgba(255,255,255,1)_inset,0_1px_2px_rgba(15,23,42,0.05)] sm:h-7 sm:w-7 sm:text-[10px]"
                     aria-hidden
                   >
                     {String(index + 1).padStart(2, '0')}
                   </span>
                 </div>
-                <div className="min-w-0 flex-1 py-2.5 sm:py-3">
-                  <div className="flex items-start justify-between gap-2 sm:gap-3">
+                <div className="min-w-0 flex-1 py-2 sm:py-2.5">
+                  <div className="flex items-start justify-between gap-2">
                     <div className="min-w-0 flex-1">
                       <p className="sg-dp-type-label-caps m-0 !text-[0.5625rem] !tracking-[0.12em]">{seq}</p>
-                      <p className="sg-dp-card-title--feature m-0 mt-0.5 text-[15px] sm:text-[15.5px]">
+                      <p className="sg-dp-card-title--feature m-0 mt-0.5 text-[14px] leading-tight sm:text-[15px]">
                         {stop.title}
                       </p>
-                      <p className="sg-dp-type-body m-0 mt-1 line-clamp-1 text-[13px] leading-snug sm:line-clamp-2 sm:text-[13.5px] sm:leading-relaxed">
-                        {summary}
+                      <p className="sg-dp-type-body m-0 mt-0.5 line-clamp-1 text-[12.5px] leading-snug text-[color-mix(in_oklab,var(--dp-fg)_80%,var(--dp-muted)_20%)] sm:text-[13px]">
+                        {purpose || '—'}
                       </p>
-                      {stop.highlightLabel?.trim() ? (
-                        <span className="sg-dp-highlight-chip mt-1.5 inline-flex max-w-full rounded-full border border-stone-200/85 bg-white px-2 py-0.5 text-[10px] font-semibold tracking-wide shadow-[0_1px_0_rgba(255,255,255,0.95)_inset]">
-                          {stop.highlightLabel.trim()}
-                        </span>
-                      ) : null}
+                      <div className="mt-1 flex flex-wrap items-center gap-1">
+                        {stop.highlightLabel?.trim() ? (
+                          <span className="sg-dp-highlight-chip inline-flex max-w-full truncate rounded-full border border-stone-200/85 bg-white px-1.5 py-0.5 text-[9px] font-semibold tracking-wide shadow-[0_1px_0_rgba(255,255,255,0.95)_inset] sm:text-[10px]">
+                            {stop.highlightLabel.trim()}
+                          </span>
+                        ) : null}
+                        {tagOnly ? (
+                          <span className="inline-flex max-w-[10rem] truncate rounded-full border border-neutral-200/85 bg-stone-50/90 px-1.5 py-0.5 text-[9px] font-semibold text-neutral-600 sm:max-w-[12rem] sm:text-[10px]">
+                            {tagOnly}
+                          </span>
+                        ) : null}
+                      </div>
                     </div>
                     {stayShow ? (
-                      <span className="sg-dp-duration-pill mt-5 shrink-0 rounded-full border border-neutral-200/90 bg-white px-2.5 py-1 text-[11px] font-semibold tabular-nums tracking-[-0.02em] shadow-[0_1px_0_rgba(255,255,255,1)_inset,0_1px_2px_rgba(15,23,42,0.04)] sm:mt-6">
+                      <span className="sg-dp-duration-pill mt-1 shrink-0 self-start rounded-full border border-neutral-200/90 bg-white px-2 py-0.5 text-[10px] font-semibold tabular-nums tracking-[-0.02em] shadow-[0_1px_0_rgba(255,255,255,1)_inset,0_1px_2px_rgba(15,23,42,0.04)] sm:px-2.5 sm:py-1 sm:text-[11px]">
                         {stayShow}
                       </span>
                     ) : null}
@@ -107,7 +103,7 @@ export default function SmallGroupCollapsibleItinerarySection({
   stops,
   metaLabels,
   sectionTitle = 'Your Day, Stop by Stop',
-  sectionSubtitle = 'A carefully paced journey through East Jeju',
+  sectionSubtitle = 'See the full day at a glance, then open only the stops you care about.',
   sectionCardHint,
 }: SmallGroupCollapsibleItinerarySectionProps) {
   const [open, setOpen] = useState(false);
@@ -142,7 +138,7 @@ export default function SmallGroupCollapsibleItinerarySection({
                     <p className="sg-dp-type-itin-sub mt-0.5">
                       {open
                         ? 'Full route below · tap to collapse'
-                        : `${stops.length} stops in view · open for photos, pacing notes & practicals`}
+                        : `${stops.length} ${stops.length === 1 ? 'stop' : 'stops'} · scan below, then expand any stop for depth`}
                     </p>
                   </div>
                 </div>

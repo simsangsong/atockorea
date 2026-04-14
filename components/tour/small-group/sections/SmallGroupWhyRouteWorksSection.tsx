@@ -2,7 +2,6 @@
 
 import { useMemo } from 'react';
 import {
-  Clock,
   CloudRain,
   ChevronDown,
   MapPin,
@@ -39,6 +38,12 @@ type DayShapeBlock =
   | { id: string; title: string; kind: 'reasons'; reasons: SmallGroupFlowReason[] }
   | { id: string; title: string; kind: 'adjustments'; adjustments: SmallGroupFlowAdjustment[] }
   | { id: string; title: string; kind: 'text'; paragraphs: string[] };
+
+function clipLine(text: string, max: number): string {
+  const t = text.replace(/\s+/g, ' ').trim();
+  if (!t) return '';
+  return t.length > max ? `${t.slice(0, max - 1).trim()}…` : t;
+}
 
 function chunkTextForPrinciples(paragraphs: string[]): string[] {
   const p = paragraphs.map((x) => x.trim()).filter(Boolean);
@@ -153,6 +158,25 @@ function buildDayShapeBlocks(
   });
 }
 
+/** Extra CMS copy only when it is not identical to the primary route body. */
+function supplementalDistinct(whyOrderBody: string, supplementalBody?: string): string {
+  const w = whyOrderBody.trim();
+  const s = (supplementalBody ?? '').trim();
+  if (!s || s === w) return '';
+  return s;
+}
+
+function buildFamilySeniorVisibleLine(family?: string | null, senior?: string | null): string | null {
+  const f = family?.trim() ?? '';
+  const s = senior?.trim() ?? '';
+  if (!f && !s) return null;
+  if (f && s) {
+    return clipLine(`Families — ${f} Seniors — ${s}`, 200);
+  }
+  if (f) return clipLine(`Families — ${f}`, 160);
+  return clipLine(`Seniors — ${s}`, 160);
+}
+
 function FitColumn({
   label,
   sublabel,
@@ -183,35 +207,19 @@ function FitColumn({
   );
 }
 
-function PillarIcon({ name }: { name: 'pacing' | 'sequence' | 'flex' }) {
-  const Icon = name === 'pacing' ? Clock : name === 'sequence' ? Route : CloudRain;
+/** Full route logic inside a single disclosure — no nested accordions. */
+function RouteLogicExpansionContent({
+  blocks,
+  extraParagraphs,
+}: {
+  blocks: DayShapeBlock[];
+  extraParagraphs: string[];
+}) {
   return (
-    <div className="sg-dp-day-principle-card__icon" aria-hidden>
-      <Icon className="h-[17px] w-[17px] text-neutral-600 sm:h-[18px] sm:w-[18px]" strokeWidth={1.75} />
-    </div>
-  );
-}
-
-function DayShapePrincipleCard({ block, index }: { block: DayShapeBlock; index: number }) {
-  const pillar: 'pacing' | 'sequence' | 'flex' =
-    block.id === 'shape-pacing'
-      ? 'pacing'
-      : block.id === 'shape-sequence'
-        ? 'sequence'
-        : block.id === 'shape-flex'
-          ? 'flex'
-          : index === 0
-            ? 'pacing'
-            : index === 1
-              ? 'sequence'
-              : 'flex';
-
-  return (
-    <article className="sg-dp-day-principle-card">
-      <div className="flex gap-3 sm:gap-3.5">
-        <PillarIcon name={pillar} />
-        <div className="min-w-0 flex-1 pt-0.5">
-          <h4 className="sg-dp-card-title m-0 text-[14px] leading-snug tracking-[-0.018em] sm:text-[14.5px]">{block.title}</h4>
+    <div className="space-y-6 sm:space-y-7">
+      {blocks.map((block: DayShapeBlock) => (
+        <div key={block.id} className="min-w-0">
+          <h4 className="sg-dp-card-title m-0 text-[13.5px] leading-snug tracking-[-0.018em] sm:text-[14px]">{block.title}</h4>
 
           {block.kind === 'reasons' ? (
             <ul className="sg-dp-day-principle-list mt-2.5 sm:mt-3">
@@ -273,8 +281,26 @@ function DayShapePrincipleCard({ block, index }: { block: DayShapeBlock; index: 
             </div>
           ) : null}
         </div>
-      </div>
-    </article>
+      ))}
+
+      {extraParagraphs.length > 0 ? (
+        <div className="border-t border-[var(--sg-rule-whisper)] pt-5 sm:pt-6">
+          <p className="sg-dp-type-label-caps m-0 !text-[10px] !tracking-[0.14em]">Editorial note</p>
+          <div className="mt-2 space-y-2.5">
+            {extraParagraphs.map((para: string, i: number) => (
+              <p key={i} className="sg-dp-type-body m-0 text-[13px] leading-relaxed sm:text-[14px]">
+                {para.split('\n').map((line: string, j: number) => (
+                  <span key={j}>
+                    {j > 0 ? <br /> : null}
+                    {line.trim()}
+                  </span>
+                ))}
+              </p>
+            ))}
+          </div>
+        </div>
+      ) : null}
+    </div>
   );
 }
 
@@ -285,12 +311,19 @@ export interface SmallGroupWhyRouteWorksSectionProps {
   adjustments: SmallGroupFlowAdjustment[];
   /** CMS / editorial body when there are no structured flow reasons */
   whyOrderBody: string;
-  /** Long-form route logic (e.g. East Signature); shown when `reasons` non-empty */
+  /** Long-form route logic; only shown when distinct from `whyOrderBody` */
   supplementalBody?: string;
+  familyFitSummary?: string | null;
+  seniorFitSummary?: string | null;
+  /**
+   * When true, renders as a guttered column fragment (no outer `<section>`, no primary header).
+   * Parent supplies the merged “Why this tour works” landmark.
+   */
+  embedded?: boolean;
 }
 
 /**
- * Route curation: editorial fit frame + composed “how we shape the day” pillars.
+ * Two-card editorial frame: fit and route logic each use a single disclosure (closed by default) — no duplicate preview copy outside the expander.
  */
 export default function SmallGroupWhyRouteWorksSection({
   ideal,
@@ -299,13 +332,16 @@ export default function SmallGroupWhyRouteWorksSection({
   adjustments,
   whyOrderBody,
   supplementalBody,
+  familyFitSummary,
+  seniorFitSummary,
+  embedded = false,
 }: SmallGroupWhyRouteWorksSectionProps) {
   const hasFit = ideal.length > 0 || notIdeal.length > 0;
   const hasBothFitColumns = ideal.length > 0 && notIdeal.length > 0;
   const hasFlow = reasons.length > 0;
   const orderIntro = whyOrderBody.trim() ? whyOrderBody.trim() : FALLBACK_ORDER_COPY;
   const hasOrderContent = hasFlow || adjustments.length > 0 || Boolean(whyOrderBody.trim());
-  const showSupplemental = hasFlow && Boolean(supplementalBody?.trim());
+  const distinctSupplemental = supplementalDistinct(whyOrderBody, supplementalBody);
 
   const orderIntroParagraphs = useMemo(() => {
     const raw = orderIntro.trim();
@@ -315,54 +351,47 @@ export default function SmallGroupWhyRouteWorksSection({
   }, [orderIntro]);
 
   const supplementalParagraphs = useMemo(() => {
-    const raw = (supplementalBody ?? '').trim();
+    const raw = distinctSupplemental.trim();
     if (!raw) return [];
     const parts = raw.replace(/\r\n/g, '\n').split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
     return parts.length > 0 ? parts : [raw];
-  }, [supplementalBody]);
+  }, [distinctSupplemental]);
 
   const dayShapeBlocks = useMemo(
     () => buildDayShapeBlocks(hasFlow, reasons, adjustments, orderIntroParagraphs),
     [hasFlow, reasons, adjustments, orderIntroParagraphs],
   );
 
-  const dayShapeLead = useMemo(() => {
-    if (hasFlow && reasons.length > 0) {
-      return 'Context before the coast, energy matched to the decision-heavy stop, and measured flex when sites or weather require it.';
-    }
-    const first = orderIntroParagraphs[0]?.trim() ?? '';
-    if (!first) return '';
-    if (first.length <= 200) return first;
-    return `${first.slice(0, 197).trim()}…`;
-  }, [hasFlow, reasons.length, orderIntroParagraphs]);
+  const familySeniorLine = useMemo(
+    () => buildFamilySeniorVisibleLine(familyFitSummary, seniorFitSummary),
+    [familyFitSummary, seniorFitSummary],
+  );
+
+  const expansionHasBody = dayShapeBlocks.length > 0 || supplementalParagraphs.length > 0;
 
   if (!hasFit && !hasOrderContent) {
     return null;
   }
 
-  const shapeCount = dayShapeBlocks.length;
-
-  return (
-    <section
-      className="sg-dp-mid-slot-editorial sg-dp-section-rule sg-dp-section-band-primary bg-transparent sg-dp-page-gutter font-sans antialiased [font-feature-settings:'kern'_1,'liga'_1]"
-      aria-labelledby="why-route-works-heading"
-    >
-      <div className="sg-dp-page-column">
-        <SmallGroupSectionHeader
-          eyebrow="The route"
-          title="Why this route works"
-          description="Balanced pacing, landmark-led sequencing, and coastal flow—framed for comfort and clarity on the day."
-          descriptionVariant="quiet"
-          titleId="why-route-works-heading"
-          titleVariant="feature"
-        />
-
-        <div className="flex flex-col gap-5 sm:gap-6 md:gap-7">
-          {hasFit ? (
-            <div className="sg-dp-route-curation-fit sg-dp-card-frame sg-dp-card-frame--tint-warm overflow-hidden px-5 py-5 sm:px-6 sm:py-6 lg:px-7 lg:py-7">
-              <p className="sg-dp-type-label-caps m-0 !text-[10px] !tracking-[0.16em]">Who it suits</p>
+  const columnBody = (
+    <div className="flex flex-col gap-6 sm:gap-8 md:gap-9">
+      {hasFit ? (
+        <div className="sg-dp-route-curation-fit sg-dp-card-frame sg-dp-card-frame--tint-warm overflow-hidden px-4 py-4 sm:px-6 sm:py-6 lg:px-7 lg:py-7">
+          <details className="group sg-dp-expand-shell sg-dp-expand-shell--explanatory -mx-4 overflow-hidden sm:-mx-6 lg:-mx-7">
+            <summary className="sg-dp-disclosure-summary sg-dp-accordion-trigger flex list-none items-center justify-between gap-3 px-4 py-3.5 text-left sm:px-6 sm:py-4 lg:px-7">
+              <div className="min-w-0">
+                <p className="sg-dp-type-label-caps m-0 !text-[10px] !tracking-[0.16em]">Fit</p>
+                <h3 className="sg-dp-type-subsection m-0 mt-1 leading-snug">Who it suits</h3>
+              </div>
+              <ChevronDown
+                className="h-4 w-4 shrink-0 text-neutral-400 transition-transform duration-200 group-open:rotate-180"
+                aria-hidden
+                strokeWidth={2}
+              />
+            </summary>
+            <div className="border-t border-[var(--sg-card-stroke-soft)] px-4 pb-4 pt-3 sm:px-6 sm:pb-5 sm:pt-4 lg:px-7">
               {hasBothFitColumns ? (
-                <div className="mt-4 flex flex-col gap-6 sm:mt-5 sm:grid sm:grid-cols-2 sm:gap-8 sm:divide-x sm:divide-[color:var(--sg-rule-soft)]">
+                <div className="flex flex-col gap-6 sm:grid sm:grid-cols-2 sm:gap-8 sm:divide-x sm:divide-[color:var(--sg-rule-soft)]">
                   <div className="min-w-0 sm:pr-6">
                     <FitColumn
                       label="Suited"
@@ -381,17 +410,18 @@ export default function SmallGroupWhyRouteWorksSection({
                   </div>
                 </div>
               ) : (
-                <div className="mt-4 sm:mt-5">
+                <div>
                   {ideal.length > 0 ? (
-                    <FitColumn
-                      label="Suited"
-                      sublabel="Best for"
-                      items={ideal}
-                      markerClass="bg-neutral-900/30"
-                    />
+                    <FitColumn label="Suited" sublabel="Best for" items={ideal} markerClass="bg-neutral-900/30" />
                   ) : null}
                   {notIdeal.length > 0 ? (
-                    <div className={ideal.length > 0 ? 'mt-6 border-t border-[color:var(--sg-rule-soft)] pt-6 sm:mt-8 sm:pt-8' : ''}>
+                    <div
+                      className={
+                        ideal.length > 0
+                          ? 'mt-6 border-t border-[color:var(--sg-rule-soft)] pt-6 sm:mt-8 sm:pt-8'
+                          : ''
+                      }
+                    >
                       <FitColumn
                         label="Heads-up"
                         sublabel="Less ideal for"
@@ -402,69 +432,71 @@ export default function SmallGroupWhyRouteWorksSection({
                   ) : null}
                 </div>
               )}
+              {familySeniorLine ? (
+                <p className="sg-dp-type-body m-0 mt-6 max-w-prose border-t border-[color:var(--sg-rule-soft)] pt-6 text-[13px] leading-relaxed text-neutral-700 sm:mt-8 sm:pt-8 sm:text-[14px]">
+                  <span className="font-semibold text-neutral-900">Households &amp; seniors</span>
+                  {' — '}
+                  {familySeniorLine}
+                </p>
+              ) : null}
             </div>
-          ) : null}
+          </details>
+        </div>
+      ) : null}
 
-          {hasOrderContent ? (
-            <div
-              className={
-                hasFit ? 'border-t border-neutral-200/45 pt-4 sm:border-[color:var(--sg-rule-soft)] sm:pt-5' : ''
-              }
-            >
-              <div className="mb-4 sm:mb-5">
-                <p className="sg-dp-type-utility-section-eyebrow m-0 mb-0.5 sm:mb-1">Day design</p>
-                <h3 className="sg-dp-type-subsection m-0 leading-snug" id="how-we-shape-day-heading">
-                  How we shape the day
-                </h3>
-                {dayShapeLead ? (
-                  <p className="sg-dp-type-body m-0 mt-2 max-w-prose text-[13px] leading-relaxed sm:mt-2.5 sm:text-[14px]">
-                    {dayShapeLead}
+      {hasOrderContent ? (
+        <div className="sg-dp-card-frame overflow-hidden border-stone-200/80 bg-white/95 px-4 py-4 sm:px-6 sm:py-6 lg:px-7 lg:py-7">
+          <p className="sg-dp-type-label-caps m-0 !text-[10px] !tracking-[0.16em]">Design</p>
+          <h3 className="sg-dp-type-subsection m-0 mt-1 leading-snug">Route logic</h3>
+
+          {expansionHasBody ? (
+            <details className="group sg-dp-expand-shell sg-dp-expand-shell--explanatory mt-3 overflow-hidden sm:mt-4">
+              <summary className="sg-dp-disclosure-summary sg-dp-accordion-trigger flex list-none items-center justify-between gap-3 p-3.5 text-left sm:p-4">
+                <div className="min-w-0">
+                  <p className="sg-dp-type-label-caps m-0">Step inside the logic</p>
+                  <p className="sg-dp-type-accordion mt-0.5 text-[13px] font-medium leading-snug text-neutral-800">
+                    Pacing, sequence, and how we adapt on the day
                   </p>
-                ) : null}
-              </div>
-
-              {shapeCount > 0 ? (
-                <div className="sg-dp-day-shape-module">
-                  <div className="sg-dp-day-shape-grid" data-shape-count={String(shapeCount)}>
-                    {dayShapeBlocks.map((block: DayShapeBlock, index: number) => (
-                      <DayShapePrincipleCard key={block.id} block={block} index={index} />
-                    ))}
-                  </div>
                 </div>
-              ) : null}
-
-              {showSupplemental ? (
-                <details className="group sg-dp-expand-shell sg-dp-expand-shell--explanatory mt-4 overflow-hidden p-0 sm:mt-5">
-                  <summary className="sg-dp-disclosure-summary sg-dp-accordion-trigger flex list-none items-center justify-between gap-3 p-4 text-left md:px-5 md:py-4">
-                    <div className="min-w-0">
-                      <p className="sg-dp-type-label-caps">Full route logic</p>
-                      <h4 className="sg-dp-type-accordion mt-1">Stop order in detail</h4>
-                    </div>
-                    <ChevronDown
-                      className="h-4 w-4 shrink-0 text-neutral-400 transition-transform duration-200 group-open:rotate-180"
-                      aria-hidden
-                      strokeWidth={2}
-                    />
-                  </summary>
-                  <div className="border-t border-[var(--sg-card-stroke-soft)] px-4 pb-4 pt-3 md:px-5 md:pb-5">
-                    <div className="space-y-2.5">
-                      {supplementalParagraphs.map((para: string, i: number) => (
-                        <p key={i} className="sg-dp-type-body m-0 text-[13px] leading-relaxed sm:text-[14px]">
-                          {para.split('\n').map((line: string, j: number) => (
-                            <span key={j}>
-                              {j > 0 ? <br /> : null}
-                              {line.trim()}
-                            </span>
-                          ))}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                </details>
-              ) : null}
-            </div>
+                <ChevronDown
+                  className="h-4 w-4 shrink-0 text-neutral-400 transition-transform duration-200 group-open:rotate-180"
+                  aria-hidden
+                  strokeWidth={2}
+                />
+              </summary>
+              <div className="border-t border-[var(--sg-card-stroke-soft)] px-4 pb-4 pt-3 sm:px-6 sm:pb-5 sm:pt-4">
+                <RouteLogicExpansionContent blocks={dayShapeBlocks} extraParagraphs={supplementalParagraphs} />
+              </div>
+            </details>
           ) : null}
         </div>
+      ) : null}
+    </div>
+  );
+
+  if (embedded) {
+    return (
+      <div className="bg-transparent sg-dp-page-gutter font-sans antialiased [font-feature-settings:'kern'_1,'liga'_1]">
+        <div className="sg-dp-page-column">{columnBody}</div>
+      </div>
+    );
+  }
+
+  return (
+    <section
+      className="sg-dp-mid-slot-editorial sg-dp-section-rule sg-dp-section-band-primary bg-transparent sg-dp-page-gutter font-sans antialiased [font-feature-settings:'kern'_1,'liga'_1]"
+      aria-labelledby="why-route-works-heading"
+    >
+      <div className="sg-dp-page-column">
+        <SmallGroupSectionHeader
+          eyebrow="The route"
+          title="Why this route works"
+          description="Who this tour suits, and how we sequence the day—with one clear place for the full rationale."
+          descriptionVariant="quiet"
+          titleId="why-route-works-heading"
+          titleVariant="feature"
+        />
+        {columnBody}
       </div>
     </section>
   );

@@ -1,0 +1,1755 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 1,
+  "slug": "southwest-hallasan-osulloc-aewol",
+  "locale": "es",
+  "seo": {
+    "pageTitle": "Tour en grupo reducido por el suroeste de Jeju: Hallasan, Jusangjeolli, O’Sulloc y Aewol | AtoC Korea",
+    "metaDescription": "Un día equilibrado por el suroeste de Jeju con la corta caminata de Eoseungsaengak en Hallasan, los acantilados de Jusangjeolli, Cheonjeyeon, O’Sulloc y un final relajado en la calle de cafés de Aewol."
+  },
+  "catalog_card": {
+    "slug": "southwest-hallasan-osulloc-aewol",
+    "title": "Tour en grupo reducido por el suroeste de Jeju: Hallasan, O’Sulloc y Aewol",
+    "subtitle": "Caminata corta en Hallasan. Acantilados de basalto. Senderos junto a cascadas. Campos de té y un final relajado en Aewol.",
+    "region": "Suroeste de Jeju",
+    "duration": "8 h",
+    "stopsCount": 6,
+    "rating": 4.8,
+    "reviewCount": 127,
+    "badges": [
+      "Ideal para primera visita",
+      "Suroeste de Jeju"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
+    "priceLabel": "Desde 58 USD por persona",
+    "shortCardDescription": "Un recorrido bien estructurado por el suroeste de Jeju con una corta caminata en Hallasan, la costa basáltica de Jusangjeolli, Cheonjeyeon, los campos de té de O’Sulloc y un final relajado en la calle de cafés de Aewol."
+  },
+  "headlineLine1": "Jeju: Hallasan, té y Aewol en el suroeste",
+  "headlineLine2": "Tour en grupo reducido",
+  "price": {
+    "amountLabel": "58",
+    "currency": "USD",
+    "per": "persona"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "imagePosition": "center 35%",
+    "tagline": "Caminata corta en Hallasan. Acantilados de basalto. Senderos junto a cascadas. Campos de té y un final relajado en Aewol.",
+    "pills": [
+      "Ideal para primera visita",
+      "Suroeste de Jeju"
+    ],
+    "meta": {
+      "duration": "8 h",
+      "region": "Suroeste de Jeju",
+      "stops": "6 paradas",
+      "rating": 4.8,
+      "ratingStars": 4
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Resumen"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerario"
+    },
+    {
+      "id": "details",
+      "label": "Detalles"
+    },
+    {
+      "id": "faq",
+      "label": "Preguntas frecuentes"
+    },
+    {
+      "id": "reviews",
+      "label": "Reseñas"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "Fotogenia",
+      "value": "Alta"
+    },
+    {
+      "icon": "mountain",
+      "label": "Vistas",
+      "value": "Altas"
+    },
+    {
+      "icon": "footprints",
+      "label": "Caminata",
+      "value": "Moderada"
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Tolerancia a la lluvia",
+      "value": "Media"
+    },
+    {
+      "icon": "users",
+      "label": "Apto para familias",
+      "value": "Buena"
+    },
+    {
+      "icon": "scale",
+      "label": "Equilibrio",
+      "value": "Mixto"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "video",
+      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+      "location": "Vista general de la ruta",
+      "atmosphere": "El día de un vistazo",
+      "alt": "Vista general de la ruta por el suroeste de Jeju"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+      "location": "Inicio en Hallasan",
+      "atmosphere": "Arranque fresco en la montaña",
+      "alt": "Sendero Eoseungsaengak en Hallasan"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+      "location": "Costa basáltica",
+      "atmosphere": "Dramatismo de la costa volcánica",
+      "alt": "Litoral del acantilado Daepo Jusangjeolli"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      "location": "Paseo entre bosque y cascadas",
+      "atmosphere": "Frescura verde y tranquila",
+      "alt": "Sendero boscoso de Cheonjeyeon"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+      "location": "Pausa entre campos de té",
+      "atmosphere": "Calma verde y abierta",
+      "alt": "Ambiente del Museo del Té O’Sulloc y sus campos de té"
+    },
+    {
+      "id": 6,
+      "type": "video",
+      "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+      "location": "Final en la costa de Aewol",
+      "atmosphere": "Desconexión al final del día",
+      "alt": "Calle costera de cafés en Aewol"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "09:00",
+      "duration": "70 min",
+      "name": "Hallasan Eoseungsaengak",
+      "category": "Sendero corto en Hallasan",
+      "description": "El día empieza en Hallasan, cuando el aire aún es fresco y el grupo conserva toda su energía. Eoseungsaengak es una de las rutas más cortas y accesibles de Hallasan, así que ofrece una auténtica entrada de montaña sin convertir la jornada en una caminata exigente de día completo.",
+      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+      "highlights": [
+        "Ruta corta en Hallasan con sensación de cumbre muy gratificante",
+        "Vistas amplias sobre Jeju City, los oreum y las laderas altas de Hallasan",
+        "Un inicio mucho más inmersivo que un simple mirador junto a la carretera",
+        "Buen equilibrio entre actividad y accesibilidad para grupos de distintas edades"
+      ],
+      "timeUsed": [
+        "Llegada, breve explicación del sendero y ajuste rápido del ritmo del grupo",
+        "Tramo principal de subida hasta la zona del mirador",
+        "Pequeña pausa en la cima, fotos y descenso"
+      ],
+      "whyOnRoute": "Empezar aquí aprovecha mejor la energía del grupo y da al día una narrativa más clara, de la montaña hacia la costa.",
+      "visitBasics": {
+        "hours": "Acceso al sendero desde las 05:00; se aplican horarios de cierre estacionales",
+        "closed": "Posibles restricciones según el tiempo",
+        "admission": "Gratis",
+        "walking": "Moderada; corta, pero con bastantes escaleras"
+      },
+      "convenience": {
+        "restroom": "Zona de entrada de Eorimok",
+        "parking": "Disponible"
+      },
+      "smartNotes": {
+        "photo": "Las tomas abiertas desde la cresta funcionan mejor que los primeros planos una vez que el grupo llega a las zonas altas del mirador.",
+        "facilities": "Las mejores instalaciones están en la entrada del sendero, no durante la ruta.",
+        "tip": "Esta parada se disfruta más si se vive como una caminata panorámica y enfocada, no como un paseo lento con demasiadas pausas."
+      }
+    },
+    {
+      "number": 2,
+      "time": "10:50",
+      "duration": "40 min",
+      "name": "Acantilado Daepo Jusangjeolli",
+      "category": "Costa basáltica",
+      "description": "Tras comenzar en Hallasan, la ruta se abre de forma espectacular frente al mar. Jusangjeolli suma uno de los paisajes volcánicos más icónicos de Jeju, donde los acantilados de basalto columnar se encuentran con el oleaje y regalan el primer gran momento costero del día.",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+      "highlights": [
+        "Las emblemáticas formaciones hexagonales de basalto de Jeju",
+        "Vistas potentes al mar con un contraste visual muy marcado tras el sendero de montaña",
+        "Parada compacta con una recompensa paisajística muy alta",
+        "Una historia geológica clara que enlaza de forma natural con Hallasan"
+      ],
+      "timeUsed": [
+        "Llegada y breve orientación en la entrada",
+        "Paseo principal por la plataforma costera de observación",
+        "Tiempo para fotos y reunión del grupo antes de salir"
+      ],
+      "whyOnRoute": "Permite pasar de la montaña a la costa volcánica de Jeju sin romper el hilo geológico del día.",
+      "visitBasics": {
+        "hours": "09:00-18:00 (último acceso 17:40)",
+        "closed": "Abierto todo el año",
+        "admission": "Adultos 2.000 / Niños y jóvenes 1.000 KRW",
+        "walking": "Fácil"
+      },
+      "convenience": {
+        "restroom": "Zona de entrada",
+        "parking": "Estacionamiento de pago"
+      },
+      "smartNotes": {
+        "photo": "Los ángulos laterales suelen captar mejor el dibujo del basalto y la fuerza del mar que las tomas centradas.",
+        "facilities": "Las instalaciones son sencillas, pero funcionales, cerca de la entrada.",
+        "tip": "El viento y la bruma marina pueden cambiar mucho la sensación de esta parada, por eso aquí se mantiene un ritmo más ágil."
+      }
+    },
+    {
+      "number": 3,
+      "time": "11:50",
+      "duration": "60 min",
+      "name": "Almuerzo",
+      "category": "Pausa de mediodía",
+      "description": "El almuerzo queda entre las paradas más impactantes de la costa sur y el tramo más suave de té y cafés. Funciona como una pausa real para recuperar energía tras la caminata de la mañana y disfrutar la segunda mitad del día con un ritmo más relajado.",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+      "highlights": [
+        "Pausa natural después del tramo de Hallasan y los acantilados",
+        "Mejor ritmo para grupos de edades variadas",
+        "Transición fluida hacia la secuencia de cascada y campos de té",
+        "Ayuda a que la última parada en Aewol se sienta relajada y no apresurada"
+      ],
+      "timeUsed": [
+        "Llegada y acomodo en el restaurante",
+        "Comida y breve descanso",
+        "Preparación para salir hacia la siguiente parada panorámica"
+      ],
+      "whyOnRoute": "Colocar el almuerzo aquí mantiene el día equilibrado y evita que la primera mitad se sienta demasiado cargada.",
+      "visitBasics": {
+        "hours": "Horario del restaurante",
+        "closed": "Varía",
+        "admission": "Incluido o a la carta",
+        "walking": "Mínima"
+      },
+      "convenience": {
+        "restroom": "Servicios del restaurante",
+        "parking": "Disponible"
+      },
+      "smartNotes": {
+        "photo": "Es la mejor parada para fotos de comida si el grupo quiere una galería con un aire más lifestyle.",
+        "facilities": "Servicios completos de restaurante.",
+        "tip": "Un almuerzo tranquilo mejora mucho más el ritmo de la tarde que intentar ahorrar unos pocos minutos."
+      }
+    },
+    {
+      "number": 4,
+      "time": "13:00",
+      "duration": "50 min",
+      "name": "Cascadas de Cheonjeyeon",
+      "category": "Cascadas y paseo por el bosque",
+      "description": "Cheonjeyeon aporta un ambiente más fresco y verde después de la costa abierta. Los puentes, los senderos arbolados y los miradores de cascadas añaden una capa escénica más suave antes de que el día vuelva a abrirse hacia los campos de té y la costa noroeste de Jeju.",
+      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      "highlights": [
+        "Miradores de cascadas con una atmósfera más sombreada y tranquila",
+        "Secuencia de puentes y bosque que cambia por completo la textura del día",
+        "Una parada panorámica que se siente más fresca tras la exposición costera",
+        "Buen contraste antes del final entre té y cafés frente al mar"
+      ],
+      "timeUsed": [
+        "Llegada y explicación de la ruta en la entrada",
+        "Tramo principal de caminata por el recinto de las cascadas",
+        "Paradas en los miradores, fotos y regreso"
+      ],
+      "whyOnRoute": "Suaviza la ruta después de Jusangjeolli y prepara al grupo para una segunda mitad más calmada.",
+      "visitBasics": {
+        "hours": "09:00-17:50 (último acceso 17:10)",
+        "closed": "Abierto todo el año",
+        "admission": "Adultos 2.500 / Adolescentes y niños 1.350 KRW",
+        "walking": "Moderada; posibles escaleras y superficies mojadas"
+      },
+      "convenience": {
+        "restroom": "Zona de entrada",
+        "parking": "Disponible"
+      },
+      "smartNotes": {
+        "photo": "Las composiciones por capas entre puentes y cascadas suelen funcionar mejor que intentar meter todo en una sola toma.",
+        "facilities": "Las instalaciones básicas se concentran cerca de la entrada.",
+        "tip": "Esta parada se disfruta más a un ritmo constante, porque las escaleras y las zonas resbaladizas pueden ralentizar al grupo de forma natural."
+      }
+    },
+    {
+      "number": 5,
+      "time": "14:20",
+      "duration": "60 min",
+      "name": "Museo del Té O’Sulloc",
+      "category": "Campos de té y parada cultural",
+      "description": "Después del paseo entre cascadas, O’Sulloc abre la ruta hacia una atmósfera mucho más serena entre campos de té. El museo, la tienda y el paisaje verde que lo rodea añaden un matiz más lifestyle antes del cierre relajado en la costa de Aewol.",
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+      "highlights": [
+        "Paisaje de campos de té de Jeju en un entorno abierto y calmado",
+        "Una parada ligada a la cultura del té que se siente más ligera tras el tramo de bosque",
+        "Gran valor fotográfico entre hileras verdes, arquitectura moderna y postres",
+        "Transición natural entre el sightseeing escénico y el final relajado en Aewol"
+      ],
+      "timeUsed": [
+        "Llegada y breve orientación en la zona del museo",
+        "Vistas de los campos de té, recorrido por el museo o la tienda y tiempo de café",
+        "Punto de encuentro y salida hacia Aewol"
+      ],
+      "whyOnRoute": "Baja el ritmo después de la mañana más activa y da a la parte final del recorrido una transición emocional mucho más suave.",
+      "visitBasics": {
+        "hours": "Normalmente 09:00-18:00; posible variación según la temporada",
+        "closed": "Abierto todo el año",
+        "admission": "Gratis",
+        "walking": "Fácil"
+      },
+      "convenience": {
+        "restroom": "Zona del museo y la cafetería",
+        "parking": "Disponible"
+      },
+      "smartNotes": {
+        "photo": "Las tomas amplias de los campos de té y los ángulos laterales en la cafetería suelen funcionar mejor que las fotos demasiado cerradas del producto.",
+        "facilities": "Es una de las paradas más cómodas del final del día para baños, bebidas y descanso sentado.",
+        "tip": "Esta visita se disfruta más como una pausa escénica con tiempo flexible para explorar, no como una visita apurada centrada solo en el museo."
+      }
+    },
+    {
+      "number": 6,
+      "time": "15:50",
+      "duration": "60 min",
+      "name": "Calle de cafés de Aewol",
+      "category": "Final costero entre cafés",
+      "description": "Aewol cierra el día con una sensación mucho más ligera. Después del aire de montaña, los acantilados de basalto, los senderos junto a cascadas y los campos de té, la ruta se relaja entre vistas al mar, terrazas de cafés y un ritmo costero más pausado que funciona muy bien como cierre.",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+      "highlights": [
+        "Cafés con vistas al mar y un ambiente de paseo muy relajado al final del día",
+        "Paisaje de la costa de Handam con un cierre más suave y lifestyle",
+        "Tiempo flexible para café, fotos y un ritmo más lento",
+        "Un cierre con mucho contraste frente a la mañana más activa"
+      ],
+      "timeUsed": [
+        "Llegada y breve orientación por la zona",
+        "Tiempo libre para café o paseo costero",
+        "Punto de encuentro y salida para el traslado de regreso"
+      ],
+      "whyOnRoute": "Aewol funciona mejor como el cierre emocional del día, con un ritmo más abierto y sin presión al final del recorrido.",
+      "visitBasics": {
+        "hours": "La zona está abierta todo el día; cada cafetería tiene su propio horario",
+        "closed": "Ninguno para la zona en general",
+        "admission": "Gratis",
+        "walking": "Fácil"
+      },
+      "convenience": {
+        "restroom": "Depende de la cafetería elegida",
+        "parking": "Hay estacionamiento en la zona"
+      },
+      "smartNotes": {
+        "photo": "La luz de la tarde y las terrazas orientadas de lado al mar suelen dar aquí las mejores fotos.",
+        "facilities": "La comodidad depende del café elegido, por eso esta parada se mantiene flexible en lugar de fijarse en un solo local.",
+        "tip": "Es la parada donde más se disfruta un ritmo libre en vez de un horario demasiado guiado."
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "id": "01",
+      "name": "Eoseungsaengak",
+      "theme": "Hallasan"
+    },
+    {
+      "id": "02",
+      "name": "Jusangjeolli",
+      "theme": "Costa"
+    },
+    {
+      "id": "03",
+      "name": "Almuerzo",
+      "theme": "Pausa"
+    },
+    {
+      "id": "04",
+      "name": "Cheonjeyeon",
+      "theme": "Cascada"
+    },
+    {
+      "id": "05",
+      "name": "O’Sulloc",
+      "theme": "Té"
+    },
+    {
+      "id": "06",
+      "name": "Aewol",
+      "theme": "Costa"
+    }
+  ],
+  "routePhases": [
+    {
+      "label": "Mañana",
+      "range": "1-2",
+      "theme": "De Hallasan a la costa",
+      "bgClass": "bg-sky-50/70",
+      "textClass": "text-sky-700",
+      "dotClass": "bg-sky-500"
+    },
+    {
+      "label": "Mediodía",
+      "range": "3-4",
+      "theme": "Almuerzo y cascada",
+      "bgClass": "bg-amber-50/70",
+      "textClass": "text-amber-700",
+      "dotClass": "bg-amber-500"
+    },
+    {
+      "label": "Final",
+      "range": "5-6",
+      "theme": "Té y Aewol",
+      "bgClass": "bg-emerald-50/70",
+      "textClass": "text-emerald-700",
+      "dotClass": "bg-emerald-500"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "Cómo fluye este día",
+    "subtitle": "Hallasan, costa de basalto, almuerzo, cascada, campos de té y cierre en la costa de Aewol. De 09:00 a 17:30."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "Quienes visitan Jeju por primera vez y parejas",
+      "Familias con adultos",
+      "Viajeros que buscan naturaleza, campos de té y un cierre relajado",
+      "Adultos mayores activos"
+    ],
+    "lessIdeal": [
+      "Personas que prefieren evitar escaleras o subidas cortas",
+      "Grupos con carrito de bebé",
+      "Niños muy pequeños"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Ritmo y estructura",
+        "icon": "sun",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "Hallasan primero, cuando la energía está intacta",
+            "detail": "Eoseungsaengak funciona mejor al inicio, cuando el grupo puede disfrutar la subida corta antes de entrar en la parte costera del día."
+          },
+          {
+            "label": "Almuerzo en el punto justo del recorrido",
+            "detail": "El almuerzo reinicia el día entre la mañana más expuesta y la secuencia más suave de cascada y té."
+          },
+          {
+            "label": "Un cierre más ligero después de O’Sulloc",
+            "detail": "La ruta pasa por los campos de té antes de terminar en Aewol, así que la jornada se abre de forma natural hacia café, vistas al mar y un ritmo más relajado."
+          }
+        ]
+      },
+      {
+        "title": "Cómo se construye la ruta",
+        "icon": "mountain",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "Montaña antes que costa",
+            "detail": "El inicio en Hallasan da altura y textura al recorrido antes de que el mar se abra en Jusangjeolli."
+          },
+          {
+            "label": "Cascada antes de los campos de té",
+            "detail": "Cheonjeyeon refresca primero la ruta y luego O’Sulloc vuelve a abrirla con vistas de té y un ritmo de caminata mucho más cómodo."
+          },
+          {
+            "label": "Costa de cafés al final",
+            "detail": "Aewol cierra el día con una parada costera de estilo lifestyle en lugar de otra caminata exigente."
+          }
+        ]
+      },
+      {
+        "title": "Cuando cambian las condiciones",
+        "icon": "wind",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-600",
+        "items": [
+          {
+            "label": "El tiempo en Hallasan sí importa",
+            "detail": "Eoseungsaengak puede verse afectado por cambios repentinos del clima o por controles del sendero."
+          },
+          {
+            "label": "Viento en la costa",
+            "detail": "Jusangjeolli y Aewol se sienten mucho más expuestos cuando sopla fuerte que las partes interiores del recorrido."
+          },
+          {
+            "label": "Equilibrio en la caminata",
+            "detail": "El día sigue siendo manejable para la mayoría, pero las escaleras y las subidas cortas siguen siendo importantes en Eoseungsaengak y Cheonjeyeon."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "Recogida y regreso",
+      "preview": "Recogida en el lobby del hotel en la zona de Jeju City",
+      "content": [
+        "Recogida en el lobby de tu hotel entre las 08:20 y las 08:50",
+        "Regreso aproximado entre las 17:50 y las 18:20",
+        "Recogida en el aeropuerto disponible bajo solicitud",
+        "La hora exacta de recogida se confirma la noche anterior"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "Caminata y terreno",
+      "preview": "Nivel moderado en general, manejable para la mayoría",
+      "content": [
+        "Caminata total: aproximadamente 4,5-5,5 km entre todas las paradas",
+        "Eoseungsaengak: sendero corto en subida con muchas escaleras",
+        "Jusangjeolli: senderos costeros fáciles de recorrer",
+        "Cheonjeyeon: caminos de bosque, escaleras y algunas superficies mojadas",
+        "O’Sulloc y Aewol: caminata fácil con ritmo flexible",
+        "Se recomiendan mucho zapatos cómodos para caminar"
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "Clima y manejo de cierres",
+      "preview": "Opera en la mayoría de las condiciones con ajustes si hace falta",
+      "content": [
+        "Lluvia ligera: el tour opera con normalidad",
+        "Lluvia fuerte o control de senderos: Eoseungsaengak puede acortarse o ajustarse",
+        "Viento fuerte: puede reducirse el tiempo de caminata en Jusangjeolli o Aewol",
+        "Mal tiempo en la segunda mitad del día: O’Sulloc puede ganar más protagonismo dentro de la ruta",
+        "Cierres de atracciones: se pueden ofrecer paradas alternativas cuando sea necesario"
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "Qué llevar y cómo vestirse",
+      "preview": "Zapatos cómodos, capas y una chaqueta ligera",
+      "content": [
+        "Zapatos con buen agarre",
+        "Capas para los cambios de temperatura entre montaña y costa",
+        "Chaqueta ligera que proteja del viento",
+        "Gorra o sombrero y protector solar",
+        "Botella de agua"
+      ]
+    },
+    {
+      "id": "included",
+      "title": "Incluido / no incluido",
+      "preview": "Guía, vehículo, recogida y entradas",
+      "variant": "included",
+      "content": [
+        "Guía profesional de habla inglesa",
+        "Vehículo para grupo reducido",
+        "Recogida y regreso al hotel (Jeju City)",
+        "Todas las entradas",
+        "Agua embotellada",
+        "Almuerzo (se paga directamente en el restaurante)",
+        "Compras personales",
+        "Propinas"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "11°",
+      "label": "Hoy · Despejado"
+    },
+    "tomorrow": {
+      "temp": "18°/13°",
+      "label": "Mañana · Llovizna"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "name": "Primavera",
+      "icon": "flower",
+      "description": "La flor de colza tiñe la costa de dorado",
+      "tag": "Temporada de flores",
+      "bgClass": "bg-spring",
+      "iconColor": "text-pink-500"
+    },
+    {
+      "name": "Verano",
+      "icon": "sun",
+      "description": "Días más largos y verdes intensos",
+      "tag": "Días más largos",
+      "bgClass": "bg-summer",
+      "iconColor": "text-sky-500"
+    },
+    {
+      "name": "Otoño",
+      "icon": "leaf",
+      "description": "Cielos despejados y visibilidad nítida",
+      "tag": "Mejores vistas",
+      "bgClass": "bg-autumn",
+      "iconColor": "text-amber-600"
+    },
+    {
+      "name": "Invierno",
+      "icon": "snow",
+      "description": "Senderos más tranquilos y menos horas de luz",
+      "tag": "Ambiente sereno",
+      "bgClass": "bg-winter",
+      "iconColor": "text-slate-500"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "Operador con licencia local",
+      "description": "Guiado autorizado en Jeju",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600"
+    },
+    {
+      "icon": "route",
+      "title": "Expertos en la ruta",
+      "description": "Recorrido afinado para el suroeste",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600"
+    },
+    {
+      "icon": "users",
+      "title": "Grupo reducido",
+      "description": "Máximo 8 viajeros",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Inmediatamente",
+      "title": "Confirmación instantánea",
+      "detail": "Confirmación de la reserva con resumen del itinerario"
+    },
+    {
+      "timing": "12 horas antes",
+      "title": "Recordatorio 12 horas antes",
+      "detail": "Actualización del clima y posibles ajustes"
+    },
+    {
+      "timing": "La noche anterior",
+      "title": "Información final de recogida",
+      "detail": "Hora exacta de recogida y contacto del conductor"
+    },
+    {
+      "timing": "La mañana del tour",
+      "title": "Notas de ruta del día",
+      "detail": "Briefing matutino según las condiciones"
+    },
+    {
+      "timing": "Durante el tour",
+      "title": "Consejos en cada parada",
+      "detail": "Orientación en tiempo real en cada ubicación"
+    },
+    {
+      "timing": "Después del tour",
+      "title": "Asistencia posviaje",
+      "detail": "Seguimiento y recomendaciones"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "first-time",
+      "question": "¿Es una buena opción para quienes visitan Jeju por primera vez?",
+      "answer": "Sí. Combina paisajes de Hallasan, una costa volcánica emblemática, una parada clásica de cascadas, ambiente de campos de té y un final relajado en Aewol, todo en un día muy equilibrado."
+    },
+    {
+      "id": "walking",
+      "question": "¿La caminata es muy difícil?",
+      "answer": "No en general. La parte más activa es Eoseungsaengak, que es corta pero tiene bastantes escaleras; el resto del día tiene una exigencia moderada para la mayoría de los viajeros."
+    },
+    {
+      "id": "rain",
+      "question": "¿El tour se puede hacer si llueve?",
+      "answer": "Sí. La ruta puede ajustarse cuando el tiempo está húmedo, aunque Eoseungsaengak y algunos tramos costeros expuestos pueden acortarse según las condiciones."
+    },
+    {
+      "id": "parents",
+      "question": "¿Se puede hacer con padres o familiares mayores?",
+      "answer": "Sí. En general es una ruta cómoda para familias adultas, aunque sigue siendo más adecuada para personas que puedan manejar escaleras y pequeñas subidas."
+    },
+    {
+      "id": "children",
+      "question": "¿Puedo unirme con niños?",
+      "answer": "Sí. Se adapta mejor a niños de 8 años en adelante que estén cómodos con una caminata corta y con el ritmo de una excursión de día completo."
+    },
+    {
+      "id": "order",
+      "question": "¿Puede cambiar el orden de las paradas?",
+      "answer": "Sí. El clima en la montaña, el viento, el tráfico y la afluencia de visitantes pueden afectar la secuencia, sobre todo en Eoseungsaengak y en las paradas costeras."
+    },
+    {
+      "id": "lunch",
+      "question": "¿El almuerzo está incluido?",
+      "answer": "Depende de la configuración del producto. La ruta sí incluye una pausa para almorzar a mitad del día, pero que la comida esté incluida o no dependerá de la tarifa de tu reserva."
+    },
+    {
+      "id": "why-eoseungsaengak",
+      "question": "¿Por qué empezar en Eoseungsaengak?",
+      "answer": "Porque da al día una verdadera apertura en Hallasan mientras el grupo todavía tiene energía fresca, sin convertir la ruta en una caminata de montaña de jornada completa."
+    },
+    {
+      "id": "why-jusangjeolli",
+      "question": "¿Por qué visitar Jusangjeolli después de Hallasan?",
+      "answer": "Porque mantiene viva la narrativa volcánica: de la montaña a una de las costas basálticas más impactantes de Jeju."
+    },
+    {
+      "id": "why-osulloc",
+      "question": "¿Por qué O’Sulloc va antes de Aewol?",
+      "answer": "Porque O’Sulloc funciona como una transición más calmada después del paseo por la cascada, de modo que la última parada en Aewol se sienta relajada y no apresurada."
+    },
+    {
+      "id": "later-structure",
+      "question": "¿Por qué está organizada así la segunda mitad del día?",
+      "answer": "El almuerzo y Cheonjeyeon suavizan la ruta después de la mañana más expuesta, O’Sulloc añade una pausa ligera entre campos de té y Aewol cierra el día sin otro tramo exigente de caminata."
+    }
+  ],
+  "guestReviews": [
+    {
+      "id": 1,
+      "author": "Sarah M.",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+      "location": "Singapur",
+      "date": "Marzo de 2024",
+      "rating": 5,
+      "title": "Un día por el suroeste de Jeju realmente bien equilibrado",
+      "text": "La ruta tenía muchísimo sentido: empezar en Hallasan le dio energía al día y, después de eso, Jusangjeolli se sintió todavía más impresionante. Nos encantó especialmente que O’Sulloc viniera antes de Aewol, porque la tarde fue bajando de ritmo de una forma muy natural.",
+      "helpful": 24,
+      "verified": true,
+      "tripType": "Pareja",
+      "photos": [
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
+      ]
+    },
+    {
+      "id": 2,
+      "author": "James K.",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "location": "Hong Kong",
+      "date": "Marzo de 2024",
+      "rating": 5,
+      "title": "Gran ruta por el suroeste con un final muy relajado",
+      "text": "Hemos hecho varios tours por Corea y este destacó muchísimo por cómo estaba secuenciado. El guía manejó muy bien el ritmo entre Hallasan, los acantilados y Cheonjeyeon, y el cierre de O’Sulloc a Aewol hizo que todo el día se sintiera equilibrado en lugar de cansado.",
+      "helpful": 18,
+      "verified": true,
+      "tripType": "Familia",
+      "photos": []
+    },
+    {
+      "id": 3,
+      "author": "Yuki T.",
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+      "location": "Tokio",
+      "date": "Febrero de 2024",
+      "rating": 4,
+      "title": "Me encantó terminar el día en Aewol",
+      "text": "La experiencia en general fue excelente. Eoseungsaengak fue un inicio mucho más potente de lo que esperaba y O’Sulloc resultó ser una parada perfecta antes de Aewol. Solo doy 4 estrellas porque me habría gustado un poco más de tiempo en Aewol, aunque entiendo las limitaciones del horario.",
+      "helpful": 12,
+      "verified": true,
+      "tripType": "Solo",
+      "photos": [
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=80"
+      ]
+    },
+    {
+      "id": 4,
+      "author": "Michael R.",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+      "location": "Sídney",
+      "date": "Febrero de 2024",
+      "rating": 5,
+      "title": "Mucho más variado de lo que esperaba",
+      "text": "Vine por los paisajes y terminé quedándome por la forma en que se contaba la historia del lugar. El guía conectó Hallasan, los acantilados de basalto, las cascadas, los campos de té y la costa de Aewol de una manera que hizo que todo el día se sintiera coherente. Además, el tamaño reducido del grupo hizo que las transiciones fueran mucho más fluidas.",
+      "helpful": 31,
+      "verified": true,
+      "tripType": "Amigos",
+      "photos": []
+    }
+  ],
+  "reviewsSummary": {
+    "averageRating": 4.8,
+    "totalReviews": 127,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 98,
+        "percentage": 77
+      },
+      {
+        "stars": 4,
+        "count": 21,
+        "percentage": 17
+      },
+      {
+        "stars": 3,
+        "count": 6,
+        "percentage": 5
+      },
+      {
+        "stars": 2,
+        "count": 1,
+        "percentage": 1
+      },
+      {
+        "stars": 1,
+        "count": 1,
+        "percentage": 1
+      }
+    ],
+    "highlights": [
+      {
+        "label": "Paisajes",
+        "count": 89
+      },
+      {
+        "label": "Guía",
+        "count": 76
+      },
+      {
+        "label": "Ritmo",
+        "count": 54
+      },
+      {
+        "label": "Final en Aewol",
+        "count": 41
+      }
+    ]
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+    "price": {
+      "amountLabel": "58",
+      "currency": "USD",
+      "per": "persona"
+    }
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "Jeju: Hallasan, té y Aewol en el suroeste",
+        "headlineLine2": "Tour en grupo reducido",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+          "imagePosition": "center 35%",
+          "tagline": "Caminata corta en Hallasan. Acantilados de basalto. Senderos junto a cascadas. Campos de té y un final relajado en Aewol.",
+          "pills": [
+            "Ideal para primera visita",
+            "Suroeste de Jeju"
+          ],
+          "meta": {
+            "duration": "8 h",
+            "region": "Suroeste de Jeju",
+            "stops": "6 paradas",
+            "rating": 4.8,
+            "ratingStars": 4
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "Resumen"
+          },
+          {
+            "id": "itinerary",
+            "label": "Itinerario"
+          },
+          {
+            "id": "details",
+            "label": "Detalles"
+          },
+          {
+            "id": "faq",
+            "label": "Preguntas frecuentes"
+          },
+          {
+            "id": "reviews",
+            "label": "Reseñas"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "camera",
+            "label": "Fotogenia",
+            "value": "Alta"
+          },
+          {
+            "icon": "mountain",
+            "label": "Vistas",
+            "value": "Altas"
+          },
+          {
+            "icon": "footprints",
+            "label": "Caminata",
+            "value": "Moderada"
+          },
+          {
+            "icon": "cloud-rain",
+            "label": "Tolerancia a la lluvia",
+            "value": "Media"
+          },
+          {
+            "icon": "users",
+            "label": "Apto para familias",
+            "value": "Buena"
+          },
+          {
+            "icon": "scale",
+            "label": "Equilibrio",
+            "value": "Mixto"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": 1,
+            "type": "video",
+            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+            "location": "Vista general de la ruta",
+            "atmosphere": "El día de un vistazo",
+            "alt": "Vista general de la ruta por el suroeste de Jeju"
+          },
+          {
+            "id": 2,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "location": "Inicio en Hallasan",
+            "atmosphere": "Arranque fresco en la montaña",
+            "alt": "Sendero Eoseungsaengak en Hallasan"
+          },
+          {
+            "id": 3,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "location": "Costa basáltica",
+            "atmosphere": "Dramatismo de la costa volcánica",
+            "alt": "Litoral del acantilado Daepo Jusangjeolli"
+          },
+          {
+            "id": 4,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "location": "Paseo entre bosque y cascadas",
+            "atmosphere": "Frescura verde y tranquila",
+            "alt": "Sendero boscoso de Cheonjeyeon"
+          },
+          {
+            "id": 5,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+            "location": "Pausa entre campos de té",
+            "atmosphere": "Calma verde y abierta",
+            "alt": "Ambiente del Museo del Té O’Sulloc y sus campos de té"
+          },
+          {
+            "id": 6,
+            "type": "video",
+            "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+            "location": "Final en la costa de Aewol",
+            "atmosphere": "Desconexión al final del día",
+            "alt": "Calle costera de cafés en Aewol"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "09:00",
+            "duration": "70 min",
+            "name": "Hallasan Eoseungsaengak",
+            "category": "Sendero corto en Hallasan",
+            "description": "El día empieza en Hallasan, cuando el aire aún es fresco y el grupo conserva toda su energía. Eoseungsaengak es una de las rutas más cortas y accesibles de Hallasan, así que ofrece una auténtica entrada de montaña sin convertir la jornada en una caminata exigente de día completo.",
+            "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "highlights": [
+              "Ruta corta en Hallasan con sensación de cumbre muy gratificante",
+              "Vistas amplias sobre Jeju City, los oreum y las laderas altas de Hallasan",
+              "Un inicio mucho más inmersivo que un simple mirador junto a la carretera",
+              "Buen equilibrio entre actividad y accesibilidad para grupos de distintas edades"
+            ],
+            "timeUsed": [
+              "Llegada, breve explicación del sendero y ajuste rápido del ritmo del grupo",
+              "Tramo principal de subida hasta la zona del mirador",
+              "Pequeña pausa en la cima, fotos y descenso"
+            ],
+            "whyOnRoute": "Empezar aquí aprovecha mejor la energía del grupo y da al día una narrativa más clara, de la montaña hacia la costa.",
+            "visitBasics": {
+              "hours": "Acceso al sendero desde las 05:00; se aplican horarios de cierre estacionales",
+              "closed": "Posibles restricciones según el tiempo",
+              "admission": "Gratis",
+              "walking": "Moderada; corta, pero con bastantes escaleras"
+            },
+            "convenience": {
+              "restroom": "Zona de entrada de Eorimok",
+              "parking": "Disponible"
+            },
+            "smartNotes": {
+              "photo": "Las tomas abiertas desde la cresta funcionan mejor que los primeros planos una vez que el grupo llega a las zonas altas del mirador.",
+              "facilities": "Las mejores instalaciones están en la entrada del sendero, no durante la ruta.",
+              "tip": "Esta parada se disfruta más si se vive como una caminata panorámica y enfocada, no como un paseo lento con demasiadas pausas."
+            }
+          },
+          {
+            "number": 2,
+            "time": "10:50",
+            "duration": "40 min",
+            "name": "Acantilado Daepo Jusangjeolli",
+            "category": "Costa basáltica",
+            "description": "Tras comenzar en Hallasan, la ruta se abre de forma espectacular frente al mar. Jusangjeolli suma uno de los paisajes volcánicos más icónicos de Jeju, donde los acantilados de basalto columnar se encuentran con el oleaje y regalan el primer gran momento costero del día.",
+            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "highlights": [
+              "Las emblemáticas formaciones hexagonales de basalto de Jeju",
+              "Vistas potentes al mar con un contraste visual muy marcado tras el sendero de montaña",
+              "Parada compacta con una recompensa paisajística muy alta",
+              "Una historia geológica clara que enlaza de forma natural con Hallasan"
+            ],
+            "timeUsed": [
+              "Llegada y breve orientación en la entrada",
+              "Paseo principal por la plataforma costera de observación",
+              "Tiempo para fotos y reunión del grupo antes de salir"
+            ],
+            "whyOnRoute": "Permite pasar de la montaña a la costa volcánica de Jeju sin romper el hilo geológico del día.",
+            "visitBasics": {
+              "hours": "09:00-18:00 (último acceso 17:40)",
+              "closed": "Abierto todo el año",
+              "admission": "Adultos 2.000 / Niños y jóvenes 1.000 KRW",
+              "walking": "Fácil"
+            },
+            "convenience": {
+              "restroom": "Zona de entrada",
+              "parking": "Estacionamiento de pago"
+            },
+            "smartNotes": {
+              "photo": "Los ángulos laterales suelen captar mejor el dibujo del basalto y la fuerza del mar que las tomas centradas.",
+              "facilities": "Las instalaciones son sencillas, pero funcionales, cerca de la entrada.",
+              "tip": "El viento y la bruma marina pueden cambiar mucho la sensación de esta parada, por eso aquí se mantiene un ritmo más ágil."
+            }
+          },
+          {
+            "number": 3,
+            "time": "11:50",
+            "duration": "60 min",
+            "name": "Almuerzo",
+            "category": "Pausa de mediodía",
+            "description": "El almuerzo queda entre las paradas más impactantes de la costa sur y el tramo más suave de té y cafés. Funciona como una pausa real para recuperar energía tras la caminata de la mañana y disfrutar la segunda mitad del día con un ritmo más relajado.",
+            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+            "highlights": [
+              "Pausa natural después del tramo de Hallasan y los acantilados",
+              "Mejor ritmo para grupos de edades variadas",
+              "Transición fluida hacia la secuencia de cascada y campos de té",
+              "Ayuda a que la última parada en Aewol se sienta relajada y no apresurada"
+            ],
+            "timeUsed": [
+              "Llegada y acomodo en el restaurante",
+              "Comida y breve descanso",
+              "Preparación para salir hacia la siguiente parada panorámica"
+            ],
+            "whyOnRoute": "Colocar el almuerzo aquí mantiene el día equilibrado y evita que la primera mitad se sienta demasiado cargada.",
+            "visitBasics": {
+              "hours": "Horario del restaurante",
+              "closed": "Varía",
+              "admission": "Incluido o a la carta",
+              "walking": "Mínima"
+            },
+            "convenience": {
+              "restroom": "Servicios del restaurante",
+              "parking": "Disponible"
+            },
+            "smartNotes": {
+              "photo": "Es la mejor parada para fotos de comida si el grupo quiere una galería con un aire más lifestyle.",
+              "facilities": "Servicios completos de restaurante.",
+              "tip": "Un almuerzo tranquilo mejora mucho más el ritmo de la tarde que intentar ahorrar unos pocos minutos."
+            }
+          },
+          {
+            "number": 4,
+            "time": "13:00",
+            "duration": "50 min",
+            "name": "Cascadas de Cheonjeyeon",
+            "category": "Cascadas y paseo por el bosque",
+            "description": "Cheonjeyeon aporta un ambiente más fresco y verde después de la costa abierta. Los puentes, los senderos arbolados y los miradores de cascadas añaden una capa escénica más suave antes de que el día vuelva a abrirse hacia los campos de té y la costa noroeste de Jeju.",
+            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "highlights": [
+              "Miradores de cascadas con una atmósfera más sombreada y tranquila",
+              "Secuencia de puentes y bosque que cambia por completo la textura del día",
+              "Una parada panorámica que se siente más fresca tras la exposición costera",
+              "Buen contraste antes del final entre té y cafés frente al mar"
+            ],
+            "timeUsed": [
+              "Llegada y explicación de la ruta en la entrada",
+              "Tramo principal de caminata por el recinto de las cascadas",
+              "Paradas en los miradores, fotos y regreso"
+            ],
+            "whyOnRoute": "Suaviza la ruta después de Jusangjeolli y prepara al grupo para una segunda mitad más calmada.",
+            "visitBasics": {
+              "hours": "09:00-17:50 (último acceso 17:10)",
+              "closed": "Abierto todo el año",
+              "admission": "Adultos 2.500 / Adolescentes y niños 1.350 KRW",
+              "walking": "Moderada; posibles escaleras y superficies mojadas"
+            },
+            "convenience": {
+              "restroom": "Zona de entrada",
+              "parking": "Disponible"
+            },
+            "smartNotes": {
+              "photo": "Las composiciones por capas entre puentes y cascadas suelen funcionar mejor que intentar meter todo en una sola toma.",
+              "facilities": "Las instalaciones básicas se concentran cerca de la entrada.",
+              "tip": "Esta parada se disfruta más a un ritmo constante, porque las escaleras y las zonas resbaladizas pueden ralentizar al grupo de forma natural."
+            }
+          },
+          {
+            "number": 5,
+            "time": "14:20",
+            "duration": "60 min",
+            "name": "Museo del Té O’Sulloc",
+            "category": "Campos de té y parada cultural",
+            "description": "Después del paseo entre cascadas, O’Sulloc abre la ruta hacia una atmósfera mucho más serena entre campos de té. El museo, la tienda y el paisaje verde que lo rodea añaden un matiz más lifestyle antes del cierre relajado en la costa de Aewol.",
+            "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+            "highlights": [
+              "Paisaje de campos de té de Jeju en un entorno abierto y calmado",
+              "Una parada ligada a la cultura del té que se siente más ligera tras el tramo de bosque",
+              "Gran valor fotográfico entre hileras verdes, arquitectura moderna y postres",
+              "Transición natural entre el sightseeing escénico y el final relajado en Aewol"
+            ],
+            "timeUsed": [
+              "Llegada y breve orientación en la zona del museo",
+              "Vistas de los campos de té, recorrido por el museo o la tienda y tiempo de café",
+              "Punto de encuentro y salida hacia Aewol"
+            ],
+            "whyOnRoute": "Baja el ritmo después de la mañana más activa y da a la parte final del recorrido una transición emocional mucho más suave.",
+            "visitBasics": {
+              "hours": "Normalmente 09:00-18:00; posible variación según la temporada",
+              "closed": "Abierto todo el año",
+              "admission": "Gratis",
+              "walking": "Fácil"
+            },
+            "convenience": {
+              "restroom": "Zona del museo y la cafetería",
+              "parking": "Disponible"
+            },
+            "smartNotes": {
+              "photo": "Las tomas amplias de los campos de té y los ángulos laterales en la cafetería suelen funcionar mejor que las fotos demasiado cerradas del producto.",
+              "facilities": "Es una de las paradas más cómodas del final del día para baños, bebidas y descanso sentado.",
+              "tip": "Esta visita se disfruta más como una pausa escénica con tiempo flexible para explorar, no como una visita apurada centrada solo en el museo."
+            }
+          },
+          {
+            "number": 6,
+            "time": "15:50",
+            "duration": "60 min",
+            "name": "Calle de cafés de Aewol",
+            "category": "Final costero entre cafés",
+            "description": "Aewol cierra el día con una sensación mucho más ligera. Después del aire de montaña, los acantilados de basalto, los senderos junto a cascadas y los campos de té, la ruta se relaja entre vistas al mar, terrazas de cafés y un ritmo costero más pausado que funciona muy bien como cierre.",
+            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+            "highlights": [
+              "Cafés con vistas al mar y un ambiente de paseo muy relajado al final del día",
+              "Paisaje de la costa de Handam con un cierre más suave y lifestyle",
+              "Tiempo flexible para café, fotos y un ritmo más lento",
+              "Un cierre con mucho contraste frente a la mañana más activa"
+            ],
+            "timeUsed": [
+              "Llegada y breve orientación por la zona",
+              "Tiempo libre para café o paseo costero",
+              "Punto de encuentro y salida para el traslado de regreso"
+            ],
+            "whyOnRoute": "Aewol funciona mejor como el cierre emocional del día, con un ritmo más abierto y sin presión al final del recorrido.",
+            "visitBasics": {
+              "hours": "La zona está abierta todo el día; cada cafetería tiene su propio horario",
+              "closed": "Ninguno para la zona en general",
+              "admission": "Gratis",
+              "walking": "Fácil"
+            },
+            "convenience": {
+              "restroom": "Depende de la cafetería elegida",
+              "parking": "Hay estacionamiento en la zona"
+            },
+            "smartNotes": {
+              "photo": "La luz de la tarde y las terrazas orientadas de lado al mar suelen dar aquí las mejores fotos.",
+              "facilities": "La comodidad depende del café elegido, por eso esta parada se mantiene flexible en lugar de fijarse en un solo local.",
+              "tip": "Es la parada donde más se disfruta un ritmo libre en vez de un horario demasiado guiado."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "id": "01",
+            "name": "Eoseungsaengak",
+            "theme": "Hallasan"
+          },
+          {
+            "id": "02",
+            "name": "Jusangjeolli",
+            "theme": "Costa"
+          },
+          {
+            "id": "03",
+            "name": "Almuerzo",
+            "theme": "Pausa"
+          },
+          {
+            "id": "04",
+            "name": "Cheonjeyeon",
+            "theme": "Cascada"
+          },
+          {
+            "id": "05",
+            "name": "O’Sulloc",
+            "theme": "Té"
+          },
+          {
+            "id": "06",
+            "name": "Aewol",
+            "theme": "Costa"
+          }
+        ],
+        "routePhases": [
+          {
+            "label": "Mañana",
+            "range": "1-2",
+            "theme": "De Hallasan a la costa",
+            "bgClass": "bg-sky-50/70",
+            "textClass": "text-sky-700",
+            "dotClass": "bg-sky-500"
+          },
+          {
+            "label": "Mediodía",
+            "range": "3-4",
+            "theme": "Almuerzo y cascada",
+            "bgClass": "bg-amber-50/70",
+            "textClass": "text-amber-700",
+            "dotClass": "bg-amber-500"
+          },
+          {
+            "label": "Final",
+            "range": "5-6",
+            "theme": "Té y Aewol",
+            "bgClass": "bg-emerald-50/70",
+            "textClass": "text-emerald-700",
+            "dotClass": "bg-emerald-500"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "Cómo fluye este día",
+          "subtitle": "Hallasan, costa de basalto, almuerzo, cascada, campos de té y cierre en la costa de Aewol. De 09:00 a 17:30."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "Quienes visitan Jeju por primera vez y parejas",
+            "Familias con adultos",
+            "Viajeros que buscan naturaleza, campos de té y un cierre relajado",
+            "Adultos mayores activos"
+          ],
+          "lessIdeal": [
+            "Personas que prefieren evitar escaleras o subidas cortas",
+            "Grupos con carrito de bebé",
+            "Niños muy pequeños"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Ritmo y estructura",
+              "icon": "sun",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "Hallasan primero, cuando la energía está intacta",
+                  "detail": "Eoseungsaengak funciona mejor al inicio, cuando el grupo puede disfrutar la subida corta antes de entrar en la parte costera del día."
+                },
+                {
+                  "label": "Almuerzo en el punto justo del recorrido",
+                  "detail": "El almuerzo reinicia el día entre la mañana más expuesta y la secuencia más suave de cascada y té."
+                },
+                {
+                  "label": "Un cierre más ligero después de O’Sulloc",
+                  "detail": "La ruta pasa por los campos de té antes de terminar en Aewol, así que la jornada se abre de forma natural hacia café, vistas al mar y un ritmo más relajado."
+                }
+              ]
+            },
+            {
+              "title": "Cómo se construye la ruta",
+              "icon": "mountain",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "Montaña antes que costa",
+                  "detail": "El inicio en Hallasan da altura y textura al recorrido antes de que el mar se abra en Jusangjeolli."
+                },
+                {
+                  "label": "Cascada antes de los campos de té",
+                  "detail": "Cheonjeyeon refresca primero la ruta y luego O’Sulloc vuelve a abrirla con vistas de té y un ritmo de caminata mucho más cómodo."
+                },
+                {
+                  "label": "Costa de cafés al final",
+                  "detail": "Aewol cierra el día con una parada costera de estilo lifestyle en lugar de otra caminata exigente."
+                }
+              ]
+            },
+            {
+              "title": "Cuando cambian las condiciones",
+              "icon": "wind",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-600",
+              "items": [
+                {
+                  "label": "El tiempo en Hallasan sí importa",
+                  "detail": "Eoseungsaengak puede verse afectado por cambios repentinos del clima o por controles del sendero."
+                },
+                {
+                  "label": "Viento en la costa",
+                  "detail": "Jusangjeolli y Aewol se sienten mucho más expuestos cuando sopla fuerte que las partes interiores del recorrido."
+                },
+                {
+                  "label": "Equilibrio en la caminata",
+                  "detail": "El día sigue siendo manejable para la mayoría, pero las escaleras y las subidas cortas siguen siendo importantes en Eoseungsaengak y Cheonjeyeon."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "Recogida y regreso",
+            "preview": "Recogida en el lobby del hotel en la zona de Jeju City",
+            "content": [
+              "Recogida en el lobby de tu hotel entre las 08:20 y las 08:50",
+              "Regreso aproximado entre las 17:50 y las 18:20",
+              "Recogida en el aeropuerto disponible bajo solicitud",
+              "La hora exacta de recogida se confirma la noche anterior"
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "Caminata y terreno",
+            "preview": "Nivel moderado en general, manejable para la mayoría",
+            "content": [
+              "Caminata total: aproximadamente 4,5-5,5 km entre todas las paradas",
+              "Eoseungsaengak: sendero corto en subida con muchas escaleras",
+              "Jusangjeolli: senderos costeros fáciles de recorrer",
+              "Cheonjeyeon: caminos de bosque, escaleras y algunas superficies mojadas",
+              "O’Sulloc y Aewol: caminata fácil con ritmo flexible",
+              "Se recomiendan mucho zapatos cómodos para caminar"
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "Clima y manejo de cierres",
+            "preview": "Opera en la mayoría de las condiciones con ajustes si hace falta",
+            "content": [
+              "Lluvia ligera: el tour opera con normalidad",
+              "Lluvia fuerte o control de senderos: Eoseungsaengak puede acortarse o ajustarse",
+              "Viento fuerte: puede reducirse el tiempo de caminata en Jusangjeolli o Aewol",
+              "Mal tiempo en la segunda mitad del día: O’Sulloc puede ganar más protagonismo dentro de la ruta",
+              "Cierres de atracciones: se pueden ofrecer paradas alternativas cuando sea necesario"
+            ]
+          },
+          {
+            "id": "wear",
+            "title": "Qué llevar y cómo vestirse",
+            "preview": "Zapatos cómodos, capas y una chaqueta ligera",
+            "content": [
+              "Zapatos con buen agarre",
+              "Capas para los cambios de temperatura entre montaña y costa",
+              "Chaqueta ligera que proteja del viento",
+              "Gorra o sombrero y protector solar",
+              "Botella de agua"
+            ]
+          },
+          {
+            "id": "included",
+            "title": "Incluido / no incluido",
+            "preview": "Guía, vehículo, recogida y entradas",
+            "variant": "included",
+            "content": [
+              "Guía profesional de habla inglesa",
+              "Vehículo para grupo reducido",
+              "Recogida y regreso al hotel (Jeju City)",
+              "Todas las entradas",
+              "Agua embotellada",
+              "Almuerzo (se paga directamente en el restaurante)",
+              "Compras personales",
+              "Propinas"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "11°",
+            "label": "Hoy · Despejado"
+          },
+          "tomorrow": {
+            "temp": "18°/13°",
+            "label": "Mañana · Llovizna"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "name": "Primavera",
+            "icon": "flower",
+            "description": "La flor de colza tiñe la costa de dorado",
+            "tag": "Temporada de flores",
+            "bgClass": "bg-spring",
+            "iconColor": "text-pink-500"
+          },
+          {
+            "name": "Verano",
+            "icon": "sun",
+            "description": "Días más largos y verdes intensos",
+            "tag": "Días más largos",
+            "bgClass": "bg-summer",
+            "iconColor": "text-sky-500"
+          },
+          {
+            "name": "Otoño",
+            "icon": "leaf",
+            "description": "Cielos despejados y visibilidad nítida",
+            "tag": "Mejores vistas",
+            "bgClass": "bg-autumn",
+            "iconColor": "text-amber-600"
+          },
+          {
+            "name": "Invierno",
+            "icon": "snow",
+            "description": "Senderos más tranquilos y menos horas de luz",
+            "tag": "Ambiente sereno",
+            "bgClass": "bg-winter",
+            "iconColor": "text-slate-500"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Operador con licencia local",
+            "description": "Guiado autorizado en Jeju",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "route",
+            "title": "Expertos en la ruta",
+            "description": "Recorrido afinado para el suroeste",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          },
+          {
+            "icon": "users",
+            "title": "Grupo reducido",
+            "description": "Máximo 8 viajeros",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Inmediatamente",
+            "title": "Confirmación instantánea",
+            "detail": "Confirmación de la reserva con resumen del itinerario"
+          },
+          {
+            "timing": "12 horas antes",
+            "title": "Recordatorio 12 horas antes",
+            "detail": "Actualización del clima y posibles ajustes"
+          },
+          {
+            "timing": "La noche anterior",
+            "title": "Información final de recogida",
+            "detail": "Hora exacta de recogida y contacto del conductor"
+          },
+          {
+            "timing": "La mañana del tour",
+            "title": "Notas de ruta del día",
+            "detail": "Briefing matutino según las condiciones"
+          },
+          {
+            "timing": "Durante el tour",
+            "title": "Consejos en cada parada",
+            "detail": "Orientación en tiempo real en cada ubicación"
+          },
+          {
+            "timing": "Después del tour",
+            "title": "Asistencia posviaje",
+            "detail": "Seguimiento y recomendaciones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "first-time",
+            "question": "¿Es una buena opción para quienes visitan Jeju por primera vez?",
+            "answer": "Sí. Combina paisajes de Hallasan, una costa volcánica emblemática, una parada clásica de cascadas, ambiente de campos de té y un final relajado en Aewol, todo en un día muy equilibrado."
+          },
+          {
+            "id": "walking",
+            "question": "¿La caminata es muy difícil?",
+            "answer": "No en general. La parte más activa es Eoseungsaengak, que es corta pero tiene bastantes escaleras; el resto del día tiene una exigencia moderada para la mayoría de los viajeros."
+          },
+          {
+            "id": "rain",
+            "question": "¿El tour se puede hacer si llueve?",
+            "answer": "Sí. La ruta puede ajustarse cuando el tiempo está húmedo, aunque Eoseungsaengak y algunos tramos costeros expuestos pueden acortarse según las condiciones."
+          },
+          {
+            "id": "parents",
+            "question": "¿Se puede hacer con padres o familiares mayores?",
+            "answer": "Sí. En general es una ruta cómoda para familias adultas, aunque sigue siendo más adecuada para personas que puedan manejar escaleras y pequeñas subidas."
+          },
+          {
+            "id": "children",
+            "question": "¿Puedo unirme con niños?",
+            "answer": "Sí. Se adapta mejor a niños de 8 años en adelante que estén cómodos con una caminata corta y con el ritmo de una excursión de día completo."
+          },
+          {
+            "id": "order",
+            "question": "¿Puede cambiar el orden de las paradas?",
+            "answer": "Sí. El clima en la montaña, el viento, el tráfico y la afluencia de visitantes pueden afectar la secuencia, sobre todo en Eoseungsaengak y en las paradas costeras."
+          },
+          {
+            "id": "lunch",
+            "question": "¿El almuerzo está incluido?",
+            "answer": "Depende de la configuración del producto. La ruta sí incluye una pausa para almorzar a mitad del día, pero que la comida esté incluida o no dependerá de la tarifa de tu reserva."
+          },
+          {
+            "id": "why-eoseungsaengak",
+            "question": "¿Por qué empezar en Eoseungsaengak?",
+            "answer": "Porque da al día una verdadera apertura en Hallasan mientras el grupo todavía tiene energía fresca, sin convertir la ruta en una caminata de montaña de jornada completa."
+          },
+          {
+            "id": "why-jusangjeolli",
+            "question": "¿Por qué visitar Jusangjeolli después de Hallasan?",
+            "answer": "Porque mantiene viva la narrativa volcánica: de la montaña a una de las costas basálticas más impactantes de Jeju."
+          },
+          {
+            "id": "why-osulloc",
+            "question": "¿Por qué O’Sulloc va antes de Aewol?",
+            "answer": "Porque O’Sulloc funciona como una transición más calmada después del paseo por la cascada, de modo que la última parada en Aewol se sienta relajada y no apresurada."
+          },
+          {
+            "id": "later-structure",
+            "question": "¿Por qué está organizada así la segunda mitad del día?",
+            "answer": "El almuerzo y Cheonjeyeon suavizan la ruta después de la mañana más expuesta, O’Sulloc añade una pausa ligera entre campos de té y Aewol cierra el día sin otro tramo exigente de caminata."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [
+          {
+            "id": 1,
+            "author": "Sarah M.",
+            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+            "location": "Singapur",
+            "date": "Marzo de 2024",
+            "rating": 5,
+            "title": "Un día por el suroeste de Jeju realmente bien equilibrado",
+            "text": "La ruta tenía muchísimo sentido: empezar en Hallasan le dio energía al día y, después de eso, Jusangjeolli se sintió todavía más impresionante. Nos encantó especialmente que O’Sulloc viniera antes de Aewol, porque la tarde fue bajando de ritmo de una forma muy natural.",
+            "helpful": 24,
+            "verified": true,
+            "tripType": "Pareja",
+            "photos": [
+              "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
+              "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
+            ]
+          },
+          {
+            "id": 2,
+            "author": "James K.",
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+            "location": "Hong Kong",
+            "date": "Marzo de 2024",
+            "rating": 5,
+            "title": "Gran ruta por el suroeste con un final muy relajado",
+            "text": "Hemos hecho varios tours por Corea y este destacó muchísimo por cómo estaba secuenciado. El guía manejó muy bien el ritmo entre Hallasan, los acantilados y Cheonjeyeon, y el cierre de O’Sulloc a Aewol hizo que todo el día se sintiera equilibrado en lugar de cansado.",
+            "helpful": 18,
+            "verified": true,
+            "tripType": "Familia",
+            "photos": []
+          },
+          {
+            "id": 3,
+            "author": "Yuki T.",
+            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+            "location": "Tokio",
+            "date": "Febrero de 2024",
+            "rating": 4,
+            "title": "Me encantó terminar el día en Aewol",
+            "text": "La experiencia en general fue excelente. Eoseungsaengak fue un inicio mucho más potente de lo que esperaba y O’Sulloc resultó ser una parada perfecta antes de Aewol. Solo doy 4 estrellas porque me habría gustado un poco más de tiempo en Aewol, aunque entiendo las limitaciones del horario.",
+            "helpful": 12,
+            "verified": true,
+            "tripType": "Solo",
+            "photos": [
+              "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=80"
+            ]
+          },
+          {
+            "id": 4,
+            "author": "Michael R.",
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+            "location": "Sídney",
+            "date": "Febrero de 2024",
+            "rating": 5,
+            "title": "Mucho más variado de lo que esperaba",
+            "text": "Vine por los paisajes y terminé quedándome por la forma en que se contaba la historia del lugar. El guía conectó Hallasan, los acantilados de basalto, las cascadas, los campos de té y la costa de Aewol de una manera que hizo que todo el día se sintiera coherente. Además, el tamaño reducido del grupo hizo que las transiciones fueran mucho más fluidas.",
+            "helpful": 31,
+            "verified": true,
+            "tripType": "Amigos",
+            "photos": []
+          }
+        ],
+        "reviewsSummary": {
+          "averageRating": 4.8,
+          "totalReviews": 127,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 98,
+              "percentage": 77
+            },
+            {
+              "stars": 4,
+              "count": 21,
+              "percentage": 17
+            },
+            {
+              "stars": 3,
+              "count": 6,
+              "percentage": 5
+            },
+            {
+              "stars": 2,
+              "count": 1,
+              "percentage": 1
+            },
+            {
+              "stars": 1,
+              "count": 1,
+              "percentage": 1
+            }
+          ],
+          "highlights": [
+            {
+              "label": "Paisajes",
+              "count": 89
+            },
+            {
+              "label": "Guía",
+              "count": 76
+            },
+            {
+              "label": "Ritmo",
+              "count": 54
+            },
+            {
+              "label": "Final en Aewol",
+              "count": 41
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+        "price": {
+          "amountLabel": "58",
+          "currency": "USD",
+          "per": "persona"
+        }
+      }
+    }
+  ]
+}

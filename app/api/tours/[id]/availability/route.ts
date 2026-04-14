@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
+import { tourListPricesToUsdSync } from '@/lib/tour-list-price-usd.server';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 
 function isJejuEastTour(tour: { city?: string | null; slug?: string | null; title?: string | null }) {
@@ -35,7 +37,7 @@ export async function GET(
     // Get tour info (include city/slug for Jeju East Monday rule)
     const { data: tour, error: tourError } = await supabase
       .from('tours')
-      .select('id, title, slug, city, price, price_type')
+      .select('id, title, slug, city, price, original_price, price_currency, price_type')
       .eq('id', tourId)
       .eq('is_active', true)
       .single();
@@ -47,6 +49,16 @@ export async function GET(
       );
     }
 
+    const krwPerUsd = await getKrwPerUsd();
+    const listUnitUsd = tourListPricesToUsdSync(
+      {
+        price: tour.price,
+        original_price: tour.original_price,
+        price_currency: (tour as { price_currency?: string }).price_currency,
+      },
+      krwPerUsd
+    ).priceUsd;
+
     // Business rule: Jeju East tours are not bookable on Mondays
     const weekday = new Date(date).getUTCDay(); // 0=Sun, 1=Mon, ...
     if (weekday === 1 && isJejuEastTour(tour)) {
@@ -56,7 +68,7 @@ export async function GET(
         maxCapacity: null,
         requestedGuests: guests,
         canAccommodate: false,
-        price: parseFloat(tour.price.toString()),
+        price: listUnitUsd,
         priceOverride: null,
         date,
         tourId,
@@ -120,7 +132,11 @@ export async function GET(
 
     // Check if requested guests can be accommodated
     const canAccommodate = availableSpots >= guests;
-    const finalPrice = priceOverride ? parseFloat(priceOverride.toString()) : parseFloat(tour.price.toString());
+    const overrideUsd =
+      priceOverride != null && String(priceOverride).trim() !== ''
+        ? Math.round((parseFloat(priceOverride.toString()) / krwPerUsd) * 100) / 100
+        : null;
+    const finalPrice = overrideUsd != null ? overrideUsd : listUnitUsd;
 
     return NextResponse.json({
       available: canAccommodate && isAvailable,
@@ -129,7 +145,7 @@ export async function GET(
       requestedGuests: guests,
       canAccommodate,
       price: finalPrice,
-      priceOverride: priceOverride ? parseFloat(priceOverride.toString()) : null,
+      priceOverride: overrideUsd,
       date,
       tourId,
     });

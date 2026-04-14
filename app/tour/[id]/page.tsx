@@ -51,9 +51,8 @@ import {
   linesFromTourList,
 } from '@/components/tour/BusTourInclusionsSection';
 import { analytics } from '@/src/design/analytics';
-import { SmallGroupTourDetailTemplate, buildSmallGroupDetailContent } from '@/components/tour/small-group';
-import { TourDetailTemplateView } from '@/components/tour-detail-template';
-import { tourUsesDetailTemplateView } from '@/lib/tour-detail-template-slugs';
+import { buildSmallGroupDetailContent } from '@/components/tour/small-group';
+import EastSmallGroupTourV2Page from '@/components/tour-detail/east/v2/EastSmallGroupTourV2Page';
 import { Star, Shield, Award, Users, Clock, Globe, Check, X, ChevronRight, MapPin, Navigation, AlertCircle, Plane, Banknote, Footprints } from 'lucide-react';
 
 /** Timeline pins — blue + slate (homepage accent alignment) */
@@ -492,13 +491,13 @@ export default function TourDetailPage() {
                   <span className="font-medium text-slate-800">Dev hint:</span> This URL loads the tour from your Supabase{' '}
                   <code className="rounded bg-white px-1">tours</code> row (<code className="rounded bg-white px-1">slug</code> or{' '}
                   <code className="rounded bg-white px-1">id</code>, <code className="rounded bg-white px-1">is_active = true</code>).
-                  For <code className="rounded bg-white px-1">east-signature-nature-core</code>, run{' '}
+                  Join tours use the v2 detail template on this route (see <code className="rounded bg-white px-1">detail_page_v2</code> in Supabase to override copy). Flagship East product page:{' '}
+                  <a className="text-blue-600 underline" href="/tour-product/east-signature-nature-core">
+                    /tour-product/east-signature-nature-core
+                  </a>
+                  . Legacy duplicate slugs redirect there; seed with{' '}
                   <code className="rounded bg-white px-1 text-[11px]">supabase/manual/insert-east-signature-nature-core-product.sql</code>{' '}
-                  in the SQL Editor. Until then, try{' '}
-                  <a className="text-blue-600 underline" href="/tour/jeju-east-small-group-template-preview">
-                    /tour/jeju-east-small-group-template-preview
-                  </a>{' '}
-                  if that seed exists.
+                  (or your east-signature migration) in the SQL Editor.
                 </p>
               ) : null}
               <button
@@ -537,41 +536,15 @@ export default function TourDetailPage() {
     currencyCtx ? currencyCtx.formatPrice(n) : `₩${new Intl.NumberFormat('ko-KR', { maximumFractionDigits: 0 }).format(n)}`;
 
   if (tour.type === 'join') {
-    if (tourUsesDetailTemplateView(tour.slug)) {
-      const checkoutHref = `/tour/${encodeURIComponent(tourId)}/checkout`;
-      return (
-        <div className="relative min-h-screen overflow-x-hidden bg-transparent text-slate-900">
-          <Header premiumTourDetail />
-          <main className="bg-transparent">
-            {tour.slug === 'jeju-east-small-group-template-preview' ? (
-              <div className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-center text-[11px] font-medium text-amber-950">
-                Internal preview slug — live product URL:{' '}
-                <code className="rounded bg-amber-100/80 px-1">/tour/east-signature-nature-core</code>
-              </div>
-            ) : null}
-            <TourDetailTemplateView tour={tour} checkoutHref={checkoutHref} />
-          </main>
-          <Footer />
-          <BottomNav />
-        </div>
-      );
-    }
-
     const smallGroupContent = buildSmallGroupDetailContent(tour);
+
     return (
-      <div className="relative min-h-screen overflow-x-hidden bg-transparent text-slate-900 tour-detail-premium pb-[max(11.5rem,calc(10rem+env(safe-area-inset-bottom,0px)))] lg:pb-24">
+      <div className="relative min-h-screen overflow-x-hidden bg-transparent pb-0 text-slate-900 lg:pb-24">
         <Header premiumTourDetail />
         <main className="bg-transparent">
-          <SmallGroupTourDetailTemplate
-            tour={tour}
-            content={smallGroupContent}
-            bookingRef={bookingRef}
-            onDateSelect={setTimelineSelectedDate}
-            formatPrice={formatPrice}
-          />
+          <EastSmallGroupTourV2Page tour={tour} content={smallGroupContent} formatPrice={formatPrice} />
         </main>
         <Footer premiumHandoff />
-        <BottomNav />
       </div>
     );
   }

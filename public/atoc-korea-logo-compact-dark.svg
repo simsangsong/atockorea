@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 40" width="168" height="40" fill="none" role="img" aria-label="AtoC Korea">
+  <defs>
+    <clipPath id="markClipDark">
+      <rect x="1" y="1" width="38" height="38" rx="9.5"/>
+    </clipPath>
+    <linearGradient id="outerRingDark" x1="2" y1="2" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.94)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.78)"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="38" height="38" rx="9.5" fill="none" stroke="url(#outerRingDark)" stroke-width="1.28"/>
+  <g clip-path="url(#markClipDark)">
+    <rect x="9.5" y="9.5" width="21" height="21" rx="4.85" stroke="rgba(255,255,255,0.9)" stroke-width="0.92" opacity="0.98"/>
+    <path d="M14.5 25.5 L20 16.2 L25.5 25.5" stroke="rgba(255,255,255,0.9)" stroke-width="1.38" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="46" y="20" dominant-baseline="central" fill="#ffffff" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17" font-weight="600" letter-spacing="-0.045em">AtoC<tspan fill="#A8B4C0" font-weight="400" font-size="14" letter-spacing="-0.02em" dx="3"> Korea</tspan></text>
+</svg>

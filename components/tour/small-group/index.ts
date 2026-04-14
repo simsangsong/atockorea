@@ -1,12 +1,16 @@
 export { default as SmallGroupTourDetailTemplate } from './SmallGroupTourDetailTemplate';
+export { default as SmallGroupTourDetailTemplateLegacy } from './SmallGroupTourDetailTemplateLegacy';
 export {
   buildSmallGroupDetailContent,
   resolveEditorialPresentation,
   groupPracticalBlocksForUi,
   resolvePracticalBlockGroup,
+  groupPracticalBlocksByAccordion,
+  resolvePracticalAccordionKey,
 } from './smallGroupDetailContent';
 export type {
   SmallGroupPracticalGroupKey,
+  SmallGroupPracticalAccordionKey,
   SmallGroupDetailContent,
   SmallGroupEditorialDetail,
   SmallGroupResolvedEditorial,
@@ -14,6 +18,7 @@ export type {
   SmallGroupSummaryFact,
   SmallGroupSnapshotRow,
   SmallGroupInsightCard,
+  SmallGroupFaqItem,
   SmallGroupRouteStop,
   SmallGroupSeasonKey,
   SmallGroupSeasonalBlock,

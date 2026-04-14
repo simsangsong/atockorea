@@ -6,17 +6,20 @@ const COMPONENT_SUBDIRS = [
   'auth',
   'charts',
   'Detailpage',
+  'home',
   'itinerary',
   'list',
   'maps',
   'mypage',
   'optimized',
   'planner',
+  'product-tour-static',
   'reviews',
   'sangsong027 detailpage',
   'tour',
   'tours',
   'tour-detail-template',
+  'tour-detail',
   'ui',
 ];
 
@@ -40,8 +43,45 @@ module.exports = {
         border: 'var(--border)',
         ring: 'var(--ring)',
         input: 'var(--input)',
+        /**
+         * shadcn / CVA buttons use `bg-primary`, `text-primary-foreground`, `from-primary`, etc.
+         * Values come from `app/globals.css` @layer base (`:root` / `.dark`) and, on the home v2
+         * body, from `app/home-v2-fidelity.css` (`.home-v2-body-isolate`).
+         */
+        primary: {
+          DEFAULT: 'var(--primary)',
+          foreground: 'var(--primary-foreground)',
+        },
+        secondary: {
+          DEFAULT: 'var(--secondary)',
+          foreground: 'var(--secondary-foreground)',
+        },
+        destructive: {
+          DEFAULT: 'var(--destructive)',
+          foreground: 'var(--destructive-foreground)',
+        },
+        muted: {
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)',
+        },
+        accent: {
+          DEFAULT: 'var(--accent)',
+          foreground: 'var(--accent-foreground)',
+        },
+        popover: {
+          DEFAULT: 'var(--popover)',
+          foreground: 'var(--popover-foreground)',
+        },
+        card: {
+          DEFAULT: 'var(--card)',
+          foreground: 'var(--card-foreground)',
+        },
         /** Matches v0 / shadcn-style `gray-150` used by tour-detail-template */
         gray: {
+          150: '#ebebeb',
+        },
+        /** v0 hero disabled tiles use `border-slate-150/50` */
+        slate: {
           150: '#ebebeb',
         },
         // Design system semantic colors (src/design/tokens.ts)
@@ -56,6 +96,21 @@ module.exports = {
           error: '#DC2626',
           info: '#1E4EDF',
           neutral: '#E1E5EA',
+        },
+        /**
+         * Home v2 page — luxury CTA / chips (aligned with inline #1e3a5f / #172d4a family).
+         * Use `from-home-v2-navy-800 to-home-v2-navy-900` etc.; keeps theme `primary` independent.
+         */
+        homeV2: {
+          navy: {
+            950: '#0f141c',
+            900: '#172d4a',
+            875: '#1a3556',
+            850: '#152d4d',
+            800: '#1e3a5f',
+            750: '#234a78',
+            700: '#264d7d',
+          },
         },
       },
       minHeight: {

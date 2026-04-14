@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
+import { tourListPricesToUsdSync } from '@/lib/tour-list-price-usd.server';
 import { withErrorHandler, AppError } from '@/lib/error-handler';
 import { createServerLogger } from '@/lib/logger';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
+import { isTourSlugHiddenFromPublicCatalog } from '@/lib/tour-consumer-visibility';
 
 const SUPPORTED_LOCALES = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'] as const;
 type SupportedLocale = typeof SUPPORTED_LOCALES[number];
@@ -141,6 +144,8 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       throw new AppError('Failed to fetch tours', 500, 'TOURS_FETCH_ERROR', error.message);
     }
 
+    const krwPerUsd = await getKrwPerUsd();
+
     // Transform data to match frontend expectations; use translations[locale] when available
     let transformedTours = tours?.map((tour: any) => {
       const tr = (localeParam && tour.translations && typeof tour.translations === 'object' && tour.translations[localeParam]) || null;
@@ -157,14 +162,23 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       const trDur = tr && typeof (tr as { duration?: unknown }).duration === 'string' ? String((tr as { duration: string }).duration).trim() : '';
       const durationStr =
         localeParam && trDur ? trDur : (tour.duration || '');
+      const { priceUsd, originalPriceUsd } = tourListPricesToUsdSync(
+        {
+          price: tour.price,
+          original_price: tour.original_price,
+          price_currency: tour.price_currency,
+        },
+        krwPerUsd
+      );
       return {
         id: tour.id,
         slug: tour.slug,
+        tag: typeof tour.tag === 'string' && tour.tag.trim() !== '' ? tour.tag.trim() : null,
         title,
         location: tour.city,
         city: tour.city,
-        price: parseFloat(tour.price.toString()),
-        originalPrice: tour.original_price ? parseFloat(tour.original_price.toString()) : null,
+        price: priceUsd,
+        originalPrice: originalPriceUsd,
         priceType: tour.price_type,
         image: tour.image_url || (tour.gallery_images && Array.isArray(tour.gallery_images) && tour.gallery_images.length > 0 ? tour.gallery_images[0] : '') || '',
         images: tour.gallery_images || [],
@@ -193,6 +207,8 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
         updatedAt: tour.updated_at,
       };
     }) || [];
+
+    transformedTours = transformedTours.filter((tour) => !isTourSlugHiddenFromPublicCatalog(tour.slug));
 
     // Apply features filter in JavaScript (since JSONB queries are complex)
     if (features) {

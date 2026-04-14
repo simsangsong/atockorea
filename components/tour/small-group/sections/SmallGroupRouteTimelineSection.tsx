@@ -16,6 +16,11 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import type { SmallGroupRouteStop, SmallGroupRouteStopPracticalDetails } from '../smallGroupDetailContent';
+import {
+  fullStopNarrativeForExpanded,
+  itineraryPlaceholder,
+  stopPurposePreview,
+} from '../itineraryScanHelpers';
 
 const CARD_FACT_LIMIT = 3;
 
@@ -81,11 +86,6 @@ const DEFAULT_LABELS: Record<string, string> = {
   delayNote: 'Flexibility',
 };
 
-function isPlaceholder(value: string): boolean {
-  const t = value.trim();
-  return t === '' || t === '—';
-}
-
 /** Subtle card tone from real fields + position — varies rhythm without new CMS keys. */
 function deriveStopCardTone(
   stop: SmallGroupRouteStop,
@@ -96,7 +96,7 @@ function deriveStopCardTone(
   if (index === 0) return 'opener';
   if (index === total - 1) return 'finale';
   const photoCue =
-    !isPlaceholder(stop.photoTip) || Boolean(stop.detailLayer?.photoDetails?.trim());
+    !itineraryPlaceholder(stop.photoTip) || Boolean(stop.detailLayer?.photoDetails?.trim());
   if (photoCue) return 'photo';
   const walkHaystack = [stop.walkingLevel, ...(stop.cardFacts ?? [])].join(' ');
   if (/\b(moderate|hard|strenuous|steep|stairs|uneven|summit|crater)\b/i.test(walkHaystack)) {
@@ -146,7 +146,7 @@ function StopDetail({
 export default function SmallGroupRouteTimelineSection({
   stops,
   sectionTitle = 'Your Day, Stop by Stop',
-  sectionSubtitle = 'A carefully paced journey through East Jeju',
+  sectionSubtitle = 'See the full day at a glance, then open only the stops you care about.',
   sectionCardHint,
   metaLabels,
   embedded = false,
@@ -205,16 +205,21 @@ export default function SmallGroupRouteTimelineSection({
             aria-hidden
           />
 
-          <div className="flex flex-col gap-5 md:gap-7">
+          <div className="flex flex-col gap-4 md:gap-6">
             {stops.map((stop: SmallGroupRouteStop, index: number) => {
               const isExpanded = expandedStop === stop.id;
               const dl = stop.detailLayer;
-              const showDelayFlat = !isPlaceholder(stop.delayNote);
-              const showDelayDetail = dl?.delayNote && !isPlaceholder(dl.delayNote);
-              const cardSummaryText = (stop.cardSummary ?? stop.description).trim();
+              const showDelayFlat = !itineraryPlaceholder(stop.delayNote);
+              const showDelayDetail = dl?.delayNote && !itineraryPlaceholder(dl.delayNote);
+              const purposePreview = stopPurposePreview(stop);
+              const narrativeExpanded = fullStopNarrativeForExpanded(stop);
+              const showExpandedNarrativeBlock =
+                Boolean(narrativeExpanded) && (!dl || !dl.detailIntro?.trim());
               const cardFacts = (stop.cardFacts ?? [])
                 .filter((f: string) => f.trim())
                 .slice(0, CARD_FACT_LIMIT);
+              const tagFallbackChip =
+                !stop.highlightLabel?.trim() ? stop.tags?.find((x: string) => x.trim())?.trim() ?? '' : '';
               const tone = deriveStopCardTone(stop, index, stops.length);
               const sequenceLine = stopSequenceHeading(stop, index, stops.length);
               const toneClass: Record<StopCardTone, string> = {
@@ -242,7 +247,9 @@ export default function SmallGroupRouteTimelineSection({
                     aria-hidden
                   >
                     <div
-                      className={`sg-dp-stop-index-marker mt-8 flex h-8 w-8 items-center justify-center rounded-full text-[11px] font-semibold tabular-nums md:mt-9 md:h-9 md:w-9 md:text-[12px] ${indexRingClass}`}
+                      className={`sg-dp-stop-index-marker flex h-8 w-8 items-center justify-center rounded-full text-[11px] font-semibold tabular-nums md:h-9 md:w-9 md:text-[12px] ${indexRingClass} ${
+                        isExpanded ? 'mt-8 md:mt-9' : 'mt-4 md:mt-5'
+                      }`}
                     >
                       {String(index + 1).padStart(2, '0')}
                     </div>
@@ -253,7 +260,9 @@ export default function SmallGroupRouteTimelineSection({
                       type="button"
                       onClick={() => setExpandedStop(isExpanded ? null : stop.id)}
                       aria-expanded={isExpanded}
-                      aria-label={`${stop.title}. View details`}
+                      aria-label={
+                        isExpanded ? `${stop.title}. Collapse stop details` : `${stop.title}. Expand stop details`
+                      }
                       className={`sg-dp-surface-step sg-dp-surface-step--interactive sg-dp-stop-card w-full cursor-pointer overflow-hidden text-left ${toneClass[tone]}`}
                     >
                       {stop.imageUrl ? (
@@ -276,7 +285,7 @@ export default function SmallGroupRouteTimelineSection({
                             className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/10"
                             aria-hidden
                           />
-                          {!isPlaceholder(stop.displayTime ?? '') ? (
+                          {!itineraryPlaceholder(stop.displayTime ?? '') ? (
                             <div className="sg-dp-media-duration-pill absolute left-3 top-3 flex items-center gap-1.5 rounded-full bg-white/92 px-2.5 py-1 text-[11px] font-semibold tabular-nums tracking-[-0.02em] shadow-sm ring-1 ring-black/5 backdrop-blur-[2px] md:left-3.5 md:top-3.5 md:px-3 md:py-1.5 md:text-[12px]">
                               <Clock
                                 className="h-3 w-3 shrink-0 text-[color-mix(in_oklab,var(--sg-ota-label)_65%,var(--dp-fg)_35%)]"
@@ -286,7 +295,7 @@ export default function SmallGroupRouteTimelineSection({
                               {stop.displayTime}
                             </div>
                           ) : null}
-                          {!isPlaceholder(stop.stayDuration) ? (
+                          {!itineraryPlaceholder(stop.stayDuration) ? (
                             <div className="sg-dp-media-stay-pill absolute bottom-3 right-3 flex items-center gap-2 px-3 py-1.5 text-[12px] font-medium tabular-nums text-white backdrop-blur-md md:bottom-3.5 md:right-3.5">
                               <Clock className="h-3.5 w-3.5 shrink-0 opacity-95" aria-hidden strokeWidth={2} />
                               {durationBadgeLabel(stop.stayDuration)}
@@ -295,28 +304,34 @@ export default function SmallGroupRouteTimelineSection({
                         </div>
                       ) : null}
 
-                      <div className="px-4 pb-4 pt-4 [font-feature-settings:'kern'_1,'liga'_1] md:px-5 md:pb-5 md:pt-[1.125rem]">
-                        <div className="flex items-start justify-between gap-3">
+                      <div
+                        className={
+                          isExpanded
+                            ? "px-4 pb-4 pt-4 [font-feature-settings:'kern'_1,'liga'_1] md:px-5 md:pb-5 md:pt-[1.125rem]"
+                            : "px-3.5 pb-3 pt-3 [font-feature-settings:'kern'_1,'liga'_1] md:px-4 md:pb-3.5 md:pt-3.5"
+                        }
+                      >
+                        <div className="flex items-start justify-between gap-2.5 sm:gap-3">
                           <div className="min-w-0 flex-1">
                             <p className="sg-dp-stop-sequence">{sequenceLine}</p>
-                            {!stop.imageUrl && !isPlaceholder(stop.displayTime ?? '') ? (
-                              <p className="sg-dp-type-meta mt-1 m-0 tabular-nums">
+                            {!stop.imageUrl && !isExpanded && !itineraryPlaceholder(stop.displayTime ?? '') ? (
+                              <p className="sg-dp-type-meta mt-0.5 m-0 tabular-nums text-[11px]">
                                 {stop.displayTime}
                               </p>
                             ) : null}
                             {stop.highlightLabel ? (
-                              <p className="sg-dp-highlight-chip mb-2 mt-1 inline-flex max-w-full items-center rounded-full border border-stone-200/90 bg-white px-2.5 py-1 text-[10px] font-semibold leading-none tracking-wide shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_1px_2px_rgba(15,23,42,0.04)] md:text-[11px] md:px-3">
+                              <p className="sg-dp-highlight-chip mb-1 mt-1 inline-flex max-w-full items-center rounded-full border border-stone-200/90 bg-white px-2 py-0.5 text-[9px] font-semibold leading-none tracking-wide shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_1px_2px_rgba(15,23,42,0.04)] sm:px-2.5 sm:py-1 sm:text-[10px] md:text-[11px] md:px-3">
                                 {stop.highlightLabel}
                               </p>
                             ) : null}
                             <h3
-                              className={`sg-dp-card-title--feature text-balance ${stop.highlightLabel ? '' : 'mt-1'}`}
+                              className={`sg-dp-card-title--feature text-balance ${stop.highlightLabel ? '' : 'mt-0.5'}`}
                             >
                               {stop.title}
                             </h3>
                           </div>
                           <ChevronDown
-                            className={`mt-1 h-4 w-4 shrink-0 text-neutral-400 transition-transform duration-200 ease-out ${
+                            className={`mt-0.5 h-4 w-4 shrink-0 text-neutral-400 transition-transform duration-200 ease-out ${
                               isExpanded ? 'rotate-180' : ''
                             }`}
                             aria-hidden
@@ -324,46 +339,70 @@ export default function SmallGroupRouteTimelineSection({
                           />
                         </div>
 
-                        <p
-                          className={`sg-dp-type-body mt-2.5 text-pretty md:mt-3 md:leading-[1.52] ${
-                            stop.cardSummary?.trim() ? 'line-clamp-2' : ''
-                          }`}
-                        >
-                          {cardSummaryText || '—'}
-                        </p>
-
-                        {cardFacts.length > 0 ? (
-                          <ul className="mt-3 grid grid-cols-1 gap-x-4 gap-y-1.5 sm:grid-cols-2">
-                            {cardFacts.map((fact: string, fi: number) => (
-                              <li
-                                key={`${stop.id}-fact-${fi}`}
-                                className="sg-dp-type-meta flex gap-2 font-medium leading-snug"
-                              >
-                                <span
-                                  className="mt-[0.4rem] h-1 w-1 shrink-0 rounded-full bg-neutral-400/90"
-                                  aria-hidden
-                                />
-                                <span>{fact}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        ) : null}
-
-                        {stop.tags && stop.tags.length > 0 ? (
-                          <div className="mt-3.5 flex flex-wrap gap-1.5 border-t border-neutral-200/60 pt-3 md:mt-4 md:pt-3.5">
-                            {stop.tags.map((tag: string, ti: number) => (
-                              <span
-                                key={`${stop.id}-tag-${ti}`}
-                                className="inline-flex rounded-md border border-neutral-200/80 bg-gradient-to-b from-white to-stone-50/90 px-2 py-1 text-[10px] font-semibold tracking-[-0.01em] text-neutral-600 md:text-[11px]"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
+                        {!isExpanded ? (
+                          <>
+                            <p className="sg-dp-type-body m-0 mt-1.5 line-clamp-1 text-[12.5px] leading-snug text-[color-mix(in_oklab,var(--dp-fg)_82%,var(--dp-muted)_18%)] md:text-[13px]">
+                              {purposePreview || '—'}
+                            </p>
+                            <div className="mt-1.5 flex min-h-0 flex-wrap items-center gap-1.5">
+                              {!stop.imageUrl && !itineraryPlaceholder(stop.displayTime ?? '') ? (
+                                <span className="inline-flex max-w-full items-center truncate rounded-full border border-neutral-200/90 bg-white/95 px-2 py-0.5 text-[10px] font-semibold tabular-nums text-neutral-700 shadow-[0_1px_0_rgba(255,255,255,1)_inset]">
+                                  {stop.displayTime}
+                                </span>
+                              ) : null}
+                              {!stop.imageUrl && !itineraryPlaceholder(stop.stayDuration) ? (
+                                <span className="inline-flex items-center gap-1 rounded-full border border-neutral-200/90 bg-white/95 px-2 py-0.5 text-[10px] font-semibold tabular-nums text-neutral-800 shadow-[0_1px_0_rgba(255,255,255,1)_inset]">
+                                  <Clock className="h-2.5 w-2.5 shrink-0 opacity-70" aria-hidden strokeWidth={2} />
+                                  {durationBadgeLabel(stop.stayDuration)}
+                                </span>
+                              ) : null}
+                              {tagFallbackChip ? (
+                                <span className="sg-dp-highlight-chip inline-flex max-w-[min(100%,11rem)] truncate rounded-full border border-stone-200/85 bg-white px-2 py-0.5 text-[9px] font-semibold tracking-wide shadow-[0_1px_0_rgba(255,255,255,0.95)_inset] sm:max-w-[13rem] sm:text-[10px]">
+                                  {tagFallbackChip}
+                                </span>
+                              ) : null}
+                            </div>
+                          </>
                         ) : null}
 
                         {isExpanded ? (
-                          <div className="mt-4 border-t border-[var(--sg-card-stroke-soft)] pt-4 md:mt-5 md:pt-5">
+                          <div className="mt-3.5 border-t border-[var(--sg-card-stroke-soft)] pt-3.5 md:mt-4 md:pt-4">
+                            {showExpandedNarrativeBlock ? (
+                              <div className="mb-4 md:mb-5">
+                                <p className="sg-dp-type-label-caps mb-1.5">About this stop</p>
+                                <p className="sg-dp-type-body m-0 max-w-prose whitespace-pre-line text-[13px] leading-relaxed md:text-[14px] md:leading-[1.55]">
+                                  {narrativeExpanded}
+                                </p>
+                              </div>
+                            ) : null}
+                            {cardFacts.length > 0 ? (
+                              <ul className="mb-4 grid grid-cols-1 gap-x-4 gap-y-1.5 sm:grid-cols-2 md:mb-5">
+                                {cardFacts.map((fact: string, fi: number) => (
+                                  <li
+                                    key={`${stop.id}-fact-${fi}`}
+                                    className="sg-dp-type-meta flex gap-2 font-medium leading-snug"
+                                  >
+                                    <span
+                                      className="mt-[0.4rem] h-1 w-1 shrink-0 rounded-full bg-neutral-400/90"
+                                      aria-hidden
+                                    />
+                                    <span>{fact}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : null}
+                            {stop.tags && stop.tags.length > 0 ? (
+                              <div className="mb-4 flex flex-wrap gap-1.5 border-b border-neutral-200/55 pb-4 md:mb-5 md:pb-5">
+                                {stop.tags.map((tag: string, ti: number) => (
+                                  <span
+                                    key={`${stop.id}-tag-${ti}`}
+                                    className="inline-flex rounded-md border border-neutral-200/80 bg-gradient-to-b from-white to-stone-50/90 px-2 py-1 text-[10px] font-semibold tracking-[-0.01em] text-neutral-600 md:text-[11px]"
+                                  >
+                                    {tag}
+                                  </span>
+                                ))}
+                              </div>
+                            ) : null}
                             {dl ? (
                               <>
                                 {(dl.detailIntro?.trim() ||
@@ -419,17 +458,17 @@ export default function SmallGroupRouteTimelineSection({
                                 ) : null}
                                 <p className="sg-dp-type-label-caps mb-3">Logistics &amp; tips</p>
                                 <div className="grid gap-3 sm:grid-cols-2 sm:gap-3.5">
-                                  {!isPlaceholder(stop.displayTime ?? '') ? (
+                                  {!itineraryPlaceholder(stop.displayTime ?? '') ? (
                                     <StopDetail icon={Clock} label="Time" value={stop.displayTime ?? ''} />
                                   ) : null}
-                                  {!isPlaceholder(stop.stayDuration) ? (
+                                  {!itineraryPlaceholder(stop.stayDuration) ? (
                                     <StopDetail
                                       icon={Timer}
                                       label={labelFor('stayDuration')}
                                       value={stop.stayDuration}
                                     />
                                   ) : null}
-                                  {!isPlaceholder(stop.walkingLevel) ? (
+                                  {!itineraryPlaceholder(stop.walkingLevel) ? (
                                     <StopDetail
                                       icon={Footprints}
                                       label={labelFor('walkingLevel')}
@@ -500,41 +539,41 @@ export default function SmallGroupRouteTimelineSection({
                               <>
                                 <p className="sg-dp-type-label-caps mb-3">Practical details</p>
                                 <div className="grid gap-3 sm:grid-cols-2 sm:gap-3.5">
-                                  {!isPlaceholder(stop.whyIncluded) ? (
+                                  {!itineraryPlaceholder(stop.whyIncluded) ? (
                                     <StopDetail
                                       icon={Sparkles}
                                       label={labelFor('whyIncluded')}
                                       value={stop.whyIncluded}
                                     />
                                   ) : null}
-                                  {!isPlaceholder(stop.displayTime ?? '') ? (
+                                  {!itineraryPlaceholder(stop.displayTime ?? '') ? (
                                     <StopDetail icon={Clock} label="Time" value={stop.displayTime ?? ''} />
                                   ) : null}
-                                  {!isPlaceholder(stop.stayDuration) ? (
+                                  {!itineraryPlaceholder(stop.stayDuration) ? (
                                     <StopDetail
                                       icon={Timer}
                                       label={labelFor('stayDuration')}
                                       value={stop.stayDuration}
                                     />
                                   ) : null}
-                                  {!isPlaceholder(stop.walkingLevel) ? (
+                                  {!itineraryPlaceholder(stop.walkingLevel) ? (
                                     <StopDetail
                                       icon={Footprints}
                                       label={labelFor('walkingLevel')}
                                       value={stop.walkingLevel}
                                     />
                                   ) : null}
-                                  {!isPlaceholder(stop.restroom) ? (
+                                  {!itineraryPlaceholder(stop.restroom) ? (
                                     <StopDetail icon={Bath} label={labelFor('restroom')} value={stop.restroom} />
                                   ) : null}
-                                  {!isPlaceholder(stop.photoTip) ? (
+                                  {!itineraryPlaceholder(stop.photoTip) ? (
                                     <StopDetail
                                       icon={Camera}
                                       label={labelFor('photoTip')}
                                       value={stop.photoTip}
                                     />
                                   ) : null}
-                                  {!isPlaceholder(stop.weatherNote) ? (
+                                  {!itineraryPlaceholder(stop.weatherNote) ? (
                                     <StopDetail
                                       icon={CloudSun}
                                       label={labelFor('weatherNote')}

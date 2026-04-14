@@ -114,6 +114,27 @@
     "importantNotesSection": "注意事項",
     "reviews": "評價",
     "noReviewsYet": "此行程尚無評價。",
+    "heroDecision": {
+      "walk": "步行",
+      "rain": "雨天",
+      "fit": "適合對象",
+      "pickup": "接送",
+      "value": "含/不含",
+      "route": "路線"
+    },
+    "routeFlow": {
+      "eyebrow": "路線結構",
+      "title": "當日動線",
+      "lead": "共 {count} 站—與行程單順序一致，由左而右閱讀。",
+      "flowListLabel": "當日站點順序",
+      "moodStripLabel": "一日節奏（三段）",
+      "morning": "上午",
+      "midday": "午間",
+      "coast": "海岸收尾",
+      "stopRange": "第 {from}–{to} 站",
+      "stopSingle": "第 {n} 站",
+      "unnamedStop": "站點"
+    },
     "allPickupPoints": "所有接送地點：",
     "pickupMeetupInfo": "接送與集合資訊",
     "noPickupPoints": "暫無接送地點。",
@@ -419,10 +440,12 @@
         "destComingSoonLine1": "即將",
         "destComingSoonLine2": "推出",
         "textareaLabelJeju": "告訴我們你的旅行風格與這一天想要什麼",
-        "textareaHelperJeju": "可包括同行人數、步行強度、風景與咖啡館偏好、節奏，以及較偏好私人團還是小團等。",
+        "textareaHelperJeju": "請用一行說明節奏、步行、風景及小團或私人偏好即可。",
         "inputLabel": "說說你希望在濟州度過怎樣的一天",
-        "inputPlaceholder": "範例：第一次來濟州，想看風景、少走路、帶父母、想停咖啡館、盡量雨天也好安排。請推薦最契合的方案。",
+        "inputPlaceholder": "例：首次濟州、風景、少走路、父母、咖啡 — 推薦最契合方案。",
         "chipsLegend": "快速加入（可選）",
+        "chipsShowMore": "顯示更多標籤",
+        "chipsShowLess": "收合標籤",
         "findMatchCta": "尋找最契合行程",
         "pricingRowLabel": "參考價與最少人數",
         "priceSmallGroup": "小團 $58 起",
@@ -437,7 +460,23 @@
         "bestMatchCta": "查看此匹配",
         "alsoConsiderLabel": "也可考慮",
         "alsoConsiderPrivate": "私人包車",
-        "alsoConsiderBus": "經典巴士遊"
+        "alsoConsiderBus": "經典巴士遊",
+        "plannerOutcomeEyebrow": "你將獲得",
+        "plannerOutcomeDestTitle": "更匹配的目的地",
+        "plannerOutcomeDestMicro": "優先推薦更合適的區域。",
+        "plannerOutcomeStyleTitle": "行程型態建議",
+        "plannerOutcomeStyleMicro": "拼車、包車或巴士，幫你對齊。",
+        "plannerOutcomePaceTitle": "節奏與路線",
+        "plannerOutcomePaceMicro": "依你的描述安排停留與節奏。",
+        "introVideoAria": "規劃器簡介短影片",
+        "introDismissAria": "關閉簡介影片",
+        "introPlayAria": "播放簡介影片",
+        "matchLoadingAnalyzing": "正在分析你的偏好…",
+        "matchLoadingMatching": "正在配對行程…",
+        "matchLoadingComplete": "配對完成",
+        "matchResultRecommendLine": "節奏舒適、海岸景色均衡——適合首次濟州旅客的預設首選。",
+        "seeOtherToursCta": "查看更多行程",
+        "matchResultBackCta": "返回規劃"
       },
       "comparison": {
         "eyebrow": "旅行風格",
@@ -548,20 +587,22 @@
       "reviews": {
         "eyebrow": "旅客短評",
         "title": "契合、清晰、節奏",
-        "quote1": "接送寫得很清楚，知道在哪裡等。",
-        "quote2": "第一次來濟州，一整天都不趕。",
-        "quote3": "帶父母也合適，站點間走路不多。"
+        "quote1": "飯店接送區和具體等車點都寫清楚了，不用在路邊猜位置。",
+        "quote1Tag": "濟州東部 · 拼團一日",
+        "quote2": "第一次來濟州，行程看起來滿，但一整天下來節奏不壓人。",
+        "quote2Tag": "一日遊旅客"
       },
       "classicBus": {
-        "eyebrow": "備選",
-        "title": "固定路線巴士遊仍在—適合把預算放第一位時了解。",
-        "cta": "瀏覽經典巴士遊"
+        "eyebrow": "省錢方案",
+        "title": "若預算優先，固定路線巴士遊另外集中在清單裡。",
+        "cta": "查看巴士路線團"
       },
       "finalCta": {
-        "eyebrow": "立即規劃",
-        "title": "準備好更聰明地規劃濟州之旅了嗎？",
+        "eyebrow": "下一步",
+        "title": "選定濟州一天：拼團小團，或私人車輛。",
         "cta": "尋找我的行程",
-        "ctaPrivate": "了解私人團"
+        "ctaPrivate": "改選私人車輛",
+        "divider": "或"
       }
     },
     "destinations": {

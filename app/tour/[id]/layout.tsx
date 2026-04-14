@@ -3,6 +3,8 @@ import { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { generateMetadata as generateSEOMetadata, generateStructuredData } from '@/lib/seo';
 import { createServerClient } from '@/lib/supabase';
+import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
+import { tourListPricesToUsdSync } from '@/lib/tour-list-price-usd.server';
 
 type MetadataLocale = 'en' | 'ko' | 'zh' | 'zh-TW' | 'es' | 'ja';
 
@@ -18,7 +20,7 @@ async function fetchActiveTourForLayout(tourId: string) {
   let query = supabase
     .from('tours')
     .select(
-      'id, slug, title, description, city, image_url, price, rating, review_count, translations, seo_title, meta_description, duration'
+      'id, slug, title, description, city, image_url, price, original_price, price_currency, rating, review_count, translations, seo_title, meta_description, duration'
     )
     .eq('is_active', true);
 
@@ -34,7 +36,7 @@ async function fetchActiveTourForLayout(tourId: string) {
     const fallback = await supabase
       .from('tours')
       .select(
-        'id, slug, title, description, city, image_url, price, rating, review_count, translations, seo_title, meta_description, duration'
+        'id, slug, title, description, city, image_url, price, original_price, price_currency, rating, review_count, translations, seo_title, meta_description, duration'
       )
       .eq('is_active', true)
       .ilike('slug', decoded)
@@ -138,12 +140,25 @@ async function generateStructuredDataForTour(tourId: string) {
         ? (tour as { slug: string }).slug
         : tour.id;
 
+    const krwPerUsd = await getKrwPerUsd();
+    const { priceUsd } = tourListPricesToUsdSync(
+      {
+        price: tour.price,
+        original_price: (tour as { original_price?: number | null }).original_price,
+        price_currency: (tour as { price_currency?: string }).price_currency,
+      },
+      krwPerUsd
+    );
+    const offerPrice = priceUsd;
+    const offerCurrency = 'USD';
+
     return generateStructuredData('Tour', {
       name: tour.title,
       description: tour.description || `Experience ${tour.title} in ${tour.city}`,
       image: tour.image_url || `${siteUrl}/og-image.jpg`,
       url: `${siteUrl}/tour/${pathSlug}`,
-      price: parseFloat(tour.price?.toString() || '0'),
+      price: offerPrice,
+      priceCurrency: offerCurrency,
       rating: tour.rating ? parseFloat(tour.rating.toString()) : undefined,
       reviewCount: tour.review_count || 0,
       duration: tour.duration,

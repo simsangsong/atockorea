@@ -8,29 +8,19 @@ import { useTranslations } from '@/lib/i18n';
 import { useCurrencyOptional } from '@/lib/currency';
 import { BOOKING_CANCELLATION_SUMMARY_LINE } from '@/components/tour/bookingPolicy';
 import 'react-datepicker/dist/react-datepicker.css';
+import { computeJoinTourBookingPanelSummary } from '@/lib/tour-detail/join-tour/compute-booking-panel-summary';
+import { isJejuPrivateCarTourJoin } from '@/lib/tour-detail/join-tour/join-tour-helpers';
+import type { JoinTourAvailabilityData } from '@/lib/tour-detail/join-tour/types';
 
 export type BookingPanelSummary = {
   hasDate: boolean;
   guestCount: number;
   unitPriceFormatted: string;
-  /** Raw KRW unit (before guest multiplier) for dual-currency sticky bar, etc. */
-  unitPriceKRW: number;
+  /** Unit in USD (list or date override) for sticky bar & sessionStorage checkout. */
+  unitPriceUsd: number;
   totalFormatted: string | null;
   priceType: 'person' | 'group';
 };
-
-function isJejuPrivateCarTour(title: string | undefined): boolean {
-  if (!title || typeof title !== 'string') return false;
-  const s = title.toLowerCase().trim();
-  return (
-    /jeju\s+private\s+car|private\s+car\s+charter/i.test(s) ||
-    /제주\s*프라이빗\s*차|프라이빗\s*차\s*차터/i.test(s) ||
-    /济州\s*私人\s*包车|济州\s*私人\s*汽车|私人\s*包车|私人\s*汽车/i.test(s) ||
-    /濟州\s*私人\s*包車|私人\s*包車/i.test(s) ||
-    /済州\s*プライベート|プライベート\s*チャーター|済州\s*貸切/i.test(s) ||
-    /jeju\s+coche\s+privado|charter\s+privado/i.test(s)
-  );
-}
 
 interface EnhancedBookingSidebarProps {
   tour: {
@@ -52,16 +42,7 @@ interface EnhancedBookingSidebarProps {
   bookingShell?: 'default' | 'smallGroup';
 }
 
-interface AvailabilityData {
-  available: boolean;
-  availableSpots: number;
-  maxCapacity: number | null;
-  requestedGuests: number;
-  canAccommodate: boolean;
-  price: number;
-  priceOverride: number | null;
-  date: string;
-}
+type AvailabilityData = JoinTourAvailabilityData;
 
 export default function EnhancedBookingSidebar({
   tour,
@@ -158,24 +139,26 @@ export default function EnhancedBookingSidebar({
     }
   }, [selectedDate, guestCount, tour.id]);
 
-  const isJejuPriceOverride = isJejuPrivateCarTour(tour.title) && (preferredLanguage === 'en' || preferredLanguage === 'zh');
+  const isJejuPriceOverride = isJejuPrivateCarTourJoin(tour.title) && (preferredLanguage === 'en' || preferredLanguage === 'zh');
   const hasDiscount = tour.originalPrice !== null && tour.originalPrice !== undefined && tour.originalPrice > tour.price;
   const discount = hasDiscount && tour.originalPrice ? tour.originalPrice - tour.price : 0;
   const discountPercent = hasDiscount && tour.originalPrice ? Math.round((discount / tour.originalPrice) * 100) : 0;
-  // 제주: 원가 45만원 고정, 할인율 표시 (영어 35만 → 22%, 중국어 25만 → 44%)
-  const JEJU_ORIGINAL_PRICE = 450000;
+  // Jeju private car join: list prices in USD (~legacy 45만/35만/25만 KRW at spot FX)
+  const JEJU_ORIGINAL_USD = 304;
+  const JEJU_LIST_EN_USD = 237;
+  const JEJU_LIST_ZH_USD = 169;
   const jejuDiscountPercent = isJejuPriceOverride
     ? preferredLanguage === 'en'
-      ? Math.round(((JEJU_ORIGINAL_PRICE - 350000) / JEJU_ORIGINAL_PRICE) * 100)
-      : Math.round(((JEJU_ORIGINAL_PRICE - 250000) / JEJU_ORIGINAL_PRICE) * 100)
+      ? Math.round(((JEJU_ORIGINAL_USD - JEJU_LIST_EN_USD) / JEJU_ORIGINAL_USD) * 100)
+      : Math.round(((JEJU_ORIGINAL_USD - JEJU_LIST_ZH_USD) / JEJU_ORIGINAL_USD) * 100)
     : 0;
   const showOriginalPrice = hasDiscount && tour.originalPrice && !isJejuPriceOverride ? true : isJejuPriceOverride;
-  const displayOriginalPrice = isJejuPriceOverride ? JEJU_ORIGINAL_PRICE : (hasDiscount ? tour.originalPrice! : 0);
+  const displayOriginalPrice = isJejuPriceOverride ? JEJU_ORIGINAL_USD : (hasDiscount ? tour.originalPrice! : 0);
   
   // Format price in current currency (USD/KRW with real-time rate)
   const formatPrice = (price: number) => {
     if (currencyCtx) return currencyCtx.formatPrice(price);
-    return new Intl.NumberFormat('ko-KR', { style: 'currency', currency: 'KRW', minimumFractionDigits: 0 }).format(price);
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(price);
   };
   
   // Calculate base price (use original price if discount is not applied, otherwise use discounted price)
@@ -188,10 +171,10 @@ export default function EnhancedBookingSidebar({
 
   // 제주 프라이빗 차 투어: 예약폼 언어 선택에 따라 총액 적용 (영어 35만원, 중국어 25만원)
   const displayTotalPrice =
-    isJejuPrivateCarTour(tour.title) && (preferredLanguage === 'en' || preferredLanguage === 'zh')
+    isJejuPrivateCarTourJoin(tour.title) && (preferredLanguage === 'en' || preferredLanguage === 'zh')
       ? preferredLanguage === 'en'
-        ? 350000
-        : 250000
+        ? JEJU_LIST_EN_USD
+        : JEJU_LIST_ZH_USD
       : totalPrice;
 
   const unitPriceAmount = isJejuPriceOverride
@@ -200,28 +183,33 @@ export default function EnhancedBookingSidebar({
 
   useEffect(() => {
     if (!onBookingSummaryChange) return;
-    onBookingSummaryChange({
-      hasDate: selectedDate != null,
-      guestCount,
-      unitPriceFormatted: formatPrice(unitPriceAmount),
-      unitPriceKRW: unitPriceAmount,
-      totalFormatted: selectedDate != null ? formatPrice(displayTotalPrice) : null,
-      priceType: tour.priceType,
-    });
+    onBookingSummaryChange(
+      computeJoinTourBookingPanelSummary({
+        tour,
+        selectedDate,
+        guestCount,
+        availability,
+        applyDiscount,
+        promoCode,
+        preferredLanguage,
+        formatPrice,
+      })
+    );
   }, [
     onBookingSummaryChange,
     selectedDate,
     guestCount,
-    unitPriceAmount,
-    displayTotalPrice,
-    tour.priceType,
-    currencyCtx,
+    availability,
     applyDiscount,
-    hasDiscount,
+    promoCode,
+    preferredLanguage,
+    tour,
     tour.price,
     tour.originalPrice,
-    availability?.priceOverride,
-    isJejuPriceOverride,
+    tour.priceType,
+    tour.title,
+    currencyCtx,
+    formatPrice,
   ]);
 
   const isSg = bookingShell === 'smallGroup';
@@ -604,7 +592,7 @@ export default function EnhancedBookingSidebar({
                   </span>
                   <span className="tabular-nums">
                     {formatPrice(
-                      isJejuPrivateCarTour(tour.title) && (preferredLanguage === 'en' || preferredLanguage === 'zh')
+                      isJejuPrivateCarTourJoin(tour.title) && (preferredLanguage === 'en' || preferredLanguage === 'zh')
                         ? displayTotalPrice
                         : subtotal
                     )}
@@ -640,7 +628,7 @@ export default function EnhancedBookingSidebar({
                   </span>
                   <span className="font-semibold tabular-nums text-slate-900">
                     {formatPrice(
-                      isJejuPrivateCarTour(tour.title) && (preferredLanguage === 'en' || preferredLanguage === 'zh')
+                      isJejuPrivateCarTourJoin(tour.title) && (preferredLanguage === 'en' || preferredLanguage === 'zh')
                         ? displayTotalPrice
                         : subtotal
                     )}

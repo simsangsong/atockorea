@@ -46,8 +46,17 @@ function isKnownJoinTourSlug(slug: string | undefined | null): boolean {
   if (!s) return false;
   if (s === "east-signature-nature-core") return true;
   if (s.startsWith("east-signature-nature-core-")) return true;
+  if (s === "east-jeju-signature-small-group") return true;
+  if (s.startsWith("east-jeju-signature-small-group-")) return true;
   if (s === "jeju-east-small-group-template-preview") return true;
   return false;
+}
+
+/** `tours.tag` often carries “Small group · …” — stable signal for the default small-group v2 detail layout. */
+function tagIndicatesSmallGroupJoin(tag: string | undefined | null): boolean {
+  const t = (tag ?? "").trim().toLowerCase();
+  if (!t) return false;
+  return /small\s*group|소그룹|拼团|少人数|grupo\s*pequeño|small-group/i.test(t);
 }
 
 function isUuidTourId(value: string): boolean {
@@ -55,7 +64,7 @@ function isUuidTourId(value: string): boolean {
 }
 
 /**
- * DB sometimes leaves `tours.slug` null; the client still loads by `/tour/east-signature-nature-core`.
+ * DB sometimes leaves `tours.slug` null; the client still loads by URL segment (e.g. flagship small-group slugs).
  * Use URL segment for join/premium routing when API slug is missing.
  */
 function slugForJoinInference(apiSlug: string | undefined, routeTourId?: string | null): string | undefined {
@@ -66,9 +75,10 @@ function slugForJoinInference(apiSlug: string | undefined, routeTourId?: string 
   return r;
 }
 
-/** Infer tour type from API title/badges/slug. No DB `tour_type` column yet — slug is the stable join signal. */
-function inferTourType(item: { title?: string; badges?: string[]; slug?: string }): TourType {
+/** Infer tour type from API title/badges/slug/tag. No DB `tour_type` column yet — slug + `tours.tag` are stable join signals. */
+function inferTourType(item: { title?: string; badges?: string[]; slug?: string; tag?: string }): TourType {
   if (isKnownJoinTourSlug(item.slug)) return "join";
+  if (tagIndicatesSmallGroupJoin(item.tag)) return "join";
   const title = (item.title ?? "").toLowerCase();
   const badges = (item.badges ?? []).map((b) => String(b).toLowerCase());
   if (
@@ -120,10 +130,12 @@ export function adaptToursListResponse(raw: unknown): TourCardViewModel[] {
     if (!id && !title) continue;
 
     const listSlug = typeof item?.slug === "string" ? item.slug.trim() : undefined;
+    const listTag = typeof item?.tag === "string" ? item.tag : undefined;
     const type = inferTourType({
       title: item?.title,
       badges: item?.badges,
       slug: listSlug,
+      tag: listTag,
     });
     const priceFrom =
       typeof item?.price === "number"
@@ -223,10 +235,15 @@ export function adaptTourDetailResponse(raw: unknown, routeTourId?: string | nul
   const slugEarly =
     typeof tour.slug === "string" && tour.slug.trim() !== "" ? tour.slug.trim() : undefined;
   const slugForInference = slugForJoinInference(slugEarly, routeTourId);
+  const tagRaw =
+    typeof (tour as Record<string, unknown>).tag === "string"
+      ? String((tour as Record<string, unknown>).tag)
+      : undefined;
   const type = inferTourType({
     title: tour.title as string,
     badges: (tour.badges as string[]) ?? [],
     slug: slugForInference,
+    tag: tagRaw,
   });
   const price = typeof tour.price === "number" ? tour.price : Number(tour.price) || 0;
   const originalPrice =
@@ -327,6 +344,10 @@ export function adaptTourDetailResponse(raw: unknown, routeTourId?: string | nul
     maxTravelers: typeof tour.maxTravelers === "number" ? tour.maxTravelers : undefined,
     childEligibility: Array.isArray(tour.childEligibility) ? (tour.childEligibility as Array<{ id: string; num?: number; num1?: number; num2?: number; num3?: number; text?: string }>) : undefined,
     bookingTimeline: mapServerBookingTimeline(tour.bookingTimeline ?? tour.timeline) ?? undefined,
+    detailPageV2:
+      (tour as Record<string, unknown>).detailPageV2 ??
+      (tour as Record<string, unknown>).detail_page_v2 ??
+      undefined,
   } as unknown as TourDetailViewModel;
 
   let coercedView = view;

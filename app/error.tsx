@@ -13,7 +13,7 @@ interface ErrorProps {
 export default function Error({ error, reset }: ErrorProps) {
   useEffect(() => {
     try {
-      console.error('Page error', error?.message, error?.digest);
+      console.error('Page error', error?.message ?? '(no message)', error?.digest);
     } catch {
       // Avoid breaking the error UI if logging fails
     }
@@ -33,7 +33,7 @@ export default function Error({ error, reset }: ErrorProps) {
             <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg text-left">
               <p className="text-sm font-semibold text-red-800 mb-2">Error Details:</p>
               <p className="text-sm text-red-700 font-mono mb-2">
-                {error.name}: {error.message}
+                {error.name}: {error.message ?? 'Unknown error'}
               </p>
               {error.digest && (
                 <p className="text-xs text-red-600">Error ID: {error.digest}</p>

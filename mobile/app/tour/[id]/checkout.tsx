@@ -153,7 +153,7 @@ export default function CheckoutScreen() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           amount: totalPrice,
-          currency: 'krw',
+          currency: 'usd',
           bookingId,
           bookingData: {
             customerInfo: {

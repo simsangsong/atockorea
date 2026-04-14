@@ -1,0 +1,140 @@
+/**
+ * East Signature v0 tour detail — scoped tokens + utilities from
+ * `components/Tour Detail page/app/globals.css` (v0 source).
+ * Applied only under `.east-signature-v0-detail` so site `:root` / body mesh stay untouched.
+ */
+.east-signature-v0-detail {
+  --background: #fdfcfa;
+  --foreground: #1a2332;
+  --card: #ffffff;
+  --card-foreground: #1a2332;
+  --popover: #ffffff;
+  --popover-foreground: #1a2332;
+  --primary: #2e5c8a;
+  --primary-foreground: #ffffff;
+  --secondary: #fefefe;
+  --secondary-foreground: #1a2332;
+  --muted: #f7f6f3;
+  --muted-foreground: #5c6775;
+  --accent: #c8956c;
+  --accent-foreground: #1a2332;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: #ebe8e3;
+  --input: #ebe8e3;
+  --ring: #2e5c8a;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.875rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1a2332;
+  --sidebar-primary: #2e5c8a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f7f6f3;
+  --sidebar-accent-foreground: #1a2332;
+  --sidebar-border: #ebe8e3;
+  --sidebar-ring: #2e5c8a;
+
+  --warm-ivory: #fffefb;
+  --soft-pearl: #fafbfc;
+  --mist-blue: #f7f9fb;
+  --sand-blush: #fcf9f6;
+  --cloud-gray: #faf9f8;
+
+  --spring-blossom: #fdf8f9;
+  --summer-breeze: #f6fafa;
+  --autumn-gold: #fdfaf6;
+  --winter-mist: #f8fafc;
+
+  --shadow-subtle: 0 1px 2px rgba(26, 35, 50, 0.02);
+  --shadow-card: 0 1px 3px rgba(26, 35, 50, 0.03), 0 4px 16px rgba(26, 35, 50, 0.025);
+  --shadow-elevated: 0 4px 20px rgba(26, 35, 50, 0.06), 0 1px 4px rgba(26, 35, 50, 0.03);
+  --shadow-hero: 0 8px 40px rgba(26, 35, 50, 0.08), 0 2px 8px rgba(26, 35, 50, 0.03);
+
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), "Pretendard", var(--font-inter), system-ui, sans-serif;
+}
+
+.east-signature-v0-detail .font-serif {
+  font-family: var(--font-playfair-v0), ui-serif, Georgia, serif;
+}
+
+/* Premium utility classes (v0 @layer utilities) */
+.east-signature-v0-detail .bg-warm-ivory {
+  background-color: var(--warm-ivory);
+}
+.east-signature-v0-detail .bg-soft-pearl {
+  background-color: var(--soft-pearl);
+}
+.east-signature-v0-detail .bg-mist-blue {
+  background-color: var(--mist-blue);
+}
+.east-signature-v0-detail .bg-sand-blush {
+  background-color: var(--sand-blush);
+}
+.east-signature-v0-detail .bg-cloud-gray {
+  background-color: var(--cloud-gray);
+}
+
+.east-signature-v0-detail .bg-spring {
+  background-color: var(--spring-blossom);
+}
+.east-signature-v0-detail .bg-summer {
+  background-color: var(--summer-breeze);
+}
+.east-signature-v0-detail .bg-autumn {
+  background-color: var(--autumn-gold);
+}
+.east-signature-v0-detail .bg-winter {
+  background-color: var(--winter-mist);
+}
+
+.east-signature-v0-detail .shadow-premium {
+  box-shadow: var(--shadow-card);
+}
+.east-signature-v0-detail .shadow-premium-elevated {
+  box-shadow: var(--shadow-elevated);
+}
+.east-signature-v0-detail .shadow-premium-hero {
+  box-shadow: var(--shadow-hero);
+}
+
+.east-signature-v0-detail .shadow-hero {
+  box-shadow: var(--shadow-hero);
+}
+
+.east-signature-v0-detail .card-premium {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+.east-signature-v0-detail .card-hero {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 2px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.east-signature-v0-detail .card-utility {
+  background-color: var(--card);
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  border-radius: calc(var(--radius) - 2px);
+  box-shadow: var(--shadow-subtle);
+}
+
+.east-signature-v0-detail .scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.east-signature-v0-detail .scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.east-signature-v0-detail .text-balance {
+  text-wrap: balance;
+}

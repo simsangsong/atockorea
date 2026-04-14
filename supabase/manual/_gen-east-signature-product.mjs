@@ -143,7 +143,7 @@ const gallery = [
 
 const translations = {
   en: {
-    title: "East Signature Nature Core",
+    title: "Jeju East Volcano, Coast & Village Small Group Tour",
     subtitle:
       "A well-paced East Jeju route from stone heritage and village culture to iconic coastal scenery and a beach finish.",
     description:
@@ -225,14 +225,14 @@ SELECT slug, title, is_active, is_featured FROM tours WHERE slug = 'east-signatu
 
 const mid = `INSERT INTO tours (
   title, slug, city, tag, subtitle, description, highlight,
-  price, original_price, price_type, image_url, gallery_images,
+  price, original_price, price_currency, price_type, image_url, gallery_images,
   duration, difficulty, group_size, lunch_included, ticket_included,
   pickup_info, notes, badges, highlights, includes, excludes,
   schedule, itinerary_details, faqs,
   rating, review_count, pickup_points_count, dropoff_points_count,
   is_active, is_featured, translations, seo_title, meta_description
 ) VALUES (
-  ${esc("East Signature Nature Core")},
+  ${esc("Jeju East Volcano, Coast & Village Small Group Tour")},
   ${esc("east-signature-nature-core")},
   ${esc("Jeju")},
   ${esc("Small group · East Jeju")},
@@ -241,8 +241,9 @@ const mid = `INSERT INTO tours (
   )},
   ${esc("A balanced East Jeju course that moves naturally from Jeju's cultural texture to its most iconic eastern coastal highlights.")},
   ${esc("A classic East Jeju route designed to build gradually from calm cultural stops to the region's most recognizable scenery.")},
-  189000.00,
-  229000.00,
+  58.00,
+  72.00,
+  ${esc("USD")},
   ${esc("person")},
   ${esc("https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1200&q=85")},
   ${j(gallery)}::jsonb,
@@ -267,7 +268,7 @@ const mid = `INSERT INTO tours (
   true,
   true,
   ${j(translations)}::jsonb,
-  ${esc("East Signature Nature Core | East Jeju Small Group Day Tour | AtoCKorea")},
+  ${esc("Jeju East Volcano, Coast & Village Small Group Tour | AtoCKorea")},
   ${esc(
     "Stone Park & Seongeup to Seopjikoji, Seongsan, and Hamdeok — a balanced East Jeju day for first-time visitors. Small group, weather-aware operation."
   )}
@@ -281,6 +282,7 @@ ON CONFLICT (slug) DO UPDATE SET
   highlight = EXCLUDED.highlight,
   price = EXCLUDED.price,
   original_price = EXCLUDED.original_price,
+  price_currency = EXCLUDED.price_currency,
   price_type = EXCLUDED.price_type,
   image_url = EXCLUDED.image_url,
   gallery_images = EXCLUDED.gallery_images,

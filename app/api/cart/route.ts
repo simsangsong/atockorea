@@ -1,5 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
+import {
+  tourListPricesToUsdSync,
+  mapNestedTourRowsToUsd,
+  mapNestedTourToUsdRow,
+} from '@/lib/tour-list-price-usd.server';
 import { getAuthUser } from '@/lib/auth';
 
 /**
@@ -29,6 +35,7 @@ export async function GET(req: NextRequest) {
           city,
           price,
           original_price,
+          price_currency,
           price_type,
           image_url,
           images,
@@ -51,7 +58,8 @@ export async function GET(req: NextRequest) {
       );
     }
 
-    return NextResponse.json({ cartItems: cartItems || [] });
+    const mapped = await mapNestedTourRowsToUsd(cartItems || []);
+    return NextResponse.json({ cartItems: mapped });
   } catch (error: any) {
     console.error('Unexpected error:', error);
     return NextResponse.json(
@@ -91,7 +99,7 @@ export async function POST(req: NextRequest) {
     // Get tour info for pricing
     const { data: tour, error: tourError } = await supabase
       .from('tours')
-      .select('id, price, price_type')
+      .select('id, price, original_price, price_currency, price_type')
       .eq('id', tourId)
       .eq('is_active', true)
       .single();
@@ -103,8 +111,16 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Calculate prices
-    const unitPrice = parseFloat(tour.price.toString());
+    const krwPerUsd = await getKrwPerUsd();
+    const { priceUsd: unitPriceUsd } = tourListPricesToUsdSync(
+      {
+        price: tour.price,
+        original_price: tour.original_price,
+        price_currency: (tour as { price_currency?: string }).price_currency,
+      },
+      krwPerUsd
+    );
+    const unitPrice = parseFloat(String(unitPriceUsd));
     const totalPrice = tour.price_type === 'person' 
       ? unitPrice * numberOfGuests 
       : unitPrice;
@@ -154,8 +170,9 @@ export async function POST(req: NextRequest) {
         throw error;
       }
 
+      const mapped = mapNestedTourToUsdRow(cartItem, krwPerUsd);
       return NextResponse.json({
-        cartItem,
+        cartItem: mapped,
         message: 'Cart item updated successfully',
       });
     }
@@ -180,6 +197,7 @@ export async function POST(req: NextRequest) {
           city,
           price,
           original_price,
+          price_currency,
           price_type,
           image_url,
           images,
@@ -201,8 +219,9 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const mappedNew = mapNestedTourToUsdRow(cartItem, krwPerUsd);
     return NextResponse.json(
-      { cartItem, message: 'Added to cart successfully' },
+      { cartItem: mappedNew, message: 'Added to cart successfully' },
       { status: 201 }
     );
   } catch (error: any) {

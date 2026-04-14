@@ -1,8 +1,24 @@
 import { MetadataRoute } from 'next';
 import { createServerClient } from '@/lib/supabase';
+import { STATIC_TOUR_PRODUCTS } from '@/components/product-tour-static/catalog/staticTourProductRegistry';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
+
+  const staticTourProductPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/tour-product`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.65,
+    },
+    ...STATIC_TOUR_PRODUCTS.map((p) => ({
+      url: `${baseUrl}/tour-product/${p.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.65,
+    })),
+  ];
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
@@ -24,6 +40,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'daily',
       priority: 0.8,
     },
+    ...staticTourProductPages,
   ];
 
   // Dynamic tour pages

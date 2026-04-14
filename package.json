@@ -10,6 +10,7 @@
     "build:mobile": "BUILD_FOR_MOBILE=true next build",
     "start": "next start",
     "lint": "next lint",
+    "icons:sync": "node scripts/sync-app-icons-from-svg.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
@@ -19,7 +20,18 @@
     "mobile:setup": "node scripts/setup-react-native.sh",
     "android:add": "npx cap add android",
     "android:sync": "npx cap sync android",
-    "android:open": "npx cap open android"
+    "android:open": "npx cap open android",
+    "gen:tour-product-seed": "npx tsx scripts/gen-tour-product-east-signature-seed.ts",
+    "export:tour-product-bundle-en": "npx tsx scripts/export-east-signature-locale-bundle-en.ts",
+    "export:tour-product-full-jsonb": "npx tsx scripts/export-east-signature-full-page-jsonb.ts",
+    "build:tour-product-locale-sql": "npx tsx scripts/build-tour-product-locale-upsert-sql.ts",
+    "gen:southwest-tour-product-sql": "node scripts/gen-southwest-tour-product-sql.mjs",
+    "gen:southwest-tour-product-zh-TW-sql": "node scripts/gen-southwest-tour-product-zh-TW-sql.mjs",
+    "gen:southwest-tour-product-zh-CN-sql": "node scripts/gen-southwest-tour-product-zh-CN-sql.mjs",
+    "gen:southwest-tour-product-ko-sql": "node scripts/gen-southwest-tour-product-ko-sql.mjs",
+    "gen:southwest-tour-product-ja-sql": "node scripts/gen-southwest-tour-product-ja-sql.mjs",
+    "gen:southwest-tour-product-es-sql": "node scripts/gen-southwest-tour-product-es-sql.mjs",
+    "gen:jeju-grand-highlights-tour-product-sql": "node scripts/gen-jeju-grand-highlights-tour-product-sql.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
@@ -27,6 +39,7 @@
     "@formatjs/intl-localematcher": "^0.8.1",
     "@google/generative-ai": "^0.24.1",
     "@googlemaps/google-maps-services-js": "^3.4.2",
+    "@radix-ui/react-slot": "^1.2.4",
     "@react-google-maps/api": "^2.20.7",
     "@stripe/stripe-js": "^8.5.3",
     "@supabase/supabase-js": "^2.39.0",
@@ -42,7 +55,6 @@
     "negotiator": "^1.0.0",
     "next": "^16.1.7",
     "next-intl": "^4.6.0",
-    "next-themes": "^0.4.6",
     "react": "^19.2.4",
     "react-datepicker": "^8.10.0",
     "react-dom": "^19.2.4",
@@ -80,6 +92,7 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "ts-jest": "^29.4.6",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }

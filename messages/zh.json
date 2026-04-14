@@ -114,6 +114,27 @@
     "importantNotesSection": "注意事项",
     "reviews": "评价",
     "noReviewsYet": "此行程暂无评价。",
+    "heroDecision": {
+      "walk": "步行",
+      "rain": "雨天",
+      "fit": "适合人群",
+      "pickup": "接送",
+      "value": "含/不含",
+      "route": "路线"
+    },
+    "routeFlow": {
+      "eyebrow": "路线结构",
+      "title": "当日动线",
+      "lead": "共 {count} 站—与行程单顺序一致，从左向右阅读。",
+      "flowListLabel": "当日站点顺序",
+      "moodStripLabel": "一日节奏（三段）",
+      "morning": "上午",
+      "midday": "午间",
+      "coast": "海岸收尾",
+      "stopRange": "第 {from}–{to} 站",
+      "stopSingle": "第 {n} 站",
+      "unnamedStop": "站点"
+    },
     "securePaymentTitle": "安全支付",
     "securePaymentSub": "预订时在线全额支付",
     "payOnlineToBook": "在线支付以预订",
@@ -419,10 +440,12 @@
         "destComingSoonLine1": "即将",
         "destComingSoonLine2": "推出",
         "textareaLabelJeju": "告诉我们你的旅行风格与这一天想要什么",
-        "textareaHelperJeju": "可包括同行人员、步行强度、风景与咖啡馆偏好、节奏，以及更倾向私人团还是小团等。",
+        "textareaHelperJeju": "请用一行说明节奏、步行、风景及小团或私人偏好即可。",
         "inputLabel": "说说你希望在济州度过怎样的一天",
-        "inputPlaceholder": "示例：第一次来济州，想看风景、少走路、带父母、想停咖啡馆、尽量雨天也好安排。请推荐最契合的方案。",
+        "inputPlaceholder": "例：首次济州、风景、少走路、父母、咖啡 — 推荐最契合方案。",
         "chipsLegend": "快捷添加（可选）",
+        "chipsShowMore": "显示更多标签",
+        "chipsShowLess": "收起标签",
         "findMatchCta": "查找最契合行程",
         "pricingRowLabel": "参考价与最少人数",
         "priceSmallGroup": "小团 $58 起",
@@ -437,7 +460,23 @@
         "bestMatchCta": "查看此匹配",
         "alsoConsiderLabel": "也可考虑",
         "alsoConsiderPrivate": "私人包车",
-        "alsoConsiderBus": "经典巴士游"
+        "alsoConsiderBus": "经典巴士游",
+        "plannerOutcomeEyebrow": "你将获得",
+        "plannerOutcomeDestTitle": "更匹配的目的地",
+        "plannerOutcomeDestMicro": "优先推荐更合适的区域。",
+        "plannerOutcomeStyleTitle": "行程形态建议",
+        "plannerOutcomeStyleMicro": "拼车、包车或巴士，帮你对齐。",
+        "plannerOutcomePaceTitle": "节奏与路线",
+        "plannerOutcomePaceMicro": "按你的描述安排停留与节奏。",
+        "introVideoAria": "规划器简介短视频",
+        "introDismissAria": "关闭简介视频",
+        "introPlayAria": "播放简介视频",
+        "matchLoadingAnalyzing": "正在分析你的偏好…",
+        "matchLoadingMatching": "正在匹配行程…",
+        "matchLoadingComplete": "匹配完成",
+        "matchResultRecommendLine": "节奏舒适、海岸景色均衡——适合首次济州游客的默认优选。",
+        "seeOtherToursCta": "查看更多行程",
+        "matchResultBackCta": "返回规划"
       },
       "comparison": {
         "eyebrow": "旅行风格",
@@ -548,20 +587,22 @@
       "reviews": {
         "eyebrow": "旅客短评",
         "title": "契合、清晰、节奏",
-        "quote1": "接送写得很清楚，知道在哪等。",
-        "quote2": "第一次来济州，一整天都不赶。",
-        "quote3": "带父母也合适，站点间走路不多。"
+        "quote1": "酒店接送区和具体等车点都写明了，不用在路边猜位置。",
+        "quote1Tag": "济州东部 · 拼团一日",
+        "quote2": "第一次来济州，行程看着满，但一天下来节奏并不赶。",
+        "quote2Tag": "一日游旅客"
       },
       "classicBus": {
-        "eyebrow": "备选",
-        "title": "固定线路巴士游仍在—适合把预算放第一位时了解。",
-        "cta": "浏览经典巴士游"
+        "eyebrow": "省钱方案",
+        "title": "若预算优先，固定线路巴士游单独汇总在另一列表。",
+        "cta": "查看巴士线路团"
       },
       "finalCta": {
-        "eyebrow": "立即规划",
-        "title": "准备好更聪明地规划济州之旅了吗？",
+        "eyebrow": "下一步",
+        "title": "选定济州一天：拼团小团，或私人车辆。",
         "cta": "寻找我的行程",
-        "ctaPrivate": "了解私人团"
+        "ctaPrivate": "改选私人车辆",
+        "divider": "或"
       }
     },
     "destinations": {

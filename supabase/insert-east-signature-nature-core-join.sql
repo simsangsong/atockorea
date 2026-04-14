@@ -44,7 +44,7 @@ WITH new_tour AS (
     is_featured,
     translations
   ) VALUES (
-    'East Signature Nature Core',
+    'Jeju East Volcano, Coast & Village Small Group Tour',
     'east-signature-nature-core-jeju',
     'Jeju',
     'A first-time visitor-friendly course that balances East Jeju''s signature scenery with the island''s unique atmosphere.',

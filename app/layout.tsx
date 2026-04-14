@@ -1,30 +1,19 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { Inter, Noto_Sans_SC, Noto_Sans_TC } from "next/font/google";
+import { cookies } from "next/headers";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import "./home-v2.css";
+import "./home-v2-fidelity.css";
 import { I18nProvider } from "@/lib/i18n";
 import { CurrencyProvider } from "@/lib/currency";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { rootHtmlLangFromNextLocaleCookie } from "@/lib/rootHtmlLangFromCookie";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
-});
-
-const notoSansSC = Noto_Sans_SC({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-noto-sans-sc",
-  display: "swap",
-});
-
-const notoSansTC = Noto_Sans_TC({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-noto-sans-tc",
   display: "swap",
 });
 
@@ -36,50 +25,43 @@ export const metadata = generateSEOMetadata({
   url: '/',
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   const organizationStructuredData = generateStructuredData('Organization', {});
   const websiteStructuredData = generateStructuredData('WebSite', {});
+  const jar = await cookies();
+  const htmlLang = rootHtmlLangFromNextLocaleCookie(jar.get("NEXT_LOCALE")?.value);
 
   return (
-    <html lang="en" className="font-sans" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${notoSansSC.variable} ${notoSansTC.variable} font-sans antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(organizationStructuredData),
-            }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(websiteStructuredData),
-            }}
-          />
-          <Suspense fallback={null}>
-            <ErrorBoundary>
-              <I18nProvider>
-                <CurrencyProvider>
-                  <div className="relative z-[1] min-h-dvh min-h-[100dvh] flex flex-col">
-                    {children}
-                  </div>
-                </CurrencyProvider>
-              </I18nProvider>
-            </ErrorBoundary>
-          </Suspense>
-          <Toaster position="top-center" closeButton richColors />
-        </ThemeProvider>
+    <html lang={htmlLang} className="font-sans" suppressHydrationWarning>
+      <body className={`${inter.variable} font-sans antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationStructuredData),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteStructuredData),
+          }}
+        />
+        <Suspense fallback={null}>
+          <ErrorBoundary>
+            <I18nProvider>
+              <CurrencyProvider>
+                <div className="relative z-[1] min-h-dvh min-h-[100dvh] flex flex-col">
+                  {children}
+                </div>
+              </CurrencyProvider>
+            </I18nProvider>
+          </ErrorBoundary>
+        </Suspense>
+        <Toaster position="top-center" closeButton richColors />
       </body>
     </html>
   );

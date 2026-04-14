@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
-import { isPublicEastSignatureTourDetailPathForSiteGate } from '@/src/lib/east-signature-nature-core-match';
+import {
+  isPublicEastSignatureTourDetailPathForSiteGate,
+  matchesEastSignatureSlugSegment,
+} from '@/src/lib/east-signature-nature-core-match';
+import { CANONICAL_EAST_SIGNATURE_PRODUCT_PATH } from '@/lib/tour-consumer-visibility';
 
 const SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'zh-TW', 'ja', 'es'];
 const DEFAULT_LOCALE = 'en';
@@ -24,6 +28,7 @@ const RESERVED_ROOT_SEGMENTS = new Set([
   'home-private',
   'itinerary',
   'jeju',
+  'legacy-home-preview',
   'legal',
   'merchant',
   'my',
@@ -40,6 +45,8 @@ const RESERVED_ROOT_SEGMENTS = new Set([
   'test-admin',
   'tours',
   'tour',
+  'tour-preview',
+  'tour-product',
 ]);
 
 function singlePathSegment(pathname: string): string | null {
@@ -104,6 +111,98 @@ function getLocaleFromCookie(request: NextRequest): string | null {
   return null;
 }
 
+const LOCALE_SET = new Set(SUPPORTED_LOCALES);
+
+/** Duplicate flagship marketing URLs → canonical product (runs before site-private rewrite so redirects always win). */
+function redirectEastSignatureLegacyMarketingPaths(request: NextRequest): NextResponse | null {
+  const parts = request.nextUrl.pathname.split('/').filter(Boolean);
+
+  const matchesDupPreviewSlug = (slug: string) =>
+    slug === 'east-small-group-v2' ||
+    slug === 'jeju-east-small-group-template-preview' ||
+    slug === 'east-jeju-signature-small-group';
+
+  if (parts[0] === 'tour-preview' && parts.length === 2 && matchesDupPreviewSlug(parts[1]!)) {
+    const u = request.nextUrl.clone();
+    u.pathname = CANONICAL_EAST_SIGNATURE_PRODUCT_PATH;
+    u.search = '';
+    return NextResponse.redirect(u, 308);
+  }
+
+  if (
+    parts.length === 3 &&
+    LOCALE_SET.has(parts[0]!) &&
+    parts[1] === 'tour-preview' &&
+    matchesDupPreviewSlug(parts[2]!)
+  ) {
+    const u = request.nextUrl.clone();
+    u.pathname = `/${parts[0]}/tour-product/east-signature-nature-core`;
+    u.search = '';
+    return NextResponse.redirect(u, 308);
+  }
+
+  if (parts[0] === 'tour' && parts.length === 2 && parts[1] === 'jeju-east-small-group-template-preview') {
+    const u = request.nextUrl.clone();
+    u.pathname = CANONICAL_EAST_SIGNATURE_PRODUCT_PATH;
+    u.search = '';
+    return NextResponse.redirect(u, 308);
+  }
+
+  if (
+    parts.length === 3 &&
+    LOCALE_SET.has(parts[0]!) &&
+    parts[1] === 'tour' &&
+    parts[2] === 'jeju-east-small-group-template-preview'
+  ) {
+    const u = request.nextUrl.clone();
+    u.pathname = `/${parts[0]}/tour-product/east-signature-nature-core`;
+    u.search = '';
+    return NextResponse.redirect(u, 308);
+  }
+
+  return null;
+}
+
+function decodeUrlPathSegment(seg: string): string {
+  try {
+    return decodeURIComponent(seg);
+  } catch {
+    return seg;
+  }
+}
+
+/** Legacy duplicate East flagship checkout slugs → single Stripe-capable route. */
+function redirectLegacyEastSignatureCheckoutPaths(request: NextRequest): NextResponse | null {
+  const parts = request.nextUrl.pathname.split('/').filter(Boolean);
+
+  const shouldRewriteSlug = (slugRaw: string) => {
+    const s = decodeUrlPathSegment(slugRaw).trim().toLowerCase();
+    if (s === 'east-signature-nature-core') return false;
+    if (s === 'jeju-east-small-group-template-preview') return true;
+    return matchesEastSignatureSlugSegment(s);
+  };
+
+  if (parts[0] === 'tour' && parts.length === 3 && parts[2] === 'checkout' && shouldRewriteSlug(parts[1]!)) {
+    const u = request.nextUrl.clone();
+    u.pathname = '/tour/east-signature-nature-core/checkout';
+    return NextResponse.redirect(u, 308);
+  }
+
+  if (
+    parts.length === 4 &&
+    LOCALE_SET.has(parts[0]!) &&
+    parts[1] === 'tour' &&
+    parts[3] === 'checkout' &&
+    shouldRewriteSlug(parts[2]!)
+  ) {
+    const u = request.nextUrl.clone();
+    u.pathname = `/${parts[0]}/tour/east-signature-nature-core/checkout`;
+    return NextResponse.redirect(u, 308);
+  }
+
+  return null;
+}
+
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -124,8 +223,24 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // 1b. 정적 안내 페이지 (locale 접두사 리다이렉트 대상에서 제외)
-  if (pathname === '/home-private' || pathname.startsWith('/home-private/')) {
+  const eastDupRedirect = redirectEastSignatureLegacyMarketingPaths(request);
+  if (eastDupRedirect) return eastDupRedirect;
+
+  const eastCheckoutRedirect = redirectLegacyEastSignatureCheckoutPaths(request);
+  if (eastCheckoutRedirect) return eastCheckoutRedirect;
+
+  // 1b. 정적 안내 페이지 + 플래그십 투어 상품 (locale 접두사 리다이렉트 대상에서 제외)
+  const isEastSignatureProductPath =
+    pathname === CANONICAL_EAST_SIGNATURE_PRODUCT_PATH ||
+    pathname.startsWith(`${CANONICAL_EAST_SIGNATURE_PRODUCT_PATH}/`) ||
+    /^\/(en|ko|zh-CN|zh-TW|ja|es)\/tour-product\/east-signature-nature-core(\/|$)/.test(pathname);
+  if (
+    pathname === '/home-private' ||
+    pathname.startsWith('/home-private/') ||
+    pathname === '/legacy-home-preview' ||
+    pathname.startsWith('/legacy-home-preview/') ||
+    isEastSignatureProductPath
+  ) {
     return NextResponse.next();
   }
 

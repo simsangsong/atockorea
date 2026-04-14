@@ -18,6 +18,10 @@ export interface SmallGroupQuickSnapshotSectionProps {
   cards: SmallGroupAtAGlanceCard[];
   /** Merged onto the outer `<section>` (e.g. intro-stack spacing). */
   sectionClassName?: string;
+  /** In-page anchor (quick nav “Overview”). */
+  sectionId?: string;
+  /** Visible H2 — IA label; cards/content unchanged. */
+  headerTitle?: string;
 }
 
 const GLANCE_ICONS: Record<SmallGroupAtAGlanceIconKey, LucideIcon> = {
@@ -47,6 +51,8 @@ function GlanceGlyph({
 export default function SmallGroupQuickSnapshotSection({
   cards,
   sectionClassName,
+  sectionId = 'sg-overview',
+  headerTitle = 'Decision summary',
 }: SmallGroupQuickSnapshotSectionProps) {
   if (cards.length === 0) {
     return null;
@@ -54,16 +60,17 @@ export default function SmallGroupQuickSnapshotSection({
 
   return (
     <section
+      id={sectionId}
       className={twMerge(
-        "sg-dp-intro-to-glance-rule bg-transparent font-sans antialiased [font-feature-settings:'kern'_1,'liga'_1] sg-dp-page-gutter",
+        "sg-dp-intro-to-glance-rule scroll-mt-[var(--sg-sticky-clear)] bg-transparent font-sans antialiased [font-feature-settings:'kern'_1,'liga'_1] sg-dp-page-gutter",
         sectionClassName
       )}
-      aria-labelledby="at-a-glance-heading"
+      aria-labelledby="decision-summary-heading"
     >
       <div className="sg-dp-page-column">
         <SmallGroupSectionHeader
-          title="At a Glance"
-          titleId="at-a-glance-heading"
+          title={headerTitle}
+          titleId="decision-summary-heading"
           titleVariant="standard"
           spacing="compact"
           className="max-w-full"

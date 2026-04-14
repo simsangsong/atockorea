@@ -1,10 +1,4 @@
-import HeroPremium from '@/src/components/home/HeroPremium';
-import ProductCardsPremium from '@/src/components/home/ProductCardsPremium';
-import SmallGroupValuePremium from '@/src/components/home/SmallGroupValuePremium';
-import HowItWorksPremium from '@/src/components/home/HowItWorksPremium';
-import TrustAndReviewsSection from '@/src/components/home/TrustAndReviewsSection';
-import ClassicBusSection from '@/components/ClassicBusSection';
-import FinalCtaPremium from '@/src/components/home/FinalCtaPremium';
+import { HomeMainBody } from '@/components/home/HomeMainBody';
 import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
@@ -22,13 +16,7 @@ export default function HomePage() {
   return (
     <SitePageShell>
       <main className="bg-transparent">
-        <HeroPremium />
-        <ProductCardsPremium />
-        <SmallGroupValuePremium />
-        <HowItWorksPremium />
-        <TrustAndReviewsSection />
-        <ClassicBusSection />
-        <FinalCtaPremium />
+        <HomeMainBody />
       </main>
     </SitePageShell>
   );

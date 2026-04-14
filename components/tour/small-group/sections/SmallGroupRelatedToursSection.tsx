@@ -31,7 +31,8 @@ export default function SmallGroupRelatedToursSection({ cards, formatPrice }: Sm
   if (cards.length === 0) {
     return (
       <section
-        className="sg-dp-related-section sg-dp-narrative-related-anchor w-full min-w-0 bg-transparent sg-dp-page-gutter pb-20 font-sans antialiased md:pb-24 lg:mx-auto lg:max-w-[1400px] lg:pb-[5.75rem]"
+        id="sg-explore-next"
+        className="sg-dp-related-section sg-dp-narrative-related-anchor w-full min-w-0 scroll-mt-[var(--sg-sticky-clear)] bg-transparent sg-dp-page-gutter pb-20 font-sans antialiased md:pb-24 lg:mx-auto lg:max-w-[1400px] lg:pb-[5.75rem]"
         aria-label="Similar tours"
       >
         <div className="sg-dp-page-column min-w-0">
@@ -45,17 +46,21 @@ export default function SmallGroupRelatedToursSection({ cards, formatPrice }: Sm
 
   return (
     <section
-      className="sg-dp-related-section sg-dp-narrative-related-anchor w-full min-w-0 bg-transparent sg-dp-page-gutter pb-20 font-sans antialiased md:pb-24 lg:mx-auto lg:max-w-[1400px] lg:pb-[5.75rem]"
+      id="sg-explore-next"
+      className="sg-dp-related-section sg-dp-narrative-related-anchor w-full min-w-0 scroll-mt-[var(--sg-sticky-clear)] bg-transparent sg-dp-page-gutter pb-20 font-sans antialiased md:pb-24 lg:mx-auto lg:max-w-[1400px] lg:pb-[5.75rem]"
       aria-labelledby="related-tours-heading"
     >
       <div className="min-w-0 w-full">
-        <div className="mb-5 flex items-end justify-between gap-6 sm:mb-6 md:mb-7">
+        <div className="mb-4 flex items-end justify-between gap-4 sm:mb-5 sm:gap-6 md:mb-6">
           <div className="min-w-0 max-w-[min(100%,30rem)] md:max-w-[34rem]">
-            <p className="sg-dp-type-utility-section-eyebrow m-0 mb-1">Explore next</p>
-            <h2 id="related-tours-heading" className="sg-dp-type-section-heading-support m-0 text-pretty">
+            <p className="sg-dp-type-utility-section-eyebrow m-0 mb-0.5 tracking-wide">Explore next</p>
+            <h2
+              id="related-tours-heading"
+              className="sg-dp-type-section-heading-support m-0 text-pretty tracking-[-0.02em]"
+            >
               You might also like
             </h2>
-            <p className="sg-dp-related-lead sg-dp-type-body m-0 mt-2 max-w-prose sm:mt-2.5">
+            <p className="sg-dp-related-lead sg-dp-type-body m-0 mt-1.5 max-w-prose leading-snug text-[color:color-mix(in_oklab,var(--dp-muted)_55%,var(--dp-fg)_45%)] sm:mt-2 sm:leading-relaxed">
               Alternates with different pacing and emphasis—each route is intentionally distinct.
             </p>
           </div>
@@ -69,7 +74,7 @@ export default function SmallGroupRelatedToursSection({ cards, formatPrice }: Sm
         </div>
 
         <div
-          className="sg-dp-related-rail -mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] touch-pan-x md:mx-0 md:grid md:grid-cols-3 md:items-stretch md:gap-7 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden"
+          className="sg-dp-related-rail -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] touch-pan-x sm:gap-5 md:mx-0 md:grid md:grid-cols-3 md:items-stretch md:gap-6 md:overflow-visible md:px-0 md:pb-0 lg:gap-7 [&::-webkit-scrollbar]:hidden"
         >
           {cards.map((tour: SmallGroupRelatedTourCard) => {
             const chips = relatedMetaChips(tour);
@@ -96,8 +101,8 @@ export default function SmallGroupRelatedToursSection({ cards, formatPrice }: Sm
                         />
                       ) : null}
                       {tour.badge?.trim() ? (
-                        <div className="absolute bottom-3 left-3 right-3 z-10 flex flex-wrap items-end justify-start gap-2">
-                          <span className="sg-dp-related-route-badge inline-flex max-w-full truncate rounded-full border border-white/25 bg-white/88 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] shadow-[0_1px_0_rgba(255,255,255,1)_inset,0_4px_14px_-6px_rgba(0,0,0,0.25)] backdrop-blur-[6px]">
+                        <div className="absolute bottom-2.5 left-2.5 right-2.5 z-10 flex flex-wrap items-end justify-start gap-1.5 sm:bottom-3 sm:left-3 sm:right-3 sm:gap-2">
+                          <span className="sg-dp-related-route-badge inline-flex max-w-full truncate rounded-full border border-white/25 bg-white/88 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.09em] shadow-[0_1px_0_rgba(255,255,255,1)_inset,0_4px_14px_-6px_rgba(0,0,0,0.25)] backdrop-blur-[6px] sm:px-3 sm:py-1 sm:text-[11px] sm:tracking-[0.08em]">
                             {tour.badge.trim()}
                           </span>
                         </div>
@@ -152,7 +157,7 @@ export default function SmallGroupRelatedToursSection({ cards, formatPrice }: Sm
           })}
         </div>
 
-        <div className="mt-10 flex justify-center border-t border-[color:color-mix(in_oklab,var(--sg-rule-mid)_28%,var(--sg-rule-soft)_72%)] pt-9 md:hidden">
+        <div className="mt-8 flex justify-center border-t border-[color:color-mix(in_oklab,var(--sg-rule-mid)_22%,var(--sg-rule-soft)_78%)] pt-7 md:hidden">
           <Link
             href="/tours"
             className="sg-dp-type-meta sg-dp-related-view-all flex items-center gap-2 font-semibold"

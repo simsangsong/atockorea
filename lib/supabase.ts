@@ -87,6 +87,8 @@ export type Database = {
           description: string | null;
           price: number;
           original_price: number | null;
+          /** Storage unit for `price` / `original_price`: KRW (won) or USD (dollars). */
+          price_currency: 'KRW' | 'USD';
           price_type: 'person' | 'group';
           image_url: string;
           gallery_images: string[];
@@ -109,7 +111,10 @@ export type Database = {
           created_at: string;
           updated_at: string;
         };
-        Insert: Omit<Database['public']['Tables']['tours']['Row'], 'id' | 'created_at' | 'updated_at'>;
+        Insert: Omit<
+          Database['public']['Tables']['tours']['Row'],
+          'id' | 'created_at' | 'updated_at' | 'price_currency'
+        > & { price_currency?: 'KRW' | 'USD' };
         Update: Partial<Database['public']['Tables']['tours']['Insert']>;
       };
       bookings: {
@@ -199,6 +204,63 @@ export type Database = {
         };
         Insert: Omit<Database['public']['Tables']['user_profiles']['Row'], 'id' | 'created_at' | 'updated_at'>;
         Update: Partial<Database['public']['Tables']['user_profiles']['Insert']>;
+      };
+      tour_product_pages: {
+        Row: {
+          id: string;
+          slug: string;
+          locale: string;
+          is_published: boolean;
+          sort_order: number;
+          tour_id: string | null;
+          title: string;
+          subtitle: string | null;
+          region_label: string | null;
+          duration_label: string | null;
+          stops_count: number | null;
+          rating_avg: number | null;
+          review_count: number | null;
+          badges: string[];
+          hero_image_url: string | null;
+          thumbnail_url: string | null;
+          card_short_description: string | null;
+          seo_title: string | null;
+          meta_description: string | null;
+          headline_line_1: string | null;
+          headline_line_2: string | null;
+          price_amount_label: string | null;
+          price_currency: string;
+          price_per: string;
+          detail_payload: Record<string, unknown>;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: Omit<
+          Database['public']['Tables']['tour_product_pages']['Row'],
+          'id' | 'created_at' | 'updated_at'
+        >;
+        Update: Partial<Database['public']['Tables']['tour_product_pages']['Insert']>;
+      };
+      tour_product_offers: {
+        Row: {
+          id: string;
+          tour_product_page_id: string;
+          label: string | null;
+          amount_minor: number;
+          currency: string;
+          stripe_price_id: string | null;
+          is_active: boolean;
+          is_default: boolean;
+          valid_from: string | null;
+          valid_to: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: Omit<
+          Database['public']['Tables']['tour_product_offers']['Row'],
+          'id' | 'created_at' | 'updated_at'
+        >;
+        Update: Partial<Database['public']['Tables']['tour_product_offers']['Insert']>;
       };
     };
   };

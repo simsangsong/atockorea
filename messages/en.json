@@ -114,6 +114,27 @@
     "importantNotesSection": "Important Notes",
     "reviews": "Reviews",
     "noReviewsYet": "No reviews yet for this tour.",
+    "heroDecision": {
+      "walk": "Walk",
+      "rain": "Rain",
+      "fit": "Fit",
+      "pickup": "Pickup",
+      "value": "Value",
+      "route": "Route"
+    },
+    "routeFlow": {
+      "eyebrow": "Route shape",
+      "title": "How today flows",
+      "lead": "{count} stops in sequence—the same order as your itinerary, read left to right.",
+      "flowListLabel": "Stops in order for this day",
+      "moodStripLabel": "Day rhythm in three phases",
+      "morning": "Morning",
+      "midday": "Midday",
+      "coast": "Coast finish",
+      "stopRange": "Stops {from}–{to}",
+      "stopSingle": "Stop {n}",
+      "unnamedStop": "Stop"
+    },
     "allPickupPoints": "All pickup points:",
     "pickupMeetupInfo": "Pick-up & Meet-up Information",
     "noPickupPoints": "No pickup points available.",
@@ -547,9 +568,9 @@
       "hero": {
         "glassBrandPill": "KOREA DAY TOUR FINDER",
         "matchEyebrow": "",
-        "headlineLine1": "Find the best-fit Korea day tour for your travel style",
+        "headlineLine1": "Find Your Best-Fit Korea Day Tour",
         "headlineLine2": "",
-        "matchSubtitle": "Tell us how you want to travel and what kind of day you want. We’ll recommend the best-fit destination, tour style, and plan for your trip.\n\nJeju is available now. Seoul and Busan are coming soon.",
+        "matchSubtitle": "Tell us your style. We’ll match the right destination, tour type, and plan.",
         "destinationSectionTitle": "Destination",
         "destJeju": "Jeju",
         "destSeoul": "Seoul",
@@ -561,10 +582,12 @@
         "destComingSoonLine1": "COMING",
         "destComingSoonLine2": "soon",
         "textareaLabelJeju": "Tell us your travel style and what you want in your day",
-        "textareaHelperJeju": "Include things like who you’re traveling with, walking level, scenery preferences, café stops, pace, and whether you prefer private or small-group travel.",
+        "textareaHelperJeju": "One line on pace, walking, scenery, and join vs private is enough.",
         "inputLabel": "Tell us what kind of day you want in Jeju",
-        "inputPlaceholder": "Example: First time in Jeju, scenic views, less walking, traveling with parents, café stop, rain-safe if possible. Recommend the best-fit option.",
+        "inputPlaceholder": "e.g. First Jeju visit, scenic, light walking, parents, café — recommend the best match.",
         "chipsLegend": "Quick add (optional)",
+        "chipsShowMore": "Show more tags",
+        "chipsShowLess": "Show fewer tags",
         "findMatchCta": "Find My Best-Fit Tour",
         "pricingRowLabel": "Starting prices and minimum guests",
         "priceSmallGroup": "Small group from $58",
@@ -579,7 +602,23 @@
         "bestMatchCta": "View This Match",
         "alsoConsiderLabel": "ALSO CONSIDER",
         "alsoConsiderPrivate": "Private vehicle",
-        "alsoConsiderBus": "Classic bus tour"
+        "alsoConsiderBus": "Classic bus tour",
+        "plannerOutcomeEyebrow": "What you’ll get",
+        "plannerOutcomeDestTitle": "Best-fit destination",
+        "plannerOutcomeDestMicro": "The right area for your trip—first.",
+        "plannerOutcomeStyleTitle": "Tour style pick",
+        "plannerOutcomeStyleMicro": "Join, private, or bus—matched to you.",
+        "plannerOutcomePaceTitle": "Day pace & plan",
+        "plannerOutcomePaceMicro": "Coherent route, your rhythm.",
+        "introVideoAria": "Short intro video for the planner",
+        "introDismissAria": "Close intro video",
+        "introPlayAria": "Play intro video",
+        "matchLoadingAnalyzing": "Analyzing your preferences…",
+        "matchLoadingMatching": "Matching tours…",
+        "matchLoadingComplete": "Match ready",
+        "matchResultRecommendLine": "Balanced pacing and coastal views—our default best fit for first-time Jeju visitors.",
+        "seeOtherToursCta": "See other tours",
+        "matchResultBackCta": "Back to planner"
       },
       "comparison": {
         "eyebrow": "TRAVEL STYLE",
@@ -690,20 +729,22 @@
       "reviews": {
         "eyebrow": "TRAVELER NOTES",
         "title": "Fit, clarity, easy pacing",
-        "quote1": "Pickup was clear—we knew where to wait.",
-        "quote2": "First time in Jeju; never felt rushed.",
-        "quote3": "Worked for my parents—short walks between stops."
+        "quote1": "They named our hotel pickup zone and the exact wait point—no curb guesswork.",
+        "quote1Tag": "Jeju east · join tour",
+        "quote2": "First Jeju trip; the route was full, but the day never felt like a sprint.",
+        "quote2Tag": "Day-tour guest"
       },
       "classicBus": {
-        "eyebrow": "ALTERNATIVE",
-        "title": "Fixed-route bus tours stay available if you want the lowest-cost format.",
-        "cta": "Browse classic bus tours"
+        "eyebrow": "BUDGET PATH",
+        "title": "Fixed-route bus tours live on a separate list when price comes first.",
+        "cta": "Browse bus-route tours"
       },
       "finalCta": {
-        "eyebrow": "Plan now",
-        "title": "Ready to build your Jeju trip the smarter way?",
-        "cta": "Find My Tour",
-        "ctaPrivate": "Explore Private Tour"
+        "eyebrow": "NEXT STEP",
+        "title": "Choose your Jeju day: join tour or private vehicle.",
+        "cta": "Find my tour",
+        "ctaPrivate": "Private vehicle instead",
+        "divider": "or"
       }
     },
     "destinations": {

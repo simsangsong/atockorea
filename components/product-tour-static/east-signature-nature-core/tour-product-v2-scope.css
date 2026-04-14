@@ -1,0 +1,418 @@
+/**
+ * TourDetailV2 (`components/TourDetailV2/app/globals.css`) 토큰·유틸을
+ * 메인 앱 전역과 분리해 `.tour-product-v2-static-root` 아래에만 적용.
+ */
+.tour-product-v2-static-root {
+  --background: #fdfcfa;
+  --foreground: #1a2332;
+  --card: #ffffff;
+  --card-foreground: #1a2332;
+  --popover: #ffffff;
+  --popover-foreground: #1a2332;
+  --primary: #2e5c8a;
+  --primary-foreground: #ffffff;
+  --secondary: #fefefe;
+  --secondary-foreground: #1a2332;
+  --muted: #f7f6f3;
+  --muted-foreground: #5c6775;
+  --accent: #c8956c;
+  --accent-foreground: #1a2332;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: #ebe8e3;
+  --input: #ebe8e3;
+  --ring: #2e5c8a;
+  --radius: 0.875rem;
+
+  --warm-ivory: #fffefb;
+  --soft-pearl: #fafbfc;
+  --mist-blue: #f7f9fb;
+  --sand-blush: #fcf9f6;
+  --cloud-gray: #faf9f8;
+
+  --spring-blossom: #fdf8f9;
+  --summer-breeze: #f6fafa;
+  --autumn-gold: #fdfaf6;
+  --winter-mist: #f8fafc;
+
+  --shadow-subtle: 0 1px 2px rgba(26, 35, 50, 0.02);
+  --shadow-card: 0 1px 3px rgba(26, 35, 50, 0.03), 0 4px 16px rgba(26, 35, 50, 0.025);
+  --shadow-elevated: 0 4px 20px rgba(26, 35, 50, 0.06), 0 1px 4px rgba(26, 35, 50, 0.03);
+  --shadow-hero: 0 8px 40px rgba(26, 35, 50, 0.08), 0 2px 8px rgba(26, 35, 50, 0.03);
+
+  min-height: 100%;
+  color: var(--foreground);
+  background-color: var(--background);
+  /* TourDetailV2: sans는 Geist(원본) — 레이아웃에서 Inter 변수(--font-tour-v2-sans) 주입 + Pretendard 폴백 */
+  font-family: var(--font-tour-v2-sans), "Pretendard", var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* CJK: 이 루트가 Inter/Pretendard를先に指定しているため、body の言語だけでは漢字がバラける。言語別に Noto を先頭へ。 */
+body.lang-zh .tour-product-v2-static-root,
+html[lang="zh"] .tour-product-v2-static-root,
+html[lang="zh-CN"] .tour-product-v2-static-root {
+  font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", var(--font-tour-v2-sans), var(--font-inter), ui-sans-serif, sans-serif;
+  letter-spacing: normal;
+  font-variant-east-asian: proportional-width;
+}
+
+body.lang-zh-TW .tour-product-v2-static-root,
+html[lang="zh-TW"] .tour-product-v2-static-root {
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", var(--font-tour-v2-sans), var(--font-inter), ui-sans-serif, sans-serif;
+  letter-spacing: normal;
+  font-variant-east-asian: proportional-width;
+}
+
+body.lang-ja .tour-product-v2-static-root,
+html[lang="ja"] .tour-product-v2-static-root {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", var(--font-tour-v2-sans), var(--font-inter), ui-sans-serif, sans-serif;
+  letter-spacing: normal;
+}
+
+.tour-product-v2-static-root .bg-warm-ivory {
+  background-color: var(--warm-ivory);
+}
+.tour-product-v2-static-root .bg-soft-pearl {
+  background-color: var(--soft-pearl);
+}
+.tour-product-v2-static-root .bg-mist-blue {
+  background-color: var(--mist-blue);
+}
+.tour-product-v2-static-root .bg-sand-blush {
+  background-color: var(--sand-blush);
+}
+.tour-product-v2-static-root .bg-cloud-gray {
+  background-color: var(--cloud-gray);
+}
+
+.tour-product-v2-static-root .bg-spring {
+  background-color: var(--spring-blossom);
+}
+.tour-product-v2-static-root .bg-summer {
+  background-color: var(--summer-breeze);
+}
+.tour-product-v2-static-root .bg-autumn {
+  background-color: var(--autumn-gold);
+}
+.tour-product-v2-static-root .bg-winter {
+  background-color: var(--winter-mist);
+}
+
+.tour-product-v2-static-root .shadow-premium {
+  box-shadow: var(--shadow-card);
+}
+.tour-product-v2-static-root .shadow-premium-elevated {
+  box-shadow: var(--shadow-elevated);
+}
+.tour-product-v2-static-root .shadow-premium-hero {
+  box-shadow: var(--shadow-hero);
+}
+
+.tour-product-v2-static-root .shadow-hero {
+  box-shadow: var(--shadow-hero);
+}
+
+.tour-product-v2-static-root .card-premium {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+.tour-product-v2-static-root .card-hero {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 2px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.tour-product-v2-static-root .card-utility {
+  background-color: var(--card);
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  border-radius: calc(var(--radius) - 2px);
+  box-shadow: var(--shadow-subtle);
+}
+
+.tour-product-v2-static-root .scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.tour-product-v2-static-root .scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.tour-product-v2-static-root .text-balance {
+  text-wrap: balance;
+}
+
+/* Sticky booking drawer + premium inline calendar (react-datepicker) */
+.tour-product-v2-static-root .tour-booking-drawer-panel {
+  background-color: color-mix(in srgb, var(--card) 96%, transparent);
+}
+
+/* 하단 고정 CTA: 푸터 등 어두운 배경 위에서도 글자 대비 유지 (반투명 금지) */
+.tour-product-v2-static-root .tour-sticky-cta-bar {
+  background-color: var(--warm-ivory);
+  box-shadow:
+    0 -1px 0 var(--border),
+    0 -10px 36px rgba(26, 35, 50, 0.07);
+}
+
+.tour-product-v2-static-root .tour-sticky-cta-bar-mobile-nav {
+  background-color: var(--warm-ivory);
+  border-top: 1px solid color-mix(in srgb, var(--border) 85%, transparent);
+}
+
+.tour-product-v2-static-root .tour-booking-drawer-footer {
+  background-color: color-mix(in srgb, var(--card) 55%, var(--muted));
+}
+
+.tour-product-v2-static-root .tour-premium-lang-trigger:hover {
+  border-color: color-mix(in srgb, var(--foreground) 14%, var(--border));
+}
+
+.tour-product-v2-static-root .tour-premium-lang-trigger--compact {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    0 2px 10px rgba(26, 35, 50, 0.05);
+  background: linear-gradient(
+    180deg,
+    var(--card) 0%,
+    color-mix(in srgb, var(--muted) 24%, var(--card)) 100%
+  );
+  border-color: color-mix(in srgb, var(--foreground) 10%, var(--border));
+}
+
+.tour-product-v2-static-root .tour-premium-guest-stepper {
+  border: 1px solid color-mix(in srgb, var(--foreground) 9%, var(--border));
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--card) 100%, transparent) 0%,
+    color-mix(in srgb, var(--muted) 38%, var(--card)) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    0 2px 10px rgba(26, 35, 50, 0.05);
+}
+
+.tour-product-v2-static-root .tour-premium-stepper-btn:hover:not(:disabled) {
+  background-color: color-mix(in srgb, var(--foreground) 7%, transparent);
+}
+.tour-product-v2-static-root .tour-premium-stepper-btn:active:not(:disabled) {
+  background-color: color-mix(in srgb, var(--foreground) 11%, transparent);
+}
+
+.tour-product-v2-static-root .card-premium-calendar-wrap {
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 0.125rem);
+  background: var(--card);
+  box-shadow: var(--shadow-elevated);
+  padding: 0.5rem 0.375rem 0.75rem;
+}
+
+.tour-product-v2-static-root .card-premium-calendar-wrap--compact {
+  padding: 0.35rem 0.25rem 0.5rem;
+  max-width: 17.25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tour-product-v2-static-root .premium-booking-datepicker.react-datepicker {
+  border: none;
+  width: 100%;
+  font-family: inherit;
+  background: transparent;
+}
+
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__month-container {
+  float: none;
+  width: 100%;
+}
+
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__header {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--primary) 10%, var(--card)) 0%,
+    var(--card) 100%
+  );
+  border-bottom: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 2px);
+  padding-top: 0.45rem;
+}
+
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__current-month {
+  font-weight: 600;
+  font-size: 0.8125rem;
+  color: var(--foreground);
+  letter-spacing: 0.02em;
+}
+
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__day-names {
+  margin-top: 0.3rem;
+}
+
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__day-name {
+  color: var(--muted-foreground);
+  font-size: 0.5625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  width: 2.1rem;
+  line-height: 1.85rem;
+}
+
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__month {
+  margin: 0.25rem 0 0;
+  padding-bottom: 0.15rem;
+}
+
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__week {
+  display: flex;
+  justify-content: center;
+}
+
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__day {
+  width: 2.1rem;
+  line-height: 2.1rem;
+  margin: 0.06rem;
+  border-radius: calc(var(--radius) - 5px);
+  color: var(--foreground);
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__day:hover {
+  background-color: color-mix(in srgb, var(--primary) 14%, transparent) !important;
+  border-radius: calc(var(--radius) - 4px);
+}
+
+/* 이전·다음 달로 채운 칸(패딩 일): 회색, 호버 시 배경 없음 */
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__day--outside-month {
+  color: color-mix(in srgb, var(--muted-foreground) 75%, var(--foreground)) !important;
+  opacity: 0.48;
+  font-weight: 400 !important;
+}
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__day--outside-month:hover {
+  background-color: transparent !important;
+  opacity: 0.62;
+}
+
+/* 라이브러리가 패딩 일에도 selected/keyboard 클래스를 붙이는 경우 → 진한 칩 제거 */
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__day--outside-month.react-datepicker__day--selected,
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__day--outside-month.react-datepicker__day--keyboard-selected {
+  background: transparent !important;
+  color: color-mix(in srgb, var(--muted-foreground) 75%, var(--foreground)) !important;
+  font-weight: 400 !important;
+  box-shadow: none !important;
+}
+
+/* 동일 일(day-of-month) 두 칸이 같이 칠해지는 현상: --selected만으로는 칠하지 않고 isSameDay 기반 클래스만 진한 선택 */
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__day--selected:not(.premium-cal-day-selected-exact) {
+  background: transparent !important;
+  color: inherit !important;
+  font-weight: 500 !important;
+}
+.tour-product-v2-static-root
+  .premium-booking-datepicker
+  .react-datepicker__day--selected:not(.premium-cal-day-selected-exact).react-datepicker__day--outside-month {
+  color: color-mix(in srgb, var(--muted-foreground) 75%, var(--foreground)) !important;
+  opacity: 0.48 !important;
+}
+
+.tour-product-v2-static-root .premium-booking-datepicker .premium-cal-day-selected-exact {
+  background: var(--foreground) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+  border-radius: calc(var(--radius) - 4px);
+}
+
+/* 키보드 포커스: 두 번째 진한 원 방지 — 실제 선택일이 아니면 옅은 하이라이트만 */
+.tour-product-v2-static-root
+  .premium-booking-datepicker
+  .react-datepicker__day--keyboard-selected:not(.premium-cal-day-selected-exact) {
+  background: color-mix(in srgb, var(--primary) 12%, transparent) !important;
+  color: var(--foreground) !important;
+  font-weight: 500 !important;
+}
+.tour-product-v2-static-root
+  .premium-booking-datepicker
+  .react-datepicker__day--outside-month.react-datepicker__day--keyboard-selected:not(.premium-cal-day-selected-exact) {
+  background: transparent !important;
+  color: color-mix(in srgb, var(--muted-foreground) 75%, var(--foreground)) !important;
+  opacity: 0.48 !important;
+}
+
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__day--today:not(.premium-cal-day-selected-exact) {
+  font-weight: 700;
+  color: var(--primary);
+}
+.tour-product-v2-static-root
+  .premium-booking-datepicker
+  .react-datepicker__day--outside-month.react-datepicker__day--today:not(.premium-cal-day-selected-exact) {
+  color: color-mix(in srgb, var(--muted-foreground) 65%, var(--primary)) !important;
+  font-weight: 600 !important;
+}
+
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__day--disabled {
+  color: color-mix(in srgb, var(--muted-foreground) 42%, transparent) !important;
+}
+
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__navigation {
+  top: 0.52rem;
+}
+
+.tour-product-v2-static-root .premium-booking-datepicker .react-datepicker__navigation-icon::before {
+  border-color: var(--muted-foreground);
+  border-width: 2px 2px 0 0;
+  width: 6px;
+  height: 6px;
+}
+
+/* Premium language dropdown (portal menu) */
+.tour-product-v2-static-root .tour-premium-lang-item {
+  transition: background-color 0.18s ease;
+}
+.tour-product-v2-static-root .tour-premium-lang-item:hover {
+  background-color: color-mix(in srgb, var(--muted) 88%, transparent);
+}
+.tour-product-v2-static-root .tour-premium-lang-item--selected {
+  background-color: color-mix(in srgb, var(--primary) 10%, transparent);
+}
+
+.tour-product-v2-static-root .tour-premium-lang-item--compact {
+  min-height: 2.5rem;
+}
+
+/* TourFitSection — compact premium typography */
+.tour-product-v2-static-root .tour-why-tour-works-card {
+  font-feature-settings: "kern" 1, "liga" 1;
+  letter-spacing: -0.012em;
+}
+
+.tour-product-v2-static-root .tour-fit-micro-label {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.tour-product-v2-static-root .tour-why-tour-works-card .tour-fit-list-text {
+  font-size: 0.8125rem;
+  line-height: 1.38;
+  font-weight: 500;
+  letter-spacing: -0.018em;
+}
+
+.tour-product-v2-static-root .tour-why-tour-works-card .tour-fit-note {
+  font-size: 0.75rem;
+  line-height: 1.48;
+  letter-spacing: -0.012em;
+}
+
+.tour-product-v2-static-root .tour-fit-route-logic-inner {
+  font-feature-settings: "kern" 1, "liga" 1;
+  letter-spacing: -0.01em;
+}

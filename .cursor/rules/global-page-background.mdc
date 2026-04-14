@@ -1,0 +1,25 @@
+---
+description: 전역 페이지 배경(파스텔 메시) — 사용자가 명시적으로 요청하기 전까지 변경 금지
+alwaysApply: true
+---
+
+# 전역 배경 (고정 정책)
+
+## 비가역 규칙
+
+사용자가 **콕 집어서 “전역 배경을 바꿔 달라”**고 하지 않는 한, 아래를 **절대 수정하지 말 것** (리팩터, 미세 톤 조정, “개선”, 모바일만 살짝 등 **어떤 이유로도** 변경 금지).
+
+## 여기만 해당 (건드리면 안 됨)
+
+- **`app/globals.css`** 안의 라이트 모드 전역 배경 관련 코드:
+  - `html`의 `background-color` / `--page-gradient-fallback` 등 페이지 베이스
+  - **`body::before`** 고정 파스텔 메시 (`position: fixed`, `radial-gradient` / `linear-gradient` 스택, `background-position` / `background-size`, `@media (max-width: 768px)` 및 `prefers-reduced-motion` 분기 포함)
+
+## 허용되는 것
+
+- **히어로·섹션 로컬** 장식은 `app/home-premium.css`, 컴포넌트 클래스 등 **전역 레이어가 아닌 곳**에서만 조정.
+- 다크 모드(`html.dark`)나 전역 배경과 무관한 다른 스타일 수정.
+
+## 사용자가 명시적으로 요청한 경우에만
+
+“전역 배경 / body 배경 / 페이지 뒤 그라데이션 / `body::before` 메시”를 바꿔 달라는 **직접적인 지시**가 있을 때만 위 파일의 해당 블록을 편집할 것.

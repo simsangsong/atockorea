@@ -51,7 +51,11 @@ export default function CheckoutPage() {
     const stored = sessionStorage.getItem('bookingData');
     if (stored) {
       try {
-        const parsed = JSON.parse(stored) as BookingData & { paymentMethod?: string; depositAmountKRW?: number };
+        const parsed = JSON.parse(stored) as BookingData & {
+          paymentMethod?: string;
+          depositAmountKRW?: number;
+          depositAmountUsd?: number;
+        };
         setBookingData({
           ...parsed,
           paymentMethod: 'full',
@@ -134,8 +138,10 @@ export default function CheckoutPage() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const formatPrice = (priceKRW: number) =>
-    currencyCtx ? currencyCtx.formatPrice(priceKRW) : `₩${Math.round(priceKRW).toLocaleString('ko-KR')}`;
+  const formatPrice = (amountUsd: number) =>
+    currencyCtx
+      ? currencyCtx.formatPrice(amountUsd)
+      : new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }).format(amountUsd);
 
   const handlePayment = async () => {
     if (!bookingData) return;
@@ -214,8 +220,7 @@ export default function CheckoutPage() {
           },
           body: JSON.stringify({
             amount: paymentAmount,
-            // Payments are processed in KRW; prices on screen follow the selected display currency.
-            currency: 'krw',
+            currency: 'usd',
             bookingId: bookingResult.booking.id,
             bookingData: completeBookingData,
           }),

@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
 import { Clock, Footprints, MapPin, Star, Users } from 'lucide-react';
 import type { SmallGroupDetailContent, SmallGroupPremiumBadge } from '../smallGroupDetailContent';
+import type { HeroDecisionStripFact } from '../heroDecisionStripFacts';
+import SmallGroupHeroDecisionStrip from './SmallGroupHeroDecisionStrip';
 import { useTranslations } from '@/lib/i18n';
 
 export interface SmallGroupHeroSectionProps {
@@ -18,6 +20,8 @@ export interface SmallGroupHeroSectionProps {
   pickupAreaLabel?: string;
   rating?: number | null;
   reviewCount?: number | null;
+  /** Hero-adjacent decision strip (below intro card). */
+  decisionStripFacts?: HeroDecisionStripFact[];
 }
 
 /** Tiny neutral blur — stabilizes hero LCP frame (Phase 8). */
@@ -44,6 +48,7 @@ export default function SmallGroupHeroSection({
   pickupAreaLabel,
   rating,
   reviewCount,
+  decisionStripFacts,
 }: SmallGroupHeroSectionProps) {
   const t = useTranslations();
   const { title, subtitle, positioningLine, galleryImageUrls, summaryFacts, badges: heroBadges } = hero;
@@ -253,7 +258,7 @@ export default function SmallGroupHeroSection({
       </div>
 
       {/* Intro card — pulled into canvas fade for one continuous first fold */}
-      <div className="relative z-20 sg-dp-page-gutter pb-4 pt-1 max-sm:pt-0.5 sm:pb-5 sm:pt-0 md:pb-6 -mt-4 sm:-mt-5 md:-mt-12 lg:-mt-[3.75rem]">
+      <div className="relative z-20 sg-dp-page-gutter pb-3 pt-1 max-sm:pt-0.5 sm:pb-4 sm:pt-0 md:pb-5 -mt-4 sm:-mt-5 md:-mt-12 lg:-mt-[3.75rem]">
         <div className="sg-dp-page-column min-w-0 space-y-3 md:space-y-3.5">
           {(showExtendedIntroCard || (!layer2Positioning && subtitle.trim())) && subtitle.trim() ? (
             <div className="sg-ota-card sg-dp-hero-intro-card space-y-3 px-5 py-5 md:space-y-3.5 md:px-7 md:py-7 lg:px-8 lg:py-8">
@@ -267,6 +272,12 @@ export default function SmallGroupHeroSection({
                   ))}
                 </p>
               ))}
+            </div>
+          ) : null}
+
+          {decisionStripFacts && decisionStripFacts.length > 0 ? (
+            <div className="mt-2.5 sm:mt-3">
+              <SmallGroupHeroDecisionStrip facts={decisionStripFacts} />
             </div>
           ) : null}
         </div>

@@ -300,6 +300,13 @@ const supportCards = [
   { icon: MessageCircle, title: "Live Updates", desc: "Real-time adjustments communicated if conditions change." },
 ]
 
+/** One scan line or a single tag on compact itinerary rows (detail stays in drawer). */
+function itineraryStopSupporting(stop: TemplateRouteStop): { kind: "tag"; label: string } | { kind: "line"; text: string } {
+  const meaningful = stop.badges.find((b) => b.trim() !== "" && b !== "Itinerary")
+  if (meaningful) return { kind: "tag", label: meaningful }
+  return { kind: "line", text: stop.shortDesc }
+}
+
 /** Hero-adjacent line: prefer overview (formal balanced sentence); tagline-only if no overview. */
 function buildPremiumSubtitleLine(
   tagline: string | null | undefined,
@@ -320,10 +327,10 @@ export type TourDetailTemplateViewProps = {
   tour?: TourDetailViewModel | null
   /** When set on `/tour/[id]`, the bottom CTA links to checkout instead of being inert. */
   checkoutHref?: string | null
-  /** Open-Meteo forecast point; omit to use API default (east Jeju / Seongsan reference). */
+  /** Open-Meteo forecast point; omit to use API default (east Jeju anchor coords). */
   weatherLatitude?: number
   weatherLongitude?: number
-  /** Shown as “Based on {label} forecast” (e.g. `Seongsan area`). */
+  /** Shown next to forecast (e.g. `East Jeju region` / KO: `제주 동쪽 지역`). */
   weatherAreaLabel?: string
 }
 
@@ -346,6 +353,11 @@ export function TourDetailTemplateView({
   const [expandedPractical, setExpandedPractical] = useState<number | null>(null)
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
   const [itineraryExpanded, setItineraryExpanded] = useState(false)
+  const [overviewExpanded, setOverviewExpanded] = useState(false)
+  const [journeyNoteExpanded, setJourneyNoteExpanded] = useState(false)
+  const [expandedWhyFit, setExpandedWhyFit] = useState<number | null>(null)
+  const [seasonalPointsExpanded, setSeasonalPointsExpanded] = useState(false)
+  const [expandedSupportCard, setExpandedSupportCard] = useState<number | null>(null)
 
   const sectionRefs = {
     Overview: useRef<HTMLDivElement>(null),
@@ -384,6 +396,10 @@ export function TourDetailTemplateView({
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  useEffect(() => {
+    setSeasonalPointsExpanded(false)
+  }, [activeSeason])
+
   const currentSeason = seasons.find((s) => s.id === activeSeason)!
 
   const dbItineraryStops = useMemo(() => (tour ? buildRouteStopsFromTour(tour) : []), [tour])
@@ -414,7 +430,7 @@ export function TourDetailTemplateView({
 
   const heroImageAlt = tour?.title ? tour.title : "East Jeju coastal landscape"
 
-  const heroTitle = tour?.title ?? "East Signature Nature Core"
+  const heroTitle = tour?.title ?? "Jeju East Volcano, Coast & Village Small Group Tour"
 
   const premiumSubtitle = useMemo(
     () => buildPremiumSubtitleLine(tour?.tagline, tour?.overview),
@@ -466,6 +482,13 @@ export function TourDetailTemplateView({
       ? `${dbItineraryStops.length} stops—open a card for duration, photos, and on-site tips. Order or timing may shift for traffic, hours, or weather; your guide keeps the same planned places.`
       : "Open each card for duration, photos, and what to expect on the ground. Order or timing may shift for traffic, hours, or weather; your guide keeps the same planned places."
 
+  const journeyLeadSummary =
+    dbItineraryStops.length > 0
+      ? `${dbItineraryStops.length} stops · open a card for timing, photos, and on-site tips.`
+      : "Open a card for timing, photos, and what to expect on the ground."
+
+  const overviewWarrantsExpand = premiumSubtitle.trim().length > 200
+
   const resolvedWeather = useMemo(() => {
     const lat = weatherLatitude
     const lon = weatherLongitude
@@ -491,7 +514,7 @@ export function TourDetailTemplateView({
     }
   }, [tour, weatherLatitude, weatherLongitude, weatherAreaLabel, eyebrowPlace])
 
-  /** Korean UI: human-friendly region line for east-Jeju forecast (same coords as 성산 anchor). */
+  /** Korean UI: 동쪽 투어는 성산 단일 지명 대신 “제주 동쪽 지역”. */
   const weatherForecastAreaLabel = useMemo(() => {
     const explicit = (weatherAreaLabel ?? "").trim()
     if (explicit) return explicit
@@ -500,7 +523,7 @@ export function TourDetailTemplateView({
       const nearEastSeongsan =
         Math.abs(latitude - WEATHER_ANCHOR_EAST_SEONGSAN.latitude) < 0.02 &&
         Math.abs(longitude - WEATHER_ANCHOR_EAST_SEONGSAN.longitude) < 0.02
-      if (nearEastSeongsan) return "제주 동쪽 날씨"
+      if (nearEastSeongsan) return "제주 동쪽 지역"
     }
     return resolvedWeather.areaLabel
   }, [locale, weatherAreaLabel, resolvedWeather])
@@ -546,7 +569,7 @@ export function TourDetailTemplateView({
               {heroTitle}
             </h1>
             {heroRouteLine ? (
-              <p className="mt-2 max-w-[min(100%,20rem)] text-[13px] font-normal leading-snug tracking-tight text-white/80 line-clamp-2 sm:mt-3 sm:max-w-xl sm:text-[15px] sm:font-medium sm:leading-relaxed sm:text-white/88">
+              <p className="mt-2 max-w-[min(100%,18.5rem)] text-[12px] font-normal leading-[1.38] tracking-tight text-white/84 line-clamp-3 sm:mt-2.5 sm:max-w-xl sm:text-[14px] sm:font-medium sm:leading-snug sm:line-clamp-2 sm:text-white/88">
                 {heroRouteLine}
               </p>
             ) : null}
@@ -556,41 +579,42 @@ export function TourDetailTemplateView({
         {/* Layer 3 quick facts + layer 4 rating */}
         <div className="relative z-[3] -mt-1 px-5 pb-2 max-sm:pt-0.5 sm:-mt-5">
           <div className="td-card-b td-card-b--hero-handoff mx-auto max-w-md px-3.5 pb-2.5 pt-3 backdrop-blur-[2px] supports-[backdrop-filter]:bg-white/75 sm:px-5 sm:py-3.5">
-            <div className="flex flex-wrap gap-1.5 sm:gap-2.5">
-              <span className="inline-flex max-w-full items-center gap-1 rounded-full border border-neutral-200/75 bg-neutral-50/85 px-2.5 py-1 text-[10px] font-medium tracking-tight text-neutral-700 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset] sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-[11px] sm:font-semibold sm:text-neutral-800 md:text-[12px]">
-                <Users className="h-3 w-3 shrink-0 text-neutral-400 sm:h-3.5 sm:w-3.5 sm:text-neutral-500" strokeWidth={1.75} aria-hidden />
-                <span className="min-w-0 truncate">{eyebrowGroup}</span>
-              </span>
-              <span className="inline-flex max-w-full items-center gap-1 rounded-full border border-neutral-200/75 bg-neutral-50/85 px-2.5 py-1 text-[10px] font-medium tracking-tight text-neutral-700 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset] sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-[11px] sm:font-semibold sm:text-neutral-800 md:text-[12px]">
+            {/* Mobile: 2×2 grid (place · duration first row, group · theme second) for cleaner wrap; sm+: flow */}
+            <div className="grid grid-cols-2 gap-x-2 gap-y-2 sm:flex sm:flex-wrap sm:gap-x-2.5 sm:gap-y-2">
+              <span className="inline-flex min-w-0 max-w-full items-center gap-1 rounded-full border border-neutral-200/75 bg-neutral-50/85 px-2.5 py-1 text-[10px] font-medium tracking-tight text-neutral-700 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset] sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-[11px] sm:font-semibold sm:text-neutral-800 md:text-[12px]">
                 <MapPin className="h-3 w-3 shrink-0 text-neutral-400 sm:h-3.5 sm:w-3.5 sm:text-neutral-500" strokeWidth={1.75} aria-hidden />
                 <span className="min-w-0 truncate">{eyebrowPlace}</span>
               </span>
-              <span className="inline-flex max-w-full items-center gap-1 rounded-full border border-neutral-200/75 bg-neutral-50/85 px-2.5 py-1 text-[10px] font-medium tracking-tight text-neutral-700 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset] sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-[11px] sm:font-semibold sm:text-neutral-800 md:text-[12px]">
+              <span className="inline-flex min-w-0 max-w-full items-center gap-1 rounded-full border border-neutral-200/75 bg-neutral-50/85 px-2.5 py-1 text-[10px] font-medium tracking-tight text-neutral-700 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset] sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-[11px] sm:font-semibold sm:text-neutral-800 md:text-[12px]">
                 <Clock className="h-3 w-3 shrink-0 text-neutral-400 sm:h-3.5 sm:w-3.5 sm:text-neutral-500" strokeWidth={1.75} aria-hidden />
                 <span className="min-w-0 truncate">{eyebrowDuration}</span>
               </span>
-              <span className="inline-flex max-w-full items-center gap-1 rounded-full border border-neutral-200/75 bg-neutral-50/85 px-2.5 py-1 text-[10px] font-medium tracking-tight text-neutral-700 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset] sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-[11px] sm:font-semibold sm:text-neutral-800 md:text-[12px]">
+              <span className="inline-flex min-w-0 max-w-full items-center gap-1 rounded-full border border-neutral-200/75 bg-neutral-50/85 px-2.5 py-1 text-[10px] font-medium tracking-tight text-neutral-700 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset] sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-[11px] sm:font-semibold sm:text-neutral-800 md:text-[12px]">
+                <Users className="h-3 w-3 shrink-0 text-neutral-400 sm:h-3.5 sm:w-3.5 sm:text-neutral-500" strokeWidth={1.75} aria-hidden />
+                <span className="min-w-0 truncate">{eyebrowGroup}</span>
+              </span>
+              <span className="inline-flex min-w-0 max-w-full items-center gap-1 rounded-full border border-neutral-200/75 bg-neutral-50/85 px-2.5 py-1 text-[10px] font-medium tracking-tight text-neutral-700 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset] sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-[11px] sm:font-semibold sm:text-neutral-800 md:text-[12px]">
                 <Route className="h-3 w-3 shrink-0 text-neutral-400 sm:h-3.5 sm:w-3.5 sm:text-neutral-500" strokeWidth={1.75} aria-hidden />
                 <span className="min-w-0 truncate">{eyebrowTheme}</span>
               </span>
             </div>
             {templateRating != null ? (
-              <div className="mt-2 flex flex-wrap items-center gap-1.5 border-t border-neutral-200/60 pt-2 text-neutral-600 sm:mt-3 sm:gap-2 sm:border-neutral-200/80 sm:pt-3 sm:text-neutral-700">
-                <div className="flex items-center gap-0.5 text-amber-500/95" aria-hidden>
+              <div className="mt-2.5 flex flex-wrap items-center gap-1.5 border-t border-neutral-200/45 pt-2.5 text-neutral-500 sm:mt-3 sm:gap-2 sm:pt-2.5">
+                <div className="flex items-center gap-0.5 text-amber-500/80" aria-hidden>
                   {[1, 2, 3, 4, 5].map((i: number) => (
                     <Star
                       key={i}
-                      className={`h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 ${
-                        i <= templateFullStars ? "fill-amber-500 text-amber-500" : "fill-transparent text-amber-500/40"
+                      className={`h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 ${
+                        i <= templateFullStars ? "fill-amber-500 text-amber-500" : "fill-transparent text-amber-500/35"
                       }`}
                       strokeWidth={i <= templateFullStars ? 0 : 1.35}
                     />
                   ))}
                 </div>
-                <span className="text-[12px] font-semibold tabular-nums text-neutral-800 sm:text-[13px] sm:font-bold sm:text-neutral-900 md:text-sm">
+                <span className="text-[11px] font-semibold tabular-nums text-neutral-600 sm:text-[12px] sm:text-neutral-700">
                   {templateRating.toFixed(1)}
                 </span>
-                <span className="text-[10px] font-medium text-neutral-500 sm:text-[11px] md:text-[12px]">
+                <span className="text-[10px] font-normal text-neutral-400 sm:text-[11px]">
                   ({templateReviewCount} {t("tour.reviews")})
                 </span>
               </div>
@@ -600,23 +624,35 @@ export function TourDetailTemplateView({
 
         {/* Longer overview / tagline — only when it adds detail beyond the hero route line */}
         {showOverviewCard ? (
-          <div className="relative z-[3] px-5 pb-4 pt-2">
-            <div className="td-card-b mx-auto max-w-md px-3.5 py-3 backdrop-blur-[3px] supports-[backdrop-filter]:bg-white/78 sm:px-4 sm:py-3.5">
+          <div className="relative z-[3] px-5 pb-3 pt-1.5">
+            <div className="td-card-b mx-auto max-w-md px-3.5 py-2.5 backdrop-blur-[3px] supports-[backdrop-filter]:bg-white/78 sm:px-4 sm:py-3">
               <p
-                className="m-0 text-[13px] sm:text-[14px] leading-[1.55] font-normal text-neutral-950 tracking-tight antialiased"
+                className={`m-0 text-[13px] sm:text-[14px] leading-[1.55] font-normal text-neutral-950 tracking-tight antialiased ${
+                  overviewWarrantsExpand && !overviewExpanded ? "line-clamp-4" : ""
+                }`}
                 style={{
                   fontFamily: 'Georgia, "Times New Roman", ui-serif, serif',
                 }}
               >
                 {premiumSubtitle}
               </p>
+              {overviewWarrantsExpand ? (
+                <button
+                  type="button"
+                  aria-expanded={overviewExpanded}
+                  onClick={() => setOverviewExpanded((v) => !v)}
+                  className="mt-2.5 text-left text-[12px] font-semibold tracking-tight text-neutral-800 underline decoration-neutral-300/90 underline-offset-[0.2em] transition-colors hover:text-neutral-950 hover:decoration-neutral-400"
+                >
+                  {overviewExpanded ? "Show less" : "Read full overview"}
+                </button>
+              ) : null}
             </div>
           </div>
         ) : null}
 
         {/* Trust Facts */}
-        <div className="px-5 pb-3">
-          <div className="flex flex-wrap gap-x-4 gap-y-2">
+        <div className="px-5 pb-2">
+          <div className="flex flex-wrap gap-x-3.5 gap-y-1.5">
             {trustFacts.map((fact) => (
               <div key={fact.label} className="flex items-center gap-1.5 text-gray-500 text-[11px] tracking-[-0.005em]">
                 <fact.icon className="w-3.5 h-3.5 text-gray-400" strokeWidth={1.75} />
@@ -627,7 +663,7 @@ export function TourDetailTemplateView({
         </div>
 
         {/* Itinerary — above At a Glance; prominent CTA, expands below with motion */}
-        <div ref={sectionRefs.Route} className="px-5 pb-5">
+        <div ref={sectionRefs.Route} className="px-5 pb-4">
           <button
             type="button"
             aria-expanded={itineraryExpanded}
@@ -696,13 +732,25 @@ export function TourDetailTemplateView({
             style={{ overflow: "hidden" }}
             className="will-change-[height,opacity]"
           >
-            <div className="border-t border-neutral-100/80 pt-5">
-              <p className="text-[9px] font-semibold text-gray-400 tracking-[0.12em] mb-1.5 uppercase">The Route</p>
+            <div className="border-t border-neutral-200/50 pt-4">
+              <p className="text-[9px] font-semibold text-gray-400 tracking-[0.12em] mb-1 uppercase">The Route</p>
               <h2 className="text-[17px] font-semibold text-gray-900 mb-1 tracking-[-0.02em]">Your Journey</h2>
-              <p className="text-[13px] text-gray-500 mb-5 leading-[1.5] tracking-[-0.005em]">{journeyLead}</p>
+              <p className="text-[13px] text-gray-600 leading-[1.45] tracking-[-0.005em]">
+                {journeyNoteExpanded ? journeyLead : journeyLeadSummary}
+              </p>
+              <button
+                type="button"
+                aria-expanded={journeyNoteExpanded}
+                onClick={() => setJourneyNoteExpanded((v) => !v)}
+                className="mt-2 mb-4 text-left text-[12px] font-semibold tracking-tight text-neutral-800 underline decoration-neutral-300/90 underline-offset-[0.2em] transition-colors hover:text-neutral-950 hover:decoration-neutral-400"
+              >
+                {journeyNoteExpanded ? "Shorter summary" : "How timing & order work"}
+              </button>
 
               <div className="space-y-0">
-                {displayRouteStops.map((stop, idx) => (
+                {displayRouteStops.map((stop, idx) => {
+                  const supporting = itineraryStopSupporting(stop)
+                  return (
                   <motion.div
                     key={stop.id}
                     initial={false}
@@ -712,90 +760,90 @@ export function TourDetailTemplateView({
                       delay: itineraryExpanded ? Math.min(idx * 0.04, 0.32) : 0,
                       ease: ITIN_EXPAND_EASE,
                     }}
-                    className="flex items-stretch gap-3.5"
+                    className="flex items-stretch gap-2.5 sm:gap-3.5"
                   >
-                    <div className="flex w-[3rem] shrink-0 flex-col items-center pt-1">
-                      <div className="relative z-[1] flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-stone-200/95 bg-gradient-to-br from-white via-white to-stone-50/90 text-[9px] font-semibold tabular-nums tracking-[0.14em] text-stone-700 shadow-[0_2px_8px_rgba(15,23,42,0.06),0_1px_2px_rgba(15,23,42,0.04),inset_0_1px_0_rgba(255,255,255,1)] ring-1 ring-white/80">
+                    <div className="flex w-[2.75rem] shrink-0 flex-col items-center pt-0.5 sm:w-[3rem] sm:pt-1">
+                      <div className="relative z-[1] flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-stone-200/95 bg-gradient-to-br from-white via-white to-stone-50/90 text-[8px] font-semibold tabular-nums tracking-[0.12em] text-stone-700 shadow-[0_2px_8px_rgba(15,23,42,0.06),0_1px_2px_rgba(15,23,42,0.04),inset_0_1px_0_rgba(255,255,255,1)] ring-1 ring-white/80 sm:h-9 sm:w-9 sm:text-[9px] sm:tracking-[0.14em]">
                         {stop.number}
                       </div>
                       {idx < displayRouteStops.length - 1 ? (
                         <div
-                          className="relative mt-3 flex w-full flex-1 min-h-[1.75rem] flex-col items-center"
+                          className="relative mt-2 flex w-full flex-1 min-h-[1.25rem] flex-col items-center sm:mt-2.5 sm:min-h-[1.5rem]"
                           aria-hidden
                         >
                           <div className="pointer-events-none absolute left-1/2 top-0 bottom-0 w-2.5 -translate-x-1/2 rounded-full bg-gradient-to-b from-stone-200/35 via-stone-100/50 to-stone-100/25" />
-                          <div className="relative z-[1] mx-auto h-full w-[2px] flex-1 min-h-[1.5rem] rounded-full bg-gradient-to-b from-stone-400/45 from-[5%] via-stone-300/28 via-[42%] to-stone-200/10 to-[98%] shadow-[inset_0_1px_0_rgba(255,255,255,0.45)]" />
+                          <div className="relative z-[1] mx-auto h-full w-[2px] flex-1 min-h-[1.125rem] rounded-full bg-gradient-to-b from-stone-400/45 from-[5%] via-stone-300/28 via-[42%] to-stone-200/10 to-[98%] shadow-[inset_0_1px_0_rgba(255,255,255,0.45)] sm:min-h-[1.35rem]" />
                         </div>
                       ) : (
                         <div className="min-h-0 flex-1" />
                       )}
                     </div>
 
-                    <div className="min-w-0 flex-1 pb-4">
-                      <div
-                        className="td-card-a overflow-hidden transition-all duration-300 ease-out hover:-translate-y-0.5 group"
-                      >
-                        <div className="px-3 pt-2.5 pb-1.5">
-                          <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-[0_2px_6px_rgba(0,0,0,0.05)]">
+                    <div className="min-w-0 flex-1 pb-2 sm:pb-2.5">
+                      <div className="td-card-a overflow-hidden transition-all duration-300 ease-out hover:-translate-y-0.5 group">
+                        <div className="flex gap-2.5 p-2.5 sm:gap-3 sm:p-3">
+                          <div className="relative h-[3.25rem] w-[3.25rem] shrink-0 overflow-hidden rounded-lg shadow-[0_2px_6px_rgba(0,0,0,0.05)] sm:h-[3.5rem] sm:w-[3.5rem]">
                             <img
                               src={stop.image}
                               alt=""
-                              className="absolute inset-0 h-full w-full object-cover transition-transform duration-[500ms] ease-out group-hover:scale-[1.03]"
+                              className="h-full w-full object-cover transition-transform duration-[500ms] ease-out group-hover:scale-[1.04]"
                               style={{ filter: "contrast(1.03) saturate(1.08) brightness(1.01)" }}
                             />
-                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/8 to-transparent" />
+                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                           </div>
-                        </div>
-                        <div className="px-3 pb-2.5 pt-0">
-                          <h3 className="text-[14px] font-semibold tracking-[-0.015em] text-gray-900 sm:text-[15px]">
-                            {stop.title}
-                          </h3>
-                          <p className="mt-1 text-[13px] leading-[1.45] tracking-[-0.01em] text-gray-600 break-words">
-                            {stop.shortDesc}
-                          </p>
-                          <div className="mt-2 flex flex-wrap gap-1">
-                            {stop.badges.map((badge) => (
-                              <span
-                                key={badge}
-                                className="rounded-full border border-gray-150 bg-gray-50 px-2 py-0.5 text-[9px] font-semibold tracking-[0.02em] text-gray-600"
-                              >
-                                {badge}
+                          <div className="min-w-0 flex-1">
+                            <div className="flex items-start justify-between gap-2">
+                              <h3 className="min-w-0 text-[13px] font-semibold leading-snug tracking-[-0.015em] text-gray-900 sm:text-[14px]">
+                                {stop.title}
+                              </h3>
+                              <span className="shrink-0 rounded-md bg-gray-50/95 px-1.5 py-0.5 text-[10px] font-semibold tabular-nums tracking-tight text-gray-600 ring-1 ring-gray-100/90 sm:text-[11px]">
+                                {stop.duration}
                               </span>
-                            ))}
+                            </div>
+                            {supporting.kind === "tag" ? (
+                              <span className="mt-1.5 inline-flex max-w-full rounded-full border border-gray-200/90 bg-gray-50/90 px-2 py-0.5 text-[9px] font-semibold tracking-[0.02em] text-gray-600">
+                                {supporting.label}
+                              </span>
+                            ) : supporting.text.trim() ? (
+                              <p className="mt-1.5 text-[12px] leading-snug tracking-[-0.01em] text-gray-600 line-clamp-1 sm:text-[12.5px]">
+                                {supporting.text}
+                              </p>
+                            ) : null}
+                            <button
+                              type="button"
+                              onClick={() => setSelectedStop(stop)}
+                              className="group/btn mt-2 inline-flex items-center gap-0.5 text-[10px] font-semibold text-gray-800 transition-colors duration-200 hover:text-gray-600 active:scale-[0.98] sm:text-[11px]"
+                            >
+                              View details
+                              <ChevronRight className="h-3 w-3 transition-transform duration-200 group-hover/btn:translate-x-0.5" />
+                            </button>
                           </div>
-                          <button
-                            type="button"
-                            onClick={() => setSelectedStop(stop)}
-                            className="group/btn mt-2 flex items-center gap-1 text-[11px] font-semibold text-gray-800 transition-colors duration-200 hover:text-gray-600 active:scale-[0.98]"
-                          >
-                            View details
-                            <ChevronRight className="h-3 w-3 transition-transform duration-200 group-hover/btn:translate-x-0.5" />
-                          </button>
                         </div>
                       </div>
                     </div>
                   </motion.div>
-                ))}
+                  )
+                })}
               </div>
             </div>
           </motion.div>
         </div>
 
         {/* Quick Overview */}
-        <div className="px-5 pb-6">
+        <div className="px-5 pb-5">
           <p className="text-[9px] font-semibold text-gray-400 tracking-[0.12em] mb-1 uppercase">At a Glance</p>
-          <h2 className="text-[16px] font-semibold text-gray-900 mb-2.5 tracking-[-0.02em]">Quick Overview</h2>
+          <h2 className="text-[16px] font-semibold text-gray-900 mb-2 tracking-[-0.02em]">Quick Overview</h2>
 
           {/* Best For Card */}
-          <div className="td-card-a mb-2 p-3.5 transition-all duration-400 ease-out hover:-translate-y-0.5">
-            <div className="flex items-start gap-3.5">
-              <div className="p-2 bg-gradient-to-br from-gray-50 to-gray-100/90 rounded-xl border border-gray-100/80 shadow-[0_1px_2px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,0.9)]">
-                <Users className="w-4 h-4 text-gray-500" />
+          <div className="td-card-a mb-2 p-3 transition-all duration-400 ease-out hover:-translate-y-0.5">
+            <div className="flex items-start gap-3">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-gray-100/80 bg-gradient-to-br from-gray-50 to-gray-100/90 shadow-[0_1px_2px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,0.9)]">
+                <Users className="h-4 w-4 text-gray-500" strokeWidth={1.75} />
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-[9px] font-semibold text-gray-400 mb-0.5 tracking-[0.1em] uppercase">Best For</p>
                 <p className="font-semibold text-gray-900 text-[14px] tracking-[-0.01em]">First-time visitors, couples, parents</p>
-                <p className="text-[13px] text-gray-500 mt-1 leading-[1.5] tracking-[-0.005em]">
+                <p className="text-[13px] text-gray-500 mt-1 leading-[1.45] tracking-[-0.005em] line-clamp-3">
                   Balanced scenic sightseeing with natural day flow
                 </p>
               </div>
@@ -803,37 +851,57 @@ export function TourDetailTemplateView({
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-3 gap-1.5">
             {displayQuickStats.map((stat) => (
               <div
                 key={stat.label}
-                className="td-card-b td-card-b--compact p-3 text-center transition-all duration-300 ease-out hover:-translate-y-0.5 active:scale-[0.98]"
+                className="td-card-b td-card-b--compact flex flex-col items-center px-2 py-2.5 text-center transition-all duration-300 ease-out hover:-translate-y-0.5 active:scale-[0.98] sm:px-2.5 sm:py-3"
               >
-                <stat.icon className="w-4 h-4 text-gray-400 mx-auto mb-1.5" strokeWidth={1.75} />
-                <p className="text-[8px] text-gray-400 uppercase tracking-[0.1em] font-semibold">{stat.label}</p>
-                <p className="text-[13px] font-semibold text-gray-800 mt-0.5 tracking-[-0.01em]">{stat.value}</p>
+                <div className="mb-1.5 flex h-9 w-9 items-center justify-center rounded-xl border border-gray-100/80 bg-gradient-to-br from-gray-50 to-gray-100/90 shadow-[0_1px_2px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,0.9)]">
+                  <stat.icon className="h-4 w-4 text-gray-400" strokeWidth={1.75} />
+                </div>
+                <p className="text-[8px] font-semibold uppercase tracking-[0.1em] text-gray-400">{stat.label}</p>
+                <p className="mt-0.5 text-[13px] font-semibold tracking-[-0.02em] text-gray-900">{stat.value}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Why This Tour Fits — above weather */}
-        <div className="px-5 pb-8">
-          <p className="text-[9px] font-semibold text-gray-400 tracking-[0.12em] mb-1.5 uppercase">The Experience</p>
-          <h2 className="text-[17px] font-semibold text-gray-900 mb-4 tracking-[-0.02em]">Why This Tour Fits</h2>
-          <div className="space-y-2.5">
-            {whyFits.map((item) => (
-              <div
-                key={item.title}
-                className="td-card-a p-4 transition-all duration-400 ease-out hover:-translate-y-0.5"
-              >
-                <div className="flex items-start gap-3.5">
+        <div className="px-5 pb-6">
+          <p className="text-[9px] font-semibold text-gray-400 tracking-[0.12em] mb-1 uppercase">The Experience</p>
+          <h2 className="text-[17px] font-semibold text-gray-900 mb-3 tracking-[-0.02em]">Why This Tour Fits</h2>
+          <div className="home-neutral-editorial td-card-a overflow-hidden divide-y divide-gray-100/90">
+            {whyFits.map((item, idx) => (
+              <div key={item.title} className="border-0">
+                <button
+                  type="button"
+                  aria-expanded={expandedWhyFit === idx}
+                  onClick={() => setExpandedWhyFit(expandedWhyFit === idx ? null : idx)}
+                  className="flex w-full items-start gap-3 px-3 py-3 text-left transition-colors duration-200 hover:bg-gray-50/80 active:bg-gray-50"
+                >
                   <div className="p-2 bg-gradient-to-br from-gray-50 to-gray-100/90 rounded-xl border border-gray-100/80 shadow-[0_1px_2px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,0.9)] flex-shrink-0">
                     <item.icon className="w-4 h-4 text-gray-500" strokeWidth={1.75} />
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-gray-900 text-[14px] tracking-[-0.01em]">{item.title}</h3>
-                    <p className="text-[13px] text-gray-500 mt-1 leading-[1.55] tracking-[-0.005em]">{item.desc}</p>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-semibold text-gray-900 text-[14px] tracking-[-0.01em] pr-1">{item.title}</h3>
+                  </div>
+                  <ChevronDown
+                    className={`mt-1 h-4 w-4 shrink-0 text-gray-400 transition-transform duration-300 ease-out ${
+                      expandedWhyFit === idx ? "rotate-180" : ""
+                    }`}
+                    aria-hidden
+                  />
+                </button>
+                <div
+                  className={`grid transition-all duration-300 ease-out ${
+                    expandedWhyFit === idx ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="border-t border-gray-100/80 px-3 pb-3 pt-0 pl-11">
+                      <p className="text-[13px] text-gray-600 leading-[1.55] tracking-[-0.005em] pt-2.5">{item.desc}</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -845,15 +913,16 @@ export function TourDetailTemplateView({
           areaLabel={weatherForecastAreaLabel}
           latitude={resolvedWeather.latitude}
           longitude={resolvedWeather.longitude}
+          collapseAuxiliaryByDefault
         />
 
         {/* Seasonal Variations — after narrative; itinerary lives in collapsible above At a Glance */}
-        <div className="px-5 pb-8">
-          <div className="mt-2">
-            <p className="text-[9px] font-semibold text-gray-400 tracking-[0.12em] mb-1.5 uppercase">Adaptability</p>
-            <h2 className="text-[17px] font-semibold text-gray-900 mb-4 tracking-[-0.02em]">Seasonal Variations</h2>
+        <div className="px-5 pb-6">
+          <div className="mt-1">
+            <p className="text-[9px] font-semibold text-gray-400 tracking-[0.12em] mb-1 uppercase">Adaptability</p>
+            <h2 className="text-[17px] font-semibold text-gray-900 mb-3 tracking-[-0.02em]">Seasonal Variations</h2>
 
-            <div className="flex gap-1.5 mb-4 overflow-x-auto pb-1 -mx-1 px-1">
+            <div className="flex gap-1.5 mb-3 overflow-x-auto pb-1 -mx-1 px-1">
               {seasons.map((season) => (
                 <button
                   key={season.id}
@@ -870,8 +939,8 @@ export function TourDetailTemplateView({
               ))}
             </div>
 
-            <div className="td-card-b p-4">
-              <div className="flex items-center gap-3.5 mb-3.5">
+            <div className="td-card-b p-3.5 sm:p-4">
+              <div className="flex items-center gap-3 mb-2.5">
                 <div className="p-2 bg-gradient-to-br from-gray-50 to-gray-100/90 rounded-xl border border-gray-100/80 shadow-[0_1px_2px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,0.9)]">
                   <currentSeason.icon className="w-4 h-4 text-gray-500" />
                 </div>
@@ -880,14 +949,38 @@ export function TourDetailTemplateView({
                   <p className="text-[11px] text-gray-400 mt-0.5 tracking-[-0.005em]">{currentSeason.period}</p>
                 </div>
               </div>
-              <p className="text-[13px] text-gray-500 mb-4 leading-[1.55] tracking-[-0.005em]">{currentSeason.desc}</p>
-              <div className="space-y-2.5">
-                {currentSeason.points.map((point, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5">
-                    <Check className="w-3.5 h-3.5 text-gray-400 mt-0.5 flex-shrink-0" />
-                    <span className="text-[13px] text-gray-600 leading-[1.5] tracking-[-0.005em]">{point}</span>
+              <p className="text-[13px] text-gray-600 mb-3 leading-[1.5] tracking-[-0.005em]">{currentSeason.desc}</p>
+              <button
+                type="button"
+                aria-expanded={seasonalPointsExpanded}
+                onClick={() => setSeasonalPointsExpanded((v) => !v)}
+                className="mb-0 flex w-full items-center justify-between gap-2 rounded-xl border border-gray-200/80 bg-white/60 px-3 py-2.5 text-left transition-colors duration-200 hover:bg-gray-50/90"
+              >
+                <span className="text-[12px] font-semibold tracking-tight text-gray-800">
+                  Season notes ({currentSeason.points.length})
+                </span>
+                <ChevronDown
+                  className={`h-4 w-4 shrink-0 text-gray-400 transition-transform duration-300 ease-out ${
+                    seasonalPointsExpanded ? "rotate-180" : ""
+                  }`}
+                  aria-hidden
+                />
+              </button>
+              <div
+                className={`grid transition-all duration-300 ease-out ${
+                  seasonalPointsExpanded ? "mt-2 grid-rows-[1fr]" : "grid-rows-[0fr]"
+                }`}
+              >
+                <div className="overflow-hidden min-h-0">
+                  <div className="space-y-2 border-t border-gray-100/90 pt-2.5">
+                    {currentSeason.points.map((point, idx) => (
+                      <div key={idx} className="flex items-start gap-2.5">
+                        <Check className="w-3.5 h-3.5 text-gray-400 mt-0.5 flex-shrink-0" />
+                        <span className="text-[13px] text-gray-600 leading-[1.5] tracking-[-0.005em]">{point}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           </div>
@@ -895,31 +988,32 @@ export function TourDetailTemplateView({
       </div>
 
       {/* Practical Section */}
-      <div ref={sectionRefs.Practical} className="px-5 pb-8">
-        <p className="text-[9px] font-semibold text-gray-400 tracking-[0.12em] mb-1.5 uppercase">Preparation</p>
-        <h2 className="text-[17px] font-semibold text-gray-900 mb-4 tracking-[-0.02em]">Practical Information</h2>
+      <div ref={sectionRefs.Practical} className="px-5 pb-6">
+        <p className="text-[9px] font-semibold text-gray-400 tracking-[0.12em] mb-1 uppercase">Preparation</p>
+        <h2 className="text-[17px] font-semibold text-gray-900 mb-3 tracking-[-0.02em]">Practical Information</h2>
 
         <div className="home-neutral-editorial td-card-c overflow-hidden">
           {displayPracticalItems.map((item, idx) => (
-            <div key={idx} className="border-b border-slate-200/25 last:border-b-0">
+            <div key={idx} className="border-b border-slate-200/30 last:border-b-0">
               <button
+                type="button"
                 onClick={() => setExpandedPractical(expandedPractical === idx ? null : idx)}
-                className="w-full px-4 py-3.5 flex items-center justify-between text-left transition-colors duration-200 hover:bg-sky-50/35 active:bg-sky-50/45"
+                className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors duration-200 hover:bg-sky-50/35 active:bg-sky-50/45"
               >
                 <div className="flex items-center gap-3">
-                  <item.icon className="w-4 h-4 text-sky-600/75" strokeWidth={1.75} />
+                  <item.icon className="h-4 w-4 text-sky-600/75" strokeWidth={1.75} />
                   <span className="text-[13px] font-semibold text-slate-800 tracking-[-0.01em]">{item.title}</span>
                 </div>
                 <ChevronDown
-                  className={`w-4 h-4 text-slate-400 transition-transform duration-300 ease-out ${
+                  className={`h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 ease-out ${
                     expandedPractical === idx ? "rotate-180" : ""
                   }`}
                 />
               </button>
               <div className={`grid transition-all duration-300 ease-out ${expandedPractical === idx ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
                 <div className="overflow-hidden">
-                  <div className="px-4 pb-3.5 pl-11">
-                    <p className="text-[13px] text-slate-600 leading-[1.58] tracking-[-0.005em]">{item.content}</p>
+                  <div className="px-4 pb-3 pl-11">
+                    <p className="text-[13px] text-slate-600 leading-[1.55] tracking-[-0.005em]">{item.content}</p>
                   </div>
                 </div>
               </div>
@@ -929,28 +1023,29 @@ export function TourDetailTemplateView({
       </div>
 
       {/* FAQ Section */}
-      <div ref={sectionRefs.FAQ} className="px-5 pb-8">
-        <p className="text-[9px] font-semibold text-gray-400 tracking-[0.12em] mb-1.5 uppercase">Questions</p>
-        <h2 className="text-[17px] font-semibold text-gray-900 mb-4 tracking-[-0.02em]">Frequently Asked</h2>
+      <div ref={sectionRefs.FAQ} className="px-5 pb-6">
+        <p className="text-[9px] font-semibold text-gray-400 tracking-[0.12em] mb-1 uppercase">Questions</p>
+        <h2 className="text-[17px] font-semibold text-gray-900 mb-3 tracking-[-0.02em]">Frequently Asked</h2>
 
         <div className="home-neutral-editorial td-card-c overflow-hidden">
           {displayFaqItems.map((item, idx) => (
-            <div key={idx} className="border-b border-slate-200/25 last:border-b-0">
+            <div key={idx} className="border-b border-slate-200/30 last:border-b-0">
               <button
+                type="button"
                 onClick={() => setExpandedFaq(expandedFaq === idx ? null : idx)}
-                className="w-full px-4 py-3.5 flex items-center justify-between text-left transition-colors duration-200 hover:bg-sky-50/35 active:bg-sky-50/45"
+                className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors duration-200 hover:bg-sky-50/35 active:bg-sky-50/45"
               >
-                <span className="text-[13px] font-semibold text-slate-800 pr-3 tracking-[-0.01em]">{item.q}</span>
+                <span className="pr-3 text-[13px] font-semibold text-slate-800 tracking-[-0.01em]">{item.q}</span>
                 <ChevronDown
-                  className={`w-4 h-4 text-slate-400 flex-shrink-0 transition-transform duration-300 ease-out ${
+                  className={`h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 ease-out ${
                     expandedFaq === idx ? "rotate-180" : ""
                   }`}
                 />
               </button>
               <div className={`grid transition-all duration-300 ease-out ${expandedFaq === idx ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
                 <div className="overflow-hidden">
-                  <div className="px-4 pb-3.5">
-                    <p className="text-[13px] text-slate-600 leading-[1.58] tracking-[-0.005em]">{item.a}</p>
+                  <div className="px-4 pb-3">
+                    <p className="text-[13px] text-slate-600 leading-[1.55] tracking-[-0.005em]">{item.a}</p>
                   </div>
                 </div>
               </div>
@@ -960,30 +1055,55 @@ export function TourDetailTemplateView({
       </div>
 
       {/* Post-Booking Support */}
-      <div className="px-5 pb-10">
-        <p className="text-[9px] font-semibold text-gray-400 tracking-[0.12em] mb-1.5 uppercase">After You Book</p>
+      <div className="px-5 pb-9">
+        <p className="text-[9px] font-semibold text-gray-400 tracking-[0.12em] mb-1 uppercase">After You Book</p>
         <h2 className="text-[17px] font-semibold text-gray-900 mb-1 tracking-[-0.02em]">Post-Booking Support</h2>
-        <p className="text-[13px] text-gray-500 mb-5 leading-[1.5] tracking-[-0.005em]">
-          Receive practical guidance—not just confirmation. Arrive prepared and supported.
+        <p className="text-[13px] text-gray-600 mb-4 leading-[1.45] tracking-[-0.005em]">
+          Practical guidance beyond confirmation—expand a card for what you receive.
         </p>
 
-        <div className="grid grid-cols-2 gap-2.5">
-          {supportCards.map((card) => (
+        <div className="grid grid-cols-2 gap-2">
+          {supportCards.map((card, idx) => (
             <div
               key={card.title}
-              className="td-card-b td-card-b--compact p-3.5 transition-all duration-400 ease-out hover:-translate-y-0.5"
+              className="td-card-b td-card-b--compact overflow-hidden transition-all duration-400 ease-out hover:-translate-y-0.5"
             >
-              <div className="p-2 bg-gradient-to-br from-gray-50 to-gray-100/90 rounded-xl border border-gray-100/80 shadow-[0_1px_2px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,0.9)] w-fit mb-2.5">
-                <card.icon className="w-4 h-4 text-gray-500" strokeWidth={1.75} />
+              <button
+                type="button"
+                aria-expanded={expandedSupportCard === idx}
+                onClick={() => setExpandedSupportCard(expandedSupportCard === idx ? null : idx)}
+                className="flex w-full flex-col items-stretch p-3 text-left transition-colors duration-200 hover:bg-gray-50/50"
+              >
+                <div className="flex items-start justify-between gap-1">
+                  <div className="p-2 bg-gradient-to-br from-gray-50 to-gray-100/90 rounded-xl border border-gray-100/80 shadow-[0_1px_2px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,0.9)]">
+                    <card.icon className="h-4 w-4 text-gray-500" strokeWidth={1.75} />
+                  </div>
+                  <ChevronDown
+                    className={`mt-0.5 h-3.5 w-3.5 shrink-0 text-gray-400 transition-transform duration-300 ease-out ${
+                      expandedSupportCard === idx ? "rotate-180" : ""
+                    }`}
+                    aria-hidden
+                  />
+                </div>
+                <h3 className="mt-2 font-semibold text-gray-900 text-[12px] leading-snug tracking-[-0.01em]">{card.title}</h3>
+              </button>
+              <div
+                className={`grid transition-all duration-300 ease-out ${
+                  expandedSupportCard === idx ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="border-t border-gray-100/90 px-3 pb-3 pt-2">
+                    <p className="text-[11px] text-gray-600 leading-[1.45] tracking-[-0.005em]">{card.desc}</p>
+                  </div>
+                </div>
               </div>
-              <h3 className="font-semibold text-gray-900 text-[13px] mb-1 tracking-[-0.01em]">{card.title}</h3>
-              <p className="text-[11px] text-gray-500 leading-[1.45] tracking-[-0.005em]">{card.desc}</p>
             </div>
           ))}
         </div>
 
         {/* Footer Label */}
-        <div className="text-center mt-10">
+        <div className="text-center mt-8">
           <span className="text-[9px] text-gray-300 tracking-[0.2em] font-semibold uppercase">East Signature Tours</span>
         </div>
       </div>

@@ -19,94 +19,191 @@ export default function Footer({ premiumHandoff }: FooterProps) {
         premiumHandoff && 'at-footer-premium-handoff'
       )}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 pb-[max(5.5rem,calc(1rem+env(safe-area-inset-bottom,0px)+4.5rem))] md:pb-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3.5 pb-[max(5.25rem,calc(0.875rem+env(safe-area-inset-bottom,0px)+4.25rem))] md:py-4 md:pb-4">
 
-        {/* Company Info — 2열 그리드 */}
-        <div className="mb-3">
-          <h3 className="text-white font-bold text-sm mb-2">{t('home.footer.company')}</h3>
-          <div className="grid grid-cols-2 gap-x-6 gap-y-0.5 text-xs">
-            <p><span className="font-semibold">{t('home.footer.name')}:</span> {t('home.footer.companyName')}</p>
-            <p><span className="font-semibold">{t('home.footer.entityLabel')}:</span> {t('home.footer.entity')}</p>
-            <p><span className="font-semibold">{t('home.footer.stateLabel')}:</span> {t('home.footer.state')}</p>
-            <p><span className="font-semibold">{t('home.footer.industryLabel')}:</span> {t('home.footer.industry')}</p>
+        {/* Company + contact + addresses — one trust cluster */}
+        <div className="mb-2 space-y-2 sm:mb-2.5 sm:space-y-2.5" data-footer-section="identity">
+          <div data-footer-section="company">
+            <h3 className="mb-1 text-xs font-bold tracking-tight text-white sm:text-sm">
+              {t('home.footer.company')}
+            </h3>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-0.5 text-[11px] leading-snug text-slate-300 sm:gap-x-6 sm:text-xs sm:leading-normal">
+              <p>
+                <span className="font-semibold text-slate-200">{t('home.footer.name')}:</span>{' '}
+                {t('home.footer.companyName')}
+              </p>
+              <p>
+                <span className="font-semibold text-slate-200">{t('home.footer.entityLabel')}:</span>{' '}
+                {t('home.footer.entity')}
+              </p>
+              <p>
+                <span className="font-semibold text-slate-200">{t('home.footer.stateLabel')}:</span>{' '}
+                {t('home.footer.state')}
+              </p>
+              <p>
+                <span className="font-semibold text-slate-200">{t('home.footer.industryLabel')}:</span>{' '}
+                {t('home.footer.industry')}
+              </p>
+            </div>
           </div>
-        </div>
 
-        {/* Contact Info */}
-        <div className="text-xs mb-3 space-y-0.5">
-          {/* Contact + Customer Service — 2열 */}
-          <div className="grid grid-cols-2 gap-x-6">
-            <p>
-              <span className="font-semibold">{t('home.footer.contact')}:</span><br />
-              <a href="tel:+821097808027" className="hover:text-white transition-colors">+82 10 9780 8027</a><br />
-              <a href="tel:+13075332194" className="hover:text-white transition-colors">+1 (307) 533 2194</a>
+          <div className="text-[11px] leading-snug text-slate-300 sm:text-xs sm:leading-normal" data-footer-section="contact">
+            <div className="grid grid-cols-2 gap-x-4 sm:gap-x-6">
+              <p>
+                <span className="font-semibold text-slate-200">{t('home.footer.contact')}:</span>
+                <br />
+                <a href="tel:+821097808027" className="text-slate-300 transition-colors hover:text-white">
+                  +82 10 9780 8027
+                </a>
+                <br />
+                <a href="tel:+13075332194" className="text-slate-300 transition-colors hover:text-white">
+                  +1 (307) 533 2194
+                </a>
+              </p>
+              <p>
+                <span className="font-semibold text-slate-200">{t('home.footer.customerServiceEmail')}:</span>
+                <br />
+                <a href="mailto:support@atockorea.com" className="text-slate-300 transition-colors hover:text-white">
+                  support@atockorea.com
+                </a>
+              </p>
+            </div>
+            <p className="mt-1.5 pt-1.5 border-t border-slate-800/80 sm:mt-2 sm:pt-2">
+              <span className="font-semibold text-slate-200">{t('home.footer.address')}:</span>{' '}
+              302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do
             </p>
-            <p>
-              <span className="font-semibold">{t('home.footer.customerServiceEmail')}:</span><br />
-              <a href="mailto:support@atockorea.com" className="hover:text-white transition-colors">support@atockorea.com</a>
+            <p className="mt-1">
+              <span className="font-semibold text-slate-200">{t('home.footer.registeredAddressLabel')}:</span>
+              <br />
+              {t('home.footer.registeredAddress')}
             </p>
           </div>
-          {/* Address */}
-          <p className="pt-2">
-            <span className="font-semibold">{t('home.footer.address')}:</span> 302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do
-          </p>
-          {/* Registered Address */}
-          <p>
-            <span className="font-semibold">{t('home.footer.registeredAddressLabel')}:</span><br />
-            {t('home.footer.registeredAddress')}
-          </p>
         </div>
 
         {/* About, Support, Legal */}
-        <div className="grid grid-cols-3 gap-3 sm:gap-6 mb-3 pt-3 border-t border-slate-800">
-          <div>
-            <h3 className="text-white font-semibold mb-1.5 text-xs">{t('home.footer.aboutUs')}</h3>
-            <ul className="space-y-0.5 text-[10px] sm:text-xs">
-              <li><a href="/about" className="hover:text-white transition-colors">{t('home.footer.ourStory')}</a></li>
-              <li><a href="/about" className="hover:text-white transition-colors">{t('home.footer.whyChooseUs')}</a></li>
-              <li><a href="/about" className="hover:text-white transition-colors">{t('home.footer.partners')}</a></li>
-              <li><a href="/about" className="hover:text-white transition-colors">{t('home.footer.careers')}</a></li>
+        <div
+          className="mb-2 grid grid-cols-3 gap-x-2.5 gap-y-1 border-t border-slate-800/90 pt-2.5 sm:mb-2.5 sm:gap-x-4 sm:pt-3 md:gap-x-6"
+          data-footer-section="nav"
+        >
+          <div className="min-w-0">
+            <h3 className="mb-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-400 sm:text-xs sm:normal-case sm:tracking-normal sm:text-slate-200">
+              {t('home.footer.aboutUs')}
+            </h3>
+            <ul className="space-y-px text-[10px] leading-snug sm:space-y-0.5 sm:text-xs sm:leading-normal">
+              <li>
+                <a href="/about" className="text-slate-400 transition-colors hover:text-white sm:text-slate-300">
+                  {t('home.footer.ourStory')}
+                </a>
+              </li>
+              <li>
+                <a href="/about" className="text-slate-400 transition-colors hover:text-white sm:text-slate-300">
+                  {t('home.footer.whyChooseUs')}
+                </a>
+              </li>
+              <li>
+                <a href="/about" className="text-slate-400 transition-colors hover:text-white sm:text-slate-300">
+                  {t('home.footer.partners')}
+                </a>
+              </li>
+              <li>
+                <a href="/about" className="text-slate-400 transition-colors hover:text-white sm:text-slate-300">
+                  {t('home.footer.careers')}
+                </a>
+              </li>
             </ul>
           </div>
-          <div>
-            <h3 className="text-white font-semibold mb-1.5 text-xs">{t('home.footer.support')}</h3>
-            <ul className="space-y-0.5 text-[10px] sm:text-xs">
-              <li><a href="/support" className="hover:text-white transition-colors">{t('home.footer.bookingHelp')}</a></li>
-              <li><a href="/contact" className="hover:text-white transition-colors">{t('home.footer.contactUs')}</a></li>
-              <li><a href="/support" className="hover:text-white transition-colors">{t('home.footer.faq')}</a></li>
+          <div className="min-w-0">
+            <h3 className="mb-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-400 sm:text-xs sm:normal-case sm:tracking-normal sm:text-slate-200">
+              {t('home.footer.support')}
+            </h3>
+            <ul className="space-y-px text-[10px] leading-snug sm:space-y-0.5 sm:text-xs sm:leading-normal">
+              <li>
+                <a href="/support" className="text-slate-400 transition-colors hover:text-white sm:text-slate-300">
+                  {t('home.footer.bookingHelp')}
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="text-slate-400 transition-colors hover:text-white sm:text-slate-300">
+                  {t('home.footer.contactUs')}
+                </a>
+              </li>
+              <li>
+                <a href="/support" className="text-slate-400 transition-colors hover:text-white sm:text-slate-300">
+                  {t('home.footer.faq')}
+                </a>
+              </li>
             </ul>
           </div>
-          <div>
-            <h3 className="text-white font-semibold mb-1.5 text-xs">{t('home.footer.legal')}</h3>
-            <ul className="space-y-0.5 text-[10px] sm:text-xs">
-              <li><a href="/terms" className="hover:text-white transition-colors">{t('home.footer.terms')}</a></li>
-              <li><a href="/privacy" className="hover:text-white transition-colors">{t('home.footer.privacy')}</a></li>
-              <li><a href="/cookies" className="hover:text-white transition-colors">{t('home.footer.cookies')}</a></li>
-              <li><a href="/refund-policy" className="hover:text-white transition-colors">{t('home.footer.refundPolicy')}</a></li>
+          <div className="min-w-0">
+            <h3 className="mb-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-400 sm:text-xs sm:normal-case sm:tracking-normal sm:text-slate-200">
+              {t('home.footer.legal')}
+            </h3>
+            <ul className="space-y-px text-[10px] leading-snug sm:space-y-0.5 sm:text-xs sm:leading-normal">
+              <li>
+                <a href="/terms" className="text-slate-400 transition-colors hover:text-white sm:text-slate-300">
+                  {t('home.footer.terms')}
+                </a>
+              </li>
+              <li>
+                <a href="/privacy" className="text-slate-400 transition-colors hover:text-white sm:text-slate-300">
+                  {t('home.footer.privacy')}
+                </a>
+              </li>
+              <li>
+                <a href="/cookies" className="text-slate-400 transition-colors hover:text-white sm:text-slate-300">
+                  {t('home.footer.cookies')}
+                </a>
+              </li>
+              <li>
+                <a href="/refund-policy" className="text-slate-400 transition-colors hover:text-white sm:text-slate-300">
+                  {t('home.footer.refundPolicy')}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
         {/* Stripe */}
-        <div className="flex items-center justify-center py-2 border-t border-slate-800">
+        <div
+          className="flex justify-center border-t border-slate-800/90 py-1 sm:py-1.5"
+          data-footer-section="stripe"
+        >
           <a
             href="https://stripe.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex flex-col items-center gap-1.5 opacity-90 hover:opacity-100 transition-opacity"
+            className="inline-flex flex-col items-center gap-1 opacity-90 transition-opacity hover:opacity-100"
             aria-label="Powered by Stripe"
           >
-            <img src="/images/stripe/stripe-wordmark.svg" alt="Stripe" width={80} height={32} className="h-6 w-auto object-contain" />
-            <img src="/images/stripe/powered-by-stripe.svg" alt="Powered by Stripe" width={128} height={28} className="h-5 w-auto object-contain" />
+            <img
+              src="/images/stripe/stripe-wordmark.svg"
+              alt="Stripe"
+              width={72}
+              height={28}
+              className="h-[1.35rem] w-auto object-contain sm:h-6"
+            />
+            <img
+              src="/images/stripe/powered-by-stripe.svg"
+              alt="Powered by Stripe"
+              width={118}
+              height={26}
+              className="h-[1.15rem] w-auto object-contain sm:h-5"
+            />
           </a>
         </div>
 
         {/* Legal Summary + Copyright */}
-        <div className="border-t border-slate-800 pt-2 text-center text-xs text-slate-500 space-y-1">
-          <p>{t('home.footer.legalSummary')}</p>
-          <p>{t('home.footer.copyright')}</p>
+        <div
+          className="border-t border-slate-800/90 pt-1.5 text-center sm:pt-2"
+          data-footer-section="legal"
+        >
+          <p className="text-[11px] font-medium leading-snug text-slate-500 sm:text-xs sm:leading-relaxed">
+            {t('home.footer.legalSummary')}
+          </p>
+          <p className="mt-1 text-[10px] leading-snug text-slate-600 sm:mt-1.5 sm:text-[11px]">
+            {t('home.footer.copyright')}
+          </p>
         </div>
-
       </div>
     </footer>
   );

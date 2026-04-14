@@ -115,6 +115,14 @@ export function getCustomJoinTourBookingTourId(): number | null {
   return Number.isFinite(n) ? n : null;
 }
 
+/** Aligns with `lib/exchange` fallback; client-side conversion for list totals only. */
+const LIST_PRICE_KRW_PER_USD = 1480;
+
+export function krwToUsdForCustomJoinList(krw: number): number {
+  if (!Number.isFinite(krw) || krw <= 0) return 0;
+  return Math.round((krw / LIST_PRICE_KRW_PER_USD) * 100) / 100;
+}
+
 export type VehicleType = 'van' | 'large_van';
 
 export interface CustomJoinTourPricing {
@@ -124,9 +132,13 @@ export interface CustomJoinTourPricing {
   priceType: 'person';
   /** 1인 단가 (원) */
   unitPriceKrw: number;
+  /** 1인 단가 (USD, major units) — bookings / Stripe */
+  unitPriceUsd: number;
   participants: number;
   /** 총 결제 금액 = unitPriceKrw × participants */
   totalPriceKrw: number;
+  /** 총 결제 금액 (USD) */
+  totalPriceUsd: number;
 }
 
 /**
@@ -154,24 +166,30 @@ export function getCustomJoinTourPricing(
   };
   if (participants <= CUSTOM_JOIN_TOUR.VAN.MAX_PAX) {
     const unitPriceKrw = getVanUnit();
+    const unitPriceUsd = krwToUsdForCustomJoinList(unitPriceKrw);
     return {
       vehicleType: 'van',
       vehicleLabelKo: CUSTOM_JOIN_TOUR.VAN.LABEL_KO,
       vehicleLabelEn: CUSTOM_JOIN_TOUR.VAN.LABEL_EN,
       priceType: 'person',
       unitPriceKrw,
+      unitPriceUsd,
       participants,
       totalPriceKrw: participants * unitPriceKrw,
+      totalPriceUsd: Math.round(participants * unitPriceUsd * 100) / 100,
     };
   }
   const unitPriceKrw = getLargeVanUnit();
+  const unitPriceUsd = krwToUsdForCustomJoinList(unitPriceKrw);
   return {
     vehicleType: 'large_van',
     vehicleLabelKo: CUSTOM_JOIN_TOUR.LARGE_VAN.LABEL_KO,
     vehicleLabelEn: CUSTOM_JOIN_TOUR.LARGE_VAN.LABEL_EN,
     priceType: 'person',
     unitPriceKrw,
+    unitPriceUsd,
     participants,
     totalPriceKrw: participants * unitPriceKrw,
+    totalPriceUsd: Math.round(participants * unitPriceUsd * 100) / 100,
   };
 }

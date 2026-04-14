@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
+import { mapNestedTourRowsToUsd, mapNestedTourToUsdRow } from '@/lib/tour-list-price-usd.server';
 
 /**
  * GET /api/inventory
@@ -22,7 +24,9 @@ export async function GET(req: NextRequest) {
         tours (
           id,
           title,
-          price
+          price,
+          original_price,
+          price_currency
         )
       `)
       .order('tour_date', { ascending: true });
@@ -53,7 +57,8 @@ export async function GET(req: NextRequest) {
       );
     }
 
-    return NextResponse.json({ inventory: inventory || [] });
+    const mapped = await mapNestedTourRowsToUsd(inventory || []);
+    return NextResponse.json({ inventory: mapped });
   } catch (error: any) {
     console.error('Unexpected error:', error);
     return NextResponse.json(
@@ -137,8 +142,9 @@ export async function POST(req: NextRequest) {
         throw error;
       }
 
+      const krwPerUsd = await getKrwPerUsd();
       return NextResponse.json({
-        inventory,
+        inventory: mapNestedTourToUsdRow(inventory, krwPerUsd),
         message: 'Inventory updated successfully',
       });
     }
@@ -162,7 +168,9 @@ export async function POST(req: NextRequest) {
         tours (
           id,
           title,
-          price
+          price,
+          original_price,
+          price_currency
         )
       `)
       .single();
@@ -175,8 +183,9 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const krwPerUsdIns = await getKrwPerUsd();
     return NextResponse.json(
-      { inventory, message: 'Inventory created successfully' },
+      { inventory: mapNestedTourToUsdRow(inventory, krwPerUsdIns), message: 'Inventory created successfully' },
       { status: 201 }
     );
   } catch (error: any) {

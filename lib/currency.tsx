@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
 
-/** Supported display currencies (world major). Prices are stored in KRW. */
+/** Supported display currencies (world major). List/checkout amounts are stored and passed as USD (major units). */
 export type CurrencyCode =
   | 'KRW'
   | 'USD'
@@ -63,19 +63,22 @@ interface CurrencyContextValue {
   rateUpdatedAt: string | null;
   isLoading: boolean;
   error: string | null;
-  formatPrice: (priceKRW: number, options?: { showCents?: boolean }) => string;
-  convertToUSD: (priceKRW: number) => number;
-  convertToKRW: (priceUSD: number) => number;
+  /** `amountUsd` = US dollars (major units). API tour prices & booking totals use this unit. */
+  formatPrice: (amountUsd: number, options?: { showCents?: boolean }) => string;
+  /** @deprecated Alias: amounts are USD; returns `amountUsd`. */
+  convertToUSD: (amountUsd: number) => number;
+  /** USD → KRW (rounded integer won) using live KRW per 1 USD. */
+  convertToKRW: (amountUsd: number) => number;
   refetchRate: () => Promise<void>;
 }
 
 const CurrencyContext = createContext<CurrencyContextValue | undefined>(undefined);
 
-const DEFAULT_KRW_RATE = 1350;
+const DEFAULT_KRW_RATE = 1480;
 
-/** 기준 통화: KRW. DB/API는 모두 원화(KRW). 다른 통화는 USD 기준 환율로 KRW→해당 통화 변환 표시. */
+/** Default display USD; KRW/EUR/… are converted from USD list prices. */
 export function CurrencyProvider({ children }: { children: React.ReactNode }) {
-  const [currency, setCurrencyState] = useState<CurrencyCode>('KRW');
+  const [currency, setCurrencyState] = useState<CurrencyCode>('USD');
   const [rates, setRates] = useState<Record<string, number> | null>(null);
   const [rateUpdatedAt, setRateUpdatedAt] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -119,6 +122,13 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
     fetchRate();
   }, [fetchRate]);
 
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      fetchRate();
+    }, 10 * 60 * 1000);
+    return () => window.clearInterval(id);
+  }, [fetchRate]);
+
   const setCurrency = useCallback((c: CurrencyCode) => {
     setCurrencyState(c);
     try {
@@ -131,16 +141,30 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
   const krwRate = rates?.KRW ?? DEFAULT_KRW_RATE;
 
   const formatPrice = useCallback(
-    (priceKRW: number, options?: { showCents?: boolean }): string => {
+    (amountUsd: number, options?: { showCents?: boolean }): string => {
+      if (currency === 'USD') {
+        const showCents =
+          options?.showCents !== false && amountUsd > 0 && amountUsd < 1000 && amountUsd % 1 !== 0;
+        return new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          minimumFractionDigits: showCents ? 2 : 0,
+          maximumFractionDigits: showCents ? 2 : 0,
+        }).format(amountUsd);
+      }
       if (currency === 'KRW') {
-        return `₩${Math.round(priceKRW).toLocaleString('ko-KR')}`;
+        const krw = Math.round(amountUsd * krwRate);
+        return `₩${krw.toLocaleString('ko-KR')}`;
       }
       const targetRate = rates?.[currency];
       if (targetRate == null) {
-        const usd = priceKRW / krwRate;
-        return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(usd);
+        return new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          maximumFractionDigits: 0,
+        }).format(amountUsd);
       }
-      const amount = (priceKRW / krwRate) * targetRate;
+      const amount = amountUsd * targetRate;
       const showCents = options?.showCents !== false && amount < 100 && currency !== 'JPY';
       return new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -152,8 +176,11 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
     [currency, krwRate, rates]
   );
 
-  const convertToUSD = useCallback((priceKRW: number) => priceKRW / krwRate, [krwRate]);
-  const convertToKRW = useCallback((priceUSD: number) => priceUSD * krwRate, [krwRate]);
+  const convertToUSD = useCallback((amountUsd: number) => amountUsd, []);
+  const convertToKRW = useCallback(
+    (amountUsd: number) => Math.round(amountUsd * krwRate),
+    [krwRate]
+  );
 
   const value = useMemo<CurrencyContextValue>(
     () => ({

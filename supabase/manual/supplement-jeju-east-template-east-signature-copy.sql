@@ -13,7 +13,7 @@ BEGIN;
 
 UPDATE tours
 SET
-  title = 'East Signature Nature Core',
+  title = 'Jeju East Volcano, Coast & Village Small Group Tour',
   tag = 'Small group · East Jeju',
   subtitle = $s$
 A well-paced East Jeju route that begins with Jeju’s stone heritage and village culture, then opens into dramatic coastal scenery, Seongsan’s iconic views, and a refreshing beach finish.
@@ -164,11 +164,11 @@ $n$,
 ]
 $json$::jsonb,
   image_url = 'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1200&q=85',
-  seo_title = 'East Signature Nature Core | East Jeju Small Group Day Tour | AtoCKorea',
+  seo_title = 'Jeju East Volcano, Coast & Village Small Group Tour | AtoCKorea',
   meta_description = 'Stone Park & Seongeup to Seopjikoji, Seongsan, and Hamdeok — a balanced East Jeju day for first-time visitors. Small group, weather-aware operation.',
   translations = jsonb_build_object(
     'en', jsonb_build_object(
-      'title', 'East Signature Nature Core',
+      'title', 'Jeju East Volcano, Coast & Village Small Group Tour',
       'subtitle', 'A well-paced East Jeju route from stone heritage and village culture to iconic coastal scenery and a beach finish.',
       'description', 'A balanced East Jeju course that moves naturally from Jeju’s cultural texture to its most iconic eastern coastal highlights.',
       'pickup_info', 'Final pickup guidance after booking; detailed instructions resent the day before or morning of the tour.',

@@ -114,6 +114,27 @@
     "importantNotesSection": "Notas importantes",
     "reviews": "Reseñas",
     "noReviewsYet": "Aún no hay reseñas para este tour.",
+    "heroDecision": {
+      "walk": "Caminata",
+      "rain": "Lluvia",
+      "fit": "Ideal",
+      "pickup": "Recogida",
+      "value": "Incluye / no",
+      "route": "Ruta"
+    },
+    "routeFlow": {
+      "eyebrow": "Forma de la ruta",
+      "title": "Cómo avanza el día",
+      "lead": "{count} paradas en orden—el mismo itinerario, de izquierda a derecha.",
+      "flowListLabel": "Paradas en orden de este día",
+      "moodStripLabel": "Ritmo del día en tres fases",
+      "morning": "Mañana",
+      "midday": "Mediodía",
+      "coast": "Cierre en la costa",
+      "stopRange": "Paradas {from}–{to}",
+      "stopSingle": "Parada {n}",
+      "unnamedStop": "Parada"
+    },
     "allPickupPoints": "Todos los puntos de recogida:",
     "pickupMeetupInfo": "Información de recogida y encuentro",
     "noPickupPoints": "No hay puntos de recogida disponibles.",
@@ -419,10 +440,12 @@
         "destComingSoonLine1": "COMING",
         "destComingSoonLine2": "soon",
         "textareaLabelJeju": "Cuéntanos tu estilo de viaje y qué quieres para tu día",
-        "textareaHelperJeju": "Incluye con quién viajas, nivel de caminata, preferencias de paisaje o cafés, ritmo y si prefieres privado o grupo reducido.",
+        "textareaHelperJeju": "Una línea con ritmo, caminar, paisaje y grupo reducido o privado basta.",
         "inputLabel": "Cuéntanos qué tipo de día quieres en Jeju",
-        "inputPlaceholder": "Ej.: Primera vez en Jeju, vistas, poco caminar, con padres, parada en cafetería, que aguante lluvia si es posible. Recomienda la mejor opción.",
+        "inputPlaceholder": "Ej.: 1ª vez en Jeju, vistas, poco caminar, padres, café — mejor opción.",
         "chipsLegend": "Añadir rápido (opcional)",
+        "chipsShowMore": "Más etiquetas",
+        "chipsShowLess": "Menos etiquetas",
         "findMatchCta": "Encontrar mi tour ideal",
         "pricingRowLabel": "Precios orientativos y mínimo de huéspedes",
         "priceSmallGroup": "Grupo reducido desde $58",
@@ -437,7 +460,23 @@
         "bestMatchCta": "Ver esta opción",
         "alsoConsiderLabel": "TAMBIÉN PUEDES VALORAR",
         "alsoConsiderPrivate": "Vehículo privado",
-        "alsoConsiderBus": "Tour clásico en autobús"
+        "alsoConsiderBus": "Tour clásico en autobús",
+        "plannerOutcomeEyebrow": "Qué obtienes",
+        "plannerOutcomeDestTitle": "Destino afín",
+        "plannerOutcomeDestMicro": "El área adecuada para tu viaje, primero.",
+        "plannerOutcomeStyleTitle": "Estilo de tour",
+        "plannerOutcomeStyleMicro": "Grupo reducido, privado o bus—según tú.",
+        "plannerOutcomePaceTitle": "Ritmo del día",
+        "plannerOutcomePaceMicro": "Ruta coherente con tu ritmo.",
+        "introVideoAria": "Vídeo corto de introducción al planificador",
+        "introDismissAria": "Cerrar vídeo de introducción",
+        "introPlayAria": "Reproducir vídeo de introducción",
+        "matchLoadingAnalyzing": "Analizando tus preferencias…",
+        "matchLoadingMatching": "Buscando tours compatibles…",
+        "matchLoadingComplete": "Coincidencia lista",
+        "matchResultRecommendLine": "Ritmo equilibrado y vistas costeras: nuestra mejor opción por defecto para una primera visita a Jeju.",
+        "seeOtherToursCta": "Ver otros tours",
+        "matchResultBackCta": "Volver al planificador"
       },
       "comparison": {
         "eyebrow": "ESTILO DE VIAJE",
@@ -548,20 +587,22 @@
       "reviews": {
         "eyebrow": "NOTAS DE VIAJEROS",
         "title": "Encaje, claridad, ritmo",
-        "quote1": "La recogida estaba clara; supimos dónde esperar.",
-        "quote2": "Primera vez en Jeju y el día no se sintió apresurado.",
-        "quote3": "Bien con mis padres; pocas caminatas entre paradas."
+        "quote1": "Indicaron la zona del hotel y el punto exacto de espera—sin adivinar en la acera.",
+        "quote1Tag": "Jeju este · tour compartido",
+        "quote2": "Primera vez en Jeju; el recorrido era completo, pero el ritmo nunca se sintió una carrera.",
+        "quote2Tag": "Huésped de día completo"
       },
       "classicBus": {
-        "eyebrow": "ALTERNATIVA",
-        "title": "Los tours en bus de ruta fija siguen ahí si priorizas el menor coste.",
-        "cta": "Ver tours en bus clásicos"
+        "eyebrow": "RUTA ECONÓMICA",
+        "title": "Los buses de ruta fija están en otra lista cuando el precio manda.",
+        "cta": "Ver tours en bus por ruta"
       },
       "finalCta": {
-        "eyebrow": "Planifica ahora",
-        "title": "¿Listo para organizar tu viaje a Jeju de forma más inteligente?",
+        "eyebrow": "SIGUIENTE PASO",
+        "title": "Elige tu día en Jeju: tour compartido o vehículo privado.",
         "cta": "Encontrar mi tour",
-        "ctaPrivate": "Explorar tour privado"
+        "ctaPrivate": "Prefiero vehículo privado",
+        "divider": "o"
       }
     },
     "destinations": {

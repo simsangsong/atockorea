@@ -109,7 +109,7 @@ export interface TourDetailViewModel {
   pickupPoints: Array<{ id: string; name: string; address: string; lat: number; lng: number; pickup_time?: string | null }>;
   inclusions: Array<string | { icon: string; text: string }>;
   exclusions: Array<string | { icon: string; text: string }>;
-  faqs?: Array<{ question: string; answer: string }>;
+  faqs?: Array<{ question: string; answer: string; decisionRank?: number }>;
   highlights?: string[];
   /** Why this tour fits (hotel area, pickup, value). From adapter/server. */
   whyThisFitsYou: string[];
@@ -129,4 +129,8 @@ export interface TourDetailViewModel {
    * UI shows social-proof line only when present and greater than zero.
    */
   recentBookings24h?: number | null;
+  /**
+   * Supabase `tours.detail_page_v2` — merged over API-built small-group content; drives optional v0 shell (route shape, etc.).
+   */
+  detailPageV2?: unknown | null;
 }

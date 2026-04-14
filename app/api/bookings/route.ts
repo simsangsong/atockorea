@@ -9,6 +9,11 @@ import {
   validateBookingDate,
 } from '@/lib/validation';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
+import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
+import {
+  tourListPricesToUsdSync,
+  mapNestedTourRowsToUsd,
+} from '@/lib/tour-list-price-usd.server';
 
 /**
  * GET /api/bookings
@@ -36,6 +41,8 @@ export async function GET(req: NextRequest) {
           city,
           image_url,
           price,
+          original_price,
+          price_currency,
           price_type
         ),
         pickup_points (
@@ -58,7 +65,9 @@ export async function GET(req: NextRequest) {
       throw error; // handleApiError가 처리
     }
 
-    return NextResponse.json({ bookings: bookings || [] });
+    const mapped = await mapNestedTourRowsToUsd(bookings || []);
+
+    return NextResponse.json({ bookings: mapped });
   } catch (error: any) {
     return handleApiError(error, req);
   }
@@ -116,7 +125,7 @@ export async function POST(req: NextRequest) {
     // Get tour to fetch merchant_id and price info
     const { data: tour, error: tourError } = await supabase
       .from('tours')
-      .select('id, merchant_id, price, price_type')
+      .select('id, merchant_id, price, original_price, price_currency, price_type')
       .eq('id', tourId)
       .single();
 
@@ -229,11 +238,17 @@ export async function POST(req: NextRequest) {
     // Ensure tour_id is a string (UUID)
     const tourIdStr = String(tourId);
     
-    // Calculate unit_price and total_price
-    // unit_price: price per person/group (base tour price)
-    // total_price: unit_price * number_of_guests (if person) or unit_price (if group)
-    // final_price: total_price after discounts (already calculated)
-    const unitPrice = parseFloat(String(tour.price || finalPrice));
+    // Calculate unit_price and total_price (always stored as KRW for existing booking/Stripe flow)
+    const krwPerUsd = await getKrwPerUsd();
+    const { priceUsd: listUnitUsd } = tourListPricesToUsdSync(
+      {
+        price: tour.price,
+        original_price: tour.original_price,
+        price_currency: (tour as { price_currency?: string }).price_currency,
+      },
+      krwPerUsd
+    );
+    const unitPrice = parseFloat(String(listUnitUsd || finalPrice));
     const totalPrice = tour.price_type === 'person' 
       ? unitPrice * parseInt(String(numberOfGuests), 10)
       : unitPrice;

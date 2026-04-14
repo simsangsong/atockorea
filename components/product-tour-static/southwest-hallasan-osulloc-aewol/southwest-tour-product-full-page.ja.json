@@ -1,0 +1,1755 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 1,
+  "slug": "southwest-hallasan-osulloc-aewol",
+  "locale": "ja",
+  "seo": {
+    "pageTitle": "済州島西南部 漢拏山・柱状節理・オーソルロク・涯月 少人数1日ツアー | AtoC Korea",
+    "metaDescription": "漢拏山オスンセンアク、大浦柱状節理、天帝淵の滝、オーソルロク ティーミュージアム、涯月カフェ通りをバランスよく巡る、済州島西南部の少人数1日ツアーです。"
+  },
+  "catalog_card": {
+    "slug": "southwest-hallasan-osulloc-aewol",
+    "title": "済州島西南部 漢拏山・オーソルロク・涯月 少人数1日ツアー",
+    "subtitle": "短めの漢拏山トレイル。柱状節理の海岸。滝道、茶畑、そして涯月でゆったり締めくくり。",
+    "region": "済州島西南部",
+    "duration": "8時間",
+    "stopsCount": 6,
+    "rating": 4.8,
+    "reviewCount": 127,
+    "badges": [
+      "初めてでも安心",
+      "済州島西南部"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
+    "priceLabel": "お一人様 $58〜",
+    "shortCardDescription": "漢拏山の短めトレイル、大浦柱状節理、天帝淵の滝、オーソルロクの茶畑、そして涯月カフェ通りまで、流れよく巡る済州島西南部の定番コースです。"
+  },
+  "headlineLine1": "済州島西南部 漢拏山・オーソルロク・涯月",
+  "headlineLine2": "少人数1日ツアー",
+  "price": {
+    "amountLabel": "58",
+    "currency": "USD",
+    "per": "人"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "imagePosition": "center 35%",
+    "tagline": "短めの漢拏山トレイル。柱状節理の海岸。滝道、茶畑、そして涯月でゆったり締めくくり。",
+    "pills": [
+      "初めてでも安心",
+      "済州島西南部"
+    ],
+    "meta": {
+      "duration": "8時間",
+      "region": "済州島西南部",
+      "stops": "6スポット",
+      "rating": 4.8,
+      "ratingStars": 4
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "概要"
+    },
+    {
+      "id": "itinerary",
+      "label": "行程"
+    },
+    {
+      "id": "details",
+      "label": "詳細"
+    },
+    {
+      "id": "faq",
+      "label": "よくある質問"
+    },
+    {
+      "id": "reviews",
+      "label": "口コミ"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "写真映え",
+      "value": "高い"
+    },
+    {
+      "icon": "mountain",
+      "label": "景観",
+      "value": "高い"
+    },
+    {
+      "icon": "footprints",
+      "label": "歩行量",
+      "value": "中程度"
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "雨の日の回りやすさ",
+      "value": "中程度"
+    },
+    {
+      "icon": "users",
+      "label": "ファミリー向け",
+      "value": "良い"
+    },
+    {
+      "icon": "scale",
+      "label": "バランス",
+      "value": "ミックス"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "video",
+      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+      "location": "行程イメージ",
+      "atmosphere": "一日の見どころをひと目で",
+      "alt": "済州島西南部ルートのイメージ"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+      "location": "漢拏山からスタート",
+      "atmosphere": "朝の澄んだ山の空気",
+      "alt": "漢拏山オスンセンアクトレイル"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+      "location": "柱状節理の海岸",
+      "atmosphere": "火山海岸の迫力",
+      "alt": "大浦柱状節理の海岸風景"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      "location": "滝と森の遊歩道",
+      "atmosphere": "涼やかな緑のコントラスト",
+      "alt": "天帝淵の滝の森道"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+      "location": "茶畑でひと休み",
+      "atmosphere": "開放感のある緑の時間",
+      "alt": "オーソルロク ティーミュージアムと茶畑の風景"
+    },
+    {
+      "id": 6,
+      "type": "video",
+      "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+      "location": "涯月の海辺で締めくくり",
+      "atmosphere": "夕方のゆるやかな余韻",
+      "alt": "涯月の海沿いカフェ通り"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "09:00",
+      "duration": "70分",
+      "name": "漢拏山 オスンセンアク",
+      "category": "漢拏山ショートトレイル",
+      "description": "一日の始まりは、空気の澄んだ漢拏山から。オスンセンアクは漢拏山の中でも比較的短く歩きやすいコースで、本格的な登山になりすぎず、きちんと山の気分を味わえるのが魅力です。",
+      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+      "highlights": [
+        "短めでも山頂感をしっかり味わえる漢拏山コース",
+        "済州市街やオルム、漢拏山上部を見渡す開放的な眺め",
+        "午前の澄んだ空気の中で歩ける爽やかなスタート",
+        "一日を山から海へつなぐ、印象的な導入スポット"
+      ],
+      "timeUsed": [
+        "到着後、コース説明と歩行ペースの確認",
+        "展望ポイントまでメインの上りトレイル",
+        "短い滞在・写真撮影のあと下山"
+      ],
+      "whyOnRoute": "体力のある朝に入れることで無理なく歩け、その後の行程にも「高地から海へ」という流れが生まれます。",
+      "visitBasics": {
+        "hours": "入山は05:00から／季節により入山制限あり",
+        "closed": "天候により統制される場合があります",
+        "admission": "無料",
+        "walking": "中程度（距離は短めですが階段が多め）"
+      },
+      "convenience": {
+        "restroom": "Eorimok entrance area",
+        "parking": "Available"
+      },
+      "smartNotes": {
+        "photo": "高い展望ゾーンでは、近距離のアップよりも開けた尾根の景色を入れた構図が映えます。",
+        "facilities": "設備は登山口周辺が中心で、コース途中はシンプルです。",
+        "tip": "途中で何度も立ち止まるより、景色を楽しみながらテンポよく歩くと体感時間も短く感じられます。"
+      }
+    },
+    {
+      "number": 2,
+      "time": "10:40",
+      "duration": "40分",
+      "name": "大浦柱状節理",
+      "category": "柱状節理の海岸景観",
+      "description": "漢拏山のあと、舞台は一気に海へ。大浦柱状節理では、済州を代表する火山海岸の迫力を間近で感じられます。六角形の玄武岩の柱と海のうねりが重なり、この日最初の大きな海景色が広がります。",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+      "highlights": [
+        "済州を代表する六角形の玄武岩柱の造形",
+        "山の景色のあとにより際立つダイナミックな海の眺め",
+        "短時間でも印象に残りやすい定番フォトスポット",
+        "火山の物語をそのまま海岸へつなげてくれる名所"
+      ],
+      "timeUsed": [
+        "到着後、入口周辺で簡単なご案内",
+        "海岸展望デッキ沿いのメイン散策",
+        "写真撮影と集合のあと次のスポットへ移動"
+      ],
+      "whyOnRoute": "山の地形から海岸の火山景観へと自然につなげられるため、ルート全体の流れがとてもきれいです。",
+      "visitBasics": {
+        "hours": "09:00〜18:00（最終入場 17:40）",
+        "closed": "通年営業",
+        "admission": "大人 2,000ウォン / 子ども・青少年 1,000ウォン",
+        "walking": "やさしめ"
+      },
+      "convenience": {
+        "restroom": "Entrance area",
+        "parking": "Paid parking"
+      },
+      "smartNotes": {
+        "photo": "正面からの記念写真よりも、斜めから海と柱状節理を一緒に入れると立体感が出やすいです。",
+        "facilities": "入口周辺に最低限の設備があります。",
+        "tip": "風や潮しぶきの影響を受けやすい場所なので、このストップはテンポよく回るのが心地よいです。"
+      }
+    },
+    {
+      "number": 3,
+      "time": "11:40",
+      "duration": "60分",
+      "name": "昼食",
+      "category": "昼のリセットタイム",
+      "description": "昼食は、ダイナミックな南側海岸の見どころと、後半のやわらかな茶畑・カフェタイムをつなぐ大切な休憩です。朝の山歩きで使った体力を整え、午後をもっとゆったり楽しめるようにしてくれます。",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+      "highlights": [
+        "漢拏山と柱状節理のあとにちょうどよい休憩タイミング",
+        "世代の異なるグループでも無理のないペースをつくりやすい",
+        "後半の滝・茶畑・海辺をより快適に楽しめる",
+        "詰め込みすぎず、一日全体の余裕を保てる"
+      ],
+      "timeUsed": [
+        "到着・着席",
+        "食事と短い休憩",
+        "次の景勝地へ向けた出発準備"
+      ],
+      "whyOnRoute": "この位置に昼食を入れることで、前半がアクティブになりすぎず、後半も気持ちよく続けられます。",
+      "visitBasics": {
+        "hours": "レストラン営業時間に準じます",
+        "closed": "店舗により異なります",
+        "admission": "含まれる場合あり／または現地精算",
+        "walking": "ほぼなし"
+      },
+      "convenience": {
+        "restroom": "Restaurant facilities",
+        "parking": "Available"
+      },
+      "smartNotes": {
+        "photo": "食事を撮るなら、このタイミングが一番ライフスタイル感のある写真になりやすいです。",
+        "facilities": "レストラン設備が利用できます。",
+        "tip": "数分を詰めるより、ここでしっかり休むほうが後半全体の満足度が上がります。"
+      }
+    },
+    {
+      "number": 4,
+      "time": "13:00",
+      "duration": "50分",
+      "name": "天帝淵の滝",
+      "category": "滝と森の散策",
+      "description": "天帝淵の滝では、海岸の開放感とはまた違う、涼しく落ち着いた雰囲気が広がります。橋や林道、滝の展望ポイントが続き、午後のルートにやわらかな景観の層を加えてくれます。",
+      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      "highlights": [
+        "木陰のある静かな滝のビューポイント",
+        "橋と森道が続く、変化のある散策ルート",
+        "南海岸の強い景観のあとにちょうどよいクールダウン",
+        "写真にも雰囲気にも奥行きが出やすいスポット"
+      ],
+      "timeUsed": [
+        "到着後、入口でルートのご案内",
+        "滝エリアのメイン散策",
+        "展望ポイントでの写真撮影と戻り"
+      ],
+      "whyOnRoute": "柱状節理のあとに入れることで景観の質感がやわらぎ、後半をより落ち着いた流れで進められます。",
+      "visitBasics": {
+        "hours": "09:00〜17:50（最終入場 17:10）",
+        "closed": "通年営業",
+        "admission": "大人 2,500ウォン / 青少年・子ども 1,350ウォン",
+        "walking": "中程度（階段や濡れやすい足元あり）"
+      },
+      "convenience": {
+        "restroom": "Entrance area",
+        "parking": "Available"
+      },
+      "smartNotes": {
+        "photo": "橋・滝・木々をすべて一枚に詰め込むより、層を意識した構図のほうがきれいにまとまります。",
+        "facilities": "設備は主に入口周辺に集まっています。",
+        "tip": "階段や滑りやすい場所があるため、急ぐより落ち着いたペースで回るのがおすすめです。"
+      }
+    },
+    {
+      "number": 5,
+      "time": "14:20",
+      "duration": "60分",
+      "name": "オーソルロク ティーミュージアム",
+      "category": "茶畑とミュージアム",
+      "description": "滝の散策のあと、オーソルロクでは視界がふっと開け、茶畑らしい穏やかな空気に包まれます。ミュージアムやショップ、周辺の緑茶畑が、午後の流れにやさしい余白をつくってくれます。",
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+      "highlights": [
+        "開放感のある済州の茶畑風景",
+        "滝散策のあとにちょうどよい軽やかな休憩スポット",
+        "お茶文化と済州らしい緑を一緒に楽しめる",
+        "後半の気分をゆるやかに整えてくれる立ち寄り先"
+      ],
+      "timeUsed": [
+        "到着後、ミュージアム周辺の簡単なご案内",
+        "茶畑の景色、館内やショップの見学、カフェタイム",
+        "集合後、涯月へ向けて出発"
+      ],
+      "whyOnRoute": "アクティブな午前のあとにペースを少し落とし、最後の涯月をより心地よく迎えるための橋渡しになります。",
+      "visitBasics": {
+        "hours": "通常 09:00〜18:00前後（季節により変動する場合あり）",
+        "closed": "通年営業",
+        "admission": "無料",
+        "walking": "やさしめ"
+      },
+      "convenience": {
+        "restroom": "Museum and café area",
+        "parking": "Available"
+      },
+      "smartNotes": {
+        "photo": "商品だけを寄りで撮るより、茶畑の広がりやカフェ空間を入れた写真のほうが雰囲気が出やすいです。",
+        "facilities": "トイレ・座席・飲み物の面で、後半では特に快適な立ち寄り先です。",
+        "tip": "ミュージアムだけを急いで見るより、景色と自由時間を一緒に楽しむ感覚で回るのが向いています。"
+      }
+    },
+    {
+      "number": 6,
+      "time": "15:40",
+      "duration": "60分",
+      "name": "涯月カフェ通り",
+      "category": "カフェ海岸の締めくくり",
+      "description": "一日の締めくくりは、少し軽やかな雰囲気の涯月へ。山の空気、柱状節理、滝道、茶畑を経たあと、海を眺めるカフェやデッキ席でゆったり過ごす時間が、ツアー全体を心地よく解いてくれます。",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+      "highlights": [
+        "海を眺めながら過ごせるカフェと、のんびりした夕方の空気感",
+        "ハンダム海岸沿いのやわらかな景色",
+        "詰め込み感のない、余韻重視のラストストップ",
+        "最後まで無理なく楽しみやすい自由度の高い時間"
+      ],
+      "timeUsed": [
+        "到着後、エリア全体の簡単なご案内",
+        "自由度の高いカフェタイムまたは海辺散策",
+        "集合後、帰着に向けて出発"
+      ],
+      "whyOnRoute": "一日の最後にこそ、予定を詰めすぎず気持ちよく海を眺められる場所が合います。",
+      "visitBasics": {
+        "hours": "エリアは終日見学可／各カフェの営業時間は店舗ごとに異なります",
+        "closed": "エリア自体の定休日はありません",
+        "admission": "無料",
+        "walking": "やさしめ"
+      },
+      "convenience": {
+        "restroom": "Café facilities vary by venue",
+        "parking": "Area parking available"
+      },
+      "smartNotes": {
+        "photo": "夕方の光と、海に向いたカフェデッキを斜めから入れると雰囲気のある写真になりやすいです。",
+        "facilities": "快適さは入るカフェによって変わるため、1か所固定ではなく柔軟に過ごせるストップです。",
+        "tip": "ここは細かく案内を詰めるより、少し自由度を残したほうが満足度が上がりやすいです。"
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "id": "01",
+      "name": "オスンセンアク",
+      "theme": "漢拏山"
+    },
+    {
+      "id": "02",
+      "name": "柱状節理",
+      "theme": "海岸"
+    },
+    {
+      "id": "03",
+      "name": "昼食",
+      "theme": "休憩"
+    },
+    {
+      "id": "04",
+      "name": "天帝淵",
+      "theme": "滝"
+    },
+    {
+      "id": "05",
+      "name": "オーソルロク",
+      "theme": "お茶"
+    },
+    {
+      "id": "06",
+      "name": "涯月",
+      "theme": "海岸"
+    }
+  ],
+  "routePhases": [
+    {
+      "label": "午前",
+      "range": "1-2",
+      "theme": "漢拏山から海岸へ",
+      "bgClass": "bg-sky-50/70",
+      "textClass": "text-sky-700",
+      "dotClass": "bg-sky-500"
+    },
+    {
+      "label": "昼",
+      "range": "3-4",
+      "theme": "昼食と滝",
+      "bgClass": "bg-amber-50/70",
+      "textClass": "text-amber-700",
+      "dotClass": "bg-amber-500"
+    },
+    {
+      "label": "後半",
+      "range": "5-6",
+      "theme": "お茶と涯月",
+      "bgClass": "bg-emerald-50/70",
+      "textClass": "text-emerald-700",
+      "dotClass": "bg-emerald-500"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "このツアーの流れ",
+    "subtitle": "漢拏山から柱状節理へ。昼食のあと天帝淵、茶畑、そして最後は涯月へ。09:00〜17:30。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "初めて済州島を訪れる方、カップル",
+      "大人中心の家族旅行",
+      "自然・茶畑・ゆったりした締めくくりを楽しみたい方",
+      "アクティブシニア"
+    ],
+    "lessIdeal": [
+      "階段や短い上り坂を避けたい方",
+      "ベビーカー移動が多いグループ",
+      "小さなお子さま連れ"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "ペースと構成",
+        "icon": "sun",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "朝のうちに漢拏山へ",
+            "detail": "オスンセンアクは体力の残っている朝に歩くのが最も心地よく、海岸パートへの入り方も自然です。"
+          },
+          {
+            "label": "昼食はちょうど真ん中に",
+            "detail": "午前の開けた景観と、午後の滝・茶畑パートの間でしっかりリズムを整えてくれます。"
+          },
+          {
+            "label": "オーソルロクのあとに涯月でゆるく締める",
+            "detail": "茶畑で一度落ち着かせてから涯月へ向かうことで、最後をコーヒーと海の景色で気持ちよく終えられます。"
+          }
+        ]
+      },
+      {
+        "title": "ルートの組み立て",
+        "icon": "mountain",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "山から海へ",
+            "detail": "漢拏山から始めることで高さと空気感が生まれ、その流れのまま柱状節理の海へつながります。"
+          },
+          {
+            "label": "滝のあとに茶畑へ",
+            "detail": "天帝淵で一度クールダウンしてから、オーソルロクで視界と気分がふっと開きます。"
+          },
+          {
+            "label": "最後はカフェ海岸で",
+            "detail": "涯月は、もうひとつ歩きの強いスポットを入れる代わりに、余韻を楽しむラストストップとしてよく合います。"
+          }
+        ]
+      },
+      {
+        "title": "条件が変わるとき",
+        "icon": "wind",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-600",
+        "items": [
+          {
+            "label": "漢拏山は天候の影響を受けます",
+            "detail": "オスンセンアクは急な天候変化や登山統制の影響を受けることがあります。"
+          },
+          {
+            "label": "海沿いは風の影響が出やすいです",
+            "detail": "柱状節理と涯月は、内陸側のスポットより強風を感じやすい区間です。"
+          },
+          {
+            "label": "歩行バランス",
+            "detail": "全体としては参加しやすい内容ですが、オスンセンアクと天帝淵では階段や短い上り下りがあります。"
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "送迎について",
+      "preview": "済州市エリアのホテルロビー送迎",
+      "content": [
+        "お迎えは08:20〜08:50の間にホテルロビーで行います",
+        "お送りは17:50〜18:20頃を予定しています",
+        "空港ピックアップはご希望に応じて対応可能です",
+        "正確なお迎え時間は前日夜にご案内します"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "歩行量と足元",
+      "preview": "全体的には中程度で、ほとんどの方が参加しやすい内容です",
+      "content": [
+        "総歩行距離の目安は全スポット合計で約4.5〜5.5kmです",
+        "オスンセンアク：短めの上りトレイルですが階段が多めです",
+        "柱状節理：歩きやすい海岸展望路です",
+        "天帝淵：森道・階段・濡れやすい足元があります",
+        "オーソルロクと涯月：比較的やさしく、自由なペースで回れます",
+        "歩きやすい靴の着用を強くおすすめします"
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "天候とクローズ時の対応",
+      "preview": "基本的には催行し、天候に応じて柔軟に調整します",
+      "content": [
+        "小雨程度であれば通常どおり催行します",
+        "雨や登山統制が強い場合は、オスンセンアクの内容を短縮または調整することがあります",
+        "風が強い場合は、柱状節理や涯月での滞在時間を短縮することがあります",
+        "午後の天候が不安定な場合は、オーソルロクの比重が高くなることがあります",
+        "施設の休業などがある場合は代替スポットをご案内することがあります"
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "服装と持ち物",
+      "preview": "歩きやすい靴、重ね着、軽い上着があると安心です",
+      "content": [
+        "グリップのある歩きやすい靴",
+        "山と海辺の気温差に対応しやすい重ね着",
+        "風よけになる軽いジャケット",
+        "帽子と日焼け止め",
+        "飲み水"
+      ]
+    },
+    {
+      "id": "included",
+      "title": "含まれるもの / 含まれないもの",
+      "preview": "ガイド、車両、送迎、入場料など",
+      "variant": "included",
+      "content": [
+        "英語対応のプロガイド",
+        "専用車または少人数用車両",
+        "済州市内ホテルの送迎",
+        "各スポットの入場料",
+        "ミネラルウォーター",
+        "昼食（現地で各自精算）",
+        "個人的なお買い物",
+        "チップ"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "11°",
+      "label": "今日・晴れ"
+    },
+    "tomorrow": {
+      "temp": "18°/13°",
+      "label": "明日・小雨"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "name": "春",
+      "icon": "flower",
+      "description": "菜の花が海岸を明るく彩ります",
+      "tag": "花の見頃",
+      "bgClass": "bg-spring",
+      "iconColor": "text-pink-500"
+    },
+    {
+      "name": "夏",
+      "icon": "sun",
+      "description": "日が長く、緑がいっそう鮮やかです",
+      "tag": "最も日が長い季節",
+      "bgClass": "bg-summer",
+      "iconColor": "text-sky-500"
+    },
+    {
+      "name": "秋",
+      "icon": "leaf",
+      "description": "空気が澄み、景色がよりくっきり見えます",
+      "tag": "景色が美しい季節",
+      "bgClass": "bg-autumn",
+      "iconColor": "text-amber-600"
+    },
+    {
+      "name": "冬",
+      "icon": "snow",
+      "description": "人が少なく、落ち着いた雰囲気で歩けます",
+      "tag": "静かなムード",
+      "bgClass": "bg-winter",
+      "iconColor": "text-slate-500"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "現地ライセンス",
+      "description": "済州公認ガイド",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600"
+    },
+    {
+      "icon": "route",
+      "title": "ルート設計に強い",
+      "description": "西南部ルートに最適化",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600"
+    },
+    {
+      "icon": "users",
+      "title": "少人数制",
+      "description": "最大8名",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "ご予約直後",
+      "title": "即時予約確認",
+      "detail": "行程サマリー付きの予約確認をご案内します"
+    },
+    {
+      "timing": "12時間前",
+      "title": "12時間前リマインド",
+      "detail": "天候情報と必要な調整内容をお知らせします"
+    },
+    {
+      "timing": "前日夜",
+      "title": "最終ピックアップ案内",
+      "detail": "正確なお迎え時間とドライバー連絡先をご案内します"
+    },
+    {
+      "timing": "当日朝",
+      "title": "当日朝のルート案内",
+      "detail": "朝の状況に応じた簡単なブリーフィングをお届けします"
+    },
+    {
+      "timing": "ツアー中",
+      "title": "立ち寄り先ごとの案内",
+      "detail": "各スポットで必要な情報をリアルタイムでご案内します"
+    },
+    {
+      "timing": "ツアー後",
+      "title": "ツアー後サポート",
+      "detail": "フォローアップと追加のおすすめをご案内します"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "first-time",
+      "question": "初めての済州島旅行でも楽しめますか？",
+      "answer": "はい。漢拏山の景色、火山海岸の代表格である柱状節理、定番の滝、茶畑の雰囲気、そして涯月の海辺まで、一日でバランスよく楽しめます。"
+    },
+    {
+      "id": "walking",
+      "question": "歩くのはかなり大変ですか？",
+      "answer": "全体としてはそこまでハードではありません。いちばん歩きごたえがあるのはオスンセンアクで、距離は短めですが階段が多く、その他は多くの方にとって中程度です。"
+    },
+    {
+      "id": "rain",
+      "question": "雨でも催行されますか？",
+      "answer": "はい。雨天時も基本的には催行しますが、状況に応じてオスンセンアクや海沿いの立ち寄り時間を短縮することがあります。"
+    },
+    {
+      "id": "parents",
+      "question": "親と一緒でも参加しやすいですか？",
+      "answer": "はい。大人中心の家族旅行には参加しやすい内容です。ただし、階段や短い上り下りに無理なく対応できる方により向いています。"
+    },
+    {
+      "id": "children",
+      "question": "子ども連れでも参加できますか？",
+      "answer": "はい。短いハイキングと終日の観光ペースに無理なく対応できる、8歳以上のお子さまにより向いています。"
+    },
+    {
+      "id": "order",
+      "question": "立ち寄り順が変わることはありますか？",
+      "answer": "はい。山の天候、風、交通状況、混雑状況によって、特にオスンセンアクや海沿いスポットの順序が調整される場合があります。"
+    },
+    {
+      "id": "lunch",
+      "question": "昼食は含まれていますか？",
+      "answer": "商品内容によって異なります。行程には昼食時間が含まれていますが、食事代が含まれるかどうかはご予約プランをご確認ください。"
+    },
+    {
+      "id": "why-eoseungsaengak",
+      "question": "なぜ最初にオスンセンアクへ行くのですか？",
+      "answer": "朝の体力があるうちに漢拏山の雰囲気をしっかり味わえるうえ、本格登山になりすぎず、一日の導入としてちょうどよいからです。"
+    },
+    {
+      "id": "why-jusangjeolli",
+      "question": "なぜ漢拏山のあとに柱状節理なのですか？",
+      "answer": "山の地形から海の火山景観へと、済州らしい火山の物語を自然につなげられるからです。"
+    },
+    {
+      "id": "why-osulloc",
+      "question": "なぜオーソルロクを涯月の前に入れているのですか？",
+      "answer": "滝の散策のあとに一度ペースを落とし、最後の涯月を急がずゆったり楽しめる流れをつくるためです。"
+    },
+    {
+      "id": "later-structure",
+      "question": "後半の流れはなぜこの構成なのですか？",
+      "answer": "昼食と天帝淵で午前のアクティブさをやわらげ、オーソルロクで茶畑の余白を楽しみ、最後は涯月で無理のない海辺の締めくくりにしています。"
+    }
+  ],
+  "guestReviews": [
+    {
+      "id": 1,
+      "author": "Sarah M.",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+      "location": "Singapore",
+      "date": "March 2024",
+      "rating": 5,
+      "title": "西南部の魅力をバランスよく楽しめる一日でした",
+      "text": "このルートは流れがとても自然でした。漢拏山から始まることで一日に勢いが生まれ、そのあとに見る柱状節理がより迫力ある景色に感じられました。特に、オーソルロクを経てから涯月へ向かう午後の流れがとても心地よかったです。",
+      "helpful": 24,
+      "verified": true,
+      "tripType": "カップル",
+      "photos": [
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
+      ]
+    },
+    {
+      "id": 2,
+      "author": "James K.",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "location": "Hong Kong",
+      "date": "March 2024",
+      "rating": 5,
+      "title": "締めくくりまで気持ちよく回れる西南部ルート",
+      "text": "韓国でいくつかツアーに参加しましたが、このツアーは順番の組み立てがとても良かったです。ガイドが漢拏山、柱状節理、天帝淵のペースを上手に整えてくれて、オーソルロクから涯月へつながる後半も疲れすぎずに楽しめました。",
+      "helpful": 18,
+      "verified": true,
+      "tripType": "家族",
+      "photos": []
+    },
+    {
+      "id": 3,
+      "author": "Yuki T.",
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+      "location": "Tokyo",
+      "date": "February 2024",
+      "rating": 4,
+      "title": "最後の涯月タイムがとてもよかったです",
+      "text": "全体を通してとても満足度の高いツアーでした。オスンセンアクは想像以上に気持ちのいいスタートで、オーソルロクも涯月の前に入ることでちょうどよい休憩になっていました。星4つにしたのは、涯月でもう少しだけゆっくりしたかったからですが、行程全体のバランスを考えると納得できます。",
+      "helpful": 12,
+      "verified": true,
+      "tripType": "一人旅",
+      "photos": [
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=80"
+      ]
+    },
+    {
+      "id": 4,
+      "author": "Michael R.",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+      "location": "Sydney",
+      "date": "February 2024",
+      "rating": 5,
+      "title": "思っていた以上に変化のある一日でした",
+      "text": "景色を楽しみに参加しましたが、ガイドの説明がとてもよく、漢拏山、柱状節理、滝、茶畑、涯月の海まで一日がきれいにつながって感じられました。少人数だったので移動もスムーズで、各スポットを落ち着いて楽しめたのも良かったです。",
+      "helpful": 31,
+      "verified": true,
+      "tripType": "友人",
+      "photos": []
+    }
+  ],
+  "reviewsSummary": {
+    "averageRating": 4.8,
+    "totalReviews": 127,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 98,
+        "percentage": 77
+      },
+      {
+        "stars": 4,
+        "count": 21,
+        "percentage": 17
+      },
+      {
+        "stars": 3,
+        "count": 6,
+        "percentage": 5
+      },
+      {
+        "stars": 2,
+        "count": 1,
+        "percentage": 1
+      },
+      {
+        "stars": 1,
+        "count": 1,
+        "percentage": 1
+      }
+    ],
+    "highlights": [
+      {
+        "label": "景色",
+        "count": 89
+      },
+      {
+        "label": "ガイド",
+        "count": 76
+      },
+      {
+        "label": "ペース配分",
+        "count": 54
+      },
+      {
+        "label": "涯月での締めくくり",
+        "count": 41
+      }
+    ]
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "price": {
+      "amountLabel": "58",
+      "currency": "USD",
+      "per": "人"
+    }
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "済州島西南部 漢拏山・オーソルロク・涯月",
+        "headlineLine2": "少人数1日ツアー",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+          "imagePosition": "center 35%",
+          "tagline": "短めの漢拏山トレイル。柱状節理の海岸。滝道、茶畑、そして涯月でゆったり締めくくり。",
+          "pills": [
+            "初めてでも安心",
+            "済州島西南部"
+          ],
+          "meta": {
+            "duration": "8時間",
+            "region": "済州島西南部",
+            "stops": "6スポット",
+            "rating": 4.8,
+            "ratingStars": 4
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "概要"
+          },
+          {
+            "id": "itinerary",
+            "label": "行程"
+          },
+          {
+            "id": "details",
+            "label": "詳細"
+          },
+          {
+            "id": "faq",
+            "label": "よくある質問"
+          },
+          {
+            "id": "reviews",
+            "label": "口コミ"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "camera",
+            "label": "写真映え",
+            "value": "高い"
+          },
+          {
+            "icon": "mountain",
+            "label": "景観",
+            "value": "高い"
+          },
+          {
+            "icon": "footprints",
+            "label": "歩行量",
+            "value": "中程度"
+          },
+          {
+            "icon": "cloud-rain",
+            "label": "雨の日の回りやすさ",
+            "value": "中程度"
+          },
+          {
+            "icon": "users",
+            "label": "ファミリー向け",
+            "value": "良い"
+          },
+          {
+            "icon": "scale",
+            "label": "バランス",
+            "value": "ミックス"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": 1,
+            "type": "video",
+            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+            "location": "行程イメージ",
+            "atmosphere": "一日の見どころをひと目で",
+            "alt": "済州島西南部ルートのイメージ"
+          },
+          {
+            "id": 2,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "location": "漢拏山からスタート",
+            "atmosphere": "朝の澄んだ山の空気",
+            "alt": "漢拏山オスンセンアクトレイル"
+          },
+          {
+            "id": 3,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "location": "柱状節理の海岸",
+            "atmosphere": "火山海岸の迫力",
+            "alt": "大浦柱状節理の海岸風景"
+          },
+          {
+            "id": 4,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "location": "滝と森の遊歩道",
+            "atmosphere": "涼やかな緑のコントラスト",
+            "alt": "天帝淵の滝の森道"
+          },
+          {
+            "id": 5,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+            "location": "茶畑でひと休み",
+            "atmosphere": "開放感のある緑の時間",
+            "alt": "オーソルロク ティーミュージアムと茶畑の風景"
+          },
+          {
+            "id": 6,
+            "type": "video",
+            "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+            "location": "涯月の海辺で締めくくり",
+            "atmosphere": "夕方のゆるやかな余韻",
+            "alt": "涯月の海沿いカフェ通り"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "09:00",
+            "duration": "70分",
+            "name": "漢拏山 オスンセンアク",
+            "category": "漢拏山ショートトレイル",
+            "description": "一日の始まりは、空気の澄んだ漢拏山から。オスンセンアクは漢拏山の中でも比較的短く歩きやすいコースで、本格的な登山になりすぎず、きちんと山の気分を味わえるのが魅力です。",
+            "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "highlights": [
+              "短めでも山頂感をしっかり味わえる漢拏山コース",
+              "済州市街やオルム、漢拏山上部を見渡す開放的な眺め",
+              "午前の澄んだ空気の中で歩ける爽やかなスタート",
+              "一日を山から海へつなぐ、印象的な導入スポット"
+            ],
+            "timeUsed": [
+              "到着後、コース説明と歩行ペースの確認",
+              "展望ポイントまでメインの上りトレイル",
+              "短い滞在・写真撮影のあと下山"
+            ],
+            "whyOnRoute": "体力のある朝に入れることで無理なく歩け、その後の行程にも「高地から海へ」という流れが生まれます。",
+            "visitBasics": {
+              "hours": "入山は05:00から／季節により入山制限あり",
+              "closed": "天候により統制される場合があります",
+              "admission": "無料",
+              "walking": "中程度（距離は短めですが階段が多め）"
+            },
+            "convenience": {
+              "restroom": "Eorimok entrance area",
+              "parking": "Available"
+            },
+            "smartNotes": {
+              "photo": "高い展望ゾーンでは、近距離のアップよりも開けた尾根の景色を入れた構図が映えます。",
+              "facilities": "設備は登山口周辺が中心で、コース途中はシンプルです。",
+              "tip": "途中で何度も立ち止まるより、景色を楽しみながらテンポよく歩くと体感時間も短く感じられます。"
+            }
+          },
+          {
+            "number": 2,
+            "time": "10:40",
+            "duration": "40分",
+            "name": "大浦柱状節理",
+            "category": "柱状節理の海岸景観",
+            "description": "漢拏山のあと、舞台は一気に海へ。大浦柱状節理では、済州を代表する火山海岸の迫力を間近で感じられます。六角形の玄武岩の柱と海のうねりが重なり、この日最初の大きな海景色が広がります。",
+            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "highlights": [
+              "済州を代表する六角形の玄武岩柱の造形",
+              "山の景色のあとにより際立つダイナミックな海の眺め",
+              "短時間でも印象に残りやすい定番フォトスポット",
+              "火山の物語をそのまま海岸へつなげてくれる名所"
+            ],
+            "timeUsed": [
+              "到着後、入口周辺で簡単なご案内",
+              "海岸展望デッキ沿いのメイン散策",
+              "写真撮影と集合のあと次のスポットへ移動"
+            ],
+            "whyOnRoute": "山の地形から海岸の火山景観へと自然につなげられるため、ルート全体の流れがとてもきれいです。",
+            "visitBasics": {
+              "hours": "09:00〜18:00（最終入場 17:40）",
+              "closed": "通年営業",
+              "admission": "大人 2,000ウォン / 子ども・青少年 1,000ウォン",
+              "walking": "やさしめ"
+            },
+            "convenience": {
+              "restroom": "Entrance area",
+              "parking": "Paid parking"
+            },
+            "smartNotes": {
+              "photo": "正面からの記念写真よりも、斜めから海と柱状節理を一緒に入れると立体感が出やすいです。",
+              "facilities": "入口周辺に最低限の設備があります。",
+              "tip": "風や潮しぶきの影響を受けやすい場所なので、このストップはテンポよく回るのが心地よいです。"
+            }
+          },
+          {
+            "number": 3,
+            "time": "11:40",
+            "duration": "60分",
+            "name": "昼食",
+            "category": "昼のリセットタイム",
+            "description": "昼食は、ダイナミックな南側海岸の見どころと、後半のやわらかな茶畑・カフェタイムをつなぐ大切な休憩です。朝の山歩きで使った体力を整え、午後をもっとゆったり楽しめるようにしてくれます。",
+            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+            "highlights": [
+              "漢拏山と柱状節理のあとにちょうどよい休憩タイミング",
+              "世代の異なるグループでも無理のないペースをつくりやすい",
+              "後半の滝・茶畑・海辺をより快適に楽しめる",
+              "詰め込みすぎず、一日全体の余裕を保てる"
+            ],
+            "timeUsed": [
+              "到着・着席",
+              "食事と短い休憩",
+              "次の景勝地へ向けた出発準備"
+            ],
+            "whyOnRoute": "この位置に昼食を入れることで、前半がアクティブになりすぎず、後半も気持ちよく続けられます。",
+            "visitBasics": {
+              "hours": "レストラン営業時間に準じます",
+              "closed": "店舗により異なります",
+              "admission": "含まれる場合あり／または現地精算",
+              "walking": "ほぼなし"
+            },
+            "convenience": {
+              "restroom": "Restaurant facilities",
+              "parking": "Available"
+            },
+            "smartNotes": {
+              "photo": "食事を撮るなら、このタイミングが一番ライフスタイル感のある写真になりやすいです。",
+              "facilities": "レストラン設備が利用できます。",
+              "tip": "数分を詰めるより、ここでしっかり休むほうが後半全体の満足度が上がります。"
+            }
+          },
+          {
+            "number": 4,
+            "time": "13:00",
+            "duration": "50分",
+            "name": "天帝淵の滝",
+            "category": "滝と森の散策",
+            "description": "天帝淵の滝では、海岸の開放感とはまた違う、涼しく落ち着いた雰囲気が広がります。橋や林道、滝の展望ポイントが続き、午後のルートにやわらかな景観の層を加えてくれます。",
+            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "highlights": [
+              "木陰のある静かな滝のビューポイント",
+              "橋と森道が続く、変化のある散策ルート",
+              "南海岸の強い景観のあとにちょうどよいクールダウン",
+              "写真にも雰囲気にも奥行きが出やすいスポット"
+            ],
+            "timeUsed": [
+              "到着後、入口でルートのご案内",
+              "滝エリアのメイン散策",
+              "展望ポイントでの写真撮影と戻り"
+            ],
+            "whyOnRoute": "柱状節理のあとに入れることで景観の質感がやわらぎ、後半をより落ち着いた流れで進められます。",
+            "visitBasics": {
+              "hours": "09:00〜17:50（最終入場 17:10）",
+              "closed": "通年営業",
+              "admission": "大人 2,500ウォン / 青少年・子ども 1,350ウォン",
+              "walking": "中程度（階段や濡れやすい足元あり）"
+            },
+            "convenience": {
+              "restroom": "Entrance area",
+              "parking": "Available"
+            },
+            "smartNotes": {
+              "photo": "橋・滝・木々をすべて一枚に詰め込むより、層を意識した構図のほうがきれいにまとまります。",
+              "facilities": "設備は主に入口周辺に集まっています。",
+              "tip": "階段や滑りやすい場所があるため、急ぐより落ち着いたペースで回るのがおすすめです。"
+            }
+          },
+          {
+            "number": 5,
+            "time": "14:20",
+            "duration": "60分",
+            "name": "オーソルロク ティーミュージアム",
+            "category": "茶畑とミュージアム",
+            "description": "滝の散策のあと、オーソルロクでは視界がふっと開け、茶畑らしい穏やかな空気に包まれます。ミュージアムやショップ、周辺の緑茶畑が、午後の流れにやさしい余白をつくってくれます。",
+            "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+            "highlights": [
+              "開放感のある済州の茶畑風景",
+              "滝散策のあとにちょうどよい軽やかな休憩スポット",
+              "お茶文化と済州らしい緑を一緒に楽しめる",
+              "後半の気分をゆるやかに整えてくれる立ち寄り先"
+            ],
+            "timeUsed": [
+              "到着後、ミュージアム周辺の簡単なご案内",
+              "茶畑の景色、館内やショップの見学、カフェタイム",
+              "集合後、涯月へ向けて出発"
+            ],
+            "whyOnRoute": "アクティブな午前のあとにペースを少し落とし、最後の涯月をより心地よく迎えるための橋渡しになります。",
+            "visitBasics": {
+              "hours": "通常 09:00〜18:00前後（季節により変動する場合あり）",
+              "closed": "通年営業",
+              "admission": "無料",
+              "walking": "やさしめ"
+            },
+            "convenience": {
+              "restroom": "Museum and café area",
+              "parking": "Available"
+            },
+            "smartNotes": {
+              "photo": "商品だけを寄りで撮るより、茶畑の広がりやカフェ空間を入れた写真のほうが雰囲気が出やすいです。",
+              "facilities": "トイレ・座席・飲み物の面で、後半では特に快適な立ち寄り先です。",
+              "tip": "ミュージアムだけを急いで見るより、景色と自由時間を一緒に楽しむ感覚で回るのが向いています。"
+            }
+          },
+          {
+            "number": 6,
+            "time": "15:40",
+            "duration": "60分",
+            "name": "涯月カフェ通り",
+            "category": "カフェ海岸の締めくくり",
+            "description": "一日の締めくくりは、少し軽やかな雰囲気の涯月へ。山の空気、柱状節理、滝道、茶畑を経たあと、海を眺めるカフェやデッキ席でゆったり過ごす時間が、ツアー全体を心地よく解いてくれます。",
+            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+            "highlights": [
+              "海を眺めながら過ごせるカフェと、のんびりした夕方の空気感",
+              "ハンダム海岸沿いのやわらかな景色",
+              "詰め込み感のない、余韻重視のラストストップ",
+              "最後まで無理なく楽しみやすい自由度の高い時間"
+            ],
+            "timeUsed": [
+              "到着後、エリア全体の簡単なご案内",
+              "自由度の高いカフェタイムまたは海辺散策",
+              "集合後、帰着に向けて出発"
+            ],
+            "whyOnRoute": "一日の最後にこそ、予定を詰めすぎず気持ちよく海を眺められる場所が合います。",
+            "visitBasics": {
+              "hours": "エリアは終日見学可／各カフェの営業時間は店舗ごとに異なります",
+              "closed": "エリア自体の定休日はありません",
+              "admission": "無料",
+              "walking": "やさしめ"
+            },
+            "convenience": {
+              "restroom": "Café facilities vary by venue",
+              "parking": "Area parking available"
+            },
+            "smartNotes": {
+              "photo": "夕方の光と、海に向いたカフェデッキを斜めから入れると雰囲気のある写真になりやすいです。",
+              "facilities": "快適さは入るカフェによって変わるため、1か所固定ではなく柔軟に過ごせるストップです。",
+              "tip": "ここは細かく案内を詰めるより、少し自由度を残したほうが満足度が上がりやすいです。"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "id": "01",
+            "name": "オスンセンアク",
+            "theme": "漢拏山"
+          },
+          {
+            "id": "02",
+            "name": "柱状節理",
+            "theme": "海岸"
+          },
+          {
+            "id": "03",
+            "name": "昼食",
+            "theme": "休憩"
+          },
+          {
+            "id": "04",
+            "name": "天帝淵",
+            "theme": "滝"
+          },
+          {
+            "id": "05",
+            "name": "オーソルロク",
+            "theme": "お茶"
+          },
+          {
+            "id": "06",
+            "name": "涯月",
+            "theme": "海岸"
+          }
+        ],
+        "routePhases": [
+          {
+            "label": "午前",
+            "range": "1-2",
+            "theme": "漢拏山から海岸へ",
+            "bgClass": "bg-sky-50/70",
+            "textClass": "text-sky-700",
+            "dotClass": "bg-sky-500"
+          },
+          {
+            "label": "昼",
+            "range": "3-4",
+            "theme": "昼食と滝",
+            "bgClass": "bg-amber-50/70",
+            "textClass": "text-amber-700",
+            "dotClass": "bg-amber-500"
+          },
+          {
+            "label": "後半",
+            "range": "5-6",
+            "theme": "お茶と涯月",
+            "bgClass": "bg-emerald-50/70",
+            "textClass": "text-emerald-700",
+            "dotClass": "bg-emerald-500"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "このツアーの流れ",
+          "subtitle": "漢拏山から柱状節理へ。昼食のあと天帝淵、茶畑、そして最後は涯月へ。09:00〜17:30。"
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "初めて済州島を訪れる方、カップル",
+            "大人中心の家族旅行",
+            "自然・茶畑・ゆったりした締めくくりを楽しみたい方",
+            "アクティブシニア"
+          ],
+          "lessIdeal": [
+            "階段や短い上り坂を避けたい方",
+            "ベビーカー移動が多いグループ",
+            "小さなお子さま連れ"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "ペースと構成",
+              "icon": "sun",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "朝のうちに漢拏山へ",
+                  "detail": "オスンセンアクは体力の残っている朝に歩くのが最も心地よく、海岸パートへの入り方も自然です。"
+                },
+                {
+                  "label": "昼食はちょうど真ん中に",
+                  "detail": "午前の開けた景観と、午後の滝・茶畑パートの間でしっかりリズムを整えてくれます。"
+                },
+                {
+                  "label": "オーソルロクのあとに涯月でゆるく締める",
+                  "detail": "茶畑で一度落ち着かせてから涯月へ向かうことで、最後をコーヒーと海の景色で気持ちよく終えられます。"
+                }
+              ]
+            },
+            {
+              "title": "ルートの組み立て",
+              "icon": "mountain",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "山から海へ",
+                  "detail": "漢拏山から始めることで高さと空気感が生まれ、その流れのまま柱状節理の海へつながります。"
+                },
+                {
+                  "label": "滝のあとに茶畑へ",
+                  "detail": "天帝淵で一度クールダウンしてから、オーソルロクで視界と気分がふっと開きます。"
+                },
+                {
+                  "label": "最後はカフェ海岸で",
+                  "detail": "涯月は、もうひとつ歩きの強いスポットを入れる代わりに、余韻を楽しむラストストップとしてよく合います。"
+                }
+              ]
+            },
+            {
+              "title": "条件が変わるとき",
+              "icon": "wind",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-600",
+              "items": [
+                {
+                  "label": "漢拏山は天候の影響を受けます",
+                  "detail": "オスンセンアクは急な天候変化や登山統制の影響を受けることがあります。"
+                },
+                {
+                  "label": "海沿いは風の影響が出やすいです",
+                  "detail": "柱状節理と涯月は、内陸側のスポットより強風を感じやすい区間です。"
+                },
+                {
+                  "label": "歩行バランス",
+                  "detail": "全体としては参加しやすい内容ですが、オスンセンアクと天帝淵では階段や短い上り下りがあります。"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "送迎について",
+            "preview": "済州市エリアのホテルロビー送迎",
+            "content": [
+              "お迎えは08:20〜08:50の間にホテルロビーで行います",
+              "お送りは17:50〜18:20頃を予定しています",
+              "空港ピックアップはご希望に応じて対応可能です",
+              "正確なお迎え時間は前日夜にご案内します"
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "歩行量と足元",
+            "preview": "全体的には中程度で、ほとんどの方が参加しやすい内容です",
+            "content": [
+              "総歩行距離の目安は全スポット合計で約4.5〜5.5kmです",
+              "オスンセンアク：短めの上りトレイルですが階段が多めです",
+              "柱状節理：歩きやすい海岸展望路です",
+              "天帝淵：森道・階段・濡れやすい足元があります",
+              "オーソルロクと涯月：比較的やさしく、自由なペースで回れます",
+              "歩きやすい靴の着用を強くおすすめします"
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "天候とクローズ時の対応",
+            "preview": "基本的には催行し、天候に応じて柔軟に調整します",
+            "content": [
+              "小雨程度であれば通常どおり催行します",
+              "雨や登山統制が強い場合は、オスンセンアクの内容を短縮または調整することがあります",
+              "風が強い場合は、柱状節理や涯月での滞在時間を短縮することがあります",
+              "午後の天候が不安定な場合は、オーソルロクの比重が高くなることがあります",
+              "施設の休業などがある場合は代替スポットをご案内することがあります"
+            ]
+          },
+          {
+            "id": "wear",
+            "title": "服装と持ち物",
+            "preview": "歩きやすい靴、重ね着、軽い上着があると安心です",
+            "content": [
+              "グリップのある歩きやすい靴",
+              "山と海辺の気温差に対応しやすい重ね着",
+              "風よけになる軽いジャケット",
+              "帽子と日焼け止め",
+              "飲み水"
+            ]
+          },
+          {
+            "id": "included",
+            "title": "含まれるもの / 含まれないもの",
+            "preview": "ガイド、車両、送迎、入場料など",
+            "variant": "included",
+            "content": [
+              "英語対応のプロガイド",
+              "専用車または少人数用車両",
+              "済州市内ホテルの送迎",
+              "各スポットの入場料",
+              "ミネラルウォーター",
+              "昼食（現地で各自精算）",
+              "個人的なお買い物",
+              "チップ"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "11°",
+            "label": "今日・晴れ"
+          },
+          "tomorrow": {
+            "temp": "18°/13°",
+            "label": "明日・小雨"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "name": "春",
+            "icon": "flower",
+            "description": "菜の花が海岸を明るく彩ります",
+            "tag": "花の見頃",
+            "bgClass": "bg-spring",
+            "iconColor": "text-pink-500"
+          },
+          {
+            "name": "夏",
+            "icon": "sun",
+            "description": "日が長く、緑がいっそう鮮やかです",
+            "tag": "最も日が長い季節",
+            "bgClass": "bg-summer",
+            "iconColor": "text-sky-500"
+          },
+          {
+            "name": "秋",
+            "icon": "leaf",
+            "description": "空気が澄み、景色がよりくっきり見えます",
+            "tag": "景色が美しい季節",
+            "bgClass": "bg-autumn",
+            "iconColor": "text-amber-600"
+          },
+          {
+            "name": "冬",
+            "icon": "snow",
+            "description": "人が少なく、落ち着いた雰囲気で歩けます",
+            "tag": "静かなムード",
+            "bgClass": "bg-winter",
+            "iconColor": "text-slate-500"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "現地ライセンス",
+            "description": "済州公認ガイド",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "route",
+            "title": "ルート設計に強い",
+            "description": "西南部ルートに最適化",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          },
+          {
+            "icon": "users",
+            "title": "少人数制",
+            "description": "最大8名",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "ご予約直後",
+            "title": "即時予約確認",
+            "detail": "行程サマリー付きの予約確認をご案内します"
+          },
+          {
+            "timing": "12時間前",
+            "title": "12時間前リマインド",
+            "detail": "天候情報と必要な調整内容をお知らせします"
+          },
+          {
+            "timing": "前日夜",
+            "title": "最終ピックアップ案内",
+            "detail": "正確なお迎え時間とドライバー連絡先をご案内します"
+          },
+          {
+            "timing": "当日朝",
+            "title": "当日朝のルート案内",
+            "detail": "朝の状況に応じた簡単なブリーフィングをお届けします"
+          },
+          {
+            "timing": "ツアー中",
+            "title": "立ち寄り先ごとの案内",
+            "detail": "各スポットで必要な情報をリアルタイムでご案内します"
+          },
+          {
+            "timing": "ツアー後",
+            "title": "ツアー後サポート",
+            "detail": "フォローアップと追加のおすすめをご案内します"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "first-time",
+            "question": "初めての済州島旅行でも楽しめますか？",
+            "answer": "はい。漢拏山の景色、火山海岸の代表格である柱状節理、定番の滝、茶畑の雰囲気、そして涯月の海辺まで、一日でバランスよく楽しめます。"
+          },
+          {
+            "id": "walking",
+            "question": "歩くのはかなり大変ですか？",
+            "answer": "全体としてはそこまでハードではありません。いちばん歩きごたえがあるのはオスンセンアクで、距離は短めですが階段が多く、その他は多くの方にとって中程度です。"
+          },
+          {
+            "id": "rain",
+            "question": "雨でも催行されますか？",
+            "answer": "はい。雨天時も基本的には催行しますが、状況に応じてオスンセンアクや海沿いの立ち寄り時間を短縮することがあります。"
+          },
+          {
+            "id": "parents",
+            "question": "親と一緒でも参加しやすいですか？",
+            "answer": "はい。大人中心の家族旅行には参加しやすい内容です。ただし、階段や短い上り下りに無理なく対応できる方により向いています。"
+          },
+          {
+            "id": "children",
+            "question": "子ども連れでも参加できますか？",
+            "answer": "はい。短いハイキングと終日の観光ペースに無理なく対応できる、8歳以上のお子さまにより向いています。"
+          },
+          {
+            "id": "order",
+            "question": "立ち寄り順が変わることはありますか？",
+            "answer": "はい。山の天候、風、交通状況、混雑状況によって、特にオスンセンアクや海沿いスポットの順序が調整される場合があります。"
+          },
+          {
+            "id": "lunch",
+            "question": "昼食は含まれていますか？",
+            "answer": "商品内容によって異なります。行程には昼食時間が含まれていますが、食事代が含まれるかどうかはご予約プランをご確認ください。"
+          },
+          {
+            "id": "why-eoseungsaengak",
+            "question": "なぜ最初にオスンセンアクへ行くのですか？",
+            "answer": "朝の体力があるうちに漢拏山の雰囲気をしっかり味わえるうえ、本格登山になりすぎず、一日の導入としてちょうどよいからです。"
+          },
+          {
+            "id": "why-jusangjeolli",
+            "question": "なぜ漢拏山のあとに柱状節理なのですか？",
+            "answer": "山の地形から海の火山景観へと、済州らしい火山の物語を自然につなげられるからです。"
+          },
+          {
+            "id": "why-osulloc",
+            "question": "なぜオーソルロクを涯月の前に入れているのですか？",
+            "answer": "滝の散策のあとに一度ペースを落とし、最後の涯月を急がずゆったり楽しめる流れをつくるためです。"
+          },
+          {
+            "id": "later-structure",
+            "question": "後半の流れはなぜこの構成なのですか？",
+            "answer": "昼食と天帝淵で午前のアクティブさをやわらげ、オーソルロクで茶畑の余白を楽しみ、最後は涯月で無理のない海辺の締めくくりにしています。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [
+          {
+            "id": 1,
+            "author": "Sarah M.",
+            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+            "location": "Singapore",
+            "date": "March 2024",
+            "rating": 5,
+            "title": "西南部の魅力をバランスよく楽しめる一日でした",
+            "text": "このルートは流れがとても自然でした。漢拏山から始まることで一日に勢いが生まれ、そのあとに見る柱状節理がより迫力ある景色に感じられました。特に、オーソルロクを経てから涯月へ向かう午後の流れがとても心地よかったです。",
+            "helpful": 24,
+            "verified": true,
+            "tripType": "カップル",
+            "photos": [
+              "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
+              "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
+            ]
+          },
+          {
+            "id": 2,
+            "author": "James K.",
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+            "location": "Hong Kong",
+            "date": "March 2024",
+            "rating": 5,
+            "title": "締めくくりまで気持ちよく回れる西南部ルート",
+            "text": "韓国でいくつかツアーに参加しましたが、このツアーは順番の組み立てがとても良かったです。ガイドが漢拏山、柱状節理、天帝淵のペースを上手に整えてくれて、オーソルロクから涯月へつながる後半も疲れすぎずに楽しめました。",
+            "helpful": 18,
+            "verified": true,
+            "tripType": "家族",
+            "photos": []
+          },
+          {
+            "id": 3,
+            "author": "Yuki T.",
+            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+            "location": "Tokyo",
+            "date": "February 2024",
+            "rating": 4,
+            "title": "最後の涯月タイムがとてもよかったです",
+            "text": "全体を通してとても満足度の高いツアーでした。オスンセンアクは想像以上に気持ちのいいスタートで、オーソルロクも涯月の前に入ることでちょうどよい休憩になっていました。星4つにしたのは、涯月でもう少しだけゆっくりしたかったからですが、行程全体のバランスを考えると納得できます。",
+            "helpful": 12,
+            "verified": true,
+            "tripType": "一人旅",
+            "photos": [
+              "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=80"
+            ]
+          },
+          {
+            "id": 4,
+            "author": "Michael R.",
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+            "location": "Sydney",
+            "date": "February 2024",
+            "rating": 5,
+            "title": "思っていた以上に変化のある一日でした",
+            "text": "景色を楽しみに参加しましたが、ガイドの説明がとてもよく、漢拏山、柱状節理、滝、茶畑、涯月の海まで一日がきれいにつながって感じられました。少人数だったので移動もスムーズで、各スポットを落ち着いて楽しめたのも良かったです。",
+            "helpful": 31,
+            "verified": true,
+            "tripType": "友人",
+            "photos": []
+          }
+        ],
+        "reviewsSummary": {
+          "averageRating": 4.8,
+          "totalReviews": 127,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 98,
+              "percentage": 77
+            },
+            {
+              "stars": 4,
+              "count": 21,
+              "percentage": 17
+            },
+            {
+              "stars": 3,
+              "count": 6,
+              "percentage": 5
+            },
+            {
+              "stars": 2,
+              "count": 1,
+              "percentage": 1
+            },
+            {
+              "stars": 1,
+              "count": 1,
+              "percentage": 1
+            }
+          ],
+          "highlights": [
+            {
+              "label": "景色",
+              "count": 89
+            },
+            {
+              "label": "ガイド",
+              "count": 76
+            },
+            {
+              "label": "ペース配分",
+              "count": 54
+            },
+            {
+              "label": "涯月での締めくくり",
+              "count": 41
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "price": {
+          "amountLabel": "58",
+          "currency": "USD",
+          "per": "人"
+        }
+      }
+    }
+  ]
+}

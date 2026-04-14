@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { AiInputSparkleIcon } from '@/components/Icons';
 import type { ProposedTourItem } from '@/app/api/custom-join-tour/proposed/route';
+import { krwToUsdForCustomJoinList } from '@/lib/constants/custom-join-tour';
 
 function TourCard({
   tour,
@@ -29,9 +30,10 @@ function TourCard({
   const allPlaces = tour.schedule.flatMap((d) => d.places);
   const coverImage = allPlaces.find((p) => p.image_url)?.image_url ?? null;
 
+  const listUsd = krwToUsdForCustomJoinList(tour.total_price_krw);
   const priceDisplay = currency
-    ? currency.formatPrice(tour.total_price_krw)
-    : `₩${tour.total_price_krw.toLocaleString()}`;
+    ? currency.formatPrice(listUsd)
+    : new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(listUsd);
 
   const createdDate = new Date(tour.created_at);
   const timeAgo = (() => {

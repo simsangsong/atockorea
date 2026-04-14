@@ -1,0 +1,61 @@
+/**
+ * Home v2 body — visual parity with `components/landing page (4)` (v0).
+ * Scoped under `.home-v2-body-isolate` only. Does not change global html/body
+ * background layers (see `.cursor/rules/global-page-background.mdc`).
+ */
+
+.home-v2-body-isolate {
+  isolation: isolate;
+
+  /* v0 `components/landing page (4)/app/globals.css` :root (light) */
+  --background: oklch(0.98 0.01 80);
+  --foreground: oklch(0.2 0.01 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.01 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.01 240);
+  --primary: oklch(0.3 0.08 240);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.92 0.02 80);
+  --secondary-foreground: oklch(0.2 0.01 240);
+  --muted: oklch(0.97 0.01 80);
+  --muted-foreground: oklch(0.5 0.01 240);
+  --accent: oklch(0.85 0.15 40);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.93 0.01 80);
+  --input: oklch(0.96 0.01 80);
+  --ring: oklch(0.3 0.08 240);
+  --radius: 0.625rem;
+}
+
+/**
+ * `app/globals.css` applies 44×44px min touch targets to all buttons/links.
+ * v0 uses compact chips and inline text controls — reset inside this subtree only.
+ */
+.home-v2-body-isolate :where(button, a) {
+  min-height: unset;
+  min-width: unset;
+}
+
+/* v0 scroll-reveal utilities (class names preserved from v0 source) */
+.home-v2-body-isolate .scroll-animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-v2-body-isolate .scroll-animate:not(.visible) {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.home-v2-body-isolate .scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

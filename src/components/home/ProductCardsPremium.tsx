@@ -1,13 +1,10 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "@/lib/i18n";
-import {
-  DEFAULT_HOMEPAGE_PRODUCT_CARD_IMAGES,
-  type HomepageProductCardImages,
-} from "@/lib/homepage-product-card-images.shared";
+import { useHomepageProductCardImages } from "@/hooks/home/useHomepageProductCardImages";
 import { CardFilmGrain } from "@/src/components/home/product-card-glass";
 
 const CUSTOM_JOIN_HREF = "/custom-join-tour";
@@ -15,30 +12,20 @@ const TOURS_LIST_HREF = "/tours/list";
 
 type CardVariant = "featured" | "supporting" | "secondary";
 
-function isResolvedImages(v: unknown): v is HomepageProductCardImages {
-  if (v == null || typeof v !== "object") return false;
-  const o = v as Record<string, unknown>;
-  return (
-    typeof o.join === "string" &&
-    typeof o.private === "string" &&
-    typeof o.bus === "string"
-  );
-}
-
 /** Desktop right stack: compact card height (Private + Bus). Featured fills 2× that + gap via grid stretch. */
 const DESKTOP_COMPACT_CARD_HEIGHT =
-  "md:h-[16rem] md:min-h-[16rem] md:max-h-[16rem] lg:h-[16.5rem] lg:min-h-[16.5rem] lg:max-h-[16.5rem]";
+  "md:h-[15.25rem] md:min-h-[15.25rem] md:max-h-[15.25rem] lg:h-[15.75rem] lg:min-h-[15.75rem] lg:max-h-[15.75rem]";
 
 function glassCardShellClass(variant: CardVariant): string {
   const base =
     "group relative isolate flex w-full flex-col overflow-hidden rounded-home-card bg-white/[0.05] transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform focus:outline-none focus-visible:ring-2 focus-visible:ring-white/90 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-300/80";
   if (variant === "featured") {
-    return `${base} min-h-[22rem] border border-white/48 shadow-home-offer-smgroup ring-1 ring-sky-400/55 hover:-translate-y-1.5 hover:border-white/62 hover:shadow-home-offer-smgroup-hover sm:min-h-[23.5rem] md:h-full md:min-h-0 md:max-h-none`;
+    return `${base} min-h-[19.5rem] border border-white/48 shadow-home-offer-smgroup ring-1 ring-sky-400/55 hover:-translate-y-1.5 hover:border-white/62 hover:shadow-home-offer-smgroup-hover sm:min-h-[21rem] md:h-full md:min-h-0 md:max-h-none`;
   }
   if (variant === "secondary") {
-    return `${base} min-h-[14.5rem] border border-white/22 shadow-home-offer-bus ring-1 ring-white/10 hover:-translate-y-1 hover:border-white/30 hover:shadow-home-offer-bus-hover sm:min-h-[15.5rem] ${DESKTOP_COMPACT_CARD_HEIGHT} md:shrink-0`;
+    return `${base} min-h-[13.25rem] border border-white/22 shadow-home-offer-bus ring-1 ring-white/10 hover:-translate-y-1 hover:border-white/30 hover:shadow-home-offer-bus-hover sm:min-h-[14.25rem] ${DESKTOP_COMPACT_CARD_HEIGHT} md:shrink-0`;
   }
-  return `${base} min-h-[16rem] border border-white/36 shadow-home-offer-private ring-1 ring-violet-200/35 hover:-translate-y-1.5 hover:border-white/44 hover:shadow-home-offer-private-hover sm:min-h-[17rem] ${DESKTOP_COMPACT_CARD_HEIGHT} md:shrink-0`;
+  return `${base} min-h-[14.5rem] border border-white/36 shadow-home-offer-private ring-1 ring-violet-200/35 hover:-translate-y-1.5 hover:border-white/44 hover:shadow-home-offer-private-hover sm:min-h-[15.5rem] ${DESKTOP_COMPACT_CARD_HEIGHT} md:shrink-0`;
 }
 
 /** Atmospheric scrim — gradient-forward; blur stays modest to avoid a muddy wash. */
@@ -76,7 +63,7 @@ function imageCoverClass(variant: CardVariant): string {
 
 function chipClass(variant: CardVariant): string {
   const chipFeatured =
-    "rounded-full border px-[0.72rem] py-[0.46rem] text-[9px] font-black uppercase tracking-[0.2em] backdrop-blur-md sm:px-3 sm:py-[0.5rem] sm:text-[10px] sm:tracking-[0.22em] transition-colors duration-200";
+    "rounded-full border px-[0.58rem] py-[0.32rem] text-[8.5px] font-black uppercase tracking-[0.18em] backdrop-blur-md sm:px-2.5 sm:py-[0.42rem] sm:text-[9.5px] sm:tracking-[0.2em] md:px-3 md:py-[0.5rem] md:text-[10px] md:tracking-[0.22em] transition-colors duration-200";
   const chipCompactMd =
     "md:px-2 md:py-[0.28rem] md:text-[7.5px] md:tracking-[0.14em] lg:px-2.5 lg:py-1 lg:text-[8px] lg:tracking-[0.16em]";
   const base = `${chipFeatured} ${chipCompactMd}`;
@@ -91,12 +78,12 @@ function chipClass(variant: CardVariant): string {
 
 function titleClass(variant: CardVariant): string {
   if (variant === "featured") {
-    return "mt-2.5 font-black leading-[1.02] tracking-[-0.038em] text-white text-[1.64rem] drop-shadow-[0_3px_28px_rgba(0,0,0,0.45)] sm:text-[1.85rem] md:text-[1.95rem] lg:text-[2.05rem]";
+    return "mt-1.5 font-black leading-[1.02] tracking-[-0.038em] text-white text-[1.58rem] drop-shadow-[0_3px_28px_rgba(0,0,0,0.45)] sm:mt-2 sm:text-[1.8rem] md:text-[1.92rem] lg:text-[2.02rem]";
   }
   if (variant === "secondary") {
-    return "mt-0 font-black leading-[1.12] tracking-[-0.032em] text-white text-[1.18rem] drop-shadow-[0_2px_16px_rgba(0,0,0,0.35)] sm:text-[1.34rem]";
+    return "mt-0 font-black leading-[1.1] tracking-[-0.032em] text-white text-[1.14rem] drop-shadow-[0_2px_16px_rgba(0,0,0,0.35)] sm:text-[1.3rem]";
   }
-  return "mt-0 font-black leading-[1.12] tracking-[-0.034em] text-white text-[1.3rem] drop-shadow-[0_2px_20px_rgba(0,0,0,0.38)] sm:text-[1.48rem]";
+  return "mt-0 font-black leading-[1.1] tracking-[-0.034em] text-white text-[1.26rem] drop-shadow-[0_2px_20px_rgba(0,0,0,0.38)] sm:text-[1.44rem]";
 }
 
 function priceClass(variant: CardVariant): string {
@@ -104,7 +91,7 @@ function priceClass(variant: CardVariant): string {
     return "home-type-price-anchor mt-0 text-[13px] text-white/94 drop-shadow-[0_1px_8px_rgba(0,0,0,0.35)] sm:text-sm";
   }
   if (variant === "featured") {
-    return "home-type-price-anchor mt-1.5 text-[1.12rem] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.48)] sm:mt-2 sm:text-lg md:text-[1.28rem] lg:text-[1.35rem]";
+    return "home-type-price-anchor mt-1 text-[1.08rem] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.48)] sm:mt-1.5 sm:text-[1.1rem] md:text-lg md:text-[1.24rem] lg:text-[1.32rem]";
   }
   return "home-type-price-anchor mt-0 text-sm text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.38)] sm:text-[15px]";
 }
@@ -199,17 +186,17 @@ function GlassOfferCard({
       <div
         className={`relative z-10 flex h-full min-h-0 flex-1 flex-col justify-end text-white ${
           variant === "featured"
-            ? "gap-y-1 p-6 sm:p-6 md:gap-y-2 md:p-6 md:pb-6 md:pt-6 lg:p-7 lg:pb-7 lg:pt-7"
+            ? "gap-y-0.5 p-5 pb-5 pt-5 sm:gap-y-1 sm:p-5 sm:pb-5 sm:pt-5 md:gap-y-1.5 md:p-5 md:pb-5 md:pt-5 lg:p-6 lg:pb-6 lg:pt-6"
             : variant === "secondary"
-              ? "gap-y-2.5 p-4 pb-5 pt-5 sm:gap-y-3 sm:p-5 sm:pb-6 sm:pt-6 md:gap-y-1.5 md:p-3.5 md:pb-3 md:pt-3.5 lg:gap-y-2 lg:p-4"
-              : "gap-y-2.5 p-4 pb-5 pt-5 sm:gap-y-3 sm:p-5 sm:pb-6 sm:pt-6 md:gap-y-1.5 md:p-3.5 md:pb-3 md:pt-3.5 lg:gap-y-2 lg:p-4"
+              ? "gap-y-1.5 p-3.5 pb-4 pt-4 sm:gap-y-2 sm:p-4 sm:pb-5 sm:pt-5 md:gap-y-1 md:p-3 md:pb-3 md:pt-3 lg:gap-y-1.5 lg:p-3.5"
+              : "gap-y-1.5 p-3.5 pb-4 pt-4 sm:gap-y-2 sm:p-4 sm:pb-5 sm:pt-5 md:gap-y-1 md:p-3 md:pb-3 md:pt-3 lg:gap-y-1.5 lg:p-3.5"
         }`}
       >
         <span className={`shrink-0 ${badgeClass(variant)}`}>{badge}</span>
         <h3 className={`shrink-0 ${titleClass(variant)}`}>{title}</h3>
         <p className={`shrink-0 ${priceClass(variant)}`}>{price}</p>
         <div
-          className={`flex flex-wrap gap-1.5 sm:gap-2 ${variant === "secondary" ? "max-w-[95%]" : ""} ${variant === "featured" ? "mt-3 mb-4 sm:mt-3.5 sm:mb-5 md:mb-5 lg:mb-6" : ""}`}
+          className={`flex flex-wrap gap-x-1 gap-y-1 sm:gap-x-1.5 sm:gap-y-1.5 md:gap-x-1.5 md:gap-y-1.5 ${variant === "secondary" ? "max-w-[95%]" : ""} ${variant === "featured" ? "mt-2 mb-2 sm:mt-2.5 sm:mb-3 md:mb-3 lg:mb-3.5" : "mt-0.5 sm:mt-1"}`}
         >
           {chips.map((chip) => (
             <span key={chip} className={chipClass(variant)}>
@@ -228,7 +215,7 @@ function GlassOfferCard({
  */
 export default function ProductCardsPremium() {
   const t = useTranslations("home");
-  const [images, setImages] = useState<HomepageProductCardImages>(DEFAULT_HOMEPAGE_PRODUCT_CARD_IMAGES);
+  const images = useHomepageProductCardImages();
 
   const joinChips = useMemo(
     () =>
@@ -250,39 +237,25 @@ export default function ProductCardsPremium() {
     [t]
   );
 
-  useEffect(() => {
-    let cancelled = false;
-    fetch("/api/homepage-product-card-images")
-      .then((r) => (r.ok ? r.json() : null))
-      .then((data: unknown) => {
-        if (cancelled || !isResolvedImages(data)) return;
-        setImages(data);
-      })
-      .catch(() => {});
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
   return (
     <section
-      className="home-section-y home-section-divide relative bg-transparent px-4 lg:px-8"
+      className="home-section-y-homeflow home-section-divide relative bg-transparent px-4 sm:px-6 lg:px-8"
       aria-labelledby="product-cards-premium-heading"
     >
       <div className="container mx-auto max-w-6xl">
-        <header className="mb-9 text-center sm:mb-10 md:mb-11">
-          <p className="home-type-eyebrow">
+        <header className="mb-6 text-center sm:mb-7 md:mb-8">
+          <p className="home-type-eyebrow text-slate-500">
             {t("premium.productCards.eyebrow")}
           </p>
           <h2
             id="product-cards-premium-heading"
-            className="home-type-display mt-2.5 text-[1.8rem] leading-[1.06] sm:text-[2.05rem] sm:leading-[1.02]"
+            className="home-type-display mt-2 text-[1.8rem] leading-[1.06] sm:text-[2.05rem] sm:leading-[1.02]"
           >
             {t("premium.productCards.title")}
           </h2>
         </header>
 
-        <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 md:items-stretch md:gap-4 lg:gap-5">
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 md:items-stretch md:gap-3.5 lg:gap-4">
           <div className="flex min-h-0 w-full md:h-full md:min-h-0">
             <GlassOfferCard
               variant="featured"
@@ -299,7 +272,7 @@ export default function ProductCardsPremium() {
             />
           </div>
 
-          <div className="flex min-h-0 w-full flex-col gap-4 sm:gap-5 md:gap-4 lg:gap-5">
+          <div className="flex min-h-0 w-full flex-col gap-3 sm:gap-3.5 md:gap-3.5 lg:gap-4">
             <GlassOfferCard
               variant="supporting"
               href={CUSTOM_JOIN_HREF}

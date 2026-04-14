@@ -1,0 +1,31 @@
+/* Home v2 (v0-derived): scroll-reveal utilities. Loaded from root layout. */
+/* Design tokens: `tailwind.config.js` → colors.homeV2.navy; typography → `app/globals.css` @layer utilities (hv2-*). */
+
+@keyframes home-v2-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-v2-scroll-animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-v2-scroll-animate:not(.home-v2-visible) {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.home-v2-scroll-animate.home-v2-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

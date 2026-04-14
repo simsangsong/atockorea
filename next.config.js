@@ -4,7 +4,56 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 const nextConfig = {
+  async redirects() {
+    /** Public flagship detail — do not use :path* on `/tour/...` or checkout subpaths would break. */
+    const canonical = '/tour-product/east-signature-nature-core';
+    return [
+      { source: '/tour/east-signature-nature-core', destination: canonical, permanent: true },
+      { source: '/tour/east-jeju-signature-small-group', destination: canonical, permanent: true },
+      { source: '/tour/jeju-east-small-group-template-preview', destination: canonical, permanent: true },
+      {
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/tour/east-signature-nature-core',
+        destination: '/:locale/tour-product/east-signature-nature-core',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/tour/east-jeju-signature-small-group',
+        destination: '/:locale/tour-product/east-signature-nature-core',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/tour/jeju-east-small-group-template-preview',
+        destination: '/:locale/tour-product/east-signature-nature-core',
+        permanent: true,
+      },
+      { source: '/tour-preview/east-small-group-v2', destination: canonical, permanent: true },
+      { source: '/tour-preview/jeju-east-small-group-template-preview', destination: canonical, permanent: true },
+      { source: '/tour-preview/east-jeju-signature-small-group', destination: canonical, permanent: true },
+      {
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/tour-preview/east-small-group-v2',
+        destination: '/:locale/tour-product/east-signature-nature-core',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/tour-preview/jeju-east-small-group-template-preview',
+        destination: '/:locale/tour-product/east-signature-nature-core',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/tour-preview/east-jeju-signature-small-group',
+        destination: '/:locale/tour-product/east-signature-nature-core',
+        permanent: true,
+      },
+    ];
+  },
   generateBuildId: async () => `build-${Date.now()}`,
+  /** Slow disks / AV scans can hit default chunk load timeouts in dev (ChunkLoadError on app/layout). */
+  webpack: (config, { dev, isServer }) => {
+    if (dev && !isServer && config.output) {
+      config.output.chunkLoadTimeout = 180000;
+    }
+    return config;
+  },
   // Static export for Capacitor (uncomment when building for mobile)
   // output: 'export',
   // i18n is handled by middleware + app/[locale] (next.config i18n breaks App Router)

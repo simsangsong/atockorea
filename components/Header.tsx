@@ -153,7 +153,7 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
           ? "border-b border-white/10 bg-gray-900/80 backdrop-blur-md shadow-sm"
           : pt
             ? "border-b border-stone-900/[0.06] bg-[#fdfdfc]/[0.82] backdrop-blur-xl backdrop-saturate-150 shadow-[0_1px_0_rgba(255,255,255,0.65)_inset,0_10px_40px_-24px_rgba(15,23,42,0.07)]"
-            : "border-b border-gray-200/50 bg-white/80 shadow-sm backdrop-blur-md"
+            : "border-b border-stone-400/22 bg-[rgba(238,242,239,0.48)] shadow-[0_1px_0_rgba(255,255,255,0.45)_inset] backdrop-blur-md backdrop-saturate-[0.92]"
       )}
     >
       <div
@@ -165,12 +165,16 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
         <div
           className={cn(
             "flex min-w-0 items-center justify-between gap-1 sm:gap-1.5 md:gap-2 lg:gap-3",
-            pt ? "h-[3.25rem] sm:h-14 md:h-[3.75rem]" : "h-14 md:h-16"
+            pt ? "h-[3.25rem] sm:h-14 md:h-[3.75rem]" : "h-12 md:h-14"
           )}
         >
           {/* Logo - Responsive sizing with text always visible */}
           <Link href="/" className="flex items-center flex-shrink-0 min-w-0 max-w-[65%] sm:max-w-none">
-            <Logo className={cn(pt ? "h-9 sm:h-10 md:h-11" : "h-10 sm:h-10 md:h-12")} />
+            <Logo
+              compact
+              className={cn(pt ? "h-8 sm:h-9 md:h-10" : "h-8 sm:h-9 md:h-10 lg:h-11")}
+              variant={isDarkPage ? "onDark" : "default"}
+            />
           </Link>
 
           {/* Desktop Navigation Menu */}
@@ -232,7 +236,7 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
           <div
             className={cn(
               "flex flex-shrink-0 items-center",
-              pt ? "gap-1 sm:gap-1.5 md:gap-2" : "gap-0.5 sm:gap-1 md:gap-1.5 lg:gap-2"
+              pt ? "gap-1 sm:gap-1.5 md:gap-2" : "gap-0 sm:gap-1 md:gap-1.5 lg:gap-2"
             )}
           >
             {/* Language Switcher - Optimized for mobile */}
@@ -248,11 +252,11 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
                   "flex items-center gap-0.5 whitespace-nowrap font-medium transition-colors",
                   pt
                     ? "rounded-[10px] px-2 py-1.5 text-[10px] text-stone-600 sm:text-[11px] md:px-2.5 md:text-xs hover:bg-stone-100/70 hover:text-stone-900"
-                    : "px-1 py-1 text-[9px] sm:px-1.5 sm:py-1.5 sm:text-[10px] md:px-2 md:text-xs lg:px-3 lg:text-sm",
+                    : "rounded-lg px-1.5 py-1 text-[10px] sm:px-2 sm:py-1 sm:text-[11px] md:px-2 md:text-xs",
                   !pt &&
                     (isDarkPage
                       ? "text-gray-300 hover:text-blue-400"
-                      : "text-gray-700 hover:text-blue-600")
+                      : "text-gray-600 hover:bg-slate-50/90 hover:text-gray-900")
                 )}
                 title={currencyLabel}
                 aria-expanded={isCurrencyOpen}
@@ -301,19 +305,19 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
             <button
               onClick={() => setIsSearchOpen(true)}
               className={cn(
-                "flex-shrink-0 transition-colors",
+                "flex min-h-10 min-w-10 flex-shrink-0 items-center justify-center transition-colors",
                 pt
                   ? "rounded-[10px] p-2 text-stone-500 hover:bg-stone-100/80 hover:text-stone-800"
-                  : "p-1 sm:p-1.5 md:p-2",
+                  : "rounded-lg p-0 sm:min-h-0 sm:min-w-0 sm:p-1.5 md:p-2",
                 !pt &&
                   (isDarkPage
                     ? "text-gray-300 hover:text-blue-400"
-                    : "text-gray-600 hover:text-blue-600")
+                    : "text-gray-600 hover:bg-slate-50/85 hover:text-blue-600")
               )}
               aria-label="Search"
             >
               <SearchIcon
-                className={cn(pt ? "h-[18px] w-[18px] sm:h-4 sm:w-4 md:h-[1.15rem] md:w-[1.15rem]" : "h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5")}
+                className={cn(pt ? "h-[18px] w-[18px] sm:h-4 sm:w-4 md:h-[1.15rem] md:w-[1.15rem]" : "h-[17px] w-[17px] sm:h-4 sm:w-4 md:h-5 md:w-5")}
               />
             </button>
 
@@ -321,7 +325,7 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
             {isLoading ? (
               <div
                 className={cn(
-                  "px-2 py-1.5 sm:px-2.5 sm:py-2 md:px-4",
+                  "flex min-h-10 min-w-10 items-center justify-center sm:min-h-0 sm:min-w-0 sm:px-2.5 sm:py-2 md:px-4",
                   isDarkPage ? "text-blue-300" : pt ? "text-stone-500" : "text-gray-600"
                 )}
               >
@@ -332,12 +336,12 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
                 <Link
                   href="/mypage"
                   className={cn(
-                    "group flex flex-shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-[10px] px-2 py-1.5 text-xs font-medium transition-colors sm:gap-1.5 sm:px-2.5 sm:py-2 sm:text-sm md:gap-2 md:px-4",
+                    "group flex min-h-10 flex-shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-lg px-2 py-1.5 text-xs font-medium transition-colors sm:min-h-0 sm:gap-1.5 sm:rounded-[10px] sm:px-2.5 sm:py-2 sm:text-sm md:gap-2 md:px-4",
                     isDarkPage
                       ? "border border-blue-400/30 bg-blue-500/10 text-blue-300 hover:border-blue-400/50 hover:bg-blue-500/20"
                       : pt
                         ? "border border-stone-200/80 bg-white/55 text-stone-700 hover:border-stone-300/90 hover:bg-white/90"
-                        : "border border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300 hover:bg-gray-100 hover:shadow-sm"
+                        : "border border-gray-200/55 bg-slate-50/40 text-gray-800 hover:border-gray-300/70 hover:bg-slate-50/90"
                   )}
                   title={user.full_name || 'My Account'}
                 >
@@ -404,12 +408,12 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
               <Link
                 href="/signin"
                 className={cn(
-                  "group flex flex-shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-[10px] px-2 py-1.5 text-xs font-medium transition-colors sm:gap-1.5 sm:px-2.5 sm:py-2 sm:text-sm md:gap-2 md:px-4",
+                  "group flex min-h-10 flex-shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-lg px-2 py-1.5 text-xs font-medium transition-colors sm:min-h-0 sm:gap-1.5 sm:rounded-[10px] sm:px-2.5 sm:py-2 sm:text-sm md:gap-2 md:px-4",
                   isDarkPage
                     ? "border border-blue-400/30 bg-blue-500/10 text-blue-300 hover:border-blue-400/50 hover:bg-blue-500/20"
                     : pt
                       ? "border border-stone-200/80 bg-white/55 text-stone-700 hover:border-stone-300/90 hover:bg-white/90"
-                      : "border border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300 hover:bg-gray-100 hover:shadow-sm"
+                      : "border border-gray-200/55 bg-slate-50/40 text-gray-800 hover:border-gray-300/70 hover:bg-slate-50/90"
                 )}
                 title="Sign In"
               >

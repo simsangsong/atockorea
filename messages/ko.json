@@ -114,6 +114,27 @@
     "importantNotesSection": "주의 사항",
     "reviews": "리뷰",
     "noReviewsYet": "아직 이 투어에 대한 리뷰가 없습니다.",
+    "heroDecision": {
+      "walk": "도보",
+      "rain": "비·날씨",
+      "fit": "맞는 분",
+      "pickup": "픽업",
+      "value": "포함·별도",
+      "route": "루트"
+    },
+    "routeFlow": {
+      "eyebrow": "루트 구성",
+      "title": "하루의 흐름",
+      "lead": "총 {count}개 정차—일정표와 같은 순서, 왼쪽에서 오른쪽으로 읽습니다.",
+      "flowListLabel": "이날의 정차 순서",
+      "moodStripLabel": "하루 리듬(세 구간)",
+      "morning": "오전",
+      "midday": "한낮",
+      "coast": "해안 마무리",
+      "stopRange": "{from}–{to}번 정차",
+      "stopSingle": "{n}번 정차",
+      "unnamedStop": "정차"
+    },
     "allPickupPoints": "모든 픽업 장소:",
     "pickupMeetupInfo": "픽업 및 만남 안내",
     "noPickupPoints": "픽업 장소가 없습니다.",
@@ -419,10 +440,12 @@
         "destComingSoonLine1": "오픈",
         "destComingSoonLine2": "예정",
         "textareaLabelJeju": "여행 스타일과 원하는 하루를 알려주세요",
-        "textareaHelperJeju": "동행 인원, 도보 부담, 풍경·카페 선호, 속도, 프라이빗·소그룹 선호 등을 적어 주세요.",
+        "textareaHelperJeju": "속도·도보·풍경, 소그룹/프라이빗 선호를 한 줄로 적어 주세요.",
         "inputLabel": "제주에서 어떤 하루를 원하시는지 알려주세요",
-        "inputPlaceholder": "예: 제주 첫 방문, 풍경 위주, 도보 적게, 부모님 동반, 카페 한 곳, 비 와도 무리 없는 코스. 가장 잘 맞는 상품을 추천해 주세요.",
+        "inputPlaceholder": "예: 제주 첫 방문·풍경·적은 도보·부모님·카페 — 맞는 상품 추천.",
         "chipsLegend": "빠르게 추가 (선택)",
+        "chipsShowMore": "태그 더 보기",
+        "chipsShowLess": "태그 접기",
         "findMatchCta": "최적 투어 찾기",
         "pricingRowLabel": "시작 가격 및 최소 인원",
         "priceSmallGroup": "소그룹 $58부터",
@@ -437,7 +460,23 @@
         "bestMatchCta": "이 매치 보기",
         "alsoConsiderLabel": "함께 볼 만한 옵션",
         "alsoConsiderPrivate": "프라이빗 차량",
-        "alsoConsiderBus": "클래식 버스 투어"
+        "alsoConsiderBus": "클래식 버스 투어",
+        "plannerOutcomeEyebrow": "이어서 받게 되는 것",
+        "plannerOutcomeDestTitle": "맞춤 목적지",
+        "plannerOutcomeDestMicro": "여행에 맞는 지역을 먼저 제안해요.",
+        "plannerOutcomeStyleTitle": "투어 형태 추천",
+        "plannerOutcomeStyleMicro": "조인·프라이빗·버스 중 맞는 선택.",
+        "plannerOutcomePaceTitle": "하루 페이스와 동선",
+        "plannerOutcomePaceMicro": "메모에 맞춘 속도와 코스.",
+        "introVideoAria": "플래너 소개 짧은 영상",
+        "introDismissAria": "소개 영상 닫기",
+        "introPlayAria": "소개 영상 재생",
+        "matchLoadingAnalyzing": "선호를 분석하는 중…",
+        "matchLoadingMatching": "투어를 매칭하는 중…",
+        "matchLoadingComplete": "매칭 완료",
+        "matchResultRecommendLine": "첫 제주 방문에 맞춘 기본 추천으로, 여유 있는 동선과 해안 풍경을 균형 있게 담았습니다.",
+        "seeOtherToursCta": "다른 투어 보기",
+        "matchResultBackCta": "플래너로 돌아가기"
       },
       "comparison": {
         "eyebrow": "여행 스타일",
@@ -548,20 +587,22 @@
       "reviews": {
         "eyebrow": "여행자 한마디",
         "title": "맞춤·안내·페이스",
-        "quote1": "픽업이 분명해서 어디서 기다릴지 바로 알았어요.",
-        "quote2": "첫 제주인데 하루가 쫓기지 않았어요.",
-        "quote3": "부모님이랑도 괜찮았어요—정거 사이 도보가 짧았어요."
+        "quote1": "호텔 픽업 구역이랑 정확한 대기 지점이 안내문에 적혀 있어서 길가에서 헤매지 않았어요.",
+        "quote1Tag": "제주 동부 조인 투어",
+        "quote2": "첫 제주였는데 코스는 빡빡해 보였는데도 하루 종일 숨 쉴 틈이 있었어요.",
+        "quote2Tag": "데이투어 참가"
       },
       "classicBus": {
-        "eyebrow": "다른 선택",
-        "title": "정해진 노선 버스 투어는 비용을 최우선으로 둘 때 볼 수 있어요.",
-        "cta": "클래식 버스 투어 보기"
+        "eyebrow": "저예산 루트",
+        "title": "비용이 최우선이면 정해진 노선 버스 투어는 따로 모아 두었어요.",
+        "cta": "버스 노선 투어 보기"
       },
       "finalCta": {
-        "eyebrow": "지금 설계",
-        "title": "제주 여행, 더 똑똑하게 짜볼 준비 되셨나요?",
+        "eyebrow": "다음 단계",
+        "title": "제주 하루를 정하세요—조인 투어 또는 프라이빗 차량.",
         "cta": "내 투어 찾기",
-        "ctaPrivate": "프라이빗 투어 둘러보기"
+        "ctaPrivate": "프라이빗 차량으로 진행",
+        "divider": "또는"
       }
     },
     "destinations": {

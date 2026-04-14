@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { tourListPricesToUsdSync } from '@/lib/tour-list-price-usd.server';
+import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
 import { withErrorHandler, AppError, ErrorResponses } from '@/lib/error-handler';
 import { createServerLogger } from '@/lib/logger';
 
@@ -146,6 +148,16 @@ export const GET = withErrorHandler(async (
 
     logger.info('Tour found', { id: tour.id, title: tour.title });
 
+    const krwPerUsd = await getKrwPerUsd();
+    const { priceUsd, originalPriceUsd } = tourListPricesToUsdSync(
+      {
+        price: tour.price,
+        original_price: tour.original_price,
+        price_currency: (tour as { price_currency?: string }).price_currency,
+      },
+      krwPerUsd
+    );
+
     const resolvedSlug =
       typeof tour.slug === 'string' && tour.slug.trim() !== ''
         ? tour.slug.trim()
@@ -189,14 +201,16 @@ export const GET = withErrorHandler(async (
       id: tour.id,
       slug: resolvedSlug,
       title,
+      /** Marketing line (e.g. “Small group · East Jeju”) — used to infer join/small-group v2 detail layout. */
+      tag: typeof tour.tag === 'string' && tour.tag.trim() !== '' ? tour.tag.trim() : null,
       tagline,
       location: tour.city,
       city: tour.city,
       rating: tour.rating ? parseFloat(tour.rating.toString()) : 0,
       reviewCount: tour.review_count || 0,
       badges: tour.badges || [],
-      price: parseFloat(tour.price.toString()),
-      originalPrice: tour.original_price ? parseFloat(tour.original_price.toString()) : null,
+      price: priceUsd,
+      originalPrice: originalPriceUsd,
       priceType: tour.price_type,
       availableSpots: undefined,
       duration: tour.duration || '',
@@ -273,6 +287,10 @@ export const GET = withErrorHandler(async (
         tour.accessibility_facilities && typeof tour.accessibility_facilities === 'object'
           ? tour.accessibility_facilities
           : undefined,
+      detailPageV2:
+        tour.detail_page_v2 && typeof tour.detail_page_v2 === 'object'
+          ? tour.detail_page_v2
+          : null,
     };
 
     return NextResponse.json({ tour: transformedTour });
@@ -305,6 +323,7 @@ export const PATCH = withErrorHandler(async (
     if (body.city !== undefined) updateData.city = body.city;
     if (body.price !== undefined) updateData.price = parseFloat(body.price);
     if (body.original_price !== undefined) updateData.original_price = body.original_price ? parseFloat(body.original_price) : null;
+    if (body.price_currency !== undefined) updateData.price_currency = body.price_currency;
     if (body.price_type !== undefined) updateData.price_type = body.price_type;
     if (body.image_url !== undefined) updateData.image_url = body.image_url;
     if (body.description !== undefined) updateData.description = body.description;
@@ -323,6 +342,7 @@ export const PATCH = withErrorHandler(async (
     if (body.suggested_to_bring !== undefined) updateData.suggested_to_bring = body.suggested_to_bring;
     if (body.accessibility_facilities !== undefined) updateData.accessibility_facilities = body.accessibility_facilities;
     if (body.translations !== undefined) updateData.translations = body.translations;
+    if (body.detail_page_v2 !== undefined) updateData.detail_page_v2 = body.detail_page_v2;
 
     const { data: tour, error: updateError } = await supabase
       .from('tours')

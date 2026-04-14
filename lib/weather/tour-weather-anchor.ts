@@ -1,10 +1,10 @@
 import { TOUR_DETAIL_TEMPLATE_SLUGS } from "@/lib/tour-detail-template-slugs"
 
-/** 성산일출봉 일대 (동쪽 투어 기준점) */
+/** 좌표는 성산일출봉 일대 — 표시용 라벨은 동쪽 일대(투어 구역)로 통일 */
 export const WEATHER_ANCHOR_EAST_SEONGSAN = {
   latitude: 33.4594,
   longitude: 126.9427,
-  areaLabel: "Seongsan Ilchulbong area",
+  areaLabel: "East Jeju region",
 } as const
 
 /** 한림읍 일대 (서남쪽 투어 기준점) */

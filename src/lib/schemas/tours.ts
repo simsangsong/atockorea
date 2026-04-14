@@ -126,4 +126,5 @@ export const TourDetailViewModelSchema = z.object({
     text: z.string().optional(),
   })).optional(),
   bookingTimeline: BookingTimelineSchema.nullable().optional(),
+  detailPageV2: z.unknown().optional().nullable(),
 });
