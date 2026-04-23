@@ -13,7 +13,8 @@ export const FEATURED_JOIN_TOUR_SLUG = "east-signature-nature-core";
 export const HOME_CTA_FEATURED_JOIN_TOUR_HREF = "/tour-product/east-signature-nature-core";
 
 export const HOME_CTA_BROWSE_TOURS_HREF = "/tours/list";
-export const HOME_CTA_SMALL_GROUP_LIST_HREF = "/tours/small-group";
+/** Direct list + join filter — avoid `/tours/small-group` (server redirect) on client nav, which can fail to swap the RSC tree in production. */
+export const HOME_CTA_SMALL_GROUP_LIST_HREF = "/tours/list?type=join";
 export const HOME_CTA_MATCHING_HREF = "/match";
 
 export const HOME_CTA_REVIEWS_HREF = "/reviews";
