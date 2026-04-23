@@ -1,6 +1,5 @@
 'use client';
 
-// Force dynamic rendering to avoid I18nProvider issues during static generation
 export const dynamic = 'force-dynamic';
 
 import { useState, useEffect } from 'react';
@@ -9,6 +8,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CalendarDateIcon } from '@/components/Icons';
 import { supabase } from '@/lib/supabase';
+import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
+import { useTranslations } from '@/lib/i18n';
+import { MYPAGE_SURFACE_PAGE } from '@/lib/mypage-ui';
+import { cn } from '@/lib/utils';
 
 interface Booking {
   id: string;
@@ -25,6 +28,7 @@ interface Booking {
 
 export default function BookingHistoryPage() {
   const router = useRouter();
+  const t = useTranslations();
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -37,7 +41,7 @@ export default function BookingHistoryPage() {
     try {
       setLoading(true);
       const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-      
+
       if (!session) {
         router.push('/signin');
         return;
@@ -52,12 +56,10 @@ export default function BookingHistoryPage() {
         throw new Error(data.error || 'Failed to fetch booking history');
       }
 
-      // Filter completed and cancelled bookings
       const historyBookings = (data.bookings || []).filter(
-        (booking: any) => booking.status === 'completed' || booking.status === 'cancelled'
+        (booking: any) => booking.status === 'completed' || booking.status === 'cancelled',
       );
 
-      // Sort by date (newest first)
       historyBookings.sort((a: any, b: any) => {
         const dateA = new Date(a.booking_date || a.created_at).getTime();
         const dateB = new Date(b.booking_date || b.created_at).getTime();
@@ -74,7 +76,7 @@ export default function BookingHistoryPage() {
   };
 
   const handleRebook = (tourId: string) => {
-    router.push(`/tour/${tourId}`);
+    router.push(consumerTourDetailHref(tourId));
   };
 
   const formatDate = (dateString: string) => {
@@ -82,17 +84,17 @@ export default function BookingHistoryPage() {
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
   };
 
-  const getStatusColor = (status: string) => {
-    return status === 'completed'
-      ? 'bg-green-100 text-green-700'
-      : 'bg-gray-100 text-gray-700';
-  };
+  const statusLabel = (status: string) =>
+    status === 'completed' ? t('mypage.historyStatusCompleted') : t('mypage.historyStatusCancelled');
+
+  const statusStyle = (status: string) =>
+    status === 'completed' ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-700';
 
   if (loading) {
     return (
-      <div className="space-y-6">
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-          <p className="text-gray-600">Loading...</p>
+      <div className="space-y-4">
+        <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6')}>
+          <p className="text-[13px] text-slate-600">{t('mypage.bookingsLoading')}</p>
         </div>
       </div>
     );
@@ -100,76 +102,83 @@ export default function BookingHistoryPage() {
 
   if (error) {
     return (
-      <div className="space-y-6">
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-          <p className="text-red-600">Error: {error}</p>
+      <div className="space-y-4">
+        <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6')}>
+          <p className="text-[13px] text-red-600">{t('mypage.bookingsError', { message: error })}</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="space-y-6">
-      <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-        <h1 className="text-xl font-medium text-gray-900 mb-2">Booking History</h1>
-        <p className="text-gray-600">View your past bookings</p>
+    <div className="space-y-4">
+      <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6 md:p-7')}>
+        <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+          {t('mypage.history')}
+        </p>
+        <h1 className="text-[1.35rem] font-bold tracking-tight text-[#0f172a] md:text-[1.5rem]">
+          {t('mypage.historyPageTitle')}
+        </h1>
+        <p className="mt-1 text-[13px] leading-snug text-slate-600">
+          {t('mypage.historyPageSubtitle')}
+        </p>
       </div>
 
-      <div className="relative">
-        <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+      {bookings.length > 0 ? (
+        <div className="relative">
+          <div className="absolute left-3.5 top-2 bottom-2 w-px bg-slate-200 md:left-7" />
 
-        <div className="space-y-6">
-          {bookings.length > 0 ? (
-            bookings.map((booking, idx) => {
+          <div className="space-y-4">
+            {bookings.map((booking, idx) => {
               const tourDate = booking.tour_date || booking.booking_date;
-              const imageUrl = booking.tours?.image_url || 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=400';
-              
+              const imageUrl =
+                booking.tours?.image_url ||
+                'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=400';
+
               return (
-                <div key={booking.id} className="relative flex gap-6">
-                  <div className="flex-shrink-0 w-8 h-8 md:w-16 md:h-16 rounded-full bg-white border-4 border-indigo-600 flex items-center justify-center z-10">
-                    <span className="text-indigo-600 text-xs md:text-sm font-bold">{idx + 1}</span>
+                <div key={booking.id} className="relative flex gap-4">
+                  <div className="z-10 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border-[3px] border-white bg-slate-900 text-[11px] font-bold text-white shadow-[0_4px_12px_-2px_rgba(15,23,42,0.3)] md:h-14 md:w-14 md:text-xs">
+                    {idx + 1}
                   </div>
 
-                  <div className="flex-1 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 overflow-hidden mb-6">
+                  <div className={cn(MYPAGE_SURFACE_PAGE, 'flex-1 overflow-hidden')}>
                     <div className="flex flex-col md:flex-row">
-                      <div className="md:w-48 h-48 md:h-auto flex-shrink-0 relative">
-                        <Image
-                          src={imageUrl}
-                          alt={booking.tours?.title || 'Tour'}
-                          fill
-                          className="object-cover"
-                        />
+                      <div className="relative h-48 flex-shrink-0 md:h-auto md:w-48">
+                        <Image src={imageUrl} alt={booking.tours?.title || 'Tour'} fill className="object-cover" />
                       </div>
-                      <div className="flex-1 p-6">
-                        <div className="flex items-start justify-between mb-4">
+                      <div className="flex-1 p-5">
+                        <div className="mb-4 flex items-start justify-between gap-3">
                           <div>
-                            <h3 className="text-base font-medium text-gray-900 mb-2">
+                            <h3 className="mb-1.5 text-[15px] font-bold tracking-tight text-[#0f172a]">
                               {booking.tours?.title || 'Tour'}
                             </h3>
-                            <p className="text-sm text-gray-600 flex items-center gap-1.5">
-                              <CalendarDateIcon className="w-4 h-4" />
+                            <p className="flex items-center gap-1.5 text-[12px] text-slate-600">
+                              <CalendarDateIcon className="h-3.5 w-3.5" />
                               {formatDate(tourDate)}
                             </p>
                           </div>
                           <span
-                            className={`px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(booking.status)}`}
+                            className={cn(
+                              'rounded-full px-3 py-1 text-[11px] font-semibold',
+                              statusStyle(booking.status),
+                            )}
                           >
-                            {booking.status === 'completed' ? 'Completed' : 'Cancelled'}
+                            {statusLabel(booking.status)}
                           </span>
                         </div>
-                        <div className="flex gap-3">
+                        <div className="flex flex-wrap gap-2">
                           <Link
-                            href={`/tour/${booking.tour_id}`}
-                            className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium"
+                            href={consumerTourDetailHref(booking.tour_id)}
+                            className="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-4 py-2 text-[12px] font-semibold text-slate-900 transition-colors hover:bg-slate-50"
                           >
-                            View Details
+                            {t('mypage.commonViewDetails')}
                           </Link>
                           {booking.status === 'completed' && (
                             <button
                               onClick={() => handleRebook(booking.tour_id)}
-                              className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium"
+                              className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-4 py-2 text-[12px] font-semibold text-white transition-colors hover:bg-slate-800"
                             >
-                              Rebook Tour
+                              {t('mypage.historyRebookCta')}
                             </button>
                           )}
                         </div>
@@ -178,14 +187,14 @@ export default function BookingHistoryPage() {
                   </div>
                 </div>
               );
-            })
-          ) : (
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-12 text-center">
-              <p className="text-gray-500">No booking history</p>
-            </div>
-          )}
+            })}
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className={cn(MYPAGE_SURFACE_PAGE, 'p-12 text-center')}>
+          <p className="text-[13px] text-slate-500">{t('mypage.historyEmpty')}</p>
+        </div>
+      )}
     </div>
   );
 }

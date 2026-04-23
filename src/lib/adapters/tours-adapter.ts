@@ -205,6 +205,7 @@ export function adaptToursListResponse(raw: unknown): TourCardViewModel[] {
       ...(rating !== undefined ? { rating } : {}),
       ...(reviewCount !== undefined ? { reviewCount } : {}),
       ...(bookingCount !== undefined ? { bookingCount } : {}),
+      ...(listSlug ? { slug: listSlug } : {}),
     };
     const parsed = TourCardViewModelSchema.safeParse(view);
     if (parsed.success) result.push(parsed.data);

@@ -8,6 +8,7 @@ import { useTranslations, useI18n } from "@/lib/i18n";
 import { formatTourDurationForCard } from "@/lib/tour-duration-display";
 import { useCurrencyOptional } from "@/lib/currency";
 import { isInWishlistLocal, toggleWishlistLocal } from "@/lib/wishlist";
+import { isTourBlockedFromConsumerSurfaces } from "@/lib/tour-consumer-visibility";
 
 // Format booking count for display (e.g. 1200 -> "1.2k", 50000 -> "50k")
 function formatBookingCount(n: number): string {
@@ -154,6 +155,10 @@ export default function TourCard({
   } else if (tourId) {
     // Fallback: use /tour/[id]
     displayHref = `/tour/${tourId}`;
+  }
+
+  if (isTourBlockedFromConsumerSurfaces(tourId != null ? String(tourId) : null, tourSlug ?? null)) {
+    displayHref = "/tours/list";
   }
   
   const displayImage = image || "https://images.unsplash.com/photo-1534008897995-27a23e859048?w=600&q=80";

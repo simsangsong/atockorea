@@ -1,10 +1,12 @@
 import { ReactNode } from 'react';
 import { Metadata } from 'next';
 import { headers } from 'next/headers';
+import { notFound } from 'next/navigation';
 import { generateMetadata as generateSEOMetadata, generateStructuredData } from '@/lib/seo';
 import { createServerClient } from '@/lib/supabase';
 import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
 import { tourListPricesToUsdSync } from '@/lib/tour-list-price-usd.server';
+import { isTourBlockedFromConsumerSurfaces, isTourIdBlockedFromConsumerSurfaces } from '@/lib/tour-consumer-visibility';
 
 type MetadataLocale = 'en' | 'ko' | 'zh' | 'zh-TW' | 'es' | 'ja';
 
@@ -69,8 +71,16 @@ export async function generateMetadata(
   { params }: { params: Promise<{ id: string }> }
 ): Promise<Metadata> {
   const { id: tourId } = await params;
+  const decodedSeg = decodeURIComponent(tourId);
+  if (UUID_RE.test(decodedSeg) && isTourIdBlockedFromConsumerSurfaces(decodedSeg)) {
+    notFound();
+  }
   try {
     const { tour, error } = await fetchActiveTourForLayout(tourId);
+
+    if (tour && isTourBlockedFromConsumerSurfaces(String(tour.id), (tour as { slug?: string }).slug)) {
+      notFound();
+    }
 
     if (error || !tour) {
       return generateSEOMetadata({
@@ -178,6 +188,17 @@ export default async function TourLayout({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
+  const decodedLayout = decodeURIComponent(id);
+  if (UUID_RE.test(decodedLayout) && isTourIdBlockedFromConsumerSurfaces(decodedLayout)) {
+    notFound();
+  }
+  const { tour: layoutTour } = await fetchActiveTourForLayout(id);
+  if (
+    layoutTour &&
+    isTourBlockedFromConsumerSurfaces(String(layoutTour.id), (layoutTour as { slug?: string }).slug)
+  ) {
+    notFound();
+  }
   const structuredData = await generateStructuredDataForTour(id);
 
   return (

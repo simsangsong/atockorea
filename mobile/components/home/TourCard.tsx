@@ -5,6 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { theme } from '@/constants/theme';
 import { BASE_URL } from '@/api/client';
 import type { Tour } from '@/types/tour';
+import { consumerTourDetailPath } from '@/lib/consumer-tour-hrefs';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const PAD = theme.spacing.md;
@@ -43,7 +44,7 @@ export default function TourCard({ tour, grid, compact, fullWidth }: TourCardPro
 
   const handlePress = () => {
     const id = tour.slug || String(tour.id);
-    router.push(`/tour/${encodeURIComponent(id)}`);
+    router.push(consumerTourDetailPath(id));
   };
 
   const isGrid = grid === true;

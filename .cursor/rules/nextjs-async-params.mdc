@@ -1,0 +1,61 @@
+---
+description: Next.js 15/16 `params`·`searchParams` 비동기 API 사용 규칙
+alwaysApply: true
+---
+
+# Next.js async `params` / `searchParams` 사용 규칙
+
+Next.js 15부터 App Router의 `params`와 `searchParams`는 **`Promise`** 입니다. 잘못 열람하면
+`sync-dynamic-apis` 런타임 경고가 출력되고, Cursor의 Element Picker처럼 React props를
+직렬화하는 devtool이 이 값을 건드릴 때마다 콘솔이 시끄러워집니다. 실제 기능이 망가지진
+않지만 로그 잡음을 막기 위해 아래 규칙을 지킵니다.
+
+## Must
+
+- **타입은 반드시 `Promise<...>`** 로 선언합니다.
+  ```ts
+  type Props = { params: Promise<{ slug: string }>; searchParams?: Promise<Record<string, string>> };
+  ```
+- **함수 초입에서 `await`** 으로 즉시 언래핑합니다.
+  ```tsx
+  export default async function Page({ params, searchParams }: Props) {
+    const { slug } = await params;
+    const sp = (await searchParams) ?? {};
+    // ...
+  }
+  ```
+- 클라이언트 페이지는 **`useParams()` / `useSearchParams()`** 을 사용합니다.
+  `params` 객체를 prop으로 받은 경우 `React.use(params)` 로 풀고 다시 넘기지 않습니다.
+
+## Must Not
+
+- **`params` / `searchParams` 객체를 자식 컴포넌트에 prop으로 그대로 전달하지 말 것.**
+  Cursor/Next DevTools가 클릭 시 props를 `Object.keys`로 훑다가 Promise를 만나 경고를
+  발생시키는 주 원인입니다. 언래핑한 값(예: `slug`) 만 자식으로 내려보냅니다.
+- `params.<key>` 처럼 Promise에서 바로 속성을 읽지 말 것. 반드시 `await` 또는
+  `React.use()` 이후에 접근합니다.
+- `Object.keys(params)` / `JSON.stringify(params)` / 스프레드(`{ ...params }`) 등 Promise를
+  동기 열람하는 헬퍼 사용 금지.
+
+## 예시
+
+Bad
+```tsx
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  return <Detail params={params} />; // devtool introspection triggers sync-dynamic-apis
+}
+```
+
+Good
+```tsx
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  return <Detail slug={slug} />;
+}
+```
+
+## 배경 참고
+
+- 에러 메시지 예: `params are being enumerated. 'params' is a Promise and must be unwrapped with React.use() before accessing its properties.`
+- 콜스택이 `HTMLDocument.clickListener → buildDOMTree → getReactComponentInfo → serializeValue → Object.keys` 로 끝나면 런타임 버그가 아니라 **devtool이 props를 직렬화하다 발생한 경고**입니다. 위 규칙을 지키면 재발률이 크게 줄어듭니다.
+- 출처: <https://nextjs.org/docs/messages/sync-dynamic-apis>

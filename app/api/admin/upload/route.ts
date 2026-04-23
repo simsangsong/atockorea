@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
-import { validateFile, validateFiles, productImageOptions, galleryImageOptions } from '@/lib/file-upload';
+import { productImageOptions, galleryImageOptions, productVideoOptions } from '@/lib/file-upload';
 import { requireAdmin } from '@/lib/auth';
 
 // Ensure Node.js runtime for sharp
@@ -70,7 +70,7 @@ async function compressImageIfNeeded(buffer: Buffer, maxSizeBytes: number): Prom
  * FormData fields:
  * - file: File (single upload)
  * - files: File[] (multiple upload)
- * - type: 'product' | 'gallery' (default: 'product')
+ * - type: 'product' | 'gallery' | 'video' (default: 'product')
  * - folder: string (default: 'uploads')
  * 
  * Response:
@@ -87,12 +87,14 @@ export async function POST(req: NextRequest) {
     
     const file = formData.get('file') as File | null;
     const files = formData.getAll('files') as File[];
-    const type = (formData.get('type') as string) || 'product'; // 'product' or 'gallery'
+    const type = (formData.get('type') as string) || 'product'; // 'product' | 'gallery' | 'video'
     const folder = (formData.get('folder') as string) || 'uploads'; // Optional folder path
 
     // Determine upload options based on type
-    const uploadOptions = type === 'gallery' ? galleryImageOptions : productImageOptions;
-    const bucketName = type === 'gallery' ? 'tour-gallery' : 'tour-images';
+    const uploadOptions =
+      type === 'gallery' ? galleryImageOptions : type === 'video' ? productVideoOptions : productImageOptions;
+    const bucketName =
+      type === 'gallery' ? 'tour-gallery' : type === 'video' ? 'tour-videos' : 'tour-images';
 
     // Validate files (size check is now handled in uploadFile with auto-compression)
     if (file) {

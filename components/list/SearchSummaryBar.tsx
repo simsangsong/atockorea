@@ -11,7 +11,7 @@ export interface SearchSummaryBarProps {
   destination?: string | null;
   /** Optional keyword/search query */
   keyword?: string | null;
-  /** Optional: link to refine/edit search (e.g. /custom-join-tour or /search) */
+  /** Optional: link to refine/edit search (e.g. /search). */
   refineHref?: string | null;
   /** Optional: hotel area from builder */
   hotelArea?: string | null;

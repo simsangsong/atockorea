@@ -21,7 +21,23 @@ export function trackEvent(event: string, payload: AnalyticsPayload = {}) {
   }
 }
 
+/** Homepage funnel: hero planner, style cards, best-match, final CTA (distinct from generic hero_form_start). */
+export type HomeCtaSource =
+  | "hero_planner_match"
+  | "choose_style_featured_join"
+  | "choose_style_private_custom"
+  | "choose_style_browse_bus"
+  | "best_match_idle_card_hero"
+  | "best_match_idle_primary"
+  | "best_match_empty_start"
+  | "best_match_result_card_hero"
+  | "best_match_result_primary"
+  | "final_cta_custom_join"
+  | "final_cta_browse_styles";
+
 export const analytics = {
+  homeCtaClick: (payload: { source: HomeCtaSource }) => trackEvent("home_cta_click", payload),
+
   heroFormStart: (pickupAreaLabel?: string) =>
     trackEvent("hero_form_start", { pickupAreaLabel }),
 

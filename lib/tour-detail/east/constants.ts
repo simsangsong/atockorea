@@ -1,6 +1,12 @@
 /** Canonical list price in USD (matches `tours.price` when `price_currency = USD`). */
 export const EAST_SIGNATURE_LIST_PRICE_USD = 58;
 
+/**
+ * Optional marketing “compare at” anchor in USD (strikethrough on home / cards).
+ * Keep in sync with `staticTourProductRegistry` east product `compareAtPriceUsd`.
+ */
+export const EAST_SIGNATURE_COMPARE_AT_PRICE_USD = 78;
+
 /** Marketing anchor when tour row missing (same as list USD). */
 export const EAST_SIGNATURE_ANCHOR_USD = EAST_SIGNATURE_LIST_PRICE_USD;
 

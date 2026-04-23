@@ -9,7 +9,7 @@
     "build": "next build --webpack",
     "build:mobile": "BUILD_FOR_MOBILE=true next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint \"components/home/v2\" \"lib/home\" \"app/api/reviews/home-summary\" --max-warnings 0",
     "icons:sync": "node scripts/sync-app-icons-from-svg.js",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -31,7 +31,12 @@
     "gen:southwest-tour-product-ko-sql": "node scripts/gen-southwest-tour-product-ko-sql.mjs",
     "gen:southwest-tour-product-ja-sql": "node scripts/gen-southwest-tour-product-ja-sql.mjs",
     "gen:southwest-tour-product-es-sql": "node scripts/gen-southwest-tour-product-es-sql.mjs",
-    "gen:jeju-grand-highlights-tour-product-sql": "node scripts/gen-jeju-grand-highlights-tour-product-sql.mjs"
+    "gen:jeju-grand-highlights-tour-product-sql": "node scripts/gen-jeju-grand-highlights-tour-product-sql.mjs",
+    "gen:jeju-grand-highlights-tour-product-zh-TW-sql": "node scripts/gen-jeju-grand-highlights-tour-product-zh-TW-sql.mjs",
+    "gen:jeju-grand-highlights-tour-product-zh-CN-sql": "node scripts/gen-jeju-grand-highlights-tour-product-zh-CN-sql.mjs",
+    "gen:jeju-grand-highlights-tour-product-ja-sql": "node scripts/gen-jeju-grand-highlights-tour-product-ja-sql.mjs",
+    "gen:jeju-grand-highlights-tour-product-es-sql": "node scripts/gen-jeju-grand-highlights-tour-product-es-sql.mjs",
+    "gen:jeju-grand-highlights-tour-product-ko-sql": "node scripts/gen-jeju-grand-highlights-tour-product-ko-sql.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",

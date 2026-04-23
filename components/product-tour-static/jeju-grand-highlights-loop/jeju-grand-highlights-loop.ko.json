@@ -1,0 +1,1616 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 1,
+  "slug": "jeju-grand-highlights-loop",
+  "locale": "ko",
+  "product_id": "jeju-grand-highlights-loop",
+  "seo": {
+    "pageTitle": "제주 한라산 · 대포주상절리대 · 정방폭포 · 성산일출봉 소그룹 일일투어 | AtoC Korea",
+    "metaDescription": "제주에서 하루만 가능한 여행자를 위해 핵심 명소만 효율적으로 엮은 소그룹 일일투어입니다. 한라산과 대포주상절리대, 정방폭포, 성산일출봉까지 제주를 대표하는 자연 명소를 하루에 알차게 둘러봅니다."
+  },
+  "catalog_card": {
+    "slug": "jeju-grand-highlights-loop",
+    "title": "제주 그랜드 하이라이트 루프 소그룹 일일투어",
+    "subtitle": "한라산부터 성산일출봉까지, 제주 대표 명소를 하루에 효율적으로 둘러보는 코스",
+    "region": "제주 전일주 루트",
+    "duration": "9~9.5시간",
+    "stopsCount": 5,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "하루 여행에 추천",
+      "핵심 명소 압축 코스"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
+    "priceLabel": "1인 US$78부터",
+    "shortCardDescription": "시간이 많지 않은 여행자에게 맞춘 제주 전일주 코스로, 한라산과 남부 해안, 성산일출봉까지 하루에 효율적으로 연결합니다."
+  },
+  "headlineLine1": "제주 그랜드 하이라이트 루프",
+  "headlineLine2": "소그룹 일일투어",
+  "price": {
+    "amountLabel": "78",
+    "currency": "USD",
+    "per": "인"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "imagePosition": "center 35%",
+    "tagline": "시간이 많지 않은 여행자를 위해 설계된 고밀도 코스로, 한라산과 제주 남부 해안의 절경, 폭포, 성산일출봉까지 하루에 효율적으로 둘러봅니다.",
+    "pills": [
+      "하루 여행에 추천",
+      "소그룹 일일투어",
+      "제주 대표 명소"
+    ],
+    "meta": {
+      "duration": "9~9.5시간",
+      "region": "제주 전일주 루트",
+      "stops": "5개 스팟",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "개요"
+    },
+    {
+      "id": "itinerary",
+      "label": "일정"
+    },
+    {
+      "id": "details",
+      "label": "상세정보"
+    },
+    {
+      "id": "faq",
+      "label": "자주 묻는 질문"
+    },
+    {
+      "id": "reviews",
+      "label": "후기"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "사진 만족도",
+      "value": "높음"
+    },
+    {
+      "icon": "mountain",
+      "label": "풍경 밀도",
+      "value": "매우 높음"
+    },
+    {
+      "icon": "footprints",
+      "label": "도보 강도",
+      "value": "중간~높음"
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "우천 적합도",
+      "value": "보통"
+    },
+    {
+      "icon": "users",
+      "label": "가족 여행 적합도",
+      "value": "보통"
+    },
+    {
+      "icon": "gauge",
+      "label": "전체 페이스",
+      "value": "빠름"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+      "location": "전체 루트",
+      "atmosphere": "하루에 제주 대표 풍경을 밀도 있게 담는 코스",
+      "alt": "제주 핵심 명소 일일투어의 전체적인 분위기"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+      "location": "한라산 출발 스팟",
+      "atmosphere": "고지대의 맑고 상쾌한 산 공기",
+      "alt": "한라산 어승생악 트레일의 분위기"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+      "location": "주상절리 해안",
+      "atmosphere": "파도와 절벽이 강한 대비를 만드는 풍경",
+      "alt": "제주 대포주상절리대 해안 풍경"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      "location": "바다 곁 폭포",
+      "atmosphere": "오후 루트에서 풍경의 결이 한 번 바뀌는 구간",
+      "alt": "정방폭포 해안 풍경"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
+      "location": "분화구 피날레",
+      "atmosphere": "마무리 지점으로 인상적인 상징성을 주는 풍경",
+      "alt": "성산일출봉 분화구와 해안선"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "09:30",
+      "duration": "70분",
+      "name": "한라산 어승생악",
+      "category": "한라산 산록 트레일",
+      "description": "하루 일정은 한라산의 맑고 시원한 고지대 공기에서 시작됩니다. 어승생악은 숲길과 화산 지형, 전망 포인트가 자연스럽게 이어져 첫 스팟부터 제주다운 인상을 강하게 남깁니다.",
+      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+      "highlights": [
+        "한라산에서 비교적 부담 없이 접근할 수 있는 대표 전망 포인트 중 하나",
+        "숲길과 산 공기로 하루를 상쾌하게 여는 시작점",
+        "도심에서 바로 해안으로 이동하는 것보다 제주 지형의 개성이 훨씬 또렷하게 느껴지는 동선",
+        "시간이 제한적이어도 첫 스팟부터 충분한 인상을 남길 수 있는 코스"
+      ],
+      "timeUsed": [
+        "도착 후 트레일 안내 및 이동 속도 체크",
+        "전망 지점까지 메인 오르막 구간 이동",
+        "짧은 사진 촬영과 휴식 후 하산"
+      ],
+      "whyOnRoute": "이곳에서 시작하면 한라산의 높이감과 에너지, 제주 산지의 인상을 먼저 만든 뒤 남부 해안으로 자연스럽게 연결할 수 있습니다.",
+      "visitBasics": {
+        "hours": "05:00부터, 계절별 제한 가능",
+        "closed": "기상 악화 시 통제될 수 있음",
+        "admission": "무료",
+        "walking": "중간 정도의 오르막"
+      },
+      "convenience": {
+        "restroom": "트레일 입구",
+        "parking": "주차 가능"
+      },
+      "smartNotes": {
+        "photo": "날씨가 맑을수록 인물 중심 사진보다 능선과 원경을 넓게 담는 구도가 더 잘 나오는 편입니다.",
+        "facilities": "기본 편의시설은 주로 입구 주변에 모여 있습니다.",
+        "tip": "비가 온 뒤나 기온이 낮은 계절에는 다른 스팟보다 미끄럼 방지와 보온이 더 중요하게 느껴집니다."
+      }
+    },
+    {
+      "number": 2,
+      "time": "11:15",
+      "duration": "40분",
+      "name": "대포주상절리대",
+      "category": "현무암 해안",
+      "description": "한라산 구간을 내려오면 남부 해안에서 분위기가 확실하게 전환됩니다. 파도와 현무암 기둥, 절벽 해안의 대비가 강해 점심 전부터 하루의 시각적 밀도를 크게 끌어올리는 스팟입니다.",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+      "highlights": [
+        "해안선을 따라 펼쳐지는 육각형 현무암 기둥 풍경",
+        "한라산 구간 직후라 더욱 강하게 느껴지는 해안 절벽의 대비감",
+        "짧은 체류 시간에도 시각적 임팩트가 큰 효율적인 포인트",
+        "서귀포 남쪽을 대표하는 사진 스팟 중 하나"
+      ],
+      "timeUsed": [
+        "입구에서 짧은 안내",
+        "메인 해안 전망 포인트까지 이동",
+        "사진 촬영 후 집결지로 복귀"
+      ],
+      "whyOnRoute": "오전 구간에 긴 도보를 더하지 않으면서도 제주 남부 해안의 인상을 효율적으로 담을 수 있는 스팟입니다.",
+      "visitBasics": {
+        "hours": "09:00~18:00 (입장 마감 17:40)",
+        "closed": "연중 운영",
+        "admission": "성인 KRW 2,000 / 어린이·청소년 KRW 1,000",
+        "walking": "쉬움~보통"
+      },
+      "convenience": {
+        "restroom": "입구 구역",
+        "parking": "주차 가능(유료)"
+      },
+      "smartNotes": {
+        "photo": "파도 방향과 물보라, 측면광에 따라 분위기가 크게 달라져 넓은 해안 구도가 특히 잘 어울립니다.",
+        "facilities": "입구 편의시설이 잘 갖춰져 있고 전망대까지 가는 동선도 비교적 무난합니다.",
+        "tip": "맑은 날에도 내륙보다 바람이 세고 체감 온도가 더 낮게 느껴지는 경우가 많습니다."
+      }
+    },
+    {
+      "number": 3,
+      "time": "12:15",
+      "duration": "60분",
+      "name": "점심 식사",
+      "category": "점심 스팟",
+      "description": "이 시간은 단순한 휴식이 아니라 오후의 정방폭포와 성산일출봉까지 체력을 안정적으로 이어 주는 핵심 리셋 구간입니다.",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+      "highlights": [
+        "빠른 템포의 일정에서 확실하게 체력을 회복하는 타이밍",
+        "동쪽 이동 전 페이스를 다시 정비하는 구간",
+        "활동적인 일정에 익숙한 다양한 연령대에게 실질적으로 도움이 되는 구성",
+        "하루가 지나치게 압축된 느낌으로 흐르지 않게 잡아 주는 역할"
+      ],
+      "timeUsed": [
+        "식당 도착 및 착석",
+        "식사와 짧은 휴식",
+        "오후 일정 출발 준비"
+      ],
+      "whyOnRoute": "점심을 이 지점에 배치하면 오후 일정의 밀도를 유지하면서도 이동만 많은 코스로 느껴지지 않게 해줍니다.",
+      "visitBasics": {
+        "hours": "식당 운영 시간에 따라 다름",
+        "closed": "업체별 상이",
+        "admission": "별도 명시가 없으면 현장 식사비 개별 결제",
+        "walking": "거의 없음"
+      },
+      "convenience": {
+        "restroom": "식당 내부",
+        "parking": "주차 가능"
+      },
+      "smartNotes": {
+        "photo": "하루 종일 풍경 중심 일정이기 때문에 음식 사진이 시각적 리듬을 바꿔 주는 역할을 합니다.",
+        "facilities": "식사 관련 편의시설은 대체로 충분한 편입니다.",
+        "tip": "이 구간은 서두르기보다 편하게 식사하고 체력을 회복하는 쪽이 오후 만족도에 더 도움이 됩니다."
+      }
+    },
+    {
+      "number": 4,
+      "time": "13:35",
+      "duration": "50분",
+      "name": "정방폭포",
+      "category": "바다로 떨어지는 폭포",
+      "description": "점심 이후 정방폭포는 코스의 분위기를 한 번 더 바꿔 줍니다. 돌계단과 해무, 바다 쪽으로 떨어지는 폭포가 어우러져 남제주의 개성이 강하게 드러나는 풍경을 만듭니다.",
+      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      "highlights": [
+        "폭포와 바위 해안이 한 화면에 들어오는 압축감 있는 장면",
+        "점심 이후 분위기 전환이 분명하게 느껴지는 포인트",
+        "동쪽으로 길게 이동하기 전까지 시각적 긴장감을 유지해 주는 스팟",
+        "고밀도 하이라이트 루트 안에서도 풍경 변화를 확실히 주는 장소"
+      ],
+      "timeUsed": [
+        "도착 후 입장 동선 확인",
+        "메인 폭포 구역 관람",
+        "사진 촬영과 짧은 휴식 후 복귀"
+      ],
+      "whyOnRoute": "성산 쪽으로 길게 이동하기 전에 남부 해안의 인상을 한 번 더 깊게 남겨 전체 루트를 더 완성도 있게 만들어 줍니다.",
+      "visitBasics": {
+        "hours": "09:00~17:20",
+        "closed": "연중 운영",
+        "admission": "성인 KRW 2,000 / 어린이 KRW 1,000",
+        "walking": "보통, 계단 포함"
+      },
+      "convenience": {
+        "restroom": "입구 구역",
+        "parking": "주차 가능"
+      },
+      "smartNotes": {
+        "photo": "아래쪽 바위 지대는 분위기 있는 사진이 잘 나오지만 발판과 물보라 때문에 현장 체감 난이도는 조금 더 높게 느껴질 수 있습니다.",
+        "facilities": "기본 편의시설은 입구 근처에 있습니다.",
+        "tip": "계단과 바위 길이 있어 지도상으로 보이는 것보다 현장에서 조금 더 활동적으로 느껴지는 편입니다."
+      }
+    },
+    {
+      "number": 5,
+      "time": "15:25",
+      "duration": "70분",
+      "name": "성산일출봉",
+      "category": "화산 분화구 피날레",
+      "description": "마지막을 성산일출봉으로 마무리하면 이 루트의 상징성이 가장 또렷해집니다. 한라산과 남부 해안, 정방폭포를 거친 뒤 제주를 대표하는 랜드마크 중 하나에서 하루를 끝내면 전체 일정이 훨씬 완결감 있게 느껴집니다.",
+      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
+      "highlights": [
+        "제주의 대표 랜드마크로 마무리하는 상징적인 피날레",
+        "고밀도 일정의 마지막에 확실한 시각적 보상을 주는 스팟",
+        "팀 컨디션에 따라 정상 등반 또는 하부 전망 위주로 유연하게 운영 가능",
+        "제주가 처음이면서 시간이 짧은 여행자에게 특히 만족도가 높은 마무리"
+      ],
+      "timeUsed": [
+        "도착 후 동선과 보행 강도 안내",
+        "정상 등반 또는 하부 전망 코스 선택",
+        "사진 촬영 후 재집결, 제주시 복귀"
+      ],
+      "whyOnRoute": "하루의 마지막을 장식하기에 가장 상징적인 장소이자, 이 코스를 진짜 제주 전일주 하이라이트 여정처럼 느끼게 만드는 핵심 스팟입니다.",
+      "visitBasics": {
+        "hours": "유료 입장 시간은 계절에 따라 변동",
+        "closed": "매월 첫째 주 월요일 휴무 (공휴일이면 다음 날)",
+        "admission": "성인 KRW 5,000 / 어린이 KRW 2,500",
+        "walking": "보통~다소 높음, 정상까지 오르면 더 힘들 수 있음"
+      },
+      "convenience": {
+        "restroom": "하부 구역 및 주변 시설",
+        "parking": "대형 주차장"
+      },
+      "smartNotes": {
+        "photo": "정상만 따로 담기보다 분화구와 해안선을 함께 넣는 넓은 구도가 훨씬 만족스럽게 나오는 편입니다.",
+        "facilities": "기슭 주변 편의시설이 비교적 잘 갖춰져 있습니다.",
+        "tip": "인파와 날씨, 팀의 체력 수준에 따라 정상 체험의 강도와 만족도가 크게 달라질 수 있습니다."
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "id": "01",
+      "name": "어승생악",
+      "theme": "한라산"
+    },
+    {
+      "id": "02",
+      "name": "주상절리대",
+      "theme": "절벽 해안"
+    },
+    {
+      "id": "03",
+      "name": "점심",
+      "theme": "리셋"
+    },
+    {
+      "id": "04",
+      "name": "정방폭포",
+      "theme": "폭포"
+    },
+    {
+      "id": "05",
+      "name": "성산일출봉",
+      "theme": "분화구"
+    }
+  ],
+  "routePhases": [
+    {
+      "label": "오전",
+      "range": "1-2",
+      "theme": "한라산에서 남부 해안까지",
+      "bgClass": "bg-sky-50/70",
+      "textClass": "text-sky-700",
+      "dotClass": "bg-sky-500"
+    },
+    {
+      "label": "정오~오후 초반",
+      "range": "3-4",
+      "theme": "점심과 폭포",
+      "bgClass": "bg-amber-50/70",
+      "textClass": "text-amber-700",
+      "dotClass": "bg-amber-500"
+    },
+    {
+      "label": "마무리",
+      "range": "5",
+      "theme": "성산일출봉 피날레",
+      "bgClass": "bg-emerald-50/70",
+      "textClass": "text-emerald-700",
+      "dotClass": "bg-emerald-500"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "하루 동선은 이렇게 이어집니다",
+    "subtitle": "루트는 한라산에서 시작해 제주 남부 해안을 지나 성산일출봉에서 마무리됩니다. 일반적으로 08:30~09:00 사이 픽업이 진행되며, 제주시 복귀는 17:40~18:00 전후입니다."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "제주에서 하루만 가능한 여행자",
+      "아침에 제주에 도착해 하루를 알차게 쓰고 싶은 여행자",
+      "대표 랜드마크 위주로 보고 싶은 여행자",
+      "활동적인 관광 스타일을 선호하는 여행자"
+    ],
+    "lessIdeal": [
+      "느린 템포를 선호하는 여행자",
+      "계단이나 오르막을 피하고 싶은 여행자",
+      "아주 어린 아이와 함께하는 가족",
+      "유모차 의존도가 높은 팀"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "시간이 많지 않은 여행자에게 맞춘 구성",
+        "icon": "clock-3",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "한라산으로 시작",
+            "detail": "한라산에서 시작하면 본격적인 횡단 이동 전에 제주 산지의 지형감을 먼저 확실하게 느낄 수 있습니다."
+          },
+          {
+            "label": "남부 해안을 중간에 배치",
+            "detail": "주상절리대와 점심, 정방폭포가 서쪽에서 동쪽으로 흐르는 동선을 잡아 주면서도 하루 내내 풍경 밀도를 유지해 줍니다."
+          },
+          {
+            "label": "성산일출봉으로 마무리",
+            "detail": "마지막을 성산으로 잡으면 각각의 지역 스팟을 따로 보는 느낌보다 하나의 완성된 제주 하이라이트 여정처럼 느껴집니다."
+          }
+        ]
+      },
+      {
+        "title": "이 하루가 특히 알차게 느껴지는 이유",
+        "icon": "mountain",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "도보 강도가 있는 두 구간",
+            "detail": "어승생악과 성산일출봉이 들어가 일반적인 소그룹 일일투어보다 체감 활동량이 높은 편입니다."
+          },
+          {
+            "label": "풍경 밀도를 우선한 설계",
+            "detail": "이 코스는 천천히 보는 휴식형 루트가 아니라, 하루 안에 제주를 더 진하게 경험하고 싶은 여행자를 위한 일정입니다."
+          },
+          {
+            "label": "시간이 짧을수록 더 가치 있는 선택",
+            "detail": "제주에서 하루만 가능하다면, 속도를 너무 늦추기보다 대표 명소를 밀도 있게 보는 편이 더 만족스러운 경우가 많습니다."
+          }
+        ]
+      },
+      {
+        "title": "현장 조건이 달라질 때",
+        "icon": "wind",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-600",
+        "items": [
+          {
+            "label": "한라산 입산 제한",
+            "detail": "어승생악은 계절 규정이나 날씨 통제로 인해 이용이 제한될 수 있습니다."
+          },
+          {
+            "label": "해안 노출 구간의 바람 영향",
+            "detail": "주상절리대와 성산일출봉은 날씨 영향을 가장 크게 받는 해안 스팟입니다."
+          },
+          {
+            "label": "복귀 시간이 소폭 변동될 수 있음",
+            "detail": "교통 상황과 팀의 보행 속도, 현장 혼잡도에 따라 최종 복귀 시간이 조금 달라질 수 있습니다."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "픽업 및 복귀 시간",
+      "preview": "아침 일찍 출발해 저녁 무렵 제주시 복귀",
+      "content": [
+        "제주시 내 픽업 시간: 08:30~09:00",
+        "제주시 복귀 예정: 17:40~18:00 전후",
+        "공항 픽업은 상황에 따라 조율 가능",
+        "최종 집합 시간은 전날 밤에 확정 안내"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "도보 및 지형 안내",
+      "preview": "일반 코스보다 활동량이 있는 편",
+      "content": [
+        "이 루트에는 상대적으로 활동량이 있는 도보 구간이 두 번 포함됩니다.",
+        "어승생악은 오르막과 계단 구간이 있습니다.",
+        "정방폭포는 계단과 바위길이 포함됩니다.",
+        "팀이 정상 등반을 선택할 경우 성산일출봉 구간은 더 힘들게 느껴질 수 있습니다.",
+        "접지력 있는 편한 운동화 착용을 권장합니다."
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "날씨 및 운영 조정",
+      "preview": "보통은 정상 진행, 필요 시 유연하게 조정",
+      "content": [
+        "가벼운 비: 일반적으로 정상 진행",
+        "강풍: 주상절리대나 성산일출봉 같은 노출 구간은 체류 시간이 짧아질 수 있음",
+        "한라산 통제: 어승생악 이용이 제한되면 일정 조정 또는 대체 스팟 적용 가능",
+        "휴무일·현장 상황: 필요 시 대체 스팟 또는 체류 시간 조정 가능"
+      ]
+    },
+    {
+      "id": "flight",
+      "title": "당일 제주 도착 또는 출발인 경우",
+      "preview": "저녁 시간 여유를 넉넉히 잡아야 합니다",
+      "content": [
+        "이 코스는 하루 안에 제주 대표 명소를 밀도 있게 담는 일정입니다.",
+        "당일 도착·출발도 가능할 수는 있지만, 저녁 시간에 충분한 여유가 있을 때만 권장됩니다.",
+        "늦은 시간대 항공편을 강하게 추천합니다.",
+        "시간 리스크를 판단할 때는 교통 상황과 도보 속도, 현장 변수를 함께 고려해 주세요."
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "추천 복장 및 준비물",
+      "preview": "운동화, 레이어드 복장, 가벼운 방풍 재킷",
+      "content": [
+        "접지력 좋은 운동화",
+        "산과 해안의 기온 차이에 대응할 수 있는 레이어드 복장",
+        "가벼운 방풍 재킷",
+        "모자와 자외선 차단 용품",
+        "물"
+      ]
+    },
+    {
+      "id": "included",
+      "title": "포함 / 불포함 사항",
+      "preview": "가이드, 차량, 픽업, 입장권 포함",
+      "variant": "included",
+      "content": [
+        "전문 영어 가이드",
+        "소그룹 차량",
+        "제주시 호텔 픽업 및 드롭오프",
+        "전 일정 입장권",
+        "생수",
+        "점심 식사(현장 개별 결제)",
+        "개인 쇼핑 비용",
+        "가이드 팁"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "실시간 날씨 연동"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "매일 업데이트"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "name": "봄",
+      "icon": "flower",
+      "description": "산 공기가 특히 상쾌하고, 섬 전체의 시야도 맑고 깨끗하게 느껴지는 시기입니다.",
+      "tag": "균형감이 가장 좋음",
+      "bgClass": "bg-spring",
+      "iconColor": "text-pink-500"
+    },
+    {
+      "name": "여름",
+      "icon": "sun",
+      "description": "해가 가장 길고, 해안 풍경의 색감도 가장 선명하고 짙게 느껴지는 계절입니다.",
+      "tag": "일조 시간이 가장 김",
+      "bgClass": "bg-summer",
+      "iconColor": "text-sky-500"
+    },
+    {
+      "name": "가을",
+      "icon": "leaf",
+      "description": "하늘이 맑은 날이 많아 전일주 루트의 만족감이 특히 높게 느껴지는 시즌입니다.",
+      "tag": "시야가 가장 좋음",
+      "bgClass": "bg-autumn",
+      "iconColor": "text-amber-600"
+    },
+    {
+      "name": "겨울",
+      "icon": "snow",
+      "description": "공기가 더 차고 맑아져 산과 바다의 대비가 한층 또렷하게 드러납니다.",
+      "tag": "맑고 선명한 계절",
+      "bgClass": "bg-winter",
+      "iconColor": "text-slate-500"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "clock-3",
+      "title": "하루에 최대한 많이 보는 코스",
+      "description": "시간이 많지 않은 여행자에게 맞춘 일정",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600"
+    },
+    {
+      "icon": "mountain",
+      "title": "제주 대표 랜드마크 중심",
+      "description": "한라산부터 성산일출봉까지",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600"
+    },
+    {
+      "icon": "users",
+      "title": "소그룹 운영",
+      "description": "도로 상황과 현장 변수에 더 유연하게 대응 가능",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "예약 직후",
+      "title": "즉시 예약 확인",
+      "detail": "루트 요약이 포함된 예약 확인 안내가 발송됩니다."
+    },
+    {
+      "timing": "출발 12시간 전",
+      "title": "사전 안내",
+      "detail": "날씨 메모와 일정 조정 가능 사항을 미리 공유합니다."
+    },
+    {
+      "timing": "출발 전날 밤",
+      "title": "최종 픽업 안내",
+      "detail": "정확한 픽업 시간과 연락 정보를 전달드립니다."
+    },
+    {
+      "timing": "출발 당일 아침",
+      "title": "당일 동선 안내",
+      "detail": "현장 기준의 최신 변경 사항이 있으면 출발 전에 간단히 안내드립니다."
+    },
+    {
+      "timing": "투어 진행 중",
+      "title": "스팟별 안내",
+      "detail": "필요한 정보는 각 스팟에서 핵심만 전달합니다."
+    },
+    {
+      "timing": "투어 종료 후",
+      "title": "후속 지원",
+      "detail": "필요 시 추가 추천과 후속 안내를 이어서 도와드립니다."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "one-day",
+      "question": "제주에서 하루만 가능하다면 이 루트가 맞을까요?",
+      "answer": "네. 이 코스는 제주 핵심 랜드마크를 하루 안에 효율적으로 담고 싶은 여행자를 위해 설계되었으며, 일반 일일투어보다 페이스가 빠른 편입니다."
+    },
+    {
+      "id": "tiring",
+      "question": "이 루트는 많이 힘든 편인가요?",
+      "answer": "일반적인 소그룹 일일투어보다 활동량이 조금 더 느껴지는 편입니다. 도보가 있는 구간이 두 번 있고, 섬을 넓게 이동하기 때문입니다."
+    },
+    {
+      "id": "parents",
+      "question": "부모님과 함께 가기에도 괜찮을까요?",
+      "answer": "부모님의 도보 가능 수준과 빠른 관광 템포에 대한 선호도에 따라 달라집니다. 완전히 여유로운 관광보다는 활동성이 있는 성인 여행자에게 더 잘 맞습니다."
+    },
+    {
+      "id": "flight",
+      "question": "제주에 당일 도착하거나 당일 떠나는 일정이어도 참여할 수 있나요?",
+      "answer": "가능할 수는 있지만 저녁 시간 여유가 충분할 때만 추천됩니다. 항공편 시간이 촉박하다면 이 코스는 권장되지 않습니다."
+    },
+    {
+      "id": "order",
+      "question": "당일에 방문 순서가 바뀔 수도 있나요?",
+      "answer": "네. 하루 동선을 더 원활하게 운영하기 위해 교통 상황과 날씨, 현장 혼잡도에 따라 순서가 소폭 조정될 수 있습니다."
+    },
+    {
+      "id": "seongsan-last",
+      "question": "왜 성산일출봉을 마지막에 넣었나요?",
+      "answer": "하루의 마무리 인상이 더 강해지기 때문입니다. 한라산과 남부 해안, 정방폭포를 본 뒤 성산으로 끝내면 전체 루트가 훨씬 완결감 있게 느껴집니다."
+    },
+    {
+      "id": "summit",
+      "question": "성산일출봉은 꼭 정상까지 올라가야 하나요?",
+      "answer": "반드시 그렇지는 않습니다. 정상 등반 여부와 해당 구간의 강도는 팀의 속도와 날씨, 현장 혼잡도에 따라 유연하게 조정됩니다."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "price": {
+      "amountLabel": "78",
+      "currency": "USD",
+      "per": "인"
+    }
+  },
+  "matching_profile": {
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "region_type": "full_island",
+    "region_tags": [
+      "jeju_all_around",
+      "hallasan_to_seongsan"
+    ],
+    "theme_tags": [
+      "hallasan",
+      "basalt",
+      "waterfall",
+      "crater",
+      "fast_paced",
+      "one_day"
+    ],
+    "poi_tags": [
+      "eoseungsaengak",
+      "jusangjeolli",
+      "jeongbang",
+      "seongsan"
+    ],
+    "pace_level": 5,
+    "walking_level": 4,
+    "scenic_level": 5,
+    "photo_level": 5,
+    "culture_level": 2,
+    "relax_level": 2,
+    "first_time_fit": 5,
+    "family_fit": 2,
+    "senior_fit": 2,
+    "couple_fit": 4,
+    "active_traveler_fit": 5,
+    "one_day_fit": 5,
+    "same_day_flight_fit": 1,
+    "rain_fit": 2,
+    "value_for_money_fit": 3,
+    "iconic_landmark_fit": 5,
+    "cafe_fit": 1,
+    "adult_family_fit": 3,
+    "young_kids_fit": 2,
+    "senior_active_fit": 3,
+    "senior_general_fit": 2,
+    "mobility_friendly_fit": 2,
+    "stroller_fit": 1,
+    "indoor_ratio": 28,
+    "weather_sensitivity": 4,
+    "local_culture_fit": 2,
+    "shopping_fit": 1,
+    "storytelling_fit": 3,
+    "comfort_level": 2,
+    "budget_fit": 3,
+    "premium_fit": 3,
+    "small_group_fit": 5,
+    "private_fit": 1,
+    "bus_fit": 1,
+    "price_band": "mid",
+    "pickup_base": "jeju_city",
+    "return_time_band": "17:40-18:15",
+    "duration_band": "9.5h",
+    "min_recommended_age": 10,
+    "hard_constraints": {
+      "avoidIf": [
+        "needs_slow_pace",
+        "tight_same_day_departure",
+        "strict_same_day_flight_schedule"
+      ],
+      "notIdealFor": [
+        "toddlers",
+        "stroller_heavy",
+        "very_low_mobility"
+      ]
+    },
+    "walking_notes": [
+      "Eoseungsaengak includes about 1 hour of uphill trail walking",
+      "Jeongbang Waterfall includes a stair section",
+      "Seongsan Ilchulbong summit climb is recommended and takes about 55 minutes"
+    ],
+    "keywords": [
+      "jeju one day tour",
+      "jeju full island loop",
+      "hallasan",
+      "seongsan ilchulbong",
+      "jusangjeolli cliff",
+      "jeongbang waterfall",
+      "jeju grand tour",
+      "fast paced jeju tour",
+      "jeju highlights",
+      "jeju iconic landmarks",
+      "jeju day trip",
+      "jeju full day highlights",
+      "hallasan to seongsan",
+      "jeju small group day tour"
+    ],
+    "synonym_hints": [
+      "full island loop",
+      "highlights in one day",
+      "busy but iconic",
+      "see more in one day",
+      "fast highlights route",
+      "jeju full day landmarks",
+      "one day around jeju",
+      "iconic jeju route"
+    ],
+    "profile_version": 3,
+    "is_active": true
+  },
+  "matching_metadata": {
+    "schema_version": "tour_matching_profile.v1",
+    "last_reviewed_at": "2026-04-22",
+    "score_rationale": {
+      "pace_level": "A 9–9.5 hour route with five major stops and an optional Seongsan summit section, making this one of the fastest-paced products in the lineup.",
+      "walking_level": "Moderate to moderately high due to the uphill Eoseungsaengak section, stairs at Jeongbang, and the recommended Seongsan summit climb.",
+      "scenic_level": "Very high, with classic Jeju iconography concentrated into one route: Hallasan, basalt cliffs, waterfall, and volcanic crater scenery.",
+      "culture_level": "Low to moderate because the route is centered on geology and nature rather than history, village life, or cultural immersion.",
+      "relax_level": "Low, because the fixed route and tight timing prioritize coverage over leisure.",
+      "first_time_fit": "An almost textbook highlights set for first-time visitors to Jeju.",
+      "family_fit/young_kids_fit/stroller_fit": "Not ideal for toddlers or stroller-heavy groups because of stairs, trails, and the overall pace.",
+      "senior_fit/senior_general_fit/mobility_friendly_fit": "General or low-stamina seniors are not the best fit; active seniors may still enjoy it.",
+      "same_day_flight_fit": "The 17:40–18:15 return window creates clear risk for tight same-day departure schedules.",
+      "rain_fit/indoor_ratio/weather_sensitivity": "Indoor ratio is only 28%, and both coastal and mountain sections are sensitive to poor weather.",
+      "local_culture_fit/shopping_fit": "There are no market, village, or shopping-focused stops on this route.",
+      "small_group_fit/private_fit/bus_fit": "Built specifically for small-group SUV/van operation, not as a private-only or large-bus product.",
+      "price_band/budget_fit/premium_fit": "At US$78, it sits in the mid-price band rather than at either the premium or low-budget extreme.",
+      "hard_constraints": "Hard exclusions apply to travelers requesting a slow pace, those with same-day flight pressure, and travelers with toddlers, strollers, or very low mobility."
+    }
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "제주 그랜드 하이라이트 루프",
+        "headlineLine2": "소그룹 일일투어",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+          "imagePosition": "center 35%",
+          "tagline": "시간이 많지 않은 여행자를 위해 설계된 고밀도 코스로, 한라산과 제주 남부 해안의 절경, 폭포, 성산일출봉까지 하루에 효율적으로 둘러봅니다.",
+          "pills": [
+            "하루 여행에 추천",
+            "소그룹 일일투어",
+            "제주 대표 명소"
+          ],
+          "meta": {
+            "duration": "9~9.5시간",
+            "region": "제주 전일주 루트",
+            "stops": "5개 스팟",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        },
+        "price": {
+          "amountLabel": "78",
+          "currency": "USD",
+          "per": "인"
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "개요"
+          },
+          {
+            "id": "itinerary",
+            "label": "일정"
+          },
+          {
+            "id": "details",
+            "label": "상세정보"
+          },
+          {
+            "id": "faq",
+            "label": "자주 묻는 질문"
+          },
+          {
+            "id": "reviews",
+            "label": "후기"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "camera",
+            "label": "사진 만족도",
+            "value": "높음"
+          },
+          {
+            "icon": "mountain",
+            "label": "풍경 밀도",
+            "value": "매우 높음"
+          },
+          {
+            "icon": "footprints",
+            "label": "도보 강도",
+            "value": "중간~높음"
+          },
+          {
+            "icon": "cloud-rain",
+            "label": "우천 적합도",
+            "value": "보통"
+          },
+          {
+            "icon": "users",
+            "label": "가족 여행 적합도",
+            "value": "보통"
+          },
+          {
+            "icon": "gauge",
+            "label": "전체 페이스",
+            "value": "빠름"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": 1,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+            "location": "전체 루트",
+            "atmosphere": "하루에 제주 대표 풍경을 밀도 있게 담는 코스",
+            "alt": "제주 핵심 명소 일일투어의 전체적인 분위기"
+          },
+          {
+            "id": 2,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "location": "한라산 출발 스팟",
+            "atmosphere": "고지대의 맑고 상쾌한 산 공기",
+            "alt": "한라산 어승생악 트레일의 분위기"
+          },
+          {
+            "id": 3,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "location": "주상절리 해안",
+            "atmosphere": "파도와 절벽이 강한 대비를 만드는 풍경",
+            "alt": "제주 대포주상절리대 해안 풍경"
+          },
+          {
+            "id": 4,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "location": "바다 곁 폭포",
+            "atmosphere": "오후 루트에서 풍경의 결이 한 번 바뀌는 구간",
+            "alt": "정방폭포 해안 풍경"
+          },
+          {
+            "id": 5,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
+            "location": "분화구 피날레",
+            "atmosphere": "마무리 지점으로 인상적인 상징성을 주는 풍경",
+            "alt": "성산일출봉 분화구와 해안선"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "09:30",
+            "duration": "70분",
+            "name": "한라산 어승생악",
+            "category": "한라산 산록 트레일",
+            "description": "하루 일정은 한라산의 맑고 시원한 고지대 공기에서 시작됩니다. 어승생악은 숲길과 화산 지형, 전망 포인트가 자연스럽게 이어져 첫 스팟부터 제주다운 인상을 강하게 남깁니다.",
+            "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "highlights": [
+              "한라산에서 비교적 부담 없이 접근할 수 있는 대표 전망 포인트 중 하나",
+              "숲길과 산 공기로 하루를 상쾌하게 여는 시작점",
+              "도심에서 바로 해안으로 이동하는 것보다 제주 지형의 개성이 훨씬 또렷하게 느껴지는 동선",
+              "시간이 제한적이어도 첫 스팟부터 충분한 인상을 남길 수 있는 코스"
+            ],
+            "timeUsed": [
+              "도착 후 트레일 안내 및 이동 속도 체크",
+              "전망 지점까지 메인 오르막 구간 이동",
+              "짧은 사진 촬영과 휴식 후 하산"
+            ],
+            "whyOnRoute": "이곳에서 시작하면 한라산의 높이감과 에너지, 제주 산지의 인상을 먼저 만든 뒤 남부 해안으로 자연스럽게 연결할 수 있습니다.",
+            "visitBasics": {
+              "hours": "05:00부터, 계절별 제한 가능",
+              "closed": "기상 악화 시 통제될 수 있음",
+              "admission": "무료",
+              "walking": "중간 정도의 오르막"
+            },
+            "convenience": {
+              "restroom": "트레일 입구",
+              "parking": "주차 가능"
+            },
+            "smartNotes": {
+              "photo": "날씨가 맑을수록 인물 중심 사진보다 능선과 원경을 넓게 담는 구도가 더 잘 나오는 편입니다.",
+              "facilities": "기본 편의시설은 주로 입구 주변에 모여 있습니다.",
+              "tip": "비가 온 뒤나 기온이 낮은 계절에는 다른 스팟보다 미끄럼 방지와 보온이 더 중요하게 느껴집니다."
+            }
+          },
+          {
+            "number": 2,
+            "time": "11:15",
+            "duration": "40분",
+            "name": "대포주상절리대",
+            "category": "현무암 해안",
+            "description": "한라산 구간을 내려오면 남부 해안에서 분위기가 확실하게 전환됩니다. 파도와 현무암 기둥, 절벽 해안의 대비가 강해 점심 전부터 하루의 시각적 밀도를 크게 끌어올리는 스팟입니다.",
+            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "highlights": [
+              "해안선을 따라 펼쳐지는 육각형 현무암 기둥 풍경",
+              "한라산 구간 직후라 더욱 강하게 느껴지는 해안 절벽의 대비감",
+              "짧은 체류 시간에도 시각적 임팩트가 큰 효율적인 포인트",
+              "서귀포 남쪽을 대표하는 사진 스팟 중 하나"
+            ],
+            "timeUsed": [
+              "입구에서 짧은 안내",
+              "메인 해안 전망 포인트까지 이동",
+              "사진 촬영 후 집결지로 복귀"
+            ],
+            "whyOnRoute": "오전 구간에 긴 도보를 더하지 않으면서도 제주 남부 해안의 인상을 효율적으로 담을 수 있는 스팟입니다.",
+            "visitBasics": {
+              "hours": "09:00~18:00 (입장 마감 17:40)",
+              "closed": "연중 운영",
+              "admission": "성인 KRW 2,000 / 어린이·청소년 KRW 1,000",
+              "walking": "쉬움~보통"
+            },
+            "convenience": {
+              "restroom": "입구 구역",
+              "parking": "주차 가능(유료)"
+            },
+            "smartNotes": {
+              "photo": "파도 방향과 물보라, 측면광에 따라 분위기가 크게 달라져 넓은 해안 구도가 특히 잘 어울립니다.",
+              "facilities": "입구 편의시설이 잘 갖춰져 있고 전망대까지 가는 동선도 비교적 무난합니다.",
+              "tip": "맑은 날에도 내륙보다 바람이 세고 체감 온도가 더 낮게 느껴지는 경우가 많습니다."
+            }
+          },
+          {
+            "number": 3,
+            "time": "12:15",
+            "duration": "60분",
+            "name": "점심 식사",
+            "category": "점심 스팟",
+            "description": "이 시간은 단순한 휴식이 아니라 오후의 정방폭포와 성산일출봉까지 체력을 안정적으로 이어 주는 핵심 리셋 구간입니다.",
+            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+            "highlights": [
+              "빠른 템포의 일정에서 확실하게 체력을 회복하는 타이밍",
+              "동쪽 이동 전 페이스를 다시 정비하는 구간",
+              "활동적인 일정에 익숙한 다양한 연령대에게 실질적으로 도움이 되는 구성",
+              "하루가 지나치게 압축된 느낌으로 흐르지 않게 잡아 주는 역할"
+            ],
+            "timeUsed": [
+              "식당 도착 및 착석",
+              "식사와 짧은 휴식",
+              "오후 일정 출발 준비"
+            ],
+            "whyOnRoute": "점심을 이 지점에 배치하면 오후 일정의 밀도를 유지하면서도 이동만 많은 코스로 느껴지지 않게 해줍니다.",
+            "visitBasics": {
+              "hours": "식당 운영 시간에 따라 다름",
+              "closed": "업체별 상이",
+              "admission": "별도 명시가 없으면 현장 식사비 개별 결제",
+              "walking": "거의 없음"
+            },
+            "convenience": {
+              "restroom": "식당 내부",
+              "parking": "주차 가능"
+            },
+            "smartNotes": {
+              "photo": "하루 종일 풍경 중심 일정이기 때문에 음식 사진이 시각적 리듬을 바꿔 주는 역할을 합니다.",
+              "facilities": "식사 관련 편의시설은 대체로 충분한 편입니다.",
+              "tip": "이 구간은 서두르기보다 편하게 식사하고 체력을 회복하는 쪽이 오후 만족도에 더 도움이 됩니다."
+            }
+          },
+          {
+            "number": 4,
+            "time": "13:35",
+            "duration": "50분",
+            "name": "정방폭포",
+            "category": "바다로 떨어지는 폭포",
+            "description": "점심 이후 정방폭포는 코스의 분위기를 한 번 더 바꿔 줍니다. 돌계단과 해무, 바다 쪽으로 떨어지는 폭포가 어우러져 남제주의 개성이 강하게 드러나는 풍경을 만듭니다.",
+            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "highlights": [
+              "폭포와 바위 해안이 한 화면에 들어오는 압축감 있는 장면",
+              "점심 이후 분위기 전환이 분명하게 느껴지는 포인트",
+              "동쪽으로 길게 이동하기 전까지 시각적 긴장감을 유지해 주는 스팟",
+              "고밀도 하이라이트 루트 안에서도 풍경 변화를 확실히 주는 장소"
+            ],
+            "timeUsed": [
+              "도착 후 입장 동선 확인",
+              "메인 폭포 구역 관람",
+              "사진 촬영과 짧은 휴식 후 복귀"
+            ],
+            "whyOnRoute": "성산 쪽으로 길게 이동하기 전에 남부 해안의 인상을 한 번 더 깊게 남겨 전체 루트를 더 완성도 있게 만들어 줍니다.",
+            "visitBasics": {
+              "hours": "09:00~17:20",
+              "closed": "연중 운영",
+              "admission": "성인 KRW 2,000 / 어린이 KRW 1,000",
+              "walking": "보통, 계단 포함"
+            },
+            "convenience": {
+              "restroom": "입구 구역",
+              "parking": "주차 가능"
+            },
+            "smartNotes": {
+              "photo": "아래쪽 바위 지대는 분위기 있는 사진이 잘 나오지만 발판과 물보라 때문에 현장 체감 난이도는 조금 더 높게 느껴질 수 있습니다.",
+              "facilities": "기본 편의시설은 입구 근처에 있습니다.",
+              "tip": "계단과 바위 길이 있어 지도상으로 보이는 것보다 현장에서 조금 더 활동적으로 느껴지는 편입니다."
+            }
+          },
+          {
+            "number": 5,
+            "time": "15:25",
+            "duration": "70분",
+            "name": "성산일출봉",
+            "category": "화산 분화구 피날레",
+            "description": "마지막을 성산일출봉으로 마무리하면 이 루트의 상징성이 가장 또렷해집니다. 한라산과 남부 해안, 정방폭포를 거친 뒤 제주를 대표하는 랜드마크 중 하나에서 하루를 끝내면 전체 일정이 훨씬 완결감 있게 느껴집니다.",
+            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
+            "highlights": [
+              "제주의 대표 랜드마크로 마무리하는 상징적인 피날레",
+              "고밀도 일정의 마지막에 확실한 시각적 보상을 주는 스팟",
+              "팀 컨디션에 따라 정상 등반 또는 하부 전망 위주로 유연하게 운영 가능",
+              "제주가 처음이면서 시간이 짧은 여행자에게 특히 만족도가 높은 마무리"
+            ],
+            "timeUsed": [
+              "도착 후 동선과 보행 강도 안내",
+              "정상 등반 또는 하부 전망 코스 선택",
+              "사진 촬영 후 재집결, 제주시 복귀"
+            ],
+            "whyOnRoute": "하루의 마지막을 장식하기에 가장 상징적인 장소이자, 이 코스를 진짜 제주 전일주 하이라이트 여정처럼 느끼게 만드는 핵심 스팟입니다.",
+            "visitBasics": {
+              "hours": "유료 입장 시간은 계절에 따라 변동",
+              "closed": "매월 첫째 주 월요일 휴무 (공휴일이면 다음 날)",
+              "admission": "성인 KRW 5,000 / 어린이 KRW 2,500",
+              "walking": "보통~다소 높음, 정상까지 오르면 더 힘들 수 있음"
+            },
+            "convenience": {
+              "restroom": "하부 구역 및 주변 시설",
+              "parking": "대형 주차장"
+            },
+            "smartNotes": {
+              "photo": "정상만 따로 담기보다 분화구와 해안선을 함께 넣는 넓은 구도가 훨씬 만족스럽게 나오는 편입니다.",
+              "facilities": "기슭 주변 편의시설이 비교적 잘 갖춰져 있습니다.",
+              "tip": "인파와 날씨, 팀의 체력 수준에 따라 정상 체험의 강도와 만족도가 크게 달라질 수 있습니다."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "id": "01",
+            "name": "어승생악",
+            "theme": "한라산"
+          },
+          {
+            "id": "02",
+            "name": "주상절리대",
+            "theme": "절벽 해안"
+          },
+          {
+            "id": "03",
+            "name": "점심",
+            "theme": "리셋"
+          },
+          {
+            "id": "04",
+            "name": "정방폭포",
+            "theme": "폭포"
+          },
+          {
+            "id": "05",
+            "name": "성산일출봉",
+            "theme": "분화구"
+          }
+        ],
+        "routePhases": [
+          {
+            "label": "오전",
+            "range": "1-2",
+            "theme": "한라산에서 남부 해안까지",
+            "bgClass": "bg-sky-50/70",
+            "textClass": "text-sky-700",
+            "dotClass": "bg-sky-500"
+          },
+          {
+            "label": "정오~오후 초반",
+            "range": "3-4",
+            "theme": "점심과 폭포",
+            "bgClass": "bg-amber-50/70",
+            "textClass": "text-amber-700",
+            "dotClass": "bg-amber-500"
+          },
+          {
+            "label": "마무리",
+            "range": "5",
+            "theme": "성산일출봉 피날레",
+            "bgClass": "bg-emerald-50/70",
+            "textClass": "text-emerald-700",
+            "dotClass": "bg-emerald-500"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "하루 동선은 이렇게 이어집니다",
+          "subtitle": "루트는 한라산에서 시작해 제주 남부 해안을 지나 성산일출봉에서 마무리됩니다. 일반적으로 08:30~09:00 사이 픽업이 진행되며, 제주시 복귀는 17:40~18:00 전후입니다."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "제주에서 하루만 가능한 여행자",
+            "아침에 제주에 도착해 하루를 알차게 쓰고 싶은 여행자",
+            "대표 랜드마크 위주로 보고 싶은 여행자",
+            "활동적인 관광 스타일을 선호하는 여행자"
+          ],
+          "lessIdeal": [
+            "느린 템포를 선호하는 여행자",
+            "계단이나 오르막을 피하고 싶은 여행자",
+            "아주 어린 아이와 함께하는 가족",
+            "유모차 의존도가 높은 팀"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "시간이 많지 않은 여행자에게 맞춘 구성",
+              "icon": "clock-3",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "한라산으로 시작",
+                  "detail": "한라산에서 시작하면 본격적인 횡단 이동 전에 제주 산지의 지형감을 먼저 확실하게 느낄 수 있습니다."
+                },
+                {
+                  "label": "남부 해안을 중간에 배치",
+                  "detail": "주상절리대와 점심, 정방폭포가 서쪽에서 동쪽으로 흐르는 동선을 잡아 주면서도 하루 내내 풍경 밀도를 유지해 줍니다."
+                },
+                {
+                  "label": "성산일출봉으로 마무리",
+                  "detail": "마지막을 성산으로 잡으면 각각의 지역 스팟을 따로 보는 느낌보다 하나의 완성된 제주 하이라이트 여정처럼 느껴집니다."
+                }
+              ]
+            },
+            {
+              "title": "이 하루가 특히 알차게 느껴지는 이유",
+              "icon": "mountain",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "도보 강도가 있는 두 구간",
+                  "detail": "어승생악과 성산일출봉이 들어가 일반적인 소그룹 일일투어보다 체감 활동량이 높은 편입니다."
+                },
+                {
+                  "label": "풍경 밀도를 우선한 설계",
+                  "detail": "이 코스는 천천히 보는 휴식형 루트가 아니라, 하루 안에 제주를 더 진하게 경험하고 싶은 여행자를 위한 일정입니다."
+                },
+                {
+                  "label": "시간이 짧을수록 더 가치 있는 선택",
+                  "detail": "제주에서 하루만 가능하다면, 속도를 너무 늦추기보다 대표 명소를 밀도 있게 보는 편이 더 만족스러운 경우가 많습니다."
+                }
+              ]
+            },
+            {
+              "title": "현장 조건이 달라질 때",
+              "icon": "wind",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-600",
+              "items": [
+                {
+                  "label": "한라산 입산 제한",
+                  "detail": "어승생악은 계절 규정이나 날씨 통제로 인해 이용이 제한될 수 있습니다."
+                },
+                {
+                  "label": "해안 노출 구간의 바람 영향",
+                  "detail": "주상절리대와 성산일출봉은 날씨 영향을 가장 크게 받는 해안 스팟입니다."
+                },
+                {
+                  "label": "복귀 시간이 소폭 변동될 수 있음",
+                  "detail": "교통 상황과 팀의 보행 속도, 현장 혼잡도에 따라 최종 복귀 시간이 조금 달라질 수 있습니다."
+                }
+              ]
+            }
+          ]
+        },
+        "seasonalVariations": [
+          {
+            "name": "봄",
+            "icon": "flower",
+            "description": "산 공기가 특히 상쾌하고, 섬 전체의 시야도 맑고 깨끗하게 느껴지는 시기입니다.",
+            "tag": "균형감이 가장 좋음",
+            "bgClass": "bg-spring",
+            "iconColor": "text-pink-500"
+          },
+          {
+            "name": "여름",
+            "icon": "sun",
+            "description": "해가 가장 길고, 해안 풍경의 색감도 가장 선명하고 짙게 느껴지는 계절입니다.",
+            "tag": "일조 시간이 가장 김",
+            "bgClass": "bg-summer",
+            "iconColor": "text-sky-500"
+          },
+          {
+            "name": "가을",
+            "icon": "leaf",
+            "description": "하늘이 맑은 날이 많아 전일주 루트의 만족감이 특히 높게 느껴지는 시즌입니다.",
+            "tag": "시야가 가장 좋음",
+            "bgClass": "bg-autumn",
+            "iconColor": "text-amber-600"
+          },
+          {
+            "name": "겨울",
+            "icon": "snow",
+            "description": "공기가 더 차고 맑아져 산과 바다의 대비가 한층 또렷하게 드러납니다.",
+            "tag": "맑고 선명한 계절",
+            "bgClass": "bg-winter",
+            "iconColor": "text-slate-500"
+          }
+        ]
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "픽업 및 복귀 시간",
+            "preview": "아침 일찍 출발해 저녁 무렵 제주시 복귀",
+            "content": [
+              "제주시 내 픽업 시간: 08:30~09:00",
+              "제주시 복귀 예정: 17:40~18:00 전후",
+              "공항 픽업은 상황에 따라 조율 가능",
+              "최종 집합 시간은 전날 밤에 확정 안내"
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "도보 및 지형 안내",
+            "preview": "일반 코스보다 활동량이 있는 편",
+            "content": [
+              "이 루트에는 상대적으로 활동량이 있는 도보 구간이 두 번 포함됩니다.",
+              "어승생악은 오르막과 계단 구간이 있습니다.",
+              "정방폭포는 계단과 바위길이 포함됩니다.",
+              "팀이 정상 등반을 선택할 경우 성산일출봉 구간은 더 힘들게 느껴질 수 있습니다.",
+              "접지력 있는 편한 운동화 착용을 권장합니다."
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "날씨 및 운영 조정",
+            "preview": "보통은 정상 진행, 필요 시 유연하게 조정",
+            "content": [
+              "가벼운 비: 일반적으로 정상 진행",
+              "강풍: 주상절리대나 성산일출봉 같은 노출 구간은 체류 시간이 짧아질 수 있음",
+              "한라산 통제: 어승생악 이용이 제한되면 일정 조정 또는 대체 스팟 적용 가능",
+              "휴무일·현장 상황: 필요 시 대체 스팟 또는 체류 시간 조정 가능"
+            ]
+          },
+          {
+            "id": "flight",
+            "title": "당일 제주 도착 또는 출발인 경우",
+            "preview": "저녁 시간 여유를 넉넉히 잡아야 합니다",
+            "content": [
+              "이 코스는 하루 안에 제주 대표 명소를 밀도 있게 담는 일정입니다.",
+              "당일 도착·출발도 가능할 수는 있지만, 저녁 시간에 충분한 여유가 있을 때만 권장됩니다.",
+              "늦은 시간대 항공편을 강하게 추천합니다.",
+              "시간 리스크를 판단할 때는 교통 상황과 도보 속도, 현장 변수를 함께 고려해 주세요."
+            ]
+          },
+          {
+            "id": "wear",
+            "title": "추천 복장 및 준비물",
+            "preview": "운동화, 레이어드 복장, 가벼운 방풍 재킷",
+            "content": [
+              "접지력 좋은 운동화",
+              "산과 해안의 기온 차이에 대응할 수 있는 레이어드 복장",
+              "가벼운 방풍 재킷",
+              "모자와 자외선 차단 용품",
+              "물"
+            ]
+          },
+          {
+            "id": "included",
+            "title": "포함 / 불포함 사항",
+            "preview": "가이드, 차량, 픽업, 입장권 포함",
+            "variant": "included",
+            "content": [
+              "전문 영어 가이드",
+              "소그룹 차량",
+              "제주시 호텔 픽업 및 드롭오프",
+              "전 일정 입장권",
+              "생수",
+              "점심 식사(현장 개별 결제)",
+              "개인 쇼핑 비용",
+              "가이드 팁"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "실시간 날씨 연동"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "매일 업데이트"
+          }
+        }
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "clock-3",
+            "title": "하루에 최대한 많이 보는 코스",
+            "description": "시간이 많지 않은 여행자에게 맞춘 일정",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "mountain",
+            "title": "제주 대표 랜드마크 중심",
+            "description": "한라산부터 성산일출봉까지",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          },
+          {
+            "icon": "users",
+            "title": "소그룹 운영",
+            "description": "도로 상황과 현장 변수에 더 유연하게 대응 가능",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "예약 직후",
+            "title": "즉시 예약 확인",
+            "detail": "루트 요약이 포함된 예약 확인 안내가 발송됩니다."
+          },
+          {
+            "timing": "출발 12시간 전",
+            "title": "사전 안내",
+            "detail": "날씨 메모와 일정 조정 가능 사항을 미리 공유합니다."
+          },
+          {
+            "timing": "출발 전날 밤",
+            "title": "최종 픽업 안내",
+            "detail": "정확한 픽업 시간과 연락 정보를 전달드립니다."
+          },
+          {
+            "timing": "출발 당일 아침",
+            "title": "당일 동선 안내",
+            "detail": "현장 기준의 최신 변경 사항이 있으면 출발 전에 간단히 안내드립니다."
+          },
+          {
+            "timing": "투어 진행 중",
+            "title": "스팟별 안내",
+            "detail": "필요한 정보는 각 스팟에서 핵심만 전달합니다."
+          },
+          {
+            "timing": "투어 종료 후",
+            "title": "후속 지원",
+            "detail": "필요 시 추가 추천과 후속 안내를 이어서 도와드립니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "one-day",
+            "question": "제주에서 하루만 가능하다면 이 루트가 맞을까요?",
+            "answer": "네. 이 코스는 제주 핵심 랜드마크를 하루 안에 효율적으로 담고 싶은 여행자를 위해 설계되었으며, 일반 일일투어보다 페이스가 빠른 편입니다."
+          },
+          {
+            "id": "tiring",
+            "question": "이 루트는 많이 힘든 편인가요?",
+            "answer": "일반적인 소그룹 일일투어보다 활동량이 조금 더 느껴지는 편입니다. 도보가 있는 구간이 두 번 있고, 섬을 넓게 이동하기 때문입니다."
+          },
+          {
+            "id": "parents",
+            "question": "부모님과 함께 가기에도 괜찮을까요?",
+            "answer": "부모님의 도보 가능 수준과 빠른 관광 템포에 대한 선호도에 따라 달라집니다. 완전히 여유로운 관광보다는 활동성이 있는 성인 여행자에게 더 잘 맞습니다."
+          },
+          {
+            "id": "flight",
+            "question": "제주에 당일 도착하거나 당일 떠나는 일정이어도 참여할 수 있나요?",
+            "answer": "가능할 수는 있지만 저녁 시간 여유가 충분할 때만 추천됩니다. 항공편 시간이 촉박하다면 이 코스는 권장되지 않습니다."
+          },
+          {
+            "id": "order",
+            "question": "당일에 방문 순서가 바뀔 수도 있나요?",
+            "answer": "네. 하루 동선을 더 원활하게 운영하기 위해 교통 상황과 날씨, 현장 혼잡도에 따라 순서가 소폭 조정될 수 있습니다."
+          },
+          {
+            "id": "seongsan-last",
+            "question": "왜 성산일출봉을 마지막에 넣었나요?",
+            "answer": "하루의 마무리 인상이 더 강해지기 때문입니다. 한라산과 남부 해안, 정방폭포를 본 뒤 성산으로 끝내면 전체 루트가 훨씬 완결감 있게 느껴집니다."
+          },
+          {
+            "id": "summit",
+            "question": "성산일출봉은 꼭 정상까지 올라가야 하나요?",
+            "answer": "반드시 그렇지는 않습니다. 정상 등반 여부와 해당 구간의 강도는 팀의 속도와 날씨, 현장 혼잡도에 따라 유연하게 조정됩니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "sticky_booking_bar": {
+          "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+          "price": {
+            "amountLabel": "78",
+            "currency": "USD",
+            "per": "인"
+          }
+        }
+      }
+    }
+  ]
+}

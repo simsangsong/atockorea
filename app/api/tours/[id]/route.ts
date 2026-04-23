@@ -4,6 +4,7 @@ import { tourListPricesToUsdSync } from '@/lib/tour-list-price-usd.server';
 import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
 import { withErrorHandler, AppError, ErrorResponses } from '@/lib/error-handler';
 import { createServerLogger } from '@/lib/logger';
+import { isTourBlockedFromConsumerSurfaces, isTourIdBlockedFromConsumerSurfaces } from '@/lib/tour-consumer-visibility';
 
 // Force dynamic rendering to ensure fresh data
 export const dynamic = 'force-dynamic';
@@ -86,6 +87,13 @@ export const GET = withErrorHandler(async (
       throw new AppError('Tour ID is required', 400, 'VALIDATION_ERROR');
     }
 
+    const decodedTourIdEarly = decodeURIComponent(tourId);
+    const isUUIDEarly =
+      /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(decodedTourIdEarly);
+    if (isUUIDEarly && isTourIdBlockedFromConsumerSurfaces(decodedTourIdEarly)) {
+      throw new AppError('Tour not found', 404, 'NOT_FOUND');
+    }
+
     const supabase = createServerClient();
     logger.info('Fetching tour', { tourId, locale: localeParam ?? 'default' });
 
@@ -144,6 +152,10 @@ export const GET = withErrorHandler(async (
         code: tourError?.code 
       });
       throw new AppError('Failed to fetch tour', 500, 'TOUR_FETCH_ERROR', tourError?.message);
+    }
+
+    if (isTourBlockedFromConsumerSurfaces(String(tour.id), (tour as { slug?: string }).slug)) {
+      throw new AppError('Tour not found', 404, 'NOT_FOUND');
     }
 
     logger.info('Tour found', { id: tour.id, title: tour.title });

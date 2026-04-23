@@ -336,13 +336,13 @@ export default function AccountSettingsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-[1.75rem] border border-white/25 bg-white/55 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl p-6">
+      <div className="rounded-[30px] border border-slate-200/90 bg-white p-6 shadow-[0_4px_28px_-2px_rgba(15,23,42,0.07)] ring-1 ring-slate-900/[0.04]">
         <h1 className="mb-2 text-xl font-semibold tracking-tight text-slate-900">{t('settingsPage.title')}</h1>
         <p className="text-slate-600">{t('settingsPage.description')}</p>
       </div>
 
       {/* Personal Information */}
-      <div className="rounded-[1.75rem] border border-white/25 bg-white/55 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl p-6">
+      <div className="rounded-[30px] border border-slate-200/90 bg-white p-6 shadow-[0_4px_28px_-2px_rgba(15,23,42,0.07)] ring-1 ring-slate-900/[0.04]">
         <h2 className="mb-6 flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -414,14 +414,14 @@ export default function AccountSettingsPage() {
           type="button"
           onClick={() => void handleSavePersonalInfo()}
           disabled={profileLoading || savePersonalLoading}
-          className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl transition-all shadow-md hover:shadow-lg font-medium disabled:opacity-60 disabled:cursor-not-allowed"
+          className="home-btn-primary mt-6 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {savePersonalLoading ? t('settingsPage.saving') : t('settingsPage.saveChanges')}
         </button>
       </div>
 
       {/* Address Information */}
-      <div className="rounded-[1.75rem] border border-white/25 bg-white/55 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl p-6">
+      <div className="rounded-[30px] border border-slate-200/90 bg-white p-6 shadow-[0_4px_28px_-2px_rgba(15,23,42,0.07)] ring-1 ring-slate-900/[0.04]">
         <h2 className="mb-6 flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -460,14 +460,14 @@ export default function AccountSettingsPage() {
           type="button"
           onClick={() => void handleSaveLocation()}
           disabled={profileLoading || saveLocationLoading}
-          className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl transition-all shadow-md hover:shadow-lg font-medium disabled:opacity-60 disabled:cursor-not-allowed"
+          className="home-btn-primary mt-6 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {saveLocationLoading ? t('settingsPage.saving') : t('settingsPage.saveChanges')}
         </button>
       </div>
 
       {/* Preferences */}
-      <div className="rounded-[1.75rem] border border-white/25 bg-white/55 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl p-6">
+      <div className="rounded-[30px] border border-slate-200/90 bg-white p-6 shadow-[0_4px_28px_-2px_rgba(15,23,42,0.07)] ring-1 ring-slate-900/[0.04]">
         <h2 className="mb-6 flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -511,14 +511,14 @@ export default function AccountSettingsPage() {
           type="button"
           onClick={() => void handleSavePreferences()}
           disabled={profileLoading || savePrefsLoading}
-          className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl transition-all shadow-md hover:shadow-lg font-medium disabled:opacity-60 disabled:cursor-not-allowed"
+          className="home-btn-primary mt-6 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {savePrefsLoading ? t('settingsPage.saving') : t('settingsPage.saveChanges')}
         </button>
       </div>
 
       {/* Emergency Contact */}
-      <div className="rounded-[1.75rem] border border-white/25 bg-white/55 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl p-6">
+      <div className="rounded-[30px] border border-slate-200/90 bg-white p-6 shadow-[0_4px_28px_-2px_rgba(15,23,42,0.07)] ring-1 ring-slate-900/[0.04]">
         <h2 className="mb-6 flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -565,14 +565,14 @@ export default function AccountSettingsPage() {
           type="button"
           onClick={() => void handleSaveEmergency()}
           disabled={profileLoading || saveEmergencyLoading}
-          className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl transition-all shadow-md hover:shadow-lg font-medium disabled:opacity-60 disabled:cursor-not-allowed"
+          className="home-btn-primary mt-6 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {saveEmergencyLoading ? t('settingsPage.saving') : t('settingsPage.saveChanges')}
         </button>
       </div>
 
       {/* Change Password - Collapsible */}
-      <div className="rounded-[1.75rem] border border-white/25 bg-white/55 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl p-6">
+      <div className="rounded-[30px] border border-slate-200/90 bg-white p-6 shadow-[0_4px_28px_-2px_rgba(15,23,42,0.07)] ring-1 ring-slate-900/[0.04]">
         <div className="flex items-center justify-between mb-4">
           <h2 className="flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
@@ -585,7 +585,7 @@ export default function AccountSettingsPage() {
           <button
             type="button"
             onClick={() => setShowPasswordChange(!showPasswordChange)}
-            className="rounded-xl border border-blue-600 px-4 py-2 text-sm font-medium text-blue-600 transition-colors hover:border-blue-700 hover:text-blue-700"
+            className="rounded-xl border border-slate-900 px-4 py-2 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-900 hover:text-white"
           >
             {showPasswordChange ? t('common.cancel') : t('settingsPage.changePassword')}
           </button>
@@ -625,7 +625,7 @@ export default function AccountSettingsPage() {
               type="button"
               onClick={() => void handleUpdatePassword()}
               disabled={passwordLoading}
-              className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl transition-all shadow-md hover:shadow-lg font-medium disabled:opacity-60 disabled:cursor-not-allowed"
+              className="home-btn-primary disabled:cursor-not-allowed disabled:opacity-60"
             >
               {passwordLoading ? t('settingsPage.saving') : t('settingsPage.updatePasswordBtn')}
             </button>
@@ -634,7 +634,7 @@ export default function AccountSettingsPage() {
       </div>
 
       {/* Notification Preferences */}
-      <div className="rounded-[1.75rem] border border-white/25 bg-white/55 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl p-6">
+      <div className="rounded-[30px] border border-slate-200/90 bg-white p-6 shadow-[0_4px_28px_-2px_rgba(15,23,42,0.07)] ring-1 ring-slate-900/[0.04]">
         <h2 className="mb-6 flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center">
             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -674,7 +674,7 @@ export default function AccountSettingsPage() {
             type="button"
             onClick={() => void handleSaveNotifications()}
             disabled={profileLoading || saveNotifLoading}
-            className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl transition-all shadow-md hover:shadow-lg font-medium disabled:opacity-60 disabled:cursor-not-allowed"
+            className="home-btn-primary mt-6 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {saveNotifLoading ? t('settingsPage.saving') : t('settingsPage.savePreferences')}
           </button>

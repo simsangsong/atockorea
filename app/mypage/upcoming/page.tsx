@@ -1,6 +1,5 @@
 'use client';
 
-// Force dynamic rendering to avoid I18nProvider issues during static generation
 export const dynamic = 'force-dynamic';
 
 import { useState, useEffect } from 'react';
@@ -12,8 +11,11 @@ import { supabase } from '@/lib/supabase';
 import { StatusBanner } from '@/src/components/ui/status-banner';
 import { rawBookingStatusToDisplayStatus } from '@/src/design/status';
 import type { BookingStatus } from '@/src/types/booking';
-import { useCopy } from '@/lib/i18n';
+import { useCopy, useTranslations } from '@/lib/i18n';
 import { canCancelBookingByPolicy } from '@/lib/booking-cancel-policy';
+import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
+import { MYPAGE_SURFACE_PAGE } from '@/lib/mypage-ui';
+import { cn } from '@/lib/utils';
 
 interface UpcomingTour {
   id: string;
@@ -35,6 +37,7 @@ interface UpcomingTour {
 export default function UpcomingToursPage() {
   const router = useRouter();
   const copy = useCopy();
+  const t = useTranslations();
   const [tours, setTours] = useState<UpcomingTour[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -47,7 +50,7 @@ export default function UpcomingToursPage() {
     try {
       setLoading(true);
       const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-      
+
       if (!session) {
         router.push('/signin');
         return;
@@ -62,14 +65,12 @@ export default function UpcomingToursPage() {
         throw new Error(data.error || 'Failed to fetch upcoming tours');
       }
 
-      // Filter upcoming tours (confirmed or pending, and tour_date is in the future)
       const now = new Date();
       const upcoming = (data.bookings || []).filter((booking: any) => {
         const tourDate = new Date(booking.tour_date || booking.booking_date);
         return (booking.status === 'confirmed' || booking.status === 'pending') && tourDate >= now;
       });
 
-      // Sort by date (earliest first)
       upcoming.sort((a: any, b: any) => {
         const dateA = new Date(a.tour_date || a.booking_date).getTime();
         const dateB = new Date(b.tour_date || b.booking_date).getTime();
@@ -94,20 +95,15 @@ export default function UpcomingToursPage() {
 
   const handleCancel = async (booking: UpcomingTour) => {
     if (!canCancel(booking)) {
-      alert(
-        'Cancellation is not allowed within 24 hours of the tour. Please contact customer support for assistance.',
-      );
+      alert(t('mypage.cancelNotAllowed24h'));
       return;
     }
-    if (!confirm('Are you sure you want to cancel this booking?')) {
-      return;
-    }
+    if (!confirm(t('mypage.confirmCancelBooking'))) return;
 
     try {
       const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-      
       if (!session) {
-        alert('Please sign in to cancel bookings');
+        alert(t('mypage.signInToCancel'));
         return;
       }
 
@@ -115,11 +111,9 @@ export default function UpcomingToursPage() {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${session.access_token}`,
+          Authorization: `Bearer ${session.access_token}`,
         },
-        body: JSON.stringify({
-          status: 'cancelled',
-        }),
+        body: JSON.stringify({ status: 'cancelled' }),
       });
 
       if (!response.ok) {
@@ -127,11 +121,11 @@ export default function UpcomingToursPage() {
         throw new Error(data.error || 'Failed to cancel booking');
       }
 
-      alert('Booking cancelled successfully');
+      alert(t('mypage.cancelSuccess'));
       fetchUpcomingTours();
     } catch (err: any) {
       console.error('Error cancelling booking:', err);
-      alert(`Failed to cancel booking: ${err.message}`);
+      alert(t('mypage.cancelFailed', { message: err.message }));
     }
   };
 
@@ -141,18 +135,18 @@ export default function UpcomingToursPage() {
   };
 
   const formatTime = (timeString?: string) => {
-    if (!timeString) return 'TBA';
+    if (!timeString) return t('mypage.upcomingPickupTba');
     return timeString;
   };
 
   const getDisplayStatus = (status: string): BookingStatus =>
-    rawBookingStatusToDisplayStatus[status] ?? "pending";
+    rawBookingStatusToDisplayStatus[status] ?? 'pending';
 
   if (loading) {
     return (
-      <div className="space-y-6">
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-          <p className="text-gray-600">Loading...</p>
+      <div className="space-y-4">
+        <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6')}>
+          <p className="text-[13px] text-slate-600">{t('mypage.bookingsLoading')}</p>
         </div>
       </div>
     );
@@ -160,65 +154,66 @@ export default function UpcomingToursPage() {
 
   if (error) {
     return (
-      <div className="space-y-6">
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-          <p className="text-red-600">Error: {error}</p>
+      <div className="space-y-4">
+        <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6')}>
+          <p className="text-[13px] text-red-600">{t('mypage.bookingsError', { message: error })}</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="space-y-6">
-      <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-        <h1 className="text-xl font-medium text-gray-900 mb-2">Upcoming Tours</h1>
-        <p className="text-gray-600">Manage your upcoming bookings</p>
+    <div className="space-y-4">
+      <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6 md:p-7')}>
+        <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+          {t('mypage.upcoming')}
+        </p>
+        <h1 className="text-[1.35rem] font-bold tracking-tight text-[#0f172a] md:text-[1.5rem]">
+          {t('mypage.upcomingTours')}
+        </h1>
+        <p className="mt-1 text-[13px] leading-snug text-slate-600">
+          {t('mypage.upcomingPageSubtitle')}
+        </p>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-3">
         {tours.length > 0 ? (
           tours.map((tour) => {
             const tourDate = tour.tour_date || tour.booking_date;
             const cancelOk = canCancel(tour);
-            const imageUrl = tour.tours?.image_url || 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=400';
-            
+            const imageUrl =
+              tour.tours?.image_url ||
+              'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=400';
+
             return (
-              <div
-                key={tour.id}
-                className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 overflow-hidden"
-              >
+              <div key={tour.id} className={cn(MYPAGE_SURFACE_PAGE, 'overflow-hidden')}>
                 <div className="flex flex-col md:flex-row">
-                  <div className="md:w-48 h-48 md:h-auto flex-shrink-0 relative">
-                    <Image
-                      src={imageUrl}
-                      alt={tour.tours?.title || 'Tour'}
-                      fill
-                      className="object-cover"
-                    />
+                  <div className="relative h-48 flex-shrink-0 md:h-auto md:w-48">
+                    <Image src={imageUrl} alt={tour.tours?.title || 'Tour'} fill className="object-cover" />
                   </div>
-                  <div className="flex-1 p-6">
+                  <div className="flex-1 p-5">
                     <div className="mb-3">
-                      <h3 className="text-base font-medium text-gray-900 mb-2">
+                      <h3 className="mb-2 text-[15px] font-bold tracking-tight text-[#0f172a]">
                         {tour.tours?.title || 'Tour'}
                       </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600">
+                      <div className="flex items-center gap-4 text-[12px] text-slate-600">
                         <span className="flex items-center gap-1.5 tabular-nums">
-                          <CalendarDateIcon className="w-4 h-4 flex-shrink-0" />
+                          <CalendarDateIcon className="h-3.5 w-3.5 flex-shrink-0" />
                           {formatDate(tourDate)}
                         </span>
                         {tour.pickup_points?.pickup_time && (
                           <span className="flex items-center gap-1.5">
-                            <ClockIcon className="w-4 h-4 flex-shrink-0" />
+                            <ClockIcon className="h-3.5 w-3.5 flex-shrink-0" />
                             {formatTime(tour.pickup_points.pickup_time)}
                           </span>
                         )}
                       </div>
                     </div>
                     <StatusBanner status={getDisplayStatus(tour.status)} className="mb-4" />
-                    <div className="flex flex-wrap items-center gap-3">
+                    <div className="flex flex-wrap items-center gap-2">
                       <Link
-                        href={`/tour/${tour.tour_id}`}
-                        className="min-h-[44px] inline-flex items-center justify-center px-4 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        href={consumerTourDetailHref(tour.tour_id)}
+                        className="inline-flex min-h-[44px] items-center justify-center rounded-xl border border-slate-900 bg-slate-900 px-4 py-2.5 text-[13px] font-semibold text-white shadow-sm transition-all hover:bg-slate-800 focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
                       >
                         {copy.myTour.viewDetails}
                       </Link>
@@ -227,22 +222,21 @@ export default function UpcomingToursPage() {
                         onClick={() => void handleCancel(tour)}
                         disabled={!cancelOk}
                         title={
-                          !cancelOk
-                            ? 'Cancellation is not allowed within 24 hours of the tour'
-                            : 'Cancel Booking'
+                          !cancelOk ? t('mypage.cancelNotAllowed24h') : t('mypage.cancelBookingCta')
                         }
-                        className={`min-h-[44px] px-4 py-2.5 rounded-lg text-sm font-medium focus:ring-2 focus:ring-offset-2 transition-colors ${
+                        className={cn(
+                          'inline-flex min-h-[44px] items-center justify-center rounded-xl px-4 py-2.5 text-[13px] font-semibold transition-colors focus:ring-2 focus:ring-offset-2',
                           cancelOk
-                            ? 'bg-red-50 text-red-600 hover:bg-red-100 focus:ring-red-500'
-                            : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                        }`}
+                            ? 'bg-red-50 text-red-700 hover:bg-red-100 focus:ring-red-400'
+                            : 'cursor-not-allowed bg-slate-100 text-slate-400',
+                        )}
                       >
-                        Cancel Booking
+                        {t('mypage.cancelBookingCta')}
                       </button>
                     </div>
                     {!cancelOk && (
-                      <p className="text-xs text-red-600 mt-2">
-                        * Cancellation is not allowed within 24 hours of the tour
+                      <p className="mt-2 text-[11px] text-red-600">
+                        * {t('mypage.cancelNotAllowed24h')}
                       </p>
                     )}
                   </div>
@@ -251,8 +245,8 @@ export default function UpcomingToursPage() {
             );
           })
         ) : (
-          <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-12 text-center">
-            <p className="text-gray-500">No upcoming tours</p>
+          <div className={cn(MYPAGE_SURFACE_PAGE, 'p-12 text-center')}>
+            <p className="text-[13px] text-slate-500">{t('mypage.upcomingEmpty')}</p>
           </div>
         )}
       </div>

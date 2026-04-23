@@ -25,8 +25,8 @@ import {
 } from "./staticProductData";
 
 export const eastSignatureNatureCoreDetailViewModel = {
-  headlineLine1: "Jeju East Volcano, Coast & Village",
-  headlineLine2: "Small Group Tour",
+  headlineLine1: "East Jeju Volcano, Coast",
+  headlineLine2: "and Folk Village Small Group Day Tour",
   hero: eastSignatureNatureCoreProduct.hero,
   price: eastSignatureNatureCoreProduct.price,
   subnavItems: subnavItems.map((i) => ({ id: i.id, label: i.label })),

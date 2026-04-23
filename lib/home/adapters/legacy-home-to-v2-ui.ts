@@ -1,6 +1,4 @@
 import type { HomepageProductCardImages } from "@/lib/homepage-product-card-images.shared";
-import { buildCustomJoinTourHref } from "@/lib/home/services/custom-join-href";
-import type { HeroDestination } from "@/lib/home/types/hero-planner";
 
 /**
  * Future-facing shape for v2 “best match” / featured tour strip (presentation only).
@@ -48,28 +46,3 @@ export function adaptJoinImageAndLinesToV2BestMatch(input: {
   };
 }
 
-/**
- * Planner state bundle for a future v2 hero CTA (same contract as legacy query string).
- */
-export type V2HomePlannerCtaModel = {
-  customJoinHref: string;
-  destination: HeroDestination;
-  intentRaw: string;
-};
-
-/** Pure mapping for a future v2 hero — same href rules as legacy `HeroPremium`. */
-export function buildV2HomePlannerCtaModel(input: {
-  destination: HeroDestination;
-  intent: string;
-  basePath?: string;
-}): V2HomePlannerCtaModel {
-  return {
-    customJoinHref: buildCustomJoinTourHref({
-      basePath: input.basePath,
-      destination: input.destination,
-      intent: input.intent,
-    }),
-    destination: input.destination,
-    intentRaw: input.intent,
-  };
-}

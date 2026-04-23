@@ -12,8 +12,8 @@ export const FEATURED_JOIN_TOUR_SLUG = "east-signature-nature-core";
  */
 export const HOME_CTA_FEATURED_JOIN_TOUR_HREF = "/tour-product/east-signature-nature-core";
 
-export const HOME_CTA_CUSTOM_JOIN_HREF = "/custom-join-tour";
-
 export const HOME_CTA_BROWSE_TOURS_HREF = "/tours/list";
+export const HOME_CTA_SMALL_GROUP_LIST_HREF = "/tours/small-group";
+export const HOME_CTA_MATCHING_HREF = "/match";
 
 export const HOME_CTA_REVIEWS_HREF = "/reviews";

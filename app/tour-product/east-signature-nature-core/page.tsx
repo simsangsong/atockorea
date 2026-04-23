@@ -14,7 +14,9 @@ export const metadata: Metadata = {
 
 export default async function EastSignatureNatureCoreProductPage() {
   let viewModel = undefined;
-  if (process.env.TOUR_PRODUCT_USE_SUPABASE === "1") {
+  /** 긴급: DB `detail_payload`가 깨져도 번들 정적 플래그십 UI 유지 (`.env.local` 에만) */
+  const forceStatic = process.env.TOUR_PRODUCT_EAST_SIGNATURE_FORCE_STATIC === "1";
+  if (process.env.TOUR_PRODUCT_USE_SUPABASE === "1" && !forceStatic) {
     try {
       const supabase = createAnonServerClient();
       const locale = await resolveTourProductDbLocale();

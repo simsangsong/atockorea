@@ -35,8 +35,9 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
   const [user, setUser] = useState<UserProfile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Detect current path to determine if on dark background page
-  const isDarkPage = pathname === '/signin' || pathname === '/signup';
+  // Sign-in / sign-up / mypage use the same light frosted header as the rest of the site
+  // (dark bar was jarring next to pastel page backgrounds and glass auth cards).
+  const isDarkPage = false;
 
   // Load user session and profile
   useEffect(() => {

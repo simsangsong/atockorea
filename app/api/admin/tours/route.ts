@@ -57,6 +57,7 @@ export async function POST(request: NextRequest) {
       price: parseFloat(body.price),
       original_price: body.original_price ? parseFloat(body.original_price) : null,
       price_type: body.price_type, // 'person' or 'group'
+      merchant_id: body.merchant_id || null,
       image_url: body.image_url,
       gallery_images: body.gallery_images || [],
       duration: body.duration || null,
@@ -206,6 +207,7 @@ export async function PATCH(request: NextRequest) {
       updateData.original_price = body.original_price ? parseFloat(body.original_price) : null;
     }
     if (body.price_type !== undefined) updateData.price_type = body.price_type;
+    if (body.merchant_id !== undefined) updateData.merchant_id = body.merchant_id || null;
     if (body.image_url !== undefined) updateData.image_url = body.image_url;
     if (body.gallery_images !== undefined) updateData.gallery_images = body.gallery_images;
     if (body.schedule_hero_image_url !== undefined) updateData.schedule_hero_image_url = body.schedule_hero_image_url;

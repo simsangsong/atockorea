@@ -1,5 +1,6 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
@@ -7,11 +8,26 @@ import { ArrowRight, Clock, Users, Star, CheckCircle } from "lucide-react";
 import { analytics } from "@/src/design/analytics";
 import {
   HOME_CTA_BROWSE_TOURS_HREF,
-  HOME_CTA_CUSTOM_JOIN_HREF,
+  HOME_CTA_MATCHING_HREF,
 } from "@/lib/home/home-cta-routes";
+import { useTranslations } from "@/lib/i18n";
+import { useHomeV2ReviewSummary } from "@/components/home/v2/HomeV2ReviewSummaryProvider";
+
+const finalCtaPrimaryStyle: CSSProperties = {
+  boxShadow: "var(--home-shadow-btn-primary)",
+};
+
+const finalCtaSecondaryStyle: CSSProperties = {
+  boxShadow: "var(--home-shadow-btn-secondary)",
+};
 
 export function FinalCTA() {
+  const t = useTranslations("home");
+  const { data, loading, error } = useHomeV2ReviewSummary();
   const blockRef = useRef<HTMLDivElement>(null);
+
+  const showLiveRating =
+    !loading && !error && data?.hasPublicReviews && data.stats.avgRating != null;
 
   useEffect(() => {
     if (blockRef.current) {
@@ -26,34 +42,49 @@ export function FinalCTA() {
     >
       <div className="max-w-2xl mx-auto">
         <div ref={blockRef} className="relative scroll-animate">
-          <div className="absolute -inset-2 bg-gradient-to-br from-primary/5 via-sky-400/3 to-amber-400/2 rounded-[24px] blur-xl opacity-40" />
+          <div
+            className="absolute -inset-2 rounded-home-card bg-gradient-to-br from-primary/[0.07] via-sky-400/[0.04] to-amber-400/[0.05] opacity-45 blur-xl"
+            aria-hidden
+          />
 
-          <div className="relative bg-white/95 rounded-2xl border border-slate-200/70 shadow-[0_4px_24px_rgba(0,0,0,0.05)] p-6 md:p-10 text-center overflow-hidden">
-            <div className="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
+          <div className="home-panel-elevated relative overflow-hidden p-6 text-center md:p-10">
+            <div className="absolute left-1/4 right-1/4 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-2 tracking-tight leading-snug">
-              Ready to plan your Jeju trip the smarter way?
+            <h2 className="mb-2 text-balance text-2xl font-bold leading-snug tracking-tight text-slate-800 md:text-3xl">
+              {t("premium.v2.finalCtaBlock.title")}
             </h2>
-            <p className="text-slate-600 text-[14px] md:text-[15px] mb-6 font-medium">
-              Start with your preferences and discover the tour style that fits you best.
+            <p className="mb-6 text-[14px] font-medium text-slate-600 md:text-[15px]">
+              {t("premium.v2.finalCtaBlock.subtitle")}
             </p>
 
-            <div className="grid grid-cols-2 md:flex md:flex-wrap md:items-center md:justify-center gap-3 md:gap-5 mb-8 p-4 md:p-5 bg-slate-50/80 rounded-xl border border-slate-200/60">
+            <div className="home-neutral-trust-tile home-neutral-trust-tile--compact mb-8 grid grid-cols-2 gap-3 p-4 md:flex md:flex-wrap md:items-center md:justify-center md:gap-5 md:p-5">
               <div className="flex items-center gap-2 justify-center">
-                <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                <span className="text-[12px] md:text-sm font-semibold text-slate-700">4.9 rated</span>
+                <Star className="w-4 h-4 fill-amber-400 text-amber-400" aria-hidden />
+                <span className="text-[12px] md:text-sm font-semibold text-slate-700">
+                  {showLiveRating
+                    ? t("premium.v2.finalCtaBlock.trust1RatedParam", {
+                        rating: data!.stats.avgRating!.toFixed(1),
+                      })
+                    : t("premium.v2.finalCtaBlock.trust1Fallback")}
+                </span>
               </div>
               <div className="flex items-center gap-2 justify-center">
                 <CheckCircle className="w-4 h-4 text-emerald-600" />
-                <span className="text-[12px] md:text-sm font-semibold text-slate-700">Free cancellation</span>
+                <span className="text-[12px] md:text-sm font-semibold text-slate-700">
+                  {t("premium.v2.finalCtaBlock.trust2")}
+                </span>
               </div>
               <div className="flex items-center gap-2 justify-center md:col-span-2 md:col-auto">
                 <Clock className="w-4 h-4 text-primary" />
-                <span className="text-[12px] md:text-sm font-semibold text-slate-700">24hr response</span>
+                <span className="text-[12px] md:text-sm font-semibold text-slate-700">
+                  {t("premium.v2.finalCtaBlock.trust3")}
+                </span>
               </div>
               <div className="flex items-center gap-2 justify-center md:col-span-2 md:col-auto">
                 <Users className="w-4 h-4 text-sky-600" />
-                <span className="text-[12px] md:text-sm font-semibold text-slate-700">Deposit only</span>
+                <span className="text-[12px] md:text-sm font-semibold text-slate-700">
+                  {t("premium.v2.finalCtaBlock.trust4")}
+                </span>
               </div>
             </div>
 
@@ -61,39 +92,43 @@ export function FinalCTA() {
               <V0ShadcnButton
                 asChild
                 size="lg"
-                className="h-auto w-full bg-primary hover:bg-primary/95 text-white font-semibold py-6 md:py-7 rounded-xl text-[14px] md:text-base shadow-[0_4px_16px_rgba(30,58,95,0.18)] hover:shadow-[0_6px_20px_rgba(30,58,95,0.22)] transition-all duration-300"
+                className="h-auto w-full rounded-xl bg-primary py-6 text-[14px] font-semibold text-white transition-all duration-300 hover:bg-primary/95 md:py-7 md:text-base"
+                style={finalCtaPrimaryStyle}
               >
                 <Link
-                  href={HOME_CTA_CUSTOM_JOIN_HREF}
+                  href={HOME_CTA_MATCHING_HREF}
                   onClick={() => {
-                    analytics.heroFormStart();
+                    analytics.homeCtaClick({ source: "final_cta_custom_join" });
                   }}
                 >
-                  Find my best-fit tour
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  {t("premium.v2.finalCtaBlock.primaryCta")}
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </V0ShadcnButton>
 
               <div className="flex items-center gap-3 py-0.5">
-                <div className="flex-1 h-px bg-slate-200/70" />
-                <span className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">or</span>
-                <div className="flex-1 h-px bg-slate-200/70" />
+                <div className="h-px flex-1 bg-slate-200/70" />
+                <span className="text-[10px] font-medium uppercase tracking-wider text-slate-400">
+                  {t("premium.v2.finalCtaBlock.orDivider")}
+                </span>
+                <div className="h-px flex-1 bg-slate-200/70" />
               </div>
 
               <V0ShadcnButton
                 asChild
                 variant="outline"
                 size="lg"
-                className="h-auto w-full border-slate-200/70 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-300 font-semibold py-5 md:py-6 rounded-xl text-[13px] md:text-sm transition-all duration-300"
+                className="h-auto w-full rounded-xl border-slate-200/75 bg-white/95 py-5 text-[13px] font-semibold text-slate-800 backdrop-blur-sm transition-all duration-300 hover:border-slate-300/90 hover:bg-white md:py-6 md:text-sm"
+                style={finalCtaSecondaryStyle}
               >
                 <Link
                   href={HOME_CTA_BROWSE_TOURS_HREF}
                   onClick={() => {
-                    analytics.heroFormStart();
+                    analytics.homeCtaClick({ source: "final_cta_browse_styles" });
                   }}
                 >
-                  Browse all tour styles
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  {t("premium.v2.finalCtaBlock.secondaryCta")}
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </V0ShadcnButton>
             </div>

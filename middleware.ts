@@ -1,3 +1,7 @@
+/**
+ * @todo Next.js 16+: `middleware` is deprecated in favor of `proxy` (see Next.js upgrade guide).
+ * Keep behavior in sync when migrating; routing/locale matching must stay equivalent.
+ */
 import { NextRequest, NextResponse } from 'next/server';
 import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
@@ -20,15 +24,11 @@ const RESERVED_ROOT_SEGMENTS = new Set([
   'cart',
   'checkout',
   'contact',
-  'custom-join-tour',
   'dashboard',
   'dsa',
   'forgot-id',
   'forgot-password',
-  'home-private',
-  'itinerary',
   'jeju',
-  'legacy-home-preview',
   'legal',
   'merchant',
   'my',
@@ -230,28 +230,26 @@ export function middleware(request: NextRequest) {
   if (eastCheckoutRedirect) return eastCheckoutRedirect;
 
   // 1b. 정적 안내 페이지 + 플래그십 투어 상품 (locale 접두사 리다이렉트 대상에서 제외)
-  const isEastSignatureProductPath =
+  const isFlagshipTourProductPath =
     pathname === CANONICAL_EAST_SIGNATURE_PRODUCT_PATH ||
     pathname.startsWith(`${CANONICAL_EAST_SIGNATURE_PRODUCT_PATH}/`) ||
-    /^\/(en|ko|zh-CN|zh-TW|ja|es)\/tour-product\/east-signature-nature-core(\/|$)/.test(pathname);
-  if (
-    pathname === '/home-private' ||
-    pathname.startsWith('/home-private/') ||
-    pathname === '/legacy-home-preview' ||
-    pathname.startsWith('/legacy-home-preview/') ||
-    isEastSignatureProductPath
-  ) {
+    pathname === "/tour-product/jeju-grand-highlights-loop" ||
+    pathname.startsWith("/tour-product/jeju-grand-highlights-loop/") ||
+    /^\/(en|ko|zh-CN|zh-TW|ja|es)\/tour-product\/(east-signature-nature-core|jeju-grand-highlights-loop)(\/|$)/.test(
+      pathname,
+    );
+  if (isFlagshipTourProductPath) {
     return NextResponse.next();
   }
 
-  // 1c. 비로컬 + 공개 플래그 없음 → 기본은 /home-private 단, East Signature 소규모 투어 **상세**만 예외
+  // 1c. 비로컬 + 공개 플래그 없음 → 실제 홈(/)으로 rewrite, East Signature 투어 상세 경로만 예외
   if (
     !isSiteUiPublic() &&
     !isLocalRequest(request) &&
     !isPublicEastSignatureTourDetailPathForSiteGate(pathname)
   ) {
     const url = request.nextUrl.clone();
-    url.pathname = '/home-private';
+    url.pathname = '/';
     return NextResponse.rewrite(url);
   }
 

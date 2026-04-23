@@ -13,7 +13,7 @@ export type SitePageShellProps = {
  */
 export function SitePageShell({ children, showBottomNav = true }: SitePageShellProps) {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-transparent text-slate-900 selection:bg-blue-100">
+    <div className="relative min-h-screen overflow-x-hidden bg-transparent text-slate-900 selection:bg-slate-200/55 selection:text-slate-900">
       <div className="relative z-10">
         <Header />
         {children}

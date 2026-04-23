@@ -13,6 +13,7 @@ import { Check, ChevronDown, Home, Map, Minus, Plus, ShoppingCart, User, X } fro
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 import type { TourProductCheckoutContext } from "@/lib/tour-product/eastSignatureCheckoutContext";
 import { useCurrencyOptional } from "@/lib/currency";
+import { consumerTourCheckoutHref } from "@/lib/tour-consumer-visibility";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -311,7 +312,7 @@ export function TourStickyBookingBar({ price, checkout }: TourStickyBookingBarPr
 
       const payload = buildBookingPayload(checkout, dateYmd, guestCount, preferredLanguage);
       sessionStorage.setItem("bookingData", JSON.stringify(payload));
-      router.push(`/tour/${checkout.tourId}/checkout`);
+      router.push(consumerTourCheckoutHref(checkout.tourId));
     } catch (e) {
       console.error(e);
       alert("Could not start booking. Please try again.");

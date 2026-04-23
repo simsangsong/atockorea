@@ -1,0 +1,32 @@
+---
+description: 영구 소비자 격리된 레거시 투어 표면 — 신규 투어 작업에서 인용·import 금지
+alwaysApply: true
+---
+
+# Legacy isolated tour surfaces (non-negotiable)
+
+## Policy
+
+소비자에게서 격리된 레거시 SKU(차단 ID/slug는 `lib/tour-consumer-visibility.ts`)와 연결된 **정적 라우트·데이터**는, **새 투어·새 페이지·새 컴포넌트에서 어떤 경우에도 재사용하지 말 것.** 복사·붙여넣기·부분 인용·타입만 가져오기 포함.
+
+## 절대 새 코드에서 import / 재노출 금지
+
+| 경로 | 이유 |
+|------|------|
+| `@/data/tours`, `data/tours.ts` | 레거시 정적 `detailedTours` 카탈로그. ESLint `no-restricted-imports`로 차단됨. |
+| `@/components/TourCardDetail` | 위 데이터 모델 전제. 신규 목록·검색은 `TourListCard` + API VM. |
+| `app/jeju/[slug]/page.tsx` 내 로직/섹션을 다른 파일로 옮겨 재사용 | 격리 대상과 동일 UX 고정. |
+
+`app/jeju/**`, `app/busan/[slug]/**` 아래 **기존 파일 유지보수**만 허용. **새 상품 UX**는 아래로만.
+
+## 신규 투어 작업 시 사용할 정식 경로
+
+- **목록·카드**: `GET /api/tours` → `adaptToursListResponse` / `TourCardViewModel` → `components/tour/TourListCard.tsx`
+- **체크아웃형 상세**: `app/tour/[id]/` + `src/lib/adapters/tours-adapter.ts` 패턴
+- **플래그십 상품 페이지**: `app/tour-product/<slug>/`, `components/product-tour-static/…`
+- **소비자 노출 제외(격리)**: `CONSUMER_BLOCKED_TOUR_IDS` / slug 규칙은 **새 행과 중복되지 않게** 설계
+
+## 검증
+
+- 새 TS/TSX에서 `data/tours` import 시 **ESLint error** (레거시 파일 몇 개는 예외 처리됨).
+- Git push 전 프로젝트 규칙에 따라 `eslint` 통과.

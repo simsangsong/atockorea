@@ -50,6 +50,7 @@ export const TourCardViewModelSchema = z.object({
   rating: z.number().optional(),
   reviewCount: z.number().optional(),
   bookingCount: z.number().optional(),
+  slug: z.string().optional(),
 });
 
 export const BuildTourResponseSchema = z.object({

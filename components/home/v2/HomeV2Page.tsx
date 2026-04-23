@@ -11,6 +11,7 @@ import {
   FinalCTA,
 } from "@/components/home/v2/sections";
 import { HomeV2MatchProvider } from "@/components/home/v2/HomeV2MatchProvider";
+import { HomeV2ReviewSummaryProvider } from "@/components/home/v2/HomeV2ReviewSummaryProvider";
 
 /** v0 page shell: atmospheric background only (no v0 header/footer/sticky bar). */
 const HOME_V2_ATMOSPHERE_STYLE: CSSProperties = {
@@ -27,23 +28,24 @@ const HOME_V2_ATMOSPHERE_STYLE: CSSProperties = {
  * v0-derived homepage main content (presentation-only).
  * Render inside site `<main>` under the existing Header; Footer/BottomNav stay in shell.
  *
- * Match + join image: `HomeV2MatchProvider` + `lib/home/services/hero-match-schedule.ts` +
- * `lib/home/adapters/v2-best-match-result-vm.ts` (see `HOME_LOGIC_EXTRACTION.md`).
+ * Match: `HomeV2MatchProvider` calls `POST /api/tour-product/match` (Gemini intent + `tour_matching_profiles` scoring).
  */
 export default function HomeV2Page() {
   return (
     <div className="relative min-w-0">
       <div className="pointer-events-none fixed inset-0 -z-10" style={HOME_V2_ATMOSPHERE_STYLE} aria-hidden />
       <HomeV2MatchProvider>
-        <div className="home-v2-body-isolate relative z-0">
-          <HeroSection />
-          <BestMatchPreview />
-          <ChooseTravelStyle />
-          <ProcessOperational />
-          <VisualBreak />
-          <TravelerReviews />
-          <FinalCTA />
-        </div>
+        <HomeV2ReviewSummaryProvider>
+          <div className="home-v2-body-isolate relative z-0">
+            <HeroSection />
+            <BestMatchPreview />
+            <ChooseTravelStyle />
+            <ProcessOperational />
+            <VisualBreak />
+            <TravelerReviews />
+            <FinalCTA />
+          </div>
+        </HomeV2ReviewSummaryProvider>
       </HomeV2MatchProvider>
     </div>
   );

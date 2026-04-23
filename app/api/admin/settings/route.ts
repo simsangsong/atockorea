@@ -14,15 +14,33 @@ export async function GET(request: NextRequest) {
     await requireAdmin(request);
     const supabase = createServerClient();
 
-    // Get settings from database (if settings table exists)
-    // For now, return default settings
-    const settings = {
+    const defaultSettings = {
       siteName: 'AtoC Korea',
       siteDescription: 'Licensed Korea-based tour booking platform',
       maintenanceMode: false,
       allowRegistrations: true,
       contactEmail: 'info@atockorea.com',
       supportEmail: 'support@atockorea.com',
+    };
+
+    const { data, error } = await supabase
+      .from('site_settings')
+      .select('cms_content_overrides')
+      .eq('id', 'default')
+      .maybeSingle<{ cms_content_overrides?: Record<string, unknown> | null }>();
+
+    if (error) {
+      return NextResponse.json({
+        success: true,
+        data: defaultSettings,
+      });
+    }
+
+    const overrides = (data?.cms_content_overrides ?? {}) as Record<string, unknown>;
+    const adminSettings = (overrides.adminSettings ?? {}) as Record<string, unknown>;
+    const settings = {
+      ...defaultSettings,
+      ...adminSettings,
     };
 
     return NextResponse.json({
@@ -65,9 +83,39 @@ export async function PUT(request: NextRequest) {
       }
     }
 
-    // In a real implementation, you would save to a settings table
-    // For now, we'll just return success
-    // TODO: Create settings table and save data
+    const { data, error: loadError } = await supabase
+      .from('site_settings')
+      .select('cms_content_overrides')
+      .eq('id', 'default')
+      .maybeSingle<{ cms_content_overrides?: Record<string, unknown> | null }>();
+
+    if (loadError) {
+      throw loadError;
+    }
+
+    const currentOverrides = (data?.cms_content_overrides ?? {}) as Record<string, unknown>;
+    const currentAdminSettings = (currentOverrides.adminSettings ?? {}) as Record<string, unknown>;
+    const nextOverrides = {
+      ...currentOverrides,
+      adminSettings: {
+        ...currentAdminSettings,
+        ...updateData,
+      },
+    };
+
+    const { error: saveError } = await supabase
+      .from('site_settings')
+      .upsert(
+        {
+          id: 'default',
+          cms_content_overrides: nextOverrides,
+        },
+        { onConflict: 'id' }
+      );
+
+    if (saveError) {
+      throw saveError;
+    }
 
     return NextResponse.json({
       success: true,

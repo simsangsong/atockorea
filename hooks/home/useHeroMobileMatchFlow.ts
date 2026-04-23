@@ -10,7 +10,7 @@ import type { HeroMatchPhase } from "@/lib/home/types/hero-planner";
 
 /**
  * Mobile-only simulated “match” sequence: loading steps then `result`.
- * Timings and analytics match legacy `HeroPremium` (`analytics.heroFormStart` on CTA).
+ * Timings and analytics match legacy `HeroPremium` (home CTA click: hero_planner_match).
  */
 export function useHeroMobileMatchFlow() {
   const [matchPhase, setMatchPhase] = useState<HeroMatchPhase>("planner");
@@ -22,7 +22,7 @@ export function useHeroMobileMatchFlow() {
   }, []);
 
   const handleMobileMatchCta = useCallback(() => {
-    analytics.heroFormStart();
+    analytics.homeCtaClick({ source: "hero_planner_match" });
     setMatchPhase("loading");
     setLoadingStep(0);
     startHomepageMatchSimulation(matchTimeoutsRef, {

@@ -141,26 +141,37 @@ export function TourPracticalDetails({
           <h3 className="text-sm font-semibold text-foreground">{sectionUi.seasonalTitle}</h3>
           <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{sectionUi.seasonalSubtitle}</p>
         </div>
-        <div className="grid grid-cols-2 gap-2.5">
-          {seasonalVariations.map((season) => {
-            const Icon = SEASON_ICONS[season.icon];
-            return (
-              <div
-                key={season.name}
-                className={cn(
-                  "relative rounded-xl border border-border/50 p-4 transition-all duration-200 hover:shadow-premium hover:border-border",
-                  season.bgClass,
-                )}
-              >
-                <div className="flex items-start justify-between mb-2">
-                  <Icon className={cn("h-4 w-4", season.iconColor)} />
-                  <span className="text-[9px] font-medium text-muted-foreground bg-white/70 px-1.5 py-0.5 rounded-md">{season.tag}</span>
+        <div
+          role="region"
+          aria-roledescription="carousel"
+          aria-label={sectionUi.seasonalTitle}
+          className="-mx-5 px-5"
+        >
+          <div className="flex gap-2.5 overflow-x-auto overscroll-x-contain scrollbar-hide scroll-smooth snap-x snap-mandatory touch-pan-x pb-1.5 [-webkit-overflow-scrolling:touch]">
+            {seasonalVariations.map((season) => {
+              const Icon = SEASON_ICONS[season.icon];
+              return (
+                <div
+                  key={season.name}
+                  className={cn(
+                    "relative shrink-0 snap-start rounded-xl border border-border/50 p-4 transition-all duration-200 hover:shadow-premium hover:border-border",
+                    "w-[min(280px,calc(100vw-3.5rem))] sm:w-[min(280px,calc(100%-1rem))]",
+                    season.bgClass,
+                  )}
+                >
+                  <div className="flex items-start justify-between mb-2">
+                    <Icon className={cn("h-4 w-4", season.iconColor)} />
+                    <span className="text-[9px] font-medium text-muted-foreground bg-white/70 px-1.5 py-0.5 rounded-md">
+                      {season.tag}
+                    </span>
+                  </div>
+                  <h4 className="text-sm font-semibold text-foreground">{season.name}</h4>
+                  <p className="mt-1 text-[11px] text-muted-foreground leading-relaxed">{season.description}</p>
                 </div>
-                <h4 className="text-sm font-semibold text-foreground">{season.name}</h4>
-                <p className="mt-1 text-[11px] text-muted-foreground leading-relaxed">{season.description}</p>
-              </div>
-            );
-          })}
+              );
+            })}
+            <div className="shrink-0 w-2 sm:w-0" aria-hidden />
+          </div>
         </div>
       </div>
 

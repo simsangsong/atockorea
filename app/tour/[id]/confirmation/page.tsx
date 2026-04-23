@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
+import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
 
 interface BookingData {
   tourId: number;
@@ -97,7 +98,7 @@ export default function ConfirmationPage() {
             setBookingData(built);
             sessionStorage.setItem('bookingData', JSON.stringify({ ...built, bookingId: b.id }));
           } else {
-            if (isMountedRef.current) router.push(`/tour/${params.id}`);
+            if (isMountedRef.current) router.push(consumerTourDetailHref(String(params.id)));
           }
         })
         .catch((err) => {
@@ -108,7 +109,7 @@ export default function ConfirmationPage() {
             try {
               setBookingData(JSON.parse(stored));
             } catch {
-              router.push(`/tour/${params.id}`);
+              router.push(consumerTourDetailHref(String(params.id)));
             }
           } else {
             setFetchError(err instanceof Error ? err.message : 'Failed to load confirmation');
@@ -122,10 +123,10 @@ export default function ConfirmationPage() {
       try {
         setBookingData(JSON.parse(stored));
       } catch {
-        router.push(`/tour/${params.id}`);
+        router.push(consumerTourDetailHref(String(params.id)));
       }
     } else {
-      if (isMountedRef.current) router.push(`/tour/${params.id}`);
+      if (isMountedRef.current) router.push(consumerTourDetailHref(String(params.id)));
     }
     return () => { isMountedRef.current = false; };
   }, [params.id, router]);
@@ -140,7 +141,7 @@ export default function ConfirmationPage() {
               <div className="text-center space-y-4">
                 <p className="text-gray-600">{fetchError}</p>
                 <Link
-                  href={`/tour/${params.id}`}
+                  href={consumerTourDetailHref(String(params.id))}
                   className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
                 >
                   Back to tour

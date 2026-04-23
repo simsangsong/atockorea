@@ -7,7 +7,14 @@ const nextConfig = {
   async redirects() {
     /** Public flagship detail — do not use :path* on `/tour/...` or checkout subpaths would break. */
     const canonical = '/tour-product/east-signature-nature-core';
+    const eastUuid = 'c5d60898-a167-4b88-ac9f-62a910921866';
     return [
+      { source: `/tour/${eastUuid}`, destination: canonical, permanent: true },
+      {
+        source: `/:locale(en|ko|zh-CN|zh-TW|ja|es)/tour/${eastUuid}`,
+        destination: '/:locale/tour-product/east-signature-nature-core',
+        permanent: true,
+      },
       { source: '/tour/east-signature-nature-core', destination: canonical, permanent: true },
       { source: '/tour/east-jeju-signature-small-group', destination: canonical, permanent: true },
       { source: '/tour/jeju-east-small-group-template-preview', destination: canonical, permanent: true },
@@ -60,10 +67,12 @@ const nextConfig = {
   images: {
     unoptimized: process.env.NODE_ENV === 'production' && process.env.BUILD_FOR_MOBILE === 'true',
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
+      { protocol: 'https', hostname: 'images.unsplash.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'plus.unsplash.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'images.pexels.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'videos.pexels.com', pathname: '/**' },
+      /** Fallback for CMS / Supabase / other CDNs used elsewhere in the app */
+      { protocol: 'https', hostname: '**', pathname: '/**' },
     ],
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],

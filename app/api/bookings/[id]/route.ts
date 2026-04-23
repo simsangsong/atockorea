@@ -17,6 +17,23 @@ export async function GET(
   try {
     const { id: bookingId } = await params;
     const supabase = createServerClient();
+    const authHeader = req.headers.get('authorization');
+    let userId: string | null = null;
+
+    if (authHeader?.startsWith('Bearer ')) {
+      const token = authHeader.substring(7);
+      const { data: { user }, error: authError } = await supabase.auth.getUser(token);
+      if (!authError && user) {
+        userId = user.id;
+      }
+    }
+
+    if (!userId) {
+      return NextResponse.json(
+        { error: 'Authentication required' },
+        { status: 401 }
+      );
+    }
 
     const { data: booking, error } = await supabase
       .from('bookings')
@@ -38,6 +55,7 @@ export async function GET(
         )
       `)
       .eq('id', bookingId)
+      .eq('user_id', userId)
       .single();
 
     if (error || !booking) {

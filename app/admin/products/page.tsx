@@ -19,6 +19,7 @@ interface Tour {
   id: string;
   title: string;
   slug: string;
+  merchant_id?: string | null;
   city: 'Seoul' | 'Busan' | 'Jeju';
   price: number;
   original_price: number | null;
@@ -184,6 +185,7 @@ export default function ProductsPage() {
     setFormData({
       title: tour.title,
       slug: tour.slug,
+      merchant_id: tour.merchant_id || undefined,
       city: tour.city,
       price: tour.price,
       original_price: tour.original_price,
@@ -315,9 +317,41 @@ export default function ProductsPage() {
     }
   };
 
-  const handleRemoveGalleryImage = (index: number) => {
+  const resolveStoragePath = (url: string, bucket: string): string | null => {
+    try {
+      const parsed = new URL(url);
+      const marker = `/storage/v1/object/public/${bucket}/`;
+      const idx = parsed.pathname.indexOf(marker);
+      if (idx === -1) return null;
+      return decodeURIComponent(parsed.pathname.slice(idx + marker.length));
+    } catch {
+      return null;
+    }
+  };
+
+  const handleRemoveGalleryImage = async (index: number) => {
     const gallery = formData.gallery_images || [];
+    const target = gallery[index];
+    const targetUrl = typeof target === 'string' ? target : target?.url;
     setFormData({ ...formData, gallery_images: gallery.filter((_, i) => i !== index) });
+
+    if (!targetUrl) return;
+
+    try {
+      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
+      if (!session) return;
+      const path = resolveStoragePath(targetUrl, 'tour-gallery');
+      if (!path) return;
+      await fetch(`/api/admin/upload?path=${encodeURIComponent(path)}&bucket=tour-gallery`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${session.access_token}`,
+        },
+        credentials: 'include',
+      });
+    } catch (err) {
+      console.warn('Failed to delete gallery asset from storage', err);
+    }
   };
 
   const handlePickupImageUploadClick = (index: number) => {
@@ -882,6 +916,18 @@ export default function ProductsPage() {
                         <option value="Busan">Busan</option>
                         <option value="Jeju">Jeju</option>
                       </select>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Merchant ID
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.merchant_id || ''}
+                        onChange={(e) => setFormData({ ...formData, merchant_id: e.target.value || null })}
+                        placeholder="Optional merchant UUID"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">

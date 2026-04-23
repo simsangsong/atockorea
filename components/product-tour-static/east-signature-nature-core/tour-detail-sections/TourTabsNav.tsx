@@ -6,15 +6,18 @@ import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNat
 
 export type TourTabsNavProps = Pick<EastSignatureNatureCoreDetailViewModel, "subnavItems">;
 
+/** Approx. header + this nav bar height for scroll-spy and scroll-to-section */
+const SCROLL_OFFSET_PX = 108;
+
 export function TourTabsNav({ subnavItems }: TourTabsNavProps) {
   const [activeSection, setActiveSection] = useState("overview");
-  const [isSticky, setIsSticky] = useState(false);
+  const [isPastHero, setIsPastHero] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 267);
+      setIsPastHero(window.scrollY > 32);
       const sections = subnavItems.map((item) => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 120;
+      const scrollPosition = window.scrollY + SCROLL_OFFSET_PX;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
@@ -25,24 +28,26 @@ export function TourTabsNav({ subnavItems }: TourTabsNavProps) {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [subnavItems]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 60;
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
+      window.scrollTo({ top: elementPosition - SCROLL_OFFSET_PX, behavior: "smooth" });
     }
   };
 
   return (
     <nav
+      /** `.tour-subnav-sticky` (tour-product-v2-scope.css) hard-sets `position: sticky; top: 3rem; md: 3.5rem; z-index: 40;`
+       * to match Header (`components/Header.tsx`) `h-12 md:h-14`. Do not rely on Tailwind `sticky top-12` here. */
       className={cn(
-        "bg-white/98 backdrop-blur-md border-b border-border/80 transition-all duration-200 z-40",
-        isSticky ? "sticky top-0 shadow-sm" : "",
+        "tour-subnav-sticky bg-white/98 backdrop-blur-md border-b border-border/80 transition-[box-shadow] duration-200",
+        isPastHero ? "shadow-md" : "shadow-none",
       )}
     >
       <div className="mx-auto max-w-xl px-5">

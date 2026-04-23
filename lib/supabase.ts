@@ -209,6 +209,8 @@ export type Database = {
         Row: {
           id: string;
           slug: string;
+          /** Logical product key — same for all locales of one SKU */
+          product_id: string;
           locale: string;
           is_published: boolean;
           sort_order: number;
@@ -261,6 +263,66 @@ export type Database = {
           'id' | 'created_at' | 'updated_at'
         >;
         Update: Partial<Database['public']['Tables']['tour_product_offers']['Insert']>;
+      };
+      tour_matching_profiles: {
+        Row: {
+          product_id: string;
+          product_type: string;
+          route_type: string;
+          region_type: string;
+          region_tags: unknown;
+          theme_tags: unknown;
+          poi_tags: unknown;
+          pace_level: number;
+          walking_level: number;
+          scenic_level: number;
+          photo_level: number;
+          culture_level: number;
+          relax_level: number;
+          first_time_fit: number;
+          family_fit: number;
+          senior_fit: number;
+          couple_fit: number;
+          active_traveler_fit: number;
+          one_day_fit: number;
+          same_day_flight_fit: number;
+          rain_fit: number;
+          value_for_money_fit: number;
+          iconic_landmark_fit: number;
+          cafe_fit: number;
+          adult_family_fit: number;
+          young_kids_fit: number;
+          senior_active_fit: number;
+          senior_general_fit: number;
+          mobility_friendly_fit: number;
+          stroller_fit: number;
+          indoor_ratio: number;
+          weather_sensitivity: number;
+          local_culture_fit: number;
+          shopping_fit: number;
+          storytelling_fit: number;
+          comfort_level: number;
+          budget_fit: number;
+          premium_fit: number;
+          small_group_fit: number;
+          private_fit: number;
+          bus_fit: number;
+          price_band: string;
+          pickup_base: string;
+          return_time_band: string;
+          duration_band: string;
+          min_recommended_age: number;
+          hard_constraints: unknown;
+          walking_notes: unknown;
+          keywords: unknown;
+          synonym_hints: unknown;
+          profile_version: number;
+          is_active: boolean;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: never;
+        Update: never;
       };
     };
   };

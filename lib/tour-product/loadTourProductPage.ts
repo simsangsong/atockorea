@@ -61,6 +61,22 @@ function parsePayload(raw: unknown): TourProductDetailPayloadV1 | null {
 }
 
 /**
+ * Supabase 행이 있어도 `detail_payload`가 비어 있거나 초기 시드만 있으면 플래그십 레이아웃이 깨집니다.
+ * 이때는 `null`을 반환해 각 `/tour-product/[slug]` 페이지가 번들 정적 뷰모델로 폴백하도록 합니다.
+ */
+export function isDbTourProductViewModelComplete(
+  vm: EastSignatureNatureCoreDetailViewModel,
+): boolean {
+  const heroUrl = typeof vm.hero?.imageUrl === "string" ? vm.hero.imageUrl.trim() : "";
+  if (!heroUrl.startsWith("http")) return false;
+  if (!vm.headlineLine1?.trim()) return false;
+  if (!Array.isArray(vm.subnavItems) || vm.subnavItems.length < 3) return false;
+  if (!Array.isArray(vm.glanceItems) || vm.glanceItems.length < 3) return false;
+  if (!Array.isArray(vm.galleryItems) || vm.galleryItems.length < 1) return false;
+  return true;
+}
+
+/**
  * DB 행 → Tour*`EastSignatureNatureCoreDetailViewModel` 동일 shape.
  * East 전용 페이지에서만 사용; 다른 상품은 동일 스키마면 재사용 가능.
  */
@@ -133,7 +149,7 @@ export function mergeTourProductPageToViewModel(
       ratingDistribution: [],
       highlights: [],
     },
-    sectionUi: mergeTourProductSectionUi(payload.sectionUi),
+    sectionUi: mergeTourProductSectionUi(payload.sectionUi, page.locale),
   };
 
   /** 정적 이스트 템플릿에서 `typeof vm`이 매우 좁음; DB/JSON 조립은 동일 스키마 런타임 보장 → 단언. */
@@ -171,6 +187,15 @@ export async function loadTourProductViewModelBySlugFromSupabase(
     }
   } catch (e) {
     console.error("[loadTourProductViewModelBySlugFromSupabase] reviews assemble", slug, e);
+  }
+
+  if (!isDbTourProductViewModelComplete(vm)) {
+    console.warn(
+      "[loadTourProductViewModelBySlugFromSupabase] incomplete detail_payload / columns; use static bundle",
+      slug,
+      locale,
+    );
+    return null;
   }
 
   return vm;

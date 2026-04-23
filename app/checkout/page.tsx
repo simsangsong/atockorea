@@ -11,6 +11,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
+import { consumerTourCheckoutHref } from '@/lib/tour-consumer-visibility';
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -82,7 +83,7 @@ export default function CheckoutPage() {
           sessionStorage.setItem('bookingData', JSON.stringify(bookingData));
         }
         cancelled = false;
-        router.replace(`/tour/${tour.id}/checkout`);
+        router.replace(consumerTourCheckoutHref(tour.id));
       } catch {
         if (!cancelled) setStatus('error');
       }

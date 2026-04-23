@@ -43,14 +43,9 @@ export default function ResetPasswordPage() {
       if (cancelled) return;
       client.auth.getSession().then(({ data: { session } }) => {
         if (cancelled) return;
-        if (session) {
-          setHasSession(true);
-        } else {
-          setHasSession(false);
-          router.replace('/signin?next=/reset-password');
-        }
+        setHasSession(Boolean(session));
       });
-    }, 2000);
+    }, 3000);
 
     return () => {
       cancelled = true;
@@ -98,7 +93,26 @@ export default function ResetPasswordPage() {
   }
 
   if (!hasSession) {
-    return null;
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
+        <Header />
+        <main className="container mx-auto px-4 py-12">
+          <div className="mx-auto max-w-md rounded-xl border border-gray-200/60 bg-white/80 p-6 text-center shadow-lg backdrop-blur-sm">
+            <h1 className="text-xl font-semibold text-slate-900">Session required</h1>
+            <p className="mt-2 text-sm text-slate-600">
+              비밀번호 재설정 링크가 만료되었거나 세션이 없습니다. 다시 로그인 후 재설정 링크를 요청해 주세요.
+            </p>
+            <Link
+              href="/signin?next=/reset-password"
+              className="mt-4 inline-flex rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
+            >
+              로그인으로 이동
+            </Link>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
   }
 
   return (

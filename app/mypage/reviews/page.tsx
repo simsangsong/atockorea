@@ -1,6 +1,5 @@
 'use client';
 
-// Force dynamic rendering for safety with Supabase/i18n
 export const dynamic = 'force-dynamic';
 
 import { useEffect, useState } from 'react';
@@ -8,6 +7,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { CalendarDateIcon, StarIcon } from '@/components/Icons';
 import { supabase } from '@/lib/supabase';
+import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
+import { useTranslations } from '@/lib/i18n';
+import { MYPAGE_SURFACE_PAGE, MYPAGE_SECTION_TITLE } from '@/lib/mypage-ui';
+import { cn } from '@/lib/utils';
 
 interface Review {
   id: string;
@@ -25,6 +28,7 @@ interface Review {
 
 export default function ReviewsPage() {
   const router = useRouter();
+  const t = useTranslations();
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -68,10 +72,9 @@ export default function ReviewsPage() {
 
   if (loading) {
     return (
-      <div className="space-y-6">
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-          <h1 className="text-xl font-medium text-gray-900 mb-2">My Reviews</h1>
-          <p className="text-gray-600">Loading...</p>
+      <div className="space-y-4">
+        <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6')}>
+          <p className="text-[13px] text-slate-600">{t('mypage.reviewsLoading')}</p>
         </div>
       </div>
     );
@@ -79,70 +82,80 @@ export default function ReviewsPage() {
 
   if (error) {
     return (
-      <div className="space-y-6">
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-          <h1 className="text-xl font-medium text-gray-900 mb-2">My Reviews</h1>
-          <p className="text-red-600">Error: {error}</p>
+      <div className="space-y-4">
+        <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6')}>
+          <p className="text-[13px] text-red-600">{t('mypage.bookingsError', { message: error })}</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="space-y-6">
-      <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-        <h1 className="text-xl font-medium text-gray-900 mb-2">My Reviews</h1>
-        <p className="text-gray-600">
-          You can write new reviews from your completed bookings. Existing reviews are shown below and cannot be edited or deleted.
+    <div className="space-y-4">
+      <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6 md:p-7')}>
+        <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+          {t('mypage.reviews')}
+        </p>
+        <h1 className="text-[1.35rem] font-bold tracking-tight text-[#0f172a] md:text-[1.5rem]">
+          {t('mypage.reviewsPageTitle')}
+        </h1>
+        <p className="mt-1 text-[13px] leading-snug text-slate-600">
+          {t('mypage.reviewsPageSubtitle')}
         </p>
       </div>
 
-      <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
-        <h2 className="text-lg font-medium text-gray-900 mb-4">Your Reviews</h2>
+      <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6')}>
+        <h2 className={cn(MYPAGE_SECTION_TITLE, 'mb-4')}>{t('mypage.reviewsSectionTitle')}</h2>
         {reviews.length === 0 ? (
-          <p className="text-gray-500 text-center py-4">You have not written any reviews yet.</p>
+          <p className="py-6 text-center text-[13px] text-slate-500">{t('mypage.reviewsEmpty')}</p>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-3">
             {reviews.map((review) => (
-              <div key={review.id} className="p-4 bg-gray-50 rounded-lg">
-                <div className="flex items-start justify-between mb-2">
-                  <div className="flex-1">
+              <div
+                key={review.id}
+                className="rounded-2xl border border-slate-200/80 bg-white/70 p-4 shadow-[0_2px_14px_-4px_rgba(15,23,42,0.06)]"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex-1 min-w-0">
                     <Link
-                      href={`/tour/${review.tour_id}`}
-                      className="font-medium text-gray-900 hover:text-indigo-600 transition-colors"
+                      href={consumerTourDetailHref(review.tour_id)}
+                      className="text-[14px] font-semibold text-[#0f172a] transition-colors hover:text-slate-700"
                     >
                       {review.tours?.title || 'Tour'}
                     </Link>
-                    <div className="flex items-center gap-0.5 mt-1 mb-2">
+                    <div className="mt-1 mb-2 flex items-center gap-0.5">
                       {[...Array(5)].map((_, i) => (
                         <StarIcon
                           key={i}
-                          className={`w-4 h-4 ${
-                            i < review.rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300 fill-gray-300'
-                          }`}
+                          className={cn(
+                            'h-4 w-4',
+                            i < review.rating
+                              ? 'fill-amber-400 text-amber-400'
+                              : 'fill-slate-200 text-slate-200',
+                          )}
                         />
                       ))}
                     </div>
                     {review.title && (
-                      <h3 className="font-medium text-gray-800 mb-1">{review.title}</h3>
+                      <h3 className="mb-1 text-[13px] font-semibold text-slate-800">{review.title}</h3>
                     )}
                     {review.comment && (
-                      <p className="text-gray-600 mb-2">{review.comment}</p>
+                      <p className="mb-2 text-[13px] leading-relaxed text-slate-700">{review.comment}</p>
                     )}
                     {review.images && review.images.length > 0 && (
-                      <div className="flex gap-2 mb-2">
+                      <div className="mb-2 flex gap-2">
                         {review.images.slice(0, 3).map((image, idx) => (
                           <img
                             key={idx}
                             src={image}
                             alt={`Review image ${idx + 1}`}
-                            className="w-16 h-16 object-cover rounded"
+                            className="h-16 w-16 rounded-lg object-cover ring-1 ring-slate-200"
                           />
                         ))}
                       </div>
                     )}
-                    <p className="text-sm text-gray-500 flex items-center gap-1.5">
-                      <CalendarDateIcon className="w-4 h-4" />
+                    <p className="flex items-center gap-1.5 text-[11px] text-slate-500">
+                      <CalendarDateIcon className="h-3.5 w-3.5" />
                       {formatDate(review.created_at)}
                     </p>
                   </div>
@@ -155,4 +168,3 @@ export default function ReviewsPage() {
     </div>
   );
 }
-

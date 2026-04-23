@@ -9,6 +9,8 @@ import { readFileSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 
+import { assertMatchingProfileOrExit } from "./_lib/matching-profile-validator.mjs";
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
 const jsonPath = join(
@@ -23,6 +25,10 @@ function sqlEscapeLiteral(s) {
 
 const raw = JSON.parse(readFileSync(jsonPath, "utf8"));
 if (raw.page_sections) delete raw.page_sections;
+
+assertMatchingProfileOrExit(raw.matching_profile, {
+  sourceLabel: `southwest-hallasan-osulloc-aewol.en.json#matching_profile`,
+});
 
 const detailPayloadJson = JSON.stringify(raw);
 const detailPayloadSql = sqlEscapeLiteral(detailPayloadJson);
@@ -267,6 +273,8 @@ WHERE p.slug = '${SLUG}' AND p.locale = 'en'
 
 -- ---------------------------------------------------------------------------
 -- 4) tour_matching_profiles — 추천/매칭 (southwest)
+-- Keep in sync with supabase/manual/insert-southwest-hallasan-osulloc-aewol-product.sql
+-- and migrations 20260415180000 + 20260415210000.
 -- ---------------------------------------------------------------------------
 INSERT INTO public.tour_matching_profiles (
   product_id,
@@ -293,6 +301,24 @@ INSERT INTO public.tour_matching_profiles (
   value_for_money_fit,
   iconic_landmark_fit,
   cafe_fit,
+  adult_family_fit,
+  young_kids_fit,
+  senior_active_fit,
+  senior_general_fit,
+  mobility_friendly_fit,
+  stroller_fit,
+  indoor_ratio,
+  weather_sensitivity,
+  local_culture_fit,
+  shopping_fit,
+  storytelling_fit,
+  comfort_level,
+  budget_fit,
+  premium_fit,
+  small_group_fit,
+  private_fit,
+  bus_fit,
+  price_band,
   pickup_base,
   return_time_band,
   duration_band,
@@ -316,28 +342,46 @@ VALUES (
   3,
   4,
   4,
-  3,
-  4,
-  5,
-  4,
-  4,
-  4,
-  3,
-  3,
   2,
   3,
   5,
+  3,
+  3,
+  4,
   4,
   3,
+  2,
+  3,
+  4,
+  4,
+  4,
+  4,
+  2,
+  4,
+  3,
+  2,
+  2,
+  35,
+  3,
+  4,
+  2,
+  4,
+  3,
+  4,
+  2,
+  5,
+  1,
+  2,
+  'mid',
   'jeju_city',
   '17:50-18:20',
   '8h',
   8,
-  '{"avoidIf":[],"notIdealFor":["very_low_mobility","stroller_heavy_on_trail"]}'::JSONB,
+  '{"avoidIf":[],"notIdealFor":["very_low_mobility","stroller_heavy"]}'::JSONB,
   '["moderate overall","stairs at Hallasan trail and Cheonjeyeon"]'::JSONB,
   '["southwest jeju","hallasan","jusangjeolli","osulloc","aewol","first time"]'::JSONB,
   '["balanced southwest","tea and coast finish"]'::JSONB,
-  1,
+  2,
   TRUE
 )
 ON CONFLICT (product_id) DO UPDATE SET
@@ -364,6 +408,24 @@ ON CONFLICT (product_id) DO UPDATE SET
   value_for_money_fit = EXCLUDED.value_for_money_fit,
   iconic_landmark_fit = EXCLUDED.iconic_landmark_fit,
   cafe_fit = EXCLUDED.cafe_fit,
+  adult_family_fit = EXCLUDED.adult_family_fit,
+  young_kids_fit = EXCLUDED.young_kids_fit,
+  senior_active_fit = EXCLUDED.senior_active_fit,
+  senior_general_fit = EXCLUDED.senior_general_fit,
+  mobility_friendly_fit = EXCLUDED.mobility_friendly_fit,
+  stroller_fit = EXCLUDED.stroller_fit,
+  indoor_ratio = EXCLUDED.indoor_ratio,
+  weather_sensitivity = EXCLUDED.weather_sensitivity,
+  local_culture_fit = EXCLUDED.local_culture_fit,
+  shopping_fit = EXCLUDED.shopping_fit,
+  storytelling_fit = EXCLUDED.storytelling_fit,
+  comfort_level = EXCLUDED.comfort_level,
+  budget_fit = EXCLUDED.budget_fit,
+  premium_fit = EXCLUDED.premium_fit,
+  small_group_fit = EXCLUDED.small_group_fit,
+  private_fit = EXCLUDED.private_fit,
+  bus_fit = EXCLUDED.bus_fit,
+  price_band = EXCLUDED.price_band,
   pickup_base = EXCLUDED.pickup_base,
   return_time_band = EXCLUDED.return_time_band,
   duration_band = EXCLUDED.duration_band,

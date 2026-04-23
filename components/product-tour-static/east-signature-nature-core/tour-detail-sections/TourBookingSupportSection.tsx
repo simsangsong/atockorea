@@ -1,15 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle, Users, Route, ChevronDown } from "lucide-react";
+import { CheckCircle, Users, Route, ChevronDown, Clock3, Mountain } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
+/**
+ * `bookingTrustItems[].icon` → Lucide. East/Southwest: check-circle, route, users.
+ * Jeju Grand Highlights: clock-3, mountain, users.
+ */
 const TRUST_ICONS = {
   "check-circle": CheckCircle,
   route: Route,
   users: Users,
+  "clock-3": Clock3,
+  mountain: Mountain,
 } as const;
+
+const DEFAULT_TRUST_ICON = CheckCircle;
 
 export type TourBookingSupportSectionProps = Pick<
   EastSignatureNatureCoreDetailViewModel,
@@ -28,7 +36,8 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
 
       <div className="grid grid-cols-3 gap-2.5">
         {bookingTrustItems.map((item) => {
-          const Icon = TRUST_ICONS[item.icon];
+          const Icon =
+            TRUST_ICONS[item.icon as keyof typeof TRUST_ICONS] ?? DEFAULT_TRUST_ICON;
           return (
             <div
               key={item.title}

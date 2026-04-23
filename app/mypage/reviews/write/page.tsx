@@ -133,7 +133,7 @@ function WriteReviewContent() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
+      <div className="rounded-[1.75rem] border border-white/25 bg-white/55 p-6 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.14)] backdrop-blur-xl">
         <h1 className="text-xl font-medium text-gray-900 mb-2">Write a Review</h1>
         <p className="text-gray-600 mb-6">Share your experience with {tourName}</p>
 
@@ -265,7 +265,7 @@ export default function WriteReviewPage() {
   return (
     <Suspense fallback={
       <div className="max-w-2xl mx-auto">
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-6">
+        <div className="rounded-[1.75rem] border border-white/25 bg-white/55 p-6 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.14)] backdrop-blur-xl">
           <p className="text-gray-600">Loading...</p>
         </div>
       </div>

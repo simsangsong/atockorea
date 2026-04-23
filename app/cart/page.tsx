@@ -11,6 +11,7 @@ import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { TrashIcon, HeartIcon, CalendarDateIcon, MapIcon, ClockIcon } from '@/components/Icons';
 import { supabase } from '@/lib/supabase';
 import { useTranslations } from '@/lib/i18n';
+import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
 
 interface CartItem {
   id: string;
@@ -383,7 +384,7 @@ export default function CartPage() {
                     <div className="flex flex-col md:flex-row">
                       {/* Image */}
                       <div className="md:w-48 h-48 md:h-auto flex-shrink-0 relative">
-                        <Link href={`/tour/${item.tourId}`}>
+                        <Link href={consumerTourDetailHref(item.tourId)}>
                           <Image
                             src={item.image}
                             alt={item.title}
@@ -402,7 +403,7 @@ export default function CartPage() {
                       <div className="flex-1 p-4 md:p-5">
                         {/* Header: Title and Actions */}
                         <div className="flex items-start justify-between mb-3">
-                          <Link href={`/tour/${item.tourId}`} className="flex-1 pr-3">
+                          <Link href={consumerTourDetailHref(item.tourId)} className="flex-1 pr-3">
                             <h3 className="text-base md:text-lg font-bold text-slate-900 mb-1.5 hover:text-blue-600 transition-colors line-clamp-2 leading-tight">
                               {item.title}
                             </h3>

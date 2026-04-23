@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import { useTranslations } from '@/lib/i18n';
 import { useCurrencyOptional } from '@/lib/currency';
 import TourCardScheduleTimeline from '@/components/tours/TourCardScheduleTimeline';
+import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
 
 interface DetailedTourCardProps {
   tour: {
@@ -148,7 +149,7 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
           <div className="flex flex-col w-[38%] flex-shrink-0">
             {/* 위 절반: 이미지 */}
             <div className="relative w-full h-[97px]">
-              <Link href={`/tour/${tour.id}`}>
+              <Link href={consumerTourDetailHref(String(tour.id))}>
                 <Image
                   src={tour.image || '/placeholder-tour.jpg'}
                   alt={tour.title}
@@ -168,7 +169,7 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
             {/* 아래 절반: 제목 + 가격 (가격은 아래쪽 고정) */}
             <div className="flex flex-col p-2 bg-gradient-to-b from-gray-50 to-white min-h-[97px]">
               <h3 className="text-xs font-bold text-gray-900 mb-2 hover:text-indigo-600 transition-colors leading-tight line-clamp-2">
-                <Link href={`/tour/${tour.id}`}>{tour.title}</Link>
+                <Link href={consumerTourDetailHref(String(tour.id))}>{tour.title}</Link>
               </h3>
               <div className="flex flex-col gap-0.5 mt-auto">
                 {hasDiscount ? (
@@ -252,7 +253,7 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
         <div className="flex flex-row gap-4 p-4 items-stretch">
           {/* Image */}
           <div className="w-48 h-48 flex-shrink-0 relative rounded-lg overflow-hidden bg-gray-100 self-start">
-            <Link href={`/tour/${tour.id}`}>
+            <Link href={consumerTourDetailHref(String(tour.id))}>
               <Image
                 src={tour.image || '/placeholder-tour.jpg'}
                 alt={tour.title}
@@ -274,7 +275,7 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
             <div>
               {/* Header */}
               <div className="flex items-start justify-between mb-2">
-                <Link href={`/tour/${tour.id}`} className="flex-1 pr-4">
+                <Link href={consumerTourDetailHref(String(tour.id))} className="flex-1 pr-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1 hover:text-indigo-600 transition-colors line-clamp-2">
                     {tour.title}
                   </h3>
@@ -350,7 +351,7 @@ function DetailedTourCard({ tour }: DetailedTourCardProps) {
                   </button>
                 </div>
                 <Link
-                  href={`/tour/${tour.id}`}
+                  href={consumerTourDetailHref(String(tour.id))}
                   className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg text-center text-sm"
                 >
                   View Details

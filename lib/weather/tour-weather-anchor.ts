@@ -1,5 +1,3 @@
-import { TOUR_DETAIL_TEMPLATE_SLUGS } from "@/lib/tour-detail-template-slugs"
-
 /** 좌표는 성산일출봉 일대 — 표시용 라벨은 동쪽 일대(투어 구역)로 통일 */
 export const WEATHER_ANCHOR_EAST_SEONGSAN = {
   latitude: 33.4594,
@@ -48,7 +46,7 @@ export function resolveTourWeatherAnchor(input: TourWeatherAnchorInput): {
   if (slugLower && SOUTHWEST_SLUG_RE.test(slugLower)) {
     return { ...WEATHER_ANCHOR_SOUTHWEST_HALLIM }
   }
-  if (slugLower && (EAST_SLUG_RE.test(slugLower) || TOUR_DETAIL_TEMPLATE_SLUGS.has(slug))) {
+  if (slugLower && EAST_SLUG_RE.test(slugLower)) {
     return { ...WEATHER_ANCHOR_EAST_SEONGSAN }
   }
 

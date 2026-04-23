@@ -5,10 +5,11 @@ import { tourListPricesToUsdSync } from '@/lib/tour-list-price-usd.server';
 import { withErrorHandler, AppError } from '@/lib/error-handler';
 import { createServerLogger } from '@/lib/logger';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
-import { isTourSlugHiddenFromPublicCatalog } from '@/lib/tour-consumer-visibility';
+import { isTourRowHiddenFromPublicTourApi } from '@/lib/tour-consumer-visibility';
 
 const SUPPORTED_LOCALES = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'] as const;
 type SupportedLocale = typeof SUPPORTED_LOCALES[number];
+type TourTypeFilter = 'private' | 'join' | 'bus';
 
 function parseLocale(value: string | null): SupportedLocale | null {
   if (!value) return null;
@@ -29,6 +30,45 @@ function escapeIlike(value: string): string {
 function sanitizeKeyword(value: string, maxLen = 80): string {
   const s = value.slice(0, maxLen).replace(/["\\]/g, '');
   return s;
+}
+
+function isKnownJoinTourSlug(slug: string | undefined | null): boolean {
+  const s = (slug ?? '').trim().toLowerCase();
+  if (!s) return false;
+  if (s === 'east-signature-nature-core') return true;
+  if (s.startsWith('east-signature-nature-core-')) return true;
+  if (s === 'east-jeju-signature-small-group') return true;
+  if (s.startsWith('east-jeju-signature-small-group-')) return true;
+  if (s === 'jeju-east-small-group-template-preview') return true;
+  return false;
+}
+
+function tagIndicatesSmallGroupJoin(tag: string | undefined | null): boolean {
+  const t = (tag ?? '').trim().toLowerCase();
+  if (!t) return false;
+  return /small\s*group|소그룹|拼团|少人数|grupo\s*pequeño|small-group/i.test(t);
+}
+
+function inferTourType(item: { title?: string; badges?: string[]; slug?: string; tag?: string | null }): TourTypeFilter {
+  if (isKnownJoinTourSlug(item.slug)) return 'join';
+  if (tagIndicatesSmallGroupJoin(item.tag)) return 'join';
+  const title = (item.title ?? '').toLowerCase();
+  const badges = (item.badges ?? []).map((b) => String(b).toLowerCase());
+  if (
+    /private|프라이빗|私人|プライベート|privado/i.test(title) ||
+    badges.some((b) => b.includes('private'))
+  ) {
+    return 'private';
+  }
+  if (
+    /join|small.?group|소그룹|拼团|少人数|grupo pequeño/i.test(title) ||
+    /east\s*signature\s*nature\s*core/i.test(title) ||
+    /동부\s*시그니처|시그니처\s*네이처|네이처\s*코어/.test(item.title ?? '') ||
+    badges.some((b) => b.includes('join') || b.includes('small group'))
+  ) {
+    return 'join';
+  }
+  return 'bus';
 }
 
 /**
@@ -53,9 +93,12 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
     const destinations = searchParams.get('destinations'); // Comma-separated cities
     const durations = searchParams.get('durations'); // Comma-separated duration keywords
     const features = searchParams.get('features'); // Comma-separated feature keywords
-    const sortBy = searchParams.get('sortBy') || 'created_at'; // created_at, price, rating
+    const sortBy = searchParams.get('sortBy') || 'created_at'; // created_at, price, rating, bookings
     const sortOrder = searchParams.get('sortOrder') || 'desc'; // asc, desc
     const useScoreSort = searchParams.get('useScoreSort') !== 'false'; // when false, keep requested sortBy/sortOrder
+    const typeParam = searchParams.get('tourType');
+    const tourTypeFilter: TourTypeFilter | null =
+      typeParam === 'private' || typeParam === 'join' || typeParam === 'bus' ? typeParam : null;
     const limit = parseInt(searchParams.get('limit') || '100');
     const offset = parseInt(searchParams.get('offset') || '0');
 
@@ -208,7 +251,9 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       };
     }) || [];
 
-    transformedTours = transformedTours.filter((tour) => !isTourSlugHiddenFromPublicCatalog(tour.slug));
+    transformedTours = transformedTours.filter(
+      (tour) => !isTourRowHiddenFromPublicTourApi({ id: String(tour.id ?? ''), slug: tour.slug })
+    );
 
     // Apply features filter in JavaScript (since JSONB queries are complex)
     if (features) {
@@ -235,7 +280,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
     }
 
     // Compute recommendation score for each tour and sort by score (higher first), unless useScoreSort=false
-    if (transformedTours.length > 0 && useScoreSort) {
+    if (transformedTours.length > 0 && (useScoreSort || sortBy === 'bookings')) {
       try {
         const tourIds = transformedTours.map((tour) => tour.id).filter(Boolean);
         const bookingCounts: Record<string, number> = {};
@@ -295,7 +340,12 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
             };
           })
           .sort((a, b) => {
-            // Sort by score descending; stable fallback on rating then createdAt
+            if (sortBy === 'bookings') {
+              if (sortOrder === 'asc') {
+                return (a.bookingCount || 0) - (b.bookingCount || 0);
+              }
+              return (b.bookingCount || 0) - (a.bookingCount || 0);
+            }
             if (b.score !== a.score) return (b.score || 0) - (a.score || 0);
             if ((b.rating || 0) !== (a.rating || 0)) return (b.rating || 0) - (a.rating || 0);
             return String(b.createdAt || '').localeCompare(String(a.createdAt || ''));
@@ -303,6 +353,17 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       } catch (scoreError) {
         logger.warn?.('Failed to compute recommendation scores for tours', { error: (scoreError as Error).message });
       }
+    }
+
+    if (tourTypeFilter) {
+      transformedTours = transformedTours.filter((tour) =>
+        inferTourType({
+          title: tour.title,
+          badges: Array.isArray(tour.badges) ? tour.badges.map(String) : [],
+          slug: typeof tour.slug === 'string' ? tour.slug : undefined,
+          tag: typeof tour.tag === 'string' ? tour.tag : null,
+        }) === tourTypeFilter
+      );
     }
 
     logger.info('Tours fetched successfully', { count: transformedTours.length });

@@ -84,6 +84,15 @@ export const galleryImageOptions: FileUploadOptions = {
   maxFiles: 20,
 };
 
+/**
+ * Video uploads for product hero/reel clips.
+ */
+export const productVideoOptions: FileUploadOptions = {
+  maxSize: 250 * 1024 * 1024, // 250MB
+  allowedTypes: ['video/mp4', 'video/webm', 'video/quicktime'],
+  maxFiles: 5,
+};
+
 /** Review photo uploads (client + API validation). */
 export const REVIEW_IMAGE_MAX_BYTES = 4 * 1024 * 1024; // 4MB
 

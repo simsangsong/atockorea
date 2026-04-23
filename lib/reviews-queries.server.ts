@@ -135,3 +135,35 @@ export async function getHomepagePreviewReviews(): Promise<Array<Record<string, 
   const slice = rows.slice(0, 2);
   return attachReviewProfiles(slice);
 }
+
+/**
+ * Public review aggregates (same filters as {@link fetchPublicReviewsForApi}).
+ * Loads `rating` only. For very large tables, replace with a SQL aggregate / RPC later.
+ */
+export async function fetchPublicReviewAggregates(): Promise<{ count: number; avgRating: number | null }> {
+  const supabase = createServerClient();
+  /** `applyPublicReviewServerFilters` chains `.eq(...)` which only exists on the FilterBuilder returned by `.select(...)`. */
+  const { data, error } = await applyPublicReviewServerFilters(
+    supabase.from('reviews').select('rating'),
+  );
+  if (error) {
+    console.error('[fetchPublicReviewAggregates]', error);
+    throw error;
+  }
+  const rows = (data || []) as { rating: number }[];
+  const n = rows.length;
+  if (n === 0) return { count: 0, avgRating: null };
+  const sum = rows.reduce((s, r) => s + (Number(r.rating) || 0), 0);
+  return { count: n, avgRating: Math.round((sum / n) * 10) / 10 };
+}
+
+/** Home v2: featured public reviews for marketing cards (rating desc, then newest). */
+export async function getHomeV2FeaturedReviews(limit: number): Promise<Array<Record<string, unknown>>> {
+  const rows = await fetchPublicReviewsForApi({
+    limit,
+    offset: 0,
+    homePreview: true,
+  });
+  const slice = rows.slice(0, limit);
+  return attachReviewProfiles(slice);
+}

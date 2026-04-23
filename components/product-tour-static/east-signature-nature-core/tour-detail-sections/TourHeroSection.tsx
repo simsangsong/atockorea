@@ -55,14 +55,6 @@ export function TourHeroSection({ headlineLine1, headlineLine2, hero }: TourHero
               <br />
               {headlineLine2}
             </h1>
-            <p
-              className="mt-3 sm:mt-4 max-w-sm text-[13px] sm:text-[14px] text-white leading-[1.6] tracking-wide"
-              style={{
-                textShadow: "0 1px 3px rgba(0,0,0,0.65), 0 2px 14px rgba(0,0,0,0.4)",
-              }}
-            >
-              {hero.tagline}
-            </p>
 
             <div className="relative z-10 mt-4 sm:mt-6 flex flex-wrap gap-2">
               {hero.pills.map((pill, i) => (

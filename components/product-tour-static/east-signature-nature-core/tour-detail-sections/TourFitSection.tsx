@@ -1,15 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, Sun, Mountain, Wind, Check, X } from "lucide-react";
+import { ChevronDown, Sun, Mountain, Wind, Clock3, Check, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
+/**
+ * `whyTourWorks.routeLogicSections[].icon` → Lucide.
+ * East/Southwest: sun, mountain, wind. Jeju Grand Highlights: clock-3, mountain, wind.
+ */
 const LOGIC_ICONS = {
   sun: Sun,
   mountain: Mountain,
   wind: Wind,
+  "clock-3": Clock3,
 } as const;
+
+const ROUTE_LOGIC_ICON_FALLBACK = Sun;
 
 export type TourFitSectionProps = Pick<EastSignatureNatureCoreDetailViewModel, "whyTourWorks" | "sectionUi">;
 
@@ -17,44 +24,51 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
   const [showLogic, setShowLogic] = useState(false);
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       <div>
-        <h2 className="text-base font-semibold tracking-tight text-foreground">{sectionUi.fitTitle}</h2>
-        <p className="mt-1 text-[12px] leading-snug tracking-wide text-muted-foreground">{sectionUi.fitSubtitle}</p>
+        <h2 className="text-[17px] font-semibold tracking-[-0.02em] text-foreground">{sectionUi.fitTitle}</h2>
+        <p className="mt-1.5 text-[13px] leading-relaxed tracking-wide text-muted-foreground">{sectionUi.fitSubtitle}</p>
       </div>
 
-      <div className="card-premium tour-why-tour-works-card space-y-4 p-4">
-        <div className="grid grid-cols-2 gap-5">
-          <div>
-            <h3 className="tour-fit-micro-label mb-2">{sectionUi.fitBestForLabel}</h3>
-            <ul className="space-y-1.5">
+      <div className="tour-fit-premium-card card-premium tour-why-tour-works-card relative overflow-hidden p-5 sm:p-6">
+        <span aria-hidden className="tour-fit-premium-card__sheen" />
+        <div className="tour-fit-premium-grid grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-0 relative">
+          <div className="tour-fit-column tour-fit-column--positive">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="tour-fit-column__badge tour-fit-column__badge--positive">
+                <Check className="h-3 w-3" strokeWidth={2.75} />
+              </div>
+              <h3 className="tour-fit-micro-label">{sectionUi.fitBestForLabel}</h3>
+            </div>
+            <ul className="space-y-2">
               {whyTourWorks.bestFor.map((item, i) => (
-                <li key={i} className="tour-fit-list-text flex items-start gap-2 text-foreground">
-                  <div className="mt-0.5 flex h-3.5 w-3.5 flex-shrink-0 items-center justify-center rounded-full bg-emerald-50/90">
-                    <Check className="h-2 w-2 text-emerald-600" strokeWidth={2.5} />
-                  </div>
-                  {item}
+                <li key={i} className="tour-fit-list-text flex items-start gap-2.5 text-foreground">
+                  <span aria-hidden className="tour-fit-bullet tour-fit-bullet--positive mt-[7px]" />
+                  <span className="flex-1">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div>
-            <h3 className="tour-fit-micro-label mb-2">{sectionUi.fitLessIdealLabel}</h3>
-            <ul className="space-y-1.5">
+          <div className="tour-fit-column tour-fit-column--negative">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="tour-fit-column__badge tour-fit-column__badge--negative">
+                <X className="h-3 w-3" strokeWidth={2.75} />
+              </div>
+              <h3 className="tour-fit-micro-label">{sectionUi.fitLessIdealLabel}</h3>
+            </div>
+            <ul className="space-y-2">
               {whyTourWorks.lessIdeal.map((item, i) => (
-                <li key={i} className="tour-fit-list-text flex items-start gap-2 text-muted-foreground">
-                  <div className="mt-0.5 flex h-3.5 w-3.5 flex-shrink-0 items-center justify-center rounded-full bg-slate-50/90">
-                    <X className="h-2 w-2 text-slate-400" strokeWidth={2.5} />
-                  </div>
-                  {item}
+                <li key={i} className="tour-fit-list-text flex items-start gap-2.5 text-muted-foreground">
+                  <span aria-hidden className="tour-fit-bullet tour-fit-bullet--negative mt-[7px]" />
+                  <span className="flex-1">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-border/60 pt-3">
+        <div className="tour-fit-premium-card__note mt-5 pt-4">
           <p className="tour-fit-note text-muted-foreground">
             <span className="font-semibold text-foreground">{sectionUi.fitFamiliesPrefix}</span> {sectionUi.fitFamiliesText}
             <span className="font-semibold text-foreground">{sectionUi.fitSeniorsPrefix}</span> {sectionUi.fitSeniorsText}
@@ -86,7 +100,8 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
           <div className="overflow-hidden">
             <div className="tour-fit-route-logic-inner space-y-4 border-t border-border/60 p-4">
               {whyTourWorks.routeLogicSections.map((section) => {
-                const Icon = LOGIC_ICONS[section.icon];
+                const Icon =
+                  LOGIC_ICONS[section.icon as keyof typeof LOGIC_ICONS] ?? ROUTE_LOGIC_ICON_FALLBACK;
                 return (
                   <div key={section.title}>
                     <div className="mb-2 flex items-center gap-2">

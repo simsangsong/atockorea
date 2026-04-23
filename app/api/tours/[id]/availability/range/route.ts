@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
+import { isTourIdBlockedFromConsumerSurfaces } from '@/lib/tour-consumer-visibility';
 
 function isJejuEastTour(tour: { city?: string | null; slug?: string | null; title?: string | null }) {
   const city = (tour.city || '').toLowerCase();
@@ -20,6 +21,9 @@ export async function GET(
 ) {
   try {
     const { id: tourId } = await params;
+    if (isTourIdBlockedFromConsumerSurfaces(tourId)) {
+      return NextResponse.json({ error: 'Tour not found or inactive' }, { status: 404 });
+    }
     const supabase = createServerClient();
     const { searchParams } = new URL(req.url);
     const startDate = searchParams.get('startDate');

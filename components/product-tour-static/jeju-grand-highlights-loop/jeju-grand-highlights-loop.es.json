@@ -1,0 +1,1616 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 1,
+  "slug": "jeju-grand-highlights-loop",
+  "locale": "es",
+  "product_id": "jeju-grand-highlights-loop",
+  "seo": {
+    "pageTitle": "Tour de un día en grupo reducido por Hallasan, el Acantilado Jusangjeolli de Daepo, la Cascada Jeongbang y Seongsan Ilchulbong en Jeju | AtoC Korea",
+    "metaDescription": "Diseñado para viajeros que quieren recorrer en un solo día los imprescindibles de Jeju con la mayor eficiencia. Desde Hallasan y el acantilado Jusangjeolli de Daepo hasta la cascada Jeongbang y Seongsan Ilchulbong, este tour en grupo reducido y ritmo ágil conecta los paisajes naturales más emblemáticos de la isla en una sola jornada."
+  },
+  "catalog_card": {
+    "slug": "jeju-grand-highlights-loop",
+    "title": "Tour de un día en grupo reducido por la Gran Ruta Esencial de Jeju",
+    "subtitle": "De Hallasan a Seongsan Ilchulbong, descubre en un día los paisajes más emblemáticos de Jeju.",
+    "region": "Ruta completa por la isla de Jeju",
+    "duration": "9–9,5 horas",
+    "stopsCount": 5,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "Ideal para viajeros con solo un día",
+      "Ruta de imprescindibles a ritmo ágil"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
+    "priceLabel": "Desde US$78 por persona",
+    "shortCardDescription": "Una ruta de alta eficiencia para quienes tienen poco tiempo, conectando Hallasan, la costa sur y Seongsan Ilchulbong en un solo día."
+  },
+  "headlineLine1": "Gran Ruta Esencial de Jeju",
+  "headlineLine2": "Tour de un día en grupo reducido",
+  "price": {
+    "amountLabel": "78",
+    "currency": "USD",
+    "per": "persona"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "imagePosition": "center 35%",
+    "tagline": "Pensada para viajeros con tiempo limitado, esta ruta de alta densidad recorre Hallasan, los espectaculares paisajes de la costa sur, una cascada y Seongsan Ilchulbong en un solo día.",
+    "pills": [
+      "Ideal para viajeros con solo un día",
+      "Tour en grupo reducido",
+      "Lugares emblemáticos"
+    ],
+    "meta": {
+      "duration": "9–9,5 horas",
+      "region": "Ruta completa por la isla de Jeju",
+      "stops": "5 paradas",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Resumen"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerario"
+    },
+    {
+      "id": "details",
+      "label": "Detalles"
+    },
+    {
+      "id": "faq",
+      "label": "Preguntas frecuentes"
+    },
+    {
+      "id": "reviews",
+      "label": "Reseñas"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "Potencial fotográfico",
+      "value": "Alto"
+    },
+    {
+      "icon": "mountain",
+      "label": "Densidad paisajística",
+      "value": "Muy alta"
+    },
+    {
+      "icon": "footprints",
+      "label": "Nivel de caminata",
+      "value": "Moderado a alto"
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Adecuado para lluvia",
+      "value": "Moderado"
+    },
+    {
+      "icon": "users",
+      "label": "Adecuado para familias",
+      "value": "Moderado"
+    },
+    {
+      "icon": "gauge",
+      "label": "Ritmo",
+      "value": "Rápido"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+      "location": "Ruta completa",
+      "atmosphere": "Los paisajes más representativos de Jeju en un solo día",
+      "alt": "Ambiente general de un tour de un día por los imprescindibles de Jeju"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+      "location": "Parada inicial en Hallasan",
+      "atmosphere": "Aire fresco de montaña a mayor altitud",
+      "alt": "Ambiente del sendero Eoseungsaengak en Hallasan"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+      "location": "Costa de Jusangjeolli",
+      "atmosphere": "Un contraste dramático entre olas y acantilados",
+      "alt": "Acantilado Jusangjeolli de Daepo en la costa de Jeju"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      "location": "Cascada junto al mar",
+      "atmosphere": "Un cambio de textura en la ruta de la tarde",
+      "alt": "Paisaje costero en la cascada Jeongbang"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
+      "location": "Final en el cráter",
+      "atmosphere": "Un cierre simbólico con gran impacto visual",
+      "alt": "Cráter y costa de Seongsan Ilchulbong"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "09:30",
+      "duration": "70 min",
+      "name": "Eoseungsaengak de Hallasan",
+      "category": "Sendero de ladera en Hallasan",
+      "description": "El día comienza en el aire limpio y fresco de las alturas de Hallasan. Eoseungsaengak enlaza sendero forestal, ladera volcánica y miradores, dando a la ruta una apertura potente desde la primera parada.",
+      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+      "highlights": [
+        "Uno de los miradores más accesibles y representativos de Hallasan",
+        "Un comienzo refrescante entre bosque y aire de montaña",
+        "Más memorable que salir directamente de la ciudad hacia la costa",
+        "Una primera parada que deja huella incluso si dispones de poco tiempo"
+      ],
+      "timeUsed": [
+        "Breve explicación del sendero y ajuste del ritmo al llegar",
+        "Caminata principal cuesta arriba hacia el mirador",
+        "Breve pausa para fotos y descanso antes de bajar"
+      ],
+      "whyOnRoute": "Empezar aquí aporta altura, energía y una clara sensación de Hallasan antes de girar hacia la costa sur.",
+      "visitBasics": {
+        "hours": "Desde las 05:00, con posibles restricciones estacionales",
+        "closed": "Puede restringirse con mal tiempo",
+        "admission": "Gratis",
+        "walking": "Pendiente moderada"
+      },
+      "convenience": {
+        "restroom": "En la entrada del sendero",
+        "parking": "Hay aparcamiento"
+      },
+      "smartNotes": {
+        "photo": "Cuando el cielo está despejado, suelen funcionar mejor las tomas amplias de la cresta y las vistas lejanas que los retratos cerrados.",
+        "facilities": "Las instalaciones básicas se concentran principalmente cerca de la entrada.",
+        "tip": "Especialmente después de la lluvia o en épocas frías, el agarre del calzado y la ropa de abrigo importan más aquí que en la mayoría de las demás paradas."
+      }
+    },
+    {
+      "number": 2,
+      "time": "11:15",
+      "duration": "40 min",
+      "name": "Acantilado Jusangjeolli de Daepo",
+      "category": "Costa basáltica",
+      "description": "Tras bajar de Hallasan, el ambiente cambia con fuerza en la costa sur. Las olas, las columnas de basalto y el contraste del acantilado convierten esta parada en un punto de gran impacto visual antes del almuerzo.",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+      "highlights": [
+        "Columnas hexagonales de basalto a lo largo de la costa",
+        "Un marcado contraste marino tras el tramo de Hallasan",
+        "Una parada breve pero muy eficiente y visualmente potente",
+        "Uno de los grandes puntos fotográficos del sur de Jeju"
+      ],
+      "timeUsed": [
+        "Breve introducción en la entrada",
+        "Paseo hasta el principal mirador costero",
+        "Tiempo para fotos y regreso al punto de encuentro"
+      ],
+      "whyOnRoute": "Captura la identidad visual de la costa sur de Jeju sin añadir otro tramo largo de caminata a la mañana.",
+      "visitBasics": {
+        "hours": "09:00–18:00 (último acceso 17:40)",
+        "closed": "Abierto todo el año",
+        "admission": "KRW 2.000 adultos / KRW 1.000 niños y adolescentes",
+        "walking": "Fácil a moderado"
+      },
+      "convenience": {
+        "restroom": "Zona de entrada",
+        "parking": "Hay aparcamiento (de pago)"
+      },
+      "smartNotes": {
+        "photo": "La dirección de las olas, la bruma marina y la luz lateral cambian el ambiente muy rápido, así que aquí funcionan especialmente bien los encuadres costeros amplios.",
+        "facilities": "La zona de acceso está bien equipada y el sendero al mirador es relativamente sencillo.",
+        "tip": "Incluso en días soleados, la costa suele sentirse más fría y ventosa que el interior de Jeju."
+      }
+    },
+    {
+      "number": 3,
+      "time": "12:15",
+      "duration": "60 min",
+      "name": "Almuerzo",
+      "category": "Parada para almorzar",
+      "description": "No es solo una pausa en el horario. Es el punto clave para recuperar energía antes de Jeongbang y Seongsan Ilchulbong en la segunda mitad del día.",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+      "highlights": [
+        "Un momento de recuperación claramente definido en una ruta de ritmo rápido",
+        "Tiempo para recargar energías antes de continuar hacia el este",
+        "Útil para viajeros activos de distintas edades",
+        "Ayuda a que el día no se sienta excesivamente comprimido"
+      ],
+      "timeUsed": [
+        "Llegada y acomodación",
+        "Comida y breve descanso",
+        "Preparación para salir hacia la ruta de la tarde"
+      ],
+      "whyOnRoute": "Ubicar aquí el almuerzo ayuda a estabilizar la segunda mitad del día para que el recorrido no se perciba como puro traslado.",
+      "visitBasics": {
+        "hours": "Depende del horario del restaurante",
+        "closed": "Varía según el local",
+        "admission": "La comida se paga en el lugar salvo indicación contraria",
+        "walking": "Mínima"
+      },
+      "convenience": {
+        "restroom": "Dentro del restaurante",
+        "parking": "Hay aparcamiento"
+      },
+      "smartNotes": {
+        "photo": "Como la mayor parte del día gira en torno al paisaje, las fotos de comida ayudan a variar el ritmo visual de la ruta.",
+        "facilities": "Las instalaciones relacionadas con la comida suelen ser más que suficientes.",
+        "tip": "Conviene comer con calma aquí en lugar de apresurarse y perder energía para la tarde."
+      }
+    },
+    {
+      "number": 4,
+      "time": "13:35",
+      "duration": "50 min",
+      "name": "Cascada Jeongbang",
+      "category": "Cascada que cae hacia el mar",
+      "description": "Después del almuerzo, la cascada Jeongbang aporta una textura totalmente distinta a la ruta. Escaleras de piedra, bruma marina y una cascada que cae hacia la costa crean uno de los paisajes más singulares del sur de Jeju.",
+      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      "highlights": [
+        "Una escena compacta donde cascada y costa rocosa comparten el mismo encuadre",
+        "Un cambio de ambiente claro después del almuerzo",
+        "Mantiene alta la tensión visual antes del trayecto hacia el este",
+        "Aporta variedad incluso dentro de una ruta concentrada de imprescindibles"
+      ],
+      "timeUsed": [
+        "Llegada y revisión del flujo de acceso",
+        "Visita a la zona principal de la cascada",
+        "Fotos, breve descanso y regreso"
+      ],
+      "whyOnRoute": "Refuerza una vez más la impresión de la costa sur antes del trayecto más largo hacia Seongsan.",
+      "visitBasics": {
+        "hours": "09:00–17:20",
+        "closed": "Abierto todo el año",
+        "admission": "KRW 2.000 adultos / KRW 1.000 niños",
+        "walking": "Moderado, con escaleras"
+      },
+      "convenience": {
+        "restroom": "Zona de entrada",
+        "parking": "Hay aparcamiento"
+      },
+      "smartNotes": {
+        "photo": "La zona rocosa inferior funciona muy bien para fotos con atmósfera, pero el terreno y la bruma marina pueden hacer que la visita resulte más exigente.",
+        "facilities": "Las instalaciones básicas se encuentran cerca de la entrada.",
+        "tip": "Por las escaleras y el camino rocoso, suele sentirse más activo físicamente de lo que parece en el mapa."
+      }
+    },
+    {
+      "number": 5,
+      "time": "15:25",
+      "duration": "70 min",
+      "name": "Seongsan Ilchulbong",
+      "category": "Final en cráter volcánico",
+      "description": "Terminar en Seongsan Ilchulbong da a esta ruta su cierre más claro y simbólico. Después de Hallasan, la costa sur y la cascada Jeongbang, acabar el día en uno de los grandes iconos de Jeju hace que todo el recorrido se sienta redondo.",
+      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
+      "highlights": [
+        "El lugar más emblemático de Jeju como parada final",
+        "Un gran premio visual al final de un día intenso",
+        "Flexibilidad para subir a la cima o quedarse en los miradores bajos según el ritmo del grupo",
+        "Un cierre especialmente claro para quienes visitan Jeju por primera vez y tienen poco tiempo"
+      ],
+      "timeUsed": [
+        "Explicación al llegar sobre el recorrido y el ritmo de caminata",
+        "Recorrido principal o alternativa en miradores bajos",
+        "Fotos, reagrupación y salida hacia Jeju City"
+      ],
+      "whyOnRoute": "Es el lugar más simbólico para cerrar el día y la parada que hace que la ruta se sienta como una auténtica vuelta a los grandes paisajes de Jeju.",
+      "visitBasics": {
+        "hours": "El horario de acceso de pago puede variar según la temporada",
+        "closed": "Cerrado el primer lunes de cada mes (o al día siguiente si coincide con festivo)",
+        "admission": "KRW 5.000 adultos / KRW 2.500 niños",
+        "walking": "Moderado a moderadamente exigente si decides subir a la cima"
+      },
+      "convenience": {
+        "restroom": "Zona baja y servicios de alrededor",
+        "parking": "Amplio aparcamiento disponible"
+      },
+      "smartNotes": {
+        "photo": "Más que fotografiar solo la cima, suelen resultar más agradecidas las composiciones amplias que incluyen tanto el cráter como la línea de costa.",
+        "facilities": "Las instalaciones en la base están bien desarrolladas.",
+        "tip": "La afluencia, el tiempo y la condición física del grupo pueden influir mucho en lo exigente y satisfactoria que resulte la subida."
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "id": "01",
+      "name": "Eoseungsaengak",
+      "theme": "Hallasan"
+    },
+    {
+      "id": "02",
+      "name": "Jusangjeolli",
+      "theme": "Acantilados"
+    },
+    {
+      "id": "03",
+      "name": "Almuerzo",
+      "theme": "Pausa"
+    },
+    {
+      "id": "04",
+      "name": "Jeongbang",
+      "theme": "Cascada"
+    },
+    {
+      "id": "05",
+      "name": "Seongsan",
+      "theme": "Cráter"
+    }
+  ],
+  "routePhases": [
+    {
+      "label": "Mañana",
+      "range": "1-2",
+      "theme": "De Hallasan a la costa",
+      "bgClass": "bg-sky-50/70",
+      "textClass": "text-sky-700",
+      "dotClass": "bg-sky-500"
+    },
+    {
+      "label": "Mediodía y primera tarde",
+      "range": "3-4",
+      "theme": "Almuerzo y cascada",
+      "bgClass": "bg-amber-50/70",
+      "textClass": "text-amber-700",
+      "dotClass": "bg-amber-500"
+    },
+    {
+      "label": "Final",
+      "range": "5",
+      "theme": "Cierre en Seongsan",
+      "bgClass": "bg-emerald-50/70",
+      "textClass": "text-emerald-700",
+      "dotClass": "bg-emerald-500"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "Cómo fluye el día",
+    "subtitle": "La ruta comienza en Hallasan, atraviesa la costa sur y termina en Seongsan Ilchulbong. La recogida suele hacerse entre las 08:30 y las 09:00, con regreso a Jeju City alrededor de las 17:40–18:00."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "Viajeros que solo tienen un día en Jeju",
+      "Viajeros que llegan a Jeju por la mañana",
+      "Viajeros que quieren ver lugares emblemáticos",
+      "Viajeros que disfrutan del turismo activo"
+    ],
+    "lessIdeal": [
+      "Viajeros que prefieren un ritmo pausado",
+      "Viajeros que quieren evitar escaleras o subidas",
+      "Grupos que viajan con niños muy pequeños",
+      "Grupos que dependen mucho del cochecito"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Pensada para viajeros con poco tiempo",
+        "icon": "clock-3",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "Empezar por Hallasan",
+            "detail": "Comenzar en Hallasan da al día una fuerte sensación de la geografía montañosa de Jeju antes de iniciar el trayecto más largo a través de la isla."
+          },
+          {
+            "label": "Situar la costa sur en la parte media",
+            "detail": "Jusangjeolli, el almuerzo y Jeongbang mantienen el flujo de oeste a este sin perder intensidad visual a lo largo de la jornada."
+          },
+          {
+            "label": "Terminar en Seongsan Ilchulbong",
+            "detail": "Acabar en Seongsan hace que la ruta se perciba menos como paradas separadas y más como un recorrido completo por los grandes paisajes de Jeju."
+          }
+        ]
+      },
+      {
+        "title": "Por qué este día se siente especialmente completo",
+        "icon": "mountain",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "Dos tramos de caminata más activos",
+            "detail": "Eoseungsaengak y Seongsan Ilchulbong hacen que esta ruta sea físicamente más activa que un tour habitual de un día en grupo reducido."
+          },
+          {
+            "label": "Prioriza la densidad paisajística",
+            "detail": "No es una ruta para ir despacio. Está diseñada para quienes quieren una experiencia de Jeju más intensa y completa en un solo día."
+          },
+          {
+            "label": "Especialmente valiosa cuando el tiempo es limitado",
+            "detail": "Si solo tienes un día, suele tener más sentido concentrarse en los lugares más representativos de Jeju que mantener un ritmo demasiado relajado."
+          }
+        ]
+      },
+      {
+        "title": "Cuando cambian las condiciones sobre el terreno",
+        "icon": "wind",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-600",
+        "items": [
+          {
+            "label": "Restricciones de acceso en Hallasan",
+            "detail": "Eoseungsaengak puede verse afectado por regulaciones estacionales o controles relacionados con el tiempo."
+          },
+          {
+            "label": "Viento en las paradas costeras expuestas",
+            "detail": "Jusangjeolli y Seongsan Ilchulbong son los dos puntos costeros más sensibles al tiempo."
+          },
+          {
+            "label": "La hora de regreso puede variar ligeramente",
+            "detail": "El tráfico, el ritmo de caminata del grupo y la afluencia en los lugares pueden provocar pequeños cambios en la hora final de regreso."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "Horarios de recogida y regreso",
+      "preview": "Salida temprana y regreso a Jeju City al anochecer",
+      "content": [
+        "Recogida en Jeju City entre las 08:30 y las 09:00",
+        "Regreso a Jeju City alrededor de las 17:40–18:00",
+        "La recogida en el aeropuerto puede organizarse según las circunstancias",
+        "La hora final de encuentro se confirma la noche anterior"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "Caminata y tipo de terreno",
+      "preview": "Más activa que una ruta estándar",
+      "content": [
+        "Esta ruta incluye dos tramos de caminata relativamente más activos.",
+        "Eoseungsaengak incluye subida y escaleras.",
+        "La cascada Jeongbang incluye escaleras y un camino rocoso.",
+        "Si el grupo decide subir, Seongsan Ilchulbong resultará más exigente.",
+        "Se recomiendan encarecidamente zapatos cómodos con buen agarre."
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "Tiempo y ajustes por cierres",
+      "preview": "Normalmente opera según lo previsto, con ajustes si hacen falta",
+      "content": [
+        "Lluvia ligera: el tour suele realizarse con normalidad",
+        "Viento fuerte: las zonas expuestas como Jusangjeolli o Seongsan Ilchulbong pueden tener estancias más cortas",
+        "Restricciones en Hallasan: si Eoseungsaengak se ve limitado, la ruta puede ajustarse o sustituirse",
+        "Días de cierre: pueden utilizarse paradas alternativas o tiempos de visita revisados cuando sea necesario"
+      ]
+    },
+    {
+      "id": "flight",
+      "title": "Si llegas o sales de Jeju el mismo día",
+      "preview": "Necesitas un margen amplio por la tarde-noche",
+      "content": [
+        "Esta es una ruta de alta densidad que cubre en un solo día los grandes imprescindibles de Jeju.",
+        "Llegar o salir el mismo día puede ser viable según tu horario, pero solo si dejas suficiente margen por la tarde-noche.",
+        "Se recomienda encarecidamente un vuelo tardío.",
+        "Ten en cuenta el tráfico, el ritmo de caminata y las condiciones del día al valorar el riesgo de horarios."
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "Qué llevar y cómo vestir",
+      "preview": "Calzado de caminata, capas y una chaqueta ligera cortavientos",
+      "content": [
+        "Zapatos de caminata con buen agarre",
+        "Ropa en capas por la diferencia de temperatura entre montaña y costa",
+        "Una chaqueta ligera cortavientos",
+        "Gorra o sombrero y protección solar",
+        "Botella de agua"
+      ]
+    },
+    {
+      "id": "included",
+      "title": "Qué incluye / qué no incluye",
+      "preview": "Guía, vehículo, recogida y entradas incluidas",
+      "variant": "included",
+      "content": [
+        "Guía profesional de habla inglesa",
+        "Vehículo para grupo reducido",
+        "Recogida y regreso en hoteles de Jeju City",
+        "Todas las entradas",
+        "Agua embotellada",
+        "Almuerzo (pago en el lugar)",
+        "Gastos personales de compras",
+        "Propinas para el guía"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "Integración meteorológica en tiempo real"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "Actualización diaria"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "name": "Primavera",
+      "icon": "flower",
+      "description": "El aire de montaña se siente especialmente fresco y la visibilidad en toda la isla suele ser más limpia y luminosa.",
+      "tag": "El mejor equilibrio general",
+      "bgClass": "bg-spring",
+      "iconColor": "text-pink-500"
+    },
+    {
+      "name": "Verano",
+      "icon": "sun",
+      "description": "Los días son más largos y los colores de la costa suelen verse más vivos y saturados.",
+      "tag": "Más horas de luz",
+      "bgClass": "bg-summer",
+      "iconColor": "text-sky-500"
+    },
+    {
+      "name": "Otoño",
+      "icon": "leaf",
+      "description": "Los cielos despejados suelen hacer que esta ruta completa por la isla resulte especialmente satisfactoria de principio a fin.",
+      "tag": "La mejor visibilidad",
+      "bgClass": "bg-autumn",
+      "iconColor": "text-amber-600"
+    },
+    {
+      "name": "Invierno",
+      "icon": "snow",
+      "description": "El aire se vuelve más nítido y claro, y el contraste entre montaña y mar se hace aún más marcado.",
+      "tag": "Claro y nítido",
+      "bgClass": "bg-winter",
+      "iconColor": "text-slate-500"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "clock-3",
+      "title": "Aprovecha al máximo lo que puedes ver en un día",
+      "description": "Diseñado para viajeros con tiempo limitado",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600"
+    },
+    {
+      "icon": "mountain",
+      "title": "Centrado en los grandes iconos de Jeju",
+      "description": "De Hallasan hasta Seongsan",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600"
+    },
+    {
+      "icon": "users",
+      "title": "Operación en grupo reducido",
+      "description": "Mayor capacidad para adaptarse a la carretera y a las condiciones del día",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Después de reservar",
+      "title": "Confirmación inmediata",
+      "detail": "Se envía una confirmación de reserva con un resumen de la ruta."
+    },
+    {
+      "timing": "12 horas antes",
+      "title": "Recordatorio previo a la salida",
+      "detail": "Se comparten con antelación notas sobre el tiempo y posibles ajustes de la ruta."
+    },
+    {
+      "timing": "La noche anterior",
+      "title": "Aviso final de recogida",
+      "detail": "Recibes tu hora exacta de recogida y los datos de contacto."
+    },
+    {
+      "timing": "La mañana de la salida",
+      "title": "Nota del día de la ruta",
+      "detail": "Si hay novedades de última hora sobre el terreno, se comparten brevemente antes de salir."
+    },
+    {
+      "timing": "Durante el tour",
+      "title": "Guía parada por parada",
+      "detail": "Se ofrece información clave en cada parada cuando hace falta."
+    },
+    {
+      "timing": "Después del tour",
+      "title": "Soporte posterior",
+      "detail": "Hay asistencia adicional y recomendaciones complementarias si las necesitas."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "one-day",
+      "question": "Si solo tengo un día en Jeju, ¿es esta la ruta adecuada?",
+      "answer": "Sí. Esta ruta está pensada para viajeros que quieren cubrir los lugares clave de Jeju en un solo día, y el ritmo es más rápido que el de un tour estándar de un día."
+    },
+    {
+      "id": "tiring",
+      "question": "¿Esta ruta se siente cansada?",
+      "answer": "Suele sentirse más activa que un tour típico de un día en grupo reducido porque incluye dos tramos de caminata más marcados y recorre una gran parte de la isla."
+    },
+    {
+      "id": "parents",
+      "question": "¿Es adecuada para viajar con mis padres?",
+      "answer": "Depende de lo cómodos que se sientan caminando y siguiendo un ritmo de visita más rápido. Esta ruta encaja mejor con adultos activos que con quienes buscan un turismo completamente relajado."
+    },
+    {
+      "id": "flight",
+      "question": "¿Puedo unirme si llego o salgo de Jeju el mismo día?",
+      "answer": "Posiblemente, pero solo si dispones de un margen amplio por la tarde-noche. Si el horario de tu vuelo es ajustado, no se recomienda esta ruta."
+    },
+    {
+      "id": "order",
+      "question": "¿Puede cambiar el orden de las paradas el mismo día?",
+      "answer": "Sí. Para que la jornada fluya mejor, el orden de las paradas puede ajustarse ligeramente según el tráfico, el tiempo y la afluencia."
+    },
+    {
+      "id": "seongsan-last",
+      "question": "¿Por qué Seongsan Ilchulbong está programado al final?",
+      "answer": "Porque le da al día un cierre más potente. Después de Hallasan, la costa sur y la cascada Jeongbang, Seongsan funciona mejor como final más simbólico."
+    },
+    {
+      "id": "summit",
+      "question": "¿Tenemos que subir a la cima de Seongsan Ilchulbong?",
+      "answer": "No necesariamente. Que el grupo suba o no, y el peso que tenga ese tramo, puede variar según el ritmo, el tiempo y la cantidad de gente."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "price": {
+      "amountLabel": "78",
+      "currency": "USD",
+      "per": "persona"
+    }
+  },
+  "matching_profile": {
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "region_type": "full_island",
+    "region_tags": [
+      "jeju_all_around",
+      "hallasan_to_seongsan"
+    ],
+    "theme_tags": [
+      "hallasan",
+      "basalt",
+      "waterfall",
+      "crater",
+      "fast_paced",
+      "one_day"
+    ],
+    "poi_tags": [
+      "eoseungsaengak",
+      "jusangjeolli",
+      "jeongbang",
+      "seongsan"
+    ],
+    "pace_level": 5,
+    "walking_level": 4,
+    "scenic_level": 5,
+    "photo_level": 5,
+    "culture_level": 2,
+    "relax_level": 2,
+    "first_time_fit": 5,
+    "family_fit": 2,
+    "senior_fit": 2,
+    "couple_fit": 4,
+    "active_traveler_fit": 5,
+    "one_day_fit": 5,
+    "same_day_flight_fit": 1,
+    "rain_fit": 2,
+    "value_for_money_fit": 3,
+    "iconic_landmark_fit": 5,
+    "cafe_fit": 1,
+    "adult_family_fit": 3,
+    "young_kids_fit": 2,
+    "senior_active_fit": 3,
+    "senior_general_fit": 2,
+    "mobility_friendly_fit": 2,
+    "stroller_fit": 1,
+    "indoor_ratio": 28,
+    "weather_sensitivity": 4,
+    "local_culture_fit": 2,
+    "shopping_fit": 1,
+    "storytelling_fit": 3,
+    "comfort_level": 2,
+    "budget_fit": 3,
+    "premium_fit": 3,
+    "small_group_fit": 5,
+    "private_fit": 1,
+    "bus_fit": 1,
+    "price_band": "mid",
+    "pickup_base": "jeju_city",
+    "return_time_band": "17:40-18:15",
+    "duration_band": "9.5h",
+    "min_recommended_age": 10,
+    "hard_constraints": {
+      "avoidIf": [
+        "needs_slow_pace",
+        "tight_same_day_departure",
+        "strict_same_day_flight_schedule"
+      ],
+      "notIdealFor": [
+        "toddlers",
+        "stroller_heavy",
+        "very_low_mobility"
+      ]
+    },
+    "walking_notes": [
+      "Eoseungsaengak includes about 1 hour of uphill trail walking",
+      "Jeongbang Waterfall includes a stair section",
+      "Seongsan Ilchulbong summit climb is recommended and takes about 55 minutes"
+    ],
+    "keywords": [
+      "jeju one day tour",
+      "jeju full island loop",
+      "hallasan",
+      "seongsan ilchulbong",
+      "jusangjeolli cliff",
+      "jeongbang waterfall",
+      "jeju grand tour",
+      "fast paced jeju tour",
+      "jeju highlights",
+      "jeju iconic landmarks",
+      "jeju day trip",
+      "jeju full day highlights",
+      "hallasan to seongsan",
+      "jeju small group day tour"
+    ],
+    "synonym_hints": [
+      "full island loop",
+      "highlights in one day",
+      "busy but iconic",
+      "see more in one day",
+      "fast highlights route",
+      "jeju full day landmarks",
+      "one day around jeju",
+      "iconic jeju route"
+    ],
+    "profile_version": 3,
+    "is_active": true
+  },
+  "matching_metadata": {
+    "schema_version": "tour_matching_profile.v1",
+    "last_reviewed_at": "2026-04-22",
+    "score_rationale": {
+      "pace_level": "A 9–9.5 hour route with five major stops and an optional Seongsan summit section, making this one of the fastest-paced products in the lineup.",
+      "walking_level": "Moderate to moderately high due to the uphill Eoseungsaengak section, stairs at Jeongbang, and the recommended Seongsan summit climb.",
+      "scenic_level": "Very high, with classic Jeju iconography concentrated into one route: Hallasan, basalt cliffs, waterfall, and volcanic crater scenery.",
+      "culture_level": "Low to moderate because the route is centered on geology and nature rather than history, village life, or cultural immersion.",
+      "relax_level": "Low, because the fixed route and tight timing prioritize coverage over leisure.",
+      "first_time_fit": "An almost textbook highlights set for first-time visitors to Jeju.",
+      "family_fit/young_kids_fit/stroller_fit": "Not ideal for toddlers or stroller-heavy groups because of stairs, trails, and the overall pace.",
+      "senior_fit/senior_general_fit/mobility_friendly_fit": "General or low-stamina seniors are not the best fit; active seniors may still enjoy it.",
+      "same_day_flight_fit": "The 17:40–18:15 return window creates clear risk for tight same-day departure schedules.",
+      "rain_fit/indoor_ratio/weather_sensitivity": "Indoor ratio is only 28%, and both coastal and mountain sections are sensitive to poor weather.",
+      "local_culture_fit/shopping_fit": "There are no market, village, or shopping-focused stops on this route.",
+      "small_group_fit/private_fit/bus_fit": "Built specifically for small-group SUV/van operation, not as a private-only or large-bus product.",
+      "price_band/budget_fit/premium_fit": "At US$78, it sits in the mid-price band rather than at either the premium or low-budget extreme.",
+      "hard_constraints": "Hard exclusions apply to travelers requesting a slow pace, those with same-day flight pressure, and travelers with toddlers, strollers, or very low mobility."
+    }
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "Gran Ruta Esencial de Jeju",
+        "headlineLine2": "Tour de un día en grupo reducido",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+          "imagePosition": "center 35%",
+          "tagline": "Pensada para viajeros con tiempo limitado, esta ruta de alta densidad recorre Hallasan, los espectaculares paisajes de la costa sur, una cascada y Seongsan Ilchulbong en un solo día.",
+          "pills": [
+            "Ideal para viajeros con solo un día",
+            "Tour en grupo reducido",
+            "Lugares emblemáticos"
+          ],
+          "meta": {
+            "duration": "9–9,5 horas",
+            "region": "Ruta completa por la isla de Jeju",
+            "stops": "5 paradas",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        },
+        "price": {
+          "amountLabel": "78",
+          "currency": "USD",
+          "per": "persona"
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "Resumen"
+          },
+          {
+            "id": "itinerary",
+            "label": "Itinerario"
+          },
+          {
+            "id": "details",
+            "label": "Detalles"
+          },
+          {
+            "id": "faq",
+            "label": "Preguntas frecuentes"
+          },
+          {
+            "id": "reviews",
+            "label": "Reseñas"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "camera",
+            "label": "Potencial fotográfico",
+            "value": "Alto"
+          },
+          {
+            "icon": "mountain",
+            "label": "Densidad paisajística",
+            "value": "Muy alta"
+          },
+          {
+            "icon": "footprints",
+            "label": "Nivel de caminata",
+            "value": "Moderado a alto"
+          },
+          {
+            "icon": "cloud-rain",
+            "label": "Adecuado para lluvia",
+            "value": "Moderado"
+          },
+          {
+            "icon": "users",
+            "label": "Adecuado para familias",
+            "value": "Moderado"
+          },
+          {
+            "icon": "gauge",
+            "label": "Ritmo",
+            "value": "Rápido"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": 1,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+            "location": "Ruta completa",
+            "atmosphere": "Los paisajes más representativos de Jeju en un solo día",
+            "alt": "Ambiente general de un tour de un día por los imprescindibles de Jeju"
+          },
+          {
+            "id": 2,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "location": "Parada inicial en Hallasan",
+            "atmosphere": "Aire fresco de montaña a mayor altitud",
+            "alt": "Ambiente del sendero Eoseungsaengak en Hallasan"
+          },
+          {
+            "id": 3,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "location": "Costa de Jusangjeolli",
+            "atmosphere": "Un contraste dramático entre olas y acantilados",
+            "alt": "Acantilado Jusangjeolli de Daepo en la costa de Jeju"
+          },
+          {
+            "id": 4,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "location": "Cascada junto al mar",
+            "atmosphere": "Un cambio de textura en la ruta de la tarde",
+            "alt": "Paisaje costero en la cascada Jeongbang"
+          },
+          {
+            "id": 5,
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
+            "location": "Final en el cráter",
+            "atmosphere": "Un cierre simbólico con gran impacto visual",
+            "alt": "Cráter y costa de Seongsan Ilchulbong"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "09:30",
+            "duration": "70 min",
+            "name": "Eoseungsaengak de Hallasan",
+            "category": "Sendero de ladera en Hallasan",
+            "description": "El día comienza en el aire limpio y fresco de las alturas de Hallasan. Eoseungsaengak enlaza sendero forestal, ladera volcánica y miradores, dando a la ruta una apertura potente desde la primera parada.",
+            "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "highlights": [
+              "Uno de los miradores más accesibles y representativos de Hallasan",
+              "Un comienzo refrescante entre bosque y aire de montaña",
+              "Más memorable que salir directamente de la ciudad hacia la costa",
+              "Una primera parada que deja huella incluso si dispones de poco tiempo"
+            ],
+            "timeUsed": [
+              "Breve explicación del sendero y ajuste del ritmo al llegar",
+              "Caminata principal cuesta arriba hacia el mirador",
+              "Breve pausa para fotos y descanso antes de bajar"
+            ],
+            "whyOnRoute": "Empezar aquí aporta altura, energía y una clara sensación de Hallasan antes de girar hacia la costa sur.",
+            "visitBasics": {
+              "hours": "Desde las 05:00, con posibles restricciones estacionales",
+              "closed": "Puede restringirse con mal tiempo",
+              "admission": "Gratis",
+              "walking": "Pendiente moderada"
+            },
+            "convenience": {
+              "restroom": "En la entrada del sendero",
+              "parking": "Hay aparcamiento"
+            },
+            "smartNotes": {
+              "photo": "Cuando el cielo está despejado, suelen funcionar mejor las tomas amplias de la cresta y las vistas lejanas que los retratos cerrados.",
+              "facilities": "Las instalaciones básicas se concentran principalmente cerca de la entrada.",
+              "tip": "Especialmente después de la lluvia o en épocas frías, el agarre del calzado y la ropa de abrigo importan más aquí que en la mayoría de las demás paradas."
+            }
+          },
+          {
+            "number": 2,
+            "time": "11:15",
+            "duration": "40 min",
+            "name": "Acantilado Jusangjeolli de Daepo",
+            "category": "Costa basáltica",
+            "description": "Tras bajar de Hallasan, el ambiente cambia con fuerza en la costa sur. Las olas, las columnas de basalto y el contraste del acantilado convierten esta parada en un punto de gran impacto visual antes del almuerzo.",
+            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "highlights": [
+              "Columnas hexagonales de basalto a lo largo de la costa",
+              "Un marcado contraste marino tras el tramo de Hallasan",
+              "Una parada breve pero muy eficiente y visualmente potente",
+              "Uno de los grandes puntos fotográficos del sur de Jeju"
+            ],
+            "timeUsed": [
+              "Breve introducción en la entrada",
+              "Paseo hasta el principal mirador costero",
+              "Tiempo para fotos y regreso al punto de encuentro"
+            ],
+            "whyOnRoute": "Captura la identidad visual de la costa sur de Jeju sin añadir otro tramo largo de caminata a la mañana.",
+            "visitBasics": {
+              "hours": "09:00–18:00 (último acceso 17:40)",
+              "closed": "Abierto todo el año",
+              "admission": "KRW 2.000 adultos / KRW 1.000 niños y adolescentes",
+              "walking": "Fácil a moderado"
+            },
+            "convenience": {
+              "restroom": "Zona de entrada",
+              "parking": "Hay aparcamiento (de pago)"
+            },
+            "smartNotes": {
+              "photo": "La dirección de las olas, la bruma marina y la luz lateral cambian el ambiente muy rápido, así que aquí funcionan especialmente bien los encuadres costeros amplios.",
+              "facilities": "La zona de acceso está bien equipada y el sendero al mirador es relativamente sencillo.",
+              "tip": "Incluso en días soleados, la costa suele sentirse más fría y ventosa que el interior de Jeju."
+            }
+          },
+          {
+            "number": 3,
+            "time": "12:15",
+            "duration": "60 min",
+            "name": "Almuerzo",
+            "category": "Parada para almorzar",
+            "description": "No es solo una pausa en el horario. Es el punto clave para recuperar energía antes de Jeongbang y Seongsan Ilchulbong en la segunda mitad del día.",
+            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+            "highlights": [
+              "Un momento de recuperación claramente definido en una ruta de ritmo rápido",
+              "Tiempo para recargar energías antes de continuar hacia el este",
+              "Útil para viajeros activos de distintas edades",
+              "Ayuda a que el día no se sienta excesivamente comprimido"
+            ],
+            "timeUsed": [
+              "Llegada y acomodación",
+              "Comida y breve descanso",
+              "Preparación para salir hacia la ruta de la tarde"
+            ],
+            "whyOnRoute": "Ubicar aquí el almuerzo ayuda a estabilizar la segunda mitad del día para que el recorrido no se perciba como puro traslado.",
+            "visitBasics": {
+              "hours": "Depende del horario del restaurante",
+              "closed": "Varía según el local",
+              "admission": "La comida se paga en el lugar salvo indicación contraria",
+              "walking": "Mínima"
+            },
+            "convenience": {
+              "restroom": "Dentro del restaurante",
+              "parking": "Hay aparcamiento"
+            },
+            "smartNotes": {
+              "photo": "Como la mayor parte del día gira en torno al paisaje, las fotos de comida ayudan a variar el ritmo visual de la ruta.",
+              "facilities": "Las instalaciones relacionadas con la comida suelen ser más que suficientes.",
+              "tip": "Conviene comer con calma aquí en lugar de apresurarse y perder energía para la tarde."
+            }
+          },
+          {
+            "number": 4,
+            "time": "13:35",
+            "duration": "50 min",
+            "name": "Cascada Jeongbang",
+            "category": "Cascada que cae hacia el mar",
+            "description": "Después del almuerzo, la cascada Jeongbang aporta una textura totalmente distinta a la ruta. Escaleras de piedra, bruma marina y una cascada que cae hacia la costa crean uno de los paisajes más singulares del sur de Jeju.",
+            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "highlights": [
+              "Una escena compacta donde cascada y costa rocosa comparten el mismo encuadre",
+              "Un cambio de ambiente claro después del almuerzo",
+              "Mantiene alta la tensión visual antes del trayecto hacia el este",
+              "Aporta variedad incluso dentro de una ruta concentrada de imprescindibles"
+            ],
+            "timeUsed": [
+              "Llegada y revisión del flujo de acceso",
+              "Visita a la zona principal de la cascada",
+              "Fotos, breve descanso y regreso"
+            ],
+            "whyOnRoute": "Refuerza una vez más la impresión de la costa sur antes del trayecto más largo hacia Seongsan.",
+            "visitBasics": {
+              "hours": "09:00–17:20",
+              "closed": "Abierto todo el año",
+              "admission": "KRW 2.000 adultos / KRW 1.000 niños",
+              "walking": "Moderado, con escaleras"
+            },
+            "convenience": {
+              "restroom": "Zona de entrada",
+              "parking": "Hay aparcamiento"
+            },
+            "smartNotes": {
+              "photo": "La zona rocosa inferior funciona muy bien para fotos con atmósfera, pero el terreno y la bruma marina pueden hacer que la visita resulte más exigente.",
+              "facilities": "Las instalaciones básicas se encuentran cerca de la entrada.",
+              "tip": "Por las escaleras y el camino rocoso, suele sentirse más activo físicamente de lo que parece en el mapa."
+            }
+          },
+          {
+            "number": 5,
+            "time": "15:25",
+            "duration": "70 min",
+            "name": "Seongsan Ilchulbong",
+            "category": "Final en cráter volcánico",
+            "description": "Terminar en Seongsan Ilchulbong da a esta ruta su cierre más claro y simbólico. Después de Hallasan, la costa sur y la cascada Jeongbang, acabar el día en uno de los grandes iconos de Jeju hace que todo el recorrido se sienta redondo.",
+            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
+            "highlights": [
+              "El lugar más emblemático de Jeju como parada final",
+              "Un gran premio visual al final de un día intenso",
+              "Flexibilidad para subir a la cima o quedarse en los miradores bajos según el ritmo del grupo",
+              "Un cierre especialmente claro para quienes visitan Jeju por primera vez y tienen poco tiempo"
+            ],
+            "timeUsed": [
+              "Explicación al llegar sobre el recorrido y el ritmo de caminata",
+              "Recorrido principal o alternativa en miradores bajos",
+              "Fotos, reagrupación y salida hacia Jeju City"
+            ],
+            "whyOnRoute": "Es el lugar más simbólico para cerrar el día y la parada que hace que la ruta se sienta como una auténtica vuelta a los grandes paisajes de Jeju.",
+            "visitBasics": {
+              "hours": "El horario de acceso de pago puede variar según la temporada",
+              "closed": "Cerrado el primer lunes de cada mes (o al día siguiente si coincide con festivo)",
+              "admission": "KRW 5.000 adultos / KRW 2.500 niños",
+              "walking": "Moderado a moderadamente exigente si decides subir a la cima"
+            },
+            "convenience": {
+              "restroom": "Zona baja y servicios de alrededor",
+              "parking": "Amplio aparcamiento disponible"
+            },
+            "smartNotes": {
+              "photo": "Más que fotografiar solo la cima, suelen resultar más agradecidas las composiciones amplias que incluyen tanto el cráter como la línea de costa.",
+              "facilities": "Las instalaciones en la base están bien desarrolladas.",
+              "tip": "La afluencia, el tiempo y la condición física del grupo pueden influir mucho en lo exigente y satisfactoria que resulte la subida."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "id": "01",
+            "name": "Eoseungsaengak",
+            "theme": "Hallasan"
+          },
+          {
+            "id": "02",
+            "name": "Jusangjeolli",
+            "theme": "Acantilados"
+          },
+          {
+            "id": "03",
+            "name": "Almuerzo",
+            "theme": "Pausa"
+          },
+          {
+            "id": "04",
+            "name": "Jeongbang",
+            "theme": "Cascada"
+          },
+          {
+            "id": "05",
+            "name": "Seongsan",
+            "theme": "Cráter"
+          }
+        ],
+        "routePhases": [
+          {
+            "label": "Mañana",
+            "range": "1-2",
+            "theme": "De Hallasan a la costa",
+            "bgClass": "bg-sky-50/70",
+            "textClass": "text-sky-700",
+            "dotClass": "bg-sky-500"
+          },
+          {
+            "label": "Mediodía y primera tarde",
+            "range": "3-4",
+            "theme": "Almuerzo y cascada",
+            "bgClass": "bg-amber-50/70",
+            "textClass": "text-amber-700",
+            "dotClass": "bg-amber-500"
+          },
+          {
+            "label": "Final",
+            "range": "5",
+            "theme": "Cierre en Seongsan",
+            "bgClass": "bg-emerald-50/70",
+            "textClass": "text-emerald-700",
+            "dotClass": "bg-emerald-500"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "Cómo fluye el día",
+          "subtitle": "La ruta comienza en Hallasan, atraviesa la costa sur y termina en Seongsan Ilchulbong. La recogida suele hacerse entre las 08:30 y las 09:00, con regreso a Jeju City alrededor de las 17:40–18:00."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "Viajeros que solo tienen un día en Jeju",
+            "Viajeros que llegan a Jeju por la mañana",
+            "Viajeros que quieren ver lugares emblemáticos",
+            "Viajeros que disfrutan del turismo activo"
+          ],
+          "lessIdeal": [
+            "Viajeros que prefieren un ritmo pausado",
+            "Viajeros que quieren evitar escaleras o subidas",
+            "Grupos que viajan con niños muy pequeños",
+            "Grupos que dependen mucho del cochecito"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Pensada para viajeros con poco tiempo",
+              "icon": "clock-3",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "Empezar por Hallasan",
+                  "detail": "Comenzar en Hallasan da al día una fuerte sensación de la geografía montañosa de Jeju antes de iniciar el trayecto más largo a través de la isla."
+                },
+                {
+                  "label": "Situar la costa sur en la parte media",
+                  "detail": "Jusangjeolli, el almuerzo y Jeongbang mantienen el flujo de oeste a este sin perder intensidad visual a lo largo de la jornada."
+                },
+                {
+                  "label": "Terminar en Seongsan Ilchulbong",
+                  "detail": "Acabar en Seongsan hace que la ruta se perciba menos como paradas separadas y más como un recorrido completo por los grandes paisajes de Jeju."
+                }
+              ]
+            },
+            {
+              "title": "Por qué este día se siente especialmente completo",
+              "icon": "mountain",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "Dos tramos de caminata más activos",
+                  "detail": "Eoseungsaengak y Seongsan Ilchulbong hacen que esta ruta sea físicamente más activa que un tour habitual de un día en grupo reducido."
+                },
+                {
+                  "label": "Prioriza la densidad paisajística",
+                  "detail": "No es una ruta para ir despacio. Está diseñada para quienes quieren una experiencia de Jeju más intensa y completa en un solo día."
+                },
+                {
+                  "label": "Especialmente valiosa cuando el tiempo es limitado",
+                  "detail": "Si solo tienes un día, suele tener más sentido concentrarse en los lugares más representativos de Jeju que mantener un ritmo demasiado relajado."
+                }
+              ]
+            },
+            {
+              "title": "Cuando cambian las condiciones sobre el terreno",
+              "icon": "wind",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-600",
+              "items": [
+                {
+                  "label": "Restricciones de acceso en Hallasan",
+                  "detail": "Eoseungsaengak puede verse afectado por regulaciones estacionales o controles relacionados con el tiempo."
+                },
+                {
+                  "label": "Viento en las paradas costeras expuestas",
+                  "detail": "Jusangjeolli y Seongsan Ilchulbong son los dos puntos costeros más sensibles al tiempo."
+                },
+                {
+                  "label": "La hora de regreso puede variar ligeramente",
+                  "detail": "El tráfico, el ritmo de caminata del grupo y la afluencia en los lugares pueden provocar pequeños cambios en la hora final de regreso."
+                }
+              ]
+            }
+          ]
+        },
+        "seasonalVariations": [
+          {
+            "name": "Primavera",
+            "icon": "flower",
+            "description": "El aire de montaña se siente especialmente fresco y la visibilidad en toda la isla suele ser más limpia y luminosa.",
+            "tag": "El mejor equilibrio general",
+            "bgClass": "bg-spring",
+            "iconColor": "text-pink-500"
+          },
+          {
+            "name": "Verano",
+            "icon": "sun",
+            "description": "Los días son más largos y los colores de la costa suelen verse más vivos y saturados.",
+            "tag": "Más horas de luz",
+            "bgClass": "bg-summer",
+            "iconColor": "text-sky-500"
+          },
+          {
+            "name": "Otoño",
+            "icon": "leaf",
+            "description": "Los cielos despejados suelen hacer que esta ruta completa por la isla resulte especialmente satisfactoria de principio a fin.",
+            "tag": "La mejor visibilidad",
+            "bgClass": "bg-autumn",
+            "iconColor": "text-amber-600"
+          },
+          {
+            "name": "Invierno",
+            "icon": "snow",
+            "description": "El aire se vuelve más nítido y claro, y el contraste entre montaña y mar se hace aún más marcado.",
+            "tag": "Claro y nítido",
+            "bgClass": "bg-winter",
+            "iconColor": "text-slate-500"
+          }
+        ]
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "Horarios de recogida y regreso",
+            "preview": "Salida temprana y regreso a Jeju City al anochecer",
+            "content": [
+              "Recogida en Jeju City entre las 08:30 y las 09:00",
+              "Regreso a Jeju City alrededor de las 17:40–18:00",
+              "La recogida en el aeropuerto puede organizarse según las circunstancias",
+              "La hora final de encuentro se confirma la noche anterior"
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "Caminata y tipo de terreno",
+            "preview": "Más activa que una ruta estándar",
+            "content": [
+              "Esta ruta incluye dos tramos de caminata relativamente más activos.",
+              "Eoseungsaengak incluye subida y escaleras.",
+              "La cascada Jeongbang incluye escaleras y un camino rocoso.",
+              "Si el grupo decide subir, Seongsan Ilchulbong resultará más exigente.",
+              "Se recomiendan encarecidamente zapatos cómodos con buen agarre."
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "Tiempo y ajustes por cierres",
+            "preview": "Normalmente opera según lo previsto, con ajustes si hacen falta",
+            "content": [
+              "Lluvia ligera: el tour suele realizarse con normalidad",
+              "Viento fuerte: las zonas expuestas como Jusangjeolli o Seongsan Ilchulbong pueden tener estancias más cortas",
+              "Restricciones en Hallasan: si Eoseungsaengak se ve limitado, la ruta puede ajustarse o sustituirse",
+              "Días de cierre: pueden utilizarse paradas alternativas o tiempos de visita revisados cuando sea necesario"
+            ]
+          },
+          {
+            "id": "flight",
+            "title": "Si llegas o sales de Jeju el mismo día",
+            "preview": "Necesitas un margen amplio por la tarde-noche",
+            "content": [
+              "Esta es una ruta de alta densidad que cubre en un solo día los grandes imprescindibles de Jeju.",
+              "Llegar o salir el mismo día puede ser viable según tu horario, pero solo si dejas suficiente margen por la tarde-noche.",
+              "Se recomienda encarecidamente un vuelo tardío.",
+              "Ten en cuenta el tráfico, el ritmo de caminata y las condiciones del día al valorar el riesgo de horarios."
+            ]
+          },
+          {
+            "id": "wear",
+            "title": "Qué llevar y cómo vestir",
+            "preview": "Calzado de caminata, capas y una chaqueta ligera cortavientos",
+            "content": [
+              "Zapatos de caminata con buen agarre",
+              "Ropa en capas por la diferencia de temperatura entre montaña y costa",
+              "Una chaqueta ligera cortavientos",
+              "Gorra o sombrero y protección solar",
+              "Botella de agua"
+            ]
+          },
+          {
+            "id": "included",
+            "title": "Qué incluye / qué no incluye",
+            "preview": "Guía, vehículo, recogida y entradas incluidas",
+            "variant": "included",
+            "content": [
+              "Guía profesional de habla inglesa",
+              "Vehículo para grupo reducido",
+              "Recogida y regreso en hoteles de Jeju City",
+              "Todas las entradas",
+              "Agua embotellada",
+              "Almuerzo (pago en el lugar)",
+              "Gastos personales de compras",
+              "Propinas para el guía"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "Integración meteorológica en tiempo real"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "Actualización diaria"
+          }
+        }
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "clock-3",
+            "title": "Aprovecha al máximo lo que puedes ver en un día",
+            "description": "Diseñado para viajeros con tiempo limitado",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "mountain",
+            "title": "Centrado en los grandes iconos de Jeju",
+            "description": "De Hallasan hasta Seongsan",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          },
+          {
+            "icon": "users",
+            "title": "Operación en grupo reducido",
+            "description": "Mayor capacidad para adaptarse a la carretera y a las condiciones del día",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Después de reservar",
+            "title": "Confirmación inmediata",
+            "detail": "Se envía una confirmación de reserva con un resumen de la ruta."
+          },
+          {
+            "timing": "12 horas antes",
+            "title": "Recordatorio previo a la salida",
+            "detail": "Se comparten con antelación notas sobre el tiempo y posibles ajustes de la ruta."
+          },
+          {
+            "timing": "La noche anterior",
+            "title": "Aviso final de recogida",
+            "detail": "Recibes tu hora exacta de recogida y los datos de contacto."
+          },
+          {
+            "timing": "La mañana de la salida",
+            "title": "Nota del día de la ruta",
+            "detail": "Si hay novedades de última hora sobre el terreno, se comparten brevemente antes de salir."
+          },
+          {
+            "timing": "Durante el tour",
+            "title": "Guía parada por parada",
+            "detail": "Se ofrece información clave en cada parada cuando hace falta."
+          },
+          {
+            "timing": "Después del tour",
+            "title": "Soporte posterior",
+            "detail": "Hay asistencia adicional y recomendaciones complementarias si las necesitas."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "one-day",
+            "question": "Si solo tengo un día en Jeju, ¿es esta la ruta adecuada?",
+            "answer": "Sí. Esta ruta está pensada para viajeros que quieren cubrir los lugares clave de Jeju en un solo día, y el ritmo es más rápido que el de un tour estándar de un día."
+          },
+          {
+            "id": "tiring",
+            "question": "¿Esta ruta se siente cansada?",
+            "answer": "Suele sentirse más activa que un tour típico de un día en grupo reducido porque incluye dos tramos de caminata más marcados y recorre una gran parte de la isla."
+          },
+          {
+            "id": "parents",
+            "question": "¿Es adecuada para viajar con mis padres?",
+            "answer": "Depende de lo cómodos que se sientan caminando y siguiendo un ritmo de visita más rápido. Esta ruta encaja mejor con adultos activos que con quienes buscan un turismo completamente relajado."
+          },
+          {
+            "id": "flight",
+            "question": "¿Puedo unirme si llego o salgo de Jeju el mismo día?",
+            "answer": "Posiblemente, pero solo si dispones de un margen amplio por la tarde-noche. Si el horario de tu vuelo es ajustado, no se recomienda esta ruta."
+          },
+          {
+            "id": "order",
+            "question": "¿Puede cambiar el orden de las paradas el mismo día?",
+            "answer": "Sí. Para que la jornada fluya mejor, el orden de las paradas puede ajustarse ligeramente según el tráfico, el tiempo y la afluencia."
+          },
+          {
+            "id": "seongsan-last",
+            "question": "¿Por qué Seongsan Ilchulbong está programado al final?",
+            "answer": "Porque le da al día un cierre más potente. Después de Hallasan, la costa sur y la cascada Jeongbang, Seongsan funciona mejor como final más simbólico."
+          },
+          {
+            "id": "summit",
+            "question": "¿Tenemos que subir a la cima de Seongsan Ilchulbong?",
+            "answer": "No necesariamente. Que el grupo suba o no, y el peso que tenga ese tramo, puede variar según el ritmo, el tiempo y la cantidad de gente."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "sticky_booking_bar": {
+          "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+          "price": {
+            "amountLabel": "78",
+            "currency": "USD",
+            "per": "persona"
+          }
+        }
+      }
+    }
+  ]
+}

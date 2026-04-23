@@ -8,6 +8,7 @@ import { adaptToursListResponse } from '@/src/lib/adapters/tours-adapter';
 import type { TourCardViewModel } from '@/src/types/tours';
 import { useCurrencyOptional } from '@/lib/currency';
 import { useI18n, useCopy } from '@/lib/i18n';
+import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
 
 function SearchResults() {
   const searchParams = useSearchParams();
@@ -107,7 +108,7 @@ function SearchResults() {
               <TourListCard
                 key={tour.id}
                 tour={tour}
-                detailHref={`/tour/${tour.id}`}
+                detailHref={consumerTourDetailHref(tour.id)}
                 formatPriceFn={formatPrice}
               />
             ))}

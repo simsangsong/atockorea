@@ -416,3 +416,236 @@ html[lang="ja"] .tour-product-v2-static-root {
   font-feature-settings: "kern" 1, "liga" 1;
   letter-spacing: -0.01em;
 }
+
+/* ────────────── At-a-Glance premium cards ──────────────
+ * Borderless, glassy premium style: pure white surface with layered white/inner glow
+ * (halo ring + soft drop shadow + top sheen). No visible hairline border — depth comes
+ * from light. Hover lifts + intensifies the accent halo. Keeps the existing square size. */
+.tour-product-v2-static-root .tour-glance-card {
+  background:
+    radial-gradient(
+      130% 80% at 50% 0%,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.88) 55%,
+      color-mix(in srgb, var(--muted) 35%, #ffffff) 100%
+    );
+  border: 0;
+  box-shadow:
+    /* inner top highlight */
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    /* inner bottom soft shade */
+    inset 0 -1px 0 rgba(26, 35, 50, 0.03),
+    /* hairline ring in pure white (“glass” edge) */
+    0 0 0 1px rgba(255, 255, 255, 0.85),
+    /* subtle accent halo */
+    0 0 0 2px color-mix(in srgb, var(--accent) 10%, transparent),
+    /* close shadow for crispness */
+    0 1px 2px rgba(26, 35, 50, 0.04),
+    /* long soft shadow for depth */
+    0 10px 28px -12px rgba(26, 35, 50, 0.12),
+    /* very soft ambient */
+    0 22px 48px -28px rgba(26, 35, 50, 0.18);
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.tour-product-v2-static-root .tour-glance-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    120% 65% at 50% 0%,
+    color-mix(in srgb, var(--accent) 10%, transparent) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 0;
+}
+
+.tour-product-v2-static-root .tour-glance-card:hover::after {
+  opacity: 1;
+}
+
+.tour-product-v2-static-root .tour-glance-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(26, 35, 50, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.95),
+    0 0 0 2px color-mix(in srgb, var(--accent) 22%, transparent),
+    0 2px 4px rgba(26, 35, 50, 0.05),
+    0 14px 32px -10px rgba(26, 35, 50, 0.16),
+    0 30px 60px -24px rgba(26, 35, 50, 0.22);
+}
+
+.tour-product-v2-static-root .tour-glance-card__sheen {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 48%;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tour-product-v2-static-root .tour-glance-card > *:not(.tour-glance-card__sheen) {
+  position: relative;
+  z-index: 1;
+}
+
+.tour-product-v2-static-root .tour-glance-card__icon-ring {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    color-mix(in srgb, var(--accent) 14%, #ffffff) 55%,
+    color-mix(in srgb, var(--primary) 10%, #ffffff) 100%
+  );
+  border: 0;
+  color: color-mix(in srgb, var(--primary) 85%, var(--foreground));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(26, 35, 50, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.9),
+    0 0 0 2px color-mix(in srgb, var(--accent) 18%, transparent),
+    0 4px 10px rgba(46, 92, 138, 0.1),
+    0 8px 20px -6px rgba(46, 92, 138, 0.12);
+}
+
+.tour-product-v2-static-root .tour-glance-card:hover .tour-glance-card__icon-ring {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(26, 35, 50, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.95),
+    0 0 0 2px color-mix(in srgb, var(--accent) 30%, transparent),
+    0 6px 14px rgba(46, 92, 138, 0.14),
+    0 12px 28px -8px rgba(46, 92, 138, 0.18);
+}
+
+/* ────────────── Tour Fit premium card ────────────── */
+.tour-product-v2-static-root .tour-fit-premium-card {
+  background:
+    radial-gradient(120% 80% at 100% 0%, color-mix(in srgb, var(--primary) 4%, transparent) 0%, transparent 55%),
+    radial-gradient(120% 80% at 0% 100%, color-mix(in srgb, var(--accent) 5%, transparent) 0%, transparent 55%),
+    linear-gradient(180deg, var(--card) 0%, color-mix(in srgb, var(--muted) 22%, var(--card)) 100%);
+  border: 1px solid color-mix(in srgb, var(--foreground) 8%, var(--border));
+  border-radius: calc(var(--radius) + 2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 1px 2px rgba(26, 35, 50, 0.03),
+    0 10px 30px rgba(26, 35, 50, 0.055);
+  isolation: isolate;
+}
+
+.tour-product-v2-static-root .tour-fit-premium-card__sheen {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 40%;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 0;
+}
+
+.tour-product-v2-static-root .tour-fit-premium-grid {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 640px) {
+  .tour-product-v2-static-root .tour-fit-premium-grid::before {
+    content: "";
+    position: absolute;
+    top: 4%;
+    bottom: 4%;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      color-mix(in srgb, var(--foreground) 10%, transparent) 15%,
+      color-mix(in srgb, var(--foreground) 10%, transparent) 85%,
+      transparent 100%
+    );
+  }
+
+  .tour-product-v2-static-root .tour-fit-column--positive {
+    padding-right: 1.25rem;
+  }
+  .tour-product-v2-static-root .tour-fit-column--negative {
+    padding-left: 1.25rem;
+  }
+}
+
+.tour-product-v2-static-root .tour-fit-column__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.tour-product-v2-static-root .tour-fit-column__badge--positive {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 2px 6px rgba(5, 150, 105, 0.28);
+}
+
+.tour-product-v2-static-root .tour-fit-column__badge--negative {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--muted-foreground) 70%, #94a3b8) 0%, color-mix(in srgb, var(--muted-foreground) 85%, #64748b) 100%);
+  color: #ffffff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 2px 6px rgba(26, 35, 50, 0.14);
+}
+
+.tour-product-v2-static-root .tour-fit-bullet {
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.tour-product-v2-static-root .tour-fit-bullet--positive {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 0 0 2px color-mix(in srgb, #10b981 14%, transparent);
+}
+
+.tour-product-v2-static-root .tour-fit-bullet--negative {
+  background: color-mix(in srgb, var(--muted-foreground) 80%, transparent);
+}
+
+.tour-product-v2-static-root .tour-fit-premium-card__note {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid color-mix(in srgb, var(--foreground) 8%, var(--border));
+}
+
+/* ────────────── Sub-navigation sticky bar (pinned under site Header) ────────────── */
+/* Header(`components/Header.tsx`) is `sticky top-0` with h-12 / md:h-14. This bar sticks
+ * flush under it. Hard-coded as CSS to avoid any Tailwind purge / override surprises. */
+.tour-product-v2-static-root .tour-subnav-sticky {
+  position: sticky;
+  top: 3rem; /* 48px — matches Header h-12 */
+  z-index: 40;
+}
+@media (min-width: 768px) {
+  .tour-product-v2-static-root .tour-subnav-sticky {
+    top: 3.5rem; /* 56px — matches Header md:h-14 */
+  }
+}

@@ -3,6 +3,7 @@ import { createServerClient } from '@/lib/supabase';
 import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
 import { tourListPricesToUsdSync } from '@/lib/tour-list-price-usd.server';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
+import { isTourIdBlockedFromConsumerSurfaces } from '@/lib/tour-consumer-visibility';
 
 function isJejuEastTour(tour: { city?: string | null; slug?: string | null; title?: string | null }) {
   const city = (tour.city || '').toLowerCase();
@@ -22,6 +23,9 @@ export async function GET(
 ) {
   try {
     const { id: tourId } = await params;
+    if (isTourIdBlockedFromConsumerSurfaces(tourId)) {
+      return NextResponse.json({ error: 'Tour not found or inactive' }, { status: 404 });
+    }
     const supabase = createServerClient();
     const { searchParams } = new URL(req.url);
     const date = searchParams.get('date');
@@ -168,6 +172,9 @@ export async function POST(
 ) {
   try {
     const { id: tourId } = await params;
+    if (isTourIdBlockedFromConsumerSurfaces(tourId)) {
+      return NextResponse.json({ error: 'Tour not found or inactive' }, { status: 404 });
+    }
     const supabase = createServerClient();
     const body = await req.json();
 

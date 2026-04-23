@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { cookies } from "next/headers";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import "./home-v2.css";
 import "./home-v2-fidelity.css";
@@ -14,6 +14,14 @@ import { rootHtmlLangFromNextLocaleCookie } from "@/lib/rootHtmlLangFromCookie";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+/** Latin display — brand mark & editorial accents (tour-product / premium surfaces) */
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-display-serif",
+  weight: ["500", "600", "700"],
   display: "swap",
 });
 
@@ -37,7 +45,7 @@ export default async function RootLayout({
 
   return (
     <html lang={htmlLang} className="font-sans" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${playfairDisplay.variable} font-sans antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

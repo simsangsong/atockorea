@@ -52,12 +52,12 @@ export default function Footer({ premiumHandoff }: FooterProps) {
               <p>
                 <span className="font-semibold text-slate-200">{t('home.footer.contact')}:</span>
                 <br />
-                <a href="tel:+821097808027" className="text-slate-300 transition-colors hover:text-white">
-                  +82 10 9780 8027
+                <a href="/contact" className="text-slate-300 transition-colors hover:text-white">
+                  {t('home.footer.contactUs')}
                 </a>
                 <br />
-                <a href="tel:+13075332194" className="text-slate-300 transition-colors hover:text-white">
-                  +1 (307) 533 2194
+                <a href="/support" className="text-slate-300 transition-colors hover:text-white">
+                  {t('home.footer.bookingHelp')}
                 </a>
               </p>
               <p>

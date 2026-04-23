@@ -41,6 +41,8 @@ export interface TourCardViewModel {
   rating?: number;
   reviewCount?: number;
   bookingCount?: number;
+  /** From GET /api/tours; used for canonical product URLs (e.g. east-signature flagship). */
+  slug?: string;
 }
 
 /** Build tour request (client → server). Server is source of truth for pricing and availability. */

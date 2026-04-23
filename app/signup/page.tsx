@@ -11,6 +11,18 @@ import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { useTranslations } from '@/lib/i18n';
 import { getPasswordStrengthTier, validateAppPassword } from '@/lib/password-policy';
 import { PasswordStrengthBar } from '@/components/auth/PasswordStrengthBar';
+import {
+  AUTH_BRAND_PILL,
+  AUTH_FIELD_LABEL,
+  AUTH_FORM_CARD,
+  AUTH_GOOGLE_CTA_BUTTON,
+  AUTH_GOOGLE_PANEL,
+  AUTH_INPUT,
+  AUTH_LEAD,
+  AUTH_PAGE_BACKDROP,
+  AUTH_PAGE_TITLE,
+} from '@/lib/mypage-ui';
+import { cn } from '@/lib/utils';
 
 const CURRENT_YEAR = new Date().getFullYear();
 const BIRTH_YEAR_START = 1900;
@@ -324,14 +336,14 @@ export default function SignUpPage() {
 
       if (!profileRes.ok) {
         setError(profileData.error || t('signup.errorProfileSave'));
-        setIsLoading(false);
         return;
       }
 
       setError('');
-      router.push('/');
+      router.push('/mypage/dashboard');
     } catch (e: any) {
       setError(e?.message ?? t('signup.errorGeneric'));
+    } finally {
       setIsLoading(false);
     }
   };
@@ -357,56 +369,131 @@ export default function SignUpPage() {
 
   return (
     <SitePageShell>
-      <main className="relative z-10 container mx-auto px-4 py-12 sm:px-6 md:py-16 lg:px-8">
-        <div className="mx-auto max-w-md">
-          <div className="rounded-[1.75rem] border border-white/25 bg-white/55 p-8 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.18)] backdrop-blur-xl transition-all md:p-10">
-            <div className="mb-8 text-center">
-              <h1 className="mb-2 text-3xl font-bold text-slate-900 md:text-4xl">{t('auth.signUp')}</h1>
-              <p className="text-sm text-slate-600 md:text-base">{t('signup.subtitle')}</p>
-              <div className="mb-4 mt-6 flex items-center justify-center">
-                {(
-                  [
-                    { id: 'email' as const, label: t('signup.stepEmail') },
-                    { id: 'verify' as const, label: t('signup.stepVerify') },
-                    { id: 'info' as const, label: t('signup.stepInfo') },
-                  ]
-                ).map((stepItem, i) => (
-                  <div key={stepItem.id} className="flex items-center">
-                    {i > 0 && (
-                      <div
-                        className={`mx-2 h-0.5 w-12 ${
-                          step === stepItem.id || (step === 'info' && stepItem.id === 'verify')
-                            ? 'bg-slate-900'
-                            : 'bg-slate-200'
-                        }`}
-                      />
-                    )}
-                    <div className={`flex items-center ${step === stepItem.id ? 'text-blue-600' : 'text-slate-400'}`}>
-                      <div
-                        className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold ${
-                          step === stepItem.id ? 'bg-slate-900 text-white' : 'bg-slate-200 text-slate-500'
-                        }`}
-                      >
-                        {i + 1}
-                      </div>
-                      <span className="ml-2 hidden text-xs font-medium sm:inline">{stepItem.label}</span>
-                    </div>
+      <main
+        className={cn(
+          'relative z-10 container mx-auto px-4 py-12 sm:px-6 md:py-20 lg:px-8',
+          AUTH_PAGE_BACKDROP,
+        )}
+      >
+        <div className="mx-auto max-w-[420px]">
+          <div className={cn(AUTH_FORM_CARD, 'px-6 py-8 sm:px-9 sm:py-10')}>
+              <div className="text-center">
+                <div className="flex justify-center">
+                  <span className={AUTH_BRAND_PILL}>AtoC Korea</span>
+                </div>
+                <h1 className={cn(AUTH_PAGE_TITLE, 'mt-7')}>{t('auth.signUp')}</h1>
+                <p className={AUTH_LEAD}>{t('signup.subtitle')}</p>
+                <div className="mt-8 rounded-2xl border border-slate-200/55 bg-white/70 px-3 py-4 ring-1 ring-slate-900/[0.04] sm:px-5">
+                  <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                    {t('signup.stepEmail')} · {t('signup.stepVerify')} · {t('signup.stepInfo')}
+                  </p>
+                  <div className="flex items-center justify-center gap-0.5 sm:gap-1">
+                    {(
+                      [
+                        { id: 'email' as const, label: t('signup.stepEmail') },
+                        { id: 'verify' as const, label: t('signup.stepVerify') },
+                        { id: 'info' as const, label: t('signup.stepInfo') },
+                      ]
+                    ).map((stepItem, i) => {
+                      const stepOrder = { email: 0, verify: 1, info: 2 } as const;
+                      const currentIdx = stepOrder[step];
+                      const itemIdx = stepOrder[stepItem.id];
+                      const isActive = itemIdx === currentIdx;
+                      const isDone = itemIdx < currentIdx;
+                      return (
+                        <div key={stepItem.id} className="flex items-center">
+                          {i > 0 && (
+                            <div
+                              className={cn(
+                                'mx-1 h-0.5 w-6 rounded-full transition-colors sm:mx-1.5 sm:w-10',
+                                isDone || isActive ? 'bg-slate-800' : 'bg-slate-200',
+                              )}
+                            />
+                          )}
+                          <div className="flex flex-col items-center gap-1">
+                            <div
+                              className={cn(
+                                'flex h-8 w-8 items-center justify-center rounded-full text-[12px] font-bold transition-all sm:h-9 sm:w-9',
+                                isActive
+                                  ? 'bg-slate-900 text-white shadow-[0_6px_16px_-4px_rgba(15,23,42,0.35)]'
+                                  : isDone
+                                    ? 'bg-slate-800 text-white'
+                                    : 'bg-slate-100 text-slate-500 ring-1 ring-slate-200/80',
+                              )}
+                            >
+                              {isDone ? (
+                                <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                </svg>
+                              ) : (
+                                i + 1
+                              )}
+                            </div>
+                            <span
+                              className={cn(
+                                'max-w-[4.5rem] text-center text-[9px] font-semibold leading-tight sm:max-w-none sm:text-[10px]',
+                                isActive ? 'text-slate-900' : isDone ? 'text-slate-700' : 'text-slate-400',
+                              )}
+                            >
+                              {stepItem.label}
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
 
+              <div className="mt-9 space-y-8">
             {error && (
-              <div className="bg-red-50 border-l-4 border-red-400 text-red-700 px-4 py-3 rounded-lg mb-6 shadow-sm flex items-center">
-                <svg className="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>
-                <span className="text-sm font-medium">{error}</span>
+              <div className="flex items-center gap-2.5 rounded-2xl border border-red-200/80 bg-red-50/90 px-4 py-3.5 text-red-800 shadow-[0_8px_28px_-18px_rgba(220,38,38,0.2)]">
+                <svg className="h-5 w-5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span className="text-[14px] font-medium leading-snug">{error}</span>
               </div>
             )}
 
             {step === 'email' && (
-              <div className="space-y-5">
+              <div className="space-y-6">
+                <div className={AUTH_GOOGLE_PANEL}>
+                  <p className="mb-3 text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                    {t('auth.signInWith')}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => handleSocialLogin('google')}
+                    className={AUTH_GOOGLE_CTA_BUTTON}
+                  >
+                    <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                    </svg>
+                    <span>{t('signup.continueWithGoogle')}</span>
+                  </button>
+                  <p className="mt-3 text-center text-[12px] leading-relaxed text-slate-500">{t('signup.googleAccountHint')}</p>
+                </div>
+
+                <div className="relative py-0.5">
+                  <div className="absolute inset-0 flex items-center" aria-hidden>
+                    <div className="w-full border-t border-slate-200/70" />
+                  </div>
+                  <div className="relative flex justify-center">
+                    <span className="rounded-full bg-gradient-to-b from-white to-slate-50/90 px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500 ring-1 ring-slate-200/60">
+                      {t('auth.or')}
+                    </span>
+                  </div>
+                </div>
+
                 <div>
-                  <label htmlFor="email" className="mb-2 block text-sm font-semibold text-slate-700">
+                  <label htmlFor="email" className={AUTH_FIELD_LABEL}>
                     {t('signup.emailLoginId')} <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -415,24 +502,24 @@ export default function SignUpPage() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 outline-none bg-white/80 text-slate-900 placeholder:text-slate-400"
+                    className={AUTH_INPUT}
                     placeholder={t('signup.emailPlaceholder')}
                   />
-                  {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
+                  {errors.email && <p className="mt-1 text-[12px] text-red-600">{errors.email}</p>}
                 </div>
                 <div className="flex items-center gap-3">
                   <button
                     type="button"
                     onClick={handleSendVerificationCode}
                     disabled={isSendingCode || !formData.email?.trim()}
-                    className="min-w-0 flex-1 rounded-xl bg-slate-900 py-3.5 font-semibold text-white shadow-lg transition-colors hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="home-btn-primary min-w-0 flex-1 disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {isSendingCode ? t('signup.sending') : t('signup.sendCode')}
                   </button>
                   {countdown > 0 && (
-                    <div className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-blue-100 bg-blue-50/90 px-3 py-2 text-sm shadow-sm">
+                    <div className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-slate-200/80 bg-slate-50/90 px-3 py-2 text-[13px] shadow-sm">
                       <span className="text-slate-600">{t('signup.resendIn')}</span>
-                      <span className="min-w-[2.75ch] text-right text-lg font-bold tabular-nums text-blue-700">{countdown}s</span>
+                      <span className="min-w-[2.75ch] text-right text-lg font-bold tabular-nums text-slate-900">{countdown}s</span>
                     </div>
                   )}
                 </div>
@@ -463,14 +550,14 @@ export default function SignUpPage() {
                   </p>
                 </div>
                 <div className="flex gap-3">
-                  <button type="button" onClick={() => setStep('email')} className="flex-1 rounded-xl border border-slate-200/80 py-3 font-medium text-slate-700 hover:bg-white/60">
+                  <button type="button" onClick={() => setStep('email')} className="home-btn-secondary flex-1">
                     {t('signup.back')}
                   </button>
                   <button
                     type="button"
                     onClick={handleVerifyCode}
                     disabled={isVerifying || !formData.verificationCode?.trim()}
-                    className="flex-1 rounded-xl bg-slate-900 py-3 font-semibold text-white transition-colors hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="home-btn-primary flex-1 disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {isVerifying ? t('signup.verifying') : t('signup.verify')}
                   </button>
@@ -489,79 +576,105 @@ export default function SignUpPage() {
             )}
 
             {step === 'info' && (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label htmlFor="signup-email-readonly" className="mb-2 block text-sm font-semibold text-slate-700">
-                    {t('signup.emailLoginId')} <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="signup-email-readonly"
-                    readOnly
-                    disabled
-                    value={formData.email}
-                    className="w-full cursor-not-allowed rounded-xl border border-slate-200/80 bg-slate-100/90 px-4 py-3 text-slate-600 outline-none"
-                    aria-readonly="true"
-                  />
-                  <p className="mt-1 text-xs text-slate-500">{t('signup.emailLockedHint')}</p>
-                </div>
-                <div>
-                  <label htmlFor="fullName" className="mb-2 block text-sm font-semibold text-slate-700">
-                    {t('signup.fullName')} <span className="text-red-500">*</span>
-                  </label>
-                  <input type="text" id="fullName" value={formData.fullName} onChange={(e) => setFormData({ ...formData, fullName: e.target.value })} required className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 outline-none bg-white/80 text-slate-900 placeholder:text-slate-400" placeholder={t('signup.fullNamePlaceholder')} />
-                  {errors.fullName && <p className="mt-1 text-sm text-red-600">{errors.fullName}</p>}
-                </div>
-                <div>
-                  <label htmlFor="password" className="mb-2 block text-sm font-semibold text-slate-700">
-                    {t('signup.password')} <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="password"
-                    id="password"
-                    value={formData.password}
-                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                    required
-                    autoComplete="new-password"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 outline-none bg-white/80 text-slate-900 placeholder:text-slate-400"
-                    placeholder={t('signup.passwordHint')}
-                  />
-                  <PasswordStrengthBar
-                    tier={getPasswordStrengthTier(formData.password)}
-                    weakLabel={t('signup.passwordStrengthWeak')}
-                    strongLabel={t('signup.passwordStrengthStrong')}
-                  />
-                  {errors.password && <p className="mt-1 text-sm text-red-600">{errors.password}</p>}
-                </div>
-                <div>
-                  <label htmlFor="confirmPassword" className="mb-2 block text-sm font-semibold text-slate-700">
-                    {t('signup.confirmPassword')} <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="password"
-                    id="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-                    required
-                    autoComplete="new-password"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 outline-none bg-white/80 text-slate-900 placeholder:text-slate-400"
-                  />
-                  <PasswordStrengthBar
-                    tier={getPasswordStrengthTier(formData.confirmPassword)}
-                    weakLabel={t('signup.passwordStrengthWeak')}
-                    strongLabel={t('signup.passwordStrengthStrong')}
-                  />
-                  {errors.confirmPassword && <p className="mt-1 text-sm text-red-600">{errors.confirmPassword}</p>}
-                </div>
-                <div ref={birthYearPickerRef}>
-                  <label htmlFor="birthYear" className="mb-2 block text-sm font-semibold text-slate-700">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Account group */}
+                <section>
+                  <h2 className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-slate-500">
+                    {t('signup.accountGroupTitle')}
+                  </h2>
+                  <div className="space-y-3">
+                    <div>
+                      <label htmlFor="signup-email-readonly" className="mb-1.5 block text-[12px] font-semibold text-slate-700">
+                        {t('signup.emailLoginId')} <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        id="signup-email-readonly"
+                        readOnly
+                        disabled
+                        value={formData.email}
+                        className="w-full cursor-not-allowed rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-[14px] text-slate-600 outline-none"
+                        aria-readonly="true"
+                      />
+                      <p className="mt-1 text-[11px] text-slate-500">{t('signup.emailLockedHint')}</p>
+                    </div>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      <div>
+                        <label htmlFor="password" className="mb-1.5 block text-[12px] font-semibold text-slate-700">
+                          {t('signup.password')} <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="password"
+                          id="password"
+                          value={formData.password}
+                          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                          required
+                          autoComplete="new-password"
+                          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-[14px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
+                          placeholder={t('signup.passwordHint')}
+                        />
+                        <PasswordStrengthBar
+                          tier={getPasswordStrengthTier(formData.password)}
+                          weakLabel={t('signup.passwordStrengthWeak')}
+                          strongLabel={t('signup.passwordStrengthStrong')}
+                        />
+                        {errors.password && <p className="mt-1 text-[12px] text-red-600">{errors.password}</p>}
+                      </div>
+                      <div>
+                        <label htmlFor="confirmPassword" className="mb-1.5 block text-[12px] font-semibold text-slate-700">
+                          {t('signup.confirmPassword')} <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="password"
+                          id="confirmPassword"
+                          value={formData.confirmPassword}
+                          onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                          required
+                          autoComplete="new-password"
+                          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-[14px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
+                        />
+                        <PasswordStrengthBar
+                          tier={getPasswordStrengthTier(formData.confirmPassword)}
+                          weakLabel={t('signup.passwordStrengthWeak')}
+                          strongLabel={t('signup.passwordStrengthStrong')}
+                        />
+                        {errors.confirmPassword && <p className="mt-1 text-[12px] text-red-600">{errors.confirmPassword}</p>}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                {/* Identity group */}
+                <section>
+                  <h2 className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-slate-500">
+                    {t('signup.identityGroupTitle')}
+                  </h2>
+                  <div className="space-y-3">
+                    <div>
+                      <label htmlFor="fullName" className="mb-1.5 block text-[12px] font-semibold text-slate-700">
+                        {t('signup.fullName')} <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="fullName"
+                        value={formData.fullName}
+                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                        required
+                        className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-[14px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
+                        placeholder={t('signup.fullNamePlaceholder')}
+                      />
+                      {errors.fullName && <p className="mt-1 text-[12px] text-red-600">{errors.fullName}</p>}
+                    </div>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                  <div ref={birthYearPickerRef}>
+                    <label htmlFor="birthYear" className="mb-1.5 block text-[12px] font-semibold text-slate-700">
                     {t('signup.birthYear')} <span className="text-red-500">*</span>
                   </label>
                   <button
                     type="button"
                     id="birthYear"
                     onClick={() => setBirthYearPickerOpen(true)}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 outline-none bg-white/80 text-left text-slate-900 flex items-center justify-between"
+                    className="flex w-full items-center justify-between rounded-xl border border-slate-200 bg-white px-4 py-3 text-left text-[14px] text-slate-900 outline-none focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
                   >
                     <span className={formData.birthYear ? 'text-slate-900' : 'text-slate-400'}>
                       {formData.birthYear || t('signup.birthYearExample', { year: CURRENT_YEAR - 30 })}
@@ -617,16 +730,16 @@ export default function SignUpPage() {
                         </motion.div>
                       </>
                     )}
-                  </AnimatePresence>
-                </div>
-                <div ref={countryDropdownRef} className="relative">
-                  <label className="mb-2 block text-sm font-semibold text-slate-700">
+                    </AnimatePresence>
+                  </div>
+                  <div ref={countryDropdownRef} className="relative">
+                    <label className="mb-1.5 block text-[12px] font-semibold text-slate-700">
                     {t('signup.nationality')} <span className="text-red-500">*</span>
                   </label>
                   <button
                     type="button"
                     onClick={() => setCountryDropdownOpen((o) => !o)}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 outline-none bg-white/80 text-left text-slate-900 flex items-center justify-between"
+                    className="flex w-full items-center justify-between rounded-xl border border-slate-200 bg-white px-4 py-3 text-left text-[14px] text-slate-900 outline-none focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
                   >
                     <span className={formData.nationality ? 'text-slate-900' : 'text-slate-400'}>
                       {formData.nationality || t('signup.selectCountry')}
@@ -663,16 +776,25 @@ export default function SignUpPage() {
                       </div>
                     </div>
                   )}
-                  {errors.nationality && <p className="mt-1 text-sm text-red-600">{errors.nationality}</p>}
-                </div>
+                  {errors.nationality && <p className="mt-1 text-[12px] text-red-600">{errors.nationality}</p>}
+                    </div>
+                    </div>
+                  </div>
+                </section>
+
+                {/* Contact & Consent group */}
+                <section>
+                  <h2 className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-slate-500">
+                    {t('signup.contactGroupTitle')}
+                  </h2>
                 <div>
-                  <label htmlFor="phone" className="mb-2 block text-sm font-semibold text-slate-700">
+                  <label htmlFor="phone" className="mb-1.5 block text-[12px] font-semibold text-slate-700">
                     {t('signup.phoneOptional')}
                   </label>
-                  <input type="tel" id="phone" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 outline-none bg-white/80 text-slate-900 placeholder:text-slate-400" placeholder={t('signup.phonePlaceholder')} />
+                  <input type="tel" id="phone" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-[14px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10" placeholder={t('signup.phonePlaceholder')} />
                 </div>
-                <p className="text-xs text-slate-500">{t('signup.otpHint')}</p>
-                <div className="flex items-start gap-3">
+                <p className="mt-2 text-[11px] text-slate-500">{t('signup.otpHint')}</p>
+                <div className="mt-4 flex items-start gap-3">
                   <input
                     type="checkbox"
                     id="terms-agree"
@@ -704,33 +826,21 @@ export default function SignUpPage() {
                     </Link>
                   </label>
                 </div>
-                <button type="submit" disabled={isLoading} className="w-full rounded-xl bg-slate-900 py-3.5 font-semibold text-white shadow-lg transition-colors hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50">
+                <button type="submit" disabled={isLoading} className="home-btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60">
                   {isLoading ? t('signup.creatingAccount') : t('signup.signUpCta')}
                 </button>
+                </section>
               </form>
             )}
+              </div>
 
-            {step === 'email' && (
-              <>
-                <div className="relative my-6 md:my-8">
-                  <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/25" /></div>
-                  <div className="relative flex justify-center text-sm"><span className="bg-transparent px-4 font-medium text-slate-400">{t('auth.or')}</span></div>
-                </div>
-                <div className="space-y-2.5 md:space-y-3">
-                  <button onClick={() => handleSocialLogin('google')} className="flex w-full max-w-[360px] justify-center rounded-xl border border-white/25 bg-white/80 px-5 py-3 font-medium text-slate-700 shadow-sm transition-all hover:border-slate-200/60 hover:shadow-md">
-                    <span className="grid grid-cols-[24px_auto] items-center gap-3">
-                      <svg className="w-5 h-5" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" /><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" /></svg>
-                      <span className="text-sm md:text-base">{t('auth.google')}</span>
-                    </span>
-                  </button>
-                </div>
-              </>
-            )}
-
-            <div className="mt-6 text-center md:mt-8">
-              <p className="text-sm text-slate-600">
+            <div className="mt-10 border-t border-neutral-400/45 pt-8 text-center">
+              <p className="text-[14px] text-slate-600">
                 {t('auth.alreadyHaveAccount')}{' '}
-                <Link href="/signin" className="font-semibold text-blue-600 hover:text-blue-700">
+                <Link
+                  href="/signin"
+                  className="font-semibold text-slate-900 underline decoration-slate-300 underline-offset-4 transition-colors hover:decoration-slate-900"
+                >
                   {t('auth.signIn')}
                 </Link>
               </p>

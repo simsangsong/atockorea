@@ -10,49 +10,93 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { getStaticTourProductBySlug } from "@/components/product-tour-static/catalog/staticTourProductRegistry";
 import { analytics } from "@/src/design/analytics";
 import { useHomepageJoinCardImage } from "@/hooks/home/useHomepageJoinCardImage";
 import { DEFAULT_HOMEPAGE_PRODUCT_CARD_IMAGES } from "@/lib/homepage-product-card-images.shared";
-import {
-  clearHomepageMatchTimeouts,
-  startHomepageMatchSimulation,
-} from "@/lib/home/services/hero-match-schedule";
+import { clearHomepageMatchTimeouts } from "@/lib/home/services/hero-match-schedule";
+import type { TourMatchApiResponse } from "@/lib/tour-product-match/types";
 
 export type HomeV2MatchPhase = "idle" | "loading" | "result";
 
 export type HomeV2MatchContextValue = {
   phase: HomeV2MatchPhase;
   loadingStep: 0 | 1 | 2;
+  /** Card hero image — matched tour or homepage default */
   joinImageUrl: string;
-  /** Mobile in-page flow: same analytics + staggered steps as legacy `useHeroMobileMatchFlow`. */
-  startInPageMatchFlow: () => void;
+  matchResult: TourMatchApiResponse | null;
+  matchError: string | null;
+  startInPageMatchFlow: (text: string, locale: string) => Promise<TourMatchApiResponse | null>;
   resetMatchToIdle: () => void;
 };
 
 const HomeV2MatchContext = createContext<HomeV2MatchContextValue | null>(null);
 
 export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
-  const joinImageUrl = useHomepageJoinCardImage(DEFAULT_HOMEPAGE_PRODUCT_CARD_IMAGES.join);
+  const baseJoinImageUrl = useHomepageJoinCardImage(DEFAULT_HOMEPAGE_PRODUCT_CARD_IMAGES.join);
   const [phase, setPhase] = useState<HomeV2MatchPhase>("idle");
   const [loadingStep, setLoadingStep] = useState<0 | 1 | 2>(0);
+  const [matchResult, setMatchResult] = useState<TourMatchApiResponse | null>(null);
+  const [matchError, setMatchError] = useState<string | null>(null);
   const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => () => clearHomepageMatchTimeouts(timeoutsRef), []);
+
+  const joinImageUrl = useMemo(() => {
+    if (!matchResult?.winner?.product_id) return baseJoinImageUrl;
+    const p = getStaticTourProductBySlug(matchResult.winner.product_id);
+    return p?.heroImage ?? baseJoinImageUrl;
+  }, [matchResult, baseJoinImageUrl]);
 
   const resetMatchToIdle = useCallback(() => {
     clearHomepageMatchTimeouts(timeoutsRef);
     setPhase("idle");
     setLoadingStep(0);
+    setMatchResult(null);
+    setMatchError(null);
   }, []);
 
-  const startInPageMatchFlow = useCallback(() => {
-    analytics.heroFormStart();
+  const startInPageMatchFlow = useCallback(async (text: string, locale: string) => {
+    analytics.homeCtaClick({ source: "hero_planner_match" });
+    setMatchError(null);
+    setMatchResult(null);
     setPhase("loading");
     setLoadingStep(0);
-    startHomepageMatchSimulation(timeoutsRef, {
-      onLoadingStep: setLoadingStep,
-      onResult: () => setPhase("result"),
-    });
+
+    const stepTimers: ReturnType<typeof setTimeout>[] = [];
+    const push = (delay: number, fn: () => void) => {
+      const id = setTimeout(fn, delay);
+      stepTimers.push(id);
+      timeoutsRef.current.push(id);
+    };
+    push(450, () => setLoadingStep(1));
+    push(900, () => setLoadingStep(2));
+
+    try {
+      const res = await fetch("/api/tour-product/match", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text, locale }),
+      });
+      const data = (await res.json()) as TourMatchApiResponse & { error?: string };
+      if (!res.ok) {
+        throw new Error(data.error ?? "Match request failed");
+      }
+      clearHomepageMatchTimeouts(timeoutsRef);
+      stepTimers.forEach(clearTimeout);
+      setMatchResult(data);
+      setPhase("result");
+      setLoadingStep(2);
+      return data;
+    } catch (e) {
+      clearHomepageMatchTimeouts(timeoutsRef);
+      stepTimers.forEach(clearTimeout);
+      const msg = e instanceof Error ? e.message : "Match failed";
+      setMatchError(msg);
+      setPhase("idle");
+      setLoadingStep(0);
+      return null;
+    }
   }, []);
 
   const value = useMemo(
@@ -60,10 +104,12 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
       phase,
       loadingStep,
       joinImageUrl,
+      matchResult,
+      matchError,
       startInPageMatchFlow,
       resetMatchToIdle,
     }),
-    [phase, loadingStep, joinImageUrl, startInPageMatchFlow, resetMatchToIdle],
+    [phase, loadingStep, joinImageUrl, matchResult, matchError, startInPageMatchFlow, resetMatchToIdle],
   );
 
   return <HomeV2MatchContext.Provider value={value}>{children}</HomeV2MatchContext.Provider>;

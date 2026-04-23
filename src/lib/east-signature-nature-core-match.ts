@@ -1,12 +1,12 @@
 /** Legacy flagship slug; still honored for redirects and coercion. */
 const LEGACY_EAST_SIGNATURE_SLUG = "east-signature-nature-core";
 /** Canonical live small-group v2 SKU (replaces static `/tour/east-signature-nature-core` → `/tour/...` redirect). */
-const CANONICAL_SMALL_GROUP_V2_SLUG = "east-jeju-signature-small-group";
+export const CANONICAL_EAST_JEJU_SIGNATURE_SMALL_GROUP_SLUG = "east-jeju-signature-small-group";
 
 /** URL `/tour/[id]` segment or DB slug (ASCII kebab). */
 export function matchesEastSignatureSlugSegment(segment: string | null | undefined): boolean {
   const s = (segment ?? "").trim().toLowerCase();
-  const bases = [LEGACY_EAST_SIGNATURE_SLUG, CANONICAL_SMALL_GROUP_V2_SLUG] as const;
+  const bases = [LEGACY_EAST_SIGNATURE_SLUG, CANONICAL_EAST_JEJU_SIGNATURE_SMALL_GROUP_SLUG] as const;
   for (const base of bases) {
     if (s === base || s.startsWith(`${base}-`)) return true;
   }
@@ -53,6 +53,9 @@ export function extractTourRouteSegmentFromPathname(pathname: string): string | 
 /** Locale segments used in `middleware` for `/xx/tour/...` */
 const PATH_LOCALE_PREFIXES = new Set(["en", "ko", "zh-CN", "zh-TW", "ja", "es"]);
 
+/** `/tour-product/[slug]` pages that must stay reachable when the site gate rewrites non-local traffic to `/`. */
+const FLAGSHIP_TOUR_PRODUCT_SLUGS = new Set(["east-signature-nature-core", "jeju-grand-highlights-loop"]);
+
 function decodePathSegment(seg: string): string {
   try {
     return decodeURIComponent(seg);
@@ -62,7 +65,7 @@ function decodePathSegment(seg: string): string {
 }
 
 /**
- * 사이트 전체 비공개(`home-private` rewrite) 중에도 **동부 소규모 투어 상세**만 통과.
+ * 사이트 전체 비공개(미들웨어가 비로컬 요청을 `/`로 rewrite) 중에도 **동부 소규모 투어 상세**만 통과.
  * - `east-signature-nature-core` / `east-jeju-signature-small-group` 및 각각 `-*` 접두 (`/tour/[slug]` 2세그먼트)
  * - `/tour-product/east-signature-nature-core` (및 locale 접두 동일)
  * - `/ko/tour/...` 등 locale 접두 동일 규칙
@@ -89,15 +92,15 @@ export function isPublicEastSignatureTourDetailPathForSiteGate(pathname: string)
     return matchesEastSignatureSlugSegment(decodePathSegment(parts[2]!));
   }
 
-  /** Static flagship product page (canonical consumer URL). */
-  if (parts[0] === "tour-product" && parts.length === 2 && parts[1] === "east-signature-nature-core") {
+  /** Static flagship product pages (canonical consumer URLs). */
+  if (parts[0] === "tour-product" && parts.length === 2 && FLAGSHIP_TOUR_PRODUCT_SLUGS.has(parts[1]!)) {
     return true;
   }
   if (
     parts.length === 3 &&
     PATH_LOCALE_PREFIXES.has(parts[0]!) &&
     parts[1] === "tour-product" &&
-    parts[2] === "east-signature-nature-core"
+    FLAGSHIP_TOUR_PRODUCT_SLUGS.has(parts[2]!)
   ) {
     return true;
   }

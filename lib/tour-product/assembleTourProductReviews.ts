@@ -142,7 +142,8 @@ export type AssembleTourProductReviewsResult = {
 };
 
 /**
- * 공개 리뷰가 1건 이상이면 요약·목록 반환. 없으면 null (호출측에서 detail_payload 데모 유지).
+ * `tour_id` 가 있으면 공개 리뷰·집계를 항상 반환 (없으면 빈 요약).
+ * `tour_id` 자체가 없을 때만 null — 이 경우 호출측이 payload/번들 값을 그대로 사용.
  */
 export async function assembleTourProductReviews(options: {
   tourId: string | null | undefined;
@@ -158,7 +159,13 @@ export async function assembleTourProductReviews(options: {
     offset: 0,
   });
 
-  if (!rows.length) return null;
+  if (!rows.length) {
+    /** 공개 리뷰 없음 — UI가 empty state로 전환하도록 0짜리 요약 반환. */
+    return {
+      guestReviews: [],
+      reviewsSummary: buildReviewsSummary([], options.fallbackHighlights),
+    };
+  }
 
   const withProfiles = await attachReviewProfiles(rows);
   let ratings = await fetchPublicRatingRows(tourId);
