@@ -6,6 +6,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 import {
+  isPublicConsumerTourDiscoveryPathForSiteGate,
   isPublicEastSignatureTourDetailPathForSiteGate,
   matchesEastSignatureSlugSegment,
 } from '@/src/lib/east-signature-nature-core-match';
@@ -242,11 +243,12 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // 1c. 비로컬 + 공개 플래그 없음 → 실제 홈(/)으로 rewrite, East Signature 투어 상세 경로만 예외
+  // 1c. 비로컬 + 공개 플래그 없음 → 실제 홈(/)으로 rewrite, 플래그십·투어 둘러보기·매칭 경로만 예외
   if (
     !isSiteUiPublic() &&
     !isLocalRequest(request) &&
-    !isPublicEastSignatureTourDetailPathForSiteGate(pathname)
+    !isPublicEastSignatureTourDetailPathForSiteGate(pathname) &&
+    !isPublicConsumerTourDiscoveryPathForSiteGate(pathname)
   ) {
     const url = request.nextUrl.clone();
     url.pathname = '/';

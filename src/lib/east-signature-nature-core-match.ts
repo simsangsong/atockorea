@@ -107,3 +107,18 @@ export function isPublicEastSignatureTourDetailPathForSiteGate(pathname: string)
 
   return false;
 }
+
+/**
+ * When the site is gated (`SITE_HOME_PUBLIC` off), home CTAs still link to `/tours/*` and `/match`.
+ * Those paths must not be rewritten to `/`, or clicks appear to "do nothing" (user stays on the same UI).
+ * Covers locale-prefixed routes (`/ko/tours/list`, etc.).
+ */
+export function isPublicConsumerTourDiscoveryPathForSiteGate(pathname: string): boolean {
+  const parts = pathname.split("/").filter(Boolean);
+  if (parts.length < 1) return false;
+  if (parts[0] === "tours" || parts[0] === "match") return true;
+  if (parts.length >= 2 && PATH_LOCALE_PREFIXES.has(parts[0]!)) {
+    return parts[1] === "tours" || parts[1] === "match";
+  }
+  return false;
+}
