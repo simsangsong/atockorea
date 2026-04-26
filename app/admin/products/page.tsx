@@ -1,11 +1,42 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import PickupPointSelector from '@/components/maps/PickupPointSelector';
 import { CHILD_ELIGIBILITY_RULES, CHILD_SEAT_OPTIONS, STROLLER_WHEELCHAIR_OPTIONS } from '@/lib/participant-rules';
+
+/**
+ * Master template detail row (tour_product_pages). The full payload is large;
+ * we type the columns the master-detail tab edits and keep `detail_payload` as
+ * unknown JSON which the admin edits via a JSON textarea.
+ */
+type MasterPageRow = {
+  id: string;
+  slug: string;
+  locale: string;
+  is_published: boolean | null;
+  title: string | null;
+  subtitle: string | null;
+  region_label: string | null;
+  duration_label: string | null;
+  stops_count: number | null;
+  rating_avg: number | null;
+  review_count: number | null;
+  badges: string[] | null;
+  hero_image_url: string | null;
+  thumbnail_url: string | null;
+  card_short_description: string | null;
+  seo_title: string | null;
+  meta_description: string | null;
+  headline_line_1: string | null;
+  headline_line_2: string | null;
+  price_amount_label: string | null;
+  price_currency: string | null;
+  price_per: string | null;
+  detail_payload: Record<string, unknown> | null;
+};
 
 /** Default Important Notes (same as ImportantNotesContent). Export/import uses this when notes is empty. */
 const DEFAULT_IMPORTANT_NOTES = [
@@ -109,6 +140,126 @@ export default function ProductsPage() {
   const [currency, setCurrency] = useState('KRW');
   const [discountPercent, setDiscountPercent] = useState<number | null>(null);
   const [editingPickupIndex, setEditingPickupIndex] = useState<number | null>(null);
+
+  // Master detail page (tour_product_pages) tab state
+  const [masterLocale, setMasterLocale] = useState<string>('en');
+  const [masterRow, setMasterRow] = useState<MasterPageRow | null>(null);
+  const [masterRowMissing, setMasterRowMissing] = useState(false);
+  const [masterLoading, setMasterLoading] = useState(false);
+  const [masterSaving, setMasterSaving] = useState(false);
+  const [masterError, setMasterError] = useState<string | null>(null);
+  const [masterPayloadJson, setMasterPayloadJson] = useState<string>('');
+  const [masterPayloadJsonError, setMasterPayloadJsonError] = useState<string | null>(null);
+
+  const fetchMasterPage = useCallback(async (slug: string, locale: string) => {
+    setMasterLoading(true);
+    setMasterError(null);
+    setMasterRowMissing(false);
+    try {
+      const res = await fetch(
+        `/api/admin/tour-product-pages/${encodeURIComponent(slug)}?locale=${encodeURIComponent(locale)}`,
+        { credentials: 'include' },
+      );
+      const json = await res.json();
+      if (!res.ok) {
+        setMasterError(json?.error || `Load failed (${res.status})`);
+        setMasterRow(null);
+        return;
+      }
+      const row = (json?.data ?? null) as MasterPageRow | null;
+      setMasterRow(row);
+      setMasterRowMissing(!row);
+      setMasterPayloadJson(row?.detail_payload ? JSON.stringify(row.detail_payload, null, 2) : '');
+      setMasterPayloadJsonError(null);
+    } catch (e: any) {
+      setMasterError(e?.message || 'Network error');
+      setMasterRow(null);
+    } finally {
+      setMasterLoading(false);
+    }
+  }, []);
+
+  const handleSaveMasterPage = useCallback(async () => {
+    if (!masterRow || !editingTour) return;
+    let parsedPayload: Record<string, unknown> | undefined;
+    if (masterPayloadJson.trim()) {
+      try {
+        const parsed = JSON.parse(masterPayloadJson);
+        if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
+          throw new Error('detail_payload must be a JSON object');
+        }
+        parsedPayload = parsed as Record<string, unknown>;
+        const sv = Number((parsedPayload as { schema_version?: unknown }).schema_version);
+        if (!Number.isFinite(sv) || sv !== 1) {
+          throw new Error('schema_version must equal 1');
+        }
+      } catch (e: any) {
+        setMasterPayloadJsonError(e?.message || 'Invalid JSON');
+        return;
+      }
+    }
+    setMasterPayloadJsonError(null);
+    setMasterSaving(true);
+    setMasterError(null);
+    try {
+      const body = {
+        locale: masterRow.locale,
+        is_published: masterRow.is_published,
+        title: masterRow.title,
+        subtitle: masterRow.subtitle,
+        region_label: masterRow.region_label,
+        duration_label: masterRow.duration_label,
+        stops_count: masterRow.stops_count,
+        rating_avg: masterRow.rating_avg,
+        review_count: masterRow.review_count,
+        badges: masterRow.badges,
+        hero_image_url: masterRow.hero_image_url,
+        thumbnail_url: masterRow.thumbnail_url,
+        card_short_description: masterRow.card_short_description,
+        seo_title: masterRow.seo_title,
+        meta_description: masterRow.meta_description,
+        headline_line_1: masterRow.headline_line_1,
+        headline_line_2: masterRow.headline_line_2,
+        price_amount_label: masterRow.price_amount_label,
+        price_currency: masterRow.price_currency,
+        price_per: masterRow.price_per,
+        ...(parsedPayload !== undefined ? { detail_payload: parsedPayload } : {}),
+      };
+      const res = await fetch(
+        `/api/admin/tour-product-pages/${encodeURIComponent(editingTour.slug)}`,
+        {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify(body),
+        },
+      );
+      const json = await res.json();
+      if (!res.ok) {
+        setMasterError(json?.error || `Save failed (${res.status})`);
+        return;
+      }
+      const updated = (json?.data ?? null) as MasterPageRow | null;
+      if (updated) {
+        setMasterRow(updated);
+        setMasterPayloadJson(
+          updated.detail_payload ? JSON.stringify(updated.detail_payload, null, 2) : '',
+        );
+      }
+      alert('디테일 페이지 저장 완료');
+    } catch (e: any) {
+      setMasterError(e?.message || 'Network error');
+    } finally {
+      setMasterSaving(false);
+    }
+  }, [editingTour, masterPayloadJson, masterRow]);
+
+  // Load master row when tab opens or locale changes
+  useEffect(() => {
+    if (activeTab !== 'master') return;
+    if (!editingTour?.slug) return;
+    fetchMasterPage(editingTour.slug, masterLocale);
+  }, [activeTab, editingTour?.slug, masterLocale, fetchMasterPage]);
 
   const closePickupMapModal = () => {
     setEditingPickupIndex(null);
@@ -591,7 +742,7 @@ export default function ProductsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">상품 관리</h1>
           <p className="text-sm text-gray-600 mt-1">모든 투어 및 상품 관리</p>
@@ -602,76 +753,78 @@ export default function ProductsPage() {
               const message = `투어 추가는 API를 사용하세요.\n\n방법:\n1. 브라우저 콘솔 열기 (F12)\n2. scripts/add-jeju-cruise-tour-simple.js 파일 내용 복사\n3. 콘솔에 붙여넣기 후 Enter\n\n또는 API 직접 호출:\nPOST /api/admin/tours`;
               alert(message);
             }}
-            className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+            className="min-h-[44px] w-full px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors sm:w-auto"
           >
             ➕ Add Tour via API
           </button>
         </div>
       </div>
 
-      {/* Search and Filters */}
+      {/* Search and Filters — stack on mobile, row on tablet+ */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
-        <div className="flex gap-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
           <input
             type="text"
             placeholder="Search by title, slug, or city..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="min-h-[44px] flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
-          <select
-            value={cityFilter}
-            onChange={(e) => setCityFilter(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          >
-            <option value="">All Cities</option>
-            <option value="Seoul">Seoul</option>
-            <option value="Busan">Busan</option>
-            <option value="Jeju">Jeju</option>
-          </select>
-          <select
-            value={statusFilter}
-            onChange={(e) => setStatusFilter(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          >
-            <option value="">All Status</option>
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
-          </select>
+          <div className="grid grid-cols-2 gap-3 sm:flex sm:gap-4">
+            <select
+              value={cityFilter}
+              onChange={(e) => setCityFilter(e.target.value)}
+              className="min-h-[44px] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              <option value="">All Cities</option>
+              <option value="Seoul">Seoul</option>
+              <option value="Busan">Busan</option>
+              <option value="Jeju">Jeju</option>
+            </select>
+            <select
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value)}
+              className="min-h-[44px] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              <option value="">All Status</option>
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
           <button
             onClick={fetchTours}
-            className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+            className="min-h-[44px] px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
           >
             Search
           </button>
         </div>
       </div>
 
-      {/* Tours Table */}
+      {/* Tours Table — wide min-width + horizontal scroll so Tour title/slug stay readable */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="w-full">
+        <div className="overflow-x-auto overscroll-x-contain">
+          <table className="w-full min-w-[1280px] table-auto">
             <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="min-w-[28rem] px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Tour
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="min-w-[7rem] whitespace-nowrap px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   City
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="min-w-[8.5rem] whitespace-nowrap px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Price
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="min-w-[7rem] whitespace-nowrap px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Rating
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="min-w-[7rem] whitespace-nowrap px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Status
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="min-w-[8rem] whitespace-nowrap px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Created
                 </th>
-                <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="min-w-[13rem] whitespace-nowrap px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Actions
                 </th>
               </tr>
@@ -686,18 +839,20 @@ export default function ProductsPage() {
               ) : (
                 filteredTours.map((tour) => (
                   <tr key={tour.id} className="hover:bg-gray-50">
-                    <td className="px-6 py-4">
-                      <div className="flex items-center gap-3">
+                    <td className="min-w-[28rem] align-top px-6 py-4">
+                      <div className="flex items-start gap-3">
                         <img
                           src={tour.image_url}
                           alt={tour.title}
-                          className="w-16 h-16 object-cover rounded-lg"
+                          className="h-16 w-16 flex-shrink-0 object-cover rounded-lg"
                         />
                         <div>
-                          <div className="text-sm font-medium text-gray-900">
+                          <div className="text-sm font-medium whitespace-nowrap text-gray-900">
                             {tour.title}
                           </div>
-                          <div className="text-xs text-gray-500">{tour.slug}</div>
+                          <div className="font-mono text-xs whitespace-nowrap text-gray-500">
+                            {tour.slug}
+                          </div>
                           {tour.is_featured && (
                             <span className="inline-block mt-1 px-2 py-0.5 text-xs bg-yellow-100 text-yellow-800 rounded">
                               Featured
@@ -795,24 +950,24 @@ export default function ProductsPage() {
         </div>
       </div>
 
-      {/* Edit Modal - Premium */}
+      {/* Edit Modal - Premium (full-screen sheet on mobile, centered modal on tablet+) */}
       {isEditModalOpen && editingTour && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="bg-white w-full max-w-6xl max-h-[90vh] overflow-hidden flex flex-col rounded-2xl shadow-2xl border border-gray-200/80">
+        <div className="fixed inset-0 z-50 flex items-stretch justify-center bg-black/60 backdrop-blur-sm sm:items-center sm:p-4">
+          <div className="bg-white w-full h-full max-h-screen overflow-hidden flex flex-col shadow-2xl border-gray-200/80 sm:max-w-6xl sm:h-auto sm:max-h-[92vh] sm:rounded-2xl sm:border">
             {/* Header */}
-            <div className="flex-shrink-0 flex items-center justify-between px-6 py-4 bg-gradient-to-r from-slate-50 to-indigo-50/30 border-b border-gray-200/80">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center shadow-sm">
+            <div className="flex-shrink-0 flex items-center justify-between px-4 py-3 bg-gradient-to-r from-slate-50 to-indigo-50/30 border-b border-gray-200/80 sm:px-6 sm:py-4 pt-[max(0.75rem,env(safe-area-inset-top))]">
+              <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+                <div className="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center shadow-sm shrink-0 sm:w-10 sm:h-10">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
                 </div>
-                <div>
-                  <h2 className="text-xl font-bold text-gray-900">Edit Tour</h2>
-                  <p className="text-sm text-gray-500">{editingTour.title}</p>
+                <div className="min-w-0">
+                  <h2 className="text-base font-bold text-gray-900 sm:text-xl">Edit Tour</h2>
+                  <p className="text-xs text-gray-500 truncate sm:text-sm">{editingTour.title}</p>
                 </div>
               </div>
               <button
                 onClick={handleCloseModal}
-                className="p-2.5 rounded-xl text-gray-500 hover:text-gray-700 hover:bg-white/80 transition-colors"
+                className="shrink-0 p-2.5 min-h-[44px] min-w-[44px] rounded-xl text-gray-500 hover:text-gray-700 hover:bg-white/80 transition-colors"
                 aria-label="Close"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
@@ -820,7 +975,7 @@ export default function ProductsPage() {
             </div>
 
             {/* Tabs */}
-            <div className="flex-shrink-0 border-b border-gray-200 bg-white/95 px-6">
+            <div className="flex-shrink-0 border-b border-gray-200 bg-white/95 px-2 sm:px-6">
               <div className="flex gap-0.5 overflow-x-auto py-1 scrollbar-thin">
                 {[
                   { id: 'basic', label: '기본 정보', icon: '📋' },
@@ -830,12 +985,13 @@ export default function ProductsPage() {
                   { id: 'itinerary', label: '일정', icon: '🗓️' },
                   { id: 'pickup', label: '픽업장소', icon: '📍' },
                   { id: 'content', label: '콘텐츠', icon: '📝' },
+                  { id: 'master', label: '디테일 페이지', icon: '⭐' },
                   { id: 'languages', label: '다국어', icon: '🌐' },
                 ].map((tab) => (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex items-center gap-1.5 px-4 py-3 text-sm font-medium rounded-t-lg whitespace-nowrap transition-all ${
+                    className={`flex items-center gap-1.5 px-3 py-3 text-[13px] font-medium rounded-t-lg whitespace-nowrap transition-all min-h-[44px] sm:px-4 sm:text-sm ${
                       activeTab === tab.id
                         ? 'text-indigo-600 bg-indigo-50/80 border-b-2 border-indigo-600 -mb-px'
                         : 'text-gray-500 hover:text-gray-800 hover:bg-gray-50'
@@ -848,7 +1004,7 @@ export default function ProductsPage() {
               </div>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-6 bg-gray-50/40 min-h-0">
+            <div className="flex-1 overflow-y-auto p-3 bg-gray-50/40 min-h-0 sm:p-6">
               {/* Basic Info Tab */}
               {activeTab === 'basic' && (
                 <div className="space-y-6">
@@ -856,7 +1012,7 @@ export default function ProductsPage() {
                     <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
                       <span className="text-indigo-600">📋</span> 기본 정보
                     </h3>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1.5">
                         Title *
@@ -1016,7 +1172,7 @@ export default function ProductsPage() {
               {/* Pricing Tab */}
               {activeTab === 'pricing' && (
                 <div className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Currency
@@ -1452,7 +1608,7 @@ export default function ProductsPage() {
                     <div className="space-y-4">
                       {(formData.pickup_points || []).map((point, index) => (
                         <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50/50">
-                          <div className="grid grid-cols-2 gap-4 mb-3">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
                             <div>
                               <label className="block text-xs font-medium text-gray-700 mb-1.5">장소명</label>
                               <input
@@ -1610,7 +1766,7 @@ export default function ProductsPage() {
                     <div className="space-y-4">
                       {(formData.schedule || []).map((item, index) => (
                         <div key={index} className="border border-gray-200 rounded-xl p-4 bg-gray-50/50">
-                          <div className="grid grid-cols-3 gap-3 mb-3">
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
                             <div>
                               <label className="block text-xs font-medium text-gray-600 mb-1">Time</label>
                               <input type="text" value={item.time || ''} onChange={(e) => { const u = [...(formData.schedule || [])]; u[index] = { ...u[index], time: e.target.value }; setFormData({ ...formData, schedule: u }); }} placeholder="09:00" className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
@@ -1642,7 +1798,7 @@ export default function ProductsPage() {
                     <div className="space-y-4">
                       {(formData.itinerary_details || []).map((item, index) => (
                         <div key={index} className="border border-gray-200 rounded-xl p-4 bg-gray-50/50">
-                          <div className="grid grid-cols-3 gap-3 mb-3">
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
                             <div>
                               <label className="block text-xs font-medium text-gray-600 mb-1">Time</label>
                               <input type="text" value={item.time || ''} onChange={(e) => { const u = [...(formData.itinerary_details || [])]; u[index] = { ...u[index], time: e.target.value }; setFormData({ ...formData, itinerary_details: u }); }} placeholder="09:00" className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
@@ -1843,6 +1999,352 @@ export default function ProductsPage() {
                 </div>
               )}
 
+              {/* Master Detail Tab (디테일 페이지) — edits tour_product_pages row + detail_payload */}
+              {activeTab === 'master' && (
+                <div className="space-y-4">
+                  <section className="rounded-2xl border border-gray-200/80 bg-white p-4 shadow-sm sm:p-6">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h3 className="text-sm font-semibold text-gray-900 flex items-center gap-2">
+                          <span className="text-indigo-600">⭐</span> 마스터 디테일 페이지 (tour_product_pages)
+                        </h3>
+                        <p className="text-xs text-gray-500 mt-1">
+                          현재 로케일의 <code className="rounded bg-gray-100 px-1">/tour-product/{editingTour?.slug}</code> 마스터 템플릿 데이터를 직접 편집합니다. 이 탭은 <code className="rounded bg-gray-100 px-1">tour_product_pages</code> 테이블에 저장됩니다.
+                        </p>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {SUPPORTED_LOCALES.map((loc) => (
+                          <button
+                            key={loc.code}
+                            type="button"
+                            onClick={() => setMasterLocale(loc.code)}
+                            className={`min-h-[40px] rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors ${
+                              masterLocale === loc.code
+                                ? 'border-indigo-600 bg-indigo-50 text-indigo-700'
+                                : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'
+                            }`}
+                          >
+                            {loc.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {masterLoading ? (
+                      <p className="mt-6 text-sm text-gray-500">불러오는 중…</p>
+                    ) : masterError ? (
+                      <p className="mt-6 text-sm text-red-600">{masterError}</p>
+                    ) : masterRowMissing ? (
+                      <div className="mt-6 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
+                        <p className="font-semibold">이 로케일에 마스터 데이터가 없습니다.</p>
+                        <p className="mt-1 text-xs">
+                          현재 슬러그(<code className="rounded bg-white px-1">{editingTour?.slug}</code>)는 정적 JSON 번들로만 동작합니다.
+                          DB 기반 편집을 활성화하려면 SQL 시드/마이그레이션으로 <code className="rounded bg-white px-1">tour_product_pages</code> 행을 먼저 생성하세요.
+                        </p>
+                      </div>
+                    ) : masterRow ? (
+                      <div className="mt-6 space-y-5">
+                        <div className="flex items-center gap-2">
+                          <input
+                            id="master-is-published"
+                            type="checkbox"
+                            checked={!!masterRow.is_published}
+                            onChange={(e) =>
+                              setMasterRow({ ...masterRow, is_published: e.target.checked })
+                            }
+                            className="h-4 w-4 rounded border-gray-300"
+                          />
+                          <label htmlFor="master-is-published" className="text-sm text-gray-700">
+                            공개됨 (is_published)
+                          </label>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Headline Line 1</label>
+                            <input
+                              type="text"
+                              value={masterRow.headline_line_1 ?? ''}
+                              onChange={(e) =>
+                                setMasterRow({ ...masterRow, headline_line_1: e.target.value })
+                              }
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Headline Line 2</label>
+                            <input
+                              type="text"
+                              value={masterRow.headline_line_2 ?? ''}
+                              onChange={(e) =>
+                                setMasterRow({ ...masterRow, headline_line_2: e.target.value })
+                              }
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Title</label>
+                            <input
+                              type="text"
+                              value={masterRow.title ?? ''}
+                              onChange={(e) => setMasterRow({ ...masterRow, title: e.target.value })}
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Subtitle (Hero tagline)</label>
+                            <input
+                              type="text"
+                              value={masterRow.subtitle ?? ''}
+                              onChange={(e) => setMasterRow({ ...masterRow, subtitle: e.target.value })}
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Region label</label>
+                            <input
+                              type="text"
+                              value={masterRow.region_label ?? ''}
+                              onChange={(e) =>
+                                setMasterRow({ ...masterRow, region_label: e.target.value })
+                              }
+                              placeholder="e.g. East Jeju"
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Duration label</label>
+                            <input
+                              type="text"
+                              value={masterRow.duration_label ?? ''}
+                              onChange={(e) =>
+                                setMasterRow({ ...masterRow, duration_label: e.target.value })
+                              }
+                              placeholder="e.g. 8 hrs"
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Stops count</label>
+                            <input
+                              type="number"
+                              value={masterRow.stops_count ?? ''}
+                              onChange={(e) =>
+                                setMasterRow({
+                                  ...masterRow,
+                                  stops_count: e.target.value ? parseInt(e.target.value, 10) : null,
+                                })
+                              }
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Rating avg</label>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={masterRow.rating_avg ?? ''}
+                              onChange={(e) =>
+                                setMasterRow({
+                                  ...masterRow,
+                                  rating_avg: e.target.value ? parseFloat(e.target.value) : null,
+                                })
+                              }
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Review count</label>
+                            <input
+                              type="number"
+                              value={masterRow.review_count ?? ''}
+                              onChange={(e) =>
+                                setMasterRow({
+                                  ...masterRow,
+                                  review_count: e.target.value ? parseInt(e.target.value, 10) : null,
+                                })
+                              }
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Badges (comma-separated)</label>
+                            <input
+                              type="text"
+                              value={(masterRow.badges ?? []).join(', ')}
+                              onChange={(e) =>
+                                setMasterRow({
+                                  ...masterRow,
+                                  badges: e.target.value
+                                    .split(',')
+                                    .map((s) => s.trim())
+                                    .filter(Boolean),
+                                })
+                              }
+                              placeholder="e.g. First-Time Friendly, East Jeju"
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Hero image URL</label>
+                            <input
+                              type="url"
+                              value={masterRow.hero_image_url ?? ''}
+                              onChange={(e) =>
+                                setMasterRow({ ...masterRow, hero_image_url: e.target.value })
+                              }
+                              placeholder="https://…"
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Thumbnail URL</label>
+                            <input
+                              type="url"
+                              value={masterRow.thumbnail_url ?? ''}
+                              onChange={(e) =>
+                                setMasterRow({ ...masterRow, thumbnail_url: e.target.value })
+                              }
+                              placeholder="https://…"
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-1">Card short description</label>
+                          <textarea
+                            value={masterRow.card_short_description ?? ''}
+                            onChange={(e) =>
+                              setMasterRow({ ...masterRow, card_short_description: e.target.value })
+                            }
+                            rows={3}
+                            className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                          />
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Price amount label</label>
+                            <input
+                              type="text"
+                              value={masterRow.price_amount_label ?? ''}
+                              onChange={(e) =>
+                                setMasterRow({ ...masterRow, price_amount_label: e.target.value })
+                              }
+                              placeholder="e.g. 59"
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Price currency</label>
+                            <select
+                              value={masterRow.price_currency ?? 'USD'}
+                              onChange={(e) =>
+                                setMasterRow({ ...masterRow, price_currency: e.target.value })
+                              }
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            >
+                              <option value="USD">USD</option>
+                              <option value="KRW">KRW</option>
+                              <option value="EUR">EUR</option>
+                              <option value="JPY">JPY</option>
+                              <option value="CNY">CNY</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Price per</label>
+                            <select
+                              value={masterRow.price_per ?? 'person'}
+                              onChange={(e) =>
+                                setMasterRow({ ...masterRow, price_per: e.target.value })
+                              }
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            >
+                              <option value="person">person</option>
+                              <option value="group">group</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">SEO title</label>
+                            <input
+                              type="text"
+                              value={masterRow.seo_title ?? ''}
+                              onChange={(e) =>
+                                setMasterRow({ ...masterRow, seo_title: e.target.value })
+                              }
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Meta description</label>
+                            <input
+                              type="text"
+                              value={masterRow.meta_description ?? ''}
+                              onChange={(e) =>
+                                setMasterRow({ ...masterRow, meta_description: e.target.value })
+                              }
+                              className="min-h-[44px] w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            />
+                          </div>
+                        </div>
+
+                        <div className="border-t border-gray-200 pt-5">
+                          <div className="flex items-center justify-between mb-2">
+                            <label className="block text-sm font-semibold text-gray-900">
+                              detail_payload (JSON · 고급)
+                            </label>
+                            <span className="text-xs text-gray-500">schema_version: 1</span>
+                          </div>
+                          <p className="text-xs text-gray-500 mb-2">
+                            마스터 템플릿 섹션(itinerary, glance, gallery, FAQ, why-tour-works, practical, reviews 등)을 JSON으로 직접 편집합니다.
+                            잘못된 JSON 또는 schema_version ≠ 1 인 경우 저장이 거부됩니다.
+                          </p>
+                          <textarea
+                            value={masterPayloadJson}
+                            onChange={(e) => {
+                              setMasterPayloadJson(e.target.value);
+                              setMasterPayloadJsonError(null);
+                            }}
+                            rows={14}
+                            spellCheck={false}
+                            className="w-full rounded-lg border border-gray-300 px-3 py-2 font-mono text-[12px] leading-snug focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                          />
+                          {masterPayloadJsonError && (
+                            <p className="mt-2 text-xs text-red-600">{masterPayloadJsonError}</p>
+                          )}
+                        </div>
+
+                        <div className="flex flex-col gap-2 border-t border-gray-200 pt-4 sm:flex-row sm:justify-end">
+                          <a
+                            href={`/tour-product/${editingTour?.slug}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="min-h-[44px] inline-flex items-center justify-center rounded-xl border border-gray-200 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                          >
+                            라이브 페이지 열기 ↗
+                          </a>
+                          <button
+                            type="button"
+                            onClick={handleSaveMasterPage}
+                            disabled={masterSaving}
+                            className="min-h-[44px] rounded-xl bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
+                          >
+                            {masterSaving ? '저장 중…' : '디테일 페이지 저장'}
+                          </button>
+                        </div>
+                      </div>
+                    ) : null}
+                  </section>
+                </div>
+              )}
+
               {/* Languages Tab (다국어) - 기본정보·상세정보·일정·콘텐츠 전체 번역 */}
               {activeTab === 'languages' && (
                 <div className="space-y-6">
@@ -1995,7 +2497,7 @@ export default function ProductsPage() {
                           {/* 기본 정보 */}
                           <div>
                             <h4 className="text-xs font-semibold text-gray-600 mb-3 uppercase">기본 정보 ({editLocale})</h4>
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                               <div className="col-span-2">
                                 <label className="block text-sm font-medium text-gray-700 mb-1">Title</label>
                                 <input type="text" value={tr.title ?? formData.title ?? ''} onChange={(e) => setTr('title', e.target.value || undefined)} placeholder={formData.title || 'Default title'} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500" />
@@ -2069,7 +2571,7 @@ export default function ProductsPage() {
                             <div className="space-y-3">
                               {scheduleArr.map((item: { time?: string; title?: string; description?: string; images?: string[] }, index: number) => (
                                 <div key={index} className="border border-gray-200 rounded-xl p-4 bg-gray-50/50">
-                                  <div className="grid grid-cols-3 gap-3 mb-2">
+                                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-2">
                                     <div>
                                       <label className="block text-xs font-medium text-gray-600 mb-1">Time</label>
                                       <input type="text" value={item.time || ''} onChange={(e) => { const u = [...scheduleArr]; u[index] = { ...u[index], time: e.target.value }; setTr('schedule', u); }} placeholder="09:00" className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
@@ -2096,7 +2598,7 @@ export default function ProductsPage() {
                             <div className="space-y-3">
                               {itineraryDetailsArr.map((item: { time?: string; activity?: string; description?: string; images?: string[] }, index: number) => (
                                 <div key={index} className="border border-gray-200 rounded-xl p-4 bg-gray-50/50">
-                                  <div className="grid grid-cols-3 gap-3 mb-2">
+                                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-2">
                                     <div>
                                       <label className="block text-xs font-medium text-gray-600 mb-1">Time</label>
                                       <input type="text" value={item.time || ''} onChange={(e) => { const u = [...itineraryDetailsArr]; u[index] = { ...u[index], time: e.target.value }; setTr('itinerary_details', u); }} placeholder="09:00" className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" />
@@ -2186,18 +2688,18 @@ export default function ProductsPage() {
 
             </div>
 
-            {/* Action Buttons */}
-            <div className="sticky bottom-0 flex justify-end gap-3 px-6 py-4 bg-white/95 border-t border-gray-200/80 backdrop-blur-sm">
+            {/* Action Buttons — full-width stacked on mobile, side-by-side on tablet+ */}
+            <div className="sticky bottom-0 flex flex-col-reverse gap-2 px-4 py-3 bg-white/95 border-t border-gray-200/80 backdrop-blur-sm pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:flex-row sm:justify-end sm:gap-3 sm:px-6 sm:py-4">
               <button
                 onClick={handleCloseModal}
-                className="px-5 py-2.5 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 font-medium transition-colors"
+                className="min-h-[44px] px-5 py-2.5 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 font-medium transition-colors"
               >
                 Cancel
               </button>
               <button
                 onClick={handleSave}
                 disabled={saving}
-                className="px-6 py-2.5 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed font-medium shadow-sm transition-colors"
+                className="min-h-[44px] px-6 py-2.5 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed font-medium shadow-sm transition-colors"
               >
                 {saving ? 'Saving...' : 'Save Changes'}
               </button>
