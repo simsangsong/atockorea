@@ -5,6 +5,13 @@
 
 import jejuGrandPage from "../jeju-grand-highlights-loop/jeju-grand-highlights-loop.en.json";
 import southwestPage from "../southwest-hallasan-osulloc-aewol/southwest-hallasan-osulloc-aewol.en.json";
+import southJejuClassicBusPage from "../south-jeju-classic-bus-tour/south-jeju-classic-bus-tour.en.json";
+import southwestJejuScenicBusPage from "../southwest-jeju-scenic-bus-tour/southwest-jeju-scenic-bus-tour.en.json";
+import eastJejuClassicBusPage from "../east-jeju-classic-bus-tour/east-jeju-classic-bus-tour.en.json";
+import jejuCruiseShoreBusPage from "../jeju-cruise-shore-excursion-bus-tour/jeju-cruise-shore-excursion-bus-tour.en.json";
+import jejuCruiseShoreSmallGroupPage from "../jeju-cruise-shore-excursion-small-group-tour/jeju-cruise-shore-excursion-small-group-tour.en.json";
+import busanTopAttractionsPage from "../busan-top-attractions-authentic-one-day-tour/busan-top-attractions-authentic-one-day-tour.en.json";
+import busanShoreExcursionCruisePage from "../busan-city-tour-shore-excursion-cruise-guests/busan-city-tour-shore-excursion-cruise-guests.en.json";
 import {
   EAST_SIGNATURE_COMPARE_AT_PRICE_USD,
   EAST_SIGNATURE_LIST_PRICE_USD,
@@ -51,7 +58,7 @@ export const eastSignatureNatureCoreStaticProduct: StaticTourProductRegistration
   badges: ["First-Time Friendly", "East Jeju"],
   heroImage: "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
   thumbnail: "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80",
-  priceLabel: "From $58 / person",
+  priceLabel: "From $59 / person",
   shortCardDescription:
     "A structured East Jeju day that begins with stone and volcanic context, opens to the coast, peaks at Seongsan, and finishes with garden calm and village texture.",
   listPriceUsd: EAST_SIGNATURE_LIST_PRICE_USD,
@@ -114,14 +121,95 @@ export const southwestHallasanOsullocAewolStaticProduct: StaticTourProductRegist
   thumbnail: southwestCc.thumbnail,
   priceLabel: southwestCc.priceLabel,
   shortCardDescription: southwestCc.shortCardDescription,
-  listPriceUsd: 58,
+  listPriceUsd: 59,
   maxGroupSize: 8,
 };
+
+function registrationFromCatalogCard(
+  page: { catalog_card: CatalogCardJsonShape },
+  opts: { listPriceUsd: number; maxGroupSize?: number; compareAtPriceUsd?: number },
+): StaticTourProductRegistration {
+  const cc = page.catalog_card;
+  return {
+    slug: cc.slug,
+    title: cc.title,
+    subtitle: cc.subtitle,
+    region: cc.region,
+    duration: cc.duration,
+    stopsCount: cc.stopsCount,
+    rating: cc.rating,
+    reviewCount: cc.reviewCount,
+    badges: cc.badges,
+    heroImage: cc.heroImage,
+    thumbnail: cc.thumbnail,
+    priceLabel: cc.priceLabel,
+    shortCardDescription: cc.shortCardDescription,
+    listPriceUsd: opts.listPriceUsd,
+    compareAtPriceUsd: opts.compareAtPriceUsd,
+    maxGroupSize: opts.maxGroupSize,
+  };
+}
+
+/** South Jeju Waterfall · Cliff · Tea · Hallasan Bus Day Tour — USD 49 */
+export const southJejuClassicBusTourStaticProduct: StaticTourProductRegistration =
+  registrationFromCatalogCard(
+    southJejuClassicBusPage as { catalog_card: CatalogCardJsonShape },
+    { listPriceUsd: 49 },
+  );
+
+/** Southwest Jeju Scenic Bus Tour — USD 49 */
+export const southwestJejuScenicBusTourStaticProduct: StaticTourProductRegistration =
+  registrationFromCatalogCard(
+    southwestJejuScenicBusPage as { catalog_card: CatalogCardJsonShape },
+    { listPriceUsd: 49 },
+  );
+
+/** East Jeju Sunrise Peak · Folk Village · Hamdeok Bus Day Tour — USD 49 */
+export const eastJejuClassicBusTourStaticProduct: StaticTourProductRegistration =
+  registrationFromCatalogCard(
+    eastJejuClassicBusPage as { catalog_card: CatalogCardJsonShape },
+    { listPriceUsd: 49 },
+  );
+
+/** Jeju Cruise Shore Excursion Bus Tour — USD 59 (per person) */
+export const jejuCruiseShoreExcursionBusTourStaticProduct: StaticTourProductRegistration =
+  registrationFromCatalogCard(
+    jejuCruiseShoreBusPage as { catalog_card: CatalogCardJsonShape },
+    { listPriceUsd: 59 },
+  );
+
+/** Jeju Cruise Shore Excursion Small-Group Tour — USD 69 (per person) */
+export const jejuCruiseShoreExcursionSmallGroupTourStaticProduct: StaticTourProductRegistration =
+  registrationFromCatalogCard(
+    jejuCruiseShoreSmallGroupPage as { catalog_card: CatalogCardJsonShape },
+    { listPriceUsd: 69, maxGroupSize: 8 },
+  );
+
+/** Busan Top Attractions Authentic One-Day Guided Tour — USD 79 (per person) */
+export const busanTopAttractionsAuthenticOneDayTourStaticProduct: StaticTourProductRegistration =
+  registrationFromCatalogCard(
+    busanTopAttractionsPage as { catalog_card: CatalogCardJsonShape },
+    { listPriceUsd: 79, maxGroupSize: 8 },
+  );
+
+/** Busan Shore Excursion for Cruise Guests — USD 79 (per person) */
+export const busanCityTourShoreExcursionCruiseGuestsStaticProduct: StaticTourProductRegistration =
+  registrationFromCatalogCard(
+    busanShoreExcursionCruisePage as { catalog_card: CatalogCardJsonShape },
+    { listPriceUsd: 79, maxGroupSize: 8 },
+  );
 
 export const STATIC_TOUR_PRODUCTS: readonly StaticTourProductRegistration[] = [
   eastSignatureNatureCoreStaticProduct,
   jejuGrandHighlightsLoopStaticProduct,
   southwestHallasanOsullocAewolStaticProduct,
+  southJejuClassicBusTourStaticProduct,
+  southwestJejuScenicBusTourStaticProduct,
+  eastJejuClassicBusTourStaticProduct,
+  jejuCruiseShoreExcursionBusTourStaticProduct,
+  jejuCruiseShoreExcursionSmallGroupTourStaticProduct,
+  busanTopAttractionsAuthenticOneDayTourStaticProduct,
+  busanCityTourShoreExcursionCruiseGuestsStaticProduct,
 ];
 
 export function getStaticTourProductBySlug(slug: string): StaticTourProductRegistration | undefined {

@@ -649,3 +649,35 @@ html[lang="ja"] .tour-product-v2-static-root {
     top: 3.5rem; /* 56px — matches Header md:h-14 */
   }
 }
+
+/* ────────────── Tour product AI assistant widget (floating) ────────────── */
+@keyframes tour-asst-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tour-product-v2-static-root .tour-assistant-panel {
+  animation: tour-asst-panel-in 0.24s ease-out;
+}
+
+.tour-product-v2-static-root .tour-assistant-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--muted-foreground) 35%, transparent) transparent;
+}
+
+.tour-product-v2-static-root .tour-assistant-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.tour-product-v2-static-root .tour-assistant-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.tour-product-v2-static-root .tour-assistant-scroll::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--muted-foreground) 32%, transparent);
+  border-radius: 100px;
+}

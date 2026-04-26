@@ -1,19 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, Sun, Mountain, Wind, Clock3, Check, X } from "lucide-react";
+import { ChevronDown, Sun, Mountain, Wind, Clock3, Check, X, Bus, Footprints, CloudRain } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
 /**
  * `whyTourWorks.routeLogicSections[].icon` → Lucide.
  * East/Southwest: sun, mountain, wind. Jeju Grand Highlights: clock-3, mountain, wind.
+ * Bus tours: bus, footprints, cloud-rain.
  */
 const LOGIC_ICONS = {
   sun: Sun,
   mountain: Mountain,
   wind: Wind,
   "clock-3": Clock3,
+  bus: Bus,
+  footprints: Footprints,
+  "cloud-rain": CloudRain,
 } as const;
 
 const ROUTE_LOGIC_ICON_FALLBACK = Sun;

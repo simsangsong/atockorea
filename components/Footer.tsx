@@ -192,12 +192,15 @@ export default function Footer({ premiumHandoff }: FooterProps) {
           </a>
         </div>
 
-        {/* Legal Summary + Copyright */}
+        {/* Trust strip + Legal Summary + Copyright */}
         <div
           className="border-t border-slate-800/90 pt-1.5 text-center sm:pt-2"
           data-footer-section="legal"
         >
-          <p className="text-[11px] font-medium leading-snug text-slate-500 sm:text-xs sm:leading-relaxed">
+          <p className="text-[11px] font-semibold leading-snug text-slate-300 sm:text-xs sm:leading-relaxed">
+            {t('home.footer.description')}
+          </p>
+          <p className="mt-1 text-[11px] font-medium leading-snug text-slate-500 sm:mt-1.5 sm:text-xs sm:leading-relaxed">
             {t('home.footer.legalSummary')}
           </p>
           <p className="mt-1 text-[10px] leading-snug text-slate-600 sm:mt-1.5 sm:text-[11px]">

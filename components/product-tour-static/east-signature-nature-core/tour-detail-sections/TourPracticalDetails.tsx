@@ -67,18 +67,21 @@ export function TourPracticalDetails({
   const tomorrowDay = liveForecast?.days[1];
   const cur = liveForecast?.current;
 
+  const staticToday = practicalWeatherStatic?.today;
+  const staticTomorrow = practicalWeatherStatic?.tomorrow;
+
   const todayTemp =
-    cur != null ? `${cur.tempC}°` : practicalWeatherStatic.today.temp;
+    cur != null ? `${cur.tempC}°` : (staticToday?.temp ?? "—");
   const todayLabel =
-    cur != null ? `Today · ${cur.conditionLabel}` : practicalWeatherStatic.today.label;
+    cur != null ? `Today · ${cur.conditionLabel}` : (staticToday?.label ?? "");
   const tomorrowTemp =
     tomorrowDay != null
       ? `${tomorrowDay.tempMax}°/${tomorrowDay.tempMin}°`
-      : practicalWeatherStatic.tomorrow.temp;
+      : (staticTomorrow?.temp ?? "—");
   const tomorrowLabel =
     tomorrowDay != null
       ? `Tomorrow · ${tomorrowDay.conditionLabel}`
-      : practicalWeatherStatic.tomorrow.label;
+      : (staticTomorrow?.label ?? "");
 
   const weatherRegionFallback = locale === "ko" ? "제주 동쪽 지역" : "East Jeju region";
   const weatherStripTitle = liveForecast?.areaLabel
@@ -149,7 +152,7 @@ export function TourPracticalDetails({
         >
           <div className="flex gap-2.5 overflow-x-auto overscroll-x-contain scrollbar-hide scroll-smooth snap-x snap-mandatory touch-pan-x pb-1.5 [-webkit-overflow-scrolling:touch]">
             {seasonalVariations.map((season) => {
-              const Icon = SEASON_ICONS[season.icon];
+              const Icon = SEASON_ICONS[season.icon as keyof typeof SEASON_ICONS] ?? Flower2;
               return (
                 <div
                   key={season.name}

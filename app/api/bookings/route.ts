@@ -37,6 +37,7 @@ export async function GET(req: NextRequest) {
         *,
         tours (
           id,
+          slug,
           title,
           city,
           image_url,
@@ -238,7 +239,9 @@ export async function POST(req: NextRequest) {
     // Ensure tour_id is a string (UUID)
     const tourIdStr = String(tourId);
     
-    // Calculate unit_price and total_price (always stored as KRW for existing booking/Stripe flow)
+    // Server-authoritative pricing: USD unit + total computed from the tours row.
+    // Client `finalPrice` is verified against the server total within $0.01; we never store
+    // or charge a client-supplied amount. See lib/tour-list-price-usd.server.ts.
     const krwPerUsd = await getKrwPerUsd();
     const { priceUsd: listUnitUsd } = tourListPricesToUsdSync(
       {
@@ -248,20 +251,41 @@ export async function POST(req: NextRequest) {
       },
       krwPerUsd
     );
-    const unitPrice = parseFloat(String(listUnitUsd || finalPrice));
-    const totalPrice = tour.price_type === 'person' 
-      ? unitPrice * parseInt(String(numberOfGuests), 10)
-      : unitPrice;
-    
+    if (!Number.isFinite(listUnitUsd) || listUnitUsd <= 0) {
+      console.error('Server price unavailable for tour', tourId, 'tour.price=', tour.price);
+      return NextResponse.json(
+        { error: 'Tour price is not configured', code: 'PRICE_UNAVAILABLE' },
+        { status: 500 }
+      );
+    }
+    const guestsCount = parseInt(String(numberOfGuests), 10);
+    const unitPrice = listUnitUsd;
+    const totalPrice = tour.price_type === 'person'
+      ? Math.round(unitPrice * guestsCount * 100) / 100
+      : Math.round(unitPrice * 100) / 100;
+
+    const clientFinalPrice = parseFloat(String(finalPrice));
+    if (!Number.isFinite(clientFinalPrice) || Math.abs(clientFinalPrice - totalPrice) > 0.01) {
+      console.warn('Price mismatch attempt', { clientFinalPrice, serverTotalPrice: totalPrice, tourId, guestsCount });
+      return NextResponse.json(
+        {
+          error: 'Price mismatch — please refresh and try again',
+          code: 'PRICE_MISMATCH',
+          serverTotalPrice: totalPrice,
+        },
+        { status: 400 }
+      );
+    }
+
     const bookingData: any = {
       tour_id: tourIdStr,
-      merchant_id: tour.merchant_id || null, // Allow null if merchant_id is not set
-      booking_date: bookingDateFormatted, // Use formatted date string (date when booking was created)
-      tour_date: bookingDateFormatted, // Use formatted date string (date when tour will happen) - required field
-      number_of_guests: parseInt(String(numberOfGuests), 10), // Ensure it's an integer
-      unit_price: unitPrice, // Price per person/group (base tour price)
-      total_price: totalPrice, // Total price before discounts
-      final_price: parseFloat(String(finalPrice)), // Final price after discounts
+      merchant_id: tour.merchant_id || null,
+      booking_date: bookingDateFormatted,
+      tour_date: bookingDateFormatted,
+      number_of_guests: guestsCount,
+      unit_price: unitPrice,
+      total_price: totalPrice,
+      final_price: totalPrice, // Server-authoritative; never client-supplied
       payment_method: paymentMethod || 'pending',
       payment_status: 'pending',
       status: 'pending',

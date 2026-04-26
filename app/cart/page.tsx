@@ -361,7 +361,7 @@ export default function CartPage() {
             <h2 className="mb-2 text-2xl font-bold text-slate-900">{t('cart.empty')}</h2>
             <p className="mb-8 text-slate-600">{t('cart.emptyDescription')}</p>
             <Link
-              href="/tours"
+              href="/tours/list"
               className="inline-block rounded-xl bg-slate-900 px-6 py-3 font-semibold text-white shadow-md transition-colors hover:bg-slate-800 hover:shadow-lg"
             >
               {t('cart.browseTours')}
@@ -516,7 +516,7 @@ export default function CartPage() {
               {/* Continue Shopping */}
               <div className="rounded-[1.75rem] border border-white/25 bg-white/55 p-6 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl">
                 <Link
-                  href="/tours"
+                  href="/tours/list"
                   className="inline-flex items-center gap-2 font-semibold text-blue-600 transition-colors hover:text-blue-700"
                 >
                   <svg

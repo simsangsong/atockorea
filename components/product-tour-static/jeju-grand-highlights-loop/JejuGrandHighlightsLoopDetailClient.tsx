@@ -8,6 +8,7 @@ import { jejuGrandHighlightsLoopDetailViewModel as staticVm } from "./jejuGrandH
 export type JejuGrandHighlightsLoopDetailClientProps = {
   viewModel?: EastSignatureNatureCoreDetailViewModel;
   checkout?: TourProductCheckoutContext | null;
+  tourProductSlug: string;
 };
 
 /**
@@ -18,6 +19,13 @@ export type JejuGrandHighlightsLoopDetailClientProps = {
 export function JejuGrandHighlightsLoopDetailClient({
   viewModel,
   checkout,
+  tourProductSlug,
 }: JejuGrandHighlightsLoopDetailClientProps) {
-  return <TourProductDetailClient viewModel={viewModel ?? staticVm} checkout={checkout} />;
+  return (
+    <TourProductDetailClient
+      viewModel={viewModel ?? staticVm}
+      checkout={checkout}
+      tourProductSlug={tourProductSlug}
+    />
+  );
 }

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import Stripe from 'stripe';
 import { createServerClient } from '@/lib/supabase';
 import type { TourRelation, UserProfileRelation, PickupPointRelation } from '@/lib/db-relations';
 import {
@@ -6,9 +7,42 @@ import {
   canCancelBookingByPolicy,
 } from '@/lib/booking-cancel-policy';
 
+const BOOKING_DETAIL_SELECT = `
+  *,
+  tours (
+    id,
+    title,
+    city,
+    image_url,
+    price,
+    price_type
+  ),
+  pickup_points (
+    id,
+    name,
+    address,
+    pickup_time
+  )
+` as const;
+
+const getStripe = () => {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) {
+    throw new Error('STRIPE_SECRET_KEY is not configured');
+  }
+  return new Stripe(key, { apiVersion: '2025-11-17.clover' });
+};
+
+function normalizeEmail(value: string | null | undefined): string {
+  return (value || '').trim().toLowerCase();
+}
+
 /**
  * GET /api/bookings/[id]
- * Get a single booking by ID
+ * - **Authenticated**: Bearer token, booking must belong to the user.
+ * - **Post-Stripe (guest or no token)**: `?session_id=cs_...` — Stripe session must reference this
+ *   `bookingId` and `payment_status` must be `paid`.
+ * - **Guest fallback**: `?email=...` — must match `contact_email` and `user_id` is null.
  */
 export async function GET(
   req: NextRequest,
@@ -17,6 +51,10 @@ export async function GET(
   try {
     const { id: bookingId } = await params;
     const supabase = createServerClient();
+    const { searchParams } = new URL(req.url);
+    const sessionId = searchParams.get('session_id');
+    const emailParam = searchParams.get('email');
+
     const authHeader = req.headers.get('authorization');
     let userId: string | null = null;
 
@@ -28,50 +66,116 @@ export async function GET(
       }
     }
 
-    if (!userId) {
-      return NextResponse.json(
-        { error: 'Authentication required' },
-        { status: 401 }
-      );
-    }
+    if (userId) {
+      const { data: booking, error } = await supabase
+        .from('bookings')
+        .select(BOOKING_DETAIL_SELECT)
+        .eq('id', bookingId)
+        .eq('user_id', userId)
+        .single();
 
-    const { data: booking, error } = await supabase
-      .from('bookings')
-      .select(`
-        *,
-        tours (
-          id,
-          title,
-          city,
-          image_url,
-          price,
-          price_type
-        ),
-        pickup_points (
-          id,
-          name,
-          address,
-          pickup_time
-        )
-      `)
-      .eq('id', bookingId)
-      .eq('user_id', userId)
-      .single();
-
-    if (error || !booking) {
-      if (error?.code === 'PGRST116') {
+      if (error || !booking) {
+        if (error?.code === 'PGRST116') {
+          return NextResponse.json({ error: 'Booking not found' }, { status: 404 });
+        }
         return NextResponse.json(
-          { error: 'Booking not found' },
-          { status: 404 }
+          { error: 'Failed to fetch booking', details: error?.message },
+          { status: 500 }
         );
       }
-      return NextResponse.json(
-        { error: 'Failed to fetch booking', details: error?.message },
-        { status: 500 }
-      );
+
+      return NextResponse.json({ booking });
     }
 
-    return NextResponse.json({ booking });
+    if (sessionId) {
+      if (!process.env.STRIPE_SECRET_KEY) {
+        return NextResponse.json(
+          { error: 'Payment verification is not available' },
+          { status: 503 }
+        );
+      }
+      try {
+        const stripe = getStripe();
+        const session = await stripe.checkout.sessions.retrieve(sessionId);
+        const ref =
+          session.client_reference_id || session.metadata?.booking_id;
+        if (ref !== bookingId) {
+          return NextResponse.json(
+            { error: 'Session does not match this booking' },
+            { status: 403 }
+          );
+        }
+        if (session.payment_status !== 'paid') {
+          return NextResponse.json(
+            { error: 'Payment is not complete for this session' },
+            { status: 403 }
+          );
+        }
+      } catch (e: unknown) {
+        const msg = e instanceof Error ? e.message : 'Invalid Stripe session';
+        console.error('[GET /api/bookings/[id]] Stripe session verify failed', e);
+        return NextResponse.json(
+          { error: 'Could not verify payment session', details: msg },
+          { status: 400 }
+        );
+      }
+
+      const { data: booking, error } = await supabase
+        .from('bookings')
+        .select(BOOKING_DETAIL_SELECT)
+        .eq('id', bookingId)
+        .single();
+
+      if (error || !booking) {
+        if (error?.code === 'PGRST116') {
+          return NextResponse.json({ error: 'Booking not found' }, { status: 404 });
+        }
+        return NextResponse.json(
+          { error: 'Failed to fetch booking', details: error?.message },
+          { status: 500 }
+        );
+      }
+
+      return NextResponse.json({ booking });
+    }
+
+    if (emailParam) {
+      const want = normalizeEmail(emailParam);
+      if (!want) {
+        return NextResponse.json({ error: 'Invalid email' }, { status: 400 });
+      }
+
+      const { data: booking, error } = await supabase
+        .from('bookings')
+        .select(BOOKING_DETAIL_SELECT)
+        .eq('id', bookingId)
+        .is('user_id', null)
+        .single();
+
+      if (error || !booking) {
+        if (error?.code === 'PGRST116') {
+          return NextResponse.json({ error: 'Booking not found' }, { status: 404 });
+        }
+        return NextResponse.json(
+          { error: 'Failed to fetch booking', details: error?.message },
+          { status: 500 }
+        );
+      }
+
+      const got = normalizeEmail(
+        (booking as { contact_email?: string | null }).contact_email
+      );
+      if (got !== want) {
+        return NextResponse.json({ error: 'Booking not found' }, { status: 404 });
+      }
+
+      return NextResponse.json({ booking });
+    }
+
+    return NextResponse.json(
+      { error: 'Authentication required' },
+      { status: 401 }
+    );
   } catch (error: unknown) {
     console.error('Unexpected error:', error);
     return NextResponse.json(

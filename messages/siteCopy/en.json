@@ -41,7 +41,7 @@
         "label": "Price",
         "valueSegments": [
           { "text": "From " },
-          { "text": "$58/person", "emphasis": true },
+          { "text": "$59/person", "emphasis": true },
           { "text": " — lower when more travelers join" }
         ]
       },
@@ -342,7 +342,7 @@
         "title": "Private Tour",
         "description": "Maximum freedom, fully custom",
         "ctaLabel": "Build Tour",
-        "ctaHref": "/tours",
+        "ctaHref": "/tours/list",
         "highlight": false
       }
     ]

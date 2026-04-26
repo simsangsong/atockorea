@@ -198,7 +198,7 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
               Home
             </Link>
             <Link
-              href="/tours"
+              href="/tours/list"
               className={cn(
                 "rounded-lg px-4 py-2 text-sm font-medium transition-colors",
                 pathname === "/tours" || pathname.startsWith("/tours/")

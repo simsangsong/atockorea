@@ -8,7 +8,10 @@ import { useTranslations, useI18n } from "@/lib/i18n";
 import { formatTourDurationForCard } from "@/lib/tour-duration-display";
 import { useCurrencyOptional } from "@/lib/currency";
 import { isInWishlistLocal, toggleWishlistLocal } from "@/lib/wishlist";
-import { isTourBlockedFromConsumerSurfaces } from "@/lib/tour-consumer-visibility";
+import {
+  consumerTourDetailHref,
+  isTourBlockedFromConsumerSurfaces,
+} from "@/lib/tour-consumer-visibility";
 
 // Format booking count for display (e.g. 1200 -> "1.2k", 50000 -> "50k")
 function formatBookingCount(n: number): string {
@@ -114,50 +117,36 @@ export default function TourCard({
         : 0;
   const showDiscountBadge = displayDiscountPercent > 0;
 
-  // Generate href based on available data
-  // Priority: tour.href > /tour/[id] for API tours > city+slug route for static tours
-  let displayHref = '/tours';
-  
-  // Get city from tour prop or location prop
-  const city = tour?.city || displayLocation || '';
+  // Generate href — align with /tours/list, search, mypage: `consumerTourDetailHref` maps
+  // `tours.id` + slug to canonical `/tour-product/[slug]` when registered in
+  // `FLAGSHIP_TOUR_PRODUCT_PATHS` (avoids /tour/[uuid] → null canonical → /tours/list).
+  let displayHref = "/tours/list";
+
+  const city = tour?.city || displayLocation || "";
   const tourSlug = tour?.slug || slug;
   const tourId = id;
-  
-  // Check if id is a UUID (API tour) - UUIDs contain hyphens
-  const isUUID = tourId && typeof tourId === 'string' && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(tourId);
-  const isNumericId = tourId && !isNaN(Number(tourId)) && Number(tourId) > 0;
-  
+  const tourIdStr = tourId != null ? String(tourId) : null;
+
   if (tour?.href) {
-    // If tour has explicit href, use it (highest priority)
     displayHref = tour.href;
-  } else if (tourId && (isUUID || isNumericId)) {
-    // API tours (UUID or numeric ID) should always use /tour/[id]
-    // This ensures they go to the API-based detail page
-    displayHref = `/tour/${tourId}`;
-  } else if (city && tourSlug && !tourId) {
-    // Static tours (no ID) can use city-based routes
-    // These are from detailedTours static data
+  } else if (tourIdStr) {
+    displayHref = consumerTourDetailHref(tourIdStr, tourSlug ?? null);
+  } else if (city && tourSlug) {
     const cityLower = city.toLowerCase();
-    if (cityLower.includes('jeju') || cityLower === 'jeju') {
+    if (cityLower.includes("jeju") || cityLower === "jeju") {
       displayHref = `/jeju/${tourSlug}`;
-    } else if (cityLower.includes('busan') || cityLower === 'busan') {
+    } else if (cityLower.includes("busan") || cityLower === "busan") {
       displayHref = `/busan/${tourSlug}`;
-    } else if (cityLower.includes('seoul') || cityLower === 'seoul') {
+    } else if (cityLower.includes("seoul") || cityLower === "seoul") {
       displayHref = `/seoul/${tourSlug}`;
     } else {
-      // Unknown city, fallback to /tour/[slug]
       displayHref = `/tour/${tourSlug}`;
     }
   } else if (tourSlug) {
-    // If only slug is available, use /tour/[slug]
-    // The API can handle both UUID and slug
     displayHref = `/tour/${tourSlug}`;
-  } else if (tourId) {
-    // Fallback: use /tour/[id]
-    displayHref = `/tour/${tourId}`;
   }
 
-  if (isTourBlockedFromConsumerSurfaces(tourId != null ? String(tourId) : null, tourSlug ?? null)) {
+  if (isTourBlockedFromConsumerSurfaces(tourIdStr, tourSlug ?? null)) {
     displayHref = "/tours/list";
   }
   

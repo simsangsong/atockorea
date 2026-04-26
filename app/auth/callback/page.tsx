@@ -3,12 +3,77 @@
 import { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
+import { SitePageShell } from '@/src/components/layout/SitePageShell';
+import { useTranslations } from '@/lib/i18n';
+import {
+  AUTH_FORM_CARD,
+  AUTH_LEAD,
+  AUTH_PAGE_BACKDROP,
+  AUTH_PAGE_TITLE,
+} from '@/lib/mypage-ui';
+import { cn } from '@/lib/utils';
+
+type CallbackStatus = 'loading' | 'success' | 'error';
+
+function CallbackCard({
+  status,
+  title,
+  message,
+  subMessage,
+}: {
+  status: CallbackStatus;
+  title: string;
+  message: string;
+  subMessage?: string;
+}) {
+  return (
+    <main
+      className={cn(
+        'relative z-10 container mx-auto flex min-h-[60vh] items-center justify-center px-4 py-12 sm:px-6 md:py-20 lg:px-8',
+        AUTH_PAGE_BACKDROP,
+      )}
+    >
+      <div className="mx-auto w-full max-w-[420px]">
+        <div className={cn(AUTH_FORM_CARD, 'px-6 py-10 text-center sm:px-9 sm:py-12')}>
+          {status === 'loading' && (
+            <div
+              className="mx-auto mb-5 h-12 w-12 animate-spin rounded-full border-2 border-slate-200 border-t-slate-900"
+              aria-hidden="true"
+            />
+          )}
+          {status === 'success' && (
+            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50 ring-1 ring-emerald-200/80">
+              <svg className="h-7 w-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.25} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+          )}
+          {status === 'error' && (
+            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-red-50 ring-1 ring-red-200/80">
+              <svg className="h-7 w-7 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.25} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </div>
+          )}
+          <h1 className={AUTH_PAGE_TITLE}>{title}</h1>
+          <p className={cn(AUTH_LEAD, 'min-h-[1.4em]')} aria-live="polite">
+            {message}
+          </p>
+          {subMessage && (
+            <p className="mt-3 text-[12px] text-slate-500">{subMessage}</p>
+          )}
+        </div>
+      </div>
+    </main>
+  );
+}
 
 function AuthCallbackContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading');
-  const [message, setMessage] = useState('Processing authentication...');
+  const t = useTranslations();
+  const [status, setStatus] = useState<CallbackStatus>('loading');
+  const [message, setMessage] = useState(t('auth.callbackPage.processingBody'));
 
   useEffect(() => {
     const handleCallback = async () => {
@@ -21,9 +86,8 @@ function AuthCallbackContent() {
         const error = searchParams?.get('error');
         const errorDescription = searchParams?.get('error_description');
         const provider = searchParams?.get('provider');
-        // Restrict redirect to same-origin path only (prevent open redirect)
         const rawNext = (searchParams?.get('next') || '/mypage').replace(/^null$/i, '') || '/mypage';
-        let next =
+        const next =
           typeof rawNext === 'string' &&
           rawNext.startsWith('/') &&
           !rawNext.includes(':') &&
@@ -31,18 +95,15 @@ function AuthCallbackContent() {
             ? rawNext
             : '/mypage';
 
-        // OAuth 에러 체크 (구글, 페이스북 등)
         if (error) {
-          throw new Error(errorDescription || error || 'OAuth authentication failed');
+          throw new Error(errorDescription || error || t('auth.callbackPage.defaultErrorMessage'));
         }
 
-        // 处理 LINE OAuth（自定义实现）
         if (provider === 'line') {
           if (!code) {
-            throw new Error('No authorization code received');
+            throw new Error(t('auth.callbackPage.defaultErrorMessage'));
           }
 
-          // 调用自定义 LINE OAuth API
           const response = await fetch('/api/auth/line', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -52,20 +113,18 @@ function AuthCallbackContent() {
           const data = await response.json();
 
           if (!response.ok) {
-            throw new Error(data.error || 'LINE authentication failed');
+            throw new Error(data.error || t('auth.callbackPage.defaultErrorMessage'));
           }
 
-          // API가 준 magic link( Supabase action_link )로 이동하면 세션이 설정됨. signInWithOtp 호출하면 안 됨.
           if (data.magicLink && typeof data.magicLink === 'string') {
             setStatus('success');
-            setMessage('LINE 로그인 완료. 이동 중...');
+            setMessage(t('auth.callbackPage.lineSuccessBody'));
             window.location.href = data.magicLink;
             return;
           }
 
-          // magic link 없을 때: 세션 없이 user만 반환된 경우. localStorage만 저장하면 앱이 Supabase 세션을 보므로 로그아웃처럼 보일 수 있음.
           setStatus('success');
-          setMessage('LINE 로그인 완료. 이동 중...');
+          setMessage(t('auth.callbackPage.lineSuccessBody'));
           if (data.user) {
             try {
               localStorage.setItem('line_user', JSON.stringify(data.user));
@@ -79,10 +138,7 @@ function AuthCallbackContent() {
           return;
         }
 
-        // 处理其他 OAuth 提供商（Google）
-        // Supabase OAuth의 경우 code가 없을 수도 있음 (이미 세션이 있을 수 있음)
         if (code) {
-          // Exchange code for session
           const { data, error } = await supabase.auth.exchangeCodeForSession(code);
 
           if (error) {
@@ -102,7 +158,7 @@ function AuthCallbackContent() {
               const email = data.user.email ?? '';
               await supabase.auth.signOut();
               setStatus('success');
-              setMessage('Redirecting to sign up...');
+              setMessage(t('auth.callbackPage.redirectingToSignUp'));
               setTimeout(() => {
                 router.replace(`/signup?step=verify&email=${encodeURIComponent(email)}`);
               }, 400);
@@ -110,7 +166,6 @@ function AuthCallbackContent() {
             }
 
             const meta = data.user.user_metadata || {};
-            // 구글/소셜 이름: name > full_name > given_name + family_name > 이메일 앞부분
             const displayName =
               meta.name ||
               meta.full_name ||
@@ -136,7 +191,6 @@ function AuthCallbackContent() {
                 })
                 .eq('id', data.user.id);
               if (updateErr) console.error('Error updating user profile:', updateErr);
-              // 저장된 가입자 내역용: email, auth_provider (마이그레이션 후 컬럼 있으면 저장)
               await supabase
                 .from('user_profiles')
                 .update({
@@ -145,7 +199,6 @@ function AuthCallbackContent() {
                 } as Record<string, unknown>)
                 .eq('id', data.user.id);
             } else {
-              // 이메일 인증 후 진입 시 user_metadata(full_name, phone, birth_year, nationality)로 프로필 생성
               const session = data.session;
               const createRes = await fetch('/api/auth/create-profile', {
                 method: 'POST',
@@ -161,7 +214,6 @@ function AuthCallbackContent() {
               });
               if (!createRes.ok) {
                 const { status } = createRes;
-                // 409 = 이미 프로필 있음. 404/기타 시 클라이언트 insert 시도 (세션은 이미 있음)
                 if (status !== 409) {
                   const insertPayload = {
                     id: data.user.id,
@@ -195,7 +247,7 @@ function AuthCallbackContent() {
             }
 
             setStatus('success');
-            setMessage('Authentication successful! Redirecting...');
+            setMessage(t('auth.callbackPage.successBody'));
 
             setTimeout(() => {
               router.push(next);
@@ -203,17 +255,18 @@ function AuthCallbackContent() {
             return;
           }
         } else {
-          // code가 없으면 현재 세션 확인 (이미 로그인되어 있을 수 있음)
-          const { data: { session }, error: sessionError } = await supabase.auth.getSession();
-          
+          const {
+            data: { session },
+            error: sessionError,
+          } = await supabase.auth.getSession();
+
           if (sessionError || !session) {
-            throw new Error('No authorization code received. Please try signing in again.');
+            throw new Error(t('auth.callbackPage.defaultErrorMessage'));
           }
 
-          // 세션이 있으면 성공 처리
           setStatus('success');
-          setMessage('Authentication successful! Redirecting...');
-          
+          setMessage(t('auth.callbackPage.successBody'));
+
           setTimeout(() => {
             router.push(next);
           }, 1000);
@@ -222,60 +275,47 @@ function AuthCallbackContent() {
       } catch (error: any) {
         console.error('OAuth callback error:', error);
         setStatus('error');
-        setMessage(error.message || 'Authentication failed');
-        
-        // 3秒后重定向到登录页
+        setMessage(error?.message || t('auth.callbackPage.defaultErrorMessage'));
+
         setTimeout(() => {
           router.push('/signin');
         }, 3000);
       }
     };
 
-    handleCallback();
-  }, [searchParams, router]);
+    void handleCallback();
+  }, [searchParams, router, t]);
 
+  const title =
+    status === 'success'
+      ? t('auth.callbackPage.successTitle')
+      : status === 'error'
+        ? t('auth.callbackPage.errorTitle')
+        : t('auth.callbackPage.processingTitle');
+
+  const subMessage =
+    status === 'error' ? t('auth.callbackPage.errorRedirectingToSignIn') : undefined;
+
+  return <CallbackCard status={status} title={title} message={message} subMessage={subMessage} />;
+}
+
+function CallbackSuspenseFallback() {
+  const t = useTranslations();
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
-      <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-8 max-w-md w-full text-center">
-        {status === 'loading' && (
-          <>
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">Processing...</h2>
-            <p className="text-gray-600">{message}</p>
-          </>
-        )}
-        {status === 'success' && (
-          <>
-            <div className="text-green-500 text-5xl mb-4">✓</div>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">Success!</h2>
-            <p className="text-gray-600">{message}</p>
-          </>
-        )}
-        {status === 'error' && (
-          <>
-            <div className="text-red-500 text-5xl mb-4">✗</div>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">Error</h2>
-            <p className="text-gray-600">{message}</p>
-            <p className="text-sm text-gray-500 mt-4">Redirecting to sign in page...</p>
-          </>
-        )}
-      </div>
-    </div>
+    <CallbackCard
+      status="loading"
+      title={t('auth.callbackPage.processingTitle')}
+      message={t('auth.callbackPage.processingBody')}
+    />
   );
 }
 
 export default function AuthCallbackPage() {
   return (
-    <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200/50 p-8 max-w-md w-full text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">Loading...</h2>
-          <p className="text-gray-600">Processing authentication...</p>
-        </div>
-      </div>
-    }>
-      <AuthCallbackContent />
-    </Suspense>
+    <SitePageShell>
+      <Suspense fallback={<CallbackSuspenseFallback />}>
+        <AuthCallbackContent />
+      </Suspense>
+    </SitePageShell>
   );
 }

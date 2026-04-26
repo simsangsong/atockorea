@@ -173,6 +173,10 @@
   },
   "checkout": {
     "title": "結帳",
+    "pageTitle": "完成預訂",
+    "pageSubtitle": "請填寫資訊以完成預訂。",
+    "customerInfoTitle": "旅客資訊",
+    "requiredFieldsHint": "必填 *",
     "cta": "鎖定座位",
     "completeBooking": "完成預訂",
     "timelineStaticCopy": "訂金在出發 24 小時前可退；尾款建議在出發 18 小時前完成。",
@@ -183,7 +187,10 @@
     "total": "合計",
     "secureCheckoutTitle": "Secure checkout",
     "secureCheckoutBody": "Pay the full tour price online to complete your booking. Free cancellation until 24 hours before departure.",
-    "confirmationEmailNote": "You will receive a confirmation email after payment."
+    "confirmationEmailNote": "You will receive a confirmation email after payment.",
+    "paymentCancelled": "付款已取消。請重試或改用其他付款方式。",
+    "lineCalloutEmphasis": "務必留下 LINE 聊天連結",
+    "chatContactLineHelper": "請貼上可分享的連結（如 line.me/ti/p/…），勿填電話或 ID。"
   },
   "listDetail": {
     "summaryToursFound": "找到 {{count}} 個行程",

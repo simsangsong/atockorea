@@ -9,9 +9,10 @@ import { enUS } from "date-fns/locale/en-US";
 import { ko } from "date-fns/locale/ko";
 import { zhCN } from "date-fns/locale/zh-CN";
 import { isSameDay } from "date-fns";
-import { Check, ChevronDown, Home, Map, Minus, Plus, ShoppingCart, User, X } from "lucide-react";
+import { Check, ChevronDown, Home, Map, Minus, Plus, Ship, ShoppingCart, User, X } from "lucide-react";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 import type { TourProductCheckoutContext } from "@/lib/tour-product/eastSignatureCheckoutContext";
+import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
 import { useCurrencyOptional } from "@/lib/currency";
 import { consumerTourCheckoutHref } from "@/lib/tour-consumer-visibility";
 
@@ -28,6 +29,17 @@ function NavItem({ icon: Icon, label, active = false }: { icon: ElementType; lab
 
 export type TourStickyBookingBarProps = Pick<EastSignatureNatureCoreDetailViewModel, "price"> & {
   checkout?: TourProductCheckoutContext | null;
+  /**
+   * Cruise shore-excursion products lift the selected docking port up to the
+   * parent client so the CTA + drawer can echo the selection. Absent on
+   * standard tours.
+   */
+  selectedPortLabel?: string;
+  /**
+   * Locale-aware copy for the port badge ("Docking at"). Optional — when
+   * omitted, English defaults are used.
+   */
+  sectionUi?: TourProductSectionUiV1;
 };
 
 type PreferredLanguage = "en" | "zh" | "ko";
@@ -231,7 +243,8 @@ function PremiumLanguageSelect({
   );
 }
 
-export function TourStickyBookingBar({ price, checkout }: TourStickyBookingBarProps) {
+export function TourStickyBookingBar({ price, checkout, selectedPortLabel, sectionUi }: TourStickyBookingBarProps) {
+  const portCtaPrefix = sectionUi?.portSelectorCtaPrefix ?? "Docking at";
   const router = useRouter();
   const currencyCtx = useCurrencyOptional();
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -403,6 +416,13 @@ export function TourStickyBookingBar({ price, checkout }: TourStickyBookingBarPr
                     <div>
                       <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Booking</p>
                       <h2 className="text-sm font-semibold text-foreground">Choose date &amp; details</h2>
+                      {selectedPortLabel ? (
+                        <p className="mt-1 inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/60 px-2.5 py-0.5 text-[11px] font-medium text-foreground">
+                          <Ship className="h-3 w-3 text-primary" aria-hidden />
+                          <span className="text-muted-foreground">{portCtaPrefix}:</span>
+                          <span>{selectedPortLabel}</span>
+                        </p>
+                      ) : null}
                       {estimatedTotal != null && checkout?.priceType === "person" && estimatedTotalFormatted && (
                         <p className="mt-0.5 text-[11px] text-muted-foreground tabular-nums">
                           Est. total · {guestCount} {guestCount === 1 ? "guest" : "guests"}: {estimatedTotalFormatted}
@@ -503,6 +523,12 @@ export function TourStickyBookingBar({ price, checkout }: TourStickyBookingBarPr
         <div className="tour-sticky-cta-bar pointer-events-auto border-t border-border/80 sm:pb-0">
           <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
             <div className="min-w-0">
+              {selectedPortLabel ? (
+                <p className="mb-0.5 flex items-center gap-1 text-[10px] font-medium text-muted-foreground">
+                  <Ship className="h-3 w-3 text-primary" aria-hidden />
+                  <span className="truncate">{selectedPortLabel}</span>
+                </p>
+              ) : null}
               <p className="text-[10px] font-medium tracking-wide text-muted-foreground">From</p>
               <p className="text-lg font-semibold text-foreground tabular-nums sm:text-2xl">
                 {ctaUnitFormatted != null ? (

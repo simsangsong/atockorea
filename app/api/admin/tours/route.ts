@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { handleApiError, ErrorResponses } from '@/lib/error-handler';
 import { requireAdmin } from '@/lib/auth';
+import { applyTourWriteRules } from '@/lib/admin/tour-write-rules';
 
 /**
  * POST /api/admin/tours
@@ -44,6 +45,11 @@ export async function POST(request: NextRequest) {
       if (!body[field]) {
         return ErrorResponses.validationError(`Missing required field: ${field}`);
       }
+    }
+
+    // For CREATE, slug is allowed (it's a new product). Validate price_type only.
+    if (typeof body.price_type !== 'string' || !['person', 'group'].includes(body.price_type)) {
+      return ErrorResponses.validationError(`Invalid price_type "${String(body.price_type)}" — must be 'person' or 'group'`);
     }
 
     // Prepare tour data
@@ -193,11 +199,19 @@ export async function PATCH(request: NextRequest) {
 
     const body = await request.json();
 
+    // Lock slug + validate price_type before assembling update payload.
+    const ruleResult = applyTourWriteRules(body);
+    if (!ruleResult.ok) {
+      return ErrorResponses.validationError(ruleResult.error);
+    }
+    if (ruleResult.warnings.length > 0) {
+      console.warn('[PATCH /api/admin/tours]', ruleResult.warnings.join('; '), { tourId });
+    }
+
     // Prepare update data (only include provided fields)
     const updateData: any = {};
 
     if (body.title !== undefined) updateData.title = body.title;
-    if (body.slug !== undefined) updateData.slug = body.slug;
     if (body.city !== undefined) updateData.city = body.city;
     if (body.tag !== undefined) updateData.tag = body.tag;
     if (body.subtitle !== undefined) updateData.subtitle = body.subtitle;

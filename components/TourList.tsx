@@ -96,7 +96,7 @@ export default function TourList({ localeOverride }: TourListProps = {}) {
         {/* View all tours — logo-matching blue–orange gradient (above cards) */}
         <div className="text-center mb-8">
           <a
-            href="/tours"
+            href="/tours/list"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-blue-500 via-blue-600 to-orange-500 hover:from-blue-600 hover:via-blue-700 hover:to-orange-500 shadow-md hover:shadow-lg transition-all duration-300"
           >
             {t('home.tourList.seeMore')}

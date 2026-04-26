@@ -224,17 +224,7 @@ export function TourReviewsSection({ guestReviews, reviewsSummary, sectionUi }: 
             </button>
           )}
         </>
-      ) : (
-        <div className="card-premium p-6 sm:p-7 text-center">
-          <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-muted/70">
-            <Star className="h-5 w-5 text-muted-foreground" strokeWidth={1.6} />
-          </div>
-          <p className="text-sm font-semibold text-foreground">{sectionUi.reviewsCtaTitle}</p>
-          <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">
-            {sectionUi.reviewsCtaSubtitle}
-          </p>
-        </div>
-      )}
+      ) : null}
 
       <div className="card-utility p-5 text-center">
         <div className="flex items-center justify-center gap-2 mb-2">

@@ -15,6 +15,13 @@ export const HOME_CTA_FEATURED_JOIN_TOUR_HREF = "/tour-product/east-signature-na
 export const HOME_CTA_BROWSE_TOURS_HREF = "/tours/list";
 /** Direct list + join filter — avoid `/tours/small-group` (server redirect) on client nav, which can fail to swap the RSC tree in production. */
 export const HOME_CTA_SMALL_GROUP_LIST_HREF = "/tours/list?type=join";
+/**
+ * Standalone matcher page — "deep-form" companion to the inline home hero
+ * planner (`HomeV2MatchProvider`). Both call `POST /api/tour-product/match`.
+ * Keep this stable: external links (SNS, ads, deep links) depend on `/match`.
+ * If we ever consolidate, redirect `/match` → home with `?openPlanner=1` rather
+ * than repointing this constant.
+ */
 export const HOME_CTA_MATCHING_HREF = "/match";
 
 export const HOME_CTA_REVIEWS_HREF = "/reviews";

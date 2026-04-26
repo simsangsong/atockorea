@@ -108,7 +108,7 @@ function SearchResults() {
               <TourListCard
                 key={tour.id}
                 tour={tour}
-                detailHref={consumerTourDetailHref(tour.id)}
+                detailHref={consumerTourDetailHref(tour.id, tour.slug)}
                 formatPriceFn={formatPrice}
               />
             ))}

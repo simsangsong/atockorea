@@ -9,6 +9,11 @@ const nextConfig = {
     const canonical = '/tour-product/east-signature-nature-core';
     const eastUuid = 'c5d60898-a167-4b88-ac9f-62a910921866';
     return [
+      /** Legacy My Page paths — canonical is `/mypage`. */
+      { source: '/my', destination: '/mypage', permanent: true },
+      { source: '/my/:path*', destination: '/mypage/:path*', permanent: true },
+      { source: '/my-page', destination: '/mypage', permanent: true },
+      { source: '/my-page/:path*', destination: '/mypage/:path*', permanent: true },
       { source: `/tour/${eastUuid}`, destination: canonical, permanent: true },
       {
         source: `/:locale(en|ko|zh-CN|zh-TW|ja|es)/tour/${eastUuid}`,
@@ -66,13 +71,26 @@ const nextConfig = {
   // i18n is handled by middleware + app/[locale] (next.config i18n breaks App Router)
   images: {
     unoptimized: process.env.NODE_ENV === 'production' && process.env.BUILD_FOR_MOBILE === 'true',
+    /**
+     * Explicit allowlist replaces a previous `**` wildcard. Add a host here
+     * before referencing it from product JSON, registry, or DB-stored URLs.
+     * Official Korean tourism CDNs (Visit Jeju, KTO, Visit Busan) are pre-allowed
+     * to support Phase 9 image sourcing.
+     */
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com', pathname: '/**' },
       { protocol: 'https', hostname: 'plus.unsplash.com', pathname: '/**' },
       { protocol: 'https', hostname: 'images.pexels.com', pathname: '/**' },
       { protocol: 'https', hostname: 'videos.pexels.com', pathname: '/**' },
-      /** Fallback for CMS / Supabase / other CDNs used elsewhere in the app */
-      { protocol: 'https', hostname: '**', pathname: '/**' },
+      { protocol: 'https', hostname: '**.supabase.co', pathname: '/**' },
+      { protocol: 'https', hostname: '**.supabase.in', pathname: '/**' },
+      { protocol: 'https', hostname: 'cdn.visitjeju.net', pathname: '/**' },
+      { protocol: 'https', hostname: 'api.cdn.visitjeju.net', pathname: '/**' },
+      { protocol: 'https', hostname: 'tong.visitkorea.or.kr', pathname: '/**' },
+      { protocol: 'https', hostname: 'ktoimg.visitkorea.or.kr', pathname: '/**' },
+      { protocol: 'https', hostname: 'cdn.visitbusan.net', pathname: '/**' },
+      { protocol: 'https', hostname: 'lh3.googleusercontent.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'maps.googleapis.com', pathname: '/**' },
     ],
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],

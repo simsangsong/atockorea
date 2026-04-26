@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { createServerClient } from '@/lib/supabase';
+import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 
@@ -30,19 +31,18 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const { amount, currency = 'usd', bookingId, bookingData } = body;
+    const { currency = 'usd', bookingId, bookingData } = body;
+    // Any client-supplied `amount` is intentionally ignored — server uses booking.final_price.
 
-    // Validate required fields
-    if (!amount || !bookingId) {
+    if (!bookingId) {
       return NextResponse.json(
-        { error: 'Missing required fields: amount, bookingId' },
+        { error: 'Missing required field: bookingId' },
         { status: 400 }
       );
     }
 
     const supabase = createServerClient();
 
-    // Verify booking exists (contact_email/contact_name for guest checkout)
     const { data: booking, error: bookingError } = await supabase
       .from('bookings')
       .select(`
@@ -69,7 +69,6 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Check if already paid
     if (booking.payment_status === 'paid') {
       return NextResponse.json(
         { error: 'Booking already paid' },
@@ -77,11 +76,27 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const finalPriceUsd = Number(booking.final_price);
+    if (!Number.isFinite(finalPriceUsd) || finalPriceUsd <= 0) {
+      return NextResponse.json(
+        { error: 'Booking has no valid price' },
+        { status: 400 }
+      );
+    }
+
     const cur = (currency || 'usd').toLowerCase();
-    // KRW: zero-decimal (1 unit = 1 KRW). USD: amount is dollars → Stripe cents.
-    const unitAmount = cur === 'krw'
-      ? Math.round(Number(amount))
-      : Math.round(Number(amount) * 100);
+    let unitAmount: number;
+    if (cur === 'krw') {
+      const krwPerUsd = await getKrwPerUsd();
+      unitAmount = Math.round(finalPriceUsd * krwPerUsd);
+    } else if (cur === 'usd') {
+      unitAmount = Math.round(finalPriceUsd * 100);
+    } else {
+      return NextResponse.json(
+        { error: `Unsupported currency: ${cur}` },
+        { status: 400 }
+      );
+    }
 
     if (unitAmount <= 0) {
       return NextResponse.json(

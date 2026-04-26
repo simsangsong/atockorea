@@ -284,6 +284,13 @@ export function middleware(request: NextRequest) {
     const cookieLocale = getLocaleFromCookie(request);
     const locale = cookieLocale ?? getLocale(request);
 
+    // `app/tour-product/[slug]` is only registered without a locale prefix. Consumer
+    // links and `consumerTourDetailHref` use `/tour-product/<slug>`. Do not 302 to
+    // `/ko/tour-product/...` here — that fights LanguageSwitcher and can loop redirects.
+    if (/^\/tour-product\/[^/]+\/?$/.test(pathname)) {
+      return NextResponse.next();
+    }
+
     if (locale !== DEFAULT_LOCALE) {
       const newUrl = new URL(request.url);
       newUrl.pathname = `/${locale}${pathname === '/' ? '' : pathname}`;

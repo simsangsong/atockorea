@@ -1,0 +1,29 @@
+{
+  "bookingSupportSteps": [
+    {
+      "timing": "Al reservar (importante)",
+      "title": "Datos de contacto reales",
+      "detail": "Deja móvil, WhatsApp y LINE que leas. Los avisos de desembarque a veces llegan tarde; tenemos que localizarte."
+    },
+    {
+      "timing": "Tras reservar",
+      "title": "Correo de confirmación",
+      "detail": "Primero recibes un email: puerto, furgoneta en grupo reducido, precio y plan del día en tierra."
+    },
+    {
+      "timing": "El día anterior (o al clarar el barco)",
+      "title": "Tu guía te contacta",
+      "detail": "El día antes, o cuando el calendario del barco quede claro, tu guía te escribe o llama (WhatsApp, LINE) sobre el punto en el puerto, el encuentro con la furgoneta y la coordinación con el desembarque."
+    },
+    {
+      "timing": "El día del tour",
+      "title": "En la terminal de cruceros",
+      "detail": "Reúnete en el lugar acordado. El recorrido en furgoneta exige ajuste al tiempo en tierra; el guía prioriza volver a tiempo al barco."
+    },
+    {
+      "timing": "Después",
+      "title": "Vuelta al barco y ayuda",
+      "detail": "Regreso a la terminal o punto acordado. Si necesitas ayuda tras el tour, escríbenos."
+    }
+  ]
+}

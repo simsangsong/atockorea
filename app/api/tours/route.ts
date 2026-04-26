@@ -40,6 +40,8 @@ function isKnownJoinTourSlug(slug: string | undefined | null): boolean {
   if (s === 'east-jeju-signature-small-group') return true;
   if (s.startsWith('east-jeju-signature-small-group-')) return true;
   if (s === 'jeju-east-small-group-template-preview') return true;
+  if (s === 'busan-top-attractions-authentic-one-day-tour') return true;
+  if (s === 'busan-city-tour-shore-excursion-cruise-guests') return true;
   return false;
 }
 
@@ -87,6 +89,8 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
     const search = searchParams.get('search');
     const minPrice = searchParams.get('minPrice');
     const maxPrice = searchParams.get('maxPrice');
+    const minPriceUsd = searchParams.get('minPriceUsd');
+    const maxPriceUsd = searchParams.get('maxPriceUsd');
     const isActive = searchParams.get('isActive') !== 'false'; // Default to true
     
     // New filter parameters
@@ -131,13 +135,29 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       }
     }
 
-    // Price range filter
-    if (minPrice) {
-      query = query.gte('price', parseFloat(minPrice));
+    // Price range filter.
+    // DB `tours.price` is stored in KRW for most rows (some marked `price_currency=USD`).
+    // Client sends `minPriceUsd`/`maxPriceUsd` so the API can convert with the live FX
+    // rate; raw `minPrice`/`maxPrice` is kept for back-compat (assumed KRW).
+    const krwPerUsdForFilter = await getKrwPerUsd();
+    const parsePositive = (raw: string | null): number | null => {
+      if (!raw) return null;
+      const n = parseFloat(raw);
+      return Number.isFinite(n) && n >= 0 ? n : null;
+    };
+    const minUsd = parsePositive(minPriceUsd);
+    const maxUsd = parsePositive(maxPriceUsd);
+    const minKrwLegacy = parsePositive(minPrice);
+    const maxKrwLegacy = parsePositive(maxPrice);
+    const minKrw = minUsd != null ? minUsd * krwPerUsdForFilter : minKrwLegacy;
+    const maxKrw = maxUsd != null ? maxUsd * krwPerUsdForFilter : maxKrwLegacy;
+
+    if (minKrw != null) {
+      query = query.gte('price', minKrw);
     }
 
-    if (maxPrice) {
-      query = query.lte('price', parseFloat(maxPrice));
+    if (maxKrw != null) {
+      query = query.lte('price', maxKrw);
     }
 
     // Search filter (title, description, city) - escape ILIKE special chars
@@ -187,7 +207,8 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       throw new AppError('Failed to fetch tours', 500, 'TOURS_FETCH_ERROR', error.message);
     }
 
-    const krwPerUsd = await getKrwPerUsd();
+    // `krwPerUsdForFilter` is already resolved above for price range conversion.
+    const krwPerUsd = krwPerUsdForFilter;
 
     // Transform data to match frontend expectations; use translations[locale] when available
     let transformedTours = tours?.map((tour: any) => {
@@ -254,6 +275,22 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
     transformedTours = transformedTours.filter(
       (tour) => !isTourRowHiddenFromPublicTourApi({ id: String(tour.id ?? ''), slug: tour.slug })
     );
+
+    // Tour-type filter happens in memory via `inferTourType` heuristics.
+    // Long-term: add a `tour_type` column on `tours` and push this into the SQL WHERE
+    // clause so pagination/ordering stay consistent at DB level. For now we apply it
+    // here — BEFORE features filter / score computation — so downstream `total`,
+    // score ordering, and any eventual server pagination see the final filtered set.
+    if (tourTypeFilter) {
+      transformedTours = transformedTours.filter((tour) =>
+        inferTourType({
+          title: tour.title,
+          badges: Array.isArray(tour.badges) ? tour.badges.map(String) : [],
+          slug: typeof tour.slug === 'string' ? tour.slug : undefined,
+          tag: typeof tour.tag === 'string' ? tour.tag : null,
+        }) === tourTypeFilter
+      );
+    }
 
     // Apply features filter in JavaScript (since JSONB queries are complex)
     if (features) {
@@ -353,17 +390,6 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       } catch (scoreError) {
         logger.warn?.('Failed to compute recommendation scores for tours', { error: (scoreError as Error).message });
       }
-    }
-
-    if (tourTypeFilter) {
-      transformedTours = transformedTours.filter((tour) =>
-        inferTourType({
-          title: tour.title,
-          badges: Array.isArray(tour.badges) ? tour.badges.map(String) : [],
-          slug: typeof tour.slug === 'string' ? tour.slug : undefined,
-          tag: typeof tour.tag === 'string' ? tour.tag : null,
-        }) === tourTypeFilter
-      );
     }
 
     logger.info('Tours fetched successfully', { count: transformedTours.length });

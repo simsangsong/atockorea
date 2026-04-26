@@ -41,6 +41,11 @@ export async function PATCH(req: NextRequest) {
       updates.nationality = body.nationality != null && String(body.nationality).trim() ? String(body.nationality).trim() : null;
     }
 
+    if (body.avatar_url !== undefined) {
+      const v = body.avatar_url == null ? null : String(body.avatar_url).trim();
+      updates.avatar_url = v && /^https?:\/\//i.test(v) ? v : null;
+    }
+
     if (body.language_preference !== undefined) {
       const v = String(body.language_preference).trim();
       if (ALLOWED_LANGUAGE_PREFERENCE.has(v)) {

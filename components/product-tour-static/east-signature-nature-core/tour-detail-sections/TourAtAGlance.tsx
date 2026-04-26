@@ -24,22 +24,22 @@ export function TourAtAGlance({ glanceItems, sectionUi }: TourAtAGlanceProps) {
         <p className="mt-1.5 text-[13px] text-muted-foreground leading-relaxed">{sectionUi.atAGlanceSubtitle}</p>
       </div>
 
-      <div className="grid grid-cols-3 gap-2.5">
+      <div className="grid grid-cols-3 gap-3">
         {glanceItems.map((item) => {
           const Icon = ICON_MAP[item.icon] ?? GLANCE_ICON_FALLBACK;
           return (
             <div
               key={item.label}
-              className="tour-glance-card group relative flex aspect-square flex-col items-center justify-center text-center rounded-2xl p-3 transition-all duration-300"
+              className="tour-glance-card group relative flex min-h-[132px] flex-col items-center justify-center text-center rounded-2xl px-3 py-4 transition-all duration-300"
             >
               <span aria-hidden className="tour-glance-card__sheen" />
-              <div className="tour-glance-card__icon-ring flex h-9 w-9 shrink-0 items-center justify-center rounded-full mb-2.5 transition-transform duration-300 group-hover:scale-[1.06]">
+              <div className="tour-glance-card__icon-ring flex h-9 w-9 shrink-0 items-center justify-center rounded-full mb-4 transition-transform duration-300 group-hover:scale-[1.06]">
                 <Icon className="h-[16px] w-[16px]" strokeWidth={1.6} />
               </div>
-              <p className="text-[9.5px] font-semibold tracking-[0.14em] uppercase text-muted-foreground leading-none">
+              <p className="text-[9px] font-semibold tracking-[0.12em] uppercase text-muted-foreground leading-[1.35]">
                 {item.label}
               </p>
-              <p className="mt-1.5 text-[14px] font-semibold text-foreground tracking-[-0.01em] leading-[1.15] line-clamp-2">
+              <p className="mt-2 text-[13px] font-semibold text-foreground tracking-[-0.01em] leading-[1.2]">
                 {item.value}
               </p>
             </div>

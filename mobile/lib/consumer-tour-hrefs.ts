@@ -14,7 +14,6 @@ const CONSUMER_BLOCKED_TOUR_IDS = new Set<string>([
 
 const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   "busan-top-attractions-authentic-one-day-guided-tour",
-  "busan-city-tour-shore-excursion-cruise-guests",
   "jeju-southern-top-unesco-spots-bus-tour",
   "jeju-island-full-day-tour-cruise-passengers",
   "jeju-eastern-unesco-spots-bus-tour",

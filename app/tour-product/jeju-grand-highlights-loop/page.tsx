@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JejuGrandHighlightsLoopDetailClient } from "@/components/product-tour-static/jeju-grand-highlights-loop/JejuGrandHighlightsLoopDetailClient";
 import { getJejuGrandHighlightsLoopFullPageJson } from "@/components/product-tour-static/jeju-grand-highlights-loop/jejuGrandHighlightsLocaleBundles";
 import { buildJejuGrandHighlightsLoopDetailViewModelFromJson } from "@/components/product-tour-static/jeju-grand-highlights-loop/jejuGrandHighlightsViewModelFromJson";
+import { tourProductJsonLdScripts } from "@/lib/seo/tourProductJsonLd";
 import { createAnonServerClient } from "@/lib/supabase";
 import { getTourProductCheckoutContext } from "@/lib/tour-product/eastSignatureCheckoutContext";
 import { loadTourProductViewModelBySlugFromSupabase } from "@/lib/tour-product/loadTourProductPage";
@@ -50,5 +51,23 @@ export default async function JejuGrandHighlightsLoopProductPage() {
     console.error("[JejuGrandHighlightsLoopProductPage] checkout context unavailable", e);
   }
 
-  return <JejuGrandHighlightsLoopDetailClient viewModel={viewModel ?? staticBundleVm} checkout={checkout} />;
+  const resolvedVm = viewModel ?? staticBundleVm;
+  const jsonLdScripts = tourProductJsonLdScripts(resolvedVm, SLUG);
+
+  return (
+    <>
+      {jsonLdScripts.map((json, idx) => (
+        <script
+          key={`tour-product-jsonld-${idx}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: json }}
+        />
+      ))}
+      <JejuGrandHighlightsLoopDetailClient
+        viewModel={resolvedVm}
+        checkout={checkout}
+        tourProductSlug={SLUG}
+      />
+    </>
+  );
 }

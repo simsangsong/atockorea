@@ -2,9 +2,13 @@
 
 export const dynamic = 'force-dynamic';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import { toast } from 'sonner';
 import { useTranslations, locales, type Locale } from '@/lib/i18n';
 import { validateAppPassword } from '@/lib/password-policy';
+import { MyPageSection } from '@/components/mypage/MyPageSection';
+import { MYPAGE_SURFACE_PAGE, MYPAGE_FOCUS_RING } from '@/lib/mypage-ui';
+import { cn } from '@/lib/utils';
 
 type NotificationsState = {
   email: boolean;
@@ -12,6 +16,8 @@ type NotificationsState = {
   push: boolean;
   marketing: boolean;
 };
+
+type SectionKey = 'personal' | 'location' | 'preferences' | 'emergency' | 'notifications';
 
 function parseMypagePrefs(raw: unknown): {
   city: string;
@@ -47,6 +53,18 @@ function parseMypagePrefs(raw: unknown): {
   };
 }
 
+const inputClass = cn(
+  'w-full rounded-xl border border-slate-200/80 bg-white/60 px-4 py-3 text-[14px] text-slate-900 outline-none transition-all',
+  'focus:border-slate-900 focus:bg-white focus:ring-2 focus:ring-slate-900/20',
+  'placeholder:text-slate-400',
+);
+
+const savedBtnClass = cn(
+  'inline-flex h-10 items-center justify-center rounded-xl bg-slate-900 px-5 text-[13px] font-semibold text-white',
+  'transition-colors hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60',
+  MYPAGE_FOCUS_RING,
+);
+
 export default function AccountSettingsPage() {
   const t = useTranslations();
   const [formData, setFormData] = useState({
@@ -77,6 +95,10 @@ export default function AccountSettingsPage() {
     push: true,
     marketing: false,
   });
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
+  const [avatarUploading, setAvatarUploading] = useState(false);
+  const [userId, setUserId] = useState<string | null>(null);
+  const [identities, setIdentities] = useState<Array<{ provider: string; email?: string | null }>>([]);
   const [profileLoading, setProfileLoading] = useState(true);
   const [savePersonalLoading, setSavePersonalLoading] = useState(false);
   const [saveLocationLoading, setSaveLocationLoading] = useState(false);
@@ -84,6 +106,14 @@ export default function AccountSettingsPage() {
   const [saveEmergencyLoading, setSaveEmergencyLoading] = useState(false);
   const [saveNotifLoading, setSaveNotifLoading] = useState(false);
   const [passwordLoading, setPasswordLoading] = useState(false);
+  const [savedFlags, setSavedFlags] = useState<Record<SectionKey, boolean>>({
+    personal: false,
+    location: false,
+    preferences: false,
+    emergency: false,
+    notifications: false,
+  });
+  const avatarInputRef = useRef<HTMLInputElement | null>(null);
 
   const getAccessToken = useCallback(async () => {
     const { supabase } = await import('@/lib/supabase');
@@ -92,24 +122,42 @@ export default function AccountSettingsPage() {
     return session?.access_token ?? null;
   }, []);
 
+  const flagSaved = useCallback((section: SectionKey) => {
+    setSavedFlags((prev) => ({ ...prev, [section]: true }));
+    window.setTimeout(() => {
+      setSavedFlags((prev) => ({ ...prev, [section]: false }));
+    }, 2200);
+  }, []);
+
   useEffect(() => {
+    let cancelled = false;
     const loadProfile = async () => {
       try {
         const { supabase } = await import('@/lib/supabase');
         if (!supabase) return;
         const { data: { session } } = await supabase.auth.getSession();
-        if (!session?.user) return;
+        if (!session?.user || cancelled) return;
+        setUserId(session.user.id);
+        setIdentities(
+          ((session.user.identities || []) as Array<{ provider: string; identity_data?: { email?: string } }>).map(
+            (i) => ({ provider: i.provider, email: i.identity_data?.email ?? null }),
+          ),
+        );
+
         const { data: profile } = await supabase
           .from('user_profiles')
-          .select('full_name, phone, birth_year, nationality, language_preference, mypage_preferences')
+          .select('full_name, phone, birth_year, nationality, language_preference, avatar_url, mypage_preferences')
           .eq('id', session.user.id)
           .single();
+
+        if (cancelled) return;
 
         const prefs = parseMypagePrefs(profile?.mypage_preferences);
         const langRaw = profile?.language_preference;
         const lang =
           typeof langRaw === 'string' && locales.includes(langRaw as Locale) ? langRaw : 'en';
 
+        setAvatarUrl(profile?.avatar_url ?? null);
         setFormData((prev) => ({
           ...prev,
           name: profile?.full_name?.trim() || session.user.email?.split('@')[0] || 'Guest',
@@ -130,15 +178,19 @@ export default function AccountSettingsPage() {
         if (process.env.NODE_ENV === 'development') {
           console.warn('[mypage/settings] Load failed:', e);
         }
+      } finally {
+        if (!cancelled) setProfileLoading(false);
       }
-      setProfileLoading(false);
     };
     void loadProfile();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const handleSavePersonalInfo = async () => {
     if (!formData.name?.trim()) {
-      alert(t('settingsPage.alertNameRequired'));
+      toast.error(t('settingsPage.alertNameRequired'));
       return;
     }
     setSavePersonalLoading(true);
@@ -153,20 +205,19 @@ export default function AccountSettingsPage() {
           full_name: formData.name.trim(),
           phone: formData.phone?.trim() || null,
           birth_year: birthYear,
-          mypage_preferences: {
-            gender: formData.gender?.trim() || null,
-          },
+          mypage_preferences: { gender: formData.gender?.trim() || null },
         }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        alert(typeof data.error === 'string' ? data.error : t('settingsPage.alertSaveFailed'));
+        toast.error(typeof data.error === 'string' ? data.error : t('mypage.common.toast.saveFailed'));
         return;
       }
-      alert(t('settingsPage.alertSaveSuccess'));
+      toast.success(t('mypage.common.toast.saved'));
+      flagSaved('personal');
       if (typeof window !== 'undefined') window.dispatchEvent(new Event('userDataUpdated'));
     } catch (e: unknown) {
-      alert(e instanceof Error ? e.message : t('settingsPage.alertSaveFailed'));
+      toast.error(e instanceof Error ? e.message : t('mypage.common.toast.saveFailed'));
     } finally {
       setSavePersonalLoading(false);
     }
@@ -182,20 +233,19 @@ export default function AccountSettingsPage() {
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({
           nationality: formData.country?.trim() || null,
-          mypage_preferences: {
-            city: formData.city?.trim() || '',
-          },
+          mypage_preferences: { city: formData.city?.trim() || '' },
         }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        alert(typeof data.error === 'string' ? data.error : t('settingsPage.alertSaveFailed'));
+        toast.error(typeof data.error === 'string' ? data.error : t('mypage.common.toast.saveFailed'));
         return;
       }
-      alert(t('settingsPage.alertSaveSuccess'));
+      toast.success(t('mypage.common.toast.saved'));
+      flagSaved('location');
       if (typeof window !== 'undefined') window.dispatchEvent(new Event('userDataUpdated'));
     } catch (e: unknown) {
-      alert(e instanceof Error ? e.message : t('settingsPage.alertSaveFailed'));
+      toast.error(e instanceof Error ? e.message : t('mypage.common.toast.saveFailed'));
     } finally {
       setSaveLocationLoading(false);
     }
@@ -211,20 +261,19 @@ export default function AccountSettingsPage() {
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({
           language_preference: formData.language,
-          mypage_preferences: {
-            currency: formData.currency,
-          },
+          mypage_preferences: { currency: formData.currency },
         }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        alert(typeof data.error === 'string' ? data.error : t('settingsPage.alertSaveFailed'));
+        toast.error(typeof data.error === 'string' ? data.error : t('mypage.common.toast.saveFailed'));
         return;
       }
-      alert(t('settingsPage.alertSaveSuccess'));
+      toast.success(t('mypage.common.toast.saved'));
+      flagSaved('preferences');
       if (typeof window !== 'undefined') window.dispatchEvent(new Event('userDataUpdated'));
     } catch (e: unknown) {
-      alert(e instanceof Error ? e.message : t('settingsPage.alertSaveFailed'));
+      toast.error(e instanceof Error ? e.message : t('mypage.common.toast.saveFailed'));
     } finally {
       setSavePrefsLoading(false);
     }
@@ -250,12 +299,13 @@ export default function AccountSettingsPage() {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        alert(typeof data.error === 'string' ? data.error : t('settingsPage.alertSaveFailed'));
+        toast.error(typeof data.error === 'string' ? data.error : t('mypage.common.toast.saveFailed'));
         return;
       }
-      alert(t('settingsPage.alertSaveSuccess'));
+      toast.success(t('mypage.common.toast.saved'));
+      flagSaved('emergency');
     } catch (e: unknown) {
-      alert(e instanceof Error ? e.message : t('settingsPage.alertSaveFailed'));
+      toast.error(e instanceof Error ? e.message : t('mypage.common.toast.saveFailed'));
     } finally {
       setSaveEmergencyLoading(false);
     }
@@ -282,12 +332,13 @@ export default function AccountSettingsPage() {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        alert(typeof data.error === 'string' ? data.error : t('settingsPage.alertSaveFailed'));
+        toast.error(typeof data.error === 'string' ? data.error : t('mypage.common.toast.saveFailed'));
         return;
       }
-      alert(t('settingsPage.alertNotificationsSaved'));
+      toast.success(t('mypage.common.toast.saved'));
+      flagSaved('notifications');
     } catch (e: unknown) {
-      alert(e instanceof Error ? e.message : t('settingsPage.alertSaveFailed'));
+      toast.error(e instanceof Error ? e.message : t('mypage.common.toast.saveFailed'));
     } finally {
       setSaveNotifLoading(false);
     }
@@ -295,16 +346,16 @@ export default function AccountSettingsPage() {
 
   const handleUpdatePassword = async () => {
     if (!passwordData.currentPassword || !passwordData.newPassword || !passwordData.confirmPassword) {
-      alert(t('settingsPage.alertPasswordFields'));
+      toast.error(t('settingsPage.alertPasswordFields'));
       return;
     }
     if (passwordData.newPassword !== passwordData.confirmPassword) {
-      alert(t('settingsPage.alertPasswordMismatch'));
+      toast.error(t('settingsPage.alertPasswordMismatch'));
       return;
     }
     const pwdPolicy = validateAppPassword(passwordData.newPassword);
     if (!pwdPolicy.valid) {
-      alert(pwdPolicy.message ?? t('settingsPage.alertPasswordShort'));
+      toast.error(pwdPolicy.message ?? t('settingsPage.alertPasswordShort'));
       return;
     }
     setPasswordLoading(true);
@@ -321,86 +372,186 @@ export default function AccountSettingsPage() {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        alert(typeof data.error === 'string' ? data.error : t('settingsPage.alertSaveFailed'));
+        toast.error(typeof data.error === 'string' ? data.error : t('mypage.common.toast.saveFailed'));
         return;
       }
-      alert(t('settingsPage.alertPasswordSuccess'));
+      toast.success(t('settingsPage.alertPasswordSuccess'));
       setPasswordData({ currentPassword: '', newPassword: '', confirmPassword: '' });
       setShowPasswordChange(false);
     } catch (e: unknown) {
-      alert(e instanceof Error ? e.message : t('settingsPage.alertSaveFailed'));
+      toast.error(e instanceof Error ? e.message : t('mypage.common.toast.saveFailed'));
     } finally {
       setPasswordLoading(false);
     }
   };
 
+  const handleAvatarUpload = async (file: File) => {
+    if (!file) return;
+    if (!userId) {
+      toast.error(t('mypage.common.toast.signInRequired'));
+      return;
+    }
+    if (!file.type.startsWith('image/')) {
+      toast.error(t('mypage.common.toast.avatarUploadFailed'));
+      return;
+    }
+    setAvatarUploading(true);
+    try {
+      const { supabase } = await import('@/lib/supabase');
+      if (!supabase) throw new Error('supabase unavailable');
+      const ext = file.name.split('.').pop() || 'jpg';
+      const path = `${userId}/${Date.now()}.${ext}`;
+      const { error: uploadError } = await supabase.storage
+        .from('avatars')
+        .upload(path, file, { cacheControl: '3600', upsert: true, contentType: file.type });
+      if (uploadError) throw uploadError;
+      const { data: publicUrl } = supabase.storage.from('avatars').getPublicUrl(path);
+      const url = publicUrl?.publicUrl;
+      if (!url) throw new Error('no-url');
+
+      const token = await getAccessToken();
+      if (!token) throw new Error(t('settingsPage.alertSignInAgain'));
+      const res = await fetch('/api/auth/update-profile', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ avatar_url: url }),
+      });
+      if (!res.ok) throw new Error('update-failed');
+
+      setAvatarUrl(url);
+      toast.success(t('mypage.common.toast.avatarUpdated'));
+      if (typeof window !== 'undefined') window.dispatchEvent(new Event('userDataUpdated'));
+    } catch (e) {
+      console.error('[mypage/settings] avatar upload failed:', e);
+      toast.error(t('mypage.common.toast.avatarUploadFailed'));
+    } finally {
+      setAvatarUploading(false);
+      if (avatarInputRef.current) avatarInputRef.current.value = '';
+    }
+  };
+
+  const SavedBadge = ({ visible }: { visible: boolean }) =>
+    visible ? (
+      <span
+        className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-700 ring-1 ring-emerald-200"
+        role="status"
+        aria-live="polite"
+      >
+        {t('mypage.settings.savedBadge')}
+      </span>
+    ) : null;
+
+  const initials = (formData.name || 'U')
+    .split(' ')
+    .map((part) => part[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join('')
+    .toUpperCase();
+
   return (
     <div className="space-y-6">
-      <div className="rounded-[30px] border border-slate-200/90 bg-white p-6 shadow-[0_4px_28px_-2px_rgba(15,23,42,0.07)] ring-1 ring-slate-900/[0.04]">
-        <h1 className="mb-2 text-xl font-semibold tracking-tight text-slate-900">{t('settingsPage.title')}</h1>
-        <p className="text-slate-600">{t('settingsPage.description')}</p>
+      <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6')}>
+        <div className="flex items-center gap-4">
+          <div className="relative">
+            <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl bg-slate-100 ring-1 ring-slate-200/80">
+              {avatarUrl ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={avatarUrl} alt="" className="h-full w-full object-cover" />
+              ) : (
+                <span className="text-[18px] font-semibold text-slate-700">{initials}</span>
+              )}
+            </div>
+            <button
+              type="button"
+              onClick={() => avatarInputRef.current?.click()}
+              disabled={avatarUploading}
+              aria-label={t('mypage.settings.avatarUploadLabel')}
+              className={cn(
+                'absolute -bottom-1 -right-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-white shadow-md transition-colors hover:bg-slate-800 disabled:opacity-60',
+                MYPAGE_FOCUS_RING,
+              )}
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M12 20h9" />
+                <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
+              </svg>
+            </button>
+            <input
+              ref={avatarInputRef}
+              type="file"
+              accept="image/*"
+              className="sr-only"
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (file) void handleAvatarUpload(file);
+              }}
+            />
+          </div>
+          <div className="min-w-0 flex-1">
+            <h1 className="truncate text-[1.25rem] font-semibold tracking-tight text-slate-900">
+              {t('settingsPage.title')}
+            </h1>
+            <p className="mt-0.5 truncate text-[13px] text-slate-600">{t('settingsPage.description')}</p>
+          </div>
+        </div>
       </div>
 
       {/* Personal Information */}
-      <div className="rounded-[30px] border border-slate-200/90 bg-white p-6 shadow-[0_4px_28px_-2px_rgba(15,23,42,0.07)] ring-1 ring-slate-900/[0.04]">
-        <h2 className="mb-6 flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-          </div>
-          {t('settingsPage.personalInfo')}
-        </h2>
-        <div className="grid md:grid-cols-2 gap-4">
+      <MyPageSection
+        title={t('settingsPage.personalInfo')}
+        trailing={<SavedBadge visible={savedFlags.personal} />}
+      >
+        <div className="grid gap-4 md:grid-cols-2">
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700">
+            <label className="mb-2 block text-[13px] font-medium text-slate-700">
               {t('settingsPage.fullName')} <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-white/60 focus:bg-white"
+              className={inputClass}
             />
           </div>
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700">
+            <label className="mb-2 block text-[13px] font-medium text-slate-700">
               {t('settingsPage.email')} <span className="text-red-500">*</span>
             </label>
             <input
               type="email"
               readOnly
               value={formData.email}
-              className="w-full cursor-not-allowed px-4 py-3 rounded-xl border border-slate-200/80 bg-slate-100/80 text-slate-600 outline-none"
+              className={cn(inputClass, 'cursor-not-allowed bg-slate-100/80 text-slate-600')}
             />
-            <p className="mt-1 text-xs text-slate-500">{t('settingsPage.emailReadonlyHint')}</p>
+            <p className="mt-1 text-[11px] text-slate-500">{t('settingsPage.emailReadonlyHint')}</p>
           </div>
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700">
+            <label className="mb-2 block text-[13px] font-medium text-slate-700">
               {t('settingsPage.phone')} <span className="text-red-500">*</span>
             </label>
             <input
               type="tel"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-white/60 focus:bg-white"
+              className={inputClass}
             />
           </div>
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700">{t('settingsPage.dateOfBirth')}</label>
+            <label className="mb-2 block text-[13px] font-medium text-slate-700">{t('settingsPage.dateOfBirth')}</label>
             <input
               type="date"
               value={formData.birthday}
               onChange={(e) => setFormData({ ...formData, birthday: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-white/60 focus:bg-white"
+              className={inputClass}
             />
           </div>
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700">{t('settingsPage.gender')}</label>
+            <label className="mb-2 block text-[13px] font-medium text-slate-700">{t('settingsPage.gender')}</label>
             <select
               value={formData.gender}
               onChange={(e) => setFormData({ ...formData, gender: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-white/60 focus:bg-white"
+              className={inputClass}
             >
               <option value="">{t('settingsPage.select')}</option>
               <option value="male">{t('settingsPage.genderMale')}</option>
@@ -414,30 +565,24 @@ export default function AccountSettingsPage() {
           type="button"
           onClick={() => void handleSavePersonalInfo()}
           disabled={profileLoading || savePersonalLoading}
-          className="home-btn-primary mt-6 disabled:cursor-not-allowed disabled:opacity-60"
+          className={cn(savedBtnClass, 'mt-5')}
         >
           {savePersonalLoading ? t('settingsPage.saving') : t('settingsPage.saveChanges')}
         </button>
-      </div>
+      </MyPageSection>
 
       {/* Address Information */}
-      <div className="rounded-[30px] border border-slate-200/90 bg-white p-6 shadow-[0_4px_28px_-2px_rgba(15,23,42,0.07)] ring-1 ring-slate-900/[0.04]">
-        <h2 className="mb-6 flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </div>
-          {t('settingsPage.location')}
-        </h2>
-        <div className="grid md:grid-cols-2 gap-4">
+      <MyPageSection
+        title={t('settingsPage.location')}
+        trailing={<SavedBadge visible={savedFlags.location} />}
+      >
+        <div className="grid gap-4 md:grid-cols-2">
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700">{t('settingsPage.country')}</label>
+            <label className="mb-2 block text-[13px] font-medium text-slate-700">{t('settingsPage.country')}</label>
             <select
               value={formData.country}
               onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-white/60 focus:bg-white"
+              className={inputClass}
             >
               <option value="South Korea">South Korea</option>
               <option value="United States">United States</option>
@@ -447,12 +592,12 @@ export default function AccountSettingsPage() {
             </select>
           </div>
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700">{t('settingsPage.city')}</label>
+            <label className="mb-2 block text-[13px] font-medium text-slate-700">{t('settingsPage.city')}</label>
             <input
               type="text"
               value={formData.city}
               onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-white/60 focus:bg-white"
+              className={inputClass}
             />
           </div>
         </div>
@@ -460,30 +605,24 @@ export default function AccountSettingsPage() {
           type="button"
           onClick={() => void handleSaveLocation()}
           disabled={profileLoading || saveLocationLoading}
-          className="home-btn-primary mt-6 disabled:cursor-not-allowed disabled:opacity-60"
+          className={cn(savedBtnClass, 'mt-5')}
         >
           {saveLocationLoading ? t('settingsPage.saving') : t('settingsPage.saveChanges')}
         </button>
-      </div>
+      </MyPageSection>
 
       {/* Preferences */}
-      <div className="rounded-[30px] border border-slate-200/90 bg-white p-6 shadow-[0_4px_28px_-2px_rgba(15,23,42,0.07)] ring-1 ring-slate-900/[0.04]">
-        <h2 className="mb-6 flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </div>
-          {t('settingsPage.preferences')}
-        </h2>
-        <div className="grid md:grid-cols-2 gap-4">
+      <MyPageSection
+        title={t('settingsPage.preferences')}
+        trailing={<SavedBadge visible={savedFlags.preferences} />}
+      >
+        <div className="grid gap-4 md:grid-cols-2">
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700">{t('settingsPage.language')}</label>
+            <label className="mb-2 block text-[13px] font-medium text-slate-700">{t('settingsPage.language')}</label>
             <select
               value={formData.language}
               onChange={(e) => setFormData({ ...formData, language: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-white/60 focus:bg-white"
+              className={inputClass}
             >
               <option value="en">English</option>
               <option value="ko">한국어</option>
@@ -494,11 +633,11 @@ export default function AccountSettingsPage() {
             </select>
           </div>
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700">{t('settingsPage.currency')}</label>
+            <label className="mb-2 block text-[13px] font-medium text-slate-700">{t('settingsPage.currency')}</label>
             <select
               value={formData.currency}
               onChange={(e) => setFormData({ ...formData, currency: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-white/60 focus:bg-white"
+              className={inputClass}
             >
               <option value="USD">USD ($)</option>
               <option value="KRW">KRW (₩)</option>
@@ -511,47 +650,42 @@ export default function AccountSettingsPage() {
           type="button"
           onClick={() => void handleSavePreferences()}
           disabled={profileLoading || savePrefsLoading}
-          className="home-btn-primary mt-6 disabled:cursor-not-allowed disabled:opacity-60"
+          className={cn(savedBtnClass, 'mt-5')}
         >
           {savePrefsLoading ? t('settingsPage.saving') : t('settingsPage.saveChanges')}
         </button>
-      </div>
+      </MyPageSection>
 
       {/* Emergency Contact */}
-      <div className="rounded-[30px] border border-slate-200/90 bg-white p-6 shadow-[0_4px_28px_-2px_rgba(15,23,42,0.07)] ring-1 ring-slate-900/[0.04]">
-        <h2 className="mb-6 flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-            </svg>
-          </div>
-          {t('settingsPage.emergencyContactTitle')}
-        </h2>
-        <div className="grid md:grid-cols-2 gap-4">
+      <MyPageSection
+        title={t('settingsPage.emergencyContactTitle')}
+        trailing={<SavedBadge visible={savedFlags.emergency} />}
+      >
+        <div className="grid gap-4 md:grid-cols-2">
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700">{t('settingsPage.contactName')}</label>
+            <label className="mb-2 block text-[13px] font-medium text-slate-700">{t('settingsPage.contactName')}</label>
             <input
               type="text"
               value={formData.emergencyContactName}
               onChange={(e) => setFormData({ ...formData, emergencyContactName: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-white/60 focus:bg-white"
+              className={inputClass}
             />
           </div>
           <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700">{t('settingsPage.contactPhone')}</label>
+            <label className="mb-2 block text-[13px] font-medium text-slate-700">{t('settingsPage.contactPhone')}</label>
             <input
               type="tel"
               value={formData.emergencyContactPhone}
               onChange={(e) => setFormData({ ...formData, emergencyContactPhone: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-white/60 focus:bg-white"
+              className={inputClass}
             />
           </div>
           <div className="md:col-span-2">
-            <label className="mb-2 block text-sm font-medium text-slate-700">{t('settingsPage.relationship')}</label>
+            <label className="mb-2 block text-[13px] font-medium text-slate-700">{t('settingsPage.relationship')}</label>
             <select
               value={formData.emergencyContactRelation}
               onChange={(e) => setFormData({ ...formData, emergencyContactRelation: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-white/60 focus:bg-white"
+              className={inputClass}
             >
               <option value="">{t('settingsPage.relationshipPlaceholder')}</option>
               <option value="family">{t('settingsPage.relFamily')}</option>
@@ -565,85 +699,76 @@ export default function AccountSettingsPage() {
           type="button"
           onClick={() => void handleSaveEmergency()}
           disabled={profileLoading || saveEmergencyLoading}
-          className="home-btn-primary mt-6 disabled:cursor-not-allowed disabled:opacity-60"
+          className={cn(savedBtnClass, 'mt-5')}
         >
           {saveEmergencyLoading ? t('settingsPage.saving') : t('settingsPage.saveChanges')}
         </button>
-      </div>
+      </MyPageSection>
 
-      {/* Change Password - Collapsible */}
-      <div className="rounded-[30px] border border-slate-200/90 bg-white p-6 shadow-[0_4px_28px_-2px_rgba(15,23,42,0.07)] ring-1 ring-slate-900/[0.04]">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-              </svg>
-            </div>
-            {t('settingsPage.passwordTitle')}
-          </h2>
+      {/* Change Password */}
+      <MyPageSection
+        title={t('settingsPage.passwordTitle')}
+        trailing={
           <button
             type="button"
             onClick={() => setShowPasswordChange(!showPasswordChange)}
-            className="rounded-xl border border-slate-900 px-4 py-2 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-900 hover:text-white"
+            className={cn(
+              'inline-flex h-9 items-center justify-center rounded-xl border border-slate-300 bg-white px-4 text-[12px] font-semibold text-slate-900 transition-colors hover:bg-slate-50',
+              MYPAGE_FOCUS_RING,
+            )}
           >
             {showPasswordChange ? t('common.cancel') : t('settingsPage.changePassword')}
           </button>
-        </div>
-
+        }
+      >
         {showPasswordChange && (
-          <div className="space-y-4 pt-4 border-t border-white/20">
+          <div className="space-y-4">
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700">{t('settingsPage.currentPassword')}</label>
+              <label className="mb-2 block text-[13px] font-medium text-slate-700">{t('settingsPage.currentPassword')}</label>
               <input
                 type="password"
                 value={passwordData.currentPassword}
                 onChange={(e) => setPasswordData({ ...passwordData, currentPassword: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-white/60 focus:bg-white"
+                className={inputClass}
               />
             </div>
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700">{t('settingsPage.newPassword')}</label>
+              <label className="mb-2 block text-[13px] font-medium text-slate-700">{t('settingsPage.newPassword')}</label>
               <input
                 type="password"
                 value={passwordData.newPassword}
                 onChange={(e) => setPasswordData({ ...passwordData, newPassword: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-white/60 focus:bg-white"
+                className={inputClass}
               />
-              <p className="mt-1 text-xs text-slate-500">{t('settingsPage.passwordHint')}</p>
+              <p className="mt-1 text-[11px] text-slate-500">{t('settingsPage.passwordHint')}</p>
             </div>
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700">{t('settingsPage.confirmPassword')}</label>
+              <label className="mb-2 block text-[13px] font-medium text-slate-700">{t('settingsPage.confirmPassword')}</label>
               <input
                 type="password"
                 value={passwordData.confirmPassword}
                 onChange={(e) => setPasswordData({ ...passwordData, confirmPassword: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-white/60 focus:bg-white"
+                className={inputClass}
               />
             </div>
             <button
               type="button"
               onClick={() => void handleUpdatePassword()}
               disabled={passwordLoading}
-              className="home-btn-primary disabled:cursor-not-allowed disabled:opacity-60"
+              className={savedBtnClass}
             >
               {passwordLoading ? t('settingsPage.saving') : t('settingsPage.updatePasswordBtn')}
             </button>
           </div>
         )}
-      </div>
+      </MyPageSection>
 
-      {/* Notification Preferences */}
-      <div className="rounded-[30px] border border-slate-200/90 bg-white p-6 shadow-[0_4px_28px_-2px_rgba(15,23,42,0.07)] ring-1 ring-slate-900/[0.04]">
-        <h2 className="mb-6 flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center">
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-            </svg>
-          </div>
-          {t('settingsPage.notificationPrefsTitle')}
-        </h2>
-        <div className="space-y-4">
+      {/* Notifications */}
+      <MyPageSection
+        title={t('settingsPage.notificationPrefsTitle')}
+        trailing={<SavedBadge visible={savedFlags.notifications} />}
+      >
+        <div className="space-y-3">
           {(
             [
               { key: 'email' as const, label: t('settingsPage.emailNotif'), description: t('settingsPage.emailNotifDesc') },
@@ -652,21 +777,22 @@ export default function AccountSettingsPage() {
               { key: 'marketing' as const, label: t('settingsPage.marketingNotif'), description: t('settingsPage.marketingNotifDesc') },
             ] as const
           ).map((item) => (
-            <div key={item.key} className="flex items-center justify-between rounded-xl border border-slate-200/80 p-4 transition-colors hover:border-slate-300/80">
-              <div>
-                <label className="text-sm font-medium text-slate-900 cursor-pointer">{item.label}</label>
-                <p className="text-xs text-slate-500 mt-0.5">{item.description}</p>
+            <div
+              key={item.key}
+              className="flex items-center justify-between gap-3 rounded-2xl border border-slate-200/80 p-4 transition-colors hover:border-slate-300"
+            >
+              <div className="min-w-0">
+                <label className="text-[13px] font-semibold text-slate-900">{item.label}</label>
+                <p className="mt-0.5 text-[12px] text-slate-500">{item.description}</p>
               </div>
-              <label className="relative inline-flex items-center cursor-pointer">
+              <label className="relative inline-flex cursor-pointer items-center">
                 <input
                   type="checkbox"
                   checked={notifications[item.key]}
-                  onChange={(e) =>
-                    setNotifications({ ...notifications, [item.key]: e.target.checked })
-                  }
-                  className="sr-only peer"
+                  onChange={(e) => setNotifications({ ...notifications, [item.key]: e.target.checked })}
+                  className="peer sr-only"
                 />
-                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                <div className="peer h-6 w-11 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-slate-900 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-slate-900/20" />
               </label>
             </div>
           ))}
@@ -674,12 +800,51 @@ export default function AccountSettingsPage() {
             type="button"
             onClick={() => void handleSaveNotifications()}
             disabled={profileLoading || saveNotifLoading}
-            className="home-btn-primary mt-6 disabled:cursor-not-allowed disabled:opacity-60"
+            className={cn(savedBtnClass, 'mt-3')}
           >
             {saveNotifLoading ? t('settingsPage.saving') : t('settingsPage.savePreferences')}
           </button>
         </div>
-      </div>
+      </MyPageSection>
+
+      {/* Connected Accounts */}
+      <MyPageSection title={t('mypage.settings.connectedAccountsTitle')}>
+        {identities.length > 0 ? (
+          <ul className="divide-y divide-slate-100">
+            {identities.map((id, idx) => (
+              <li key={`${id.provider}-${idx}`} className="flex items-center justify-between gap-3 py-3">
+                <div className="min-w-0">
+                  <p className="text-[13px] font-semibold capitalize text-slate-900">{id.provider}</p>
+                  {id.email ? <p className="truncate text-[12px] text-slate-500">{id.email}</p> : null}
+                </div>
+                <span className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-700">
+                  {t('mypage.common.toast.saved').replace('.', '')}
+                </span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-[13px] text-slate-500">{t('mypage.settings.connectedAccountsEmpty')}</p>
+        )}
+      </MyPageSection>
+
+      {/* Danger Zone */}
+      <MyPageSection
+        title={t('mypage.settings.dangerZoneTitle')}
+        description={t('mypage.settings.dangerZoneDescription')}
+        className="border-rose-200/60"
+      >
+        <button
+          type="button"
+          onClick={() => toast.message(t('mypage.common.toast.comingSoon'))}
+          className={cn(
+            'inline-flex h-10 items-center justify-center rounded-xl border border-rose-300 bg-white px-5 text-[13px] font-semibold text-rose-700 transition-colors hover:bg-rose-50',
+            MYPAGE_FOCUS_RING,
+          )}
+        >
+          {t('mypage.settings.deleteAccount')}
+        </button>
+      </MyPageSection>
     </div>
   );
 }

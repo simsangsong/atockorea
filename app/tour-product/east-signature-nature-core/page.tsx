@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { eastSignatureNatureCoreStaticProduct } from "@/components/product-tour-static/catalog/staticTourProductRegistry";
 import { EastSignatureNatureCoreDetailClient } from "@/components/product-tour-static/east-signature-nature-core/EastSignatureNatureCoreDetailClient";
+import { eastSignatureNatureCoreDetailViewModel } from "@/components/product-tour-static/east-signature-nature-core/eastSignatureNatureCoreDetailViewModel";
 import { eastSignatureNatureCoreProduct } from "@/components/product-tour-static/east-signature-nature-core/staticProductData";
+import { tourProductJsonLdScripts } from "@/lib/seo/tourProductJsonLd";
 import { createAnonServerClient } from "@/lib/supabase";
 import { getEastSignatureCheckoutContext } from "@/lib/tour-product/eastSignatureCheckoutContext";
 import { loadEastSignatureTourProductViewModelFromSupabase } from "@/lib/tour-product/loadTourProductPage";
@@ -37,5 +39,21 @@ export default async function EastSignatureNatureCoreProductPage() {
     console.error("[EastSignatureNatureCoreProductPage] checkout context unavailable", e);
   }
 
-  return <EastSignatureNatureCoreDetailClient viewModel={viewModel} checkout={checkout} />;
+  const jsonLdScripts = tourProductJsonLdScripts(
+    viewModel ?? eastSignatureNatureCoreDetailViewModel,
+    eastSignatureNatureCoreStaticProduct.slug,
+  );
+
+  return (
+    <>
+      {jsonLdScripts.map((json, idx) => (
+        <script
+          key={`tour-product-jsonld-${idx}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: json }}
+        />
+      ))}
+      <EastSignatureNatureCoreDetailClient viewModel={viewModel} checkout={checkout} />
+    </>
+  );
 }

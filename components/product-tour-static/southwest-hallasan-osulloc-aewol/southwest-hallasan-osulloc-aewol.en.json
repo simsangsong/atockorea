@@ -23,13 +23,13 @@
     ],
     "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
     "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
-    "priceLabel": "From US$58 per person",
+    "priceLabel": "From US$59 per person",
     "shortCardDescription": "A well-balanced Jeju southwest route linking a short Hallasan walk, volcanic coastline, Cheonjeyeon Waterfall, O’Sulloc tea fields, and Aewol Cafe Street."
   },
   "headlineLine1": "Jeju Southwest: Hallasan, Tea Fields, and Aewol",
   "headlineLine2": "Small Group Day Tour",
   "price": {
-    "amountLabel": "58",
+    "amountLabel": "59",
     "currency": "USD",
     "per": "person"
   },
@@ -766,7 +766,7 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
     "price": {
-      "amountLabel": "58",
+      "amountLabel": "59",
       "currency": "USD",
       "per": "person"
     }
@@ -898,7 +898,7 @@
       "rain_fit/indoor_ratio/weather_sensitivity": "Partly protected by lunch, O’Sulloc, and optional cafe time, but the mountain and coastal sections still react clearly to weather.",
       "local_culture_fit/shopping_fit": "Tea-culture context is present through O’Sulloc, but this is not a shopping-led or village-culture-led route.",
       "small_group_fit/private_fit/bus_fit": "Best operated as a small-group van route. The current structure is not designed as a private-only or large-bus product.",
-      "price_band/budget_fit/premium_fit": "At US$58, it is strong on value for money, positioned in the mid-price band rather than true premium.",
+      "price_band/budget_fit/premium_fit": "At US$59, it is strong on value for money, positioned in the mid-price band rather than true premium.",
       "hard_constraints": "Keep it conservative for very low mobility, stroller-heavy groups, and guests with tight same-day departure schedules."
     }
   },
@@ -927,7 +927,7 @@
           }
         },
         "price": {
-          "amountLabel": "58",
+          "amountLabel": "59",
           "currency": "USD",
           "per": "person"
         }
@@ -1725,7 +1725,7 @@
         "sticky_booking_bar": {
           "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
           "price": {
-            "amountLabel": "58",
+            "amountLabel": "59",
             "currency": "USD",
             "per": "person"
           }

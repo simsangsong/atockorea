@@ -23,13 +23,13 @@
     ],
     "heroImage": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
     "thumbnail": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80",
-    "priceLabel": "From US$58 per person",
+    "priceLabel": "From US$59 per person",
     "shortCardDescription": "A clearly structured East Jeju day route that starts with stone culture and volcanic context, moves through the coast and Seongsan Ilchulbong, and finishes with Ilchulland and Seongeup Folk Village for a more complete day."
   },
   "headlineLine1": "East Jeju Volcano, Coast",
   "headlineLine2": "and Folk Village Small Group Day Tour",
   "price": {
-    "amountLabel": "58",
+    "amountLabel": "59",
     "currency": "USD",
     "per": "person"
   },
@@ -765,7 +765,7 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
     "price": {
-      "amountLabel": "58",
+      "amountLabel": "59",
       "currency": "USD",
       "per": "person"
     }
@@ -1585,7 +1585,7 @@
       "component": "TourStickyBookingBar",
       "props": {
         "price": {
-          "amountLabel": "58",
+          "amountLabel": "59",
           "currency": "USD",
           "per": "person"
         }
@@ -1716,7 +1716,7 @@
       "same_day_flight_fit": "Possible only with a generous buffer, since the expected return window is still late enough to create risk for tight same-day departures.",
       "rain_fit/indoor_ratio/weather_sensitivity": "The route is more weather-flexible than a pure outdoor scenic tour because Ilchulland and some Stone Park content help, but the coast and crater are still exposed.",
       "small_group_fit/private_fit/bus_fit": "The route is optimized for small-group vehicle flow rather than being designed as a private-only or large-bus-first product.",
-      "price_band/budget_fit/premium_fit": "At US$58, it sits in the mid-price band while still offering strong perceived value for a first-time East Jeju day tour.",
+      "price_band/budget_fit/premium_fit": "At US$59, it sits in the mid-price band while still offering strong perceived value for a first-time East Jeju day tour.",
       "hard_constraints": "Monday operations are constrained by Jeju Stone Park closure, and the route is not ideal for travelers with very tight departure schedules or strict no-stairs requirements."
     }
   }

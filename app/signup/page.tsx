@@ -11,16 +11,23 @@ import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { useTranslations } from '@/lib/i18n';
 import { getPasswordStrengthTier, validateAppPassword } from '@/lib/password-policy';
 import { PasswordStrengthBar } from '@/components/auth/PasswordStrengthBar';
+import { PasswordToggle } from '@/components/auth/PasswordToggle';
+import { GoogleLogo } from '@/components/auth/GoogleLogo';
+import Logo from '@/components/Logo';
 import {
-  AUTH_BRAND_PILL,
+  AUTH_CHECKBOX,
   AUTH_FIELD_LABEL,
   AUTH_FORM_CARD,
-  AUTH_GOOGLE_CTA_BUTTON,
   AUTH_GOOGLE_PANEL,
   AUTH_INPUT,
+  AUTH_INPUT_WITH_TOGGLE,
   AUTH_LEAD,
+  AUTH_LINK,
+  AUTH_OTP_INPUT,
   AUTH_PAGE_BACKDROP,
   AUTH_PAGE_TITLE,
+  AUTH_REVEAL_ALT_SIGNIN_BUTTON,
+  AUTH_SUBTLE_LINK,
 } from '@/lib/mypage-ui';
 import { cn } from '@/lib/utils';
 
@@ -96,8 +103,27 @@ export default function SignUpPage() {
   const [countryDropdownOpen, setCountryDropdownOpen] = useState(false);
   const [countrySearch, setCountrySearch] = useState('');
   const [birthYearPickerOpen, setBirthYearPickerOpen] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  /** 이메일 섹션 접기/펼치기 — 기본은 접힘, Google OAuth 가입을 기본 경로로 유도 */
+  const [emailRevealed, setEmailRevealed] = useState(false);
   const countryDropdownRef = useRef<HTMLDivElement>(null);
   const birthYearPickerRef = useRef<HTMLDivElement>(null);
+
+  const getRedirectAfterAuth = (): string => {
+    if (typeof window === 'undefined') return '/mypage';
+    const params = new URLSearchParams(window.location.search);
+    const redirect = params.get('redirect');
+    if (
+      redirect &&
+      redirect.startsWith('/') &&
+      !redirect.startsWith('//') &&
+      !redirect.includes(':')
+    ) {
+      return redirect;
+    }
+    return '/mypage';
+  };
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -108,8 +134,18 @@ export default function SignUpPage() {
         setBirthYearPickerOpen(false);
       }
     }
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        setCountryDropdownOpen(false);
+        setBirthYearPickerOpen(false);
+      }
+    }
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, []);
 
   useEffect(() => {
@@ -340,7 +376,7 @@ export default function SignUpPage() {
       }
 
       setError('');
-      router.push('/mypage/dashboard');
+      router.push(getRedirectAfterAuth());
     } catch (e: any) {
       setError(e?.message ?? t('signup.errorGeneric'));
     } finally {
@@ -351,7 +387,8 @@ export default function SignUpPage() {
   const handleSocialLogin = async (provider: 'google') => {
     try {
       if (provider === 'google' && supabase) {
-        const redirectTo = `${window.location.origin}/auth/callback?next=/mypage`;
+        const next = getRedirectAfterAuth();
+        const redirectTo = `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`;
         const { data, error } = await supabase.auth.signInWithOAuth({
           provider: 'google',
           options: { redirectTo },
@@ -379,76 +416,33 @@ export default function SignUpPage() {
           <div className={cn(AUTH_FORM_CARD, 'px-6 py-8 sm:px-9 sm:py-10')}>
               <div className="text-center">
                 <div className="flex justify-center">
-                  <span className={AUTH_BRAND_PILL}>AtoC Korea</span>
+                  <Link
+                    href="/"
+                    className="inline-flex !min-h-0 !min-w-0 items-center justify-center rounded-2xl outline-none transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-neutral-900/15 focus-visible:ring-offset-2 focus-visible:ring-offset-[#e8eaef]"
+                    aria-label={t('nav.home')}
+                  >
+                    <Logo markOnly className="justify-center" variant="default" />
+                  </Link>
                 </div>
                 <h1 className={cn(AUTH_PAGE_TITLE, 'mt-7')}>{t('auth.signUp')}</h1>
                 <p className={AUTH_LEAD}>{t('signup.subtitle')}</p>
-                <div className="mt-8 rounded-2xl border border-slate-200/55 bg-white/70 px-3 py-4 ring-1 ring-slate-900/[0.04] sm:px-5">
-                  <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
-                    {t('signup.stepEmail')} · {t('signup.stepVerify')} · {t('signup.stepInfo')}
-                  </p>
-                  <div className="flex items-center justify-center gap-0.5 sm:gap-1">
-                    {(
-                      [
-                        { id: 'email' as const, label: t('signup.stepEmail') },
-                        { id: 'verify' as const, label: t('signup.stepVerify') },
-                        { id: 'info' as const, label: t('signup.stepInfo') },
-                      ]
-                    ).map((stepItem, i) => {
-                      const stepOrder = { email: 0, verify: 1, info: 2 } as const;
-                      const currentIdx = stepOrder[step];
-                      const itemIdx = stepOrder[stepItem.id];
-                      const isActive = itemIdx === currentIdx;
-                      const isDone = itemIdx < currentIdx;
-                      return (
-                        <div key={stepItem.id} className="flex items-center">
-                          {i > 0 && (
-                            <div
-                              className={cn(
-                                'mx-1 h-0.5 w-6 rounded-full transition-colors sm:mx-1.5 sm:w-10',
-                                isDone || isActive ? 'bg-slate-800' : 'bg-slate-200',
-                              )}
-                            />
-                          )}
-                          <div className="flex flex-col items-center gap-1">
-                            <div
-                              className={cn(
-                                'flex h-8 w-8 items-center justify-center rounded-full text-[12px] font-bold transition-all sm:h-9 sm:w-9',
-                                isActive
-                                  ? 'bg-slate-900 text-white shadow-[0_6px_16px_-4px_rgba(15,23,42,0.35)]'
-                                  : isDone
-                                    ? 'bg-slate-800 text-white'
-                                    : 'bg-slate-100 text-slate-500 ring-1 ring-slate-200/80',
-                              )}
-                            >
-                              {isDone ? (
-                                <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                                </svg>
-                              ) : (
-                                i + 1
-                              )}
-                            </div>
-                            <span
-                              className={cn(
-                                'max-w-[4.5rem] text-center text-[9px] font-semibold leading-tight sm:max-w-none sm:text-[10px]',
-                                isActive ? 'text-slate-900' : isDone ? 'text-slate-700' : 'text-slate-400',
-                              )}
-                            >
-                              {stepItem.label}
-                            </span>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
               </div>
 
               <div className="mt-9 space-y-8">
+            <p role="status" aria-live="polite" className="sr-only">
+              {step === 'email'
+                ? t('signup.stepEmailLabel')
+                : step === 'verify'
+                  ? t('signup.stepVerifyLabel')
+                  : t('signup.stepInfoLabel')}
+            </p>
             {error && (
-              <div className="flex items-center gap-2.5 rounded-2xl border border-red-200/80 bg-red-50/90 px-4 py-3.5 text-red-800 shadow-[0_8px_28px_-18px_rgba(220,38,38,0.2)]">
-                <svg className="h-5 w-5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <div
+                className="flex items-center gap-2.5 rounded-2xl border border-red-200/80 bg-red-50/90 px-4 py-3.5 text-red-800 shadow-[0_8px_28px_-18px_rgba(220,38,38,0.2)]"
+                role="alert"
+                aria-live="polite"
+              >
+                <svg className="h-5 w-5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path
                     fillRule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
@@ -468,84 +462,116 @@ export default function SignUpPage() {
                   <button
                     type="button"
                     onClick={() => handleSocialLogin('google')}
-                    className={AUTH_GOOGLE_CTA_BUTTON}
+                    className="home-btn-secondary home-btn-secondary--auth-google w-full gap-3 disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
-                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
-                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
-                    </svg>
+                    <GoogleLogo className="h-5 w-5 shrink-0" />
                     <span>{t('signup.continueWithGoogle')}</span>
                   </button>
-                  <p className="mt-3 text-center text-[12px] leading-relaxed text-slate-500">{t('signup.googleAccountHint')}</p>
+                  <p className="mt-3 text-center text-[12px] leading-relaxed text-slate-500">
+                    {t('signup.googleAccountHint')}
+                  </p>
                 </div>
 
-                <div className="relative py-0.5">
-                  <div className="absolute inset-0 flex items-center" aria-hidden>
-                    <div className="w-full border-t border-slate-200/70" />
-                  </div>
-                  <div className="relative flex justify-center">
-                    <span className="rounded-full bg-gradient-to-b from-white to-slate-50/90 px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500 ring-1 ring-slate-200/60">
-                      {t('auth.or')}
-                    </span>
-                  </div>
-                </div>
+                <AnimatePresence mode="wait" initial={false}>
+                  {emailRevealed ? (
+                    <motion.div
+                      key="email-methods"
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                      className="space-y-5"
+                    >
+                      <div className="relative py-0.5">
+                        <div className="absolute inset-0 flex items-center" aria-hidden>
+                          <div className="w-full border-t border-slate-200/70" />
+                        </div>
+                        <div className="relative flex justify-center">
+                          <span className="rounded-full bg-gradient-to-b from-white to-slate-50/90 px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500 ring-1 ring-slate-200/60">
+                            {t('auth.or')}
+                          </span>
+                        </div>
+                      </div>
 
-                <div>
-                  <label htmlFor="email" className={AUTH_FIELD_LABEL}>
-                    {t('signup.emailLoginId')} <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    required
-                    className={AUTH_INPUT}
-                    placeholder={t('signup.emailPlaceholder')}
-                  />
-                  {errors.email && <p className="mt-1 text-[12px] text-red-600">{errors.email}</p>}
-                </div>
-                <div className="flex items-center gap-3">
-                  <button
-                    type="button"
-                    onClick={handleSendVerificationCode}
-                    disabled={isSendingCode || !formData.email?.trim()}
-                    className="home-btn-primary min-w-0 flex-1 disabled:cursor-not-allowed disabled:opacity-60"
-                  >
-                    {isSendingCode ? t('signup.sending') : t('signup.sendCode')}
-                  </button>
-                  {countdown > 0 && (
-                    <div className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-slate-200/80 bg-slate-50/90 px-3 py-2 text-[13px] shadow-sm">
-                      <span className="text-slate-600">{t('signup.resendIn')}</span>
-                      <span className="min-w-[2.75ch] text-right text-lg font-bold tabular-nums text-slate-900">{countdown}s</span>
-                    </div>
+                      <div>
+                        <label htmlFor="email" className={AUTH_FIELD_LABEL}>
+                          {t('signup.emailLoginId')} <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          required
+                          autoFocus
+                          className={AUTH_INPUT}
+                          placeholder={t('signup.emailPlaceholder')}
+                        />
+                        {errors.email && <p className="mt-1 text-[12px] text-red-600">{errors.email}</p>}
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <button
+                          type="button"
+                          onClick={handleSendVerificationCode}
+                          disabled={isSendingCode || !formData.email?.trim()}
+                          className="home-btn-primary min-w-0 flex-1 disabled:cursor-not-allowed disabled:opacity-60"
+                        >
+                          {isSendingCode ? t('signup.sending') : t('signup.sendCode')}
+                        </button>
+                        {countdown > 0 && (
+                          <div className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-slate-200/80 bg-slate-50/90 px-3 py-2 text-[13px] shadow-sm">
+                            <span className="text-slate-600">{t('signup.resendIn')}</span>
+                            <span className="min-w-[2.75ch] text-right text-lg font-bold tabular-nums text-slate-900">{countdown}s</span>
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="reveal-cta"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.25 }}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setEmailRevealed(true);
+                          setError(null);
+                        }}
+                        className={AUTH_REVEAL_ALT_SIGNIN_BUTTON}
+                      >
+                        {t('signup.signUpWithEmail')}
+                      </button>
+                    </motion.div>
                   )}
-                </div>
+                </AnimatePresence>
               </div>
             )}
 
             {step === 'verify' && (
               <div className="space-y-5">
                 <div>
-                  <label htmlFor="verificationCode" className="mb-2 block text-sm font-semibold text-slate-700">
+                  <label htmlFor="verificationCode" className={AUTH_FIELD_LABEL}>
                     {t('signup.verificationCode')} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     id="verificationCode"
+                    inputMode="numeric"
+                    autoComplete="one-time-code"
                     value={formData.verificationCode}
                     onChange={(e) => setFormData({ ...formData, verificationCode: e.target.value.replace(/\D/g, '').slice(0, 6) })}
                     maxLength={6}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 outline-none bg-white/80 text-slate-900 text-center text-2xl tracking-widest"
+                    className={AUTH_OTP_INPUT}
                     placeholder={t('signup.verificationPlaceholder')}
                   />
-                  {errors.verificationCode && <p className="mt-1 text-sm text-red-600">{errors.verificationCode}</p>}
-                  <p className="mt-2 text-center text-xs text-slate-500">
+                  {errors.verificationCode && <p className="mt-1 text-[12px] text-red-600">{errors.verificationCode}</p>}
+                  <p className="mt-2 text-center text-[12px] text-slate-500">
                     {t('signup.sentTo')} <span className="font-semibold text-slate-700">{formData.email}</span>
                   </p>
-                  <p className="mt-3 rounded-xl border border-slate-200/80 bg-slate-50/90 p-3 text-left text-xs leading-relaxed text-slate-600">
+                  <p className="mt-3 rounded-xl border border-slate-200/80 bg-slate-50/80 p-3 text-left text-[12px] leading-relaxed text-slate-600">
                     {t('signup.verifyLinkFallback')}
                   </p>
                 </div>
@@ -563,12 +589,12 @@ export default function SignUpPage() {
                   </button>
                 </div>
                 {countdown > 0 ? (
-                  <div className="flex items-center justify-center gap-2 text-sm text-slate-500">
+                  <div className="flex items-center justify-center gap-2 text-[13px] text-slate-500">
                     <span>{t('signup.resendIn')}</span>
-                    <span className="min-w-[3ch] text-lg font-bold tabular-nums text-blue-600">{countdown}s</span>
+                    <span className="min-w-[3ch] text-lg font-bold tabular-nums text-slate-900">{countdown}s</span>
                   </div>
                 ) : (
-                  <button type="button" onClick={handleSendVerificationCode} className="w-full text-sm font-medium text-blue-600 hover:text-blue-700">
+                  <button type="button" onClick={handleSendVerificationCode} className={cn(AUTH_SUBTLE_LINK, 'w-full text-[13px]')}>
                     {t('signup.resendCode')}
                   </button>
                 )}
@@ -603,16 +629,24 @@ export default function SignUpPage() {
                         <label htmlFor="password" className="mb-1.5 block text-[12px] font-semibold text-slate-700">
                           {t('signup.password')} <span className="text-red-500">*</span>
                         </label>
-                        <input
-                          type="password"
-                          id="password"
-                          value={formData.password}
-                          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                          required
-                          autoComplete="new-password"
-                          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-[14px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
-                          placeholder={t('signup.passwordHint')}
-                        />
+                        <div className="relative">
+                          <input
+                            type={showPassword ? 'text' : 'password'}
+                            id="password"
+                            value={formData.password}
+                            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                            required
+                            autoComplete="new-password"
+                            className={AUTH_INPUT_WITH_TOGGLE}
+                            placeholder={t('signup.passwordHint')}
+                          />
+                          <PasswordToggle
+                            show={showPassword}
+                            onToggle={() => setShowPassword((v) => !v)}
+                            showLabel={t('auth.showPassword')}
+                            hideLabel={t('auth.hidePassword')}
+                          />
+                        </div>
                         <PasswordStrengthBar
                           tier={getPasswordStrengthTier(formData.password)}
                           weakLabel={t('signup.passwordStrengthWeak')}
@@ -624,15 +658,23 @@ export default function SignUpPage() {
                         <label htmlFor="confirmPassword" className="mb-1.5 block text-[12px] font-semibold text-slate-700">
                           {t('signup.confirmPassword')} <span className="text-red-500">*</span>
                         </label>
-                        <input
-                          type="password"
-                          id="confirmPassword"
-                          value={formData.confirmPassword}
-                          onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-                          required
-                          autoComplete="new-password"
-                          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-[14px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
-                        />
+                        <div className="relative">
+                          <input
+                            type={showConfirmPassword ? 'text' : 'password'}
+                            id="confirmPassword"
+                            value={formData.confirmPassword}
+                            onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                            required
+                            autoComplete="new-password"
+                            className={AUTH_INPUT_WITH_TOGGLE}
+                          />
+                          <PasswordToggle
+                            show={showConfirmPassword}
+                            onToggle={() => setShowConfirmPassword((v) => !v)}
+                            showLabel={t('auth.showPassword')}
+                            hideLabel={t('auth.hidePassword')}
+                          />
+                        </div>
                         <PasswordStrengthBar
                           tier={getPasswordStrengthTier(formData.confirmPassword)}
                           weakLabel={t('signup.passwordStrengthWeak')}
@@ -660,56 +702,107 @@ export default function SignUpPage() {
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         required
-                        className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-[14px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
+                        className={AUTH_INPUT}
                         placeholder={t('signup.fullNamePlaceholder')}
                       />
                       {errors.fullName && <p className="mt-1 text-[12px] text-red-600">{errors.fullName}</p>}
                     </div>
                     <div className="grid gap-3 sm:grid-cols-2">
-                  <div ref={birthYearPickerRef}>
+                  <div ref={birthYearPickerRef} className="relative">
                     <label htmlFor="birthYear" className="mb-1.5 block text-[12px] font-semibold text-slate-700">
                     {t('signup.birthYear')} <span className="text-red-500">*</span>
                   </label>
                   <button
                     type="button"
                     id="birthYear"
-                    onClick={() => setBirthYearPickerOpen(true)}
-                    className="flex w-full items-center justify-between rounded-xl border border-slate-200 bg-white px-4 py-3 text-left text-[14px] text-slate-900 outline-none focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
+                    onClick={() => setBirthYearPickerOpen((o) => !o)}
+                    aria-haspopup="listbox"
+                    aria-expanded={birthYearPickerOpen}
+                    className={cn(
+                      AUTH_INPUT,
+                      'flex items-center justify-between text-left',
+                    )}
                   >
                     <span className={formData.birthYear ? 'text-slate-900' : 'text-slate-400'}>
                       {formData.birthYear || t('signup.birthYearExample', { year: CURRENT_YEAR - 30 })}
                     </span>
-                    <svg className="w-5 h-5 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    <svg className="w-5 h-5 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                   </button>
-                  {errors.birthYear && <p className="mt-1 text-sm text-red-600">{errors.birthYear}</p>}
+                  {errors.birthYear && <p className="mt-1 text-[12px] text-red-600">{errors.birthYear}</p>}
 
+                  {/* Desktop: anchored popover */}
+                  <AnimatePresence>
+                    {birthYearPickerOpen && (
+                      <motion.div
+                        key="birth-desktop"
+                        initial={{ opacity: 0, y: -6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -6 }}
+                        transition={{ duration: 0.18, ease: [0.4, 0, 0.2, 1] as const }}
+                        role="listbox"
+                        aria-label={t('signup.selectBirthYear')}
+                        className="absolute z-20 mt-1 hidden max-h-64 w-full overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_20px_50px_-20px_rgba(15,23,42,0.18)] md:block"
+                      >
+                        <div className="max-h-64 overflow-y-auto py-1">
+                          {BIRTH_YEARS.map((year) => {
+                            const isSelected = formData.birthYear === String(year);
+                            return (
+                              <button
+                                key={year}
+                                type="button"
+                                role="option"
+                                aria-selected={isSelected}
+                                onClick={() => {
+                                  setFormData((prev) => ({ ...prev, birthYear: String(year) }));
+                                  setBirthYearPickerOpen(false);
+                                }}
+                                className={cn(
+                                  'w-full px-4 py-2.5 text-left text-[14px] transition-colors',
+                                  isSelected ? 'bg-slate-900 font-semibold text-white' : 'text-slate-800 hover:bg-slate-50',
+                                )}
+                              >
+                                {year}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  {/* Mobile: full-width bottom sheet */}
                   <AnimatePresence>
                     {birthYearPickerOpen && (
                       <>
                         <motion.div
+                          key="birth-mobile-backdrop"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
                           transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] as const }}
-                          className="fixed inset-0 z-[100] bg-black/40 backdrop-blur-sm"
+                          className="fixed inset-0 z-[100] bg-black/40 backdrop-blur-sm md:hidden"
                           onClick={() => setBirthYearPickerOpen(false)}
                           aria-hidden
                         />
                         <motion.div
+                          key="birth-mobile-sheet"
                           initial={{ opacity: 0, y: 24 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 24 }}
                           transition={{ duration: 0.25, ease: [0.32, 0.72, 0, 1] as const }}
-                          className="fixed bottom-4 left-4 right-4 z-[101] flex max-h-[70vh] flex-col overflow-hidden rounded-[1.75rem] border border-white/25 bg-white/95 shadow-xl backdrop-blur-xl"
+                          role="dialog"
+                          aria-modal="true"
+                          aria-label={t('signup.selectBirthYear')}
+                          className="fixed bottom-4 left-4 right-4 z-[101] flex max-h-[70vh] flex-col overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-xl md:hidden"
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <div className="flex shrink-0 items-center justify-between border-b border-white/20 px-4 py-3">
+                          <div className="flex shrink-0 items-center justify-between border-b border-slate-200 px-4 py-3">
                             <span className="text-sm font-semibold text-slate-700">{t('signup.selectBirthYear')}</span>
-                            <button type="button" onClick={() => setBirthYearPickerOpen(false)} className="p-2 -m-2 rounded-lg hover:bg-slate-100 text-slate-500" aria-label={t('common.close')}>
-                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                            <button type="button" onClick={() => setBirthYearPickerOpen(false)} className="-m-2 rounded-lg p-2 text-slate-500 hover:bg-slate-100" aria-label={t('common.close')}>
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                             </button>
                           </div>
-                          <div className="overflow-y-auto overscroll-contain flex-1 min-h-0 py-2">
+                          <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain py-2">
                             {BIRTH_YEARS.map((year) => {
                               const isSelected = formData.birthYear === String(year);
                               return (
@@ -720,7 +813,10 @@ export default function SignUpPage() {
                                     setFormData((prev) => ({ ...prev, birthYear: String(year) }));
                                     setBirthYearPickerOpen(false);
                                   }}
-                                  className={`w-full px-4 py-3 text-left text-base transition-colors ${isSelected ? 'bg-blue-50/90 font-semibold text-blue-800' : 'text-slate-800 hover:bg-slate-50'}`}
+                                  className={cn(
+                                    'w-full px-4 py-3 text-left text-base transition-colors',
+                                    isSelected ? 'bg-slate-900 font-semibold text-white' : 'text-slate-800 hover:bg-slate-50',
+                                  )}
                                 >
                                   {year}
                                 </button>
@@ -730,7 +826,7 @@ export default function SignUpPage() {
                         </motion.div>
                       </>
                     )}
-                    </AnimatePresence>
+                  </AnimatePresence>
                   </div>
                   <div ref={countryDropdownRef} className="relative">
                     <label className="mb-1.5 block text-[12px] font-semibold text-slate-700">
@@ -739,35 +835,46 @@ export default function SignUpPage() {
                   <button
                     type="button"
                     onClick={() => setCountryDropdownOpen((o) => !o)}
-                    className="flex w-full items-center justify-between rounded-xl border border-slate-200 bg-white px-4 py-3 text-left text-[14px] text-slate-900 outline-none focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
+                    aria-haspopup="listbox"
+                    aria-expanded={countryDropdownOpen}
+                    className={cn(
+                      AUTH_INPUT,
+                      'flex items-center justify-between text-left',
+                    )}
                   >
                     <span className={formData.nationality ? 'text-slate-900' : 'text-slate-400'}>
                       {formData.nationality || t('signup.selectCountry')}
                     </span>
-                    <svg className="h-5 w-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    <svg className="h-5 w-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                   </button>
                   {countryDropdownOpen && (
-                    <div className="absolute z-20 mt-1 max-h-64 w-full overflow-hidden rounded-xl border border-white/25 bg-white/95 shadow-lg backdrop-blur-xl">
-                      <div className="border-b border-white/20 p-2">
+                    <div
+                      role="listbox"
+                      aria-label={t('signup.selectCountry')}
+                      className="absolute z-20 mt-1 max-h-64 w-full overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_20px_50px_-20px_rgba(15,23,42,0.18)]"
+                    >
+                      <div className="border-b border-slate-200 p-2">
                         <input
                           type="text"
                           value={countrySearch}
                           onChange={(e) => setCountrySearch(e.target.value)}
                           placeholder={t('signup.searchCountry')}
-                          className="w-full rounded-lg border border-slate-200/80 px-3 py-2 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30"
+                          className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-[13px] text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/12"
                         />
                       </div>
-                      <div className="overflow-y-auto max-h-52">
+                      <div className="max-h-52 overflow-y-auto">
                         {COUNTRY_LIST.filter((c) => c.name.toLowerCase().includes(countrySearch.toLowerCase().trim())).map((c) => (
                           <button
                             key={c.name}
                             type="button"
+                            role="option"
+                            aria-selected={formData.nationality === c.name}
                             onClick={() => {
                               setFormData((prev) => ({ ...prev, nationality: c.name, phone: c.dialCode + ' ' }));
                               setCountryDropdownOpen(false);
                               setCountrySearch('');
                             }}
-                            className="flex w-full items-center justify-between px-4 py-2.5 text-left text-sm hover:bg-blue-50/80"
+                            className="flex w-full items-center justify-between px-4 py-2.5 text-left text-[13px] text-slate-700 hover:bg-slate-50"
                           >
                             <span>{c.name}</span>
                             <span className="font-medium text-slate-500">{c.dialCode}</span>
@@ -791,7 +898,7 @@ export default function SignUpPage() {
                   <label htmlFor="phone" className="mb-1.5 block text-[12px] font-semibold text-slate-700">
                     {t('signup.phoneOptional')}
                   </label>
-                  <input type="tel" id="phone" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-[14px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10" placeholder={t('signup.phonePlaceholder')} />
+                  <input type="tel" id="phone" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className={AUTH_INPUT} placeholder={t('signup.phonePlaceholder')} />
                 </div>
                 <p className="mt-2 text-[11px] text-slate-500">{t('signup.otpHint')}</p>
                 <div className="mt-4 flex items-start gap-3">
@@ -800,12 +907,12 @@ export default function SignUpPage() {
                     id="terms-agree"
                     checked={agreedToTerms}
                     onChange={(e) => setAgreedToTerms(e.target.checked)}
-                    className="mt-1 h-4 w-4 shrink-0 rounded border-slate-300 bg-white text-blue-600 focus:ring-2 focus:ring-blue-500/30"
+                    className={AUTH_CHECKBOX}
                   />
-                  <label htmlFor="terms-agree" className="text-sm text-slate-700 leading-relaxed">
+                  <label htmlFor="terms-agree" className="text-[13px] leading-relaxed text-slate-700">
                     <span className="text-red-500">*</span>{' '}
                     {t('signup.agreeTermsCheckbox')}{' '}
-                    <Link href="/terms" className="font-medium text-blue-600 hover:text-blue-700" target="_blank" rel="noopener noreferrer">
+                    <Link href="/terms" className={AUTH_LINK} target="_blank" rel="noopener noreferrer">
                       {t('signup.termsLink')}
                     </Link>
                   </label>
@@ -816,12 +923,12 @@ export default function SignUpPage() {
                     id="privacy-agree"
                     checked={agreedToPrivacy}
                     onChange={(e) => setAgreedToPrivacy(e.target.checked)}
-                    className="mt-1 h-4 w-4 shrink-0 rounded border-slate-300 bg-white text-blue-600 focus:ring-2 focus:ring-blue-500/30"
+                    className={AUTH_CHECKBOX}
                   />
-                  <label htmlFor="privacy-agree" className="text-sm text-slate-700 leading-relaxed">
+                  <label htmlFor="privacy-agree" className="text-[13px] leading-relaxed text-slate-700">
                     <span className="text-red-500">*</span>{' '}
                     {t('signup.agreePrivacyCheckbox')}{' '}
-                    <Link href="/privacy" className="font-medium text-blue-600 hover:text-blue-700" target="_blank" rel="noopener noreferrer">
+                    <Link href="/privacy" className={AUTH_LINK} target="_blank" rel="noopener noreferrer">
                       {t('signup.privacyLink')}
                     </Link>
                   </label>
@@ -834,13 +941,10 @@ export default function SignUpPage() {
             )}
               </div>
 
-            <div className="mt-10 border-t border-neutral-400/45 pt-8 text-center">
+            <div className="mt-10 border-t border-slate-200 pt-8 text-center">
               <p className="text-[14px] text-slate-600">
                 {t('auth.alreadyHaveAccount')}{' '}
-                <Link
-                  href="/signin"
-                  className="font-semibold text-slate-900 underline decoration-slate-300 underline-offset-4 transition-colors hover:decoration-slate-900"
-                >
+                <Link href="/signin" className={AUTH_LINK}>
                   {t('auth.signIn')}
                 </Link>
               </p>

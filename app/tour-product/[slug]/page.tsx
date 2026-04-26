@@ -7,6 +7,7 @@ import {
   isStaticTourProductBundleRegistered,
 } from "@/components/product-tour-static/_shared/tourProductBundleRegistry";
 import { TourProductDetailClient } from "@/components/product-tour-static/_shared/TourProductDetailClient";
+import { tourProductJsonLdScripts } from "@/lib/seo/tourProductJsonLd";
 import { createAnonServerClient } from "@/lib/supabase";
 import { getTourProductCheckoutContext } from "@/lib/tour-product/eastSignatureCheckoutContext";
 import { loadTourProductViewModelBySlugFromSupabase } from "@/lib/tour-product/loadTourProductPage";
@@ -80,5 +81,18 @@ export default async function RegisteredTourProductPage({
     console.error("[RegisteredTourProductPage] checkout context unavailable", slug, e);
   }
 
-  return <TourProductDetailClient viewModel={viewModel} checkout={checkout} />;
+  const jsonLdScripts = tourProductJsonLdScripts(viewModel, slug);
+
+  return (
+    <>
+      {jsonLdScripts.map((json, idx) => (
+        <script
+          key={`tour-product-jsonld-${idx}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: json }}
+        />
+      ))}
+      <TourProductDetailClient viewModel={viewModel} checkout={checkout} tourProductSlug={slug} />
+    </>
+  );
 }

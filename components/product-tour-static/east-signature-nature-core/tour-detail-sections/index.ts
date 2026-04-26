@@ -8,8 +8,6 @@ export { TourAtmosphereGallery } from "./TourAtmosphereGallery";
 export type { TourAtmosphereGalleryProps } from "./TourAtmosphereGallery";
 export { TourTimelineSection } from "./TourTimelineSection";
 export type { TourTimelineSectionProps } from "./TourTimelineSection";
-export { TourDayFlowSection } from "./TourDayFlowSection";
-export type { TourDayFlowSectionProps } from "./TourDayFlowSection";
 export { TourFitSection } from "./TourFitSection";
 export type { TourFitSectionProps } from "./TourFitSection";
 export { TourPracticalDetails } from "./TourPracticalDetails";

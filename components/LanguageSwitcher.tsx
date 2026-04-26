@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { useI18n, Locale } from '@/lib/i18n';
-import { CANONICAL_EAST_SIGNATURE_PRODUCT_PATH } from '@/lib/tour-consumer-visibility';
 import { cn } from '@/lib/utils';
 
 const localeFlags: Record<Locale, string> = {
@@ -72,24 +71,20 @@ export default function LanguageSwitcher({ premiumTourDetail = false }: Language
     ];
     document.cookie = cookieParts.join('; ');
 
-    /** 이 페이지는 `app/tour-product/...`만 존재 — 접두 `/ko/...` 경로는 404. 쿠키만 바꾸고 같은 URL에서 RSC 갱신 */
+    /**
+     * `app/tour-product/[slug]` is root-only (no `app/[locale]/tour-product/...`).
+     * Do not `router.push` to `/${lang}/tour-product/...` — that fights middleware
+     * and can cause redirect churn. Cookie + RSC `refresh` only.
+     */
     const pathOnly = pathname.split('?')[0];
     const pathSegments = pathOnly.split('/').filter(Boolean);
     const withoutLocalePrefix =
       pathSegments[0] && routeLocales.includes(pathSegments[0] as RouteLocale)
         ? '/' + pathSegments.slice(1).join('/')
         : pathOnly;
-    if (withoutLocalePrefix === CANONICAL_EAST_SIGNATURE_PRODUCT_PATH) {
-      const search = searchParams?.toString();
-      const target = search
-        ? `${CANONICAL_EAST_SIGNATURE_PRODUCT_PATH}?${search}`
-        : CANONICAL_EAST_SIGNATURE_PRODUCT_PATH;
+    if (/^\/tour-product\/[^/]+\/?$/.test(withoutLocalePrefix)) {
       setTimeout(() => {
-        if (pathOnly !== CANONICAL_EAST_SIGNATURE_PRODUCT_PATH) {
-          router.replace(target);
-        } else {
-          router.refresh();
-        }
+        router.refresh();
       }, 0);
       return;
     }

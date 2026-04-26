@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
@@ -10,6 +11,17 @@ import { supabase } from '@/lib/supabase';
 import { useCurrencyOptional } from '@/lib/currency';
 import { BookingTimelineSection } from '@/components/tour/BookingTimelineSection';
 import { analytics } from '@/src/design/analytics';
+import { CheckoutChatAppSelect } from '@/components/checkout/CheckoutChatAppSelect';
+import {
+  AUTH_FIELD_LABEL,
+  AUTH_INPUT,
+  MYPAGE_FOCUS_RING,
+  MYPAGE_SECTION_TITLE,
+  MYPAGE_SHELL,
+  MYPAGE_SKELETON_BLOCK,
+  mypagePageCard,
+} from '@/lib/mypage-ui';
+import { cn } from '@/lib/utils';
 
 interface BookingData {
   tourId: number;
@@ -30,6 +42,32 @@ interface CustomerInfo {
   chatAppContact: string;
 }
 
+const inputError = (err: boolean) =>
+  err ? 'border-red-400 bg-red-50/60' : 'border-slate-200';
+
+const premiumIconShell =
+  'flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-slate-900 text-white shadow-[0_6px_16px_-6px_rgba(15,23,42,0.35)]';
+
+const primaryCtaClass =
+  'inline-flex w-full min-h-[48px] items-center justify-center gap-2 rounded-md px-5 text-base font-semibold text-white transition-all shadow-lg outline-none disabled:pointer-events-none disabled:opacity-50 bg-foreground hover:bg-foreground/90 hover:shadow-xl focus-visible:border focus-visible:ring-[3px] focus-visible:ring-ring/50';
+
+function CheckoutPageSkeleton() {
+  return (
+    <div className="space-y-4">
+      <div className={MYPAGE_SKELETON_BLOCK} style={{ height: 120 }} />
+      <div className="grid gap-4 lg:grid-cols-3">
+        <div className="space-y-3 lg:col-span-2">
+          <div className={MYPAGE_SKELETON_BLOCK} style={{ height: 360 }} />
+        </div>
+        <div className="space-y-3">
+          <div className={MYPAGE_SKELETON_BLOCK} style={{ height: 200 }} />
+          <div className={MYPAGE_SKELETON_BLOCK} style={{ height: 120 }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function CheckoutPage() {
   const params = useParams();
   const router = useRouter();
@@ -38,6 +76,7 @@ export default function CheckoutPage() {
   const currencyCtx = useCurrencyOptional();
   const [bookingData, setBookingData] = useState<BookingData | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [paymentCancelled, setPaymentCancelled] = useState(false);
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo>({
     name: '',
     phone: '',
@@ -46,6 +85,12 @@ export default function CheckoutPage() {
     chatAppContact: '',
   });
   const [errors, setErrors] = useState<Partial<Record<keyof CustomerInfo, string>>>({});
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const sp = new URLSearchParams(window.location.search);
+    setPaymentCancelled(sp.get('cancelled') === 'true');
+  }, []);
 
   useEffect(() => {
     const stored = sessionStorage.getItem('bookingData');
@@ -63,7 +108,7 @@ export default function CheckoutPage() {
         analytics.checkoutStarted('unknown', (parsed as { pickupAreaLabel?: string })?.pickupAreaLabel ?? 'Unknown');
       } catch (error) {
         console.error('Error parsing booking data:', error);
-        alert('Invalid booking data. Please try again.');
+        toast.error('Invalid booking data. Please try again.');
         router.push(`/tour/${params.id}`);
       }
     } else {
@@ -133,7 +178,7 @@ export default function CheckoutPage() {
     if (!customerInfo.chatAppContact.trim()) {
       newErrors.chatAppContact = t('errors.pleaseEnter') + ' ' + t('tour.chatAppContact').toLowerCase();
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -145,24 +190,23 @@ export default function CheckoutPage() {
 
   const handlePayment = async () => {
     if (!bookingData) return;
-    
+
     if (!validateForm()) {
       return;
     }
-    
+
     setIsProcessing(true);
-    
+
     try {
       const paymentAmount = bookingData.totalPrice;
-      
-      // Create booking in database
+
       const bookingPayload = {
         tourId: bookingData.tourId.toString(),
         bookingDate: bookingData.date,
         numberOfGuests: bookingData.guests,
         pickupPointId: bookingData.pickup != null ? String(bookingData.pickup) : null,
-        finalPrice: bookingData.totalPrice, // Keep total price for booking record
-        paymentMethod: 'full',
+        finalPrice: bookingData.totalPrice,
+        paymentMethod: 'full' as const,
         preferredLanguage: bookingData.preferredLanguage || 'en',
         specialRequests: JSON.stringify({
           preferredChatApp: customerInfo.preferredChatApp,
@@ -200,18 +244,14 @@ export default function CheckoutPage() {
       }
 
       const bookingResult = await bookingResponse.json();
-      
-      console.log('✅ Booking created successfully in Supabase:', bookingResult.booking);
-      
-      // Save booking ID and customer info to sessionStorage for confirmation page
+
       const completeBookingData = {
         ...bookingData,
         bookingId: bookingResult.booking.id,
         customerInfo,
       };
       sessionStorage.setItem('bookingData', JSON.stringify(completeBookingData));
-      
-      // Redirect to Stripe checkout (full payment)
+
       try {
         const paymentResponse = await fetch('/api/stripe/checkout', {
           method: 'POST',
@@ -225,320 +265,343 @@ export default function CheckoutPage() {
             bookingData: completeBookingData,
           }),
         });
-        
+
         const paymentData = await paymentResponse.json();
-        
+
         if (paymentResponse.ok && paymentData.url) {
-          // Redirect to Stripe checkout
           window.location.href = paymentData.url;
           return;
         }
-        // API error or no URL (Stripe not configured / failed)
         if (!paymentResponse.ok) {
           console.error('Stripe checkout API error:', paymentResponse.status, paymentData);
           const msg = paymentData?.error || 'Payment could not be started.';
-          alert(`${msg} Your booking has been saved. Please try again or contact support.`);
+          toast.error(
+            `${msg} Your booking has been saved. Please try again or contact support.`,
+            { duration: 8000 },
+          );
         } else {
-          console.warn('Stripe checkout not available, staying on checkout page');
-          alert('Payment processing will be available soon. Your booking has been saved.');
+          toast.info('Payment processing will be available soon. Your booking has been saved.', { duration: 8000 });
         }
         setIsProcessing(false);
         return;
       } catch (error) {
         console.error('Payment error:', error);
-        // Even if payment fails, stay on checkout page
         setIsProcessing(false);
         return;
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Booking error:', error);
-      alert(error.message || 'Failed to process booking. Please try again.');
+      const msg = error instanceof Error ? error.message : 'Failed to process booking. Please try again.';
+      toast.error(msg);
       setIsProcessing(false);
     }
   };
 
   const handleInputChange = (field: keyof CustomerInfo, value: string) => {
-    // Phone: only allow digits and +
     if (field === 'phone') {
       value = value.replace(/[^0-9+]/g, '');
     }
-    setCustomerInfo(prev => ({ ...prev, [field]: value }));
-    // Clear error when user starts typing
+    setCustomerInfo((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) {
-      setErrors(prev => ({ ...prev, [field]: undefined }));
+      setErrors((prev) => ({ ...prev, [field]: undefined }));
     }
   };
 
   if (!bookingData) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
+      <div className="min-h-dvh min-h-screen bg-transparent text-slate-900">
         <Header />
-        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="max-w-2xl mx-auto">
-            <p className="text-center text-gray-600">Loading booking information...</p>
+        <main className="relative z-10 container mx-auto px-4 py-8 sm:px-6 md:py-12 lg:px-8">
+          <div className="mx-auto max-w-4xl">
+            <div className={MYPAGE_SHELL}>
+              <p className={cn(MYPAGE_SECTION_TITLE, 'sr-only')}>{copy.checkout.title}</p>
+              <CheckoutPageSkeleton />
+            </div>
           </div>
         </main>
         <Footer />
         <BottomNav />
+        <div className="h-16 md:hidden" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
+    <div className="min-h-dvh min-h-screen bg-transparent text-slate-900">
       <Header />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-        <div className="max-w-4xl mx-auto">
-          {/* Header Section */}
-          <div className="mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Complete Your Booking</h1>
-            <p className="text-gray-600">Please fill in your information to complete the reservation</p>
-          </div>
+      <main className="relative z-10 container mx-auto px-4 py-8 sm:px-6 md:py-12 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <div className={MYPAGE_SHELL}>
+            {paymentCancelled && (
+              <div
+                className="rounded-[22px] border border-amber-200/80 bg-amber-50/90 px-4 py-3 text-[13px] font-medium text-amber-950 shadow-sm ring-1 ring-amber-500/10"
+                role="status"
+              >
+                {copy.checkout.paymentCancelled}
+              </div>
+            )}
 
-          <div className="grid lg:grid-cols-3 gap-6">
-            {/* Left Column - Customer Information Form */}
-            <div className="lg:col-span-2 space-y-6">
-              {/* Customer Information Form */}
-              <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-6 md:p-8 transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-bold text-gray-900">Customer Information</h2>
-                    <p className="text-sm text-gray-500">Required fields <span className="text-red-500">*</span></p>
-                  </div>
-                </div>
-                <div className="space-y-5">
-                  {/* Name */}
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-800 mb-2">
-                      {t('booking.fullName')} <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      value={customerInfo.name}
-                      onChange={(e) => handleInputChange('name', e.target.value)}
-                      className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-gray-50/50 focus:bg-white ${
-                        errors.name ? 'border-red-400 bg-red-50/50' : 'border-gray-200'
-                      }`}
-                      placeholder={t('booking.enterFullName')}
-                    />
-                    {errors.name && <p className="mt-1.5 text-sm text-red-500 flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+            <div className="mb-2 px-0.5 sm:px-0">
+              <h1 className="text-2xl font-bold tracking-[-0.02em] text-slate-950 sm:text-3xl">
+                {copy.checkout.pageTitle}
+              </h1>
+              <p className="mt-1 text-[14px] font-medium text-slate-600">{copy.checkout.pageSubtitle}</p>
+            </div>
+
+            <div className="grid gap-4 lg:grid-cols-3 lg:gap-5">
+              <div className="space-y-4 lg:col-span-2">
+                <div className={cn(mypagePageCard(), 'p-5 sm:p-6')}>
+                  <div className="mb-5 flex items-center gap-3">
+                    <div className={premiumIconShell} aria-hidden>
+                      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                       </svg>
-                      {errors.name}
-                    </p>}
+                    </div>
+                    <div>
+                      <h2 className={MYPAGE_SECTION_TITLE}>{copy.checkout.customerInfoTitle}</h2>
+                      <p className="mt-0.5 text-[12px] font-medium text-slate-500">{copy.checkout.requiredFieldsHint}</p>
+                    </div>
                   </div>
 
-                  {/* Phone */}
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-800 mb-2">
-                      {t('booking.phone')} <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      value={customerInfo.phone}
-                      onChange={(e) => handleInputChange('phone', e.target.value)}
-                      className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-gray-50/50 focus:bg-white ${
-                        errors.phone ? 'border-red-400 bg-red-50/50' : 'border-gray-200'
-                      }`}
-                      placeholder={t('booking.enterPhone')}
-                    />
-                    {errors.phone && <p className="mt-1.5 text-sm text-red-500 flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                      </svg>
-                      {errors.phone}
-                    </p>}
-                  </div>
+                  <div className="space-y-4 sm:space-y-5">
+                    <div>
+                      <label className={AUTH_FIELD_LABEL} htmlFor="checkout-name">
+                        {t('booking.fullName')} <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        id="checkout-name"
+                        type="text"
+                        value={customerInfo.name}
+                        onChange={(e) => handleInputChange('name', e.target.value)}
+                        className={cn(
+                          AUTH_INPUT,
+                          inputError(Boolean(errors.name)),
+                          MYPAGE_FOCUS_RING,
+                        )}
+                        placeholder={t('booking.enterFullName')}
+                        autoComplete="name"
+                      />
+                      {errors.name && (
+                        <p className="mt-1.5 flex items-center gap-1 text-sm text-red-600">
+                          {errors.name}
+                        </p>
+                      )}
+                    </div>
 
-                  {/* Email */}
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-800 mb-2">
-                      {t('booking.email')} <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      value={customerInfo.email}
-                      onChange={(e) => handleInputChange('email', e.target.value)}
-                      className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-gray-50/50 focus:bg-white ${
-                        errors.email ? 'border-red-400 bg-red-50/50' : 'border-gray-200'
-                      }`}
-                      placeholder={t('booking.enterEmail')}
-                    />
-                    {errors.email && <p className="mt-1.5 text-sm text-red-500 flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                      </svg>
-                      {errors.email}
-                    </p>}
-                  </div>
+                    <div>
+                      <label className={AUTH_FIELD_LABEL} htmlFor="checkout-phone">
+                        {t('booking.phone')} <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        id="checkout-phone"
+                        type="tel"
+                        value={customerInfo.phone}
+                        onChange={(e) => handleInputChange('phone', e.target.value)}
+                        className={cn(
+                          AUTH_INPUT,
+                          inputError(Boolean(errors.phone)),
+                          MYPAGE_FOCUS_RING,
+                        )}
+                        placeholder={t('booking.enterPhone')}
+                        autoComplete="tel"
+                      />
+                      {errors.phone && (
+                        <p className="mt-1.5 flex items-center gap-1 text-sm text-red-600">
+                          {errors.phone}
+                        </p>
+                      )}
+                    </div>
 
-                  {/* Preferred Chat App */}
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-800 mb-2">
-                      {t('tour.preferredChatApp')} <span className="text-red-500">*</span>
-                    </label>
-                    <select
-                      value={customerInfo.preferredChatApp}
-                      onChange={(e) => handleInputChange('preferredChatApp', e.target.value)}
-                      className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-gray-50/50 focus:bg-white appearance-none ${
-                        errors.preferredChatApp ? 'border-red-400 bg-red-50/50' : 'border-gray-200'
-                      }`}
-                    >
-                      <option value="">{t('tour.pleaseSelect')}</option>
-                      <option value="kakao">KakaoTalk</option>
-                      <option value="line">LINE</option>
-                      <option value="wechat">WeChat</option>
-                      <option value="whatsapp">WhatsApp</option>
-                      <option value="telegram">Telegram</option>
-                      <option value="other">Other</option>
-                    </select>
-                    {errors.preferredChatApp && <p className="mt-1.5 text-sm text-red-500 flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                      </svg>
-                      {errors.preferredChatApp}
-                    </p>}
+                    <div>
+                      <label className={AUTH_FIELD_LABEL} htmlFor="checkout-email">
+                        {t('booking.email')} <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        id="checkout-email"
+                        type="email"
+                        value={customerInfo.email}
+                        onChange={(e) => handleInputChange('email', e.target.value)}
+                        className={cn(
+                          AUTH_INPUT,
+                          inputError(Boolean(errors.email)),
+                          MYPAGE_FOCUS_RING,
+                        )}
+                        placeholder={t('booking.enterEmail')}
+                        autoComplete="email"
+                      />
+                      {errors.email && (
+                        <p className="mt-1.5 flex items-center gap-1 text-sm text-red-600">
+                          {errors.email}
+                        </p>
+                      )}
+                    </div>
+
+                    <div>
+                      <label className={AUTH_FIELD_LABEL} htmlFor="checkout-chat-app">
+                        {t('tour.preferredChatApp')} <span className="text-red-500">*</span>
+                      </label>
+                      <CheckoutChatAppSelect
+                        id="checkout-chat-app"
+                        value={customerInfo.preferredChatApp}
+                        onValueChange={(v) => handleInputChange('preferredChatApp', v)}
+                        pleaseSelect={t('tour.pleaseSelect')}
+                        aria-invalid={Boolean(errors.preferredChatApp)}
+                      />
+                      {errors.preferredChatApp && (
+                        <p className="mt-1.5 flex items-center gap-1 text-sm text-red-600">
+                          {errors.preferredChatApp}
+                        </p>
+                      )}
+                    </div>
+
                     {customerInfo.preferredChatApp === 'line' && (
-                      <div className="mt-3 p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-sm flex items-start gap-2">
-                        <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                        </svg>
-                        <span>{t('tour.lineNotice')}</span>
+                      <div
+                        className={cn(
+                          'card-premium animate-in fade-in slide-in-from-top-1 border border-amber-200/60 bg-amber-50/90 p-4 duration-300',
+                        )}
+                        role="note"
+                      >
+                        <p className="text-[14px] leading-relaxed text-amber-950">
+                          <span className="font-bold">{copy.checkout.lineCalloutEmphasis}</span>
+                          <span className="font-normal">. </span>
+                          <span className="text-[13px] text-amber-900/90">{t('tour.lineNotice')}</span>
+                        </p>
                       </div>
                     )}
-                  </div>
 
-                  {/* Chat App Contact */}
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-800 mb-2">
-                      {t('tour.chatAppContact')} <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      value={customerInfo.chatAppContact}
-                      onChange={(e) => handleInputChange('chatAppContact', e.target.value)}
-                      className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all bg-gray-50/50 focus:bg-white ${
-                        errors.chatAppContact ? 'border-red-400 bg-red-50/50' : 'border-gray-200'
-                      }`}
-                      placeholder={customerInfo.preferredChatApp === 'line' ? t('tour.enterLineLink') : t('tour.enterChatAppId')}
-                    />
-                    {errors.chatAppContact && <p className="mt-1.5 text-sm text-red-500 flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                      </svg>
-                      {errors.chatAppContact}
-                    </p>}
+                    <div>
+                      {customerInfo.preferredChatApp === 'line' && (
+                        <p className="mb-1.5 text-[12px] font-medium text-slate-600">
+                          {copy.checkout.chatContactLineHelper}
+                        </p>
+                      )}
+                      <label className={AUTH_FIELD_LABEL} htmlFor="checkout-chat-contact">
+                        {t('tour.chatAppContact')} <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        id="checkout-chat-contact"
+                        type="text"
+                        value={customerInfo.chatAppContact}
+                        onChange={(e) => handleInputChange('chatAppContact', e.target.value)}
+                        className={cn(
+                          AUTH_INPUT,
+                          inputError(Boolean(errors.chatAppContact)),
+                          MYPAGE_FOCUS_RING,
+                        )}
+                        placeholder={
+                          customerInfo.preferredChatApp === 'line' ? t('tour.enterLineLink') : t('tour.enterChatAppId')
+                        }
+                        autoComplete="off"
+                      />
+                      {errors.chatAppContact && (
+                        <p className="mt-1.5 flex items-center gap-1 text-sm text-red-600">
+                          {errors.chatAppContact}
+                        </p>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Right Column - Order summary, timeline (server or static), reassurance, CTA */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-24 space-y-6">
-                {/* Order Summary */}
-                <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-200/60 p-6">
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
-                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                      </svg>
-                    </div>
-                    <h2 className="text-xl font-bold text-gray-900">{copy.checkout.orderSummary}</h2>
-                  </div>
-                  <div className="space-y-4 pb-4 border-b border-gray-200">
-                    <div className="flex justify-between items-start">
-                      <span className="text-sm text-gray-600 flex items-center gap-2">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              <div className="lg:col-span-1">
+                <div className="sticky top-20 space-y-4 lg:space-y-5">
+                  <div className={cn(mypagePageCard(), 'p-5 sm:p-6')}>
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className={premiumIconShell} aria-hidden>
+                        <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                         </svg>
-                        {t('booking.tourDate')}
-                      </span>
-                      <span className="text-sm font-semibold text-gray-900 text-right tabular-nums">
-                        {new Date(bookingData.date).toLocaleDateString('en-US', {
-                          weekday: 'short',
-                          month: 'short',
-                          day: 'numeric',
-                          year: 'numeric'
-                        })}
-                      </span>
+                      </div>
+                      <h2 className={MYPAGE_SECTION_TITLE}>{copy.checkout.orderSummary}</h2>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600 flex items-center gap-2">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                        {t('tour.guests')}
-                      </span>
-                      <span className="text-sm font-semibold text-gray-900 tabular-nums">{bookingData.guests}</span>
+                    <div className="space-y-3.5 border-b border-slate-200/80 pb-4">
+                      <div className="flex items-start justify-between gap-2">
+                        <span className="flex items-center gap-2 text-[13px] font-medium text-slate-600">
+                          <span className="text-slate-500" aria-hidden>
+                            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                          </span>
+                          {t('booking.tourDate')}
+                        </span>
+                        <span className="text-right text-[13px] font-semibold tabular-nums text-slate-900">
+                          {new Date(bookingData.date).toLocaleDateString('en-US', {
+                            weekday: 'short',
+                            month: 'short',
+                            day: 'numeric',
+                            year: 'numeric',
+                          })}
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="flex items-center gap-2 text-[13px] font-medium text-slate-600">
+                          <svg className="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                          </svg>
+                          {t('tour.guests')}
+                        </span>
+                        <span className="text-[13px] font-semibold tabular-nums text-slate-900">{bookingData.guests}</span>
+                      </div>
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="flex items-center gap-2 text-[13px] font-medium text-slate-600">
+                          <svg className="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                          </svg>
+                          {t('booking.paymentMethod')}
+                        </span>
+                        <span className="text-[13px] font-semibold text-slate-900">{t('booking.fullPayment')}</span>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600 flex items-center gap-2">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                        </svg>
-                        {t('booking.paymentMethod')}
-                      </span>
-                      <span className="text-sm font-semibold text-gray-900">
-                        {t('booking.fullPayment')}
-                      </span>
-                    </div>
-                  </div>
 
-                  {/* Price lines: base, subtotal, total */}
-                  <div className="mt-4 pt-4 border-t border-gray-200 space-y-2">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">{copy.checkout.basePrice}</span>
-                      <span className="font-medium text-gray-900 tabular-nums">{formatPrice(bookingData.totalPrice)}</span>
+                    <div className="mt-4 space-y-2 border-b border-slate-200/80 pb-4">
+                      <div className="flex justify-between text-[13px]">
+                        <span className="text-slate-600">{copy.checkout.basePrice}</span>
+                        <span className="font-semibold tabular-nums text-slate-900">{formatPrice(bookingData.totalPrice)}</span>
+                      </div>
                     </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">{copy.checkout.subtotal}</span>
-                      <span className="font-medium text-gray-900 tabular-nums">{formatPrice(bookingData.totalPrice)}</span>
-                    </div>
-                  </div>
 
-                  <div className="mt-5 pt-5 border-t-2 border-gray-200">
-                    <div className="flex justify-between items-center">
-                      <span className="text-base font-bold text-gray-900">{copy.checkout.total}</span>
-                      <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent tabular-nums">
+                    <div className="mt-4 flex items-center justify-between border-t-2 border-slate-200/90 pt-4">
+                      <span className="text-[15px] font-bold text-slate-900">{copy.checkout.total}</span>
+                      <span className="text-2xl font-bold tabular-nums text-slate-900">
                         {formatPrice(bookingData.totalPrice)}
                       </span>
                     </div>
                   </div>
+
+                  <BookingTimelineSection allowClientFallback={false} />
+
+                  <div className={cn(mypagePageCard(), 'p-4 sm:p-5')}>
+                    <h3 className="text-[15px] font-bold text-slate-900">{copy.checkout.secureCheckoutTitle}</h3>
+                    <p className="mt-1.5 text-[13px] leading-relaxed text-slate-600">{copy.checkout.secureCheckoutBody}</p>
+                    <p className="mt-2 text-[12px] font-medium text-slate-700">{copy.checkout.confirmationEmailNote}</p>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={handlePayment}
+                    disabled={
+                      isProcessing ||
+                      !customerInfo.name ||
+                      !customerInfo.phone ||
+                      !customerInfo.email ||
+                      !customerInfo.preferredChatApp ||
+                      !customerInfo.chatAppContact
+                    }
+                    className={primaryCtaClass}
+                  >
+                    {isProcessing ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <svg className="h-5 w-5 animate-spin" fill="none" viewBox="0 0 24 24" aria-hidden>
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                        </svg>
+                        {t('booking.processing')}
+                      </span>
+                    ) : (
+                      copy.checkout.completeBooking
+                    )}
+                  </button>
                 </div>
-
-                {/* Booking timeline: server-only or static copy (no client-computed deadlines) */}
-                <BookingTimelineSection allowClientFallback={false} />
-
-                {/* Reassurance box */}
-                <div className="rounded-2xl border border-gray-200/60 bg-white/90 backdrop-blur-sm p-5 shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
-                  <h3 className="text-base font-bold text-gray-900 mb-2">{copy.checkout.secureCheckoutTitle}</h3>
-                  <p className="text-sm text-gray-600">{copy.checkout.secureCheckoutBody}</p>
-                  <p className="mt-3 text-sm font-medium text-gray-800">{copy.checkout.confirmationEmailNote}</p>
-                </div>
-
-                {/* Primary CTA */}
-                <button
-                  onClick={handlePayment}
-                  disabled={isProcessing || !customerInfo.name || !customerInfo.phone || !customerInfo.email || !customerInfo.preferredChatApp || !customerInfo.chatAppContact}
-                  className="w-full min-h-[44px] py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-bold rounded-xl transition-all shadow-[0_4px_12px_rgba(37,99,235,0.4)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.5)] text-lg transform hover:-translate-y-0.5 disabled:transform-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                >
-                  {isProcessing ? (
-                    <span className="flex items-center justify-center gap-2">
-                      <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      {t('booking.processing')}
-                    </span>
-                  ) : copy.checkout.completeBooking}
-                </button>
               </div>
             </div>
           </div>
@@ -550,4 +613,3 @@ export default function CheckoutPage() {
     </div>
   );
 }
-

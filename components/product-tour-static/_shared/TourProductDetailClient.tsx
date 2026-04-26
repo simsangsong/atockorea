@@ -1,12 +1,13 @@
 "use client";
 
+import { useMemo, useState } from "react";
+
 import type { TourProductDetailViewModel } from "./tourProductFullPageJsonTypes";
 import type { TourProductCheckoutContext } from "@/lib/tour-product/eastSignatureCheckoutContext";
 import {
   TourAtAGlance,
   TourAtmosphereGallery,
   TourBookingSupportSection,
-  TourDayFlowSection,
   TourFaqSection,
   TourFitSection,
   TourHeroSection,
@@ -16,10 +17,14 @@ import {
   TourTabsNav,
   TourTimelineSection,
 } from "@/components/product-tour-static/east-signature-nature-core/tour-detail-sections";
+import { TourProductAiAssistantWidget } from "@/components/product-tour-static/_shared/TourProductAiAssistantWidget";
+import { pickAssistantQuickChipsFromViewModel } from "@/lib/tour-product/assistantQuickChips";
 
 export type TourProductDetailClientProps = {
   viewModel: TourProductDetailViewModel;
   checkout?: TourProductCheckoutContext | null;
+  /** Static tour product slug (matches `tour_product_full_page` / registry). */
+  tourProductSlug: string;
 };
 
 /**
@@ -30,8 +35,15 @@ export type TourProductDetailClientProps = {
  * `app/tour-product/[slug]/page.tsx`; existing East / Jeju pages continue to
  * render through their slug-specific clients until migrated.
  */
-export function TourProductDetailClient({ viewModel, checkout }: TourProductDetailClientProps) {
+export function TourProductDetailClient({ viewModel, checkout, tourProductSlug }: TourProductDetailClientProps) {
   const vm = viewModel;
+  const hasRouteVariants = Array.isArray(vm.routeVariants) && vm.routeVariants.length > 0;
+  const [selectedPortIndex, setSelectedPortIndex] = useState(0);
+  const selectedPortLabel = hasRouteVariants
+    ? vm.routeVariants?.[Math.min(selectedPortIndex, (vm.routeVariants?.length ?? 1) - 1)]?.title
+    : undefined;
+  const productTitle = `${vm.headlineLine1} ${vm.headlineLine2}`.replace(/\s+/g, " ").trim();
+  const supportQuickChips = useMemo(() => pickAssistantQuickChipsFromViewModel(vm, 4), [vm]);
   return (
     <div className="tour-product-v2-static-root min-h-screen bg-background">
       <main>
@@ -52,17 +64,13 @@ export function TourProductDetailClient({ viewModel, checkout }: TourProductDeta
 
         <section id="itinerary" className="bg-mist-blue">
           <div className="mx-auto max-w-xl px-5 py-12">
-            <TourTimelineSection itineraryStops={vm.itineraryStops} sectionUi={vm.sectionUi} />
-          </div>
-        </section>
-
-        <section className="bg-cloud-gray">
-          <div className="mx-auto max-w-xl px-5 py-12">
-            <TourDayFlowSection
-              routeFlowStops={vm.routeFlowStops}
-              routePhases={vm.routePhases}
-              routeShapeIntro={vm.routeShapeIntro}
+            <TourTimelineSection
+              itineraryStops={vm.itineraryStops}
               sectionUi={vm.sectionUi}
+              pickup_dropoff={vm.pickup_dropoff}
+              routeVariants={vm.routeVariants}
+              selectedPortIndex={selectedPortIndex}
+              onPortChange={setSelectedPortIndex}
             />
           </div>
         </section>
@@ -111,7 +119,18 @@ export function TourProductDetailClient({ viewModel, checkout }: TourProductDeta
         </section>
       </main>
 
-      <TourStickyBookingBar price={vm.price} checkout={checkout} />
+      <TourStickyBookingBar
+        price={vm.price}
+        checkout={checkout}
+        selectedPortLabel={selectedPortLabel}
+        sectionUi={vm.sectionUi}
+      />
+
+      <TourProductAiAssistantWidget
+        tourProductSlug={tourProductSlug}
+        productTitle={productTitle}
+        supportQuickChips={supportQuickChips}
+      />
     </div>
   );
 }

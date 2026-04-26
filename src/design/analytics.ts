@@ -35,8 +35,26 @@ export type HomeCtaSource =
   | "final_cta_custom_join"
   | "final_cta_browse_styles";
 
+/** Standalone `/match` page — funnel events distinct from the in-page home planner flow. */
+export type MatchPageOutcome = "matched" | "no_match" | "error";
+
 export const analytics = {
   homeCtaClick: (payload: { source: HomeCtaSource }) => trackEvent("home_cta_click", payload),
+
+  matchPageSubmit: (payload: { textLength: number; locale: string }) =>
+    trackEvent("match_page_submit", payload),
+
+  matchPageResultView: (payload: {
+    outcome: MatchPageOutcome;
+    winnerId: string | null;
+    matchedCount: number;
+    noMatchReason: string | null;
+  }) => trackEvent("match_page_result_view", payload),
+
+  matchPageWinnerClick: (payload: { winnerId: string; destinationHref: string }) =>
+    trackEvent("match_page_winner_click", payload),
+
+  matchPageRefine: () => trackEvent("match_page_refine", {}),
 
   heroFormStart: (pickupAreaLabel?: string) =>
     trackEvent("hero_form_start", { pickupAreaLabel }),

@@ -42,6 +42,13 @@ export const FLAGSHIP_TOUR_PRODUCT_PATHS: Readonly<Record<string, string>> = Obj
   [CANONICAL_EAST_JEJU_SIGNATURE_SMALL_GROUP_SLUG]: CANONICAL_EAST_SIGNATURE_PRODUCT_PATH,
   [CANONICAL_JEJU_GRAND_CATALOG_SLUG]: CANONICAL_JEJU_GRAND_PRODUCT_PATH,
   [CANONICAL_SOUTHWEST_CATALOG_SLUG]: CANONICAL_SOUTHWEST_PRODUCT_PATH,
+  "south-jeju-classic-bus-tour": "/tour-product/south-jeju-classic-bus-tour",
+  "southwest-jeju-scenic-bus-tour": "/tour-product/southwest-jeju-scenic-bus-tour",
+  "east-jeju-classic-bus-tour": "/tour-product/east-jeju-classic-bus-tour",
+  "jeju-cruise-shore-excursion-bus-tour": "/tour-product/jeju-cruise-shore-excursion-bus-tour",
+  "jeju-cruise-shore-excursion-small-group-tour": "/tour-product/jeju-cruise-shore-excursion-small-group-tour",
+  "busan-top-attractions-authentic-one-day-tour": "/tour-product/busan-top-attractions-authentic-one-day-tour",
+  "busan-city-tour-shore-excursion-cruise-guests": "/tour-product/busan-city-tour-shore-excursion-cruise-guests",
 });
 
 /** Returns the `/tour-product/[slug]` path when the row should redirect away from `/tour/[id]`. */
@@ -77,10 +84,10 @@ export const CONSUMER_BLOCKED_TOUR_IDS = new Set<string>([
  */
 export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   "busan-top-attractions-authentic-one-day-guided-tour",
-  "busan-city-tour-shore-excursion-cruise-guests",
   "jeju-southern-top-unesco-spots-bus-tour",
   "jeju-island-full-day-tour-cruise-passengers",
   "jeju-eastern-unesco-spots-bus-tour",
+  "east-jeju-signature-small-group",
 ]);
 
 function normalizeTourIdForBlocklist(id: string): string {
@@ -152,8 +159,6 @@ export function isTourSlugHiddenFromPublicCatalog(slug: unknown): boolean {
   const s = slug.trim().toLowerCase();
   if (!s) return false;
   if (s === CANONICAL_EAST_SIGNATURE_CATALOG_SLUG) return false;
-  /** Live small-group row — same flagship product family; must stay on GET /api/tours cards. */
-  if (s === CANONICAL_EAST_JEJU_SIGNATURE_SMALL_GROUP_SLUG) return false;
   if (s === "jeju-east-small-group-template-preview") return true;
   if (matchesEastSignatureSlugSegment(s)) return true;
   if (isTourSlugBlockedFromConsumerSurfaces(s)) return true;

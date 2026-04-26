@@ -42,16 +42,47 @@ export const MYPAGE_SURFACE = cn(
 );
 
 /**
- * 로그인/회원가입 단일 카드 — 이중 테두리·중첩 셸 없이 한 겹만 사용.
+ * 사이드바 프로필·네비 — Private 카드 계열 음영(원본보다 약하지만 떠 보이게 유지)
+ */
+const MYPAGE_SIDEBAR_PANEL_BASE = cn(
+  "relative overflow-hidden rounded-home-card [isolation:isolate]",
+  "bg-[radial-gradient(62%_54%_at_18%_22%,rgba(186,230,253,0.55)_0%,transparent_60%),radial-gradient(58%_46%_at_82%_14%,rgba(221,214,254,0.45)_0%,transparent_62%),radial-gradient(60%_50%_at_88%_80%,rgba(187,247,208,0.4)_0%,transparent_60%),radial-gradient(56%_48%_at_12%_88%,rgba(254,215,170,0.35)_0%,transparent_60%),linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)]",
+  "shadow-[0_28px_58px_-18px_rgba(15,23,42,0.43),0_12px_32px_-14px_rgba(30,27,45,0.2),0_6px_18px_-8px_rgba(139,92,246,0.13),inset_0_1px_0_0_rgba(255,255,255,0.29)]",
+  "transition-all duration-300 ease-out",
+  "hover:shadow-[0_34px_68px_-18px_rgba(15,23,42,0.49),0_16px_40px_-14px_rgba(91,33,182,0.16),inset_0_1px_0_0_rgba(255,255,255,0.35)]",
+  "antialiased [font-synthesis:none]",
+);
+
+export const MYPAGE_SIDEBAR_PROFILE_CARD = MYPAGE_SIDEBAR_PANEL_BASE;
+export const MYPAGE_SIDEBAR_NAV = MYPAGE_SIDEBAR_PANEL_BASE;
+
+/** 사이드바 메뉴 라벨·프로필 이름 — 살짝 큰 스케일 + 타이트 트래킹 */
+export const MYPAGE_SIDEBAR_PRIMARY_TEXT = cn(
+  "text-[15px] md:text-[16px] font-semibold leading-snug tracking-[-0.03em] text-slate-950",
+);
+
+/** 이메일 등 보조 한 줄 */
+export const MYPAGE_SIDEBAR_SECONDARY_TEXT = cn(
+  "text-[12px] font-medium leading-snug tracking-[-0.015em] text-slate-600",
+);
+
+/** 사이드바 메뉴 아이콘 — 큰 히트 + 살짝 가는 스트로크 */
+export const MYPAGE_SIDEBAR_ICON = cn(
+  "h-5 w-5 shrink-0 md:h-[22px] md:w-[22px]",
+  "[&_path]:[stroke-width:1.25px]",
+);
+
+/**
+ * 로그인/회원가입/비밀번호 리셋/OAuth 콜백 공통 카드 — MyPage 랜딩 허브(MYPAGE_SURFACE_PAGE)와 동일한 백색 카드 언어.
+ * 배경 필드(AUTH_PAGE_BACKDROP)는 스튜디오 회색 그라디언트를 유지하여 로그인 전의 분리감은 보존(Hybrid).
  */
 export const AUTH_FORM_CARD = cn(
   "overflow-hidden [isolation:isolate]",
   "[transform:translateZ(0)] [-webkit-backface-visibility:hidden]",
-  "rounded-3xl sm:rounded-[1.85rem] md:rounded-[2rem]",
-  /* 밝은 그레이 패널 — main 필드(#e0~#c8)보다 밝아 구분, 전역 메시와도 다른 단일 면 */
-  "border border-white/85",
-  "bg-gradient-to-b from-[#f4f5f8] via-[#edeff4] to-[#e8eaef]",
-  "shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_0_0_1px_rgba(0,0,0,0.072),0_28px_60px_-34px_rgba(0,0,0,0.2),0_12px_28px_-16px_rgba(0,0,0,0.09)]",
+  "rounded-[30px] sm:rounded-[32px]",
+  "border border-slate-200/75 bg-white",
+  "shadow-[var(--home-shadow-neutral-card)]",
+  "ring-1 ring-white/80",
   "antialiased [font-synthesis:none]",
 );
 
@@ -77,14 +108,18 @@ export const AUTH_BRAND_PILL = cn(
 export const AUTH_LEAD =
   "mx-auto mt-3 max-w-[22rem] text-center text-[15px] font-normal leading-[1.65] text-neutral-600";
 
-/** Google 블록 — 카드보다 살짝 밝은 그레이로만 구분 */
+/**
+ * Google 블록 — warm ivory(크림 페이퍼) 톤의 명확한 웜 팔레트로 재구성.
+ *   - bg: #faf5e6 (한 단계 더 또렷한 크림, 채도 상향)
+ *   - border: #e5d9bd (샌드 베이지 hairline, slate/stone 대비 확실히 웜)
+ *   - ring 제거: 흰색 ring 이 쿨 halo 를 만들어 border 가 쿨해 보이던 현상 해소
+ *   - shadow: 웜 소프트 섀도(황토기) + 내부 미세 하이라이트
+ */
 export const AUTH_GOOGLE_PANEL = cn(
   "relative overflow-hidden p-4",
-  "rounded-[1.75rem] sm:rounded-[2rem]",
-  "border border-white/75",
-  "[background-image:linear-gradient(165deg,#f8f9fb_0%,#f1f3f7_45%,#ebeef2_100%),radial-gradient(circle_at_1px_1px,rgba(82,82,82,0.045)_1px,transparent_0)]",
-  "[background-size:auto,17px_17px]",
-  "shadow-[inset_0_1px_0_rgba(255,255,255,0.55),0_0_0_1px_rgba(0,0,0,0.055),0_8px_24px_-16px_rgba(0,0,0,0.08)]",
+  "rounded-[1.5rem] sm:rounded-[1.75rem]",
+  "border border-[#e5d9bd] bg-[#faf5e6]",
+  "shadow-[inset_0_1px_0_rgba(255,252,240,0.9),0_6px_18px_-10px_rgba(120,95,45,0.18)]",
 );
 
 /**
@@ -99,25 +134,48 @@ export const AUTH_PAGE_BACKDROP = cn(
   "after:bg-[radial-gradient(ellipse_95%_72%_at_50%_-8%,rgba(255,255,255,0.22),transparent_60%)]",
 );
 
-export const AUTH_GOOGLE_CTA_BUTTON = cn(
-  "group flex w-full items-center justify-center gap-3",
-  "rounded-[1.35rem] sm:rounded-[1.5rem]",
-  "border border-white/90 bg-[#fbfbfc]",
-  "px-5 py-3.5 text-[14px] font-semibold text-neutral-900",
-  "shadow-[var(--home-shadow-btn-secondary)]",
-  "outline-none transition-all",
-  "hover:-translate-y-px hover:border-white hover:shadow-[0_16px_36px_-18px_rgba(0,0,0,0.14)] active:translate-y-0",
-  "focus-visible:ring-2 focus-visible:ring-neutral-900/12 focus-visible:ring-offset-2 focus-visible:ring-offset-[#d6d8df]",
-);
-
 export const AUTH_SEGMENTED =
-  "flex gap-1 rounded-2xl border border-white/70 bg-[#dfe2e8]/55 p-1.5 text-[13px] font-medium shadow-[inset_0_1px_2px_rgba(255,255,255,0.35),0_0_0_1px_rgba(0,0,0,0.045)]";
+  "flex gap-1 rounded-2xl border border-slate-200/70 bg-slate-100/70 p-1.5 text-[13px] font-medium shadow-[inset_0_1px_2px_rgba(255,255,255,0.55),0_0_0_1px_rgba(15,23,42,0.03)]";
 
 export const AUTH_FIELD_LABEL =
-  "mb-2 block text-[13px] font-medium tracking-tight text-neutral-700";
+  "mb-2 block text-[13px] font-medium tracking-tight text-slate-700";
 
 export const AUTH_INPUT =
-  "w-full rounded-2xl border border-neutral-200/95 bg-white px-4 py-3.5 text-[15px] text-neutral-900 outline-none transition-all placeholder:text-neutral-400/90 focus:border-neutral-800 focus:ring-2 focus:ring-neutral-900/10";
+  "w-full rounded-2xl border border-slate-200 bg-white px-4 py-3.5 text-[15px] text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/12";
+
+/** Auth 전용 비밀번호 show/hide 토글과 함께 쓸 때 오른쪽 안쪽 여백 */
+export const AUTH_INPUT_WITH_TOGGLE = cn(AUTH_INPUT, "pr-12");
+
+/** 6자리 OTP 코드 입력 — 중앙 정렬·큰 글자·widened tracking */
+export const AUTH_OTP_INPUT = cn(
+  AUTH_INPUT,
+  "text-center text-2xl font-semibold tracking-[0.45em]",
+);
+
+/** 체크박스 — 약관·개인정보 동의 등 (슬레이트 악센트로 통일) */
+export const AUTH_CHECKBOX =
+  "mt-1 h-4 w-4 shrink-0 rounded border-slate-300 bg-white text-slate-900 focus:ring-2 focus:ring-slate-900/20";
+
+/** 인라인 강조 링크 — 이용약관·개인정보·아이디 찾기·회원가입 링크 */
+export const AUTH_LINK =
+  "font-semibold text-slate-900 underline decoration-slate-300 underline-offset-4 transition-colors hover:decoration-slate-900";
+
+/** 톤 다운된 보조 링크 — "비밀번호로 로그인", "뒤로가기" 등 */
+export const AUTH_SUBTLE_LINK =
+  "font-medium text-slate-600 underline-offset-4 transition-colors hover:text-slate-900 hover:underline";
+
+/**
+ * "다른 방법으로 로그인" 펼치기 버튼 — Google 블록 아래 접힌 상태의 CTA.
+ * 백색 카드 내부에서 살짝 톤 다운된 secondary 버튼 느낌.
+ */
+export const AUTH_REVEAL_ALT_SIGNIN_BUTTON = cn(
+  "group flex w-full items-center justify-center gap-2",
+  "rounded-2xl border border-slate-200 bg-slate-50/80 px-5 py-3",
+  "text-[13px] font-semibold text-slate-700",
+  "outline-none transition-all",
+  "hover:-translate-y-px hover:border-slate-300 hover:bg-white hover:text-slate-900",
+  "focus-visible:ring-2 focus-visible:ring-slate-900/15 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
+);
 
 /* 타이포 — 컴팩트·대비 높은 네이비/슬레이트 */
 export const MYPAGE_TITLE =
@@ -153,3 +211,15 @@ export function mypageCard(className?: string) {
 export function authFormShell(className?: string) {
   return cn(AUTH_FORM_CARD, className);
 }
+
+/** 전 My Page 포커스 링 토큰. `focus-visible:` 컨텍스트에서 일관된 슬레이트 링을 제공한다. */
+export const MYPAGE_FOCUS_RING = cn(
+  'focus:outline-none',
+  'focus-visible:ring-2 focus-visible:ring-slate-900/35 focus-visible:ring-offset-2 focus-visible:ring-offset-white',
+);
+
+/** 리스트·카드 로딩 스켈레톤 한 줄. */
+export const MYPAGE_SKELETON_LINE = 'h-3 rounded-full bg-slate-200/80 animate-pulse';
+
+/** 카드 모양 스켈레톤 블록. */
+export const MYPAGE_SKELETON_BLOCK = 'rounded-2xl bg-slate-200/70 animate-pulse';

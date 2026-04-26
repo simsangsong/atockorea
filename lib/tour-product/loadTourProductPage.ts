@@ -150,6 +150,10 @@ export function mergeTourProductPageToViewModel(
       highlights: [],
     },
     sectionUi: mergeTourProductSectionUi(payload.sectionUi, page.locale),
+    ...(payload.pickup_dropoff != null ? { pickup_dropoff: payload.pickup_dropoff } : {}),
+    ...(Array.isArray(payload.routeVariants) && payload.routeVariants.length > 0
+      ? { routeVariants: payload.routeVariants }
+      : {}),
   };
 
   /** 정적 이스트 템플릿에서 `typeof vm`이 매우 좁음; DB/JSON 조립은 동일 스키마 런타임 보장 → 단언. */

@@ -33,9 +33,11 @@
 
 /**
  * `app/globals.css` applies 44×44px min touch targets to all buttons/links.
- * v0 uses compact chips and inline text controls — reset inside this subtree only.
+ * Only opt out for `.home-chip` (intentionally compact pill chips) and elements
+ * explicitly marked with `data-compact-control`. Everything else inside the home
+ * subtree keeps the global 44px tap-target floor (WCAG 2.5.5).
  */
-.home-v2-body-isolate :where(button, a) {
+.home-v2-body-isolate :where(.home-chip, [data-compact-control]) {
   min-height: unset;
   min-width: unset;
 }

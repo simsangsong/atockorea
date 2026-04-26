@@ -41,7 +41,9 @@ export async function GET(req: NextRequest) {
         *,
         tours (
           id,
-          title
+          slug,
+          title,
+          image_url
         )
       `)
       .order('created_at', { ascending: false })

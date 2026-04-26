@@ -99,7 +99,7 @@ export default function CheckoutPage() {
           <p className="text-center text-gray-600">Could not load tour. Try again from the tour page.</p>
           <button
             type="button"
-            onClick={() => router.push('/tours')}
+            onClick={() => router.push('/tours/list')}
             className="mx-auto mt-4 block px-4 py-2 bg-blue-600 text-white rounded-lg"
           >
             Browse tours

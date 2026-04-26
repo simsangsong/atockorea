@@ -2,6 +2,7 @@
 
 import { useCallback, useMemo, useRef, useState } from "react";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
 import { Star, ChevronRight, ChevronDown, Users, MapPin } from "lucide-react";
 import { useI18n, useTranslations } from "@/lib/i18n";
@@ -18,15 +19,31 @@ import { cn } from "@/lib/utils";
 /** Same split as legacy `HeroPremium` (calmer ATF). */
 const HERO_CHIP_PREVIEW_COUNT = 3;
 
+const VALID_DESTINATIONS: ReadonlyArray<HeroDestination> = ["jeju", "seoul", "busan"];
+
+function readDestinationFromParams(value: string | null): HeroDestination | null {
+  if (!value) return null;
+  const lower = value.toLowerCase();
+  return (VALID_DESTINATIONS as ReadonlyArray<string>).includes(lower)
+    ? (lower as HeroDestination)
+    : null;
+}
+
 export function HeroSection() {
   const t = useTranslations("home");
   const { locale } = useI18n();
   const { startInPageMatchFlow, phase: matchPhase } = useHomeV2Match();
+  const searchParams = useSearchParams();
 
-  const [destination, setDestination] = useState<HeroDestination>("jeju");
+  const initialDestination = useMemo(
+    () => readDestinationFromParams(searchParams?.get("destination") ?? null) ?? "jeju",
+    [searchParams],
+  );
+  const [destination, setDestination] = useState<HeroDestination>(initialDestination);
   const [intent, setIntent] = useState("");
   const [chipsExpanded, setChipsExpanded] = useState(false);
-  const intentInputRef = useRef<HTMLInputElement>(null);
+  const [intentExpanded, setIntentExpanded] = useState(false);
+  const intentInputRef = useRef<HTMLTextAreaElement>(null);
 
   const styleChipOptions = useMemo(
     () =>
@@ -186,17 +203,41 @@ export function HeroSection() {
 
             <div className="mb-7 md:mb-8">
               <div className="relative">
-                <input
+                {/*
+                 * Expandable intent field.
+                 * Collapsed (blur + empty)  : looks like a single-line input (h-12 / md:h-14).
+                 * Expanded  (focus or typed): grows downward into a multi-line drawer
+                 *                             so users can describe their trip in detail.
+                 * A <textarea> is used so the expanded state can hold real line breaks.
+                 * External callers still query via [data-home-hero-intent] (tag-neutral).
+                 */}
+                <textarea
                   id="home-v2-hero-intent"
                   ref={intentInputRef}
                   data-home-hero-intent
-                  type="text"
                   value={intent}
                   onChange={(e) => setIntent(e.target.value)}
+                  onFocus={() => setIntentExpanded(true)}
+                  onBlur={() => {
+                    if (!intent.trim()) setIntentExpanded(false);
+                  }}
+                  rows={1}
                   placeholder={t("premium.hero.inputPlaceholder")}
                   autoComplete="off"
                   aria-label={t("premium.hero.intentInputAria")}
-                  className="h-12 w-full rounded-2xl border border-slate-200/90 bg-white px-4 text-[15px] text-slate-800 shadow-[inset_0_1px_2px_rgba(15,23,42,0.04)] transition-[box-shadow,border-color] duration-200 placeholder:text-slate-400 focus:border-primary/35 focus:outline-none focus:ring-2 focus:ring-primary/15 md:h-14 md:text-base"
+                  className={cn(
+                    // Compact mobile typography so the long placeholder (EN is
+                    // the outlier at ~44 chars) fits on ~260–320px viewports
+                    // without horizontal clipping while collapsed. Placeholder
+                    // is rendered a touch smaller than the typed content, so
+                    // real user text stays comfortably readable at 12.5px while
+                    // the hint shrinks to 11.5px to avoid the trailing ellipsis
+                    // getting truncated. Desktop keeps the standard size.
+                    "w-full resize-none rounded-2xl border border-slate-200/90 bg-white px-3.5 text-[12.5px] leading-[1.45] tracking-[-0.012em] text-slate-800 shadow-[inset_0_1px_2px_rgba(15,23,42,0.04)] transition-[height,padding,box-shadow,border-color] duration-300 ease-out placeholder:text-[11.5px] placeholder:tracking-[-0.02em] placeholder:text-slate-400 focus:border-primary/35 focus:outline-none focus:ring-2 focus:ring-primary/15 md:px-4 md:text-[15px] md:leading-[1.5] md:tracking-normal md:placeholder:text-[15px] md:placeholder:tracking-normal",
+                    intentExpanded
+                      ? "h-32 overflow-auto py-3 md:h-40 md:py-4"
+                      : "h-12 overflow-hidden py-[14.75px] md:h-14 md:py-[17px]",
+                  )}
                 />
               </div>
             </div>
@@ -316,7 +357,11 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="mt-6 md:mt-8 flex flex-wrap items-center justify-center gap-3 md:gap-6">
+        <p className="mt-5 mx-auto max-w-md text-center text-[11px] md:text-[12.5px] font-medium leading-snug text-slate-500">
+          {t("premium.v2.hero.licensedTrustStrip")}
+        </p>
+
+        <div className="mt-3 md:mt-4 flex flex-wrap items-center justify-center gap-3 md:gap-6">
           <div className="flex items-center gap-1.5">
             <Star
               className="w-3 h-3 md:w-3.5 md:h-3.5 fill-amber-400 text-amber-400"

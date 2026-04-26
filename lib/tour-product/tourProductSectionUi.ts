@@ -39,6 +39,8 @@ export type TourProductSectionUiV1 = {
   bookingSupportSubtitle: string;
   bookingAfterTitle: string;
   bookingAfterSubtitle: string;
+  /** Shown when `bookingSupportSteps` is empty (data not configured). */
+  bookingSupportEmptyHint?: string;
   faqTitle: string;
   faqSubtitle: string;
   faqShowFewer: string;
@@ -62,6 +64,19 @@ export type TourProductSectionUiV1 = {
   reviewsCtaTitle: string;
   reviewsCtaSubtitle: string;
   reviewsWriteReview: string;
+  /** Optional pickup/drop-off timeline copy; EN defaults used when omitted. */
+  pickupCardTitle?: string;
+  /** `{count}` placeholder */
+  pickupLocationsTemplate?: string;
+  pickupCategoryLabel?: string;
+  dropoffCardTitle?: string;
+  dropoffApproxLabel?: string;
+  dropoffPointBadge?: string;
+  dropoffLocationsTemplate?: string;
+  dropoffReturnNote?: string;
+  /** Optional port-selector copy used by cruise shore-excursion products. */
+  portSelectorEyebrow?: string;
+  portSelectorCtaPrefix?: string;
 };
 
 export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
@@ -99,9 +114,12 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
   seasonalTitle: "Seasonal variations",
   seasonalSubtitle: "How this route feels through the year.",
   bookingSupportTitle: "Booking & support",
-  bookingSupportSubtitle: "What to expect before, during, and after.",
+  bookingSupportSubtitle: "Add reachable contact at checkout, then your confirmation email, then your guide the day before.",
   bookingAfterTitle: "After booking",
-  bookingAfterSubtitle: "Support you receive before, during, and after",
+  bookingAfterSubtitle:
+    "At checkout, add a phone, WhatsApp, and LINE you actually use. You’ll get a confirmation email next, and the day before the tour your guide contacts you on WhatsApp, LINE, or phone.",
+  bookingSupportEmptyHint:
+    "Support steps for this product are not configured yet. Be sure the phone / WhatsApp / LINE you add at booking are ones you check.",
   faqTitle: "Questions",
   faqSubtitle: "The few questions that usually decide it.",
   faqShowFewer: "Show fewer",
@@ -121,6 +139,16 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
   reviewsCtaTitle: "Been on this tour?",
   reviewsCtaSubtitle: "Share your experience to help other travelers.",
   reviewsWriteReview: "Write a Review",
+  pickupCardTitle: "Pickup",
+  pickupLocationsTemplate: "{count} locations",
+  pickupCategoryLabel: "Hotel pickup",
+  dropoffCardTitle: "Drop-off",
+  dropoffApproxLabel: "approx.",
+  dropoffPointBadge: "Drop-off Point",
+  dropoffLocationsTemplate: "{count} drop-off locations",
+  dropoffReturnNote: "Return to pickup points available on request",
+  portSelectorEyebrow: "Choose your docking port",
+  portSelectorCtaPrefix: "Docking at",
 };
 
 /** 정적 번들 한국어 — DB `detail_payload.sectionUi` 없을 때 Jeju 등에서 사용 */
@@ -159,9 +187,12 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_KO: TourProductSectionUiV1 = {
   seasonalTitle: "계절별 느낌",
   seasonalSubtitle: "이 코스가 사계절에 어떻게 다가오는지.",
   bookingSupportTitle: "예약과 지원",
-  bookingSupportSubtitle: "예약 전·투어 중·이후에 무엇을 기대할 수 있는지.",
+  bookingSupportSubtitle: "예약 시 실제로 받는 연락처 → 예약 확정 메일 → 투어 전날 가이드 직접 연락 순서입니다.",
   bookingAfterTitle: "예약 이후",
-  bookingAfterSubtitle: "투어 전·중·후 받게 되는 지원",
+  bookingAfterSubtitle:
+    "예약할 때 먼저 꼭 확인하는 휴대폰·왓스앱·라인(또는 링크)을 남기세요. 이어서 예약 확정 메일이 가고, 투어 전날 가이드가 왓스앱·라인·전화로 직접 연락드립니다.",
+  bookingSupportEmptyHint:
+    "이 상품에 대한 단계 안내가 아직 없습니다. 예약 시 기재한 휴대폰/왓스앱/라인이 실제로 확인 가능한지 다시 점검해 주세요.",
   faqTitle: "자주 묻는 질문",
   faqSubtitle: "결정에 도움이 되는 핵심 질문들.",
   faqShowFewer: "접기",
@@ -219,9 +250,12 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_JA: TourProductSectionUiV1 = {
   seasonalTitle: "季節ごとの雰囲気",
   seasonalSubtitle: "一年を通じてこのルートがどう感じられるか。",
   bookingSupportTitle: "予約とサポート",
-  bookingSupportSubtitle: "前・中・後に何が届くか。",
+  bookingSupportSubtitle: "予約時の連絡先 → 予約確定メール → 前日のガイドからの直接連絡。",
   bookingAfterTitle: "予約後",
-  bookingAfterSubtitle: "ツアー前・中・後のサポート内容",
+  bookingAfterSubtitle:
+    "先に、普段使う番号・WhatsApp・LINE（ID・リンク）を登録してください。次に予約確定メール。ツアー前日、ガイドがWhatsApp・LINE・電話で直接連絡します。",
+  bookingSupportEmptyHint:
+    "手順のデータが未設定の場合があります。予約で入力した電話番号・WhatsApp・LINEが、実際に受け取れるかご確認ください。",
   faqTitle: "よくある質問",
   faqSubtitle: "決めるときに多い質問です。",
   faqShowFewer: "閉じる",
@@ -277,9 +311,12 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH: TourProductSectionUiV1 = {
   seasonalTitle: "四季感受",
   seasonalSubtitle: "这条路线在一年四季分别是什么体验。",
   bookingSupportTitle: "预订与支持",
-  bookingSupportSubtitle: "行前、行中、行后你会收到什么。",
+  bookingSupportSubtitle: "预定时留下能接到的联系方式，然后是确认邮件，再是出发前一日导游直接联系。",
   bookingAfterTitle: "预订之后",
-  bookingAfterSubtitle: "出发前、行程中、结束后的支持内容",
+  bookingAfterSubtitle:
+    "请先在预定时留下常用手机、WhatsApp、Line 或可加好友的链接。随后您会收到确认邮件，出发前一天导游会通过 WhatsApp、Line 或电话直接联系您。",
+  bookingSupportEmptyHint:
+    "此产品的分步说明尚未配置。请确认预订时填写的手机、WhatsApp、Line 能正常接收信息。",
   faqTitle: "常见问题",
   faqSubtitle: "通常会决定选择的关键问题。",
   faqShowFewer: "收起",
@@ -335,9 +372,12 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH_TW: TourProductSectionUiV1 = {
   seasonalTitle: "四季感受",
   seasonalSubtitle: "這條路線在一年四季分別是什麼體驗。",
   bookingSupportTitle: "預訂與支援",
-  bookingSupportSubtitle: "行前、行中、行後你會收到什麼。",
+  bookingSupportSubtitle: "預訂時留下能接到的聯絡方式，然後是確認信，再是出發前一日導遊直接聯絡。",
   bookingAfterTitle: "預訂之後",
-  bookingAfterSubtitle: "出發前、行程中、結束後的支援內容",
+  bookingAfterSubtitle:
+    "請先在預訂時留下常用手機、WhatsApp、Line 或加好友連結。隨後會收到預訂確認信，出發前一日導遊會以 WhatsApp、Line 或電話直接聯絡。",
+  bookingSupportEmptyHint:
+    "此產品步驟說明尚未建立。請確認預訂所填手機、WhatsApp、Line 能正常收訊。",
   faqTitle: "常見問題",
   faqSubtitle: "通常會決定選擇的關鍵問題。",
   faqShowFewer: "收合",
@@ -395,9 +435,12 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ES: TourProductSectionUiV1 = {
   seasonalTitle: "Variaciones por estación",
   seasonalSubtitle: "Cómo se siente esta ruta a lo largo del año.",
   bookingSupportTitle: "Reserva y apoyo",
-  bookingSupportSubtitle: "Qué esperar antes, durante y después.",
+  bookingSupportSubtitle: "Contacto al reservar, luego el email de confirmación y, el día anterior, tu guía.",
   bookingAfterTitle: "Tras reservar",
-  bookingAfterSubtitle: "Apoyo que recibes antes, durante y después",
+  bookingAfterSubtitle:
+    "Al reservar, deja un móvil, WhatsApp y LINE con los que realmente respondas. Llegará el email de confirmación, y el día anterior tu guía te contactará (WhatsApp, LINE o teléfono).",
+  bookingSupportEmptyHint:
+    "Aún no hay pasos definidos. Comprueba que el móvil, WhatsApp o LINE que dejaste al reservar sean accesibles.",
   faqTitle: "Preguntas",
   faqSubtitle: "Las dudas que suelen decidir la reserva.",
   faqShowFewer: "Ver menos",

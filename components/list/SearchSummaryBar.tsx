@@ -32,39 +32,41 @@ export function SearchSummaryBar({
 }: SearchSummaryBarProps) {
   const copy = useCopy();
   const countStr = copy.listDetail.summaryToursFound.replace('{{count}}', String(count));
+  const pillClass =
+    'inline-flex items-center rounded-full border border-slate-200/80 bg-white/88 px-3 py-1.5 text-[11px] font-medium text-slate-600 shadow-[0_8px_22px_-18px_rgba(15,23,42,0.32)]';
 
   return (
-    <div className="flex flex-wrap items-center gap-2 rounded-3xl bg-white/80 px-3 py-2 shadow-[0_6px_18px_rgba(0,0,0,0.04)]">
-      <span className="rounded-full bg-[#f2f2f7] px-2.5 py-1 text-[11px] font-medium text-[#3a3a3c]">
+    <div className="flex flex-wrap items-center gap-2 rounded-[1.4rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.82)_0%,rgba(248,250,252,0.7)_100%)] px-3 py-2.5 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.34)] backdrop-blur-xl">
+      <span className="inline-flex items-center rounded-full border border-slate-300/80 bg-slate-900 px-3 py-1.5 text-[11px] font-semibold text-white shadow-[0_12px_24px_-18px_rgba(15,23,42,0.55)]">
         {countStr}
       </span>
-      <span className="rounded-full bg-[#f2f2f7] px-2.5 py-1 text-[11px] text-[#3a3a3c]">
+      <span className={pillClass}>
         {copy.listDetail.destination}: {destination ?? copy.listDetail.destinationAll}
       </span>
       {hotelArea != null && hotelArea !== '' && (
-        <span className="rounded-full bg-[#0c66ff]/10 px-2.5 py-1 text-[11px] font-medium text-[#0c66ff]">
+        <span className="inline-flex items-center rounded-full border border-sky-200/80 bg-sky-50/92 px-3 py-1.5 text-[11px] font-medium text-sky-700">
           {copy.listDetail.hotelArea}: {hotelArea}
         </span>
       )}
       {keyword != null && keyword !== '' && (
-        <span className="rounded-full bg-[#f2f2f7] px-2.5 py-1 text-[11px] text-[#6e6e73]">
+        <span className={pillClass}>
           Keyword: <strong>{keyword}</strong>
         </span>
       )}
       {date != null && date !== '' && (
-        <span className="rounded-full bg-[#f2f2f7] px-2.5 py-1 text-[11px] text-[#6e6e73]">
+        <span className={pillClass}>
           {copy.listDetail.date}: {date}
         </span>
       )}
       {guests != null && guests > 0 && (
-        <span className="rounded-full bg-[#f2f2f7] px-2.5 py-1 text-[11px] text-[#6e6e73]">
+        <span className={pillClass}>
           {copy.listDetail.guests}: {guests}
         </span>
       )}
       {refineHref && (
         <Link
           href={refineHref}
-          className="rounded-full bg-[#0c66ff]/10 px-2.5 py-1 text-[11px] font-medium text-[#0c66ff] hover:bg-[#0c66ff]/20"
+          className="inline-flex items-center rounded-full border border-slate-200/85 bg-slate-50/95 px-3 py-1.5 text-[11px] font-semibold text-slate-700 transition hover:border-slate-300/90 hover:bg-white"
         >
           {copy.listDetail.refine}
         </Link>

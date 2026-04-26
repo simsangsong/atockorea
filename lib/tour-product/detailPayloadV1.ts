@@ -87,6 +87,8 @@ export type TourProductDetailPayloadV1 = {
   guestReviews?: unknown[];
   reviewsSummary?: unknown;
   sectionUi?: Partial<TourProductSectionUiV1>;
+  pickup_dropoff?: unknown;
+  routeVariants?: unknown[];
 };
 
 export type TourProductOfferRow = {

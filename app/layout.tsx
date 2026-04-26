@@ -3,8 +3,9 @@ import { Suspense } from "react";
 import { cookies } from "next/headers";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import "./home-v2.css";
-import "./home-v2-fidelity.css";
+// home-v2.css and home-v2-fidelity.css are imported by components/home/HomeMainBody so they
+// only ship on the homepage route. home-premium.css remains in globals.css because its
+// `--home-*` tokens are referenced by Tailwind shadow classes on /match and /mypage too.
 import { I18nProvider } from "@/lib/i18n";
 import { CurrencyProvider } from "@/lib/currency";
 import { ErrorBoundary } from "@/components/ErrorBoundary";

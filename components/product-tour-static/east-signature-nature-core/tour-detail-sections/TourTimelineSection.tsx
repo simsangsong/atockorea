@@ -6,6 +6,9 @@ import { cn } from "@/lib/utils";
 import type { ItineraryStop } from "../staticProductData";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
+import { PickupOnlyCards, DropoffOnlyCard } from "@/components/product-tour-static/_shared/pickup-dropoff/PickupDropoffCards";
+import { PortSelectorTimeline } from "@/components/product-tour-static/_shared/route-variants/PortSelectorTimeline";
+import type { PortRouteVariant } from "@/components/product-tour-static/_shared/route-variants/routeVariantTypes";
 
 function StopCard({
   stop,
@@ -182,11 +185,36 @@ function StopCard({
   );
 }
 
-export type TourTimelineSectionProps = Pick<EastSignatureNatureCoreDetailViewModel, "itineraryStops" | "sectionUi">;
+export type TourTimelineSectionProps = Pick<
+  EastSignatureNatureCoreDetailViewModel,
+  "itineraryStops" | "sectionUi" | "pickup_dropoff"
+> & {
+  routeVariants?: readonly PortRouteVariant[];
+  selectedPortIndex?: number;
+  onPortChange?: (index: number) => void;
+};
 
-export function TourTimelineSection({ itineraryStops, sectionUi }: TourTimelineSectionProps) {
+export function TourTimelineSection({
+  itineraryStops,
+  sectionUi,
+  pickup_dropoff,
+  routeVariants,
+  selectedPortIndex = 0,
+  onPortChange,
+}: TourTimelineSectionProps) {
   const [expandedStop, setExpandedStop] = useState<number | null>(null);
+  const [internalPortIndex, setInternalPortIndex] = useState(0);
   const total = itineraryStops.length;
+  const hasRouteVariants = Array.isArray(routeVariants) && routeVariants.length > 0;
+  const effectivePortIndex = onPortChange ? selectedPortIndex : internalPortIndex;
+  const handlePortChange = (index: number) => {
+    setExpandedStop(null);
+    if (onPortChange) {
+      onPortChange(index);
+    } else {
+      setInternalPortIndex(index);
+    }
+  };
 
   return (
     <div className="space-y-7">
@@ -196,16 +224,31 @@ export function TourTimelineSection({ itineraryStops, sectionUi }: TourTimelineS
       </div>
 
       <div>
-        {itineraryStops.map((stop) => (
-          <StopCard
-            key={stop.number}
-            stop={stop}
-            totalStops={total}
-            isExpanded={expandedStop === stop.number}
-            onToggle={() => setExpandedStop(expandedStop === stop.number ? null : stop.number)}
+        <PickupOnlyCards pickupDropoff={pickup_dropoff} sectionUi={sectionUi} />
+        {hasRouteVariants ? (
+          <PortSelectorTimeline
+            routeVariants={routeVariants!}
+            selectedPortIndex={effectivePortIndex}
+            onPortChange={handlePortChange}
+            expandedStopNumber={expandedStop}
+            onToggleStop={(stopNumber) =>
+              setExpandedStop((prev) => (prev === stopNumber ? null : stopNumber))
+            }
             sectionUi={sectionUi}
           />
-        ))}
+        ) : (
+          itineraryStops.map((stop) => (
+            <StopCard
+              key={stop.number}
+              stop={stop}
+              totalStops={total}
+              isExpanded={expandedStop === stop.number}
+              onToggle={() => setExpandedStop(expandedStop === stop.number ? null : stop.number)}
+              sectionUi={sectionUi}
+            />
+          ))
+        )}
+        <DropoffOnlyCard pickupDropoff={pickup_dropoff} sectionUi={sectionUi} />
       </div>
     </div>
   );

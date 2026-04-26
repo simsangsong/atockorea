@@ -7,6 +7,16 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
 import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
+import { supabase } from '@/lib/supabase';
+import { useCurrencyOptional } from '@/lib/currency';
+import {
+  MYPAGE_FOCUS_RING,
+  MYPAGE_SECTION_TITLE,
+  MYPAGE_SHELL,
+  MYPAGE_SKELETON_BLOCK,
+  mypagePageCard,
+} from '@/lib/mypage-ui';
+import { cn } from '@/lib/utils';
 
 interface BookingData {
   tourId: number;
@@ -29,140 +39,186 @@ interface BookingData {
 export default function ConfirmationPage() {
   const params = useParams();
   const router = useRouter();
+  const currencyCtx = useCurrencyOptional();
   const [bookingData, setBookingData] = useState<BookingData | null>(null);
   const [fetchError, setFetchError] = useState<string | null>(null);
   const isMountedRef = useRef(true);
 
+  const formatTotal = (amountUsd: number) =>
+    currencyCtx
+      ? currencyCtx.formatPrice(amountUsd)
+      : new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }).format(amountUsd);
+
   useEffect(() => {
     isMountedRef.current = true;
     setFetchError(null);
-    const urlParams = new URLSearchParams(window.location.search);
-    const sessionId = urlParams.get('session_id');
-    const bookingId = urlParams.get('booking_id');
 
-    // Redirected from Stripe: fetch full booking and build confirmation data
-    if (sessionId && bookingId) {
-      fetch(`/api/bookings/${bookingId}`)
-        .then((res) => {
-          if (!res.ok) throw new Error(res.status === 404 ? 'Booking not found' : `Request failed (${res.status})`);
-          return res.json();
-        })
-        .then((data) => {
-          if (!isMountedRef.current) return;
-          if (data.booking) {
-            const b = data.booking;
+    const applyBookingPayload = (b: Record<string, unknown>) => {
+      let stored: BookingData | null = null;
+      const storedRaw = sessionStorage.getItem('bookingData');
+      if (storedRaw) {
+        try {
+          stored = JSON.parse(storedRaw) as BookingData;
+        } catch {
+          stored = null;
+        }
+      }
 
-            let stored: BookingData | null = null;
-            const storedRaw = sessionStorage.getItem('bookingData');
-            if (storedRaw) {
-              try {
-                stored = JSON.parse(storedRaw);
-              } catch {
-                stored = null;
-              }
-            }
+      let specialRequests: { preferredChatApp?: string; chatAppContact?: string } = {};
+      try {
+        if (b.special_requests) {
+          specialRequests =
+            typeof b.special_requests === 'string'
+              ? JSON.parse(b.special_requests as string)
+              : (b.special_requests as typeof specialRequests);
+        }
+      } catch (e) {
+        if (process.env.NODE_ENV === 'development') {
+          console.warn('[confirmation] special_requests parse:', e);
+        }
+      }
+      const built: BookingData = {
+        ...stored,
+        tourId: Number(b.tour_id ?? stored?.tourId ?? 0),
+        date: (b.booking_date as string) || (b.tour_date as string) || stored?.date || '',
+        guests: (b.number_of_guests as number) ?? (b.number_of_people as number) ?? stored?.guests ?? 1,
+        pickup: b.pickup_point_id ? Number(b.pickup_point_id) : stored?.pickup ?? null,
+        paymentMethod: 'full',
+        preferredLanguage:
+          (b.preferred_language as 'en' | 'zh' | 'ko') || stored?.preferredLanguage || 'en',
+        totalPrice: parseFloat(String(b.final_price ?? stored?.totalPrice ?? 0)),
+        customerInfo: {
+          name: (b.contact_name as string) || stored?.customerInfo?.name || '',
+          phone: (b.contact_phone as string) || stored?.customerInfo?.phone || '',
+          email: (b.contact_email as string) || stored?.customerInfo?.email || '',
+          preferredChatApp:
+            specialRequests.preferredChatApp || stored?.customerInfo?.preferredChatApp || '',
+          chatAppContact: specialRequests.chatAppContact || stored?.customerInfo?.chatAppContact || '',
+        },
+      };
+      return built;
+    };
 
-            let specialRequests: { preferredChatApp?: string; chatAppContact?: string } = {};
-            try {
-              if (b.special_requests) {
-                specialRequests = typeof b.special_requests === 'string' ? JSON.parse(b.special_requests) : b.special_requests;
-              }
-            } catch (e) {
-              if (process.env.NODE_ENV === 'development') {
-                console.warn('[confirmation] Fetch booking failed:', e);
-              }
-            }
-            const built: BookingData = {
-              ...stored,
-              tourId: Number(b.tour_id ?? stored?.tourId ?? 0),
-              date: b.booking_date || b.tour_date || stored?.date || '',
-              guests: b.number_of_guests ?? b.number_of_people ?? stored?.guests ?? 1,
-              pickup: b.pickup_point_id ? Number(b.pickup_point_id) : stored?.pickup ?? null,
-              paymentMethod: 'full',
-              preferredLanguage:
-                (b.preferred_language as 'en' | 'zh' | 'ko') || stored?.preferredLanguage || 'en',
-              totalPrice: parseFloat(String(b.final_price ?? stored?.totalPrice ?? 0)),
-              customerInfo: {
-                name: b.contact_name || stored?.customerInfo?.name || '',
-                phone: b.contact_phone || stored?.customerInfo?.phone || '',
-                email: b.contact_email || stored?.customerInfo?.email || '',
-                preferredChatApp:
-                  specialRequests.preferredChatApp ||
-                  stored?.customerInfo?.preferredChatApp ||
-                  '',
-                chatAppContact:
-                  specialRequests.chatAppContact || stored?.customerInfo?.chatAppContact || '',
-              },
-            };
+    (async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const sessionId = urlParams.get('session_id');
+      const bookingId = urlParams.get('booking_id');
 
-            setBookingData(built);
-            sessionStorage.setItem('bookingData', JSON.stringify({ ...built, bookingId: b.id }));
-          } else {
-            if (isMountedRef.current) router.push(consumerTourDetailHref(String(params.id)));
+      if (sessionId && bookingId) {
+        const headers: Record<string, string> = {};
+        if (supabase) {
+          const { data: { session } } = await supabase.auth.getSession();
+          if (session?.access_token) {
+            headers['Authorization'] = `Bearer ${session.access_token}`;
           }
-        })
-        .catch((err) => {
-          console.error('Error fetching booking:', err);
-          if (!isMountedRef.current) return;
+        }
+        let url = `/api/bookings/${encodeURIComponent(bookingId)}?session_id=${encodeURIComponent(sessionId)}`;
+        let res = await fetch(url, { headers });
+        if (!res.ok) {
+          const storedEmail = (() => {
+            const raw = sessionStorage.getItem('bookingData');
+            if (!raw) return null;
+            try {
+              return (JSON.parse(raw) as { customerInfo?: { email?: string } })?.customerInfo?.email;
+            } catch {
+              return null;
+            }
+          })();
+          if (storedEmail) {
+            url = `/api/bookings/${encodeURIComponent(bookingId)}?email=${encodeURIComponent(storedEmail)}`;
+            res = await fetch(url, { headers: {} });
+          }
+        }
+        if (!isMountedRef.current) return;
+        if (!res.ok) {
+          const msg =
+            res.status === 404
+              ? 'Booking not found'
+              : `Request failed (${res.status})`;
           const stored = sessionStorage.getItem('bookingData');
           if (stored) {
             try {
-              setBookingData(JSON.parse(stored));
+              setBookingData(JSON.parse(stored) as BookingData);
             } catch {
-              router.push(consumerTourDetailHref(String(params.id)));
+              setFetchError(msg);
             }
           } else {
-            setFetchError(err instanceof Error ? err.message : 'Failed to load confirmation');
+            setFetchError(msg);
           }
-        });
-      return () => { isMountedRef.current = false; };
-    }
+          return;
+        }
+        const data = await res.json();
+        if (!isMountedRef.current) return;
+        if (data.booking) {
+          const b = data.booking as Record<string, unknown>;
+          const built = applyBookingPayload(b);
+          setBookingData(built);
+          sessionStorage.setItem('bookingData', JSON.stringify({ ...built, bookingId: b.id }));
+        } else {
+          router.push(consumerTourDetailHref(String(params.id)));
+        }
+        return;
+      }
 
-    const stored = sessionStorage.getItem('bookingData');
-    if (stored) {
-      try {
-        setBookingData(JSON.parse(stored));
-      } catch {
+      const stored = sessionStorage.getItem('bookingData');
+      if (stored) {
+        try {
+          setBookingData(JSON.parse(stored) as BookingData);
+        } catch {
+          router.push(consumerTourDetailHref(String(params.id)));
+        }
+      } else if (isMountedRef.current) {
         router.push(consumerTourDetailHref(String(params.id)));
       }
-    } else {
-      if (isMountedRef.current) router.push(consumerTourDetailHref(String(params.id)));
-    }
-    return () => { isMountedRef.current = false; };
+    })();
+
+    return () => {
+      isMountedRef.current = false;
+    };
   }, [params.id, router]);
 
   if (!bookingData) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
+      <div className="min-h-dvh min-h-screen bg-transparent text-slate-900">
         <Header />
-        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="max-w-2xl mx-auto">
-            {fetchError ? (
-              <div className="text-center space-y-4">
-                <p className="text-gray-600">{fetchError}</p>
-                <Link
-                  href={consumerTourDetailHref(String(params.id))}
-                  className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-                >
-                  Back to tour
-                </Link>
-              </div>
-            ) : (
-              <p className="text-center text-gray-600">Loading confirmation...</p>
-            )}
+        <main className="relative z-10 container mx-auto px-4 py-8 sm:px-6 md:py-12 lg:px-8">
+          <div className="mx-auto max-w-2xl">
+            <div className={MYPAGE_SHELL}>
+              {fetchError ? (
+                <div className="space-y-4 text-center">
+                  <p className="text-[14px] text-slate-600">{fetchError}</p>
+                  <Link
+                    href={consumerTourDetailHref(String(params.id))}
+                    className={cn(
+                      'inline-flex rounded-2xl border border-slate-200 bg-white px-5 py-2.5 text-[13px] font-semibold text-slate-900 shadow-sm',
+                      MYPAGE_FOCUS_RING,
+                    )}
+                  >
+                    Back to tour
+                  </Link>
+                </div>
+              ) : (
+                <div className="space-y-3 py-2">
+                  <div className={MYPAGE_SKELETON_BLOCK} style={{ height: 64 }} />
+                  <div className={MYPAGE_SKELETON_BLOCK} style={{ height: 220 }} />
+                </div>
+              )}
+            </div>
           </div>
         </main>
         <Footer />
         <BottomNav />
+        <div className="h-16 md:hidden" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30">
+    <div className="min-h-dvh min-h-screen bg-transparent text-slate-900">
       <Header />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-        <div className="max-w-2xl mx-auto">
+      <main className="relative z-10 container mx-auto px-4 py-8 sm:px-6 md:py-12 lg:px-8">
+        <div className="mx-auto max-w-2xl">
+          <div className={MYPAGE_SHELL}>
           {/* Success Icon */}
           <div className="flex justify-center mb-6">
             <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center shadow-lg">
@@ -248,8 +304,8 @@ export default function ConfirmationPage() {
               {/* Total */}
               <div className="flex justify-between items-center py-3">
                 <span className="text-lg font-bold text-gray-900">Total</span>
-                <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
-                  ₩{Math.round(bookingData.totalPrice).toLocaleString()}
+                <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent tabular-nums">
+                  {formatTotal(bookingData.totalPrice)}
                 </span>
               </div>
             </div>
@@ -325,11 +381,12 @@ export default function ConfirmationPage() {
               View My Bookings
             </Link>
             <Link
-              href="/tours"
+              href="/tours/list"
               className="flex-1 py-3 px-6 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold rounded-xl transition-all shadow-md hover:shadow-lg text-center"
             >
               Browse More Tours
             </Link>
+          </div>
           </div>
         </div>
       </main>

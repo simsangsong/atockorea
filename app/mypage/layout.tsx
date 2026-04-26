@@ -17,7 +17,17 @@ import {
   MapIcon,
 } from '@/components/Icons';
 import { MyPageAuthGate } from '@/components/mypage/MyPageAuthGate';
-import { MYPAGE_SHELL, MYPAGE_SURFACE_PAGE, MYPAGE_SURFACE } from '@/lib/mypage-ui';
+import { ConfirmDialog } from '@/components/mypage/ConfirmDialog';
+import {
+  MYPAGE_SHELL,
+  MYPAGE_SURFACE_PAGE,
+  MYPAGE_SURFACE,
+  MYPAGE_SIDEBAR_PROFILE_CARD,
+  MYPAGE_SIDEBAR_NAV,
+  MYPAGE_SIDEBAR_PRIMARY_TEXT,
+  MYPAGE_SIDEBAR_SECONDARY_TEXT,
+  MYPAGE_SIDEBAR_ICON,
+} from '@/lib/mypage-ui';
 import { cn } from '@/lib/utils';
 
 function getInitials(name: string) {
@@ -41,14 +51,14 @@ function UserProfileCard({
   email: string;
   compact?: boolean;
 }) {
-  const size = compact ? 'h-14 w-14 text-base' : 'h-20 w-20 text-lg';
+  const size = compact ? 'h-[72px] w-[72px] text-[16px]' : 'h-24 w-24 text-[17px]';
   return (
-    <div className={cn(MYPAGE_SURFACE_PAGE, compact ? 'p-4' : 'p-6')}>
-      <div className={cn('flex', compact ? 'items-center gap-3' : 'flex-col items-center')}>
+    <div className={cn(MYPAGE_SIDEBAR_PROFILE_CARD, compact ? 'p-4' : 'p-6')}>
+      <div className={cn('flex', compact ? 'items-center gap-3.5' : 'flex-col items-center')}>
         {avatar ? (
           <div
             className={cn(
-              'flex items-center justify-center overflow-hidden rounded-2xl bg-slate-100 ring-1 ring-slate-900/[0.04]',
+              'flex items-center justify-center overflow-hidden rounded-[14px] bg-slate-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] ring-1 ring-slate-200/80',
               size,
               !compact && 'mb-3',
             )}
@@ -58,7 +68,7 @@ function UserProfileCard({
         ) : (
           <div
             className={cn(
-              'flex items-center justify-center rounded-2xl bg-gradient-to-br from-slate-200 to-slate-100 font-bold text-slate-700 ring-1 ring-slate-900/[0.05]',
+              'flex items-center justify-center rounded-[14px] bg-gradient-to-br from-slate-200 to-slate-100 font-semibold text-slate-800 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)] ring-1 ring-slate-300/70',
               size,
               !compact && 'mb-3',
             )}
@@ -66,9 +76,9 @@ function UserProfileCard({
             {getInitials(name)}
           </div>
         )}
-        <div className={cn(compact ? 'flex-1' : 'text-center')}>
-          <h2 className="text-[14px] font-bold tracking-tight text-[#0f172a]">{name}</h2>
-          <p className="text-[12px] text-slate-500">{email}</p>
+        <div className={cn(compact ? 'flex-1 min-w-0' : 'text-center')}>
+          <h2 className={cn(MYPAGE_SIDEBAR_PRIMARY_TEXT)}>{name}</h2>
+          <p className={cn('mt-1 truncate', MYPAGE_SIDEBAR_SECONDARY_TEXT)}>{email}</p>
         </div>
       </div>
     </div>
@@ -81,6 +91,8 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
   const t = useTranslations();
   const [avatar, setAvatar] = useState<string | null>(null);
   const [userInfo, setUserInfo] = useState({ name: 'Guest', email: '' });
+  const [signOutOpen, setSignOutOpen] = useState(false);
+  const [signOutLoading, setSignOutLoading] = useState(false);
 
   const menuItems = [
     { id: 'dashboard', label: t('mypage.dashboard'), icon: DashboardIcon, path: '/mypage/dashboard' },
@@ -163,18 +175,26 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
     return () => window.removeEventListener('userDataUpdated', handleUpdate);
   }, []);
 
-  const handleLogout = async () => {
-    if (!confirm(t('mypage.signOut') + '?')) return;
+  const handleLogout = () => {
+    setSignOutOpen(true);
+  };
+
+  const confirmLogout = async () => {
+    setSignOutLoading(true);
     try {
       const { supabase } = await import('@/lib/supabase');
       if (supabase) await supabase.auth.signOut();
       localStorage.removeItem('userAvatar');
       localStorage.removeItem('userName');
       localStorage.removeItem('userEmail');
+      setSignOutOpen(false);
       router.push('/');
     } catch (error) {
       console.error('Error logging out:', error);
+      setSignOutOpen(false);
       router.push('/');
+    } finally {
+      setSignOutLoading(false);
     }
   };
 
@@ -182,7 +202,7 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
   const isPathActive = (path: string) => pathname === path || pathname.startsWith(`${path}/`);
 
   const renderNav = () => (
-    <nav className={cn(MYPAGE_SURFACE, 'p-1.5')}>
+    <nav className={cn(MYPAGE_SIDEBAR_NAV, 'p-4')}>
       <div className="space-y-0.5">
         {menuItems.map((item) => {
           const IconComponent = item.icon;
@@ -192,34 +212,49 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
               key={item.id}
               href={item.path}
               className={cn(
-                'flex w-full items-center gap-3 rounded-xl px-3.5 py-2.5 text-[13px] font-semibold transition-all duration-200',
+                'flex w-full items-center gap-3 rounded-[14px] px-3.5 py-3 transition-all duration-200',
+                MYPAGE_SIDEBAR_PRIMARY_TEXT,
                 isActive
-                  ? 'bg-slate-900 text-white shadow-[0_6px_18px_-6px_rgba(15,23,42,0.35)]'
-                  : 'text-slate-700 hover:bg-white/70',
+                  ? 'bg-slate-900 !text-white shadow-[0_12px_32px_-10px_rgba(15,23,42,0.45)]'
+                  : 'text-slate-950 hover:bg-slate-100',
               )}
             >
               <div
                 className={cn(
-                  'flex h-6 w-6 items-center justify-center rounded-lg transition-all',
-                  isActive ? 'bg-white/15' : 'bg-slate-100',
+                  'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-all',
+                  'shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] ring-1',
+                  isActive
+                    ? 'bg-white/12 ring-white/25'
+                    : 'bg-slate-100 ring-slate-200/90',
                 )}
               >
-                <IconComponent className={cn('h-3.5 w-3.5', isActive ? 'text-white' : 'text-slate-600')} />
+                <IconComponent
+                  className={cn(MYPAGE_SIDEBAR_ICON, isActive ? 'text-white' : 'text-slate-700')}
+                />
               </div>
-              <span className="tracking-tight">{item.label}</span>
+              <span className="min-w-0 truncate">{item.label}</span>
             </Link>
           );
         })}
-        <div className="mx-2 my-1 border-t border-slate-200/60" />
+        <div className="mx-2 my-1.5 border-t border-slate-200/70" />
         <button
           type="button"
           onClick={handleLogout}
-          className="flex w-full items-center gap-3 rounded-xl px-3.5 py-2.5 text-[13px] font-semibold text-slate-600 transition-all duration-200 hover:bg-white/70"
+          className={cn(
+            'flex w-full items-center gap-3 rounded-[14px] px-3.5 py-3 text-left transition-all duration-200 hover:bg-slate-100',
+            MYPAGE_SIDEBAR_PRIMARY_TEXT,
+            'text-slate-950',
+          )}
         >
-          <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-slate-100">
-            <LogoutIcon className="h-3.5 w-3.5 text-slate-600" />
+          <div
+            className={cn(
+              'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100',
+              'shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] ring-1 ring-slate-200/90',
+            )}
+          >
+            <LogoutIcon className={cn(MYPAGE_SIDEBAR_ICON, 'text-slate-700')} />
           </div>
-          <span className="tracking-tight">{t('mypage.signOut')}</span>
+          <span className="min-w-0 truncate">{t('mypage.signOut')}</span>
         </button>
       </div>
     </nav>
@@ -246,13 +281,8 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
 
           {/* Mobile */}
           <div className="md:hidden">
-            {isMyPageRoot ? (
-              <div className={MYPAGE_SHELL}>
-                <UserProfileCard avatar={avatar} name={userInfo.name} email={userInfo.email} compact />
-                {renderNav()}
-              </div>
-            ) : (
-              <div className="w-full space-y-4">
+            <div className="w-full space-y-4">
+              {!isMyPageRoot && (
                 <div className="flex items-center justify-between px-1">
                   <Link href="/mypage" className="flex items-center gap-1.5 text-[13px] font-semibold text-slate-700 hover:text-slate-900">
                     <span className="text-base">←</span>
@@ -262,11 +292,21 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
                     {t('mypage.title')}
                   </span>
                 </div>
-                <div className={MYPAGE_SHELL}>{children}</div>
-              </div>
-            )}
+              )}
+              <div className={MYPAGE_SHELL}>{children}</div>
+            </div>
           </div>
         </main>
+        <ConfirmDialog
+          open={signOutOpen}
+          onOpenChange={setSignOutOpen}
+          title={t('mypage.common.confirm.signOutTitle')}
+          description={t('mypage.common.confirm.signOutDescription')}
+          confirmLabel={t('mypage.common.confirm.signOutConfirm')}
+          cancelLabel={t('mypage.common.confirm.cancel')}
+          loading={signOutLoading}
+          onConfirm={confirmLogout}
+        />
       </MyPageAuthGate>
     </SitePageShell>
   );

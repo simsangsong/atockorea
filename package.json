@@ -10,6 +10,7 @@
     "build:mobile": "BUILD_FOR_MOBILE=true next build",
     "start": "next start",
     "lint": "eslint \"components/home/v2\" \"lib/home\" \"app/api/reviews/home-summary\" --max-warnings 0",
+    "lint:full": "next lint --max-warnings 200",
     "icons:sync": "node scripts/sync-app-icons-from-svg.js",
     "test": "jest",
     "test:watch": "jest --watch",

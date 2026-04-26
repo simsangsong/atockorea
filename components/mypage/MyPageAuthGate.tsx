@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useTranslations } from '@/lib/i18n';
+import { MYPAGE_SURFACE_PAGE } from '@/lib/mypage-ui';
+import { cn } from '@/lib/utils';
 
 /**
  * MyPage 접근 가드.
@@ -72,10 +74,14 @@ export function MyPageAuthGate({ children }: { children: React.ReactNode }) {
 
   if (status !== 'ready') {
     return (
-      <div className="flex min-h-[40vh] items-center justify-center rounded-[1.75rem] border border-white/25 bg-white/55 p-8 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl">
+      <div
+        className={cn(MYPAGE_SURFACE_PAGE, 'flex min-h-[40vh] items-center justify-center p-8')}
+        role="status"
+        aria-live="polite"
+      >
         <div className="flex flex-col items-center gap-3">
-          <div className="h-8 w-8 animate-spin rounded-full border-2 border-blue-500 border-t-transparent" />
-          <p className="text-sm text-slate-600">{t('mypage.bookingsLoading')}</p>
+          <div className="h-8 w-8 animate-spin rounded-full border-2 border-slate-800 border-t-transparent" />
+          <p className="text-[13px] font-medium text-slate-600">{t('mypage.common.verifyingSession')}</p>
         </div>
       </div>
     );

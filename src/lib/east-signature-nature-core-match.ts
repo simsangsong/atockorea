@@ -54,7 +54,12 @@ export function extractTourRouteSegmentFromPathname(pathname: string): string | 
 const PATH_LOCALE_PREFIXES = new Set(["en", "ko", "zh-CN", "zh-TW", "ja", "es"]);
 
 /** `/tour-product/[slug]` pages that must stay reachable when the site gate rewrites non-local traffic to `/`. */
-const FLAGSHIP_TOUR_PRODUCT_SLUGS = new Set(["east-signature-nature-core", "jeju-grand-highlights-loop"]);
+const FLAGSHIP_TOUR_PRODUCT_SLUGS = new Set([
+  "east-signature-nature-core",
+  "jeju-grand-highlights-loop",
+  "busan-top-attractions-authentic-one-day-tour",
+  "busan-city-tour-shore-excursion-cruise-guests",
+]);
 
 function decodePathSegment(seg: string): string {
   try {

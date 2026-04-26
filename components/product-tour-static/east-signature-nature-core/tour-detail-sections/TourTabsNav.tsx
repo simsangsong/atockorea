@@ -13,6 +13,8 @@ export function TourTabsNav({ subnavItems }: TourTabsNavProps) {
   const [activeSection, setActiveSection] = useState("overview");
   const [isPastHero, setIsPastHero] = useState(false);
 
+  const subnavScrollSpyKey = subnavItems.map((item) => item.id).join("|");
+
   useEffect(() => {
     const handleScroll = () => {
       setIsPastHero(window.scrollY > 32);
@@ -31,7 +33,10 @@ export function TourTabsNav({ subnavItems }: TourTabsNavProps) {
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [subnavItems]);
+    /* subnavItems omitted on purpose: stable `subnavScrollSpyKey` avoids re-binding listeners
+       when the parent passes a new array reference each render. */
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [subnavScrollSpyKey]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);

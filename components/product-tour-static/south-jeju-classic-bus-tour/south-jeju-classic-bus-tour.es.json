@@ -1,0 +1,29 @@
+{
+  "bookingSupportSteps": [
+    {
+      "timing": "Al reservar (importante)",
+      "title": "Deja datos de contacto reales",
+      "detail": "Indica un teléfono, WhatsApp y LINE (ID o enlace) que revises a diario. Si no podemos localizarte, puede no ser posible confirmar el encuentro con antelación."
+    },
+    {
+      "timing": "Tras reservar",
+      "title": "Correo de confirmación",
+      "detail": "Primero recibes un email de confirmación: resumen del recorrido, precio y cómo será el punto de encuentro o la recogida."
+    },
+    {
+      "timing": "El día anterior al tour",
+      "title": "Tu guía te contacta",
+      "detail": "El día antes de la salida, tu guía se pondrá en contacto contigo por WhatsApp, LINE o teléfono para confirmar hora, punto exacto de encuentro y últimos detalles."
+    },
+    {
+      "timing": "El día del tour",
+      "title": "En el punto de encuentro",
+      "detail": "Llega al menos 10 minutos antes. El autobús sale a la hora; sigue el horario que te haya dado tu guía."
+    },
+    {
+      "timing": "Después del tour",
+      "title": "Regreso y ayuda",
+      "detail": "Regreso a puntos fijos en ciudad de Jeju. Escríbenos si necesitas ayuda después del día."
+    }
+  ]
+}

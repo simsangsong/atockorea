@@ -5,6 +5,8 @@
 
 import { eastSignatureNatureCoreProduct } from "./staticProductData";
 import { DEFAULT_TOUR_PRODUCT_SECTION_UI_EN } from "@/lib/tour-product/tourProductSectionUi";
+import type { PickupDropoffSection } from "@/components/product-tour-static/_shared/pickupDropoffTypes";
+import type { PortRouteVariant } from "@/components/product-tour-static/_shared/route-variants/routeVariantTypes";
 import {
   bookingSupportSteps,
   bookingTrustItems,
@@ -48,4 +50,17 @@ export const eastSignatureNatureCoreDetailViewModel = {
   sectionUi: DEFAULT_TOUR_PRODUCT_SECTION_UI_EN,
 };
 
-export type EastSignatureNatureCoreDetailViewModel = typeof eastSignatureNatureCoreDetailViewModel;
+/**
+ * Reference SKU shape. `pickup_dropoff` is optional — East Signature omits
+ * it; bus-tour bundles (e.g. `south-jeju-classic-bus-tour`) populate it to
+ * opt into the timeline's pickup/drop-off cards.
+ */
+export type EastSignatureNatureCoreDetailViewModel = typeof eastSignatureNatureCoreDetailViewModel & {
+  pickup_dropoff?: PickupDropoffSection;
+  /**
+   * Optional — cruise shore-excursion products render a port toggle and swap
+   * the stops list based on the selected docking port. Absent on standard bus
+   * / small-group tours, which stick to the flat `itineraryStops`.
+   */
+  routeVariants?: readonly PortRouteVariant[];
+};

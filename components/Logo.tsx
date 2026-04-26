@@ -21,12 +21,15 @@ export type LogoProps = {
   variant?: "default" | "onDark";
   /** Header-style lockup: single-line wordmark, no tagline, tighter mark */
   compact?: boolean;
+  /** Icon mark only — centered, larger (e.g. auth card) */
+  markOnly?: boolean;
 };
 
 export default function Logo({
   className = "w-auto h-10 sm:h-12",
   variant = "default",
   compact = false,
+  markOnly = false,
 }: LogoProps) {
   const rawId = useId().replace(/:/g, "");
   const clipId = `${rawId}-markClip`;
@@ -51,7 +54,7 @@ export default function Logo({
     <div
       className={cn(
         "flex items-center",
-        compact ? "gap-1.5 sm:gap-2 md:gap-2" : "gap-2 sm:gap-2.5 md:gap-3",
+        markOnly ? "justify-center" : compact ? "gap-1.5 sm:gap-2 md:gap-2" : "gap-2 sm:gap-2.5 md:gap-3",
         className
       )}
     >
@@ -61,9 +64,11 @@ export default function Logo({
           height="40"
           className={cn(
             "flex-shrink-0",
-            compact
-              ? "h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9"
-              : "h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10"
+            markOnly
+              ? "h-11 w-11 sm:h-12 sm:w-12 md:h-[3.25rem] md:w-[3.25rem] lg:h-14 lg:w-14"
+              : compact
+                ? "h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9"
+                : "h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10"
           )}
           viewBox="0 0 40 40"
           fill="none"
@@ -129,52 +134,54 @@ export default function Logo({
         </svg>
       </div>
 
-      <div
-        className={cn(
-          "flex min-w-0 flex-col justify-center",
-          compact ? "gap-0 translate-y-0" : "gap-px sm:gap-0.5 md:gap-1 max-sm:translate-y-[2px] sm:translate-y-0"
-        )}
-      >
+      {!markOnly ? (
         <div
           className={cn(
-            "flex min-w-0 items-baseline whitespace-nowrap",
-            compact ? "gap-0.5 leading-none" : "gap-1 leading-[1.1] sm:leading-[1.2]"
+            "flex min-w-0 flex-col justify-center",
+            compact ? "gap-0 translate-y-0" : "gap-px sm:gap-0.5 md:gap-1 max-sm:translate-y-[2px] sm:translate-y-0"
           )}
         >
-          <span
+          <div
             className={cn(
-              compact
-                ? "text-[16px] font-semibold tracking-[-0.045em] sm:text-[17px] md:text-[18px]"
-                : "text-[17px] font-semibold tracking-[-0.045em] sm:text-[19px] md:text-[21px] lg:text-[23px]",
-              isDark && "text-white"
+              "flex min-w-0 items-baseline whitespace-nowrap",
+              compact ? "gap-0.5 leading-none" : "gap-1 leading-[1.1] sm:leading-[1.2]"
             )}
-            style={!isDark ? { color: BRAND_PRIMARY } : undefined}
           >
-            AtoC
-          </span>
-          <span
-            className={cn(
-              compact
-                ? "text-[13px] font-normal tracking-[-0.02em] sm:text-[14px] md:text-[15px]"
-                : "text-[14px] font-normal tracking-[-0.022em] sm:text-[15px] md:text-[16px] lg:text-[17px]"
-            )}
-            style={{ color: isDark ? BRAND_WORDMARK_KOREA_ON_DARK : BRAND_WORDMARK_KOREA }}
-          >
-            Korea
-          </span>
+            <span
+              className={cn(
+                compact
+                  ? "text-[16px] font-semibold tracking-[-0.045em] sm:text-[17px] md:text-[18px]"
+                  : "text-[17px] font-semibold tracking-[-0.045em] sm:text-[19px] md:text-[21px] lg:text-[23px]",
+                isDark && "text-white"
+              )}
+              style={!isDark ? { color: BRAND_PRIMARY } : undefined}
+            >
+              AtoC
+            </span>
+            <span
+              className={cn(
+                compact
+                  ? "text-[13px] font-normal tracking-[-0.02em] sm:text-[14px] md:text-[15px]"
+                  : "text-[14px] font-normal tracking-[-0.022em] sm:text-[15px] md:text-[16px] lg:text-[17px]"
+              )}
+              style={{ color: isDark ? BRAND_WORDMARK_KOREA_ON_DARK : BRAND_WORDMARK_KOREA }}
+            >
+              Korea
+            </span>
+          </div>
+          {!compact ? (
+            <p
+              className="whitespace-nowrap text-[10px] font-medium uppercase leading-tight tracking-[0.12em] md:text-[10.5px] md:tracking-[0.1em]"
+              style={{
+                color: isDark ? BRAND_TAGLINE_ON_DARK : BRAND_TAGLINE_MUTED,
+                opacity: isDark ? 0.9 : 0.82,
+              }}
+            >
+              {TAGLINE}
+            </p>
+          ) : null}
         </div>
-        {!compact ? (
-          <p
-            className="whitespace-nowrap text-[10px] font-medium uppercase leading-tight tracking-[0.12em] md:text-[10.5px] md:tracking-[0.1em]"
-            style={{
-              color: isDark ? BRAND_TAGLINE_ON_DARK : BRAND_TAGLINE_MUTED,
-              opacity: isDark ? 0.9 : 0.82,
-            }}
-          >
-            {TAGLINE}
-          </p>
-        ) : null}
-      </div>
+      ) : null}
     </div>
   );
 }

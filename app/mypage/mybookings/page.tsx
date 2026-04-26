@@ -6,16 +6,24 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { toast } from 'sonner';
 import { CalendarDateIcon, MapIcon } from '@/components/Icons';
 import { supabase } from '@/lib/supabase';
 import { StatusBanner } from '@/src/components/ui/status-banner';
 import { rawBookingStatusToDisplayStatus } from '@/src/design/status';
 import type { BookingStatus } from '@/src/types/booking';
 import { useCopy, useTranslations } from '@/lib/i18n';
+import { useCurrency } from '@/lib/currency';
 import { canCancelBookingByPolicy } from '@/lib/booking-cancel-policy';
 import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
-import { MYPAGE_SURFACE_PAGE, MYPAGE_SECTION_TITLE } from '@/lib/mypage-ui';
+import { MYPAGE_SURFACE_PAGE, MYPAGE_SECTION_TITLE, MYPAGE_FOCUS_RING } from '@/lib/mypage-ui';
 import { cn } from '@/lib/utils';
+import {
+  isReviewWriteWindowOpen,
+  normalizeBookingTourDateYmd,
+} from '@/lib/review-write-window';
+import { ConfirmDialog } from '@/components/mypage/ConfirmDialog';
+import { MyPageHeaderSkeleton, MyPageListSkeleton } from '@/components/mypage/MyPageSkeletons';
 
 interface Booking {
   id: string;
@@ -28,6 +36,7 @@ interface Booking {
   payment_status: string;
   tours: {
     id: string;
+    slug?: string | null;
     title: string;
     city: string;
     image_url: string;
@@ -42,12 +51,16 @@ export default function MyBookingsPage() {
   const router = useRouter();
   const copy = useCopy();
   const t = useTranslations();
+  const { formatPrice } = useCurrency();
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [cancelTarget, setCancelTarget] = useState<Booking | null>(null);
+  const [cancelBusy, setCancelBusy] = useState(false);
 
   useEffect(() => {
     fetchBookings();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchBookings = async () => {
@@ -60,7 +73,7 @@ export default function MyBookingsPage() {
         return;
       }
 
-      const response = await fetch(`/api/bookings?userId=${session.user.id}`, {
+      const response = await fetch('/api/bookings', {
         headers: { Authorization: `Bearer ${session.access_token}` },
       });
       const data = await response.json();
@@ -85,21 +98,25 @@ export default function MyBookingsPage() {
       booking_date: booking.booking_date,
     });
 
-  const handleCancel = async (booking: Booking) => {
+  const requestCancel = (booking: Booking) => {
     if (!canCancel(booking)) {
-      alert(t('mypage.cancelNotAllowed24h'));
+      toast.error(t('mypage.common.toast.bookingCancelNotAllowed24h'));
       return;
     }
-    if (!confirm(t('mypage.confirmCancelBooking'))) return;
+    setCancelTarget(booking);
+  };
 
+  const performCancel = async () => {
+    if (!cancelTarget) return;
     try {
+      setCancelBusy(true);
       const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
       if (!session) {
-        alert(t('mypage.signInToCancel'));
+        toast.error(t('mypage.common.toast.signInRequired'));
         return;
       }
 
-      const response = await fetch(`/api/bookings/${booking.id}`, {
+      const response = await fetch(`/api/bookings/${cancelTarget.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -113,11 +130,14 @@ export default function MyBookingsPage() {
         throw new Error(data.error || 'Failed to cancel booking');
       }
 
-      alert(t('mypage.cancelSuccess'));
+      toast.success(t('mypage.common.toast.bookingCancelled'));
+      setCancelTarget(null);
       fetchBookings();
     } catch (err: any) {
       console.error('Error cancelling booking:', err);
-      alert(t('mypage.cancelFailed', { message: err.message }));
+      toast.error(t('mypage.common.toast.bookingCancelFailed'), { description: err.message });
+    } finally {
+      setCancelBusy(false);
     }
   };
 
@@ -126,9 +146,37 @@ export default function MyBookingsPage() {
     router.push(`/mypage/reviews/write?tourId=${booking.tour_id}&bookingId=${booking.id}&tour=${encodeURIComponent(tourTitle)}`);
   };
 
+  const handleOpenReceipt = async (bookingId: string) => {
+    try {
+      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
+      if (!session) {
+        toast.error(t('mypage.common.toast.signInRequired'));
+        return;
+      }
+      const res = await fetch(`/api/bookings/${bookingId}/receipt`, {
+        headers: { Authorization: `Bearer ${session.access_token}` },
+      });
+      if (!res.ok) {
+        toast.error(t('mypage.common.toast.saveFailed'));
+        return;
+      }
+      const html = await res.text();
+      const win = window.open('', '_blank');
+      if (!win) {
+        toast.error(t('mypage.common.toast.saveFailed'));
+        return;
+      }
+      win.document.write(html);
+      win.document.close();
+    } catch (e) {
+      console.error('[receipt] open failed', e);
+      toast.error(t('mypage.common.toast.saveFailed'));
+    }
+  };
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    return date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
   };
 
   const getDisplayStatus = (status: string): BookingStatus =>
@@ -145,9 +193,8 @@ export default function MyBookingsPage() {
   if (loading) {
     return (
       <div className="space-y-4">
-        <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6')}>
-          <p className="text-[13px] text-slate-600">{t('mypage.bookingsLoading')}</p>
-        </div>
+        <MyPageHeaderSkeleton />
+        <MyPageListSkeleton count={2} />
       </div>
     );
   }
@@ -157,6 +204,16 @@ export default function MyBookingsPage() {
       <div className="space-y-4">
         <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6')}>
           <p className="text-[13px] text-red-600">{t('mypage.bookingsError', { message: error })}</p>
+          <button
+            type="button"
+            onClick={fetchBookings}
+            className={cn(
+              'mt-3 inline-flex items-center justify-center rounded-xl bg-slate-900 px-4 py-2 text-[13px] font-semibold text-white',
+              MYPAGE_FOCUS_RING,
+            )}
+          >
+            {t('mypage.commonRetry')}
+          </button>
         </div>
       </div>
     );
@@ -184,9 +241,11 @@ export default function MyBookingsPage() {
               <BookingCard
                 key={booking.id}
                 booking={booking}
-                onCancel={() => handleCancel(booking)}
+                onCancel={() => requestCancel(booking)}
+                onOpenReceipt={handleOpenReceipt}
                 canCancel={canCancel(booking)}
                 formatDate={formatDate}
+                formatPrice={formatPrice}
                 displayStatus={getDisplayStatus(booking.status)}
               />
             ))}
@@ -203,8 +262,10 @@ export default function MyBookingsPage() {
                 key={booking.id}
                 booking={booking}
                 onReview={() => handleReview(booking)}
+                onOpenReceipt={handleOpenReceipt}
                 showReview
                 formatDate={formatDate}
+                formatPrice={formatPrice}
                 displayStatus={getDisplayStatus(booking.status)}
               />
             ))}
@@ -221,6 +282,7 @@ export default function MyBookingsPage() {
                 key={booking.id}
                 booking={booking}
                 formatDate={formatDate}
+                formatPrice={formatPrice}
                 displayStatus={getDisplayStatus(booking.status)}
               />
             ))}
@@ -233,6 +295,20 @@ export default function MyBookingsPage() {
           <p className="text-[13px] text-slate-500">{t('mypage.bookingsEmpty')}</p>
         </div>
       )}
+
+      <ConfirmDialog
+        open={cancelTarget != null}
+        onOpenChange={(open) => {
+          if (!open) setCancelTarget(null);
+        }}
+        title={t('mypage.common.confirm.cancelBookingTitle')}
+        description={t('mypage.common.confirm.cancelBookingDescription')}
+        confirmLabel={t('mypage.common.confirm.cancelBookingConfirm')}
+        cancelLabel={t('mypage.common.confirm.cancel')}
+        destructive
+        loading={cancelBusy}
+        onConfirm={performCancel}
+      />
     </div>
   );
 }
@@ -241,9 +317,11 @@ interface BookingCardProps {
   booking: Booking;
   onCancel?: () => void;
   onReview?: () => void;
+  onOpenReceipt?: (bookingId: string) => void;
   canCancel?: boolean;
   showReview?: boolean;
   formatDate: (date: string) => string;
+  formatPrice: (amountUsd: number) => string;
   displayStatus: BookingStatus;
 }
 
@@ -251,9 +329,11 @@ function BookingCard({
   booking,
   onCancel,
   onReview,
+  onOpenReceipt,
   canCancel = false,
   showReview = false,
   formatDate,
+  formatPrice,
   displayStatus,
 }: BookingCardProps) {
   const router = useRouter();
@@ -270,14 +350,19 @@ function BookingCard({
 
   const tourDate = booking.tour_date || booking.booking_date;
   const imageUrl = booking.tours?.image_url || 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=400';
+  const detailHref = consumerTourDetailHref(booking.tour_id, booking.tours?.slug ?? null);
+
+  const reviewWindowYmd = normalizeBookingTourDateYmd(booking.tour_date || null);
+  const reviewWindowOpen = reviewWindowYmd ? isReviewWriteWindowOpen(reviewWindowYmd) : false;
+  const reviewDisabled = showReview && !reviewWindowOpen;
 
   return (
     <div className={cn(MYPAGE_SURFACE_PAGE, 'overflow-hidden')}>
       <div className="flex flex-col md:flex-row">
         <div className="relative h-48 flex-shrink-0 md:h-auto md:w-48">
           <Link
-            href={consumerTourDetailHref(booking.tour_id)}
-            onClick={(e) => handleLinkClick(e, consumerTourDetailHref(booking.tour_id))}
+            href={detailHref}
+            onClick={(e) => handleLinkClick(e, detailHref)}
           >
             <Image
               src={imageUrl}
@@ -291,8 +376,8 @@ function BookingCard({
           <div className="mb-3 flex items-start justify-between gap-3">
             <div className="min-w-0 flex-1">
               <Link
-                href={consumerTourDetailHref(booking.tour_id)}
-                onClick={(e) => handleLinkClick(e, consumerTourDetailHref(booking.tour_id))}
+                href={detailHref}
+                onClick={(e) => handleLinkClick(e, detailHref)}
               >
                 <h3 className="mb-2 text-[15px] font-bold tracking-tight text-[#0f172a] transition-colors hover:text-slate-700">
                   {booking.tours?.title || 'Tour'}
@@ -308,10 +393,12 @@ function BookingCard({
                   <span className="tabular-nums">{formatDate(tourDate)}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <span>Guests: {booking.number_of_guests}</span>
+                  <span>
+                    {t('mypage.bookings.guestsLabel')}: {booking.number_of_guests}
+                  </span>
                 </div>
                 <div className="flex items-center gap-1 tabular-nums font-semibold text-[#0f172a]">
-                  <span>₩{Math.round(Number(booking.final_price)).toLocaleString('ko-KR')}</span>
+                  <span>{formatPrice(Number(booking.final_price || 0))}</span>
                 </div>
               </div>
             </div>
@@ -321,21 +408,37 @@ function BookingCard({
 
           <div className="flex flex-wrap items-center gap-2 border-t border-slate-100 pt-3">
             <Link
-              href={consumerTourDetailHref(booking.tour_id)}
-              onClick={(e) => handleLinkClick(e, consumerTourDetailHref(booking.tour_id))}
-              className="inline-flex min-h-[44px] items-center justify-center rounded-xl border border-slate-900 bg-slate-900 px-4 py-2.5 text-[13px] font-semibold text-white shadow-sm transition-all hover:bg-slate-800 focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
+              href={detailHref}
+              onClick={(e) => handleLinkClick(e, detailHref)}
+              className={cn(
+                'inline-flex min-h-[44px] items-center justify-center rounded-xl border border-slate-900 bg-slate-900 px-4 py-2.5 text-[13px] font-semibold text-white shadow-sm transition-all hover:bg-slate-800',
+                MYPAGE_FOCUS_RING,
+              )}
             >
               {copy.myTour.viewDetails}
             </Link>
+            {(booking.status === 'confirmed' || booking.status === 'completed') && (
+              <button
+                type="button"
+                onClick={() => onOpenReceipt?.(booking.id)}
+                className={cn(
+                  'inline-flex min-h-[44px] items-center justify-center rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-[13px] font-semibold text-slate-900 transition-colors hover:bg-slate-50',
+                  MYPAGE_FOCUS_RING,
+                )}
+              >
+                {t('mypage.bookings.receiptCta')}
+              </button>
+            )}
             {onCancel && (
               <button
                 type="button"
                 onClick={onCancel}
                 disabled={!canCancel}
                 className={cn(
-                  'inline-flex min-h-[44px] items-center justify-center rounded-xl px-4 py-2.5 text-[13px] font-semibold transition-colors focus:ring-2 focus:ring-offset-2',
+                  'inline-flex min-h-[44px] items-center justify-center rounded-xl px-4 py-2.5 text-[13px] font-semibold transition-colors',
+                  MYPAGE_FOCUS_RING,
                   canCancel
-                    ? 'bg-red-50 text-red-700 hover:bg-red-100 focus:ring-red-400'
+                    ? 'bg-red-50 text-red-700 hover:bg-red-100'
                     : 'cursor-not-allowed bg-slate-100 text-slate-400',
                 )}
                 title={!canCancel ? t('mypage.cancelNotAllowed24h') : t('mypage.cancelBookingCta')}
@@ -346,8 +449,17 @@ function BookingCard({
             {showReview && onReview && (
               <button
                 type="button"
-                onClick={onReview}
-                className="inline-flex min-h-[44px] items-center justify-center rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-[13px] font-semibold text-slate-900 transition-colors hover:bg-slate-50 focus:ring-2 focus:ring-slate-300 focus:ring-offset-2"
+                onClick={reviewDisabled ? undefined : onReview}
+                disabled={reviewDisabled}
+                className={cn(
+                  'inline-flex min-h-[44px] items-center justify-center rounded-xl border px-4 py-2.5 text-[13px] font-semibold transition-colors',
+                  MYPAGE_FOCUS_RING,
+                  reviewDisabled
+                    ? 'cursor-not-allowed border-slate-200 bg-slate-50 text-slate-400'
+                    : 'border-slate-300 bg-white text-slate-900 hover:bg-slate-50',
+                )}
+                title={reviewDisabled ? t('mypage.reviews.write.windowNotOpen') : t('mypage.writeReviewCta')}
+                aria-describedby={reviewDisabled ? `review-window-${booking.id}` : undefined}
               >
                 {t('mypage.writeReviewCta')}
               </button>
@@ -355,6 +467,11 @@ function BookingCard({
           </div>
           {onCancel && !canCancel && (booking.status === 'confirmed' || booking.status === 'pending') && (
             <p className="mt-2 text-[11px] text-red-600">* {t('mypage.cancelNotAllowed24h')}</p>
+          )}
+          {reviewDisabled && (
+            <p id={`review-window-${booking.id}`} className="mt-2 text-[11px] text-slate-500">
+              * {t('mypage.reviews.write.windowNotOpen')}
+            </p>
           )}
         </div>
       </div>

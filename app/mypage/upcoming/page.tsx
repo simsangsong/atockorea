@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { toast } from 'sonner';
 import { CalendarDateIcon, ClockIcon } from '@/components/Icons';
 import { supabase } from '@/lib/supabase';
 import { StatusBanner } from '@/src/components/ui/status-banner';
@@ -14,8 +15,18 @@ import type { BookingStatus } from '@/src/types/booking';
 import { useCopy, useTranslations } from '@/lib/i18n';
 import { canCancelBookingByPolicy } from '@/lib/booking-cancel-policy';
 import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
-import { MYPAGE_SURFACE_PAGE } from '@/lib/mypage-ui';
+import {
+  MYPAGE_SURFACE_PAGE,
+  MYPAGE_SECTION_TITLE,
+  MYPAGE_FOCUS_RING,
+} from '@/lib/mypage-ui';
 import { cn } from '@/lib/utils';
+import { ConfirmDialog } from '@/components/mypage/ConfirmDialog';
+import {
+  MyPageHeaderSkeleton,
+  MyPageListSkeleton,
+} from '@/components/mypage/MyPageSkeletons';
+import { buildIcsEvent, downloadIcsFile } from '@/lib/ics';
 
 interface UpcomingTour {
   id: string;
@@ -25,8 +36,10 @@ interface UpcomingTour {
   status: string;
   tours: {
     id: string;
+    slug?: string | null;
     title: string;
     image_url: string;
+    city?: string;
   } | null;
   pickup_points?: {
     name: string;
@@ -41,9 +54,12 @@ export default function UpcomingToursPage() {
   const [tours, setTours] = useState<UpcomingTour[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [cancelTarget, setCancelTarget] = useState<UpcomingTour | null>(null);
+  const [cancelBusy, setCancelBusy] = useState(false);
 
   useEffect(() => {
     fetchUpcomingTours();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchUpcomingTours = async () => {
@@ -56,7 +72,7 @@ export default function UpcomingToursPage() {
         return;
       }
 
-      const response = await fetch(`/api/bookings?userId=${session.user.id}`, {
+      const response = await fetch('/api/bookings', {
         headers: { Authorization: `Bearer ${session.access_token}` },
       });
       const data = await response.json();
@@ -93,21 +109,25 @@ export default function UpcomingToursPage() {
       booking_date: booking.booking_date,
     });
 
-  const handleCancel = async (booking: UpcomingTour) => {
+  const requestCancel = (booking: UpcomingTour) => {
     if (!canCancel(booking)) {
-      alert(t('mypage.cancelNotAllowed24h'));
+      toast.error(t('mypage.common.toast.bookingCancelNotAllowed24h'));
       return;
     }
-    if (!confirm(t('mypage.confirmCancelBooking'))) return;
+    setCancelTarget(booking);
+  };
 
+  const performCancel = async () => {
+    if (!cancelTarget) return;
     try {
+      setCancelBusy(true);
       const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
       if (!session) {
-        alert(t('mypage.signInToCancel'));
+        toast.error(t('mypage.common.toast.signInRequired'));
         return;
       }
 
-      const response = await fetch(`/api/bookings/${booking.id}`, {
+      const response = await fetch(`/api/bookings/${cancelTarget.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -121,17 +141,20 @@ export default function UpcomingToursPage() {
         throw new Error(data.error || 'Failed to cancel booking');
       }
 
-      alert(t('mypage.cancelSuccess'));
+      toast.success(t('mypage.common.toast.bookingCancelled'));
+      setCancelTarget(null);
       fetchUpcomingTours();
     } catch (err: any) {
       console.error('Error cancelling booking:', err);
-      alert(t('mypage.cancelFailed', { message: err.message }));
+      toast.error(t('mypage.common.toast.bookingCancelFailed'), { description: err.message });
+    } finally {
+      setCancelBusy(false);
     }
   };
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    return date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
   };
 
   const formatTime = (timeString?: string) => {
@@ -142,12 +165,41 @@ export default function UpcomingToursPage() {
   const getDisplayStatus = (status: string): BookingStatus =>
     rawBookingStatusToDisplayStatus[status] ?? 'pending';
 
+  const computeDayCountdown = (iso: string | undefined | null) => {
+    if (!iso) return null;
+    const tourDate = new Date(iso);
+    if (Number.isNaN(tourDate.getTime())) return null;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const target = new Date(tourDate);
+    target.setHours(0, 0, 0, 0);
+    const diff = Math.round((target.getTime() - today.getTime()) / 86400000);
+    if (diff === 0) return t('mypage.bookings.dayCountdownToday');
+    if (diff === 1) return t('mypage.bookings.dayCountdownTomorrow');
+    if (diff < 0) return t('mypage.bookings.dayCountdownPast');
+    return t('mypage.bookings.dayCountdownFuture', { days: diff });
+  };
+
+  const handleCalendar = (tour: UpcomingTour) => {
+    const date = tour.tour_date || tour.booking_date;
+    if (!date) return;
+    const ics = buildIcsEvent({
+      uid: `booking-${tour.id}@atockorea`,
+      title: tour.tours?.title || 'AtoC Korea Tour',
+      description: `AtoC Korea booking #${tour.id}`,
+      location: tour.tours?.city || tour.pickup_points?.name || 'South Korea',
+      start: date,
+      url: typeof window !== 'undefined' ? `${window.location.origin}${consumerTourDetailHref(tour.tour_id, tour.tours?.slug ?? null)}` : undefined,
+    });
+    downloadIcsFile(`atoc-booking-${tour.id}`, ics);
+    toast.success(t('mypage.bookings.addToCalendar'));
+  };
+
   if (loading) {
     return (
       <div className="space-y-4">
-        <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6')}>
-          <p className="text-[13px] text-slate-600">{t('mypage.bookingsLoading')}</p>
-        </div>
+        <MyPageHeaderSkeleton />
+        <MyPageListSkeleton count={2} />
       </div>
     );
   }
@@ -157,6 +209,16 @@ export default function UpcomingToursPage() {
       <div className="space-y-4">
         <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6')}>
           <p className="text-[13px] text-red-600">{t('mypage.bookingsError', { message: error })}</p>
+          <button
+            type="button"
+            onClick={fetchUpcomingTours}
+            className={cn(
+              'mt-3 inline-flex items-center justify-center rounded-xl bg-slate-900 px-4 py-2 text-[13px] font-semibold text-white',
+              MYPAGE_FOCUS_RING,
+            )}
+          >
+            {t('mypage.commonRetry')}
+          </button>
         </div>
       </div>
     );
@@ -176,80 +238,118 @@ export default function UpcomingToursPage() {
         </p>
       </div>
 
-      <div className="space-y-3">
-        {tours.length > 0 ? (
-          tours.map((tour) => {
-            const tourDate = tour.tour_date || tour.booking_date;
-            const cancelOk = canCancel(tour);
-            const imageUrl =
-              tour.tours?.image_url ||
-              'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=400';
+      <section>
+        <h2 className={cn(MYPAGE_SECTION_TITLE, 'mb-3 px-1')}>{t('mypage.bookingsSectionUpcoming')}</h2>
+        <div className="space-y-3">
+          {tours.length > 0 ? (
+            tours.map((tour) => {
+              const tourDate = tour.tour_date || tour.booking_date;
+              const cancelOk = canCancel(tour);
+              const imageUrl =
+                tour.tours?.image_url ||
+                'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=400';
+              const detailHref = consumerTourDetailHref(tour.tour_id, tour.tours?.slug ?? null);
+              const countdown = computeDayCountdown(tour.tour_date || tour.booking_date);
 
-            return (
-              <div key={tour.id} className={cn(MYPAGE_SURFACE_PAGE, 'overflow-hidden')}>
-                <div className="flex flex-col md:flex-row">
-                  <div className="relative h-48 flex-shrink-0 md:h-auto md:w-48">
-                    <Image src={imageUrl} alt={tour.tours?.title || 'Tour'} fill className="object-cover" />
-                  </div>
-                  <div className="flex-1 p-5">
-                    <div className="mb-3">
-                      <h3 className="mb-2 text-[15px] font-bold tracking-tight text-[#0f172a]">
-                        {tour.tours?.title || 'Tour'}
-                      </h3>
-                      <div className="flex items-center gap-4 text-[12px] text-slate-600">
-                        <span className="flex items-center gap-1.5 tabular-nums">
-                          <CalendarDateIcon className="h-3.5 w-3.5 flex-shrink-0" />
-                          {formatDate(tourDate)}
+              return (
+                <div key={tour.id} className={cn(MYPAGE_SURFACE_PAGE, 'overflow-hidden')}>
+                  <div className="flex flex-col md:flex-row">
+                    <div className="relative h-48 flex-shrink-0 md:h-auto md:w-48">
+                      <Image src={imageUrl} alt={tour.tours?.title || 'Tour'} fill className="object-cover" />
+                      {countdown ? (
+                        <span className="absolute left-3 top-3 rounded-full bg-slate-900/85 px-3 py-1 text-[11px] font-semibold text-white shadow">
+                          {countdown}
                         </span>
-                        {tour.pickup_points?.pickup_time && (
-                          <span className="flex items-center gap-1.5">
-                            <ClockIcon className="h-3.5 w-3.5 flex-shrink-0" />
-                            {formatTime(tour.pickup_points.pickup_time)}
+                      ) : null}
+                    </div>
+                    <div className="flex-1 p-5">
+                      <div className="mb-3">
+                        <h3 className="mb-2 text-[15px] font-bold tracking-tight text-[#0f172a]">
+                          {tour.tours?.title || 'Tour'}
+                        </h3>
+                        <div className="flex items-center gap-4 text-[12px] text-slate-600">
+                          <span className="flex items-center gap-1.5 tabular-nums">
+                            <CalendarDateIcon className="h-3.5 w-3.5 flex-shrink-0" />
+                            {formatDate(tourDate)}
                           </span>
-                        )}
+                          {tour.pickup_points?.pickup_time && (
+                            <span className="flex items-center gap-1.5">
+                              <ClockIcon className="h-3.5 w-3.5 flex-shrink-0" />
+                              {formatTime(tour.pickup_points.pickup_time)}
+                            </span>
+                          )}
+                        </div>
                       </div>
+                      <StatusBanner status={getDisplayStatus(tour.status)} className="mb-4" />
+                      <div className="flex flex-wrap items-center gap-2">
+                        <Link
+                          href={detailHref}
+                          className={cn(
+                            'inline-flex min-h-[44px] items-center justify-center rounded-xl border border-slate-900 bg-slate-900 px-4 py-2.5 text-[13px] font-semibold text-white shadow-sm transition-all hover:bg-slate-800',
+                            MYPAGE_FOCUS_RING,
+                          )}
+                        >
+                          {copy.myTour.viewDetails}
+                        </Link>
+                        <button
+                          type="button"
+                          onClick={() => handleCalendar(tour)}
+                          className={cn(
+                            'inline-flex min-h-[44px] items-center justify-center rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-[13px] font-semibold text-slate-900 transition-colors hover:bg-slate-50',
+                            MYPAGE_FOCUS_RING,
+                          )}
+                        >
+                          {t('mypage.bookings.addToCalendar')}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => requestCancel(tour)}
+                          disabled={!cancelOk}
+                          title={
+                            !cancelOk ? t('mypage.cancelNotAllowed24h') : t('mypage.cancelBookingCta')
+                          }
+                          className={cn(
+                            'inline-flex min-h-[44px] items-center justify-center rounded-xl px-4 py-2.5 text-[13px] font-semibold transition-colors',
+                            MYPAGE_FOCUS_RING,
+                            cancelOk
+                              ? 'bg-red-50 text-red-700 hover:bg-red-100'
+                              : 'cursor-not-allowed bg-slate-100 text-slate-400',
+                          )}
+                        >
+                          {t('mypage.cancelBookingCta')}
+                        </button>
+                      </div>
+                      {!cancelOk && (
+                        <p className="mt-2 text-[11px] text-red-600">
+                          * {t('mypage.cancelNotAllowed24h')}
+                        </p>
+                      )}
                     </div>
-                    <StatusBanner status={getDisplayStatus(tour.status)} className="mb-4" />
-                    <div className="flex flex-wrap items-center gap-2">
-                      <Link
-                        href={consumerTourDetailHref(tour.tour_id)}
-                        className="inline-flex min-h-[44px] items-center justify-center rounded-xl border border-slate-900 bg-slate-900 px-4 py-2.5 text-[13px] font-semibold text-white shadow-sm transition-all hover:bg-slate-800 focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
-                      >
-                        {copy.myTour.viewDetails}
-                      </Link>
-                      <button
-                        type="button"
-                        onClick={() => void handleCancel(tour)}
-                        disabled={!cancelOk}
-                        title={
-                          !cancelOk ? t('mypage.cancelNotAllowed24h') : t('mypage.cancelBookingCta')
-                        }
-                        className={cn(
-                          'inline-flex min-h-[44px] items-center justify-center rounded-xl px-4 py-2.5 text-[13px] font-semibold transition-colors focus:ring-2 focus:ring-offset-2',
-                          cancelOk
-                            ? 'bg-red-50 text-red-700 hover:bg-red-100 focus:ring-red-400'
-                            : 'cursor-not-allowed bg-slate-100 text-slate-400',
-                        )}
-                      >
-                        {t('mypage.cancelBookingCta')}
-                      </button>
-                    </div>
-                    {!cancelOk && (
-                      <p className="mt-2 text-[11px] text-red-600">
-                        * {t('mypage.cancelNotAllowed24h')}
-                      </p>
-                    )}
                   </div>
                 </div>
-              </div>
-            );
-          })
-        ) : (
-          <div className={cn(MYPAGE_SURFACE_PAGE, 'p-12 text-center')}>
-            <p className="text-[13px] text-slate-500">{t('mypage.upcomingEmpty')}</p>
-          </div>
-        )}
-      </div>
+              );
+            })
+          ) : (
+            <div className={cn(MYPAGE_SURFACE_PAGE, 'p-12 text-center')}>
+              <p className="text-[13px] text-slate-500">{t('mypage.upcomingEmpty')}</p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <ConfirmDialog
+        open={cancelTarget != null}
+        onOpenChange={(open) => {
+          if (!open) setCancelTarget(null);
+        }}
+        title={t('mypage.common.confirm.cancelBookingTitle')}
+        description={t('mypage.common.confirm.cancelBookingDescription')}
+        confirmLabel={t('mypage.common.confirm.cancelBookingConfirm')}
+        cancelLabel={t('mypage.common.confirm.cancel')}
+        destructive
+        loading={cancelBusy}
+        onConfirm={performCancel}
+      />
     </div>
   );
 }

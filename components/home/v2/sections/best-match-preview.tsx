@@ -128,8 +128,13 @@ export function BestMatchPreview() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
     window.setTimeout(() => {
-      const input = document.querySelector<HTMLInputElement>("input[data-home-hero-intent]");
-      input?.focus({ preventScroll: true });
+      // Hero intent field may be rendered as either <input> or <textarea> (it
+      // expands into a multi-line drawer on focus). Query by data attribute so
+      // either element receives focus correctly.
+      const field = document.querySelector<HTMLInputElement | HTMLTextAreaElement>(
+        "[data-home-hero-intent]"
+      );
+      field?.focus({ preventScroll: true });
     }, 450);
   }, []);
 

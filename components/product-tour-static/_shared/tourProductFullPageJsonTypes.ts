@@ -35,6 +35,10 @@ export const TOUR_PRODUCT_VIEW_MODEL_KEYS = [
   "staticQuestions",
   "guestReviews",
   "reviewsSummary",
+  /** Optional — bus tours carry `pickup_dropoff` with fixed meeting/return points. */
+  "pickup_dropoff",
+  /** Optional — cruise shore-excursion tours carry per-docking-port itineraries. */
+  "routeVariants",
 ] as const;
 
 export type TourProductViewModelKey = (typeof TOUR_PRODUCT_VIEW_MODEL_KEYS)[number];

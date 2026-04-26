@@ -1,0 +1,928 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 1,
+  "slug": "southwest-jeju-scenic-bus-tour",
+  "locale": "en",
+  "product_id": "southwest-jeju-scenic-bus-tour",
+  "seo": {
+    "pageTitle": "Southwest Jeju 1100 Highland, Waterfalls, Tea & Aewol Bus Day Tour | AtoC Korea",
+    "metaDescription": "A scenic Southwest Jeju bus day tour covering 1100 Highland, Jusangjeolli Cliff, Cheonjeyeon Falls, a free-choice lunch break, O’sulloc Tea Museum, and Aewol Cafe Street with a coastal walk. Built for first-time visitors who want mountain views, signature landmarks, tea culture, and a relaxed seaside finish in one day."
+  },
+  "catalog_card": {
+    "slug": "southwest-jeju-scenic-bus-tour",
+    "title": "Southwest Jeju 1100 Highland, Waterfalls, Tea & Aewol Bus Day Tour",
+    "subtitle": "Mountain views, basalt cliffs, forested falls, tea fields, and a coastal café finish in one balanced value route.",
+    "region": "Southwest Jeju",
+    "duration": "10 hours",
+    "stopsCount": 6,
+    "rating": 4.8,
+    "reviewCount": 74,
+    "badges": [
+      "Scenic Southwest Route",
+      "Best-Value Bus Tour",
+      "First-Time Friendly"
+    ],
+    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202202/10/fd98aff8-eede-4448-add5-4b412d2ddf56.webp",
+    "thumbnail": "https://api.cdn.visitjeju.net/photomng/thumbnailpath/202202/10/8eaffb2c-b26b-4b3f-88b8-4cae84a95d96.webp",
+    "priceLabel": "From US$49 per person",
+    "shortCardDescription": "A full-day Southwest Jeju bus tour that links Hallasan-side highland scenery, a signature basalt cliff, Cheonjeyeon Falls, a relaxed free-choice lunch, O’sulloc Tea Museum, and Aewol’s café-lined coast. It is designed for travelers who want strong variety and good photo value without moving into private-tour pricing."
+  },
+  "headlineLine1": "Southwest Jeju 1100 Highland, Waterfalls, Tea",
+  "headlineLine2": "and Aewol Bus Day Tour",
+  "price": {
+    "amountLabel": "49",
+    "currency": "USD",
+    "per": "person"
+  },
+  "hero": {
+    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202202/10/fd98aff8-eede-4448-add5-4b412d2ddf56.webp",
+    "imagePosition": "center 48%",
+    "tagline": "From Hallasan-side highland air and dramatic basalt cliffs to forested falls, green tea fields, and a relaxed Aewol coastal finish, this Southwest Jeju bus route delivers strong scenery variety at a practical price point.",
+    "pills": [
+      "Southwest Jeju",
+      "Bus Day Tour",
+      "Best Value"
+    ],
+    "meta": {
+      "duration": "10 hours",
+      "region": "Southwest Jeju",
+      "stops": "6 stops",
+      "rating": 4.8,
+      "ratingStars": 5
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Overview"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerary"
+    },
+    {
+      "id": "details",
+      "label": "Details"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ"
+    },
+    {
+      "id": "reviews",
+      "label": "Reviews"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "Photo Potential",
+      "value": "Very High"
+    },
+    {
+      "icon": "mountain",
+      "label": "Scenery Density",
+      "value": "High"
+    },
+    {
+      "icon": "footprints",
+      "label": "Walking Difficulty",
+      "value": "Moderate"
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Rain Suitability",
+      "value": "Moderate"
+    },
+    {
+      "icon": "users",
+      "label": "Family Suitability",
+      "value": "Good"
+    },
+    {
+      "icon": "gauge",
+      "label": "Pace",
+      "value": "Full but Well Balanced"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202202/10/fd98aff8-eede-4448-add5-4b412d2ddf56.webp",
+      "location": "1100 Highland",
+      "atmosphere": "Cooler Hallasan-side air, wider views, and a very different opening mood from the coast.",
+      "alt": "1100 Highland scenery on a Southwest Jeju day tour"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+      "location": "Jusangjeolli Cliff",
+      "atmosphere": "Jeju’s signature volcanic coastline in a short, high-impact stop.",
+      "alt": "Basalt cliff scenery similar to Jusangjeolli in Jeju"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
+      "location": "Cheonjeyeon Falls",
+      "atmosphere": "Forest shade, streams, and waterfall rhythm after the exposed coast.",
+      "alt": "Waterfall atmosphere for a Southwest Jeju bus day tour"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
+      "location": "O’sulloc Tea Museum",
+      "atmosphere": "Tea-field greenery, indoor support, and a slower midday reset.",
+      "alt": "Tea museum and tea-field atmosphere in Jeju"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
+      "location": "Aewol Cafe Street",
+      "atmosphere": "A relaxed seaside close with cafés, ocean light, and an easy coastal walk.",
+      "alt": "Aewol coastal café atmosphere on Jeju Island"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "09:50",
+      "duration": "40 min",
+      "name": "1100 Highland",
+      "category": "Hallasan-Side Highland Viewpoint",
+      "description": "1100 Highland gives the day a cooler, cleaner opening than a typical coast-first route. The higher elevation, open view corridors, and seasonal mountain mood make it one of the easiest ways to feel Hallasan’s presence without committing to a real hike.",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202202/10/fd98aff8-eede-4448-add5-4b412d2ddf56.webp",
+      "highlights": [
+        "A highland viewpoint stop that brings in Hallasan atmosphere with relatively low physical demand",
+        "Strong winter and shoulder-season photo value",
+        "A clear change of mood from the coast-heavy middle of the day",
+        "Works especially well for first-time visitors who want altitude without a trekking format"
+      ],
+      "timeUsed": [
+        "Arrival briefing and safety note",
+        "Viewpoint and short boardwalk/photo time depending on conditions",
+        "Regroup and depart"
+      ],
+      "whyOnRoute": "Starting here gives the route a stronger sense of elevation and geographic range before it descends into the classic Jungmun coastal section.",
+      "visitBasics": {
+        "hours": "Open area; road and access conditions may vary with weather",
+        "closed": "Subject to snow, ice, fog, or safety controls",
+        "admission": "Free",
+        "walking": "Easy to moderate"
+      },
+      "convenience": {
+        "restroom": "Available near the rest area",
+        "parking": "Parking available"
+      },
+      "smartNotes": {
+        "photo": "On clear days, wider landscape framing works better than tight portraits because the altitude and sky are part of the appeal.",
+        "facilities": "Facilities are basic but practical for a short opening stop.",
+        "tip": "This stop is highly weather-sensitive, so visibility matters more than walking distance."
+      }
+    },
+    {
+      "number": 2,
+      "time": "11:00",
+      "duration": "40 min",
+      "name": "Jusangjeolli Cliff",
+      "category": "Basalt Cliff Landmark",
+      "description": "Jusangjeolli is one of Jeju’s clearest signature geology stops. The hexagonal basalt columns and ocean backdrop make it a short but very recognizable landmark for first-time visitors.",
+      "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+      "highlights": [
+        "One of Jeju’s best-known volcanic coastline stops",
+        "Fast visual payoff that works very well in a bus-tour format",
+        "Strong first-visit landmark value",
+        "High photo reward without a long on-site stay"
+      ],
+      "timeUsed": [
+        "Entry and short walking approach",
+        "Main viewing platform stop",
+        "Photo time and regroup"
+      ],
+      "whyOnRoute": "It anchors the route with one of Jeju’s most recognizable geology stops before the softer forested tone of Cheonjeyeon Falls.",
+      "visitBasics": {
+        "hours": "09:00–18:00 (last entrance 17:40)",
+        "closed": "Open year-round",
+        "admission": "KRW 2,000 adults / KRW 1,000 children and youth",
+        "walking": "Easy to moderate"
+      },
+      "convenience": {
+        "restroom": "At or near the visitor area",
+        "parking": "Paid parking lot available"
+      },
+      "smartNotes": {
+        "photo": "The basalt geometry reads best with some ocean left in frame rather than cropping too tightly on the rock columns.",
+        "facilities": "Access is straightforward, but shade is limited and wind can be strong.",
+        "tip": "Comfort here is shaped more by wind and sea spray than by raw walking time."
+      }
+    },
+    {
+      "number": 3,
+      "time": "11:55",
+      "duration": "50 min",
+      "name": "Cheonjeyeon Falls",
+      "category": "Waterfall and Forest Walk",
+      "description": "Cheonjeyeon adds a greener, more shaded rhythm after the exposed sea-cliff stop. The bridge, wooded paths, and waterfall setting make it feel more layered than a simple look-and-go viewpoint.",
+      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
+      "highlights": [
+        "A classic Jungmun waterfall stop with stronger forest atmosphere than many coastal landmarks",
+        "A good contrast to the open sea views at Jusangjeolli",
+        "More immersive than a short curbside viewpoint",
+        "Solid scenery value for travelers who enjoy a little walking"
+      ],
+      "timeUsed": [
+        "Entry and route briefing",
+        "Waterfall path walk and bridge area viewing",
+        "Return walk and regroup"
+      ],
+      "whyOnRoute": "It balances the day by shifting from exposed geology to shaded water-and-forest scenery before lunch.",
+      "visitBasics": {
+        "hours": "09:00–17:40 or 17:50 depending on source and season; last admission typically around 17:10",
+        "closed": "Open year-round",
+        "admission": "KRW 2,500 adults / KRW 1,350 youth and children",
+        "walking": "Moderate"
+      },
+      "convenience": {
+        "restroom": "Available near the entrance",
+        "parking": "Parking available"
+      },
+      "smartNotes": {
+        "photo": "The bridge and tree-lined approach often photograph better than trying to isolate only the waterfall itself.",
+        "facilities": "This stop has practical visitor support, but it is more of a walking stop than a quick look-and-leave landmark.",
+        "tip": "The walking load here is still manageable for most travelers, but it is more substantial than O’sulloc or Aewol."
+      }
+    },
+    {
+      "number": 4,
+      "time": "13:00",
+      "duration": "60 min",
+      "name": "Lunch Break (Free Choice)",
+      "category": "Free Lunch Time",
+      "description": "This one-hour lunch break gives travelers time to reset in the Jungmun area before the route continues west. It keeps the day flexible for different tastes and budgets, while making it clear that meal costs are not included in the tour price.",
+      "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80",
+      "highlights": [
+        "One full hour for a relaxed meal stop",
+        "Free-choice lunch rather than a fixed group menu",
+        "Works well for mixed traveler preferences",
+        "Meal cost is not included"
+      ],
+      "timeUsed": [
+        "Guide drop-off and lunch area briefing",
+        "Free lunch time",
+        "Regroup and departure"
+      ],
+      "whyOnRoute": "Placing lunch after the Jungmun landmark section gives the route a natural midpoint before moving into tea fields and the Aewol coast.",
+      "visitBasics": {
+        "hours": "Depends on the day’s restaurant area and traffic flow",
+        "closed": "Varies by restaurant",
+        "admission": "Meal cost not included",
+        "walking": "Easy"
+      },
+      "convenience": {
+        "restroom": "Available at or near the lunch stop",
+        "parking": "Bus-accessible stop used by the guide"
+      },
+      "smartNotes": {
+        "photo": "This is mainly a practical reset stop rather than a photo-led sightseeing stop.",
+        "facilities": "Facilities depend on the restaurant zone selected that day.",
+        "tip": "Because lunch is free choice and not included, travelers can choose based on appetite, speed, and budget."
+      }
+    },
+    {
+      "number": 5,
+      "time": "14:30",
+      "duration": "60 min",
+      "name": "O’sulloc Tea Museum",
+      "category": "Tea Culture and Greenery",
+      "description": "O’sulloc slows the pace after the morning’s more exposed sightseeing. Tea fields, museum space, dessert options, and indoor support make it one of the route’s easiest stops to enjoy in different weather conditions.",
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
+      "highlights": [
+        "One of the route’s best mixed indoor-outdoor stops",
+        "Tea-field visuals add a softer texture than cliffs and waterfalls",
+        "Strong café, dessert, and souvenir appeal",
+        "Helpful buffer stop on windy or light-rain days"
+      ],
+      "timeUsed": [
+        "Museum and tea-field orientation",
+        "Free time for browsing, café, or gift shop",
+        "Regroup before departure"
+      ],
+      "whyOnRoute": "It gives the route a calmer middle-to-late-day reset before ending with a relaxed coastal atmosphere in Aewol.",
+      "visitBasics": {
+        "hours": "09:00–18:00; some sources note longer summer hours",
+        "closed": "Open year-round",
+        "admission": "Free (some experience programs cost extra)",
+        "walking": "Easy"
+      },
+      "convenience": {
+        "restroom": "Inside the museum complex",
+        "parking": "Parking available"
+      },
+      "smartNotes": {
+        "photo": "Tea fields, desserts, and glass reflections all work well here, but the stop usually feels best when it is not rushed.",
+        "facilities": "Among today’s stops, this one offers the strongest indoor and café support.",
+        "tip": "This stop often becomes more valuable when weather is less stable."
+      }
+    },
+    {
+      "number": 6,
+      "time": "16:10",
+      "duration": "60 min",
+      "name": "Aewol Cafe Street & Coastal Walk",
+      "category": "Seaside Café and Coastal Stroll",
+      "description": "Aewol closes the day with an easier, more lifestyle-driven coastal mood. Rather than finishing on another hard landmark, the route shifts into ocean views, casual walking, cafés, and a softer end-of-day rhythm.",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
+      "highlights": [
+        "A relaxed seaside finish with good café choice and ocean light",
+        "Popular with couples and travelers who enjoy a slower final stop",
+        "Adds contemporary Jeju atmosphere rather than another geology landmark",
+        "Easy coastal walking compared with a trail-style finish"
+      ],
+      "timeUsed": [
+        "Guide orientation to the café/coastal area",
+        "Free stroll and café time",
+        "Regroup and depart for Jeju City"
+      ],
+      "whyOnRoute": "Ending in Aewol gives the itinerary a more relaxed finish and broadens the route beyond classic landmark-only sightseeing.",
+      "visitBasics": {
+        "hours": "Outdoor coastal walk area is generally open; individual café hours vary",
+        "closed": "Coastal walk open year-round; café closures vary by business",
+        "admission": "Free for the coastal area; café purchases are optional",
+        "walking": "Easy"
+      },
+      "convenience": {
+        "restroom": "Depends on café use and nearby public facilities",
+        "parking": "Area parking available but can be busy"
+      },
+      "smartNotes": {
+        "photo": "Late-day seaside light, storefront details, and boardwalk angles usually work better than trying to treat this as a single fixed viewpoint.",
+        "facilities": "Facilities depend on the specific café zone and time of day.",
+        "tip": "This stop is less about ticking off one landmark and more about ending the route in a relaxed, photogenic seaside district."
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "id": "01",
+      "name": "1100 Highland",
+      "theme": "Highland"
+    },
+    {
+      "id": "02",
+      "name": "Jusangjeolli",
+      "theme": "Basalt"
+    },
+    {
+      "id": "03",
+      "name": "Cheonjeyeon",
+      "theme": "Waterfall"
+    },
+    {
+      "id": "04",
+      "name": "Lunch",
+      "theme": "Reset"
+    },
+    {
+      "id": "05",
+      "name": "O’sulloc",
+      "theme": "Tea"
+    },
+    {
+      "id": "06",
+      "name": "Aewol",
+      "theme": "Coast"
+    }
+  ],
+  "routePhases": [
+    {
+      "label": "Morning",
+      "range": "1-3",
+      "theme": "Highland to Jungmun Landmarks",
+      "bgClass": "bg-sky-50/70",
+      "textClass": "text-sky-700",
+      "dotClass": "bg-sky-500"
+    },
+    {
+      "label": "Midday",
+      "range": "4-5",
+      "theme": "Lunch and Tea-Field Reset",
+      "bgClass": "bg-emerald-50/70",
+      "textClass": "text-emerald-700",
+      "dotClass": "bg-emerald-500"
+    },
+    {
+      "label": "Late Afternoon",
+      "range": "6",
+      "theme": "Aewol Coastal Finish",
+      "bgClass": "bg-amber-50/70",
+      "textClass": "text-amber-700",
+      "dotClass": "bg-amber-500"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "How the day flows",
+    "subtitle": "The route opens at higher elevation near Hallasan, moves through Southwest Jeju’s best-known basalt and waterfall landmarks, pauses for a relaxed lunch and tea-field stop, and finishes at Aewol’s café-lined coast. Pickup runs from 08:30 to 09:05 in Jeju City, with return usually around 17:50 to 18:30."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "First-time visitors to Jeju",
+      "Travelers who want strong scenery variety in one day",
+      "Couples",
+      "Adult families",
+      "Visitors who like a relaxed coastal finish instead of a hike-heavy ending"
+    ],
+    "lessIdeal": [
+      "Travelers seeking a mostly indoor or rain-proof route",
+      "Visitors who want a slow luxury pace all day",
+      "Anyone highly sensitive to weather-dependent viewpoints",
+      "Travelers who dislike moderate walking on stairs or uneven outdoor paths"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Why this bus route works well",
+        "icon": "bus",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "Stronger scenery range than a single-theme route",
+            "detail": "Highland views, basalt cliffs, waterfall forest, tea fields, and a seaside café district all give the day clearly different moods."
+          },
+          {
+            "label": "Good value for first-time coverage",
+            "detail": "The route connects several of Southwest Jeju’s best-known sightseeing zones without stepping up into private-tour pricing."
+          },
+          {
+            "label": "A softer ending improves overall balance",
+            "detail": "Finishing in Aewol gives the day a more relaxed close than ending on another strenuous or ticketed stop."
+          }
+        ]
+      },
+      {
+        "title": "How the walking load actually feels",
+        "icon": "footprints",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "Moderate overall, but not a hiking tour",
+            "detail": "1100 Highland, Jusangjeolli, and Aewol are generally manageable, while Cheonjeyeon adds the most noticeable walking load."
+          },
+          {
+            "label": "Balanced between active and easy stops",
+            "detail": "The route mixes short landmark stops with easier browsing time at O’sulloc and a relaxed coastal finish in Aewol."
+          },
+          {
+            "label": "Works for many mixed-age groups",
+            "detail": "As long as travelers are comfortable with moderate walking at Cheonjeyeon and typical outdoor surfaces, the route is broadly accessible for bus-tour standards."
+          }
+        ]
+      },
+      {
+        "title": "When weather changes on site",
+        "icon": "cloud-rain",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-600",
+        "items": [
+          {
+            "label": "1100 Highland is the most weather-sensitive stop",
+            "detail": "Fog, snow, or road safety controls can reduce visibility or affect stop quality at the highland section."
+          },
+          {
+            "label": "Jusangjeolli and Aewol feel different in wind",
+            "detail": "Both stops still work operationally in many conditions, but comfort and photo quality drop faster in strong coastal wind."
+          },
+          {
+            "label": "O’sulloc helps stabilize the route",
+            "detail": "Because it offers indoor space and easy circulation, O’sulloc gives the day a useful weather buffer in the middle."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "Pickup and Return Times",
+      "preview": "4 fixed pickup points + 5 city drop-off points",
+      "content": [
+        "Pickup: 08:30 Ocean Suites Hotel",
+        "Pickup: 08:45 Jeju Airport, 3rd Floor Gate 3",
+        "Pickup: 08:55 Lotte City Hotel Jeju",
+        "Pickup: 09:05 Shilla Duty Free Shop",
+        "Drop-off: Ocean Suites Hotel",
+        "Drop-off: Jeju Airport, 3rd Floor Gate 3",
+        "Drop-off: Lotte City Hotel Jeju",
+        "Drop-off: Shilla Duty Free Shop",
+        "Extra drop-off available at Dongmun Market",
+        "Expected return to Jeju City around 17:30–18:10 depending on traffic and weather",
+        "Please arrive at least 10 minutes early at your selected pickup point"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "Walking and Terrain",
+      "preview": "Moderate overall, with Cheonjeyeon as the main walking stop",
+      "content": [
+        "1100 Highland is usually a short viewpoint-style stop with limited walking, depending on weather and stop layout",
+        "Jusangjeolli is a short outdoor landmark walk with some exposure to wind",
+        "Cheonjeyeon involves the most noticeable walking of the day, including steps and forest-path movement",
+        "O’sulloc and Aewol are easier and more relaxed by comparison",
+        "Comfortable walking shoes with grip are strongly recommended"
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "Weather and Route Adjustments",
+      "preview": "Most affected by visibility at 1100 Highland and wind on the coast",
+      "content": [
+        "Light rain: the tour usually still operates",
+        "Heavy rain, fog, snow, or strong wind: 1100 Highland quality and visibility can drop quickly",
+        "Exposed coastal stops such as Jusangjeolli and Aewol may feel less comfortable in strong wind",
+        "If a stop becomes unsafe or significantly reduced in quality, timing or stop order may be adjusted"
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "What to Wear and Bring",
+      "preview": "Walking shoes, layers, and wind protection are the basics",
+      "content": [
+        "Comfortable walking shoes with good grip",
+        "A light jacket or windproof outer layer",
+        "Layered clothing for changing mountain and coast temperatures",
+        "Sun protection and a hat",
+        "Water bottle"
+      ]
+    },
+    {
+      "id": "included",
+      "title": "What’s Included / Not Included",
+      "preview": "Guide, vehicle, fixed pickup, and standard sightseeing support",
+      "variant": "included",
+      "content": [
+        "Professional English-speaking guide",
+        "Shared bus transportation",
+        "Fixed pickup and drop-off in Jeju City",
+        "Basic guided sightseeing support",
+        "Admission fees are not included unless otherwise specified at checkout",
+        "Lunch is not included",
+        "Personal expenses, café purchases, and optional shopping are not included",
+        "Guide gratuities are optional"
+      ]
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "Fixed Jeju City pickups",
+      "description": "Four meeting points with scheduled times",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600"
+    },
+    {
+      "icon": "route",
+      "title": "Scenic southwest loop",
+      "description": "Hallasan views, tea country, and Aewol coast in one day",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600"
+    },
+    {
+      "icon": "users",
+      "title": "Bus-tour value",
+      "description": "Broad coverage without a private charter price",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "When you book (important)",
+      "title": "Leave contact details you actually use",
+      "detail": "Add a phone number, WhatsApp number, and LINE ID or add-friend link you check every day. If we cannot reach you, the guide may not be able to confirm the meet-up in time."
+    },
+    {
+      "timing": "After booking",
+      "title": "Confirmation email first",
+      "detail": "You get a booking confirmation by email: route summary, price, and how your pickup or meeting is arranged."
+    },
+    {
+      "timing": "Day before the tour",
+      "title": "Your guide contacts you",
+      "detail": "The day before departure, your guide reaches you directly on WhatsApp, LINE, or phone to confirm time, the exact meeting point, and any last details."
+    },
+    {
+      "timing": "On tour day",
+      "title": "At the meeting point",
+      "detail": "Arrive at least 10 minutes before your time; the bus departs on schedule. Follow the time your guide shared with you."
+    },
+    {
+      "timing": "After the tour",
+      "title": "Return & support",
+      "detail": "Return to the fixed drop-off points in Jeju City. Message us if you need help after the day."
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "Live weather integration"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "Updated daily"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "name": "Spring",
+      "icon": "flower",
+      "description": "Spring visibility and mild temperatures often make 1100 Highland, Cheonjeyeon, and Aewol especially comfortable in one route.",
+      "tag": "Balanced season",
+      "bgClass": "bg-spring",
+      "iconColor": "text-pink-500"
+    },
+    {
+      "name": "Summer",
+      "icon": "sun",
+      "description": "Tea-field greens look rich and the coast feels lively, but midday heat and humidity can make the outdoor stops feel more exposed.",
+      "tag": "Lush scenery",
+      "bgClass": "bg-summer",
+      "iconColor": "text-yellow-500"
+    },
+    {
+      "name": "Autumn",
+      "icon": "leaf",
+      "description": "Autumn light often sharpens the mountain and coastal sections, making this one of the strongest photo seasons for the route.",
+      "tag": "Best photo season",
+      "bgClass": "bg-autumn",
+      "iconColor": "text-orange-500"
+    },
+    {
+      "name": "Winter",
+      "icon": "snowflake",
+      "description": "1100 Highland can look especially striking in winter, but snow, ice, and low visibility make this the most weather-sensitive season.",
+      "tag": "Highland-sensitive",
+      "bgClass": "bg-winter",
+      "iconColor": "text-sky-500"
+    }
+  ],
+  "faqItems": [
+    {
+      "q": "Is this a good Southwest Jeju tour for first-time visitors?",
+      "a": "Yes. It combines one Hallasan-side highland stop, Jungmun’s signature cliff and waterfall area, O’sulloc, and an Aewol coastal finish, which makes it a strong first-visit bus route."
+    },
+    {
+      "q": "How difficult is the walking on this route?",
+      "a": "Overall walking is moderate for a bus tour. Cheonjeyeon is the most noticeable walking stop, while O’sulloc and Aewol are much easier by comparison."
+    },
+    {
+      "q": "Are admission tickets included?",
+      "a": "This JSON is structured for a bus-tour setup where admission is not included unless your checkout configuration says otherwise. Keep the live product setup aligned with your actual offer."
+    },
+    {
+      "q": "Can the route change in bad weather?",
+      "a": "Yes. 1100 Highland is particularly weather-sensitive because visibility and road conditions matter there, and exposed coastal stops can also feel different in strong wind."
+    },
+    {
+      "question": "Is lunch included?",
+      "answer": "The itinerary includes a one-hour lunch break after Cheonjeyeon Falls. Lunch is free choice, and meal costs are not included in the tour price."
+    }
+  ],
+  "reviewsPreview": {
+    "averageRating": 4.8,
+    "totalReviews": 74,
+    "highlights": [
+      {
+        "label": "Scenery",
+        "count": 56
+      },
+      {
+        "label": "Route mix",
+        "count": 41
+      },
+      {
+        "label": "Guide",
+        "count": 33
+      },
+      {
+        "label": "Value",
+        "count": 31
+      }
+    ],
+    "featured": [
+      {
+        "name": "Emma",
+        "country": "Australia",
+        "rating": 5,
+        "comment": "A really well-balanced day. Starting high up near Hallasan and ending in Aewol made the route feel more varied than a standard landmark-only bus tour.",
+        "tripType": "Couple"
+      },
+      {
+        "name": "Michael",
+        "country": "United States",
+        "rating": 4,
+        "comment": "Good value and a nice mix of famous stops with more relaxed time later in the day. Cheonjeyeon had the most walking, but the pace was manageable.",
+        "tripType": "Family"
+      }
+    ]
+  },
+  "stickyBooking": {
+    "price": {
+      "amountLabel": "49",
+      "currency": "USD",
+      "per": "person"
+    }
+  },
+  "matching_profile": {
+    "product_id": "southwest-jeju-scenic-bus-tour",
+    "product_type": "bus",
+    "route_type": "fixed_route",
+    "region_type": "southwest",
+    "region_tags": [
+      "jeju_southwest",
+      "jungmun",
+      "hallasan_1100",
+      "aewol"
+    ],
+    "theme_tags": [
+      "highland",
+      "waterfall",
+      "basalt_cliff",
+      "tea",
+      "cafe_coast",
+      "first_time_friendly",
+      "iconic_landmarks",
+      "value_route"
+    ],
+    "poi_tags": [
+      "1100_highland",
+      "jusangjeolli_cliff",
+      "cheonjeyeon_falls",
+      "osulloc_tea_museum",
+      "aewol_cafe_street"
+    ],
+    "pace_level": 4,
+    "walking_level": 3,
+    "scenic_level": 5,
+    "photo_level": 5,
+    "culture_level": 2,
+    "relax_level": 4,
+    "first_time_fit": 5,
+    "family_fit": 4,
+    "senior_fit": 3,
+    "couple_fit": 5,
+    "active_traveler_fit": 4,
+    "one_day_fit": 4,
+    "same_day_flight_fit": 2,
+    "rain_fit": 3,
+    "value_for_money_fit": 5,
+    "iconic_landmark_fit": 4,
+    "cafe_fit": 4,
+    "adult_family_fit": 4,
+    "young_kids_fit": 3,
+    "senior_active_fit": 4,
+    "senior_general_fit": 3,
+    "mobility_friendly_fit": 2,
+    "stroller_fit": 2,
+    "indoor_ratio": 31,
+    "weather_sensitivity": 4,
+    "local_culture_fit": 2,
+    "shopping_fit": 2,
+    "storytelling_fit": 3,
+    "comfort_level": 3,
+    "budget_fit": 5,
+    "premium_fit": 1,
+    "small_group_fit": 1,
+    "private_fit": 1,
+    "bus_fit": 5,
+    "price_band": "budget",
+    "pickup_base": "jeju_city",
+    "return_time_band": "17:50-18:30",
+    "duration_band": "10h",
+    "min_recommended_age": 7,
+    "hard_constraints": {
+      "avoidIf": [
+        "heavy_fog_or_snow_on_1100_road",
+        "travelers_needing_a_slow_luxury_pace"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "stroller_heavy_groups",
+        "travelers_wanting_mostly_indoor_sightseeing"
+      ]
+    },
+    "walking_notes": [
+      "Overall walking is moderate for a bus tour rather than a trekking itinerary.",
+      "1100 Highland, Jusangjeolli, O’sulloc, and Aewol are manageable for most travelers under normal conditions.",
+      "Cheonjeyeon is the stop with the most noticeable walking load because of steps and forest-path movement.",
+      "Comfortable grip shoes are strongly recommended, especially in wet, windy, or colder conditions."
+    ],
+    "keywords": [
+      "southwest jeju bus tour",
+      "jeju 1100 highland osulloc aewol tour",
+      "jusangjeolli cheonjeyeon bus day tour",
+      "jungmun osulloc aewol sightseeing bus",
+      "best value southwest jeju tour",
+      "first time jeju southwest day trip",
+      "jeju tea museum and aewol coast tour",
+      "1100 highland jeju day tour",
+      "cheonjeyeon waterfall bus tour",
+      "jeju scenic southwest route"
+    ],
+    "synonym_hints": [
+      "southwest jeju highlights by bus",
+      "1100 highland to aewol day route",
+      "jungmun waterfall cliff tea field tour",
+      "budget-friendly southwest jeju tour",
+      "aewol cafe coast finish bus tour",
+      "fixed pickup jeju bus tour"
+    ],
+    "profile_version": 1,
+    "is_active": true
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "embedded_for": [
+      "authoring",
+      "review",
+      "sql_backfill_reference"
+    ],
+    "note": "Scores were tuned for a scenic Southwest Jeju bus-tour format: very high scenery and photo fit, stronger couple/café/relax value than the South classic route, moderate walking overall, and weather sensitivity driven mainly by 1100 Highland visibility plus exposed coastal sections.",
+    "duration_hours": 10,
+    "stop_count": 6
+  },
+  "pickup_dropoff": {
+    "pickupType": "fixed_meeting_points",
+    "dropoffType": "fixed_dropoff_points",
+    "departure": [
+      {
+        "order": 1,
+        "time": "08:30",
+        "name": "Ocean Suites Hotel",
+        "type": "hotel",
+        "note": "Main city pickup point near Tapdong."
+      },
+      {
+        "order": 2,
+        "time": "08:45",
+        "name": "Jeju Airport, 3rd Floor Gate 3",
+        "type": "airport",
+        "note": "Departure floor meeting point."
+      },
+      {
+        "order": 3,
+        "time": "08:55",
+        "name": "Lotte City Hotel Jeju",
+        "type": "hotel",
+        "note": "Central Jeju City hotel pickup point."
+      },
+      {
+        "order": 4,
+        "time": "09:05",
+        "name": "Shilla Duty Free Shop",
+        "type": "shopping",
+        "note": "Popular downtown meeting point."
+      }
+    ],
+    "return": [
+      {
+        "order": 1,
+        "name": "Ocean Suites Hotel",
+        "type": "hotel",
+        "note": "Standard city drop-off point."
+      },
+      {
+        "order": 2,
+        "name": "Jeju Airport, 3rd Floor Gate 3",
+        "type": "airport",
+        "note": "Useful for same-day departures; exact stop order may vary."
+      },
+      {
+        "order": 3,
+        "name": "Lotte City Hotel Jeju",
+        "type": "hotel",
+        "note": "Standard city drop-off point."
+      },
+      {
+        "order": 4,
+        "name": "Shilla Duty Free Shop",
+        "type": "shopping",
+        "note": "Standard city drop-off point."
+      },
+      {
+        "order": 5,
+        "name": "Dongmun Market",
+        "type": "market",
+        "note": "Additional downtown drop-off for travelers who want to continue the evening in central Jeju City."
+      }
+    ],
+    "notes": [
+      "Return usually runs around 17:30–18:10 depending on traffic, weather, and day-of-road conditions.",
+      "Drop-off order may be adjusted slightly for operational efficiency.",
+      "Please arrive at least 10 minutes early at your selected pickup point."
+    ]
+  }
+}

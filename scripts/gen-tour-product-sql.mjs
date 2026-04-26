@@ -111,6 +111,21 @@ function asRecord(x) {
 }
 
 /**
+ * Same contract as `mergeFullPageWithLocaleBase` in `tourProductBundleRegistry.ts`.
+ * Locale files may be partial overlays (e.g. only `bookingSupportSteps`); EN is the
+ * base so `tour_product_pages.title` and `detail_payload` stay complete.
+ */
+function mergeFullPageWithLocaleBase(en, loc) {
+  const merged = { ...en, ...loc };
+  if (loc && typeof loc.sectionUi === "object" && en && typeof en.sectionUi === "object") {
+    merged.sectionUi = { ...en.sectionUi, ...loc.sectionUi };
+  } else if (loc && loc.sectionUi) {
+    merged.sectionUi = loc.sectionUi;
+  }
+  return merged;
+}
+
+/**
  * Resolve `tours.city` as one of the check-constraint allow-list values
  * (`Seoul | Busan | Jeju`). Authors typically put a marketing label in
  * `catalog_card.region` (e.g. "Jeju Full-Island Route"), which would
@@ -142,6 +157,11 @@ function resolveToursCity(doc, slug) {
 
 /** Derive `tours.price` (integer) from authoring JSON. */
 function resolveToursPrice(doc, slug) {
+  const overrides = asRecord(asRecord(doc.sql_overrides).tours);
+  if (overrides.price != null) {
+    const forced = Number(overrides.price);
+    if (Number.isFinite(forced) && forced >= 0) return forced;
+  }
   const priceAmountLabel = asRecord(doc.price).amountLabel;
   if (priceAmountLabel != null) {
     const n = Number(String(priceAmountLabel).replace(/[^0-9.]/g, ""));
@@ -152,8 +172,16 @@ function resolveToursPrice(doc, slug) {
     const m = priceLabel.match(/(\d+(?:\.\d+)?)/);
     if (m) return Number(m[1]);
   }
-  console.error(`[gen-tour-product-sql] unable to resolve price for ${slug}; set price.amountLabel or catalog_card.priceLabel`);
-  process.exit(1);
+  // Products with TBD/placeholder pricing (e.g. cruise shore excursions where
+  // the cruise-day rate is finalized per sailing) can explicitly opt in by
+  // setting `sql_overrides.tours.price = 0`. If we reach this fallback without
+  // any signal, emit a warning but keep the row insertable so seeding isn't
+  // blocked during authoring.
+  console.warn(
+    `[gen-tour-product-sql] price unresolved for ${slug}; falling back to 0.00. ` +
+      `Set price.amountLabel, catalog_card.priceLabel, or sql_overrides.tours.price.`,
+  );
+  return 0;
 }
 
 /** `tours` catalog row — optional author overrides live in `doc.sql_overrides.tours`. */
@@ -271,16 +299,27 @@ ON CONFLICT (slug) DO UPDATE SET
 /** One tour_product_pages upsert per locale, each embedding its own detail_payload. */
 function buildTourProductPagesInserts(bundle, slug) {
   const blocks = [];
+  const enDoc = bundle.en?.doc;
+  if (!enDoc) {
+    console.error(`[gen-tour-product-sql] missing bundle.en for ${slug}`);
+    process.exit(1);
+  }
   for (const [locale, entry] of Object.entries(bundle)) {
-    const doc = { ...entry.doc };
+    const doc =
+      locale === "en"
+        ? { ...entry.doc }
+        : mergeFullPageWithLocaleBase(enDoc, entry.doc);
     // page_sections are authoring-side snapshots; detail_payload doesn't need them.
     if ("page_sections" in doc) delete doc.page_sections;
+    if (locale !== "en") {
+      doc.locale = locale;
+    }
     const detailPayloadJson = JSON.stringify(doc);
 
-    const cc = asRecord(entry.doc.catalog_card);
-    const hero = asRecord(entry.doc.hero);
-    const price = asRecord(entry.doc.price);
-    const seo = asRecord(entry.doc.seo);
+    const cc = asRecord(doc.catalog_card);
+    const hero = asRecord(doc.hero);
+    const price = asRecord(doc.price);
+    const seo = asRecord(doc.seo);
     const badges = Array.isArray(cc.badges) ? cc.badges : [];
 
     blocks.push(`INSERT INTO public.tour_product_pages (
@@ -310,8 +349,8 @@ function buildTourProductPagesInserts(bundle, slug) {
   ${sqlNullable(cc.shortCardDescription ?? "")},
   ${sqlNullable(seo.pageTitle ?? "")},
   ${sqlNullable(seo.metaDescription ?? "")},
-  ${sqlNullable(entry.doc.headlineLine1 ?? "")},
-  ${sqlNullable(entry.doc.headlineLine2 ?? "")},
+  ${sqlNullable(doc.headlineLine1 ?? "")},
+  ${sqlNullable(doc.headlineLine2 ?? "")},
   ${sqlNullable(price.amountLabel ?? "")},
   ${sqlNullable(price.currency ?? "USD")},
   ${sqlNullable(price.per ?? "person")},

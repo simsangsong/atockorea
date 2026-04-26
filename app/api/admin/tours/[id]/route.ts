@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
+import { applyTourWriteRules } from '@/lib/admin/tour-write-rules';
 
 /**
  * PATCH /api/admin/tours/[id]
@@ -96,6 +97,15 @@ export async function PATCH(
       throw error;
     }
 
+    // Lock slug + validate price_type before assembling update payload.
+    const ruleResult = applyTourWriteRules(body);
+    if (!ruleResult.ok) {
+      return NextResponse.json({ error: ruleResult.error, field: ruleResult.field }, { status: 400 });
+    }
+    if (ruleResult.warnings.length > 0) {
+      console.warn('[PATCH /api/admin/tours/[id]]', ruleResult.warnings.join('; '), { tourId });
+    }
+
     // Prepare update data
     const updateData: any = {};
 
@@ -110,7 +120,6 @@ export async function PATCH(
 
     // Handle other fields
     if (body.title !== undefined) updateData.title = body.title;
-    if (body.slug !== undefined) updateData.slug = body.slug;
     if (body.city !== undefined) updateData.city = body.city;
     if (body.price !== undefined) updateData.price = parseFloat(body.price);
     if (body.price_type !== undefined) updateData.price_type = body.price_type;

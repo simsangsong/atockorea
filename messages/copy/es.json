@@ -173,6 +173,10 @@
   },
   "checkout": {
     "title": "Pago",
+    "pageTitle": "Completa tu reserva",
+    "pageSubtitle": "Rellena tus datos para finalizar la reserva.",
+    "customerInfoTitle": "Datos del viajero",
+    "requiredFieldsHint": "Campos obligatorios *",
     "cta": "Reservar mi plaza",
     "completeBooking": "Completar reserva",
     "timelineStaticCopy": "Depósito reembolsable hasta 24 h antes; saldo debido 18 h antes.",
@@ -183,7 +187,10 @@
     "total": "Total",
     "secureCheckoutTitle": "Secure checkout",
     "secureCheckoutBody": "Pay the full tour price online to complete your booking. Free cancellation until 24 hours before departure.",
-    "confirmationEmailNote": "You will receive a confirmation email after payment."
+    "confirmationEmailNote": "You will receive a confirmation email after payment.",
+    "paymentCancelled": "El pago se canceló. Vuelve a intentarlo o usa otra tarjeta o método de pago.",
+    "lineCalloutEmphasis": "Debes dejar el enlace de chat de LINE",
+    "chatContactLineHelper": "Pega un enlace compartible (p. ej. line.me/ti/p/…), no un teléfono ni un ID."
   },
   "listDetail": {
     "summaryToursFound": "{{count}} tour(s) encontrado(s)",
