@@ -1,0 +1,1065 @@
+{
+  "version": "1.0",
+  "purpose": "Curated taxonomy of high-signal matching dimensions used by the Haiku parser to convert natural-language queries into structured matching profiles.",
+  "regions": {
+    "jeju": [
+      "jeju",
+      "제주",
+      "济州",
+      "濟州",
+      "チェジュ",
+      "済州島",
+      "済州",
+      "チェジュ島",
+      "濟州島",
+      "济州岛"
+    ],
+    "busan_gyeongju": [
+      "busan",
+      "부산",
+      "釜山",
+      "プサン",
+      "gyeongju",
+      "경주",
+      "慶州",
+      "ケイシュウ",
+      "庆州",
+      "釜山港"
+    ],
+    "seoul": [
+      "seoul",
+      "서울",
+      "ソウル",
+      "首爾",
+      "首尔"
+    ],
+    "incheon_seoul": [
+      "incheon",
+      "인천",
+      "仁川",
+      "インチョン"
+    ],
+    "suwon": [
+      "suwon",
+      "수원",
+      "水原",
+      "hwaseong",
+      "화성",
+      "華城",
+      "水原市"
+    ],
+    "pocheon": [
+      "pocheon",
+      "포천",
+      "抱川"
+    ]
+  },
+  "sub_regions": {
+    "jeju_east": [
+      "east jeju",
+      "제주 동부",
+      "동부 제주",
+      "seongsan",
+      "성산",
+      "udo"
+    ],
+    "jeju_west": [
+      "west jeju",
+      "제주 서부",
+      "서부 제주",
+      "hyeopjae",
+      "협재"
+    ],
+    "jeju_southwest": [
+      "southwest jeju",
+      "제주 서남",
+      "서남부 제주",
+      "osulloc",
+      "오설록"
+    ],
+    "jeju_southern": [
+      "southern jeju",
+      "제주 남부",
+      "seogwipo",
+      "서귀포",
+      "jusangjeolli",
+      "주상절리"
+    ],
+    "jeju_central": [
+      "central jeju",
+      "제주시",
+      "제주 중부"
+    ],
+    "seoul_central": [
+      "central seoul",
+      "서울 중심",
+      "myeongdong",
+      "명동",
+      "gangnam",
+      "강남"
+    ]
+  },
+  "seasons": {
+    "spring": {
+      "months": [
+        3,
+        4,
+        5
+      ],
+      "ko": [
+        "봄",
+        "봄철"
+      ],
+      "en": [
+        "spring"
+      ]
+    },
+    "summer": {
+      "months": [
+        6,
+        7,
+        8
+      ],
+      "ko": [
+        "여름",
+        "여름철"
+      ],
+      "en": [
+        "summer"
+      ]
+    },
+    "autumn": {
+      "months": [
+        9,
+        10,
+        11
+      ],
+      "ko": [
+        "가을",
+        "가을철",
+        "단풍"
+      ],
+      "en": [
+        "autumn",
+        "fall",
+        "foliage"
+      ]
+    },
+    "winter": {
+      "months": [
+        12,
+        1,
+        2
+      ],
+      "ko": [
+        "겨울",
+        "겨울철",
+        "눈"
+      ],
+      "en": [
+        "winter",
+        "snow"
+      ]
+    }
+  },
+  "season_locks": {
+    "cherry_blossom": {
+      "months": [
+        3,
+        4
+      ],
+      "ideal": "Mar 22 – Apr 5",
+      "ko": [
+        "벚꽃",
+        "벚꽃축제",
+        "벗꽃",
+        "왕벚꽃"
+      ],
+      "en": [
+        "cherry blossom",
+        "sakura",
+        "king cherry"
+      ],
+      "boost_dims": [
+        "cherry_blossom_fit",
+        "cherry_bloom_window_fit",
+        "wangbeotnamu_fit",
+        "yoshino_cherry_fit",
+        "king_cherry_blossom_fit",
+        "king_cherry_native_jeju_anchor_fit",
+        "100_year_old_cherry_trees_anchor_fit",
+        "wangbeotnamu_native_hallasan_origin_fit"
+      ],
+      "ja": [
+        "さくら",
+        "サクラ",
+        "桜"
+      ],
+      "zh": [
+        "樱花",
+        "櫻花"
+      ]
+    },
+    "canola_flower": {
+      "months": [
+        3,
+        4
+      ],
+      "ideal": "Mar 28 – Apr 10",
+      "ko": [
+        "유채",
+        "유채꽃"
+      ],
+      "en": [
+        "canola",
+        "rapeseed flower"
+      ],
+      "boost_dims": [
+        "canola_flower_fit",
+        "canola_bloom_window_fit",
+        "cherry_canola_dual_bloom_anchor_fit",
+        "two_temperament_cherry_pair_fit"
+      ],
+      "ja": [
+        "ナノハナ",
+        "菜の花"
+      ],
+      "zh": [
+        "油菜花"
+      ]
+    },
+    "plum_blossom": {
+      "months": [
+        2,
+        3
+      ],
+      "ko": [
+        "매화",
+        "매화꽃"
+      ],
+      "en": [
+        "plum blossom"
+      ],
+      "boost_dims": [
+        "plum_blossom_fit"
+      ],
+      "ja": [
+        "うめ",
+        "梅花",
+        "梅"
+      ],
+      "zh": [
+        "梅花"
+      ]
+    },
+    "hydrangea": {
+      "months": [
+        6,
+        7
+      ],
+      "ideal": "Jun 15 – Jul 10",
+      "ko": [
+        "수국",
+        "수국축제"
+      ],
+      "en": [
+        "hydrangea"
+      ],
+      "boost_dims": [
+        "summer_flowers_hydrangea_fit",
+        "hydrangea_tunnel_signature_photo",
+        "hydrangea_tunnel_visit",
+        "hydrangea_festival_anchor_count",
+        "hydrangea_greenhouse_fallback_fit"
+      ],
+      "ja": [
+        "あじさい",
+        "アジサイ",
+        "紫陽花"
+      ],
+      "zh": [
+        "繡球花",
+        "绣球花"
+      ]
+    },
+    "tangerine": {
+      "months": [
+        11,
+        12,
+        1,
+        2
+      ],
+      "ko": [
+        "감귤",
+        "귤",
+        "한라봉"
+      ],
+      "en": [
+        "tangerine",
+        "mandarin",
+        "hallabong"
+      ],
+      "boost_dims": [
+        "tangerine_picking_winter_fit",
+        "tangerine_orchard_orange_green_photo_fit",
+        "winter_tangerine_picking_anchor",
+        "hallabong_peak_window_fit",
+        "only_tangerine_picking_anchor_tour_in_catalog"
+      ],
+      "ja": [
+        "みかん",
+        "ミカン",
+        "蜜柑"
+      ],
+      "zh": [
+        "柑橘",
+        "橘子",
+        "蜜柑"
+      ]
+    },
+    "snow_camellia": {
+      "months": [
+        12,
+        1,
+        2
+      ],
+      "ko": [
+        "동백",
+        "동백꽃",
+        "눈꽃"
+      ],
+      "en": [
+        "camellia",
+        "snow camellia"
+      ],
+      "boost_dims": [
+        "winter_camellia_bloom_fit",
+        "winter_camellia_red_petal_photo_fit",
+        "largest_camellia_arboretum_east_asia_fit",
+        "first_snow_experience_fit",
+        "snow_day_friendly_fit",
+        "winter_snow_anchor",
+        "snow_dwarf_tree_frozen_guardian_photo_fit"
+      ],
+      "ja": [
+        "つばき",
+        "ツバキ",
+        "雪景色",
+        "椿"
+      ],
+      "zh": [
+        "山茶",
+        "茶花",
+        "雪景"
+      ]
+    },
+    "autumn_foliage": {
+      "months": [
+        10,
+        11
+      ],
+      "ko": [
+        "단풍",
+        "가을단풍"
+      ],
+      "en": [
+        "foliage",
+        "autumn leaves"
+      ],
+      "boost_dims": [
+        "autumn_foliage_fit"
+      ],
+      "ja": [
+        "こうよう",
+        "もみじ",
+        "紅葉"
+      ],
+      "zh": [
+        "枫叶",
+        "楓葉",
+        "紅葉"
+      ]
+    }
+  },
+  "personas": {
+    "couples": {
+      "ko": [
+        "커플",
+        "연인",
+        "데이트"
+      ],
+      "en": [
+        "couple",
+        "couples",
+        "date"
+      ],
+      "fit_dim": "couple_fit"
+    },
+    "families": {
+      "ko": [
+        "가족",
+        "패밀리"
+      ],
+      "en": [
+        "family",
+        "families"
+      ],
+      "fit_dim": "family_fit"
+    },
+    "family_with_young_kids": {
+      "ko": [
+        "아이",
+        "어린아이",
+        "유아"
+      ],
+      "en": [
+        "young kids",
+        "toddlers"
+      ],
+      "fit_dim": [
+        "family_with_young_kids_fit",
+        "families_with_kids_fit",
+        "kid_friendly_fit",
+        "stroller_friendly_fit"
+      ]
+    },
+    "family_with_teens": {
+      "ko": [
+        "청소년",
+        "10대",
+        "중고생"
+      ],
+      "en": [
+        "teens",
+        "teenagers"
+      ],
+      "fit_dim": "family_with_teens_fit"
+    },
+    "adult_family": {
+      "ko": [
+        "성인 가족",
+        "어른 가족"
+      ],
+      "en": [
+        "adult family"
+      ],
+      "fit_dim": "adult_family_fit"
+    },
+    "solo_travelers": {
+      "ko": [
+        "혼자",
+        "1인",
+        "솔로"
+      ],
+      "en": [
+        "solo",
+        "alone"
+      ],
+      "fit_dim": "solo_traveler_fit"
+    },
+    "honeymooners": {
+      "ko": [
+        "신혼",
+        "허니문",
+        "신혼여행"
+      ],
+      "en": [
+        "honeymoon",
+        "honeymooners"
+      ],
+      "fit_dim": [
+        "honeymoon_fit",
+        "honeymoon_couple_fit",
+        "couples_premium_fit",
+        "romantic_atmosphere_fit"
+      ]
+    },
+    "senior_couples": {
+      "ko": [
+        "시니어",
+        "노인",
+        "어르신"
+      ],
+      "en": [
+        "senior",
+        "elderly"
+      ],
+      "fit_dim": [
+        "senior_couples_fit",
+        "senior_fit",
+        "mobility_friendly_fit",
+        "calm_pace_fit"
+      ]
+    },
+    "photographers": {
+      "ko": [
+        "사진",
+        "포토",
+        "인스타"
+      ],
+      "en": [
+        "photo",
+        "instagram",
+        "photography"
+      ],
+      "fit_dim": "photo_level"
+    },
+    "k_drama_fans": {
+      "ko": [
+        "My Love from the Star",
+        "스물다섯 스물하나",
+        "슬기로운 의사생활",
+        "내남편과결혼해줘",
+        "선재 업고 튀어",
+        "우리들의 블루스",
+        "갯마을 차차차",
+        "그 해 우리는",
+        "미스터 선샤인",
+        "사랑의 불시착",
+        "웰컴투 삼달리",
+        "이태원 클라스",
+        "폭싹 속았수다",
+        "경성 크리처",
+        "눈물의 여왕",
+        "미스터선샤인",
+        "사랑의불시착",
+        "오징어 게임",
+        "이태원클라스",
+        "킹 더 랜드",
+        "폭싹속았수다",
+        "25 21",
+        "경성크리처",
+        "마이 데몬",
+        "오징어게임",
+        "왕이된남자",
+        "한국드라마",
+        "D.P.",
+        "K드라마",
+        "겨울연가",
+        "드라마팬",
+        "마이데몬",
+        "사내맞선",
+        "소년심판",
+        "속았수다",
+        "응답하라",
+        "킹더랜드",
+        "도깨비",
+        "드라마",
+        "별그대",
+        "블루스",
+        "빈센조",
+        "삼달리",
+        "시그널",
+        "지리산",
+        "무빙",
+        "연인",
+        "폭싹",
+        "한드",
+        "환혼"
+      ],
+      "en": [
+        "when life gives you tangerines",
+        "twenty five twenty one",
+        "crash landing on you",
+        "gyeongseong creature",
+        "hometown cha cha cha",
+        "welcome to samdal ri",
+        "business proposal",
+        "hospital playlist",
+        "pokssak sogatsuda",
+        "alchemy of souls",
+        "marry my husband",
+        "queen of tears",
+        "itaewon class",
+        "king the land",
+        "lovely runner",
+        "winter sonata",
+        "korean drama",
+        "mr sunshine",
+        "squid game",
+        "our blues",
+        "samdal-ri",
+        "my demon",
+        "vincenzo",
+        "k-drama",
+        "goblin",
+        "kdrama",
+        "moving",
+        "2521"
+      ],
+      "fit_dim": [
+        "k_drama_filming_fit",
+        "k_drama_filming_location_route_fit",
+        "k_drama_filming_density_high_fit",
+        "sageuk_filming_location_density_high_fit",
+        "winter_sonata_anchor_fit"
+      ]
+    },
+    "history_lovers": {
+      "ko": [
+        "역사",
+        "유적"
+      ],
+      "en": [
+        "history",
+        "heritage"
+      ],
+      "fit_dim": "culture_level"
+    },
+    "culture_lovers": {
+      "ko": [
+        "문화",
+        "전통"
+      ],
+      "en": [
+        "culture",
+        "traditional"
+      ],
+      "fit_dim": "culture_level"
+    },
+    "cruise_passengers": {
+      "ko": [
+        "크루즈",
+        "유람선"
+      ],
+      "en": [
+        "cruise",
+        "shore excursion"
+      ],
+      "fit_dim": "cruise_shore_excursion_fit"
+    }
+  },
+  "themes": {
+    "unesco_world_heritage": {
+      "ko": [
+        "유네스코",
+        "세계유산"
+      ],
+      "en": [
+        "unesco",
+        "world heritage"
+      ],
+      "boost_dims": [
+        "unesco_fit",
+        "unesco_world_heritage_anchor_fit",
+        "world_heritage_fit",
+        "world_natural_heritage_fit"
+      ]
+    },
+    "buddhist_temple": {
+      "ko": [
+        "사찰",
+        "불교",
+        "templestay"
+      ],
+      "en": [
+        "temple",
+        "buddhist",
+        "templestay"
+      ],
+      "boost_dims": [
+        "buddhist_temple_fit",
+        "templestay_program_available_fit"
+      ]
+    },
+    "lava_tube_cave": {
+      "ko": [
+        "용암동굴",
+        "동굴"
+      ],
+      "en": [
+        "lava tube",
+        "cave"
+      ],
+      "boost_dims": [
+        "cave_fit",
+        "lava_tube_cave_anchor_fit"
+      ]
+    },
+    "tea_culture": {
+      "ko": [
+        "녹차",
+        "티",
+        "차밭"
+      ],
+      "en": [
+        "tea",
+        "green tea",
+        "matcha"
+      ],
+      "boost_dims": [
+        "tea_culture_fit",
+        "osulloc_anchor_fit"
+      ]
+    },
+    "k_drama_filming": {
+      "ko": [
+        "드라마 로케이션",
+        "K드라마 촬영",
+        "겨울연가 촬영",
+        "드라마 촬영지",
+        "도깨비 촬영",
+        "드라마촬영지",
+        "촬영장",
+        "촬영지"
+      ],
+      "en": [
+        "shooting location",
+        "filming location",
+        "k-drama filming",
+        "drama location",
+        "drama set"
+      ],
+      "boost_dims": [
+        "k_drama_filming_density_high_fit",
+        "k_drama_filming_fit",
+        "k_drama_filming_location_route_fit",
+        "sageuk_filming_location_density_high_fit",
+        "winter_sonata_anchor_fit"
+      ]
+    },
+    "haenyeo_culture": {
+      "ko": [
+        "해녀"
+      ],
+      "en": [
+        "haenyeo",
+        "women divers"
+      ],
+      "boost_dims": [
+        "haenyeo_culture_fit",
+        "haenyeo_demonstration_fit"
+      ]
+    },
+    "scenic_drive": {
+      "ko": [
+        "드라이브",
+        "경치 좋은 길"
+      ],
+      "en": [
+        "scenic drive",
+        "country road"
+      ],
+      "boost_dims": [
+        "scenic_level",
+        "country_drive_fit"
+      ]
+    },
+    "beach": {
+      "ko": [
+        "해변",
+        "바다"
+      ],
+      "en": [
+        "beach",
+        "ocean"
+      ],
+      "boost_dims": [
+        "beach_fit",
+        "coastal_cliff_fit"
+      ]
+    },
+    "shopping": {
+      "ko": [
+        "쇼핑",
+        "면세"
+      ],
+      "en": [
+        "shopping",
+        "duty free"
+      ],
+      "boost_dims": [
+        "shopping_fit"
+      ]
+    },
+    "food_market": {
+      "ko": [
+        "시장",
+        "전통시장",
+        "맛집"
+      ],
+      "en": [
+        "market",
+        "street food",
+        "local food"
+      ],
+      "boost_dims": [
+        "seafood_market_fit",
+        "street_food_fit",
+        "market_fit"
+      ]
+    },
+    "dmz_security_zone": {
+      "ko": [
+        "DMZ",
+        "비무장지대",
+        "북한"
+      ],
+      "en": [
+        "dmz",
+        "demilitarized",
+        "north korea"
+      ],
+      "boost_dims": [
+        "dmz_security_zone_day_tour_fit"
+      ]
+    },
+    "library_modern_architecture": {
+      "ko": [
+        "도서관",
+        "스타필드"
+      ],
+      "en": [
+        "library",
+        "starfield",
+        "architecture"
+      ],
+      "boost_dims": [
+        "starfield_library_photo_stop_fit",
+        "modern_architecture_fit"
+      ]
+    }
+  },
+  "pace_dimensions": {
+    "pace_relaxed": {
+      "ko": [
+        "여유롭게",
+        "편안하게",
+        "느긋하게"
+      ],
+      "en": [
+        "relaxed",
+        "leisurely",
+        "slow"
+      ],
+      "boost_dims": [
+        "pace_level",
+        "relax_level"
+      ],
+      "weight_pace": "low"
+    },
+    "pace_active": {
+      "ko": [
+        "활동적",
+        "액티브",
+        "많이 걷는"
+      ],
+      "en": [
+        "active",
+        "energetic",
+        "hiking"
+      ],
+      "boost_dims": [
+        "active_traveler_fit",
+        "walking_level"
+      ],
+      "weight_pace": "high"
+    },
+    "photo_intensive": {
+      "ko": [
+        "사진 많이",
+        "포토",
+        "인스타"
+      ],
+      "en": [
+        "photo-intensive",
+        "photo-friendly",
+        "instagrammable"
+      ],
+      "boost_dims": [
+        "photo_level",
+        "instagram_photo_density_high_fit"
+      ]
+    }
+  },
+  "hard_constraints": {
+    "vegetarian": {
+      "ko": [
+        "채식",
+        "비건"
+      ],
+      "en": [
+        "vegetarian",
+        "vegan"
+      ],
+      "filter_dim": "vegetarian_lunch_available"
+    },
+    "wheelchair": {
+      "ko": [
+        "휠체어",
+        "장애"
+      ],
+      "en": [
+        "wheelchair",
+        "accessible"
+      ],
+      "filter_dim": "wheelchair_accessible_anchor_fit"
+    },
+    "halal": {
+      "ko": [
+        "할랄",
+        "무슬림"
+      ],
+      "en": [
+        "halal",
+        "muslim"
+      ],
+      "filter_dim": "muslim_friendly_fit"
+    },
+    "rainy_day_ok": {
+      "ko": [
+        "비 와도",
+        "우천",
+        "비오는날"
+      ],
+      "en": [
+        "rain",
+        "rainy"
+      ],
+      "filter_dim": "rain_fit"
+    },
+    "evening_flight": {
+      "ko": [
+        "저녁 비행",
+        "당일 비행"
+      ],
+      "en": [
+        "evening flight",
+        "same day flight"
+      ],
+      "filter_dim": "same_day_flight_fit"
+    },
+    "cruise_reboard_5pm": {
+      "ko": [
+        "크루즈 5시 재승선",
+        "재승선"
+      ],
+      "en": [
+        "cruise reboard"
+      ],
+      "filter_dim": "cruise_reboarding_safety_fit"
+    }
+  },
+  "format_constraints": {
+    "private": {
+      "ko": [
+        "프라이빗",
+        "개인",
+        "단독"
+      ],
+      "en": [
+        "private"
+      ],
+      "fit_dim": "private_fit"
+    },
+    "small_group": {
+      "ko": [
+        "소규모",
+        "소그룹"
+      ],
+      "en": [
+        "small group"
+      ],
+      "fit_dim": "small_group_fit"
+    },
+    "bus_tour": {
+      "ko": [
+        "버스투어",
+        "단체"
+      ],
+      "en": [
+        "bus tour",
+        "group bus"
+      ],
+      "fit_dim": "bus_fit"
+    },
+    "charter": {
+      "ko": [
+        "전세",
+        "차량 대절"
+      ],
+      "en": [
+        "charter",
+        "private car"
+      ],
+      "fit_dim": "private_charter_fit"
+    }
+  },
+  "duration_constraints": {
+    "half_day": {
+      "ko": [
+        "반나절",
+        "오전",
+        "오후"
+      ],
+      "hours_max": 4
+    },
+    "day_trip": {
+      "ko": [
+        "당일",
+        "1일",
+        "원데이"
+      ],
+      "en": [
+        "day trip",
+        "one day"
+      ],
+      "hours_min": 6,
+      "hours_max": 11
+    },
+    "extended": {
+      "ko": [
+        "1박",
+        "2일"
+      ],
+      "en": [
+        "overnight",
+        "2 days"
+      ],
+      "hours_min": 12
+    }
+  },
+  "anchor_pois_index": {
+    "comment": "Top anchor POI keys frequently mentioned by name in queries",
+    "popular_anchors": [
+      "seongsan_ilchulbong",
+      "hallasan",
+      "manjanggul_cave",
+      "udo_island",
+      "osulloc_tea_museum",
+      "hyeopjae_beach",
+      "jeju_loveland",
+      "jusangjeolli_cliff",
+      "songaksan",
+      "cheonjeyeon_falls",
+      "haedong_yonggungsa",
+      "gamcheon_culture_village",
+      "jagalchi_market",
+      "huinnyeoul_culture_village",
+      "bulguksa_temple",
+      "seokguram_grotto",
+      "cheomseongdae",
+      "daereungwon_tomb_complex",
+      "anapji_pond",
+      "hwaseong_fortress",
+      "hwaseong_haenggung",
+      "korean_folk_village_yongin",
+      "starfield_library_suwon",
+      "gwangmyeong_cave",
+      "waujeongsa_temple",
+      "imjingak_peace_park",
+      "third_infiltration_tunnel",
+      "dora_observatory",
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france",
+      "seoraksan_national_park",
+      "sokcho_tourist_fishery_market",
+      "sanjeong_lake",
+      "herb_island",
+      "pocheon_art_valley",
+      "jeonnong_ro_cherry_blossom_street",
+      "noksan_ro_gasiri_blossom_road"
+    ]
+  }
+}

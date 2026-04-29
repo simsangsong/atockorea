@@ -1,83 +1,44 @@
+/**
+ * Tour-product matcher API (v1.8 engine, dual-shape response).
+ *
+ * - Parser: Haiku 4.5 with prompt caching when ANTHROPIC_API_KEY is set,
+ *   falls back to deterministic rule parser. (lib/tour-match-v2/parser.ts)
+ * - Matcher: hard filter + soft scoring against `match_tours` rows.
+ *   (lib/tour-match-v2/matcher.ts)
+ * - Response: dual-shape — v2 fields (parsed_query, top_matches, notes) plus
+ *   the legacy v1 fields (intent, winner, matchedProducts, ranked, …) so
+ *   /match page + HomeV2MatchProvider keep working without changes.
+ * - Audit: each call optionally logged to `match_queries` (set
+ *   TOUR_MATCH_AUDIT_LOG=1; production-only by convention).
+ */
+
 import { NextRequest, NextResponse } from "next/server";
-import { getStaticTourProductBySlug } from "@/components/product-tour-static/catalog/staticTourProductRegistry";
-import { mergeDeterministicIntentBoost } from "@/lib/tour-product-match/deterministic-boost";
-import { loadMatchingProfilesForMatch } from "@/lib/tour-product-match/fetch-matching-profiles";
-import { generateMatchExplanationWithGemini } from "@/lib/tour-product-match/gemini-match-explanation";
-import { parseTravelerIntentWithGemini } from "@/lib/tour-product-match/gemini-parse-intent";
-import { computeTourMatchOutcomeMeta, snapshotFromProductTypeIntent } from "@/lib/tour-product-match/match-outcome";
-import { emptyTravelerIntent } from "@/lib/tour-product-match/normalize-intent";
-import { capMatchedProductsForApi, capRankedForApi } from "@/lib/tour-product-match/scored-product-api";
-import {
-  parseProductTypeIntent,
-  resolveProductTypeIntent,
-  scoreIntentAgainstProfiles,
-} from "@/lib/tour-product-match/score-tour-products";
-import type { ScoredProduct, TourMatchApiResponse } from "@/lib/tour-product-match/types";
-import { getMatchWeightsFromEnv } from "@/lib/tour-product-match/weights";
-
-function topChannelDebugRows(valid: ScoredProduct[], ranked: ScoredProduct[], n = 3): unknown[] {
-  const pool = valid.length > 0 ? valid : ranked;
-  return pool.slice(0, n).map((r) => ({
-    product_id: r.product_id,
-    excluded: r.excluded,
-    excludeReason: r.excludeReason,
-    score: r.score,
-    breakdown: r.breakdown,
-  }));
-}
-
-function logTourMatchSummary(payload: {
-  matchOutcome: string;
-  noMatchReason: string | null;
-  validCount: number;
-  resolvedProductTypeIntent: ReturnType<typeof snapshotFromProductTypeIntent>;
-  textParserProductTypeIntent: ReturnType<typeof snapshotFromProductTypeIntent>;
-  gemini_ms: number;
-  db_ms: number;
-  scoring_ms: number;
-  explanation_ms: number;
-  total_ms: number;
-}): void {
-  console.info(
-    JSON.stringify({
-      tag: "[tour-product/match]",
-      outcome: payload.matchOutcome,
-      noMatchReason: payload.noMatchReason,
-      validCount: payload.validCount,
-      resolved: payload.resolvedProductTypeIntent,
-      parserOnly: payload.textParserProductTypeIntent,
-      gemini_ms: payload.gemini_ms,
-      db_ms: payload.db_ms,
-      scoring_ms: payload.scoring_ms,
-      explanation_ms: payload.explanation_ms,
-      total_ms: payload.total_ms,
-    }),
-  );
-}
-
-function logTourMatchTraceVerbose(payload: {
-  rawText: string;
-  intentGeminiProductType: { desired: string | null; strength: string | null };
-  intentAfterBoostProductType: { desired: string | null; strength: string | null };
-  textParserProductTypeIntent: ReturnType<typeof snapshotFromProductTypeIntent>;
-  resolvedProductTypeIntent: ReturnType<typeof snapshotFromProductTypeIntent>;
-  topChannelRows: unknown[];
-}): void {
-  console.info(
-    JSON.stringify({
-      tag: "[tour-product/match] trace",
-      rawText: payload.rawText,
-      geminiStructuredProductType: payload.intentGeminiProductType,
-      normalizedAfterBoostProductType: payload.intentAfterBoostProductType,
-      textParserProductTypeIntent: payload.textParserProductTypeIntent,
-      resolvedProductTypeIntent: payload.resolvedProductTypeIntent,
-      topChannelRows: payload.topChannelRows,
-    }),
-  );
-}
+import { createClient } from "@supabase/supabase-js";
+import { parseQuery } from "@/lib/tour-match-v2/parser";
+import { matchTours } from "@/lib/tour-match-v2/matcher";
+import { fetchMatchTours } from "@/lib/tour-match-v2/fetch-tours";
+import { buildV1Response } from "@/lib/tour-match-v2/adapter-v1";
+import { computeHaikuCost } from "@/lib/tour-match-v2/cost-calc";
+import { explainTopMatch } from "@/lib/tour-match-v2/explainer-haiku";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
+
+function makeSupabaseClient() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !anonKey) {
+    throw new Error("Supabase env vars missing");
+  }
+  return createClient(url, anonKey, { auth: { persistSession: false } });
+}
+
+function makeServiceRoleClient() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const sk = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !sk) return null;
+  return createClient(url, sk, { auth: { persistSession: false } });
+}
 
 export async function POST(req: NextRequest) {
   const t0 = Date.now();
@@ -89,114 +50,124 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid text" }, { status: 400 });
     }
 
-    let intentGemini = emptyTravelerIntent();
-    const tGemini0 = Date.now();
-    let geminiMs = 0;
-    try {
-      intentGemini = await parseTravelerIntentWithGemini({ rawText: text, locale });
-    } catch (e) {
-      console.error("[tour-product/match] Gemini intent failed; using deterministic-only intent", e);
-      intentGemini = emptyTravelerIntent();
-    }
-    geminiMs = Date.now() - tGemini0;
+    // 1. Parse (Haiku → rule fallback)
+    const parserModeEnv = (process.env.TOUR_MATCH_PARSER_MODE ?? "auto").toLowerCase();
+    const parserMode: "haiku" | "rule" | "auto" =
+      parserModeEnv === "haiku" || parserModeEnv === "rule" ? parserModeEnv : "auto";
 
-    const intent = mergeDeterministicIntentBoost(text, intentGemini);
+    const tParse0 = Date.now();
+    const parsed = await parseQuery(text, parserMode);
+    const parseMs = Date.now() - tParse0;
 
-    const textParserPti = parseProductTypeIntent(text);
-    const resolvedPti = resolveProductTypeIntent(intent, text);
-    const textParserProductTypeIntent = snapshotFromProductTypeIntent(textParserPti);
-    const resolvedProductTypeIntent = snapshotFromProductTypeIntent(resolvedPti);
-
+    // 2. Fetch match_tours rows
     const tDb0 = Date.now();
-    const { rows, source } = await loadMatchingProfilesForMatch();
+    const supabase = makeSupabaseClient();
+    const tourRows = await fetchMatchTours(supabase, "en");
     const dbMs = Date.now() - tDb0;
 
-    const weights = getMatchWeightsFromEnv();
-    const weightSet = (process.env.TOUR_MATCH_WEIGHT_SET ?? "default").trim();
+    // 3. Match
+    const tMatch0 = Date.now();
+    const v2 = matchTours(parsed, tourRows, 5);
+    const matchMs = Date.now() - tMatch0;
 
-    const tScore0 = Date.now();
-    const ranked = scoreIntentAgainstProfiles(text, intent, rows, weights);
-    const scoringMs = Date.now() - tScore0;
-
-    const matchedProducts = ranked.filter((r) => !r.excluded);
-    const { matchOutcome, noMatchReason, fallbackAvailable } = computeTourMatchOutcomeMeta(ranked, matchedProducts);
-    const winner = matchedProducts[0] ?? null;
-
-    const traceEnabled = process.env.TOUR_MATCH_TRACE_LOG === "1";
-    if (traceEnabled) {
-      logTourMatchTraceVerbose({
-        rawText: text,
-        intentGeminiProductType: {
-          desired: intentGemini.desired_product_type,
-          strength: intentGemini.product_type_intent_strength,
-        },
-        intentAfterBoostProductType: {
-          desired: intent.desired_product_type,
-          strength: intent.product_type_intent_strength,
-        },
-        textParserProductTypeIntent,
-        resolvedProductTypeIntent,
-        topChannelRows: topChannelDebugRows(matchedProducts, ranked),
-      });
-    }
-
-    const winnerProfile = winner ? rows.find((r) => r.product_id === winner.product_id) : undefined;
-    const staticProduct = winner ? getStaticTourProductBySlug(winner.product_id) : undefined;
-    const winnerTitle = staticProduct?.title ?? winner?.product_id ?? "";
-
+    // 4. Top-1 winner natural-language explanation (Haiku 2nd pass).
+    //    Skipped when no winner OR ANTHROPIC_API_KEY missing OR explainer disabled.
     let matchExplanation: string | null = null;
-    let explanationMs = 0;
-    if (winner && winnerProfile) {
-      const tExp0 = Date.now();
+    let explainMs = 0;
+    let explainCostUsd = 0;
+    let explainerTelemetry: Awaited<ReturnType<typeof explainTopMatch>>["telemetry"] | null = null;
+    const explainerDisabled = process.env.TOUR_MATCH_EXPLAINER_DISABLED === "1";
+    const winnerV2 = v2.top_matches[0];
+    if (winnerV2 && !explainerDisabled && process.env.ANTHROPIC_API_KEY) {
       try {
-        matchExplanation = await generateMatchExplanationWithGemini({
-          rawText: text,
-          locale,
-          intent,
-          winnerProductId: winner.product_id,
-          winnerTitle,
-          profile: winnerProfile,
-        });
+        const winnerRow = tourRows.find((r) => r.slug === winnerV2.slug);
+        if (winnerRow) {
+          const tExp0 = Date.now();
+          const out = await explainTopMatch({
+            query: text,
+            locale,
+            parsed,
+            winner: winnerV2,
+            winnerRow,
+          });
+          matchExplanation = out.explanation;
+          explainMs = out.elapsed_ms;
+          explainCostUsd = out.cost_usd;
+          explainerTelemetry = out.telemetry;
+          if (!explainMs) explainMs = Date.now() - tExp0;
+        }
       } catch (e) {
-        console.error("[tour-product/match] explanation generation failed", e);
-        matchExplanation = intent.summary_one_line?.trim() ?? null;
+        console.error("[tour-product/match v1.8] explainer failed:", (e as Error).message);
       }
-      explanationMs = Date.now() - tExp0;
     }
+    // Fallback: when no Haiku explanation, surface the parser notes (legacy behaviour)
+    if (!matchExplanation) matchExplanation = parsed.parser_notes ?? null;
+
+    // 5. Adapter — v1 fields for backward-compat consumers
+    const v1 = buildV1Response(parsed, v2, matchExplanation, "v1.8");
 
     const totalMs = Date.now() - t0;
 
-    logTourMatchSummary({
-      matchOutcome,
-      noMatchReason,
-      validCount: matchedProducts.length,
-      resolvedProductTypeIntent,
-      textParserProductTypeIntent,
-      gemini_ms: geminiMs,
-      db_ms: dbMs,
-      scoring_ms: scoringMs,
-      explanation_ms: explanationMs,
-      total_ms: totalMs,
+    // 5. Audit log (opt-in)
+    if (process.env.TOUR_MATCH_AUDIT_LOG === "1") {
+      const sb = makeServiceRoleClient();
+      if (sb) {
+        const cost = parsed._telemetry ? computeHaikuCost(parsed._telemetry) : 0;
+        sb.from("match_queries")
+          .insert({
+            raw_query: text,
+            raw_query_locale: parsed.raw_query_locale,
+            parsed_query: parsed,
+            top_matches: v2.top_matches,
+            matched_tour_count: v2.candidates_passed_hard_filter,
+            parser_model: parsed._telemetry?.model ?? "rule",
+            parser_input_tokens: parsed._telemetry?.input_tokens ?? 0,
+            parser_cache_read_tokens: parsed._telemetry?.cache_read_input_tokens ?? 0,
+            parser_cache_create_tokens: parsed._telemetry?.cache_create_input_tokens ?? 0,
+            parser_output_tokens: parsed._telemetry?.output_tokens ?? 0,
+            parser_cost_usd: cost,
+            parse_elapsed_ms: parseMs,
+            match_elapsed_ms: matchMs,
+            user_session_id: req.cookies.get("atc_session")?.value ?? null,
+            user_locale: locale,
+          })
+          .then(({ error }) => {
+            if (error) console.error("[match_queries audit log]", error.message);
+          });
+      }
+    }
+
+    console.info(
+      JSON.stringify({
+        tag: "[tour-product/match v1.8]",
+        outcome: v1.matchOutcome,
+        passed: v2.candidates_passed_hard_filter,
+        rejected: v2.candidates_rejected_count,
+        parser: parsed._telemetry?.model ?? "rule",
+        parse_ms: parseMs,
+        db_ms: dbMs,
+        match_ms: matchMs,
+        explain_ms: explainMs,
+        explain_cost_usd: explainCostUsd,
+        total_ms: totalMs,
+      })
+    );
+
+    return NextResponse.json({
+      // v2 native shape
+      parsed_query: parsed,
+      candidates_passed_hard_filter: v2.candidates_passed_hard_filter,
+      candidates_rejected_count: v2.candidates_rejected_count,
+      top_matches: v2.top_matches,
+      notes: v2.notes,
+      parser_telemetry: parsed._telemetry ?? null,
+      explainer_telemetry: explainerTelemetry,
+      // v1 backward-compat fields
+      ...v1,
     });
-
-    const payload: TourMatchApiResponse = {
-      intent,
-      winner: winner ? capMatchedProductsForApi([winner])[0] ?? null : null,
-      matchedProducts: capMatchedProductsForApi(matchedProducts),
-      ranked: capRankedForApi(ranked),
-      matchOutcome,
-      noMatchReason,
-      resolvedProductTypeIntent,
-      textParserProductTypeIntent,
-      fallbackAvailable,
-      profileSource: source,
-      weightSet,
-      matchExplanation,
-    };
-
-    return NextResponse.json(payload);
   } catch (e) {
     const msg = e instanceof Error ? e.message : "Match failed";
+    console.error("[tour-product/match v1.8] error:", msg);
     return NextResponse.json({ error: msg }, { status: 500 });
   }
 }

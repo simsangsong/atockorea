@@ -56,7 +56,12 @@ export async function fetchTourProductOffersForPage(
 function parsePayload(raw: unknown): TourProductDetailPayloadV1 | null {
   if (!isRecord(raw)) return null;
   const v = Number(raw.schema_version);
-  if (v !== 1) return null;
+  /**
+   * v17 batch authoring JSONs ship `schema_version: 7`; older seeds may carry
+   * 1. Accept any positive integer — the structural shape is what the
+   * downstream merge cares about, not the version tag.
+   */
+  if (!Number.isFinite(v) || v < 1) return null;
   return raw as unknown as TourProductDetailPayloadV1;
 }
 
@@ -205,9 +210,3 @@ export async function loadTourProductViewModelBySlugFromSupabase(
   return vm;
 }
 
-export async function loadEastSignatureTourProductViewModelFromSupabase(
-  supabase: Sb,
-  locale = "en",
-): Promise<EastSignatureNatureCoreDetailViewModel | null> {
-  return loadTourProductViewModelBySlugFromSupabase(supabase, "east-signature-nature-core", locale);
-}

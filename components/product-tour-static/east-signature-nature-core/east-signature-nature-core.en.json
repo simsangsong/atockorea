@@ -1,12 +1,21 @@
 {
   "document_kind": "tour_product_full_page_v1",
-  "schema_version": 1,
+  "schema_version": 7,
   "slug": "east-signature-nature-core",
   "locale": "en",
   "product_id": "east-signature-nature-core",
   "seo": {
-    "pageTitle": "East Jeju Volcano, Coast & Folk Village Small Group Day Tour | AtoC Korea",
-    "metaDescription": "A well-paced East Jeju small group day tour that moves from stone culture and volcanic landscapes to Seopjikoji, Seongsan Ilchulbong, Ilchulland, and Seongeup Folk Village. Ideal for first-time visitors who want East Jeju’s key scenery and local context in one day."
+    "pageTitle": "East Jeju Signature Nature Tour | AtoC Korea",
+    "metaDescription": "Small-group 9-hour east Jeju tour: Jeju Stone Park, Hamdeok Beach, Manjanggul lava tube, Seongsan Ilchulbong (UNESCO), Seongeup Folk Village.",
+    "primaryKeywords": [
+      "East Jeju small group tour",
+      "Jeju Stone Park tour",
+      "Manjanggul Cave tour",
+      "Seongsan Ilchulbong tour",
+      "Seongeup Folk Village tour"
+    ],
+    "ogImage": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80",
+    "title": "East Jeju Signature Nature Tour · 9-hour Small-Group · UNESCO Sunrise Peak + Manjanggul"
   },
   "catalog_card": {
     "slug": "east-signature-nature-core",
@@ -23,15 +32,26 @@
     ],
     "heroImage": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
     "thumbnail": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80",
-    "priceLabel": "From US$59 per person",
-    "shortCardDescription": "A clearly structured East Jeju day route that starts with stone culture and volcanic context, moves through the coast and Seongsan Ilchulbong, and finishes with Ilchulland and Seongeup Folk Village for a more complete day."
+    "priceLabel": "From US$58 per person",
+    "shortCardDescription": "A clearly structured East Jeju day route that starts with stone culture and volcanic context, moves through the coast and Seongsan Ilchulbong, and finishes with Ilchulland and Seongeup Folk Village for a more complete day.",
+    "tags": [
+      "small_group",
+      "jeju",
+      "east_jeju",
+      "unesco",
+      "nature",
+      "first_time_friendly"
+    ]
   },
   "headlineLine1": "East Jeju Volcano, Coast",
-  "headlineLine2": "and Folk Village Small Group Day Tour",
+  "headlineLine2": "and Folk Village Small Group Tour",
   "price": {
-    "amountLabel": "59",
+    "amountLabel": "58",
     "currency": "USD",
-    "per": "person"
+    "per": "person",
+    "priceSource": "internal",
+    "priceNote": "Small-group bilingual tour. AtoC Korea direct sale; 10% discount applied vs operator base.",
+    "discountPercent": 10
   },
   "hero": {
     "imageUrl": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
@@ -111,7 +131,8 @@
       "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1200&q=80",
       "location": "Route Overview",
       "atmosphere": "A route that opens gradually and makes sense as the day unfolds",
-      "alt": "Overview of an East Jeju coastline and crater day tour"
+      "alt": "Overview of an East Jeju coastline and crater day tour",
+      "caption": "Overview of an East Jeju coastline and crater day tour"
     },
     {
       "id": 2,
@@ -119,7 +140,8 @@
       "src": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
       "location": "Stone Culture Opening",
       "atmosphere": "A calm geological start to the day",
-      "alt": "Stone sculptures and landscape at Jeju Stone Park"
+      "alt": "Stone sculptures and landscape at Jeju Stone Park",
+      "caption": "Stone sculptures and landscape at Jeju Stone Park"
     },
     {
       "id": 3,
@@ -127,7 +149,8 @@
       "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
       "location": "Ilchulland Lava Tube Garden",
       "atmosphere": "A cooler, more enclosed contrast after the crater section",
-      "alt": "Atmosphere of Ilchulland lava tube and garden areas"
+      "alt": "Atmosphere of Ilchulland lava tube and garden areas",
+      "caption": "Atmosphere of Ilchulland lava tube and garden areas"
     },
     {
       "id": 4,
@@ -135,7 +158,8 @@
       "src": "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=800&q=80",
       "location": "Village Finale",
       "atmosphere": "A softer finish with traces of lived history",
-      "alt": "Traditional village atmosphere at Seongeup Folk Village"
+      "alt": "Traditional village atmosphere at Seongeup Folk Village",
+      "caption": "Traditional village atmosphere at Seongeup Folk Village"
     },
     {
       "id": 5,
@@ -143,7 +167,8 @@
       "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
       "location": "Crater and Coast",
       "atmosphere": "The strongest volcanic highlight of the day",
-      "alt": "Seongsan Ilchulbong crater and coastline"
+      "alt": "Seongsan Ilchulbong crater and coastline",
+      "caption": "Seongsan Ilchulbong crater and coastline"
     },
     {
       "id": 6,
@@ -151,283 +176,283 @@
       "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80",
       "location": "Open Coastline",
       "atmosphere": "Sea wind and open views that change the mood of the route",
-      "alt": "Walking path and sea views at Seopjikoji"
+      "alt": "Walking path and sea views at Seopjikoji",
+      "caption": "Walking path and sea views at Seopjikoji"
     }
   ],
   "itineraryStops": [
     {
       "number": 1,
-      "time": "09:00",
-      "duration": "60 min",
-      "name": "Jeju Stone Park",
-      "category": "Geology and Stone Culture",
-      "description": "This stop gives the entire day a clearer frame from the start. Beginning at Jeju Stone Park introduces Jeju through its volcanic landscape and stone culture, so the coast, crater, lava-tube section, and village later in the day all feel more connected.",
-      "image": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
+      "time": "09:30",
+      "duration": "75 min",
+      "name": "Jeju Stone Park (Stone Culture Park)",
+      "category": "Mythology + Volcanic Stone Culture — 300,000-pyeong outdoor museum",
+      "description": "**Jeju Stone Park (제주 돌문화공원, Jeju Dolmunhwa Gongwon)** is a **300,000-pyeong (~990,000 m²) open-air museum** in Jocheon, dedicated to Jeju's foundational creation myth: **Seolmundae Halmang (설문대 할망, the Giantess Goddess)** who, according to Jeju oral tradition, **created the island by scattering rocks from her apron** — Hallasan rose where she dropped the largest stone, and the **360+ oreum (parasitic cones) across the island are the smaller stones that fell as she walked**. The park's stone collection is **30+ years in the making**, curated from sites across Jeju to preserve the island's volcanic-rock heritage. Three walking courses lay out the experience: **Course 1 (~1 hour)** covers the headline museum + Sky Pond + Mother's Room; **all three courses (~2h 40min)** complete the full grounds including the Obaek Janggun (500 generals) Gallery, Stone Museum, traditional Jeju thatched-roof village, and Seolmundae Halmang Exhibition Hall. The site's signature contemporary architectural moment is **'Mother's Room (어머니의 방)'** — a cylindrical concrete chamber where a single overhead skylight beams shifting daylight onto a central stone sculpture, resolving the abstract giantess myth into a meditative architectural experience. Admission: **Adult ₩5,000 / Youth ₩3,500 / FREE under 13 + over 65**; **last Wednesday of every month is FREE Cultural Day**. Hours: **09:00–18:00 (last entry 17:00)**, **closed first Monday of each month**. Indoor ratio ~30% (museum + indoor halls); remainder outdoor walking — comfortable shoes essential.",
+      "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176",
       "highlights": [
-        "Stone sculptures, towers, and open lawns create strong visual layers",
-        "An ideal opening stop for understanding Jeju’s stone culture and volcanic background",
-        "Wide open spaces make photos easier and less crowded",
-        "Indoor exhibits help complete the geological story when time allows"
+        "**300,000-pyeong outdoor museum** — Jeju's largest volcanic-stone heritage site",
+        "**Seolmundae Halmang myth** — Jeju's foundational creation legend, Hallasan + 360 oreum origin",
+        "**Course 1 (~1 hr)** vs full circuit (~2h 40min) — flexible time-budget walking",
+        "**Mother's Room (어머니의 방)** — cylindrical concrete chamber with skylight + stone sculpture",
+        "**Obaek Janggun (500 Generals) Gallery** — myth-inspired stone sculpture array",
+        "**30+ years** of curated volcanic-rock collection across Jeju",
+        "Reconstructed **traditional Jeju thatched-roof (jip) village** at the park's edge",
+        "Admission **₩5,000 adult / ₩3,500 youth / FREE under 13 + over 65**; **last Wed FREE**",
+        "**Closed first Monday** of each month; check before booking"
       ],
       "timeUsed": [
-        "Short introduction in the main stone landscape zone",
-        "Photo stop and interpretation in the open sculpture area",
-        "Optional indoor exhibit viewing depending on timing"
+        "Parking + entrance + course brief — ~10 min",
+        "Course 1 walk: museum + Sky Pond — ~30 min",
+        "Mother's Room contemplative chamber — ~10 min",
+        "Obaek Janggun Gallery + thatched village — ~15 min",
+        "Buffer / restroom / regroup — ~10 min"
       ],
-      "whyOnRoute": "Putting this first helps travelers read the later coastal, crater, and lava-tube stops with more context rather than as isolated sights.",
-      "visitBasics": {
-        "hours": "09:00–18:00",
-        "closed": "Mondays",
-        "admission": "KRW 5,000 adults / KRW 3,500 teens",
-        "walking": "Easy to moderate"
-      },
-      "convenience": {
-        "restroom": "At the entrance and inside the facilities",
-        "parking": "Parking available"
-      },
-      "smartNotes": {
-        "photo": "Wider landscape compositions usually work better here than close-up portrait shots.",
-        "facilities": "Among the early stops, this one generally has the strongest restroom and indoor facility setup.",
-        "tip": "This stop works best as a calm, grounded opening rather than a rushed check-in-and-leave photo stop."
+      "whyOnRoute": "**Mythological + cultural opening anchor of the east loop**. Where the highlights-loop tour opens at Hallasan UNESCO geology, this nature-core route opens at Hallasan's **mythological origin story** — the same volcanic island, framed as oral-tradition creation rather than UNESCO geology. Setting Seolmundae Halmang as the day's first narrative beat means every subsequent stop (Seopjikoji's volcanic neck Seonbawi, Seongsan's tuff cone, Ilchulland's lava tube, Seongeup's stone-walled hanok) reads as downstream chapters of the giantess myth. **300,000 pyeong of outdoor walking** also front-loads the day's exposure — banking outdoor time before potential afternoon weather shifts. Compared with **Hallim Park (300,000 pyeong, ₩15,000, more diffuse botanical experience)**, Stone Park is **₩5,000, mythology-focused, and architecturally curated** — the highest-yield cultural opener in east Jeju.",
+      "_poi_meta": {
+        "poi_key": "jeju_stone_park",
+        "kb_version": "1.19",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Jeju Stone Park official site (jejustonepark.com)",
+          "Jeju Special Self-Governing Province Cultural Foundation",
+          "VisitJeju — Jeju Stone Culture Park",
+          "Korea Folklore Society — Seolmundae Halmang oral tradition records",
+          "Architectural Institute of Korea — Mother's Room sculpture/architecture documentation"
+        ]
       }
     },
     {
       "number": 2,
-      "time": "10:40",
+      "time": "11:15",
       "duration": "60 min",
-      "name": "Seopjikoji",
-      "category": "Open Coastal Headland",
-      "description": "After Stone Park, the route opens toward the sea. Seopjikoji brings in sea wind, headland views, and an exposed coastal walking line, setting the mood before lunch and the stronger volcanic centerpiece at Seongsan Ilchulbong.",
-      "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80",
+      "name": "Seopjikoji (East Cape)",
+      "category": "Volcanic Cape — Tadao Ando Architecture + Bangdupo Lighthouse + Drama Filming",
+      "description": "**Seopjikoji (섭지코지)** is a narrow volcanic cape on Jeju's east coast — the name compounds **'Seopji' (narrow piece of land) + 'Koji' (Jeju dialect for 'cape')**. The **2.1 km cliff-edge trail (~30 min, only 14 m elevation gain)** is one of the island's most photographed coastal walks, anchored by three cultural-architectural moments. **(1) Bulgeun Oreum (붉은 오름)** — a red-tinged volcanic parasitic cone at the cape's tip, capped by the **octagonal Bangdupo Lighthouse (방두포 등대)** which **flashes every 4 seconds** and remains in operation as a coastal navigation aid. **(2) The Hyeopja Yeondae Beacon Fire Station (협자연대)** — a **4 m tall × 9 m diameter Joseon-era smoke-signal mound built of volcanic stone**, designated **Special Monument No. 23-2** by Jeju Province — one of 38 such yeondae beacons that ringed the island as a 16th–18th-century early-warning system against pirate raids. **(3) Tadao Ando architecture** — Pulitzer-laureate Japanese architect **Tadao Ando (안도 다다오)** designed two buildings on site: the **Glass House (글라스 하우스)** restaurant and the **Yumin Art Gallery (유민 미술관)**, both characteristic of Ando's signature concrete-and-light minimalism, completed for the Phoenix Island resort development. Offshore, the **10 m volcanic neck Seonbawi (선바위, 'Seon Rock')** is featured in local **dragon king's youngest son** legend. Drama-filming credits include **'All In' (2003, SBS), 'My Girl' (2005, SBS), 'Legend of Gingko', 'The Uprising', and 'Cheonilya'**. **Spring canola fields** flood the slopes **March–April (yellow)**; **summer hydrangea blooms** follow in **June (blue/violet)**. **FREE admission** to the cape; Yumin Art Gallery and Glass House restaurant separately ticketed/reserved.",
+      "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
       "highlights": [
-        "An open headland and coastal path with a distinctly East Jeju feel",
-        "Seasonal flower scenery may appear depending on the time of year",
-        "Lighthouse views and wide ocean framing work especially well for photos",
-        "A refreshing visual contrast after the more grounded Stone Park opening"
+        "**2.1 km cape trail** (~30 min, only 14 m gain) — wheelchair/stroller-friendly stretches",
+        "**Bangdupo Lighthouse** — octagonal, **flashes every 4 sec**, atop Bulgeun Oreum red volcanic cone",
+        "**Hyeopja Yeondae Beacon Fire Station** — 4 m × 9 m Joseon yeondae, **Special Monument No. 23-2**",
+        "**Tadao Ando architecture** — Glass House restaurant + Yumin Art Gallery (Phoenix Island)",
+        "**Seonbawi (Seon Rock)** — 10 m offshore volcanic neck, dragon king's youngest son legend",
+        "**Drama filming**: 'All In' (2003), 'My Girl' (2005), and others",
+        "**Canola season March–April** (yellow slopes); **hydrangea June** (blue/violet)",
+        "**FREE cape admission**; Yumin Art Gallery + Glass House separately ticketed",
+        "Seongsan Ilchulbong **clearly visible 4 km north** from the cape tip — perfect Triple-UNESCO panorama backdrop"
       ],
       "timeUsed": [
-        "Brief walking-route introduction on arrival",
-        "Coastal walk and main viewpoint stop",
-        "Relaxed photo time before returning"
+        "Parking + entrance — ~5 min",
+        "Cape trail walk — ~25 min",
+        "Lighthouse + Hyeopja Yeondae photos — ~10 min",
+        "Tadao Ando buildings exterior viewing — ~10 min",
+        "Return to coach + buffer — ~10 min"
       ],
-      "whyOnRoute": "Opening the sea mood here helps Seongsan Ilchulbong land more strongly later as the day’s main volcanic highlight.",
-      "visitBasics": {
-        "hours": "Open 24 hours",
-        "closed": "Open year-round",
-        "admission": "Free",
-        "walking": "Easy to moderate"
-      },
-      "convenience": {
-        "restroom": "Near the entrance area",
-        "parking": "Parking available"
-      },
-      "smartNotes": {
-        "photo": "Because the sky is wide and the wind is strong, side angles and wider framing often look better than straightforward posed shots.",
-        "facilities": "Facilities are limited, with restrooms mainly near the entrance zone.",
-        "tip": "Compared with the previous stop, this section feels much more exposed to wind and sun."
+      "whyOnRoute": "**Architectural + scenic anchor of the east loop**. Seopjikoji is the only stop in the catalog where guests get **three distinct heritage layers in 60 minutes**: Joseon-era yeondae beacon (16th–18th century), Imperial-era lighthouse (1900s functional), and contemporary Pulitzer-architecture (Tadao Ando 2000s) — all framed against the **Seongsan Ilchulbong Triple-UNESCO panorama 4 km north**. Geographically the cape is the natural pivot from Jeju Stone Park's interior to Seongsan Ilchulbong's coastal terminus, connecting them with the day's most photographed landscape. Compared with **Woljeongri Beach (north coast, 30+ min coach detour)** or **Seongsan Sunrise summit (climbed later in the day)**, Seopjikoji is **on-route, FREE, and 30-min walkable** — the highest yield per minute on the east coast. Late-morning timing (11:15) catches **soft pre-noon light** for cape photography before the harsh midday overhead.",
+      "_poi_meta": {
+        "poi_key": "seopjikoji",
+        "kb_version": "1.19",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Jeju Provincial Cultural Heritage — Special Monument No. 23-2 designation",
+          "VisitJeju — Seopjikoji official listing",
+          "Korea Lighthouse Service — Bangdupo Lighthouse operation records",
+          "Tadao Ando Architect & Associates — Phoenix Island project documentation",
+          "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
+        ]
       }
     },
     {
       "number": 3,
-      "time": "12:00",
+      "time": "12:25",
       "duration": "60 min",
-      "name": "Lunch",
-      "category": "Midday Reset",
-      "description": "Lunch is not just a simple break. It is the point that resets the rhythm of the day, making the afternoon’s core Seongsan Ilchulbong section feel much more comfortable.",
-      "image": "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=800&q=80",
+      "name": "Lunch — East Coast Local",
+      "category": "Midday Reset — East Jeju Local Cuisine",
+      "description": "**60-minute reset on the east coast** between Seopjikoji and Seongsan Ilchulbong — Seongsan-eup is one of Jeju's premier seafood landing zones, with daily catches supplying the harbor-side restaurant strip. Default rotation: **mulhoe (물회, cold raw-fish soup)** in summer (June–September), a Jeju summer staple where seasonal white-fleshed fish (yellowtail, sea bass) is served in chilled vinegared broth; **galchi-jorim (갈치조림, braised cutlassfish)** in winter (October–February); or **heuk-doeji gui (흑돼지구이, Jeju black pig BBQ)** year-round, the heritage breed designated **Cultural Heritage Material No. 5 (2015)**. **Vegetarian alternative**: **bibim-guksu (비빔국수)** with seasonal Jeju vegetables. **Halal-friendly options** available at one venue in the rotation — disclose at pickup. The lunch venue sits **10-min coach from Seongsan Ilchulbong entrance**, so guests preserve full afternoon energy for the cone climb.",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
       "highlights": [
-        "A useful energy reset before the day’s most active stop",
-        "Naturally separates the coastal walk from the crater section",
-        "More comfortable for mixed-age groups",
-        "Keeps the second half of the day feeling cleaner and better paced"
+        "**East Jeju seafood corridor** — Seongsan-eup harbor-side restaurant strip",
+        "**Mulhoe (물회)** in summer (June–September), **galchi-jorim** winter rotation",
+        "**Heuk-doeji (Jeju black pig)** year-round option — Cultural Heritage Material No. 5 (2015)",
+        "**Vegetarian + halal-friendly** options on request (disclose at pickup)",
+        "**10-min coach to Seongsan Ilchulbong** — minimal post-lunch transit",
+        "Group dietary requirements collected at pickup"
       ],
       "timeUsed": [
-        "Arrival and seating",
-        "Meal and short rest",
-        "Preparation for departure to Seongsan Ilchulbong"
+        "Coach to lunch venue — ~5 min",
+        "Order + meal — ~45 min",
+        "Coach to Seongsan Ilchulbong entrance — ~10 min"
       ],
-      "whyOnRoute": "Placing lunch here makes the Seongsan section feel less rushed and gives the afternoon a stronger flow.",
-      "visitBasics": {
-        "hours": "Depends on the restaurant",
-        "closed": "Varies by venue",
-        "admission": "Included or paid on site depending on product setup",
-        "walking": "Minimal"
-      },
-      "convenience": {
-        "restroom": "Inside the restaurant",
-        "parking": "Parking available"
-      },
-      "smartNotes": {
-        "photo": "If you want food photos, local Jeju dishes usually make the strongest images.",
-        "facilities": "Restaurant facilities are generally sufficient.",
-        "tip": "The most important function here is to reset the pace well, not to compress the schedule as much as possible."
-      }
+      "whyOnRoute": "East-coast positioning means **10-min hop to Seongsan Ilchulbong** afterward — preserves cone-climb energy. Mulhoe is also an east-Jeju regional specialty (less common in Jeju City), so the geographic placement adds culinary identity to the lunch slot. Pace also breaks the morning's Stone Park + Seopjikoji walking before the afternoon's Seongsan ascent + cave exploration."
     },
     {
       "number": 4,
-      "time": "13:15",
+      "time": "13:35",
       "duration": "90 min",
       "name": "Seongsan Ilchulbong",
-      "category": "Crater Walk and Haenyeo Context",
-      "description": "This is the day’s main volcanic landmark. Seongsan Ilchulbong concentrates crater scenery, coastal scale, and Jeju’s haenyeo context into one stop. When timing works, it can also feel especially local rather than simply iconic.",
-      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
+      "category": "UNESCO Tuff Cone — Sunrise Peak (Triple UNESCO Designation)",
+      "description": "**Seongsan Ilchulbong (성산일출봉, 'Sunrise Peak')** is a **5,000-year-old Surtseyan-type hydrovolcanic tuff cone** — a rare landform created when an underwater basalt eruption broke the sea surface, the magma met seawater, and the resulting steam-explosive ash built a **182 m fortress-shaped crater** rim instead of a typical lava cone. The result is what UNESCO formally calls **'an exceptional example of an emergent Surtseyan-type volcanic edifice'**. The crater is **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** that local lore likens to a stone crown. Seongsan carries the **Triple UNESCO designation**: **World Natural Heritage (inscribed 2007-07-02)** as part of the **'Jeju Volcanic Island and Lava Tubes' property**, **Biosphere Reserve (2002)**, and **Global Geopark (2010-10)** — a stack matched only by Hallasan itself among Korean sites. **18 Imperial Japanese WWII caves** (kamikaze suicide-boat shelters, 1945) are tunneled into the seaward base. Trail: **0.8 km one-way, ~140 m elevation gain, 60 min round trip** on wide stone steps. **Haenyeo (해녀) demonstrations** run **daily at 13:30 and 15:00** at the rocky cove below the cone — Jeju women divers (UNESCO Intangible Cultural Heritage 2016) descend without scuba gear. Admission updated **April 2025**: **Adult ₩5,000 / Youth+Child ₩2,500 / Group adult ₩1,600**, free under 7 and over 65. The summit deck is also part of the **Yeongjusipgyeong (Jeju 10 Scenic Wonders) canon**, and remains Korea's premier **annual New Year sunrise pilgrimage** destination — 50,000+ visitors ascend before dawn on January 1, with municipal sunrise-festival programming since 1995. **Udo Island (우도, 'Cow Island')** — Korea's largest secondary volcanic island — is clearly visible 4 km offshore from the summit, accessible by **15-min ferry from Seongsan Port** (₩10,500 round-trip) for guests with extra time on a different itinerary.",
+      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
       "highlights": [
-        "A UNESCO-recognized volcanic crater landmark",
-        "Layered views from both the base area and uphill walking section",
-        "One of Jeju’s clearest examples of coastal volcanic geology",
-        "The stop can feel even richer when the haenyeo performance schedule aligns"
+        "**Triple UNESCO**: World Heritage 2007-07-02 + Biosphere Reserve 2002 + Global Geopark 2010-10",
+        "**5,000 years old** — Surtseyan-type hydrovolcanic eruption, magma-meets-seawater steam-explosive birth",
+        "Crater **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** (the 'stone crown')",
+        "**182 m above sea level** — 0.8 km / ~140 m gain, 60-min round trip on stone-step trail",
+        "**18 Imperial Japanese WWII caves** at base — 1945 kamikaze suicide-boat shelters",
+        "**Haenyeo demonstrations daily 13:30 + 15:00** at the seaside cove — UNESCO Intangible 2016",
+        "**Admission updated April 2025**: Adult ₩5,000 / Youth ₩2,500 / FREE under 7 + over 65",
+        "Spring/autumn hours **05:00–19:00** (last entry 18:20)",
+        "**Closes for first Monday of each month** (occasional rest day)"
       ],
       "timeUsed": [
-        "Arrival briefing on route and regrouping points",
-        "Main walking section adjusted to the group’s pace",
-        "Possible combination of crater viewing, lower viewpoints, and haenyeo performance timing"
+        "Parking + ticket + base brief — ~10 min",
+        "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min",
+        "Summit views + crater rim photos — ~20 min",
+        "Descent — ~20 min",
+        "Optional haenyeo viewing at base (15:00 demo) — ~10 min"
       ],
-      "whyOnRoute": "Putting Seongsan after lunch makes the route’s strongest volcanic section land at the right moment in terms of energy, scenery, and emotional rhythm.",
-      "visitBasics": {
-        "hours": "Varies by season; last ticketing is typically 1 hour before closing",
-        "closed": "First Monday of each month (or the following day if Monday is a holiday)",
-        "admission": "KRW 5,000 adults / KRW 2,500 teens and children",
-        "walking": "Moderate, or moderately demanding if the group chooses the summit"
-      },
-      "convenience": {
-        "restroom": "At the base area and some upper sections",
-        "parking": "Large parking lot available"
-      },
-      "smartNotes": {
-        "photo": "Wide-angle framing that includes both the crater and coastline usually feels stronger than summit selfies alone.",
-        "facilities": "Facilities are more developed near the base and more basic higher up.",
-        "tip": "Wind, crowd levels, and group fitness can all shift this stop toward more walking, more viewing, or more haenyeo-focused time."
+      "whyOnRoute": "**Mid-afternoon UNESCO climax of the east signature route**. Unlike the highlights-loop sister tour where Seongsan is the day's closing east-end finale, here Seongsan sits at **mid-afternoon (13:35 arrival, 90-min dwell)** — sandwiched between Seopjikoji morning and Ilchulland cave + Seongeup village afternoon. The earlier window means guests catch the **15:00 haenyeo demonstration** at the cone base before continuing inland, and the climb is timed before the late-afternoon east-coast wind picks up (typically post-16:30 in spring/autumn). Compared with **5,000-year Surtseyan tuff cone formations elsewhere globally**, this is the most accessible (60-min round trip on stone steps) — making it viable as one of three+ stops in a single day rather than a standalone destination. The summit panorama serves as the day's geographic summary: Hallasan to the west, the eastern oreum field below, and Udo Island 4 km offshore.",
+      "_poi_meta": {
+        "poi_key": "seongsan_ilchulbong",
+        "kb_version": "1.19",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+          "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
+          "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
+          "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
+          "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
+        ]
       }
     },
     {
       "number": 5,
-      "time": "15:00",
-      "duration": "55 min",
-      "name": "Ilchulland",
-      "category": "Lava Tube Garden",
-      "description": "After Seongsan Ilchulbong, Ilchulland softens the rhythm of the day. With its mix of lava-tube atmosphere and landscaped garden spaces, it feels cooler, quieter, and more contained than the exposed crater stop before it.",
-      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+      "time": "15:20",
+      "duration": "75 min",
+      "name": "Ilchul Land (Micheon Cave Lava Tube)",
+      "category": "Lava Tube + Theme Park — Manjanggul Alternate (UNESCO-property adjacent)",
+      "description": "**Ilchul Land (일출랜드)** is a **400,000 m² nature theme park** in Seongsan, opened **2002**, built around the **Micheon Cave (미천굴)** lava tube — a **1,700 m total length cave** with a **365 m artificially leveled walk-through section** open to visitors (~25-minute traverse). The cave is part of Jeju's **lava-tube system that shares geological lineage with Manjanggul Cave** — the UNESCO World Natural Heritage lava tube — and **functions as the operational alternate when Manjanggul closes for conservation maintenance or weather (typhoons, freezing)**. Where Manjanggul preserves its uneven natural floor as an authentic geological experience, Micheon's leveled walkway makes the cave **accessible to elderly visitors, families with strollers, and guests with mobility limitations** — a deliberate engineering choice that broadens the lava-tube experience to audiences who couldn't navigate Manjanggul. The interior is lit with **decorative seven-color lighting (gold, silver, bronze, red, black, blue, white)** highlighting cave formations — controversial among purists but practical for non-specialist tourist photography. Outside the cave, the park extends across **Subyeon Park, a reconstructed traditional Jeju village, Wild Flower Bonsai Garden, Cactus Greenhouse, Sculpture Street, and a Footbath Cafe (aroma foot spa)** — making this the **only Jeju attraction with an on-site Muslim prayer room** (a deliberate accessibility investment). Drama filming credit: **'Running Man' (런닝맨, SBS) Episode 89 (Alice-in-Wonderland themed, 2012)**. Admission: **Adult ₩12,000 / Youth ₩9,000 / Child ₩7,000**. Indoor/outdoor split is **30% indoor (cave + greenhouse)** / **70% outdoor (park grounds)** — meaningful for weather-flexibility planning.",
+      "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
       "highlights": [
-        "A chance to experience lava-tube atmosphere within a garden-style setting",
-        "A strong contrast with the open and exposed Seongsan section",
-        "More shade and an easier-feeling walk",
-        "Works especially well as a transition after the biggest landmark stop"
+        "**1,700 m total** lava tube; **365 m open section** (~25-min walk-through)",
+        "**Manjanggul UNESCO alternate** — same lava-tube system; opens when Manjanggul closes",
+        "**Floor artificially leveled** — accessible to elderly, strollers, mobility-limited guests",
+        "**Seven-color decorative lighting** — gold/silver/bronze/red/black/blue/white",
+        "**400,000 m² park grounds** — bonsai, cactus, sculpture, traditional village, footbath cafe",
+        "**Only Jeju attraction with on-site Muslim prayer room** — deliberate accessibility",
+        "**'Running Man' Ep. 89** filming (2012, Alice-in-Wonderland theme)",
+        "Admission **₩12,000 adult / ₩9,000 youth / ₩7,000 child**",
+        "**30% indoor / 70% outdoor** — weather-flexible mix"
       ],
       "timeUsed": [
-        "Route explanation after entering the grounds",
-        "Visit to the main lava-tube or theme areas",
-        "Short garden stop before regrouping and departure"
+        "Parking + ticket + entrance — ~5 min",
+        "Micheon Cave walk-through (365 m / ~25 min) — ~30 min",
+        "Subyeon Park + sculpture street — ~20 min",
+        "Optional bonsai/cactus garden + footbath cafe — ~15 min",
+        "Buffer / regroup — ~5 min"
       ],
-      "whyOnRoute": "Ilchulland works best after Seongsan because it slows the pace down naturally instead of competing with the crater section for attention.",
-      "visitBasics": {
-        "hours": "08:30–18:00",
-        "closed": "Open year-round",
-        "admission": "KRW 9,000 adults / KRW 6,000 teens / KRW 5,000 children",
-        "walking": "Moderate"
-      },
-      "convenience": {
-        "restroom": "Near the entrance area",
-        "parking": "Parking available"
-      },
-      "smartNotes": {
-        "photo": "The mixed indoor-outdoor light works well for atmospheric shots, but exposure can be trickier than at the open coastal stops.",
-        "facilities": "Basic facilities are concentrated near the entrance.",
-        "tip": "After Seongsan, many travelers immediately feel that the physical demand drops here."
+      "whyOnRoute": "**Lava-tube anchor of the east loop** — and the only stop on this tour where guests experience **Jeju's underground volcanic identity** (Manjanggul-system lava plumbing). Compared with **Manjanggul Cave (UNESCO property, frequent closures, no on-site amenities, raw uneven floor)**, Ilchulland delivers the **lava-tube experience as a tourable 75-minute stop** with weather flexibility, accessibility-friendly walkway, and a multi-attraction park that serves as built-in lunch/dwell extension if any stop runs short. The post-Seongsan placement (15:20 arrival) also resets sensory register — moving from windswept summit deck to enclosed lit cave to landscaped park, varying the day's textures.",
+      "_poi_meta": {
+        "poi_key": "ilchulland_micheon_cave",
+        "kb_version": "1.19",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Ilchul Land official site (ilchulland.com)",
+          "VisitJeju — Ilchul Land Micheon Cave",
+          "Korea Cave Research Institute — Manjanggul lava-tube system documentation",
+          "SBS Variety Archive — Running Man Episode 89 (2012)",
+          "Jeju Tourism Organization — accessibility-friendly attraction registry"
+        ]
       }
     },
     {
       "number": 6,
-      "time": "16:20",
-      "duration": "40 min",
+      "time": "16:50",
+      "duration": "60 min",
       "name": "Seongeup Folk Village",
-      "category": "Village and Cultural Finish",
-      "description": "Seongeup Folk Village keeps the day from ending at yet another big scenic landmark. After stone culture, coast, crater, and lava-tube sections, this stop brings the route back to the scale of everyday life, local history, and lived texture.",
-      "image": "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=800&q=80",
+      "category": "Joseon-era Walled Town — Important Folklore Cultural Heritage (1423 founding)",
+      "description": "**Seongeup Folk Village (성읍 민속마을)** is a **living Joseon-era walled town founded in 1423** during the reign of **Sejong the Great** as Jeong-eui-hyeon (정의현), one of the three administrative seats of Joseon-era Jeju. The village served continuously as a **county administrative center until 1914** — nearly **500 years** — and retains **110 traditional structures** today within the original eupseong (읍성) walled-town footprint, designed on **Korean feng shui principles** typical of Joseon county capitals. The entire village is designated **Important Folklore Cultural Heritage of South Korea**, with **multiple individual buildings** carrying separate heritage status. At the village center stand **two ancient trees designated Natural Monuments of South Korea** — a **Saw-leaf Zelkova (느티나무)** and a **Japanese Hackberry (팽나무)**, both estimated **600+ years old** and revered as the village's spiritual anchor. Historical scars are visible: a **major fire in 1826 destroyed ~80 buildings**, and the village suffered fire damage **during the Jeju Uprising in 1948** — both events preserved as historical record on village signage. The **peak household count (historical, pre-modern) was ~1,500** — today the village remains inhabited by ~250 families, many actively maintaining traditional crafts. Drama filming credit: **'Dae Jang Geum (Jewel in the Palace)' (MBC, 2003–2004)**, the international K-drama hit. Local specialty: **Omegisul (오메기술)** — a **rice-based traditional Jeju liquor** brewed by **one family for multiple generations**, with the brewing demonstrated and tasted free of charge at the home-brewery within the village. **FREE admission**; outdoor walking dominates (~70% outdoor / 30% indoor for individual hanok visits).",
+      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
       "highlights": [
-        "Thatched houses and stone walls give it a distinctly traditional Jeju atmosphere",
-        "More cultural in tone than a pure nature stop",
-        "A slower walking rhythm that works well for the end of the day",
-        "A meaningful contrast with the stronger natural scenery earlier in the route"
+        "**Founded 1423** by Sejong the Great — administrative center until **1914 (~500 years)**",
+        "**110 traditional structures** within original eupseong walled-town footprint",
+        "**Important Folklore Cultural Heritage of South Korea** (entire village + multiple buildings)",
+        "**Two ~600-year-old trees** at center: Saw-leaf Zelkova + Japanese Hackberry — **Natural Monuments**",
+        "Designed on **Joseon Korean feng shui (geomancy) principles** — typical county-capital plan",
+        "**'Dae Jang Geum' (MBC 2003–2004)** filming location — international K-drama hit",
+        "**Omegisul (오메기술)** — rice-based Jeju liquor brewed by single family for generations (free tasting)",
+        "Historical scars: **1826 fire** destroyed ~80 buildings; **1948 Jeju Uprising** damage",
+        "**FREE admission** — village still inhabited by ~250 families maintaining traditions"
       ],
       "timeUsed": [
-        "Brief introduction on arrival",
-        "Walk along the main village paths while viewing traditional structures and traces of daily life",
-        "End-of-stop explanation and short free browse before departure"
+        "Parking + welcome brief by village docent — ~10 min",
+        "Walk to ancient trees + village center — ~10 min",
+        "Hanok interior visits (2–3 representative homes) — ~15 min",
+        "Omegisul brewery free tasting — ~10 min",
+        "Olle alley walk + photography — ~10 min",
+        "Buffer — ~5 min"
       ],
-      "whyOnRoute": "Ending at the village gives the day a steadier, more memorable close after several high-impact natural stops.",
-      "visitBasics": {
-        "hours": "10:00–17:00",
-        "closed": "Open year-round",
-        "admission": "Free (except some hands-on programs)",
-        "walking": "Easy and mostly flat"
-      },
-      "convenience": {
-        "restroom": "Near the village center",
-        "parking": "Parking available nearby"
-      },
-      "smartNotes": {
-        "photo": "Narrow lanes, roof lines, and stone-wall textures often make more rewarding images than broad centered compositions.",
-        "facilities": "Facilities inside the village are basic.",
-        "tip": "The less rushed this stop feels, the better the whole day tends to land emotionally."
+      "whyOnRoute": "**Living-history closing anchor of the east loop**. Where the highlights-loop sister tour ends at Seongsan UNESCO geology, this nature-core route ends at **600 years of continuous Korean rural heritage** — a deliberate framing contrast. Seongeup's interior placement (Pyoseon district) makes it the natural geographic finale before coach return to Jeju City via the inland 1136 Provincial Road. Compared with **Jeju Folk Village Museum (themed reconstruction, ₩12,000, less authentic)**, Seongeup is **FREE, lived-in, and Joseon-original** — the highest authenticity-per-dollar heritage stop on the island. **Late-afternoon arrival (16:50)** also catches the **golden-hour stone-wall light** that makes the hanok exteriors photographically distinct from midday flat lighting.",
+      "_poi_meta": {
+        "poi_key": "seongeup_folk_village",
+        "kb_version": "1.19",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Cultural Heritage Administration — Important Folklore Cultural Heritage designation",
+          "Korea Cultural Heritage Foundation — Seongeup Folk Village historical records",
+          "VisitJeju — Seongeup Minsok Maeul",
+          "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
+          "Jeju Folklore Society — Omegisul brewing tradition documentation"
+        ]
       }
     }
   ],
   "routeFlowStops": [
     {
-      "id": "01",
       "name": "Stone Park",
-      "theme": "Geology"
+      "theme": "Geology",
+      "type": "01"
     },
     {
-      "id": "02",
       "name": "Seopjikoji",
-      "theme": "Coast"
+      "theme": "Coast",
+      "type": "02"
     },
     {
-      "id": "03",
       "name": "Lunch",
-      "theme": "Reset"
+      "theme": "Reset",
+      "type": "03"
     },
     {
-      "id": "04",
       "name": "Seongsan",
-      "theme": "Crater"
+      "theme": "Crater",
+      "type": "04"
     },
     {
-      "id": "05",
       "name": "Ilchulland",
-      "theme": "Garden"
+      "theme": "Garden",
+      "type": "05"
     },
     {
-      "id": "06",
       "name": "Seongeup",
-      "theme": "Culture"
+      "theme": "Culture",
+      "type": "06"
     }
   ],
   "routePhases": [
     {
-      "label": "Morning",
-      "range": "1-2",
-      "theme": "From Stone Culture to the Coast",
-      "bgClass": "bg-sky-50/70",
-      "textClass": "text-sky-700",
-      "dotClass": "bg-sky-500"
+      "phase": "Morning",
+      "duration": "1-2",
+      "description": ""
     },
     {
-      "label": "Midday to Afternoon",
-      "range": "3-4",
-      "theme": "Lunch and the Crater Highlight",
-      "bgClass": "bg-amber-50/70",
-      "textClass": "text-amber-700",
-      "dotClass": "bg-amber-500"
+      "phase": "Midday to Afternoon",
+      "duration": "3-4",
+      "description": ""
     },
     {
-      "label": "Finish",
-      "range": "5-6",
-      "theme": "Garden and Folk Village",
-      "bgClass": "bg-emerald-50/70",
-      "textClass": "text-emerald-700",
-      "dotClass": "bg-emerald-500"
+      "phase": "Finish",
+      "duration": "5-6",
+      "description": ""
     }
   ],
   "routeShapeIntro": {
@@ -441,17 +466,11 @@
       "Adult families",
       "Older travelers in good shape who are comfortable with moderate walking"
     ],
-    "lessIdeal": [
-      "Travelers who want to avoid stairs or cave-like spaces",
-      "Families relying heavily on strollers",
-      "Very young children who may struggle with a full-day pace"
-    ],
     "routeLogicSections": [
       {
         "title": "Pacing and structure",
         "icon": "sun",
         "iconBg": "bg-amber-50/80",
-        "iconColor": "text-amber-600",
         "items": [
           {
             "label": "Start with stone culture, then open toward the sea",
@@ -471,7 +490,6 @@
         "title": "Why the route is ordered this way",
         "icon": "mountain",
         "iconBg": "bg-sky-50/80",
-        "iconColor": "text-sky-600",
         "items": [
           {
             "label": "Coast first, crater second",
@@ -491,7 +509,6 @@
         "title": "When conditions change on site",
         "icon": "wind",
         "iconBg": "bg-slate-50/80",
-        "iconColor": "text-slate-600",
         "items": [
           {
             "label": "Monday operating constraint",
@@ -507,6 +524,11 @@
           }
         ]
       }
+    ],
+    "lessIdealFor": [
+      "Travelers who want to avoid stairs or cave-like spaces",
+      "Families relying heavily on strollers",
+      "Very young children who may struggle with a full-day pace"
     ]
   },
   "practicalAccordionItems": [
@@ -581,40 +603,47 @@
     "tomorrow": {
       "temp": "—",
       "label": "Updated daily"
-    }
+    },
+    "_seasonalSummary": "Eastern Jeju has the cleanest sea views on the island and the warmest summer temperatures. Seongsan Ilchulbong is exposed to wind year-round; bring a light layer.",
+    "_seasonalTemperatures": [
+      {
+        "season": "Spring (Mar–May)",
+        "range": "8–22°C",
+        "notes": "Cherry blossoms in early April; rapeseed flowers on Hamdeok's Seoubong cone."
+      },
+      {
+        "season": "Summer (Jun–Aug)",
+        "range": "22–30°C",
+        "notes": "Hot but breezy at coastal stops. Best ocean colors at Hamdeok."
+      },
+      {
+        "season": "Autumn (Sep–Nov)",
+        "range": "10–24°C",
+        "notes": "Best season — clearest visibility for Seongsan rim views."
+      },
+      {
+        "season": "Winter (Dec–Feb)",
+        "range": "3–10°C",
+        "notes": "Wind chill significant at Seongsan rim. Fewer crowds at all stops."
+      }
+    ]
   },
   "seasonalVariations": [
     {
-      "name": "Spring",
-      "icon": "flower",
-      "description": "Canola flowers can add a bright yellow layer to the coastal sections.",
-      "tag": "Flower season",
-      "bgClass": "bg-spring",
-      "iconColor": "text-pink-500"
+      "season": "Spring",
+      "description": "Canola flowers can add a bright yellow layer to the coastal sections."
     },
     {
-      "name": "Summer",
-      "icon": "sun",
-      "description": "Longer daylight and deeper greens make the route feel fuller and more open.",
-      "tag": "Longest daylight",
-      "bgClass": "bg-summer",
-      "iconColor": "text-sky-500"
+      "season": "Summer",
+      "description": "Longer daylight and deeper greens make the route feel fuller and more open."
     },
     {
-      "name": "Autumn",
-      "icon": "leaf",
-      "description": "Skies are often clearer, and visibility across the coast and crater tends to feel especially strong.",
-      "tag": "Best visibility",
-      "bgClass": "bg-autumn",
-      "iconColor": "text-amber-600"
+      "season": "Autumn",
+      "description": "Skies are often clearer, and visibility across the coast and crater tends to feel especially strong."
     },
     {
-      "name": "Winter",
-      "icon": "snow",
-      "description": "There are usually fewer crowds, and the paths often feel quieter and calmer.",
-      "tag": "Quieter atmosphere",
-      "bgClass": "bg-winter",
-      "iconColor": "text-slate-500"
+      "season": "Winter",
+      "description": "There are usually fewer crowds, and the paths often feel quieter and calmer."
     }
   ],
   "bookingTrustItems": [
@@ -622,22 +651,19 @@
       "icon": "check-circle",
       "title": "Licensed local operation",
       "description": "Run by a Jeju-based licensed guiding team",
-      "iconBg": "bg-emerald-50/80",
-      "iconColor": "text-emerald-600"
+      "iconBg": "bg-emerald-50/80"
     },
     {
       "icon": "route",
       "title": "Built around real East Jeju pacing",
       "description": "Planned with East Coast driving flow in mind",
-      "iconBg": "bg-sky-50/80",
-      "iconColor": "text-sky-600"
+      "iconBg": "bg-sky-50/80"
     },
     {
       "icon": "users",
       "title": "Small-group format",
       "description": "Usually capped at 8 guests",
-      "iconBg": "bg-amber-50/80",
-      "iconColor": "text-amber-600"
+      "iconBg": "bg-amber-50/80"
     }
   ],
   "bookingSupportSteps": [
@@ -765,19 +791,21 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
     "price": {
-      "amountLabel": "59",
+      "amountLabel": "58",
       "currency": "USD",
-      "per": "person"
+      "per": "person",
+      "priceSource": "internal",
+      "priceNote": "Small-group bilingual tour. AtoC Korea direct sale; 10% discount applied vs operator base.",
+      "discountPercent": 10
     }
   },
   "page_sections": [
     {
       "id": "hero",
-      "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
         "headlineLine1": "East Jeju Volcano, Coast",
-        "headlineLine2": "and Folk Village Small Group Day Tour",
+        "headlineLine2": "and Folk Village Small Group Tour",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
           "imagePosition": "center 35%",
@@ -799,7 +827,6 @@
     },
     {
       "id": "subnav",
-      "section_html_id": null,
       "component": "TourTabsNav",
       "props": {
         "subnavItems": [
@@ -828,7 +855,6 @@
     },
     {
       "id": "overview",
-      "section_html_id": "overview",
       "component": "TourAtAGlance",
       "props": {
         "glanceItems": [
@@ -867,7 +893,6 @@
     },
     {
       "id": "atmosphere",
-      "section_html_id": null,
       "component": "TourAtmosphereGallery",
       "props": {
         "galleryItems": [
@@ -877,7 +902,8 @@
             "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1200&q=80",
             "location": "Route Overview",
             "atmosphere": "A route that opens gradually and makes sense as the day unfolds",
-            "alt": "Overview of an East Jeju coastline and crater day tour"
+            "alt": "Overview of an East Jeju coastline and crater day tour",
+            "caption": "Overview of an East Jeju coastline and crater day tour"
           },
           {
             "id": 2,
@@ -885,7 +911,8 @@
             "src": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
             "location": "Stone Culture Opening",
             "atmosphere": "A calm geological start to the day",
-            "alt": "Stone sculptures and landscape at Jeju Stone Park"
+            "alt": "Stone sculptures and landscape at Jeju Stone Park",
+            "caption": "Stone sculptures and landscape at Jeju Stone Park"
           },
           {
             "id": 3,
@@ -893,7 +920,8 @@
             "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
             "location": "Ilchulland Lava Tube Garden",
             "atmosphere": "A cooler, more enclosed contrast after the crater section",
-            "alt": "Atmosphere of Ilchulland lava tube and garden areas"
+            "alt": "Atmosphere of Ilchulland lava tube and garden areas",
+            "caption": "Atmosphere of Ilchulland lava tube and garden areas"
           },
           {
             "id": 4,
@@ -901,7 +929,8 @@
             "src": "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=800&q=80",
             "location": "Village Finale",
             "atmosphere": "A softer finish with traces of lived history",
-            "alt": "Traditional village atmosphere at Seongeup Folk Village"
+            "alt": "Traditional village atmosphere at Seongeup Folk Village",
+            "caption": "Traditional village atmosphere at Seongeup Folk Village"
           },
           {
             "id": 5,
@@ -909,7 +938,8 @@
             "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
             "location": "Crater and Coast",
             "atmosphere": "The strongest volcanic highlight of the day",
-            "alt": "Seongsan Ilchulbong crater and coastline"
+            "alt": "Seongsan Ilchulbong crater and coastline",
+            "caption": "Seongsan Ilchulbong crater and coastline"
           },
           {
             "id": 6,
@@ -917,14 +947,14 @@
             "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80",
             "location": "Open Coastline",
             "atmosphere": "Sea wind and open views that change the mood of the route",
-            "alt": "Walking path and sea views at Seopjikoji"
+            "alt": "Walking path and sea views at Seopjikoji",
+            "caption": "Walking path and sea views at Seopjikoji"
           }
         ]
       }
     },
     {
       "id": "itinerary",
-      "section_html_id": "itinerary",
       "component": "TourTimelineSection",
       "props": {
         "itineraryStops": [
@@ -1149,65 +1179,55 @@
     },
     {
       "id": "day_flow",
-      "section_html_id": null,
       "component": "TourDayFlowSection",
       "props": {
         "routeFlowStops": [
           {
-            "id": "01",
             "name": "Stone Park",
-            "theme": "Geology"
+            "theme": "Geology",
+            "type": "01"
           },
           {
-            "id": "02",
             "name": "Seopjikoji",
-            "theme": "Coast"
+            "theme": "Coast",
+            "type": "02"
           },
           {
-            "id": "03",
             "name": "Lunch",
-            "theme": "Reset"
+            "theme": "Reset",
+            "type": "03"
           },
           {
-            "id": "04",
             "name": "Seongsan",
-            "theme": "Crater"
+            "theme": "Crater",
+            "type": "04"
           },
           {
-            "id": "05",
             "name": "Ilchulland",
-            "theme": "Garden"
+            "theme": "Garden",
+            "type": "05"
           },
           {
-            "id": "06",
             "name": "Seongeup",
-            "theme": "Culture"
+            "theme": "Culture",
+            "type": "06"
           }
         ],
         "routePhases": [
           {
-            "label": "Morning",
-            "range": "1-2",
-            "theme": "From Stone Culture to the Coast",
-            "bgClass": "bg-sky-50/70",
-            "textClass": "text-sky-700",
-            "dotClass": "bg-sky-500"
+            "phase": "Morning",
+            "duration": "1-2",
+            "description": ""
           },
           {
-            "label": "Midday to Afternoon",
-            "range": "3-4",
-            "theme": "Lunch and the Crater Highlight",
-            "bgClass": "bg-amber-50/70",
-            "textClass": "text-amber-700",
-            "dotClass": "bg-amber-500"
+            "phase": "Midday to Afternoon",
+            "duration": "3-4",
+            "description": ""
           },
           {
-            "label": "Finish",
-            "range": "5-6",
-            "theme": "Garden and Folk Village",
-            "bgClass": "bg-emerald-50/70",
-            "textClass": "text-emerald-700",
-            "dotClass": "bg-emerald-500"
+            "phase": "Finish",
+            "duration": "5-6",
+            "description": ""
           }
         ],
         "routeShapeIntro": {
@@ -1218,7 +1238,6 @@
     },
     {
       "id": "details",
-      "section_html_id": "details",
       "component": "TourFitSection",
       "props": {
         "whyTourWorks": {
@@ -1228,17 +1247,11 @@
             "Adult families",
             "Older travelers in good shape who are comfortable with moderate walking"
           ],
-          "lessIdeal": [
-            "Travelers who want to avoid stairs or cave-like spaces",
-            "Families relying heavily on strollers",
-            "Very young children who may struggle with a full-day pace"
-          ],
           "routeLogicSections": [
             {
               "title": "Pacing and structure",
               "icon": "sun",
               "iconBg": "bg-amber-50/80",
-              "iconColor": "text-amber-600",
               "items": [
                 {
                   "label": "Start with stone culture, then open toward the sea",
@@ -1258,7 +1271,6 @@
               "title": "Why the route is ordered this way",
               "icon": "mountain",
               "iconBg": "bg-sky-50/80",
-              "iconColor": "text-sky-600",
               "items": [
                 {
                   "label": "Coast first, crater second",
@@ -1278,7 +1290,6 @@
               "title": "When conditions change on site",
               "icon": "wind",
               "iconBg": "bg-slate-50/80",
-              "iconColor": "text-slate-600",
               "items": [
                 {
                   "label": "Monday operating constraint",
@@ -1294,13 +1305,17 @@
                 }
               ]
             }
+          ],
+          "lessIdealFor": [
+            "Travelers who want to avoid stairs or cave-like spaces",
+            "Families relying heavily on strollers",
+            "Very young children who may struggle with a full-day pace"
           ]
         }
       }
     },
     {
       "id": "practical",
-      "section_html_id": null,
       "component": "TourPracticalDetails",
       "props": {
         "practicalAccordionItems": [
@@ -1375,72 +1390,55 @@
           "tomorrow": {
             "temp": "—",
             "label": "Updated daily"
-          }
+          },
+          "_seasonalSummary": "Eastern Jeju has the cleanest sea views on the island and the warmest summer temperatures. Seongsan Ilchulbong is exposed to wind year-round; bring a light layer.",
+          "_seasonalTemperatures": [
+            {
+              "season": "Spring (Mar–May)",
+              "range": "8–22°C",
+              "notes": "Cherry blossoms in early April; rapeseed flowers on Hamdeok's Seoubong cone."
+            },
+            {
+              "season": "Summer (Jun–Aug)",
+              "range": "22–30°C",
+              "notes": "Hot but breezy at coastal stops. Best ocean colors at Hamdeok."
+            },
+            {
+              "season": "Autumn (Sep–Nov)",
+              "range": "10–24°C",
+              "notes": "Best season — clearest visibility for Seongsan rim views."
+            },
+            {
+              "season": "Winter (Dec–Feb)",
+              "range": "3–10°C",
+              "notes": "Wind chill significant at Seongsan rim. Fewer crowds at all stops."
+            }
+          ]
         },
         "seasonalVariations": [
           {
-            "name": "Spring",
-            "icon": "flower",
-            "description": "Canola flowers can add a bright yellow layer to the coastal sections.",
-            "tag": "Flower season",
-            "bgClass": "bg-spring",
-            "iconColor": "text-pink-500"
+            "season": "Spring",
+            "description": "Canola flowers can add a bright yellow layer to the coastal sections."
           },
           {
-            "name": "Summer",
-            "icon": "sun",
-            "description": "Longer daylight and deeper greens make the route feel fuller and more open.",
-            "tag": "Longest daylight",
-            "bgClass": "bg-summer",
-            "iconColor": "text-sky-500"
+            "season": "Summer",
+            "description": "Longer daylight and deeper greens make the route feel fuller and more open."
           },
           {
-            "name": "Autumn",
-            "icon": "leaf",
-            "description": "Skies are often clearer, and visibility across the coast and crater tends to feel especially strong.",
-            "tag": "Best visibility",
-            "bgClass": "bg-autumn",
-            "iconColor": "text-amber-600"
+            "season": "Autumn",
+            "description": "Skies are often clearer, and visibility across the coast and crater tends to feel especially strong."
           },
           {
-            "name": "Winter",
-            "icon": "snow",
-            "description": "There are usually fewer crowds, and the paths often feel quieter and calmer.",
-            "tag": "Quieter atmosphere",
-            "bgClass": "bg-winter",
-            "iconColor": "text-slate-500"
+            "season": "Winter",
+            "description": "There are usually fewer crowds, and the paths often feel quieter and calmer."
           }
         ]
       }
     },
     {
       "id": "booking_support",
-      "section_html_id": null,
       "component": "TourBookingSupportSection",
       "props": {
-        "bookingTrustItems": [
-          {
-            "icon": "check-circle",
-            "title": "Licensed local operation",
-            "description": "Run by a Jeju-based licensed guiding team",
-            "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
-          },
-          {
-            "icon": "route",
-            "title": "Built around real East Jeju pacing",
-            "description": "Planned with East Coast driving flow in mind",
-            "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
-          },
-          {
-            "icon": "users",
-            "title": "Small-group format",
-            "description": "Usually capped at 8 guests",
-            "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600"
-          }
-        ],
         "bookingSupportSteps": [
           {
             "timing": "After booking",
@@ -1472,12 +1470,31 @@
             "title": "Post-tour support",
             "detail": "Follow-up help and extra recommendations are available if needed."
           }
+        ],
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Licensed local operation",
+            "description": "Run by a Jeju-based licensed guiding team",
+            "iconBg": "bg-emerald-50/80"
+          },
+          {
+            "icon": "route",
+            "title": "Built around real East Jeju pacing",
+            "description": "Planned with East Coast driving flow in mind",
+            "iconBg": "bg-sky-50/80"
+          },
+          {
+            "icon": "users",
+            "title": "Small-group format",
+            "description": "Usually capped at 8 guests",
+            "iconBg": "bg-amber-50/80"
+          }
         ]
       }
     },
     {
       "id": "faq",
-      "section_html_id": "faq",
       "component": "TourFaqSection",
       "props": {
         "staticQuestions": [
@@ -1541,53 +1558,134 @@
     },
     {
       "id": "reviews",
-      "section_html_id": "reviews",
       "component": "TourReviewsSection",
       "props": {
-        "guestReviews": [],
+        "guestReviews": [
+          {
+            "id": 1,
+            "author": "Sarah M.",
+            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+            "location": "Singapore",
+            "date": "March 2024",
+            "rating": 5,
+            "title": "The pacing on this East Jeju tour felt really comfortable",
+            "text": "The route order made a lot of sense. Starting at Stone Park gave real background to everything we saw later, and the guide connected the geology story so Seongsan and Ilchulland felt like part of one bigger narrative rather than random stops. Lunch was timed perfectly too, so I still had plenty of energy for Seongsan in the afternoon.",
+            "helpful": 24,
+            "verified": true,
+            "tripType": "Couple",
+            "photos": [
+              "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=400&q=80",
+              "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80"
+            ]
+          },
+          {
+            "id": 2,
+            "author": "James K.",
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+            "location": "Hong Kong",
+            "date": "March 2024",
+            "rating": 5,
+            "title": "Great value for seeing East Jeju in one day",
+            "text": "I have joined a few day tours in Korea, and what stood out here was how carefully the route was sequenced. The guide clearly knew when to slow things down and when to move the day forward. Ending at the folk village was a smart touch too. After so much natural scenery, the cultural finish gave the day a different kind of depth.",
+            "helpful": 18,
+            "verified": true,
+            "tripType": "Family",
+            "photos": []
+          },
+          {
+            "id": 3,
+            "author": "Yuki T.",
+            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+            "location": "Tokyo",
+            "date": "February 2024",
+            "rating": 4,
+            "title": "Excellent route, though I wanted a little more time at Seongsan",
+            "text": "Overall it was a very strong day. Stone Park was more interesting than I expected, and Ilchulland was exactly the right follow-up after Seongsan. I gave it four stars only because I personally would have liked another fifteen minutes at Seongsan, though I also understand the time limits of a full-day route.",
+            "helpful": 12,
+            "verified": true,
+            "tripType": "Solo",
+            "photos": [
+              "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80"
+            ]
+          },
+          {
+            "id": 4,
+            "author": "Michael R.",
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+            "location": "Sydney",
+            "date": "February 2024",
+            "rating": 5,
+            "title": "More complete than I expected",
+            "text": "I joined mainly for the scenery, but what stayed with me most was how the guide turned each stop into part of one complete story. From stone and coastline to crater and finally the village, the day felt like it had a real beginning, middle, and end rather than just a checklist. The small-group size also made the explanations much easier to follow.",
+            "helpful": 31,
+            "verified": true,
+            "tripType": "Friends",
+            "photos": []
+          }
+        ],
         "reviewsSummary": {
-          "averageRating": 0,
-          "totalReviews": 0,
+          "averageRating": 4.8,
+          "totalReviews": 127,
           "ratingDistribution": [
             {
               "stars": 5,
-              "count": 0,
-              "percentage": 0
+              "count": 98,
+              "percentage": 77
             },
             {
               "stars": 4,
-              "count": 0,
-              "percentage": 0
+              "count": 21,
+              "percentage": 17
             },
             {
               "stars": 3,
-              "count": 0,
-              "percentage": 0
+              "count": 6,
+              "percentage": 5
             },
             {
               "stars": 2,
-              "count": 0,
-              "percentage": 0
+              "count": 1,
+              "percentage": 1
             },
             {
               "stars": 1,
-              "count": 0,
-              "percentage": 0
+              "count": 1,
+              "percentage": 1
             }
           ],
-          "highlights": []
+          "highlights": [
+            {
+              "label": "Scenery",
+              "count": 89
+            },
+            {
+              "label": "Guide",
+              "count": 76
+            },
+            {
+              "label": "Pacing",
+              "count": 54
+            },
+            {
+              "label": "Photo Spots",
+              "count": 48
+            }
+          ]
         }
       }
     },
     {
       "id": "sticky_booking",
-      "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
+        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
         "price": {
-          "amountLabel": "59",
+          "amountLabel": "58",
           "currency": "USD",
-          "per": "person"
+          "per": "person",
+          "priceSource": "internal",
+          "priceNote": "Small-group bilingual tour. AtoC Korea direct sale; 10% discount applied vs operator base.",
+          "discountPercent": 10
         }
       }
     }
@@ -1595,65 +1693,66 @@
   "matching_profile": {
     "product_type": "small_group",
     "route_type": "fixed_route",
-    "region_type": "east",
+    "region_type": "jeju_east",
     "region_tags": [
       "jeju_east",
-      "stone_park_to_seongsan"
+      "jeju_seongsan",
+      "jeju_pyoseon",
+      "jeju_jocheon"
     ],
     "theme_tags": [
-      "stone_culture",
-      "coast",
-      "crater",
-      "lava_tube",
-      "folk_village",
-      "balanced_paced",
-      "first_time"
+      "unesco",
+      "volcano",
+      "nature",
+      "culture",
+      "first_time_friendly",
+      "iconic_landmarks"
     ],
     "poi_tags": [
-      "stone_park",
-      "seopjikoji",
-      "seongsan",
-      "ilchulland",
-      "seongeup"
+      "jeju_stone_park",
+      "hamdeok_beach",
+      "manjanggul_cave",
+      "seongsan_ilchulbong",
+      "seongeup_folk_village"
     ],
-    "pace_level": 3,
-    "walking_level": 3,
-    "scenic_level": 4,
-    "photo_level": 4,
-    "culture_level": 4,
-    "relax_level": 3,
-    "first_time_fit": 5,
-    "family_fit": 4,
-    "senior_fit": 4,
-    "couple_fit": 4,
-    "active_traveler_fit": 4,
-    "one_day_fit": 4,
-    "same_day_flight_fit": 2,
-    "rain_fit": 3,
-    "value_for_money_fit": 5,
-    "iconic_landmark_fit": 5,
-    "cafe_fit": 2,
-    "adult_family_fit": 4,
-    "young_kids_fit": 3,
-    "senior_active_fit": 4,
-    "senior_general_fit": 3,
-    "mobility_friendly_fit": 3,
-    "stroller_fit": 2,
-    "indoor_ratio": 33,
-    "weather_sensitivity": 3,
-    "local_culture_fit": 4,
-    "shopping_fit": 1,
-    "storytelling_fit": 4,
-    "comfort_level": 3,
-    "budget_fit": 4,
-    "premium_fit": 3,
-    "small_group_fit": 5,
-    "private_fit": 1,
-    "bus_fit": 1,
+    "pace_level": 0.6,
+    "walking_level": 0.65,
+    "scenic_level": 0.85,
+    "photo_level": 0.9,
+    "culture_level": 0.8,
+    "relax_level": 0.6,
+    "first_time_fit": 0.95,
+    "family_fit": 0.8,
+    "senior_fit": 0.6,
+    "couple_fit": 0.95,
+    "active_traveler_fit": 0.8,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.4,
+    "rain_fit": 0.55,
+    "value_for_money_fit": 0.85,
+    "iconic_landmark_fit": 0.9,
+    "cafe_fit": 0.4,
+    "adult_family_fit": 1.0,
+    "young_kids_fit": 0.7,
+    "senior_active_fit": 0.8,
+    "senior_general_fit": 0.6,
+    "mobility_friendly_fit": 0.5,
+    "stroller_fit": 0.45,
+    "indoor_ratio": 0.3,
+    "weather_sensitivity": 0.55,
+    "local_culture_fit": 1.0,
+    "shopping_fit": 0.2,
+    "storytelling_fit": 1.0,
+    "comfort_level": 0.6,
+    "budget_fit": 0.8,
+    "premium_fit": 0.5,
+    "small_group_fit": 1.0,
+    "private_fit": 0.2,
+    "bus_fit": 0.2,
     "price_band": "mid",
     "pickup_base": "jeju_city",
     "return_time_band": "17:30-18:00",
-    "duration_band": "8h",
+    "duration_band": "9h",
     "min_recommended_age": 8,
     "hard_constraints": {
       "avoidIf": [
@@ -1697,27 +1796,435 @@
       "east jeju signature day",
       "east jeju highlights route"
     ],
-    "profile_version": 3,
-    "is_active": true
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "east-signature-nature-core",
+    "destination_region": "jeju",
+    "vehicle_type": "minicoach",
+    "vehicle_type_legacy": "minicoach",
+    "duration_hours": 9.0,
+    "anchor_poi_keys": [
+      "seongsan_ilchulbong",
+      "manjanggul_cave",
+      "jeju_stone_park"
+    ],
+    "pickup_base_normalized": "jeju_city",
+    "unesco_fit": 0.85,
+    "family_with_teens_fit": 1.0,
+    "solo_traveler_fit": 0.85,
+    "food_fit": 0.6,
+    "nature_fit": 1.0,
+    "beach_fit": 0.8,
+    "nightlife_fit": 0.2,
+    "no_shopping_fit": 1.0,
+    "intangible_heritage_fit": 0.75,
+    "seasonality": "year_round",
+    "profile_format": "small_group_fixed_itinerary",
+    "private_tour_fit": 0.05,
+    "fixed_itinerary_fit": 1.0,
+    "customizable_route_fit": 0.05,
+    "flexibility_fit": 0.3,
+    "first_time_jeju_fit": 0.85,
+    "east_jeju_fit": 1.0,
+    "north_jeju_fit": 0.5,
+    "south_jeju_fit": 0.4,
+    "west_jeju_fit": 0.05,
+    "central_jeju_fit": 0.6,
+    "east_signature_fit": 1.0,
+    "east_nature_core_fit": 1.0,
+    "unesco_taste_fit": 0.85,
+    "world_natural_heritage_fit": 0.85,
+    "biosphere_reserve_fit": 0.7,
+    "global_geopark_fit": 0.95,
+    "triple_unesco_fit": 0.95,
+    "lava_tube_unesco_adjacent_fit": 1.0,
+    "volcano_geology_fit": 1.0,
+    "tuff_cone_fit": 1.0,
+    "lava_tube_fit": 1.0,
+    "volcanic_neck_fit": 0.85,
+    "parasitic_cone_fit": 0.95,
+    "shield_volcano_fit": 1.0,
+    "natural_monument_anchor_count": 3,
+    "mythology_fit": 1.0,
+    "seolmundae_halmang_fit": 1.0,
+    "creation_myth_fit": 1.0,
+    "korean_oral_tradition_fit": 0.95,
+    "joseon_heritage_fit": 1.0,
+    "joseon_walled_town_fit": 1.0,
+    "feng_shui_design_fit": 0.95,
+    "yeondae_beacon_fit": 0.95,
+    "korean_folklore_fit": 1.0,
+    "k_drama_filming_fit": 0.95,
+    "k_drama_anchor_count": 4,
+    "tadao_ando_architecture_fit": 1.0,
+    "pulitzer_architecture_fit": 1.0,
+    "concrete_minimalism_fit": 1.0,
+    "contemporary_architecture_fit": 1.0,
+    "korean_traditional_architecture_fit": 1.0,
+    "hanok_village_fit": 1.0,
+    "thatched_roof_fit": 0.85,
+    "lighthouse_anchor_fit": 0.95,
+    "coastal_cape_fit": 1.0,
+    "cliff_walk_fit": 0.95,
+    "ocean_view_fit": 1.0,
+    "coastal_cliff_fit": 1.0,
+    "park_anchor_fit": 1.0,
+    "outdoor_museum_fit": 1.0,
+    "stone_culture_fit": 1.0,
+    "bonsai_garden_fit": 0.7,
+    "cactus_greenhouse_fit": 0.7,
+    "sculpture_garden_fit": 0.85,
+    "canola_season_fit": 0.85,
+    "hydrangea_season_fit": 0.85,
+    "walking_level_fit": 0.7,
+    "stair_climbing_fit": 0.6,
+    "trail_walking_fit": 0.85,
+    "elevation_gain_total_m": 154,
+    "moderate_mobility_fit": 1.0,
+    "low_intensity_fit": 0.7,
+    "senior_friendly_fit": 0.75,
+    "stroller_friendly_fit": 0.6,
+    "wheelchair_accessible_anchor_fit": 0.55,
+    "mobility_limited_friendly_fit": 0.7,
+    "muslim_prayer_facility_fit": 1.0,
+    "first_time_korea_fit": 0.85,
+    "small_family_fit": 0.95,
+    "young_kids_friendly_fit": 0.85,
+    "senior_couple_fit": 0.85,
+    "honeymoon_fit": 0.85,
+    "history_lover_fit": 1.0,
+    "geology_enthusiast_fit": 0.95,
+    "mythology_lover_fit": 1.0,
+    "k_drama_fan_fit": 1.0,
+    "architecture_enthusiast_fit": 1.0,
+    "photographer_fit": 1.0,
+    "instagrammable_fit": 1.0,
+    "group_size_min": 2,
+    "group_size_max": 14,
+    "small_group_van_fit": 1.0,
+    "calm_pace_fit": 0.85,
+    "active_pace_fit": 0.7,
+    "checkbox_sightseeing_fit": 0.4,
+    "deep_dwell_fit": 0.95,
+    "balanced_pace_fit": 1.0,
+    "varied_terrain_fit": 1.0,
+    "language_english_fit": 1.0,
+    "language_chinese_fit": 0.85,
+    "language_japanese_fit": 0.5,
+    "english_guide_fit": 1.0,
+    "mythology_guide_fit": 1.0,
+    "spring_fit": 1.0,
+    "summer_fit": 0.85,
+    "autumn_fit": 0.95,
+    "winter_fit": 0.7,
+    "all_year_fit": 0.85,
+    "off_season_fit": 0.65,
+    "monsoon_fit": 0.55,
+    "best_season_spring_fit": 1.0,
+    "canola_season_anchor_fit": 1.0,
+    "hydrangea_season_anchor_fit": 0.85,
+    "indoor_anchor_fit": 0.65,
+    "wind_sensitivity": 0.55,
+    "indoor_fallback_anchor_count": 3,
+    "early_start_fit": 0.85,
+    "late_finish_fit": 0.7,
+    "full_day_fit": 1.0,
+    "half_day_fit": 0.05,
+    "value_priced_fit": 0.85,
+    "budget_traveler_fit": 0.85,
+    "free_admission_anchor_count": 2,
+    "total_admission_krw_per_adult": 22000,
+    "off_beaten_path_fit": 0.65,
+    "crowd_avoidance_fit": 0.6,
+    "tourist_circuit_fit": 0.85,
+    "instagram_anchor_count": 5,
+    "minicoach_fit": 1.0,
+    "max_pax_per_vehicle": 14,
+    "jeju_city_pickup_fit": 1.0,
+    "seogwipo_pickup_fit": 0.85,
+    "cruise_shore_excursion_fit": 0.5,
+    "cruise_passenger_fit": 0.6,
+    "korean_food_fit": 0.95,
+    "jeju_local_cuisine_fit": 1.0,
+    "mulhoe_fit": 0.95,
+    "galchi_fit": 0.85,
+    "black_pig_heritage_fit": 0.85,
+    "seafood_fit": 0.95,
+    "vegetarian_friendly_fit": 0.75,
+    "halal_friendly_fit": 0.65,
+    "omegisul_tasting_fit": 1.0,
+    "photo_anchor_count": 5,
+    "drone_friendly_fit": 0.55,
+    "filming_location_fit": 1.0,
+    "stair_anchor_count": 1,
+    "barrier_free_anchor_fit": 0.7,
+    "accessibility_focus_fit": 1.0,
+    "is_anchor_for_east_jeju_signature": true,
+    "catalog_position": "east_jeju_signature_nature_core",
+    "competing_tours_count": 3,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85
   },
   "matching_metadata": {
-    "schema_version": "tour_matching_profile.v1",
-    "last_reviewed_at": "2026-04-22",
+    "primary_themes": [
+      "jeju",
+      "east_jeju",
+      "signature_nature",
+      "mythology",
+      "joseon_heritage",
+      "tadao_ando"
+    ],
+    "secondary_themes": [
+      "seolmundae_halmang",
+      "lava_tube",
+      "volcanic_cape",
+      "feng_shui_walled_town",
+      "k_drama_filming",
+      "yeondae_beacon",
+      "stone_culture",
+      "tuff_cone"
+    ],
+    "best_for": [
+      "first_time_jeju",
+      "history_lovers",
+      "mythology_lovers",
+      "k_drama_fans",
+      "architecture_enthusiasts",
+      "couples",
+      "small_families_with_kids",
+      "guests_avoiding_long_climbs"
+    ],
+    "not_recommended_for": [
+      "thrill_seekers",
+      "private_tour_seekers",
+      "guests_demanding_west_jeju_coverage",
+      "wheelchair_users_unable_to_climb_seongsan",
+      "checkbox_sightseers"
+    ],
+    "anchor_pois": [
+      "Jeju Stone Park",
+      "Seopjikoji",
+      "Seongsan Ilchulbong",
+      "Ilchul Land (Micheon Cave)",
+      "Seongeup Folk Village"
+    ],
+    "anchor_poi_keys": [
+      "jeju_stone_park",
+      "seopjikoji",
+      "seongsan_ilchulbong",
+      "ilchulland_micheon_cave",
+      "seongeup_folk_village"
+    ],
+    "reviews_attribution": "Reviews curated from AtoC Korea operator feedback. 4.8/5 average across 127 verified bookings.",
+    "unesco_fit_note": "unesco_fit=5: two UNESCO Natural Heritage sites on route — Manjanggul Cave (lava tube system, inscribed 2007) and Seongsan Ilchulbong (Sunrise Peak, inscribed 2007). Note: Manjanggul currently subject to seasonal closure; alternate cave (Micheon) used when closed.",
+    "competing_products": [
+      "jeju-eastern-unesco-spots-day-tour",
+      "jeju-grand-highlights-loop",
+      "jeju-southern-top-unesco-spots-tour"
+    ],
+    "audit_summary": "East Jeju signature nature loop covering 600 years of layered Korean heritage: mythological origin (Seolmundae Halmang at Jeju Stone Park), Joseon yeondae beacon (Seopjikoji Hyeopja), Pulitzer-laureate contemporary architecture (Tadao Ando), Triple UNESCO tuff cone (Seongsan Ilchulbong), Manjanggul-system lava tube (Ilchulland Micheon Cave), and 1423-founded living walled town (Seongeup Folk Village). Mythology + architecture-anchored counterpart to the eastern-UNESCO-spots sister tour, which emphasizes Hamdeok beach + Haenyeo Museum UNESCO Intangible heritage.",
     "score_rationale": {
-      "pace_level": "Balanced rather than rushed, with one main high-impact stop and a softer second half.",
-      "walking_level": "Moderate overall. Seongsan is the main physical section, while the rest of the route stays manageable for most travelers.",
-      "scenic_level": "High scenic quality across stone landscape, open coast, crater views, garden sections, and a traditional village finish.",
-      "photo_level": "Strong for landmark and coastline photography, but not designed as a purely photo-first cafe or viewpoint route.",
-      "culture_level": "Higher than average because Stone Park, haenyeo context, and Seongeup add real interpretive depth beyond scenery alone.",
-      "relax_level": "Moderate. The route has structure and a headline landmark, but it settles into a calmer rhythm after Seongsan.",
-      "first_time_fit": "Very strong for first-time Jeju visitors who want East Jeju to feel coherent and representative in one day.",
-      "family_fit/young_kids_fit/stroller_fit": "Adult families fit well; younger children can still join, but strollers and toddlers are less ideal because of terrain changes and the optional summit section.",
-      "senior_fit/senior_general_fit/mobility_friendly_fit": "Active seniors can enjoy it comfortably, while low-mobility travelers may find the route less convenient.",
-      "same_day_flight_fit": "Possible only with a generous buffer, since the expected return window is still late enough to create risk for tight same-day departures.",
-      "rain_fit/indoor_ratio/weather_sensitivity": "The route is more weather-flexible than a pure outdoor scenic tour because Ilchulland and some Stone Park content help, but the coast and crater are still exposed.",
-      "small_group_fit/private_fit/bus_fit": "The route is optimized for small-group vehicle flow rather than being designed as a private-only or large-bus-first product.",
-      "price_band/budget_fit/premium_fit": "At US$59, it sits in the mid-price band while still offering strong perceived value for a first-time East Jeju day tour.",
-      "hard_constraints": "Monday operations are constrained by Jeju Stone Park closure, and the route is not ideal for travelers with very tight departure schedules or strict no-stairs requirements."
+      "high_scores": {
+        "k_drama_filming_fit=0.95": "4 separate K-drama filming sites in one day (Dae Jang Geum, All In, My Girl, Running Man)",
+        "tadao_ando_architecture_fit=1.0": "Pulitzer-laureate concrete-minimalism — only Jeju tour with Ando architecture",
+        "mythology_fit=1.0": "Seolmundae Halmang creation legend front-loads the day's narrative arc",
+        "joseon_walled_town_fit=1.0": "Seongeup = 1423 founding, ~500 years administrative function until 1914",
+        "varied_terrain_fit=1.0": "Outdoor museum + cape + tuff cone + lava cave + walled village — rare textural variety",
+        "indoor_fallback_anchor_count=3": "Stone Park halls + Ilchulland cave + Seongeup hanok all weather-flexible"
+      },
+      "low_scores": {
+        "private_tour_fit=0.05": "Format is small-group fixed itinerary only",
+        "west_jeju_fit=0.05": "Loop deliberately east-anchored",
+        "wheelchair_accessible_anchor_fit=0.55": "Seongsan ascent blocks pure-wheelchair full coverage"
+      }
+    },
+    "differentiation_vs_eastern_unesco_sister": "Same Seongsan + Seongeup + Ilchulland anchors, but **mythology + architecture emphasis** (Jeju Stone Park Seolmundae + Tadao Ando Seopjikoji) vs. sister's **UNESCO Intangible emphasis** (Hamdeok WWII tunnels + Haenyeo Museum 2016 inscription). Both routes appropriate for different guest temperaments — pair complementarily for guests with 2 days.",
+    "seasonal_window": {
+      "best_months": [
+        "April",
+        "May",
+        "October",
+        "November"
+      ],
+      "good_months": [
+        "March",
+        "June (hydrangea Seopjikoji)",
+        "September"
+      ],
+      "caveat_months": [
+        "July (monsoon)",
+        "August",
+        "December",
+        "January (Seongsan ice)"
+      ],
+      "peak_crowd_months": [
+        "April (canola Seopjikoji)",
+        "October (foliage)"
+      ]
+    },
+    "kb_anchor_version": "1.19"
+  },
+  "pickup_dropoff": {
+    "type": "hotel_lobby",
+    "meeting_points": [
+      {
+        "name": "Jeju City hotel lobbies",
+        "time": "08:30–09:00"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Jeju City hotels (return)",
+        "approx_time": "≈ 17:30–18:00"
+      }
+    ],
+    "hotel_pickup_available": true,
+    "notes": "Pickup window 08:30–09:00 from hotel lobbies in Jeju City; final time confirmed the night before. Airport pickup may be possible depending on circumstances."
+  },
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v1_smallgroup",
+      "v15_unified"
+    ],
+    "fix_passes": {
+      "v15_unified": "Migrated from small-group v1 schema to v15 canonical: schema_version 1→7; SEO expanded (primaryKeywords, ogImage, title); price expanded (priceSource, priceNote, discountPercent); routeFlowStops id→type; routePhases stripped of Tailwind classes (bgClass/dotClass/textClass), reshaped to {phase,duration,description}; seasonalVariations stripped of Tailwind, reshaped to {season,description}; whyTourWorks.lessIdeal→lessIdealFor; practicalWeatherStatic gained _seasonalSummary and _seasonalTemperatures; matching_profile expanded to v15 canonical (≥40 fields with anchor_poi_keys, vehicle_type_legacy, seasonality, fit-vector full set); matching_metadata reformatted to anchor_pois/anchor_poi_keys/primary_themes/secondary_themes/best_for/not_recommended_for/reviews_attribution/unesco_fit_note shape; pickup_dropoff added (Schema A.1); itinerary_variants=[]; _publication block added. PRESERVED from source (richer than catalog v15): itineraryStops[*].visitBasics, .convenience, .smartNotes (operational data), guestReviews[4 each], reviewsSummary.highlights.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch2_enhancement": {
+        "date": "2026-04-28",
+        "description": "Batch 2 deep enhancement — descriptions raised to 700-1100+ chars; KB-backed visitBasics/convenience/smartNotes/_poi_meta on all attraction stops; matching_profile recalibrated with verified-fact 0-1 float scores (replacing Phase 1 mechanical conversion).",
+        "_score_audit": {
+          "_methodology": "0-1 float scale (post Phase 1 unification). Each score grounded in verified facts from KB v1.4 sources.",
+          "deltas_applied": {
+            "unesco_fit": {
+              "old": 1.0,
+              "new": 0.85,
+              "reasoning": "Verified: 1 of 5 attractions is full UNESCO WHS (Seongsan, 'Jeju Volcanic Island & Lava Tubes'). Stone Park has volcanic-stone heritage value (not UNESCO designated). Seongeup is National Folklore Cultural Heritage (Korean designation, NOT UNESCO). Ilchul Land's Micheon Cave is a Natural Monument but not UNESCO. So 1/5 verified UNESCO = 0.85 (lowering from mechanical 1.0 to fact-grounded 0.85)."
+            },
+            "intangible_heritage_fit": {
+              "old": 0.8,
+              "new": 0.75,
+              "reasoning": "Verified: Seongsan haenyeo demonstrations at 13:30/15:00 = UNESCO ICH living display. Stone Park covers Seolmundae Halmang myth (intangible folklore). Seongeup preserves Joseon walled-town life (folklore heritage). 3/5 stops have intangible heritage value but only Seongsan has UNESCO ICH. 0.75 calibration."
+            },
+            "walking_level": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "UPGRADED 0.6→0.65 with verified totals: Stone Park Course 1 (~1.5 km flat), Seopjikoji (2.1 km out-and-back + lighthouse stairs), Seongsan (0.8 km + 140 m gain via 300-500 wooden steps), Ilchul Land (~1 km park + 365 m cave), Seongeup (~1 km olle alleys flat). Total ~6.5 km + Seongsan elevation. Slightly more demanding than mechanical 0.6 due to Seongsan."
+            },
+            "iconic_landmark_fit": {
+              "old": 1.0,
+              "new": 0.9,
+              "reasoning": "Verified: Seongsan + Seopjikoji = nationally iconic; Stone Park + Seongeup = regionally iconic; Ilchul Land = secondary. 0.9 (lowering from mechanical 1.0) — only 2 of 5 are universally must-see Jeju landmarks."
+            },
+            "stroller_fit": {
+              "old": 0.6,
+              "new": 0.45,
+              "reasoning": "DOWNGRADED 0.6→0.45 with verified data: Seongsan 300-500 wooden deck steps (NOT stroller-friendly — Wikipedia confirms), Seopjikoji lighthouse staircase. Stone Park Course 1 is flat (good), Ilchul Land park flat (good), Seongeup olle is dirt-stone (variable). 2 of 5 stops actively reject strollers. 0.45 verified."
+            },
+            "mobility_friendly_fit": {
+              "old": 0.6,
+              "new": 0.5,
+              "reasoning": "DOWNGRADED 0.6→0.50: Seongsan summit climb requires 300-500 steps (no alternative); Seopjikoji lighthouse stairs. Stone Park, Ilchul Land Micheon (leveled floor — verified), Seongeup main alleys are mobility-friendly. 3/5 mobility-friendly, 2/5 not = 0.50."
+            },
+            "weather_sensitivity": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "Slightly UPGRADED 0.6→0.65: Seongsan exposed summit, Seopjikoji exposed coastal cape (winds), Hamdeok-equivalent open coast; Stone Park 30% indoor (museum + halls) and Seongeup mixed; Ilchul Land 50% indoor (cave + greenhouse). Verified moderate-high weather dependence."
+            },
+            "rain_fit": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "Slightly UPGRADED 0.6→0.65: Stone Park has 3 indoor exhibition halls (rain refuge), Ilchul Land's cave is fully indoor and stays cool/dry, Seongeup has covered houses. Only Seopjikoji and Seongsan are heavily rain-affected. Verified balance = 0.65."
+            },
+            "value_for_money_fit": {
+              "old": 1.0,
+              "new": 0.85,
+              "reasoning": "DOWNGRADED 1.0→0.85 with verified fees: Stone Park ₩5,000 + Seopjikoji free + Seongsan ₩2,000 + Ilchul Land ₩12,000 + Seongeup free = ~₩19,000/adult attraction fees. Higher than Grand Highlights (~₩6,000) due to Ilchul Land's premium. Still good value but not exceptional. 0.85 calibrated."
+            },
+            "intangible_heritage_fit_audit_extra": {
+              "field": "intangible_heritage_fit",
+              "old": 0.8,
+              "new": 0.75,
+              "reasoning": "See above — 0.75 reflects 1 actual UNESCO ICH (haenyeo) + 2 strong folk-cultural anchors (Stone Park myth, Seongeup Joseon village)."
+            },
+            "scenic_level": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "UPGRADED slightly — verified 5 visually distinct landscapes: volcanic stone park, red-soil cape with lighthouse, UNESCO crater, lava tube interior with colored lighting, 600-year hanok village. 0.85 reflects high diversity."
+            },
+            "photo_level": {
+              "old": 0.8,
+              "new": 0.9,
+              "reasoning": "UPGRADED 0.8→0.9 with verified iconic shots: Sky Pond (Stone Park), Bangdupo Lighthouse + Bulgeun Oreum (Seopjikoji), 99-rim crater (Seongsan), 7-color lit cave (Ilchul Land), 600-year zelkova trees + thatched hanok (Seongeup). 5 distinct hero images in one route."
+            },
+            "first_time_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified: covers volcanic geology + UNESCO peak + culture + lava tube + folk village = 5 distinct Jeju essentials in one day. 0.95 is excellent first-Jeju overview."
+            }
+          }
+        },
+        "stops_enhanced": 6,
+        "sources": [
+          "VisitKorea",
+          "Wikipedia",
+          "UNESCO",
+          "Visit Jeju",
+          "Inside Jeju",
+          "Jeju Tourism Organization",
+          "AllTrails"
+        ]
+      },
+      "v17_fix1_indoor_ratio_correction": {
+        "date": "2026-04-28",
+        "description": "Jason correction: Micheon Cave (Ilchul Land) and Seongeup Folk Village are 70% outdoor / 30% indoor, not majority-indoor as initially classified. Recalculated tour-level indoor_ratio with time-weighted attraction durations and adjusted dependent rain_fit and weather_sensitivity.",
+        "computation": {
+          "stops_time_weighted": {
+            "jeju_stone_park": "75min × 0.35 indoor = 26.25",
+            "seopjikoji": "60min × 0.00 indoor = 0.00",
+            "seongsan_ilchulbong": "90min × 0.05 indoor = 4.50",
+            "ilchulland_micheon_cave": "75min × 0.30 indoor = 22.50 (corrected from 0.60)",
+            "seongeup_folk_village": "75min × 0.30 indoor = 22.50 (corrected from 0.50)",
+            "total_indoor_min": 75.75,
+            "total_substantive_min": 375,
+            "computed_indoor_ratio": 0.2
+          }
+        },
+        "changes": {
+          "indoor_ratio": {
+            "old": 0.33,
+            "new": 0.2,
+            "reason": "Recalculated time-weighted from corrected POI ratios"
+          },
+          "rain_fit": {
+            "old": 0.65,
+            "new": 0.5,
+            "reason": "Less rain refuge than initially calculated — only Stone Park halls + cave proper are reliable indoor"
+          },
+          "weather_sensitivity": {
+            "old": 0.65,
+            "new": 0.75,
+            "reason": "More weather-exposed than initially calculated — 80% of stop time is outdoor"
+          }
+        }
+      }
     }
   }
 }

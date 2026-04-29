@@ -232,7 +232,18 @@ export default function ConfirmationPage() {
           <div className="text-center mb-8">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Booking Confirmed!</h1>
             <p className="text-lg text-gray-600">
-              Thank you for your reservation. We've sent a confirmation email to your address.
+              Thank you for your reservation.
+            </p>
+            {bookingData.customerInfo?.email && (
+              <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-4 py-1.5 text-[13px] text-emerald-800">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span>Confirmation email sent to <strong>{bookingData.customerInfo.email}</strong></span>
+              </p>
+            )}
+            <p className="mt-2 text-sm text-gray-500">
+              Check your spam/junk folder if you don't see it within 5 minutes.
             </p>
           </div>
 

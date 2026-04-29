@@ -61,9 +61,33 @@ export function norm1to5(value: number): number {
   return clamp((value - 1) / 4);
 }
 
-/** Normalize 0–100 indoor_ratio to 0–1. Kept separate from 1–5 axes. */
+/**
+ * Normalize indoor_ratio to 0–1 regardless of authoring scale.
+ *
+ * v17 batch authors store indoor_ratio as a 0–1 float (e.g. 0.32). Legacy
+ * profiles use 0–100 int. Detect by magnitude: anything > 1 is treated as a
+ * percent, anything in [0, 1] is treated as already-normalized.
+ */
 export function normIndoorRatioPercent(value: number): number {
-  return clamp(value / 100);
+  if (!Number.isFinite(value)) return 0;
+  if (value > 1) return clamp(value / 100);
+  return clamp(value);
+}
+
+/**
+ * Collapse authoring `product_type` labels to the 3-way traveler-facing
+ * category (`small_group | private | bus`). v17 introduced
+ * `small_group_fixed_itinerary`, which scores identically to small_group.
+ */
+export function productTypeFamily(
+  authoringType: string,
+): "small_group" | "private" | "bus" | null {
+  if (authoringType === "small_group" || authoringType === "small_group_fixed_itinerary") {
+    return "small_group";
+  }
+  if (authoringType === "private") return "private";
+  if (authoringType === "bus") return "bus";
+  return null;
 }
 
 function stringArray(u: unknown): string[] {
@@ -186,7 +210,7 @@ export function shouldHardExclude(
   rawText: string,
 ): string | null {
   const pti = resolveProductTypeIntent(intent, rawText);
-  if (pti.strength === "hard" && pti.desired && profile.product_type !== pti.desired) {
+  if (pti.strength === "hard" && pti.desired && productTypeFamily(profile.product_type) !== pti.desired) {
     return pti.desired === "private" ? "product_type_private_only" : "product_type_mismatch";
   }
 
@@ -361,7 +385,7 @@ function getTypeGate(
   strength: "soft" | "hard" | null,
 ): number {
   if (!desired) return 1;
-  if (profile.product_type === desired) return 1;
+  if (productTypeFamily(profile.product_type) === desired) return 1;
   if (strength === "hard") return 0;
   return 0.15;
 }

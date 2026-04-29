@@ -2,9 +2,89 @@
 
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Headset, Send, Sparkles, X } from "lucide-react";
+import { Send, Sparkles, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+
+/**
+ * Custom chatbot avatar — refined customer-service vibe.
+ * White rounded head + side headphone cups + dark face panel with cyan glowing
+ * eyes + antenna with emerald "online" tip. Uses `currentColor` for the head so
+ * it adapts to the surrounding theme (white on the dark launch button, primary
+ * blue inside the drawer header avatar).
+ */
+function ChatBotAvatar({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden
+    >
+      {/* Antenna stem */}
+      <line
+        x1="20"
+        y1="3.5"
+        x2="20"
+        y2="8"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        opacity="0.9"
+      />
+      {/* Antenna tip — emerald "online" indicator */}
+      <circle cx="20" cy="3" r="1.9" fill="#34d399">
+        <animate
+          attributeName="r"
+          values="1.6;2.1;1.6"
+          dur="1.8s"
+          repeatCount="indefinite"
+        />
+      </circle>
+      <circle cx="20" cy="3" r="1.9" fill="#34d399" opacity="0.45">
+        <animate
+          attributeName="r"
+          values="1.9;3.4;1.9"
+          dur="1.8s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="opacity"
+          values="0.45;0;0.45"
+          dur="1.8s"
+          repeatCount="indefinite"
+        />
+      </circle>
+
+      {/* Headphone cups — left & right */}
+      <rect x="3.2" y="15.5" width="3.6" height="9" rx="1.8" fill="currentColor" opacity="0.95" />
+      <rect x="33.2" y="15.5" width="3.6" height="9" rx="1.8" fill="currentColor" opacity="0.95" />
+
+      {/* Head body — rounded rect (squircle) */}
+      <rect x="6.8" y="9" width="26.4" height="22.5" rx="9" fill="currentColor" />
+
+      {/* Face panel — recessed dark area for eyes */}
+      <rect x="10.2" y="14.2" width="19.6" height="11.4" rx="5.7" fill="#0e2540" />
+
+      {/* Eyes — cyan glow with white highlights */}
+      <circle cx="16" cy="19.9" r="1.85" fill="#5eead4" />
+      <circle cx="24" cy="19.9" r="1.85" fill="#5eead4" />
+      <circle cx="16.55" cy="19.35" r="0.55" fill="#ffffff" />
+      <circle cx="24.55" cy="19.35" r="0.55" fill="#ffffff" />
+
+      {/* Subtle smile */}
+      <path
+        d="M16.5 28.5 Q20 30.6 23.5 28.5"
+        stroke="#0e2540"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+        fill="none"
+        opacity="0.55"
+      />
+    </svg>
+  );
+}
 
 type ChatMessage = { role: "user" | "assistant"; content: string };
 
@@ -74,7 +154,18 @@ export function TourProductAiAssistantWidget({
         const res = await fetch("/api/tour-product/assistant", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ tourProductSlug, messages: next }),
+          body: JSON.stringify({
+            tourProductSlug,
+            messages: next,
+            pageContext: typeof window !== "undefined"
+              ? {
+                  url: window.location.href.slice(0, 2000),
+                  title: document.title?.slice(0, 400) ?? undefined,
+                  // best-effort current section: read [#fragment] or document scroll
+                  section: window.location.hash ? window.location.hash.replace(/^#/, "").slice(0, 80) : undefined,
+                }
+              : undefined,
+          }),
         });
         const data = (await res.json()) as { reply?: string; error?: string; message?: string };
         if (!res.ok) {
@@ -175,7 +266,7 @@ export function TourProductAiAssistantWidget({
             </div>
             <div className="flex items-start gap-3 pr-8">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[var(--primary)] text-white shadow-md ring-2 ring-white/70">
-                <Headset className="h-5 w-5" strokeWidth={1.9} aria-hidden />
+                <ChatBotAvatar className="h-7 w-7 text-white" />
               </div>
               <div className="min-w-0 pt-0.5">
                 <div className="inline-flex items-center gap-1 rounded-full border border-[var(--primary)]/15 bg-white/80 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-[var(--primary)]">
@@ -335,35 +426,48 @@ export function TourProductAiAssistantWidget({
         </div>
       )}
 
-      {/* Launch button — high contrast, “support desk” */}
-      <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        className={cn(
-          "pointer-events-auto group relative flex flex-col items-center justify-center gap-0.5 rounded-2xl border-2 text-white transition [transition-property:box-shadow,transform,border-color]",
-          "h-[4.25rem] w-[4.25rem] min-h-[4.25rem] min-w-[4.25rem] sm:h-[4.5rem] sm:w-[4.5rem]",
-          "focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]/50 focus-visible:ring-offset-2",
-          "active:scale-[0.95]",
-          open
-            ? "border-white/30 bg-[var(--primary)] shadow-[0_4px_24px_rgba(30,60,100,0.4)]"
-            : [
-                "border-white/25 bg-gradient-to-br from-[#153a5c] via-[var(--primary)] to-[#2a6aa8]",
-                "shadow-[0_6px_28px_rgba(20,50,90,0.45),0_0_0_1px_rgba(255,255,255,0.12)]",
-                "hover:shadow-[0_10px_36px_rgba(20,50,90,0.5)]",
-              ],
+      {/* Launch button — chatbot floating badge with custom avatar */}
+      <div className="pointer-events-auto relative">
+        {/* Pulse halo — subtle "available" cue when closed */}
+        {!open && (
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-[var(--primary)]/35 motion-safe:animate-ping"
+          />
         )}
-        aria-expanded={open}
-        aria-label={open ? "Close help center" : "Open help center — ask about this tour"}
-      >
-        {open ? (
-          <X className="h-6 w-6" strokeWidth={2.2} />
-        ) : (
-          <>
-            <Headset className="h-7 w-7 drop-shadow-sm" strokeWidth={1.9} />
-            <span className="text-[9px] font-bold uppercase tracking-wider text-white/95">Help</span>
-          </>
+        <button
+          type="button"
+          onClick={() => setOpen((o) => !o)}
+          className={cn(
+            "group relative flex items-center justify-center rounded-full text-white transition [transition-property:box-shadow,transform]",
+            "h-[3.75rem] w-[3.75rem] sm:h-[4.25rem] sm:w-[4.25rem]",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]/50 focus-visible:ring-offset-2",
+            "active:scale-[0.94]",
+            open
+              ? "bg-[var(--primary)] shadow-[0_4px_24px_rgba(30,60,100,0.4)]"
+              : [
+                  "bg-gradient-to-br from-[#0e2a48] via-[#1d4d7d] to-[#3578b5]",
+                  "shadow-[0_10px_32px_rgba(20,50,90,0.5),inset_0_1px_0_rgba(255,255,255,0.22),inset_0_-3px_8px_rgba(0,0,0,0.18)]",
+                  "hover:shadow-[0_14px_40px_rgba(20,50,90,0.6)] hover:-translate-y-0.5",
+                ],
+          )}
+          aria-expanded={open}
+          aria-label={open ? "Close help center" : "Open help center — ask about this tour"}
+        >
+          {open ? (
+            <X className="h-6 w-6" strokeWidth={2.2} />
+          ) : (
+            <ChatBotAvatar className="h-11 w-11 drop-shadow-[0_2px_3px_rgba(0,0,0,0.25)] sm:h-12 sm:w-12" />
+          )}
+        </button>
+        {/* Speech-bubble tail — chat indicator, bottom-right */}
+        {!open && (
+          <span
+            aria-hidden
+            className="pointer-events-none absolute -bottom-1 right-2 h-3 w-3 rotate-45 rounded-sm bg-gradient-to-br from-[#1d4d7d] to-[#3578b5] shadow-[0_2px_4px_rgba(20,50,90,0.3)]"
+          />
         )}
-      </button>
+      </div>
     </div>
   );
 }

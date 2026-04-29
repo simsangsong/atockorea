@@ -45,7 +45,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
               <h3 className="tour-fit-micro-label">{sectionUi.fitBestForLabel}</h3>
             </div>
             <ul className="space-y-2">
-              {whyTourWorks.bestFor.map((item, i) => (
+              {(whyTourWorks.bestFor ?? []).map((item, i) => (
                 <li key={i} className="tour-fit-list-text flex items-start gap-2.5 text-foreground">
                   <span aria-hidden className="tour-fit-bullet tour-fit-bullet--positive mt-[7px]" />
                   <span className="flex-1">{item}</span>
@@ -62,7 +62,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
               <h3 className="tour-fit-micro-label">{sectionUi.fitLessIdealLabel}</h3>
             </div>
             <ul className="space-y-2">
-              {whyTourWorks.lessIdeal.map((item, i) => (
+              {((whyTourWorks as { lessIdealFor?: string[]; lessIdeal?: string[] }).lessIdealFor ?? whyTourWorks.lessIdeal ?? []).map((item, i) => (
                 <li key={i} className="tour-fit-list-text flex items-start gap-2.5 text-muted-foreground">
                   <span aria-hidden className="tour-fit-bullet tour-fit-bullet--negative mt-[7px]" />
                   <span className="flex-1">{item}</span>
@@ -103,7 +103,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
         <div className={cn("grid transition-all duration-300 ease-out", showLogic ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
           <div className="overflow-hidden">
             <div className="tour-fit-route-logic-inner space-y-4 border-t border-border/60 p-4">
-              {whyTourWorks.routeLogicSections.map((section) => {
+              {(whyTourWorks.routeLogicSections ?? []).map((section) => {
                 const Icon =
                   LOGIC_ICONS[section.icon as keyof typeof LOGIC_ICONS] ?? ROUTE_LOGIC_ICON_FALLBACK;
                 return (
@@ -115,7 +115,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
                       <h4 className="text-[13px] font-semibold tracking-tight text-foreground">{section.title}</h4>
                     </div>
                     <div className="space-y-2 pl-8">
-                      {section.items.map((item, i) => (
+                      {(section.items ?? []).map((item, i) => (
                         <div key={i}>
                           <p className="text-[12.5px] font-medium leading-snug tracking-tight text-foreground">{item.label}</p>
                           <p className="tour-fit-note mt-0.5 text-muted-foreground">{item.detail}</p>

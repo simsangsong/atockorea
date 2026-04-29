@@ -36,19 +36,29 @@ function parseArgs(argv) {
   const [, , slug, ...rest] = argv;
   if (!slug || slug.startsWith("-")) {
     console.error(
-      "Usage: node scripts/gen-tour-product-sql.mjs <slug> [--out <path>]\n" +
-        "       node scripts/gen-tour-product-sql.mjs jeju-grand-highlights-loop",
+      "Usage: node scripts/gen-tour-product-sql.mjs <slug> [--out <path>] [--locales <csv>]\n" +
+        "       node scripts/gen-tour-product-sql.mjs jeju-grand-highlights-loop\n" +
+        "       node scripts/gen-tour-product-sql.mjs jeju-grand-highlights-loop --locales en",
     );
     process.exit(1);
   }
-  const opts = { slug, outPath: null };
+  const opts = { slug, outPath: null, locales: null };
   for (let i = 0; i < rest.length; i++) {
     if (rest[i] === "--out" && rest[i + 1]) {
       opts.outPath = rest[++i];
+    } else if (rest[i] === "--locales" && rest[i + 1]) {
+      opts.locales = rest[++i]
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean);
     }
   }
   if (!opts.outPath) {
     opts.outPath = join(root, `supabase/manual/insert-${slug}-product.sql`);
+  }
+  if (opts.locales && !opts.locales.includes("en")) {
+    console.error(`[gen-tour-product-sql] --locales must include "en" (got: ${opts.locales.join(",")})`);
+    process.exit(1);
   }
   return opts;
 }
@@ -554,8 +564,15 @@ ON CONFLICT (product_id) DO UPDATE SET
 }
 
 function main() {
-  const { slug, outPath } = parseArgs(process.argv);
-  const bundle = loadLocaleBundle(slug);
+  const { slug, outPath, locales } = parseArgs(process.argv);
+  let bundle = loadLocaleBundle(slug);
+  if (locales) {
+    const filtered = {};
+    for (const l of locales) {
+      if (bundle[l]) filtered[l] = bundle[l];
+    }
+    bundle = filtered;
+  }
   const enDoc = bundle.en.doc;
 
   // Hard gate: matching_profile must satisfy pipeline contract.

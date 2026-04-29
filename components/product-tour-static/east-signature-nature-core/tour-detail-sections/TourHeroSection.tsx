@@ -1,6 +1,7 @@
 "use client";
 
-import { Clock, MapPin, Footprints, Star } from "lucide-react";
+import { Clock, Footprints, Star } from "lucide-react";
+import { cn } from "@/lib/utils";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
 export type TourHeroSectionProps = Pick<
@@ -9,109 +10,102 @@ export type TourHeroSectionProps = Pick<
 >;
 
 export function TourHeroSection({ headlineLine1, headlineLine2, hero }: TourHeroSectionProps) {
+  const showRating = (hero.meta.rating ?? 0) > 0;
+
   return (
     <section className="relative w-full">
-      <div className="relative h-[34.67vh] min-h-[267px] max-h-[347px] sm:h-[38.67vh] sm:min-h-[307px] sm:max-h-[400px] w-full overflow-hidden rounded-b-2xl shadow-hero">
+      <div className="relative h-[36vh] min-h-[280px] max-h-[360px] sm:h-[42vh] sm:min-h-[340px] sm:max-h-[440px] w-full overflow-hidden rounded-b-2xl shadow-hero">
+        {/* Background image — slow ken-burns drift, more breathing room */}
         <div
-          className="absolute inset-0 bg-cover scale-[1.02]"
+          className="absolute inset-0 bg-cover transition-transform duration-[14000ms] ease-out scale-[1.04] hover:scale-[1.08]"
           style={{
             backgroundImage: `url('${hero.imageUrl}')`,
             backgroundPosition: hero.imagePosition,
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1A2332]/12 via-transparent via-30% to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1A2332]/95 via-[#1A2332]/40 via-40% to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-900/[0.03] via-transparent to-transparent" />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 120% 80% at 10% 90%, rgba(26,35,50,0.25) 0%, transparent 50%)",
-          }}
-        />
 
-        <div className="absolute left-0 top-0 right-0 bottom-0 flex min-h-0 flex-col justify-end">
-          {/* Meta strip in document flow so it never stacks over pills */}
-          <div className="relative px-5 pb-3 pt-2 sm:pb-4 sm:pt-3">
-            <div
-              className="absolute -inset-x-2 -inset-y-3 -z-10 rounded-2xl"
-              style={{
-                background: "linear-gradient(135deg, rgba(26,35,50,0.42) 0%, rgba(26,35,50,0.18) 55%, rgba(26,35,50,0.06) 100%)",
-                backdropFilter: "blur(10px)",
-                WebkitBackdropFilter: "blur(10px)",
-                maskImage: "linear-gradient(to right, black 0%, black 88%, transparent 100%)",
-                WebkitMaskImage: "linear-gradient(to right, black 0%, black 88%, transparent 100%)",
-              }}
-            />
+        {/* Gradient — single soft bottom darkening, lets the photo breathe */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/85 via-[#0c1622]/30 via-45% to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0c1622]/35 via-transparent to-transparent sm:from-[#0c1622]/20" />
 
-            <h1
-              className="text-[24px] font-semibold tracking-[-0.025em] text-white leading-[1.05] sm:text-[30px] sm:leading-[1.1] lg:text-[34px]"
-              style={{
-                textShadow:
-                  "0 1px 2px rgba(0,0,0,0.55), 0 2px 20px rgba(0,0,0,0.45), 0 0 1px rgba(0,0,0,0.8)",
-              }}
-            >
+        {/* Content — compact, restrained */}
+        <div className="absolute inset-0 flex flex-col justify-end px-5 pb-5 sm:px-8 sm:pb-7 lg:px-12 lg:pb-9">
+          {/* Eyebrow — neutral white hairline, no gold */}
+          {hero.meta.region && (
+            <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
+              <span aria-hidden className="h-px w-6 bg-white/45 sm:w-7" />
+              <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/70 sm:text-[10.5px]">
+                {hero.meta.region}
+              </span>
+            </div>
+          )}
+
+          {/* Headline — clean sans-serif with strong size hierarchy */}
+          <h1
+            className="font-sans text-white"
+            style={{
+              textShadow: "0 1px 2px rgba(0,0,0,0.4), 0 1px 12px rgba(0,0,0,0.35)",
+            }}
+          >
+            <span className="block text-[22px] font-semibold leading-[1.16] tracking-[-0.014em] sm:text-[30px] sm:leading-[1.14] lg:text-[34px]">
               {headlineLine1}
-              <br />
+            </span>
+            <span className="mt-1 block text-[13px] font-normal leading-[1.4] tracking-[0.005em] text-white/75 sm:mt-1.5 sm:text-[14.5px] lg:text-[15px]">
               {headlineLine2}
-            </h1>
+            </span>
+          </h1>
 
-            <div className="relative z-10 mt-4 sm:mt-6 flex flex-wrap gap-2">
-              {hero.pills.map((pill, i) => (
+          {/* Pills — uniform hairline glass, restrained */}
+          {hero.pills.length > 0 && (
+            <div className="mt-3.5 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
+              {hero.pills.slice(0, 3).map((pill) => (
                 <span
                   key={pill}
-                  className="rounded-full px-3.5 py-1.5 text-[10px] sm:px-4 sm:py-2 sm:text-[11px] font-medium tracking-wide text-white/95"
-                  style={{
-                    background: i === 0 ? "rgba(255,255,255,0.14)" : "rgba(255,255,255,0.11)",
-                    border: i === 0 ? "1px solid rgba(255,255,255,0.14)" : "1px solid rgba(255,255,255,0.10)",
-                    backdropFilter: "blur(8px)",
-                    WebkitBackdropFilter: "blur(8px)",
-                    boxShadow: "0 2px 12px rgba(0,0,0,0.25)",
-                  }}
+                  className="rounded-full border border-white/25 bg-white/[0.10] px-3 py-1 text-[10.5px] font-medium tracking-[0.01em] text-white/95 backdrop-blur-md sm:px-3.5 sm:py-1 sm:text-[11px]"
                 >
                   {pill}
                 </span>
               ))}
             </div>
-          </div>
+          )}
 
-          <div className="relative z-0 shrink-0 border-t border-white/10">
-            <div
-              className="mx-0 px-4 py-2.5 sm:px-5 sm:py-3.5"
-              style={{
-                background: "linear-gradient(to right, rgba(26,35,50,0.88) 0%, rgba(26,35,50,0.78) 100%)",
-                backdropFilter: "blur(12px)",
-                WebkitBackdropFilter: "blur(12px)",
-              }}
-            >
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 sm:gap-x-5 sm:gap-y-2">
-                <div className="flex items-center gap-1.5 text-[13px] sm:text-sm text-white/90">
-                  <Clock className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-white/60" />
-                  <span className="font-medium">{hero.meta.duration}</span>
-                </div>
-                <span className="hidden sm:block w-px h-3.5 bg-white/20" />
-                <div className="flex items-center gap-1.5 text-[13px] sm:text-sm text-white/90">
-                  <MapPin className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-white/60" />
-                  <span>{hero.meta.region}</span>
-                </div>
-                <span className="hidden sm:block w-px h-3.5 bg-white/20" />
-                <div className="flex items-center gap-1.5 text-[13px] sm:text-sm text-white/90">
-                  <Footprints className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-white/60" />
-                  <span>{hero.meta.stops}</span>
-                </div>
-                <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
-                  <div className="flex items-center gap-0.5">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star
-                        key={star}
-                        className={`h-2.5 w-2.5 sm:h-3 sm:w-3 ${star <= hero.meta.ratingStars ? "fill-amber-400 text-amber-400" : "fill-white/30 text-white/30"}`}
-                      />
-                    ))}
-                  </div>
-                  <span className="text-[13px] sm:text-sm font-semibold text-white">{hero.meta.rating}</span>
-                </div>
-              </div>
+          {/* Meta strip — clean hairline divider */}
+          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-white/15 pt-3 sm:mt-5 sm:gap-x-5 sm:pt-3.5">
+            <div className="flex items-center gap-1.5 text-[12px] text-white/90 sm:text-[12.5px]">
+              <Clock className="h-3.5 w-3.5 text-white/55" strokeWidth={1.8} />
+              <span className="font-medium tabular-nums">{hero.meta.duration}</span>
             </div>
+            <span aria-hidden className="h-3 w-px bg-white/20" />
+            <div className="flex items-center gap-1.5 text-[12px] text-white/90 sm:text-[12.5px]">
+              <Footprints className="h-3.5 w-3.5 text-white/55" strokeWidth={1.8} />
+              <span className="tabular-nums">{hero.meta.stops}</span>
+            </div>
+            {showRating && (
+              <>
+                <span aria-hidden className="h-3 w-px bg-white/20" />
+                <div className="flex items-center gap-1.5">
+                  <div className="flex items-center gap-0.5">
+                    {[1, 2, 3, 4, 5].map((star) => {
+                      const filled = star <= hero.meta.ratingStars;
+                      return (
+                        <Star
+                          key={star}
+                          className="h-3 w-3"
+                          strokeWidth={0}
+                          style={{
+                            fill: filled ? "#E8C77A" : "rgba(255,255,255,0.18)",
+                            color: filled ? "#E8C77A" : "rgba(255,255,255,0.18)",
+                          }}
+                        />
+                      );
+                    })}
+                  </div>
+                  <span className="text-[12px] font-semibold tabular-nums text-white sm:text-[12.5px]">
+                    {hero.meta.rating}
+                  </span>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

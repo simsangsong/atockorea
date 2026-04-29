@@ -3,80 +3,51 @@
  *
  * The catch-all `app/tour-product/[slug]/page.tsx` reads from here to resolve
  * the static JSON fallback when Supabase is unavailable or `detail_payload` is
- * incomplete. New small-group tours register themselves by adding:
- *
- *   1. `<slug>.{en,ko,ja,zh,zh-TW,es}.json` files next to the slug folder
- *   2. An entry in `STATIC_TOUR_PRODUCT_BUNDLES` below
- *   3. (optional) A catalog_card row in `staticTourProductRegistry.ts`
- *
- * No per-slug React component or page.tsx is needed.
+ * incomplete. v17 batch ships EN-only — locale overlays were wiped to avoid
+ * structural drift; non-EN visitors fall back to EN until re-translated.
  */
 
 import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import type { TourProductFullPageJson } from "./tourProductFullPageJsonTypes";
 
-import jejuGrandEn from "@/components/product-tour-static/jeju-grand-highlights-loop/jeju-grand-highlights-loop.en.json";
-import jejuGrandKo from "@/components/product-tour-static/jeju-grand-highlights-loop/jeju-grand-highlights-loop.ko.json";
-import jejuGrandJa from "@/components/product-tour-static/jeju-grand-highlights-loop/jeju-grand-highlights-loop.ja.json";
-import jejuGrandZh from "@/components/product-tour-static/jeju-grand-highlights-loop/jeju-grand-highlights-loop.zh.json";
-import jejuGrandZhTW from "@/components/product-tour-static/jeju-grand-highlights-loop/jeju-grand-highlights-loop.zh-TW.json";
-import jejuGrandEs from "@/components/product-tour-static/jeju-grand-highlights-loop/jeju-grand-highlights-loop.es.json";
-import southwestEn from "@/components/product-tour-static/southwest-hallasan-osulloc-aewol/southwest-hallasan-osulloc-aewol.en.json";
-import southJejuClassicBusEn from "@/components/product-tour-static/south-jeju-classic-bus-tour/south-jeju-classic-bus-tour.en.json";
-import southJejuClassicBusKo from "@/components/product-tour-static/south-jeju-classic-bus-tour/south-jeju-classic-bus-tour.ko.json";
-import southJejuClassicBusJa from "@/components/product-tour-static/south-jeju-classic-bus-tour/south-jeju-classic-bus-tour.ja.json";
-import southJejuClassicBusZh from "@/components/product-tour-static/south-jeju-classic-bus-tour/south-jeju-classic-bus-tour.zh.json";
-import southJejuClassicBusZhTW from "@/components/product-tour-static/south-jeju-classic-bus-tour/south-jeju-classic-bus-tour.zh-TW.json";
-import southJejuClassicBusEs from "@/components/product-tour-static/south-jeju-classic-bus-tour/south-jeju-classic-bus-tour.es.json";
-import southwestJejuScenicBusEn from "@/components/product-tour-static/southwest-jeju-scenic-bus-tour/southwest-jeju-scenic-bus-tour.en.json";
-import southwestJejuScenicBusKo from "@/components/product-tour-static/southwest-jeju-scenic-bus-tour/southwest-jeju-scenic-bus-tour.ko.json";
-import southwestJejuScenicBusJa from "@/components/product-tour-static/southwest-jeju-scenic-bus-tour/southwest-jeju-scenic-bus-tour.ja.json";
-import southwestJejuScenicBusZh from "@/components/product-tour-static/southwest-jeju-scenic-bus-tour/southwest-jeju-scenic-bus-tour.zh.json";
-import southwestJejuScenicBusZhTW from "@/components/product-tour-static/southwest-jeju-scenic-bus-tour/southwest-jeju-scenic-bus-tour.zh-TW.json";
-import southwestJejuScenicBusEs from "@/components/product-tour-static/southwest-jeju-scenic-bus-tour/southwest-jeju-scenic-bus-tour.es.json";
-import eastJejuClassicBusEn from "@/components/product-tour-static/east-jeju-classic-bus-tour/east-jeju-classic-bus-tour.en.json";
-import eastJejuClassicBusKo from "@/components/product-tour-static/east-jeju-classic-bus-tour/east-jeju-classic-bus-tour.ko.json";
-import eastJejuClassicBusJa from "@/components/product-tour-static/east-jeju-classic-bus-tour/east-jeju-classic-bus-tour.ja.json";
-import eastJejuClassicBusZh from "@/components/product-tour-static/east-jeju-classic-bus-tour/east-jeju-classic-bus-tour.zh.json";
-import eastJejuClassicBusZhTW from "@/components/product-tour-static/east-jeju-classic-bus-tour/east-jeju-classic-bus-tour.zh-TW.json";
-import eastJejuClassicBusEs from "@/components/product-tour-static/east-jeju-classic-bus-tour/east-jeju-classic-bus-tour.es.json";
-import jejuCruiseShoreBusEn from "@/components/product-tour-static/jeju-cruise-shore-excursion-bus-tour/jeju-cruise-shore-excursion-bus-tour.en.json";
-import jejuCruiseShoreBusKo from "@/components/product-tour-static/jeju-cruise-shore-excursion-bus-tour/jeju-cruise-shore-excursion-bus-tour.ko.json";
-import jejuCruiseShoreBusJa from "@/components/product-tour-static/jeju-cruise-shore-excursion-bus-tour/jeju-cruise-shore-excursion-bus-tour.ja.json";
-import jejuCruiseShoreBusZh from "@/components/product-tour-static/jeju-cruise-shore-excursion-bus-tour/jeju-cruise-shore-excursion-bus-tour.zh.json";
-import jejuCruiseShoreBusZhTW from "@/components/product-tour-static/jeju-cruise-shore-excursion-bus-tour/jeju-cruise-shore-excursion-bus-tour.zh-TW.json";
-import jejuCruiseShoreBusEs from "@/components/product-tour-static/jeju-cruise-shore-excursion-bus-tour/jeju-cruise-shore-excursion-bus-tour.es.json";
-import jejuCruiseShoreSmallGroupEn from "@/components/product-tour-static/jeju-cruise-shore-excursion-small-group-tour/jeju-cruise-shore-excursion-small-group-tour.en.json";
-import jejuCruiseShoreSmallGroupKo from "@/components/product-tour-static/jeju-cruise-shore-excursion-small-group-tour/jeju-cruise-shore-excursion-small-group-tour.ko.json";
-import jejuCruiseShoreSmallGroupJa from "@/components/product-tour-static/jeju-cruise-shore-excursion-small-group-tour/jeju-cruise-shore-excursion-small-group-tour.ja.json";
-import jejuCruiseShoreSmallGroupZh from "@/components/product-tour-static/jeju-cruise-shore-excursion-small-group-tour/jeju-cruise-shore-excursion-small-group-tour.zh.json";
-import jejuCruiseShoreSmallGroupZhTW from "@/components/product-tour-static/jeju-cruise-shore-excursion-small-group-tour/jeju-cruise-shore-excursion-small-group-tour.zh-TW.json";
-import jejuCruiseShoreSmallGroupEs from "@/components/product-tour-static/jeju-cruise-shore-excursion-small-group-tour/jeju-cruise-shore-excursion-small-group-tour.es.json";
+import busanGyeongjuUnescoLegacyEn from "@/components/product-tour-static/busan-gyeongju-unesco-legacy-tour-national-museum/busan-gyeongju-unesco-legacy-tour-national-museum.en.json";
+import busanPlumCherryBlossomEn from "@/components/product-tour-static/busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju/busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju.en.json";
+import busanPrivateCarCharterCruiseShoreEn from "@/components/product-tour-static/busan-private-car-charter-cruise-shore/busan-private-car-charter-cruise-shore.en.json";
+import busanSmallGroupSightseeingCruiseEn from "@/components/product-tour-static/busan-small-group-sightseeing-tour-cruise-passengers/busan-small-group-sightseeing-tour-cruise-passengers.en.json";
+import busanSpringCherryBlossomGyeongjuEn from "@/components/product-tour-static/busan-spring-cherry-blossom-gyeongju-highlights-day-tour/busan-spring-cherry-blossom-gyeongju-highlights-day-tour.en.json";
+import busanTopAttractionsDayEn from "@/components/product-tour-static/busan-top-attractions-day-tour/busan-top-attractions-day-tour.en.json";
 import eastSignatureEn from "@/components/product-tour-static/east-signature-nature-core/east-signature-nature-core.en.json";
-import eastSignatureKo from "@/components/product-tour-static/east-signature-nature-core/east-signature-nature-core.ko.json";
-import eastSignatureJa from "@/components/product-tour-static/east-signature-nature-core/east-signature-nature-core.ja.json";
-import eastSignatureZh from "@/components/product-tour-static/east-signature-nature-core/east-signature-nature-core.zh.json";
-import eastSignatureZhTW from "@/components/product-tour-static/east-signature-nature-core/east-signature-nature-core.zh-TW.json";
-import eastSignatureEs from "@/components/product-tour-static/east-signature-nature-core/east-signature-nature-core.es.json";
-import busanTopAttractionsEn from "@/components/product-tour-static/busan-top-attractions-authentic-one-day-tour/busan-top-attractions-authentic-one-day-tour.en.json";
-import busanShoreExcursionCruiseEn from "@/components/product-tour-static/busan-city-tour-shore-excursion-cruise-guests/busan-city-tour-shore-excursion-cruise-guests.en.json";
+import fromBusanGyeongjuAncientCapitalEn from "@/components/product-tour-static/from-busan-gyeongju-ancient-capital-day-tour/from-busan-gyeongju-ancient-capital-day-tour.en.json";
+import fromIncheonSeoulDayCruiseEn from "@/components/product-tour-static/from-incheon-seoul-day-tour-cruise-guests/from-incheon-seoul-day-tour-cruise-guests.en.json";
+import incheonSeoulPrivateCarShoreCruiseEn from "@/components/product-tour-static/incheon-seoul-private-car-shore-excursion-cruise/incheon-seoul-private-car-shore-excursion-cruise.en.json";
+import jejuCherryBlossomEastEn from "@/components/product-tour-static/jeju-cherry-blossom-tour-east-route/jeju-cherry-blossom-tour-east-route.en.json";
+import jejuCruiseShoreBusEn from "@/components/product-tour-static/jeju-cruise-shore-excursion-bus-tour/jeju-cruise-shore-excursion-bus-tour.en.json";
+import jejuCruiseShoreSmallGroupEn from "@/components/product-tour-static/jeju-cruise-shore-excursion-small-group-tour/jeju-cruise-shore-excursion-small-group-tour.en.json";
+import jejuEasternUnescoSpotsEn from "@/components/product-tour-static/jeju-eastern-unesco-spots-day-tour/jeju-eastern-unesco-spots-day-tour.en.json";
+import jejuGrandHighlightsLoopEn from "@/components/product-tour-static/jeju-grand-highlights-loop/jeju-grand-highlights-loop.en.json";
+import jejuHydrangeaFestivalEastEn from "@/components/product-tour-static/jeju-hydrangea-festival-tour-east-route/jeju-hydrangea-festival-tour-east-route.en.json";
+import jejuHydrangeaFestivalSouthwestEn from "@/components/product-tour-static/jeju-hydrangea-festival-tour-southwest-route/jeju-hydrangea-festival-tour-southwest-route.en.json";
+import jejuIslandPrivateCarCharterEn from "@/components/product-tour-static/jeju-island-private-car-charter-tour/jeju-island-private-car-charter-tour.en.json";
+import jejuSouthernTopUnescoSpotsEn from "@/components/product-tour-static/jeju-southern-top-unesco-spots-tour/jeju-southern-top-unesco-spots-tour.en.json";
+import jejuWestSouthFullDayAuthenticEn from "@/components/product-tour-static/jeju-west-south-full-day-authentic-tour/jeju-west-south-full-day-authentic-tour.en.json";
+import jejuWinterSouthwestTangerineEn from "@/components/product-tour-static/jeju-winter-southwest-tangerine-snow-camellia-tour/jeju-winter-southwest-tangerine-snow-camellia-tour.en.json";
+import pocheonSanjeongLakeHerbIslandEn from "@/components/product-tour-static/pocheon-sanjeong-lake-herb-island-art-valley/pocheon-sanjeong-lake-herb-island-art-valley.en.json";
+import seoulDmzPrivate3rdTunnelEn from "@/components/product-tour-static/seoul-dmz-private-3rd-tunnel-suspension-bridge/seoul-dmz-private-3rd-tunnel-suspension-bridge.en.json";
+import seoulPrivateNamiMorningCalmEn from "@/components/product-tour-static/seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.en.json";
+import seoulSeoraksanSokchoBeachEn from "@/components/product-tour-static/seoul-seoraksan-national-park-sokcho-beach-day-trip/seoul-seoraksan-national-park-sokcho-beach-day-trip.en.json";
+import seoulSuburbsPrivateCharteredCarEn from "@/components/product-tour-static/seoul-suburbs-private-chartered-car-10hr/seoul-suburbs-private-chartered-car-10hr.en.json";
+import seoulSuwonHwaseongFolkVillageEn from "@/components/product-tour-static/seoul-suwon-hwaseong-folk-village-starfield-library/seoul-suwon-hwaseong-folk-village-starfield-library.en.json";
+import seoulSuwonHwaseongGwangmyeongCaveEn from "@/components/product-tour-static/seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library/seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library.en.json";
+import seoulSuwonHwaseongWaujeongsaEn from "@/components/product-tour-static/seoul-suwon-hwaseong-waujeongsa-starfield/seoul-suwon-hwaseong-waujeongsa-starfield.en.json";
+import southwestHallasanOsullocAewolEn from "@/components/product-tour-static/southwest-hallasan-osulloc-aewol/southwest-hallasan-osulloc-aewol.en.json";
 
 export type TourProductLocaleBundle = Partial<Record<TourProductPageLocale, TourProductFullPageJson>> & {
   en: TourProductFullPageJson;
 };
 
 /**
- * Canonical small-group tour bundles. `en` is required so all locales have a
- * fallback; additional locales are merged only when present.
- *
- * `east-signature-nature-core` is registered for shared loaders (e.g. AI assistant
- * context). The dedicated `app/tour-product/east-signature-nature-core/page.tsx`
- * still takes routing precedence over the catch-all `[slug]` route.
- */
-/**
- * Cast helper — JSON imports come through as deeply-narrowed tuple literals
- * (via TS's JSON import narrowing); the authoring-side contract only cares
- * about the structural shape, so we bridge through `unknown`.
+ * JSON imports come through as deeply-narrowed tuple literals; the authoring-side
+ * contract only cares about the structural shape, so we bridge through `unknown`.
  */
 function asBundleEntry(v: unknown): TourProductFullPageJson {
   return v as TourProductFullPageJson;
@@ -99,72 +70,41 @@ function mergeFullPageWithLocaleBase(
   return merged;
 }
 
+/**
+ * v17 batch — 30 EN-only bundles. Re-translation will repopulate ko/ja/zh/zh-TW/es
+ * in subsequent batches; until then non-EN visitors fall back to EN.
+ */
 export const STATIC_TOUR_PRODUCT_BUNDLES: Record<string, TourProductLocaleBundle> = {
-  "east-signature-nature-core": {
-    en: asBundleEntry(eastSignatureEn),
-    ko: asBundleEntry(eastSignatureKo),
-    ja: asBundleEntry(eastSignatureJa),
-    zh: asBundleEntry(eastSignatureZh),
-    "zh-TW": asBundleEntry(eastSignatureZhTW),
-    es: asBundleEntry(eastSignatureEs),
-  },
-  "jeju-grand-highlights-loop": {
-    en: asBundleEntry(jejuGrandEn),
-    ko: asBundleEntry(jejuGrandKo),
-    ja: asBundleEntry(jejuGrandJa),
-    zh: asBundleEntry(jejuGrandZh),
-    "zh-TW": asBundleEntry(jejuGrandZhTW),
-    es: asBundleEntry(jejuGrandEs),
-  },
-  "southwest-hallasan-osulloc-aewol": {
-    en: asBundleEntry(southwestEn),
-  },
-  "south-jeju-classic-bus-tour": {
-    en: asBundleEntry(southJejuClassicBusEn),
-    ko: asBundleEntry(southJejuClassicBusKo),
-    ja: asBundleEntry(southJejuClassicBusJa),
-    zh: asBundleEntry(southJejuClassicBusZh),
-    "zh-TW": asBundleEntry(southJejuClassicBusZhTW),
-    es: asBundleEntry(southJejuClassicBusEs),
-  },
-  "southwest-jeju-scenic-bus-tour": {
-    en: asBundleEntry(southwestJejuScenicBusEn),
-    ko: asBundleEntry(southwestJejuScenicBusKo),
-    ja: asBundleEntry(southwestJejuScenicBusJa),
-    zh: asBundleEntry(southwestJejuScenicBusZh),
-    "zh-TW": asBundleEntry(southwestJejuScenicBusZhTW),
-    es: asBundleEntry(southwestJejuScenicBusEs),
-  },
-  "east-jeju-classic-bus-tour": {
-    en: asBundleEntry(eastJejuClassicBusEn),
-    ko: asBundleEntry(eastJejuClassicBusKo),
-    ja: asBundleEntry(eastJejuClassicBusJa),
-    zh: asBundleEntry(eastJejuClassicBusZh),
-    "zh-TW": asBundleEntry(eastJejuClassicBusZhTW),
-    es: asBundleEntry(eastJejuClassicBusEs),
-  },
-  "jeju-cruise-shore-excursion-bus-tour": {
-    en: asBundleEntry(jejuCruiseShoreBusEn),
-    ko: asBundleEntry(jejuCruiseShoreBusKo),
-    ja: asBundleEntry(jejuCruiseShoreBusJa),
-    zh: asBundleEntry(jejuCruiseShoreBusZh),
-    "zh-TW": asBundleEntry(jejuCruiseShoreBusZhTW),
-    es: asBundleEntry(jejuCruiseShoreBusEs),
-  },
-  "jeju-cruise-shore-excursion-small-group-tour": {
-    en: asBundleEntry(jejuCruiseShoreSmallGroupEn),
-    ko: asBundleEntry(jejuCruiseShoreSmallGroupKo),
-    ja: asBundleEntry(jejuCruiseShoreSmallGroupJa),
-    zh: asBundleEntry(jejuCruiseShoreSmallGroupZh),
-    "zh-TW": asBundleEntry(jejuCruiseShoreSmallGroupZhTW),
-    es: asBundleEntry(jejuCruiseShoreSmallGroupEs),
-  },
-  "busan-top-attractions-authentic-one-day-tour": {
-    en: asBundleEntry(busanTopAttractionsEn),
-  },
-  "busan-city-tour-shore-excursion-cruise-guests": {
-    en: asBundleEntry(busanShoreExcursionCruiseEn),
-  },
+  "busan-gyeongju-unesco-legacy-tour-national-museum": { en: asBundleEntry(busanGyeongjuUnescoLegacyEn) },
+  "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju": { en: asBundleEntry(busanPlumCherryBlossomEn) },
+  "busan-private-car-charter-cruise-shore": { en: asBundleEntry(busanPrivateCarCharterCruiseShoreEn) },
+  "busan-small-group-sightseeing-tour-cruise-passengers": { en: asBundleEntry(busanSmallGroupSightseeingCruiseEn) },
+  "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": { en: asBundleEntry(busanSpringCherryBlossomGyeongjuEn) },
+  "busan-top-attractions-day-tour": { en: asBundleEntry(busanTopAttractionsDayEn) },
+  "east-signature-nature-core": { en: asBundleEntry(eastSignatureEn) },
+  "from-busan-gyeongju-ancient-capital-day-tour": { en: asBundleEntry(fromBusanGyeongjuAncientCapitalEn) },
+  "from-incheon-seoul-day-tour-cruise-guests": { en: asBundleEntry(fromIncheonSeoulDayCruiseEn) },
+  "incheon-seoul-private-car-shore-excursion-cruise": { en: asBundleEntry(incheonSeoulPrivateCarShoreCruiseEn) },
+  "jeju-cherry-blossom-tour-east-route": { en: asBundleEntry(jejuCherryBlossomEastEn) },
+  "jeju-cruise-shore-excursion-bus-tour": { en: asBundleEntry(jejuCruiseShoreBusEn) },
+  "jeju-cruise-shore-excursion-small-group-tour": { en: asBundleEntry(jejuCruiseShoreSmallGroupEn) },
+  "jeju-eastern-unesco-spots-day-tour": { en: asBundleEntry(jejuEasternUnescoSpotsEn) },
+  "jeju-grand-highlights-loop": { en: asBundleEntry(jejuGrandHighlightsLoopEn) },
+  "jeju-hydrangea-festival-tour-east-route": { en: asBundleEntry(jejuHydrangeaFestivalEastEn) },
+  "jeju-hydrangea-festival-tour-southwest-route": { en: asBundleEntry(jejuHydrangeaFestivalSouthwestEn) },
+  "jeju-island-private-car-charter-tour": { en: asBundleEntry(jejuIslandPrivateCarCharterEn) },
+  "jeju-southern-top-unesco-spots-tour": { en: asBundleEntry(jejuSouthernTopUnescoSpotsEn) },
+  "jeju-west-south-full-day-authentic-tour": { en: asBundleEntry(jejuWestSouthFullDayAuthenticEn) },
+  "jeju-winter-southwest-tangerine-snow-camellia-tour": { en: asBundleEntry(jejuWinterSouthwestTangerineEn) },
+  "pocheon-sanjeong-lake-herb-island-art-valley": { en: asBundleEntry(pocheonSanjeongLakeHerbIslandEn) },
+  "seoul-dmz-private-3rd-tunnel-suspension-bridge": { en: asBundleEntry(seoulDmzPrivate3rdTunnelEn) },
+  "seoul-private-nami-morning-calm-petite-france": { en: asBundleEntry(seoulPrivateNamiMorningCalmEn) },
+  "seoul-seoraksan-national-park-sokcho-beach-day-trip": { en: asBundleEntry(seoulSeoraksanSokchoBeachEn) },
+  "seoul-suburbs-private-chartered-car-10hr": { en: asBundleEntry(seoulSuburbsPrivateCharteredCarEn) },
+  "seoul-suwon-hwaseong-folk-village-starfield-library": { en: asBundleEntry(seoulSuwonHwaseongFolkVillageEn) },
+  "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library": { en: asBundleEntry(seoulSuwonHwaseongGwangmyeongCaveEn) },
+  "seoul-suwon-hwaseong-waujeongsa-starfield": { en: asBundleEntry(seoulSuwonHwaseongWaujeongsaEn) },
+  "southwest-hallasan-osulloc-aewol": { en: asBundleEntry(southwestHallasanOsullocAewolEn) },
 };
 
 /**

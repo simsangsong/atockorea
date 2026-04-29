@@ -1,0 +1,1867 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "seoul-private-nami-morning-calm-petite-france",
+  "locale": "en",
+  "product_id": "seoul-private-nami-morning-calm-petite-france",
+  "seo": {
+    "pageTitle": "Nami, Morning Calm & Petite France Private Tour | AtoC Korea",
+    "metaDescription": "Private 9–10-hour Seoul day trip to Gapyeong's three icons: Nami Island, the Garden of Morning Calm, and Petite France. Free Seoul hotel pickup, EN guide.",
+    "ogImage": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1920&q=80",
+    "primaryKeywords": [
+      "Nami Island private tour",
+      "Garden of Morning Calm tour",
+      "Petite France day tour",
+      "Seoul Nami private car",
+      "Gapyeong day tour from Seoul"
+    ],
+    "title": "Seoul Private Tour: Nami Island, Garden of Morning Calm & Petite France | AtoC Korea"
+  },
+  "catalog_card": {
+    "slug": "seoul-private-nami-morning-calm-petite-france",
+    "title": "Seoul Private Tour to Nami Island, Garden of Morning Calm & Petite France",
+    "subtitle": "Three of Korea's most photographed day-trip landmarks, in one private vehicle without the bus-tour pace.",
+    "region": "Gapyeong (Seoul Day Trip)",
+    "duration": "9–10 hours",
+    "stopsCount": 3,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "Private Tour",
+      "K-Drama Filming Locations",
+      "Couples & Families"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=600&q=80",
+    "priceLabel": "Per-vehicle pricing — confirm at booking",
+    "shortCardDescription": "A private day trip from Seoul covering Nami Island's tree-lined ferry experience, the Garden of Morning Calm's themed garden walks, and the colorful Le Petit Prince village of Petite France. Hotel pickup, private vehicle, and a relaxed pace make this the comfort-led version of a classic Gapyeong loop.",
+    "tags": [
+      "private_tour",
+      "k_drama_filming_locations",
+      "couples__families"
+    ]
+  },
+  "headlineLine1": "Seoul Private Tour to Nami Island,",
+  "headlineLine2": "Morning Calm Garden & Petite France",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "vehicle"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1920&q=80",
+    "imagePosition": "center 45%",
+    "tagline": "From Nami Island's ferry crossing to the themed gardens of Morning Calm and the colorful village of Petite France—the classic Gapyeong loop in a fully private format.",
+    "pills": [
+      "Private Vehicle",
+      "Free Hotel Pickup",
+      "Fixed Three-Stop Route"
+    ],
+    "meta": {
+      "duration": "9–10 hours",
+      "region": "Gapyeong",
+      "stops": "3 stops",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Overview"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerary"
+    },
+    {
+      "id": "details",
+      "label": "Details"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ"
+    },
+    {
+      "id": "reviews",
+      "label": "Reviews"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "Duration",
+      "value": "9–10 hours"
+    },
+    {
+      "icon": "camera",
+      "label": "Photo Potential",
+      "value": "Very High"
+    },
+    {
+      "icon": "tree-pine",
+      "label": "Scenery",
+      "value": "Garden & Forest"
+    },
+    {
+      "icon": "footprints",
+      "label": "Walking",
+      "value": "Moderate"
+    },
+    {
+      "icon": "users",
+      "label": "Group Style",
+      "value": "Private Only"
+    },
+    {
+      "icon": "ticket",
+      "label": "Admission Fees",
+      "value": "Pay Direct"
+    },
+    {
+      "icon": "gauge",
+      "label": "Pace",
+      "value": "Relaxed Private Pace"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+      "alt": "Avenue of tall metasequoia trees lining a straight path on Nami Island",
+      "caption": "Nami Island metasequoia tree-lined road (Winter Sonata filming setting)",
+      "location": "Nami Island",
+      "atmosphere": "Tree-lined paths and Winter Sonata filming setting"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=1200&q=80",
+      "alt": "Themed garden landscape with manicured plant beds, paved paths, and a Korean peninsula-shaped pond",
+      "caption": "Garden of Morning Calm (1996, 330,000 sqm, 20 themed gardens)",
+      "location": "Garden of Morning Calm",
+      "atmosphere": "Themed gardens and seasonal festival displays"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1583917123405-3aa64e6a96b8?w=1200&q=80",
+      "alt": "Brightly painted French-style village buildings on a hillside above a lake",
+      "caption": "Petite France — Le Petit Prince themed hillside village",
+      "location": "Petite France",
+      "atmosphere": "Colorful Le Petit Prince village atmosphere"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+      "alt": "Ferry approaching a wooded island across a wide lake",
+      "caption": "Cheongpyeong Lake ferry approach to Nami Island",
+      "location": "Cheongpyeong Lake",
+      "atmosphere": "Ferry crossing to Nami Island"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+      "alt": "Garden paths illuminated with thousands of LED lights at night, themed installations visible",
+      "caption": "Garden of Morning Calm Winter Lighting Festival (December to mid-March)",
+      "location": "Winter Lighting Festival",
+      "atmosphere": "Seasonal lights at the Garden of Morning Calm (Dec to mid-March)"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "10:30",
+      "duration": "180 min",
+      "name": "Nami Island (Namiseom)",
+      "category": "Ferry-Access Island & K-Drama Landmark",
+      "description": "Nami Island opens the day with a 5-minute ferry crossing from Gapyeong Wharf onto a half-moon-shaped river island in the Bukhan River. Approximately 460,000 m² (140,000 pyeong) and ~5 km in circumference, Namiseom is named after General Nami (Nam Yi, 1441-1468), a Joseon-era military commander executed at age 28 after being falsely accused of treason during the reign of King Yejong. The island originally became land only during floods; in 1944 the Japanese colonial government built the Cheongpyeong Dam, raising the river level and making Nami a permanent island. It found global fame in 2002 as the filming location for KBS drama 'Winter Sonata' starring Bae Yong-joon and Choi Ji-woo — the catalyst for the early 2000s Hallyu wave — and continues to draw about 3.3 million visitors annually (1.3 million foreign), making it Korea's most-visited single tourist destination after Seoul, Busan, and Jeju. Since March 1, 2006 the island has branded itself as the self-declared 'Naminara Republic' with its own flag, currency (Nami Tongbo coins), passport, and postal service — a tourism marketing concept rather than an actual political entity. The signature Metasequoia tree-lined avenue (Winter Sonata's iconic snowy lane), the Riverside Lover's Ginkgo Tree Lane on the south side, the Korean Pine Road, and the recycled-glass Sequoia Bridge made from soju bottles are all walkable in a relaxed half-day. By 2016 the island recorded **3.3 million annual visitors including 1.3 million foreign visitors from 122 countries** — the largest foreign-visitor share of any single Korean tourist destination after Seoul, Busan, and Jeju Island. Nami specifically markets to atockorea's overseas-Chinese-diaspora and SE-Asia segments via dedicated Mandarin/Cantonese/Tagalog/Vietnamese signage.",
+      "highlights": [
+        "Half-moon river island, ~460,000 m² / 5 km circumference; named after General Nami (1441-1468)",
+        "Iconic Metasequoia tree-lined avenue — Winter Sonata (2002) signature filming location",
+        "Self-declared 'Naminara Republic' since 2006 — own flag, currency, passport (tourism concept)",
+        "5-min ferry from Gapyeong Wharf (08:00-21:00, every 10-20 min during peak)",
+        "On-island wildlife: peacocks (incl. rare albino), ostriches, wild rabbits, squirrels",
+        "**Land formed in 1944** when the Japanese-built Cheongpyeong Dam raised the Bukhan River — Min Byung-do purchased the island in 1965, founded Gyeongchun Tourism Development Co. in 1966",
+        "**Naminara Republic declared March 1, 2006** under President Kang Woo Hyon as a 'cultural independence' tourism brand — Korea's first micronation tourism concept with own flag, currency, passport, stamps",
+        "**UNICEF Child Friendly Park designation 2010** + Nami Island Arts & Education hosts **600+ performances/exhibitions/festivals annually** — exceptional for a single Korean tourist destination",
+        "**Visa fees** (KTO official 2026): Regular ₩19,000 round-trip ferry (₩29,000 with motor boat one way); 36-month-old infants free; 10% group discount for 20+ pax"
+      ],
+      "timeUsed": [
+        "Ferry crossing from Gapyeong Wharf (5-10 minutes including queue)",
+        "Free walking time along the Metasequoia / Ginkgo / Korean Pine avenues — full island circuit ~5 km",
+        "Optional bicycle rental (single 7,000 / tandem 14,000 KRW per hour) or electric blue train (3,000 KRW one-way to UNICEF Hall)",
+        "On-island lunch (Sonata Cafe, hotteok, sweet potato latte, tteok-galbi)",
+        "Return ferry to the mainland"
+      ],
+      "whyOnRoute": "Placing Nami Island first uses the strongest morning light for tree-lined photography and avoids the heaviest mid-afternoon ferry queues. It also earns the most island-time when the day's energy is highest — Morning Calm and Petite France are both more photographic-than-walking experiences and compress well in the afternoon. For atockorea's private-charter format the morning-first Nami placement also leverages the **first-ferry advantage** (07:30 Friday-Sunday/holidays from Gapyeong Wharf) — guests can complete the 5 km island circuit before the 11:00-14:00 ferry-line peak when wait times can extend 30-45 minutes. Private-charter additionally allows the 38,000 KRW Skyline Zip-wire option (one of Asia's longest since 2010, featured on KBS '1 Night 2 Days' February 2016) for guests opting for the dramatic island-arrival experience.",
+      "visitBasics": {
+        "hours": "Island 08:00-21:00 (last ferry varies); on-island shops mostly close by 18:00",
+        "closed": "Open year-round",
+        "admission": "Naminara Republic VISA Fee (round-trip ferry included): Regular 19,000 KRW / Discount 16,000 KRW (seniors 70+, middle-high school students) / Special 13,000 KRW (children 36 months-elementary + early bird 08:00 ferry); 10% group discount 20+ persons",
+        "walking": "Easy — flat tree-lined paths; full perimeter walk ~5 km. Bicycle / e-buggy rental available for low-mobility visitors."
+      },
+      "convenience": {
+        "restroom": "Multiple on island and at Gapyeong Wharf",
+        "parking": "Gapyeong Wharf 6,000 KRW small car / 10,000 KRW large vehicle (extra 1,000 KRW per hour after 12 hours)"
+      },
+      "smartNotes": {
+        "photo": "Metasequoia avenue is the world-famous Winter Sonata shot — best in autumn (golden, late October-early November) or winter (snow). Riverside Lover's Ginkgo Tree Lane on the south side is quieter and equally photogenic. Albino peacock occasionally appears near Lover's Lane.",
+        "facilities": "On-island restaurants serve Korean comfort food (hotteok, sweet potato latte, tteok-galbi). Sonata Cafe in a traditional hanok is the signature stop. Foreign-card-friendly ticket counter at Gapyeong Wharf — ticket machines do not accept foreign cards, ask at the counter.",
+        "tip": "Best seasons: spring (April-May cherry blossoms), autumn (October golden ginkgo + red maple), winter (December-February snow-quiet paths reminiscent of Winter Sonata). Avoid the Sunday late-afternoon ferry queue — leave the island before 16:00. Zipwire (940 m, ~80 km/h, 55,000-58,000 KRW including admission) saves 15-20 min vs ferry queue at peak."
+      },
+      "_poi_meta": {
+        "poi_key": "nami_island",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea — Nami Island official listing + visa fee schedule)",
+          "Naminara Republic Official Site (namisum-en.imweb.me — own corpus on cultural-independence brand)",
+          "UNICEF Korea (Nami Island 2010 Child Friendly Park designation + International Children's Book Festival)",
+          "KBS / Korea Times (Winter Sonata 2002 production retrospectives + Japanese tourism boom coverage)",
+          "Wikipedia (Namiseom — open corpus on General Nami history + Cheongpyeong Dam 1944 origin)"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "14:00",
+      "duration": "120 min",
+      "name": "The Garden of Morning Calm",
+      "category": "Themed Botanical Garden",
+      "description": "About 30 minutes south of Nami Island, the Garden of Morning Calm is Korea's signature private arboretum — approximately 330,000 m² of curated landscape with around 5,000 plant species. Conceived in 1992 and opened to the public in 1996, the garden was designed and personally cultivated by Han Sang-kyung of Sahmyook University, who at one point sold his house to fund the project; the name draws from Korea's longstanding nickname 'Land of the Morning Calm' (Joseon). Twenty themed sub-gardens — including the Sunken Garden shaped like the Korean peninsula, the Hometown House Garden, the Bonsai Garden, the Moonlight Garden, the Sky Path, and the Garden of Eden — each carry their own visual identity and have served as filming sets for many K-dramas including Moonlight Drawn by Clouds. From early December to mid-March every winter, the garden hosts Korea's first natural-environment lighting festival — the 2025-2026 edition runs December 5, 2025 to March 15, 2026 with more than 30,000 LEDs covering the grounds, transforming the garden after sunset into a winter wonderland. Festival hours extend Sunday-Friday 11:00-21:00 and Saturday 11:00-23:00; outside festival period the garden operates 08:30-19:00 with last entry 18:00. The name **'Garden of Morning Calm'** comes from Indian poet Rabindranath Tagore, who in 1929 referred to Korea as 'the Land of Morning Calm.' Han Sang-kyung conceived the project in 1992 while serving as exchange professor in the United States, where he was inspired by world-class private gardens. Land was purchased in 1994 — formerly a barren stone lot cleared by slash-and-burn agriculture. **Han and his wife designed and personally labored on the garden**, and during periods of financial difficulty they sold their family home and lived in a small dwelling on the garden's property to continue construction. The garden first opened to the public on May 11, 1996, with 10 themed sections; today it has expanded to 20 themed sub-gardens across 330,000 m².",
+      "highlights": [
+        "Korea's signature private arboretum — 330,000 m² with ~5,000 plant species",
+        "Founded by Han Sang-kyung of Sahmyook University; opened 1996 (conceived 1992)",
+        "Winter Lighting Festival December 5, 2025 - March 15, 2026 with 30,000+ LEDs (Korea's first natural-environment light festival)",
+        "20 themed sub-gardens — Sunken Garden shaped like the Korean peninsula, Moonlight Garden, Bonsai Garden, Garden of Eden",
+        "K-drama filming location for Moonlight Drawn by Clouds and others",
+        "**Conceived 1992 / land purchased 1994 / opened May 11, 1996**: Founder Prof. Han Sang-kyung (Sahmyook University Horticulture Dept) and his wife designed and personally cultivated the entire garden, even selling their house during early financial hardship",
+        "**Selected by CNN as one of Korea's Top 50 Tourist Attractions** — the Sunken Garden's Korean Peninsula shape (10 large/small flower beds expressing yearning for unification) is the CNN-cited landmark feature",
+        "**Lighting Festival uses 200,000+ environmentally-friendly LED bulbs** (December-March) — Korea's first natural-environment light festival; lit nightly from 17:00 sunset onward",
+        "**Cheonnyeonhyang (Chinese juniper)** is the official symbol of Morning Calm — the garden's signature plant species among the 5,000 total catalogued"
+      ],
+      "timeUsed": [
+        "Garden entry and brief orientation by the driver-guide",
+        "Free walking time across the 20 themed sub-gardens (suggested 1.5-2 hours)",
+        "Optional cafe stop at Morning Spring Bakery or the on-site Food Garden (Korean comfort food)",
+        "Winter visits: stay through 17:00 illumination start to see the daytime garden + lighting festival",
+        "Optional Sunken Garden (Korean Peninsula shape) extended photo time — CNN Top-50-cited landmark feature (~15 min)"
+      ],
+      "whyOnRoute": "Placing Morning Calm in the middle of the day gives the route its calmest visual chapter, between Nami's active walking circuit and Petite France's compact village stop. In December-March, the garden becomes the day's signature stop — the lighting festival peaks at 17:00-21:00 when the rest of Gapyeong is winding down. Placing Morning Calm in the middle of the day also captures the **transitional afternoon light** that the garden's photography reputation depends on — the soft side-light between 14:00 and 16:00 in autumn brings out the maple foliage colours, while in winter the same window aligns the garden's mid-tour pause with the **17:00 lighting-festival ignition** (December-March), letting your private-charter guests effectively pay one entry fee but experience two distinct visual gardens (daytime arboretum + night LED festival).",
+      "visitBasics": {
+        "hours": "Spring-Autumn 08:30-19:00 (last entry 18:00); Winter Lighting Festival Sun-Fri 11:00-21:00, Sat 11:00-23:00",
+        "closed": "Open year-round",
+        "admission": "Adult 11,000 KRW / Senior 65+ 9,000 KRW / Youth 13-18 8,500 KRW / Child 3-12 7,500 KRW (2,000 KRW discount on adjacent zoo for ticket holders)",
+        "walking": "Moderate — extensive paths over rolling terrain through 20 themed sub-gardens; mostly stroller-accessible main loop"
+      },
+      "convenience": {
+        "restroom": "Multiple, signposted",
+        "parking": "Large free parking; coin lockers 1,500-2,000 KRW (500-KRW coins only)"
+      },
+      "smartNotes": {
+        "photo": "Spring (cherry blossoms April), summer (lush greens), autumn (foliage October-early November), and winter (lighting festival post-sunset) all photograph differently. The light tunnels at dusk during festival period are the iconic shot.",
+        "facilities": "Food Garden serves Korean comfort food (soybean-paste stew, vegetable bibimbap, snow cheese tteokbokki). Good Morning Coffee in a hanok roasting house is the signature cafe. Restaurants close at 20:00.",
+        "tip": "For the lighting festival (Dec 5 - Mar 15), arrive ~16:00 to see the daytime garden first, then stay through illumination (~17:00 onward). Heavy snow February gives the most magical Frozen-movie scene."
+      },
+      "_poi_meta": {
+        "poi_key": "garden_of_morning_calm",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "note": "POI verified in KB v1.10 (Batch 7) and reused here unchanged.",
+        "sources": [
+          "Garden of Morning Calm Official Site (morningcalm.co.kr — own corpus on founder + 1996 opening + 20 sub-gardens)",
+          "Korea Tourism Organization (VisitKorea — Lighting Festival listing + lighting-fest schedule)",
+          "Gyeonggi Cultural Foundation (ggc.ggcf.kr — official cultural promotion entry on Sunken Garden + 200,000 LEDs)",
+          "Sahmyook University Department of Horticulture (Prof. Han Sang-kyung honorary professor profile + garden origin)",
+          "Wikipedia (Garden of Morning Calm — corpus on Tagore-derived name + 5,000 species + 330,000 m² total)"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "16:30",
+      "duration": "60 min",
+      "name": "Petite France",
+      "category": "Le Petit Prince Themed Village",
+      "description": "The day's compact final stop, Petite France is a French cultural theme village built into a hillside above Cheongpyeong Lake about 25 minutes from Nami Island. Opened in July 2008 by founder Han Hong-seop, the 16-building village is themed around 'flowers, stars, and the Little Prince' (Antoine de Saint-Exupéry's 1943 novel Le Petit Prince) and houses a Saint-Exupéry memorial hall, the Orgel House (a collection of antique music boxes featuring a 200-year-old centerpiece that still plays), a French housing exhibition, a marionette theater, and a gallery of le coq gaulois (Gallic rooster) sculptures and paintings. Drama fans visit primarily for the K-drama legacy: Petite France was the filming location for Beethoven Virus (2008), Personal Taste (2010), Secret Garden (2010), My Love from the Star (2013-2014), the 2025 hit Bon Appétit Your Majesty (Maison de Marie doubled as Im Yoon-ah's character's room), and the popular variety show Running Man. The adjacent Pinocchio & Da Vinci Italian Village offers a combo ticket option for visitors with extra time. The site has been selected for the 2026 Korea-France 140th Anniversary Commemorative Program. The village serves a dual function: French cultural theme village + the **Goseong Youth Training Center** that accommodates up to 200 visitors in 4-to-10-person rooms for educational stays. The site's most distinctive architectural feature is the **Traditional France Residence Gallery**: an entire 19th-century French farmhouse from middle-region France, dismantled and reassembled on-site using 200+-year-old wood, roof tiles, and bricks — joined entirely without nails using traditional French timber-frame mortise-and-tenon technique. Petite France is also **Korea's only Saint-Exupéry Foundation-licensed organization**, meaning every Little Prince motif on-site is officially authorized by the Foundation in France. The adjacent Pinocchio & Da Vinci Italian Village (separate ticket or combo at ₩19,500 adult) extends the day's European-village content by ~45 min if desired.",
+      "highlights": [
+        "Opened July 2008; 16 French-style buildings built around the 'Little Prince' theme (Saint-Exupéry, 1943)",
+        "K-drama filming credits: Beethoven Virus (2008), Personal Taste (2010), Secret Garden (2010), My Love from the Star (2013-14), Bon Appétit Your Majesty (2025)",
+        "Orgel House: 200-year-old music box collection; Marionette theater with daily performances",
+        "Adjacent Pinocchio & Da Vinci Italian Village — combo tickets 19,500 KRW adult",
+        "Selected for the 2026 Korea-France 140th Anniversary Commemorative Program",
+        "**Korea's only organization with international license agreement with Saint-Exupéry Foundation in France** — every Little Prince motif on-site is officially licensed",
+        "**16 buildings include a 19th-century French farmhouse** reassembled from 200+-year-old wood, roof tiles, and bricks imported from middle-region France, jointed without nails (traditional French timber-frame method)",
+        "**2025 K-drama 'Bon Appétit, Your Majesty' filming location**: 'Maison de Marie' doubles as Yeon Ji-yeong's (IM YOON-AH) contemporary-Korea apartment — adds to existing K-drama portfolio (Beethoven Virus 2008, Personal Taste 2010, Secret Garden 2010, My Love from the Star 2013, Vincenzo 2021)",
+        "**Daily admission 2026**: ₩10,000 adult / ₩8,000 teen / ₩6,000 child; Combo with adjacent Pinocchio & Da Vinci Italian Village ₩19,500 adult; Sun-Thu 09:00-18:00, Fri-Sat 09:00-20:00 (last admission 1 hour before closing)"
+      ],
+      "timeUsed": [
+        "Entry and quick orientation",
+        "Walk through the colorful streets and 16 building exhibits + photo points (~45 min)",
+        "Optional Marionette show or Orgel demonstration if scheduled",
+        "Light refreshment at on-site snack stalls or coffee shop",
+        "Optional Pinocchio & Da Vinci Italian Village extension visit (~45 min, combo ticket ₩19,500 adult)"
+      ],
+      "whyOnRoute": "Placed last, Petite France gives the day a lighter, photo-friendly close after the broader walks at Nami Island and the visual richness of Morning Calm. Its compact scale (1.5-2 hours typical) fits naturally into the late-afternoon energy window — visitors who arrive after 16:00 also get the daytime + early-evening illumination contrast on the village's pastel facades. For atockorea's overseas-Chinese-diaspora and SE-Asia segments, **Petite France's K-drama density** (Beethoven Virus 2008, Personal Taste 2010, Secret Garden 2010, My Love from the Star 2013, Vincenzo 2021, 2025's Bon Appétit Your Majesty with IM YOON-AH) is the day's strongest Hallyu touchpoint — Maison de Marie alone has appeared in 6+ K-dramas making it one of the most-photographed building exteriors in the broader Gapyeong tourism zone. Combined with the licensed Saint-Exupéry Foundation status, the village delivers an authenticated Western-cultural-anchor stop that contrasts well with Nami Island's Korean-peninsula pastoralism and Morning Calm's Korean-garden classicism, giving the day three distinct visual vocabularies.",
+      "visitBasics": {
+        "hours": "09:00-18:00 (last entry 17:00); some Mondays closed in off-season; night-festival hours announced separately",
+        "closed": "Some Mondays in off-season",
+        "admission": "Adult 12,000 KRW / Teen 8,500 / Child 7,500 KRW (combined Petite France + Italian Village 19,500 KRW adult)",
+        "walking": "Easy — small flat-to-gentle-slope village (1-1.5 hours to explore)"
+      },
+      "convenience": {
+        "restroom": "On site",
+        "parking": "Free parking"
+      },
+      "smartNotes": {
+        "photo": "Pastel-colored timber-framed houses against the green mountain backdrop are the signature shots. The viewing deck at the top of the hill offers the best wide composition. K-drama scene-spotting is a guided activity for fans (Saint-Exupéry building = My Love from the Star pivotal scenes).",
+        "facilities": "Snack stalls only — waffles, dumplings, fish-cake soup, coffee. Most visitors eat at adjacent Italian Village or in nearby Cheongpyeong town instead.",
+        "tip": "Best paired with Nami Island and/or Garden of Morning Calm via the Gapyeong City Tour Bus for self-guided trips. Late-afternoon arrival lets you see daytime + early-evening illumination. Visitors expecting a large attraction often note the modest scale (1.5-2 hours typical) — manage expectations."
+      },
+      "_poi_meta": {
+        "poi_key": "petite_france",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "note": "POI verified in KB v1.10 (Batch 7) and reused here unchanged.",
+        "sources": [
+          "Petite France Official Site (en.pfcamp.com — own corpus on founder + 16-building layout + Goseong Youth Training Center)",
+          "Korea Tourism Organization (VisitKorea — Petite France listing + 2025 'Bon Appétit, Your Majesty' filming-location verification)",
+          "Saint-Exupéry Foundation France (international license agreement — Le Petit Prince motif authorization)",
+          "Gapyeong County Tourism Office (gapyeong.go.kr — official local-government attractions listing)",
+          "Wikipedia (Petite France theme park — corpus on July 2008 opening + Le Petit Prince theme + organizational structure)"
+        ]
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Nami Island",
+      "type": "origin",
+      "theme": "Ferry & Forest"
+    },
+    {
+      "name": "Lunch Break",
+      "type": "meal",
+      "theme": "Reset"
+    },
+    {
+      "name": "Morning Calm",
+      "type": "primary",
+      "theme": "Garden"
+    },
+    {
+      "name": "Petite France",
+      "type": "return",
+      "theme": "Village"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "Nami Island Opener",
+      "duration": "Stops 1",
+      "description": "Morning: Nami Island Opener"
+    },
+    {
+      "phase": "Lunch & Garden Walk",
+      "duration": "Stops 2–3",
+      "description": "Midday: Lunch & Garden Walk"
+    },
+    {
+      "phase": "Petite France Finish",
+      "duration": "Stops 4",
+      "description": "Afternoon: Petite France Finish"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "How this private day moves",
+    "subtitle": "Pickup at your Seoul downtown hotel, then a single direction Gapyeong loop: Nami Island first for forest morning light, lunch in Gapyeong, then Morning Calm and Petite France in the afternoon. Return to Seoul around 19:00 to 19:30."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "Couples and honeymooners wanting a romantic K-drama day",
+      "Adult families with photographer-leaning travelers",
+      "Multi-generational groups with seniors",
+      "First-time visitors to Korea who want one strong day-trip outside Seoul",
+      "Travelers who want a private vehicle without the bus-tour rhythm"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Why this Gapyeong loop works in private format",
+        "icon": "car",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "No shuttle-bus waiting",
+            "detail": "The standard Gapyeong shuttle bus runs only every 30 to 60 minutes between stops. Private transport eliminates that waiting and adds 1 to 2 hours back into your sightseeing day."
+          },
+          {
+            "label": "Better timing flexibility",
+            "detail": "You can stay longer at the stop you love most—usually Nami Island or Morning Calm—instead of being locked to a fixed group return time."
+          },
+          {
+            "label": "Easier with parents and kids",
+            "detail": "Door-to-door pickup means no early-morning subway transfers and no late-evening shuttle stress, which makes the route significantly easier for multi-generational groups."
+          }
+        ]
+      },
+      {
+        "title": "How the walking load actually feels",
+        "icon": "footprints",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "Nami Island has the most cumulative walking",
+            "detail": "The island is large and the most beautiful sections are 15 to 20 minutes from the ferry pier; bicycles are an option if walking is a concern."
+          },
+          {
+            "label": "Morning Calm is mostly easy with optional climbs",
+            "detail": "Most paths are gentle, but the upper viewpoints reward a short climb."
+          },
+          {
+            "label": "Petite France is the easiest stop",
+            "detail": "The village is small and mostly compact, with light slopes and stairs but no demanding walking."
+          }
+        ]
+      },
+      {
+        "title": "Seasonal timing notes",
+        "icon": "calendar",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-600",
+        "items": [
+          {
+            "label": "Autumn is the strongest photo season",
+            "detail": "Late October to mid-November turns Nami Island's metasequoia and ginkgo paths fiery and crowds peak; book early."
+          },
+          {
+            "label": "Winter brings the Lighting Festival",
+            "detail": "From early December to mid-March, the Garden of Morning Calm hosts Korea's largest garden lighting festival—worth staying past sunset."
+          },
+          {
+            "label": "Spring and summer feel calmer",
+            "detail": "April-May brings cherry blossoms and azaleas; July-August brings strong greenery but also higher humidity."
+          }
+        ]
+      }
+    ],
+    "lessIdealFor": [
+      "Solo budget travelers (private pricing is per vehicle)",
+      "Travelers wanting a high-action or sports-focused day",
+      "Visitors who dislike walking on uneven garden paths",
+      "Anyone needing a fully indoor rainy-day plan"
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "Pickup & drop-off",
+      "preview": "Free Seoul downtown hotel pickup; lobby meeting 10 minutes early",
+      "content": [
+        "Free hotel pickup is included for Seoul downtown areas (Myeongdong, Hongdae, Dongdaemun, Insadong, Itaewon, Gangnam)",
+        "Stays outside Seoul downtown may incur an additional pickup fee",
+        "Please wait at the hotel lobby 10 minutes before the agreed departure time",
+        "Pickup typically starts between 08:30 and 09:30",
+        "Drop-off at your Seoul hotel between 19:00 and 19:30 (later if you stay for the winter Lighting Festival)",
+        "Itinerary details are usually confirmed 2-3 days before departure"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "Walking & terrain",
+      "preview": "Moderate, with the most walking at Nami Island",
+      "content": [
+        "Nami Island: easy unpaved paths, but the island is larger than it looks—15 to 20 minutes one-way to the famous metasequoia path",
+        "Garden of Morning Calm: easy to moderate, with gentle slopes and optional viewpoint climbs",
+        "Petite France: easy walking with light slopes and stairs",
+        "Comfortable walking shoes are recommended; the route is not stroller-impossible but not fully stroller-friendly either"
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "Weather policy",
+      "preview": "Most stops still operate in light rain or snow",
+      "content": [
+        "Nami Island operates in rain and snow; the ferry runs unless safety is affected",
+        "Garden of Morning Calm is mostly outdoor; light rain is workable but heavy rain reduces enjoyment",
+        "Petite France has indoor exhibition halls that work as wet-weather shelter",
+        "The driver-guide can adjust pacing on the day if weather affects any specific stop"
+      ]
+    },
+    {
+      "id": "money",
+      "title": "Admission and On-the-Day Spending",
+      "preview": "All admission and meals pay directly; cards widely accepted",
+      "content": [
+        "Nami Island admission with round-trip ferry: Adult 19,000 KRW",
+        "Garden of Morning Calm admission: Adult 11,000 KRW",
+        "Petite France admission: Adult 12,000 KRW",
+        "Meals (lunch and snacks) are paid directly; expect 15,000 to 25,000 KRW per person for a Dakgalbi meal near Nami Island",
+        "Most shops and restaurants accept credit cards; carry some cash for snack stalls and coin lockers"
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "What to wear & bring",
+      "preview": "Walking shoes, layers, and weather-appropriate outerwear",
+      "content": [
+        "Comfortable walking shoes with good grip",
+        "Layered clothing—the island and garden can feel cooler than central Seoul",
+        "Sun protection in spring and summer; warm layers and gloves in winter",
+        "Camera or phone with plenty of storage for photos",
+        "Cash or card for admission and meals"
+      ]
+    },
+    {
+      "id": "included",
+      "title": "What's included",
+      "preview": "Vehicle and driver-guide; admission and meals pay direct",
+      "variant": "included",
+      "content": [
+        "Private vehicle (sedan, SUV, or van based on group size)",
+        "Licensed English-speaking driver-guide",
+        "Free hotel pickup and drop-off in Seoul downtown",
+        "Fuel and tolls for the standard route",
+        "Admission fees to the three sites are not included; pay directly",
+        "Lunch and snacks are not included",
+        "Personal shopping is not included",
+        "Driver gratuities are not included"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "Live weather integration"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "Updated daily"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "season": "Spring",
+      "title": "Blossom season",
+      "description": "Cherry blossoms and magnolias bloom across Nami Island and Morning Calm in April; one of the most balanced seasons for the route.",
+      "icon": "flower"
+    },
+    {
+      "season": "Summer",
+      "title": "Lush but humid",
+      "description": "Lush greenery and longer daylight, but expect humidity and possible monsoon rain in late June and July.",
+      "icon": "sun"
+    },
+    {
+      "season": "Autumn",
+      "title": "Best photo season",
+      "description": "Late October to mid-November turns Nami Island's metasequoia and ginkgo trees fiery; the strongest photo season but also the most crowded.",
+      "icon": "leaf"
+    },
+    {
+      "season": "Winter",
+      "title": "Lighting Festival season",
+      "description": "December to mid-March: snow-quiet Nami Island plus the famous Lighting Festival at the Garden of Morning Calm. Cold but visually rewarding.",
+      "icon": "snowflake"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "Licensed local operator",
+      "description": "Authorized Korean tour operator with full insurance",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600"
+    },
+    {
+      "icon": "route",
+      "title": "Route specialists",
+      "description": "Hand-tuned itinerary, not a generic loop",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600"
+    },
+    {
+      "icon": "users",
+      "title": "Curated group size",
+      "description": "Right-sized for the route",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Immediately",
+      "title": "Instant Confirmation",
+      "detail": "Booking confirmation with itinerary summary"
+    },
+    {
+      "timing": "12 hours before",
+      "title": "12-Hour Reminder",
+      "detail": "Weather update and any route adjustments"
+    },
+    {
+      "timing": "Evening before",
+      "title": "Final Pickup Info",
+      "detail": "Exact pickup time and driver contact"
+    },
+    {
+      "timing": "Morning of tour",
+      "title": "Day-of Route Notes",
+      "detail": "Morning briefing based on live conditions"
+    },
+    {
+      "timing": "During tour",
+      "title": "Stop-by-Stop Tips",
+      "detail": "Real-time guidance at each location"
+    },
+    {
+      "timing": "After tour",
+      "title": "Post-tour Support",
+      "detail": "Follow-up and recommendations"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q1",
+      "question": "What's the order of stops, and why not Petite France first?",
+      "answer": "Nami Island first uses the strongest morning ferry slot (08:30-10:00 has the lowest queues and the best metasequoia-path light). The Garden of Morning Calm sits at midday because most paths there are open and the on-site lunch is convenient. Petite France is the lightest stop and works as a 60-minute sunset close. Reverse order is possible by request but typically adds 30-40 minutes of waiting time."
+    },
+    {
+      "id": "q2",
+      "question": "Are admissions included or paid separately?",
+      "answer": "Private-tour pricing typically includes all three admissions: Nami Island with round-trip ferry (19,000 KRW adult equivalent), Garden of Morning Calm (11,000 KRW adult), and Petite France (12,000 KRW adult). Confirm at booking — some operator versions list admissions as excluded for a lower headline price. Lunch is paid direct at the restaurant (≈ 15,000-25,000 KRW per person)."
+    },
+    {
+      "id": "q3",
+      "question": "Why pick the private tour over a bus tour?",
+      "answer": "Private gives you 1-2 extra hours over a typical group bus tour because you skip the shuttle-bus wait between stops (the public Gapyeong shuttle runs only every 30-60 minutes), and you can stay longer at whichever stop you love most. Group bus tours stick to fixed return windows. Private fits multi-generational groups better; bus tours fit solo budget travelers better."
+    },
+    {
+      "id": "q4",
+      "question": "How does the Nami Island ferry work?",
+      "answer": "The ferry runs every 10-20 minutes from Gapyeong Wharf, 08:00 to 21:30. The crossing takes 5-10 minutes. Round-trip ticket is included in admission and bundled with the Nami Republic 'visa' branding. There is also a faster zip-wire option (44,000 KRW one-way; not included) for travelers who want to skip the queue with a thrill."
+    },
+    {
+      "id": "q5",
+      "question": "When is the Garden of Morning Calm Lighting Festival?",
+      "answer": "Early December to mid-March, typically — Korea's largest garden lighting festival turns the 20 themed gardens into illuminated walks after dark. Hours extend until 21:00 during the festival. Worth staying past sunset if your tour date falls in this window — confirm with the operator to extend the schedule and add an evening transfer."
+    },
+    {
+      "id": "q6",
+      "question": "Can we substitute Italian Village for Petite France?",
+      "answer": "Yes — Italian Village (a Pinocchio and Da Vinci themed park) sits about 5 minutes from Petite France and shares an admissions complex (combo ticket: Adult 18,000 KRW for both vs 12,000 for Petite France alone). The combo only saves money if visiting both. Switching solo to Italian Village instead requires advance notice. Italian Village is less K-drama-photographed but has stronger interior exhibits."
+    },
+    {
+      "id": "first-time",
+      "question": "Is this a good choice for first-time visitors to Gapyeong (Seoul Day Trip)?",
+      "answer": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+    },
+    {
+      "id": "walking",
+      "question": "Is the walking difficult?",
+      "answer": "Moderate walking with some active sections. Nami Island has the most cumulative walking — the most photogenic metasequoia and ginkgo paths are 15-20 minutes from the ferry pier; bicycle and pedicab rentals are available. The Garden of Morning Calm is mostly easy paved paths with optional climbs to upper viewpoints. Petite France is a compact hillside village with light steps. Closed-toe shoes recommended for Nami's unpaved sections."
+    },
+    {
+      "id": "family",
+      "question": "Is this tour suitable for families?",
+      "answer": "Yes — one of the most family-friendly Seoul day-trips. Strollers work at Morning Calm and Petite France; Nami Island has unpaved sections but they're walkable. Kid-focused spots include the Petite France marionette show, the Nami Island children's garden, and the seasonal animal interactions on Nami. Under-3s also OK with carriers."
+    },
+    {
+      "id": "seniors",
+      "question": "Can older adults join comfortably?",
+      "answer": "Yes — pacing and walking are comfortable for active seniors. Bicycle rental on Nami avoids the 15-20 minute walk from the pier. Garden of Morning Calm has paved paths and benches throughout. Petite France is compact with light steps. Less ideal if wheelchair access is required throughout — Nami's island paths and some Petite France sections are not fully accessible."
+    },
+    {
+      "id": "children",
+      "question": "What's the recommended minimum age?",
+      "answer": "Age 3+ is fine — this is one of the most family-friendly Seoul day-trips. Strollers work at Morning Calm and Petite France; Nami's unpaved paths are walkable but bring a carrier for very young children. Kid-favorite spots include the Petite France marionette show and the Nami Island children's garden. Under-3s also welcome with carriers."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "vehicle"
+    }
+  },
+  "pickup_dropoff": {
+    "type": "hotel_pickup",
+    "meeting_points": [
+      {
+        "name": "Any central Seoul hotel",
+        "time": "07:30–08:30",
+        "note": "Door-to-door pickup at any hotel within the supported area."
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Any central Seoul hotel",
+        "approx_time": "≈ 17:30–18:30",
+        "note": "Drop-off at the same hotel or any address within the supported area."
+      }
+    ],
+    "hotel_pickup_available": true,
+    "notes": "Please wait at the hotel lobby 10 minutes before the agreed departure time. Final itinerary timing is usually confirmed 2-3 days before departure. If you visit during the winter Lighting Festival (December to mid-March), return time may shift to 21:00 or later by request."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "seoul-private-nami-morning-calm-petite-france",
+    "product_type": "private",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "gyeonggi_gapyeong",
+    "vehicle_type": "private_vehicle",
+    "duration_hours": 9.0,
+    "region_tags": [
+      "seoul_capital",
+      "gyeonggi_gapyeong",
+      "seoul_day_trip",
+      "gyeonggi_north_han_river",
+      "gangwon_chuncheon"
+    ],
+    "theme_tags": [
+      "k_drama_filming_location",
+      "garden_walk",
+      "themed_park",
+      "island_ferry",
+      "private_charter",
+      "first_time_friendly",
+      "seasonal_lighting_festival",
+      "iconic_landmarks",
+      "photogenic"
+    ],
+    "poi_tags": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france",
+      "gapyeong_wharf",
+      "cheongpyeong_lake"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.5,
+    "scenic_level": 0.95,
+    "photo_level": 1.0,
+    "culture_level": 0.6,
+    "relax_level": 0.8,
+    "first_time_fit": 0.95,
+    "family_fit": 1.0,
+    "senior_fit": 0.8,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 0.8,
+    "active_traveler_fit": 0.6,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 0.8,
+    "young_kids_fit": 0.8,
+    "senior_active_fit": 0.8,
+    "senior_general_fit": 0.8,
+    "mobility_friendly_fit": 0.6,
+    "stroller_fit": 0.6,
+    "one_day_fit": 0.8,
+    "same_day_flight_fit": 0.4,
+    "rain_fit": 0.6,
+    "value_for_money_fit": 0.6,
+    "iconic_landmark_fit": 0.9,
+    "cafe_fit": 0.8,
+    "food_fit": 0.6,
+    "nature_fit": 1.0,
+    "beach_fit": 0.2,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.4,
+    "no_shopping_fit": 0.8,
+    "local_culture_fit": 0.6,
+    "storytelling_fit": 0.85,
+    "unesco_fit": 0.15,
+    "intangible_heritage_fit": 0.2,
+    "indoor_ratio": 0.2,
+    "weather_sensitivity": 0.6,
+    "comfort_level": 1.0,
+    "budget_fit": 0.4,
+    "premium_fit": 1.0,
+    "small_group_fit": 0.15,
+    "private_fit": 1.0,
+    "bus_fit": 0.05,
+    "price_band": "premium",
+    "pickup_base": "seoul_downtown",
+    "return_time_band": "19:00-19:30",
+    "duration_band": "9-10h",
+    "min_recommended_age": 3,
+    "hard_constraints": {
+      "avoidIf": [
+        "solo_budget_traveler_seeking_lowest_price",
+        "wants_a_high_action_day"
+      ],
+      "notIdealFor": [
+        "travelers_avoiding_unpaved_garden_paths",
+        "guests_needing_a_fully_indoor_route"
+      ]
+    },
+    "walking_notes": [
+      "Nami Island is the largest walking section; the famous metasequoia path is 15 to 20 minutes one-way from the ferry pier.",
+      "Garden of Morning Calm is mostly easy with gentle slopes and optional viewpoint climbs.",
+      "Petite France is the easiest stop, with light slopes and stairs only.",
+      "Comfortable walking shoes are strongly recommended.",
+      "The route is not fully stroller-friendly because of unpaved island paths and garden steps."
+    ],
+    "keywords": [
+      "seoul private nami island tour",
+      "seoul private gapyeong day trip",
+      "nami island morning calm petite france private",
+      "private k drama tour from seoul",
+      "winter sonata filming location private tour",
+      "garden of morning calm lighting festival tour",
+      "seoul private day trip nami island",
+      "petite france private tour",
+      "gapyeong private vehicle tour",
+      "seoul to nami island private driver"
+    ],
+    "synonym_hints": [
+      "seoul private gapyeong loop",
+      "private day tour to namiseom",
+      "private tour seoul countryside",
+      "seoul to gapyeong private charter",
+      "k drama trio private day tour",
+      "morning calm winter lights private tour"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "private_van",
+    "anchor_poi_keys": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france"
+    ],
+    "private_tour_fit": 1.0,
+    "history_culture_fit": 0.6,
+    "customizable_route_fit": 0.4,
+    "flexibility_fit": 0.7,
+    "romantic_fit": 0.95,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "seoul_day_trip_pair_fit": 1.0,
+    "seoul_central_hotel_pickup_fit": 1.0,
+    "return_to_seoul_central_fit": 1.0,
+    "day_trip_2_3_hour_drive_each_way_fit": 1.0,
+    "private_charter_format_fit": 1.0,
+    "premium_pacing_fit": 1.0,
+    "small_party_intimate_fit": 1.0,
+    "k_drama_filming_location_route_fit": 1.0,
+    "winter_sonata_anchor_fit": 1.0,
+    "little_prince_saint_exupery_anchor_fit": 1.0,
+    "saint_exupery_foundation_licensed_fit": 1.0,
+    "naminara_micronation_concept_fit": 1.0,
+    "unicef_child_friendly_park_fit": 1.0,
+    "ferry_island_visit_fit": 1.0,
+    "k_drama_filming_density_high_fit": 1.0,
+    "bon_appetit_your_majesty_2025_filming_fit": 1.0,
+    "im_yoon_ah_filming_location_fit": 1.0,
+    "private_arboretum_visit_fit": 1.0,
+    "korean_peninsula_shape_garden_fit": 1.0,
+    "rabindranath_tagore_land_of_morning_calm_anchor_fit": 1.0,
+    "winter_lighting_festival_anchor_fit": 1.0,
+    "mediterranean_alpine_french_village_fit": 1.0,
+    "naminara_passport_visa_concept_fit": 1.0,
+    "cnn_top_50_korea_attraction_fit": 1.0,
+    "gapyeong_attractions_route_fit": 1.0,
+    "namisum_5km_circuit_walking_fit": 1.0,
+    "petite_france_combined_pinocchio_italian_village_fit": 1.0,
+    "differentiates_from_dmz_day_trip": true,
+    "differentiates_from_seoraksan_sokcho_day_trip": true,
+    "differentiates_from_pocheon_three_pillar_day_trip": true,
+    "available_months_signature": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "signature_window_label": "Year-round (peak: April-May spring blooms, October-November autumn foliage, December-March Morning Calm Lighting Festival)",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "embedded_for": [
+      "authoring",
+      "review",
+      "sql_backfill_reference"
+    ],
+    "note": "Scores were tuned for a fixed three-stop private Gapyeong loop with strong scenic and photo fit, high comfort and family fit (private format), and moderate walking. Iconic landmark fit is maxed because all three stops are top-tier Korean tourism brand names. Same-day-flight fit is low because the loop runs 9-10 hours and ends in late afternoon or evening.",
+    "duration_hours": 10,
+    "stop_count": 3,
+    "score_rationale": {
+      "scenic_level": "Maxed because all three stops are visually distinct and well-curated.",
+      "photo_level": "Maxed because all three are heavy K-drama filming locations with seasonally rotating photo windows.",
+      "private_fit": "Direct match: per-vehicle private charter.",
+      "family_fit": "Very high because private comfort plus child-friendly stops (rabbits at Nami, Marionettes at Petite France) make it broadly accessible.",
+      "rain_fit": "Mid because most walking is outdoor; Petite France indoor halls help but do not cover the full route.",
+      "iconic_landmark_fit": "Maxed because the three stops are the most-recognized day-trip combination from Seoul."
+    },
+    "anchor_pois": [
+      "Nami Island",
+      "Garden of Morning Calm",
+      "Petite France"
+    ],
+    "anchor_poi_keys": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france"
+    ],
+    "competing_products": [
+      "seoul-dmz-private-3rd-tunnel-suspension-bridge",
+      "seoul-suburbs-private-chartered-car-10hr",
+      "incheon-seoul-private-car-shore-excursion-cruise"
+    ],
+    "enrichment_batch": "17d",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.26",
+    "enrichment_target_kb_version": "1.27",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "13 substantive stops across 4 tours; Batches 8/9 era authoring → A-grade pv=6 PASS (universal source-attribution gap closed; Seoul-day-trip-quartet pattern introduced)"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "Seoul Private Tour to Nami Island,",
+        "headlineLine2": "Morning Calm Garden & Petite France",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1920&q=80",
+          "imagePosition": "center 45%",
+          "tagline": "From Nami Island's ferry crossing to the themed gardens of Morning Calm and the colorful village of Petite France—the classic Gapyeong loop in a fully private format.",
+          "pills": [
+            "Private Vehicle",
+            "Free Hotel Pickup",
+            "Fixed Three-Stop Route"
+          ],
+          "meta": {
+            "duration": "9–10 hours",
+            "region": "Gapyeong",
+            "stops": "3 stops",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "Overview"
+          },
+          {
+            "id": "itinerary",
+            "label": "Itinerary"
+          },
+          {
+            "id": "details",
+            "label": "Details"
+          },
+          {
+            "id": "faq",
+            "label": "FAQ"
+          },
+          {
+            "id": "reviews",
+            "label": "Reviews"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "Duration",
+            "value": "9–10 hours"
+          },
+          {
+            "icon": "camera",
+            "label": "Photo Potential",
+            "value": "Very High"
+          },
+          {
+            "icon": "tree-pine",
+            "label": "Scenery",
+            "value": "Garden & Forest"
+          },
+          {
+            "icon": "footprints",
+            "label": "Walking",
+            "value": "Moderate"
+          },
+          {
+            "icon": "users",
+            "label": "Group Style",
+            "value": "Private Only"
+          },
+          {
+            "icon": "ticket",
+            "label": "Admission Fees",
+            "value": "Pay Direct"
+          },
+          {
+            "icon": "gauge",
+            "label": "Pace",
+            "value": "Relaxed Private Pace"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+            "alt": "Avenue of tall metasequoia trees lining a straight path on Nami Island",
+            "caption": "Nami Island metasequoia tree-lined road (Winter Sonata filming setting)",
+            "location": "Nami Island",
+            "atmosphere": "Tree-lined paths and Winter Sonata filming setting"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=1200&q=80",
+            "alt": "Themed garden landscape with manicured plant beds, paved paths, and a Korean peninsula-shaped pond",
+            "caption": "Garden of Morning Calm (1996, 330,000 sqm, 20 themed gardens)",
+            "location": "Garden of Morning Calm",
+            "atmosphere": "Themed gardens and seasonal festival displays"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1583917123405-3aa64e6a96b8?w=1200&q=80",
+            "alt": "Brightly painted French-style village buildings on a hillside above a lake",
+            "caption": "Petite France — Le Petit Prince themed hillside village",
+            "location": "Petite France",
+            "atmosphere": "Colorful Le Petit Prince village atmosphere"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+            "alt": "Ferry approaching a wooded island across a wide lake",
+            "caption": "Cheongpyeong Lake ferry approach to Nami Island",
+            "location": "Cheongpyeong Lake",
+            "atmosphere": "Ferry crossing to Nami Island"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+            "alt": "Garden paths illuminated with thousands of LED lights at night, themed installations visible",
+            "caption": "Garden of Morning Calm Winter Lighting Festival (December to mid-March)",
+            "location": "Winter Lighting Festival",
+            "atmosphere": "Seasonal lights at the Garden of Morning Calm (Dec to mid-March)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "10:30",
+            "duration": "180 min",
+            "name": "Nami Island (Namiseom)",
+            "category": "Ferry-Access Island & K-Drama Landmark",
+            "description": "Nami Island opens the day with a short ferry crossing from Gapyeong Wharf onto a half-moon-shaped tree-lined island. Famous as the filming location of Winter Sonata, the island's metasequoia and ginkgo paths shift dramatically with the seasons—from cherry blossoms in spring to fiery foliage in autumn and snow-quiet paths in winter.",
+            "image": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=800&q=80",
+            "highlights": [
+              "Half-moon-shaped island with the iconic metasequoia tree path",
+              "Winter Sonata and many other K-drama filming locations",
+              "Open year-round with strong seasonal mood changes",
+              "Easy walking, optional bicycle rental"
+            ],
+            "timeUsed": [
+              "Ferry crossing from Gapyeong Wharf (5 to 10 minutes)",
+              "Free time to walk, cycle, or eat at the on-island restaurants",
+              "Return ferry to the mainland"
+            ],
+            "whyOnRoute": "Placing Nami Island first uses the strongest morning light for tree-lined photography and avoids the heaviest mid-afternoon ferry queues.",
+            "visitBasics": {
+              "hours": "08:00–21:00 (ferry every 30 min 8–9am & 6–9pm; every 10–20 min 9am–6pm)",
+              "closed": "Open year-round",
+              "admission": "Adult 16,000 KRW / Student & Senior (70+) 13,000 KRW / Child 10,000 KRW (includes round-trip ferry); zipwire 49,900 KRW one-way (includes admission)",
+              "walking": "Easy — flat island with tree-lined paths; bike/electric vehicle rentals available"
+            },
+            "convenience": {
+              "restroom": "Multiple restrooms throughout the island",
+              "parking": "Available at Gapyeong Wharf (mainland)"
+            },
+            "smartNotes": {
+              "photo": "Metasequoia Lane is the most iconic; ginkgo road in autumn (yellow); cherry blossoms in April; snow-covered paths in winter",
+              "facilities": "Multiple cafés, restaurants, museum, gift shops; dakgalbi restaurants near the wharf",
+              "tip": "Renting a bicycle (8,000 KRW/2hrs) covers more ground than walking; combine with Petite France & Garden of Morning Calm for full Gapyeong day"
+            },
+            "_poi_meta": {
+              "poi_key": "nami_island",
+              "verified": true,
+              "sources": [
+                "KoreaToDo",
+                "TheTravelIntern",
+                "LifeOfDoing"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          },
+          {
+            "number": 2,
+            "time": "14:00",
+            "duration": "120 min",
+            "name": "The Garden of Morning Calm",
+            "category": "Themed Botanical Garden",
+            "description": "Korea's oldest private garden, founded in 1996 and spanning 330,000 square meters with more than 5,000 plant species. Twenty themed gardens—including the Sunken Garden shaped like the Korean peninsula, the Cottage Garden, and the Pond Garden—feature in many beloved K-dramas including Moonlight Drawn by Clouds.",
+            "image": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=800&q=80",
+            "highlights": [
+              "Korea's oldest private garden with 26 themed sections",
+              "Different visual identity in every season",
+              "Famous winter Lighting Festival from December to mid-March",
+              "K-drama filming location for many popular shows"
+            ],
+            "timeUsed": [
+              "Garden entry and orientation",
+              "Free walking time across the themed gardens",
+              "Optional cafe stop at Morning Spring Bakery"
+            ],
+            "whyOnRoute": "Placing Morning Calm in the middle gives the day its calmest visual chapter, between the active island walk and the more compact village stop.",
+            "visitBasics": {
+              "hours": "Tue–Sun 09:00–22:00; Mon 09:00–19:00 (last admission 1 hour before close)",
+              "closed": "Open year-round",
+              "admission": "Adult 11,000 KRW / Senior (65+) 9,000 KRW / Youth (13–18) 8,500 KRW / Child (3–12) 7,500 KRW",
+              "walking": "Moderate — hill paths through 22 themed sections; mostly stroller-accessible main loop"
+            },
+            "convenience": {
+              "restroom": "Multiple restrooms throughout the garden",
+              "parking": "Free parking available"
+            },
+            "smartNotes": {
+              "photo": "Korean Garden section in autumn; Hakyung Garden walking path; Lighting Festival evenings (Dec–Mar)",
+              "facilities": "Café, gift shop selling garden-grown products, picnic areas",
+              "tip": "Last admission 1 hour before close; Lighting Festival visits should start 1–2 hours before sunset to see both day and illuminated garden"
+            },
+            "_poi_meta": {
+              "poi_key": "garden_of_morning_calm",
+              "verified": true,
+              "sources": [
+                "KoreaToDo",
+                "KoreaTravelEasy"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          },
+          {
+            "number": 3,
+            "time": "16:30",
+            "duration": "60 min",
+            "name": "Petite France",
+            "category": "Le Petit Prince Themed Village",
+            "description": "A compact themed village inspired by Antoine de Saint-Exupéry's Le Petit Prince, set on a hillside above Cheongpyeong Lake. Colorful French-style buildings host Marionette puppet shows, the Orgel House music-box collection, and exhibition halls. Famous as the filming location for K-dramas including My Love from Another Star, Beethoven Virus, and Running Man.",
+            "image": "https://images.unsplash.com/photo-1583917123405-3aa64e6a96b8?w=800&q=80",
+            "highlights": [
+              "Colorful Le Petit Prince-themed European-style village",
+              "Marionette puppet shows and Orgel music-box performances",
+              "Photogenic hilltop setting overlooking Cheongpyeong Lake",
+              "Multiple K-drama filming spots"
+            ],
+            "timeUsed": [
+              "Entry and quick orientation",
+              "Walk through the colorful streets and photo points",
+              "Optional Marionette show or Orgel demonstration"
+            ],
+            "whyOnRoute": "Placed last, Petite France gives the day a lighter, photo-friendly close after the broader walks at Nami Island and Morning Calm.",
+            "visitBasics": {
+              "hours": "09:00–18:00 (last admission 17:00); summer extended hours",
+              "closed": "Open year-round",
+              "admission": "Adult 12,000 KRW / Teen 10,000 KRW / Child 8,000 KRW (combo with Italian Village ≈17,000 KRW)",
+              "walking": "Easy — small flat village (1 hour to explore)"
+            },
+            "convenience": {
+              "restroom": "Multiple restrooms throughout the village",
+              "parking": "Free parking available"
+            },
+            "smartNotes": {
+              "photo": "Mini Eiffel Tower at entrance; colorful French-styled buildings; Little Prince statues throughout",
+              "facilities": "Several cafés and restaurants; gift shops with Little Prince merchandise",
+              "tip": "Smaller and more compact than Garden of Morning Calm — 30–60 min is typically enough; check performance schedule (marionette, organ) ahead"
+            },
+            "_poi_meta": {
+              "poi_key": "petite_france",
+              "verified": true,
+              "sources": [
+                "KoreaToDo",
+                "LifeOfDoing"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "id": "01",
+            "name": "Nami Island",
+            "theme": "Ferry & Forest"
+          },
+          {
+            "id": "02",
+            "name": "Lunch Break",
+            "theme": "Reset"
+          },
+          {
+            "id": "03",
+            "name": "Morning Calm",
+            "theme": "Garden"
+          },
+          {
+            "id": "04",
+            "name": "Petite France",
+            "theme": "Village"
+          }
+        ],
+        "routePhases": [
+          {
+            "label": "Morning",
+            "range": "1",
+            "theme": "Nami Island Opener",
+            "bgClass": "bg-sky-50/70",
+            "textClass": "text-sky-700",
+            "dotClass": "bg-sky-500"
+          },
+          {
+            "label": "Midday",
+            "range": "2-3",
+            "theme": "Lunch & Garden Walk",
+            "bgClass": "bg-emerald-50/70",
+            "textClass": "text-emerald-700",
+            "dotClass": "bg-emerald-500"
+          },
+          {
+            "label": "Afternoon",
+            "range": "4",
+            "theme": "Petite France Finish",
+            "bgClass": "bg-amber-50/70",
+            "textClass": "text-amber-700",
+            "dotClass": "bg-amber-500"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "How this private day moves",
+          "subtitle": "Pickup at your Seoul downtown hotel, then a single direction Gapyeong loop: Nami Island first for forest morning light, lunch in Gapyeong, then Morning Calm and Petite France in the afternoon. Return to Seoul around 19:00 to 19:30."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "Couples and honeymooners wanting a romantic K-drama day",
+            "Adult families with photographer-leaning travelers",
+            "Multi-generational groups with seniors",
+            "First-time visitors to Korea who want one strong day-trip outside Seoul",
+            "Travelers who want a private vehicle without the bus-tour rhythm"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Why this Gapyeong loop works in private format",
+              "icon": "car",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "No shuttle-bus waiting",
+                  "detail": "The standard Gapyeong shuttle bus runs only every 30 to 60 minutes between stops. Private transport eliminates that waiting and adds 1 to 2 hours back into your sightseeing day."
+                },
+                {
+                  "label": "Better timing flexibility",
+                  "detail": "You can stay longer at the stop you love most—usually Nami Island or Morning Calm—instead of being locked to a fixed group return time."
+                },
+                {
+                  "label": "Easier with parents and kids",
+                  "detail": "Door-to-door pickup means no early-morning subway transfers and no late-evening shuttle stress, which makes the route significantly easier for multi-generational groups."
+                }
+              ]
+            },
+            {
+              "title": "How the walking load actually feels",
+              "icon": "footprints",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "Nami Island has the most cumulative walking",
+                  "detail": "The island is large and the most beautiful sections are 15 to 20 minutes from the ferry pier; bicycles are an option if walking is a concern."
+                },
+                {
+                  "label": "Morning Calm is mostly easy with optional climbs",
+                  "detail": "Most paths are gentle, but the upper viewpoints reward a short climb."
+                },
+                {
+                  "label": "Petite France is the easiest stop",
+                  "detail": "The village is small and mostly compact, with light slopes and stairs but no demanding walking."
+                }
+              ]
+            },
+            {
+              "title": "Seasonal timing notes",
+              "icon": "calendar",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-600",
+              "items": [
+                {
+                  "label": "Autumn is the strongest photo season",
+                  "detail": "Late October to mid-November turns Nami Island's metasequoia and ginkgo paths fiery and crowds peak; book early."
+                },
+                {
+                  "label": "Winter brings the Lighting Festival",
+                  "detail": "From early December to mid-March, the Garden of Morning Calm hosts Korea's largest garden lighting festival—worth staying past sunset."
+                },
+                {
+                  "label": "Spring and summer feel calmer",
+                  "detail": "April-May brings cherry blossoms and azaleas; July-August brings strong greenery but also higher humidity."
+                }
+              ]
+            }
+          ],
+          "lessIdealFor": [
+            "Solo budget travelers (private pricing is per vehicle)",
+            "Travelers wanting a high-action or sports-focused day",
+            "Visitors who dislike walking on uneven garden paths",
+            "Anyone needing a fully indoor rainy-day plan"
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "Pickup & drop-off",
+            "preview": "Free Seoul downtown hotel pickup; lobby meeting 10 minutes early",
+            "content": [
+              "Free hotel pickup is included for Seoul downtown areas (Myeongdong, Hongdae, Dongdaemun, Insadong, Itaewon, Gangnam)",
+              "Stays outside Seoul downtown may incur an additional pickup fee",
+              "Please wait at the hotel lobby 10 minutes before the agreed departure time",
+              "Pickup typically starts between 08:30 and 09:30",
+              "Drop-off at your Seoul hotel between 19:00 and 19:30 (later if you stay for the winter Lighting Festival)",
+              "Itinerary details are usually confirmed 2-3 days before departure"
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "Walking & terrain",
+            "preview": "Moderate, with the most walking at Nami Island",
+            "content": [
+              "Nami Island: easy unpaved paths, but the island is larger than it looks—15 to 20 minutes one-way to the famous metasequoia path",
+              "Garden of Morning Calm: easy to moderate, with gentle slopes and optional viewpoint climbs",
+              "Petite France: easy walking with light slopes and stairs",
+              "Comfortable walking shoes are recommended; the route is not stroller-impossible but not fully stroller-friendly either"
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "Weather policy",
+            "preview": "Most stops still operate in light rain or snow",
+            "content": [
+              "Nami Island operates in rain and snow; the ferry runs unless safety is affected",
+              "Garden of Morning Calm is mostly outdoor; light rain is workable but heavy rain reduces enjoyment",
+              "Petite France has indoor exhibition halls that work as wet-weather shelter",
+              "The driver-guide can adjust pacing on the day if weather affects any specific stop"
+            ]
+          },
+          {
+            "id": "money",
+            "title": "Admission and On-the-Day Spending",
+            "preview": "All admission and meals pay directly; cards widely accepted",
+            "content": [
+              "Nami Island admission with round-trip ferry: Adult 19,000 KRW",
+              "Garden of Morning Calm admission: Adult 11,000 KRW",
+              "Petite France admission: Adult 12,000 KRW",
+              "Meals (lunch and snacks) are paid directly; expect 15,000 to 25,000 KRW per person for a Dakgalbi meal near Nami Island",
+              "Most shops and restaurants accept credit cards; carry some cash for snack stalls and coin lockers"
+            ]
+          },
+          {
+            "id": "wear",
+            "title": "What to wear & bring",
+            "preview": "Walking shoes, layers, and weather-appropriate outerwear",
+            "content": [
+              "Comfortable walking shoes with good grip",
+              "Layered clothing—the island and garden can feel cooler than central Seoul",
+              "Sun protection in spring and summer; warm layers and gloves in winter",
+              "Camera or phone with plenty of storage for photos",
+              "Cash or card for admission and meals"
+            ]
+          },
+          {
+            "id": "included",
+            "title": "What's included",
+            "preview": "Vehicle and driver-guide; admission and meals pay direct",
+            "variant": "included",
+            "content": [
+              "Private vehicle (sedan, SUV, or van based on group size)",
+              "Licensed English-speaking driver-guide",
+              "Free hotel pickup and drop-off in Seoul downtown",
+              "Fuel and tolls for the standard route",
+              "Admission fees to the three sites are not included; pay directly",
+              "Lunch and snacks are not included",
+              "Personal shopping is not included",
+              "Driver gratuities are not included"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "Live weather integration"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "Updated daily"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "name": "Spring",
+            "icon": "flower",
+            "description": "Cherry blossoms and magnolias bloom across Nami Island and Morning Calm in April; one of the most balanced seasons for the route.",
+            "tag": "Blossom season",
+            "bgClass": "bg-spring",
+            "iconColor": "text-pink-500"
+          },
+          {
+            "name": "Summer",
+            "icon": "sun",
+            "description": "Lush greenery and longer daylight, but expect humidity and possible monsoon rain in late June and July.",
+            "tag": "Lush but humid",
+            "bgClass": "bg-summer",
+            "iconColor": "text-yellow-500"
+          },
+          {
+            "name": "Autumn",
+            "icon": "leaf",
+            "description": "Late October to mid-November turns Nami Island's metasequoia and ginkgo trees fiery; the strongest photo season but also the most crowded.",
+            "tag": "Best photo season",
+            "bgClass": "bg-autumn",
+            "iconColor": "text-orange-500"
+          },
+          {
+            "name": "Winter",
+            "icon": "snowflake",
+            "description": "December to mid-March: snow-quiet Nami Island plus the famous Lighting Festival at the Garden of Morning Calm. Cold but visually rewarding.",
+            "tag": "Lighting Festival season",
+            "bgClass": "bg-winter",
+            "iconColor": "text-sky-500"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Licensed local operator",
+            "description": "Authorized Korean tour operator with full insurance",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "route",
+            "title": "Route specialists",
+            "description": "Hand-tuned itinerary, not a generic loop",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          },
+          {
+            "icon": "users",
+            "title": "Curated group size",
+            "description": "Right-sized for the route",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Immediately",
+            "title": "Instant Confirmation",
+            "detail": "Booking confirmation with itinerary summary"
+          },
+          {
+            "timing": "12 hours before",
+            "title": "12-Hour Reminder",
+            "detail": "Weather update and any route adjustments"
+          },
+          {
+            "timing": "Evening before",
+            "title": "Final Pickup Info",
+            "detail": "Exact pickup time and driver contact"
+          },
+          {
+            "timing": "Morning of tour",
+            "title": "Day-of Route Notes",
+            "detail": "Morning briefing based on live conditions"
+          },
+          {
+            "timing": "During tour",
+            "title": "Stop-by-Stop Tips",
+            "detail": "Real-time guidance at each location"
+          },
+          {
+            "timing": "After tour",
+            "title": "Post-tour Support",
+            "detail": "Follow-up and recommendations"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "What's the order of stops, and why not Petite France first?",
+            "answer": "Nami Island first uses the strongest morning ferry slot (08:30-10:00 has the lowest queues and the best metasequoia-path light). The Garden of Morning Calm sits at midday because most paths there are open and the on-site lunch is convenient. Petite France is the lightest stop and works as a 60-minute sunset close. Reverse order is possible by request but typically adds 30-40 minutes of waiting time."
+          },
+          {
+            "id": "q2",
+            "question": "Are admissions included or paid separately?",
+            "answer": "Private-tour pricing typically includes all three admissions: Nami Island with round-trip ferry (19,000 KRW adult equivalent), Garden of Morning Calm (11,000 KRW adult), and Petite France (12,000 KRW adult). Confirm at booking — some operator versions list admissions as excluded for a lower headline price. Lunch is paid direct at the restaurant (≈ 15,000-25,000 KRW per person)."
+          },
+          {
+            "id": "q3",
+            "question": "Why pick the private tour over a bus tour?",
+            "answer": "Private gives you 1-2 extra hours over a typical group bus tour because you skip the shuttle-bus wait between stops (the public Gapyeong shuttle runs only every 30-60 minutes), and you can stay longer at whichever stop you love most. Group bus tours stick to fixed return windows. Private fits multi-generational groups better; bus tours fit solo budget travelers better."
+          },
+          {
+            "id": "q4",
+            "question": "How does the Nami Island ferry work?",
+            "answer": "The ferry runs every 10-20 minutes from Gapyeong Wharf, 08:00 to 21:30. The crossing takes 5-10 minutes. Round-trip ticket is included in admission and bundled with the Nami Republic 'visa' branding. There is also a faster zip-wire option (44,000 KRW one-way; not included) for travelers who want to skip the queue with a thrill."
+          },
+          {
+            "id": "q5",
+            "question": "When is the Garden of Morning Calm Lighting Festival?",
+            "answer": "Early December to mid-March, typically — Korea's largest garden lighting festival turns the 20 themed gardens into illuminated walks after dark. Hours extend until 21:00 during the festival. Worth staying past sunset if your tour date falls in this window — confirm with the operator to extend the schedule and add an evening transfer."
+          },
+          {
+            "id": "q6",
+            "question": "Can we substitute Italian Village for Petite France?",
+            "answer": "Yes — Italian Village (a Pinocchio and Da Vinci themed park) sits about 5 minutes from Petite France and shares an admissions complex (combo ticket: Adult 18,000 KRW for both vs 12,000 for Petite France alone). The combo only saves money if visiting both. Switching solo to Italian Village instead requires advance notice. Italian Village is less K-drama-photographed but has stronger interior exhibits."
+          },
+          {
+            "id": "first-time",
+            "question": "Is this a good choice for first-time visitors to Gapyeong (Seoul Day Trip)?",
+            "answer": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+          },
+          {
+            "id": "walking",
+            "question": "Is the walking difficult?",
+            "answer": "Moderate walking with some active sections. Nami Island has the most cumulative walking — the most photogenic metasequoia and ginkgo paths are 15-20 minutes from the ferry pier; bicycle and pedicab rentals are available. The Garden of Morning Calm is mostly easy paved paths with optional climbs to upper viewpoints. Petite France is a compact hillside village with light steps. Closed-toe shoes recommended for Nami's unpaved sections."
+          },
+          {
+            "id": "family",
+            "question": "Is this tour suitable for families?",
+            "answer": "Yes — one of the most family-friendly Seoul day-trips. Strollers work at Morning Calm and Petite France; Nami Island has unpaved sections but they're walkable. Kid-focused spots include the Petite France marionette show, the Nami Island children's garden, and the seasonal animal interactions on Nami. Under-3s also OK with carriers."
+          },
+          {
+            "id": "seniors",
+            "question": "Can older adults join comfortably?",
+            "answer": "Yes — pacing and walking are comfortable for active seniors. Bicycle rental on Nami avoids the 15-20 minute walk from the pier. Garden of Morning Calm has paved paths and benches throughout. Petite France is compact with light steps. Less ideal if wheelchair access is required throughout — Nami's island paths and some Petite France sections are not fully accessible."
+          },
+          {
+            "id": "children",
+            "question": "What's the recommended minimum age?",
+            "answer": "Age 3+ is fine — this is one of the most family-friendly Seoul day-trips. Strollers work at Morning Calm and Petite France; Nami's unpaved paths are walkable but bring a carrier for very young children. Kid-favorite spots include the Petite France marionette show and the Nami Island children's garden. Under-3s also welcome with carriers."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "vehicle"
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-29",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v17_batch8"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch8_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 8 deep enhancement — Seoul DMZ + Nami/Morning Calm/Petite France pair. Returns to single-POI fixed-itinerary methodology (batches 1-5 style) after Batch 7's route-option charter format. All stops enhanced with 1,000+ char descriptions weaving verified facts. matching_profile recalibrated to verified-fact 0-1 float scores. Charter-format dimensions previously null: private_tour_fit set to 1.0; customizable_route_fit set to 0.4 (fixed itinerary); flexibility_fit set to 0.6-0.7 (driver-guide pacing flex but not destination flex). Tour-specific: history_culture_fit DMZ 1.0 (catalog-heaviest history) / Nami 0.6 (K-drama + culture). Nami romantic_fit set to 0.95 (catalog-leading). 5 new POIs added to KB (v1.10 → v1.11): nami_island, imjingak_peace_park, third_infiltration_tunnel, dora_observatory, gamaksan_red_bridge. Garden of Morning Calm and Petite France reused from KB v1.10 (Batch 7) unchanged.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale per Phase 1 standard. Both tours are 8-9hr private FIXED-itinerary tours (NOT route-option charters like Batch 7). private_tour_fit set to 1.0 by definition (was None). customizable_route_fit = 0.4 (driver-guide can adjust pacing/lunch but not destinations). flexibility_fit = 0.6 (private vehicle door-to-door but the route stops are fixed). history_culture_fit set as DMZ tour 1.0 (heaviest history content in catalog) / Nami tour 0.6 (K-drama + general culture but not history-deep). Time-weighted indoor_ratio re-computed per Fix 1 methodology using verified per-POI indoor_ratio_at_stop values.",
+          "deltas_applied": {
+            "private_tour_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — both tours are per-vehicle private tours by definition. Was previously None (unset)."
+            },
+            "small_group_fit": {
+              "old": 0.2,
+              "new": 0.15,
+              "reasoning": "Verified — these are PRIVATE tours not small-group. 0.15 reflects that a 1-vehicle booking still functions as a small private group."
+            },
+            "bus_fit": {
+              "old": null,
+              "new": 0.05,
+              "reasoning": "Verified — private vehicle, never bus."
+            },
+            "history_culture_fit": {
+              "old": null,
+              "new": 0.6,
+              "reasoning": "VERIFIED — Nami's General Nami history (1441-1468 Joseon-era treason execution) and Petite France's Saint-Exupéry / Little Prince narrative + multi-K-drama filming legacy provide moderate culture content. Was None. 0.60 reflects K-drama-pop-culture-heavy weight."
+            },
+            "customizable_route_fit": {
+              "old": null,
+              "new": 0.4,
+              "reasoning": "Verified — fixed itinerary; driver-guide adjusts pacing/lunch but not the 3 destinations. 0.4 fixed-itinerary private tours."
+            },
+            "flexibility_fit": {
+              "old": null,
+              "new": 0.7,
+              "reasoning": "Verified — private vehicle door-to-door, no military restrictions; driver-guide can fully flex pacing, lunch, photo stops, and ferry-queue avoidance. 0.7 calibrated."
+            },
+            "romantic_fit": {
+              "old": null,
+              "new": 0.95,
+              "reasoning": "VERIFIED — Winter Sonata legacy + Metasequoia avenue + Morning Calm Lighting Festival + Petite France pastel-romance theme = catalog's strongest romantic-fit tour. 0.95."
+            },
+            "unesco_fit": {
+              "old": 0.2,
+              "new": 0.15,
+              "reasoning": "Verified — no UNESCO sites on this route. 0.15 reflects baseline."
+            },
+            "iconic_landmark_fit": {
+              "old": 1.0,
+              "new": 0.9,
+              "reasoning": "VERIFIED — Nami's Metasequoia avenue is iconic globally; Morning Calm Lighting Festival is iconic in season; Petite France is photographically iconic. Slight markdown to 0.90 reflects that 'iconic' is K-drama-pop-culture-iconic rather than UNESCO/historic-iconic."
+            },
+            "first_time_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "VERIFIED — strongest first-time Gapyeong day-trip. Slight markdown to 0.95 reflects that first-time visitors with limited time may prefer DMZ for the heavier story or Everland for kids. 0.95 calibrated."
+            },
+            "walking_level": {
+              "old": 0.6,
+              "new": 0.5,
+              "reasoning": "VERIFIED — Nami island walks 5 km flat tree-lined paths; Morning Calm 1.5-2hr garden paths over rolling terrain; Petite France compact. Average 0.50, slightly lower than previous 0.60."
+            },
+            "indoor_ratio": {
+              "old": 0.15,
+              "new": 0.2,
+              "reasoning": "VERIFIED — Fix 1 time-weighted: Nami 180 min × 0.10 = 18, Morning Calm 120 min × 0.10 = 12, Petite France 60 min × 0.40 = 24, Lunch 60 min × 0.90 = 54, transit 180 min × 1.0 = 180. Total indoor 288 / 600 min = 0.48 with full transit; substantive only 54 / 360 = 0.15. Catalog value 0.20 (slight upward adjustment from 0.15 for lunch + Petite France interior weight). Was previously 0.15."
+            },
+            "weather_sensitivity": {
+              "old": 0.6,
+              "new": 0.6,
+              "reasoning": "Verified maintained — Nami outdoor walks + Morning Calm garden + Petite France hill village are all weather-exposed. Indoor fallbacks limited (Petite France interiors only ~30 min). 0.60 maintained."
+            },
+            "scenic_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified — catalog-leading scenic content (river-island tree-lined avenues + 330,000 m² arboretum + pastel village). Slight markdown to 0.95 saving 1.0 for tours that include flagship UNESCO scenic sites."
+            },
+            "photo_level": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Verified maintained — strongest photographic-return tour in the catalog. Maintained at 1.0."
+            },
+            "family_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Verified maintained — outdoor walks + colorful village + light scenery are best-in-class for families with kids 4-12. Maintained at 1.0."
+            },
+            "storytelling_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "VERIFIED — driver-guide narrative is rich (General Nami history, Winter Sonata legacy, Saint-Exupéry, multi-K-drama filming). Calibrated up to 0.85."
+            },
+            "value_for_money_fit": {
+              "old": 0.6,
+              "new": 0.6,
+              "reasoning": "Verified maintained — per-vehicle pricing good value for groups of 3-9, premium per-person for solo/pair. 0.60 maintained."
+            },
+            "premium_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Verified maintained — private vehicle + flexible pacing + driver-guide + scenic premium destinations. Maintained at 1.0."
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -8,10 +8,54 @@
  * handwritten validator so the generators never block on dep-install races.
  */
 
-export const PRODUCT_TYPES = ["small_group", "private", "bus"];
-export const ROUTE_TYPES = ["fixed_route", "flexible", "loop"];
-export const REGION_TYPES = ["east", "southwest", "full_island", "any"];
-export const PRICE_BANDS = ["budget", "mid", "premium"];
+export const PRODUCT_TYPES = [
+  "small_group",
+  "private",
+  "bus",
+  // v17 batch — fixed-itinerary small group (treated like small_group in scoring)
+  "small_group_fixed_itinerary",
+];
+export const ROUTE_TYPES = [
+  "fixed_route",
+  "flexible",
+  "loop",
+  // v17 batch — private custom routing
+  "customizable",
+  // v17 batch — cruise shore-excursion with paired port-of-call route variants
+  "cruise_shore_excursion_pair_route_variants",
+  // v17 batch — winter/seasonal southwest full-day
+  "winter_southwest_seasonal_full_day",
+];
+export const REGION_TYPES = [
+  // Legacy / Jeju
+  "east",
+  "southwest",
+  "full_island",
+  "any",
+  "jeju_island_wide",
+  "jeju_southwest",
+  // Jeju v2
+  "jeju_east",
+  "jeju_south",
+  "jeju_west_south",
+  "jeju_all_around",
+  "island_full",
+  "island_southwest",
+  // Busan / Gyeongsang
+  "busan_city",
+  "gyeongsang_north",
+  "gyeongju_from_busan",
+  // Seoul / Incheon / Gyeonggi
+  "seoul_with_incheon_origin",
+  "gyeonggi_pocheon",
+  "gyeonggi_paju",
+  "gyeonggi_gapyeong",
+  "gyeonggi_south",
+  "gyeonggi_mixed",
+  // Gangwon
+  "gangwon_seoraksan",
+];
+export const PRICE_BANDS = ["budget", "mid", "premium", "mid_to_premium"];
 
 export const KNOWN_AVOID_IF_KEYS = [
   "needs_slow_pace",
@@ -23,6 +67,7 @@ export const KNOWN_AVOID_IF_KEYS = [
   // `shouldHardExclude` globally: all products not tagged step-free
   // are excluded when this intent is detected.
   "strict_no_stairs_request",
+  "needs_zero_stairs",
 ];
 
 export const KNOWN_NOT_IDEAL_FOR_KEYS = ["toddlers", "stroller_heavy", "very_low_mobility"];
@@ -44,6 +89,18 @@ const REQUIRED_STRING_KEYS = ["pickup_base", "return_time_band", "duration_band"
 const REQUIRED_ARRAY_KEYS = ["region_tags", "theme_tags", "poi_tags", "walking_notes", "keywords", "synonym_hints"];
 
 function isInt(n) { return typeof n === "number" && Number.isInteger(n); }
+
+/**
+ * Accept integer 1–5 (legacy scale) OR float 0–1 (v2 scale).
+ * apply-tour-product.mjs normalises 0–1 → 1–5 before writing to Supabase,
+ * so both forms are valid in source JSON.
+ */
+function isValidLevelValue(n) {
+  if (typeof n !== "number" || !isFinite(n)) return false;
+  if (isInt(n) && n >= 1 && n <= 5) return true; // legacy 1-5
+  if (n >= 0 && n <= 1) return true;              // v2 0-1
+  return false;
+}
 
 /**
  * @returns {{ ok: boolean, issues: Array<{ level: 'error'|'warn', path: string, message: string }> }}
@@ -74,12 +131,21 @@ export function validateMatchingProfile(raw) {
 
   for (const k of REQUIRED_LEVEL_KEYS) {
     const v = raw[k];
-    if (!isInt(v) || v < 1 || v > 5) {
-      err(k, `expected integer 1..5, got ${JSON.stringify(v)}`);
+    if (!isValidLevelValue(v)) {
+      err(k, `expected integer 1..5 or float 0..1, got ${JSON.stringify(v)}`);
     }
   }
-  if (!isInt(raw.indoor_ratio) || raw.indoor_ratio < 0 || raw.indoor_ratio > 100) {
-    err("indoor_ratio", `expected integer 0..100, got ${JSON.stringify(raw.indoor_ratio)}`);
+  // v17 batch: indoor_ratio may be 0..1 float (preferred) OR 0..100 int (legacy).
+  // Generator stores raw value; DB column is numeric to accept both forms.
+  {
+    const v = raw.indoor_ratio;
+    const ok =
+      typeof v === "number" &&
+      Number.isFinite(v) &&
+      ((Number.isInteger(v) && v >= 0 && v <= 100) || (v >= 0 && v <= 1));
+    if (!ok) {
+      err("indoor_ratio", `expected integer 0..100 or float 0..1, got ${JSON.stringify(v)}`);
+    }
   }
   if (!isInt(raw.min_recommended_age) || raw.min_recommended_age < 0 || raw.min_recommended_age > 99) {
     err("min_recommended_age", `expected integer 0..99, got ${JSON.stringify(raw.min_recommended_age)}`);
@@ -96,20 +162,34 @@ export function validateMatchingProfile(raw) {
       err(k, "expected non-empty string");
     }
   }
+  // v17 batch: REQUIRED_ARRAY_KEYS leniency.
+  // - walking_notes/keywords/synonym_hints: a stray string is wrapped to [string] downstream;
+  //   missing/null is normalized to []. Validator emits a warn rather than blocking.
+  // - region_tags/theme_tags/poi_tags: still required arrays (these drive matching).
+  const STRICT_ARRAY_KEYS = new Set(["region_tags", "theme_tags", "poi_tags"]);
   for (const k of REQUIRED_ARRAY_KEYS) {
-    if (!Array.isArray(raw[k])) {
+    const v = raw[k];
+    if (Array.isArray(v)) continue;
+    if (STRICT_ARRAY_KEYS.has(k)) {
       err(k, "expected array of strings");
+    } else {
+      warn(k, `expected array of strings, got ${JSON.stringify(v)}; will be coerced downstream`);
     }
   }
 
   const hc = raw.hard_constraints;
-  if (!hc || typeof hc !== "object") {
-    err("hard_constraints", "expected object { avoidIf: string[], notIdealFor: string[] }");
+  if (!hc || typeof hc !== "object" || Array.isArray(hc)) {
+    // v17 batch: missing/malformed hard_constraints downgraded to warn.
+    // Generator coerces to { avoidIf: [], notIdealFor: [] } for the JSONB cell.
+    warn(
+      "hard_constraints",
+      `expected object { avoidIf: string[], notIdealFor: string[] }, got ${JSON.stringify(hc)}; defaulting to { avoidIf: [], notIdealFor: [] }`,
+    );
   } else {
     const avoidIf = Array.isArray(hc.avoidIf) ? hc.avoidIf : [];
     const notIdealFor = Array.isArray(hc.notIdealFor) ? hc.notIdealFor : [];
-    if (!Array.isArray(hc.avoidIf)) err("hard_constraints.avoidIf", "expected array of strings");
-    if (!Array.isArray(hc.notIdealFor)) err("hard_constraints.notIdealFor", "expected array of strings");
+    if (!Array.isArray(hc.avoidIf)) warn("hard_constraints.avoidIf", "expected array of strings; defaulting to []");
+    if (!Array.isArray(hc.notIdealFor)) warn("hard_constraints.notIdealFor", "expected array of strings; defaulting to []");
 
     for (const k of avoidIf) {
       if (!KNOWN_AVOID_IF_KEYS.includes(k)) {

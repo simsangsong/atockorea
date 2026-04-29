@@ -33,7 +33,11 @@ function StarRating({ rating, size = "sm" }: { rating: number; size?: "sm" | "md
 
 function ReviewCard({ review, sectionUi }: { review: Review; sectionUi: TourProductSectionUiV1 }) {
   const [expanded, setExpanded] = useState(false);
-  const shouldTruncate = review.text.length > 200;
+  const reviewText = review.text ?? "";
+  const reviewPhotos = review.photos ?? [];
+  const reviewRating = review.rating ?? 0;
+  const reviewHelpful = review.helpful ?? 0;
+  const shouldTruncate = reviewText.length > 200;
 
   return (
     <div className="card-premium p-5 transition-all duration-200 hover:shadow-premium-elevated">
@@ -76,16 +80,16 @@ function ReviewCard({ review, sectionUi }: { review: Review; sectionUi: TourProd
 
       <div className="mt-4">
         <div className="flex items-center gap-2">
-          <StarRating rating={review.rating} size="sm" />
+          <StarRating rating={reviewRating} size="sm" />
           {review.tripType && <span className="text-xs text-muted-foreground">{review.tripType}</span>}
         </div>
         {review.title && <h4 className="mt-2 text-sm font-semibold text-foreground leading-snug">{review.title}</h4>}
       </div>
 
-      {review.text && (
+      {reviewText && (
         <div className="mt-3">
           <p className="text-sm text-muted-foreground leading-[1.7]">
-            {shouldTruncate && !expanded ? `${review.text.slice(0, 200)}...` : review.text}
+            {shouldTruncate && !expanded ? `${reviewText.slice(0, 200)}...` : reviewText}
           </p>
           {shouldTruncate && (
             <button
@@ -99,9 +103,9 @@ function ReviewCard({ review, sectionUi }: { review: Review; sectionUi: TourProd
         </div>
       )}
 
-      {review.photos.length > 0 && (
+      {reviewPhotos.length > 0 && (
         <div className="mt-4 flex gap-2 overflow-x-auto scrollbar-hide">
-          {review.photos.map((photo, i) => (
+          {reviewPhotos.map((photo, i) => (
             // eslint-disable-next-line @next/next/no-img-element -- Supabase review image
             <img
               key={i}
@@ -113,11 +117,11 @@ function ReviewCard({ review, sectionUi }: { review: Review; sectionUi: TourProd
         </div>
       )}
 
-      {review.helpful > 0 && (
+      {reviewHelpful > 0 && (
         <div className="mt-4 pt-3 border-t border-border/50 flex items-center justify-between">
           <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
             <ThumbsUp className="h-3.5 w-3.5" />
-            {sectionUi.reviewsHelpfulTemplate.replace("{count}", String(review.helpful))}
+            {sectionUi.reviewsHelpfulTemplate.replace("{count}", String(reviewHelpful))}
           </span>
         </div>
       )}

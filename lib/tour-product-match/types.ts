@@ -3,10 +3,51 @@
  * `tour_matching_profiles` rows.
  */
 
-export type RegionAffinity = "east" | "southwest" | "full_island" | "any";
+export type RegionAffinity =
+  | "east"
+  | "southwest"
+  | "full_island"
+  | "any"
+  | "jeju_island_wide"
+  | "jeju_southwest";
 
-/** Product format for the small-group tour catalog (matches `tour_matching_profiles.product_type`). */
+/**
+ * Product format the traveler's intent can request.
+ *
+ * The DB column `tour_matching_profiles.product_type` accepts a wider set of
+ * authoring labels (e.g. `small_group_fixed_itinerary` from the v17 batch);
+ * those map back to the three traveler-facing intents through
+ * `productTypeFamily()` in `score-tour-products.ts`.
+ */
 export type DesiredProductType = "small_group" | "private" | "bus";
+
+/**
+ * Authoring labels seen in `tour_matching_profiles.product_type`. Superset of
+ * `DesiredProductType` — the v17 batch introduced `small_group_fixed_itinerary`.
+ * Use `productTypeFamily()` to collapse to the traveler-facing 3-way category.
+ */
+export const PROFILE_PRODUCT_TYPES = [
+  "small_group",
+  "private",
+  "bus",
+  "small_group_fixed_itinerary",
+] as const;
+export type ProfileProductType = (typeof PROFILE_PRODUCT_TYPES)[number];
+
+/** Authoring `route_type` values accepted by `tour_matching_profiles`. */
+export const PROFILE_ROUTE_TYPES = [
+  "fixed_route",
+  "flexible",
+  "loop",
+  "customizable",
+  "cruise_shore_excursion_pair_route_variants",
+  "winter_southwest_seasonal_full_day",
+] as const;
+export type ProfileRouteType = (typeof PROFILE_ROUTE_TYPES)[number];
+
+/** Authoring `price_band` values accepted by `tour_matching_profiles`. */
+export const PROFILE_PRICE_BANDS = ["budget", "mid", "premium", "mid_to_premium"] as const;
+export type ProfilePriceBand = (typeof PROFILE_PRICE_BANDS)[number];
 
 /** How strongly the user requires a product format; `hard` triggers hard exclusions on mismatch. */
 export type ProductTypeIntentStrength = "soft" | "hard";
@@ -66,6 +107,7 @@ export const KNOWN_AVOID_IF_KEYS = [
    * does not require the opt-in to enforce exclusion.
    */
   "strict_no_stairs_request",
+  "needs_zero_stairs",
 ] as const;
 
 export type KnownAvoidIfKey = (typeof KNOWN_AVOID_IF_KEYS)[number];

@@ -1,0 +1,319 @@
+[
+  {
+    "id": "q1",
+    "label": "벚꽃+가족+제주동부",
+    "query": "벚꽃 시즌에 가족이랑 제주 동부 1일투어 가고싶어요",
+    "expected_top1_contains": "cherry-blossom-tour-east-route",
+    "expected_no_cruise": true
+  },
+  {
+    "id": "q2",
+    "label": "수국+커플+서남부",
+    "query": "6월말 수국축제 보러 제주 서남부 커플 여행",
+    "expected_top1_contains": "hydrangea-festival-tour-southwest",
+    "expected_no_cruise": true
+  },
+  {
+    "id": "q3",
+    "label": "부산크루즈+5시간+프라이빗",
+    "query": "부산 크루즈 정박해서 5시간 동안 프라이빗 차량으로 경주 다녀오고 싶어요",
+    "expected_top1_contains": "cruise",
+    "expected_no_cruise": false
+  },
+  {
+    "id": "q4",
+    "label": "DMZ+안보투어+서울출발",
+    "query": "DMZ 제3땅굴 안보투어 가고싶고 서울 호텔에서 픽업 가능한가요",
+    "expected_top1_contains": "dmz",
+    "expected_no_cruise": true
+  },
+  {
+    "id": "q5",
+    "label": "수원화성+드라마촬영지+소그룹",
+    "query": "수원 화성 + 한국민속촌 K드라마 촬영지 소규모 투어",
+    "expected_top1_contains": "suwon-hwaseong",
+    "expected_no_cruise": true
+  },
+  {
+    "id": "q6",
+    "label": "서남부+오설록+한라산",
+    "query": "오설록 차밭이랑 한라산 서남부 코스 1일투어",
+    "expected_top1_contains": "southwest-hallasan-osulloc",
+    "expected_no_cruise": true
+  },
+  {
+    "id": "q7",
+    "label": "겨울+감귤+눈+동백",
+    "query": "겨울에 제주 감귤 따고 눈 보면서 동백꽃 보러",
+    "expected_top1_contains": "winter-southwest-tangerine",
+    "expected_no_cruise": true
+  },
+  {
+    "id": "q8",
+    "label": "남이섬+쁘띠프랑스+드라마",
+    "query": "남이섬이랑 쁘띠프랑스 가서 겨울연가 드라마 촬영지 둘러보고싶어요",
+    "expected_top1_contains": "nami-morning-calm-petite-france",
+    "expected_no_cruise": true
+  },
+  {
+    "id": "g1",
+    "label": "REGRESSION-일반-부산-가족",
+    "query": "부산 가족 1일투어 추천해주세요",
+    "expected_no_cruise": true,
+    "test_type": "cruise_leakage_regression"
+  },
+  {
+    "id": "g2",
+    "label": "REGRESSION-일반-부산-호텔픽업",
+    "query": "부산 호텔에서 픽업해서 해운대랑 감천문화마을 가고싶어요",
+    "expected_no_cruise": true,
+    "test_type": "cruise_leakage_regression"
+  },
+  {
+    "id": "g3",
+    "label": "REGRESSION-일반-인천공항",
+    "query": "인천공항 도착해서 서울 시내 1일 관광",
+    "expected_no_cruise": true,
+    "test_type": "cruise_leakage_regression"
+  },
+  {
+    "id": "c1",
+    "label": "REGRESSION-CRUISE-부산정박",
+    "query": "부산항 크루즈 정박해서 5시간 동안 시내 관광",
+    "expected_top1_contains": "cruise",
+    "expected_no_cruise": false,
+    "test_type": "cruise_intent_positive"
+  },
+  {
+    "id": "c2",
+    "label": "REGRESSION-CRUISE-인천기항",
+    "query": "인천 크루즈 기항해서 서울 1일 shore excursion",
+    "expected_top1_contains": "shore-excursion",
+    "expected_no_cruise": false,
+    "test_type": "cruise_intent_positive"
+  },
+  {
+    "id": "s1",
+    "label": "SEASONAL-IN-수국-5월",
+    "query": "5월 제주 수국축제 보러",
+    "expected_top1_contains": "hydrangea",
+    "test_type": "seasonal_in_window"
+  },
+  {
+    "id": "s2",
+    "label": "SEASONAL-IN-수국-7월",
+    "query": "7월 초 수국 보러 제주",
+    "expected_top1_contains": "hydrangea",
+    "test_type": "seasonal_in_window"
+  },
+  {
+    "id": "s3",
+    "label": "SEASONAL-OUT-수국-12월",
+    "query": "12월 제주 수국 보고싶어요",
+    "expected_excluded_keywords": [
+      "hydrangea"
+    ],
+    "test_type": "seasonal_out_of_window"
+  },
+  {
+    "id": "s4",
+    "label": "SEASONAL-OUT-수국-8월",
+    "query": "8월 제주 수국 마지막 보고싶어요",
+    "expected_excluded_keywords": [
+      "hydrangea"
+    ],
+    "test_type": "seasonal_out_of_window"
+  },
+  {
+    "id": "s5",
+    "label": "SEASONAL-IN-벚꽃-3월",
+    "query": "3월말 제주 벚꽃 동부",
+    "expected_top1_contains": "cherry-blossom-tour-east",
+    "test_type": "seasonal_in_window"
+  },
+  {
+    "id": "s6",
+    "label": "SEASONAL-IN-벚꽃-4월",
+    "query": "4월 초 제주 벚꽃 가족",
+    "expected_top1_contains": "cherry-blossom-tour-east",
+    "test_type": "seasonal_in_window"
+  },
+  {
+    "id": "s7",
+    "label": "SEASONAL-OUT-벚꽃-5월",
+    "query": "5월 제주 벚꽃 보고싶어요",
+    "expected_excluded_keywords": [
+      "cherry-blossom-tour-east-route",
+      "spring-cherry-blossom"
+    ],
+    "test_type": "seasonal_out_of_window"
+  },
+  {
+    "id": "s8",
+    "label": "SEASONAL-OUT-벚꽃-2월",
+    "query": "2월 제주 벚꽃",
+    "expected_excluded_keywords": [
+      "cherry-blossom-tour-east-route"
+    ],
+    "test_type": "seasonal_out_of_window"
+  },
+  {
+    "id": "s9",
+    "label": "SEASONAL-IN-감귤-1월",
+    "query": "1월 제주 감귤따기 가족",
+    "expected_top1_contains": "winter-southwest-tangerine",
+    "test_type": "seasonal_in_window"
+  },
+  {
+    "id": "s10",
+    "label": "SEASONAL-IN-동백-12월",
+    "query": "12월 제주 동백꽃 눈",
+    "expected_top1_contains": "winter-southwest-tangerine",
+    "test_type": "seasonal_in_window"
+  },
+  {
+    "id": "s11",
+    "label": "SEASONAL-OUT-감귤-8월",
+    "query": "8월 제주 감귤따기",
+    "expected_excluded_keywords": [
+      "winter-southwest-tangerine"
+    ],
+    "test_type": "seasonal_out_of_window"
+  },
+  {
+    "id": "s12",
+    "label": "SEASONAL-OUT-감귤-5월",
+    "query": "5월 제주 감귤 따고싶어요",
+    "expected_excluded_keywords": [
+      "winter-southwest-tangerine"
+    ],
+    "test_type": "seasonal_out_of_window"
+  },
+  {
+    "id": "s13",
+    "label": "SEASONAL-IN-매화벚꽃-3월",
+    "query": "3월 부산 매화 벚꽃 경주",
+    "expected_top1_contains": "plum-cherry",
+    "test_type": "seasonal_in_window"
+  },
+  {
+    "id": "s14",
+    "label": "SEASONAL-OUT-매화-5월",
+    "query": "5월 부산 매화 보고싶어요",
+    "expected_excluded_keywords": [
+      "plum-cherry-blossom"
+    ],
+    "test_type": "seasonal_out_of_window"
+  },
+  {
+    "id": "s15",
+    "label": "SEASONAL-NO-MONTH-제주일반",
+    "query": "제주 가족 1일투어",
+    "test_type": "seasonal_no_month_filter_neutral"
+  },
+  {
+    "id": "ch1",
+    "label": "REGRESSION-CHARTER-요청-KO",
+    "query": "제주 1일 차량 대절해서 우리 일정대로",
+    "expected_top1_contains": "private-car-charter",
+    "test_type": "charter_intent_positive"
+  },
+  {
+    "id": "ch2",
+    "label": "REGRESSION-CHARTER-요청-EN",
+    "query": "I want a private car charter in Jeju with customizable route",
+    "expected_top1_contains": "private-car-charter",
+    "test_type": "charter_intent_positive"
+  },
+  {
+    "id": "ch3",
+    "label": "REGRESSION-CHARTER-누설방지",
+    "query": "제주 가족 1일투어",
+    "expected_excluded_keywords": [
+      "private-car-charter",
+      "private-chartered"
+    ],
+    "test_type": "charter_leakage_regression"
+  },
+  {
+    "id": "lang1",
+    "label": "REGRESSION-LANG-Japanese-sakura",
+    "query": "제주 さくら 시즌 가족",
+    "expected_top1_contains": "cherry-blossom-tour-east",
+    "test_type": "multilingual_seasonal"
+  },
+  {
+    "id": "lang2",
+    "label": "REGRESSION-LANG-Chinese-hydrangea",
+    "query": "5月份去濟州島看繡球花",
+    "expected_top1_contains": "hydrangea",
+    "test_type": "multilingual_seasonal"
+  },
+  {
+    "id": "lang3",
+    "label": "REGRESSION-LANG-Japanese-tangerine",
+    "query": "12月に済州島でみかん狩り",
+    "expected_top1_contains": "winter-southwest-tangerine",
+    "test_type": "multilingual_seasonal"
+  },
+  {
+    "id": "hf1",
+    "label": "REGRESSION-WHEELCHAIR-필터링",
+    "query": "휠체어 사용 부모님 모시고 제주",
+    "expected_excluded_keywords": [],
+    "min_passed_count": 5,
+    "max_passed_count": 8,
+    "test_type": "wheelchair_hard_filter"
+  },
+  {
+    "id": "hf2",
+    "label": "REGRESSION-HALAL-자유식-안내",
+    "query": "할랄 식사 가능한 제주 가족",
+    "min_passed_count": 10,
+    "max_passed_count": 10,
+    "test_type": "halal_informational",
+    "expected_note_substring": "FREE_MEAL_POLICY"
+  },
+  {
+    "id": "mp1",
+    "label": "REGRESSION-MULTIDAY-안내",
+    "query": "제주 1박2일 가족",
+    "expected_note_substring": "MULTI_DAY_REQUEST",
+    "test_type": "multi_day_note"
+  },
+  {
+    "id": "mp2",
+    "label": "REGRESSION-AFFORDABLE-cruise-disambiguation",
+    "query": "인천 크루즈 정박 서울 1일 affordable",
+    "expected_top1_contains": "from-incheon-seoul-day-tour-cruise-guests",
+    "test_type": "affordable_disambiguation"
+  },
+  {
+    "id": "kd1",
+    "label": "REGRESSION-드라마-폭싹속았수다",
+    "query": "폭싹 속았수다 촬영지 보고싶어요",
+    "expected_top1_contains": "jeju",
+    "test_type": "kdrama_jeju_inference"
+  },
+  {
+    "id": "kd2",
+    "label": "REGRESSION-드라마-킹더랜드-Seoul",
+    "query": "킹 더 랜드 가고싶어요",
+    "expected_top1_contains": "seoul",
+    "test_type": "kdrama_seoul_inference"
+  },
+  {
+    "id": "kd3",
+    "label": "REGRESSION-드라마-우리블루스-Jeju",
+    "query": "우리들의 블루스 1일 친구",
+    "expected_top1_contains": "jeju",
+    "test_type": "kdrama_jeju_inference"
+  },
+  {
+    "id": "kd4",
+    "label": "REGRESSION-드라마-도깨비-Nami",
+    "query": "도깨비 촬영지 1일 친구 4명",
+    "expected_top1_contains": "nami-morning-calm",
+    "test_type": "kdrama_specific_anchor"
+  }
+]

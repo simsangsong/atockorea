@@ -1,0 +1,647 @@
+{
+  "_metadata": {
+    "version": "1.3",
+    "compiled": "2026-04-28",
+    "purpose": "v15 catalog Step 2 — fill visitBasics/convenience/smartNotes/_poi_meta_extras for 24 attraction stops across 5 tours",
+    "field_format": {
+      "visitBasics": "{hours, closed, admission, walking}",
+      "convenience": "{restroom, parking}",
+      "smartNotes": "{photo, facilities, tip}",
+      "_poi_meta_extras": "additional verified facts to merge into _poi_meta"
+    },
+    "sources_consulted": [
+      "VisitKorea",
+      "Visit Busan",
+      "Gyeongju.go.kr",
+      "VisitSeoul",
+      "UNMCK",
+      "Gyeongju Museum",
+      "Bluelinepark.com",
+      "Hallasan National Park",
+      "AllTrails",
+      "Inside Jeju",
+      "World of Waterfalls",
+      "Trazy"
+    ],
+    "changelog": [
+      "v1.1 (2026-04-28): Added bomun_lake, daereungwon_tomb_complex, cheomseongdae for Step 3b cherry blossom tour.",
+      "v1.2 (2026-04-28): Added tongdosa_temple, wondong_plum_blossom_village for Step 3c plum+cherry tour. Wonhyoam Hermitage excluded — 8km mountain road approach + 900m elevation makes it unsuitable for day tours.",
+      "v1.3 (2026-04-28): Batch 1 - added 7 POIs from migrated Jeju tour enhancement: hallasan_eoseungsaengak, daepo_jusangjeolli_cliff, cheonjeyeon_falls, osulloc_tea_museum, aewol_cafe_street, jeongbang_falls, seongsan_ilchulbong. All facts verified from official sources (VisitKorea, Hallasan NP, AllTrails, Wikipedia, Trazy, Inside Jeju)."
+    ]
+  },
+  "haedong_yonggungsa": {
+    "visitBasics": {
+      "hours": "Daily 04:30–19:20 (last admission 18:50)",
+      "closed": "Open year-round",
+      "admission": "Free; private-car parking is paid",
+      "walking": "Moderate — 108 steps through pine grove, multiple seaside terraces and stairs"
+    },
+    "convenience": {
+      "restroom": "Available near main entrance and inside complex",
+      "parking": "Haedong Yonggungsa Parking Lot (paid, per Visit Busan official)"
+    },
+    "smartNotes": {
+      "photo": "Sunrise rock at the seaward edge; stairs next to Daeungjeon Hall give the classic ocean-and-temple frame",
+      "facilities": "Souvenir/snack stalls and small cafe at upper plaza; coastal trail leads further along the rocks",
+      "tip": "Side doors for entering halls (front door reserved for monks); Buddha's Birthday (Apr–May) brings the lantern display"
+    }
+  },
+  "cheongsapo_blue_line_park": {
+    "visitBasics": {
+      "hours": "Sky Capsule and Beach Train ~09:30–18:30 (extended to 20:30 in summer); Cheongsapo Daritdol Skywalk free 24h",
+      "closed": "Operations weather-dependent; check the day of",
+      "admission": "Free area; Sky Capsule 40,000 KRW (2 ppl) / 45,000 (3) / 50,000 (4) one-way; Beach Train ticketed separately",
+      "walking": "Easy along the wooden Green Railway boardwalk (Mipo↔Cheongsapo 2.3 km, ~30 min); flat at stations"
+    },
+    "convenience": {
+      "restroom": "Available at Mipo, Cheongsapo and Songjeong stations",
+      "parking": "Public lots near Mipo Station and Cheongsapo Station (paid)"
+    },
+    "photo_spot_pin": "Cheongsapo Station crosswalk (Slam Dunk look-alike) and Daritdol Skywalk glass deck",
+    "smartNotes": {
+      "photo": "Cheongsapo Station crosswalk for the famous Slam Dunk-style frame; Daritdol Skywalk for glass-bottom sea view",
+      "facilities": "Ticketing counters at Mipo, Cheongsapo and Songjeong only; convenience store and food at Mipo plaza",
+      "tip": "Sky Capsule books out fast at sunset slots — reserve in advance via Klook or the official site; Mipo→Cheongsapo direction has the better light at sunset"
+    }
+  },
+  "un_memorial_cemetery": {
+    "visitBasics": {
+      "hours": "Daily 09:00–18:00 (May–Sep) / 09:00–17:00 (Oct–Apr)",
+      "closed": "Open year-round",
+      "admission": "Free",
+      "walking": "Easy — flat grass paths and paved walkways across 14 ha of grounds"
+    },
+    "convenience": {
+      "restroom": "Available at Memorial Service Hall and visitor center",
+      "parking": "On-site lot — free for first 90 min, then ₩1,200/hr"
+    },
+    "smartNotes": {
+      "photo": "Wall of Remembrance (40,896 names on 140 marble panels) and the Symbolic Area where the 22 sending-state flags fly",
+      "facilities": "Memorial Service Hall, Memorabilia Hall, UN Forces Monument, and adjacent UN Peace Memorial Hall",
+      "tip": "Watch the 12-minute documentary in Memorial Service Hall first (English available); dress neatly, keep voices low, and no food on the grounds"
+    }
+  },
+  "gamcheon_culture_village": {
+    "visitBasics": {
+      "hours": "Daily 09:00–18:00 (Mar–Oct) / 09:00–17:00 (Nov–Feb); some shops/cafes keep their own hours",
+      "closed": "Open year-round (a living residential community)",
+      "admission": "Free village entry; optional Stamp Map ≈ 2,000 KRW",
+      "walking": "Strenuous — very steep alleys and stairs; not stroller- or wheelchair-friendly in many sections"
+    },
+    "convenience": {
+      "restroom": "Public restrooms at the Tourist Information Center and around the main viewpoints",
+      "parking": "Gamcheon Public Parking Lot 2 (paid)"
+    },
+    "smartNotes": {
+      "photo": "Little Prince and Fox bench (long queue) and Haneul Maru Observatory for the sweeping rainbow-roof and bay view",
+      "facilities": "Hanbok rental, craft workshops, Korean candy stalls, cafes; small village museum at the entrance",
+      "tip": "Residents live here — keep voices down, no drones, take rubbish with you; wear grippy shoes for the steep lanes"
+    }
+  },
+  "jagalchi_market": {
+    "visitBasics": {
+      "hours": "Daily 05:00–22:00 (vendor hours vary; live-fish section officially 06:00–22:00)",
+      "closed": "1st and 3rd Tuesdays of every month",
+      "admission": "Free entry; pay-as-you-go for seafood and 2F cooking-fee",
+      "walking": "Moderate — ground floor flat (wet, can be slippery); stairs to 2F sashimi/restaurant level"
+    },
+    "convenience": {
+      "restroom": "Available inside the main building on each floor",
+      "parking": "Basement lot at the main building, ₩700 / 10 min"
+    },
+    "smartNotes": {
+      "photo": "Outdoor pier behind the building for the harbor-and-fishing-boat shot; Jagalchi ajummas at the live-fish stalls",
+      "facilities": "1F live seafood, 2F sashimi & restaurants, dried-fish section, rooftop Sky Park (when open), Sashimi Center buffet on 5F",
+      "tip": "Buy the fish on 1F, then bring it upstairs to a 2F restaurant and pay a small cooking fee — that's the local way; address 52 Jagalchihaean-ro, Jung-gu"
+    }
+  },
+  "taejongdae": {
+    "visitBasics": {
+      "hours": "Park 04:00–24:00 (Mar–Oct) / 05:00–24:00 (Nov–Feb); facilities close ~20:00",
+      "closed": "Open year-round; Danubi Train and lighthouse close in inclement weather",
+      "admission": "Park free; Danubi Train 4,000 KRW round-trip / 2,000 one-way (adult), 2,000/1,500 youth/child",
+      "walking": "Strenuous if walking the full 4.3 km loop; lighthouse area has many steep stairs (no elevator)"
+    },
+    "convenience": {
+      "restroom": "Available at the main entrance, Observatory, and lighthouse plaza",
+      "parking": "Taejongdae Park Parking Lot (paid; vehicles enter from 09:00)"
+    },
+    "smartNotes": {
+      "photo": "Yeongdo Lighthouse cliff edge and the Observatory overlook toward Oryukdo and (on clear days) Tsushima",
+      "facilities": "Tourist information center at the entrance, Danubi Train ticket booth, food/snack stalls at the rocks below the lighthouse",
+      "tip": "Buy Danubi Train tickets in advance during high season — your ticket is tied to a specific time slot; use the Visit Busan City Tour Bus wristband for 25% off the train fare"
+    }
+  },
+  "yongdusan_park": {
+    "visitBasics": {
+      "hours": "Park 24h year-round; Busan Diamond Tower observatory 10:00–22:00 (last admission 21:30)",
+      "closed": "Park open year-round; Tower may close in severe weather",
+      "admission": "Park free; Busan Diamond Tower 12,000 KRW (adult) / 9,000 KRW (senior 65+ / child 3–12) / under-3 free",
+      "walking": "Easy — escalator from Gwangbok-ro / Nampo-dong handles the climb; gentle paths within the park"
+    },
+    "convenience": {
+      "restroom": "Available within the park and inside the Tower lobby",
+      "parking": "No dedicated lot at the park; nearby Lotte Department Store Gwangbok lot (paid)"
+    },
+    "smartNotes": {
+      "photo": "Tower observatory windows facing Busan Port at golden hour; flower clock and Statue of Admiral Yi Sun-sin in the park",
+      "facilities": "Souvenir shops, cafe, AR/media zones inside the Tower; bell pavilion and dragon sculpture in the park",
+      "tip": "Climb via the outdoor escalator from Gwangbok-ro Fashion Street rather than the stairs; Tower pairs well with Nampo-dong dinner — visit at sunset for day-and-night views"
+    }
+  },
+  "ahopsan_bamboo_forest": {
+    "visitBasics": {
+      "hours": "Daily 09:00–18:00 (last entry 17:00)",
+      "closed": "Mondays (some sources); open during major Korean holidays",
+      "admission": "Adults 8,000 KRW / Under 18 5,000 KRW (no senior or group discount — private property)",
+      "walking": "Moderate — gentle slopes, mostly flat, ~1–2 hour loop on natural unpaved trails"
+    },
+    "convenience": {
+      "restroom": "Available near the entrance/ticket booth",
+      "parking": "Free spacious lot at the entrance (closes after 18:00)"
+    },
+    "smartNotes": {
+      "photo": "Gutteo Bamboo Grove ('The King: Eternal Monarch' filming site) and the second bamboo forest with sunlight filtering through the canopy",
+      "facilities": "Free bamboo walking-stick rental and mosquito spray at the gate; no on-site cafe — bring water",
+      "tip": "Pets, drones, alcohol, smoking, bicycles and music speakers are all prohibited (working forest with wildlife); plant/insect collection is forbidden"
+    }
+  },
+  "bulguksa_temple": {
+    "visitBasics": {
+      "hours": "Daily 09:00–18:00 (last admission 17:00)",
+      "closed": "Open year-round",
+      "admission": "Free (since 2023, per the revised Cultural Heritage Protection Act)",
+      "walking": "Moderate — stone steps, slopes and gravel paths; comfortable shoes recommended"
+    },
+    "convenience": {
+      "restroom": "Free public restrooms (designed in mini-temple style) inside the complex",
+      "parking": "On-site lot (paid)"
+    },
+    "smartNotes": {
+      "photo": "Cheongungyo / Baegungyo bridge stairway (NT 23) below Jahamun Gate; Dabotap (NT 20) and Seokgatap (NT 21) pagodas in the main courtyard",
+      "facilities": "Tourist Information Center at the entrance; Bulguksa Museum (separate ticket 2,000 / 1,000 KRW, closed Mondays)",
+      "tip": "Modest dress; remove shoes when entering the halls; no drones; do not photograph monks or worshippers (signs marked clearly)"
+    }
+  },
+  "gyeongju_national_museum": {
+    "visitBasics": {
+      "hours": "Weekdays 10:00–18:00 / Weekends & holidays 10:00–19:00 (last admission 30 min before close); extended Saturday & last-Wednesday hours seasonally",
+      "closed": "New Year's Day, Seollal, Chuseok, first Monday of March and November",
+      "admission": "Free (special exhibitions may require advance reservation)",
+      "walking": "Easy — multiple flat galleries plus a large outdoor exhibition area"
+    },
+    "convenience": {
+      "restroom": "Available in every wing and outdoor exhibit area",
+      "parking": "Free on-site lot"
+    },
+    "smartNotes": {
+      "photo": "Sacred Bell of King Seongdeok (NT 29) at the front of the museum; outdoor stone-pagoda field at sunset",
+      "facilities": "Silla History Gallery, Silla Art Gallery, Wolji Gallery (Anapji Pond relics), Children's Museum, English audio guide, museum shop, cafe",
+      "tip": "Free English museum tour on Sundays at 10:00 and 14:00 (90 min, departs from 1F Silla History Gallery); the Cheonma-zuka Golden Crown (NT 188) is the must-see in the Silla History Gallery"
+    }
+  },
+  "gyochon_hanok_village": {
+    "visitBasics": {
+      "hours": "Outdoor village 24h; shops and the Choi Family House typically 10:00–17:00 (some take a 15:00–18:00 lunch break)",
+      "closed": "Village open year-round; Choi Family House may close on Mondays",
+      "admission": "Free village entry; some workshops and the Gyeongju Choi Wealthy Family House may charge a small fee",
+      "walking": "Easy — flat, stone-paved lanes; comfortable shoes recommended"
+    },
+    "convenience": {
+      "restroom": "Public restrooms near the village entrance and main plaza",
+      "parking": "On-site lot near the village (free, fills quickly on weekends)"
+    },
+    "smartNotes": {
+      "photo": "Tiled-roof rooflines along the stone-walled lanes and the Choi Family House courtyard",
+      "facilities": "Hanbok rental, Gyodong Beopju traditional liquor shop (Important Intangible Cultural Property No. 86-3), local eateries selling Gyochon makgeolli, ssambap and injeolmi ice cream",
+      "tip": "Pair with Woljeonggyo Bridge across the stream; weekday visits are noticeably quieter than weekends, and many shops close around 17:00"
+    }
+  },
+  "woljeonggyo_bridge": {
+    "visitBasics": {
+      "hours": "Outdoor bridge 24h; pavilion exhibition hall typically 09:00–18:00",
+      "closed": "Bridge open year-round",
+      "admission": "Free",
+      "walking": "Easy — flat, wide wooden bridge deck; pavilion stairs at each end"
+    },
+    "convenience": {
+      "restroom": "Public restroom on the Gyochon side of the bridge",
+      "parking": "Use Gyochon Hanok Village parking (a 2-min walk away)"
+    },
+    "smartNotes": {
+      "photo": "Reflection of the illuminated bridge on Namcheon Stream after sunset; the pavilion's traditional dancheong at golden hour",
+      "facilities": "Inside one pavilion is a small free exhibition on the bridge's history and Silla-era engineering",
+      "tip": "Reconstructed in 2018 from records of the original 760 AD Silla bridge — best visited at dusk to catch both the daylight architecture and the night illumination (lit ~sunset to about 22:00)"
+    }
+  },
+  "gyeongbokgung_palace": {
+    "visitBasics": {
+      "hours": "Mar–May & Sep–Oct: 09:00–18:00; Jun–Aug: 09:00–18:30; Nov–Feb: 09:00–17:00 (last admission 1 hour before close)",
+      "closed": "Tuesdays",
+      "admission": "Adult 3,000 KRW / Youth (7–18) 1,500 KRW; free for ≤6, seniors 65+, hanbok wearers",
+      "walking": "Moderate — large palace grounds (1–2 hours of walking); paths are gravel and stone"
+    },
+    "convenience": {
+      "restroom": "Multiple restrooms throughout the palace grounds",
+      "parking": "Limited on-site paid lot; nearby public lots near Gwanghwamun"
+    },
+    "smartNotes": {
+      "photo": "Royal Guard Changing Ceremony at Gwanghwamun (10:00 and 14:00, ~20 min, free; cancelled on Tuesdays and in heavy rain); Gyeonghoeru Pavilion reflected in its pond",
+      "facilities": "Free guided tours in English (11:00, 13:30, 15:30); hanbok rental shops surround the palace gates; National Folk Museum and Children's Museum on the grounds",
+      "tip": "Wearing hanbok gets you in for free — many rental shops offer a 1–4 hour package; arrive 10–15 min before the 10:00 ceremony for a clear view"
+    }
+  },
+  "bukchon_hanok_village": {
+    "visitBasics": {
+      "hours": "Open 24 hours (outdoor); resident-quiet hours 22:00–10:00 enforced",
+      "closed": "Open year-round (residential — please be respectful)",
+      "admission": "Free; some hanok museums charge separately (≈ 3,000 KRW)",
+      "walking": "Moderate — uphill cobblestone alleys; not stroller-friendly in places"
+    },
+    "convenience": {
+      "restroom": "Bukchon Cultural Center and Bukchon Tourist Information Center provide public restrooms",
+      "parking": "No dedicated lot — use Anguk Station-area paid lots and walk in"
+    },
+    "smartNotes": {
+      "photo": "Gahoe-dong Alley 8 (downhill view toward N Seoul Tower over hanok roofs) and Alley 31 — the two iconic 'Bukchon 8 Views' angles",
+      "facilities": "Bukchon Cultural Center (free programs), small hanok cafes and craft workshops; map and route info at the visitor center",
+      "tip": "This is a residential neighborhood — keep voices down, do not enter private gates, and respect the marshals on Gahoe-dong Alley 11; weekday mornings are quietest"
+    }
+  },
+  "gwangjang_market": {
+    "visitBasics": {
+      "hours": "Food alley daily 09:00–23:00 (most stalls 11:00 onward); general market 09:00–18:00 (closed Sun); apparel 10:00–19:00 (closed Sun)",
+      "closed": "Many food stalls close on Sundays or Mondays — varies by stall",
+      "admission": "Free entry; per-meal budget ≈ 8,000–15,000 KRW",
+      "walking": "Easy — flat covered alleys; can be very crowded at lunch and dinner"
+    },
+    "convenience": {
+      "restroom": "Public restrooms at market entrances",
+      "parking": "Use Jongno 4-ga Jongmyo Public Parking Lot (paid)"
+    },
+    "smartNotes": {
+      "photo": "Bindae-tteok (mung bean pancake) stalls being fried on cast-iron griddles; Mayak Gimbap rolls at Mother & Daughter's Gimbap",
+      "facilities": "Hundreds of food stalls, sit-down restaurants on the outer ring, hanbok and vintage clothing on the 2F",
+      "tip": "Cash is still preferred at smaller stalls; lunch rush 12:00–14:00 means long queues — try arriving 11:00 or after 14:30; Netflix-famous knife-cut noodles at Cho Yonsoon's stall"
+    }
+  },
+  "insadong": {
+    "visitBasics": {
+      "hours": "Outdoor street 24h; shops typically 10:00–22:00; pedestrian-only on Saturdays 14:00–22:00 and Sundays 10:00–22:00",
+      "closed": "Most shops open year-round; some close on Mondays",
+      "admission": "Free; some museums and craft workshops charge separately",
+      "walking": "Easy — wide, mostly flat, pedestrian-friendly main street with branching alleys"
+    },
+    "convenience": {
+      "restroom": "Available inside Anyoung Insadong, Ssamziegil, and at Anguk Station Exit 6",
+      "parking": "Use nearby paid lots (Insa-dong is largely pedestrian); Anguk Station has metered street parking"
+    },
+    "smartNotes": {
+      "photo": "Ssamziegil's spiraling indoor courtyard and the calligraphy-style Hangul shopfronts along Insadong-gil",
+      "facilities": "Roughly 40% of Korea's antique shops, plus traditional tea houses, hanji paper shops, calligraphy stores, art galleries, and the Korean Craft and Design Foundation Gallery",
+      "tip": "Branch into the side alleys for the quieter tea houses and locally-run craft shops — the main street is the touristy part; weekend afternoons are pedestrian-only and most lively but also the most crowded"
+    }
+  },
+  "bomun_lake": {
+    "visitBasics": {
+      "hours": "Outdoor 24h year-round; cherry blossom illumination ~sunset to 22:00 in early April",
+      "closed": "Open year-round; some lakeside cafes close Mondays",
+      "admission": "Free (lake and walking trail); paddle boats and bike rentals priced separately",
+      "walking": "Easy — flat 8km paved loop trail along the lakeside; can be sampled in 1–2 km segments without doing the full loop"
+    },
+    "convenience": {
+      "restroom": "Available at the Tourist Information Center, Bomun Pavilion, and major resort access points along the loop",
+      "parking": "Multiple free public lots around the resort complex (Hoban Square, Bomun Pavilion); fills quickly during the festival weekend"
+    },
+    "smartNotes": {
+      "photo": "Bomun Pavilion (CNN '50 most beautiful places in Korea') and the wooden bridge for reflection shots; sunset around the east shore near Gyeongju World",
+      "facilities": "Bicycle and tandem rentals (~₩10,000/3hr), paddle boats, lakeside cafes and restaurants, Bomun Open Air Stage with free traditional music performances Apr–Jan",
+      "tip": "Cherry blossom peak is typically late March to early April (~7-day window); arrive on a weekday morning or after 16:00 to avoid the worst weekend crowds — full loop walk takes ~2 hours, but most tours sample only 1–2 km"
+    }
+  },
+  "daereungwon_tomb_complex": {
+    "visitBasics": {
+      "hours": "Park 09:00–22:00 (until 21:00 in winter); Cheonmachong Tomb interior 09:00–22:00",
+      "closed": "Open year-round",
+      "admission": "Park: Free. Cheonmachong Tomb interior (NT-class artifacts): Adult 3,000 KRW / Teenager 2,000 / Child 1,000",
+      "walking": "Easy — flat grassy paths between the burial mounds; spread across 126,500 m² (good for stroller and senior visitors)"
+    },
+    "convenience": {
+      "restroom": "Public restrooms at the main entrance and near Cheonmachong Tomb",
+      "parking": "Daereungwon parking lot at the main gate (paid)"
+    },
+    "smartNotes": {
+      "photo": "Daereungwon Stone Wall Road (cherry blossom tunnel — annual festival Apr 3–5); the giant magnolia tree behind Hwangnamdaechong; Tomb of King Michu surrounded by cherry trees",
+      "facilities": "Small museum inside Cheonmachong Tomb showing 11,526 excavated artifacts including the famous Heavenly Horse painting (the only known Silla-era painting); Day Pass option available (₩4,000–8,000 covering Daereungwon + Donggung & Wolji Pond)",
+      "tip": "Climbing the burial mounds is prohibited (heavy fine); 30–60 min is typical for a walk-through, longer if you enter Cheonmachong; pairs naturally with Cheomseongdae and Woljeonggyo Bridge — all within a 3 km radius"
+    }
+  },
+  "cheomseongdae": {
+    "visitBasics": {
+      "hours": "Outdoor viewing 24h; cherry blossom illumination ~sunset to 22:00 in early April",
+      "closed": "Open year-round (it is a stone monument in a public field — no admission gate)",
+      "admission": "Free",
+      "walking": "Very easy — flat open field; closest stop on the Gyeongju downtown loop"
+    },
+    "convenience": {
+      "restroom": "Public restrooms at the adjacent visitor center / Donggung area",
+      "parking": "Cheomseongdae parking lot (paid) and shared parking with the wider Gyeongju Historic Area"
+    },
+    "smartNotes": {
+      "photo": "Cheomseongdae itself with cherry blossoms or canola flowers in the surrounding field; the Gyerim Forest immediately south is also photogenic",
+      "facilities": "Open field with seasonal flower plantings (cherry blossoms in spring, cosmos in autumn); food trucks during festivals; English info plaques at base of the tower",
+      "tip": "The 27-tier stone tower from 647 AD is the oldest astronomical observatory in East Asia and a National Treasure — counting the stones (365 to match days of the year) is a fun activity for kids; only 5–15 min needed for the stop itself"
+    }
+  },
+  "tongdosa_temple": {
+    "visitBasics": {
+      "hours": "Outdoor temple grounds 24h; Seongbo Museum 09:00–17:00; Daeungjeon main hall typically open daylight hours",
+      "closed": "Open year-round; Seongbo Museum closed Mondays",
+      "admission": "Temple grounds: Free (most general visit areas); Seongbo Museum (first Buddhist museum in Korea, 600+ paintings, 30,000 artifacts): typically ₩2,000–3,000 adult — confirm at entrance",
+      "walking": "Moderate — 1.2 km riverside paved trail from parking lot to main temple entrance (flat, can go barefoot per VisitKorea), then temple courtyards spread across hillside slopes (some stairs and gentle inclines)"
+    },
+    "convenience": {
+      "restroom": "Public restrooms at the parking lot, Seongbo Museum entrance, and inside the main temple compound near Daeungjeon",
+      "parking": "Two large paid parking lots near the trailhead (Yangsan City + Tongdosa joint operation); fills during festivals (plum blossom, Buddha's Birthday lantern festival)"
+    },
+    "smartNotes": {
+      "photo": "Jajangmae (지장매) — the 350-year-old red plum tree planted by Master Jajang, peak ~Late February to Early March, 'first messenger of spring'; Daeungjeon (National Treasure #290 — unique because it has no Buddha image inside, instead the Diamond Stairway/Geumgang Gyedan enshrines actual Buddha relics behind it); the riverside pine forest trail (curved 'dragon-branch' red pines, Iljumun gate approach)",
+      "facilities": "Templestay program available in English (lotus lanterns, tea ceremony, meditation, 108 prostrations); Seongbo Museum (largest Buddhist museum in Korea); 17 hermitages on the mountain (most require additional hiking — not part of standard temple visit)",
+      "tip": "UNESCO World Heritage 'Sansa, Buddhist Mountain Monasteries in Korea' (2018) — one of Korea's Three Jewel Temples (Bulbo Temple, enshrining genuine Buddha relics). Daeungjeon famously contains NO Buddha image — only an altar facing the Diamond Stairway. Best visit time is early morning before tour buses arrive (08:30–10:00) or late afternoon (15:00–16:30) for golden light on the temple"
+    }
+  },
+  "wondong_plum_blossom_village": {
+    "visitBasics": {
+      "hours": "Outdoor village/festival grounds: open 24h during bloom (~late Feb to mid Mar); festival main events typically Fri–Sun in early March",
+      "closed": "Open year-round (the village itself); plum blossom peak window only ~10 days mid-March",
+      "admission": "Free — the village and trails are open to the public; festival booth purchases are pay-direct",
+      "walking": "Easy — flat farm paths along the Nakdong River + railway tracks; can be sampled in 1–2 km segments without committing to a long walk"
+    },
+    "convenience": {
+      "restroom": "Public restrooms at Wondong Station (railway), the festival main stage area, and the visitor center during festival weekends",
+      "parking": "Free public lots near Wondong Station; fills heavily on festival weekend mornings (insider tip: arrive before 09:00 or after 15:00)"
+    },
+    "smartNotes": {
+      "photo": "The signature shot is plum blossom branches framing the Nakdong River + the railway tracks — passing trains create a once-per-30-minutes photo moment; festival weekends add traditional music busking under the trees",
+      "facilities": "Wondong Plum Blossom Festival (typically March 1–3 + 10-day extended bloom window); 'Plum Noodle Market' selling locally made plum-infused noodles, plum extracts, plum highball, Maesil products; 'Minari Festival' running concurrently with greenhouse pop-up restaurants serving Minari Samgyeopsal — the area's signature spring dish (clean-water parsley grilled with pork belly, only available at this season)",
+      "tip": "Yangsan Wondong is 'romantic and nostalgic' (Korean tourism tagline) compared to Gwangyang's grand mountain-scale plum festival — smaller, less-crowded, with a stronger railway/river aesthetic. Pairs naturally with Tongdosa Temple (~25 min drive) for a Yangsan-focused half day."
+    }
+  },
+  "hallasan_eoseungsaengak": {
+    "_poi_meta": {
+      "poi_key": "hallasan_eoseungsaengak",
+      "name_en": "Hallasan Eoseungsaengak Trail",
+      "name_ko": "한라산 어승생악",
+      "is_attraction": true,
+      "fee_krw": 0,
+      "trail_length_one_way_km": 1.3,
+      "elevation_gain_m": 200,
+      "summit_elevation_m": 1169,
+      "round_trip_min": 60,
+      "trailhead": "Eorimok Visitor Center",
+      "no_reservation_required": true,
+      "park_status": [
+        "UNESCO World Heritage 2007",
+        "UNESCO Biosphere Reserve 2002",
+        "National Park 1970",
+        "Natural Monument 1966"
+      ],
+      "historical_feature": "Tochika — 1945 Imperial Japanese military pillbox/communication post at summit"
+    },
+    "visitBasics": {
+      "hours": "Trail accessible roughly 05:00–18:00 (varies seasonally; longer in summer May–Aug)",
+      "closed": "Open year-round; closures possible in extreme weather",
+      "admission": "Free; no entrance fee, no reservation required (only Seongpanak/Gwaneumsa summit trails require advance QR reservation)",
+      "walking": "Moderate — 1.3 km one-way, ~200 m elevation gain via wooden stairs and boardwalks; 30–40 min up, plan 1–1.5 hr round trip"
+    },
+    "convenience": {
+      "restroom": "Available at Eorimok Visitor Center near the trailhead",
+      "parking": "Eorimok Trail parking lot at the visitor center (free)"
+    },
+    "smartNotes": {
+      "photo": "Summit observation deck for 360° view of Jeju City, the northern coast and the higher Hallasan peaks (Baengnokdam crater on clear days). Tochika ruins for a quick history shot",
+      "facilities": "Visitor Center with information panels and restrooms at trailhead; benches and rest points along the trail; no shops or vending past the entrance",
+      "tip": "Wooden stairs are slippery after rain and icy in winter (Dec–Feb) — micro-spikes recommended in winter. Pets and drones are not allowed in Hallasan National Park"
+    }
+  },
+  "daepo_jusangjeolli_cliff": {
+    "_poi_meta": {
+      "poi_key": "daepo_jusangjeolli_cliff",
+      "name_en": "Daepo Jusangjeolli Cliff (Columnar-Jointed Lava)",
+      "name_ko": "대포 주상절리 (지삿개)",
+      "is_attraction": true,
+      "fee_krw": 2000,
+      "fee_youth_krw": 1000,
+      "fee_free_under_age": 7,
+      "fee_free_over_age": 65,
+      "natural_monument_no": 443,
+      "designation_date": "2005-01-06",
+      "column_height_m": "30-40",
+      "coastline_length_m": 1000,
+      "wave_height_high_tide_m": 20,
+      "loop_length_km": 0.8,
+      "loop_time_min": 15
+    },
+    "visitBasics": {
+      "hours": "Daily 09:00–18:00 (last admission ~17:00; hours may shift seasonally with sunset)",
+      "closed": "Open year-round",
+      "admission": "Adults ₩2,000 / Youth (7–24) ₩1,000 / Free for under 7 and over 65; group rate (10+) ₩1,600 adult / ₩600 youth",
+      "walking": "Easy — 0.8 km loop on paved walkways and wooden viewing decks; ~12–15 min walk, fully flat"
+    },
+    "convenience": {
+      "restroom": "Available at the entrance plaza and visitor area",
+      "parking": "Paid parking lot adjacent to entrance — ₩1,000 small / ₩2,000 medium (sedan to 15-seater) / ₩3,000 large vehicles"
+    },
+    "smartNotes": {
+      "photo": "First viewing deck for the classic hexagonal-columns frame; far deck for waves crashing into the columns (best at high tide — waves can shoot 20+ m up the cliff)",
+      "facilities": "Souvenir kiosks at entrance selling Hallabong (Jeju tangerine) juice in dol-hareubang shaped bottles, hot dogs, octopus skewers, ice cream and accessories; ICC Jeju (Convention Center) and Yakcheonsa Temple are walking distance",
+      "tip": "Plan ~30–45 min total. The wooden deck doesn't allow descent to the columns themselves — they are viewed from above. Best photos when sunlight hits at an angle (mid-morning or late afternoon); spray reaches the deck at high tide so cameras may need protection"
+    }
+  },
+  "cheonjeyeon_falls": {
+    "_poi_meta": {
+      "poi_key": "cheonjeyeon_falls",
+      "name_en": "Cheonjeyeon Falls (Three-Tier Waterfall)",
+      "name_ko": "천제연 폭포",
+      "is_attraction": true,
+      "fee_krw": 2500,
+      "fee_youth_krw": 1350,
+      "tier_1_height_m": 22,
+      "tier_1_pond_depth_m": 21,
+      "tier_2_height_m": 30,
+      "natural_monument_no": 378,
+      "designation_year": 1993,
+      "seonimgyo_bridge_length_m": 120,
+      "seonimgyo_bridge_height_m": 78,
+      "name_meaning": "Pond of the Emperor of Heaven"
+    },
+    "visitBasics": {
+      "hours": "Mar–Oct 08:00–18:30; Nov–Feb 09:00–17:30. Last admission 1 hour before closing",
+      "closed": "Open year-round",
+      "admission": "Adults ₩2,500 / Youth & Children ₩1,350 (covers larger valley and Seonimgyo Bridge)",
+      "walking": "Moderate — many stairs across the three tiers; total ~1–1.5 km loop with significant ascent/descent. Plan 1–1.5 hr"
+    },
+    "convenience": {
+      "restroom": "Available near the ticket office at the entrance (none past the bridge)",
+      "parking": "On-site parking lot — free for visitors"
+    },
+    "smartNotes": {
+      "photo": "Seonimgyo Bridge (vermilion arch with seven nymphs carved on the trusses) for the classic shot; viewing deck for the second tier — the most active and photogenic waterfall (30 m drop into emerald pool); Cheonjeru Pavilion deck for distant overview",
+      "facilities": "Benches and shaded rest spots along the path; no shops past the bridge — pack water in summer; Chilseonyeo (Seven Nymphs) Festival held here in May of even-numbered years",
+      "tip": "First tier ONLY flows after heavy rain (often dry in winter); the second tier is the reliable attraction. Lots of stairs — comfortable shoes required. Note: do NOT confuse with Cheonjiyeon Falls (different waterfall in Seogwipo old town). Swimming prohibited"
+    }
+  },
+  "osulloc_tea_museum": {
+    "_poi_meta": {
+      "poi_key": "osulloc_tea_museum",
+      "name_en": "O'sulloc Tea Museum",
+      "name_ko": "오설록 티 뮤지엄",
+      "is_attraction": true,
+      "fee_krw": 0,
+      "opened_year": 2001,
+      "operator": "Amorepacific Corporation",
+      "annual_visitors": 2000000,
+      "founded_concept_year": 1979,
+      "first_harvest_year": 2009,
+      "tea_field_name": "Seogwang Dawon (Tea Plantation)",
+      "annual_tea_production_tonnes": 700,
+      "address_en": "425 Sinhwayeoksa-ro, Andeok-myeon, Seogwipo-si, Jeju-do",
+      "designation": "designboom Top 10 art museums"
+    },
+    "visitBasics": {
+      "hours": "Daily 09:00–19:00 (Apr–Oct) / 09:00–18:00 (Nov–Mar); subject to change in adverse weather",
+      "closed": "Open year-round",
+      "admission": "Free entry to museum and tea fields; tea, desserts, classes priced separately",
+      "walking": "Easy — paved paths and ramps throughout; tea fields fully flat. Stroller- and wheelchair-friendly"
+    },
+    "convenience": {
+      "restroom": "Available throughout the museum and adjacent Innisfree Jeju House",
+      "parking": "Large free parking lot on-site"
+    },
+    "smartNotes": {
+      "photo": "The teacup-shaped main building exterior; 2nd-floor observatory window over the Seogwang tea fields; the row of giant teacup planters at the field entrance; Innisfree Jeju House garden path with blue flowers in season",
+      "facilities": "Cafe (matcha ice cream, green tea swiss roll, Hallabong/tangerine tea, Camellia flower tea); flagship gift shop; Tea Stone (since 2013) — paid tea brewing classes; adjacent Innisfree Jeju House (sister Amorepacific brand) with handmade soap workshop (~₩20,000) and Green Cafe brunch",
+      "tip": "Arrive at opening (09:00) on weekdays — tour buses crowd the place from 10:00 onward. Green tea ice cream queue gets long midday. Pair with Innisfree Jeju House across the path for a 1.5–2 hr visit. Combo well with Sanbangsan (~25 min) or Hallim Park (~30 min)"
+    }
+  },
+  "aewol_cafe_street": {
+    "_poi_meta": {
+      "poi_key": "aewol_cafe_street",
+      "name_en": "Aewol Cafe Street (Handam Coastal Trail)",
+      "name_ko": "애월 카페거리 / 한담해안산책로",
+      "is_attraction": true,
+      "fee_krw": 0,
+      "address_en": "Aewol-ro 1-gil, Aewol-eup, Jeju-si, Jeju-do",
+      "drive_from_jeju_city_min": 40,
+      "promenade_official_name": "Jang Han Chul Promenade (장한철산책로)",
+      "promenade_named_after": "Jang Han Chul (Jeju-born Joseon-era writer on Korean maritime history)",
+      "olle_trail_segment": "Jeju Olle Trail 15A (Hallim → Gonae)",
+      "coastal_walk_min": 30,
+      "famous_cafes": [
+        "Bomnal Cafe",
+        "Randy's Donuts",
+        "Cafe Knotted",
+        "Haejigae Cafe",
+        "Aewol the Sunset"
+      ]
+    },
+    "visitBasics": {
+      "hours": "Outdoor area 24h; cafes typically 09:00–22:00 (vary by venue)",
+      "closed": "Outdoor area open year-round; individual cafes have their own days off",
+      "admission": "Free area; food & drinks priced individually (~₩6,000–12,000 per cafe order)",
+      "walking": "Easy — paved coastal promenade between Gwakji Beach and Handam Village (~2 km, 20–30 min one way)"
+    },
+    "convenience": {
+      "restroom": "Inside cafes and at small public facilities along the coastal trail",
+      "parking": "Limited — small public lots near the main cafes; some venues offer free private parking for patrons. Roads are narrow, parking can be challenging on weekends"
+    },
+    "smartNotes": {
+      "photo": "West-facing coastal cliffs at sunset (one of the best sunset spots on Jeju); the small cove at Handam for transparent kayaks; iconic Bomnal Cafe terrace seafront; Gwakji Beach 'jelly sea' shallows in summer",
+      "facilities": "Dozens of cafes, bakeries (Cafe Knotted, Randy's Donuts), seafood ramyeon at Nolman (₩10,000, single dish), burger shops; transparent kayak rentals at Handam (~₩10,000/30 min, 2-person boats with life jackets)",
+      "tip": "Sunset is the headline — west-facing coast catches the sun dropping into the sea. Weekday afternoons quieter; weekend afternoons can be packed and parking near impossible. Bus 202/100/200 from Jeju City stops at Handam-dong"
+    }
+  },
+  "jeongbang_falls": {
+    "_poi_meta": {
+      "poi_key": "jeongbang_falls",
+      "name_en": "Jeongbang Falls",
+      "name_ko": "정방 폭포",
+      "is_attraction": true,
+      "fee_krw": 2000,
+      "fee_youth_krw": 1000,
+      "fee_free_under_age": 7,
+      "fee_free_over_age": 65,
+      "height_m": 23,
+      "width_m": 8,
+      "pool_depth_m": 5,
+      "is_unique_in_asia": true,
+      "unique_feature": "Only waterfall in Asia falling directly into the ocean",
+      "stairs_count_to_base": 130,
+      "address_en": "37 Chilsipni-ro 214beon-gil, Seogwipo-si, Jeju-do",
+      "scenic_designation": "Yeongjusipgyeong (10 Scenic Wonders of Jeju)",
+      "legend_inscription": "Seobulgwacha — origin of the Seogwipo place-name (Seobul Headed Back West)"
+    },
+    "visitBasics": {
+      "hours": "Daily 09:00–17:40 (last admission 30 min before closing; slight seasonal variation)",
+      "closed": "Open year-round (occasional closures for high tide / typhoon)",
+      "admission": "Adults ₩2,000 / Youth (7–24) ₩1,000; free under 7 and 65+",
+      "walking": "Moderate — ~130 stairs down to the base, then unmarked rocky terrain to reach the waterfall. Stairs slippery when wet; rocks slippery and irregular — sturdy shoes essential"
+    },
+    "convenience": {
+      "restroom": "At the entrance/ticketing area before the descent (none at the base)",
+      "parking": "On-site parking lot at the entrance"
+    },
+    "smartNotes": {
+      "photo": "Mid-descent platform for the full-cliff waterfall + ocean frame; rock-hopping at the base for close-up shots with the ocean spray (be cautious — slippery); the cliff-top observatory for distant view of Seopseom and Munseom Islands",
+      "facilities": "Souvenir/snack stalls and ramyeon shops near the entrance; Haenyeo (women diver) ajumma stalls at the base selling fresh sea urchin and conch sashimi (seasonal); Sojeongbang Waterfall ~300 m east; Seogwipo Maeil Olle Market 12 min walk",
+      "tip": "Best flow after heavy rain or in spring (Hallasan snowmelt) — flow can be light in summer dry spells. AVOID flip-flops on the rock terrain. Watch tide — at high tide many rocks at the base are submerged. Best light: mid-morning (10:00) and late afternoon (15:00–17:00)"
+    }
+  },
+  "seongsan_ilchulbong": {
+    "_poi_meta": {
+      "poi_key": "seongsan_ilchulbong",
+      "name_en": "Seongsan Ilchulbong (Sunrise Peak)",
+      "name_ko": "성산 일출봉",
+      "is_attraction": true,
+      "fee_krw": 2000,
+      "fee_youth_krw": 1000,
+      "fee_free_under_age": 7,
+      "fee_free_over_age": 65,
+      "fee_group_adult_krw": 1600,
+      "height_m": 182,
+      "crater_diameter_m": 600,
+      "crater_depth_m": 90,
+      "formation_years_ago": 5000,
+      "formation_type": "Surtseyan-type hydrovolcanic tuff cone",
+      "trail_length_one_way_km": 0.8,
+      "elevation_gain_m": 140,
+      "round_trip_time_min": 60,
+      "unesco_world_natural_heritage": "2007-07-02",
+      "natural_monument_designation": "2000-07-19",
+      "global_geopark_network": "2010-10",
+      "rim_rock_count": 99,
+      "shape_metaphor": "Crown / fortress",
+      "haenyeo_performance_times": [
+        "13:30",
+        "15:00"
+      ],
+      "japanese_wwii_caves": 18,
+      "address_en": "284-12 Ilchul-ro, Seongsan-eup, Seogwipo-si, Jeju-do"
+    },
+    "visitBasics": {
+      "hours": "May–Aug 04:30–20:00; Mar–Apr & Sep–Oct 05:00–19:00; Nov–Feb 06:00–18:00. Last ticketing 1 hr before closing",
+      "closed": "Open year-round; opens 1 hr before sunrise to allow first-light viewing",
+      "admission": "Adults ₩2,000 / Youth (7–24) ₩1,000; free for under 7 and 65+; group (10+) ₩1,600 adult / ₩800 youth",
+      "walking": "Moderate — 0.8 km one-way trail, ~140 m elevation gain via wooden deck staircase (300–500 steps); summit climb 20–30 min, full round trip 45–60 min. One-way path prevents head-on collisions"
+    },
+    "convenience": {
+      "restroom": "Available at the entrance and at rest points along the trail",
+      "parking": "Large free parking lot at the entrance plaza"
+    },
+    "smartNotes": {
+      "photo": "Summit deck for the bowl-shaped crater shot; mid-trail viewpoint for the dramatic coastline + Udo Island frame; the 99-rock 'crown' rim seen from the base looking up; haenyeo divers at the south coast cove (Udu Beach side)",
+      "facilities": "Daily haenyeo (women diver) free-diving demonstrations at 13:30 and 15:00 at the south coast cove (singing performance + live diving for shellfish — they sell their fresh catch sliced as sashimi after the show); food/drink stalls at the entrance; Udo Island ferry from Seongsan Port (~5 min away)",
+      "tip": "TRIPLE UNESCO designation (World Natural Heritage 2007 + Biosphere Reserve + Global Geopark). For the iconic sunrise, arrive 30 min before sunrise time (gates open 1 hr before sunrise). Wooden staircase but stairs throughout — not stroller- or wheelchair-friendly. Combine with Udo Island ferry (~10 min crossing) or Seopjikoji (~15 min drive south) to make a half-day in east Jeju"
+    }
+  }
+}

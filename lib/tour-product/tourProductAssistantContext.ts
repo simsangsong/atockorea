@@ -1,4 +1,6 @@
 import type { TourProductDetailViewModel } from "@/components/product-tour-static/_shared/tourProductFullPageJsonTypes";
+import type { TourProductPageLocale } from "./resolveTourProductDbLocale";
+import globalPolicies from "@/data/tour-policies/global-policies.json";
 
 type FaqItem = { question?: string; answer?: string };
 type ItineraryStop = {
@@ -6,6 +8,15 @@ type ItineraryStop = {
   time?: string;
   duration?: string;
   description?: string;
+};
+
+type GlobalPolicy = {
+  id: string;
+  category: string;
+  applies_to: string[];
+  title: string;
+  text: string;
+  i18n?: Partial<Record<string, string>>;
 };
 
 function asFaqList(raw: unknown): FaqItem[] {
@@ -19,9 +30,29 @@ function asItineraryStops(raw: unknown): ItineraryStop[] {
 }
 
 /**
+ * `data/tour-policies/global-policies.json` 에서 cross-product 정책을 텍스트로 변환.
+ * 어시스턴트가 어떤 투어든 동일한 규칙을 답변에 적용할 수 있게 한다.
+ */
+function buildGlobalPoliciesBlock(locale?: TourProductPageLocale): string {
+  const list = (globalPolicies as { policies?: GlobalPolicy[] }).policies ?? [];
+  if (list.length === 0) return "";
+  const lines: string[] = [];
+  for (const p of list) {
+    const localized = locale && p.i18n && p.i18n[locale];
+    const body = localized || p.text;
+    const scope = p.applies_to?.length ? ` [applies to: ${p.applies_to.join(", ")}]` : "";
+    lines.push(`- ${p.title}${scope}\n  ${body}`);
+  }
+  return lines.join("\n\n");
+}
+
+/**
  * Compact plain-text product context for the tour detail AI assistant (server-side).
  */
-export function buildTourProductAssistantContextText(vm: TourProductDetailViewModel): string {
+export function buildTourProductAssistantContextText(
+  vm: TourProductDetailViewModel,
+  locale?: TourProductPageLocale,
+): string {
   const title = `${vm.headlineLine1} ${vm.headlineLine2}`.replace(/\s+/g, " ").trim();
   const { price, hero, staticQuestions } = vm;
 
@@ -75,8 +106,15 @@ export function buildTourProductAssistantContextText(vm: TourProductDetailViewMo
     lines.push(`## FAQ (from this page)\n${block}`);
   }
 
+  const policiesBlock = buildGlobalPoliciesBlock(locale);
+  if (policiesBlock) {
+    lines.push(
+      `## Cross-product policies (apply to every tour: small group, bus, private)\nThese rules are authoritative even when not repeated on this specific page. Quote them when asked.\n\n${policiesBlock}`,
+    );
+  }
+
   lines.push(
-    `\n## Rules for answers\n- Base answers only on the information above and general travel common sense.\n- If something is not covered (e.g. exact price changes, same-day changes), say you are not sure and suggest booking or contacting support.\n- Be concise and friendly.\n- Match the user’s language when they write in a supported language.`,
+    `\n## Rules for answers\n- Base answers only on the information above (product context + cross-product policies) and general travel common sense.\n- Cross-product policies override silence on the page — when a user asks about something covered there (e.g. child seat pricing), answer from the policy.\n- If something is not covered (e.g. exact price changes, same-day changes), say you are not sure and suggest booking or contacting support.\n- Be concise and friendly.\n- Match the user’s language when they write in a supported language.`,
   );
 
   return lines.join("\n\n");

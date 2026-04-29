@@ -1,3 +1,23 @@
+import type {
+  BookingSupportStep,
+  BookingTrustItem,
+  GalleryMediaItem,
+  GlanceItem,
+  GuestReview,
+  ItineraryStop,
+  PracticalAccordionItem,
+  PracticalWeatherStatic,
+  ReviewsSummary,
+  RouteFlowStop,
+  RoutePhase,
+  RouteShapeIntro,
+  SeasonalVariation,
+  StaticQuestion,
+  SubnavItem,
+  TourProductHero,
+  TourProductPrice,
+  WhyTourWorks,
+} from "@/components/product-tour-static/_shared/tourProductDetailSectionTypes";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
 
 /**
@@ -11,7 +31,11 @@ import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSecti
  * - JSONB: 아래 필드 (본문 섹션) — 리뷰는 tour_id + reviews 테이블 우선, 여기는 시드/폴백
  */
 
-export const TOUR_PRODUCT_DETAIL_PAYLOAD_SCHEMA_VERSION = 1 as const;
+/**
+ * v17 batch authoring JSONs ship `schema_version: 7`. The runtime parser
+ * accepts any v >= 1; this constant is the value seeded SQL emits.
+ */
+export const TOUR_PRODUCT_DETAIL_PAYLOAD_SCHEMA_VERSION = 7 as const;
 
 /** DB CHECK: detail_payload.schema_version */
 export type TourProductDetailPayloadSchemaVersion = typeof TOUR_PRODUCT_DETAIL_PAYLOAD_SCHEMA_VERSION;
@@ -21,42 +45,26 @@ export type TourProductDetailViewModelV1 = {
   schema_version: TourProductDetailPayloadSchemaVersion;
   headlineLine1: string;
   headlineLine2: string;
-  hero: {
-    imageUrl: string;
-    imagePosition: string;
-    tagline: string;
-    pills: readonly string[] | string[];
-    meta: {
-      duration: string;
-      region: string;
-      stops: string;
-      rating: number;
-      ratingStars: number;
-    };
-  };
-  price: {
-    amountLabel: string;
-    currency: string;
-    per: string;
-  };
-  subnavItems: readonly { id: string; label: string }[];
-  glanceItems: unknown[];
-  galleryItems: unknown[];
-  itineraryStops: unknown[];
-  routeFlowStops: unknown[];
-  routePhases: unknown[];
-  routeShapeIntro: { title: string; subtitle: string };
-  whyTourWorks: unknown;
-  practicalAccordionItems: unknown[];
+  hero: TourProductHero;
+  price: TourProductPrice;
+  subnavItems: readonly SubnavItem[];
+  glanceItems: readonly GlanceItem[];
+  galleryItems: readonly GalleryMediaItem[];
+  itineraryStops: readonly ItineraryStop[];
+  routeFlowStops: readonly RouteFlowStop[];
+  routePhases: readonly RoutePhase[];
+  routeShapeIntro: RouteShapeIntro;
+  whyTourWorks: WhyTourWorks;
+  practicalAccordionItems: readonly PracticalAccordionItem[];
   /** 라이브 날씨 API 연결 시 서버에서 덮어쓰기 */
-  practicalWeatherStatic: { today: { temp: string; label: string }; tomorrow: { temp: string; label: string } };
-  seasonalVariations: unknown[];
-  bookingTrustItems: unknown[];
-  bookingSupportSteps: unknown[];
-  staticQuestions: unknown[];
-  /** tour_id 없거나 CMS 전용일 때만 */
-  guestReviews?: unknown[];
-  reviewsSummary?: unknown;
+  practicalWeatherStatic: PracticalWeatherStatic;
+  seasonalVariations: readonly SeasonalVariation[];
+  bookingTrustItems: readonly BookingTrustItem[];
+  bookingSupportSteps: readonly BookingSupportStep[];
+  staticQuestions: readonly StaticQuestion[];
+  /** Runtime always populates (empty array / zero summary). */
+  guestReviews: readonly GuestReview[];
+  reviewsSummary: ReviewsSummary;
   /** 섹션 제목·부제 등 UI 문자열 (로케일별) */
   sectionUi: TourProductSectionUiV1;
 };
@@ -69,26 +77,26 @@ export type TourProductDetailPayloadV1 = {
   schema_version: TourProductDetailPayloadSchemaVersion;
   headlineLine1?: string;
   headlineLine2?: string;
-  hero?: TourProductDetailViewModelV1["hero"];
-  subnavItems?: TourProductDetailViewModelV1["subnavItems"];
-  glanceItems?: unknown[];
-  galleryItems?: unknown[];
-  itineraryStops?: unknown[];
-  routeFlowStops?: unknown[];
-  routePhases?: unknown[];
-  routeShapeIntro?: TourProductDetailViewModelV1["routeShapeIntro"];
-  whyTourWorks?: unknown;
-  practicalAccordionItems?: unknown[];
-  practicalWeatherStatic?: TourProductDetailViewModelV1["practicalWeatherStatic"];
-  seasonalVariations?: unknown[];
-  bookingTrustItems?: unknown[];
-  bookingSupportSteps?: unknown[];
-  staticQuestions?: unknown[];
-  guestReviews?: unknown[];
-  reviewsSummary?: unknown;
+  hero?: TourProductHero;
+  subnavItems?: readonly SubnavItem[];
+  glanceItems?: readonly GlanceItem[];
+  galleryItems?: readonly GalleryMediaItem[];
+  itineraryStops?: readonly ItineraryStop[];
+  routeFlowStops?: readonly RouteFlowStop[];
+  routePhases?: readonly RoutePhase[];
+  routeShapeIntro?: RouteShapeIntro;
+  whyTourWorks?: WhyTourWorks;
+  practicalAccordionItems?: readonly PracticalAccordionItem[];
+  practicalWeatherStatic?: PracticalWeatherStatic;
+  seasonalVariations?: readonly SeasonalVariation[];
+  bookingTrustItems?: readonly BookingTrustItem[];
+  bookingSupportSteps?: readonly BookingSupportStep[];
+  staticQuestions?: readonly StaticQuestion[];
+  guestReviews?: readonly GuestReview[];
+  reviewsSummary?: ReviewsSummary;
   sectionUi?: Partial<TourProductSectionUiV1>;
   pickup_dropoff?: unknown;
-  routeVariants?: unknown[];
+  routeVariants?: readonly unknown[];
 };
 
 export type TourProductOfferRow = {

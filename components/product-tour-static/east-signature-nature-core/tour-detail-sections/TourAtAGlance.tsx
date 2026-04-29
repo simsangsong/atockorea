@@ -1,8 +1,8 @@
 import { Camera, Mountain, Footprints, CloudRain, Users, Scale, Gauge } from "lucide-react";
-import type { GlanceItem } from "../staticProductData";
+import type { GlanceItem } from "@/components/product-tour-static/_shared/tourProductDetailSectionTypes";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
-const ICON_MAP: Record<GlanceItem["icon"], typeof Camera> = {
+const ICON_MAP: Record<string, typeof Camera> = {
   camera: Camera,
   mountain: Mountain,
   footprints: Footprints,

@@ -151,25 +151,39 @@ export function TourPracticalDetails({
           className="-mx-5 px-5"
         >
           <div className="flex gap-2.5 overflow-x-auto overscroll-x-contain scrollbar-hide scroll-smooth snap-x snap-mandatory touch-pan-x pb-1.5 [-webkit-overflow-scrolling:touch]">
-            {seasonalVariations.map((season) => {
-              const Icon = SEASON_ICONS[season.icon as keyof typeof SEASON_ICONS] ?? Flower2;
+            {seasonalVariations.map((season, idx) => {
+              // schema_version=1: { name, icon, tag, bgClass, iconColor, description }
+              // schema_version=7: { season, description } (icon/tag/bgClass dropped)
+              const seasonAny = season as {
+                name?: string;
+                season?: string;
+                icon?: string;
+                tag?: string;
+                bgClass?: string;
+                iconColor?: string;
+                description: string;
+              };
+              const displayName = seasonAny.name ?? seasonAny.season ?? `Season ${idx + 1}`;
+              const Icon = SEASON_ICONS[seasonAny.icon as keyof typeof SEASON_ICONS] ?? Flower2;
               return (
                 <div
-                  key={season.name}
+                  key={displayName}
                   className={cn(
                     "relative shrink-0 snap-start rounded-xl border border-border/50 p-4 transition-all duration-200 hover:shadow-premium hover:border-border",
                     "w-[min(280px,calc(100vw-3.5rem))] sm:w-[min(280px,calc(100%-1rem))]",
-                    season.bgClass,
+                    seasonAny.bgClass,
                   )}
                 >
                   <div className="flex items-start justify-between mb-2">
-                    <Icon className={cn("h-4 w-4", season.iconColor)} />
-                    <span className="text-[9px] font-medium text-muted-foreground bg-white/70 px-1.5 py-0.5 rounded-md">
-                      {season.tag}
-                    </span>
+                    <Icon className={cn("h-4 w-4", seasonAny.iconColor)} />
+                    {seasonAny.tag ? (
+                      <span className="text-[9px] font-medium text-muted-foreground bg-white/70 px-1.5 py-0.5 rounded-md">
+                        {seasonAny.tag}
+                      </span>
+                    ) : null}
                   </div>
-                  <h4 className="text-sm font-semibold text-foreground">{season.name}</h4>
-                  <p className="mt-1 text-[11px] text-muted-foreground leading-relaxed">{season.description}</p>
+                  <h4 className="text-sm font-semibold text-foreground">{displayName}</h4>
+                  <p className="mt-1 text-[11px] text-muted-foreground leading-relaxed">{seasonAny.description}</p>
                 </div>
               );
             })}
@@ -210,7 +224,7 @@ export function TourPracticalDetails({
               <div className="overflow-hidden">
                 <div className="px-4 pb-5">
                   <ul className="space-y-2.5">
-                    {item.content.map((line, i) => {
+                    {(item.content ?? []).map((line, i) => {
                       if (item.variant === "included") {
                         const isIncluded = i < 5;
                         return (

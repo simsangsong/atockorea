@@ -1,21 +1,45 @@
 /**
- * DB/API 없이 프로젝트에만 존재하는 정적 투어 상품 등록부.
- * 상세: /tour-product/[slug] — 카드 카피는 JSON `catalog_card`와 동기 권장.
+ * Static catalog registry — one card per registered tour-product slug.
+ *
+ * v17 batch: each entry is derived directly from the slug's
+ * `<slug>.en.json#catalog_card`, with a small per-slug override map for
+ * `listPriceUsd` (used by checkout / sticky-bar fallbacks) and optional
+ * `compareAtPriceUsd` / `maxGroupSize` (display-only).
+ *
+ * Detail page: `/tour-product/[slug]` (catch-all). Consumers: home v2 best-match
+ * preview, /match page, sitemap.
  */
 
+import busanGyeongjuUnescoLegacy from "../busan-gyeongju-unesco-legacy-tour-national-museum/busan-gyeongju-unesco-legacy-tour-national-museum.en.json";
+import busanPlumCherryBlossom from "../busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju/busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju.en.json";
+import busanPrivateCarCharterCruiseShore from "../busan-private-car-charter-cruise-shore/busan-private-car-charter-cruise-shore.en.json";
+import busanSmallGroupSightseeingCruise from "../busan-small-group-sightseeing-tour-cruise-passengers/busan-small-group-sightseeing-tour-cruise-passengers.en.json";
+import busanSpringCherryBlossomGyeongju from "../busan-spring-cherry-blossom-gyeongju-highlights-day-tour/busan-spring-cherry-blossom-gyeongju-highlights-day-tour.en.json";
+import busanTopAttractionsDay from "../busan-top-attractions-day-tour/busan-top-attractions-day-tour.en.json";
+import eastSignaturePage from "../east-signature-nature-core/east-signature-nature-core.en.json";
+import fromBusanGyeongjuAncientCapital from "../from-busan-gyeongju-ancient-capital-day-tour/from-busan-gyeongju-ancient-capital-day-tour.en.json";
+import fromIncheonSeoulDayCruise from "../from-incheon-seoul-day-tour-cruise-guests/from-incheon-seoul-day-tour-cruise-guests.en.json";
+import incheonSeoulPrivateCarShoreCruise from "../incheon-seoul-private-car-shore-excursion-cruise/incheon-seoul-private-car-shore-excursion-cruise.en.json";
+import jejuCherryBlossomEast from "../jeju-cherry-blossom-tour-east-route/jeju-cherry-blossom-tour-east-route.en.json";
+import jejuCruiseShoreBus from "../jeju-cruise-shore-excursion-bus-tour/jeju-cruise-shore-excursion-bus-tour.en.json";
+import jejuCruiseShoreSmallGroup from "../jeju-cruise-shore-excursion-small-group-tour/jeju-cruise-shore-excursion-small-group-tour.en.json";
+import jejuEasternUnescoSpots from "../jeju-eastern-unesco-spots-day-tour/jeju-eastern-unesco-spots-day-tour.en.json";
 import jejuGrandPage from "../jeju-grand-highlights-loop/jeju-grand-highlights-loop.en.json";
-import southwestPage from "../southwest-hallasan-osulloc-aewol/southwest-hallasan-osulloc-aewol.en.json";
-import southJejuClassicBusPage from "../south-jeju-classic-bus-tour/south-jeju-classic-bus-tour.en.json";
-import southwestJejuScenicBusPage from "../southwest-jeju-scenic-bus-tour/southwest-jeju-scenic-bus-tour.en.json";
-import eastJejuClassicBusPage from "../east-jeju-classic-bus-tour/east-jeju-classic-bus-tour.en.json";
-import jejuCruiseShoreBusPage from "../jeju-cruise-shore-excursion-bus-tour/jeju-cruise-shore-excursion-bus-tour.en.json";
-import jejuCruiseShoreSmallGroupPage from "../jeju-cruise-shore-excursion-small-group-tour/jeju-cruise-shore-excursion-small-group-tour.en.json";
-import busanTopAttractionsPage from "../busan-top-attractions-authentic-one-day-tour/busan-top-attractions-authentic-one-day-tour.en.json";
-import busanShoreExcursionCruisePage from "../busan-city-tour-shore-excursion-cruise-guests/busan-city-tour-shore-excursion-cruise-guests.en.json";
-import {
-  EAST_SIGNATURE_COMPARE_AT_PRICE_USD,
-  EAST_SIGNATURE_LIST_PRICE_USD,
-} from "@/lib/tour-detail/east/constants";
+import jejuHydrangeaFestivalEast from "../jeju-hydrangea-festival-tour-east-route/jeju-hydrangea-festival-tour-east-route.en.json";
+import jejuHydrangeaFestivalSouthwest from "../jeju-hydrangea-festival-tour-southwest-route/jeju-hydrangea-festival-tour-southwest-route.en.json";
+import jejuIslandPrivateCarCharter from "../jeju-island-private-car-charter-tour/jeju-island-private-car-charter-tour.en.json";
+import jejuSouthernTopUnescoSpots from "../jeju-southern-top-unesco-spots-tour/jeju-southern-top-unesco-spots-tour.en.json";
+import jejuWestSouthFullDayAuthentic from "../jeju-west-south-full-day-authentic-tour/jeju-west-south-full-day-authentic-tour.en.json";
+import jejuWinterSouthwestTangerine from "../jeju-winter-southwest-tangerine-snow-camellia-tour/jeju-winter-southwest-tangerine-snow-camellia-tour.en.json";
+import pocheonSanjeongLakeHerbIsland from "../pocheon-sanjeong-lake-herb-island-art-valley/pocheon-sanjeong-lake-herb-island-art-valley.en.json";
+import seoulDmzPrivate3rdTunnel from "../seoul-dmz-private-3rd-tunnel-suspension-bridge/seoul-dmz-private-3rd-tunnel-suspension-bridge.en.json";
+import seoulPrivateNamiMorningCalm from "../seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.en.json";
+import seoulSeoraksanSokchoBeach from "../seoul-seoraksan-national-park-sokcho-beach-day-trip/seoul-seoraksan-national-park-sokcho-beach-day-trip.en.json";
+import seoulSuburbsPrivateCharteredCar from "../seoul-suburbs-private-chartered-car-10hr/seoul-suburbs-private-chartered-car-10hr.en.json";
+import seoulSuwonHwaseongFolkVillage from "../seoul-suwon-hwaseong-folk-village-starfield-library/seoul-suwon-hwaseong-folk-village-starfield-library.en.json";
+import seoulSuwonHwaseongGwangmyeongCave from "../seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library/seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library.en.json";
+import seoulSuwonHwaseongWaujeongsa from "../seoul-suwon-hwaseong-waujeongsa-starfield/seoul-suwon-hwaseong-waujeongsa-starfield.en.json";
+import southwestHallasanOsullocAewol from "../southwest-hallasan-osulloc-aewol/southwest-hallasan-osulloc-aewol.en.json";
 
 export type StaticTourProductRegistration = {
   slug: string;
@@ -45,27 +69,6 @@ export function hrefStaticTourProductDetail(slug: string): string {
   return `${STATIC_TOUR_PRODUCT_DETAIL_PREFIX}/${slug}`;
 }
 
-/** East Signature Nature Core — flagship template SKU */
-export const eastSignatureNatureCoreStaticProduct: StaticTourProductRegistration = {
-  slug: "east-signature-nature-core",
-  title: "East Jeju Volcano, Coast & Folk Village Small Group Day Tour",
-  subtitle: "Stone to coast. Crater to garden to village.",
-  region: "East Jeju",
-  duration: "8 hrs",
-  stopsCount: 6,
-  rating: 4.8,
-  reviewCount: 127,
-  badges: ["First-Time Friendly", "East Jeju"],
-  heroImage: "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
-  thumbnail: "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80",
-  priceLabel: "From $59 / person",
-  shortCardDescription:
-    "A structured East Jeju day that begins with stone and volcanic context, opens to the coast, peaks at Seongsan, and finishes with garden calm and village texture.",
-  listPriceUsd: EAST_SIGNATURE_LIST_PRICE_USD,
-  compareAtPriceUsd: EAST_SIGNATURE_COMPARE_AT_PRICE_USD,
-  maxGroupSize: 8,
-};
-
 type CatalogCardJsonShape = {
   slug: string;
   title: string;
@@ -82,54 +85,39 @@ type CatalogCardJsonShape = {
   shortCardDescription: string;
 };
 
-const jejuCc = jejuGrandPage.catalog_card as CatalogCardJsonShape;
-
-/** Jeju Grand Highlights Loop — `jeju-grand-highlights-loop.en-1.json` catalog_card 와 동일 */
-export const jejuGrandHighlightsLoopStaticProduct: StaticTourProductRegistration = {
-  slug: jejuCc.slug,
-  title: jejuCc.title,
-  subtitle: jejuCc.subtitle,
-  region: jejuCc.region,
-  duration: jejuCc.duration,
-  stopsCount: jejuCc.stopsCount,
-  rating: jejuCc.rating,
-  reviewCount: jejuCc.reviewCount,
-  badges: jejuCc.badges,
-  heroImage: jejuCc.heroImage,
-  thumbnail: jejuCc.thumbnail,
-  priceLabel: jejuCc.priceLabel,
-  shortCardDescription: jejuCc.shortCardDescription,
-  listPriceUsd: 78,
-  compareAtPriceUsd: 95,
-  maxGroupSize: 8,
+type PageJsonShape = {
+  catalog_card: CatalogCardJsonShape;
+  price?: { amountLabel?: unknown };
 };
 
-const southwestCc = southwestPage.catalog_card as CatalogCardJsonShape;
-
-/** Jeju Southwest Hallasan · O'Sulloc · Aewol — `southwest-hallasan-osulloc-aewol.en.json` catalog_card 와 동일 */
-export const southwestHallasanOsullocAewolStaticProduct: StaticTourProductRegistration = {
-  slug: southwestCc.slug,
-  title: southwestCc.title,
-  subtitle: southwestCc.subtitle,
-  region: southwestCc.region,
-  duration: southwestCc.duration,
-  stopsCount: southwestCc.stopsCount,
-  rating: southwestCc.rating,
-  reviewCount: southwestCc.reviewCount,
-  badges: southwestCc.badges,
-  heroImage: southwestCc.heroImage,
-  thumbnail: southwestCc.thumbnail,
-  priceLabel: southwestCc.priceLabel,
-  shortCardDescription: southwestCc.shortCardDescription,
-  listPriceUsd: 59,
-  maxGroupSize: 8,
-};
+/**
+ * Parse `listPriceUsd` from authoring JSON. Prefer `price.amountLabel`
+ * ("78"), fall back to digits in `catalog_card.priceLabel`
+ * ("From US$78 per person"). Returns 0 when nothing parseable is present
+ * (cruise-shore / TBD pricing) — sticky bar / checkout treats 0 as
+ * "confirm at booking".
+ */
+function parseListPriceUsd(page: PageJsonShape): number {
+  const amountLabel = page.price && typeof page.price.amountLabel === "string" ? page.price.amountLabel : "";
+  if (amountLabel) {
+    const n = Number(amountLabel.replace(/[^0-9.]/g, ""));
+    if (Number.isFinite(n) && n > 0) return Math.round(n);
+  }
+  const priceLabel = page.catalog_card?.priceLabel ?? "";
+  const m = priceLabel.match(/(\d+(?:\.\d+)?)/);
+  if (m) {
+    const n = Number(m[1]);
+    if (Number.isFinite(n) && n > 0) return Math.round(n);
+  }
+  return 0;
+}
 
 function registrationFromCatalogCard(
-  page: { catalog_card: CatalogCardJsonShape },
-  opts: { listPriceUsd: number; maxGroupSize?: number; compareAtPriceUsd?: number },
+  page: PageJsonShape,
+  opts: { listPriceUsd?: number; compareAtPriceUsd?: number; maxGroupSize?: number } = {},
 ): StaticTourProductRegistration {
   const cc = page.catalog_card;
+  const listPriceUsd = opts.listPriceUsd ?? parseListPriceUsd(page);
   return {
     slug: cc.slug,
     title: cc.title,
@@ -144,72 +132,62 @@ function registrationFromCatalogCard(
     thumbnail: cc.thumbnail,
     priceLabel: cc.priceLabel,
     shortCardDescription: cc.shortCardDescription,
-    listPriceUsd: opts.listPriceUsd,
+    listPriceUsd,
     compareAtPriceUsd: opts.compareAtPriceUsd,
     maxGroupSize: opts.maxGroupSize,
   };
 }
 
-/** South Jeju Waterfall · Cliff · Tea · Hallasan Bus Day Tour — USD 49 */
-export const southJejuClassicBusTourStaticProduct: StaticTourProductRegistration =
-  registrationFromCatalogCard(
-    southJejuClassicBusPage as { catalog_card: CatalogCardJsonShape },
-    { listPriceUsd: 49 },
-  );
+/** East Signature Nature Core — flagship template SKU */
+export const eastSignatureNatureCoreStaticProduct: StaticTourProductRegistration =
+  registrationFromCatalogCard(eastSignaturePage as PageJsonShape, {
+    compareAtPriceUsd: 78,
+    maxGroupSize: 8,
+  });
 
-/** Southwest Jeju Scenic Bus Tour — USD 49 */
-export const southwestJejuScenicBusTourStaticProduct: StaticTourProductRegistration =
-  registrationFromCatalogCard(
-    southwestJejuScenicBusPage as { catalog_card: CatalogCardJsonShape },
-    { listPriceUsd: 49 },
-  );
+export const jejuGrandHighlightsLoopStaticProduct: StaticTourProductRegistration =
+  registrationFromCatalogCard(jejuGrandPage as PageJsonShape, {
+    compareAtPriceUsd: 95,
+    maxGroupSize: 8,
+  });
 
-/** East Jeju Sunrise Peak · Folk Village · Hamdeok Bus Day Tour — USD 49 */
-export const eastJejuClassicBusTourStaticProduct: StaticTourProductRegistration =
-  registrationFromCatalogCard(
-    eastJejuClassicBusPage as { catalog_card: CatalogCardJsonShape },
-    { listPriceUsd: 49 },
-  );
-
-/** Jeju Cruise Shore Excursion Bus Tour — USD 59 (per person) */
-export const jejuCruiseShoreExcursionBusTourStaticProduct: StaticTourProductRegistration =
-  registrationFromCatalogCard(
-    jejuCruiseShoreBusPage as { catalog_card: CatalogCardJsonShape },
-    { listPriceUsd: 59 },
-  );
-
-/** Jeju Cruise Shore Excursion Small-Group Tour — USD 69 (per person) */
-export const jejuCruiseShoreExcursionSmallGroupTourStaticProduct: StaticTourProductRegistration =
-  registrationFromCatalogCard(
-    jejuCruiseShoreSmallGroupPage as { catalog_card: CatalogCardJsonShape },
-    { listPriceUsd: 69, maxGroupSize: 8 },
-  );
-
-/** Busan Top Attractions Authentic One-Day Guided Tour — USD 79 (per person) */
-export const busanTopAttractionsAuthenticOneDayTourStaticProduct: StaticTourProductRegistration =
-  registrationFromCatalogCard(
-    busanTopAttractionsPage as { catalog_card: CatalogCardJsonShape },
-    { listPriceUsd: 79, maxGroupSize: 8 },
-  );
-
-/** Busan Shore Excursion for Cruise Guests — USD 79 (per person) */
-export const busanCityTourShoreExcursionCruiseGuestsStaticProduct: StaticTourProductRegistration =
-  registrationFromCatalogCard(
-    busanShoreExcursionCruisePage as { catalog_card: CatalogCardJsonShape },
-    { listPriceUsd: 79, maxGroupSize: 8 },
-  );
+export const southwestHallasanOsullocAewolStaticProduct: StaticTourProductRegistration =
+  registrationFromCatalogCard(southwestHallasanOsullocAewol as PageJsonShape, {
+    maxGroupSize: 8,
+  });
 
 export const STATIC_TOUR_PRODUCTS: readonly StaticTourProductRegistration[] = [
   eastSignatureNatureCoreStaticProduct,
   jejuGrandHighlightsLoopStaticProduct,
   southwestHallasanOsullocAewolStaticProduct,
-  southJejuClassicBusTourStaticProduct,
-  southwestJejuScenicBusTourStaticProduct,
-  eastJejuClassicBusTourStaticProduct,
-  jejuCruiseShoreExcursionBusTourStaticProduct,
-  jejuCruiseShoreExcursionSmallGroupTourStaticProduct,
-  busanTopAttractionsAuthenticOneDayTourStaticProduct,
-  busanCityTourShoreExcursionCruiseGuestsStaticProduct,
+
+  registrationFromCatalogCard(busanGyeongjuUnescoLegacy as PageJsonShape),
+  registrationFromCatalogCard(busanPlumCherryBlossom as PageJsonShape),
+  registrationFromCatalogCard(busanPrivateCarCharterCruiseShore as PageJsonShape),
+  registrationFromCatalogCard(busanSmallGroupSightseeingCruise as PageJsonShape, { maxGroupSize: 8 }),
+  registrationFromCatalogCard(busanSpringCherryBlossomGyeongju as PageJsonShape),
+  registrationFromCatalogCard(busanTopAttractionsDay as PageJsonShape, { maxGroupSize: 12 }),
+  registrationFromCatalogCard(fromBusanGyeongjuAncientCapital as PageJsonShape),
+  registrationFromCatalogCard(fromIncheonSeoulDayCruise as PageJsonShape),
+  registrationFromCatalogCard(incheonSeoulPrivateCarShoreCruise as PageJsonShape),
+  registrationFromCatalogCard(jejuCherryBlossomEast as PageJsonShape, { maxGroupSize: 8 }),
+  registrationFromCatalogCard(jejuCruiseShoreBus as PageJsonShape),
+  registrationFromCatalogCard(jejuCruiseShoreSmallGroup as PageJsonShape, { maxGroupSize: 8 }),
+  registrationFromCatalogCard(jejuEasternUnescoSpots as PageJsonShape, { maxGroupSize: 8 }),
+  registrationFromCatalogCard(jejuHydrangeaFestivalEast as PageJsonShape, { maxGroupSize: 8 }),
+  registrationFromCatalogCard(jejuHydrangeaFestivalSouthwest as PageJsonShape, { maxGroupSize: 8 }),
+  registrationFromCatalogCard(jejuIslandPrivateCarCharter as PageJsonShape),
+  registrationFromCatalogCard(jejuSouthernTopUnescoSpots as PageJsonShape, { maxGroupSize: 8 }),
+  registrationFromCatalogCard(jejuWestSouthFullDayAuthentic as PageJsonShape, { maxGroupSize: 8 }),
+  registrationFromCatalogCard(jejuWinterSouthwestTangerine as PageJsonShape, { maxGroupSize: 8 }),
+  registrationFromCatalogCard(pocheonSanjeongLakeHerbIsland as PageJsonShape, { maxGroupSize: 8 }),
+  registrationFromCatalogCard(seoulDmzPrivate3rdTunnel as PageJsonShape),
+  registrationFromCatalogCard(seoulPrivateNamiMorningCalm as PageJsonShape),
+  registrationFromCatalogCard(seoulSeoraksanSokchoBeach as PageJsonShape, { maxGroupSize: 8 }),
+  registrationFromCatalogCard(seoulSuburbsPrivateCharteredCar as PageJsonShape),
+  registrationFromCatalogCard(seoulSuwonHwaseongFolkVillage as PageJsonShape, { maxGroupSize: 8 }),
+  registrationFromCatalogCard(seoulSuwonHwaseongGwangmyeongCave as PageJsonShape, { maxGroupSize: 8 }),
+  registrationFromCatalogCard(seoulSuwonHwaseongWaujeongsa as PageJsonShape, { maxGroupSize: 8 }),
 ];
 
 export function getStaticTourProductBySlug(slug: string): StaticTourProductRegistration | undefined {

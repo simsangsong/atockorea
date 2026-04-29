@@ -17,17 +17,61 @@ import { z } from "zod";
 import {
   KNOWN_AVOID_IF_KEYS,
   KNOWN_NOT_IDEAL_FOR_KEYS,
+  PROFILE_PRICE_BANDS,
+  PROFILE_PRODUCT_TYPES,
+  PROFILE_ROUTE_TYPES,
   type TourMatchingProfileRow,
 } from "@/lib/tour-product-match/types";
 
-const level1to5 = z.number().int().min(1).max(5);
-const ratio0to100 = z.number().int().min(0).max(100);
+/**
+ * v17 batch: 1–5 ints (legacy) and 0–1 floats (new) both pass — `score-tour-products.ts`
+ * normalizes both to 0–1 via `norm1to5` (legacy path). Authors increasingly emit 0–1.
+ */
+const level1to5 = z.number().refine(
+  (v) => Number.isFinite(v) && ((Number.isInteger(v) && v >= 1 && v <= 5) || (v >= 0 && v <= 1)),
+  { message: "expected integer 1..5 or float 0..1" },
+);
+/**
+ * v17 batch: indoor_ratio is 0..1 float (preferred) or 0..100 int (legacy).
+ * `normIndoorRatioPercent` auto-detects scale at runtime.
+ */
+const indoorRatioSchema = z.number().refine(
+  (v) => Number.isFinite(v) && ((Number.isInteger(v) && v >= 0 && v <= 100) || (v >= 0 && v <= 1)),
+  { message: "expected integer 0..100 or float 0..1" },
+);
 
-const productTypeSchema = z.enum(["small_group", "private", "bus"]);
-const routeTypeSchema = z.enum(["fixed_route", "flexible", "loop"]);
-// Matches `RegionAffinity` in types.ts.
-const regionTypeSchema = z.enum(["east", "southwest", "full_island", "any"]);
-const priceBandSchema = z.enum(["budget", "mid", "premium"]);
+const productTypeSchema = z.enum(PROFILE_PRODUCT_TYPES);
+const routeTypeSchema = z.enum(PROFILE_ROUTE_TYPES);
+/**
+ * `region_type` accepts the full set used by the matching-profile-validator.mjs
+ * (mirror of `REGION_TYPES`). The narrower `RegionAffinity` in types.ts is the
+ * traveler-intent surface and intentionally smaller.
+ */
+const regionTypeSchema = z.enum([
+  "east",
+  "southwest",
+  "full_island",
+  "any",
+  "jeju_island_wide",
+  "jeju_southwest",
+  "jeju_east",
+  "jeju_south",
+  "jeju_west_south",
+  "jeju_all_around",
+  "island_full",
+  "island_southwest",
+  "busan_city",
+  "gyeongsang_north",
+  "gyeongju_from_busan",
+  "seoul_with_incheon_origin",
+  "gyeonggi_pocheon",
+  "gyeonggi_paju",
+  "gyeonggi_gapyeong",
+  "gyeonggi_south",
+  "gyeonggi_mixed",
+  "gangwon_seoraksan",
+]);
+const priceBandSchema = z.enum(PROFILE_PRICE_BANDS);
 
 /**
  * `shouldHardExclude` only enforces the known keys; any extra string is allowed
@@ -72,7 +116,7 @@ export const matchingProfileSchema = z
     mobility_friendly_fit: level1to5,
     stroller_fit: level1to5,
 
-    indoor_ratio: ratio0to100,
+    indoor_ratio: indoorRatioSchema,
     weather_sensitivity: level1to5,
 
     local_culture_fit: level1to5,
@@ -93,19 +137,42 @@ export const matchingProfileSchema = z
     duration_band: z.string().min(1),
     min_recommended_age: z.number().int().min(0).max(99),
 
-    hard_constraints: z.object({
-      avoidIf: z.array(avoidIfKeySchema).default([]),
-      notIdealFor: z.array(notIdealForKeySchema).default([]),
-    }),
+    /**
+     * v17 batch: malformed/missing hard_constraints downgraded to default-empty
+     * via preprocess so authoring drift doesn't block the pipeline.
+     */
+    hard_constraints: z.preprocess(
+      (raw) =>
+        raw && typeof raw === "object" && !Array.isArray(raw) ? raw : { avoidIf: [], notIdealFor: [] },
+      z.object({
+        avoidIf: z.array(avoidIfKeySchema).default([]),
+        notIdealFor: z.array(notIdealForKeySchema).default([]),
+      }),
+    ),
 
-    walking_notes: z.array(z.string()).default([]),
-    keywords: z.array(z.string()).default([]),
-    synonym_hints: z.array(z.string()).default([]),
+    /**
+     * v17 batch: free-form walking_notes/keywords/synonym_hints. A stray
+     * string is wrapped to [string]; missing/null becomes []. Down-stream
+     * scoring already coerces via `stringArray`.
+     */
+    walking_notes: z.preprocess(
+      (raw) => (Array.isArray(raw) ? raw : raw == null ? [] : [String(raw)]),
+      z.array(z.string()).default([]),
+    ),
+    keywords: z.preprocess(
+      (raw) => (Array.isArray(raw) ? raw : raw == null ? [] : [String(raw)]),
+      z.array(z.string()).default([]),
+    ),
+    synonym_hints: z.preprocess(
+      (raw) => (Array.isArray(raw) ? raw : raw == null ? [] : [String(raw)]),
+      z.array(z.string()).default([]),
+    ),
 
     profile_version: z.number().int().min(1),
     is_active: z.boolean(),
   })
-  .strict();
+  /** v17 batch carries 80+ extra fit dimensions (australia_market_fit, …). Pass through. */
+  .passthrough();
 
 export type MatchingProfileInput = z.infer<typeof matchingProfileSchema>;
 

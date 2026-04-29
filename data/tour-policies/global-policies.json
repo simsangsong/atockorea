@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "last_modified": "2026-04-29",
+  "description": "Cross-product policies that the tour-detail AI assistant should reference for ANY tour (small group, bus, private). Loaded by lib/tour-product/tourProductAssistantContext.ts.",
+  "policies": [
+    {
+      "id": "child_seat_pricing",
+      "category": "pricing",
+      "applies_to": ["small_group", "bus", "private"],
+      "title": "Children 24 months and older are charged the adult price when occupying a seat",
+      "text": "If a child is 24 months (2 years) old or older AND occupies their own seat on the vehicle, the adult price applies. This rule is the same for every tour format — small-group tours, bus tours, and private tours. Infants under 24 months who can be held on a parent's lap usually do not need a paid seat; if you would like to book a seat for them, the adult price will apply.",
+      "i18n": {
+        "ko": "만 24개월 이상의 어린이가 차량에서 별도의 좌석을 사용할 경우 성인과 동일한 요금이 적용됩니다. 이 규정은 소그룹 투어, 버스 투어, 프라이빗 투어 등 투어 형식과 관계없이 동일합니다. 24개월 미만의 영아는 보호자 무릎에 앉는 조건으로 무료가 일반적이며, 별도 좌석을 원하실 경우 성인 요금이 적용됩니다.",
+        "ja": "満24か月（2歳）以上のお子様が車両で別の座席を使用される場合、大人と同じ料金が適用されます。このルールはスモールグループツアー、バスツアー、プライベートツアーなど、ツアー形式に関係なく同じです。24か月未満の乳幼児は保護者の膝の上にお座りいただく場合は通常無料です。別途座席をご希望の場合は大人料金が適用されます。",
+        "zh": "24个月（2岁）及以上的儿童如在车辆上单独占用座位，将按成人价格收费。无论是小团游、巴士团还是私人团，此规定均相同。24个月以下的婴儿可由家长抱坐时通常免费；如需为其单独预留座位，将按成人价格收费。",
+        "zh-TW": "24個月（2歲）及以上的兒童若於車輛上單獨佔用座位，將按成人價格收費。無論是小團遊、巴士團還是私人團，此規定均相同。24個月以下的嬰兒可由家長抱坐時通常免費；如需為其單獨預留座位，將按成人價格收費。",
+        "es": "Los niños de 24 meses (2 años) o más que ocupen su propio asiento en el vehículo pagan la tarifa de adulto. Esta regla es la misma en todos los formatos de tour: grupos pequeños, autobús y privado. Los bebés menores de 24 meses que viajan en el regazo de un adulto suelen ser gratis; si desea reservar un asiento para ellos, se aplicará la tarifa de adulto."
+      }
+    }
+  ]
+}

@@ -529,9 +529,21 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
                   <span className="truncate">{selectedPortLabel}</span>
                 </p>
               ) : null}
-              <p className="text-[10px] font-medium tracking-wide text-muted-foreground">From</p>
+              <p className="text-[10px] font-medium tracking-wide text-muted-foreground">
+                {estimatedTotalFormatted && checkout?.priceType === "person" && guestCount > 1
+                  ? `Total · ${guestCount} guests`
+                  : "From"}
+              </p>
               <p className="text-lg font-semibold text-foreground tabular-nums sm:text-2xl">
-                {ctaUnitFormatted != null ? (
+                {estimatedTotalFormatted && checkout?.priceType === "person" && guestCount > 1 ? (
+                  <>
+                    <span>{estimatedTotalFormatted}</span>
+                    <span className="text-xs font-normal text-muted-foreground sm:text-sm">
+                      {" "}
+                      ({ctaUnitFormatted ?? `${price.amountLabel}${price.currency ?? ""}`} / {perUnitLabel})
+                    </span>
+                  </>
+                ) : ctaUnitFormatted != null ? (
                   <>
                     <span>{ctaUnitFormatted}</span>
                     <span className="text-xs font-normal text-muted-foreground sm:text-sm"> / {perUnitLabel}</span>

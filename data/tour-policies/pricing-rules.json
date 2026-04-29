@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "last_modified": "2026-04-29",
+  "description": "USD pricing rules keyed by (destination_region, product_type). Read by scripts/apply-tour-product.mjs to set tours.price (sale price) and tours.original_price (strikethrough). Falls back to JSON-derived price if no rule matches.",
+  "rules": [
+    {
+      "destination_region": "jeju",
+      "product_type": "small_group",
+      "price": 69,
+      "original_price": 79,
+      "currency": "USD",
+      "note": "Jeju small group day tours — uniform pricing."
+    },
+    {
+      "destination_region": "jeju",
+      "product_type": "bus",
+      "price": 59,
+      "original_price": 69,
+      "currency": "USD",
+      "note": "Jeju bus tours — uniform pricing."
+    }
+  ],
+  "fallback": {
+    "note": "When no rule matches the tour's (destination_region, product_type), apply-tour-product.mjs uses hero.price.amountLabel from the JSON and leaves original_price NULL."
+  }
+}

@@ -50,9 +50,19 @@ export default function CartPage() {
       setError(null);
 
       const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-      
+
+      // Guest mode — no session: read cart from sessionStorage (browser-local).
+      // Items added while signed-out are persisted client-side and merged at sign-in.
       if (!session) {
-        setError(t('errors.unauthorized'));
+        try {
+          const local = sessionStorage.getItem('guestCartItems');
+          if (local) {
+            const parsed = JSON.parse(local);
+            if (Array.isArray(parsed)) setCartItems(parsed as CartItem[]);
+          }
+        } catch (e) {
+          if (process.env.NODE_ENV === 'development') console.warn('[cart] guest cart parse:', e);
+        }
         setLoading(false);
         return;
       }
@@ -65,7 +75,15 @@ export default function CartPage() {
 
       if (!response.ok) {
         if (response.status === 401) {
-          router.push('/signin?redirect=/cart');
+          // Fall back to guest cart instead of forcing sign-in
+          try {
+            const local = sessionStorage.getItem('guestCartItems');
+            if (local) {
+              const parsed = JSON.parse(local);
+              if (Array.isArray(parsed)) setCartItems(parsed as CartItem[]);
+            }
+          } catch {}
+          setLoading(false);
           return;
         }
         throw new Error(t('errors.somethingWentWrong'));

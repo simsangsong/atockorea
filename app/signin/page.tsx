@@ -284,7 +284,12 @@ export default function SignInPage() {
   const handleSocialLogin = (provider: 'google') => {
     if (provider === 'google') {
       setError(null);
-      setShowGoogleChoice(true);
+      // UX: if the user is already signed into a single Google account in this
+      // browser, Google's default flow auto-redirects without showing a chooser
+      // ("Continue as …"). Skip the in-app account-picker modal — users can
+      // still pick a different account from Google itself if multiple are
+      // signed in (Google falls back to chooser automatically).
+      void startGoogleOAuth('default');
     }
   };
 

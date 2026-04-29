@@ -1,0 +1,2415 @@
+{
+  "categories": {
+    "place_region": [
+      {
+        "key": "Busan",
+        "context": "Major southeast port city; common pickup/drop-off origin for Gyeongju and Yangsan tours",
+        "renderings": {
+          "en": "Busan",
+          "ko": "부산",
+          "zh": "釜山",
+          "zh-TW": "釜山",
+          "ja": "釜山",
+          "es": "Busan",
+          "fr": "Busan",
+          "de": "Busan",
+          "it": "Busan",
+          "pt": "Busan",
+          "ru": "Пусан",
+          "vi": "Busan",
+          "th": "ปูซาน",
+          "ar": "بوسان"
+        }
+      },
+      {
+        "key": "Jeju",
+        "context": "Island province; main destination for Jeju-based tours",
+        "renderings": {
+          "en": "Jeju",
+          "ko": "제주",
+          "zh": "济州",
+          "zh-TW": "濟州",
+          "ja": "済州島",
+          "es": "Jeju",
+          "fr": "Jeju",
+          "de": "Jeju",
+          "it": "Jeju",
+          "pt": "Jeju",
+          "ru": "Чеджу",
+          "vi": "Jeju",
+          "th": "เชจู",
+          "ar": "جيجو"
+        }
+      },
+      {
+        "key": "Seoul",
+        "context": "Capital city; common pickup origin for day trips",
+        "renderings": {
+          "en": "Seoul",
+          "ko": "서울",
+          "zh": "首尔",
+          "zh-TW": "首爾",
+          "ja": "ソウル",
+          "es": "Seúl",
+          "fr": "Séoul",
+          "de": "Seoul",
+          "it": "Seul",
+          "pt": "Seul",
+          "ru": "Сеул",
+          "vi": "Seoul",
+          "th": "โซล",
+          "ar": "سيول"
+        }
+      },
+      {
+        "key": "Gyeongju",
+        "context": "Ancient Silla capital, UNESCO World Heritage; day-trip from Busan",
+        "renderings": {
+          "en": "Gyeongju",
+          "ko": "경주",
+          "zh": "庆州",
+          "zh-TW": "慶州",
+          "ja": "慶州",
+          "es": "Gyeongju",
+          "fr": "Gyeongju",
+          "de": "Gyeongju",
+          "it": "Gyeongju",
+          "pt": "Gyeongju",
+          "ru": "Кёнджу",
+          "vi": "Gyeongju",
+          "th": "คย็องจู",
+          "ar": "غيونغجو"
+        }
+      },
+      {
+        "key": "Incheon",
+        "context": "Port city near Seoul; cruise terminal for Seoul shore excursions",
+        "renderings": {
+          "en": "Incheon",
+          "ko": "인천",
+          "zh": "仁川",
+          "zh-TW": "仁川",
+          "ja": "仁川",
+          "es": "Incheon",
+          "fr": "Incheon",
+          "de": "Incheon",
+          "it": "Incheon",
+          "pt": "Incheon",
+          "ru": "Инчхон",
+          "vi": "Incheon",
+          "th": "อินชอน",
+          "ar": "إنتشون"
+        }
+      },
+      {
+        "key": "Yangsan",
+        "context": "City in South Gyeongsang Province; home to Tongdosa Temple and Wondong Plum Village",
+        "renderings": {
+          "en": "Yangsan",
+          "ko": "양산",
+          "zh": "梁山",
+          "zh-TW": "梁山",
+          "ja": "梁山",
+          "es": "Yangsan",
+          "fr": "Yangsan",
+          "de": "Yangsan",
+          "it": "Yangsan",
+          "pt": "Yangsan",
+          "ru": "Янсан",
+          "vi": "Yangsan",
+          "th": "ยังซาน",
+          "ar": "يانغسان"
+        }
+      },
+      {
+        "key": "Suwon",
+        "context": "City in Gyeonggi Province; home to Hwaseong Fortress (UNESCO)",
+        "renderings": {
+          "en": "Suwon",
+          "ko": "수원",
+          "zh": "水原",
+          "zh-TW": "水原",
+          "ja": "水原",
+          "es": "Suwon",
+          "fr": "Suwon",
+          "de": "Suwon",
+          "it": "Suwon",
+          "pt": "Suwon",
+          "ru": "Сувон",
+          "vi": "Suwon",
+          "th": "ซูวอน",
+          "ar": "سوون"
+        }
+      },
+      {
+        "key": "Pocheon",
+        "context": "City in Gyeonggi Province; Sanjeong Lake, Herb Island, Art Valley tours",
+        "renderings": {
+          "en": "Pocheon",
+          "ko": "포천",
+          "zh": "抱川",
+          "zh-TW": "抱川",
+          "ja": "抱川",
+          "es": "Pocheon",
+          "fr": "Pocheon",
+          "de": "Pocheon",
+          "it": "Pocheon",
+          "pt": "Pocheon",
+          "ru": "Почхон",
+          "vi": "Pocheon",
+          "th": "โพชอน",
+          "ar": "بوتشيون"
+        }
+      },
+      {
+        "key": "Paju",
+        "context": "City near DMZ in Gyeonggi Province; starting point for DMZ tours",
+        "renderings": {
+          "en": "Paju",
+          "ko": "파주",
+          "zh": "坡州",
+          "zh-TW": "坡州",
+          "ja": "坡州",
+          "es": "Paju",
+          "fr": "Paju",
+          "de": "Paju",
+          "it": "Paju",
+          "pt": "Paju",
+          "ru": "Пачжу",
+          "vi": "Paju",
+          "th": "พาจู",
+          "ar": "باجو"
+        }
+      },
+      {
+        "key": "Gapyeong",
+        "context": "County north of Seoul; Nami Island, Garden of Morning Calm, Petite France",
+        "renderings": {
+          "en": "Gapyeong",
+          "ko": "가평",
+          "zh": "加平",
+          "zh-TW": "加平",
+          "ja": "加平",
+          "es": "Gapyeong",
+          "fr": "Gapyeong",
+          "de": "Gapyeong",
+          "it": "Gapyeong",
+          "pt": "Gapyeong",
+          "ru": "Гапхён",
+          "vi": "Gapyeong",
+          "th": "กาพย็อง",
+          "ar": "غابيونغ"
+        }
+      },
+      {
+        "key": "Sokcho",
+        "context": "East Sea coastal city near Seoraksan National Park",
+        "renderings": {
+          "en": "Sokcho",
+          "ko": "속초",
+          "zh": "束草",
+          "zh-TW": "束草",
+          "ja": "束草",
+          "es": "Sokcho",
+          "fr": "Sokcho",
+          "de": "Sokcho",
+          "it": "Sokcho",
+          "pt": "Sokcho",
+          "ru": "Сокчхо",
+          "vi": "Sokcho",
+          "th": "ซกโช",
+          "ar": "سوكتشو"
+        }
+      },
+      {
+        "key": "Yongin",
+        "context": "City in Gyeonggi Province; Korean Folk Village, Waujeongsa Temple",
+        "renderings": {
+          "en": "Yongin",
+          "ko": "용인",
+          "zh": "龙仁",
+          "zh-TW": "龍仁",
+          "ja": "龍仁",
+          "es": "Yongin",
+          "fr": "Yongin",
+          "de": "Yongin",
+          "it": "Yongin",
+          "pt": "Yongin",
+          "ru": "Ёнин",
+          "vi": "Yongin",
+          "th": "ยงอิน",
+          "ar": "يونغين"
+        }
+      },
+      {
+        "key": "Seogwipo",
+        "context": "Southern Jeju city; cruise terminal (Gangjeong Port), waterfall sites",
+        "renderings": {
+          "en": "Seogwipo",
+          "ko": "서귀포",
+          "zh": "西归浦",
+          "zh-TW": "西歸浦",
+          "ja": "西帰浦",
+          "es": "Seogwipo",
+          "fr": "Seogwipo",
+          "de": "Seogwipo",
+          "it": "Seogwipo",
+          "pt": "Seogwipo",
+          "ru": "Согвипхо",
+          "vi": "Seogwipo",
+          "th": "ซอกวีโป",
+          "ar": "سيوغويبو"
+        }
+      },
+      {
+        "key": "Aewol",
+        "context": "Coastal town on northwest Jeju; trendy café strip, Hyeopjae Beach nearby",
+        "renderings": {
+          "en": "Aewol",
+          "ko": "애월",
+          "zh": "涯月",
+          "zh-TW": "涯月",
+          "ja": "涯月",
+          "es": "Aewol",
+          "fr": "Aewol",
+          "de": "Aewol",
+          "it": "Aewol",
+          "pt": "Aewol",
+          "ru": "Эволь",
+          "vi": "Aewol",
+          "th": "แอวอล",
+          "ar": "إيوول"
+        }
+      },
+      {
+        "key": "Gyeonggi-do",
+        "context": "Province surrounding Seoul; common day-trip destination",
+        "renderings": {
+          "en": "Gyeonggi Province",
+          "ko": "경기도",
+          "zh": "京畿道",
+          "zh-TW": "京畿道",
+          "ja": "京畿道",
+          "es": "Provincia de Gyeonggi",
+          "fr": "Province de Gyeonggi",
+          "de": "Gyeonggi-Provinz",
+          "it": "Provincia di Gyeonggi",
+          "pt": "Província de Gyeonggi",
+          "ru": "провинция Кёнги",
+          "vi": "Tỉnh Gyeonggi",
+          "th": "จังหวัดคย็องกี",
+          "ar": "مقاطعة كيونغغي"
+        }
+      },
+      {
+        "key": "Gangwon-do",
+        "context": "Northeast province; Seoraksan, East Sea coast",
+        "renderings": {
+          "en": "Gangwon Province",
+          "ko": "강원도",
+          "zh": "江原道",
+          "zh-TW": "江原道",
+          "ja": "江原道",
+          "es": "Provincia de Gangwon",
+          "fr": "Province de Gangwon",
+          "de": "Gangwon-Provinz",
+          "it": "Provincia di Gangwon",
+          "pt": "Província de Gangwon",
+          "ru": "провинция Канвон",
+          "vi": "Tỉnh Gangwon",
+          "th": "จังหวัดคังวอน",
+          "ar": "مقاطعة كانغوون"
+        }
+      },
+      {
+        "key": "Haeundae",
+        "context": "Famous beach district in Busan; alternate cherry blossom spot (Dalmaji Hill)",
+        "renderings": {
+          "en": "Haeundae",
+          "ko": "해운대",
+          "zh": "海云台",
+          "zh-TW": "海雲台",
+          "ja": "海雲台",
+          "es": "Haeundae",
+          "fr": "Haeundae",
+          "de": "Haeundae",
+          "it": "Haeundae",
+          "pt": "Haeundae",
+          "ru": "Хэундэ",
+          "vi": "Haeundae",
+          "th": "แฮอุนแด",
+          "ar": "هايوندي"
+        }
+      },
+      {
+        "key": "Nampo-dong",
+        "context": "Downtown Busan district near Jagalchi Market and BIFF Square",
+        "renderings": {
+          "en": "Nampo-dong",
+          "ko": "남포동",
+          "zh": "南浦洞",
+          "zh-TW": "南浦洞",
+          "ja": "南浦洞",
+          "es": "Nampo-dong",
+          "fr": "Nampo-dong",
+          "de": "Nampo-dong",
+          "it": "Nampo-dong",
+          "pt": "Nampo-dong",
+          "ru": "Нампо-дон",
+          "vi": "Nampo-dong",
+          "th": "นัมโพดง",
+          "ar": "نامبو-دونغ"
+        }
+      },
+      {
+        "key": "Gwangmyeong",
+        "context": "City in Gyeonggi Province; Gwangmyeong Cave (former gold mine)",
+        "renderings": {
+          "en": "Gwangmyeong",
+          "ko": "광명",
+          "zh": "光明",
+          "zh-TW": "光明",
+          "ja": "光明",
+          "es": "Gwangmyeong",
+          "fr": "Gwangmyeong",
+          "de": "Gwangmyeong",
+          "it": "Gwangmyeong",
+          "pt": "Gwangmyeong",
+          "ru": "Кванмён",
+          "vi": "Gwangmyeong",
+          "th": "กวังมย็อง",
+          "ar": "غوانغميونغ"
+        }
+      }
+    ],
+    "temple_heritage": [
+      {
+        "key": "Bulguksa Temple",
+        "context": "UNESCO World Heritage Buddhist temple in Gyeongju; Silla dynasty masterpiece",
+        "renderings": {
+          "en": "Bulguksa Temple",
+          "ko": "불국사",
+          "zh": "佛国寺",
+          "zh-TW": "佛國寺",
+          "ja": "仏国寺",
+          "es": "Templo Bulguksa",
+          "fr": "Temple Bulguksa",
+          "de": "Bulguksa-Tempel",
+          "it": "Tempio Bulguksa",
+          "pt": "Templo Bulguksa",
+          "ru": "Пульгукса",
+          "vi": "Chùa Bulguksa",
+          "th": "วัดพุลกุกซา",
+          "ar": "معبد بولغوكسا"
+        }
+      },
+      {
+        "key": "Seokguram Grotto",
+        "context": "UNESCO World Heritage granite grotto with Buddha statue near Bulguksa, Gyeongju",
+        "renderings": {
+          "en": "Seokguram Grotto",
+          "ko": "석굴암",
+          "zh": "石窟庵",
+          "zh-TW": "石窟庵",
+          "ja": "石窟庵",
+          "es": "Gruta de Seokguram",
+          "fr": "Grotte de Seokguram",
+          "de": "Seokguram-Grotte",
+          "it": "Grotta di Seokguram",
+          "pt": "Gruta de Seokguram",
+          "ru": "Сокгурам",
+          "vi": "Động Seokguram",
+          "th": "ถ้ำซ็อกกูรัม",
+          "ar": "كهف سيوكغورام"
+        }
+      },
+      {
+        "key": "Hwaseong Fortress",
+        "context": "UNESCO World Heritage 18th-century fortress walls in Suwon",
+        "renderings": {
+          "en": "Hwaseong Fortress",
+          "ko": "수원 화성",
+          "zh": "华城",
+          "zh-TW": "華城",
+          "ja": "華城",
+          "es": "Fortaleza Hwaseong",
+          "fr": "Forteresse Hwaseong",
+          "de": "Hwaseong-Festung",
+          "it": "Fortezza Hwaseong",
+          "pt": "Fortaleza Hwaseong",
+          "ru": "крепость Хвасон",
+          "vi": "Thành Hwaseong",
+          "th": "ป้อมปราการฮวาซ็อง",
+          "ar": "قلعة هواسيونغ"
+        }
+      },
+      {
+        "key": "Hwaseong Haenggung Palace",
+        "context": "Joseon temporary palace inside Hwaseong Fortress, Suwon",
+        "renderings": {
+          "en": "Hwaseong Haenggung Palace",
+          "ko": "화성행궁",
+          "zh": "华城行宫",
+          "zh-TW": "華城行宮",
+          "ja": "華城行宮",
+          "es": "Palacio Hwaseong Haenggung",
+          "fr": "Palais Hwaseong Haenggung",
+          "de": "Hwaseong-Haenggung-Palast",
+          "it": "Palazzo Hwaseong Haenggung",
+          "pt": "Palácio Hwaseong Haenggung",
+          "ru": "дворец Хвасон Хэнгун",
+          "vi": "Cung điện Hwaseong Haenggung",
+          "th": "พระราชวังฮวาซ็องแฮงกุง",
+          "ar": "قصر هواسيونغ هانغونغ"
+        }
+      },
+      {
+        "key": "Gyeongbokgung Palace",
+        "context": "Joseon royal palace in Seoul; main royal guard ceremony venue",
+        "renderings": {
+          "en": "Gyeongbokgung Palace",
+          "ko": "경복궁",
+          "zh": "景福宫",
+          "zh-TW": "景福宮",
+          "ja": "景福宮",
+          "es": "Palacio Gyeongbokgung",
+          "fr": "Palais Gyeongbokgung",
+          "de": "Gyeongbokgung-Palast",
+          "it": "Palazzo Gyeongbokgung",
+          "pt": "Palácio Gyeongbokgung",
+          "ru": "дворец Кёнбоккун",
+          "vi": "Cung điện Gyeongbokgung",
+          "th": "พระราชวังคย็องบกกุง",
+          "ar": "قصر غيونغبوكغونغ"
+        }
+      },
+      {
+        "key": "Tongdosa Temple",
+        "context": "UNESCO Sansa (mountain temple); one of Korea's Three Jewel Temples; famous Jajangmae plum tree in Yangsan",
+        "renderings": {
+          "en": "Tongdosa Temple",
+          "ko": "통도사",
+          "zh": "通度寺",
+          "zh-TW": "通度寺",
+          "ja": "通度寺",
+          "es": "Templo Tongdosa",
+          "fr": "Temple Tongdosa",
+          "de": "Tongdosa-Tempel",
+          "it": "Tempio Tongdosa",
+          "pt": "Templo Tongdosa",
+          "ru": "Тхондоса",
+          "vi": "Chùa Tongdosa",
+          "th": "วัดทงโดซา",
+          "ar": "معبد تونغدوسا"
+        }
+      },
+      {
+        "key": "Haedong Yonggungsa Temple",
+        "context": "Coastal Buddhist temple on cliffside in Gijang-gun, Busan; famous seaside setting",
+        "renderings": {
+          "en": "Haedong Yonggungsa Temple",
+          "ko": "해동 용궁사",
+          "zh": "海东龙宫寺",
+          "zh-TW": "海東龍宮寺",
+          "ja": "海東龍宮寺",
+          "es": "Templo Haedong Yonggungsa",
+          "fr": "Temple Haedong Yonggungsa",
+          "de": "Haedong-Yonggungsa-Tempel",
+          "it": "Tempio Haedong Yonggungsa",
+          "pt": "Templo Haedong Yonggungsa",
+          "ru": "Хэдон Ёнгунса",
+          "vi": "Chùa Haedong Yonggungsa",
+          "th": "วัดแฮดงยงกุงซา",
+          "ar": "معبد هايدونغ يونغغونغسا"
+        }
+      },
+      {
+        "key": "Waujeongsa Temple",
+        "context": "Buddhist temple with giant outdoor Buddha statue at Mount Yeonhwasan foothills, Yongin",
+        "renderings": {
+          "en": "Waujeongsa Temple",
+          "ko": "와우정사",
+          "zh": "卧牛精舍",
+          "zh-TW": "臥牛精舍",
+          "ja": "臥牛精舎",
+          "es": "Templo Waujeongsa",
+          "fr": "Temple Waujeongsa",
+          "de": "Waujeongsa-Tempel",
+          "it": "Tempio Waujeongsa",
+          "pt": "Templo Waujeongsa",
+          "ru": "Вауджонса",
+          "vi": "Chùa Waujeongsa",
+          "th": "วัดวาอูจ็องซา",
+          "ar": "معبد واويونغسا"
+        }
+      },
+      {
+        "key": "Sinheungsa Temple",
+        "context": "Buddhist temple at Sogongwon entrance in Seoraksan National Park",
+        "renderings": {
+          "en": "Sinheungsa Temple",
+          "ko": "신흥사",
+          "zh": "神兴寺",
+          "zh-TW": "神興寺",
+          "ja": "神興寺",
+          "es": "Templo Sinheungsa",
+          "fr": "Temple Sinheungsa",
+          "de": "Sinheungsa-Tempel",
+          "it": "Tempio Sinheungsa",
+          "pt": "Templo Sinheungsa",
+          "ru": "Синхынса",
+          "vi": "Chùa Sinheungsa",
+          "th": "วัดซินฮึงซา",
+          "ar": "معبد سينهيونغسا"
+        }
+      },
+      {
+        "key": "Woljeonggyo Bridge",
+        "context": "Reconstructed Silla wooden bridge over Namcheon stream in Gyeongju; famous for night view",
+        "renderings": {
+          "en": "Woljeonggyo Bridge",
+          "ko": "월정교",
+          "zh": "月精桥",
+          "zh-TW": "月精橋",
+          "ja": "月精橋",
+          "es": "Puente Woljeonggyo",
+          "fr": "Pont Woljeonggyo",
+          "de": "Woljeonggyo-Brücke",
+          "it": "Ponte Woljeonggyo",
+          "pt": "Ponte Woljeonggyo",
+          "ru": "Вольджонгё",
+          "vi": "Cầu Woljeonggyo",
+          "th": "สะพานวอลจ็องกโย",
+          "ar": "جسر ووليونغغيو"
+        }
+      },
+      {
+        "key": "Daereungwon Tomb Complex",
+        "context": "Silla-era royal burial mound complex in Gyeongju historic area",
+        "renderings": {
+          "en": "Daereungwon Tomb Complex",
+          "ko": "대릉원",
+          "zh": "大陵苑",
+          "zh-TW": "大陵苑",
+          "ja": "大陵苑",
+          "es": "Complejo de Tumbas Daereungwon",
+          "fr": "Complexe funéraire Daereungwon",
+          "de": "Daereungwon-Grabkomplex",
+          "it": "Complesso di Tombe Daereungwon",
+          "pt": "Complexo de Túmulos Daereungwon",
+          "ru": "Тэрынвон",
+          "vi": "Khu lăng mộ Daereungwon",
+          "th": "สุสานแทรึงวอน",
+          "ar": "مجمع أضرحة داريونغوون"
+        }
+      },
+      {
+        "key": "Cheomseongdae Observatory",
+        "context": "7th-century Silla-era stone astronomical observatory in Gyeongju",
+        "renderings": {
+          "en": "Cheomseongdae Observatory",
+          "ko": "첨성대",
+          "zh": "瞻星台",
+          "zh-TW": "瞻星台",
+          "ja": "瞻星台",
+          "es": "Observatorio Cheomseongdae",
+          "fr": "Observatoire Cheomseongdae",
+          "de": "Cheomseongdae-Observatorium",
+          "it": "Osservatorio Cheomseongdae",
+          "pt": "Observatório Cheomseongdae",
+          "ru": "Чомсондэ",
+          "vi": "Đài thiên văn Cheomseongdae",
+          "th": "หอดูดาวช็อมซ็องแด",
+          "ar": "مرصد تشيومسيونغداي"
+        }
+      },
+      {
+        "key": "UN Memorial Cemetery",
+        "context": "Korean War memorial cemetery in Nam-gu, Busan; only UN cemetery in the world",
+        "renderings": {
+          "en": "UN Memorial Cemetery",
+          "ko": "유엔기념공원",
+          "zh": "联合国纪念公墓",
+          "zh-TW": "聯合國紀念公墓",
+          "ja": "国連記念公園",
+          "es": "Cementerio Memorial de la ONU",
+          "fr": "Cimetière commémoratif de l'ONU",
+          "de": "UN-Gedenkfriedhof",
+          "it": "Cimitero Commemorativo ONU",
+          "pt": "Cemitério Memorial da ONU",
+          "ru": "Мемориальное кладбище ООН",
+          "vi": "Nghĩa trang Tưởng niệm LHQ",
+          "th": "สุสานอนุสรณ์สหประชาชาติ",
+          "ar": "مقبرة الأمم المتحدة التذكارية"
+        }
+      },
+      {
+        "key": "Imjingak Peace Park",
+        "context": "DMZ-adjacent peace park in Paju; memorial and gondola to 3rd Infiltration Tunnel",
+        "renderings": {
+          "en": "Imjingak Peace Park",
+          "ko": "임진각 평화공원",
+          "zh": "临津阁和平公园",
+          "zh-TW": "臨津閣和平公園",
+          "ja": "臨津閣平和公園",
+          "es": "Parque de la Paz Imjingak",
+          "fr": "Parc de la Paix Imjingak",
+          "de": "Imjingak-Friedenspark",
+          "it": "Parco della Pace Imjingak",
+          "pt": "Parque da Paz Imjingak",
+          "ru": "Парк мира Имджингак",
+          "vi": "Công viên Hòa bình Imjingak",
+          "th": "สวนสันติภาพอิมจินกัก",
+          "ar": "حديقة سلام إمجينغاك"
+        }
+      },
+      {
+        "key": "Seongeup Folk Village",
+        "context": "UNESCO-listed Joseon-era folk heritage village in eastern Jeju",
+        "renderings": {
+          "en": "Seongeup Folk Village",
+          "ko": "성읍 민속마을",
+          "zh": "城邑民俗村",
+          "zh-TW": "城邑民俗村",
+          "ja": "城邑民俗村",
+          "es": "Villa Folclórica de Seongeup",
+          "fr": "Village folklorique de Seongeup",
+          "de": "Seongeup-Volkskunstedorf",
+          "it": "Villaggio Folkloristico di Seongeup",
+          "pt": "Vila Folclórica de Seongeup",
+          "ru": "народная деревня Соную",
+          "vi": "Làng dân gian Seongeup",
+          "th": "หมู่บ้านพื้นบ้านซ็องอึบ",
+          "ar": "قرية سيونغيوب الشعبية"
+        }
+      }
+    ],
+    "nature_attraction": [
+      {
+        "key": "Hallasan",
+        "context": "Dormant volcano and highest peak in South Korea, UNESCO World Heritage; central Jeju",
+        "renderings": {
+          "en": "Hallasan",
+          "ko": "한라산",
+          "zh": "汉拿山",
+          "zh-TW": "漢拏山",
+          "ja": "漢拏山",
+          "es": "Monte Hallasan",
+          "fr": "Mont Hallasan",
+          "de": "Hallasan-Berg",
+          "it": "Monte Hallasan",
+          "pt": "Monte Hallasan",
+          "ru": "Халласан",
+          "vi": "Núi Hallasan",
+          "th": "ภูเขาฮัลลาซัน",
+          "ar": "جبل هالاسان"
+        }
+      },
+      {
+        "key": "Seongsan Ilchulbong",
+        "context": "UNESCO tuff cone volcanic crater (Sunrise Peak) in eastern Jeju",
+        "renderings": {
+          "en": "Seongsan Ilchulbong",
+          "ko": "성산일출봉",
+          "zh": "城山日出峰",
+          "zh-TW": "城山日出峰",
+          "ja": "城山日出峰",
+          "es": "Seongsan Ilchulbong (Pico del Amanecer)",
+          "fr": "Seongsan Ilchulbong (Pic du Lever du Soleil)",
+          "de": "Seongsan Ilchulbong (Sonnenaufgangsgipfel)",
+          "it": "Seongsan Ilchulbong (Picco dell'Alba)",
+          "pt": "Seongsan Ilchulbong (Pico do Nascer do Sol)",
+          "ru": "Сонсан Ильчхульбон",
+          "vi": "Seongsan Ilchulbong (Đỉnh Bình Minh)",
+          "th": "ซ็องซานอิลชุลบง (ยอดเขาพระอาทิตย์ขึ้น)",
+          "ar": "سيونغسان إيلتشولبونغ (قمة الشروق)"
+        }
+      },
+      {
+        "key": "Manjanggul Cave",
+        "context": "UNESCO World Heritage lava tube cave in eastern Jeju; longest lava tube in the world",
+        "renderings": {
+          "en": "Manjanggul Cave",
+          "ko": "만장굴",
+          "zh": "万丈窟",
+          "zh-TW": "萬丈窟",
+          "ja": "万丈窟",
+          "es": "Cueva Manjanggul",
+          "fr": "Grotte de Manjanggul",
+          "de": "Manjanggul-Höhle",
+          "it": "Grotta di Manjanggul",
+          "pt": "Caverna Manjanggul",
+          "ru": "пещера Манджангуль",
+          "vi": "Hang Manjanggul",
+          "th": "ถ้ำมันจังกุล",
+          "ar": "كهف مانجانغغول"
+        }
+      },
+      {
+        "key": "Seoraksan National Park",
+        "context": "National park in Gangwon Province; granite peaks, valleys, Buddhist heritage",
+        "renderings": {
+          "en": "Seoraksan National Park",
+          "ko": "설악산 국립공원",
+          "zh": "雪岳山国家公园",
+          "zh-TW": "雪嶽山國家公園",
+          "ja": "雪岳山国立公園",
+          "es": "Parque Nacional Seoraksan",
+          "fr": "Parc National de Seoraksan",
+          "de": "Seoraksan-Nationalpark",
+          "it": "Parco Nazionale di Seoraksan",
+          "pt": "Parque Nacional de Seoraksan",
+          "ru": "Национальный парк Соракsan",
+          "vi": "Vườn quốc gia Seoraksan",
+          "th": "อุทยานแห่งชาติซอรักซาน",
+          "ar": "الحديقة الوطنية سيوراكسان"
+        }
+      },
+      {
+        "key": "Nami Island",
+        "context": "Tree-lined island in Gapyeong; famous K-drama filming location (Winter Sonata)",
+        "renderings": {
+          "en": "Nami Island",
+          "ko": "남이섬",
+          "zh": "南怡岛",
+          "zh-TW": "南怡島",
+          "ja": "南怡島",
+          "es": "Isla Nami",
+          "fr": "Île Nami",
+          "de": "Nami-Insel",
+          "it": "Isola di Nami",
+          "pt": "Ilha Nami",
+          "ru": "остров Нами",
+          "vi": "Đảo Nami",
+          "th": "เกาะนามิ",
+          "ar": "جزيرة نامي"
+        }
+      },
+      {
+        "key": "Garden of Morning Calm",
+        "context": "Themed garden park in Gapyeong; English name used internationally",
+        "renderings": {
+          "en": "Garden of Morning Calm",
+          "ko": "아침고요수목원",
+          "zh": "晨静树木园",
+          "zh-TW": "晨靜樹木園",
+          "ja": "朝の静けさ樹木園",
+          "es": "Jardín de la Calma Matutina",
+          "fr": "Jardin de la Calme Matinale",
+          "de": "Garden of Morning Calm",
+          "it": "Garden of Morning Calm",
+          "pt": "Garden of Morning Calm",
+          "ru": "Сад утреннего спокойствия",
+          "vi": "Vườn Bình Minh Yên Lặng",
+          "th": "สวน Garden of Morning Calm",
+          "ar": "حديقة هدوء الصباح"
+        }
+      },
+      {
+        "key": "Petite France",
+        "context": "French-themed cultural village in Gapyeong; Le Petit Prince theme; K-drama filming location",
+        "renderings": {
+          "en": "Petite France",
+          "ko": "쁘띠프랑스",
+          "zh": "小法国村",
+          "zh-TW": "小法國村",
+          "ja": "プチフランス",
+          "es": "Petite France",
+          "fr": "Petite France",
+          "de": "Petite France",
+          "it": "Petite France",
+          "pt": "Petite France",
+          "ru": "Пти Франс",
+          "vi": "Petite France",
+          "th": "เปอตีต ฟรองซ์",
+          "ar": "بيتيت فرانس"
+        }
+      },
+      {
+        "key": "Hyeopjae Beach",
+        "context": "White-sand beach on western Jeju; UNESCO Biosphere Reserve area",
+        "renderings": {
+          "en": "Hyeopjae Beach",
+          "ko": "협재해수욕장",
+          "zh": "挟才海水浴场",
+          "zh-TW": "挾才海水浴場",
+          "ja": "挟才海水浴場",
+          "es": "Playa Hyeopjae",
+          "fr": "Plage de Hyeopjae",
+          "de": "Hyeopjae-Strand",
+          "it": "Spiaggia di Hyeopjae",
+          "pt": "Praia de Hyeopjae",
+          "ru": "пляж Хёпчжэ",
+          "vi": "Bãi biển Hyeopjae",
+          "th": "หาดฮย็อปแจ",
+          "ar": "شاطئ هييوبجاي"
+        }
+      },
+      {
+        "key": "Hallim Park",
+        "context": "Theme park on western Jeju; Hyeopjae and Ssangyong lava tubes, folk village, cactus and bonsai gardens",
+        "renderings": {
+          "en": "Hallim Park",
+          "ko": "한림공원",
+          "zh": "翰林公园",
+          "zh-TW": "翰林公園",
+          "ja": "翰林公園",
+          "es": "Parque Hallim",
+          "fr": "Parc Hallim",
+          "de": "Hallim-Park",
+          "it": "Parco Hallim",
+          "pt": "Parque Hallim",
+          "ru": "Халлимский парк",
+          "vi": "Công viên Hallim",
+          "th": "สวนฮัลลิม",
+          "ar": "حديقة هالليم"
+        }
+      },
+      {
+        "key": "Jeju Stone Park",
+        "context": "Outdoor stone culture museum and Jeju mythology park in eastern Jeju",
+        "renderings": {
+          "en": "Jeju Stone Park",
+          "ko": "제주돌문화공원",
+          "zh": "济州石头文化公园",
+          "zh-TW": "濟州石頭文化公園",
+          "ja": "済州石文化公園",
+          "es": "Parque de la Cultura de la Piedra de Jeju",
+          "fr": "Parc de la Culture de Pierre de Jeju",
+          "de": "Jeju-Steinkulturpark",
+          "it": "Parco della Cultura della Pietra di Jeju",
+          "pt": "Parque de Cultura em Pedra de Jeju",
+          "ru": "Парк каменной культуры Чеджу",
+          "vi": "Công viên Văn hóa Đá Jeju",
+          "th": "สวนวัฒนธรรมหินเชจู",
+          "ar": "حديقة ثقافة الحجارة في جيجو"
+        }
+      },
+      {
+        "key": "Camellia Hill",
+        "context": "Camellia arboretum garden in southern Jeju; peak bloom winter/spring",
+        "renderings": {
+          "en": "Camellia Hill",
+          "ko": "카멜리아힐",
+          "zh": "茶花山",
+          "zh-TW": "茶花山",
+          "ja": "カメリアヒル",
+          "es": "Camellia Hill",
+          "fr": "Camellia Hill",
+          "de": "Camellia Hill",
+          "it": "Camellia Hill",
+          "pt": "Camellia Hill",
+          "ru": "Камелия Хилл",
+          "vi": "Đồi Camellia",
+          "th": "คาเมลเลีย ฮิลล์",
+          "ar": "كاميليا هيل"
+        }
+      },
+      {
+        "key": "Cheonjeyeon Falls",
+        "context": "Three-tiered waterfall near Jungmun, southern Jeju; 'Pond of the Emperor of Heaven'",
+        "renderings": {
+          "en": "Cheonjeyeon Falls",
+          "ko": "천제연 폭포",
+          "zh": "天帝渊瀑布",
+          "zh-TW": "天帝淵瀑布",
+          "ja": "天帝淵瀑布",
+          "es": "Cascada Cheonjeyeon",
+          "fr": "Chutes de Cheonjeyeon",
+          "de": "Cheonjeyeon-Wasserfall",
+          "it": "Cascata di Cheonjeyeon",
+          "pt": "Cachoeira Cheonjeyeon",
+          "ru": "водопад Чхонджеён",
+          "vi": "Thác Cheonjeyeon",
+          "th": "น้ำตกช็อนเจย็อน",
+          "ar": "شلالات تشيونجييون"
+        }
+      },
+      {
+        "key": "Cheonjiyeon Falls",
+        "context": "Waterfall in Seogwipo old town that flows directly into the sea; unique in Asia",
+        "renderings": {
+          "en": "Cheonjiyeon Falls",
+          "ko": "천지연 폭포",
+          "zh": "天地渊瀑布",
+          "zh-TW": "天地淵瀑布",
+          "ja": "天地淵瀑布",
+          "es": "Cascada Cheonjiyeon",
+          "fr": "Chutes de Cheonjiyeon",
+          "de": "Cheonjiyeon-Wasserfall",
+          "it": "Cascata di Cheonjiyeon",
+          "pt": "Cachoeira Cheonjiyeon",
+          "ru": "водопад Чхонджиён",
+          "vi": "Thác Cheonjiyeon",
+          "th": "น้ำตกช็อนจิย็อน",
+          "ar": "شلالات تشيونجييون"
+        }
+      },
+      {
+        "key": "Jeongbang Waterfall",
+        "context": "Seogwipo waterfall that falls directly into the sea; one of Asia's only ocean-plunge falls",
+        "renderings": {
+          "en": "Jeongbang Waterfall",
+          "ko": "정방폭포",
+          "zh": "正房瀑布",
+          "zh-TW": "正房瀑布",
+          "ja": "正房瀑布",
+          "es": "Cascada Jeongbang",
+          "fr": "Chutes de Jeongbang",
+          "de": "Jeongbang-Wasserfall",
+          "it": "Cascata di Jeongbang",
+          "pt": "Cachoeira Jeongbang",
+          "ru": "водопад Чонбан",
+          "vi": "Thác Jeongbang",
+          "th": "น้ำตกจ็องบัง",
+          "ar": "شلال جيونغبانغ"
+        }
+      },
+      {
+        "key": "Jusangjeolli Cliff",
+        "context": "Hexagonal columnar-jointed lava cliff on Jungmun coast, southern Jeju; Natural Monument No. 443",
+        "renderings": {
+          "en": "Jusangjeolli Cliff",
+          "ko": "주상절리",
+          "zh": "柱状节理海岸",
+          "zh-TW": "柱狀節理海岸",
+          "ja": "柱状節理",
+          "es": "Acantilado Jusangjeolli",
+          "fr": "Falaise de Jusangjeolli",
+          "de": "Jusangjeolli-Klippe",
+          "it": "Scogliera di Jusangjeolli",
+          "pt": "Falésia Jusangjeolli",
+          "ru": "скалы Чусанджолли",
+          "vi": "Vách đá Jusangjeolli",
+          "th": "หน้าผาจูซางจ็อลลี",
+          "ar": "منحدرات جوسانغجيولي"
+        }
+      },
+      {
+        "key": "Seopjikoji",
+        "context": "Volcanic cape on eastern Jeju; K-drama filming location, Bangdupo Lighthouse, Tadao Ando architecture",
+        "renderings": {
+          "en": "Seopjikoji",
+          "ko": "섭지코지",
+          "zh": "涉地可支",
+          "zh-TW": "涉地可支",
+          "ja": "渉地コジ",
+          "es": "Seopjikoji",
+          "fr": "Seopjikoji",
+          "de": "Seopjikoji",
+          "it": "Seopjikoji",
+          "pt": "Seopjikoji",
+          "ru": "Собчжикоджи",
+          "vi": "Seopjikoji",
+          "th": "ซ็อบจิโคจิ",
+          "ar": "سيوبجيكوجي"
+        }
+      },
+      {
+        "key": "Songaksan",
+        "context": "Volcanic mountain at southwestern tip of Jeju; panoramic sea views",
+        "renderings": {
+          "en": "Songaksan",
+          "ko": "송악산",
+          "zh": "松岳山",
+          "zh-TW": "松嶽山",
+          "ja": "松岳山",
+          "es": "Songaksan",
+          "fr": "Songaksan",
+          "de": "Songaksan",
+          "it": "Songaksan",
+          "pt": "Songaksan",
+          "ru": "Сонак-сан",
+          "vi": "Songaksan",
+          "th": "ซงอักซาน",
+          "ar": "سونغاكسان"
+        }
+      },
+      {
+        "key": "Sanbangsan",
+        "context": "Volcanic dome mountain on southern Jeju coast with sea views",
+        "renderings": {
+          "en": "Sanbangsan",
+          "ko": "산방산",
+          "zh": "山房山",
+          "zh-TW": "山房山",
+          "ja": "山房山",
+          "es": "Sanbangsan",
+          "fr": "Sanbangsan",
+          "de": "Sanbangsan",
+          "it": "Sanbangsan",
+          "pt": "Sanbangsan",
+          "ru": "Санбан-сан",
+          "vi": "Sanbangsan",
+          "th": "ซันบังซาน",
+          "ar": "سانبانغسان"
+        }
+      },
+      {
+        "key": "Hamdeok Beach",
+        "context": "Popular sandy beach at northeastern tip of Jeju; turquoise waters and Seoubong Oreum",
+        "renderings": {
+          "en": "Hamdeok Beach",
+          "ko": "함덕해수욕장",
+          "zh": "咸德海水浴场",
+          "zh-TW": "咸德海水浴場",
+          "ja": "咸徳海水浴場",
+          "es": "Playa Hamdeok",
+          "fr": "Plage de Hamdeok",
+          "de": "Hamdeok-Strand",
+          "it": "Spiaggia di Hamdeok",
+          "pt": "Praia de Hamdeok",
+          "ru": "пляж Хамдок",
+          "vi": "Bãi biển Hamdeok",
+          "th": "หาดฮัมด็อก",
+          "ar": "شاطئ هامديوك"
+        }
+      },
+      {
+        "key": "Ahopsan Bamboo Forest",
+        "context": "Private bamboo forest in Gijang-gun, Busan; K-drama filming location",
+        "renderings": {
+          "en": "Ahopsan Bamboo Forest",
+          "ko": "아홉산숲",
+          "zh": "阿洪山竹林",
+          "zh-TW": "阿洪山竹林",
+          "ja": "アホプサン竹林",
+          "es": "Bosque de Bambú Ahopsan",
+          "fr": "Forêt de Bambou Ahopsan",
+          "de": "Ahopsan-Bambuswald",
+          "it": "Foresta di Bambù Ahopsan",
+          "pt": "Floresta de Bambu Ahopsan",
+          "ru": "Бамбуковый лес Ахопсан",
+          "vi": "Rừng Tre Ahopsan",
+          "th": "ป่าไผ่อาฮอบซาน",
+          "ar": "غابة الخيزران أهوبسان"
+        }
+      },
+      {
+        "key": "Taejongdae",
+        "context": "Coastal cliff park on Yeongdo Island, Busan; scenic headland with Danubi Train",
+        "renderings": {
+          "en": "Taejongdae",
+          "ko": "태종대",
+          "zh": "太宗台",
+          "zh-TW": "太宗台",
+          "ja": "太宗台",
+          "es": "Taejongdae",
+          "fr": "Taejongdae",
+          "de": "Taejongdae",
+          "it": "Taejongdae",
+          "pt": "Taejongdae",
+          "ru": "Тэджондэ",
+          "vi": "Taejongdae",
+          "th": "แทจงแด",
+          "ar": "تايجونغداي"
+        }
+      },
+      {
+        "key": "Cheongsapo Blue Line Park",
+        "context": "Scenic coastal railway path and Sky Capsule in Haeundae, Busan",
+        "renderings": {
+          "en": "Cheongsapo Blue Line Park",
+          "ko": "청사포 블루라인파크",
+          "zh": "青沙浦蓝线公园",
+          "zh-TW": "青沙浦藍線公園",
+          "ja": "チョンサポ・ブルーラインパーク",
+          "es": "Parque Blue Line de Cheongsapo",
+          "fr": "Parc Blue Line de Cheongsapo",
+          "de": "Cheongsapo Blue Line Park",
+          "it": "Parco Blue Line di Cheongsapo",
+          "pt": "Parque Blue Line de Cheongsapo",
+          "ru": "Голубая линия Чхонсапхо",
+          "vi": "Công viên Đường Xanh Cheongsapo",
+          "th": "ชองซาโพ บลูไลน์พาร์ค",
+          "ar": "حديقة الخط الأزرق تشيونغسابو"
+        }
+      },
+      {
+        "key": "Gamcheon Culture Village",
+        "context": "Colorful hillside mural art village in Saha-gu, Busan; 'Machu Picchu of Busan'",
+        "renderings": {
+          "en": "Gamcheon Culture Village",
+          "ko": "감천문화마을",
+          "zh": "甘川文化村",
+          "zh-TW": "甘川文化村",
+          "ja": "甘川文化村",
+          "es": "Pueblo Cultural de Gamcheon",
+          "fr": "Village Culturel de Gamcheon",
+          "de": "Gamcheon-Kulturdorf",
+          "it": "Villaggio Culturale di Gamcheon",
+          "pt": "Vila Cultural de Gamcheon",
+          "ru": "Культурная деревня Кхамчхон",
+          "vi": "Làng Văn hóa Gamcheon",
+          "th": "หมู่บ้านวัฒนธรรมกัมชอน",
+          "ar": "قرية غامتشيون الثقافية"
+        }
+      },
+      {
+        "key": "Sanjeong Lake",
+        "context": "Mountain-circled reservoir lake in Pocheon; scenic trails",
+        "renderings": {
+          "en": "Sanjeong Lake",
+          "ko": "산정호수",
+          "zh": "山井湖",
+          "zh-TW": "山井湖",
+          "ja": "山井湖",
+          "es": "Lago Sanjeong",
+          "fr": "Lac Sanjeong",
+          "de": "Sanjeong-See",
+          "it": "Lago Sanjeong",
+          "pt": "Lago Sanjeong",
+          "ru": "озеро Санджон",
+          "vi": "Hồ Sanjeong",
+          "th": "ทะเลสาบซันจ็อง",
+          "ar": "بحيرة سانجيونغ"
+        }
+      },
+      {
+        "key": "Herb Island",
+        "context": "Mediterranean-style herb garden park in Pocheon; famous for evening lights",
+        "renderings": {
+          "en": "Herb Island",
+          "ko": "허브아일랜드",
+          "zh": "香草岛",
+          "zh-TW": "香草島",
+          "ja": "ハーブアイランド",
+          "es": "Herb Island",
+          "fr": "Herb Island",
+          "de": "Herb Island",
+          "it": "Herb Island",
+          "pt": "Herb Island",
+          "ru": "Херб Айленд",
+          "vi": "Herb Island",
+          "th": "เฮิร์บ ไอส์แลนด์",
+          "ar": "هيرب آيلاند"
+        }
+      },
+      {
+        "key": "Pocheon Art Valley",
+        "context": "Former granite quarry transformed into art park and monorail observatory in Pocheon",
+        "renderings": {
+          "en": "Pocheon Art Valley",
+          "ko": "포천아트밸리",
+          "zh": "抱川艺术谷",
+          "zh-TW": "抱川藝術谷",
+          "ja": "抱川アートバレー",
+          "es": "Arte Valle de Pocheon",
+          "fr": "Vallée d'Art de Pocheon",
+          "de": "Pocheon-Kunsttal",
+          "it": "Valle d'Arte di Pocheon",
+          "pt": "Vale de Arte de Pocheon",
+          "ru": "Арт-долина Почхон",
+          "vi": "Thung lũng Nghệ thuật Pocheon",
+          "th": "อาร์ตวัลเลย์โพชอน",
+          "ar": "وادي الفن في بوتشيون"
+        }
+      },
+      {
+        "key": "Gamaksan Red Suspension Bridge",
+        "context": "220-meter mountain suspension bridge near DMZ area in Paju",
+        "renderings": {
+          "en": "Gamaksan Red Suspension Bridge",
+          "ko": "감악산 출렁다리",
+          "zh": "感岳山红色悬索桥",
+          "zh-TW": "感嶽山紅色懸索橋",
+          "ja": "感岳山赤い吊り橋",
+          "es": "Puente Colgante Rojo de Gamaksan",
+          "fr": "Pont Suspendu Rouge de Gamaksan",
+          "de": "Gamaksan Rote Hängebrücke",
+          "it": "Ponte Sospeso Rosso di Gamaksan",
+          "pt": "Ponte Pênsil Vermelha de Gamaksan",
+          "ru": "Красный подвесной мост Камаксан",
+          "vi": "Cầu Treo Đỏ Gamaksan",
+          "th": "สะพานแขวนสีแดงกามักซาน",
+          "ar": "الجسر المعلق الأحمر غاماكسان"
+        }
+      },
+      {
+        "key": "Gwangmyeong Cave",
+        "context": "Former Japanese-era gold mine transformed into LED-lit underground theme park, Gwangmyeong",
+        "renderings": {
+          "en": "Gwangmyeong Cave",
+          "ko": "광명동굴",
+          "zh": "光明洞窟",
+          "zh-TW": "光明洞窟",
+          "ja": "光明洞窟",
+          "es": "Cueva de Gwangmyeong",
+          "fr": "Grotte de Gwangmyeong",
+          "de": "Gwangmyeong-Höhle",
+          "it": "Grotta di Gwangmyeong",
+          "pt": "Caverna de Gwangmyeong",
+          "ru": "пещера Кванмён",
+          "vi": "Hang Gwangmyeong",
+          "th": "ถ้ำกวังมย็อง",
+          "ar": "كهف غوانغميونغ"
+        }
+      },
+      {
+        "key": "Hallasan 1100 Highland",
+        "context": "Hallasan 1100m altitude wetland road; Ramsar site and UNESCO World Heritage area",
+        "renderings": {
+          "en": "Hallasan 1100 Highland",
+          "ko": "한라산 1100고지",
+          "zh": "汉拿山1100高地",
+          "zh-TW": "漢拏山1100高地",
+          "ja": "漢拏山1100高地",
+          "es": "Zona Alta 1100 de Hallasan",
+          "fr": "Haut Plateau 1100 de Hallasan",
+          "de": "Hallasan-1100-Hochland",
+          "it": "Altopiano 1100 di Hallasan",
+          "pt": "Planalto 1100 do Hallasan",
+          "ru": "Высокогорное плато Халласан 1100",
+          "vi": "Cao nguyên 1100 Hallasan",
+          "th": "ที่สูง 1100 ฮัลลาซัน",
+          "ar": "مرتفعات 1100 هالاسان"
+        }
+      },
+      {
+        "key": "Eoseungsaengak Trail",
+        "context": "Hallasan foothill trail in southern Jeju; within UNESCO World Heritage biosphere",
+        "renderings": {
+          "en": "Eoseungsaengak Trail",
+          "ko": "어승생악 탐방로",
+          "zh": "御乘生岳登山道",
+          "zh-TW": "御乘生岳登山道",
+          "ja": "御乗生岳トレイル",
+          "es": "Sendero Eoseungsaengak",
+          "fr": "Sentier Eoseungsaengak",
+          "de": "Eoseungsaengak-Pfad",
+          "it": "Sentiero Eoseungsaengak",
+          "pt": "Trilha Eoseungsaengak",
+          "ru": "тропа Оыссынсэнак",
+          "vi": "Đường mòn Eoseungsaengak",
+          "th": "เส้นทาง Eoseungsaengak",
+          "ar": "مسار أوسيونغسينغاك"
+        }
+      },
+      {
+        "key": "Hueree Natural Park",
+        "context": "Hydrangea festival garden in eastern Jeju; peak bloom June",
+        "renderings": {
+          "en": "Hueree Natural Park",
+          "ko": "휴애리자연생활공원",
+          "zh": "休爱里自然生活公园",
+          "zh-TW": "休愛里自然生活公園",
+          "ja": "ヒューアリー自然生活公園",
+          "es": "Parque Natural Hueree",
+          "fr": "Parc Naturel Hueree",
+          "de": "Hueree-Naturpark",
+          "it": "Parco Naturale Hueree",
+          "pt": "Parque Natural Hueree",
+          "ru": "Природный парк Хьюри",
+          "vi": "Công viên Thiên nhiên Hueree",
+          "th": "สวนธรรมชาติฮูรี",
+          "ar": "حديقة هيوري الطبيعية"
+        }
+      },
+      {
+        "key": "Bukchon Hanok Village",
+        "context": "Traditional hanok residential district in Jongno-gu, Seoul",
+        "renderings": {
+          "en": "Bukchon Hanok Village",
+          "ko": "북촌한옥마을",
+          "zh": "北村韩屋村",
+          "zh-TW": "北村韓屋村",
+          "ja": "北村韓屋村",
+          "es": "Villa Hanok de Bukchon",
+          "fr": "Village Hanok de Bukchon",
+          "de": "Bukchon-Hanok-Dorf",
+          "it": "Villaggio Hanok di Bukchon",
+          "pt": "Vila Hanok de Bukchon",
+          "ru": "деревня ханок Пукчхон",
+          "vi": "Làng Hanok Bukchon",
+          "th": "หมู่บ้านฮันอกบุกชอน",
+          "ar": "قرية هانوك بوكتشون"
+        }
+      },
+      {
+        "key": "Bomun Lake",
+        "context": "Gyeongju resort lake; famous 8 km cherry blossom loop in spring",
+        "renderings": {
+          "en": "Bomun Lake",
+          "ko": "보문호",
+          "zh": "普门湖",
+          "zh-TW": "普門湖",
+          "ja": "普門湖",
+          "es": "Lago Bomun",
+          "fr": "Lac Bomun",
+          "de": "Bomun-See",
+          "it": "Lago Bomun",
+          "pt": "Lago Bomun",
+          "ru": "озеро Помун",
+          "vi": "Hồ Bomun",
+          "th": "ทะเลสาบโบมุน",
+          "ar": "بحيرة بومون"
+        }
+      },
+      {
+        "key": "Dora Observatory",
+        "context": "Southernmost observatory in South Korea; overlooks North Korea from DMZ area",
+        "renderings": {
+          "en": "Dora Observatory",
+          "ko": "도라전망대",
+          "zh": "都拉山展望台",
+          "zh-TW": "都拉山展望台",
+          "ja": "都羅山展望台",
+          "es": "Observatorio Dora",
+          "fr": "Observatoire Dora",
+          "de": "Dora-Aussichtspunkt",
+          "it": "Osservatorio Dora",
+          "pt": "Observatório Dora",
+          "ru": "Обсерватория Тора",
+          "vi": "Đài quan sát Dora",
+          "th": "จุดชมวิวโดรา",
+          "ar": "مرصد دورا"
+        }
+      },
+      {
+        "key": "Yongdusan Park",
+        "context": "Hilltop park with Busan Tower in Jung-gu, central Busan",
+        "renderings": {
+          "en": "Yongdusan Park",
+          "ko": "용두산공원",
+          "zh": "龙头山公园",
+          "zh-TW": "龍頭山公園",
+          "ja": "龍頭山公園",
+          "es": "Parque Yongdusan",
+          "fr": "Parc Yongdusan",
+          "de": "Yongdusan-Park",
+          "it": "Parco Yongdusan",
+          "pt": "Parque Yongdusan",
+          "ru": "парк Ёндусан",
+          "vi": "Công viên Yongdusan",
+          "th": "สวนยงดูซาน",
+          "ar": "حديقة يونغدوسان"
+        }
+      },
+      {
+        "key": "Noksan-ro",
+        "context": "Scenic Gasi-ri 10 km cherry blossom and canola road in Jeju",
+        "renderings": {
+          "en": "Noksan-ro",
+          "ko": "녹산로",
+          "zh": "鹿山路",
+          "zh-TW": "鹿山路",
+          "ja": "鹿山路",
+          "es": "Carretera Noksan-ro",
+          "fr": "Route Noksan-ro",
+          "de": "Noksan-ro-Straße",
+          "it": "Via Noksan-ro",
+          "pt": "Estrada Noksan-ro",
+          "ru": "дорога Нокsan-ро",
+          "vi": "Đường Noksan-ro",
+          "th": "ถนนนกซาน-โร",
+          "ar": "طريق نوكسان-رو"
+        }
+      },
+      {
+        "key": "Sokcho Beach",
+        "context": "East Sea beach in Sokcho city; near Seoraksan National Park",
+        "renderings": {
+          "en": "Sokcho Beach",
+          "ko": "속초해수욕장",
+          "zh": "束草海水浴场",
+          "zh-TW": "束草海水浴場",
+          "ja": "束草海水浴場",
+          "es": "Playa de Sokcho",
+          "fr": "Plage de Sokcho",
+          "de": "Sokcho-Strand",
+          "it": "Spiaggia di Sokcho",
+          "pt": "Praia de Sokcho",
+          "ru": "пляж Сокчхо",
+          "vi": "Bãi biển Sokcho",
+          "th": "หาดซกโช",
+          "ar": "شاطئ سوكتشو"
+        }
+      },
+      {
+        "key": "Wondong Plum Village",
+        "context": "Plum blossom village in Yangsan with greenhouse pop-up restaurants in spring",
+        "renderings": {
+          "en": "Wondong Plum Village",
+          "ko": "원동 매화마을",
+          "zh": "院洞梅花村",
+          "zh-TW": "院洞梅花村",
+          "ja": "院洞梅花村",
+          "es": "Villa de los Ciruelos de Wondong",
+          "fr": "Village des Pruniers de Wondong",
+          "de": "Wondong-Pflaumenblüten-Dorf",
+          "it": "Villaggio dei Susini di Wondong",
+          "pt": "Vila das Ameixeiras de Wondong",
+          "ru": "деревня слив Вондон",
+          "vi": "Làng Hoa Mận Wondong",
+          "th": "หมู่บ้านดอกบ๊วยวอนดง",
+          "ar": "قرية أزهار البرقوق وونغدونغ"
+        }
+      },
+      {
+        "key": "Haenyeo Museum",
+        "context": "Museum dedicated to Jeju's UNESCO-listed women divers (haenyeo) at Hado-ri",
+        "renderings": {
+          "en": "Haenyeo Museum",
+          "ko": "해녀박물관",
+          "zh": "海女博物馆",
+          "zh-TW": "海女博物館",
+          "ja": "海女博物館",
+          "es": "Museo de las Haenyeo",
+          "fr": "Musée des Haenyeo",
+          "de": "Haenyeo-Museum",
+          "it": "Museo delle Haenyeo",
+          "pt": "Museu das Haenyeo",
+          "ru": "Музей хэнё",
+          "vi": "Bảo tàng Haenyeo",
+          "th": "พิพิธภัณฑ์แฮนยอ",
+          "ar": "متحف هانيو"
+        }
+      }
+    ],
+    "museum_theme": [
+      {
+        "key": "Gyeongju National Museum",
+        "context": "Korea's premier Silla artifact museum in Gyeongju; Gold Crown and Emille Bell",
+        "renderings": {
+          "en": "Gyeongju National Museum",
+          "ko": "국립경주박물관",
+          "zh": "庆州国立博物馆",
+          "zh-TW": "慶州國立博物館",
+          "ja": "国立慶州博物館",
+          "es": "Museo Nacional de Gyeongju",
+          "fr": "Musée National de Gyeongju",
+          "de": "Nationales Museum Gyeongju",
+          "it": "Museo Nazionale di Gyeongju",
+          "pt": "Museu Nacional de Gyeongju",
+          "ru": "Государственный музей Кёнджу",
+          "vi": "Bảo tàng Quốc gia Gyeongju",
+          "th": "พิพิธภัณฑ์แห่งชาติคย็องจู",
+          "ar": "المتحف الوطني لغيونغجو"
+        }
+      },
+      {
+        "key": "Gyochon Hanok Village",
+        "context": "Restored hanok village in Gyeongju; home of the historic Gyeongju Choi clan",
+        "renderings": {
+          "en": "Gyochon Hanok Village",
+          "ko": "교촌 한옥마을",
+          "zh": "校村韩屋村",
+          "zh-TW": "校村韓屋村",
+          "ja": "校村韓屋村",
+          "es": "Villa Hanok de Gyochon",
+          "fr": "Village Hanok de Gyochon",
+          "de": "Gyochon-Hanok-Dorf",
+          "it": "Villaggio Hanok di Gyochon",
+          "pt": "Vila Hanok de Gyochon",
+          "ru": "деревня ханок Кёчхон",
+          "vi": "Làng Hanok Gyochon",
+          "th": "หมู่บ้านฮันอกคโยชอน",
+          "ar": "قرية هانوك غيوتشون"
+        }
+      },
+      {
+        "key": "Starfield Library",
+        "context": "Brand name: four-floor library inside Starfield Mall Suwon; highly photogenic contemporary icon",
+        "renderings": {
+          "en": "Starfield Library",
+          "ko": "스타필드 도서관",
+          "zh": "Starfield Library",
+          "zh-TW": "Starfield Library",
+          "ja": "スターフィールドライブラリー",
+          "es": "Starfield Library",
+          "fr": "Starfield Library",
+          "de": "Starfield Library",
+          "it": "Starfield Library",
+          "pt": "Starfield Library",
+          "ru": "Starfield Library",
+          "vi": "Starfield Library",
+          "th": "สตาร์ฟีลด์ ไลบรารี",
+          "ar": "ستارفيلد ليبراري"
+        }
+      },
+      {
+        "key": "Osulloc Tea Museum",
+        "context": "Korea's largest green tea estate museum in west-central Jeju; O'sulloc brand",
+        "renderings": {
+          "en": "Osulloc Tea Museum",
+          "ko": "오설록 티 뮤지엄",
+          "zh": "O'sulloc茶博物馆",
+          "zh-TW": "O'sulloc茶博物館",
+          "ja": "オソルロク・ティーミュージアム",
+          "es": "Museo de Té Osulloc",
+          "fr": "Musée du Thé Osulloc",
+          "de": "Osulloc-Teemuseum",
+          "it": "Museo del Tè Osulloc",
+          "pt": "Museu do Chá Osulloc",
+          "ru": "Чайный музей Осуллок",
+          "vi": "Bảo tàng Trà Osulloc",
+          "th": "พิพิธภัณฑ์ชาโอซูลล็อก",
+          "ar": "متحف الشاي أوسوللوك"
+        }
+      },
+      {
+        "key": "Korean Folk Village",
+        "context": "Immersive open-air folk village in Yongin, Gyeonggi Province; Joseon-era reenactments",
+        "renderings": {
+          "en": "Korean Folk Village",
+          "ko": "한국민속촌",
+          "zh": "韩国民俗村",
+          "zh-TW": "韓國民俗村",
+          "ja": "韓国民俗村",
+          "es": "Pueblo Folclórico Coreano",
+          "fr": "Village Folklorique Coréen",
+          "de": "Koreanisches Volksdorf",
+          "it": "Villaggio Folcloristico Coreano",
+          "pt": "Vila Folclórica Coreana",
+          "ru": "Корейская народная деревня",
+          "vi": "Làng Dân gian Hàn Quốc",
+          "th": "หมู่บ้านพื้นบ้านเกาหลี",
+          "ar": "القرية الشعبية الكورية"
+        }
+      },
+      {
+        "key": "Ilchul Land",
+        "context": "Themed gardens and Micheon Cave lava tube park in Pyoseon, eastern Jeju; hydrangea festival venue",
+        "renderings": {
+          "en": "Ilchul Land",
+          "ko": "일출랜드",
+          "zh": "日出乐园",
+          "zh-TW": "日出樂園",
+          "ja": "日出ランド",
+          "es": "Ilchul Land",
+          "fr": "Ilchul Land",
+          "de": "Ilchul Land",
+          "it": "Ilchul Land",
+          "pt": "Ilchul Land",
+          "ru": "Ильчуль Лэнд",
+          "vi": "Ilchul Land",
+          "th": "อิลชุล แลนด์",
+          "ar": "إيلتشول لاند"
+        }
+      },
+      {
+        "key": "Gwangjang Market",
+        "context": "Historic traditional market in Jongno-gu, Seoul; famous for street food",
+        "renderings": {
+          "en": "Gwangjang Market",
+          "ko": "광장시장",
+          "zh": "广藏市场",
+          "zh-TW": "廣藏市場",
+          "ja": "広蔵市場",
+          "es": "Mercado Gwangjang",
+          "fr": "Marché Gwangjang",
+          "de": "Gwangjang-Markt",
+          "it": "Mercato Gwangjang",
+          "pt": "Mercado Gwangjang",
+          "ru": "рынок Кванджан",
+          "vi": "Chợ Gwangjang",
+          "th": "ตลาดกวางจัง",
+          "ar": "سوق غوانغجانغ"
+        }
+      },
+      {
+        "key": "Jagalchi Fish Market",
+        "context": "Korea's largest seafood market on Busan waterfront; ~400 vendors",
+        "renderings": {
+          "en": "Jagalchi Fish Market",
+          "ko": "자갈치시장",
+          "zh": "扎嘎其市场",
+          "zh-TW": "扎嘎其市場",
+          "ja": "チャガルチ市場",
+          "es": "Mercado de Pescado Jagalchi",
+          "fr": "Marché aux Poissons de Jagalchi",
+          "de": "Jagalchi-Fischmarkt",
+          "it": "Mercato del Pesce di Jagalchi",
+          "pt": "Mercado de Peixe Jagalchi",
+          "ru": "рыбный рынок Чагальчи",
+          "vi": "Chợ Cá Jagalchi",
+          "th": "ตลาดปลาจะกัลชิ",
+          "ar": "سوق السمك جاغالتشي"
+        }
+      },
+      {
+        "key": "Myeongdong",
+        "context": "Major shopping and street food district in central Seoul",
+        "renderings": {
+          "en": "Myeongdong",
+          "ko": "명동",
+          "zh": "明洞",
+          "zh-TW": "明洞",
+          "ja": "明洞",
+          "es": "Myeongdong",
+          "fr": "Myeongdong",
+          "de": "Myeongdong",
+          "it": "Myeongdong",
+          "pt": "Myeongdong",
+          "ru": "Мёндон",
+          "vi": "Myeongdong",
+          "th": "มย็องดง",
+          "ar": "ميونغدونغ"
+        }
+      },
+      {
+        "key": "Insadong",
+        "context": "Traditional cultural shopping street in Jongno-gu, Seoul; crafts and galleries",
+        "renderings": {
+          "en": "Insadong",
+          "ko": "인사동",
+          "zh": "仁寺洞",
+          "zh-TW": "仁寺洞",
+          "ja": "仁寺洞",
+          "es": "Insadong",
+          "fr": "Insadong",
+          "de": "Insadong",
+          "it": "Insadong",
+          "pt": "Insadong",
+          "ru": "Инсадон",
+          "vi": "Insadong",
+          "th": "อินซาดง",
+          "ar": "إنسادونغ"
+        }
+      },
+      {
+        "key": "Olle Maeil Market",
+        "context": "Seogwipo's lively traditional market (Maeil Olle Market); snacks and souvenirs",
+        "renderings": {
+          "en": "Olle Maeil Market",
+          "ko": "올레시장",
+          "zh": "Olle每日市场",
+          "zh-TW": "Olle每日市場",
+          "ja": "オルレ毎日市場",
+          "es": "Mercado Olle Maeil",
+          "fr": "Marché Olle Maeil",
+          "de": "Olle-Maeil-Markt",
+          "it": "Mercato Olle Maeil",
+          "pt": "Mercado Olle Maeil",
+          "ru": "рынок Оллэ Маэль",
+          "vi": "Chợ Olle Maeil",
+          "th": "ตลาดโอล์เล แมอิล",
+          "ar": "سوق أولي مايل"
+        }
+      },
+      {
+        "key": "Sokcho Tourist Fishery Market",
+        "context": "Coastal seafood market on Sokcho waterfront",
+        "renderings": {
+          "en": "Sokcho Tourist Fishery Market",
+          "ko": "속초 관광수산시장",
+          "zh": "束草观光水产市场",
+          "zh-TW": "束草觀光水產市場",
+          "ja": "束草観光水産市場",
+          "es": "Mercado de Pesca Turístico de Sokcho",
+          "fr": "Marché de Pêche Touristique de Sokcho",
+          "de": "Sokcho-Touristenfischmarkt",
+          "it": "Mercato del Pesce Turistico di Sokcho",
+          "pt": "Mercado de Peixe Turístico de Sokcho",
+          "ru": "Туристический рыбный рынок Сокчхо",
+          "vi": "Chợ Thủy sản Du lịch Sokcho",
+          "th": "ตลาดประมงท่องเที่ยวซกโช",
+          "ar": "سوق الصيد السياحي سوكتشو"
+        }
+      },
+      {
+        "key": "N Seoul Tower",
+        "context": "Communication tower on Namsan mountain with observatory deck; Seoul landmark",
+        "renderings": {
+          "en": "N Seoul Tower",
+          "ko": "N 서울타워",
+          "zh": "N首尔塔",
+          "zh-TW": "N首爾塔",
+          "ja": "Nソウルタワー",
+          "es": "Torre N Seúl",
+          "fr": "Tour N Séoul",
+          "de": "N-Seoul-Turm",
+          "it": "Torre N Seoul",
+          "pt": "Torre N Seul",
+          "ru": "башня N Сеул",
+          "vi": "Tháp N Seoul",
+          "th": "หอคอย N โซล",
+          "ar": "برج N سيول"
+        }
+      }
+    ],
+    "season_festival": [
+      {
+        "key": "Cherry Blossom",
+        "context": "Spring sakura season (mid-March to mid-April); major tour selling point",
+        "renderings": {
+          "en": "Cherry Blossom",
+          "ko": "벚꽃",
+          "zh": "樱花",
+          "zh-TW": "櫻花",
+          "ja": "桜",
+          "es": "Flor de Cerezo",
+          "fr": "Fleur de Cerisier",
+          "de": "Kirschblüte",
+          "it": "Fiore di Ciliegio",
+          "pt": "Flor de Cerejeira",
+          "ru": "Цветение сакуры",
+          "vi": "Hoa Anh Đào",
+          "th": "ดอกซากุระ",
+          "ar": "زهور الكرز"
+        }
+      },
+      {
+        "key": "Plum Blossom",
+        "context": "Early spring plum flower season (late Feb–mid-Mar); Tongdosa/Wondong tours",
+        "renderings": {
+          "en": "Plum Blossom",
+          "ko": "매화",
+          "zh": "梅花",
+          "zh-TW": "梅花",
+          "ja": "梅の花",
+          "es": "Flor de Ciruelo",
+          "fr": "Fleur de Prunier",
+          "de": "Pflaumenblüte",
+          "it": "Fiore di Susino",
+          "pt": "Flor de Ameixeira",
+          "ru": "Цветение сливы",
+          "vi": "Hoa Mận",
+          "th": "ดอกบ๊วย",
+          "ar": "زهرة البرقوق"
+        }
+      },
+      {
+        "key": "Hydrangea Festival",
+        "context": "Summer hydrangea bloom season (late May–mid-July, peak June); Jeju signature event",
+        "renderings": {
+          "en": "Hydrangea Festival",
+          "ko": "수국 축제",
+          "zh": "绣球花节",
+          "zh-TW": "繡球花節",
+          "ja": "アジサイ祭り",
+          "es": "Festival de Hortensias",
+          "fr": "Festival des Hortensias",
+          "de": "Hortensien-Festival",
+          "it": "Festival delle Ortensie",
+          "pt": "Festival de Hortênsias",
+          "ru": "Фестиваль гортензий",
+          "vi": "Lễ hội Hoa Cẩm Tú Cầu",
+          "th": "เทศกาลดอกไฮเดรนเยีย",
+          "ar": "مهرجان الكوبية"
+        }
+      },
+      {
+        "key": "Tangerine Picking",
+        "context": "Jeju winter tangerine (gyul) orchard experience; Dec–Feb season",
+        "renderings": {
+          "en": "Tangerine Picking",
+          "ko": "귤 따기 체험",
+          "zh": "橘子采摘体验",
+          "zh-TW": "橘子採摘體驗",
+          "ja": "みかん狩り体験",
+          "es": "Recolección de Mandarinas",
+          "fr": "Cueillette de Mandarines",
+          "de": "Mandarinen-Pflücken",
+          "it": "Raccolta di Mandarini",
+          "pt": "Colheita de Tangerinas",
+          "ru": "Сбор мандаринов",
+          "vi": "Hái Quýt",
+          "th": "เก็บส้มแมนดาริน",
+          "ar": "قطف اليوسفي"
+        }
+      },
+      {
+        "key": "Camellia",
+        "context": "Winter/spring camellia bloom; signature Jeju flower (Dec–Mar)",
+        "renderings": {
+          "en": "Camellia",
+          "ko": "동백꽃",
+          "zh": "茶花",
+          "zh-TW": "茶花",
+          "ja": "椿",
+          "es": "Camelia",
+          "fr": "Camélia",
+          "de": "Kamelie",
+          "it": "Camelia",
+          "pt": "Camélia",
+          "ru": "Камелия",
+          "vi": "Hoa Trà",
+          "th": "ดอกคาเมลเลีย",
+          "ar": "كاميليا"
+        }
+      },
+      {
+        "key": "Autumn Foliage",
+        "context": "Fall leaf-peeping season (Oct–Nov); Seoraksan, Hallasan tours",
+        "renderings": {
+          "en": "Autumn Foliage",
+          "ko": "단풍",
+          "zh": "秋叶",
+          "zh-TW": "秋葉",
+          "ja": "紅葉",
+          "es": "Follaje Otoñal",
+          "fr": "Feuillage d'Automne",
+          "de": "Herbstlaub",
+          "it": "Fogliame Autunnale",
+          "pt": "Folhagem de Outono",
+          "ru": "Осенняя листва",
+          "vi": "Lá Mùa Thu",
+          "th": "ใบไม้เปลี่ยนสี",
+          "ar": "أوراق الخريف"
+        }
+      },
+      {
+        "key": "Canola Flower",
+        "context": "Jeju spring yellow canola (rapeseed) fields; Noksan-ro road famous for this",
+        "renderings": {
+          "en": "Canola Flower",
+          "ko": "유채꽃",
+          "zh": "油菜花",
+          "zh-TW": "油菜花",
+          "ja": "菜の花",
+          "es": "Flor de Canola",
+          "fr": "Fleur de Colza",
+          "de": "Rapsblüte",
+          "it": "Fiore di Colza",
+          "pt": "Flor de Canola",
+          "ru": "Цветение рапса",
+          "vi": "Hoa Cải Dầu",
+          "th": "ดอกเรพซีด",
+          "ar": "زهرة الكانولا"
+        }
+      }
+    ],
+    "tour_category": [
+      {
+        "key": "Small Group Tour",
+        "context": "Tour format with shared mini-van or mini-coach; typically up to 10–12 passengers",
+        "renderings": {
+          "en": "Small Group Tour",
+          "ko": "소그룹 투어",
+          "zh": "小团游",
+          "zh-TW": "小團遊",
+          "ja": "少人数ツアー",
+          "es": "Tour en Grupo Pequeño",
+          "fr": "Visite en Petit Groupe",
+          "de": "Kleingruppen-Tour",
+          "it": "Tour in Piccolo Gruppo",
+          "pt": "Tour em Pequeno Grupo",
+          "ru": "тур в малой группе",
+          "vi": "Tour Nhóm Nhỏ",
+          "th": "ทัวร์กลุ่มเล็ก",
+          "ar": "جولة المجموعة الصغيرة"
+        }
+      },
+      {
+        "key": "Private Tour",
+        "context": "Exclusive private vehicle tour; per-vehicle pricing",
+        "renderings": {
+          "en": "Private Tour",
+          "ko": "프라이빗 투어",
+          "zh": "私人游",
+          "zh-TW": "私人遊",
+          "ja": "プライベートツアー",
+          "es": "Tour Privado",
+          "fr": "Visite Privée",
+          "de": "Privat-Tour",
+          "it": "Tour Privato",
+          "pt": "Tour Privado",
+          "ru": "частный тур",
+          "vi": "Tour Riêng",
+          "th": "ทัวร์ส่วนตัว",
+          "ar": "جولة خاصة"
+        }
+      },
+      {
+        "key": "Cruise Shore Excursion",
+        "context": "Day tour for cruise ship passengers departing from a Korean cruise port",
+        "renderings": {
+          "en": "Cruise Shore Excursion",
+          "ko": "크루즈 기항지 투어",
+          "zh": "邮轮岸上观光",
+          "zh-TW": "郵輪岸上觀光",
+          "ja": "クルーズ寄港地ツアー",
+          "es": "Excursión en Puerto de Crucero",
+          "fr": "Excursion à Terre depuis le Croisière",
+          "de": "Kreuzfahrt-Landausflug",
+          "it": "Escursione a Terra dalla Crociera",
+          "pt": "Excursão em Terra para Cruzeiro",
+          "ru": "береговая экскурсия с круизного судна",
+          "vi": "Tour Cập Cảng Tàu Du Lịch",
+          "th": "ทัวร์ท่าเรือสำราญ",
+          "ar": "رحلة برية للسفن السياحية"
+        }
+      },
+      {
+        "key": "Private Car Charter",
+        "context": "Chartered private vehicle with licensed English-speaking driver-guide",
+        "renderings": {
+          "en": "Private Car Charter",
+          "ko": "전용 차량 대절",
+          "zh": "私人包车",
+          "zh-TW": "私人包車",
+          "ja": "プライベート貸切車",
+          "es": "Alquiler de Coche Privado",
+          "fr": "Location de Voiture Privée",
+          "de": "Private Fahrzeugcharter",
+          "it": "Noleggio Auto Privata",
+          "pt": "Fretamento de Carro Privado",
+          "ru": "аренда частного автомобиля",
+          "vi": "Thuê Xe Riêng",
+          "th": "เช่ารถส่วนตัว",
+          "ar": "تأجير سيارة خاصة"
+        }
+      },
+      {
+        "key": "Day Trip",
+        "context": "Single-day excursion from Seoul; returning same day",
+        "renderings": {
+          "en": "Day Trip",
+          "ko": "당일 여행",
+          "zh": "一日游",
+          "zh-TW": "一日遊",
+          "ja": "日帰り旅行",
+          "es": "Excursión de un Día",
+          "fr": "Excursion d'une Journée",
+          "de": "Tagesausflug",
+          "it": "Gita di un Giorno",
+          "pt": "Passeio de um Dia",
+          "ru": "однодневная поездка",
+          "vi": "Chuyến Đi Trong Ngày",
+          "th": "ทริปวันเดียว",
+          "ar": "رحلة ليوم واحد"
+        }
+      },
+      {
+        "key": "Day Tour",
+        "context": "Guided full-day tour program; distinct from self-guided day trips",
+        "renderings": {
+          "en": "Day Tour",
+          "ko": "당일 투어",
+          "zh": "一日游",
+          "zh-TW": "一日遊",
+          "ja": "日帰りツアー",
+          "es": "Tour de un Día",
+          "fr": "Tour d'une Journée",
+          "de": "Tagestour",
+          "it": "Tour di un Giorno",
+          "pt": "Tour de um Dia",
+          "ru": "однодневный тур",
+          "vi": "Tour Một Ngày",
+          "th": "ทัวร์วันเดียว",
+          "ar": "جولة ليوم واحد"
+        }
+      },
+      {
+        "key": "UNESCO World Heritage",
+        "context": "Designation used for Bulguksa, Hwaseong, Seongsan Ilchulbong, Manjanggul, Hallasan, Tongdosa, Seongeup sites",
+        "renderings": {
+          "en": "UNESCO World Heritage",
+          "ko": "유네스코 세계유산",
+          "zh": "联合国教科文组织世界遗产",
+          "zh-TW": "聯合國教科文組織世界遺產",
+          "ja": "ユネスコ世界遺産",
+          "es": "Patrimonio Mundial UNESCO",
+          "fr": "Patrimoine Mondial UNESCO",
+          "de": "UNESCO-Welterbe",
+          "it": "Patrimonio Mondiale UNESCO",
+          "pt": "Patrimônio Mundial da UNESCO",
+          "ru": "Всемирное наследие ЮНЕСКО",
+          "vi": "Di sản Thế giới UNESCO",
+          "th": "มรดกโลกยูเนสโก",
+          "ar": "التراث العالمي لليونسكو"
+        }
+      },
+      {
+        "key": "DMZ",
+        "context": "Korean Demilitarized Zone; border area between North and South Korea",
+        "renderings": {
+          "en": "DMZ",
+          "ko": "비무장지대 (DMZ)",
+          "zh": "非武装地带 (DMZ)",
+          "zh-TW": "非武裝地帶 (DMZ)",
+          "ja": "非武装地帯 (DMZ)",
+          "es": "DMZ",
+          "fr": "DMZ",
+          "de": "DMZ",
+          "it": "DMZ",
+          "pt": "DMZ",
+          "ru": "ДМЗ (демилитаризованная зона)",
+          "vi": "Khu phi quân sự DMZ",
+          "th": "เขตปลอดทหาร DMZ",
+          "ar": "المنطقة المنزوعة السلاح DMZ"
+        }
+      }
+    ],
+    "food_culture": [
+      {
+        "key": "ssambap",
+        "context": "Korean Gyeongju local specialty; rice and meat wrapped in leafy greens; served at local lunch stops",
+        "renderings": {
+          "en": "ssambap",
+          "ko": "쌈밥",
+          "zh": "生菜包饭",
+          "zh-TW": "生菜包飯",
+          "ja": "サムパプ",
+          "es": "ssambap (arroz envuelto en hojas)",
+          "fr": "ssambap (riz enveloppé en feuilles)",
+          "de": "Ssambap (in Blätter gewickelter Reis)",
+          "it": "ssambap (riso avvolto in foglie)",
+          "pt": "ssambap (arroz envolto em folhas)",
+          "ru": "ссампап",
+          "vi": "ssambap (cơm cuộn lá)",
+          "th": "ซัมบับ (ข้าวห่อใบผัก)",
+          "ar": "سامباب (أرز ملفوف بالخضار)"
+        }
+      },
+      {
+        "key": "hanok",
+        "context": "Traditional Korean wooden house; hanok villages are featured at multiple tour stops",
+        "renderings": {
+          "en": "hanok",
+          "ko": "한옥",
+          "zh": "韩屋",
+          "zh-TW": "韓屋",
+          "ja": "韓屋 (ハノク)",
+          "es": "hanok (casa tradicional coreana)",
+          "fr": "hanok (maison traditionnelle coréenne)",
+          "de": "Hanok (traditionelles koreanisches Haus)",
+          "it": "hanok (casa tradizionale coreana)",
+          "pt": "hanok (casa tradicional coreana)",
+          "ru": "ханок",
+          "vi": "hanok (nhà truyền thống Hàn Quốc)",
+          "th": "ฮันอก (บ้านดั้งเดิมเกาหลี)",
+          "ar": "هانوك (المنزل الكوري التقليدي)"
+        }
+      },
+      {
+        "key": "haenyeo",
+        "context": "Jeju UNESCO-listed women free-divers; cultural symbol of Jeju",
+        "renderings": {
+          "en": "haenyeo",
+          "ko": "해녀",
+          "zh": "海女",
+          "zh-TW": "海女",
+          "ja": "海女 (ヘニョ)",
+          "es": "haenyeo (buceadoras de Jeju)",
+          "fr": "haenyeo (plongeuses de Jeju)",
+          "de": "Haenyeo (Jeju-Taucherinnen)",
+          "it": "haenyeo (subacquee di Jeju)",
+          "pt": "haenyeo (mergulhadoras de Jeju)",
+          "ru": "хэнё",
+          "vi": "haenyeo (thợ lặn nữ Jeju)",
+          "th": "แฮนย็อ (นักดำน้ำหญิงแห่งเชจู)",
+          "ar": "هانيو (الغواصات النساء في جيجو)"
+        }
+      },
+      {
+        "key": "Jeju black pork",
+        "context": "Native Jeju black pig; signature Jeju meat dish (heuk dwaeji)",
+        "renderings": {
+          "en": "Jeju black pork",
+          "ko": "제주 흑돼지",
+          "zh": "济州黑猪肉",
+          "zh-TW": "濟州黑豬肉",
+          "ja": "済州黒豚",
+          "es": "cerdo negro de Jeju",
+          "fr": "porc noir de Jeju",
+          "de": "Jeju-Schwarzschwein",
+          "it": "maiale nero di Jeju",
+          "pt": "porco preto de Jeju",
+          "ru": "чёрная свинина Чеджу",
+          "vi": "lợn đen Jeju",
+          "th": "หมูดำเชจู",
+          "ar": "لحم الخنزير الأسود من جيجو"
+        }
+      },
+      {
+        "key": "K-drama filming location",
+        "context": "Sites made famous by Korean TV dramas; major tourist draw (Petite France, Seopjikoji, Nami Island, etc.)",
+        "renderings": {
+          "en": "K-drama filming location",
+          "ko": "드라마 촬영지",
+          "zh": "韩剧取景地",
+          "zh-TW": "韓劇取景地",
+          "ja": "韓国ドラマのロケ地",
+          "es": "localización de rodaje de K-drama",
+          "fr": "lieu de tournage de K-drama",
+          "de": "K-Drama-Drehort",
+          "it": "location di riprese K-drama",
+          "pt": "locação de filmagem K-drama",
+          "ru": "место съёмок корейской дорамы",
+          "vi": "địa điểm quay phim K-drama",
+          "th": "สถานที่ถ่ายทำซีรีส์เกาหลี",
+          "ar": "موقع تصوير المسلسلات الكورية"
+        }
+      },
+      {
+        "key": "gogi guksu",
+        "context": "Jeju noodle dish with pork broth; local specialty",
+        "renderings": {
+          "en": "gogi guksu",
+          "ko": "고기국수",
+          "zh": "猪肉汤面",
+          "zh-TW": "豬肉湯麵",
+          "ja": "ゴギグクス (豚肉麺)",
+          "es": "gogi guksu (fideos de cerdo)",
+          "fr": "gogi guksu (nouilles au porc)",
+          "de": "Gogi-Guksu (Schweinefleischnudeln)",
+          "it": "gogi guksu (noodles al maiale)",
+          "pt": "gogi guksu (macarrão com carne suína)",
+          "ru": "коги гуксу (лапша со свининой)",
+          "vi": "gogi guksu (mì thịt lợn)",
+          "th": "โกกีกุกซู (ก๋วยเตี๋ยวหมู)",
+          "ar": "غوغي غوكسو (شعيرية لحم الخنزير)"
+        }
+      },
+      {
+        "key": "Silla Kingdom",
+        "context": "Ancient Korean kingdom (57 BCE–935 CE) that ruled Gyeongju; UNESCO legacy",
+        "renderings": {
+          "en": "Silla Kingdom",
+          "ko": "신라",
+          "zh": "新罗",
+          "zh-TW": "新羅",
+          "ja": "新羅",
+          "es": "Reino Silla",
+          "fr": "Royaume de Silla",
+          "de": "Silla-Königreich",
+          "it": "Regno di Silla",
+          "pt": "Reino Silla",
+          "ru": "государство Силла",
+          "vi": "Vương quốc Silla",
+          "th": "อาณาจักรชิลลา",
+          "ar": "مملكة سيلا"
+        }
+      },
+      {
+        "key": "Joseon Dynasty",
+        "context": "Korean dynasty (1392–1897); context for hanok villages, folk villages, palace reenactments",
+        "renderings": {
+          "en": "Joseon Dynasty",
+          "ko": "조선 시대",
+          "zh": "朝鲜王朝",
+          "zh-TW": "朝鮮王朝",
+          "ja": "朝鮮時代",
+          "es": "Dinastía Joseon",
+          "fr": "Dynastie Joseon",
+          "de": "Joseon-Dynastie",
+          "it": "Dinastia Joseon",
+          "pt": "Dinastia Joseon",
+          "ru": "династия Чосон",
+          "vi": "Triều đại Joseon",
+          "th": "ราชวงศ์โชซอน",
+          "ar": "أسرة جوسيون"
+        }
+      }
+    ],
+    "logistics_term": [
+      {
+        "key": "Hotel Pickup",
+        "context": "Free pickup from passenger's hotel lobby; included in private tours",
+        "renderings": {
+          "en": "Hotel Pickup",
+          "ko": "호텔 픽업",
+          "zh": "酒店接送",
+          "zh-TW": "酒店接送",
+          "ja": "ホテルピックアップ",
+          "es": "Recogida en Hotel",
+          "fr": "Prise en Charge à l'Hôtel",
+          "de": "Hotelabholung",
+          "it": "Prelievo in Hotel",
+          "pt": "Transfer no Hotel",
+          "ru": "трансфер из отеля",
+          "vi": "Đón tại Khách sạn",
+          "th": "รับที่โรงแรม",
+          "ar": "الاصطحاب من الفندق"
+        }
+      },
+      {
+        "key": "Drop-off",
+        "context": "Return drop-off at designated location (hotel, subway station, cruise terminal)",
+        "renderings": {
+          "en": "Drop-off",
+          "ko": "하차",
+          "zh": "下车点",
+          "zh-TW": "下車點",
+          "ja": "降車",
+          "es": "Bajada",
+          "fr": "Dépose",
+          "de": "Abgabe",
+          "it": "Discesa",
+          "pt": "Desembarque",
+          "ru": "высадка",
+          "vi": "Điểm xuống",
+          "th": "จุดส่ง",
+          "ar": "نقطة الإنزال"
+        }
+      },
+      {
+        "key": "Cruise Terminal",
+        "context": "Cruise ship port terminal; pickup/drop-off point for shore excursion tours",
+        "renderings": {
+          "en": "Cruise Terminal",
+          "ko": "크루즈 터미널",
+          "zh": "邮轮码头",
+          "zh-TW": "郵輪碼頭",
+          "ja": "クルーズターミナル",
+          "es": "Terminal de Cruceros",
+          "fr": "Terminal de Croisière",
+          "de": "Kreuzfahrt-Terminal",
+          "it": "Terminal Crociere",
+          "pt": "Terminal de Cruzeiros",
+          "ru": "круизный терминал",
+          "vi": "Cảng Tàu Du Lịch",
+          "th": "ท่าเรือสำราญ",
+          "ar": "محطة السفن السياحية"
+        }
+      },
+      {
+        "key": "Observatory Deck",
+        "context": "Elevated viewing platform at towers or mountain posts (Busan Tower, Dora Observatory, N Seoul Tower)",
+        "renderings": {
+          "en": "Observatory Deck",
+          "ko": "전망대",
+          "zh": "观景台",
+          "zh-TW": "觀景台",
+          "ja": "展望台",
+          "es": "Plataforma de Observación",
+          "fr": "Belvédère",
+          "de": "Aussichtsplattform",
+          "it": "Piattaforma di Osservazione",
+          "pt": "Mirante",
+          "ru": "смотровая площадка",
+          "vi": "Sàn Quan sát",
+          "th": "จุดชมวิว",
+          "ar": "منصة الاستشراف"
+        }
+      },
+      {
+        "key": "Port-aware routing",
+        "context": "Jeju-specific: tour adapts its route based on which cruise port (north Jeju or south Gangjeong) the ship docks at",
+        "renderings": {
+          "en": "Port-aware routing",
+          "ko": "기항 항구 맞춤 경로",
+          "zh": "港口适配路线",
+          "zh-TW": "港口適配路線",
+          "ja": "寄港地対応ルーティング",
+          "es": "Ruta adaptada al puerto",
+          "fr": "Itinéraire adapté au port",
+          "de": "Hafenabhängige Routenführung",
+          "it": "Percorso adattato al porto",
+          "pt": "Rota adaptada ao porto",
+          "ru": "маршрут с учётом порта стоянки",
+          "vi": "Tuyến đường theo cảng cập bến",
+          "th": "เส้นทางปรับตามท่าเรือ",
+          "ar": "مسار متكيف مع الميناء"
+        }
+      },
+      {
+        "key": "Admissions included",
+        "context": "All site entry fees covered in tour price; common selling point",
+        "renderings": {
+          "en": "Admissions included",
+          "ko": "입장료 포함",
+          "zh": "含门票",
+          "zh-TW": "含門票",
+          "ja": "入場料込み",
+          "es": "Entradas incluidas",
+          "fr": "Entrées incluses",
+          "de": "Eintritt inklusive",
+          "it": "Biglietti inclusi",
+          "pt": "Ingressos incluídos",
+          "ru": "стоимость входа включена",
+          "vi": "Bao gồm vé vào cửa",
+          "th": "รวมค่าเข้าชม",
+          "ar": "رسوم الدخول مشمولة"
+        }
+      },
+      {
+        "key": "English-speaking guide",
+        "context": "Tour includes a certified English-speaking guide or driver-guide",
+        "renderings": {
+          "en": "English-speaking guide",
+          "ko": "영어 가이드",
+          "zh": "英语导游",
+          "zh-TW": "英語導遊",
+          "ja": "英語ガイド",
+          "es": "Guía de habla inglesa",
+          "fr": "Guide anglophone",
+          "de": "Englischsprachiger Reiseführer",
+          "it": "Guida di lingua inglese",
+          "pt": "Guia que fala inglês",
+          "ru": "англоязычный гид",
+          "vi": "Hướng dẫn viên nói tiếng Anh",
+          "th": "ไกด์พูดภาษาอังกฤษ",
+          "ar": "مرشد يتحدث الإنجليزية"
+        }
+      },
+      {
+        "key": "Subway pickup",
+        "context": "Pickup at a central Busan or Seoul subway station exit for shared tours",
+        "renderings": {
+          "en": "Subway pickup",
+          "ko": "지하철 픽업",
+          "zh": "地铁站接送",
+          "zh-TW": "地鐵站接送",
+          "ja": "地下鉄ピックアップ",
+          "es": "Recogida en el metro",
+          "fr": "Prise en charge au métro",
+          "de": "U-Bahn-Abholung",
+          "it": "Prelievo alla metropolitana",
+          "pt": "Coleta no metrô",
+          "ru": "посадка у станции метро",
+          "vi": "Đón tại ga tàu điện ngầm",
+          "th": "รับที่สถานีรถไฟฟ้า",
+          "ar": "الاصطحاب من محطة المترو"
+        }
+      },
+      {
+        "key": "Gangjeong Cruise Terminal",
+        "context": "Southern Jeju cruise port (Seogwipo); alternative to northern Jeju Port",
+        "renderings": {
+          "en": "Gangjeong Cruise Terminal",
+          "ko": "강정 크루즈 터미널",
+          "zh": "江汀邮轮码头",
+          "zh-TW": "江汀郵輪碼頭",
+          "ja": "江汀クルーズターミナル",
+          "es": "Terminal de Cruceros Gangjeong",
+          "fr": "Terminal de Croisière Gangjeong",
+          "de": "Gangjeong-Kreuzfahrt-Terminal",
+          "it": "Terminal Crociere Gangjeong",
+          "pt": "Terminal de Cruzeiros Gangjeong",
+          "ru": "круизный терминал Кангджон",
+          "vi": "Cảng Tàu Du Lịch Gangjeong",
+          "th": "ท่าเรือสำราญกังจ็อง",
+          "ar": "محطة سفن سياحية غانغجيونغ"
+        }
+      },
+      {
+        "key": "3rd Infiltration Tunnel",
+        "context": "North Korean-dug tunnel discovered in 1978 near DMZ; tourist attraction in Paju",
+        "renderings": {
+          "en": "3rd Infiltration Tunnel",
+          "ko": "제3땅굴",
+          "zh": "第三条渗透隧道",
+          "zh-TW": "第三條滲透隧道",
+          "ja": "第3浸透トンネル",
+          "es": "Tercer Túnel de Infiltración",
+          "fr": "3ème Tunnel d'Infiltration",
+          "de": "Dritter Infiltrationstunnel",
+          "it": "3° Tunnel di Infiltrazione",
+          "pt": "3º Túnel de Infiltração",
+          "ru": "Третий инфильтрационный тоннель",
+          "vi": "Đường hầm Xâm nhập thứ 3",
+          "th": "อุโมงค์แทรกซึมที่ 3",
+          "ar": "النفق الاستخباراتي الثالث"
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "extracted_from": "30 tour JSON files in components/product-tour-static/",
+    "extraction_date": "2026-04-29",
+    "term_count": 119,
+    "categories": [
+      "place_region",
+      "temple_heritage",
+      "nature_attraction",
+      "museum_theme",
+      "season_festival",
+      "tour_category",
+      "food_culture",
+      "logistics_term"
+    ]
+  }
+}
