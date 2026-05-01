@@ -1,6 +1,5 @@
 "use client";
 
-import type { ElementType } from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
@@ -9,23 +8,42 @@ import { enUS } from "date-fns/locale/en-US";
 import { ko } from "date-fns/locale/ko";
 import { zhCN } from "date-fns/locale/zh-CN";
 import { isSameDay } from "date-fns";
-import { Check, ChevronDown, Home, Map, Minus, Plus, Ship, ShoppingCart, User, X } from "lucide-react";
+import {
+  AlertCircle,
+  CheckCircle2,
+  Loader2,
+  Minus,
+  Plus,
+  ShieldCheck,
+  Ship,
+  Wallet,
+  X,
+} from "lucide-react";
+import { toast } from "sonner";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 import type { TourProductCheckoutContext } from "@/lib/tour-product/eastSignatureCheckoutContext";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
 import { useCurrencyOptional } from "@/lib/currency";
+import { useTranslations } from "@/lib/i18n";
 import { consumerTourCheckoutHref } from "@/lib/tour-consumer-visibility";
+import {
+  type AvailabilityState,
+  type PreferredLanguage,
+  DEFAULT_GUESTS,
+  MAX_GUESTS,
+  PremiumLanguageSelect,
+  buildBookingPayload,
+  clampGuests,
+  drawerEase,
+  fieldLabelClass,
+  initialDateYmd,
+  parseListUnitUsd,
+  todayYmdLocal,
+  ymdFromLocalDate,
+  ymdToLocalDate,
+} from "@/components/product-tour-static/_shared/bookingShared";
 
 import "react-datepicker/dist/react-datepicker.css";
-
-function NavItem({ icon: Icon, label, active = false }: { icon: ElementType; label: string; active?: boolean }) {
-  return (
-    <button type="button" className="flex flex-col items-center gap-0.5 px-5 py-1.5 transition-colors">
-      <Icon className={`h-5 w-5 ${active ? "text-foreground" : "text-muted-foreground"}`} strokeWidth={active ? 2 : 1.5} />
-      <span className={`text-[10px] ${active ? "text-foreground font-semibold" : "text-muted-foreground"}`}>{label}</span>
-    </button>
-  );
-}
 
 export type TourStickyBookingBarProps = Pick<EastSignatureNatureCoreDetailViewModel, "price"> & {
   checkout?: TourProductCheckoutContext | null;
@@ -42,211 +60,11 @@ export type TourStickyBookingBarProps = Pick<EastSignatureNatureCoreDetailViewMo
   sectionUi?: TourProductSectionUiV1;
 };
 
-type PreferredLanguage = "en" | "zh" | "ko";
-
-const DEFAULT_GUESTS = 1;
-const MAX_GUESTS = 30;
-const DEFAULT_LEAD_DAYS = 14;
-
-const LANG_OPTIONS: {
-  value: PreferredLanguage;
-  title: string;
-  subtitle: string;
-}[] = [
-  { value: "en", title: "English", subtitle: "Guided in English" },
-  { value: "zh", title: "中文", subtitle: "中文服务" },
-  { value: "ko", title: "한국어", subtitle: "한국어 안내" },
-];
-
-const fadeMenu = { duration: 0.42, ease: [0.22, 1, 0.36, 1] as const };
-
-function ymdFromLocalDate(d: Date): string {
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, "0");
-  const day = String(d.getDate()).padStart(2, "0");
-  return `${y}-${m}-${day}`;
-}
-
-function todayYmdLocal(): string {
-  return ymdFromLocalDate(new Date());
-}
-
-function addDaysToYmd(ymd: string, days: number): string {
-  const [y, m, d] = ymd.split("-").map(Number);
-  const dt = new Date(y, m - 1, d);
-  dt.setDate(dt.getDate() + days);
-  return ymdFromLocalDate(dt);
-}
-
-function initialDateYmd(): string {
-  return addDaysToYmd(todayYmdLocal(), DEFAULT_LEAD_DAYS);
-}
-
-function ymdToNoonIso(ymd: string): string {
-  const [y, m, d] = ymd.split("-").map(Number);
-  return new Date(y, m - 1, d, 12, 0, 0, 0).toISOString();
-}
-
-function ymdToLocalDate(ymd: string): Date {
-  const [y, m, d] = ymd.split("-").map(Number);
-  return new Date(y, m - 1, d, 12, 0, 0, 0);
-}
-
-function buildBookingPayload(
-  ctx: TourProductCheckoutContext,
-  dateYmd: string,
-  guests: number,
-  preferredLanguage: PreferredLanguage,
-) {
-  const unit = ctx.unitPriceUsd;
-  const totalPrice =
-    ctx.priceType === "person"
-      ? Math.round(unit * guests * 100) / 100
-      : Math.round(unit * 100) / 100;
-  return {
-    tourId: ctx.tourId,
-    date: ymdToNoonIso(dateYmd),
-    guests,
-    pickup: null as number | string | null,
-    paymentMethod: "full" as const,
-    preferredLanguage,
-    totalPrice,
-  };
-}
-
-const fieldLabelClass = "text-[10px] font-medium tracking-wide text-muted-foreground";
-
-const drawerEase = [0.16, 1, 0.3, 1] as const;
-
-function clampGuests(n: number): number {
-  if (Number.isNaN(n) || n < 1) return 1;
-  if (n > MAX_GUESTS) return MAX_GUESTS;
-  return n;
-}
-
-const FALLBACK_KRW_PER_USD = 1480;
-
-/** Static VM price → USD (DB/checkout contract). */
-function parseListUnitUsd(price: { amountLabel: string; currency: string }): number | null {
-  if (String(price.currency).toUpperCase() === "USD") {
-    const n = parseFloat(String(price.amountLabel).replace(/,/g, ""));
-    return Number.isFinite(n) && n > 0 ? Math.round(n * 100) / 100 : null;
-  }
-  const digits = String(price.amountLabel).replace(/[^\d]/g, "");
-  if (!digits) return null;
-  const krw = parseInt(digits, 10);
-  if (!Number.isFinite(krw) || krw <= 0) return null;
-  return Math.round((krw / FALLBACK_KRW_PER_USD) * 100) / 100;
-}
-
-function PremiumLanguageSelect({
-  value,
-  onChange,
-  labelId,
-}: {
-  value: PreferredLanguage;
-  onChange: (v: PreferredLanguage) => void;
-  labelId: string;
-}) {
-  const [open, setOpen] = useState(false);
-  const triggerRef = useRef<HTMLButtonElement>(null);
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!open) return;
-    const onDoc = (e: MouseEvent) => {
-      const t = e.target as Node;
-      if (triggerRef.current?.contains(t)) return;
-      if (menuRef.current?.contains(t)) return;
-      setOpen(false);
-    };
-    document.addEventListener("mousedown", onDoc);
-    return () => document.removeEventListener("mousedown", onDoc);
-  }, [open]);
-
-  const current = LANG_OPTIONS.find((o) => o.value === value) ?? LANG_OPTIONS[0];
-
-  return (
-    <div className="relative z-[55] w-full max-w-xs">
-      <span id={labelId} className={`${fieldLabelClass} mb-0.5 block`}>
-        Tour language
-      </span>
-      <button
-        ref={triggerRef}
-        type="button"
-        id={`${labelId}-trigger`}
-        aria-haspopup="listbox"
-        aria-expanded={open}
-        aria-labelledby={`${labelId} ${labelId}-trigger`}
-        onClick={() => setOpen((o) => !o)}
-        className="tour-premium-lang-trigger tour-premium-lang-trigger--compact flex h-9 w-full items-center justify-between gap-2 rounded-xl border border-border/90 bg-background px-3 text-left outline-none transition-[box-shadow,border-color] focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
-      >
-        <span className="min-w-0 flex-1">
-          <span className="block text-[13px] font-semibold leading-tight text-foreground">{current.title}</span>
-          <span className="block truncate text-[10px] leading-tight text-muted-foreground">{current.subtitle}</span>
-        </span>
-        <ChevronDown
-          className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-300 ease-out ${open ? "rotate-180" : ""}`}
-          strokeWidth={2}
-          aria-hidden
-        />
-      </button>
-
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            key="lang-menu-layer"
-            ref={menuRef}
-            role="listbox"
-            aria-labelledby={labelId}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={fadeMenu}
-            className="absolute bottom-[calc(100%+0.375rem)] left-0 right-0 z-[60] overflow-hidden rounded-xl border border-border/90 bg-[var(--card)] shadow-[0_12px_40px_rgba(26,35,50,0.14),0_2px_8px_rgba(26,35,50,0.06)]"
-          >
-            <ul className="divide-y divide-border/60 py-0.5">
-              {LANG_OPTIONS.map((opt) => {
-                const selected = opt.value === value;
-                return (
-                  <li key={opt.value}>
-                    <button
-                      type="button"
-                      role="option"
-                      aria-selected={selected}
-                      className={`tour-premium-lang-item tour-premium-lang-item--compact flex w-full items-center gap-2.5 px-2.5 py-2 text-left ${
-                        selected ? "tour-premium-lang-item--selected" : ""
-                      }`}
-                      onClick={() => {
-                        onChange(opt.value);
-                        setOpen(false);
-                      }}
-                    >
-                      <span className="flex min-w-0 flex-1 flex-col gap-0">
-                        <span className="text-[13px] font-semibold leading-tight text-foreground">{opt.title}</span>
-                        <span className="text-[10px] leading-tight text-muted-foreground">{opt.subtitle}</span>
-                      </span>
-                      {selected ? (
-                        <Check className="h-4 w-4 shrink-0 text-[var(--primary)]" strokeWidth={2.5} aria-hidden />
-                      ) : (
-                        <span className="h-4 w-4 shrink-0" aria-hidden />
-                      )}
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
-
 export function TourStickyBookingBar({ price, checkout, selectedPortLabel, sectionUi }: TourStickyBookingBarProps) {
   const portCtaPrefix = sectionUi?.portSelectorCtaPrefix ?? "Docking at";
   const router = useRouter();
   const currencyCtx = useCurrencyOptional();
+  const t = useTranslations();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [busy, setBusy] = useState(false);
   const [dateYmd, setDateYmd] = useState(initialDateYmd);
@@ -255,6 +73,7 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
   const [guestFieldEditing, setGuestFieldEditing] = useState(false);
   const guestFieldEditingRef = useRef(false);
   const [preferredLanguage, setPreferredLanguage] = useState<PreferredLanguage>("en");
+  const [availability, setAvailability] = useState<AvailabilityState>({ status: "idle" });
 
   const minYmd = todayYmdLocal();
   const minDateObj = useMemo(() => ymdToLocalDate(minYmd), [minYmd]);
@@ -262,19 +81,67 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
 
   const datePickerLocale = preferredLanguage === "ko" ? ko : preferredLanguage === "zh" ? zhCN : enUS;
 
-  const estimatedTotal = useMemo(() => {
-    if (!checkout) return null;
-    const unit = checkout.unitPriceUsd;
-    if (checkout.priceType === "person") {
-      return Math.round(unit * guestCount * 100) / 100;
-    }
-    return Math.round(unit * 100) / 100;
-  }, [checkout, guestCount]);
+  /** Auto-check availability whenever date/guests change while drawer is open */
+  useEffect(() => {
+    if (!drawerOpen || !checkout?.tourId) return;
+    if (!dateYmd || dateYmd < minYmd) return;
 
+    let cancelled = false;
+
+    (async () => {
+      setAvailability({ status: "checking" });
+      try {
+        const res = await fetch(
+          `/api/tours/${checkout.tourId}/availability?date=${encodeURIComponent(dateYmd)}&guests=${guestCount}`,
+        );
+        if (cancelled) return;
+        if (!res.ok) {
+          setAvailability({ status: "idle" });
+          return;
+        }
+        const data = (await res.json()) as {
+          canAccommodate?: boolean;
+          available?: boolean;
+          availableSpots?: number;
+          price?: number;
+          reason?: string;
+        };
+        if (cancelled) return;
+        if (data.canAccommodate === false || data.available === false) {
+          setAvailability({ status: "unavailable", reason: data.reason || "This date isn't available." });
+        } else {
+          setAvailability({
+            status: "available",
+            spots: typeof data.availableSpots === "number" ? data.availableSpots : null,
+            priceUsd: typeof data.price === "number" && data.price > 0 ? data.price : null,
+          });
+        }
+      } catch {
+        if (!cancelled) setAvailability({ status: "idle" });
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [drawerOpen, checkout?.tourId, dateYmd, guestCount, minYmd]);
+
+  /** Resolved unit price, prefers live priceOverride from availability when present. */
   const unitPriceUsd = useMemo(() => {
+    if (availability.status === "available" && availability.priceUsd != null && availability.priceUsd > 0) {
+      return availability.priceUsd;
+    }
     if (checkout?.unitPriceUsd != null && checkout.unitPriceUsd > 0) return checkout.unitPriceUsd;
     return parseListUnitUsd(price);
-  }, [checkout, price]);
+  }, [availability, checkout, price]);
+
+  const estimatedTotal = useMemo(() => {
+    if (!checkout || unitPriceUsd == null) return null;
+    if (checkout.priceType === "person") {
+      return Math.round(unitPriceUsd * guestCount * 100) / 100;
+    }
+    return Math.round(unitPriceUsd * 100) / 100;
+  }, [checkout, guestCount, unitPriceUsd]);
 
   const ctaUnitFormatted = useMemo(() => {
     if (unitPriceUsd == null || unitPriceUsd <= 0) return null;
@@ -302,36 +169,24 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
   const goToCheckout = useCallback(async () => {
     if (!checkout?.tourId || busy) return;
     if (!dateYmd || dateYmd < minYmd) {
-      alert("Please choose a tour date on or after today.");
+      toast.error("Please choose a tour date on or after today.");
+      return;
+    }
+    if (availability.status === "unavailable") {
+      toast.error(availability.reason);
       return;
     }
     setBusy(true);
     try {
-      try {
-        const res = await fetch(
-          `/api/tours/${checkout.tourId}/availability?date=${encodeURIComponent(dateYmd)}&guests=${guestCount}`,
-        );
-        if (res.ok) {
-          const data = (await res.json()) as { canAccommodate?: boolean; reason?: string };
-          if (data.canAccommodate === false) {
-            alert(data.reason || "This date or guest count is not available. Please adjust and try again.");
-            setBusy(false);
-            return;
-          }
-        }
-      } catch {
-        // availability API 실패 시 진행
-      }
-
       const payload = buildBookingPayload(checkout, dateYmd, guestCount, preferredLanguage);
       sessionStorage.setItem("bookingData", JSON.stringify(payload));
       router.push(consumerTourCheckoutHref(checkout.tourId));
     } catch (e) {
       console.error(e);
-      alert("Could not start booking. Please try again.");
+      toast.error("Could not start booking. Please try again.");
       setBusy(false);
     }
-  }, [checkout, busy, router, dateYmd, guestCount, minYmd, preferredLanguage]);
+  }, [checkout, busy, router, dateYmd, guestCount, minYmd, preferredLanguage, availability]);
 
   const canBook = Boolean(checkout?.tourId);
 
@@ -373,13 +228,22 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
   };
 
   const btnClass =
-    "inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold transition-all outline-none focus-visible:border focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 bg-foreground text-white hover:bg-foreground/90 shadow-lg hover:shadow-xl";
-  const mobileBtnClass =
-    "inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold transition-all outline-none focus-visible:border focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 bg-foreground text-white hover:bg-foreground/90 shadow-md";
+    "inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold transition-all outline-none focus-visible:border focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 bg-foreground text-white hover:bg-foreground/90 shadow-md sm:shadow-lg sm:hover:shadow-xl";
 
   const spacerClass = drawerOpen
-    ? "h-[calc(21rem+env(safe-area-inset-bottom,0px))] sm:h-[min(68vh,26rem)]"
-    : "h-[calc(8.25rem+env(safe-area-inset-bottom,0px))] sm:h-24";
+    ? "h-[calc(20rem+env(safe-area-inset-bottom,0px))] sm:h-[min(68vh,26rem)]"
+    : "h-[calc(5.5rem+env(safe-area-inset-bottom,0px))] sm:h-24";
+
+  /** Resolved CTA label — progresses from check → reserve → choose-another based on availability state. */
+  const ctaLabel = (() => {
+    if (busy) return "…";
+    if (!drawerOpen) return t("tour.checkAvailability");
+    if (availability.status === "checking") return t("tour.checkingAvailability");
+    if (availability.status === "unavailable") return t("tour.chooseAnotherDate");
+    return t("tour.reserve");
+  })();
+  const ctaDisabled =
+    !canBook || busy || availability.status === "checking" || availability.status === "unavailable";
 
   const langLabelId = "tour-booking-lang-label";
 
@@ -425,7 +289,8 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
                       ) : null}
                       {estimatedTotal != null && checkout?.priceType === "person" && estimatedTotalFormatted && (
                         <p className="mt-0.5 text-[11px] text-muted-foreground tabular-nums">
-                          Est. total · {guestCount} {guestCount === 1 ? "guest" : "guests"}: {estimatedTotalFormatted}
+                          Est. total · {guestCount} {guestCount === 1 ? "guest" : "guests"}:{" "}
+                          <span className="font-semibold text-foreground">{estimatedTotalFormatted}</span>
                         </p>
                       )}
                     </div>
@@ -437,6 +302,43 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
                     >
                       <X className="h-4 w-4" strokeWidth={2} />
                     </button>
+                  </div>
+
+                  {/* Reassurance row — emphasises low-commitment, not italic, color + weight only */}
+                  <div className="mb-2.5 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg bg-emerald-50/60 px-2.5 py-1.5">
+                    <span className="flex items-center gap-1 text-[11px] font-semibold text-emerald-700">
+                      <ShieldCheck className="h-3.5 w-3.5" strokeWidth={2.25} aria-hidden />
+                      {t("tour.freeCancellation")}
+                    </span>
+                    <span aria-hidden className="h-3 w-px bg-emerald-700/20" />
+                    <span className="flex items-center gap-1 text-[11px] font-semibold text-emerald-700">
+                      <Wallet className="h-3.5 w-3.5" strokeWidth={2.25} aria-hidden />
+                      {t("tour.payLater")}
+                    </span>
+                  </div>
+
+                  {/* Inline availability status — colored + bold, never italic */}
+                  <div className="mb-2 min-h-[24px]">
+                    {availability.status === "checking" && (
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-2.5 py-1 text-[11px] font-medium text-muted-foreground">
+                        <Loader2 className="h-3 w-3 animate-spin" aria-hidden />
+                        {t("tour.checkingAvailability")}
+                      </span>
+                    )}
+                    {availability.status === "available" && (
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-700">
+                        <CheckCircle2 className="h-3 w-3" strokeWidth={2.5} aria-hidden />
+                        {availability.spots != null && availability.spots <= 8 && availability.spots > 0
+                          ? t("tour.spotsLeftTemplate").replace("{count}", String(availability.spots))
+                          : "Available"}
+                      </span>
+                    )}
+                    {availability.status === "unavailable" && (
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-50 px-2.5 py-1 text-[11px] font-semibold text-rose-700">
+                        <AlertCircle className="h-3 w-3" strokeWidth={2.5} aria-hidden />
+                        {availability.reason}
+                      </span>
+                    )}
                   </div>
 
                   <motion.div
@@ -560,30 +462,13 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
             <button
               type="button"
               onClick={handlePrimaryClick}
-              disabled={!canBook || busy}
+              disabled={ctaDisabled}
               aria-expanded={drawerOpen}
               title={!canBook ? "Tour checkout is not linked yet (missing tours row or env)." : undefined}
-              className={`${mobileBtnClass} px-6 h-9 sm:hidden`}
+              className={`${btnClass} h-9 px-6 sm:h-10 sm:px-10`}
             >
-              {busy ? "…" : drawerOpen ? "Continue" : "Book Now"}
+              {ctaLabel}
             </button>
-            <button
-              type="button"
-              onClick={handlePrimaryClick}
-              disabled={!canBook || busy}
-              aria-expanded={drawerOpen}
-              title={!canBook ? "Tour checkout is not linked yet (missing tours row or env)." : undefined}
-              className={`${btnClass} hidden px-10 h-10 sm:inline-flex`}
-            >
-              {busy ? "…" : drawerOpen ? "Continue to checkout" : "Book Now"}
-            </button>
-          </div>
-
-          <div className="tour-sticky-cta-bar-mobile-nav flex items-center justify-around py-2 sm:hidden">
-            <NavItem icon={Home} label="Home" />
-            <NavItem icon={Map} label="Tours" active />
-            <NavItem icon={ShoppingCart} label="Cart" />
-            <NavItem icon={User} label="My Page" />
           </div>
         </div>
       </div>

@@ -1,27 +1,27 @@
 "use client";
 
 import { useState } from "react";
-import { Clock, ChevronDown, Camera, Lightbulb, Ticket, Bath, Car, Footprints } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { ItineraryStop } from "@/components/product-tour-static/_shared/tourProductDetailSectionTypes";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
 import { PickupOnlyCards, DropoffOnlyCard } from "@/components/product-tour-static/_shared/pickup-dropoff/PickupDropoffCards";
 import { PortSelectorTimeline } from "@/components/product-tour-static/_shared/route-variants/PortSelectorTimeline";
-import type { PortRouteVariant } from "@/components/product-tour-static/_shared/route-variants/routeVariantTypes";
+import type { PortRouteVariant, PortVariantStop } from "@/components/product-tour-static/_shared/route-variants/routeVariantTypes";
+import {
+  TourStopDetailDrawer,
+  type TourStopDrawerStop,
+} from "@/components/product-tour-static/_shared/TourStopDetailDrawer";
 
 function StopCard({
   stop,
   totalStops,
-  isExpanded,
-  onToggle,
-  sectionUi,
+  onClick,
 }: {
   stop: ItineraryStop;
   totalStops: number;
-  isExpanded: boolean;
-  onToggle: () => void;
-  sectionUi: TourProductSectionUiV1;
+  onClick: () => void;
 }) {
   return (
     <div className="relative pl-12">
@@ -35,10 +35,11 @@ function StopCard({
 
       <div className="pb-5">
         <button
-          onClick={onToggle}
+          type="button"
+          onClick={onClick}
           className={cn(
             "w-full text-left rounded-xl bg-white border border-border p-4 transition-all duration-200",
-            isExpanded ? "rounded-b-none border-b-transparent shadow-none" : "shadow-premium hover:shadow-premium-elevated hover:border-primary/10",
+            "shadow-premium hover:shadow-premium-elevated hover:border-primary/10",
           )}
         >
           <div className="flex items-start justify-between gap-3">
@@ -52,160 +53,32 @@ function StopCard({
               <span className="inline-block mt-2 px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground bg-muted/80 rounded-md">
                 {stop.category}
               </span>
-            </div>
-            <div
-              className={cn(
-                "flex-shrink-0 mt-1 p-1.5 rounded-full transition-all duration-200",
-                isExpanded ? "bg-primary/10 rotate-180" : "bg-muted/60",
+              {/* First-highlight teaser, color/weight only — no italic */}
+              {stop.highlights && stop.highlights.length > 0 && (
+                <p className="mt-2.5 flex items-start gap-2 text-[12.5px] leading-snug text-muted-foreground">
+                  <span aria-hidden className="mt-[6px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                  <span className="line-clamp-1">{stop.highlights[0]}</span>
+                </p>
               )}
-            >
-              <ChevronDown className={cn("h-4 w-4 transition-colors", isExpanded ? "text-primary" : "text-muted-foreground")} />
+            </div>
+            <div className="flex flex-shrink-0 flex-col items-end gap-2">
+              {stop.image && (
+                <div className="h-14 w-14 overflow-hidden rounded-lg ring-1 ring-border/40 shadow-premium">
+                  <img
+                    src={stop.image}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              )}
+              <div className="rounded-full bg-muted/60 p-1.5">
+                <ChevronRight className="h-4 w-4 text-muted-foreground" />
+              </div>
             </div>
           </div>
         </button>
-
-        <div className={cn("grid transition-all duration-300 ease-out", isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
-          <div className="overflow-hidden">
-            <div className="rounded-b-xl border border-t-0 border-border bg-white shadow-premium">
-              <div className="relative h-48 overflow-hidden">
-                <img src={stop.image} alt={stop.name} className="h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1A2332]/35 via-[#1A2332]/5 to-transparent" />
-                <div className="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full bg-white/95 backdrop-blur-sm px-3 py-1.5 text-xs font-medium text-foreground shadow-md">
-                  <Clock className="h-3.5 w-3.5 text-primary" />
-                  {stop.duration}
-                </div>
-              </div>
-
-              <div className="p-5 space-y-6">
-                <p className="text-sm text-foreground leading-relaxed">{stop.description}</p>
-
-                <div>
-                  <h4 className="text-xs font-semibold text-foreground tracking-wide mb-3">{sectionUi.stopHighlightsHeading}</h4>
-                  <ul className="grid grid-cols-1 gap-2">
-                    {(stop.highlights ?? []).map((highlight, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-sm text-foreground">
-                        <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                        {highlight}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {Array.isArray(stop.timeUsed) && stop.timeUsed.length > 0 && (
-                  <div className="rounded-xl bg-mist-blue/70 border border-border/40 p-4">
-                    <h4 className="text-xs font-semibold text-foreground tracking-wide mb-3">{sectionUi.stopTimeUsedHeading}</h4>
-                    <div className="flex items-start gap-2">
-                      {stop.timeUsed.map((step, i) => (
-                        <div key={i} className="flex-1 text-center">
-                          <div className="w-6 h-6 mx-auto mb-2 rounded-full bg-white text-primary text-[11px] font-semibold flex items-center justify-center shadow-sm border border-border/50">
-                            {i + 1}
-                          </div>
-                          <p className="text-[11px] text-muted-foreground leading-snug">{step}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                <div className="flex items-start gap-3 rounded-xl bg-sand-blush/80 border border-accent/15 px-4 py-3.5">
-                  <Lightbulb className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-foreground leading-relaxed">{stop.whyOnRoute}</p>
-                </div>
-
-                {(stop.visitBasics || stop.convenience) && (
-                  <div className="border-t border-border/80 pt-5 space-y-4">
-                    {stop.visitBasics && (
-                      <div>
-                        <h4 className="text-xs font-semibold text-foreground tracking-wide mb-3">{sectionUi.stopVisitBasicsHeading}</h4>
-                        <div className="grid grid-cols-2 gap-3 text-xs">
-                          {stop.visitBasics.hours && (
-                            <div className="flex items-start gap-2.5">
-                              <Clock className="h-4 w-4 text-muted-foreground mt-0.5 flex-shrink-0" />
-                              <div>
-                                <p className="text-muted-foreground">{sectionUi.stopVisitHoursLabel}</p>
-                                <p className="text-foreground font-medium mt-0.5">{stop.visitBasics.hours}</p>
-                              </div>
-                            </div>
-                          )}
-                          {stop.visitBasics.admission && (
-                            <div className="flex items-start gap-2.5">
-                              <Ticket className="h-4 w-4 text-muted-foreground mt-0.5 flex-shrink-0" />
-                              <div>
-                                <p className="text-muted-foreground">{sectionUi.stopVisitAdmissionLabel}</p>
-                                <p className="text-foreground font-medium mt-0.5">{stop.visitBasics.admission}</p>
-                              </div>
-                            </div>
-                          )}
-                          {stop.visitBasics.walking && (
-                            <div className="flex items-start gap-2.5">
-                              <Footprints className="h-4 w-4 text-muted-foreground mt-0.5 flex-shrink-0" />
-                              <div>
-                                <p className="text-muted-foreground">{sectionUi.stopVisitWalkingLabel}</p>
-                                <p className="text-foreground font-medium mt-0.5">{stop.visitBasics.walking}</p>
-                              </div>
-                            </div>
-                          )}
-                          {stop.visitBasics.closed && (
-                            <div className="flex items-start gap-2.5">
-                              <div className="h-4 w-4 text-muted-foreground mt-0.5 flex-shrink-0 text-center text-[10px] font-bold">X</div>
-                              <div>
-                                <p className="text-muted-foreground">{sectionUi.stopVisitClosedLabel}</p>
-                                <p className="text-foreground font-medium mt-0.5">{stop.visitBasics.closed}</p>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    )}
-
-                    {stop.convenience && (stop.convenience.restroom || stop.convenience.parking) && (
-                      <div className="flex gap-5 text-xs border-t border-border/60 pt-4">
-                        {stop.convenience.restroom && (
-                          <div className="flex items-center gap-2">
-                            <Bath className="h-4 w-4 text-muted-foreground" />
-                            <span className="text-foreground">{stop.convenience.restroom}</span>
-                          </div>
-                        )}
-                        {stop.convenience.parking && (
-                          <div className="flex items-center gap-2">
-                            <Car className="h-4 w-4 text-muted-foreground" />
-                            <span className="text-foreground">{stop.convenience.parking}</span>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                {stop.smartNotes && (stop.smartNotes.photo || stop.smartNotes.tip) && (
-                  <div className="border-t border-border/80 pt-5 space-y-3">
-                    <h4 className="text-xs font-semibold text-foreground tracking-wide">{sectionUi.stopSmartNotesHeading}</h4>
-                    <div className="space-y-2.5">
-                      {stop.smartNotes.photo && (
-                        <div className="flex items-start gap-2.5">
-                          <Camera className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                          <p className="text-xs text-muted-foreground">
-                            <span className="font-medium text-foreground">{sectionUi.stopSmartNotesPhotoPrefix}</span>{" "}
-                            {stop.smartNotes.photo}
-                          </p>
-                        </div>
-                      )}
-                      {stop.smartNotes.tip && (
-                        <div className="flex items-start gap-2.5">
-                          <Lightbulb className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
-                          <p className="text-xs text-muted-foreground">
-                            <span className="font-medium text-foreground">{sectionUi.stopSmartNotesTipPrefix}</span>{" "}
-                            {stop.smartNotes.tip}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
@@ -228,18 +101,23 @@ export function TourTimelineSection({
   selectedPortIndex = 0,
   onPortChange,
 }: TourTimelineSectionProps) {
-  const [expandedStop, setExpandedStop] = useState<number | null>(null);
+  const [drawerStop, setDrawerStop] = useState<TourStopDrawerStop | null>(null);
   const [internalPortIndex, setInternalPortIndex] = useState(0);
   const total = itineraryStops.length;
   const hasRouteVariants = Array.isArray(routeVariants) && routeVariants.length > 0;
   const effectivePortIndex = onPortChange ? selectedPortIndex : internalPortIndex;
+
   const handlePortChange = (index: number) => {
-    setExpandedStop(null);
+    setDrawerStop(null);
     if (onPortChange) {
       onPortChange(index);
     } else {
       setInternalPortIndex(index);
     }
+  };
+
+  const handleVariantStopClick = (stop: PortVariantStop) => {
+    setDrawerStop(stop);
   };
 
   return (
@@ -256,10 +134,7 @@ export function TourTimelineSection({
             routeVariants={routeVariants!}
             selectedPortIndex={effectivePortIndex}
             onPortChange={handlePortChange}
-            expandedStopNumber={expandedStop}
-            onToggleStop={(stopNumber) =>
-              setExpandedStop((prev) => (prev === stopNumber ? null : stopNumber))
-            }
+            onStopClick={handleVariantStopClick}
             sectionUi={sectionUi}
           />
         ) : (
@@ -268,14 +143,19 @@ export function TourTimelineSection({
               key={stop.number}
               stop={stop}
               totalStops={total}
-              isExpanded={expandedStop === stop.number}
-              onToggle={() => setExpandedStop(expandedStop === stop.number ? null : stop.number)}
-              sectionUi={sectionUi}
+              onClick={() => setDrawerStop(stop)}
             />
           ))
         )}
         <DropoffOnlyCard pickupDropoff={pickup_dropoff} sectionUi={sectionUi} />
       </div>
+
+      <TourStopDetailDrawer
+        stop={drawerStop}
+        open={drawerStop !== null}
+        onClose={() => setDrawerStop(null)}
+        sectionUi={sectionUi}
+      />
     </div>
   );
 }

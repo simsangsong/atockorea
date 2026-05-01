@@ -36,10 +36,10 @@ export function TourAtAGlance({ glanceItems, sectionUi }: TourAtAGlanceProps) {
               <div className="tour-glance-card__icon-ring flex h-9 w-9 shrink-0 items-center justify-center rounded-full mb-4 transition-transform duration-300 group-hover:scale-[1.06]">
                 <Icon className="h-[16px] w-[16px]" strokeWidth={1.6} />
               </div>
-              <p className="text-[9px] font-semibold tracking-[0.12em] uppercase text-muted-foreground leading-[1.35]">
+              <p className="text-[10.5px] font-semibold tracking-[0.1em] uppercase text-muted-foreground leading-[1.35]">
                 {item.label}
               </p>
-              <p className="mt-2 text-[13px] font-semibold text-foreground tracking-[-0.01em] leading-[1.2]">
+              <p className="mt-2 text-[13.5px] font-semibold text-foreground tracking-[-0.01em] leading-[1.2]">
                 {item.value}
               </p>
             </div>

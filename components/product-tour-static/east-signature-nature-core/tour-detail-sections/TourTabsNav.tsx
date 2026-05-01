@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
@@ -12,6 +12,8 @@ const SCROLL_OFFSET_PX = 108;
 export function TourTabsNav({ subnavItems }: TourTabsNavProps) {
   const [activeSection, setActiveSection] = useState("overview");
   const [isPastHero, setIsPastHero] = useState(false);
+  const [showRightFade, setShowRightFade] = useState(false);
+  const scrollerRef = useRef<HTMLDivElement>(null);
 
   const subnavScrollSpyKey = subnavItems.map((item) => item.id).join("|");
 
@@ -38,6 +40,24 @@ export function TourTabsNav({ subnavItems }: TourTabsNavProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [subnavScrollSpyKey]);
 
+  const updateRightFade = useCallback(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    setShowRightFade(max > 4 && el.scrollLeft < max - 4);
+  }, []);
+
+  useEffect(() => {
+    updateRightFade();
+    const el = scrollerRef.current;
+    el?.addEventListener("scroll", updateRightFade, { passive: true });
+    window.addEventListener("resize", updateRightFade);
+    return () => {
+      el?.removeEventListener("scroll", updateRightFade);
+      window.removeEventListener("resize", updateRightFade);
+    };
+  }, [updateRightFade, subnavScrollSpyKey]);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -55,8 +75,8 @@ export function TourTabsNav({ subnavItems }: TourTabsNavProps) {
         isPastHero ? "shadow-md" : "shadow-none",
       )}
     >
-      <div className="mx-auto max-w-xl px-5">
-        <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide py-2.5">
+      <div className="relative mx-auto max-w-xl px-5">
+        <div ref={scrollerRef} className="flex items-center gap-1 overflow-x-auto scrollbar-hide py-2.5">
           {subnavItems.map((item) => (
             <button
               key={item.id}
@@ -72,6 +92,14 @@ export function TourTabsNav({ subnavItems }: TourTabsNavProps) {
             </button>
           ))}
         </div>
+        {/* Right-edge fade — hints there are more tabs to scroll to */}
+        <div
+          aria-hidden
+          className={cn(
+            "pointer-events-none absolute right-0 top-0 h-full w-10 bg-gradient-to-l from-white via-white/85 to-transparent transition-opacity duration-200",
+            showRightFade ? "opacity-100" : "opacity-0",
+          )}
+        />
       </div>
     </nav>
   );

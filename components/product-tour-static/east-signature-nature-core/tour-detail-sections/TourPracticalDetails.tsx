@@ -226,7 +226,8 @@ export function TourPracticalDetails({
                   <ul className="space-y-2.5">
                     {(item.content ?? []).map((line, i) => {
                       if (item.variant === "included") {
-                        const isIncluded = i < 5;
+                        const splitAt = item.includedCount ?? 5;
+                        const isIncluded = i < splitAt;
                         return (
                           <li key={i} className="flex items-start gap-2.5 text-sm">
                             {isIncluded ? (

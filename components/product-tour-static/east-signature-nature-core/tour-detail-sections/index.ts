@@ -20,3 +20,5 @@ export { TourReviewsSection } from "./TourReviewsSection";
 export type { TourReviewsSectionProps } from "./TourReviewsSection";
 export { TourStickyBookingBar } from "./TourStickyBookingBar";
 export type { TourStickyBookingBarProps } from "./TourStickyBookingBar";
+export { TourDesktopBookingCard } from "./TourDesktopBookingCard";
+export type { TourDesktopBookingCardProps } from "./TourDesktopBookingCard";

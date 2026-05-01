@@ -131,6 +131,12 @@ export type PracticalAccordionItem = {
   preview?: string;
   content?: readonly string[];
   variant?: "included" | "default";
+  /**
+   * For `variant: "included"` items, the first `includedCount` entries of `content`
+   * render with a ✓; the rest render with an ✗ (excluded). Defaults to 5 to preserve
+   * the historic positional contract used by all existing JSON bundles.
+   */
+  includedCount?: number;
 };
 
 export type PracticalWeatherStatic = {

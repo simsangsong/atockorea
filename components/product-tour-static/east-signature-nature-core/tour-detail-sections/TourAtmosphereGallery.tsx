@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
@@ -19,9 +19,38 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
     setLightboxOpen(true);
   };
 
-  const closeLightbox = () => setLightboxOpen(false);
-  const goNext = () => setActiveIndex((prev) => (prev + 1) % galleryItems.length);
-  const goPrev = () => setActiveIndex((prev) => (prev - 1 + galleryItems.length) % galleryItems.length);
+  const closeLightbox = useCallback(() => setLightboxOpen(false), []);
+  const goNext = useCallback(
+    () => setActiveIndex((prev) => (prev + 1) % galleryItems.length),
+    [galleryItems.length],
+  );
+  const goPrev = useCallback(
+    () => setActiveIndex((prev) => (prev - 1 + galleryItems.length) % galleryItems.length),
+    [galleryItems.length],
+  );
+
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeLightbox();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        goNext();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        goPrev();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [lightboxOpen, closeLightbox, goNext, goPrev]);
 
   return (
     <>
@@ -32,12 +61,15 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
         </div>
 
         <button
+          type="button"
           onClick={() => openLightbox(0)}
           className="group relative w-full aspect-[16/9] rounded-xl overflow-hidden card-hero transition-all duration-300 hover:shadow-premium-hero"
         >
           <img
             src={featuredItem.src}
-            alt={featuredItem.alt}
+            alt={featuredItem.alt ?? ""}
+            loading="eager"
+            decoding="async"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#1A2332]/70 via-transparent to-[#1A2332]/5" />
@@ -61,6 +93,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
         <div className="flex gap-2.5 overflow-x-auto scrollbar-hide -mx-5 px-5">
           {scrollItems.map((item, index) => (
             <button
+              type="button"
               key={item.id}
               onClick={() => openLightbox(index + 1)}
               className="group relative flex-shrink-0 w-[100px] rounded-lg overflow-hidden shadow-premium transition-all duration-300 hover:shadow-premium-elevated"
@@ -68,7 +101,9 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
               <div className="aspect-[4/3] relative">
                 <img
                   src={item.src}
-                  alt={item.alt}
+                  alt={item.alt ?? ""}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A2332]/60 via-[#1A2332]/10 to-transparent" />
@@ -93,27 +128,44 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
 
       {lightboxOpen && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Photo gallery"
           className="fixed inset-0 z-50 bg-[#1A2332]/95 flex items-center justify-center backdrop-blur-sm"
           onClick={closeLightbox}
         >
-          <button onClick={closeLightbox} className="absolute top-4 right-4 p-2.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+          {/* Counter — top-left, mirrors close button */}
+          <div className="absolute top-4 left-4 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold tabular-nums text-white">
+            {activeIndex + 1} / {galleryItems.length}
+          </div>
+
+          <button
+            type="button"
+            onClick={closeLightbox}
+            aria-label="Close gallery"
+            className="absolute top-4 right-4 p-2.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+          >
             <X className="h-5 w-5 text-white" />
           </button>
 
           <button
+            type="button"
             onClick={(e) => {
               e.stopPropagation();
               goPrev();
             }}
+            aria-label="Previous image"
             className="absolute left-4 p-2.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
           >
             <ChevronLeft className="h-5 w-5 text-white" />
           </button>
           <button
+            type="button"
             onClick={(e) => {
               e.stopPropagation();
               goNext();
             }}
+            aria-label="Next image"
             className="absolute right-4 p-2.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
           >
             <ChevronRight className="h-5 w-5 text-white" />
@@ -122,7 +174,8 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
           <div className="relative max-w-4xl max-h-[80vh] mx-4" onClick={(e) => e.stopPropagation()}>
             <img
               src={galleryItems[activeIndex].src}
-              alt={galleryItems[activeIndex].alt}
+              alt={galleryItems[activeIndex].alt ?? ""}
+              decoding="async"
               className="max-h-[80vh] w-auto rounded-xl shadow-2xl"
             />
 
@@ -144,11 +197,14 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
           <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2">
             {galleryItems.map((item, index) => (
               <button
+                type="button"
                 key={item.id}
                 onClick={(e) => {
                   e.stopPropagation();
                   setActiveIndex(index);
                 }}
+                aria-label={`View image ${index + 1}`}
+                aria-current={activeIndex === index ? "true" : undefined}
                 className={cn(
                   "w-12 h-8 rounded-md overflow-hidden transition-all",
                   activeIndex === index
@@ -156,7 +212,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                     : "opacity-50 hover:opacity-80",
                 )}
               >
-                <img src={item.src} alt={item.alt} className="h-full w-full object-cover" />
+                <img src={item.src} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
               </button>
             ))}
           </div>

@@ -178,9 +178,9 @@ export function TourReviewsSection({ guestReviews, reviewsSummary, sectionUi }: 
                     <div key={item.stars} className="flex items-center gap-2">
                       <span className="text-xs text-muted-foreground w-3 tabular-nums sm:text-[13px]">{item.stars}</span>
                       <Star className="h-3 w-3 shrink-0 fill-amber-400 text-amber-400 sm:h-3.5 sm:w-3.5" />
-                      <div className="flex-1 h-1.5 bg-muted/50 rounded-full overflow-hidden min-w-0">
+                      <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden min-w-0">
                         <div
-                          className="h-full bg-amber-400 rounded-full transition-all duration-500"
+                          className="h-full bg-amber-500 rounded-full transition-all duration-500"
                           style={{ width: `${item.percentage}%` }}
                         />
                       </div>

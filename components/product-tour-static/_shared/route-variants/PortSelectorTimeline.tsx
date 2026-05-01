@@ -1,6 +1,6 @@
 "use client";
 
-import { Anchor, ChevronDown, Clock, Footprints, MapPin, Ship, Ticket } from "lucide-react";
+import { Anchor, ChevronRight, Clock, MapPin, Ship } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
@@ -13,23 +13,19 @@ export type PortSelectorTimelineProps = {
   routeVariants: readonly PortRouteVariant[];
   selectedPortIndex: number;
   onPortChange: (index: number) => void;
-  expandedStopNumber: number | null;
-  onToggleStop: (stopNumber: number) => void;
+  /** Opens the shared stop-detail drawer with the clicked variant stop. */
+  onStopClick: (stop: PortVariantStop) => void;
   sectionUi: TourProductSectionUiV1;
 };
 
 function VariantStopCard({
   stop,
   totalStops,
-  isExpanded,
-  onToggle,
-  sectionUi,
+  onClick,
 }: {
   stop: PortVariantStop;
   totalStops: number;
-  isExpanded: boolean;
-  onToggle: () => void;
-  sectionUi: TourProductSectionUiV1;
+  onClick: () => void;
 }) {
   return (
     <div className="relative pl-12">
@@ -44,12 +40,10 @@ function VariantStopCard({
       <div className="pb-5">
         <button
           type="button"
-          onClick={onToggle}
+          onClick={onClick}
           className={cn(
             "w-full text-left rounded-xl bg-white border border-border p-4 transition-all duration-200",
-            isExpanded
-              ? "rounded-b-none border-b-transparent shadow-none"
-              : "shadow-premium hover:shadow-premium-elevated hover:border-primary/10",
+            "shadow-premium hover:shadow-premium-elevated hover:border-primary/10",
           )}
         >
           <div className="flex items-start justify-between gap-3">
@@ -62,81 +56,20 @@ function VariantStopCard({
               <span className="inline-block mt-2 px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground bg-muted/80 rounded-md">
                 {stop.category}
               </span>
-            </div>
-            <div
-              className={cn(
-                "flex-shrink-0 mt-1 p-1.5 rounded-full transition-all duration-200",
-                isExpanded ? "bg-primary/10 rotate-180" : "bg-muted/60",
+              {stop.highlights && stop.highlights.length > 0 && (
+                <p className="mt-2.5 flex items-start gap-2 text-[12.5px] leading-snug text-muted-foreground">
+                  <span aria-hidden className="mt-[6px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                  <span className="line-clamp-1">{stop.highlights[0]}</span>
+                </p>
               )}
-            >
-              <ChevronDown
-                className={cn("h-4 w-4 transition-colors", isExpanded ? "text-primary" : "text-muted-foreground")}
-              />
             </div>
-          </div>
-        </button>
-
-        <div className={cn("grid transition-all duration-300 ease-out", isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
-          <div className="overflow-hidden">
-            <div className="rounded-b-xl border border-t-0 border-border bg-white shadow-premium">
-              <div className="p-5 space-y-6">
-                <p className="text-sm text-foreground leading-relaxed">{stop.description}</p>
-
-                <div>
-                  <h4 className="text-xs font-semibold text-foreground tracking-wide mb-3">
-                    {sectionUi.stopHighlightsHeading}
-                  </h4>
-                  <ul className="grid grid-cols-1 gap-2">
-                    {stop.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-sm text-foreground">
-                        <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                        {highlight}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="border-t border-border/80 pt-5">
-                  <h4 className="text-xs font-semibold text-foreground tracking-wide mb-3">
-                    {sectionUi.stopVisitBasicsHeading}
-                  </h4>
-                  <div className="grid grid-cols-2 gap-3 text-xs">
-                    <div className="flex items-start gap-2.5">
-                      <Clock className="h-4 w-4 text-muted-foreground mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p className="text-muted-foreground">{sectionUi.stopVisitHoursLabel}</p>
-                        <p className="text-foreground font-medium mt-0.5">{stop.visitBasics.hours}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-2.5">
-                      <Ticket className="h-4 w-4 text-muted-foreground mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p className="text-muted-foreground">{sectionUi.stopVisitAdmissionLabel}</p>
-                        <p className="text-foreground font-medium mt-0.5">{stop.visitBasics.admission}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-2.5">
-                      <Footprints className="h-4 w-4 text-muted-foreground mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p className="text-muted-foreground">{sectionUi.stopVisitWalkingLabel}</p>
-                        <p className="text-foreground font-medium mt-0.5">{stop.visitBasics.walking}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-2.5">
-                      <div className="h-4 w-4 text-muted-foreground mt-0.5 flex-shrink-0 text-center text-[10px] font-bold">
-                        X
-                      </div>
-                      <div>
-                        <p className="text-muted-foreground">{sectionUi.stopVisitClosedLabel}</p>
-                        <p className="text-foreground font-medium mt-0.5">{stop.visitBasics.closed}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div className="flex flex-shrink-0 flex-col items-end gap-2">
+              <div className="rounded-full bg-muted/60 p-1.5">
+                <ChevronRight className="h-4 w-4 text-muted-foreground" />
               </div>
             </div>
           </div>
-        </div>
+        </button>
       </div>
     </div>
   );
@@ -146,8 +79,7 @@ export function PortSelectorTimeline({
   routeVariants,
   selectedPortIndex,
   onPortChange,
-  expandedStopNumber,
-  onToggleStop,
+  onStopClick,
   sectionUi,
 }: PortSelectorTimelineProps) {
   const safeIndex = Math.min(Math.max(selectedPortIndex, 0), Math.max(routeVariants.length - 1, 0));
@@ -231,9 +163,7 @@ export function PortSelectorTimeline({
             key={`${selected.variant_id}-${stop.number}`}
             stop={stop}
             totalStops={totalStops}
-            isExpanded={expandedStopNumber === stop.number}
-            onToggle={() => onToggleStop(stop.number)}
-            sectionUi={sectionUi}
+            onClick={() => onStopClick(stop)}
           />
         ))}
       </div>
