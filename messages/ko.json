@@ -246,6 +246,14 @@
     "proceedToCheckout": "결제하기",
     "secureCheckout": "안전한 결제"
   },
+  "checkout": {
+    "cardOnFileTitle": "카드 등록 — 오늘 결제 없음",
+    "cardOnFileSubtitle": "노쇼 시에만 청구됩니다. 투어 24시간 전까지 무료 취소.",
+    "holdNow": "보증금 등록 후 예약 확정",
+    "saveCardAndReserve": "카드 등록 후 예약 확정",
+    "holdDisclosureNow": "오늘 {amount} 보증금이 등록되며, 노쇼 시에만 청구됩니다.",
+    "holdDisclosureLater": "투어 5일 전 {amount} 보증금이 등록되며, 노쇼 시에만 청구됩니다."
+  },
   "wishlist": {
     "title": "내 위시리스트",
     "empty": "위시리스트가 비어있습니다",

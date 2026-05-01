@@ -246,6 +246,14 @@
     "signInToView": "Sign in to view your cart",
     "signInToViewDesc": "Log in to see your saved items and continue booking."
   },
+  "checkout": {
+    "cardOnFileTitle": "卡片已登记 — 今日不收费",
+    "cardOnFileSubtitle": "仅在您未到场时收费。出发前 24 小时免费取消。",
+    "holdNow": "登记保证金并确认预订",
+    "saveCardAndReserve": "保存卡片并确认预订",
+    "holdDisclosureNow": "今日预授权 {amount}，仅在未到场时实际扣款。",
+    "holdDisclosureLater": "在出行前约 5 天预授权 {amount}，仅在未到场时实际扣款。"
+  },
   "wishlist": {
     "title": "我的收藏",
     "empty": "收藏是空的",

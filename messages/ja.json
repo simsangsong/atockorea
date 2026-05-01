@@ -246,6 +246,14 @@
     "proceedToCheckout": "決済に進む",
     "secureCheckout": "安全な決済"
   },
+  "checkout": {
+    "cardOnFileTitle": "カード登録 — 本日の請求なし",
+    "cardOnFileSubtitle": "ノーショー時のみ請求されます。ツアー24時間前まで無料キャンセル可。",
+    "holdNow": "保証金を登録して予約確定",
+    "saveCardAndReserve": "カードを登録して予約確定",
+    "holdDisclosureNow": "本日 {amount} の保証金が確保されます。ノーショー時のみ請求。",
+    "holdDisclosureLater": "ツアー5日前に {amount} の保証金が確保されます。ノーショー時のみ請求。"
+  },
   "wishlist": {
     "title": "マイウィッシュリスト",
     "empty": "ウィッシュリストが空です",

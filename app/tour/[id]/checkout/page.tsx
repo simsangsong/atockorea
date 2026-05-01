@@ -12,6 +12,7 @@ import { useCurrencyOptional } from '@/lib/currency';
 import { BookingTimelineSection } from '@/components/tour/BookingTimelineSection';
 import { analytics } from '@/src/design/analytics';
 import { CheckoutChatAppSelect } from '@/components/checkout/CheckoutChatAppSelect';
+import { NoShowHoldCardForm } from '@/components/checkout/NoShowHoldCardForm';
 import {
   AUTH_FIELD_LABEL,
   AUTH_INPUT,
@@ -85,6 +86,14 @@ export default function CheckoutPage() {
     chatAppContact: '',
   });
   const [errors, setErrors] = useState<Partial<Record<keyof CustomerInfo, string>>>({});
+  const [paymentSession, setPaymentSession] = useState<{
+    intentType: 'payment_intent' | 'setup_intent';
+    clientSecret: string;
+    publishableKey: string;
+    bookingId: string;
+    amountUsdCents: number;
+    leadDays: number;
+  } | null>(null);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -255,12 +264,8 @@ export default function CheckoutPage() {
       try {
         const paymentResponse = await fetch('/api/stripe/checkout', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            amount: paymentAmount,
-            currency: 'usd',
             bookingId: bookingResult.booking.id,
             bookingData: completeBookingData,
           }),
@@ -268,24 +273,45 @@ export default function CheckoutPage() {
 
         const paymentData = await paymentResponse.json();
 
-        if (paymentResponse.ok && paymentData.url) {
-          window.location.href = paymentData.url;
+        if (
+          paymentResponse.ok &&
+          paymentData.clientSecret &&
+          paymentData.publishableKey &&
+          (paymentData.intentType === 'payment_intent' ||
+            paymentData.intentType === 'setup_intent')
+        ) {
+          setPaymentSession({
+            intentType: paymentData.intentType,
+            clientSecret: paymentData.clientSecret,
+            publishableKey: paymentData.publishableKey,
+            bookingId: paymentData.bookingId ?? bookingResult.booking.id,
+            amountUsdCents: paymentData.amountUsdCents ?? Math.round(paymentAmount * 100),
+            leadDays: paymentData.leadDays ?? 0,
+          });
+          setIsProcessing(false);
+          /** Smooth-scroll to the card form which now appears below the customer info. */
+          if (typeof window !== 'undefined') {
+            requestAnimationFrame(() => {
+              document.getElementById('checkout-card-form')?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+              });
+            });
+          }
           return;
         }
-        if (!paymentResponse.ok) {
-          console.error('Stripe checkout API error:', paymentResponse.status, paymentData);
-          const msg = paymentData?.error || 'Payment could not be started.';
-          toast.error(
-            `${msg} Your booking has been saved. Please try again or contact support.`,
-            { duration: 8000 },
-          );
-        } else {
-          toast.info('Payment processing will be available soon. Your booking has been saved.', { duration: 8000 });
-        }
+
+        console.error('Stripe checkout API error:', paymentResponse.status, paymentData);
+        const msg = paymentData?.error || 'Payment could not be started.';
+        toast.error(
+          `${msg} Your booking has been saved. Please try again or contact support.`,
+          { duration: 8000 },
+        );
         setIsProcessing(false);
         return;
       } catch (error) {
         console.error('Payment error:', error);
+        toast.error('Payment could not be started. Please try again.');
         setIsProcessing(false);
         return;
       }
@@ -501,6 +527,51 @@ export default function CheckoutPage() {
                     </div>
                   </div>
                 </div>
+
+                {paymentSession && (
+                  <div
+                    id="checkout-card-form"
+                    className={cn(mypagePageCard(), 'p-5 sm:p-6 scroll-mt-20')}
+                  >
+                    <div className="mb-4 flex items-start gap-3">
+                      <div className={premiumIconShell} aria-hidden>
+                        <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                          />
+                        </svg>
+                      </div>
+                      <div>
+                        <h2 className={MYPAGE_SECTION_TITLE}>
+                          {(() => {
+                            const v = t('checkout.cardOnFileTitle');
+                            return v === 'checkout.cardOnFileTitle' ? 'Card on file — no charge today' : v;
+                          })()}
+                        </h2>
+                        <p className="mt-1 text-[13px] leading-relaxed text-slate-600">
+                          {(() => {
+                            const v = t('checkout.cardOnFileSubtitle');
+                            return v === 'checkout.cardOnFileSubtitle'
+                              ? "We'll only charge if you no-show. Free cancellation up to 24 hours before the tour."
+                              : v;
+                          })()}
+                        </p>
+                      </div>
+                    </div>
+
+                    <NoShowHoldCardForm
+                      publishableKey={paymentSession.publishableKey}
+                      clientSecret={paymentSession.clientSecret}
+                      intentType={paymentSession.intentType}
+                      amountUsdCents={paymentSession.amountUsdCents}
+                      leadDays={paymentSession.leadDays}
+                      returnUrl={`${typeof window !== 'undefined' ? window.location.origin : ''}/tour/${params.id}/confirmation?booking_id=${encodeURIComponent(paymentSession.bookingId)}`}
+                    />
+                  </div>
+                )}
               </div>
 
               <div className="lg:col-span-1">
@@ -576,31 +647,33 @@ export default function CheckoutPage() {
                     <p className="mt-2 text-[12px] font-medium text-slate-700">{copy.checkout.confirmationEmailNote}</p>
                   </div>
 
-                  <button
-                    type="button"
-                    onClick={handlePayment}
-                    disabled={
-                      isProcessing ||
-                      !customerInfo.name ||
-                      !customerInfo.phone ||
-                      !customerInfo.email ||
-                      !customerInfo.preferredChatApp ||
-                      !customerInfo.chatAppContact
-                    }
-                    className={primaryCtaClass}
-                  >
-                    {isProcessing ? (
-                      <span className="flex items-center justify-center gap-2">
-                        <svg className="h-5 w-5 animate-spin" fill="none" viewBox="0 0 24 24" aria-hidden>
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                        </svg>
-                        {t('booking.processing')}
-                      </span>
-                    ) : (
-                      copy.checkout.completeBooking
-                    )}
-                  </button>
+                  {!paymentSession && (
+                    <button
+                      type="button"
+                      onClick={handlePayment}
+                      disabled={
+                        isProcessing ||
+                        !customerInfo.name ||
+                        !customerInfo.phone ||
+                        !customerInfo.email ||
+                        !customerInfo.preferredChatApp ||
+                        !customerInfo.chatAppContact
+                      }
+                      className={primaryCtaClass}
+                    >
+                      {isProcessing ? (
+                        <span className="flex items-center justify-center gap-2">
+                          <svg className="h-5 w-5 animate-spin" fill="none" viewBox="0 0 24 24" aria-hidden>
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                          </svg>
+                          {t('booking.processing')}
+                        </span>
+                      ) : (
+                        copy.checkout.completeBooking
+                      )}
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

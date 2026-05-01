@@ -61,9 +61,10 @@ export async function sendEmail({
     }
 
     return { success: true, messageId: data?.id };
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error sending email:', error);
-    return { success: false, error: error.message };
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    return { success: false, error: message };
   }
 }
 
@@ -73,6 +74,7 @@ export async function sendEmail({
 /** 결제상태 표시 라벨 (Payment status labels) */
 const PAYMENT_STATUS_LABELS: Record<string, string> = {
   pending: '결제대기 (Payment Pending)',
+  authorized: '카드 등록 완료 — 노쇼 시에만 청구 (Card on file — charged only on no-show)',
   paid: '결제 완료 (Payment Completed)',
   failed: '결제실패 (Payment Failed)',
   refunded: '환불됨 (Refunded)',
@@ -88,7 +90,7 @@ export interface SendBookingConfirmationEmailParams {
   totalPrice: number;
   pickupPoint?: string;
   paymentMethod: string;
-  paymentStatus?: 'pending' | 'paid' | 'failed' | 'refunded';
+  paymentStatus?: 'pending' | 'authorized' | 'paid' | 'failed' | 'refunded';
   customerName: string;
   tourImageUrl?: string;
   tourId?: string;

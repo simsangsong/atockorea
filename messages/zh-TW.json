@@ -246,6 +246,14 @@
     "proceedToCheckout": "前往結帳",
     "secureCheckout": "安全結帳"
   },
+  "checkout": {
+    "cardOnFileTitle": "卡片已登記 — 今日不收費",
+    "cardOnFileSubtitle": "僅在您未到場時收費。出發前 24 小時免費取消。",
+    "holdNow": "登記保證金並確認預訂",
+    "saveCardAndReserve": "儲存卡片並確認預訂",
+    "holdDisclosureNow": "今日預授權 {amount}，僅在未到場時實際扣款。",
+    "holdDisclosureLater": "在出行前約 5 天預授權 {amount}，僅在未到場時實際扣款。"
+  },
   "wishlist": {
     "title": "我的收藏",
     "empty": "收藏是空的",
