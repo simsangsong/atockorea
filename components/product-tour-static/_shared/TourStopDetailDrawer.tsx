@@ -159,7 +159,26 @@ export type TourStopDetailDrawerProps = {
  * (image, description, highlights, time used, visit basics, smart notes) so the
  * user can see everything at once instead of scrolling through an inline expand.
  */
+/** Compact-by-default thresholds — keep first impression clean, allow expand on demand. */
+const HIGHLIGHTS_DEFAULT_COUNT = 5;
+const SHORT_WHY_THRESHOLD = 140;
+
 export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourStopDetailDrawerProps) {
+  const [highlightsExpanded, setHighlightsExpanded] = useState(false);
+  const [whyExpanded, setWhyExpanded] = useState(false);
+  const [prevStopNumber, setPrevStopNumber] = useState(stop?.number);
+
+  /**
+   * React-recommended "adjusting state on prop change" pattern: reset compact
+   * toggles synchronously during render when the user switches to a different
+   * stop. Avoids the cascading-render footgun of doing this in useEffect.
+   */
+  if (stop?.number !== prevStopNumber) {
+    setPrevStopNumber(stop?.number);
+    setHighlightsExpanded(false);
+    setWhyExpanded(false);
+  }
+
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -258,41 +277,92 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
                   )}
                 </div>
 
-                {/* Highlights — always visible, scannable bullets with bold support */}
-                {stop.highlights && stop.highlights.length > 0 && (
-                  <div>
-                    <h3 className="mb-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-                      {sectionUi.stopHighlightsHeading}
-                    </h3>
-                    <ul className="grid grid-cols-1 gap-2.5">
-                      {stop.highlights.map((highlight, i) => (
-                        <li
-                          key={i}
-                          className="flex items-start gap-2.5 text-[14px] leading-relaxed text-foreground"
+                {/* Highlights — first 5 visible, "Show all N" reveals the rest */}
+                {stop.highlights && stop.highlights.length > 0 && (() => {
+                  const all = stop.highlights;
+                  const visible = highlightsExpanded
+                    ? all
+                    : all.slice(0, HIGHLIGHTS_DEFAULT_COUNT);
+                  const hasMore = all.length > HIGHLIGHTS_DEFAULT_COUNT;
+                  return (
+                    <div>
+                      <h3 className="mb-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+                        {sectionUi.stopHighlightsHeading}
+                      </h3>
+                      <ul className="grid grid-cols-1 gap-2.5">
+                        {visible.map((highlight, i) => (
+                          <li
+                            key={i}
+                            className="flex items-start gap-2.5 text-[14px] leading-relaxed text-foreground"
+                          >
+                            <span
+                              aria-hidden
+                              className="mt-[7px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent"
+                            />
+                            <span>{renderInlineMarkdown(highlight)}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {hasMore && (
+                        <button
+                          type="button"
+                          onClick={() => setHighlightsExpanded((v) => !v)}
+                          aria-expanded={highlightsExpanded}
+                          className="mt-3 inline-flex items-center gap-1 text-[12.5px] font-semibold text-primary transition-colors hover:text-primary/80"
                         >
-                          <span
-                            aria-hidden
-                            className="mt-[7px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent"
+                          {highlightsExpanded ? "Show fewer" : `Show all ${all.length}`}
+                          <ChevronDown
+                            className={cn(
+                              "h-3.5 w-3.5 transition-transform duration-200",
+                              highlightsExpanded && "rotate-180",
+                            )}
+                            strokeWidth={2.25}
                           />
-                          <span>{renderInlineMarkdown(highlight)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+                        </button>
+                      )}
+                    </div>
+                  );
+                })()}
 
-                {/* Why on route — set context, always visible */}
-                {stop.whyOnRoute && (
-                  <div className="flex items-start gap-3 rounded-xl border border-accent/20 bg-sand-blush/80 px-4 py-3.5">
-                    <Lightbulb
-                      className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent"
-                      strokeWidth={2}
-                    />
-                    <p className="text-[14px] leading-relaxed text-foreground">
-                      {renderInlineMarkdown(stop.whyOnRoute)}
-                    </p>
-                  </div>
-                )}
+                {/* Why on route — clamped to 3 lines for long copy, "Read more" reveals full */}
+                {stop.whyOnRoute && (() => {
+                  const isLong = stop.whyOnRoute.length > SHORT_WHY_THRESHOLD;
+                  return (
+                    <div className="flex items-start gap-3 rounded-xl border border-accent/20 bg-sand-blush/80 px-4 py-3.5">
+                      <Lightbulb
+                        className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent"
+                        strokeWidth={2}
+                      />
+                      <div className="min-w-0 flex-1">
+                        <p
+                          className={cn(
+                            "text-[14px] leading-relaxed text-foreground",
+                            isLong && !whyExpanded && "line-clamp-3",
+                          )}
+                        >
+                          {renderInlineMarkdown(stop.whyOnRoute)}
+                        </p>
+                        {isLong && (
+                          <button
+                            type="button"
+                            onClick={() => setWhyExpanded((v) => !v)}
+                            aria-expanded={whyExpanded}
+                            className="mt-1.5 inline-flex items-center gap-1 text-[12px] font-semibold text-accent transition-colors hover:text-accent/80"
+                          >
+                            {whyExpanded ? "Show less" : "Read more"}
+                            <ChevronDown
+                              className={cn(
+                                "h-3 w-3 transition-transform duration-200",
+                                whyExpanded && "rotate-180",
+                              )}
+                              strokeWidth={2.25}
+                            />
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })()}
 
                 {/* Collapsible — Full description */}
                 {stop.description && (
