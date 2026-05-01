@@ -1,3 +1,5 @@
+import { STATIC_TOUR_PRODUCT_BUNDLE_SLUGS } from "@/components/product-tour-static/_shared/tourProductBundleSlugs";
+
 /** Legacy flagship slug; still honored for redirects and coercion. */
 const LEGACY_EAST_SIGNATURE_SLUG = "east-signature-nature-core";
 /** Canonical live small-group v2 SKU (replaces static `/tour/east-signature-nature-core` → `/tour/...` redirect). */
@@ -53,13 +55,25 @@ export function extractTourRouteSegmentFromPathname(pathname: string): string | 
 /** Locale segments used in `middleware` for `/xx/tour/...` */
 const PATH_LOCALE_PREFIXES = new Set(["en", "ko", "zh-CN", "zh-TW", "ja", "es"]);
 
-/** `/tour-product/[slug]` pages that must stay reachable when the site gate rewrites non-local traffic to `/`. */
-const FLAGSHIP_TOUR_PRODUCT_SLUGS = new Set([
-  "east-signature-nature-core",
-  "jeju-grand-highlights-loop",
+/**
+ * Legacy flagship slugs that predate (or differ from) the static bundle registry.
+ * Kept so historic links keep resolving even though the slug isn't in the
+ * current registry.
+ */
+const LEGACY_FLAGSHIP_TOUR_PRODUCT_SLUGS = new Set([
   "busan-top-attractions-authentic-one-day-tour",
   "busan-city-tour-shore-excursion-cruise-guests",
 ]);
+
+/**
+ * `/tour-product/[slug]` pages that must stay reachable when the site gate
+ * rewrites non-local traffic to `/`. Sourced from the bundle-slug registry so
+ * adding a new product bundle automatically opens its detail URL through the
+ * gate (no more cards-rewrite-to-home regressions).
+ */
+function isPublicTourProductSlug(slug: string): boolean {
+  return STATIC_TOUR_PRODUCT_BUNDLE_SLUGS.has(slug) || LEGACY_FLAGSHIP_TOUR_PRODUCT_SLUGS.has(slug);
+}
 
 function decodePathSegment(seg: string): string {
   try {
@@ -97,15 +111,15 @@ export function isPublicEastSignatureTourDetailPathForSiteGate(pathname: string)
     return matchesEastSignatureSlugSegment(decodePathSegment(parts[2]!));
   }
 
-  /** Static flagship product pages (canonical consumer URLs). */
-  if (parts[0] === "tour-product" && parts.length === 2 && FLAGSHIP_TOUR_PRODUCT_SLUGS.has(parts[1]!)) {
+  /** Static product pages (canonical consumer URLs). Auto-syncs with the bundle registry. */
+  if (parts[0] === "tour-product" && parts.length === 2 && isPublicTourProductSlug(parts[1]!)) {
     return true;
   }
   if (
     parts.length === 3 &&
     PATH_LOCALE_PREFIXES.has(parts[0]!) &&
     parts[1] === "tour-product" &&
-    FLAGSHIP_TOUR_PRODUCT_SLUGS.has(parts[2]!)
+    isPublicTourProductSlug(parts[2]!)
   ) {
     return true;
   }
