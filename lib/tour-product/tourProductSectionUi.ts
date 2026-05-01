@@ -21,6 +21,9 @@ export type TourProductSectionUiV1 = {
   stopSmartNotesHeading: string;
   stopSmartNotesPhotoPrefix: string;
   stopSmartNotesTipPrefix: string;
+  /** Detail-drawer collapsible: full description card title + sub-meta. EN defaults used when omitted. */
+  stopFullDescriptionTitle?: string;
+  stopFullDescriptionMeta?: string;
   fitTitle: string;
   fitSubtitle: string;
   fitBestForLabel: string;
