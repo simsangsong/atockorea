@@ -120,12 +120,12 @@ export function ruleParse(query: string): ParsedQueryV2 {
     const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
     if (matchAny(query, all)) {
       season_locks.push(lockKey);
-      if (months === null) {
-        months = [...info.months];
-      } else {
-        const intersect = months.filter((m) => info.months.includes(m));
-        months = intersect.length ? intersect : [...info.months];
-      }
+      // Do NOT default-fill months from the season_lock here. The seasonal-gate
+      // distinguishes "user explicit month" vs "season keyword only" via the
+      // months===null check; if we filled months here the gate would treat it
+      // as user-supplied and skip the today-fallback path. Boost dimensions
+      // still fire so scoring favors the right products when multiple seasonal
+      // tours pass the gate.
       for (const dim of info.boost_dims ?? []) bumpDim(boost, dim, 1.5);
     }
   }
@@ -321,7 +321,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   const multiEn = ["overnight", "two-day", "three-day", "package", "with hotel", "multi-day", "multi day", "2 days", "3 days"];
   const is_multi_day_request = multiKo.some((k) => query.includes(k)) || multiEn.some((k) => q.includes(k));
 
-  // Negative signals (Korean)
+  // Negative signals (Korean + English)
   const negPats: [RegExp, string][] = [
     [/쇼핑\s*(?:빼고|싫|제외|말고)/, "shopping"],
     [/박물관\s*(?:싫|빼고|말고)/, "museum"],
@@ -329,9 +329,21 @@ export function ruleParse(query: string): ParsedQueryV2 {
     [/등산\s*(?:싫|말고|어려워)/, "active_traveler"],
     [/걷는?\s*거\s*(?:싫|많이)/, "active_traveler"],
     [/트레킹\s*(?:싫|어려워)/, "active_traveler"],
+    [/꽃\s*(?:싫|말고|관심\s*없)/, "no_seasonal"],
+    [/시즌\s*상품\s*(?:싫|말고)/, "no_seasonal"],
+  ];
+  const negPatsEn: [RegExp, string][] = [
+    [/no\s+shopping|without\s+shopping/i, "shopping"],
+    [/no\s+museum/i, "museum"],
+    [/not\s+interested\s+in\s+(?:flowers?|seasonal|blossoms?)/i, "no_seasonal"],
+    [/skip\s+(?:the\s+)?(?:flowers?|seasonal|blossoms?)/i, "no_seasonal"],
+    [/no\s+(?:flowers?|blossoms?|seasonal)\s+(?:stuff|tour|please|thanks)?/i, "no_seasonal"],
+    [/don[''']?t\s+(?:like|want)\s+(?:flowers?|seasonal|blossoms?)/i, "no_seasonal"],
+    [/no\s+hiking|no\s+trekking/i, "active_traveler"],
   ];
   const negative_signals: string[] = [];
   for (const [pat, sig] of negPats) if (pat.test(query)) negative_signals.push(sig);
+  for (const [pat, sig] of negPatsEn) if (pat.test(query)) negative_signals.push(sig);
 
   // Confidence
   const signals = [

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/auth";
+import { checkOrigin } from "@/lib/origin-check";
 import { handleApiError, ErrorResponses } from "@/lib/error-handler";
 import {
   getCmsContentOverridesFromDb,
@@ -95,6 +96,9 @@ function remapImportBodyByApplyLocale(body: ImportBody, applyLocale: string | nu
  * messages/siteCopy: (repo baseline + 기존 DB 오버라이드 + 입력 JSON) 병합 후 diff 저장.
  */
 export async function POST(request: NextRequest) {
+  const originBlock = checkOrigin(request);
+  if (originBlock) return originBlock;
+
   try {
     await requireAdmin(request);
     const len = Number(request.headers.get("content-length") || "0");

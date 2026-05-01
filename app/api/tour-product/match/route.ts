@@ -40,6 +40,17 @@ function makeServiceRoleClient() {
   return createClient(url, sk, { auth: { persistSession: false } });
 }
 
+/**
+ * Hero-card destination value → taxonomy region key. The card UI exposes
+ * "jeju" / "seoul" / "busan"; the matching engine uses canonical region keys
+ * (busan_gyeongju is the matching-profile key — there's no standalone "busan").
+ */
+const PINNED_DESTINATION_TO_REGION: Record<string, string> = {
+  jeju: "jeju",
+  seoul: "seoul",
+  busan: "busan_gyeongju",
+};
+
 export async function POST(req: NextRequest) {
   const t0 = Date.now();
   try {
@@ -50,6 +61,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid text" }, { status: 400 });
     }
 
+    // Pinned destination from the home hero card. When present, it takes
+    // precedence over any region the parser extracts from the free-text intent.
+    const pinnedRaw = typeof body.pinned_destination === "string" ? body.pinned_destination : null;
+    const pinnedRegion = pinnedRaw ? PINNED_DESTINATION_TO_REGION[pinnedRaw.toLowerCase()] ?? null : null;
+
     // 1. Parse (Haiku → rule fallback)
     const parserModeEnv = (process.env.TOUR_MATCH_PARSER_MODE ?? "auto").toLowerCase();
     const parserMode: "haiku" | "rule" | "auto" =
@@ -58,6 +74,13 @@ export async function POST(req: NextRequest) {
     const tParse0 = Date.now();
     const parsed = await parseQuery(text, parserMode);
     const parseMs = Date.now() - tParse0;
+
+    // Pinned region OVERRIDES parser-extracted regions (hard filter).
+    // We replace the array (not union) so the user's card choice always wins,
+    // even when the free-text intent mentioned a different city.
+    if (pinnedRegion) {
+      parsed.regions = [pinnedRegion];
+    }
 
     // 2. Fetch match_tours rows
     const tDb0 = Date.now();
@@ -160,6 +183,10 @@ export async function POST(req: NextRequest) {
       candidates_rejected_count: v2.candidates_rejected_count,
       top_matches: v2.top_matches,
       notes: v2.notes,
+      // v1.9 hardening fields (seasonal-gate, signal-strength, score-floor)
+      match_status: v2.match_status,
+      signal_strength: v2.signal_strength,
+      applied_score_floor: v2.applied_score_floor,
       parser_telemetry: parsed._telemetry ?? null,
       explainer_telemetry: explainerTelemetry,
       // v1 backward-compat fields

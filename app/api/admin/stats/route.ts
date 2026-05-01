@@ -95,12 +95,9 @@ export async function GET(req: NextRequest) {
       .limit(20);
     
     if (bookingsError) {
-      console.error('❌ Error fetching recent bookings:', bookingsError);
-      console.error('Error details:', JSON.stringify(bookingsError, null, 2));
-    } else {
-      console.log(`✅ Fetched ${recentBookings?.length || 0} recent bookings for admin dashboard`);
-      if (recentBookings && recentBookings.length > 0) {
-        console.log('Sample booking:', JSON.stringify(recentBookings[0], null, 2));
+      console.error('Error fetching recent bookings:', bookingsError.code, bookingsError.message);
+      if (process.env.NODE_ENV !== 'production') {
+        console.error('Error details:', JSON.stringify(bookingsError, null, 2));
       }
     }
 

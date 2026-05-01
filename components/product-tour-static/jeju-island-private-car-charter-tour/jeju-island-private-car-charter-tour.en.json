@@ -32,7 +32,7 @@
       "Hotel Pickup Included"
     ],
     "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/thumbnailpath/202409/20/b9661064-af2f-4197-aef0-d3d44bf6c2b5.webp",
+    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
     "priceLabel": "Per-vehicle pricing — confirm at booking",
     "shortCardDescription": "A 9-hour private car charter for Jeju with a licensed driver-guide. Three recommended routes (East, West, South) cover the island's most-loved sights, or build your own from UNESCO landmarks, K-drama spots, beaches, tea fields, and traditional markets. Hotel pickup is included anywhere on the island.",
     "tags": [
@@ -132,7 +132,7 @@
     {
       "id": "g2",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
       "alt": "Jusangjeolli basalt cliff",
       "caption": "Jusangjeolli basalt cliff",
       "location": "Jusangjeolli Cliff",
@@ -141,7 +141,7 @@
     {
       "id": "g3",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
       "alt": "Hyeopjae Beach West Jeju",
       "caption": "Hyeopjae Beach West Jeju",
       "location": "Hyeopjae Beach",
@@ -150,7 +150,7 @@
     {
       "id": "g4",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
       "alt": "O'sulloc tea museum and fields",
       "caption": "O'sulloc tea museum and fields",
       "location": "O'sulloc Tea Fields",
@@ -159,7 +159,7 @@
     {
       "id": "g5",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
       "alt": "Cheonjiyeon waterfall in Seogwipo",
       "caption": "Cheonjiyeon waterfall in Seogwipo",
       "location": "Cheonjiyeon Falls",
@@ -749,7 +749,7 @@
     "destination_region": "jeju",
     "region_type": "jeju_all_around",
     "vehicle_type": "private_vehicle",
-    "duration_hours": 9.0,
+    "duration_hours": 9,
     "region_tags": [
       "jeju_all_around",
       "jeju_east",
@@ -790,45 +790,45 @@
     "pace_level": 0.6,
     "walking_level": 0.5,
     "scenic_level": 0.95,
-    "photo_level": 1.0,
+    "photo_level": 1,
     "culture_level": 0.8,
-    "relax_level": 1.0,
+    "relax_level": 1,
     "first_time_fit": 0.95,
-    "family_fit": 1.0,
-    "senior_fit": 1.0,
-    "couple_fit": 1.0,
+    "family_fit": 1,
+    "senior_fit": 1,
+    "couple_fit": 1,
     "solo_traveler_fit": 0.8,
     "active_traveler_fit": 0.8,
-    "adult_family_fit": 1.0,
+    "adult_family_fit": 1,
     "family_with_teens_fit": 0.8,
-    "young_kids_fit": 1.0,
-    "senior_active_fit": 1.0,
-    "senior_general_fit": 1.0,
-    "mobility_friendly_fit": 1.0,
+    "young_kids_fit": 1,
+    "senior_active_fit": 1,
+    "senior_general_fit": 1,
+    "mobility_friendly_fit": 1,
     "stroller_fit": 0.8,
-    "one_day_fit": 1.0,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.8,
     "rain_fit": 0.8,
     "value_for_money_fit": 0.55,
     "iconic_landmark_fit": 0.95,
-    "cafe_fit": 1.0,
+    "cafe_fit": 1,
     "food_fit": 0.7,
-    "nature_fit": 1.0,
-    "beach_fit": 1.0,
+    "nature_fit": 1,
+    "beach_fit": 1,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.55,
     "no_shopping_fit": 0.4,
     "local_culture_fit": 0.8,
     "storytelling_fit": 0.85,
     "unesco_fit": 0.65,
-    "intangible_heritage_fit": 1.0,
+    "intangible_heritage_fit": 1,
     "indoor_ratio": 0.2,
     "weather_sensitivity": 0.5,
-    "comfort_level": 1.0,
+    "comfort_level": 1,
     "budget_fit": 0.4,
-    "premium_fit": 1.0,
+    "premium_fit": 1,
     "small_group_fit": 0.15,
-    "private_fit": 1.0,
+    "private_fit": 1,
     "bus_fit": 0.05,
     "price_band": "premium",
     "pickup_base": "jeju_island",
@@ -884,14 +884,14 @@
       "jusangjeolli_cliff",
       "cheonjiyeon_falls"
     ],
-    "private_tour_fit": 1.0,
-    "customizable_route_fit": 1.0,
-    "flexibility_fit": 1.0,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "private_tour_fit": 1,
+    "customizable_route_fit": 1,
+    "flexibility_fit": 1,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
@@ -1052,7 +1052,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
             "alt": "Jusangjeolli basalt cliff",
             "caption": "Jusangjeolli basalt cliff",
             "location": "Jusangjeolli Cliff",
@@ -1061,7 +1061,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
             "alt": "Hyeopjae Beach West Jeju",
             "caption": "Hyeopjae Beach West Jeju",
             "location": "Hyeopjae Beach",
@@ -1070,7 +1070,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
             "alt": "O'sulloc tea museum and fields",
             "caption": "O'sulloc tea museum and fields",
             "location": "O'sulloc Tea Fields",
@@ -1079,7 +1079,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
             "alt": "Cheonjiyeon waterfall in Seogwipo",
             "caption": "Cheonjiyeon waterfall in Seogwipo",
             "location": "Cheonjiyeon Falls",
@@ -1144,7 +1144,7 @@
             "name": "West Route: Beaches, Tea & Cafe Coast",
             "category": "Hyeopjae, Hallim Park, O'sulloc, Aewol",
             "description": "The most photogenic and relaxed route. Typical stops include Hyeopjae Beach (Jeju's most iconic emerald-water beach), Hallim Park (subtropical gardens and lava caves), O'sulloc Tea Museum (tea fields and cafe), and Aewol Cafe Street (sunset coastal cafes). Strong fit for couples and photographers.",
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
             "highlights": [
               "Hyeopjae Beach: emerald water, white sand, and Biyangdo island views",
               "Hallim Park: subtropical garden with two on-site lava caves",
@@ -1187,7 +1187,7 @@
             "name": "South Route: Waterfalls & Volcanic Coast",
             "category": "Cheonjiyeon, Jusangjeolli, Sanbangsan, Olle Market",
             "description": "The most scenically dramatic route. Typical stops include Cheonjiyeon Falls (forest waterfall), Jusangjeolli Cliff (basalt-column coastline), Yakcheonsa Temple (one of the largest temples in East Asia), Sanbangsan Mountain (volcanic dome with sea views), Jeongbang Waterfall (one of Asia's few waterfalls flowing directly into the sea), and Seogwipo Olle Market.",
-            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
             "highlights": [
               "Cheonjiyeon Falls: a classic Seogwipo forest waterfall",
               "Jusangjeolli Cliff: hexagonal basalt columns on the south coast",
@@ -1721,17 +1721,17 @@
           "deltas_applied": {
             "private_tour_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Both tours are per-vehicle private charters by definition. Was previously None (unset)."
             },
             "customizable_route_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Three recommended routes plus a fully custom option. Both tours fully customizable. Was previously None."
             },
             "flexibility_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Driver-guide adapts pacing, order, lunch, optional add-ons (Udo ferry, Smart Queue). Was previously None."
             },
             "small_group_fit": {
@@ -1745,22 +1745,22 @@
               "reasoning": "Verified — private charter = sedan/SUV/van, never bus. 0.05 reflects near-zero bus fit (only the very largest groups of 10+ would step up to a coach format)."
             },
             "unesco_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.65,
               "reasoning": "VERIFIED weighted average across routes. Route 1 (East): max UNESCO — Seongsan Ilchulbong is triple-UNESCO + Manjanggul UNESCO 2007. Route 2 (West): minimal UNESCO content. Route 3 (South): partial UNESCO — Jusangjeolli is Global Geopark, Sanbangsan is Geopark. Weighted across routes = ~0.65, significantly lower than the previous 1.0 which assumed Route 1 always selected. Custom Route can max UNESCO if the traveler picks specifically — but the average traveler will not."
             },
             "scenic_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "VERIFIED — all 3 named routes deliver catalog-leading scenic content (volcanic crater, beach, basalt cliff, waterfall, tea field, lava dome). 0.95 calibrated, only marginally below max (saving 1.0 for tours that deliver multiple flagship scenic types in a single 9-hour window — which only Route 1 of 3 does)."
             },
             "first_time_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "VERIFIED — strongest first-time-Jeju option because Route 1 alone covers the bucket-list UNESCO sites. 0.95 reflects that the WEST route is less first-time-iconic than East, so an averaged score is just below absolute max."
             },
             "iconic_landmark_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "VERIFIED — Seongsan Ilchulbong is Jeju's single most iconic landmark and is included on Route 1 + Custom. Slight markdown to 0.95 because Routes 2 (West) and 3 (South) trade iconic landmark count for café/temple density."
             },
@@ -1790,8 +1790,8 @@
               "reasoning": "VERIFIED — Jeju's food density is high across all routes (haenyeo seafood, Hallabong tangerines, black pork, Olle Market). Route 1 has the strongest meal hubs (Seongsan harbor); Route 3 has Olle Market. 0.70 calibrated up from previous 0.60."
             },
             "premium_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified — private vehicle + flexible itinerary + driver-guide = top of premium scale. Maintained at 1.0."
             },
             "value_for_money_fit": {
@@ -1800,7 +1800,7 @@
               "reasoning": "Verified — per-vehicle pricing is excellent value for groups of 4-9 but expensive for solo travelers. Slight markdown to 0.55 reflects the per-person break-even calculation: vs. small-group bus tours at ~70,000 KRW per person, the charter only beats it for groups of 5+."
             },
             "storytelling_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified — driver-guide narrates throughout, and the routes carry strong narrative arcs (UNESCO geology, K-drama, Joseon folk culture, tea-merchant heritage). 0.85 reflects that narrative depth varies by driver-guide assigned and by route chosen — was previously 1.0 which assumed uniformly maximal storytelling, which is not realistic."
             }

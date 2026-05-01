@@ -2,9 +2,14 @@
 
 /**
  * Admin support inbox — list of escalated tickets.
+ *
+ * Auth: relies on the Supabase admin session from app/admin/layout.tsx.
+ * Old localStorage admin-token flow removed (XSS-prone + matched the
+ * server-side backdoor that allowed unauthenticated access).
  */
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 type Ticket = {
   id: number;
@@ -21,11 +26,13 @@ type Ticket = {
   updated_at: string;
 };
 
-const ADMIN_TOKEN_KEY = "atc_admin_token";
-
 async function api<T>(path: string): Promise<T> {
-  const token = localStorage.getItem(ADMIN_TOKEN_KEY) ?? "";
-  const r = await fetch(path, { headers: { "x-admin-token": token } });
+  const { data: { session } } = (await supabase?.auth.getSession()) ?? { data: { session: null } };
+  if (!session) throw new Error("not_authenticated");
+  const r = await fetch(path, {
+    headers: { Authorization: `Bearer ${session.access_token}` },
+    credentials: "include",
+  });
   if (!r.ok) throw new Error(`${r.status} ${await r.text()}`);
   return (await r.json()) as T;
 }
@@ -35,91 +42,109 @@ export default function SupportInboxPage() {
   const [counts, setCounts] = useState<{ open: number; unread: number }>({ open: 0, unread: 0 });
   const [filter, setFilter] = useState<string>("");
   const [loading, setLoading] = useState(false);
-  const [hasToken, setHasToken] = useState(false);
-  const [tokenInput, setTokenInput] = useState("");
-
-  useEffect(() => {
-    if (typeof window !== "undefined") setHasToken(!!localStorage.getItem(ADMIN_TOKEN_KEY));
-  }, []);
+  const [error, setError] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     setLoading(true);
+    setError(null);
     try {
       const url = filter ? `/api/admin/support/tickets?status=${filter}` : "/api/admin/support/tickets";
       const r = await api<{ tickets: Ticket[]; counts: { open: number; unread: number } }>(url);
       setTickets(r.tickets);
       setCounts(r.counts);
     } catch (e) {
-      alert(`로드 실패: ${(e as Error).message}`);
+      setError(`로드 실패: ${(e as Error).message}`);
     } finally {
       setLoading(false);
     }
   }, [filter]);
 
-  useEffect(() => { if (hasToken) load(); }, [hasToken, load]);
-
-  if (!hasToken) {
-    return (
-      <div style={{ padding: 32, fontFamily: "system-ui" }}>
-        <h1>Support Inbox (admin)</h1>
-        <input type="password" value={tokenInput} onChange={(e) => setTokenInput(e.target.value)} placeholder="admin token" style={{ padding: 8, width: 320 }} />
-        <button onClick={() => { localStorage.setItem(ADMIN_TOKEN_KEY, tokenInput.trim()); setHasToken(true); }} style={{ marginLeft: 8, padding: 8 }}>Set</button>
-      </div>
-    );
-  }
+  useEffect(() => { load(); }, [load]);
 
   return (
-    <div style={{ maxWidth: 1100, margin: "0 auto", padding: 24, fontFamily: "system-ui" }}>
-      <header style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
-        <h1 style={{ margin: 0 }}>Support Inbox</h1>
-        <div style={{ fontSize: 13, color: "#666" }}>
-          open: <b>{counts.open}</b> · unread: <b style={{ color: counts.unread > 0 ? "#c62828" : "#666" }}>{counts.unread}</b>
+    <div className="max-w-6xl mx-auto">
+      <header className="flex items-center justify-between mb-4">
+        <h1 className="text-xl font-semibold text-slate-900">Support Inbox</h1>
+        <div className="text-sm text-slate-600">
+          open: <b>{counts.open}</b> · unread:{" "}
+          <b className={counts.unread > 0 ? "text-red-600" : "text-slate-600"}>{counts.unread}</b>
         </div>
       </header>
-      <div style={{ marginBottom: 12 }}>
-        <select value={filter} onChange={(e) => setFilter(e.target.value)} style={{ padding: 6 }}>
+
+      {error && (
+        <div className="mb-3 bg-red-50 border border-red-200 rounded-xl p-3 text-sm text-red-800">
+          {error}
+        </div>
+      )}
+
+      <div className="mb-3 flex items-center gap-2">
+        <select
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+          className="px-3 py-1.5 rounded-lg border border-slate-200 text-sm"
+        >
           <option value="">All</option>
           {["open", "admin_reading", "awaiting_admin", "awaiting_user", "resolved", "closed"].map((s) => (
             <option key={s} value={s}>{s}</option>
           ))}
         </select>
-        <button onClick={load} style={{ marginLeft: 8, padding: 6 }}>↻</button>
+        <button
+          onClick={load}
+          className="px-3 py-1.5 rounded-lg border border-slate-200 text-sm hover:bg-slate-50"
+        >
+          ↻
+        </button>
       </div>
-      {loading ? <div>loading…</div> : (
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
-          <thead style={{ textAlign: "left", background: "#f5f5f5" }}>
-            <tr>
-              <th style={th}>#</th>
-              <th style={th}>Status</th>
-              <th style={th}>Reason</th>
-              <th style={th}>Tour</th>
-              <th style={th}>Page</th>
-              <th style={th}>Locale</th>
-              <th style={th}>Notif</th>
-              <th style={th}>Updated</th>
-              <th style={th}>Summary</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tickets.map((t) => (
-              <tr key={t.id} style={{ borderTop: "1px solid #eee", fontWeight: t.unread_for_admin ? 700 : 400 }}>
-                <td style={td}><Link href={`/admin/support/${t.id}`}>{t.id}</Link></td>
-                <td style={td}>{t.status}</td>
-                <td style={td}>{t.escalation_reason}</td>
-                <td style={td} title={t.tour_slug ?? ""}>{t.tour_slug ?? "—"}</td>
-                <td style={td}>{t.page_title ?? "—"}</td>
-                <td style={td}>{t.user_locale ?? "—"}</td>
-                <td style={td}>{t.telegram_notified ? "✓" : "—"}</td>
-                <td style={td}>{new Date(t.updated_at).toLocaleString()}</td>
-                <td style={td}>{(t.initial_summary ?? "").slice(0, 80)}</td>
+
+      <div className="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+        {loading ? (
+          <div className="text-sm text-slate-500 py-12 text-center">loading…</div>
+        ) : tickets.length === 0 ? (
+          <div className="text-sm text-slate-500 py-12 text-center">No tickets</div>
+        ) : (
+          <table className="w-full text-sm">
+            <thead className="bg-slate-50 text-left text-xs uppercase text-slate-500">
+              <tr>
+                <th className="px-3 py-2">#</th>
+                <th className="px-3 py-2">Status</th>
+                <th className="px-3 py-2">Reason</th>
+                <th className="px-3 py-2">Tour</th>
+                <th className="px-3 py-2">Page</th>
+                <th className="px-3 py-2">Locale</th>
+                <th className="px-3 py-2">Notif</th>
+                <th className="px-3 py-2">Updated</th>
+                <th className="px-3 py-2">Summary</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+            </thead>
+            <tbody>
+              {tickets.map((t) => (
+                <tr
+                  key={t.id}
+                  className={`border-t border-slate-100 ${t.unread_for_admin ? "font-semibold" : ""}`}
+                >
+                  <td className="px-3 py-2">
+                    <Link href={`/admin/support/${t.id}`} className="text-blue-600 hover:underline">
+                      {t.id}
+                    </Link>
+                  </td>
+                  <td className="px-3 py-2">{t.status}</td>
+                  <td className="px-3 py-2">{t.escalation_reason}</td>
+                  <td className="px-3 py-2" title={t.tour_slug ?? ""}>{t.tour_slug ?? "—"}</td>
+                  <td className="px-3 py-2">{t.page_title ?? "—"}</td>
+                  <td className="px-3 py-2">{t.user_locale ?? "—"}</td>
+                  <td className="px-3 py-2">{t.telegram_notified ? "✓" : "—"}</td>
+                  <td className="px-3 py-2 text-slate-500">
+                    {new Date(t.updated_at).toLocaleString()}
+                  </td>
+                  <td className="px-3 py-2 text-slate-600">
+                    {(t.initial_summary ?? "").slice(0, 80)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
     </div>
   );
 }
-
-const th: React.CSSProperties = { padding: 8, fontSize: 12, textTransform: "uppercase", color: "#666" };
-const td: React.CSSProperties = { padding: 8 };

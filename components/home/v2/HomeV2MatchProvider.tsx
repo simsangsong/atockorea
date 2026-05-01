@@ -26,7 +26,11 @@ export type HomeV2MatchContextValue = {
   joinImageUrl: string;
   matchResult: TourMatchApiResponse | null;
   matchError: string | null;
-  startInPageMatchFlow: (text: string, locale: string) => Promise<TourMatchApiResponse | null>;
+  startInPageMatchFlow: (
+    text: string,
+    locale: string,
+    pinnedDestination?: string | null,
+  ) => Promise<TourMatchApiResponse | null>;
   resetMatchToIdle: () => void;
 };
 
@@ -56,7 +60,11 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
     setMatchError(null);
   }, []);
 
-  const startInPageMatchFlow = useCallback(async (text: string, locale: string) => {
+  const startInPageMatchFlow = useCallback(async (
+    text: string,
+    locale: string,
+    pinnedDestination?: string | null,
+  ) => {
     analytics.homeCtaClick({ source: "hero_planner_match" });
     setMatchError(null);
     setMatchResult(null);
@@ -76,7 +84,11 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
       const res = await fetch("/api/tour-product/match", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text, locale }),
+        body: JSON.stringify({
+          text,
+          locale,
+          ...(pinnedDestination ? { pinned_destination: pinnedDestination } : {}),
+        }),
       });
       const data = (await res.json()) as TourMatchApiResponse & { error?: string };
       if (!res.ok) {

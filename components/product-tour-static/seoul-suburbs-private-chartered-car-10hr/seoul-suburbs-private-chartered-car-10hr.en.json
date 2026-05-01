@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Seoul City or Suburbs Private 10HR Charter | AtoC Korea",
     "metaDescription": "Private 10-hour Seoul-area charter with EN-speaking driver-guide: Gapyeong (Nami, Morning Calm), DMZ + Paju, or Everland + Folk Village. Free Seoul pickup.",
-    "ogImage": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1920&q=80",
+    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
     "primaryKeywords": [
       "Seoul suburbs private car",
       "Seoul private 10-hour tour",
@@ -31,8 +31,8 @@
       "Fully Customizable",
       "Free Seoul Hotel Pickup"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1920&q=80",
-    "thumbnail": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=600&q=80",
+    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
     "priceLabel": "Per-vehicle pricing — confirm at booking",
     "shortCardDescription": "A premium 10-hour private car charter that lets you build your own Seoul-area day. Choose one of three recommended routes—Nami Island + Morning Calm + Petite France + Gangchon Railbike, DMZ + Paju Outlet, or Everland + Korean Folk Village—or send your own itinerary. Free hotel pickup is included for Seoul downtown stays.",
     "tags": [
@@ -49,7 +49,7 @@
     "per": "vehicle"
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1920&q=80",
+    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
     "imagePosition": "center 40%",
     "tagline": "Build your own Seoul-area day at your own pace, with a licensed driver-guide and a private vehicle for up to 10 hours.",
     "pills": [
@@ -123,7 +123,7 @@
     {
       "id": "g1",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1200&q=80",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
       "alt": "Seoul city skyline with Lotte World Tower and Han River visible at dusk, viewed from a south-Seoul vantage",
       "caption": "Seoul skyline — flexible departure point",
       "location": "Seoul (departure city)",
@@ -132,7 +132,7 @@
     {
       "id": "g2",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
       "alt": "Nami Island's tree-lined metasequoia path with travelers walking under tall trees on a wide gravel walkway",
       "caption": "Nami Island metasequoia path — Route 1 highlight",
       "location": "Nami Island, Gapyeong (Route 1 option)",
@@ -141,7 +141,7 @@
     {
       "id": "g3",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=1200&q=80",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
       "alt": "Garden of Morning Calm's themed flower beds with seasonal blooms and curving stone walking paths",
       "caption": "Garden of Morning Calm — Route 1 photo stop",
       "location": "Garden of Morning Calm, Gapyeong (Route 1 option)",
@@ -150,7 +150,7 @@
     {
       "id": "g4",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1583917123405-3aa64e6a96b8?w=1200&q=80",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
       "alt": "Petite France village with brightly colored Mediterranean-style houses on a hillside in Gapyeong",
       "caption": "Petite France — Le Petit Prince village (Route 1)",
       "location": "Petite France, Gapyeong (Route 1 option)",
@@ -159,7 +159,7 @@
     {
       "id": "g5",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG",
       "alt": "DMZ Imjingak Peace Park with the Bridge of Freedom visible behind the monument area near Paju",
       "caption": "Imjingak Peace Park — Route 2 anchor",
       "location": "Imjingak Peace Park, Paju (Route 2 option)",
@@ -306,7 +306,8 @@
           "korean_folk_village_yongin"
         ],
         "note": "Route option for private charter — represents a Yongin-area bundle (Everland + Korean Folk Village). Both POIs are verified in KB v1.10."
-      }
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG"
     },
     {
       "number": 4,
@@ -786,7 +787,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gyeonggi_mixed",
     "vehicle_type": "private_vehicle",
-    "duration_hours": 10.0,
+    "duration_hours": 10,
     "region_tags": [
       "seoul_capital",
       "seoul_city",
@@ -825,26 +826,26 @@
     "scenic_level": 0.8,
     "photo_level": 0.8,
     "culture_level": 0.8,
-    "relax_level": 1.0,
+    "relax_level": 1,
     "first_time_fit": 0.85,
-    "family_fit": 1.0,
-    "senior_fit": 1.0,
-    "couple_fit": 1.0,
+    "family_fit": 1,
+    "senior_fit": 1,
+    "couple_fit": 1,
     "solo_traveler_fit": 0.6,
     "active_traveler_fit": 0.8,
-    "adult_family_fit": 1.0,
+    "adult_family_fit": 1,
     "family_with_teens_fit": 0.8,
-    "young_kids_fit": 1.0,
-    "senior_active_fit": 1.0,
-    "senior_general_fit": 1.0,
-    "mobility_friendly_fit": 1.0,
-    "stroller_fit": 1.0,
-    "one_day_fit": 1.0,
+    "young_kids_fit": 1,
+    "senior_active_fit": 1,
+    "senior_general_fit": 1,
+    "mobility_friendly_fit": 1,
+    "stroller_fit": 1,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.8,
     "rain_fit": 0.8,
     "value_for_money_fit": 0.55,
     "iconic_landmark_fit": 0.85,
-    "cafe_fit": 1.0,
+    "cafe_fit": 1,
     "food_fit": 0.6,
     "nature_fit": 0.8,
     "beach_fit": 0.2,
@@ -854,14 +855,14 @@
     "local_culture_fit": 0.8,
     "storytelling_fit": 0.8,
     "unesco_fit": 0.3,
-    "intangible_heritage_fit": 1.0,
+    "intangible_heritage_fit": 1,
     "indoor_ratio": 0.4,
     "weather_sensitivity": 0.5,
-    "comfort_level": 1.0,
+    "comfort_level": 1,
     "budget_fit": 0.4,
-    "premium_fit": 1.0,
+    "premium_fit": 1,
     "small_group_fit": 0.15,
-    "private_fit": 1.0,
+    "private_fit": 1,
     "bus_fit": 0.05,
     "price_band": "premium",
     "pickup_base": "seoul_downtown",
@@ -914,14 +915,14 @@
       "dmz_general",
       "paju_premium_outlets"
     ],
-    "private_tour_fit": 1.0,
-    "customizable_route_fit": 1.0,
-    "flexibility_fit": 1.0,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "private_tour_fit": 1,
+    "customizable_route_fit": 1,
+    "flexibility_fit": 1,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
@@ -975,7 +976,7 @@
         "headlineLine1": "Seoul City or Suburbs Private",
         "headlineLine2": "Chartered Car Tour 10HR",
         "hero": {
-          "imageUrl": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1920&q=80",
+          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
           "imagePosition": "center 40%",
           "tagline": "Build your own Seoul-area day at your own pace, with a licensed driver-guide and a private vehicle for up to 10 hours.",
           "pills": [
@@ -1070,7 +1071,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1200&q=80",
+            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
             "alt": "Seoul city skyline with Lotte World Tower and Han River visible at dusk, viewed from a south-Seoul vantage",
             "caption": "Seoul skyline — flexible departure point",
             "location": "Seoul (departure city)",
@@ -1079,7 +1080,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+            "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
             "alt": "Nami Island's tree-lined metasequoia path with travelers walking under tall trees on a wide gravel walkway",
             "caption": "Nami Island metasequoia path — Route 1 highlight",
             "location": "Nami Island, Gapyeong (Route 1 option)",
@@ -1088,7 +1089,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=1200&q=80",
+            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
             "alt": "Garden of Morning Calm's themed flower beds with seasonal blooms and curving stone walking paths",
             "caption": "Garden of Morning Calm — Route 1 photo stop",
             "location": "Garden of Morning Calm, Gapyeong (Route 1 option)",
@@ -1097,7 +1098,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1583917123405-3aa64e6a96b8?w=1200&q=80",
+            "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
             "alt": "Petite France village with brightly colored Mediterranean-style houses on a hillside in Gapyeong",
             "caption": "Petite France — Le Petit Prince village (Route 1)",
             "location": "Petite France, Gapyeong (Route 1 option)",
@@ -1106,7 +1107,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+            "src": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG",
             "alt": "DMZ Imjingak Peace Park with the Bridge of Freedom visible behind the monument area near Paju",
             "caption": "Imjingak Peace Park — Route 2 anchor",
             "location": "Imjingak Peace Park, Paju (Route 2 option)",
@@ -1128,7 +1129,7 @@
             "name": "Route 1: Gapyeong Nature & Culture Loop",
             "category": "Nami Island + Morning Calm + Petite France + Gangchon Railbike",
             "description": "A scenic Gapyeong-area circuit covering Nami Island's tree-lined paths, the themed Garden of Morning Calm, the Le Petit Prince-themed Petite France, and the rail-bike experience along old Gangchon railway tracks. The most photo-friendly of the three recommended routes.",
-            "image": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=800&q=80",
+            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
             "highlights": [
               "Four iconic Korean drama filming locations in one day",
               "Strong seasonal visual variety (cherry blossoms, fall foliage, Winter Light Festival)",
@@ -1170,7 +1171,7 @@
             "name": "Route 2: DMZ History & Paju Shopping",
             "category": "DMZ Tour + Paju Premium Outlets",
             "description": "A history-and-shopping pairing: the morning visits the DMZ area near Paju (Imjingak Peace Park, 3rd Infiltration Tunnel, Dora Observatory), and the afternoon shifts to Paju Premium Outlets for a relaxed retail close.",
-            "image": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=800&q=80",
+            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
             "highlights": [
               "Korea's most historically charged border in the morning",
               "Premium-brand outlet shopping in the afternoon",
@@ -1213,7 +1214,7 @@
             "name": "Route 3: Everland + Korean Folk Village",
             "category": "Theme Park + Heritage Village",
             "description": "A family-friendly contrast day pairing Everland, Korea's largest theme park, with the Korean Folk Village in Yongin, a living-heritage open-air museum showing Joseon-era life and traditional performances.",
-            "image": "https://images.unsplash.com/photo-1583917123405-3aa64e6a96b8?w=800&q=80",
+            "image": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG",
             "highlights": [
               "Korea's largest and most-visited theme park",
               "Living traditional village with daily performances",
@@ -1259,7 +1260,7 @@
             "name": "Custom Itinerary Option",
             "category": "Send Us Your Own Plan",
             "description": "Beyond the three recommended routes, you can send your own itinerary in advance. Possible Seoul suburbs locations include Incheon City, Woongjin Playdoci, Swiss Village, Heyri Art Village, Herb Garden, and more. Gangwon-do destinations such as Alpaca World, Seoraksan, Pyeongchang, and Daegwallyeong Sheep Ranch are also possible with extra province-crossing fees.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=800&q=80",
+            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
             "highlights": [
               "Build a route that fits your group exactly",
               "Driver-guide can advise on timing and pacing",
@@ -1783,17 +1784,17 @@
           "deltas_applied": {
             "private_tour_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Both tours are per-vehicle private charters by definition. Was previously None (unset)."
             },
             "customizable_route_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Three recommended routes plus a fully custom option. Both tours fully customizable. Was previously None."
             },
             "flexibility_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Driver-guide adapts pacing, order, lunch, optional add-ons (Udo ferry, Smart Queue). Was previously None."
             },
             "small_group_fit": {
@@ -1842,18 +1843,18 @@
               "reasoning": "VERIFIED — calibrated up from 0.40. Route 1 (Gapyeong outdoor gardens + island) has high weather sensitivity. Route 2 has indoor DMZ + Paju Outlets fallback. Route 3 Everland is outdoor theme park. Average ~0.50."
             },
             "shopping_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.7,
               "reasoning": "VERIFIED — only Route 2 (Paju Outlets) has flagship shopping. Routes 1, 3 have minimal shopping. Custom Route can max if specifically requested. Weighted ~0.70, materially lower than the previous 1.0 which assumed Route 2 always selected."
             },
             "family_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified — Routes 1 and 3 are best-in-class for families with kids. Route 2 less so but still doable. Maintained at 1.0."
             },
             "premium_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified — private vehicle + flexible itinerary + driver-guide = top of premium scale. Maintained at 1.0."
             },
             "value_for_money_fit": {

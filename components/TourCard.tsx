@@ -118,8 +118,8 @@ export default function TourCard({
   const showDiscountBadge = displayDiscountPercent > 0;
 
   // Generate href — align with /tours/list, search, mypage: `consumerTourDetailHref` maps
-  // `tours.id` + slug to canonical `/tour-product/[slug]` when registered in
-  // `FLAGSHIP_TOUR_PRODUCT_PATHS` (avoids /tour/[uuid] → null canonical → /tours/list).
+  // `tours.id` + slug to canonical `/tour-product/[slug]` when the slug is registered
+  // in `STATIC_TOUR_PRODUCT_BUNDLE_SLUGS` (avoids /tour/[uuid] → null canonical → /tours/list).
   let displayHref = "/tours/list";
 
   const city = tour?.city || displayLocation || "";

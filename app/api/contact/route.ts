@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { checkOrigin } from '@/lib/origin-check';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -9,6 +10,9 @@ export const runtime = 'nodejs';
  * Submit contact form inquiry
  */
 export async function POST(req: NextRequest) {
+  const originBlock = checkOrigin(req);
+  if (originBlock) return originBlock;
+
   try {
     const body = await req.json();
     const {
@@ -69,9 +73,9 @@ export async function POST(req: NextRequest) {
       .single();
 
     if (insertError) {
-      console.error('Error inserting contact inquiry:', insertError);
+      console.error('Error inserting contact inquiry:', insertError.code, insertError.message);
       return NextResponse.json(
-        { error: 'Failed to submit contact form', details: insertError.message },
+        { error: 'Failed to submit contact form', code: insertError.code },
         { status: 500 }
       );
     }
@@ -93,9 +97,9 @@ export async function POST(req: NextRequest) {
       { status: 201 }
     );
   } catch (error: any) {
-    console.error('Contact form submission error:', error);
+    console.error('Contact form submission error:', error?.message ?? 'unknown');
     return NextResponse.json(
-      { error: 'Failed to submit contact form', details: error.message },
+      { error: 'Failed to submit contact form' },
       { status: 500 }
     );
   }

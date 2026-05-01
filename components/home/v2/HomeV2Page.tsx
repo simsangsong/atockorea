@@ -4,10 +4,11 @@ import type { CSSProperties } from "react";
 import {
   HeroSection,
   BestMatchPreview,
+  DestinationsShowcase,
   ChooseTravelStyle,
+  FeaturedProductsShowcase,
+  WhyAtockorea,
   ProcessOperational,
-  VisualBreak,
-  TravelerReviews,
   FinalCTA,
 } from "@/components/home/v2/sections";
 import { HomeV2MatchProvider } from "@/components/home/v2/HomeV2MatchProvider";
@@ -39,10 +40,11 @@ export default function HomeV2Page() {
           <div className="home-v2-body-isolate relative z-0">
             <HeroSection />
             <BestMatchPreview />
+            <DestinationsShowcase />
             <ChooseTravelStyle />
+            <FeaturedProductsShowcase />
+            <WhyAtockorea />
             <ProcessOperational />
-            <VisualBreak />
-            <TravelerReviews />
             <FinalCTA />
           </div>
         </HomeV2ReviewSummaryProvider>

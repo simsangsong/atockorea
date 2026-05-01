@@ -616,7 +616,7 @@
         "title": "多くの旅行者が求めるバランス",
         "subtitle": "バスよりゆとりのペース、プライベートほどの出費は不要。",
         "busLabel": "クラシックバスツアー",
-        "busPrice": "$49",
+        "busPrice": "$39",
         "busLine": "最もリーズナブルな座席料金・固定ループ。",
         "heroBadge": "おすすめの既定",
         "heroLabel": "少人数ジョイン",
@@ -683,7 +683,10 @@
           "trustMatched": "あなた向け",
           "trustPickup": "明確な乗り合い",
           "trustCompare": "全タイプを比較",
-          "licensedTrustStrip": "検証済み現地ツアーオペレーター ・ 24時間前まで無料キャンセル ・ ホテル送迎込み"
+          "licensedTrustStrip": "検証済み現地ツアーオペレーター ・ 24時間前まで無料キャンセル ・ ホテル送迎込み",
+          "credentialKto": "KTO 認可運営会社",
+          "credentialExperience": "10年以上の韓国厳選",
+          "credentialSupport": "韓国語のリアルタイム対応"
         },
         "bestMatch": {
           "exampleBadge": "推奨の例",
@@ -709,6 +712,63 @@
           "matchMetaRowRatingAria": "5点満点中{rating}、公開口コミ{count}件に基づく",
           "groupMaxParam": "最大{n}名"
         },
+        "destinations": {
+          "eyebrow": "目的地",
+          "title": "韓国で出会う",
+          "titleAccent": "三つの地域",
+          "subtitle": "厳選した現地パートナーがいる、3つの地域。",
+          "seoul": {
+            "name": "ソウル",
+            "tagline": "宮殿、Kカルチャー、夜市",
+            "alt": "宮殿と現代的な摩天楼が並ぶソウル市街"
+          },
+          "busan": {
+            "name": "釜山",
+            "tagline": "ビーチ、海鮮、沿岸の景観",
+            "alt": "海雲台ビーチと釜山の海沿いの街並み"
+          },
+          "jeju": {
+            "name": "済州",
+            "tagline": "火山海岸、世界遺産、漢拏山",
+            "alt": "済州島の火山海岸と自然景観"
+          },
+          "countLabelParam": "ツアー {count} 件"
+        },
+        "featuredProducts": {
+          "eyebrow": "今、人気 · 毎日更新",
+          "title": "今週、最も",
+          "titleAccent": "選ばれた",
+          "subtitle": "実際の予約データに基づき、韓国インバウンドチームが毎週厳選しています。",
+          "viewAllCtaParam": "{count} 件のツアーをすべて見る",
+          "viewAllCtaGeneric": "すべてのツアーを見る"
+        },
+        "whyAtockorea": {
+          "eyebrow": "海外からの旅行者のために",
+          "title": "韓国の旅行者が",
+          "titleAccent": "選ぶ理由",
+          "subtitle": "韓国インバウンド一日ツアーを厳選し、入札額ではなく、あなたの好みに合わせて提案。",
+          "tagline": "検索はもう終わり。マッチングを始めましょう。",
+          "pillar1": {
+            "title": "韓国インバウンド専門家による",
+            "titleAccent": "厳選キュレーション",
+            "body": "韓国インバウンド経験 10 年以上のチームがすべての運営会社を直接審査。延々と検索する必要はなく、友人に勧めたいツアーだけ。"
+          },
+          "pillar2": {
+            "title": "あなたの好みに合わせ",
+            "titleAccent": "AI マッチング",
+            "body": "グルメ、自然、K-POP、家族など優先事項を教えていただければ、最適な運営会社とフォーマットを入札額ではなく相性で提案します。"
+          },
+          "pillar3": {
+            "title": "KTO 認可運営会社",
+            "titleAccent": "100% ライセンス",
+            "body": "提携旅行会社はすべて韓国観光公社のライセンス保有。仲介手数料なしで公正な価格、同じ品質。"
+          },
+          "pillar4": {
+            "title": "韓国語のリアルタイム対応",
+            "titleAccent": "即時サポート",
+            "body": "当日の電話と KakaoTalk による韓国語サポート。ガイドの遅延や天候変化はソウルから即対応、グローバルコールセンターではありません。"
+          }
+        },
         "chooseStyle": {
           "eyebrow": "スタイルを選ぶ",
           "title": "3つの体験の仕方",
@@ -726,6 +786,7 @@
           "privateTitle": "プライベートツアー",
           "privatePriceWas": "$248",
           "privatePriceNow": "$198",
+          "privatePerVehicle": "/台",
           "perPersonShort": "/人",
           "privateDesc": "専用車と柔軟なペースを望む家族やグループに。",
           "privateF1": "専用車",
@@ -734,7 +795,7 @@
           "privateCta": "プライベートを見る",
           "busBadge": "定番",
           "busTitle": "伝統的なバスツアー",
-          "busPrice": "$49",
+          "busPrice": "$39",
           "busPerPerson": "/人",
           "busDesc": "定番のルートと分かりやすい設計、コスパ—王道の観光向け。",
           "busF1": "実績のルート",
@@ -743,6 +804,7 @@
           "busCta": "バスツアーを見る"
         },
         "process": {
+          "eyebrow": "ご利用方法",
           "title": "このあとの流れ",
           "step1Label": "ステップ1",
           "step1Title": "大切にしたいことを教える",

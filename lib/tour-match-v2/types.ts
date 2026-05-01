@@ -79,6 +79,10 @@ export type ScoredMatchV2 = {
   total_score: number;
   score_components: Record<string, number>;
   match_reasons: string[];
+  /** True when the tour's available_months < 12 OR primary/secondary themes
+   *  contain a recognized seasonal phenomenon (cherry_blossom, hydrangea, …).
+   *  Tours flagged seasonal must pass `passesSeasonalGate` to be recommended. */
+  is_seasonal_product: boolean;
 };
 
 export type RejectedRow = {
@@ -87,6 +91,16 @@ export type RejectedRow = {
   reasons: string[];
 };
 
+/** Top-level outcome of a match call. Adapter maps STRONG/WEAK→"matched", NO/INSUFFICIENT→"no_match". */
+export type MatchStatus =
+  | "STRONG_MATCH"
+  | "WEAK_MATCH"
+  | "NO_MATCH"
+  | "INSUFFICIENT_INPUT";
+
+/** Strength of the parsed query's signal. Drives gating: weak/empty → drop seasonal, NO/INSUFFICIENT response. */
+export type SignalStrength = "strong" | "moderate" | "weak" | "empty";
+
 export type MatchResponseV2 = {
   candidates_passed_hard_filter: number;
   candidates_rejected_count: number;
@@ -94,4 +108,8 @@ export type MatchResponseV2 = {
   notes: string[];
   rejected_summary?: RejectedRow[];
   match_elapsed_ms?: number;
+  match_status: MatchStatus;
+  signal_strength: SignalStrength;
+  /** Final score floor applied (max(ABSOLUTE_FLOOR, top_score * RELATIVE_RATIO)). */
+  applied_score_floor: number;
 };

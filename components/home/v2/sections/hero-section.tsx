@@ -4,7 +4,7 @@ import { useCallback, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
-import { Star, ChevronRight, ChevronDown, Users, MapPin } from "lucide-react";
+import { ShieldCheck, ChevronRight, ChevronDown, Award, Headphones } from "lucide-react";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { appendIntentPhraseToIntentField } from "@/lib/home/services/hero-intent-append-chip";
 import type { HeroDestination } from "@/lib/home/types/hero-planner";
@@ -72,8 +72,8 @@ export function HeroSection() {
 
   const handleSubmit = useCallback(() => {
     const raw = intent.trim() || t("premium.hero.defaultMatchIntent");
-    void startInPageMatchFlow(raw, locale);
-  }, [intent, locale, startInPageMatchFlow, t]);
+    void startInPageMatchFlow(raw, locale, destination);
+  }, [intent, locale, startInPageMatchFlow, t, destination]);
 
   const chipLooksSelected = useCallback((label: string) => intent.includes(label), [intent]);
 
@@ -140,7 +140,7 @@ export function HeroSection() {
             aria-hidden
           />
 
-          <div className="relative home-panel-elevated p-6 md:p-8">
+          <div className="relative home-panel-elevated p-6 md:p-8 before:pointer-events-none before:absolute before:inset-x-12 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-amber-300/40 before:to-transparent">
             <div className="mb-7 md:mb-8">
               <h2 className="text-lg font-semibold tracking-tight text-slate-900 md:text-xl">
                 {t("premium.v2.hero.plannerTitle")}
@@ -357,28 +357,27 @@ export function HeroSection() {
           </div>
         </div>
 
-        <p className="mt-5 mx-auto max-w-md text-center text-[11px] md:text-[12.5px] font-medium leading-snug text-slate-500">
-          {t("premium.v2.hero.licensedTrustStrip")}
-        </p>
+        <div className="mt-6 md:mt-7 flex flex-wrap items-center justify-center gap-2 md:gap-3">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200/70 bg-white/85 px-3 py-1.5 backdrop-blur-sm shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" aria-hidden />
+            <span className="text-[11px] md:text-[12px] font-semibold tracking-[0.01em] text-slate-700">
+              {t("premium.v2.hero.credentialKto")}
+            </span>
+          </span>
 
-        <div className="mt-3 md:mt-4 flex flex-wrap items-center justify-center gap-3 md:gap-6">
-          <div className="flex items-center gap-1.5">
-            <Star
-              className="w-3 h-3 md:w-3.5 md:h-3.5 fill-amber-400 text-amber-400"
-              aria-hidden
-            />
-            <span className="text-[11px] md:text-[13px] font-medium text-slate-600">{t("premium.v2.hero.trustMatched")}</span>
-          </div>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200/70 bg-white/85 px-3 py-1.5 backdrop-blur-sm shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+            <Award className="w-3.5 h-3.5 text-amber-600" aria-hidden />
+            <span className="text-[11px] md:text-[12px] font-semibold tracking-[0.01em] text-slate-700">
+              {t("premium.v2.hero.credentialExperience")}
+            </span>
+          </span>
 
-          <div className="flex items-center gap-1.5">
-            <MapPin className="w-3 h-3 md:w-3.5 md:h-3.5 text-slate-500" />
-            <span className="text-[11px] md:text-[13px] font-medium text-slate-600">{t("premium.v2.hero.trustPickup")}</span>
-          </div>
-
-          <div className="flex items-center gap-1.5">
-            <Users className="w-3 h-3 md:w-3.5 md:h-3.5 text-slate-500" />
-            <span className="text-[11px] md:text-[13px] font-medium text-slate-600">{t("premium.v2.hero.trustCompare")}</span>
-          </div>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200/70 bg-white/85 px-3 py-1.5 backdrop-blur-sm shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+            <Headphones className="w-3.5 h-3.5 text-sky-600" aria-hidden />
+            <span className="text-[11px] md:text-[12px] font-semibold tracking-[0.01em] text-slate-700">
+              {t("premium.v2.hero.credentialSupport")}
+            </span>
+          </span>
         </div>
       </div>
     </section>

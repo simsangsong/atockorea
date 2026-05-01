@@ -976,7 +976,7 @@
         "title": "The balance most travelers want",
         "subtitle": "Curated day-tour pacing without private-tier pricing.",
         "busLabel": "Classic bus tour",
-        "busPrice": "$49",
+        "busPrice": "$39",
         "busLine": "Lowest seat cost on a fixed loop.",
         "heroBadge": "SMART DEFAULT",
         "heroLabel": "Small-group join",
@@ -1043,7 +1043,10 @@
           "trustMatched": "Matched to you",
           "trustPickup": "Clear pickup",
           "trustCompare": "Compare all types",
-          "licensedTrustStrip": "Verified local tour operators · Free cancellation up to 24h · Hotel pickup included"
+          "licensedTrustStrip": "Verified local tour operators · Free cancellation up to 24h · Hotel pickup included",
+          "credentialKto": "KTO-Licensed Operators",
+          "credentialExperience": "10+ Years Curating Korea",
+          "credentialSupport": "Real-time Korean Support"
         },
         "bestMatch": {
           "exampleBadge": "Example Recommendation",
@@ -1074,6 +1077,63 @@
           "emptyStartCta": "Start matching",
           "emptyFooter": "Private and traditional bus options are also shown alongside the match."
         },
+        "destinations": {
+          "eyebrow": "DESTINATIONS",
+          "title": "Where will Korea",
+          "titleAccent": "take you?",
+          "subtitle": "Three regions, hand-picked operators in each.",
+          "seoul": {
+            "name": "Seoul",
+            "tagline": "Palaces, K-culture, and night markets",
+            "alt": "Seoul cityscape with palaces and modern skyline"
+          },
+          "busan": {
+            "name": "Busan",
+            "tagline": "Beaches, seafood, and coastal vistas",
+            "alt": "Busan coast with beaches and city skyline"
+          },
+          "jeju": {
+            "name": "Jeju",
+            "tagline": "Volcanic coast, UNESCO sites, and Hallasan",
+            "alt": "Jeju Island volcanic coast and natural scenery"
+          },
+          "countLabelParam": "{count} tours"
+        },
+        "featuredProducts": {
+          "eyebrow": "TRENDING NOW · UPDATED DAILY",
+          "title": "Most",
+          "titleAccent": "loved this week",
+          "subtitle": "Real bookings, fresh weekly — hand-picked by our Korea-inbound team.",
+          "viewAllCtaParam": "Browse all {count} tours",
+          "viewAllCtaGeneric": "Browse all tours"
+        },
+        "whyAtockorea": {
+          "eyebrow": "BUILT FOR INTERNATIONAL VISITORS",
+          "title": "Why Korea travelers",
+          "titleAccent": "choose us",
+          "subtitle": "Hand-picked Korea inbound day-tours, matched to your style — not the highest bidder.",
+          "tagline": "Stop searching. Start matching.",
+          "pillar1": {
+            "title": "by Korea-inbound experts",
+            "titleAccent": "Curated",
+            "body": "A team with 10+ years of Korea inbound expertise vets every operator. No endless scrolling — only day-tours we'd put a friend on."
+          },
+          "pillar2": {
+            "title": "to your style",
+            "titleAccent": "AI-matched",
+            "body": "Tell us your priorities — food, nature, K-pop, family — and our planner matches the right operator and format. Fit, not bid."
+          },
+          "pillar3": {
+            "title": "KTO-licensed operators",
+            "titleAccent": "100%",
+            "body": "Every partner holds a Korea Tourism Organization license. Fair pricing through direct partnerships — no reseller markup, same quality."
+          },
+          "pillar4": {
+            "title": "Korean-speaking support",
+            "titleAccent": "Real-time",
+            "body": "Same-day phone and KakaoTalk support in Korean. Guide running late or weather change? We fix it from Seoul, not a global call center."
+          }
+        },
         "chooseStyle": {
           "eyebrow": "Choose Your Style",
           "title": "Three ways to explore",
@@ -1091,6 +1151,7 @@
           "privateTitle": "Private Tour",
           "privatePriceWas": "$248",
           "privatePriceNow": "$198",
+          "privatePerVehicle": "/vehicle",
           "perPersonShort": "/person",
           "privateDesc": "Perfect for families or groups who want a dedicated vehicle and flexible pacing.",
           "privateF1": "Dedicated vehicle",
@@ -1099,7 +1160,7 @@
           "privateCta": "Explore private tours",
           "busBadge": "TRUSTED CLASSIC",
           "busTitle": "Traditional Bus Tour",
-          "busPrice": "$49",
+          "busPrice": "$39",
           "busPerPerson": "/person",
           "busDesc": "Dependable routes with clear structure and strong value — a smart choice for straightforward sightseeing.",
           "busF1": "Proven route",
@@ -1108,6 +1169,7 @@
           "busCta": "Browse bus tours"
         },
         "process": {
+          "eyebrow": "HOW IT WORKS",
           "title": "What happens next",
           "step1Label": "Step 1",
           "step1Title": "Tell us what matters to you",

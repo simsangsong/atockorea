@@ -66,14 +66,20 @@ async function compressImageIfNeeded(buffer: Buffer, maxSizeBytes: number): Prom
 export async function POST(req: NextRequest) {
   try {
     const supabase = createServerClient();
-    
-    // Get authenticated user (optional for some uploads, required for others)
+
+    // Authentication is REQUIRED — anon uploads were a stored-XSS / disk-fill vector.
     let userId: string | null = null;
     try {
       const user = await getAuthUser(req);
       userId = user?.id || null;
-    } catch (error) {
-      // Authentication optional for uploads, but recommended
+    } catch {
+      userId = null;
+    }
+    if (!userId) {
+      return NextResponse.json(
+        { error: 'Authentication required for uploads' },
+        { status: 401 }
+      );
     }
 
     const formData = await req.formData();

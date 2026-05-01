@@ -1,9 +1,37 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
+import DOMPurify from 'isomorphic-dompurify';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
+const SANITIZE_CONFIG = {
+  ALLOWED_TAGS: [
+    'a', 'b', 'blockquote', 'br', 'caption', 'code', 'col', 'colgroup',
+    'div', 'em', 'figure', 'figcaption', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+    'hr', 'i', 'img', 'li', 'ol', 'p', 'pre', 'q', 's', 'small', 'span',
+    'strong', 'sub', 'sup', 'table', 'tbody', 'td', 'tfoot', 'th', 'thead',
+    'tr', 'u', 'ul',
+  ],
+  ALLOWED_ATTR: [
+    'href', 'src', 'alt', 'title', 'width', 'height', 'style', 'class',
+    'colspan', 'rowspan', 'cite', 'lang', 'dir',
+  ],
+  ALLOWED_URI_REGEXP:
+    /^(?:(?:https?|mailto|tel|cid):|[^a-z]|[a-z+.-]+(?:[^a-z+.\-:]|$))/i,
+  FORBID_TAGS: ['style', 'script', 'iframe', 'object', 'embed', 'form', 'input', 'button'],
+  FORBID_ATTR: [
+    'onload', 'onerror', 'onclick', 'onmouseover', 'onmouseout', 'onfocus',
+    'onblur', 'onchange', 'onsubmit', 'onkeydown', 'onkeyup', 'formaction',
+  ],
+  ADD_ATTR: ['target', 'rel'],
+};
+
+function sanitizeEmailHtml(raw: string): string {
+  if (!raw) return '';
+  return DOMPurify.sanitize(raw, SANITIZE_CONFIG);
+}
 
 interface Email {
   id: string;
@@ -344,10 +372,7 @@ export default function AdminEmailsPage() {
 
                 <div className="border-t border-gray-200 pt-4">
                   {selectedEmail.html_content ? (
-                    <div
-                      className="prose max-w-none"
-                      dangerouslySetInnerHTML={{ __html: selectedEmail.html_content }}
-                    />
+                    <SanitizedEmailHtml html={selectedEmail.html_content} />
                   ) : (
                     <div className="whitespace-pre-wrap text-gray-700">
                       {selectedEmail.text_content || 'No content'}
@@ -430,6 +455,16 @@ export default function AdminEmailsPage() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+function SanitizedEmailHtml({ html }: { html: string }) {
+  const safe = useMemo(() => sanitizeEmailHtml(html), [html]);
+  return (
+    <div
+      className="prose max-w-none"
+      dangerouslySetInnerHTML={{ __html: safe }}
+    />
   );
 }
 

@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Busan Private Car Charter for Cruise Shore (8hr) | AtoC Korea",
     "metaDescription": "8-hour fully customizable Busan private car charter for cruise passengers. English-speaking driver, on-time return guaranteed, hotel/KTX/cruise port pickup.",
-    "ogImage": "",
+    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
     "primaryKeywords": [
       "Busan private car charter",
       "Busan cruise shore excursion",
@@ -31,8 +31,8 @@
       "Customizable Route",
       "Cruise Pickup Included"
     ],
-    "heroImage": "",
-    "thumbnail": "",
+    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
     "priceLabel": "Per-vehicle pricing — confirm at booking",
     "shortCardDescription": "An 8-hour private car charter for Busan cruise passengers with a licensed English-speaking driver-guide. Default itinerary covers UN Memorial Cemetery, Taejongdae cliffs, Gamcheon Culture Village, Yongdusan Park, and Jagalchi Market. Fully customizable. Pickup at the cruise terminal, KTX station, or any central Busan hotel; on-time return to the ship is guaranteed.",
     "tags": [
@@ -50,7 +50,7 @@
     "per": "vehicle"
   },
   "hero": {
-    "imageUrl": "",
+    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
     "imagePosition": "center 50%",
     "tagline": "From UN Memorial Cemetery to Taejongdae cliffs to Gamcheon's painted alleys to Jagalchi's working harbor — eight private hours, your route, your pace, with on-time return to your ship guaranteed.",
     "pills": [
@@ -124,7 +124,7 @@
     {
       "id": "g1",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1538485399081-7c8978d8ad8d?w=1200&q=80",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
       "alt": "Busan International Cruise Terminal with ship docked",
       "caption": "Pickup at Busan Cruise Terminal",
       "location": "Cruise terminal",
@@ -133,7 +133,7 @@
     {
       "id": "g2",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601921004897-b7d582510a59?w=1200&q=80",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
       "alt": "UN Memorial Cemetery flags and Wall of Remembrance",
       "caption": "UN Memorial Cemetery — 22 sending-state flags",
       "location": "UN Memorial Cemetery",
@@ -142,7 +142,7 @@
     {
       "id": "g3",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601181428771-79b56e6d2c25?w=1200&q=80",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
       "alt": "Taejongdae cliff observation deck over the East Sea",
       "caption": "Taejongdae cliffs and Yeongdo Lighthouse",
       "location": "Taejongdae",
@@ -151,7 +151,7 @@
     {
       "id": "g4",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1578167635648-df49e6c80f70?w=1200&q=80",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
       "alt": "Gamcheon Culture Village pastel painted hillside",
       "caption": "Gamcheon Culture Village rainbow rooftops",
       "location": "Gamcheon",
@@ -160,7 +160,7 @@
     {
       "id": "g5",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601574474635-6a0fd1c43cf6?w=1200&q=80",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
       "alt": "Busan Diamond Tower at Yongdusan Park",
       "caption": "Yongdusan Park & Busan Diamond Tower",
       "location": "Yongdusan Park",
@@ -169,7 +169,7 @@
     {
       "id": "g6",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1565373679107-22fd2dee0a8c?w=1200&q=80",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/61/2702561_image2_1.JPG",
       "alt": "Jagalchi seafood market vendors and live fish display",
       "caption": "Jagalchi Fish Market — Korea's largest seafood market",
       "location": "Jagalchi Market",
@@ -200,7 +200,8 @@
           "CruiseMapper",
           "NamuWiki"
         ]
-      }
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG"
     },
     {
       "number": 2,
@@ -241,7 +242,8 @@
           "American Battle Monuments Commission (US Korean War Monument at Busan)",
           "UN General Assembly Resolution 977(X) (December 15, 1955)"
         ]
-      }
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG"
     },
     {
       "number": 3,
@@ -281,7 +283,8 @@
           "Yeongdo Lighthouse archive (1906 records)",
           "Busan National Geopark official (busan.go.kr/geopark)"
         ]
-      }
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG"
     },
     {
       "number": 4,
@@ -341,7 +344,8 @@
           "Korea Tourism Organization",
           "Korea Tourism Organization (100 Must-Visit Tourist Spots in Korea designation)"
         ]
-      }
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG"
     },
     {
       "number": 6,
@@ -380,7 +384,8 @@
           "Korea Tourism Organization",
           "Busan Metropolitan City heritage records"
         ]
-      }
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG"
     },
     {
       "number": 7,
@@ -420,7 +425,8 @@
           "Busan Jung-gu official",
           "Busan Tourism Organization (Jagalchi Sannakji designation)"
         ]
-      }
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG"
     },
     {
       "number": 8,
@@ -439,7 +445,8 @@
         "poi_key": "OPS_busan_cruise_return",
         "kb_version": "1.15",
         "verified_date": "2026-04-29"
-      }
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG"
     }
   ],
   "routeFlowStops": [
@@ -715,11 +722,11 @@
     "totalReviews": 0,
     "averageRating": 0,
     "ratingDistribution": {
-      "5": 0,
-      "4": 0,
-      "3": 0,
+      "1": 0,
       "2": 0,
-      "1": 0
+      "3": 0,
+      "4": 0,
+      "5": 0
     },
     "lastUpdated": "2026-04-28"
   },
@@ -774,7 +781,7 @@
     "destination_region": "korea_mainland",
     "region_type": "busan_city",
     "vehicle_type": "private_vehicle",
-    "duration_hours": 8.0,
+    "duration_hours": 8,
     "region_tags": [
       "busan",
       "busan_central",
@@ -806,7 +813,7 @@
     "first_time_fit": 0.95,
     "family_fit": 0.85,
     "senior_fit": 0.9,
-    "couple_fit": 1.0,
+    "couple_fit": 1,
     "solo_traveler_fit": 0.5,
     "active_traveler_fit": 0.65,
     "adult_family_fit": 0.85,
@@ -837,7 +844,7 @@
     "comfort_level": 0.85,
     "budget_fit": 0.2,
     "premium_fit": 0.85,
-    "small_group_fit": 0.0,
+    "small_group_fit": 0,
     "private_fit": 0.95,
     "bus_fit": 0.1,
     "price_band": "mid_to_premium",
@@ -884,101 +891,101 @@
       "yongdusan_park",
       "jagalchi_market"
     ],
-    "private_tour_fit": 1.0,
-    "shared_tour_fit": 0.0,
+    "private_tour_fit": 1,
+    "shared_tour_fit": 0,
     "customizable_route_fit": 0.6,
     "flexibility_fit": 0.85,
     "solo_fit": 0.5,
     "family_with_kids_fit": 0.95,
-    "small_party_fit": 1.0,
+    "small_party_fit": 1,
     "large_group_fit": 0.6,
-    "first_time_busan_fit": 1.0,
+    "first_time_busan_fit": 1,
     "repeat_visitor_fit": 0.6,
-    "cruise_passenger_fit": 1.0,
+    "cruise_passenger_fit": 1,
     "non_cruise_day_tripper_fit": 0.7,
-    "korean_war_history_fit": 1.0,
-    "war_memorial_fit": 1.0,
-    "un_heritage_fit": 1.0,
+    "korean_war_history_fit": 1,
+    "war_memorial_fit": 1,
+    "un_heritage_fit": 1,
     "wheelchair_accessible_anchor_fit": 0.6,
-    "buddhist_temple_fit": 0.0,
+    "buddhist_temple_fit": 0,
     "joseon_era_fit": 0.4,
     "silla_heritage_fit": 0.2,
     "modern_korean_history_fit": 0.85,
-    "coastal_fit": 1.0,
-    "coastal_cliff_fit": 1.0,
-    "coastal_lighthouse_fit": 1.0,
-    "city_viewpoint_fit": 1.0,
-    "panoramic_view_fit": 1.0,
-    "skywalk_fit": 0.0,
+    "coastal_fit": 1,
+    "coastal_cliff_fit": 1,
+    "coastal_lighthouse_fit": 1,
+    "city_viewpoint_fit": 1,
+    "panoramic_view_fit": 1,
+    "skywalk_fit": 0,
     "mountain_fit": 0.3,
     "forest_fit": 0.5,
     "geological_heritage_fit": 0.85,
-    "mural_village_fit": 1.0,
-    "hillside_village_fit": 1.0,
+    "mural_village_fit": 1,
+    "hillside_village_fit": 1,
     "art_immersive_fit": 0.85,
-    "photo_friendly_fit": 1.0,
-    "instagrammable_fit": 1.0,
-    "hanok_village_fit": 0.0,
-    "fish_market_fit": 1.0,
-    "seafood_fit": 1.0,
+    "photo_friendly_fit": 1,
+    "instagrammable_fit": 1,
+    "hanok_village_fit": 0,
+    "fish_market_fit": 1,
+    "seafood_fit": 1,
     "street_food_fit": 0.85,
-    "market_fit": 1.0,
-    "lunch_included_fit": 0.0,
-    "lunch_self_pay_fit": 1.0,
+    "market_fit": 1,
+    "lunch_included_fit": 0,
+    "lunch_self_pay_fit": 1,
     "walking_intensity": 0.7,
     "stairs_intensity": 0.85,
     "elderly_friendly_fit": 0.5,
     "stroller_friendly_fit": 0.4,
     "compact_route_fit": 0.7,
     "all_day_fit": 0.7,
-    "half_day_fit": 0.0,
-    "private_vehicle_fit": 1.0,
-    "minicoach_fit": 0.0,
+    "half_day_fit": 0,
+    "private_vehicle_fit": 1,
+    "minicoach_fit": 0,
     "public_transit_alternative_fit": 0.4,
-    "english_guide_fit": 1.0,
-    "korean_only_fit": 0.0,
+    "english_guide_fit": 1,
+    "korean_only_fit": 0,
     "multilingual_fit": 0.85,
     "spring_fit": 0.95,
     "summer_fit": 0.85,
-    "autumn_fit": 1.0,
+    "autumn_fit": 1,
     "winter_fit": 0.7,
     "rainy_day_fit": 0.4,
     "luxury_fit": 0.7,
     "value_priced_fit": 0.4,
     "scenic_intensity": 0.95,
-    "iconic_landmarks_fit": 1.0,
+    "iconic_landmarks_fit": 1,
     "off_beaten_path_fit": 0.3,
-    "cruise_shore_excursion_fit": 1.0,
-    "private_cruise_charter_fit": 1.0,
-    "downtown_busan_fit": 1.0,
-    "yongdusan_landmark_fit": 1.0,
-    "diamond_tower_fit": 1.0,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "cruise_shore_excursion_fit": 1,
+    "private_cruise_charter_fit": 1,
+    "downtown_busan_fit": 1,
+    "yongdusan_landmark_fit": 1,
+    "diamond_tower_fit": 1,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "cruise_market_segment_fit": 1.0,
-    "busan_port_pickup_fit": 1.0,
-    "cruise_reboarding_safety_buffer_fit": 1.0,
-    "weather_fallback_dense_fit": 1.0,
-    "instagram_dense_route_fit": 1.0,
-    "private_charter_format_fit": 1.0,
-    "flexible_pickup_dropoff_fit": 1.0,
-    "premium_pacing_fit": 1.0,
-    "small_party_intimate_fit": 1.0,
+    "cruise_market_segment_fit": 1,
+    "busan_port_pickup_fit": 1,
+    "cruise_reboarding_safety_buffer_fit": 1,
+    "weather_fallback_dense_fit": 1,
+    "instagram_dense_route_fit": 1,
+    "private_charter_format_fit": 1,
+    "flexible_pickup_dropoff_fit": 1,
+    "premium_pacing_fit": 1,
+    "small_party_intimate_fit": 1,
     "differentiates_from_busan_small_group_cruise_pair_partner": true,
-    "busan_signature_route_fit": 1.0,
-    "seaside_temple_fit": 0.0,
-    "natural_geopark_fit": 1.0,
-    "city_panorama_tower_fit": 1.0,
-    "no_inter_city_travel_fit": 1.0,
+    "busan_signature_route_fit": 1,
+    "seaside_temple_fit": 0,
+    "natural_geopark_fit": 1,
+    "city_panorama_tower_fit": 1,
+    "no_inter_city_travel_fit": 1,
     "differentiates_from_busan_gyeongju_routes": true,
     "available_months_signature": [
       1,
@@ -1173,7 +1180,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
             "alt": "Seongsan Ilchulbong sunrise peak",
             "caption": "Seongsan Ilchulbong sunrise peak",
             "location": "Seongsan Ilchulbong",
@@ -1182,7 +1189,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+            "src": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
             "alt": "Jusangjeolli basalt cliff",
             "caption": "Jusangjeolli basalt cliff",
             "location": "Jusangjeolli Cliff",
@@ -1191,7 +1198,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+            "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
             "alt": "Hyeopjae Beach West Jeju",
             "caption": "Hyeopjae Beach West Jeju",
             "location": "Hyeopjae Beach",
@@ -1200,7 +1207,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
+            "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
             "alt": "O'sulloc tea museum and fields",
             "caption": "O'sulloc tea museum and fields",
             "location": "O'sulloc Tea Fields",
@@ -1209,7 +1216,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
+            "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
             "alt": "Cheonjiyeon waterfall in Seogwipo",
             "caption": "Cheonjiyeon waterfall in Seogwipo",
             "location": "Cheonjiyeon Falls",
@@ -1231,7 +1238,7 @@
             "name": "East Route: UNESCO & K-Drama Coast",
             "category": "Seongsan, Udo, Manjanggul, Seopjikoji",
             "description": "The most landmark-dense route option, covering Jeju's strongest UNESCO and K-drama spots. Typical stops include Seongsan Ilchulbong (UNESCO sunrise peak), Udo Island (ferry-access island with beaches), Manjanggul Lava Tube (UNESCO cave), Seopjikoji (drama-famous coastal cape), Seongeup Folk Village, and Hamdeok Beach.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG",
             "highlights": [
               "Seongsan Ilchulbong: UNESCO World Natural Heritage and Jeju's flagship sunrise peak",
               "Udo Island: ferry-access island with white-sand beaches and lighthouse views",
@@ -1274,7 +1281,7 @@
             "name": "West Route: Beaches, Tea & Cafe Coast",
             "category": "Hyeopjae, Hallim Park, O'sulloc, Aewol",
             "description": "The most photogenic and relaxed route. Typical stops include Hyeopjae Beach (Jeju's most iconic emerald-water beach), Hallim Park (subtropical gardens and lava caves), O'sulloc Tea Museum (tea fields and cafe), and Aewol Cafe Street (sunset coastal cafes). Strong fit for couples and photographers.",
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
             "highlights": [
               "Hyeopjae Beach: emerald water, white sand, and Biyangdo island views",
               "Hallim Park: subtropical garden with two on-site lava caves",
@@ -1317,7 +1324,7 @@
             "name": "South Route: Waterfalls & Volcanic Coast",
             "category": "Cheonjiyeon, Jusangjeolli, Sanbangsan, Olle Market",
             "description": "The most scenically dramatic route. Typical stops include Cheonjiyeon Falls (forest waterfall), Jusangjeolli Cliff (basalt-column coastline), Yakcheonsa Temple (one of the largest temples in East Asia), Sanbangsan Mountain (volcanic dome with sea views), Jeongbang Waterfall (one of Asia's few waterfalls flowing directly into the sea), and Seogwipo Olle Market.",
-            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
             "highlights": [
               "Cheonjiyeon Falls: a classic Seogwipo forest waterfall",
               "Jusangjeolli Cliff: hexagonal basalt columns on the south coast",

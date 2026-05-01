@@ -742,6 +742,27 @@ export default function ProductsPage() {
 
   return (
     <div className="space-y-6">
+      {/* v2 migration notice — admin must edit detail-page tab to affect customer-facing pages */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+        <div className="flex items-start gap-3">
+          <span className="text-amber-600 text-xl shrink-0" aria-hidden>⚠️</span>
+          <div className="flex-1">
+            <h3 className="text-sm font-semibold text-amber-900">
+              편집 동선 안내 (catalog v2 마이그레이션 진행 중)
+            </h3>
+            <p className="text-sm text-amber-800 mt-1">
+              실제 고객 상품 상세 페이지는 <strong>"⭐ 디테일 페이지"</strong> 탭의{" "}
+              <code className="px-1 bg-amber-100 rounded text-xs">tour_product_pages.detail_payload</code> JSON에서만 렌더링됩니다.
+            </p>
+            <p className="text-sm text-amber-800 mt-1">
+              <strong>기본 정보 / 이미지 / 일정 / 상세 정보 / 콘텐츠 / 다국어</strong> 탭의 변경은 레거시{" "}
+              <code className="px-1 bg-amber-100 rounded text-xs">tours</code> 테이블에만 저장되며,
+              <strong> 현재 상세 페이지에는 반영되지 않습니다</strong>. 가격, 활성 상태(<code className="px-1 bg-amber-100 rounded text-xs">is_active</code>), 픽업 장소만 영향이 있습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">상품 관리</h1>
@@ -1008,6 +1029,9 @@ export default function ProductsPage() {
               {/* Basic Info Tab */}
               {activeTab === 'basic' && (
                 <div className="space-y-6">
+                  <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-800">
+                    ℹ️ 이 탭은 레거시 <code className="px-1 bg-amber-100 rounded">tours</code> 테이블에만 저장됩니다. 상세 페이지의 제목/설명을 바꾸려면 <strong>⭐ 디테일 페이지</strong> 탭에서 <code className="px-1 bg-amber-100 rounded">headlineLine1/2</code>, <code className="px-1 bg-amber-100 rounded">hero.tagline</code>을 수정하세요.
+                  </div>
                   <section className="rounded-2xl border border-gray-200/80 bg-white p-6 shadow-sm">
                     <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
                       <span className="text-indigo-600">📋</span> 기본 정보

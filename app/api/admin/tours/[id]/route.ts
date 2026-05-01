@@ -12,13 +12,17 @@ export async function PATCH(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    console.log('🔍 [PATCH /api/admin/tours/[id]] Request received');
-    
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('[PATCH /api/admin/tours/[id]] Request received');
+    }
+
     // Handle both Promise and direct params (Next.js 15 compatibility)
     const resolvedParams = await params;
     const tourId = resolvedParams.id;
-    
-    console.log('🔍 [PATCH /api/admin/tours/[id]] Tour ID:', tourId);
+
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('[PATCH /api/admin/tours/[id]] Tour ID:', tourId);
+    }
     
     // Check admin authentication
     const adminUser = await requireAdmin(req);
@@ -45,14 +49,18 @@ export async function PATCH(
     }
     
     if (!existingTour) {
-      console.error('❌ [PATCH /api/admin/tours/[id]] Tour not found:', tourId);
+      if (process.env.NODE_ENV !== 'production') {
+        console.error('[PATCH /api/admin/tours/[id]] Tour not found:', tourId);
+      }
       return NextResponse.json(
         { error: 'Tour not found', tourId },
         { status: 404 }
       );
     }
-    
-    console.log('✅ [PATCH /api/admin/tours/[id]] Tour found:', existingTour.id);
+
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('[PATCH /api/admin/tours/[id]] Tour found:', existingTour.id);
+    }
     
     // translations 컬럼이 있는지 확인하기 위해 전체 데이터 가져오기
     // translations가 없으면 빈 객체로 처리

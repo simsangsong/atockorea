@@ -89,7 +89,15 @@ OUTPUT: {"raw_query":"5月份去濟州島看繡球花,情侶旅行","raw_query_l
 
 EXAMPLE 6 (Japanese):
 USER: "12月に済州島でみかん狩りと雪景色を家族で"
-OUTPUT: {"raw_query":"12月に済州島でみかん狩りと雪景色を家族で","raw_query_locale":"ja","regions":["jeju"],"sub_regions":[],"season":"winter","months":[12],"season_locks":["tangerine","snow_camellia"],"personas":["families"],"themes":[],"anchor_pois_mentioned":[],"pace":null,"format":null,"duration_constraint":null,"user_max_hours":null,"hard_constraints":[],"wants_cruise":false,"wants_charter_customization":false,"is_multi_day_request":false,"boost_dimensions":{"tangerine_picking_winter_fit":1.5,"hallabong_peak_window_fit":1.5,"first_snow_experience_fit":1.5,"family_fit":1.0},"negative_signals":[],"confidence":0.85,"parser_notes":"Japanese: みかん狩り=tangerine picking, 雪景色=snow scenery, 家族=family"}`;
+OUTPUT: {"raw_query":"12月に済州島でみかん狩りと雪景色を家族で","raw_query_locale":"ja","regions":["jeju"],"sub_regions":[],"season":"winter","months":[12],"season_locks":["tangerine","snow_camellia"],"personas":["families"],"themes":[],"anchor_pois_mentioned":[],"pace":null,"format":null,"duration_constraint":null,"user_max_hours":null,"hard_constraints":[],"wants_cruise":false,"wants_charter_customization":false,"is_multi_day_request":false,"boost_dimensions":{"tangerine_picking_winter_fit":1.5,"hallabong_peak_window_fit":1.5,"first_snow_experience_fit":1.5,"family_fit":1.0},"negative_signals":[],"confidence":0.85,"parser_notes":"Japanese: みかん狩り=tangerine picking, 雪景色=snow scenery, 家族=family"}
+
+EXAMPLE 7 (weak / generic English query — no month, no season_lock, no region):
+USER: "I want a scenic nature cafe day in Korea"
+OUTPUT: {"raw_query":"I want a scenic nature cafe day in Korea","raw_query_locale":"en","regions":[],"sub_regions":[],"season":null,"months":null,"season_locks":[],"personas":[],"themes":["scenic","cafe","nature"],"anchor_pois_mentioned":[],"pace":null,"format":null,"duration_constraint":"day_trip","user_max_hours":null,"hard_constraints":[],"wants_cruise":false,"wants_charter_customization":false,"is_multi_day_request":false,"boost_dimensions":{"scenic_level":1.0,"cafe_fit":1.2,"nature_fit":1.0},"negative_signals":[],"confidence":0.52,"parser_notes":"Generic theme words only; no month/season/region — downstream gate restricts to evergreen products"}
+
+EXAMPLE 8 (CONTRADICTION — user month vs seasonal phenomenon, must be preserved):
+USER: "5월에 한국 벚꽃 보고 싶어요"
+OUTPUT: {"raw_query":"5월에 한국 벚꽃 보고 싶어요","raw_query_locale":"ko","regions":[],"sub_regions":[],"season":null,"months":[5],"season_locks":["cherry_blossom"],"personas":[],"themes":[],"anchor_pois_mentioned":[],"pace":null,"format":null,"duration_constraint":null,"user_max_hours":null,"hard_constraints":[],"wants_cruise":false,"wants_charter_customization":false,"is_multi_day_request":false,"boost_dimensions":{"cherry_blossom_fit":1.5,"cherry_bloom_window_fit":1.5},"negative_signals":[],"confidence":0.7,"parser_notes":"User said May (5월) but cherry blooms Mar-Apr; months=[5] retained — downstream seasonal-gate will correctly reject cherry tours and surface NO_MATCH"}`;
 
   return `You are a tour query parser for atockorea.com (Korea inbound day-tour marketplace).
 Convert natural-language tour queries (Korean, English, Chinese, Japanese) into a strictly structured JSON matching profile.
@@ -118,14 +126,18 @@ PARSING RULES
 ═══════════════════════════════════════════════════════════════════════════
 
 1. regions = HARD filter. Only set if explicitly stated.
-2. months = HARD filter. spring→[3,4,5]; "May"/"5월"/"5月"→[5]. Combine with season_lock to narrow.
-3. season_locks (cherry_blossom / hydrangea / tangerine / etc.) trigger boost_dimensions automatically.
+2. months = HARD filter. User-stated months are AUTHORITATIVE — NEVER override based on seasonal context.
+   - "spring" / "봄" alone → [3,4,5]
+   - "May" / "5월" / "5月" → [5]
+   - "5월 벚꽃" → months=[5], season_locks=["cherry_blossom"] (do NOT widen to [3,4]; downstream gate will reject cherry tours since cherry blooms only Mar-Apr — that is the correct outcome)
+   - "벚꽃" with no month mentioned → months=null, season_locks=["cherry_blossom"]; downstream uses today's date as fallback
+3. season_locks fire ONLY on EXPLICIT seasonal phenomenon names: cherry_blossom (벚꽃/cherry/사쿠라/桜), plum_blossom (매화), hydrangea (수국/紫陽花/繡球花), tangerine (감귤/みかん), snow / snow_camellia (눈/雪), camellia (동백/椿), autumn_foliage (단풍/紅葉). Do NOT infer a season_lock from generic "spring tour" / "winter day" alone — those go into season+months only.
 4. boost_dimensions = soft scoring weights. Combine signals from personas + themes + season_locks + pace. Cap at 2.0.
 5. anchor_pois_mentioned = English snake_case poi_keys when user names landmarks.
 6. wants_cruise=TRUE ONLY when user EXPLICITLY signals cruise/shore-excursion intent.
 7. wants_charter_customization=TRUE for "차량 대절 / 맞춤 / custom route / private car charter" patterns.
 8. is_multi_day_request=TRUE for "1박2일 / overnight / multi-day / 패키지 호텔".
-9. confidence (0.4-1.0); raise with more matched signals.
+9. confidence (0.4-1.0); raise with more matched signals. Generic / weak queries (no region, no month, no season, only soft theme words) → keep confidence ≤ 0.55 so the downstream gate restricts results to evergreen products.
 10. parser_notes = ONE concise English sentence including cruise intent reasoning.
 11. NEVER invent keys outside the vocabulary.
 12. Return valid JSON. All schema fields must be present (use null/[]/{} for absent values).

@@ -616,7 +616,7 @@
         "title": "El equilibrio que la mayoría busca",
         "subtitle": "Más pulido que un bus, sin el ticket de un privado completo.",
         "busLabel": "Tour clásico en autobús",
-        "busPrice": "$49",
+        "busPrice": "$39",
         "busLine": "Ruta fija y el asiento más económico.",
         "heroBadge": "OPCIÓN INTELIGENTE",
         "heroLabel": "Join en grupo reducido",
@@ -683,7 +683,10 @@
           "trustMatched": "A tu medida",
           "trustPickup": "Recogida clara",
           "trustCompare": "Comparar tipos",
-          "licensedTrustStrip": "Operadores locales verificados · Cancelación gratuita hasta 24 h · Recogida en el hotel incluida"
+          "licensedTrustStrip": "Operadores locales verificados · Cancelación gratuita hasta 24 h · Recogida en el hotel incluida",
+          "credentialKto": "Operadores con licencia KTO",
+          "credentialExperience": "10+ años seleccionando Corea",
+          "credentialSupport": "Soporte coreano en tiempo real"
         },
         "bestMatch": {
           "exampleBadge": "Ejemplo de recomendación",
@@ -709,6 +712,63 @@
           "matchMetaRowRatingAria": "Valoración {rating} de 5 según {count} reseñas públicas",
           "groupMaxParam": "Máx. {n}"
         },
+        "destinations": {
+          "eyebrow": "DESTINOS",
+          "title": "¿A dónde te llevará",
+          "titleAccent": "Corea?",
+          "subtitle": "Tres regiones, operadores seleccionados a mano en cada una.",
+          "seoul": {
+            "name": "Seúl",
+            "tagline": "Palacios, cultura K y mercados nocturnos",
+            "alt": "Vista de Seúl con palacios y rascacielos modernos"
+          },
+          "busan": {
+            "name": "Busan",
+            "tagline": "Playas, mariscos y paisajes costeros",
+            "alt": "Costa de Busan con playas y horizonte urbano"
+          },
+          "jeju": {
+            "name": "Jeju",
+            "tagline": "Costa volcánica, sitios UNESCO y monte Hallasan",
+            "alt": "Costa volcánica y paisaje natural de la isla de Jeju"
+          },
+          "countLabelParam": "{count} tours"
+        },
+        "featuredProducts": {
+          "eyebrow": "DE MODA · ACTUALIZADO A DIARIO",
+          "title": "Lo más",
+          "titleAccent": "querido esta semana",
+          "subtitle": "Reservas reales, frescas cada semana — seleccionadas por nuestro equipo de turismo receptivo en Corea.",
+          "viewAllCtaParam": "Ver los {count} tours",
+          "viewAllCtaGeneric": "Ver todos los tours"
+        },
+        "whyAtockorea": {
+          "eyebrow": "DISEÑADO PARA VISITANTES INTERNACIONALES",
+          "title": "Por qué los viajeros",
+          "titleAccent": "nos eligen",
+          "subtitle": "Tours de un día seleccionados a mano en Corea, emparejados con tu estilo — no con quien más pagó.",
+          "tagline": "Deja de buscar. Empieza a emparejar.",
+          "pillar1": {
+            "title": "por expertos en turismo receptivo",
+            "titleAccent": "Selección curada",
+            "body": "Un equipo con más de 10 años de experiencia en turismo receptivo en Corea evalúa a cada operador. Sin scroll infinito — solo tours que recomendaríamos a un amigo."
+          },
+          "pillar2": {
+            "title": "a tu estilo",
+            "titleAccent": "Emparejado por IA",
+            "body": "Cuéntanos tus prioridades — gastronomía, naturaleza, K-pop, familia — y nuestro planificador te empareja con el operador y formato adecuado. Por afinidad, no por puja."
+          },
+          "pillar3": {
+            "title": "operadores con licencia KTO",
+            "titleAccent": "100% certificados",
+            "body": "Todos los socios tienen licencia de la Organización de Turismo de Corea. Precios justos por colaboración directa — sin recargos de reventa, misma calidad."
+          },
+          "pillar4": {
+            "title": "atención en coreano",
+            "titleAccent": "Tiempo real",
+            "body": "Soporte el mismo día por teléfono y KakaoTalk en coreano. ¿Guía retrasado o cambio de clima? Lo resolvemos desde Seúl, no desde un call center global."
+          }
+        },
         "chooseStyle": {
           "eyebrow": "Elige tu estilo",
           "title": "Tres maneras de explorar",
@@ -726,6 +786,7 @@
           "privateTitle": "Tour privado",
           "privatePriceWas": "$248",
           "privatePriceNow": "$198",
+          "privatePerVehicle": "/vehículo",
           "perPersonShort": "/persona",
           "privateDesc": "Para familias o grupos que quieren vehículo dedicado y ritmo flexible.",
           "privateF1": "Vehículo dedicado",
@@ -734,7 +795,7 @@
           "privateCta": "Explorar tours privados",
           "busBadge": "CLÁSICO DE CONFIANZA",
           "busTitle": "Tour clásico en autobús",
-          "busPrice": "$49",
+          "busPrice": "$39",
           "busPerPerson": "/persona",
           "busDesc": "Rutas fiables, estructura clara y buen valor: ideal para un sightseeing sencillo.",
           "busF1": "Ruta probada",
@@ -743,6 +804,7 @@
           "busCta": "Ver tours en autobús"
         },
         "process": {
+          "eyebrow": "CÓMO FUNCIONA",
           "title": "Qué pasa después",
           "step1Label": "Paso 1",
           "step1Title": "Dinos qué te importa",

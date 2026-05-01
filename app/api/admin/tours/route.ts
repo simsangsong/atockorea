@@ -16,16 +16,22 @@ import { applyTourWriteRules } from '@/lib/admin/tour-write-rules';
  */
 export async function POST(request: NextRequest) {
   try {
-    console.log('🔍 [POST /api/admin/tours] Request received');
-    
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('[POST /api/admin/tours] Request received');
+    }
+
     // Check admin authentication using requireAdmin
     // This handles cookie-based authentication properly
     let user;
     try {
       user = await requireAdmin(request);
-      console.log('✅ [POST /api/admin/tours] User authenticated:', user.id, user.role);
+      if (process.env.NODE_ENV !== 'production') {
+        console.log('[POST /api/admin/tours] User authenticated:', user.id, user.role);
+      }
     } catch (authError: any) {
-      console.error('❌ [POST /api/admin/tours] Auth error:', authError.message);
+      if (process.env.NODE_ENV !== 'production') {
+        console.error('[POST /api/admin/tours] Auth error:', authError.message);
+      }
       if (authError.message === 'Unauthorized') {
         return ErrorResponses.unauthorized('Authentication required');
       }

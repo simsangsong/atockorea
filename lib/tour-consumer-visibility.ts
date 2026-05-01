@@ -1,3 +1,4 @@
+import { STATIC_TOUR_PRODUCT_BUNDLE_SLUGS } from "@/components/product-tour-static/_shared/tourProductBundleSlugs";
 import {
   CANONICAL_EAST_JEJU_SIGNATURE_SMALL_GROUP_SLUG,
   matchesEastSignatureSlugSegment,
@@ -30,33 +31,35 @@ export const CANONICAL_JEJU_GRAND_CATALOG_SLUG = "jeju-grand-highlights-loop";
 export const CANONICAL_SOUTHWEST_CATALOG_SLUG = "southwest-hallasan-osulloc-aewol";
 
 /**
- * Slug → `/tour-product/[slug]` canonical path for rows that exist in `tours` but are
- * primarily served by the flagship `/tour-product/[slug]` route. Used by `/tour/[id]`
- * to redirect away from the legacy detail surface without maintaining UUID allowlists
- * in `next.config.js`. Only include slugs whose `/tour-product/[slug]/page.tsx` exists
- * (or is served by the catch-all `app/tour-product/[slug]/page.tsx`).
+ * Slug aliases that resolve to a canonical `/tour-product/<other-slug>` page —
+ * for legacy / variant SKUs whose alias slug isn't itself a registered bundle
+ * but should still land on a flagship's detail surface.
+ *
+ * Bundle-registered slugs (see `STATIC_TOUR_PRODUCT_BUNDLE_SLUGS`) resolve
+ * automatically and must NOT be listed here. Only add aliases whose canonical
+ * target slug differs from the alias slug.
  */
-export const FLAGSHIP_TOUR_PRODUCT_PATHS: Readonly<Record<string, string>> = Object.freeze({
-  [CANONICAL_EAST_SIGNATURE_CATALOG_SLUG]: CANONICAL_EAST_SIGNATURE_PRODUCT_PATH,
-  /** Live East small-group SKU shares the same flagship detail page as the canonical row. */
+export const FLAGSHIP_SLUG_ALIASES: Readonly<Record<string, string>> = Object.freeze({
+  /** Live East small-group SKU shares the flagship East Signature detail page. */
   [CANONICAL_EAST_JEJU_SIGNATURE_SMALL_GROUP_SLUG]: CANONICAL_EAST_SIGNATURE_PRODUCT_PATH,
-  [CANONICAL_JEJU_GRAND_CATALOG_SLUG]: CANONICAL_JEJU_GRAND_PRODUCT_PATH,
-  [CANONICAL_SOUTHWEST_CATALOG_SLUG]: CANONICAL_SOUTHWEST_PRODUCT_PATH,
-  "south-jeju-classic-bus-tour": "/tour-product/south-jeju-classic-bus-tour",
-  "southwest-jeju-scenic-bus-tour": "/tour-product/southwest-jeju-scenic-bus-tour",
-  "east-jeju-classic-bus-tour": "/tour-product/east-jeju-classic-bus-tour",
-  "jeju-cruise-shore-excursion-bus-tour": "/tour-product/jeju-cruise-shore-excursion-bus-tour",
-  "jeju-cruise-shore-excursion-small-group-tour": "/tour-product/jeju-cruise-shore-excursion-small-group-tour",
-  "busan-top-attractions-authentic-one-day-tour": "/tour-product/busan-top-attractions-authentic-one-day-tour",
-  "busan-city-tour-shore-excursion-cruise-guests": "/tour-product/busan-city-tour-shore-excursion-cruise-guests",
 });
 
-/** Returns the `/tour-product/[slug]` path when the row should redirect away from `/tour/[id]`. */
+/**
+ * Returns the `/tour-product/[slug]` path when the row should redirect away from
+ * `/tour/[id]`. Resolves explicit aliases first, then falls through to the
+ * static bundle registry — every registered bundle gets a canonical link
+ * automatically, so adding a new product to the registry is enough.
+ */
 export function canonicalProductPathForSlug(slug: string | null | undefined): string | null {
   if (slug == null || typeof slug !== "string") return null;
   const s = slug.trim().toLowerCase();
   if (!s) return null;
-  return FLAGSHIP_TOUR_PRODUCT_PATHS[s] ?? null;
+  const aliased = FLAGSHIP_SLUG_ALIASES[s];
+  if (aliased) return aliased;
+  if (STATIC_TOUR_PRODUCT_BUNDLE_SLUGS.has(s)) {
+    return `/tour-product/${s}`;
+  }
+  return null;
 }
 
 /**

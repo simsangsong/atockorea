@@ -71,6 +71,16 @@ function v2ScoredToScoredProduct(m: ScoredMatchV2): ScoredProduct {
   };
 }
 
+/** When NO_MATCH is reported and the rejected_summary or notes mention a
+ *  seasonal contradiction (e.g. "5월 벚꽃"), surface a more specific reason
+ *  to legacy v1 consumers. Heuristic — only used when the gate's reason text
+ *  is observable in notes. */
+function detectSeasonalContradiction(v2: MatchResponseV2): boolean {
+  if (v2.match_status !== "NO_MATCH") return false;
+  const haystack = (v2.notes ?? []).join(" ").toLowerCase();
+  return haystack.includes("contradiction") || haystack.includes("seasonal_contradiction");
+}
+
 export function buildV1Response(
   parsed: ParsedQueryV2,
   v2: MatchResponseV2,
@@ -95,8 +105,22 @@ export function buildV1Response(
   const top = v2.top_matches.map(v2ScoredToScoredProduct);
   const winner = top[0] ?? null;
   const matched = top.slice(0, 5);
-  const matchOutcome: TourMatchOutcome = top.length ? "matched" : "no_match";
-  const noMatchReason: TourMatchNoMatchReason | null = matchOutcome === "no_match" ? "all_products_excluded" : null;
+  // STRONG_MATCH / WEAK_MATCH → matched ; NO_MATCH / INSUFFICIENT_INPUT → no_match.
+  // Falls back to length check for any caller still on the older response shape.
+  const matchOutcome: TourMatchOutcome =
+    v2.match_status === "STRONG_MATCH" || v2.match_status === "WEAK_MATCH"
+      ? "matched"
+      : top.length
+        ? "matched"
+        : "no_match";
+  const noMatchReason: TourMatchNoMatchReason | null =
+    matchOutcome === "matched"
+      ? null
+      : v2.match_status === "INSUFFICIENT_INPUT"
+        ? "insufficient_input"
+        : detectSeasonalContradiction(v2)
+          ? "seasonal_contradiction"
+          : "all_products_excluded";
 
   const productTypeSnap: ResolvedProductTypeIntentSnapshot = {
     desired_product_type: intent.desired_product_type,

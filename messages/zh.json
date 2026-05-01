@@ -616,7 +616,7 @@
         "title": "多数旅客想要的平衡点",
         "subtitle": "比巴士更有节奏感，不必拉到私人团的价位。",
         "busLabel": "经典巴士游",
-        "busPrice": "$49",
+        "busPrice": "$39",
         "busLine": "固定线路、最低座位成本。",
         "heroBadge": "聪明默认",
         "heroLabel": "小团拼车",
@@ -683,7 +683,10 @@
           "trustMatched": "为你匹配",
           "trustPickup": "接送清晰",
           "trustCompare": "对比全部类型",
-          "licensedTrustStrip": "经过验证的当地旅游运营商 · 24小时前免费取消 · 含酒店接送"
+          "licensedTrustStrip": "经过验证的当地旅游运营商 · 24小时前免费取消 · 含酒店接送",
+          "credentialKto": "KTO 持牌运营商",
+          "credentialExperience": "10+ 年韩国精选",
+          "credentialSupport": "韩语实时支持"
         },
         "bestMatch": {
           "exampleBadge": "推荐示例",
@@ -709,6 +712,63 @@
           "matchMetaRowRatingAria": "5 分制 {rating} 分，基于 {count} 条公开评价",
           "groupMaxParam": "最多{n}人"
         },
+        "destinations": {
+          "eyebrow": "目的地",
+          "title": "韩国会带你",
+          "titleAccent": "去哪里？",
+          "subtitle": "三大地区，每处都由我们亲自挑选当地运营商。",
+          "seoul": {
+            "name": "首尔",
+            "tagline": "古宫、韩流文化与夜市",
+            "alt": "古宫与现代摩天楼并存的首尔市景"
+          },
+          "busan": {
+            "name": "釜山",
+            "tagline": "海滩、海鲜与海岸风光",
+            "alt": "海云台海滩与釜山滨海都市"
+          },
+          "jeju": {
+            "name": "济州",
+            "tagline": "火山海岸、世遗景点与汉拿山",
+            "alt": "济州岛火山海岸与自然风光"
+          },
+          "countLabelParam": "{count} 个行程"
+        },
+        "featuredProducts": {
+          "eyebrow": "本周热门 · 每日更新",
+          "title": "本周",
+          "titleAccent": "最受欢迎",
+          "subtitle": "基于真实预订数据，韩国入境团队每周亲自精选。",
+          "viewAllCtaParam": "查看全部 {count} 个行程",
+          "viewAllCtaGeneric": "查看全部行程"
+        },
+        "whyAtockorea": {
+          "eyebrow": "为海外旅客而生",
+          "title": "韩国旅客为何",
+          "titleAccent": "选择我们",
+          "subtitle": "亲手挑选的韩国入境一日游，依你的喜好匹配 — 不是出价最高者。",
+          "tagline": "别再搜索，开始匹配。",
+          "pillar1": {
+            "title": "入境团队精选",
+            "titleAccent": "资深团队亲自策划",
+            "body": "拥有 10 年以上韩国入境经验的团队亲自审核所有运营商。无需漫无目的翻查，只推荐我们愿意推荐给朋友的一日游。"
+          },
+          "pillar2": {
+            "title": "按风格匹配",
+            "titleAccent": "AI 智能",
+            "body": "告诉我们你的偏好（美食、自然、K-pop、家庭），我们的规划器会根据契合度而非出价为你匹配运营商和形式。"
+          },
+          "pillar3": {
+            "title": "KTO 持牌运营商",
+            "titleAccent": "100% 合法",
+            "body": "所有合作旅行社持有韩国观光公社许可证。直接合作、无分销加价，公平价格、同等品质。"
+          },
+          "pillar4": {
+            "title": "韩语本地支持",
+            "titleAccent": "实时",
+            "body": "当日电话与 KakaoTalk 韩语支持。导游延误或天气突变时，由首尔团队即刻处理，而非异国客服中心。"
+          }
+        },
         "chooseStyle": {
           "eyebrow": "选择出行方式",
           "title": "三种探索方式",
@@ -726,6 +786,7 @@
           "privateTitle": "私人行程",
           "privatePriceWas": "$248",
           "privatePriceNow": "$198",
+          "privatePerVehicle": "/辆",
           "perPersonShort": "/人",
           "privateDesc": "适合需要专车与更灵活排期的家庭或团队。",
           "privateF1": "专属车辆",
@@ -734,7 +795,7 @@
           "privateCta": "浏览私人行程",
           "busBadge": "经典之选",
           "busTitle": "传统巴士游",
-          "busPrice": "$49",
+          "busPrice": "$39",
           "busPerPerson": "/人",
           "busDesc": "路线稳定、结构清晰、性价比高，适合想轻松观光的旅人。",
           "busF1": "成熟路线",
@@ -743,6 +804,7 @@
           "busCta": "浏览巴士行程"
         },
         "process": {
+          "eyebrow": "预订流程",
           "title": "接下来会怎样",
           "step1Label": "第1步",
           "step1Title": "告诉我们你重视什么",

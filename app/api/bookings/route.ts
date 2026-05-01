@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { handleApiError, ErrorResponses } from '@/lib/error-handler';
 import { getAuthUser } from '@/lib/auth';
+import { checkOrigin } from '@/lib/origin-check';
 import {
   getMissingRequiredFields,
   validateBookingCustomerInfo,
@@ -79,6 +80,9 @@ export async function GET(req: NextRequest) {
  * Create a new booking
  */
 export async function POST(req: NextRequest) {
+  const originBlock = checkOrigin(req);
+  if (originBlock) return originBlock;
+
   try {
     const supabase = createServerClient();
     const body = await req.json();
@@ -99,7 +103,11 @@ export async function POST(req: NextRequest) {
     const requiredKeys = ['tourId', 'bookingDate', 'numberOfGuests', 'finalPrice'];
     const missing = getMissingRequiredFields(body, requiredKeys);
     if (missing.length) {
-      console.error('Missing required fields:', body);
+      if (process.env.NODE_ENV !== 'production') {
+        console.error('Missing required fields:', body);
+      } else {
+        console.error('Missing required fields:', missing);
+      }
       return ErrorResponses.validationError(
         `Missing required fields: ${missing.join(', ')}`
       );
@@ -291,7 +299,9 @@ export async function POST(req: NextRequest) {
       status: 'pending',
     };
     
-    console.log('Prepared booking data:', bookingData);
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('Prepared booking data:', bookingData);
+    }
 
     if (userId) {
       bookingData.user_id = userId;
@@ -332,8 +342,6 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    console.log('Creating booking with data:', bookingData);
-    
     const { data: booking, error: bookingError } = await supabase
       .from('bookings')
       .insert(bookingData)
@@ -341,15 +349,19 @@ export async function POST(req: NextRequest) {
       .single();
 
     if (bookingError) {
-      console.error('Error creating booking:', bookingError);
-      console.error('Booking data that failed:', JSON.stringify(bookingData, null, 2));
+      console.error('Error creating booking:', bookingError.code, bookingError.message);
+      if (process.env.NODE_ENV !== 'production') {
+        console.error('Booking data that failed:', JSON.stringify(bookingData, null, 2));
+      }
       return NextResponse.json(
-        { error: 'Failed to create booking', details: bookingError.message, code: bookingError.code },
+        { error: 'Failed to create booking', code: bookingError.code },
         { status: 500 }
       );
     }
-    
-    console.log('Booking created successfully:', booking);
+
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('Booking created successfully:', booking?.id);
+    }
 
     // Update inventory after successful booking
     try {

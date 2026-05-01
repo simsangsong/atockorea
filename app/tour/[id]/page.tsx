@@ -36,8 +36,12 @@ export default function LegacyTourIdRedirect() {
           if (!cancelled) router.replace('/tours/list');
           return;
         }
-        const body = (await res.json()) as { slug?: string | null; id?: string } | null;
-        const slug = typeof body?.slug === 'string' ? body.slug : null;
+        const body = (await res.json()) as
+          | { tour?: { slug?: string | null; id?: string } | null; slug?: string | null }
+          | null;
+        const slugFromTour = body?.tour && typeof body.tour.slug === 'string' ? body.tour.slug : null;
+        const slugFromRoot = typeof body?.slug === 'string' ? body.slug : null;
+        const slug = slugFromTour ?? slugFromRoot;
 
         if (isTourBlockedFromConsumerSurfaces(tourId, slug)) {
           if (!cancelled) router.replace('/tours/list');

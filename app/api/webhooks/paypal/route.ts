@@ -101,19 +101,21 @@ export async function POST(req: NextRequest) {
         const amount = parseFloat(resource.amount?.value || '0');
         const currency = resource.amount?.currency_code;
 
-        // Find booking by PayPal order ID in payment_provider_data
+        // Look up across ALL bookings (paid + pending) so we can detect a
+        // duplicate webhook delivery for the same capture_id.
         const { data: bookings } = await supabase
           .from('bookings')
-          .select('id, tour_id, booking_date, number_of_guests, final_price, pickup_point_id, payment_provider_data, user_profiles (email, full_name), tours (id, title, image_url)')
-          .eq('status', 'pending')
+          .select('id, tour_id, booking_date, number_of_guests, final_price, pickup_point_id, payment_provider_data, payment_status, user_profiles (email, full_name), tours (id, title, image_url)')
           .not('payment_provider_data', 'is', null);
 
-        let targetBooking = null;
+        let targetBooking: any = null;
+        let existingProviderData: any = {};
         for (const booking of bookings || []) {
           try {
             const providerData = JSON.parse(booking.payment_provider_data || '{}');
             if (providerData.order_id === orderId || providerData.capture_id === captureId) {
               targetBooking = booking;
+              existingProviderData = providerData;
               break;
             }
           } catch (e) {
@@ -121,24 +123,71 @@ export async function POST(req: NextRequest) {
           }
         }
 
-        if (targetBooking) {
-          // Update booking status
-          await supabase
-            .from('bookings')
-            .update({
-              payment_status: 'paid',
-              status: 'confirmed',
-              payment_provider_data: JSON.stringify({
-                provider: 'paypal',
-                order_id: orderId,
-                capture_id: captureId,
-                amount,
-                currency,
-                status: 'completed',
-              }),
-              updated_at: new Date().toISOString(),
-            })
-            .eq('id', targetBooking.id);
+        if (!targetBooking) {
+          console.warn('PayPal webhook: no booking matched', { orderId, captureId });
+          break;
+        }
+
+        // Idempotency — same capture already processed
+        if (
+          targetBooking.payment_status === 'paid' &&
+          existingProviderData.capture_id === captureId
+        ) {
+          if (process.env.NODE_ENV !== 'production') {
+            console.log('PayPal webhook idempotent skip:', captureId);
+          }
+          break;
+        }
+
+        // Server-authoritative amount check — refuse partial / inflated captures
+        const expectedPrice = parseFloat(String(targetBooking.final_price ?? 0));
+        if (!Number.isFinite(amount) || Math.abs(amount - expectedPrice) > 0.01) {
+          console.warn('PayPal amount mismatch', {
+            received: amount,
+            expected: expectedPrice,
+            bookingId: targetBooking.id,
+            captureId,
+          });
+          return NextResponse.json(
+            { error: 'amount_mismatch', code: 'AMOUNT_MISMATCH' },
+            { status: 400 }
+          );
+        }
+
+        // Atomic transition pending → paid; if another worker already updated,
+        // updatedRows will be empty and we skip the side-effects (email, etc.)
+        const { data: updatedRows, error: updErr } = await supabase
+          .from('bookings')
+          .update({
+            payment_status: 'paid',
+            status: 'confirmed',
+            payment_provider_data: JSON.stringify({
+              provider: 'paypal',
+              order_id: orderId,
+              capture_id: captureId,
+              amount,
+              currency,
+              status: 'completed',
+            }),
+            updated_at: new Date().toISOString(),
+          })
+          .eq('id', targetBooking.id)
+          .eq('payment_status', 'pending')
+          .select('id');
+
+        if (updErr) {
+          console.error('PayPal update error:', updErr.code, updErr.message);
+          return NextResponse.json({ error: 'update_failed' }, { status: 500 });
+        }
+        if (!updatedRows || updatedRows.length === 0) {
+          // Race — another delivery already moved this booking to paid
+          if (process.env.NODE_ENV !== 'production') {
+            console.log('PayPal webhook: lost the race for', captureId);
+          }
+          break;
+        }
+
+        {
 
           // Send confirmation email
           try {
@@ -194,39 +243,40 @@ export async function POST(req: NextRequest) {
         // Handle payment failures or refunds
         const orderId = resource.supplementary_data?.related_ids?.order_id;
 
-        // Find and update booking if needed
+        // Look across all bookings (paid/refunded/failed) for idempotency
         const { data: bookings } = await supabase
           .from('bookings')
-          .select('id, payment_provider_data')
-          .eq('status', 'pending')
+          .select('id, payment_provider_data, payment_status')
           .not('payment_provider_data', 'is', null);
 
         for (const booking of bookings || []) {
           try {
             const providerData = JSON.parse(booking.payment_provider_data || '{}');
-            if (providerData.order_id === orderId) {
-              if (eventType === 'PAYMENT.CAPTURE.REFUNDED') {
-                // Mark as refunded
-                await supabase
-                  .from('bookings')
-                  .update({
-                    payment_status: 'refunded',
-                    status: 'cancelled',
-                    updated_at: new Date().toISOString(),
-                  })
-                  .eq('id', booking.id);
-              } else {
-                // Mark as failed
-                await supabase
-                  .from('bookings')
-                  .update({
-                    payment_status: 'failed',
-                    updated_at: new Date().toISOString(),
-                  })
-                  .eq('id', booking.id);
-              }
-              break;
+            if (providerData.order_id !== orderId) continue;
+
+            if (eventType === 'PAYMENT.CAPTURE.REFUNDED') {
+              if (booking.payment_status === 'refunded') break; // idempotent
+              await supabase
+                .from('bookings')
+                .update({
+                  payment_status: 'refunded',
+                  status: 'cancelled',
+                  updated_at: new Date().toISOString(),
+                })
+                .eq('id', booking.id)
+                .neq('payment_status', 'refunded');
+            } else {
+              if (booking.payment_status === 'failed') break; // idempotent
+              await supabase
+                .from('bookings')
+                .update({
+                  payment_status: 'failed',
+                  updated_at: new Date().toISOString(),
+                })
+                .eq('id', booking.id)
+                .neq('payment_status', 'failed');
             }
+            break;
           } catch (e) {
             // Skip invalid JSON
           }

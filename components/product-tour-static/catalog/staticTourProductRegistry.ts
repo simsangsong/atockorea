@@ -141,7 +141,7 @@ function registrationFromCatalogCard(
 /** East Signature Nature Core — flagship template SKU */
 export const eastSignatureNatureCoreStaticProduct: StaticTourProductRegistration =
   registrationFromCatalogCard(eastSignaturePage as PageJsonShape, {
-    compareAtPriceUsd: 78,
+    listPriceUsd: 59,
     maxGroupSize: 8,
   });
 

@@ -226,7 +226,11 @@ export type TourMatchOutcome = "matched" | "no_match";
 export type TourMatchNoMatchReason =
   | "no_exact_type_match"
   | "no_step_free_products"
-  | "all_products_excluded";
+  | "all_products_excluded"
+  /** Query had no usable signals (empty/whitespace beyond API guard, or only stop-words). */
+  | "insufficient_input"
+  /** User stated a month + a seasonal phenomenon that don't co-occur (e.g. "5월 벚꽃"). */
+  | "seasonal_contradiction";
 
 export type TourMatchApiResponse = {
   intent: TravelerIntentV1;

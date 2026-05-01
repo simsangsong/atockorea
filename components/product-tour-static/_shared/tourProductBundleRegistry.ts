@@ -8,6 +8,7 @@
  */
 
 import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import type { StaticTourProductBundleSlug } from "./tourProductBundleSlugs";
 import type { TourProductFullPageJson } from "./tourProductFullPageJsonTypes";
 
 import busanGyeongjuUnescoLegacyEn from "@/components/product-tour-static/busan-gyeongju-unesco-legacy-tour-national-museum/busan-gyeongju-unesco-legacy-tour-national-museum.en.json";
@@ -74,7 +75,7 @@ function mergeFullPageWithLocaleBase(
  * v17 batch — 30 EN-only bundles. Re-translation will repopulate ko/ja/zh/zh-TW/es
  * in subsequent batches; until then non-EN visitors fall back to EN.
  */
-export const STATIC_TOUR_PRODUCT_BUNDLES: Record<string, TourProductLocaleBundle> = {
+export const STATIC_TOUR_PRODUCT_BUNDLES: Record<StaticTourProductBundleSlug, TourProductLocaleBundle> = {
   "busan-gyeongju-unesco-legacy-tour-national-museum": { en: asBundleEntry(busanGyeongjuUnescoLegacyEn) },
   "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju": { en: asBundleEntry(busanPlumCherryBlossomEn) },
   "busan-private-car-charter-cruise-shore": { en: asBundleEntry(busanPrivateCarCharterCruiseShoreEn) },
@@ -115,7 +116,7 @@ export function getStaticTourProductFullPageJson(
   slug: string,
   locale: TourProductPageLocale,
 ): TourProductFullPageJson | null {
-  const bundle = STATIC_TOUR_PRODUCT_BUNDLES[slug];
+  const bundle = (STATIC_TOUR_PRODUCT_BUNDLES as Record<string, TourProductLocaleBundle | undefined>)[slug];
   if (!bundle) return null;
   if (locale === "en" || !bundle[locale]) {
     return bundle.en;

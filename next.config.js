@@ -86,6 +86,7 @@ const nextConfig = {
       { protocol: 'https', hostname: '**.supabase.in', pathname: '/**' },
       { protocol: 'https', hostname: 'cdn.visitjeju.net', pathname: '/**' },
       { protocol: 'https', hostname: 'api.cdn.visitjeju.net', pathname: '/**' },
+      { protocol: 'https', hostname: 'www.visitjeju.net', pathname: '/**' },
       { protocol: 'https', hostname: 'tong.visitkorea.or.kr', pathname: '/**' },
       { protocol: 'https', hostname: 'ktoimg.visitkorea.or.kr', pathname: '/**' },
       { protocol: 'https', hostname: 'cdn.visitbusan.net', pathname: '/**' },

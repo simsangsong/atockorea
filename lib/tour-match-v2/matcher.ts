@@ -1,8 +1,35 @@
 /**
- * Hard filter + soft scoring + tie-break. Mirrors `match_sim/scripts/match_tours.py` 1:1.
+ * Hard filter + soft scoring + tie-break.
+ *
+ * v1.9 hardening on top of the original `match_tours.py` mirror:
+ *   - seasonal-gate replaces the old month-only block (truth-table reject)
+ *   - signal-strength classifies parsed query → drives weak-input safety net
+ *   - score floor (hybrid absolute + relative) drops near-zero candidates
+ *   - match_status (STRONG / WEAK / NO / INSUFFICIENT) surfaced in response
  */
 
-import type { MatchTourRow, MatchResponseV2, ParsedQueryV2, RejectedRow, ScoredMatchV2 } from "./types";
+import type {
+  MatchTourRow,
+  MatchResponseV2,
+  MatchStatus,
+  ParsedQueryV2,
+  RejectedRow,
+  ScoredMatchV2,
+} from "./types";
+import {
+  SEASON_THEME_KEYS,
+  isSeasonalProduct,
+  passesSeasonalGate,
+  todayUtc,
+} from "./seasonal-gate";
+import { classifySignalStrength } from "./signal-strength";
+
+/** Hybrid score floor: absolute minimum that always applies, plus a relative
+ *  fraction of the top score so weak queries don't surface near-zero results. */
+const ABSOLUTE_SCORE_FLOOR = 0.5;
+const RELATIVE_SCORE_RATIO = 0.25;
+/** Score below which we downgrade STRONG → WEAK even on rich queries. */
+const STRONG_MATCH_MIN_SCORE = 3.0;
 
 const KO_SLUG_KEYWORDS: Record<string, string[]> = {
   highlights: ["하이라이트", "주요", "베스트", "핵심"],
@@ -97,7 +124,11 @@ function asNumber(v: unknown): number | null {
   return null;
 }
 
-export function hardFilter(tour: MatchTourRow, parsed: ParsedQueryV2): { passes: boolean; rejects: string[] } {
+export function hardFilter(
+  tour: MatchTourRow,
+  parsed: ParsedQueryV2,
+  today: { year: number; month: number } = todayUtc(),
+): { passes: boolean; rejects: string[] } {
   const rejects: string[] = [];
 
   // Cruise gating
@@ -118,13 +149,18 @@ export function hardFilter(tour: MatchTourRow, parsed: ParsedQueryV2): { passes:
     }
   }
 
-  // Months
-  if (parsed.months && parsed.months.length) {
-    const avail = new Set(tour.available_months);
-    const overlap = parsed.months.some((m) => avail.has(m));
-    if (!overlap) {
-      rejects.push(`month mismatch (tour=${JSON.stringify(tour.available_months)}, user_wants=${JSON.stringify(parsed.months)})`);
-    }
+  // Seasonal gate — supersedes the old month-only check. Handles all 7 rows
+  // of the truth table including "5월 벚꽃" contradictions and "no signal at all".
+  // Evergreen products (12 months + no seasonal theme) always pass.
+  const gate = passesSeasonalGate(tour, parsed, today);
+  if (!gate.ok && gate.reason) {
+    rejects.push(gate.reason);
+  }
+
+  // Explicit "no flowers / no seasonal stuff" negative signal — reject any
+  // seasonal product regardless of month. Mirrors the user request phrasing.
+  if (parsed.negative_signals?.includes("no_seasonal") && isSeasonalProduct(tour)) {
+    rejects.push("user explicitly requested non-seasonal tour (negative_signal=no_seasonal)");
   }
 
   // Wheelchair (strict)
@@ -328,12 +364,18 @@ export function scoreTour(tour: MatchTourRow, parsed: ParsedQueryV2): {
   return { total_score: total, score_components: components, match_reasons: reasons };
 }
 
-export function matchTours(parsed: ParsedQueryV2, tourRows: MatchTourRow[], topK = 3, includeRejected = false): MatchResponseV2 {
+export function matchTours(
+  parsed: ParsedQueryV2,
+  tourRows: MatchTourRow[],
+  topK = 5,
+  includeRejected = false,
+  today: { year: number; month: number } = todayUtc(),
+): MatchResponseV2 {
   const candidates: ScoredMatchV2[] = [];
   const rejected: RejectedRow[] = [];
 
   for (const tour of tourRows) {
-    const { passes, rejects } = hardFilter(tour, parsed);
+    const { passes, rejects } = hardFilter(tour, parsed, today);
     if (!passes) {
       rejected.push({ slug: tour.slug, destination_region: tour.destination_region, reasons: rejects });
       continue;
@@ -349,6 +391,7 @@ export function matchTours(parsed: ParsedQueryV2, tourRows: MatchTourRow[], topK
       best_for: tour.best_for,
       anchor_poi_keys: tour.anchor_poi_keys,
       matching_profile_size: Object.keys(tour.matching_profile).length,
+      is_seasonal_product: isSeasonalProduct(tour),
       ...breakdown,
     });
   }
@@ -356,8 +399,8 @@ export function matchTours(parsed: ParsedQueryV2, tourRows: MatchTourRow[], topK
   const parsedHasSeason = (parsed.season_locks.length > 0) || (parsed.months !== null && parsed.months.length > 0);
   candidates.sort((a, c) => {
     if (c.total_score !== a.total_score) return c.total_score - a.total_score;
-    const aSeasonal = a.available_months.length < 12 ? 1 : 0;
-    const cSeasonal = c.available_months.length < 12 ? 1 : 0;
+    const aSeasonal = a.is_seasonal_product ? 1 : 0;
+    const cSeasonal = c.is_seasonal_product ? 1 : 0;
     const aPenalty = !parsedHasSeason ? aSeasonal : 0;
     const cPenalty = !parsedHasSeason ? cSeasonal : 0;
     if (aPenalty !== cPenalty) return aPenalty - cPenalty;
@@ -365,6 +408,55 @@ export function matchTours(parsed: ParsedQueryV2, tourRows: MatchTourRow[], topK
   });
 
   const notes: string[] = [];
+
+  // Score floor: hybrid (absolute + relative). Drops near-zero scores so weak
+  // queries don't surface "any tour with the most-detailed profile" as a top match.
+  const maxScore = candidates[0]?.total_score ?? 0;
+  const dynamicFloor = Math.max(ABSOLUTE_SCORE_FLOOR, maxScore * RELATIVE_SCORE_RATIO);
+  let filtered = candidates.filter((c) => c.total_score >= dynamicFloor);
+  if (filtered.length === 0 && candidates.length > 0) {
+    notes.push(
+      `SCORE_FLOOR_APPLIED: ${candidates.length} candidate(s) passed hard filter but none reached ` +
+      `the score floor (${dynamicFloor.toFixed(2)}). Query likely too weak — surface NO_MATCH or WEAK_MATCH.`
+    );
+  }
+
+  // Signal-strength classification — drives weak-input safety net + status.
+  const signalStrength = classifySignalStrength(parsed);
+
+  // Weak/empty input: drop ALL seasonal products as an extra safety net.
+  // The seasonal-gate already handles the `no month + no season keyword` row
+  // of the truth table (REJECT seasonal_no_signal), so this is defense-in-depth
+  // — it catches Haiku-parser drift where a seasonal theme leaks through.
+  if (signalStrength === "weak" || signalStrength === "empty") {
+    const before = filtered.length;
+    filtered = filtered.filter((c) => !c.is_seasonal_product);
+    if (filtered.length !== before) {
+      notes.push(
+        `WEAK_INPUT_SAFETY: dropped ${before - filtered.length} seasonal candidate(s); ` +
+        "weak/empty queries are restricted to evergreen products."
+      );
+    }
+  }
+
+  // Status classification.
+  let match_status: MatchStatus;
+  if (signalStrength === "empty") {
+    match_status = "INSUFFICIENT_INPUT";
+  } else if (filtered.length === 0) {
+    match_status = "NO_MATCH";
+  } else if (signalStrength === "weak" || (filtered[0]?.total_score ?? 0) < STRONG_MATCH_MIN_SCORE) {
+    match_status = "WEAK_MATCH";
+  } else {
+    match_status = "STRONG_MATCH";
+  }
+
+  // Adaptive topK: STRONG → all topK; WEAK → max 3; NO/INSUFFICIENT → 0.
+  const effectiveTopK =
+      match_status === "STRONG_MATCH"      ? topK
+    : match_status === "WEAK_MATCH"        ? Math.min(3, topK)
+    : 0;
+
   if (parsed.is_multi_day_request) {
     notes.push(
       "MULTI_DAY_REQUEST: 현재 카탈로그는 1일투어(day-trip)로만 구성되어 있습니다. " +
@@ -394,19 +486,40 @@ export function matchTours(parsed: ParsedQueryV2, tourRows: MatchTourRow[], topK
       "추천 결과는 단축 가능 여부 별도 문의 권장."
     );
   }
-  if (!candidates.length && rejected.length > 0) {
+  if (match_status === "INSUFFICIENT_INPUT") {
     notes.push(
-      `NO_MATCH: 모든 ${rejected.length}개 투어가 hard filter에 의해 제외됨. ` +
-      "쿼리 조건이 너무 엄격하거나 catalog 범위 밖일 수 있음."
+      "INSUFFICIENT_INPUT: 입력 정보가 너무 적어 정확한 추천이 어렵습니다. " +
+      "가시는 시기(월), 지역(제주/서울/부산 등), 동행, 관심사를 알려주시면 더 정확한 추천이 가능합니다."
+    );
+  } else if (match_status === "NO_MATCH") {
+    if (rejected.length > 0) {
+      notes.push(
+        `NO_MATCH: ${rejected.length}개 투어가 hard filter에서 제외되었거나 점수 임계값(${dynamicFloor.toFixed(2)})에 못 미쳤습니다. ` +
+        "쿼리 조건이 너무 엄격하거나 (시즌 불일치 등) catalog 범위 밖일 수 있습니다."
+      );
+    } else {
+      notes.push(
+        `NO_MATCH: 모든 후보가 점수 임계값(${dynamicFloor.toFixed(2)})에 못 미쳤습니다. 쿼리를 더 구체적으로 입력해 주세요.`
+      );
+    }
+  } else if (match_status === "WEAK_MATCH") {
+    notes.push(
+      "WEAK_MATCH: 입력하신 내용 기반 추천이지만, 시즌이나 동행 정보가 추가되면 더 정확해집니다."
     );
   }
 
   const out: MatchResponseV2 = {
     candidates_passed_hard_filter: candidates.length,
     candidates_rejected_count: rejected.length,
-    top_matches: candidates.slice(0, topK),
+    top_matches: filtered.slice(0, effectiveTopK),
     notes,
+    match_status,
+    signal_strength: signalStrength,
+    applied_score_floor: dynamicFloor,
   };
   if (includeRejected) out.rejected_summary = rejected;
   return out;
 }
+
+// Re-export so that callers can read the constant for telemetry / logging.
+export { SEASON_THEME_KEYS };
