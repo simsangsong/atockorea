@@ -53,7 +53,8 @@ export default function TermsOfServicePage() {
             <Section title={t('terms.s3.title')}>
               <p className="mb-2">{t('terms.s3.p1')}</p>
               <p className="mb-2">{t('terms.s3.p2')}</p>
-              <p>{t('terms.s3.p3')}</p>
+              <p className="mb-2">{t('terms.s3.p3')}</p>
+              <p>{t('terms.s3.p4')}</p>
             </Section>
 
             {/* 4. Account Registration and Eligibility */}
