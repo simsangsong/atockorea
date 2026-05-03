@@ -100,16 +100,6 @@ export default function Footer({ premiumHandoff }: FooterProps) {
                   {t('home.footer.whyChooseUs')}
                 </a>
               </li>
-              <li>
-                <a href="/about" className="text-slate-400 transition-colors hover:text-white sm:text-slate-300">
-                  {t('home.footer.partners')}
-                </a>
-              </li>
-              <li>
-                <a href="/about" className="text-slate-400 transition-colors hover:text-white sm:text-slate-300">
-                  {t('home.footer.careers')}
-                </a>
-              </li>
             </ul>
           </div>
           <div className="min-w-0">
