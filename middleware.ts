@@ -5,12 +5,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
-import {
-  isPublicConsumerTourDiscoveryPathForSiteGate,
-  isPublicEastSignatureTourDetailPathForSiteGate,
-  isPublicLegalOrInfoPathForSiteGate,
-  matchesEastSignatureSlugSegment,
-} from '@/src/lib/east-signature-nature-core-match';
+import { matchesEastSignatureSlugSegment } from '@/src/lib/east-signature-nature-core-match';
 import { CANONICAL_EAST_SIGNATURE_PRODUCT_PATH } from '@/lib/tour-consumer-visibility';
 
 const SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'zh-TW', 'ja', 'es'];
@@ -68,28 +63,6 @@ function shouldTreatBareSegmentAsTourSlug(seg: string): boolean {
   if (/^[a-z0-9]+(-[a-z0-9]+)+$/i.test(seg)) return true;
   if (/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(seg)) return true;
   return false;
-}
-
-/**
- * 실제 홈·투어 UI는 localhost / 127.0.0.1 / ::1 만 (포트 무관).
- * `next dev -H 0.0.0.0` 후 PC IP로 접속하면 비공개 — http://localhost:3000 권장.
- */
-function isLocalRequest(request: NextRequest): boolean {
-  const host = (request.headers.get('host') ?? '').toLowerCase();
-  const hostname = request.nextUrl.hostname.toLowerCase();
-  return (
-    hostname === 'localhost' ||
-    hostname === '127.0.0.1' ||
-    hostname === '::1' ||
-    host.startsWith('localhost:') ||
-    host.startsWith('127.0.0.1:') ||
-    host.startsWith('[::1]:')
-  );
-}
-
-/** 라이브 공개 시 Vercel 등에 SITE_HOME_PUBLIC=true */
-function isSiteUiPublic(): boolean {
-  return process.env.SITE_HOME_PUBLIC === 'true' || process.env.SITE_HOME_PUBLIC === '1';
 }
 
 function getLocale(request: NextRequest): string {
@@ -245,20 +218,6 @@ export function middleware(request: NextRequest) {
     );
   if (isFlagshipTourProductPath) {
     return NextResponse.next();
-  }
-
-  // 1c. 비로컬 + 공개 플래그 없음 → 실제 홈(/)으로 rewrite, 플래그십·투어 둘러보기·매칭·법적 안내 경로 예외
-  // (Privacy / Terms 등 footer 링크는 항상 공개 — Google OAuth 검증이 privacy URL 접근 필요)
-  if (
-    !isSiteUiPublic() &&
-    !isLocalRequest(request) &&
-    !isPublicEastSignatureTourDetailPathForSiteGate(pathname) &&
-    !isPublicConsumerTourDiscoveryPathForSiteGate(pathname) &&
-    !isPublicLegalOrInfoPathForSiteGate(pathname)
-  ) {
-    const url = request.nextUrl.clone();
-    url.pathname = '/';
-    return NextResponse.rewrite(url);
   }
 
   // 1d. /product-slug → /tour/product-slug (single segment; not a locale or app route)
