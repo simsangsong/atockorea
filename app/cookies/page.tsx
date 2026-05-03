@@ -1,151 +1,199 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+'use client';
 
-export const metadata: Metadata = {
-  title: "Cookie Policy | AtoC Korea",
-  description:
-    "How AtoC Korea uses cookies and similar technologies on www.atockorea.com, what data they collect, and how to manage them.",
-  alternates: { canonical: "https://www.atockorea.com/cookies" },
-};
-
-const LAST_UPDATED = "2026-05-03";
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import BottomNav from '@/components/BottomNav';
+import Link from 'next/link';
+import { useTranslations } from '@/lib/i18n';
 
 export default function CookiePolicyPage() {
+  const t = useTranslations();
+  const date = '2026-05-03';
+
   return (
     <>
       <Header />
       <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 pt-20 pb-20">
         <div className="container mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
-          <h1 className="mb-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Cookie Policy
-          </h1>
-          <p className="mb-8 text-sm text-gray-600">
-            Effective {LAST_UPDATED}. This Cookie Policy explains how AtoC Korea uses cookies and
-            similar technologies on{" "}
-            <a href="https://www.atockorea.com" className="text-blue-600 hover:underline">
-              www.atockorea.com
-            </a>
-            . It supplements our{" "}
-            <Link href="/privacy" className="text-blue-600 hover:underline">
-              Privacy Policy
-            </Link>
-            .
+          <h1 className="mb-2 text-3xl font-bold text-gray-900 sm:text-4xl">{t('cookiePolicy.title')}</h1>
+          <p className="mb-8 text-gray-600">
+            {t('cookiePolicy.introPrefix')}
+            {date}
+            {t('cookiePolicy.introSuffix')}
           </p>
 
-          <Section title="1. What are cookies?">
-            <p>
-              Cookies are small text files placed on your device when you visit a website. They are
-              widely used to make websites work, to remember your preferences, and to provide
-              information to the site owner. Similar technologies include local storage, session
-              storage, pixels, and SDKs.
-            </p>
-          </Section>
+          <div className="space-y-10 text-gray-700">
+            {/* 1. Introduction and Scope */}
+            <Section title={t('cookiePolicy.s1.title')}>
+              <p className="mb-2">{t('cookiePolicy.s1.p1')}</p>
+              <ul className="ml-4 list-inside list-disc space-y-1">
+                <li>{t('cookiePolicy.s1.li1')}</li>
+                <li>{t('cookiePolicy.s1.li2')}</li>
+                <li>{t('cookiePolicy.s1.li3')}</li>
+                <li>{t('cookiePolicy.s1.li4')}</li>
+              </ul>
+              <p className="mt-2">
+                {t('cookiePolicy.s1.p2Before')}
+                <Link href="/privacy" className="text-blue-600 hover:underline">
+                  {t('home.footer.privacy')}
+                </Link>
+                {t('cookiePolicy.s1.p2After')}
+              </p>
+            </Section>
 
-          <Section title="2. Categories of cookies we use">
-            <h3 className="mt-2 text-lg font-semibold text-gray-900">Strictly necessary</h3>
-            <p>
-              Required for the Services to function. Examples: session cookie maintaining your
-              signed-in state, locale preference cookie (<code>NEXT_LOCALE</code>),
-              currency-preference cookie, and Stripe&apos;s checkout session. Without these the site
-              cannot operate; they are not subject to consent.
-            </p>
+            {/* 2. What Are Cookies */}
+            <Section title={t('cookiePolicy.s2.title')}>
+              <p className="mb-2">{t('cookiePolicy.s2.p1')}</p>
+              <p className="mb-2">{t('cookiePolicy.s2.p2')}</p>
+              <p>{t('cookiePolicy.s2.p3')}</p>
+            </Section>
 
-            <h3 className="mt-5 text-lg font-semibold text-gray-900">Functional</h3>
-            <p>
-              Remember choices you make to improve your experience. Examples: chosen language and
-              currency, last-viewed tour, accessibility preferences.
-            </p>
+            {/* 3. Categories */}
+            <Section title={t('cookiePolicy.s3.title')}>
+              <p className="mb-2">{t('cookiePolicy.s3.p1')}</p>
 
-            <h3 className="mt-5 text-lg font-semibold text-gray-900">Performance / analytics</h3>
-            <p>
-              Help us understand how visitors use the Services in aggregate so we can improve them.
-              We use first-party measurement and may use Google Analytics. Analytics cookies are set
-              only with your consent in jurisdictions where consent is required (e.g., the EU/UK).
-            </p>
+              <h3 className="mt-4 mb-2 text-base font-semibold text-gray-900">
+                {t('cookiePolicy.s3.h31')}
+              </h3>
+              <p className="mb-2">{t('cookiePolicy.s3.p2')}</p>
+              <ul className="ml-4 list-inside list-disc space-y-1">
+                <li>{t('cookiePolicy.s3.li1')}</li>
+                <li>{t('cookiePolicy.s3.li2')}</li>
+                <li>{t('cookiePolicy.s3.li3')}</li>
+              </ul>
 
-            <h3 className="mt-5 text-lg font-semibold text-gray-900">Marketing</h3>
-            <p>
-              We do not currently set marketing or advertising cookies for behavioral advertising.
-              If we add any in the future, we will request prior consent in jurisdictions where it
-              is required and update this Policy.
-            </p>
-          </Section>
+              <h3 className="mt-4 mb-2 text-base font-semibold text-gray-900">
+                {t('cookiePolicy.s3.h32')}
+              </h3>
+              <p className="mb-2">{t('cookiePolicy.s3.p3')}</p>
+              <ul className="ml-4 list-inside list-disc space-y-1">
+                <li>{t('cookiePolicy.s3.li4')}</li>
+              </ul>
 
-          <Section title="3. Third-party cookies">
-            <ul className="ml-6 list-disc space-y-1.5">
-              <li>
-                <strong>Stripe</strong> — fraud prevention and payment processing during checkout.
-              </li>
-              <li>
-                <strong>Google</strong> — Sign-in (OAuth) and, with consent, Google Analytics.
-              </li>
-              <li>
-                <strong>Vercel</strong> — request-routing and performance metrics for the host.
-              </li>
-            </ul>
-            <p>
-              These third parties&apos; use of cookies is governed by their own privacy policies.
-            </p>
-          </Section>
+              <h3 className="mt-4 mb-2 text-base font-semibold text-gray-900">
+                {t('cookiePolicy.s3.h33')}
+              </h3>
+              <p className="mb-2">{t('cookiePolicy.s3.p4')}</p>
 
-          <Section title="4. Managing cookies">
-            <p>
-              You can accept, reject, or delete cookies in your browser settings. Note that
-              rejecting strictly-necessary cookies may prevent parts of the Services (sign-in,
-              checkout, language switching) from working correctly. Most browsers allow you to:
-            </p>
-            <ul className="ml-6 list-disc space-y-1.5">
-              <li>view what cookies are set and delete them individually;</li>
-              <li>block third-party cookies;</li>
-              <li>block cookies from particular sites;</li>
-              <li>block all cookies; and</li>
-              <li>delete all cookies when you close the browser.</li>
-            </ul>
-            <p>
-              For more information about cookies generally, see{" "}
-              <a
-                className="text-blue-600 hover:underline"
-                href="https://www.aboutcookies.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                www.aboutcookies.org
-              </a>
-              .
-            </p>
-          </Section>
+              <h3 className="mt-4 mb-2 text-base font-semibold text-gray-900">
+                {t('cookiePolicy.s3.h34')}
+              </h3>
+              <p>{t('cookiePolicy.s3.p5')}</p>
+            </Section>
 
-          <Section title="5. Changes to this Cookie Policy">
-            <p>
-              We may update this Policy from time to time. The &quot;Effective&quot; date above
-              reflects the most recent revision. Material changes will be notified in-product or by
-              email.
-            </p>
-          </Section>
+            {/* 4. First-Party Cookies (table) */}
+            <Section title={t('cookiePolicy.s4.title')}>
+              <p className="mb-3">{t('cookiePolicy.s4.p1')}</p>
+              <div className="overflow-x-auto">
+                <table className="min-w-full border border-gray-200 text-sm">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      <th className="border border-gray-200 px-3 py-2 text-left font-semibold text-gray-700">
+                        {t('cookiePolicy.s4.tablePurpose')}
+                      </th>
+                      <th className="border border-gray-200 px-3 py-2 text-left font-semibold text-gray-700">
+                        {t('cookiePolicy.s4.tableCategory')}
+                      </th>
+                      <th className="border border-gray-200 px-3 py-2 text-left font-semibold text-gray-700">
+                        {t('cookiePolicy.s4.tableDuration')}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="border border-gray-200 px-3 py-2">{t('cookiePolicy.s4.row1Purpose')}</td>
+                      <td className="border border-gray-200 px-3 py-2">{t('cookiePolicy.s4.row1Category')}</td>
+                      <td className="border border-gray-200 px-3 py-2">{t('cookiePolicy.s4.row1Duration')}</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-200 px-3 py-2">{t('cookiePolicy.s4.row2Purpose')}</td>
+                      <td className="border border-gray-200 px-3 py-2">{t('cookiePolicy.s4.row2Category')}</td>
+                      <td className="border border-gray-200 px-3 py-2">{t('cookiePolicy.s4.row2Duration')}</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-200 px-3 py-2">{t('cookiePolicy.s4.row3Purpose')}</td>
+                      <td className="border border-gray-200 px-3 py-2">{t('cookiePolicy.s4.row3Category')}</td>
+                      <td className="border border-gray-200 px-3 py-2">{t('cookiePolicy.s4.row3Duration')}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </Section>
 
-          <Section title="6. Contact">
-            <p>
-              For any cookie or privacy question, contact{" "}
-              <a className="text-blue-600 hover:underline" href="mailto:support@atockorea.com">
-                support@atockorea.com
-              </a>
-              .
-            </p>
-          </Section>
+            {/* 5. Payment Processing */}
+            <Section title={t('cookiePolicy.s5.title')}>
+              <p className="mb-2">{t('cookiePolicy.s5.p1')}</p>
+              <ul className="ml-4 list-inside list-disc space-y-1">
+                <li>{t('cookiePolicy.s5.li1')}</li>
+                <li>{t('cookiePolicy.s5.li2')}</li>
+                <li>{t('cookiePolicy.s5.li3')}</li>
+              </ul>
+              <p className="mt-2">{t('cookiePolicy.s5.p2')}</p>
+            </Section>
+
+            {/* 6. Other Third-Party */}
+            <Section title={t('cookiePolicy.s6.title')}>
+              <p>{t('cookiePolicy.s6.p1')}</p>
+            </Section>
+
+            {/* 7. Duration */}
+            <Section title={t('cookiePolicy.s7.title')}>
+              <p>{t('cookiePolicy.s7.p1')}</p>
+            </Section>
+
+            {/* 8. Control */}
+            <Section title={t('cookiePolicy.s8.title')}>
+              <p className="mb-2">{t('cookiePolicy.s8.p1')}</p>
+              <p className="mb-2">{t('cookiePolicy.s8.p2')}</p>
+              <p className="mb-2">{t('cookiePolicy.s8.p3')}</p>
+              <p>{t('cookiePolicy.s8.p4')}</p>
+            </Section>
+
+            {/* 9. Updates */}
+            <Section title={t('cookiePolicy.s9.title')}>
+              <p>{t('cookiePolicy.s9.p1')}</p>
+            </Section>
+
+            {/* 10. Contact */}
+            <Section title={t('cookiePolicy.s10.title')}>
+              <p className="mb-2">{t('cookiePolicy.s10.p1')}</p>
+              <ul className="ml-4 list-inside list-disc space-y-1">
+                <li>{t('cookiePolicy.s10.entity')}</li>
+                <li>
+                  <a className="text-blue-600 hover:underline" href="mailto:support@atockorea.com">
+                    {t('cookiePolicy.s10.email')}
+                  </a>
+                </li>
+                <li>{t('cookiePolicy.s10.phone')}</li>
+                <li>{t('cookiePolicy.s10.address')}</li>
+              </ul>
+            </Section>
+          </div>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link href="/legal" className="font-medium text-blue-600 hover:underline">
+              {t('cookiePolicy.backToLegal')}
+            </Link>
+            <Link href="/privacy" className="font-medium text-blue-600 hover:underline">
+              {t('home.footer.privacy')}
+            </Link>
+            <Link href="/terms" className="font-medium text-blue-600 hover:underline">
+              {t('home.footer.terms')}
+            </Link>
+          </div>
         </div>
       </main>
       <Footer />
+      <BottomNav />
     </>
   );
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="mb-8 rounded-lg bg-white p-6 shadow-sm ring-1 ring-slate-200/70">
-      <h2 className="mb-3 text-xl font-semibold tracking-tight text-gray-900">{title}</h2>
-      <div className="space-y-3 text-[14.5px] leading-[1.7] text-gray-700">{children}</div>
+    <section className="rounded-lg bg-white p-6 shadow-md">
+      <h2 className="mb-3 text-xl font-semibold text-gray-800">{title}</h2>
+      <div>{children}</div>
     </section>
   );
 }

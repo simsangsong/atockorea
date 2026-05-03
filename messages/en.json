@@ -268,13 +268,62 @@
   },
   "mypage": {
     "title": "My Page",
-    "dashboard": "Dashboard",
+    "dashboard": {
+      "errorBanner": "We couldn't load some of your dashboard data",
+      "retry": "Retry",
+      "pendingReviewsTitle": "Reviews to write",
+      "pendingReviewsEmpty": "No reviews waiting",
+      "nextTripTitle": "Next trip",
+      "nextTripCta": "View details",
+      "nextTripEmpty": "No upcoming tours",
+      "nextTripBrowse": "Browse tours"
+    },
     "myBookings": "My Bookings",
     "wishlist": "Wishlist",
-    "reviews": "Reviews",
+    "reviews": {
+      "write": {
+        "title": "Write a review",
+        "subtitle": "Share your experience with {tour}",
+        "ratingLabel": "Rating",
+        "ratingRequired": "Please select a rating",
+        "ratingSrLabel": "{value} stars",
+        "titleLabel": "Review title (optional)",
+        "titlePlaceholder": "Give your review a title",
+        "commentLabel": "Your review",
+        "commentPlaceholder": "Share your experience...",
+        "commentRequired": "Please write a review",
+        "commentCount": "{count} characters",
+        "photosLabel": "Photos (optional)",
+        "photosUploadFailed": "Failed to upload photos",
+        "cancel": "Cancel",
+        "submit": "Submit review",
+        "submitting": "Submitting...",
+        "signInToUpload": "Please sign in to upload images",
+        "signInToSubmit": "Please sign in to write a review",
+        "windowNotOpen": "Reviews open at 1:00 PM KST on the tour day",
+        "editTitle": "Edit review",
+        "updateSubmit": "Update review",
+        "genericError": "We couldn't process your review"
+      },
+      "cardEdit": "Edit",
+      "cardDelete": "Delete",
+      "cardMenu": "Open review menu",
+      "deleteConfirmTitle": "Delete this review?",
+      "deleteConfirmDescription": "This action cannot be undone.",
+      "deleteConfirmCta": "Delete"
+    },
     "history": "History",
     "upcoming": "Upcoming",
-    "settings": "Settings",
+    "settings": {
+      "savedBadge": "Saved",
+      "connectedAccountsTitle": "Connected accounts",
+      "connectedAccountsEmpty": "No external accounts connected",
+      "dangerZoneTitle": "Danger zone",
+      "dangerZoneDescription": "Account deletion is coming soon. Please contact customer support for urgent requests.",
+      "deleteAccount": "Delete account",
+      "avatarUploadLabel": "Change profile photo",
+      "avatarRemove": "Use default image"
+    },
     "signOut": "Sign Out",
     "backToMyPage": "Back to My Page",
     "upcomingTours": "Upcoming Tours",
@@ -379,58 +428,6 @@
       "dayCountdownTomorrow": "Tomorrow",
       "dayCountdownPast": "Past",
       "dayCountdownFuture": "D-{days}"
-    },
-    "reviews": {
-      "write": {
-        "title": "Write a review",
-        "subtitle": "Share your experience with {tour}",
-        "ratingLabel": "Rating",
-        "ratingRequired": "Please select a rating",
-        "ratingSrLabel": "{value} stars",
-        "titleLabel": "Review title (optional)",
-        "titlePlaceholder": "Give your review a title",
-        "commentLabel": "Your review",
-        "commentPlaceholder": "Share your experience...",
-        "commentRequired": "Please write a review",
-        "commentCount": "{count} characters",
-        "photosLabel": "Photos (optional)",
-        "photosUploadFailed": "Failed to upload photos",
-        "cancel": "Cancel",
-        "submit": "Submit review",
-        "submitting": "Submitting...",
-        "signInToUpload": "Please sign in to upload images",
-        "signInToSubmit": "Please sign in to write a review",
-        "windowNotOpen": "Reviews open at 1:00 PM KST on the tour day",
-        "editTitle": "Edit review",
-        "updateSubmit": "Update review",
-        "genericError": "We couldn't process your review"
-      },
-      "cardEdit": "Edit",
-      "cardDelete": "Delete",
-      "cardMenu": "Open review menu",
-      "deleteConfirmTitle": "Delete this review?",
-      "deleteConfirmDescription": "This action cannot be undone.",
-      "deleteConfirmCta": "Delete"
-    },
-    "dashboard": {
-      "errorBanner": "We couldn't load some of your dashboard data",
-      "retry": "Retry",
-      "pendingReviewsTitle": "Reviews to write",
-      "pendingReviewsEmpty": "No reviews waiting",
-      "nextTripTitle": "Next trip",
-      "nextTripCta": "View details",
-      "nextTripEmpty": "No upcoming tours",
-      "nextTripBrowse": "Browse tours"
-    },
-    "settings": {
-      "savedBadge": "Saved",
-      "connectedAccountsTitle": "Connected accounts",
-      "connectedAccountsEmpty": "No external accounts connected",
-      "dangerZoneTitle": "Danger zone",
-      "dangerZoneDescription": "Account deletion is coming soon. Please contact customer support for urgent requests.",
-      "deleteAccount": "Delete account",
-      "avatarUploadLabel": "Change profile photo",
-      "avatarRemove": "Use default image"
     },
     "landing": {
       "greetingMorning": "Good morning, {name}",
@@ -1897,7 +1894,51 @@
       "li4": "Address: 302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do, Republic of Korea",
       "p2": "For purposes of the Republic of Korea's Personal Information Protection Act, the above contact serves as the point of contact for personal information-related inquiries. We will respond to legitimate requests in accordance with applicable law."
     },
-    "backToLegal": "Back to Legal"
+    "backToLegal": "Back to Legal",
+    "googleApi": {
+      "title": "15. Google API Services User Data — Specific Disclosures",
+      "intro": "This section describes how our application accesses, uses, stores, and protects information received from Google APIs when you choose to sign in with Google. AtoC's use of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.",
+      "s1": {
+        "title": "15.1 Data Accessed",
+        "p1": "We request only the minimum scopes required to operate the sign-in feature:",
+        "li1": "openid — to authenticate the user via Google's OpenID Connect.",
+        "li2": "profile — to read your name, profile picture URL, and locale, used to personalize your account.",
+        "li3": "email — to read your primary email address, used as the unique identifier of your account and for transactional booking communication.",
+        "p2": "We do NOT request access to Gmail content, Google Calendar, Google Drive, Google Contacts, Google Photos, YouTube, or any other restricted scope. We do not request offline access or refresh tokens beyond the active session."
+      },
+      "s2": {
+        "title": "15.2 How We Use Google User Data",
+        "p1": "Google user data is used solely to operate user-facing features you have requested:",
+        "li1": "To create and authenticate your AtoC Korea account (a single AtoC account is keyed to the Google email address you sign in with).",
+        "li2": "To pre-fill your name and profile photo on your account page so you can recognize the signed-in identity.",
+        "li3": "To send transactional booking communications (booking confirmation, pickup time, cancellation receipt) to the email address provided by Google.",
+        "li4": "To detect duplicate accounts and to support customer-service requests you initiate.",
+        "p2": "We do NOT use Google user data for advertising, do not sell or rent it, do not transfer it to third parties for advertising, and do not use it to train, evaluate, or improve generalized AI / ML models. Human review of Google user data is limited to (a) explicit user consent, (b) security investigations, (c) legal compliance, or (d) as needed to provide a user-facing feature you requested. These uses comply with the Google API Services User Data Policy, including the Limited Use requirements."
+      },
+      "s3": {
+        "title": "15.3 How We Share Google User Data",
+        "li1": "Service providers (sub-processors). We share the minimum data needed with the following processors operating on our behalf under contractual data-protection obligations: Supabase, Inc. (managed PostgreSQL hosting and authentication), Vercel Inc. (web hosting), Stripe, Inc. (payments), Resend, Inc. or comparable transactional-email providers (delivery of booking emails). Each processor only receives the fields required for its function.",
+        "li2": "No sale, no advertising sharing. We do not sell Google user data and do not share it with advertisers, ad networks, data brokers, or analytics providers that use it for cross-context behavioral advertising.",
+        "li3": "Legal disclosure. We may disclose Google user data when required by law, valid legal process (subpoena, court order), or to protect the rights, safety, or property of AtoC, our users, or the public.",
+        "li4": "Corporate transactions. If we are involved in a merger, acquisition, financing, or asset sale, Google user data may be transferred subject to the acquirer's commitment to honor this Privacy Policy."
+      },
+      "s4": {
+        "title": "15.4 Storage and Protection",
+        "li1": "Account records (including the email and profile fields received from Google) are stored in encrypted PostgreSQL databases managed by Supabase, hosted in the Asia-Pacific region (Seoul / Singapore) with daily automated backups.",
+        "li2": "Data in transit is protected with TLS 1.2 or higher. Data at rest is encrypted at the disk-volume level (AES-256). Access to production data is restricted to a small number of named engineers under role-based access control with audit logging.",
+        "li3": "Authentication tokens issued by Google are kept only for the duration of your active session and are revoked when you sign out, change your password, or delete your account. We do not persist long-lived Google OAuth refresh tokens.",
+        "li4": "Database row-level security policies prevent any user from reading another user's personal data. Application secrets and API keys are stored in encrypted environment variables, never in code or version control.",
+        "li5": "We perform regular security reviews, dependency vulnerability scans, and incident-response drills. We will notify affected users and the relevant data-protection authority of any qualifying personal-data breach within 72 hours of becoming aware, as required by applicable law."
+      },
+      "s5": {
+        "title": "15.5 Retention and Deletion",
+        "li1": "Active accounts. We retain your account data (including the Google email and profile fields) for as long as your account is active.",
+        "li2": "Inactive accounts. Accounts with no sign-in activity for 24 consecutive months are automatically scheduled for deletion after a 30-day grace-period notice sent to the email on file.",
+        "li3": "Booking records. Confirmed booking records are retained for 5 years from the tour date to comply with Korean commercial-law and tax recordkeeping obligations, after which they are permanently deleted or irreversibly anonymized.",
+        "li4": "User-initiated deletion. You may delete your account and the associated Google user data at any time from My Page → Settings → Delete Account, or by emailing",
+        "li5": "Revoking Google access. You may also revoke our application's access to your Google account at any time at"
+      }
+    }
   },
   "cookiePolicy": {
     "title": "Cookie Policy",

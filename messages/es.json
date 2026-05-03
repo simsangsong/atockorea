@@ -1520,7 +1520,51 @@
       "li4": "Dirección: 302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do, República de Corea",
       "p2": "A efectos de la Ley de Protección de Información Personal de la República de Corea, el contacto anterior sirve como punto de contacto para consultas relacionadas con información personal. Responderemos a las solicitudes legítimas de acuerdo con la ley aplicable."
     },
-    "backToLegal": "Volver a Legal"
+    "backToLegal": "Volver a Legal",
+    "googleApi": {
+      "title": "15. Datos de Usuario de los Servicios de la API de Google — Divulgaciones específicas",
+      "intro": "Esta sección describe cómo nuestra aplicación accede, utiliza, almacena y protege la información recibida de las API de Google cuando usted opta por iniciar sesión con Google. El uso por parte de AtoC de la información recibida de las API de Google se ajusta a la Política de Datos de Usuario de los Servicios de la API de Google, incluyendo los requisitos de Uso Limitado.",
+      "s1": {
+        "title": "15.1 Datos a los que se accede",
+        "p1": "Solicitamos únicamente los ámbitos mínimos necesarios para operar la función de inicio de sesión:",
+        "li1": "openid — para autenticar al usuario mediante Google OpenID Connect.",
+        "li2": "profile — para leer su nombre, URL de la foto de perfil e idioma, utilizado para personalizar su cuenta.",
+        "li3": "email — para leer su dirección de correo principal, utilizada como identificador único de su cuenta y para la comunicación transaccional de reservas.",
+        "p2": "NO solicitamos acceso al contenido de Gmail, Google Calendar, Google Drive, Google Contacts, Google Photos, YouTube ni a ningún otro ámbito restringido. Tampoco solicitamos acceso sin conexión ni tokens de actualización más allá de la sesión activa."
+      },
+      "s2": {
+        "title": "15.2 Cómo usamos los datos de usuario de Google",
+        "p1": "Los datos de usuario de Google se utilizan únicamente para operar funciones orientadas al usuario que usted ha solicitado:",
+        "li1": "Para crear y autenticar su cuenta de AtoC Korea (una única cuenta de AtoC se asocia a la dirección de correo de Google con la que inicia sesión).",
+        "li2": "Para precargar su nombre y foto de perfil en la página de su cuenta para que pueda reconocer la identidad con la que está conectado.",
+        "li3": "Para enviar comunicaciones transaccionales de reserva (confirmación, hora de recogida, recibo de cancelación) a la dirección de correo proporcionada por Google.",
+        "li4": "Para detectar cuentas duplicadas y atender solicitudes de servicio al cliente que usted inicie.",
+        "p2": "NO utilizamos los datos de usuario de Google para publicidad, no los vendemos ni alquilamos, no los transferimos a terceros con fines publicitarios y no los utilizamos para entrenar, evaluar o mejorar modelos generales de IA / ML. La revisión humana de los datos de usuario de Google se limita a (a) consentimiento explícito del usuario, (b) investigaciones de seguridad, (c) cumplimiento legal, o (d) cuando sea necesario para proporcionar una función orientada al usuario que usted haya solicitado. Estos usos cumplen con la Política de Datos de Usuario de los Servicios de la API de Google, incluidos los requisitos de Uso Limitado."
+      },
+      "s3": {
+        "title": "15.3 Cómo compartimos los datos de usuario de Google",
+        "li1": "Proveedores de servicios (subprocesadores). Compartimos los datos mínimos necesarios con los siguientes procesadores que operan en nuestro nombre bajo obligaciones contractuales de protección de datos: Supabase, Inc. (alojamiento de PostgreSQL gestionado y autenticación), Vercel Inc. (alojamiento web), Stripe, Inc. (pagos), Resend, Inc. o proveedores comparables de correo transaccional (envío de correos de reserva). Cada procesador solo recibe los campos necesarios para su función.",
+        "li2": "Sin venta, sin compartir publicitario. No vendemos datos de usuario de Google ni los compartimos con anunciantes, redes publicitarias, intermediarios de datos o proveedores de análisis que los utilicen para publicidad conductual entre contextos.",
+        "li3": "Divulgación legal. Podemos divulgar datos de usuario de Google cuando lo exija la ley, un proceso legal válido (citación, orden judicial), o para proteger los derechos, la seguridad o la propiedad de AtoC, nuestros usuarios o el público.",
+        "li4": "Operaciones corporativas. Si participamos en una fusión, adquisición, financiación o venta de activos, los datos de usuario de Google podrán transferirse con el compromiso del adquirente de respetar esta Política de Privacidad."
+      },
+      "s4": {
+        "title": "15.4 Almacenamiento y protección",
+        "li1": "Los registros de cuenta (incluidos el correo y los campos de perfil recibidos de Google) se almacenan en bases de datos PostgreSQL cifradas gestionadas por Supabase, alojadas en la región Asia-Pacífico (Seúl / Singapur), con copias de seguridad automáticas diarias.",
+        "li2": "Los datos en tránsito se protegen con TLS 1.2 o superior. Los datos en reposo se cifran a nivel de volumen de disco (AES-256). El acceso a los datos de producción está restringido a un pequeño número de ingenieros designados bajo control de acceso basado en roles con registro de auditoría.",
+        "li3": "Los tokens de autenticación emitidos por Google se conservan únicamente durante la sesión activa y se revocan al cerrar sesión, cambiar la contraseña o eliminar la cuenta. No conservamos tokens de actualización OAuth de Google de larga duración.",
+        "li4": "Las políticas de seguridad a nivel de fila de la base de datos impiden que cualquier usuario lea los datos personales de otro usuario. Los secretos de aplicación y las claves de API se almacenan en variables de entorno cifradas, nunca en código ni en control de versiones.",
+        "li5": "Realizamos revisiones de seguridad periódicas, escaneos de vulnerabilidades de dependencias y simulacros de respuesta a incidentes. Notificaremos a los usuarios afectados y a la autoridad de protección de datos correspondiente sobre cualquier brecha cualificada de datos personales en un plazo de 72 horas desde su detección, según lo exija la ley aplicable."
+      },
+      "s5": {
+        "title": "15.5 Conservación y eliminación",
+        "li1": "Cuentas activas. Conservamos los datos de su cuenta (incluidos el correo y los campos de perfil de Google) durante todo el tiempo que su cuenta esté activa.",
+        "li2": "Cuentas inactivas. Las cuentas sin actividad de inicio de sesión durante 24 meses consecutivos se programan automáticamente para su eliminación tras un aviso de período de gracia de 30 días enviado al correo registrado.",
+        "li3": "Registros de reserva. Los registros de reserva confirmados se conservan durante 5 años desde la fecha del tour para cumplir con las obligaciones de conservación de registros del derecho mercantil y fiscal coreano, tras lo cual se eliminan permanentemente o se anonimizan irreversiblemente.",
+        "li4": "Eliminación iniciada por el usuario. Puede eliminar su cuenta y los datos de usuario de Google asociados en cualquier momento desde Mi Página → Configuración → Eliminar cuenta, o enviando un correo a:",
+        "li5": "Revocar el acceso de Google. También puede revocar el acceso de nuestra aplicación a su cuenta de Google en cualquier momento en:"
+      }
+    }
   },
   "cookiePolicy": {
     "title": "Política de Cookies",
