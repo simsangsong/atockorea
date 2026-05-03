@@ -93,34 +93,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "≈ 9 hours, ship-to-ship (calibrated to your cruise schedule)"
+      "icon": "camera",
+      "label": "Photo Value",
+      "value": "High",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "Group",
-      "value": "Small group, shared van with other cruise passengers (typically up to ≈10)"
-    },
-    {
-      "icon": "ship",
-      "label": "Pickup",
-      "value": "Incheon Port International Passenger Terminal (Songdo) — arrival hall"
+      "icon": "mountain",
+      "label": "Scenic",
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Moderate — ≈4 km. Palace courtyards, Bukchon lanes, Gwangjang market alleys, Insadong street."
+      "value": "High",
+      "level": 4
     },
     {
-      "icon": "ticket",
-      "label": "Includes",
-      "value": "Vehicle, certified guide. Excludes: Gyeongbokgung admission (₩3,000, free with hanbok), lunch (≈₩10,000–₩20,000), tips."
+      "icon": "cloud-rain",
+      "label": "Rain Safety",
+      "value": "Moderate",
+      "level": 3
     },
     {
-      "icon": "map-pin",
-      "label": "Region",
-      "value": "Seoul (from Incheon cruise terminal)"
+      "icon": "users",
+      "label": "Family Fit",
+      "value": "Good",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Balance",
+      "value": "Balanced",
+      "level": 4
     }
   ],
   "galleryItems": [

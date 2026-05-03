@@ -1,0 +1,2095 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "incheon-seoul-private-car-shore-excursion-cruise",
+  "locale": "es",
+  "product_id": "incheon-seoul-private-car-shore-excursion-cruise",
+  "seo": {
+    "pageTitle": "Incheon to Seoul Private Cruise Shore Excursion | AtoC Korea",
+    "metaDescription": "Private 8-hour shore excursion from Incheon Cruise Terminal to Seoul: Gyeongbokgung, Bukchon, Insadong, N Seoul Tower, Myeongdong. Sailaway-time guarantee.",
+    "primaryKeywords": [
+      "Incheon cruise shore excursion",
+      "Seoul private tour from cruise",
+      "Incheon port to Seoul private car",
+      "cruise shore tour Korea"
+    ],
+    "ogImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+    "title": "Crucero Incheon→Seúl Privado: Palacio y Torre N | AtoC",
+    "description": "Incheon cruise private shore tour: Gyeongbokgung Palace → Bukchon + Insadong → N Seoul Tower (optional) → Myeongdong. Fully private vehicle, customizable route, ship-return guarantee. 8 hours."
+  },
+  "catalog_card": {
+    "thumbnail": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+    "title": "Incheon to Seoul Private Car Shore Excursion for Cruise Guests",
+    "priceLabel": "Price varies by vehicle / group size — confirm at booking",
+    "shortCardDescription": "Excursión privada en coche desde el terminal de cruceros de Incheon a Seúl: Palacio Gyeongbokgung (Cambio de Guardia) → Bukchon + Insadong → almuerzo libre → Torre N de Seúl (observatorio 479 m) → Myeongdong o Templo Jogyesa (a elegir). Más paradas que la furgoneta compartida. Regreso garantizado según la hora de salida.",
+    "tags": [
+      "private",
+      "cruise",
+      "shore_excursion",
+      "seoul_highlights",
+      "customizable",
+      "guaranteed_return"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "slug": "incheon-seoul-private-car-shore-excursion-cruise",
+    "subtitle": "Private car charter for cruise passengers — gangway pickup at Incheon, fully customizable Seoul day, terminal drop-off with 60-minute sailaway buffer.",
+    "region": "Seoul (from Incheon cruise terminal)",
+    "duration": "8 hours",
+    "stopsCount": 7,
+    "badges": [
+      "Private",
+      "Cruise",
+      "Shore excursion",
+      "Seoul highlights",
+      "Customizable",
+      "Guaranteed return"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800"
+  },
+  "headlineLine1": "Cruise port to palace, custom-built around your sail-away time —",
+  "headlineLine2": "adaptado a la hora de salida de su barco",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "group",
+    "priceSource": "getyourguide_t1249797",
+    "priceNote": "Price not yet set. Private tour pricing varies by vehicle size (sedan 1–3 pax, van 4–6 pax, large van 7–9 pax). Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+    "discountPercent": 10
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+    "imagePosition": "center 35%",
+    "tagline": "El Seúl más completo en escala de crucero — Palacio Real, Torre N y Myeongdong en coche privado",
+    "pills": [
+      "private",
+      "cruise",
+      "shore_excursion"
+    ],
+    "meta": {
+      "duration": "≈ 8 hours (pickup ≈ 09:30 from gangway, terminal drop-off ≈ 17:30; calibrated to your ship)",
+      "region": "Seoul (from Incheon cruise terminal)",
+      "stops": "7 stops",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Descripción"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerario"
+    },
+    {
+      "id": "details",
+      "label": "Información práctica"
+    },
+    {
+      "id": "faq",
+      "label": "Preguntas frecuentes"
+    },
+    {
+      "id": "reviews",
+      "label": "Opiniones"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "Duration",
+      "value": "8 hours"
+    },
+    {
+      "icon": "camera",
+      "label": "Photo Value",
+      "value": "Very High"
+    },
+    {
+      "icon": "mountain",
+      "label": "Scenic",
+      "value": "High"
+    },
+    {
+      "icon": "footprints",
+      "label": "Walking",
+      "value": "Moderate"
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Rain Safety",
+      "value": "Moderate"
+    },
+    {
+      "icon": "users",
+      "label": "Family Fit",
+      "value": "Moderate"
+    },
+    {
+      "icon": "scale",
+      "label": "Pace",
+      "value": "Balanced"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+      "alt": "Gangway-side pickup at Incheon Cruise Terminal arrival hall",
+      "caption": "Gyeongbokgung Palace's main throne hall",
+      "location": "Incheon Cruise Terminal",
+      "atmosphere": "Paisaje de Gyeonggi: naturaleza y cultura al norte de Seúl"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+      "alt": "Gyeongbokgung Palace throne hall and royal guard ceremony",
+      "caption": "Royal guard changing ceremony at Gyeongbokgung",
+      "location": "Gyeongbokgung, Seoul",
+      "atmosphere": "Poder joseonés: el Palacio Real con la guardia"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+      "alt": "Stone walls and tiled hanok roofs along Bukchon ridge",
+      "caption": "Bukchon Hanok Village's traditional rooflines",
+      "location": "Bukchon Hanok Village, Seoul",
+      "atmosphere": "Arquitectura joseonesa en cascada"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+      "alt": "Panoramic view of Seoul from Namsan with N Seoul Tower above",
+      "caption": "Jogyesa Temple's main hall and lantern displays",
+      "location": "N Seoul Tower (Namsan)",
+      "atmosphere": "Paisaje de Gyeonggi: naturaleza y cultura al norte de Seúl"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+      "alt": "Lit street-food stalls along Myeongdong shopping street at dusk",
+      "caption": "N Seoul Tower at sunset, viewed from Namsan",
+      "location": "Myeongdong, Seoul",
+      "atmosphere": "K-beauty y comida callejera de Seúl"
+    },
+    {
+      "id": "g6",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+      "alt": "Private car waiting at Incheon Cruise Terminal drop-off zone",
+      "caption": "Myeongdong street food and shopping",
+      "location": "Incheon Cruise Terminal",
+      "atmosphere": "Paisaje de Gyeonggi: naturaleza y cultura al norte de Seúl"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "≈ 09:30",
+      "duration": "30 min",
+      "name": "Cruise terminal gangway pickup",
+      "category": "Departure",
+      "description": "Private gangway pickup at Incheon Cruise Terminal — your English-speaking driver-guide meets you at the terminal entrance with a name placard, and your private vehicle (sedan or SUV) is reserved exclusively for your group with no other passengers. After clearing Korean immigration (~30 min budget), the day's start time is FLEXIBLE around your specific ship arrival/disembarkation timing — communicate ship details to the operator at booking, and the driver-guide adjusts the entire 8-hour window accordingly, including a guaranteed return buffer before your ship's all-aboard time. The 60-90 min drive to central Seoul travels via the Yeongjong Bridge and Incheon-Seoul Expressway. Beyond the cruise terminal itself, the Songdo International Business District (opened 2003 as Korea's first Free Economic Zone) is a fully-planned 'smart city' with **Songdo Central Park** (a saltwater canal park 5 minutes by car) as a viable weather-fallback short-detour option for guests whose Seoul time gets compressed by delayed disembarkation. The private charter format gives the driver-guide flexibility to add or skip Songdo Central Park based on real-time gangway timing. **As of January 1, 2026**, South Korea requires a **mandatory digital e-Arrival Card** for visitors without K-ETA exemption — completing K-ETA registration before sailing (USD 8, 3-year validity) eliminates the form-fill step at the gangway. The terminal is **7 km from the nearest Incheon Subway Line 1 station** ('International Business District Station') — not walkable, so private charter eliminates the only practical alternative (₩10,000 taxi to metro + ₩90-minute Subway Line 1 + Seoul Subway transfer).",
+      "highlights": [
+        "Private gangway pickup at Incheon Cruise Terminal",
+        "English-speaking driver-guide; private sedan or SUV (your group only)",
+        "60-90 min drive to central Seoul via Yeongjong Bridge + Incheon-Seoul Expressway",
+        "Flexible start time built around your ship's specific arrival/disembarkation",
+        "**South Korea's largest cruise terminal** — 2-story 7,364 m² building (1F arrivals / 2F departures); USD 580M total project investment; opened **April 25, 2019**",
+        "**Berths Royal Caribbean Oasis-Class** ships (228,000 GT, 6,370 passengers + 2,400 crew) — also handles MSC Bellissima, Diamond Princess, Spectrum of the Seas (2026/27 season)",
+        "**Private gangway pickup**: driver-guide commits to your group only — no shared-passenger waits at gangway, departure timed to your group's disembarkation pace",
+        "**200-vehicle parking lot** including 156 large-bus capacity; private charter typically uses sedan / minivan / SUV slots near terminal exit",
+        "**Mandatory digital e-Arrival Card since January 1, 2026** for visitors without K-ETA exemption — recommend K-ETA registration before sailing (USD 8, 3-year validity)"
+      ],
+      "timeUsed": [
+        "Disembark cruise ship and clear Korean immigration (~30 min)",
+        "Meet driver-guide at terminal curbside with name placard",
+        "Begin private 60-90 min drive to first Seoul stop",
+        "Pre-departure check: K-ETA / e-Arrival Card status verification (~5 min)",
+        "Optional Songdo Central Park weather-fallback detour (~15 min if applicable)"
+      ],
+      "whyOnRoute": "Private gangway pickup is the day's foundational guarantee — the driver-guide is committed to your group only, the ship all-aboard time is built into the schedule, and the language-barrier challenge of taxis and public transit is eliminated. For cruise guests prioritizing flexibility over cost, private charter eliminates the shared-van waiting window at the gangway, the fixed-departure pickup time, and the inflexibility of itinerary changes mid-day. The driver-guide can add or remove stops based on real-time interest (e.g. swap Myeongdong for Hongdae if your group leans young-traveler) and the all-aboard time is built into a 90-minute reboarding buffer.",
+      "visitBasics": {},
+      "convenience": {},
+      "smartNotes": {
+        "tip": "Provide ship name + scheduled arrival + all-aboard time at booking. The driver-guide will arrive 30-60 min after your scheduled docking to allow immigration clearance. Cruise terminal Korean address: 인천항 크루즈터미널 (연수구 국제항만대로 438)."
+      },
+      "_poi_meta": {
+        "poi_key": "incheon_cruise_terminal",
+        "verified": true,
+        "match": "operational_pickup",
+        "kb_version": "1.26",
+        "verified_date": "2026-04-29",
+        "note": "Operational pickup stop; references KB POI for terminal facts",
+        "sources": [
+          "Incheon Port Authority (incheonport.kr)",
+          "Korea Tourism Organization (VisitKorea — Incheon Cruise Terminal listing)",
+          "Korea Herald (April 26, 2019 opening coverage)",
+          "Visit Korea — Incheon Tourist Attraction official",
+          "Wikipedia (Incheon Port + Songdo International Business District)"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "≈ 10:30",
+      "duration": "75 min",
+      "name": "Gyeongbokgung Palace + Royal Guard ceremony",
+      "category": "Joseon Royal Palace",
+      "description": "Gyeongbokgung — 'Palace Greatly Blessed by Heaven' — was the main royal palace of the Joseon Dynasty (1392-1910), built 1395 in the 3rd year of King Taejo's reign as the heart of the new capital Hanyang. It is the largest of the Five Grand Palaces and once contained 330+ buildings serviced by 3,000 staff. Burned to the ground during the 1592 Imjin War, the palace lay in ruins for 273 years until King Gojong rebuilt it in 1867; the Japanese colonial administration demolished much of the rebuilt complex 1910-1945, and restoration begun in 1990 continues today. Three centerpieces define the visit: **Geunjeongjeon Throne Hall** — the largest wooden building in Korea, where kings held court and received foreign envoys; **Gyeonghoeru Pavilion** — a two-story banquet pavilion on 48 stone pillars over a lotus pond; and **Hyangwonjeong Pavilion** — Korea's most photographed garden scene, a hexagonal pavilion on a small island reached by a covered bridge. The **Royal Guard Changing Ceremony** at Heungnyemun Gate (10:00 + 14:00 daily, ~20 min) recreates the Joseon-era palace gate-protection ritual — guards in vivid blue, red, and yellow uniforms with traditional drums and horns. Your driver-guide times arrival for the 10:00 ceremony when feasible. **Tuesday note**: Gyeongbokgung is CLOSED ON TUESDAYS — when this falls, the tour substitutes Changdeokgung Palace (UNESCO World Heritage 1997, closed Mondays instead) — the only palace listed by UNESCO for its 'outstanding example of Far Eastern palace architecture and garden design integrated into and harmonized with the natural setting.'",
+      "highlights": [
+        "Joseon Dynasty's main palace — built 1395 as the heart of new Seoul",
+        "Geunjeongjeon Throne Hall — largest wooden building in Korea",
+        "Gyeonghoeru Pavilion — 48-pillar banquet pavilion on lotus pond",
+        "Hyangwonjeong Pavilion — Korea's most photographed garden scene",
+        "Royal Guard Changing Ceremony at Heungnyemun Gate (10:00 + 14:00 daily)",
+        "**Closed Tuesdays** — substitute Changdeokgung Palace (UNESCO World Heritage 1997)",
+        "FREE admission for hanbok-wearers",
+        "**Royal Guard Changing Ceremony re-enacted since 1996** based on Cultural Heritage Administration historical research — went on hiatus after 2008 Sungnyemun arson incident, resumed 2016 (with the 70+ performer authentic-armor format used today)",
+        "**3 additional ceremonies between main 10:00 + 14:00 changes**: Gwanghwamun Gate Guard Ceremony at 11:00 + 13:00; Public Training of Royal Guard Soldiers at 09:35 + 13:35 — total 6 daily reenactments (except Tuesdays)"
+      ],
+      "timeUsed": [
+        "Driver-guide drop-off at Gwanghwamun Square (~5 min)",
+        "Royal Guard Changing Ceremony if 10:00 timing (~20 min)",
+        "Throne Halls + Gyeonghoeru + Hyangwonjeong walk (~35-40 min)",
+        "Photo time + reassembly at vehicle",
+        "Optional National Folk Museum or National Palace Museum extension (within grounds, free) (~15 min if interested)"
+      ],
+      "whyOnRoute": "Gyeongbokgung is Seoul's #1 must-see and the natural opener for a private cruise excursion. The flexible private-tour pace allows lingering at Royal Guard ceremony and pavilion photography that group bus tours rush. For cruise guests on private charter, the 90-min Gyeongbokgung dwell adapts to your group's pace — historians can extend at the throne hall while photo-takers move ahead to Gyeonghoeru Pavilion, with the driver-guide flexing the schedule by ±15 min. Picked over Deoksugung (Western-influenced, smaller) because the changing-of-the-guard pageantry, scale of the throne-hall complex, and photogenic Gyeonghoeru/Hyangwonjeong pavilions deliver a single 90-min visit that explains 500 years of Joseon court life in concrete visual terms — essential for cruise passengers with one day in Korea. Tuesday-arrival groups get redirected to Changdeokgung (UNESCO World Heritage 1997).",
+      "visitBasics": {
+        "hours": "Mar-May, Sep-Oct: 09:00-18:00; Jun-Aug: 09:00-18:30; Nov-Feb: 09:00-17:00 (last admission 1 hr before close)",
+        "closed": "**Tuesdays** (substitute Changdeokgung)",
+        "admission": "Adult 3,000 KRW / Child 1,500 KRW; FREE for hanbok-wearers",
+        "walking": "Moderate — flat extensive grounds; ~1.5-2 km of walking through main complex"
+      },
+      "convenience": {
+        "restroom": "At main entrance, mid-grounds, rear pavilion area",
+        "parking": "Driver-guide drops at Gwanghwamun and parks separately"
+      },
+      "smartNotes": {
+        "photo": "Gwanghwamun gate at sunrise / golden hour. Royal Guard Changing Ceremony 10:00 + 14:00. Gyeonghoeru reflected in lotus pond. Hyangwonjeong covered bridge in spring (cherry blossoms) or autumn (foliage).",
+        "facilities": "National Folk Museum + National Palace Museum INSIDE Gyeongbokgung grounds (free admission). Cafes, restrooms, gift shop near entrance.",
+        "tip": "Time arrival for 10:00 Changing of the Guard. Skip Tuesday — Changdeokgung substitute. If your group is interested in palace architecture beyond surface-level photos, ask the driver-guide for a 30-min walking commentary on Joseon hierarchy and royal etiquette."
+      },
+      "_poi_meta": {
+        "poi_key": "gyeongbokgung_palace",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.26",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Cultural Heritage Administration of Korea (Royal Palaces & Tombs Center)",
+          "Visit Seoul official (english.visitseoul.net)",
+          "Korea Tourism Organization (VisitKorea)",
+          "Korea.net (official ROK government portal)",
+          "Wikipedia (Gyeongbokgung Palace)"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 12:00",
+      "duration": "75 min",
+      "name": "Bukchon Hanok Village + Insadong",
+      "category": "Hanok Heritage Village + Crafts Street",
+      "description": "Bukchon ('Northern Village') is a 600-year-old hanok (traditional Korean tile-roofed house) residential district nestled between Gyeongbokgung and Changdeokgung Palaces — historically home to high-ranking Joseon Dynasty officials and aristocrats — and today Seoul's largest concentration of preserved hanok homes (~900 traditional houses). The signature route walks the **Bukchon 8 Gyeong (8 Famous Views)** with the iconic #6 viewpoint at Gye-dong-gil framing cascading hanok rooftops with N Seoul Tower in the distance — Seoul's most-photographed traditional architecture scene. Bukchon is a LIVING village (not a museum) — residents have publicly requested respectful behavior including quiet hours and limited photography of doorways. From Bukchon's southern edge, **Insadong** (인사동) — Seoul's premier traditional crafts and cultural street — is a 5-10 minute walk. Insadong combines the 4-story spiral **Ssamzigil** complex (70+ craft shops, galleries, cafes, rooftop terrace), traditional teahouses (Mokyeon, Suyeonsanbang), hanji (mulberry paper) workshops, ceramic galleries showing Goryeo celadon and Joseon white porcelain, and Korean souvenir vendors. Pedestrian-only on weekends (Sat-Sun). Your driver-guide's flexibility lets you spend more time wherever the group's interest pulls — Bukchon photography vs. Insadong shopping is a natural in-the-moment choice. The village's preservation is overseen by **Jongno-gu District Office's Bukchon Hanok Village preservation program** — strict zoning rules limit commercial signage, renovation must use traditional materials (handmade hanji paper screens, wooden frames, tile roofs), and resident-quiet hours 22:00–10:00 are enforced by signage and community wardens during peak season.",
+      "highlights": [
+        "Bukchon 8 Gyeong (8 Famous Views) — iconic hanok-roofline + N Seoul Tower at #6",
+        "~900 preserved hanok homes — Seoul's largest traditional residential district",
+        "Insadong Ssamzigil 4-story spiral cultural complex (70+ shops + rooftop terrace)",
+        "Traditional teahouses, hanji paper workshops, Goryeo celadon galleries",
+        "5-10 min walk between Bukchon and Insadong",
+        "Pedestrian-only weekends (Sat-Sun)",
+        "**~600 years old** — historic district between Gyeongbokgung and Changdeokgung Palaces, originally home to Joseon Dynasty high-ranking officials and aristocracy",
+        "**Resident-quiet hours 22:00–10:00 enforced** — village is a LIVING residential community (not a museum); cultural respect protocol critical (no flash photography in alleys, voices down, no drones)",
+        "**Combination Royal Palaces Ticket ₩10,000 adult / ₩5,000 child** covers all 4 royal palaces + Jongmyo Shrine — 3-month validity; savings vs single tickets if pairing with private hanok-tour day"
+      ],
+      "timeUsed": [
+        "Driver-guide drop-off near Bukchon entrance (~5 min)",
+        "Bukchon 8 Views walk + photos (~30-40 min)",
+        "Walk south to Insadong (~5-10 min)",
+        "Insadong Ssamzigil + craft shopping (~30 min)",
+        "Reassembly at vehicle"
+      ],
+      "whyOnRoute": "Pairing Bukchon and Insadong in a single 75-min stop reflects the private-tour flexibility — your driver-guide drops at Bukchon's north end and picks up at Insadong's south end, eliminating backtracking. Picked over the Namsangol Hanok Village curated open-air museum because Bukchon's living-village authenticity plus Insadong's craft-shopping commercial appeal cover both 'traditional residential' and 'traditional crafts' narratives in one walk. The private-charter format means the driver-guide can drop at Bukchon's north end (Bukchongil Road) and pick up at the south end near Insadong, eliminating backtracking and saving ~10 min vs the bus-tour drop-and-return pattern.",
+      "visitBasics": {
+        "hours": "Bukchon 24/7 (residents request quiet 22:00-10:00); Insadong shops 10:00-22:00",
+        "closed": "Open year-round (some Insadong galleries closed Mondays)",
+        "admission": "Free; pay-as-you-go for purchases, teahouses, workshops",
+        "walking": "Moderate — Bukchon has cobbled, sloped alleys; Insadong is flat"
+      },
+      "convenience": {
+        "restroom": "Tourist Information Center at Bukchon entrance + Anguk Station Exit 6",
+        "parking": "Driver-guide handles parking separately"
+      },
+      "smartNotes": {
+        "photo": "Bukchon 8 Gyeong #6 viewpoint at Gye-dong-gil. Hanbok-wearers framed against tile-roof gables. Ssamzigil spiral interior + rooftop terrace. Korean wedding-color threads at hanbok-accessory shops.",
+        "facilities": "Tourist Information Centers, traditional teahouses, hanji workshops, ceramic galleries, multiple cafes throughout. Balwoo Gongyang (Michelin temple cuisine) at Jogyesa nearby.",
+        "tip": "Visit Bukchon before noon when residents are out + lanes are quietest. Insadong best on weekends when pedestrian-only. Best souvenirs: hanji paper crafts, traditional ink stamps (dojang), small ceramics, traditional tea sampler boxes. If interested in hanbok rental — shops cluster at Bukchon's southwestern edge, ~15,000-20,000 KRW for 4 hr."
+      },
+      "_poi_meta": {
+        "poi_key": "bukchon_hanok_village",
+        "verified": true,
+        "match": "multi_poi_bundle",
+        "kb_version": "1.26",
+        "verified_date": "2026-04-29",
+        "secondary_pois": [
+          "insadong"
+        ],
+        "note": "Combined Bukchon + Insadong stop reflecting the 5-10 min walk between them",
+        "sources": [
+          "Visit Seoul official (english.visitseoul.net)",
+          "Bukchon Traditional Culture Center",
+          "Jongno-gu District Office (Bukchon Hanok Village preservation program)",
+          "Korea Tourism Organization (VisitKorea)",
+          "Wikipedia (Bukchon Hanok Village)"
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "time": "≈ 13:30",
+      "duration": "60 min",
+      "name": "Lunch (your choice)",
+      "category": "Meal — Customizable",
+      "description": "Lunch is YOUR choice and timed flexibly around the day's pace — your driver-guide offers three vetted options matched to your group's preferences: **(1) Gwangjang Market food alley** — the working-class streetfood experience opened 1905 (Korea's first permanent traditional market), made world-famous by Anthony Bourdain's 'Parts Unknown.' Bindaetteok mung-bean pancakes (5,000-7,000 KRW), mayak gimbap, yukhoe raw beef tartare. CASH-ONLY at most stalls. **(2) Insadong traditional restaurant** — sit-down Korean cuisine in a hanok setting; hansik prix-fixe sets featuring banchan (side dishes), bibimbap, kimchi-jjigae stew. Mid-tier 15,000-25,000 KRW per person. **(3) Myeongdong Kyoja or Hadongkwan** — Korean institutions: Myeongdong Kyoja for handmade kalguksu (knife-cut noodles) and mandu since 1966; Hadongkwan for Seolleongtang (oxbone soup) since the 1930s. Mid-tier 12,000-20,000 KRW. **(4) Royal court cuisine at Korea House** — premium hanjeongsik (table d'hôte royal cuisine) in a hanok complex (recognized with three ribbons in the 2025 Blue Ribbon Survey); 60,000-120,000 KRW per person, requires 60-min commitment. Communicate dietary needs (vegetarian, halal, no spicy) at booking — driver-guide adjusts accordingly.",
+      "highlights": [
+        "Lunch venue YOUR choice — 4 vetted options (street food, traditional, institution, royal court)",
+        "Gwangjang Market: working-class streetfood paradise (Bourdain-famous)",
+        "Insadong hanok prix-fixe: mid-tier sit-down Korean (~15,000-25,000 KRW)",
+        "Myeongdong Kyoja / Hadongkwan: Korean dining institutions",
+        "Korea House: royal court cuisine premium experience (60,000-120,000 KRW)",
+        "Dietary needs accommodated at booking"
+      ],
+      "timeUsed": [
+        "Driver-guide drop-off at chosen venue",
+        "Meal (~45-50 min)",
+        "Reassembly at vehicle"
+      ],
+      "whyOnRoute": "Genuine lunch customization is the private-tour value driver — group bus tours commit to a single lunch venue, but private cruise passengers often have specific dietary needs or strong preferences (e.g., 'no streetfood' for some / 'authentic only' for others). The 4-option menu covers 95%+ of mainstream cruise-passenger preferences without forcing a single choice.",
+      "visitBasics": {
+        "hours": "Most options 11:00-15:00 lunch service",
+        "closed": "Varies by venue",
+        "admission": "Pay-as-you-go (12,000 — 120,000 KRW range depending on choice)",
+        "walking": "Easy — venue-dependent"
+      },
+      "convenience": {
+        "restroom": "Restaurant restrooms",
+        "parking": "Driver-guide handles parking separately"
+      },
+      "smartNotes": {
+        "tip": "Communicate dietary preferences (vegetarian, halal, no-spicy, gluten-free) at booking. Royal court cuisine at Korea House requires advance reservation — book 24+ hr ahead. Cash recommended for Gwangjang Market option (10,000-20,000 KRW per person)."
+      },
+      "_poi_meta": {
+        "poi_key": "OPS_lunch_customizable",
+        "verified": false,
+        "match": "operational_meal_choice",
+        "note": "Customizable lunch — 4 vetted options spanning streetfood to royal court cuisine"
+      }
+    },
+    {
+      "number": 5,
+      "time": "≈ 14:30",
+      "duration": "60 min",
+      "name": "N Seoul Tower (Namsan)",
+      "category": "Iconic Tower (Viewpoint)",
+      "description": "N Seoul Tower (Namsan Seoul Tower) is Seoul's most iconic landmark — a 236.7-meter broadcasting and observation tower atop Namsan Mountain (243 m), with the tower's apex 479.7 m above sea level. Originally constructed 1969-1971 as Korea's first comprehensive broadcasting tower (TV/radio multi-broadcaster), it opened to the public 1980 and was rebranded 'N Seoul Tower' in December 2005 after CJ Foodville renovated the observation levels. Recognized by foreign tourists in a 2012 Seoul Metropolitan Government survey as Korea's #1 tourist attraction, and selected with Changdeokgung as one of Lonely Planet's Ultimate Travel List Top 500 destinations (2015) — approximately 12 million annual visitors. The signature visitor experiences: **the 360° observation deck** (Adult 21,000 KRW / Senior+Child 16,000 KRW; weekdays 10:30-22:00, weekends 10:00-23:00 — last admission 30 min before close); the iconic **Locks of Love wall** on the terrace where couples attach padlocks; the revolving **N Grill restaurant** (one rotation per ~48 min for a panoramic dining experience — diners with advance reservation get FREE observatory access); and **Korea's first aerial tramway** the **Namsan Cable Car** (opened 1962, predates the tower by 9 years, 605 m route, ~3 min ride, max altitude 138 m). K-drama filming legacy includes 'My Love From The Star,' 'Boys Over Flowers,' 'Korean Odyssey (Hwayugi).' **Critical note**: TAXIS ARE PROHIBITED from entering the park (environmental protection) — your private vehicle drops at the Namsan Cable Car base or Namsan Yejang parking, and you ride the cable car or walk the final ~10 min.",
+      "highlights": [
+        "Seoul's most iconic landmark — 236.7 m tower atop Namsan (479.7 m above sea level)",
+        "Constructed 1969-1971, opened 1980, rebranded N Seoul Tower 2005",
+        "#1 tourist attraction by foreign-tourist survey (2012); 12 million annual visitors",
+        "360° observation deck (Adult 21,000 / Senior+Child 16,000 KRW)",
+        "Iconic Locks of Love wall + N Grill revolving restaurant (free observatory with reservation)",
+        "Namsan Cable Car — Korea's FIRST aerial tramway (1962), ~3 min ride",
+        "K-drama filming: My Love From The Star, Boys Over Flowers, Korean Odyssey",
+        "**Taxis PROHIBITED from entering the park** — cable car or shuttle bus only",
+        "**Namsan Cable Car (1962)** = Korea's FIRST aerial tramway; pre-N-Seoul-Tower-rebrand the structure was simply called 'Seoul Tower' from 1980 to December 2005 (CJ Foodville renovation + rebrand)"
+      ],
+      "timeUsed": [
+        "Driver-guide drop-off at Namsan Cable Car base or shuttle bus stop (~5 min)",
+        "Cable car ride up (~3 min) OR shuttle bus (~5 min)",
+        "Observation deck or panoramic concourse views (~30-35 min)",
+        "Locks of Love photo + cafe stop (~10-15 min)",
+        "Cable car / shuttle down + return to vehicle"
+      ],
+      "whyOnRoute": "N Seoul Tower is Seoul's #1 'photo this means I was in Korea' landmark — and the 360° view orientates first-time visitors to Seoul's geography (Bukhansan north, Han River south, Gangnam east). Picked over Lotte World Tower (taller at 555 m / world's 5th tallest) because Namsan's central location AND lower elevation actually deliver better intermediate-distance views of the historic central districts (Gyeongbokgung, Bukchon) that you've just visited. The 360° view also delivers a **memorable photo album anchor** — the 'Locks of Love' wall + N Seoul Tower exterior + the Seoul cityscape make this the day's most-shared social-media moment for first-time cruise visitors.",
+      "visitBasics": {
+        "hours": "Observation deck weekdays 10:30-22:00; weekends 10:00-23:00 (last admission 30 min before close). Cable car 10:00-23:00 (Mon stops 09:00-14:00 for inspection)",
+        "closed": "Open year-round 365 days",
+        "admission": "Observatory Adult 21,000 / Senior+Child 16,000 KRW; Cable Car Adult RT ~14,000 KRW separate; FREE base plaza views",
+        "walking": "Moderate — vehicle drops at Namsan Cable Car base or shuttle bus stop; cable car or short walk up"
+      },
+      "convenience": {
+        "restroom": "Multiple levels of tower; observatory restrooms with floor-to-ceiling windows",
+        "parking": "Driver-guide drops at Namsan Yejang Parking or Namsan Cable Car base"
+      },
+      "smartNotes": {
+        "photo": "Tower with Seoul skyline at night is the iconic shot — the panoramic concourse at the base is FREE and nearly as good as the paid observatory. Love Locks wall on terrace. Sunset from observatory windows.",
+        "facilities": "N Grill revolving restaurant (free observatory with reservation), HanCook (free observatory with reservation), Cinnabon, A Twosome Place, multiple cafes, Game Plaza arcade.",
+        "tip": "**FREE observatory hack**: book N Grill or HanCook in advance. Otherwise, the panoramic concourse views at the base are mostly FREE. Visit at sunset for the day-to-night transition (queue at 17:00 for 18:00 sunset in summer). Cable car queues hit 20+ min on weekends — plan accordingly. NEVER take a taxi — taxis are prohibited from the park."
+      },
+      "_poi_meta": {
+        "poi_key": "n_seoul_tower",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.26",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "N Seoul Tower official (nseoultower.co.kr)",
+          "Visit Seoul official",
+          "Korea Tourism Organization (VisitKorea)",
+          "CJ Foodville (operator since 2005 rebrand)",
+          "Wikipedia (N Seoul Tower)"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "≈ 15:30",
+      "duration": "60 min",
+      "name": "Myeongdong OR Jogyesa Temple (your choice)",
+      "category": "Shopping & Local Culture — Customizable",
+      "description": "The day's final substantive stop is YOUR CHOICE between two distinct Seoul finales: **OPTION A — Myeongdong**: Seoul's #1 shopping and K-beauty district in Jung-gu. Pedestrian-friendly zone with restricted vehicle access. Major Korean cosmetics flagships (Innisfree, Etude House, Laneige, Olive Young, Missha) with generous free samples. Myeongdong Cathedral (built 1898 — Korea's first brick Gothic Catholic church, played significant role in democratization movement). Lotte Department Store flagship (1970s, multi-floor luxury including Avenuel designer wing). Street food: tornado potato skewers, hotteok pancakes, egg bread, cheesy corn dogs, tanghulu sugar-glazed fruit skewers. CASH-ONLY at most street stalls (bring 20,000 KRW). Open daily; shops 10:30-22:00, street food 12:00-22:00 (later on weekends). **OPTION B — Jogyesa Temple**: Head temple of the Jogye Order — Korea's largest Buddhist Order. Origins back to 1395 (Gakhwangsa); modern temple founded 1910; renamed Jogyesa in 1954 after the Buddhist Purification Movement. Daeungjeon (Main Dharma Hall) is the largest temple building in Seoul. Natural Monument No. 9: 500-year-old Baeksong (Lacebark/White Pine, 14 m tall, 1.85 m trunk). 450-year-old Chinese Scholar Tree. Ten-story stone pagoda housing 10 Buddha sari gifted by Thai royal court. FREE admission. Annual Lotus Lantern Festival around Buddha's Birthday (May) is UNESCO Intangible Cultural Heritage — temple courtyard fills with thousands of paper lanterns. The only major traditional temple in Seoul's city center (most Korean temples are in mountains). 5-min walk to Insadong. Your driver-guide takes you to whichever option fits your group's interests — Myeongdong for shoppers/foodies; Jogyesa for cultural/spiritual depth.",
+      "highlights": [
+        "**Myeongdong (Option A)**: Seoul's #1 shopping/K-beauty district + 1898 Myeongdong Cathedral",
+        "Major K-beauty flagships (Innisfree, Olive Young, etc.) with generous free samples",
+        "Myeongdong street food: tornado potatoes, hotteok, cheesy corn dogs, tanghulu",
+        "**Jogyesa Temple (Option B)**: Head temple of Jogye Order (Korea's largest Buddhist Order)",
+        "Daeungjeon = largest temple building in Seoul; 500-year-old Baeksong (Natural Monument No. 9)",
+        "Jogyesa FREE admission; Seoul's only major traditional temple in city center",
+        "Driver-guide adjusts based on your group's interest",
+        "**Myeongdong Cathedral (1898)** — Korea's first brick Gothic Catholic church; **historically significant role in 1980s democratization movement** as a sanctuary for protesters during military rule (1987 June Democratic Struggle key gathering point)",
+        "**Lotte Department Store Myeongdong main branch** — Korea's flagship department store with **rooftop garden + observation deck** (free); largest tax-refund counter in Korea for tourist purchases over ₩30,000"
+      ],
+      "timeUsed": [
+        "Driver-guide drop-off at chosen venue (~5 min)",
+        "Self-paced exploration (~50 min)",
+        "Reassembly at vehicle",
+        "Optional Myeongdong Cathedral interior visit (5-min walk from main shopping street, FREE) (~10 min)",
+        "Optional Lotte Department Store rooftop garden + tax-refund counter (~15 min)"
+      ],
+      "whyOnRoute": "The Myeongdong-vs-Jogyesa choice covers the two most natural 'last hour in Seoul' frames: 'shop and eat' vs 'reflect and absorb.' Picked over forcing a single venue because the customizable choice IS the private-tour value proposition — group bus tours can't offer this binary in-the-moment decision. For cruise guests, the Myeongdong-Jogyesa choice is the day's most flexible private-charter advantage — your driver-guide reads the group's energy level and interest at ~16:00 and routes to whichever venue fits (Myeongdong's bustle for shoppers/foodies; Jogyesa's calm for cultural depth). The choice is impossible on bus tours where the route is fixed before departure.",
+      "visitBasics": {
+        "hours": "Myeongdong: shops 10:30-22:00, street food 12:00-22:00. Jogyesa: grounds 24/7, main halls 06:00-18:00",
+        "closed": "Both open year-round",
+        "admission": "Both FREE (Myeongdong purchases pay-as-you-go; Jogyesa fee-free)",
+        "walking": "Easy at both — Myeongdong flat pedestrian zone; Jogyesa flat compact temple grounds"
+      },
+      "convenience": {
+        "restroom": "Myeongdong: Lotte/Shinsegae department stores, subway stations. Jogyesa: on temple grounds",
+        "parking": "Driver-guide handles separately"
+      },
+      "smartNotes": {
+        "photo": "Myeongdong: main pedestrian street at evening illumination with N Seoul Tower in the distance; Myeongdong Cathedral Gothic façade. Jogyesa: Daeungjeon Main Hall + Lotus Lanterns (May) + 500-year-old Baeksong pine + ten-story stone pagoda.",
+        "facilities": "Myeongdong: department stores, K-beauty flagships, street food, Tourist Information Centers, tax-refund counters. Jogyesa: Buddhist souvenir shops, foreign-language information center, Balwoo Gongyang Michelin temple cuisine restaurant 5 min away.",
+        "tip": "**Myeongdong**: bring CASH 20,000 KRW. Free K-beauty samples generous. POPMART for Labubu blind-boxes. **Jogyesa**: wear modest clothing entering Main Hall. Visit during Lotus Lantern Festival (May) for the iconic illumination experience. Pair with Insadong (5-min walk) if time allows."
+      },
+      "_poi_meta": {
+        "poi_key": "myeongdong",
+        "verified": true,
+        "match": "two_poi_choice",
+        "kb_version": "1.26",
+        "verified_date": "2026-04-29",
+        "alternative_poi": "jogyesa_temple",
+        "note": "Customizable choice between Myeongdong (shopping/streetfood) and Jogyesa Temple (Buddhist cultural)",
+        "sources": [
+          "Visit Seoul official",
+          "Korea Tourism Organization (VisitKorea)",
+          "Jung-gu District Office (Myeongdong Tourism)",
+          "Lotte Department Store official (Myeongdong main branch)",
+          "Wikipedia (Myeongdong)"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "time": "≈ 16:30",
+      "duration": "≈ 90 min",
+      "name": "Return to Incheon Cruise Terminal",
+      "category": "Return — Sail-away Buffer Built In",
+      "description": "Private return drive 60-90 minutes to Incheon Cruise Terminal — your driver-guide adjusts the day's pacing throughout to ensure arrival 90+ minutes before your specific ship's all-aboard time. This buffer absorbs unexpected traffic on the Incheon-Seoul Expressway (rare but possible) and allows you to clear immigration re-entry without rush. Curbside drop-off at the terminal entrance — followed by Korean immigration re-entry to the cruise ship. The 'Guaranteed return' badge on this tour means the operator commits to your sail-away schedule — a critical assurance for cruise passengers because the ship will not wait.",
+      "highlights": [
+        "60-90 min private return drive via Incheon-Seoul Expressway",
+        "Driver-guide ensures arrival 90+ min before ship's all-aboard",
+        "Curbside drop-off at terminal entrance",
+        "Sail-away timing guaranteed (the 'Guaranteed return' product feature)"
+      ],
+      "timeUsed": [
+        "Boarding vehicle at final Seoul stop",
+        "60-90 min drive via expressway",
+        "Curbside drop-off at terminal — proceed to ship re-entry"
+      ],
+      "whyOnRoute": "Return logistics with sail-away guarantee — the private-tour structure means your group is not waiting on other passengers at multiple drop points; the driver routes direct to terminal. The 90-min buffer is the operator's commitment, not the cruise passenger's responsibility.",
+      "visitBasics": {},
+      "convenience": {},
+      "smartNotes": {
+        "tip": "Cruise terminal Korean address: 인천항 크루즈터미널 (연수구 국제항만대로 438) — keep handy. All-aboard time on your cruise card; confirm before driver-guide picks you up at last stop. Rare-traffic note: expressway delays during Korean public holidays (Chuseok, Lunar New Year) may extend transit."
+      },
+      "_poi_meta": {
+        "poi_key": "OPS_return_incheon",
+        "verified": false,
+        "match": "operational_implicit",
+        "note": "Operational return stop with sail-away buffer"
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Incheon Cruise Terminal",
+      "type": "origin",
+      "theme": "Departure"
+    },
+    {
+      "name": "Gyeongbokgung Palace",
+      "type": "primary",
+      "theme": "Heritage Palace"
+    },
+    {
+      "name": "Bukchon Hanok Village + Insadong",
+      "type": "primary",
+      "theme": "Heritage Village"
+    },
+    {
+      "name": "Lunch (Insadong / Tosokchon / BBQ)",
+      "type": "meal",
+      "theme": "Meal"
+    },
+    {
+      "name": "N Seoul Tower (Namsan)",
+      "type": "secondary",
+      "theme": "City View"
+    },
+    {
+      "name": "Myeongdong or Jogyesa Temple",
+      "type": "secondary",
+      "theme": "Temple"
+    },
+    {
+      "name": "Incheon Cruise Terminal",
+      "type": "return",
+      "theme": "Return"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "Outbound transfer",
+      "duration": "≈ 1 hour",
+      "description": "Incheon Cruise Terminal → central Seoul via expressway."
+    },
+    {
+      "phase": "Heritage core",
+      "duration": "≈ 3 hours",
+      "description": "Gyeongbokgung (75 min), short transfer, Bukchon Hanok Village + Insadong (75 min) — all walkable cluster."
+    },
+    {
+      "phase": "Lunch + viewpoint",
+      "duration": "≈ 2 hours",
+      "description": "Local restaurant + N Seoul Tower or quick city stop."
+    },
+    {
+      "phase": "Last Seoul stop",
+      "duration": "≈ 1 hour",
+      "description": "Myeongdong shopping/street food OR Jogyesa Temple."
+    },
+    {
+      "phase": "Return transfer",
+      "duration": "≈ 1 hour",
+      "description": "Seoul → Incheon Cruise Terminal with 60-minute buffer before all-aboard."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "How this day flows",
+    "subtitle": "A point-to-point loop that starts and ends at your ship's gangway. The Seoul itinerary itself is a cluster, not a line — Gyeongbokgung, Bukchon, Insadong, and Myeongdong are all within a 20-minute radius of each other, which is what makes a 7–9 hour port day workable. The driver-guide's main job, after the cultural commentary, is keeping your sail-away time visible at every transition."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "First-time visitors to the area",
+      "Couples",
+      "Adult families"
+    ],
+    "lessIdealFor": [
+      "Travelers wanting a fixed-group tour with set departures (this is private; book individually)",
+      "Cruise groups larger than the vehicle's seating (typical sedan 1–3 pax, SUV 4–6, van 7+; specify at booking)",
+      "Budget-first travelers — private format costs more than shared cruise excursions",
+      "Travelers whose all-aboard window is shorter than 7 hours (hard fit)"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Why this route is built this way",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "Built around your all-aboard time, not a fixed clock",
+            "detail": "El guía le explicará los detalles en cada parada."
+          },
+          {
+            "label": "Pickup at the gangway, not 'meet at a station in Seoul'",
+            "detail": "El guía le explicará los detalles en cada parada."
+          },
+          {
+            "label": "No mystery shopping stops, no group of 40",
+            "detail": "Many large cruise-line excursions include forced ginseng-shop or duty-free stops that eat 60–90 minutes of your day. A private car has no such commercial pressure: you stop where you want, for as long as you want, in your own group only."
+          },
+          {
+            "label": "Customizable on the day",
+            "detail": "El guía le explicará los detalles en cada parada."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "inclusions",
+      "title": "What's included",
+      "preview": "Private vehicle (sedan, van, or large van depending on group size), English-speaking…",
+      "content": [
+        "Private vehicle (sedan, van, or large van depending on group size), English-speaking driver-guide, fuel, tolls, parking.",
+        "Not included: admission tickets (Gyeongbokgung ₩3,000, N Seoul Tower deck ₩21,000, etc. — paid on the day), meals, tips.",
+        "The guide pre-buys palace tickets to skip lines if requested."
+      ]
+    },
+    {
+      "id": "pickup",
+      "title": "Pickup & drop-off",
+      "preview": "Driver-guide meets you at the Incheon Cruise Terminal arrival hall with a name sign.",
+      "content": [
+        "Driver-guide meets you at the Incheon Cruise Terminal arrival hall with a name sign.",
+        "Note that Incheon has multiple terminals — confirm with your cruise line which one your ship uses (Yeongjong-do or Songdo).",
+        "Pickup time is calibrated to your disembarkation, not a fixed clock."
+      ]
+    },
+    {
+      "id": "sail",
+      "title": "Sail-away timing",
+      "preview": "The driver-guide will ask for your all-aboard time at pickup.",
+      "content": [
+        "The driver-guide will ask for your all-aboard time at pickup.",
+        "The standard rule: you must be back on the ship at least 30 minutes before sail-away (most cruise lines).",
+        "The driver builds at least a 60-minute traffic buffer on top of that.",
+        "Seoul-Incheon transfers can take 60–90 minutes depending on rush hour."
+      ]
+    },
+    {
+      "id": "customization",
+      "title": "Customization & dietary needs",
+      "preview": "The itinerary is fully customizable.",
+      "content": [
+        "The itinerary is fully customizable.",
+        "Tell us in advance about: dietary restrictions (halal, vegetarian, kosher, allergies), mobility limitations (wheelchair access at palace and tower), specific sites (Korean War Memorial, Lotte Tower observation deck, Hangang River).",
+        "The driver-guide will pre-plan the route accordingly."
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "Cancellation",
+      "preview": "Free cancellation up to 24 hours before pickup.",
+      "content": [
+        "Free cancellation up to 24 hours before pickup.",
+        "Same-day cancellations and no-shows are non-refundable.",
+        "If your ship's port call is cancelled by the cruise line, full refund with documentation."
+      ]
+    },
+    {
+      "id": "children",
+      "title": "Children & accessibility",
+      "preview": "Children of all ages are welcome — child seats available on request (no extra cost, but…",
+      "content": [
+        "Children of all ages are welcome — child seats available on request (no extra cost, but please advise number and age in advance).",
+        "Accessible vehicles available for wheelchair users — please request when booking, as not all vehicles in the fleet support a wheelchair lift."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "See seasonal notes"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "See seasonal notes"
+    },
+    "_seasonalSummary": "Seoul has four distinct seasons. Cruise calls in spring and autumn are typically the most pleasant; summer is hot and humid; winter is cold and dry but rarely freezing-rain.",
+    "_seasonalTemperatures": [
+      {
+        "season": "Spring (Mar–May)",
+        "range": "5–22°C",
+        "notes": "Cherry blossoms in early–mid April. Best season for outdoor sightseeing."
+      },
+      {
+        "season": "Summer (Jun–Aug)",
+        "range": "22–32°C",
+        "notes": "Hot and humid; July can have monsoon rain. Most palaces and museums are partially shaded."
+      },
+      {
+        "season": "Autumn (Sep–Nov)",
+        "range": "8–22°C",
+        "notes": "Best season — clear skies, mild temperatures, foliage in late October."
+      },
+      {
+        "season": "Winter (Dec–Feb)",
+        "range": "-5 to 6°C",
+        "notes": "Cold winds; bring a warm coat for the palace courtyard. Tower views often crystal clear."
+      }
+    ]
+  },
+  "seasonalVariations": [
+    {
+      "season": "Spring",
+      "description": "Cherry blossoms at Gyeongbokgung and along the Cheonggyecheon Stream; Bukchon's traditional houses in spring greens."
+    },
+    {
+      "season": "Summer",
+      "description": "Long daylight hours mean you can squeeze N Seoul Tower into a tight window; many indoor museum options if it's hot."
+    },
+    {
+      "season": "Autumn",
+      "description": "Maple foliage at Gyeongbokgung's rear garden (Hyangwonjeong) and along Bukchon ridges; clearest air for tower viewpoints."
+    },
+    {
+      "season": "Winter",
+      "description": "Snow on the palace courtyards is one of Seoul's classic photographs; fewer crowds at major sites."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "Regreso garantizado según hora de salida",
+      "description": "Authorized Korean tour operator with full insurance",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "La hora de su barco diseña el itinerario — el guía asegura el regreso al terminal a tiempo."
+    },
+    {
+      "icon": "route",
+      "title": "Más Seúl que el tour compartido",
+      "description": "Hand-tuned itinerary, not a generic loop",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "La Torre N y Myeongdong/Jogyesa no están en la furgoneta compartida — el coche privado permite más paradas."
+    },
+    {
+      "icon": "users",
+      "title": "Coche privado — solo su grupo",
+      "description": "Right-sized for the route",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "Privacidad total y flexibilidad de horario durante las 9-10 horas de la excursión."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Immediately",
+      "title": "Instant Confirmation",
+      "detail": "Booking confirmation with itinerary summary",
+      "description": "Instant confirmation; intake form for ship name, terminal, all-aboard time sent immediately."
+    },
+    {
+      "timing": "12 hours before",
+      "title": "12-Hour Reminder",
+      "detail": "Weather update and any route adjustments",
+      "description": "Driver-guide calls the morning before to confirm the day's sequence and any Tuesday Changdeokgung swap."
+    },
+    {
+      "timing": "Evening before",
+      "title": "Final Pickup Info",
+      "detail": "Exact pickup time and driver contact",
+      "description": "Final driver details (name, vehicle plate) sent the evening before."
+    },
+    {
+      "timing": "Morning of tour",
+      "title": "Day-of Route Notes",
+      "detail": "Morning briefing based on live conditions",
+      "description": "Driver is at the terminal gangway with a name placard at your disembarkation time."
+    },
+    {
+      "timing": "During tour",
+      "title": "Stop-by-Stop Tips",
+      "detail": "Real-time guidance at each location",
+      "description": "On-the-day pacing adjustments via direct message to the driver if your group wants to extend or shorten any stop."
+    },
+    {
+      "timing": "After tour",
+      "title": "Post-tour Support",
+      "detail": "Follow-up and recommendations",
+      "description": "Ship-return drop-off at terminal; brief feedback form sent after."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q1",
+      "question": "What if my ship is delayed arriving at Incheon?",
+      "answer": "The driver-guide tracks the cruise schedule and adjusts pickup time accordingly. If the delay is significant (over 2 hours), the day's itinerary may need to be shortened — your guide will recommend the best subset to fit the remaining window."
+    },
+    {
+      "id": "q2",
+      "question": "What if Gyeongbokgung is closed?",
+      "answer": "Gyeongbokgung is closed on Tuesdays. If your port day falls on Tuesday, the substitute is Changdeokgung Palace and its UNESCO-listed Secret Garden (Huwon) — equally worth the visit, sometimes preferred by repeat visitors."
+    },
+    {
+      "id": "q3",
+      "question": "Can we go to the DMZ instead?",
+      "answer": "Generally no — DMZ tours from Incheon are tight on time (DMZ is ≈ 50 km north of Seoul, the cruise terminal is ≈ 50 km west). For most cruise schedules, a DMZ + Seoul highlights combo doesn't fit. If your port call is 10+ hours and you want DMZ-only, ask in advance — a separate Incheon-DMZ private tour is offered."
+    },
+    {
+      "id": "q4",
+      "question": "How does the guide know our ship's schedule?",
+      "answer": "You provide the ship name, port-call date, expected arrival time, and all-aboard time at booking. The guide cross-checks against the published cruise itinerary and the Incheon Port Authority's daily schedule. Any change communicated by your cruise line should also be relayed to the guide via WhatsApp."
+    },
+    {
+      "id": "q5",
+      "question": "What if there's heavy rain or a typhoon?",
+      "answer": "The tour runs in light rain. In a typhoon or heavy snow, the itinerary shifts indoors (palace covered halls, Jogyesa, Myeongdong's underground arcade, museum stops). The driver carries umbrellas. Outright cancellation only if a typhoon also cancels your ship's port call."
+    },
+    {
+      "id": "q6",
+      "question": "Can we leave luggage in the car?",
+      "answer": "Yes — many cruise guests use the day to also handle a hotel transfer or duty-free errand with luggage on board. The vehicle is locked when not in use; valuables should still be carried with you. Luggage capacity depends on vehicle size, so advise volume in advance."
+    },
+    {
+      "id": "first-time",
+      "question": "Is this a good choice for first-time visitors to Seoul?",
+      "answer": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+    },
+    {
+      "id": "walking",
+      "question": "Is the walking difficult?",
+      "answer": "Moderate walking with some active sections."
+    },
+    {
+      "id": "family",
+      "question": "Is this tour suitable for families?",
+      "answer": "Yes for families whose kids can handle a full day of moving around."
+    },
+    {
+      "id": "seniors",
+      "question": "Can older adults join comfortably?",
+      "answer": "Yes for active seniors; less ideal for low-mobility travelers."
+    },
+    {
+      "id": "children",
+      "question": "What's the recommended minimum age?",
+      "answer": "Best fit is around age 6 and up — children comfortable with a full-day rhythm and the walking notes above."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "group",
+      "priceSource": "getyourguide_t1249797",
+      "priceNote": "Price not yet set. Private tour pricing varies by vehicle size (sedan 1–3 pax, van 4–6 pax, large van 7–9 pax). Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+      "discountPercent": 10
+    }
+  },
+  "pickup_dropoff": {
+    "type": "cruise_terminal_pickup",
+    "meeting_points": [
+      {
+        "name": "Incheon Cruise Terminal — arrival hall (driver holds name sign)",
+        "time": "Calibrated to your disembarkation time"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Incheon Cruise Terminal — terminal gate",
+        "approx_time": "Minimum 60 minutes before all-aboard"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "Provide ship name, port-call date, expected arrival, and all-aboard time at booking. Driver maintains a 60-minute traffic buffer before all-aboard. Multiple terminals exist at Incheon — confirm with your cruise line which terminal your ship uses (Yeongjong-do or Songdo)."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "incheon-seoul-private-car-shore-excursion-cruise",
+    "product_type": "private",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "seoul_with_incheon_origin",
+    "vehicle_type": "private_vehicle",
+    "duration_hours": 8.0,
+    "region_tags": [
+      "seoul_central"
+    ],
+    "theme_tags": [
+      "cruise_excursion",
+      "palace",
+      "cruise_excursion_premium"
+    ],
+    "poi_tags": [
+      "gyeongbokgung_palace",
+      "bukchon_hanok_village",
+      "insadong",
+      "n_seoul_tower",
+      "myeongdong"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.6,
+    "scenic_level": 0.85,
+    "photo_level": 1.0,
+    "culture_level": 1.0,
+    "relax_level": 0.8,
+    "first_time_fit": 1.0,
+    "family_fit": 0.75,
+    "senior_fit": 0.6,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 0.6,
+    "active_traveler_fit": 0.6,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 1.0,
+    "young_kids_fit": 1.0,
+    "senior_active_fit": 0.6,
+    "senior_general_fit": 0.6,
+    "mobility_friendly_fit": 1.0,
+    "stroller_fit": 1.0,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.6,
+    "rain_fit": 0.6,
+    "value_for_money_fit": 0.65,
+    "iconic_landmark_fit": 1.0,
+    "cafe_fit": 0.4,
+    "food_fit": 0.8,
+    "nature_fit": 0.2,
+    "beach_fit": 0.2,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.85,
+    "no_shopping_fit": 0.4,
+    "local_culture_fit": 1.0,
+    "storytelling_fit": 1.0,
+    "unesco_fit": 0.3,
+    "intangible_heritage_fit": 0.2,
+    "indoor_ratio": 0.35,
+    "weather_sensitivity": 0.4,
+    "comfort_level": 1.0,
+    "budget_fit": 0.4,
+    "premium_fit": 1.0,
+    "small_group_fit": 0.05,
+    "private_fit": 1.0,
+    "bus_fit": 0.05,
+    "price_band": "premium",
+    "pickup_base": "incheon_cruise_terminal",
+    "return_time_band": "16:00-17:30",
+    "duration_band": "8h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "tight_same_day_departure"
+      ],
+      "notIdealFor": [
+        "mobility_aid_required"
+      ]
+    },
+    "walking_notes": [
+      "Moderate walking with some uneven surfaces.",
+      "No long climbs or stairs.",
+      "Comfortable shoes recommended."
+    ],
+    "keywords": [
+      "incheon seoul private car shore excursion cruise",
+      "korea_mainland day tour",
+      "korea_mainland small group"
+    ],
+    "synonym_hints": [
+      "incheon seoul private car shore excursion cruise",
+      "korea_mainland sightseeing"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "incheon_cruise",
+    "vehicle_type_legacy": "private_car_or_van",
+    "anchor_poi_keys": [
+      "gyeongbokgung_palace",
+      "bukchon_hanok_village",
+      "insadong",
+      "n_seoul_tower",
+      "myeongdong"
+    ],
+    "private_tour_fit": 1.0,
+    "customizable_route_fit": 0.6,
+    "flexibility_fit": 0.85,
+    "cruise_passenger_fit": 1.0,
+    "history_culture_fit": 0.8,
+    "royal_palace_fit": 1.0,
+    "hanok_fit": 1.0,
+    "n_seoul_tower_fit": 1.0,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "cruise_market_segment_fit": 1.0,
+    "cruise_shore_excursion_fit": 1.0,
+    "incheon_port_pickup_fit": 1.0,
+    "cruise_reboarding_safety_buffer_fit": 1.0,
+    "weather_fallback_dense_fit": 1.0,
+    "instagram_dense_route_fit": 1.0,
+    "private_charter_format_fit": 1.0,
+    "flexible_pickup_dropoff_fit": 1.0,
+    "premium_pacing_fit": 1.0,
+    "small_party_intimate_fit": 1.0,
+    "private_gangway_pickup_fit": 1.0,
+    "customizable_route_mid_day_fit": 1.0,
+    "differentiates_from_incheon_seoul_small_group_cruise_pair_partner": true,
+    "inter_city_cruise_excursion_fit": 1.0,
+    "incheon_to_seoul_journey_fit": 1.0,
+    "incheon_seoul_cruise_pair_fit": 1.0,
+    "seoul_signature_route_fit": 1.0,
+    "seoul_first_time_visitor_fit": 1.0,
+    "joseon_dynasty_palace_visit_fit": 1.0,
+    "royal_guard_changing_ceremony_fit": 1.0,
+    "hanok_village_visit_fit": 1.0,
+    "city_panorama_tower_fit": 1.0,
+    "kbeauty_shopping_fit": 1.0,
+    "five_grand_palaces_anchor_count": 1,
+    "iconic_landmark_photo_anchor_fit": 1.0,
+    "duty_free_shopping_fit": 1.0,
+    "morning_palace_pacing_fit": 1.0,
+    "afternoon_panorama_pacing_fit": 1.0,
+    "evening_shopping_pacing_fit": 1.0,
+    "myeongdong_jogyesa_choice_fit": 1.0,
+    "differentiates_from_incheon_seoul_market_crafts_route": true,
+    "differentiates_from_busan_charter_cruise_pair_partner": true,
+    "differentiates_from_busan_small_group_cruise_pair_partner": true,
+    "available_months_signature": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "signature_window_label": "Year-round (Incheon cruise port operating window; Tuesday Gyeongbokgung-substitute is Changdeokgung)",
+    "tuesday_substitute_palace": "changdeokgung_palace",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "cruise_shore_excursion",
+      "private",
+      "seoul_highlights",
+      "customizable"
+    ],
+    "secondary_themes": [
+      "palace",
+      "hanok_village",
+      "shopping",
+      "tower",
+      "guaranteed_return"
+    ],
+    "best_for": [
+      "cruise_passengers",
+      "families",
+      "couples",
+      "mobility_limited",
+      "first_time_seoul",
+      "tight_schedule"
+    ],
+    "not_recommended_for": [
+      "budget_travelers",
+      "solo_backpackers",
+      "longer_seoul_stays"
+    ],
+    "anchor_pois": [
+      "Gyeongbokgung Palace",
+      "Bukchon Hanok Village",
+      "Insadong",
+      "N Seoul Tower",
+      "Myeongdong"
+    ],
+    "competing_products": [
+      "from-incheon-seoul-day-tour-cruise-guests",
+      "seoul-private-nami-morning-calm-petite-france",
+      "seoul-suburbs-private-chartered-car-10hr"
+    ],
+    "anchor_poi_keys": [
+      "gyeongbokgung_palace",
+      "bukchon_hanok_village",
+      "insadong",
+      "n_seoul_tower",
+      "myeongdong"
+    ],
+    "unesco_fit_note": "Default route Wed–Sun = 0 WHS POIs (unesco_fit=1). On Tuesdays Gyeongbokgung is closed and Changdeokgung Palace is the substitute, lifting unesco_fit to 4 for Tuesday port days only (1 WHS POI per documented scoring rule).",
+    "cruise_context_note": "This product is cruise-only. The relevant operational metric is sail-away buffer (60 min built into Return stop), not flight buffer; the same_day_flight_fit field is shared schema across the catalog and reads 3 here as a generic same-day-out-bound fit.",
+    "enrichment_batch": "17c",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.25",
+    "enrichment_target_kb_version": "1.26",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "10 substantive stops across 2 tours; Batch 10 authoring → A-grade pv=6 PASS (universal source-attribution gap closed)"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "Cruise port to palace, custom-built around your sail-away time —",
+        "headlineLine2": "your Seoul day, just for your group, with the ship-return guarantee built in",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+          "imagePosition": "center 35%",
+          "tagline": "From the gangway to Gyeongbokgung in 60 minutes — a private Seoul day calibrated to your sailaway",
+          "pills": [
+            "private",
+            "cruise"
+          ],
+          "meta": {
+            "duration": "7–9 hours (timed to your ship)",
+            "region": "",
+            "stops": "7 stops",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "Descripción"
+          },
+          {
+            "id": "itinerary",
+            "label": "Itinerario"
+          },
+          {
+            "id": "details",
+            "label": "Información práctica"
+          },
+          {
+            "id": "faq",
+            "label": "Preguntas frecuentes"
+          },
+          {
+            "id": "reviews",
+            "label": "Opiniones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "Duration",
+            "value": "8 hours"
+          },
+          {
+            "icon": "camera",
+            "label": "Photo Value",
+            "value": "Very High"
+          },
+          {
+            "icon": "mountain",
+            "label": "Scenic",
+            "value": "High"
+          },
+          {
+            "icon": "footprints",
+            "label": "Walking",
+            "value": "Moderate"
+          },
+          {
+            "icon": "cloud-rain",
+            "label": "Rain Safety",
+            "value": "Moderate"
+          },
+          {
+            "icon": "users",
+            "label": "Family Fit",
+            "value": "Moderate"
+          },
+          {
+            "icon": "scale",
+            "label": "Pace",
+            "value": "Balanced"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+            "alt": "Gangway-side pickup at Incheon Cruise Terminal arrival hall",
+            "caption": "Gyeongbokgung Palace's main throne hall",
+            "location": "Incheon Cruise Terminal",
+            "atmosphere": "Direct cruise terminal pickup"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "alt": "Gyeongbokgung Palace throne hall and royal guard ceremony",
+            "caption": "Royal guard changing ceremony at Gyeongbokgung",
+            "location": "Gyeongbokgung, Seoul",
+            "atmosphere": "Joseon royal palace"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "alt": "Stone walls and tiled hanok roofs along Bukchon ridge",
+            "caption": "Bukchon Hanok Village's traditional rooflines",
+            "location": "Bukchon Hanok Village, Seoul",
+            "atmosphere": "Preserved Joseon-era residential alleys"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "alt": "Panoramic view of Seoul from Namsan with N Seoul Tower above",
+            "caption": "Jogyesa Temple's main hall and lantern displays",
+            "location": "N Seoul Tower (Namsan)",
+            "atmosphere": "City viewpoint"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "alt": "Lit street-food stalls along Myeongdong shopping street at dusk",
+            "caption": "N Seoul Tower at sunset, viewed from Namsan",
+            "location": "Myeongdong, Seoul",
+            "atmosphere": "Shopping and street food"
+          },
+          {
+            "id": "g6",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+            "alt": "Private car waiting at Incheon Cruise Terminal drop-off zone",
+            "caption": "Myeongdong street food and shopping",
+            "location": "Incheon Cruise Terminal",
+            "atmosphere": "Sailaway buffer return"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "≈ 09:30",
+            "duration": "30 min",
+            "name": "Cruise terminal pickup",
+            "category": "Departure",
+            "description": "Driver-guide meets your group at the Incheon Cruise Terminal arrival hall with a name sign. Quick verification of your sail-away (all-aboard) time, then a one-hour drive into central Seoul. The drive itself doubles as an orientation — typical questions about currency, food, and history are handled before the first stop.",
+            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "highlights": [
+              "Door-of-ship pickup",
+              "1-hour transfer to Seoul",
+              "Sail-away time verified at start"
+            ],
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Pickup point chosen for efficient guest assembly while preserving on-time tour start.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {}
+          },
+          {
+            "number": 2,
+            "time": "≈ 10:30",
+            "duration": "60–90 min",
+            "name": "Gyeongbokgung Palace + royal guard ceremony",
+            "category": "Joseon Royal Palace",
+            "description": "The main royal palace of the Joseon Dynasty (1395–1910), and the most photographed site in Seoul. The royal guard changing ceremony runs at 10:00 and 14:00 daily (closed Tuesdays — Changdeokgung Palace is the substitute on Tuesdays). Your guide handles tickets and walks you through the throne hall, Gyeonghoeru pavilion, and the back garden if time allows.",
+            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "highlights": [
+              "Joseon-era main palace",
+              "Royal guard ceremony",
+              "Throne hall and Gyeonghoeru",
+              "Tuesdays: Changdeokgung instead"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "visitBasics": {
+              "hours": "Mar–May & Sep–Oct: 09:00–18:00; Jun–Aug: 09:00–18:30; Nov–Feb: 09:00–17:00 (last admission 1 hour before close)",
+              "closed": "Tuesdays",
+              "admission": "Adult 3,000 KRW / Youth (7–18) 1,500 KRW; free for ≤6, seniors 65+, hanbok wearers",
+              "walking": "Moderate — large palace grounds (1–2 hours of walking); paths are gravel and stone"
+            },
+            "convenience": {
+              "restroom": "Multiple restrooms throughout the palace grounds",
+              "parking": "Limited paid parking near Gwanghwamun (subway is recommended)"
+            },
+            "smartNotes": {
+              "photo": "Gwanghwamun gate with N Seoul Tower in distance; Gyeonghoeru pavilion reflected in the pond; hanbok-wearing visitors against palace walls",
+              "facilities": "National Folk Museum (free) and National Palace Museum (free) within grounds; multiple gift shops",
+              "tip": "Free hanbok rental shops near Gwanghwamun = free admission AND great photos; Royal Guard Ceremony happens 10:00 & 14:00 (cancelled in heavy rain or extreme heat)"
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 12:00",
+            "duration": "60–90 min",
+            "name": "Bukchon Hanok Village + Insadong",
+            "category": "Hanok Heritage Village",
+            "description": "A short drive — or a 10-minute walk — from the palace. Bukchon's preserved 15th-century alleys still house residents (so the village asks for quiet voices in marked sections). Insadong, just downhill, is the city's main traditional-arts and crafts district: ceramics, calligraphy supplies, traditional teas, hanji paper, hanbok rentals, and the curated Ssamziegil shopping complex.",
+            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "highlights": [
+              "15th-century hanok alleys",
+              "Traditional crafts and teas",
+              "Ssamziegil shopping spiral",
+              "Optional hanbok rental for photos"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "visitBasics": {
+              "hours": "Open 24 hours (outdoor); resident-quiet hours 10:00–17:00 enforced",
+              "closed": "Open year-round (residential — please be respectful)",
+              "admission": "Free; some hanok museums charge separately (≈ 3,000 KRW)",
+              "walking": "Moderate — uphill cobblestone alleys; not stroller-friendly in places"
+            },
+            "convenience": {
+              "restroom": "Public restrooms at Bukchon Cultural Center and main tourist info point",
+              "parking": "Limited; subway (Anguk Stn Line 3) strongly recommended"
+            },
+            "smartNotes": {
+              "photo": "Bukchon-8 viewpoint #5 on Bukchon-ro 11-gil offers the iconic hanok-roofs-with-N-Seoul-Tower shot; mornings give the best light and fewest crowds",
+              "facilities": "Bukchon Cultural Center has free maps and cultural exhibits; many hanok cafés and craft shops",
+              "tip": "Residents have asked tourists to respect quiet hours (10:00–17:00) — speak softly and don't enter private gates; pair with Insadong (10 min walk south)"
+            }
+          },
+          {
+            "number": 4,
+            "time": "≈ 13:30",
+            "duration": "60 min",
+            "name": "Lunch (your choice)",
+            "category": "Meal",
+            "description": "Free time and your call: Insadong restaurants for traditional Korean court cuisine and bibimbap; Tosokchon for samgyetang (ginseng chicken soup) near the palace; or a casual Korean BBQ near Bukchon. Driver-guide makes specific recommendations based on dietary needs (halal, vegetarian, allergies — say in advance and a halal-friendly route can be planned).",
+            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "highlights": [
+              "Insadong court cuisine",
+              "Tosokchon samgyetang",
+              "Korean BBQ options",
+              "Halal/vegetarian routes available"
+            ],
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Mid-route meal break aligned with guest energy and route timing.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {}
+          },
+          {
+            "number": 5,
+            "time": "≈ 14:30",
+            "duration": "60 min",
+            "name": "N Seoul Tower (Namsan) — optional viewpoint",
+            "category": "Iconic Tower (Viewpoint)",
+            "description": "Driven up Namsan to the tower base for the panoramic view of central Seoul, the Han River, and surrounding ridges. The optional observation-deck ride is ≈ ₩21,000 per person, paid separately. On tight sailaway windows the driver can skip the deck ride and stop only for the base-level photo viewpoint to save 30+ minutes.",
+            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "highlights": [
+              "Panoramic city view",
+              "Love-locks photo spot",
+              "Optional observation deck (₩21,000)"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "visitBasics": {
+              "hours": "Mon–Thu, Sun 10:30–22:30; Fri–Sat & holidays 10:30–23:00 (last admission 30 min before close)",
+              "closed": "Open year-round",
+              "admission": "Observatory: Adult 21,000 KRW / Child 16,000 KRW; cable car separate (Adult 14,000 KRW round-trip)",
+              "walking": "Easy if using cable car; moderate hiking if walking up Namsan"
+            },
+            "convenience": {
+              "restroom": "Multiple restrooms in tower base and observatory",
+              "parking": "Limited; cable car or Namsan Sunset Bus recommended"
+            },
+            "smartNotes": {
+              "photo": "Sunset is peak; the observation deck offers 360° views; Locks of Love fence on lower deck is the iconic close-up",
+              "facilities": "n.GRILL rotating restaurant (top), café, gift shops, hanbok rental",
+              "tip": "Buy combo cable car + observatory ticket for savings; arrive 30 min before sunset for golden hour shots; Friday/Saturday extended hours"
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:30",
+            "duration": "60 min",
+            "name": "Myeongdong (shopping & street food) or Jogyesa Temple",
+            "category": "Shopping & local culture",
+            "description": "Two options based on your interest. Myeongdong (Korea's flagship shopping street) for K-beauty outlets, street-food stalls (egg bread, hotteok, tornado potato), and tax-refund counters. Jogyesa Temple (chief temple of Korean Jogye-order Buddhism) for a quieter finish — the country's tallest single-piece wooden Seokgamoni Buddha and a courtyard often dressed with seasonal lantern installations.",
+            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "highlights": [
+              "Myeongdong street food and K-beauty",
+              "Or Jogyesa Buddhist temple",
+              "Tax-refund counters at Myeongdong"
+            ],
+            "timeUsed": [
+              "Browse Myeongdong street food and shopping (cosmetics, fashion)",
+              "Or visit Jogyesa Temple — the head temple of Korean Jogye Buddhism in central Seoul"
+            ],
+            "whyOnRoute": "Optional final-stop selected on the day based on traffic and guest preference. Myeongdong adds shopping/foodie value; Jogyesa adds a contemplative pause before returning to Incheon Cruise Terminal.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {}
+          },
+          {
+            "number": 7,
+            "time": "≈ 16:30",
+            "duration": "≈ 60 min",
+            "name": "Return to cruise terminal",
+            "category": "Return",
+            "description": "Direct drive Seoul → Incheon Cruise Terminal, ≈ 60 minutes. The driver-guide builds a 60-minute buffer between scheduled drop-off and your all-aboard time so traffic delays cannot make you miss the ship. Drop-off directly at the terminal gate.",
+            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "highlights": [
+              "1-hour drive to Incheon",
+              "60-minute safety buffer before all-aboard",
+              "Dropoff at terminal gate"
+            ],
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Return logistics — drop-off chosen for guest convenience and timing certainty.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {}
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "Incheon Cruise Terminal",
+            "type": "origin",
+            "theme": "Departure"
+          },
+          {
+            "name": "Gyeongbokgung Palace",
+            "type": "primary",
+            "theme": "Heritage Palace"
+          },
+          {
+            "name": "Bukchon Hanok Village + Insadong",
+            "type": "primary",
+            "theme": "Heritage Village"
+          },
+          {
+            "name": "Lunch (Insadong / Tosokchon / BBQ)",
+            "type": "meal",
+            "theme": "Meal"
+          },
+          {
+            "name": "N Seoul Tower (Namsan)",
+            "type": "secondary",
+            "theme": "City View"
+          },
+          {
+            "name": "Myeongdong or Jogyesa Temple",
+            "type": "secondary",
+            "theme": "Temple"
+          },
+          {
+            "name": "Incheon Cruise Terminal",
+            "type": "return",
+            "theme": "Return"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "Outbound transfer",
+            "duration": "≈ 1 hour",
+            "description": "Incheon Cruise Terminal → central Seoul via expressway."
+          },
+          {
+            "phase": "Heritage core",
+            "duration": "≈ 3 hours",
+            "description": "Gyeongbokgung (75 min), short transfer, Bukchon Hanok Village + Insadong (75 min) — all walkable cluster."
+          },
+          {
+            "phase": "Lunch + viewpoint",
+            "duration": "≈ 2 hours",
+            "description": "Local restaurant + N Seoul Tower or quick city stop."
+          },
+          {
+            "phase": "Last Seoul stop",
+            "duration": "≈ 1 hour",
+            "description": "Myeongdong shopping/street food OR Jogyesa Temple."
+          },
+          {
+            "phase": "Return transfer",
+            "duration": "≈ 1 hour",
+            "description": "Seoul → Incheon Cruise Terminal with 60-minute buffer before all-aboard."
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "How this day flows",
+          "subtitle": "A point-to-point loop that starts and ends at your ship's gangway. The Seoul itinerary itself is a cluster, not a line — Gyeongbokgung, Bukchon, Insadong, and Myeongdong are all within a 20-minute radius of each other, which is what makes a 7–9 hour port day workable. The driver-guide's main job, after the cultural commentary, is keeping your sail-away time visible at every transition."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "First-time visitors to the area",
+            "Couples",
+            "Adult families"
+          ],
+          "lessIdealFor": [
+            "Travelers wanting a fixed-group tour with set departures (this is private; book individually)",
+            "Cruise groups larger than the vehicle's seating (typical sedan 1–3 pax, SUV 4–6, van 7+; specify at booking)",
+            "Budget-first travelers — private format costs more than shared cruise excursions",
+            "Travelers whose all-aboard window is shorter than 7 hours (hard fit)"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Why this route is built this way",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "Built around your all-aboard time, not a fixed clock",
+                  "detail": "Standard group tours run on the operator's schedule, not yours. A private cruise excursion starts the moment you disembark and ends well before your all-aboard, with a 60-minute safety buffer that absorbs Seoul traffic. The driver-guide treats the ship's departure time as the only deadline that matters."
+                },
+                {
+                  "label": "Pickup at the gangway, not 'meet at a station in Seoul'",
+                  "detail": "Cruise terminals at Incheon are 50 km from central Seoul. Public transit means a taxi to Incheon Airport, then the AREX train, then a subway line, then walking — easily 90+ minutes each way and a real risk if delayed. A private car is direct, door-to-door, and your luggage stays in the vehicle if you want."
+                },
+                {
+                  "label": "No mystery shopping stops, no group of 40",
+                  "detail": "Many large cruise-line excursions include forced ginseng-shop or duty-free stops that eat 60–90 minutes of your day. A private car has no such commercial pressure: you stop where you want, for as long as you want, in your own group only."
+                },
+                {
+                  "label": "Customizable on the day",
+                  "detail": "Royal guard ceremony cancelled by rain? Skip Bukchon, add Jogyesa? Want to swap Myeongdong for the Korean War Memorial because your father served? All possible — a private guide-driver can rebuild the day mid-itinerary as long as the sailaway window holds."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "title": "What's included",
+            "content": "Private vehicle (sedan, van, or large van depending on group size), English-speaking driver-guide, fuel, tolls, parking. Not included: admission tickets (Gyeongbokgung ₩3,000, N Seoul Tower deck ₩21,000, etc. — paid on the day), meals, tips. The guide pre-buys palace tickets to skip lines if requested."
+          },
+          {
+            "title": "Pickup & drop-off",
+            "content": "Driver-guide meets you at the Incheon Cruise Terminal arrival hall with a name sign. Note that Incheon has multiple terminals — confirm with your cruise line which one your ship uses (Yeongjong-do or Songdo). Pickup time is calibrated to your disembarkation, not a fixed clock."
+          },
+          {
+            "title": "Sail-away timing",
+            "content": "The driver-guide will ask for your all-aboard time at pickup. The standard rule: you must be back on the ship at least 30 minutes before sail-away (most cruise lines). The driver builds at least a 60-minute traffic buffer on top of that. Seoul-Incheon transfers can take 60–90 minutes depending on rush hour."
+          },
+          {
+            "title": "Customization & dietary needs",
+            "content": "The itinerary is fully customizable. Tell us in advance about: dietary restrictions (halal, vegetarian, kosher, allergies), mobility limitations (wheelchair access at palace and tower), specific sites (Korean War Memorial, Lotte Tower observation deck, Hangang River). The driver-guide will pre-plan the route accordingly."
+          },
+          {
+            "title": "Cancellation",
+            "content": "Free cancellation up to 24 hours before pickup. Same-day cancellations and no-shows are non-refundable. If your ship's port call is cancelled by the cruise line, full refund with documentation."
+          },
+          {
+            "title": "Children & accessibility",
+            "content": "Children of all ages are welcome — child seats available on request (no extra cost, but please advise number and age in advance). Accessible vehicles available for wheelchair users — please request when booking, as not all vehicles in the fleet support a wheelchair lift."
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "See seasonal notes"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "See seasonal notes"
+          },
+          "_seasonalSummary": "Seoul has four distinct seasons. Cruise calls in spring and autumn are typically the most pleasant; summer is hot and humid; winter is cold and dry but rarely freezing-rain.",
+          "_seasonalTemperatures": [
+            {
+              "season": "Spring (Mar–May)",
+              "range": "5–22°C",
+              "notes": "Cherry blossoms in early–mid April. Best season for outdoor sightseeing."
+            },
+            {
+              "season": "Summer (Jun–Aug)",
+              "range": "22–32°C",
+              "notes": "Hot and humid; July can have monsoon rain. Most palaces and museums are partially shaded."
+            },
+            {
+              "season": "Autumn (Sep–Nov)",
+              "range": "8–22°C",
+              "notes": "Best season — clear skies, mild temperatures, foliage in late October."
+            },
+            {
+              "season": "Winter (Dec–Feb)",
+              "range": "-5 to 6°C",
+              "notes": "Cold winds; bring a warm coat for the palace courtyard. Tower views often crystal clear."
+            }
+          ]
+        },
+        "seasonalVariations": [
+          {
+            "season": "Spring",
+            "highlight": "Cherry blossoms at Gyeongbokgung and along the Cheonggyecheon Stream; Bukchon's traditional houses in spring greens."
+          },
+          {
+            "season": "Summer",
+            "highlight": "Long daylight hours mean you can squeeze N Seoul Tower into a tight window; many indoor museum options if it's hot."
+          },
+          {
+            "season": "Autumn",
+            "highlight": "Maple foliage at Gyeongbokgung's rear garden (Hyangwonjeong) and along Bukchon ridges; clearest air for tower viewpoints."
+          },
+          {
+            "season": "Winter",
+            "highlight": "Snow on the palace courtyards is one of Seoul's classic photographs; fewer crowds at major sites."
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Licensed local operator",
+            "description": "Authorized Korean tour operator with full insurance",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "route",
+            "title": "Route specialists",
+            "description": "Hand-tuned itinerary, not a generic loop",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          },
+          {
+            "icon": "users",
+            "title": "Curated group size",
+            "description": "Right-sized for the route",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Immediately",
+            "title": "Instant Confirmation",
+            "detail": "Booking confirmation with itinerary summary"
+          },
+          {
+            "timing": "12 hours before",
+            "title": "12-Hour Reminder",
+            "detail": "Weather update and any route adjustments"
+          },
+          {
+            "timing": "Evening before",
+            "title": "Final Pickup Info",
+            "detail": "Exact pickup time and driver contact"
+          },
+          {
+            "timing": "Morning of tour",
+            "title": "Day-of Route Notes",
+            "detail": "Morning briefing based on live conditions"
+          },
+          {
+            "timing": "During tour",
+            "title": "Stop-by-Stop Tips",
+            "detail": "Real-time guidance at each location"
+          },
+          {
+            "timing": "After tour",
+            "title": "Post-tour Support",
+            "detail": "Follow-up and recommendations"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "What if my ship is delayed arriving at Incheon?",
+            "answer": "The driver-guide tracks the cruise schedule and adjusts pickup time accordingly. If the delay is significant (over 2 hours), the day's itinerary may need to be shortened — your guide will recommend the best subset to fit the remaining window."
+          },
+          {
+            "id": "q2",
+            "question": "What if Gyeongbokgung is closed?",
+            "answer": "Gyeongbokgung is closed on Tuesdays. If your port day falls on Tuesday, the substitute is Changdeokgung Palace and its UNESCO-listed Secret Garden (Huwon) — equally worth the visit, sometimes preferred by repeat visitors."
+          },
+          {
+            "id": "q3",
+            "question": "Can we go to the DMZ instead?",
+            "answer": "Generally no — DMZ tours from Incheon are tight on time (DMZ is ≈ 50 km north of Seoul, the cruise terminal is ≈ 50 km west). For most cruise schedules, a DMZ + Seoul highlights combo doesn't fit. If your port call is 10+ hours and you want DMZ-only, ask in advance — a separate Incheon-DMZ private tour is offered."
+          },
+          {
+            "id": "q4",
+            "question": "How does the guide know our ship's schedule?",
+            "answer": "You provide the ship name, port-call date, expected arrival time, and all-aboard time at booking. The guide cross-checks against the published cruise itinerary and the Incheon Port Authority's daily schedule. Any change communicated by your cruise line should also be relayed to the guide via WhatsApp."
+          },
+          {
+            "id": "q5",
+            "question": "What if there's heavy rain or a typhoon?",
+            "answer": "The tour runs in light rain. In a typhoon or heavy snow, the itinerary shifts indoors (palace covered halls, Jogyesa, Myeongdong's underground arcade, museum stops). The driver carries umbrellas. Outright cancellation only if a typhoon also cancels your ship's port call."
+          },
+          {
+            "id": "q6",
+            "question": "Can we leave luggage in the car?",
+            "answer": "Yes — many cruise guests use the day to also handle a hotel transfer or duty-free errand with luggage on board. The vehicle is locked when not in use; valuables should still be carried with you. Luggage capacity depends on vehicle size, so advise volume in advance."
+          },
+          {
+            "id": "first-time",
+            "question": "Is this a good choice for first-time visitors to Seoul?",
+            "answer": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+          },
+          {
+            "id": "walking",
+            "question": "Is the walking difficult?",
+            "answer": "Moderate walking with some active sections."
+          },
+          {
+            "id": "family",
+            "question": "Is this tour suitable for families?",
+            "answer": "Yes for families whose kids can handle a full day of moving around."
+          },
+          {
+            "id": "seniors",
+            "question": "Can older adults join comfortably?",
+            "answer": "Yes for active seniors; less ideal for low-mobility travelers."
+          },
+          {
+            "id": "children",
+            "question": "What's the recommended minimum age?",
+            "answer": "Best fit is around age 6 and up — children comfortable with a full-day rhythm and the walking notes above."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "group",
+          "priceSource": "getyourguide_t1249797",
+          "priceNote": "Price not yet set. Private tour pricing varies by vehicle size (sedan 1–3 pax, van 4–6 pax, large van 7–9 pax). Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+          "discountPercent": 10
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-29",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v17_batch10"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch10_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 10 deep enhancement — Incheon Cruise → Seoul shore-excursion pair. Tour 1 (from-incheon-seoul-day-tour-cruise-guests): Batch 9 small-group fixed-itinerary methodology. Tour 2 (incheon-seoul-private-car-shore-excursion-cruise): **RECLASSIFIED from small_group to private** — vehicle is private_vehicle, badges include 'Private', description specifies private group + driver-guide for your group only. Now uses Batch 8 private fixed-itinerary methodology with elevated customization (0.6) due to genuine within-stop choices (lunch your choice + Myeongdong/Jogyesa). All substantive stops enhanced with 1,200-2,000+ char descriptions weaving verified facts. matching_profile recalibrated to 0-1 float scale. 5 new POIs added to KB (v1.12 → v1.13): changdeokgung_palace (UNESCO World Heritage 1997, Tuesday substitute), n_seoul_tower (Korea's iconic 236.7m broadcasting tower, opened 1980, rebranded 2005), myeongdong (Seoul's #1 K-beauty/shopping district + 1898 Cathedral), jogyesa_temple (head temple of Jogye Order, founded 1395 origin, 1954 current name), incheon_cruise_terminal (opened April 2019, USD 580M facility for Oasis-Class ships). Reused KB POIs: gyeongbokgung_palace, bukchon_hanok_village, gwangjang_market, insadong (all from prior batches). KB POI count: 68 → 73.",
+        "_score_audit": {
+          "_methodology": "Tour 1 = small-group shared-van fixed-itinerary (Batch 9 formula): private_tour_fit=0.05, customizable_route_fit=0.05 (tighter than Batch 9 due to fixed cruise schedule), flexibility_fit=0.3. Tour 2 = **RECLASSIFIED** small_group → private (Batch 8 formula with elevated customization): private_tour_fit=1.0, customizable_route_fit=0.6 (genuine within-stop choices), flexibility_fit=0.85 (sail-away built in). Both tours: cruise_passenger_fit=1.0 (catalog-leading new dimension). Tour 1 royal_palace_fit=1.0, hanok_fit=1.0, street_food_fit=1.0 — all catalog-leading new dimensions. Time-weighted indoor_ratio re-computed per Fix 1 methodology using verified per-POI indoor_ratio_at_stop values.",
+          "deltas_applied": {
+            "product_type": {
+              "old": "small_group",
+              "new": "private",
+              "reasoning": "**RECLASSIFICATION** — tour vehicle is private_vehicle, badges include 'Private', description states 'private car charter ... built around your ship's all-aboard time, not a fixed schedule', 'English-speaking driver-guide' for your group only. Was misclassified as small_group. Now correctly 'private' (Batch 8 private fixed-itinerary formula)."
+            },
+            "private_tour_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — private vehicle dedicated to your group only; private gangway pickup; private driver-guide. Was unset. Maximum 1.0."
+            },
+            "customizable_route_fit": {
+              "old": null,
+              "new": 0.6,
+              "reasoning": "VERIFIED — genuine within-stop customization: lunch your choice (4 vetted options) + Myeongdong vs Jogyesa final choice. Higher than DMZ (0.4) but not full route-menu (0.85). Was unset. 0.6 calibrated."
+            },
+            "flexibility_fit": {
+              "old": null,
+              "new": 0.85,
+              "reasoning": "VERIFIED — sail-away timing built into entire 8-hr window; driver-guide adjusts pace to ship-specific schedule. Was unset. 0.85 calibrated (vs Batch 7 0.85-0.95 private charter)."
+            },
+            "cruise_passenger_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — purpose-built private shore excursion with ship-return guarantee. Was unset. Maximum."
+            },
+            "first_time_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Maintained — Seoul highlights + N Seoul Tower covers maximum first-time-Korea content."
+            },
+            "history_culture_fit": {
+              "old": null,
+              "new": 0.8,
+              "reasoning": "VERIFIED — Gyeongbokgung 1395 + Bukchon 600-year hanok + Insadong crafts + optional Jogyesa 1395 temple. Slightly less than Tour 1 (no Gwangjang lunch by default — lunch flexible). Was unset. 0.8."
+            },
+            "royal_palace_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — Gyeongbokgung is centerpiece. Was unset."
+            },
+            "hanok_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — Bukchon is Seoul's largest hanok district. Was unset."
+            },
+            "iconic_landmark_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Maintained — Gyeongbokgung + N Seoul Tower = Seoul's two #1 landmarks."
+            },
+            "walking_level": {
+              "old": 0.6,
+              "new": 0.6,
+              "reasoning": "Maintained — private vehicle drops at each stop; less walking between stops vs. shared-bus tour 1."
+            },
+            "indoor_ratio": {
+              "old": 0.3,
+              "new": 0.35,
+              "reasoning": "VERIFIED — Fix 1 time-weighted: Pickup 30 × 1.0 = 30, Gyeongbokgung 75 × 0.05 = 3.75, Bukchon+Insadong 75 × 0.15 = 11.25, Lunch 60 × 0.85 = 51, N Seoul Tower 60 × 0.4 = 24, Myeongdong/Jogyesa 60 × 0.4 = 24, Return 90 × 1.0 = 90, transit-other 30 × 1.0 = 30. Total indoor 264 / 480 min = 0.55 with full transit; substantive only 114 / 330 = 0.35. Catalog top-level value 0.35 (slight upward from prior 0.30 reflecting flex lunch + indoor venue choices)."
+            },
+            "weather_sensitivity": {
+              "old": 0.4,
+              "new": 0.4,
+              "reasoning": "Maintained — flex lunch + Myeongdong/Jogyesa choice provides indoor fallbacks; private vehicle minimizes outdoor exposure between stops."
+            },
+            "storytelling_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Maintained — private driver-guide commentary throughout; Joseon royal + colonial-period + modern Seoul layered narrative."
+            },
+            "family_fit": {
+              "old": 0.6,
+              "new": 0.75,
+              "reasoning": "VERIFIED — private pacing + flex lunch + N Seoul Tower cable car (kid-friendly highlight) + temple/shopping flex. Upward to 0.75."
+            },
+            "food_fit": {
+              "old": 0.8,
+              "new": 0.8,
+              "reasoning": "Maintained — flex lunch with 4 quality options including streetfood + royal cuisine."
+            },
+            "shopping_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "Verified — Bukchon + Insadong + Myeongdong (option) = strong shopping. Slight upward to 0.85."
+            },
+            "premium_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Maintained — private vehicle + driver-guide + sail-away guarantee = premium product."
+            },
+            "value_for_money_fit": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "Verified — premium private tour at premium price. Slight upward to 0.65 (positioned as premium not budget)."
+            },
+            "scenic_level": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "VERIFIED — N Seoul Tower 360° view adds catalog-defining urban panorama vs. Tour 1. Upward to 0.85."
+            },
+            "photo_level": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Maintained — palace + Bukchon + N Seoul Tower = Seoul's highest photo density (with the tower bonus)."
+            },
+            "small_group_fit": {
+              "old": 0.2,
+              "new": 0.05,
+              "reasoning": "Verified — private vehicle, NOT a small-group format. Markdown to 0.05 (matches Batch 7/8 private)."
+            },
+            "bus_fit": {
+              "old": 0.2,
+              "new": 0.05,
+              "reasoning": "Verified — private vehicle (sedan/SUV), not bus. Markdown to 0.05."
+            },
+            "unesco_fit": {
+              "old": 0.2,
+              "new": 0.3,
+              "reasoning": "VERIFIED — Tuesday substitute Changdeokgung IS UNESCO World Heritage (1997). Slight upward."
+            },
+            "n_seoul_tower_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — N Seoul Tower is the day's tower viewpoint stop. Was unset (new dimension). Maximum."
+            }
+          }
+        }
+      }
+    }
+  }
+}

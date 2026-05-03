@@ -29,6 +29,7 @@
     "match:stress:haiku": "npx tsx scripts/match-stress.ts --parser=haiku",
     "match:stress:failed": "npx tsx scripts/match-stress.ts --only-failed",
     "match:stress:cat": "npx tsx scripts/match-stress.ts --category",
+    "stress:noshow": "npx tsx scripts/stress-noshow-hold.ts",
     "import:match-v18": "node scripts/import-match-v18.mjs",
     "chat:classify": "node scripts/classify-chat-messages.mjs",
     "gen:southwest-tour-product-sql": "node scripts/gen-southwest-tour-product-sql.mjs",

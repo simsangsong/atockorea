@@ -92,34 +92,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "≈ 10.5 hours (08:30 first pickup, ≈ 19:00 last drop)"
+      "icon": "camera",
+      "label": "Photo Value",
+      "value": "High",
+      "level": 5
     },
     {
-      "icon": "calendar",
-      "label": "Best season",
-      "value": "Year-round; cherry blossoms at Cheongsapo coast late March–early April"
-    },
-    {
-      "icon": "users",
-      "label": "Group Size",
-      "value": "Small group (≈12 max), shared mini-coach"
+      "icon": "mountain",
+      "label": "Scenic",
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Moderate–challenging — Yonggungsa 108 stairs (skippable), Gamcheon hillside, market alleys"
+      "value": "High",
+      "level": 4
     },
     {
-      "icon": "map-pin",
-      "label": "Region",
-      "value": "Busan (Haeundae area + central Busan)"
+      "icon": "cloud-rain",
+      "label": "Rain Safety",
+      "value": "Moderate",
+      "level": 3
     },
     {
-      "icon": "ticket",
-      "label": "Includes",
-      "value": "Round-trip transport, certified guide. Excludes lunch, optional Sky Capsule / Beach Train, optional Busan Tower (₩12,000)."
+      "icon": "users",
+      "label": "Family Fit",
+      "value": "Good",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Balance",
+      "value": "Balanced",
+      "level": 4
     }
   ],
   "galleryItems": [

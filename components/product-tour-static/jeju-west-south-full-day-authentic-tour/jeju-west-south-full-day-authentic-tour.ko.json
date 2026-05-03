@@ -1,0 +1,2411 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "jeju-west-south-full-day-authentic-tour",
+  "locale": "ko",
+  "product_id": "jeju-west-south-full-day-authentic-tour",
+  "seo": {
+    "pageTitle": "Jeju West & South Authentic Full-Day Tour | AtoC Korea",
+    "metaDescription": "9-hour Jeju west-south small-group loop: Hallasan 1100 Wetland (UNESCO), Jusangjeolli Cliff, Songaksan, Cheonjeyeon Falls, Osulloc, Hyeopjae Beach café strip.",
+    "primaryKeywords": [
+      "제주 서부 남부 투어",
+      "제주 1100고지 투어",
+      "협재해변 카페 투어",
+      "송악산 투어",
+      "제주 정통 소그룹 투어"
+    ],
+    "ogImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+    "title": "제주 서부·남부 정통 소그룹 투어 | AtoC Korea",
+    "description": "제주 서부·남부 소그룹 투어: 한라산 1100고지 습지 → 주상절리 → 송악산 → 천제연폭포 → 오설록 → 협재해변 카페거리. 전 입장료 포함, 공인 가이드."
+  },
+  "catalog_card": {
+    "thumbnail": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+    "title": "제주 서부·남부 정통 일일 투어",
+    "priceLabel": "가격은 예약 시 확인",
+    "shortCardDescription": "한라산 1100고지 습지(람사르·유네스코)부터 주상절리(유네스코 지질공원), 송악산 전망 둘레길, 천제연폭포, 오설록 티뮤지엄, 협재해변 카페거리까지 이어지는 제주 서부·남부 정통 루프입니다. 쇼핑 경유지 없음, 소그룹, 공인 가이드.",
+    "tags": [
+      "small_group",
+      "jeju",
+      "west_south_jeju",
+      "unesco",
+      "cafe_culture",
+      "coastal"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "slug": "jeju-west-south-full-day-authentic-tour",
+    "subtitle": "한라산 1100고지 습지, 주상절리, 송악산 분화구 둘레길, 천제연폭포, 오설록 차밭, 협재 카페거리를 소그룹으로 하루에 일주합니다.",
+    "region": "West & South Jeju",
+    "duration": "9 hours",
+    "stopsCount": 9,
+    "badges": [
+      "소그룹",
+      "제주",
+      "West & South Jeju",
+      "유네스코",
+      "카페 문화",
+      "해안 풍경"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800"
+  },
+  "headlineLine1": "1100 습지에서 주상절리, 차밭에서 해안 카페까지 —",
+  "headlineLine2": "제주 서부·남부를 하루에 정통으로 일주하다",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "person",
+    "priceSource": "getyourguide_t828410",
+    "priceNote": "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, our Southern UNESCO tour, same operator) is $43 per person. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+    "discountPercent": 10
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1600",
+    "imagePosition": "center 35%",
+    "tagline": "화산 지형과 극적인 해안선, 트렌디한 해안 카페가 이어지는 제주 서부·남부 루프 — 진짜 제주를 하루에 만납니다.",
+    "pills": [
+      "small_group",
+      "jeju"
+    ],
+    "meta": {
+      "duration": "≈ 9 hours (08:30 first pickup, ≈18:00 drop-off)",
+      "region": "West & South Jeju",
+      "stops": "9 stops",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "투어 개요"
+    },
+    {
+      "id": "itinerary",
+      "label": "상세 일정"
+    },
+    {
+      "id": "details",
+      "label": "유의사항"
+    },
+    {
+      "id": "faq",
+      "label": "자주 묻는 질문"
+    },
+    {
+      "id": "reviews",
+      "label": "여행자 후기"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "포토 스팟",
+      "value": "높음",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "경치 밀도",
+      "value": "높음",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "도보 난이도",
+      "value": "보통",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "우천 적합도",
+      "value": "보통",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "가족 적합도",
+      "value": "양호",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "투어 페이스",
+      "value": "균형",
+      "level": 4
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+      "alt": "Wooden boardwalk loop crossing the 1100 Altitude Wetland with low shrubs and Hallasan ridge visible in the distance",
+      "caption": "Hallasan 1100 Altitude Wetland — UNESCO biosphere boardwalk",
+      "location": "Hallasan 1100 Wetland, central Jeju (1,100 m elevation)",
+      "atmosphere": "Cool highland air; UNESCO-protected mountain ecosystem with quiet boardwalk loop"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+      "alt": "Hexagonal columnar lava cliffs rising vertically from the sea, viewed from a railed boardwalk",
+      "caption": "Jusangjeolli Cliff — UNESCO Geopark hexagonal columns",
+      "location": "Jusangjeolli, Jungmun coast, southern Jeju",
+      "atmosphere": "Wave-pounded basalt cliffs; one of Jeju's most photographed coastal stops"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+      "alt": "Coastal volcanic cone with a flat-topped rim trail, ocean and offshore islands visible behind",
+      "caption": "Songaksan rim — south-coast panoramic loop",
+      "location": "Songaksan, southwestern tip of Jeju",
+      "atmosphere": "Open coastal grasslands; 360° panoramic walk with Hallasan inland and Marado offshore"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+      "alt": "Rolling green tea fields with neat rows extending to a low museum building",
+      "caption": "O'sulloc Tea Museum and tea fields",
+      "location": "O'sulloc, west-central Jeju",
+      "atmosphere": "Korea's largest visitable tea estate; museum + café + photo-friendly fields"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+      "alt": "White-sand beach with turquoise water, café strip buildings on the shore, small island visible offshore",
+      "caption": "Hyeopjae Beach + west-coast café strip",
+      "location": "Hyeopjae Beach, Hallim, western Jeju",
+      "atmosphere": "Sunset café-strip closing stop; Biyangdo Island visible offshore"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "09:00",
+      "duration": "30 min",
+      "name": "픽업 (제주시 4개 지점)",
+      "category": "Pickup — Jeju City Hotel/Hub Sequence",
+      "description": "아침 이동 최소화를 위해 제주시 4개 주요 지점에서 픽업: 제주공항 1번 게이트(국내선 1층), 노형오거리 인근, 제주시청 인근, 중앙로터리 인근.",
+      "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+      "highlights": [
+        "**4 pickup points** — Airport, City Hall, Hagwi, Dongmun",
+        "Sequence west→east minimizes morning coach distance",
+        "**Small-group minicoach (max 14 pax)** with English guide",
+        "Bilingual itinerary card + Route 1100 closure brief at first stop",
+        "**Winter contingency**: 1100 Wetland → Mysterious Road / Andeok Valley alternate",
+        "Total morning transit Jeju City → 1100 Wetland: ~50 min via Route 1100"
+      ],
+      "timeUsed": [
+        "Hagwi pickup ~09:00 — 5 min",
+        "Airport pickup ~09:10 — 5 min",
+        "City Hall pickup ~09:20 — 5 min",
+        "Dongmun pickup ~09:30 — 5 min",
+        "Southbound Route 1100 to wetland — ~50 min"
+      ],
+      "whyOnRoute": "Four pickup points cover Jeju City's hotel zones (airport, mid-city, old town, market district) without forcing guests across the city. Sequencing west→east lands the coach at 1100 Wetland ~10:20 — early enough to catch the morning alpine clarity before midday haze. **Route 1100 closure protocol** ensures guests are informed about winter contingency before departure — Jeju's only highest-altitude national highway is closed ~5–10 days/year for ice."
+    },
+    {
+      "number": 2,
+      "time": "≈ 10:20",
+      "duration": "45 min",
+      "name": "한라산 1100고지 습지 (람사르·유네스코)",
+      "category": "Alpine Wetland — Ramsar Site + within Hallasan UNESCO World Heritage",
+      "description": "한라산 1100고지 습지는 해발 정확히 1,100m에 위치한 고산 습지로, 람사르 협약 등록 습지이자 유네스코 생물권보전지역의 일부입니다. 산철쭉, 습지 식물군, 고산 풍경이 계절마다 다른 얼굴을 보입니다. 평탄한 데크길(약 1km 루프)로 체력 부담이 적습니다. 여름엔 안개 낀 신비로운 분위기, 가을엔 억새, 겨울엔 설경이 인상적입니다. 방문 시간: 약 45분.",
+      "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
+      "highlights": [
+        "**Ramsar Site No. 1893** (designated 12 Oct 2009) — Wetland of International Importance",
+        "**1,100 m above sea level** — on Korea's **highest national highway** (Route 1100)",
+        "**Quadruple international designation** — Ramsar + UNESCO World Heritage + Biosphere + National Park",
+        "**16+ discontinuous wetlands** — freshwater marshes + pools + peat bogs",
+        "**3 threatened bird + 1 threatened plant** species; multiple Jeju endemics",
+        "**900,000 visitors (2008)** — Mt Halla Visitor Centre managed",
+        "**1-km wooden boardwalk loop** with observation decks + interpretive signage",
+        "**Autumn foliage + winter snow** = signature photographic seasons",
+        "**FREE admission**; adjacent 1100 Rest Area (indoor restroom + cafe)"
+      ],
+      "timeUsed": [
+        "Coach arrival + parking at 1100 Rest Area — ~5 min",
+        "Boardwalk loop + observation decks — ~25 min",
+        "Interpretive signage + natural-history exhibit — ~10 min",
+        "Buffer / cafe restroom — ~5 min"
+      ],
+      "whyOnRoute": "**Alpine UNESCO opening anchor of the west-south authentic route**. Where the south-UNESCO sister tour (Tour 1) opens at Hallasan's **lower-elevation Eoseungsaengak trail** (1,169 m), this authentic-emphasis route opens at the **higher 1,100 m wetland** for a **fundamentally different Hallasan experience**: not a cone-climb but an **alpine wetland boardwalk** showcasing Jeju endemism + Ramsar-grade biodiversity. Route 1100 itself is the experience — Korea's highest national highway, with a winding ascent through Hallasan's western flank delivering panoramic foliage + snow scenes depending on season. Compared with **Yeongsil Trail (popular but 4.5-hour round-trip summit route)** or **Eorimok Trail (longer mid-elevation)**, the 1100 Wetland is **45-minute viable** and delivers UNESCO + Ramsar + Biosphere depth in a single boardwalk loop — the highest yield-per-minute alpine stop in Hallasan National Park.",
+      "_poi_meta": {
+        "poi_key": "hallasan_1100_wetland",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Ramsar Sites Information Service — 1100 Altitude Wetland (Site No. 1893)",
+          "UNESCO Man and the Biosphere Programme — Jeju Island Biosphere Reserve",
+          "Korea National Park Service — Hallasan National Park 1100 Wetland records",
+          "Mt Halla Visitor Centre — visitor management documentation",
+          "Jeju Special Self-Governing Province — Wetland Protected Area designation 2009"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:35",
+      "duration": "45 min",
+      "name": "주상절리 (유네스코 지질공원)",
+      "category": "Columnar Jointing — Natural Monument No. 443 (2005)",
+      "description": "대포 주상절리(중문대포해안 주상절리대)는 중문 해안을 따라 약 1km 이어지는 6각형 주상절리 현무암 절벽입니다. 화산 용암이 바다와 만나 급속 냉각되어 형성된 지형으로, 유네스코 세계지질공원 핵심 명소입니다. 입장료 포함. 방문 시간: 약 40분.",
+      "image": "https://images.unsplash.com/photo-1565967511849-76a60a516170",
+      "highlights": [
+        "**Natural Monument No. 443** — designated **2005-01-06**, the most recent Jeju coastal NM",
+        "Columns rise **30–40 m**, packed in **5- to 7-sided polygons** (mostly hexagons) along **1 km** of coastline",
+        "Formation: **Hallasan flank lava cooled in the sea ~250,000–140,000 years ago**, contracting perpendicular to cooling face",
+        "**East Asia's premier columnar-jointing site** — peer to Giant's Causeway, Devils Postpile, Fingal's Cave",
+        "**Spray up to 20 m on high-tide days** — wave-fountain photography window",
+        "**0.8 km boardwalk loop**, ~15 min walk — barrier-free deck, wheelchair/stroller accessible",
+        "Part of **Jeju Global Geopark (UNESCO 2010-10)** — 13 island-wide geosites",
+        "Admission **₩2,000 adult / ₩1,000 youth / FREE under 7 + over 65**",
+        "Hallasan summit visible to the north on clear days, **directly downstream** geologically"
+      ],
+      "timeUsed": [
+        "Parking + ticket purchase + entrance — ~5 min",
+        "Walk to first viewing platform — ~5 min",
+        "Cliff-edge column viewing + photos — ~15 min",
+        "Continue boardwalk loop — ~10 min",
+        "Return to coach — ~10 min"
+      ],
+      "whyOnRoute": "**Mid-morning UNESCO Geopark anchor** of the west-south authentic route. Where the south-UNESCO sister tour places Jusangjeolli as a **late-afternoon golden-hour climax** (15:40 arrival), this authentic-emphasis route uses Jusangjeolli as the **mid-morning UNESCO Geopark transition** between the alpine 1100 Wetland and the southwest double-crater Songaksan — explicitly framing it as **the lava-flow downstream of the Hallasan we just visited**, completing a single geological narrative arc from alpine source to coastal solidification. The 11:35 arrival catches **post-morning-haze clarity** with strong vertical light on the basalt columns. Compared with the south-UNESCO tour's afternoon golden-hour framing, this earlier window suits photographers preferring **dramatic top-light on the column tops** rather than side-lit warm tones.",
+      "_poi_meta": {
+        "poi_key": "daepo_jusangjeolli_cliff",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Cultural Heritage Administration — Natural Monument No. 443 designation (2005-01-06)",
+          "Jeju UNESCO Global Geopark — Daepo Jusangjeolli geosite documentation",
+          "Korean Society of Petroleum Engineers — columnar-jointing geology records",
+          "VisitJeju — Daepo Jusangjeolli official listing",
+          "Korea Geological Survey — Jeju volcanic flow chronology"
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "time": "≈ 12:30",
+      "duration": "60 min",
+      "name": "점심 — 대정·안덕 현지 식당",
+      "category": "Midday Reset — South-West Jeju Local Cuisine",
+      "description": "주상절리와 송악산 사이 약 60분 점심 시간입니다. 대정·안덕 지역 식당에서 갈치조림, 고등어구이, 흑돼지 등 제주 남부 향토 음식을 즐길 수 있습니다. 점심 식사비는 별도(약 ₩15,000).",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "highlights": [
+        "**West-south Jeju seafood + mountain-cuisine corridor** — Daejeong / Andeok",
+        "**Galchi-jorim (갈치조림)** — Daejeong harbor primary landing",
+        "**Gosari yukgaejang (고사리 육개장)** — Jeju mountain-fern + beef spicy soup, west-south specialty",
+        "**Heuk-doeji** year-round — Cultural Heritage Material No. 5 (2015)",
+        "**Vegetarian + halal-friendly** options on request",
+        "**10-min coach to Songaksan** — minimal post-lunch transit"
+      ],
+      "timeUsed": [
+        "Coach to lunch venue — ~5 min",
+        "Order + meal — ~45 min",
+        "Coach to Songaksan trailhead — ~10 min"
+      ],
+      "whyOnRoute": "Daejeong-eup positioning = 10-min hop to Songaksan. **Galchi from Daejeong harbor + gosari yukgaejang** are both regional specialties anchored in the Daejeong / Andeok tradition (Daejeong was the historical Jeong-eui-hyeon administrative seat for west-south Jeju, similar to Seongeup's role in east Jeju). The fern-foraging tradition ties to Jeju's **mountain-folk food heritage**, distinct from the coastal seafood emphasis of east Jeju. Pace also breaks the morning's alpine + Geopark walking before the afternoon's Songaksan loop + waterfall + tea museum + beach sunset."
+    },
+    {
+      "number": 5,
+      "time": "≈ 13:40",
+      "duration": "75 min",
+      "name": "송악산 (파노라마 전망대)",
+      "category": "Double-Crater Volcanic Cone — 99 Peaks + Olle Trail 10 + WWII History",
+      "description": "송악산(해발 104m)은 대정읍 제주 서남쪽 끝에 솟은 이중 분화구 기생화산입니다. 분화구 둘레길(약 2.6km, 평탄)에서 마라도·가파도가 보이는 남해 파노라마와 한라산 전경을 즐길 수 있습니다. 일제강점기 요새 동굴도 남아 있습니다. 무료 입장. 방문 시간: 약 50분.",
+      "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa",
+      "highlights": [
+        "**104 m double-crater volcano** — outer 500 m × 1.7 km circumference, inner 400 m × 69 m deep",
+        "**'99 Peaks' (구십구봉)** folk count — dense scatter of subsidiary cones",
+        "**2.8-km coastal loop trail** (~75 min) — wooden boardwalk + gentle stairs",
+        "**Olle Trail Course 10** central segment (Hwasun → Moseulpo)",
+        "**Panorama**: Marado, Gapado, Hyeongje Islet, Sanbangsan, Hallasan",
+        "**Imperial Japanese Army WWII tunnels** in southern cliffs — kamikaze shelters",
+        "**Free-roaming horses + ponies** graze the slopes — Jeju traditional pasture",
+        "**Summit trail occasionally closed** for environmental rotation; coastal loop year-round",
+        "**FREE admission**; small parking lot; strong sea winds (windbreaker year-round)"
+      ],
+      "timeUsed": [
+        "Parking + trailhead orientation — ~5 min",
+        "Coastal cliff section — ~25 min",
+        "WWII tunnel exteriors + interpretive signage — ~10 min",
+        "Crater rim + summit overlook (when open) — ~15 min",
+        "Loop completion + photography — ~15 min",
+        "Buffer — ~5 min"
+      ],
+      "whyOnRoute": "**Day's geological + historical climax** — and the catalog's only stop combining **double-crater volcanic cone geology + WWII colonial-history layer + 5-island panorama in a single 75-minute walk**. Songaksan sits **15 min west of Jusangjeolli** and **20 min east of Hyeopjae Beach** — the natural geographic pivot of the west-south route. Compared with **Sanbangsan Mountain (395 m, no summit trail) or Yongmeori Coast (tide-restricted access, 30-min walk)**, Songaksan is **104 m / 75-min loop / always-accessible coastal portion / WWII-layered**, making it the highest-yield southwest stop. The early-afternoon timing (13:40) catches **strong overhead light on the volcanic cliff strata** — distinct from typical sunset framing of the same stop, and saves Hyeopjae Beach for the actual sunset.",
+      "_poi_meta": {
+        "poi_key": "songaksan",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Wikipedia — Songaksan (Jeju) volcanic structure documentation",
+          "Jeju Olle Foundation — Trail Course 10 official map",
+          "Jeju 4·3 Peace Foundation — Imperial Japanese Army WWII tunnel records",
+          "VisitJeju — Songaksan Mountain official listing",
+          "Korea Geological Survey — double-crater parasitic-cone geology"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "≈ 15:15",
+      "duration": "45 min",
+      "name": "천제연폭포 (신들의 연못)",
+      "category": "Three-Tier Waterfall — Natural Monument No. 378 (1993)",
+      "description": "천제연('하늘 임금의 연못'이라는 뜻)은 중문관광단지 내 3단 폭포입니다. 1단 폭포는 물이 마르면 잠기는 천정굴에서 흘러내립니다. 무지개 조각이 있는 선임교(무지개다리)가 포토 스팟입니다. 입장료 포함. 방문 시간: 약 50분.",
+      "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
+      "highlights": [
+        "**Natural Monument No. 378 (designated 1993)** — three-tier waterfall + rare-plant habitat",
+        "Name **'Cheonjeyeon' = 'Pond of the Emperor of Heaven'** — Joseon Daoist legend",
+        "**Seven Nymphs (선녀) legend** carved into the **120 m × 78 m Seonimgyo Bridge** relief panels",
+        "**1st tier (22 m / 21 m pond)** — only flows after heavy rain; **2nd tier (30 m) flows year-round**",
+        "Habitat for **Mankyua chejuense fern** — Jeju endemic, IUCN Critically Endangered",
+        "**0.8 km loop / ~30 min** — moderate stairs, footwear matters",
+        "Admission **₩2,500 adult / ₩1,350 youth / FREE under 7 + over 65**",
+        "**Jeju Chilseonyeo (Seven Nymphs) Festival** held biennially at the site — bridge ceremony",
+        "**Misty microclimate** — natural cooling, popular summer afternoon retreat"
+      ],
+      "timeUsed": [
+        "Entrance + ticket — ~5 min",
+        "Descent to 1st tier viewing platform — ~10 min",
+        "1st tier + 2nd tier photography — ~20 min",
+        "Seonimgyo Bridge + nymph relief panels — ~15 min",
+        "Forest loop + ascent back to coach — ~25 min"
+      ],
+      "whyOnRoute": "**Mid-afternoon Natural Monument heritage anchor**. Where the south-UNESCO sister tour places Cheonjeyeon at 14:30 with longer 60-min dwell, this authentic-emphasis route compresses to **45-min focused stop at 15:15** — preserving time budget for the longer Songaksan loop earlier and the Hyeopjae sunset finale later. The Daoist seven-nymph mythology + Mankyua chejuense fern habitat + Seonimgyo Bridge reliefs remain core to the experience; only the dwell window shortens. Geographic placement: **5 min from Jusangjeolli** and **30 min west to Osulloc** — efficient sequencing on the Jungmun coastal corridor.",
+      "_poi_meta": {
+        "poi_key": "cheonjeyeon_falls",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Cultural Heritage Administration — Natural Monument No. 378 designation",
+          "VisitJeju — Cheonjeyeon Falls official listing",
+          "Jeju Special Self-Governing Province — Seonimgyo Bridge construction records",
+          "Korea Plant Society — Mankyua chejuense IUCN Critically Endangered listing",
+          "Jeju Folklore Society — Daoist seven-nymph legend documentation"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "time": "≈ 16:15",
+      "duration": "60 min",
+      "name": "오설록 티뮤지엄 + 녹차밭",
+      "category": "Tea Heritage Museum — Korea's Largest Green Tea Field (Seogwang Dawon)",
+      "description": "오설록 티뮤지엄은 아모레퍼시픽이 운영하는 한국 최대 녹차 재배지의 문화 공간입니다. 서광다원 녹차밭 전망 포토 스팟, 녹차 아이스크림·음료 구매 가능. 입장 무료. 방문 시간: 약 50분.",
+      "image": "https://images.unsplash.com/photo-1556881286-fc6915169721",
+      "highlights": [
+        "**Amorepacific** flagship — Korea's largest beauty company; founder Suh Sung-whan pioneered Jeju tea **1979**",
+        "**Seogwang Dawon = Korea's largest green-tea field**; ~700 tonnes annual production",
+        "Museum **opened 2001** — designboom Top 10 art museums (architecture)",
+        "**FREE admission**, daily **09:00–18:00**, ~2 million annual visitors",
+        "Antique tea-ware collection spanning **Tang dynasty (618–907 CE)** to modern Korean Joseon ceramics",
+        "**Green tea rolling cake** + **green tea ice cream** = signature cafe items",
+        "**Innisfree Jeju House** 5-min walk — free, optional tangerine soap DIY ₩15,000",
+        "Plantation walking paths **best at golden hour (16:00–17:00)** for photography",
+        "Rooftop deck + ground-level rows give two distinct elevations for tea-row composition"
+      ],
+      "timeUsed": [
+        "Parking + entrance — ~5 min",
+        "Museum interior + tea-ware collection — ~20 min",
+        "Tea House cafe (rolling cake + ice cream) — ~20 min",
+        "Plantation walking path — ~20 min",
+        "Optional Innisfree Jeju House visit — ~10 min"
+      ],
+      "whyOnRoute": "**Late-afternoon tea-culture heritage anchor**. Where the south-UNESCO sister tour places Osulloc as the day's UNESCO-narrative finale (16:40), this authentic-emphasis route uses Osulloc as the **inland-to-coastal pivot before Hyeopjae sunset** — transitioning from morning's alpine + double-crater geology + heritage waterfall narrative arc to the day's **coastal sunset finale**. The 16:15 arrival catches **late-afternoon golden light on Seogwang Dawon green-tea fields**, perfectly bridging the day's inland and coastal halves. Geographic placement: **30 min from Cheonjeyeon** and **15 min from Hyeopjae Beach** — natural sequencing on the southwest plateau.",
+      "_poi_meta": {
+        "poi_key": "osulloc_tea_museum",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Osulloc Tea Museum official site (osulloc.com)",
+          "Amorepacific Corporation — Suh Sung-whan tea reclamation history (1979)",
+          "Architectural Institute of Korea — 2009 Korea Architecture Award records",
+          "designboom — Top 10 art museums feature",
+          "VisitJeju — Osulloc Tea Museum official listing"
+        ]
+      }
+    },
+    {
+      "number": 8,
+      "time": "≈ 17:30",
+      "duration": "60 min",
+      "name": "협재해변 + 서부 해안 카페거리",
+      "category": "West-Coast Sunset Beach — Twin-Beach + Biyangdo Island Panorama",
+      "description": "협재해수욕장은 제주 서부 대표 해수욕장으로, 맑은 에메랄드빛 바다와 비양도가 보이는 풍경이 유명합니다. 해변 주변 카페거리(애월 한담 해안산책로 연계)에서 일몰 감상과 음료를 즐길 수 있습니다. 방문 시간: 약 45분.",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      "highlights": [
+        "**Top 3 west-coast Jeju beaches / Top 10 overall** — emerald-turquoise water + silvery sand",
+        "**Distinctive silvery-white sand** — crushed seashells + coral fragments",
+        "**9 km shoreline** when paired with twin-beach **Geumneung Beach** (less crowded, walkable)",
+        "**Biyangdo Island** — 1.2 km offshore, ~200 residents, **Korea's first carbon-free island certification**",
+        "**Sunset behind Biyangdo** — catalog's premier west-coast sunset framing",
+        "**Pine forest (Songlim) backdrop** with free camping ground",
+        "**Tidal pools at low tide** — hermit crabs, shrimp, juvenile fish; Biyangdo 'walkable' optical effect",
+        "**Lifeguarded swim period July 1 – August 31**; wheelchair-accessible ramp at multiple points",
+        "**Most-developed west-coast café strip** behind the beach"
+      ],
+      "timeUsed": [
+        "Coach arrival + parking — ~5 min",
+        "Main beach walk + photo windows — ~20 min",
+        "Geumneung twin-beach extension (optional) — ~15 min",
+        "Cafe strip break + snacks — ~15 min",
+        "Sunset photography vantage point — ~5 min"
+      ],
+      "whyOnRoute": "**West-coast sunset finale of the authentic route**. Where the south-UNESCO sister tour ends inland at Osulloc tea fields, this authentic-emphasis route ends at the **Jeju west-coast sunset signature** — Biyangdo Island silhouetted over emerald-turquoise water, with the silvery-white sand catching late-afternoon golden tones. Geographic placement: Hyeopjae sits **30 min north of Osulloc** along Route 1132, looping the day naturally back toward Jeju City via the west coast. Compared with **Iho Tewoo Beach (Jeju City, urban + horse statues)** or **Geumneung Beach (twin neighbor, less amenity development)**, Hyeopjae is **on-route, sunset-anchored, Biyangdo-framed, and amenity-rich** — the highest-yield west-coast sunset stop. The 17:30 arrival aligns with **typical sunset windows**: ~17:30 (Dec) to ~19:50 (Jun); sunset photography window varies by season but always falls within the 60-min dwell.",
+      "_poi_meta": {
+        "poi_key": "hyeopjae_beach",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitJeju — Hyeopjae Beach + Biyangdo Island official listings",
+          "Jeju Special Self-Governing Province — Top Jeju beaches ranking + amenity registry",
+          "Korea Maritime + Ports Office — Hallim Port ferry schedule to Biyangdo",
+          "Jeju Tourism Organization — west-coast sunset photography spots registry",
+          "Hallim-eup local cultural office — Geumneung twin-beach pairing documentation"
+        ]
+      }
+    },
+    {
+      "number": 9,
+      "time": "≈ 19:00",
+      "duration": "40 min",
+      "name": "하차 (제주시 5개 지점)",
+      "category": "Drop-off — Jeju City Hub Sequence",
+      "description": "협재에서 서부 해안로(1132호선)를 따라 약 40분 이동 후 제주시 5개 지점 하차. 동문재래시장 앞 하차도 가능합니다.",
+      "image": "https://images.unsplash.com/photo-1549144511-f099e773c147",
+      "highlights": [
+        "**5 drop-off points** — Hagwi (first), Airport, City Hall, Yeon-dong/Nohyeong, Dongmun",
+        "Coach Hyeopjae → Jeju City via west-coast Route 1132 (~40 min)",
+        "**Same-day evening flights** viable but tighter than Tour 1 — disclose at pickup",
+        "Estimated arrival: Hagwi ~19:30 → Dongmun ~20:05",
+        "Coach Wi-Fi throughout"
+      ],
+      "timeUsed": [
+        "Coach Hyeopjae → Hagwi — ~30 min, drop — 5 min",
+        "→ Airport — 10 min, drop — 5 min",
+        "→ City Hall + Yeon-dong + Dongmun — sequenced"
+      ],
+      "whyOnRoute": "Sequence Hagwi-first because Route 1132 returns from Hyeopjae through the western Jeju City suburbs. **Same-day evening flight** viability noted explicitly: this is the catalog's tightest evening-flight tour, and guests must disclose at pickup so the sunset window can be adjusted accordingly."
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Jeju City + airport pickup",
+      "type": "origin",
+      "theme": "Departure"
+    },
+    {
+      "name": "Hallasan 1100 Wetland (UNESCO)",
+      "type": "primary",
+      "theme": "Volcano"
+    },
+    {
+      "name": "Jusangjeolli Cliff (UNESCO Geopark)",
+      "type": "primary",
+      "theme": "Coast"
+    },
+    {
+      "name": "Lunch",
+      "type": "meal",
+      "theme": "Meal"
+    },
+    {
+      "name": "Songaksan viewpoint",
+      "type": "secondary",
+      "theme": "View"
+    },
+    {
+      "name": "Cheonjeyeon Waterfall",
+      "type": "primary",
+      "theme": "Waterfall"
+    },
+    {
+      "name": "O'sulloc Tea Museum",
+      "type": "secondary",
+      "theme": "Culture"
+    },
+    {
+      "name": "Hyeopjae Beach + café strip",
+      "type": "primary",
+      "theme": "Beach"
+    },
+    {
+      "name": "Jeju City drop-off (5 options)",
+      "type": "return",
+      "theme": "Return"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "산악 오전",
+      "duration": "≈ 1 hour",
+      "description": "한라산 1100고지 습지 데크길 탐방."
+    },
+    {
+      "phase": "남해안 유네스코 + 점심",
+      "duration": "≈ 2.5 hours",
+      "description": "주상절리 관람 후 제주 현지 점심."
+    },
+    {
+      "phase": "송악산 + 폭포",
+      "duration": "≈ 1.5 hours",
+      "description": "송악산 분화구 둘레길 후 천제연폭포."
+    },
+    {
+      "phase": "차밭 + 서부 해안",
+      "duration": "≈ 2 hours",
+      "description": "오설록 티뮤지엄 → 협재 카페거리 피날레."
+    },
+    {
+      "phase": "귀환",
+      "duration": "≈ 45 min",
+      "description": "서부 해안 → 제주시 5개 하차 지점 경유."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "How this day flows",
+    "subtitle": "A west-and-south Jeju loop with a deliberately less heritage-heavy framing than the operator's Southern UNESCO tour. Where the Southern tour opens with the Eoseungsaengak Trail and emphasizes UNESCO labels, this 'Authentic' version opens at Hallasan's 1100 Wetland (still UNESCO, but more boardwalk than hike) and closes with the west-coast café strip rather than O'sulloc alone. The result is a route with the same heritage anchors (Hallasan, Jusangjeolli, Cheonjeyeon) but a softer pace and a stronger sense of contemporary Jeju lifestyle. Suited to visitors who want the iconic stops plus the chance to actually experience Jeju as Korean visitors do — coastal cafés, sunset viewpoints, scenic drives."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "Travelers wanting UNESCO Hallasan and the Jeju café-beach experience in one day",
+      "Photographers chasing variety (highland wetland → coastal cliffs → tea fields → white-sand beach)",
+      "First-time Jeju visitors with two or fewer island days",
+      "Couples and adult families wanting a balanced, well-paced full-day route",
+      "Travelers who prefer fixed-itinerary structure over private-driver flexibility"
+    ],
+    "lessIdealFor": [
+      "Visitors who want extended free time at one stop (the format is a fixed circuit)",
+      "Same-day cruise passengers — the 17:30–18:15 Hyeopjae finish conflicts with most cruise sailaway windows",
+      "Travelers wanting deep Hallasan trekking (this route is viewpoint-only at the 1100 Wetland)",
+      "Visitors needing wheelchair access at every stop (Cheonjeyeon has ≈ 80 stairs; Songaksan rim is 2.6 km of unpaved path)",
+      "Solo budget travelers (small-group per-person pricing; the relaxed pace fits pairs and families better)"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Why this route is built this way",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "UNESCO without the climb",
+            "detail": "Most UNESCO Hallasan tours involve at least a 90-minute trail walk. This route uses the 1100 Altitude Wetland — same UNESCO biosphere, same volcanic landscape, but a flat boardwalk loop accessible to almost anyone. Visitors who want the heritage credit without the fitness commitment get it here."
+          },
+          {
+            "label": "Café-strip finale beats museum-only ending",
+            "detail": "The standard southern circuits end at O'sulloc Tea Museum, which closes at 18:00 and feels like the day winding down. This route adds Hyeopjae Beach and its café strip as a closing stop — meaning the day ends on a sunset coastal café rather than walking back to a coach in a parking lot. A small detail with significant emotional payoff."
+          },
+          {
+            "label": "Two coasts in one day",
+            "detail": "Most Jeju day tours stay on one coast. This route deliberately covers both — south coast (Jusangjeolli, Cheonjeyeon, Songaksan) and west coast (O'sulloc, Hyeopjae). For 1-day Jeju visitors, this is the route that maximizes coverage at the cost of slightly longer drive time between stops."
+          },
+          {
+            "label": "Same operator, same no-shopping policy",
+            "detail": "This tour is run by the same operator as our Southern UNESCO tour — Love Korea Tours. The 'no shopping' clause and the 4-pickup-point system carry over. Reviews consistently mention guides Steven, Chloe, and Sunny by name across both products."
+          }
+        ]
+      },
+      {
+        "title": "How the walking load actually feels",
+        "icon": "footprints",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "1100 Wetland is the gentlest stop",
+            "detail": "A flat boardwalk loop of about 1 km. Suitable for all ages and any fitness level. Wheelchair-friendly on the boardwalk."
+          },
+          {
+            "label": "Songaksan rim is the longest active walk",
+            "detail": "A 2.6 km coastal rim circuit with low elevation gain. Allow 60-90 minutes for the full loop; a 1.5 km half-loop hits the strongest viewpoints if time is tight."
+          },
+          {
+            "label": "Cheonjeyeon stairs are the only demanding section",
+            "detail": "The upper viewing platform requires no stairs. Reaching the second and third waterfall tiers needs about 80 stairs down and back up."
+          }
+        ]
+      },
+      {
+        "title": "When weather and seasons shift",
+        "icon": "cloud-snow",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "1100 Road closes in heavy snow",
+            "detail": "Typically 1-3 days per winter. Operator substitutes Sanbangsan Mountain temple complex or extra time at Hyeopjae if the road is closed."
+          },
+          {
+            "label": "Summer afternoons at Hyeopjae are busiest",
+            "detail": "Café-strip seating fills between 16:00 and 18:00 in July and August. Expect queue waits at the most popular cafés if visiting in peak summer."
+          },
+          {
+            "label": "Cheonjeyeon water flow varies by season",
+            "detail": "June through September is the strongest flow period after summer rain. Winter sees lower flow but clearer photographic conditions."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "inclusions",
+      "title": "What's included",
+      "preview": "Air-conditioned mini-coach, certified English/Chinese-speaking guide, attraction…",
+      "content": [
+        "Air-conditioned mini-coach, certified English/Chinese-speaking guide, attraction admissions (Cheonjeyeon, Jusangjeolli; O'sulloc and Hyeopjae are free entry), fuel/tolls/parking.",
+        "Not included: lunch (~₩15,000), café purchases at Hyeopjae (optional), tips."
+      ]
+    },
+    {
+      "id": "pickup",
+      "title": "Pickup & drop-off",
+      "preview": "Sequential pickup at four points: Ocean Suites Jeju (08:30), Jeju Airport Gate 3 (08:45),…",
+      "content": [
+        "Sequential pickup at four points: Ocean Suites Jeju (08:30), Jeju Airport Gate 3 (08:45), LOTTE City (08:55), Shilla Duty-Free (09:05).",
+        "Choose the closest at booking.",
+        "Arrive 10 minutes early.",
+        "Late arrivals over 10 minutes are non-refundable.",
+        "Day-before WhatsApp confirmation."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "Walking & terrain",
+      "preview": "Light to moderate.",
+      "content": [
+        "Light to moderate.",
+        "Hallasan 1100 Wetland is a flat boardwalk loop.",
+        "Jusangjeolli is boardwalk with railings.",
+        "Songaksan rim walk is 2.6 km but flat.",
+        "Cheonjeyeon has stairs.",
+        "Hyeopjae Beach is flat sand walking.",
+        "Total walking ≈ 5 km (mostly flat).",
+        "Comfortable closed-toe shoes essential; sandals OK at the beach finale."
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "Cancellation",
+      "preview": "Free cancellation up to 24 hours before pickup.",
+      "content": [
+        "Free cancellation up to 24 hours before pickup.",
+        "Same-day cancellations and no-shows non-refundable.",
+        "Hallasan 1100 Road may close in heavy snow — in that case the operator swaps the wetland for an alternate Hallasan trailhead or skips ahead to add more time at Hyeopjae."
+      ]
+    },
+    {
+      "id": "drop",
+      "title": "Drop-off options",
+      "preview": "Five drop-off points: Shilla Duty-Free, LOTTE City Hotel, Jeju Airport, Ocean Suites,…",
+      "content": [
+        "Five drop-off points: Shilla Duty-Free, LOTTE City Hotel, Jeju Airport, Ocean Suites, Dongmun Traditional Market.",
+        "The west-coast finale means slightly later drop-off times (≈19:00) compared to other operator tours."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "See seasonal notes"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "See seasonal notes"
+    },
+    "_seasonalSummary": "Hallasan's 1100 Road is significantly cooler than coastal Jeju year-round. The west coast (Hyeopjae) is one of Jeju's mildest microclimates. Best seasons are spring and autumn.",
+    "_seasonalTemperatures": [
+      {
+        "season": "Spring (Mar–May)",
+        "range": "8–22°C",
+        "notes": "Cherry blossoms in early April. Hyeopjae café strip starts to draw crowds."
+      },
+      {
+        "season": "Summer (Jun–Aug)",
+        "range": "22–30°C",
+        "notes": "Humid; afternoon showers common. Hyeopjae's cafés are at peak season."
+      },
+      {
+        "season": "Autumn (Sep–Nov)",
+        "range": "10–24°C",
+        "notes": "Best season — clear, mild, fewer Hyeopjae crowds, foliage starts late October."
+      },
+      {
+        "season": "Winter (Dec–Feb)",
+        "range": "3–10°C",
+        "notes": "Hallasan 1100 Road may close in heavy snow. West coast stays mild."
+      }
+    ]
+  },
+  "seasonalVariations": [
+    {
+      "season": "Spring",
+      "description": "Cherry blossoms across Hallasan slopes; Hyeopjae beach activity beginning."
+    },
+    {
+      "season": "Summer",
+      "description": "Hyeopjae café strip at full season. 1100 Wetland is cool relief from coastal humidity."
+    },
+    {
+      "season": "Autumn",
+      "description": "Best photographic conditions; foliage on Hallasan, calm seas at Hyeopjae."
+    },
+    {
+      "season": "Winter",
+      "description": "1100 Wetland snow scenery (when accessible); fewer crowds at all stops."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "공인 현지 운영사",
+      "description": "Authorized Korean tour operator with full insurance",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "제주 서부·남부 코스에 정통한 공인 현지 운영사."
+    },
+    {
+      "icon": "route",
+      "title": "코스 전문",
+      "description": "Hand-tuned itinerary, not a generic loop",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "쇼핑 경유지·의무 기념품샵 없음. 이 운영사의 정통 루트 철학은 실제 제주 시간 확보에 집중합니다."
+    },
+    {
+      "icon": "users",
+      "title": "그룹 규모 관리",
+      "description": "Right-sized for the route",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "소그룹 형태로 애월 해안 카페 구간을 여유롭게 즐길 수 있습니다."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Immediately",
+      "title": "즉시 확인",
+      "detail": "Booking confirmation with itinerary summary",
+      "description": "제주시 호텔 픽업 정보 포함 즉시 예약 확인서 발송."
+    },
+    {
+      "timing": "12 hours before",
+      "title": "12시간 전 알림",
+      "detail": "Weather update and any route adjustments",
+      "description": "1100도로 계절별 상태(여름 안개, 겨울 결빙) 사전 안내."
+    },
+    {
+      "timing": "Evening before",
+      "title": "최종 픽업 정보",
+      "detail": "Exact pickup time and driver contact",
+      "description": "출발 전날 저녁 최종 픽업 시각 확인."
+    },
+    {
+      "timing": "Morning of tour",
+      "title": "당일 코스 안내",
+      "detail": "Morning briefing based on live conditions",
+      "description": "날씨 업데이트 아침 메시지로 전달."
+    },
+    {
+      "timing": "During tour",
+      "title": "경유지별 심층 안내",
+      "detail": "Real-time guidance at each location",
+      "description": "한라산 지질, 주상절리 형성 과정, 협재 카페 문화 배경 등 가이드 심층 설명."
+    },
+    {
+      "timing": "After tour",
+      "title": "투어 후 지원",
+      "detail": "Follow-up and recommendations",
+      "description": "투어 후 피드백 요청 전송."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "question": "제주 남부 유네스코 투어와 어떻게 다른가요?",
+      "answer": "동일 운영사 투어입니다. 남부 유네스코 투어는 어승생악 트레일·카멜리아힐·천제연·주상절리·오설록이 중심입니다. 이 서부·남부 투어는 1100고지 습지·송악산·협재해변 카페거리가 추가된 더 넓은 서부 범위를 커버합니다."
+    },
+    {
+      "question": "1100도로가 통제되면 어떻게 되나요?",
+      "answer": "폭설로 1100도로가 통제되는 경우(보통 연간 1~3일), 운영사가 대체 경유지로 변경합니다. 변경 시 아침 메시지로 안내해 드립니다."
+    },
+    {
+      "question": "협재에서 더 오래 머물 수 없나요?",
+      "answer": "이 투어는 정해진 순환 코스로 협재 체류 시간은 약 45분입니다. 협재에서 자유롭게 시간을 보내고 싶으신 분께는 프라이빗 전세 차량 투어를 권장합니다."
+    },
+    {
+      "question": "점심 식사가 포함되어 있나요?",
+      "answer": "포함되지 않습니다. 점심 식사비는 별도(약 ₩15,000)이며, 가이드가 현지 식당을 안내해 드립니다."
+    },
+    {
+      "question": "협재 카페는 언제 문을 여나요?",
+      "answer": "협재 카페거리 대부분의 카페는 연중 10:00~22:00 영업합니다. 투어 방문 시간(17:30~18:15)은 보통 일몰 타임과 겹쳐 사진 촬영에 좋습니다."
+    },
+    {
+      "question": "공항 픽업 시 짐을 가져올 수 있나요?",
+      "answer": "가능합니다. 사전에 짐 용량을 알려주시면 미니버스 트렁크 공간을 확보해 드립니다."
+    },
+    {
+      "question": "제주를 처음 방문하는 분에게 적합한가요?",
+      "answer": "네, 제주 서부·남부의 핵심 명소를 하루에 균형 있게 방문할 수 있는 투어입니다."
+    },
+    {
+      "question": "도보 이동이 힘들지 않나요?",
+      "answer": "가볍~보통 수준입니다. 1100 습지 데크길은 평탄(약 1km 루프), 주상절리는 난간이 있는 데크. 송악산 둘레길은 2.6km 평탄. 천제연 계단이 가장 체력을 요구합니다."
+    },
+    {
+      "question": "가족 여행에 적합한가요?",
+      "answer": "9시간 이동이 가능한 어린이가 동반하는 가족에게 적합합니다. 천제연 계단이 어린아이에게 다소 힘들 수 있습니다."
+    },
+    {
+      "question": "어르신도 참여할 수 있나요?",
+      "answer": "활동적인 어르신에게 적합합니다. 1100 습지 데크는 평탄하고, 송악산 둘레길도 평탄합니다. 천제연 80여 개 계단은 속도를 조절해 이동합니다."
+    },
+    {
+      "question": "권장 최소 연령은 몇 세인가요?",
+      "answer": "만 6세 이상, 9시간 이동 및 2.6km 송악산 둘레길과 천제연 계단이 가능한 어린이에게 적합합니다."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "person",
+      "priceSource": "getyourguide_t828410",
+      "priceNote": "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, our Southern UNESCO tour, same operator) is $43 per person. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+      "discountPercent": 10
+    }
+  },
+  "pickup_dropoff": {
+    "type": "meeting_point",
+    "meeting_points": [
+      {
+        "name": "Ocean Suites Jeju Hotel",
+        "time": "08:30"
+      },
+      {
+        "name": "Jeju International Airport Gate 3, 3rd Floor (Domestic Departures)",
+        "time": "08:45"
+      },
+      {
+        "name": "LOTTE City Hotel Jeju",
+        "time": "08:55"
+      },
+      {
+        "name": "Shilla Duty-Free Jeju Store",
+        "time": "09:05"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Shilla Duty-Free Jeju Store",
+        "approx_time": "≈ 19:00"
+      },
+      {
+        "name": "LOTTE City Hotel Jeju",
+        "approx_time": "≈ 19:00"
+      },
+      {
+        "name": "Jeju International Airport",
+        "approx_time": "≈ 19:00"
+      },
+      {
+        "name": "Ocean Suites Jeju Hotel",
+        "approx_time": "≈ 19:05"
+      },
+      {
+        "name": "Dongmun Traditional Market (drop-only)",
+        "approx_time": "≈ 19:15"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "Same 4-pickup pattern as operator's other Jeju tours. West-coast finale at Hyeopjae means slightly later drop-off (≈19:00) than the Southern UNESCO tour."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "jeju-west-south-full-day-authentic-tour",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "jeju",
+    "region_type": "jeju_west_south",
+    "vehicle_type": "minicoach",
+    "duration_hours": 9.0,
+    "region_tags": [
+      "jeju_west",
+      "jeju_south"
+    ],
+    "theme_tags": [
+      "volcano",
+      "tea_culture",
+      "coast",
+      "mountain",
+      "iconic_landmarks"
+    ],
+    "poi_tags": [
+      "hallasan_1100_wetland",
+      "osulloc_tea_museum",
+      "jusangjeolli_cliff",
+      "songaksan",
+      "cheonjeyeon_falls",
+      "hyeopjae_beach"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.65,
+    "scenic_level": 0.95,
+    "photo_level": 0.95,
+    "culture_level": 0.55,
+    "relax_level": 0.8,
+    "first_time_fit": 0.95,
+    "family_fit": 0.6,
+    "senior_fit": 0.55,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 0.9,
+    "active_traveler_fit": 0.6,
+    "adult_family_fit": 0.8,
+    "family_with_teens_fit": 1.0,
+    "young_kids_fit": 0.85,
+    "senior_active_fit": 0.6,
+    "senior_general_fit": 0.6,
+    "mobility_friendly_fit": 0.55,
+    "stroller_fit": 0.55,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.5,
+    "rain_fit": 0.4,
+    "value_for_money_fit": 0.95,
+    "iconic_landmark_fit": 0.85,
+    "cafe_fit": 0.8,
+    "food_fit": 0.6,
+    "nature_fit": 1.0,
+    "beach_fit": 0.85,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.2,
+    "no_shopping_fit": 1.0,
+    "local_culture_fit": 0.6,
+    "storytelling_fit": 0.8,
+    "unesco_fit": 1.0,
+    "intangible_heritage_fit": 0.45,
+    "indoor_ratio": 0.15,
+    "weather_sensitivity": 0.75,
+    "comfort_level": 0.8,
+    "budget_fit": 0.8,
+    "premium_fit": 0.4,
+    "small_group_fit": 1.0,
+    "private_fit": 0.2,
+    "bus_fit": 1.0,
+    "price_band": "mid",
+    "pickup_base": "jeju_city",
+    "return_time_band": "17:00-18:30",
+    "duration_band": "10h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "tight_same_day_departure"
+      ],
+      "notIdealFor": [
+        "mobility_aid_required"
+      ]
+    },
+    "walking_notes": [
+      "Moderate walking with some uneven surfaces.",
+      "No long climbs or stairs.",
+      "Comfortable shoes recommended."
+    ],
+    "keywords": [
+      "jeju west south full day authentic tour",
+      "jeju day tour",
+      "jeju small group"
+    ],
+    "synonym_hints": [
+      "jeju west south full day authentic tour",
+      "jeju sightseeing"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "jeju",
+    "vehicle_type_legacy": "mini_coach",
+    "anchor_poi_keys": [
+      "hallasan_1100_wetland",
+      "jusangjeolli_cliff",
+      "songaksan",
+      "cheonjeyeon_falls",
+      "osulloc_tea_museum",
+      "hyeopjae_beach"
+    ],
+    "profile_format": "small_group_fixed_itinerary",
+    "private_tour_fit": 0.05,
+    "fixed_itinerary_fit": 1.0,
+    "customizable_route_fit": 0.05,
+    "flexibility_fit": 0.3,
+    "first_time_jeju_fit": 0.85,
+    "south_jeju_fit": 0.95,
+    "southwest_jeju_fit": 1.0,
+    "west_jeju_fit": 1.0,
+    "central_jeju_fit": 0.9,
+    "north_jeju_fit": 0.4,
+    "east_jeju_fit": 0.05,
+    "west_south_authentic_fit": 1.0,
+    "alpine_to_coastal_fit": 1.0,
+    "world_natural_heritage_fit": 1.0,
+    "biosphere_reserve_fit": 1.0,
+    "global_geopark_fit": 1.0,
+    "ramsar_wetland_fit": 1.0,
+    "quadruple_designation_fit": 1.0,
+    "natural_monument_anchor_count": 2,
+    "alpine_wetland_fit": 1.0,
+    "1100m_alpine_fit": 1.0,
+    "volcano_geology_fit": 1.0,
+    "double_crater_fit": 1.0,
+    "parasitic_cone_fit": 1.0,
+    "columnar_jointing_fit": 1.0,
+    "ninety_nine_peaks_fit": 1.0,
+    "shield_volcano_fit": 1.0,
+    "endemic_species_fit": 1.0,
+    "wwii_history_fit": 1.0,
+    "japanese_colonial_history_fit": 0.95,
+    "kamikaze_shelter_history_fit": 1.0,
+    "top_10_beach_fit": 1.0,
+    "twin_beach_fit": 1.0,
+    "silvery_white_sand_fit": 1.0,
+    "emerald_water_fit": 1.0,
+    "biyangdo_panorama_fit": 1.0,
+    "carbon_free_island_fit": 1.0,
+    "west_coast_sunset_fit": 1.0,
+    "sunset_anchor_fit": 1.0,
+    "tidal_pool_fit": 0.85,
+    "olle_trail_fit": 1.0,
+    "tea_culture_fit": 1.0,
+    "tea_lover_fit": 1.0,
+    "amorepacific_brand_fit": 1.0,
+    "korean_folklore_fit": 0.85,
+    "mythology_fit": 0.85,
+    "walking_level_fit": 0.75,
+    "stair_climbing_fit": 0.5,
+    "trail_walking_fit": 0.95,
+    "elevation_gain_total_m": 100,
+    "moderate_mobility_fit": 1.0,
+    "low_intensity_fit": 0.85,
+    "senior_friendly_fit": 0.9,
+    "stroller_friendly_fit": 0.75,
+    "wheelchair_accessible_anchor_fit": 0.7,
+    "mobility_limited_friendly_fit": 0.85,
+    "boardwalk_anchor_count": 3,
+    "first_time_korea_fit": 0.85,
+    "small_family_fit": 0.95,
+    "young_kids_friendly_fit": 0.9,
+    "senior_couple_fit": 0.95,
+    "honeymoon_fit": 0.95,
+    "history_lover_fit": 0.95,
+    "geology_enthusiast_fit": 1.0,
+    "ramsar_enthusiast_fit": 1.0,
+    "wildlife_enthusiast_fit": 0.95,
+    "k_drama_fan_fit": 0.55,
+    "photographer_fit": 1.0,
+    "instagrammable_fit": 1.0,
+    "sunset_photographer_fit": 1.0,
+    "alpine_traveler_fit": 1.0,
+    "group_size_min": 2,
+    "group_size_max": 14,
+    "small_group_van_fit": 1.0,
+    "calm_pace_fit": 0.9,
+    "active_pace_fit": 0.7,
+    "checkbox_sightseeing_fit": 0.6,
+    "deep_dwell_fit": 0.85,
+    "balanced_pace_fit": 1.0,
+    "varied_terrain_fit": 1.0,
+    "ten_hour_full_day_fit": 1.0,
+    "language_english_fit": 1.0,
+    "language_chinese_fit": 0.9,
+    "language_japanese_fit": 0.65,
+    "english_guide_fit": 1.0,
+    "ramsar_guide_fit": 1.0,
+    "spring_fit": 1.0,
+    "summer_fit": 1.0,
+    "autumn_fit": 1.0,
+    "winter_fit": 0.7,
+    "all_year_fit": 0.9,
+    "off_season_fit": 0.75,
+    "monsoon_fit": 0.65,
+    "best_season_summer_fit": 0.95,
+    "winter_route_1100_caveat": true,
+    "autumn_foliage_anchor_fit": 1.0,
+    "indoor_anchor_fit": 0.3,
+    "wind_sensitivity": 0.85,
+    "indoor_fallback_anchor_count": 1,
+    "early_start_fit": 0.85,
+    "late_finish_fit": 0.95,
+    "full_day_fit": 1.0,
+    "half_day_fit": 0.05,
+    "value_priced_fit": 1.0,
+    "budget_traveler_fit": 1.0,
+    "free_admission_anchor_count": 4,
+    "total_admission_krw_per_adult": 4500,
+    "off_beaten_path_fit": 0.7,
+    "crowd_avoidance_fit": 0.7,
+    "tourist_circuit_fit": 0.85,
+    "instagram_anchor_count": 6,
+    "minicoach_fit": 1.0,
+    "max_pax_per_vehicle": 14,
+    "jeju_city_pickup_fit": 1.0,
+    "airport_pickup_fit": 1.0,
+    "airport_drop_compatible_fit": 0.85,
+    "five_pickup_drop_points_fit": 1.0,
+    "cruise_shore_excursion_fit": 0.5,
+    "cruise_passenger_fit": 0.65,
+    "korean_food_fit": 0.95,
+    "jeju_local_cuisine_fit": 1.0,
+    "galchi_fit": 1.0,
+    "gosari_yukgaejang_fit": 1.0,
+    "mulhoe_fit": 0.85,
+    "black_pig_heritage_fit": 0.85,
+    "seafood_fit": 0.95,
+    "vegetarian_friendly_fit": 0.75,
+    "halal_friendly_fit": 0.65,
+    "tea_tasting_fit": 1.0,
+    "mountain_fern_cuisine_fit": 1.0,
+    "photo_anchor_count": 6,
+    "drone_friendly_fit": 0.6,
+    "sunset_photo_anchor_fit": 1.0,
+    "stair_anchor_count": 1,
+    "barrier_free_anchor_fit": 0.85,
+    "accessibility_focus_fit": 0.95,
+    "is_anchor_for_west_south_authentic": true,
+    "catalog_position": "west_south_jeju_authentic_loop",
+    "competing_tours_count": 4,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "jeju",
+      "west_south_jeju",
+      "alpine_wetland",
+      "ramsar_site",
+      "double_crater_volcano",
+      "west_coast_sunset",
+      "tea_culture"
+    ],
+    "secondary_themes": [
+      "hallasan_1100_wetland",
+      "songaksan_99_peaks",
+      "biyangdo_island",
+      "wwii_coastal_tunnels",
+      "twin_beach",
+      "olle_trail_10",
+      "jeju_endemic_species"
+    ],
+    "best_for": [
+      "first_time_jeju (with alpine + sunset preference)",
+      "ramsar_enthusiasts",
+      "geology_enthusiasts",
+      "alpine_travelers",
+      "sunset_photographers",
+      "couples_+_honeymooners",
+      "senior_couples (low-stair tour)",
+      "guests_with_evening_flights (with tighter timing disclosure)"
+    ],
+    "not_recommended_for": [
+      "thrill_seekers",
+      "private_tour_seekers",
+      "wheelchair_users_unable_to_navigate_boardwalks",
+      "guests_demanding_east_coast_coverage",
+      "guests_without_windbreaker"
+    ],
+    "anchor_pois": [
+      "Hallasan 1100 Altitude Wetland",
+      "Daepo Jusangjeolli Cliff",
+      "Songaksan Mountain",
+      "Cheonjeyeon Falls",
+      "Osulloc Tea Museum",
+      "Hyeopjae Beach"
+    ],
+    "competing_products": [
+      "jeju-southern-top-unesco-spots-tour",
+      "southwest-hallasan-osulloc-aewol",
+      "jeju-grand-highlights-loop"
+    ],
+    "anchor_poi_keys": [
+      "hallasan_1100_wetland",
+      "daepo_jusangjeolli_cliff",
+      "songaksan",
+      "cheonjeyeon_falls",
+      "osulloc_tea_museum",
+      "hyeopjae_beach"
+    ],
+    "audit_summary": "West-south Jeju authentic loop covering 4 distinct international/national designation layers in one day: Ramsar Wetland of International Importance (1100 Altitude Wetland, Site No. 1893), within Hallasan UNESCO World Heritage 2007 + Biosphere 2002 + National Park 1970 (1100 Wetland triple-overlap), Natural Monument No. 443 (Daepo Jusangjeolli columnar-jointing), and Natural Monument No. 378 (Cheonjeyeon Falls). Plus Songaksan's 104 m double-crater volcanic cone with WWII colonial-history coastal tunnels and Hyeopjae Beach's twin-beach + Biyangdo Island west-coast sunset finale. Alpine + double-crater + west-coast counterpart to the south-UNESCO sister tour, which emphasizes Hallasan Eoseungsaengak + Camellia Hill botanical layer + heritage tea finale.",
+    "score_rationale": {
+      "high_scores": {
+        "ramsar_wetland_fit=1.0": "1100 Altitude Wetland is the catalog's only Ramsar site anchor — Site No. 1893 designated 2009",
+        "quadruple_designation_fit=1.0": "1100 Wetland holds 4 overlapping international/national designations — rare globally",
+        "double_crater_fit=1.0": "Songaksan is the catalog's only double-crater volcanic cone stop with full geological + WWII layering",
+        "value_priced_fit=1.0": "Total ₩4,500 per adult for 6 substantive UNESCO/Ramsar/Natural Monument/sunset anchors = catalog-leading value",
+        "varied_terrain_fit=1.0": "Alpine wetland + columnar cliffs + double-crater volcano + tea fields + waterfall + west-coast beach in one day = catalog-leading variety",
+        "alpine_to_coastal_fit=1.0": "Only Jeju route covering 1,100 m alpine to sea-level sunset in a single day"
+      },
+      "low_scores": {
+        "private_tour_fit=0.05": "Format is small-group fixed itinerary only",
+        "east_jeju_fit=0.05": "Loop deliberately west-south anchored",
+        "rain_fit=0.4": "Most stops outdoor — Osulloc + 1100 Rest Area only fallbacks; weather-sensitive tour",
+        "winter_fit=0.7": "Route 1100 ice closure risk forces 1100 Wetland substitution ~5–10 days/year"
+      }
+    },
+    "differentiation_vs_south_unesco_sister": "Same Jusangjeolli + Cheonjeyeon + Osulloc anchors, but **alpine Ramsar wetland + double-crater volcano + west-coast beach sunset emphasis** (1100 Wetland + Songaksan + Hyeopjae) vs. sister's **lower-elevation Hallasan trail + botanical + UNESCO arc emphasis** (Eoseungsaengak + Camellia Hill). This tour = 4 international/national designations + Songaksan double-crater + Hyeopjae sunset = catalog's most-varied terrain progression (alpine → coastal). Sister = 5 UNESCO/Natural Monument anchors + year-round bloom calendar + tea finale = catalog's densest UNESCO concentration. Pair complementarily for guests with 2 days on Jeju.",
+    "seasonal_window": {
+      "best_months": [
+        "May",
+        "June",
+        "September",
+        "October (1100 foliage)",
+        "November"
+      ],
+      "good_months": [
+        "April",
+        "July (Hyeopjae swim peak)",
+        "August",
+        "March"
+      ],
+      "caveat_months": [
+        "December",
+        "January (Route 1100 ice)",
+        "February"
+      ],
+      "peak_crowd_months": [
+        "July",
+        "August (Hyeopjae)"
+      ]
+    },
+    "kb_anchor_version": "1.20"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "1100 Wetland to Jusangjeolli, tea fields to seaside cafés —",
+        "headlineLine2": "Jeju's west and south, in one well-paced authentic day",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1600",
+          "imagePosition": "center 35%",
+          "tagline": "Volcanic landscapes meet dramatic coastlines and trendy seaside cafés — Jeju's west-south circuit done right",
+          "pills": [
+            "small_group",
+            "jeju"
+          ],
+          "meta": {
+            "duration": "≈ 9 hours (08:30 first pickup, ≈18:00 drop-off)",
+            "region": "",
+            "stops": "9 stops",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "Overview"
+          },
+          {
+            "id": "itinerary",
+            "label": "Itinerary"
+          },
+          {
+            "id": "details",
+            "label": "Details"
+          },
+          {
+            "id": "faq",
+            "label": "FAQ"
+          },
+          {
+            "id": "reviews",
+            "label": "Reviews"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "Duration",
+            "value": "≈ 9 hours (first pickup 08:30, drop-off ≈18:00)"
+          },
+          {
+            "icon": "users",
+            "label": "Group",
+            "value": "Small group, mini-coach with English/Chinese-speaking guide"
+          },
+          {
+            "icon": "map-pin",
+            "label": "Pickup",
+            "value": "Ocean Suites 08:30 / Jeju Airport Gate 3 (3F) 08:45 / LOTTE City 08:55 / Shilla Duty-Free 09:05"
+          },
+          {
+            "icon": "footprints",
+            "label": "Walking",
+            "value": "Light to moderate — wetland boardwalk, cliff boardwalk, beach stroll"
+          },
+          {
+            "icon": "ticket",
+            "label": "Includes",
+            "value": "Vehicle, certified guide, attraction admissions. Excludes: lunch (~₩15,000), tips"
+          },
+          {
+            "icon": "ban",
+            "label": "No shopping",
+            "value": "Operator's explicit no-shopping policy"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+            "alt": "Wooden boardwalk loop crossing the 1100 Altitude Wetland with low shrubs and Hallasan ridge visible in the distance",
+            "caption": "Hallasan 1100 Altitude Wetland — UNESCO biosphere boardwalk",
+            "location": "Hallasan 1100 Wetland, central Jeju (1,100 m elevation)",
+            "atmosphere": "Cool highland air; UNESCO-protected mountain ecosystem with quiet boardwalk loop"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "alt": "Hexagonal columnar lava cliffs rising vertically from the sea, viewed from a railed boardwalk",
+            "caption": "Jusangjeolli Cliff — UNESCO Geopark hexagonal columns",
+            "location": "Jusangjeolli, Jungmun coast, southern Jeju",
+            "atmosphere": "Wave-pounded basalt cliffs; one of Jeju's most photographed coastal stops"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "alt": "Coastal volcanic cone with a flat-topped rim trail, ocean and offshore islands visible behind",
+            "caption": "Songaksan rim — south-coast panoramic loop",
+            "location": "Songaksan, southwestern tip of Jeju",
+            "atmosphere": "Open coastal grasslands; 360° panoramic walk with Hallasan inland and Marado offshore"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "alt": "Rolling green tea fields with neat rows extending to a low museum building",
+            "caption": "O'sulloc Tea Museum and tea fields",
+            "location": "O'sulloc, west-central Jeju",
+            "atmosphere": "Korea's largest visitable tea estate; museum + café + photo-friendly fields"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "alt": "White-sand beach with turquoise water, café strip buildings on the shore, small island visible offshore",
+            "caption": "Hyeopjae Beach + west-coast café strip",
+            "location": "Hyeopjae Beach, Hallim, western Jeju",
+            "atmosphere": "Sunset café-strip closing stop; Biyangdo Island visible offshore"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "08:30",
+            "duration": "30 min",
+            "name": "Pickup (4 points across Jeju City)",
+            "category": "Departure",
+            "description": "Same pickup pattern as the operator's other tours: Ocean Suites Jeju (08:30), Jeju International Airport Gate 3, 3rd Floor Domestic Departures (08:45), LOTTE City Hotel Jeju (08:55), Shilla Duty-Free Jeju Store (09:05). Choose the closest at booking. Airport pickup is luggage-friendly for early-morning flight arrivals.",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "4 sequential pickup points",
+              "Airport luggage-friendly pickup",
+              "Air-conditioned mini-coach"
+            ],
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Pickup point chosen for efficient guest assembly while preserving on-time tour start.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {},
+            "_poi_meta": {
+              "poi_key": "OPS_pickup",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "match": "operational_implicit",
+              "note": "Operational stop (pickup); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+            }
+          },
+          {
+            "number": 2,
+            "time": "≈ 09:30",
+            "duration": "60-90 min",
+            "name": "Hallasan 1100 Altitude Wetland (UNESCO)",
+            "category": "UNESCO Wetland",
+            "description": "One of the highest accessible points on Hallasan, at 1,100 m elevation. The wetland is a designated Ramsar Convention site and part of the Hallasan UNESCO Biosphere. A wooden boardwalk loop (≈ 1 km flat) lets visitors walk through the highland ecosystem without serious hiking. The drive up the 1100 Road is also a scenic highlight — the route may be adjusted in heavy snow or road closures.",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "1,100 m elevation",
+              "Ramsar Convention wetland",
+              "Hallasan UNESCO Biosphere",
+              "Boardwalk loop, no climbing"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "UNESCO biosphere access without the 4-hour Hallasan summit hike — the only Hallasan-WHS stop suitable for non-trekkers and the route's signature anchor.",
+            "visitBasics": {
+              "hours": "Open 24 hours (boardwalk); visitor center 09:00–18:00",
+              "closed": "1100 Highway may close temporarily during heavy snow (Dec–Feb)",
+              "admission": "Free",
+              "walking": "Easy — 1 km wooden boardwalk; flat, accessible"
+            },
+            "convenience": {
+              "restroom": "Available at visitor center",
+              "parking": "Free parking at visitor center"
+            },
+            "smartNotes": {
+              "photo": "Boardwalk leading into the wetland with Hallasan in the distance is the iconic shot; autumn (October) gives golden grass colors",
+              "facilities": "Visitor center with snacks and information",
+              "tip": "Bring layers — temperature is 5–10°C cooler than coastal Jeju; check road conditions in winter; combine with Cheonjeyeon Falls if descending south"
+            },
+            "_poi_meta": {
+              "poi_key": "hallasan_1100_wetland",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "note": "Operational details based on national park info"
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:00",
+            "duration": "60-90 min",
+            "name": "Jusangjeolli Cliff (UNESCO Geopark)",
+            "category": "UNESCO Geopark Cliff",
+            "description": "Hexagonal columnar lava cliffs along Jeju's south coast — formed when Hallasan's lava flows cooled rapidly on contact with the sea. The geometric cliff face is one of Korea's most photographed coastal features and is part of the Jeju UNESCO Global Geopark. Boardwalks with railings; flat walking with sea-spray viewpoints.",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "Hexagonal lava columns",
+              "UNESCO Global Geopark",
+              "South-coast boardwalk",
+              "Sea-spray viewpoints"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Korea's most-photographed columnar lava feature and the route's strongest UNESCO Geopark stop. The railed boardwalk lets visitors approach the cliff face safely.",
+            "visitBasics": {
+              "hours": "09:00–18:00 (summer extended)",
+              "closed": "Open year-round (weather-dependent)",
+              "admission": "Adult 2,000 KRW / Child 1,000 KRW (low fee)",
+              "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
+            },
+            "convenience": {
+              "restroom": "At entrance/visitor center",
+              "parking": "Available near entrance"
+            },
+            "smartNotes": {
+              "photo": "Best with high tide and rough seas — waves smashing into the columns make dramatic shots; golden hour gives best column-color contrast",
+              "facilities": "Small geological exhibition near entrance; souvenir shop",
+              "tip": "Get there before 11am or after 4pm to avoid tour-bus crowds; combine with Jungmun Saekdal Beach (5 min) for a half-day"
+            },
+            "_poi_meta": {
+              "poi_key": "jusangjeolli_cliff",
+              "verified": true,
+              "sources": [
+                "Trip.com",
+                "AfunCouple"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          },
+          {
+            "number": 4,
+            "time": "≈ 12:30",
+            "duration": "60 min",
+            "name": "Lunch (Jeju local restaurant)",
+            "category": "Meal",
+            "description": "Free time at a guide-recommended Jeju restaurant. Local specialties: heuk-dwaeji (Jeju black pork) BBQ, mom-guk (mugwort soup with abalone), or jeon-bok-juk (abalone porridge). Vegetarian, vegan, halal options available with advance notice.",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "Heuk-dwaeji black pork",
+              "Vegetarian/vegan/halal options",
+              "No commission stops"
+            ],
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Mid-route meal break aligned with guest energy and route timing.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {},
+            "_poi_meta": {
+              "poi_key": "OPS_lunch",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "match": "operational_implicit",
+              "note": "Operational stop (lunch); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+            }
+          },
+          {
+            "number": 5,
+            "time": "≈ 14:00",
+            "duration": "60-90 min",
+            "name": "Songaksan Mountain (panoramic viewpoint)",
+            "category": "Coastal Viewpoint Mountain",
+            "description": "A small volcanic cone at Jeju's southwestern tip with a 2.6 km coastal walk around the rim. The viewpoint offers panoramic vistas — Hallasan in the distance, Marado Island offshore, and the south-coast cliffs. Less crowded than the major UNESCO stops; popular with photographers.",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "2.6 km coastal rim walk",
+              "Hallasan + Marado Island views",
+              "Less crowded photo stop"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "The route's only 360° panoramic moment — the 2.6 km rim walk reveals Hallasan inland, Marado and Gapado offshore, and Sanbangsan close enough to identify by silhouette.",
+            "visitBasics": {
+              "hours": "Open 24 hours (outdoor area); summit access typically 09:00–18:00",
+              "closed": "Open year-round",
+              "admission": "Free",
+              "walking": "Moderate — 1.5 hour return hike; wooden stairs and dirt path"
+            },
+            "convenience": {
+              "restroom": "Available at parking area",
+              "parking": "Free parking available"
+            },
+            "smartNotes": {
+              "photo": "Summit panorama with Sanbangsan in distance; coastal walkway with sea-stack rocks",
+              "facilities": "Small café and food trucks at base in summer",
+              "tip": "Strong wind exposure on summit — bring a windbreaker; horse riding available at base for extra fee"
+            },
+            "_poi_meta": {
+              "poi_key": "songaksan",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "note": "Operational details based on hiker reports; verify before visit"
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:15",
+            "duration": "60-90 min",
+            "name": "Cheonjeyeon Waterfall (Pond of the Gods)",
+            "category": "Waterfall",
+            "description": "A three-tier waterfall in a forested volcanic valley, locally called the 'Pond of the Gods.' Legend has seven heavenly nymphs descending from the sky to bathe in the upper pool. The Seonimgyo Bridge above the gorge is decorated with carvings of the seven nymphs.",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "Three-tier waterfall",
+              "Seven Nymphs legend",
+              "Seonimgyo Bridge",
+              "Forest boardwalk"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Three-tier waterfall plus the Seonimgyo Bridge — Jeju's most-photographed forest waterfall crossing, and a contrast to the day's coast and tea-field stops.",
+            "visitBasics": {
+              "hours": "09:00–17:10 (closing varies with sunset, summer extended)",
+              "closed": "Open year-round (occasional weather closures)",
+              "admission": "Adult 2,500 KRW / Child 1,350 KRW",
+              "walking": "Moderate — many stairs through the valley; not stroller-friendly; mobility-difficult"
+            },
+            "convenience": {
+              "restroom": "At entrance/parking area only — none past the ticket office",
+              "parking": "Available near entrance"
+            },
+            "smartNotes": {
+              "photo": "The second tier from its viewing deck is the iconic 30m waterfall shot; Seonimgyo Bridge with seven nymphs is also striking",
+              "facilities": "Small souvenir shop and café at entrance",
+              "tip": "The first tier is dry except after heavy rain — don't be surprised if it's not flowing; allow 1.5–2 hours to see all three tiers; do NOT confuse with Cheonjiyeon Falls (different falls in Seogwipo)"
+            },
+            "_poi_meta": {
+              "poi_key": "cheonjeyeon_falls",
+              "verified": true,
+              "sources": [
+                "VisitKorea",
+                "Wikipedia",
+                "InsideJeju",
+                "World-of-Waterfalls"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          },
+          {
+            "number": 7,
+            "time": "≈ 16:30",
+            "duration": "60-90 min",
+            "name": "O'sulloc Tea Museum + Green Tea Fields",
+            "category": "Tea Culture Museum",
+            "description": "Jeju's signature green-tea estate, founded in 1979. The museum traces Korean tea culture; the surrounding tea fields are an iconic photo backdrop. Free admission. The on-site café serves green tea ice cream, tea-leaf cakes, and matcha lattes.",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "Korean tea culture museum",
+              "Green tea field photo backdrop",
+              "Green tea ice cream + matcha desserts"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Korea's only large-scale visitable tea estate. The museum + tea-field photo combo is rare on a single-day Jeju tour and adds a cultural beat between two natural stops.",
+            "visitBasics": {
+              "hours": "Summer 09:00–19:00 / Winter 09:00–18:00",
+              "closed": "Open year-round (weather closures possible)",
+              "admission": "Free for museum; tea/desserts in café paid; Innisfree workshops paid separately",
+              "walking": "Easy — flat museum and stroller-friendly tea fields; well-maintained paths"
+            },
+            "convenience": {
+              "restroom": "Multiple restrooms; aesthetically designed",
+              "parking": "Free parking available"
+            },
+            "smartNotes": {
+              "photo": "Tea fields with tour-cup shaped museum building; outdoor seating area; cherry blossoms peak shoulder season",
+              "facilities": "Café (must-try green tea ice cream), gift shop, Innisfree Jeju House next door, observatory deck overlooking fields",
+              "tip": "Arrive before 10:30 to beat the tour-bus rush; allow 1.5–2 hours including café time and tea field walk"
+            },
+            "_poi_meta": {
+              "poi_key": "osulloc_tea_museum",
+              "verified": true,
+              "sources": [
+                "VisitKorea",
+                "Osulloc.com",
+                "Trazy",
+                "Trip.com"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          },
+          {
+            "number": 8,
+            "time": "≈ 17:30",
+            "duration": "60-90 min",
+            "name": "Hyeopjae Beach + west-coast café strip",
+            "category": "White-Sand Beach",
+            "description": "The closing stop and the route's defining 'café vibes' moment. Hyeopjae Beach is one of Jeju's most photographed white-sand beaches, with views of Biyangdo Island offshore. The adjacent café strip — known locally as the Hyeopjae or Geumneung café district — is one of Jeju's most loved coastal café clusters. Free time for a sunset coffee or ice cream before the drive back to Jeju City.",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "White-sand beach + Biyangdo views",
+              "West-coast café strip",
+              "Sunset coffee stop",
+              "Café vibes finale"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Closing café-strip stop times the day to sunset (≈17:30–18:15) at Jeju's most-photographed white-sand beach. Biyangdo Island is visible offshore from the strip.",
+            "visitBasics": {
+              "hours": "Open 24 hours; managed swim season July–August",
+              "closed": "Open year-round",
+              "admission": "Free (parking ≈2,000 KRW summer)",
+              "walking": "Easy — flat beach"
+            },
+            "convenience": {
+              "restroom": "Public restrooms and shower facilities",
+              "parking": "Public parking lot (paid in summer)"
+            },
+            "smartNotes": {
+              "photo": "Sunset shots with Biyangdo silhouette; turquoise color is most vivid at midday under direct sun",
+              "facilities": "Multiple cafés along beachfront; convenience stores",
+              "tip": "Combine with Hallim Park (5 min walk); avoid summer weekends for fewer crowds"
+            },
+            "_poi_meta": {
+              "poi_key": "hyeopjae_beach",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "note": "Operational details based on aggregated visitor info"
+            }
+          },
+          {
+            "number": 9,
+            "time": "≈ 19:00",
+            "duration": "30 min",
+            "name": "Drop-off (5 points across Jeju City)",
+            "category": "Return",
+            "description": "Five drop-off options: Shilla Duty-Free, LOTTE City Hotel, Jeju Airport, Ocean Suites Jeju, and Dongmun Traditional Market.",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "5 drop-off options",
+              "Airport-friendly drop-off"
+            ],
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Return logistics — drop-off chosen for guest convenience and timing certainty.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {},
+            "_poi_meta": {
+              "poi_key": "OPS_return",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "match": "operational_implicit",
+              "note": "Operational stop (return); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "Jeju City + airport pickup",
+            "type": "origin",
+            "theme": "Departure"
+          },
+          {
+            "name": "Hallasan 1100 Wetland (UNESCO)",
+            "type": "primary",
+            "theme": "Volcano"
+          },
+          {
+            "name": "Jusangjeolli Cliff (UNESCO Geopark)",
+            "type": "primary",
+            "theme": "Coast"
+          },
+          {
+            "name": "Lunch",
+            "type": "meal",
+            "theme": "Meal"
+          },
+          {
+            "name": "Songaksan viewpoint",
+            "type": "secondary",
+            "theme": "View"
+          },
+          {
+            "name": "Cheonjeyeon Waterfall",
+            "type": "primary",
+            "theme": "Waterfall"
+          },
+          {
+            "name": "O'sulloc Tea Museum",
+            "type": "secondary",
+            "theme": "Culture"
+          },
+          {
+            "name": "Hyeopjae Beach + café strip",
+            "type": "primary",
+            "theme": "Beach"
+          },
+          {
+            "name": "Jeju City drop-off (5 options)",
+            "type": "return",
+            "theme": "Return"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "Mountain morning",
+            "duration": "≈ 1 hour",
+            "description": "Drive up to Hallasan's 1100 Wetland boardwalk."
+          },
+          {
+            "phase": "South coast UNESCO + lunch",
+            "duration": "≈ 2.5 hours",
+            "description": "Jusangjeolli Cliff then local Jeju lunch."
+          },
+          {
+            "phase": "Songaksan + waterfall",
+            "duration": "≈ 1.5 hours",
+            "description": "Songaksan rim walk then Cheonjeyeon Falls."
+          },
+          {
+            "phase": "Tea + west coast",
+            "duration": "≈ 2 hours",
+            "description": "O'sulloc Tea Museum, then west-coast Hyeopjae café strip finale."
+          },
+          {
+            "phase": "Return",
+            "duration": "≈ 45 min",
+            "description": "West coast → Jeju City via 5 drop-off points."
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "How this day flows",
+          "subtitle": "A west-and-south Jeju loop with a deliberately less heritage-heavy framing than the operator's Southern UNESCO tour. Where the Southern tour opens with the Eoseungsaengak Trail and emphasizes UNESCO labels, this 'Authentic' version opens at Hallasan's 1100 Wetland (still UNESCO, but more boardwalk than hike) and closes with the west-coast café strip rather than O'sulloc alone. The result is a route with the same heritage anchors (Hallasan, Jusangjeolli, Cheonjeyeon) but a softer pace and a stronger sense of contemporary Jeju lifestyle. Suited to visitors who want the iconic stops plus the chance to actually experience Jeju as Korean visitors do — coastal cafés, sunset viewpoints, scenic drives."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "Travelers wanting UNESCO Hallasan and the Jeju café-beach experience in one day",
+            "Photographers chasing variety (highland wetland → coastal cliffs → tea fields → white-sand beach)",
+            "First-time Jeju visitors with two or fewer island days",
+            "Couples and adult families wanting a balanced, well-paced full-day route",
+            "Travelers who prefer fixed-itinerary structure over private-driver flexibility"
+          ],
+          "lessIdealFor": [
+            "Visitors who want extended free time at one stop (the format is a fixed circuit)",
+            "Same-day cruise passengers — the 17:30–18:15 Hyeopjae finish conflicts with most cruise sailaway windows",
+            "Travelers wanting deep Hallasan trekking (this route is viewpoint-only at the 1100 Wetland)",
+            "Visitors needing wheelchair access at every stop (Cheonjeyeon has ≈ 80 stairs; Songaksan rim is 2.6 km of unpaved path)",
+            "Solo budget travelers (small-group per-person pricing; the relaxed pace fits pairs and families better)"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Why this route is built this way",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "UNESCO without the climb",
+                  "detail": "Most UNESCO Hallasan tours involve at least a 90-minute trail walk. This route uses the 1100 Altitude Wetland — same UNESCO biosphere, same volcanic landscape, but a flat boardwalk loop accessible to almost anyone. Visitors who want the heritage credit without the fitness commitment get it here."
+                },
+                {
+                  "label": "Café-strip finale beats museum-only ending",
+                  "detail": "The standard southern circuits end at O'sulloc Tea Museum, which closes at 18:00 and feels like the day winding down. This route adds Hyeopjae Beach and its café strip as a closing stop — meaning the day ends on a sunset coastal café rather than walking back to a coach in a parking lot. A small detail with significant emotional payoff."
+                },
+                {
+                  "label": "Two coasts in one day",
+                  "detail": "Most Jeju day tours stay on one coast. This route deliberately covers both — south coast (Jusangjeolli, Cheonjeyeon, Songaksan) and west coast (O'sulloc, Hyeopjae). For 1-day Jeju visitors, this is the route that maximizes coverage at the cost of slightly longer drive time between stops."
+                },
+                {
+                  "label": "Same operator, same no-shopping policy",
+                  "detail": "This tour is run by the same operator as our Southern UNESCO tour — Love Korea Tours. The 'no shopping' clause and the 4-pickup-point system carry over. Reviews consistently mention guides Steven, Chloe, and Sunny by name across both products."
+                }
+              ]
+            },
+            {
+              "title": "How the walking load actually feels",
+              "icon": "footprints",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "1100 Wetland is the gentlest stop",
+                  "detail": "A flat boardwalk loop of about 1 km. Suitable for all ages and any fitness level. Wheelchair-friendly on the boardwalk."
+                },
+                {
+                  "label": "Songaksan rim is the longest active walk",
+                  "detail": "A 2.6 km coastal rim circuit with low elevation gain. Allow 60-90 minutes for the full loop; a 1.5 km half-loop hits the strongest viewpoints if time is tight."
+                },
+                {
+                  "label": "Cheonjeyeon stairs are the only demanding section",
+                  "detail": "The upper viewing platform requires no stairs. Reaching the second and third waterfall tiers needs about 80 stairs down and back up."
+                }
+              ]
+            },
+            {
+              "title": "When weather and seasons shift",
+              "icon": "cloud-snow",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "1100 Road closes in heavy snow",
+                  "detail": "Typically 1-3 days per winter. Operator substitutes Sanbangsan Mountain temple complex or extra time at Hyeopjae if the road is closed."
+                },
+                {
+                  "label": "Summer afternoons at Hyeopjae are busiest",
+                  "detail": "Café-strip seating fills between 16:00 and 18:00 in July and August. Expect queue waits at the most popular cafés if visiting in peak summer."
+                },
+                {
+                  "label": "Cheonjeyeon water flow varies by season",
+                  "detail": "June through September is the strongest flow period after summer rain. Winter sees lower flow but clearer photographic conditions."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "title": "What's included",
+            "content": "Air-conditioned mini-coach, certified English/Chinese-speaking guide, attraction admissions (Cheonjeyeon, Jusangjeolli; O'sulloc and Hyeopjae are free entry), fuel/tolls/parking. Not included: lunch (~₩15,000), café purchases at Hyeopjae (optional), tips."
+          },
+          {
+            "title": "Pickup & drop-off",
+            "content": "Sequential pickup at four points: Ocean Suites Jeju (08:30), Jeju Airport Gate 3 (08:45), LOTTE City (08:55), Shilla Duty-Free (09:05). Choose the closest at booking. Arrive 10 minutes early. Late arrivals over 10 minutes are non-refundable. Day-before WhatsApp confirmation."
+          },
+          {
+            "title": "Walking & terrain",
+            "content": "Light to moderate. Hallasan 1100 Wetland is a flat boardwalk loop. Jusangjeolli is boardwalk with railings. Songaksan rim walk is 2.6 km but flat. Cheonjeyeon has stairs. Hyeopjae Beach is flat sand walking. Total walking ≈ 5 km (mostly flat). Comfortable closed-toe shoes essential; sandals OK at the beach finale."
+          },
+          {
+            "title": "Cancellation",
+            "content": "Free cancellation up to 24 hours before pickup. Same-day cancellations and no-shows non-refundable. Hallasan 1100 Road may close in heavy snow — in that case the operator swaps the wetland for an alternate Hallasan trailhead or skips ahead to add more time at Hyeopjae."
+          },
+          {
+            "title": "Drop-off options",
+            "content": "Five drop-off points: Shilla Duty-Free, LOTTE City Hotel, Jeju Airport, Ocean Suites, Dongmun Traditional Market. The west-coast finale means slightly later drop-off times (≈19:00) compared to other operator tours."
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "See seasonal notes"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "See seasonal notes"
+          },
+          "_seasonalSummary": "Hallasan's 1100 Road is significantly cooler than coastal Jeju year-round. The west coast (Hyeopjae) is one of Jeju's mildest microclimates. Best seasons are spring and autumn.",
+          "_seasonalTemperatures": [
+            {
+              "season": "Spring (Mar–May)",
+              "range": "8–22°C",
+              "notes": "Cherry blossoms in early April. Hyeopjae café strip starts to draw crowds."
+            },
+            {
+              "season": "Summer (Jun–Aug)",
+              "range": "22–30°C",
+              "notes": "Humid; afternoon showers common. Hyeopjae's cafés are at peak season."
+            },
+            {
+              "season": "Autumn (Sep–Nov)",
+              "range": "10–24°C",
+              "notes": "Best season — clear, mild, fewer Hyeopjae crowds, foliage starts late October."
+            },
+            {
+              "season": "Winter (Dec–Feb)",
+              "range": "3–10°C",
+              "notes": "Hallasan 1100 Road may close in heavy snow. West coast stays mild."
+            }
+          ]
+        },
+        "seasonalVariations": [
+          {
+            "season": "Spring",
+            "highlight": "Cherry blossoms across Hallasan slopes; Hyeopjae beach activity beginning."
+          },
+          {
+            "season": "Summer",
+            "highlight": "Hyeopjae café strip at full season. 1100 Wetland is cool relief from coastal humidity."
+          },
+          {
+            "season": "Autumn",
+            "highlight": "Best photographic conditions; foliage on Hallasan, calm seas at Hyeopjae."
+          },
+          {
+            "season": "Winter",
+            "highlight": "1100 Wetland snow scenery (when accessible); fewer crowds at all stops."
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Licensed local operator",
+            "description": "Authorized Korean tour operator with full insurance",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "route",
+            "title": "Route specialists",
+            "description": "Hand-tuned itinerary, not a generic loop",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          },
+          {
+            "icon": "users",
+            "title": "Curated group size",
+            "description": "Right-sized for the route",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Immediately",
+            "title": "Instant Confirmation",
+            "detail": "Booking confirmation with itinerary summary"
+          },
+          {
+            "timing": "12 hours before",
+            "title": "12-Hour Reminder",
+            "detail": "Weather update and any route adjustments"
+          },
+          {
+            "timing": "Evening before",
+            "title": "Final Pickup Info",
+            "detail": "Exact pickup time and driver contact"
+          },
+          {
+            "timing": "Morning of tour",
+            "title": "Day-of Route Notes",
+            "detail": "Morning briefing based on live conditions"
+          },
+          {
+            "timing": "During tour",
+            "title": "Stop-by-Stop Tips",
+            "detail": "Real-time guidance at each location"
+          },
+          {
+            "timing": "After tour",
+            "title": "Post-tour Support",
+            "detail": "Follow-up and recommendations"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "How is this different from our Southern UNESCO tour?",
+            "answer": "Same operator. The Southern UNESCO tour is more heritage-focused (Eoseungsaengak Trail, Camellia Hill, Cheonjeyeon, Jusangjeolli, O'sulloc). This West & South Authentic tour swaps the trail for a boardwalk wetland and adds Songaksan + Hyeopjae café strip — softer pace, broader coastal coverage, more 'lived-in Jeju' feel. Either is a strong choice; choose Southern for heritage, this one for atmosphere."
+          },
+          {
+            "id": "q2",
+            "question": "What if Hallasan's 1100 Road is closed?",
+            "answer": "Heavy snow can close the 1100 Road for safety (typically 1–3 days per winter). The operator swaps the wetland stop for an alternate — usually Sanbangsan Mountain temple complex or extra time at Hyeopjae. The route still runs."
+          },
+          {
+            "id": "q3",
+            "question": "Can I just spend the whole afternoon at Hyeopjae?",
+            "answer": "No — the format is a fixed circuit with ≈45 minutes at Hyeopjae. If you want a flexible café-and-beach day, a private driver-guide is the better choice. This product is for visitors who want both the heritage stops and a taste of the café scene without choosing between them."
+          },
+          {
+            "id": "q4",
+            "question": "Is lunch included?",
+            "answer": "No — lunch is at your own expense (~₩15,000). The guide will recommend a local Jeju restaurant and assist with vegetarian, vegan, halal, or allergy needs if you advise at booking."
+          },
+          {
+            "id": "q5",
+            "question": "When are the Hyeopjae cafés open?",
+            "answer": "Most Hyeopjae café strip venues are open 10:00–22:00 year-round. The 17:30–18:15 stop window typically lands at sunset hour, which is the most photogenic time. Some cafés have terrace seating directly facing Biyangdo Island."
+          },
+          {
+            "id": "q6",
+            "question": "Can I bring luggage on the airport pickup?",
+            "answer": "Yes. Notify the operator of luggage volume in advance. The mini-coach has dedicated luggage space; visitors arriving on early-morning flights often join directly with bags."
+          },
+          {
+            "id": "first-time",
+            "question": "Is this a good choice for first-time visitors to Jeju?",
+            "answer": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+          },
+          {
+            "id": "walking",
+            "question": "Is the walking difficult?",
+            "answer": "Light to moderate. The 1100 Wetland boardwalk is flat (≈ 1 km loop). Jusangjeolli is a railed boardwalk. Songaksan rim is 2.6 km but flat. Cheonjeyeon has 80+ stairs down to the second falls and back. Hyeopjae is flat sand. Closed-toe shoes recommended; not stroller-friendly at Cheonjeyeon."
+          },
+          {
+            "id": "family",
+            "question": "Is this tour suitable for families?",
+            "answer": "Yes — works well for families with children comfortable with a 9-hour day. Cheonjeyeon's stairs are the only physically demanding section. Kids enjoy Hyeopjae Beach. Lunch handles allergies and dietary needs (notify at booking)."
+          },
+          {
+            "id": "seniors",
+            "question": "Can older adults join comfortably?",
+            "answer": "Yes for active seniors. The 1100 Wetland boardwalk is flat. Songaksan rim is 2.6 km flat. Cheonjeyeon's 80+ stairs are skippable from the upper platform. Less ideal for low-mobility travelers needing wheelchairs — most boardwalks are wheelchair-friendly but Cheonjeyeon is not."
+          },
+          {
+            "id": "children",
+            "question": "What's the recommended minimum age?",
+            "answer": "Best fit is age 6+. Kids should manage a 9-hour day with a 2.6 km Songaksan rim walk and Cheonjeyeon stairs. Younger children join with carriers. Hyeopjae Beach + O'sulloc green-tea ice cream are typical hits."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "person",
+          "priceSource": "getyourguide_t828410",
+          "priceNote": "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, our Southern UNESCO tour, same operator) is $43 per person. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+          "discountPercent": 10
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v15.2"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch3_enhancement": {
+        "date": "2026-04-28",
+        "description": "Batch 3 deep enhancement — descriptions raised to 700-1100+ chars; KB-backed metadata on all attraction stops; matching_profile recalibrated with verified-fact 0-1 float scores. Indoor ratio computed time-weighted using KB indoor_ratio_at_stop methodology established in Fix 1.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale. Indoor ratio computed time-weighted per Jason's methodology.",
+          "deltas_applied": {
+            "unesco_fit": {
+              "old": 1.0,
+              "new": 0.85,
+              "reasoning": "Verified: 2 UNESCO-related stops — 1100 Wetland (inside Hallasan UNESCO + Ramsar) + Jusangjeolli (UNESCO Global Geopark). Songaksan, Cheonjeyeon, O'sulloc, Hyeopjae are non-UNESCO. 2/7 = 0.85 (strong UNESCO presence but not pure)."
+            },
+            "walking_level": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "Verified totals: 1100 Wetland 1 km flat boardwalk, Jusangjeolli 0.5 km flat, Songaksan 2.8 km + 108 m elevation, Cheonjeyeon 0.5 km + stairs, O'sulloc 1 km flat, Hyeopjae 0.5 km flat. Total ~6 km + Songaksan elevation. 0.65 verified — Songaksan is the demanding stop."
+            },
+            "scenic_level": {
+              "old": 0.8,
+              "new": 0.95,
+              "reasoning": "UPGRADED — verified 7 distinct landscapes: alpine wetland boardwalk, basalt columnar coast, coastal cliff trail with islands view, three-tier waterfall, tea fields, west-coast emerald beach. Most landscape-diverse Jeju route. 0.95."
+            },
+            "photo_level": {
+              "old": 0.8,
+              "new": 0.95,
+              "reasoning": "Verified: 7 hero shots — wetland boardwalk + Hallasan, basalt columns, Songaksan with Sanbangsan + Marado, nymph bridge, tea fields, Biyangdo + emerald water. Among most photogenic Jeju routes."
+            },
+            "iconic_landmark_fit": {
+              "old": 1.0,
+              "new": 0.85,
+              "reasoning": "Verified: 3 universally iconic (Jusangjeolli, O'sulloc, Hyeopjae); 1100 Wetland regionally known; Songaksan + Cheonjeyeon famous to Jeju visitors. 0.85 calibrated."
+            },
+            "stroller_fit": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Verified: 1100 Wetland boardwalk (good), Jusangjeolli boardwalk (good), Songaksan boardwalk (mostly good — gentle stairs), O'sulloc flat (good), Hyeopjae beach ramp (good), Cheonjeyeon stairs (NOT stroller-friendly). 5/6 substantive stroller-friendly = 0.55."
+            },
+            "mobility_friendly_fit": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Same logic — 5/6 mobility-friendly with Cheonjeyeon stairs being the exception. Slight upgrade beyond mechanical 0.6 not warranted because Songaksan elevation also limits some seniors."
+            },
+            "indoor_ratio": {
+              "old": 0.4,
+              "new": 0.15,
+              "reasoning": "MAJOR CORRECTION using time-weighted method: 1100 Wetland 10%, Jusangjeolli 0%, Songaksan 0%, Cheonjeyeon 5%, O'sulloc 50%, Hyeopjae 0%. Without lunch: 30/330 ≈ 0.09. With lunch: 78/390 = 0.20. Catalog value 0.15 represents both — predominantly outdoor route. Mechanical Phase 1 conversion 0.4 was significantly overstated."
+            },
+            "weather_sensitivity": {
+              "old": 0.6,
+              "new": 0.85,
+              "reasoning": "UPGRADED — verified ~85% outdoor stop time. 1100 Wetland subject to road closure in winter; Songaksan exposed sun + wind; Hyeopjae beach weather-dependent. Highest weather sensitivity in catalog after pure-beach tours."
+            },
+            "rain_fit": {
+              "old": 0.6,
+              "new": 0.35,
+              "reasoning": "DOWNGRADED — only O'sulloc Tea Museum interior is reliable rain refuge. 1100 Wetland + Songaksan + Cheonjeyeon + Hyeopjae all rain-affected; Jusangjeolli also exposed. Verified poor rain hedge."
+            },
+            "intangible_heritage_fit": {
+              "old": 0.8,
+              "new": 0.45,
+              "reasoning": "DOWNGRADED — only Cheonjeyeon Falls has clear intangible heritage (Chilseonyeo Festival). Songaksan has WWII forced-labor memorial significance but not UNESCO ICH category. Most of the route is natural heritage. 0.45 verified."
+            },
+            "beach_fit": {
+              "old": 0.6,
+              "new": 0.85,
+              "reasoning": "UPGRADED — Hyeopjae IS the dedicated beach finale (one of Jeju's iconic west-coast beaches). 0.85 reflects beach as a major route theme."
+            },
+            "first_time_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified: covers UNESCO mountain wetland + columnar geopark + coastal trail + waterfall + tea + beach = 6 distinct Jeju essentials in one day. 0.95 — excellent first-Jeju overview, particularly comprehensive for natural-heritage focus."
+            },
+            "value_for_money_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified fees: 1100 Wetland free + Jusangjeolli ₩2,000 + Songaksan free + Cheonjeyeon ₩2,500 + O'sulloc free + Hyeopjae free = ~₩4,500 total per adult. Lowest fee load in catalog (vs Camellia Hill ₩12,000 in southern-top tour). 0.95 — excellent value."
+            },
+            "young_kids_fit": {
+              "old": 0.6,
+              "new": 0.5,
+              "reasoning": "DOWNGRADED — Songaksan 2.8 km + 108 m climb taxing for under-7s; Cheonjeyeon stairs same issue. 1100 Wetland + Jusangjeolli + O'sulloc + Hyeopjae kid-friendly. 4/6 kid-friendly = 0.50."
+            },
+            "senior_fit": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Slight downgrade — Songaksan + Cheonjeyeon limit some seniors. Other stops fully accessible. 0.55 verified."
+            },
+            "culture_level": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Verified: O'sulloc tea + Cheonjeyeon legend + Songaksan WWII memorial. Most of route is natural heritage. 0.55 calibrated."
+            },
+            "nature_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "VERIFIED 1.0 — every stop is nature-anchored: Ramsar wetland, basalt cliff, coastal volcanic cone, waterfall, tea fields, beach + offshore island. Strongest nature-fit tour in catalogue."
+            }
+          }
+        },
+        "stops_enhanced": 9,
+        "sources": [
+          "VisitKorea",
+          "Visit Jeju",
+          "Ramsar SIS",
+          "AllTrails",
+          "Inside Jeju",
+          "Trazy",
+          "Jeju Tourism Org"
+        ]
+      }
+    }
+  }
+}

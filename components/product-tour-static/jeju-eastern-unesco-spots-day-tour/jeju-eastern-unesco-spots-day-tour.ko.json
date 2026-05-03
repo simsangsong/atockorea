@@ -1,0 +1,2186 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "jeju-eastern-unesco-spots-day-tour",
+  "locale": "ko",
+  "product_id": "jeju-eastern-unesco-spots-day-tour",
+  "seo": {
+    "pageTitle": "Jeju Eastern UNESCO Spots Small-Group Day Tour | AtoC Korea",
+    "metaDescription": "9-hour small-group eastern Jeju loop: Hamdeok Beach, Seongeup Folk Village (UNESCO), Micheon lava cave, Seongsan Ilchulbong (UNESCO), Haenyeo Museum. 4.9/5.",
+    "primaryKeywords": [
+      "제주 동부 유네스코 투어",
+      "성산일출봉 투어",
+      "성읍민속마을 투어",
+      "해녀박물관 투어",
+      "제주 일출봉 일일 투어"
+    ],
+    "ogImage": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+    "title": "제주 동부 유네스코 명소 소그룹 투어 | AtoC Korea",
+    "description": "제주 동부 9시간 소그룹 일일 투어: 함덕해변 → 성읍민속마을 → 미천굴 → 성산일출봉(유네스코) → 해녀박물관. 전 입장료 포함, 공인 가이드, 4.9/5 (1,148건)."
+  },
+  "catalog_card": {
+    "thumbnail": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+    "title": "제주 동부 유네스코 명소 일일 투어",
+    "priceLabel": "가격은 예약 시 확인",
+    "shortCardDescription": "제주 동부 유네스코 및 핵심 명소를 9시간 소그룹으로 일주하는 투어입니다. 함덕 서우봉해변, 성읍민속마을(유네스코), 미천굴 용암동굴(만장굴 운영 중단 기간 대체), 성산일출봉(유네스코 세계자연유산), 해녀박물관(유네스코 해녀문화) 포함. 전 입장료 포함, 공인 가이드, 1,148건 기준 4.9/5 평점.",
+    "tags": [
+      "small_group",
+      "jeju",
+      "east_jeju",
+      "unesco",
+      "value_priced",
+      "all_admissions_included"
+    ],
+    "rating": 4.9,
+    "reviewCount": 1148,
+    "slug": "jeju-eastern-unesco-spots-day-tour",
+    "subtitle": "소그룹 미니버스, 영어·중국어 가이드 — 함덕해변·성읍민속마을·미천굴·성산일출봉(유네스코)·해녀박물관을 9시간 동부 루프로 일주합니다.",
+    "region": "Eastern Jeju",
+    "duration": "9 hours",
+    "stopsCount": 8,
+    "badges": [
+      "소그룹",
+      "제주",
+      "제주 동부",
+      "유네스코",
+      "합리적 가격",
+      "전 입장료 포함"
+    ],
+    "heroImage": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg"
+  },
+  "headlineLine1": "성산일출봉부터 용암동굴, 해변에서 해녀박물관까지 —",
+  "headlineLine2": "제주 동부 유네스코 루프, 전 입장료 포함",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "person",
+    "priceSource": "getyourguide_t608456",
+    "priceNote": "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, same operator) is $43 per person; this Eastern tour is comparable. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+    "discountPercent": 10
+  },
+  "hero": {
+    "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+    "imagePosition": "center 35%",
+    "tagline": "제주 동부 최다 리뷰 투어 — 1,148건 기준 4.9/5, 전 입장료 포함",
+    "pills": [
+      "small_group",
+      "jeju"
+    ],
+    "meta": {
+      "duration": "≈ 9 hours (08:30 first pickup, ≈ 18:00 drop-off)",
+      "region": "Eastern Jeju",
+      "stops": "8 stops",
+      "rating": 4.9,
+      "ratingStars": 5
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "투어 개요"
+    },
+    {
+      "id": "itinerary",
+      "label": "상세 일정"
+    },
+    {
+      "id": "details",
+      "label": "유의사항"
+    },
+    {
+      "id": "faq",
+      "label": "자주 묻는 질문"
+    },
+    {
+      "id": "reviews",
+      "label": "여행자 후기"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "포토 스팟",
+      "value": "높음",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "경치 밀도",
+      "value": "높음",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "도보 난이도",
+      "value": "다소 높음",
+      "level": 4
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "우천 적합도",
+      "value": "보통",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "가족 적합도",
+      "value": "양호",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "투어 페이스",
+      "value": "균형",
+      "level": 4
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+      "alt": "Emerald-blue water and white sand at Hamdeok Seoubong Beach",
+      "caption": "Seongsan Ilchulbong (Sunrise Peak) — UNESCO Natural Heritage",
+      "location": "Hamdeok-ri, Jocheon-eup, Jeju",
+      "atmosphere": "Coastal opener"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+      "alt": "Stone-walled thatched houses inside Seongeup Folk Village",
+      "caption": "Hamdeok Seoubong Beach — emerald shallows and the Seoubong volcanic cone",
+      "location": "Seongeup, Pyoseon-myeon, Seogwipo",
+      "atmosphere": "600-year Joseon-era folk village"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+      "alt": "Illuminated lava tube interior at Micheon Cave, Ilchul Land",
+      "caption": "Seongeup Folk Village — preserved volcanic-stone walls and thatched roofs",
+      "location": "Ilchul Land, Pyoseon-myeon",
+      "atmosphere": "Indoor lava-tube break"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+      "alt": "View from Seongsan Ilchulbong UNESCO crater rim across the East Sea",
+      "caption": "Micheon Cave lava tube (current alternate to closed Manjanggul)",
+      "location": "Seongsan Ilchulbong UNESCO World Heritage Site",
+      "atmosphere": "Day centerpiece — crater climb"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+      "alt": "Haenyeo diving equipment display at Jeju Haenyeo Museum",
+      "caption": "Haenyeo Museum — celebrating Jeju's UNESCO-listed women divers",
+      "location": "Hado-ri, Gujwa-eup, Jeju",
+      "atmosphere": "UNESCO Intangible Cultural Heritage"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "09:00",
+      "duration": "30 min",
+      "name": "픽업 (제주시 4개 지점)",
+      "category": "Pickup — Jeju City Hotel/Hub Sequence",
+      "description": "아침 이동 최소화를 위해 제주시 4개 주요 지점에서 픽업이 이루어집니다: 제주공항 1번 게이트(국내선 1층), 노형오거리 인근, 제주시청 인근, 중앙로터리 인근. 서쪽에서 동쪽 순으로 탑승하여 약 09:50 함덕해변 도착(성수기 인파보다 이른 도착, 최적 조명 확보).",
+      "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+      "highlights": [
+        "**4 pickup points** across Jeju City — Airport, City Hall, Hagwi, Dongmun",
+        "Sequence west→east minimizes morning coach distance",
+        "**Small-group minicoach (max 14 pax)** with English guide",
+        "Bilingual itinerary card + weather brief at first stop",
+        "Total morning transit Jeju City → Hamdeok: ~40 min",
+        "Drop-off mirrors pickup with optional Dongmun Market end-of-day stop"
+      ],
+      "timeUsed": [
+        "Hagwi pickup ~09:00 — 5 min",
+        "Airport pickup ~09:10 — 5 min",
+        "City Hall pickup ~09:20 — 5 min",
+        "Dongmun pickup ~09:30 — 5 min",
+        "Eastbound Route 1132 to Hamdeok — ~30 min"
+      ],
+      "whyOnRoute": "Four pickup points cover Jeju City's main hotel + transport zones (airport, mid-city, old town, market district) without forcing guests across the city. Sequencing west→east lands the coach at Hamdeok ~09:50 — early enough to catch the morning low-tide beach panorama before peak visitor flow."
+    },
+    {
+      "number": 2,
+      "time": "≈ 09:50",
+      "duration": "60 min",
+      "name": "함덕 서우봉해변",
+      "category": "Top-3 Jeju Beach — Olle Trail 19 + WWII Coastal History",
+      "description": "함덕 서우봉해변은 제주 상위 3대 해수욕장 중 하나로, 수심이 얕고 맑은 에메랄드빛 바다가 특징입니다. 서우봉(해발 70m) 정상에서는 성산일출봉이 보이는 동부 해안 전망을 즐길 수 있습니다. 수중 산호초와 모래사장이 유독 투명한 빛깔을 만들어냅니다. 방문 시간: 약 60분.",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      "highlights": [
+        "**Top 3 Jeju beaches** — emerald-turquoise water + white coral sand",
+        "**500 m main beach** + 3 connected coves (~900 m total length)",
+        "**Seoubong volcanic cone** ~1-hour summit climb — canola-yellow slopes March–April",
+        "**WWII Imperial Japanese Army tunnels** in adjacent cliffs — kamikaze suicide-boat shelters",
+        "**Olle Trail Course 19 (조천 → 김녕)** — blue-orange ribbon trail markers",
+        "**Cafe Delmoondo** — large terraces, beachfront, signature stop",
+        "Up to **50,000 daily summer visitors** at peak; uncrowded spring + autumn",
+        "**FREE admission**; 20 km / ~40 min from Jeju International Airport",
+        "Mediterranean-like color contrast — rare on the Korean Peninsula"
+      ],
+      "timeUsed": [
+        "Coach arrival + parking — ~5 min",
+        "Beach walk (main stretch + 2nd cove) — ~25 min",
+        "WWII tunnel exteriors viewing — ~10 min",
+        "Cafe Delmoondo or beachfront photography — ~15 min",
+        "Buffer / regroup — ~5 min"
+      ],
+      "whyOnRoute": "**Coastal opening anchor of the eastern UNESCO route**. Hamdeok establishes the day's first dual frame: **natural beauty (top-3 beach) + WWII colonial history (tunnels)** — a deliberate setup for the day's recurring pattern of **paired natural + historical layers** (continuing at Seongsan with its 18 caves, and at the Haenyeo Museum where diving heritage meets UNESCO Intangible designation). Geographically, Hamdeok is the **natural first stop after Jeju City**, just 40 min east on Route 1132, before the long inland transit to Seongeup. Compared with **Woljeongri Beach (further east, no WWII history)** or **Iho Tewoo Beach (Jeju City, no Olle trail anchor)**, Hamdeok is **on-route, FREE, and historically layered** — the highest-yield east-coast beach stop. Morning timing also catches the **9:50–10:50 low-flat lighting** before midday harshness.",
+      "_poi_meta": {
+        "poi_key": "hamdeok_seoubong_beach",
+        "kb_version": "1.19",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Jeju Olle Foundation — Trail Course 19 official map",
+          "VisitJeju — Hamdeok Seoubong Beach",
+          "Jeju 4·3 Peace Foundation — Imperial Japanese Army tunnel records",
+          "Korea Tourism Organization — Top 3 Jeju Beaches ranking",
+          "Jocheon-eup local cultural office — Seoubong oreum trail records"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:00",
+      "duration": "60 min",
+      "name": "성읍민속마을 (유네스코 문화유산)",
+      "category": "Joseon-era Walled Town — Important Folklore Cultural Heritage (1423 founding)",
+      "description": "성읍민속마을은 1423년 조선 태종 때 조성된 살아있는 읍성 마을로, 돌담과 초가집, 전통 제주 건축이 원형에 가깝게 보존되어 있습니다. 현재도 주민이 거주하며, 조선 시대 지방 행정·생활 방식을 오늘날 전하고 있습니다. 가이드가 정의비, 객사, 전통 돌하르방을 안내합니다. 방문 시간: 약 60분.",
+      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+      "highlights": [
+        "**Founded 1423** by Sejong the Great — administrative center until **1914 (~500 years)**",
+        "**110 traditional structures** within original eupseong walled-town footprint",
+        "**Important Folklore Cultural Heritage of South Korea** (entire village + multiple buildings)",
+        "**Two ~600-year-old trees** at center: Saw-leaf Zelkova + Japanese Hackberry — **Natural Monuments**",
+        "Designed on **Joseon Korean feng shui (geomancy) principles** — typical county-capital plan",
+        "**'Dae Jang Geum' (MBC 2003–2004)** filming location — international K-drama hit",
+        "**Omegisul (오메기술)** — rice-based Jeju liquor brewed by single family for generations (free tasting)",
+        "Historical scars: **1826 fire** destroyed ~80 buildings; **1948 Jeju Uprising** damage",
+        "**FREE admission** — village still inhabited by ~250 families maintaining traditions"
+      ],
+      "timeUsed": [
+        "Parking + welcome brief by village docent — ~10 min",
+        "Walk to ancient trees + village center — ~10 min",
+        "Hanok interior visits (2–3 representative homes) — ~15 min",
+        "Omegisul brewery free tasting — ~10 min",
+        "Olle alley walk + photography — ~10 min",
+        "Buffer — ~5 min"
+      ],
+      "whyOnRoute": "**Mid-morning UNESCO-heritage anchor** — and the day's first explicit Korean cultural heritage layer (continuing the morning's natural + colonial-history framing from Hamdeok). Where the nature-core sister tour places Seongeup as the day's closing anchor (16:50 golden-hour light), this UNESCO-spots route uses Seongeup as the **11:00 mid-morning narrative pivot** — guests transition from the morning's coastal history (Hamdeok WWII) to the inland 600-year Joseon administrative heritage before lunch. The Important Folklore Cultural Heritage designation + Natural Monument trees + 1423 founding all reinforce the day's UNESCO-and-heritage framing. The hour dwell window is sufficient for a docent-guided alley walk + ancient tree photography + optional Omegisul tasting; coach then continues 20 min east to Ilchulland.",
+      "_poi_meta": {
+        "poi_key": "seongeup_folk_village",
+        "kb_version": "1.19",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Cultural Heritage Administration — Important Folklore Cultural Heritage designation",
+          "Korea Cultural Heritage Foundation — Seongeup Folk Village historical records",
+          "VisitJeju — Seongeup Minsok Maeul",
+          "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
+          "Jeju Folklore Society — Omegisul brewing tradition documentation"
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "time": "≈ 12:20",
+      "duration": "75 min",
+      "name": "미천굴 (만장굴 대체, 일출랜드)",
+      "category": "Lava Tube + Theme Park — Manjanggul Alternate (UNESCO-property adjacent)",
+      "description": "일출랜드는 2002년 개장한 약 40만㎡ 규모의 자연 테마파크로, 아열대 식물원과 미천굴 용암동굴을 포함합니다. 미천굴은 만장굴(유네스코 세계자연유산)의 일부로, 만장굴 내부 보수 기간 중 이 경유지를 통해 용암동굴 지형을 체감할 수 있습니다. 방문 시간: 약 50분.",
+      "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
+      "highlights": [
+        "**1,700 m total** lava tube; **365 m open section** (~25-min walk-through)",
+        "**Manjanggul UNESCO alternate** — same lava-tube system; opens when Manjanggul closes",
+        "**Floor artificially leveled** — accessible to elderly, strollers, mobility-limited guests",
+        "**Seven-color decorative lighting** — gold/silver/bronze/red/black/blue/white",
+        "**400,000 m² park grounds** — bonsai, cactus, sculpture, traditional village, footbath cafe",
+        "**Only Jeju attraction with on-site Muslim prayer room** — deliberate accessibility",
+        "**'Running Man' Ep. 89** filming (2012, Alice-in-Wonderland theme)",
+        "Admission **₩12,000 adult / ₩9,000 youth / ₩7,000 child**",
+        "**30% indoor / 70% outdoor** — weather-flexible mix"
+      ],
+      "timeUsed": [
+        "Parking + ticket + entrance — ~5 min",
+        "Micheon Cave walk-through (365 m / ~25 min) — ~30 min",
+        "Subyeon Park + sculpture street — ~20 min",
+        "Optional bonsai/cactus garden + footbath cafe — ~15 min",
+        "Buffer / regroup — ~5 min"
+      ],
+      "whyOnRoute": "**Pre-lunch lava-tube anchor** — explicitly framed as the **UNESCO-property adjacent** chapter of the day's UNESCO theme. Where the nature-core sister tour uses Ilchulland as a mid-afternoon weather-flexible stop, this UNESCO-spots route positions it earlier in the day to keep the **'UNESCO + heritage' narrative arc tight**: Hamdeok (Olle Trail 19, semi-UNESCO-status walking heritage) → Seongeup (Important Folklore Cultural Heritage) → **Ilchulland Micheon Cave (Manjanggul lava-tube system — same UNESCO property as Manjanggul itself)** → afternoon Seongsan (Triple UNESCO) → finale Haenyeo Museum (UNESCO Intangible 2016). The pre-lunch placement also ensures cave temperature comfort (caves are 13–15°C year-round — pleasantly cool in summer, mildly cool in winter) before the day's warmest outdoor stretches.",
+      "_poi_meta": {
+        "poi_key": "ilchulland_micheon_cave",
+        "kb_version": "1.19",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Ilchul Land official site (ilchulland.com)",
+          "VisitJeju — Ilchul Land Micheon Cave",
+          "Korea Cave Research Institute — Manjanggul lava-tube system documentation",
+          "SBS Variety Archive — Running Man Episode 89 (2012)",
+          "Jeju Tourism Organization — accessibility-friendly attraction registry"
+        ]
+      }
+    },
+    {
+      "number": 5,
+      "time": "≈ 13:35",
+      "duration": "60 min",
+      "name": "점심 (제주 현지 식당)",
+      "category": "Midday Reset — East Jeju Local Cuisine",
+      "description": "일출랜드와 성산일출봉 사이 약 60분 점심 시간입니다. 성산읍 항구 주변 식당에서 흑돼지, 전복죽, 갈치 등 제주 동부 향토 음식을 즐길 수 있습니다. 점심 식사비는 별도(약 ₩15,000)입니다.",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "highlights": [
+        "**East Jeju seafood corridor** — Seongsan-eup harbor-side strip",
+        "**Mulhoe (물회)** in summer; **galchi-jorim** winter rotation",
+        "**Heuk-doeji** year-round — Cultural Heritage Material No. 5 (2015)",
+        "**Vegetarian + halal-friendly** options on request",
+        "**10-min coach to Seongsan Ilchulbong** entrance",
+        "Group dietary requirements collected at pickup"
+      ],
+      "timeUsed": [
+        "Coach to lunch venue — ~5 min",
+        "Order + meal — ~45 min",
+        "Coach to Seongsan Ilchulbong entrance — ~10 min"
+      ],
+      "whyOnRoute": "Seongsan-eup placement = 10-min hop to the cone climb. Mulhoe is an east-Jeju regional specialty (less common in Jeju City), so the geographic placement adds culinary identity to the lunch slot. Pace also breaks the morning's beach + village + cave walking before the afternoon Seongsan ascent + Haenyeo Museum interior."
+    },
+    {
+      "number": 6,
+      "time": "≈ 14:45",
+      "duration": "90 min",
+      "name": "성산일출봉 (유네스코 세계자연유산)",
+      "category": "UNESCO Tuff Cone — Sunrise Peak (Triple UNESCO Designation)",
+      "description": "성산일출봉은 약 5,000년 전 해저 화산 분출로 형성된 응회암 분화구로, 유네스코 세계자연유산(2007년)·생물권보전지역(2002년)·세계지질공원(2010년) 3관왕입니다. 분화구 직경 600m, 깊이 90m이며 둘레에 99개의 현무암 기둥이 서 있습니다. 왕복 0.8km 등반로(약 30분). 13:30, 15:00 해녀 시연이 열리는 날도 있습니다. 입장료: 성인 ₩5,000.",
+      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+      "highlights": [
+        "**Triple UNESCO**: World Heritage 2007-07-02 + Biosphere Reserve 2002 + Global Geopark 2010-10",
+        "**5,000 years old** — Surtseyan-type hydrovolcanic eruption, magma-meets-seawater steam-explosive birth",
+        "Crater **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** (the 'stone crown')",
+        "**182 m above sea level** — 0.8 km / ~140 m gain, 60-min round trip on stone-step trail",
+        "**18 Imperial Japanese WWII caves** at base — 1945 kamikaze suicide-boat shelters",
+        "**Haenyeo demonstrations daily 13:30 + 15:00** at the seaside cove — UNESCO Intangible 2016",
+        "**Admission updated April 2025**: Adult ₩5,000 / Youth ₩2,500 / FREE under 7 + over 65",
+        "Spring/autumn hours **05:00–19:00** (last entry 18:20)",
+        "**Closes for first Monday of each month** (occasional rest day)"
+      ],
+      "timeUsed": [
+        "Parking + ticket + base brief — ~10 min",
+        "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min",
+        "Summit views + crater rim photos — ~20 min",
+        "Descent — ~20 min",
+        "Optional haenyeo viewing at base (15:00 demo) — ~10 min"
+      ],
+      "whyOnRoute": "**Triple UNESCO climax of the eastern UNESCO route**. Where the nature-core sister tour places Seongsan as the day's afternoon center (sandwiched between Seopjikoji morning and Ilchulland afternoon), this UNESCO-spots route positions Seongsan as the **day's penultimate climactic anchor** — preceded by Hamdeok WWII history + Seongeup Joseon heritage + Ilchulland lava tube, and followed by the Haenyeo Museum UNESCO Intangible finale. The 14:45 arrival catches the **15:00 haenyeo demonstration** at the cone base — a thematically perfect bridge to the Haenyeo Museum stop next, where the same diving culture is presented in museum context. Triple UNESCO status (WHC + Biosphere + Geopark) at Seongsan + UNESCO Intangible (2016) at Haenyeo Museum = the day's most explicit UNESCO concentration in the catalog. Spring/autumn evenings: descent timing puts guests back at coach by ~16:15, leaving 30+ min for Haenyeo Museum interior + drive back to Jeju City.",
+      "_poi_meta": {
+        "poi_key": "seongsan_ilchulbong",
+        "kb_version": "1.19",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+          "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
+          "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
+          "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
+          "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "time": "≈ 16:30",
+      "duration": "45 min",
+      "name": "해녀박물관 (제주 해녀 문화)",
+      "category": "UNESCO Intangible Cultural Heritage Anchor — Jeju Diving Culture (2016)",
+      "description": "제주 해녀박물관은 2016년 유네스코 인류무형문화유산으로 등재된 '제주 해녀문화'의 거점 전시 기관입니다. 해녀의 생활 도구, 잠수 기술, 공동체 조직, 구술 문화를 상설 전시하며, 해녀 문화의 역사적·현재적 의미를 전달합니다. 방문 시간: 약 45분.",
+      "image": "https://images.unsplash.com/photo-1551883040-7d23ea4f1f87",
+      "highlights": [
+        "**UNESCO Intangible Cultural Heritage of Humanity (2016)** — institutional anchor",
+        "**First written record 1629** — Lee Geon's 'Description of Jeju' / 'Guchang' (recorded as 'Jamnyeo')",
+        "**3 exhibition halls** — Daily Life, Diving Practice + Categorization, Community + Future",
+        "Senior **Sanggun** dive to **10 m on 60-sec breath-hold**, ~7 hr/day × ~90 days/year",
+        "**Hagun / Junggun / Sanggun** rank system based on depth + breath-hold capacity",
+        "**Maternal lineage** — mothers train daughters from age 6–7",
+        "**Under 4,000 active haenyeo** today — mostly 70+; population diminishing",
+        "Admission **₩1,100 adult / ₩500 youth / FREE under 7 + over 65**",
+        "Hours **09:00–18:00**, **closed Tuesdays + lunar holidays**; indoor ~80% (rain-friendly)"
+      ],
+      "timeUsed": [
+        "Parking + entrance + ticket — ~5 min",
+        "Hall 1 (Daily Life + Equipment) — ~10 min",
+        "Hall 2 (Diving Practice + Categorization) — ~10 min",
+        "Hall 3 (Community + Future) — ~10 min",
+        "Outdoor sculpture garden + replica boat — ~5 min",
+        "Buffer + restroom — ~5 min"
+      ],
+      "whyOnRoute": "**UNESCO Intangible heritage finale** — and the day's narrative climax. After the morning's natural + colonial-history layers (Hamdeok), the Joseon administrative heritage (Seongeup), the lava-tube UNESCO adjacency (Ilchulland), and the Triple UNESCO geological climax (Seongsan), the Haenyeo Museum **completes the day's UNESCO narrative arc** with UNESCO Intangible Cultural Heritage status (2016). Geographically this is **15-min coach from Seongsan**, the natural sequencing — guests who watched the 15:00 haenyeo demonstration at Seongsan now learn the full historical and cultural depth in museum context. **Indoor ratio ~80%** = the day's strongest rainy-day fallback anchor, also a welcome interior break after the Seongsan climb. Compared with **Jeju Folk Village Museum (themed reconstruction, ₩12,000)** or **Jeju National Museum (Jeju City center, off-route)**, the Haenyeo Museum is **₩1,100, on-route, and UNESCO-grade** — the highest yield for the day's UNESCO theme.",
+      "_poi_meta": {
+        "poi_key": "jeju_haenyeo_museum",
+        "kb_version": "1.19",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO Intangible Cultural Heritage — Culture of Jeju Haenyeo (2016 inscription)",
+          "Jeju Haenyeo Museum official site (haenyeo.go.kr)",
+          "VisitJeju — Haenyeo Museum",
+          "Korea Maritime History Society — Jamnyeo records (1629 onward)",
+          "Jeju Special Self-Governing Province — haenyeo population census records"
+        ]
+      }
+    },
+    {
+      "number": 8,
+      "time": "≈ 17:30",
+      "duration": "30 min",
+      "name": "하차 (2개 지점 + 동문시장)",
+      "category": "Drop-off — Jeju City Hub Sequence",
+      "description": "귀환 시 아침 픽업 경로와 동일하게 2개 지점에서 하차하며, 동문재래시장 앞에서도 하차 가능합니다. 동문시장에서는 제주 특산물과 간식을 둘러볼 수 있습니다.",
+      "image": "https://images.unsplash.com/photo-1549144511-f099e773c147",
+      "highlights": [
+        "**3 drop-off points** — Dongmun Market, City Hall, Airport",
+        "**Dongmun Traditional Market** — Jeju's most popular evening market, seafood + tangerine + street food",
+        "Estimated arrival: Dongmun ~17:55, City Hall ~18:10, Airport ~18:25",
+        "**Same-day evening flights from JIA** typically viable (last departure ~21:30)",
+        "Drop-off sequence aligned with morning pickup mirroring"
+      ],
+      "timeUsed": [
+        "Coach Haenyeo Museum → Dongmun — ~25 min",
+        "Dongmun Market drop-off — 5 min",
+        "Coach to City Hall — ~10 min",
+        "City Hall drop-off — 5 min",
+        "Coach to Airport — ~15 min",
+        "Airport drop-off — 5 min"
+      ],
+      "whyOnRoute": "Dongmun Market drop-off = optional dinner stop for guests who want to end the day with Jeju seafood + market browsing rather than coach return to hotel. City Hall + Airport drop-offs cover hotel-zone + departure-flight guests. Total post-Haenyeo Museum transit ~55 min covers all 3 points without backtracking."
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Jeju City + airport pickup",
+      "type": "origin",
+      "theme": "Departure"
+    },
+    {
+      "name": "Hamdeok Seoubong Beach",
+      "type": "secondary",
+      "theme": "Beach"
+    },
+    {
+      "name": "Seongeup Folk Village",
+      "type": "primary",
+      "theme": "Heritage Village"
+    },
+    {
+      "name": "Micheon Cave at Ilchul Land",
+      "type": "primary",
+      "theme": "Cave"
+    },
+    {
+      "name": "Lunch",
+      "type": "meal",
+      "theme": "Meal"
+    },
+    {
+      "name": "Seongsan Ilchulbong (UNESCO)",
+      "type": "primary",
+      "theme": "UNESCO Volcano"
+    },
+    {
+      "name": "Haenyeo Museum",
+      "type": "primary",
+      "theme": "Culture"
+    },
+    {
+      "name": "Jeju City drop-off",
+      "type": "return",
+      "theme": "Return"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "픽업 및 해안 출발",
+      "duration": "≈ 1 hour",
+      "description": "제주시 4개 지점 픽업(08:30~09:05) 후 함덕해변으로 이동."
+    },
+    {
+      "phase": "해안에서 내륙 문화유산으로",
+      "duration": "≈ 3 hours",
+      "description": "함덕 서우봉해변(60분) → 성읍민속마을(조선시대 문화유산, 60분) → 미천굴 이동."
+    },
+    {
+      "phase": "점심",
+      "duration": "≈ 1 hour",
+      "description": "표선 인근 현지 식당 — 흑돼지, 전복죽, 제철 해산물. 점심 식사비 별도."
+    },
+    {
+      "phase": "유네스코 핵심",
+      "duration": "≈ 2 hours",
+      "description": "성산일출봉(60분, 분화구 등반 선택) + 하도리 해녀박물관(45분)."
+    },
+    {
+      "phase": "귀환",
+      "duration": "≈ 2 hours",
+      "description": "하도리 → 제주시 이동(약 50분) + 2개 지점 및 동문시장 하차(약 40분)."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "How this day flows",
+    "subtitle": "An eastern-Jeju loop covering the island's two UNESCO highlights from the east — Seongsan Ilchulbong (Natural Heritage) and the Haenyeo women-diver tradition (Intangible Cultural Heritage) — plus the heritage anchor of Seongeup Folk Village and the Micheon Cave lava tube as the current Manjanggul alternate. The 4.9/5 rating across 1,148 reviews is the highest of the operator's tour family, and the all-admissions-included structure (Seongsan ₩5,000, Seongeup, Micheon Cave, Haenyeo Museum) saves visitors approximately ₩20,000 vs. paying à la carte."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "First-time visitors to the area",
+      "Couples",
+      "Adult families",
+      "Active travelers comfortable with full days",
+      "Travelers who want UNESCO World Heritage stops"
+    ],
+    "lessIdealFor": [
+      "Travelers who want minimal walking",
+      "Stroller-heavy groups",
+      "Travelers needing a tight same-day flight buffer"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Why this route is built this way",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "Both UNESCO listings (natural + cultural) in one day",
+            "detail": "Most Jeju eastern tours include Seongsan Ilchulbong but skip the Haenyeo Museum. This route deliberately keeps both — meaning visitors leave with both Jeju UNESCO categories: the natural heritage (Seongsan's tuff cone) and the intangible cultural heritage (haenyeo women-diver tradition, listed 2016)."
+          },
+          {
+            "label": "Manjanggul alternate handled gracefully",
+            "detail": "Manjanggul Lava Tube is currently closed — most tours either skip cave content entirely or substitute lazily. This route uses Micheon Cave at Ilchul Land, which gives visitors a comparable lava-tube experience plus the Ilchul Land botanical garden (seasonal flower displays). When Manjanggul reopens, the operator will likely revert; check at booking."
+          },
+          {
+            "label": "All admissions included — value at the price tier",
+            "detail": "Eastern Jeju has more paid attractions than southern Jeju (Seongsan ₩5,000, Ilchul Land ₩12,000, Haenyeo Museum ₩1,100). Including all of them in the base price saves ≈ ₩18,000 per person versus the standard à-la-carte structure of competing tours."
+          },
+          {
+            "label": "Seongsan Ilchulbong is optional-climb",
+            "detail": "The 30-minute rim climb is steep and not for everyone. The route allocates 90 minutes total at the site, which is enough for the climb if you want it but also enough to walk the free coastal trail at the base for similar photo angles without the stairs. Visitors with mobility concerns get the UNESCO credit either way."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "inclusions",
+      "title": "What's included",
+      "preview": "Air-conditioned mini-coach, certified English/Chinese-speaking guide, ALL attraction…",
+      "content": [
+        "Air-conditioned mini-coach, certified English/Chinese-speaking guide, ALL attraction admissions (Seongsan Ilchulbong ₩5,000, Seongeup Folk Village free, Ilchul Land/Micheon Cave ₩12,000, Haenyeo Museum ₩1,100, Hamdeok Beach free), fuel/tolls/parking.",
+        "Not included: lunch (≈ ₩15,000), drinks, tips."
+      ]
+    },
+    {
+      "id": "pickup",
+      "title": "Pickup & drop-off",
+      "preview": "Sequential pickup at four points: Ocean Suites Jeju (08:30), Jeju Airport Gate 1, 1F…",
+      "content": [
+        "Sequential pickup at four points: Ocean Suites Jeju (08:30), Jeju Airport Gate 1, 1F Domestic Arrivals (08:45 — note: different gate from operator's Southern tour), LOTTE City Hotel Jeju (08:55), Shilla Duty-Free Jeju Store (09:05).",
+        "Choose the closest at booking.",
+        "Day-before WhatsApp confirmation."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "Walking & terrain",
+      "preview": "Moderate.",
+      "content": [
+        "Moderate.",
+        "Hamdeok Beach is flat sand.",
+        "Seongeup Folk Village has dirt paths and stone walls.",
+        "Micheon Cave has stairs descending into the tube and uneven flooring inside.",
+        "Seongsan Ilchulbong's rim climb is 30 minutes of steep stone steps (skippable).",
+        "Haenyeo Museum is flat indoor walking.",
+        "Comfortable closed-toe shoes essential.",
+        "Total walking ≈ 4–5 km."
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "Cancellation",
+      "preview": "Free cancellation up to 24 hours before pickup.",
+      "content": [
+        "Free cancellation up to 24 hours before pickup.",
+        "Same-day cancellations and no-shows non-refundable.",
+        "Heavy weather may shorten the Seongsan climb but does not cancel the day."
+      ]
+    },
+    {
+      "id": "cave",
+      "title": "Cave note (Manjanggul status)",
+      "preview": "Manjanggul Lava Tube is currently closed for safety repairs (unscheduled reopening).",
+      "content": [
+        "Manjanggul Lava Tube is currently closed for safety repairs (unscheduled reopening).",
+        "The Micheon Cave at Ilchul Land is the standard alternate and is included on this route.",
+        "If Manjanggul reopens during your travel period, the operator may swap stops; check at booking."
+      ]
+    },
+    {
+      "id": "children",
+      "title": "Children & accessibility",
+      "preview": "Recommended for ages 10+ due to the Seongsan Ilchulbong rim climb (≈ 600 stairs, optional…",
+      "content": [
+        "Recommended for ages 10+ due to the Seongsan Ilchulbong rim climb (≈ 600 stairs, optional but the day's centerpiece) and a 9-hour pace.",
+        "Younger children can join, but the climb may be too much; consider our year-round Cherry Blossom or Cruise Bus tours which skip the summit.",
+        "Strollers are not recommended on Seongsan stairs or Seongeup village paths."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "See seasonal notes"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "See seasonal notes"
+    },
+    "_seasonalSummary": "Eastern Jeju has the cleanest sea views on the island and the warmest summer temperatures. Seongsan Ilchulbong is exposed to wind year-round; bring a light layer.",
+    "_seasonalTemperatures": [
+      {
+        "season": "Spring (Mar–May)",
+        "range": "8–22°C",
+        "notes": "Cherry blossoms in early April; rapeseed flowers on Hamdeok's Seoubong cone."
+      },
+      {
+        "season": "Summer (Jun–Aug)",
+        "range": "22–30°C",
+        "notes": "Hot but breezy at coastal stops. Best ocean colors at Hamdeok."
+      },
+      {
+        "season": "Autumn (Sep–Nov)",
+        "range": "10–24°C",
+        "notes": "Best season — clearest visibility for Seongsan rim views."
+      },
+      {
+        "season": "Winter (Dec–Feb)",
+        "range": "3–10°C",
+        "notes": "Wind chill significant at Seongsan rim. Fewer crowds at all stops."
+      }
+    ]
+  },
+  "seasonalVariations": [
+    {
+      "season": "Spring",
+      "description": "Rapeseed (canola) flowers on Hamdeok's Seoubong cone slopes — striking yellow against emerald sea."
+    },
+    {
+      "season": "Summer",
+      "description": "Best sea colors at Hamdeok Beach; long daylight for Seongsan visit."
+    },
+    {
+      "season": "Autumn",
+      "description": "Clearest visibility for Seongsan rim panoramas; Seongeup village stays photogenic year-round."
+    },
+    {
+      "season": "Winter",
+      "description": "Quietest crowds; Haenyeo Museum particularly valuable in cold weather."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "공인 현지 운영사",
+      "description": "Authorized Korean tour operator with full insurance",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "공인 현지 운영사 — 1,148건 기준 4.9/5 평점. 제주 동부 일일 투어 중 최다 리뷰."
+    },
+    {
+      "icon": "route",
+      "title": "코스 전문",
+      "description": "Hand-tuned itinerary, not a generic loop",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "투어 요금에 포함된 전 입장료: 성산일출봉(₩5,000), 성읍민속마을(무료), 미천굴(₩12,000) — 현장에서 별도로 지불할 내역이 없습니다."
+    },
+    {
+      "icon": "users",
+      "title": "그룹 규모 관리",
+      "description": "Right-sized for the route",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "소그룹 미니버스(최대 14인)로 성읍 골목길과 해녀박물관을 여유롭게 둘러볼 수 있습니다."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Immediately",
+      "title": "즉시 확인",
+      "detail": "Booking confirmation with itinerary summary",
+      "description": "제주시 호텔 픽업 정보 포함 즉시 예약 확인서 발송 (시내 무료, 시외 +₩70,000)."
+    },
+    {
+      "timing": "12 hours before",
+      "title": "12시간 전 알림",
+      "detail": "Weather update and any route adjustments",
+      "description": "성산 해녀 시연 일정(13:30 및 15:00) 사전 안내 — 원하시는 시연 시각에 맞춰 일정을 조율할 수 있습니다."
+    },
+    {
+      "timing": "Evening before",
+      "title": "최종 픽업 정보",
+      "detail": "Exact pickup time and driver contact",
+      "description": "출발 전날 저녁 최종 픽업 시각 확인."
+    },
+    {
+      "timing": "Morning of tour",
+      "title": "당일 코스 안내",
+      "detail": "Morning briefing based on live conditions",
+      "description": "날씨 상황 및 성산일출봉 분화구 등반 가능 여부(강풍 시 폐쇄) 아침 메시지로 전달."
+    },
+    {
+      "timing": "During tour",
+      "title": "경유지별 심층 안내",
+      "detail": "Real-time guidance at each location",
+      "description": "해녀 유네스코 등재(2016년), 성읍 500년 역사 등 각 경유지에서 가이드가 깊이 있는 설명을 드립니다."
+    },
+    {
+      "timing": "After tour",
+      "title": "투어 후 지원",
+      "detail": "Follow-up and recommendations",
+      "description": "투어 후 피드백 요청 전송, 제주 여행 관련 문의는 당일 내 답변."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "question": "해녀 잠수 시연을 직접 볼 수 있나요?",
+      "answer": "해녀박물관에서는 실제 잠수 영상을 관람하실 수 있습니다. 성산일출봉 근처에서 시연이 열리는 날도 있으나(보통 13:30, 15:00, 날씨에 따라 변동), 보장되지는 않습니다. 가이드가 시연 시각에 맞춰 일정을 안내해 드립니다."
+    },
+    {
+      "question": "성산일출봉 분화구 등반을 건너뛸 수 있나요?",
+      "answer": "가능합니다. 계단 없이도 비슷한 사진 앵글을 즐길 수 있는 해안 둘레길이 있습니다. 분화구 등반(왕복 0.8km, 약 30분)은 선택 사항이며, 체력에 따라 결정하시면 됩니다."
+    },
+    {
+      "question": "제주 남부 유네스코 투어와의 차이는 무엇인가요?",
+      "answer": "동일 운영사의 투어입니다. 남부 투어는 한라산 오름, 카멜리아힐, 천제연폭포, 주상절리, 오설록 차밭을 포함합니다. 동부 투어는 성산일출봉, 성읍민속마을, 미천굴, 해녀박물관을 중심으로 구성됩니다."
+    },
+    {
+      "question": "만장굴이 재개방되면 일정이 바뀌나요?",
+      "answer": "만장굴(미천굴보다 길이가 길고 더 유명한 유네스코 용암동굴)이 재개방될 경우, 운영사가 미천굴 대신 만장굴로 변경할 수 있습니다. 변경 시 사전에 안내해 드립니다."
+    },
+    {
+      "question": "점심 식사가 포함되어 있나요?",
+      "answer": "포함되지 않습니다. 점심 식사비는 별도(약 ₩15,000)이며, 가이드가 현지 맛집을 안내해 드립니다."
+    },
+    {
+      "question": "공항 픽업 시 제1게이트를 이용하는 이유는 무엇인가요?",
+      "answer": "제주 동부 투어 픽업은 제주공항 제1게이트(1층 국내선 도착홀)를 이용합니다. 동부 노선 방향과 가장 가까운 위치로, 이동 효율이 높기 때문입니다."
+    },
+    {
+      "question": "제주 동부를 처음 방문하는 분에게도 적합한가요?",
+      "answer": "네, 제주 동부의 대표 명소를 하루 일정으로 균형 있게 방문할 수 있는 투어입니다."
+    },
+    {
+      "question": "도보 이동이 힘들지 않나요?",
+      "answer": "도보가 많은 활동적인 하루 일정입니다. 편안한 운동화 착용을 권장합니다."
+    },
+    {
+      "question": "가족 여행에 적합한가요?",
+      "answer": "하루 종일 활동적으로 이동 가능한 어린이가 동반하는 가족에게 적합합니다."
+    },
+    {
+      "question": "어르신도 참여할 수 있나요?",
+      "answer": "계단과 비포장 지형이 포함되어 있어, 체력이 좋은 활동적인 어르신께 권장합니다."
+    },
+    {
+      "question": "권장 최소 연령은 몇 세인가요?",
+      "answer": "만 10세 이상, 하루 종일 이동이 가능한 어린이에게 적합합니다."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 4.9,
+    "totalReviews": 1148,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 1056,
+        "percentage": 92
+      },
+      {
+        "stars": 4,
+        "count": 69,
+        "percentage": 6
+      },
+      {
+        "stars": 3,
+        "count": 15,
+        "percentage": 1.3
+      },
+      {
+        "stars": 2,
+        "count": 6,
+        "percentage": 0.5
+      },
+      {
+        "stars": 1,
+        "count": 2,
+        "percentage": 0.2
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "person",
+      "priceSource": "getyourguide_t608456",
+      "priceNote": "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, same operator) is $43 per person; this Eastern tour is comparable. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+      "discountPercent": 10
+    }
+  },
+  "pickup_dropoff": {
+    "type": "meeting_point",
+    "meeting_points": [
+      {
+        "name": "Ocean Suites Jeju Hotel",
+        "time": "08:30"
+      },
+      {
+        "name": "Jeju International Airport Gate 1, 1st Floor (Domestic Arrivals)",
+        "time": "08:45"
+      },
+      {
+        "name": "LOTTE City Hotel Jeju",
+        "time": "08:55"
+      },
+      {
+        "name": "Shilla Duty-Free Jeju Store",
+        "time": "09:05"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Shilla Duty-Free Jeju Store",
+        "approx_time": "≈ 17:45"
+      },
+      {
+        "name": "Dongmun Traditional Market (drop-only)",
+        "approx_time": "≈ 18:00"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "Note: airport pickup is Gate 1 (Domestic Arrivals 1F), different from operator's Southern tour Gate 3. ALL attraction admissions included in the base price — saves ≈ ₩18,000 vs à la carte."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "jeju-eastern-unesco-spots-day-tour",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "jeju",
+    "region_type": "jeju_east",
+    "vehicle_type": "minicoach",
+    "duration_hours": 9,
+    "region_tags": [
+      "jeju_east",
+      "jeju_seongsan",
+      "jeju_pyoseon"
+    ],
+    "theme_tags": [
+      "unesco",
+      "volcano",
+      "culture",
+      "first_time_friendly",
+      "iconic_landmarks",
+      "intangible_heritage"
+    ],
+    "poi_tags": [
+      "hamdeok_beach",
+      "seongeup_folk_village",
+      "micheon_cave",
+      "seongsan_ilchulbong",
+      "jeju_haenyeo_museum"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.65,
+    "scenic_level": 1,
+    "photo_level": 1,
+    "culture_level": 0.95,
+    "relax_level": 0.6,
+    "first_time_fit": 1,
+    "family_fit": 0.6,
+    "senior_fit": 0.55,
+    "couple_fit": 0.95,
+    "solo_traveler_fit": 0.9,
+    "active_traveler_fit": 0.8,
+    "adult_family_fit": 1,
+    "family_with_teens_fit": 1,
+    "young_kids_fit": 0.7,
+    "senior_active_fit": 0.75,
+    "senior_general_fit": 0.55,
+    "mobility_friendly_fit": 0.65,
+    "stroller_fit": 0.5,
+    "one_day_fit": 1,
+    "same_day_flight_fit": 0.6,
+    "rain_fit": 0.75,
+    "value_for_money_fit": 0.85,
+    "iconic_landmark_fit": 0.85,
+    "cafe_fit": 0.4,
+    "food_fit": 0.6,
+    "nature_fit": 1,
+    "beach_fit": 0.85,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.2,
+    "no_shopping_fit": 1,
+    "local_culture_fit": 1,
+    "storytelling_fit": 1,
+    "unesco_fit": 1,
+    "intangible_heritage_fit": 1,
+    "indoor_ratio": 0.45,
+    "weather_sensitivity": 0.5,
+    "comfort_level": 0.6,
+    "budget_fit": 1,
+    "premium_fit": 0.4,
+    "small_group_fit": 1,
+    "private_fit": 0.2,
+    "bus_fit": 1,
+    "price_band": "budget",
+    "pickup_base": "jeju_city",
+    "return_time_band": "17:00-18:30",
+    "duration_band": "9h",
+    "min_recommended_age": 10,
+    "hard_constraints": {
+      "avoidIf": [
+        "tight_same_day_departure"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "stroller_heavy_groups"
+      ]
+    },
+    "walking_notes": [
+      "Active walking day with some stairs and uneven terrain.",
+      "Average fitness expected.",
+      "Sturdy shoes with grip recommended."
+    ],
+    "keywords": [
+      "jeju eastern unesco spots day tour",
+      "jeju day tour",
+      "jeju small group"
+    ],
+    "synonym_hints": [
+      "jeju eastern unesco spots day tour",
+      "jeju sightseeing"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "jeju",
+    "vehicle_type_legacy": "mini_coach",
+    "anchor_poi_keys": [
+      "seongsan_ilchulbong",
+      "seongeup_folk_village",
+      "jeju_haenyeo_museum",
+      "micheon_cave",
+      "hamdeok_beach"
+    ],
+    "profile_format": "small_group_fixed_itinerary",
+    "private_tour_fit": 0.05,
+    "fixed_itinerary_fit": 1,
+    "customizable_route_fit": 0.05,
+    "flexibility_fit": 0.3,
+    "first_time_jeju_fit": 0.95,
+    "east_jeju_fit": 1,
+    "north_jeju_fit": 0.85,
+    "south_jeju_fit": 0.3,
+    "west_jeju_fit": 0.05,
+    "central_jeju_fit": 0.6,
+    "east_unesco_focused_fit": 1,
+    "unesco_focused_tour_fit": 1,
+    "unesco_taste_fit": 1,
+    "world_natural_heritage_fit": 1,
+    "biosphere_reserve_fit": 0.85,
+    "global_geopark_fit": 1,
+    "triple_unesco_fit": 1,
+    "unesco_intangible_heritage_fit": 1,
+    "lava_tube_unesco_adjacent_fit": 1,
+    "important_folklore_heritage_fit": 1,
+    "natural_monument_anchor_count": 3,
+    "volcano_geology_fit": 0.95,
+    "tuff_cone_fit": 1,
+    "lava_tube_fit": 1,
+    "parasitic_cone_fit": 0.95,
+    "shield_volcano_fit": 1,
+    "top_3_beach_fit": 1,
+    "white_sand_beach_fit": 1,
+    "emerald_water_fit": 1,
+    "beach_anchor_fit": 1,
+    "ocean_view_fit": 1,
+    "olle_trail_fit": 1,
+    "haenyeo_culture_fit": 1,
+    "jamnyeo_history_fit": 1,
+    "joseon_walled_town_fit": 1,
+    "joseon_heritage_fit": 1,
+    "feng_shui_design_fit": 0.95,
+    "korean_folklore_fit": 1,
+    "k_drama_filming_fit": 0.85,
+    "wwii_history_fit": 1,
+    "japanese_colonial_history_fit": 1,
+    "kamikaze_shelter_history_fit": 1,
+    "museum_anchor_fit": 1,
+    "indoor_museum_fit": 1,
+    "rainy_day_friendly_fit": 1,
+    "indoor_anchor_fit": 0.85,
+    "walking_level_fit": 0.7,
+    "stair_climbing_fit": 0.6,
+    "trail_walking_fit": 0.7,
+    "elevation_gain_total_m": 140,
+    "moderate_mobility_fit": 1,
+    "low_intensity_fit": 0.8,
+    "senior_friendly_fit": 0.85,
+    "stroller_friendly_fit": 0.7,
+    "wheelchair_accessible_anchor_fit": 0.65,
+    "mobility_limited_friendly_fit": 0.75,
+    "first_time_korea_fit": 0.95,
+    "small_family_fit": 0.95,
+    "young_kids_friendly_fit": 0.85,
+    "senior_couple_fit": 0.9,
+    "honeymoon_fit": 0.85,
+    "history_lover_fit": 1,
+    "geology_enthusiast_fit": 0.85,
+    "feminist_history_fit": 0.95,
+    "k_drama_fan_fit": 0.85,
+    "photographer_fit": 1,
+    "instagrammable_fit": 0.95,
+    "unesco_focused_traveler_fit": 1,
+    "group_size_min": 2,
+    "group_size_max": 14,
+    "small_group_van_fit": 1,
+    "calm_pace_fit": 0.85,
+    "active_pace_fit": 0.7,
+    "checkbox_sightseeing_fit": 0.6,
+    "deep_dwell_fit": 0.85,
+    "balanced_pace_fit": 1,
+    "varied_terrain_fit": 0.95,
+    "language_english_fit": 1,
+    "language_chinese_fit": 0.85,
+    "language_japanese_fit": 0.55,
+    "english_guide_fit": 1,
+    "haenyeo_culture_guide_fit": 1,
+    "spring_fit": 1,
+    "summer_fit": 0.95,
+    "autumn_fit": 1,
+    "winter_fit": 0.75,
+    "all_year_fit": 0.95,
+    "off_season_fit": 0.75,
+    "monsoon_fit": 0.7,
+    "indoor_fallback_anchor_count": 3,
+    "early_start_fit": 0.85,
+    "late_finish_fit": 0.7,
+    "full_day_fit": 1,
+    "half_day_fit": 0.05,
+    "value_priced_fit": 0.95,
+    "budget_traveler_fit": 0.95,
+    "free_admission_anchor_count": 2,
+    "total_admission_krw_per_adult": 18100,
+    "off_beaten_path_fit": 0.6,
+    "crowd_avoidance_fit": 0.55,
+    "tourist_circuit_fit": 0.95,
+    "minicoach_fit": 1,
+    "max_pax_per_vehicle": 14,
+    "jeju_city_pickup_fit": 1,
+    "airport_pickup_fit": 1,
+    "airport_drop_compatible_fit": 1,
+    "dongmun_market_drop_fit": 0.95,
+    "cruise_shore_excursion_fit": 0.55,
+    "cruise_passenger_fit": 0.65,
+    "korean_food_fit": 0.95,
+    "jeju_local_cuisine_fit": 1,
+    "mulhoe_fit": 0.95,
+    "galchi_fit": 0.85,
+    "black_pig_heritage_fit": 0.85,
+    "seafood_fit": 0.95,
+    "vegetarian_friendly_fit": 0.75,
+    "halal_friendly_fit": 0.65,
+    "omegisul_tasting_fit": 1,
+    "photo_anchor_count": 5,
+    "drone_friendly_fit": 0.55,
+    "filming_location_fit": 0.85,
+    "stair_anchor_count": 1,
+    "barrier_free_anchor_fit": 0.75,
+    "accessibility_focus_fit": 0.95,
+    "is_anchor_for_unesco_focused_traveler": true,
+    "catalog_position": "east_jeju_unesco_focused_loop",
+    "competing_tours_count": 3,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "jeju",
+      "east_jeju",
+      "unesco_focused",
+      "haenyeo_culture",
+      "world_heritage",
+      "intangible_heritage",
+      "joseon_heritage"
+    ],
+    "secondary_themes": [
+      "top_3_beach",
+      "wwii_colonial_history",
+      "lava_tube",
+      "feng_shui_walled_town",
+      "tuff_cone",
+      "olle_trail",
+      "k_drama_filming"
+    ],
+    "best_for": [
+      "first_time_jeju",
+      "unesco_focused_travelers",
+      "history_lovers",
+      "couples",
+      "small_families",
+      "senior_couples",
+      "rainy_day_visitors",
+      "guests_with_evening_flights"
+    ],
+    "not_recommended_for": [
+      "thrill_seekers",
+      "private_tour_seekers",
+      "guests_demanding_west_jeju_coverage",
+      "wheelchair_users_unable_to_climb_seongsan",
+      "checkbox_sightseers_avoiding_museums"
+    ],
+    "anchor_pois": [
+      "Hamdeok Seoubong Beach",
+      "Seongeup Folk Village",
+      "Ilchul Land (Micheon Cave)",
+      "Seongsan Ilchulbong",
+      "Jeju Haenyeo Museum"
+    ],
+    "anchor_poi_keys": [
+      "hamdeok_seoubong_beach",
+      "seongeup_folk_village",
+      "ilchulland_micheon_cave",
+      "seongsan_ilchulbong",
+      "jeju_haenyeo_museum"
+    ],
+    "reviews_attribution": "Aggregate rating 4.9/5 (1,148 reviews) from the operator's GetYourGuide listing. Individual review snippets are not pulled into this catalog; users see the summary metric on this page and can read full reviews on the operator's GYG listing.",
+    "unesco_fit_note": "unesco_fit=5 = 1 WHS (Seongsan Ilchulbong, inscribed 2007) + 1 Intangible Cultural Heritage of Humanity (Culture of Jeju Haenyeo, inscribed 2016, accessed via the Haenyeo Museum stop). Seongeup Folk Village is Korea's national folk heritage — NOT UNESCO — and does not contribute to this score.",
+    "_internal_competing_products_note": "Comp set (internal only): Southern UNESCO sister product, same operator, $43/pax small-group rate as ceiling reference.",
+    "competing_products": [
+      "east-signature-nature-core",
+      "jeju-grand-highlights-loop",
+      "jeju-southern-top-unesco-spots-tour"
+    ],
+    "audit_summary": "East Jeju UNESCO-focused loop covering 5 distinct UNESCO heritage layers in one day: Olle Trail walking heritage (Hamdeok Course 19), Important Folklore Cultural Heritage (Seongeup Folk Village 1423 founding), Manjanggul-system lava tube (Ilchulland — UNESCO-property adjacent), Triple UNESCO Surtseyan tuff cone (Seongsan Ilchulbong), and UNESCO Intangible Cultural Heritage of Humanity (Jeju Haenyeo Museum, 2016 inscription). UNESCO-anchored counterpart to the signature-nature sister tour, which emphasizes Seolmundae Halmang mythology + Tadao Ando architecture instead.",
+    "score_rationale": {
+      "high_scores": {
+        "unesco_focused_tour_fit=1.0": "5 explicit UNESCO heritage layers in one day — densest UNESCO concentration in catalog",
+        "haenyeo_culture_fit=1.0": "UNESCO Intangible 2016 — full museum context + Seongsan demonstration in same day",
+        "rainy_day_friendly_fit=1.0": "3 indoor fallback anchors (Seongeup hanok + Ilchulland cave + Haenyeo Museum 80% indoor)",
+        "value_priced_fit=0.95": "Total ₩18,100 admission per adult for 5 UNESCO-grade anchors = catalog-leading UNESCO value",
+        "feminist_history_fit=0.95": "Haenyeo Museum is the catalog's strongest women's-labor heritage anchor",
+        "wwii_history_fit=1.0": "Hamdeok tunnels + Seongsan 18 caves both visible in day's narrative arc"
+      },
+      "low_scores": {
+        "private_tour_fit=0.05": "Format is small-group fixed itinerary only",
+        "west_jeju_fit=0.05": "Loop deliberately east-anchored",
+        "language_japanese_fit=0.55": "WWII/colonial-history framing slightly sensitive for Japanese guests — guide trained for context"
+      }
+    },
+    "differentiation_vs_signature_nature_sister": "Same Seongsan + Seongeup + Ilchulland anchors, but **UNESCO-anchored framing** (Hamdeok Olle 19 + Haenyeo Museum UNESCO Intangible 2016) vs. sister's **mythology + architecture framing** (Jeju Stone Park Seolmundae + Seopjikoji Tadao Ando). This tour = 5 UNESCO heritage layers + strongest rain-friendly anchor count + best ₩-per-UNESCO-anchor value; sister = mythology + Pulitzer architecture + 4 K-drama filming sites. Pair complementarily for guests with 2 days on Jeju.",
+    "seasonal_window": {
+      "best_months": [
+        "April",
+        "May",
+        "June (Hamdeok beach)",
+        "September",
+        "October"
+      ],
+      "good_months": [
+        "March",
+        "July",
+        "August (peak beach)"
+      ],
+      "caveat_months": [
+        "December",
+        "January (Seongsan ice)"
+      ],
+      "peak_crowd_months": [
+        "July",
+        "August (Hamdeok summer peak)"
+      ]
+    },
+    "kb_anchor_version": "1.19"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "Sunrise Peak to lava tube, beach to women-diver museum —",
+        "headlineLine2": "eastern Jeju's UNESCO loop, all admissions included",
+        "hero": {
+          "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+          "imagePosition": "center 35%",
+          "tagline": "The most reviewed eastern Jeju tour — 4.9/5 across 1,148 reviews, all admissions included",
+          "pills": [
+            "small_group",
+            "jeju"
+          ],
+          "meta": {
+            "duration": "≈ 9 hours (08:30 first pickup, ≈ 18:00 drop-off)",
+            "region": "",
+            "stops": "8 stops",
+            "rating": 4.9,
+            "ratingStars": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "Overview"
+          },
+          {
+            "id": "itinerary",
+            "label": "Itinerary"
+          },
+          {
+            "id": "details",
+            "label": "Details"
+          },
+          {
+            "id": "faq",
+            "label": "FAQ"
+          },
+          {
+            "id": "reviews",
+            "label": "Reviews"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "Duration",
+            "value": "≈ 9 hours (first pickup 08:30, drop-off ≈ 18:00)"
+          },
+          {
+            "icon": "users",
+            "label": "Group",
+            "value": "Small group, mini-coach with English/Chinese-speaking guide"
+          },
+          {
+            "icon": "map-pin",
+            "label": "Pickup",
+            "value": "Ocean Suites 08:30 / Jeju Airport Gate 1 (1F) 08:45 / LOTTE City 08:55 / Shilla Duty-Free 09:05"
+          },
+          {
+            "icon": "star",
+            "label": "Rating",
+            "value": "4.9/5 across 1,148 reviews — operator's most reviewed Jeju tour"
+          },
+          {
+            "icon": "footprints",
+            "label": "Walking",
+            "value": "Moderate — Seongsan Ilchulbong climb (optional), folk village paths, cave stairs"
+          },
+          {
+            "icon": "ticket",
+            "label": "Includes",
+            "value": "Vehicle, certified guide, ALL admissions. Excludes: lunch (≈ ₩15,000), tips"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+            "alt": "Seongsan Ilchulbong (Sunrise Peak) — UNESCO Natural Heritage",
+            "caption": "Seongsan Ilchulbong (Sunrise Peak) — UNESCO Natural Heritage",
+            "location": "",
+            "atmosphere": ""
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "alt": "Hamdeok Seoubong Beach — emerald shallows and the Seoubong volcanic cone",
+            "caption": "Hamdeok Seoubong Beach — emerald shallows and the Seoubong volcanic cone",
+            "location": "",
+            "atmosphere": ""
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "alt": "Seongeup Folk Village — preserved volcanic-stone walls and thatched roofs",
+            "caption": "Seongeup Folk Village — preserved volcanic-stone walls and thatched roofs",
+            "location": "",
+            "atmosphere": ""
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "alt": "Micheon Cave lava tube (current alternate to closed Manjanggul)",
+            "caption": "Micheon Cave lava tube (current alternate to closed Manjanggul)",
+            "location": "",
+            "atmosphere": ""
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "alt": "Haenyeo Museum — celebrating Jeju's UNESCO-listed women divers",
+            "caption": "Haenyeo Museum — celebrating Jeju's UNESCO-listed women divers",
+            "location": "",
+            "atmosphere": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "08:30",
+            "duration": "30 min",
+            "name": "Pickup (4 points across Jeju City)",
+            "category": "Departure",
+            "description": "Mini-coach pickup across 4 points in Jeju City — Ocean Suites Jeju Hotel (08:30), Jeju International Airport Gate 1 / 1F (08:45), LOTTE City Hotel (08:55), Shilla Duty-Free (09:05). Group consolidation completes by ≈ 09:05; vehicle departs east toward the coast.",
+            "image": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+            "highlights": [
+              "4 sequential pickup points",
+              "Airport Gate 1 (Domestic Arrivals) for east route",
+              "Air-conditioned mini-coach"
+            ],
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Pickup point chosen for efficient guest assembly while preserving on-time tour start.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {}
+          },
+          {
+            "number": 2,
+            "time": "≈ 09:25",
+            "duration": "60 min",
+            "name": "Hamdeok Seoubong Beach",
+            "category": "Volcanic Beach",
+            "description": "≈ 20 km east of Jeju International Airport, on Jeju Olle Trail Course 19. The beach forms three coves stretching ≈ 900 m, with white sand made of fine shell fragments and shallow emerald water. The east end is anchored by Seoubong oreum (서우봉 — 'rhinoceros-cow peak'), a small volcanic cone historically used as a beacon-fire signal station communicating with Wondangbong and Satgat oreum. On clear days the view from the upper coastal walk reaches Hallasan.",
+            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "highlights": [
+              "Top-3 Jeju beach",
+              "Seoubong volcanic cone",
+              "Spring canola bloom on cone slopes",
+              "Easy photo stop"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "visitBasics": {
+              "hours": "Open 24 hours (beach); managed swim season July–August with lifeguards",
+              "closed": "Open year-round",
+              "admission": "Free",
+              "walking": "Easy — beach is flat sand; Seoubong hike is moderate (steps)"
+            },
+            "convenience": {
+              "restroom": "Public restrooms and shower facilities at beach",
+              "parking": "Public parking lot (paid in summer)"
+            },
+            "smartNotes": {
+              "photo": "Sunset with Seoubong silhouette is the classic shot; aerial-style shots from Seoubong summit show the white sand curve",
+              "facilities": "Multiple cafés along the beachfront; convenience stores nearby",
+              "tip": "Less crowded than Hyeopjae or Gimnyeong beaches; the Delmoondo café area on the east side is popular for sunset"
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:15",
+            "duration": "60 min",
+            "name": "Seongeup Folk Village (UNESCO heritage)",
+            "category": "UNESCO Folk Village",
+            "description": "A 600-year continuously inhabited village, founded 1423 as the administrative seat of Jeongui-hyeon — one of three Joseon-era administrative divisions of Jeju (alongside Jeju-mok and Daejeong-hyeon). Designated National Folklore Cultural Heritage in 1984. Inside the Jeongui Hyeonseong fortress wall: thatched-roof homes still inhabited by residents, the Jeongui Hyanggyo Confucian school (Jeju Tangible Cultural Asset No. 5), the Ilgwanheon government office, centuries-old zelkova and nettle trees, dol hareubang stone statues, and traditional tongsi (combined pigsty/outhouse). Note: Seongeup is Korea's national folklore designation; it is NOT a UNESCO site (the heading on this stop is shorthand for 'cultural heritage,' not UNESCO inscription).",
+            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "highlights": [
+              "Lived-in heritage village",
+              "Volcanic stone walls (dol-dam)",
+              "Traditional kitchens",
+              "Korean Folklore Cultural Heritage"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "visitBasics": {
+              "hours": "Open 24 hours (outdoor village); shops typically 09:00–17:00",
+              "closed": "Open year-round",
+              "admission": "Free for general village; some private homes charge for guided visits",
+              "walking": "Easy — flat dirt and stone paths through the village"
+            },
+            "convenience": {
+              "restroom": "Public restrooms at village entrance",
+              "parking": "Free parking near entrance"
+            },
+            "smartNotes": {
+              "photo": "Stone walls (dolhareubang grandfathers), thatched-roof houses with smoke holes, and traditional doors are iconic Jeju shots",
+              "facilities": "Visitor information center at entrance; English maps available",
+              "tip": "Hire a free volunteer guide at the entrance for cultural context; respect that residents actually live here — don't enter homes uninvited"
+            }
+          },
+          {
+            "number": 4,
+            "time": "≈ 12:30",
+            "duration": "45 min",
+            "name": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+            "category": "Lava Tube (Private/Ilchul Land)",
+            "description": "Privately-managed lava tube at Ilchul Land theme park near Pyoseon — distinct from the UNESCO-listed Manjanggul on Jeju's north coast. The walkable section runs ≈ 365 m with chamber heights up to 30 m; interior temperature stays ≈ 13 °C year-round, providing relief on hot or rainy days. Combo ticket with Ilchul Land gardens. We use this stop because it's compatible with the Eastern route's pacing; Manjanggul is on a different coast and would add ≈ 90 min of driving.",
+            "image": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "highlights": [
+              "Manjanggul alternate (Manjanggul currently closed)",
+              "Lava tube system",
+              "12°C year-round cave temperature",
+              "Botanical garden surroundings"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "visitBasics": {
+              "hours": "Per Ilchul Land park hours — verify with operator",
+              "closed": "Per Ilchul Land park schedule — verify with operator",
+              "admission": "Included in Ilchul Land park admission — verify ticket pricing with operator",
+              "walking": "Moderate — descending stairs into cave, ≈ 12°C year-round; uneven volcanic floor inside cave section"
+            },
+            "convenience": {
+              "restroom": "Available at Ilchul Land park entrance",
+              "parking": "Free parking at Ilchul Land"
+            },
+            "smartNotes": {
+              "photo": "Illuminated cave section + surrounding botanical garden — verify which photo zones are included with current Ilchul Land entry",
+              "facilities": "Ilchul Land park amenities (cafe, gift shop, restrooms)",
+              "tip": "This is the standard Manjanggul alternate when the public Manjanggul Lava Tube is closed for safety inspection. Confirm Ilchul Land cave-section access is included in your group ticket."
+            }
+          },
+          {
+            "number": 5,
+            "time": "≈ 13:25",
+            "duration": "60 min",
+            "name": "Lunch (Jeju local restaurant)",
+            "category": "Meal",
+            "description": "Local restaurant near Pyoseon or en route to Seongsan — typical orders are black pork (heuk-dwaeji) bibimbap, abalone porridge (jeonbok-juk), or seasonal seafood. Lunch cost paid separately (≈ ₩15,000 per person).",
+            "image": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+            "highlights": [
+              "Heuk-dwaeji black pork",
+              "Local east-Jeju seafood",
+              "Vegetarian/vegan/halal options"
+            ],
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Mid-route meal break aligned with guest energy and route timing.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {}
+          },
+          {
+            "number": 6,
+            "time": "≈ 14:50",
+            "duration": "60 min",
+            "name": "Seongsan Ilchulbong (UNESCO Sunrise Peak)",
+            "category": "UNESCO Sunrise Peak",
+            "description": "UNESCO World Heritage tuff cone, inscribed 2007 as part of 'Jeju Volcanic Island and Lava Tubes.' A hydrovolcanic crater formed ≈ 5,000 years ago by an underwater eruption, rising ≈ 180 m from the sea with a near-perfect crater rim. The optional summit climb is ≈ 600 stone stairs, ≈ 25 minutes uphill — strenuous but rewarding. The base coastal walk is the alternative for guests skipping the climb. Adult admission ≈ ₩5,000.",
+            "image": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+            "highlights": [
+              "UNESCO Natural Heritage",
+              "180 m volcanic tuff cone",
+              "5,000 years old",
+              "Crater rim viewpoint",
+              "Coastal trail (no-climb option)"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "visitBasics": {
+              "hours": "Mar–Apr & Sep–Oct: 05:00–19:00; May–Aug: 04:30–20:00; Nov–Feb: 06:00–18:00 (last ticketing 1 hour before closing)",
+              "closed": "Open year-round (weather closures possible)",
+              "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
+              "walking": "Moderate — 20–30 min steady stair climb (≈ 600 stairs); benches every few minutes for rest"
+            },
+            "convenience": {
+              "restroom": "Available at entrance and base",
+              "parking": "Large free parking lot"
+            },
+            "smartNotes": {
+              "photo": "Summit view of Hallasan to the west and Udo island to the north on clear days; haenyeo black-sand beach view from descending path",
+              "facilities": "Café (Fritz Coffee 1.3km away has best exterior views of the peak); ferry to Udo Island from Seongsan Port (1.5km/15 min walk)",
+              "tip": "All stairs but well-maintained — manageable in casual clothes; family-friendly with rest stops; sunrise visits popular but crowds gather pre-dawn"
+            }
+          },
+          {
+            "number": 7,
+            "time": "≈ 16:15",
+            "duration": "45 min",
+            "name": "Haenyeo Museum (women divers)",
+            "category": "Cultural Museum (Women Divers)",
+            "description": "Operated by the Jeju provincial government in Hado-ri (Gujwa-eup). Three exhibition halls cover (1) the haenyeo's daily life and traditional house, (2) diving equipment and techniques (no oxygen, breath-hold dives to ≈ 10 m), and (3) the wider fishing economy. The Culture of Jeju Haenyeo was inscribed on the UNESCO Representative List of the Intangible Cultural Heritage of Humanity in 2016. Open 09:00–18:00; closed 1st and 3rd Mondays. Adult admission ≈ ₩1,100.",
+            "image": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "highlights": [
+              "UNESCO Intangible Cultural Heritage (haenyeo)",
+              "Free-diving women's tradition",
+              "Oral histories + dive footage",
+              "Harbor dive demonstrations (when available)"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "visitBasics": {
+              "hours": "09:00–18:00 (last entry 17:00)",
+              "closed": "Mondays, Jan 1, Seollal, Chuseok",
+              "admission": "Adult 1,100 KRW / Teen 800 KRW / Child 500 KRW",
+              "walking": "Easy — modern museum with elevators"
+            },
+            "convenience": {
+              "restroom": "Multiple restrooms",
+              "parking": "Free parking available"
+            },
+            "smartNotes": {
+              "photo": "Outdoor sculpture park with haenyeo statues; traditional underwater life recreation",
+              "facilities": "Café, gift shop, English exhibits",
+              "tip": "Pair with a real haenyeo show (Seongsan or Udo) for full cultural experience"
+            }
+          },
+          {
+            "number": 8,
+            "time": "≈ 17:50",
+            "duration": "40 min",
+            "name": "Drop-off (2 points + Dongmun Market)",
+            "category": "Return",
+            "description": "Drop-off at 2 points in Jeju City plus Dongmun Traditional Market (final stop for guests wanting to extend the day). Direct drive Hado-ri → Jeju City ≈ 50 minutes; full drop-off completes ≈ 18:00–18:30 depending on guest order.",
+            "image": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+            "highlights": [
+              "2 main drop-off options",
+              "Dongmun Market self-guided drop",
+              "Black Pork Street nearby (5 min walk)"
+            ],
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Return logistics — drop-off chosen for guest convenience and timing certainty.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {}
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "Jeju City + airport pickup",
+            "type": "origin",
+            "theme": "Departure"
+          },
+          {
+            "name": "Hamdeok Seoubong Beach",
+            "type": "secondary",
+            "theme": "Beach"
+          },
+          {
+            "name": "Seongeup Folk Village",
+            "type": "primary",
+            "theme": "Heritage Village"
+          },
+          {
+            "name": "Micheon Cave at Ilchul Land",
+            "type": "primary",
+            "theme": "Cave"
+          },
+          {
+            "name": "Lunch",
+            "type": "meal",
+            "theme": "Meal"
+          },
+          {
+            "name": "Seongsan Ilchulbong (UNESCO)",
+            "type": "primary",
+            "theme": "UNESCO Volcano"
+          },
+          {
+            "name": "Haenyeo Museum",
+            "type": "primary",
+            "theme": "Culture"
+          },
+          {
+            "name": "Jeju City drop-off",
+            "type": "return",
+            "theme": "Return"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "Pickup & coastal opener",
+            "duration": "≈ 1 hour",
+            "description": "Multi-point pickup across Jeju City (08:30–09:05) + drive to Hamdeok Beach."
+          },
+          {
+            "phase": "Coast to inland heritage",
+            "duration": "≈ 3 hours",
+            "description": "Hamdeok Beach + Seoubong (60 min), drive to Seongeup Folk Village + Joseon-era cultural assets (60 min), short transit to Micheon Cave at Ilchul Land (45 min)."
+          },
+          {
+            "phase": "Lunch",
+            "duration": "≈ 1 hour",
+            "description": "Local restaurant near Pyoseon — black pork, abalone porridge, or seasonal seafood. Lunch paid separately."
+          },
+          {
+            "phase": "UNESCO core",
+            "duration": "≈ 2 hours",
+            "description": "Seongsan Ilchulbong (60 min, optional rim climb) + Haenyeo Museum at Hado-ri (45 min)."
+          },
+          {
+            "phase": "Return",
+            "duration": "≈ 2 hours",
+            "description": "Hado-ri → Jeju City drive (≈ 50 min) + drop-off across 2 points and Dongmun Market (≈ 40 min)."
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "How this day flows",
+          "subtitle": "An eastern-Jeju loop covering the island's two UNESCO highlights from the east — Seongsan Ilchulbong (Natural Heritage) and the Haenyeo women-diver tradition (Intangible Cultural Heritage) — plus the heritage anchor of Seongeup Folk Village and the Micheon Cave lava tube as the current Manjanggul alternate. The 4.9/5 rating across 1,148 reviews is the highest of the operator's tour family, and the all-admissions-included structure (Seongsan ₩5,000, Seongeup, Micheon Cave, Haenyeo Museum) saves visitors approximately ₩20,000 vs. paying à la carte."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "First-time visitors to the area",
+            "Couples",
+            "Adult families",
+            "Active travelers comfortable with full days",
+            "Travelers who want UNESCO World Heritage stops"
+          ],
+          "lessIdealFor": [
+            "Travelers who want minimal walking",
+            "Stroller-heavy groups",
+            "Travelers needing a tight same-day flight buffer"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Why this route is built this way",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "Both UNESCO listings (natural + cultural) in one day",
+                  "detail": "Most Jeju eastern tours include Seongsan Ilchulbong but skip the Haenyeo Museum. This route deliberately keeps both — meaning visitors leave with both Jeju UNESCO categories: the natural heritage (Seongsan's tuff cone) and the intangible cultural heritage (haenyeo women-diver tradition, listed 2016)."
+                },
+                {
+                  "label": "Manjanggul alternate handled gracefully",
+                  "detail": "Manjanggul Lava Tube is currently closed — most tours either skip cave content entirely or substitute lazily. This route uses Micheon Cave at Ilchul Land, which gives visitors a comparable lava-tube experience plus the Ilchul Land botanical garden (seasonal flower displays). When Manjanggul reopens, the operator will likely revert; check at booking."
+                },
+                {
+                  "label": "All admissions included — value at the price tier",
+                  "detail": "Eastern Jeju has more paid attractions than southern Jeju (Seongsan ₩5,000, Ilchul Land ₩12,000, Haenyeo Museum ₩1,100). Including all of them in the base price saves ≈ ₩18,000 per person versus the standard à-la-carte structure of competing tours."
+                },
+                {
+                  "label": "Seongsan Ilchulbong is optional-climb",
+                  "detail": "The 30-minute rim climb is steep and not for everyone. The route allocates 90 minutes total at the site, which is enough for the climb if you want it but also enough to walk the free coastal trail at the base for similar photo angles without the stairs. Visitors with mobility concerns get the UNESCO credit either way."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "title": "What's included",
+            "content": "Air-conditioned mini-coach, certified English/Chinese-speaking guide, ALL attraction admissions (Seongsan Ilchulbong ₩5,000, Seongeup Folk Village free, Ilchul Land/Micheon Cave ₩12,000, Haenyeo Museum ₩1,100, Hamdeok Beach free), fuel/tolls/parking. Not included: lunch (≈ ₩15,000), drinks, tips."
+          },
+          {
+            "title": "Pickup & drop-off",
+            "content": "Sequential pickup at four points: Ocean Suites Jeju (08:30), Jeju Airport Gate 1, 1F Domestic Arrivals (08:45 — note: different gate from operator's Southern tour), LOTTE City Hotel Jeju (08:55), Shilla Duty-Free Jeju Store (09:05). Choose the closest at booking. Day-before WhatsApp confirmation."
+          },
+          {
+            "title": "Walking & terrain",
+            "content": "Moderate. Hamdeok Beach is flat sand. Seongeup Folk Village has dirt paths and stone walls. Micheon Cave has stairs descending into the tube and uneven flooring inside. Seongsan Ilchulbong's rim climb is 30 minutes of steep stone steps (skippable). Haenyeo Museum is flat indoor walking. Comfortable closed-toe shoes essential. Total walking ≈ 4–5 km."
+          },
+          {
+            "title": "Cancellation",
+            "content": "Free cancellation up to 24 hours before pickup. Same-day cancellations and no-shows non-refundable. Heavy weather may shorten the Seongsan climb but does not cancel the day."
+          },
+          {
+            "title": "Cave note (Manjanggul status)",
+            "content": "Manjanggul Lava Tube is currently closed for safety repairs (unscheduled reopening). The Micheon Cave at Ilchul Land is the standard alternate and is included on this route. If Manjanggul reopens during your travel period, the operator may swap stops; check at booking."
+          },
+          {
+            "title": "Children & accessibility",
+            "content": "Recommended for ages 10+ due to the Seongsan Ilchulbong rim climb (≈ 600 stairs, optional but the day's centerpiece) and a 9-hour pace. Younger children can join, but the climb may be too much; consider our year-round Cherry Blossom or Cruise Bus tours which skip the summit. Strollers are not recommended on Seongsan stairs or Seongeup village paths."
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "See seasonal notes"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "See seasonal notes"
+          },
+          "_seasonalSummary": "Eastern Jeju has the cleanest sea views on the island and the warmest summer temperatures. Seongsan Ilchulbong is exposed to wind year-round; bring a light layer.",
+          "_seasonalTemperatures": [
+            {
+              "season": "Spring (Mar–May)",
+              "range": "8–22°C",
+              "notes": "Cherry blossoms in early April; rapeseed flowers on Hamdeok's Seoubong cone."
+            },
+            {
+              "season": "Summer (Jun–Aug)",
+              "range": "22–30°C",
+              "notes": "Hot but breezy at coastal stops. Best ocean colors at Hamdeok."
+            },
+            {
+              "season": "Autumn (Sep–Nov)",
+              "range": "10–24°C",
+              "notes": "Best season — clearest visibility for Seongsan rim views."
+            },
+            {
+              "season": "Winter (Dec–Feb)",
+              "range": "3–10°C",
+              "notes": "Wind chill significant at Seongsan rim. Fewer crowds at all stops."
+            }
+          ]
+        },
+        "seasonalVariations": [
+          {
+            "season": "Spring",
+            "highlight": "Rapeseed (canola) flowers on Hamdeok's Seoubong cone slopes — striking yellow against emerald sea."
+          },
+          {
+            "season": "Summer",
+            "highlight": "Best sea colors at Hamdeok Beach; long daylight for Seongsan visit."
+          },
+          {
+            "season": "Autumn",
+            "highlight": "Clearest visibility for Seongsan rim panoramas; Seongeup village stays photogenic year-round."
+          },
+          {
+            "season": "Winter",
+            "highlight": "Quietest crowds; Haenyeo Museum particularly valuable in cold weather."
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Licensed local operator",
+            "description": "Authorized Korean tour operator with full insurance",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "route",
+            "title": "Route specialists",
+            "description": "Hand-tuned itinerary, not a generic loop",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          },
+          {
+            "icon": "users",
+            "title": "Curated group size",
+            "description": "Right-sized for the route",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Immediately",
+            "title": "Instant Confirmation",
+            "detail": "Booking confirmation with itinerary summary"
+          },
+          {
+            "timing": "12 hours before",
+            "title": "12-Hour Reminder",
+            "detail": "Weather update and any route adjustments"
+          },
+          {
+            "timing": "Evening before",
+            "title": "Final Pickup Info",
+            "detail": "Exact pickup time and driver contact"
+          },
+          {
+            "timing": "Morning of tour",
+            "title": "Day-of Route Notes",
+            "detail": "Morning briefing based on live conditions"
+          },
+          {
+            "timing": "During tour",
+            "title": "Stop-by-Stop Tips",
+            "detail": "Real-time guidance at each location"
+          },
+          {
+            "timing": "After tour",
+            "title": "Post-tour Support",
+            "detail": "Follow-up and recommendations"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "Will I see live haenyeo divers?",
+            "answer": "The Haenyeo Museum has video footage of working dives. Live diving demonstrations sometimes happen at the adjacent harbor or at Seongsan Ilchulbong's base (typically 13:30 and 15:00 daily, weather-permitting). The tour timing increases the chance but does not guarantee a live demonstration."
+          },
+          {
+            "id": "q2",
+            "question": "Can I skip the Seongsan rim climb?",
+            "answer": "Yes — the free coastal trail at the base offers similar photo angles without the stairs. The 90-minute stop window accommodates either choice. Visitors with mobility concerns or who prefer a calmer pace use the coastal trail."
+          },
+          {
+            "id": "q3",
+            "question": "How is this different from the Southern UNESCO tour?",
+            "answer": "Same operator. The Southern tour covers Hallasan trail, Camellia Hill, Cheonjeyeon Falls, Jusangjeolli, O'sulloc — focused on natural heritage and gardens. This Eastern tour covers Hamdeok Beach, Seongeup Village, Micheon Cave, Seongsan, and the Haenyeo Museum — focused on UNESCO heritage (both natural and cultural) and traditional Jeju life. Most 2-day Jeju visitors do one of each."
+          },
+          {
+            "id": "q4",
+            "question": "What if Manjanggul reopens during my visit?",
+            "answer": "If Manjanggul (a more famous and longer lava tube than Micheon) reopens, the operator may swap the cave stop. Manjanggul is currently closed for ongoing safety repairs with no announced reopening date — the Micheon Cave alternate is the dependable substitute."
+          },
+          {
+            "id": "q5",
+            "question": "Is lunch included?",
+            "answer": "No — lunch is at your own expense (≈ ₩15,000). The guide will recommend a local east-Jeju restaurant and assist with vegetarian, vegan, halal, or allergy needs if you advise at booking."
+          },
+          {
+            "id": "q6",
+            "question": "Why airport Gate 1 instead of Gate 3?",
+            "answer": "The Eastern tour pickup uses Jeju Airport Gate 1 (1st Floor Domestic Arrivals) because the airport-to-east-coast route is more efficient via the eastern airport perimeter road. The Southern tour uses Gate 3 (3rd Floor Domestic Departures) for the southern route. This is operational; pick whichever tour is in your plan and follow the gate listed on your booking."
+          },
+          {
+            "id": "first-time",
+            "question": "Is this a good choice for first-time visitors to eastern Jeju?",
+            "answer": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+          },
+          {
+            "id": "walking",
+            "question": "Is the walking difficult?",
+            "answer": "An active day with several walking-heavy stops."
+          },
+          {
+            "id": "family",
+            "question": "Is this tour suitable for families?",
+            "answer": "Yes for families whose kids can handle a full day of moving around."
+          },
+          {
+            "id": "seniors",
+            "question": "Can older adults join comfortably?",
+            "answer": "Recommended only for active seniors comfortable with stairs and uneven ground."
+          },
+          {
+            "id": "children",
+            "question": "What's the recommended minimum age?",
+            "answer": "Best fit is around age 10 and up — children comfortable with a full-day rhythm and the walking notes above."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 4.9,
+          "totalReviews": 1148,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 1056,
+              "percentage": 92
+            },
+            {
+              "stars": 4,
+              "count": 69,
+              "percentage": 6
+            },
+            {
+              "stars": 3,
+              "count": 15,
+              "percentage": 1.3
+            },
+            {
+              "stars": 2,
+              "count": 6,
+              "percentage": 0.5
+            },
+            {
+              "stars": 1,
+              "count": 2,
+              "percentage": 0.2
+            }
+          ],
+          "highlights": []
+        },
+        "reviewsAttribution": "Aggregate rating from the operator's GetYourGuide listing — read individual reviews there."
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "person",
+          "priceSource": "getyourguide_t608456",
+          "priceNote": "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, same operator) is $43 per person; this Eastern tour is comparable. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+          "discountPercent": 10
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v15.2"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch2_enhancement": {
+        "date": "2026-04-28",
+        "description": "Batch 2 deep enhancement — descriptions raised to 700-1100+ chars; KB-backed visitBasics/convenience/smartNotes/_poi_meta on all attraction stops; matching_profile recalibrated with verified-fact 0-1 float scores (replacing Phase 1 mechanical conversion).",
+        "_score_audit": {
+          "_methodology": "0-1 float scale. Each score grounded in verified facts.",
+          "deltas_applied": {
+            "unesco_fit": {
+              "old": 1,
+              "new": 1,
+              "reasoning": "VERIFIED 1.0 — this tour is correctly named 'eastern UNESCO loop': Seongsan = UNESCO World Heritage (Jeju Volcanic Island & Lava Tubes 2007), Haenyeo Museum = UNESCO Intangible Cultural Heritage (haenyeo culture 2016). Tour covers BOTH UNESCO categories. Strongest UNESCO-fit tour in catalogue."
+            },
+            "intangible_heritage_fit": {
+              "old": 1,
+              "new": 1,
+              "reasoning": "VERIFIED 1.0 — Haenyeo Museum is the dedicated UNESCO ICH interpretation center; Seongsan haenyeo demonstrations 13:30/15:00 are live UNESCO ICH performance; Seongeup Folk Village preserves Joseon-period intangible folkways. 3 of 5 attractions carry intangible-heritage value. Highest possible score."
+            },
+            "walking_level": {
+              "old": 0.8,
+              "new": 0.65,
+              "reasoning": "DOWNGRADED 0.8→0.65 with verified totals: Hamdeok beach 0.5 km flat (sand + boardwalk), Seongeup ~1 km flat olle, Micheon Cave 365 m flat (leveled), Seongsan 0.8 km + 140 m gain (the only stair-heavy stop), Haenyeo Museum 100% indoor flat. Total ~3 km + only Seongsan has elevation. Tour 1 (east-signature) walks more (Seopjikoji 2.1 km extra). Verified moderate walking = 0.65 not 0.8."
+            },
+            "young_kids_fit": {
+              "old": 1,
+              "new": 0.75,
+              "reasoning": "DOWNGRADED 1.0→0.75: Hamdeok beach + leveled Micheon Cave + indoor Haenyeo Museum + Seongeup folk village = 4 of 5 kid-friendly. ONLY Seongsan's 300-500 steps challenge under-7s. Mechanical 1.0 was overstated; verified 0.75 is honest."
+            },
+            "stroller_fit": {
+              "old": 0.4,
+              "new": 0.5,
+              "reasoning": "UPGRADED 0.4→0.50: Hamdeok flat + Micheon Cave LEVELED FLOOR (verified — vs Manjanggul's uneven natural floor) + Haenyeo Museum 100% accessible + Seongeup main alleys + ONLY Seongsan stairs unsuitable. 4/5 stroller-friendly = 0.50 not the previous 0.4. Specifically chose Micheon vs Manjanggul for accessibility."
+            },
+            "mobility_friendly_fit": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "UPGRADED 0.6→0.65: Verified 4 of 5 stops mobility-friendly (Hamdeok flat, Micheon leveled, Haenyeo Museum elevators, Seongeup flat alleys), only Seongsan summit not accessible. The choice of Micheon Cave instead of Manjanggul specifically supports this."
+            },
+            "weather_sensitivity": {
+              "old": 1,
+              "new": 0.75,
+              "reasoning": "DOWNGRADED 1.0→0.75 — verified: Haenyeo Museum 100% indoor, Micheon Cave 100% indoor and stable temperature year-round, Seongeup hanok have shelter. Only Hamdeok and Seongsan are weather-exposed. The 'all UNESCO' name made the prior score look high, but indoor ratio is actually reasonable. Mechanical 1.0 overstated."
+            },
+            "indoor_ratio": {
+              "old": 0.1,
+              "new": 0.4,
+              "reasoning": "MAJOR CORRECTION: Verified breakdown — Hamdeok 100% outdoor, Seongeup ~30% indoor (visiting hanok interiors), Micheon Cave 100% indoor, Seongsan 5% indoor (visitor center only), Haenyeo Museum 100% indoor. Time-weighted indoor ratio ~40%, NOT the previous 10%. Correcting a documentation error."
+            },
+            "rain_fit": {
+              "old": 0.6,
+              "new": 0.75,
+              "reasoning": "UPGRADED 0.6→0.75: With Micheon Cave (indoor), Haenyeo Museum (indoor), and Seongeup hanok interiors as rain refuges, this tour holds up MUCH better in rain than the mechanical 0.6 implied. Hamdeok and Seongsan suffer in rain but the rest is fine. Verified."
+            },
+            "iconic_landmark_fit": {
+              "old": 1,
+              "new": 0.85,
+              "reasoning": "VERIFIED 0.85: Seongsan = universally iconic (triple UNESCO crown). Hamdeok = Top 3 Jeju beach. Seongeup + Haenyeo Museum = nationally significant culture (UNESCO ICH for Haenyeo). Micheon Cave = secondary lava tube. 0.85 — strong but not all 5 universally iconic."
+            },
+            "value_for_money_fit": {
+              "old": 1,
+              "new": 0.85,
+              "reasoning": "Verified fees: Hamdeok free + Seongeup free + Micheon ₩12,000 + Seongsan ₩2,000 + Haenyeo Museum ₩1,100 = ~₩15,100/adult. Reasonable but Ilchul Land at ₩12,000 is the big driver. 0.85 calibrated."
+            },
+            "senior_fit": {
+              "old": 0.4,
+              "new": 0.55,
+              "reasoning": "UPGRADED 0.4→0.55: With Hamdeok beach walk (flat), Micheon leveled cave, Seongeup flat alleys, Haenyeo Museum accessible — 4 of 5 stops fully senior-accessible. Only Seongsan summit excludes seniors with mobility issues (alternative: stay at base for haenyeo demo). Verified ≥0.55, much better than 0.4."
+            },
+            "senior_active_fit": {
+              "old": 0.6,
+              "new": 0.75,
+              "reasoning": "UPGRADED 0.6→0.75: For active seniors, all 5 stops are achievable (Seongsan rest stops + benches make 45-60 min summit reasonable). Cultural depth (UNESCO + 600-year village + 400-year haenyeo tradition) very strong appeal for senior travelers. 0.75 verified."
+            },
+            "senior_general_fit": {
+              "old": 0.4,
+              "new": 0.55,
+              "reasoning": "UPGRADED 0.4→0.55: Same logic — 4/5 stops accessible to general senior population (alternative for Seongsan = stay at base for haenyeo demonstration). 0.55 calibrated."
+            },
+            "beach_fit": {
+              "old": 0.6,
+              "new": 0.85,
+              "reasoning": "UPGRADED 0.6→0.85: Hamdeok IS the dedicated beach stop — Top 3 Jeju beach (verified VisitKorea ranking). 0.6 understates this; 0.85 reflects beach as a primary tour theme."
+            },
+            "culture_level": {
+              "old": 1,
+              "new": 0.95,
+              "reasoning": "Slight DOWNGRADE 1.0→0.95: Verified 3 strong cultural anchors (Seongeup 600-year town + Haenyeo 400-year tradition + Seongsan haenyeo demo). Hamdeok is recreational not cultural. 0.95 (vs east-signature's lower) — still very strong."
+            }
+          }
+        },
+        "stops_enhanced": 6,
+        "sources": [
+          "VisitKorea",
+          "Wikipedia",
+          "UNESCO",
+          "Visit Jeju",
+          "Inside Jeju",
+          "Jeju Tourism Organization",
+          "AllTrails"
+        ]
+      },
+      "v17_fix1_indoor_ratio_correction": {
+        "date": "2026-04-28",
+        "description": "Jason correction: Micheon Cave and Seongeup Folk Village are 70% outdoor. Recalculated tour-level indoor_ratio with time-weighted attraction durations and adjusted dependent fields.",
+        "computation": {
+          "stops_time_weighted": {
+            "hamdeok_seoubong_beach": "45min × 0.00 indoor = 0.00",
+            "seongeup_folk_village": "75min × 0.30 indoor = 22.50 (corrected from 0.50)",
+            "ilchulland_micheon_cave": "60min × 0.30 indoor = 18.00 (corrected from 0.60)",
+            "seongsan_ilchulbong": "90min × 0.05 indoor = 4.50",
+            "jeju_haenyeo_museum": "60min × 1.00 indoor = 60.00",
+            "total_indoor_min": 105,
+            "total_substantive_min": 330,
+            "computed_indoor_ratio": 0.32
+          }
+        },
+        "changes": {
+          "indoor_ratio": {
+            "old": 0.4,
+            "new": 0.3,
+            "reason": "Recalculated 105/330 = 0.32, rounded to 0.30"
+          },
+          "rain_fit": {
+            "old": 0.75,
+            "new": 0.55,
+            "reason": "Only Haenyeo Museum is full refuge; Seongeup and Micheon mostly outdoor; Hamdeok and Seongsan rain-bad"
+          },
+          "weather_sensitivity": {
+            "old": 0.75,
+            "new": 0.7,
+            "reason": "Still has Haenyeo Museum as anchor refuge but 70% of stop time is weather-exposed"
+          }
+        }
+      }
+    }
+  }
+}

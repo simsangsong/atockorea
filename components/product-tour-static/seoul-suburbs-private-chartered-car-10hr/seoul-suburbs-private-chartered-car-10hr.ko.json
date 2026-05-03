@@ -1,0 +1,1878 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "seoul-suburbs-private-chartered-car-10hr",
+  "locale": "ko",
+  "product_id": "seoul-suburbs-private-chartered-car-10hr",
+  "seo": {
+    "pageTitle": "Seoul City or Suburbs Private 10HR Charter | AtoC Korea",
+    "metaDescription": "Private 10-hour Seoul-area charter with EN-speaking driver-guide: Gapyeong (Nami, Morning Calm), DMZ + Paju, or Everland + Folk Village. Free Seoul pickup.",
+    "ogImage": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1920&q=80",
+    "primaryKeywords": [
+      "서울 프라이빗 전세 차량 투어",
+      "서울 교외 당일 투어",
+      "서울 10시간 투어",
+      "서울 맞춤 투어"
+    ],
+    "title": "서울 교외 프라이빗 전세 차량 투어 · 10시간 | AtoC Korea",
+    "description": "서울 호텔 픽업, 10시간 프라이빗 전세 차량 투어. 가평 자연·문화 루프 / DMZ+파주 프리미엄 아울렛 / 에버랜드+민속촌 / 완전 커스텀 4가지 코스."
+  },
+  "catalog_card": {
+    "slug": "seoul-suburbs-private-chartered-car-10hr",
+    "title": "서울 교외 프라이빗 전세 차량 투어 · 10시간",
+    "subtitle": "서울 호텔 출발, 10시간 프라이빗 차량으로 나만의 서울 근교 하루를 설계합니다.",
+    "region": "Seoul & Suburbs",
+    "duration": "10 hours",
+    "stopsCount": 4,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "프라이빗 전세 투어",
+      "완전 맞춤형",
+      "서울 호텔 무료 픽업"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=600&q=80",
+    "priceLabel": "가격은 예약 시 확인",
+    "shortCardDescription": "유자격 드라이버 가이드와 에어컨 프라이빗 차량으로 서울 근교 10시간 맞춤 투어. 가평 자연·문화 루프(남이섬·아침고요 등), DMZ+파주 코스, 에버랜드+민속촌, 또는 완전 커스텀 선택 가능.",
+    "tags": [
+      "private_tour",
+      "fully_customizable",
+      "free_seoul_hotel_pickup"
+    ]
+  },
+  "headlineLine1": "서울 시내 또는 교외 프라이빗",
+  "headlineLine2": "전세 차량 투어 10시간",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "vehicle"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1920&q=80",
+    "imagePosition": "center 40%",
+    "tagline": "내 속도로, 내가 원하는 서울 근교 하루 — 유자격 드라이버 가이드와 프라이빗 차량으로",
+    "pills": [
+      "Private Vehicle",
+      "Licensed Driver-Guide",
+      "Custom Itinerary"
+    ],
+    "meta": {
+      "duration": "10 hours",
+      "region": "Seoul & Suburbs",
+      "stops": "Custom",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "투어 개요"
+    },
+    {
+      "id": "itinerary",
+      "label": "상세 일정"
+    },
+    {
+      "id": "details",
+      "label": "유의사항"
+    },
+    {
+      "id": "faq",
+      "label": "자주 묻는 질문"
+    },
+    {
+      "id": "reviews",
+      "label": "여행자 후기"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "포토 스팟",
+      "value": "양호",
+      "level": 4
+    },
+    {
+      "icon": "mountain",
+      "label": "경치 밀도",
+      "value": "양호",
+      "level": 4
+    },
+    {
+      "icon": "footprints",
+      "label": "도보 난이도",
+      "value": "보통",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "우천 적합도",
+      "value": "우수",
+      "level": 5
+    },
+    {
+      "icon": "users",
+      "label": "가족 적합도",
+      "value": "우수",
+      "level": 5
+    },
+    {
+      "icon": "gauge",
+      "label": "투어 페이스",
+      "value": "유연",
+      "level": 5
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1200&q=80",
+      "alt": "Seoul city skyline with Lotte World Tower and Han River visible at dusk, viewed from a south-Seoul vantage",
+      "caption": "Seoul skyline — flexible departure point",
+      "location": "Seoul (departure city)",
+      "atmosphere": "Modern Seoul as the flexible starting point; private vehicle hotel pickup"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+      "alt": "Nami Island's tree-lined metasequoia path with travelers walking under tall trees on a wide gravel walkway",
+      "caption": "Nami Island metasequoia path — Route 1 highlight",
+      "location": "Nami Island, Gapyeong (Route 1 option)",
+      "atmosphere": "Tree-lined paths and short ferry crossing; Winter Sonata K-drama filming location"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=1200&q=80",
+      "alt": "Garden of Morning Calm's themed flower beds with seasonal blooms and curving stone walking paths",
+      "caption": "Garden of Morning Calm — Route 1 photo stop",
+      "location": "Garden of Morning Calm, Gapyeong (Route 1 option)",
+      "atmosphere": "20 themed gardens across 330,000 m²; founded 1996 by Han Sang-kyung"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1583917123405-3aa64e6a96b8?w=1200&q=80",
+      "alt": "Petite France village with brightly colored Mediterranean-style houses on a hillside in Gapyeong",
+      "caption": "Petite France — Le Petit Prince village (Route 1)",
+      "location": "Petite France, Gapyeong (Route 1 option)",
+      "atmosphere": "Colorful hillside village; My Love from the Star K-drama filming location"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+      "alt": "DMZ Imjingak Peace Park with the Bridge of Freedom visible behind the monument area near Paju",
+      "caption": "Imjingak Peace Park — Route 2 anchor",
+      "location": "Imjingak Peace Park, Paju (Route 2 option)",
+      "atmosphere": "Korea's most historically charged border park; Bridge of Freedom (1953); 7 km from MDL"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "name": "코스 1: 가평 자연·문화 루프",
+      "category": "Nami Island + Morning Calm + Petite France + Gangchon Railbike",
+      "description": "서울 북동쪽 60~90분 거리 가평의 자연·문화 명소를 연결하는 가장 경치 좋은 코스입니다. 남이섬(460,000㎡ 강 섬, 페리 도착), 아침고요수목원(한국 대표 사립 수목원, 5,000여 종 식물), 쁘띠프랑스(프랑스 문화 테마 마을) 또는 이탈리안 빌리지를 포함합니다. 나미섬은 드라마 '겨울연가' 촬영지.",
+      "highlights": [
+        "Nami Island: 460,000 m² river island, 5-min ferry, Winter Sonata Metasequoia avenue + Ginkgo lane; full-day pricing 18,000 KRW adult includes ferry",
+        "Garden of Morning Calm: 330,000 m² arboretum, 5,000 plant species, winter lighting festival Dec 5 - Mar 15 with 30,000+ LEDs; admission 11,000 KRW adult",
+        "Petite France: opened 2008, 16 French-style buildings, Saint-Exupéry / Little Prince theme, multi-K-drama filming site; admission 12,000 KRW adult, 19,500 combined with adjacent Italian Village",
+        "Gangchon / Gapyeong Rail Bike: 8 km pedal-rail along the old Gyeongchun Line, 30-40 min ride; ~30,000-35,000 KRW per 4-person bike"
+      ],
+      "timeUsed": [
+        "Seoul hotel pickup ~08:00-09:00, ~70-90 min transfer to Gapyeong",
+        "Morning: Nami Island (2-3 hours) OR Gangchon Rail Bike (90 min) — typically choose one",
+        "Lunch in Cheongpyeong town or Petite France entrance area (dak-galbi spicy chicken is the local specialty)",
+        "Afternoon: Petite France (1.5-2 hours) + Garden of Morning Calm (1.5-2 hours, plus light festival in winter if staying past sunset)",
+        "Return to Seoul ~18:00-20:00 (later in winter for the lighting festival)"
+      ],
+      "whyOnRoute": "The strongest route for first-time Seoul visitors who want a nature-and-photo day with low walking demand and high Instagram return. All four stops are within 15-20 minutes of each other, the per-stop entrance fees are modest, and the seasonal signatures (cherry blossoms in April, foliage in October, snow + lighting festival in December-February) make repeat visits worthwhile.",
+      "visitBasics": {
+        "hours": "Nami Island: 07:30-21:00 daily; Garden of Morning Calm: 08:30-19:00 standard, 11:00-21:00/23:00 during winter lighting festival; Petite France: 09:00-18:00 (last entry 17:00); Rail Bike: 09:00-17:30 with timed slots",
+        "closed": "All open year-round; Petite France closes some Mondays in off-season",
+        "admission": "Nami 18,000 / Morning Calm 11,000 / Petite France 12,000 / Rail Bike ~30,000-35,000 per bike (1-4 people). Driver-guide assists with ticket purchase.",
+        "walking": "Moderate — Nami Island walking loop is ~3 km flat; Morning Calm 1.5-2 hours of garden paths; Petite France gentle slopes between buildings"
+      },
+      "convenience": {
+        "restroom": "Available at all stops",
+        "parking": "Driver-guide handles all parking"
+      },
+      "smartNotes": {
+        "photo": "Nami's Metasequoia avenue and Ginkgo lane are the iconic shots; Petite France's pastel houses against the green mountains; Morning Calm during the December-March lighting festival post-sunset is the absolute signature.",
+        "facilities": "Nami Island has multiple cafés and a hanok-style restaurant on site; Petite France has snack stalls only (eat lunch elsewhere); Morning Calm's Food Garden serves Korean comfort food.",
+        "tip": "If visiting in December-March, time the route to arrive at Morning Calm by 16:00 so you see the daytime garden first, then stay through illumination (~17:00 onward). Pre-book Rail Bike slots — they sell out on weekends."
+      },
+      "_poi_meta": {
+        "poi_key": "route_variant_gapyeong_loop",
+        "verified": true,
+        "match": "route_variant_no_single_poi",
+        "constituent_pois": [
+          "garden_of_morning_calm",
+          "petite_france"
+        ],
+        "deferred_pois": [
+          "nami_island"
+        ],
+        "note": "Route option for private charter — represents a multi-POI Gapyeong-cluster bundle (Nami, Morning Calm, Petite France, Gangchon Railbike). Garden of Morning Calm and Petite France verified in KB v1.10. Nami Island will receive its dedicated KB entry in Batch 8 alongside the standalone Nami tour. Gangchon Rail Bike is a single-use experience without a standalone KB entry."
+      }
+    },
+    {
+      "number": 2,
+      "name": "코스 2: DMZ 역사 & 파주 쇼핑",
+      "category": "DMZ Tour + Paju Premium Outlets",
+      "description": "가장 역사적 내용이 무거운 코스. 한국의 비무장지대와 파주 프리미엄 아울렛(한국 최대 프리미엄 아울렛)을 결합합니다. DMZ 구간은 통상 임진각 평화공원, 제3땅굴, 도라전망대를 포함합니다. 여권 지참 필수.",
+      "highlights": [
+        "3rd Infiltration Tunnel: 1,635 m North-Korean-built tunnel discovered Oct 17, 1978; visitors descend ~73 m via shuttle monorail or steep walking ramp",
+        "Dora Observatory: high-zoom views into Kaesong (North Korea); on clear days the Kaesong Industrial Complex is visible",
+        "Imjingak Peace Park: Freedom Bridge (1953 prisoner-of-war exchange site) + Mangbaedan altar + 1953 rusting locomotive",
+        "Paju Premium Outlets: 230+ international brands at 25-50% off; Lotte Premium Outlets adjacent for another ~150 brands"
+      ],
+      "timeUsed": [
+        "Seoul hotel pickup ~08:00, ~70 min transfer to Imjingak",
+        "Morning: Imjingak + 3rd Tunnel + Dora Observatory + Dorasan Station (~3-4 hours)",
+        "Lunch break (Paju local pork-belly BBQ or Munsan-area Korean restaurant)",
+        "Afternoon: Paju Premium Outlets + optional Lotte Premium Outlets across the road (~3-4 hours)",
+        "Return to Seoul by ~18:00-19:00"
+      ],
+      "whyOnRoute": "The strongest route for travelers who want a substantive Korean War / inter-Korean-relations history experience without the rigid scheduling and bus-tour pacing of the standard JSA tour. The private charter format means the DMZ portion adapts to military operational closures (which are common) and the afternoon shifts to shopping or art depending on group interest. The Paju Outlets afternoon also balances the heavy history morning with practical retail — strong combination for travelers on a winter trip when outdoor walking time is limited.",
+      "visitBasics": {
+        "hours": "DMZ stops 09:00-17:00 (last entry 15:30 most stops); Paju Premium Outlets 10:30-21:00 daily",
+        "closed": "DMZ tour areas closed Mondays + when military operations require; Paju Outlets open year-round",
+        "admission": "DMZ Combined Ticket ~12,000 KRW (3rd Tunnel + Dora Observatory + Dorasan Station); Paju Outlets free entry. Passport required at DMZ entry — driver-guide assists.",
+        "walking": "Moderate — 3rd Tunnel descent is the most physically demanding section (steep 73 m ramp; monorail option ~9,000 KRW return); Paju Outlets are flat outdoor walking shopping center"
+      },
+      "convenience": {
+        "restroom": "Available at all DMZ stops and at Paju Outlets food courts",
+        "parking": "Driver-guide handles all parking; DMZ has dedicated tour-bus lots"
+      },
+      "smartNotes": {
+        "photo": "Dora Observatory's high-zoom telescopes for the North Korea views; Freedom Bridge with its colorful prayer ribbons; the 1953 rusting locomotive at Imjingak — none photograph the inside of the 3rd Tunnel (cameras prohibited).",
+        "facilities": "Lunch is best in Paju city (between DMZ and Outlets) — Paju is famous for grilled pork belly (samgyeopsal). DMZ-area food is limited and tourist-priced.",
+        "tip": "Bring passports — required for DMZ entry. The 3rd Tunnel ramp is the bottleneck for low-mobility travelers — the monorail option (9,000 KRW return) covers the same descent without the steep walk. DMZ tours run on operational schedules so the driver-guide will confirm available stops the morning of the tour."
+      },
+      "_poi_meta": {
+        "poi_key": "route_variant_dmz_paju",
+        "verified": true,
+        "match": "route_variant_no_single_poi",
+        "constituent_pois": [],
+        "deferred_pois": [
+          "dmz_imjingak",
+          "dmz_3rd_tunnel",
+          "dmz_dora_observatory",
+          "paju_premium_outlets"
+        ],
+        "note": "Route option for private charter — DMZ-related POIs (Imjingak, 3rd Tunnel, Dora Observatory, Dorasan) will receive their dedicated KB entries in Batch 8 alongside the standalone DMZ tour (seoul-dmz-private-3rd-tunnel-suspension-bridge). Paju Premium Outlets does not get a standalone KB entry (single-use shopping stop). Facts above are verified via VisitKorea and DMZ tour operator pages."
+      }
+    },
+    {
+      "number": 3,
+      "name": "코스 3: 에버랜드 + 한국민속촌",
+      "category": "Theme Park + Heritage Village",
+      "description": "가장 가족 친화적인 코스. 한국 최대 테마파크 에버랜드(용인)와 한국민속촌(한국 최초 야외 민속박물관)을 결합합니다. 에버랜드는 일별 입장 시간을 효율적으로 활용하기 위해 오전 방문을 권장합니다.",
+      "highlights": [
+        "Everland — T Express: Korea's first wooden roller coaster, 1.64 km / 46 m drop at 77° / 104 km/h, opened 2008",
+        "Everland — Zootopia + Panda World: ~2,000 animals incl. the Aibao-Fubao-Ruibao-Huibao panda family; Lost Valley amphibious-vehicle ecological safari",
+        "Korean Folk Village — 260+ Joseon-era houses on 991,735 m² (245 acres); first open-air museum in Korea",
+        "Korean Folk Village — daily performances: UNESCO Jultagi tightrope, Nong-ak farmers' percussion, horseback martial arts, traditional Joseon wedding"
+      ],
+      "timeUsed": [
+        "Seoul hotel pickup ~08:30, ~50-70 min transfer to Yongin",
+        "Option A — Everland-only: full day at the park (9-10 hours typical for a complete visit)",
+        "Option B — Folk Village-only: 4-5 hours including 2-3 performances, then return to Seoul",
+        "Option C — Hybrid (rare): Folk Village morning (3-4 hours) + Everland afternoon (4-5 hours) — only feasible if skipping Caribbean Bay water park and most of Zootopia",
+        "Return to Seoul by ~18:30-19:30"
+      ],
+      "whyOnRoute": "The strongest route for families with kids 6-15, theme-park enthusiasts, and travelers wanting a single-location-deep day rather than multi-stop sightseeing. Everland alone is normally an 8-10 hour day — the private charter advantage is hotel-to-gate transit (~50-70 min each way) avoiding the bus-transfer chain. Folk Village alone fits comfortably in a half-day with strong cultural depth; combining both is realistic only for groups happy to sample rather than fully explore.",
+      "visitBasics": {
+        "hours": "Everland: 10:00-22:00 weekdays, 09:30-22:00 weekends/holidays (varies seasonally); Korean Folk Village: Mon-Thu 10:00-18:00, Fri-Sun 10:00-22:00",
+        "closed": "Both open year-round",
+        "admission": "Everland adult 1-day 54,000-64,000 KRW (20% foreigner discount at gate; Klook discounts often available); Korean Folk Village adult 37,000 KRW (Visit Korea official). Driver-guide assists with ticket purchase.",
+        "walking": "High at Everland (5-10 km easily — large hilly park) — Korean Folk Village is high too (5-7 km on flat dirt/gravel paths)"
+      },
+      "convenience": {
+        "restroom": "Multiple at both — well signposted",
+        "parking": "Driver-guide handles all parking; both have dedicated paid lots (Folk Village 2,000 KRW car / 3,000 SUV)"
+      },
+      "smartNotes": {
+        "photo": "Everland — T Express drop and the seasonal Tulip Festival (Mar-Apr) Romantic Tower Tree (26 m flower sculpture); Folk Village — yangban two-story house with autumn ginkgo (last two weeks of October); Jultagi tightrope show with audience; Joseon wedding reenactment.",
+        "facilities": "Everland: Smart Queue (free, in-app reservation system) is essential before 14:00 for T Express, Lost Valley, Safari World, Panda World — register the moment you enter the park. Folk Village: traditional street market food is the on-site option (Imsil cheese pizza, railroad hot dogs).",
+        "tip": "Pick ONE primary destination — Everland or Folk Village — at booking; trying to do both leaves both feeling rushed. Pair Folk Village with Suwon Hwaseong Fortress (UNESCO, 15-20 min) for a coherent Joseon-themed half-day if you take Option B. For Everland, mid-week visits during peak season have materially shorter queues."
+      },
+      "_poi_meta": {
+        "poi_key": "route_variant_everland_folk",
+        "verified": true,
+        "match": "route_variant_no_single_poi",
+        "constituent_pois": [
+          "everland",
+          "korean_folk_village_yongin"
+        ],
+        "note": "Route option for private charter — represents a Yongin-area bundle (Everland + Korean Folk Village). Both POIs are verified in KB v1.10."
+      }
+    },
+    {
+      "number": 4,
+      "name": "코스 4: 완전 커스텀 일정",
+      "category": "Send Us Your Own Plan",
+      "description": "세 가지 추천 코스 외에도 10시간 창구는 완전 커스텀입니다. 가평·DMZ·용인 경유지를 조합하거나 완전히 새로운 루트를 요청할 수 있습니다. 일반 추가 요청: 알파카 월드, 레고랜드(강원도, 추가 요금), 헤이리 예술마을, 광명동굴 등.",
+      "highlights": [
+        "Mix Gapyeong + Suwon Hwaseong: Nami Island morning + Hwaseong Fortress afternoon — UNESCO heritage with strong photo return",
+        "Pocheon day: Sanjeong Lake + Herb Island + Pocheon Art Valley — quieter than Gapyeong, granite-quarry photogenics",
+        "Incheon-Seoul half-day: Wolmido Park + Chinatown + Songdo Central Park — coastal alternative with airport-friendly close",
+        "K-pop entertainment day: HYBE / SM / JYP / YG building exteriors + Hongdae street performances + dinner in Itaewon"
+      ],
+      "timeUsed": [
+        "Send your plan with the booking confirmation 24-48 hours ahead so the driver-guide can pre-clear traffic and operating-hour conflicts",
+        "Driver-guide sequences to avoid Seoul rush hours (07:00-09:00 inbound, 17:00-20:00 outbound) and individual stop closure days",
+        "Return to your hotel within the 10-hour window (overage by prior agreement)"
+      ],
+      "whyOnRoute": "The most flexible option of the four. Best for repeat Seoul visitors, travelers with niche interests (K-pop, K-drama, photography, food, family-with-kids, history-deep), and groups of 4-9 where the per-vehicle pricing vs. group-tour pricing tilts strongly toward the private charter. Same-day-flight scenarios are particularly well served — the 10 hours can include hotel checkout, sightseeing, and Incheon Airport drop-off in one continuous booking.",
+      "visitBasics": {
+        "hours": "Depends on chosen stops",
+        "closed": "Depends on chosen stops",
+        "admission": "All admission fees pay directly; driver-guide assists at each gate",
+        "walking": "Adjustable to your group's mobility"
+      },
+      "convenience": {
+        "restroom": "Available at all major stops",
+        "parking": "Driver-guide handles all parking"
+      },
+      "smartNotes": {
+        "photo": "Send 3-5 reference photos to the driver-guide in advance — it dramatically improves the quality of your final shot list",
+        "facilities": "Lunch is your call — communicate dietary needs (halal, vegetarian, no-seafood, kids' menu) at booking so the guide can suggest appropriate restaurants",
+        "tip": "For same-day-flight passengers: state your flight time at booking; the route will be sequenced to drop you at Incheon Airport ~3 hours before departure. Heyri Art Valley (Paju) and Suwon Hwaseong are the strongest single 'extra' stops most visitors don't plan for and most enjoy."
+      },
+      "_poi_meta": {
+        "poi_key": "route_variant_custom_seoul",
+        "verified": true,
+        "match": "route_variant_no_single_poi",
+        "candidate_pois": [
+          "everland",
+          "korean_folk_village_yongin",
+          "garden_of_morning_calm",
+          "petite_france"
+        ],
+        "deferred_pois": [
+          "nami_island",
+          "suwon_hwaseong",
+          "pocheon_sanjeong_lake"
+        ],
+        "note": "Fully customizable route option — candidate POIs include both Batch 7 KB additions and POIs reserved for batches 8-9. Final stop list determined by passenger's request at booking."
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Hotel Pickup",
+      "type": "origin",
+      "theme": "Start"
+    },
+    {
+      "name": "Custom Route",
+      "type": "primary",
+      "theme": "Choose"
+    },
+    {
+      "name": "Lunch Break",
+      "type": "meal",
+      "theme": "Reset"
+    },
+    {
+      "name": "Afternoon Stops",
+      "type": "primary",
+      "theme": "Continue"
+    },
+    {
+      "name": "Hotel Dropoff",
+      "type": "return",
+      "theme": "End"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "서울 호텔 픽업",
+      "duration": "Stops 1",
+      "description": "출발: 서울 호텔 픽업."
+    },
+    {
+      "phase": "코스 선택",
+      "duration": "Stops 2–4",
+      "description": "하루 일정: 선택한 코스대로 이동."
+    },
+    {
+      "phase": "호텔 귀환",
+      "duration": "Stops 5",
+      "description": "마무리: 호텔 귀환."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "How this private day moves",
+    "subtitle": "Pickup at your Seoul downtown hotel, then a fully flexible 10-hour day shaped by you and your driver-guide. Choose one of three recommended routes—Gapyeong nature, DMZ + Paju, or Everland + Folk Village—or send your own itinerary."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "Families with children, including very young kids",
+      "Multi-generational groups including seniors",
+      "Couples on honeymoon or anniversary trips",
+      "Repeat visitors who want a tailored day",
+      "Travelers prioritizing comfort, privacy, and flexibility"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Why a private charter wins on flexibility",
+        "icon": "car",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "Your pace, not a group's",
+            "detail": "Stay longer at the spots you love, skip the ones you don't, and adjust on the fly without waiting for other guests to regroup."
+          },
+          {
+            "label": "Door-to-door comfort",
+            "detail": "Free hotel pickup and drop-off in Seoul downtown means no early-morning subway transfers and no late-evening shuttle stress."
+          },
+          {
+            "label": "Driver-guide insight",
+            "detail": "A licensed Korean driver-guide adds local context, recommends meal stops, and adapts the route to weather or traffic in real time."
+          }
+        ]
+      },
+      {
+        "title": "How to choose between the routes",
+        "icon": "map",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "Route 1 for first-time scenic value",
+            "detail": "If you want one strong day of Korean nature and K-drama spots, the Gapyeong loop covers the most beloved tourist landmarks for couples and families."
+          },
+          {
+            "label": "Route 2 for history-and-shopping balance",
+            "detail": "If you want meaning plus downtime, the DMZ-and-Paju pairing works especially well for adult travelers and history-curious guests."
+          },
+          {
+            "label": "Route 3 for theme-park families",
+            "detail": "If your group includes kids who want rides, the Everland and Korean Folk Village combination minimizes drive time inside Yongin."
+          }
+        ]
+      },
+      {
+        "title": "What changes on the day",
+        "icon": "clock-3",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-600",
+        "items": [
+          {
+            "label": "Traffic into and out of Seoul",
+            "detail": "Friday and Sunday afternoons can add 30 to 60 minutes to return time; the driver-guide will adjust your last stop accordingly."
+          },
+          {
+            "label": "Province-crossing destinations cost extra",
+            "detail": "Alpaca World and Legoland (both in Gangwon-do) carry an additional 60,000 KRW province-crossing fee paid in cash to the driver."
+          },
+          {
+            "label": "Overtime is possible",
+            "detail": "If you need more than 10 hours, an extra hour is 30,000 KRW paid in cash to the driver, subject to driver availability."
+          }
+        ]
+      }
+    ],
+    "lessIdealFor": [
+      "Solo budget travelers (private pricing is per vehicle)",
+      "Travelers who want to mix with other guests for a social experience",
+      "Anyone needing a fixed, narrated group tour with set timing",
+      "Travelers wanting fully included admission and meals"
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "Pickup & drop-off",
+      "preview": "Free Seoul downtown hotel pickup; lobby meeting 10 minutes early",
+      "content": [
+        "Free hotel pickup is included for Seoul downtown areas (Myeongdong, Hongdae, Dongdaemun, Insadong, Itaewon, etc.)",
+        "Stays outside Seoul downtown may incur an additional pickup fee",
+        "Please wait at the hotel lobby 10 minutes before the agreed departure time",
+        "Drop-off is at your Seoul hotel or any Seoul downtown location of your choice",
+        "Incheon Airport pickup or drop-off is available with an additional 100,000 KRW one-way transfer fee",
+        "If you need to reschedule, please contact us at least 2 days before the original reservation date"
+      ]
+    },
+    {
+      "id": "vehicle",
+      "title": "Vehicle and Group Size",
+      "preview": "Vehicle assigned by group size and luggage volume",
+      "content": [
+        "The vehicle type is matched to the exact number of passengers and luggage pieces",
+        "Please fill in the exact passenger count and luggage count when booking",
+        "Typical vehicles include sedans for 1 to 3 guests, mid-size SUVs for 4 to 5 guests, and Staria or Carnival vans for 6 to 9 guests",
+        "Larger groups may be split across multiple vehicles or quoted separately"
+      ]
+    },
+    {
+      "id": "duration",
+      "title": "10-Hour Window and Overtime",
+      "preview": "Strict 10-hour service window from pickup",
+      "content": [
+        "The 10-hour window starts from your hotel pickup time",
+        "Airport pickup or drop-off, when added, is included inside the same 10 hours",
+        "Overtime is charged at 30,000 KRW per additional hour, paid in cash directly to the driver",
+        "Overtime is subject to driver availability and applicable hours of service rules"
+      ]
+    },
+    {
+      "id": "extras",
+      "title": "Extra Fees You Should Know About",
+      "preview": "Province-crossing, airport transfer, and admission costs",
+      "content": [
+        "Alpaca World or Legoland: additional 60,000 KRW for crossing the province line (Gangwon-do)",
+        "Incheon Airport pickup or drop-off: additional 100,000 KRW per one-way transfer",
+        "All admission fees, meals, and personal shopping are paid directly by guests",
+        "Optional driver gratuities are appreciated but not required"
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "Weather policy",
+      "preview": "Private format adapts well to changing conditions",
+      "content": [
+        "On rainy days, the driver-guide can shift toward indoor stops (museums, Paju Outlets, Heyri Art Village)",
+        "Heavy snow may close the 1100 Highland-equivalent winter routes in Gangwon-do",
+        "DMZ access can be affected by military training schedules and may require a same-day route change",
+        "Final route adjustments are made together with the driver-guide on the day"
+      ]
+    },
+    {
+      "id": "included",
+      "title": "What's included",
+      "preview": "Vehicle and licensed driver-guide; admission and meals pay direct",
+      "variant": "included",
+      "content": [
+        "Private vehicle (sedan, SUV, or van based on group size)",
+        "Licensed English-speaking driver-guide",
+        "Free hotel pickup and drop-off in Seoul downtown",
+        "Fuel and tolls for the standard route",
+        "All admission fees are not included; pay directly at each venue",
+        "Meals are not included",
+        "Personal shopping is not included",
+        "Driver gratuities are not included"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "Live weather integration"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "Updated daily"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "season": "Spring",
+      "title": "Best for blossoms",
+      "description": "Cherry blossoms across Seoul and Gapyeong; Garden of Morning Calm shifts into magnolia and azalea bloom.",
+      "icon": "flower"
+    },
+    {
+      "season": "Summer",
+      "title": "Long days",
+      "description": "Long daylight hours stretch the 10-hour window; expect humidity and possible monsoon rain in late June and July.",
+      "icon": "sun"
+    },
+    {
+      "season": "Autumn",
+      "title": "Best photo season",
+      "description": "Korea's strongest scenic season; Nami Island, Garden of Morning Calm, and Korean Folk Village all photograph beautifully.",
+      "icon": "leaf"
+    },
+    {
+      "season": "Winter",
+      "title": "Lighting Festival season",
+      "description": "Garden of Morning Calm hosts its famous Lighting Festival from December to mid-March; DMZ winters can be very cold and exposed.",
+      "icon": "snowflake"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "공인 현지 운영사",
+      "description": "Authorized Korean tour operator with full insurance",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "서울 전 지역을 아는 유자격 드라이버 가이드."
+    },
+    {
+      "icon": "route",
+      "title": "코스 전문",
+      "description": "Hand-tuned itinerary, not a generic loop",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "10시간 창구는 드라이빙 시간을 포함한 총 시간. 당일 날씨에 따라 실내 경유지로 유연하게 조정 가능."
+    },
+    {
+      "icon": "users",
+      "title": "그룹 규모 관리",
+      "description": "Right-sized for the route",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "그룹 규모에 맞게 세단, SUV, 미니밴 배차."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Immediately",
+      "title": "즉시 확인",
+      "detail": "Booking confirmation with itinerary summary",
+      "description": "코스 선호도 확인 포함 즉시 예약 확인서 발송."
+    },
+    {
+      "timing": "12 hours before",
+      "title": "12시간 전 알림",
+      "detail": "Weather update and any route adjustments",
+      "description": "날씨 예보와 코스 조율 사전 안내."
+    },
+    {
+      "timing": "Evening before",
+      "title": "최종 픽업 안내",
+      "detail": "Exact pickup time and driver contact",
+      "description": "드라이버 정보(이름, 차량 번호판) 전날 저녁 전송."
+    },
+    {
+      "timing": "Morning of tour",
+      "title": "당일 코스 안내",
+      "detail": "Morning briefing based on live conditions",
+      "description": "약속 시각에 호텔 로비에서 드라이버 대기."
+    },
+    {
+      "timing": "During tour",
+      "title": "경유지별 심층 안내",
+      "detail": "Real-time guidance at each location",
+      "description": "직접 메시지로 실시간 코스 조정 가능."
+    },
+    {
+      "timing": "After tour",
+      "title": "투어 후 지원",
+      "detail": "Follow-up and recommendations",
+      "description": "투어 후 피드백 요청 전송."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "question": "남이섬 소그룹 버스 투어와 어떻게 다른가요?",
+      "answer": "프라이빗 차량으로 그룹 전용. 호텔 픽업, 셔틀버스 대기 없음, 일정 유연 조정 가능."
+    },
+    {
+      "question": "10시간 창구는 어떻게 작동하나요?",
+      "answer": "서울 호텔 픽업 시각부터 드롭오프까지 총 10시간. 이동 시간, 식사, 관람 시간 모두 포함됩니다."
+    },
+    {
+      "question": "비가 오면 어떻게 되나요?",
+      "answer": "비 오는 날에는 실내 경유지 위주로 조정됩니다 — 파주 프리미엄 아울렛, 헤이리 예술마을, 실내 박물관 등."
+    },
+    {
+      "question": "어떤 차량을 이용하나요?",
+      "answer": "그룹 규모와 짐에 따라 배차: 1~3인 세단·SUV, 4~7인 미니밴."
+    },
+    {
+      "question": "추가 비용이 있나요?",
+      "answer": "강원도(알파카 월드, 레고랜드) 방문 시 도계 추가 비용(₩60,000). 인천공항 픽업·드롭오프는 별도 추가 비용."
+    },
+    {
+      "question": "무료 호텔 픽업 구역은 어디인가요?",
+      "answer": "서울 중심 구역(명동·홍대·동대문·인사동·이태원 등)은 무료 픽업. 경계 외 지역은 소액 추가 비용."
+    },
+    {
+      "question": "서울·교외를 처음 방문하는 분에게 좋은가요?",
+      "answer": "네, 단 세 가지 추천 코스 중 하나를 미리 정해 오시면 더 좋습니다."
+    },
+    {
+      "question": "도보 이동이 힘들지 않나요?",
+      "answer": "대부분 쉬운 편 — 차량 기반 투어로 드라이버가 각 경유지 앞까지 이동. 도보 수요는 코스와 경유지에 따라 달라집니다."
+    },
+    {
+      "question": "가족 여행에 적합한가요?",
+      "answer": "네, 프라이빗 차량이라 버스 이동의 불편함 없이 가족 맞춤 페이스로 이동합니다."
+    },
+    {
+      "question": "어르신도 참여할 수 있나요?",
+      "answer": "서울 근교 형태 중 어르신에게 가장 적합한 형식입니다. 호텔 픽업과 프라이빗 차량으로 이동 부담이 최소화됩니다."
+    },
+    {
+      "question": "권장 최소 연령은 몇 세인가요?",
+      "answer": "전 연령 가능. 프라이빗 차량, 호텔 픽업, 유연한 페이스로 연령 제한이 없습니다."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "vehicle"
+    }
+  },
+  "pickup_dropoff": {
+    "type": "hotel_pickup",
+    "meeting_points": [
+      {
+        "name": "Any central Seoul hotel",
+        "time": "08:00–09:00",
+        "note": "Door-to-door pickup at any hotel within the supported area."
+      },
+      {
+        "name": "Incheon Airport (optional)",
+        "time": "08:00–09:00",
+        "note": "Incheon and Gimpo airport pickups available on request; counts inside the 10-hour window."
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Any central Seoul hotel",
+        "approx_time": "≈ 18:00–19:00",
+        "note": "Drop-off at the same hotel or any address within the supported area."
+      },
+      {
+        "name": "Incheon Airport (optional)",
+        "approx_time": "≈ 18:00–19:00",
+        "note": "Same-day departure drop-off available; counts inside the service window."
+      }
+    ],
+    "hotel_pickup_available": true,
+    "notes": "Please wait at the hotel lobby 10 minutes before the agreed departure time. The 10-hour service window starts from your pickup time. Reschedule requests should be made at least 2 days before the original reservation date. Overtime is charged at 30,000 KRW per hour, cash to driver, subject to driver availability."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "seoul-suburbs-private-chartered-car-10hr",
+    "product_type": "private",
+    "route_type": "customizable",
+    "destination_region": "korea_mainland",
+    "region_type": "gyeonggi_mixed",
+    "vehicle_type": "private_vehicle",
+    "duration_hours": 10,
+    "region_tags": [
+      "seoul_capital",
+      "seoul_city",
+      "seoul_suburbs",
+      "gyeonggi_gapyeong",
+      "gyeonggi_yongin",
+      "gyeonggi_paju",
+      "incheon_central"
+    ],
+    "theme_tags": [
+      "private_charter",
+      "customizable_route",
+      "driver_guide",
+      "first_time_friendly",
+      "multi_route_options"
+    ],
+    "poi_tags": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france",
+      "gangchon_railbike",
+      "third_infiltration_tunnel",
+      "dora_observatory",
+      "imjingak_peace_park",
+      "paju_premium_outlets",
+      "everland",
+      "korean_folk_village",
+      "heyri_art_village",
+      "alpaca_world",
+      "seoraksan_national_park",
+      "dmz_general",
+      "seoul_suburbs_charter"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.55,
+    "scenic_level": 0.8,
+    "photo_level": 0.8,
+    "culture_level": 0.8,
+    "relax_level": 1,
+    "first_time_fit": 0.85,
+    "family_fit": 1,
+    "senior_fit": 1,
+    "couple_fit": 1,
+    "solo_traveler_fit": 0.6,
+    "active_traveler_fit": 0.8,
+    "adult_family_fit": 1,
+    "family_with_teens_fit": 0.8,
+    "young_kids_fit": 1,
+    "senior_active_fit": 1,
+    "senior_general_fit": 1,
+    "mobility_friendly_fit": 1,
+    "stroller_fit": 1,
+    "one_day_fit": 1,
+    "same_day_flight_fit": 0.8,
+    "rain_fit": 0.8,
+    "value_for_money_fit": 0.55,
+    "iconic_landmark_fit": 0.85,
+    "cafe_fit": 1,
+    "food_fit": 0.6,
+    "nature_fit": 0.8,
+    "beach_fit": 0.2,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.7,
+    "no_shopping_fit": 0.2,
+    "local_culture_fit": 0.8,
+    "storytelling_fit": 0.8,
+    "unesco_fit": 0.3,
+    "intangible_heritage_fit": 1,
+    "indoor_ratio": 0.4,
+    "weather_sensitivity": 0.5,
+    "comfort_level": 1,
+    "budget_fit": 0.4,
+    "premium_fit": 1,
+    "small_group_fit": 0.15,
+    "private_fit": 1,
+    "bus_fit": 0.05,
+    "price_band": "premium",
+    "pickup_base": "seoul_downtown",
+    "return_time_band": "10h_window",
+    "duration_band": "10h",
+    "min_recommended_age": 0,
+    "hard_constraints": {
+      "avoidIf": [
+        "solo_budget_traveler_seeking_lowest_price",
+        "wants_fully_included_admission_and_meals"
+      ],
+      "notIdealFor": [
+        "travelers_wanting_a_social_group_setting",
+        "guests_needing_full_certified_guide_narration"
+      ]
+    },
+    "walking_notes": [
+      "Walking load depends entirely on the chosen route.",
+      "Route 1 (Gapyeong loop) is moderate, with the most walking at Nami Island and the Garden of Morning Calm.",
+      "Route 2 (DMZ + Paju) includes a steep descent at the 3rd Tunnel, which is the most demanding section across all routes.",
+      "Route 3 (Everland + Folk Village) is highest in cumulative walking due to theme-park movement.",
+      "The driver-guide can adjust pacing on the day to match family or senior comfort."
+    ],
+    "keywords": [
+      "seoul private car charter 10 hours",
+      "seoul suburbs private tour",
+      "seoul private driver guide",
+      "nami island private tour",
+      "dmz private tour seoul",
+      "everland private tour seoul",
+      "customizable seoul day tour",
+      "seoul premium private tour",
+      "private van tour seoul",
+      "seoul family private tour"
+    ],
+    "synonym_hints": [
+      "seoul chauffeur tour",
+      "seoul private chartered vehicle",
+      "seoul flexible day tour",
+      "seoul private guide and driver",
+      "seoul tailor made day tour",
+      "seoul private 10 hour charter"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "private_van",
+    "anchor_poi_keys": [
+      "seoul_suburbs_charter",
+      "nami_island",
+      "dmz_general",
+      "paju_premium_outlets"
+    ],
+    "private_tour_fit": 1,
+    "customizable_route_fit": 1,
+    "flexibility_fit": 1,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "embedded_for": [
+      "authoring",
+      "review",
+      "sql_backfill_reference"
+    ],
+    "note": "Scores were tuned for a fully customizable 10-hour private charter format. Comfort, flexibility, mobility-friendliness, and family fit score very high because the private format eliminates group constraints. Value-for-money and budget fit score lower because the private format is per-vehicle rather than per-person. Walking and culture levels reflect a weighted average across the three recommended routes; the on-the-day load can move significantly depending on the chosen route.",
+    "duration_hours": 10,
+    "stop_count": 4,
+    "score_rationale": {
+      "private_fit": "Direct match: this is a per-vehicle private charter.",
+      "mobility_friendly_fit": "Private car door-to-door eliminates most public-transport mobility friction; only the DMZ 3rd Tunnel (Route 2) reduces friendliness if chosen.",
+      "young_kids_fit": "Best-in-class for kids because car seats, stops, and pacing are all adjustable.",
+      "weather_sensitivity": "Low because the driver-guide can shift the route toward indoor stops on bad-weather days.",
+      "value_for_money_fit": "Mid: per-vehicle pricing is excellent value for groups of 4 to 9 but expensive for solo travelers.",
+      "culture_level": "Moderate weighted average; the chosen route can push it to 5 (Folk Village + DMZ) or 3 (Gapyeong loop).",
+      "rain_fit": "Above-average because Paju Outlets, Heyri, and Korean Folk Village indoor sections give strong wet-weather alternatives."
+    },
+    "anchor_pois": [
+      "Seoul greater area (Gapyeong, DMZ, Paju, custom)",
+      "Nami Island",
+      "DMZ",
+      "Paju Premium Outlets"
+    ],
+    "anchor_poi_keys": [
+      "seoul_suburbs_charter",
+      "nami_island",
+      "dmz_general",
+      "paju_premium_outlets"
+    ],
+    "competing_products": [
+      "seoul-private-nami-morning-calm-petite-france",
+      "seoul-dmz-private-3rd-tunnel-suspension-bridge",
+      "incheon-seoul-private-car-shore-excursion-cruise"
+    ]
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "Seoul City or Suburbs Private",
+        "headlineLine2": "Chartered Car Tour 10HR",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1920&q=80",
+          "imagePosition": "center 40%",
+          "tagline": "Build your own Seoul-area day at your own pace, with a licensed driver-guide and a private vehicle for up to 10 hours.",
+          "pills": [
+            "Private Vehicle",
+            "Licensed Driver-Guide",
+            "Custom Itinerary"
+          ],
+          "meta": {
+            "duration": "10 hours",
+            "region": "Seoul & Suburbs",
+            "stops": "Custom",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "Overview"
+          },
+          {
+            "id": "itinerary",
+            "label": "Itinerary"
+          },
+          {
+            "id": "details",
+            "label": "Details"
+          },
+          {
+            "id": "faq",
+            "label": "FAQ"
+          },
+          {
+            "id": "reviews",
+            "label": "Reviews"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "car",
+            "label": "Tour Style",
+            "value": "Private Charter"
+          },
+          {
+            "icon": "map",
+            "label": "Routing",
+            "value": "Fully Customizable"
+          },
+          {
+            "icon": "user-check",
+            "label": "Guide",
+            "value": "Licensed Driver-Guide"
+          },
+          {
+            "icon": "clock",
+            "label": "Duration",
+            "value": "10 hours"
+          },
+          {
+            "icon": "ticket",
+            "label": "Admission Fees",
+            "value": "Pay Direct"
+          },
+          {
+            "icon": "utensils-crossed",
+            "label": "Lunch",
+            "value": "Pay Direct"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1200&q=80",
+            "alt": "Seoul city skyline with Lotte World Tower and Han River visible at dusk, viewed from a south-Seoul vantage",
+            "caption": "Seoul skyline — flexible departure point",
+            "location": "Seoul (departure city)",
+            "atmosphere": "Modern Seoul as the flexible starting point; private vehicle hotel pickup"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+            "alt": "Nami Island's tree-lined metasequoia path with travelers walking under tall trees on a wide gravel walkway",
+            "caption": "Nami Island metasequoia path — Route 1 highlight",
+            "location": "Nami Island, Gapyeong (Route 1 option)",
+            "atmosphere": "Tree-lined paths and short ferry crossing; Winter Sonata K-drama filming location"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=1200&q=80",
+            "alt": "Garden of Morning Calm's themed flower beds with seasonal blooms and curving stone walking paths",
+            "caption": "Garden of Morning Calm — Route 1 photo stop",
+            "location": "Garden of Morning Calm, Gapyeong (Route 1 option)",
+            "atmosphere": "20 themed gardens across 330,000 m²; founded 1996 by Han Sang-kyung"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1583917123405-3aa64e6a96b8?w=1200&q=80",
+            "alt": "Petite France village with brightly colored Mediterranean-style houses on a hillside in Gapyeong",
+            "caption": "Petite France — Le Petit Prince village (Route 1)",
+            "location": "Petite France, Gapyeong (Route 1 option)",
+            "atmosphere": "Colorful hillside village; My Love from the Star K-drama filming location"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+            "alt": "DMZ Imjingak Peace Park with the Bridge of Freedom visible behind the monument area near Paju",
+            "caption": "Imjingak Peace Park — Route 2 anchor",
+            "location": "Imjingak Peace Park, Paju (Route 2 option)",
+            "atmosphere": "Korea's most historically charged border park; Bridge of Freedom (1953); 7 km from MDL"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "Flexible",
+            "duration": "Custom",
+            "name": "Route 1: Gapyeong Nature & Culture Loop",
+            "category": "Nami Island + Morning Calm + Petite France + Gangchon Railbike",
+            "description": "A scenic Gapyeong-area circuit covering Nami Island's tree-lined paths, the themed Garden of Morning Calm, the Le Petit Prince-themed Petite France, and the rail-bike experience along old Gangchon railway tracks. The most photo-friendly of the three recommended routes.",
+            "image": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=800&q=80",
+            "highlights": [
+              "Four iconic Korean drama filming locations in one day",
+              "Strong seasonal visual variety (cherry blossoms, fall foliage, Winter Light Festival)",
+              "Ferry, garden walks, themed village, and rail bike in one route",
+              "Best route for couples and family travelers"
+            ],
+            "timeUsed": [
+              "Drive from Seoul (about 1 to 1.5 hours each way)",
+              "Time at each of the four stops, balanced by traveler preference",
+              "Lunch break in Gapyeong area (free choice)"
+            ],
+            "whyOnRoute": "It is the highest-photo-value of the recommended routes and the most balanced for travelers who want scenery, light culture, and one active stop in a single day.",
+            "visitBasics": {
+              "hours": "Stops typically open 08:30 to 18:00; Garden of Morning Calm extends to 21:00 during the winter Lighting Festival",
+              "closed": "Most stops open year-round; rail-bike weather sensitive",
+              "admission": "Pay directly: Nami Island ≈16,000 KRW, Garden of Morning Calm 11,000 KRW, Petite France 12,000 KRW, Gangchon Railbike from ≈18,000 KRW",
+              "walking": "Easy to moderate"
+            },
+            "convenience": {
+              "restroom": "Available at all stops",
+              "parking": "Driver handles all parking"
+            },
+            "smartNotes": {
+              "photo": "Autumn foliage and the winter Lighting Festival at Garden of Morning Calm are the strongest seasonal photo windows.",
+              "facilities": "Good visitor support at all four stops; lunch options strongest near Gapyeong Wharf and the Garden.",
+              "tip": "Because the route covers four stops in a Gapyeong loop, request to start by 09:00 to avoid feeling rushed."
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_gapyeong",
+              "verified": false,
+              "match": "route_variant_no_single_poi",
+              "note": "Route option — Gapyeong Nature & Culture Loop multi-POI bundle"
+            }
+          },
+          {
+            "number": 2,
+            "time": "Flexible",
+            "duration": "Custom",
+            "name": "Route 2: DMZ History & Paju Shopping",
+            "category": "DMZ Tour + Paju Premium Outlets",
+            "description": "A history-and-shopping pairing: the morning visits the DMZ area near Paju (Imjingak Peace Park, 3rd Infiltration Tunnel, Dora Observatory), and the afternoon shifts to Paju Premium Outlets for a relaxed retail close.",
+            "image": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=800&q=80",
+            "highlights": [
+              "Korea's most historically charged border in the morning",
+              "Premium-brand outlet shopping in the afternoon",
+              "Strong contrast between heavy history and light retail",
+              "Passport required for the DMZ portion"
+            ],
+            "timeUsed": [
+              "Drive from Seoul (about 70 minutes)",
+              "DMZ Peace Tour shuttle (3rd Tunnel + Dora Observatory)",
+              "Lunch and transfer to Paju Outlets",
+              "Afternoon shopping at Paju Premium Outlets"
+            ],
+            "whyOnRoute": "It is the route that best balances Korea's modern history with a relaxed retail close, and works especially well for adult travelers who want both meaning and downtime in one day.",
+            "visitBasics": {
+              "hours": "DMZ Peace Tour shuttle operates roughly 09:30 to 15:00; Paju Outlets typically 10:30 to 21:00",
+              "closed": "DMZ closed Mondays for the 3rd Tunnel route (2nd Tunnel may be visited instead); always passport-required",
+              "admission": "DMZ Peace Tour shuttle ticket pay directly (≈14,000 to 16,000 KRW); outlets free",
+              "walking": "Moderate to challenging at the 3rd Tunnel due to a steep descent"
+            },
+            "convenience": {
+              "restroom": "Available at Imjingak, Dora Observatory, and the outlets",
+              "parking": "Driver handles all parking"
+            },
+            "smartNotes": {
+              "photo": "Dora Observatory and Imjingak Park are stronger photo points than the tunnel interior, where photography is restricted.",
+              "facilities": "Imjingak is the strongest food and rest hub in the morning; Paju Outlets has full retail amenities.",
+              "tip": "Bring your passport. Without it, you cannot enter the DMZ portion of the route."
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_dmz_paju",
+              "verified": false,
+              "match": "route_variant_no_single_poi",
+              "note": "Route option — DMZ History & Paju Shopping multi-POI bundle"
+            }
+          },
+          {
+            "number": 3,
+            "time": "Flexible",
+            "duration": "Custom",
+            "name": "Route 3: Everland + Korean Folk Village",
+            "category": "Theme Park + Heritage Village",
+            "description": "A family-friendly contrast day pairing Everland, Korea's largest theme park, with the Korean Folk Village in Yongin, a living-heritage open-air museum showing Joseon-era life and traditional performances.",
+            "image": "https://images.unsplash.com/photo-1583917123405-3aa64e6a96b8?w=800&q=80",
+            "highlights": [
+              "Korea's largest and most-visited theme park",
+              "Living traditional village with daily performances",
+              "Strongest route for families with children",
+              "Both stops located in Yongin, minimizing transit"
+            ],
+            "timeUsed": [
+              "Drive from Seoul (about 1 hour)",
+              "Half-day at Everland (rides and themed zones)",
+              "Lunch transfer",
+              "Afternoon at Korean Folk Village (performances and traditional houses)"
+            ],
+            "whyOnRoute": "It is the family-best of the three recommended routes, combining a high-energy theme park with a calmer cultural close, both within a single Yongin loop.",
+            "visitBasics": {
+              "hours": "Summer (May–Sep) 09:30–18:30; Winter (Nov–Feb) 09:30–17:30; Spring/Autumn 09:30–18:00",
+              "closed": "Open year-round",
+              "admission": "Adult 32,000 KRW / Teen 26,000 KRW / Child 22,000 KRW (Integrated ticket including amusement rides; Folk Village only ≈22,000 KRW adult)",
+              "walking": "Moderate — large grounds (≈2 hours of walking); paths are flat to gently sloping"
+            },
+            "convenience": {
+              "restroom": "Multiple restrooms throughout the village",
+              "parking": "Large paid parking lot"
+            },
+            "smartNotes": {
+              "photo": "Traditional performances at the central plaza (esp. equestrian shows) are highlights; thatched-roof houses photograph well in autumn",
+              "facilities": "Multiple traditional Korean restaurants on site; gift shops with handicrafts",
+              "tip": "Performances run on a published schedule — check website to time arrivals around the equestrian show; pair with Hwaseong Fortress for a full Suwon-Yongin day"
+            },
+            "_poi_meta": {
+              "poi_key": "korean_folk_village",
+              "verified": true,
+              "sources": [
+                "HereKoreaTravel",
+                "VisitKorea"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          },
+          {
+            "number": 4,
+            "time": "Flexible",
+            "duration": "Custom",
+            "name": "Custom Itinerary Option",
+            "category": "Send Us Your Own Plan",
+            "description": "Beyond the three recommended routes, you can send your own itinerary in advance. Possible Seoul suburbs locations include Incheon City, Woongjin Playdoci, Swiss Village, Heyri Art Village, Herb Garden, and more. Gangwon-do destinations such as Alpaca World, Seoraksan, Pyeongchang, and Daegwallyeong Sheep Ranch are also possible with extra province-crossing fees.",
+            "image": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=800&q=80",
+            "highlights": [
+              "Build a route that fits your group exactly",
+              "Driver-guide can advise on timing and pacing",
+              "Mix Seoul city stops with one suburb stop, or do a full day-trip loop",
+              "Province-crossing destinations available with extra fee"
+            ],
+            "timeUsed": [
+              "Discuss your plan with the driver-guide at pickup",
+              "Adjust pacing on the day based on traffic and conditions",
+              "Return to your hotel within the 10-hour window"
+            ],
+            "whyOnRoute": "It is the most flexible option of the four. It works best for repeat visitors, travelers with niche interests, or families who want a tailored mix of Seoul-city plus one Gapyeong or Yongin stop.",
+            "visitBasics": {
+              "hours": "Depends on chosen stops",
+              "closed": "Depends on chosen stops",
+              "admission": "All admission fees pay directly",
+              "walking": "Depends on chosen stops"
+            },
+            "convenience": {
+              "restroom": "Driver-guide will plan around stop facilities",
+              "parking": "Driver handles all parking"
+            },
+            "smartNotes": {
+              "photo": "Custom routes can target specific seasonal photo windows (cherry blossoms in Yeouido, autumn foliage in Bukhansan, winter lights in Gapyeong).",
+              "facilities": "Discuss meal timing and rest stops with your driver-guide before departure.",
+              "tip": "Send your itinerary draft at least a few days before the tour so the driver-guide can flag any timing or access issues."
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_custom",
+              "verified": false,
+              "match": "route_variant_no_single_poi",
+              "note": "Custom itinerary — fully guest-defined"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "id": "01",
+            "name": "Hotel Pickup",
+            "theme": "Start"
+          },
+          {
+            "id": "02",
+            "name": "Custom Route",
+            "theme": "Choose"
+          },
+          {
+            "id": "03",
+            "name": "Lunch Break",
+            "theme": "Reset"
+          },
+          {
+            "id": "04",
+            "name": "Afternoon Stops",
+            "theme": "Continue"
+          },
+          {
+            "id": "05",
+            "name": "Hotel Dropoff",
+            "theme": "End"
+          }
+        ],
+        "routePhases": [
+          {
+            "label": "Start",
+            "range": "1",
+            "theme": "Pickup at Seoul Hotel",
+            "bgClass": "bg-sky-50/70",
+            "textClass": "text-sky-700",
+            "dotClass": "bg-sky-500"
+          },
+          {
+            "label": "Day Out",
+            "range": "2-4",
+            "theme": "Choose Your Route",
+            "bgClass": "bg-emerald-50/70",
+            "textClass": "text-emerald-700",
+            "dotClass": "bg-emerald-500"
+          },
+          {
+            "label": "Finish",
+            "range": "5",
+            "theme": "Return to Hotel",
+            "bgClass": "bg-amber-50/70",
+            "textClass": "text-amber-700",
+            "dotClass": "bg-amber-500"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "How this private day moves",
+          "subtitle": "Pickup at your Seoul downtown hotel, then a fully flexible 10-hour day shaped by you and your driver-guide. Choose one of three recommended routes—Gapyeong nature, DMZ + Paju, or Everland + Folk Village—or send your own itinerary."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "Families with children, including very young kids",
+            "Multi-generational groups including seniors",
+            "Couples on honeymoon or anniversary trips",
+            "Repeat visitors who want a tailored day",
+            "Travelers prioritizing comfort, privacy, and flexibility"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Why a private charter wins on flexibility",
+              "icon": "car",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "Your pace, not a group's",
+                  "detail": "Stay longer at the spots you love, skip the ones you don't, and adjust on the fly without waiting for other guests to regroup."
+                },
+                {
+                  "label": "Door-to-door comfort",
+                  "detail": "Free hotel pickup and drop-off in Seoul downtown means no early-morning subway transfers and no late-evening shuttle stress."
+                },
+                {
+                  "label": "Driver-guide insight",
+                  "detail": "A licensed Korean driver-guide adds local context, recommends meal stops, and adapts the route to weather or traffic in real time."
+                }
+              ]
+            },
+            {
+              "title": "How to choose between the routes",
+              "icon": "map",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "Route 1 for first-time scenic value",
+                  "detail": "If you want one strong day of Korean nature and K-drama spots, the Gapyeong loop covers the most beloved tourist landmarks for couples and families."
+                },
+                {
+                  "label": "Route 2 for history-and-shopping balance",
+                  "detail": "If you want meaning plus downtime, the DMZ-and-Paju pairing works especially well for adult travelers and history-curious guests."
+                },
+                {
+                  "label": "Route 3 for theme-park families",
+                  "detail": "If your group includes kids who want rides, the Everland and Korean Folk Village combination minimizes drive time inside Yongin."
+                }
+              ]
+            },
+            {
+              "title": "What changes on the day",
+              "icon": "clock-3",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-600",
+              "items": [
+                {
+                  "label": "Traffic into and out of Seoul",
+                  "detail": "Friday and Sunday afternoons can add 30 to 60 minutes to return time; the driver-guide will adjust your last stop accordingly."
+                },
+                {
+                  "label": "Province-crossing destinations cost extra",
+                  "detail": "Alpaca World and Legoland (both in Gangwon-do) carry an additional 60,000 KRW province-crossing fee paid in cash to the driver."
+                },
+                {
+                  "label": "Overtime is possible",
+                  "detail": "If you need more than 10 hours, an extra hour is 30,000 KRW paid in cash to the driver, subject to driver availability."
+                }
+              ]
+            }
+          ],
+          "lessIdealFor": [
+            "Solo budget travelers (private pricing is per vehicle)",
+            "Travelers who want to mix with other guests for a social experience",
+            "Anyone needing a fixed, narrated group tour with set timing",
+            "Travelers wanting fully included admission and meals"
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "Pickup & drop-off",
+            "preview": "Free Seoul downtown hotel pickup; lobby meeting 10 minutes early",
+            "content": [
+              "Free hotel pickup is included for Seoul downtown areas (Myeongdong, Hongdae, Dongdaemun, Insadong, Itaewon, etc.)",
+              "Stays outside Seoul downtown may incur an additional pickup fee",
+              "Please wait at the hotel lobby 10 minutes before the agreed departure time",
+              "Drop-off is at your Seoul hotel or any Seoul downtown location of your choice",
+              "Incheon Airport pickup or drop-off is available with an additional 100,000 KRW one-way transfer fee",
+              "If you need to reschedule, please contact us at least 2 days before the original reservation date"
+            ]
+          },
+          {
+            "id": "vehicle",
+            "title": "Vehicle and Group Size",
+            "preview": "Vehicle assigned by group size and luggage volume",
+            "content": [
+              "The vehicle type is matched to the exact number of passengers and luggage pieces",
+              "Please fill in the exact passenger count and luggage count when booking",
+              "Typical vehicles include sedans for 1 to 3 guests, mid-size SUVs for 4 to 5 guests, and Staria or Carnival vans for 6 to 9 guests",
+              "Larger groups may be split across multiple vehicles or quoted separately"
+            ]
+          },
+          {
+            "id": "duration",
+            "title": "10-Hour Window and Overtime",
+            "preview": "Strict 10-hour service window from pickup",
+            "content": [
+              "The 10-hour window starts from your hotel pickup time",
+              "Airport pickup or drop-off, when added, is included inside the same 10 hours",
+              "Overtime is charged at 30,000 KRW per additional hour, paid in cash directly to the driver",
+              "Overtime is subject to driver availability and applicable hours of service rules"
+            ]
+          },
+          {
+            "id": "extras",
+            "title": "Extra Fees You Should Know About",
+            "preview": "Province-crossing, airport transfer, and admission costs",
+            "content": [
+              "Alpaca World or Legoland: additional 60,000 KRW for crossing the province line (Gangwon-do)",
+              "Incheon Airport pickup or drop-off: additional 100,000 KRW per one-way transfer",
+              "All admission fees, meals, and personal shopping are paid directly by guests",
+              "Optional driver gratuities are appreciated but not required"
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "Weather policy",
+            "preview": "Private format adapts well to changing conditions",
+            "content": [
+              "On rainy days, the driver-guide can shift toward indoor stops (museums, Paju Outlets, Heyri Art Village)",
+              "Heavy snow may close the 1100 Highland-equivalent winter routes in Gangwon-do",
+              "DMZ access can be affected by military training schedules and may require a same-day route change",
+              "Final route adjustments are made together with the driver-guide on the day"
+            ]
+          },
+          {
+            "id": "included",
+            "title": "What's included",
+            "preview": "Vehicle and licensed driver-guide; admission and meals pay direct",
+            "variant": "included",
+            "content": [
+              "Private vehicle (sedan, SUV, or van based on group size)",
+              "Licensed English-speaking driver-guide",
+              "Free hotel pickup and drop-off in Seoul downtown",
+              "Fuel and tolls for the standard route",
+              "All admission fees are not included; pay directly at each venue",
+              "Meals are not included",
+              "Personal shopping is not included",
+              "Driver gratuities are not included"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "Live weather integration"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "Updated daily"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "name": "Spring",
+            "icon": "flower",
+            "description": "Cherry blossoms across Seoul and Gapyeong; Garden of Morning Calm shifts into magnolia and azalea bloom.",
+            "tag": "Best for blossoms",
+            "bgClass": "bg-spring",
+            "iconColor": "text-pink-500"
+          },
+          {
+            "name": "Summer",
+            "icon": "sun",
+            "description": "Long daylight hours stretch the 10-hour window; expect humidity and possible monsoon rain in late June and July.",
+            "tag": "Long days",
+            "bgClass": "bg-summer",
+            "iconColor": "text-yellow-500"
+          },
+          {
+            "name": "Autumn",
+            "icon": "leaf",
+            "description": "Korea's strongest scenic season; Nami Island, Garden of Morning Calm, and Korean Folk Village all photograph beautifully.",
+            "tag": "Best photo season",
+            "bgClass": "bg-autumn",
+            "iconColor": "text-orange-500"
+          },
+          {
+            "name": "Winter",
+            "icon": "snowflake",
+            "description": "Garden of Morning Calm hosts its famous Lighting Festival from December to mid-March; DMZ winters can be very cold and exposed.",
+            "tag": "Lighting Festival season",
+            "bgClass": "bg-winter",
+            "iconColor": "text-sky-500"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Licensed local operator",
+            "description": "Authorized Korean tour operator with full insurance",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "route",
+            "title": "Route specialists",
+            "description": "Hand-tuned itinerary, not a generic loop",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          },
+          {
+            "icon": "users",
+            "title": "Curated group size",
+            "description": "Right-sized for the route",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Immediately",
+            "title": "Instant Confirmation",
+            "detail": "Booking confirmation with itinerary summary"
+          },
+          {
+            "timing": "12 hours before",
+            "title": "12-Hour Reminder",
+            "detail": "Weather update and any route adjustments"
+          },
+          {
+            "timing": "Evening before",
+            "title": "Final Pickup Info",
+            "detail": "Exact pickup time and driver contact"
+          },
+          {
+            "timing": "Morning of tour",
+            "title": "Day-of Route Notes",
+            "detail": "Morning briefing based on live conditions"
+          },
+          {
+            "timing": "During tour",
+            "title": "Stop-by-Stop Tips",
+            "detail": "Real-time guidance at each location"
+          },
+          {
+            "timing": "After tour",
+            "title": "Post-tour Support",
+            "detail": "Follow-up and recommendations"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "How does this differ from a small-group bus tour to Nami or DMZ?",
+            "answer": "This is a private vehicle for your group only — flexible itinerary, hotel pickup, no shared schedule. Small-group bus tours follow fixed timing across multiple groups. Choose this if you want hotel pickup, a custom route mix (Gapyeong nature + DMZ + Everland or your own list), or pacing that fits seniors and young kids. Choose a fixed group tour if you're 1-2 travelers on a budget — private pricing is per vehicle, not per person."
+          },
+          {
+            "id": "q2",
+            "question": "How does the 10-hour window work?",
+            "answer": "The clock starts at your Seoul hotel pickup time and runs continuously to drop-off — including driving time, stops, and any airport transfer if added. Overtime past 10 hours is 30,000 KRW per additional hour, paid in cash to the driver, and subject to driver availability. Plan stops with the driver-guide on the morning of the tour or send your priorities the night before."
+          },
+          {
+            "id": "q3",
+            "question": "What if it rains?",
+            "answer": "The driver-guide will shift toward indoor stops on rainy days — Paju Premium Outlets, Heyri Art Village, museum stops, or Starfield Suwon. The DMZ portion of Route 2 can also be affected by military training schedules and may require a same-day route change. Final routing is confirmed with the driver-guide on the morning of the tour based on conditions."
+          },
+          {
+            "id": "q4",
+            "question": "What kind of vehicle will I get?",
+            "answer": "Vehicle is matched to your party size and luggage at booking. Typical pairings are sedans for 1-3 guests, mid-size SUVs for 4-5 guests, and Hyundai Staria or Kia Carnival vans for 6-9 guests. Provide exact passenger and luggage counts when booking. Larger groups (10+) can be arranged as a multi-vehicle quote."
+          },
+          {
+            "id": "q5",
+            "question": "What extra fees should I know about?",
+            "answer": "Province-line surcharges: Alpaca World or Legoland in Gangwon-do adds 60,000 KRW. Incheon Airport pickup or drop-off is 100,000 KRW per one-way transfer. All admission fees and meals are paid directly by guests at each venue (not included in the tour price). Driver gratuities are optional but appreciated for full-day service."
+          },
+          {
+            "id": "q6",
+            "question": "Which Seoul areas qualify for free hotel pickup?",
+            "answer": "Free pickup covers the central Seoul downtown zone: Myeongdong, Hongdae, Dongdaemun, Insadong, Itaewon, and adjacent neighborhoods. Stays outside this zone (e.g. Gangnam east of Yangjae, Gimpo Airport area, far western Mapo) may incur a small additional pickup fee — confirmed at booking. Always send your hotel address when booking so the driver can pre-route."
+          },
+          {
+            "id": "first-time",
+            "question": "Is this a good choice for first-time visitors to Seoul & Suburbs?",
+            "answer": "Yes, but with a caveat: this format works best when you have a clear preference for one of the three preset routes (Gapyeong nature loop, DMZ + Paju, Everland + Folk Village) or specific stops in mind. First-timers without an opinion sometimes get more from a fixed small-group tour where the route is decided. The driver-guide can suggest a route on the morning if you're undecided."
+          },
+          {
+            "id": "walking",
+            "question": "Is the walking difficult?",
+            "answer": "Mostly easy walking — this is a vehicle-based tour with the driver dropping you at each stop. Walking demand depends on the route: Nami Island has flat tree-lined paths (≈2 km perimeter); the Garden of Morning Calm has mild slopes; DMZ sites involve some uneven ground at the 3rd Tunnel and Imjingak. Everland and Folk Village involve more walking but the driver waits and you control pace."
+          },
+          {
+            "id": "family",
+            "question": "Is this tour suitable for families?",
+            "answer": "Yes — one of the easier Seoul-area formats for families. The private vehicle removes the bus-coordination problem with strollers and car seats, and the driver-guide can pause for snack breaks or pivot if a child is tired. Route 3 (Everland + Korean Folk Village) is the strongest family pick; Route 1 (Gapyeong) works for older kids; Route 2 (DMZ) is for teens and up only."
+          },
+          {
+            "id": "seniors",
+            "question": "Can older adults join comfortably?",
+            "answer": "Yes — this is one of the strongest senior-friendly formats available. The private vehicle, hotel pickup, and pacing flexibility let active seniors and lower-mobility seniors join comfortably. The driver-guide can drop closer to entrances on request, build in seated breaks, and skip uphill optionals (e.g. the Petite France hillside, Sky Park spiral stairs). Confirm specific mobility constraints at booking so the route can be tuned."
+          },
+          {
+            "id": "children",
+            "question": "What's the recommended minimum age?",
+            "answer": "All ages welcome. The private vehicle, flexible pacing, and hotel pickup make this one of the easier Seoul day-tour formats for very young children — bring car seats if needed (the driver can advise). Route 3 (Everland + Korean Folk Village) is the most family-friendly preset. For toddlers, the driver-guide can build in extra rest breaks at no penalty to your itinerary."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "vehicle"
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-29",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v17_batch7"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch7_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 7 deep enhancement — private charter pair (Jeju + Seoul). Both tours have 4 route options as itineraryStops (East/West/South/Custom for Jeju; Gapyeong/DMZ-Paju/Everland-Folk/Custom for Seoul). Each route option enhanced with 1,000+ char descriptions weaving verified facts about constituent POIs into a coherent route narrative. matching_profile recalibrated to verified-fact 0-1 float scores using cross-route weighted averaging. private_tour_fit, customizable_route_fit, flexibility_fit set from None to 1.0. 9 new POIs added to KB (v1.9 → v1.10): udo_island, manjanggul_lava_tube, sanbangsan_mountain, sangumburi_crater, yakcheonsa_temple, garden_of_morning_calm, petite_france, everland, korean_folk_village_yongin. DMZ POIs and Nami Island deferred to Batch 8.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale per Phase 1 standard. Both tours are private 9-10hr charters with 4 route options (East/West/South/Custom for Jeju; Gapyeong/DMZ-Paju/Everland-Folk/Custom for Seoul). Scores are weighted averages across the recommended routes, with extreme-outlier dimensions weighted toward the realistic middle (e.g. UNESCO score reflects average across routes — Route 1 maxes UNESCO, but weighted average ~0.65). Charter-format dimensions (private_tour_fit, customizable_route_fit, flexibility_fit) are set to 1.0 by definition. Walking_level and indoor_ratio are time-weighted averages across the typical day.",
+          "deltas_applied": {
+            "private_tour_fit": {
+              "old": null,
+              "new": 1,
+              "reasoning": "VERIFIED — Both tours are per-vehicle private charters by definition. Was previously None (unset)."
+            },
+            "customizable_route_fit": {
+              "old": null,
+              "new": 1,
+              "reasoning": "VERIFIED — Three recommended routes plus a fully custom option. Both tours fully customizable. Was previously None."
+            },
+            "flexibility_fit": {
+              "old": null,
+              "new": 1,
+              "reasoning": "VERIFIED — Driver-guide adapts pacing, order, lunch, optional add-ons (Udo ferry, Smart Queue). Was previously None."
+            },
+            "small_group_fit": {
+              "old": 0.2,
+              "new": 0.15,
+              "reasoning": "Verified — these are PRIVATE charters not small-group. 0.15 reflects that a 1-vehicle-of-9 booking still functions as a small private group, but the product type is private not small_group."
+            },
+            "bus_fit": {
+              "old": 0.2,
+              "new": 0.05,
+              "reasoning": "Verified — private charter = sedan/SUV/van, never bus. 0.05 reflects near-zero bus fit (only the very largest groups of 10+ would step up to a coach format)."
+            },
+            "unesco_fit": {
+              "old": 0.2,
+              "new": 0.3,
+              "reasoning": "VERIFIED — modest upward calibration. Route 3 visits Korean Folk Village (Jultagi tightrope is UNESCO ICH, but the village itself isn't UNESCO World Heritage). Custom Route can include Suwon Hwaseong (UNESCO 1997). Weighted ~0.30 — modest UNESCO content compared to a Jeju or Gyeongju trip."
+            },
+            "iconic_landmark_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "VERIFIED — Nami Island, Garden of Morning Calm, DMZ 3rd Tunnel, Everland T Express are all iconic landmarks of the Seoul-area touring circuit. 0.85 calibrated."
+            },
+            "first_time_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "VERIFIED — for a first-time Seoul visitor with kids, Route 1 (Gapyeong) or Route 3 (Everland) deliver maximum recognizable content. 0.85 calibrated up from 0.80."
+            },
+            "scenic_level": {
+              "old": 0.8,
+              "new": 0.8,
+              "reasoning": "Verified — Gapyeong nature loop is high scenic; DMZ is institutional rather than scenic; Everland is theme-park visual rather than scenic. Average ~0.80 maintained."
+            },
+            "walking_level": {
+              "old": 0.4,
+              "new": 0.55,
+              "reasoning": "VERIFIED — was significantly underestimated. Route 1: 3 km Nami walk + Morning Calm 1.5-2hr garden + Petite France slopes (~0.55). Route 2: 3rd Tunnel ramp + Paju Outlets walking (~0.50). Route 3: Everland 5-10 km hilly OR Folk Village 5-7 km flat (~0.75). Average ~0.55, materially higher than previous 0.40."
+            },
+            "indoor_ratio": {
+              "old": 0.5,
+              "new": 0.4,
+              "reasoning": "VERIFIED — weighted across routes. Route 1: low indoor (~0.20 — Petite France interiors + Morning Calm cafés). Route 2: moderate (~0.45 — 3rd Tunnel underground + Paju Outlets covered shopping). Route 3: moderate (~0.30 Everland + 0.20 Folk Village = ~0.25). Average ~0.40, lower than previous 0.50."
+            },
+            "weather_sensitivity": {
+              "old": 0.4,
+              "new": 0.5,
+              "reasoning": "VERIFIED — calibrated up from 0.40. Route 1 (Gapyeong outdoor gardens + island) has high weather sensitivity. Route 2 has indoor DMZ + Paju Outlets fallback. Route 3 Everland is outdoor theme park. Average ~0.50."
+            },
+            "shopping_fit": {
+              "old": 1,
+              "new": 0.7,
+              "reasoning": "VERIFIED — only Route 2 (Paju Outlets) has flagship shopping. Routes 1, 3 have minimal shopping. Custom Route can max if specifically requested. Weighted ~0.70, materially lower than the previous 1.0 which assumed Route 2 always selected."
+            },
+            "family_fit": {
+              "old": 1,
+              "new": 1,
+              "reasoning": "Verified — Routes 1 and 3 are best-in-class for families with kids. Route 2 less so but still doable. Maintained at 1.0."
+            },
+            "premium_fit": {
+              "old": 1,
+              "new": 1,
+              "reasoning": "Verified — private vehicle + flexible itinerary + driver-guide = top of premium scale. Maintained at 1.0."
+            },
+            "value_for_money_fit": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Verified — per-vehicle pricing is excellent value for groups of 4-9 but expensive for solo travelers. Slight markdown to 0.55."
+            },
+            "storytelling_fit": {
+              "old": 0.8,
+              "new": 0.8,
+              "reasoning": "Verified — driver-guide narrates throughout. 0.80 maintained — slightly less rich narrative than Jeju (geology) but DMZ history is a strong narrative if Route 2."
+            }
+          }
+        }
+      }
+    }
+  }
+}

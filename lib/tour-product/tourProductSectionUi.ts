@@ -80,6 +80,23 @@ export type TourProductSectionUiV1 = {
   /** Optional port-selector copy used by cruise shore-excursion products. */
   portSelectorEyebrow?: string;
   portSelectorCtaPrefix?: string;
+  /** Pickup & Drop-off dedicated section (rendered between itinerary and details). */
+  pickupDropoffTitle?: string;
+  pickupDropoffSubtitle?: string;
+  /** `{pickup}` and `{dropoff}` placeholders — e.g., "{pickup} pickup · {dropoff} drop-off" */
+  pickupMapBadgeTemplate?: string;
+  /** `{time}` placeholder */
+  pickupRouteDepartsTemplate?: string;
+  pickupTrustFooter?: string;
+  dropoffReturnHeading?: string;
+  pickupApproximateLabel?: string;
+  /** Recommendations / "You might also like" section copy. */
+  recommendationsEyebrow?: string;
+  recommendationsTitle?: string;
+  recommendationsSubtitle?: string;
+  recommendationsFromLabel?: string;
+  /** Itinerary stop card "Tickets included" badge. */
+  ticketsIncludedLabel?: string;
 };
 
 export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
@@ -100,7 +117,7 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
   stopSmartNotesHeading: "Smart notes",
   stopSmartNotesPhotoPrefix: "Photo:",
   stopSmartNotesTipPrefix: "Tip:",
-  fitTitle: "Why this tour works",
+  fitTitle: "Why this tour suits you",
   fitSubtitle: "Who this cadence suits and how the day is sequenced.",
   fitBestForLabel: "Best for",
   fitLessIdealLabel: "Less ideal for",
@@ -215,6 +232,18 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_KO: TourProductSectionUiV1 = {
   reviewsCtaTitle: "이 투어 다녀오셨나요?",
   reviewsCtaSubtitle: "다른 여행자에게 경험을 공유해 주세요.",
   reviewsWriteReview: "후기 작성",
+  pickupDropoffTitle: "픽업 · 드롭오프",
+  pickupDropoffSubtitle: "호텔 픽업 포함. 위치를 탭하면 상세 안내가 열립니다.",
+  pickupMapBadgeTemplate: "픽업 {pickup}곳 · 드롭오프 {dropoff}곳",
+  pickupRouteDepartsTemplate: "마지막 픽업 후 {time}에 출발",
+  pickupTrustFooter: "호텔 픽업 포함 · 추가 비용 없음",
+  dropoffReturnHeading: "드롭오프 가능 위치",
+  pickupApproximateLabel: "대략",
+  recommendationsEyebrow: "다음 탐색",
+  recommendationsTitle: "이런 투어도 있어요",
+  recommendationsSubtitle: "템포도, 강조점도 달라요. 각자 하루를 만듭니다.",
+  recommendationsFromLabel: "최저",
+  ticketsIncludedLabel: "입장권 포함",
 };
 
 /** 정적 번들 日本語 */
@@ -278,6 +307,18 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_JA: TourProductSectionUiV1 = {
   reviewsCtaTitle: "このツアーに参加しましたか？",
   reviewsCtaSubtitle: "体験を共有して、他の旅行者の参考にしてください。",
   reviewsWriteReview: "レビューを書く",
+  pickupDropoffTitle: "送迎・解散",
+  pickupDropoffSubtitle: "ホテル送迎込み。各地点をタップで詳細を表示。",
+  pickupMapBadgeTemplate: "ピックアップ {pickup} · 解散 {dropoff}",
+  pickupRouteDepartsTemplate: "最終ピックアップ後 {time} に出発",
+  pickupTrustFooter: "ホテル送迎込み・追加料金なし",
+  dropoffReturnHeading: "解散可能な場所",
+  pickupApproximateLabel: "目安",
+  recommendationsEyebrow: "次に見る",
+  recommendationsTitle: "こちらもおすすめ",
+  recommendationsSubtitle: "テンポも見どころも別もの。それぞれが一日になります。",
+  recommendationsFromLabel: "から",
+  ticketsIncludedLabel: "入場料込み",
 };
 
 /** 简体中文 UI */
@@ -339,6 +380,18 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH: TourProductSectionUiV1 = {
   reviewsCtaTitle: "参加过这条路线吗？",
   reviewsCtaSubtitle: "分享你的体验，帮助更多旅客做决定。",
   reviewsWriteReview: "写评价",
+  pickupDropoffTitle: "接送说明",
+  pickupDropoffSubtitle: "包含酒店接送。点击任一地点查看详情。",
+  pickupMapBadgeTemplate: "接 {pickup} 处 · 送 {dropoff} 处",
+  pickupRouteDepartsTemplate: "最后一站接客后 {time} 出发",
+  pickupTrustFooter: "包含酒店接送 · 无额外费用",
+  dropoffReturnHeading: "可送达地点",
+  pickupApproximateLabel: "大约",
+  recommendationsEyebrow: "下一站",
+  recommendationsTitle: "你可能也喜欢",
+  recommendationsSubtitle: "节奏不同，重点不同。每一条都是一天的故事。",
+  recommendationsFromLabel: "起价",
+  ticketsIncludedLabel: "含门票",
 };
 
 /** 繁體中文 UI */
@@ -400,6 +453,18 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH_TW: TourProductSectionUiV1 = {
   reviewsCtaTitle: "參加過這條路線嗎？",
   reviewsCtaSubtitle: "分享你的體驗，幫助更多旅客做決定。",
   reviewsWriteReview: "寫評價",
+  pickupDropoffTitle: "接送說明",
+  pickupDropoffSubtitle: "包含飯店接送。點擊任一地點查看詳情。",
+  pickupMapBadgeTemplate: "接 {pickup} 處 · 送 {dropoff} 處",
+  pickupRouteDepartsTemplate: "最後一站接客後 {time} 出發",
+  pickupTrustFooter: "包含飯店接送 · 無額外費用",
+  dropoffReturnHeading: "可送達地點",
+  pickupApproximateLabel: "約略",
+  recommendationsEyebrow: "下一站",
+  recommendationsTitle: "你可能也會喜歡",
+  recommendationsSubtitle: "節奏不同，重點不同。每一條都是一天的故事。",
+  recommendationsFromLabel: "起價",
+  ticketsIncludedLabel: "含門票",
 };
 
 /** UI en español */
@@ -421,7 +486,7 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ES: TourProductSectionUiV1 = {
   stopSmartNotesHeading: "Consejos",
   stopSmartNotesPhotoPrefix: "Foto:",
   stopSmartNotesTipPrefix: "Tip:",
-  fitTitle: "Por qué funciona este tour",
+  fitTitle: "Por qué este tour te encaja",
   fitSubtitle: "A quién le encaja el ritmo y cómo se ordena el día.",
   fitBestForLabel: "Ideal para",
   fitLessIdealLabel: "Menos ideal para",
@@ -463,6 +528,18 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ES: TourProductSectionUiV1 = {
   reviewsCtaTitle: "¿Hiciste este tour?",
   reviewsCtaSubtitle: "Comparte tu experiencia para ayudar a otros viajeros.",
   reviewsWriteReview: "Escribir opinión",
+  pickupDropoffTitle: "Recogida y regreso",
+  pickupDropoffSubtitle: "Recogida en hotel incluida. Toca cualquier punto para ver detalles.",
+  pickupMapBadgeTemplate: "{pickup} recogida · {dropoff} regreso",
+  pickupRouteDepartsTemplate: "La ruta sale tras la última recogida a las {time}",
+  pickupTrustFooter: "Recogida en hotel incluida · Sin coste extra",
+  dropoffReturnHeading: "Regreso disponible en",
+  pickupApproximateLabel: "Aproximado",
+  recommendationsEyebrow: "Explora más",
+  recommendationsTitle: "También te puede gustar",
+  recommendationsSubtitle: "Ritmo distinto, énfasis distinto. Cada uno es su propio día.",
+  recommendationsFromLabel: "desde",
+  ticketsIncludedLabel: "Entrada incluida",
 };
 
 function pickSectionUiKeys(raw: unknown): Partial<TourProductSectionUiV1> {

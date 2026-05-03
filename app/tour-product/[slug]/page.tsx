@@ -6,6 +6,7 @@ import {
   getStaticTourProductFullPageJson,
   isStaticTourProductBundleRegistered,
 } from "@/components/product-tour-static/_shared/tourProductBundleRegistry";
+import { listStaticTourProducts } from "@/components/product-tour-static/catalog/staticTourProductRegistry";
 import { TourProductDetailClient } from "@/components/product-tour-static/_shared/TourProductDetailClient";
 import { tourProductJsonLdScripts } from "@/lib/seo/tourProductJsonLd";
 import { createAnonServerClient } from "@/lib/supabase";
@@ -83,6 +84,14 @@ export default async function RegisteredTourProductPage({
 
   const jsonLdScripts = tourProductJsonLdScripts(viewModel, slug);
 
+  // Recommendations: pick up to 6 other tours for this locale, prioritizing same region.
+  const allCatalog = listStaticTourProducts(locale);
+  const currentRegion = allCatalog.find((p) => p.slug === slug)?.region ?? "";
+  const otherTours = allCatalog.filter((p) => p.slug !== slug);
+  const sameRegion = otherTours.filter((p) => p.region === currentRegion);
+  const otherRegions = otherTours.filter((p) => p.region !== currentRegion);
+  const recommendations = [...sameRegion, ...otherRegions].slice(0, 6);
+
   return (
     <>
       {jsonLdScripts.map((json, idx) => (
@@ -92,7 +101,12 @@ export default async function RegisteredTourProductPage({
           dangerouslySetInnerHTML={{ __html: json }}
         />
       ))}
-      <TourProductDetailClient viewModel={viewModel} checkout={checkout} tourProductSlug={slug} />
+      <TourProductDetailClient
+        viewModel={viewModel}
+        checkout={checkout}
+        tourProductSlug={slug}
+        recommendations={recommendations}
+      />
     </>
   );
 }

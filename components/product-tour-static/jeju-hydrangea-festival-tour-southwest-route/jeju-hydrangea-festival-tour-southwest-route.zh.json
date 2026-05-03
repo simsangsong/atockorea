@@ -1,0 +1,2238 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "jeju-hydrangea-festival-tour-southwest-route",
+  "locale": "zh-CN",
+  "product_id": "jeju-hydrangea-festival-tour-southwest-route",
+  "seo": {
+    "pageTitle": "Jeju Southwest Hydrangea Festival Day Tour | AtoC Korea",
+    "metaDescription": "Summer-only southwest Jeju day tour: Hyeopjae Beach, Hallim Park hydrangea festival, Jusangjeolli Cliff, Cheonjeyeon Falls, Camellia Hill, Osulloc tea fields.",
+    "ogImage": "https://images.unsplash.com/photo-1559948638-e8e07b62b9c1?w=1920&q=80",
+    "primaryKeywords": [
+      "Jeju hydrangea festival tour",
+      "Jeju summer flower tour",
+      "Camellia Hill hydrangea",
+      "Jeju southwest day tour",
+      "Hydrangea Sansumok tour"
+    ],
+    "title": "济州绣球花节小团体一日游 · 西南路线 · 夏季限定 | AtoC Korea",
+    "description": "济州西南绣球花节夏季限定一日游：协才海滩→翰林公园绣球花节→柱状节理＋天帝渊→山茶花丘绣球花隧道→오설록茶博物馆。小团体，英语导游，6至7月中旬限定。"
+  },
+  "catalog_card": {
+    "slug": "jeju-hydrangea-festival-tour-southwest-route",
+    "title": "济州西南绣球花节小团体一日游",
+    "subtitle": "Beach to columnar cliff to hydrangea tunnel.",
+    "region": "济州西南部",
+    "duration": "9 hours",
+    "stopsCount": 6,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "仅限夏季",
+      "绣球花季",
+      "济州西南部"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1559948638-e8e07b62b9c1?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1559948638-e8e07b62b9c1?w=600&q=80",
+    "priceLabel": "Price varies — confirm at booking",
+    "shortCardDescription": "Summer-only southwest Jeju route — emerald beach, hydrangea festival gardens, UNESCO columnar cliff, three-tier waterfall, hydrangea tunnel, and tea fields.",
+    "tags": [
+      "summer_only",
+      "hydrangea_season",
+      "southwest_jeju"
+    ]
+  },
+  "headlineLine1": "绣球花、柱状熔岩崖与翠绿茶园",
+  "headlineLine2": "一日尽览济州西南夏日精华",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "person"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1559948638-e8e07b62b9c1?w=1920&q=80",
+    "imagePosition": "center 35%",
+    "tagline": "从海滩到熔岩崖再到绣球花隧道——西南济州独有的夏日三重奏",
+    "pills": [
+      "仅限夏季",
+      "绣球花季",
+      "Southwest Jeju"
+    ],
+    "meta": {
+      "duration": "9 hours",
+      "region": "济州西南部",
+      "stops": "6 个景点",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "行程总览"
+    },
+    {
+      "id": "itinerary",
+      "label": "详细行程"
+    },
+    {
+      "id": "practical",
+      "label": "实用资讯"
+    },
+    {
+      "id": "reviews",
+      "label": "旅客评价"
+    },
+    {
+      "id": "booking",
+      "label": "立即预约"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "拍照潜力",
+      "value": "高",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "景点密度",
+      "value": "高",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "步行强度",
+      "value": "中等",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "雨天适合度",
+      "value": "较低",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "亲子适合度",
+      "value": "良好",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "行程节奏",
+      "value": "聚焦型",
+      "level": 3
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1559948638-e8e07b62b9c1?w=1200&q=80",
+      "alt": "翰林公园绣球花节",
+      "caption": "翰林公园六月绣球花节——西南济州最大规模的绣球花展",
+      "location": "翰林公园，济州",
+      "atmosphere": "Hydrangea festival in full bloom"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=1200&q=80",
+      "alt": "山茶花丘绣球花隧道",
+      "caption": "山茶花丘绣球花廊道——巨大蓝紫色绣球球悬挂于遮顶步道上方",
+      "location": "山茶花丘，安德，济州",
+      "atmosphere": "Hydrangea tunnel walk"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
+      "alt": "大浦柱状节理海崖",
+      "caption": "大浦柱状节理——高达30至40公尺的六边形玄武岩柱与浪花奇景",
+      "location": "大浦，中文，济州",
+      "atmosphere": "Emerald water and white sand"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200&q=80",
+      "alt": "协才海滩晨光全景",
+      "caption": "协才海滩晨光——碧蓝海水、银白沙滩、飞扬岛地平线剪影",
+      "location": "协才，翰林，济州",
+      "atmosphere": "Columnar basalt formation"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1200&q=80",
+      "alt": "오설록西光茶苑茶行全景",
+      "caption": "오설록西光茶苑——韩国最大绿茶产地，翠绿茶行延伸至天际",
+      "location": "오설록，安德，济州",
+      "atmosphere": "Three-tier waterfall"
+    },
+    {
+      "id": "g6",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80",
+      "alt": "Osulloc green tea fields",
+      "caption": "Osulloc green tea fields",
+      "location": "Osulloc Tea Museum",
+      "atmosphere": "Endless green tea fields"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "09:30",
+      "duration": "40 min",
+      "name": "协才海滩",
+      "category": "West-coast emerald beach + Biyangdo Island view",
+      "description": "**协才海滩（협재 해수욕장）**是济州**西海岸前三名海滩**，在全岛整体排名中亦列入**前十**，以**银白色沙滩**著称——沙粒由**贝壳碎屑＋珊瑚碎片与细沙混合**而成，呈现半岛罕见的莹光白泽。与南侧双子海滩**今日浦海滩（步行可达、游客较少）**相连，形成**9公里长的海岸线**，构成本路线最具代表性的拍摄组合。标志性远景是**飞扬岛（비양도）**——**距岸1.2公里的火山岛，约200名常驻居民**，可从翰林港搭乘**20分钟渡轮**前往。飞扬岛正进行**韩国首座零碳岛屿认证**，是环境政策的展示案例。海滩的**蓝绿色海水**源自浅层珊瑚沙海底，**退潮时潮间带可见寄居蟹、小虾与幼鱼**——视觉上飞扬岛仿佛伸手可及。沙丘后方的**松林（솔림）**提供免费露营地及荫凉步道。咖啡馆一条街集中分布于松林后方，是西海岸最成熟的休闲带。**飞扬岛后方落日倒映碧海**是全日最具代表性的西海岸夕照构图。**免费入场**；**7月1日至8月31日设有救生员监管游泳区**；多处设有**无障碍坡道**；全年均有公厕、更衣室、淋浴设备及器材租借服务。",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      "highlights": [
+        "**济州西海岸前三名 / 全岛前十**——碧蓝海水＋银白沙滩",
+        "**银白色沙滩**——贝壳碎屑＋珊瑚碎片构成，莹光独特",
+        "**9公里海岸线**，与双子海滩**今日浦海滩**相连（游客较少，步行可达）",
+        "**飞扬岛**——距岸1.2公里，约200名居民，**韩国首座零碳岛屿认证**进行中",
+        "**飞扬岛落日剪影**——全日西海岸最佳夕照拍摄构图",
+        "**松林（솔림）背景**，免费露营地与荫凉步道",
+        "**退潮时潮间带**——寄居蟹、小虾、幼鱼；飞扬岛「好像踏水可达」的视觉效果",
+        "**7月1日至8月31日设有救生员**；多处无障碍坡道",
+        "**西海岸最成熟的咖啡馆一条街**，位于沙丘后方"
+      ],
+      "timeUsed": [
+        "Coach arrival + parking — ~5 min",
+        "Main beach walk + photo windows — ~20 min",
+        "Geumneung twin-beach extension (optional) — ~15 min",
+        "Cafe strip break + snacks — ~15 min",
+        "Sunset photography vantage point — ~5 min"
+      ],
+      "whyOnRoute": "**西海岸晨间开场白——翰林公园的天然前奏站。** 协才作为09:30晨间首站有三个西南路线理由。（1）**与翰林公园的地理配对**：协才海滩距翰林公园正门**步行仅5分钟**——将两者串为早晨双景是在地操作的标准做法，把「两个相距不足1公里的景点」转化为协才→翰林的完整晨间弧线。先访协才可确保在10:30翰林公园团体巴士涌入前，享有**清净、无人拥挤的晨间海滩**。（2）**光线时机**：协才标志性的蓝绿海水＋银白贝壳沙的色彩对比，在**09:30至10:30晨光窗口**最为上镜——阳光高度足以使色彩饱和，而近午的海岸雾气尚未形成。（3）**飞扬岛地平线构图是全日广景照的锁定点**：飞扬岛（距岸1.2公里）是全日唯一的**海平线岛屿剪影**——后续景点均为内陆或海岸峭壁，因此在晨间第一站就锁定飞扬岛广角构图，赋予全日相集所需的大地景深，才能在后续花园＋柱状崖＋茶园的近景系列间形成对照。",
+      "_poi_meta": {
+        "poi_key": "hyeopjae_beach",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitJeju — Hyeopjae Beach + Biyangdo Island official listings",
+          "Jeju Special Self-Governing Province — Top Jeju beaches ranking + amenity registry",
+          "Korea Maritime + Ports Office — Hallim Port ferry schedule to Biyangdo",
+          "Jeju Tourism Organization — west-coast sunset photography spots registry",
+          "Hallim-eup local cultural office — Geumneung twin-beach pairing documentation"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "10:30",
+      "duration": "120 min",
+      "name": "翰林公园（绣球花节）",
+      "category": "Hydrangea anchor + 9 themed gardens + 2 lava-tube caves",
+      "description": "**翰林公园（한림공원，创立1971年）**是西南海岸的核心植物园——占地**约99,000平方公尺（原100,000坪 / 330,580平方公尺）**，创办人**宋奉圭**将一片沙地荒原历时半世纪引土种棕，**打造成一片绿色乐园**。公园每年吸引**约120万游客**，设有**九大主题园区**：**亚热带植物园**、**棕榈大道**、**野花草坪**、**挟才굴＋双龙굴熔岩洞**、**济州石头＆盆栽园**、**在岩民俗村**（朝鲜时代石砌韩屋，附设石爷爷餐厅）、**鸟园**、**济州石头展览厅**及**水庭园**。翰林公园的核心特色是其**月度节庆日历**——一月水仙花→二月梅花→三月郁金香→四月樱花→五月野花／九重葛→**六月绣球花**→七至九月莲花＋睡莲→十月波斯菊／粉黛乱子草→十一月菊花→十二月山茶花——全年十二个月均有**固定主题节庆**。两处地质地标**挟才굴（约200公尺×10公尺×5公尺，约2500万年历史）**与**双龙굴（约400公尺×6公尺×3公尺，「双龙」）**同属**17公里熔岩管系统**，但因洞壁被土壤中的**贝壳石灰质（碳酸钙）渗透后覆盖**，形成**熔岩管形态＋石灰岩钟乳石/石笋**同存於单一洞穴系统的全球罕见组合，故被称为**「二次元洞穴」**。洞内全年温度维持在**17至18°C**，是天然的夏日避暑胜地。公园曾接待的贵宾名单印证其外交地位：前中国国家主席江泽民、前日本首相中曾根康弘、前韩国总统金大中、前三星会长李健熙及前现代集团会长郑周永均曾到访。",
+      "image": "https://images.unsplash.com/photo-1599598425947-5219dc1d4e93",
+      "highlights": [
+        "**创立1971年**，宋奉圭将沙地荒原打造成绿色乐园",
+        "**约99,000平方公尺 / 80英亩**——9大主题园区，年访客约120万人",
+        "**六月绣球花节**——公园的六月核心节庆",
+        "**月度节庆日历**——全年每月均有固定主题节庆",
+        "**挟才굴**（约200公尺×10公尺×5公尺，约2500万年历史）——熔岩管＋石灰岩钟乳石",
+        "**双龙굴**（「双龙」，约400公尺×6公尺×3公尺）——分叉路径洞穴系统",
+        "**「二次元洞穴」**——全球唯一熔岩管＋石灰岩洞穴组合（17公里管系）",
+        "洞内全年**17至18°C**——天然夏日避暑地",
+        "外交贵宾名单：**江泽民、中曾根康弘、金大中、李健熙、郑周永**均曾到访"
+      ],
+      "timeUsed": [
+        "Park entry + ticket + welcome — 10 min",
+        "Subtropical / Palm / Wild Flower gardens — 30 min",
+        "**Hyeopjaegul + Ssangyonggul caves** (cool down + photos) — 35 min",
+        "Hydrangea garden + Jae-Am Folk Village — 35 min",
+        "Restroom + park exit — 10 min"
+      ],
+      "whyOnRoute": "**全日绣球花核心锚点——西南路线的灵魂景点。** 翰林作为10:30晚晨主站、停留120分钟，有四个理由。（1）**绣球花节季节对齐**：六月是翰林公园月度节庆日历的**绣球花节**月份——翰林是全日三处绣球花主题地点的第一站（翰林晨间主站→山茶花丘下午绣球花隧道→오설록茶园下午绿色调尾声）。（2）**熔岩洞作为天气备案**：**挟才굴＋双龙굴配对**为全日提供了在西南济州六月多变天气下的**室内等效避难所**（六月是韩国梅雨前的过渡期，午后雷阵雨频率约四分之一天）。17至18°C的洞内温度亦是全日**上午中段降温**环节。（3）**120分钟停留时间的必要性**：翰林9大主题园区＋2座洞穴无法在90分钟以下完整体验——120分钟计入**洞穴慢行时间**（熔岩管地面不平整）、**绣球花田拍照驻留**及**旺季洞穴入口约5分钟排队**。（4）**与协才的操作配对**：协才距翰林步行5分钟，整个晨间协才→翰林弧线耗时160分钟但行车仅5分钟——以最低油耗预算为旅客萃取最高早晨价值。",
+      "_poi_meta": {
+        "poi_key": "hallim_park",
+        "kb_version": "1.21",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=104761 — Hallim Park, Visit Korea (KTO)",
+          "http://jejucvb.com/Hallim — Jeju CVB official Unique Venue page (founder Song Bong-gyu + diplomatic guest list)",
+          "https://www.tripadvisor.com/Attraction_Review-g297885-d2204895-Reviews-Hallim_Park-Jeju_Jeju_Island.html — Tripadvisor Hallim Park (annual visitors + 9 themed gardens + monthly festival calendar)",
+          "https://www.trazy.com/experience/detail/hallim-park-jeju-ticket — Trazy Hallim Park ticket page (cave system + 'two-dimensional caves' classification + Natural Monument designation)",
+          "https://www.expatolife.com/hallim-park-jeju-island-south-korea/ — Expatolife Hallim Park guide (cave dimensions + 17 km lava-tube system)"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "12:35",
+      "duration": "60 min",
+      "name": "午餐（西南济州）",
+      "category": "Operational stop — local southwest-Jeju lunch",
+      "description": "**午餐安排在翰林 / 爱月 / 安德走廊的在地济州风味餐厅**，从业者精选的家庭式小店名单中依当日情况挑选，均通过**英语友善菜单、饮食需求配合（素食＋清真友善鸡肉／海鲜选项，需提前告知）及在地西海岸济州特色**的审核。典型午餐选项包括：**带鱼红烧（갈치조림）**、**济州黑猪肉韩式烧烤（흑돼지 불고기）**、**妈妈汤（몸국，济州海藻猪肉汤）**及**季节野菜拌饭**。**妈妈汤特别是西南济州的地域特色菜**，东海岸路线不提供此选项。如同东部路线的午餐安排，确切餐厅将于前一天依团体人数、饮食需求及厨房供应情况决定，并于当天早晨说明时通知旅客。**午餐费用由旅客自行承担**（约₩12,000至₩18,000 / 人），**不含**于行程费用中。饮料及白饭 / 小菜补充均随餐附上。",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "highlights": [
+        "**西南济州在地餐厅**——翰林 / 爱月 / 安德走廊",
+        "精选名单：**英语友善菜单**＋饮食需求配合",
+        "招牌选项：**带鱼红烧、黑猪肉烧烤、妈妈汤（地域特色）、拌饭**",
+        "**妈妈汤**＝西济州地域特色（海藻猪肉汤），东部路线无此菜",
+        "**午餐自费**（约₩12,000至₩18,000 / 人，不含于行程费用）",
+        "素食＋清真友善选项，需提前告知"
+      ],
+      "timeUsed": [
+        "Arrival + seating — 5 min",
+        "Order + dietary check — 5 min",
+        "Meal — 35 min",
+        "Settle bill + restroom — 10 min",
+        "Boarding + departure — 5 min"
+      ],
+      "whyOnRoute": "**中午必要停留**，锁定12:35以衔接早晨协才＋翰林主站（翰林120分钟延伸至早午餐时段）及下午柱状崖／天帝渊＋山茶花丘弧线。60分钟窗口同时作为**缓冲吸收器**——若旺季周末翰林洞穴排队超时，午餐窗口可压缩至50分钟，而不影响13:50柱状崖的行程目标。",
+      "_poi_meta": {
+        "poi_key": "OPS_lunch",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": []
+      }
+    },
+    {
+      "number": 4,
+      "time": "13:50",
+      "duration": "75 min",
+      "name": "柱状熔岩崖＋天帝渊瀑布",
+      "category": "Compound stop — Natural Monument 443 columnar joints + Natural Monument 378 three-tier waterfall",
+      "description": "**本站为复合停留**，将中文旅游圈耳熟能详的两处济州天然纪念物整合成一段约75分钟的步行弧线——距离仅**7分钟车程（约3公里）**。A景点为**大浦柱状节理（대포 주상절리，「大浦柱状节理带」）**——2005年1月6日指定为**天然纪念物第443号**（最晚近的济州海岸天然纪念物），为一段**1.75公里多边形黑色玄武岩柱状海崖**，形成于**约14至25万年前汉拏山喷发的岩浆急速冷却于太平洋海水**时，玄武岩收缩破裂成**高达30至40公尺的六边形和五边形岩柱**。本地是**济州火山岛与熔岩管UNESCO全球地质公园（2010年）**的组成部分。南向浪涌巅峰期浪高可达**20公尺以上**，拍打岩柱底部，构成济州玄武崖的标志性海景。B景点为**天帝渊瀑布（천제연，「天帝之渊」）**——1993年指定为**天然纪念物第378号**，以三层瀑布＋亚热带暖温带过渡林的罕见生态组合著称。名称源自**朝鲜时代道教传说：七名天女（선녀）夜夜降临在上池沐浴**。现场标志性视觉是**仙女桥（선임교，「七仙女桥」）**——128公尺弧形步道桥，桥栏雕有七尊仙女像正对上层瀑布。**运营商配对逻辑**：两景同以75分钟单站方式处理，既维持全日翰林→山茶花丘→오설록的花卉节奏，又避免因两次独立转场而分散时间，而**柱状崖地质景观＋天帝渊瀑布峡谷的视觉层次**也赋予西南路线在三个花园主站外所需的**非花卉对照视角**。",
+      "image": "https://images.unsplash.com/photo-1606112219348-204d7d8b94ee",
+      "highlights": [
+        "**复合停留**——2处天然纪念物整合成一段75分钟步行（相距3公里 / 7分钟车程）",
+        "**大浦柱状节理——天然纪念物第443号（2005年）**——最晚近的济州海岸天然纪念物",
+        "**1.75公里海崖**，六边形／五边形黑色玄武岩柱高达30至40公尺",
+        "**济州UNESCO全球地质公园（2010年）**组成部分，形成于约14至25万年前",
+        "**南向浪涌浪高可达20公尺以上**，拍打岩柱底部",
+        "**天帝渊瀑布——天然纪念物第378号（1993年）**——三层瀑布＋过渡林",
+        "**七仙女（선녀）朝鲜时代道教传说**——天女夜夜降临沐浴",
+        "**仙女桥（선임교）**——128公尺弧形步道桥，七尊仙女像俯视上层瀑布",
+        "**花卉对照视角**——全日唯一的非花园地质＋瀑布停留"
+      ],
+      "timeUsed": [
+        "Arrive Jusangjeolli + entry — 5 min",
+        "Jusangjeolli cliff observation deck + photos — 25 min",
+        "Drive to Cheonjeyeon (~7 min) + restroom — 12 min",
+        "Cheonjeyeon Seonimgyo Bridge + upper-pond viewpoint — 25 min",
+        "Cheonjeyeon exit + boarding — 8 min"
+      ],
+      "whyOnRoute": "**全日三个花园弧线的地质＋瀑布对照章节。** 本复合停留安排在13:50有三个西南路线理由。（1）**地理必然**：柱状节理＋天帝渊均在**中文旅游常见的「中门观光地带」（相距约3公里）**——要么两者都纳入，要么都略过。纳入的必要性在于，两者是全日路线上**唯一的天然纪念物**，提供全日所需的UNESCO地质公园锚点。（2）**节奏平衡**：没有此站，西南路线将沦为纯花园序列（翰林绣球花→山茶花丘绣球花→오설록茶园），在第二站后丧失视觉多样性。柱状崖海景＋三层瀑布峡谷赋予下午所需的视觉调色盘广度，使全日成为真正的「济州西南完整一日」而非单纯的赏花行程。（3）**复合效率**：两景合为75分钟停留，比各自安排60分钟共节省**45分钟以上**——这盈余正是支撑翰林120分钟主站停留＋山茶花丘下午充裕拍照时间的关键。",
+      "_poi_meta": {
+        "poi_key": "daepo_jusangjeolli_cliff",
+        "secondary_poi_keys": [
+          "cheonjeyeon_falls"
+        ],
+        "kb_version": "1.21",
+        "verified_date": "2026-04-29",
+        "is_compound_stop": true,
+        "compound_stop_note": "Paired stop — Jusangjeolli + Cheonjeyeon visited within a single 75-min transit-shared window. Primary KB anchor `daepo_jusangjeolli_cliff` (facts in poi_knowledge_base_v1.21.json), secondary `cheonjeyeon_falls`.",
+        "sources": [
+          "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=78866 — Jusangjeolli Cliff, Visit Korea (KTO)",
+          "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=78918 — Cheonjeyeon Falls, Visit Korea (KTO)",
+          "https://en.wikipedia.org/wiki/Jeju_Volcanic_Island_and_Lava_Tubes — UNESCO Global Geopark (2010) overview",
+          "https://heritage.unesco.or.kr/jeju-volcanic-island-and-lava-tubes/ — Korea National Heritage Service Jeju Volcanic listing",
+          "https://www.peek.com/seogwipo-si-jeju-do-south-korea/r0an9mv/jeju-island-hydrangeas-a-floral-paradise/a067e9nx — Peek 'Jeju Island Hydrangeas' tour itinerary documenting the compound-stop pattern"
+        ]
+      }
+    },
+    {
+      "number": 5,
+      "time": "15:15",
+      "duration": "75 min",
+      "name": "山茶花丘（绣球花隧道）",
+      "category": "Hydrangea tunnel + 172,000 m² largest camellia arboretum in the East",
+      "description": "**山茶花丘（카멜리아힐，济州山茶花植物园）**是安德地区一座**172,000平方公尺的植物园**，以树种数量及占地面积计，是**东方最大的山茶花植物园**：由创办人杨钟门历时**逾30年**精心搜集的**代表80个国家的6,000棵山茶花树，涵盖500多个品种**。园区的核心特色是其**四季花历**，刻意设计成无论哪个季节到访均呈现不同色彩调盘：**十一月至三月为山茶花盛期**（红、粉、白、奶油多个品种——园区命名季节）；**三月至五月为樱花＋郁金香＋末期山茶花**，色彩叠加浓郁；**六月至八月为绣球花**（户外展区及温室全年展示）；**九月至十月为秋叶＋晚季花卉**。步道穿越各主题区段——**欧式庭园、韩国原生林区、樱花步道、绣球花田**——连接成一条约2.5公里的蜿蜒环形路，以悠闲步速需时约60至75分钟。入口处设有**玻璃温室＋艺廊＋咖啡馆**复合建筑，既是雨天的室内避风所（全程唯一约15%的室内部分），也是俯瞰庭园的茶饮休憩空间。**韩剧拍摄地**：实境节目**《换乘恋爱3》（환승연애）**曾在山茶花丘拍摄朱元与宥汀的难忘约会场景——对韩国实境节目粉丝具有额外吸引力。**全年365天开放**；由于**室外无照明**，园区在日落后关闭（冬季约17:00、夏季约19:00）。门票：**成人₩12,000 / 青少年＋长者₩10,000 / 儿童（4至11岁）₩9,000 / 3岁以下免费**。",
+      "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+      "highlights": [
+        "**172,000平方公尺**——东方最大山茶花植物园",
+        "**6,000棵山茶花 / 500多个品种，来自80个国家**——历时逾30年搜集",
+        "**四季花历**——十一至三月山茶花、三至五月樱花＋郁金香、六至八月绣球花",
+        "**主题区段**：欧式庭园、韩国原生林、樱花步道、绣球花田",
+        "**玻璃温室＋艺廊＋咖啡馆**复合建筑——室内避风所（全程15%室内空间）",
+        "**《换乘恋爱3》**拍摄地——朱元与宥汀约会场景",
+        "**全年365天开放**，日落后关闭（无室外照明）",
+        "门票**成人₩12,000 / 青少年＋长者₩10,000 / 儿童（4至11岁）₩9,000 / 3岁以下免费**",
+        "**约85%为户外庭园步行**——建议穿著舒适步行鞋"
+      ],
+      "timeUsed": [
+        "Parking + entrance + welcome — ~10 min",
+        "Camellia + featured-bloom section walk — ~25 min",
+        "European Garden + Hydrangea Field — ~20 min",
+        "Greenhouse + cafe break (optional) — ~15 min",
+        "Buffer / restroom — ~5 min"
+      ],
+      "whyOnRoute": "**下午绣球花隧道主锚点——全日最具代表性的拍照核心。** 山茶花丘作为15:15下午第二主站有三个西南路线理由。（1）**绣球花隧道——韩国最早开花的绣球花**：山茶花丘拥有**韩国最早开花的绣球花（四月初室内开放，六月起室外全面盛开）**，其**绣球花廊道**（pergola tunnel，巨大蓝／粉／紫色绣球球悬挂于遮顶步道上方）是全日最具标志性的打卡拍摄点。6月10至25日的高峰窗口与本行程的季节定位完全吻合。（2）**与翰林的花园节奏互补**：山茶花丘**1.2公里步道**比翰林9大主题园区的高密度更为轻松，是整日**沉浸式低强度花园**——在早晨高密度的翰林主站后，提供舒缓的下午体验。两座花园共同构建**花园节奏弧线**（密集翰林→舒缓山茶花丘），若颠倒顺序则失去此效果。（3）**午后光线**：15:15至16:30的窗口恰好捕捉**温暖的午后金光**，最能烘托绣球花的粉红与蓝紫色系（正午平光使其失去饱和度，逻辑与东部路线的休爱里相同）。山茶花丘的标志性摄影师镜面装置在此时段亦能捕捉金色倒影。",
+      "_poi_meta": {
+        "poi_key": "camellia_hill",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Camellia Hill official site (camelliahill.co.kr)",
+          "VisitJeju — Camellia Hill official listing",
+          "Andeok-myeon cultural tourism office",
+          "Korea Tourism Organization — Top Korean botanical gardens registry",
+          "Kakao TV / Wavve programming archive — 'EXchange / Transit Love 3' filming locations"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "16:45",
+      "duration": "60 min",
+      "name": "오설록茶博物馆＆茶园",
+      "category": "Amorepacific tea-culture flagship + green-tea fields finale",
+      "description": "**오설록茶博物馆（오설록 티 뮤지엄，「오설록」意为「雪与绿相遇」）**是**爱茉莉太平洋集团**——韩国最大美妆企业——旗下的茶文化旗舰地。创办人**徐成焕于1979年亲自开拓此计划**，在传统观念认为济州不宜商业种茶之时，于济州西光高原的火山灰农地上开垦茶园。如今**西光茶苑（서광다원）**已是**韩国最大的绿茶产地**，爱茉莉太平洋三处济州茶庄年产量合计**约700吨**。博物馆建筑**于2001年**在茶园中心落成，以极简绿顶亭阁立于茶行间的设计荣获**designboom全球十大艺术博物馆**评选。**免费入场**，每日**09:00至18:00**，年访客约**200万人次**。参观自然分为三段：**(1)博物馆室内**——茶叶生产工艺、从唐代（618至907年）起的古董茶器收藏、及俯瞰茶园的屋顶观景台；**(2)茶馆咖啡厅**——招牌**녹차롤케이크（绿茶卷蛋糕）**及**녹차아이스크림（绿茶冰淇淋）**，以当季采收的茶叶制成；**(3)茶园步道**——茶丛间的砾石小径，西侧边缘是日落摄影的热门取景地。**innisfree济州之家**（爱茉莉太平洋旗下天然护肤品牌）步行**5分钟**可达，免费入场，设有橘子香皂DIY工坊（₩15,000，选做）。博物馆建筑由韩国建筑师**Mass Studies（赵敏硕）**设计，刻意采用低矮水平形态，呼应茶行几何而非与农业景观竞争，此种建筑谦逊姿态使其同时获得designboom十大评选及韩国当代博物馆设计案例引用。选做加购：**오설록茶道课（₩30,000 / 人，60分钟，需提前预订）**——在韩国陶器上进行品茶飞行＋泡茶技法示范，每日**10:00至16:00**开放，周三及周六场次提供英语教学。",
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085",
+      "highlights": [
+        "**爱茉莉太平洋**旗舰——韩国最大美妆企业；创办人徐成焕于**1979年**开拓济州茶园",
+        "**西光茶苑＝韩国最大绿茶产地**；年产量约700吨",
+        "博物馆**2001年**开幕——designboom全球十大艺术博物馆（建筑设计）",
+        "**免费入场**，每日**09:00至18:00**，年访客约200万人次",
+        "古董茶器收藏涵盖**唐代（618至907年）**至现代朝鲜陶瓷",
+        "**녹차롤케이크（绿茶卷蛋糕）**＋**녹차아이스크림（绿茶冰淇淋）**——招牌咖啡厅品项",
+        "**innisfree济州之家**，步行5分钟——免费入场，橘子香皂DIY₩15,000",
+        "茶园步道**最佳摄影时段为金色时光（16:00至17:00）**",
+        "屋顶观景台＋地面茶行提供两种不同高度的茶行构图"
+      ],
+      "timeUsed": [
+        "Parking + entrance — ~5 min",
+        "Museum interior + tea-ware collection — ~20 min",
+        "Tea House cafe (rolling cake + ice cream) — ~20 min",
+        "Plantation walking path — ~20 min",
+        "Optional Innisfree Jeju House visit — ~10 min"
+      ],
+      "whyOnRoute": "**全日茶文化收尾——西南路线独有的非花卉终章。** 오설록作为16:45的全日最终站有三个理由。（1）**茶色作为全日绣球花调盘的对照色**：历经4个花园／崖景停留后，오설록的**翠绿茶行＋innisfree济州之家白色玻璃建筑**为全日相集的最终色调提供收尾——饱满的绿色与晨间绣球花的蓝紫色系形成对比。（2）**室内终章＋厕所缓冲**：오설록的茶博物馆＋咖啡厅提供全日**唯一的午后室内停留**——旅客可利用博物馆的品茶＋冰淇淋＋厕所设施，在**约40分钟的西向返回济州市车程**前放松。60分钟停留时间恰好允许购茶＋冰淇淋＋一圈快速茶园步行。（3）**品牌文化锚点**：오설록作为**爱茉莉太平洋茶业旗舰（1979年创办人徐成焕开拓）**，将全日行程收束于韩国全球知名品牌之一——这个蓄意的品牌文化终章，使本路线区别于普通「花园观光行程」，赋予全日清晰的文化与经济终章叙事。",
+      "_poi_meta": {
+        "poi_key": "osulloc_tea_museum",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Amorepacific corporate history (amorepacific.com)",
+          "O'sulloc Tea Museum official site (osulloc.com)",
+          "designboom Top 10 art museums archival listing",
+          "Korea Tea Industry Association — production statistics",
+          "VisitJeju — Osulloc Tea Museum"
+        ]
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Hyeopjae",
+      "type": "origin",
+      "theme": "Beach"
+    },
+    {
+      "name": "Hallim Park",
+      "type": "primary",
+      "theme": "Hydrangea"
+    },
+    {
+      "name": "Lunch",
+      "type": "meal",
+      "theme": "Meal"
+    },
+    {
+      "name": "Jusangjeolli + Cheonjeyeon",
+      "type": "primary",
+      "theme": "Geology + Falls"
+    },
+    {
+      "name": "Camellia Hill",
+      "type": "primary",
+      "theme": "Hydrangea Tunnel"
+    },
+    {
+      "name": "Osulloc",
+      "type": "return",
+      "theme": "Tea Culture"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "海岸晨光（第1–2站）",
+      "duration": "Stops 1–2",
+      "description": "Morning: Beach + Hydrangea festival"
+    },
+    {
+      "phase": "午餐（第3站）",
+      "duration": "Stops 3",
+      "description": "Midday: Lunch"
+    },
+    {
+      "phase": "地质·花隧道·茶园（第4–6站）",
+      "duration": "Stops 4–6",
+      "description": "Afternoon: Geology, hydrangea tunnel, tea"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "行程动线总览",
+    "subtitle": "Beach warm-up, hydrangea festival, lunch reset, then UNESCO geology, hydrangea tunnel, and tea fields. 08:30 to 17:30."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "绣球花季期间造访济州的旅客",
+      "花卉摄影爱好者",
+      "情侣与成人家庭",
+      "希望在一日内涵盖西南济州自然＋文化精华的旅客",
+      "寻求多元景观（海滩→地质→花园→茶文化）的旅客"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "路线设计逻辑",
+        "icon": "sun",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "一日涵盖两个绣球花节景点",
+            "detail": "济州的绣球花节景点分散各地，单靠公共交通安排非常费时。本路线将翰林公园（上午）与山茶花丘（下午）整合为一日，兼顾开放式花园节庆与隧道廊道两种截然不同的拍摄构图。"
+          },
+          {
+            "label": "花卉景点之间穿插地质奇景",
+            "detail": "柱状节理＋天帝渊瀑布的复合停留打破全日的纯花园序列，赋予行程视觉广度。巨大的六边形玄武岩柱＋三层瀑布峡谷，使西南路线成为花卉＋地质的完整组合，而非单纯的花园观光行程。"
+          },
+          {
+            "label": "오설록收尾赋予全日文化深度",
+            "detail": "以韩国最大绿茶产地作为全日文化终章，使本路线超越普通赏花行程，增添济州在地品牌文化故事——茶色的翠绿也与全日绣球花的蓝紫色系形成鲜明色彩对比。"
+          }
+        ]
+      },
+      {
+        "title": "Why this is summer-only",
+        "icon": "flower",
+        "iconBg": "bg-pink-50/80",
+        "iconColor": "text-pink-600",
+        "items": [
+          {
+            "label": "Hydrangea Window Late May - mid-July",
+            "detail": "Hydrangea blooms appear from late May, peak mid-June, and fade by mid-July. Outside this window the bloom stops lose their visual draw."
+          },
+          {
+            "label": "Outside Window, Pick SW-Small",
+            "detail": "If your dates fall outside hydrangea season, our West & South year-round route covers the same region with year-round POIs (Hallasan, Osulloc, Aewol)."
+          },
+          {
+            "label": "Camellia Hill is Not Camellia Season",
+            "detail": "Despite the name, this tour visits Camellia Hill specifically for hydrangea — actual camellias bloom in winter."
+          }
+        ]
+      },
+      {
+        "title": "Trade-offs honestly",
+        "icon": "info",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "9 Hours Is Long",
+            "detail": "Six diverse stops in 9 hours — pace is fuller than east-small. Build energy with steady hydration."
+          },
+          {
+            "label": "Some Stops Have Admission",
+            "detail": "Hallim Park (15,000 KRW) and Camellia Hill (10,000 KRW) admissions are paid on-site, not bundled into the tour price. Budget ≈30,000 KRW per person across all admissions (Jusangjeolli 2,000 + Cheonjeyeon 2,500 round it out)."
+          },
+          {
+            "label": "Heat Can Be Real",
+            "detail": "June Jeju can hit 30°C+ at midday. Bring sun protection — most stops are outdoor."
+          }
+        ]
+      }
+    ],
+    "lessIdealFor": [
+      "六月花季以外到访的旅客",
+      "行动不便或需要轻松步行的旅客",
+      "偏好纯文化／遗产行程的旅客",
+      "需要当天航班缓冲时间的旅客"
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "接送与下车地点",
+      "preview": "济州市区饭店大厅免费接送",
+      "content": [
+        "接送窗口08:00至08:30，于您的饭店大厅等候",
+        "行程结束约17:30至18:00返回下车",
+        "济州市区饭店大厅接送免费。从西归浦、爱月或城山出发者，因额外行车距离加收₩70,000，现场直接支付给司机。"
+      ]
+    },
+    {
+      "id": "what-to-bring",
+      "title": "穿著与携带物品",
+      "preview": "防晒、舒适步行鞋、相机",
+      "content": [
+        "舒适步行鞋（全日多个花园步行段）",
+        "防晒用品——帽子、防晒乳、太阳眼镜",
+        "薄外套（巴士空调及茶馆室内可能较凉）",
+        "现金或信用卡用于午餐及门票自费部分"
+      ]
+    },
+    {
+      "id": "season",
+      "title": "绣球花季说明",
+      "preview": "六月至七月中旬",
+      "content": [
+        "行程季节：6月1日至7月15日（年度波动约±5天）",
+        "高峰窗口：6月25日至7月5日（拍照条件最佳）",
+        "每年五月初于订购页面更新当年绣球花预测花况",
+        "若您的行程日期落在季节窗口以外，建议改订全年开团的西部＆南部路线"
+      ]
+    },
+    {
+      "id": "weather-policy",
+      "title": "天候政策",
+      "preview": "小雨照常出发；大雨免费改期",
+      "content": [
+        "小雨：照常出团（绣球花在柔和细雨中更上镜）",
+        "大雨：提供免费改期（限季节窗口内）",
+        "季节窗口以外的取消按订购平台标准条款处理——详见预订确认信。"
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "费用包含项目",
+      "preview": "交通、导游，门票现场自费",
+      "content": [
+        "饭店接送（济州市区）",
+        "冷气厢型车交通",
+        "持照英语导游全程陪同",
+        "翰林公园、山茶花丘、柱状节理、天帝渊门票现场自费，不含于行程费用",
+        "午餐费用另计，旅客自费"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "label": "即时天气连动",
+      "temp": "Daytime ≈ 26–30 °C in hydrangea season (late May to mid-July, peak mid-June)",
+      "icon": "cloud-sun"
+    },
+    "tomorrow": {
+      "label": "每日更新",
+      "temp": "—",
+      "icon": "cloud"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "season": "初夏（6月1至24日）",
+      "title": "Tour operates",
+      "description": "绣球花陆续绽放，色彩渐趋饱满——翰林公园及山茶花丘均已可见花况",
+      "icon": "flower"
+    },
+    {
+      "season": "绝顶盛开（6月25日至7月5日）",
+      "title": "Peak — books out fastest",
+      "description": "所有花园绣球花达到全盛期——拍照条件最佳，蓝紫色系最为饱和",
+      "icon": "flower"
+    },
+    {
+      "season": "末期花况（7月6至15日）",
+      "title": "Tour operates",
+      "description": "绣球花仍具观赏价值，但逐渐褪色凋零。游客相对较少，可较从容拍照。",
+      "icon": "leaf"
+    },
+    {
+      "season": "非花季停办（7月16日至5月31日）",
+      "title": "Off-season",
+      "description": "绣球花季已过——建议改订全年开团的西部＆南部路线，涵盖同区域年度精华景点",
+      "icon": "info"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "当地持照业者",
+      "description": "Jeju-licensed guiding",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "持照英语导游全程陪同，熟悉济州西南路线的地形与花况规律，依现场情况灵活调整。"
+    },
+    {
+      "icon": "calendar",
+      "title": "季节弹性调整",
+      "description": "Free rescheduling within bloom window",
+      "iconBg": "bg-pink-50/80",
+      "iconColor": "text-pink-600",
+      "body": "若绣球花季延误或提前结束，提供全额退款。花况于前一晚确认，确保出发当日路线最优化。"
+    },
+    {
+      "icon": "shield",
+      "title": "天候保障政策",
+      "description": "Free reschedule on heavy rain",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "小雨照常出团。大雨提供免费改期（限季节窗口内）。无法改期者提供全额退款。"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "即时通知",
+      "title": "即时确认",
+      "detail": "Booking confirmation with itinerary summary",
+      "description": "预订即时收到确认信，含接送资讯与付款摘要。"
+    },
+    {
+      "timing": "出发前2天",
+      "title": "天候确认",
+      "detail": "We monitor forecast and reach out if rebooking is recommended",
+      "description": "导游确认花况最新预报，若有路线调整提前通知。"
+    },
+    {
+      "timing": "前一日",
+      "title": "车辆与导游资讯",
+      "detail": "Pickup time, vehicle plate, and guide name via WhatsApp",
+      "description": "发送确切接送时间、司机联络方式及当日路线说明。"
+    },
+    {
+      "timing": "当天早晨",
+      "title": "接送确认",
+      "detail": "Driver checks in 10 minutes before arrival",
+      "description": "导游于接送前以WhatsApp确认到达时间及当日花况重点。"
+    },
+    {
+      "timing": "行程途中",
+      "title": "行程中支援",
+      "detail": "Direct line to operations if anything comes up",
+      "description": "导游于各景点提供深度解说，依实际花况与天气即时调整路线。"
+    },
+    {
+      "timing": "行程结束后",
+      "title": "评价与后续追踪",
+      "detail": "Optional review and follow-up",
+      "description": "行程结束后发送问卷，欢迎提供意见回馈；如有后续问题亦可联系。"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "first-time",
+      "question": "这条路线适合初次造访济州的旅客吗？",
+      "answer": "适合——前提是您在绣球花季（五月下旬至七月中旬，高峰约六月中）期间到访。若不在此时段，我们的西部＆南部全年路线涵盖相同区域的常设景点，全年开团。"
+    },
+    {
+      "id": "season-timing",
+      "question": "绣球花季确切是哪段时间？",
+      "answer": "大约五月下旬至七月中旬（高峰约六月中），具体高峰期因年份而有约±1周的波动。我们会在每年五月初更新订购页面上的当年预测花况。"
+    },
+    {
+      "id": "rain",
+      "question": "下雨怎么办？",
+      "answer": "小雨——照常出团（绣球花在柔和细雨中其实更上镜）。大雨——提供免费于季节窗口内改期。"
+    },
+    {
+      "id": "two-hydrangea-stops",
+      "question": "为什么有两个绣球花停留点？",
+      "answer": "翰林公园是开放式节庆花园；山茶花丘是隧道廊道形式。同一种花，但构图完全不同，互补而不重复。"
+    },
+    {
+      "id": "kids",
+      "question": "这条路线适合带小孩的家庭吗？",
+      "answer": "适合，建议6岁以上。各景点步行强度最多属中等；翰林公园及山茶花丘均为家庭友善的花园环境。"
+    },
+    {
+      "id": "seniors",
+      "question": "年长旅客能否舒适地参加？",
+      "answer": "可以，各景点以轻松步行为主。天帝渊瀑布步道有部分楼梯——有需要者可选择留在柱状节理观景台等候，无需勉强。"
+    },
+    {
+      "id": "pickup-area",
+      "question": "接送地点在哪里？",
+      "answer": "济州市区饭店大厅免费接送。从西归浦、爱月或城山出发者，因额外行车距离加收₩70,000附加费，请现场直接支付给司机。"
+    },
+    {
+      "id": "lunch",
+      "question": "午餐含括在行程费用内吗？",
+      "answer": "午餐费用为旅客自行承担，预算每人约₩12,000至₩18,000。"
+    },
+    {
+      "id": "admission-fees",
+      "question": "门票含括在行程费用内吗？",
+      "answer": "门票预设不含于行程费用。每人全日门票预算约₩30,000：翰林公园₩15,000、山茶花丘₩10,000、柱状节理₩2,000、天帝渊₩2,500、오설록免费。"
+    },
+    {
+      "id": "tea-museum",
+      "question": "오설록的参观费用含括在行程内吗？",
+      "answer": "含括——博物馆入场免费。茶馆消费为选做自费项目。"
+    },
+    {
+      "id": "compare-west-south-year-round",
+      "question": "与全年开团的西部＆南部路线有何差异？",
+      "answer": "景点及季节性不同。全年西部＆南部路线全年开团，涵盖汉拏山1100道路、오설록及爱月。本路线仅限夏季，额外加入协才、翰林公园、柱状节理及天帝渊——四个全年路线未包含的景点。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "人"
+    }
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "jeju-hydrangea-festival-tour-southwest-route",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "jeju",
+    "region_type": "jeju_southwest",
+    "vehicle_type": "minicoach",
+    "duration_hours": 9.0,
+    "region_tags": [
+      "jeju_west",
+      "jeju_southwest"
+    ],
+    "theme_tags": [
+      "seasonal_flower",
+      "summer_flowers_hydrangea",
+      "garden",
+      "beach",
+      "geology",
+      "waterfall",
+      "tea_culture",
+      "iconic_landmarks",
+      "first_time_friendly",
+      "summer_only",
+      "photogenic"
+    ],
+    "poi_tags": [
+      "hyeopjae_beach",
+      "hallim_park",
+      "jusangjeolli_cliff",
+      "cheonjeyeon_falls",
+      "camellia_hill",
+      "osulloc_tea_museum"
+    ],
+    "pace_level": 0.55,
+    "walking_level": 0.55,
+    "scenic_level": 0.95,
+    "photo_level": 1.0,
+    "culture_level": 0.6,
+    "relax_level": 0.85,
+    "first_time_fit": 0.85,
+    "family_fit": 0.95,
+    "senior_fit": 0.85,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 0.85,
+    "active_traveler_fit": 0.6,
+    "adult_family_fit": 0.95,
+    "family_with_teens_fit": 0.8,
+    "young_kids_fit": 0.85,
+    "senior_active_fit": 0.8,
+    "senior_general_fit": 0.8,
+    "mobility_friendly_fit": 0.8,
+    "stroller_fit": 0.7,
+    "one_day_fit": 0.8,
+    "same_day_flight_fit": 0.2,
+    "rain_fit": 0.55,
+    "value_for_money_fit": 0.7,
+    "iconic_landmark_fit": 0.85,
+    "cafe_fit": 0.6,
+    "food_fit": 0.6,
+    "nature_fit": 0.9,
+    "beach_fit": 0.55,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.6,
+    "no_shopping_fit": 0.6,
+    "local_culture_fit": 0.6,
+    "storytelling_fit": 0.8,
+    "unesco_fit": 0.85,
+    "intangible_heritage_fit": 0.4,
+    "indoor_ratio": 0.2,
+    "weather_sensitivity": 0.85,
+    "comfort_level": 0.8,
+    "budget_fit": 0.6,
+    "premium_fit": 0.6,
+    "small_group_fit": 1.0,
+    "private_fit": 0.2,
+    "bus_fit": 1.0,
+    "price_band": "mid",
+    "pickup_base": "jeju_city",
+    "return_time_band": "17:30-18:00",
+    "duration_band": "9h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "non_hydrangea_season_dates",
+        "tight_same_day_departure"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "stroller_heavy_if_waterfall_path_focus"
+      ]
+    },
+    "walking_notes": [
+      "Six stops with mostly flat garden walking.",
+      "Cheonjeyeon waterfall path has stairs (skippable).",
+      "Sun exposure is real in midsummer — bring sun protection.",
+      "Total walking moderate; longest single walk is Hallim Park hydrangea zones."
+    ],
+    "keywords": [
+      "jeju hydrangea festival tour",
+      "jeju summer flower tour",
+      "hallim park hydrangea",
+      "camellia hill hydrangea tunnel",
+      "jeju west south day tour",
+      "jusangjeolli tour",
+      "cheonjeyeon falls tour",
+      "osulloc tea fields tour",
+      "jeju southwest small group",
+      "jeju june bloom tour"
+    ],
+    "synonym_hints": [
+      "jeju summer bloom tour",
+      "hydrangea day trip jeju",
+      "jeju west south route",
+      "june jeju flower tour",
+      "jeju southwest hydrangea route",
+      "jeju seasonal hydrangea tour"
+    ],
+    "seasonality": "summer_only_peak",
+    "pickup_base_normalized": "jeju",
+    "vehicle_type_legacy": "mini_coach",
+    "anchor_poi_keys": [
+      "camellia_hill",
+      "hyeopjae_beach",
+      "osulloc_tea_museum"
+    ],
+    "profile_format": "small_group_fixed_itinerary",
+    "private_tour_fit": 0.05,
+    "fixed_itinerary_fit": 1.0,
+    "customizable_route_fit": 0.05,
+    "flexibility_fit": 0.3,
+    "first_time_jeju_fit": 0.95,
+    "south_jeju_fit": 1.0,
+    "southwest_jeju_fit": 1.0,
+    "central_jeju_fit": 0.6,
+    "north_jeju_fit": 0.3,
+    "east_jeju_fit": 0.05,
+    "west_jeju_fit": 1.0,
+    "west_coast_corridor_fit": 1.0,
+    "southwest_signature_fit": 1.0,
+    "jungmun_anchor_fit": 1.0,
+    "hallim_anchor_fit": 1.0,
+    "unesco_focused_tour_fit": 0.5,
+    "unesco_taste_fit": 0.85,
+    "unesco_geopark_fit": 1.0,
+    "unesco_world_heritage_fit": 0.5,
+    "natural_monument_fit": 1.0,
+    "natural_monument_anchor_count": 2,
+    "compound_stop_count": 1,
+    "hydrangea_festival_anchor_count": 3,
+    "summer_flowers_hydrangea_fit": 1.0,
+    "june_peak_floral_fit": 1.0,
+    "early_summer_jeju_fit": 1.0,
+    "named_seasonal_festival_anchor_count": 2,
+    "year_round_flower_park_fit": 1.0,
+    "garden_anchor_count": 3,
+    "hydrangea_tunnel_visit": true,
+    "hydrangea_greenhouse_fallback_fit": 0.5,
+    "multi_garden_pairing_fit": 1.0,
+    "unesco_plus_floral_combo_fit": 0.7,
+    "tea_garden_finale_fit": 1.0,
+    "lava_tube_visit": true,
+    "lava_tube_anchor_count": 2,
+    "two_dimensional_caves_fit": 1.0,
+    "columnar_joint_anchor_fit": 1.0,
+    "waterfall_anchor_fit": 1.0,
+    "tuff_cone_climb_fit": 0.0,
+    "volcanic_geology_fit": 1.0,
+    "rim_view_fit": 0.0,
+    "biyangdo_island_view_fit": 1.0,
+    "stair_climb_demand": 0.2,
+    "physical_demand_level": 0.4,
+    "leisure_traveler_fit": 0.95,
+    "honeymoon_fit": 1.0,
+    "wedding_photo_fit": 1.0,
+    "teen_kids_fit": 0.95,
+    "senior_low_mobility_fit": 0.6,
+    "wheelchair_fit": 0.45,
+    "pet_friendly_fit": 0.0,
+    "instagram_traveler_fit": 1.0,
+    "photographer_fit": 1.0,
+    "cultural_traveler_fit": 0.6,
+    "botanical_enthusiast_fit": 1.0,
+    "nature_lover_fit": 1.0,
+    "tea_culture_enthusiast_fit": 1.0,
+    "english_speaking_market_fit": 1.0,
+    "mandarin_speaking_market_fit": 0.7,
+    "japanese_speaking_market_fit": 0.7,
+    "korean_speaking_market_fit": 0.05,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "china_mainland_market_fit": 0.0,
+    "southeast_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.9,
+    "latin_america_market_fit": 0.75,
+    "honeymooner_global_market_fit": 1.0,
+    "price_tier": "mid",
+    "per_pax_pricing_tier": "mid",
+    "group_size_max": 14,
+    "group_size_min": 4,
+    "lunch_included_fit": 0.0,
+    "ticket_inclusion_fit": 0.5,
+    "english_guide_included": true,
+    "hotel_pickup_included": true,
+    "rain_resilience_fit": 0.7,
+    "indoor_fallback_fit": 0.85,
+    "best_months": [
+      "June (peak hydrangea)",
+      "May (early hydrangea + Camellia Hill greenhouse)",
+      "October",
+      "April"
+    ],
+    "shoulder_months": [
+      "March",
+      "September",
+      "November"
+    ],
+    "low_season_months": [
+      "December",
+      "January",
+      "February"
+    ],
+    "snow_closure_risk": 0.0,
+    "typhoon_disruption_risk_summer": 0.25,
+    "signature_photo_count": 6,
+    "wide_landscape_fit": 1.0,
+    "macro_floral_fit": 1.0,
+    "hydrangea_tunnel_signature_photo": true,
+    "couple_portrait_fit": 1.0,
+    "instagram_anchor_count": 5,
+    "kdrama_filming_location_count": 0,
+    "differentiates_from_east_hydrangea_route": true,
+    "southwest_garden_plus_geology_combo": true,
+    "operator_brand": "AtoC Korea",
+    "operator_market_focus": "global_inbound_excl_korea_mainland_china",
+    "tour_communication_languages_supported": [
+      "en",
+      "zh-Hant",
+      "ja",
+      "id",
+      "th",
+      "vi",
+      "es"
+    ],
+    "korea_domestic_market_fit": 0.0,
+    "se_asia_market_fit": 0.95,
+    "japan_market_fit": 0.85
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "embedded_for": "atockorea_tour_marketplace",
+    "source_of_truth_note": "matching_profile fields scored against atockorea matching algorithm v2. Single fixed route; no variant overrides.",
+    "audit_summary": "Southwest-Jeju Hydrangea Festival route — 9-hr small-group minicoach loop. 5 substantive POI anchors + 1 compound-stop pairing: 1 west-coast emerald beach (Hyeopjae) + 1 120-min hydrangea festival anchor (Hallim Park, June Hydrangea Festival, 9 themed gardens + 2 lava-tube limestone caves) + 1 compound stop (Jusangjeolli columnar + Cheonjeyeon waterfall, Natural Monuments 443 + 378) + 1 hydrangea tunnel anchor (Camellia Hill — 172,000 m², Korea's earliest hydrangeas) + 1 tea-culture finale (Osulloc / Amorepacific). Designed for **June peak hydrangea window (June 10–25)** with Hallim caves + Camellia Hall + Osulloc museum as the 3-tier indoor weather-fallback stack. **Catalog-novel pattern**: Jusangjeolli+Cheonjeyeon compound stop is the first of its kind in the catalog. Cross-batch reuse: 3 of 5 substantive bodies imported verbatim (15a T2 Hyeopjae, 15a T1 Camellia Hill, 14a T2 Osulloc); Hallim Park authored fresh + compound stop authored fresh.",
+    "score_rationale": {
+      "high_scores": {
+        "southwest_jeju_fit=1.0": "All 5 substantive stops are on the southwest corridor (Hallim, Jungmun, Andeok, Seogwang)",
+        "hydrangea_festival_anchor_count=3": "Hallim June Hydrangea + Camellia Hill hydrangea tunnel + Osulloc tea-garden green tone",
+        "hydrangea_tunnel_visit=True": "Unique to this route — Camellia Hill's signature pergola tunnel",
+        "natural_monument_anchor_count=2": "Jusangjeolli (NM 443, 2005) + Cheonjeyeon (NM 378, 1993)",
+        "two_dimensional_caves_fit=1.0": "Hallim's Hyeopjaegul + Ssangyonggul are uniquely classified as the only lava-tube + limestone caves in the world",
+        "honeymoon_fit=1.0": "Camellia Hill is one of Korea's top wedding-snap photo destinations + lower-impact pacing",
+        "compound_stop_count=1": "Jusangjeolli+Cheonjeyeon compound is a catalog-novel pattern"
+      },
+      "low_scores": {
+        "stair_climb_demand=0.2": "No tuff-cone climb (Seongsan) — only Cheonjeyeon's 50-step descent + Hallim's gentle cave stairs",
+        "tuff_cone_climb_fit=0.0": "No tuff cone on this route — sister tour east route has Seongsan",
+        "winter_visitors_seeking_floral_peak": "Hydrangea peak is June; winter visitors get Camellia Hill camellia bloom but not hydrangea tunnel",
+        "private_tour_fit=0.05": "Fixed small-group itinerary preserves the operator's cave timing + lunch pairing"
+      }
+    },
+    "locale_adaptation": {
+      "current_locale": "en",
+      "ko_localization_status": "TODO"
+    },
+    "related_products": {
+      "season_pair_east_route": "jeju-hydrangea-festival-tour-east-route (existing — different POIs: Ilchul Land, Hueree Nature Park, east coast)",
+      "off_season_fallback": "jeju-west-south-full-day-authentic-tour (year-round west+south coverage)",
+      "same_season_alternative": "jeju-cherry-blossom-tour-east-route (different season — spring)",
+      "note": "Two hydrangea tours coexist with different routes (east + southwest). User preference for east vs southwest can be inferred from POI tags."
+    },
+    "anchor_pois": [
+      "Hyeopjae Beach",
+      "Hallim Park",
+      "Daepo Jusangjeolli Cliff",
+      "Cheonjeyeon Falls",
+      "Camellia Hill",
+      "O'Sulloc Tea Museum"
+    ],
+    "anchor_poi_keys": [
+      "hyeopjae_beach",
+      "hallim_park",
+      "daepo_jusangjeolli_cliff",
+      "cheonjeyeon_falls",
+      "camellia_hill",
+      "osulloc_tea_museum"
+    ],
+    "competing_products": [
+      "jeju-hydrangea-festival-tour-east-route",
+      "jeju-west-south-full-day-authentic-tour",
+      "jeju-southern-top-unesco-spots-tour",
+      "southwest-hallasan-osulloc-aewol"
+    ],
+    "primary_themes": [
+      "jeju",
+      "southwest_jeju",
+      "west_jeju",
+      "hydrangea_festival",
+      "summer_flowers",
+      "garden",
+      "botanical_garden",
+      "tea_culture",
+      "natural_monument",
+      "columnar_jointing",
+      "waterfall",
+      "lava_tube"
+    ],
+    "secondary_themes": [
+      "hyeopjae_beach",
+      "biyangdo_island",
+      "hallim_park",
+      "hyeopjaegul_cave",
+      "ssangyonggul_cave",
+      "two_dimensional_caves",
+      "daepo_jusangjeolli",
+      "cheonjeyeon_falls",
+      "seonimgyo_bridge",
+      "seven_nymph_legend",
+      "camellia_hill",
+      "hydrangea_tunnel",
+      "osulloc_tea",
+      "amorepacific",
+      "innisfree_jeju_house",
+      "compound_stop_pattern"
+    ],
+    "best_for": [
+      "first_time_jeju_visitors",
+      "couples",
+      "honeymooners",
+      "wedding_photo_seekers",
+      "instagram_travelers",
+      "photographers",
+      "botanical_enthusiasts",
+      "tea_enthusiasts",
+      "families_with_young_kids",
+      "seniors_with_moderate_mobility",
+      "june_visitors_seeking_hydrangea_tunnel",
+      "guests_wanting_garden_plus_geology_combo"
+    ],
+    "not_recommended_for": [
+      "thrill_seekers",
+      "private_tour_seekers",
+      "guests_demanding_east_coast_or_unesco_climb_coverage",
+      "guests_wanting_seongsan_ilchulbong_or_seongeup_heritage",
+      "winter_visitors_seeking_floral_peak",
+      "guests_with_severe_pollen_allergies"
+    ],
+    "differentiation_vs_east_hydrangea_sister": "Same 'hydrangea festival' product family, but **southwest garden-plus-geology emphasis**: 3 garden anchors (Hallim + Camellia Hill + Osulloc tea-fields) + 1 compound geology stop (Jusangjeolli+Cheonjeyeon) + 1 west-coast beach (Hyeopjae). The east sister covers **Hamdeok beach + Seongeup Joseon heritage + triple-UNESCO Seongsan + Ilchul Land + Hueree** — a more UNESCO-and-heritage-coded, higher-climb route. Booking matrix: guests with strong wedding-photo or hydrangea-tunnel interest + lower mobility tolerance + multi-garden preference should book southwest; guests with strong UNESCO + Joseon heritage interest + willing to climb Seongsan should book east. **Both routes share Camellia Hill peak alignment in mid-June**, so the operator can offer parallel departures for both routes simultaneously during peak hydrangea weeks.",
+    "seasonal_window": {
+      "best_months": [
+        "June (peak hydrangea)",
+        "May (early hydrangea + Camellia Hill greenhouse)",
+        "April (Camellia Hill spring start)",
+        "October"
+      ],
+      "good_months": [
+        "March",
+        "September",
+        "November (Camellia Hill camellia start)"
+      ],
+      "low_season_months": [
+        "December",
+        "January",
+        "February"
+      ],
+      "snow_closure_risk": "None — west-coast route is snow-resilient",
+      "typhoon_window": "August — typhoon-track season; tour reschedule policy applies"
+    },
+    "kb_anchor_version": "1.21"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "Hydrangea, columnar cliff, and tea fields",
+        "headlineLine2": "in one southwest Jeju summer day",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1559948638-e8e07b62b9c1?w=1920&q=80",
+          "imagePosition": "center 35%",
+          "tagline": "Beach to columnar cliff to hydrangea tunnel.",
+          "pills": [
+            "仅限夏季",
+            "绣球花季",
+            "Southwest Jeju"
+          ],
+          "meta": {
+            "duration": "9 hours",
+            "region": "济州西南部",
+            "stops": "6 个景点",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "行程总览"
+          },
+          {
+            "id": "itinerary",
+            "label": "详细行程"
+          },
+          {
+            "id": "practical",
+            "label": "实用资讯"
+          },
+          {
+            "id": "reviews",
+            "label": "旅客评价"
+          },
+          {
+            "id": "booking",
+            "label": "立即预约"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "camera",
+            "label": "拍照亮点",
+            "value": "极高"
+          },
+          {
+            "icon": "calendar",
+            "label": "推荐季节",
+            "value": "6月至7月中旬"
+          },
+          {
+            "icon": "users",
+            "label": "人数上限",
+            "value": "小团体"
+          },
+          {
+            "icon": "clock",
+            "label": "行程时间",
+            "value": "9小时"
+          },
+          {
+            "icon": "map-pin",
+            "label": "路线区域",
+            "value": "济州西南部"
+          },
+          {
+            "icon": "footprints",
+            "label": "步行强度",
+            "value": "轻松至中等"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1559948638-e8e07b62b9c1?w=1200&q=80",
+            "alt": "Hydrangea blooms at Hallim Park",
+            "caption": "Hydrangea blooms at Hallim Park",
+            "location": "Hallim Park",
+            "atmosphere": "Hydrangea festival in full bloom"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=1200&q=80",
+            "alt": "Hydrangea tunnel at Camellia Hill",
+            "caption": "Hydrangea tunnel at Camellia Hill",
+            "location": "Camellia Hill",
+            "atmosphere": "Hydrangea tunnel walk"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
+            "alt": "Hyeopjae Beach turquoise water",
+            "caption": "Hyeopjae Beach turquoise water",
+            "location": "Hyeopjae Beach",
+            "atmosphere": "Emerald water and white sand"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200&q=80",
+            "alt": "Jusangjeolli columnar basalt cliff",
+            "caption": "Jusangjeolli columnar basalt cliff",
+            "location": "Jusangjeolli Cliff",
+            "atmosphere": "Columnar basalt formation"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1200&q=80",
+            "alt": "Cheonjeyeon three-tier waterfall",
+            "caption": "Cheonjeyeon three-tier waterfall",
+            "location": "Cheonjeyeon Falls",
+            "atmosphere": "Three-tier waterfall"
+          },
+          {
+            "id": "g6",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80",
+            "alt": "Osulloc green tea fields",
+            "caption": "Osulloc green tea fields",
+            "location": "Osulloc Tea Museum",
+            "atmosphere": "Endless green tea fields"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "08:30",
+            "duration": "60 min",
+            "name": "Hyeopjae Beach",
+            "category": "Coast & Beach",
+            "description": "One of Jeju's most photogenic beaches — emerald water, white sand, and Biyangdo island offshore. Easy morning warm-up before the day's main bloom stops.",
+            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+            "highlights": [
+              "Emerald turquoise water",
+              "View of Biyangdo island",
+              "White sand walking promenade"
+            ],
+            "timeUsed": [
+              "Beach walk and photos",
+              "Optional cafe break",
+              "Brief context on west coast geology"
+            ],
+            "whyOnRoute": "Opens the day with the lightest stop — sets a relaxed pace before the higher-impact hydrangea sites.",
+            "visitBasics": {
+              "hours": "Open 24 hours; managed swim season July–August",
+              "closed": "Open year-round",
+              "admission": "Free (parking ≈2,000 KRW summer)",
+              "walking": "Easy — flat beach"
+            },
+            "convenience": {
+              "restroom": "Public restrooms and shower facilities",
+              "parking": "Public parking lot (paid in summer)"
+            },
+            "smartNotes": {
+              "photo": "Sunset shots with Biyangdo silhouette; turquoise color is most vivid at midday under direct sun",
+              "facilities": "Multiple cafés along beachfront; convenience stores",
+              "tip": "Combine with Hallim Park (5 min walk); avoid summer weekends for fewer crowds"
+            },
+            "_poi_meta": {
+              "poi_key": "hyeopjae_beach",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "note": "Operational details based on aggregated visitor info"
+            }
+          },
+          {
+            "number": 2,
+            "time": "10:00",
+            "duration": "100 min",
+            "name": "Hallim Park (Hydrangea Festival)",
+            "category": "Garden & Hydrangea Festival",
+            "description": "Botanical garden complex hosting Jeju's largest hydrangea festival in early summer — multiple themed gardens, a lava cave system on-site, and varied bloom colors.",
+            "image": "https://images.unsplash.com/photo-1559948638-e8e07b62b9c1?w=800&q=80",
+            "highlights": [
+              "Hydrangea festival main gardens",
+              "On-site lava tube cave system",
+              "Themed garden zones"
+            ],
+            "timeUsed": [
+              "Walk through hydrangea zones",
+              "Lava cave optional pass-through",
+              "Photo time at peak bloom areas"
+            ],
+            "whyOnRoute": "Peak hydrangea visual stop. Mid-morning timing gives best light without midday heat.",
+            "visitBasics": {
+              "hours": "Mar–May 09:00–18:30; Jun–Aug 09:00–19:00; Sep–Oct 09:00–18:30; Nov–Feb 09:00–17:30 (last admission 1 hour before close)",
+              "closed": "Open year-round",
+              "admission": "Adult 15,000 KRW / Teen 10,000 KRW / Child 9,000 KRW (online discount: ≈13,500 / 9,000 / 8,100)",
+              "walking": "Moderate — 2–3 hours of walking through 9 garden zones; mostly flat"
+            },
+            "convenience": {
+              "restroom": "Multiple restrooms throughout the park",
+              "parking": "Free parking on site"
+            },
+            "smartNotes": {
+              "photo": "Hydrangea Festival (June) and pink muhly (October) are peak photo seasons; lava caves with stalactite lighting are unique",
+              "facilities": "On-site restaurants, gift shop, cave museum",
+              "tip": "Last entry 90 minutes before closing; closing time depends on sunset; pair with Hyeopjae Beach (5–10 min walk)"
+            },
+            "_poi_meta": {
+              "poi_key": "hallim_park",
+              "verified": true,
+              "sources": [
+                "VisitKorea",
+                "Trazy",
+                "Creatrip",
+                "Klook"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          },
+          {
+            "number": 3,
+            "time": "12:00",
+            "duration": "60 min",
+            "name": "Lunch (Southwest Jeju)",
+            "category": "Meal",
+            "description": "Local restaurant near Hallim or Daejeong — black pork, abalone porridge, or seasonal seafood. Group reset before afternoon stops.",
+            "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&q=80",
+            "highlights": [
+              "Traditional Jeju cuisine",
+              "Regional restaurant"
+            ],
+            "timeUsed": [
+              "Lunch order and meal",
+              "Brief group reset"
+            ],
+            "whyOnRoute": "Midday timing balances the morning bloom stops with the afternoon geology and culture stops.",
+            "visitBasics": {
+              "hours": "12:00-14:00 typical",
+              "admission": "Lunch cost paid direct, ≈10,000–15,000 KRW typical (Korean local restaurants near route)",
+              "walking": "Minimal"
+            },
+            "convenience": {
+              "restroom": "At restaurant",
+              "parking": "Available"
+            },
+            "smartNotes": {
+              "tip": "Vegetarian options on request — notify the day before."
+            },
+            "_poi_meta": {
+              "poi_key": "OPS_lunch",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "match": "operational_implicit",
+              "note": "Operational stop (lunch); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+            }
+          },
+          {
+            "number": 4,
+            "time": "13:15",
+            "duration": "75 min",
+            "name": "Jusangjeolli Cliff & Cheonjeyeon Falls",
+            "category": "Geology & Waterfall",
+            "description": "UNESCO Geopark columnar basalt cliff at Jusangjeolli paired with the nearby three-tier Cheonjeyeon waterfall. Two adjacent UNESCO-recognized geological sites.",
+            "image": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&q=80",
+            "highlights": [
+              "Hexagonal columnar basalt cliff",
+              "Three-tier waterfall in subtropical forest",
+              "UNESCO Geopark + Biosphere"
+            ],
+            "timeUsed": [
+              "Jusangjeolli viewing platforms",
+              "Walk to Cheonjeyeon falls",
+              "Photos at both sites"
+            ],
+            "whyOnRoute": "Adds geological depth and a clear UNESCO narrative anchor in the southwest part of the day.",
+            "visitBasics": {
+              "hours": "09:00–18:00 (summer extended)",
+              "closed": "Open year-round (weather-dependent)",
+              "admission": "Jusangjeolli: Adult 2,000 / Child 1,000. Cheonjeyeon: Adult 2,500 / Child 1,350. Combined ≈4,500 KRW per adult.",
+              "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
+            },
+            "convenience": {
+              "restroom": "At entrance/visitor center",
+              "parking": "Available near entrance"
+            },
+            "smartNotes": {
+              "photo": "Best with high tide and rough seas — waves smashing into the columns make dramatic shots; golden hour gives best column-color contrast",
+              "tip": "Get there before 11am or after 4pm to avoid tour-bus crowds; combine with Jungmun Saekdal Beach (5 min) for a half-day",
+              "facilities": "Small geological exhibition near entrance; souvenir shop"
+            },
+            "_poi_meta": {
+              "poi_key": "jusangjeolli_cliff",
+              "verified": true,
+              "sources": [
+                "Trip.com",
+                "AfunCouple"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          },
+          {
+            "number": 5,
+            "time": "14:45",
+            "duration": "75 min",
+            "name": "Camellia Hill (Hydrangea Tunnel)",
+            "category": "Garden & Hydrangea Tunnel",
+            "description": "Botanical garden best known for its dense hydrangea tunnel — a long path lined with massive blue, purple, and pink blooms forming a tunnel canopy.",
+            "image": "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=800&q=80",
+            "highlights": [
+              "Hydrangea tunnel walk",
+              "Camellia and rose garden zones (off-season for camellias)",
+              "Themed sculpture installations"
+            ],
+            "timeUsed": [
+              "Walk through hydrangea tunnel",
+              "Garden cafe break optional",
+              "Photo time at tunnel peaks"
+            ],
+            "whyOnRoute": "Second hydrangea peak — the tunnel format is visually distinct from Hallim's open garden bloom field.",
+            "visitBasics": {
+              "hours": "Summer (Jun–Aug) 08:30–19:00; Spring/Fall 08:30–18:30; Winter 08:30–17:30 (varies seasonally)",
+              "closed": "Open year-round",
+              "admission": "Adult 10,000 KRW / Teen 8,000 KRW / Child 7,000 KRW (approximate)",
+              "walking": "Easy to moderate — gentle hill paths; mostly stroller-accessible"
+            },
+            "convenience": {
+              "restroom": "Available at entrance and within garden",
+              "parking": "Free parking available"
+            },
+            "smartNotes": {
+              "photo": "Hydrangea tunnel in June; pink muhly grass field in October; camellia varieties peak Nov–Apr",
+              "tip": "Visit before 10am or after 4pm in peak season to avoid crowds; pair with Osulloc (10 min drive)",
+              "facilities": "Indoor greenhouse café, gift shop, picnic areas"
+            },
+            "_poi_meta": {
+              "poi_key": "camellia_hill",
+              "verified": true,
+              "sources": [
+                "VisitKorea",
+                "TripAdvisor",
+                "Klook"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          },
+          {
+            "number": 6,
+            "time": "16:15",
+            "duration": "60 min",
+            "name": "Osulloc Tea Museum & Tea Fields",
+            "category": "Tea Culture & Garden",
+            "description": "Endless green tea fields layered against Hallasan in the distance, plus the Osulloc tea museum and tea house. Closes the day with a tea culture context and relaxed pacing.",
+            "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
+            "highlights": [
+              "Vast green tea field photo zones",
+              "Tea museum exhibits",
+              "Green tea ice cream and snacks at tea house"
+            ],
+            "timeUsed": [
+              "Tea field walk and photos",
+              "Museum browse",
+              "Tea house break"
+            ],
+            "whyOnRoute": "Closes the day calmly with a culture-tea anchor that contrasts with the morning bloom intensity.",
+            "visitBasics": {
+              "hours": "Summer 09:00–19:00 / Winter 09:00–18:00",
+              "closed": "Open year-round (weather closures possible)",
+              "admission": "Free for museum; tea/desserts in café paid; Innisfree workshops paid separately",
+              "walking": "Easy — flat museum and stroller-friendly tea fields; well-maintained paths"
+            },
+            "convenience": {
+              "restroom": "Multiple restrooms; aesthetically designed",
+              "parking": "Free parking available"
+            },
+            "smartNotes": {
+              "photo": "Tea fields with tour-cup shaped museum building; outdoor seating area; cherry blossoms peak shoulder season",
+              "tip": "Arrive before 10:30 to beat the tour-bus rush; allow 1.5–2 hours including café time and tea field walk",
+              "facilities": "Café (must-try green tea ice cream), gift shop, Innisfree Jeju House next door, observatory deck overlooking fields"
+            },
+            "_poi_meta": {
+              "poi_key": "osulloc_tea_museum",
+              "verified": true,
+              "sources": [
+                "VisitKorea",
+                "Osulloc.com",
+                "Trazy",
+                "Trip.com"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "id": "01",
+            "name": "Hyeopjae",
+            "theme": "Beach"
+          },
+          {
+            "id": "02",
+            "name": "Hallim Park",
+            "theme": "Hydrangea"
+          },
+          {
+            "id": "03",
+            "name": "Lunch",
+            "theme": "Meal"
+          },
+          {
+            "id": "04",
+            "name": "Jusangjeolli + Cheonjeyeon",
+            "theme": "Geology + Falls"
+          },
+          {
+            "id": "05",
+            "name": "Camellia Hill",
+            "theme": "Hydrangea Tunnel"
+          },
+          {
+            "id": "06",
+            "name": "Osulloc",
+            "theme": "Tea Culture"
+          }
+        ],
+        "routePhases": [
+          {
+            "label": "Morning",
+            "range": "1-2",
+            "theme": "Beach + Hydrangea festival",
+            "bgClass": "bg-sky-50/70",
+            "textClass": "text-sky-700",
+            "dotClass": "bg-sky-500"
+          },
+          {
+            "label": "Midday",
+            "range": "3",
+            "theme": "Lunch",
+            "bgClass": "bg-amber-50/70",
+            "textClass": "text-amber-700",
+            "dotClass": "bg-amber-500"
+          },
+          {
+            "label": "Afternoon",
+            "range": "4-6",
+            "theme": "Geology, hydrangea tunnel, tea",
+            "bgClass": "bg-emerald-50/70",
+            "textClass": "text-emerald-700",
+            "dotClass": "bg-emerald-500"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "How this summer day moves",
+          "subtitle": "Beach warm-up, hydrangea festival, lunch reset, then UNESCO geology, hydrangea tunnel, and tea fields. 08:30 to 17:30."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "First-time summer visitors",
+            "Couples and photo-focused travelers",
+            "Adult families",
+            "Travelers chasing peak hydrangea bloom"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Pacing & structure",
+              "icon": "sun",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "Beach as Light Opener",
+                  "detail": "Hyeopjae as a low-intensity start lets the group settle before higher-attention bloom and geology sites."
+                },
+                {
+                  "label": "Two Hydrangea Stops, Different Formats",
+                  "detail": "Hallim festival garden and Camellia tunnel give complementary compositions of the same flower — bookend morning and afternoon."
+                },
+                {
+                  "label": "Tea to Close",
+                  "detail": "Osulloc closes calmly — culture and rest after the visual intensity of bloom and falls."
+                }
+              ]
+            },
+            {
+              "title": "Why this is summer-only",
+              "icon": "flower",
+              "iconBg": "bg-pink-50/80",
+              "iconColor": "text-pink-600",
+              "items": [
+                {
+                  "label": "Hydrangea Window Late May - mid-July",
+                  "detail": "Hydrangea blooms appear from late May, peak mid-June, and fade by mid-July. Outside this window the bloom stops lose their visual draw."
+                },
+                {
+                  "label": "Outside Window, Pick SW-Small",
+                  "detail": "If your dates fall outside hydrangea season, our West & South year-round route covers the same region with year-round POIs (Hallasan, Osulloc, Aewol)."
+                },
+                {
+                  "label": "Camellia Hill is Not Camellia Season",
+                  "detail": "Despite the name, this tour visits Camellia Hill specifically for hydrangea — actual camellias bloom in winter."
+                }
+              ]
+            },
+            {
+              "title": "Trade-offs honestly",
+              "icon": "info",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "9 Hours Is Long",
+                  "detail": "Six diverse stops in 9 hours — pace is fuller than east-small. Build energy with steady hydration."
+                },
+                {
+                  "label": "Some Stops Have Admission",
+                  "detail": "Hallim Park (15,000 KRW) and Camellia Hill (10,000 KRW) admissions are paid on-site, not bundled into the tour price. Budget ≈30,000 KRW per person across all admissions (Jusangjeolli 2,000 + Cheonjeyeon 2,500 round it out)."
+                },
+                {
+                  "label": "Heat Can Be Real",
+                  "detail": "June Jeju can hit 30°C+ at midday. Bring sun protection — most stops are outdoor."
+                }
+              ]
+            }
+          ],
+          "lessIdealFor": [
+            "Off-season visitors (after mid-July)",
+            "Stroller-heavy groups (some uneven garden paths)",
+            "Travelers wanting mountain hiking"
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "Pickup & drop-off",
+            "preview": "Hotel lobby pickup in Jeju City area",
+            "content": [
+              "Pickup from your hotel lobby between 08:00-08:30",
+              "Return drop-off by approximately 17:30-18:00",
+              "Hotel lobby pickup within Jeju City is free. Pickup from Seogwipo, Aewol, or Seongsan adds 70,000 KRW due to extra driving distance."
+            ]
+          },
+          {
+            "id": "what-to-bring",
+            "title": "What to wear & bring",
+            "preview": "Sun protection, comfortable shoes, camera",
+            "content": [
+              "Comfortable walking shoes (multiple garden walks)",
+              "Sun protection — hat, sunscreen, sunglasses",
+              "Light layer for AC vehicle and tea house",
+              "Cash or card for lunch and admission"
+            ]
+          },
+          {
+            "id": "season",
+            "title": "Hydrangea season window",
+            "preview": "June through mid-July",
+            "content": [
+              "Tour season: June 1 - July 15 (varies ±5 days year to year)",
+              "Peak window: June 25 - July 5 (best photographic conditions)",
+              "We update the booking page with year-specific bloom forecast in early May",
+              "If your travel dates fall outside the window, consider our West & South year-round route instead"
+            ]
+          },
+          {
+            "id": "weather-policy",
+            "title": "Weather policy",
+            "preview": "Light rain operates; heavy rain reschedules",
+            "content": [
+              "Light rain: tour operates (hydrangea actually photographs well in soft rain)",
+              "Heavy rain: free rescheduling within season window",
+              "Outside-window cancellations follow the booking platform's standard terms — see the booking confirmation for specifics."
+            ]
+          },
+          {
+            "id": "inclusions",
+            "title": "What's included",
+            "preview": "Transport, guide, and major admissions",
+            "content": [
+              "Hotel pickup and drop-off (Jeju City)",
+              "Air-conditioned van transport",
+              "Licensed English-speaking guide",
+              "Major admissions (Hallim Park, Camellia Hill, Jusangjeolli, Cheonjeyeon) are paid on-site, not bundled into the tour price",
+              "Lunch separate from base price"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "label": "Summer weather guidance",
+            "temp": "Daytime ≈ 26–30 °C in hydrangea season (late May to mid-July, peak mid-June)",
+            "icon": "cloud-sun"
+          },
+          "tomorrow": {
+            "label": "Live forecast available at the operator's booking page",
+            "temp": "—",
+            "icon": "cloud"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "name": "Early Summer (Jun 1-24)",
+            "icon": "flower",
+            "description": "Hydrangea opens — gradually intensifying",
+            "tag": "Tour operates",
+            "bgClass": "bg-pink-100/70",
+            "iconColor": "text-pink-500"
+          },
+          {
+            "name": "Peak (Jun 25 - Jul 5)",
+            "icon": "flower",
+            "description": "Peak hydrangea bloom across all gardens — best photographic conditions",
+            "tag": "Peak — books out fastest",
+            "bgClass": "bg-pink-200/70",
+            "iconColor": "text-pink-600"
+          },
+          {
+            "name": "Late Bloom (Jul 6-15)",
+            "icon": "leaf",
+            "description": "Hydrangeas still strong but starting to fade. Less crowded.",
+            "tag": "Tour operates",
+            "bgClass": "bg-emerald-50/70",
+            "iconColor": "text-emerald-500"
+          },
+          {
+            "name": "Outside window (Jul 16 - May 31)",
+            "icon": "info",
+            "description": "Out of season — our West & South year-round route recommended",
+            "tag": "Off-season",
+            "bgClass": "bg-amber-50/70",
+            "iconColor": "text-amber-500"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Licensed local",
+            "description": "Jeju-licensed guiding",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "calendar",
+            "title": "Season window flex",
+            "description": "Free rescheduling within bloom window",
+            "iconBg": "bg-pink-50/80",
+            "iconColor": "text-pink-600"
+          },
+          {
+            "icon": "shield",
+            "title": "Weather guarantee",
+            "description": "Free reschedule on heavy rain",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Immediately",
+            "title": "Instant Confirmation",
+            "detail": "Booking confirmation with itinerary summary"
+          },
+          {
+            "timing": "2 days before",
+            "title": "Weather Check-in",
+            "detail": "We monitor forecast and reach out if rebooking is recommended"
+          },
+          {
+            "timing": "Day before",
+            "title": "Vehicle & Guide Info",
+            "detail": "Pickup time, vehicle plate, and guide name via WhatsApp"
+          },
+          {
+            "timing": "Morning of",
+            "title": "Pickup Confirmation",
+            "detail": "Driver checks in 10 minutes before arrival"
+          },
+          {
+            "timing": "During tour",
+            "title": "On-tour Support",
+            "detail": "Direct line to operations if anything comes up"
+          },
+          {
+            "timing": "After tour",
+            "title": "Review & Followup",
+            "detail": "Optional review and follow-up"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "first-time",
+            "question": "Is this good for first-time visitors to Jeju?",
+            "answer": "Yes, if you're visiting during hydrangea season (late May to mid-July, peak mid-June). Outside that window, our West & South year-round route covers the same region with year-round POIs."
+          },
+          {
+            "id": "season-timing",
+            "question": "When exactly is hydrangea season?",
+            "answer": "Approximately late May to mid-July (peak mid-June), with peak typically in mid-June. We update the booking page with year-specific forecast in early May."
+          },
+          {
+            "id": "rain",
+            "question": "What if it rains?",
+            "answer": "Light rain — we operate (hydrangea actually photographs beautifully in soft rain). Heavy rain — we offer free rescheduling within the season window."
+          },
+          {
+            "id": "two-hydrangea-stops",
+            "question": "Why two hydrangea stops?",
+            "answer": "Hallim Park is an open festival garden; Camellia Hill is a tunnel format. Same flower, complementary compositions."
+          },
+          {
+            "id": "kids",
+            "question": "Is this suitable for children?",
+            "answer": "Yes, age 6+. Walking is moderate at most stops; hydrangea gardens are family-friendly."
+          },
+          {
+            "id": "seniors",
+            "question": "Is this ok for seniors?",
+            "answer": "Yes, mostly easy walking. Cheonjeyeon waterfall path has some stairs — can be skipped while group views Jusangjeolli."
+          },
+          {
+            "id": "pickup-area",
+            "question": "Where do you pick up?",
+            "answer": "Hotel lobby pickup within Jeju City is free. Pickup from Seogwipo, Aewol, or Seongsan adds 70,000 KRW due to extra driving distance."
+          },
+          {
+            "id": "lunch",
+            "question": "Is lunch included?",
+            "answer": "Lunch cost is separate. Expect 12,000-18,000 KRW per person."
+          },
+          {
+            "id": "admission-fees",
+            "question": "Are admission fees included?",
+            "answer": "Admissions are not bundled by default. Budget ≈30,000 KRW per person: Hallim Park 15,000, Camellia Hill 10,000, Jusangjeolli 2,000, Cheonjeyeon 2,500, Osulloc free."
+          },
+          {
+            "id": "tea-museum",
+            "question": "Is Osulloc included?",
+            "answer": "Yes — museum entry is free. The tea house is separate (optional purchase)."
+          },
+          {
+            "id": "compare-our West & South year-round route",
+            "question": "What's the difference vs our West & South year-round route?",
+            "answer": "Different POIs and seasonality. Our West & South year-round route is year-round and visits Hallasan 1100, Osulloc, and Aewol. This tour is summer-only and adds Hyeopjae, Hallim, Jusangjeolli, Cheonjeyeon, Camellia Hill while keeping Osulloc as the closing stop."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "person"
+        }
+      }
+    }
+  ],
+  "pickup_dropoff": {
+    "type": "hotel_pickup",
+    "meeting_points": [
+      {
+        "name": "Hotel within Jeju City",
+        "time": "≈08:30 (free)"
+      },
+      {
+        "name": "Hotel outside Jeju City (Seogwipo/Aewol/Seongsan)",
+        "time": "Earlier pickup; +₩70,000 surcharge"
+      },
+      {
+        "name": "Jeju International Airport",
+        "time": "≈08:30"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Hotel in Jeju City",
+        "approx_time": "≈18:00"
+      },
+      {
+        "name": "Dongmun Traditional Market",
+        "approx_time": "≈18:00"
+      },
+      {
+        "name": "Jeju Airport",
+        "approx_time": "≈18:00"
+      }
+    ],
+    "hotel_pickup_available": true,
+    "notes": "Free pickup in Jeju City. Outside-city pickup adds ₩70,000. Hydrangea stops only in bloom late May to mid-July (peak mid-June); check before booking."
+  },
+  "itinerary_variants": [],
+  "priceSource": {
+    "discountPct": 10,
+    "discountNote": "10% off marketplace baseline",
+    "amount": null,
+    "currency": "USD"
+  },
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch5_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 5 deep enhancement — descriptions raised to 700-1300+ chars; KB-backed metadata on all attraction stops; matching_profile recalibrated with verified-fact 0-1 float scores. Time-weighted indoor_ratio per Fix 1 methodology.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale. Indoor ratio computed time-weighted with Fix 1 methodology.",
+          "deltas_applied": {
+            "unesco_fit": {
+              "old": 1.0,
+              "new": 0.45,
+              "reasoning": "Verified — NO direct UNESCO World Heritage stops on this tour. Hallim Park caves are Korean National Monument (No. 236), NOT UNESCO. Jusangjeolli is Korean Natural Monument (No. 443), NOT UNESCO. Cheonjeyeon, Hyeopjae, Camellia Hill, Osulloc are non-UNESCO. Mechanical 1.0 was overstated. 0.45 reflects strong national-heritage anchors but no direct UNESCO."
+            },
+            "walking_level": {
+              "old": 0.4,
+              "new": 0.5,
+              "reasoning": "Verified: Hyeopjae photo-stop (minimal), Hallim 1.5-3 km flat with cave ducking, Jusangjeolli 0.5 km boardwalk, Cheonjeyeon ~150 stairs to mid falls, Camellia Hill ~1.5 km flat, Osulloc 0.5 km. Total ~5 km mostly flat with one stair section. 0.50 calibrated."
+            },
+            "scenic_level": {
+              "old": 1.0,
+              "new": 0.9,
+              "reasoning": "Verified: turquoise beach + 9-area botanical garden + 2 lava-tube caves + columnar basalt cliff + three-tier waterfall + camellia hydrangea tunnel + green tea fields. 7 distinct landscapes — among catalog's most diverse. 0.90 calibrated."
+            },
+            "photo_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified: 6+ hero shots — Hyeopjae beach + Hallim caves/folk village + Jusangjeolli columns + Cheonjeyeon nymphs + Camellia hydrangea tunnel + Osulloc fields. Catalog-leading photo density. 0.95."
+            },
+            "iconic_landmark_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "Verified: Hyeopjae Top 3 Jeju beach + Hallim Park 1.2M annual visitors + Jusangjeolli Natural Monument 443 + Cheonjeyeon (only 3-tier falls on Jeju) + Osulloc (Jeju's most famous tea brand). 5/6 internationally iconic. 0.85."
+            },
+            "indoor_ratio": {
+              "old": 0.4,
+              "new": 0.2,
+              "reasoning": "CORRECTION using time-weighted method (Fix 1 methodology): 108 indoor / 405 total = 0.27 with lunch; 60/345 = 0.17 without. Catalog value 0.20 represents both. Mechanical 0.4 overstated."
+            },
+            "weather_sensitivity": {
+              "old": 1.0,
+              "new": 0.85,
+              "reasoning": "VERIFIED 0.85 — hydrangea bloom timing weather-dependent; Hyeopjae + Jusangjeolli + Camellia Hill + Osulloc all primarily outdoor. Hallim caves provide partial weather refuge."
+            },
+            "rain_fit": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Hallim caves (~600m total) + Osulloc indoor museum + restaurant lunch provide refuge. But majority of stops outdoor. 0.55 calibrated."
+            },
+            "first_time_fit": {
+              "old": 1.0,
+              "new": 0.85,
+              "reasoning": "Verified: covers 7 distinct Jeju landscapes — among the most representative single-day southwest summaries. Season-specific to summer for hydrangea. 0.85."
+            },
+            "value_for_money_fit": {
+              "old": 0.6,
+              "new": 0.7,
+              "reasoning": "Verified fees: Hyeopjae free + Hallim ₩11,000 + Jusangjeolli ₩2,000 + Cheonjeyeon ₩2,500 + Camellia Hill ₩9,000 + Osulloc free = ~₩24,500/adult. Higher than other Jeju tours due to multiple paid stops. 0.70."
+            },
+            "young_kids_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "UPGRADED — Hallim Safari Bird Garden + caves + folk village + Hyeopjae Beach + Cheonjeyeon ravine. Strong family appeal. 0.85."
+            },
+            "senior_fit": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "UPGRADED — most stops senior-accessible (Hallim flat + Hyeopjae photo-stop + Osulloc flat); Cheonjeyeon stairs are the one challenge. 0.65."
+            },
+            "stroller_fit": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "UPGRADED — Hallim caves require ducking; otherwise mostly stroller-friendly. 0.65 calibrated for the cave caveat."
+            },
+            "beach_fit": {
+              "old": 0.4,
+              "new": 0.55,
+              "reasoning": "UPGRADED — Hyeopjae IS the beach component (Top 3 Jeju). Photo-stop format limits beach time. 0.55."
+            },
+            "culture_level": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Verified: Hallim Folk Village + Cheonjeyeon Seven Nymphs legend + Osulloc tea heritage. 3/6 cultural anchors. 0.55."
+            },
+            "nature_fit": {
+              "old": 1.0,
+              "new": 0.9,
+              "reasoning": "Verified: beach + botanical garden + caves + columnar cliff + waterfall + flower park + tea fields. Catalog-leading nature density. 0.90."
+            },
+            "geological_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "Verified: Hyeopjaegul + Ssangyonggul caves (lava+limestone) + Jusangjeolli columnar joints. 2 distinct geological landmarks. 0.85."
+            }
+          }
+        },
+        "stops_enhanced": 6,
+        "sources": [
+          "VisitKorea",
+          "Visit Jeju",
+          "Hallim Park CVB",
+          "AllTrails",
+          "Hunting for Bliss",
+          "Soul of Seoul",
+          "Roaming Sonaa",
+          "Trazy",
+          "KKday",
+          "NOL World"
+        ],
+        "_extended_dimensions_documented_only": {
+          "note": "These dimensions (snow_fit, active_fit, geological_fit, experiential_fit) were assessed during the v17 verified-fact audit but are NOT yet part of the standard 68-key matching_profile. They are preserved here as documentation for future schema extension.",
+          "values": {
+            "geological_fit": 0.85
+          }
+        }
+      }
+    }
+  }
+}

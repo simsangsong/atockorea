@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronRight } from "lucide-react";
+import { Clock, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { ItineraryStop } from "@/components/product-tour-static/_shared/tourProductDetailSectionTypes";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
-import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
 import { PickupOnlyCards, DropoffOnlyCard } from "@/components/product-tour-static/_shared/pickup-dropoff/PickupDropoffCards";
 import { PortSelectorTimeline } from "@/components/product-tour-static/_shared/route-variants/PortSelectorTimeline";
 import type { PortRouteVariant, PortVariantStop } from "@/components/product-tour-static/_shared/route-variants/routeVariantTypes";
@@ -14,22 +13,53 @@ import {
   type TourStopDrawerStop,
 } from "@/components/product-tour-static/_shared/TourStopDetailDrawer";
 
+const FREE_ADMISSION_PATTERNS = /\bfree\b|무료|à la carte|included|포함/i;
+
 function StopCard({
   stop,
   totalStops,
   onClick,
+  ticketsIncludedLabel,
 }: {
   stop: ItineraryStop;
   totalStops: number;
   onClick: () => void;
+  ticketsIncludedLabel?: string;
 }) {
+  const photos = stop.images && stop.images.length > 0
+    ? stop.images
+    : stop.image
+      ? [stop.image]
+      : [];
+  const admission = stop.visitBasics?.admission;
+  const showTicketsIncluded = !!admission && !FREE_ADMISSION_PATTERNS.test(admission);
+
+  // Quiet premium — single warm-ivory gradient + neutral floating shadow for all stops.
+  // Same low-key palette as the surrounding section cards so the timeline doesn't compete.
+  const accent = {
+    bg: "bg-gradient-to-br from-[#fcf9f4] via-[#fefcf8] to-[#f7f3ec]",
+    ring: "ring-stone-200/55",
+    glow: "shadow-[0_2px_4px_rgba(26,35,50,0.04),0_6px_14px_-4px_rgba(26,35,50,0.07),0_22px_44px_-18px_rgba(26,35,50,0.18),0_12px_24px_-12px_rgba(26,35,50,0.10)]",
+    glowHover: "hover:shadow-[0_3px_6px_rgba(26,35,50,0.05),0_8px_18px_-4px_rgba(26,35,50,0.10),0_30px_56px_-18px_rgba(26,35,50,0.24),0_16px_30px_-12px_rgba(26,35,50,0.14)]",
+    numShadow: "shadow-[0_4px_12px_-4px_rgba(200,149,108,0.45)]",
+  };
+
   return (
     <div className="relative pl-12">
       {stop.number < totalStops && (
-        <div className="absolute left-[19px] top-[52px] bottom-0 w-px bg-gradient-to-b from-border to-transparent" />
+        <div className="absolute left-[19px] top-[52px] bottom-0 w-px bg-gradient-to-b from-border/60 to-transparent" />
       )}
 
-      <div className="absolute left-0 top-1 flex h-10 w-10 items-center justify-center rounded-full bg-foreground text-white text-sm font-semibold shadow-lg ring-[3px] ring-white">
+      <div
+        className={cn(
+          "absolute left-0 top-1 flex h-10 w-10 items-center justify-center rounded-full text-white text-[13px] font-semibold tabular-nums tracking-[0.02em] ring-[3px] ring-white",
+          accent.numShadow,
+        )}
+        style={{
+          background:
+            "linear-gradient(135deg, #d4a37e 0%, #c8956c 50%, #a67751 100%)",
+        }}
+      >
         {String(stop.number).padStart(2, "0")}
       </div>
 
@@ -38,46 +68,65 @@ function StopCard({
           type="button"
           onClick={onClick}
           className={cn(
-            "w-full text-left rounded-xl bg-white border border-border p-4 transition-all duration-200",
-            "shadow-premium hover:shadow-premium-elevated hover:border-primary/10",
+            "group relative w-full text-left rounded-2xl overflow-hidden ring-1 transition-all duration-300",
+            accent.bg,
+            accent.ring,
+            accent.glow,
+            "hover:-translate-y-0.5",
+            accent.glowHover,
           )}
         >
-          <div className="flex items-start justify-between gap-3">
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground">{stop.time}</span>
-                <span className="text-border">·</span>
-                <span>{stop.duration}</span>
-              </div>
-              <h3 className="mt-2 text-base font-semibold text-foreground tracking-tight">{stop.name}</h3>
-              <span className="inline-block mt-2 px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground bg-muted/80 rounded-md">
-                {stop.category}
-              </span>
-              {/* First-highlight teaser, color/weight only — no italic */}
-              {stop.highlights && stop.highlights.length > 0 && (
-                <p className="mt-2.5 flex items-start gap-2 text-[12.5px] leading-snug text-muted-foreground">
-                  <span aria-hidden className="mt-[6px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                  <span className="line-clamp-1">{stop.highlights[0]}</span>
-                </p>
-              )}
-            </div>
-            <div className="flex flex-shrink-0 flex-col items-end gap-2">
-              {stop.image && (
-                <div className="h-14 w-14 overflow-hidden rounded-lg ring-1 ring-border/40 shadow-premium">
-                  <img
-                    src={stop.image}
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover"
-                  />
+          {/* Top sheen for premium glass feel */}
+          <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
+
+          {/* Header info */}
+          <div className="relative p-4 pb-3">
+            <div className="flex items-start justify-between gap-3">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <Clock className="h-3 w-3" />
+                  {stop.time && <span className="font-semibold text-foreground tabular-nums">{stop.time}</span>}
+                  {stop.time && stop.duration && <span className="text-border">·</span>}
+                  {stop.duration && <span className="tabular-nums">{stop.duration}</span>}
                 </div>
-              )}
-              <div className="rounded-full bg-muted/60 p-1.5">
-                <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                <h3 className="mt-1.5 text-base font-semibold text-foreground tracking-tight">{stop.name}</h3>
+                <div className="flex flex-wrap items-center gap-2 mt-2">
+                  {stop.category && (
+                    <span className="inline-block px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground bg-muted/80 rounded-md">
+                      {stop.category}
+                    </span>
+                  )}
+                  {showTicketsIncluded && (
+                    <span className="inline-block px-2.5 py-0.5 text-[10px] font-medium text-primary bg-primary/10 rounded-md ring-1 ring-primary/15">
+                      {ticketsIncludedLabel ?? "Tickets included"}
+                    </span>
+                  )}
+                </div>
+              </div>
+              <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-muted/40 transition-all duration-200 group-hover:bg-primary/10">
+                <ChevronRight className="h-4 w-4 text-muted-foreground/60 group-hover:text-primary transition-colors" />
               </div>
             </div>
           </div>
+
+          {photos.length > 0 && (
+            <div className="relative flex gap-1.5 px-4 pb-4 overflow-x-auto scrollbar-hide">
+              {photos.map((src, i) => (
+                <div
+                  key={`${src}-${i}`}
+                  className="flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-muted ring-1 ring-border/40 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_4px_10px_-4px_rgba(26,35,50,0.16)]"
+                >
+                  <img
+                    src={src}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
         </button>
       </div>
     </div>
@@ -144,6 +193,7 @@ export function TourTimelineSection({
               stop={stop}
               totalStops={total}
               onClick={() => setDrawerStop(stop)}
+              ticketsIncludedLabel={sectionUi.ticketsIncludedLabel}
             />
           ))
         )}

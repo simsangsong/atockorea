@@ -155,8 +155,8 @@ export default function MatchPage() {
 
   const winner = result?.winner ?? null;
   const winnerProduct = useMemo(
-    () => (winner ? getStaticTourProductBySlug(winner.product_id) : undefined),
-    [winner],
+    () => (winner ? getStaticTourProductBySlug(winner.product_id, locale) : undefined),
+    [winner, locale],
   );
   const alsoConsider = useMemo<ScoredProduct[]>(
     () => (result?.matchedProducts ?? []).slice(1, 4),
@@ -300,6 +300,7 @@ export default function MatchPage() {
                       heading={t('matchAlsoConsiderHeading')}
                       items={alsoConsider}
                       detailLabel={t('matchViewDetailCta')}
+                      locale={locale}
                     />
                   ) : null}
                 </>
@@ -478,10 +479,12 @@ function AlsoConsiderList({
   heading,
   items,
   detailLabel,
+  locale,
 }: {
   heading: string;
   items: ScoredProduct[];
   detailLabel: string;
+  locale: import('@/lib/tour-product/resolveTourProductDbLocale').TourProductPageLocale;
 }) {
   return (
     <div className="mt-6 border-t border-slate-200/70 pt-5">
@@ -490,7 +493,7 @@ function AlsoConsiderList({
       </p>
       <ul className="flex flex-col gap-2">
         {items.map((p) => {
-          const staticP = getStaticTourProductBySlug(p.product_id);
+          const staticP = getStaticTourProductBySlug(p.product_id, locale);
           const href = staticP ? `/tour-product/${p.product_id}` : '/tours/list';
           return (
             <li key={p.product_id}>

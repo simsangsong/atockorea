@@ -6,7 +6,7 @@ import Link from "next/link";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
 import { ArrowUp, ChevronRight, Clock, Sparkles, Star, Users } from "lucide-react";
 import Image from "next/image";
-import { useTranslations } from "@/lib/i18n";
+import { useI18n, useTranslations } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { analytics, type HomeCtaSource } from "@/src/design/analytics";
 import { getStaticTourProductBySlug } from "@/components/product-tour-static/catalog/staticTourProductRegistry";
@@ -96,6 +96,7 @@ function MatchResultHeroImageSlot({
 
 export function BestMatchPreview() {
   const t = useTranslations("home");
+  const { locale } = useI18n();
   const { phase, loadingStep, joinImageUrl, matchResult, matchError, resetMatchToIdle } = useHomeV2Match();
 
   const revealRef = useRef<HTMLDivElement>(null);
@@ -111,10 +112,10 @@ export function BestMatchPreview() {
 
   const resultVm = useMemo(() => {
     if (matchResult) {
-      return buildV2BestMatchResultViewModelFromApi(matchResult, (key: string) => t(key));
+      return buildV2BestMatchResultViewModelFromApi(matchResult, (key: string) => t(key), locale);
     }
-    return buildV2BestMatchResultViewModel((key: string) => t(key));
-  }, [matchResult, t]);
+    return buildV2BestMatchResultViewModel((key: string) => t(key), locale);
+  }, [matchResult, t, locale]);
 
   /** Smoothly scroll back to the hero planner so the user can describe their trip. */
   const scrollToHeroPlanner = useCallback(() => {
@@ -142,7 +143,7 @@ export function BestMatchPreview() {
     const groupMaxFor = (p: NonNullable<ReturnType<typeof getStaticTourProductBySlug>>) =>
       t("premium.v2.bestMatch.groupMaxParam", { n: p.maxGroupSize ?? 8 });
     if (matchResult?.winner?.product_id) {
-      const p = getStaticTourProductBySlug(matchResult.winner.product_id);
+      const p = getStaticTourProductBySlug(matchResult.winner.product_id, locale);
       if (p) {
         return {
           rating: String(p.rating),
@@ -152,14 +153,14 @@ export function BestMatchPreview() {
         };
       }
     }
-    const idle = getFeaturedJoinTourProduct();
+    const idle = getFeaturedJoinTourProduct(locale);
     return {
       rating: String(idle.rating),
       reviews: String(idle.reviewCount),
       duration: idle.duration,
       groupMax: groupMaxFor(idle),
     };
-  }, [matchResult, t]);
+  }, [matchResult, t, locale]);
 
   return (
     <section className="py-8 md:py-20 px-3 sm:px-4">

@@ -92,34 +92,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "flower-2",
-      "label": "Tour Style",
-      "value": "Spring Cherry Blossom"
+      "icon": "camera",
+      "label": "Photo Value",
+      "value": "High",
+      "level": 5
     },
     {
-      "icon": "calendar-days",
-      "label": "Operating",
-      "value": "Mar 28 – Apr 10 only"
+      "icon": "mountain",
+      "label": "Scenic",
+      "value": "High",
+      "level": 5
     },
     {
-      "icon": "user-check",
-      "label": "Guide",
-      "value": "Bilingual Tour Leader"
+      "icon": "footprints",
+      "label": "Walking",
+      "value": "Moderate",
+      "level": 3
     },
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "8.5 hours"
+      "icon": "cloud-rain",
+      "label": "Rain Safety",
+      "value": "Low",
+      "level": 2
     },
     {
-      "icon": "ticket",
-      "label": "Admission Fees",
-      "value": "All 4 stops free"
+      "icon": "users",
+      "label": "Family Fit",
+      "value": "Good",
+      "level": 4
     },
     {
-      "icon": "utensils-crossed",
-      "label": "Lunch",
-      "value": "Pay Direct"
+      "icon": "gauge",
+      "label": "Balance",
+      "value": "Focused",
+      "level": 3
     }
   ],
   "galleryItems": [

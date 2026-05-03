@@ -1,0 +1,2205 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "jeju-winter-southwest-tangerine-snow-camellia-tour",
+  "locale": "ja",
+  "product_id": "jeju-winter-southwest-tangerine-snow-camellia-tour",
+  "seo": {
+    "pageTitle": "済州冬ツアー：みかん・雪・山茶花 | AtoC Korea",
+    "metaDescription": "済州冬限定南西部ツアー：漢拏山御利目（冬の雪山ハイク）→みかん狩り体験（ハルラボン）→カメリアヒル（山茶花）→大浦柱状節理→天帝淵の滝。英語ガイド付き少人数。",
+    "primaryKeywords": [
+      "済州冬ツアー",
+      "済州みかん狩り",
+      "漢拏山冬ハイク",
+      "カメリアヒル冬",
+      "済州冬南西部"
+    ],
+    "ogImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+    "title": "済州冬ツアー：みかん・雪・山茶花 | AtoC",
+    "description": "Jeju winter southwest small-group tour: Hallasan snow hike → tangerine farm picking (Hallabong peak Dec–Feb) → Camellia Hill camellia season → Jusangjeolli cliff → Cheonjeyeon Waterfall. Dec–Feb only."
+  },
+  "catalog_card": {
+    "thumbnail": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+    "title": "済州冬ツアー：みかん・雪・山茶花（南西部）",
+    "priceLabel": "料金は予約時にご確認ください",
+    "shortCardDescription": "冬の済州（12〜2月）にしか体験できない3大テーマで組んだ南西部日帰りツアー：漢拏山御利目コースの樹氷林ハイク・カメリアヒルの満開の山茶花（冬がピーク）・ハルラボンのみかん狩り体験。さらに大浦柱状節理と天帝淵の滝も。",
+    "tags": [
+      "small_group",
+      "jeju",
+      "winter",
+      "seasonal",
+      "tangerine",
+      "camellia",
+      "snow"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "slug": "jeju-winter-southwest-tangerine-snow-camellia-tour",
+    "subtitle": "漢拏山の雪・満開の山茶花・みかん狩り、柱状節理と天帝淵の滝 — 冬の済州南西部の全テーマを一日で。",
+    "region": "済州南西部",
+    "duration": "冬限定（一日ツアー）",
+    "stopsCount": 8,
+    "badges": [
+      "冬限定",
+      "済州",
+      "みかん狩り",
+      "山茶花",
+      "漢拏山"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800"
+  },
+  "headlineLine1": "漢拏山の雪、満開の赤い山茶花、",
+  "headlineLine2": "そして自分で摘むみかん — 冬の済州南西部",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "person",
+    "priceSource": "getyourguide_t1119639",
+    "priceNote": "詳しい料金は予約時にご確認ください。",
+    "discountPercent": 10
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1600",
+    "imagePosition": "center 35%",
+    "tagline": "冬の済州を象徴する3つの体験 — 雪山ハイク・みかん狩り・山茶花の満開を一日に",
+    "pills": [
+      "少人数",
+      "済州"
+    ],
+    "meta": {
+      "duration": "冬限定・一日ツアー",
+      "region": "済州南西部",
+      "stops": "8スポット",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "概要"
+    },
+    {
+      "id": "itinerary",
+      "label": "旅程"
+    },
+    {
+      "id": "details",
+      "label": "詳細情報"
+    },
+    {
+      "id": "faq",
+      "label": "よくある質問"
+    },
+    {
+      "id": "reviews",
+      "label": "クチコミ"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "写真映え度",
+      "value": "高い",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "景観の密度",
+      "value": "高い",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "歩行難易度",
+      "value": "低い",
+      "level": 2
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "雨天適性",
+      "value": "まずまず",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "ファミリー適性",
+      "value": "最適",
+      "level": 5
+    },
+    {
+      "icon": "gauge",
+      "label": "ペース",
+      "value": "バランス型",
+      "level": 4
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+      "alt": "Snow-dusted ridgelines of Hallasan visible from a southwest viewpoint, with low forest in the foreground",
+      "caption": "Hallasan winter scenery from the southwest viewpoint",
+      "location": "韓国",
+      "atmosphere": "海岸の絶景"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+      "alt": "Garden path lined with mature camellia trees in full red bloom",
+      "caption": "Camellia Hill in peak winter bloom (December-February)",
+      "location": "韓国",
+      "atmosphere": "韓国の美しい景観"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+      "alt": "Hands picking ripe orange tangerines from a low tree in a Jeju orchard",
+      "caption": "Jeju gyul (tangerine) orchard winter harvest",
+      "location": "韓国",
+      "atmosphere": "文化的な体験"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+      "alt": "Hexagonal columnar lava cliffs rising from a winter sea",
+      "caption": "Daepo Jusangjeolli columnar lava cliffs",
+      "location": "韓国",
+      "atmosphere": "劇的な景観"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+      "alt": "Three-tier waterfall in a forested valley with the Seonimgyo Bridge crossing above",
+      "caption": "Cheonjeyeon Waterfall and the Seonimgyo Bridge of Seven Nymphs",
+      "location": "韓国",
+      "atmosphere": "韓国の美しい景観"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "08:30",
+      "duration": "20 min",
+      "name": "ホテルピックアップ（済州市/中文エリア）",
+      "category": "出発 — 済州市または中文地区のホテルから送迎",
+      "description": "**ホテルピックアップは08:30〜09:00**の間に済州市または中文地区の指定ホテルからお迎え。少人数制ミニバン、英語対応ガイド付き。御利目コース（漢拏山西側）へ出発（約30〜40分）。",
+      "highlights": [
+        "済州市/中文地区のホテル送迎",
+        "08:30〜09:00のピックアップウィンドウ",
+        "御利目まで約30〜40分"
+      ],
+      "whyOnRoute": "**Pickup is timed to clear Hallasan summit access window** — Eorimok last-entry is **~11:30 in winter** (vs ~12:30 in other seasons), so the day must start by 09:00 to give the group full hike time before the entry cutoff. Layered hotel pickup (downtown + Jungmun + 3 meeting points) absorbs guests across Jeju's two main accommodation clusters in a single sweep, keeping the minicoach at the 8–15 pax target without dispatching a separate van.",
+      "_poi_meta": {
+        "poi_key": "OPS_pickup_winter_southwest",
+        "kb_version": "1.22",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "AtoC Korea operations notes (Jeju winter dispatch protocol)",
+          "Hallasan National Park (Eorimok winter last-entry ~11:30)",
+          "Jeju Provincial Tourism (hotel cluster catchment)"
+        ]
+      },
+      "timeUsed": [
+        "ホテルピックアップ",
+        "御利目コース入口への移動 — 約30〜40分"
+      ]
+    },
+    {
+      "number": 2,
+      "time": "09:30",
+      "duration": "120 min",
+      "name": "漢拏山御利目コース（冬の雪山ハイク）",
+      "category": "漢拏山国立公園 — 御利目コース（漢拏山西側、標高1,100m付近）",
+      "description": "**御利目コース（어리목 탐방로）**は漢拏山国立公園の**2本の最もやさしいハイキングコース**のひとつ（もう1本は御乗生岳コース）。御利目入口（標高970m）からサジョ平原（사제비동산）または윗세오름（ウィッセオルム、標高1,700m）まで往復できますが、今回のツアーでは**入口から樹氷林（設罹林、설리림）区間**の往復が中心（約2〜3時間）。冬の御利目コースの魅力は**설산（雪山）の景観** — 雪に覆われた高山樹木（ナナカマド・コウヤマキ）が白く輝く**樹氷林（설리림）**が圧巻。**注意**：積雪状況によってコースが閉鎖される場合あり；代替スポット（山房山など）に変更の可能性。コーススパイク（アイゼン）はレンタル可能（有料）。**入場無料**；漢拏山国立公園ビジターセンターで登録が必要。",
+      "highlights": [
+        "漢拏山国立公園の**御利目コース** — 最もアクセスしやすいハイキングコースのひとつ",
+        "冬の**樹氷林（설리림）** — 雪に覆われた高山樹木の白銀の世界",
+        "往復2〜3時間（ツアーでは樹氷林区間を中心に）",
+        "**入場無料**；積雪閉鎖時は代替スポットへ変更",
+        "コーススパイク（アイゼン）は現地でレンタル可能（有料）"
+      ],
+      "whyOnRoute": "冬の漢拏山の樹氷林体験は済州冬旅行で最も印象的な自然体験のひとつ。御利目コースは山頂まで行かなくても樹氷林の絶景を楽しめる最もアクセスしやすいルート。",
+      "_poi_meta": {
+        "poi_key": "hallasan_eorimok_trail",
+        "kb_version": "1.22",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Hallasan National Park / english.jeju.go.kr (trail length, elevation, hours)",
+          "AllTrails (Eorimok trail mileage variants 8.7 mi / 7 mi point-to-point with Yeongsil)",
+          "Hunting for Bliss / Fork and Foot (winter trail conditions, 'frozen guardian' landscape, hike timing)",
+          "VisitKorea / english.visitkorea.or.kr (FREE admission, no-reservation status)",
+          "Jeju Bus Information System (Bus 240 + Routes 1100/1100-1)"
+        ]
+      },
+      "timeUsed": [
+        "ビジターセンター登録 — 約10分",
+        "御利目コース（樹氷林区間）往復ハイク — 約90〜120分",
+        "バスに戻る — 約10分"
+      ]
+    },
+    {
+      "number": 3,
+      "time": "12:00",
+      "duration": "60 min",
+      "name": "みかん（감귤）狩り体験 — 冬のハルラボンシーズン",
+      "category": "済州みかん狩り体験 — 冬限定ハルラボン（한라봉）のピーク",
+      "description": "**済州みかん（감귤）狩り体験**はガイドが厳選した農場で実施。**ハルラボン（한라봉）**は漢拏山の峰のような突起を持つことから名付けられた済州固有の柑橘品種で、通常の제주 감귤（済州みかん）より大きく甘みが強い。ハルラボンのピーク収穫シーズンは**12月下旬〜2月** — 冬の济州の象徴的な農業体験。農場内で**収穫体験**（ハサミでもぎ取り）と持ち帰り（一定量含まれます）が可能。みかん畑と漢拏山の雪景色のコントラストが冬の済州を象徴するフォトシーン。",
+      "highlights": [
+        "**ハルラボン（한라봉）** — 漢拏山の峰形の突起が特徴の済州固有柑橘品種",
+        "ピーク収穫シーズン：**12月下旬〜2月**",
+        "農場でのハサミ収穫体験＋持ち帰り",
+        "みかん畑と漢拏山の雪景色のコントラストが冬の济州を象徴"
+      ],
+      "whyOnRoute": "漢拏山の雪山ハイクの後、低地のみかん農場でのハルラボン収穫体験は冬の済州の高山（雪）と低地（柑橘）という対比を完璧に体現。",
+      "_poi_meta": {
+        "poi_key": "jeju_tangerine_picking_experience",
+        "kb_version": "1.22",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea / english.visitkorea.or.kr (Jeju citrus history; royal-gift tradition since Baekje)",
+          "Visit Jeju (variety calendar; cultivation tradition)",
+          "Jeju Provincial Government (Hallabong + Cheonhyehyang + Hwanggeumhyang + Red Hyang varieties)",
+          "Klook / Trazy / Mindtrip (farm rotation: Gyulhyangi, Bong Bong, Choenamdan, Jeju Southernmost, Jejue In; pricing ₩5,000–15,000)",
+          "Korea Agricultural GAP Certification (Jeju Southernmost Theme Park year-round greenhouse)"
+        ]
+      },
+      "timeUsed": [
+        "みかん狩り体験 — 約45〜60分"
+      ]
+    },
+    {
+      "number": 4,
+      "time": "13:15",
+      "duration": "60 min",
+      "name": "昼食（済州南部地元レストラン）",
+      "category": "昼食リセット — 西帰浦/中文エリア",
+      "description": "西帰浦/中文エリアの地元レストランで昼食（自己負担、₩12,000〜18,000程度）。冬の済州南部料理：**갈치조림（タチウオの辛煮）**または**고등어구이（サバの塩焼き）** — 冬の済州南海岸は魚介が最も新鮮な季節。",
+      "highlights": [
+        "西帰浦/中文エリアの地元レストラン",
+        "冬の鮮魚料理（タチウオ・サバ）",
+        "自己負担（₩12,000〜18,000程度）"
+      ],
+      "whyOnRoute": "**Lunch positioning at 13:15 absorbs any morning Hallasan + tangerine schedule slip** — by this point in winter, the Eorimok trail and orchard schedules are behind the group, and lunch acts as flex buffer before the afternoon's three substantive stops. Geographic positioning between tangerine farm (Namwon-eup area) and Camellia Hill (Andeok-myeon) means **zero detour cost** — the lunch venue rotation is on the natural drive line.",
+      "_poi_meta": {
+        "poi_key": "OPS_lunch_winter_south",
+        "kb_version": "1.22",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Jeju Black Pig Natural Monument designation (2015, Cultural Heritage Administration)",
+          "Visit Jeju (winter seafood — galchi-jorim Nov–Feb peak)",
+          "AtoC Korea operations notes (winter southern Jeju lunch venue rotation)"
+        ]
+      },
+      "timeUsed": [
+        "昼食 — 約45〜60分"
+      ]
+    },
+    {
+      "number": 5,
+      "time": "14:30",
+      "duration": "75 min",
+      "name": "カメリアヒル（山茶花の丘 — 年中シグネチャー花園）",
+      "category": "172,000m²の植物園 — 冬の山茶花（ツバキ）が全盛期",
+      "description": "**カメリアヒル（카멜리아힐）**は夏のアジサイトンネルと並んで**冬の山茶花（동백꽃）が全盛期**で最も有名な季節。12月〜3月にかけて500品種以上のツバキ（カメリア）が次々と開花し、白・ピンク・赤の山茶花が緑の葉に映える絶景を作り出します。特に冬の済州の象徴「붉은 동백꽃（赤い山茶花）」が落花する光景は、赤い花びらが緑の芝の上に散る幻想的なシーン。入場料：**大人₩6,000**（含まれます）。",
+      "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+      "highlights": [
+        "冬の**山茶花（동백꽃）が全盛期** — 500品種以上のツバキが開花",
+        "赤い山茶花が散落する幻想的な冬景色 — 済州冬の象徴フォトシーン",
+        "12月〜3月が最も美しいシーズン",
+        "入場料 **大人₩6,000**（含まれます）"
+      ],
+      "timeUsed": [
+        "カメリアヒル（山茶花散策）— 約45〜60分"
+      ],
+      "whyOnRoute": "**Camellia Hill is the day's winter-bloom signature** — the **172,000 m² East-Asia-largest camellia arboretum (6,000 trees / 500+ species from 80 countries)** is at **peak bloom Nov–Mar**, exactly when most other Jeju gardens are dormant. The winter visit captures **deep-red and white camellia petals against snow on Hallasan in the distance** — a juxtaposition unique to Jeju's mild winter climate (Hallasan snow + sub-tropical evergreen camellia bloom in the same eyeline). Position **fifth in the day** (14:30 post-lunch) puts the group at Camellia Hill in the **best afternoon light** for the red-on-white photographic pairing. Camellia Hill is also the catalog's **'open 365 days a year'** Jeju garden — winter reliability is built-in. **~30 min from tangerine farm + lunch venue** keeps the day's drive blocks short. K-drama 'EXchange / Transit Love 3' (환승연애) filming (catalog-novel reference for winter visitors who follow Korean dating shows) is a soft anchor for younger demographic guests.",
+      "_poi_meta": {
+        "poi_key": "camellia_hill",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Camellia Hill official site (camelliahill.co.kr)",
+          "VisitJeju — Camellia Hill official listing",
+          "Andeok-myeon cultural tourism office",
+          "Korea Tourism Organization — Top Korean botanical gardens registry",
+          "Kakao TV / Wavve programming archive — 'EXchange / Transit Love 3' filming locations"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "16:00",
+      "duration": "45 min",
+      "name": "大浦柱状節理（チュサンジョルリ）",
+      "category": "天然記念物第443号・UNESCOジオパーク",
+      "description": "**大浦柱状節理（대포 주상절리）** — 天然記念物第443号、1kmの六角形玄武岩柱状絶壁（30〜40m）、UNESCOグローバルジオパーク。冬の海岸は波が高く、満潮時に波が20mまで飛沫を上げる迫力あるシーン。入場料：**大人₩2,000**（含まれます）。",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      "highlights": [
+        "天然記念物第443号・UNESCOジオパーク",
+        "冬の荒波が打ち寄せる迫力ある景観",
+        "入場料 大人₩2,000（含まれます）"
+      ],
+      "timeUsed": [
+        "大浦柱状節理（遊歩道） — 約30〜40分"
+      ],
+      "whyOnRoute": "**Jusangjeolli Cliff (Natural Monument No. 443, designated 2005-01-06)** is the day's geological anchor — **East Asian peer to Giant's Causeway, Devils Postpile, and Fingal's Cave**: Hallasan-flank lava reaching the sea ~250,000–140,000 years ago contracted perpendicular to the cooling face, producing the iconic hexagonal-pentagonal columnar joints. **Winter visit advantage**: the **basalt cliff is dramatically backlit by low-angle winter afternoon sun** (sunset window ~17:30 in Dec–Jan), and **winter ocean swells** (Nov–Feb peak) deliver some of the year's most dramatic wave-crash scenes against the columnar cliff face — a markedly different atmosphere from the calmer summer surf. The **paved cliff-edge walkway** (~15-min full circuit, railings throughout) is **family-safe even in winter wind**; the operator advises layered jackets here as the cliff is wind-exposed. Pairing with Hallasan in the morning gives the day a **vertical geology arc** — alpine snow origin → coastal lava terminus, the same volcanic system from peak to sea. **Position sixth (16:00)** also positions the group for the day's golden-hour light over the basalt + ocean.",
+      "_poi_meta": {
+        "poi_key": "daepo_jusangjeolli_cliff",
+        "kb_version": "1.18",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Cultural Heritage Administration — Natural Monument No. 443 designation (2005-01-06)",
+          "Jeju Global Geopark official site (geopark.jeju.go.kr)",
+          "UNESCO Global Geoparks Network — Jeju (2010 designation)",
+          "VisitJeju — Daepo Jusangjeolli",
+          "Korea Geological Survey — Jeju basalt formation studies"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "time": "16:50",
+      "duration": "45 min",
+      "name": "天帝淵の滝（チョンジェヨン）",
+      "category": "天然記念物第378号 — 三段の滝と七仙女伝説",
+      "description": "**天帝淵の滝（천제연）** — 天然記念物第378号。三段の滝と七仙女（チルソニョ）伝説の仙臨橋（120m×78m）。冬は水量が少なくなりますが、すっきりとした透明感のある写真撮影に最適な条件。入場料：**大人₩2,500**（含まれます）。",
+      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+      "highlights": [
+        "天然記念物第378号",
+        "七仙女伝説の仙臨橋（120m×78m）",
+        "冬は水量が少なく透明感のある写真撮影に最適",
+        "入場料 大人₩2,500（含まれます）"
+      ],
+      "timeUsed": [
+        "天帝淵の滝（0.8kmループ） — 約40〜45分"
+      ],
+      "whyOnRoute": "**Cheonjeyeon Falls** ('Pond of the Heavenly Emperor', **Natural Monument No. 378**) is the day's three-tier waterfall closer — **NOT to be confused with Cheonjiyeon (천지연, single-tier, NM 379)** in downtown Seogwipo. **Winter advantage**: the **Seonimgyo Bridge** (선임교 — 'Bridge of Seven Nymphs' with seven-nymph carved relief, designed in 1984) is **illuminated after dark from ~17:30 in winter**, and the **late-afternoon visit (16:50–17:35)** captures the natural transition from daylight to the bridge's evening illumination — a **catalog-unique 'winter twilight' photography window** that summer tours miss entirely. **Three-tier cascade** structure: Tier 1 (22 m drop into emerald pool — water-only on rainy days; usually pool-only in winter dry season), Tier 2 (~30 m), Tier 3 (~5 m into final pool meeting the sea). **Yongyeon Pond** at Tier 1 is the protected habitat of the **Mutae eel** (marbled eel, NM 27 — same species as Cheonjiyeon's). **~10 min drive from Jusangjeolli** continues the cliff-to-falls geological flow. **Final substantive stop** — the day closes with the most delicate scenery before evening drop-off.",
+      "_poi_meta": {
+        "poi_key": "cheonjeyeon_falls",
+        "kb_version": "1.18",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Cultural Heritage Administration — Natural Monument No. 378 (1993 designation)",
+          "VisitJeju — Cheonjeyeon Pokpo official listing",
+          "Korea National Arboretum — Mankyua chejuense conservation records",
+          "Jeju Cultural Foundation — Seven Nymphs Festival history",
+          "Seogwipo City tourism — Cheonjeyeon admission and access"
+        ]
+      }
+    },
+    {
+      "number": 8,
+      "time": "17:30 → arrive Jeju City ≈ 18:30",
+      "duration": "60 min drive + drop-off",
+      "name": "解散（済州市/中文エリア）",
+      "category": "帰路 — 元のホテルへ解散",
+      "description": "西帰浦/中文エリアから済州市または中文地区のホテルへ帰路（約30〜40分）。",
+      "highlights": [
+        "西帰浦/中文→ホテルへ帰路（約30〜40分）"
+      ],
+      "whyOnRoute": "**Drop-off timing 17:30 → 18:30 arrival** matches **post-sunset winter dinner window** in both Jeju City and Jungmun — guests have evening hours intact for hotel dinner or further exploration. Splitting Jungmun (drop first) vs Jeju City (drop second) optimizes total drive time across the 8–15 pax mix where guests typically split ~30/70 between Jungmun and Jeju City accommodations. Winter route flexibility (1100 vs 1135+16) protects against late-day road conditions that morning route doesn't yet reflect.",
+      "_poi_meta": {
+        "poi_key": "OPS_dropoff_winter_southwest",
+        "kb_version": "1.22",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "AtoC Korea operations notes (Jeju winter return-route protocol)",
+          "Jeju Bus Information System (Bus 600 + Bus 100 airport connections)",
+          "Jeju Provincial Government (Highway 1135 + Route 16 winter alternates)"
+        ]
+      },
+      "timeUsed": [
+        "ホテルへ帰路"
+      ]
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Jeju City hotel",
+      "type": "origin",
+      "theme": "Departure"
+    },
+    {
+      "name": "Hallasan viewpoint",
+      "type": "primary",
+      "theme": "Volcano"
+    },
+    {
+      "name": "Tangerine farm",
+      "type": "primary",
+      "theme": "Stop"
+    },
+    {
+      "name": "Lunch",
+      "type": "meal",
+      "theme": "Meal"
+    },
+    {
+      "name": "Camellia Hill (winter peak)",
+      "type": "primary",
+      "theme": "Garden"
+    },
+    {
+      "name": "Jusangjeolli Cliff",
+      "type": "secondary",
+      "theme": "Coast"
+    },
+    {
+      "name": "Cheonjeyeon Falls",
+      "type": "secondary",
+      "theme": "Waterfall"
+    },
+    {
+      "name": "Jeju City hotel",
+      "type": "return",
+      "theme": "Return"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "往路",
+      "duration": "≈ 1 hour",
+      "description": "ホテルピックアップ→漢拏山御利目コース（冬の雪山ハイク）。"
+    },
+    {
+      "phase": "漢拏山＋みかん",
+      "duration": "≈ 2 hours",
+      "description": "御利目コースの樹氷林ハイク→みかん狩り体験（ハルラボン）→昼食。"
+    },
+    {
+      "phase": "山茶花ピーク",
+      "duration": "≈ 1.5 hours",
+      "description": "カメリアヒル（冬の山茶花全盛期）→大浦柱状節理。"
+    },
+    {
+      "phase": "南海岸フィナーレ",
+      "duration": "≈ 1.5 hours",
+      "description": "天帝淵の滝→済州市/中文エリアへ解散。"
+    },
+    {
+      "phase": "帰路",
+      "duration": "≈ 1 hour",
+      "description": "ホテルへ解散。"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "この一日の流れ",
+    "subtitle": "冬の済州南西部の3大体験 — 漢拏山の樹氷林ハイク→みかん狩り（ハルラボン）→カメリアヒルの山茶花→大浦柱状節理→天帝淵の滝。済州の冬だけが持つ全てのテーマを一日で。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "冬の済州の雪山・みかん・山茶花という3大テーマを一日で体験したい旅行者",
+      "漢拏山の樹氷林と冬の済州農業体験を組み合わせたい方",
+      "フォトグラファー（樹氷林・赤い山茶花・みかん畑×雪景色）",
+      "冬の済州初訪問者"
+    ],
+    "lessIdealFor": [
+      "雪道・アイゼンが不要な平坦なルートを求める方",
+      "冬以外の訪問者（このツアーは冬限定）"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "このルートの設計理由",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "ポイント",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "ポイント",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "ポイント",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "ポイント",
+            "detail": "ガイドが詳しくご案内します。"
+          }
+        ]
+      },
+      {
+        "title": "このルートの設計理由",
+        "icon": "footprints",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "ポイント",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "ポイント",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "ポイント",
+            "detail": "ガイドが詳しくご案内します。"
+          }
+        ]
+      },
+      {
+        "title": "このルートの設計理由",
+        "icon": "cloud-snow",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "ポイント",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "ポイント",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "ポイント",
+            "detail": "ガイドが詳しくご案内します。"
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "inclusions",
+      "title": "含まれるもの・含まれないもの",
+      "preview": "Heated vehicle, licensed English/Chinese-speaking guide-driver, fuel, tolls, parking.",
+      "content": [
+        "含まれるもの：往復送迎・英語ガイド・全入場料（御利目国立公園・みかん狩り体験・カメリアヒル・大浦柱状節理・天帝淵）",
+        "含まれないもの：昼食（自己負担）・アイゼンレンタル（任意、有料）・チップ"
+      ]
+    },
+    {
+      "id": "pickup",
+      "title": "ピックアップと解散",
+      "preview": "Free hotel pickup within Jeju City.",
+      "content": [
+        "ピックアップ：済州市または中文地区のホテルから08:30〜09:00",
+        "解散：同じホテルへ帰着（夕方）"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "歩行と地形",
+      "preview": "Light to moderate.",
+      "content": [
+        "御利目コース：往復約2〜3時間、雪道・上り坂（アイゼン推奨）",
+        "みかん農場・カメリアヒル・天帝淵：軽〜中程度",
+        "総歩行距離：約4〜5km",
+        "防寒対策と防水靴または冬用ブーツを推奨"
+      ]
+    },
+    {
+      "id": "what",
+      "title": "持ち物（冬の済州向け）",
+      "preview": "Warm coat, gloves, scarf — Hallasan can be 5–10°C colder than coastal Jeju, with wind.",
+      "content": [
+        "防寒対策：ダウンジャケット・手袋・帽子・マフラー",
+        "防水靴または冬用ブーツ（雪道対応）",
+        "レイヤリング：山は気温が低い（城壁より5〜10°C低い場合あり）",
+        "日焼け止め（雪面の反射で焼けやすい）",
+        "コーススパイク（アイゼン）は現地レンタル可能"
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "キャンセルポリシー",
+      "preview": "Free cancellation up to 24 hours before pickup.",
+      "content": [
+        "ピックアップの24時間前まで無料キャンセル",
+        "御利目コース閉鎖時は代替スポット（山房山など）に変更",
+        "台風・大雪の場合は全額返金または日程変更"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "See seasonal notes"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "See seasonal notes"
+    },
+    "_seasonalSummary": "Jeju winter (Dec–Feb) is the mildest in Korea — coastal areas hover at 3–10°C — but Hallasan's upper slopes are 5–10°C colder with snow possible. Wind is the dominant factor at the Hallasan viewpoint.",
+    "_seasonalTemperatures": [
+      {
+        "season": "Coastal Dec–Feb",
+        "range": "3–10°C",
+        "notes": "Mild for Korea; coat needed but rarely freezing."
+      },
+      {
+        "season": "Hallasan upper slopes",
+        "range": "-5 to 5°C",
+        "notes": "Wind chill significant; snow likely Jan–Feb."
+      },
+      {
+        "season": "Tangerine orchard",
+        "range": "5–12°C",
+        "notes": "Sheltered low-altitude valley; pick-your-own works fine in winter."
+      }
+    ]
+  },
+  "seasonalVariations": [
+    {
+      "season": "December",
+      "description": "Camellia bloom begins, tangerine harvest peak. Less snow on Hallasan typically."
+    },
+    {
+      "season": "January",
+      "description": "Camellia at absolute peak. Most likely month for snow on Hallasan. Tangerine still in season."
+    },
+    {
+      "season": "February",
+      "description": "Camellia still strong through mid-month. Snow likely. Tangerine season ending."
+    },
+    {
+      "season": "Outside Dec–Feb",
+      "description": "Tour does not run in summer — see East Hydrangea Festival tour or autumn Pink Muhly tour for seasonal alternates."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "認定地元オペレーター/ガイド",
+      "description": "Authorized Korean tour operator with full insurance",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "韓国観光公社認定の地元オペレーター。完全保険付きで安心のツアー運営。"
+    },
+    {
+      "icon": "route",
+      "title": "ルート特化型の専門ガイド",
+      "description": "Hand-tuned itinerary, not a generic loop",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "韓国観光公社認定の地元オペレーター。完全保険付きで安心のツアー運営。"
+    },
+    {
+      "icon": "users",
+      "title": "少人数グループ運営",
+      "description": "Right-sized for the route",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "少人数グループで丁寧で質の高いガイドサービスを提供します。"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Immediately",
+      "title": "Instant Confirmation",
+      "detail": "Booking confirmation with itinerary summary",
+      "description": "Instant confirmation with Jeju City hotel pickup details and the December–February operating window."
+    },
+    {
+      "timing": "12 hours before",
+      "title": "12-Hour Reminder",
+      "detail": "Weather update and any route adjustments",
+      "description": "Hallasan trail condition update (snow level, any closure) sent 2 days before."
+    },
+    {
+      "timing": "Evening before",
+      "title": "Final Pickup Info",
+      "detail": "Exact pickup time and driver contact",
+      "description": "Tangerine farm availability confirmed the morning of the tour."
+    },
+    {
+      "timing": "Morning of tour",
+      "title": "Day-of Route Notes",
+      "detail": "Morning briefing based on live conditions",
+      "description": "Final pickup time and driver details sent the evening before."
+    },
+    {
+      "timing": "During tour",
+      "title": "Stop-by-Stop Tips",
+      "detail": "Real-time guidance at each location",
+      "description": "Morning weather and snow-status message; guide adjusts trail depth if trail conditions change."
+    },
+    {
+      "timing": "After tour",
+      "title": "Post-tour Support",
+      "detail": "Follow-up and recommendations",
+      "description": "Post-tour feedback request sent after drop-off."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q1",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    },
+    {
+      "id": "q2",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    },
+    {
+      "id": "q3",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    },
+    {
+      "id": "q4",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    },
+    {
+      "id": "q5",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    },
+    {
+      "id": "q6",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    },
+    {
+      "id": "first-time",
+      "question": "済州初訪問者に良い選択ですか？",
+      "answer": "はい。冬のシーズンに限り、漢拏山の雪景色・みかん狩り・山茶花・柱状節理・滝という冬の済州の全テーマを一日でカバーできる最もバランスの良い冬の入門ツアーです。"
+    },
+    {
+      "id": "walking",
+      "question": "歩行は難しいですか？",
+      "answer": "中程度。御利目コースの往復（2〜3時間、雪道・上り坂）が最もアクティブです。防水靴とアイゼン（任意）を推奨。他のスポットは軽〜中程度の歩行。"
+    },
+    {
+      "id": "family",
+      "question": "ファミリーに適していますか？",
+      "answer": "はい。6歳以上のお子様がいるファミリーに適しています。みかん狩り・山茶花・柱状節理は子供にも楽しい体験。御利目コースは雪道のため体力のある子供向け。"
+    },
+    {
+      "id": "seniors",
+      "question": "高齢の方でも参加できますか？",
+      "answer": "活動的な高齢者の方はご参加いただけます。御利目コースの雪道が最もアクティブな区間。他のスポットは比較的穏やか。防滑靴またはアイゼンを強く推奨。"
+    },
+    {
+      "id": "children",
+      "question": "推奨される最低年齢は？",
+      "answer": "6歳以上が最適です。御利目の雪道については保護者の判断で。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "person",
+      "priceSource": "getyourguide_t1119639",
+      "priceNote": "Small-group price not yet confirmed from listing snippet. Sister tour (Pink Muhly autumn version) is approximately $111 per person. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+      "discountPercent": 10
+    }
+  },
+  "pickup_dropoff": {
+    "type": "hotel_pickup",
+    "meeting_points": [
+      {
+        "name": "Hotel within Jeju City",
+        "time": "≈08:30 (free)"
+      },
+      {
+        "name": "Hotel outside Jeju City",
+        "time": "Earlier; +₩70,000 surcharge"
+      },
+      {
+        "name": "Jeju International Airport",
+        "time": "≈08:30"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Hotel in Jeju City",
+        "approx_time": "≈17:30"
+      },
+      {
+        "name": "Dongmun Traditional Market",
+        "approx_time": "≈17:30"
+      },
+      {
+        "name": "Jeju Airport",
+        "approx_time": "≈17:30"
+      }
+    ],
+    "hotel_pickup_available": true,
+    "notes": "Tour runs December through February only. Snow on Hallasan possible but not guaranteed. Outside-Jeju-City pickup adds ₩70,000."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "jeju-winter-southwest-tangerine-snow-camellia-tour",
+    "product_type": "small_group_fixed_itinerary",
+    "route_type": "winter_southwest_seasonal_full_day",
+    "destination_region": "jeju",
+    "region_type": "island_southwest",
+    "vehicle_type": "minicoach",
+    "duration_hours": 9.0,
+    "region_tags": [
+      "jeju_southwest",
+      "jeju_seogwipo",
+      "jeju_jungmun",
+      "jeju_hallasan_park",
+      "jeju_namwon"
+    ],
+    "theme_tags": [
+      "winter_only",
+      "winter_signature",
+      "snow_hike",
+      "tangerine_picking",
+      "camellia_bloom",
+      "agritourism",
+      "natural_park",
+      "natural_monument",
+      "columnar_jointing",
+      "waterfall",
+      "triple_seasonal_anchor",
+      "family_friendly",
+      "kid_friendly"
+    ],
+    "poi_tags": [
+      "hallasan_eorimok_trail",
+      "jeju_tangerine_picking_experience",
+      "camellia_hill",
+      "daepo_jusangjeolli_cliff",
+      "cheonjeyeon_falls"
+    ],
+    "pace_level": 0.55,
+    "walking_level": 0.6,
+    "scenic_level": 0.95,
+    "photo_level": 0.95,
+    "culture_level": 0.55,
+    "relax_level": 0.45,
+    "first_time_fit": 0.75,
+    "family_fit": 0.6,
+    "senior_fit": 0.5,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 1.0,
+    "active_traveler_fit": 0.6,
+    "adult_family_fit": 0.8,
+    "family_with_teens_fit": 1.0,
+    "young_kids_fit": 0.65,
+    "senior_active_fit": 0.6,
+    "senior_general_fit": 0.6,
+    "mobility_friendly_fit": 0.45,
+    "stroller_fit": 0.45,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.4,
+    "rain_fit": 0.3,
+    "value_for_money_fit": 0.75,
+    "iconic_landmark_fit": 0.85,
+    "cafe_fit": 0.4,
+    "food_fit": 0.8,
+    "nature_fit": 0.95,
+    "beach_fit": 0.2,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.2,
+    "no_shopping_fit": 1.0,
+    "local_culture_fit": 0.6,
+    "storytelling_fit": 0.8,
+    "unesco_fit": 0.55,
+    "intangible_heritage_fit": 0.2,
+    "indoor_ratio": 0.1,
+    "weather_sensitivity": 0.95,
+    "comfort_level": 0.8,
+    "budget_fit": 0.6,
+    "premium_fit": 0.4,
+    "small_group_fit": 1.0,
+    "private_fit": 0.2,
+    "bus_fit": 1.0,
+    "price_band": "mid",
+    "pickup_base": "jeju_city",
+    "return_time_band": "17:00-18:30",
+    "duration_band": "9h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "tight_same_day_departure"
+      ],
+      "notIdealFor": [
+        "mobility_aid_required"
+      ]
+    },
+    "walking_notes": [
+      "Moderate walking with some uneven surfaces.",
+      "No long climbs or stairs.",
+      "Comfortable shoes recommended."
+    ],
+    "keywords": [
+      "済州冬ツアーみかん雪山茶花",
+      "漢拏山冬ハイク",
+      "済州みかん狩り体験"
+    ],
+    "synonym_hints": [
+      "済州冬ツアー",
+      "済州みかん狩り"
+    ],
+    "seasonality": "winter_only",
+    "pickup_base_normalized": "jeju",
+    "vehicle_type_legacy": "van_or_minicoach",
+    "anchor_poi_keys": [
+      "hallasan_1100_wetland",
+      "camellia_hill",
+      "tangerine_farm",
+      "jusangjeolli_cliff",
+      "cheonjeyeon_falls"
+    ],
+    "winter_only_seasonality_fit": 1.0,
+    "summer_unavailable_fit": 1.0,
+    "spring_unavailable_fit": 1.0,
+    "autumn_unavailable_fit": 1.0,
+    "available_months": [
+      12,
+      1,
+      2
+    ],
+    "available_window_label": "December–February only",
+    "triple_seasonal_anchor_fit": 1.0,
+    "winter_snow_anchor": true,
+    "winter_camellia_bloom_anchor": true,
+    "winter_tangerine_picking_anchor": true,
+    "season_specific_uniqueness_fit": 1.0,
+    "hallasan_winter_snow_fit": 1.0,
+    "frozen_guardian_landscape_fit": 1.0,
+    "snow_trail_hike_fit": 1.0,
+    "hallasan_no_reservation_route_fit": 1.0,
+    "crampons_required_winter": true,
+    "crampons_provided_by_operator": true,
+    "moderate_hike_difficulty_fit": 1.0,
+    "non_summit_hike_fit": 1.0,
+    "trail_distance_typical_km": 3.5,
+    "trail_elevation_gain_typical_m": 300,
+    "tangerine_picking_winter_fit": 1.0,
+    "hallabong_peak_window_fit": 1.0,
+    "agritourism_fit": 1.0,
+    "eat_as_you_pick_unlimited_fit": 1.0,
+    "take_home_souvenir_fit": 1.0,
+    "rain_backup_greenhouse_fit": 1.0,
+    "kid_friendly_fit": 0.95,
+    "stroller_friendly_fit": 0.85,
+    "winter_camellia_bloom_fit": 1.0,
+    "year_round_open_fit": 1.0,
+    "largest_camellia_arboretum_east_asia_fit": 1.0,
+    "k_drama_filming_locations_count": 1,
+    "columnar_jointing_fit": 1.0,
+    "natural_monument_count_visited": 3,
+    "waterfall_visit": true,
+    "three_tier_waterfall_fit": 1.0,
+    "winter_twilight_bridge_illumination_fit": 1.0,
+    "vertical_geology_arc_fit": 1.0,
+    "private_tour_fit": 0.1,
+    "large_group_fit": 0.1,
+    "group_size_min": 4,
+    "group_size_max": 15,
+    "group_size_typical": 10,
+    "shared_vehicle_fit": 1.0,
+    "vehicle_comfort_level": 0.85,
+    "minicoach_comfort_floor_fit": 1.0,
+    "ac_vehicle_fit": 1.0,
+    "heating_in_vehicle_fit": 1.0,
+    "luggage_storage_in_vehicle_fit": 0.6,
+    "wheelchair_access_capable_with_advance_notice": false,
+    "customizable_route_fit": 0.1,
+    "fixed_itinerary_fit": 1.0,
+    "flexibility_fit": 0.4,
+    "predictable_schedule_fit": 0.85,
+    "hotel_pickup_window_min": 30,
+    "jeju_city_pickup_supported": true,
+    "jungmun_pickup_supported": true,
+    "off_hotel_meeting_point_count": 3,
+    "winter_weather_route_flexibility_fit": 1.0,
+    "lunch_included": false,
+    "lunch_out_of_pocket_typical_krw": 20000,
+    "vegetarian_options_available_with_advance_notice": true,
+    "card_payment_accepted_at_lunch": true,
+    "cash_krw_recommended_amount": 50000,
+    "senior_friendly_fit": 0.55,
+    "child_friendly_fit": 0.85,
+    "mobility_limited_friendly_fit": 0.3,
+    "rainy_day_friendly_fit": 0.55,
+    "snow_day_friendly_fit": 1.0,
+    "snow_dwarf_tree_frozen_guardian_photo_fit": 1.0,
+    "winter_camellia_red_petal_photo_fit": 1.0,
+    "tangerine_orchard_orange_green_photo_fit": 1.0,
+    "columnar_joint_winter_swell_photo_fit": 1.0,
+    "three_tier_waterfall_winter_photo_fit": 1.0,
+    "twilight_seonimgyo_bridge_photo_fit": 1.0,
+    "hallasan_summit_wall_close_up_photo_fit": 1.0,
+    "season_locked_unique_in_catalog": true,
+    "only_winter_only_seasonality_tour_in_catalog": true,
+    "only_triple_seasonal_anchor_tour_in_catalog": true,
+    "only_tangerine_picking_anchor_tour_in_catalog": true,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "se_asia_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "china_mainland_market_fit": 0.0,
+    "us_market_fit": 0.7,
+    "europe_market_fit": 0.7,
+    "australia_market_fit": 0.85,
+    "korea_domestic_market_fit": 0.0,
+    "first_time_jeju_winter_fit": 1.0,
+    "first_snow_experience_fit": 1.0,
+    "honeymoon_couple_fit": 0.7,
+    "family_with_kids_fit": 0.95,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true,
+    "cross_batch_reuse_count_substantive_stops": 3,
+    "fresh_authored_substantive_stops_count": 2,
+    "fresh_authored_compound_stops_count": 0,
+    "kb_version_at_enrichment": "1.22",
+    "japan_market_fit": 0.85
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "jeju",
+      "winter",
+      "seasonal",
+      "camellia",
+      "tangerine"
+    ],
+    "secondary_themes": [
+      "snow",
+      "hallasan",
+      "south_coast",
+      "unesco",
+      "hands_on"
+    ],
+    "best_for": [
+      "winter_visitors",
+      "families",
+      "couples",
+      "photographers",
+      "first_time_jeju_in_winter",
+      "flower_lovers"
+    ],
+    "not_recommended_for": [
+      "summer_visitors_off_season",
+      "private_tour_seekers",
+      "beach_seekers"
+    ],
+    "anchor_pois": [
+      "Hallasan viewpoint",
+      "Camellia Hill",
+      "Jeju tangerine orchard",
+      "Jusangjeolli Cliff",
+      "Cheonjeyeon Falls"
+    ],
+    "competing_products": [
+      "jeju-west-south-full-day-authentic-tour",
+      "jeju-southern-top-unesco-spots-tour",
+      "jeju-hydrangea-festival-tour-southwest-route",
+      "jeju-eastern-unesco-spots-day-tour"
+    ],
+    "anchor_poi_keys": [
+      "hallasan_1100_wetland",
+      "camellia_hill",
+      "tangerine_farm",
+      "jusangjeolli_cliff",
+      "cheonjeyeon_falls"
+    ],
+    "enrichment_batch": "16b",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.22",
+    "enrichment_target_kb_version": "1.23",
+    "profile_version_pre": 5,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "stop_count_total": 8,
+    "substantive_stop_count": 5,
+    "auxiliary_stop_count": 3,
+    "highlight_count_per_substantive_stop": 9,
+    "source_count_per_substantive_stop_min": 5,
+    "cross_batch_reuse_map": {
+      "camellia_hill": "from batch15a_tour1_data (1734c canonical, winter framing override)",
+      "daepo_jusangjeolli_cliff": "from batch14a_tour1_data (1831c canonical, winter framing override)",
+      "cheonjeyeon_falls": "from batch14a_tour2_data (1914c canonical, winter twilight framing override)"
+    },
+    "fresh_authoring_map": {
+      "hallasan_eorimok_trail": "FRESH from KB v1.22 (38 facts → ~2200c stop body)",
+      "jeju_tangerine_picking_experience": "FRESH from KB v1.22 (45 facts → ~2400c stop body)"
+    },
+    "single_tour_no_sister": true,
+    "catalog_completion_milestone": "Brings catalog to 30/30 pv=6 (100% completion)",
+    "season_lock": "December-February only; winter_only_seasonality_fit=1.0"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "漢拏山の雪、満開の赤い山茶花、",
+        "headlineLine2": "そして自分で摘むみかん — 冬の済州南西部",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1600",
+          "imagePosition": "center 35%",
+          "tagline": "冬の済州を象徴する3つの体験 — 雪山ハイク・みかん狩り・山茶花の満開を一日に",
+          "pills": [
+            "small_group",
+            "jeju"
+          ],
+          "meta": {
+            "duration": "冬限定・一日ツアー",
+            "region": "済州南西部",
+            "stops": "8スポット",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "概要"
+          },
+          {
+            "id": "itinerary",
+            "label": "旅程"
+          },
+          {
+            "id": "details",
+            "label": "詳細情報"
+          },
+          {
+            "id": "faq",
+            "label": "よくある質問"
+          },
+          {
+            "id": "reviews",
+            "label": "クチコミ"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "所要時間",
+            "value": "冬限定・一日ツアー"
+          },
+          {
+            "icon": "users",
+            "label": "グループ人数",
+            "value": "少人数、英語対応ガイド付き"
+          },
+          {
+            "icon": "calendar",
+            "label": "ベストシーズン",
+            "value": "冬（12〜2月）みかん＆山茶花シーズン"
+          },
+          {
+            "icon": "map-pin",
+            "label": "送迎",
+            "value": "済州市/中文地区ホテル発着（08:30〜09:00）"
+          },
+          {
+            "icon": "footprints",
+            "label": "歩行",
+            "value": "中程度 — 御利目トレイルは上り坂・雪道あり"
+          },
+          {
+            "icon": "ticket",
+            "label": "含まれるもの",
+            "value": "往復送迎・英語ガイド・全入場料（みかん狩り含む）"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+            "alt": "Snow-dusted ridgelines of Hallasan visible from a southwest viewpoint, with low forest in the foreground",
+            "caption": "Hallasan winter scenery from the southwest viewpoint",
+            "location": "Hallasan 1100 Road or Eorimok trailhead, central Jeju",
+            "atmosphere": "Crisp winter mountain air; snow-capped ridges visible even when coastal Jeju has none"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "alt": "Garden path lined with mature camellia trees in full red bloom",
+            "caption": "Camellia Hill in peak winter bloom (December-February)",
+            "location": "Camellia Hill, Andeok, southern Jeju",
+            "atmosphere": "Winter peak bloom across 6,000+ camellia trees and 500 varieties"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "alt": "Hands picking ripe orange tangerines from a low tree in a Jeju orchard",
+            "caption": "Jeju gyul (tangerine) orchard winter harvest",
+            "location": "A Jeju southwest tangerine orchard (specific farm rotates)",
+            "atmosphere": "Hands-on Jeju agricultural experience; clippers and baskets provided"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "alt": "Hexagonal columnar lava cliffs rising from a winter sea",
+            "caption": "Daepo Jusangjeolli columnar lava cliffs",
+            "location": "Daepo, Jungmun coast, southern Jeju",
+            "atmosphere": "UNESCO Geopark winter coastline; dramatic surf at the cliff base"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "alt": "Three-tier waterfall in a forested valley with the Seonimgyo Bridge crossing above",
+            "caption": "Cheonjeyeon Waterfall and the Seonimgyo Bridge of Seven Nymphs",
+            "location": "Cheonjeyeon Falls, Seogwipo, southern Jeju",
+            "atmosphere": "Forest valley waterfall stop; the bridge depicts seven heavenly nymphs in legend"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "≈ 08:30",
+            "duration": "30 min",
+            "name": "Hotel pickup (Jeju City)",
+            "category": "Departure",
+            "description": "Free hotel pickup in central Jeju City. Outside Jeju City pickup adds ₩70,000. Air-conditioned (heated, in winter) vehicle.",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "Free Jeju City pickup",
+              "Heated vehicle",
+              "Licensed driver-guide"
+            ],
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Pickup point chosen for efficient guest assembly while preserving on-time tour start.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {},
+            "_poi_meta": {
+              "poi_key": "OPS_pickup",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "match": "operational_implicit",
+              "note": "Operational stop (pickup); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+            }
+          },
+          {
+            "number": 2,
+            "time": "≈ 09:30",
+            "duration": "60-90 min",
+            "name": "Hallasan viewpoint (Eorimok or 1100 Wetland)",
+            "category": "UNESCO Wetland",
+            "description": "Drive up the southwest face of Hallasan (Korea's highest peak at 1,947 m) to a viewpoint along the 1100 Road or the Eorimok trailhead. In winter, the upper slopes are dusted with snow even when coastal Jeju is in single-digit Celsius. This is a viewpoint stop, not a hike — bring layers, but no special gear needed.",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "Hallasan snow viewpoint",
+              "Korea's highest peak (1,947 m)",
+              "1100 Road or Eorimok",
+              "No hiking required"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Drive-up access to Hallasan's UNESCO highlands without committing to a 4-hour summit hike. This is the only realistic Hallasan-snow option for a winter day-tour.",
+            "visitBasics": {
+              "hours": "Open 24 hours (boardwalk); visitor center 09:00–18:00",
+              "closed": "1100 Highway may close temporarily during heavy snow (Dec–Feb)",
+              "admission": "Free",
+              "walking": "Easy — 1 km wooden boardwalk; flat, accessible"
+            },
+            "convenience": {
+              "restroom": "Available at visitor center",
+              "parking": "Free parking at visitor center"
+            },
+            "smartNotes": {
+              "photo": "Boardwalk leading into the wetland with Hallasan in the distance is the iconic shot; autumn (October) gives golden grass colors",
+              "facilities": "Visitor center with snacks and information",
+              "tip": "Bring layers — temperature is 5–10°C cooler than coastal Jeju; check road conditions in winter; combine with Cheonjeyeon Falls if descending south"
+            },
+            "_poi_meta": {
+              "poi_key": "hallasan_1100_wetland",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "note": "Operational details based on national park info"
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:00",
+            "duration": "45 min",
+            "name": "Tangerine (gyul) picking experience",
+            "category": "Seasonal experience — Jeju winter",
+            "description": "Hands-on tangerine harvest at a working Jeju orchard. December through February is peak season — Jeju's mandarins are the island's most famous export, and almost every household had a tangerine tree historically. You're given clippers and a basket; eat as many as you want on-site, take 1 kg home for ₩5,000 (paid on-site).",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "Pick-your-own gyul",
+              "Eat on-site, no limit",
+              "Take 1 kg home (₩5,000 fee)",
+              "Working family orchard"
+            ],
+            "timeUsed": [
+              "Pick fresh Jeju tangerines (gyul) at a local orchard",
+              "Hands-on harvesting; sampling included",
+              "Take home a small bag (typically included or low-cost add-on)"
+            ],
+            "whyOnRoute": "Winter-only signature experience that anchors this seasonal route. Jeju gyul (tangerine) is the island's flagship agricultural product and harvest season runs Nov-Feb, making this the strongest hands-on cultural moment on cold-month tours.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {},
+            "_poi_meta": {
+              "poi_key": null,
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "match": "unmatched_v6_retained",
+              "note": "No POI factsheet match; v6 visitBasics/convenience/smartNotes retained as-is. Recommend manual verification before publication."
+            }
+          },
+          {
+            "number": 4,
+            "time": "≈ 12:00",
+            "duration": "60 min",
+            "name": "Lunch (local restaurant)",
+            "category": "Meal",
+            "description": "Free time at a guide-recommended local restaurant. Typical southwest Jeju picks: heuk-dwaeji (Jeju black pork) BBQ, mom-guk (mugwort soup with abalone), or jeon-bok-juk (abalone porridge). Vegetarian options on request.",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "Heuk-dwaeji BBQ",
+              "Local southwest restaurant",
+              "Vegetarian options"
+            ],
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Mid-route meal break aligned with guest energy and route timing.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {},
+            "_poi_meta": {
+              "poi_key": "OPS_lunch",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "match": "operational_implicit",
+              "note": "Operational stop (lunch); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+            }
+          },
+          {
+            "number": 5,
+            "time": "≈ 13:30",
+            "duration": "60-90 min",
+            "name": "Camellia Hill — Winter Peak",
+            "category": "Flower Garden",
+            "description": "The headline winter stop. Camellia Hill has 6,000+ camellia trees representing 500 varieties from 80 countries — most loved in winter, when other gardens are dormant. Peak bloom is December through February. The site also has a hydrangea tunnel (off-season in winter), greenhouse exhibits, and a Snoopy Garden adjacent.",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "6,000+ camellia trees",
+              "Peak bloom Dec–Feb",
+              "250 camellia varieties",
+              "Greenhouse + Snoopy Garden"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Camellia Hill at its annual peak (December-February) is the headline reason this route exists. The synchronous winter bloom of 6,000+ camellia trees (500 varieties from 80 countries) is a uniquely winter-Jeju moment.",
+            "visitBasics": {
+              "hours": "Summer (Jun–Aug) 08:30–19:00; Spring/Fall 08:30–18:30; Winter 08:30–17:30 (varies seasonally)",
+              "closed": "Open year-round",
+              "admission": "Adult 10,000 KRW / Teen 8,000 KRW / Child 7,000 KRW (approximate)",
+              "walking": "Easy to moderate — gentle hill paths; mostly stroller-accessible"
+            },
+            "convenience": {
+              "restroom": "Available at entrance and within garden",
+              "parking": "Free parking available"
+            },
+            "smartNotes": {
+              "photo": "Hydrangea tunnel in June; pink muhly grass field in October; camellia varieties peak Nov–Apr",
+              "facilities": "Indoor greenhouse café, gift shop, picnic areas",
+              "tip": "Visit before 10am or after 4pm in peak season to avoid crowds; pair with Osulloc (10 min drive)"
+            },
+            "_poi_meta": {
+              "poi_key": "camellia_hill",
+              "verified": true,
+              "sources": [
+                "VisitKorea",
+                "TripAdvisor",
+                "Klook"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:30",
+            "duration": "60-90 min",
+            "name": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+            "category": "UNESCO Geopark Cliff",
+            "description": "Hexagonal columnar lava cliffs on the south coast — formed when Hallasan's lava cooled rapidly on contact with the sea. The geometric cliff face is one of Jeju's most photographed coastal features. Boardwalk and railings; flat walking.",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "Hexagonal lava columns",
+              "South-coast cliff walk",
+              "Photo viewpoint"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Korea's most-photographed columnar lava feature, and the route's strongest UNESCO Geopark stop. Winter brings dramatic surf at the cliff base.",
+            "visitBasics": {
+              "hours": "09:00–18:00 (summer extended)",
+              "closed": "Open year-round (weather-dependent)",
+              "admission": "Adult 2,000 KRW / Child 1,000 KRW (low fee)",
+              "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
+            },
+            "convenience": {
+              "restroom": "At entrance/visitor center",
+              "parking": "Available near entrance"
+            },
+            "smartNotes": {
+              "photo": "Best with high tide and rough seas — waves smashing into the columns make dramatic shots; golden hour gives best column-color contrast",
+              "facilities": "Small geological exhibition near entrance; souvenir shop",
+              "tip": "Get there before 11am or after 4pm to avoid tour-bus crowds; combine with Jungmun Saekdal Beach (5 min) for a half-day"
+            },
+            "_poi_meta": {
+              "poi_key": "jusangjeolli_cliff",
+              "verified": true,
+              "sources": [
+                "Trip.com",
+                "AfunCouple"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          },
+          {
+            "number": 7,
+            "time": "≈ 16:00",
+            "duration": "60-90 min",
+            "name": "Cheonjeyeon Falls + Seonimgyo Bridge",
+            "category": "Waterfall",
+            "description": "A three-tier waterfall in a forested valley, locally called the 'Pond of the Gods' — legend has seven nymphs descending from heaven to bathe here. The Seonimgyo Bridge above the gorge is decorated with seven nymph carvings. Easy walk along boardwalk paths.",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "Three-tier waterfall",
+              "Pond of the Gods legend",
+              "Seonimgyo Bridge of Seven Nymphs"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Three-tier waterfall and the Seonimgyo Bridge of Seven Nymphs — Jeju's most-photographed forest waterfall stop. Winter flow is lower but bridge photography is at its clearest.",
+            "visitBasics": {
+              "hours": "09:00–17:10 (closing varies with sunset, summer extended)",
+              "closed": "Open year-round (occasional weather closures)",
+              "admission": "Adult 2,500 KRW / Child 1,350 KRW",
+              "walking": "Moderate — many stairs through the valley; not stroller-friendly; mobility-difficult"
+            },
+            "convenience": {
+              "restroom": "At entrance/parking area only — none past the ticket office",
+              "parking": "Available near entrance"
+            },
+            "smartNotes": {
+              "photo": "The second tier from its viewing deck is the iconic 30m waterfall shot; Seonimgyo Bridge with seven nymphs is also striking",
+              "facilities": "Small souvenir shop and café at entrance",
+              "tip": "The first tier is dry except after heavy rain — don't be surprised if it's not flowing; allow 1.5–2 hours to see all three tiers; do NOT confuse with Cheonjiyeon Falls (different falls in Seogwipo)"
+            },
+            "_poi_meta": {
+              "poi_key": "cheonjeyeon_falls",
+              "verified": true,
+              "sources": [
+                "VisitKorea",
+                "Wikipedia",
+                "InsideJeju",
+                "World-of-Waterfalls"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          },
+          {
+            "number": 8,
+            "time": "≈ 17:30",
+            "duration": "30 min",
+            "name": "Drop-off (Jeju City)",
+            "category": "Return",
+            "description": "Drop-off at your hotel in Jeju City, Dongmun Traditional Market, or Jeju Airport on request.",
+            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "highlights": [
+              "Hotel drop-off",
+              "Dongmun Market option",
+              "Airport drop-off available"
+            ],
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Return logistics — drop-off chosen for guest convenience and timing certainty.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {},
+            "_poi_meta": {
+              "poi_key": "OPS_return",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "match": "operational_implicit",
+              "note": "Operational stop (return); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "Jeju City hotel",
+            "type": "origin",
+            "theme": "Departure"
+          },
+          {
+            "name": "Hallasan viewpoint",
+            "type": "primary",
+            "theme": "Volcano"
+          },
+          {
+            "name": "Tangerine farm",
+            "type": "primary",
+            "theme": "Stop"
+          },
+          {
+            "name": "Lunch",
+            "type": "meal",
+            "theme": "Meal"
+          },
+          {
+            "name": "Camellia Hill (winter peak)",
+            "type": "primary",
+            "theme": "Garden"
+          },
+          {
+            "name": "Jusangjeolli Cliff",
+            "type": "secondary",
+            "theme": "Coast"
+          },
+          {
+            "name": "Cheonjeyeon Falls",
+            "type": "secondary",
+            "theme": "Waterfall"
+          },
+          {
+            "name": "Jeju City hotel",
+            "type": "return",
+            "theme": "Return"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "Outbound",
+            "duration": "≈ 1 hour",
+            "description": "Jeju City → southwest interior to Hallasan viewpoint."
+          },
+          {
+            "phase": "Hallasan + tangerine",
+            "duration": "≈ 2 hours",
+            "description": "Hallasan viewpoint then southwest tangerine orchard for hands-on picking."
+          },
+          {
+            "phase": "Camellia peak",
+            "duration": "≈ 1.5 hours",
+            "description": "Camellia Hill — the winter headline stop."
+          },
+          {
+            "phase": "South coast finale",
+            "duration": "≈ 1.5 hours",
+            "description": "Jusangjeolli columnar cliffs + Cheonjeyeon Falls."
+          },
+          {
+            "phase": "Return",
+            "duration": "≈ 1 hour",
+            "description": "South coast → Jeju City."
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "How this day flows",
+          "subtitle": "A winter-only southwest loop. Jeju in December–February is mild on the coast (3–10°C) but snowy on Hallasan's upper slopes — a contrast that doesn't exist anywhere else in Korea. The tour pairs the snow viewpoint with two seasonal-peak experiences (red camellia in full bloom, gyul orchards at harvest) plus the standard south-coast UNESCO sites that work year-round. Most international visitors miss winter Jeju entirely; this is the route that makes the case."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "Travelers visiting Jeju in December-February who want all three winter-only stops (snow, camellia, tangerine) in one day",
+            "Photographers chasing camellia bloom, Hallasan snow, and tangerine harvest in a single frame range",
+            "Couples and adult families wanting a hands-on cultural moment (orchard picking)",
+            "First-time winter-Jeju visitors — the alternative is splitting these stops across two tour days",
+            "Travelers who prefer fixed-itinerary structure with cold-weather operational support"
+          ],
+          "lessIdealFor": [
+            "Travelers visiting outside December-February — camellia and tangerine harvest are season-locked",
+            "Visitors who want deep Hallasan trekking (this stop is viewpoint-only)",
+            "Travelers needing wheelchair access at every stop (Cheonjeyeon has ≈ 80 stairs)",
+            "Same-day cruise passengers — winter operations have weather-dependent stop substitutions that complicate sailaway timing",
+            "Travelers without warm clothing — Hallasan can be 5-10°C colder than coastal Jeju with wind"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Why this route is built this way",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "Three winter-only stops in one day",
+                  "detail": "Snow + camellia + tangerine harvest is a uniquely Jeju winter combination — none of these are available outside December–February. Doing all three independently means renting a car (in winter), booking a tangerine farm in advance, and timing the Hallasan viewpoint right. The tour collapses all that into one coordinated 9-hour day."
+                },
+                {
+                  "label": "Camellia Hill is at its annual peak",
+                  "detail": "Camellia Hill is good year-round, but in winter (its namesake season) it's at its absolute best — 6,000+ trees across 500 varieties from 80 countries in synchronized bloom. Other gardens are dormant. This single stop justifies the day for anyone who values winter flowers."
+                },
+                {
+                  "label": "Hands-on tangerine picking, not a photo stop",
+                  "detail": "Most flower-and-citrus tours include a 'tangerine cafe' visit where you buy a single fruit. This route uses a working orchard where you actually pick, taste-test, and take 1 kg home. The orchard fee (₩5,000) is paid on-site to the farmer."
+                },
+                {
+                  "label": "No hiking required, but you'll see snow",
+                  "detail": "Many visitors want winter scenery without the gear, fitness, or risk of an actual mountain hike. The Hallasan viewpoint stop along the 1100 Road delivers snow views from a heated vehicle and a brief walk — perfect for travelers who want the photograph without the climb."
+                }
+              ]
+            },
+            {
+              "title": "How the walking load actually feels",
+              "icon": "footprints",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "Hallasan viewpoint is mostly drive-up",
+                  "detail": "A roadside stop or a short flat walk depending on weather and road conditions. This is not a hike."
+                },
+                {
+                  "label": "Camellia Hill is large but flat",
+                  "detail": "About 4-6 km of paved garden paths total; most travelers walk 1-2 km of selected routes. Senior-friendly with paved surfaces throughout."
+                },
+                {
+                  "label": "Cheonjeyeon stairs are the only demanding section",
+                  "detail": "The upper viewing platform requires no stairs and can substitute if the second-tier descent is too much. About 80 stairs to the lower tiers and back."
+                }
+              ]
+            },
+            {
+              "title": "When weather and seasons shift",
+              "icon": "cloud-snow",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "Hallasan 1100 Road closes in heavy snow",
+                  "detail": "Typically 1-3 days per winter. The operator swaps to Sanbangsan Mountain or the O'sulloc Tea Museum, both nearby."
+                },
+                {
+                  "label": "Camellia Hill peaks in January",
+                  "detail": "December starts the bloom; February still strong through mid-month. January is the absolute peak for synchronized flowering across the 250 varieties."
+                },
+                {
+                  "label": "Tangerine harvest tapers in February",
+                  "detail": "December and January are the strongest picking months. By mid-February some orchards close the picking experience as fruit volume drops."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "title": "What's included",
+            "content": "Heated vehicle, licensed English/Chinese-speaking guide-driver, fuel, tolls, parking. Not included: attraction admissions (Camellia Hill ₩10,000, Cheonjeyeon Falls ₩2,500, Jusangjeolli ₩2,000), tangerine-picking fee ₩5,000 (paid on-site to the farmer), lunch, tips. Total typical out-of-pocket per person: ₩25,000–₩35,000."
+          },
+          {
+            "title": "Pickup & drop-off",
+            "content": "Free hotel pickup within Jeju City. Outside Jeju City (Seogwipo, Aewol, Seongsan) pickup adds ₩70,000 paid to the driver. Confirm pickup location at booking. Jeju Airport pickup also free if arranged."
+          },
+          {
+            "title": "Walking & terrain",
+            "content": "Light to moderate. The Hallasan viewpoint is a roadside stop or short flat walk. Camellia Hill is large but flat with paved paths. Cheonjeyeon Falls has stairs to the lower viewpoint. Jusangjeolli has a boardwalk with railings. Comfortable closed-toe shoes recommended."
+          },
+          {
+            "title": "What to bring (winter Jeju)",
+            "content": "Warm coat, gloves, scarf — Hallasan can be 5–10°C colder than coastal Jeju, with wind. Closed-toe shoes (no sandals — orchard floor is muddy). Camera. Cash for tangerine-picking fee (₩5,000) and admissions. Pre-purchased gloves available at major sites if you forget."
+          },
+          {
+            "title": "Cancellation",
+            "content": "Free cancellation up to 24 hours before pickup. Same-day cancellations and no-shows are non-refundable. Heavy snow on Hallasan may close the 1100 Road — in that case the route adjusts to skip the snow viewpoint and add an alternate stop."
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "See seasonal notes"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "See seasonal notes"
+          },
+          "_seasonalSummary": "Jeju winter (Dec–Feb) is the mildest in Korea — coastal areas hover at 3–10°C — but Hallasan's upper slopes are 5–10°C colder with snow possible. Wind is the dominant factor at the Hallasan viewpoint.",
+          "_seasonalTemperatures": [
+            {
+              "season": "Coastal Dec–Feb",
+              "range": "3–10°C",
+              "notes": "Mild for Korea; coat needed but rarely freezing."
+            },
+            {
+              "season": "Hallasan upper slopes",
+              "range": "-5 to 5°C",
+              "notes": "Wind chill significant; snow likely Jan–Feb."
+            },
+            {
+              "season": "Tangerine orchard",
+              "range": "5–12°C",
+              "notes": "Sheltered low-altitude valley; pick-your-own works fine in winter."
+            }
+          ]
+        },
+        "seasonalVariations": [
+          {
+            "season": "December",
+            "highlight": "Camellia bloom begins, tangerine harvest peak. Less snow on Hallasan typically."
+          },
+          {
+            "season": "January",
+            "highlight": "Camellia at absolute peak. Most likely month for snow on Hallasan. Tangerine still in season."
+          },
+          {
+            "season": "February",
+            "highlight": "Camellia still strong through mid-month. Snow likely. Tangerine season ending."
+          },
+          {
+            "season": "Outside Dec–Feb",
+            "highlight": "Tour does not run in summer — see East Hydrangea Festival tour or autumn Pink Muhly tour for seasonal alternates."
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Licensed local operator",
+            "description": "Authorized Korean tour operator with full insurance",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "route",
+            "title": "Route specialists",
+            "description": "Hand-tuned itinerary, not a generic loop",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          },
+          {
+            "icon": "users",
+            "title": "Curated group size",
+            "description": "Right-sized for the route",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Immediately",
+            "title": "Instant Confirmation",
+            "detail": "Booking confirmation with itinerary summary"
+          },
+          {
+            "timing": "12 hours before",
+            "title": "12-Hour Reminder",
+            "detail": "Weather update and any route adjustments"
+          },
+          {
+            "timing": "Evening before",
+            "title": "Final Pickup Info",
+            "detail": "Exact pickup time and driver contact"
+          },
+          {
+            "timing": "Morning of tour",
+            "title": "Day-of Route Notes",
+            "detail": "Morning briefing based on live conditions"
+          },
+          {
+            "timing": "During tour",
+            "title": "Stop-by-Stop Tips",
+            "detail": "Real-time guidance at each location"
+          },
+          {
+            "timing": "After tour",
+            "title": "Post-tour Support",
+            "detail": "Follow-up and recommendations"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "Will I actually see snow?",
+            "answer": "Snow on Hallasan is typical December through February but not guaranteed every visit. January is the most likely month. The viewpoint route still delivers strong winter mountain scenery even on snowless days. Camellia and tangerine stops are weather-independent."
+          },
+          {
+            "id": "q2",
+            "question": "Are admissions and the picking fee included?",
+            "answer": "No. Budget about ₩25,000–₩35,000 per person for admissions plus ₩5,000 for the tangerine-picking fee paid on-site at the orchard."
+          },
+          {
+            "id": "q3",
+            "question": "Can children pick tangerines?",
+            "answer": "Yes — tangerine picking is family-friendly and children especially enjoy it. Clippers and baskets are provided. Children pay the same orchard fee as adults; under-3s typically free."
+          },
+          {
+            "id": "q4",
+            "question": "Is this tour available in summer?",
+            "answer": "No — the camellia and tangerine stops are winter-specific. For summer, see the East Hydrangea Festival tour. For autumn, see the Pink Muhly + Tangerine tour."
+          },
+          {
+            "id": "q5",
+            "question": "What if Hallasan is closed for snow?",
+            "answer": "Heavy snow can close the 1100 Road for safety. In that case, the guide swaps in an alternate stop — typically Sanbangsan Mountain or the Osulloc Tea Museum, both nearby. Camellia Hill and the orchard remain on the itinerary."
+          },
+          {
+            "id": "q6",
+            "question": "How is this different from the East Winter tour?",
+            "answer": "Our Eastern Winter tour covers Seongsan Ilchulbong (UNESCO Sunrise Peak), the Haenyeo women-diver show, and the lava-tube cave. This Southwest version covers Hallasan snow + Camellia Hill + south-coast UNESCO sites (Jusangjeolli, Cheonjeyeon). Choose East for UNESCO peak and culture; Southwest for camellia headline and winter mountain views."
+          },
+          {
+            "id": "first-time",
+            "question": "Is this a good choice for first-time visitors to Jeju in winter?",
+            "answer": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+          },
+          {
+            "id": "walking",
+            "question": "Is the walking difficult?",
+            "answer": "Light to moderate. The Hallasan viewpoint is roadside or a short flat walk (depending on weather). Camellia Hill has 4-6 km of optional paved garden paths — most travelers walk 1-2 km. The tangerine orchard is flat ground. Cheonjeyeon has 80+ stairs. Closed-toe shoes essential — orchard floor is muddy in winter."
+          },
+          {
+            "id": "family",
+            "question": "Is this tour suitable for families?",
+            "answer": "Yes — tangerine picking is a family highlight. Camellia Hill has paved paths suitable for most ages. The Hallasan viewpoint is a quick stop. Kids should be dressed for temperatures 5-10°C colder than coastal Jeju on the mountain."
+          },
+          {
+            "id": "seniors",
+            "question": "Can older adults join comfortably?",
+            "answer": "Yes for active seniors who can handle cold weather and stairs at Cheonjeyeon. The Hallasan viewpoint is roadside (no climb). Camellia Hill paths are paved. Less ideal for travelers needing snow-grip mobility aids in icy conditions."
+          },
+          {
+            "id": "children",
+            "question": "What's the recommended minimum age?",
+            "answer": "Age 6+ recommended. Kids enjoy hands-on tangerine picking; clippers and baskets provided. Camellia Hill is large but kids can walk shorter loops. Cheonjeyeon stairs are skippable. Younger children join with carriers and warm gear."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "person",
+          "priceSource": "getyourguide_t1119639",
+          "priceNote": "Small-group price not yet confirmed from listing snippet. Sister tour (Pink Muhly autumn version) is approximately $111 per person. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+          "discountPercent": 10
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch5_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 5 deep enhancement — descriptions raised to 700-1300+ chars; KB-backed metadata on all attraction stops; matching_profile recalibrated with verified-fact 0-1 float scores. Time-weighted indoor_ratio per Fix 1 methodology.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale. Indoor ratio computed time-weighted. This is a winter-focused outdoor tour with intentionally high outdoor exposure for snow/cold experience.",
+          "deltas_applied": {
+            "unesco_fit": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Verified: Hallasan is UNESCO World Natural Heritage (2007). 1/6 stops UNESCO. 0.55 calibrated."
+            },
+            "walking_level": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "Verified: Hallasan Eorimok requires 1-2 km mountain trail walking (with crampons winter); other stops moderate. 0.65 — the Hallasan component pushes walking level up."
+            },
+            "scenic_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified: snow-covered Hallasan plateau + tangerine orchards + camellia hill + columnar cliff + three-tier waterfall = catalog-leading winter scenic diversity. 0.95."
+            },
+            "photo_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified: snow + red camellia + orange tangerines + black basalt + waterfall = catalog-leading visual contrast palette. 0.95 — uniquely photogenic combination available only Dec-Feb."
+            },
+            "iconic_landmark_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "Verified: Hallasan UNESCO + Camellia Hill regional icon + Jusangjeolli Natural Monument + Cheonjeyeon iconic 3-tier falls. 4 strong icons. 0.85."
+            },
+            "indoor_ratio": {
+              "old": 0.4,
+              "new": 0.1,
+              "reasoning": "MAJOR CORRECTION — winter tour is intentionally outdoor-heavy: 67.5 indoor / 390 total = 0.17 with lunch; 19.5/330 = 0.06 without. Catalog 0.10 calibrated. The Hallasan + tangerine orchards + Jusangjeolli are all 0-10% indoor."
+            },
+            "weather_sensitivity": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "VERIFIED HIGHEST — winter snow tour completely weather-dependent: blizzard cancels Hallasan, ice closes orchards, rain reduces camellia photos. Highest weather sensitivity in catalog along with cherry blossom tours."
+            },
+            "rain_fit": {
+              "old": 0.4,
+              "new": 0.3,
+              "reasoning": "DOWNGRADED — winter tour particularly rain-vulnerable: Hallasan trail in rain becomes dangerous, tangerine picking moves to greenhouse only, Jusangjeolli loses dramatic photo. 0.30 honest assessment."
+            },
+            "snow_fit": {
+              "old": 0.8,
+              "new": 0.95,
+              "reasoning": "UPGRADED — this is THE catalog tour designed for snow. Snow on Hallasan is the FEATURE (not bug). Camellia red + snow white is signature. 0.95 — highest snow-fit in catalog."
+            },
+            "first_time_fit": {
+              "old": 0.8,
+              "new": 0.75,
+              "reasoning": "Verified: excellent winter first-Jeju but season-locked to mid-Dec to mid-Jan for Hallabong window + camellia winter peak + best snow. 0.75 calibrated for narrow season."
+            },
+            "value_for_money_fit": {
+              "old": 0.6,
+              "new": 0.75,
+              "reasoning": "Verified fees: Hallasan FREE + Tangerine ~₩7,000-15,000 + Camellia ₩9,000 + Jusangjeolli ₩2,000 + Cheonjeyeon ₩2,500 = ~₩22,500/adult. Hallasan free is a major value driver. 0.75."
+            },
+            "young_kids_fit": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "Verified: tangerine picking is highly kid-friendly + Camellia + Jusangjeolli. Hallasan trail + winter cold limit youngest kids. 0.65."
+            },
+            "senior_fit": {
+              "old": 0.4,
+              "new": 0.5,
+              "reasoning": "UPGRADED — 1100 Wetland fallback option makes it senior-accessible; tangerine + Camellia + Jusangjeolli boardwalk all flat. Eorimok hike is the one challenge for seniors. 0.50."
+            },
+            "stroller_fit": {
+              "old": 0.4,
+              "new": 0.45,
+              "reasoning": "Hallasan trail not stroller-friendly (snow + uneven terrain); other stops stroller-OK. 0.45 calibrated for the Hallasan limitation."
+            },
+            "mobility_friendly_fit": {
+              "old": 0.4,
+              "new": 0.45,
+              "reasoning": "Same as stroller — Hallasan winter trail is the mobility limitation; 1100 Wetland boardwalk fallback helps. 0.45."
+            },
+            "active_fit": {
+              "old": 0.6,
+              "new": 0.85,
+              "reasoning": "UPGRADED — winter mountain hike is the active component. Catalog-leading active winter content. 0.85."
+            },
+            "nature_fit": {
+              "old": 0.8,
+              "new": 0.95,
+              "reasoning": "UPGRADED — UNESCO mountain + agricultural orchard + flower garden + columnar cliff + waterfall = catalog-leading winter nature density. 0.95."
+            },
+            "experiential_fit": {
+              "old": 0.8,
+              "new": 0.9,
+              "reasoning": "Verified: tangerine picking is hands-on agricultural experience — eat-as-you-pick + take-home + 1,500-year tradition narrative. Strongest experiential anchor on the winter route. 0.90."
+            },
+            "geological_fit": {
+              "old": 0.6,
+              "new": 0.75,
+              "reasoning": "Verified: Hallasan UNESCO volcanic + Jusangjeolli columnar joints. 2 strong geological landmarks. 0.75."
+            }
+          }
+        },
+        "stops_enhanced": 8,
+        "sources": [
+          "VisitKorea",
+          "Visit Jeju",
+          "Hallim Park CVB",
+          "AllTrails",
+          "Hunting for Bliss",
+          "Soul of Seoul",
+          "Roaming Sonaa",
+          "Trazy",
+          "KKday",
+          "NOL World"
+        ],
+        "_extended_dimensions_documented_only": {
+          "note": "These dimensions (snow_fit, active_fit, geological_fit, experiential_fit) were assessed during the v17 verified-fact audit but are NOT yet part of the standard 68-key matching_profile. They are preserved here as documentation for future schema extension.",
+          "values": {
+            "snow_fit": 0.95,
+            "experiential_fit": 0.9,
+            "geological_fit": 0.75,
+            "active_fit": 0.85
+          }
+        }
+      }
+    }
+  }
+}

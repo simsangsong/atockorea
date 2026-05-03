@@ -1,0 +1,2201 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "jeju-hydrangea-festival-tour-east-route",
+  "locale": "zh-CN",
+  "product_id": "jeju-hydrangea-festival-tour-east-route",
+  "seo": {
+    "pageTitle": "Jeju Hydrangea Festival East Route Day Tour | AtoC Korea",
+    "metaDescription": "Summer-only 9-hour east Jeju small-group tour: Hueree Natural Park hydrangea festival, Seongsan Ilchulbong (UNESCO), Seongeup Folk Village, Hamdeok Beach.",
+    "primaryKeywords": [
+      "Jeju hydrangea festival",
+      "Jeju east route tour",
+      "Seongsan Ilchulbong tour",
+      "Hueree hydrangea",
+      "Jeju summer tour"
+    ],
+    "ogImage": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+    "title": "济州绣球花节一日游 · 东部路线 · 夏季限定小团体 | AtoC Korea",
+    "description": "济州东部夏季限定绣球花节一日游：城山日出峰UNESCO世界遗产→日出乐园绣球花节→休爱里自然公园绣球花田。小团体，英语导游，6月至7月中旬限定。"
+  },
+  "catalog_card": {
+    "thumbnail": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+    "title": "济州绣球花节一日游：东部路线",
+    "priceLabel": "Price varies — confirm at booking",
+    "shortCardDescription": "A seasonal small-group day-tour of east Jeju built around the island's hydrangea festivals (late May to mid-July, peak mid-June) at Hueree Natural Park and Ilchul Land. The route also covers two UNESCO World Heritage sites — Seongsan Ilchulbong (Sunrise Peak) and Seongeup Folk Village — plus Hamdeok Beach and the Micheon Cave lava tube. Hotel pickup in Jeju City, English/Chinese-speaking licensed guide-driver.",
+    "tags": [
+      "small_group",
+      "jeju",
+      "hydrangea",
+      "seasonal",
+      "summer",
+      "unesco",
+      "festival"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "slug": "jeju-hydrangea-festival-tour-east-route",
+    "subtitle": "Hydrangea festivals + UNESCO east Jeju, summer-only small-group day.",
+    "region": "济州东部",
+    "duration": "9 hours",
+    "stopsCount": 8,
+    "badges": [
+      "小团体",
+      "济州",
+      "绣球花",
+      "季节限定",
+      "夏季限定",
+      "世界遗产",
+      "节庆活动"
+    ],
+    "heroImage": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg"
+  },
+  "headlineLine1": "绣球花蓝海与城山日出峰金辉——",
+  "headlineLine2": "东济州夏日路线，9小时一圈环游",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "person",
+    "priceSource": "getyourguide_t662120",
+    "priceNote": "小团体票价尚未确认。姊妹西南绣球花行程约89至96美元。确认后，AtoC Korea直售价格享9折优惠。",
+    "discountPercent": 10
+  },
+  "hero": {
+    "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+    "imagePosition": "center 35%",
+    "tagline": "绣球花盛开时的东济州——UNESCO遗产与一片花海，夏日最完整的9小时环线",
+    "pills": [
+      "小团体",
+      "济州"
+    ],
+    "meta": {
+      "duration": "9 hours",
+      "region": "济州东部",
+      "stops": "8 个景点",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "行程总览"
+    },
+    {
+      "id": "itinerary",
+      "label": "详细行程"
+    },
+    {
+      "id": "details",
+      "label": "注意事项"
+    },
+    {
+      "id": "faq",
+      "label": "常见问题"
+    },
+    {
+      "id": "reviews",
+      "label": "旅客评价"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "拍照潜力",
+      "value": "高",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "景点密度",
+      "value": "高",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "步行强度",
+      "value": "稍高",
+      "level": 4
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "雨天适合度",
+      "value": "较低",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "亲子适合度",
+      "value": "良好",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "行程节奏",
+      "value": "聚焦型",
+      "level": 3
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+      "alt": "城山日出峰UNESCO世界自然遗产",
+      "caption": "城山日出峰（日出峰）——UNESCO世界自然遗产",
+      "location": "",
+      "atmosphere": ""
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+      "alt": "休爱里自然公园绣球花田",
+      "caption": "休爱里自然公园绣球花田——盛花期5月下旬至7月中旬（高峰6月中）",
+      "location": "",
+      "atmosphere": ""
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+      "alt": "日出乐园弥天窟熔岩管万丈窟替代方案",
+      "caption": "日出乐园弥天窟熔岩管（万丈窟替代方案）",
+      "location": "",
+      "atmosphere": ""
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+      "alt": "城邑民俗村传统石屋UNESCO遗产",
+      "caption": "城邑民俗村传统石屋UNESCO遗产",
+      "location": "",
+      "atmosphere": ""
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+      "alt": "含德海滩济州前三名海滩",
+      "caption": "含德海滩，济州前三名海滩之一",
+      "location": "",
+      "atmosphere": ""
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "08:30",
+      "duration": "30 min",
+      "name": "Hotel pickup (Jeju City)",
+      "category": "Pickup — Jeju City Hotel/Hub Sequence",
+      "description": "**济州市区饭店免费接送**。接送范围涵盖济州市区（济州机场附近及市中心）。济州市以外（西归浦、爱月、城山）的接送需加收₩70,000附加费，请直接支付给司机。出发时间视您的饭店位置而定，通常在08:30至09:30之间；预订时确认确切时间。",
+      "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+      "highlights": [
+        "**济州市区饭店免费接送**（机场附近及市中心）",
+        "济州市以外接送加收**₩70,000附加费**（西归浦、爱月、城山等）",
+        "出发时间通常**08:30至09:30**——预订时确认",
+        "出发前一天透过**WhatsApp确认**行程及绣球花最新花况"
+      ],
+      "timeUsed": [
+        "Hagwi pickup ~08:30 — 5 min",
+        "Airport pickup ~08:40 — 5 min",
+        "City Hall pickup ~08:50 — 5 min",
+        "Dongmun pickup ~09:00 — 5 min",
+        "Eastbound coastal Route 1132 to Hamdeok — ~25 min"
+      ],
+      "whyOnRoute": "饭店直接接送是东部绣球花环线的出发点。出发后，小型巴士向东沿海岸路线行驶，约09:30抵达含德——这也是东部行程接送的唯一合理入口，因为一旦进入东海岸，路线便沿1132号环岛公路向东南行进，无法折返接客。",
+      "_poi_meta": {
+        "poi_key": "OPS_pickup",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": []
+      }
+    },
+    {
+      "number": 2,
+      "time": "09:30",
+      "duration": "40 min",
+      "name": "Hamdeok Seoubong Beach",
+      "category": "Coastal photo stop — emerald turquoise + Seoubong Oreum",
+      "description": "**咸德犀牛峰海滩（함덕 서우봉 해변）**稳居**济州前三大海滩之列**，以**白沙海滩（主滩约500公尺，3个相连海湾合计约900公尺）**与**紧邻的火山锥犀牛峰（서우봉，「形似牛头的寄生火山锥」）**直接相接的鲜明对比而著称。海水独特的**翡翠碧绿色**源于浅层珊瑚沙海床反射通透海水——这种类地中海的视觉效果（在韩国极为罕见）使咸德成为韩国本土最多人拍摄的度假海滩之一。海滩在夏季高峰期最多可容纳**每日50,000人到访**，但春秋季到访通常人少。**犀牛峰山顶**（登顶约需1小时）在**春季三月至四月时山坡遍开油菜花（金黄色）**，并提供向东远眺万丈窟熔岩洞窟区域的**全景视野**。**历史层次**：犀牛峰以西的海崖中保有**二战日据时期日本帝国陆军掘凿的隧道** — 神风特攻队自杀艇掩体和弹药库，与城山日出峰的18个地下掩体相似，且隧道对外开放（附解说标示牌说明历史背景）。海滩是**济州偶来小路第19路线（助天 → 金宁）**的核心段落，以小路标志性的蓝橙色丝带作为指引。**델문도咖啡厅**坐落于海滩前方 — 大型露台、海景，是Instagram必到打卡点。**免费入场**；海滩距**济州国际机场约20公里 / 车程约40分钟**（沿1132号公路）。",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      "highlights": [
+        "**济州前三大海滩** — 翡翠碧绿海水 + 白色珊瑚沙",
+        "**主滩约500公尺** + 3个相连海湾（合计约900公尺）",
+        "**犀牛峰火山锥**约需1小时登顶 — 三至四月山坡遍开金黄油菜花",
+        "**邻近海崖二战日本帝国陆军隧道** — 神风特攻队自杀艇掩体",
+        "**偶来小路第19路线（助天 → 金宁）** — 蓝橙色丝带指引",
+        "**델문도咖啡厅** — 大型露台、海景、Instagram打卡点",
+        "夏季高峰期每日最多**50,000人到访**；春秋季人少",
+        "**免费入场**；距离济州国际机场20公里 / 约40分钟车程",
+        "类地中海的色彩对比 — 在朝鲜半岛极为罕见"
+      ],
+      "timeUsed": [
+        "Coach arrival + parking — ~5 min",
+        "Beach walk (main stretch + 2nd cove) — ~25 min",
+        "WWII tunnel exteriors viewing — ~10 min",
+        "Cafe Delmoondo or beachfront photography — ~15 min",
+        "Buffer / regroup — ~5 min"
+      ],
+      "whyOnRoute": "**东部绣球花路线的早晨碧绿海水＋首个绣球花热身站**。含德是第一站的三个刻意的东部路线理由：（1）**潮汐＋光线时机**：09:30抵达正好赶上早晨低潮侧，碧玉色海水最为清澈；（2）**绣球花热身**：犀牛峰（西乙峰）斜坡上的油菜花（春季）及草地为绣球花季前的视觉暖身；（3）**地理门户**：含德→城邑的北→南路线使南向移动不走回头路。",
+      "_poi_meta": {
+        "poi_key": "hamdeok_seoubong_beach",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Jeju Olle Foundation — Trail Course 19 official map",
+          "VisitJeju — Hamdeok Seoubong Beach",
+          "Jeju 4·3 Peace Foundation — Imperial Japanese Army tunnel records",
+          "Korea Tourism Organization — Top 3 Jeju Beaches ranking",
+          "Jocheon-eup local cultural office — Seoubong oreum trail records"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "10:30",
+      "duration": "50 min",
+      "name": "Seongeup Folk Village",
+      "category": "Joseon-era folk heritage — UNESCO/National Folklore designation",
+      "description": "**城邑民俗村（성읍 민속마을）**是**朝鲜时代的城郭式城镇，始建于1423年世宗大王年间**，当时称为旌义县（정의현），是朝鲜时代济州三大行政中心之一。村落持续作为**县政中心长达近500年，直至1914年**，至今在原有邑城（읍성）城郭范围内保存著**110栋传统建筑**，整体按照朝鲜县政中心典型的**韩国风水原则**规划布局。整座村落被指定为**韩国重要民俗文化遗产**，多栋个别建筑亦分别获得独立遗产指定。村落中心耸立著**两棵被指定为韩国天然纪念物的古树**——**一棵光叶榉（느티나무）**和一棵**朴树（팽나무）**，两者均**树龄逾600年**，是村落的精神象征。历史伤痕清晰可见：**1826年的大火烧毁了约80栋建筑**，村落在**1948年济州四三事件中**也遭受过火灾破坏——两段历史均记载于村内标示牌上。历史上户数高峰时约**1,500户**，今日村落仍有约**250户人家居住**，许多村民积极传承传统工艺。韩剧拍摄记录：**《大长今》（MBC，2003至2004年）**，这部国际韩剧大作曾在此取景。当地特色：**五味子酒（오메기술）** — 村内一户人家**世代相传、多代酿造**的**济州传统米酿酒**，村内家庭酿酒坊可免费参观品尝。**免费入场**；以户外步行为主（约70%户外）。",
+      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+      "highlights": [
+        "**始建于1423年**（世宗大王年间）——行政中心持续运作至**1914年（近500年）**",
+        "原有邑城城郭范围内保存**110栋传统建筑**",
+        "**韩国重要民俗文化遗产**（整座村落 + 多栋个别建筑）",
+        "村落中心有**两棵树龄逾600年的古树**：光叶榉 + 朴树 — **天然纪念物**",
+        "按照**朝鲜韩国风水（地理）原则**规划 — 典型县政中心格局",
+        "**《大长今》（MBC 2003至2004年）**拍摄地 — 国际韩剧大作",
+        "**五味子酒（오메기술）** — 济州传统米酿酒，单一家族世代相传酿造（免费品尝）",
+        "历史伤痕：**1826年大火**烧毁约80栋；**1948年济州四三事件**破坏",
+        "**免费入场** — 村落仍有约250户人家居住，延续传统"
+      ],
+      "timeUsed": [
+        "Parking + welcome brief by village docent — ~10 min",
+        "Walk to ancient trees + village center — ~10 min",
+        "Hanok interior visits (2–3 representative homes) — ~15 min",
+        "Omegisul brewery free tasting — ~10 min",
+        "Olle alley walk + photography — ~10 min",
+        "Buffer — ~5 min"
+      ],
+      "whyOnRoute": "**全日唯一的内陆朝鲜时代遗产停留**。城邑属于东部路线的三个理由：（1）**地理枢纽**：城邑位于表善面的内陆十字路口，是汉拏山南坡自然下行至城山的过渡站；（2）**遗产节奏**：含德（自然＋殖民历史）→城邑（朝鲜行政遗产）的序列，在午后密集的UNESCO景点和绣球花景点之前建立清晰的文化背景层次；（3）**时段逻辑**：10:30抵达让城邑在早班游客散去后保持适中人流。",
+      "_poi_meta": {
+        "poi_key": "seongeup_folk_village",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Cultural Heritage Administration — Important Folklore Cultural Heritage designation",
+          "Korea Cultural Heritage Foundation — Seongeup Folk Village historical records",
+          "VisitJeju — Seongeup Minsok Maeul",
+          "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
+          "Jeju Folklore Society — Omegisul brewing tradition documentation"
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "time": "11:30",
+      "duration": "60 min",
+      "name": "Lunch (local Jeju restaurant)",
+      "category": "Operational stop — local east-Jeju lunch",
+      "description": "**连接遗产前半段和UNESCO下午段的东济州午餐**。60分钟午餐窗口同时作为缓冲——如果城邑人潮多导致前半程延误，此段可吸收。轮替菜式：**물회（冷汤生鱼片）**和**성게국수（海胆面）**是东济州的地区特色；或**전복돌솥밥（鲍鱼石锅饭）**全年供应。如有特殊饮食需求，请于预订时告知。午餐费用约₩15,000，现场自费。",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "highlights": [
+        "**물회（冷汤生鱼片）**和**성게국수（海胆面）**——东济州地区特色",
+        "**전복돌솥밥（鲍鱼石锅饭）**全年供应",
+        "60分钟窗口——同时作为上午行程的**缓冲时间**",
+        "城山邑定位——午餐后**短车程即达城山日出峰**",
+        "午餐费用约**₩15,000**，现场自费",
+        "特殊饮食需求请提前告知"
+      ],
+      "timeUsed": [
+        "Arrival + seating — 5 min",
+        "Order + dietary check — 5 min",
+        "Meal — 35 min",
+        "Settle bill + restroom — 10 min",
+        "Boarding + departure — 5 min"
+      ],
+      "whyOnRoute": "锁定在11:30，以衔接遗产节奏的上午（城邑）和UNESCO节奏的下午（城山）。60分钟窗口同时作为缓冲——如果城邑人潮多，午餐可吸收延误，确保城山及绣球花午后段按时进行。",
+      "_poi_meta": {
+        "poi_key": "OPS_lunch",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": []
+      }
+    },
+    {
+      "number": 5,
+      "time": "12:50",
+      "duration": "75 min",
+      "name": "Seongsan Ilchulbong",
+      "category": "UNESCO triple-designated tuff cone — climb to the rim",
+      "description": "**城山日出峰（성산일출봉，「日出峰」）**是一座**距今5,000年的萨托谢安式（Surtseyan）水火山凝灰岩锥**——形成于海底玄武岩喷发冲出海面之时，岩浆接触海水引发蒸汽爆炸，堆积的火山灰形成**182公尺高、形如城堡的火口**边缘，而非典型的熔岩锥。UNESCO将其正式定义为**「萨托谢安式火山构造典型范例」**。火口**直径600公尺、深90公尺**，周围环绕著**99块锯齿状的边缘岩石**，当地传说将其比喻为石冠。城山日出峰拥有**UNESCO三重认定**：**世界自然遗产（2007-07-02登录）**，是**「济州火山岛与熔岩洞窟」**遗址的组成部分；**生物圈保护区（2002年）**；以及**全球地质公园（2010-10）**——这一荣衔仅与汉拏山本身并列，为韩国景点中的最高规格。峰体向海一侧隧道有**18座帝国日本二战地下掩体**（1945年神风特攻队自杀艇掩体）。步道：**单程0.8公里，爬升约140公尺，来回60分钟**，沿宽阔石阶攀登。**海女表演**每日在峰下岩石海湾**13:30和15:00**各举行一场——无需氧气罐的济州女性潜水员（UNESCO 2016年非物质文化遗产）。门票于**2025年4月更新**：**成人₩5,000 / 青少年+儿童₩2,500 / 团体成人₩1,600**，7岁以下及65岁以上免费。山顶观景台同属**瀛洲十景**，长期以来是韩国**元旦日出朝圣**的首选地——每年1月1日有逾5万人在黎明前登顶，自1995年起设有市政日出节活动。**牛岛（우도）** —— 韩国最大的次级火山岛——在山顶可清晰看见，位于4公里外海域，搭乘**15分钟渡轮自城山港出发**可前往（来回₩10,500）。",
+      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+      "highlights": [
+        "**UNESCO三重认定**：世界遗产2007-07-02 + 生物圈保护区2002年 + 全球地质公园2010-10",
+        "**距今5,000年** — 萨托谢安式水火山喷发，岩浆遇海水引发蒸汽爆炸诞生",
+        "火口**直径600公尺、深90公尺**，环绕著**99块锯齿状边缘岩石**（「石冠」）",
+        "**海拔182公尺** — 单程0.8公里 / 爬升约140公尺，石阶步道来回60分钟",
+        "峰体基部有**18座帝国日本二战地下掩体** — 1945年神风特攻队自杀艇掩体",
+        "**每日13:30 + 15:00海女表演**，在海滨海湾举行 — UNESCO非物质文化遗产2016年",
+        "**门票2025年4月更新**：成人₩5,000 / 青少年₩2,500 / 7岁以下及65岁以上免费",
+        "春秋季开放时间 **05:00至19:00**（最后入场18:20）",
+        "**每月第一个星期一休馆**（偶尔休息日）"
+      ],
+      "timeUsed": [
+        "Parking + ticket + base brief — ~10 min",
+        "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min",
+        "Summit views + crater rim photos — ~20 min",
+        "Descent — ~20 min",
+        "Optional haenyeo viewing at base (15:00 demo) — ~10 min"
+      ],
+      "whyOnRoute": "**全日的UNESCO顶峰锚点和东部路线的核心景点**。城山是下午第一站（12:50抵达）的三个理由：（1）**三重UNESCO份量**：城山是全济州唯一同时获得UNESCO世界自然遗产＋生物圈保护区＋全球地质公园三重指定的景点；（2）**体力管理**：将城山安排在绣球花午后之前，确保宾客以最饱满的体力完成城山登顶；（3）**光线时机**：12:50至14:30的光线以侧光角度照射凝灰岩锥面，比下午晚段的低角光线更能呈现锥体的几何感。",
+      "_poi_meta": {
+        "poi_key": "seongsan_ilchulbong",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+          "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
+          "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
+          "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
+          "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "14:30",
+      "duration": "70 min",
+      "name": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+      "category": "Hydrangea festival garden + lava-tube cave (June peak)",
+      "description": "**日出乐园（일출랜드）**是一座**40万平方公尺自然主题公园**，围绕**弥天窟熔岩管**而建，公园同时举办**绣球花节**（6月至7月中旬）。弥天窟全长1,700公尺，其中**365公尺人工平整路段**开放（约25分钟穿越）——是**万丈窟UNESCO熔岩管的备用选择**。绣球花节期间，公园室外区域遍植蓝紫色绣球花，在熔岩地形背景的映衬下尤为壮观。公园还设有传统济州村落、盆景园、仙人掌温室和泡脚咖啡厅。**济州唯一设有现场穆斯林祈祷室**。入场费：**成人₩12,000 / 青少年₩9,000 / 儿童₩7,000**。",
+      "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
+      "highlights": [
+        "**6月至7月中旬绣球花节** — 蓝紫色绣球花覆盖熔岩地形",
+        "弥天窟：**全长1,700公尺；365公尺开放路段**（约25分钟穿行）",
+        "**万丈窟UNESCO备用方案**",
+        "**洞底人工平整** — 适合老年游客、婴儿车",
+        "40万平方公尺公园 — 传统村落、盆景园、泡脚咖啡厅",
+        "**济州唯一设有现场穆斯林祈祷室**",
+        "入场费 **₩12,000 / 成人；₩7,000 / 儿童**",
+        "30%室内 / 70%户外",
+        "《Running Man》第89集拍摄（2012年）"
+      ],
+      "timeUsed": [
+        "Parking + ticket + entrance — ~5 min",
+        "Micheon Cave walk-through (365 m / ~25 min) — ~30 min",
+        "Subyeon Park + sculpture street — ~20 min",
+        "Optional bonsai/cactus garden + footbath cafe — ~15 min",
+        "Buffer / regroup — ~5 min"
+      ],
+      "whyOnRoute": "**全日首个绣球花锚点——同时提供「花卉＋地质」双重身份的熔岩管对照物**。日出乐园位于14:30第二站的三个东部路线理由：（1）**绣球花节的密度**：日出乐园在盛花期（6月）集中展示数千株绣球花，并以主题花园路线设计达到最佳拍摄效果；（2）**熔岩管体验**：弥天窟在花卉视觉后提供冷却的地下对比——从花海中走入昏暗的熔岩管；（3）**时间备案**：如果城山因天气问题缩短，日出乐园可吸收额外时间，因为花园＋溶洞的组合提供灵活的延长可能。",
+      "_poi_meta": {
+        "poi_key": "ilchulland_micheon_cave",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Ilchul Land official site (ilchulland.com)",
+          "VisitJeju — Ilchul Land Micheon Cave",
+          "Korea Cave Research Institute — Manjanggul lava-tube system documentation",
+          "SBS Variety Archive — Running Man Episode 89 (2012)",
+          "Jeju Tourism Organization — accessibility-friendly attraction registry"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "time": "15:50",
+      "duration": "75 min",
+      "name": "Hueree Natural Park — Hydrangea highlight",
+      "category": "Hydrangea anchor + signature Jeju Black Pig Show",
+      "description": "**休爱里自然生活公园（휴애리 자연생활공원）**是汉拏山南麓的全年花卉公园，以**「岛中之岛」**自我定位，全年轮换**5个命名节庆** — 梅花节、春季绣球花节（4月初至6月中旬）、**夏季绣球花节**（**6月高峰**至7月初）、欧式绣球花节（7月中旬至8月）、粉黛乱子草节、山茶花节 — 意味著**一年中约320天，旅客到访恰好处于某个命名节庆之中**。对于**东路绣球花节行程，6月窗口正值室外全盛期**，加上**绣球花温室**作为午后雷阵雨的可靠室内备选。公园标志性表演是**济州黑猪表演**，每天4场——**11:00 / 13:00 / 15:00 / 17:00**。**济州黑猪是韩国指定天然纪念物**。其他亮点：**济州文化村**（传统游戏 + 茅草韩屋）、昆虫展览馆、野花园和休爱里洞穴。公园**约85%户外**。",
+      "image": "https://images.unsplash.com/photo-1565538810643-b5bdb714032a",
+      "highlights": [
+        "**「岛中之岛」** — 汉拏山为背景的花卉公园，全年节庆轮换",
+        "**5个命名节庆**全年轮换 — 旅客到访恰好在某个节庆中约占**320天**",
+        "**春季绣球花节**（4月初至6月中旬）+ **夏季绣球花节**（6月高峰至7月初）",
+        "**绣球花温室**作为午后雷阵雨的可靠室内备选",
+        "**济州黑猪表演** — 每天4场（11:00/13:00/15:00/17:00）",
+        "济州黑猪是**韩国指定天然纪念物**",
+        "**济州文化村**（传统游戏 + 茅草韩屋）+ 昆虫展览馆 + 野花园",
+        "**约85%户外** — 温室 + 昆虫馆作为天气备选",
+        "入选KTO **「韩国最佳旅游景点」**"
+      ],
+      "timeUsed": [
+        "Park entry + ticket + welcome — 10 min",
+        "Hydrangea greenhouse + outdoor garden walk — 30 min",
+        "Jeju Black Pig Show (17:00 slot) — 20 min",
+        "Cultural Village + photo zones — 10 min",
+        "Restroom + departure — 5 min"
+      ],
+      "whyOnRoute": "**全日的绣球花压轴，也是整个行程名称的来源**。休爱里是最后一个实质景点（15:50）的四个理由：（1）**晚日照＋绣球花色彩**：休爱里主绣球花山丘在15:50至17:00的光线下以柔和侧光呈现色彩饱和度最佳的蓝紫色系；（2）**济州黑毛猪表演**：下午场次（通常15:30及16:30）在绣球花赏花结束后紧接举行，形成独特的农业遗产＋节庆花卉组合；（3）**绣球花规模**：休爱里拥有东济州最大单一绣球花田，在高峰期呈现整山蓝色的强烈视觉感；（4）**感情收尾**：以花卉高潮而非地质景观作为全日最后一个实质站，让行程以最强烈的季节印象结束。",
+      "_poi_meta": {
+        "poi_key": "hueree_natural_park",
+        "kb_version": "1.21",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "https://m.visitjeju.net/en/detail/view?contentsid=CNTS_000000000022860 — Hueree Hydrangea Festival, Visit Jeju official",
+          "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=80492 — Hueree Maehwa Festival, Visit Korea (KTO)",
+          "https://world.nol.com/en/content/articles/cc1d5d91-7a2f-4f2e-8615-d3898f88242a — NOL World Iconic Seasonal Festivals guide",
+          "https://www.trazy.com/experience/detail/jeju-island-hueree-natural-park-ticket — Trazy Hueree Natural Park ticket page",
+          "https://jeju-asean.org/notice/lets-follow-the-flower-path-to-find-out-what-flower-festivals-are-happening-in-jeju-this-spring/ — Jeju Business Agency Singapore official notice"
+        ]
+      }
+    },
+    {
+      "number": 8,
+      "time": "17:50",
+      "duration": "30 min",
+      "name": "Drop-off (Jeju City)",
+      "category": "Drop-off — reverse 4-point Jeju City sequence",
+      "description": "**返回济州市，逆向四点下车**。从休爱里向西返回时，巴士自然先遇到东门市场，再向西弧形行驶途经市政厅、涯月洞，最后到达机场和饭店区。预计17:00至18:00左右返回，视路况而定。",
+      "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+      "highlights": [
+        "逆向四点下车顺序（东门→市政厅→涯月洞→机场→饭店区）",
+        "预计**17:00至18:00**返回济州市",
+        "如有当晚航班，**济州机场末班机约21:30**，时间充裕"
+      ],
+      "timeUsed": [
+        "Hueree → Jeju City westbound transit — ~50 min",
+        "Dongmun drop ~17:50 — 5 min",
+        "City Hall drop ~18:05 — 5 min",
+        "Airport drop ~18:15 — 5 min",
+        "Hagwi drop ~18:25 — 5 min"
+      ],
+      "whyOnRoute": "逆向接送顺序是东部路线返回时最省时的下车方式——东门市场在从东部返回时自然先被遇到，再弧形向西。",
+      "_poi_meta": {
+        "poi_key": "OPS_return",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": []
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Jeju City hotel",
+      "type": "origin",
+      "theme": "Departure"
+    },
+    {
+      "name": "Hamdeok Beach",
+      "type": "secondary",
+      "theme": "Beach"
+    },
+    {
+      "name": "Seongeup Folk Village (UNESCO)",
+      "type": "primary",
+      "theme": "Heritage Village"
+    },
+    {
+      "name": "Lunch",
+      "type": "meal",
+      "theme": "Meal"
+    },
+    {
+      "name": "Seongsan Ilchulbong (UNESCO)",
+      "type": "primary",
+      "theme": "UNESCO Volcano"
+    },
+    {
+      "name": "Ilchul Land + Micheon Cave",
+      "type": "primary",
+      "theme": "Cave"
+    },
+    {
+      "name": "Hueree Natural Park (hydrangea highlight)",
+      "type": "primary",
+      "theme": "Garden"
+    },
+    {
+      "name": "Jeju City hotel",
+      "type": "return",
+      "theme": "Return"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "出发海岸",
+      "duration": "≈ 1.5 hours",
+      "description": "Jeju City → eastern coast via Hamdeok Beach photo stop."
+    },
+    {
+      "phase": "遗产前半段",
+      "duration": "≈ 2 hours",
+      "description": "Seongeup Folk Village + lunch in eastern Jeju village area."
+    },
+    {
+      "phase": "UNESCO高峰",
+      "duration": "≈ 1.5 hours",
+      "description": "Seongsan Ilchulbong climb or coastal walk."
+    },
+    {
+      "phase": "绣球花压轴",
+      "duration": "≈ 2.5 hours",
+      "description": "Ilchul Land lava cave + festival, then Hueree Natural Park as headline hydrangea stop."
+    },
+    {
+      "phase": "返回",
+      "duration": "≈ 1 hour",
+      "description": "Hueree → Jeju City."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "行程动线总览",
+    "subtitle": "A seasonal east-Jeju loop built around the island's defining summer event. The hydrangea festivals at Hueree and Ilchul Land peak for roughly four weeks (late May to mid-July, peak mid-June) — narrow enough that most international travelers miss it without a planned tour. The route weaves the festival into the standard east-coast UNESCO circuit, so visitors who happen to be in Jeju during the bloom window get both the heritage day and the flowers in the same 9 hours."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "初次游览该地区的旅客",
+      "情侣",
+      "成人家庭",
+      "能够应付全日活跃行程的旅客",
+      "希望参观UNESCO世界遗产景点的旅客"
+    ],
+    "lessIdealFor": [
+      "步行需求最少的旅客",
+      "行动不便的旅客",
+      "携带婴儿车的亲子团",
+      "需要当天航班缓冲时间的旅客"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "为何如此安排路线",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "一天涵盖两个绣球花节",
+            "detail": "济州有四大绣球花节（休爱里、翰林公园、山茶花丘、日出乐园）。东部路线包含其中两个——日出乐园和休爱里——涵盖最广泛的绣球花品种和拍摄场景。两者组合若靠公共巴士安排则非常繁琐。"
+          },
+          {
+            "label": "遗产景点保留在路线中",
+            "detail": "许多季节性花卉行程以增加更多花卉景点为由跳过遗产景点。本路线保留城山日出峰和城邑民俗村——即使您不特别在意绣球花，全日仍值得作为标准东济州UNESCO环线。"
+          },
+          {
+            "label": "花卉表现不佳时有内建备案",
+            "detail": "绣球花盛开时机年度波动1至2周。若您抵达时机稍早或稍晚，遗产景点仍能撑起全日行程。导游将根据即时花况情报，灵活替换最强的可用花卉场景。"
+          },
+          {
+            "label": "饭店接送比自驾更适合一日游旅客",
+            "detail": "许多济州旅客是从首尔中转停留1至2天的旅客。自驾需要国际驾照及30分钟以上的机场取车手续。附饭店接送的9小时导览行程让您抵达、休息、被接走，轻松游览东济州精华——省去在火山山脊公路上的驾驶压力。"
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "inclusions",
+      "title": "费用包含项目",
+      "preview": "含车辆及导游；入场费另计（约₩30,000–₩40,000）",
+      "content": [
+        "空调车辆、持牌英语∕中文司机兼导游、燃料、过路费、停车费。",
+        "不含：景点入场费（城山日出峰₩5,000、休爱里₩13,000、日出乐园₩12,000、城邑民俗村免费）、餐费、小费。",
+        "每人全日典型入场费合计：₩30,000至₩40,000。"
+      ]
+    },
+    {
+      "id": "pickup",
+      "title": "接送与下车地点",
+      "preview": "济州市区饭店免费接送；市外加收₩70,000",
+      "content": [
+        "济州市区饭店免费接送（济州机场附近及市中心）。",
+        "济州市以外接送（西归浦、爱月、城山）加收₩70,000，现场支付给司机。",
+        "预订时确认接送地点。"
+      ]
+    },
+    {
+      "id": "hydrangea",
+      "title": "绣球花花期说明",
+      "preview": "绣球花盛开期通常为5月下旬至7月中旬（高峰6月中）",
+      "content": [
+        "盛开期通常为5月下旬至7月中旬（高峰6月中），年度略有波动。",
+        "出发前1至2周向运营商确认最新花况。",
+        "窗口以外的季节路线仍可出发，但绣球花景点不在花期——建议改选秋季粉黛乱子草或冬季山茶花行程。"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "步行强度与地形",
+      "preview": "中等难度",
+      "content": [
+        "中等难度。",
+        "城山日出峰火山口边缘登顶为30分钟石阶（有护栏，但费力；可选）。",
+        "选择略过登顶的旅客可走底部免费海岸步道。",
+        "休爱里、日出乐园及民俗村以平地为主。",
+        "弥天窟有不平整地面及石阶。"
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "取消政策",
+      "preview": "接送前24小时可免费取消",
+      "content": [
+        "接送前24小时可免费取消。",
+        "当天取消及无故缺席不予退款。",
+        "济州台风相关取消（夏末常见）：全额退款或改期。"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "即时天气连动"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "每日更新"
+    },
+    "_seasonalSummary": "济州绣球花季（6至7月）温热潮湿，短暂阵雨频繁，气温通常在22至28°C。请备防晒用品及轻薄雨具。",
+    "_seasonalTemperatures": [
+      {
+        "season": "Hydrangea season (late May to mid-July, peak mid-June)",
+        "range": "22–28°C",
+        "notes": "潮湿；午后阵雨可能。绣球花在阴天或雨后早晨拍摄效果最佳。"
+      },
+      {
+        "season": "Late summer (Aug)",
+        "range": "26–32°C",
+        "notes": "最热时段；绣球花过了高峰；台风风险增加。"
+      },
+      {
+        "season": "Off-season (rest of year)",
+        "range": "varies",
+        "notes": "行程全年可出发，但绣球花景点不在花期——建议选择应季替代行程。"
+      }
+    ]
+  },
+  "seasonalVariations": [
+    {
+      "season": "6月下旬至7月初",
+      "description": "两个日出乐园和休爱里的绣球花盛开高峰。最佳拍摄条件。行程在此窗口最快售罄。"
+    },
+    {
+      "season": "7月中下旬",
+      "description": "绣球花仍茂盛但开始凋谢。人潮稍少。"
+    },
+    {
+      "season": "花季外停办",
+      "description": "遗产锚点（城山＋城邑）仍具吸引力。建议改选应季替代行程：粉黛乱子草（秋季）、山茶花（冬季）、油菜花（春季）。"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "当地持照合法业者",
+      "description": "持牌韩国旅游运营商，备有完整保险",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "持牌韩国旅游运营商，备有完整保险"
+    },
+    {
+      "icon": "route",
+      "title": "路线专家",
+      "description": "精心设计的行程，而非千篇一律的路线",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "精心设计的行程，而非千篇一律的路线"
+    },
+    {
+      "icon": "users",
+      "title": "精心控制团体人数",
+      "description": "精准控制人数的小型巴士格式",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "精准控制人数的小型巴士格式"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "即时通知",
+      "title": "即时确认",
+      "detail": "您将收到含行程摘要的预订确认通知。",
+      "description": "您将收到含行程摘要的预订确认通知。"
+    },
+    {
+      "timing": "出发前12小时",
+      "title": "出发前12小时提醒",
+      "detail": "出发前1至2周提供最新绣球花花况更新。",
+      "description": "出发前1至2周提供最新绣球花花况更新。"
+    },
+    {
+      "timing": "前一晚",
+      "title": "最终接送资讯",
+      "detail": "确认确切接送时间及司机∕导游联络方式。",
+      "description": "确认确切接送时间及司机∕导游联络方式。"
+    },
+    {
+      "timing": "行程当天早晨",
+      "title": "当日路线说明",
+      "detail": "出发当天早上根据最新现场状况提供简报。",
+      "description": "出发当天早上根据最新现场状况提供简报。"
+    },
+    {
+      "timing": "行程途中",
+      "title": "景点逐一说明",
+      "detail": "每个景点提供即时现场导览。",
+      "description": "每个景点提供即时现场导览。"
+    },
+    {
+      "timing": "行程结束后",
+      "title": "行程后支援",
+      "detail": "行程结束后提供后续建议及额外资讯。",
+      "description": "行程结束后提供后续建议及额外资讯。"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q1",
+      "question": "济州的绣球花何时盛开？",
+      "answer": "通常5月下旬至7月中旬（高峰约6月最后一周）。盛开时机因春季降雨量和温度每年波动约±1周。出发前1至2周向运营商确认最新状态。"
+    },
+    {
+      "id": "q2",
+      "question": "入场费包含吗？",
+      "answer": "不含——每人全日预算约₩30,000至₩40,000。入场费：城山日出峰₩5,000、休爱里₩13,000、日出乐园₩12,000、城邑民俗村免费。"
+    },
+    {
+      "id": "q3",
+      "question": "为什么万丈窟关闭了？",
+      "answer": "万丈窟熔岩管因安全修缮暂时关闭（状态视预订日期而定）。标准替代方案为日出乐园的弥天窟，提供类似的熔岩管体验，已包含在本路线中。"
+    },
+    {
+      "id": "q4",
+      "question": "这与西南部绣球花行程有何不同？",
+      "answer": "本路线涵盖休爱里＋日出乐园绣球花，加上东海岸UNESCO景点（城山日出峰、城邑民俗村）。西南部行程涵盖翰林公园＋山茶花丘绣球花，加上南海岸景点（天帝渊瀑布、柱状节理海崖）。选择东部路线体验UNESCO高峰；选择西部路线体验更密集的花卉园林。"
+    },
+    {
+      "id": "q5",
+      "question": "可以以私人行程方式参加吗？",
+      "answer": "同一运营商提供私人版本的绣球花行程，可在济州任何地点接送，时间可客制化。如果您是4人以上的团体，或需要济州市以外接送且不想支付₩70,000附加费，请询问私人版本。"
+    },
+    {
+      "id": "first-time",
+      "question": "对于初次游览东济州的旅客，这是好选择吗？",
+      "answer": "是的——在一天之内涵盖了该地区最具代表性的景点，行程均衡丰富。"
+    },
+    {
+      "id": "walking",
+      "question": "步行难度高吗？",
+      "answer": "全日较为活跃，步行量较大。"
+    },
+    {
+      "id": "family",
+      "question": "这个行程适合家庭吗？",
+      "answer": "适合孩子能够应付全日动态行程的家庭。"
+    },
+    {
+      "id": "seniors",
+      "question": "年长者可以舒适地参加吗？",
+      "answer": "仅推荐能应付石阶及不平整路面的活跃年长旅客。"
+    },
+    {
+      "id": "children",
+      "question": "建议的最低参加年龄是多少？",
+      "answer": "约10岁或以上——能够应付全日节奏及上述步行说明的儿童。"
+    },
+    {
+      "id": "rain",
+      "question": "下雨天行程还会进行吗？",
+      "answer": "小雨没问题；大雨可能调整部分景点安排。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "人",
+      "priceSource": "getyourguide_t662120",
+      "priceNote": "Small-group price not yet confirmed from listing snippet. Sister tour (our West & South Hydrangea route) is approximately $89–96 per person. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+      "discountPercent": 10
+    }
+  },
+  "pickup_dropoff": {
+    "type": "hotel_pickup",
+    "meeting_points": [
+      {
+        "name": "济州市区各饭店大厅",
+        "time": "≈08:30 (free)"
+      },
+      {
+        "name": "Hotel outside Jeju City (Seogwipo/Aewol/Seongsan)",
+        "time": "Earlier pickup; +₩70,000 surcharge"
+      },
+      {
+        "name": "Jeju International Airport",
+        "time": "≈08:30"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Hotel in Jeju City",
+        "approx_time": "≈18:00"
+      },
+      {
+        "name": "Dongmun Traditional Market",
+        "approx_time": "≈18:00"
+      },
+      {
+        "name": "Jeju Airport",
+        "approx_time": "≈18:00"
+      }
+    ],
+    "hotel_pickup_available": true,
+    "notes": "济州市区饭店免费接送（机场附近及市中心）。出发时间通常08:30至09:30。济州市以外接送加收₩70,000。预计17:00至18:00返回济州市。"
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "jeju-hydrangea-festival-tour-east-route",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "jeju",
+    "region_type": "jeju_east",
+    "vehicle_type": "minicoach",
+    "duration_hours": 9,
+    "region_tags": [
+      "jeju_east",
+      "jeju_namwon"
+    ],
+    "theme_tags": [
+      "seasonal_flower",
+      "summer_flowers_hydrangea",
+      "garden",
+      "volcano",
+      "iconic_landmarks",
+      "summer_only",
+      "photogenic"
+    ],
+    "poi_tags": [
+      "hamdeok_beach",
+      "seongeup_folk_village",
+      "seongsan_ilchulbong",
+      "ilchul_land",
+      "hueree_natural_park"
+    ],
+    "pace_level": 0.65,
+    "walking_level": 0.6,
+    "scenic_level": 0.95,
+    "photo_level": 0.95,
+    "culture_level": 0.85,
+    "relax_level": 0.55,
+    "first_time_fit": 0.85,
+    "family_fit": 0.7,
+    "senior_fit": 0.6,
+    "couple_fit": 1,
+    "solo_traveler_fit": 0.95,
+    "active_traveler_fit": 0.85,
+    "adult_family_fit": 0.9,
+    "family_with_teens_fit": 1,
+    "young_kids_fit": 0.45,
+    "senior_active_fit": 0.6,
+    "senior_general_fit": 0.4,
+    "mobility_friendly_fit": 0.4,
+    "stroller_fit": 0.4,
+    "one_day_fit": 1,
+    "same_day_flight_fit": 0.4,
+    "rain_fit": 0.5,
+    "value_for_money_fit": 0.75,
+    "iconic_landmark_fit": 0.85,
+    "cafe_fit": 0.4,
+    "food_fit": 0.6,
+    "nature_fit": 0.85,
+    "beach_fit": 0.65,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.2,
+    "no_shopping_fit": 1,
+    "local_culture_fit": 0.8,
+    "storytelling_fit": 0.8,
+    "unesco_fit": 0.95,
+    "intangible_heritage_fit": 0.75,
+    "indoor_ratio": 0.2,
+    "weather_sensitivity": 0.85,
+    "comfort_level": 0.6,
+    "budget_fit": 0.6,
+    "premium_fit": 0.4,
+    "small_group_fit": 1,
+    "private_fit": 0.2,
+    "bus_fit": 1,
+    "price_band": "mid",
+    "pickup_base": "jeju_city",
+    "return_time_band": "17:00-18:30",
+    "duration_band": "9h",
+    "min_recommended_age": 10,
+    "hard_constraints": {
+      "avoidIf": [
+        "tight_same_day_departure"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "stroller_heavy_groups"
+      ]
+    },
+    "walking_notes": [
+      "Active walking day with some stairs and uneven terrain.",
+      "Average fitness expected.",
+      "Sturdy shoes with grip recommended."
+    ],
+    "keywords": [
+      "jeju hydrangea festival tour east route",
+      "jeju day tour",
+      "jeju small group"
+    ],
+    "synonym_hints": [
+      "jeju hydrangea festival tour east route",
+      "jeju sightseeing"
+    ],
+    "seasonality": "summer_only_peak",
+    "pickup_base_normalized": "jeju",
+    "vehicle_type_legacy": "van_or_minicoach",
+    "anchor_poi_keys": [
+      "seongsan_ilchulbong",
+      "seongeup_folk_village",
+      "hueree_natural_park",
+      "ilchul_land",
+      "hamdeok_beach"
+    ],
+    "profile_format": "small_group_fixed_itinerary",
+    "private_tour_fit": 0.05,
+    "fixed_itinerary_fit": 1,
+    "customizable_route_fit": 0.05,
+    "flexibility_fit": 0.3,
+    "first_time_jeju_fit": 0.85,
+    "south_jeju_fit": 0.4,
+    "southwest_jeju_fit": 0.1,
+    "central_jeju_fit": 0.5,
+    "north_jeju_fit": 0.4,
+    "east_jeju_fit": 1,
+    "west_jeju_fit": 0.05,
+    "east_jeju_signature_fit": 1,
+    "east_unesco_focused_fit": 1,
+    "east_coast_corridor_fit": 1,
+    "unesco_focused_tour_fit": 0.7,
+    "unesco_taste_fit": 1,
+    "unesco_anchor_count": 1,
+    "unesco_world_heritage_fit": 1,
+    "unesco_geopark_fit": 1,
+    "unesco_biosphere_fit": 1,
+    "unesco_triple_anchor_fit": 1,
+    "national_folklore_heritage_fit": 1,
+    "joseon_heritage_fit": 1,
+    "natural_monument_fit": 1,
+    "natural_monument_anchor_count": 2,
+    "hydrangea_festival_anchor_count": 2,
+    "summer_flowers_hydrangea_fit": 1,
+    "june_peak_floral_fit": 1,
+    "early_summer_jeju_fit": 1,
+    "named_seasonal_festival_anchor_count": 2,
+    "year_round_flower_park_fit": 1,
+    "garden_anchor_count": 2,
+    "hydrangea_tunnel_visit": false,
+    "hydrangea_greenhouse_fallback_fit": 1,
+    "multi_garden_pairing_fit": 0.7,
+    "unesco_plus_floral_combo_fit": 1,
+    "lava_tube_visit": true,
+    "lava_tube_anchor_count": 1,
+    "manjanggul_alternate_fit": 1,
+    "tuff_cone_climb_fit": 1,
+    "volcanic_geology_fit": 1,
+    "volcano_climb_fit": 1,
+    "rim_view_fit": 1,
+    "stair_climb_demand": 0.7,
+    "physical_demand_level": 0.55,
+    "leisure_traveler_fit": 0.6,
+    "honeymoon_fit": 0.95,
+    "first_time_jeju_solo_fit": 0.95,
+    "teen_kids_fit": 0.85,
+    "senior_low_mobility_fit": 0.3,
+    "wheelchair_fit": 0.05,
+    "pet_friendly_fit": 0,
+    "instagram_traveler_fit": 1,
+    "photographer_fit": 1,
+    "cultural_traveler_fit": 0.95,
+    "botanical_enthusiast_fit": 0.95,
+    "nature_lover_fit": 0.95,
+    "english_speaking_market_fit": 1,
+    "mandarin_speaking_market_fit": 0.7,
+    "japanese_speaking_market_fit": 0.7,
+    "korean_speaking_market_fit": 0.05,
+    "taiwan_market_fit": 0.95,
+    "singapore_market_fit": 0.95,
+    "hong_kong_market_fit": 0.95,
+    "china_diaspora_overseas_market_fit": 0.9,
+    "china_mainland_market_fit": 0,
+    "southeast_asia_market_fit": 0.85,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "latin_america_market_fit": 0.7,
+    "price_tier": "mid",
+    "per_pax_pricing_tier": "mid",
+    "group_size_max": 14,
+    "group_size_min": 4,
+    "lunch_included_fit": 0,
+    "ticket_inclusion_fit": 0.5,
+    "english_guide_included": true,
+    "hotel_pickup_included": true,
+    "rain_resilience_fit": 0.55,
+    "indoor_fallback_fit": 0.6,
+    "best_months": [
+      "June (peak hydrangea)",
+      "May (early hydrangea + cherry tail)",
+      "October",
+      "April"
+    ],
+    "shoulder_months": [
+      "March",
+      "September",
+      "November"
+    ],
+    "low_season_months": [
+      "December",
+      "January",
+      "February (winter — closes if snow on Seongsan stairs)"
+    ],
+    "snow_closure_risk": 0.05,
+    "typhoon_disruption_risk_summer": 0.25,
+    "signature_photo_count": 5,
+    "wide_landscape_fit": 1,
+    "macro_floral_fit": 1,
+    "wedding_photo_fit": 0.85,
+    "couple_portrait_fit": 0.95,
+    "instagram_anchor_count": 4,
+    "kdrama_filming_location_count": 1,
+    "differentiates_from_southwest_hydrangea_route": true,
+    "east_unesco_plus_hydrangea_combo": true,
+    "operator_brand": "AtoC Korea",
+    "operator_market_focus": "global_inbound_excl_korea_mainland_china",
+    "tour_communication_languages_supported": [
+      "en",
+      "zh-Hant",
+      "ja",
+      "id",
+      "th",
+      "vi",
+      "es"
+    ],
+    "korea_domestic_market_fit": 0,
+    "se_asia_market_fit": 0.95,
+    "japan_market_fit": 0.85
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "jeju",
+      "east_jeju",
+      "hydrangea_festival",
+      "summer_flowers",
+      "garden",
+      "unesco",
+      "world_heritage",
+      "natural_monument",
+      "tuff_cone",
+      "lava_tube",
+      "joseon_heritage"
+    ],
+    "secondary_themes": [
+      "hamdeok_beach",
+      "emerald_water",
+      "seongeup_folk_village",
+      "seongsan_ilchulbong",
+      "ilchul_land",
+      "micheon_cave",
+      "hueree_natural_park",
+      "jeju_black_pig",
+      "year_round_flower_park",
+      "hydrangea_greenhouse",
+      "national_folklore_heritage_188",
+      "biosphere_reserve",
+      "global_geopark",
+      "weather_fallback_indoor_refuge"
+    ],
+    "best_for": [
+      "first_time_jeju_visitors",
+      "couples",
+      "honeymooners",
+      "instagram_travelers",
+      "photographers",
+      "cultural_travelers",
+      "botanical_enthusiasts",
+      "june_visitors_seeking_hydrangea_peak",
+      "guests_wanting_unesco_plus_floral_combo",
+      "small_group_travelers_max_14"
+    ],
+    "not_recommended_for": [
+      "wheelchair_users",
+      "guests_with_severe_mobility_limits",
+      "private_tour_seekers",
+      "thrill_seekers",
+      "guests_demanding_west_or_southwest_coast_coverage",
+      "guests_unwilling_to_climb_seongsan_182m_stairs",
+      "winter_visitors_seeking_floral_peak"
+    ],
+    "anchor_pois": [
+      "Hamdeok Seoubong Beach",
+      "Seongeup Folk Village",
+      "Seongsan Ilchulbong",
+      "Ilchul Land (Micheon Cave + Hydrangea Festival)",
+      "Hueree Natural Park"
+    ],
+    "competing_products": [
+      "jeju-hydrangea-festival-tour-southwest-route",
+      "jeju-eastern-unesco-spots-day-tour",
+      "east-signature-nature-core"
+    ],
+    "anchor_poi_keys": [
+      "hamdeok_seoubong_beach",
+      "seongeup_folk_village",
+      "seongsan_ilchulbong",
+      "ilchulland_micheon_cave",
+      "hueree_natural_park"
+    ],
+    "audit_summary": "East-Jeju Hydrangea Festival route — 9-hr small-group minicoach loop. 5 substantive POI anchors: 1 emerald-coast beach (Hamdeok) + 1 Joseon folk village (Seongeup, National Folklore Cultural Heritage No. 188) + 1 triple-UNESCO tuff cone (Seongsan: World Heritage 2007 + Global Geopark 2010 + Biosphere 2002) + 2 hydrangea festival anchors (Ilchul Land Micheon Cave + Hueree Natural Park). Designed for **June peak hydrangea window (June 10–25)** with Hueree greenhouse + Ilchul Land lava-tube + Seongeup hanok interiors as the **3-tier indoor weather-fallback stack**. Cross-batch reuse: 4 of 5 substantive bodies imported verbatim (14a Seongsan, 14b Hamdeok + Seongeup + Ilchulland); only Hueree authored fresh.",
+    "score_rationale": {
+      "high_scores": {
+        "east_jeju_fit=1.0": "All 5 substantive stops are on the east-coast/east-inland corridor",
+        "hydrangea_festival_anchor_count=2": "Ilchul Land + Hueree both during June peak",
+        "unesco_triple_anchor_fit=1.0": "Seongsan carries simultaneous triple-UNESCO designation",
+        "natural_monument_anchor_count=2": "Seongsan tuff cone + Jeju Black Pig (Hueree show)",
+        "year_round_flower_park_fit=1.0": "Hueree's 5-festival rotation guarantees active festival 320+ days/year",
+        "macro_floral_fit=1.0": "Two hydrangea festival venues — peak macro-photography opportunities"
+      },
+      "low_scores": {
+        "wheelchair_fit=0.05": "Seongsan rim climb has 182m of stairs; Hueree paths are gravel/grass",
+        "winter_visitors_seeking_floral_peak": "Hydrangea peak is mid-June — winter visitors should look at the southwest tour's Camellia Hill year-round bloom",
+        "private_tour_fit=0.05": "Fixed small-group itinerary; private re-routing would forfeit the operator's vetted lunch venues + bloom-status calibration"
+      }
+    },
+    "differentiation_vs_southwest_hydrangea_sister": "Same 'hydrangea festival' product family, but **east-UNESCO + heritage emphasis**: triple-UNESCO Seongsan + National Folklore Heritage Seongeup + Hamdeok emerald + 2 hydrangea festival venues (Ilchul Land + Hueree). The southwest sister covers **west-coast beach + columnar joints + Camellia Hill hydrangea tunnel + Osulloc tea fields** — a more garden-and-geology-coded, lower-climb route. Booking matrix: guests with strong UNESCO interest + willing to climb Seongsan should book east; guests with lower mobility tolerance or stronger west-coast/beach interest should book southwest.",
+    "seasonal_window": {
+      "best_months": [
+        "June (peak hydrangea)",
+        "May (early hydrangea + late cherry)",
+        "October",
+        "April"
+      ],
+      "good_months": [
+        "March",
+        "September",
+        "November"
+      ],
+      "low_season_months": [
+        "December",
+        "January",
+        "February"
+      ],
+      "snow_closure_risk": "Seongsan rim stairs close if iced — winter substitutes typically Seopjikoji",
+      "typhoon_window": "August — typhoon-track season; tour reschedule policy applies"
+    },
+    "kb_anchor_version": "1.21"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "Hydrangea blue and Sunrise Peak gold —",
+        "headlineLine2": "east Jeju's summer route, in a single 9-hour loop",
+        "hero": {
+          "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+          "imagePosition": "center 35%",
+          "tagline": "East Jeju at peak hydrangea bloom — UNESCO heritage plus a sea of flowers in 9 hours",
+          "pills": [
+            "小团体",
+            "济州"
+          ],
+          "meta": {
+            "duration": "9 hours",
+            "region": "济州东部",
+            "stops": "8 个景点",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "行程总览"
+          },
+          {
+            "id": "itinerary",
+            "label": "详细行程"
+          },
+          {
+            "id": "details",
+            "label": "注意事项"
+          },
+          {
+            "id": "faq",
+            "label": "常见问题"
+          },
+          {
+            "id": "reviews",
+            "label": "旅客评价"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "行程时间",
+            "value": "9 hours (typical 08:30–17:30)"
+          },
+          {
+            "icon": "users",
+            "label": "团体规模",
+            "value": "Small group, English/Chinese-speaking guide"
+          },
+          {
+            "icon": "calendar",
+            "label": "最佳季节",
+            "value": "Late May to mid-July (peak mid-June); tour available year-round but flowers off-season"
+          },
+          {
+            "icon": "hotel",
+            "label": "接送资讯",
+            "value": "Free hotel pickup in Jeju City; +₩70,000 outside Jeju City"
+          },
+          {
+            "icon": "footprints",
+            "label": "步行强度",
+            "value": "Moderate — Seongsan Ilchulbong involves a 30-minute uphill climb to the rim (skippable)"
+          },
+          {
+            "icon": "ticket",
+            "label": "费用包含",
+            "value": "Vehicle, licensed guide-driver, fuel/tolls/parking. Excludes: admissions, lunch"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+            "alt": "Seongsan Ilchulbong (Sunrise Peak) — UNESCO Natural Heritage",
+            "caption": "Seongsan Ilchulbong (Sunrise Peak) — UNESCO Natural Heritage",
+            "location": "",
+            "atmosphere": ""
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "alt": "Hueree Natural Park hydrangea field — peak season late May to mid-July (peak mid-June)",
+            "caption": "Hueree Natural Park hydrangea field — peak season late May to mid-July (peak mid-June)",
+            "location": "",
+            "atmosphere": ""
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "alt": "Ilchul Land's Micheon lava-tube cave (alternate to closed Manjanggul)",
+            "caption": "Ilchul Land's Micheon lava-tube cave (alternate to closed Manjanggul)",
+            "location": "",
+            "atmosphere": ""
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "alt": "Seongeup Folk Village's traditional stone houses, UNESCO heritage",
+            "caption": "Seongeup Folk Village's traditional stone houses, UNESCO heritage",
+            "location": "",
+            "atmosphere": ""
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "alt": "Hamdeok Beach, ranked among Jeju's top three beaches",
+            "caption": "Hamdeok Beach, ranked among Jeju's top three beaches",
+            "location": "",
+            "atmosphere": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "≈ 08:30",
+            "duration": "30 min",
+            "name": "Hotel pickup (Jeju City)",
+            "category": "Departure",
+            "description": "Free hotel pickup in central Jeju City. Outside Jeju City (Seogwipo, Aewol, Seongsan), additional ₩70,000 pickup fee applies. Jeju Airport pickup also available.",
+            "image": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+            "highlights": [
+              "Free Jeju City pickup",
+              "Air-conditioned vehicle",
+              "Licensed driver-guide"
+            ],
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Pickup point chosen for efficient guest assembly while preserving on-time tour start.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {},
+            "_poi_meta": {
+              "poi_key": "OPS_pickup",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "match": "operational_implicit",
+              "note": "Operational stop (pickup); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+            },
+            "_image_status": "placeholder_removed_v8"
+          },
+          {
+            "number": 2,
+            "time": "≈ 09:30",
+            "duration": "60-90 min",
+            "name": "Hamdeok Seoubong Beach",
+            "category": "Volcanic Beach",
+            "description": "A photo stop at one of Jeju's most loved beaches — emerald shallows, white sand, and dark basalt rocks. The small Seoubong volcanic cone rises directly from the eastern end of the beach.",
+            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "highlights": [
+              "Top-3 Jeju beach",
+              "Seoubong volcanic cone",
+              "Easy photo stop"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "visitBasics": {
+              "hours": "Open 24 hours (beach); managed swim season July–August with lifeguards",
+              "closed": "Open year-round",
+              "admission": "Free",
+              "walking": "Easy — beach is flat sand; Seoubong hike is moderate (steps)"
+            },
+            "convenience": {
+              "restroom": "Public restrooms and shower facilities at beach",
+              "parking": "Public parking lot (paid in summer)"
+            },
+            "smartNotes": {
+              "photo": "Sunset with Seoubong silhouette is the classic shot; aerial-style shots from Seoubong summit show the white sand curve",
+              "facilities": "Multiple cafés along the beachfront; convenience stores nearby",
+              "tip": "Less crowded than Hyeopjae or Gimnyeong beaches; the Delmoondo café area on the east side is popular for sunset"
+            },
+            "_poi_meta": {
+              "poi_key": "hamdeok_beach",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "note": "Operational details based on aggregated visitor info"
+            },
+            "_image_status": "placeholder_removed_v8"
+          },
+          {
+            "number": 3,
+            "time": "≈ 10:30",
+            "duration": "60-90 min",
+            "name": "Seongeup Folk Village (UNESCO)",
+            "category": "UNESCO Folk Village",
+            "description": "A still-inhabited heritage village of stone-walled houses dating back centuries. The volcanic stone walls (dol-dam), thatched roofs, and traditional kitchens are the only place on Jeju where you can see the full pre-modern village layout intact. Listed as Korean Folklore Cultural Heritage.",
+            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "highlights": [
+              "Lived-in heritage village",
+              "Volcanic stone walls",
+              "Traditional kitchens and thatched roofs"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "visitBasics": {
+              "hours": "Open 24 hours (outdoor village); shops typically 09:00–17:00",
+              "closed": "Open year-round",
+              "admission": "Free for general village; some private homes charge for guided visits",
+              "walking": "Easy — flat dirt and stone paths through the village"
+            },
+            "convenience": {
+              "restroom": "Public restrooms at village entrance",
+              "parking": "Free parking near entrance"
+            },
+            "smartNotes": {
+              "photo": "Stone walls (dolhareubang grandfathers), thatched-roof houses with smoke holes, and traditional doors are iconic Jeju shots",
+              "facilities": "Visitor information center at entrance; English maps available",
+              "tip": "Hire a free volunteer guide at the entrance for cultural context; respect that residents actually live here — don't enter homes uninvited"
+            },
+            "_poi_meta": {
+              "poi_key": "seongeup_folk_village",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "note": "Operational details based on aggregated visitor info; verify with operator"
+            },
+            "_image_status": "placeholder_removed_v8"
+          },
+          {
+            "number": 4,
+            "time": "≈ 11:30",
+            "duration": "60 min",
+            "name": "Lunch (local Jeju restaurant)",
+            "category": "Meal",
+            "description": "Free time at a guide-recommended local restaurant. Common east-coast picks: heuk-dwaeji (Jeju black pork) BBQ, mom-guk (mugwort-soup with abalone), or jeon-bok-juk (abalone porridge). Vegetarian options on request.",
+            "image": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+            "highlights": [
+              "Heuk-dwaeji BBQ",
+              "East-coast seafood",
+              "Vegetarian options available"
+            ],
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Mid-route meal break aligned with guest energy and route timing.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {},
+            "_poi_meta": {
+              "poi_key": "OPS_lunch",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "match": "operational_implicit",
+              "note": "Operational stop (lunch); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+            },
+            "_image_status": "placeholder_removed_v8"
+          },
+          {
+            "number": 5,
+            "time": "≈ 13:00",
+            "duration": "60-90 min",
+            "name": "Seongsan Ilchulbong (Sunrise Peak, UNESCO)",
+            "category": "UNESCO Sunrise Peak",
+            "description": "Jeju's most iconic site — a 5,000-year-old hydrovolcanic tuff cone rising 180 meters out of the sea, with a perfectly preserved crater rim. UNESCO Natural Heritage. The 30-minute uphill climb to the rim is steep stone steps; viewers who skip the climb can walk the free coastal trail at the base for similar photo angles.",
+            "image": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+            "highlights": [
+              "UNESCO Natural Heritage",
+              "180 m volcanic tuff cone",
+              "Crater rim viewpoint",
+              "Coastal trail (free section)"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "visitBasics": {
+              "hours": "Mar–Apr & Sep–Oct: 05:00–19:00; May–Aug: 04:30–20:00; Nov–Feb: 06:00–18:00 (last ticketing 1 hour before closing)",
+              "closed": "Open year-round (weather closures possible)",
+              "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
+              "walking": "Moderate — 20–30 min steady stair climb (≈600 stairs); benches every few minutes for rest"
+            },
+            "convenience": {
+              "restroom": "Available at entrance and base",
+              "parking": "Large free parking lot"
+            },
+            "smartNotes": {
+              "photo": "Summit view of Hallasan to the west and Udo island to the north on clear days; haenyeo black-sand beach view from descending path",
+              "facilities": "Café (Fritz Coffee 1.3km away has best exterior views of the peak); ferry to Udo Island from Seongsan Port (1.5km/15 min walk)",
+              "tip": "All stairs but well-maintained — manageable in casual clothes; family-friendly with rest stops; sunrise visits popular but crowds gather pre-dawn"
+            },
+            "_poi_meta": {
+              "poi_key": "seongsan_ilchulbong",
+              "verified": true,
+              "sources": [
+                "VisitKorea",
+                "Wikipedia",
+                "InsideJeju",
+                "AllTrails"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:00",
+            "duration": "90 min",
+            "name": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+            "category": "Festival & nature park",
+            "description": "Jeju's largest botanical garden hosts a major hydrangea festival in late June and early July, with curated photo zones along the lava-flow trails. The same site contains the Micheon Cave (Mi-cheon-gul), a smaller but accessible lava-tube cave currently serving as the alternate to the temporarily closed Manjanggul.",
+            "image": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "highlights": [
+              "Hydrangea festival photo zones",
+              "Micheon Cave lava tube",
+              "Manjanggul alternate"
+            ],
+            "timeUsed": [
+              "Walk through Ilchul Land hydrangea gardens (peak Jun-Jul)",
+              "Explore Micheon Cave (Ilchul Land's private lava tube)",
+              "Photo stops at the festival's main viewpoints"
+            ],
+            "whyOnRoute": "Hydrangea-season anchor for Jeju's east route. Ilchul Land combines an extensive hydrangea festival with the Micheon Cave (a private lava-tube alternative to Manjanggul on busy days), making it a 90-minute high-yield stop.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {},
+            "_poi_meta": {
+              "poi_key": null,
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "match": "unmatched_v6_retained",
+              "note": "No POI factsheet match; v6 visitBasics/convenience/smartNotes retained as-is. Recommend manual verification before publication."
+            },
+            "_image_status": "placeholder_removed_v8"
+          },
+          {
+            "number": 7,
+            "time": "≈ 16:30",
+            "duration": "60-90 min",
+            "name": "Hueree Natural Park — Hydrangea highlight",
+            "category": "Natural Park",
+            "description": "The headline stop of the day. Hueree's hydrangea field is one of Jeju's most photographed in summer — densely planted blue, pink, and white hydrangeas across rolling hills, with a small animal park and tangerine orchard alongside. The park rotates seasonal festivals year-round (camellia in winter, canola in spring, hydrangea in summer).",
+            "image": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "highlights": [
+              "Densely planted hydrangea hills",
+              "Small animal park",
+              "Year-round seasonal festival rotation",
+              "Best photos in late June"
+            ],
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "visitBasics": {
+              "hours": "09:00–18:00 (last admission 17:00); seasonal variations",
+              "closed": "Open year-round",
+              "admission": "Adult ≈13,000 KRW / Child ≈10,000 KRW (subject to seasonal variation)",
+              "walking": "Moderate — large grounds with hill paths; partially stroller-accessible"
+            },
+            "convenience": {
+              "restroom": "Multiple restrooms throughout the park",
+              "parking": "Free parking available"
+            },
+            "smartNotes": {
+              "photo": "Hydrangea hillside in late June/July is one of Jeju's most photographed scenes",
+              "facilities": "Café, restaurant, gift shop, animal feed vending",
+              "tip": "Hydrangea peak is short (late May to mid-July, peak mid-June) — time visits carefully; pony riding experience is a separate fee"
+            },
+            "_poi_meta": {
+              "poi_key": "hueree_natural_park",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "note": "Operational details based on aggregated tour-operator info"
+            },
+            "_image_status": "placeholder_removed_v8"
+          },
+          {
+            "number": 8,
+            "time": "≈ 18:00",
+            "duration": "45–60 min",
+            "name": "Drop-off (Jeju City)",
+            "category": "Return",
+            "description": "Drop-off at your hotel in Jeju City, Dongmun Traditional Market, or Jeju Airport on request.",
+            "image": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+            "highlights": [
+              "Hotel drop-off",
+              "Dongmun Market option",
+              "Airport drop-off available"
+            ],
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Return logistics — drop-off chosen for guest convenience and timing certainty.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {},
+            "_poi_meta": {
+              "poi_key": "OPS_return",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "match": "operational_implicit",
+              "note": "Operational stop (return); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+            },
+            "_image_status": "placeholder_removed_v8"
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "Jeju City hotel",
+            "type": "origin",
+            "theme": "Departure"
+          },
+          {
+            "name": "Hamdeok Beach",
+            "type": "secondary",
+            "theme": "Beach"
+          },
+          {
+            "name": "Seongeup Folk Village (UNESCO)",
+            "type": "primary",
+            "theme": "Heritage Village"
+          },
+          {
+            "name": "Lunch",
+            "type": "meal",
+            "theme": "Meal"
+          },
+          {
+            "name": "Seongsan Ilchulbong (UNESCO)",
+            "type": "primary",
+            "theme": "UNESCO Volcano"
+          },
+          {
+            "name": "Ilchul Land + Micheon Cave",
+            "type": "primary",
+            "theme": "Cave"
+          },
+          {
+            "name": "Hueree Natural Park (hydrangea highlight)",
+            "type": "primary",
+            "theme": "Garden"
+          },
+          {
+            "name": "Jeju City hotel",
+            "type": "return",
+            "theme": "Return"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "Outbound coast",
+            "duration": "≈ 1.5 hours",
+            "description": "Jeju City → eastern coast via Hamdeok Beach photo stop."
+          },
+          {
+            "phase": "Heritage half",
+            "duration": "≈ 2 hours",
+            "description": "Seongeup Folk Village + lunch in eastern Jeju village area."
+          },
+          {
+            "phase": "UNESCO peak",
+            "duration": "≈ 1.5 hours",
+            "description": "Seongsan Ilchulbong climb or coastal walk."
+          },
+          {
+            "phase": "Hydrangea finale",
+            "duration": "≈ 2.5 hours",
+            "description": "Ilchul Land lava cave + festival, then Hueree Natural Park as headline hydrangea stop."
+          },
+          {
+            "phase": "Return",
+            "duration": "≈ 1 hour",
+            "description": "Hueree → Jeju City."
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "How this day flows",
+          "subtitle": "A seasonal east-Jeju loop built around the island's defining summer event. The hydrangea festivals at Hueree and Ilchul Land peak for roughly four weeks (late May to mid-July, peak mid-June) — narrow enough that most international travelers miss it without a planned tour. The route weaves the festival into the standard east-coast UNESCO circuit, so visitors who happen to be in Jeju during the bloom window get both the heritage day and the flowers in the same 9 hours."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "First-time visitors to the area",
+            "Couples",
+            "Adult families",
+            "Active travelers comfortable with full days",
+            "Travelers who want UNESCO World Heritage stops"
+          ],
+          "lessIdealFor": [
+            "Travelers who want minimal walking",
+            "Travelers with limited mobility",
+            "Stroller-heavy groups",
+            "Travelers needing a tight same-day flight buffer"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Why this route is built this way",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "Two festivals in one day",
+                  "detail": "Jeju has four major hydrangea festivals (Hueree, Hallim Park, Camellia Hill, Ilchul Land). The east route includes two of them — Ilchul Land and Hueree — which together cover the broadest range of hydrangea varieties and photo settings. Pairing both is awkward by public bus."
+                },
+                {
+                  "label": "UNESCO heritage stays in",
+                  "detail": "Many seasonal flower tours skip heritage sites in favor of more flower stops. This route keeps Seongsan Ilchulbong and Seongeup Folk Village on the itinerary — meaning even if you don't care about hydrangeas, the day still earns its keep as a standard east-Jeju UNESCO loop."
+                },
+                {
+                  "label": "Built-in fallback when flowers underperform",
+                  "detail": "Hydrangea bloom timing varies year to year by 1–2 weeks. If you arrive a bit early or a bit late in the season, the heritage stops still anchor the day. The guide will swap in the strongest available flower fields based on real-time bloom intel."
+                },
+                {
+                  "label": "Hotel pickup beats self-driving for one-day visitors",
+                  "detail": "Many Jeju visitors are 1–2-day stopovers from Seoul. Renting a car requires an International Driving Permit and 30+ minutes of paperwork at the airport. A guided 9-hour day with hotel pickup means you arrive, sleep, get picked up, and see the best of east Jeju — no driving stress on the volcanic ridge roads."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "title": "What's included",
+            "content": "Air-conditioned vehicle, licensed English/Chinese-speaking guide-driver, fuel, tolls, parking. Not included: attraction admissions (Seongsan Ilchulbong ₩5,000, Hueree ₩13,000, Ilchul Land ₩12,000, Seongeup free), meals, tips. Total typical admission cost per person: ₩30,000–₩40,000."
+          },
+          {
+            "title": "Pickup & drop-off",
+            "content": "Free hotel pickup within Jeju City (around Jeju Airport area, downtown). Pickup outside Jeju City (Seogwipo, Aewol, Seongsan) incurs an additional ₩70,000 fee paid to the driver. Confirm pickup location at booking."
+          },
+          {
+            "title": "Hydrangea bloom timing",
+            "content": "Peak bloom is typically late May to mid-July (peak mid-June), with some variation year to year. Check with the operator 1–2 weeks before your tour date for the latest bloom status. Outside this window, the route still runs but the hydrangea stops are off-season — consider the East Snow & Camellia winter tour or East Pink Muhly autumn tour instead."
+          },
+          {
+            "title": "Walking & terrain",
+            "content": "Moderate. Seongsan Ilchulbong's rim climb is 30 minutes of stone steps with railings — tiring but well-marked. Visitors who skip it can walk the free coastal trail. Hueree, Ilchul Land, and the folk village are mostly flat. The Micheon Cave has uneven flooring and stairs."
+          },
+          {
+            "title": "Cancellation",
+            "content": "Free cancellation up to 24 hours before pickup. Same-day cancellations and no-shows are non-refundable. Typhoon-related cancellations on Jeju (frequent in late summer) handled with full refund or reschedule."
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "See seasonal notes"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "See seasonal notes"
+          },
+          "_seasonalSummary": "Jeju in hydrangea season (June–July) is warm, humid, and prone to short rain showers. Temperatures of 22–28°C are typical, with high humidity. Bring sun protection and a light rain layer.",
+          "_seasonalTemperatures": [
+            {
+              "season": "Hydrangea season (late May to mid-July, peak mid-June)",
+              "range": "22–28°C",
+              "notes": "Humid; afternoon showers possible. Hydrangeas actually photograph best on overcast or post-rain mornings."
+            },
+            {
+              "season": "Late summer (Aug)",
+              "range": "26–32°C",
+              "notes": "Hottest period; hydrangea past peak; typhoon risk increasing."
+            },
+            {
+              "season": "Off-season (rest of year)",
+              "range": "varies",
+              "notes": "Tour available year-round, but hydrangea stops are not in bloom — consider seasonal alternates."
+            }
+          ]
+        },
+        "seasonalVariations": [
+          {
+            "season": "Late June – Early July",
+            "highlight": "Peak hydrangea bloom across both Ilchul Land and Hueree. Best photographic conditions. Tour books out fastest in this window."
+          },
+          {
+            "season": "Mid–Late July",
+            "highlight": "Hydrangeas still strong but starting to fade. Less crowded."
+          },
+          {
+            "season": "Outside bloom window",
+            "highlight": "Heritage anchor (Seongsan + Seongeup) still strong. Better to choose seasonal-appropriate alternates: Pink Muhly (autumn), Camellia (winter), Canola (spring)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Licensed local operator",
+            "description": "Authorized Korean tour operator with full insurance",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "route",
+            "title": "Route specialists",
+            "description": "Hand-tuned itinerary, not a generic loop",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          },
+          {
+            "icon": "users",
+            "title": "Curated group size",
+            "description": "Right-sized for the route",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Immediately",
+            "title": "Instant Confirmation",
+            "detail": "Booking confirmation with itinerary summary"
+          },
+          {
+            "timing": "12 hours before",
+            "title": "12-Hour Reminder",
+            "detail": "Weather update and any route adjustments"
+          },
+          {
+            "timing": "Evening before",
+            "title": "Final Pickup Info",
+            "detail": "Exact pickup time and driver contact"
+          },
+          {
+            "timing": "Morning of tour",
+            "title": "Day-of Route Notes",
+            "detail": "Morning briefing based on live conditions"
+          },
+          {
+            "timing": "During tour",
+            "title": "Stop-by-Stop Tips",
+            "detail": "Real-time guidance at each location"
+          },
+          {
+            "timing": "After tour",
+            "title": "Post-tour Support",
+            "detail": "Follow-up and recommendations"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "When exactly do hydrangeas bloom on Jeju?",
+            "answer": "Typically late May to mid-July (peak mid-June), with peak around the last week of June. Bloom timing shifts ±1 week year to year based on spring rainfall and temperature. Check 1–2 weeks before your tour date for the latest update."
+          },
+          {
+            "id": "q2",
+            "question": "Are admissions included?",
+            "answer": "No — budget about ₩30,000–₩40,000 per person for the day. Admissions: Seongsan Ilchulbong ₩5,000, Hueree ₩13,000, Ilchul Land ₩12,000, Seongeup Folk Village free."
+          },
+          {
+            "id": "q3",
+            "question": "Why is Manjanggul closed?",
+            "answer": "Manjanggul Lava Tube is temporarily closed for safety repairs (status varies; check on booking date). The standard alternate is Micheon Cave at Ilchul Land, which is a similar lava-tube experience and is included in this route."
+          },
+          {
+            "id": "q4",
+            "question": "How is this different from the West/South hydrangea tour?",
+            "answer": "This route covers Hueree + Ilchul Land hydrangeas plus east-coast UNESCO sites (Seongsan, Seongeup). The West/South tour (our West & South Hydrangea route) covers Hallim Park + Camellia Hill hydrangeas plus south-coast sites (Cheonjeyeon Falls, Jusangjeolli cliffs). Choose the East if you want UNESCO peaks; the West if you want a denser concentration of flower gardens."
+          },
+          {
+            "id": "q5",
+            "question": "Can I do this as a private tour?",
+            "answer": "The same operator runs a private version of the hydrangea tour with hotel pickup anywhere on Jeju and customizable timing. Different product page; ask for the private option if you're a group of 4+ or want pickup outside Jeju City without the +₩70,000 surcharge."
+          },
+          {
+            "id": "first-time",
+            "question": "Is this a good choice for first-time visitors to eastern Jeju?",
+            "answer": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+          },
+          {
+            "id": "walking",
+            "question": "Is the walking difficult?",
+            "answer": "An active day with several walking-heavy stops."
+          },
+          {
+            "id": "family",
+            "question": "Is this tour suitable for families?",
+            "answer": "Yes for families whose kids can handle a full day of moving around."
+          },
+          {
+            "id": "seniors",
+            "question": "Can older adults join comfortably?",
+            "answer": "Recommended only for active seniors comfortable with stairs and uneven ground."
+          },
+          {
+            "id": "children",
+            "question": "What's the recommended minimum age?",
+            "answer": "Best fit is around age 10 and up — children comfortable with a full-day rhythm and the walking notes above."
+          },
+          {
+            "id": "rain",
+            "question": "Can the tour run in rainy weather?",
+            "answer": "Light rain is fine; heavy rain may change a few stops."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "person",
+          "priceSource": "getyourguide_t662120",
+          "priceNote": "Small-group price not yet confirmed from listing snippet. Sister tour (our West & South Hydrangea route) is approximately $89–96 per person. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+          "discountPercent": 10
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v15.2"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch4_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 4 deep enhancement — descriptions raised to 700-1300+ chars; KB-backed metadata on all attraction stops; matching_profile recalibrated with verified-fact 0-1 float scores. Time-weighted indoor_ratio computation per Fix 1 methodology.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale. Indoor ratio computed time-weighted with Fix 1 methodology applied to Seongeup (30%) and Ilchul Land (30%).",
+          "deltas_applied": {
+            "unesco_fit": {
+              "old": 1,
+              "new": 0.85,
+              "reasoning": "Verified: Seongsan = UNESCO World Heritage. Tour name says 'Seongeup UNESCO' but Seongeup is Korean National Folklore Cultural Heritage, NOT UNESCO. 1/6 stops actually UNESCO. 0.85 reflects strong cultural-heritage anchor + 1 UNESCO."
+            },
+            "intangible_heritage_fit": {
+              "old": 0.8,
+              "new": 0.75,
+              "reasoning": "Verified: Seongsan haenyeo demos (UNESCO ICH) + Seongeup folkways + omegisul brewery. 3/6 with intangible heritage value. 0.75 calibrated."
+            },
+            "walking_level": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Verified: Hamdeok 0.5 km flat, Seongeup ~1 km flat olle, Seongsan photo+optional climb, Micheon 365 m flat, Ilchul Land 1 km flat, Hueree 1.5–2 km flat. Total ~5 km flat. 0.55 calibrated — gentler than mechanical 0.6."
+            },
+            "scenic_level": {
+              "old": 1,
+              "new": 0.85,
+              "reasoning": "Verified: 6 distinct landscapes (turquoise beach, Joseon walled town, UNESCO peak, lava tube + gardens, hydrangea fields). 0.85 — strong but not catalog-leading (west-south tour at 0.95)."
+            },
+            "photo_level": {
+              "old": 1,
+              "new": 0.9,
+              "reasoning": "Verified: 6 hero shots + dedicated festival photography (hydrangea Hueree). 0.90 calibrated."
+            },
+            "iconic_landmark_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "Verified: Seongsan universally iconic + Hamdeok Top 3 Jeju beach + Seongeup folklore heritage + Hueree regional festival icon. 0.85 calibrated."
+            },
+            "indoor_ratio": {
+              "old": 0.4,
+              "new": 0.2,
+              "reasoning": "CORRECTION using time-weighted method (Fix 1 + Batch 4 methodology): 105.75 indoor / 390 total = 0.27 with lunch; 57.75 / 330 = 0.18 without. Catalog 0.20 represents both. Mechanical 0.4 overstated."
+            },
+            "weather_sensitivity": {
+              "old": 1,
+              "new": 0.85,
+              "reasoning": "VERIFIED 0.85 — hydrangea blooms are weather-affected; outdoor stops dominate; Hamdeok beach + Seongsan exposed. Higher than typical because of hydrangea festival's bloom-window dependency."
+            },
+            "rain_fit": {
+              "old": 0.6,
+              "new": 0.5,
+              "reasoning": "DOWNGRADED — Hueree's hydrangea greenhouse is rain refuge, Micheon Cave + Seongeup hanok provide partial shelter. But Hamdeok + Seongsan + outdoor hydrangea fields all rain-vulnerable. 0.50 verified."
+            },
+            "first_time_fit": {
+              "old": 1,
+              "new": 0.85,
+              "reasoning": "Verified: covers Jeju's iconic UNESCO + folk heritage + flower festival diversity. Season-locked (May–August primary). 0.85 — strong first-Jeju summer overview."
+            },
+            "value_for_money_fit": {
+              "old": 0.6,
+              "new": 0.75,
+              "reasoning": "Verified fees: Hamdeok free + Seongeup free + Seongsan ₩2,000 + Ilchul ₩12,000 + Hueree ₩13,000 = ~₩27,000/adult. Higher than other Jeju tours (Hueree + Ilchul both premium-tier). 0.75 calibrated."
+            },
+            "young_kids_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "UPGRADED — Hueree's black pig show + petting zoo + Hamdeok beach + leveled cave = exceptionally kid-friendly. Among catalog's strongest family tours. 0.85."
+            },
+            "senior_fit": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "UPGRADED — most stops senior-accessible (Hamdeok flat, Seongeup flat, leveled cave, Hueree flat, Seongsan photo-only option). Active seniors fully comfortable. 0.65."
+            },
+            "stroller_fit": {
+              "old": 0.6,
+              "new": 0.7,
+              "reasoning": "UPGRADED — verified 5/6 stroller-friendly (only Seongsan summit not). Hueree explicitly stroller-friendly. 0.70."
+            },
+            "beach_fit": {
+              "old": 0.4,
+              "new": 0.65,
+              "reasoning": "UPGRADED — Hamdeok IS the beach component (Top 3 Jeju). Mechanical 0.4 understated. 0.65 calibrated."
+            },
+            "culture_level": {
+              "old": 1,
+              "new": 0.75,
+              "reasoning": "Verified: Seongeup 600-year town + Seongsan haenyeo demo + Hueree Jeju Cultural Village (traditional hanok). 3 cultural anchors, 3 nature/garden anchors. 0.75 calibrated."
+            },
+            "nature_fit": {
+              "old": 1,
+              "new": 0.85,
+              "reasoning": "Verified: beach + UNESCO peak + flower park + lava tube. Strong but not catalog-leading because of substantial cultural component. 0.85."
+            }
+          }
+        },
+        "stops_enhanced": 8,
+        "sources": [
+          "VisitKorea",
+          "Visit Jeju",
+          "Jeju Tourism Organization",
+          "Trazy",
+          "KKday",
+          "NOL World",
+          "Hueree Park official"
+        ]
+      }
+    }
+  }
+}

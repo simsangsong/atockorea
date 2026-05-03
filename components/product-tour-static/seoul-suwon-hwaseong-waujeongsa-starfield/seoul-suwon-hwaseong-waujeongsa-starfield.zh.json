@@ -1,0 +1,1819 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "locale": "zh-CN",
+  "product_id": "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "seo": {
+    "pageTitle": "Suwon Hwaseong, Waujeongsa & Starfield Day Tour | AtoC Korea",
+    "metaDescription": "9–10-hour day trip from Seoul: UNESCO Suwon Hwaseong Fortress, Starfield Suwon Library, and Waujeongsa Temple with its giant outdoor Buddha. EN guide, transfers.",
+    "ogImage": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
+    "primaryKeywords": [
+      "Suwon Hwaseong day tour",
+      "Waujeongsa Temple Yongin",
+      "Starfield Library Suwon",
+      "Seoul Suwon heritage tour",
+      "Hwaseong Fortress UNESCO tour"
+    ],
+    "title": "水原华城＋와우정사佛寺＋星空图书馆文化遗产一日游 | AtoC Korea",
+    "description": "首尔出发一日游：水原华城UNESCO世界遗产→星空图书馆水原→와우정사佛寺（全球最大木雕卧佛＋3,000尊亚洲佛像）。小团体，英语导游，含全部门票，全年开团。"
+  },
+  "catalog_card": {
+    "slug": "seoul-suwon-hwaseong-waujeongsa-starfield",
+    "title": "水原华城＋와우정사＋星空图书馆文化遗产一日游",
+    "subtitle": "UNESCO fortress, mountain temple, and viral library—Korea's past, spirit, and present in one Seoul day-trip.",
+    "region": "水原＆龙仁",
+    "duration": "9–10 hours",
+    "stopsCount": 3,
+    "rating": 4.9,
+    "reviewCount": 57,
+    "badges": [
+      "世界文化遗产",
+      "历史遗迹＋现代一日游",
+      "门票已包含"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=600&q=80",
+    "priceLabel": "From US$48.60 per person (10% off, was $54)",
+    "shortCardDescription": "A small-group day-trip from Seoul covering three contrasting sides of Korea: the UNESCO-listed Suwon Hwaseong Fortress (18th-century military architecture), the photogenic Starfield Suwon Library (contemporary cultural icon), and Waujeongsa Temple in Yongin (giant outdoor Buddha and stone bell). Strong heritage value with included transport and admission.",
+    "tags": [
+      "unesco_heritage",
+      "heritage__modern_day_trip",
+      "admission_included"
+    ]
+  },
+  "headlineLine1": "水原华城、와우정사佛寺",
+  "headlineLine2": "与星空图书馆文化遗产之旅",
+  "price": {
+    "amountLabel": "48.60",
+    "originalPriceUsd": 54,
+    "salePriceUsd": 48.6,
+    "discountPercent": 10,
+    "currency": "USD",
+    "per": "person",
+    "priceSource": "getyourguide_t1051988",
+    "priceNote": "Original price 54 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
+    "imagePosition": "center 50%",
+    "tagline": "18世纪UNESCO城墙要塞、最上镜的韩国当代图书馆、山间宁静融合佛寺——韩国三面，一日全览",
+    "pills": [
+      "世界遗产",
+      "门票已包含",
+      "首尔来回接送"
+    ],
+    "meta": {
+      "duration": "9–10 hours",
+      "region": "水原＆龙仁",
+      "stops": "3 个景点",
+      "rating": 4.9,
+      "ratingStars": 5
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "行程总览"
+    },
+    {
+      "id": "itinerary",
+      "label": "详细行程"
+    },
+    {
+      "id": "details",
+      "label": "注意事项"
+    },
+    {
+      "id": "faq",
+      "label": "常见问题"
+    },
+    {
+      "id": "reviews",
+      "label": "旅客评价"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "拍照潜力",
+      "value": "极佳",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "景点密度",
+      "value": "良好",
+      "level": 4
+    },
+    {
+      "icon": "footprints",
+      "label": "步行强度",
+      "value": "中等",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "雨天适合度",
+      "value": "良好",
+      "level": 4
+    },
+    {
+      "icon": "users",
+      "label": "亲子适合度",
+      "value": "良好",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "行程节奏",
+      "value": "均衡",
+      "level": 4
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200&q=80",
+      "alt": "水原华城华虹门7拱水门全景",
+      "caption": "水原华城UNESCO世界文化遗产——华虹门7拱水门，18世纪朝鲜最完整的城墙要塞城市",
+      "location": "水原，京畿道",
+      "atmosphere": "Stone walls built 1794-1796 under King Jeongjo; UNESCO World Heritage Site since 1997"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=1200&q=80",
+      "alt": "와우정사佛寺印度白檀木卧佛",
+      "caption": "와우정사佛寺——3公尺高印度白檀木雕卧佛，全球最大木雕卧佛，1970年韩朝统一祈愿寺",
+      "location": "와우정사，龙仁，京畿道",
+      "atmosphere": "Shinsegae's flagship 2nd-generation Starfield, opened January 2024; free entry; vinyl-record listening seats"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1200&q=80",
+      "alt": "와우정사3,000尊亚洲佛像步道",
+      "caption": "와우정사山间步道——来自亚洲各佛教国家的3,000尊佛像依山而立，泛亚洲融合圣地",
+      "location": "와우정사，龙仁，京畿道",
+      "atmosphere": "Founded 1970 by displaced North Korean monk; 8m wooden Buldu (Guinness Book); 3m×12m Wabul reclining Buddha; 12-ton Unification Bell (1988 Olympics)"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+      "alt": "星空图书馆水原22公尺书架中庭全景",
+      "caption": "星空图书馆水原——22公尺高圆柱形书架中庭，韩国最受欢迎的室内打卡景点之一",
+      "location": "星空水原购物中心，水原",
+      "atmosphere": "1 km wall walk between Janganmun and Hwaseomun; steep gradients; bastions and command posts"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+      "alt": "Hwaseong Haenggung Palace's traditional Korean wooden buildings with painted eaves arranged around a stone-flagged courtyard",
+      "caption": "Hwaseong Haenggung Palace courtyards",
+      "location": "Hwaseong Haenggung Palace, inside the fortress, Suwon",
+      "atmosphere": "Korea's largest haenggung (detached palace); King Jeongjo's temporary residence; restored from 19th-century fire"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "≈ 10:00",
+      "duration": "120 min",
+      "name": "水原华城",
+      "category": "UNESCO Fortress",
+      "description": "**水原华城（수원화성）——1997年UNESCO世界文化遗产**——是韩国唯一同时保存有原始10册施工记录（《华城城役仪轨》，2007年另列入UNESCO世界记忆遗产）的城墙要塞城市。由正祖大王（朝鲜第22代国王）命令于**1794至1796年，仅2年9个月**建成，旨在将朝鲜首都从汉阳迁至水原，并纪念被闷死的父亲思悼世子。城墙由**丁若镛**设计，融合韩式、中式及西方城防科学；丁若镛并发明了**거중기（巨重机）**——以西方力学原理设计的滑轮组吊车，是韩国建筑史首次应用西方工程技术的纪录。城墙全周长**5.74公里**，设有41处军事设施，含4座主城门。今日导览步行涵盖长安门至华西门之间约1.2公里的最高密度城墙段。紧邻的**华城行宫**是韩国现存最大行宫（原576间），**洛南轩**是现场唯一保存自1796年原建的真实建筑，其他建筑均为依仪轨复原的重建物。**行宫换岗仪式**周二至日上午11:00在新丰楼前举行（免费，约15分钟）。",
+      "highlights": [
+        "**1997年UNESCO世界文化遗产**——韩国唯一保存原施工记录的城墙要塞城市",
+        "1794至1796年，正祖大王命令建造，历时2年9个月",
+        "丁若镛设计，融合韩式＋中式＋西方城防科学",
+        "《华城城役仪轨》施工记录——2007年UNESCO世界记忆遗产",
+        "**韩国现存最大行宫（原576间）**，洛南轩是唯一原1796年真实建筑",
+        "**换岗仪式周二至日上午11:00，免费，约15分钟**",
+        "韩剧《大长今》（2003年）取景地",
+        "**门票已含括在行程费用内**"
+      ],
+      "timeUsed": [
+        "Coach drop-off near Janganmun (~5 min)",
+        "Brief group orientation (~5 min)",
+        "Walk Janganmun → Hwaseomun via Hwaseo Janggak (~30 min)",
+        "Optional Seojangdae viewpoint climb OR Hwahongmun sluice-gate detour (~30-40 min)",
+        "Photo time + reassembly at vehicle (~30 min flexible buffer)"
+      ],
+      "whyOnRoute": "华城是全日UNESCO遗产主锚点——朝鲜时代最完整的城市防御系统，配合行宫的历史离宫体验，为全日建立深厚的朝鲜王朝文化基础，为后续现代图书馆和融合佛寺提供历史文脉对照。",
+      "visitBasics": {
+        "hours": "Wall path 24 hours; recommended 09:00-18:00 summer / 09:00-17:00 winter; evening hours May-Oct Wed-Sun 18:00-21:30",
+        "closed": "Open year-round (Hwaseong Trolley closed Mondays)",
+        "admission": "Adults 1,000 / Youth 700 / Children 500 KRW (FREE: children ≤6, seniors 65+, hanbok-wearers, last Wed of month)",
+        "walking": "Moderate to challenging — wall has steep sections at Seojangdae; stairs at gates; some sections wheelchair-difficult"
+      },
+      "convenience": {
+        "restroom": "At Janganmun, Hwaseomun, Paldalmun, Yeonmudae",
+        "parking": "Coach drop-off at Janganmun lot; designated coach parking at Yeonmudae"
+      },
+      "smartNotes": {
+        "photo": "**Hwahongmun (north sluice gate)** with 7 arches over Suwoncheon Stream — the iconic shot, especially in spring (cherry blossoms) and autumn (foliage). **Janganmun (largest existing royal gate in Korea)** at golden hour. **Seojangdae (west command post)** sunset over Paldalsan Mountain — the panoramic king's-eye view.",
+        "facilities": "Visitor Information Centers at all main gates; English-Korean signage throughout. Hwaseong audio guide rentals at Janganmun. Multiple cafes around Haenggung Square nearby.",
+        "tip": "Wear comfortable shoes — wall stones are uneven. Hanbok rental shops at Haenggung Square give FREE fortress + palace admission. The **120-min budget allows two photo focal points**: choose Seojangdae (highest viewpoint) OR Hwahongmun (most photographed structure) per group preference."
+      },
+      "_poi_meta": {
+        "poi_key": "hwaseong_fortress",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO WHC",
+          "VisitKorea",
+          "Suwon CVB",
+          "KoreaToDo",
+          "UNESCO World Heritage Centre — Suwon Hwaseong (Criteria ii/iii inscription, 1997)",
+          "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Hwaseong Fortress + Hwaseong Seongyeok Uigwe Memory of the World 2007)",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Hwaseong Fortress official listing)",
+          "Suwon City Tourism (suwon.go.kr/tour — Hwaseong Yeolcha trolley + admission + opening hours)",
+          "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "≈ 13:30",
+      "duration": "90 min",
+      "name": "星空图书馆水原（星空水原购物中心）",
+      "category": "Modern Cultural Landmark + Lunch",
+      "description": "**星空图书馆水原（별마당 도서관 수원）**——位于**신世界星空水原购物中心（2024年1月26日开幕）**，是신世界地产第五座星空购物中心，总投资超过1兆韩圜（约7.5亿美元）；约33万4,000平方公尺使其成为继河南星空外韩国第二大室内购物中心。由**BCHO Partners（赵秉沐）**设计——同一建筑师事务所负责2017年COEX原版星空图书馆——水原版是升级的第二代设计，**22公尺高书架**是韩国最高的圆柱形书架建筑之一。图书馆横跨4层（一至四楼挑空中庭），馆藏约7万册书籍与杂志。**免费对外开放**，每日10:00至22:00。特色设施：黑胶唱片聆听区、每月轮换当代艺术展览，及春季（3至4月）中庭千朵粉色LED花瓣装置。地下一楼**Eatopia美食广场**（30多家餐厅，₩5,000至₩40,000以上）是本行程自费午餐的推荐场所。Starfield免费接驳巴士从水原站4号出口发车（约10分钟）。",
+      "highlights": [
+        "**신世界旗舰第二代星空购物中心——2024年1月26日开幕**",
+        "BCHO Partners设计（同时设计2017年COEX原版星空图书馆）",
+        "**4层图书馆，22公尺高书架**——韩国最高的圆柱形书架之一",
+        "约7万册书籍＋杂志，**免费开放**",
+        "黑胶唱片聆听区、每月轮换当代艺术展览",
+        "春季（3至4月）中庭千朵粉色LED花瓣装置",
+        "Eatopia美食广场（30多家餐厅），自费午餐推荐地点",
+        "购物中心每日10:00至22:00开放"
+      ],
+      "timeUsed": [
+        "30-min coach drive from Hwaseong Fortress to Starfield Suwon",
+        "Lunch at Eatopia food hall (~30-45 min)",
+        "Library + atrium walking + photo time (~30-40 min)",
+        "Brief shopping browse + reassembly at coach (~10-15 min)",
+        "Optional Eatopia food hall lunch (B1F, 30+ Korean + international restaurants; ~₩10,000-25,000 pp; 45-60 min)"
+      ],
+      "whyOnRoute": "星空图书馆是继华城历史景点后的「现代韩国」视觉对照——22公尺高书架建筑是Instagram上最多人分享的韩国室内景点之一。全程室内设计同时解决午餐安排，为下午와우정사的山间佛寺体验提供舒适的中段缓冲。",
+      "visitBasics": {
+        "hours": "Mall 10:00-22:00; library accessible during all mall hours",
+        "closed": "1-2 monthly closure days (typically Mondays — verify online)",
+        "admission": "Library FREE; Eatopia food hall pay-as-you-go (lunch ~5,000-25,000 KRW per person)",
+        "walking": "Easy — escalators and elevators between all floors; wheelchair/stroller accessible throughout"
+      },
+      "convenience": {
+        "restroom": "Multiple restrooms on every floor; family-friendly stations",
+        "parking": "Underground ~5,000 spaces; first 3 hours FREE with mall purchase 30,000 KRW+; coach lot for groups"
+      },
+      "smartNotes": {
+        "photo": "**Library central atrium with 22-meter bookshelves** from 4F gallery looking down. **Vinyl Record Lounge** for retro aesthetic. **Cherry blossom installation in atrium (March-April)** — viral seasonal photo. Christmas tree (December). Children's section on 4F for family photos.",
+        "facilities": "Eatopia food hall B1F (30+ restaurants 5,000-40,000 KRW), Toy Kingdom 4F, Aquafield water park B1-2F, CGV + MEGABOX cinemas, free WiFi, multilingual customer service, tax-refund counters at major stores.",
+        "tip": "**Library is FREE** during all mall hours. **22-meter bookshelves = Korea's tallest library bookshelves** (mention to guests for impact). **Cherry blossom installation March-April** is the seasonal must-see. **Eatopia food hall for lunch** — pre-booking not required; visit during 13:00-13:30 to avoid Korean lunch peak. Avoid Saturday afternoons (peak crowd density). Verify Starfield monthly closure dates online before visit."
+      },
+      "_poi_meta": {
+        "poi_key": "starfield_library_suwon",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Starfield official",
+          "VisitKorea",
+          "Shinsegae press",
+          "BCHO Partners",
+          "Starfield Suwon official (starfield.co.kr/suwon — opening date 2024-01-26 + library 4F-7F + free admission)",
+          "Shinsegae Property press release (Jan 2024 grand opening + 5th Starfield mall + 2nd-generation flagship concept)",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Starfield Library Suwon listing)",
+          "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
+          "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 15:30",
+      "duration": "75 min",
+      "name": "와우정사佛寺",
+      "category": "Buddhist Temple (Modern Eclectic)",
+      "description": "**와우정사（와우정사）——1970年由海灯大师（해등 큰스님）创立**，作为韩战（1950至1953年）后半岛分裂时，北韩佛教僧侣与家乡寺庙断绝联系的避难地。寺庙原名「千佛寺」（「千零一佛之寺」），以向33位佛教神灵祈愿韩朝统一而得名。**와우（와우，卧牛）**源自附近莲花山（연화산）的山形地貌，形如「横卧之牛」。와우정사是韩国生动的**泛亚洲融合佛教圣地**——印度、斯里兰卡、泰国、缅甸、西藏、中国及韩国各地佛教建筑风格在山间步道间并列共存，由创办人海灯大师历数十年从亚洲各国搜集并安奉。寺庙核心景观：**3公尺高的印度白檀木雕卧佛——全球最大的木雕卧佛**，安奉于寺庙主殿；与卧佛形成对比的是入口大道排列的**3,000尊亚洲各国佛像**，构成寺庙最壮观的视觉走廊。其他地标：**大型韩朝统一祈愿铜钟**；**石雕四面佛像**；建在莲花池上的**韩式亭阁**；及散布山间的**缅甸和泰式佛塔**。寺庙全年365天开放，无明确关闭时间，**免费入场**。建议穿著覆肩服饰进入主殿（夏季穿著无袖者建议备薄外套）。",
+      "highlights": [
+        "**1970年由海灯大师创立作为韩朝统一祈愿寺**",
+        "折衷融合设计——泛亚洲佛教（印度、斯里兰卡、泰国、缅甸、西藏、中国、韩国）",
+        "约3,000尊来自亚洲各佛教国家的佛像",
+        "**3公尺高印度白檀木雕卧佛＝全球最大的木雕卧佛**",
+        "大型韩朝统一祈愿铜钟",
+        "缅甸及泰式佛塔散布山间步道",
+        "全年免费入场，365天开放",
+        "**建议主殿参观覆肩著装（夏季无袖者备薄外套）**"
+      ],
+      "timeUsed": [
+        "30-min coach drive from Starfield Suwon to Yongin's Waujeongsa",
+        "Brief group orientation at temple entrance (~5 min)",
+        "Self-guided walk: Buddha head → main halls → reclining Buddha → bell → pagoda (~50-60 min)",
+        "Reassembly at coach (~10 min)",
+        "Optional Taepyeongjong (Bell of Great Peace, 8-ton bronze) striking with reunification wish (donations welcomed; ~10 min)"
+      ],
+      "whyOnRoute": "와우정사是全日最独特的景点——在首尔近郊找不到第二个类似的场所。作为下午压轴站，山间佛寺的静谧氛围与早晨城墙的历史壮阔及中午图书馆的现代感形成完整的三段式对比，赋予全日行程清晰的节奏起伏。",
+      "visitBasics": {
+        "hours": "Daily 06:00-19:00 (visitor halls typically 09:00-18:00)",
+        "closed": "Open year-round",
+        "admission": "**FREE** (donations welcomed); Templestay overnight ~70,000-90,000 KRW",
+        "walking": "Moderate — temple grounds on a hillside with stairs between halls; ~500 m of walking with elevation gain"
+      },
+      "convenience": {
+        "restroom": "Near main hall and visitor information area",
+        "parking": "Free parking at temple entrance lot; tour coaches accommodated"
+      },
+      "smartNotes": {
+        "photo": "**8-meter Buddha head (Buldu)** at the entrance — the iconic Waujeongsa shot, especially with autumn foliage backdrop. **3-meter wooden reclining Buddha** inside the main hall (the world's largest wooden reclining Buddha). **Indravarna Pagoda** in Sri Lankan style. Buddha statues from across Asia in the courtyards. **Cherry blossoms (April) or autumn foliage (October-November)** make the temple a photographer's destination.",
+        "facilities": "Visitor information center, Templestay registration office, monks' robes for purchase, prayer beads and Buddhist items shop, vegetarian temple-cuisine canteen (lunch ~10,000 KRW). Yeonhwasan Mountain hiking trails behind the temple (4 km loop, ~1.5 hr).",
+        "tip": "**FREE admission** — exceptional value vs. other major Korean temples. **Distinct from traditional temples** — explain to guests this is NOT a Joseon-era temple but a **1970-built eclectic pan-Asian reunification prayer temple**. **Best photographic seasons**: spring cherry blossoms (April) or autumn foliage (late October-early November). Wear modest clothing (covered shoulders + knees). The 8-meter Buddha head at the entrance is the universally agreed iconic photo. **Templestay program** is a unique experience for guests with extra time — pre-booking via templestay.com required."
+      },
+      "_poi_meta": {
+        "poi_key": "waujeongsa_temple",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea",
+          "Wikipedia",
+          "Visit Yongin",
+          "Templestay Korea",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Waujeongsa Temple official listing)",
+          "Visit Yongin Tourism (yongin.go.kr/tour — Master Haedeung 1970 founding + reunification prayer temple)",
+          "Templestay Korea (templestay.com — Waujeongsa overnight program + 108-bow practice + sachal eumsik cuisine)",
+          "Wikipedia (Waujeongsa — pan-Asian Buddhist syncretism + Indravarna pagoda + Taepyeongjong 8-ton bell)",
+          "Korea Buddhism Yeonhwasan/Lotus-Mountain regional guide (Waujeongsa 와우 = 'reclining cow' + sandalwood reclining Buddha origin)"
+        ]
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Hwaseong",
+      "type": "origin",
+      "theme": "UNESCO Past"
+    },
+    {
+      "name": "Starfield Library",
+      "type": "primary",
+      "theme": "Modern Korea"
+    },
+    {
+      "name": "Lunch",
+      "type": "meal",
+      "theme": "Reset"
+    },
+    {
+      "name": "Waujeongsa",
+      "type": "return",
+      "theme": "Spiritual Close"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "UNESCO遗产（第1站）",
+      "duration": "Stops 1",
+      "description": "Morning: UNESCO Heritage"
+    },
+    {
+      "phase": "图书馆＆午餐（第2至3站）",
+      "duration": "Stops 2–3",
+      "description": "Midday: Library & Lunch"
+    },
+    {
+      "phase": "山间佛寺收尾（第4站）",
+      "duration": "Stops 4",
+      "description": "Afternoon: Mountain Temple Finish"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "行程动线总览",
+    "subtitle": "Pickup at one of two Seoul meeting points (typically Hongik University Station or Myeongdong) around 09:00, then UNESCO heritage in the morning, contemporary library and lunch midday, and a peaceful temple close in Yongin. Return to Seoul around 18:00 to 19:00."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "对朝鲜历史遗产及佛教文化感兴趣的旅客",
+      "希望一日体验UNESCO遗址＋现代设计＋精神圣地三重景观的旅客",
+      "情侣（와우정사的静谧山间氛围是浪漫收尾选项）",
+      "摄影爱好者（三个截然不同的视觉场景）",
+      "初次造访水原和龙仁的旅客"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "路线设计逻辑",
+        "icon": "landmark",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "三段历史时间轴——韩国千年文化弧线",
+            "detail": "水原华城（18世纪朝鲜王朝）→星空图书馆（2024年现代韩国）→와우정사（1970年融合佛教，以2,000年亚洲佛教传统为底蕴）——三个景点构成一条跨越时代的韩国文化纵览。"
+          },
+          {
+            "label": "와우정사是近首尔唯一的泛亚洲融合佛寺体验",
+            "detail": "首尔近郊找不到第二个类似와우정사的场所——3,000尊来自印度、泰国、缅甸、西藏、中国的佛像在山间步道上并列共存，加上全球最大木雕卧佛，是完全不同于传统韩国佛寺的独特体验。"
+          },
+          {
+            "label": "星空图书馆作为全天节奏调节器",
+            "detail": "继上午城墙的户外历史步道后，星空图书馆提供舒适的室内午餐缓冲，让旅客在不减损行程深度的情况下，以饱足的精力迎接下午와우정사的山间步道。"
+          }
+        ]
+      },
+      {
+        "title": "How the walking load actually feels",
+        "icon": "footprints",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "Hwaseong is the most active section",
+            "detail": "The wall walk is the route's main physical demand, with stone steps and uneven surfaces. Most travelers handle it fine in good shoes."
+          },
+          {
+            "label": "Starfield is rest time",
+            "detail": "The library and lunch break is essentially indoor walking and seated time, which gives the route a useful midday recovery."
+          },
+          {
+            "label": "Waujeongsa is moderate",
+            "detail": "The temple grounds involve some uphill walking and stairs, but each section is short and the main Buddha statue is reachable from the entrance."
+          }
+        ]
+      },
+      {
+        "title": "Weather notes",
+        "icon": "cloud-rain",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-600",
+        "items": [
+          {
+            "label": "Hwaseong is the most weather-sensitive stop",
+            "detail": "Heavy rain or snow makes the wall walk less comfortable; the Haenggung indoor palace is a good alternative on bad-weather days."
+          },
+          {
+            "label": "Starfield is full weather buffer",
+            "detail": "The library and mall are fully indoor, so this stop is a useful rainy-day anchor."
+          },
+          {
+            "label": "Summer humidity affects the day",
+            "detail": "The fortress wall and temple grounds are exposed; bring water and sun protection between June and August."
+          }
+        ]
+      }
+    ],
+    "lessIdealFor": [
+      "期望观赏大型民俗表演的旅客（建议选民俗村版本）",
+      "行动不便或无法应对城墙石阶的旅客",
+      "10岁以下年幼儿童（全日步行量较大）",
+      "偏好完全现代购物行程的旅客"
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "接送与下车地点",
+      "preview": "两个首尔集合点；约09:00出发",
+      "content": [
+        "通常从弘益大学站（4号出口）及明洞站接送",
+        "通常从第一集合点约08:30至09:00出发",
+        "请提前至少10分钟在您选定的集合点等候"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "步行强度与地形",
+      "preview": "中等；华城城墙是全日最具体力需求的路段",
+      "content": [
+        "华城要塞：城墙步道含石阶及城门石梯，历史地面不平整",
+        "星空图书馆及购物中心：平坦室内步行，设有手扶梯",
+        "와우정사：中等，含部分上坡路段和楼梯"
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "天候政策",
+      "preview": "小雨可进行；大雨缩短城墙段",
+      "content": [
+        "小雨：行程照常进行，适当调整",
+        "大雨或下雪：华城城墙段可能缩短，改以华城行宫主殿取代",
+        "星空图书馆为全程室内景点，可作为恶劣天气的缓冲锚点"
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "穿著与携带物品",
+      "preview": "步行鞋、佛寺著装、分层衣物",
+      "content": [
+        "有抓地力的舒适步行鞋（华城城墙和와우정사均需要）",
+        "佛寺参观建议覆肩著装（夏季无袖者携带薄外套）",
+        "气温在城墙暴露段与室内空间之间落差较大，建议分层穿著"
+      ]
+    },
+    {
+      "id": "included",
+      "title": "费用包含项目",
+      "preview": "导游、交通及门票含括；午餐自费",
+      "variant": "included",
+      "content": [
+        "专业英语导游",
+        "首尔往返小型巴士交通",
+        "所有景点门票（华城、华城行宫含括；星空图书馆免费；와우정사免费）",
+        "午餐自费（建议在星空美食广场用餐，每人约₩10,000至₩20,000）"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "即时天气连动"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "每日更新"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "season": "春季",
+      "title": "Cherry blossom season",
+      "description": "华城水门附近野樱盛开，是全年最受欢迎的城墙摄影时段。와우정사山林间同时呈现春季嫩绿，佛寺氛围格外清幽。",
+      "icon": "flower"
+    },
+    {
+      "season": "夏季",
+      "title": "Lush but humid",
+      "description": "城墙段日照强烈，建议戴帽＋防晒。星空图书馆全程室内，是午后避暑的完美选项。와우정사在郁郁葱葱的夏日山林中格外静谧。",
+      "icon": "sun"
+    },
+    {
+      "season": "秋季",
+      "title": "Best all-round season",
+      "description": "秋叶映衬华城城墙，와우정사的山间步道火红金黄，是全年摄影品质最高的季节。",
+      "icon": "leaf"
+    },
+    {
+      "season": "冬季",
+      "title": "Quiet and dramatic",
+      "description": "城墙段风大寒冷，建议穿著防风外套。星空图书馆提供温暖的室内缓冲。와우정사在白雪或冬日枯枝间呈现独特禅意。",
+      "icon": "snowflake"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "当地持照合法业者",
+      "description": "Authorized Korean tour operator with full insurance",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "持照英语导游全程陪同，熟悉华城历史典故及와우정사的多元宗教背景，提供有深度的景点解说。"
+    },
+    {
+      "icon": "route",
+      "title": "路线专家",
+      "description": "Hand-tuned itinerary, not a generic loop",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "华城→星空图书馆→와우정사的路线顺序是按地理效率＋历史到现代→精神体验的叙事弧线精心规划，三个景点各自代表韩国的不同面向。"
+    },
+    {
+      "icon": "users",
+      "title": "精心控制团体人数",
+      "description": "Right-sized for the route",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "小型团体确保在城墙段及와우정사的山间步道保持机动性，同时让导游为每位旅客提供个人化关注。"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "即时通知",
+      "title": "即时确认",
+      "detail": "Booking confirmation with itinerary summary",
+      "description": "预订即时收到确认信，含集合点资讯及确切集合时间。"
+    },
+    {
+      "timing": "出发前12小时",
+      "title": "出发前12小时提醒",
+      "detail": "Weather update and any route adjustments",
+      "description": "确认天气及城墙段开放状况，如有路线调整提前通知。"
+    },
+    {
+      "timing": "前一晚",
+      "title": "最终接送资讯",
+      "detail": "Exact pickup time and driver contact",
+      "description": "发送确切集合时间、导游联络方式及当日行程说明。"
+    },
+    {
+      "timing": "行程当天早晨",
+      "title": "当日路线说明",
+      "detail": "Morning briefing based on live conditions",
+      "description": "导游于集合前以讯息确认当日安排及集合标识说明。"
+    },
+    {
+      "timing": "行程途中",
+      "title": "景点逐一说明",
+      "detail": "Real-time guidance at each location",
+      "description": "导游于华城、星空图书馆及와우정사提供深度解说，现场确认换岗仪式时间及佛寺特色景观。"
+    },
+    {
+      "timing": "行程结束后",
+      "title": "行程后支援",
+      "detail": "Follow-up and recommendations",
+      "description": "行程结束后发送问卷，欢迎提供意见回馈。"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q1",
+      "question": "这条路线和水原＋民俗村或水原＋光明洞窟行程有何不同？",
+      "answer": "三条路线共同包含水原华城＋华城行宫＋星空图书馆。本版本移除民俗村，以龙仁的와우정사佛寺取代——融合佛教寺庙，设有全球最大木雕卧佛及3,000座亚洲各地佛像，偏重精神文化体验而非民俗表演。光明洞窟版本则以光明矿山改建的洞窟主题公园作为现代景点替换。"
+    },
+    {
+      "id": "q2",
+      "question": "门票含括在行程费用内吗？",
+      "answer": "含括——三个付费景点门票全部含括：水原华城（成人₩1,000）、华城行宫（成人₩1,500）及와우정사（免费入场）。星空图书馆对外免费开放。"
+    },
+    {
+      "id": "q3",
+      "question": "午餐含括吗？",
+      "answer": "不含。午餐在星空水原美食广场自由用餐的自费时间——品项丰富，通常每人₩10,000至₩20,000。图书馆和购物中心是全行程第2站（约13:30），刚好对应最佳午餐时段。"
+    },
+    {
+      "id": "q4",
+      "question": "와우정사有什么特别之处？",
+      "answer": "这是一座非传统佛寺：1970年由北韩难民僧侣金海根（海灯大师）创立，围绕3,000余尊来自亚洲各地的佛像建造——印度卧佛、缅甸佛塔、泰式寺庙建筑等并列共存。全球最大木雕卧佛（3公尺高印度白檀木）是最具代表性的景观。整体氛围更像一座「活的佛教地图」，而非单一宗派传统寺庙。"
+    },
+    {
+      "id": "q5",
+      "question": "去寺庙需要著装端庄吗？",
+      "answer": "建议覆肩——夏季穿著无袖者建议携带薄外套。进入主殿通常需摘帽。와우정사没有严格著装要求，但表示尊重的谨慎穿著是礼貌之举。"
+    },
+    {
+      "id": "q6",
+      "question": "全日步行量如何分布？",
+      "answer": "三段各异的步行模式：华城城墙段难度最高（坡度石阶及不平整地面，约1公里）；星空图书馆全程室内平坦，含电梯；와우정사有部分上坡和楼梯的山间步道（中等）。"
+    },
+    {
+      "id": "first-time",
+      "question": "这是初次造访水原和龙仁的好选择吗？",
+      "answer": "是的——对想在一日内体验一个UNESCO遗址、一个现代打卡空间和一个独特佛教圣地的旅客，是最强力的首选组合之一，三个景点的风格截然不同却相互补充。"
+    },
+    {
+      "id": "walking",
+      "question": "步行难度如何？",
+      "answer": "中等。最难的是华城城墙：约1公里的石砌城墙，含坡度起伏、城门楼梯及不平整历史地面——建议穿著有抓地力的舒适步行鞋。星空图书馆全程平坦室内。와우정사有部分上坡路段和楼梯，中等强度。"
+    },
+    {
+      "id": "family",
+      "question": "亲子家庭适合吗？",
+      "answer": "适合——大多数家庭带6岁以上儿童均可舒适完成。城墙段的石阶和와우정사的部分坡道对婴儿车较不友善，但星空图书馆全程可推婴儿车，设有手扶梯。孩子通常对と와우정사的3,000尊佛像和大卧佛印象深刻。"
+    },
+    {
+      "id": "seniors",
+      "question": "年长旅客能否舒适地参加？",
+      "answer": "能应对楼梯和不平整地面的活跃银发族完全适合，行动受限的旅客建议更多考虑。华城城墙是最具挑战性的路段（坡度石阶）；星空图书馆全程平坦；와우정사有部分上坡可选择缩短。如需特殊协助请提前告知。"
+    },
+    {
+      "id": "children",
+      "question": "建议最低年龄是多少？",
+      "answer": "建议6岁以上。城墙有楼梯和不平整历史地面，와우정사寺庙地面有坡道，较小幼儿容易疲劳。大一些的孩子（10岁以上）通常对三个景点都有主动探索的兴趣。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 4.9,
+    "totalReviews": 57,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 53,
+        "percentage": 93
+      },
+      {
+        "stars": 4,
+        "count": 3,
+        "percentage": 5.3
+      },
+      {
+        "stars": 3,
+        "count": 1,
+        "percentage": 1.8
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "price": {
+      "amountLabel": "48.60",
+      "originalPriceUsd": 54,
+      "salePriceUsd": 48.6,
+      "discountPercent": 10,
+      "currency": "USD",
+      "per": "人",
+      "priceSource": "getyourguide_t1051988",
+      "priceNote": "Original price 54 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+    }
+  },
+  "pickup_dropoff": {
+    "type": "meeting_point",
+    "meeting_points": [
+      {
+        "name": "Hongik University Station Exit 4",
+        "time": "08:30",
+        "note": "First Seoul meeting point; please arrive 10 minutes early."
+      },
+      {
+        "name": "Myeongdong Station",
+        "time": "09:00",
+        "note": "Second Seoul meeting point."
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Myeongdong Station",
+        "note": "Standard Seoul drop-off point."
+      },
+      {
+        "name": "Hongik University Station",
+        "note": "Standard Seoul drop-off point."
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "Return time depends on traffic and is typically between 18:00 and 19:00. Drop-off order may be adjusted slightly for operational efficiency. Please arrive at least 10 minutes early at your selected meeting point. This is a fixed-meeting-point format, not hotel pickup."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "seoul-suwon-hwaseong-waujeongsa-starfield",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "gyeonggi_south",
+    "vehicle_type": "minicoach",
+    "duration_hours": 9,
+    "region_tags": [
+      "seoul_capital",
+      "gyeonggi_suwon",
+      "gyeonggi_yongin",
+      "gyeonggi_south",
+      "seoul_day_trip"
+    ],
+    "theme_tags": [
+      "unesco",
+      "fortress",
+      "buddhist_temple",
+      "contemporary_architecture",
+      "k_drama_filming_location",
+      "first_time_friendly",
+      "iconic_landmarks",
+      "heritage_plus_modern"
+    ],
+    "poi_tags": [
+      "hwaseong_fortress",
+      "hwaseong_haenggung",
+      "starfield_library_suwon",
+      "waujeongsa_temple",
+      "yeonhwasan"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.6,
+    "scenic_level": 0.85,
+    "photo_level": 1,
+    "culture_level": 1,
+    "relax_level": 0.8,
+    "first_time_fit": 0.7,
+    "family_fit": 0.85,
+    "senior_fit": 0.75,
+    "couple_fit": 0.85,
+    "solo_traveler_fit": 0.95,
+    "active_traveler_fit": 0.5,
+    "adult_family_fit": 0.95,
+    "family_with_teens_fit": 0.85,
+    "young_kids_fit": 0.55,
+    "senior_active_fit": 0.6,
+    "senior_general_fit": 0.7,
+    "mobility_friendly_fit": 0.5,
+    "stroller_fit": 0.5,
+    "one_day_fit": 1,
+    "same_day_flight_fit": 0.3,
+    "rain_fit": 0.65,
+    "value_for_money_fit": 0.95,
+    "iconic_landmark_fit": 0.85,
+    "cafe_fit": 0.7,
+    "food_fit": 0.5,
+    "nature_fit": 0.7,
+    "beach_fit": 0,
+    "nightlife_fit": 0.05,
+    "shopping_fit": 0.55,
+    "no_shopping_fit": 0.7,
+    "local_culture_fit": 1,
+    "storytelling_fit": 1,
+    "unesco_fit": 1,
+    "intangible_heritage_fit": 0.4,
+    "indoor_ratio": 0.45,
+    "weather_sensitivity": 0.6,
+    "comfort_level": 0.8,
+    "budget_fit": 0.85,
+    "premium_fit": 0.4,
+    "small_group_fit": 1,
+    "private_fit": 0.05,
+    "bus_fit": 0.7,
+    "price_band": "budget",
+    "pickup_base": "seoul_meeting_point",
+    "return_time_band": "18:00-19:00",
+    "duration_band": "9-10h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "very_low_mobility_full_route",
+        "wants_a_seoul_city_palace_focused_day"
+      ],
+      "notIdealFor": [
+        "stroller_heavy_groups",
+        "guests_avoiding_stairs_entirely"
+      ]
+    },
+    "walking_notes": [
+      "Hwaseong Fortress wall walk is the main physical section: stone steps and uneven historic surfaces.",
+      "Starfield Suwon is a flat-floor indoor stop and gives the route a useful midday recovery.",
+      "Waujeongsa Temple grounds involve some uphill walking and stairs.",
+      "Comfortable walking shoes with grip are strongly recommended.",
+      "The route is not stroller-friendly except at Starfield Suwon."
+    ],
+    "keywords": [
+      "suwon hwaseong day tour from seoul",
+      "starfield suwon library tour",
+      "waujeongsa temple tour",
+      "suwon unesco fortress small group",
+      "seoul to suwon heritage tour",
+      "hwaseong starfield waujeongsa tour",
+      "suwon library day trip",
+      "yongin temple tour",
+      "korea heritage and modern day tour",
+      "suwon hwaseong palace day tour"
+    ],
+    "synonym_hints": [
+      "suwon fortress library temple tour",
+      "korea past and present day trip",
+      "seoul day trip suwon yongin",
+      "unesco heritage seoul day tour",
+      "hwaseong wall walk small group",
+      "buddhist temple seoul day trip"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "mini_coach",
+    "anchor_poi_keys": [
+      "hwaseong_fortress",
+      "waujeongsa_temple",
+      "starfield_library_suwon",
+      "hwaseong_haenggung"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.1,
+    "flexibility_fit": 0.3,
+    "minicoach_fit": 1,
+    "fortress_fit": 1,
+    "buddhist_temple_fit": 1,
+    "scenic_temple_fit": 1,
+    "modern_eclectic_temple_fit": 1,
+    "pan_asian_buddhism_fit": 1,
+    "library_fit": 1,
+    "modern_architecture_fit": 0.85,
+    "history_culture_fit": 0.95,
+    "spiritual_fit": 0.95,
+    "meditation_fit": 0.85,
+    "k_drama_filming_fit": 0.5,
+    "seasonal_fit": 0.85,
+    "romantic_fit": 0.65,
+    "premium_dining_fit": 0.4,
+    "compact_route_fit": 1,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "suwon_hwaseong_route_fit": 1,
+    "suwon_central_anchor_fit": 1,
+    "seoul_to_suwon_30min_drive_fit": 1,
+    "seoul_central_hotel_pickup_fit": 1,
+    "return_to_seoul_central_fit": 1,
+    "small_group_format_fit": 1,
+    "fixed_schedule_format_fit": 1,
+    "unesco_world_heritage_anchor_fit": 1,
+    "unesco_world_heritage_1997_inscription_fit": 1,
+    "joseon_dynasty_late_18c_anchor_fit": 1,
+    "jeong_yak_yong_silhak_anchor_fit": 1,
+    "geojunggi_crane_engineering_anchor_fit": 1,
+    "uigwe_memory_of_world_2007_anchor_fit": 1,
+    "hwaseong_5_74km_perimeter_anchor_fit": 1,
+    "hwaseong_41_structures_anchor_fit": 1,
+    "starfield_library_photo_stop_fit": 1,
+    "starfield_22m_bookshelves_anchor_fit": 1,
+    "starfield_4f_to_7f_atrium_void_fit": 1,
+    "douglas_coupland_the_planets_rooftop_anchor_fit": 1,
+    "starfield_free_admission_photo_permitted_fit": 1,
+    "instagram_photo_density_high_fit": 1,
+    "waujeongsa_syncretic_buddhism_fit": 1,
+    "korean_war_reunification_prayer_temple_fit": 1,
+    "north_korean_monks_refugee_temple_origin_fit": 1,
+    "master_haedeung_1970_founding_anchor_fit": 1,
+    "world_largest_wooden_reclining_buddha_fit": 1,
+    "indian_sandalwood_buddha_anchor_fit": 1,
+    "indravarna_sri_lankan_pagoda_anchor_fit": 1,
+    "myanmar_brass_jade_buddha_anchor_fit": 1,
+    "taepyeongjong_8_ton_bell_anchor_fit": 1,
+    "pan_asian_buddhist_syncretism_fit": 1,
+    "free_admission_buddhist_temple_fit": 1,
+    "templestay_program_available_fit": 1,
+    "three_stop_pivot_day_trip_fit": 1,
+    "secular_to_commercial_to_religious_pivot_fit": 1,
+    "evening_contemplative_anchor_fit": 1,
+    "hwaseong_yeolcha_optional_advisory": true,
+    "waujeongsa_free_admission_advisory": true,
+    "differentiates_from_suwon_folk_village_route": true,
+    "differentiates_from_suwon_gwangmyeong_cave_route": true,
+    "available_months_signature": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "signature_window_label": "Year-round (Waujeongsa peak: April-May cherry blossoms / October-November ginkgo+maple foliage)",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "embedded_for": [
+      "authoring",
+      "review",
+      "sql_backfill_reference"
+    ],
+    "note": "Scores were tuned for a small-group heritage-plus-modern day-trip from Seoul. Culture, photo, and storytelling fit are maxed because the route delivers a true Joseon-to-contemporary narrative arc. Iconic landmark fit is maxed because Hwaseong (UNESCO) and Starfield Library are both top-tier Korean tourism brand names. Mobility-friendly fit is conservative because the fortress walls have stone steps. Same-day-flight fit is low because the route runs 9-10 hours and ends in Seoul evening.",
+    "duration_hours": 10,
+    "stop_count": 3,
+    "score_rationale": {
+      "culture_level": "Maxed because the route covers UNESCO architecture, contemporary lifestyle, and Buddhist tradition in one day.",
+      "storytelling_fit": "Maxed because the route gives a guide three distinct narrative chapters (Joseon defense, modern Korea, Buddhist tradition).",
+      "iconic_landmark_fit": "Maxed because Hwaseong is UNESCO and Starfield Library is one of the most-photographed contemporary Korean spaces.",
+      "value_for_money_fit": "5 because the small-group format includes round-trip transport, admission, and a guide for one of the lower price points among Seoul day trips.",
+      "mobility_friendly_fit": "2 because the Hwaseong wall walk is unavoidable for the route's main attraction and is not wheelchair-accessible.",
+      "rain_fit": "4 because Starfield Suwon is fully indoor and the Hwaseong Haenggung palace is a good wet-weather alternative to the wall walk.",
+      "small_group_fit": "Direct match: this is the route's intended format."
+    },
+    "anchor_pois": [
+      "Suwon Hwaseong Fortress",
+      "Starfield Library Suwon",
+      "Waujeongsa Temple"
+    ],
+    "anchor_poi_keys": [
+      "hwaseong_fortress",
+      "starfield_library_suwon",
+      "waujeongsa_temple"
+    ],
+    "competing_products": [
+      "seoul-suwon-hwaseong-folk-village-starfield-library",
+      "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library"
+    ],
+    "primary_themes": [
+      "culture",
+      "unesco",
+      "temple",
+      "library"
+    ],
+    "secondary_themes": [
+      "modern_architecture",
+      "joseon_era",
+      "buddhism",
+      "yongin"
+    ],
+    "best_for": [
+      "culture_lovers",
+      "couples",
+      "solo_travelers",
+      "compact_route_seekers",
+      "first_time_visitors"
+    ],
+    "not_recommended_for": [
+      "mobility_limited",
+      "shoppers_only",
+      "nightlife_seekers",
+      "young_kids_pure"
+    ],
+    "enrichment_batch": "17e",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.27",
+    "enrichment_target_kb_version": "1.28",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "12 substantive stop instances across 3 tours; Batch 11 era authoring → A-grade pv=6 PASS (universal source-attribution gap closed; Suwon-Hwaseong-route + Starfield-library-photo-stop + Korean-Folk-Village-K-drama-set + Gwangmyeong-cave-mining-heritage + Waujeongsa-syncretic-buddhism + Suwon-galbi-tongdak-street patterns introduced)"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "Suwon Hwaseong, Waujeongsa Temple",
+        "headlineLine2": "& Starfield Library Heritage Tour",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
+          "imagePosition": "center 50%",
+          "tagline": "From an 18th-century UNESCO fortress to one of Korea's most photographed contemporary libraries to a peaceful mountain Buddhist temple—three sides of Korea in one balanced day.",
+          "pills": [
+            "世界遗产",
+            "门票已包含",
+            "首尔来回接送"
+          ],
+          "meta": {
+            "duration": "9–10 hours",
+            "region": "水原＆龙仁",
+            "stops": "3 个景点",
+            "rating": 4.9,
+            "ratingStars": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "行程总览"
+          },
+          {
+            "id": "itinerary",
+            "label": "详细行程"
+          },
+          {
+            "id": "details",
+            "label": "注意事项"
+          },
+          {
+            "id": "faq",
+            "label": "常见问题"
+          },
+          {
+            "id": "reviews",
+            "label": "旅客评价"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "行程时间",
+            "value": "9至10小时"
+          },
+          {
+            "icon": "landmark",
+            "label": "文化遗产",
+            "value": "世界遗产＋古寺"
+          },
+          {
+            "icon": "camera",
+            "label": "拍照潜力",
+            "value": "极高"
+          },
+          {
+            "icon": "footprints",
+            "label": "步行强度",
+            "value": "中等"
+          },
+          {
+            "icon": "users",
+            "label": "参团形式",
+            "value": "小团体"
+          },
+          {
+            "icon": "ticket",
+            "label": "门票费用",
+            "value": "已包含"
+          },
+          {
+            "icon": "gauge",
+            "label": "行程节奏",
+            "value": "均衡"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200&q=80",
+            "alt": "Suwon Hwaseong Fortress wall and gate built of stone blocks with characteristic upturned eaves visible above the gateway",
+            "caption": "Hwaseong Fortress wall and gate",
+            "location": "Suwon Hwaseong Fortress, Suwon, Gyeonggi-do",
+            "atmosphere": "Stone walls built 1794-1796 under King Jeongjo; UNESCO World Heritage Site since 1997"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=1200&q=80",
+            "alt": "Starfield Suwon Library's tall floor-to-ceiling bookshelves rising 22 meters in a four-story atrium with seated readers below",
+            "caption": "Starfield Library — 22 m bookshelves",
+            "location": "Starfield Suwon Library, Yeongtong-gu, Suwon",
+            "atmosphere": "Shinsegae's flagship 2nd-generation Starfield, opened January 2024; free entry; vinyl-record listening seats"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1200&q=80",
+            "alt": "Waujeongsa Temple's giant outdoor 8m wooden Buddha head sculpture (the Buldu) set into a forested hillside in Yongin",
+            "caption": "Waujeongsa giant Buddha head",
+            "location": "Waujeongsa Temple, Mount Yeonhwasan foothills, Yongin",
+            "atmosphere": "Founded 1970 by displaced North Korean monk; 8m wooden Buldu (Guinness Book); 3m×12m Wabul reclining Buddha; 12-ton Unification Bell (1988 Olympics)"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+            "alt": "Section of the Hwaseong fortress wall walk with stone parapets, beacon mound visible ahead, and Suwon city below",
+            "caption": "Hwaseong wall walk — sweeping city views",
+            "location": "Hwaseong Wall, Janganmun section, Suwon",
+            "atmosphere": "1 km wall walk between Janganmun and Hwaseomun; steep gradients; bastions and command posts"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+            "alt": "Hwaseong Haenggung Palace's traditional Korean wooden buildings with painted eaves arranged around a stone-flagged courtyard",
+            "caption": "Hwaseong Haenggung Palace courtyards",
+            "location": "Hwaseong Haenggung Palace, inside the fortress, Suwon",
+            "atmosphere": "Korea's largest haenggung (detached palace); King Jeongjo's temporary residence; restored from 19th-century fire"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "10:00",
+            "duration": "120 min",
+            "name": "Suwon Hwaseong Fortress",
+            "category": "UNESCO World Heritage Site (1796)",
+            "description": "Built between 1794 and 1796 under King Jeongjo of the Joseon Dynasty, Suwon Hwaseong is one of Korea's strongest pieces of military architecture and a UNESCO World Heritage Site since 1997. The 5.7-kilometer wall integrates Korean, Chinese, and Western fortification techniques and was designed by Jeong Yak-yong, one of the Joseon era's most influential scholars. Walk a section of the wall, visit Hwaseong Haenggung Palace nearby, and learn how the fortress reshaped late-Joseon city planning.",
+            "image": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=800&q=80",
+            "highlights": [
+              "UNESCO World Heritage Site since 1997",
+              "5.7 km of well-preserved 18th-century walls and gates",
+              "Hwaseong Haenggung royal palace near the main gate",
+              "Strong photo points along the wall walk and at the main gates"
+            ],
+            "timeUsed": [
+              "Arrival and orientation at the main gate",
+              "Wall section walk (typically the Janganmun to Hwaseomun section)",
+              "Hwaseong Haenggung palace visit (when included)",
+              "Photo time and regroup"
+            ],
+            "whyOnRoute": "It is the route's strongest historical anchor and one of the most-recognized UNESCO sites within day-trip distance of Seoul.",
+            "visitBasics": {
+              "hours": "Wall accessible 24h; recommended 09:00–18:00 (summer) / 09:00–17:00 (winter); evening hours 18:00–21:30 (May–Oct, Wed–Sun)",
+              "closed": "Open year-round",
+              "admission": "Fortress wall: 1,000 KRW adult / 700 KRW youth / 500 KRW child (free for children ≤6, seniors 65+, hanbok wearers, last Wed of month)",
+              "walking": "Moderate to challenging — wall has steep sections, stairs at gates and command posts; some sections wheelchair-difficult"
+            },
+            "convenience": {
+              "restroom": "Available at major gates and visitor centers",
+              "parking": "Available near Janganmun and Hwaseong Haenggung"
+            },
+            "smartNotes": {
+              "photo": "Janganmun (north gate) and Seojangdae command post offer the best wall-and-city panoramas",
+              "facilities": "Information centers at main gates; English maps available",
+              "tip": "Trolley (1,500 KRW adult) is good for elderly or limited-mobility visitors; runs Yeonmudae→Hwahongmun→Janganmun→Hwaseomun→Haenggung loop"
+            },
+            "_poi_meta": {
+              "poi_key": "hwaseong_fortress",
+              "verified": true,
+              "sources": [
+                "UNESCO WHC",
+                "VisitKorea",
+                "KoreaToDo"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          },
+          {
+            "number": 2,
+            "time": "13:30",
+            "duration": "90 min",
+            "name": "Starfield Suwon Library & Mall",
+            "category": "Contemporary Cultural Icon + Lunch Stop",
+            "description": "Opened in early 2024 inside the Starfield Suwon shopping complex, this public library has become one of Korea's most photographed contemporary spaces. Towering 22-meter-tall bookshelves anchor a four-story atrium designed for casual reading, photography, and coffee breaks. The mall around it offers a wide range of restaurants, making this the natural lunch stop on the route.",
+            "image": "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=800&q=80",
+            "highlights": [
+              "22-meter floor-to-ceiling bookshelves in a four-story atrium",
+              "One of Korea's most photographed modern public libraries",
+              "Free entry; surrounded by mall restaurants for lunch",
+              "Strong contrast to the morning's UNESCO heritage stop"
+            ],
+            "timeUsed": [
+              "Arrival and library photo time",
+              "Free lunch in the mall food court or restaurants",
+              "Optional shopping or coffee before regroup"
+            ],
+            "whyOnRoute": "It anchors the day's contemporary chapter and doubles as a practical lunch stop with strong indoor weather protection.",
+            "visitBasics": {
+              "hours": "Mall 10:00–22:00; library accessible during mall hours",
+              "closed": "Open year-round (check for occasional Starfield monthly closures)",
+              "admission": "Free",
+              "walking": "Easy — escalators and elevators between floors"
+            },
+            "convenience": {
+              "restroom": "Multiple restrooms on every floor",
+              "parking": "Mall parking available (free for first 20 min, paid thereafter)"
+            },
+            "smartNotes": {
+              "photo": "View from 7F looking down at the library is the iconic shot; lower floors give the dramatic 22m bookshelf perspective",
+              "facilities": "B2 Traders Wholesale Club, multiple cafés/restaurants, Olive Young, Innisfree, dog-friendly stores",
+              "tip": "Located near Hwaseo Station (Line 1, exit 1); pet-friendly mall with dog-stroller rentals"
+            },
+            "_poi_meta": {
+              "poi_key": "starfield_library_suwon",
+              "verified": true,
+              "sources": [
+                "VisitSeoul",
+                "KoreaToDo",
+                "SeoulSearching"
+              ],
+              "verified_date": "2026-04-27"
+            }
+          },
+          {
+            "number": 3,
+            "time": "15:30",
+            "duration": "75 min",
+            "name": "Waujeongsa Temple",
+            "category": "Buddhist Temple in Yongin",
+            "description": "Founded in 1970 by Monk Kim Hae-Geun (a North Korean refugee displaced during the Korean War) in the Mount Eunesan foothills of Yongin, Waujeongsa is one of the most distinctive Buddhist temples near Seoul. It hosts more than 3,000 Buddha statues collected from across Asia, including the 8-meter-tall wooden Buddha head (the Buldu) — registered in the Guinness Book of Records as the world's largest of its kind — and the 3m × 12m wooden reclining Buddha (the Wabul), made from an Indonesian juniper tree. The temple's 12-ton Bell of Unification was rung at the start of the 1988 Seoul Olympics. The temple is the headquarters of the Korean Buddhist Nirvana Order.",
+            "image": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80",
+            "highlights": [
+              "Over 3,000 Buddha statues from across Asia",
+              "Buldu — 8m wooden Buddha head (Guinness Book of Records)",
+              "Wabul — 3m × 12m wooden reclining Buddha (Indonesian juniper)",
+              "12-ton Bell of Unification (rung at 1988 Seoul Olympics)",
+              "Headquarters of Korean Buddhist Nirvana Order"
+            ],
+            "timeUsed": [
+              "Drive from Suwon to Yongin (about 30 minutes)",
+              "Temple grounds walk and Buddha photo points",
+              "Optional quiet reflection in the main hall",
+              "Return to Seoul (typically 1 to 1.5 hours)"
+            ],
+            "whyOnRoute": "It gives the day a calm spiritual close after the heritage and contemporary chapters, turning the route into Korea's-past-spirit-and-present in one trip.",
+            "visitBasics": {
+              "hours": "Open daily ≈05:00–19:00 (varies by season)",
+              "closed": "Open year-round",
+              "admission": "Free",
+              "walking": "Moderate — temple grounds have some stairs and inclines"
+            },
+            "convenience": {
+              "restroom": "Available at temple entrance",
+              "parking": "Free parking available"
+            },
+            "smartNotes": {
+              "photo": "The reclining Buddha head and 8m standing Buddha are the iconic shots",
+              "facilities": "Small temple shop; please dress modestly as this is an active religious site",
+              "tip": "Less crowded than Seoul-area temples; pair with Korean Folk Village (≈30 min away)"
+            },
+            "_poi_meta": {
+              "poi_key": "waujeongsa_temple",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "note": "Operational details based on aggregated visitor info; verify before visit"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "id": "01",
+            "name": "Hwaseong",
+            "theme": "UNESCO Past"
+          },
+          {
+            "id": "02",
+            "name": "Starfield Library",
+            "theme": "Modern Korea"
+          },
+          {
+            "id": "03",
+            "name": "Lunch",
+            "theme": "Reset"
+          },
+          {
+            "id": "04",
+            "name": "Waujeongsa",
+            "theme": "Spiritual Close"
+          }
+        ],
+        "routePhases": [
+          {
+            "label": "Morning",
+            "range": "1",
+            "theme": "UNESCO Heritage",
+            "bgClass": "bg-amber-50/70",
+            "textClass": "text-amber-700",
+            "dotClass": "bg-amber-500"
+          },
+          {
+            "label": "Midday",
+            "range": "2-3",
+            "theme": "Library & Lunch",
+            "bgClass": "bg-sky-50/70",
+            "textClass": "text-sky-700",
+            "dotClass": "bg-sky-500"
+          },
+          {
+            "label": "Afternoon",
+            "range": "4",
+            "theme": "Mountain Temple Finish",
+            "bgClass": "bg-emerald-50/70",
+            "textClass": "text-emerald-700",
+            "dotClass": "bg-emerald-500"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "How this day moves",
+          "subtitle": "Pickup at one of two Seoul meeting points (typically Hongik University Station or Myeongdong) around 09:00, then UNESCO heritage in the morning, contemporary library and lunch midday, and a peaceful temple close in Yongin. Return to Seoul around 18:00 to 19:00."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "First-time visitors to Korea wanting heritage + modern in one day",
+            "History-leaning travelers and UNESCO completists",
+            "Photographers (Hwaseong walls, Starfield atrium, Buddha statues)",
+            "Couples and adult families looking for a balanced rather than active day",
+            "Travelers who want a small-group format with included admission"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Why this Suwon-Yongin route works",
+              "icon": "landmark",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "Three eras in one day",
+                  "detail": "Joseon-era UNESCO architecture, contemporary Korean lifestyle, and a mountain Buddhist temple cover three very different sides of Korean culture without doubling back."
+                },
+                {
+                  "label": "Tight geography",
+                  "detail": "Hwaseong, Starfield Suwon, and Waujeongsa all sit within a 30-minute drive of each other south of Seoul, so transit time stays manageable."
+                },
+                {
+                  "label": "Stronger value than a Hwaseong-only trip",
+                  "detail": "Adding Starfield and the temple turns a single-attraction visit into a fuller day-trip without a major price jump."
+                }
+              ]
+            },
+            {
+              "title": "How the walking load actually feels",
+              "icon": "footprints",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "Hwaseong is the most active section",
+                  "detail": "The wall walk is the route's main physical demand, with stone steps and uneven surfaces. Most travelers handle it fine in good shoes."
+                },
+                {
+                  "label": "Starfield is rest time",
+                  "detail": "The library and lunch break is essentially indoor walking and seated time, which gives the route a useful midday recovery."
+                },
+                {
+                  "label": "Waujeongsa is moderate",
+                  "detail": "The temple grounds involve some uphill walking and stairs, but each section is short and the main Buddha statue is reachable from the entrance."
+                }
+              ]
+            },
+            {
+              "title": "Weather notes",
+              "icon": "cloud-rain",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-600",
+              "items": [
+                {
+                  "label": "Hwaseong is the most weather-sensitive stop",
+                  "detail": "Heavy rain or snow makes the wall walk less comfortable; the Haenggung indoor palace is a good alternative on bad-weather days."
+                },
+                {
+                  "label": "Starfield is full weather buffer",
+                  "detail": "The library and mall are fully indoor, so this stop is a useful rainy-day anchor."
+                },
+                {
+                  "label": "Summer humidity affects the day",
+                  "detail": "The fortress wall and temple grounds are exposed; bring water and sun protection between June and August."
+                }
+              ]
+            }
+          ],
+          "lessIdealFor": [
+            "Travelers wanting a shopping-heavy mall day",
+            "Visitors who dislike walking on stone walls or temple paths",
+            "Anyone needing a fully fixed-pace day with no walking",
+            "Travelers wanting to visit Seoul's central palaces (this trip stays outside Seoul)"
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "Pickup & drop-off",
+            "preview": "Two Seoul meeting points; ≈09:00 departure",
+            "content": [
+              "Pickup typically from Hongik University Station (Exit 4) and Myeongdong Station",
+              "Departure typically around 08:30 to 09:00 from the first meeting point",
+              "Please arrive at least 10 minutes early at your selected meeting point",
+              "Drop-off at the same Seoul meeting points",
+              "Expected return between 18:00 and 19:00 depending on traffic and Sunday delays",
+              "This is a fixed-route group format, not hotel pickup; travelers must reach the meeting point themselves"
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "Walking & terrain",
+            "preview": "Moderate; the Hwaseong wall is the main physical section",
+            "content": [
+              "Hwaseong Fortress: stone steps along the wall walk and at the main gates; uneven historic surfaces",
+              "Starfield Library and Mall: easy indoor walking on flat floors",
+              "Waujeongsa Temple: moderate with some uphill paths and stairs",
+              "Comfortable walking shoes with grip are recommended",
+              "Stroller use is possible at Starfield only; Hwaseong walls and Waujeongsa are not stroller-friendly"
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "Weather policy",
+            "preview": "Light rain workable; heavy rain reduces the fortress walk",
+            "content": [
+              "Light rain: tour usually proceeds with normal adjustments",
+              "Heavy rain or snow: the Hwaseong wall walk may be shortened in favor of Hwaseong Haenggung Palace",
+              "Starfield is a fully indoor stop and works as a wet-weather anchor",
+              "Waujeongsa is partially exposed; temple operations continue in light rain"
+            ]
+          },
+          {
+            "id": "wear",
+            "title": "What to wear & bring",
+            "preview": "Walking shoes, modest temple clothing, layers",
+            "content": [
+              "Comfortable walking shoes with grip (essential for Hwaseong and Waujeongsa)",
+              "Modest clothing for the temple visit (covered shoulders recommended)",
+              "Light layers for changing temperatures between exposed walls and indoor spaces",
+              "Sun protection and water in summer",
+              "Camera or phone with wide-angle for Starfield Library shots"
+            ]
+          },
+          {
+            "id": "included",
+            "title": "What's included",
+            "preview": "Guide, transport, and admission included; lunch pay direct",
+            "variant": "included",
+            "content": [
+              "Professional English-speaking guide",
+              "Round-trip transport from Seoul (small-group vehicle)",
+              "All admission fees (Hwaseong, Hwaseong Haenggung, Starfield is free, Waujeongsa)",
+              "Lunch is not included; pay directly at Starfield mall restaurants",
+              "Personal shopping is not included",
+              "Optional cafe purchases are not included",
+              "Guide gratuities are optional"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "Live weather integration"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "Updated daily"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "name": "Spring",
+            "icon": "flower",
+            "description": "Cherry blossoms line the Hwaseong wall in early April, making this one of the best photo seasons for the route.",
+            "tag": "Cherry blossom season",
+            "bgClass": "bg-spring",
+            "iconColor": "text-pink-500"
+          },
+          {
+            "name": "Summer",
+            "icon": "sun",
+            "description": "Lush green temple grounds and longer daylight, but humidity and exposed-wall heat make the morning section feel more demanding.",
+            "tag": "Lush but humid",
+            "bgClass": "bg-summer",
+            "iconColor": "text-yellow-500"
+          },
+          {
+            "name": "Autumn",
+            "icon": "leaf",
+            "description": "Crisp visibility and foliage along the Hwaseong wall and Yeonhwasan; one of the strongest all-round seasons for the route.",
+            "tag": "Best all-round season",
+            "bgClass": "bg-autumn",
+            "iconColor": "text-orange-500"
+          },
+          {
+            "name": "Winter",
+            "icon": "snowflake",
+            "description": "Quiet temple grounds and dramatic fortress walls; cold but visually rewarding. Bundle up because the wall walk is exposed.",
+            "tag": "Quiet and dramatic",
+            "bgClass": "bg-winter",
+            "iconColor": "text-sky-500"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Licensed local operator",
+            "description": "Authorized Korean tour operator with full insurance",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "route",
+            "title": "Route specialists",
+            "description": "Hand-tuned itinerary, not a generic loop",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          },
+          {
+            "icon": "users",
+            "title": "Curated group size",
+            "description": "Right-sized for the route",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Immediately",
+            "title": "Instant Confirmation",
+            "detail": "Booking confirmation with itinerary summary"
+          },
+          {
+            "timing": "12 hours before",
+            "title": "12-Hour Reminder",
+            "detail": "Weather update and any route adjustments"
+          },
+          {
+            "timing": "Evening before",
+            "title": "Final Pickup Info",
+            "detail": "Exact pickup time and driver contact"
+          },
+          {
+            "timing": "Morning of tour",
+            "title": "Day-of Route Notes",
+            "detail": "Morning briefing based on live conditions"
+          },
+          {
+            "timing": "During tour",
+            "title": "Stop-by-Stop Tips",
+            "detail": "Real-time guidance at each location"
+          },
+          {
+            "timing": "After tour",
+            "title": "Post-tour Support",
+            "detail": "Follow-up and recommendations"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "How is this different from the Suwon + Folk Village or Suwon + Gwangmyeong Cave tours?",
+            "answer": "All three share Suwon Hwaseong Fortress + Hwaseong Haenggung Palace + Starfield Library. This version adds Waujeongsa Temple in Yongin (Buddhist, 3,000+ statues, world's largest wooden reclining Buddha). The Folk Village version adds Korean Folk Village (270+ traditional houses, K-drama filming). The Gwangmyeong version adds the underground LED-lit cave park. Pick this one if Buddhist sculpture interests you most; the Folk Village version for deepest heritage; Gwangmyeong for variety and indoor weather."
+          },
+          {
+            "id": "q2",
+            "question": "Are admissions included?",
+            "answer": "Yes — all three paid stops are included: Suwon Hwaseong Fortress (1,000 KRW adult), Hwaseong Haenggung Palace (1,500 KRW adult), and Waujeongsa Temple (free admission). Starfield Library is also free for everyone. Optional café drinks, mall food hall meals, and any souvenir purchases are at your own cost."
+          },
+          {
+            "id": "q3",
+            "question": "Is lunch included?",
+            "answer": "No. Lunch is during free time at Starfield Suwon's mall food hall — large variety, casual seating, typically 10,000-20,000 KRW per person. The library and mall are stop #2 (≈13:30 arrival) so the timing works as a natural break between Hwaseong in the morning and Waujeongsa in the afternoon."
+          },
+          {
+            "id": "q4",
+            "question": "What's distinctive about Waujeongsa Temple?",
+            "answer": "It's a non-traditional temple: founded in 1970 by Monk Kim Hae-Geun (a North Korean refugee) and built around a single founder's collection of 3,000+ Buddha statues from across Asia. The headline pieces are the Buldu — an 8-meter wooden Buddha head registered in the Guinness Book of Records as the world's largest — and the Wabul, a 3m × 12m wooden reclining Buddha carved from an Indonesian juniper. The 12-ton Bell of Unification was rung at the start of the 1988 Seoul Olympics. Free admission, ≈75 minutes recommended."
+          },
+          {
+            "id": "q5",
+            "question": "Do I need to dress modestly for the temple?",
+            "answer": "Covered shoulders are recommended at Waujeongsa — bring a light layer if wearing a sleeveless top in summer. Hats are typically removed inside the main halls. No strict dress code is enforced for outdoor temple grounds, but modest clothing is appreciated as a sign of respect. Comfortable walking shoes with grip help with the temple's stairs and inclines."
+          },
+          {
+            "id": "q6",
+            "question": "How is the walking load distributed across the day?",
+            "answer": "Three different walking styles: Hwaseong Fortress wall has the hardest section (steep gradients, stairs at gates, ≈1 km walked); Starfield Library is fully indoor with escalators; Waujeongsa has stairs and inclines on temple grounds (moderate). Total walking ≈3-4 km across the day. Comfortable shoes essential, especially for the wall walk and temple paths."
+          },
+          {
+            "id": "first-time",
+            "question": "Is this a good choice for first-time visitors to Suwon & Yongin?",
+            "answer": "Yes — this is one of the strongest first-time picks for travelers who want one UNESCO heritage site, one contemporary photo space, and one distinctive Buddhist temple in a single guided day. The format keeps things balanced rather than active, with all three stops geographically close (Suwon-Yongin corridor, ≈30 min apart). Free hotel pickup from Hongdae or Myeongdong simplifies the morning logistics."
+          },
+          {
+            "id": "walking",
+            "question": "Is the walking difficult?",
+            "answer": "Moderate active walking. The hardest section is Hwaseong Fortress: ≈1 km of stone wall walk with steep gradients, stairs at gates, and uneven historic surfaces — comfortable shoes with grip essential. Starfield Library is easy indoor walking on flat floors. Waujeongsa Temple has some uphill paths and stairs (moderate). Total walking ≈3-4 km across the day. Strollers difficult on the wall and temple, fine at Starfield."
+          },
+          {
+            "id": "family",
+            "question": "Is this tour suitable for families?",
+            "answer": "Yes — comfortable for most families with children age 6+. Strollers are challenging on the Hwaseong wall and at Waujeongsa, but Starfield is fully stroller-friendly with escalators and elevators. Kids often respond strongly to Waujeongsa's giant Buddha head and the 3,000+ statue collection. Hanbok rental at Hwaseong Haenggung Palace is a popular family photo moment (and gets free fortress admission)."
+          },
+          {
+            "id": "seniors",
+            "question": "Can older adults join comfortably?",
+            "answer": "Yes for active seniors comfortable with stairs and uneven ground; more limited for low-mobility travelers. The Hwaseong wall walk has the hardest sections (steep gradients, stone steps); seniors can walk the easier flat segments and skip the climb to command posts. Waujeongsa has temple-ground stairs but the main statue collection is on accessible levels. Starfield is fully escalator/elevator-accessible — the recovery stop."
+          },
+          {
+            "id": "children",
+            "question": "What's the recommended minimum age?",
+            "answer": "Best fit is around age 6 and up. The fortress wall has stairs and uneven historic surfaces, and Waujeongsa's temple grounds have inclines that tire very young children. Older kids do well — the giant Buddha head and the Bell of Unification have a 'wow' factor and Starfield's library is accessible. Strollers manage well at Starfield but not on the wall."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 4.9,
+          "totalReviews": 57,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 53,
+              "percentage": 93
+            },
+            {
+              "stars": 4,
+              "count": 3,
+              "percentage": 5.3
+            },
+            {
+              "stars": 3,
+              "count": 1,
+              "percentage": 1.8
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "price": {
+          "amountLabel": "48.60",
+          "originalPriceUsd": 54,
+          "salePriceUsd": 48.6,
+          "discountPercent": 10,
+          "currency": "USD",
+          "per": "person",
+          "priceSource": "getyourguide_t1051988",
+          "priceNote": "Original price 54 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      }
+    }
+  }
+}

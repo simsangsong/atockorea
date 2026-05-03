@@ -1,18 +1,17 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { Clock, Footprints, Heart, Share2, Star } from "lucide-react";
+import { Clock, Compass, Footprints, Heart, Share2, Star } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { safeCssBackgroundUrl } from "@/lib/safe-image-url";
-import { useCurrencyOptional } from "@/lib/currency";
 import { useTranslations } from "@/lib/i18n";
 import { isInWishlistLocal, toggleWishlistLocal } from "@/lib/wishlist";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
 export type TourHeroSectionProps = Pick<
   EastSignatureNatureCoreDetailViewModel,
-  "headlineLine1" | "headlineLine2" | "hero" | "price"
+  "headlineLine1" | "headlineLine2" | "hero"
 > & {
   tourProductSlug: string;
 };
@@ -26,23 +25,13 @@ function scrollToHash(id: string) {
   window.scrollTo({ top: top - SCROLL_OFFSET_PX, behavior: "smooth" });
 }
 
-function parseUsdFromPrice(price: { amountLabel: string; currency: string }): number | null {
-  if (String(price.currency).toUpperCase() === "USD") {
-    const n = parseFloat(String(price.amountLabel).replace(/,/g, ""));
-    return Number.isFinite(n) && n > 0 ? Math.round(n * 100) / 100 : null;
-  }
-  return null;
-}
-
 export function TourHeroSection({
   headlineLine1,
   headlineLine2,
   hero,
-  price,
   tourProductSlug,
 }: TourHeroSectionProps) {
   const t = useTranslations();
-  const currencyCtx = useCurrencyOptional();
   const showRating = (hero.meta.rating ?? 0) > 0;
   const [saved, setSaved] = useState(false);
 
@@ -77,29 +66,33 @@ export function TourHeroSection({
     }
   }, [headlineLine1, headlineLine2]);
 
-  const usdPrice = parseUsdFromPrice(price);
-  const priceFormatted =
-    usdPrice != null && currencyCtx
-      ? currencyCtx.formatPrice(usdPrice)
-      : `${price.amountLabel}${price.currency ? " " + price.currency : ""}`.trim();
+  const slides = hero.images && hero.images.length > 0 ? hero.images : [hero.imageUrl];
+  const [activeSlideIdx, setActiveSlideIdx] = useState(0);
+
+  useEffect(() => {
+    if (slides.length <= 1) return;
+    const id = window.setInterval(() => {
+      setActiveSlideIdx((i) => (i + 1) % slides.length);
+    }, 6500);
+    return () => window.clearInterval(id);
+  }, [slides.length]);
 
   return (
     <section className="relative w-full">
-      <div className="relative h-[36vh] min-h-[280px] max-h-[360px] sm:h-[42vh] sm:min-h-[340px] sm:max-h-[440px] w-full overflow-hidden rounded-b-2xl shadow-hero">
-        {/* Background image — slow ken-burns drift, more breathing room */}
-        <div
-          className="absolute inset-0 bg-cover transition-transform duration-[14000ms] ease-out scale-[1.04] hover:scale-[1.08]"
-          style={{
-            backgroundImage: safeCssBackgroundUrl(hero.imageUrl),
-            backgroundPosition: hero.imagePosition,
-          }}
-        />
+      {/* Hero image — clean, no overlaid text. Save/share float top-right. */}
+      <div className="relative h-[29vh] min-h-[214px] max-h-[294px] sm:h-[33vh] sm:min-h-[266px] sm:max-h-[360px] w-full overflow-hidden rounded-b-2xl shadow-hero">
+        {slides.map((url, idx) => (
+          <div
+            key={`${url}-${idx}`}
+            aria-hidden={idx !== activeSlideIdx}
+            className={cn("tour-hero-slide", idx === activeSlideIdx && "tour-hero-slide--active")}
+            style={{
+              backgroundImage: safeCssBackgroundUrl(url),
+              backgroundPosition: hero.imagePosition,
+            }}
+          />
+        ))}
 
-        {/* Gradient — single soft bottom darkening, lets the photo breathe */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/85 via-[#0c1622]/30 via-45% to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0c1622]/35 via-transparent to-transparent sm:from-[#0c1622]/20" />
-
-        {/* Top-right utilities — save / share */}
         <div className="absolute right-3 top-3 z-10 flex gap-1.5 sm:right-4 sm:top-4">
           <button
             type="button"
@@ -122,99 +115,103 @@ export function TourHeroSection({
             <Share2 className="h-4 w-4 text-white" strokeWidth={1.8} />
           </button>
         </div>
+      </div>
 
-        {/* Content — compact, restrained */}
-        <div className="absolute inset-0 flex flex-col justify-end px-5 pb-5 sm:px-8 sm:pb-7 lg:px-12 lg:pb-9">
-          {/* Eyebrow — neutral white hairline, no gold */}
-          {hero.meta.region && (
-            <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
-              <span aria-hidden className="h-px w-6 bg-white/45 sm:w-7" />
-              <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/70 sm:text-[10.5px]">
-                {hero.meta.region}
-              </span>
-            </div>
-          )}
+      {/* Content below hero — no card wrapper, but a soft rose pastel wash differentiates this title strip from neutral sections below. */}
+      <div className="relative px-5 pt-3.5 pb-2 sm:px-8 sm:pt-4 sm:pb-2.5 lg:px-12 lg:pt-5">
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{
+            background:
+              "linear-gradient(180deg, #fff5f6 0%, #fff9f9 55%, #fdfbfa 100%), radial-gradient(ellipse 95% 70% at 25% 0%, rgba(255,206,212,0.55) 0%, rgba(255,255,255,0) 70%)",
+            backgroundBlendMode: "multiply, normal",
+          }}
+        />
 
-          {/* Headline — line 2 nudged for readability (size + opacity), no italic */}
-          <h1
-            className="font-sans text-white"
-            style={{
-              textShadow: "0 1px 2px rgba(0,0,0,0.4), 0 1px 12px rgba(0,0,0,0.35)",
-            }}
-          >
-            <span className="block text-[22px] font-semibold leading-[1.16] tracking-[-0.014em] sm:text-[30px] sm:leading-[1.14] lg:text-[34px]">
-              {headlineLine1}
+        {hero.meta.region && (
+          <div className="flex items-center gap-2.5 mb-3 sm:mb-3.5">
+            <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-rose-400/85" />
+            <span aria-hidden className="h-px w-5 bg-gradient-to-r from-rose-300/60 via-rose-300/30 to-transparent sm:w-7" />
+            <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-rose-600/85 sm:text-[10.5px]">
+              {hero.meta.region}
             </span>
-            <span className="mt-1 block text-[14px] font-normal leading-[1.45] tracking-[0.005em] text-white/85 sm:mt-1.5 sm:text-[15.5px] lg:text-[16px]">
-              {headlineLine2}
-            </span>
-          </h1>
-
-          {/* Pills — uniform hairline glass, restrained */}
-          {hero.pills.length > 0 && (
-            <div className="mt-3.5 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
-              {hero.pills.slice(0, 3).map((pill) => (
-                <span
-                  key={pill}
-                  className="rounded-full border border-white/25 bg-white/[0.10] px-3 py-1 text-[10.5px] font-medium tracking-[0.01em] text-white/95 backdrop-blur-md sm:px-3.5 sm:py-1 sm:text-[11px]"
-                >
-                  {pill}
-                </span>
-              ))}
-            </div>
-          )}
-
-          {/* Meta strip — duration · stops · rating · price */}
-          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-white/15 pt-3 sm:mt-5 sm:gap-x-5 sm:pt-3.5">
-            <div className="flex items-center gap-1.5 text-[12px] text-white/90 sm:text-[12.5px]">
-              <Clock className="h-3.5 w-3.5 text-white/55" strokeWidth={1.8} />
-              <span className="font-medium tabular-nums">{hero.meta.duration}</span>
-            </div>
-            <span aria-hidden className="h-3 w-px bg-white/20" />
-            <div className="flex items-center gap-1.5 text-[12px] text-white/90 sm:text-[12.5px]">
-              <Footprints className="h-3.5 w-3.5 text-white/55" strokeWidth={1.8} />
-              <span className="tabular-nums">{hero.meta.stops}</span>
-            </div>
-            {showRating && (
-              <>
-                <span aria-hidden className="h-3 w-px bg-white/20" />
-                <button
-                  type="button"
-                  onClick={() => scrollToHash("reviews")}
-                  className="flex items-center gap-1.5 rounded-md transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
-                  aria-label="Jump to reviews"
-                >
-                  <div className="flex items-center gap-0.5">
-                    {[1, 2, 3, 4, 5].map((star) => {
-                      const filled = star <= hero.meta.ratingStars;
-                      return (
-                        <Star
-                          key={star}
-                          className="h-3 w-3"
-                          strokeWidth={0}
-                          style={{
-                            fill: filled ? "#E8C77A" : "rgba(255,255,255,0.18)",
-                            color: filled ? "#E8C77A" : "rgba(255,255,255,0.18)",
-                          }}
-                        />
-                      );
-                    })}
-                  </div>
-                  <span className="text-[12px] font-semibold tabular-nums text-white sm:text-[12.5px]">
-                    {hero.meta.rating}
-                  </span>
-                </button>
-              </>
-            )}
-            <span aria-hidden className="h-3 w-px bg-white/20" />
-            <div className="flex items-baseline gap-1 text-[12px] text-white/90 sm:text-[12.5px]">
-              <span className="text-[10.5px] font-medium uppercase tracking-[0.08em] text-white/60">
-                {t("tour.stickyPriceFrom")}
-              </span>
-              <span className="font-semibold tabular-nums text-white">{priceFormatted}</span>
-              <span className="text-[10.5px] text-white/65">/ {price.per}</span>
-            </div>
           </div>
+        )}
+
+        <h1
+          className="text-foreground"
+          style={{
+            fontFamily:
+              "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro', 'SF Pro Text', 'Helvetica Neue', var(--font-inter), Inter, 'Pretendard', system-ui, sans-serif",
+            fontStyle: "normal",
+            fontFeatureSettings: '"ss01", "ss02", "kern", "liga", "calt"',
+            WebkitFontSmoothing: "antialiased",
+            MozOsxFontSmoothing: "grayscale",
+          }}
+        >
+          <span className="block text-[26px] font-bold leading-[1.06] tracking-[-0.026em] sm:text-[32px] sm:leading-[1.04] lg:text-[36px]">
+            {headlineLine1}
+          </span>
+          <span className="block text-[26px] font-bold leading-[1.06] tracking-[-0.026em] sm:text-[32px] sm:leading-[1.04] lg:text-[36px]">
+            {headlineLine2}
+          </span>
+        </h1>
+
+        {hero.pills.length > 0 && (
+          <div className="mt-3.5 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
+            {hero.pills.slice(0, 3).map((pill) => (
+              <span
+                key={pill}
+                className="inline-flex items-center rounded-full bg-gradient-to-br from-white via-rose-50/60 to-white px-3 py-1 text-[11px] font-semibold tracking-[0.005em] text-foreground/90 ring-1 ring-rose-300/70 shadow-[0_1px_2px_rgba(244,63,94,0.08),0_4px_10px_-4px_rgba(244,63,94,0.18)] backdrop-blur-sm transition-all duration-200 hover:ring-rose-400/80 hover:shadow-[0_2px_4px_rgba(244,63,94,0.12),0_6px_14px_-4px_rgba(244,63,94,0.24)] sm:px-3.5 sm:py-1.5 sm:text-[11.5px]"
+              >
+                {pill}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div className="mt-2.5 flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-rose-200/45 pt-2.5 sm:mt-3 sm:gap-x-5 sm:pt-3">
+          <div className="flex items-center gap-1.5 text-[12.5px] text-foreground/85 sm:text-[13px]">
+            <Clock className="h-3.5 w-3.5 text-rose-500/80" strokeWidth={1.8} />
+            <span className="font-medium tabular-nums">{hero.meta.duration}</span>
+          </div>
+          <span aria-hidden className="h-3 w-px bg-rose-200/60" />
+          <div className="flex items-center gap-1.5 text-[12.5px] text-foreground/85 sm:text-[13px]">
+            <Footprints className="h-3.5 w-3.5 text-rose-500/80" strokeWidth={1.8} />
+            <span className="tabular-nums">{hero.meta.stops}</span>
+          </div>
+          {showRating && (
+            <>
+              <span aria-hidden className="h-3 w-px bg-rose-200/60" />
+              <button
+                type="button"
+                onClick={() => scrollToHash("reviews")}
+                className="flex items-center gap-1.5 rounded-md transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30"
+                aria-label="Jump to reviews"
+              >
+                <div className="flex items-center gap-0.5">
+                  {[1, 2, 3, 4, 5].map((star) => {
+                    const filled = star <= hero.meta.ratingStars;
+                    return (
+                      <Star
+                        key={star}
+                        className="h-3 w-3"
+                        strokeWidth={0}
+                        style={{
+                          fill: filled ? "#C8956C" : "rgba(26,35,50,0.18)",
+                          color: filled ? "#C8956C" : "rgba(26,35,50,0.18)",
+                        }}
+                      />
+                    );
+                  })}
+                </div>
+                <span className="text-[12.5px] font-semibold tabular-nums text-foreground sm:text-[13px]">
+                  {hero.meta.rating}
+                </span>
+              </button>
+            </>
+          )}
         </div>
       </div>
     </section>

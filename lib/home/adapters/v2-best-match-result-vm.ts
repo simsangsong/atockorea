@@ -11,6 +11,7 @@ import {
   HOME_CTA_FEATURED_JOIN_TOUR_HREF,
   HOME_CTA_MATCHING_HREF,
 } from "@/lib/home/home-cta-routes";
+import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import type { TourMatchApiResponse } from "@/lib/tour-product-match/types";
 
 function priceVmFromProduct(p: ReturnType<typeof getStaticTourProductBySlug> | undefined): {
@@ -63,10 +64,11 @@ export type V2BestMatchResultViewModel = {
 export function buildV2BestMatchResultViewModelFromApi(
   api: TourMatchApiResponse,
   t: (key: string) => string,
+  locale: TourProductPageLocale = "en",
 ): V2BestMatchResultViewModel {
   if (api.matchOutcome === "no_match" || !api.winner) {
     const isTypeOnly = api.noMatchReason === "no_exact_type_match";
-    const prices = priceVmFromProduct(getFeaturedJoinTourProduct());
+    const prices = priceVmFromProduct(getFeaturedJoinTourProduct(locale));
     return {
       badgeLabel: t("premium.hero.matchNoResultBadge"),
       titleLine1: t("premium.hero.matchNoResultTitleLine1"),
@@ -94,7 +96,7 @@ export function buildV2BestMatchResultViewModelFromApi(
   }
 
   const slug = api.winner.product_id;
-  const product = getStaticTourProductBySlug(slug);
+  const product = getStaticTourProductBySlug(slug, locale);
   const title = product?.title ?? slug;
   const words = title.split(/\s+/).filter(Boolean);
   const half = Math.min(4, Math.ceil(words.length / 2));
@@ -114,7 +116,7 @@ export function buildV2BestMatchResultViewModelFromApi(
     badges[2] ?? t("premium.productCards.joinChip3"),
   ];
 
-  const pForPrice = product ?? getFeaturedJoinTourProduct();
+  const pForPrice = product ?? getFeaturedJoinTourProduct(locale);
   const { strikePriceLabel, displayPriceLabel } = priceVmFromProduct(pForPrice);
 
   return {
@@ -139,9 +141,12 @@ export function buildV2BestMatchResultViewModelFromApi(
   };
 }
 
-export function buildV2BestMatchResultViewModel(t: (key: string) => string): V2BestMatchResultViewModel {
+export function buildV2BestMatchResultViewModel(
+  t: (key: string) => string,
+  locale: TourProductPageLocale = "en",
+): V2BestMatchResultViewModel {
   const priceCaption = t("premium.productCards.joinPrice");
-  const { strikePriceLabel, displayPriceLabel } = priceVmFromProduct(getFeaturedJoinTourProduct());
+  const { strikePriceLabel, displayPriceLabel } = priceVmFromProduct(getFeaturedJoinTourProduct(locale));
   return {
     badgeLabel: t("premium.hero.bestMatchBadge"),
     titleLine1: t("premium.hero.bestMatchTitleLine1"),

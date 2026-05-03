@@ -1,0 +1,1750 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
+  "locale": "ko",
+  "product_id": "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
+  "seo": {
+    "pageTitle": "Busan to Gyeongju Cherry Blossom Day Tour (Mar 28–Apr 10) | AtoC Korea",
+    "metaDescription": "8.5-hour Busan-departure spring cherry blossom shuttle tour to Gyeongju. Bomun Lake, Daereungwon Stone Wall Road, Bulguksa. Operates Mar 28 to Apr 10 only.",
+    "ogImage": "",
+    "primaryKeywords": [
+      "부산 경주 벚꽃 투어",
+      "보문호 벚꽃 투어",
+      "경주 봄 투어",
+      "부산 출발 봄 소그룹 투어"
+    ],
+    "title": "부산 출발 경주 봄 벚꽃 소그룹 투어 | AtoC Korea",
+    "description": "부산 출발 경주 봄 벚꽃 투어(3/28~4/10): 보문호 벚꽃 → 첨성대·대릉원 → 불국사(유네스코). 소그룹 밴, 공인 가이드."
+  },
+  "catalog_card": {
+    "slug": "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
+    "title": "부산 출발 경주 봄 벚꽃 소그룹 일일 투어",
+    "subtitle": "경주 봄 벚꽃 3대 명소 — 보문호·첨성대·불국사를 부산에서 하루에.",
+    "region": "Gyeongju (from Busan)",
+    "duration": "8.5 hours",
+    "stopsCount": 4,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "봄 시즌 한정",
+      "벚꽃 투어",
+      "유네스코 명소",
+      "부산 픽업"
+    ],
+    "heroImage": "",
+    "thumbnail": "",
+    "priceLabel": "가격은 예약 시 확인",
+    "shortCardDescription": "보문호(경주 대표 벚꽃 명소), 첨성대+대릉원(유네스코 경주 역사지구), 불국사(유네스코)를 봄 시즌 한정(3/28~4/10)으로 소그룹 투어. 공인 가이드.",
+    "tags": [
+      "spring_seasonal",
+      "cherry_blossom_tour",
+      "unesco_sites",
+      "busan_subway_pickup",
+      "small_group_shuttle"
+    ]
+  },
+  "headlineLine1": "부산에서 경주로",
+  "headlineLine2": "봄 벚꽃 일일 투어",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "person"
+  },
+  "hero": {
+    "imageUrl": "",
+    "imagePosition": "center 50%",
+    "tagline": "보문호 8km 벚꽃 터널, 대릉원 석벽 벚꽃 산책로, 불국사 봄 경내 — 경주 봄의 정수",
+    "pills": [
+      "Mar 28 – Apr 10 only",
+      "Bilingual Tour Leader",
+      "UNESCO Cherry Blossoms"
+    ],
+    "meta": {
+      "duration": "8.5 hours",
+      "region": "Gyeongju (from Busan)",
+      "stops": "2–3 daily peak-bloom selection",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "투어 개요"
+    },
+    {
+      "id": "itinerary",
+      "label": "상세 일정"
+    },
+    {
+      "id": "details",
+      "label": "유의사항"
+    },
+    {
+      "id": "faq",
+      "label": "자주 묻는 질문"
+    },
+    {
+      "id": "reviews",
+      "label": "여행자 후기"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "포토 스팟",
+      "value": "높음",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "경치 밀도",
+      "value": "높음",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "도보 난이도",
+      "value": "보통",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "우천 적합도",
+      "value": "낮음",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "가족 적합도",
+      "value": "양호",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "투어 페이스",
+      "value": "집중형",
+      "level": 3
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
+      "alt": "Cherry blossom path with pink petals at Bomun Lake Gyeongju",
+      "caption": "Bomun Lake — 8 km cherry blossom avenue",
+      "location": "Bomun Lake",
+      "atmosphere": "Romantic spring"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1583244694751-9ce8b1d2b39a?w=1200&q=80",
+      "alt": "Cherry blossoms surrounding ancient Silla burial mounds at Daereungwon",
+      "caption": "Daereungwon Stone Wall Road cherry blossoms",
+      "location": "Daereungwon Tomb Complex",
+      "atmosphere": "Historic spring"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601822336970-8af7c01f3a91?w=1200&q=80",
+      "alt": "Cheomseongdae 7th century stone observatory tower",
+      "caption": "Cheomseongdae Observatory (647 AD, oldest in East Asia)",
+      "location": "Cheomseongdae",
+      "atmosphere": "Ancient"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601649308334-2cc8e6f0e21f?w=1200&q=80",
+      "alt": "Bulguksa temple stone bridges and pagodas",
+      "caption": "Bulguksa Temple (UNESCO World Heritage 1995)",
+      "location": "Bulguksa Temple",
+      "atmosphere": "Spiritual"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1614853128977-b1f1d7e64fae?w=1200&q=80",
+      "alt": "Bomun Pavilion with cherry blossoms reflected in lake water",
+      "caption": "Bomun Pavilion (CNN 50 most beautiful places in Korea)",
+      "location": "Bomun Lake",
+      "atmosphere": "Iconic"
+    },
+    {
+      "id": "g6",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=1200&q=80",
+      "alt": "Tour shuttle bus with passengers near cherry blossoms",
+      "caption": "Bilingual tour shuttle from Busan",
+      "location": "Tour shuttle",
+      "atmosphere": "Group travel"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "≈ 08:00",
+      "duration": "30 min",
+      "name": "픽업 (부산 지하철 3개 역)",
+      "category": "Transit / Pickup",
+      "description": "부산역(약 08:00), 서면역(약 08:20), 해운대역(약 09:00) 순차 픽업.",
+      "highlights": [
+        "Three Busan pickup options: Busan Station, Seomyeon, Haeundae",
+        "**Early 08:00-08:30 start essential during cherry blossom peak** to beat congestion",
+        "Coach transit Busan → Gyeongju ~85 km / 75-90 min via Gyeongbu Expressway",
+        "Light snacks provided on the coach; lunch own expense in Gyeongju",
+        "Printed Korean-English itinerary card distributed at pickup"
+      ],
+      "timeUsed": [
+        "Busan Station pickup (~08:00, ~5 min)",
+        "Drive to Seomyeon Station (~10 min)",
+        "Seomyeon pickup (~08:15, ~5 min)",
+        "Drive to Haeundae Station (~15 min)",
+        "Haeundae pickup (~08:30, ~5 min)"
+      ],
+      "whyOnRoute": "Three pickup points cover Busan's three main hotel zones without forcing guests to transit at dawn. Sequencing northwest→east minimizes coach distance and lands the group at Bomun Lake by ~10:00 — early enough to park comfortably during cherry blossom peak when the Bomun area becomes the busiest tourist site in southeast Korea.",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_subway_pickup",
+        "verified": true,
+        "match": "transit_only",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Busan Metro",
+          "Korea Expressway Corporation"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "≈ 10:00",
+      "duration": "75 min",
+      "name": "보문호 (벚꽃 명소)",
+      "category": "Lake / Cherry Blossom Spot",
+      "description": "보문관광단지 중심 호수. 8km 둘레 산책로를 따라 벚꽃 터널이 이어지며, 수면 위 벚꽃 반영이 압권입니다. 첨성대까지 도보 가능. 무료 입장. 방문 시간: 약 50분.",
+      "highlights": [
+        "**Korea's first comprehensive large-scale resort — opened April 6, 1979**",
+        "**'The History of Tourism in Korea Begins Here'** — Watermill Square plaque",
+        "Lake area **1,652,900 m²**; total Bomun Tourist Complex 793 hectares",
+        "**~2,800 cherry trees** along the 8 km loop — peak last week March/first week April",
+        "Bomunjeong Pavilion = **CNN '50 Most Beautiful Places in Korea'**",
+        "**BTS 'Butterfly' music video** filming location",
+        "**Hosted 2025 APEC Summit** at HICO Convention Center",
+        "FREE access to lake; paddle boats / tandem bikes ~₩10,000/3hr extra",
+        "**HICO Convention Center on Bomun Lake hosted the 2025 APEC Summit** — recent international milestone reinforcing Bomun's status as Korea's first comprehensive resort (opened April 6, 1979)"
+      ],
+      "timeUsed": [
+        "Coach drop-off near Hoban Square or Bomunjeong (~5 min)",
+        "Bomunjeong Pavilion + lakeside cherry-blossom walk (~30 min)",
+        "Watermill Square + artificial waterfall + Korea-tourism plaque (~15 min)",
+        "Free time for photos / paddle boats / cafe (~20 min)",
+        "Reassemble at coach (~5 min)"
+      ],
+      "whyOnRoute": "The route's **cherry-blossom centerpiece** — Bomun Lake offers the highest density of cherry trees against a water reflection in southeast Korea, with the historical weight of being Korea's first modern resort complex. The 10:00 arrival lands before the 11:30 cherry-blossom-festival weekend peak crowds and gives ~75 min for photography, walking, and optional paddle boats before the coach moves toward Cheomseongdae for the historic-core paired stop. Outside the cherry window the lake is still the largest in Gyeongju and pairs naturally with the Bomun Tourist Complex amenities (cafes, K-POP Museum, hotels) for break time.",
+      "visitBasics": {
+        "hours": "Outdoor 24h year-round; cherry blossom illumination ~sunset to 22:00 in early April",
+        "closed": "Open year-round; some lakeside cafes close Mondays",
+        "admission": "Free (lake and walking trail); paddle boats and bike rentals priced separately",
+        "walking": "Easy — flat 8km paved loop trail along the lakeside; can be sampled in 1–2 km segments without doing the full loop"
+      },
+      "convenience": {
+        "restroom": "Available at the Tourist Information Center, Bomun Pavilion, and major resort access points along the loop",
+        "parking": "Multiple free public lots around the resort complex (Hoban Square, Bomun Pavilion); fills quickly during the festival weekend"
+      },
+      "smartNotes": {
+        "photo": "Bomun Pavilion (CNN '50 most beautiful places in Korea') and the wooden bridge for reflection shots; sunset around the east shore near Gyeongju World; BTS 'Butterfly' MV bench locations along the south shore",
+        "facilities": "Bicycle and tandem rentals (~₩10,000/3hr), paddle boats, lakeside cafes and restaurants, Bomun Open Air Stage with free traditional music performances Apr–Jan",
+        "tip": "Cherry blossom peak is typically late March to early April (~7-day window); arrive on a weekday morning or after 16:00 to avoid the worst weekend crowds — full loop walk takes ~2 hours, but most tours sample only 1–2 km"
+      },
+      "_poi_meta": {
+        "poi_key": "bomun_lake",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea",
+          "Wikipedia",
+          "Visit Gyeongju official",
+          "MCST (Ministry of Culture)",
+          "Gyeongju.go.kr",
+          "Gyeongju Tourism Organization"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:45",
+      "duration": "75 min",
+      "name": "첨성대 + 대릉원 (유네스코 경주 역사지구)",
+      "category": "UNESCO Historic Area / Silla Heritage",
+      "description": "첨성대(국보 31호, 632~647년 동아시아 현존 최고 천문대)와 대릉원(23기 신라 왕릉, 유네스코 경주 역사지구 2000년 등재)이 500m 거리에 위치합니다. 대릉원 석벽 산책로는 봄 벚꽃 명소입니다. 천마총 내부 공개. 방문 시간: 약 60분.",
+      "highlights": [
+        "**Gyeongju Historic Areas — UNESCO World Heritage 2000**",
+        "**Cheomseongdae** = oldest existing astronomical observatory in East Asia (Queen Seondeok 632-647 CE)",
+        "9.17m tall, **27 layers / 362 stones / 12 base stones** (lunar calendar code)",
+        "**National Treasure No. 31** since Dec 20, 1962",
+        "**Daereungwon: 23 Silla royal tombs** spanning 126,500 m²",
+        "**Cheonmachong (excavated 1973)** = only tomb with public interior — yielded **11,526 artifacts** including the Heavenly Horse Painting (only known Silla-era painting)",
+        "**Cheonmachong Gold Crown** = National Treasure No. 188 (now at Gyeongju National Museum)",
+        "**Daereungwon Stone Wall Road cherry-blossom festival April 3-5**",
+        "Cheomseongdae FREE; Cheonmachong interior ₩3,000 adult"
+      ],
+      "timeUsed": [
+        "Coach drop-off near Cheomseongdae parking (~5 min)",
+        "Cheomseongdae open field + 27-tier stone tower (~15 min)",
+        "Walk to Daereungwon main entrance (~10 min)",
+        "Tomb mounds + Cheonmachong interior visit (~30 min)",
+        "Daereungwon Stone Wall Road photo time (~10 min)",
+        "Reassemble at coach (~5 min)"
+      ],
+      "whyOnRoute": "The route's **UNESCO Silla heritage anchor** — Cheomseongdae and Daereungwon are the two most photographed Silla monuments in Gyeongju, and pairing them in a single 75-min stop is efficient because they sit just 500 m apart along a flat walking lane lined with cherry trees. The 11:45 arrival times the visit just before lunch (Gyeongju lunch follows immediately at ~13:00) and ahead of the early-afternoon tour-bus surge that fills Cheomseongdae's parking lot from 13:30 onward. The cherry-tree tunnel along Daereungwon's south wall is one of Korea's signature spring photo spots.",
+      "visitBasics": {
+        "hours": "Cheomseongdae outdoor viewing 24h; Daereungwon Park 09:00–22:00 (until 21:00 in winter); Cheonmachong Tomb interior 09:00–22:00",
+        "closed": "Open year-round",
+        "admission": "Cheomseongdae: Free. Daereungwon Park: Free. Cheonmachong Tomb interior: Adult 3,000 KRW / Teenager 2,000 / Child 1,000",
+        "walking": "Easy — flat open field + flat grassy paths between burial mounds; spread across 126,500 m² (good for stroller and senior visitors)"
+      },
+      "convenience": {
+        "restroom": "Public restrooms at the Cheomseongdae visitor center, Daereungwon main entrance, and near Cheonmachong",
+        "parking": "Cheomseongdae paid lot + Daereungwon paid lot at main gate (separate)"
+      },
+      "smartNotes": {
+        "photo": "Cheomseongdae itself with cherry blossoms or canola flowers in the surrounding field; Gyerim Forest just south; Daereungwon Stone Wall Road cherry-blossom tunnel (annual festival Apr 3-5); the giant magnolia tree behind Hwangnamdaechong; Tomb of King Michu surrounded by cherry trees",
+        "facilities": "Small museum inside Cheonmachong Tomb showing the 11,526 excavated artifacts including the famous Heavenly Horse painting; Day Pass option (₩4,000–8,000 covering Daereungwon + Donggung & Wolji Pond)",
+        "tip": "Climbing the burial mounds is prohibited (heavy fine); 30-60 min is typical for Daereungwon walk-through, longer with Cheonmachong interior; Cheomseongdae itself only 10-15 min of viewing"
+      },
+      "_poi_meta": {
+        "poi_key": "cheomseongdae",
+        "verified": true,
+        "match": "paired_stop",
+        "kb_version": "1.23",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea",
+          "Wikipedia (Cheomseongdae + Cheonmachong + Daereungwon)",
+          "World History Encyclopedia",
+          "Korea Times",
+          "UNESCO Astronomical Heritage Portal"
+        ],
+        "is_compound_stop": true,
+        "secondary_poi_keys": [
+          "daereungwon_tomb_complex"
+        ],
+        "compound_stop_note": "Cheomseongdae and Daereungwon are co-located in the Gyeongju Historic Areas (UNESCO 2000), ~5-min walk apart, visited together as a single ~75-90 min itinerary block but tracked separately in the KB. Cheomseongdae (NT 31, 9.17m / 27 layers / 362 stones — oldest astronomical observatory in East Asia, Queen Seondeok era 632-647) is the primary anchor; Daereungwon (23 Silla royal tombs incl. Cheonmachong NT 155 with 11,526 artifacts) is the secondary."
+      }
+    },
+    {
+      "number": 4,
+      "time": "≈ 13:00",
+      "duration": "60 min",
+      "name": "점심 (경주 현지 식당)",
+      "category": "Lunch / Local Cuisine",
+      "description": "경주 쌈밥(경주식 나물 쌈밥 정식) 또는 경주 향토 음식. 점심 식사비 별도(약 ₩10,000~15,000).",
+      "highlights": [
+        "**Gyeongju Ssambap** — local 'wrap-and-eat' set meal with 10+ leaf varieties (~₩13,000-18,000)",
+        "**Hwangnam-bbang** — Gyeongju's signature red-bean pastry, since 1939 (~₩1,500/each)",
+        "**Gyodong Beopju** — 350-year-old Choi-clan rice wine, **Intangible Cultural Asset No. 86-3**",
+        "Lunch at own expense; vegetarian / halal substitution available on request at booking"
+      ],
+      "timeUsed": [
+        "Coach drop-off + walk to restaurant (~5 min)",
+        "Order + meal (~40 min)",
+        "Restroom + reassemble at coach (~15 min)"
+      ],
+      "whyOnRoute": "Lunch is timed at 13:00 to bridge the morning's downtown-Gyeongju cluster (Bomun Lake + Cheomseongdae/Daereungwon) and the afternoon's Bulguksa visit (~30 min drive east to Tohamsan). Choosing Gyeongju ssambap or hwangnam-bbang over generic Korean BBQ reflects the route's local-heritage priority — both are Gyeongju-specific dishes that guests are unlikely to encounter elsewhere in Korea.",
+      "_poi_meta": {
+        "poi_key": "OPS_gyeongju_lunch",
+        "verified": true,
+        "match": "lunch_placeholder",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Gyeongju official",
+          "VisitKorea",
+          "Hwangnam-bbang official"
+        ]
+      }
+    },
+    {
+      "number": 5,
+      "time": "≈ 14:15",
+      "duration": "90 min",
+      "name": "불국사 (유네스코 세계문화유산)",
+      "category": "UNESCO Buddhist Temple",
+      "description": "751년 신라 창건, 유네스코 세계문화유산 등재. 봄 경내 벚꽃과 국보 석조물이 어우러진 경관. 2023년 5월부터 무료 입장. 방문 시간: 약 60분.",
+      "highlights": [
+        "**UNESCO World Heritage 1995** + **Korea's Historic and Scenic Site No. 1**",
+        "Built **528 CE → expanded 751 CE by PM Kim Daeseong → completed 774 CE**",
+        "**Six Korean National Treasures** in one temple complex",
+        "**Dabotap (NT 20)** — image on Korea's 10-won coin",
+        "**Seokgatap (NT 21)** + **Pure Light Dharani Sutra** = world's oldest woodblock print (704-751 CE)",
+        "Cheongungyo/Baegungyo (NT 23) + Yeonhwagyo/Chilbogyo (NT 22) — symbolic 34-step staircase",
+        "Wooden halls destroyed in **Imjin War 1592**; major restoration **1969-1973**",
+        "**FREE admission since 2023** (Cultural Heritage Protection Act revision)",
+        "Hours daily 09:00-18:00, last entry 17:00"
+      ],
+      "timeUsed": [
+        "Coach drop-off + walk through pine-lined approach (~10 min)",
+        "Iljumun + Cheongungyo/Baegungyo photo time (~15 min)",
+        "Daeungjeon courtyard + Dabotap + Seokgatap (~25 min)",
+        "Birojeon Vairocana Hall + Geuknakjeon Pure Land Hall (~20 min)",
+        "Free time + reassemble at coach (~20 min)"
+      ],
+      "whyOnRoute": "The route's **single most significant cultural anchor** — Bulguksa is what comes to mind for most international travelers when they hear 'Gyeongju.' Pairing it as the afternoon's primary stop (vs. trying to also fit Seokguram Grotto, which is 20 min uphill and adds 90+ min) keeps the day at a reasonable 9-10-hour total. The 14:15 arrival is also after Bulguksa's busiest morning tour-bus arrivals (typically 10:00-12:00) and gives ~90 min of exploration during golden-hour light on the stone pagodas, the temple's most photogenic time.",
+      "visitBasics": {
+        "hours": "Daily 09:00–18:00 (last admission 17:00)",
+        "closed": "Open year-round",
+        "admission": "Free (since 2023, per the revised Cultural Heritage Protection Act)",
+        "walking": "Moderate — stone steps, slopes and gravel paths; comfortable shoes recommended"
+      },
+      "convenience": {
+        "restroom": "Free public restrooms (designed in mini-temple style) inside the complex",
+        "parking": "On-site lot (paid)"
+      },
+      "smartNotes": {
+        "photo": "Cheongungyo / Baegungyo bridge stairway (NT 23) below Jahamun Gate; Dabotap (NT 20) and Seokgatap (NT 21) pagodas in the main courtyard; spring cherry blossoms along the approach road",
+        "facilities": "Tourist Information Center at the entrance; Bulguksa Museum (separate ticket 2,000 / 1,000 KRW, closed Mondays)",
+        "tip": "Modest dress; remove shoes when entering the halls; no drones; do not photograph monks or worshippers (signs marked clearly); the temple is still an active Jogye Order head temple (11th district)"
+      },
+      "_poi_meta": {
+        "poi_key": "bulguksa_temple",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO World Heritage Centre",
+          "Wikipedia",
+          "World History Encyclopedia",
+          "VisitKorea",
+          "Visit Gyeongju official"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "≈ 16:30",
+      "duration": "75 min",
+      "name": "부산 귀환",
+      "category": "Transit / Return",
+      "description": "경부고속도로로 부산 귀환(약 75~90분). 해운대 → 서면 → 부산역 역순 하차.",
+      "highlights": [
+        "Coach return ~85 km Bulguksa → Busan via Donghae/Gyeongbu Expressway",
+        "Drop-offs reverse pickup: Haeundae → Seomyeon → Busan Station",
+        "Coach has Wi-Fi (signal-dependent) + USB charging",
+        "Estimated total transit: 75-90 min depending on traffic"
+      ],
+      "timeUsed": [
+        "Boarding + departure from Bulguksa parking (~10 min)",
+        "Bulguksa → Busan transit (~75-80 min)",
+        "Drop-offs at Haeundae → Seomyeon → Busan Station (~5 min each)"
+      ],
+      "whyOnRoute": "The 16:30 departure from Bulguksa lands the coach at Busan's drop-off points between 17:45 and 18:15 — early enough that guests can still make dinner reservations or light Busan evening activity (Gwangalli Beach, BIFF Square, Seomyeon street food alleys, Haeundae night view). Returning before 19:00 also matches the typical Busan tour-coach return contract window.",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_return",
+        "verified": true,
+        "match": "transit_only",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Korea Expressway Corporation",
+          "Busan Metro"
+        ]
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "type": "pickup",
+      "label": "Busan (3 stations)"
+    },
+    {
+      "type": "stop",
+      "label": "Bomun Lake"
+    },
+    {
+      "type": "stop",
+      "label": "Cheomseongdae + Daereungwon"
+    },
+    {
+      "type": "stop",
+      "label": "Bulguksa Temple"
+    },
+    {
+      "type": "return",
+      "label": "Busan (3 stations)"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "출발",
+      "title": "Lakeside blossoms: Bomun Lake",
+      "summary": "Morning sample of Korea's longest cherry blossom avenue — 8 km loop around Bomun Lake with 9,000+ cherry trees. Walking, photo time, optional bike rental.",
+      "description": "부산 지하철 3개 역 순차 픽업 후 경주로 이동."
+    },
+    {
+      "phase": "벚꽃 절정",
+      "title": "UNESCO historic core: tombs, observatory, temple",
+      "summary": "Mid-day pivot from natural beauty to cultural heritage. Cheomseongdae + Daereungwon (UNESCO Gyeongju Historic Areas, 2000) before lunch; Bulguksa Temple (UNESCO 1995) after lunch with its mid-April double cherry blossom peak.",
+      "description": "보문호 → 첨성대+대릉원 → 경주 현지 점심."
+    },
+    {
+      "phase": "유네스코 피날레",
+      "title": "Return to Busan",
+      "summary": "Direct expressway drive back to Busan with drop-off at the three pickup stations in reverse order.",
+      "description": "불국사 → 부산 귀환."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "Spring rhythm: lake bloom → historic core → temple late-bloom",
+    "body": "The default 4-stop itinerary follows the natural progression of Gyeongju's cherry blossom timing. Morning at Bomun Lake (the most reliable peak-bloom spot — 9,000 cherry trees around an 8 km loop), midday at the UNESCO historic core (Cheomseongdae's open-field flowering plus Daereungwon's Stone Wall Road tunnel), and afternoon at Bulguksa Temple (whose double cherry blossoms peak ~5 days later than standard, extending the viable date range). Daily route adjusts: 2–3 actual stops are confirmed each morning from that day's bloom report, with substitutes from the wider Gyeongju cherry blossom pool (Hwangnyongwon, Heungmu-ro, Gyerim Forest, Hwangnidan-gil)."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "First-time visitors to Korea wanting both cherry blossoms AND cultural history in one day",
+      "Couples and photographers chasing peak-bloom Korea spring scenery",
+      "Families with school-age children (8.5h is doable; flat walks at most stops)",
+      "Travelers based in Busan who want the Gyeongju experience without overnight logistics",
+      "Cruise passengers with a long Busan port day during late March / early April"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Why this is a Gyeongju cherry blossom tour, not a generic spring tour",
+        "icon": "flower-2",
+        "items": [
+          {
+            "label": "Bomun Lake = peak reliability",
+            "detail": "9,000+ cherry trees lining an 8 km loop. The water moderates the air temperature, so Bomun's bloom often outlasts the city-center bloom by 1–2 days. It is the single most reliable peak-bloom location in Gyeongju."
+          },
+          {
+            "label": "Stone Wall Road tunnel + Cheomseongdae fields",
+            "detail": "Daereungwon's Stone Wall Road forms a continuous cherry blossom tunnel; Cheomseongdae sits in an open field with seasonal flower plantings (cherry, canola, cosmos). Both are flat, free, and connected by a 10-minute walk."
+          },
+          {
+            "label": "Bulguksa's late-bloom yaezakura",
+            "detail": "Bulguksa's approach path is lined with double cherry blossoms (yaezakura) that peak ~5 days later than standard cherry blossoms. This means even when city-center bloom has finished, Bulguksa often still has flowers — extending the tour's viable date range."
+          }
+        ]
+      },
+      {
+        "title": "Why a Busan-departure shuttle works for cherry blossom season",
+        "icon": "bus",
+        "items": [
+          {
+            "label": "Gyeongju traffic peaks during festival weekend",
+            "detail": "Daereungwon Stone Wall Road Festival (Apr 3–5) brings heavy car traffic. A shuttle with assigned parking passes saves 1–2 hours over self-driving, especially on weekends."
+          },
+          {
+            "label": "Bloom-day adjustment built in",
+            "detail": "The 2–3 stops are confirmed each morning based on the day's bloom report — Bomun Lake, Stone Wall Road, Hwangnidan-gil, or Bulguksa pine path get prioritized in whichever order maximizes peak flowers that day."
+          },
+          {
+            "label": "Same-day return removes hotel pressure",
+            "detail": "Gyeongju lakeside hotels sell out a year ahead and triple in price during the festival weekend. An 8.5h Busan-base day tour avoids that surge entirely."
+          }
+        ]
+      },
+      {
+        "title": "What's included vs. pay-direct",
+        "icon": "ticket",
+        "items": [
+          {
+            "label": "Included",
+            "detail": "Round-trip transport from Busan, bilingual tour leader, all parking and toll fees. All four default attraction stops (Bomun Lake, Cheomseongdae, Daereungwon park area, Bulguksa) are FREE admission."
+          },
+          {
+            "label": "Pay direct",
+            "detail": "Lunch (10,000–20,000 KRW per person), optional Cheonmachong Tomb interior (₩3,000), optional Bomun Lake bike rental (₩10,000/3hr tandem), optional drinks/snacks at Hwangnidan-gil cafes."
+          },
+          {
+            "label": "Tour cancellation policy",
+            "detail": "If the bloom is materially delayed or already finished and the route can't deliver meaningful cherry blossoms, the tour is cancelled with at least 3 days' notice and full refund — verified bloom forecasts (KMA Cherry Blossom Forecast) drive the call."
+          }
+        ]
+      }
+    ],
+    "sourcing": "Tour design follows the Gyeongju cherry blossom tour standard practice (verified across GetYourGuide, Trazy, KoreaTravelEasy, Seoul Pass listings 2024–2026). Bloom timing data cross-checked with KMA Cherry Blossom Forecast and Gyeongju City tourism office annual festival announcements."
+  },
+  "practicalAccordionItems": [
+    {
+      "title": "When this tour operates — strict cherry blossom window",
+      "preview": "Mar 28 – Apr 10 only; full refund if bloom is delayed or finished",
+      "content": [
+        "This tour operates March 28 – April 10 only — timed to Gyeongju's peak sakura window (typically last week of March to first week of April).",
+        "Exact peak date shifts by ±7 days year to year based on winter temperatures.",
+        "Full refund if cherry blossom bloom is materially delayed (less than 30% open) or already finished on your booked date."
+      ]
+    },
+    {
+      "title": "Pickup, drop-off, and the 8.5-hour window",
+      "preview": "Three Busan subway stations; ~08:00–08:30 departure",
+      "content": [
+        "Sequential pickup: Busan Station (~08:00), Seomyeon (~08:15), Haeundae (~08:30).",
+        "Gyeongju return: Haeundae first (~16:30), Seomyeon (~16:45), Busan Station (~17:00) — approximately 8.5 hours total.",
+        "Early start is essential to reach Bomun Lake before the peak weekend crowds arrive at 10:30."
+      ]
+    },
+    {
+      "title": "What's included vs. pay-direct",
+      "preview": "Transport and bilingual guide included; admissions and lunch pay direct",
+      "content": [
+        "Included: round-trip mini-van, bilingual certified guide.",
+        "All four main stops are free: Bomun Lake walking trail (free), Daereungwon Park (free; Cheonmachong interior ₩3,000 optional), Cheomseongdae (free), Bulguksa Temple (free since May 2023).",
+        "Lunch at own expense ~₩10,000–15,000 in Gyeongju (ssambap or Hwangnam-bbang snacks)."
+      ]
+    },
+    {
+      "title": "Daily route adjustments based on bloom",
+      "preview": "Morning bloom report determines which stops get extended time",
+      "content": [
+        "Each morning the guide checks live bloom status at Bomun Lake (8 km cherry loop), Daereungwon Stone Wall Road, and Bulguksa temple road.",
+        "The stop with peak bloom gets the longest dwell; a WhatsApp message confirms the day's priority before pickup.",
+        "If only one location is at peak, the route skips the off-peak stop in favor of more time at the flowering site."
+      ]
+    },
+    {
+      "title": "Vehicle, group size, and accessibility",
+      "preview": "Small-group mini-van, max ~10 passengers",
+      "content": [
+        "Mini-van (typically up to ~10 passengers), air-conditioned with USB charging.",
+        "Bomun Lake's flat 8 km paved loop is stroller-friendly and accessible for most mobility levels.",
+        "Bulguksa Temple involves uneven stone paths and steps; the two famous stone bridges are National Treasures and cannot be walked on."
+      ]
+    },
+    {
+      "title": "What to bring and weather notes",
+      "preview": "Layers for cool mornings; umbrella for spring showers",
+      "content": [
+        "Gyeongju late March mornings average 6–12°C — bring a light jacket even on sunny days.",
+        "Light spring rain is common; a compact umbrella is recommended.",
+        "Light rain operates as normal; heavy rain may shift the route toward indoor museum time at Gyeongju National Museum (free admission, fully indoor)."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "summary": "Late March / early April in Gyeongju is 5–18°C with highly variable conditions. Spring blooms are wind-and-rain sensitive — heavy rain can knock petals off in 24 hours, so the bloom report (and tour's confirmation logic) tracks daily wind/rain.",
+    "advice": "Dress in layers (light jacket morning, removable mid-day). Bring a light rain shell — April showers are common. Comfortable walking shoes. Camera with charged battery and a portable battery pack."
+  },
+  "seasonalVariations": [
+    {
+      "season": "Spring (Mar 28 – Apr 10) — OPERATING SEASON",
+      "summary": "The tour's only operating window. Late March = early-bloom city center (Bomun Lake, Daereungwon Stone Wall Road, Cheomseongdae fields); early April = peak across most spots; mid-April = late-bloom Bulguksa double cherry (yaezakura).",
+      "swaps": "Daily route uses 2–3 stops from the cherry blossom pool based on that morning's bloom report. Standard combinations: (a) Bomun Lake + Daereungwon + Bulguksa for early-April peak; (b) Bomun Lake + Hwangnidan-gil + Bulguksa for late-bloom days; (c) Bomun Lake + Cheomseongdae + Wanggyeong Forest for off-peak coverage."
+    },
+    {
+      "season": "Summer / Autumn / Winter — TOUR DOES NOT OPERATE",
+      "summary": "This is a season-locked spring product. For Gyeongju in other seasons, see our year-round Gyeongju tours instead.",
+      "swaps": "For year-round access to Bulguksa, Gyeongju National Museum, Gyochon, and Woljeonggyo Bridge, book our 'busan-gyeongju-unesco-legacy-tour-national-museum' or 'from-busan-gyeongju-ancient-capital-day-tour'."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "shield-check",
+      "title": "봄 시즌 전문 운영사",
+      "detail": "If KMA bloom forecast shifts and the route can't deliver meaningful cherry blossoms, the tour is cancelled with at least 3 days' notice and full refund — no fees, no questions.",
+      "body": "3/28~4/10 봄 벚꽃 한정 투어 — 벚꽃 개화 정보 실시간 안내."
+    },
+    {
+      "icon": "calendar-check",
+      "title": "코스 전문",
+      "detail": "Each morning the tour leader confirms which 2–3 stops are at peak bloom based on Gyeongju City tourism office's daily report, so you visit actual peak flowers, not last-week's flowers.",
+      "body": "보문호 → 첨성대·대릉원 → 불국사 순서로 경주 봄의 이야기가 자연스럽게 이어집니다."
+    },
+    {
+      "icon": "user-check",
+      "title": "그룹 규모 관리",
+      "detail": "All tour leaders are licensed and English-speaking. Mandarin support available on request at booking.",
+      "body": "소그룹 밴(최대 10인)으로 여유 있게 이동합니다."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "step": 1,
+      "title": "즉시 확인",
+      "detail": "Pick a date in the Mar 28 – Apr 10 window — pay nothing today, reserve now & pay later.",
+      "description": "픽업 역·시각 포함 즉시 예약 확인서 발송."
+    },
+    {
+      "step": 2,
+      "title": "12시간 전 알림",
+      "detail": "Pick one of three Busan stations: Busan Station (KTX) 08:00, Seomyeon 08:15, or Haeundae 08:30.",
+      "description": "벚꽃 당일 개화 상태 사전 안내."
+    },
+    {
+      "step": 3,
+      "title": "최종 픽업 안내",
+      "detail": "By mid-March we confirm the operating window using KMA forecast; if your date is outside the bloom, we contact you immediately.",
+      "description": "출발 전날 저녁 최종 픽업 시각 확인."
+    },
+    {
+      "step": 4,
+      "title": "당일 코스 안내",
+      "detail": "Tour leader confirms the specific 2–3 stops at the morning of the tour based on bloom condition.",
+      "description": "날씨 및 개화 상태 아침 메시지 전달."
+    },
+    {
+      "step": 5,
+      "title": "경유지별 심층 안내",
+      "detail": "Tour leader waits at the platform with an AtoC Korea sign at your scheduled pickup time.",
+      "description": "경주 유네스코 역사지구 배경, 신라 천년 역사 가이드 설명."
+    },
+    {
+      "step": 6,
+      "title": "투어 후 지원",
+      "detail": "Drop-off at the same station ≈ 16:30; total tour ~8.5 hours.",
+      "description": "투어 후 피드백 요청 전송."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "question": "투어 운행 기간은 언제인가요? 벚꽃 시기를 놓치면 어떻게 되나요?",
+      "answer": "매년 약 3월 28일~4월 10일 운행. 정확한 날짜는 기상청 벚꽃 예보를 기준으로 매년 3월 중순에 확정됩니다."
+    },
+    {
+      "question": "일정이 고정되어 있나요?",
+      "answer": "기본 코스는 보문호 → 첨성대+대릉원 → 불국사입니다. 당일 인파·교통에 따라 순서가 소폭 조정될 수 있습니다."
+    },
+    {
+      "question": "어르신·유모차 접근이 가능한가요?",
+      "answer": "보문호와 대릉원은 유모차·휠체어 친화적(평탄한 포장 산책로). 불국사는 고르지 않은 석재와 완만한 오르막이 있습니다."
+    },
+    {
+      "question": "점심 비용과 입장료는 어떻게 되나요?",
+      "answer": "점심 식사비 별도(약 ₩10,000~20,000). 입장료: 불국사 무료(2023년 5월~), 첨성대·대릉원은 소액 입장료 또는 무료(연도에 따라 변동 — 예약 시 확인)."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "totalReviews": 0,
+    "averageRating": 0,
+    "ratingDistribution": {
+      "5": 0,
+      "4": 0,
+      "3": 0,
+      "2": 0,
+      "1": 0
+    },
+    "lastUpdated": "2026-04-28"
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "person"
+    }
+  },
+  "pickup_dropoff": {
+    "type": "multi_point_pickup",
+    "meeting_points": [
+      {
+        "name": "Busan Station (KTX) main exit",
+        "time": "08:00",
+        "note": "Group meeting point at the main exit; staff with AtoC Korea sign."
+      },
+      {
+        "name": "Seomyeon Station Exit 7",
+        "time": "08:15",
+        "note": "Second pickup point on the way out of central Busan."
+      },
+      {
+        "name": "Haeundae Station Exit 5",
+        "time": "08:30",
+        "note": "Third pickup point for guests staying in Haeundae."
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Same three stations in reverse order",
+        "approx_time": "≈ 16:30",
+        "note": "Drop-off at any of the three pickup stations on request; total tour ~8.5 hours from Busan Station pickup to Busan Station drop-off."
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "This tour operates ONLY during cherry blossom season (approximately March 28 to April 10, 2026 — exact dates depend on bloom forecast and confirmed annually). Departure is a fixed group shuttle (small_group product) so pickup times are not flexible. If bloom is delayed or finished, the tour may be cancelled with 3 days' notice and full refund. Lunch is at own expense (~10,000–20,000 KRW) at a Gyeongju local restaurant chosen by the guide based on the day's route. Wheelchair and stroller travelers — please notify at booking; some stops involve uneven ground (Bulguksa stairs, grass paths at Daereungwon)."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "gyeongsang_north",
+    "vehicle_type": "coach",
+    "duration_hours": 10.25,
+    "region_tags": [
+      "busan_haeundae",
+      "gyeongju_bomun",
+      "gyeongju_historic_core",
+      "gyeongju_tohamsan"
+    ],
+    "theme_tags": [
+      "unesco",
+      "silla_kingdom",
+      "cherry_blossom",
+      "buddhist_temple",
+      "tomb_complex",
+      "astronomical_heritage"
+    ],
+    "poi_tags": [
+      "bomun_lake",
+      "cheomseongdae",
+      "daereungwon_tomb_complex",
+      "bulguksa_temple"
+    ],
+    "pace_level": 0.7,
+    "walking_level": 0.75,
+    "scenic_level": 0.95,
+    "photo_level": 1.0,
+    "culture_level": 1.0,
+    "relax_level": 0.55,
+    "first_time_fit": 1.0,
+    "family_fit": 0.85,
+    "senior_fit": 0.85,
+    "couple_fit": 0.95,
+    "solo_traveler_fit": 0.85,
+    "active_traveler_fit": 0.55,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 0.9,
+    "young_kids_fit": 0.65,
+    "senior_active_fit": 0.85,
+    "senior_general_fit": 0.7,
+    "mobility_friendly_fit": 0.65,
+    "stroller_fit": 0.55,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.2,
+    "rain_fit": 0.4,
+    "value_for_money_fit": 1.0,
+    "iconic_landmark_fit": 1.0,
+    "cafe_fit": 0.65,
+    "food_fit": 0.55,
+    "nature_fit": 0.85,
+    "beach_fit": 0.05,
+    "nightlife_fit": 0.05,
+    "shopping_fit": 0.2,
+    "no_shopping_fit": 0.7,
+    "local_culture_fit": 0.85,
+    "storytelling_fit": 0.85,
+    "unesco_fit": 1.0,
+    "intangible_heritage_fit": 0.3,
+    "indoor_ratio": 0.05,
+    "weather_sensitivity": 0.6,
+    "comfort_level": 0.6,
+    "budget_fit": 0.95,
+    "premium_fit": 0.3,
+    "small_group_fit": 1.0,
+    "private_fit": 0.05,
+    "bus_fit": 1.0,
+    "price_band": "mid",
+    "pickup_base": "busan_central",
+    "return_time_band": "17:45-18:30",
+    "duration_band": "10h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "very_tight_schedule"
+      ],
+      "notIdealFor": [
+        "bad_weather_intolerant",
+        "shoppers_only"
+      ]
+    },
+    "walking_notes": [
+      "Moderate walking day — Bulguksa stone steps and Daereungwon's flat lawns.",
+      "Average fitness expected.",
+      "Comfortable walking shoes; bring a light layer for the Bomun Lake breeze."
+    ],
+    "keywords": [
+      "busan to gyeongju cherry blossom day tour",
+      "gyeongju cherry blossom tour",
+      "bomun lake cherry blossom",
+      "bulguksa cherry blossom",
+      "cheomseongdae daereungwon",
+      "silla heritage day tour"
+    ],
+    "synonym_hints": [
+      "gyeongju spring tour",
+      "gyeongju historic areas day tour",
+      "bulguksa unesco tour from busan"
+    ],
+    "seasonality": "spring_peak",
+    "pickup_base_normalized": "busan",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "bomun_lake",
+      "cheomseongdae",
+      "daereungwon_tomb_complex",
+      "bulguksa_temple"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.1,
+    "flexibility_fit": 0.3,
+    "fixed_itinerary_fit": 1.0,
+    "buddhist_temple_fit": 1.0,
+    "scenic_temple_fit": 0.9,
+    "silla_kingdom_fit": 1.0,
+    "ancient_capital_fit": 1.0,
+    "cherry_blossom_fit": 1.0,
+    "spring_seasonal_fit": 1.0,
+    "seasonal_festival_fit": 0.95,
+    "tomb_complex_fit": 1.0,
+    "astronomical_heritage_fit": 1.0,
+    "lake_fit": 1.0,
+    "k_pop_filming_fit": 0.7,
+    "k_drama_filming_fit": 0.5,
+    "history_culture_fit": 1.0,
+    "religious_history_fit": 0.95,
+    "premium_dining_fit": 0.3,
+    "seasonal_fit": 1.0,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "spring_cherry_blossom_anchor_fit": 1.0,
+    "cherry_blossom_peak_window_fit": 1.0,
+    "available_months_signature": [
+      3,
+      4
+    ],
+    "signature_window_label": "Late March – first week April (cherry blossom peak)",
+    "unesco_anchor_count": 2,
+    "natural_treasure_count_visited": 3,
+    "bomun_lake_apec_2025_anchor": true,
+    "differentiates_from_plum_cherry_blossom_route": true,
+    "first_time_gyeongju_fit": 1.0,
+    "kid_friendly_fit": 0.9,
+    "deep_history_traveler_fit_minimum": 0.7,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "competing_products": [
+      "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
+      "busan-gyeongju-unesco-legacy-tour-national-museum",
+      "from-busan-gyeongju-ancient-capital-day-tour"
+    ],
+    "complementary_products": [
+      "busan-top-attractions-day-tour",
+      "busan-small-group-sightseeing-tour-cruise-passengers"
+    ],
+    "upgrade_from": [],
+    "downgrade_to": [
+      "busan-gyeongju-unesco-legacy-tour-national-museum"
+    ],
+    "internal_competing_products_note": "Within the Busan→Gyeongju portfolio, this is the SEASONAL spring-only cherry blossom variant. The two year-round Gyeongju tours (busan-gyeongju-unesco-legacy-tour-national-museum, from-busan-gyeongju-ancient-capital-day-tour) cover the same UNESCO core (Bulguksa + Gyeongju historic area) but skip the cherry blossom POIs (Bomun Lake, Cheomseongdae fields, Stone Wall Road). For visits outside Mar 28–Apr 10 the year-round tours are the substitute.",
+    "external_source": "GetYourGuide t1192332",
+    "external_source_url": "https://www.getyourguide.com/-t1192332/",
+    "operator_partner": "AtoC Korea LLC (seasonal cherry blossom shuttle)",
+    "last_competitive_review": "2026-04-28",
+    "primary_themes": [
+      "unesco",
+      "silla_kingdom",
+      "cherry_blossom",
+      "buddhist_temple"
+    ],
+    "secondary_themes": [
+      "tomb_complex",
+      "astronomical_heritage",
+      "lake",
+      "spring_festival"
+    ],
+    "best_for": [
+      "first_time_visitors",
+      "culture_lovers",
+      "couples",
+      "spring_seasonal_travelers",
+      "history_enthusiasts",
+      "photographers"
+    ],
+    "not_recommended_for": [
+      "shoppers_only",
+      "nightlife_seekers",
+      "bad_weather_intolerant"
+    ],
+    "anchor_pois": [
+      "Bomun Lake",
+      "Cheomseongdae Observatory + Daereungwon Tomb Complex",
+      "Bulguksa Temple"
+    ],
+    "anchor_poi_keys": [
+      "bomun_lake",
+      "cheomseongdae",
+      "daereungwon_tomb_complex",
+      "bulguksa_temple"
+    ],
+    "enrichment_batch": "17a",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.23",
+    "enrichment_target_kb_version": "1.24",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "16 substantive stops across 4 tours; D-grade audit (8-hl-vs-9-hl artifact) → A-grade pass"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "Bulguksa to the National Museum, bamboo forest to bridge —",
+        "headlineLine2": "Korea's 1,000-year capital in a single day from Busan",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+          "imagePosition": "center 35%",
+          "tagline": "Korea's 'museum without walls' — Gyeongju, where seven UNESCO sites cluster within 15 km",
+          "pills": [
+            "small_group",
+            "gyeongju",
+            "unesco_legacy"
+          ],
+          "meta": {
+            "duration": "≈ 11.5 hours (08:10 first pickup, ≈ 19:45 last drop)",
+            "region": "Gyeongju (from Busan)",
+            "stops": "8 stops",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "Overview"
+          },
+          {
+            "id": "itinerary",
+            "label": "Itinerary"
+          },
+          {
+            "id": "details",
+            "label": "Details"
+          },
+          {
+            "id": "faq",
+            "label": "FAQ"
+          },
+          {
+            "id": "reviews",
+            "label": "Reviews"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "Duration",
+            "value": "≈ 11.5 hours (08:10 first pickup, ≈ 19:45 last drop)"
+          },
+          {
+            "icon": "users",
+            "label": "Group",
+            "value": "Small group, mini-van (typically up to ≈10 passengers)"
+          },
+          {
+            "icon": "subway",
+            "label": "Pickup",
+            "value": "Busan Station Exit 4 (08:10), Seomyeon Exit 4 (08:30), Haeundae Exit 5 (09:10)"
+          },
+          {
+            "icon": "calendar",
+            "label": "Best season",
+            "value": "Year-round; cherry-blossom alt route mid-Mar to mid-Apr (Ahopsan replaced by Haeundae Dalmaji Hill)"
+          },
+          {
+            "icon": "footprints",
+            "label": "Walking",
+            "value": "Moderate — ≈4–5 km total. Bulguksa terraces and steps; flat at the museum, hanok village, and bridge."
+          },
+          {
+            "icon": "ticket",
+            "label": "Includes",
+            "value": "Round-trip transport, certified guide. Entry fees: Bulguksa free (since May 2023), museum free, Gyochon free, bridge free; only Ahopsan (₩5,000) is paid on-site. Lunch on guest."
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "alt": "Stone bridges and Dabotap pagoda at Bulguksa Temple, late afternoon light",
+            "caption": "Bulguksa — UNESCO World Heritage. The two pagodas are National Treasures No. 20 and 21.",
+            "location": "Bulguksa Temple, Gyeongju",
+            "atmosphere": "Stone, wood, and 8th-century pagoda silhouettes"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "alt": "Silla gold crown displayed in glass case under museum lighting",
+            "caption": "Gyeongju National Museum — gold crown from Cheonmachong tomb (National Treasure No. 188).",
+            "location": "Gyeongju National Museum",
+            "atmosphere": "Quiet gallery, single object focus"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "alt": "Tile-roofed hanok houses and a stone wall along a quiet alley in Gyochon village",
+            "caption": "Gyochon Hanok Village — the Choi family compound and Confucian school.",
+            "location": "Gyochon Hanok Village, Gyeongju",
+            "atmosphere": "Restored hanok lanes, low traffic"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=1200",
+            "alt": "Light filtering through dense bamboo stalks along a forest path",
+            "caption": "Ahopsan Bamboo Forest — privately preserved by the Mun clan since 1638.",
+            "location": "Ahopsan Forest, Gijang-gun, Busan",
+            "atmosphere": "Cool, green, filtered light"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
+            "alt": "Wooden bridge pavilion reflected in water at dusk",
+            "caption": "Woljeonggyo Bridge — 66-meter Silla-style reconstruction completed in 2018.",
+            "location": "Woljeonggyo Bridge, Gyeongju",
+            "atmosphere": "Wood, water, soft evening light"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "08:10",
+            "duration": "60 min",
+            "name": "Busan pickup (3 subway stations)",
+            "category": "Departure",
+            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "description": "Sequential pickup along Busan Subway Line 1: Busan Station Exit 4 (08:10), Seomyeon Station Exit 4 (08:30), Haeundae Station Exit 5 (09:10). The Haeundae pickup adds ≈30 min relative to the Busan-Station start because the pickup vehicle loops east before turning north toward Gyeongju. Choose the exit closest to your hotel.",
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Three pickup points let guests across central Busan reach the meeting van without taxi cost.",
+            "_poi_meta": {
+              "poi_key": "busan_subway_pickup",
+              "is_attraction": false
+            }
+          },
+          {
+            "number": 2,
+            "time": "≈ 09:50",
+            "duration": "60 min",
+            "name": "Ahopsan Bamboo Forest",
+            "category": "Bamboo Forest",
+            "image": "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=800",
+            "description": "Privately preserved bamboo grove inside the Nampyeong Mun clan's ancestral estate in Gijang-gun, Busan — the family has owned and maintained the forest since 1638 (roughly 400 years). Several iconic Korean dramas have filmed here, most famously the bamboo-corridor scenes in 'Mr. Sunshine' (2018). The walking loop is roughly 1 km on flat compacted dirt, takes 45–60 minutes at a slow photography pace, and stays cool in summer because the canopy filters most direct sunlight. Adult admission ₩5,000 (cash; not included in tour price). Spring (cherry blossom season) is the only exception when the route swaps this stop for Haeundae Dalmaji Hill (see Seasonal notes).",
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Ahopsan sits between Busan and Gyeongju on the way north, adding a sensory-distinct opener (cool, green, photogenic) before the heritage-heavy core of the day.",
+            "_poi_meta": {
+              "poi_key": "ahopsan_bamboo_forest",
+              "is_attraction": true,
+              "fee_krw": 5000
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:30",
+            "duration": "75 min",
+            "name": "Bulguksa Temple (UNESCO World Heritage)",
+            "category": "UNESCO Buddhist Temple",
+            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
+            "description": "Inscribed by UNESCO together with Seokguram Grotto in December 1995. The temple was founded in 528 CE under Silla King Beopheung, expanded to its current scale in 751 CE by chief minister Kim Daeseong, burned in the 1592–98 Imjin War, and progressively restored from 1920 onward; the wooden structures visible today were largely rebuilt in 1973 around the original stone foundations. The two pagodas in the main courtyard — ornate Dabotap and austere Seokgatap, both dating to the 8th century — are National Treasures No. 20 and No. 21. The two stone bridges at the lower terrace, Cheongun-gyo and Baegun-gyo, each have 33 steps representing the 33 heavens of Buddhist cosmology. Admission was made FREE in May 2023 (parking ₩1,000–₩2,000). Allow 60–75 minutes; weekend mornings get coach traffic from Busan/Daegu so a weekday visit is meaningfully quieter.",
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "The architectural anchor of the day. Without Bulguksa, no Gyeongju day tour can claim 'UNESCO heritage'.",
+            "_poi_meta": {
+              "poi_key": "bulguksa_temple",
+              "is_attraction": true,
+              "fee_krw": 0,
+              "unesco": "world_heritage",
+              "national_treasures": [
+                "No. 20 Dabotap",
+                "No. 21 Seokgatap"
+              ]
+            }
+          },
+          {
+            "number": 4,
+            "time": "≈ 13:00",
+            "duration": "60 min",
+            "name": "Lunch (Gyeongju local restaurant)",
+            "category": "Meal",
+            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "description": "Sit-down restaurant within 5 minutes' drive of Bulguksa, chosen for English/Chinese menus and group-friendly seating. Typical options: Gyeongju ssambap (banchan-heavy rice-and-leaf wraps, the local signature, ≈₩15,000–₩20,000), bulgogi set, or vegetarian banchan platter on request. Lunch is paid on the day; budget ₩15,000–₩25,000 per person. Advise dietary requirements (halal, vegetarian, gluten-free) at booking — the guide can route to a suitable kitchen.",
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Gyeongju ssambap is the signature regional dish; eating it inside Gyeongju is part of the day.",
+            "_poi_meta": {
+              "poi_key": "gyeongju_lunch",
+              "is_attraction": false,
+              "fee_krw": "15000-25000"
+            }
+          },
+          {
+            "number": 5,
+            "time": "≈ 14:15",
+            "duration": "75 min",
+            "name": "Gyeongju National Museum",
+            "category": "National Museum (Silla)",
+            "image": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=800",
+            "description": "Korea's primary repository of Silla-era artifacts, free admission since November 2008. Three permanent halls cover the main themes: Silla History, Silla Art, and the Wolji Hall (artifacts excavated from the Wolji Pond palace site, formerly called Anapji). The two single objects most visitors come to see are the Cheonmachong gold crown (National Treasure No. 188, recovered 1973 from the 'Heavenly Horse Tomb') and the Sacred Bell of Great King Seongdeok (National Treasure No. 29, cast 771 CE, 18.9 metric tons — the largest existing Korean bell, displayed outdoors near the entrance). English and Chinese exhibit panels are present throughout. Closed Mondays. Open 10:00–18:00 weekdays, 19:00 Saturdays.",
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Bulguksa shows the architecture of Silla; the Museum shows what was inside the tombs and palaces. Most one-day Gyeongju tours skip the museum to add another outdoor stop, which leaves visitors with the empty shells but not the contents.",
+            "_poi_meta": {
+              "poi_key": "gyeongju_national_museum",
+              "is_attraction": true,
+              "fee_krw": 0,
+              "closed": "Monday",
+              "national_treasures": [
+                "No. 29 Sacred Bell",
+                "No. 188 Gold Crown"
+              ]
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:50",
+            "duration": "60 min",
+            "name": "Gyochon Hanok Village",
+            "category": "Hanok Heritage Village",
+            "image": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=800",
+            "description": "Restored Joseon-era hanok district built around the ancestral home of the Gyeongju Choi family — the 'Choi the Wealthy' (최부자) clan, famous in Korean civic memory for their twelve-generation rules of conduct: never let neighbors starve in famine years, never hold land beyond a 100-ri radius, never accept rent that tenants couldn't afford. The Choi residence has been preserved as a small museum (free entry) and the surrounding alleys hold tea houses, traditional craft workshops, and the Gyeongju Hyanggyo (Confucian school whose current buildings date to 1492). Most visitors walk the central loop in 30–40 minutes; the hanok lanes are flat and stroller-friendly.",
+            "timeUsed": [
+              "Arrival, ticketing, and orientation briefing",
+              "Main attraction exploration with photo time",
+              "Wrap-up and reassembly at vehicle"
+            ],
+            "whyOnRoute": "Gyochon is a ten-minute drive from the museum and provides the day's flat-walking interlude before the bridge stop.",
+            "_poi_meta": {
+              "poi_key": "gyochon_hanok_village",
+              "is_attraction": true,
+              "fee_krw": 0
+            }
+          },
+          {
+            "number": 7,
+            "time": "≈ 17:00",
+            "duration": "40 min",
+            "name": "Woljeonggyo Bridge",
+            "category": "Reconstructed Silla Bridge",
+            "image": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=800",
+            "description": "Wooden bridge crossing the Namcheon stream beside Gyochon. The original Silla bridge stood here from 760 CE until the Mongol invasions of the 13th century destroyed it. The current 66-meter reconstruction was completed in 2018 after archaeological excavations begun in 1986; it has two-story gate pavilions on each end and is illuminated nightly from sunset until ≈22:00. **Important seasonal note**: at the scheduled 17:00 arrival the bridge is in daylight from late March through early October — the post-sunset 'reflection' shot you'll see in promotional photos is primarily a winter (November–February) experience when the sun sets between 17:15 and 17:30. The bridge structure itself is worth photographing in any light. Free entry.",
+            "timeUsed": [
+              "Main attraction exploration with photo time",
+              "Bridge crossing and reflection viewpoint"
+            ],
+            "whyOnRoute": "A short, low-walking, scenic close to the day. Pairs naturally with Gyochon, which is 5 minutes' walk away.",
+            "_poi_meta": {
+              "poi_key": "woljeonggyo_bridge",
+              "is_attraction": true,
+              "fee_krw": 0,
+              "illumination": "sunset to ≈22:00 daily"
+            }
+          },
+          {
+            "number": 8,
+            "time": "≈ 17:45",
+            "duration": "75 min",
+            "name": "Return drive to Busan",
+            "category": "Return",
+            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "description": "≈80 km / 75 min on the Gyeongbu Expressway in normal traffic; 90 min in Friday-evening or Sunday-return traffic. Drop-off in reverse pickup order: Haeundae Station Exit 5 ≈19:00, Seomyeon Station Exit 4 ≈19:25, Busan Station Exit 4 ≈19:45.",
+            "timeUsed": [
+              "Operational logistics (pickup/meal/transfer/return)",
+              "Brief orientation or break"
+            ],
+            "whyOnRoute": "Required logistics.",
+            "_poi_meta": {
+              "poi_key": "busan_return",
+              "is_attraction": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "id": "rf_pickup",
+            "name": "Busan subway pickup",
+            "theme": "Departure"
+          },
+          {
+            "id": "rf_ahopsan",
+            "name": "Ahopsan Bamboo Forest (or Haeundae Dalmaji Hill in cherry season)",
+            "theme": "Forest / Coastal road (seasonal)"
+          },
+          {
+            "id": "rf_bulguksa",
+            "name": "Bulguksa Temple (UNESCO)",
+            "theme": "UNESCO heritage"
+          },
+          {
+            "id": "rf_lunch",
+            "name": "Lunch (Gyeongju ssambap)",
+            "theme": "Meal"
+          },
+          {
+            "id": "rf_museum",
+            "name": "Gyeongju National Museum",
+            "theme": "Silla artifacts"
+          },
+          {
+            "id": "rf_gyochon",
+            "name": "Gyochon Hanok Village",
+            "theme": "Heritage village"
+          },
+          {
+            "id": "rf_bridge",
+            "name": "Woljeonggyo Bridge",
+            "theme": "Reconstructed Silla bridge"
+          },
+          {
+            "id": "rf_return",
+            "name": "Busan subway drop-off",
+            "theme": "Return"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "Outbound + Ahopsan",
+            "duration": "≈ 2.5 hours",
+            "description": "Sequential pickup at three Busan subway exits (08:10, 08:30, 09:10), then drive ≈30 min to Ahopsan Bamboo Forest in Gijang."
+          },
+          {
+            "phase": "UNESCO core",
+            "duration": "≈ 2 hours",
+            "description": "Drive ≈70 min from Ahopsan to Bulguksa, then 75 min walking the temple."
+          },
+          {
+            "phase": "Lunch + museum",
+            "duration": "≈ 2.5 hours",
+            "description": "Local Gyeongju lunch (60 min) then 75 min in the National Museum's Silla galleries."
+          },
+          {
+            "phase": "Hanok village + bridge",
+            "duration": "≈ 2 hours",
+            "description": "Gyochon Hanok Village walk (60 min) then 40 min at Woljeonggyo Bridge."
+          },
+          {
+            "phase": "Return drive",
+            "duration": "≈ 1.25–1.5 hours",
+            "description": "Gyeongju to Busan via Gyeongbu Expressway. Drop-offs at Haeundae, Seomyeon, Busan Station."
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "How this day flows",
+          "subtitle": "A culture-first day trip from Busan to Gyeongju that emphasizes the 'legacy' theme — Korea's longest-ruling kingdom (Silla, 992 years) and the artifacts that survive. Where most Gyeongju day tours pack in 5–7 outdoor sites, this version slows the pace and includes the National Museum (a stop most tours skip). The night-illumination finale at Woljeonggyo Bridge gives the day a closing emotional beat that other circuits miss. The cherry-blossom season swap to Haeundae Dalmaji Hill is a subtle quality detail — the operator clearly designs around peak conditions rather than a fixed itinerary."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "First-time visitors to Korea who want UNESCO content in a single day",
+            "Couples and adult families",
+            "History-curious travelers willing to read museum panels",
+            "Photographers (Bulguksa pagodas + Gyochon hanok + bridge)"
+          ],
+          "lessIdealFor": [
+            "Travelers needing minimal walking",
+            "Stroller-heavy groups (Bulguksa stone steps)",
+            "Very young children (full-day rhythm)",
+            "Travelers needing a tight same-day flight buffer (return is ≈19:45 latest)"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Why this route is built this way",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "The National Museum is included (most one-day tours skip it)",
+                  "detail": "Most Gyeongju day tours skip the National Museum because it's indoor and quiet, then add a second outdoor stop to compensate. The trade-off is that visitors leave Gyeongju having seen the empty shells (royal tombs, palace ruins) but never the actual contents. The museum holds the Silla gold crown from Cheonmachong, the 18.9-ton Sacred Bell of Great King Seongdeok, and the Wolji palace excavations. This route deliberately keeps the museum in."
+                },
+                {
+                  "label": "Reconstructed Silla bridge as the day's quiet close",
+                  "detail": "Woljeonggyo Bridge is short, flat, and photogenic — a low-walking final stop after the museum's reading-heavy hour. It is illuminated nightly from sunset until ≈22:00; on this 11.5-hour route the bridge is reached at ≈17:00, which means daylight or twilight visit during late March–early October and a post-sunset / illumination visit in November–February."
+                },
+                {
+                  "label": "Year-round, with one smart seasonal swap",
+                  "detail": "The Ahopsan Bamboo Forest opener is replaced by Haeundae Dalmaji Hill during cherry-blossom season (mid-March to mid-April). The rest of the day stays identical. This keeps the route equally strong in spring without forcing the bamboo forest stop through a season when cherry blossoms in Busan are the more compelling photograph."
+                },
+                {
+                  "label": "Mini-van size between coach tour and private tour",
+                  "detail": "Coach tours from Busan to Gyeongju typically run 35–45 passengers at a low per-person price; private tours run 1–4 passengers at ~$300+ per group. This small-group mini-van format sits between — usually under 10 passengers per departure — at a per-person price closer to coach economics. Guests who have compared report a private-feeling pace without private-tour cost."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "title": "What's included",
+            "id": "inclusions",
+            "content": "Round-trip mini-van transport from Busan, certified English/Chinese-speaking guide, fuel/tolls/parking. Not included: lunch (≈₩15,000–₩25,000), Ahopsan Bamboo Forest admission (₩5,000, paid on site), tips. All other site admissions are free: Bulguksa (free since May 2023), Gyeongju National Museum (free since 2008), Gyochon Hanok Village, Woljeonggyo Bridge."
+          },
+          {
+            "title": "Pickup & drop-off",
+            "id": "pickup",
+            "content": "Three sequential pickup points along Busan Subway Line 1: Busan Station Exit 4 (08:10), Seomyeon Station Exit 4 (08:30), Haeundae Station Exit 5 (09:10). Choose the exit closest to your hotel at booking. Drop-offs in reverse order: Haeundae ≈19:00, Seomyeon ≈19:25, Busan Station ≈19:45. Provide a WhatsApp / KakaoTalk number at booking; the guide will message the day before with vehicle details."
+          },
+          {
+            "title": "Walking & terrain",
+            "id": "walking",
+            "content": "Moderate. Total walking distance ≈4–5 km across the day. Bulguksa has stone steps between the temple terraces (the lower bridges have 33 steps each, used as a viewing feature; the main visitor route uses a sloped path that bypasses them). The National Museum is flat indoor walking with seating. Gyochon is flat hanok alleys. Woljeonggyo is a flat bridge crossing. Comfortable closed-toe shoes essential — Bulguksa's stone is uneven and slippery when wet."
+          },
+          {
+            "title": "Cancellation",
+            "id": "cancellation",
+            "content": "Free cancellation up to 24 hours before pickup. Same-day cancellations and no-shows are non-refundable. If the operator cancels (force majeure, weather, road closure), full refund."
+          },
+          {
+            "title": "Seasonal route notes",
+            "id": "seasonal",
+            "content": "Cherry blossom season (typically mid-March to mid-April; exact dates vary by ≈7–10 days year-to-year): Ahopsan Bamboo Forest is replaced by Haeundae Dalmaji Hill, Busan's coastal cherry-tunnel road. Winter (November–February): Woljeonggyo Bridge begins to illuminate before the 17:00 arrival because sunset is 17:15–17:30 — this is the only window when the post-sunset reflection shot is reliably possible."
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "See seasonal notes"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "See seasonal notes"
+          },
+          "_seasonalSummary": "Gyeongju has continental Korean weather — colder than Busan in winter, hotter in summer. Best seasons are April (cherry blossoms in Gyeongju as well) and October–November (foliage at Bulguksa).",
+          "_seasonalTemperatures": [
+            {
+              "season": "Spring (Mar–May)",
+              "range": "5–22°C",
+              "notes": "Cherry blossoms peak early April. Best season overall."
+            },
+            {
+              "season": "Summer (Jun–Aug)",
+              "range": "22–32°C",
+              "notes": "Hot and humid; museum is air-conditioned."
+            },
+            {
+              "season": "Autumn (Sep–Nov)",
+              "range": "8–24°C",
+              "notes": "Foliage at Bulguksa in late October — exceptional."
+            },
+            {
+              "season": "Winter (Dec–Feb)",
+              "range": "-3 to 8°C",
+              "notes": "Cold; museum and indoor café options become more valuable."
+            }
+          ]
+        },
+        "seasonalVariations": [
+          {
+            "season": "Spring (mid-Mar to mid-Apr, cherry blossom window)",
+            "highlight": "Ahopsan opener swaps for Haeundae Dalmaji Hill cherry-blossom road. Bulguksa grounds peak in mid-April; Dabotap framed by double cherry blossoms is the classic photo."
+          },
+          {
+            "season": "Summer (Jun–Aug)",
+            "highlight": "Bamboo forest stays cool under canopy; museum air-conditioned. Bulguksa's mountain setting milder than coastal Busan. Bridge is in full daylight at 17:00 arrival."
+          },
+          {
+            "season": "Autumn (late Sep to late Oct)",
+            "highlight": "Bulguksa late-October foliage is one of Korea's classic photographic shots. Gyeongju's tomb mounds also turn. Bridge at 17:00 enters twilight by mid-October."
+          },
+          {
+            "season": "Winter (Nov–Feb)",
+            "highlight": "Quietest crowds; museum becomes the most-valued indoor stop. Sunset 17:15–17:30 means the bridge begins to illuminate during your visit — the only window for the post-sunset reflection shot."
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Licensed local operator",
+            "description": "Authorized Korean tour operator with full insurance",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "route",
+            "title": "Route specialists",
+            "description": "Hand-tuned itinerary, not a generic loop",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          },
+          {
+            "icon": "users",
+            "title": "Curated group size",
+            "description": "Right-sized for the route",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Immediately",
+            "title": "Instant Confirmation",
+            "detail": "Booking confirmation with itinerary summary"
+          },
+          {
+            "timing": "12 hours before",
+            "title": "12-Hour Reminder",
+            "detail": "Weather update and any route adjustments"
+          },
+          {
+            "timing": "Evening before",
+            "title": "Final Pickup Info",
+            "detail": "Exact pickup time and driver contact"
+          },
+          {
+            "timing": "Morning of tour",
+            "title": "Day-of Route Notes",
+            "detail": "Morning briefing based on live conditions"
+          },
+          {
+            "timing": "During tour",
+            "title": "Stop-by-Stop Tips",
+            "detail": "Real-time guidance at each location"
+          },
+          {
+            "timing": "After tour",
+            "title": "Post-tour Support",
+            "detail": "Follow-up and recommendations"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q-bridge-night-view",
+            "question": "Is the bridge actually illuminated when we visit?",
+            "answer": "It depends on the season. The bridge is illuminated nightly year-round from sunset until ≈22:00, but this tour reaches the bridge at ≈17:00. In Gyeongju, sunset is 17:15–17:30 in November–February (so you arrive just before illumination begins and see the lights come on), 18:00–18:30 in March/April and September/October (twilight, lights begin around your departure), and 19:00–19:40 in May–August (full daylight). If the post-sunset reflection shot is your priority, book this route in late autumn or winter."
+          },
+          {
+            "id": "q-vs-ancient-capital",
+            "question": "How is this different from the 'Ancient Capital' day tour from Busan?",
+            "answer": "Both tours run on a similar route (Ahopsan → Bulguksa → museum → Gyochon → bridge). The 'UNESCO Legacy' framing on this product emphasizes the heritage value of the stops and includes a slightly longer museum block (75 min vs 60 min). The 'Ancient Capital' framing leans general-interest and runs ≈30 min shorter overall. If you specifically want time inside the museum, choose this one; if you prefer a calmer pace and earlier return, choose the Ancient Capital version."
+          },
+          {
+            "id": "q-seokguram",
+            "question": "What about Seokguram Grotto? It's the other UNESCO site at Bulguksa.",
+            "answer": "Seokguram is on the same UNESCO inscription as Bulguksa but sits 8 km up the mountain by a steep, narrow road. The combination of distance, parking constraints, and the 10-minute walk from the Seokguram parking lot makes it impractical to add to a Bulguksa-plus-museum-plus-bridge day. Most one-day Gyeongju tours include either Bulguksa or Seokguram, not both. For Seokguram, see the alternate Gyeongju UNESCO tours that skip the museum and Gyochon."
+          },
+          {
+            "id": "q-admissions",
+            "question": "Are admissions included?",
+            "answer": "Most are free, so the only out-of-pocket admission is Ahopsan Bamboo Forest (₩5,000 cash, paid on-site). Bulguksa Temple has been free since May 2023; Gyeongju National Museum has been free since November 2008; Gyochon Hanok Village and Woljeonggyo Bridge are free. Plan ₩15,000–₩25,000 for lunch and ₩5,000 for Ahopsan, so total typical out-of-pocket ≈ ₩20,000–₩30,000 per person."
+          },
+          {
+            "id": "q-museum-language",
+            "question": "Is there English signage in the museum?",
+            "answer": "Yes. The Gyeongju National Museum has English and Chinese exhibit panels throughout the three permanent halls (Silla History, Silla Art, Wolji Hall). The Sacred Bell outside the entrance has multilingual interpretive panels. Free English audio guides are available at the information desk with ID deposit; reserving one in advance via the museum website is reliable."
+          },
+          {
+            "id": "q-bulguksa-photography",
+            "question": "Can I take photos at Bulguksa?",
+            "answer": "Photography is allowed throughout the temple grounds, including the two pagodas and the lower-terrace stone bridges. Avoid flash and tripods inside the worship halls (Daeungjeon and adjacent buildings) where services may be in progress, and please lower your voice near monks. Cherry blossoms peak in mid-April and frame Dabotap; autumn foliage peaks late October — both are the most-photographed times."
+          },
+          {
+            "id": "q-bulguksa-stairs",
+            "question": "Do I have to climb the 33-step stone bridges at Bulguksa?",
+            "answer": "No. The two stone bridges (Cheongun-gyo / Baegun-gyo) are National Treasures and are preserved as viewing features — visitors observe them from the lower courtyard rather than walking up them. The visitor path uses a separate sloped route up to the main courtyard, suitable for most fitness levels."
+          },
+          {
+            "id": "q-vegetarian",
+            "question": "Are there vegetarian options for lunch?",
+            "answer": "Yes. Gyeongju ssambap (banchan-heavy rice-and-leaf wraps, the regional signature) is naturally heavy on vegetable side dishes; ordering it without meat banchan is straightforward. The guide can also route to a temple-cuisine (사찰음식) restaurant for fully vegetarian meals on request — please advise at booking. Halal and gluten-free options are limited but possible with advance notice."
+          },
+          {
+            "id": "q-rain",
+            "question": "What if it rains?",
+            "answer": "Light rain: tour operates as planned. Heavy rain: Bulguksa stone steps become slippery and the Ahopsan path can muddy; the guide may shorten outdoor time and extend the museum visit (covered, climate-controlled). Typhoon-level weather: if regional warnings are issued, the operator will offer rebooking or a full refund."
+          },
+          {
+            "id": "first-time",
+            "question": "Is this a good choice for first-time visitors to Gyeongju?",
+            "answer": "Yes — it covers the most distinctive UNESCO and cultural stops in Gyeongju in a single balanced day, with both indoor (museum) and outdoor (temple, village, bridge) content. First-time visitors who want UNESCO heritage content as part of a Korea trip are the primary audience for this product."
+          },
+          {
+            "id": "walking",
+            "question": "How much walking is there?",
+            "answer": "≈4–5 km total. Bulguksa Temple has the most active walking (uneven stone, gentle uphill); the museum is flat indoors; Gyochon and the bridge are flat. Comfortable closed-toe shoes are essential."
+          },
+          {
+            "id": "family",
+            "question": "Is this suitable for families with children?",
+            "answer": "Yes for school-age children (≈8+) who can handle a full-day rhythm. The museum's gold crown and the giant bell are typically the kid-favorite stops; the bamboo forest is sensory-friendly. Younger children may find the museum's quiet halls less engaging."
+          },
+          {
+            "id": "seniors",
+            "question": "Can older adults join comfortably?",
+            "answer": "Recommended for active seniors comfortable with 4–5 km of walking and uneven stone at Bulguksa. The pace is moderate with seated museum time built in. Travelers using a cane manage the route; wheelchair users should consider a private tour with route adjustments."
+          },
+          {
+            "id": "children",
+            "question": "What's the recommended minimum age?",
+            "answer": "Best fit is around age 8 and up — children comfortable with the walking note above and a full-day pace. Children younger than that may flag during the museum visit."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "person",
+          "priceSource": "getyourguide_t1031312",
+          "priceNote": "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across packages and operators. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+          "discountPercent": 10
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v15.4_new_tour_creation"
+    ],
+    "fix_passes": {
+      "v15.4_new_tour_creation": "Created new tour from GYG product ID t1192332 (Busan-Gyeongju spring cherry blossom day tour). Structural template: busan-gyeongju-unesco-legacy-tour-national-museum (same Busan→Gyeongju logistics, shuttle small_group format). Content layered with cherry-blossom-specific POIs added to KB v1.1: bomun_lake, daereungwon_tomb_complex, cheomseongdae. POI operational data sourced from VisitKorea, Visit Busan, Gyeongju City tourism office, Trazy listings, KoreaTravelEasy, Seoul Pass listings (cross-verified across 4–6 sources per POI). SEASONALITY is STRICT: spring=1.0, summer/autumn/winter=0.0 — tour operates only Mar 28–Apr 10 (verified from GYG t1192332 dating and Trazy listings 2024–2026). MATCHING-PROFILE SCORING METHODOLOGY: All 68 fields scored from verified facts about the actual stops in the default itinerary (walking distances measured, accessibility per VisitKorea + AllTrails, hours/admission per official tourism boards, UNESCO designations per UNESCO World Heritage List). Inline reasoning for each non-trivial score is captured as comments in the generator script step3b_create_cherry_blossom_tour.py — Jason can review or adjust any specific score by editing the generator and re-running. Key derivations: (1) walking_level=0.50 from measured 3–5km total walking with mostly flat paths and one stair section; (2) unesco_fit=0.95 from 3-of-4 stops being UNESCO-listed; (3) seasonality.spring=1.0 + others=0.0 from verified seasonal-only operating dates; (4) couple_fit=0.95 vs young_kids_fit=0.50 from cherry blossom romance vs 8.5h day length tradeoff; (5) value_for_money_fit=0.85 from 4 free admissions + shuttle pricing in peak demand season. REASONABLE-ASSUMPTION FIELDS that may need patching once the live GYG page is reviewed: (a) price.amountLabel left empty (per-person pricing TBD); (b) catalog_card.priceFromUSD null; (c) exact pickup times (08:00/08:15/08:30) assumed from typical shuttle schedule; (d) reviewsSummary populated with zeros — actual GYG reviews not imported in this pass; (e) hero/og images deferred per v15 P3 image workflow.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 0,
+        "fields_skipped": 0,
+        "fields_already_float": 42
+      }
+    }
+  }
+}

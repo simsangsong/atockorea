@@ -30,6 +30,8 @@ export type TourStopDrawerStop = {
   duration?: string;
   description?: string;
   image?: string;
+  /** Optional secondary photos for the hero strip and hover cycle. */
+  images?: readonly string[];
   highlights?: readonly string[];
   whyOnRoute?: string;
   visitBasics?: {
@@ -63,6 +65,37 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
       return (
         <strong key={i} className="font-semibold text-foreground">
           {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return <Fragment key={i}>{part}</Fragment>;
+  });
+}
+
+/** Premium-styled inline markdown for the description modal. Restraint over
+ *  saturation: only the FIRST `**bold**` per paragraph reads as a key-term
+ *  highlight (soft amber wash). Subsequent bolds stay as plain `<strong>` —
+ *  weight only, no color noise. Measurements get tabular-nums but no underline. */
+function renderModalInline(text: string): React.ReactNode[] {
+  if (!text) return [];
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  let boldIndex = 0;
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
+      const inner = part.slice(2, -2);
+      const isFirstBold = boldIndex === 0;
+      boldIndex += 1;
+      const isMeasurement = /^[0-9][\d.,\s/–-]*\s*(?:m²|m|km|hr|min|%|kg|₩|\$|€|¥|°C|°F|pyeong|평)?\s*$/i.test(inner.trim());
+      return (
+        <strong
+          key={i}
+          className={cn(
+            "font-semibold text-foreground",
+            isMeasurement && "tabular-nums",
+            isFirstBold && "rounded-[3px] bg-amber-100/55 px-[3px] py-[1px]",
+          )}
+        >
+          {inner}
         </strong>
       );
     }
@@ -166,6 +199,7 @@ const SHORT_WHY_THRESHOLD = 140;
 export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourStopDetailDrawerProps) {
   const [highlightsExpanded, setHighlightsExpanded] = useState(false);
   const [whyExpanded, setWhyExpanded] = useState(false);
+  const [descModalOpen, setDescModalOpen] = useState(false);
   const [prevStopNumber, setPrevStopNumber] = useState(stop?.number);
 
   /**
@@ -177,7 +211,29 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
     setPrevStopNumber(stop?.number);
     setHighlightsExpanded(false);
     setWhyExpanded(false);
+    setDescModalOpen(false);
   }
+
+  // Esc closes the description modal first, then the drawer.
+  useEffect(() => {
+    if (!descModalOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        e.stopPropagation();
+        setDescModalOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKey, true);
+    return () => window.removeEventListener("keydown", onKey, true);
+  }, [descModalOpen]);
+
+  const galleryPhotos = stop?.images && stop.images.length > 0
+    ? stop.images
+    : stop?.image
+      ? [stop.image]
+      : [];
+  const stripPhotos = galleryPhotos.length > 1 ? galleryPhotos.slice(1) : [];
 
   useEffect(() => {
     if (!open) return;
@@ -255,6 +311,29 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
               )}
             </div>
 
+            {/* Mini gallery strip — horizontal scroll under hero (extra photos beyond cover) */}
+            {stripPhotos.length > 0 && (
+              <div className="flex-shrink-0 border-b border-border/50 bg-white">
+                <div className="flex gap-1.5 overflow-x-auto scrollbar-hide px-5 py-2.5">
+                  {stripPhotos.map((src, i) => (
+                    <div
+                      key={`${src}-${i}`}
+                      className="flex-shrink-0 h-16 w-24 overflow-hidden rounded-lg bg-muted ring-1 ring-border/40 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_4px_10px_-4px_rgba(26,35,50,0.16)]"
+                    >
+                      <img
+                        src={src}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  ))}
+                  <div className="flex-shrink-0 w-1" aria-hidden />
+                </div>
+              </div>
+            )}
+
             {/* Scrollable body */}
             <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
               <div className="space-y-5 p-5">
@@ -277,7 +356,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
                   )}
                 </div>
 
-                {/* Highlights — first 5 visible, "Show all N" reveals the rest */}
+                {/* Highlights — compact + premium with optional "Read full description" link */}
                 {stop.highlights && stop.highlights.length > 0 && (() => {
                   const all = stop.highlights;
                   const visible = highlightsExpanded
@@ -286,18 +365,30 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
                   const hasMore = all.length > HIGHLIGHTS_DEFAULT_COUNT;
                   return (
                     <div>
-                      <h3 className="mb-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-                        {sectionUi.stopHighlightsHeading}
-                      </h3>
-                      <ul className="grid grid-cols-1 gap-2.5">
+                      <div className="mb-2.5 flex items-center justify-between gap-3">
+                        <h3 className="text-[10.5px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                          {sectionUi.stopHighlightsHeading}
+                        </h3>
+                        {stop.description && (
+                          <button
+                            type="button"
+                            onClick={() => setDescModalOpen(true)}
+                            className="inline-flex items-center gap-1 rounded-full bg-primary/[0.08] px-2.5 py-1 text-[10.5px] font-semibold text-primary transition-colors hover:bg-primary/[0.14]"
+                          >
+                            <BookOpen className="h-3 w-3" strokeWidth={2.25} />
+                            {sectionUi.stopFullDescriptionTitle ?? "Full description"}
+                          </button>
+                        )}
+                      </div>
+                      <ul className="grid grid-cols-1 gap-1.5">
                         {visible.map((highlight, i) => (
                           <li
                             key={i}
-                            className="flex items-start gap-2.5 text-[14px] leading-relaxed text-foreground"
+                            className="flex items-start gap-2 text-[13px] leading-[1.5] text-foreground"
                           >
                             <span
                               aria-hidden
-                              className="mt-[7px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent"
+                              className="mt-[7px] h-1 w-1 flex-shrink-0 rounded-full bg-accent"
                             />
                             <span>{renderInlineMarkdown(highlight)}</span>
                           </li>
@@ -308,7 +399,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
                           type="button"
                           onClick={() => setHighlightsExpanded((v) => !v)}
                           aria-expanded={highlightsExpanded}
-                          className="mt-3 inline-flex items-center gap-1 text-[12.5px] font-semibold text-primary transition-colors hover:text-primary/80"
+                          className="mt-2.5 inline-flex items-center gap-1 text-[12px] font-semibold text-primary transition-colors hover:text-primary/80"
                         >
                           {highlightsExpanded ? "Show fewer" : `Show all ${all.length}`}
                           <ChevronDown
@@ -364,25 +455,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
                   );
                 })()}
 
-                {/* Collapsible — Full description */}
-                {stop.description && (
-                  <CollapsibleSection
-                    icon={<BookOpen className="h-4 w-4" strokeWidth={2} />}
-                    title={sectionUi.stopFullDescriptionTitle ?? "Full description"}
-                    meta={sectionUi.stopFullDescriptionMeta ?? "Tap to read"}
-                  >
-                    <div className="space-y-3.5">
-                      {splitDescriptionToParagraphs(stop.description).map((p, i) => (
-                        <p
-                          key={i}
-                          className="text-[15px] leading-[1.75] tracking-[-0.005em] text-foreground/90"
-                        >
-                          {renderInlineMarkdown(p)}
-                        </p>
-                      ))}
-                    </div>
-                  </CollapsibleSection>
-                )}
+                {/* Description is no longer inline — opens via the Highlights link button as a modal popup. */}
 
                 {/* Collapsible — Time breakdown */}
                 {Array.isArray(stop.timeUsed) && stop.timeUsed.length > 0 && (
@@ -541,6 +614,85 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
               </div>
             </div>
           </motion.aside>
+
+          {/* Wikipedia-style description popup — opens from the Highlights link button */}
+          <AnimatePresence>
+            {descModalOpen && stop.description && (
+              <>
+                <motion.div
+                  key="tour-stop-desc-backdrop"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.22, ease: drawerEase }}
+                  className="fixed inset-0 z-[80] bg-[#0c1622]/60 backdrop-blur-[3px]"
+                  onClick={() => setDescModalOpen(false)}
+                  aria-hidden
+                />
+                <motion.div
+                  key="tour-stop-desc-modal"
+                  role="dialog"
+                  aria-modal="true"
+                  aria-label={`${stop.name} — ${sectionUi.stopFullDescriptionTitle ?? "Full description"}`}
+                  initial={{ opacity: 0, y: 32 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 32 }}
+                  transition={{ duration: 0.32, ease: drawerEase }}
+                  className={cn(
+                    "fixed z-[81] flex flex-col overflow-hidden bg-white",
+                    "shadow-[0_-12px_40px_rgba(12,22,34,0.18),0_-4px_12px_rgba(12,22,34,0.10)]",
+                    // Mobile: bottom sheet — full width, anchored to bottom, rounded top
+                    "bottom-0 left-0 right-0 max-h-[88dvh] rounded-t-2xl",
+                    // Desktop (sm+): centered card
+                    "sm:bottom-auto sm:left-1/2 sm:right-auto sm:top-1/2 sm:max-h-[88dvh] sm:w-[min(640px,calc(100vw-2rem))] sm:-translate-x-1/2 sm:-translate-y-1/2 sm:rounded-2xl",
+                    "sm:shadow-[0_30px_80px_rgba(12,22,34,0.30),0_8px_20px_rgba(12,22,34,0.18)] sm:ring-1 sm:ring-border/60",
+                  )}
+                >
+                  {/* Mobile drag handle (visual only) */}
+                  <div className="flex justify-center pt-2 pb-1 sm:hidden">
+                    <span aria-hidden className="h-1 w-9 rounded-full bg-muted-foreground/30" />
+                  </div>
+
+                  {/* Modal header — title + close */}
+                  <div className="relative flex flex-shrink-0 items-start justify-between gap-3 border-b border-border/60 bg-gradient-to-b from-white via-white to-muted/15 px-5 py-3.5 sm:px-6 sm:py-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary/85">
+                        {sectionUi.stopFullDescriptionTitle ?? "Full description"}
+                      </p>
+                      <h3 className="mt-1 text-[17px] font-semibold tracking-tight text-foreground sm:text-[19px]">
+                        {stop.name}
+                      </h3>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setDescModalOpen(false)}
+                      aria-label="Close"
+                      className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-muted/70 text-muted-foreground transition-all hover:bg-muted active:scale-95"
+                    >
+                      <X className="h-4 w-4" strokeWidth={2.25} />
+                    </button>
+                  </div>
+
+                  {/* Modal body — premium typographic description */}
+                  <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain bg-[linear-gradient(180deg,#ffffff_0%,#fdfcfa_100%)]">
+                    <article className="px-5 py-5 sm:px-6 sm:py-6">
+                      {splitDescriptionToParagraphs(stop.description).map((p, i) => (
+                        <p
+                          key={i}
+                          className={cn(
+                            "text-[15px] leading-[1.75] tracking-[-0.003em] text-foreground/88 break-words [overflow-wrap:anywhere] hyphens-auto",
+                            i === 0 ? "first-letter:float-left first-letter:mr-2 first-letter:text-[40px] first-letter:font-semibold first-letter:leading-[0.95] first-letter:text-foreground" : "mt-4",
+                          )}
+                        >
+                          {renderModalInline(p)}
+                        </p>
+                      ))}
+                    </article>
+                  </div>
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
         </>
       )}
     </AnimatePresence>

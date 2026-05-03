@@ -73,15 +73,19 @@ export async function POST(req: NextRequest) {
       case 'payment_intent.amount_capturable_updated': {
         const pi = event.data.object as Stripe.PaymentIntent;
         const bookingId = pi.metadata?.booking_id;
+        console.log(`[webhook] amount_capturable_updated pi=${pi.id} booking=${bookingId ?? '<none>'} status=${pi.status}`);
         if (!bookingId) break;
 
         /** Card auth succeeded — booking is now confirmed (no charge yet). */
-        const { data: existing } = await supabase
+        const { data: existing, error: existingErr } = await supabase
           .from('bookings')
           .select('id, payment_intent_status, status')
           .eq('id', bookingId)
           .single();
 
+        if (existingErr) {
+          console.error(`[webhook] existing-fetch error for booking ${bookingId}:`, existingErr);
+        }
         if (existing?.payment_intent_status === 'captured') {
           // Already captured — don't downgrade.
           break;
@@ -89,7 +93,7 @@ export async function POST(req: NextRequest) {
 
         const expiresAt = new Date(Date.now() + 7 * 86400000).toISOString();
 
-        const { data: updated } = await supabase
+        const { data: updated, error: updateErr } = await supabase
           .from('bookings')
           .update({
             status: 'confirmed',
@@ -104,6 +108,10 @@ export async function POST(req: NextRequest) {
           .neq('payment_intent_status', 'captured')
           .select()
           .single();
+
+        if (updateErr) {
+          console.error(`[webhook] update error for booking ${bookingId}:`, updateErr);
+        }
 
         if (!updated) {
           console.log(`Booking ${bookingId} already authorized (idempotent), skipping email`);

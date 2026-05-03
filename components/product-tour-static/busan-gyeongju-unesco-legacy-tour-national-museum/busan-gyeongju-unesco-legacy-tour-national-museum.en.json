@@ -95,34 +95,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "≈ 11.5 hours (08:10 first pickup, ≈ 19:45 last drop)"
+      "icon": "camera",
+      "label": "Photo Value",
+      "value": "High",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "Group",
-      "value": "Small group, mini-van (typically up to ≈10 passengers)"
-    },
-    {
-      "icon": "subway",
-      "label": "Pickup",
-      "value": "Busan Station Exit 4 (08:10), Seomyeon Exit 4 (08:30), Haeundae Exit 5 (09:10)"
-    },
-    {
-      "icon": "calendar",
-      "label": "Best season",
-      "value": "Year-round; cherry-blossom alt route mid-Mar to mid-Apr (Ahopsan replaced by Haeundae Dalmaji Hill)"
+      "icon": "mountain",
+      "label": "Scenic",
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Moderate — ≈4–5 km total. Bulguksa terraces and steps; flat at the museum, hanok village, and bridge."
+      "value": "Moderate",
+      "level": 3
     },
     {
-      "icon": "ticket",
-      "label": "Includes",
-      "value": "Round-trip transport, certified guide. Entry fees: Bulguksa free (since May 2023), museum free, Gyochon free, bridge free; only Ahopsan (₩5,000) is paid on-site. Lunch on guest."
+      "icon": "cloud-rain",
+      "label": "Rain Safety",
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "Family Fit",
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "gauge",
+      "label": "Balance",
+      "value": "Balanced",
+      "level": 4
     }
   ],
   "galleryItems": [

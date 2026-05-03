@@ -1,50 +1,92 @@
-import { Camera, Mountain, Footprints, CloudRain, Users, Scale, Gauge } from "lucide-react";
-import type { GlanceItem } from "@/components/product-tour-static/_shared/tourProductDetailSectionTypes";
+import { cn } from "@/lib/utils";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
-const ICON_MAP: Record<string, typeof Camera> = {
-  camera: Camera,
-  mountain: Mountain,
-  footprints: Footprints,
-  "cloud-rain": CloudRain,
-  users: Users,
-  scale: Scale,
-  gauge: Gauge,
-};
+const MAX_LEVEL = 5;
 
-const GLANCE_ICON_FALLBACK = Scale;
+const ROW_ACCENT_COLORS = [
+  "bg-emerald-500",
+  "bg-amber-500",
+  "bg-orange-500",
+  "bg-rose-500",
+  "bg-violet-500",
+  "bg-sky-500",
+];
+
+function clampLevel(level: number | undefined): number {
+  if (typeof level !== "number" || !Number.isFinite(level)) return 0;
+  return Math.max(0, Math.min(MAX_LEVEL, Math.round(level)));
+}
 
 export type TourAtAGlanceProps = Pick<EastSignatureNatureCoreDetailViewModel, "glanceItems" | "sectionUi">;
 
 export function TourAtAGlance({ glanceItems, sectionUi }: TourAtAGlanceProps) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       <div>
-        <h2 className="text-[17px] font-semibold text-foreground tracking-[-0.02em]">{sectionUi.atAGlanceTitle}</h2>
-        <p className="mt-1.5 text-[13px] text-muted-foreground leading-relaxed">{sectionUi.atAGlanceSubtitle}</p>
+        <h2 className="text-[17px] font-semibold text-foreground tracking-[-0.02em]">
+          {sectionUi.atAGlanceTitle}
+        </h2>
+        <p className="mt-1.5 text-[13px] text-muted-foreground leading-relaxed">
+          {sectionUi.atAGlanceSubtitle}
+        </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-3">
-        {glanceItems.map((item) => {
-          const Icon = ICON_MAP[item.icon] ?? GLANCE_ICON_FALLBACK;
-          return (
-            <div
-              key={item.label}
-              className="tour-glance-card group relative flex min-h-[132px] flex-col items-center justify-center text-center rounded-2xl px-3 py-4 transition-all duration-300"
-            >
-              <span aria-hidden className="tour-glance-card__sheen" />
-              <div className="tour-glance-card__icon-ring flex h-9 w-9 shrink-0 items-center justify-center rounded-full mb-4 transition-transform duration-300 group-hover:scale-[1.06]">
-                <Icon className="h-[16px] w-[16px]" strokeWidth={1.6} />
-              </div>
-              <p className="text-[10.5px] font-semibold tracking-[0.1em] uppercase text-muted-foreground leading-[1.35]">
-                {item.label}
-              </p>
-              <p className="mt-2 text-[13.5px] font-semibold text-foreground tracking-[-0.01em] leading-[1.2]">
-                {item.value}
-              </p>
-            </div>
-          );
-        })}
+      <div
+        className={cn(
+          "relative overflow-hidden rounded-2xl ring-1",
+          "bg-gradient-to-br from-[#fcf9f4] via-[#fefcf8] to-[#f8f4ec]",
+          "ring-amber-100/40",
+          "shadow-[0_2px_4px_rgba(26,35,50,0.05),0_6px_14px_-4px_rgba(26,35,50,0.08),0_22px_44px_-18px_rgba(26,35,50,0.22),0_12px_24px_-12px_rgba(26,35,50,0.14)]",
+        )}
+      >
+        <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
+        <ul className="relative divide-y divide-border/35 px-4 sm:px-5">
+          {glanceItems.map((item, idx) => {
+            const filled = clampLevel(item.level);
+            const hasLevel = filled > 0;
+            const accentBg = ROW_ACCENT_COLORS[idx % ROW_ACCENT_COLORS.length];
+            return (
+              <li
+                key={item.label}
+                className="flex items-center justify-between gap-4 py-3 sm:py-3.5"
+              >
+                <span className="flex items-center gap-2.5">
+                  <span aria-hidden className={cn("h-1.5 w-1.5 flex-shrink-0 rounded-full", accentBg)} />
+                  <span className="text-[14px] font-medium tracking-[-0.005em] text-foreground sm:text-[14.5px]">
+                    {item.label}
+                  </span>
+                </span>
+
+                {hasLevel ? (
+                  <span
+                    className="flex items-center gap-1.5"
+                    role="img"
+                    aria-label={`${item.value} (${filled}/${MAX_LEVEL})`}
+                  >
+                    {Array.from({ length: MAX_LEVEL }, (_, i) => {
+                      const isFilled = i < filled;
+                      return (
+                        <span
+                          key={i}
+                          aria-hidden
+                          className={
+                            isFilled
+                              ? cn("h-[7px] w-[7px] rounded-full", accentBg)
+                              : "h-[7px] w-[7px] rounded-full border border-foreground/25 bg-transparent"
+                          }
+                        />
+                      );
+                    })}
+                  </span>
+                ) : (
+                  <span className="text-[12px] font-medium tracking-[0.02em] text-muted-foreground">
+                    {item.value}
+                  </span>
+                )}
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );

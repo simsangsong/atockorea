@@ -2,11 +2,18 @@ import {
   getStaticTourProductBySlug,
   type StaticTourProductRegistration,
 } from "@/components/product-tour-static/catalog/staticTourProductRegistry";
+import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import { FEATURED_JOIN_TOUR_SLUG } from "@/lib/home/home-cta-routes";
 
-/** Flagship join tour on the home v2 surface — single source for USD list / compare-at on cards. */
-export function getFeaturedJoinTourProduct(): StaticTourProductRegistration {
-  const p = getStaticTourProductBySlug(FEATURED_JOIN_TOUR_SLUG);
+/**
+ * Flagship join tour on the home v2 surface — single source for USD list /
+ * compare-at on cards. `locale` defaults to `"en"`; pass an explicit locale to
+ * get translated `title` / `subtitle` / `badges` / `duration` for card text.
+ */
+export function getFeaturedJoinTourProduct(
+  locale: TourProductPageLocale = "en",
+): StaticTourProductRegistration {
+  const p = getStaticTourProductBySlug(FEATURED_JOIN_TOUR_SLUG, locale);
   if (!p) {
     throw new Error(`Missing static tour product for featured join: ${FEATURED_JOIN_TOUR_SLUG}`);
   }

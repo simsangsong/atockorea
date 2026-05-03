@@ -28,6 +28,8 @@ export type GlanceItem = {
   label: string;
   value: string;
   icon: GlanceItemIcon | (string & {});
+  /** 1–5 dot indicator. Filled = level, hollow = remainder. */
+  level?: number;
 };
 
 export type GalleryMediaItem = {
@@ -75,6 +77,8 @@ export type ItineraryStop = {
   category?: string;
   description?: string;
   image?: string;
+  /** Optional secondary photos for the v0-style horizontal photo strip on the stop card. */
+  images?: readonly string[];
   highlights?: readonly string[];
   whyOnRoute?: string;
   /** Some authoring batches emit a single string instead of an array. */
@@ -217,6 +221,8 @@ export type TourProductHero = {
     rating: number;
     ratingStars: number;
   };
+  /** Optional auto-cycling slide images. First entry should match imageUrl for SSR consistency. */
+  images?: readonly string[];
 };
 
 export type TourProductPrice = {

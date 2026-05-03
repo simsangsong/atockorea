@@ -91,32 +91,38 @@
     {
       "icon": "camera",
       "label": "Photo Value",
-      "value": "Very High"
+      "value": "High",
+      "level": 5
     },
     {
-      "icon": "calendar",
-      "label": "Season",
-      "value": "Jun - Mid Jul"
-    },
-    {
-      "icon": "users",
-      "label": "Group Size",
-      "value": "Small Group"
-    },
-    {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "9 hours"
-    },
-    {
-      "icon": "map-pin",
-      "label": "Region",
-      "value": "Southwest Jeju"
+      "icon": "mountain",
+      "label": "Scenic",
+      "value": "High",
+      "level": 5
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Easy to moderate"
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Rain Safety",
+      "value": "Low",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "Family Fit",
+      "value": "Good",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Balance",
+      "value": "Focused",
+      "level": 3
     }
   ],
   "galleryItems": [

@@ -15,6 +15,61 @@ const SEASON_ICONS = {
   snow: Snowflake,
 } as const;
 
+type SeasonTheme = {
+  card: string;
+  ring: string;
+  iconRing: string;
+  iconColor: string;
+};
+
+const SEASON_THEMES: Record<string, SeasonTheme> = {
+  flower: {
+    card: "bg-gradient-to-br from-rose-50 via-white to-rose-100/50",
+    ring: "ring-rose-100/70",
+    iconRing: "bg-gradient-to-br from-rose-100 to-rose-200/60 ring-rose-200/60",
+    iconColor: "text-rose-500",
+  },
+  sun: {
+    card: "bg-gradient-to-br from-amber-50 via-white to-amber-100/50",
+    ring: "ring-amber-100/70",
+    iconRing: "bg-gradient-to-br from-amber-100 to-amber-200/70 ring-amber-200/60",
+    iconColor: "text-amber-500",
+  },
+  leaf: {
+    card: "bg-gradient-to-br from-orange-50 via-white to-orange-100/50",
+    ring: "ring-orange-100/70",
+    iconRing: "bg-gradient-to-br from-orange-100 to-orange-200/60 ring-orange-200/60",
+    iconColor: "text-orange-500",
+  },
+  snow: {
+    card: "bg-gradient-to-br from-sky-50 via-white to-sky-100/50",
+    ring: "ring-sky-100/70",
+    iconRing: "bg-gradient-to-br from-sky-100 to-sky-200/60 ring-sky-200/60",
+    iconColor: "text-sky-500",
+  },
+};
+
+const SEASON_THEME_FALLBACK: SeasonTheme = {
+  card: "bg-gradient-to-br from-slate-50 via-white to-slate-100/40",
+  ring: "ring-border/70",
+  iconRing: "bg-gradient-to-br from-slate-100 to-slate-200/60 ring-border/60",
+  iconColor: "text-slate-500",
+};
+
+/** Derive season theme + icon from name (schema v7 dropped explicit icon/bgClass fields). */
+function resolveSeason(name: string, iconKey?: string): { theme: SeasonTheme; Icon: typeof Flower2 } {
+  if (iconKey && SEASON_THEMES[iconKey]) {
+    const Icon = SEASON_ICONS[iconKey as keyof typeof SEASON_ICONS] ?? Flower2;
+    return { theme: SEASON_THEMES[iconKey], Icon };
+  }
+  const t = name.toLowerCase();
+  if (/spring|봄|春|primavera/.test(t)) return { theme: SEASON_THEMES.flower, Icon: Flower2 };
+  if (/summer|여름|夏|verano/.test(t)) return { theme: SEASON_THEMES.sun, Icon: Sun };
+  if (/autumn|fall|가을|秋|otoño/.test(t)) return { theme: SEASON_THEMES.leaf, Icon: Leaf };
+  if (/winter|겨울|冬|invierno/.test(t)) return { theme: SEASON_THEMES.snow, Icon: Snowflake };
+  return { theme: SEASON_THEME_FALLBACK, Icon: Flower2 };
+}
+
 export type TourPracticalDetailsProps = Pick<
   EastSignatureNatureCoreDetailViewModel,
   "practicalAccordionItems" | "practicalWeatherStatic" | "seasonalVariations" | "sectionUi"
@@ -93,24 +148,15 @@ export function TourPracticalDetails({
       : `Live weather · ${weatherRegionFallback}`;
 
   /** API 응답 전·실패 시 기존 정적 카드와 동일: 좌 CloudSun, 우 CloudRain */
-  const TodayIcon =
-    liveForecast && cur != null && isWmoPrecipitationCode(cur.weatherCode) ? CloudRain : CloudSun;
-  const todayIconClass =
-    liveForecast && cur != null && isWmoPrecipitationCode(cur.weatherCode)
-      ? "text-slate-400"
-      : "text-amber-400";
-  const TomorrowIcon =
-    !liveForecast || !tomorrowDay
-      ? CloudRain
-      : isWmoPrecipitationCode(tomorrowDay.weatherCode)
-        ? CloudRain
-        : CloudSun;
-  const tomorrowIconClass =
-    !liveForecast || !tomorrowDay
-      ? "text-slate-400"
-      : isWmoPrecipitationCode(tomorrowDay.weatherCode)
-        ? "text-slate-400"
-        : "text-amber-400";
+  const isTodayRain = !!(liveForecast && cur != null && isWmoPrecipitationCode(cur.weatherCode));
+  const TodayIcon = isTodayRain ? CloudRain : CloudSun;
+  const todayIconClass = isTodayRain ? "text-sky-500" : "text-amber-500";
+
+  const isTomorrowRain = !liveForecast || !tomorrowDay
+    ? true
+    : isWmoPrecipitationCode(tomorrowDay.weatherCode);
+  const TomorrowIcon = isTomorrowRain ? CloudRain : CloudSun;
+  const tomorrowIconClass = isTomorrowRain ? "text-sky-500" : "text-amber-500";
 
   return (
     <div className="space-y-7">
@@ -119,20 +165,64 @@ export function TourPracticalDetails({
         <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.practicalSubtitle}</p>
       </div>
 
-      <div className="card-premium p-4">
-        <p className="text-[10px] font-medium text-muted-foreground tracking-wide mb-3">{weatherStripTitle}</p>
-        <div className="grid grid-cols-2 gap-2.5">
-          <div className="flex items-center gap-3 rounded-xl bg-mist-blue/60 border border-border/40 px-3.5 py-3">
-            <TodayIcon className={cn("h-8 w-8 flex-shrink-0", todayIconClass)} />
-            <div>
-              <p className="text-xl font-semibold text-foreground leading-none">{todayTemp}</p>
+      <div
+        className={cn(
+          "relative overflow-hidden rounded-2xl p-4 ring-1",
+          "bg-gradient-to-br from-[#fcf9f4] via-[#fefcf8] to-[#f8f4ec]",
+          "ring-amber-100/40",
+          "shadow-[0_2px_4px_rgba(26,35,50,0.05),0_6px_14px_-4px_rgba(26,35,50,0.08),0_22px_44px_-18px_rgba(26,35,50,0.20),0_12px_24px_-12px_rgba(26,35,50,0.12)]",
+        )}
+      >
+        <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/60 to-transparent" />
+        <p className="relative text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground mb-3">
+          {weatherStripTitle}
+        </p>
+        <div className="relative grid grid-cols-2 gap-2.5">
+          <div
+            className={cn(
+              "relative flex items-center gap-3 overflow-hidden rounded-xl px-3.5 py-3 ring-1",
+              isTodayRain
+                ? "bg-gradient-to-br from-sky-50 via-white to-sky-100/55 ring-sky-100/70 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_24px_-14px_rgba(14,165,233,0.28)]"
+                : "bg-gradient-to-br from-amber-50 via-white to-amber-100/55 ring-amber-100/70 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_24px_-14px_rgba(245,158,11,0.28)]",
+            )}
+          >
+            <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
+            <div
+              className={cn(
+                "relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full ring-1",
+                isTodayRain
+                  ? "bg-gradient-to-br from-sky-100 to-sky-200/70 ring-sky-200/70"
+                  : "bg-gradient-to-br from-amber-100 to-amber-200/70 ring-amber-200/70",
+              )}
+            >
+              <TodayIcon className={cn("h-5 w-5", todayIconClass)} strokeWidth={1.7} />
+            </div>
+            <div className="relative">
+              <p className="text-xl font-semibold text-foreground leading-none tabular-nums">{todayTemp}</p>
               <p className="text-[11px] text-muted-foreground mt-1">{todayLabel}</p>
             </div>
           </div>
-          <div className="flex items-center gap-3 rounded-xl bg-cloud-gray/60 border border-border/40 px-3.5 py-3">
-            <TomorrowIcon className={cn("h-8 w-8 flex-shrink-0", tomorrowIconClass)} />
-            <div>
-              <p className="text-xl font-semibold text-foreground leading-none">{tomorrowTemp}</p>
+          <div
+            className={cn(
+              "relative flex items-center gap-3 overflow-hidden rounded-xl px-3.5 py-3 ring-1",
+              isTomorrowRain
+                ? "bg-gradient-to-br from-sky-50 via-white to-sky-100/55 ring-sky-100/70 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_24px_-14px_rgba(14,165,233,0.28)]"
+                : "bg-gradient-to-br from-amber-50 via-white to-amber-100/55 ring-amber-100/70 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_24px_-14px_rgba(245,158,11,0.28)]",
+            )}
+          >
+            <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
+            <div
+              className={cn(
+                "relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full ring-1",
+                isTomorrowRain
+                  ? "bg-gradient-to-br from-sky-100 to-sky-200/70 ring-sky-200/70"
+                  : "bg-gradient-to-br from-amber-100 to-amber-200/70 ring-amber-200/70",
+              )}
+            >
+              <TomorrowIcon className={cn("h-5 w-5", tomorrowIconClass)} strokeWidth={1.7} />
+            </div>
+            <div className="relative">
+              <p className="text-xl font-semibold text-foreground leading-none tabular-nums">{tomorrowTemp}</p>
               <p className="text-[11px] text-muted-foreground mt-1">{tomorrowLabel}</p>
             </div>
           </div>
@@ -164,26 +254,37 @@ export function TourPracticalDetails({
                 description: string;
               };
               const displayName = seasonAny.name ?? seasonAny.season ?? `Season ${idx + 1}`;
-              const Icon = SEASON_ICONS[seasonAny.icon as keyof typeof SEASON_ICONS] ?? Flower2;
+              const { theme, Icon } = resolveSeason(displayName, seasonAny.icon);
               return (
                 <div
                   key={displayName}
                   className={cn(
-                    "relative shrink-0 snap-start rounded-xl border border-border/50 p-4 transition-all duration-200 hover:shadow-premium hover:border-border",
+                    "group relative shrink-0 snap-start overflow-hidden rounded-xl p-4 ring-1 transition-all duration-300",
+                    "shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_28px_-14px_rgba(26,35,50,0.16)]",
+                    "hover:-translate-y-[1px] hover:shadow-[0_2px_4px_rgba(26,35,50,0.05),0_16px_36px_-14px_rgba(26,35,50,0.22)]",
                     "w-[min(280px,calc(100vw-3.5rem))] sm:w-[min(280px,calc(100%-1rem))]",
-                    seasonAny.bgClass,
+                    theme.card,
+                    theme.ring,
                   )}
                 >
-                  <div className="flex items-start justify-between mb-2">
-                    <Icon className={cn("h-4 w-4", seasonAny.iconColor)} />
+                  <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
+                  <div className="relative flex items-start justify-between mb-2.5">
+                    <div
+                      className={cn(
+                        "flex h-7 w-7 items-center justify-center rounded-full ring-1 transition-transform duration-300 group-hover:scale-[1.06]",
+                        theme.iconRing,
+                      )}
+                    >
+                      <Icon className={cn("h-3.5 w-3.5", theme.iconColor)} strokeWidth={1.7} />
+                    </div>
                     {seasonAny.tag ? (
-                      <span className="text-[9px] font-medium text-muted-foreground bg-white/70 px-1.5 py-0.5 rounded-md">
+                      <span className="text-[9px] font-medium text-muted-foreground bg-white/85 px-1.5 py-0.5 rounded-md ring-1 ring-border/40">
                         {seasonAny.tag}
                       </span>
                     ) : null}
                   </div>
-                  <h4 className="text-sm font-semibold text-foreground">{displayName}</h4>
-                  <p className="mt-1 text-[11px] text-muted-foreground leading-relaxed">{seasonAny.description}</p>
+                  <h4 className="relative text-[14px] font-semibold tracking-tight text-foreground">{displayName}</h4>
+                  <p className="relative mt-1 text-[11.5px] text-muted-foreground leading-relaxed">{seasonAny.description}</p>
                 </div>
               );
             })}
