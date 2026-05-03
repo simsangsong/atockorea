@@ -34,14 +34,13 @@ function StopCard({
   const admission = stop.visitBasics?.admission;
   const showTicketsIncluded = !!admission && !FREE_ADMISSION_PATTERNS.test(admission);
 
-  // Quiet premium — single warm-ivory gradient + neutral floating shadow for all stops.
-  // Same low-key palette as the surrounding section cards so the timeline doesn't compete.
+  // Directional-light cream pillow — desaturated cream gradient, sharp white inset edge on
+  // top+left, diffused dark inset on bottom+right, and an offset bottom-right outer drop so the
+  // card reads as lit from the upper-left like the reference photo.
   const accent = {
-    bg: "bg-gradient-to-br from-[#fcf9f4] via-[#fefcf8] to-[#f7f3ec]",
-    ring: "ring-stone-200/55",
-    glow: "shadow-[0_2px_4px_rgba(26,35,50,0.04),0_6px_14px_-4px_rgba(26,35,50,0.07),0_22px_44px_-18px_rgba(26,35,50,0.18),0_12px_24px_-12px_rgba(26,35,50,0.10)]",
-    glowHover: "hover:shadow-[0_3px_6px_rgba(26,35,50,0.05),0_8px_18px_-4px_rgba(26,35,50,0.10),0_30px_56px_-18px_rgba(26,35,50,0.24),0_16px_30px_-12px_rgba(26,35,50,0.14)]",
-    numShadow: "shadow-[0_4px_12px_-4px_rgba(200,149,108,0.45)]",
+    bg: "bg-gradient-to-br from-[#fdfbf7] via-[#f7f3eb] to-[#eee8d8]",
+    glow: "shadow-[inset_12px_12px_48px_rgba(255,255,255,0.95),inset_-4px_-4px_12px_rgba(40,30,20,0.18),0_3px_6px_rgba(40,30,20,0.06),8px_32px_64px_-20px_rgba(40,30,20,0.32)]",
+    glowHover: "hover:shadow-[inset_12px_12px_54px_rgba(255,255,255,1),inset_-4px_-4px_14px_rgba(40,30,20,0.22),0_5px_10px_rgba(40,30,20,0.08),12px_48px_88px_-20px_rgba(40,30,20,0.42)]",
   };
 
   return (
@@ -51,13 +50,14 @@ function StopCard({
       )}
 
       <div
-        className={cn(
-          "absolute left-0 top-1 flex h-10 w-10 items-center justify-center rounded-full text-white text-[13px] font-semibold tabular-nums tracking-[0.02em] ring-[3px] ring-white",
-          accent.numShadow,
-        )}
+        className="absolute left-0 top-1 flex h-10 w-10 items-center justify-center rounded-full text-[13px] font-semibold tabular-nums tracking-[0.02em] ring-[3px] ring-white"
         style={{
           background:
-            "linear-gradient(135deg, #d4a37e 0%, #c8956c 50%, #a67751 100%)",
+            "radial-gradient(circle at 30% 25%, #fdfaf3 0%, #f3ead7 55%, #d8caa8 100%)",
+          boxShadow:
+            "inset 0 2px 3px rgba(255,255,255,0.7), inset 0 -3px 5px rgba(120,95,60,0.22), 0 2px 4px rgba(120,95,60,0.12), 0 8px 18px -4px rgba(120,95,60,0.2)",
+          color: "#78350f",
+          textShadow: "0 1px 1px rgba(120,53,15,0.16)",
         }}
       >
         {String(stop.number).padStart(2, "0")}
@@ -68,16 +68,13 @@ function StopCard({
           type="button"
           onClick={onClick}
           className={cn(
-            "group relative w-full text-left rounded-2xl overflow-hidden ring-1 transition-all duration-300",
+            "group relative w-full text-left rounded-[22px] overflow-hidden transition-all duration-500 ease-out",
             accent.bg,
-            accent.ring,
             accent.glow,
-            "hover:-translate-y-0.5",
+            "hover:-translate-y-[3px]",
             accent.glowHover,
           )}
         >
-          {/* Top sheen for premium glass feel */}
-          <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
 
           {/* Header info */}
           <div className="relative p-4 pb-3">
@@ -110,7 +107,7 @@ function StopCard({
           </div>
 
           {photos.length > 0 && (
-            <div className="relative flex gap-1.5 px-4 pb-4 overflow-x-auto scrollbar-hide">
+            <div className="relative flex gap-1.5 pl-4 pr-6 pb-4 overflow-x-auto scrollbar-hide">
               {photos.map((src, i) => (
                 <div
                   key={`${src}-${i}`}
