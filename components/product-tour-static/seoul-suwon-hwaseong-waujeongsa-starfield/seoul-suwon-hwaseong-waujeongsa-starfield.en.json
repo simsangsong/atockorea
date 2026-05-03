@@ -94,39 +94,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "9–10 hours"
-    },
-    {
-      "icon": "landmark",
-      "label": "Heritage",
-      "value": "UNESCO + Temple"
-    },
-    {
       "icon": "camera",
-      "label": "Photo Potential",
-      "value": "Very High"
+      "label": "Photo Value",
+      "value": "Excellent",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "Scenic",
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Moderate"
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Rain Safety",
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "users",
-      "label": "Group Style",
-      "value": "Small Group"
-    },
-    {
-      "icon": "ticket",
-      "label": "Admission Fees",
-      "value": "Included"
+      "label": "Family Fit",
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "gauge",
-      "label": "Pace",
-      "value": "Balanced"
+      "label": "Balance",
+      "value": "Balanced",
+      "level": 4
     }
   ],
   "galleryItems": [

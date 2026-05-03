@@ -91,34 +91,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "car",
-      "label": "Tour Style",
-      "value": "Private Charter"
+      "icon": "camera",
+      "label": "Valor fotográfico",
+      "value": "Bueno",
+      "level": 4
     },
     {
-      "icon": "map",
-      "label": "Routing",
-      "value": "Fully Customizable"
+      "icon": "mountain",
+      "label": "Densidad escénica",
+      "value": "Bueno",
+      "level": 4
     },
     {
-      "icon": "user-check",
-      "label": "Guide",
-      "value": "Licensed EN Driver-Guide"
+      "icon": "footprints",
+      "label": "Caminata",
+      "value": "Moderado",
+      "level": 3
     },
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "8 hours"
+      "icon": "cloud-rain",
+      "label": "Aptitud lluvia",
+      "value": "Excelente",
+      "level": 5
     },
     {
-      "icon": "ticket",
-      "label": "Admission Fees",
-      "value": "Pay Direct"
+      "icon": "users",
+      "label": "Aptitud familia",
+      "value": "Excelente",
+      "level": 5
     },
     {
-      "icon": "anchor",
-      "label": "Cruise Return",
-      "value": "On-Time Guaranteed"
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Flexible",
+      "level": 5
     }
   ],
   "galleryItems": [

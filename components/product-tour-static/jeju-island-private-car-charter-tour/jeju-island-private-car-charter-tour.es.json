@@ -90,34 +90,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "car",
-      "label": "Tipo de tour",
-      "value": "Servicio privado exclusivo (coche solo para su grupo)"
+      "icon": "camera",
+      "label": "Valor fotográfico",
+      "value": "Muy alto",
+      "level": 5
     },
     {
-      "icon": "route",
-      "label": "Ruta",
-      "value": "3 rutas recomendadas o itinerario 100% personalizado"
+      "icon": "mountain",
+      "label": "Densidad escénica",
+      "value": "Muy alto",
+      "level": 5
     },
     {
-      "icon": "user",
-      "label": "Guía",
-      "value": "Chófer-guía certificado, inglés"
+      "icon": "footprints",
+      "label": "Caminata",
+      "value": "Bajo",
+      "level": 2
     },
     {
-      "icon": "clock",
-      "label": "Duración",
-      "value": "9 horas"
+      "icon": "cloud-rain",
+      "label": "Aptitud lluvia",
+      "value": "Bueno",
+      "level": 4
     },
     {
-      "icon": "map-pin",
-      "label": "Punto de encuentro",
-      "value": "Recogida en su hotel de Jeju"
+      "icon": "users",
+      "label": "Aptitud familia",
+      "value": "Excelente",
+      "level": 5
     },
     {
-      "icon": "ticket",
-      "label": "Entradas",
-      "value": "Incluidas (según ruta elegida)"
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Flexible",
+      "level": 5
     }
   ],
   "galleryItems": [
@@ -745,7 +751,7 @@
     "destination_region": "jeju",
     "region_type": "jeju_all_around",
     "vehicle_type": "private_vehicle",
-    "duration_hours": 9.0,
+    "duration_hours": 9,
     "region_tags": [
       "jeju_all_around",
       "jeju_east",
@@ -786,45 +792,45 @@
     "pace_level": 0.6,
     "walking_level": 0.5,
     "scenic_level": 0.95,
-    "photo_level": 1.0,
+    "photo_level": 1,
     "culture_level": 0.8,
-    "relax_level": 1.0,
+    "relax_level": 1,
     "first_time_fit": 0.95,
-    "family_fit": 1.0,
-    "senior_fit": 1.0,
-    "couple_fit": 1.0,
+    "family_fit": 1,
+    "senior_fit": 1,
+    "couple_fit": 1,
     "solo_traveler_fit": 0.8,
     "active_traveler_fit": 0.8,
-    "adult_family_fit": 1.0,
+    "adult_family_fit": 1,
     "family_with_teens_fit": 0.8,
-    "young_kids_fit": 1.0,
-    "senior_active_fit": 1.0,
-    "senior_general_fit": 1.0,
-    "mobility_friendly_fit": 1.0,
+    "young_kids_fit": 1,
+    "senior_active_fit": 1,
+    "senior_general_fit": 1,
+    "mobility_friendly_fit": 1,
     "stroller_fit": 0.8,
-    "one_day_fit": 1.0,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.8,
     "rain_fit": 0.8,
     "value_for_money_fit": 0.55,
     "iconic_landmark_fit": 0.95,
-    "cafe_fit": 1.0,
+    "cafe_fit": 1,
     "food_fit": 0.7,
-    "nature_fit": 1.0,
-    "beach_fit": 1.0,
+    "nature_fit": 1,
+    "beach_fit": 1,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.55,
     "no_shopping_fit": 0.4,
     "local_culture_fit": 0.8,
     "storytelling_fit": 0.85,
     "unesco_fit": 0.65,
-    "intangible_heritage_fit": 1.0,
+    "intangible_heritage_fit": 1,
     "indoor_ratio": 0.2,
     "weather_sensitivity": 0.5,
-    "comfort_level": 1.0,
+    "comfort_level": 1,
     "budget_fit": 0.4,
-    "premium_fit": 1.0,
+    "premium_fit": 1,
     "small_group_fit": 0.15,
-    "private_fit": 1.0,
+    "private_fit": 1,
     "bus_fit": 0.05,
     "price_band": "premium",
     "pickup_base": "jeju_island",
@@ -869,14 +875,14 @@
       "jusangjeolli_cliff",
       "cheonjiyeon_falls"
     ],
-    "private_tour_fit": 1.0,
-    "customizable_route_fit": 1.0,
-    "flexibility_fit": 1.0,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "private_tour_fit": 1,
+    "customizable_route_fit": 1,
+    "flexibility_fit": 1,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
@@ -1706,17 +1712,17 @@
           "deltas_applied": {
             "private_tour_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Both tours are per-vehicle private charters by definition. Was previously None (unset)."
             },
             "customizable_route_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Three recommended routes plus a fully custom option. Both tours fully customizable. Was previously None."
             },
             "flexibility_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Driver-guide adapts pacing, order, lunch, optional add-ons (Udo ferry, Smart Queue). Was previously None."
             },
             "small_group_fit": {
@@ -1730,22 +1736,22 @@
               "reasoning": "Verified — private charter = sedan/SUV/van, never bus. 0.05 reflects near-zero bus fit (only the very largest groups of 10+ would step up to a coach format)."
             },
             "unesco_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.65,
               "reasoning": "VERIFIED weighted average across routes. Route 1 (East): max UNESCO — Seongsan Ilchulbong is triple-UNESCO + Manjanggul UNESCO 2007. Route 2 (West): minimal UNESCO content. Route 3 (South): partial UNESCO — Jusangjeolli is Global Geopark, Sanbangsan is Geopark. Weighted across routes = ~0.65, significantly lower than the previous 1.0 which assumed Route 1 always selected. Custom Route can max UNESCO if the traveler picks specifically — but the average traveler will not."
             },
             "scenic_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "VERIFIED — all 3 named routes deliver catalog-leading scenic content (volcanic crater, beach, basalt cliff, waterfall, tea field, lava dome). 0.95 calibrated, only marginally below max (saving 1.0 for tours that deliver multiple flagship scenic types in a single 9-hour window — which only Route 1 of 3 does)."
             },
             "first_time_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "VERIFIED — strongest first-time-Jeju option because Route 1 alone covers the bucket-list UNESCO sites. 0.95 reflects that the WEST route is less first-time-iconic than East, so an averaged score is just below absolute max."
             },
             "iconic_landmark_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "VERIFIED — Seongsan Ilchulbong is Jeju's single most iconic landmark and is included on Route 1 + Custom. Slight markdown to 0.95 because Routes 2 (West) and 3 (South) trade iconic landmark count for café/temple density."
             },
@@ -1775,8 +1781,8 @@
               "reasoning": "VERIFIED — Jeju's food density is high across all routes (haenyeo seafood, Hallabong tangerines, black pork, Olle Market). Route 1 has the strongest meal hubs (Seongsan harbor); Route 3 has Olle Market. 0.70 calibrated up from previous 0.60."
             },
             "premium_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified — private vehicle + flexible itinerary + driver-guide = top of premium scale. Maintained at 1.0."
             },
             "value_for_money_fit": {
@@ -1785,7 +1791,7 @@
               "reasoning": "Verified — per-vehicle pricing is excellent value for groups of 4-9 but expensive for solo travelers. Slight markdown to 0.55 reflects the per-person break-even calculation: vs. small-group bus tours at ~70,000 KRW per person, the charter only beats it for groups of 5+."
             },
             "storytelling_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified — driver-guide narrates throughout, and the routes carry strong narrative arcs (UNESCO geology, K-drama, Joseon folk culture, tea-merchant heritage). 0.85 reflects that narrative depth varies by driver-guide assigned and by route chosen — was previously 1.0 which assumed uniformly maximal storytelling, which is not realistic."
             }

@@ -92,39 +92,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "8 hours"
-    },
-    {
       "icon": "camera",
-      "label": "Photo Value",
-      "value": "Very High"
+      "label": "Valor fotográfico",
+      "value": "Excelente",
+      "level": 5
     },
     {
       "icon": "mountain",
-      "label": "Scenic",
-      "value": "Very High"
+      "label": "Densidad escénica",
+      "value": "Bueno",
+      "level": 4
     },
     {
       "icon": "footprints",
-      "label": "Walking",
-      "value": "Moderate"
+      "label": "Caminata",
+      "value": "Moderado",
+      "level": 3
     },
     {
       "icon": "cloud-rain",
-      "label": "Rain Safety",
-      "value": "Moderate"
+      "label": "Aptitud lluvia",
+      "value": "Moderado",
+      "level": 3
     },
     {
       "icon": "users",
-      "label": "Family Fit",
-      "value": "Moderate"
+      "label": "Aptitud familia",
+      "value": "Bueno",
+      "level": 4
     },
     {
-      "icon": "scale",
-      "label": "Pace",
-      "value": "Balanced"
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Rápido",
+      "level": 3
     }
   ],
   "galleryItems": [

@@ -98,39 +98,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "12 hours"
-    },
-    {
       "icon": "camera",
       "label": "Photo Value",
-      "value": "Very High"
+      "value": "Excellent",
+      "level": 5
     },
     {
       "icon": "mountain",
       "label": "Scenic",
-      "value": "Very High"
+      "value": "High",
+      "level": 5
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Moderate"
+      "value": "High",
+      "level": 4
     },
     {
       "icon": "cloud-rain",
       "label": "Rain Safety",
-      "value": "Moderate"
+      "value": "Low",
+      "level": 2
     },
     {
       "icon": "users",
       "label": "Family Fit",
-      "value": "Moderate"
+      "value": "Moderate",
+      "level": 3
     },
     {
-      "icon": "scale",
-      "label": "Pace",
-      "value": "Balanced"
+      "icon": "gauge",
+      "label": "Balance",
+      "value": "Fast",
+      "level": 3
     }
   ],
   "galleryItems": [

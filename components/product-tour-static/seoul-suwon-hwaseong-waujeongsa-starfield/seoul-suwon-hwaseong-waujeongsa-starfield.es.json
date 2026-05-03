@@ -95,34 +95,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duración",
-      "value": "Un día completo"
+      "icon": "camera",
+      "label": "Valor fotográfico",
+      "value": "Excelente",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "Densidad escénica",
+      "value": "Bueno",
+      "level": 4
+    },
+    {
+      "icon": "footprints",
+      "label": "Caminata",
+      "value": "Moderado",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Aptitud lluvia",
+      "value": "Bueno",
+      "level": 4
     },
     {
       "icon": "users",
-      "label": "Grupo",
-      "value": "Grupo pequeño, guía en inglés"
+      "label": "Aptitud familia",
+      "value": "Bueno",
+      "level": 4
     },
     {
-      "icon": "map-pin",
-      "label": "Recogida",
-      "value": "Hongik University Salida 8 o Myeongdong Salida 2/4"
-    },
-    {
-      "icon": "ticket",
-      "label": "Entradas",
-      "value": "Incluidas (todas)"
-    },
-    {
-      "icon": "globe",
-      "label": "Templo",
-      "value": "Pan-asiático (India, Tailandia, China, Tíbet, Corea)"
-    },
-    {
-      "icon": "calendar",
-      "label": "Disponibilidad",
-      "value": "Todo el año (sin restricción de lunes)"
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Equilibrado",
+      "level": 4
     }
   ],
   "galleryItems": [
@@ -662,7 +668,7 @@
       {
         "stars": 5,
         "count": 53,
-        "percentage": 93.0
+        "percentage": 93
       },
       {
         "stars": 4,
@@ -677,12 +683,12 @@
       {
         "stars": 2,
         "count": 0,
-        "percentage": 0.0
+        "percentage": 0
       },
       {
         "stars": 1,
         "count": 0,
-        "percentage": 0.0
+        "percentage": 0
       }
     ],
     "highlights": []
@@ -736,7 +742,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gyeonggi_south",
     "vehicle_type": "minicoach",
-    "duration_hours": 9.0,
+    "duration_hours": 9,
     "region_tags": [
       "seoul_capital",
       "gyeonggi_suwon",
@@ -764,8 +770,8 @@
     "pace_level": 0.6,
     "walking_level": 0.6,
     "scenic_level": 0.85,
-    "photo_level": 1.0,
-    "culture_level": 1.0,
+    "photo_level": 1,
+    "culture_level": 1,
     "relax_level": 0.8,
     "first_time_fit": 0.7,
     "family_fit": 0.85,
@@ -780,7 +786,7 @@
     "senior_general_fit": 0.7,
     "mobility_friendly_fit": 0.5,
     "stroller_fit": 0.5,
-    "one_day_fit": 1.0,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.3,
     "rain_fit": 0.65,
     "value_for_money_fit": 0.95,
@@ -788,20 +794,20 @@
     "cafe_fit": 0.7,
     "food_fit": 0.5,
     "nature_fit": 0.7,
-    "beach_fit": 0.0,
+    "beach_fit": 0,
     "nightlife_fit": 0.05,
     "shopping_fit": 0.55,
     "no_shopping_fit": 0.7,
-    "local_culture_fit": 1.0,
-    "storytelling_fit": 1.0,
-    "unesco_fit": 1.0,
+    "local_culture_fit": 1,
+    "storytelling_fit": 1,
+    "unesco_fit": 1,
     "intangible_heritage_fit": 0.4,
     "indoor_ratio": 0.45,
     "weather_sensitivity": 0.6,
     "comfort_level": 0.8,
     "budget_fit": 0.85,
     "premium_fit": 0.4,
-    "small_group_fit": 1.0,
+    "small_group_fit": 1,
     "private_fit": 0.05,
     "bus_fit": 0.7,
     "price_band": "budget",
@@ -847,13 +853,13 @@
     "private_tour_fit": 0.05,
     "customizable_route_fit": 0.1,
     "flexibility_fit": 0.3,
-    "minicoach_fit": 1.0,
-    "fortress_fit": 1.0,
-    "buddhist_temple_fit": 1.0,
-    "scenic_temple_fit": 1.0,
-    "modern_eclectic_temple_fit": 1.0,
-    "pan_asian_buddhism_fit": 1.0,
-    "library_fit": 1.0,
+    "minicoach_fit": 1,
+    "fortress_fit": 1,
+    "buddhist_temple_fit": 1,
+    "scenic_temple_fit": 1,
+    "modern_eclectic_temple_fit": 1,
+    "pan_asian_buddhism_fit": 1,
+    "library_fit": 1,
     "modern_architecture_fit": 0.85,
     "history_culture_fit": 0.95,
     "spiritual_fit": 0.95,
@@ -862,54 +868,54 @@
     "seasonal_fit": 0.85,
     "romantic_fit": 0.65,
     "premium_dining_fit": 0.4,
-    "compact_route_fit": 1.0,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "compact_route_fit": 1,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "suwon_hwaseong_route_fit": 1.0,
-    "suwon_central_anchor_fit": 1.0,
-    "seoul_to_suwon_30min_drive_fit": 1.0,
-    "seoul_central_hotel_pickup_fit": 1.0,
-    "return_to_seoul_central_fit": 1.0,
-    "small_group_format_fit": 1.0,
-    "fixed_schedule_format_fit": 1.0,
-    "unesco_world_heritage_anchor_fit": 1.0,
-    "unesco_world_heritage_1997_inscription_fit": 1.0,
-    "joseon_dynasty_late_18c_anchor_fit": 1.0,
-    "jeong_yak_yong_silhak_anchor_fit": 1.0,
-    "geojunggi_crane_engineering_anchor_fit": 1.0,
-    "uigwe_memory_of_world_2007_anchor_fit": 1.0,
-    "hwaseong_5_74km_perimeter_anchor_fit": 1.0,
-    "hwaseong_41_structures_anchor_fit": 1.0,
-    "starfield_library_photo_stop_fit": 1.0,
-    "starfield_22m_bookshelves_anchor_fit": 1.0,
-    "starfield_4f_to_7f_atrium_void_fit": 1.0,
-    "douglas_coupland_the_planets_rooftop_anchor_fit": 1.0,
-    "starfield_free_admission_photo_permitted_fit": 1.0,
-    "instagram_photo_density_high_fit": 1.0,
-    "waujeongsa_syncretic_buddhism_fit": 1.0,
-    "korean_war_reunification_prayer_temple_fit": 1.0,
-    "north_korean_monks_refugee_temple_origin_fit": 1.0,
-    "master_haedeung_1970_founding_anchor_fit": 1.0,
-    "world_largest_wooden_reclining_buddha_fit": 1.0,
-    "indian_sandalwood_buddha_anchor_fit": 1.0,
-    "indravarna_sri_lankan_pagoda_anchor_fit": 1.0,
-    "myanmar_brass_jade_buddha_anchor_fit": 1.0,
-    "taepyeongjong_8_ton_bell_anchor_fit": 1.0,
-    "pan_asian_buddhist_syncretism_fit": 1.0,
-    "free_admission_buddhist_temple_fit": 1.0,
-    "templestay_program_available_fit": 1.0,
-    "three_stop_pivot_day_trip_fit": 1.0,
-    "secular_to_commercial_to_religious_pivot_fit": 1.0,
-    "evening_contemplative_anchor_fit": 1.0,
+    "suwon_hwaseong_route_fit": 1,
+    "suwon_central_anchor_fit": 1,
+    "seoul_to_suwon_30min_drive_fit": 1,
+    "seoul_central_hotel_pickup_fit": 1,
+    "return_to_seoul_central_fit": 1,
+    "small_group_format_fit": 1,
+    "fixed_schedule_format_fit": 1,
+    "unesco_world_heritage_anchor_fit": 1,
+    "unesco_world_heritage_1997_inscription_fit": 1,
+    "joseon_dynasty_late_18c_anchor_fit": 1,
+    "jeong_yak_yong_silhak_anchor_fit": 1,
+    "geojunggi_crane_engineering_anchor_fit": 1,
+    "uigwe_memory_of_world_2007_anchor_fit": 1,
+    "hwaseong_5_74km_perimeter_anchor_fit": 1,
+    "hwaseong_41_structures_anchor_fit": 1,
+    "starfield_library_photo_stop_fit": 1,
+    "starfield_22m_bookshelves_anchor_fit": 1,
+    "starfield_4f_to_7f_atrium_void_fit": 1,
+    "douglas_coupland_the_planets_rooftop_anchor_fit": 1,
+    "starfield_free_admission_photo_permitted_fit": 1,
+    "instagram_photo_density_high_fit": 1,
+    "waujeongsa_syncretic_buddhism_fit": 1,
+    "korean_war_reunification_prayer_temple_fit": 1,
+    "north_korean_monks_refugee_temple_origin_fit": 1,
+    "master_haedeung_1970_founding_anchor_fit": 1,
+    "world_largest_wooden_reclining_buddha_fit": 1,
+    "indian_sandalwood_buddha_anchor_fit": 1,
+    "indravarna_sri_lankan_pagoda_anchor_fit": 1,
+    "myanmar_brass_jade_buddha_anchor_fit": 1,
+    "taepyeongjong_8_ton_bell_anchor_fit": 1,
+    "pan_asian_buddhist_syncretism_fit": 1,
+    "free_admission_buddhist_temple_fit": 1,
+    "templestay_program_available_fit": 1,
+    "three_stop_pivot_day_trip_fit": 1,
+    "secular_to_commercial_to_religious_pivot_fit": 1,
+    "evening_contemplative_anchor_fit": 1,
     "hwaseong_yeolcha_optional_advisory": true,
     "waujeongsa_free_admission_advisory": true,
     "differentiates_from_suwon_folk_village_route": true,
@@ -1695,7 +1701,7 @@
             {
               "stars": 5,
               "count": 53,
-              "percentage": 93.0
+              "percentage": 93
             },
             {
               "stars": 4,
@@ -1710,12 +1716,12 @@
             {
               "stars": 2,
               "count": 0,
-              "percentage": 0.0
+              "percentage": 0
             },
             {
               "stars": 1,
               "count": 0,
-              "percentage": 0.0
+              "percentage": 0
             }
           ],
           "highlights": []

@@ -100,33 +100,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "10 hours (morning to early evening)"
+      "icon": "camera",
+      "label": "Photo Value",
+      "value": "Excellent",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "Group",
-      "value": "Small group, English-speaking guide"
-    },
-    {
-      "icon": "map-pin",
-      "label": "Region",
-      "value": "Suwon & Yongin, Gyeonggi Province"
+      "icon": "mountain",
+      "label": "Scenic",
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Moderate — fortress walk is uphill on stone, folk village is large open ground"
+      "value": "High",
+      "level": 4
     },
     {
-      "icon": "ticket",
-      "label": "Includes",
-      "value": "Round-trip transport, English guide, Hwaseong Fortress + Haenggung Palace admission, Korean Folk Village admission"
+      "icon": "cloud-rain",
+      "label": "Rain Safety",
+      "value": "Good",
+      "level": 4
     },
     {
-      "label": "Lunch",
-      "value": "Not included — typically eaten at Starfield mall food court (excellent variety) or Suwon Galbi alley"
+      "icon": "users",
+      "label": "Family Fit",
+      "value": "Good",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Balance",
+      "value": "Balanced",
+      "level": 4
     }
   ],
   "galleryItems": [

@@ -100,20 +100,20 @@
     {
       "icon": "camera",
       "label": "写真映え度",
-      "value": "高い",
+      "value": "最適",
       "level": 5
     },
     {
       "icon": "mountain",
       "label": "景観の密度",
-      "value": "高い",
-      "level": 5
+      "value": "良好",
+      "level": 4
     },
     {
       "icon": "footprints",
       "label": "歩行難易度",
-      "value": "やや高い",
-      "level": 4
+      "value": "中程度",
+      "level": 3
     },
     {
       "icon": "cloud-rain",
@@ -130,8 +130,8 @@
     {
       "icon": "gauge",
       "label": "ペース",
-      "value": "集中型",
-      "level": 3
+      "value": "バランス型",
+      "level": 4
     }
   ],
   "galleryItems": [

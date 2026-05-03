@@ -91,34 +91,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "car",
-      "label": "Tipo",
-      "value": "Tour privado en coche, solo su grupo"
-    },
-    {
-      "icon": "clock",
-      "label": "Duración",
-      "value": "Un día completo"
-    },
-    {
-      "icon": "map-pin",
-      "label": "Recogida",
-      "value": "Su hotel en Seúl"
-    },
-    {
-      "icon": "ticket",
-      "label": "Entradas",
-      "value": "Ferry Nami + Achimsogwon + Petite France — incluidas"
-    },
-    {
       "icon": "camera",
-      "label": "Fotos",
-      "value": "Muy alto (4 estaciones distintas)"
+      "label": "Valor fotográfico",
+      "value": "Excelente",
+      "level": 5
     },
     {
-      "icon": "heart",
-      "label": "Ideal para",
-      "value": "Parejas y familias"
+      "icon": "mountain",
+      "label": "Densidad escénica",
+      "value": "Bueno",
+      "level": 4
+    },
+    {
+      "icon": "footprints",
+      "label": "Caminata",
+      "value": "Moderado",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Aptitud lluvia",
+      "value": "Moderado",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "Aptitud familia",
+      "value": "Excelente",
+      "level": 5
+    },
+    {
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Flexible",
+      "level": 5
     }
   ],
   "galleryItems": [
@@ -733,7 +739,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gyeonggi_gapyeong",
     "vehicle_type": "private_vehicle",
-    "duration_hours": 9.0,
+    "duration_hours": 9,
     "region_tags": [
       "seoul_capital",
       "gyeonggi_gapyeong",
@@ -762,16 +768,16 @@
     "pace_level": 0.6,
     "walking_level": 0.5,
     "scenic_level": 0.95,
-    "photo_level": 1.0,
+    "photo_level": 1,
     "culture_level": 0.6,
     "relax_level": 0.8,
     "first_time_fit": 0.95,
-    "family_fit": 1.0,
+    "family_fit": 1,
     "senior_fit": 0.8,
-    "couple_fit": 1.0,
+    "couple_fit": 1,
     "solo_traveler_fit": 0.8,
     "active_traveler_fit": 0.6,
-    "adult_family_fit": 1.0,
+    "adult_family_fit": 1,
     "family_with_teens_fit": 0.8,
     "young_kids_fit": 0.8,
     "senior_active_fit": 0.8,
@@ -785,7 +791,7 @@
     "iconic_landmark_fit": 0.9,
     "cafe_fit": 0.8,
     "food_fit": 0.6,
-    "nature_fit": 1.0,
+    "nature_fit": 1,
     "beach_fit": 0.2,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.4,
@@ -796,11 +802,11 @@
     "intangible_heritage_fit": 0.2,
     "indoor_ratio": 0.2,
     "weather_sensitivity": 0.6,
-    "comfort_level": 1.0,
+    "comfort_level": 1,
     "budget_fit": 0.4,
-    "premium_fit": 1.0,
+    "premium_fit": 1,
     "small_group_fit": 0.15,
-    "private_fit": 1.0,
+    "private_fit": 1,
     "bus_fit": 0.05,
     "price_band": "premium",
     "pickup_base": "seoul_downtown",
@@ -845,49 +851,49 @@
       "garden_of_morning_calm",
       "petite_france"
     ],
-    "private_tour_fit": 1.0,
+    "private_tour_fit": 1,
     "history_culture_fit": 0.6,
     "customizable_route_fit": 0.4,
     "flexibility_fit": 0.7,
     "romantic_fit": 0.95,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "seoul_day_trip_pair_fit": 1.0,
-    "seoul_central_hotel_pickup_fit": 1.0,
-    "return_to_seoul_central_fit": 1.0,
-    "day_trip_2_3_hour_drive_each_way_fit": 1.0,
-    "private_charter_format_fit": 1.0,
-    "premium_pacing_fit": 1.0,
-    "small_party_intimate_fit": 1.0,
-    "k_drama_filming_location_route_fit": 1.0,
-    "winter_sonata_anchor_fit": 1.0,
-    "little_prince_saint_exupery_anchor_fit": 1.0,
-    "saint_exupery_foundation_licensed_fit": 1.0,
-    "naminara_micronation_concept_fit": 1.0,
-    "unicef_child_friendly_park_fit": 1.0,
-    "ferry_island_visit_fit": 1.0,
-    "k_drama_filming_density_high_fit": 1.0,
-    "bon_appetit_your_majesty_2025_filming_fit": 1.0,
-    "im_yoon_ah_filming_location_fit": 1.0,
-    "private_arboretum_visit_fit": 1.0,
-    "korean_peninsula_shape_garden_fit": 1.0,
-    "rabindranath_tagore_land_of_morning_calm_anchor_fit": 1.0,
-    "winter_lighting_festival_anchor_fit": 1.0,
-    "mediterranean_alpine_french_village_fit": 1.0,
-    "naminara_passport_visa_concept_fit": 1.0,
-    "cnn_top_50_korea_attraction_fit": 1.0,
-    "gapyeong_attractions_route_fit": 1.0,
-    "namisum_5km_circuit_walking_fit": 1.0,
-    "petite_france_combined_pinocchio_italian_village_fit": 1.0,
+    "seoul_day_trip_pair_fit": 1,
+    "seoul_central_hotel_pickup_fit": 1,
+    "return_to_seoul_central_fit": 1,
+    "day_trip_2_3_hour_drive_each_way_fit": 1,
+    "private_charter_format_fit": 1,
+    "premium_pacing_fit": 1,
+    "small_party_intimate_fit": 1,
+    "k_drama_filming_location_route_fit": 1,
+    "winter_sonata_anchor_fit": 1,
+    "little_prince_saint_exupery_anchor_fit": 1,
+    "saint_exupery_foundation_licensed_fit": 1,
+    "naminara_micronation_concept_fit": 1,
+    "unicef_child_friendly_park_fit": 1,
+    "ferry_island_visit_fit": 1,
+    "k_drama_filming_density_high_fit": 1,
+    "bon_appetit_your_majesty_2025_filming_fit": 1,
+    "im_yoon_ah_filming_location_fit": 1,
+    "private_arboretum_visit_fit": 1,
+    "korean_peninsula_shape_garden_fit": 1,
+    "rabindranath_tagore_land_of_morning_calm_anchor_fit": 1,
+    "winter_lighting_festival_anchor_fit": 1,
+    "mediterranean_alpine_french_village_fit": 1,
+    "naminara_passport_visa_concept_fit": 1,
+    "cnn_top_50_korea_attraction_fit": 1,
+    "gapyeong_attractions_route_fit": 1,
+    "namisum_5km_circuit_walking_fit": 1,
+    "petite_france_combined_pinocchio_italian_village_fit": 1,
     "differentiates_from_dmz_day_trip": true,
     "differentiates_from_seoraksan_sokcho_day_trip": true,
     "differentiates_from_pocheon_three_pillar_day_trip": true,
@@ -1730,7 +1736,7 @@
           "deltas_applied": {
             "private_tour_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — both tours are per-vehicle private tours by definition. Was previously None (unset)."
             },
             "small_group_fit": {
@@ -1769,12 +1775,12 @@
               "reasoning": "Verified — no UNESCO sites on this route. 0.15 reflects baseline."
             },
             "iconic_landmark_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.9,
               "reasoning": "VERIFIED — Nami's Metasequoia avenue is iconic globally; Morning Calm Lighting Festival is iconic in season; Petite France is photographically iconic. Slight markdown to 0.90 reflects that 'iconic' is K-drama-pop-culture-iconic rather than UNESCO/historic-iconic."
             },
             "first_time_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "VERIFIED — strongest first-time Gapyeong day-trip. Slight markdown to 0.95 reflects that first-time visitors with limited time may prefer DMZ for the heavier story or Everland for kids. 0.95 calibrated."
             },
@@ -1794,18 +1800,18 @@
               "reasoning": "Verified maintained — Nami outdoor walks + Morning Calm garden + Petite France hill village are all weather-exposed. Indoor fallbacks limited (Petite France interiors only ~30 min). 0.60 maintained."
             },
             "scenic_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "Verified — catalog-leading scenic content (river-island tree-lined avenues + 330,000 m² arboretum + pastel village). Slight markdown to 0.95 saving 1.0 for tours that include flagship UNESCO scenic sites."
             },
             "photo_level": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified maintained — strongest photographic-return tour in the catalog. Maintained at 1.0."
             },
             "family_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified maintained — outdoor walks + colorful village + light scenery are best-in-class for families with kids 4-12. Maintained at 1.0."
             },
             "storytelling_fit": {
@@ -1819,8 +1825,8 @@
               "reasoning": "Verified maintained — per-vehicle pricing good value for groups of 3-9, premium per-person for solo/pair. 0.60 maintained."
             },
             "premium_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified maintained — private vehicle + flexible pacing + driver-guide + scenic premium destinations. Maintained at 1.0."
             }
           }

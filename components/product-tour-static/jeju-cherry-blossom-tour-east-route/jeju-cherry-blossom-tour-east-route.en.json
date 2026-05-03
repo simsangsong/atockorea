@@ -91,32 +91,38 @@
     {
       "icon": "camera",
       "label": "Photo Value",
-      "value": "Very High"
+      "value": "Excellent",
+      "level": 5
     },
     {
-      "icon": "calendar",
-      "label": "Season",
-      "value": "Mar 25 - Apr 10"
-    },
-    {
-      "icon": "users",
-      "label": "Group Size",
-      "value": "Small Group"
-    },
-    {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "8 hours"
-    },
-    {
-      "icon": "map-pin",
-      "label": "Region",
-      "value": "East Jeju"
+      "icon": "mountain",
+      "label": "Scenic",
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Moderate"
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Rain Safety",
+      "value": "Low",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "Family Fit",
+      "value": "Good",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Balance",
+      "value": "Balanced",
+      "level": 4
     }
   ],
   "galleryItems": [

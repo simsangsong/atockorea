@@ -90,39 +90,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "8–9 hours"
-    },
-    {
       "icon": "camera",
-      "label": "Photo Value",
-      "value": "Moderate"
+      "label": "Valor fotográfico",
+      "value": "Moderado",
+      "level": 3
     },
     {
       "icon": "mountain",
-      "label": "Scenic",
-      "value": "Moderate"
+      "label": "Densidad escénica",
+      "value": "Bueno",
+      "level": 4
     },
     {
       "icon": "footprints",
-      "label": "Walking",
-      "value": "Active"
+      "label": "Caminata",
+      "value": "Alto",
+      "level": 4
     },
     {
       "icon": "cloud-rain",
-      "label": "Rain Safety",
-      "value": "Moderate"
+      "label": "Aptitud lluvia",
+      "value": "Bueno",
+      "level": 4
     },
     {
       "icon": "users",
-      "label": "Family Fit",
-      "value": "Moderate"
+      "label": "Aptitud familia",
+      "value": "Moderado",
+      "level": 3
     },
     {
-      "icon": "scale",
-      "label": "Pace",
-      "value": "Balanced"
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Enfocado",
+      "level": 3
     }
   ],
   "galleryItems": [
@@ -840,7 +841,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gyeonggi_paju",
     "vehicle_type": "private_vehicle",
-    "duration_hours": 8.0,
+    "duration_hours": 8,
     "region_tags": [
       "seoul_capital",
       "gyeonggi_paju",
@@ -872,7 +873,7 @@
     "walking_level": 0.7,
     "scenic_level": 0.6,
     "photo_level": 0.6,
-    "culture_level": 1.0,
+    "culture_level": 1,
     "relax_level": 0.4,
     "first_time_fit": 0.8,
     "family_fit": 0.55,
@@ -898,18 +899,18 @@
     "beach_fit": 0.2,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.2,
-    "no_shopping_fit": 1.0,
-    "local_culture_fit": 1.0,
+    "no_shopping_fit": 1,
+    "local_culture_fit": 1,
     "storytelling_fit": 0.95,
     "unesco_fit": 0.15,
     "intangible_heritage_fit": 0.2,
     "indoor_ratio": 0.45,
     "weather_sensitivity": 0.55,
-    "comfort_level": 1.0,
+    "comfort_level": 1,
     "budget_fit": 0.6,
     "premium_fit": 0.95,
     "small_group_fit": 0.15,
-    "private_fit": 1.0,
+    "private_fit": 1,
     "bus_fit": 0.05,
     "price_band": "premium",
     "pickup_base": "seoul_downtown",
@@ -966,40 +967,40 @@
       "gamaksan_red_bridge",
       "dora_observatory"
     ],
-    "private_tour_fit": 1.0,
-    "history_culture_fit": 1.0,
+    "private_tour_fit": 1,
+    "history_culture_fit": 1,
     "customizable_route_fit": 0.4,
     "flexibility_fit": 0.6,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "seoul_day_trip_pair_fit": 1.0,
-    "seoul_central_hotel_pickup_fit": 1.0,
-    "return_to_seoul_central_fit": 1.0,
-    "day_trip_2_3_hour_drive_each_way_fit": 1.0,
-    "private_charter_format_fit": 1.0,
-    "dmz_security_zone_day_tour_fit": 1.0,
-    "north_korea_proximity_history_fit": 1.0,
-    "korean_war_memorial_complex_fit": 1.0,
-    "mandatory_passport_or_arc_id_fit": 1.0,
-    "third_infiltration_tunnel_anchor_fit": 1.0,
-    "dora_observatory_anchor_fit": 1.0,
-    "imjingak_peace_park_anchor_fit": 1.0,
-    "gamaksan_lighter_close_to_heavy_dmz_pivot_fit": 1.0,
-    "gloucester_heroes_battle_memorial_fit": 1.0,
-    "battle_of_imjin_river_1951_history_fit": 1.0,
-    "separated_families_displaced_persons_history_fit": 1.0,
-    "divided_korea_geography_visit_fit": 1.0,
-    "mangbaedan_lunar_new_year_chuseok_ritual_fit": 1.0,
-    "freedom_bridge_pow_repatriation_anchor_fit": 1.0,
+    "seoul_day_trip_pair_fit": 1,
+    "seoul_central_hotel_pickup_fit": 1,
+    "return_to_seoul_central_fit": 1,
+    "day_trip_2_3_hour_drive_each_way_fit": 1,
+    "private_charter_format_fit": 1,
+    "dmz_security_zone_day_tour_fit": 1,
+    "north_korea_proximity_history_fit": 1,
+    "korean_war_memorial_complex_fit": 1,
+    "mandatory_passport_or_arc_id_fit": 1,
+    "third_infiltration_tunnel_anchor_fit": 1,
+    "dora_observatory_anchor_fit": 1,
+    "imjingak_peace_park_anchor_fit": 1,
+    "gamaksan_lighter_close_to_heavy_dmz_pivot_fit": 1,
+    "gloucester_heroes_battle_memorial_fit": 1,
+    "battle_of_imjin_river_1951_history_fit": 1,
+    "separated_families_displaced_persons_history_fit": 1,
+    "divided_korea_geography_visit_fit": 1,
+    "mangbaedan_lunar_new_year_chuseok_ritual_fit": 1,
+    "freedom_bridge_pow_repatriation_anchor_fit": 1,
     "closed_mondays_holidays": true,
     "mondays_closure_advisory": true,
     "seollal_chuseok_closure_advisory": true,
@@ -1921,7 +1922,7 @@
           "deltas_applied": {
             "private_tour_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — both tours are per-vehicle private tours by definition. Was previously None (unset)."
             },
             "small_group_fit": {
@@ -1936,7 +1937,7 @@
             },
             "history_culture_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — DMZ tour with 3rd Tunnel + Dora Observatory + Imjingak is the catalog's heaviest history content. Maximum score by definition. Was None (unset)."
             },
             "customizable_route_fit": {
@@ -1985,7 +1986,7 @@
               "reasoning": "Verified maintained — DMZ horizons + Gamaksan bridge are scenic, but the 3rd Tunnel underground is institutional. Average 0.60 maintained."
             },
             "storytelling_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "VERIFIED — driver-guide narrative is at its strongest on DMZ tours (Korean War + tunnel discovery + observatory geopolitics). 0.95 reflects that storytelling depth is bounded by passport-required restrictions and the standardized DMZ Peace Tour shuttle structure."
             },
@@ -1995,7 +1996,7 @@
               "reasoning": "Verified — DMZ tours can be intense for young children (heavy history content, 3rd Tunnel claustrophobia, photography restrictions, passport check). Suitable for older children 10+ but markdown for younger families. 0.55."
             },
             "premium_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "Verified — private vehicle + driver-guide is premium, but DMZ portion is military-shuttle-constrained (no upgrade path inside the DMZ proper). 0.95."
             },

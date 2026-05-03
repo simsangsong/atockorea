@@ -99,34 +99,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "calendar",
-      "label": "Temporada",
-      "value": "Solo temporada de hortensias (junio-agosto)"
+      "icon": "camera",
+      "label": "Valor fotográfico",
+      "value": "Excelente",
+      "level": 5
     },
     {
-      "icon": "flower",
-      "label": "Flor",
-      "value": "Hortensia azul/malva — la flor del verano de Jeju"
-    },
-    {
-      "icon": "map-pin",
-      "label": "Recogida",
-      "value": "Hotel en Jeju Ciudad (4 puntos)"
+      "icon": "mountain",
+      "label": "Densidad escénica",
+      "value": "Bueno",
+      "level": 4
     },
     {
       "icon": "footprints",
-      "label": "A pie",
-      "value": "Moderado — Seongsan opcional"
+      "label": "Caminata",
+      "value": "Moderado",
+      "level": 3
     },
     {
-      "icon": "ticket",
-      "label": "Entradas",
-      "value": "Incluidas"
+      "icon": "cloud-rain",
+      "label": "Aptitud lluvia",
+      "value": "Bajo",
+      "level": 2
     },
     {
       "icon": "users",
-      "label": "Grupo",
-      "value": "Grupo pequeño, guía en inglés"
+      "label": "Aptitud familia",
+      "value": "Bueno",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Equilibrado",
+      "level": 4
     }
   ],
   "galleryItems": [

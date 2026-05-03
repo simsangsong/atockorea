@@ -89,39 +89,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "9–10 hours"
-    },
-    {
       "icon": "camera",
-      "label": "Photo Potential",
-      "value": "Very High"
+      "label": "Photo Value",
+      "value": "Excellent",
+      "level": 5
     },
     {
-      "icon": "tree-pine",
-      "label": "Scenery",
-      "value": "Garden & Forest"
+      "icon": "mountain",
+      "label": "Scenic",
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Moderate"
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Rain Safety",
+      "value": "Moderate",
+      "level": 3
     },
     {
       "icon": "users",
-      "label": "Group Style",
-      "value": "Private Only"
-    },
-    {
-      "icon": "ticket",
-      "label": "Admission Fees",
-      "value": "Pay Direct"
+      "label": "Family Fit",
+      "value": "Excellent",
+      "level": 5
     },
     {
       "icon": "gauge",
-      "label": "Pace",
-      "value": "Relaxed Private Pace"
+      "label": "Balance",
+      "value": "Flexible",
+      "level": 5
     }
   ],
   "galleryItems": [

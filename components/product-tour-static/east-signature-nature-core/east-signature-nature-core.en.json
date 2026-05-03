@@ -95,33 +95,39 @@
   "glanceItems": [
     {
       "icon": "camera",
-      "label": "Photo Potential",
-      "value": "High"
+      "label": "Photo Value",
+      "value": "Excellent",
+      "level": 5
     },
     {
       "icon": "mountain",
-      "label": "Scenery Density",
-      "value": "High"
+      "label": "Scenic",
+      "value": "High",
+      "level": 5
     },
     {
       "icon": "footprints",
-      "label": "Walking Difficulty",
-      "value": "Moderate"
+      "label": "Walking",
+      "value": "Moderate",
+      "level": 3
     },
     {
       "icon": "cloud-rain",
-      "label": "Rain Suitability",
-      "value": "Moderate"
+      "label": "Rain Safety",
+      "value": "Moderate",
+      "level": 3
     },
     {
       "icon": "users",
-      "label": "Family Suitability",
-      "value": "Good"
+      "label": "Family Fit",
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "gauge",
-      "label": "Pace",
-      "value": "Balanced"
+      "label": "Balance",
+      "value": "Balanced",
+      "level": 4
     }
   ],
   "galleryItems": [

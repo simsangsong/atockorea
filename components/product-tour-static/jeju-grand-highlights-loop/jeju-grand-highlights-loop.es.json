@@ -97,34 +97,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duración",
-      "value": "Un día completo (alta densidad)"
-    },
-    {
-      "icon": "map-pin",
-      "label": "Región",
-      "value": "Toda la isla de Jeju"
+      "icon": "camera",
+      "label": "Valor fotográfico",
+      "value": "Muy alto",
+      "level": 5
     },
     {
       "icon": "mountain",
-      "label": "Punto culminante",
-      "value": "Hallasan + Seongsan Ilchulbong (UNESCO)"
+      "label": "Densidad escénica",
+      "value": "Muy alto",
+      "level": 5
     },
     {
       "icon": "footprints",
-      "label": "A pie",
-      "value": "Moderado-activo"
+      "label": "Caminata",
+      "value": "Alto",
+      "level": 4
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Aptitud lluvia",
+      "value": "Moderado",
+      "level": 3
     },
     {
       "icon": "users",
-      "label": "Grupo",
-      "value": "Grupo pequeño"
+      "label": "Aptitud familia",
+      "value": "Moderado",
+      "level": 3
     },
     {
-      "icon": "ticket",
-      "label": "Entradas",
-      "value": "Incluidas"
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Rápido",
+      "level": 3
     }
   ],
   "galleryItems": [

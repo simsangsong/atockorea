@@ -96,34 +96,40 @@
   ],
   "glanceItems": [
     {
+      "icon": "camera",
+      "label": "Valor fotográfico",
+      "value": "Excelente",
+      "level": 5
+    },
+    {
       "icon": "mountain",
-      "label": "Patrimonio",
-      "value": "UNESCO (Hallasan) + Geoparque UNESCO"
+      "label": "Densidad escénica",
+      "value": "Bueno",
+      "level": 4
     },
     {
       "icon": "footprints",
-      "label": "A pie",
-      "value": "Moderado-activo (Eoseungsaengak tiene escalones)"
+      "label": "Caminata",
+      "value": "Moderado",
+      "level": 3
     },
     {
-      "icon": "coffee",
-      "label": "Cultura cafetera",
-      "value": "Cafés costeros de Aewol al final del día"
+      "icon": "cloud-rain",
+      "label": "Aptitud lluvia",
+      "value": "Moderado",
+      "level": 3
     },
     {
-      "icon": "clock",
-      "label": "Duración",
-      "value": "Un día completo"
+      "icon": "users",
+      "label": "Aptitud familia",
+      "value": "Bueno",
+      "level": 4
     },
     {
-      "icon": "map-pin",
-      "label": "Punto de encuentro",
-      "value": "Recogida en su hotel de Jeju Ciudad (08:30-09:00)"
-    },
-    {
-      "icon": "ticket",
-      "label": "Incluido",
-      "value": "Recogida en hotel, guía certificado, entradas"
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Equilibrado",
+      "level": 4
     }
   ],
   "galleryItems": [

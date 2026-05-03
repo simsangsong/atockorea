@@ -91,34 +91,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "calendar",
-      "label": "Temporada",
-      "value": "Solo temporada de cerezos (marzo-abril)"
-    },
-    {
-      "icon": "flower",
-      "label": "Floración",
-      "value": "Cerezos + colza — el contraste más fotogénico de Jeju"
-    },
-    {
-      "icon": "map-pin",
-      "label": "Recogida",
-      "value": "Hotel / puntos de recogida en Jeju Ciudad"
-    },
-    {
-      "icon": "footprints",
-      "label": "A pie",
-      "value": "Ligero-moderado"
-    },
-    {
-      "icon": "ticket",
-      "label": "Entradas",
-      "value": "Incluidas (Ilchul Land + Seongsan)"
+      "icon": "camera",
+      "label": "Valor fotográfico",
+      "value": "Excelente",
+      "level": 5
     },
     {
       "icon": "mountain",
-      "label": "Cierre",
-      "value": "Seongsan Ilchulbong — triple Patrimonio UNESCO"
+      "label": "Densidad escénica",
+      "value": "Bueno",
+      "level": 4
+    },
+    {
+      "icon": "footprints",
+      "label": "Caminata",
+      "value": "Moderado",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Aptitud lluvia",
+      "value": "Bajo",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "Aptitud familia",
+      "value": "Bueno",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Equilibrado",
+      "level": 4
     }
   ],
   "galleryItems": [

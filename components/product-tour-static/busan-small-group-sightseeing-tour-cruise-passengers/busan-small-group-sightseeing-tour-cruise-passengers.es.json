@@ -98,34 +98,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "anchor",
-      "label": "Tipo",
-      "value": "Excursión en escala de crucero"
+      "icon": "camera",
+      "label": "Valor fotográfico",
+      "value": "Excelente",
+      "level": 5
     },
     {
-      "icon": "clock",
-      "label": "Duración",
-      "value": "9 horas (barco → barco, regreso garantizado 60+ min antes)"
+      "icon": "mountain",
+      "label": "Densidad escénica",
+      "value": "Bueno",
+      "level": 4
     },
     {
-      "icon": "map-pin",
-      "label": "Recogida",
-      "value": "Terminal Internacional de Cruceros del Puerto de Busan"
+      "icon": "footprints",
+      "label": "Caminata",
+      "value": "Alto",
+      "level": 4
     },
     {
-      "icon": "utensils",
-      "label": "Almuerzo",
-      "value": "Incluido (dwaeji gukbap o haemul jeongsik)"
+      "icon": "cloud-rain",
+      "label": "Aptitud lluvia",
+      "value": "Moderado",
+      "level": 3
     },
     {
       "icon": "users",
-      "label": "Formato",
-      "value": "Furgoneta compartida de grupo pequeño (~10)"
+      "label": "Aptitud familia",
+      "value": "Moderado",
+      "level": 3
     },
     {
-      "icon": "shield",
-      "label": "Garantía",
-      "value": "Regreso garantizado al terminal al menos 60 min antes"
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Equilibrado",
+      "level": 4
     }
   ],
   "galleryItems": [

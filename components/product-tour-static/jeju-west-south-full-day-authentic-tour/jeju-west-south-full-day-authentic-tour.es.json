@@ -98,34 +98,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duración",
-      "value": "≈ 9 horas"
+      "icon": "camera",
+      "label": "Valor fotográfico",
+      "value": "Muy alto",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "Grupo",
-      "value": "Grupo pequeño, minibús con guía en inglés/chino"
-    },
-    {
-      "icon": "map-pin",
-      "label": "Punto de encuentro",
-      "value": "Ocean Suites 08:30 / Aeropuerto / Ayuntamiento / Dongmun"
+      "icon": "mountain",
+      "label": "Densidad escénica",
+      "value": "Muy alto",
+      "level": 5
     },
     {
       "icon": "footprints",
-      "label": "A pie",
-      "value": "Moderado — sin senderismo intenso, más paseos y vistas"
+      "label": "Caminata",
+      "value": "Moderado",
+      "level": 3
     },
     {
-      "icon": "coffee",
-      "label": "Cultura cafetera",
-      "value": "Cafés costeros de Hyeopjae incluidos en la ruta"
+      "icon": "cloud-rain",
+      "label": "Aptitud lluvia",
+      "value": "Moderado",
+      "level": 3
     },
     {
-      "icon": "ticket",
-      "label": "Incluido",
-      "value": "Vehículo, guía certificado, todas las entradas"
+      "icon": "users",
+      "label": "Aptitud familia",
+      "value": "Bueno",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Equilibrado",
+      "level": 4
     }
   ],
   "galleryItems": [

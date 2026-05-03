@@ -96,34 +96,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "≈ 9 hours, ship-to-ship (calibrated to your cruise schedule)"
+      "icon": "camera",
+      "label": "Photo Value",
+      "value": "Excellent",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "Group",
-      "value": "Small group, shared van with other cruise passengers (typically up to ≈10)"
-    },
-    {
-      "icon": "ship",
-      "label": "Pickup",
-      "value": "Busan Port International Passenger Terminal — arrival hall"
+      "icon": "mountain",
+      "label": "Scenic",
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Moderate — Taejongdae cliff path or Danubi Train, Gamcheon hillside stairs, market alleys"
+      "value": "High",
+      "level": 4
     },
     {
-      "icon": "ticket",
-      "label": "Includes",
-      "value": "Vehicle, certified guide, fuel/tolls/parking. Excludes: lunch, optional Taejongdae Danubi Train (₩4,000), optional Busan Tower observatory (₩12,000), tips."
+      "icon": "cloud-rain",
+      "label": "Rain Safety",
+      "value": "Moderate",
+      "level": 3
     },
     {
-      "icon": "star",
-      "label": "Rating",
-      "value": "4.9 / 5 across 32 reviews on the operator's listing"
+      "icon": "users",
+      "label": "Family Fit",
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "gauge",
+      "label": "Balance",
+      "value": "Balanced",
+      "level": 4
     }
   ],
   "galleryItems": [

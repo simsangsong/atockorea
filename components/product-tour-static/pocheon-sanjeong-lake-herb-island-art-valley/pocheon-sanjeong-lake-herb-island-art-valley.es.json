@@ -95,39 +95,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "10 hours"
-    },
-    {
-      "icon": "tree-pine",
-      "label": "Scenery",
-      "value": "Lake & Garden"
-    },
-    {
       "icon": "camera",
-      "label": "Photo Potential",
-      "value": "Very High"
+      "label": "Valor fotográfico",
+      "value": "Bueno",
+      "level": 4
+    },
+    {
+      "icon": "mountain",
+      "label": "Densidad escénica",
+      "value": "Bueno",
+      "level": 4
     },
     {
       "icon": "footprints",
-      "label": "Walking",
-      "value": "Easy to Moderate"
+      "label": "Caminata",
+      "value": "Moderado",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Aptitud lluvia",
+      "value": "Bueno",
+      "level": 4
     },
     {
       "icon": "users",
-      "label": "Group Style",
-      "value": "Small Group"
-    },
-    {
-      "icon": "ticket",
-      "label": "Admission Fees",
-      "value": "Included"
+      "label": "Aptitud familia",
+      "value": "Excelente",
+      "level": 5
     },
     {
       "icon": "gauge",
-      "label": "Pace",
-      "value": "Relaxed"
+      "label": "Equilibrio",
+      "value": "Flexible",
+      "level": 5
     }
   ],
   "galleryItems": [
@@ -782,7 +783,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gyeonggi_pocheon",
     "vehicle_type": "minicoach",
-    "duration_hours": 10.0,
+    "duration_hours": 10,
     "region_tags": [
       "seoul_capital",
       "gyeonggi_pocheon",
@@ -809,16 +810,16 @@
     "pace_level": 0.4,
     "walking_level": 0.45,
     "scenic_level": 0.95,
-    "photo_level": 1.0,
+    "photo_level": 1,
     "culture_level": 0.4,
-    "relax_level": 1.0,
+    "relax_level": 1,
     "first_time_fit": 0.6,
     "family_fit": 0.85,
     "senior_fit": 0.8,
-    "couple_fit": 1.0,
+    "couple_fit": 1,
     "solo_traveler_fit": 0.8,
     "active_traveler_fit": 0.4,
-    "adult_family_fit": 1.0,
+    "adult_family_fit": 1,
     "family_with_teens_fit": 0.6,
     "young_kids_fit": 0.6,
     "senior_active_fit": 0.8,
@@ -846,7 +847,7 @@
     "comfort_level": 0.8,
     "budget_fit": 0.6,
     "premium_fit": 0.4,
-    "small_group_fit": 1.0,
+    "small_group_fit": 1,
     "private_fit": 0.2,
     "bus_fit": 0.4,
     "price_band": "mid",
@@ -905,43 +906,43 @@
     "history_culture_fit": 0.4,
     "romantic_fit": 0.85,
     "seasonal_fit": 0.85,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "seoul_day_trip_pair_fit": 1.0,
-    "seoul_central_hotel_pickup_fit": 1.0,
-    "return_to_seoul_central_fit": 1.0,
-    "day_trip_2_3_hour_drive_each_way_fit": 1.0,
-    "small_group_format_fit": 1.0,
-    "fixed_schedule_format_fit": 1.0,
-    "affordable_format_vs_charter_fit": 1.0,
-    "quarry_restoration_anchor_fit": 1.0,
-    "korea_first_ecological_restoration_project_fit": 1.0,
-    "pocheon_seok_granite_anchor_fit": 1.0,
-    "blue_house_national_assembly_incheon_airport_granite_source_fit": 1.0,
-    "abandoned_quarry_to_culture_park_fit": 1.0,
-    "emerald_quarry_lake_anchor_fit": 1.0,
-    "hosur_concert_hall_quarry_cliff_venue_fit": 1.0,
-    "pocheon_three_pillar_day_trip_fit": 1.0,
-    "agricultural_reservoir_lake_visit_fit": 1.0,
-    "1925_irrigation_lake_anchor_fit": 1.0,
-    "national_tourist_site_1977_designation_fit": 1.0,
-    "myeongseongsan_silver_grass_autumn_fit": 1.0,
-    "sanjeong_lake_sledding_festival_winter_fit": 1.0,
-    "mediterranean_herb_garden_fit": 1.0,
-    "year_round_lighting_festival_fit": 1.0,
-    "korea_largest_herb_museum_fit": 1.0,
-    "korea_drama_filming_density_high_fit": 1.0,
-    "legend_of_the_blue_sea_filming_fit": 1.0,
-    "moon_lovers_scarlet_heart_ryeo_filming_fit": 1.0,
+    "seoul_day_trip_pair_fit": 1,
+    "seoul_central_hotel_pickup_fit": 1,
+    "return_to_seoul_central_fit": 1,
+    "day_trip_2_3_hour_drive_each_way_fit": 1,
+    "small_group_format_fit": 1,
+    "fixed_schedule_format_fit": 1,
+    "affordable_format_vs_charter_fit": 1,
+    "quarry_restoration_anchor_fit": 1,
+    "korea_first_ecological_restoration_project_fit": 1,
+    "pocheon_seok_granite_anchor_fit": 1,
+    "blue_house_national_assembly_incheon_airport_granite_source_fit": 1,
+    "abandoned_quarry_to_culture_park_fit": 1,
+    "emerald_quarry_lake_anchor_fit": 1,
+    "hosur_concert_hall_quarry_cliff_venue_fit": 1,
+    "pocheon_three_pillar_day_trip_fit": 1,
+    "agricultural_reservoir_lake_visit_fit": 1,
+    "1925_irrigation_lake_anchor_fit": 1,
+    "national_tourist_site_1977_designation_fit": 1,
+    "myeongseongsan_silver_grass_autumn_fit": 1,
+    "sanjeong_lake_sledding_festival_winter_fit": 1,
+    "mediterranean_herb_garden_fit": 1,
+    "year_round_lighting_festival_fit": 1,
+    "korea_largest_herb_museum_fit": 1,
+    "korea_drama_filming_density_high_fit": 1,
+    "legend_of_the_blue_sea_filming_fit": 1,
+    "moon_lovers_scarlet_heart_ryeo_filming_fit": 1,
     "differentiates_from_dmz_day_trip": true,
     "differentiates_from_nami_morning_calm_petite_france": true,
     "differentiates_from_seoraksan_sokcho_day_trip": true,
@@ -1832,17 +1833,17 @@
               "reasoning": "Verified — Sanjeong Lake fully outdoor; Herb Island has indoor village and Healing Center fallbacks; Art Valley monorail covered. Mixed exposure. 0.55."
             },
             "scenic_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "Verified — strong scenic content (mountain-circled lake + Mediterranean herbs + emerald quarry lake) but not at UNESCO World Heritage scale. Slight markdown to 0.95."
             },
             "photo_level": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified maintained — Sanjeong Lake fog reflection + Herb Island pink wish tunnel / illumination + Cheonjuho emerald cliff lake. Strong photographic content. Maintained at 1.0."
             },
             "nature_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.9,
               "reasoning": "Verified — strong nature (lake + herbs + restored quarry) but Herb Island's themed-park structure is partly artificial. Slight markdown to 0.9."
             },
@@ -1872,8 +1873,8 @@
               "reasoning": "Verified — Pocheon-style ribs (Idong Galbi) and freshwater snail are signature regional foods, but the tour itself is light on food-focused stops (Herb Island has Mediterranean cuisine but is primarily decorative). Slight markdown to 0.55."
             },
             "small_group_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified maintained — small-group minicoach format. Maintained at 1.0."
             },
             "bus_fit": {

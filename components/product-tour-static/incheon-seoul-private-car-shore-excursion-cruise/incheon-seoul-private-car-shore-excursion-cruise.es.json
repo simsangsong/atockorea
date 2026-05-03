@@ -98,39 +98,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "8 hours"
-    },
-    {
       "icon": "camera",
-      "label": "Photo Value",
-      "value": "Very High"
+      "label": "Valor fotográfico",
+      "value": "Muy alto",
+      "level": 5
     },
     {
       "icon": "mountain",
-      "label": "Scenic",
-      "value": "High"
+      "label": "Densidad escénica",
+      "value": "Bueno",
+      "level": 4
     },
     {
       "icon": "footprints",
-      "label": "Walking",
-      "value": "Moderate"
+      "label": "Caminata",
+      "value": "Moderado",
+      "level": 3
     },
     {
       "icon": "cloud-rain",
-      "label": "Rain Safety",
-      "value": "Moderate"
+      "label": "Aptitud lluvia",
+      "value": "Bueno",
+      "level": 4
     },
     {
       "icon": "users",
-      "label": "Family Fit",
-      "value": "Moderate"
+      "label": "Aptitud familia",
+      "value": "Excelente",
+      "level": 5
     },
     {
-      "icon": "scale",
-      "label": "Pace",
-      "value": "Balanced"
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Flexible",
+      "level": 5
     }
   ],
   "galleryItems": [
@@ -951,7 +952,7 @@
     "destination_region": "korea_mainland",
     "region_type": "seoul_with_incheon_origin",
     "vehicle_type": "private_vehicle",
-    "duration_hours": 8.0,
+    "duration_hours": 8,
     "region_tags": [
       "seoul_central"
     ],
@@ -970,27 +971,27 @@
     "pace_level": 0.6,
     "walking_level": 0.6,
     "scenic_level": 0.85,
-    "photo_level": 1.0,
-    "culture_level": 1.0,
+    "photo_level": 1,
+    "culture_level": 1,
     "relax_level": 0.8,
-    "first_time_fit": 1.0,
+    "first_time_fit": 1,
     "family_fit": 0.75,
     "senior_fit": 0.6,
-    "couple_fit": 1.0,
+    "couple_fit": 1,
     "solo_traveler_fit": 0.6,
     "active_traveler_fit": 0.6,
-    "adult_family_fit": 1.0,
-    "family_with_teens_fit": 1.0,
-    "young_kids_fit": 1.0,
+    "adult_family_fit": 1,
+    "family_with_teens_fit": 1,
+    "young_kids_fit": 1,
     "senior_active_fit": 0.6,
     "senior_general_fit": 0.6,
-    "mobility_friendly_fit": 1.0,
-    "stroller_fit": 1.0,
-    "one_day_fit": 1.0,
+    "mobility_friendly_fit": 1,
+    "stroller_fit": 1,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.6,
     "rain_fit": 0.6,
     "value_for_money_fit": 0.65,
-    "iconic_landmark_fit": 1.0,
+    "iconic_landmark_fit": 1,
     "cafe_fit": 0.4,
     "food_fit": 0.8,
     "nature_fit": 0.2,
@@ -998,17 +999,17 @@
     "nightlife_fit": 0.2,
     "shopping_fit": 0.85,
     "no_shopping_fit": 0.4,
-    "local_culture_fit": 1.0,
-    "storytelling_fit": 1.0,
+    "local_culture_fit": 1,
+    "storytelling_fit": 1,
     "unesco_fit": 0.3,
     "intangible_heritage_fit": 0.2,
     "indoor_ratio": 0.35,
     "weather_sensitivity": 0.4,
-    "comfort_level": 1.0,
+    "comfort_level": 1,
     "budget_fit": 0.4,
-    "premium_fit": 1.0,
+    "premium_fit": 1,
     "small_group_fit": 0.05,
-    "private_fit": 1.0,
+    "private_fit": 1,
     "bus_fit": 0.05,
     "price_band": "premium",
     "pickup_base": "incheon_cruise_terminal",
@@ -1047,55 +1048,55 @@
       "n_seoul_tower",
       "myeongdong"
     ],
-    "private_tour_fit": 1.0,
+    "private_tour_fit": 1,
     "customizable_route_fit": 0.6,
     "flexibility_fit": 0.85,
-    "cruise_passenger_fit": 1.0,
+    "cruise_passenger_fit": 1,
     "history_culture_fit": 0.8,
-    "royal_palace_fit": 1.0,
-    "hanok_fit": 1.0,
-    "n_seoul_tower_fit": 1.0,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "royal_palace_fit": 1,
+    "hanok_fit": 1,
+    "n_seoul_tower_fit": 1,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "cruise_market_segment_fit": 1.0,
-    "cruise_shore_excursion_fit": 1.0,
-    "incheon_port_pickup_fit": 1.0,
-    "cruise_reboarding_safety_buffer_fit": 1.0,
-    "weather_fallback_dense_fit": 1.0,
-    "instagram_dense_route_fit": 1.0,
-    "private_charter_format_fit": 1.0,
-    "flexible_pickup_dropoff_fit": 1.0,
-    "premium_pacing_fit": 1.0,
-    "small_party_intimate_fit": 1.0,
-    "private_gangway_pickup_fit": 1.0,
-    "customizable_route_mid_day_fit": 1.0,
+    "cruise_market_segment_fit": 1,
+    "cruise_shore_excursion_fit": 1,
+    "incheon_port_pickup_fit": 1,
+    "cruise_reboarding_safety_buffer_fit": 1,
+    "weather_fallback_dense_fit": 1,
+    "instagram_dense_route_fit": 1,
+    "private_charter_format_fit": 1,
+    "flexible_pickup_dropoff_fit": 1,
+    "premium_pacing_fit": 1,
+    "small_party_intimate_fit": 1,
+    "private_gangway_pickup_fit": 1,
+    "customizable_route_mid_day_fit": 1,
     "differentiates_from_incheon_seoul_small_group_cruise_pair_partner": true,
-    "inter_city_cruise_excursion_fit": 1.0,
-    "incheon_to_seoul_journey_fit": 1.0,
-    "incheon_seoul_cruise_pair_fit": 1.0,
-    "seoul_signature_route_fit": 1.0,
-    "seoul_first_time_visitor_fit": 1.0,
-    "joseon_dynasty_palace_visit_fit": 1.0,
-    "royal_guard_changing_ceremony_fit": 1.0,
-    "hanok_village_visit_fit": 1.0,
-    "city_panorama_tower_fit": 1.0,
-    "kbeauty_shopping_fit": 1.0,
+    "inter_city_cruise_excursion_fit": 1,
+    "incheon_to_seoul_journey_fit": 1,
+    "incheon_seoul_cruise_pair_fit": 1,
+    "seoul_signature_route_fit": 1,
+    "seoul_first_time_visitor_fit": 1,
+    "joseon_dynasty_palace_visit_fit": 1,
+    "royal_guard_changing_ceremony_fit": 1,
+    "hanok_village_visit_fit": 1,
+    "city_panorama_tower_fit": 1,
+    "kbeauty_shopping_fit": 1,
     "five_grand_palaces_anchor_count": 1,
-    "iconic_landmark_photo_anchor_fit": 1.0,
-    "duty_free_shopping_fit": 1.0,
-    "morning_palace_pacing_fit": 1.0,
-    "afternoon_panorama_pacing_fit": 1.0,
-    "evening_shopping_pacing_fit": 1.0,
-    "myeongdong_jogyesa_choice_fit": 1.0,
+    "iconic_landmark_photo_anchor_fit": 1,
+    "duty_free_shopping_fit": 1,
+    "morning_palace_pacing_fit": 1,
+    "afternoon_panorama_pacing_fit": 1,
+    "evening_shopping_pacing_fit": 1,
+    "myeongdong_jogyesa_choice_fit": 1,
     "differentiates_from_incheon_seoul_market_crafts_route": true,
     "differentiates_from_busan_charter_cruise_pair_partner": true,
     "differentiates_from_busan_small_group_cruise_pair_partner": true,
@@ -1969,7 +1970,7 @@
             },
             "private_tour_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — private vehicle dedicated to your group only; private gangway pickup; private driver-guide. Was unset. Maximum 1.0."
             },
             "customizable_route_fit": {
@@ -1984,12 +1985,12 @@
             },
             "cruise_passenger_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — purpose-built private shore excursion with ship-return guarantee. Was unset. Maximum."
             },
             "first_time_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Maintained — Seoul highlights + N Seoul Tower covers maximum first-time-Korea content."
             },
             "history_culture_fit": {
@@ -1999,17 +2000,17 @@
             },
             "royal_palace_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Gyeongbokgung is centerpiece. Was unset."
             },
             "hanok_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Bukchon is Seoul's largest hanok district. Was unset."
             },
             "iconic_landmark_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Maintained — Gyeongbokgung + N Seoul Tower = Seoul's two #1 landmarks."
             },
             "walking_level": {
@@ -2028,8 +2029,8 @@
               "reasoning": "Maintained — flex lunch + Myeongdong/Jogyesa choice provides indoor fallbacks; private vehicle minimizes outdoor exposure between stops."
             },
             "storytelling_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Maintained — private driver-guide commentary throughout; Joseon royal + colonial-period + modern Seoul layered narrative."
             },
             "family_fit": {
@@ -2048,8 +2049,8 @@
               "reasoning": "Verified — Bukchon + Insadong + Myeongdong (option) = strong shopping. Slight upward to 0.85."
             },
             "premium_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Maintained — private vehicle + driver-guide + sail-away guarantee = premium product."
             },
             "value_for_money_fit": {
@@ -2063,8 +2064,8 @@
               "reasoning": "VERIFIED — N Seoul Tower 360° view adds catalog-defining urban panorama vs. Tour 1. Upward to 0.85."
             },
             "photo_level": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Maintained — palace + Bukchon + N Seoul Tower = Seoul's highest photo density (with the tower bonus)."
             },
             "small_group_fit": {
@@ -2084,7 +2085,7 @@
             },
             "n_seoul_tower_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — N Seoul Tower is the day's tower viewpoint stop. Was unset (new dimension). Maximum."
             }
           }

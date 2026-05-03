@@ -96,34 +96,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duración",
-      "value": "Un día (regreso ~30-40 min antes que el tour UNESCO Legacy)"
+      "icon": "camera",
+      "label": "Valor fotográfico",
+      "value": "Excelente",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "Grupo",
-      "value": "Grupo pequeño (~10 pasajeros máx.)"
-    },
-    {
-      "icon": "map-pin",
-      "label": "Recogida",
-      "value": "3 estaciones de metro de Busan"
+      "icon": "mountain",
+      "label": "Densidad escénica",
+      "value": "Bueno",
+      "level": 4
     },
     {
       "icon": "footprints",
-      "label": "A pie",
-      "value": "Moderado — Bulguksa + Woljeonggyo"
+      "label": "Caminata",
+      "value": "Moderado",
+      "level": 3
     },
     {
-      "icon": "ticket",
-      "label": "Entradas",
-      "value": "Todas incluidas"
+      "icon": "cloud-rain",
+      "label": "Aptitud lluvia",
+      "value": "Moderado",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "Aptitud familia",
+      "value": "Bueno",
+      "level": 4
     },
     {
       "icon": "gauge",
-      "label": "Ritmo",
-      "value": "Más pausado que el tour UNESCO Legacy"
+      "label": "Equilibrio",
+      "value": "Equilibrado",
+      "level": 4
     }
   ],
   "galleryItems": [

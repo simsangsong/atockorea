@@ -100,33 +100,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "9 hours (morning to early evening)"
+      "icon": "camera",
+      "label": "Photo Value",
+      "value": "Excellent",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "Group",
-      "value": "Small group, English-speaking guide"
-    },
-    {
-      "icon": "map-pin",
-      "label": "Region",
-      "value": "Suwon & Gwangmyeong, Gyeonggi Province"
+      "icon": "mountain",
+      "label": "Scenic",
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Moderate — fortress walk is uphill on stone, cave includes 180+ steps"
+      "value": "High",
+      "level": 4
     },
     {
-      "icon": "ticket",
-      "label": "Includes",
-      "value": "Round-trip transport, English guide, Suwon Hwaseong Fortress + Haenggung Palace + Gwangmyeong Cave admissions"
+      "icon": "cloud-rain",
+      "label": "Rain Safety",
+      "value": "Excellent",
+      "level": 5
     },
     {
-      "label": "Lunch",
-      "value": "Not included — typically eaten at Starfield mall food court (excellent variety) or Suwon Galbi alley"
+      "icon": "users",
+      "label": "Family Fit",
+      "value": "Good",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Balance",
+      "value": "Balanced",
+      "level": 4
     }
   ],
   "galleryItems": [

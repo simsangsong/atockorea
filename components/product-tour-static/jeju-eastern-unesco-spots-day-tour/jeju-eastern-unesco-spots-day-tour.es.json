@@ -98,34 +98,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duración",
-      "value": "≈ 9 horas (recogida desde las 08:30)"
+      "icon": "camera",
+      "label": "Valor fotográfico",
+      "value": "Excelente",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "Grupo",
-      "value": "Grupo pequeño, minibús con guía en inglés/chino"
-    },
-    {
-      "icon": "map-pin",
-      "label": "Punto de encuentro",
-      "value": "Ocean Suites 08:30 / Aeropuerto / Ayuntamiento / Dongmun"
-    },
-    {
-      "icon": "star",
-      "label": "Valoración",
-      "value": "4,9/5 con 1.148 reseñas"
+      "icon": "mountain",
+      "label": "Densidad escénica",
+      "value": "Bueno",
+      "level": 4
     },
     {
       "icon": "footprints",
-      "label": "A pie",
-      "value": "Moderado — Seongsan Ilchulbong tiene escaleras (opcional)"
+      "label": "Caminata",
+      "value": "Moderado",
+      "level": 3
     },
     {
-      "icon": "ticket",
-      "label": "Incluido",
-      "value": "Vehículo, guía certificado, todas las entradas"
+      "icon": "cloud-rain",
+      "label": "Aptitud lluvia",
+      "value": "Moderado",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "Aptitud familia",
+      "value": "Bueno",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Equilibrado",
+      "level": 4
     }
   ],
   "galleryItems": [

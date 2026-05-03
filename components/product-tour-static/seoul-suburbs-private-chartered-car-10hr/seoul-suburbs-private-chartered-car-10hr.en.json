@@ -89,34 +89,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "car",
-      "label": "Tour Style",
-      "value": "Private Charter"
+      "icon": "camera",
+      "label": "Photo Value",
+      "value": "Good",
+      "level": 4
     },
     {
-      "icon": "map",
-      "label": "Routing",
-      "value": "Fully Customizable"
+      "icon": "mountain",
+      "label": "Scenic",
+      "value": "Good",
+      "level": 4
     },
     {
-      "icon": "user-check",
-      "label": "Guide",
-      "value": "Licensed Driver-Guide"
+      "icon": "footprints",
+      "label": "Walking",
+      "value": "Moderate",
+      "level": 3
     },
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "10 hours"
+      "icon": "cloud-rain",
+      "label": "Rain Safety",
+      "value": "Excellent",
+      "level": 5
     },
     {
-      "icon": "ticket",
-      "label": "Admission Fees",
-      "value": "Pay Direct"
+      "icon": "users",
+      "label": "Family Fit",
+      "value": "Excellent",
+      "level": 5
     },
     {
-      "icon": "utensils-crossed",
-      "label": "Lunch",
-      "value": "Pay Direct"
+      "icon": "gauge",
+      "label": "Balance",
+      "value": "Flexible",
+      "level": 5
     }
   ],
   "galleryItems": [

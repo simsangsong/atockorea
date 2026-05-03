@@ -91,34 +91,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "calendar",
-      "label": "Temporada",
-      "value": "Solo temporada de hortensias (junio-agosto)"
+      "icon": "camera",
+      "label": "Valor fotográfico",
+      "value": "Muy alto",
+      "level": 5
     },
     {
-      "icon": "flower",
-      "label": "Flor",
-      "value": "Hortensia azul — Hallim Park + Camellia Hill (túnel)"
-    },
-    {
-      "icon": "map-pin",
-      "label": "Recogida",
-      "value": "Puntos habituales de Jeju Ciudad"
+      "icon": "mountain",
+      "label": "Densidad escénica",
+      "value": "Muy alto",
+      "level": 5
     },
     {
       "icon": "footprints",
-      "label": "A pie",
-      "value": "Moderado — cascadas + acantilados + jardines"
+      "label": "Caminata",
+      "value": "Moderado",
+      "level": 3
     },
     {
-      "icon": "ticket",
-      "label": "Entradas",
-      "value": "Incluidas"
+      "icon": "cloud-rain",
+      "label": "Aptitud lluvia",
+      "value": "Bajo",
+      "level": 2
     },
     {
-      "icon": "tree",
-      "label": "Cierre",
-      "value": "Osulloc — campos de té verde con el Hallasan al fondo"
+      "icon": "users",
+      "label": "Aptitud familia",
+      "value": "Bueno",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Enfocado",
+      "level": 3
     }
   ],
   "galleryItems": [
