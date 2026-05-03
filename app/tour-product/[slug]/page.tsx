@@ -55,15 +55,18 @@ export default async function RegisteredTourProductPage({
   const slug = await resolveRegisteredSlug(params);
   const locale = await resolveTourProductDbLocale();
 
+  // Resolution order: Supabase locale → static JSON locale → Supabase EN fallback.
+  // Falling through to the static JSON for the requested locale before trying
+  // Supabase EN keeps the localized bundle from being silently replaced by EN
+  // content when only the EN row exists in the DB (currently the common case).
   let viewModel: Awaited<ReturnType<typeof loadTourProductViewModelBySlugFromSupabase>> = null;
   const forceStatic = process.env.TOUR_PRODUCT_FORCE_STATIC_BUNDLE === "1";
-  if (process.env.TOUR_PRODUCT_USE_SUPABASE === "1" && !forceStatic) {
+  const supabaseClient =
+    process.env.TOUR_PRODUCT_USE_SUPABASE === "1" && !forceStatic ? createAnonServerClient() : null;
+
+  if (supabaseClient) {
     try {
-      const supabase = createAnonServerClient();
-      viewModel = await loadTourProductViewModelBySlugFromSupabase(supabase, slug, locale);
-      if (!viewModel && locale !== "en") {
-        viewModel = await loadTourProductViewModelBySlugFromSupabase(supabase, slug, "en");
-      }
+      viewModel = await loadTourProductViewModelBySlugFromSupabase(supabaseClient, slug, locale);
     } catch (e) {
       console.error("[RegisteredTourProductPage] Supabase load failed, using JSON bundle", slug, e);
     }
@@ -71,8 +74,21 @@ export default async function RegisteredTourProductPage({
 
   if (!viewModel) {
     const doc = getStaticTourProductFullPageJson(slug, locale);
-    if (!doc) notFound();
-    viewModel = buildTourProductViewModelFromFullPageJson(doc, locale);
+    if (doc) {
+      viewModel = buildTourProductViewModelFromFullPageJson(doc, locale);
+    }
+  }
+
+  if (!viewModel && supabaseClient && locale !== "en") {
+    try {
+      viewModel = await loadTourProductViewModelBySlugFromSupabase(supabaseClient, slug, "en");
+    } catch (e) {
+      console.error("[RegisteredTourProductPage] Supabase EN fallback failed", slug, e);
+    }
+  }
+
+  if (!viewModel) {
+    notFound();
   }
 
   let checkout: Awaited<ReturnType<typeof getTourProductCheckoutContext>> = null;
