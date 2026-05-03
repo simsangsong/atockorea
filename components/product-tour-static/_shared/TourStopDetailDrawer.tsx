@@ -115,6 +115,102 @@ function splitDescriptionToParagraphs(text: string): string[] {
   return segments.length > 0 ? segments : [text];
 }
 
+/** Strip a trailing colon / fullwidth colon / Japanese colon for use as a
+ *  small uppercase header (i18n strings carry "Photo:" / "拍照：" / "写真:"). */
+function stripTrailingPunctuation(s: string | undefined): string {
+  if (!s) return "";
+  return s.replace(/[\s:：]+$/u, "");
+}
+
+/** Single row of the Visit Basics premium definition list. Label + value sit
+ *  on a single horizontal row at small viewport — long values wrap freely
+ *  under the label without forcing the next row's height. */
+function VisitBasicsRow({
+  icon,
+  label,
+  value,
+  tone,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  tone?: "closed";
+}) {
+  return (
+    <li className="flex items-start gap-3 py-2.5 first:pt-0 last:pb-0">
+      <span
+        className={cn(
+          "mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full",
+          tone === "closed" ? "bg-rose-50 text-rose-500" : "bg-primary/[0.07] text-primary",
+        )}
+      >
+        {icon}
+      </span>
+      <div className="min-w-0 flex-1">
+        <p className="text-[10.5px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+          {label}
+        </p>
+        <p className="mt-0.5 text-[13px] font-medium leading-snug text-foreground tabular-nums">
+          {value}
+        </p>
+      </div>
+    </li>
+  );
+}
+
+/** Premium colored callout card for a single Smart Note (Photo or Tip).
+ *  Small uppercase header (icon + label) sits above a body block in soft
+ *  tone-tinted gradient — visually distinct from the neutral collapsible. */
+function SmartNoteCard({
+  icon,
+  label,
+  body,
+  tone,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  body: string;
+  tone: "photo" | "tip";
+}) {
+  const palette =
+    tone === "photo"
+      ? {
+          wrap: "border-sky-100/70 bg-gradient-to-br from-sky-50/55 via-white to-white",
+          icon: "bg-sky-100/70 text-sky-700",
+          label: "text-sky-700/90",
+        }
+      : {
+          wrap: "border-amber-100/70 bg-gradient-to-br from-amber-50/55 via-white to-white",
+          icon: "bg-amber-100/70 text-amber-700",
+          label: "text-amber-700/90",
+        };
+  return (
+    <div className={cn("rounded-xl border px-3.5 py-3", palette.wrap)}>
+      <div className="mb-1.5 flex items-center gap-1.5">
+        <span
+          className={cn(
+            "flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full",
+            palette.icon,
+          )}
+        >
+          {icon}
+        </span>
+        <span
+          className={cn(
+            "text-[10.5px] font-semibold uppercase tracking-[0.12em]",
+            palette.label,
+          )}
+        >
+          {label}
+        </span>
+      </div>
+      <p className="text-[13px] leading-[1.55] text-foreground/85">
+        {renderInlineMarkdown(body)}
+      </p>
+    </div>
+  );
+}
+
 function CollapsibleSection({
   icon,
   title,
@@ -486,7 +582,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
                   </CollapsibleSection>
                 )}
 
-                {/* Collapsible — Visit basics + Convenience */}
+                {/* Collapsible — Visit basics + Convenience (premium definition-list) */}
                 {(stop.visitBasics ||
                   (stop.convenience && (stop.convenience.restroom || stop.convenience.parking))) && (
                   <CollapsibleSection
@@ -494,78 +590,57 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
                     title={sectionUi.stopVisitBasicsHeading}
                   >
                     {stop.visitBasics && (
-                      <div className="grid grid-cols-2 gap-3 text-[12.5px]">
+                      <ul className="divide-y divide-border/30">
                         {stop.visitBasics.hours && (
-                          <div className="flex items-start gap-2.5">
-                            <Clock className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                            <div>
-                              <p className="text-muted-foreground">{sectionUi.stopVisitHoursLabel}</p>
-                              <p className="mt-0.5 font-semibold text-foreground">
-                                {stop.visitBasics.hours}
-                              </p>
-                            </div>
-                          </div>
-                        )}
-                        {stop.visitBasics.admission && (
-                          <div className="flex items-start gap-2.5">
-                            <Ticket className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                            <div>
-                              <p className="text-muted-foreground">
-                                {sectionUi.stopVisitAdmissionLabel}
-                              </p>
-                              <p className="mt-0.5 font-semibold text-foreground">
-                                {stop.visitBasics.admission}
-                              </p>
-                            </div>
-                          </div>
-                        )}
-                        {stop.visitBasics.walking && (
-                          <div className="flex items-start gap-2.5">
-                            <Footprints className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                            <div>
-                              <p className="text-muted-foreground">
-                                {sectionUi.stopVisitWalkingLabel}
-                              </p>
-                              <p className="mt-0.5 font-semibold text-foreground">
-                                {stop.visitBasics.walking}
-                              </p>
-                            </div>
-                          </div>
+                          <VisitBasicsRow
+                            icon={<Clock className="h-3.5 w-3.5" strokeWidth={2} />}
+                            label={sectionUi.stopVisitHoursLabel}
+                            value={stop.visitBasics.hours}
+                          />
                         )}
                         {stop.visitBasics.closed && (
-                          <div className="flex items-start gap-2.5">
-                            <div className="mt-0.5 h-4 w-4 flex-shrink-0 text-center text-[10px] font-bold text-rose-500">
-                              ✕
-                            </div>
-                            <div>
-                              <p className="text-muted-foreground">{sectionUi.stopVisitClosedLabel}</p>
-                              <p className="mt-0.5 font-semibold text-foreground">
-                                {stop.visitBasics.closed}
-                              </p>
-                            </div>
-                          </div>
+                          <VisitBasicsRow
+                            icon={<X className="h-3.5 w-3.5" strokeWidth={2.5} />}
+                            label={sectionUi.stopVisitClosedLabel}
+                            value={stop.visitBasics.closed}
+                            tone="closed"
+                          />
                         )}
-                      </div>
+                        {stop.visitBasics.admission && (
+                          <VisitBasicsRow
+                            icon={<Ticket className="h-3.5 w-3.5" strokeWidth={2} />}
+                            label={sectionUi.stopVisitAdmissionLabel}
+                            value={stop.visitBasics.admission}
+                          />
+                        )}
+                        {stop.visitBasics.walking && (
+                          <VisitBasicsRow
+                            icon={<Footprints className="h-3.5 w-3.5" strokeWidth={2} />}
+                            label={sectionUi.stopVisitWalkingLabel}
+                            value={stop.visitBasics.walking}
+                          />
+                        )}
+                      </ul>
                     )}
 
                     {stop.convenience &&
                       (stop.convenience.restroom || stop.convenience.parking) && (
                         <div
                           className={cn(
-                            "flex gap-5 text-[12.5px]",
-                            stop.visitBasics ? "mt-4 border-t border-border/60 pt-4" : "",
+                            "flex flex-wrap gap-x-4 gap-y-2 text-[12px] text-muted-foreground",
+                            stop.visitBasics ? "mt-3 border-t border-border/30 pt-3" : "",
                           )}
                         >
                           {stop.convenience.restroom && (
-                            <div className="flex items-center gap-2">
-                              <Bath className="h-4 w-4 text-muted-foreground" />
-                              <span className="text-foreground">{stop.convenience.restroom}</span>
+                            <div className="flex min-w-0 items-start gap-1.5">
+                              <Bath className="mt-[2px] h-3.5 w-3.5 flex-shrink-0 text-muted-foreground/80" strokeWidth={2} />
+                              <span className="leading-snug">{stop.convenience.restroom}</span>
                             </div>
                           )}
                           {stop.convenience.parking && (
-                            <div className="flex items-center gap-2">
-                              <Car className="h-4 w-4 text-muted-foreground" />
-                              <span className="text-foreground">{stop.convenience.parking}</span>
+                            <div className="flex min-w-0 items-start gap-1.5">
+                              <Car className="mt-[2px] h-3.5 w-3.5 flex-shrink-0 text-muted-foreground/80" strokeWidth={2} />
+                              <span className="leading-snug">{stop.convenience.parking}</span>
                             </div>
                           )}
                         </div>
@@ -573,40 +648,28 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
                   </CollapsibleSection>
                 )}
 
-                {/* Collapsible — Smart notes (photo + insider tip) */}
+                {/* Collapsible — Smart notes (premium colored callout cards) */}
                 {stop.smartNotes && (stop.smartNotes.photo || stop.smartNotes.tip) && (
                   <CollapsibleSection
                     icon={<Sparkles className="h-4 w-4" strokeWidth={2} />}
                     title={sectionUi.stopSmartNotesHeading}
                   >
-                    <div className="space-y-3">
+                    <div className="space-y-2.5">
                       {stop.smartNotes.photo && (
-                        <div className="flex items-start gap-2.5">
-                          <Camera
-                            className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary"
-                            strokeWidth={2}
-                          />
-                          <p className="text-[13.5px] leading-relaxed text-foreground/85">
-                            <span className="font-semibold text-foreground">
-                              {sectionUi.stopSmartNotesPhotoPrefix}
-                            </span>{" "}
-                            {renderInlineMarkdown(stop.smartNotes.photo)}
-                          </p>
-                        </div>
+                        <SmartNoteCard
+                          icon={<Camera className="h-3.5 w-3.5" strokeWidth={2} />}
+                          label={stripTrailingPunctuation(sectionUi.stopSmartNotesPhotoPrefix)}
+                          tone="photo"
+                          body={stop.smartNotes.photo}
+                        />
                       )}
                       {stop.smartNotes.tip && (
-                        <div className="flex items-start gap-2.5">
-                          <Lightbulb
-                            className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent"
-                            strokeWidth={2}
-                          />
-                          <p className="text-[13.5px] leading-relaxed text-foreground/85">
-                            <span className="font-semibold text-foreground">
-                              {sectionUi.stopSmartNotesTipPrefix}
-                            </span>{" "}
-                            {renderInlineMarkdown(stop.smartNotes.tip)}
-                          </p>
-                        </div>
+                        <SmartNoteCard
+                          icon={<Lightbulb className="h-3.5 w-3.5" strokeWidth={2} />}
+                          label={stripTrailingPunctuation(sectionUi.stopSmartNotesTipPrefix)}
+                          tone="tip"
+                          body={stop.smartNotes.tip}
+                        />
                       )}
                     </div>
                   </CollapsibleSection>
