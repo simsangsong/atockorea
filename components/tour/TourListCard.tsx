@@ -82,7 +82,7 @@ function TourListCard({ tour, detailHref, formatPriceFn }: TourListCardProps) {
   return (
     <Link
       href={detailHref}
-      className="group block h-full overflow-hidden rounded-[1.6rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.97)_0%,rgba(248,250,252,0.96)_100%)] shadow-[0_16px_38px_-24px_rgba(15,23,42,0.34),0_4px_16px_-12px_rgba(15,23,42,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:border-white hover:shadow-[0_22px_52px_-26px_rgba(15,23,42,0.38),0_12px_26px_-16px_rgba(15,23,42,0.18)]"
+      className="group block h-full overflow-hidden rounded-[1.6rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.97)_0%,rgba(248,250,252,0.96)_100%)] shadow-[0_16px_38px_-24px_rgba(15,23,42,0.34),0_4px_16px_-12px_rgba(15,23,42,0.16)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-blue-200/80 hover:shadow-[0_30px_64px_-22px_rgba(15,23,42,0.42),0_16px_34px_-16px_rgba(59,130,246,0.22)] active:translate-y-0 active:scale-[0.99] motion-reduce:hover:transform-none"
     >
       <div className="relative aspect-[4/3.15] w-full shrink-0 overflow-hidden sm:aspect-[4/3.35]">
         <Image
@@ -90,10 +90,11 @@ function TourListCard({ tour, detailHref, formatPriceFn }: TourListCardProps) {
           alt={displayTitle}
           fill
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.08] motion-reduce:group-hover:scale-100"
           loading="lazy"
         />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-slate-950/30 via-slate-900/10 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-slate-950/30 via-slate-900/10 to-transparent transition-opacity duration-300 group-hover:opacity-60" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-500/0 transition-colors duration-500 group-hover:to-blue-500/10" />
         <div className="absolute left-2 top-2 flex max-w-[calc(100%-48px)] flex-col items-start gap-0.5">
           <div className="flex flex-wrap items-center gap-0.5">
             {editorialBadge ? (
@@ -148,7 +149,7 @@ function TourListCard({ tour, detailHref, formatPriceFn }: TourListCardProps) {
             </span>
           ) : null}
         </div>
-        <h3 className="line-clamp-2 min-h-[2.84em] text-[12.5px] font-semibold leading-[1.42] tracking-[-0.026em] text-slate-950 transition-colors group-hover:text-slate-700 sm:text-[13.5px]">
+        <h3 className="line-clamp-2 min-h-[2.84em] text-[12.5px] font-semibold leading-[1.42] tracking-[-0.026em] text-slate-950 transition-colors duration-300 group-hover:text-blue-700 sm:text-[13.5px]">
           {displayTitle}
         </h3>
         <div className="mt-1.5 flex flex-wrap items-center gap-1.5 text-[10.5px] text-slate-600">
