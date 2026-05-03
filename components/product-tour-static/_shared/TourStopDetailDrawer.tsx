@@ -122,6 +122,37 @@ function stripTrailingPunctuation(s: string | undefined): string {
   return s.replace(/[\s:：]+$/u, "");
 }
 
+/** Split a "How time is used" step into description + duration pill.
+ *  Common patterns the data uses across en/ko/ja/zh/zh-TW/es:
+ *    "Parking + entrance — ~10 min" → desc + "~10 min"
+ *    "차량 픽업 (약 5분)"             → desc + "약 5분"
+ *    "巴士下车（约5分钟）"            → desc + "约5分钟"
+ *  Falls back to the raw step text when no duration tail is detected.
+ */
+function splitDurationFromStep(step: string): { desc: string; duration: string } {
+  if (typeof step !== "string") return { desc: String(step ?? ""), duration: "" };
+  const trimmed = step.trim();
+
+  // Em-dash / en-dash / hyphen separator near the end with a digit on the right.
+  const dashCandidates = [" — ", " – ", " - ", "—", "–"];
+  for (const sep of dashCandidates) {
+    const idx = trimmed.lastIndexOf(sep);
+    if (idx <= 0) continue;
+    const right = trimmed.slice(idx + sep.length).trim();
+    if (right.length > 0 && right.length <= 28 && /\d/.test(right)) {
+      return { desc: trimmed.slice(0, idx).trim(), duration: right };
+    }
+  }
+
+  // Parenthesized tail with a digit inside: "...（约10分钟）" / "...(약 10분)"
+  const parenMatch = trimmed.match(/^(.*?)\s*[（(]\s*([^()（）]*\d[^()（）]*)\s*[）)]\s*$/);
+  if (parenMatch && parenMatch[1].trim().length > 0 && parenMatch[2].length <= 28) {
+    return { desc: parenMatch[1].trim(), duration: parenMatch[2].trim() };
+  }
+
+  return { desc: trimmed, duration: "" };
+}
+
 /** Single row of the Visit Basics premium definition list. Label + value sit
  *  on a single horizontal row at small viewport — long values wrap freely
  *  under the label without forcing the next row's height. */
@@ -553,22 +584,37 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
 
                 {/* Description is no longer inline — opens via the Highlights link button as a modal popup. */}
 
-                {/* Collapsible — Time breakdown */}
+                {/* Collapsible — Time breakdown (premium vertical timeline with duration pills) */}
                 {Array.isArray(stop.timeUsed) && stop.timeUsed.length > 0 && (
                   <CollapsibleSection
                     icon={<Clock className="h-4 w-4" strokeWidth={2} />}
                     title={sectionUi.stopTimeUsedHeading}
                   >
-                    <div className="flex items-start gap-2">
-                      {stop.timeUsed.map((step, i) => (
-                        <div key={i} className="flex-1 text-center">
-                          <div className="mx-auto mb-2 flex h-7 w-7 items-center justify-center rounded-full border border-border/50 bg-white text-[12px] font-semibold text-primary shadow-sm">
-                            {i + 1}
-                          </div>
-                          <p className="text-[12px] leading-snug text-foreground/80">{step}</p>
-                        </div>
-                      ))}
-                    </div>
+                    <ol className="space-y-2.5">
+                      {stop.timeUsed.map((step, i) => {
+                        const { desc, duration } = splitDurationFromStep(step);
+                        return (
+                          <li key={i} className="flex items-start gap-2.5">
+                            <span
+                              aria-hidden
+                              className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary/[0.08] text-[10.5px] font-semibold text-primary tabular-nums"
+                            >
+                              {i + 1}
+                            </span>
+                            <div className="flex min-w-0 flex-1 items-start justify-between gap-2.5">
+                              <p className="min-w-0 flex-1 text-[13px] leading-[1.5] text-foreground/85">
+                                {desc}
+                              </p>
+                              {duration && (
+                                <span className="mt-[1px] flex-shrink-0 rounded-md bg-muted/70 px-1.5 py-[1.5px] text-[10.5px] font-semibold tracking-[0.02em] text-muted-foreground tabular-nums">
+                                  {duration}
+                                </span>
+                              )}
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ol>
                   </CollapsibleSection>
                 )}
                 {typeof stop.timeUsed === "string" && stop.timeUsed.trim() !== "" && (
