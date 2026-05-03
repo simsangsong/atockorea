@@ -208,7 +208,10 @@
           "Hallasan National Park (Eorimok winter last-entry ~11:30)",
           "Jeju Provincial Tourism (hotel cluster catchment)"
         ]
-      }
+      },
+      "visitBasics": {},
+      "convenience": {},
+      "smartNotes": {}
     },
     {
       "number": 2,
@@ -240,6 +243,21 @@
           "VisitKorea / english.visitkorea.or.kr (FREE admission, no-reservation status)",
           "Jeju Bus Information System (Bus 240 + Routes 1100/1100-1)"
         ]
+      },
+      "visitBasics": {
+        "hours": "Open 24 hours (boardwalk); visitor center 09:00–18:00",
+        "closed": "1100 Highway may close temporarily during heavy snow (Dec–Feb)",
+        "admission": "Free",
+        "walking": "Easy — 1 km wooden boardwalk; flat, accessible"
+      },
+      "convenience": {
+        "restroom": "Available at visitor center",
+        "parking": "Free parking at visitor center"
+      },
+      "smartNotes": {
+        "photo": "Boardwalk leading into the wetland with Hallasan in the distance is the iconic shot; autumn (October) gives golden grass colors",
+        "facilities": "Visitor center with snacks and information",
+        "tip": "Bring layers — temperature is 5–10°C cooler than coastal Jeju; check road conditions in winter; combine with Cheonjeyeon Falls if descending south"
       }
     },
     {
@@ -272,7 +290,10 @@
           "Klook / Trazy / Mindtrip (farm rotation: Gyulhyangi, Bong Bong, Choenamdan, Jeju Southernmost, Jejue In; pricing ₩5,000–15,000)",
           "Korea Agricultural GAP Certification (Jeju Southernmost Theme Park year-round greenhouse)"
         ]
-      }
+      },
+      "visitBasics": {},
+      "convenience": {},
+      "smartNotes": {}
     },
     {
       "number": 4,
@@ -300,7 +321,10 @@
           "Visit Jeju (winter seafood — galchi-jorim Nov–Feb peak)",
           "AtoC Korea operations notes (winter southern Jeju lunch venue rotation)"
         ]
-      }
+      },
+      "visitBasics": {},
+      "convenience": {},
+      "smartNotes": {}
     },
     {
       "number": 5,
@@ -340,6 +364,21 @@
           "Korea Tourism Organization — Top Korean botanical gardens registry",
           "Kakao TV / Wavve programming archive — 'EXchange / Transit Love 3' filming locations"
         ]
+      },
+      "visitBasics": {
+        "hours": "Summer (Jun–Aug) 08:30–19:00; Spring/Fall 08:30–18:30; Winter 08:30–17:30 (varies seasonally)",
+        "closed": "Open year-round",
+        "admission": "Adult 10,000 KRW / Teen 8,000 KRW / Child 7,000 KRW (approximate)",
+        "walking": "Easy to moderate — gentle hill paths; mostly stroller-accessible"
+      },
+      "convenience": {
+        "restroom": "Available at entrance and within garden",
+        "parking": "Free parking available"
+      },
+      "smartNotes": {
+        "photo": "Hydrangea tunnel in June; pink muhly grass field in October; camellia varieties peak Nov–Apr",
+        "facilities": "Indoor greenhouse café, gift shop, picnic areas",
+        "tip": "Visit before 10am or after 4pm in peak season to avoid crowds; pair with Osulloc (10 min drive)"
       }
     },
     {
@@ -380,6 +419,21 @@
           "VisitJeju — Daepo Jusangjeolli",
           "Korea Geological Survey — Jeju basalt formation studies"
         ]
+      },
+      "visitBasics": {
+        "hours": "09:00–18:00 (summer extended)",
+        "closed": "Open year-round (weather-dependent)",
+        "admission": "Adult 2,000 KRW / Child 1,000 KRW (low fee)",
+        "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
+      },
+      "convenience": {
+        "restroom": "At entrance/visitor center",
+        "parking": "Available near entrance"
+      },
+      "smartNotes": {
+        "photo": "Best with high tide and rough seas — waves smashing into the columns make dramatic shots; golden hour gives best column-color contrast",
+        "facilities": "Small geological exhibition near entrance; souvenir shop",
+        "tip": "Get there before 11am or after 4pm to avoid tour-bus crowds; combine with Jungmun Saekdal Beach (5 min) for a half-day"
       }
     },
     {
@@ -420,6 +474,21 @@
           "Jeju Cultural Foundation — Seven Nymphs Festival history",
           "Seogwipo City tourism — Cheonjeyeon admission and access"
         ]
+      },
+      "visitBasics": {
+        "hours": "09:00–17:10 (closing varies with sunset, summer extended)",
+        "closed": "Open year-round (occasional weather closures)",
+        "admission": "Adult 2,500 KRW / Child 1,350 KRW",
+        "walking": "Moderate — many stairs through the valley; not stroller-friendly; mobility-difficult"
+      },
+      "convenience": {
+        "restroom": "At entrance/parking area only — none past the ticket office",
+        "parking": "Available near entrance"
+      },
+      "smartNotes": {
+        "photo": "The second tier from its viewing deck is the iconic 30m waterfall shot; Seonimgyo Bridge with seven nymphs is also striking",
+        "facilities": "Small souvenir shop and café at entrance",
+        "tip": "The first tier is dry except after heavy rain — don't be surprised if it's not flowing; allow 1.5–2 hours to see all three tiers; do NOT confuse with Cheonjiyeon Falls (different falls in Seogwipo)"
       }
     },
     {
@@ -447,7 +516,10 @@
           "Jeju Bus Information System (Bus 600 + Bus 100 airport connections)",
           "Jeju Provincial Government (Highway 1135 + Route 16 winter alternates)"
         ]
-      }
+      },
+      "visitBasics": {},
+      "convenience": {},
+      "smartNotes": {}
     }
   ],
   "routeFlowStops": [
@@ -905,7 +977,7 @@
     "destination_region": "jeju",
     "region_type": "island_southwest",
     "vehicle_type": "minicoach",
-    "duration_hours": 9.0,
+    "duration_hours": 9,
     "region_tags": [
       "jeju_southwest",
       "jeju_seogwipo",
@@ -944,17 +1016,17 @@
     "first_time_fit": 0.75,
     "family_fit": 0.6,
     "senior_fit": 0.5,
-    "couple_fit": 1.0,
-    "solo_traveler_fit": 1.0,
+    "couple_fit": 1,
+    "solo_traveler_fit": 1,
     "active_traveler_fit": 0.6,
     "adult_family_fit": 0.8,
-    "family_with_teens_fit": 1.0,
+    "family_with_teens_fit": 1,
     "young_kids_fit": 0.65,
     "senior_active_fit": 0.6,
     "senior_general_fit": 0.6,
     "mobility_friendly_fit": 0.45,
     "stroller_fit": 0.45,
-    "one_day_fit": 1.0,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.4,
     "rain_fit": 0.3,
     "value_for_money_fit": 0.75,
@@ -965,7 +1037,7 @@
     "beach_fit": 0.2,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.2,
-    "no_shopping_fit": 1.0,
+    "no_shopping_fit": 1,
     "local_culture_fit": 0.6,
     "storytelling_fit": 0.8,
     "unesco_fit": 0.55,
@@ -975,9 +1047,9 @@
     "comfort_level": 0.8,
     "budget_fit": 0.6,
     "premium_fit": 0.4,
-    "small_group_fit": 1.0,
+    "small_group_fit": 1,
     "private_fit": 0.2,
-    "bus_fit": 1.0,
+    "bus_fit": 1,
     "price_band": "mid",
     "pickup_base": "jeju_city",
     "return_time_band": "17:00-18:30",
@@ -1015,70 +1087,70 @@
       "jusangjeolli_cliff",
       "cheonjeyeon_falls"
     ],
-    "winter_only_seasonality_fit": 1.0,
-    "summer_unavailable_fit": 1.0,
-    "spring_unavailable_fit": 1.0,
-    "autumn_unavailable_fit": 1.0,
+    "winter_only_seasonality_fit": 1,
+    "summer_unavailable_fit": 1,
+    "spring_unavailable_fit": 1,
+    "autumn_unavailable_fit": 1,
     "available_months": [
       12,
       1,
       2
     ],
     "available_window_label": "December–February only",
-    "triple_seasonal_anchor_fit": 1.0,
+    "triple_seasonal_anchor_fit": 1,
     "winter_snow_anchor": true,
     "winter_camellia_bloom_anchor": true,
     "winter_tangerine_picking_anchor": true,
-    "season_specific_uniqueness_fit": 1.0,
-    "hallasan_winter_snow_fit": 1.0,
-    "frozen_guardian_landscape_fit": 1.0,
-    "snow_trail_hike_fit": 1.0,
-    "hallasan_no_reservation_route_fit": 1.0,
+    "season_specific_uniqueness_fit": 1,
+    "hallasan_winter_snow_fit": 1,
+    "frozen_guardian_landscape_fit": 1,
+    "snow_trail_hike_fit": 1,
+    "hallasan_no_reservation_route_fit": 1,
     "crampons_required_winter": true,
     "crampons_provided_by_operator": true,
-    "moderate_hike_difficulty_fit": 1.0,
-    "non_summit_hike_fit": 1.0,
+    "moderate_hike_difficulty_fit": 1,
+    "non_summit_hike_fit": 1,
     "trail_distance_typical_km": 3.5,
     "trail_elevation_gain_typical_m": 300,
-    "tangerine_picking_winter_fit": 1.0,
-    "hallabong_peak_window_fit": 1.0,
-    "agritourism_fit": 1.0,
-    "eat_as_you_pick_unlimited_fit": 1.0,
-    "take_home_souvenir_fit": 1.0,
-    "rain_backup_greenhouse_fit": 1.0,
+    "tangerine_picking_winter_fit": 1,
+    "hallabong_peak_window_fit": 1,
+    "agritourism_fit": 1,
+    "eat_as_you_pick_unlimited_fit": 1,
+    "take_home_souvenir_fit": 1,
+    "rain_backup_greenhouse_fit": 1,
     "kid_friendly_fit": 0.95,
     "stroller_friendly_fit": 0.85,
-    "winter_camellia_bloom_fit": 1.0,
-    "year_round_open_fit": 1.0,
-    "largest_camellia_arboretum_east_asia_fit": 1.0,
+    "winter_camellia_bloom_fit": 1,
+    "year_round_open_fit": 1,
+    "largest_camellia_arboretum_east_asia_fit": 1,
     "k_drama_filming_locations_count": 1,
-    "columnar_jointing_fit": 1.0,
+    "columnar_jointing_fit": 1,
     "natural_monument_count_visited": 3,
     "waterfall_visit": true,
-    "three_tier_waterfall_fit": 1.0,
-    "winter_twilight_bridge_illumination_fit": 1.0,
-    "vertical_geology_arc_fit": 1.0,
+    "three_tier_waterfall_fit": 1,
+    "winter_twilight_bridge_illumination_fit": 1,
+    "vertical_geology_arc_fit": 1,
     "private_tour_fit": 0.1,
     "large_group_fit": 0.1,
     "group_size_min": 4,
     "group_size_max": 15,
     "group_size_typical": 10,
-    "shared_vehicle_fit": 1.0,
+    "shared_vehicle_fit": 1,
     "vehicle_comfort_level": 0.85,
-    "minicoach_comfort_floor_fit": 1.0,
-    "ac_vehicle_fit": 1.0,
-    "heating_in_vehicle_fit": 1.0,
+    "minicoach_comfort_floor_fit": 1,
+    "ac_vehicle_fit": 1,
+    "heating_in_vehicle_fit": 1,
     "luggage_storage_in_vehicle_fit": 0.6,
     "wheelchair_access_capable_with_advance_notice": false,
     "customizable_route_fit": 0.1,
-    "fixed_itinerary_fit": 1.0,
+    "fixed_itinerary_fit": 1,
     "flexibility_fit": 0.4,
     "predictable_schedule_fit": 0.85,
     "hotel_pickup_window_min": 30,
     "jeju_city_pickup_supported": true,
     "jungmun_pickup_supported": true,
     "off_hotel_meeting_point_count": 3,
-    "winter_weather_route_flexibility_fit": 1.0,
+    "winter_weather_route_flexibility_fit": 1,
     "lunch_included": false,
     "lunch_out_of_pocket_typical_krw": 20000,
     "vegetarian_options_available_with_advance_notice": true,
@@ -1088,30 +1160,30 @@
     "child_friendly_fit": 0.85,
     "mobility_limited_friendly_fit": 0.3,
     "rainy_day_friendly_fit": 0.55,
-    "snow_day_friendly_fit": 1.0,
-    "snow_dwarf_tree_frozen_guardian_photo_fit": 1.0,
-    "winter_camellia_red_petal_photo_fit": 1.0,
-    "tangerine_orchard_orange_green_photo_fit": 1.0,
-    "columnar_joint_winter_swell_photo_fit": 1.0,
-    "three_tier_waterfall_winter_photo_fit": 1.0,
-    "twilight_seonimgyo_bridge_photo_fit": 1.0,
-    "hallasan_summit_wall_close_up_photo_fit": 1.0,
+    "snow_day_friendly_fit": 1,
+    "snow_dwarf_tree_frozen_guardian_photo_fit": 1,
+    "winter_camellia_red_petal_photo_fit": 1,
+    "tangerine_orchard_orange_green_photo_fit": 1,
+    "columnar_joint_winter_swell_photo_fit": 1,
+    "three_tier_waterfall_winter_photo_fit": 1,
+    "twilight_seonimgyo_bridge_photo_fit": 1,
+    "hallasan_summit_wall_close_up_photo_fit": 1,
     "season_locked_unique_in_catalog": true,
     "only_winter_only_seasonality_tour_in_catalog": true,
     "only_triple_seasonal_anchor_tour_in_catalog": true,
     "only_tangerine_picking_anchor_tour_in_catalog": true,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
-    "se_asia_market_fit": 1.0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "se_asia_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
-    "china_mainland_market_fit": 0.0,
+    "china_mainland_market_fit": 0,
     "us_market_fit": 0.7,
     "europe_market_fit": 0.7,
     "australia_market_fit": 0.85,
-    "korea_domestic_market_fit": 0.0,
-    "first_time_jeju_winter_fit": 1.0,
-    "first_snow_experience_fit": 1.0,
+    "korea_domestic_market_fit": 0,
+    "first_time_jeju_winter_fit": 1,
+    "first_snow_experience_fit": 1,
     "honeymoon_couple_fit": 0.7,
     "family_with_kids_fit": 0.95,
     "english_speaking_guide_provided": true,
@@ -2121,12 +2193,12 @@
               "reasoning": "Verified: Hallasan Eorimok requires 1-2 km mountain trail walking (with crampons winter); other stops moderate. 0.65 — the Hallasan component pushes walking level up."
             },
             "scenic_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "Verified: snow-covered Hallasan plateau + tangerine orchards + camellia hill + columnar cliff + three-tier waterfall = catalog-leading winter scenic diversity. 0.95."
             },
             "photo_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "Verified: snow + red camellia + orange tangerines + black basalt + waterfall = catalog-leading visual contrast palette. 0.95 — uniquely photogenic combination available only Dec-Feb."
             },
@@ -2141,7 +2213,7 @@
               "reasoning": "MAJOR CORRECTION — winter tour is intentionally outdoor-heavy: 67.5 indoor / 390 total = 0.17 with lunch; 19.5/330 = 0.06 without. Catalog 0.10 calibrated. The Hallasan + tangerine orchards + Jusangjeolli are all 0-10% indoor."
             },
             "weather_sensitivity": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "VERIFIED HIGHEST — winter snow tour completely weather-dependent: blizzard cancels Hallasan, ice closes orchards, rain reduces camellia photos. Highest weather sensitivity in catalog along with cherry blossom tours."
             },

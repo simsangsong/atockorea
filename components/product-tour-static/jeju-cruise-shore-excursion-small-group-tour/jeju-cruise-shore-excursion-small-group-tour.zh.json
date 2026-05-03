@@ -210,7 +210,17 @@
       "number": 1,
       "time": "Cruise arrival + 30 min",
       "duration": "30 min",
-      "whyOnRoute": "**8至15人上限的小型团体邮轮接送**在济州国际旅客码头抵达大厅进行——较小的人数让导游可以在登上**迷你巴士或厢型车**之前，以个性化方式迎接旅客，确认任何访客的特殊需求（摄影优先景点、行动考量、饮食偏好）。停车场在100公尺以内的人行距离，也让小型车辆的机动性优于大型客车。"
+      "whyOnRoute": "**8至15人上限的小型团体邮轮接送**在济州国际旅客码头抵达大厅进行——较小的人数让导游可以在登上**迷你巴士或厢型车**之前，以个性化方式迎接旅客，确认任何访客的特殊需求（摄影优先景点、行动考量、饮食偏好）。停车场在100公尺以内的人行距离，也让小型车辆的机动性优于大型客车。",
+      "visitBasics": {
+        "walking": "Minimal"
+      },
+      "convenience": {
+        "restroom": "At meeting point (subway station / hotel lobby / port terminal)",
+        "parking": "N/A for guests — vehicle-side pickup"
+      },
+      "smartNotes": {
+        "tip": "Arrive 5–10 minutes before scheduled pickup; bring photo ID for cruise/DMZ tours"
+      }
     },
     {
       "number": 2,
@@ -250,6 +260,21 @@
           "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
           "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
         ]
+      },
+      "visitBasics": {
+        "hours": "Mar–Apr & Sep–Oct: 05:00–19:00; May–Aug: 04:30–20:00; Nov–Feb: 06:00–18:00 (last ticketing 1 hour before closing)",
+        "closed": "Open year-round (weather closures possible)",
+        "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
+        "walking": "Moderate — 20–30 min steady stair climb (≈ 600 stairs); benches every few minutes for rest"
+      },
+      "convenience": {
+        "restroom": "Available at entrance and base",
+        "parking": "Large free parking lot"
+      },
+      "smartNotes": {
+        "tip": "All stairs but well-maintained — manageable in casual clothes; family-friendly with rest stops; sunrise visits popular but crowds gather pre-dawn",
+        "photo": "Summit view of Hallasan to the west and Udo island to the north on clear days; haenyeo black-sand beach view from descending path",
+        "facilities": "Café (Fritz Coffee 1.3km away has best exterior views of the peak); ferry to Udo Island from Seongsan Port (1.5km/15 min walk)"
       }
     },
     {
@@ -290,6 +315,21 @@
           "Tadao Ando Architect & Associates — Phoenix Island project documentation",
           "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
         ]
+      },
+      "visitBasics": {
+        "hours": "Open 24 hours (outdoor cape)",
+        "closed": "Open year-round",
+        "admission": "Free",
+        "walking": "Easy to moderate — flat coastal walkway; total loop ≈ 1 hour"
+      },
+      "convenience": {
+        "restroom": "Available at parking lot and Aqua Planet area",
+        "parking": "Free parking available"
+      },
+      "smartNotes": {
+        "photo": "The lighthouse with cliff backdrop is iconic; canola fields with Seongsan Ilchulbong in distance is the spring signature shot",
+        "facilities": "Aqua Planet Jeju aquarium and several cafés on site",
+        "tip": "Combine with Seongsan Ilchulbong visit (10 min drive); spring (canola) and autumn (eulalia grass) are peak photo seasons"
       }
     },
     {
@@ -314,7 +354,20 @@
       "number": 4,
       "time": "≈ 12:30",
       "duration": "75 min",
-      "whyOnRoute": "**小型团体午餐体验** — 75分钟的用餐视窗（对比大型巴士行程的60分钟），让用餐更从容、有更多对话空间。导游全程陪同用餐（有别于典型的大型巴士行程导游单独用餐的做法），协助菜单翻译、推荐菜品，并回答旅客关于济州饮食文化的问题。"
+      "whyOnRoute": "**小型团体午餐体验** — 75分钟的用餐视窗（对比大型巴士行程的60分钟），让用餐更从容、有更多对话空间。导游全程陪同用餐（有别于典型的大型巴士行程导游单独用餐的做法），协助菜单翻译、推荐菜品，并回答旅客关于济州饮食文化的问题。",
+      "visitBasics": {
+        "hours": "Per restaurant operating hours (typically 11:30–14:00 lunch service)",
+        "closed": "Per restaurant schedule",
+        "admission": "Lunch separate (typically 12,000–25,000 KRW per person; not included in tour price)",
+        "walking": "Minimal — direct restaurant entry"
+      },
+      "convenience": {
+        "restroom": "Available at restaurant",
+        "parking": "Tour vehicle parks at or near restaurant"
+      },
+      "smartNotes": {
+        "tip": "Inform guide of any dietary restrictions (vegetarian, halal, allergies) at booking; cash and major cards typically accepted"
+      }
     },
     {
       "number": 5,
@@ -355,6 +408,21 @@
           "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
           "Jeju Folklore Society — Omegisul brewing tradition documentation"
         ]
+      },
+      "visitBasics": {
+        "hours": "Open 24 hours (outdoor village); shops typically 09:00–17:00",
+        "closed": "Open year-round",
+        "admission": "Free for general village; some private homes charge for guided visits",
+        "walking": "Easy — flat dirt and stone paths through the village"
+      },
+      "convenience": {
+        "restroom": "Public restrooms at village entrance",
+        "parking": "Free parking near entrance"
+      },
+      "smartNotes": {
+        "photo": "Stone walls (dolhareubang grandfathers), thatched-roof houses with smoke holes, and traditional doors are iconic Jeju shots",
+        "facilities": "Visitor information center at entrance; English maps available",
+        "tip": "Hire a free volunteer guide at the entrance for cultural context; respect that residents actually live here — don't enter homes uninvited"
       }
     },
     {
@@ -381,7 +449,20 @@
       "number": 6,
       "time": "≈ 15:30 → arrive port ≈ 16:45",
       "duration": "75 min drive + 60 min buffer",
-      "whyOnRoute": "**小型团体回程** — 在对话式的导游陪同下，旅客可以在不受大型巴士广播格式限制的情况下，就全天所见（济州地质、朝鲜行政、韩剧拍摄、饮食文化等）向导游提问。迷你巴士比40座大型客车更灵活，停车更方便，因此比大型巴士产品早5至10分钟抵达码头。"
+      "whyOnRoute": "**小型团体回程** — 在对话式的导游陪同下，旅客可以在不受大型巴士广播格式限制的情况下，就全天所见（济州地质、朝鲜行政、韩剧拍摄、饮食文化等）向导游提问。迷你巴士比40座大型客车更灵活，停车更方便，因此比大型巴士产品早5至10分钟抵达码头。",
+      "visitBasics": {
+        "hours": "Per drop-off schedule (see hero / glanceItems for return time band)",
+        "closed": "N/A",
+        "admission": "N/A",
+        "walking": "Minimal — direct vehicle disembarking"
+      },
+      "convenience": {
+        "restroom": "At drop-off point",
+        "parking": "N/A"
+      },
+      "smartNotes": {
+        "tip": "Confirm exact drop-off location with guide before journey begins; cruise tours coordinate with ship departure schedule"
+      }
     }
   ],
   "routeFlowStops": [
