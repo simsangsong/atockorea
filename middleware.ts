@@ -8,6 +8,7 @@ import Negotiator from 'negotiator';
 import {
   isPublicConsumerTourDiscoveryPathForSiteGate,
   isPublicEastSignatureTourDetailPathForSiteGate,
+  isPublicLegalOrInfoPathForSiteGate,
   matchesEastSignatureSlugSegment,
 } from '@/src/lib/east-signature-nature-core-match';
 import { CANONICAL_EAST_SIGNATURE_PRODUCT_PATH } from '@/lib/tour-consumer-visibility';
@@ -25,6 +26,7 @@ const RESERVED_ROOT_SEGMENTS = new Set([
   'cart',
   'checkout',
   'contact',
+  'cookies',
   'dashboard',
   'dsa',
   'forgot-id',
@@ -34,6 +36,7 @@ const RESERVED_ROOT_SEGMENTS = new Set([
   'merchant',
   'my',
   'mypage',
+  'privacy',
   'refund-policy',
   'reset-password',
   'reviews',
@@ -42,6 +45,7 @@ const RESERVED_ROOT_SEGMENTS = new Set([
   'signin',
   'signup',
   'support',
+  'terms',
   'test',
   'test-admin',
   'tours',
@@ -243,12 +247,14 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // 1c. 비로컬 + 공개 플래그 없음 → 실제 홈(/)으로 rewrite, 플래그십·투어 둘러보기·매칭 경로만 예외
+  // 1c. 비로컬 + 공개 플래그 없음 → 실제 홈(/)으로 rewrite, 플래그십·투어 둘러보기·매칭·법적 안내 경로 예외
+  // (Privacy / Terms 등 footer 링크는 항상 공개 — Google OAuth 검증이 privacy URL 접근 필요)
   if (
     !isSiteUiPublic() &&
     !isLocalRequest(request) &&
     !isPublicEastSignatureTourDetailPathForSiteGate(pathname) &&
-    !isPublicConsumerTourDiscoveryPathForSiteGate(pathname)
+    !isPublicConsumerTourDiscoveryPathForSiteGate(pathname) &&
+    !isPublicLegalOrInfoPathForSiteGate(pathname)
   ) {
     const url = request.nextUrl.clone();
     url.pathname = '/';

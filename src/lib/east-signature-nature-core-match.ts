@@ -141,3 +141,32 @@ export function isPublicConsumerTourDiscoveryPathForSiteGate(pathname: string): 
   }
   return false;
 }
+
+/**
+ * Legal / informational pages that must remain reachable even when the site is
+ * gated. Google OAuth verification requires the privacy policy URL to resolve
+ * publicly; the same applies to terms, cookies, refund policy, and the
+ * standard about / contact / support footer pages. Covers locale-prefixed
+ * variants (`/ko/privacy`, etc.) and any nested sub-paths under those roots.
+ */
+const PUBLIC_LEGAL_INFO_ROOTS = new Set([
+  "privacy",
+  "terms",
+  "cookies",
+  "refund-policy",
+  "legal",
+  "dsa",
+  "about",
+  "contact",
+  "support",
+]);
+
+export function isPublicLegalOrInfoPathForSiteGate(pathname: string): boolean {
+  const parts = pathname.split("/").filter(Boolean);
+  if (parts.length === 0) return false;
+  if (PUBLIC_LEGAL_INFO_ROOTS.has(parts[0]!)) return true;
+  if (parts.length >= 2 && PATH_LOCALE_PREFIXES.has(parts[0]!) && PUBLIC_LEGAL_INFO_ROOTS.has(parts[1]!)) {
+    return true;
+  }
+  return false;
+}

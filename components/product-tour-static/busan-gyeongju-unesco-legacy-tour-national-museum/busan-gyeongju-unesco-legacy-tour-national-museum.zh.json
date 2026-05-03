@@ -59,16 +59,16 @@
   "hero": {
     "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
     "imagePosition": "center 35%",
-    "tagline": "韩国「无墙博物馆」——七大UNESCO景点在15公里内密集分布的千年古都",
+    "tagline": "韩国「无墙博物馆」——15公里内汇集7处UNESCO遗址的庆州",
     "pills": [
       "小团体",
       "庆州",
       "世界遗产之旅"
     ],
     "meta": {
-      "duration": "≈ 11.5 hours (08:10 first pickup, ≈ 19:45 last drop)",
+      "duration": "约11.5小时（08:10首站接送，约19:45末站下车）",
       "region": "庆州（釜山出发）",
-      "stops": "8 个景点",
+      "stops": "8个景点",
       "rating": 0,
       "ratingStars": 0
     }
@@ -138,46 +138,46 @@
       "id": "g1",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "佛国寺多宝塔全景",
-      "caption": "佛国寺多宝塔——统一新罗751年，UNESCO世界文化遗产，曾印于韩国10韩圜硬币",
+      "alt": "佛国寺多宝塔与石桥在午后光线下的远景",
+      "caption": "佛国寺——UNESCO世界文化遗产。两座塔为国宝20号与21号。",
       "location": "佛国寺，庆州",
-      "atmosphere": "Stone, wood, and 8th-century pagoda silhouettes"
+      "atmosphere": "石材、木造与8世纪塔影"
     },
     {
       "id": "g2",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "月精桥夜灯倒映南川河",
-      "caption": "月精桥夜灯——760年新罗景德王初建，2018年复原，韩国最大木造桥梁，夜间灯光从日落至22:00",
-      "location": "月精桥，庆州市中心",
-      "atmosphere": "Quiet gallery, single object focus"
+      "alt": "玻璃展柜内、博物馆灯光下的新罗金冠",
+      "caption": "庆州国立博物馆——天马冢金冠（国宝188号）。",
+      "location": "庆州国立博物馆",
+      "atmosphere": "宁静展厅，单件文物聚焦"
     },
     {
       "id": "g3",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "九山竹林毛竹林道晨光",
-      "caption": "九山竹林——南平文氏400年私有氏族森林，2016年才对外开放，清静的毛竹林道晨光",
-      "location": "九山，机张，釜山",
-      "atmosphere": "Restored hanok lanes, low traffic"
+      "alt": "校村韩屋瓦顶与石墙巷景",
+      "caption": "校村韩屋村——崔氏宗宅与儒学乡校。",
+      "location": "校村韩屋村，庆州",
+      "atmosphere": "复原韩屋巷弄，人流稀疏"
     },
     {
       "id": "g4",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=1200",
-      "alt": "庆州国立博物馆天马冢金冠",
-      "caption": "庆州国立博物馆天马冢金冠（国宝第188号）——1973年发掘，5至6世纪新罗金工艺术顶峰",
-      "location": "庆州国立博物馆",
-      "atmosphere": "Cool, green, filtered light"
+      "alt": "高耸竹林间洒落的光线",
+      "caption": "九山竹林——南平文氏自1638年起私有维护。",
+      "location": "九山，机张郡，釜山",
+      "atmosphere": "凉爽、翠绿、滤过的光线"
     },
     {
       "id": "g5",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
-      "alt": "Wooden bridge pavilion reflected in water at dusk",
-      "caption": "Woljeonggyo Bridge — 66-meter Silla-style reconstruction completed in 2018.",
-      "location": "Woljeonggyo Bridge, Gyeongju",
-      "atmosphere": "Wood, water, soft evening light"
+      "alt": "黄昏时分木造桥楼倒映水中",
+      "caption": "月精桥——66公尺新罗式复原（2018年完工）。",
+      "location": "月精桥，庆州",
+      "atmosphere": "木材、流水、柔和的傍晚光线"
     }
   ],
   "itineraryStops": [
@@ -186,7 +186,7 @@
       "time": "08:10",
       "duration": "60 min",
       "name": "釜山接送（3个地铁站）",
-      "category": "Transit / Pickup",
+      "category": "交通 / 接送",
       "description": "接送依序从釜山三大地铁站出发：**釜山站（1号线）约08:10**，适合入住草梁洞 / 南浦洞的旅客；**西面站（1＆2号线）约08:25**，适合乐天酒店釜山等市中心商业酒店的旅客；**海云台站（2号线）约08:45**，适合海云台海滩度假区旅客。走东海高速公路约30公里 / 25分钟抵达九山竹林。",
       "highlights": [
         "釜山三站接送：釜山站、西面、海云台",
@@ -194,13 +194,13 @@
         "**8站UNESCO遗产路线，以日落月精桥收尾**"
       ],
       "timeUsed": [
-        "Busan Station pickup (~08:10, ~5 min)",
-        "Drive to Seomyeon Station (~12 min)",
-        "Seomyeon pickup (~08:25, ~5 min)",
-        "Drive to Haeundae Station (~18 min)",
-        "Haeundae pickup + departure to Donghae Expressway (~08:45, ~20 min)"
+        "釜山站接驳（约08:10，约5分钟）",
+        "驶往西面站（约12分钟）",
+        "西面站接驳（约08:25，约5分钟）",
+        "驶往海云台站（约18分钟）",
+        "海云台站接驳并驶上东海高速公路（约08:45，约20分钟）"
       ],
-      "whyOnRoute": "Three-station pickup is the standard Busan small-group format for Gyeongju routes and matches the staging used by competing operators. Starting from Haeundae as the final pickup minimizes deadhead distance to the Gijang-gun bamboo forest (the day's first content stop), preserving the carefully-built sunset finale at Woljeonggyo Bridge.",
+      "whyOnRoute": "三站接送是釜山小团体庆州行程的标准模式，亦与同类业者作业方式相符。从海云台为最后一站接送可让前往机张郡九山竹林（当日首个景点）的空驶距离最短，从而保留精心安排的月精桥日落收尾。",
       "_poi_meta": {
         "poi_key": "OPS_busan_subway_pickup",
         "verified": true,
@@ -218,7 +218,7 @@
       "time": "≈ 09:50",
       "duration": "60 min",
       "name": "九山竹林（아홉산숲）",
-      "category": "Private Heritage Forest",
+      "category": "私有遗产森林",
       "description": "**九山竹林（아홉산숲，「九山之林」）**是位于**釜山机张郡东北部的一片52万平方公尺的私有历史森林**，由**南平文氏跨越九代、管理约400年**——这个家族在**1592至1598年壬辰倭乱**后定居此谷，刻意以密植竹林和松林封闭谷口以维持隐密性。竹林**直到2016年才对外开放**，因此仍是媲美担阳竹林但人潮远少的清静替代选择。总面积52万平方公尺，设有1.5至2公里的标识环形步道，途经9个景点。标志性特色：**毛竹（맹죽）林道**——高耸翠绿的竹杆密密排列，形成拍照效果绝佳的自然隧道，晨间光线最美；以及**松坡（솔밭）**——百年老松与竹林交替，形成独特的古典韩式林景。**入场费₩5,000（现场现金支付）**。",
       "highlights": [
         "**400年私有氏族森林**——南平文氏，九代传承",
@@ -228,26 +228,26 @@
         "百年松坡——古松与竹林交替的韩式林景"
       ],
       "timeUsed": [
-        "Coach drop-off + ticketing at clan-style gate (~5 min)",
-        "Walk lower path: ancestral hall + water mill + 400-year pines (~15 min)",
-        "Bamboo grove (Spot 9) — photo time (~25 min)",
-        "Loop back via wooden walkway + reassemble at coach (~15 min)"
+        "巴士下车并于氏族风格大门买票（约5分钟）",
+        "下层步道：宗祠、水车、400年红松（约15分钟）",
+        "毛竹林（第9号景点）拍摄时间（约25分钟）",
+        "经木栈道返回并集合上车（约15分钟）"
       ],
-      "whyOnRoute": "九山竹林作为全日晨间开场站，在庆州密集的UNESCO遗址之前提供宁静的自然缓冲。私有氏族森林400年管理历史使其不只是「观光竹林」，而是有文化深度的自然遗产。",
+      "whyOnRoute": "九山为整日揭开「在釜山行政区内最具拍照价值的竹林体验」——这是其他业者直接从釜山驶往佛国寺所没有的差异化卖点。韩剧拍摄历史是韩流粉丝的强力锚点，60分钟时段足以走完精巧而标示清楚的森林。在11:00前抵达可避开周一休园陷阱，以及来自釜山的周末旅游车团。与下午的佛国寺并列，从约400年的私有氏族森林到约1,250年的UNESCO佛寺，构成韩国文化连绵的两个面向。",
       "visitBasics": {
-        "hours": "Daily 09:00–18:00 (last admission ~17:00)",
-        "closed": "Mondays",
-        "admission": "Adult ₩8,000 / Child ₩5,000",
-        "walking": "Moderate — gravel paths and gentle slopes; partial wooden walkway; comfortable shoes recommended"
+        "hours": "每日09:00–18:00（最后入场约17:00）",
+        "closed": "周一休园",
+        "admission": "成人 ₩8,000 / 儿童 ₩5,000",
+        "walking": "中等——碎石路与缓坡，部分木栈道；建议穿好走的鞋"
       },
       "convenience": {
-        "restroom": "Restrooms at the entrance gate and midway near the ancestral hall",
-        "parking": "On-site coach and car parking (free)"
+        "restroom": "入口大门与靠近宗祠的中段都设有洗手间",
+        "parking": "园内提供巴士与小车停车场（免费）"
       },
       "smartNotes": {
-        "photo": "Spot 9 (Maengjongjuk bamboo grove) — best 10:00–11:30 with side-light through the canopy; the thatched gate near the ancestral hall; 400-year pine corridor at the lower loop",
-        "facilities": "Small farm-stand at the entrance (seasonal local produce, simple drinks); no full café inside the forest",
-        "tip": "Wear darker tops for stronger photo contrast against the bright bamboo; do not step off the marked path (active forest restoration); drone use is prohibited"
+        "photo": "第9号景点（毛竹林）——10:00至11:30时段竹林上方侧光最佳；宗祠旁的茅草大门；下层环线的400年红松走廊",
+        "facilities": "入口处的小型在地农产品摊（应季蔬果与简易饮品）；竹林内无完整咖啡店",
+        "tip": "穿深色上衣可与竹林明亮的色彩形成强烈对比，照片更出色；请勿离开标记步道（森林复育中）；禁止使用无人机"
       },
       "_poi_meta": {
         "poi_key": "ahopsan_bamboo_forest",
@@ -269,7 +269,7 @@
       "time": "≈ 11:30",
       "duration": "75 min",
       "name": "佛国寺（UNESCO世界遗产）",
-      "category": "UNESCO Buddhist Temple",
+      "category": "UNESCO佛教寺院",
       "description": "**佛国寺（불국사）——1995年UNESCO世界文化遗产**（与石窟庵共同列入）——是**统一新罗佛教艺术的最高杰作**，韩国史迹及名胜第1号。**528年法兴王时代初建**，现有宏大格局由**宰相金大城于751年扩建，774年完工**。二十年的建设得到「大城两世父母」的传说——相传金大城一世为庶民，累积的功德使他转世为宰相，并建造佛国寺（报两世双亲恩）和石窟庵（报过去世双亲恩）。佛国寺同时拥有**六件韩国国宝**：**青云桥＋白云桥**（33＋16阶石桥，原为通往大雄殿的仪仗路，现为保护文物，仅供观赏）、**莲花桥＋七宝桥**（通往极乐殿的石桥）、**释迦塔**（无影塔，751年，韩国最典型的三层石塔，外型克制，强调比例美）、**多宝塔**（751年，因精致复杂的多层结构著称，曾印在韩国10韩圜硬币上）、**金铜毘卢遮那佛**及**金铜阿弥陀佛**。自**2023年5月起免费入场**。",
       "highlights": [
         "**1995年UNESCO世界文化遗产**＋韩国史迹及名胜第1号",
@@ -281,27 +281,27 @@
         "**自2023年5月起免费入场**"
       ],
       "timeUsed": [
-        "Coach drop-off + walk through pine-lined approach (~10 min)",
-        "Iljumun + Cheongungyo/Baegungyo photo time (~15 min)",
-        "Daeungjeon courtyard + Dabotap + Seokgatap (~25 min)",
-        "Birojeon Vairocana Hall + Geuknakjeon Pure Land Hall (~15 min)",
-        "Free time + reassemble at coach (~10 min)"
+        "巴士下车并步行松林进入参道（约10分钟）",
+        "一柱门＋青云桥/白云桥拍摄时间（约15分钟）",
+        "大雄殿庭院＋多宝塔＋释迦塔（约25分钟）",
+        "毗卢殿＋极乐殿（约15分钟）",
+        "自由时间并集合上车（约10分钟）"
       ],
-      "whyOnRoute": "全日UNESCO遗产核心——韩国最重要的单一佛教建筑群，六件国宝集中在一处。安排在上午（九山之后）确保在正午韩语大型导览团涌入前以最充裕的状态体验。",
+      "whyOnRoute": "佛国寺是任何庆州一日游不可妥协的UNESCO主轴，亦是韩国最具知名度的佛教文化遗产。11:30抵达让旅客可在午餐肌饿来袭前完成寺院参观，并将下午时段留给庆州国立博物馆（在概念上以「寺院＋文物」成对呈现）。75分钟时段经过精算，让旅客能从容走完完整的朝拜动线，无须急忙拍摄庭院内具有代表性的多宝塔/释迦塔组合。下午抵达也能避开11:00前涌入韩国学生团的早晨高峰。",
       "visitBasics": {
-        "hours": "Daily 09:00–18:00 (last admission 17:00)",
-        "closed": "Open year-round",
-        "admission": "Free (since 2023, per the revised Cultural Heritage Protection Act)",
-        "walking": "Moderate — stone steps, slopes and gravel paths; comfortable shoes recommended"
+        "hours": "每日09:00–18:00（最后入场17:00）",
+        "closed": "全年开放",
+        "admission": "免费（自2023年起，依文化遗产保护法修订）",
+        "walking": "中等——石阶、缓坡与碎石路；建议穿好走的鞋"
       },
       "convenience": {
-        "restroom": "Free public restrooms (mini-temple style architecture) inside the complex",
-        "parking": "On-site lot (paid)"
+        "restroom": "园区内有迷你寺院风格的免费公共洗手间",
+        "parking": "现场停车场（收费）"
       },
       "smartNotes": {
-        "photo": "Cheongungyo / Baegungyo bridge stairway (NT 23) below Jahamun Gate; Dabotap (NT 20) and Seokgatap (NT 21) pagodas in the main courtyard; spring cherry blossoms along the approach road",
-        "facilities": "Tourist Information Center at the entrance; Bulguksa Museum (separate ticket 2,000 / 1,000 KRW, closed Mondays)",
-        "tip": "Modest dress; remove shoes when entering halls; no drones; do not photograph monks or worshippers (signs marked clearly); the temple is still an active Jogye Order head temple (11th district)"
+        "photo": "紫霞门下方的青云桥/白云桥石阶（国宝23号）；大殿庭院内的多宝塔（国宝20号）与释迦塔（国宝21号）；春季沿入口道路的樱花",
+        "facilities": "入口处的旅客服务中心；佛国寺博物馆（另购票2,000 / 1,000韩元，周一休馆）",
+        "tip": "请着合宜服装；进入殿堂请脱鞋；禁止使用无人机；请勿拍摄僧侣或参拜者（标示清楚）；本寺仍是曹溪宗第11教区本山，正常进行宗教活动"
       },
       "_poi_meta": {
         "poi_key": "bulguksa_temple",
@@ -323,7 +323,7 @@
       "time": "≈ 13:00",
       "duration": "60 min",
       "name": "午餐（庆州在地餐厅）",
-      "category": "Lunch / Own Expense",
+      "category": "午餐 / 自费",
       "description": "午餐费用由旅客自行承担，在佛国寺至吐含山走廊附近的庆州在地餐厅用餐（典型预算**₩10,000至₩15,000 / 人**）。业者不固定合作餐厅；导游带领全团前往2至3家提供庆州地区特色料理的餐厅选择：**쌈밥（叶包饭）——庆州的招牌午餐形式**，以韩式叶菜包饭搭配丰富小菜，素食友善。纪念品推荐：**황남빵（皇南红豆馅饼，1939年起在庆州制造）**，是最受欢迎的庆州伴手礼。",
       "highlights": [
         "午餐自费，约₩10,000至₩15,000在庆州市区",
@@ -331,12 +331,12 @@
         "**황남빵红豆馅饼**（1939年起制造）——最受欢迎的庆州伴手礼"
       ],
       "timeUsed": [
-        "Walk + seating (~5 min)",
-        "Order + food prep (~10 min)",
-        "Eat + restroom (~40 min)",
-        "Reassemble at coach + buy water/snacks (~5 min)"
+        "步行＋就坐（约5分钟）",
+        "点餐＋上菜（约10分钟）",
+        "用餐＋洗手间（约40分钟）",
+        "集合上车并购买饮水/小食（约5分钟）"
       ],
-      "whyOnRoute": "Splitting lunch between Bulguksa and the museum provides a natural mid-day pause and lets the guide front-load the temple while energy is highest. Keeping lunch off the package contract lowers the price band and gives international guests freedom to choose between meat / vegetarian / quick options.",
+      "whyOnRoute": "在佛国寺与博物馆之间安插午餐，可自然形成一个午间休止，让导游趁体力最旺时先走完寺院。把午餐排除在套餐之外可降低价位带，让国际旅客自由选择肉食/素食/快速选项。",
       "_poi_meta": {
         "poi_key": "OPS_gyeongju_lunch",
         "verified": true,
@@ -354,7 +354,7 @@
       "time": "≈ 14:15",
       "duration": "75 min",
       "name": "庆州国立博物馆",
-      "category": "National Museum / Silla Heritage",
+      "category": "国立博物馆 / 新罗遗产",
       "description": "**庆州国立博物馆（국립경주박물관）**是**新罗文明的权威博物馆**——**1945年以国立博物馆庆州分馆创立**，1968年完成现有主馆建筑，1975年晋升为独立国立博物馆。馆藏**逾10万件文物**，其中3万件以上被指定为文化财产。三大常设展厅：**新罗历史馆**（新罗王朝政治史与社会结构）、**新罗美术馆**（统一新罗佛教艺术及金工艺术）、**月池馆**（雁鸭池出土9,000件文物）。户外展示区设有**圣德大王神钟（에밀레종）**——**韩国最大的古代铜钟，铸于770年，高3.3公尺、重约18.9吨**；以「에밀레」命名源于传说称其低沉钟声如同婴儿哭喊「妈妈……（에밀레）」。镇馆之宝：**天马冢金冠（国宝第188号）**——1973年4月16日从天马冢王陵发掘，纯金制成、镶嵌玻璃珠及金箔装饰的新罗王冠，代表公元5至6世纪新罗的金工顶峰。**免费入场**，每日09:00至18:00（周末至19:00，月曜日至21:00，部分节假日调整）。全馆提供英文及中文展板说明。",
       "highlights": [
         "**新罗文明的权威博物馆**——1945年创立，现有馆1968年",
@@ -365,27 +365,27 @@
         "**免费入场**，全馆英文及中文展板说明"
       ],
       "timeUsed": [
-        "Coach drop-off + entry + cloakroom (~10 min)",
-        "Outdoor Bell Pavilion (Sacred Bell) (~10 min)",
-        "Silla Hall — gold crowns + royal regalia (~25 min)",
-        "Wolji Hall — Anapji palace artifacts (~15 min)",
-        "Special exhibition or museum shop + reassemble (~15 min)"
+        "巴士下车＋入场＋寄物（约10分钟）",
+        "户外圣德大王神钟亭（约10分钟）",
+        "新罗历史馆——金冠＋皇室器物（约25分钟）",
+        "月池馆——雁鸭池出土文物（约15分钟）",
+        "特展或博物馆商店并集合（约15分钟）"
       ],
-      "whyOnRoute": "博物馆安排在午餐后的下午，旅客以饱足的精力静态欣赏10万件文物，也是全日唯一的全程室内停留，可缓冲任何午后天气风险。免费入场且全馆提供中文展板，对华语旅客格外友善。",
+      "whyOnRoute": "博物馆是路线在庆州最强的室内文化锚点，也是全程唯一全天候适合的景点——遇雨或高温时，75分钟时段可弹性延长而不影响整日行程。把佛国寺（寺院）与博物馆（同时代文物及其原始政治脉络）并列，是「先看见，再理解」的刻意设计，无任何竞品庆州行程能与之并列。14:15时段亦让神钟亭获得午后侧光，便于拍摄，并避开博物馆最后一小时的人潮高峰。",
       "visitBasics": {
-        "hours": "Tue–Sun 10:00–18:00 (last admission 17:30); extended hours Sat & last Wed of month until 21:00",
-        "closed": "Mondays + Jan 1 + Lunar New Year + Chuseok",
-        "admission": "Free (special exhibitions may charge a small fee)",
-        "walking": "Mostly indoor + paved outdoor; fully wheelchair-accessible"
+        "hours": "周二至周日10:00–18:00（最后入场17:30）；周六及每月最后周三延长至21:00",
+        "closed": "周一、元旦、春节、中秋",
+        "admission": "免费（特展可能酌收少额门票）",
+        "walking": "主要为室内＋铺设户外步道；全程无障碍"
       },
       "convenience": {
-        "restroom": "Multiple restrooms in main building + outdoor pavilion area",
-        "parking": "Free on-site coach and car parking"
+        "restroom": "本馆与户外神钟亭周边均设有多处洗手间",
+        "parking": "现场免费提供巴士与小车停车场"
       },
       "smartNotes": {
-        "photo": "Sacred Bell of King Seongdeok in its outdoor pavilion (afternoon side-light); Cheonmachong gold crown display in Silla Hall (low-light, no flash); the museum garden with stone pagoda fragments",
-        "facilities": "Museum shop with replica gold-crown jewelry; café in the main building; cloakroom available",
-        "tip": "No flash photography; some special exhibitions prohibit all photography (check signage); allow ~10 minutes for the bell pavilion alone — it is the single most important Silla artifact"
+        "photo": "户外亭内的圣德大王神钟（午后侧光）；新罗馆内的天马冢金冠展示（昏暗光线，禁用闪光）；庭院中的石塔残件",
+        "facilities": "博物馆商店出售金冠造型饰品复刻品；本馆内附设咖啡馆；提供寄物服务",
+        "tip": "禁止闪光摄影；部分特展全面禁止拍摄（请留意标示）；建议神钟亭单独安排约10分钟参观——它是新罗最重要的单一文物"
       },
       "_poi_meta": {
         "poi_key": "gyeongju_national_museum",
@@ -407,7 +407,7 @@
       "time": "≈ 15:50",
       "duration": "60 min",
       "name": "校村韩屋村",
-      "category": "Heritage Hanok Village",
+      "category": "文化遗产韩屋村",
       "description": "**校村韩屋村（교촌마을）**是以**庆州崔氏的历史宅邸**为核心的传统韩屋聚落——这个仕绅士大夫家族以**「十二代保存财富」而著称**，同时奉行**「六大家规」（含荒年不涨佃租）**等韩国伦理守则。庆州崔氏的宅邸被指定为**重要民俗材料第27号**。村落位于庆州市中心南川河畔，步行10分钟可达月精桥。特色：韩式石板小径、传统土墙、石臼及复原的朝鲜时代庭院。村内的**庆州法酒展示馆**展示朝鲜时代皇室贡酒的酿造工艺。**免费入场**，全天开放。",
       "highlights": [
         "**庆州崔氏宅邸**——仕绅士大夫「十二代保存财富」的历史传家",
@@ -418,27 +418,27 @@
         "**免费入场**，步行10分钟可达月精桥"
       ],
       "timeUsed": [
-        "Coach drop-off + walk to main entrance (~5 min)",
-        "House of Choi Clan + Gyodong Beopju brewery exterior (~20 min)",
-        "Gyerim Forest + King Naemul's Royal Tomb (~15 min)",
-        "Hyanggyo Confucian school + village lanes (~15 min)",
-        "Reassemble at coach (~5 min)"
+        "巴士下车并步行至主入口（约5分钟)",
+        "崔氏宗宅＋校洞法酒酿造所外观（约20分钟）",
+        "鸡林森林＋奈勿王陵（约15分钟）",
+        "乡校儒学馆＋村巷（约15分钟）",
+        "集合上车（约5分钟）"
       ],
-      "whyOnRoute": "校村是全日历史景点的人文收尾——从博物馆的文物标本转换到有人居住的活历史村落，补足新罗文物背后的社会生活面向。同时作为月精桥步行前的最后定点。",
+      "whyOnRoute": "校村是路线的「活的新罗」锚点——若说佛国寺呈现新罗佛教、博物馆呈现新罗器物，校村便呈现自新罗延续至朝鲜士族、再到当代崔氏宗宅的连续韩国生活。把校村排在15:50能掌握韩屋瓦顶与校洞法酒酿造所木门的「黄金时段侧光」——是村落最具拍照价值的时段。紧凑的步行布局也巧妙衔接了室内博物馆与下个桥梁景点。",
       "visitBasics": {
-        "hours": "Daily during daylight; most heritage houses 09:00–18:00",
-        "closed": "Some individual houses close on Mondays — main lanes always open",
-        "admission": "Free for most houses; Choi Clan main hall has a small donation box",
-        "walking": "Easy — gravel and stone-flag lanes; main spine partially wheelchair-friendly"
+        "hours": "每日白天开放；多数文化遗产屋舍09:00–18:00",
+        "closed": "部分独立屋舍周一休——主巷常年开放",
+        "admission": "多数屋舍免费；崔氏宗宅设有小型自愿募款箱",
+        "walking": "轻松——碎石与石板巷道；主巷部分可通行轮椅"
       },
       "convenience": {
-        "restroom": "Public restrooms at the village entrance and near Gyeongjuhyanggyo",
-        "parking": "Coach drop-off lot at the western entrance (free)"
+        "restroom": "村口及庆州乡校附近设有公共洗手间",
+        "parking": "西侧入口巴士停车场（免费）"
       },
       "smartNotes": {
-        "photo": "Hanok tile roofs in golden-hour light; Gyodong Beopju brewery gate; Woljeonggyo Bridge appears in the distance from the village's southwest corner (preview of Stop 7); Gyerim Forest's old willows",
-        "facilities": "Gyodong Beopju shop (souvenir bottles); small artisan stores along the main lane (traditional rice cake, hwangnam-bbang); Yosukgung 1779 (luxury restaurant, reservation required)",
-        "tip": "Buy Gyodong Beopju as a souvenir if you have customs allowance for spirits (verify your country's import limit); the village can be quiet on weekday afternoons — perfect for slow photography"
+        "photo": "黄金时段（傍晚侧光）下的韩屋瓦顶；校洞法酒酿造所大门；从村落西南角可远眺月精桥（第7站预览）；鸡林森林的古柳",
+        "facilities": "校洞法酒商店（伴手酒款）；主巷沿线的小型工艺店（传统糕点、皇南面包）；玉笙宫1779（高级餐厅，需预约）",
+        "tip": "若欲购买校洞法酒做伴手礼，请确认所属国家的烈酒入境额度；周间下午村落较安静——是慢拍照的最佳时段"
       },
       "_poi_meta": {
         "poi_key": "gyochon_hanok_village",
@@ -460,7 +460,7 @@
       "time": "≈ 17:00",
       "duration": "40 min",
       "name": "月精桥",
-      "category": "Reconstructed Silla Wooden Bridge",
+      "category": "新罗木桥复原",
       "description": "**月精桥（월정교）**是**重建的新罗时代木造桥梁，横跨南川河**，今日以**原长60.57公尺成为韩国最大的木造桥梁**，**2018年4月**在**长达数十年的复原工程（2008至2013年桥面，2013至2018年桥廊屋）**后重新对公众开放。原桥**760年新罗景德王（第35代）初建**，记载于《三国史记》——桥名「月精（月光之精气）」反映新罗景德王时代的佛教宇宙观。桥梁在朝鲜时代废弃，1984至1986年发掘后确认原址。桥廊屋（有屋顶的桥梁走廊）采唐风建筑设计，两端设有多重斗拱飞簷屋顶。**夜间灯光**每日从日落至22:00亮起，全年照常。本行程约17:00抵达；**冬季（11至2月）日落约17:15至17:30**，是全年唯一可靠捕捉到日落后桥灯倒映南川河的时段。其他季节17:00为日间光线，桥体本身亦值得拍摄。**免费入场**，24小时开放。",
       "highlights": [
         "**韩国最大木造桥梁**——原长60.57公尺",
@@ -472,26 +472,26 @@
         "**免费入场**，24小时开放"
       ],
       "timeUsed": [
-        "Coach drop-off at north bank parking (~5 min)",
-        "Walk across bridge to south gatehouse (~10 min)",
-        "Photo time at south bank composition (~15 min)",
-        "Walk back + reassemble at coach (~10 min)"
+        "于桥北停车场下车（约5分钟）",
+        "走过桥梁至南端门楼（约10分钟）",
+        "于南端取景拍摄（约15分钟）",
+        "走回北端并集合上车（约10分钟）"
       ],
-      "whyOnRoute": "月精桥作为全日压轴，以新罗时代桥梁的木构建筑美学为一整天的庆州UNESCO遗产之旅画下视觉上最丰富的句点。冬季日落时段的灯光倒影是全年最受旅客赞誉的夜景构图。",
+      "whyOnRoute": "月精桥是路线刻意打造的「日落收尾」——让一天在情感高潮中收尾，而非在校村慢慢淡去。17:00抵达正是配合季节性日落时段——春秋季约18:00开始亮灯，但40分钟时段恰好涵盖魔幻时刻的过渡，同时拥有日光与首批夜灯辉光。竞品的釜山-庆州一日游皆未以此地收尾，这是本路线相对 busan-top-attractions、from-busan-gyeongju-ancient-capital 等的最强差异化。",
       "visitBasics": {
-        "hours": "Open 24 hours (illumination runs roughly sunset → 23:00)",
-        "closed": "Open year-round",
-        "admission": "Free",
-        "walking": "Easy — flat bridge deck; wheelchair-accessible from the north bank"
+        "hours": "全天开放（夜灯运行约日落至23:00）",
+        "closed": "全年开放",
+        "admission": "免费",
+        "walking": "轻松——平整桥面；自北端可无障碍通行"
       },
       "convenience": {
-        "restroom": "Public restroom at the north bank parking area",
-        "parking": "Coach parking on the north bank; no parking on the south bank"
+        "restroom": "北端停车场设有公共洗手间",
+        "parking": "巴士仅可在北端停泊；南端无停车"
       },
       "smartNotes": {
-        "photo": "South-bank gatehouse with bridge spanning toward Wolseong palace site (the iconic composition); long-exposure river reflections after illumination begins; the bridge in autumn-foliage frame is on the cover of many MCST tourism brochures",
-        "facilities": "No shops on the bridge itself; small café cluster at the north bank parking",
-        "tip": "Bring a tripod or phone with night mode for the illumination shot; in winter the river fog can blur distant compositions — use the gatehouse foreground; do not climb on the wooden railings"
+        "photo": "南端门楼搭配桥身延伸至月城王宫遗址的标志性构图；夜灯亮起后的长曝河面倒影；秋叶环绕的桥景常出现于韩国观光宣传册封面",
+        "facilities": "桥身上无商店；北端停车场附近有小型咖啡馆群",
+        "tip": "请携带三脚架或具夜景模式的手机以拍摄夜灯倒影；冬季河面雾气可能模糊远景——可利用门楼前景；切勿攀爬木栏杆"
       },
       "_poi_meta": {
         "poi_key": "woljeonggyo_bridge",
@@ -513,7 +513,7 @@
       "time": "≈ 17:45",
       "duration": "75 min",
       "name": "返回釜山",
-      "category": "Transit / Return",
+      "category": "交通 / 返回",
       "description": "**约17:45从月精桥北岸出发**，走庆釜高速＋东海高速公路返回釜山。**下车顺序与早晨接送相反**：**海云台站先下车**（约18:50），再前往**西面**（约19:05），最后**釜山站**（约19:20），视交通情况调整。周五及周日傍晚车流可能多加20至30分钟，导游透过群组讯息即时更新。",
       "highlights": [
         "**逆顺序下车：海云台→西面→釜山站**",
@@ -521,12 +521,12 @@
         "周五／周日傍晚车流可能多加20至30分钟，导游即时更新"
       ],
       "timeUsed": [
-        "Departure from Woljeonggyo north bank (~5 min)",
-        "Gyeongbu + Donghae Expressways drive (~60 min)",
-        "First drop-off at Haeundae Station (~5 min)",
-        "Drive to Seomyeon + Busan Station drop-offs (~5 min)"
+        "由月精桥北端出发（约5分钟）",
+        "京釜＋东海高速公路驾驶（约60分钟）",
+        "海云台站首站下车（约5分钟）",
+        "驶往西面与釜山站下车（约5分钟）"
       ],
-      "whyOnRoute": "Reverse-order drop-off is standard small-group operations practice — first drop-off is the geographically nearest (Haeundae) which minimizes total transit. Avoiding a packaged dinner is a deliberate price/flexibility choice and matches competing Busan-Gyeongju products.",
+      "whyOnRoute": "依逆序下车是小团体业界的标准作业——首站为地理上最近的海云台，可最大程度缩短整体通勤。不打包晚餐是刻意的价格/弹性选择，亦与同类釜山-庆州产品一致。",
       "_poi_meta": {
         "poi_key": "OPS_busan_return",
         "verified": true,
@@ -542,76 +542,76 @@
   ],
   "routeFlowStops": [
     {
-      "name": "Busan subway pickup",
+      "name": "釜山地铁接送",
       "type": "origin",
-      "theme": "Departure"
+      "theme": "出发"
     },
     {
-      "name": "Ahopsan Bamboo Forest (or Haeundae Dalmaji Hill in cherry season)",
+      "name": "九山竹林（赏樱季换为海云台达摩峰）",
       "type": "primary",
-      "theme": "Forest / Coastal road (seasonal)"
+      "theme": "森林 / 海岸路线（季节）"
     },
     {
-      "name": "Bulguksa Temple (UNESCO)",
+      "name": "佛国寺（UNESCO）",
       "type": "primary",
-      "theme": "UNESCO heritage"
+      "theme": "UNESCO遗产"
     },
     {
-      "name": "Lunch (Gyeongju ssambap)",
+      "name": "午餐（庆州拌饭）",
       "type": "meal",
-      "theme": "Meal"
+      "theme": "用餐"
     },
     {
-      "name": "Gyeongju National Museum",
+      "name": "庆州国立博物馆",
       "type": "primary",
-      "theme": "Silla artifacts"
+      "theme": "新罗文物"
     },
     {
-      "name": "Gyochon Hanok Village",
+      "name": "校村韩屋村",
       "type": "primary",
-      "theme": "Heritage village"
+      "theme": "文化遗产村落"
     },
     {
-      "name": "Woljeonggyo Bridge",
+      "name": "月精桥",
       "type": "primary",
-      "theme": "Reconstructed Silla bridge"
+      "theme": "新罗木桥复原"
     },
     {
-      "name": "Busan subway drop-off",
+      "name": "釜山地铁下车",
       "type": "return",
-      "theme": "Return"
+      "theme": "返回"
     }
   ],
   "routePhases": [
     {
       "phase": "出发＋九山竹林（约2.5小时）",
       "duration": "≈ 2.5 hours",
-      "description": "Sequential pickup at three Busan subway exits (08:10, 08:30, 09:10), then drive ≈30 min to Ahopsan Bamboo Forest in Gijang."
+      "description": "在釜山地铁三个站点依序接驳（08:10、08:30、09:10），随后驾驶约30分钟前往机张郡九山竹林。"
     },
     {
       "phase": "UNESCO核心（约2小时）",
       "duration": "≈ 2 hours",
-      "description": "Drive ≈70 min from Ahopsan to Bulguksa, then 75 min walking the temple."
+      "description": "从九山竹林行驶约70分钟到佛国寺，然后用75分钟漫步寺院。"
     },
     {
       "phase": "午餐＋博物馆（约2.5小时）",
       "duration": "≈ 2.5 hours",
-      "description": "Local Gyeongju lunch (60 min) then 75 min in the National Museum's Silla galleries."
+      "description": "庆州在地午餐（60分钟），然后在国立博物馆新罗展厅停留75分钟。"
     },
     {
       "phase": "韩屋村＋月精桥（约2小时）",
       "duration": "≈ 2 hours",
-      "description": "Gyochon Hanok Village walk (60 min) then 40 min at Woljeonggyo Bridge."
+      "description": "校村韩屋村漫步（60分钟），随后在月精桥驻足40分钟。"
     },
     {
       "phase": "返回釜山（约1.25至1.5小时）",
       "duration": "≈ 1.25–1.5 hours",
-      "description": "Gyeongju to Busan via Gyeongbu Expressway. Drop-offs at Haeundae, Seomyeon, Busan Station."
+      "description": "经京釜高速公路返回釜山，依序于海云台、西面、釜山站下车。"
     }
   ],
   "routeShapeIntro": {
     "title": "行程动线总览",
-    "subtitle": "A culture-first day trip from Busan to Gyeongju that emphasizes the 'legacy' theme — Korea's longest-ruling kingdom (Silla, 992 years) and the artifacts that survive. Where most Gyeongju day tours pack in 5–7 outdoor sites, this version slows the pace and includes the National Museum (a stop most tours skip). The night-illumination finale at Woljeonggyo Bridge gives the day a closing emotional beat that other circuits miss. The cherry-blossom season swap to Haeundae Dalmaji Hill is a subtle quality detail — the operator clearly designs around peak conditions rather than a fixed itinerary."
+    "subtitle": "以「文化优先」为主题的釜山出发庆州一日游，强调新罗王朝（统治992年）所留下的「遗产」轨迹。多数庆州一日游会塞入5至7个户外景点，本路线刻意放慢步伐，并加入大多数行程跳过的国立博物馆。月精桥的夜灯收尾为整日画下情感落幕，是其他路线无法呈现的高潮。赏樱季换为海云台达摩峰是细致的品质设计——业者明显围绕季节高峰，而非固守不变的行程。"
   },
   "whyTourWorks": {
     "bestFor": [
@@ -646,8 +646,8 @@
             "detail": "冬季日落提早至约17:15至17:30，与本行程约17:00抵达月精桥完美吻合，形成其他季节无法复制的桥灯＋南川河倒影构图——是庆州最受旅客赞誉的夜景体验。"
           },
           {
-            "label": "Mini-van size between coach tour and private tour",
-            "detail": "Coach tours from Busan to Gyeongju typically run 35–45 passengers at a low per-person price; private tours run 1–4 passengers at ~$300+ per group. This small-group mini-van format sits between — usually under 10 passengers per departure — at a per-person price closer to coach economics. Guests who have compared report a private-feeling pace without private-tour cost."
+            "label": "厢型小巴介于大型旅游车与私人包车之间",
+            "detail": "釜山往庆州的大型旅游车通常每团载35–45人、单价较低；私人包车每团1–4人、约$300以上/团。本小型厢型车格式介于两者之间——通常每班10人以内——单价更接近大型旅游车。曾比较的旅客反馈：享受了私人包车般的步调，却无私人包车的开销。"
           }
         ]
       }
@@ -705,33 +705,33 @@
   "practicalWeatherStatic": {
     "today": {
       "temp": "—",
-      "label": "即时天气连动"
+      "label": "请见季节性说明"
     },
     "tomorrow": {
       "temp": "—",
-      "label": "每日更新"
+      "label": "请见季节性说明"
     },
-    "_seasonalSummary": "Gyeongju has continental Korean weather — colder than Busan in winter, hotter in summer. Best seasons are April (cherry blossoms in Gyeongju as well) and October–November (foliage at Bulguksa).",
+    "_seasonalSummary": "庆州属韩国大陆型气候——冬季较釜山更冷、夏季更热。最佳季节为4月（庆州樱花亦盛开）与10月至11月（佛国寺秋叶）。",
     "_seasonalTemperatures": [
       {
         "season": "春季（3至5月）",
         "range": "5–22°C",
-        "notes": "Cherry blossoms peak early April. Best season overall."
+        "notes": "樱花约在4月初盛开。全年最佳季节。"
       },
       {
         "season": "夏季（6至8月）",
         "range": "22–32°C",
-        "notes": "Hot and humid; museum is air-conditioned."
+        "notes": "炎热潮湿；博物馆设有空调。"
       },
       {
         "season": "秋季（9至11月）",
         "range": "8–24°C",
-        "notes": "Foliage at Bulguksa in late October — exceptional."
+        "notes": "10月底佛国寺秋叶为韩国经典美景之一。"
       },
       {
         "season": "冬季（12至2月）",
         "range": "-3 to 8°C",
-        "notes": "Cold; museum and indoor café options become more valuable."
+        "notes": "寒冷；博物馆与室内咖啡馆价值更高。"
       }
     ]
   },
@@ -757,7 +757,7 @@
     {
       "icon": "check-circle",
       "title": "当地持照合法业者",
-      "description": "Authorized Korean tour operator with full insurance",
+      "description": "持照韩国旅游业者，全险保障",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
       "body": "认证英语 / 中文导游全程陪同，熟悉庆州UNESCO遗址的深度历史，提供远超指示牌的文化解说。"
@@ -765,7 +765,7 @@
     {
       "icon": "route",
       "title": "路线专家",
-      "description": "Hand-tuned itinerary, not a generic loop",
+      "description": "精心调校的行程，非通用旅游路线",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
       "body": "行程序列（九山→佛国寺→博物馆→校村→月精桥）依上午人潮规律、博物馆停留效益及月精桥日落时段精心排列。"
@@ -773,7 +773,7 @@
     {
       "icon": "users",
       "title": "精心控制团体人数",
-      "description": "Right-sized for the route",
+      "description": "依路线特性精算团体规模",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600",
       "body": "小型厢型小巴确保佛国寺各展区及博物馆展厅保持舒适的参观空间，不受大型旅行团拥挤影响。"
@@ -783,37 +783,37 @@
     {
       "timing": "即时通知",
       "title": "即时确认",
-      "detail": "Booking confirmation with itinerary summary",
+      "detail": "预订确认与行程摘要",
       "description": "预订即时收到确认信，含集合站选择说明。"
     },
     {
       "timing": "出发前12小时",
       "title": "出发前12小时提醒",
-      "detail": "Weather update and any route adjustments",
+      "detail": "天气更新与任何行程调整",
       "description": "确认天气及九山 / 月精桥路线调整资讯。"
     },
     {
       "timing": "前一晚",
       "title": "最终接送资讯",
-      "detail": "Exact pickup time and driver contact",
+      "detail": "确切接送时间与司机联络方式",
       "description": "发送确切接送时间及导游联络方式。"
     },
     {
       "timing": "行程当天早晨",
       "title": "当日路线说明",
-      "detail": "Morning briefing based on live conditions",
+      "detail": "依实际路况进行的当日早晨简报",
       "description": "导游于集合前确认车牌及当日安排。"
     },
     {
       "timing": "行程途中",
       "title": "景点逐一说明",
-      "detail": "Real-time guidance at each location",
+      "detail": "每个景点的实时引导",
       "description": "导游提供佛国寺六件国宝、新罗金冠等深度解说，博物馆特色文物现场带领。"
     },
     {
       "timing": "行程结束后",
       "title": "行程后支援",
-      "detail": "Follow-up and recommendations",
+      "detail": "行程后追踪与建议",
       "description": "行程结束后发送问卷，欢迎意见回馈。"
     }
   ],
@@ -964,7 +964,7 @@
       }
     ],
     "hotel_pickup_available": false,
-    "notes": "Choose the pickup exit closest to your hotel at booking. Year-round itinerary; cherry-blossom season (typically mid-March to mid-April) swaps Ahopsan Bamboo Forest for Haeundae Dalmaji Hill."
+    "notes": "请于预订时选择最靠近您饭店的接送出口。全年路线；赏樱季（通常3月中旬至4月中旬）九山竹林替换为海云台达摩峰。"
   },
   "matching_profile": {
     "profile_version": 6,
@@ -975,7 +975,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gyeongsang_north",
     "vehicle_type": "coach",
-    "duration_hours": 11.0,
+    "duration_hours": 11,
     "region_tags": [
       "busan_gijang",
       "gyeongju_tohamsan",
@@ -1002,27 +1002,27 @@
     "pace_level": 0.7,
     "walking_level": 0.7,
     "scenic_level": 0.9,
-    "photo_level": 1.0,
-    "culture_level": 1.0,
+    "photo_level": 1,
+    "culture_level": 1,
     "relax_level": 0.55,
-    "first_time_fit": 1.0,
+    "first_time_fit": 1,
     "family_fit": 0.85,
     "senior_fit": 0.85,
     "couple_fit": 0.95,
-    "solo_traveler_fit": 1.0,
+    "solo_traveler_fit": 1,
     "active_traveler_fit": 0.6,
-    "adult_family_fit": 1.0,
+    "adult_family_fit": 1,
     "family_with_teens_fit": 0.95,
     "young_kids_fit": 0.45,
     "senior_active_fit": 0.85,
     "senior_general_fit": 0.75,
     "mobility_friendly_fit": 0.65,
     "stroller_fit": 0.4,
-    "one_day_fit": 1.0,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.15,
     "rain_fit": 0.7,
-    "value_for_money_fit": 1.0,
-    "iconic_landmark_fit": 1.0,
+    "value_for_money_fit": 1,
+    "iconic_landmark_fit": 1,
     "cafe_fit": 0.4,
     "food_fit": 0.6,
     "nature_fit": 0.6,
@@ -1031,17 +1031,17 @@
     "shopping_fit": 0.4,
     "no_shopping_fit": 0.85,
     "local_culture_fit": 0.95,
-    "storytelling_fit": 1.0,
-    "unesco_fit": 1.0,
+    "storytelling_fit": 1,
+    "unesco_fit": 1,
     "intangible_heritage_fit": 0.85,
     "indoor_ratio": 0.32,
     "weather_sensitivity": 0.45,
     "comfort_level": 0.7,
     "budget_fit": 0.85,
     "premium_fit": 0.5,
-    "small_group_fit": 1.0,
+    "small_group_fit": 1,
     "private_fit": 0.05,
-    "bus_fit": 1.0,
+    "bus_fit": 1,
     "price_band": "mid",
     "pickup_base": "busan_central",
     "return_time_band": "18:50-19:20",
@@ -1090,21 +1090,21 @@
     "private_tour_fit": 0.05,
     "customizable_route_fit": 0.1,
     "flexibility_fit": 0.3,
-    "fixed_itinerary_fit": 1.0,
-    "buddhist_temple_fit": 1.0,
-    "silla_kingdom_fit": 1.0,
-    "ancient_capital_fit": 1.0,
-    "silla_artifacts_fit": 1.0,
-    "museum_fit": 1.0,
-    "national_museum_fit": 1.0,
-    "hanok_village_fit": 1.0,
-    "scholar_gentry_heritage_fit": 1.0,
-    "bamboo_forest_fit": 1.0,
-    "k_drama_filming_fit": 1.0,
-    "night_illuminated_bridge_fit": 1.0,
-    "sunset_finale_fit": 1.0,
-    "scenic_temple_fit": 1.0,
-    "history_culture_fit": 1.0,
+    "fixed_itinerary_fit": 1,
+    "buddhist_temple_fit": 1,
+    "silla_kingdom_fit": 1,
+    "ancient_capital_fit": 1,
+    "silla_artifacts_fit": 1,
+    "museum_fit": 1,
+    "national_museum_fit": 1,
+    "hanok_village_fit": 1,
+    "scholar_gentry_heritage_fit": 1,
+    "bamboo_forest_fit": 1,
+    "k_drama_filming_fit": 1,
+    "night_illuminated_bridge_fit": 1,
+    "sunset_finale_fit": 1,
+    "scenic_temple_fit": 1,
+    "history_culture_fit": 1,
     "religious_history_fit": 0.95,
     "cherry_blossom_fit": 0.5,
     "spring_seasonal_fit": 0.6,
@@ -1112,11 +1112,11 @@
     "weather_robust_fit": 0.75,
     "premium_dining_fit": 0.85,
     "seasonal_fit": 0.95,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
@@ -1127,11 +1127,11 @@
     "national_treasure_count_visited": 5,
     "intangible_cultural_asset_count_visited": 1,
     "museum_visit": true,
-    "silla_dynasty_focus_fit": 1.0,
-    "ancient_capital_history_fit": 1.0,
+    "silla_dynasty_focus_fit": 1,
+    "ancient_capital_history_fit": 1,
     "k_drama_filming_locations_count": 1,
-    "deep_history_traveler_fit": 1.0,
-    "longer_day_fit": 1.0,
+    "deep_history_traveler_fit": 1,
+    "longer_day_fit": 1,
     "differentiates_from_busan_top_attractions": true,
     "differentiates_from_spring_cherry_blossom_route": true,
     "apec_2025_silla_gold_crown_exhibition_anchor": true,
