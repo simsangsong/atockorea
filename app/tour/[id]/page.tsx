@@ -1,75 +1,59 @@
-'use client';
-
-import { useEffect } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { redirect } from 'next/navigation';
+import { createServerClient } from '@/lib/supabase';
 import {
   canonicalProductPathForSlug,
   isTourBlockedFromConsumerSurfaces,
+  isTourIdBlockedFromConsumerSurfaces,
 } from '@/lib/tour-consumer-visibility';
 
+export const dynamic = 'force-dynamic';
+
+const UUID_RE =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
 /**
- * Legacy `/tour/[id]` surface — kept as a bookmark-compatible redirect to the
- * canonical `/tour-product/<slug>` pages. The legacy detail template was removed;
- * the only remaining routes under this segment are `/checkout` and `/confirmation`
- * which drive the Stripe booking flow.
+ * Legacy `/tour/[id]` — HTTP redirect to `/tour-product/<slug>` (or list).
+ * Server-side avoids an extra round-trip fetch from the browser.
  */
-export default function LegacyTourIdRedirect() {
-  const params = useParams<{ id: string }>();
-  const router = useRouter();
-  const tourId = typeof params?.id === 'string' ? params.id : Array.isArray(params?.id) ? params.id[0] : '';
+export default async function LegacyTourIdRedirectPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id: rawId } = await params;
+  const tourId = typeof rawId === 'string' ? rawId.trim() : '';
+  if (!tourId) redirect('/tours/list');
 
-  useEffect(() => {
-    let cancelled = false;
+  const decoded = decodeURIComponent(tourId);
+  const isUUID = UUID_RE.test(decoded);
 
-    async function resolveAndRedirect() {
-      if (!tourId) {
-        router.replace('/tours/list');
-        return;
-      }
+  if (isUUID && isTourIdBlockedFromConsumerSurfaces(decoded)) {
+    redirect('/tours/list');
+  }
 
-      try {
-        const res = await fetch(`/api/tours/${encodeURIComponent(tourId)}?locale=en`, {
-          headers: { Accept: 'application/json' },
-          cache: 'no-store',
-        });
-        if (!res.ok) {
-          if (!cancelled) router.replace('/tours/list');
-          return;
-        }
-        const body = (await res.json()) as
-          | { tour?: { slug?: string | null; id?: string } | null; slug?: string | null }
-          | null;
-        const slugFromTour = body?.tour && typeof body.tour.slug === 'string' ? body.tour.slug : null;
-        const slugFromRoot = typeof body?.slug === 'string' ? body.slug : null;
-        const slug = slugFromTour ?? slugFromRoot;
+  let supabase;
+  try {
+    supabase = createServerClient();
+  } catch {
+    redirect('/tours/list');
+  }
 
-        if (isTourBlockedFromConsumerSurfaces(tourId, slug)) {
-          if (!cancelled) router.replace('/tours/list');
-          return;
-        }
+  let lookup = supabase
+    .from('tours')
+    .select('id, slug')
+    .eq('is_active', true);
+  lookup = isUUID ? lookup.eq('id', decoded) : lookup.eq('slug', decoded);
 
-        const canonical = canonicalProductPathForSlug(slug);
-        if (!cancelled) {
-          router.replace(canonical ?? '/tours/list');
-        }
-      } catch {
-        if (!cancelled) router.replace('/tours/list');
-      }
-    }
+  const { data, error } = await lookup.maybeSingle();
 
-    void resolveAndRedirect();
-    return () => {
-      cancelled = true;
-    };
-  }, [tourId, router]);
+  if (error || !data) redirect('/tours/list');
 
-  return (
-    <div className="flex min-h-[60vh] items-center justify-center">
-      <div
-        className="h-6 w-6 animate-spin rounded-full border-2 border-slate-300 border-t-slate-700"
-        aria-label="Redirecting"
-        role="status"
-      />
-    </div>
+  if (isTourBlockedFromConsumerSurfaces(data.id, data.slug)) {
+    redirect('/tours/list');
+  }
+
+  const canonical = canonicalProductPathForSlug(
+    typeof data.slug === 'string' ? data.slug : null,
   );
+  redirect(canonical ?? '/tours/list');
 }

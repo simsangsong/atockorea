@@ -36,7 +36,7 @@
 
 ```bash
 # Supabase CLI 사용 (설치되어 있는 경우)
-supabase db execute -f supabase/add-translations-to-tours.sql
+supabase db query --linked -f supabase/add-translations-to-tours.sql
 ```
 
 ## 확인 방법

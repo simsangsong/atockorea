@@ -37,6 +37,8 @@ export function TourRecommendationsSection({ recommendations, sectionUi }: TourR
         style={{ scrollPaddingLeft: "16px" }}
       >
         {recommendations.map((rec) => {
+          const rawSrc = rec.thumbnail?.trim() || rec.heroImage?.trim() || "";
+          const imageSrc = rawSrc.length > 0 ? rawSrc : null;
           const tag = rec.badges[0] ?? rec.region;
           const priceFormatted = currencyCtx ? currencyCtx.formatPrice(rec.listPriceUsd) : `$${rec.listPriceUsd}`;
           const compareAtFormatted =
@@ -53,14 +55,21 @@ export function TourRecommendationsSection({ recommendations, sectionUi }: TourR
               style={{ width: "calc(78vw - 16px)", maxWidth: "300px" }}
             >
               <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-white/55 to-transparent z-[1]" />
-              <div className="relative h-44 overflow-hidden">
-                <img
-                  src={rec.thumbnail || rec.heroImage}
-                  alt={rec.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
-                />
+              <div className="relative h-44 overflow-hidden bg-muted/40">
+                {imageSrc ? (
+                  <img
+                    src={imageSrc}
+                    alt={rec.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+                  />
+                ) : (
+                  <div
+                    aria-hidden
+                    className="h-full w-full bg-gradient-to-br from-muted via-muted/80 to-muted/60"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/55 via-[#0c1622]/10 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-[#0c1622]/15" />
                 <div aria-hidden className="absolute inset-0 pointer-events-none rounded-2xl ring-1 ring-inset ring-white/10" />

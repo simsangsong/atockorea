@@ -19,7 +19,7 @@ import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
 import { MYPAGE_SURFACE_PAGE, MYPAGE_SECTION_TITLE, MYPAGE_FOCUS_RING } from '@/lib/mypage-ui';
 import { cn } from '@/lib/utils';
 import {
-  isReviewWriteWindowOpen,
+  isReviewWriteWindowOpenForViewer,
   normalizeBookingTourDateYmd,
 } from '@/lib/review-write-window';
 import { ConfirmDialog } from '@/components/mypage/ConfirmDialog';
@@ -57,6 +57,7 @@ export default function MyBookingsPage() {
   const [error, setError] = useState<string | null>(null);
   const [cancelTarget, setCancelTarget] = useState<Booking | null>(null);
   const [cancelBusy, setCancelBusy] = useState(false);
+  const [viewerEmail, setViewerEmail] = useState<string | null>(null);
 
   useEffect(() => {
     fetchBookings();
@@ -72,6 +73,8 @@ export default function MyBookingsPage() {
         router.push('/signin');
         return;
       }
+
+      setViewerEmail(session.user.email ?? null);
 
       const response = await fetch('/api/bookings', {
         headers: { Authorization: `Bearer ${session.access_token}` },
@@ -241,6 +244,7 @@ export default function MyBookingsPage() {
               <BookingCard
                 key={booking.id}
                 booking={booking}
+                viewerEmail={viewerEmail}
                 onCancel={() => requestCancel(booking)}
                 onOpenReceipt={handleOpenReceipt}
                 canCancel={canCancel(booking)}
@@ -261,6 +265,7 @@ export default function MyBookingsPage() {
               <BookingCard
                 key={booking.id}
                 booking={booking}
+                viewerEmail={viewerEmail}
                 onReview={() => handleReview(booking)}
                 onOpenReceipt={handleOpenReceipt}
                 showReview
@@ -281,6 +286,7 @@ export default function MyBookingsPage() {
               <BookingCard
                 key={booking.id}
                 booking={booking}
+                viewerEmail={viewerEmail}
                 formatDate={formatDate}
                 formatPrice={formatPrice}
                 displayStatus={getDisplayStatus(booking.status)}
@@ -315,6 +321,8 @@ export default function MyBookingsPage() {
 
 interface BookingCardProps {
   booking: Booking;
+  /** Signed-in email — allowlisted viewer skips review time window in UI */
+  viewerEmail?: string | null;
   onCancel?: () => void;
   onReview?: () => void;
   onOpenReceipt?: (bookingId: string) => void;
@@ -327,6 +335,7 @@ interface BookingCardProps {
 
 function BookingCard({
   booking,
+  viewerEmail = null,
   onCancel,
   onReview,
   onOpenReceipt,
@@ -353,7 +362,9 @@ function BookingCard({
   const detailHref = consumerTourDetailHref(booking.tour_id, booking.tours?.slug ?? null);
 
   const reviewWindowYmd = normalizeBookingTourDateYmd(booking.tour_date || null);
-  const reviewWindowOpen = reviewWindowYmd ? isReviewWriteWindowOpen(reviewWindowYmd) : false;
+  const reviewWindowOpen = reviewWindowYmd
+    ? isReviewWriteWindowOpenForViewer(reviewWindowYmd, viewerEmail)
+    : false;
   const reviewDisabled = showReview && !reviewWindowOpen;
 
   return (

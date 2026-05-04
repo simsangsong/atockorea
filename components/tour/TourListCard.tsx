@@ -7,6 +7,7 @@ import type { TourCardViewModel } from '@/src/types/tours';
 import { useTranslations, useCopy, useI18n } from '@/lib/i18n';
 import { formatTourDurationForCard } from '@/lib/tour-duration-display';
 import { isInWishlistLocal, toggleWishlistLocal } from '@/lib/wishlist';
+import { cn } from '@/lib/utils';
 
 function formatBookingCount(n: number): string {
   if (n >= 1000000) return `${(n / 1000000).toFixed(1).replace(/\.0$/, '')}M`;
@@ -36,6 +37,8 @@ function TourListCard({ tour, detailHref, formatPriceFn }: TourListCardProps) {
   } as const;
   const tourKey = tour.id;
   const [saved, setSaved] = useState(false);
+  /** Pointer-driven press so lifting the finger plays a rebound (CSS :active snaps off immediately). */
+  const [pressed, setPressed] = useState(false);
 
   useEffect(() => {
     if (!tourKey) return;
@@ -79,10 +82,31 @@ function TourListCard({ tour, detailHref, formatPriceFn }: TourListCardProps) {
   const displayDuration = formatTourDurationForCard(tour.duration, locale);
   const showBookingCount = tour.bookingCount != null && tour.bookingCount > 0;
 
+  const releasePress = () => setPressed(false);
+
+  function handlePointerDown(e: React.PointerEvent<HTMLAnchorElement>) {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    const t = e.target;
+    if (t instanceof Element && t.closest('[data-tour-card-wishlist]')) return;
+    setPressed(true);
+  }
+
   return (
     <Link
       href={detailHref}
-      className="group block h-full overflow-hidden rounded-[1.6rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.97)_0%,rgba(248,250,252,0.96)_100%)] shadow-[0_16px_38px_-24px_rgba(15,23,42,0.34),0_4px_16px_-12px_rgba(15,23,42,0.16)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-blue-200/80 hover:shadow-[0_30px_64px_-22px_rgba(15,23,42,0.42),0_16px_34px_-16px_rgba(59,130,246,0.22)] active:translate-y-0 active:scale-[0.99] motion-reduce:hover:transform-none"
+      onPointerDown={handlePointerDown}
+      onPointerUp={releasePress}
+      onPointerCancel={releasePress}
+      onPointerLeave={releasePress}
+      className={cn(
+        'group block h-full touch-manipulation overflow-hidden rounded-[1.6rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.97)_0%,rgba(248,250,252,0.96)_100%)] shadow-[0_16px_38px_-24px_rgba(15,23,42,0.34),0_4px_16px_-12px_rgba(15,23,42,0.16)]',
+        'transition-[transform,box-shadow,border-color,filter,background-color]',
+        pressed
+          ? 'translate-y-[1px] scale-[0.982] border-blue-300/95 bg-slate-50/[0.72] shadow-[0_8px_20px_-10px_rgba(15,23,42,0.35)] ring-[3px] ring-blue-400/35 duration-100 ease-out motion-reduce:translate-y-0 motion-reduce:scale-100 motion-reduce:shadow-[0_16px_38px_-24px_rgba(15,23,42,0.34),0_4px_16px_-12px_rgba(15,23,42,0.16)] motion-reduce:ring-0 motion-reduce:border-white/80'
+          : 'translate-y-0 scale-100 duration-[420ms] ease-[cubic-bezier(0.34,1.35,0.64,1)] hover:-translate-y-1 hover:border-blue-200/80 hover:shadow-[0_30px_64px_-22px_rgba(15,23,42,0.42),0_16px_34px_-16px_rgba(59,130,246,0.22)] motion-reduce:duration-150 motion-reduce:ease-out',
+        'focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-blue-400/55 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50',
+        'motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-[0_16px_38px_-24px_rgba(15,23,42,0.34),0_4px_16px_-12px_rgba(15,23,42,0.16)]',
+      )}
     >
       <div className="relative aspect-[4/3.15] w-full shrink-0 overflow-hidden sm:aspect-[4/3.35]">
         <Image
@@ -90,10 +114,19 @@ function TourListCard({ tour, detailHref, formatPriceFn }: TourListCardProps) {
           alt={displayTitle}
           fill
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.08] motion-reduce:group-hover:scale-100"
+          className={cn(
+            'object-cover transition-[transform,filter]',
+            pressed
+              ? 'brightness-[0.92] duration-150 ease-out'
+              : 'brightness-100 duration-[420ms] ease-[cubic-bezier(0.34,1.35,0.64,1)] group-hover:scale-[1.08] motion-reduce:group-hover:scale-100',
+            'motion-reduce:brightness-100 motion-reduce:transition-none',
+          )}
           loading="lazy"
         />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-slate-950/30 via-slate-900/10 to-transparent transition-opacity duration-300 group-hover:opacity-60" />
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-[1.375rem] bg-[linear-gradient(to_top,rgb(248,250,252)_0%,rgba(248,250,252,0.94)_18%,rgba(248,250,252,0.55)_42%,rgba(248,250,252,0.2)_68%,rgba(248,250,252,0.05)_88%,transparent_100%)] sm:h-6"
+          aria-hidden
+        />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-500/0 transition-colors duration-500 group-hover:to-blue-500/10" />
         <div className="absolute left-2 top-2 flex max-w-[calc(100%-48px)] flex-col items-start gap-0.5">
           <div className="flex flex-wrap items-center gap-0.5">
@@ -115,7 +148,11 @@ function TourListCard({ tour, detailHref, formatPriceFn }: TourListCardProps) {
           ) : null}
         </div>
         {tourKey ? (
-          <div className="absolute right-2 top-2">
+          <div
+            data-tour-card-wishlist
+            className="absolute right-2 top-2 z-[2]"
+            onPointerDown={(e) => e.stopPropagation()}
+          >
             <button
               type="button"
               onClick={handleWishlistClick}
@@ -135,7 +172,7 @@ function TourListCard({ tour, detailHref, formatPriceFn }: TourListCardProps) {
           </div>
         ) : null}
       </div>
-      <div className="bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(247,250,252,0.96)_100%)] px-3 pb-3 pt-2.5 sm:px-3.5">
+      <div className="relative z-[1] -mt-1 bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(247,250,252,0.96)_100%)] px-3 pb-3 pt-3 sm:-mt-1.5 sm:px-3.5 sm:pt-4">
         <div className="mb-1.5 flex items-center justify-between gap-2">
           <span className="inline-flex min-w-0 items-center gap-1 rounded-full border border-slate-200/80 bg-white/88 px-2 py-0.5 text-[10px] font-medium text-slate-600 shadow-[0_8px_20px_-16px_rgba(15,23,42,0.26)]">
             <svg className="h-3.5 w-3.5 shrink-0 text-slate-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden>

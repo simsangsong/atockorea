@@ -2,7 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { getAuthUser } from '@/lib/auth';
 import {
+  isReviewWriteWindowBypassEmail,
   isReviewWriteWindowOpen,
+  isTourDateOnOrBeforeSeoulToday,
   normalizeBookingTourDateYmd,
   REVIEW_WINDOW_NOT_OPEN_MESSAGE,
 } from '@/lib/review-write-window';
@@ -135,12 +137,14 @@ export async function POST(req: NextRequest) {
     // Get user from auth
     const authHeader = req.headers.get('authorization');
     let userId: string | null = null;
+    let userEmail: string | null = null;
 
     if (authHeader?.startsWith('Bearer ')) {
       const token = authHeader.substring(7);
       const { data: { user }, error: authError } = await supabase.auth.getUser(token);
       if (!authError && user) {
         userId = user.id;
+        userEmail = user.email ?? null;
       }
     }
 
@@ -166,13 +170,6 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (booking.status !== 'completed') {
-      return NextResponse.json(
-        { error: 'Only completed bookings can be reviewed' },
-        { status: 400 }
-      );
-    }
-
     const tourDateYmd = normalizeBookingTourDateYmd(
       (booking as { tour_date?: string | null }).tour_date,
     );
@@ -182,7 +179,28 @@ export async function POST(req: NextRequest) {
         { status: 400 },
       );
     }
-    if (!isReviewWriteWindowOpen(tourDateYmd)) {
+
+    const bypass = isReviewWriteWindowBypassEmail(userEmail);
+    const statusOk =
+      booking.status === 'completed' ||
+      (bypass &&
+        booking.status === 'confirmed' &&
+        isTourDateOnOrBeforeSeoulToday(tourDateYmd));
+    if (!statusOk) {
+      return NextResponse.json(
+        {
+          error:
+            booking.status !== 'completed'
+              ? 'Only completed bookings can be reviewed'
+              : 'Booking cannot be reviewed',
+        },
+        { status: 400 },
+      );
+    }
+    if (
+      !isReviewWriteWindowBypassEmail(userEmail) &&
+      !isReviewWriteWindowOpen(tourDateYmd)
+    ) {
       return NextResponse.json(
         { error: REVIEW_WINDOW_NOT_OPEN_MESSAGE, code: 'REVIEW_WINDOW_NOT_OPEN' },
         { status: 400 },

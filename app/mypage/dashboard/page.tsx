@@ -24,7 +24,7 @@ import {
 } from '@/lib/mypage-ui';
 import { cn } from '@/lib/utils';
 import {
-  isReviewWriteWindowOpen,
+  isReviewWriteWindowOpenForViewer,
   normalizeBookingTourDateYmd,
 } from '@/lib/review-write-window';
 
@@ -180,7 +180,8 @@ export default function DashboardPage() {
               if (booking.status !== 'completed') return false;
               if (reviewedBookingIds.has(booking.id)) return false;
               const ymd = normalizeBookingTourDateYmd(booking.tour_date || null);
-              return ymd ? isReviewWriteWindowOpen(ymd) : false;
+              const viewerEmail = session.user.email ?? null;
+              return ymd ? isReviewWriteWindowOpenForViewer(ymd, viewerEmail) : false;
             })
             .slice(0, 3)
             .map((booking: any) => ({

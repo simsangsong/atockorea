@@ -29,7 +29,7 @@ export default function SeasonalTours() {
     const fetchSeasonalTours = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`/api/tours?limit=6&sortBy=created_at&sortOrder=desc&isActive=true&locale=${encodeURIComponent(locale)}`);
+        const response = await fetch(`/api/tours?limit=6&sortBy=created_at&sortOrder=desc&isActive=true&compact=1&locale=${encodeURIComponent(locale)}`);
         if (!response.ok) {
           throw new Error('Failed to fetch tours');
         }

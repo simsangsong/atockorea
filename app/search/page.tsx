@@ -35,6 +35,7 @@ function SearchResults() {
     if (cityParam) params.set('city', cityParam);
     if (qParam) params.set('search', qParam);
     params.set('locale', locale);
+    params.set('compact', '1');
 
     fetch(`/api/tours?${params.toString()}`)
       .then((res) => (res.ok ? res.json() : { tours: [] }))

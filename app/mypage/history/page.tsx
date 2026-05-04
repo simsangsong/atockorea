@@ -17,7 +17,7 @@ import {
 } from '@/lib/mypage-ui';
 import { cn } from '@/lib/utils';
 import {
-  isReviewWriteWindowOpen,
+  isReviewWriteWindowOpenForViewer,
   normalizeBookingTourDateYmd,
 } from '@/lib/review-write-window';
 import {
@@ -45,6 +45,7 @@ export default function BookingHistoryPage() {
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [viewerEmail, setViewerEmail] = useState<string | null>(null);
 
   useEffect(() => {
     fetchHistory();
@@ -60,6 +61,8 @@ export default function BookingHistoryPage() {
         router.push('/signin');
         return;
       }
+
+      setViewerEmail(session.user.email ?? null);
 
       const response = await fetch('/api/bookings', {
         headers: { Authorization: `Bearer ${session.access_token}` },
@@ -168,7 +171,7 @@ export default function BookingHistoryPage() {
                 const detailHref = consumerTourDetailHref(booking.tour_id, booking.tours?.slug ?? null);
                 const reviewWindowYmd = normalizeBookingTourDateYmd(booking.tour_date || null);
                 const reviewWindowOpen = reviewWindowYmd
-                  ? isReviewWriteWindowOpen(reviewWindowYmd)
+                  ? isReviewWriteWindowOpenForViewer(reviewWindowYmd, viewerEmail)
                   : false;
 
                 return (

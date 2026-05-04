@@ -112,7 +112,7 @@ export function HeroSection() {
 
         <div className="relative z-10 mx-auto mb-3 w-full max-w-2xl px-4 pb-1 text-center sm:px-5 md:mb-4 md:px-8">
           <h1
-            className="mb-2 text-[1.65rem] font-bold leading-[1.12] tracking-[-0.02em] text-white md:mb-2.5 md:text-4xl lg:text-[3.15rem]"
+            className="mb-2.5 text-[1.55rem] font-bold leading-snug tracking-[-0.02em] text-white md:mb-3 md:text-[2rem] lg:text-[2.65rem]"
             style={{
               textShadow: "0 2px 20px rgba(0,0,0,0.45)",
               fontFamily: "var(--font-sans)",

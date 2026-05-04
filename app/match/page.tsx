@@ -268,7 +268,7 @@ export default function MatchPage() {
           </section>
 
           {result && phase === 'result' ? (
-            <section className="home-panel-elevated p-6 md:p-8">
+            <section className="home-panel-elevated match-result-soft-enter p-6 md:p-8">
               {result.matchOutcome === 'matched' && winner ? (
                 <>
                   <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-emerald-700">

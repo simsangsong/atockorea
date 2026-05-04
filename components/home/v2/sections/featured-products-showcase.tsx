@@ -54,6 +54,7 @@ export function FeaturedProductsShowcase() {
       sortBy: "popular",
       limit: String(FEATURED_LIMIT),
       locale,
+      compact: "1",
     });
     fetch(`/api/tours?${params.toString()}`, { signal: controller.signal })
       .then((r) => (r.ok ? r.json() : { tours: [] }))
@@ -82,18 +83,36 @@ export function FeaturedProductsShowcase() {
   if (tours != null && tours.length < 3) return null;
 
   return (
-    <section className="px-4 py-10 md:px-6 md:py-14">
-      <div ref={containerRef} className="mx-auto max-w-6xl scroll-animate">
+    <section className="relative overflow-hidden px-4 py-12 md:px-6 md:py-16">
+      {/* Soft section filter — unified warm veil, premium without heavy tint */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_85%_60%_at_50%_0%,rgba(253,243,226,0.55),transparent_55%)]"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_100%,rgba(245,240,235,0.5),transparent_50%)]"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/25 via-transparent to-stone-100/30"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-x-6 top-0 h-px max-w-4xl bg-gradient-to-r from-transparent via-slate-200/50 to-transparent md:inset-x-auto md:left-1/2 md:w-full md:max-w-5xl md:-translate-x-1/2"
+        aria-hidden
+      />
+
+      <div ref={containerRef} className="relative mx-auto max-w-6xl scroll-animate">
         <div className="mb-7 text-center md:mb-9">
-          <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-white/80 bg-white/95 px-3 py-1.5 shadow-home-neutral-card backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
-            <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-slate-600">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-stone-200/80 bg-gradient-to-b from-white/95 to-stone-50/80 px-3.5 py-1.5 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_12px_36px_-22px_rgba(15,23,42,0.14)] backdrop-blur-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.18)]" />
+            <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-slate-600">
               {t("premium.v2.featuredProducts.eyebrow")}
             </span>
           </div>
           <h2 className="mb-2 text-xl font-bold tracking-tight text-slate-900 md:text-2xl lg:text-3xl">
             {t("premium.v2.featuredProducts.title")}{" "}
-            <span className="font-extrabold text-amber-700">
+            <span className="bg-gradient-to-r from-amber-800 via-amber-700 to-amber-800 bg-clip-text font-extrabold text-transparent">
               {t("premium.v2.featuredProducts.titleAccent")}
             </span>
           </h2>
@@ -105,7 +124,7 @@ export function FeaturedProductsShowcase() {
         {tours == null ? (
           <SkeletonGrid />
         ) : (
-          <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
+          <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-hide md:mx-0 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
             {tours.slice(0, FEATURED_LIMIT).map((tour) => (
               <div
                 key={tour.id}

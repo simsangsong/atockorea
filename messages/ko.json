@@ -55,10 +55,10 @@
     "addToCart": "장바구니에 추가",
     "addToWishlist": "위시리스트에 추가",
     "removeFromWishlist": "위시리스트에서 제거",
-    "checkAvailability": "가용성 확인",
+    "checkAvailability": "예약 가능 확인",
     "reserve": "예약 진행",
     "chooseAnotherDate": "다른 날짜 선택",
-    "checkingAvailability": "가용성 확인 중…",
+    "checkingAvailability": "예약 가능 확인 중…",
     "payLater": "오늘 결제 없음",
     "spotsLeftTemplate": "{count}자리 남음",
     "selectDate": "날짜 선택",
@@ -927,10 +927,10 @@
           "groupMaxParam": "최대 {n}명"
         },
         "destinations": {
-          "eyebrow": "여행지",
-          "title": "어떤 한국이",
-          "titleAccent": "기다릴까요?",
-          "subtitle": "세 도시, 각 지역에서 직접 검증한 운영사만.",
+          "eyebrow": "엄선한 도시",
+          "title": "서울 · 부산 · 제주",
+          "titleAccent": "어디부터 떠날까요?",
+          "subtitle": "도시마다 현장에서 직접 검증한 운영 파트너만 연결합니다.",
           "seoul": {
             "name": "서울",
             "tagline": "고궁, K-컬처, 야시장",

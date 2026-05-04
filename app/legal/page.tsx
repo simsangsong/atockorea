@@ -1,78 +1,99 @@
-'use client';
-
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
+import Link from 'next/link';
+import {
+  LegalDocContainer,
+  LEGAL_DOC_MAIN_CLASS,
+  LegalDocTitle,
+  LegalDocumentShell,
+  legalDocFooterLinkClass,
+} from '@/components/legal/legal-document';
 
 export default function LegalPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 pt-20 pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">Legal</h1>
+      <main className={LEGAL_DOC_MAIN_CLASS}>
+        <LegalDocContainer>
+          <LegalDocTitle>Legal</LegalDocTitle>
+          <p className="mt-2 mb-6 text-[13px] leading-snug text-slate-600 sm:text-[14px]">
+            Policies for ATOC KOREA LLC’s booking platform. Full texts are linked below.
+          </p>
 
-          {/* Terms of Service */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Terms of Service</h2>
-            <div className="bg-white rounded-lg shadow-md p-6 space-y-4 text-gray-700">
-              <p>
-                Our full Terms of Service are designed for our tour booking intermediary platform and to align with applicable law in the Republic of Korea and the United States. They cover your agreement with us, definitions, bookings, payments, cancellations and refunds, user conduct, disclaimers, limitation of liability, dispute resolution, and more.
+          <LegalDocumentShell>
+            <section className="scroll-mt-28 py-5 sm:py-6">
+              <h2 className="text-[15px] font-semibold tracking-tight text-slate-950">Terms of Service</h2>
+              <p className="mt-2 text-[13px] leading-relaxed text-slate-700 sm:text-[14px] sm:leading-[1.65]">
+                Our full Terms of Service cover your agreement with us, definitions, bookings, payments,
+                cancellations and refunds, user conduct, disclaimers, limitation of liability, dispute resolution,
+                and related matters for our tour booking intermediary platform (Republic of Korea and United States).
               </p>
-              <p>
-                <a href="/terms" className="text-blue-600 hover:underline font-semibold">Read the full Terms of Service →</a>
+              <p className="mt-3 text-[13px] text-slate-600">
+                Summary: ATOC KOREA LLC operates only as a booking intermediary. We do not operate tours; independent
+                third parties deliver tour services. Execution, safety, and quality are the tour provider’s
+                responsibility.
               </p>
-              <p className="text-sm text-gray-600">
-                Summary: ATOC KOREA LLC operates only as a booking intermediary. We do not operate tours; tour services are delivered by independent third parties. Responsibility for tour execution, safety, and service quality rests with the tour provider. Full terms govern booking, payments, cancellations, liability limitations, and dispute handling.
+              <p className="mt-3">
+                <Link href="/terms" className={legalDocFooterLinkClass}>
+                  Read the full Terms of Service →
+                </Link>
               </p>
-            </div>
-          </section>
+            </section>
 
-          {/* Privacy Policy */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Privacy Policy</h2>
-            <div className="bg-white rounded-lg shadow-md p-6 space-y-4 text-gray-700">
-              <p>
-                Our full Privacy Policy is designed to comply with the Republic of Korea’s Personal Information Protection Act (PIPA) and U.S. state privacy laws (e.g., California CCPA/CPRA). It covers data we collect, purposes, retention, your rights (access, correction, deletion, opt-out, etc.), and how to contact us.
+            <section className="scroll-mt-28 py-5 sm:py-6">
+              <h2 className="text-[15px] font-semibold tracking-tight text-slate-950">Privacy Policy</h2>
+              <p className="mt-2 text-[13px] leading-relaxed text-slate-700 sm:text-[14px] sm:leading-[1.65]">
+                Our Privacy Policy is designed to align with Korea’s Personal Information Protection Act (PIPA) and
+                U.S. state privacy laws (including California CCPA/CPRA where applicable): what we collect, why,
+                retention, your rights, and how to contact us.
               </p>
-              <p>
-                <a href="/privacy" className="text-blue-600 hover:underline font-semibold">Read the full Privacy Policy →</a>
+              <p className="mt-3 text-[13px] text-slate-600">
+                Summary: We collect data as needed for bookings, communications, and legal compliance; we share with
+                payment processors and tour providers for fulfillment. We do not sell your personal data.
               </p>
-              <p className="text-sm text-gray-600">Summary: We collect data only as needed for bookings, communications, and legal compliance. We share with payment processors and tour providers for fulfillment. We do not sell your personal data.</p>
-            </div>
-          </section>
+              <p className="mt-3">
+                <Link href="/privacy" className={legalDocFooterLinkClass}>
+                  Read the full Privacy Policy →
+                </Link>
+              </p>
+            </section>
 
-          {/* Cookie Policy */}
-          <section>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Cookie Policy</h2>
-            <div className="bg-white rounded-lg shadow-md p-6 space-y-4 text-gray-700">
-              <p>
-                Our full Cookie Policy describes in detail how we and our service providers use cookies and similar technologies for essential functionality, security, fraud prevention, payment processing (when we use third-party payment providers), and preferences. It is designed to meet transparency requirements under applicable law.
+            <section className="scroll-mt-28 py-5 sm:py-6">
+              <h2 className="text-[15px] font-semibold tracking-tight text-slate-950">Cookie Policy</h2>
+              <p className="mt-2 text-[13px] leading-relaxed text-slate-700 sm:text-[14px] sm:leading-[1.65]">
+                Our Cookie Policy describes how we and service providers use cookies and similar technologies for
+                essential functionality, security, fraud prevention, payments, and preferences, consistent with
+                applicable transparency requirements.
               </p>
-              <p>
-                <a href="/cookies" className="text-blue-600 hover:underline font-semibold">Read the full Cookie Policy →</a>
+              <p className="mt-3 text-[13px] text-slate-600">
+                Summary: We use necessary cookies (session, auth, security), functional cookies (e.g. language), and
+                may use performance/analytics cookies. Payment providers may set cookies during checkout; blocking
+                essential or payment-related cookies may affect login or checkout.
               </p>
-              <p className="text-sm text-gray-600">
-                Summary: We use strictly necessary cookies (session, auth, security, fraud prevention), functional cookies (e.g., language preference), and may use performance/analytics cookies. When we offer online payment, our payment provider may set cookies during checkout. You can manage cookies via your browser or our site where we offer a preference tool; blocking essential or payment-related cookies may affect login or checkout.
+              <p className="mt-3">
+                <Link href="/cookies" className={legalDocFooterLinkClass}>
+                  Read the full Cookie Policy →
+                </Link>
               </p>
-            </div>
-          </section>
+            </section>
 
-          {/* DSA Information */}
-          <section>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">DSA (EU) Information</h2>
-            <div className="bg-white rounded-lg shadow-md p-6 space-y-4 text-gray-700">
-              <p>
-                For information according to the Digital Services Act (EU), please visit our{' '}
-                <a href="/dsa" className="text-blue-600 hover:underline">DSA Information page</a>.
+            <section className="scroll-mt-28 py-5 sm:py-6">
+              <h2 className="text-[15px] font-semibold tracking-tight text-slate-950">DSA (EU) Information</h2>
+              <p className="mt-2 text-[13px] leading-relaxed text-slate-700 sm:text-[14px] sm:leading-[1.65]">
+                For disclosures under the EU Digital Services Act, see our dedicated page.
               </p>
-            </div>
-          </section>
-        </div>
+              <p className="mt-3">
+                <Link href="/dsa" className={legalDocFooterLinkClass}>
+                  DSA Information →
+                </Link>
+              </p>
+            </section>
+          </LegalDocumentShell>
+        </LegalDocContainer>
       </main>
       <Footer />
       <BottomNav />
     </>
   );
 }
-

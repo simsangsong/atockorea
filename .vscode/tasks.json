@@ -1,0 +1,55 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Supabase: SQL 실행 (linked, 현재 파일)",
+      "type": "shell",
+      "command": "npm run db:exec -- -f \"${file}\"",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Supabase: 스키마 pull (linked)",
+      "type": "shell",
+      "command": "npm run db:pull",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Supabase: 마이그레이션 push (linked)",
+      "type": "shell",
+      "command": "npm run db:push",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Supabase: diff (migrations vs linked)",
+      "type": "shell",
+      "command": "npm run db:diff",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Supabase: TypeScript 타입 생성 (linked → lib/database.types.ts)",
+      "type": "shell",
+      "command": "npm run db:types",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ]
+}

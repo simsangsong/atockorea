@@ -25,7 +25,7 @@ export default async function ReviewsMarketingPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/20 to-orange-50/20 pt-20 pb-24">
+      <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/30 pt-20 pb-24">
         <ReviewsPageClient initialPublicReviews={initialPublicReviews} />
       </main>
       <Footer />

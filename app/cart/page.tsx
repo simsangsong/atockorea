@@ -12,6 +12,27 @@ import { TrashIcon, HeartIcon, CalendarDateIcon, MapIcon, ClockIcon } from '@/co
 import { supabase } from '@/lib/supabase';
 import { useTranslations } from '@/lib/i18n';
 import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
+import { cn } from '@/lib/utils';
+
+/** Opaque elevated panels — stops global pastel mesh bleeding through translucent glass (beige cast). */
+function cartPanelClass(extra?: string) {
+  return cn(
+    'rounded-[1.75rem] border border-slate-200/90 bg-white',
+    'shadow-[var(--home-shadow-neutral-card),0_28px_64px_-26px_rgba(15,23,42,0.11),0_12px_32px_-16px_rgba(15,23,42,0.07)]',
+    'ring-1 ring-slate-900/[0.04]',
+    extra,
+  );
+}
+
+function cartHeroPanelClass(extra?: string) {
+  return cn(
+    'rounded-[1.75rem] border border-slate-200/95',
+    'bg-[linear-gradient(165deg,#ffffff_0%,#fafbfc_45%,#f4f7fb_100%)]',
+    'shadow-[var(--home-shadow-neutral-card),0_36px_80px_-28px_rgba(15,23,42,0.14),0_16px_40px_-20px_rgba(15,23,42,0.09)]',
+    'ring-1 ring-slate-900/[0.045]',
+    extra,
+  );
+}
 
 interface CartItem {
   id: string;
@@ -313,7 +334,11 @@ export default function CartPage() {
   if (loading) {
     return (
       <SitePageShell>
-        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+        <main className="relative isolate container mx-auto px-4 py-6 sm:px-6 md:py-8 lg:px-8">
+          <div
+            className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[min(72vh,440px)] bg-gradient-to-b from-slate-50/95 via-white/55 to-transparent"
+            aria-hidden
+          />
           <div className="text-center py-12">
             <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-2 border-blue-500 border-t-transparent" />
             <p className="text-slate-600">{t('common.loading')}</p>
@@ -326,8 +351,12 @@ export default function CartPage() {
   if (error && cartItems.length === 0) {
     return (
       <SitePageShell>
-        <main className="container mx-auto flex min-h-[60vh] items-center justify-center px-4 py-12 sm:px-6 lg:px-8 md:py-16">
-          <div className="w-full max-w-md rounded-[1.75rem] border border-white/25 bg-white/55 p-8 text-center shadow-[0_14px_44px_-10px_rgba(15,23,42,0.18)] backdrop-blur-xl">
+        <main className="relative isolate container mx-auto flex min-h-[60vh] items-center justify-center px-4 py-12 sm:px-6 lg:px-8 md:py-16">
+          <div
+            className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[min(72vh,440px)] bg-gradient-to-b from-slate-50/95 via-white/55 to-transparent"
+            aria-hidden
+          />
+          <div className={cn(cartHeroPanelClass('w-full max-w-md p-8 text-center'))}>
             <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-slate-100">
               <svg className="h-7 w-7 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -341,7 +370,7 @@ export default function CartPage() {
             </p>
             <Link
               href="/signin?redirect=/cart"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-6 py-3.5 font-medium text-white shadow-sm transition-colors hover:bg-slate-800"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-6 py-3.5 font-medium text-white shadow-[0_8px_24px_-6px_rgba(15,23,42,0.35),inset_0_1px_0_0_rgba(255,255,255,0.12)] transition-colors hover:bg-slate-800"
             >
               {t('auth.signIn')}
             </Link>
@@ -353,8 +382,12 @@ export default function CartPage() {
 
   return (
     <SitePageShell>
-      <main className="container mx-auto px-4 py-6 sm:px-6 md:py-8 lg:px-8">
-        <div className="mb-6">
+      <main className="relative isolate container mx-auto px-4 py-6 sm:px-6 md:py-8 lg:px-8">
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[min(80vh,520px)] bg-gradient-to-b from-slate-50/95 via-white/50 to-transparent"
+          aria-hidden
+        />
+        <div className="relative mb-6">
           <h1 className="mb-2 text-3xl font-bold text-slate-900">{t('cart.title')}</h1>
           <p className="text-slate-600">
             {cartItems.length} {cartItems.length === 1 ? t('cart.item') : t('cart.items')} {t('cart.inYourCart')}
@@ -362,9 +395,9 @@ export default function CartPage() {
         </div>
 
         {cartItems.length === 0 ? (
-          <div className="rounded-[1.75rem] border border-white/25 bg-white/55 p-12 text-center shadow-[0_14px_44px_-10px_rgba(15,23,42,0.16)] backdrop-blur-xl">
+          <div className={cn(cartHeroPanelClass('p-12 text-center'))}>
             <svg
-              className="w-24 h-24 text-slate-300 mx-auto mb-6"
+              className="mx-auto mb-6 h-24 w-24 text-slate-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -380,7 +413,7 @@ export default function CartPage() {
             <p className="mb-8 text-slate-600">{t('cart.emptyDescription')}</p>
             <Link
               href="/tours/list"
-              className="inline-block rounded-xl bg-slate-900 px-6 py-3 font-semibold text-white shadow-md transition-colors hover:bg-slate-800 hover:shadow-lg"
+              className="inline-block rounded-xl bg-slate-900 px-6 py-3 font-semibold text-white shadow-[0_8px_24px_-6px_rgba(15,23,42,0.35),inset_0_1px_0_0_rgba(255,255,255,0.12)] transition-[transform,box-shadow,background-color] duration-200 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-[0_14px_36px_-8px_rgba(15,23,42,0.45),inset_0_1px_0_0_rgba(255,255,255,0.14)]"
             >
               {t('cart.browseTours')}
             </Link>
@@ -395,10 +428,7 @@ export default function CartPage() {
                 const hasDiscount = item.originalPrice > item.price;
 
                 return (
-                  <div
-                    key={item.id}
-                    className="overflow-hidden rounded-[1.75rem] border border-white/25 bg-white/55 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.14)] backdrop-blur-xl"
-                  >
+                  <div key={item.id} className={cn(cartPanelClass('overflow-hidden'))}>
                     <div className="flex flex-col md:flex-row">
                       {/* Image */}
                       <div className="md:w-48 h-48 md:h-auto flex-shrink-0 relative">
@@ -473,7 +503,7 @@ export default function CartPage() {
                         )}
 
                         {/* Bottom Section: Price, Quantity, Subtotal */}
-                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 pt-3 border-t border-white/20">
+                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-t border-slate-100 pt-3">
                           {/* Price Section */}
                           <div className="flex items-baseline gap-2">
                             {hasDiscount && (
@@ -532,7 +562,7 @@ export default function CartPage() {
               })}
 
               {/* Continue Shopping */}
-              <div className="rounded-[1.75rem] border border-white/25 bg-white/55 p-6 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.12)] backdrop-blur-xl">
+              <div className={cn(cartPanelClass('p-6'))}>
                 <Link
                   href="/tours/list"
                   className="inline-flex items-center gap-2 font-semibold text-blue-600 transition-colors hover:text-blue-700"
@@ -557,7 +587,7 @@ export default function CartPage() {
 
             {/* Order Summary */}
             <div className="lg:w-96 flex-shrink-0">
-              <div className="sticky top-20 rounded-[1.75rem] border border-white/25 bg-white/55 p-6 shadow-[0_14px_44px_-10px_rgba(15,23,42,0.14)] backdrop-blur-xl">
+              <div className={cn(cartPanelClass('sticky top-20 p-6'))}>
                 <h2 className="mb-6 text-2xl font-bold text-slate-900">{t('cart.orderSummary')}</h2>
 
                 {/* Promo Code */}
@@ -602,7 +632,7 @@ export default function CartPage() {
                 </div>
 
                 {/* Price Breakdown */}
-                <div className="space-y-3 mb-6 pb-6 border-b border-white/20">
+                <div className="mb-6 space-y-3 border-b border-slate-100 pb-6">
                   <div className="flex justify-between text-sm">
                     <span className="text-slate-600">{t('cart.subtotal')}</span>
                     <span className="font-medium text-slate-900">${subtotal.toFixed(2)}</span>
@@ -628,7 +658,7 @@ export default function CartPage() {
                 {/* Checkout Button */}
                 <button
                   onClick={handleCheckout}
-                  className="mb-4 w-full rounded-xl bg-slate-900 py-4 text-lg font-semibold text-white shadow-md transition-colors hover:bg-slate-800 hover:shadow-lg"
+                  className="mb-4 w-full rounded-xl bg-slate-900 py-4 text-lg font-semibold text-white shadow-[0_10px_32px_-8px_rgba(15,23,42,0.38),inset_0_1px_0_0_rgba(255,255,255,0.12)] transition-[transform,box-shadow,background-color] duration-200 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-[0_16px_44px_-10px_rgba(15,23,42,0.48),inset_0_1px_0_0_rgba(255,255,255,0.14)]"
                 >
                   {t('cart.proceedToCheckout')}
                 </button>

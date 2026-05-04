@@ -4,10 +4,21 @@
 export const dynamic = 'force-dynamic';
 
 import { useEffect } from 'react';
+import { NEXT_DEV_CHUNK_RELOAD_KEY } from '@/lib/dev-chunk-recovery';
 
 interface ErrorProps {
   error: Error & { digest?: string };
   reset: () => void;
+}
+
+function isChunkLoadError(error: Error): boolean {
+  const msg = error?.message ?? '';
+  return (
+    error?.name === 'ChunkLoadError' ||
+    msg.includes('ChunkLoadError') ||
+    msg.includes('Loading chunk') ||
+    msg.includes('chunk failed')
+  );
 }
 
 export default function Error({ error, reset }: ErrorProps) {
@@ -16,6 +27,22 @@ export default function Error({ error, reset }: ErrorProps) {
       console.error('Page error', error?.message ?? '(no message)', error?.digest);
     } catch {
       // Avoid breaking the error UI if logging fails
+    }
+  }, [error]);
+
+  /** Dev-only: stale chunk manifests after HMR / server restart often fix themselves after one full reload. */
+  useEffect(() => {
+    if (process.env.NODE_ENV !== 'development' || !isChunkLoadError(error)) return;
+    try {
+      const pending = sessionStorage.getItem(NEXT_DEV_CHUNK_RELOAD_KEY);
+      if (!pending) {
+        sessionStorage.setItem(NEXT_DEV_CHUNK_RELOAD_KEY, '1');
+        window.location.reload();
+        return;
+      }
+      sessionStorage.removeItem(NEXT_DEV_CHUNK_RELOAD_KEY);
+    } catch {
+      // ignore
     }
   }, [error]);
 
@@ -37,6 +64,14 @@ export default function Error({ error, reset }: ErrorProps) {
               </p>
               {error.digest && (
                 <p className="text-xs text-red-600">Error ID: {error.digest}</p>
+              )}
+              {isChunkLoadError(error) && (
+                <p className="mt-3 text-xs leading-relaxed text-red-800/90">
+                  If this persists after an automatic retry: stop <code className="rounded bg-red-100 px-1">npm run dev</code>,
+                  delete the <code className="rounded bg-red-100 px-1">.next</code> folder, restart the dev server, then hard-refresh
+                  the browser (Ctrl+Shift+R). Same-origin <code className="rounded bg-red-100 px-1">http://localhost:3000</code>{' '}
+                  avoids mixed HTTPS/HTTP chunk issues.
+                </p>
               )}
             </div>
           )}

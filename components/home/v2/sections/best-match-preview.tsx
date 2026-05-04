@@ -285,8 +285,8 @@ export function BestMatchPreview() {
         ) : null}
 
         {phase === "result" ? (
-          <>
-            <div ref={revealRef} className="group relative scroll-animate">
+          <div ref={revealRef} className="match-result-soft-enter">
+            <div className="group relative">
               <div className={bestMatchCardShellClassName}>
                 <MatchResultHeroImageSlot
                   joinImageUrl={joinImageUrl}
@@ -421,7 +421,7 @@ export function BestMatchPreview() {
                 {resultVm.alsoConsiderBus}
               </Link>
             </p>
-          </>
+          </div>
         ) : null}
       </div>
     </section>

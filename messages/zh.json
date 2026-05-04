@@ -55,10 +55,10 @@
     "addToCart": "加入购物车",
     "addToWishlist": "加入收藏",
     "removeFromWishlist": "从收藏中移除",
-    "checkAvailability": "查看可用性",
+    "checkAvailability": "查询余位",
     "reserve": "继续预订",
     "chooseAnotherDate": "选择其他日期",
-    "checkingAvailability": "正在查看可用性…",
+    "checkingAvailability": "正在查询余位…",
     "payLater": "今日无需付款",
     "spotsLeftTemplate": "剩余 {count} 个名额",
     "selectDate": "选择日期",
@@ -721,10 +721,10 @@
           "groupMaxParam": "最多{n}人"
         },
         "destinations": {
-          "eyebrow": "目的地",
-          "title": "韩国会带你",
-          "titleAccent": "去哪里？",
-          "subtitle": "三大地区，每处都由我们亲自挑选当地运营商。",
+          "eyebrow": "精选目的地",
+          "title": "首尔 · 釜山 · 济州",
+          "titleAccent": "从哪里开始？",
+          "subtitle": "三座城市的合作运营商均经本地实地核验。",
           "seoul": {
             "name": "首尔",
             "tagline": "古宫、韩流文化与夜市",

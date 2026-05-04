@@ -139,21 +139,11 @@ export function TourHeroSection({
           </div>
         )}
 
-        <h1
-          className="text-foreground"
-          style={{
-            fontFamily:
-              "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro', 'SF Pro Text', 'Helvetica Neue', var(--font-inter), Inter, 'Pretendard', system-ui, sans-serif",
-            fontStyle: "normal",
-            fontFeatureSettings: '"ss01", "ss02", "kern", "liga", "calt"',
-            WebkitFontSmoothing: "antialiased",
-            MozOsxFontSmoothing: "grayscale",
-          }}
-        >
-          <span className="block text-[26px] font-bold leading-[1.06] tracking-[-0.026em] sm:text-[32px] sm:leading-[1.04] lg:text-[36px]">
+        <h1 className="text-foreground">
+          <span className="tour-hero-headline-line block text-[23px] font-bold leading-[1.08] tracking-[-0.022em] sm:text-[28px] sm:leading-[1.05] sm:tracking-[-0.02em] lg:text-[31px] lg:leading-[1.06]">
             {headlineLine1}
           </span>
-          <span className="block text-[26px] font-bold leading-[1.06] tracking-[-0.026em] sm:text-[32px] sm:leading-[1.04] lg:text-[36px]">
+          <span className="tour-hero-headline-line mt-0.5 block text-[23px] font-bold leading-[1.08] tracking-[-0.022em] sm:mt-1 sm:text-[28px] sm:leading-[1.05] sm:tracking-[-0.02em] lg:text-[31px] lg:leading-[1.06]">
             {headlineLine2}
           </span>
         </h1>

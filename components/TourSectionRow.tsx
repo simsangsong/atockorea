@@ -47,6 +47,7 @@ export default function TourSectionRow({
     const params = new URLSearchParams();
     params.set('limit', String(fetchParams.limit ?? 4));
     params.set('isActive', 'true');
+    params.set('compact', '1');
     params.set('locale', locale);
     if (fetchParams.sortBy) params.set('sortBy', fetchParams.sortBy);
     if (fetchParams.sortOrder) params.set('sortOrder', fetchParams.sortOrder);
@@ -73,6 +74,7 @@ export default function TourSectionRow({
     const params = new URLSearchParams();
     params.set('limit', String(fetchParams.limit ?? 4));
     params.set('isActive', 'true');
+    params.set('compact', '1');
     params.set('locale', locale);
     if (fetchParams.sortBy) params.set('sortBy', fetchParams.sortBy);
     if (fetchParams.sortOrder) params.set('sortOrder', fetchParams.sortOrder);

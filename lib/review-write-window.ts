@@ -47,5 +47,35 @@ export function isReviewWriteWindowOpen(tourDateYmd: string | null, now: Date = 
   return minutesSinceMidnight >= REVIEW_OPEN_HOUR_SEOUL * 60;
 }
 
+/**
+ * 운영자 지정 계정만: 위 시간 창(투어일 전·당일 오전 등)을 건너뜀. 다른 로그인은 영향 없음.
+ * 예약 소유·completed 여부 등은 그대로 API에서 검증.
+ */
+const REVIEW_WRITE_WINDOW_BYPASS_EMAILS_LOWER = new Set(['simsangsong@gmail.com']);
+
+export function isReviewWriteWindowBypassEmail(email: string | null | undefined): boolean {
+  if (email == null || typeof email !== 'string') return false;
+  return REVIEW_WRITE_WINDOW_BYPASS_EMAILS_LOWER.has(email.trim().toLowerCase());
+}
+
+/** 마이페이지 등: 로그인 이메일이 우회 목록이면 달력/시각 창 없이 작성 가능으로 표시(유효한 tour_date YMD 필요). */
+export function isReviewWriteWindowOpenForViewer(
+  tourDateYmd: string | null,
+  viewerEmail: string | null | undefined,
+  now: Date = new Date(),
+): boolean {
+  if (isReviewWriteWindowBypassEmail(viewerEmail)) {
+    return !!(tourDateYmd && YMD_RE.test(tourDateYmd));
+  }
+  return isReviewWriteWindowOpen(tourDateYmd, now);
+}
+
+/** 서울 달력 기준 투어일이 오늘 이전이거나 오늘이면 true (미래 일정 제외). */
+export function isTourDateOnOrBeforeSeoulToday(tourDateYmd: string | null, now: Date = new Date()): boolean {
+  if (!tourDateYmd || !YMD_RE.test(tourDateYmd)) return false;
+  const { ymd: seoulToday } = seoulYmdAndMinutesSinceMidnight(now);
+  return tourDateYmd <= seoulToday;
+}
+
 export const REVIEW_WINDOW_NOT_OPEN_MESSAGE =
   'You can submit a review from 1:00 PM (Korea time) on your tour date, or any time after that day.';

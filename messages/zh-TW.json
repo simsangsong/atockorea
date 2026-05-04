@@ -55,10 +55,10 @@
     "addToCart": "加入購物車",
     "addToWishlist": "加入收藏",
     "removeFromWishlist": "從收藏中移除",
-    "checkAvailability": "查看可用性",
+    "checkAvailability": "查詢余位",
     "reserve": "繼續預訂",
     "chooseAnotherDate": "選擇其他日期",
-    "checkingAvailability": "正在查看可用性…",
+    "checkingAvailability": "正在查詢余位…",
     "payLater": "今日無需付款",
     "spotsLeftTemplate": "剩餘 {count} 個名額",
     "selectDate": "選擇日期",
@@ -721,10 +721,10 @@
           "groupMaxParam": "最多{n}人"
         },
         "destinations": {
-          "eyebrow": "目的地",
-          "title": "韓國會帶你",
-          "titleAccent": "去哪裡？",
-          "subtitle": "三大地區，每處皆由我們親自挑選當地營運商。",
+          "eyebrow": "精選目的地",
+          "title": "首爾 · 釜山 · 濟州",
+          "titleAccent": "要先去哪裡？",
+          "subtitle": "三座城市的合作營運商皆經我們在當地實地查核。",
           "seoul": {
             "name": "首爾",
             "tagline": "古宮、韓流文化與夜市",

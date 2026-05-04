@@ -23,6 +23,30 @@
   .hv2-eyebrow-text {
     @apply text-[10px] font-semibold uppercase tracking-[0.08em] text-slate-600;
   }
+
+  /** Match planner (/match + home): soften abrupt swap loading → result */
+  .match-result-soft-enter {
+    animation: match-result-soft-enter 0.95s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes match-result-soft-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.125rem, 0) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .match-result-soft-enter {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Webpack 빌드(`next build --webpack`)에서 PostCSS가 처리 */

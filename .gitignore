@@ -20,6 +20,10 @@
 venv/
 **/venv/
 
+# nested / scratch exports (not part of this app)
+b_uq9iGe7EA1Q/
+.restore-tmp/
+
 # misc
 .DS_Store
 .tmp/

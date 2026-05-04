@@ -70,27 +70,36 @@ export function DestinationsShowcase() {
   }, []);
 
   return (
-    <section className="px-4 py-10 md:px-6 md:py-14">
-      <div ref={containerRef} className="mx-auto max-w-5xl scroll-animate">
-        <div className="mb-7 text-center md:mb-9">
-          <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-white/80 bg-white/95 px-3 py-1.5 shadow-home-neutral-card backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
-            <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-slate-600">
+    <section className="relative overflow-hidden px-4 py-12 md:px-6 md:py-16">
+      {/* Soft premium wash — matches home warm neutrals */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_75%_55%_at_50%_-8%,rgba(245,158,11,0.09),transparent_58%)]"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-300/40 to-transparent"
+        aria-hidden
+      />
+      <div ref={containerRef} className="relative mx-auto max-w-6xl scroll-animate">
+        <div className="mb-8 text-center md:mb-11">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-stone-200/90 bg-gradient-to-b from-white to-stone-50/85 px-4 py-1.5 shadow-[0_1px_0_rgba(255,255,255,0.95)_inset,0_14px_42px_-26px_rgba(15,23,42,0.18)] backdrop-blur-sm">
+            <span className="h-1 w-1 rounded-full bg-amber-500/90 shadow-[0_0_0_3px_rgba(245,158,11,0.2)]" />
+            <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-600">
               {t("premium.v2.destinations.eyebrow")}
             </span>
           </div>
-          <h2 className="mb-2 text-xl font-bold tracking-tight text-slate-900 md:text-2xl lg:text-3xl">
+          <h2 className="mx-auto mb-3 max-w-2xl text-balance text-[1.35rem] font-semibold leading-snug tracking-[-0.02em] text-slate-900 md:mb-4 md:text-[1.85rem] md:leading-[1.2] lg:text-[2.15rem]">
             {t("premium.v2.destinations.title")}{" "}
-            <span className="font-extrabold text-amber-700">
+            <span className="bg-gradient-to-r from-amber-800 via-amber-700 to-orange-900/90 bg-clip-text font-semibold text-transparent">
               {t("premium.v2.destinations.titleAccent")}
             </span>
           </h2>
-          <p className="mx-auto max-w-lg text-[13px] font-medium leading-relaxed text-slate-600 md:text-[14px]">
+          <p className="mx-auto max-w-md text-[14px] leading-relaxed text-slate-500 md:max-w-lg md:text-[15px] md:leading-[1.65]">
             {t("premium.v2.destinations.subtitle")}
           </p>
         </div>
 
-        <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 md:mx-auto md:max-w-lg md:grid md:grid-cols-3 md:gap-3 md:overflow-visible md:px-0 md:pb-0">
+        <div className="-mx-4 flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-4 pb-3 scrollbar-hide md:mx-auto md:grid md:max-w-4xl md:auto-rows-fr md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
           {DESTINATIONS.map((dest) => {
             const count = counts[dest.id] ?? null;
             return (

@@ -37,7 +37,7 @@ export default function TourList({ localeOverride }: TourListProps = {}) {
     const fetchTours = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`/api/tours?limit=8&sortBy=rating&sortOrder=desc&isActive=true&locale=${encodeURIComponent(locale)}`);
+        const response = await fetch(`/api/tours?limit=8&sortBy=rating&sortOrder=desc&isActive=true&compact=1&locale=${encodeURIComponent(locale)}`);
         if (!response.ok) {
           throw new Error('Failed to fetch tours');
         }

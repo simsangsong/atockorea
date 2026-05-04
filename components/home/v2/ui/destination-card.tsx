@@ -14,7 +14,7 @@ type DestinationCardProps = {
 
 /**
  * Square destination card with soft-light (柔光) overlay. Image fills the card
- * with a top-down soft highlight + bottom-up dark gradient veil; serif city
+ * with a top-down soft highlight + bottom-up dark gradient veil; sans city
  * name + live count chip overlay sit at the bottom-left.
  * Designed to read at a glance in a 3-up desktop grid or a horizontal snap
  * rail on mobile.
@@ -30,7 +30,7 @@ export function DestinationCard({
   return (
     <Link
       href={href}
-      className="group relative block aspect-square overflow-hidden rounded-home-card shadow-home-offer-base ring-1 ring-slate-900/5 transition-shadow duration-300 ease-out hover:shadow-home-offer-bus-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+      className="group relative block aspect-square overflow-hidden rounded-home-card shadow-[0_28px_64px_-32px_rgba(15,23,42,0.45)] ring-1 ring-slate-900/[0.06] transition-[box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_38px_80px_-36px_rgba(15,23,42,0.55)] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/35 motion-reduce:transition-shadow motion-reduce:hover:translate-y-0"
     >
       <div className="absolute inset-0">
         <Image
@@ -54,21 +54,21 @@ export function DestinationCard({
       />
 
       <div
-        className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-transparent"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/[0.93] via-slate-950/30 to-transparent"
         aria-hidden
       />
 
       {count != null && countLabel ? (
-        <div className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/15 px-2.5 py-0.5 text-[11px] font-semibold text-white shadow-sm backdrop-blur-md">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden />
+        <div className="absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/12 px-2.5 py-1 text-[11px] font-semibold tracking-wide text-white shadow-[0_10px_30px_-12px_rgba(0,0,0,0.55)] backdrop-blur-md">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(52,211,153,0.25)]" aria-hidden />
           {countLabel}
         </div>
       ) : null}
 
       <div className="absolute inset-x-0 bottom-0 px-4 pb-4 md:px-5 md:pb-5">
         <h3
-          className="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl"
-          style={{ textShadow: "0 2px 18px rgba(0,0,0,0.45)" }}
+          className="text-[1.25rem] font-semibold leading-tight tracking-tight text-white md:text-[1.5rem]"
+          style={{ textShadow: "0 3px 24px rgba(0,0,0,0.5)" }}
         >
           {name}
         </h3>

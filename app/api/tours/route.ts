@@ -6,6 +6,10 @@ import { withErrorHandler, AppError } from '@/lib/error-handler';
 import { createServerLogger } from '@/lib/logger';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 import { isTourRowHiddenFromPublicTourApi } from '@/lib/tour-consumer-visibility';
+import {
+  expandDestinationCsvForCityInFilter,
+  inferTourCatalogType,
+} from '@/lib/tour-catalog-type-infer';
 
 const SUPPORTED_LOCALES = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'] as const;
 type SupportedLocale = typeof SUPPORTED_LOCALES[number];
@@ -32,51 +36,11 @@ function sanitizeKeyword(value: string, maxLen = 80): string {
   return s;
 }
 
-function isKnownJoinTourSlug(slug: string | undefined | null): boolean {
-  const s = (slug ?? '').trim().toLowerCase();
-  if (!s) return false;
-  if (s === 'east-signature-nature-core') return true;
-  if (s.startsWith('east-signature-nature-core-')) return true;
-  if (s === 'east-jeju-signature-small-group') return true;
-  if (s.startsWith('east-jeju-signature-small-group-')) return true;
-  if (s === 'jeju-east-small-group-template-preview') return true;
-  if (s === 'busan-top-attractions-authentic-one-day-tour') return true;
-  if (s === 'busan-city-tour-shore-excursion-cruise-guests') return true;
-  return false;
-}
-
-function tagIndicatesSmallGroupJoin(tag: string | undefined | null): boolean {
-  const t = (tag ?? '').trim().toLowerCase();
-  if (!t) return false;
-  return /small\s*group|소그룹|拼团|少人数|grupo\s*pequeño|small-group/i.test(t);
-}
-
-function inferTourType(item: { title?: string; badges?: string[]; slug?: string; tag?: string | null }): TourTypeFilter {
-  if (isKnownJoinTourSlug(item.slug)) return 'join';
-  if (tagIndicatesSmallGroupJoin(item.tag)) return 'join';
-  const title = (item.title ?? '').toLowerCase();
-  const badges = (item.badges ?? []).map((b) => String(b).toLowerCase());
-  if (
-    /private|프라이빗|私人|プライベート|privado/i.test(title) ||
-    badges.some((b) => b.includes('private'))
-  ) {
-    return 'private';
-  }
-  if (
-    /join|small.?group|소그룹|拼团|少人数|grupo pequeño/i.test(title) ||
-    /east\s*signature\s*nature\s*core/i.test(title) ||
-    /동부\s*시그니처|시그니처\s*네이처|네이처\s*코어/.test(item.title ?? '') ||
-    badges.some((b) => b.includes('join') || b.includes('small group'))
-  ) {
-    return 'join';
-  }
-  return 'bus';
-}
-
 /**
  * GET /api/tours
  * Get all tours with optional filtering (server-side).
  * Optional ?locale= en|ko|zh|zh-TW|es|ja returns translated title/description from tours.translations when available.
+ * Optional ?compact=1 omits nested pickup_points joins (lighter payloads for card/list UIs).
  */
 export const GET = withErrorHandler(async (req: NextRequest) => {
   const logger = createServerLogger(req);
@@ -95,6 +59,9 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
     
     // New filter parameters
     const destinations = searchParams.get('destinations'); // Comma-separated cities
+    const destinationCityVariants = destinations?.trim()
+      ? expandDestinationCsvForCityInFilter(destinations)
+      : [];
     const durations = searchParams.get('durations'); // Comma-separated duration keywords
     const features = searchParams.get('features'); // Comma-separated feature keywords
     const sortBy = searchParams.get('sortBy') || 'created_at'; // created_at, price, rating, bookings
@@ -105,12 +72,11 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       typeParam === 'private' || typeParam === 'join' || typeParam === 'bus' ? typeParam : null;
     const limit = parseInt(searchParams.get('limit') || '100');
     const offset = parseInt(searchParams.get('offset') || '0');
+    /** Omit nested pickup_points rows — list/card UIs only need counts; avoids huge joins. */
+    const compactList = searchParams.get('compact') === '1';
 
     // Build query
-    let query = supabase
-      .from('tours')
-      .select(`
-        *,
+    const pickupJoin = `
         pickup_points (
           id,
           name,
@@ -118,8 +84,10 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
           lat,
           lng,
           pickup_time
-        )
-      `)
+        )`;
+    let query = supabase
+      .from('tours')
+      .select(compactList ? '*' : `*,${pickupJoin}`)
       .eq('is_active', isActive);
 
     // Apply filters
@@ -127,12 +95,8 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       query = query.eq('city', city);
     }
 
-    // Multiple destinations filter
-    if (destinations) {
-      const destinationList = destinations.split(',').map(d => d.trim()).filter(Boolean);
-      if (destinationList.length > 0) {
-        query = query.in('city', destinationList);
-      }
+    if (destinationCityVariants.length > 0) {
+      query = query.in('city', destinationCityVariants);
     }
 
     // Price range filter.
@@ -197,8 +161,12 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       query = query.order('created_at', { ascending });
     }
 
-    // Pagination
-    query = query.range(offset, offset + limit - 1);
+    const widenForCatalogHeuristic =
+      tourTypeFilter != null || destinationCityVariants.length > 0;
+    const fetchSpan = widenForCatalogHeuristic
+      ? Math.min(Math.max(limit, 900), 2200)
+      : limit;
+    query = query.range(offset, offset + fetchSpan - 1);
 
     const { data: tours, error } = await query;
 
@@ -212,6 +180,11 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
 
     // Transform data to match frontend expectations; use translations[locale] when available
     let transformedTours = tours?.map((tour: any) => {
+      const pickupPoints = compactList
+        ? []
+        : Array.isArray(tour.pickup_points)
+          ? tour.pickup_points
+          : [];
       const tr = (localeParam && tour.translations && typeof tour.translations === 'object' && tour.translations[localeParam]) || null;
       const title = (tr?.title ?? tour.title) as string;
       const description = (tr?.description ?? tour.description ?? '') as string;
@@ -255,8 +228,11 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
         badges,
         description,
         location_detail: tour.location || '',
-        pickupPoints: tour.pickup_points || [],
-        pickupPointsCount: (tour.pickup_points && Array.isArray(tour.pickup_points) ? tour.pickup_points.length : 0) || tour.pickup_points_count || 0,
+        pickupPoints,
+        pickupPointsCount:
+          pickupPoints.length > 0
+            ? pickupPoints.length
+            : Number(tour.pickup_points_count) || 0,
         dropoffPointsCount: tour.dropoff_points_count || 0,
         lunchIncluded: tour.lunch_included || false,
         ticketIncluded: tour.ticket_included || false,
@@ -283,7 +259,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
     // score ordering, and any eventual server pagination see the final filtered set.
     if (tourTypeFilter) {
       transformedTours = transformedTours.filter((tour) =>
-        inferTourType({
+        inferTourCatalogType({
           title: tour.title,
           badges: Array.isArray(tour.badges) ? tour.badges.map(String) : [],
           slug: typeof tour.slug === 'string' ? tour.slug : undefined,
@@ -316,6 +292,26 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       }
     }
 
+    // Deterministic ordering after filters (subset no longer guaranteed to reflect DB ORDER BY slice).
+    const ascLex = sortOrder === "asc";
+    if (
+      !useScoreSort &&
+      sortBy !== "bookings" &&
+      transformedTours.length > 1
+    ) {
+      transformedTours.sort((a, b) => {
+        let cmp = 0;
+        if (sortBy === "price") {
+          cmp = (Number(a.price) || 0) - (Number(b.price) || 0);
+        } else if (sortBy === "rating") {
+          cmp = (Number(a.rating) || 0) - (Number(b.rating) || 0);
+        } else {
+          cmp = String(a.createdAt || "").localeCompare(String(b.createdAt || ""));
+        }
+        return ascLex ? cmp : -cmp;
+      });
+    }
+
     // Compute recommendation score for each tour and sort by score (higher first), unless useScoreSort=false
     if (transformedTours.length > 0 && (useScoreSort || sortBy === 'bookings')) {
       try {
@@ -325,7 +321,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
         if (tourIds.length > 0) {
           const { data: bookings, error: bookingsError } = await supabase
             .from('bookings')
-            .select('id, tour_id, status')
+            .select('tour_id')
             .in('tour_id', tourIds)
             .in('status', [...ACTIVE_BOOKING_STATUSES]);
 

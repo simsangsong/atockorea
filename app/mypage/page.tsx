@@ -36,7 +36,7 @@ import { MYPAGE_FOCUS_RING } from '@/lib/mypage-ui';
 import { supabase } from '@/lib/supabase';
 import { cn } from '@/lib/utils';
 import {
-  isReviewWriteWindowOpen,
+  isReviewWriteWindowOpenForViewer,
   normalizeBookingTourDateYmd,
 } from '@/lib/review-write-window';
 
@@ -182,7 +182,8 @@ export default function MyPageLandingPage() {
             if (b.status !== 'completed') return false;
             if (reviewedBookingIds.has(b.id)) return false;
             const ymd = normalizeBookingTourDateYmd(b.tour_date || null);
-            return ymd ? isReviewWriteWindowOpen(ymd) : false;
+            const viewerEmail = session.user.email ?? null;
+            return ymd ? isReviewWriteWindowOpenForViewer(ymd, viewerEmail) : false;
           })
           .slice(0, 5)
           .map((b) => ({
@@ -228,7 +229,7 @@ export default function MyPageLandingPage() {
 
       try {
         const tourRes = await fetch(
-          `/api/tours?sortBy=rating&sortOrder=desc&limit=12&locale=${encodeURIComponent(locale)}`,
+          `/api/tours?sortBy=rating&sortOrder=desc&limit=12&compact=1&locale=${encodeURIComponent(locale)}`,
         );
         if (!tourRes.ok) {
           sawError = true;

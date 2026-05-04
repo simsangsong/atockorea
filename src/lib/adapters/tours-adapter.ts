@@ -13,6 +13,7 @@ import { TourDetailViewModelSchema } from "../schemas/tours";
 import { BookingTimelineSchema } from "../schemas/booking";
 import { COPY } from "@/src/design/copy";
 import { shouldCoerceEastSignatureNatureCoreJoin } from "@/src/lib/east-signature-nature-core-match";
+import { inferTourCatalogType } from "@/lib/tour-catalog-type-infer";
 
 export function adaptBuildTourResponse(raw: unknown): BuildTourResponse {
   const parsed = BuildTourResponseSchema.safeParse(raw);
@@ -38,27 +39,6 @@ export function adaptBuildTourResponse(raw: unknown): BuildTourResponse {
   return parsed.data;
 }
 
-/**
- * Small-group (join) SKUs identified by slug — titles vary by locale/SEO and may not match title regexes.
- */
-function isKnownJoinTourSlug(slug: string | undefined | null): boolean {
-  const s = (slug ?? "").trim().toLowerCase();
-  if (!s) return false;
-  if (s === "east-signature-nature-core") return true;
-  if (s.startsWith("east-signature-nature-core-")) return true;
-  if (s === "east-jeju-signature-small-group") return true;
-  if (s.startsWith("east-jeju-signature-small-group-")) return true;
-  if (s === "jeju-east-small-group-template-preview") return true;
-  return false;
-}
-
-/** `tours.tag` often carries “Small group · …” — stable signal for the default small-group v2 detail layout. */
-function tagIndicatesSmallGroupJoin(tag: string | undefined | null): boolean {
-  const t = (tag ?? "").trim().toLowerCase();
-  if (!t) return false;
-  return /small\s*group|소그룹|拼团|少人数|grupo\s*pequeño|small-group/i.test(t);
-}
-
 function isUuidTourId(value: string): boolean {
   return /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(value.trim());
 }
@@ -75,37 +55,27 @@ function slugForJoinInference(apiSlug: string | undefined, routeTourId?: string 
   return r;
 }
 
-/** Infer tour type from API title/badges/slug/tag. No DB `tour_type` column yet — slug + `tours.tag` are stable join signals. */
-function inferTourType(item: { title?: string; badges?: string[]; slug?: string; tag?: string }): TourType {
-  if (isKnownJoinTourSlug(item.slug)) return "join";
-  if (tagIndicatesSmallGroupJoin(item.tag)) return "join";
-  const title = (item.title ?? "").toLowerCase();
-  const badges = (item.badges ?? []).map((b) => String(b).toLowerCase());
-  if (
-    /private|프라이빗|私人|プライベート|privado/i.test(title) ||
-    badges.some((b) => b.includes("private"))
-  )
-    return "private";
-  const rawTitle = item.title ?? "";
-  if (
-    /join|small.?group|소그룹|拼团|少人数|grupo pequeño/i.test(title) ||
-    // English small-group SKU (East Signature Nature Core)
-    /east\s*signature\s*nature\s*core/i.test(title) ||
-    // Korean small-group SKU titles that omit “소그룹” in the name
-    /동부\s*시그니처|시그니처\s*네이처|네이처\s*코어/.test(rawTitle) ||
-    badges.some((b) => b.includes("join") || b.includes("small group"))
-  )
-    return "join";
-  return "bus";
-}
-
 /** Build PickupInfo from API list item. List cards use a short label only — not full pickupInfo (long marketing copy). */
 function pickupFromListItem(item: {
   city?: string;
   pickupPoints?: unknown[];
+  pickupPointsCount?: unknown;
+  pickup_points_count?: unknown;
 }): PickupInfo {
   const areaLabel = (item.city && String(item.city).trim()) || "—";
-  const count = Array.isArray(item.pickupPoints) ? item.pickupPoints.length : 0;
+  const pp = item.pickupPoints;
+  const fromArray =
+    Array.isArray(pp) && pp.length > 0 ? pp.length : null;
+  const fromCamel =
+    typeof item.pickupPointsCount === "number" && Number.isFinite(item.pickupPointsCount)
+      ? item.pickupPointsCount
+      : null;
+  const fromSnake =
+    typeof item.pickup_points_count === "number" &&
+    Number.isFinite(item.pickup_points_count)
+      ? item.pickup_points_count
+      : null;
+  const count = fromArray ?? fromCamel ?? fromSnake ?? 0;
   return {
     areaLabel,
     surchargeLabel: count > 0 ? COPY.surcharge.short : null,
@@ -131,7 +101,7 @@ export function adaptToursListResponse(raw: unknown): TourCardViewModel[] {
 
     const listSlug = typeof item?.slug === "string" ? item.slug.trim() : undefined;
     const listTag = typeof item?.tag === "string" ? item.tag : undefined;
-    const type = inferTourType({
+    const type = inferTourCatalogType({
       title: item?.title,
       badges: item?.badges,
       slug: listSlug,
@@ -154,6 +124,8 @@ export function adaptToursListResponse(raw: unknown): TourCardViewModel[] {
     const pickup = pickupFromListItem({
       city: item?.city ?? item?.location,
       pickupPoints: item?.pickupPoints ?? item?.pickup_points,
+      pickupPointsCount: item?.pickupPointsCount,
+      pickup_points_count: item?.pickup_points_count,
     });
     const tags = Array.isArray(item?.badges) ? item.badges.map(String) : [];
     if (item?.highlight && typeof item.highlight === "string") tags.push(item.highlight);
@@ -240,7 +212,7 @@ export function adaptTourDetailResponse(raw: unknown, routeTourId?: string | nul
     typeof (tour as Record<string, unknown>).tag === "string"
       ? String((tour as Record<string, unknown>).tag)
       : undefined;
-  const type = inferTourType({
+  const type = inferTourCatalogType({
     title: tour.title as string,
     badges: (tour.badges as string[]) ?? [],
     slug: slugForInference,

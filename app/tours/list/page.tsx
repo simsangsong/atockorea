@@ -195,6 +195,7 @@ export default function ToursListPage() {
 
     const params = new URLSearchParams();
     params.set('limit', String(TOURS_LIMIT));
+    params.set('compact', '1');
     params.set('isActive', 'true');
     params.set('sortBy', apiSort.sortKey);
     params.set('sortOrder', apiSort.sortOrder);
@@ -419,14 +420,6 @@ export default function ToursListPage() {
                 <span className="text-[9px] font-black uppercase tracking-[0.28em] text-slate-400">
                   {t('toursList.eyebrow')}
                 </span>
-                {!loading && !error ? (
-                  <span
-                    className="inline-flex h-[18px] items-center rounded-full bg-slate-900 px-2 text-[9px] font-bold text-white"
-                    aria-label={t('toursList.resultsCount', { count: tours.length })}
-                  >
-                    {tours.length}
-                  </span>
-                ) : null}
               </div>
 
               <div className="mx-1 h-3.5 w-px shrink-0 bg-slate-200/80" />
@@ -596,14 +589,6 @@ export default function ToursListPage() {
                   aria-label={t('toursList.searchAriaLabel')}
                   className={`${fieldCls} h-9 min-w-0 flex-1 text-[13px]`}
                 />
-                {!loading && !error ? (
-                  <span
-                    className="inline-flex h-7 shrink-0 items-center rounded-full bg-slate-900 px-2.5 text-[10px] font-bold text-white"
-                    aria-label={t('toursList.resultsCount', { count: tours.length })}
-                  >
-                    {tours.length}
-                  </span>
-                ) : null}
                 {hasActiveFilters ? (
                   <button
                     type="button"

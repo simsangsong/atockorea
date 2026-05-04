@@ -47,26 +47,67 @@
   font-family: var(--font-tour-v2-sans), "Pretendard", var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* CJK·한글: next/font로 주입한 Noto 변수를 선두에 두고 시스템 폰트로 보조 */
+
+body.lang-ko .tour-product-v2-static-root,
+html[lang="ko"] .tour-product-v2-static-root {
+  font-family: var(--font-noto-kr), var(--font-noto-sc), "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "맑은 고딕", var(--font-tour-v2-sans), var(--font-inter), ui-sans-serif, sans-serif;
+  letter-spacing: normal;
+  font-variant-east-asian: proportional-width;
+}
+
+body.lang-es .tour-product-v2-static-root,
+html[lang="es"] .tour-product-v2-static-root {
+  font-family: var(--font-tour-v2-sans), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: normal;
+}
+
 /* CJK: 이 루트가 Inter/Pretendard를先に指定しているため、body の言語だけでは漢字がバラける。言語別に Noto を先頭へ。 */
 body.lang-zh .tour-product-v2-static-root,
 html[lang="zh"] .tour-product-v2-static-root,
 html[lang="zh-CN"] .tour-product-v2-static-root {
-  font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", var(--font-tour-v2-sans), var(--font-inter), ui-sans-serif, sans-serif;
+  font-family: var(--font-noto-sc), var(--font-noto-kr), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", var(--font-tour-v2-sans), var(--font-inter), ui-sans-serif, sans-serif;
   letter-spacing: normal;
   font-variant-east-asian: proportional-width;
 }
 
 body.lang-zh-TW .tour-product-v2-static-root,
 html[lang="zh-TW"] .tour-product-v2-static-root {
-  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", var(--font-tour-v2-sans), var(--font-inter), ui-sans-serif, sans-serif;
+  font-family: var(--font-noto-tc), var(--font-noto-kr), "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", var(--font-tour-v2-sans), var(--font-inter), ui-sans-serif, sans-serif;
   letter-spacing: normal;
   font-variant-east-asian: proportional-width;
 }
 
 body.lang-ja .tour-product-v2-static-root,
 html[lang="ja"] .tour-product-v2-static-root {
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", var(--font-tour-v2-sans), var(--font-inter), ui-sans-serif, sans-serif;
+  font-family: var(--font-noto-jp), "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", var(--font-tour-v2-sans), var(--font-inter), ui-sans-serif, sans-serif;
   letter-spacing: normal;
+}
+
+/* 히어로 H1: 라틴용 타이트 트래킹은 한자에 과해서 언어별로 완화 */
+.tour-product-v2-static-root .tour-hero-headline-line {
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.lang-zh .tour-product-v2-static-root .tour-hero-headline-line,
+html[lang="zh"] .tour-product-v2-static-root .tour-hero-headline-line,
+html[lang="zh-CN"] .tour-product-v2-static-root .tour-hero-headline-line,
+body.lang-zh-TW .tour-product-v2-static-root .tour-hero-headline-line,
+html[lang="zh-TW"] .tour-product-v2-static-root .tour-hero-headline-line {
+  letter-spacing: 0.02em;
+}
+
+body.lang-ja .tour-product-v2-static-root .tour-hero-headline-line,
+html[lang="ja"] .tour-product-v2-static-root .tour-hero-headline-line {
+  letter-spacing: 0.03em;
+}
+
+body.lang-ko .tour-product-v2-static-root .tour-hero-headline-line,
+html[lang="ko"] .tour-product-v2-static-root .tour-hero-headline-line {
+  letter-spacing: -0.015em;
 }
 
 .tour-product-v2-static-root .bg-warm-ivory {
