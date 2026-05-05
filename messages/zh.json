@@ -694,7 +694,7 @@
           "licensedTrustStrip": "经过验证的当地旅游运营商 · 24小时前免费取消 · 含酒店接送",
           "credentialKto": "KTO 持牌运营商",
           "credentialExperience": "10+ 年韩国精选",
-          "credentialSupport": "韩语实时支持"
+          "credentialSupport": "多语客服 · AI 转人工"
         },
         "bestMatch": {
           "exampleBadge": "推荐示例",
@@ -739,8 +739,7 @@
             "name": "济州",
             "tagline": "火山海岸、世遗景点与汉拿山",
             "alt": "济州岛火山海岸与自然风光"
-          },
-          "countLabelParam": "{count} 个行程"
+          }
         },
         "featuredProducts": {
           "eyebrow": "本周热门 · 每日更新",
@@ -772,9 +771,9 @@
             "body": "所有合作旅行社持有韩国观光公社许可证。直接合作、无分销加价，公平价格、同等品质。"
           },
           "pillar4": {
-            "title": "韩语本地支持",
-            "titleAccent": "实时",
-            "body": "当日电话与 KakaoTalk 韩语支持。导游延误或天气突变时，由首尔团队即刻处理，而非异国客服中心。"
+            "title": "AI 咨询 · 专员衔接",
+            "titleAccent": "多语客服中心",
+            "body": "行程与细节请先询问页面上的 AI 咨询。若仍无法解决，将为您转接客服专员，并尽快回复。"
           }
         },
         "chooseStyle": {
@@ -792,8 +791,6 @@
           "sgCta": "浏览小团行程",
           "privateBadge": "更灵活",
           "privateTitle": "私人行程",
-          "privatePriceWas": "$248",
-          "privatePriceNow": "$198",
           "privatePerVehicle": "/辆",
           "perPersonShort": "/人",
           "privateDesc": "适合需要专车与更灵活排期的家庭或团队。",
@@ -803,7 +800,6 @@
           "privateCta": "浏览私人行程",
           "busBadge": "经典之选",
           "busTitle": "传统巴士游",
-          "busPrice": "$39",
           "busPerPerson": "/人",
           "busDesc": "路线稳定、结构清晰、性价比高，适合想轻松观光的旅人。",
           "busF1": "成熟路线",

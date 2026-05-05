@@ -4,21 +4,11 @@
 export const dynamic = 'force-dynamic';
 
 import { useEffect } from 'react';
-import { NEXT_DEV_CHUNK_RELOAD_KEY } from '@/lib/dev-chunk-recovery';
+import { isChunkLoadError, NEXT_DEV_CHUNK_RELOAD_KEY } from '@/lib/dev-chunk-recovery';
 
 interface ErrorProps {
   error: Error & { digest?: string };
   reset: () => void;
-}
-
-function isChunkLoadError(error: Error): boolean {
-  const msg = error?.message ?? '';
-  return (
-    error?.name === 'ChunkLoadError' ||
-    msg.includes('ChunkLoadError') ||
-    msg.includes('Loading chunk') ||
-    msg.includes('chunk failed')
-  );
 }
 
 export default function Error({ error, reset }: ErrorProps) {

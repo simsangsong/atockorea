@@ -12,7 +12,9 @@ import {
   HOME_CTA_SMALL_GROUP_LIST_HREF,
 } from "@/lib/home/home-cta-routes";
 import { useTranslations } from "@/lib/i18n";
-import { getFeaturedJoinTourProduct, getProductPriceLabels } from "@/lib/home/featured-join-tour-offer";
+import { useCurrency } from "@/lib/currency";
+import { getFeaturedJoinTourProduct } from "@/lib/home/featured-join-tour-offer";
+import { CHOOSE_STYLE_CARD_USD } from "@/lib/home/choose-style-card-usd";
 
 const chooseStyleFeaturedWhiteCtaStyle: CSSProperties = {
   boxShadow: "var(--home-shadow-btn-secondary)",
@@ -20,8 +22,9 @@ const chooseStyleFeaturedWhiteCtaStyle: CSSProperties = {
 
 export function ChooseTravelStyle() {
   const t = useTranslations("home");
+  const { formatPrice } = useCurrency();
   const containerRef = useRef<HTMLDivElement>(null);
-  const featuredJoinPrices = useMemo(() => getProductPriceLabels(getFeaturedJoinTourProduct()), []);
+  const featuredJoin = useMemo(() => getFeaturedJoinTourProduct(), []);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -78,13 +81,13 @@ export function ChooseTravelStyle() {
               <div className="mb-5">
                 <p className="text-[10px] text-slate-400 mb-0.5 uppercase tracking-wider">{t("premium.v2.chooseStyle.from")}</p>
                 <div className="flex items-baseline gap-2">
-                  {featuredJoinPrices.compareAtLabel ? (
+                  {featuredJoin.compareAtPriceUsd != null ? (
                     <span className="text-sm text-slate-500 line-through">
-                      {featuredJoinPrices.compareAtLabel}
+                      {formatPrice(featuredJoin.compareAtPriceUsd)}
                     </span>
                   ) : null}
                   <span className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-                    {featuredJoinPrices.listLabel}
+                    {formatPrice(featuredJoin.listPriceUsd)}
                   </span>
                   <span className="text-[11px] text-emerald-300 font-semibold">{t("premium.v2.chooseStyle.perPerson")}</span>
                 </div>
@@ -134,7 +137,7 @@ export function ChooseTravelStyle() {
               <p className="text-[10px] text-slate-400 mb-0.5 uppercase tracking-wider">{t("premium.v2.chooseStyle.from")}</p>
               <div className="flex items-baseline gap-1.5">
                 <span className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
-                  {t("premium.v2.chooseStyle.privatePriceNow")}
+                  {formatPrice(CHOOSE_STYLE_CARD_USD.private.list)}
                 </span>
                 <span className="text-slate-500 text-[11px] font-semibold">{t("premium.v2.chooseStyle.privatePerVehicle")}</span>
               </div>
@@ -185,7 +188,7 @@ export function ChooseTravelStyle() {
               <p className="text-[10px] text-slate-400 mb-0.5 uppercase tracking-wider">{t("premium.v2.chooseStyle.from")}</p>
               <div className="flex items-baseline gap-1.5">
                 <span className="text-2xl md:text-3xl font-bold text-slate-800 tracking-tight">
-                  {t("premium.v2.chooseStyle.busPrice")}
+                  {formatPrice(CHOOSE_STYLE_CARD_USD.bus.from)}
                 </span>
                 <span className="text-amber-700/70 text-[11px] font-semibold">{t("premium.v2.chooseStyle.busPerPerson")}</span>
               </div>

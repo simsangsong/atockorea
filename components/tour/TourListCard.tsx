@@ -3,6 +3,7 @@
 import React, { memo, useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion, useReducedMotion } from 'framer-motion';
 import type { TourCardViewModel } from '@/src/types/tours';
 import { useTranslations, useCopy, useI18n } from '@/lib/i18n';
 import { formatTourDurationForCard } from '@/lib/tour-duration-display';
@@ -37,8 +38,7 @@ function TourListCard({ tour, detailHref, formatPriceFn }: TourListCardProps) {
   } as const;
   const tourKey = tour.id;
   const [saved, setSaved] = useState(false);
-  /** Pointer-driven press so lifting the finger plays a rebound (CSS :active snaps off immediately). */
-  const [pressed, setPressed] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     if (!tourKey) return;
@@ -82,53 +82,56 @@ function TourListCard({ tour, detailHref, formatPriceFn }: TourListCardProps) {
   const displayDuration = formatTourDurationForCard(tour.duration, locale);
   const showBookingCount = tour.bookingCount != null && tour.bookingCount > 0;
 
-  const releasePress = () => setPressed(false);
-
-  function handlePointerDown(e: React.PointerEvent<HTMLAnchorElement>) {
-    if (e.pointerType === 'mouse' && e.button !== 0) return;
-    const t = e.target;
-    if (t instanceof Element && t.closest('[data-tour-card-wishlist]')) return;
-    setPressed(true);
-  }
+  const tapTransition = {
+    type: 'spring' as const,
+    stiffness: 560,
+    damping: 22,
+    mass: 0.72,
+  };
 
   return (
-    <Link
-      href={detailHref}
-      onPointerDown={handlePointerDown}
-      onPointerUp={releasePress}
-      onPointerCancel={releasePress}
-      onPointerLeave={releasePress}
-      className={cn(
-        'group block h-full touch-manipulation overflow-hidden rounded-[1.6rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.97)_0%,rgba(248,250,252,0.96)_100%)] shadow-[0_16px_38px_-24px_rgba(15,23,42,0.34),0_4px_16px_-12px_rgba(15,23,42,0.16)]',
-        'transition-[transform,box-shadow,border-color,filter,background-color]',
-        pressed
-          ? 'translate-y-[1px] scale-[0.982] border-blue-300/95 bg-slate-50/[0.72] shadow-[0_8px_20px_-10px_rgba(15,23,42,0.35)] ring-[3px] ring-blue-400/35 duration-100 ease-out motion-reduce:translate-y-0 motion-reduce:scale-100 motion-reduce:shadow-[0_16px_38px_-24px_rgba(15,23,42,0.34),0_4px_16px_-12px_rgba(15,23,42,0.16)] motion-reduce:ring-0 motion-reduce:border-white/80'
-          : 'translate-y-0 scale-100 duration-[420ms] ease-[cubic-bezier(0.34,1.35,0.64,1)] hover:-translate-y-1 hover:border-blue-200/80 hover:shadow-[0_30px_64px_-22px_rgba(15,23,42,0.42),0_16px_34px_-16px_rgba(59,130,246,0.22)] motion-reduce:duration-150 motion-reduce:ease-out',
-        'focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-blue-400/55 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50',
-        'motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-[0_16px_38px_-24px_rgba(15,23,42,0.34),0_4px_16px_-12px_rgba(15,23,42,0.16)]',
-      )}
-    >
-      <div className="relative aspect-[4/3.15] w-full shrink-0 overflow-hidden sm:aspect-[4/3.35]">
-        <Image
-          src={displayImage}
-          alt={displayTitle}
-          fill
-          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+    <div className="relative h-full [-webkit-tap-highlight-color:transparent]">
+      <motion.div
+        className="h-full origin-center"
+        initial={false}
+        whileTap={
+          reduceMotion
+            ? undefined
+            : {
+                scale: 0.958,
+                y: 4,
+                filter: 'brightness(0.94)',
+              }
+        }
+        transition={tapTransition}
+      >
+        <Link
+          href={detailHref}
           className={cn(
-            'object-cover transition-[transform,filter]',
-            pressed
-              ? 'brightness-[0.92] duration-150 ease-out'
-              : 'brightness-100 duration-[420ms] ease-[cubic-bezier(0.34,1.35,0.64,1)] group-hover:scale-[1.08] motion-reduce:group-hover:scale-100',
-            'motion-reduce:brightness-100 motion-reduce:transition-none',
+            'group block h-full touch-manipulation overflow-hidden rounded-[1.6rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.97)_0%,rgba(248,250,252,0.96)_100%)] shadow-[0_16px_38px_-24px_rgba(15,23,42,0.34),0_4px_16px_-12px_rgba(15,23,42,0.16)]',
+            'transition-[transform,box-shadow,border-color,filter,background-color] duration-[420ms] ease-[cubic-bezier(0.34,1.35,0.64,1)] hover:-translate-y-1 hover:border-blue-200/80 hover:shadow-[0_30px_64px_-22px_rgba(15,23,42,0.42),0_16px_34px_-16px_rgba(59,130,246,0.22)]',
+            'focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-blue-400/55 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50',
+            'motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-[0_16px_38px_-24px_rgba(15,23,42,0.34),0_4px_16px_-12px_rgba(15,23,42,0.16)]',
           )}
-          loading="lazy"
-        />
-        <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-[1.375rem] bg-[linear-gradient(to_top,rgb(248,250,252)_0%,rgba(248,250,252,0.94)_18%,rgba(248,250,252,0.55)_42%,rgba(248,250,252,0.2)_68%,rgba(248,250,252,0.05)_88%,transparent_100%)] sm:h-6"
-          aria-hidden
-        />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-500/0 transition-colors duration-500 group-hover:to-blue-500/10" />
-        <div className="absolute left-2 top-2 flex max-w-[calc(100%-48px)] flex-col items-start gap-0.5">
+        >
+          <div className="relative aspect-[4/3.15] w-full shrink-0 overflow-hidden sm:aspect-[4/3.35]">
+            <Image
+              src={displayImage}
+              alt={displayTitle}
+              fill
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              className={cn(
+                'object-cover transition-[transform,filter] duration-[420ms] ease-[cubic-bezier(0.34,1.35,0.64,1)] brightness-100 group-hover:scale-[1.08] motion-reduce:group-hover:scale-100',
+                'motion-reduce:brightness-100 motion-reduce:transition-none',
+              )}
+              loading="lazy"
+            />
+            <div
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-[1.375rem] bg-[linear-gradient(to_top,rgb(248,250,252)_0%,rgba(248,250,252,0.94)_18%,rgba(248,250,252,0.55)_42%,rgba(248,250,252,0.2)_68%,rgba(248,250,252,0.05)_88%,transparent_100%)] sm:h-6"
+              aria-hidden
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-500/0 transition-colors duration-500 group-hover:to-blue-500/10" />
+            <div className="absolute left-2 top-2 flex max-w-[calc(100%-48px)] flex-col items-start gap-0.5">
           <div className="flex flex-wrap items-center gap-0.5">
             {editorialBadge ? (
               <span className="inline-flex h-[18px] max-w-full items-center truncate rounded-full border border-orange-200 bg-orange-50 px-1.5 text-[8px] font-semibold uppercase tracking-[0.04em] text-stone-800 shadow-sm">
@@ -146,33 +149,9 @@ function TourListCard({ tour, detailHref, formatPriceFn }: TourListCardProps) {
               {supportBadge}
             </span>
           ) : null}
-        </div>
-        {tourKey ? (
-          <div
-            data-tour-card-wishlist
-            className="absolute right-2 top-2 z-[2]"
-            onPointerDown={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              onClick={handleWishlistClick}
-              className="flex h-[27.6px] w-[27.6px] !min-h-0 !min-w-0 touch-manipulation items-center justify-center rounded-full bg-white/70 text-slate-700 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.55),0_2px_8px_rgba(0,0,0,0.22)] backdrop-blur-md transition-colors hover:bg-white/92 hover:text-rose-500"
-              aria-label={saved ? t('tour.removeFromWishlist') : t('tourCard.save')}
-            >
-              {saved ? (
-                <svg className="h-[13.8px] w-[13.8px] fill-current text-rose-500" viewBox="0 0 24 24" aria-hidden>
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                </svg>
-              ) : (
-                <svg className="h-[13.8px] w-[13.8px]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.4} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              )}
-            </button>
+            </div>
           </div>
-        ) : null}
-      </div>
-      <div className="relative z-[1] -mt-1 bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(247,250,252,0.96)_100%)] px-3 pb-3 pt-3 sm:-mt-1.5 sm:px-3.5 sm:pt-4">
+          <div className="relative z-[1] -mt-1 bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(247,250,252,0.96)_100%)] px-3 pb-3 pt-3 sm:-mt-1.5 sm:px-3.5 sm:pt-4">
         <div className="mb-1.5 flex items-center justify-between gap-2">
           <span className="inline-flex min-w-0 items-center gap-1 rounded-full border border-slate-200/80 bg-white/88 px-2 py-0.5 text-[10px] font-medium text-slate-600 shadow-[0_8px_20px_-16px_rgba(15,23,42,0.26)]">
             <svg className="h-3.5 w-3.5 shrink-0 text-slate-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
@@ -218,8 +197,33 @@ function TourListCard({ tour, detailHref, formatPriceFn }: TourListCardProps) {
             </p>
           </div>
         </div>
-      </div>
-    </Link>
+          </div>
+        </Link>
+      </motion.div>
+
+      {tourKey ? (
+        <div className="pointer-events-none absolute inset-0 z-[5]">
+          <div data-tour-card-wishlist className="pointer-events-auto absolute right-2 top-2">
+            <button
+              type="button"
+              onClick={handleWishlistClick}
+              className="flex h-[27.6px] w-[27.6px] !min-h-0 !min-w-0 touch-manipulation items-center justify-center rounded-full bg-white/70 text-slate-700 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.55),0_2px_8px_rgba(0,0,0,0.22)] backdrop-blur-md transition-colors hover:bg-white/92 hover:text-rose-500"
+              aria-label={saved ? t('tour.removeFromWishlist') : t('tourCard.save')}
+            >
+              {saved ? (
+                <svg className="h-[13.8px] w-[13.8px] fill-current text-rose-500" viewBox="0 0 24 24" aria-hidden>
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+              ) : (
+                <svg className="h-[13.8px] w-[13.8px]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.4} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+      ) : null}
+    </div>
   );
 }
 

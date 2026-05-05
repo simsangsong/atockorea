@@ -694,7 +694,7 @@
           "licensedTrustStrip": "經過驗證的當地旅遊運營商 · 24 小時前免費取消 · 含飯店接送",
           "credentialKto": "KTO 持牌營運商",
           "credentialExperience": "10+ 年韓國精選",
-          "credentialSupport": "韓語即時支援"
+          "credentialSupport": "多語客服 · AI 轉真人"
         },
         "bestMatch": {
           "exampleBadge": "推薦範例",
@@ -739,8 +739,7 @@
             "name": "濟州",
             "tagline": "火山海岸、世遺景點與漢拏山",
             "alt": "濟州島火山海岸與自然風光"
-          },
-          "countLabelParam": "{count} 個行程"
+          }
         },
         "featuredProducts": {
           "eyebrow": "本週熱門 · 每日更新",
@@ -772,9 +771,9 @@
             "body": "所有合作旅行社持有韓國觀光公社許可證。直接合作、無分銷加價，公平價格、同等品質。"
           },
           "pillar4": {
-            "title": "韓語本地支援",
-            "titleAccent": "即時",
-            "body": "當日電話與 KakaoTalk 韓語支援。導遊延誤或天氣突變時，由首爾團隊即刻處理，而非海外客服中心。"
+            "title": "AI 諮詢 · 專員銜接",
+            "titleAccent": "多語客服中心",
+            "body": "行程與細節請先詢問頁面上的 AI 諮詢。若仍無法解決，將為您轉接客服專員，並盡快回覆。"
           }
         },
         "chooseStyle": {
@@ -792,8 +791,6 @@
           "sgCta": "瀏覽小團行程",
           "privateBadge": "更彈性",
           "privateTitle": "私人行程",
-          "privatePriceWas": "$248",
-          "privatePriceNow": "$198",
           "privatePerVehicle": "/輛",
           "perPersonShort": "/人",
           "privateDesc": "適合需要專用車與更彈性排程的家庭或團體。",
@@ -803,7 +800,6 @@
           "privateCta": "瀏覽私人行程",
           "busBadge": "經典之選",
           "busTitle": "傳統巴士遊",
-          "busPrice": "$39",
           "busPerPerson": "/人",
           "busDesc": "路線穩定、結構清楚、性價比高，適合想輕鬆觀光的旅人。",
           "busF1": "成熟路線",

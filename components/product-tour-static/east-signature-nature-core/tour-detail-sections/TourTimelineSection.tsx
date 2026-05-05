@@ -75,9 +75,28 @@ function StopCard({
             accent.glowHover,
           )}
         >
+          {/* Spot photos first — filled from English POI name search in authoring JSON */}
+          {photos.length > 0 && (
+            <div className="relative flex gap-1.5 px-4 pt-4 pb-2 overflow-x-auto scrollbar-hide">
+              {photos.map((src, i) => (
+                <div
+                  key={`${src}-${i}`}
+                  className="flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-muted ring-1 ring-border/40 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_4px_10px_-4px_rgba(26,35,50,0.16)]"
+                >
+                  <img
+                    src={src}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
 
           {/* Header info */}
-          <div className="relative p-4 pb-3">
+          <div className={cn("relative px-4 pb-4", photos.length > 0 ? "pt-2" : "pt-4 pb-4")}>
             <div className="flex items-start justify-between gap-3">
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 text-xs text-muted-foreground">
@@ -105,25 +124,6 @@ function StopCard({
               </div>
             </div>
           </div>
-
-          {photos.length > 0 && (
-            <div className="relative flex gap-1.5 pl-4 pr-6 pb-4 overflow-x-auto scrollbar-hide">
-              {photos.map((src, i) => (
-                <div
-                  key={`${src}-${i}`}
-                  className="flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-muted ring-1 ring-border/40 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_4px_10px_-4px_rgba(26,35,50,0.16)]"
-                >
-                  <img
-                    src={src}
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                  />
-                </div>
-              ))}
-            </div>
-          )}
         </button>
       </div>
     </div>

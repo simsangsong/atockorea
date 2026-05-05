@@ -59,6 +59,9 @@ interface RateResponse {
 interface CurrencyContextValue {
   currency: CurrencyCode;
   setCurrency: (c: CurrencyCode) => void;
+  /** BCP 47 locale for `Intl.NumberFormat` (grouping/separators). Synced from UI language in `LocaleCurrencySync`. */
+  displayNumberLocale: string;
+  setDisplayNumberLocale: (loc: string) => void;
   rates: Record<string, number> | null;
   rateUpdatedAt: string | null;
   isLoading: boolean;
@@ -79,6 +82,7 @@ const DEFAULT_KRW_RATE = 1480;
 /** Default display USD; KRW/EUR/… are converted from USD list prices. */
 export function CurrencyProvider({ children }: { children: React.ReactNode }) {
   const [currency, setCurrencyState] = useState<CurrencyCode>('USD');
+  const [displayNumberLocale, setDisplayNumberLocale] = useState('en-US');
   const [rates, setRates] = useState<Record<string, number> | null>(null);
   const [rateUpdatedAt, setRateUpdatedAt] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -145,7 +149,7 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
       if (currency === 'USD') {
         const showCents =
           options?.showCents !== false && amountUsd > 0 && amountUsd < 1000 && amountUsd % 1 !== 0;
-        return new Intl.NumberFormat('en-US', {
+        return new Intl.NumberFormat(displayNumberLocale, {
           style: 'currency',
           currency: 'USD',
           minimumFractionDigits: showCents ? 2 : 0,
@@ -154,11 +158,15 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
       }
       if (currency === 'KRW') {
         const krw = Math.round(amountUsd * krwRate);
-        return `₩${krw.toLocaleString('ko-KR')}`;
+        return new Intl.NumberFormat(displayNumberLocale, {
+          style: 'currency',
+          currency: 'KRW',
+          maximumFractionDigits: 0,
+        }).format(krw);
       }
       const targetRate = rates?.[currency];
       if (targetRate == null) {
-        return new Intl.NumberFormat('en-US', {
+        return new Intl.NumberFormat(displayNumberLocale, {
           style: 'currency',
           currency: 'USD',
           maximumFractionDigits: 0,
@@ -166,14 +174,14 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
       }
       const amount = amountUsd * targetRate;
       const showCents = options?.showCents !== false && amount < 100 && currency !== 'JPY';
-      return new Intl.NumberFormat('en-US', {
+      return new Intl.NumberFormat(displayNumberLocale, {
         style: 'currency',
         currency,
         minimumFractionDigits: showCents ? 2 : 0,
         maximumFractionDigits: showCents ? 2 : 0,
       }).format(amount);
     },
-    [currency, krwRate, rates]
+    [currency, displayNumberLocale, krwRate, rates]
   );
 
   const convertToUSD = useCallback((amountUsd: number) => amountUsd, []);
@@ -186,6 +194,8 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
     () => ({
       currency,
       setCurrency,
+      displayNumberLocale,
+      setDisplayNumberLocale,
       rates,
       rateUpdatedAt,
       isLoading,
@@ -195,7 +205,19 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
       convertToKRW,
       refetchRate: fetchRate,
     }),
-    [currency, setCurrency, rates, rateUpdatedAt, isLoading, error, formatPrice, convertToUSD, convertToKRW, fetchRate]
+    [
+      currency,
+      setCurrency,
+      displayNumberLocale,
+      rates,
+      rateUpdatedAt,
+      isLoading,
+      error,
+      formatPrice,
+      convertToUSD,
+      convertToKRW,
+      fetchRate,
+    ]
   );
 
   return <CurrencyContext.Provider value={value}>{children}</CurrencyContext.Provider>;
