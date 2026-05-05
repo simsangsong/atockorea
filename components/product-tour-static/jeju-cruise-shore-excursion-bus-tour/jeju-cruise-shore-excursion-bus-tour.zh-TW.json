@@ -5,25 +5,25 @@
   "locale": "zh-TW",
   "product_id": "jeju-cruise-shore-excursion-bus-tour",
   "seo": {
-    "pageTitle": "Jeju Cruise Shore Excursion: Bus Tour (Coach) | AtoC Korea",
-    "metaDescription": "8-hour Jeju cruise shore excursion in a large coach with port-aware routing: Jeju Port runs the east UNESCO route, Gangjeong Port runs Hallasan + Olle Market.",
+    "pageTitle": "濟州郵輪靠港巴士遊（大型遊覽車）| AtoC Korea",
+    "metaDescription": "8小時靠港意識強的濟州郵輪觀光：濟州港走東部UNESCO路線，江汀港走漢拿山高山地帶+奧萊市場路線。",
     "ogImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
     "primaryKeywords": [
-      "Jeju shore excursion",
-      "Jeju cruise port tour",
-      "Jeju bus tour from cruise",
-      "Jeju group shore tour",
-      "Jeju cruise day tour"
+      "濟州岸上遊",
+      "濟州郵輪靠港遊",
+      "濟州巴士遊從郵輪",
+      "濟州大團體岸上遊",
+      "濟州郵輪一日遊"
     ],
     "title": "濟州郵輪岸上觀光 · 大型遊覽車 · 依碼頭規劃路線 | AtoC Korea",
-    "description": "濟州郵輪岸上觀光大型巴士行程：依靠港碼頭自動切換路線（濟州港→東部UNESCO路線；江汀港→南部路線）。含接送，認證英語導遊，準時返船保證。"
+    "description": "濟州郵輪岸上觀光大型巴士行程：依靠港碼頭自動切換路線（濟州港→東部UNESCO路線；江汀港→南部路線）。含接送，認證英語導遊，安全返回郵輪碼頭優先。"
   },
   "catalog_card": {
     "slug": "jeju-cruise-shore-excursion-bus-tour",
     "title": "濟州郵輪岸上觀光——大型遊覽車行程",
-    "subtitle": "Port-aware cruise day tour with Jeju and Gangjeong route variants",
+    "subtitle": "靠港意識強的郵輪一日遊，提供濟州港及江汀港兩種路線方案。",
     "region": "濟州（依郵輪靠港規劃）",
-    "duration": "8 hours",
+    "duration": "8小時",
     "stopsCount": 6,
     "rating": 0,
     "reviewCount": 0,
@@ -35,22 +35,22 @@
     ],
     "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
     "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
-    "priceLabel": "Price varies — confirm at booking",
-    "shortCardDescription": "A bus tour (large coach) cruise shore excursion that adapts the route to your cruise port. Jeju Port (north) runs an east-coast UNESCO route via Seongsan Ilchulbong; Gangjeong Port (south) runs a Hallasan 1100 + south-coast geology + Olle Market route. Both return to the cruise terminal with comfortable buffer.",
+    "priceLabel": "價格因投行而異 — 請於預訂時確認",
+    "shortCardDescription": "大型巴士郵輪靠港觀光遊，根據靠港地點靈活調整路線。涵蓋城山日出峰（UNESCO）、天帝淵或正房瀑布、龍頭海岸等核心景點，全程約9小時，含郵輪碼頭接送。",
     "tags": [
-      "cruise_excursion",
-      "port_aware_routing",
-      "budget_cruise",
-      "large_coach"
+      "郵輪岸上遊",
+      "依靠港口岸調整路線",
+      "實惠郵輪遊",
+      "大巴團"
     ]
   },
   "headlineLine1": "濟州郵輪岸上觀光——大型巴士行程",
-  "headlineLine2": "依靠港碼頭選擇路線，東港或西港均有安排",
+  "headlineLine2": "按靠港碼頭安排路線，濟州港或江汀港均可",
   "price": {
     "amountLabel": "",
     "currency": "USD",
-    "per": "person",
-    "priceNote": "濟州郵輪岸遊大型巴士行程（全日8小時，含英語導遊 + 大型客車接送 + 所有入場費）。費用按人頭計算。AtoC Korea直接銷售；相較於運營商底價享有10%折扣。"
+    "per": "人",
+    "priceNote": "濟州郵輪岸遊大型巴士行程（全日8小時，含英語導遊 + 大型客車接送 + 所有入場費）。費用按人頭計算。AtoC Korea直接銷售；相較於合作業者底價享有10%折扣。"
   },
   "hero": {
     "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
@@ -62,7 +62,7 @@
       "經濟郵輪方案"
     ],
     "meta": {
-      "duration": "8 hours",
+      "duration": "8小時",
       "region": "濟州（依郵輪靠港規劃）",
       "stops": "6-7 個景點",
       "rating": 0,
@@ -93,40 +93,39 @@
   ],
   "glanceItems": [
     {
+      "icon": "clock",
+      "label": "行程時間",
+      "value": "8小時"
+    },
+    {
       "icon": "camera",
-      "label": "拍照潛力",
-      "value": "極佳",
-      "level": 5
+      "label": "拍照亮點",
+      "value": "極高"
     },
     {
       "icon": "mountain",
-      "label": "景點密度",
-      "value": "良好",
-      "level": 4
+      "label": "景觀特色",
+      "value": "極高"
     },
     {
       "icon": "footprints",
       "label": "步行強度",
-      "value": "中等",
-      "level": 3
+      "value": "中等"
     },
     {
       "icon": "cloud-rain",
       "label": "雨天適合度",
-      "value": "中等",
-      "level": 3
+      "value": "中等"
     },
     {
       "icon": "users",
       "label": "親子適合度",
-      "value": "良好",
-      "level": 4
+      "value": "中等"
     },
     {
-      "icon": "gauge",
+      "icon": "scale",
       "label": "行程節奏",
-      "value": "緊湊",
-      "level": 3
+      "value": "均衡"
     }
   ],
   "galleryItems": [
@@ -143,7 +142,7 @@
       "id": "g2",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
-      "alt": "從城山日出峰UNESCO峰頂俯瞰火口",
+      "alt": "行程中參觀的城山日出峰凝灰岩火山錐景觀",
       "caption": "城山日出峰凝灰岩火山錐",
       "location": "城山日出峰",
       "atmosphere": "UNESCO日出峰頂"
@@ -162,7 +161,7 @@
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
       "alt": "城邑民俗村石牆茅草頂傳統房屋",
-      "caption": "漢拏山1100高地濕地",
+      "caption": "漢拏山1100高地溼地",
       "location": "漢拏山1100高地",
       "atmosphere": "高山木棧道"
     },
@@ -188,12 +187,12 @@
   "itineraryStops": [
     {
       "name": "濟州郵輪碼頭接送（濟州港—北）",
-      "category": "Pickup & Cruise Logistics",
+      "category": "接送&郵輪物流",
       "description": "在**濟州港郵輪碼頭**（濟州市北部）或**江汀郵輪碼頭**（西歸浦，南部）集合，與您的導遊在抵達大廳會合，導遊手持AtoC Korea標示牌等候。出發路線依靠港碼頭而定：**濟州港（北）→ 東部路線**（城山日出峰 + 涉地可支 + 城邑民俗村）；**江汀港（南）→ 南部路線**（漢拏山1100高地 + 柱狀節理 + 天帝淵瀑布 + 奧勒每日市場）。",
       "highlights": [
         "**濟州港（北）→ 東部路線** | **江汀港（南）→ 南部路線**",
         "導遊在抵達大廳手持AtoC Korea牌子等候",
-        "通關後30分鐘緩衝，充分吸收大型船隻下船的排隊等待"
+        "通關後30分鐘預留時間，充分吸收大型船隻下船的排隊等待"
       ],
       "_poi_meta": {
         "poi_key": "jeju_cruise_port",
@@ -208,31 +207,21 @@
         ]
       },
       "number": 1,
-      "time": "Cruise arrival + 30 min",
-      "duration": "30 min",
-      "whyOnRoute": "**濟州港（北）是140,000 GT以下船隻的主要郵輪入境門戶** — 也是東部路線（城山日出峰/涉地可支/城邑民俗村）的天然起點，因為三個核心景點均在碼頭30分鐘至80分鐘車程範圍內，沿海岸環線公路（1132號公路）行駛。對於**25至40人的大型巴士行程**，通關後30分鐘的緩衝時間必不可少——大型船隻3,000+名乘客同時下船時，通關排隊等待十分常見。",
-      "visitBasics": {
-        "walking": "Minimal"
-      },
-      "convenience": {
-        "restroom": "At meeting point (subway station / hotel lobby / port terminal)",
-        "parking": "N/A for guests — vehicle-side pickup"
-      },
-      "smartNotes": {
-        "tip": "Arrive 5–10 minutes before scheduled pickup; bring photo ID for cruise/DMZ tours"
-      }
+      "time": "郵輪抵達後約30分鐘",
+      "duration": "30分鐘",
+      "whyOnRoute": "**濟州港（北）是140,000 GT以下船隻的主要郵輪入境門戶** — 也是東部路線（城山日出峰/涉地可支/城邑民俗村）的天然起點，因為三個核心景點均在碼頭30分鐘至80分鐘車程範圍內，沿海岸環線公路（1132號公路）行駛。對於**25至40人的大型巴士行程**，通關後30分鐘的預留時間必不可少——大型船隻3,000+名乘客同時下船時，通關排隊等待十分常見。"
     },
     {
       "number": 2,
       "time": "≈ 09:00",
-      "duration": "75 min",
+      "duration": "75分鐘",
       "name": "城山日出峰",
-      "category": "UNESCO Tuff Cone — Sunrise Peak (Triple UNESCO Designation)",
-      "description": "**城山日出峰（성산일출봉，「日出峰」）**是一座**距今5,000年的薩托謝安式（Surtseyan）水火山凝灰岩錐**——形成於海底玄武岩噴發衝出海面之時，岩漿接觸海水引發蒸汽爆炸，堆積的火山灰形成**182公尺高、形如城堡的火口**邊緣，而非典型的熔岩錐。UNESCO將其正式定義為**「薩托謝安式火山構造典型範例」**。火口**直徑600公尺、深90公尺**，周圍環繞著**99塊鋸齒狀的邊緣岩石**，當地傳說將其比喻為石冠。城山日出峰擁有**UNESCO三重認定**：**世界自然遺產（2007-07-02登錄）**，是**「濟州火山島與熔岩洞窟」**遺址的組成部分；**生物圈保護區（2002年）**；以及**全球地質公園（2010-10）**——這一榮銜僅與漢拏山本身並列，為韓國景點中的最高規格。峰體向海一側隧道有**18座帝國日本二戰地下掩體**（1945年神風特攻隊自殺艇掩體）。步道：**單程0.8公里，爬升約140公尺，來回60分鐘**，沿寬闊石階攀登。**海女表演**每日在峰下岩石海灣**13:30和15:00**各舉行一場——無需氧氣罐的濟州女性潛水員（UNESCO 2016年非物質文化遺產）。門票於**2025年4月更新**：**成人₩5,000 / 青少年+兒童₩2,500 / 團體成人₩1,600**，7歲以下及65歲以上免費。山頂觀景台同屬**瀛洲十景**，長期以來是韓國**元旦日出朝聖**的首選地——每年1月1日有逾5萬人在黎明前登頂，自1995年起設有市政日出節活動。**牛島（우도）** —— 韓國最大的次級火山島——在山頂可清晰看見，位於4公里外海域，搭乘**15分鐘渡輪自城山港出發**可前往（來回₩10,500）。",
+      "category": "UNESCO凝灰岩錐——日出峰（三重UNESCO認定）",
+      "description": "**城山日出峰（城山日出峰，「日出峰」）**是一座**距今5,000年的蘇爾特塞式（Surtseyan）水成火山凝灰岩錐**——形成於海底玄武岩噴發沖出海面之時，岩漿接觸海水引發蒸汽爆炸，堆積的火山灰形成**182公尺高、形如城堡的火口**邊緣，而非典型的熔岩錐。UNESCO將其正式定義為**「薩託謝安式火山構造典型範例」**。火口**直徑600公尺、深90公尺**，周圍環繞著**99塊鋸齒狀的邊緣岩石**，當地傳說將其比喻為石冠。城山日出峰擁有**UNESCO三重認定**：**世界自然遺產（2007-07-02登載）**，是**「濟州火山島與熔岩洞窟」**遺址的組成部分；**生物圈保護區（2002年）**；以及**全球地質公園（2010-10）**——這一榮銜僅與漢拏山本身並列，為韓國景點中的最高規格。峰體向海一側隧道有**18座帝國日本二戰地下掩體**（1945年神風特攻隊自殺艇掩體）。步道：**單程0.8公里，爬升約140公尺，來回60分鐘**，沿寬闊石階攀登。**海女表演**每日在峰下岩石海灣**13:30和15:00**各舉行一場——無需氧氣罐的濟州女性潛水員（UNESCO 2016年非物質文化遺產）。門票於**2025年4月更新**：**成人₩5,000 / 青少年+兒童₩2,500 / 團體成人₩1,600**，7歲以下及65歲以上免費。山頂觀景臺同屬**瀛洲十景**，長期以來是韓國**元旦日出朝聖**的首選地——每年1月1日有逾5萬人在黎明前登頂，自1995年起設有市政日出節活動。**牛島** —— 韓國最大的次級火山島——在山頂可清晰看見，位於4公里外海域，搭乘**15分鐘渡輪自城山港出發**可前往（來回₩10,500）。",
       "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
       "highlights": [
         "**UNESCO三重認定**：世界遺產2007-07-02 + 生物圈保護區2002年 + 全球地質公園2010-10",
-        "**距今5,000年** — 薩托謝安式水火山噴發，岩漿遇海水引發蒸汽爆炸誕生",
+        "**距今5,000年** — 薩託謝安式水火山噴發，岩漿遇海水引發蒸汽爆炸誕生",
         "火口**直徑600公尺、深90公尺**，環繞著**99塊鋸齒狀邊緣岩石**（「石冠」）",
         "**海拔182公尺** — 單程0.8公里 / 爬升約140公尺，石階步道來回60分鐘",
         "峰體基部有**18座帝國日本二戰地下掩體** — 1945年神風特攻隊自殺艇掩體",
@@ -242,13 +231,13 @@
         "**每月第一個星期一休館**（偶爾休息日）"
       ],
       "timeUsed": [
-        "Parking + ticket + base brief — ~10 min",
-        "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min",
-        "Summit views + crater rim photos — ~20 min",
-        "Descent — ~20 min",
-        "Optional haenyeo viewing at base (15:00 demo) — ~10 min"
+        "停車+購票+底部簡介——約10分鐘",
+        "登頂觀景臺（0.8公里/高差140米）——約30分鐘",
+        "頂部觀景+火山口邊緣拍照——約20分鐘",
+        "下山——約20分鐘",
+        "可選：在底部觀看海女表演（15:00場次）——約10分鐘"
       ],
-      "whyOnRoute": "**城山日出峰的UNESCO三重認定**（世界遺產2007年 + 生物圈保護區2002年 + 全球地質公園2010年）使其成為濟州單一景點中資質最高的停靠點，也是東部路線的天然開場錨點——從濟州港沿海岸1132號公路行駛僅需30分鐘，讓行程在第一站就能達到UNESCO級別。海女表演在13:30和15:00各舉行一場；抵達時間的安排確保在15:00場次前有充裕的拍攝時間。",
+      "whyOnRoute": "**城山日出峰的UNESCO三重認定**（世界遺產2007年 + 生物圈保護區2002年 + 全球地質公園2010年）使其成為濟州單一景點中資質最高的停靠點，也是東部路線的天然開場核心亮點——從濟州港沿海岸1132號公路行駛僅需30分鐘，讓行程在第一站就能達到UNESCO級別。海女表演在13:30和15:00各舉行一場；抵達時間的安排確保在15:00場次前有充裕的拍攝時間。",
       "_poi_meta": {
         "poi_key": "seongsan_ilchulbong",
         "kb_version": "1.18",
@@ -260,50 +249,35 @@
           "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
           "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
         ]
-      },
-      "visitBasics": {
-        "hours": "Mar–Apr & Sep–Oct: 05:00–19:00; May–Aug: 04:30–20:00; Nov–Feb: 06:00–18:00 (last ticketing 1 hour before closing)",
-        "closed": "Open year-round (weather closures possible)",
-        "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
-        "walking": "Moderate — 20–30 min steady stair climb (≈ 600 stairs); benches every few minutes for rest"
-      },
-      "convenience": {
-        "restroom": "Available at entrance and base",
-        "parking": "Large free parking lot"
-      },
-      "smartNotes": {
-        "tip": "All stairs but well-maintained — manageable in casual clothes; family-friendly with rest stops; sunrise visits popular but crowds gather pre-dawn",
-        "photo": "Summit view of Hallasan to the west and Udo island to the north on clear days; haenyeo black-sand beach view from descending path",
-        "facilities": "Café (Fritz Coffee 1.3km away has best exterior views of the peak); ferry to Udo Island from Seongsan Port (1.5km/15 min walk)"
       }
     },
     {
       "number": 3,
       "time": "≈ 11:15",
-      "duration": "60 min",
+      "duration": "60分鐘",
       "name": "涉地可支岬角",
-      "category": "Volcanic Cape — Tadao Ando Architecture + Bangdupo Lighthouse + Drama Filming",
-      "description": "**涉地可支（섭지코지）**是濟州東海岸一處狹長的火山岬角——地名由**「섭지（狹長地）」加上「코지（濟州方言，意為岬角）」**合成。**2.1公里的懸崖步道（約30分鐘，僅14公尺爬升）**是濟州島攝影最盛的海岸步行路線之一，沿途交匯三個文化建築亮點。**(1) 붉은 오름（紅色火山錐）** — 岬角頂端的紅色寄生火山錐，頂部矗立著**八角形방두포燈塔**，**每4秒閃光一次**，仍是運作中的海岸導航設施。**(2) 협자연대봉수台（협자烽火台）** — 一座**以火山岩砌成、高4公尺、直徑9公尺的朝鮮時代烽火丘**，被濟州道指定為**특별기념물第23-2號**，是環島38個烽火台之一，作為16至18世紀防禦海盜入侵的預警系統。**(3) 安藤忠雄建築** — 普利茲克獎日本建築師**安藤忠雄（Tadao Ando）**在此設計了兩棟建築：**玻璃屋（Glass House）**餐廳和**유민美術館**，均為安藤招牌的混凝土與光線極簡主義風格，是鳳凰島渡假村開發項目的一部分。近海的**10公尺火山頸仙岩（선바위，「仙人岩」）**融入了當地**龍王么子**的傳說。影視拍攝記錄包括**《All In》（2003，SBS）、《我的女孩》（2005，SBS）**等。**春季油菜花**在3至4月（黃色）淹沒山坡；**夏季繡球花**接力在6月盛開（藍/紫色）。岬角**免費入場**；유민美術館和玻璃屋餐廳需另行購票/預約。",
+      "category": "火山海岬——安藤忠雄建築+防頭浦燈塔+韓劇拍攝地",
+      "description": "**涉地可支**是濟州東海岸一處狹長的火山岬角。地名通常解釋為：「涉地」指狹長土地或這一帶的舊地名，「可支」是濟州方言，意為伸向海面的岬角。沿著海岸步道，可以看到玄武岩海崖、開闊海景和遠處的城山日出峰。岬角一帶還有燈塔、朝鮮時代烽火臺遺跡，也因韓劇《All In》等拍攝地而知名。此處海風較強，建議穿好走的鞋並準備薄外套。",
       "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
       "highlights": [
         "**2.1公里岬角步道**（約30分鐘，僅14公尺爬升）— 部分路段輪椅及嬰兒車可通行",
-        "**방두포燈塔** — 八角形，**每4秒閃光**，矗立於紅色火山錐붉은오름頂端",
-        "**협자연대봉수台（烽火台）** — 高4公尺 × 直徑9公尺的朝鮮烽火丘，**특별기념물第23-2號**",
-        "**安藤忠雄建築** — 玻璃屋餐廳 + 유민美術館（鳳凰島渡假村）",
-        "**仙岩（선바위）** — 10公尺海外火山頸，龍王么子傳說",
-        "**影視拍攝地**：《All In》（2003年）、《我的女孩》（2005年）等",
+        "**方頭浦燈塔** — 八角形，**每4秒閃光**，矗立於紅色火山錐紅色火山丘頂端",
+        "**俠子烽火臺（烽火臺）** — 高4公尺 × 直徑9公尺的朝鮮烽火丘，**特別紀念物第23-2號**",
+        "**安藤忠雄建築** — 玻璃屋餐廳 + Yumin美術館（鳳凰島渡假村）",
+        "**仙岩（仙岩）** — 10公尺海外火山頸，龍王麼子傳說",
+        "**影視拍攝地**：《《All In》》（2003年）、《我的女孩》（2005年）等",
         "**油菜花季3至4月**（黃色山坡）；**繡球花6月**（藍/紫色）",
-        "**岬角免費入場**；유민美術館 + 玻璃屋餐廳需另行購票",
+        "**岬角免費入場**；Yumin美術館 + 玻璃屋餐廳需另行購票",
         "城山日出峰在岬角頂端**清晰可見於4公里外**——UNESCO三重認定的完美背景"
       ],
       "timeUsed": [
-        "Parking + entrance — ~5 min",
-        "Cape trail walk — ~25 min",
-        "Lighthouse + Hyeopja Yeondae photos — ~10 min",
-        "Tadao Ando buildings exterior viewing — ~10 min",
-        "Return to coach + buffer — ~10 min"
+        "停車+入場——約5分鐘",
+        "海岬步道漫步——約25分鐘",
+        "燈塔＋俠子煙臺烽燧臺拍照——約10分鐘",
+        "安藤忠雄建築外觀觀賞——約10分鐘",
+        "返回大巴＋集合時間——約10分鐘"
       ],
-      "whyOnRoute": "**涉地可支的安藤忠雄建築**（玻璃屋餐廳 + 유민美術館，普立茲克獎得主鳳凰島開發項目）加上**朝鮮時代협자연대봉수台**（道指定특별기념물第23-2號）賦予全天一個刻意的對比層次——上午是UNESCO地質景觀，而在安藤忠雄的清水混凝土建築與朝鮮時代烽火台之間，則提供了**建築藝術 + 朝鮮遺跡**的文化深度。春季油菜花（3至4月）和夏季繡球花（6月）分別為岬角增添不同季節的色彩層次。",
+      "whyOnRoute": "**涉地可支**是濟州東海岸一處狹長的火山岬角。地名通常解釋為：「涉地」指狹長土地或這一帶的舊地名，「可支」是濟州方言，意為伸向海面的岬角。沿著海岸步道，可以看到玄武岩海崖、開闊海景和遠處的城山日出峰。岬角一帶還有燈塔、朝鮮時代烽火臺遺跡，也因韓劇《All In》等拍攝地而知名。此處海風較強，建議穿好走的鞋並準備薄外套。",
       "_poi_meta": {
         "poi_key": "seopjikoji",
         "kb_version": "1.19",
@@ -312,33 +286,18 @@
           "Jeju Provincial Cultural Heritage — Special Monument No. 23-2 designation",
           "VisitJeju — Seopjikoji official listing",
           "Korea Lighthouse Service — Bangdupo Lighthouse operation records",
-          "Tadao Ando Architect & Associates — Phoenix Island project documentation",
-          "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
+          "安藤忠雄 Architect & Associates — Phoenix Island project documentation",
+          "SBS Drama Archive — '《All In》' (2003) and 'My Girl' (2005) filming locations"
         ]
-      },
-      "visitBasics": {
-        "hours": "Open 24 hours (outdoor cape)",
-        "closed": "Open year-round",
-        "admission": "Free",
-        "walking": "Easy to moderate — flat coastal walkway; total loop ≈ 1 hour"
-      },
-      "convenience": {
-        "restroom": "Available at parking lot and Aqua Planet area",
-        "parking": "Free parking available"
-      },
-      "smartNotes": {
-        "photo": "The lighthouse with cliff backdrop is iconic; canola fields with Seongsan Ilchulbong in distance is the spring signature shot",
-        "facilities": "Aqua Planet Jeju aquarium and several cafés on site",
-        "tip": "Combine with Seongsan Ilchulbong visit (10 min drive); spring (canola) and autumn (eulalia grass) are peak photo seasons"
       }
     },
     {
       "name": "午餐（濟州東部—當地海鮮或黑豬）",
-      "category": "Lunch",
-      "description": "在東部濟州的導遊精選餐廳享用午餐（費用自付）。典型選項：**濟州黑豬燒烤**（흑돼지구이，濟州黑毛豬品種，在火山岩石板上炭烤）；**鮑魚粥**（전복죽，濃郁乳白湯底熬煮鮑魚，約₩15,000至20,000）；**海鮮湯麵飯**（해물뚝배기）。導遊協助點餐，同時翻譯菜單。",
+      "category": "午餐",
+      "description": "在東部濟州的導遊推薦餐廳享用午餐（費用自付）。典型選項：**濟州黑豬燒烤**；**鮑魚粥**；**海鮮湯麵飯**。導遊協助點餐，同時翻譯菜單。",
       "highlights": [
         "**濟州黑豬燒烤**——濟州黑毛豬品種，在火山岩石板上炭烤",
-        "**鮑魚粥**——濃郁乳白湯底熬煮鮑魚（約₩15,000至20,000）",
+        "**鮑魚粥**——濃鬱乳白湯底熬煮鮑魚（約₩15,000至20,000）",
         "導遊協助點餐和菜單翻譯"
       ],
       "_poi_meta": {
@@ -353,50 +312,37 @@
       },
       "number": 4,
       "time": "≈ 12:30",
-      "duration": "60 min",
-      "whyOnRoute": "**午餐的位置設在路線的地理中間點**，而非時間中間點，以充分吸收上午郵輪通關延誤可能造成的行程滑坡。午餐地點在**涉地可支15分鐘車程範圍內**，將團體置於下一個下午景點（城邑民俗村，再往內陸約10分鐘）附近，同時避免了繞回東部海岸的長距離迂路。",
-      "visitBasics": {
-        "hours": "Per restaurant operating hours (typically 11:30–14:00 lunch service)",
-        "closed": "Per restaurant schedule",
-        "admission": "Lunch separate (typically 12,000–25,000 KRW per person; not included in tour price)",
-        "walking": "Minimal — direct restaurant entry"
-      },
-      "convenience": {
-        "restroom": "Available at restaurant",
-        "parking": "Tour vehicle parks at or near restaurant"
-      },
-      "smartNotes": {
-        "tip": "Inform guide of any dietary restrictions (vegetarian, halal, allergies) at booking; cash and major cards typically accepted"
-      }
+      "duration": "60分鐘",
+      "whyOnRoute": "**午餐的位置設在路線的地理中間點**，而非時間中間點，以充分吸收上午郵輪通關延誤可能造成的行程滑坡。午餐地點在**涉地可支15分鐘車程範圍內**，將團體置於下一個下午景點（城邑民俗村，再往內陸約10分鐘）附近，同時避免了繞回東部海岸的長距離迂路。"
     },
     {
       "number": 5,
       "time": "≈ 13:45",
-      "duration": "60 min",
+      "duration": "60分鐘",
       "name": "城邑民俗村",
-      "category": "Joseon-era Walled Town — Important Folklore Cultural Heritage (1423 founding)",
-      "description": "**城邑民俗村（성읍 민속마을）**是**朝鮮時代的城郭式城鎮，始建於1423年世宗大王年間**，當時稱為旌義縣（정의현），是朝鮮時代濟州三大行政中心之一。村落持續作為**縣政中心長達近500年，直至1914年**，至今在原有邑城（읍성）城郭範圍內保存著**110棟傳統建築**，整體按照朝鮮縣政中心典型的**韓國風水原則**規劃佈局。整座村落被指定為**韓國重要民俗文化遺產**，多棟個別建築亦分別獲得獨立遺產指定。村落中心聳立著**兩棵被指定為韓國天然紀念物的古樹**——**一棵光葉榉（느티나무）**和一棵**朴樹（팽나무）**，兩者均**樹齡逾600年**，是村落的精神象徵。歷史傷痕清晰可見：**1826年的大火燒毀了約80棟建築**，村落在**1948年濟州四三事件中**也遭受過火災破壞——兩段歷史均記載於村內標示牌上。歷史上戶數高峰時約**1,500戶**，今日村落仍有約**250戶人家居住**，許多村民積極傳承傳統工藝。韓劇拍攝記錄：**《大長今》（MBC，2003至2004年）**，這部國際韓劇大作曾在此取景。當地特色：**五味子酒（오메기술）** — 村內一戶人家**世代相傳、多代釀造**的**濟州傳統米釀酒**，村內家庭釀酒坊可免費參觀品嚐。**免費入場**；以戶外步行為主（約70%戶外）。",
+      "category": "朝鮮時代城郭城鎮——重要民俗文化遺產（1423年創立）",
+      "description": "**城邑民俗村**是**朝鮮時代的城郭式城鎮，始建於1423年世宗大王年間**，當時稱為旌義縣，是朝鮮時代濟州三大行政中心之一。村落持續作為**縣政中心長達近500年，直至1914年**，至今在原有邑城城郭範圍內保存著**110棟傳統建築**，整體按照朝鮮縣政中心典型的**韓國風水原則**規劃佈局。整座村落被指定為**韓國重要民俗文化遺產**，多棟個別建築亦分別獲得獨立遺產指定。村落中心聳立著**兩棵被指定為韓國天然紀念物的古樹**——**一棵光葉櫸**和一棵**樸樹**，兩者均**樹齡逾600年**，是村落的精神象徵。歷史傷痕清晰可見：**1826年的大火燒燬了約80棟建築**，村落在**1948年濟州四三事件中**也遭受過火災破壞——兩段歷史均記載於村內標示牌上。歷史上戶數高峰時約**1,500戶**，今日村落仍有約**250戶人家居住**，許多村民積極傳承傳統工藝。韓劇拍攝記錄：**《大長今》（MBC，2003至2004年）**，這部國際韓劇大作曾在此取景。當地特色：**五味子酒** — 村內一戶人家**世代相傳、多代釀造**的**濟州傳統米釀酒**，村內家庭釀酒坊可免費參觀品嚐。**免費入場**；以戶外步行為主（約70%戶外）。",
       "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
       "highlights": [
         "**始建於1423年**（世宗大王年間）——行政中心持續運作至**1914年（近500年）**",
         "原有邑城城郭範圍內保存**110棟傳統建築**",
         "**韓國重要民俗文化遺產**（整座村落 + 多棟個別建築）",
-        "村落中心有**兩棵樹齡逾600年的古樹**：光葉榉 + 朴樹 — **天然紀念物**",
+        "村落中心有**兩棵樹齡逾600年的古樹**：光葉櫸 + 樸樹 — **天然紀念物**",
         "按照**朝鮮韓國風水（地理）原則**規劃 — 典型縣政中心格局",
         "**《大長今》（MBC 2003至2004年）**拍攝地 — 國際韓劇大作",
-        "**五味子酒（오메기술）** — 濟州傳統米釀酒，單一家族世代相傳釀造（免費品嚐）",
-        "歷史傷痕：**1826年大火**燒毀約80棟；**1948年濟州四三事件**破壞",
+        "**五味子酒** — 濟州傳統米釀酒，單一家族世代相傳釀造（免費品嚐）",
+        "歷史傷痕：**1826年大火**燒燬約80棟；**1948年濟州四三事件**破壞",
         "**免費入場** — 村落仍有約250戶人家居住，延續傳統"
       ],
       "timeUsed": [
-        "Parking + welcome brief by village docent — ~10 min",
-        "Walk to ancient trees + village center — ~10 min",
-        "Hanok interior visits (2–3 representative homes) — ~15 min",
-        "Omegisul brewery free tasting — ~10 min",
-        "Olle alley walk + photography — ~10 min",
-        "Buffer — ~5 min"
+        "停車+村落解說員迎接簡介——約10分鐘",
+        "走至古樹+村落中心——約10分鐘",
+        "參觀韓屋內部（代表性民居2–3棟）——約15分鐘",
+        "五味子酒釀造坊免費品嚐——約10分鐘",
+        "奧萊小巷散步+拍照——約10分鐘",
+        "集合時間——約5分鐘"
       ],
-      "whyOnRoute": "**城邑民俗村**（世宗大王1423年創建，行政功能維持至1914年約500年）是全天**重要民俗文化遺產**的錨點——一座與上午的城山日出峰UNESCO地質景觀形成互補的傳統文化村落，帶來更深厚的文化層次。平坦的村落格局（無需爬坡）是**特別適合這個時段的無障礙選擇**，因為旅客已在下午初段完成了城山和涉地可支的主要步行量。五味子酒免費品嚐也讓疲憊的腳得到休息的同時，獲得在地感受。",
+      "whyOnRoute": "**城邑民俗村**（世宗大王1423年創建，行政功能維持至1914年約500年）是全天**重要民俗文化遺產**的核心亮點——一座與上午的城山日出峰UNESCO地質景觀形成互補的傳統文化村落，帶來更深厚的文化層次。平坦的村落格局（無需爬坡）是**特別適合這個時段的無障礙選擇**，因為旅客已在下午初段完成了城山和涉地可支的主要步行量。五味子酒免費品嚐也讓疲憊的腳得到休息的同時，獲得在地感受。",
       "_poi_meta": {
         "poi_key": "seongeup_folk_village",
         "kb_version": "1.19",
@@ -408,31 +354,16 @@
           "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
           "Jeju Folklore Society — Omegisul brewing tradition documentation"
         ]
-      },
-      "visitBasics": {
-        "hours": "Open 24 hours (outdoor village); shops typically 09:00–17:00",
-        "closed": "Open year-round",
-        "admission": "Free for general village; some private homes charge for guided visits",
-        "walking": "Easy — flat dirt and stone paths through the village"
-      },
-      "convenience": {
-        "restroom": "Public restrooms at village entrance",
-        "parking": "Free parking near entrance"
-      },
-      "smartNotes": {
-        "photo": "Stone walls (dolhareubang grandfathers), thatched-roof houses with smoke holes, and traditional doors are iconic Jeju shots",
-        "facilities": "Visitor information center at entrance; English maps available",
-        "tip": "Hire a free volunteer guide at the entrance for cultural context; respect that residents actually live here — don't enter homes uninvited"
       }
     },
     {
       "name": "返回濟州郵輪碼頭（濟州港—北）",
-      "category": "Cruise Return & All-Aboard",
+      "category": "接送&郵輪物流",
       "description": "巴士沿**濟州東部海岸1132號公路**返回濟州港，途中作一次休息站停靠。回程時間約70至80分鐘，視交通情況而定。下車地點為原接送碼頭（濟州港或江汀港）。",
       "highlights": [
         "巴士沿東部海岸1132號公路返回，約70至80分鐘",
         "途中作一次路邊舒適停靠",
-        "在全員登船時間**至少60分鐘前**安全抵達碼頭"
+        "在全體登船時間**至少60分鐘前**安全抵達碼頭"
       ],
       "_poi_meta": {
         "poi_key": "jeju_cruise_port",
@@ -447,83 +378,70 @@
         ]
       },
       "number": 6,
-      "time": "≈ 15:30 → arrive port ≈ 16:45",
-      "duration": "75 min drive + 60 min buffer",
-      "whyOnRoute": "**回程是全天最長的單一行程段**（約70至80分鐘，從城邑民俗村沿1132號公路 + 16號公路返回濟州港），途中在東部海岸的路邊休息站作**一次舒適停靠**。下車時間的目標是**至少在全員登船前60分鐘**抵達——以17:30全員登船為例，巴士將在16:30前到達，讓旅客有充裕的時間不慌不忙地返回船艙。",
-      "visitBasics": {
-        "hours": "Per drop-off schedule (see hero / glanceItems for return time band)",
-        "closed": "N/A",
-        "admission": "N/A",
-        "walking": "Minimal — direct vehicle disembarking"
-      },
-      "convenience": {
-        "restroom": "At drop-off point",
-        "parking": "N/A"
-      },
-      "smartNotes": {
-        "tip": "Confirm exact drop-off location with guide before journey begins; cruise tours coordinate with ship departure schedule"
-      }
+      "time": "約15:30出發 → 約16:45抵達碼頭",
+      "duration": "75分鐘車程＋60分鐘預留",
+      "whyOnRoute": "**回程是全天最長的單一行程段**（約70至80分鐘，從城邑民俗村沿1132號公路 + 16號公路返回濟州港），途中在東部海岸的路邊休息站作**一次舒適停靠**。下車時間的目標是**至少在全體登船前60分鐘**抵達——以17:30全體登船為例，巴士將在16:30前到達，讓旅客有充裕的時間不慌不忙地返回船艙。"
     }
   ],
   "routeFlowStops": [
     {
-      "name": "Cruise Terminal",
+      "name": "郵輪碼頭",
       "type": "origin",
-      "theme": "Departure"
+      "theme": "出發"
     },
     {
-      "name": "Sunrise Peak",
+      "name": "日出峰",
       "type": "primary",
-      "theme": "Volcano"
+      "theme": "火山"
     },
     {
-      "name": "Seopjikoji",
+      "name": "涉地可支",
       "type": "primary",
-      "theme": "Coast"
+      "theme": "海岸"
     },
     {
-      "name": "Lunch",
+      "name": "午餐",
       "type": "meal",
-      "theme": "Meal"
+      "theme": "餐飲"
     },
     {
-      "name": "Folk Village",
+      "name": "民俗村",
       "type": "primary",
-      "theme": "Culture"
+      "theme": "文化"
     },
     {
-      "name": "Cruise Terminal",
+      "name": "郵輪碼頭",
       "type": "return",
-      "theme": "Return"
+      "theme": "返回"
     }
   ],
   "routePhases": [
     {
       "phase": "UNESCO火山 + 海岸",
-      "duration": "Stops 1–3",
-      "description": "Morning: UNESCO volcano + coast"
+      "duration": "第1–3站",
+      "description": "上午：UNESCO火山+海岸"
     },
     {
       "phase": "午餐",
-      "duration": "Stops 4",
-      "description": "Midday: Lunch"
+      "duration": "第4站",
+      "description": "中午：午餐"
     },
     {
       "phase": "民俗文化 + 回程",
-      "duration": "Stops 5–6",
-      "description": "Afternoon: Folk culture + return"
+      "duration": "第5–6站",
+      "description": "下午：民俗文化+返程"
     }
   ],
   "routeShapeIntro": {
-    "title": "行程動線總覽",
-    "subtitle": "Route depends on your cruise port. Jeju Port (north) runs east UNESCO; Gangjeong Port (south) runs Hallasan alpine + Olle Market."
+    "title": "行程路線一覽",
+    "subtitle": "路線取決於靠港地點。濟州港（北部）靠港走東部UNESCO線路；江汀港（南部）靠港走漢拿山高山地帶+濟州奧萊市場線路。"
   },
   "itinerary_variants": [
     {
       "port_id": "jeju_port",
-      "port_label": "Jeju Port (Northern Terminal)",
-      "port_label_short": "Jeju Port",
-      "route_focus": "East coast UNESCO landmarks + folk culture",
+      "port_label": "濟州港（北部碼頭）",
+      "port_label_short": "濟州港",
+      "route_focus": "東海岸UNESCO景點+民俗文化",
       "pickup_base": "jeju_port",
       "duration_band": "8h",
       "return_time_band": "17:00–17:30",
@@ -539,22 +457,22 @@
         "iconic_landmarks",
         "first_time_friendly"
       ],
-      "scenic_level_in_variant": 1,
+      "scenic_level_in_variant": 1.0,
       "walking_level_in_variant": 0.6,
       "indoor_ratio_in_variant": 0.15,
       "weather_sensitivity_in_variant": 0.8,
       "stops": [
         {
-          "name": "Jeju Cruise Terminal Pickup (Jeju Port — north)",
-          "category": "Pickup & Cruise Logistics",
-          "description": "Your driver and English-speaking guide meet your party at the **Jeju International Passenger Terminal** (제주항 국제여객터미널, address: 191 Imhang-ro, Jeju-si — UN/LOCODE **KRCHA**), the northern coast cruise port that opened in **2015** to receive international cruise vessels. The terminal has two berths — the **Main Berth (360 m, 12 m water depth, 140,000-ton capacity)** and an **Emergency Berth (306 m, 11.5 m water depth, 85,000-ton capacity)** — handling **one cruise ship at a time**. Pickup is timed for **30 minutes after your ship's posted clearance**, absorbing immigration variance during multi-ship arrivals. The driver carries an English/Korean name placard, a printed itinerary card (with all stop times and Korean-script addresses for emergency taxi use), and the operator's 24/7 contact number. Vehicle is parked in the **100-bus parking capacity lot** adjacent to the arrival hall. Before boarding, the guide reviews the day's flow, all-aboard time, weather, and any port-day adjustments. If your guests need currency exchange (Jeju Bank), a SIM/Wi-Fi rental, or use of the multilingual tourist information center, the guide accompanies — these are all on-site within the terminal. Per **South Korea's Ministry of Culture, Sports & Tourism**, **810,000 cruise tourists arrived on 414 ships in 2024** — nearly tripling the prior year — so terminal congestion is realistic on multi-ship days.",
+          "name": "濟州郵輪碼頭接船（北部）",
+          "category": "接船與郵輪物流",
+          "description": "司機和英語導遊將在**濟州國際客運碼頭**入境大廳持姓名牌迎接您的團隊。",
           "highlights": [
-            "**Pickup 30 min after ship clearance** — buffer absorbs immigration delays",
-            "Driver + English-speaking guide meet at arrival hall with name placard",
-            "**Main Berth 360 m × 12 m / 140,000-ton capacity** (single concurrent ship)",
-            "**100-bus parking** capacity adjacent to terminal — fast vehicle boarding",
-            "Tourist info center, Jeju Bank currency exchange, ATMs, free Wi-Fi on-site",
-            "Itinerary card with Korean-script addresses provided as emergency-taxi backup"
+            "**船舶清關後30分鐘接送**——預留時間以應對入境延誤",
+            "司機+英語導遊持姓名牌在入境大廳等候",
+            "**主泊位360米×12米/14萬噸容量**（同時停靠1艘船）",
+            "碼頭毗鄰**100輛大巴停車位**——快速登車",
+            "碼頭內設旅遊信息中心、濟州銀行外匯兌換處、ATM及免費Wi-Fi",
+            "提供韓文地址卡，可作緊急打車備用"
           ],
           "_poi_meta": {
             "poi_key": "jeju_cruise_port",
@@ -569,37 +487,37 @@
             ]
           },
           "number": 1,
-          "time": "Cruise arrival + 30 min",
-          "duration": "30 min",
-          "whyOnRoute": "**Jeju Port (north) is the primary cruise gateway** for vessels under 140,000 GT — and the natural origin point for the east-route circuit (Seongsan / Seopjikoji / Seongeup), since all three core POIs sit within a 60–80 minute drive of this terminal. For a **bus tour with 25–40 pax**, the 30-minute post-clearance buffer is essential — large groups disembark slowly and immigration backups are common during multi-ship arrivals. The 100-bus parking capacity at Jeju Port also means the coach can be **right at the arrival hall door** (no shuttle wait), keeping the day's schedule tight. If your ship docks at Gangjeong (south) instead of here, the **southern variant of this tour** is the correct match — the drive from Gangjeong to Seongsan would consume 70+ minutes one-way, eating the day."
+          "time": "郵輪入港後30分鐘",
+          "duration": "30分鐘",
+          "whyOnRoute": "**濟州港（北部）是14萬總噸以下船隻的主要郵輪入港地**——東海岸路線的天然起點。"
         },
         {
           "number": 2,
           "time": "≈ 09:00",
-          "duration": "75 min",
-          "name": "Seongsan Ilchulbong",
-          "category": "UNESCO Tuff Cone — Sunrise Peak (Triple UNESCO Designation)",
-          "description": "**Seongsan Ilchulbong (성산일출봉, 'Sunrise Peak')** is a **5,000-year-old Surtseyan-type hydrovolcanic tuff cone** — a rare landform created when an underwater basalt eruption broke the sea surface, the magma met seawater, and the resulting steam-explosive ash built a **182 m fortress-shaped crater** rim instead of a typical lava cone. The result is what UNESCO formally calls **'an exceptional example of an emergent Surtseyan-type volcanic edifice'**. The crater is **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** that local lore likens to a stone crown. Seongsan carries the **Triple UNESCO designation**: **World Natural Heritage (inscribed 2007-07-02)** as part of the **'Jeju Volcanic Island and Lava Tubes' property**, **Biosphere Reserve (2002)**, and **Global Geopark (2010-10)** — a stack matched only by Hallasan itself among Korean sites. **18 Imperial Japanese WWII caves** (kamikaze suicide-boat shelters, 1945) are tunneled into the seaward base. Trail: **0.8 km one-way, ~140 m elevation gain, 60 min round trip** on wide stone steps. **Haenyeo (해녀) demonstrations** run **daily at 13:30 and 15:00** at the rocky cove below the cone — Jeju women divers (UNESCO Intangible Cultural Heritage 2016) descend without scuba gear. Admission updated **April 2025**: **Adult ₩5,000 / Youth+Child ₩2,500 / Group adult ₩1,600**, free under 7 and over 65. The summit deck is also part of the **Yeongjusipgyeong (Jeju 10 Scenic Wonders) canon**, and remains Korea's premier **annual New Year sunrise pilgrimage** destination — 50,000+ visitors ascend before dawn on January 1, with municipal sunrise-festival programming since 1995. **Udo Island (우도, 'Cow Island')** — Korea's largest secondary volcanic island — is clearly visible 4 km offshore from the summit, accessible by **15-min ferry from Seongsan Port** (₩10,500 round-trip) for guests with extra time on a different itinerary.",
+          "duration": "75分鐘",
+          "name": "城山日出峰",
+          "category": "UNESCO凝灰岩錐——日出峰（三重UNESCO認定）",
+          "description": "**城山日出峰**是一座**5000年前形成的蘇爾特塞式水火山凝灰岩錐**——構成UNESCO世界自然遺產基礎的稀有火山地貌。",
           "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
           "highlights": [
-            "**Triple UNESCO**: World Heritage 2007-07-02 + Biosphere Reserve 2002 + Global Geopark 2010-10",
-            "**5,000 years old** — Surtseyan-type hydrovolcanic eruption, magma-meets-seawater steam-explosive birth",
-            "Crater **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** (the 'stone crown')",
-            "**182 m above sea level** — 0.8 km / ~140 m gain, 60-min round trip on stone-step trail",
-            "**18 Imperial Japanese WWII caves** at base — 1945 kamikaze suicide-boat shelters",
-            "**Haenyeo demonstrations daily 13:30 + 15:00** at the seaside cove — UNESCO Intangible 2016",
-            "**Admission updated April 2025**: Adult ₩5,000 / Youth ₩2,500 / FREE under 7 + over 65",
-            "Spring/autumn hours **05:00–19:00** (last entry 18:20)",
-            "**Closes for first Monday of each month** (occasional rest day)"
+            "**UNESCO三重認定**：世界遺產2007-07-02 + 生物圈保護區2002年 + 全球地質公園2010-10",
+            "**距今5,000年** — 薩託謝安式水火山噴發，岩漿遇海水引發蒸汽爆炸誕生",
+            "火口**直徑600公尺、深90公尺**，環繞著**99塊鋸齒狀邊緣岩石**（「石冠」）",
+            "**海拔182公尺** — 單程0.8公里 / 爬升約140公尺，石階步道來回60分鐘",
+            "峰體基部有**18座帝國日本二戰地下掩體** — 1945年神風特攻隊自殺艇掩體",
+            "**每日13:30 + 15:00海女表演**，在海濱海灣舉行 — UNESCO非物質文化遺產2016年",
+            "**門票2025年4月更新**：成人₩5,000 / 青少年₩2,500 / 7歲以下及65歲以上免費",
+            "春秋季開放時間 **05:00至19:00**（最後入場18:20）",
+            "**每月第一個星期一休館**（偶爾休息日）"
           ],
           "timeUsed": [
-            "Parking + ticket + base brief — ~10 min",
-            "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min",
-            "Summit views + crater rim photos — ~20 min",
-            "Descent — ~20 min",
-            "Optional haenyeo viewing at base (15:00 demo) — ~10 min"
+            "停車+購票+底部簡介——約10分鐘",
+            "登頂觀景臺（0.8公里/高差140米）——約30分鐘",
+            "頂部觀景+火山口邊緣拍照——約20分鐘",
+            "下山——約20分鐘",
+            "可選：在底部觀看海女表演（15:00場次）——約10分鐘"
           ],
-          "whyOnRoute": "**Seongsan Ilchulbong's triple-UNESCO designation** (World Heritage 2007 + Biosphere Reserve 2002 + Geopark 2010) makes it the highest-credential single stop on Jeju and the natural opening anchor for the east route — it's **30 minutes** from Jeju Port via Highway 1132 (the coastal ring road), giving the tour an immediate UNESCO-grade entry point. For a **bus tour group**, the **paved 600-meter stairway-trail to the rim** (~25 minutes one-way, 182 m elevation gain) is a manageable first-of-day climb — the panoramic crater rim view of Jeju's eastern coast is the day's signature photo, and the scale of the tuff cone (a single eruption ~5,000 years ago that fused with mainland Jeju via tombolo) is an effective scene-setter for the day's geology theme.",
+          "whyOnRoute": "**城山日出峰的三重UNESCO認定**（世界遺產2007+生物圈保護區2002+世界地質公園2010）使其成為東海岸路線最強勁的核心亮點。",
           "_poi_meta": {
             "poi_key": "seongsan_ilchulbong",
             "kb_version": "1.18",
@@ -616,30 +534,30 @@
         {
           "number": 3,
           "time": "≈ 11:15",
-          "duration": "60 min",
-          "name": "Seopjikoji (East Cape)",
-          "category": "Volcanic Cape — Tadao Ando Architecture + Bangdupo Lighthouse + Drama Filming",
-          "description": "**Seopjikoji (섭지코지)** is a narrow volcanic cape on Jeju's east coast — the name compounds **'Seopji' (narrow piece of land) + 'Koji' (Jeju dialect for 'cape')**. The **2.1 km cliff-edge trail (~30 min, only 14 m elevation gain)** is one of the island's most photographed coastal walks, anchored by three cultural-architectural moments. **(1) Bulgeun Oreum (붉은 오름)** — a red-tinged volcanic parasitic cone at the cape's tip, capped by the **octagonal Bangdupo Lighthouse (방두포 등대)** which **flashes every 4 seconds** and remains in operation as a coastal navigation aid. **(2) The Hyeopja Yeondae Beacon Fire Station (협자연대)** — a **4 m tall × 9 m diameter Joseon-era smoke-signal mound built of volcanic stone**, designated **Special Monument No. 23-2** by Jeju Province — one of 38 such yeondae beacons that ringed the island as a 16th–18th-century early-warning system against pirate raids. **(3) Tadao Ando architecture** — Pulitzer-laureate Japanese architect **Tadao Ando (안도 다다오)** designed two buildings on site: the **Glass House (글라스 하우스)** restaurant and the **Yumin Art Gallery (유민 미술관)**, both characteristic of Ando's signature concrete-and-light minimalism, completed for the Phoenix Island resort development. Offshore, the **10 m volcanic neck Seonbawi (선바위, 'Seon Rock')** is featured in local **dragon king's youngest son** legend. Drama-filming credits include **'All In' (2003, SBS), 'My Girl' (2005, SBS), 'Legend of Gingko', 'The Uprising', and 'Cheonilya'**. **Spring canola fields** flood the slopes **March–April (yellow)**; **summer hydrangea blooms** follow in **June (blue/violet)**. **FREE admission** to the cape; Yumin Art Gallery and Glass House restaurant separately ticketed/reserved.",
+          "duration": "60分鐘",
+          "name": "攝地可支（東海岬）",
+          "category": "火山海岬——安藤忠雄建築+防頭浦燈塔+韓劇拍攝地",
+          "description": "**涉地可支**是濟州東海岸的一座狹窄火山海岬。",
           "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
           "highlights": [
-            "**2.1 km cape trail** (~30 min, only 14 m gain) — wheelchair/stroller-friendly stretches",
-            "**Bangdupo Lighthouse** — octagonal, **flashes every 4 sec**, atop Bulgeun Oreum red volcanic cone",
-            "**Hyeopja Yeondae Beacon Fire Station** — 4 m × 9 m Joseon yeondae, **Special Monument No. 23-2**",
-            "**Tadao Ando architecture** — Glass House restaurant + Yumin Art Gallery (Phoenix Island)",
-            "**Seonbawi (Seon Rock)** — 10 m offshore volcanic neck, dragon king's youngest son legend",
-            "**Drama filming**: 'All In' (2003), 'My Girl' (2005), and others",
-            "**Canola season March–April** (yellow slopes); **hydrangea June** (blue/violet)",
-            "**FREE cape admission**; Yumin Art Gallery + Glass House separately ticketed",
-            "Seongsan Ilchulbong **clearly visible 4 km north** from the cape tip — perfect Triple-UNESCO panorama backdrop"
+            "**2.1公里岬角步道**（約30分鐘，僅14公尺爬升）— 部分路段輪椅及嬰兒車可通行",
+            "**方頭浦燈塔** — 八角形，**每4秒閃光**，矗立於紅色火山錐紅色火山丘頂端",
+            "**俠子烽火臺（烽火臺）** — 高4公尺 × 直徑9公尺的朝鮮烽火丘，**特別紀念物第23-2號**",
+            "**安藤忠雄建築** — 玻璃屋餐廳 + Yumin美術館（鳳凰島渡假村）",
+            "**仙岩（仙岩）** — 10公尺海外火山頸，龍王麼子傳說",
+            "**影視拍攝地**：《《All In》》（2003年）、《我的女孩》（2005年）等",
+            "**油菜花季3至4月**（黃色山坡）；**繡球花6月**（藍/紫色）",
+            "**岬角免費入場**；Yumin美術館 + 玻璃屋餐廳需另行購票",
+            "城山日出峰在岬角頂端**清晰可見於4公里外**——UNESCO三重認定的完美背景"
           ],
           "timeUsed": [
-            "Parking + entrance — ~5 min",
-            "Cape trail walk — ~25 min",
-            "Lighthouse + Hyeopja Yeondae photos — ~10 min",
-            "Tadao Ando buildings exterior viewing — ~10 min",
-            "Return to coach + buffer — ~10 min"
+            "停車+入場——約5分鐘",
+            "海岬步道漫步——約25分鐘",
+            "燈塔＋俠子煙臺烽燧臺拍照——約10分鐘",
+            "安藤忠雄建築外觀觀賞——約10分鐘",
+            "返回大巴＋集合時間——約10分鐘"
           ],
-          "whyOnRoute": "**Seopjikoji's Tadao Ando architecture** (Glass House restaurant + Yumin Art Gallery, **Pulitzer Prize laureate** Phoenix Island development) plus the **Joseon Hyeopja Yeondae Beacon** (Special Monument No. 23-2) give the day a deliberate contrast — UNESCO geology in the morning, **Pulitzer-laureate concrete minimalism + Joseon-era beacon heritage** at midday. The cape is **15 minutes south of Seongsan** and offers an **easy 1-km coastal walk** (level path, suitable for the full bus group with no fitness gating). **Five K-drama filming credits** (All In, My Girl, Legend of Gingko, The Uprising, Cheonilya) make this an obligatory K-drama-fan stop — particularly resonant for cruise guests on Asian itineraries who recognize the architecture from their home-market broadcasts.",
+          "whyOnRoute": "**涉地可支的安藤忠雄建築**（玻璃屋餐廳+有民美術館）是巴士遊路線的特色亮點。",
           "_poi_meta": {
             "poi_key": "seopjikoji",
             "kb_version": "1.19",
@@ -648,22 +566,22 @@
               "Jeju Provincial Cultural Heritage — Special Monument No. 23-2 designation",
               "VisitJeju — Seopjikoji official listing",
               "Korea Lighthouse Service — Bangdupo Lighthouse operation records",
-              "Tadao Ando Architect & Associates — Phoenix Island project documentation",
-              "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
+              "安藤忠雄 Architect & Associates — Phoenix Island project documentation",
+              "SBS Drama Archive — '《All In》' (2003) and 'My Girl' (2005) filming locations"
             ]
           }
         },
         {
-          "name": "Lunch (East Jeju — local seafood or black pork)",
-          "category": "Lunch",
-          "description": "**East Jeju lunch stop** at a guide-vetted local restaurant in the Seongsan / Seongeup / Pyoseon area, chosen to fit cruise day-trip timing. **Two typical options**, selected based on group preference and availability: **(1) Jeju Black Pork Heukdwaeji BBQ** (제주 흑돼지) — Jeju's signature ingredient, the indigenous Black Pig was designated **Natural Monument of Korea** in 2015, and pork-belly cuts are grilled over charcoal at the table with traditional banchan; or **(2) Galchi Jorim** (갈치조림 — braised hairtail with radish, soy-chili sauce) — eastern Jeju's famous seafood dish, drawing on the daily catch from Seongsan and Seongeup-area harbors. Vegetarian options are available at most venues with advance notice (the guide confirms with the restaurant ~30 min ahead). Lunch duration is **~60 minutes**, fitting the cruise day-trip's tight timeline (full day usually 8 hours port-to-port). Beverages: barley tea (free), local **Jeju Beer** (~₩6,000), or **Hallasan Soju** (Jeju's signature distilled spirit, ~₩5,000). All restaurants in the rotation accept **major cards (Visa/Mastercard) + cash KRW**; bilingual photo menus (English/Chinese) are standard at the cruise-tour-vetted venues. Lunch is **NOT included** in the standard cruise tour pricing — typical out-of-pocket is **₩15,000–25,000 per person** (varies by dish); inclusive lunch upgrade available on booking.",
+          "name": "午餐（東濟州——當地海鮮或黑豬肉）",
+          "category": "午餐",
+          "description": "在城山/城邑/表善地區的**東濟州午餐**，在導遊推薦的當地餐廳用餐。",
           "highlights": [
-            "Guide-vetted East Jeju restaurant — Seongsan / Seongeup / Pyoseon area",
-            "**Jeju Black Pork BBQ** (Natural Monument 2015) or **Galchi Jorim** (braised hairtail)",
-            "~60 min duration — fits cruise day-trip timeline",
-            "Bilingual photo menus (English/Chinese), card + cash accepted",
-            "Vegetarian options on advance notice",
-            "**Lunch NOT included** — out-of-pocket ₩15,000–25,000/pax (upgrade available)"
+            "導遊推薦東濟州餐廳——城山/城邑/表善地區",
+            "**濟州黑豬肉BBQ**（天然紀念物2015年）或**帶魚辣燒**",
+            "約60分鐘——適合郵輪當日行程",
+            "英中雙語圖文菜單，可刷卡+現金",
+            "提前告知可提供素食選項",
+            "**午餐不含**——現場自付₩15,000–25,000/人"
           ],
           "_poi_meta": {
             "poi_key": "OPS_lunch_east_jeju",
@@ -677,37 +595,37 @@
           },
           "number": 4,
           "time": "≈ 12:30",
-          "duration": "60 min",
-          "whyOnRoute": "**Lunch is positioned at the route's geographic midpoint**, not the chronological middle, to absorb any morning schedule slip from cruise immigration delays. Located within **15 minutes of Seopjikoji**, the lunch stop puts the group near the next afternoon anchor (Seongeup Folk Village, ~10 min further inland) and avoids the longer eastern-coast detour that would consume return-drive time. Bus-tour guests typically prefer the **Black Pork BBQ option** — the at-table charcoal experience is a memorable cruise-day photo and the indigenous Black Pig (Natural Monument 2015) ties into the day's heritage theme."
+          "duration": "60分鐘",
+          "whyOnRoute": "**午餐設在路線地理中點**，以吸收上午的行程延誤，同時為下午參觀提供時間餘裕。"
         },
         {
           "number": 5,
           "time": "≈ 13:45",
-          "duration": "60 min",
-          "name": "Seongeup Folk Village",
-          "category": "Joseon-era Walled Town — Important Folklore Cultural Heritage (1423 founding)",
-          "description": "**Seongeup Folk Village (성읍 민속마을)** is a **living Joseon-era walled town founded in 1423** during the reign of **Sejong the Great** as Jeong-eui-hyeon (정의현), one of the three administrative seats of Joseon-era Jeju. The village served continuously as a **county administrative center until 1914** — nearly **500 years** — and retains **110 traditional structures** today within the original eupseong (읍성) walled-town footprint, designed on **Korean feng shui principles** typical of Joseon county capitals. The entire village is designated **Important Folklore Cultural Heritage of South Korea**, with **multiple individual buildings** carrying separate heritage status. At the village center stand **two ancient trees designated Natural Monuments of South Korea** — a **Saw-leaf Zelkova (느티나무)** and a **Japanese Hackberry (팽나무)**, both estimated **600+ years old** and revered as the village's spiritual anchor. Historical scars are visible: a **major fire in 1826 destroyed ~80 buildings**, and the village suffered fire damage **during the Jeju Uprising in 1948** — both events preserved as historical record on village signage. The **peak household count (historical, pre-modern) was ~1,500** — today the village remains inhabited by ~250 families, many actively maintaining traditional crafts. Drama filming credit: **'Dae Jang Geum (Jewel in the Palace)' (MBC, 2003–2004)**, the international K-drama hit. Local specialty: **Omegisul (오메기술)** — a **rice-based traditional Jeju liquor** brewed by **one family for multiple generations**, with the brewing demonstrated and tasted free of charge at the home-brewery within the village. **FREE admission**; outdoor walking dominates (~70% outdoor / 30% indoor for individual hanok visits).",
+          "duration": "60分鐘",
+          "name": "城邑民俗村",
+          "category": "朝鮮時代城郭城鎮——重要民俗文化遺產（1423年創立）",
+          "description": "**城邑民俗村**是**世宗大王1423年創建的保存完整的濟州傳統民俗村**。",
           "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
           "highlights": [
-            "**Founded 1423** by Sejong the Great — administrative center until **1914 (~500 years)**",
-            "**110 traditional structures** within original eupseong walled-town footprint",
-            "**Important Folklore Cultural Heritage of South Korea** (entire village + multiple buildings)",
-            "**Two ~600-year-old trees** at center: Saw-leaf Zelkova + Japanese Hackberry — **Natural Monuments**",
-            "Designed on **Joseon Korean feng shui (geomancy) principles** — typical county-capital plan",
-            "**'Dae Jang Geum' (MBC 2003–2004)** filming location — international K-drama hit",
-            "**Omegisul (오메기술)** — rice-based Jeju liquor brewed by single family for generations (free tasting)",
-            "Historical scars: **1826 fire** destroyed ~80 buildings; **1948 Jeju Uprising** damage",
-            "**FREE admission** — village still inhabited by ~250 families maintaining traditions"
+            "**始建於1423年**（世宗大王年間）——行政中心持續運作至**1914年（近500年）**",
+            "原有邑城城郭範圍內保存**110棟傳統建築**",
+            "**韓國重要民俗文化遺產**（整座村落 + 多棟個別建築）",
+            "村落中心有**兩棵樹齡逾600年的古樹**：光葉櫸 + 樸樹 — **天然紀念物**",
+            "按照**朝鮮韓國風水（地理）原則**規劃 — 典型縣政中心格局",
+            "**《大長今》（MBC 2003至2004年）**拍攝地 — 國際韓劇大作",
+            "**五味子酒** — 濟州傳統米釀酒，單一家族世代相傳釀造（免費品嚐）",
+            "歷史傷痕：**1826年大火**燒燬約80棟；**1948年濟州四三事件**破壞",
+            "**免費入場** — 村落仍有約250戶人家居住，延續傳統"
           ],
           "timeUsed": [
-            "Parking + welcome brief by village docent — ~10 min",
-            "Walk to ancient trees + village center — ~10 min",
-            "Hanok interior visits (2–3 representative homes) — ~15 min",
-            "Omegisul brewery free tasting — ~10 min",
-            "Olle alley walk + photography — ~10 min",
-            "Buffer — ~5 min"
+            "停車+村落解說員迎接簡介——約10分鐘",
+            "走至古樹+村落中心——約10分鐘",
+            "參觀韓屋內部（代表性民居2–3棟）——約15分鐘",
+            "五味子酒釀造坊免費品嚐——約10分鐘",
+            "奧萊小巷散步+拍照——約10分鐘",
+            "集合時間——約5分鐘"
           ],
-          "whyOnRoute": "**Seongeup Folk Village** (founded **1423 by Sejong the Great**, ~500 years administrative function until 1914) is the day's **Important Folklore Cultural Heritage** anchor — a UNESCO-Geopark-adjacent traditional village that complements the morning's Seongsan UNESCO geology with a deeper cultural layer. The flat village layout (no climbing) is **perfectly suited to a bus group** — the 60-minute walking circuit covers the **two ~600-year Natural Monument trees** at center, the **fortress-wall remnants**, the **stone harubang grandfather statues** at gate corners, and a guided tasting of **Omegisul** (the rice-millet liquor brewed by a single family for generations). The Dae Jang Geum (MBC 2003–2004) filming credit also resonates with cruise guests on Asian itineraries.",
+          "whyOnRoute": "**城邑民俗村**（世宗大王**1423年創建**，1914年前約500年行政功能）是東線的深度文化亮點。",
           "_poi_meta": {
             "poi_key": "seongeup_folk_village",
             "kb_version": "1.19",
@@ -722,16 +640,16 @@
           }
         },
         {
-          "name": "Return to Jeju Cruise Terminal (Jeju Port — north)",
-          "category": "Cruise Return & All-Aboard",
-          "description": "Return drive to the **Jeju International Passenger Terminal** (제주항 국제여객터미널) on Jeju City's northern coast. The route from East Jeju (Seongsan/Seongeup area) takes ~70–80 minutes via Highway 1132 (the coastal ring road) and Route 16, with one designated comfort stop. Drop-off is timed to deliver guests to the terminal **at least 60 minutes before your ship's all-aboard time**, matching the cruise industry's standard buffer for embarkation queues. The vehicle pulls into the **100-bus parking capacity lot**, guests disembark at the terminal entrance with luggage assistance from the driver/guide. If guests have early evening flights from Jeju International Airport, **Bus #100 connects directly from the cruise terminal to the airport** — the guide can advise on this option. The terminal interior offers convenience store, pharmacy, snack shop, souvenir shops with **tax-free items**, Jeju Bank ATM accepting overseas cards, currency exchange (typical hours 08:00–17:00), and SK Telecom T-mobile Wi-Fi rental counter — useful if guests want last-minute purchases or to reload mobile data before sailaway. **Free shuttle bus to Dongmun Traditional Market** (oldest/largest in Jeju City, ~10 min) is also available for any guests with extra time before all-aboard.",
+          "name": "返回濟州郵輪碼頭（北部）",
+          "category": "返回郵輪與全體登船",
+          "description": "駕車返回濟州市北海岸的**濟州國際客運碼頭**。從城邑經1132號公路+16號路線返回約70–80分鐘。",
           "highlights": [
-            "**Drop-off 60+ min before all-aboard time** — standard cruise embarkation buffer",
-            "~70–80 min from East Jeju via Highway 1132 + Route 16 with one comfort stop",
-            "Driver/guide assist with luggage at terminal entrance",
-            "Bus #100 connects terminal directly to **Jeju International Airport** (for late flights)",
-            "Tax-free souvenir shops, Jeju Bank ATM, currency exchange, Wi-Fi rental on-site",
-            "Free shuttle to **Dongmun Traditional Market** (~10 min) if extra time before all-aboard"
+            "**全體登船60分鐘前下車**——郵輪標準登船前預留時間",
+            "東濟州經1132號公路+16號路線約70–80分鐘（含1次休息站）",
+            "在碼頭入口協助搬運行李",
+            "碼頭直達**濟州國際機場100路公車**（當日出港乘客適用）",
+            "碼頭內免稅店、濟州銀行ATM、外匯兌換、Wi-Fi租賃",
+            "全體登船前如有餘時，可乘免費班車前往**東門傳統市場**（約10分鐘）"
           ],
           "_poi_meta": {
             "poi_key": "jeju_cruise_port",
@@ -746,64 +664,64 @@
             ]
           },
           "number": 6,
-          "time": "≈ 15:30 → arrive port ≈ 16:45",
-          "duration": "75 min drive + 60 min buffer",
-          "whyOnRoute": "**Return drive is the day's longest single block** (~70–80 min from Seongeup to Jeju Port via Highway 1132 + Route 16), with **one comfort stop** at a roadside rest area along the eastern coast. The drop-off timing targets **at least 60 minutes before all-aboard** — for a 17:30 all-aboard cruise, the bus arrives by 16:30, giving guests an unhurried buffer for last-minute shopping at terminal duty-free, currency conversion, or a final coffee. **Bus-tour cost efficiency** comes through here: the per-pax coach return is dramatically cheaper than equivalent private-car return for the same distance — a key reason this is the **value-priced cruise option** in the catalog."
+          "time": "≈ 15:30 → 抵港約16:45",
+          "duration": "75分鐘車程＋60分鐘預留",
+          "whyOnRoute": "**返程是全天最長的單一路程**（約70–80分鐘），全體登船時間前留有60分鐘以上餘量。"
         }
       ],
       "routeFlowStops": [
         {
           "id": "01",
-          "name": "Cruise Terminal",
-          "theme": "Departure"
+          "name": "郵輪碼頭",
+          "theme": "出發"
         },
         {
           "id": "02",
-          "name": "Sunrise Peak",
-          "theme": "Volcano"
+          "name": "日出峰",
+          "theme": "火山"
         },
         {
           "id": "03",
-          "name": "Seopjikoji",
-          "theme": "Coast"
+          "name": "涉地可支",
+          "theme": "海岸"
         },
         {
           "id": "04",
-          "name": "Lunch",
-          "theme": "Meal"
+          "name": "午餐",
+          "theme": "餐飲"
         },
         {
           "id": "05",
-          "name": "Folk Village",
-          "theme": "Culture"
+          "name": "民俗村",
+          "theme": "文化"
         },
         {
           "id": "06",
-          "name": "Cruise Terminal",
-          "theme": "Return"
+          "name": "郵輪碼頭",
+          "theme": "返回"
         }
       ],
       "routePhases": [
         {
-          "label": "Morning",
+          "label": "上午",
           "range": "1-3",
-          "theme": "UNESCO volcano + coast",
+          "theme": "UNESCO火山與海岸",
           "bgClass": "bg-sky-50/70",
           "textClass": "text-sky-700",
           "dotClass": "bg-sky-500"
         },
         {
-          "label": "Midday",
+          "label": "中午",
           "range": "4",
-          "theme": "Lunch",
+          "theme": "午餐",
           "bgClass": "bg-amber-50/70",
           "textClass": "text-amber-700",
           "dotClass": "bg-amber-500"
         },
         {
-          "label": "Afternoon",
+          "label": "下午",
           "range": "5-6",
-          "theme": "Folk culture + return",
+          "theme": "民俗文化與返程",
           "bgClass": "bg-emerald-50/70",
           "textClass": "text-emerald-700",
           "dotClass": "bg-emerald-500"
@@ -812,9 +730,9 @@
     },
     {
       "port_id": "gangjeong_port",
-      "port_label": "Gangjeong Port (Seogwipo Terminal)",
-      "port_label_short": "Gangjeong Port",
-      "route_focus": "Hallasan alpine + southwest coast geology + market",
+      "port_label": "江汀港（西歸浦碼頭）",
+      "port_label_short": "江汀港",
+      "route_focus": "漢拿山高山地帶+西南海岸地質+市場",
       "pickup_base": "gangjeong_port",
       "duration_band": "8h",
       "return_time_band": "16:30-17:00",
@@ -832,23 +750,23 @@
         "market",
         "shopping"
       ],
-      "scenic_level_in_variant": 1,
+      "scenic_level_in_variant": 1.0,
       "walking_level_in_variant": 0.6,
       "indoor_ratio_in_variant": 0.25,
       "weather_sensitivity_in_variant": 0.6,
       "stops": [
         {
-          "name": "Gangjeong Cruise Terminal Pickup (Seogwipo — south)",
-          "category": "Pickup & Cruise Logistics",
-          "description": "Your driver and English-speaking guide meet your party at the **Gangjeong Port Cruise Terminal** (강정 크루즈항 / 서귀포 크루즈터미널 — UN/LOCODE **KRSPO**), officially the **'Jeju Civilian-Military Complex Port for Beautiful Tourism'** (제주 민군복합형관광미항), located in Gangjeong Village on Seogwipo's southern coast. The terminal opened in **February 2016**; cruise passenger operations began **2017**. Unlike the smaller northern Jeju Port, Gangjeong has **TWO cruise berths** — the **Western Seawall (Berths 11–12, 420 m, 12–15 m depth, 220,000-ton capacity)** and the **Southern Seawall (Berths 21–22, 690 m, 17 m depth, 220,000-ton capacity)** — handling **two large cruise ships simultaneously**. Pickup is timed for **30 minutes after your ship's posted clearance**, with the driver carrying an English/Korean placard. The vehicle is parked in the **53-bus outdoor parking area** (which fills quickly when both berths are occupied — guides arrive early on dual-ship days). Beginning **May 1, 2025**, **Adora Magic City began semi-homeporting at Gangjeong** with 33 roundtrip voyages planned through end-2025 (5–6 day Shanghai ↔ Jeju ↔ Japan circuits, 60–120 Korean passengers per voyage), increasing the port's profile for both Korean and international cruise lines. The terminal has **better wheelchair accessibility than Jeju Port (north)** per VisitKorea — flat interior, moving walkways, elevators throughout. If guests dock at Gangjeong, the **southern itinerary** is mandatory: the drive north to Seongsan Ilchulbong is **70+ min one-way**, eating the day.",
+          "name": "江汀郵輪碼頭接船（西歸浦·南部）",
+          "category": "接船與郵輪物流",
+          "description": "司機和英語導遊將在**江汀港郵輪碼頭**（江汀郵輪港 / 西歸浦郵輪碼頭）入境大廳持姓名牌等候。",
           "highlights": [
-            "**Two berths × 220,000-ton capacity** — handles 2 cruise ships concurrently",
-            "Pickup 30 min after clearance; English-speaking guide + name placard at arrival hall",
-            "Officially **'Civilian-Military Complex Port for Beautiful Tourism'** — opened Feb 2016",
-            "**53-bus outdoor parking** — fills fast on dual-ship days; guides arrive early",
-            "Better **wheelchair accessibility** than Jeju Port (north) — flat interior, elevators",
-            "**Adora Magic City semi-homeport since May 1, 2025** — 33 roundtrips planned",
-            "Southern itinerary is mandatory from this port — Seongsan is 70+ min one-way"
+            "**雙泊位×22萬噸容量**——可同時停靠2艘郵輪",
+            "清關後30分鐘接送；英語導遊+姓名牌在入境大廳等候",
+            "官方定名為**'美麗旅遊軍民複合港'**——2016年2月開港",
+            "**53輛大巴室外停車位**——雙船靠港日很快停滿；導遊提前到達",
+            "比濟州港（北部）**無障礙通道更好**——內部平坦、設有電梯",
+            "**雅詩達郵輪2025年5月1日起半母港運營**——計劃33次往返",
+            "從此港前往城山須單程70分鐘以上，南線行程為必然選擇"
           ],
           "_poi_meta": {
             "poi_key": "gangjeong_cruise_port",
@@ -863,36 +781,36 @@
             ]
           },
           "number": 1,
-          "time": "Cruise arrival + 30 min",
-          "duration": "30 min",
-          "whyOnRoute": "**Gangjeong is the only viable origin for the south route** — its dual-berth 220,000-ton capacity makes it the cruise gateway for larger ships (Adora Magic City, MSC, Costa, etc.) that exceed Jeju Port's 140,000 GT limit. All four southern POIs (Hallasan 1100 / Jusangjeolli / Cheonjiyeon / Olle Market) sit within a **30-min radius of this port**, building a comfortable 8-hour day with zero long transit blocks. For a **bus tour**, the 53-bus parking capacity is the key constraint on dual-ship days — the operator's standard practice is to arrive 15 minutes early to secure a coach slot, ensuring guests don't wait at curbside after disembarkation."
+          "time": "郵輪入港後30分鐘",
+          "duration": "30分鐘",
+          "whyOnRoute": "**江汀港是南線唯一可行的起點**——雙泊位22萬噸容量的港口是大型郵輪的靠港地。"
         },
         {
           "number": 2,
           "time": "≈ 09:30",
-          "duration": "60 min",
-          "name": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
-          "category": "Alpine Wetland — Ramsar Site + within Hallasan UNESCO World Heritage",
-          "description": "**Hallasan 1100 Altitude Wetland (한라산 1100고지 습지)** is a high-elevation alpine wetland system on the Hallasan plateau, located **at exactly 1,100 m above sea level** along **Route 1100 — the highest national highway in Korea** linking Jeju City to Seogwipo Jungmun. The site is a **Ramsar Wetland of International Importance (Site No. 1893, designated 12 October 2009)**, falling within the **Hallasan UNESCO World Heritage Site (2007)**, **Jeju Island UNESCO Biosphere Reserve (2002)**, and **Hallasan National Park (1970)** — making this one of the few sites globally with **four overlapping international/national designations**. The wetland comprises **16+ discontinuous freshwater marshes and pools** spread across a low-gradient plateau section that captures and retains rainwater, forming **small permanent lakes and peat bogs** that support diverse floristic assemblages with significant Jeju endemism. Recorded biodiversity includes **3 threatened bird species and 1 threatened plant species within Korea**, plus mammal, reptile, and insect species endemic to Jeju Island. The site received **900,000 visitors in 2008** (Mt Halla Visitor Centre data). Visitor experience: a **1-km wooden boardwalk loop** with observation decks, interpretive signage, and a small natural-history exhibit at the trailhead. **Autumn foliage (October–November)** and **winter snow scenes (December–February)** are the most photographed seasons; **spring + summer** offer wetland flora and endemic species visibility. **FREE admission**; adjacent **1100 Rest Area (1100 휴게소)** provides indoor restrooms + cafe + small souvenir shop. **Cultural and religious importance** to local communities is documented in the Ramsar listing — historical shaman pilgrimages tied to mountain-water spirits.",
+          "duration": "60分鐘",
+          "name": "漢拿山1100高地溼地（拉姆薩爾+UNESCO）",
+          "category": "高山溼地——拉姆薩爾溼地+漢拿山UNESCO世界遺產範圍內",
+          "description": "**漢拿山1100高地溼地**是漢拿山高原上的高海拔高山溼地體系，海拔約1100米。",
           "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
           "highlights": [
-            "**Ramsar Site No. 1893** (designated 12 Oct 2009) — Wetland of International Importance",
-            "**1,100 m above sea level** — on Korea's **highest national highway** (Route 1100)",
-            "**Quadruple international designation** — Ramsar + UNESCO World Heritage + Biosphere + National Park",
-            "**16+ discontinuous wetlands** — freshwater marshes + pools + peat bogs",
-            "**3 threatened bird + 1 threatened plant** species; multiple Jeju endemics",
-            "**900,000 visitors (2008)** — Mt Halla Visitor Centre managed",
-            "**1-km wooden boardwalk loop** with observation decks + interpretive signage",
-            "**Autumn foliage + winter snow** = signature photographic seasons",
-            "**FREE admission**; adjacent 1100 Rest Area (indoor restroom + cafe)"
+            "**拉姆薩爾第1893號**（2009年10月12日指定）——具有國際重要性的溼地",
+            "**海拔1100米**——位於韓國**最高國道**（1100號公路）上",
+            "**四重國際認定**——拉姆薩爾+UNESCO世界遺產+生物圈保護區+世界地質公園",
+            "**16處以上不連續溼地**——淡水沼澤+水池+泥炭沼",
+            "**3種瀕危鳥類+1種瀕危植物**；多種濟州特有種",
+            "**2008年年訪客90萬人**——漢拿山遊客中心管理",
+            "設有觀景臺及解說牌的**1公里木棧道環線**",
+            "**秋季紅葉+冬季雪景**=代表性攝影季節",
+            "**免費入場**；鄰近1100高地休息站（室內廁所+咖啡館）"
           ],
           "timeUsed": [
-            "Coach arrival + parking at 1100 Rest Area — ~5 min",
-            "Boardwalk loop + observation decks — ~25 min",
-            "Interpretive signage + natural-history exhibit — ~10 min",
-            "Buffer / cafe restroom — ~5 min"
+            "大巴抵達+停車於1100休息區 — 約5分鐘",
+            "木棧道環線+觀景臺 — 約25分鐘",
+            "解說標牌+自然歷史展覽 — 約10分鐘",
+            "集合/咖啡廳衛生間 — 約5分鐘"
           ],
-          "whyOnRoute": "**Hallasan 1100 Highland (Ramsar Site No. 1893, designated 12 October 2009)** is the day's altitude-and-credentials anchor — a **13-hectare wetland at 1,100 m elevation** along **Korea's highest national highway (Route 1100)**, with the rare **quadruple international designation** (Ramsar + UNESCO World Heritage 2007 + UNESCO Biosphere 2002 + National Park 1970). The **1-km wooden boardwalk loop** is **flat and accessible** for the full bus group with no fitness gating — and the temperature contrast (~10°C cooler than the coast) is a memorable cruise-day moment, especially in summer. **FREE admission** + free parking keeps this a value-positive stop for the bus product.",
+          "whyOnRoute": "**漢拿山1100高地（拉姆薩爾第1893號，2009年10月12日指定）**是全天的海拔與資質核心亮點。",
           "_poi_meta": {
             "poi_key": "hallasan_1100_wetland",
             "kb_version": "1.20",
@@ -909,30 +827,30 @@
         {
           "number": 3,
           "time": "≈ 11:00",
-          "duration": "45 min",
-          "name": "Daepo Jusangjeolli Cliff",
-          "category": "Volcanic Coastline — Hexagonal Columnar-Jointed Lava",
-          "description": "**Daepo Jusangjeolli (대포 주상절리, 'Jisatgae')** is a **1 km stretch of hexagonal columnar-jointed basalt cliff** on the Jungmun coast — designated **Natural Monument No. 443 on 2005年1月6日**. The columns rise **30–40 m** from the sea, packed in tightly fitted **5- to 7-sided polygons** (mostly hexagons) — a geometry produced when **molten basaltic lava from a Hallasan flank eruption (~250,000–140,000 years ago) reached the ocean and contracted as it cooled**, fracturing perpendicular to the cooling surface. Globally, columnar jointing is best known from **Giant's Causeway (UK)**, **Devils Postpile (US)**, and **Fingal's Cave (Scotland)** — Jusangjeolli is **East Asia's premier example** and the most accessible. The 800 m **boardwalk loop** delivers visitors to a railed cliff edge directly above the columns; **on high-tide days waves break against the columns and throw spray up to 20 m**, occasionally over the rail. Admission: **Adult ₩2,000 / Youth ₩1,000 / FREE under 7 and over 65**. The site is part of the **Jeju Global Geopark (UNESCO designated 2010-10)** — one of **13 official geosites** on the island, alongside Seongsan Ilchulbong, Manjanggul Lava Tube, and Suwolbong. The clifftop deck is **barrier-free** (wheelchair/stroller accessible). Three viewing platforms along the loop give different column angles: the **first platform** shows the columns in profile (best for the hexagonal-geometry shot), the **mid-platform** looks straight down for top-of-column patterns, and the **far platform** captures the 1 km coastal sweep with Hallasan as backdrop on clear days. **Photographic peak window: 14:00–16:00**, when westering sunlight lights the column faces frontally; sunset visits bring silhouette compositions but lose column-detail texture. Hours: **09:00–18:00 (last entry 17:30)**, year-round operation.",
+          "duration": "45分鐘",
+          "name": "大浦柱狀節理帶",
+          "category": "火山海岸線——六角形柱狀節理熔岩",
+          "description": "**大浦柱狀節理 ** 是濟州柱狀節理的代表景點，位於中文觀光園區海岸，全長約 **1 km**，由六角形為主的玄武岩柱群組成，2005年1月6日被指定為**天然紀念物第443號**。岩柱高約 **30–40 m**，多呈 **5–7邊形**，是漢拏山側翼噴發的玄武質熔岩（約25萬–14萬年前）流入海中後快速冷卻、收縮並沿冷卻面垂直裂開的結果。全球著名柱狀節理包括英國巨人堤、美國 Devils Postpile、蘇格蘭 Fingal's Cave，而濟州柱狀節理是東亞最具代表性且最容易到達的案例之一。遊客可沿約800 m的木棧道步行到設有護欄的海邊觀景台；漲潮或浪大時，海浪拍打岩柱，浪花有時可高達20 m。門票：成人 ₩2,000 / 青少年 ₩1,000 / 7歲以下及65歲以上免費。這裡屬於 **濟州世界地質公園（UNESCO 2010年指定）** 的13個官方地質景點之一，與城山日出峰、萬丈窟熔岩洞、水月峰等並列。崖頂觀景台為無障礙通行，輪椅和嬰兒車可通行。沿線三個觀景平台可拍到不同角度：第一平台適合拍岩柱側面，中間平台可俯拍柱頂紋理，最遠平台可拍1 km海岸線和晴天時的漢拏山背景。**最佳拍照時段約14:00–16:00**，夕陽前的斜光能照亮岩柱正面；日落時更適合剪影，但岩柱細節會減少。開放時間：**09:00–18:00（17:30停止入場）**，全年營運。",
           "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
           "highlights": [
-            "**Natural Monument No. 443** — designated **2005年1月6日**, the most recent Jeju coastal NM",
-            "Columns rise **30–40 m**, packed in **5- to 7-sided polygons** (mostly hexagons) along **1 km** of coastline",
-            "Formation: **Hallasan flank lava cooled in the sea ~250,000–140,000 years ago**, contracting perpendicular to cooling face",
-            "**East Asia's premier columnar-jointing site** — peer to Giant's Causeway, Devils Postpile, Fingal's Cave",
-            "**Spray up to 20 m on high-tide days** — wave-fountain photography window",
-            "**0.8 km boardwalk loop**, ~15 min walk — barrier-free deck, wheelchair/stroller accessible",
-            "Part of **Jeju Global Geopark (UNESCO 2010-10)** — 13 island-wide geosites",
-            "Admission **₩2,000 adult / ₩1,000 youth / FREE under 7 + over 65**",
-            "Hallasan summit visible to the north on clear days, **directly downstream** geologically"
+            "**天然紀念物第443號**——於**2005年1月6日**指定，是濟州較晚指定的海岸天然紀念物之一",
+            "石柱沿**5–7邊形多邊形**（主要為六角形）高**30–40米**，連續延伸1公里",
+            "形成：**漢拿山側面熔岩約25–14萬年前在海中冷卻**，收縮形成節理",
+            "**東亞最頂級柱狀節理景區**——與英國巨人堤道、魔鬼巖柱齊名",
+            "**漲潮時浪花可高達20米**——波浪噴泉攝影的最佳時機",
+            "**0.8公里棧道環線**，約15分鐘——無障礙通道，輪椅/嬰兒車可通行",
+            "**濟州世界地質公園（UNESCO 2010年）**的一部分——全島13處地質遺址",
+            "門票**成人₩2,000/青少年₩1,000/7歲以下+65歲以上免費**",
+            "晴天時北方可見漢拿山頂，與柱狀節理在地質上具有**直接上遊**關系"
           ],
           "timeUsed": [
-            "Parking + ticket purchase + entrance — ~5 min",
-            "Walk to first viewing platform — ~5 min",
-            "Cliff-edge column viewing + photos — ~15 min",
-            "Continue boardwalk loop — ~10 min",
-            "Return to coach — ~10 min"
+            "停車+購票+入場 — 約5分鐘",
+            "步行至第一觀景臺 — 約5分鐘",
+            "懸崖邊觀賞柱狀節理+拍照 — 約15分鐘",
+            "繼續木棧道環線 — 約10分鐘",
+            "返回大巴 — 約10分鐘"
           ],
-          "whyOnRoute": "**Daepo Jusangjeolli Cliff (Natural Monument No. 443, designated 2005年1月6日)** is the **East Asian peer to Giant's Causeway, Devils Postpile, and Fingal's Cave** — Hallasan-flank lava reaching the sea **~250,000–140,000 years ago** contracted perpendicular to the cooling face, producing the iconic hexagonal-pentagonal columnar joints. The **paved cliff-edge walkway** (~15-min full circuit) is **bus-group-friendly** with railings throughout. Pairing with Hallasan 1100 in the morning gives the day a **vertical geology arc** — alpine wetland origin → coastal lava terminus, the same volcanic system from peak to sea — which makes for compelling guide narration.",
+          "whyOnRoute": "**大浦柱狀節理崖（天然紀念物第443號，2005年1月6日指定）**是濟州最具代表性的火山海岸景觀之一。漢拏山周邊的熔岩流入海岸後，約在25萬至14萬年前冷卻收縮，形成垂直於冷卻面的裂縫，逐漸發展成六角形、五角形的石柱群。鋪設完善的海崖步道全程約15分鐘，適合團體行程與短時間停留。若上午安排漢拏山1100高地，整天路線可自然串成「高山濕地起源 → 海岸熔岩終點」的垂直火山地質故事，導覽邏輯更完整，也更容易讓旅客理解濟州的火山地形。",
           "_poi_meta": {
             "poi_key": "daepo_jusangjeolli_cliff",
             "kb_version": "1.18",
@@ -947,16 +865,16 @@
           }
         },
         {
-          "name": "Lunch near Olle Maeil Market (Seogwipo)",
-          "category": "Lunch",
-          "description": "**Seogwipo lunch stop** at a guide-vetted sit-down restaurant **inside or adjacent to Seogwipo Maeil Olle Market**, taking advantage of the market's food density before the afternoon Cheonjiyeon Falls visit (5-min walk). **Two typical options** depending on group preference: **(1) Hairtail (galchi) sashimi or grilled galchi** — eastern coast's daily catch sold dockside-fresh at the market's seafood stalls, with sit-down preparations inside the arcade; or **(2) Black Pork BBQ** (제주 흑돼지) — Jeju's signature ingredient (Natural Monument 2015 indigenous Black Pig). **Bibimbap** with seasonal Jeju vegetables and **Mom-guk** (Jeju seaweed soup) are the standard vegetarian-friendly defaults. Lunch duration is **~60 minutes**, fitting the cruise day-trip timeline. Beverages: barley tea (free), **Jeju Beer** (~₩6,000), **Hallasan Soju** (~₩5,000), or **Omegisul rice-millet liquor** (Seongeup family recipe — sold at the market's licensed vendors). All venues in the rotation accept **major cards + cash KRW**; bilingual photo menus (English/Chinese) standard. Lunch is **NOT included** in cruise tour pricing — typical out-of-pocket **₩15,000–25,000/pax**; inclusive lunch upgrade available on booking. After lunch, the natural flow is **5-min walk → Cheonjiyeon Falls trailhead → 1 km gentle gorge walk** — making this the catalog's most efficient lunch-to-attraction transition for cruise day-trips.",
+          "name": "西歸浦每日奧萊市場附近午餐",
+          "category": "午餐",
+          "description": "在西歸浦奧萊每日市場內或附近的**西歸浦午餐**，在導遊推薦的餐廳用餐。",
           "highlights": [
-            "Guide-vetted sit-down inside / adjacent to **Olle Maeil Market**",
-            "**Galchi sashimi**, **black pork BBQ**, or vegetarian Bibimbap + Mom-guk options",
-            "~60 min duration — fits cruise day-trip timeline",
-            "**5-min walk to Cheonjiyeon Falls trailhead** — most efficient lunch-to-attraction flow",
-            "**Omegisul** (Seongeup rice-millet liquor) tastings available",
-            "**Lunch NOT included** — ₩15,000–25,000/pax out-of-pocket"
+            "導遊推薦**奧萊每日市場**內/附近餐廳",
+            "**帶魚生魚片**、**黑豬肉BBQ**或素食拌飯+媽媽湯",
+            "約60分鐘——適合郵輪行程",
+            "**步行5分鐘至天地淵瀑布步道**",
+            "可品嚐**五味子酒**（城邑大米小米傳統酒）",
+            "**午餐不含**——₩15,000–25,000/人自付"
           ],
           "_poi_meta": {
             "poi_key": "OPS_lunch_seogwipo_olle",
@@ -970,23 +888,23 @@
           },
           "number": 4,
           "time": "≈ 12:15",
-          "duration": "60 min",
-          "whyOnRoute": "**Lunch at Seogwipo Maeil Olle Market** is the south route's defining efficiency advantage — the market sits **5 minutes from Cheonjiyeon Falls trailhead**, so the group doesn't backtrack between lunch and the final substantive stop. For a **bus tour**, the market's **620-m covered arcade** also serves as bad-weather insurance — if it rains, lunch + post-meal browsing happens entirely under roof, and the food density (~140 vendors) absorbs a 25–40-pax group without the long wait that single-restaurant venues would impose."
+          "duration": "60分鐘",
+          "whyOnRoute": "**西歸浦奧萊每日市場午餐**是南線的效率優勢——市場距天地淵瀑布步道入口**僅步行5分鐘**。"
         },
         {
-          "name": "Cheonjiyeon Falls (Seogwipo old-town waterfall)",
-          "category": "Natural Attraction & Natural Monument",
-          "description": "**Cheonjiyeon Falls** (천지연 폭포 — literally 'Sky-meeting-Land Falls') is the closer-to-port of Seogwipo's two famous waterfalls and is **NOT to be confused with Cheonjeyeon Falls** (천제연 — the three-tier 'Pond of the Heavenly Emperor' falls in Jungmun, ~15 min west). The single-tier cascade plunges **22 m / 12 m wide into a 20 m-deep emerald pool** at the end of a **gentle 1 km riverside trail** (~15 min one-way, paved and stroller-friendly) that follows a subtropical gorge dense with **rare plants**: **Damselfly Tree** (Natural Monument No. 163), **Crepidomanes makinoi** ferns clinging to the basalt walls, and dozens of endemic species protected as **Natural Monument No. 379** (the falls + surrounding habitat ensemble). The pool below is the protected habitat of the **Mutae eel** (마부태 / 무태 — *Anguilla marmorata*, the marbled eel), itself **Natural Monument No. 27** — a nocturnal species whose movement under nighttime illumination is one of Cheonjiyeon's signature scenes. Admission is **₩2,000 adults / ₩1,000 children** (one of Jeju's most affordable nature stops); operating hours **09:00–22:00 (last entry 21:30)** — the **after-dark illumination program 19:00–22:00** is unique among Jeju waterfalls and turns the gorge walls + falls into an emerald-jade light show, often paired with cruise overnight stays. The trailhead is **a 5-minute walk from Olle Maeil Market**, making the two stops a natural pairing on cruise day-trips originating from Gangjeong port. On clear days, **Munseom Island** (3 km offshore — Korea's first marine-park designation, 1994) is visible from the falls observation deck, and the basalt cliff faces of the gorge expose the same Hallasan-flank lava-flow stratigraphy as Daepo Jusangjeolli.",
+          "name": "天地淵瀑布（西歸浦舊城瀑布）",
+          "category": "自然景觀與天然紀念物",
+          "description": "**天地淵瀑布**（字面意為'天地相連之瀑'）是西歸浦兩大著名瀑布中距港口更近的一處。",
           "highlights": [
-            "**Single-tier cascade 22 m × 12 m into 20 m-deep emerald pool** — Seogwipo's signature waterfall",
-            "**NOT Cheonjeyeon (천제연)** — different falls, different gorge, ~15 min west in Jungmun",
-            "**Natural Monument No. 379** (falls + endemic-flora habitat ensemble)",
-            "**Mutae eel (Natural Monument No. 27)** habitat — nocturnal marbled eel under illumination",
-            "**Damselfly Tree (Natural Monument No. 163)** + Crepidomanes makinoi ferns line the gorge",
-            "Gentle **1 km paved trail (~15 min)** — stroller/wheelchair friendly",
-            "**₩2,000 / ₩1,000 admission** (09:00–22:00; last entry 21:30)",
-            "**19:00–22:00 night illumination** — unique among Jeju waterfalls",
-            "**5-min walk from Olle Maeil Market** — natural pairing for south-route cruise days"
+            "**單級22米×12米瀑布→20米深翡翠色水潭**——西歸浦代表性瀑布",
+            "**非天帝淵**——不同瀑布、不同峽谷，位於中文以西約15分鐘",
+            "**天然紀念物第379號**",
+            "**無態鰻（天然紀念物第27號）**棲息地——夜行大理石紋鰻魚",
+            "**蜻蛉木（天然紀念物第163號）**+水晶苔蘚類峽谷步道",
+            "平緩的**1公里鋪裝步道（約15分鐘）**——嬰兒車/輪椅可通行",
+            "**₩2,000/₩1,000門票**（09:00–22:00；最晚入場21:30）",
+            "**19:00–22:00夜間燈光**——濟州瀑布中獨一無二",
+            "**距奧萊每日市場步行5分鐘**——南線郵輪當日完美搭配"
           ],
           "_poi_meta": {
             "poi_key": "cheonjiyeon_falls",
@@ -997,28 +915,28 @@
               "Visit Jeju (Natural Monument designations 27, 163, 379; trail length)",
               "Wikipedia (Cheonjiyeon Waterfall — habitat protection, distinction from Cheonjeyeon)",
               "Inside Jeju (hours 09:00–22:00 last entry 21:30; ₩2,000 / ₩1,000 admission)",
-              "Trip.com / Tripmoments (night illumination 19:00–22:00; Mutae eel nocturnal habitat)"
+              "(night illumination 19:00–22:00; Mutae eel nocturnal habitat)"
             ]
           },
           "number": 5,
           "time": "≈ 13:30",
-          "duration": "60 min",
-          "whyOnRoute": "**Cheonjiyeon Falls** caps the south route with a **gentle 1-km riverside trail** (paved, stroller-friendly) and a 22 m × 12 m emerald-pool cascade — the perfect post-lunch low-exertion finale. Three Natural Monument designations stack here (**No. 379** falls + habitat ensemble, **No. 27** Mutae eel, **No. 163** Damselfly Tree), continuing the day's heritage-credential narrative without requiring further climbing. **₩2,000 admission** keeps the south route's per-pax cost competitive against the north route's mostly-free anchors. **Critical fact for guides**: this is **Cheonjiyeon (천지연)**, NOT **Cheonjeyeon (천제연 — three-tier in Jungmun)**; the names confuse first-time guests so the guide explains upfront."
+          "duration": "60分鐘",
+          "whyOnRoute": "**天地淵瀑布**以**1公里河畔步道**（鋪裝、嬰兒車可通行）和22米高瀑布為南線畫上句號。"
         },
         {
-          "name": "Olle Maeil Market (Seogwipo Maeil Olle Market)",
-          "category": "Traditional Market & Food",
-          "description": "**Seogwipo Maeil Olle Market** (서귀포 매일올레시장) is **South Jeju's largest traditional market** and the closest food-and-shopping anchor to Gangjeong cruise port (~10 min drive). Established in **the early 1960s**, the market today runs a **620 m covered arcade with ~200 shops and ~140 vendors**, all under a translucent retractable roof that keeps shoppers dry in Jeju's frequent showers. The **'Maeil Olle'** name combines *Maeil* ('every day' — open daily, no fixed closure) with *Olle* (Jeju's famous walking-trail network — Trail Course 6 passes near the market entrance, and Course 7 connects southward to Cheonjiyeon Falls and the Seogwipo waterfront). Signature foods to look for: **Jeseong Bakery's octopus buns** (locally famous, queues form by 10:00); **hallabong + cheonhyehyang citrus** in winter (December–March, the famous Jeju mandarin hybrids); **fresh hairtail (galchi) sashimi**; **black pork skewers**; **Mom-guk** (traditional Jeju seaweed soup); and **Omegisul** (the rice-millet liquor brewed in Seongeup — sold here in tasting bottles). Hours are roughly **07:00–21:00** (vendor-by-vendor variable), and most of the older vendors accept cash only — though tax-refund and card-accepting modern stalls have multiplied since 2018. The market is a **5-minute walk from Cheonjiyeon Falls trailhead**, making Cheonjiyeon + Olle a natural lunch-and-stroll pairing — guides typically schedule lunch (Jeju seafood or black-pork) at one of the market's sit-down stalls before the falls visit, taking advantage of the food density before walking off the meal at the gorge.",
+          "name": "每日奧萊市場（西歸浦每日奧萊市場）",
+          "category": "傳統市場與美食",
+          "description": "**西歸浦每日奧萊市場**是**南濟州最大的傳統市場**。",
           "highlights": [
-            "**South Jeju's largest traditional market** — 620 m arcade, ~200 shops, ~140 vendors",
-            "Established **early 1960s** — 60+ year continuous market tradition",
-            "**Olle Trail Courses 6 & 7** pass near the market entrance",
-            "**Jeseong Bakery octopus buns** — local cult favorite, queues by 10:00",
-            "**Hallabong + cheonhyehyang citrus** in season (Dec–Mar) — Jeju mandarin hybrids",
-            "Hairtail (galchi) sashimi, black pork skewers, Mom-guk (Jeju seaweed soup)",
-            "**Omegisul rice-millet liquor** tastings (brewed in Seongeup)",
-            "**Translucent retractable roof** — covered arcade, weather-proof shopping",
-            "**5-min walk to Cheonjiyeon Falls trailhead** — natural lunch + stroll pairing"
+            "**南濟州最大傳統市場**——620米廊道，約200家店鋪，約140個攤位",
+            "**1960年代初創建**——60年以上傳統市場歷史",
+            "**奧萊步道6·7課程**從市場入口附近經過",
+            "**濟成麵包店章魚麵包**——本地口碑美食，上午10時即排起長隊",
+            "**漢拿峰+天惠香柑橘**當季（12–3月）——濟州柑橘品種",
+            "帶魚生魚片、黑豬肉串、媽媽湯（濟州海藻湯）",
+            "**五味子酒**（城邑產大米小米傳統酒）品嚐",
+            "**透明可開合天頂**——有頂廊道，風雨無阻購物",
+            "**距天地淵瀑布步道入口步行5分鐘**"
           ],
           "_poi_meta": {
             "poi_key": "olle_maeil_market",
@@ -1027,27 +945,27 @@
             "sources": [
               "VisitKorea / english.visitkorea.or.kr (market dimensions: 620 m, ~200 shops)",
               "Visit Jeju (early-1960s history; signature foods; Olle Trail proximity)",
-              "Klook / Mindtrip (vendor count ~140; opening hours)",
+              "Mindtrip (vendor count ~140; opening hours)",
               "Soul of Seoul (Olle Maeil Market food guide — Jeseong Bakery octopus buns)",
               "Jeju Olle Foundation (Trail Courses 6 & 7 routing through market area)"
             ]
           },
           "number": 6,
           "time": "≈ 14:45",
-          "duration": "45 min",
-          "whyOnRoute": "**Brief return swing through Olle Maeil Market** for last-minute purchases — hallabong/cheonhyehyang citrus boxes (Dec–Mar season), souvenir Omegisul bottles, or the Jeseong Bakery octopus buns to take aboard. The 45-minute window is generous enough for the bus group to disperse and reconvene without rushing — many guests use it for restroom + ATM + last-call coffee before the final return drive. **Most stalls accept Visa/Mastercard** (not just cash), which matters for cruise guests who've spent down their KRW already."
+          "duration": "45分鐘",
+          "whyOnRoute": "**最後返程路過奧萊每日市場**——臨行採購最後機會。漢拿峰/天惠香橘箱（12–3月）、黑豬肉加工品等。"
         },
         {
-          "name": "Return to Gangjeong Cruise Terminal (Seogwipo — south)",
-          "category": "Cruise Return & All-Aboard",
-          "description": "Return drive to the **Gangjeong Port Cruise Terminal** in Seogwipo's Gangjeong Village. From the southern circuit (Olle Maeil Market / Cheonjiyeon Falls / downtown Seogwipo area) the drive is short — **~10–15 min via local roads**. From Hallasan 1100 Highland the descent takes ~35 min via Route 1100 (the same highest-altitude national highway you ascended in the morning). Drop-off is timed to deliver guests **at least 60 minutes before your ship's all-aboard time**, matching cruise industry standard buffers. The vehicle pulls into the **53-bus outdoor parking area**, guests disembark at the terminal entrance with luggage assistance from the driver/guide. Inside the terminal: tourist information center (multilingual), convenience store, currency exchange, lounge, tax-refund counter. If guests dock at Gangjeong with same-day evening flights, **Limousine Bus 800 / 800-1** connects from Gangjeong-area to Jeju International Airport via Seogwipo Innovation City (driver must be informed of destination before tap-in). The southern itinerary keeps stops within **30-min radius of the port** — the comfortable 8-hour window is built around this geography. **Note**: Anti-base activists hold daily Catholic mass + 100-bow protests at the main gate (separate from cruise-passenger areas, away from the terminal — cruise guests rarely encounter these activities on the standard arrival/departure path).",
+          "name": "返回江汀郵輪碼頭（西歸浦·南部）",
+          "category": "返回郵輪與全體登船",
+          "description": "駕車返回西歸浦江汀村的**江汀港郵輪碼頭**。",
           "highlights": [
-            "**Drop-off 60+ min before all-aboard time** — cruise industry standard",
-            "From Olle Market / Cheonjiyeon area: ~10–15 min drive (port-side circuit)",
-            "From Hallasan 1100: ~35 min descent via Route 1100",
-            "Driver/guide luggage assistance at terminal entrance",
-            "**Limousine Bus 800 / 800-1** connects Gangjeong-area → Jeju Airport via Innovation City",
-            "Tourist info center, currency exchange, tax-refund counter on-site"
+            "**全體登船60分鐘前下車**——郵輪行業標準",
+            "奧萊市場/天地淵區域：約10–15分鐘車程",
+            "漢拿山1100：經1100號公路下山約35分鐘",
+            "在碼頭入口協助搬運行李",
+            "**利木津巴士800/800-1**江汀→濟州機場（經創新城）",
+            "碼頭內旅遊信息中心、外匯兌換處、退稅服務臺"
           ],
           "_poi_meta": {
             "poi_key": "gangjeong_cruise_port",
@@ -1062,69 +980,69 @@
             ]
           },
           "number": 7,
-          "time": "≈ 15:45 → arrive port ≈ 16:00",
-          "duration": "15 min drive + 60 min buffer",
-          "whyOnRoute": "**The shortest return in the catalog** — Olle Market to Gangjeong port is **~15 minutes** by coach. This is the south route's signature efficiency advantage: **all four substantive stops + lunch + market + return all happen within a ~30 km radius of the port**, leaving guests with **~60+ minutes of unhurried buffer** before all-aboard for terminal browsing, last currency conversion, or returning early to the ship. On a tight 8-hour port day, this transit efficiency translates to ~30 minutes of **extra ground time per stop** vs. a comparable north-route itinerary — measurable cruise-product value."
+          "time": "≈ 15:45 → 抵港約16:00",
+          "duration": "15分鐘車程＋60分鐘預留",
+          "whyOnRoute": "**目錄中最短的郵輪返程**——奧萊市場至江汀港大巴約**15分鐘**。"
         }
       ],
       "routeFlowStops": [
         {
           "id": "01",
-          "name": "Cruise Terminal",
-          "theme": "Departure"
+          "name": "郵輪碼頭",
+          "theme": "出發"
         },
         {
           "id": "02",
-          "name": "1100 Highland",
-          "theme": "Alpine"
+          "name": "1100高地",
+          "theme": "高山地帶"
         },
         {
           "id": "03",
-          "name": "Jusangjeolli",
-          "theme": "Geology"
+          "name": "柱狀節理",
+          "theme": "地質"
         },
         {
           "id": "04",
-          "name": "Lunch",
-          "theme": "Meal"
+          "name": "午餐",
+          "theme": "餐飲"
         },
         {
           "id": "05",
-          "name": "Cheonjiyeon",
-          "theme": "Waterfall"
+          "name": "天地淵",
+          "theme": "瀑布"
         },
         {
           "id": "06",
-          "name": "Olle Market",
-          "theme": "Market"
+          "name": "奧萊市場",
+          "theme": "市場"
         },
         {
           "id": "07",
-          "name": "Cruise Terminal",
-          "theme": "Return"
+          "name": "郵輪碼頭",
+          "theme": "返回"
         }
       ],
       "routePhases": [
         {
-          "label": "Morning",
+          "label": "上午",
           "range": "1-3",
-          "theme": "Alpine to coastal geology",
+          "theme": "從高山地帶到海岸地質",
           "bgClass": "bg-violet-50/70",
           "textClass": "text-violet-700",
           "dotClass": "bg-violet-500"
         },
         {
-          "label": "Midday",
+          "label": "中午",
           "range": "4",
-          "theme": "Lunch",
+          "theme": "午餐",
           "bgClass": "bg-amber-50/70",
           "textClass": "text-amber-700",
           "dotClass": "bg-amber-500"
         },
         {
-          "label": "Afternoon",
+          "label": "下午",
           "range": "5-7",
-          "theme": "Waterfall + market + return",
+          "theme": "瀑布、市場與返程",
           "bgClass": "bg-emerald-50/70",
           "textClass": "text-emerald-700",
           "dotClass": "bg-emerald-500"
@@ -1160,7 +1078,7 @@
           },
           {
             "label": "兩個靠港均為8小時結構",
-            "detail": "郵輪回程限制相同；路線因港口而調整，以最大限度減少交通浪費。"
+            "detail": "郵輪迴程限制相同；路線因港口而調整，以最大限度減少交通浪費。"
           }
         ]
       },
@@ -1187,7 +1105,7 @@
         "濟州港接送：濟州郵輪碼頭（北部濟州）",
         "江汀港接送：江汀郵輪碼頭（西歸浦，南部濟州）",
         "接送時間依郵輪班表確認",
-        "回程送至同一郵輪碼頭，在開船前留有緩衝時間"
+        "回程送至同一郵輪碼頭，在開船前留有預留時間"
       ]
     },
     {
@@ -1208,7 +1126,7 @@
         "大雨：城山日出峰峰頂攀登可能跳過（濟州港路線）",
         "漢拏山天氣：1100高地可能替換為低海拔景點（江汀港路線）",
         "強風：涉地可支和柱狀節理的沿海暴露段落將縮短",
-        "郵輪回程時間不可更改——路線調整，班表固定"
+        "郵輪迴程時間不可更改——路線調整，班表固定"
       ]
     },
     {
@@ -1248,30 +1166,30 @@
       "temp": "—",
       "label": "每日更新"
     },
-    "_seasonalSummary": "濟州島全年氣候溫和，郵輪岸遊行程可全年運行。天氣依地區變化——東部海岸景點全年氣候溫和；漢拏山1100高地（南部路線）比海岸涼約5至8°C，建議多層穿搭。颱風季節（7至9月）偶有強風影響沿海景點。"
+    "_seasonalSummary": "濟州島全年氣候溫和，郵輪岸遊行程可全年運行。天氣依地區變化——東部海岸景點全年氣候溫和；漢拏山1100高地（南部路線）比海岸涼約5至8°C，建議多層穿搭。臺風季節（7至9月）偶有強風影響沿海景點。"
   },
   "seasonalVariations": [
     {
       "season": "春季",
-      "title": "Cruise season opens",
+      "title": "郵輪季開幕",
       "description": "氣候溫和、天空明朗；郵輪岸遊能見度最佳。3月下旬至4月初城山附近油菜花盛開，為景觀錦上添花。",
       "icon": "flower"
     },
     {
       "season": "夏季",
-      "title": "Peak cruise calls",
-      "description": "海岸有涼風但氣溫較高；漢拏山1100高地是南部路線天然的消暑停靠點。8月可能有颱風，行程依天氣靈活調整。",
+      "title": "郵輪高峰",
+      "description": "海岸有涼風但氣溫較高；漢拏山1100高地是南部路線天然的消暑停靠點。8月可能有臺風，行程依天氣靈活調整。",
       "icon": "sun"
     },
     {
       "season": "秋季",
-      "title": "Best clarity",
+      "title": "能見度最佳",
       "description": "兩條路線能見度最清晰的季節；秋日天空湛藍，城山日出峰和漢拏山視野最遠。",
       "icon": "leaf"
     },
     {
       "season": "冬季",
-      "title": "Off-peak",
+      "title": "淡季",
       "description": "郵輪靠港次數較少；漢拏山1100高地可能積雪（南部路線加分）。大多數景點全年開放，人潮最少。",
       "icon": "snow"
     }
@@ -1280,10 +1198,10 @@
     {
       "icon": "check-circle",
       "title": "當地持照合法業者",
-      "description": "持照在地運營商，附完整保險",
+      "description": "持照在地合作業者，附完整保險",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
-      "body": "持照在地運營商，附完整保險"
+      "body": "持照在地合作業者，附完整保險"
     },
     {
       "icon": "route",
@@ -1318,8 +1236,8 @@
     {
       "timing": "前一晚",
       "title": "最終接送資訊",
-      "detail": "前一晚確認確切接送時間及司機聯繫方式。",
-      "description": "前一晚確認確切接送時間及司機聯繫方式。"
+      "detail": "前一晚確認確切接送時間及司機聯系方式。",
+      "description": "前一晚確認確切接送時間及司機聯系方式。"
     },
     {
       "timing": "行程當天早晨",
@@ -1374,7 +1292,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB. user_port resolves at booking from cruise itinerary.",
+    "note": "可訂狀態與郵輪港口資訊會在預訂步驟中確認。",
     "price": {
       "amountLabel": "",
       "currency": "USD",
@@ -1386,24 +1304,24 @@
     "meeting_points": [
       {
         "name": "濟州郵輪碼頭（北部）",
-        "note": "Meet at customs exit",
+        "note": "在海關出口集合",
         "port_id": "jeju_port"
       },
       {
         "name": "江汀郵輪碼頭（南部，西歸浦）",
-        "note": "Meet at customs exit",
+        "note": "在海關出口集合",
         "port_id": "gangjeong_port"
       }
     ],
     "dropoff_points": [
       {
-        "name": "Jeju Cruise Terminal (north)",
-        "note": "Drop-off at the same cruise terminal as pickup",
+        "name": "濟州郵輪碼頭（北部）",
+        "note": "在與接送相同的郵輪碼頭下車",
         "port_id": "jeju_port"
       },
       {
-        "name": "Gangjeong Cruise Terminal (south, Seogwipo)",
-        "note": "Drop-off at the same cruise terminal as pickup",
+        "name": "江汀郵輪碼頭（南部，西歸浦）",
+        "note": "在與接送相同的郵輪碼頭下車",
         "port_id": "gangjeong_port"
       }
     ],
@@ -1419,7 +1337,7 @@
     "destination_region": "jeju",
     "region_type": "island_full",
     "vehicle_type": "coach",
-    "duration_hours": 8,
+    "duration_hours": 8.0,
     "region_tags": [
       "jeju_east",
       "jeju_south",
@@ -1462,7 +1380,7 @@
     "family_fit": 0.65,
     "senior_fit": 0.65,
     "couple_fit": 0.8,
-    "solo_traveler_fit": 1,
+    "solo_traveler_fit": 1.0,
     "active_traveler_fit": 0.8,
     "adult_family_fit": 0.8,
     "family_with_teens_fit": 0.8,
@@ -1471,7 +1389,7 @@
     "senior_general_fit": 0.4,
     "mobility_friendly_fit": 0.55,
     "stroller_fit": 0.5,
-    "one_day_fit": 1,
+    "one_day_fit": 1.0,
     "same_day_flight_fit": 0.95,
     "rain_fit": 0.45,
     "value_for_money_fit": 0.8,
@@ -1490,11 +1408,11 @@
     "indoor_ratio": 0.2,
     "weather_sensitivity": 0.85,
     "comfort_level": 0.75,
-    "budget_fit": 1,
+    "budget_fit": 1.0,
     "premium_fit": 0.4,
     "small_group_fit": 0.4,
     "private_fit": 0.15,
-    "bus_fit": 1,
+    "bus_fit": 1.0,
     "price_band": "budget",
     "pickup_base": "cruise_terminal_dynamic",
     "return_time_band": "16:30-17:00",
@@ -1542,48 +1460,48 @@
       "seongeup_folk_village",
       "jeju_cruise_port"
     ],
-    "cruise_shore_excursion_fit": 1,
-    "cruise_shore_excursion_value_fit": 1,
+    "cruise_shore_excursion_fit": 1.0,
+    "cruise_shore_excursion_value_fit": 1.0,
     "cruise_shore_excursion_scenic_fit": 0.85,
     "cruise_shore_excursion_intimacy_fit": 0.4,
-    "cruise_disembarkation_window_fit": 1,
-    "cruise_morning_arrival_compatible_fit": 1,
-    "cruise_8_hour_window_fit": 1,
-    "cruise_all_aboard_60min_buffer_fit": 1,
-    "cruise_port_aware_routing_fit": 1,
+    "cruise_disembarkation_window_fit": 1.0,
+    "cruise_morning_arrival_compatible_fit": 1.0,
+    "cruise_8_hour_window_fit": 1.0,
+    "cruise_all_aboard_60min_buffer_fit": 1.0,
+    "cruise_port_aware_routing_fit": 1.0,
     "supports_jeju_port_north_variant": true,
     "supports_gangjeong_port_south_variant": true,
     "max_concurrent_ships_supported": 2,
     "private_tour_fit": 0.05,
-    "large_group_fit": 1,
+    "large_group_fit": 1.0,
     "group_size_min": 15,
     "group_size_max": 40,
     "group_size_typical": 25,
-    "shared_vehicle_fit": 1,
+    "shared_vehicle_fit": 1.0,
     "vehicle_comfort_level": 0.6,
-    "coach_comfort_floor_fit": 1,
-    "ac_vehicle_fit": 1,
-    "luggage_storage_in_vehicle_fit": 1,
+    "coach_comfort_floor_fit": 1.0,
+    "ac_vehicle_fit": 1.0,
+    "luggage_storage_in_vehicle_fit": 1.0,
     "wheelchair_access_capable_with_advance_notice": true,
     "customizable_route_fit": 0.05,
-    "fixed_itinerary_fit": 1,
+    "fixed_itinerary_fit": 1.0,
     "flexibility_fit": 0.3,
-    "predictable_schedule_fit": 1,
-    "first_time_jeju_fit": 1,
+    "predictable_schedule_fit": 1.0,
+    "first_time_jeju_fit": 1.0,
     "unesco_focused_tour_fit": 0.85,
-    "triple_unesco_fit": 1,
-    "unesco_world_heritage_fit": 1,
-    "unesco_biosphere_fit": 1,
-    "unesco_geopark_fit": 1,
-    "ramsar_wetland_fit": 1,
+    "triple_unesco_fit": 1.0,
+    "unesco_world_heritage_fit": 1.0,
+    "unesco_biosphere_fit": 1.0,
+    "unesco_geopark_fit": 1.0,
+    "ramsar_wetland_fit": 1.0,
     "natural_monument_count_visited": 5,
-    "columnar_jointing_fit": 1,
-    "tuff_cone_fit": 1,
-    "single_eruption_landform_fit": 1,
-    "joseon_walled_town_fit": 1,
-    "folk_village_anchor_fit": 1,
-    "tadao_ando_architecture_fit": 1,
-    "pulitzer_architecture_fit": 1,
+    "columnar_jointing_fit": 1.0,
+    "tuff_cone_fit": 1.0,
+    "single_eruption_landform_fit": 1.0,
+    "joseon_walled_town_fit": 1.0,
+    "folk_village_anchor_fit": 1.0,
+    "tadao_ando_architecture_fit": 1.0,
+    "pulitzer_architecture_fit": 1.0,
     "k_drama_filming_locations_count": 5,
     "natural_park_visit": true,
     "waterfall_visit": true,
@@ -1598,28 +1516,28 @@
     "child_friendly_fit": 0.8,
     "mobility_limited_friendly_fit": 0.6,
     "rainy_day_friendly_fit": 0.7,
-    "sunrise_peak_silhouette_photo_fit": 1,
-    "columnar_joint_close_up_photo_fit": 1,
-    "wetland_alpine_landscape_photo_fit": 1,
-    "village_stone_culture_photo_fit": 1,
-    "waterfall_emerald_pool_photo_fit": 1,
-    "market_food_photo_fit": 1,
+    "sunrise_peak_silhouette_photo_fit": 1.0,
+    "columnar_joint_close_up_photo_fit": 1.0,
+    "wetland_alpine_landscape_photo_fit": 1.0,
+    "village_stone_culture_photo_fit": 1.0,
+    "waterfall_emerald_pool_photo_fit": 1.0,
+    "market_food_photo_fit": 1.0,
     "differentiates_from_small_group_cruise_tour": true,
     "value_advantage_vs_small_group": true,
     "scale_advantage_vs_small_group": true,
     "intimacy_disadvantage_vs_small_group": true,
-    "per_pax_cost_efficiency_fit": 1,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "per_pax_cost_efficiency_fit": 1.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
-    "china_mainland_market_fit": 0,
+    "china_mainland_market_fit": 0.0,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.9,
     "se_asia_market_fit": 0.95,
-    "korea_domestic_market_fit": 0,
-    "cruise_market_segment_fit": 1,
+    "korea_domestic_market_fit": 0.0,
+    "cruise_market_segment_fit": 1.0,
     "english_speaking_guide_provided": true,
     "chinese_speaking_guide_available_on_advance_notice": true,
     "cross_batch_reuse_count_substantive_stops": 3,
@@ -1656,13 +1574,13 @@
       "rationale": "Cruise ships call at different Jeju ports depending on route. Jeju Port (north) and Gangjeong Port (south, in Seogwipo) are 60+ km apart, so the day-trip route differs entirely. A single itinerary misrepresented the actual product served at each port.",
       "matching_implications": [
         "When user_port is known (cruise booking context), score only the matched variant's poi_tags_in_variant / theme_tags_in_variant.",
-        "When user_port is unknown, fall back to matching_profile.poi_tags (union).",
-        "Variant-level indoor_ratio_in_variant / weather_sensitivity_in_variant override matching_profile values when a specific port is selected."
+        "When user_port is unknown, fall back to product profile.poi_tags (union).",
+        "Variant-level indoor_ratio_in_variant / weather_sensitivity_in_variant override product profile values when a specific port is selected."
       ],
       "downstream_actions": [
         "Frontend: add port selector UI (radio or chip) before itinerary renders. Default to 'Select your cruise port' empty state with both variant previews visible.",
         "Supabase: add port_id (text, nullable) column to bookings table; FK to a new cruise_ports reference table with rows for jeju_port, gangjeong_port.",
-        "Matching algorithm: cruise products accept user_port as optional parameter. If provided, score variant-specific tags; otherwise score union from matching_profile.",
+        "Cruise routing note: use the guest port when available; otherwise use the general cruise route profile.",
         "Pricing review: validate whether bus / small group pricing differs by port — Gangjeong route includes Hallasan 1100 which adds drive time and toll vs Jeju Port's east-coast loop.",
         "Existing bookings: backfill port_id where derivable from itinerary or pickup_base; flag rest as null for manual review.",
         "Locale (ko): translate port_label, port_label_short, route_focus, and stop names/descriptions for Korean users."
@@ -1682,7 +1600,7 @@
         "rain_fit=2 because most variant stops are exposed and cruise return is fixed",
         "young_kids_fit=2 because 8-hour cruise day with cruise constraint is long for under-6",
         "mobility_friendly_fit=2 because Seongsan rim and Hallasan 1100 both require walking",
-        "Variant-specific scoring overrides apply when user_port is known"
+        "route-specific scoring overrides apply when user_port is known"
       ],
       "content_inconsistencies_found": []
     },
@@ -1763,12 +1681,12 @@
     {
       "id": "cruise-return",
       "question": "我能及時返回船上嗎？",
-      "answer": "能。兩條路線均在16:30至17:00之間返回郵輪碼頭，並預留了應對交通延誤的緩衝時間。我們追蹤您的開船時間，並在情況有變時及時調整行程節奏。"
+      "answer": "能。兩條路線均在16:30至17:00之間返回郵輪碼頭，並預留了應對交通延誤的預留時間。我們追蹤您的開船時間，並在情況有變時及時調整行程節奏。"
     },
     {
       "id": "different-port",
       "question": "如果我的郵輪靠港碼頭改變了怎麼辦？",
-      "answer": "請您一知道就盡快通知我們——我們將把路線切換到對應的路線版本。港口路線規劃正是這個行程設有兩個路線版本而非一個的原因。"
+      "answer": "請您一知道就儘快通知我們——我們將把路線切換到對應的路線版本。港口路線規劃正是這個行程設有兩個路線版本而非一個的原因。"
     },
     {
       "id": "first-time",
@@ -1788,7 +1706,7 @@
     {
       "id": "seniors",
       "question": "年長旅客參加是否方便？",
-      "answer": "建議體力較佳、能應對台階和不平整地面的活躍長輩參加。"
+      "answer": "建議體力較佳、能應對臺階和不平整地面的活躍長輩參加。"
     },
     {
       "id": "children",
@@ -1817,19 +1735,19 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Jeju Cruise Shore Excursion — Bus Tour (Large Coach)",
-        "headlineLine2": "Two route variants — pick the one that matches your cruise port",
+        "headlineLine1": "濟州郵輪岸上觀光——大型巴士行程",
+        "headlineLine2": "按靠港碼頭安排路線，濟州港或江汀港均可",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
           "imagePosition": "center 35%",
-          "tagline": "Pick your cruise port: Jeju Port runs the east UNESCO route, Gangjeong Port runs the Hallasan + Olle Market route. Same operator, large-coach format, both 8 hours.",
+          "tagline": "選擇您的靠港碼頭：濟州港走東部UNESCO路線，江汀港走南部路線——配合郵輪時刻精準規劃",
           "pills": [
             "郵輪一日遊",
             "配合郵輪時刻",
             "經濟郵輪方案"
           ],
           "meta": {
-            "duration": "8 hours",
+            "duration": "8小時",
             "region": "濟州（依郵輪靠港規劃）",
             "stops": "6-7 個景點",
             "rating": 0,
@@ -1921,55 +1839,55 @@
             "id": "g1",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-            "alt": "Jeju cruise terminal",
-            "caption": "Jeju cruise terminal",
-            "location": "Cruise terminal",
-            "atmosphere": "Departure"
+            "alt": "濟州港停靠的郵輪，前景為車輛接送區",
+            "caption": "濟州郵輪碼頭出發",
+            "location": "郵輪碼頭",
+            "atmosphere": "順暢的起程"
           },
           {
             "id": "g2",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
-            "alt": "Seongsan tuff cone",
-            "caption": "Seongsan tuff cone",
-            "location": "Seongsan Ilchulbong",
-            "atmosphere": "UNESCO sunrise peak"
+            "alt": "行程中參觀的城山日出峰凝灰岩火山錐景觀",
+            "caption": "城山日出峰凝灰岩火山錐",
+            "location": "城山日出峰",
+            "atmosphere": "UNESCO日出峰頂"
           },
           {
             "id": "g3",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
-            "alt": "Jusangjeolli basalt cliffs",
-            "caption": "Jusangjeolli basalt cliffs",
-            "location": "Jusangjeolli",
-            "atmosphere": "Volcanic columnar coast"
+            "alt": "涉地可支岬角沿海崖步道",
+            "caption": "柱狀節理玄武岩懸崖",
+            "location": "柱狀節理",
+            "atmosphere": "火山海岸地質景觀"
           },
           {
             "id": "g4",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
-            "alt": "Hallasan 1100 wetland",
-            "caption": "Hallasan 1100 wetland",
-            "location": "Hallasan 1100",
-            "atmosphere": "Alpine boardwalk"
+            "alt": "城邑民俗村石牆茅草頂傳統房屋",
+            "caption": "漢拏山1100高地溼地",
+            "location": "漢拏山1100高地",
+            "atmosphere": "高山木棧道"
           },
           {
             "id": "g5",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-            "alt": "Cheonjiyeon waterfall",
-            "caption": "Cheonjiyeon waterfall",
-            "location": "Cheonjiyeon falls",
-            "atmosphere": "Waterfall and forest"
+            "alt": "大浦柱狀節理海岸六邊形玄武岩石柱",
+            "caption": "天帝淵瀑布",
+            "location": "天帝淵瀑布",
+            "atmosphere": "瀑布與森林"
           },
           {
             "id": "g6",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
-            "alt": "Olle Maeil Market",
-            "caption": "Olle Maeil Market",
-            "location": "Olle Maeil Market",
-            "atmosphere": "Local market finale"
+            "alt": "西歸浦奧勒每日市場攤位",
+            "caption": "奧勒每日市場",
+            "location": "奧勒每日市場",
+            "atmosphere": "在地市場收尾"
           }
         ]
       }
@@ -1981,198 +1899,201 @@
       "props": {
         "itineraryStops": [
           {
-            "number": 1,
-            "time": "08:30",
-            "duration": "30 min",
-            "name": "Jeju Cruise Terminal Pickup",
-            "category": "Departure",
-            "description": "Tour starts at the Jeju Port cruise terminal (north Jeju City). Your guide meets near the customs exit holding a name sign. Bus boards at the terminal car park; after a short briefing the route departs east toward Seongsan.",
+            "name": "濟州郵輪碼頭接送（濟州港—北）",
+            "category": "接送&郵輪物流",
+            "description": "在**濟州港郵輪碼頭**（濟州市北部）或**江汀郵輪碼頭**（西歸浦，南部）集合，與您的導遊在抵達大廳會合，導遊手持AtoC Korea標示牌等候。出發路線依靠港碼頭而定：**濟州港（北）→ 東部路線**（城山日出峰 + 涉地可支 + 城邑民俗村）；**江汀港（南）→ 南部路線**（漢拏山1100高地 + 柱狀節理 + 天帝淵瀑布 + 奧勒每日市場）。",
             "highlights": [
-              "Direct cruise terminal pickup",
-              "English-speaking guide meets at exit"
+              "**濟州港（北）→ 東部路線** | **江汀港（南）→ 南部路線**",
+              "導遊在抵達大廳手持AtoC Korea牌子等候",
+              "通關後30分鐘預留時間，充分吸收大型船隻下船的排隊等待"
             ],
-            "visitBasics": {
-              "walking": "Minimal"
+            "_poi_meta": {
+              "poi_key": "jeju_cruise_port",
+              "kb_version": "1.21",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities + 100-bus parking)",
+                "South Korea Ministry of Oceans & Fisheries (terminal opening 2015; berth specifications)",
+                "Korea Cruise Port Sales / k-cruiseinfo.com (berth depths, tonnage capacity)",
+                "Ministry of Culture, Sports & Tourism (2024 cruise volume: 810,000 pax / 414 ships)",
+                "Jeju Provincial Government (Imhang-ro address, Geonip-dong; UN/LOCODE KRCHA)"
+              ]
             },
-            "convenience": {
-              "restroom": "At meeting point (subway station / hotel lobby / port terminal)",
-              "parking": "N/A for guests — vehicle-side pickup"
-            },
-            "smartNotes": {
-              "tip": "Arrive 5–10 minutes before scheduled pickup; bring photo ID for cruise/DMZ tours"
-            },
-            "timeUsed": [
-              "Guest assembly and ID verification",
-              "Vehicle boarding and headcount",
-              "Brief safety/route briefing en route"
-            ],
-            "whyOnRoute": "Pickup point chosen for efficient guest assembly across the city's main hubs while preserving on-time tour start.",
-            "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80"
+            "number": 1,
+            "time": "郵輪抵達後約30分鐘",
+            "duration": "30分鐘",
+            "whyOnRoute": "**濟州港（北）是140,000 GT以下船隻的主要郵輪入境門戶** — 也是東部路線（城山日出峰/涉地可支/城邑民俗村）的天然起點，因為三個核心景點均在碼頭30分鐘至80分鐘車程範圍內，沿海岸環線公路（1132號公路）行駛。對於**25至40人的大型巴士行程**，通關後30分鐘的預留時間必不可少——大型船隻3,000+名乘客同時下船時，通關排隊等待十分常見。"
           },
           {
             "number": 2,
-            "time": "09:30",
-            "duration": "120 min",
-            "name": "Seongsan Ilchulbong (Sunrise Peak)",
-            "category": "Volcano & UNESCO",
-            "description": "UNESCO World Heritage tuff cone — a hydrovolcanic crater formed ≈ 5,000 years ago by an underwater eruption, rising ≈ 180 m from the sea with a near-perfect crater rim. Optional ≈ 25-minute climb to the rim viewpoint via stone stairs (≈ 600 steps); the base coastal walk is the alternative for those skipping the climb. Inscribed on the UNESCO list in 2007 as part of 'Jeju Volcanic Island and Lava Tubes.'",
+            "time": "≈ 09:00",
+            "duration": "75分鐘",
+            "name": "城山日出峰",
+            "category": "UNESCO凝灰岩錐——日出峰（三重UNESCO認定）",
+            "description": "**城山日出峰（城山日出峰，「日出峰」）**是一座**距今5,000年的蘇爾特塞式（Surtseyan）水成火山凝灰岩錐**——形成於海底玄武岩噴發沖出海面之時，岩漿接觸海水引發蒸汽爆炸，堆積的火山灰形成**182公尺高、形如城堡的火口**邊緣，而非典型的熔岩錐。UNESCO將其正式定義為**「薩託謝安式火山構造典型範例」**。火口**直徑600公尺、深90公尺**，周圍環繞著**99塊鋸齒狀的邊緣岩石**，當地傳說將其比喻為石冠。城山日出峰擁有**UNESCO三重認定**：**世界自然遺產（2007-07-02登載）**，是**「濟州火山島與熔岩洞窟」**遺址的組成部分；**生物圈保護區（2002年）**；以及**全球地質公園（2010-10）**——這一榮銜僅與漢拏山本身並列，為韓國景點中的最高規格。峰體向海一側隧道有**18座帝國日本二戰地下掩體**（1945年神風特攻隊自殺艇掩體）。步道：**單程0.8公里，爬升約140公尺，來回60分鐘**，沿寬闊石階攀登。**海女表演**每日在峰下岩石海灣**13:30和15:00**各舉行一場——無需氧氣罐的濟州女性潛水員（UNESCO 2016年非物質文化遺產）。門票於**2025年4月更新**：**成人₩5,000 / 青少年+兒童₩2,500 / 團體成人₩1,600**，7歲以下及65歲以上免費。山頂觀景臺同屬**瀛洲十景**，長期以來是韓國**元旦日出朝聖**的首選地——每年1月1日有逾5萬人在黎明前登頂，自1995年起設有市政日出節活動。**牛島** —— 韓國最大的次級火山島——在山頂可清晰看見，位於4公里外海域，搭乘**15分鐘渡輪自城山港出發**可前往（來回₩10,500）。",
+            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
             "highlights": [
-              "UNESCO World Heritage volcanic crater",
-              "Optional summit climb to crater rim",
-              "Coastal viewpoint at the base"
+              "**UNESCO三重認定**：世界遺產2007-07-02 + 生物圈保護區2002年 + 全球地質公園2010-10",
+              "**距今5,000年** — 薩託謝安式水火山噴發，岩漿遇海水引發蒸汽爆炸誕生",
+              "火口**直徑600公尺、深90公尺**，環繞著**99塊鋸齒狀邊緣岩石**（「石冠」）",
+              "**海拔182公尺** — 單程0.8公里 / 爬升約140公尺，石階步道來回60分鐘",
+              "峰體基部有**18座帝國日本二戰地下掩體** — 1945年神風特攻隊自殺艇掩體",
+              "**每日13:30 + 15:00海女表演**，在海濱海灣舉行 — UNESCO非物質文化遺產2016年",
+              "**門票2025年4月更新**：成人₩5,000 / 青少年₩2,500 / 7歲以下及65歲以上免費",
+              "春秋季開放時間 **05:00至19:00**（最後入場18:20）",
+              "**每月第一個星期一休館**（偶爾休息日）"
             ],
-            "visitBasics": {
-              "hours": "Mar–Apr & Sep–Oct: 05:00–19:00; May–Aug: 04:30–20:00; Nov–Feb: 06:00–18:00 (last ticketing 1 hour before closing)",
-              "closed": "Open year-round (weather closures possible)",
-              "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
-              "walking": "Moderate — 20–30 min steady stair climb (≈ 600 stairs); benches every few minutes for rest"
-            },
-            "smartNotes": {
-              "tip": "All stairs but well-maintained — manageable in casual clothes; family-friendly with rest stops; sunrise visits popular but crowds gather pre-dawn",
-              "photo": "Summit view of Hallasan to the west and Udo island to the north on clear days; haenyeo black-sand beach view from descending path",
-              "facilities": "Café (Fritz Coffee 1.3km away has best exterior views of the peak); ferry to Udo Island from Seongsan Port (1.5km/15 min walk)"
-            },
-            "convenience": {
-              "restroom": "Available at entrance and base",
-              "parking": "Large free parking lot"
-            },
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "停車+購票+底部簡介——約10分鐘",
+              "登頂觀景臺（0.8公里/高差140米）——約30分鐘",
+              "頂部觀景+火山口邊緣拍照——約20分鐘",
+              "下山——約20分鐘",
+              "可選：在底部觀看海女表演（15:00場次）——約10分鐘"
             ],
-            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
-            "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80"
+            "whyOnRoute": "**城山日出峰的UNESCO三重認定**（世界遺產2007年 + 生物圈保護區2002年 + 全球地質公園2010年）使其成為濟州單一景點中資質最高的停靠點，也是東部路線的天然開場核心亮點——從濟州港沿海岸1132號公路行駛僅需30分鐘，讓行程在第一站就能達到UNESCO級別。海女表演在13:30和15:00各舉行一場；抵達時間的安排確保在15:00場次前有充裕的拍攝時間。",
+            "_poi_meta": {
+              "poi_key": "seongsan_ilchulbong",
+              "kb_version": "1.18",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+                "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
+                "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
+                "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
+                "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
+              ]
+            }
           },
           {
             "number": 3,
-            "time": "12:00",
-            "duration": "60 min",
-            "name": "Seopjikoji",
-            "category": "Coast & Cinema",
-            "description": "Volcanic coastal headland at the eastern tip of Jeju, named for its small-cone topography. Easy ≈ 1.5 km coastal path with views back toward Seongsan Ilchulbong, Hyeopjae lighthouse, and the All-In House (chapel set built for the 2003 K-drama 'All In' and now a small museum). Free admission; rapeseed flowers carpet the headland in spring.",
+            "time": "≈ 11:15",
+            "duration": "60分鐘",
+            "name": "涉地可支岬角",
+            "category": "火山海岬——安藤忠雄建築+防頭浦燈塔+韓劇拍攝地",
+            "description": "**涉地可支**是濟州東海岸一處狹長的火山岬角。地名通常解釋為：「涉地」指狹長土地或這一帶的舊地名，「可支」是濟州方言，意為伸向海面的岬角。沿著海岸步道，可以看到玄武岩海崖、開闊海景和遠處的城山日出峰。岬角一帶還有燈塔、朝鮮時代烽火臺遺跡，也因韓劇《All In》等拍攝地而知名。此處海風較強，建議穿好走的鞋並準備薄外套。",
+            "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
             "highlights": [
-              "Coastal cliff walk",
-              "Lighthouse and chapel viewpoints",
-              "K-drama filming locations"
+              "**2.1公里岬角步道**（約30分鐘，僅14公尺爬升）— 部分路段輪椅及嬰兒車可通行",
+              "**方頭浦燈塔** — 八角形，**每4秒閃光**，矗立於紅色火山錐紅色火山丘頂端",
+              "**俠子烽火臺（烽火臺）** — 高4公尺 × 直徑9公尺的朝鮮烽火丘，**特別紀念物第23-2號**",
+              "**安藤忠雄建築** — 玻璃屋餐廳 + Yumin美術館（鳳凰島渡假村）",
+              "**仙岩（仙岩）** — 10公尺海外火山頸，龍王麼子傳說",
+              "**影視拍攝地**：《《All In》》（2003年）、《我的女孩》（2005年）等",
+              "**油菜花季3至4月**（黃色山坡）；**繡球花6月**（藍/紫色）",
+              "**岬角免費入場**；Yumin美術館 + 玻璃屋餐廳需另行購票",
+              "城山日出峰在岬角頂端**清晰可見於4公里外**——UNESCO三重認定的完美背景"
             ],
-            "visitBasics": {
-              "hours": "Open 24 hours (outdoor cape)",
-              "closed": "Open year-round",
-              "admission": "Free",
-              "walking": "Easy to moderate — flat coastal walkway; total loop ≈ 1 hour"
-            },
-            "convenience": {
-              "restroom": "Available at parking lot and Aqua Planet area",
-              "parking": "Free parking available"
-            },
-            "smartNotes": {
-              "photo": "The lighthouse with cliff backdrop is iconic; canola fields with Seongsan Ilchulbong in distance is the spring signature shot",
-              "facilities": "Aqua Planet Jeju aquarium and several cafés on site",
-              "tip": "Combine with Seongsan Ilchulbong visit (10 min drive); spring (canola) and autumn (eulalia grass) are peak photo seasons"
-            },
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "停車+入場——約5分鐘",
+              "海岬步道漫步——約25分鐘",
+              "燈塔＋俠子煙臺烽燧臺拍照——約10分鐘",
+              "安藤忠雄建築外觀觀賞——約10分鐘",
+              "返回大巴＋集合時間——約10分鐘"
             ],
-            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
-            "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80"
+            "whyOnRoute": "**涉地可支**是濟州東海岸一處狹長的火山岬角。地名通常解釋為：「涉地」指狹長土地或這一帶的舊地名，「可支」是濟州方言，意為伸向海面的岬角。沿著海岸步道，可以看到玄武岩海崖、開闊海景和遠處的城山日出峰。岬角一帶還有燈塔、朝鮮時代烽火臺遺跡，也因韓劇《All In》等拍攝地而知名。此處海風較強，建議穿好走的鞋並準備薄外套。",
+            "_poi_meta": {
+              "poi_key": "seopjikoji",
+              "kb_version": "1.19",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Jeju Provincial Cultural Heritage — Special Monument No. 23-2 designation",
+                "VisitJeju — Seopjikoji official listing",
+                "Korea Lighthouse Service — Bangdupo Lighthouse operation records",
+                "安藤忠雄 Architect & Associates — Phoenix Island project documentation",
+                "SBS Drama Archive — '《All In》' (2003) and 'My Girl' (2005) filming locations"
+              ]
+            }
           },
           {
-            "number": 4,
-            "time": "13:15",
-            "duration": "60 min",
-            "name": "Lunch (East Jeju)",
-            "category": "Meal",
-            "description": "Local restaurant near Seongsan or Pyoseon — typical orders include black pork (heuk-dwaeji) bulgogi, abalone porridge (jeonbok-juk), or seasonal seafood. Lunch cost is paid separately on this product (≈ ₩12,000–₩20,000 per person).",
+            "name": "午餐（濟州東部—當地海鮮或黑豬）",
+            "category": "午餐",
+            "description": "在東部濟州的導遊推薦餐廳享用午餐（費用自付）。典型選項：**濟州黑豬燒烤**；**鮑魚粥**；**海鮮湯麵飯**。導遊協助點餐，同時翻譯菜單。",
             "highlights": [
-              "Traditional Jeju cuisine"
+              "**濟州黑豬燒烤**——濟州黑毛豬品種，在火山岩石板上炭烤",
+              "**鮑魚粥**——濃鬱乳白湯底熬煮鮑魚（約₩15,000至20,000）",
+              "導遊協助點餐和菜單翻譯"
             ],
-            "visitBasics": {
-              "hours": "Per restaurant operating hours (typically 11:30–14:00 lunch service)",
-              "closed": "Per restaurant schedule",
-              "admission": "Lunch separate (typically 12,000–25,000 KRW per person; not included in tour price)",
-              "walking": "Minimal — direct restaurant entry"
+            "_poi_meta": {
+              "poi_key": "OPS_lunch_east_jeju",
+              "kb_version": "1.21",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Jeju Black Pig Natural Monument designation (2015, Cultural Heritage Administration)",
+                "Visit Jeju (eastern Jeju cuisine — galchi, heukdwaeji)",
+                "AtoC Korea operations notes (cruise tour lunch venue rotation)"
+              ]
             },
-            "convenience": {
-              "restroom": "Available at restaurant",
-              "parking": "Tour vehicle parks at or near restaurant"
-            },
-            "smartNotes": {
-              "tip": "Inform guide of any dietary restrictions (vegetarian, halal, allergies) at booking; cash and major cards typically accepted"
-            },
-            "timeUsed": [
-              "Restaurant arrival and seating",
-              "Order and meal",
-              "Restroom break before next leg"
-            ],
-            "whyOnRoute": "Mid-day refuel positioned to leverage the route's geography — close to the next attraction with reliable, guide-vetted local cuisine.",
-            "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80"
+            "number": 4,
+            "time": "≈ 12:30",
+            "duration": "60分鐘",
+            "whyOnRoute": "**午餐的位置設在路線的地理中間點**，而非時間中間點，以充分吸收上午郵輪通關延誤可能造成的行程滑坡。午餐地點在**涉地可支15分鐘車程範圍內**，將團體置於下一個下午景點（城邑民俗村，再往內陸約10分鐘）附近，同時避免了繞回東部海岸的長距離迂路。"
           },
           {
             "number": 5,
-            "time": "14:30",
-            "duration": "90 min",
-            "name": "Seongeup Folk Village",
-            "category": "Culture & Heritage",
-            "description": "A 600-year continuously inhabited village, founded 1423 as the administrative seat of Jeongui-hyeon — one of Joseon-era Jeju's three administrative divisions. Designated National Folklore Cultural Heritage in 1984. Inside the Jeongui Hyeonseong wall: thatched-roof homes still lived in by residents, the Jeongui Hyanggyo Confucian school (Jeju Tangible Cultural Asset No. 5), the Ilgwanheon government office, centuries-old zelkova and nettle trees, dol hareubang stone statues, and traditional tongsi (combined pigsty / outhouse). The village is NOT UNESCO — Korea's national folklore designation only.",
+            "time": "≈ 13:45",
+            "duration": "60分鐘",
+            "name": "城邑民俗村",
+            "category": "朝鮮時代城郭城鎮——重要民俗文化遺產（1423年創立）",
+            "description": "**城邑民俗村**是**朝鮮時代的城郭式城鎮，始建於1423年世宗大王年間**，當時稱為旌義縣，是朝鮮時代濟州三大行政中心之一。村落持續作為**縣政中心長達近500年，直至1914年**，至今在原有邑城城郭範圍內保存著**110棟傳統建築**，整體按照朝鮮縣政中心典型的**韓國風水原則**規劃佈局。整座村落被指定為**韓國重要民俗文化遺產**，多棟個別建築亦分別獲得獨立遺產指定。村落中心聳立著**兩棵被指定為韓國天然紀念物的古樹**——**一棵光葉櫸**和一棵**樸樹**，兩者均**樹齡逾600年**，是村落的精神象徵。歷史傷痕清晰可見：**1826年的大火燒燬了約80棟建築**，村落在**1948年濟州四三事件中**也遭受過火災破壞——兩段歷史均記載於村內標示牌上。歷史上戶數高峰時約**1,500戶**，今日村落仍有約**250戶人家居住**，許多村民積極傳承傳統工藝。韓劇拍攝記錄：**《大長今》（MBC，2003至2004年）**，這部國際韓劇大作曾在此取景。當地特色：**五味子酒** — 村內一戶人家**世代相傳、多代釀造**的**濟州傳統米釀酒**，村內家庭釀酒坊可免費參觀品嚐。**免費入場**；以戶外步行為主（約70%戶外）。",
+            "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
             "highlights": [
-              "Traditional thatched-roof houses",
-              "Stone wall heritage",
-              "Folk demonstrations on select days"
+              "**始建於1423年**（世宗大王年間）——行政中心持續運作至**1914年（近500年）**",
+              "原有邑城城郭範圍內保存**110棟傳統建築**",
+              "**韓國重要民俗文化遺產**（整座村落 + 多棟個別建築）",
+              "村落中心有**兩棵樹齡逾600年的古樹**：光葉櫸 + 樸樹 — **天然紀念物**",
+              "按照**朝鮮韓國風水（地理）原則**規劃 — 典型縣政中心格局",
+              "**《大長今》（MBC 2003至2004年）**拍攝地 — 國際韓劇大作",
+              "**五味子酒** — 濟州傳統米釀酒，單一家族世代相傳釀造（免費品嚐）",
+              "歷史傷痕：**1826年大火**燒燬約80棟；**1948年濟州四三事件**破壞",
+              "**免費入場** — 村落仍有約250戶人家居住，延續傳統"
             ],
-            "visitBasics": {
-              "hours": "Open 24 hours (outdoor village); shops typically 09:00–17:00",
-              "closed": "Open year-round",
-              "admission": "Free for general village; some private homes charge for guided visits",
-              "walking": "Easy — flat dirt and stone paths through the village"
-            },
-            "convenience": {
-              "restroom": "Public restrooms at village entrance",
-              "parking": "Free parking near entrance"
-            },
-            "smartNotes": {
-              "photo": "Stone walls (dolhareubang grandfathers), thatched-roof houses with smoke holes, and traditional doors are iconic Jeju shots",
-              "facilities": "Visitor information center at entrance; English maps available",
-              "tip": "Hire a free volunteer guide at the entrance for cultural context; respect that residents actually live here — don't enter homes uninvited"
-            },
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "停車+村落解說員迎接簡介——約10分鐘",
+              "走至古樹+村落中心——約10分鐘",
+              "參觀韓屋內部（代表性民居2–3棟）——約15分鐘",
+              "五味子酒釀造坊免費品嚐——約10分鐘",
+              "奧萊小巷散步+拍照——約10分鐘",
+              "集合時間——約5分鐘"
             ],
-            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
-            "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80"
+            "whyOnRoute": "**城邑民俗村**（世宗大王1423年創建，行政功能維持至1914年約500年）是全天**重要民俗文化遺產**的核心亮點——一座與上午的城山日出峰UNESCO地質景觀形成互補的傳統文化村落，帶來更深厚的文化層次。平坦的村落格局（無需爬坡）是**特別適合這個時段的無障礙選擇**，因為旅客已在下午初段完成了城山和涉地可支的主要步行量。五味子酒免費品嚐也讓疲憊的腳得到休息的同時，獲得在地感受。",
+            "_poi_meta": {
+              "poi_key": "seongeup_folk_village",
+              "kb_version": "1.19",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Cultural Heritage Administration — Important Folklore Cultural Heritage designation",
+                "Korea Cultural Heritage Foundation — Seongeup Folk Village historical records",
+                "VisitJeju — Seongeup Minsok Maeul",
+                "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
+                "Jeju Folklore Society — Omegisul brewing tradition documentation"
+              ]
+            }
           },
           {
-            "number": 6,
-            "time": "16:30",
-            "duration": "60 min",
-            "name": "Return to Jeju Cruise Terminal",
-            "category": "Return",
-            "description": "Direct drive Seongeup → Jeju Cruise Terminal, ≈ 50 minutes. Drop-off with comfortable buffer before evening sailaway.",
-            "visitBasics": {
-              "hours": "Per drop-off schedule (see hero / glanceItems for return time band)",
-              "closed": "N/A",
-              "admission": "N/A",
-              "walking": "Minimal — direct vehicle disembarking"
-            },
-            "convenience": {
-              "restroom": "At drop-off point",
-              "parking": "N/A"
-            },
-            "smartNotes": {
-              "tip": "Confirm exact drop-off location with guide before journey begins; cruise tours coordinate with ship departure schedule"
-            },
-            "timeUsed": [
-              "Final drive to drop-off point",
-              "Disembark and luggage retrieval",
-              "Tour wrap-up confirmation"
+            "name": "返回濟州郵輪碼頭（濟州港—北）",
+            "category": "接送&郵輪物流",
+            "description": "巴士沿**濟州東部海岸1132號公路**返回濟州港，途中作一次休息站停靠。回程時間約70至80分鐘，視交通情況而定。下車地點為原接送碼頭（濟州港或江汀港）。",
+            "highlights": [
+              "巴士沿東部海岸1132號公路返回，約70至80分鐘",
+              "途中作一次路邊舒適停靠",
+              "在全體登船時間**至少60分鐘前**安全抵達碼頭"
             ],
-            "whyOnRoute": "Drop-off point coordinated with each guest's onward plans (hotel, port, train station, airport).",
-            "highlights": [],
-            "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80"
+            "_poi_meta": {
+              "poi_key": "jeju_cruise_port",
+              "kb_version": "1.21",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities)",
+                "Jeju Bus Information System (Bus #100 airport connection)",
+                "Korea Cruise Port Sales (terminal layout + drop-off zones)",
+                "VisitJeju.net (Dongmun Market free shuttle)",
+                "Cruise industry standard (60-min all-aboard buffer)"
+              ]
+            },
+            "number": 6,
+            "time": "約15:30出發 → 約16:45抵達碼頭",
+            "duration": "75分鐘車程＋60分鐘預留",
+            "whyOnRoute": "**回程是全天最長的單一行程段**（約70至80分鐘，從城邑民俗村沿1132號公路 + 16號公路返回濟州港），途中在東部海岸的路邊休息站作**一次舒適停靠**。下車時間的目標是**至少在全體登船前60分鐘**抵達——以17:30全體登船為例，巴士將在16:30前到達，讓旅客有充裕的時間不慌不忙地返回船艙。"
           }
         ]
       }
@@ -2184,65 +2105,56 @@
       "props": {
         "routeFlowStops": [
           {
-            "id": "01",
-            "name": "Cruise Terminal",
-            "theme": "Departure"
+            "name": "郵輪碼頭",
+            "type": "origin",
+            "theme": "出發"
           },
           {
-            "id": "02",
-            "name": "Sunrise Peak",
-            "theme": "Volcano"
+            "name": "日出峰",
+            "type": "primary",
+            "theme": "火山"
           },
           {
-            "id": "03",
-            "name": "Seopjikoji",
-            "theme": "Coast"
+            "name": "涉地可支",
+            "type": "primary",
+            "theme": "海岸"
           },
           {
-            "id": "04",
-            "name": "Lunch",
-            "theme": "Meal"
+            "name": "午餐",
+            "type": "meal",
+            "theme": "餐飲"
           },
           {
-            "id": "05",
-            "name": "Folk Village",
-            "theme": "Culture"
+            "name": "民俗村",
+            "type": "primary",
+            "theme": "文化"
           },
           {
-            "id": "06",
-            "name": "Cruise Terminal",
-            "theme": "Return"
+            "name": "郵輪碼頭",
+            "type": "return",
+            "theme": "返回"
           }
         ],
         "routePhases": [
           {
-            "label": "Morning",
-            "range": "1-3",
-            "theme": "UNESCO volcano + coast",
-            "bgClass": "bg-sky-50/70",
-            "textClass": "text-sky-700",
-            "dotClass": "bg-sky-500"
+            "phase": "UNESCO火山 + 海岸",
+            "duration": "第1–3站",
+            "description": "上午：UNESCO火山+海岸"
           },
           {
-            "label": "Midday",
-            "range": "4",
-            "theme": "Lunch",
-            "bgClass": "bg-amber-50/70",
-            "textClass": "text-amber-700",
-            "dotClass": "bg-amber-500"
+            "phase": "午餐",
+            "duration": "第4站",
+            "description": "中午：午餐"
           },
           {
-            "label": "Afternoon",
-            "range": "5-6",
-            "theme": "Folk culture + return",
-            "bgClass": "bg-emerald-50/70",
-            "textClass": "text-emerald-700",
-            "dotClass": "bg-emerald-500"
+            "phase": "民俗文化 + 回程",
+            "duration": "第5–6站",
+            "description": "下午：民俗文化+返程"
           }
         ],
         "routeShapeIntro": {
-          "title": "How this day flows",
-          "subtitle": "Route depends on your cruise port. Jeju Port (north) runs east UNESCO; Gangjeong Port (south) runs Hallasan alpine + Olle Market."
+          "title": "行程路線一覽",
+          "subtitle": "路線取決於靠港地點。濟州港（北部）靠港走東部UNESCO線路；江汀港（南部）靠港走漢拿山高山地帶+濟州奧萊市場線路。"
         }
       }
     },
@@ -2253,45 +2165,45 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "Cruise passengers needing a same-day round-trip from the cruise terminal",
-            "First-time Jeju visitors who want UNESCO highlights in one day",
-            "Travelers who want a guided format-appropriate route at budget price"
+            "需要當天往返郵輪碼頭的郵輪旅客",
+            "希望在一天內遊覽UNESCO精華景點的初次訪濟旅客",
+            "希望以合理預算享受導覽服務的旅客"
           ],
           "lessIdealFor": [
-            "Travelers with very low mobility (Seongsan rim and Hallasan 1100 require some walking)",
-            "Stroller-heavy groups",
-            "Travelers wanting unhurried pacing — cruise schedule is fixed"
+            "行動不便的旅客（城山日出峰峰頂攀登和漢拏山1100高地需要一定步行量）",
+            "攜帶大量嬰兒車的團體",
+            "希望悠閒節奏的旅客——郵輪班表固定"
           ],
           "routeLogicSections": [
             {
-              "title": "Why two port variants",
+              "title": "為什麼設有兩個靠港版本",
               "icon": "route",
               "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "Jeju Port = north terminal",
-                  "detail": "East-coast UNESCO loop with Seongsan Ilchulbong, Seopjikoji, and Seongeup folk village."
+                  "label": "濟州港 = 北部碼頭",
+                  "detail": "東部海岸UNESCO環線，包含城山日出峰、涉地可支和城邑民俗村。"
                 },
                 {
-                  "label": "Gangjeong Port = south (Seogwipo) terminal",
-                  "detail": "Hallasan 1100 alpine + Jusangjeolli + Cheonjiyeon falls + Olle Market."
+                  "label": "江汀港 = 南部（西歸浦）碼頭",
+                  "detail": "漢拏山1100高山 + 柱狀節理 + 天帝淵瀑布 + 奧勒市場。"
                 },
                 {
-                  "label": "Same 8-hour structure both ports",
-                  "detail": "Cruise return constraint is the same; the route adapts to minimize transit waste."
+                  "label": "兩個靠港均為8小時結構",
+                  "detail": "郵輪迴程限制相同；路線因港口而調整，以最大限度減少交通浪費。"
                 }
               ]
             },
             {
-              "title": "Bus Tour (Large Coach) specifics",
+              "title": "大型巴士行程（大型客車）說明",
               "icon": "users",
               "iconBg": "bg-amber-50/80",
               "iconColor": "text-amber-600",
               "items": [
                 {
-                  "label": "Large coach (25-35 pax)",
-                  "detail": "Most economical option. Best for budget-conscious cruise passengers."
+                  "label": "大型客車（25至35人）",
+                  "detail": "最經濟實惠的選項。最適合注重預算的郵輪旅客。"
                 }
               ]
             }
@@ -2307,106 +2219,99 @@
         "practicalAccordionItems": [
           {
             "id": "pickup",
-            "title": "Pickup & drop-off",
-            "preview": "Cruise terminal pickup — variant by port",
+            "title": "接送與下車地點",
+            "preview": "郵輪碼頭接送——依靠港碼頭而定",
             "content": [
-              "Jeju Port pickup: Jeju cruise terminal (north Jeju)",
-              "Gangjeong Port pickup: Gangjeong cruise terminal (Seogwipo, south Jeju)",
-              "Pickup time confirmed per cruise schedule",
-              "Return to same cruise terminal with buffer before sailaway"
+              "濟州港接送：濟州郵輪碼頭（北部濟州）",
+              "江汀港接送：江汀郵輪碼頭（西歸浦，南部濟州）",
+              "接送時間依郵輪班表確認",
+              "回程送至同一郵輪碼頭，在開船前留有預留時間"
             ]
           },
           {
             "id": "walking",
-            "title": "Walking & terrain",
-            "preview": "Moderate; varies by port variant",
+            "title": "步行強度與地形",
+            "preview": "步行難度：中等；依靠港碼頭變化",
             "content": [
-              "Jeju port: Seongsan Ilchulbong rim climb is steepest (optional)",
-              "Gangjeong port: Hallasan 1100 is easy boardwalk; Cheonjiyeon path is short",
-              "Bring layered clothing — Hallasan 1100 is cooler than coast (Gangjeong)"
+              "濟州港（東部路線）：城山日出峰峰頂攀登最為費力（可選）",
+              "江汀港（南部路線）：漢拏山1100高地為輕鬆木棧道；天帝淵步道較短",
+              "建議穿著多層衣物——漢拏山1100高地比海岸涼爽（江汀港路線）"
             ]
           },
           {
             "id": "weather",
-            "title": "Weather policy",
-            "preview": "Cruise schedule is fixed — route adjusts",
+            "title": "天候政策",
+            "preview": "郵輪班表固定——路線靈活應對天氣",
             "content": [
-              "Heavy rain: Seongsan rim climb may be skipped (Jeju port variant)",
-              "Hallasan weather: 1100 highland may be substituted with lower-elevation stop (Gangjeong port variant)",
-              "Strong wind: coastal exposure shortens at Jusangjeolli and Seopjikoji",
-              "Cruise return is non-negotiable — route adjusts, schedule does not"
+              "大雨：城山日出峰峰頂攀登可能跳過（濟州港路線）",
+              "漢拏山天氣：1100高地可能替換為低海拔景點（江汀港路線）",
+              "強風：涉地可支和柱狀節理的沿海暴露段落將縮短",
+              "郵輪迴程時間不可更改——路線調整，班表固定"
             ]
           },
           {
             "id": "wear",
-            "title": "What to wear & bring",
-            "preview": "Comfortable walking shoes + layers + passport for cruise re-entry",
+            "title": "穿著與攜帶物品",
+            "preview": "舒適步行鞋 + 多層衣物 + 護照（返船用）",
             "content": [
-              "Comfortable walking shoes",
-              "Light jacket (especially Hallasan 1100 / Gangjeong variant)",
-              "Hat and sunscreen",
-              "Cruise ID + passport for terminal re-entry"
+              "舒適的步行鞋",
+              "薄外套（漢拏山1100高地 / 江汀港路線時尤其需要）",
+              "遮陽帽和防曬用品",
+              "郵輪身份證 + 護照（碼頭重新入境用）"
             ]
           },
           {
             "id": "included",
-            "title": "What's included",
-            "preview": "Guide, vehicle, pickup, admissions",
+            "title": "費用包含項目",
+            "preview": "已含：導遊、車輛、接送、入場費",
             "variant": "included",
             "content": [
-              "English-speaking guide",
-              "Large coach transport",
-              "Cruise terminal pickup/drop-off",
-              "All site admissions",
-              "Bottled water",
-              "Lunch (pay direct at restaurant)",
-              "Personal shopping",
-              "Gratuities"
+              "英語導遊",
+              "大型巴士交通",
+              "郵輪碼頭接送",
+              "所有景點入場費",
+              "瓶裝飲用水",
+              "不含：午餐（在餐廳自付）",
+              "不含：個人購物",
+              "不含：小費"
             ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "即時天氣連動"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "See seasonal notes"
-          }
+            "label": "每日更新"
+          },
+          "_seasonalSummary": "濟州島全年氣候溫和，郵輪岸遊行程可全年運行。天氣依地區變化——東部海岸景點全年氣候溫和；漢拏山1100高地（南部路線）比海岸涼約5至8°C，建議多層穿搭。臺風季節（7至9月）偶有強風影響沿海景點。"
         },
         "seasonalVariations": [
           {
-            "name": "Spring",
-            "icon": "flower",
-            "description": "Mild and clear; best visibility for cruise excursions",
-            "tag": "Cruise season opens",
-            "bgClass": "bg-spring",
-            "iconColor": "text-pink-500"
+            "season": "春季",
+            "title": "郵輪季開幕",
+            "description": "氣候溫和、天空明朗；郵輪岸遊能見度最佳。3月下旬至4月初城山附近油菜花盛開，為景觀錦上添花。",
+            "icon": "flower"
           },
           {
-            "name": "Summer",
-            "icon": "sun",
-            "description": "Hot but breezy on coast; Hallasan 1100 cool refuge",
-            "tag": "Peak cruise calls",
-            "bgClass": "bg-summer",
-            "iconColor": "text-sky-500"
+            "season": "夏季",
+            "title": "郵輪高峰",
+            "description": "海岸有涼風但氣溫較高；漢拏山1100高地是南部路線天然的消暑停靠點。8月可能有臺風，行程依天氣靈活調整。",
+            "icon": "sun"
           },
           {
-            "name": "Autumn",
-            "icon": "leaf",
-            "description": "Sharpest visibility for both port routes",
-            "tag": "Best clarity",
-            "bgClass": "bg-autumn",
-            "iconColor": "text-amber-600"
+            "season": "秋季",
+            "title": "能見度最佳",
+            "description": "兩條路線能見度最清晰的季節；秋日天空湛藍，城山日出峰和漢拏山視野最遠。",
+            "icon": "leaf"
           },
           {
-            "name": "Winter",
-            "icon": "snow",
-            "description": "Fewer cruise calls; Hallasan 1100 may have snow",
-            "tag": "Off-peak",
-            "bgClass": "bg-winter",
-            "iconColor": "text-slate-500"
+            "season": "冬季",
+            "title": "淡季",
+            "description": "郵輪靠港次數較少；漢拏山1100高地可能積雪（南部路線加分）。大多數景點全年開放，人潮最少。",
+            "icon": "snow"
           }
         ]
       }
@@ -2419,56 +2324,65 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local operator",
-            "description": "Authorized Korean tour operator with full insurance",
+            "title": "當地持照合法業者",
+            "description": "持照在地合作業者，附完整保險",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "iconColor": "text-emerald-600",
+            "body": "持照在地合作業者，附完整保險"
           },
           {
             "icon": "route",
-            "title": "Route specialists",
-            "description": "Hand-tuned itinerary, not a generic loop",
+            "title": "路線專家",
+            "description": "手工打磨的行程，而非千篇一律的環線",
             "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "iconColor": "text-sky-600",
+            "body": "手工打磨的行程，而非千篇一律的環線"
           },
           {
             "icon": "users",
-            "title": "Curated group size",
-            "description": "Right-sized for the route",
+            "title": "精心控制團體人數",
+            "description": "依人數配置最適合的車型",
             "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600"
+            "iconColor": "text-amber-600",
+            "body": "依人數配置最適合的車型"
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "timing": "即時通知",
+            "title": "即時確認",
+            "detail": "預約確認函連同行程摘要一併寄出。",
+            "description": "預約確認函連同行程摘要一併寄出。"
           },
           {
-            "timing": "12 hours before",
-            "title": "12-Hour Reminder",
-            "detail": "Weather update and any route adjustments"
+            "timing": "出發前12小時",
+            "title": "出發前12小時提醒",
+            "detail": "出發前12小時發送天氣更新及路線調整說明。",
+            "description": "出發前12小時發送天氣更新及路線調整說明。"
           },
           {
-            "timing": "Evening before",
-            "title": "Final Pickup Info",
-            "detail": "Exact pickup time and driver contact"
+            "timing": "前一晚",
+            "title": "最終接送資訊",
+            "detail": "前一晚確認確切接送時間及司機聯系方式。",
+            "description": "前一晚確認確切接送時間及司機聯系方式。"
           },
           {
-            "timing": "Morning of tour",
-            "title": "Day-of Route Notes",
-            "detail": "Morning briefing based on live conditions"
+            "timing": "行程當天早晨",
+            "title": "當日路線說明",
+            "detail": "出發當天早晨依現場狀況作路線說明。",
+            "description": "出發當天早晨依現場狀況作路線說明。"
           },
           {
-            "timing": "During tour",
-            "title": "Stop-by-Stop Tips",
-            "detail": "Real-time guidance at each location"
+            "timing": "行程途中",
+            "title": "景點逐一說明",
+            "detail": "每個景點視需要提供即時建議和重點資訊。",
+            "description": "每個景點視需要提供即時建議和重點資訊。"
           },
           {
-            "timing": "After tour",
-            "title": "Post-tour Support",
-            "detail": "Follow-up and recommendations"
+            "timing": "行程結束後",
+            "title": "行程後支援",
+            "detail": "如需要，可提供後續支援及額外推薦。",
+            "description": "如需要，可提供後續支援及額外推薦。"
           }
         ]
       }
@@ -2481,58 +2395,58 @@
         "staticQuestions": [
           {
             "id": "port-routing",
-            "question": "How do I know which port my cruise calls at?",
-            "answer": "Your cruise booking confirmation lists the Jeju port. We confirm the port with you at booking and route the day accordingly. Most major cruise lines call at Jeju Port (north terminal); some Seogwipo-area calls use Gangjeong Port."
+            "question": "我如何知道我的郵輪停靠哪個碼頭？",
+            "answer": "您的郵輪預訂確認書上會列明濟州靠港碼頭。我們在預約時與您確認碼頭，並依此安排對應路線。大多數主要郵輪公司靠泊濟州港（北部碼頭）；部分西歸浦海域的靠港使用江汀港。"
           },
           {
             "id": "cruise-return",
-            "question": "Will I be back to the ship in time?",
-            "answer": "Yes. Both variants return to the cruise terminal between 16:30-17:00, with buffer for any traffic delay. We track your sailaway time and adjust pace if conditions change."
+            "question": "我能及時返回船上嗎？",
+            "answer": "能。兩條路線均在16:30至17:00之間返回郵輪碼頭，並預留了應對交通延誤的預留時間。我們追蹤您的開船時間，並在情況有變時及時調整行程節奏。"
           },
           {
             "id": "different-port",
-            "question": "What if my cruise call port changes?",
-            "answer": "Notify us as soon as you know — we switch the route variant to match. Port-routing is the whole reason this tour has two variants instead of one."
+            "question": "如果我的郵輪靠港碼頭改變了怎麼辦？",
+            "answer": "請您一知道就儘快通知我們——我們將把路線切換到對應的路線版本。港口路線規劃正是這個行程設有兩個路線版本而非一個的原因。"
           },
           {
             "id": "first-time",
-            "question": "Is this a good choice for first-time visitors to Jeju?",
-            "answer": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+            "question": "這個行程適合初次造訪濟州的旅客嗎？",
+            "answer": "是的——它在均衡的一日行程中涵蓋了當地最具特色的景點。"
           },
           {
             "id": "walking",
-            "question": "Is the walking difficult?",
-            "answer": "Moderate walking with some active sections."
+            "question": "步行難度如何？",
+            "answer": "中等難度，含部分較為活躍的步行段落。"
           },
           {
             "id": "family",
-            "question": "Is this tour suitable for families?",
-            "answer": "Yes for families whose kids can handle a full day of moving around."
+            "question": "這個行程適合攜帶兒童的家庭嗎？",
+            "answer": "適合能應對全天行程節奏的家庭和兒童。"
           },
           {
             "id": "seniors",
-            "question": "Can older adults join comfortably?",
-            "answer": "Recommended only for active seniors comfortable with stairs and uneven ground."
+            "question": "年長旅客參加是否方便？",
+            "answer": "建議體力較佳、能應對臺階和不平整地面的活躍長輩參加。"
           },
           {
             "id": "children",
-            "question": "What's the recommended minimum age?",
-            "answer": "Best fit is around age 6 and up — children comfortable with a full-day rhythm and the walking notes above."
+            "question": "最小建議年齡是多少？",
+            "answer": "最適合約6歲以上、能適應全天行程節奏和上述步行要求的兒童。"
           },
           {
             "id": "rain",
-            "question": "Can the tour run in rainy weather?",
-            "answer": "Several stops are exposed; very wet weather may shorten or substitute stops."
+            "question": "下雨天可以進行嗎？",
+            "answer": "部分景點為露天場地；遇強降雨可能縮短或替換景點。"
           },
           {
             "id": "lunch",
-            "question": "Is lunch included?",
-            "answer": "A lunch break is built into the route. Whether the meal itself is included depends on the booked rate — check the inclusions list."
+            "question": "午餐含在行程費用中嗎？",
+            "answer": "行程安排了午餐休息時間。是否含餐費取決於預訂的費率——請查看行程包含項目。"
           },
           {
             "id": "pickup",
-            "question": "Where do I get picked up?",
-            "answer": "From your hotel lobby or a designated pickup point in the booking area. Exact pickup time is confirmed the evening before."
+            "question": "在哪裡接送？",
+            "answer": "在您的飯店大廳或預約區域內的指定集合點接送。確切的接送時間在前一晚確認。"
           }
         ]
       }
@@ -2582,18 +2496,18 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB. user_port resolves at booking from cruise itinerary.",
+        "note": "可訂狀態與郵輪港口資訊會在預訂步驟中確認。",
         "price": {
           "amountLabel": "",
           "currency": "USD",
-          "per": "person"
+          "per": "人"
         }
       }
     }
   ],
   "priceSource": {
     "discountPct": 10,
-    "discountNote": "10% off marketplace baseline",
+    "discountNote": "較平臺基準價優惠10%",
     "amount": null,
     "currency": "USD"
   },
@@ -2614,16 +2528,16 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
       },
       "v17_batch6_enhancement": {
         "date": "2026-04-29",
-        "description": "Batch 6 deep enhancement — port-aware cruise shore excursion tour. Both variants (Jeju Port north + Gangjeong Port south) enhanced with 1,000+ char descriptions per stop; KB-backed _poi_meta on all attraction stops; matching_profile recalibrated to verified-fact 0-1 float scores; variant-level legacy 0-5 / 0-100 scale fields ALSO normalized to 0-1 float (Phase 1 unification completion for variant scope). Time-weighted indoor_ratio computed per variant per Fix 1 methodology.",
+        "description": "Batch 6 deep enhancement — port-aware cruise shore excursion tour. Both variants (Jeju Port north + Gangjeong Port south) enhanced with 1,000+ char descriptions per stop; KB-backed _poi_meta on all attraction stops; product profile recalibrated to verified-fact 0-1 float scores; variant-level legacy 0-5 / 0-100 scale fields ALSO normalized to 0-1 float (Phase 1 unification completion for variant scope). Time-weighted indoor_ratio computed per variant per Fix 1 methodology.",
         "_score_audit": {
-          "_methodology": "0-1 float scale per Phase 1 standard. Variant-level legacy 0-5/0-100 scale fields ALSO normalized to 0-1 float in this batch (previously the schema unification stopped at top-level matching_profile). Time-weighted indoor_ratio per Fix 1 — computed PER VARIANT then aggregated. Top-level matching_profile uses cross-variant averages weighted toward Gangjeong (the more common 2025+ docking).",
+          "_methodology": "0-1 float scale per Phase 1 standard. Variant-level legacy 0-5/0-100 scale fields ALSO normalized to 0-1 float in this batch (previously the schema unification stopped at top-level product profile). Time-weighted indoor_ratio per Fix 1 — computed PER VARIANT then aggregated. Top-level product profile uses cross-variant averages weighted toward Gangjeong (the more common 2025+ docking).",
           "deltas_applied": {
             "unesco_fit": {
               "old": 0.8,
@@ -2631,12 +2545,12 @@
               "reasoning": "VERIFIED HIGH — both variants hit major UNESCO sites. Variant 0 (Jeju Port): Seongsan Ilchulbong = TRIPLE UNESCO (World Natural Heritage 2007 + Biosphere Reserve + Global Geopark) + Haenyeo ICH demos. Variant 1 (Gangjeong): Hallasan UNESCO World Heritage + Biosphere Reserve + Jusangjeolli Global Geopark. Both variants reliably deliver UNESCO content. 0.85 reflects this consistent delivery. Note: Seongeup is NOT UNESCO (national folklore only). Olle Market and Cheonjiyeon are not UNESCO. Score reflects weighted average of UNESCO density in both variants."
             },
             "scenic_level": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.95,
               "reasoning": "VERIFIED — Variant 0: volcanic crater + coastal cape + folk village. Variant 1: alpine wetland + columnar basalt + waterfall + market. Both deliver catalog-leading scenic diversity. 0.95 calibrated."
             },
             "photo_level": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.95,
               "reasoning": "Verified — UNESCO crater, columnar basalt, subtropical falls, thatched-roof village, market food shots. Highly photogenic but not the absolute top (no flower festivals). 0.95 calibrated."
             },
@@ -2671,14 +2585,14 @@
               "reasoning": "UPGRADED — cruise day for first-time Jeju visitors is the ARCHETYPE use case for this product. Both variants deliver the iconic Jeju vista appropriate to the docking port. 0.95 — near-maximum first-time fit."
             },
             "same_day_flight_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.95,
               "reasoning": "Cruise tour ends 16:30-17:30 at port; not at airport. Bus #100 from Jeju Port to airport is direct (~30 min). For the Gangjeong variant, airport transfer is ~50 min via Limousine 800. Both variants support same-day onward travel for guests leaving the cruise mid-itinerary, but it's tighter from Gangjeong. Aggregate 0.95."
             },
             "small_group_fit_smallgroup": {
               "field": "small_group_fit",
-              "old_smallgroup": 1,
-              "new_smallgroup": 1,
+              "old_smallgroup": 1.0,
+              "new_smallgroup": 1.0,
               "old_bus": 0.2,
               "new_bus": 0.2,
               "reasoning": "Per-tour: small_group tour = 1.0 (small group format defines this product); bus tour = 0.2 (large coach format is the OTHER product). Format fixed by tour SKU."
@@ -2687,8 +2601,8 @@
               "field": "bus_fit",
               "old_smallgroup": 0.2,
               "new_smallgroup": 0.2,
-              "old_bus": 1,
-              "new_bus": 1,
+              "old_bus": 1.0,
+              "new_bus": 1.0,
               "reasoning": "Per-tour: small_group tour bus_fit = 0.2; bus tour bus_fit = 1.0."
             },
             "private_fit": {
@@ -2773,8 +2687,8 @@
               "reasoning": "Cruise day infrastructure is comfort-optimized — paved/boardwalk trails, climate-controlled vehicles, restaurant lunch, terminal facilities. 0.75 aggregate."
             },
             "duration_hours": {
-              "old": 8,
-              "new": 8,
+              "old": 8.0,
+              "new": 8.0,
               "reasoning": "Confirmed 8h duration for both variants — within cruise day buffer."
             },
             "min_recommended_age": {
@@ -2794,8 +2708,8 @@
           "Cruise Critic",
           "Wikipedia",
           "Inside Jeju",
-          "Trip.com",
-          "Klook",
+          "市場參考資料",
+          "市場參考資料",
           "Soul of Seoul"
         ]
       }

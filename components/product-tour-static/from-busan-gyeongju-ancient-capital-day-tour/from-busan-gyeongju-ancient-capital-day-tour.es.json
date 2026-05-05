@@ -5,7 +5,7 @@
   "locale": "es",
   "product_id": "from-busan-gyeongju-ancient-capital-day-tour",
   "seo": {
-    "pageTitle": "Busan→Gyeongju: Capital Milenaria de Silla, Ritmo Pausado | AtoC",
+    "pageTitle": "Busan→Gyeongju: Antigua Capital de Silla, Ritmo Pausado | AtoC",
     "metaDescription": "Tour Busan-Gyeongju a ritmo pausado: Bosque Ahopsan → Bulguksa (UNESCO) → Museo Nacional Gyeongju → Aldea Gyochon → Puente Woljeonggyo. Regreso ~30-40 min antes que el tour UNESCO Legacy. Grupo pequeño.",
     "primaryKeywords": [
       "tour Gyeongju ritmo pausado",
@@ -22,13 +22,13 @@
     "thumbnail": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
     "title": "Tour Busan→Gyeongju: Capital de la Silla a Ritmo Pausado",
     "priceLabel": "Consulte el precio al reservar",
-    "shortCardDescription": "Las mismas seis paradas de Gyeongju que el tour UNESCO Legacy (Ahopsan, Bulguksa, Museo Nacional, Gyochon, Woljeonggyo) a un ritmo más tranquilo y con regreso ~30-40 minutos antes. Ideal para quienes prefieren detenerse más en cada parada sin correr. Mismo precio, grupo pequeño (~10 pasajeros). Los que quieren la misma ruta con más tiempo en el museo eligen el tour UNESCO Legacy (C2).",
+    "shortCardDescription": "Las mismas seis paradas de Gyeongju que el tour UNESCO Legacy (Ahopsan, Bulguksa, Museo Nacional, Gyochon, Woljeonggyo) a un ritmo más tranquilo y con regreso ~30-40 minutos antes. Recomendado para quienes prefieren detenerse más en cada parada sin correr. Mismo precio, grupo pequeño (~10 pasajeros). Los que quieren la misma ruta con más tiempo en el museo eligen el tour UNESCO Legacy (C2).",
     "tags": [
-      "small_group",
-      "gyeongju",
-      "from_busan",
-      "silla_kingdom",
-      "ancient_capital"
+      "grupo reducido",
+      "Gyeongju",
+      "Desde Busan",
+      "Reino de Silla",
+      "Antigua capital"
     ],
     "rating": 0,
     "reviewCount": 0,
@@ -45,14 +45,14 @@
     ],
     "heroImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800"
   },
-  "headlineLine1": "La capital milenaria de Corea, a ritmo más tranquilo —",
+  "headlineLine1": "La antigua capital de Corea, a ritmo más tranquilo —",
   "headlineLine2": "seis paradas de Gyeongju desde Busan",
   "price": {
     "amountLabel": "",
     "currency": "USD",
-    "per": "person",
-    "priceSource": "getyourguide_t1202791",
-    "priceNote": "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across packages and operators. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+    "per": "persona",
+    "priceSource": "direct_rate",
+    "priceNote": "Precio de grupo pequeño aún no confirmado. Consultar el precio comparable.",
     "discountPercent": 10
   },
   "hero": {
@@ -96,40 +96,34 @@
   ],
   "glanceItems": [
     {
-      "icon": "camera",
-      "label": "Valor fotográfico",
-      "value": "Excelente",
-      "level": 5
-    },
-    {
-      "icon": "mountain",
-      "label": "Densidad escénica",
-      "value": "Bueno",
-      "level": 4
-    },
-    {
-      "icon": "footprints",
-      "label": "Caminata",
-      "value": "Moderado",
-      "level": 3
-    },
-    {
-      "icon": "cloud-rain",
-      "label": "Aptitud lluvia",
-      "value": "Moderado",
-      "level": 3
+      "icon": "clock",
+      "label": "Duración",
+      "value": "Un día (regreso ~30-40 min antes que el tour UNESCO Legacy)"
     },
     {
       "icon": "users",
-      "label": "Aptitud familia",
-      "value": "Bueno",
-      "level": 4
+      "label": "Grupo",
+      "value": "Grupo pequeño (~10 pasajeros máx.)"
+    },
+    {
+      "icon": "map-pin",
+      "label": "Recogida",
+      "value": "3 estaciones de metro de Busan"
+    },
+    {
+      "icon": "footprints",
+      "label": "A pie",
+      "value": "Moderado — Bulguksa + Woljeonggyo"
+    },
+    {
+      "icon": "ticket",
+      "label": "Entradas",
+      "value": "Todas incluidas"
     },
     {
       "icon": "gauge",
-      "label": "Equilibrio",
-      "value": "Equilibrado",
-      "level": 4
+      "label": "Ritmo",
+      "value": "Más pausado que el tour UNESCO Legacy"
     }
   ],
   "galleryItems": [
@@ -137,7 +131,7 @@
       "id": "g1",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "Sendero de bambú iluminado en el Bosque Ahopsan con tallos altos y suelo cubierto de hojas",
+      "alt": "Imagen de Bosque de Bambú Ahopsan — apertura tranquila antes de Gyeongju",
       "caption": "Bosque de Bambú Ahopsan — apertura tranquila antes de Gyeongju",
       "location": "Ahopsan Bamboo Forest, Gijang-gun, Busan Noreste",
       "atmosphere": "El bambú más alto de Busan: 20 m de altura, 400 años de historia familiar"
@@ -146,7 +140,7 @@
       "id": "g2",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "Las pagodas Dabotap y Seokgatap del Templo Bulguksa al amanecer",
+      "alt": "Imagen de Templo Bulguksa — Patrimonio UNESCO",
       "caption": "Templo Bulguksa — Patrimonio UNESCO, las pagodas más famosas de Corea",
       "location": "Bulguksa, Tohamsan, Gyeongju",
       "atmosphere": "Arte budista del siglo VIII: las dos pagodas más importantes de Corea"
@@ -155,7 +149,7 @@
       "id": "g3",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=1200",
-      "alt": "La Corona de Oro Silla en vitrina del Museo Nacional de Gyeongju con iluminación especial",
+      "alt": "Imagen de Museo Nacional de Gyeongju — la corona de oro y los tesoros de la Silla",
       "caption": "Museo Nacional de Gyeongju — la corona de oro y los tesoros de la Silla",
       "location": "Museo Nacional de Gyeongju, Inwang-dong",
       "atmosphere": "Un ritmo más pausado para contemplar la corona de oro sin prisas"
@@ -164,7 +158,7 @@
       "id": "g4",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "El Puente Woljeonggyo al atardecer reflejado en el río Namcheon con luz dorada",
+      "alt": "Imagen de Puente Woljeonggyo — el mayor puente de madera cubierto de Corea",
       "caption": "Puente Woljeonggyo — el mayor puente de madera cubierto de Corea",
       "location": "Puente Woljeonggyo, Gyeongju",
       "atmosphere": "Hora dorada: el cierre más fotogénico de Gyeongju antes del regreso"
@@ -173,10 +167,10 @@
       "id": "g5",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
-      "alt": "Wooden bridge pavilion reflected in calm river water",
-      "caption": "Woljeonggyo Bridge — 66-meter Silla-style reconstruction completed in 2018.",
-      "location": "Woljeonggyo Bridge, Gyeongju",
-      "atmosphere": "Wood, water, soft afternoon light"
+      "alt": "Imagen de Puente Woljeonggyo — reconstrucción de 66 metros de estilo Silla completada en 2",
+      "caption": "Puente Woljeonggyo — reconstrucción de 66 metros de estilo Silla completada en 2018",
+      "location": "puente Woljeonggyo, Gyeongju",
+      "atmosphere": "Madera, agua y luz suave de la tarde"
     }
   ],
   "itineraryStops": [
@@ -195,7 +189,7 @@
         "Recogidas escalonadas ~08:00-08:40",
         "Desplazamiento a Gyeongju — ~1 hora"
       ],
-      "whyOnRoute": "Three pickup points cover Busan's three main hotel zones (KTX/Nampo, Seomyeon mid-city, Haeundae beachfront) without forcing guests to transit across the city in the morning. Sequencing west→east minimizes coach distance and lands the group at Ahopsan around 09:50 — early enough that the bamboo forest is at its quietest and most photogenic.",
+      "whyOnRoute": "Tres puntos de recogida cubren las tres principales zonas hoteleras de Busán.",
       "_poi_meta": {
         "poi_key": "OPS_busan_subway_pickup",
         "kb_version": "1.16",
@@ -208,7 +202,7 @@
       "duration": "75 min",
       "name": "Bosque de Bambú Ahopsan",
       "category": "Bosque privado de 520.000 m² gestionado por el Clan Moon durante 400 años, Gijang-gun",
-      "description": "**Bosque Ahopsan (아홉산숲, 'Bosque de las Nueve Montañas')** es un **bosque privado de 520.000 m²** en Gijang-gun (noreste de Busan), **gestionado durante ~400 años y 9 generaciones por el Clan Nampyeong Moon** — una de las pocas familias en Corea que han mantenido un bosque familiar intacto durante siglos. El bosque alberga principalmente **bambú gigante (맹종죽, bambú moso)** y **metasecoya** (Metasequoia glyptostroboides), con senderos sombreados y la atmósfera tranquila de un ecosistema privado que funciona como apertura cultural antes del tour de Gyeongju. El bambú moso puede alcanzar **20 m de altura** con un diámetro de hasta 15 cm — el más grande de Corea en este enclave. Fue escenario del drama **'Goblin' (도깨비, 2016)** y de varias series de K-drama. La visita abre ~09:00. **Entrada incluida.**",
+      "description": "**Bosque Ahopsan**, conocido como el “Bosque de las Nueve Montañas”, es un **bosque privado de 520.000 m²** en Gijang-gun, al noreste de Busan. Ha sido gestionado durante unos **400 años y 9 generaciones por el clan Nampyeong Moon**, una de las pocas familias de Corea que han conservado intacto un bosque familiar durante siglos. Sus senderos sombreados atraviesan principalmente **bambú moso** y **metasecoyas**, creando una apertura tranquila y cultural antes de entrar en Gyeongju. El bambú moso puede alcanzar unos **20 m de altura** y hasta 15 cm de diámetro. El bosque también fue escenario del drama **Goblin** y de varias series coreanas. Suele abrir alrededor de las 09:00. **Entrada incluida.**",
       "highlights": [
         "**400 años** de gestión ininterrumpida por el **Clan Nampyeong Moon** (9 generaciones)",
         "**Bambú moso de hasta 20 m** — el más grande de Corea en este enclave",
@@ -230,21 +224,6 @@
           "Korea Tourism Organization (Ahopsan filming-location designation)",
           "Cultural Heritage Administration of Korea (Nampyeong Moon clan working forest)"
         ]
-      },
-      "visitBasics": {
-        "hours": "Daily 09:00–18:00 (last admission ~17:00)",
-        "closed": "Mondays",
-        "admission": "Adult ₩8,000 / Child ₩5,000",
-        "walking": "Moderate — gravel paths and gentle slopes; partial wooden walkway; comfortable shoes recommended"
-      },
-      "convenience": {
-        "restroom": "Restrooms at the entrance gate and midway near the ancestral hall",
-        "parking": "On-site coach and car parking (free)"
-      },
-      "smartNotes": {
-        "photo": "Spot 9 (Maengjongjuk bamboo grove) — best 10:00–11:30 with side-light through the canopy; the thatched gate near the ancestral hall; 400-year pine corridor at the lower loop",
-        "facilities": "Small farm-stand at the entrance (seasonal local produce, simple drinks); no full café inside the forest",
-        "tip": "Wear darker tops for stronger photo contrast against the bright bamboo; do not step off the marked path (active forest restoration); drone use is prohibited"
       }
     },
     {
@@ -253,18 +232,18 @@
       "duration": "75 min",
       "name": "Templo Bulguksa (Patrimonio Mundial UNESCO)",
       "category": "Patrimonio Mundial UNESCO (1995) — Obra maestra del arte budista de la Silla Unificada",
-      "description": "**Templo Bulguksa (불국사) — Patrimonio Mundial UNESCO desde 1995** (junto a la Gruta Seokguram) — es **la obra maestra del arte budista de la Silla Unificada** y el **Lugar Histórico y Pintoresco Nacional n.° 1 de Corea**. Construido originalmente en **528 CE** y completamente renovado en **751 CE** bajo el rey Gyeongdeok (35.° rey de Silla) por el ministro **Kim Daeseong**, que según la leyenda lo construyó para rendir homenaje a sus padres de esta vida y de la anterior. Las estructuras más famosas: **(1) Cheongungyo y Baegungyo** ('Puente del Cielo Azul y Puente de las Nubes Blancas', **Tesoro Nacional n.° 23**) — la escalinata de piedra que asciende a Jahamun Gate; **(2) Dabotap** ('Pagoda de Muchos Tesoros', **Tesoro Nacional n.° 20**) — de estilo único en el mundo budista, representa el universo de Buda Prabhutaratna; **(3) Seokgatap** ('Pagoda de la Piedra de Sakyamuni', **Tesoro Nacional n.° 21**) — aparece en el billete de 10 wones coreano. **Entrada ₩6.000 (incluida).**",
+      "description": "**Templo Bulguksa — Patrimonio Mundial UNESCO desde 1995** (junto a la Gruta Seokguram) — es **la obra maestra del arte budista de la Silla Unificada** y el **Lugar Histórico y Pintoresco Nacional n.° 1 de Corea**. Construido originalmente en **528** y completamente renovado en **751** bajo el rey Gyeongdeok (35.° rey de Silla) por el ministro **Kim Daeseong**, que según la leyenda lo construyó para rendir homenaje a sus padres de esta vida y de la anterior. Las estructuras más famosas: **(1) Cheongungyo y Baegungyo** ('Puente del Cielo Azul y Puente de las Nubes Blancas', **Tesoro Nacional n.° 23**) — la escalinata de piedra que asciende a Jahamun Gate; **(2) Dabotap** ('Pagoda de Muchos Tesoros', **Tesoro Nacional n.° 20**) — de estilo único en el mundo budista, representa el universo de Buda Prabhutaratna; **(3) Seokgatap** ('Pagoda de la Piedra de Sakyamuni', **Tesoro Nacional n.° 21**) — aparece en el billete de 10 wones coreano. **Entrada ₩6.000 (incluida).**",
       "highlights": [
         "**Patrimonio Mundial UNESCO 1995** — Lugar Histórico y Pintoresco Nacional n.° 1 de Corea",
         "**Cheongungyo y Baegungyo** (Tesoro Nacional n.° 23) — la escalinata de piedra de 1.300 años",
         "**Dabotap** (T.N. n.° 20) y **Seokgatap** (T.N. n.° 21, imagen en el billete de 10 ₩)",
-        "Fundado en **528 CE**, renovado en **751 CE** por el ministro Kim Daeseong",
+        "Fundado en **528**, renovado en **751** por el ministro Kim Daeseong",
         "**Entrada ₩6.000** (incluida)"
       ],
       "timeUsed": [
         "Zona de las pagodas + Cheongungyo + Daeungjeon Hall — ~75-90 min"
       ],
-      "whyOnRoute": "Bulguksa es el hito UNESCO ancla del día: el templo más visitado de Corea con los tesoros nacionales más conocidos del budismo coreano.",
+      "whyOnRoute": "Bulguksa es el punto UNESCO clave del día: el templo más visitado de Corea con los tesoros nacionales más conocidos del budismo coreano.",
       "_poi_meta": {
         "poi_key": "bulguksa_temple",
         "kb_version": "1.25",
@@ -276,21 +255,6 @@
           "VisitKorea",
           "Visit Gyeongju official"
         ]
-      },
-      "visitBasics": {
-        "hours": "Daily 09:00–18:00 (last admission 17:00)",
-        "closed": "Open year-round",
-        "admission": "Free (since 2023, per the revised Cultural Heritage Protection Act)",
-        "walking": "Moderate — stone steps, slopes and gravel paths; comfortable shoes recommended"
-      },
-      "convenience": {
-        "restroom": "Free public restrooms (mini-temple style architecture) inside the complex",
-        "parking": "On-site lot (paid)"
-      },
-      "smartNotes": {
-        "photo": "Cheongungyo / Baegungyo bridge stairway (NT 23) below Jahamun Gate; Dabotap (NT 20) and Seokgatap (NT 21) pagodas in the main courtyard; spring cherry blossoms along the approach road",
-        "facilities": "Tourist Information Center at the entrance; Bulguksa Museum (separate ticket 2,000 / 1,000 KRW, closed Mondays)",
-        "tip": "Modest dress; remove shoes when entering halls; no drones; do not photograph monks or worshippers (signs marked clearly); the temple is still an active Jogye Order head temple (11th district)"
       }
     },
     {
@@ -299,7 +263,7 @@
       "duration": "60 min",
       "name": "Almuerzo (restaurante local de Gyeongju)",
       "category": "Pausa para comer — Zona Bulguksa-Tohamsan",
-      "description": "Almuerzo en restaurante local de Gyeongju cerca de la salida de Bulguksa. Menú habitual: **Gyeongju Ssambap (경주 쌈밥)** — arroz con banchan de temporada y hojas de verdura para envolver (especialidad de Gyeongju); o **Bibimbap de Gyeongju** con ingredientes locales. Precio orientativo: **₩10.000-15.000/persona. Almuerzo no incluido** — pago directo.",
+      "description": "Almuerzo en un restaurante local de Gyeongju cerca de la salida de Bulguksa. Menús habituales: **ssambap de Gyeongju**, arroz con banchan de temporada y hojas de verdura para envolver, una especialidad local; o **bibimbap de Gyeongju** con ingredientes de la zona. Precio orientativo: **₩10.000-15.000 por persona. Almuerzo no incluido**; pago directo en el restaurante.",
       "highlights": [
         "**Gyeongju Ssambap** — arroz con banchan y hojas para envolver, especialidad local",
         "**Almuerzo no incluido** (~₩10.000-15.000/persona)"
@@ -307,7 +271,7 @@
       "timeUsed": [
         "Almuerzo — ~60 min"
       ],
-      "whyOnRoute": "Lunch is positioned right after Bulguksa to reset before the afternoon's slower-paced museum and hanok village segment. The longer dwell vs. fixed-itinerary alternatives reinforces the calm-pace framing — history-lover guests typically appreciate the breathing room.",
+      "whyOnRoute": "El almuerzo se sitúa justo después de Bulguksa para recargar antes del museo y la aldea hanok.",
       "_poi_meta": {
         "poi_key": "OPS_gyeongju_lunch",
         "kb_version": "1.16",
@@ -320,12 +284,12 @@
       "duration": "75 min",
       "name": "Museo Nacional de Gyeongju",
       "category": "El museo definitivo de la civilización Silla — Corona de oro, Campana de Sagong",
-      "description": "**Museo Nacional de Gyeongju (국립경주박물관)** es **el museo definitivo de la civilización Silla** — fundado en **1945**, con el edificio principal actual completado en **1975** y renovado en **2000**. La colección permanente incluye más de **100.000 piezas** del período Silla (**57 BCE - 935 CE**), de las cuales ~3.000 están en exposición permanente. Hitos de la colección: **(1) Corona de Oro Silla (금관)** — una de las 6 coronas de oro reales del mundo antiguo conocidas, con los elaborados árboles de jade **(A)** y orbes de jade **(B)** que representan el cosmos chamánico; **(2) Relieve del caballo celestial (천마도, Tesoro Nacional n.° 207)** — descubierto en 1973 en el Túmulo n.° 155 (Cheonmachong), la única pintura de la época Silla que sobrevive, sobre corteza de abedul; **(3) Campana del Gran Rey Seongdeok (성덕대왕신종, Tesoro Nacional n.° 29)** — la mayor campana budista de bronce de Asia, 3,75 m de altura, 18,9 toneladas, fundida en 771 CE; su tono 'emille' (el sonido es tan puro que se dice que suena como una madre llamando a su hijo). El museo tiene señalización en inglés y folletos explicativos disponibles. **Entrada gratuita.**",
+      "description": "**Museo Nacional de Gyeongju** es el gran museo de referencia para comprender la civilización Silla. Fundado en **1945**, con el edificio principal actual completado en **1975** y renovado en **2000**, conserva más de **100.000 piezas** del período Silla (**57 a. C.-935 d. C.**), de las cuales unas 3.000 se exponen de forma permanente. Entre sus piezas clave destacan: **(1) la Corona de Oro de Silla**, una de las pocas coronas reales de oro del mundo antiguo, con motivos de árbol y jade vinculados al imaginario chamánico; **(2) el Relieve del Caballo Celestial, Tesoro Nacional n.º 207**, descubierto en 1973 en el túmulo Cheonmachong y considerado la única pintura conservada de la época Silla; y **(3) la Campana del Gran Rey Seongdeok, Tesoro Nacional n.º 29**, la mayor campana budista de bronce de Asia, de 3,75 m de alto y 18,9 toneladas, fundida en el año 771. El museo cuenta con señalización en inglés y folletos explicativos. **Entrada gratuita.**",
       "highlights": [
         "**Corona de Oro Silla** — una de las 6 coronas de oro reales antiguas conocidas",
-        "**Relieve del Caballo Celestial (천마도, T.N. n.° 207)** — la única pintura Silla superviviente",
+        "**Relieve del Caballo Celestial, Tesoro Nacional n.º 207** — la única pintura conservada de la época Silla",
         "**Campana de Seongdeok (T.N. n.° 29)** — la mayor campana budista de Asia (18,9 t)",
-        "Más de **100.000 piezas** del período Silla (57 BCE - 935 CE)",
+        "Más de **100.000 piezas** del período Silla (57 a. C. - 935 d. C.)",
         "**Entrada gratuita**; señalización en inglés"
       ],
       "timeUsed": [
@@ -343,21 +307,6 @@
           "Yonhap News (2025 APEC special exhibition)",
           "National Museum of Korea (Gyeongju Branch official)"
         ]
-      },
-      "visitBasics": {
-        "hours": "Tue–Sun 10:00–18:00 (last admission 17:30); extended hours Sat & last Wed of month until 21:00",
-        "closed": "Mondays + Jan 1 + Lunar New Year + Chuseok",
-        "admission": "Free (special exhibitions may charge a small fee)",
-        "walking": "Mostly indoor + paved outdoor; fully wheelchair-accessible"
-      },
-      "convenience": {
-        "restroom": "Multiple restrooms in main building + outdoor pavilion area",
-        "parking": "Free on-site coach and car parking"
-      },
-      "smartNotes": {
-        "photo": "Sacred Bell of King Seongdeok in its outdoor pavilion (afternoon side-light); Cheonmachong gold crown display in Silla Hall (low-light, no flash); the museum garden with stone pagoda fragments",
-        "facilities": "Museum shop with replica gold-crown jewelry; café in the main building; cloakroom available",
-        "tip": "No flash photography; some special exhibitions prohibit all photography (check signage); allow ~10 minutes for the bell pavilion alone — it is the single most important Silla artifact"
       }
     },
     {
@@ -366,7 +315,7 @@
       "duration": "60 min",
       "name": "Aldea Hanok Gyochon",
       "category": "Conjunto hanok histórico del Clan Choi de Gyeongju — continuidad de 12 generaciones",
-      "description": "**Aldea Hanok Gyochon (교촌마을)** es el **conjunto histórico del Clan Choi de Gyeongju (경주 최씨)** — un linaje de mercaderes-aristócratas que **mantuvo riqueza continua durante 12 generaciones** que abarca de la era Joseon tardía al período moderno, siguiendo el famoso lema familiar: **'No pasar hambre en un radio de 100 li; no acumular más de 10.000 seok de grano'** — una filosofía de riqueza responsable extraordinaria para la época. Las casas del Clan Choi son el mejor ejemplo de **hanok de mercaderes-aristócratas** de la era Joseon en Corea. La aldea está junto al **Puente Woljeonggyo** (siglo VIII, reconstruido) y a la **Anapji Pond** (estanque del palacio Banwolseong). Un sendero ribereño conecta ambas. Tiendas de **Gyeongju-ppang (慶州빵, pastelito de judías adzuki de Gyeongju)** en las callejuelas. **Entrada gratuita.**",
+      "description": "**Aldea Hanok Gyochon** reúne las casas históricas del clan Choi de Gyeongju, un linaje de comerciantes-aristócratas que mantuvo su riqueza durante 12 generaciones, desde finales de Joseon hasta la era moderna. La familia era conocida por su lema de riqueza responsable: no dejar que nadie pasara hambre en la zona y no acumular más grano del necesario. Sus casas son uno de los mejores ejemplos de hanok de élite mercantil de la era Joseon. La aldea está junto al **Puente Woljeonggyo**, reconstrucción de un puente del siglo VIII, y cerca del antiguo estanque palaciego Anapji. En sus callejuelas también se pueden encontrar tiendas de **Gyeongju-ppang**, un pastelito local relleno de pasta de judía roja. **Entrada gratuita.**",
       "highlights": [
         "Clan Choi de Gyeongju — **12 generaciones de riqueza** con filosofía de redistribución",
         "Hanok de mercaderes-aristócratas — el mejor ejemplo del período Joseon tardío en Corea",
@@ -389,21 +338,6 @@
           "Korea Tourism Organization (Gyeongju Choi Clan + Gyochon Hanok Village)",
           "Cultural Heritage Administration (Important Folklore Material No. 27 designation)"
         ]
-      },
-      "visitBasics": {
-        "hours": "Daily during daylight; most heritage houses 09:00–18:00",
-        "closed": "Some individual houses close on Mondays — main lanes always open",
-        "admission": "Free for most houses; Choi Clan main hall has a small donation box",
-        "walking": "Easy — gravel and stone-flag lanes; main spine partially wheelchair-friendly"
-      },
-      "convenience": {
-        "restroom": "Public restrooms at the village entrance and near Gyeongjuhyanggyo",
-        "parking": "Coach drop-off lot at the western entrance (free)"
-      },
-      "smartNotes": {
-        "photo": "Hanok tile roofs in golden-hour light; Gyodong Beopju brewery gate; Woljeonggyo Bridge appears in the distance from the village's southwest corner (preview of Stop 7); Gyerim Forest's old willows",
-        "facilities": "Gyodong Beopju shop (souvenir bottles); small artisan stores along the main lane (traditional rice cake, hwangnam-bbang); Yosukgung 1779 (luxury restaurant, reservation required)",
-        "tip": "Buy Gyodong Beopju as a souvenir if you have customs allowance for spirits (verify your country's import limit); the village can be quiet on weekday afternoons — perfect for slow photography"
       }
     },
     {
@@ -412,9 +346,9 @@
       "duration": "30 min",
       "name": "Puente Woljeonggyo",
       "category": "El mayor puente de madera cubierto de Corea — reconstrucción Silla del siglo VIII",
-      "description": "**Puente Woljeonggyo (월정교)** es el **mayor puente de madera cubierto de Corea** — reconstrucción de un puente Silla cubierto construido originalmente en **760 CE bajo el rey Gyeongdeok** sobre el río Namcheon, con una longitud original de **60,57 m**. El puente fue rehabilitado entre 2008 y 2013 usando técnicas de carpintería tradicionales coreanas. Al atardecer y por la noche, la **iluminación dorada del puente reflejada en el río Namcheon** es uno de los escenarios fotográficos más reproducidos de Gyeongju. La hora de llegada del tour (~17:30-18:00) suele coincidir con la **hora dorada** antes del encendido de la iluminación. **Entrada gratuita.**",
+      "description": "**Puente Woljeonggyo** es el **mayor puente de madera cubierto de Corea** — reconstrucción de un puente Silla cubierto construido originalmente en **760 bajo el rey Gyeongdeok** sobre el río Namcheon, con una longitud original de **60,57 m**. El puente fue rehabilitado entre 2008 y 2013 usando técnicas de carpintería tradicionales coreanas. Al atardecer y por la noche, la **iluminación dorada del puente reflejada en el río Namcheon** es uno de los escenarios fotográficos más reproducidos de Gyeongju. La hora de llegada del tour (~17:30-18:00) suele coincidir con la **hora dorada** antes del encendido de la iluminación. **Entrada gratuita.**",
       "highlights": [
-        "**El mayor puente de madera cubierto de Corea** — reconstrucción del original de **760 CE**",
+        "**El mayor puente de madera cubierto de Corea** — reconstrucción del original de **760**",
         "Iluminación dorada al atardecer reflejada en el río Namcheon — icono fotográfico de Gyeongju",
         "La llegada del tour (~17:30-18:00) coincide con la hora dorada",
         "**Entrada gratuita**"
@@ -434,21 +368,6 @@
           "Korea Times (2025 100-Best announcement)",
           "Korea Heritage Service (Woljeonggyo Reconstruction Project archive)"
         ]
-      },
-      "visitBasics": {
-        "hours": "Open 24 hours (illumination runs roughly sunset → 23:00)",
-        "closed": "Open year-round",
-        "admission": "Free",
-        "walking": "Easy — flat bridge deck; wheelchair-accessible from the north bank"
-      },
-      "convenience": {
-        "restroom": "Public restroom at the north bank parking area",
-        "parking": "Coach parking on the north bank; no parking on the south bank"
-      },
-      "smartNotes": {
-        "photo": "South-bank gatehouse with bridge spanning toward Wolseong palace site (the iconic composition); long-exposure river reflections after illumination begins; the bridge in autumn-foliage frame is on the cover of many MCST tourism brochures",
-        "facilities": "No shops on the bridge itself; small café cluster at the north bank parking",
-        "tip": "Bring a tripod or phone with night mode for the illumination shot; in winter the river fog can blur distant compositions — use the gatehouse foreground; do not climb on the wooden railings"
       }
     },
     {
@@ -466,7 +385,7 @@
         "Woljeonggyo → Busan — ~75 min",
         "Llegadas escalonadas"
       ],
-      "whyOnRoute": "Reverse pickup sequence is the most time-efficient drop-off pattern.",
+      "whyOnRoute": "La secuencia de recogida inversa es el patrón de bajada más eficiente en tiempo.",
       "_poi_meta": {
         "poi_key": "OPS_busan_return",
         "kb_version": "1.16",
@@ -476,71 +395,71 @@
   ],
   "routeFlowStops": [
     {
-      "name": "Busan subway pickup",
+      "name": "Recogida metro Busán",
       "type": "origin",
-      "theme": "Departure"
+      "theme": "Salida"
     },
     {
-      "name": "Ahopsan Bamboo Forest (or Haeundae Dalmaji Hill in cherry season)",
+      "name": "Bosque Bambú Ahopsan (o Dalmaji Hill en temporada cereza)",
       "type": "primary",
       "theme": "Forest / Coastal road (seasonal)"
     },
     {
-      "name": "Bulguksa Temple (UNESCO)",
+      "name": "Templo Bulguksa (UNESCO)",
       "type": "primary",
       "theme": "UNESCO heritage"
     },
     {
-      "name": "Lunch (Gyeongju ssambap)",
+      "name": "Almuerzo (ssambap Gyeongju)",
       "type": "meal",
-      "theme": "Meal"
+      "theme": "Comida"
     },
     {
-      "name": "Gyeongju National Museum",
+      "name": "Museo Nacional de Gyeongju",
       "type": "primary",
       "theme": "Silla artifacts"
     },
     {
-      "name": "Gyochon Hanok Village",
+      "name": "Aldea Hanok Gyochon",
       "type": "primary",
-      "theme": "Heritage village"
+      "theme": "Aldea histórica"
     },
     {
-      "name": "Woljeonggyo Bridge",
+      "name": "Puente Woljeonggyo",
       "type": "primary",
       "theme": "Reconstructed Silla bridge"
     },
     {
-      "name": "Busan subway drop-off",
+      "name": "Bajada metro Busán",
       "type": "return",
-      "theme": "Return"
+      "theme": "Regreso"
     }
   ],
   "routePhases": [
     {
-      "phase": "Outbound + Ahopsan",
-      "duration": "≈ 2.5 hours",
-      "description": "Pickup at three Busan subway exits (08:10, 08:30, 09:10), then drive ≈30 min to Ahopsan Bamboo Forest in Gijang."
+      "phase": "Salida + Ahopsan",
+      "duration": "≈ 2,5 horas",
+      "description": "Recogidas en tres estaciones de Busán (08:10, 08:30, 09:10), luego ≈30 min hasta Ahopsan."
     },
     {
-      "phase": "UNESCO core",
-      "duration": "≈ 2 hours",
-      "description": "Drive ≈70 min from Ahopsan to Bulguksa, then 60 min walking the temple at a relaxed pace."
+      "phase": "Núcleo UNESCO",
+      "duration": "≈ 2 horas",
+      "description": "≈70 min de Ahopsan a Bulguksa, luego 60 min recorriendo el templo a un ritmo más tranquilo."
     },
     {
-      "phase": "Lunch + museum",
-      "duration": "≈ 2 hours",
-      "description": "Local Gyeongju lunch (60 min), then 60 min in the National Museum's highlight galleries."
+      "phase": "Almuerzo + museo",
+      "duration": "≈ 2 horas",
+      "description": "Almuerzo local en Gyeongju (60 min), luego 60 min en las galerías destacadas del Museo Nacional."
     },
     {
-      "phase": "Hanok village + bridge",
-      "duration": "≈ 1.5 hours",
-      "description": "Gyochon Hanok Village walk (60 min) and 30 min at Woljeonggyo Bridge."
+      "phase": "Pueblo hanok + puente",
+      "duration": "≈ 1,5 horas",
+      "description": "Paseo por Gyochon Hanok Village (60 min) y 30 min en el Puente Woljeonggyo."
     },
     {
-      "phase": "Return drive",
-      "duration": "≈ 1.25–1.5 hours",
-      "description": "Gyeongju to Busan via Gyeongbu Expressway. Drop-offs at Haeundae, Seomyeon, Busan Station."
+      "phase": "Regreso",
+      "duration": "≈ 1,25–1,5 horas",
+      "description": "Gyeongju a Busán por la autopista Gyeongbu. Bajadas en Haeundae, Seomyeon y Estación Busán."
     }
   ],
   "routeShapeIntro": {
@@ -566,20 +485,20 @@
         "iconColor": "text-sky-600",
         "items": [
           {
-            "label": "Punto de ruta",
-            "detail": "El guía le explicará los detalles en cada parada."
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
           },
           {
-            "label": "Punto de ruta",
-            "detail": "El guía le explicará los detalles en cada parada."
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
           },
           {
-            "label": "Punto de ruta",
-            "detail": "El guía le explicará los detalles en cada parada."
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
           },
           {
-            "label": "Punto de ruta",
-            "detail": "El guía le explicará los detalles en cada parada."
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
           }
         ]
       }
@@ -589,7 +508,7 @@
     {
       "id": "inclusions",
       "title": "Qué está incluido",
-      "preview": "Round-trip mini-van transport from Busan, certified guía en inglés/chino,…",
+      "preview": "Transporte ida y vuelta en miniván desde Busan, guía certificado de habla inglesa o china,…",
       "content": [
         "Minifurgoneta, guía certificado en inglés, traslados desde/hasta 3 estaciones de metro de Busan, todas las entradas.",
         "No incluido: almuerzo (~₩10.000-15.000), propina."
@@ -598,7 +517,7 @@
     {
       "id": "pickup",
       "title": "Recogida y llegada",
-      "preview": "Three sequential pickup points along Busan Subway Line 1: Busan Station Exit 4 (08:10),…",
+      "preview": "Tres puntos de recogida secuenciales en Línea 1 del metro de Busán: Salida 4 Est. Busán (08:10), Salida 4 Seomyeon (08:25), Haeundae (08:40).",
       "content": [
         "Recogida: Busan Station ~08:10 / Seomyeon ~08:25 / Haeundae ~08:40.",
         "Llegada (orden inverso): Haeundae → Seomyeon → Busan Station ~18:30."
@@ -607,7 +526,7 @@
     {
       "id": "walking",
       "title": "Caminata y terreno",
-      "preview": "Moderate.",
+      "preview": "Moderado.",
       "content": [
         "Moderado. Total: ~4-5 km. Mismas paradas que el C2 con ritmo más pausado entre ellas."
       ]
@@ -615,7 +534,7 @@
     {
       "id": "cancellation",
       "title": "Cancelación",
-      "preview": "Free cancellation up to 24 hours before pickup.",
+      "preview": "Cancelación gratuita hasta 24 horas antes de la recogida.",
       "content": [
         "Cancelación gratuita hasta 24 horas antes.",
         "Mal tiempo / tifón: reembolso total."
@@ -624,7 +543,7 @@
     {
       "id": "seasonal",
       "title": "Notas de ruta por temporada",
-      "preview": "Cherry blossom season (mid-March to mid-April; exact dates vary year-to-year): Ahopsan…",
+      "preview": "Temporada de cerezos (mediados de marzo a mediados de abril; fechas exactas varían): Ahopsan",
       "content": [
         "Primavera: posible cambio de Ahopsan por Haeundae Dalmaji (cerezos)."
       ]
@@ -633,18 +552,18 @@
   "practicalWeatherStatic": {
     "today": {
       "temp": "—",
-      "label": "See seasonal notes"
+      "label": "Consultar notas de temporada"
     },
     "tomorrow": {
       "temp": "—",
-      "label": "See seasonal notes"
+      "label": "Consultar notas de temporada"
     },
-    "_seasonalSummary": "Gyeongju is inland southeast Korea — winters slightly colder than coastal Busan, summers hotter. Spring and autumn are the most comfortable seasons."
+    "_seasonalSummary": "Gyeongju está en el interior del sureste de Corea: inviernos algo más fríos que Busan y veranos más calurosos. Primavera y otoño son las estaciones más cómodas."
   },
   "seasonalVariations": [
     {
       "season": "Primavera (mediados mar a mediados abr)",
-      "description": "Ventana de cerezos: Ahopsan puede cambiar por Haeundae Dalmaji. Bulguksa con cerezos tardíos en abril."
+      "description": "tiempo previsto de cerezos: Ahopsan puede cambiar por Haeundae Dalmaji. Bulguksa con cerezos tardíos en abril."
     },
     {
       "season": "Verano (jun-ago)",
@@ -662,8 +581,8 @@
   "bookingTrustItems": [
     {
       "icon": "check-circle",
-      "title": "Operador local certificado",
-      "description": "Authorized Korean tour operator with full insurance",
+      "title": "Equipo local certificado",
+      "description": "Operador turístico coreano autorizado con seguro completo",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
       "body": "Mismo operador que el tour UNESCO Legacy (C2). Guía certificado en inglés. Miniván ~10 pasajeros."
@@ -671,7 +590,7 @@
     {
       "icon": "route",
       "title": "Especialistas en la ruta Busan-Gyeongju",
-      "description": "Hand-tuned itinerary, not a generic loop",
+      "description": "Itinerario ajustado a medida, no un circuito genérico",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
       "body": "La ruta Busan-Gyeongju ha sido refinada por el operador durante años. El C3 es la versión de ritmo pausado del mismo circuito."
@@ -679,7 +598,7 @@
     {
       "icon": "users",
       "title": "Grupo reducido cuidado",
-      "description": "Right-sized for the route",
+      "description": "Tamaño adecuado para la ruta",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600",
       "body": "Miniván de máx. ~10 pasajeros para un ritmo más tranquilo en cada parada."
@@ -687,40 +606,40 @@
   ],
   "bookingSupportSteps": [
     {
-      "timing": "Immediately",
+      "timing": "Inmediatamente",
       "title": "Confirmación inmediata",
       "detail": "Confirmación con resumen del itinerario.",
-      "description": "Instant confirmation with pickup station choice (Busan Station / Seomyeon / Haeundae) and the day's schedule."
+      "description": "Confirmación instantánea with elección de estación de recogida (Busan Station / Seomyeon / Haeundae) and the day's schedule."
     },
     {
-      "timing": "12 hours before",
+      "timing": "12 horas antes",
       "title": "Recordatorio 12 horas antes",
       "detail": "Condiciones de Bulguksa y meteorología.",
-      "description": "Seasonal note (cherry blossom alt route in mid-March to mid-April; winter bridge lighting window) sent the day before."
+      "description": "Nota estacional (ruta alternativa de cerezos en marzo-principios de abril) enviada antes de la partida."
     },
     {
-      "timing": "Evening before",
+      "timing": "La noche anterior",
       "title": "Información final de recogida",
       "detail": "Contacto del guía y punto de encuentro.",
-      "description": "Driver and van details confirmed the evening before departure."
+      "description": "Detalles del conductor y la furgoneta confirmados la noche anterior a la partida."
     },
     {
-      "timing": "Morning of tour",
+      "timing": "La mañana del tour",
       "title": "Notas del día del tour",
       "detail": "Instrucciones matutinas.",
-      "description": "Morning pickup confirmation message sent to your phone."
+      "description": "Mensaje de confirmación de recogida matutina enviado a su teléfono."
     },
     {
-      "timing": "During tour",
+      "timing": "Durante el tour",
       "title": "Consejos parada a parada",
       "detail": "Recomendaciones de almuerzo y ángulos de foto.",
-      "description": "Guide provides full narration — bamboo forest clan history, Silla-era temple art, National Museum gold crown, Choi family ethics, Woljeonggyo's 760 CE origins."
+      "description": "El guía proporciona narración completa — historia del clan del bosque de bambú, arqueología Silla, tesoros del museo, patrimonio de Gyochon, leyenda del puente."
     },
     {
-      "timing": "After tour",
+      "timing": "Tras el tour",
       "title": "Atención posventa",
       "detail": "Solicitud de valoración tras el tour.",
-      "description": "Post-tour feedback request sent after drop-off."
+      "description": "Solicitud de valoración después del tour enviada tras la llegada."
     }
   ],
   "staticQuestions": [
@@ -824,13 +743,13 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "La disponibilidad se confirma en el paso de pago.",
     "price": {
       "amountLabel": "",
       "currency": "USD",
-      "per": "person",
-      "priceSource": "getyourguide_t1202791",
-      "priceNote": "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across packages and operators. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+      "per": "persona",
+      "priceSource": "direct_rate",
+      "priceNote": "El precio del grupo reducido aún no está confirmado en la ficha del operador. Tours comparables de Gyeongju desde Busan suelen oscilar entre 54 y 90 USD según paquete y operador. Una vez confirmado, el precio directo de AtoC Korea aplica un 10% de descuento fijo.",
       "discountPercent": 10
     }
   },
@@ -838,34 +757,34 @@
     "type": "meeting_point",
     "meeting_points": [
       {
-        "name": "Busan Station Exit 4",
+        "name": "Estación de Busan, salida 4",
         "time": "08:10"
       },
       {
-        "name": "Seomyeon Station Exit 4",
+        "name": "Estación Seomyeon, salida 4",
         "time": "08:30"
       },
       {
-        "name": "Haeundae Station Exit 5",
+        "name": "Estación Haeundae, salida 5",
         "time": "09:10"
       }
     ],
     "dropoff_points": [
       {
-        "name": "Haeundae Station Exit 5",
+        "name": "Estación Haeundae, salida 5",
         "approx_time": "≈ 18:15"
       },
       {
-        "name": "Seomyeon Station Exit 4",
+        "name": "Estación Seomyeon, salida 4",
         "approx_time": "≈ 18:35"
       },
       {
-        "name": "Busan Station Exit 4",
+        "name": "Estación de Busan, salida 4",
         "approx_time": "≈ 18:50"
       }
     ],
     "hotel_pickup_available": false,
-    "notes": "Same six-attraction route year-round (Bulguksa, museum, Gyochon, bridge, plus Ahopsan Bamboo Forest as morning opener). Cherry blossom season (mid-March to mid-April) swaps Ahopsan for Haeundae Dalmaji Hill. Choose the pickup exit closest to your hotel."
+    "notes": "Ruta de seis atracciones durante todo el año. En temporada de cerezos, Ahopsan Bamboo Forest puede sustituirse por Dalmaji Hill en Haeundae. Confirme bien el punto de recogida elegido."
   },
   "matching_profile": {
     "profile_version": 6,
@@ -900,16 +819,16 @@
     "walking_level": 0.6,
     "scenic_level": 0.8,
     "photo_level": 0.8,
-    "culture_level": 1,
+    "culture_level": 1.0,
     "relax_level": 0.8,
-    "first_time_fit": 1,
+    "first_time_fit": 1.0,
     "family_fit": 0.6,
     "senior_fit": 0.6,
     "couple_fit": 0.95,
     "solo_traveler_fit": 0.85,
     "active_traveler_fit": 0.6,
-    "adult_family_fit": 1,
-    "family_with_teens_fit": 1,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 1.0,
     "young_kids_fit": 0.4,
     "senior_active_fit": 0.6,
     "senior_general_fit": 0.6,
@@ -918,27 +837,27 @@
     "one_day_fit": 0.8,
     "same_day_flight_fit": 0.4,
     "rain_fit": 0.65,
-    "value_for_money_fit": 1,
-    "iconic_landmark_fit": 1,
+    "value_for_money_fit": 1.0,
+    "iconic_landmark_fit": 1.0,
     "cafe_fit": 0.4,
     "food_fit": 0.6,
     "nature_fit": 0.6,
     "beach_fit": 0.2,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.2,
-    "no_shopping_fit": 1,
-    "local_culture_fit": 1,
-    "storytelling_fit": 1,
-    "unesco_fit": 1,
-    "intangible_heritage_fit": 1,
+    "no_shopping_fit": 1.0,
+    "local_culture_fit": 1.0,
+    "storytelling_fit": 1.0,
+    "unesco_fit": 1.0,
+    "intangible_heritage_fit": 1.0,
     "indoor_ratio": 0.35,
     "weather_sensitivity": 0.5,
     "comfort_level": 0.8,
     "budget_fit": 0.6,
     "premium_fit": 0.4,
-    "small_group_fit": 1,
+    "small_group_fit": 1.0,
     "private_fit": 0.2,
-    "bus_fit": 1,
+    "bus_fit": 1.0,
     "price_band": "mid",
     "pickup_base": "busan_central",
     "return_time_band": "18:00-19:00",
@@ -977,47 +896,47 @@
       "woljeonggyo_bridge"
     ],
     "profile_format": "small_group_fixed_itinerary",
-    "tour_type_fit": 1,
+    "tour_type_fit": 1.0,
     "private_tour_fit": 0.05,
     "self_drive_fit": 0.05,
-    "from_busan_fit": 1,
-    "gyeongju_anchor_fit": 1,
-    "ancient_capital_fit": 1,
-    "silla_kingdom_fit": 1,
-    "korea_historic_heart_fit": 1,
+    "from_busan_fit": 1.0,
+    "gyeongju_anchor_fit": 1.0,
+    "ancient_capital_fit": 1.0,
+    "silla_kingdom_fit": 1.0,
+    "korea_historic_heart_fit": 1.0,
     "ulsan_route_fit": 0.4,
-    "haeundae_pickup_fit": 1,
-    "seomyeon_pickup_fit": 1,
-    "busan_station_pickup_fit": 1,
-    "central_busan_pickup_fit": 1,
-    "buddhist_temple_fit": 1,
-    "silla_buddhist_art_fit": 1,
-    "national_treasure_fit": 1,
+    "haeundae_pickup_fit": 1.0,
+    "seomyeon_pickup_fit": 1.0,
+    "busan_station_pickup_fit": 1.0,
+    "central_busan_pickup_fit": 1.0,
+    "buddhist_temple_fit": 1.0,
+    "silla_buddhist_art_fit": 1.0,
+    "national_treasure_fit": 1.0,
     "joseon_era_fit": 0.7,
-    "korea_history_fit": 1,
-    "history_lover_fit": 1,
-    "deep_history_fit": 1,
+    "korea_history_fit": 1.0,
+    "history_lover_fit": 1.0,
+    "deep_history_fit": 1.0,
     "academic_traveler_fit": 0.95,
-    "bamboo_forest_fit": 1,
+    "bamboo_forest_fit": 1.0,
     "korean_pine_heritage_fit": 0.85,
     "nature_walk_fit": 0.7,
     "scenic_drive_fit": 0.7,
     "wildlife_fit": 0.3,
-    "hanok_village_fit": 1,
-    "wooden_bridge_fit": 1,
-    "reconstructed_silla_fit": 1,
-    "museum_fit": 1,
-    "silla_artifacts_fit": 1,
-    "gold_crown_fit": 1,
-    "ancient_bell_fit": 1,
-    "national_museum_fit": 1,
+    "hanok_village_fit": 1.0,
+    "wooden_bridge_fit": 1.0,
+    "reconstructed_silla_fit": 1.0,
+    "museum_fit": 1.0,
+    "silla_artifacts_fit": 1.0,
+    "gold_crown_fit": 1.0,
+    "ancient_bell_fit": 1.0,
+    "national_museum_fit": 1.0,
     "k_drama_filming_fit": 0.9,
-    "calm_pace_fit": 1,
-    "slow_travel_fit": 1,
-    "contemplative_fit": 1,
-    "low_intensity_fit": 1,
+    "calm_pace_fit": 1.0,
+    "slow_travel_fit": 1.0,
+    "contemplative_fit": 1.0,
+    "low_intensity_fit": 1.0,
     "checkbox_sightseeing_fit": 0.3,
-    "deep_dwell_fit": 1,
+    "deep_dwell_fit": 1.0,
     "korean_food_fit": 0.85,
     "ssambap_fit": 0.85,
     "regional_cuisine_fit": 0.85,
@@ -1027,29 +946,29 @@
     "elderly_friendly_fit": 0.85,
     "wheelchair_accessible_anchor_fit": 0.6,
     "stroller_friendly_fit": 0.55,
-    "moderate_mobility_fit": 1,
+    "moderate_mobility_fit": 1.0,
     "small_family_fit": 0.85,
-    "senior_couple_fit": 1,
+    "senior_couple_fit": 1.0,
     "honeymoon_fit": 0.85,
-    "first_time_korea_fit": 1,
+    "first_time_korea_fit": 1.0,
     "repeat_visitor_fit": 0.8,
-    "history_buff_fit": 1,
+    "history_buff_fit": 1.0,
     "buddhist_pilgrim_fit": 0.85,
     "photographer_fit": 0.9,
     "group_size_min": 2,
     "group_size_max": 14,
-    "small_group_van_fit": 1,
+    "small_group_van_fit": 1.0,
     "intimate_group_fit": 0.95,
     "customizable_route_fit": 0.05,
-    "fixed_itinerary_fit": 1,
+    "fixed_itinerary_fit": 1.0,
     "flexibility_fit": 0.3,
-    "language_english_fit": 1,
+    "language_english_fit": 1.0,
     "language_chinese_fit": 0.7,
     "language_japanese_fit": 0.5,
-    "english_guide_fit": 1,
-    "spring_fit": 1,
+    "english_guide_fit": 1.0,
+    "spring_fit": 1.0,
     "summer_fit": 0.85,
-    "autumn_fit": 1,
+    "autumn_fit": 1.0,
     "winter_fit": 0.85,
     "all_year_fit": 0.95,
     "monsoon_fit": 0.7,
@@ -1058,52 +977,52 @@
     "indoor_anchor_fit": 0.55,
     "early_start_fit": 0.85,
     "late_finish_fit": 0.5,
-    "full_day_fit": 1,
+    "full_day_fit": 1.0,
     "half_day_fit": 0.05,
     "value_priced_fit": 0.85,
     "budget_traveler_fit": 0.85,
     "off_beaten_path_fit": 0.55,
     "crowd_avoidance_fit": 0.55,
     "instagrammable_fit": 0.85,
-    "minicoach_fit": 1,
+    "minicoach_fit": 1.0,
     "max_pax_per_vehicle": 14,
     "kpop_fan_fit": 0.5,
     "cruise_shore_excursion_fit": 0.5,
     "cruise_passenger_fit": 0.6,
-    "buddhist_temple_anchor_fit": 1,
-    "scenic_temple_fit": 1,
-    "three_kingdom_history_fit": 1,
-    "covered_bridge_fit": 1,
-    "private_clan_house_fit": 1,
+    "buddhist_temple_anchor_fit": 1.0,
+    "scenic_temple_fit": 1.0,
+    "three_kingdom_history_fit": 1.0,
+    "covered_bridge_fit": 1.0,
+    "private_clan_house_fit": 1.0,
     "free_admission_anchor_count": 4,
-    "china_mainland_market_fit": 0,
-    "korea_domestic_market_fit": 0,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "inter_city_day_trip_fit": 1,
-    "busan_to_gyeongju_journey_fit": 1,
-    "calm_pace_framing_fit": 1,
+    "inter_city_day_trip_fit": 1.0,
+    "busan_to_gyeongju_journey_fit": 1.0,
+    "calm_pace_framing_fit": 1.0,
     "unesco_anchor_count": 2,
-    "silla_dynasty_focus_fit": 1,
-    "ancient_capital_history_fit": 1,
+    "silla_dynasty_focus_fit": 1.0,
+    "ancient_capital_history_fit": 1.0,
     "national_treasure_count_visited": 4,
     "intangible_cultural_asset_count_visited": 1,
     "important_folklore_material_count_visited": 1,
     "museum_visit": true,
-    "deep_history_traveler_fit": 1,
+    "deep_history_traveler_fit": 1.0,
     "k_drama_filming_locations_count": 1,
     "differentiates_from_busan_gyeongju_unesco_legacy_route": true,
     "differentiates_from_busan_top_attractions": true,
     "differentiates_from_busan_charter_cruise_pair_partner": true,
     "differentiates_from_busan_small_group_cruise_pair_partner": true,
-    "longer_dwell_per_stop_fit": 1,
+    "longer_dwell_per_stop_fit": 1.0,
     "available_months_signature": [
       1,
       2,
@@ -1191,7 +1110,7 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "La capital milenaria de Corea, a ritmo más tranquilo —",
+        "headlineLine1": "La antigua capital de Corea, a ritmo más tranquilo —",
         "headlineLine2": "seis paradas de Gyeongju desde Busan",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
@@ -1290,46 +1209,46 @@
             "id": "g1",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-            "alt": "Stone bridges and Dabotap pagoda at Bulguksa Temple in afternoon light",
-            "caption": "Bulguksa — UNESCO World Heritage. Two pagodas (Dabotap, Seokgatap) are National Treasures No. 20 and 21.",
-            "location": "Bulguksa Temple, Gyeongju",
-            "atmosphere": "Stone, wood, and 8th-century pagoda silhouettes"
+            "alt": "Imagen de Bosque de Bambú Ahopsan — apertura tranquila antes de Gyeongju",
+            "caption": "Bosque de Bambú Ahopsan — apertura tranquila antes de Gyeongju",
+            "location": "Ahopsan Bamboo Forest, Gijang-gun, Busan Noreste",
+            "atmosphere": "El bambú más alto de Busan: 20 m de altura, 400 años de historia familiar"
           },
           {
             "id": "g2",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-            "alt": "Tile-roofed hanok houses along a quiet alley in Gyochon village",
-            "caption": "Gyochon Hanok Village — the Choi family compound and Gyeongju Hyanggyo Confucian school.",
-            "location": "Gyochon Hanok Village, Gyeongju",
-            "atmosphere": "Restored hanok lanes, low traffic"
+            "alt": "Imagen de Templo Bulguksa — Patrimonio UNESCO",
+            "caption": "Templo Bulguksa — Patrimonio UNESCO, las pagodas más famosas de Corea",
+            "location": "Bulguksa, Tohamsan, Gyeongju",
+            "atmosphere": "Arte budista del siglo VIII: las dos pagodas más importantes de Corea"
           },
           {
             "id": "g3",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=1200",
-            "alt": "Light filtering through dense bamboo stalks along a forest path",
-            "caption": "Ahopsan Bamboo Forest — privately preserved by the Mun clan since 1638.",
-            "location": "Ahopsan Forest, Gijang-gun, Busan",
-            "atmosphere": "Cool, green, filtered light"
+            "alt": "Imagen de Museo Nacional de Gyeongju — la corona de oro y los tesoros de la Silla",
+            "caption": "Museo Nacional de Gyeongju — la corona de oro y los tesoros de la Silla",
+            "location": "Museo Nacional de Gyeongju, Inwang-dong",
+            "atmosphere": "Un ritmo más pausado para contemplar la corona de oro sin prisas"
           },
           {
             "id": "g4",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-            "alt": "Silla gold artifacts displayed under museum case lighting",
-            "caption": "Gyeongju National Museum — Silla artifacts including the Cheonmachong gold crown.",
-            "location": "Gyeongju National Museum",
-            "atmosphere": "Quiet gallery, single object focus"
+            "alt": "Imagen de Puente Woljeonggyo — el mayor puente de madera cubierto de Corea",
+            "caption": "Puente Woljeonggyo — el mayor puente de madera cubierto de Corea",
+            "location": "Puente Woljeonggyo, Gyeongju",
+            "atmosphere": "Hora dorada: el cierre más fotogénico de Gyeongju antes del regreso"
           },
           {
             "id": "g5",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
-            "alt": "Wooden bridge pavilion reflected in calm river water",
-            "caption": "Woljeonggyo Bridge — 66-meter Silla-style reconstruction completed in 2018.",
-            "location": "Woljeonggyo Bridge, Gyeongju",
-            "atmosphere": "Wood, water, soft afternoon light"
+            "alt": "Imagen de Puente Woljeonggyo — reconstrucción de 66 metros de estilo Silla completada en 2",
+            "caption": "Puente Woljeonggyo — reconstrucción de 66 metros de estilo Silla completada en 2018",
+            "location": "puente Woljeonggyo, Gyeongju",
+            "atmosphere": "Madera, agua y luz suave de la tarde"
           }
         ]
       }
@@ -1343,152 +1262,219 @@
           {
             "number": 1,
             "time": "08:10",
-            "duration": "60 min",
-            "name": "Busan pickup (3 subway stations)",
-            "category": "Departure",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
-            "description": "Sequential pickup along Busan Subway Line 1: Busan Station Exit 4 (08:10), Seomyeon Station Exit 4 (08:30), Haeundae Station Exit 5 (09:10). Choose the exit closest to your hotel.",
-            "timeUsed": [
-              "Operational logistics (pickup/transfer)"
+            "duration": "30 min",
+            "name": "Recogida en Busan (3 estaciones de metro)",
+            "category": "Salida — 3 puntos de recogida en el metro de Busan",
+            "description": "Recogida escalonada en tres estaciones de metro de Busan: **Busan Station (Línea 1)** ~08:10; **Seomyeon** ~08:25; **Haeundae** ~08:40. Minifurgoneta de grupo pequeño (máx. ~10), guía certificado en inglés.",
+            "highlights": [
+              "3 estaciones de metro — Busan Station / Seomyeon / Haeundae",
+              "Minifurgoneta grupo pequeño, guía certificado inglés"
             ],
-            "whyOnRoute": "Three pickup options across central Busan reduce taxi cost.",
+            "timeUsed": [
+              "Recogidas escalonadas ~08:00-08:40",
+              "Desplazamiento a Gyeongju — ~1 hora"
+            ],
+            "whyOnRoute": "Tres puntos de recogida cubren las tres principales zonas hoteleras de Busán.",
             "_poi_meta": {
-              "poi_key": "busan_subway_pickup",
-              "is_attraction": false
+              "poi_key": "OPS_busan_subway_pickup",
+              "kb_version": "1.16",
+              "verified_date": "2026-04-29"
             }
           },
           {
             "number": 2,
             "time": "≈ 09:50",
-            "duration": "60 min",
-            "name": "Ahopsan Bamboo Forest",
-            "category": "Bamboo Forest",
-            "image": "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=800",
-            "description": "Privately preserved bamboo grove inside the Nampyeong Mun clan's ancestral estate in Gijang-gun, Busan — the family has owned and maintained the forest since 1638. Several Korean dramas have filmed here, including the bamboo-corridor scenes in 'Mr. Sunshine' (2018). The walking loop is roughly 1 km on flat compacted dirt, takes 45–60 minutes at a slow pace, and stays cool in summer because the canopy filters most direct sunlight. Adult admission ₩5,000 (cash; not included in tour price). Spring (cherry blossom season) is the only exception when this stop swaps for Haeundae Dalmaji Hill.",
-            "timeUsed": [
-              "Arrival and orientation",
-              "Photo walk",
-              "Wrap-up"
+            "duration": "75 min",
+            "name": "Bosque de Bambú Ahopsan",
+            "category": "Bosque privado de 520.000 m² gestionado por el Clan Moon durante 400 años, Gijang-gun",
+            "description": "**Bosque Ahopsan**, conocido como el “Bosque de las Nueve Montañas”, es un **bosque privado de 520.000 m²** en Gijang-gun, al noreste de Busan. Ha sido gestionado durante unos **400 años y 9 generaciones por el clan Nampyeong Moon**, una de las pocas familias de Corea que han conservado intacto un bosque familiar durante siglos. Sus senderos sombreados atraviesan principalmente **bambú moso** y **metasecoyas**, creando una apertura tranquila y cultural antes de entrar en Gyeongju. El bambú moso puede alcanzar unos **20 m de altura** y hasta 15 cm de diámetro. El bosque también fue escenario del drama **Goblin** y de varias series coreanas. Suele abrir alrededor de las 09:00. **Entrada incluida.**",
+            "highlights": [
+              "**400 años** de gestión ininterrumpida por el **Clan Nampyeong Moon** (9 generaciones)",
+              "**Bambú moso de hasta 20 m** — el más grande de Corea en este enclave",
+              "Escenario del K-drama **'Goblin' (2016)**",
+              "**Entrada incluida**"
             ],
-            "whyOnRoute": "Calm, cool sensory opener between Busan and Gyeongju.",
+            "timeUsed": [
+              "Sendero del bambú + fotografía — ~45 min"
+            ],
+            "whyOnRoute": "Ahopsan es la apertura perfecta para el día de Gyeongju: el bambú silencioso y la historia del clan crean el estado de ánimo contemplativo adecuado antes de visitar los templos y museos de la antigua Silla.",
             "_poi_meta": {
               "poi_key": "ahopsan_bamboo_forest",
-              "is_attraction": true,
-              "fee_krw": 5000
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Korea",
+                "Wikipedia",
+                "Visit Busan official",
+                "Korea Tourism Organization (Ahopsan filming-location designation)",
+                "Cultural Heritage Administration of Korea (Nampyeong Moon clan working forest)"
+              ]
             }
           },
           {
             "number": 3,
             "time": "≈ 11:30",
-            "duration": "60 min",
-            "name": "Bulguksa Temple (UNESCO World Heritage)",
-            "category": "UNESCO Buddhist Temple",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
-            "description": "Inscribed by UNESCO together with Seokguram Grotto in December 1995. The temple was founded in 528 CE under Silla King Beopheung, expanded in 751 CE by chief minister Kim Daeseong, burned in the 1592–98 Imjin War, and progressively restored from 1920 onward; current wooden structures were largely rebuilt in 1973 around the original stone foundations. The two pagodas in the main courtyard — ornate Dabotap and austere Seokgatap, both 8th-century — are National Treasures No. 20 and No. 21. The two stone bridges at the lower terrace, Cheongun-gyo and Baegun-gyo, each have 33 steps representing the 33 heavens of Buddhist cosmology. Admission made FREE in May 2023 (parking ₩1,000–₩2,000). 60 minutes covers the main courtyard and pagodas at a relaxed pace.",
-            "timeUsed": [
-              "Arrival and orientation",
-              "Pagoda courtyard and main hall",
-              "Wrap-up"
+            "duration": "75 min",
+            "name": "Templo Bulguksa (Patrimonio Mundial UNESCO)",
+            "category": "Patrimonio Mundial UNESCO (1995) — Obra maestra del arte budista de la Silla Unificada",
+            "description": "**Templo Bulguksa — Patrimonio Mundial UNESCO desde 1995** (junto a la Gruta Seokguram) — es **la obra maestra del arte budista de la Silla Unificada** y el **Lugar Histórico y Pintoresco Nacional n.° 1 de Corea**. Construido originalmente en **528** y completamente renovado en **751** bajo el rey Gyeongdeok (35.° rey de Silla) por el ministro **Kim Daeseong**, que según la leyenda lo construyó para rendir homenaje a sus padres de esta vida y de la anterior. Las estructuras más famosas: **(1) Cheongungyo y Baegungyo** ('Puente del Cielo Azul y Puente de las Nubes Blancas', **Tesoro Nacional n.° 23**) — la escalinata de piedra que asciende a Jahamun Gate; **(2) Dabotap** ('Pagoda de Muchos Tesoros', **Tesoro Nacional n.° 20**) — de estilo único en el mundo budista, representa el universo de Buda Prabhutaratna; **(3) Seokgatap** ('Pagoda de la Piedra de Sakyamuni', **Tesoro Nacional n.° 21**) — aparece en el billete de 10 wones coreano. **Entrada ₩6.000 (incluida).**",
+            "highlights": [
+              "**Patrimonio Mundial UNESCO 1995** — Lugar Histórico y Pintoresco Nacional n.° 1 de Corea",
+              "**Cheongungyo y Baegungyo** (Tesoro Nacional n.° 23) — la escalinata de piedra de 1.300 años",
+              "**Dabotap** (T.N. n.° 20) y **Seokgatap** (T.N. n.° 21, imagen en el billete de 10 ₩)",
+              "Fundado en **528**, renovado en **751** por el ministro Kim Daeseong",
+              "**Entrada ₩6.000** (incluida)"
             ],
-            "whyOnRoute": "The architectural anchor of any Gyeongju day; UNESCO-listed.",
+            "timeUsed": [
+              "Zona de las pagodas + Cheongungyo + Daeungjeon Hall — ~75-90 min"
+            ],
+            "whyOnRoute": "Bulguksa es el punto UNESCO clave del día: el templo más visitado de Corea con los tesoros nacionales más conocidos del budismo coreano.",
             "_poi_meta": {
               "poi_key": "bulguksa_temple",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "unesco": "world_heritage"
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO World Heritage Centre",
+                "Wikipedia",
+                "World History Encyclopedia",
+                "VisitKorea",
+                "Visit Gyeongju official"
+              ]
             }
           },
           {
             "number": 4,
             "time": "≈ 12:45",
             "duration": "60 min",
-            "name": "Lunch (Gyeongju local restaurant)",
-            "category": "Meal",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
-            "description": "Sit-down restaurant near Bulguksa with English/Chinese menus. Typical: Gyeongju ssambap (banchan-heavy rice-and-leaf wraps, the regional signature, ≈₩15,000–₩20,000), bulgogi set, or vegetarian banchan platter on request. Lunch paid on the day; budget ₩15,000–₩25,000 per person.",
-            "timeUsed": [
-              "Operational logistics (meal break)"
+            "name": "Almuerzo (restaurante local de Gyeongju)",
+            "category": "Pausa para comer — Zona Bulguksa-Tohamsan",
+            "description": "Almuerzo en un restaurante local de Gyeongju cerca de la salida de Bulguksa. Menús habituales: **ssambap de Gyeongju**, arroz con banchan de temporada y hojas de verdura para envolver, una especialidad local; o **bibimbap de Gyeongju** con ingredientes de la zona. Precio orientativo: **₩10.000-15.000 por persona. Almuerzo no incluido**; pago directo en el restaurante.",
+            "highlights": [
+              "**Gyeongju Ssambap** — arroz con banchan y hojas para envolver, especialidad local",
+              "**Almuerzo no incluido** (~₩10.000-15.000/persona)"
             ],
-            "whyOnRoute": "Gyeongju ssambap is the signature regional dish.",
+            "timeUsed": [
+              "Almuerzo — ~60 min"
+            ],
+            "whyOnRoute": "El almuerzo se sitúa justo después de Bulguksa para recargar antes del museo y la aldea hanok.",
             "_poi_meta": {
-              "poi_key": "gyeongju_lunch",
-              "is_attraction": false
+              "poi_key": "OPS_gyeongju_lunch",
+              "kb_version": "1.16",
+              "verified_date": "2026-04-29"
             }
           },
           {
             "number": 5,
             "time": "≈ 14:00",
-            "duration": "60 min",
-            "name": "Gyeongju National Museum",
-            "category": "National Museum (Silla)",
-            "image": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=800",
-            "description": "Korea's primary repository of Silla-era artifacts, free admission since November 2008. Three permanent halls: Silla History, Silla Art, and Wolji Hall (artifacts from the Wolji palace pond). The two single objects most visitors come for: the Cheonmachong gold crown (National Treasure No. 188) and the Sacred Bell of Great King Seongdeok (National Treasure No. 29, cast 771 CE, 18.9 metric tons — the largest existing Korean bell, displayed outdoors near the entrance). English and Chinese exhibit panels throughout. Closed Mondays. 60 minutes is enough for the highlight loop; visitors who want more time should book the UNESCO Legacy version.",
-            "timeUsed": [
-              "Arrival and orientation",
-              "Highlight gallery loop",
-              "Wrap-up"
+            "duration": "75 min",
+            "name": "Museo Nacional de Gyeongju",
+            "category": "El museo definitivo de la civilización Silla — Corona de oro, Campana de Sagong",
+            "description": "**Museo Nacional de Gyeongju** es el gran museo de referencia para comprender la civilización Silla. Fundado en **1945**, con el edificio principal actual completado en **1975** y renovado en **2000**, conserva más de **100.000 piezas** del período Silla (**57 a. C.-935 d. C.**), de las cuales unas 3.000 se exponen de forma permanente. Entre sus piezas clave destacan: **(1) la Corona de Oro de Silla**, una de las pocas coronas reales de oro del mundo antiguo, con motivos de árbol y jade vinculados al imaginario chamánico; **(2) el Relieve del Caballo Celestial, Tesoro Nacional n.º 207**, descubierto en 1973 en el túmulo Cheonmachong y considerado la única pintura conservada de la época Silla; y **(3) la Campana del Gran Rey Seongdeok, Tesoro Nacional n.º 29**, la mayor campana budista de bronce de Asia, de 3,75 m de alto y 18,9 toneladas, fundida en el año 771. El museo cuenta con señalización en inglés y folletos explicativos. **Entrada gratuita.**",
+            "highlights": [
+              "**Corona de Oro Silla** — una de las 6 coronas de oro reales antiguas conocidas",
+              "**Relieve del Caballo Celestial, Tesoro Nacional n.º 207** — la única pintura conservada de la época Silla",
+              "**Campana de Seongdeok (T.N. n.° 29)** — la mayor campana budista de Asia (18,9 t)",
+              "Más de **100.000 piezas** del período Silla (57 a. C. - 935 d. C.)",
+              "**Entrada gratuita**; señalización en inglés"
             ],
-            "whyOnRoute": "Pairs the architectural site with its archaeological contents.",
+            "timeUsed": [
+              "Sala principal (Corona de Oro + Caballo Celestial + Campana) — ~60-75 min"
+            ],
+            "whyOnRoute": "El museo transforma lo que se vio en Bulguksa de experiencia visual a comprensión cultural: los objetos que salieron de los túmulos y templos cobran sentido al verlos organizados cronológicamente.",
             "_poi_meta": {
               "poi_key": "gyeongju_national_museum",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "closed": "Monday"
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Gyeongju National Museum official",
+                "Wikipedia",
+                "Cultural Heritage Administration of Korea",
+                "Yonhap News (2025 APEC special exhibition)",
+                "National Museum of Korea (Gyeongju Branch official)"
+              ]
             }
           },
           {
             "number": 6,
-            "time": "≈ 15:15",
+            "time": "≈ 15:30",
             "duration": "60 min",
-            "name": "Gyochon Hanok Village",
-            "category": "Hanok Heritage Village",
-            "image": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=800",
-            "description": "Restored Joseon-era hanok district built around the ancestral home of the Gyeongju Choi family — the 'Choi the Wealthy' clan, famous in Korean civic memory for their twelve-generation rules of conduct (never let neighbors starve, never hold land beyond a 100-ri radius, never accept rent tenants couldn't afford). The Choi residence is preserved as a small museum (free entry); surrounding alleys hold tea houses and the Gyeongju Hyanggyo (Confucian school, current buildings from 1492). Flat hanok lanes; stroller-friendly.",
-            "timeUsed": [
-              "Hanok lane walk",
-              "Choi house visit",
-              "Tea-house option"
+            "name": "Aldea Hanok Gyochon",
+            "category": "Conjunto hanok histórico del Clan Choi de Gyeongju — continuidad de 12 generaciones",
+            "description": "**Aldea Hanok Gyochon** reúne las casas históricas del clan Choi de Gyeongju, un linaje de comerciantes-aristócratas que mantuvo su riqueza durante 12 generaciones, desde finales de Joseon hasta la era moderna. La familia era conocida por su lema de riqueza responsable: no dejar que nadie pasara hambre en la zona y no acumular más grano del necesario. Sus casas son uno de los mejores ejemplos de hanok de élite mercantil de la era Joseon. La aldea está junto al **Puente Woljeonggyo**, reconstrucción de un puente del siglo VIII, y cerca del antiguo estanque palaciego Anapji. En sus callejuelas también se pueden encontrar tiendas de **Gyeongju-ppang**, un pastelito local relleno de pasta de judía roja. **Entrada gratuita.**",
+            "highlights": [
+              "Clan Choi de Gyeongju — **12 generaciones de riqueza** con filosofía de redistribución",
+              "Hanok de mercaderes-aristócratas — el mejor ejemplo del período Joseon tardío en Corea",
+              "Junto al **Puente Woljeonggyo** (siglo VIII reconstruido) y el estanque Anapji",
+              "**Gyeongju-ppang** — pastelito de judías adzuki, la especialidad dulce de Gyeongju",
+              "**Entrada gratuita**"
             ],
-            "whyOnRoute": "Flat, easy stop between the museum and the bridge close.",
+            "timeUsed": [
+              "Callejuelas del clan + fotografía + Gyeongju-ppang — ~30 min"
+            ],
+            "whyOnRoute": "Gyochon aporta la dimensión doméstica al día: después de los templos y el museo, ver cómo vivía la aristocracia mercantil joseonesa en sus casas de madera da una capa cotidiana a la historia de Gyeongju.",
             "_poi_meta": {
               "poi_key": "gyochon_hanok_village",
-              "is_attraction": true,
-              "fee_krw": 0
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Gyeongju official",
+                "Cultural Heritage Administration",
+                "Wikipedia (Choi Clan, Yoseokgung)",
+                "Korea Tourism Organization (Gyeongju Choi Clan + Gyochon Hanok Village)",
+                "Cultural Heritage Administration (Important Folklore Material No. 27 designation)"
+              ]
             }
           },
           {
             "number": 7,
-            "time": "≈ 16:30",
+            "time": "≈ 16:45",
             "duration": "30 min",
-            "name": "Woljeonggyo Bridge",
-            "category": "Reconstructed Silla Bridge",
-            "image": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=800",
-            "description": "Wooden bridge crossing the Namcheon stream beside Gyochon. The original Silla bridge stood here from 760 CE until destroyed during the Mongol invasions of the 13th century. The current 66-meter reconstruction was completed in 2018 after archaeological excavations begun in 1986; it has two-story gate pavilions on each end and is illuminated nightly from sunset until ≈22:00. **At the 16:30 visit time the bridge is in daylight in spring–autumn.** The post-sunset reflection shot promoted in many photos is reliably possible only in November–February when sunset is between 17:15 and 17:30. Free entry. 30 minutes covers the bridge crossing and both reflection viewpoints from the riverbank.",
-            "timeUsed": [
-              "Bridge crossing and reflection viewpoint"
+            "name": "Puente Woljeonggyo",
+            "category": "El mayor puente de madera cubierto de Corea — reconstrucción Silla del siglo VIII",
+            "description": "**Puente Woljeonggyo** es el **mayor puente de madera cubierto de Corea** — reconstrucción de un puente Silla cubierto construido originalmente en **760 bajo el rey Gyeongdeok** sobre el río Namcheon, con una longitud original de **60,57 m**. El puente fue rehabilitado entre 2008 y 2013 usando técnicas de carpintería tradicionales coreanas. Al atardecer y por la noche, la **iluminación dorada del puente reflejada en el río Namcheon** es uno de los escenarios fotográficos más reproducidos de Gyeongju. La hora de llegada del tour (~17:30-18:00) suele coincidir con la **hora dorada** antes del encendido de la iluminación. **Entrada gratuita.**",
+            "highlights": [
+              "**El mayor puente de madera cubierto de Corea** — reconstrucción del original de **760**",
+              "Iluminación dorada al atardecer reflejada en el río Namcheon — icono fotográfico de Gyeongju",
+              "La llegada del tour (~17:30-18:00) coincide con la hora dorada",
+              "**Entrada gratuita**"
             ],
-            "whyOnRoute": "Quiet, low-walking close to the day; 5 minutes' walk from Gyochon.",
+            "timeUsed": [
+              "Paseo por el puente + fotografía — ~20-30 min"
+            ],
+            "whyOnRoute": "Woljeonggyo cierra el día de Gyeongju con la imagen más fotogénica: el puente iluminado al atardecer sobre el Namcheon. El cierre visual perfecto después del museo y la aldea.",
             "_poi_meta": {
               "poi_key": "woljeonggyo_bridge",
-              "is_attraction": true,
-              "fee_krw": 0
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Cultural Heritage Administration of Korea",
+                "Wikipedia",
+                "Visit Gyeongju official",
+                "Korea Times (2025 100-Best announcement)",
+                "Korea Heritage Service (Woljeonggyo Reconstruction Project archive)"
+              ]
             }
           },
           {
             "number": 8,
-            "time": "≈ 17:00",
+            "time": "≈ 17:15",
             "duration": "75 min",
-            "name": "Return drive to Busan",
-            "category": "Return",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
-            "description": "≈80 km / 75 min on the Gyeongbu Expressway in normal traffic; up to 90 min in Friday-evening or Sunday-return traffic. Drop-off in reverse pickup order: Haeundae Station Exit 5 ≈18:15, Seomyeon Station Exit 4 ≈18:35, Busan Station Exit 4 ≈18:50.",
-            "timeUsed": [
-              "Operational logistics (return)"
+            "name": "Regreso a Busan",
+            "category": "Regreso — Autopista Gyeongbu hacia Busan",
+            "description": "El autobús parte de Woljeonggyo ~17:15 (30-40 min antes que el tour UNESCO Legacy) por la **Autopista Gyeongbu**. Llegada a **Busan Station ~18:30** — más conveniente para cenas tempranas o vuelos nocturnos.",
+            "highlights": [
+              "Gyeongju → Busan: ~75 min (Autopista Gyeongbu)",
+              "Llegada escalonada: Haeundae → Seomyeon → Busan Station"
             ],
-            "whyOnRoute": "Required logistics.",
+            "timeUsed": [
+              "Woljeonggyo → Busan — ~75 min",
+              "Llegadas escalonadas"
+            ],
+            "whyOnRoute": "La secuencia de recogida inversa es el patrón de bajada más eficiente en tiempo.",
             "_poi_meta": {
-              "poi_key": "busan_return",
-              "is_attraction": false
+              "poi_key": "OPS_busan_return",
+              "kb_version": "1.16",
+              "verified_date": "2026-04-29"
             }
           }
         ]
@@ -1501,76 +1487,76 @@
       "props": {
         "routeFlowStops": [
           {
-            "id": "rf_pickup",
-            "name": "Busan subway pickup",
-            "theme": "Departure"
+            "name": "Recogida metro Busán",
+            "type": "origin",
+            "theme": "Salida"
           },
           {
-            "id": "rf_ahopsan",
-            "name": "Ahopsan Bamboo Forest (or Haeundae Dalmaji Hill in cherry season)",
+            "name": "Bosque Bambú Ahopsan (o Dalmaji Hill en temporada cereza)",
+            "type": "primary",
             "theme": "Forest / Coastal road (seasonal)"
           },
           {
-            "id": "rf_bulguksa",
-            "name": "Bulguksa Temple (UNESCO)",
+            "name": "Templo Bulguksa (UNESCO)",
+            "type": "primary",
             "theme": "UNESCO heritage"
           },
           {
-            "id": "rf_lunch",
-            "name": "Lunch (Gyeongju ssambap)",
-            "theme": "Meal"
+            "name": "Almuerzo (ssambap Gyeongju)",
+            "type": "meal",
+            "theme": "Comida"
           },
           {
-            "id": "rf_museum",
-            "name": "Gyeongju National Museum",
+            "name": "Museo Nacional de Gyeongju",
+            "type": "primary",
             "theme": "Silla artifacts"
           },
           {
-            "id": "rf_gyochon",
-            "name": "Gyochon Hanok Village",
-            "theme": "Heritage village"
+            "name": "Aldea Hanok Gyochon",
+            "type": "primary",
+            "theme": "Aldea histórica"
           },
           {
-            "id": "rf_bridge",
-            "name": "Woljeonggyo Bridge",
+            "name": "Puente Woljeonggyo",
+            "type": "primary",
             "theme": "Reconstructed Silla bridge"
           },
           {
-            "id": "rf_return",
-            "name": "Busan subway drop-off",
-            "theme": "Return"
+            "name": "Bajada metro Busán",
+            "type": "return",
+            "theme": "Regreso"
           }
         ],
         "routePhases": [
           {
-            "phase": "Outbound + Ahopsan",
-            "duration": "≈ 2.5 hours",
-            "description": "Pickup at three Busan subway exits (08:10, 08:30, 09:10), then drive ≈30 min to Ahopsan Bamboo Forest in Gijang."
+            "phase": "Salida + Ahopsan",
+            "duration": "≈ 2,5 horas",
+            "description": "Recogidas en tres estaciones de Busán (08:10, 08:30, 09:10), luego ≈30 min hasta Ahopsan."
           },
           {
-            "phase": "UNESCO core",
-            "duration": "≈ 2 hours",
-            "description": "Drive ≈70 min from Ahopsan to Bulguksa, then 60 min walking the temple at a relaxed pace."
+            "phase": "Núcleo UNESCO",
+            "duration": "≈ 2 horas",
+            "description": "≈70 min de Ahopsan a Bulguksa, luego 60 min recorriendo el templo a un ritmo más tranquilo."
           },
           {
-            "phase": "Lunch + museum",
-            "duration": "≈ 2 hours",
-            "description": "Local Gyeongju lunch (60 min), then 60 min in the National Museum's highlight galleries."
+            "phase": "Almuerzo + museo",
+            "duration": "≈ 2 horas",
+            "description": "Almuerzo local en Gyeongju (60 min), luego 60 min en las galerías destacadas del Museo Nacional."
           },
           {
-            "phase": "Hanok village + bridge",
-            "duration": "≈ 1.5 hours",
-            "description": "Gyochon Hanok Village walk (60 min) and 30 min at Woljeonggyo Bridge."
+            "phase": "Pueblo hanok + puente",
+            "duration": "≈ 1,5 horas",
+            "description": "Paseo por Gyochon Hanok Village (60 min) y 30 min en el Puente Woljeonggyo."
           },
           {
-            "phase": "Return drive",
-            "duration": "≈ 1.25–1.5 hours",
-            "description": "Gyeongju to Busan via Gyeongbu Expressway. Drop-offs at Haeundae, Seomyeon, Busan Station."
+            "phase": "Regreso",
+            "duration": "≈ 1,25–1,5 horas",
+            "description": "Gyeongju a Busán por la autopista Gyeongbu. Bajadas en Haeundae, Seomyeon y Estación Busán."
           }
         ],
         "routeShapeIntro": {
-          "title": "How this day flows",
-          "subtitle": "A calm, year-round version of the Gyeongju heritage circuit that prioritizes architectural depth over stop count. Where many Gyeongju day tours pack in 7–8 sites and feel rushed, this route runs five thoughtful stops with adequate dwell time at each — particularly Bulguksa, the National Museum, and Gyochon Village. The closing Woljeonggyo Bridge stop happens during daylight rather than illumination time, which matches the calm-pace philosophy of the day. Designed for travelers who value time-at-each-site over checkbox sightseeing."
+          "title": "El recorrido del día",
+          "subtitle": "Las mismas seis paradas que el tour UNESCO Legacy (C2) — Ahopsan, Bulguksa, almuerzo, museo, Gyochon, Woljeonggyo — a un ritmo más tranquilo, con más tiempo en cada parada y regreso ~30-40 minutos antes. La diferencia: C2 da más tiempo en el Museo Nacional; C3 es más pausado en general."
         }
       }
     },
@@ -1581,39 +1567,37 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "Travelers who want Gyeongju's classic stops without rushing",
-            "First-time visitors to Korea",
-            "Adult families and couples",
-            "Travelers who prefer earlier evening returns"
+            "Quienes prefieren un ritmo tranquilo sin correr de parada en parada",
+            "Personas mayores activas o con menos resistencia física que prefieren más descansos",
+            "Quienes necesitan regresar a Busan antes de las 19:00 (cenas, trenes, vuelos)",
+            "Primera visita a Gyeongju que quiere la misma ruta que C2 pero sin prisa"
           ],
           "lessIdealFor": [
-            "Travelers wanting deep museum time (UNESCO Legacy version is longer)",
-            "Travelers needing minimal walking",
-            "Stroller-heavy groups (Bulguksa stone steps)",
-            "Travelers needing a tight same-day flight buffer"
+            "Quienes quieren el mayor tiempo posible en el Museo Nacional (eligen C2)",
+            "Fotógrafos que quieren Woljeonggyo en la iluminación nocturna plena (eligen C2)"
           ],
           "routeLogicSections": [
             {
-              "title": "Why this route is built this way",
+              "title": "C3 vs C2: ¿cuál elegir?",
               "icon": "route",
               "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "Classic Gyeongju in 10.5 hours, not 11.5",
-                  "detail": "Same six attractions as the UNESCO Legacy version (Ahopsan, Bulguksa, lunch, museum, Gyochon, bridge), but each block runs 15–30 minutes shorter. Net result: a slightly less rushed pace inside each stop, and an earlier return (≈18:50 vs ≈19:45). Trade-off: less time in the museum's deeper Wolji galleries — the highlight loop only."
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
                 },
                 {
-                  "label": "Reconstructed Silla bridge as a quiet close",
-                  "detail": "Woljeonggyo Bridge is short, flat, and photogenic — a 30-minute final stop after the museum and Gyochon. It's illuminated nightly from sunset to ≈22:00; on this route the bridge is reached at 16:30, which is daylight in spring–autumn and just before/at sunset in November–February. We don't promise night-view in summer because it isn't possible at this stop time."
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
                 },
                 {
-                  "label": "Year-round, with one smart seasonal swap",
-                  "detail": "Ahopsan Bamboo Forest is replaced by Haeundae Dalmaji Hill during cherry blossom season (mid-March to mid-April). The rest of the day stays identical."
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
                 },
                 {
-                  "label": "Mini-van size between coach and private",
-                  "detail": "Coach tours from Busan run 35–45 passengers at low per-person prices; private tours run 1–4 passengers at much higher per-group rates. This small-group mini-van format sits between — usually under 10 passengers per departure."
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
                 }
               ]
             }
@@ -1628,58 +1612,76 @@
       "props": {
         "practicalAccordionItems": [
           {
-            "title": "What's included",
             "id": "inclusions",
-            "content": "Round-trip mini-van transport from Busan, certified guía en inglés/chino, fuel/tolls/parking. Not included: lunch (≈₩15,000–₩25,000), Ahopsan Bamboo Forest admission (₩5,000, paid on site), tips. All other site admissions are free: Bulguksa (free since May 2023), Gyeongju National Museum (free since 2008), Gyochon Hanok Village, Woljeonggyo Bridge."
+            "title": "Qué está incluido",
+            "preview": "Transporte ida y vuelta en miniván desde Busan, guía certificado de habla inglesa o china,…",
+            "content": [
+              "Minifurgoneta, guía certificado en inglés, traslados desde/hasta 3 estaciones de metro de Busan, todas las entradas.",
+              "No incluido: almuerzo (~₩10.000-15.000), propina."
+            ]
           },
           {
-            "title": "Pickup & drop-off",
             "id": "pickup",
-            "content": "Three sequential pickup points along Busan Subway Line 1: Busan Station Exit 4 (08:10), Seomyeon Station Exit 4 (08:30), Haeundae Station Exit 5 (09:10). Drop-offs in reverse order: Haeundae ≈18:15, Seomyeon ≈18:35, Busan Station ≈18:50. Provide a WhatsApp / KakaoTalk number at booking; the guide will message the day before with vehicle details."
+            "title": "Recogida y llegada",
+            "preview": "Tres puntos de recogida secuenciales en Línea 1 del metro de Busán: Salida 4 Est. Busán (08:10), Salida 4 Seomyeon (08:25), Haeundae (08:40).",
+            "content": [
+              "Recogida: Busan Station ~08:10 / Seomyeon ~08:25 / Haeundae ~08:40.",
+              "Llegada (orden inverso): Haeundae → Seomyeon → Busan Station ~18:30."
+            ]
           },
           {
-            "title": "Walking & terrain",
             "id": "walking",
-            "content": "Moderate. Total walking distance ≈3.5–4 km across the day — slightly less than the UNESCO Legacy version because the museum block is shorter. Bulguksa has stone steps between terraces; the museum is flat indoor walking; Gyochon and the bridge are flat. Comfortable closed-toe shoes essential — Bulguksa stone is uneven."
+            "title": "Caminata y terreno",
+            "preview": "Moderado.",
+            "content": [
+              "Moderado. Total: ~4-5 km. Mismas paradas que el C2 con ritmo más pausado entre ellas."
+            ]
           },
           {
-            "title": "Cancellation",
             "id": "cancellation",
-            "content": "Free cancellation up to 24 hours before pickup. Same-day cancellations and no-shows are non-refundable. Operator-cancellation (force majeure, weather, road closure): full refund."
+            "title": "Cancelación",
+            "preview": "Cancelación gratuita hasta 24 horas antes de la recogida.",
+            "content": [
+              "Cancelación gratuita hasta 24 horas antes.",
+              "Mal tiempo / tifón: reembolso total."
+            ]
           },
           {
-            "title": "Seasonal route notes",
             "id": "seasonal",
-            "content": "Cherry blossom season (mid-March to mid-April; exact dates vary year-to-year): Ahopsan Bamboo Forest is replaced by Haeundae Dalmaji Hill, Busan's coastal cherry-tunnel road. Winter (November–February): Woljeonggyo Bridge is reached at 16:30, around or just after sunset — the only window when the post-sunset reflection shot is reliable."
+            "title": "Notas de ruta por temporada",
+            "preview": "Temporada de cerezos (mediados de marzo a mediados de abril; fechas exactas varían): Ahopsan",
+            "content": [
+              "Primavera: posible cambio de Ahopsan por Haeundae Dalmaji (cerezos)."
+            ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "Consultar notas de temporada"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "Consultar notas de temporada"
           },
-          "_seasonalSummary": "Gyeongju is inland southeast Korea — winters slightly colder than coastal Busan, summers hotter. Spring and autumn are the most comfortable seasons."
+          "_seasonalSummary": "Gyeongju está en el interior del sureste de Corea: inviernos algo más fríos que Busan y veranos más calurosos. Primavera y otoño son las estaciones más cómodas."
         },
         "seasonalVariations": [
           {
-            "season": "Spring (mid-Mar to mid-Apr, cherry blossom window)",
-            "highlight": "Ahopsan opener swaps for Haeundae Dalmaji Hill cherry-blossom road. Bulguksa grounds peak in mid-April."
+            "season": "Primavera (mediados mar a mediados abr)",
+            "description": "tiempo previsto de cerezos: Ahopsan puede cambiar por Haeundae Dalmaji. Bulguksa con cerezos tardíos en abril."
           },
           {
-            "season": "Summer (Jun–Aug)",
-            "highlight": "Bamboo forest stays cool; museum air-conditioned. Bulguksa's mountain setting milder than coastal Busan. Bridge in full daylight at 16:30."
+            "season": "Verano (jun-ago)",
+            "description": "El bambú ofrece sombra fresca. El museo tiene aire acondicionado. El ritmo pausado es especialmente cómodo en verano."
           },
           {
-            "season": "Autumn (late Sep to late Oct)",
-            "highlight": "Bulguksa's late-October foliage is one of Korea's classic photographic moments. Bridge at 16:30 still mostly daylight."
+            "season": "Otoño (finales sep a finales oct)",
+            "description": "El follaje de Bulguksa en octubre es uno de los más fotografiados de Corea."
           },
           {
-            "season": "Winter (Nov–Feb)",
-            "highlight": "Quietest crowds; museum becomes the most-valued indoor stop. Sunset 17:15–17:30 — the bridge begins to illuminate near the end of your visit."
+            "season": "Invierno (nov-feb)",
+            "description": "Menos visitantes. Regreso más temprano conveniente para el corto día de invierno."
           }
         ]
       }
@@ -1692,56 +1694,65 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local operator",
-            "description": "Authorized Korean tour operator with full insurance",
+            "title": "Equipo local certificado",
+            "description": "Operador turístico coreano autorizado con seguro completo",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "iconColor": "text-emerald-600",
+            "body": "Mismo operador que el tour UNESCO Legacy (C2). Guía certificado en inglés. Miniván ~10 pasajeros."
           },
           {
             "icon": "route",
-            "title": "Route specialists",
-            "description": "Hand-tuned itinerary, not a generic loop",
+            "title": "Especialistas en la ruta Busan-Gyeongju",
+            "description": "Itinerario ajustado a medida, no un circuito genérico",
             "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "iconColor": "text-sky-600",
+            "body": "La ruta Busan-Gyeongju ha sido refinada por el operador durante años. El C3 es la versión de ritmo pausado del mismo circuito."
           },
           {
             "icon": "users",
-            "title": "Curated group size",
-            "description": "Right-sized for the route",
+            "title": "Grupo reducido cuidado",
+            "description": "Tamaño adecuado para la ruta",
             "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600"
+            "iconColor": "text-amber-600",
+            "body": "Miniván de máx. ~10 pasajeros para un ritmo más tranquilo en cada parada."
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "timing": "Inmediatamente",
+            "title": "Confirmación inmediata",
+            "detail": "Confirmación con resumen del itinerario.",
+            "description": "Confirmación instantánea with elección de estación de recogida (Busan Station / Seomyeon / Haeundae) and the day's schedule."
           },
           {
-            "timing": "12 hours before",
-            "title": "12-Hour Reminder",
-            "detail": "Weather update and any route adjustments"
+            "timing": "12 horas antes",
+            "title": "Recordatorio 12 horas antes",
+            "detail": "Condiciones de Bulguksa y meteorología.",
+            "description": "Nota estacional (ruta alternativa de cerezos en marzo-principios de abril) enviada antes de la partida."
           },
           {
-            "timing": "Evening before",
-            "title": "Final Pickup Info",
-            "detail": "Exact pickup time and driver contact"
+            "timing": "La noche anterior",
+            "title": "Información final de recogida",
+            "detail": "Contacto del guía y punto de encuentro.",
+            "description": "Detalles del conductor y la furgoneta confirmados la noche anterior a la partida."
           },
           {
-            "timing": "Morning of tour",
-            "title": "Day-of Route Notes",
-            "detail": "Morning briefing based on live conditions"
+            "timing": "La mañana del tour",
+            "title": "Notas del día del tour",
+            "detail": "Instrucciones matutinas.",
+            "description": "Mensaje de confirmación de recogida matutina enviado a su teléfono."
           },
           {
-            "timing": "During tour",
-            "title": "Stop-by-Stop Tips",
-            "detail": "Real-time guidance at each location"
+            "timing": "Durante el tour",
+            "title": "Consejos parada a parada",
+            "detail": "Recomendaciones de almuerzo y ángulos de foto.",
+            "description": "El guía proporciona narración completa — historia del clan del bosque de bambú, arqueología Silla, tesoros del museo, patrimonio de Gyochon, leyenda del puente."
           },
           {
-            "timing": "After tour",
-            "title": "Post-tour Support",
-            "detail": "Follow-up and recommendations"
+            "timing": "Tras el tour",
+            "title": "Atención posventa",
+            "detail": "Solicitud de valoración tras el tour.",
+            "description": "Solicitud de valoración después del tour enviada tras la llegada."
           }
         ]
       }
@@ -1754,68 +1765,68 @@
         "staticQuestions": [
           {
             "id": "q-vs-unesco-legacy",
-            "question": "How is this different from the 'UNESCO Legacy' day tour from Busan?",
-            "answer": "Both tours run on essentially the same route (Ahopsan → Bulguksa → museum → Gyochon → bridge). The 'Ancient Capital' framing on this product runs each block 15–30 min shorter, returns ≈1 hour earlier (≈18:50 vs ≈19:45), and gives a slightly less rushed pace at each stop in exchange for less depth at the museum. The 'UNESCO Legacy' version emphasizes museum time and heritage interpretation. Choose this version if you prefer earlier returns and a calmer day; choose UNESCO Legacy if you want longer time inside the museum."
+            "question": "(Consulte las preguntas frecuentes al reservar)",
+            "answer": "Para más información, contacte a AtoC Korea al reservar."
           },
           {
             "id": "q-bridge-night-view",
-            "question": "Will we see the bridge illuminated?",
-            "answer": "Generally no on this tour. The bridge is illuminated nightly year-round from sunset to ≈22:00, but this route reaches it at 16:30 — daylight in spring–autumn. The only window when illumination is reliable at the visit time is November–February, when sunset is between 17:15 and 17:30 and the lights begin coming on toward the end of your stop. If the post-sunset reflection shot is your priority, the UNESCO Legacy tour (which reaches the bridge at 17:00) is a closer fit, or visit independently after sunset."
+            "question": "¿Veremos el puente iluminado?",
+            "answer": "El C3 llega a Woljeonggyo ~17:00-17:30, durante la hora dorada antes del encendido completo. El C2 llega ~17:30-18:00 con luz más baja. En los días más cortos (invierno), el C3 puede llegar justo al encendido."
           },
           {
             "id": "q-bulguksa-only",
-            "question": "Why no Seokguram Grotto?",
-            "answer": "Seokguram is on the same UNESCO inscription as Bulguksa but sits 8 km up the mountain by a steep narrow road, with parking constraints and a 10-minute walk from the lot. The combination makes it impractical to add to a day that also includes the museum, Gyochon, and the bridge. Most one-day Gyeongju tours include Bulguksa or Seokguram, not both."
+            "question": "¿Por qué no está la Gruta Seokguram?",
+            "answer": "Seokguram requiere 40 min adicionales de desvío desde Bulguksa y no encaja en un tour de un día desde Busan sin comprometer el tiempo de calidad en las demás paradas."
           },
           {
             "id": "q-admissions",
-            "question": "Are admissions included?",
-            "answer": "Most are free; the only out-of-pocket admission is Ahopsan Bamboo Forest (₩5,000 cash, paid on-site). Bulguksa Temple is free since May 2023; Gyeongju National Museum is free since November 2008; Gyochon Hanok Village and Woljeonggyo Bridge are free. Plan ₩15,000–₩25,000 for lunch + ₩5,000 for Ahopsan, so total typical out-of-pocket ≈ ₩20,000–₩30,000 per person."
+            "question": "¿Las entradas están incluidas?",
+            "answer": "Sí. Todas incluidas: Bulguksa (₩6.000), Museo Nacional (gratuito), Ahopsan/Gyochon/Woljeonggyo (gratuitos)."
           },
           {
             "id": "q-museum-language",
-            "question": "Is there English signage in the museum?",
-            "answer": "Yes. The Gyeongju National Museum has English and Chinese exhibit panels throughout the three permanent halls. The Sacred Bell at the entrance has multilingual panels. Free English audio guides are available at the information desk with ID deposit."
+            "question": "¿Hay señalización en inglés en el museo?",
+            "answer": "Sí. Señalización bilingüe coreano/inglés en las piezas principales."
           },
           {
             "id": "q-bulguksa-photography",
-            "question": "Can I take photos at Bulguksa?",
-            "answer": "Yes throughout the temple grounds, including the two pagodas and lower-terrace stone bridges. Avoid flash and tripods inside the worship halls where services may be in progress. Cherry blossoms peak in mid-April; autumn foliage in late October — the most-photographed times."
+            "question": "¿Se puede fotografiar en Bulguksa?",
+            "answer": "Sí en todas las áreas exteriores. El interior de los pabellones puede tener restricciones."
           },
           {
             "id": "q-vegetarian",
-            "question": "Are there vegetarian options for lunch?",
-            "answer": "Yes. Gyeongju ssambap is naturally vegetable-heavy; ordering it without meat banchan is straightforward. The guide can also route to a temple-cuisine (사찰음식) restaurant for fully vegetarian meals on request — please advise at booking."
+            "question": "¿Hay opciones vegetarianas para el almuerzo?",
+            "answer": "Sí. El ssambap puede prepararse sin carne a petición. Comuníquelo al guía al reservar."
           },
           {
             "id": "q-rain",
-            "question": "What if it rains?",
-            "answer": "Light rain: tour operates as planned. Heavy rain: Bulguksa stone steps become slippery and Ahopsan paths can muddy; the guide may shorten outdoor time and extend the museum (covered, climate-controlled). Typhoon-level: rebooking or full refund."
+            "question": "¿Qué pasa si llueve?",
+            "answer": "El tour sigue normalmente. Con tifón: cancelación con reembolso."
           },
           {
             "id": "first-time",
-            "question": "Is this a good choice for first-time visitors to Gyeongju?",
-            "answer": "Yes — it covers Gyeongju's classic stops at a calmer pace than longer tours. First-time visitors who want UNESCO heritage content as part of a Korea trip and prefer earlier evening returns are the primary audience."
+            "question": "¿Es buena opción para quienes visitan Gyeongju por primera vez?",
+            "answer": "Sí — cubre las seis paradas más representativas a ritmo cómodo. Ideal si quiere absorber cada lugar sin correr."
           },
           {
             "id": "walking",
-            "question": "How much walking is there?",
-            "answer": "≈3.5–4 km. Bulguksa is the most active (uneven stone, gentle uphill); museum is flat indoor walking; Gyochon and bridge are flat. Comfortable closed-toe shoes essential."
+            "question": "¿Cuánto hay que caminar?",
+            "answer": "Moderado. Total: ~4-5 km. Mismas paradas que el C2 pero con más tiempo de descanso entre ellas."
           },
           {
             "id": "family",
-            "question": "Is this suitable for families?",
-            "answer": "Yes for school-age children (≈8+) who can manage a full-day rhythm. The museum's gold crown and the giant bell are typically the kid-favorite stops; the bamboo forest is sensory-friendly. Younger children may flag during the museum visit."
+            "question": "¿Es adecuado para familias?",
+            "answer": "Sí para familias con niños de 8+ años. El ritmo más pausado es especialmente conveniente para familias con niños."
           },
           {
             "id": "seniors",
-            "question": "Can older adults join comfortably?",
-            "answer": "Recommended for active seniors comfortable with 3.5–4 km of walking and uneven stone at Bulguksa. Pace is moderate with seated museum time built in. The earlier return (≈18:50) makes it easier than longer Gyeongju tours."
+            "question": "¿Pueden participar personas mayores cómodamente?",
+            "answer": "Sí. El ritmo más pausado del C3 es la opción preferida para personas mayores activas."
           },
           {
             "id": "children",
-            "question": "What's the recommended minimum age?",
-            "answer": "Best fit is around age 8 and up. Children comfortable with the walking note above and a full-day pace; younger may struggle with the museum's quiet halls and the rhythm of a 10.5-hour day."
+            "question": "¿Cuál es la edad mínima recomendada?",
+            "answer": "A partir de 8 años para aprovechar el contenido."
           }
         ]
       }
@@ -1865,13 +1876,13 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "La disponibilidad se confirma en el paso de pago.",
         "price": {
           "amountLabel": "",
           "currency": "USD",
-          "per": "person",
-          "priceSource": "getyourguide_t1202791",
-          "priceNote": "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across packages and operators. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+          "per": "persona",
+          "priceSource": "direct_rate",
+          "priceNote": "El precio del grupo reducido aún no está confirmado en la ficha del operador. Tours comparables de Gyeongju desde Busan suelen oscilar entre 54 y 90 USD según paquete y operador. Una vez confirmado, el precio directo de AtoC Korea aplica un 10% de descuento fijo.",
           "discountPercent": 10
         }
       }
@@ -1894,10 +1905,10 @@
       "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
       "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
-      "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 5 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, VisitSeoul, official tourism boards.\n  - Stop #2 Ahopsan Bamboo Forest: filled [visitBasics, convenience, smartNotes]\n  - Stop #3 Bulguksa Temple (UNESCO World Heritage): filled [visitBasics, convenience, smartNotes]\n  - Stop #5 Gyeongju National Museum: filled [visitBasics, convenience, smartNotes]\n  - Stop #6 Gyochon Hanok Village: filled [visitBasics, convenience, smartNotes]\n  - Stop #7 Woljeonggyo Bridge: filled [visitBasics, convenience, smartNotes]",
+      "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 5 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, VisitSeoul, official tourism boards. - Stop #2 Ahopsan Bamboo Forest: filled [visitBasics, convenience, smartNotes] - Stop #3 Bulguksa Temple (UNESCO World Heritage): filled [visitBasics, convenience, smartNotes] - Stop #5 Gyeongju National Museum: filled [visitBasics, convenience, smartNotes] - Stop #6 Gyochon Hanok Village: filled [visitBasics, convenience, smartNotes] - Stop #7 Woljeonggyo Bridge: filled [visitBasics, convenience, smartNotes]",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

@@ -5,38 +5,38 @@
   "locale": "zh-TW",
   "product_id": "seoul-seoraksan-national-park-sokcho-beach-day-trip",
   "seo": {
-    "pageTitle": "Seoraksan & Sokcho Beach Day Trip from Seoul | AtoC Korea",
-    "metaDescription": "12-hour small-group day trip from Seoul to the East Sea coast: hike Seoraksan National Park, browse Sokcho Tourist Fishery Market, and walk Sokcho Beach.",
+    "pageTitle": "雪嶽山國家公園＆束草海灘一日遊 | AtoC Korea",
+    "metaDescription": "首爾出發12小時小團體東海海岸遊：雪嶽山纜車或飛龍瀑布步道、束草海鮮市場、束草海水浴場。",
     "primaryKeywords": [
-      "Seoraksan day tour from Seoul",
-      "Sokcho Beach tour",
-      "east coast Korea",
-      "Seoraksan Sokcho day trip"
+      "雪嶽山一日遊從首爾",
+      "束草海灘旅遊",
+      "韓國東海岸遊",
+      "雪嶽山束草一日遊"
     ],
     "ogImage": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
     "title": "雪嶽山國立公園＆束草海灘一日遊（首爾出發）| AtoC Korea",
-    "description": "首爾出發雪嶽山一日遊：雪嶽山國立公園主要步道→束草外雪嶽洞口→束草觀光水產市場→청초湖→返回首爾。小團體英語導遊，全年開團，秋季楓葉最受歡迎。"
+    "description": "首爾出發雪嶽山一日遊：雪嶽山國立公園主要步道→束草外雪嶽洞口→束草觀光水產市場→青草湖→返回首爾。小團體英語導遊，全年開團，秋季楓葉最受歡迎。"
   },
   "catalog_card": {
     "thumbnail": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
     "title": "首爾出發雪嶽山國立公園＆束草海灘一日遊",
-    "priceLabel": "Price varies — confirm at booking",
-    "shortCardDescription": "A small-group day-trip from Seoul to Korea's most-loved national park and the East Sea coastal city of Sokcho. The route pairs Seoraksan's granite peaks, valleys, and Buddhist heritage with the seafood market and beach of Sokcho — a mountain-and-ocean combination only the east coast offers. 12 hours with English-speaking guide and round-trip transport.",
+    "priceLabel": "價格因行程而異 — 請於預訂時確認",
+    "shortCardDescription": "從首爾出發遊覽雪嶽山國家公園與束草海灘的小團體一日遊，行程包括權金城纜車或飛龍瀑布步道、束草海鮮市場及束草海水浴場。全程約11至12小時，含首爾市內三個接送點。",
     "tags": [
-      "small_group",
-      "nature",
-      "scenic",
-      "beach",
-      "seafood_market",
-      "autumn_foliage",
-      "day_trip"
+      "小團",
+      "自然",
+      "景觀路線",
+      "海灘",
+      "海鮮市場",
+      "秋葉",
+      "一日遊"
     ],
     "rating": 0,
     "reviewCount": 0,
     "slug": "seoul-seoraksan-national-park-sokcho-beach-day-trip",
-    "subtitle": "A small-group day-trip from Seoul to Korea's most-loved national park and the East Sea coastal city of Sokcho.",
+    "subtitle": "從首爾出發的小團體一日遊，遊覽韓國最受愛戴的國家公園及東海海濱。",
     "region": "雪嶽山，江原道",
-    "duration": "12 hours",
+    "duration": "12小時",
     "stopsCount": 5,
     "badges": [
       "小團體",
@@ -44,7 +44,7 @@
       "絕美景色",
       "海灘",
       "海鮮市場",
-      "Autumn Foliage",
+      "秋季賞楓",
       "一日遊"
     ],
     "heroImage": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800"
@@ -54,8 +54,8 @@
   "price": {
     "amountLabel": "",
     "currency": "USD",
-    "per": "person",
-    "priceSource": "getyourguide_t1230340",
+    "per": "人",
+    "priceSource": "direct_rate",
     "priceNote": "原始定價尚未確認。確認後，AtoC Korea直售價格享9折優惠。",
     "discountPercent": 10
   },
@@ -68,7 +68,7 @@
       "自然風光"
     ],
     "meta": {
-      "duration": "12 hours",
+      "duration": "12小時",
       "region": "雪嶽山，江原道",
       "stops": "5 個景點",
       "rating": 0,
@@ -99,40 +99,39 @@
   ],
   "glanceItems": [
     {
+      "icon": "clock",
+      "label": "行程時間",
+      "value": "12小時"
+    },
+    {
       "icon": "camera",
-      "label": "拍照潛力",
-      "value": "極佳",
-      "level": 5
+      "label": "拍照亮點",
+      "value": "極高"
     },
     {
       "icon": "mountain",
-      "label": "景點密度",
-      "value": "高",
-      "level": 5
+      "label": "景觀特色",
+      "value": "極高"
     },
     {
       "icon": "footprints",
       "label": "步行強度",
-      "value": "稍高",
-      "level": 4
+      "value": "中等"
     },
     {
       "icon": "cloud-rain",
       "label": "雨天適合度",
-      "value": "較低",
-      "level": 2
+      "value": "中等"
     },
     {
       "icon": "users",
       "label": "親子適合度",
-      "value": "中等",
-      "level": 3
+      "value": "中等"
     },
     {
-      "icon": "gauge",
+      "icon": "scale",
       "label": "行程節奏",
-      "value": "緊湊",
-      "level": 3
+      "value": "均衡"
     }
   ],
   "galleryItems": [
@@ -140,7 +139,7 @@
       "id": "g1",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "雪嶽山山脊UNESCO生物圈保護區",
+      "alt": "行程中參觀的雪嶽山山脊——自1982年起列為UNESCO生物圈保護區景觀",
       "caption": "雪嶽山山脊——自1982年起列為UNESCO生物圈保護區",
       "location": "雪嶽山國家公園，素公園入口，江原道",
       "atmosphere": "公園主入口的清涼山間空氣；神興寺前的鋪設步道"
@@ -161,7 +160,7 @@
       "alt": "秘仙臺溪流步道平坦可選路段",
       "caption": "秘仙臺溪流步道——平坦可選路段",
       "location": "秘仙臺，素公園路段，雪嶽山",
-      "atmosphere": "溪流旁平坦步道；清澈流水穿越光滑花崗岩；無海拔爬升"
+      "atmosphere": "溪流旁平坦步道；清澈流水穿越光滑花崗巖；無海拔爬升"
     },
     {
       "id": "g4",
@@ -179,17 +178,17 @@
       "alt": "束草海水浴場東海岸雪嶽山遠景",
       "caption": "束草海水浴場——東海岸，雪嶽山遠景",
       "location": "束草海水浴場，東海岸，束草",
-      "atmosphere": "1公里平坦沙灘；束草Eye摩天輪（南端）；游泳季7至8月"
+      "atmosphere": "1公里平坦沙灘；束草Eye摩天輪（南端）；遊泳季7至8月"
     }
   ],
   "itineraryStops": [
     {
       "number": 1,
       "time": "≈ 06:30",
-      "duration": "15 min",
-      "name": "Seoul departure",
-      "category": "Pickup & departure",
-      "description": "**首爾出發，直奔雪嶽山**。集合地點設於홍대입구（弘大入口站8號出口）及明洞站（4號出口），方便乘客密集的首爾市中心搭乘。07:30出發確保10:30前抵達雪嶽山，搶在纜車尖峰時段（秋季可長達1–2小時的排隊）之前入園。車程約2.5小時，備有WiFi及導遊解說首爾→江原道地理背景。**注意：本行程不提供飯店接送**，請自行前往指定集合站，並提早10分鐘到達。",
+      "duration": "15分鐘",
+      "name": "首爾出發",
+      "category": "接送與出發",
+      "description": "**首爾出發，直奔雪嶽山**。集合地點設於弘大入口（弘大入口站8號出口）及明洞站（4號出口），方便乘客密集的首爾市中心搭乘。07:30出發確保10:30前抵達雪嶽山，搶在纜車尖峰時段（秋季可長達1–2小時的排隊）之前入園。車程約2.5小時，備有WiFi及導遊解說首爾→江原道地理背景。**注意：本行程不提供飯店接送**，請自行前往指定集合站，並提早10分鐘到達。",
       "highlights": [
         "集合地點：**弘大入口站8號出口（≈07:00）**或**明洞站4號出口（≈07:30）**",
         "07:30出發 = 10:30前抵達雪嶽山，**搶在纜車排隊高峰前**",
@@ -198,15 +197,15 @@
         "遲到者**恕不候車**"
       ],
       "timeUsed": [
-        "Meet driver-guide at Seoul pickup point",
-        "Confirm group, distribute water and snacks",
-        "Begin 2.5-hour drive to Seoraksan via Yangyang Expressway"
+        "在首爾接送點與導遊司機會合",
+        "確認團員，分發水和零食",
+        "開始經襄陽高速公路前往雪嶽山的2.5小時行程"
       ],
       "whyOnRoute": "在市中心設定固定集合點讓行程的後勤安排保持簡單。07:30出發確保在10:30纜車尖峰排隊潮前抵達雪嶽山——秋季旺季可節省1至2小時的等候時間。",
       "visitBasics": {},
       "convenience": {},
       "smartNotes": {
-        "tip": "Bring a light layer — coach AC can run cool. Restroom break ~halfway at a service area en route. Window seat on left side gives the best Taebaek mountain views before the tunnel."
+        "tip": "巴士空調較強，建議攜帶薄外套。途中約中間位置會在服務區短暫停車上廁所。"
       },
       "_poi_meta": {
         "poi_key": "OPS_seoul_pickup_default",
@@ -218,15 +217,15 @@
     {
       "number": 2,
       "time": "≈ 10:00",
-      "duration": "180 min",
-      "name": "Seoraksan National Park",
-      "category": "National Park (Mountain)",
-      "description": "雪嶽山是韓國**第5個國家公園**——於**1970年3月指定**——也是韓國唯一的**UNESCO生物圈保護區**（1982年8月認定）。公園面積約**398平方公里**，以大青峰（1,708公尺，韓國第三高峰）和著名的六柱花崗岩울산바위為標誌。**入場免費**。從소공원（外설악）主入口出發，典型的3小時參觀涵蓋三大亮點：**統一大佛** — 高14.6公尺、重108噸的青銅佛（1997年），是**全球最大的坐姿青銅佛**；**新興寺本身**，由慈藏律師創建於**652年新羅王朝**，被認為是**全球最古老的禪宗寺院**；以及可選的**雪嶽纜車**（路程1,132公尺，約10分鐘，抵達700公尺的券金城堡平台——來回成人₩16,000 / 兒童₩12,000，十月賞楓高峰期常需排隊數小時）。",
+      "duration": "180分鐘",
+      "name": "雪嶽山國立公園",
+      "category": "國立公園（山嶽）",
+      "description": "雪嶽山是韓國**第5個國家公園**——於**1970年3月指定**——也是韓國唯一的**UNESCO生物圈保護區**（1982年8月認定）。公園面積約**398平方公里**，以大青峰（1,708公尺，韓國第三高峰）和著名的六柱花崗巖蔚山岩為標誌。**入場免費**。從小公園主入口出發，典型的3小時參觀涵蓋三大亮點：**統一大佛** — 高14.6公尺、重108噸的青銅佛（1997年），是**全球最大的坐姿青銅佛**；**新興寺本身**，由慈藏律師創建於**652年新羅王朝**，被認為是**全球最古老的禪宗寺院**；以及可選的**雪嶽纜車**（路程1,132公尺，約10分鐘，抵達700公尺的券金城堡平臺——來回成人₩16,000 / 兒童₩12,000，十月賞楓高峰期常需排隊數小時）。",
       "highlights": [
         "韓國第5個國家公園（1970年）及唯一UNESCO生物圈保護區（1982年8月）",
         "統一大佛：高14.6公尺 / 重108噸青銅 — 全球最大坐姿青銅佛（1997年）",
         "新興寺（652年新羅）— 曹溪宗首座寺廟；全球最古老禪宗寺院",
-        "可選雪嶽纜車，路程1,132公尺，抵達券金城堡平台（700公尺，1253年傳說）",
+        "可選雪嶽纜車，路程1,132公尺，抵達券金城堡平臺（700公尺，1253年傳說）",
         "30個山峰，逾2,000種動物，1,400至1,562種植物；珍稀野生動物",
         "**入場免費**（近期廢除₩3,500費用）；纜車仍需購票",
         "**IUCN第二類（國家公園）自2005年** + **IUCN保護地綠色名錄自2014年**",
@@ -234,27 +233,27 @@
         "**長鬃山羊保育核心**：穩定種群約260隻（IUCN易危物種）"
       ],
       "timeUsed": [
-        "Arrival at Seorakdong Entrance + driver-guide orientation (~10 min)",
-        "Walk to Tongildaebul + Sinheungsa Temple (~15-20 min from main parking)",
-        "Optional cable car to Gwongeumseong (~30-45 min including queue) OR Biseondae walk (~90 min)",
-        "Photo time + reassembly at vehicle",
-        "Optional 800-year-old Pine Tree photo stop near Sinheungsa (~5 min) — natural-monument-grade tree predating Joseon Dynasty founding"
+        "抵達雪嶽洞入口+導遊簡介——約10分鐘",
+        "步行至統一大佛+神興寺——約15–20分鐘（從主停車場）",
+        "可選搭乘纜車前往權金城（含排隊約30–45分鐘），或步行至飛仙臺（約90分鐘）",
+        "拍照時間後回到車輛集合",
+        "可選新興寺附近約800年樹齡松樹拍照點（約5分鐘）— 這棵天然紀念物級別的古松早於朝鮮王朝建國"
       ],
       "whyOnRoute": "**全日行程的壓軸重心**：2.5小時各程的長途車程，之所以值得，正是因為這個終點——韓國第5座國家公園（1970年）、韓國唯一UNESCO生物圈保護區（1982年）。在雪嶽山停留3小時，足夠步行至秘仙臺並搭乘纜車，而非只是在入口處走馬看花。許多東海岸行程將雪嶽山與另外三個景點配對，結果在公園本身只留90分鐘。本行程則將整個上午完整奉獻給雪嶽山，保留足夠時間深入體驗。",
       "visitBasics": {
-        "hours": "Park always open; Cable car typically 08:00-17:30 (weather-dependent); Sinheungsa Temple 06:00-sunset",
-        "closed": "Open year-round; some trails may close periodically for restoration",
-        "admission": "Park entrance FREE (was 3,500 KRW until recent abolition); Cable car RT Adult 16,000 / Child 12,000 KRW (on-site only, no advance booking)",
-        "walking": "Easy paths at base (Sinheungsa, cable-car base); moderate to challenging hikes (Biseondae 3 km, Ulsanbawi steep stairs, Heundeulbawi 1.5 hr each way)"
+        "hours": "公園全年開放；纜車通常08:00–17:30",
+        "closed": "全年開放",
+        "admission": "公園免費；纜車往返成人₩16,000",
+        "walking": "輕鬆至中等——鋪裝步道"
       },
       "convenience": {
-        "restroom": "At main entrance area, cable car station, Sinheungsa Temple grounds, along major trails",
-        "parking": "Available at Sogongwon main entrance (paid)"
+        "restroom": "小公園入口附近",
+        "parking": "雪嶽洞指定停車場（收費）"
       },
       "smartNotes": {
-        "photo": "Tongildaebul (14.6 m bronze Buddha) is the iconic single shot. Cable car ride frames Sinheungsa + Ulsanbawi Rock + Sokcho City + East Sea. October foliage against granite peaks is world-famous.",
-        "facilities": "Visitor center, cafes (Dahyang Cafe), restaurants, gift shops at Seorakdong Entrance. Free hiking equipment rental 9:00-14:00 (return by 16:00). Asiatic Black Bear Statue mascot near entrance.",
-        "tip": "Cable car tickets ARE NOT bookable in advance — queues can exceed 1-2 hours in October. If skies are foggy, skip the cable car entirely (no view). Best 3-hour budget: Tongildaebul + Sinheungsa + Biseondae streamside walk. Wear sturdy closed-toe shoes — paths are rocky and damp in places."
+        "photo": "神興寺庭院與佛像——秋葉季節最佳。",
+        "facilities": "纜車站附近有餐廳及紀念品店。",
+        "tip": "秋葉季節纜車經常滿員——強烈建議提前在線預約。"
       },
       "_poi_meta": {
         "poi_key": "seoraksan_national_park",
@@ -274,43 +273,43 @@
     {
       "number": 3,
       "time": "≈ 13:30",
-      "duration": "75 min",
-      "name": "Sokcho Tourist Fishery Market",
-      "category": "Coastal Fishery Market",
-      "description": "雪嶽山之後，行程向東15分鐘進入束草市中心用餐。正式更名為束草觀光水產市場（許多標示仍沿用原名「束草中央市場」），位於中央洞，從束草高速巴士客運站步行可達。三道招牌美食定義了束草市場體驗：**달강정** — 以花生點綴的香甜酥脆炸雞（盒裝₩15,000至19,000）；**오징어순대（魷魚순대）** — 整隻魷魚塞入調味粉絲後蒸製再煎，是束草獨創特色；以及**아바이순대** — 源自咸鏡道的北韓風格血腸，由韓戰離散家庭帶到束草。其他特色小食：**술빵**（馬格利發酵米粉麵包，₩5,000，第54號攤位）、嬰兒蟹天婦羅、紅松葉蟹。從市場可搭乘**개배渡船**（₩200，5分鐘）前往阿巴伊村（《秋天的童話》韓劇拍攝地）。",
+      "duration": "75分鐘",
+      "name": "束草觀光水產市場",
+      "category": "海岸水產市場",
+      "description": "雪嶽山之後，行程向東15分鐘進入束草市中心用餐。正式更名為束草觀光水產市場（許多標示仍沿用原名「束草中央市場」），位於中央洞，從束草高速巴士客運站步行可達。三道招牌美食定義了束草市場體驗：**甜辣炸雞** — 以花生點綴的香甜酥脆炸雞（盒裝₩15,000至19,000）；**魷魚米腸** — 整隻魷魚塞入調味粉絲後蒸製再煎，是束草獨創特色；以及**阿爸村血腸** — 源自鹹鏡道的北韓風格血腸，由韓戰離散家庭帶到束草。其他特色小食：**馬格利發酵米糕**（馬格利發酵米粉麵包，₩5,000，第54號攤位）、嬰兒蟹天婦羅、紅松葉蟹。從市場可搭乘**手拉渡船渡船**（₩200，5分鐘）前往阿巴伊村（《秋天的童話》韓劇拍攝地）。",
       "highlights": [
-        "韓國標誌性東海岸水產市場 — 前身為束草中央市場",
-        "달강정（香甜酥脆炸雞）— 江原道地區特色，盒裝₩15,000至19,000",
-        "오징어순대（束草魷魚순대）— 整隻魷魚塞入麵條，蘸蛋液煎熟",
-        "아바이순대 — 源自咸鏡道的北韓風格血腸，韓戰難民飲食遺產",
+        "韓國代表性東海岸水產市場 — 前身為束草中央市場",
+        "甜辣炸雞（香甜酥脆炸雞）— 江原道地區特色，盒裝₩15,000至19,000",
+        "魷魚米腸— 整隻魷魚塞入麵條，蘸蛋液煎熟",
+        "阿爸村血腸 — 源自鹹鏡道的北韓風格血腸，韓戰難民飲食遺產",
         "特色街巷：炸雞、血腸、醃海鮮、蔬菜、辣椒 + 特色飲食街",
-        "鄰近개배渡船前往阿巴伊村（₩200，《秋天的童話》拍攝地）",
-        "**500多個攤位跨2層樓**（Tripadvisor + KTO確認）— 每日08:00起開放",
-        "**달강정在此首創** — 韓國香甜酥脆炸雞的發源地",
-        "**술빵（束草獨創，₩5,000）** — 馬格利發酵米粉麵包，全韓僅此一家"
+        "鄰近手拉渡船渡船前往阿巴伊村（₩200，《秋天的童話》拍攝地）",
+        "**500多個攤位跨2層樓**（市場參考資料 + KTO確認）— 每日08:00起開放",
+        "**甜辣炸雞在此發展成束草代表小吃** — 韓國香甜酥脆炸雞的發源地",
+        "**馬格利發酵米糕（束草獨創，₩5,000）** — 馬格利發酵米粉麵包，韓國全境僅此一家"
       ],
       "timeUsed": [
-        "Walk-through orientation by driver-guide (~5 min)",
-        "Lunch at recommended stall or restaurant (~30-45 min)",
-        "Free time for street-food snacks and souvenir shopping (~25 min)",
-        "Optional gaetbae ferry to Abai Village (~10 min round-trip)",
-        "Optional Hyuntaenae Stall #12 squid-sundae and gamja-jeon tasting (~15 min) — Sokcho-specialty street-food anchor"
+        "導遊帶領漫步簡介——約5分鐘",
+        "在推薦攤位或餐廳午餐——約30–45分鐘",
+        "自由街頭小吃+紀念品購物——約25分鐘",
+        "集合——約5分鐘",
+        "可選 Hyuntaenae 12號攤魷魚米腸與馬鈴薯煎餅試吃（約15分鐘）——束草代表性街頭小吃停留點"
       ],
-      "whyOnRoute": "**本系列行程中最強烈的山海飲食轉折**——離開雪嶽山的山寺氛圍不到10分鐘，旅客便能品嚐東海岸最具代表性的地方料理。束草水產市場並非觀光套餐，而是束草人自己吃飯的地方：咸鏡道風格的難民美食（阿爸伊魷魚腸）、東海生魚片、甘辣炸雞。市場的自由時間讓賓客自選食物，而非被安排千篇一律的午餐定食。",
+      "whyOnRoute": "**本系列行程中最強烈的山海飲食轉折**——離開雪嶽山的山寺氛圍不到10分鐘，旅客便能品嚐東海岸最具代表性的地方料理。束草水產市場並非觀光套餐，而是束草人自己吃飯的地方：鹹鏡道風格的難民美食（阿爸伊魷魚腸）、東海生魚片、甘辣炸雞。市場的自由時間讓賓客自選食物，而非被安排千篇一律的午餐定食。",
       "visitBasics": {
-        "hours": "Most stalls 09:00-21:00 daily; individual stall hours vary",
-        "closed": "Open year-round; individual stalls may close on Sundays or rotating off-days",
-        "admission": "Free entry; pay-as-you-go",
-        "walking": "Easy — flat downtown market; comfortable shoes for ~30-90 min wandering"
+        "hours": "大部分攤位09:00–21:00",
+        "closed": "全年開放",
+        "admission": "免費進入；建議備現金",
+        "walking": "輕鬆——平坦市內市場"
       },
       "convenience": {
-        "restroom": "Inside main building; alley restrooms",
-        "parking": "Underground parking 600 KRW first 30 min, 400 KRW per 10 min thereafter, max 12,000 KRW/day"
+        "restroom": "主樓內及小巷廁所",
+        "parking": "地下停車600韓元首30分鐘"
       },
       "smartNotes": {
-        "photo": "Live-fish tanks at the Raw Fish Center; squid sundae frying on the pan; the multi-colored 'SOKCHO' staircase at the central entrance; the Hyuntaenae stall #12 yellow signage; rainbow-colored rice cakes and gimbap.",
-        "facilities": "Sit-down restaurants behind many street-food stalls. Hanaro Mart for take-home gifts (dried fish, dried mackerel, dried pollack). Multilingual signs.",
-        "tip": "Bring CASH 10,000-20,000 KRW per person — many vendors don't accept foreign cards. Try the dakgangjeong + squid sundae pair as the must-eat combo. Avoid eating free samples without intent to purchase (Korean market etiquette). Visit before 12:30 to skip the lunchtime peak."
+        "photo": "生魚片中心活水箱；魷魚血腸煎製場景。",
+        "facilities": "許多攤位後方有堂食餐廳。",
+        "tip": "建議每人攜帶現金₩10,000–20,000——很多攤販不接受外國卡。"
       },
       "_poi_meta": {
         "poi_key": "sokcho_tourist_fishery_market",
@@ -330,43 +329,43 @@
     {
       "number": 4,
       "time": "≈ 14:45",
-      "duration": "75 min",
-      "name": "Sokcho Beach",
-      "category": "Coastal Beach",
-      "description": "距觀光水產市場步行5分鐘，束草海水浴場自**1976年開放**以來，一直是韓國具代表性的東海岸海灘之一。完整的沙灘全長約**2公里**；官方管理的游泳區段長**450公尺、寬75公尺**，細緻的淡黃色沙灘，背景是沿海吟路濃密的韓國紅松林。海灘的標誌性景觀是北端的**束草Eye摩天輪** — 韓國唯一的海灘摩天輪，高22層樓（約80公尺），設有36個6人座艙。沙灘上陳列著多件公共藝術：顯示全球方向的大型指南針、海豚雕塑、韓文「ㅅㅊ」大字縮寫、多彩的「SOKCHO」台階和金屬「心之樹」。官方游泳季**七月初至八月中旬**；全年開放步行和拍照。束草海水浴場也是韓國**元旦日出**最受歡迎的地點之一。",
+      "duration": "75分鐘",
+      "name": "束草海灘",
+      "category": "海岸海灘",
+      "description": "距觀光水產市場步行5分鐘，束草海水浴場自**1976年開放**以來，一直是韓國具代表性的東海岸海灘之一。完整的沙灘全長約**2公里**；官方管理的遊泳區段長**450公尺、寬75公尺**，細緻的淡黃色沙灘，背景是沿海吟路濃密的韓國紅松林。海灘的代表性景觀是北端的**束草Eye摩天輪** — 韓國唯一的海灘摩天輪，高22層樓（約80公尺），設有36個6人座艙。沙灘上陳列著多件公共藝術：顯示全球方向的大型指南針、海豚雕塑、韓文「ㅅㅊ」大字縮寫、多彩的「SOKCHO」臺階和金屬「心之樹」。官方遊泳季**七月初至八月中旬**；全年開放步行和拍照。束草海水浴場也是韓國**元旦日出**最受歡迎的地點之一。",
       "highlights": [
         "1976年開放 — 韓國具代表性的東海岸海灘（全長約2公里）",
         "束草Eye摩天輪 — 韓國唯一海灘摩天輪，22層樓，可容納216人",
         "韓國紅松林（海吟路）背景（陰涼的遮蔭步道）",
-        "公共藝術：SOKCHO台階、ㅅㅊ字母、海豚雕塑、T棧橋上的心之樹",
-        "游泳季：7月4日至8月中旬（含夜泳至21:00）",
+        "公共藝術：SOKCHO臺階、ㅅㅊ字母、海豚雕塑、T棧橋上的心之樹",
+        "遊泳季：7月4日至8月中旬（含夜泳至21:00）",
         "韓國最佳元旦日出觀賞地 — 每年1月1日大批人群聚集",
         "**束草Eye摩天輪2022年3月25日開幕**：高65公尺，透明亞克力牆360度全景；**韓國唯一海灘摩天輪**",
         "**Eye票價**：成人₩12,000 / 兒童₩6,000 / 長者₩9,000",
         "**距束草高速巴士客運站步行4分鐘**"
       ],
       "timeUsed": [
-        "Arrival and walk to the central entrance (~5 min)",
-        "Beach walk + photo stops at art installations and pine forest (~30-45 min)",
-        "Optional Sokcho Eye Ferris Wheel ride or beachfront cafe stop (~15-20 min)",
-        "Reassembly at vehicle",
-        "Optional Sokcho Eye Ferris Wheel ride (~16 min ride; ₩12,000 adult / ₩6,000 child) — Korea's only beach Ferris wheel"
+        "抵達+走至中央入口——約5分鐘",
+        "海灘漫步+藝術裝置+松樹林拍照——約30分鐘",
+        "可選：束草之眼摩天輪或海灘咖啡館——約15分鐘",
+        "集合——約5分鐘",
+        "可選搭乘束草之眼摩天輪（約16分鐘；成人₩12,000／兒童₩6,000）——韓國少見的海灘摩天輪"
       ],
-      "whyOnRoute": "**全日行程三位一體的第三支柱**——完成雪嶽山高山→束草漁市→東海海岸這三段只有韓國東海岸才能在一日行程內實現的旅程。選擇束草海水浴場而非洛山海水浴場，原因在於束草與漁市的步行距離更近，且束草Eye摩天輪提供獨特的地標拍攝構圖，同時避免往返洛山所需的額外車程。",
+      "whyOnRoute": "**全日行程三位一體的第三支柱**——完成雪嶽山高山→束草漁市→東海海岸這三段只有韓國東海岸才能在一日行程內實現的行程。選擇束草海水浴場而非洛山海水浴場，原因在於束草與漁市的步行距離更近，且束草Eye摩天輪提供獨特的地標拍攝構圖，同時避免往返洛山所需的額外車程。",
       "visitBasics": {
-        "hours": "Beach open 24 hours; swimming permitted only during officially-open season (July 4 - early-mid August 2025)",
-        "closed": "Open year-round for walking; swimming closed September-June",
-        "admission": "Free (parasol/lounger rentals 20,000-30,000 KRW during swim season)",
-        "walking": "Easy — flat beach; pine forest park trail behind"
+        "hours": "海灘24小時；遊泳僅限官方開放季節（7月初至8月末）",
+        "closed": "全年開放",
+        "admission": "免費",
+        "walking": "輕鬆——平坦海灘"
       },
       "convenience": {
-        "restroom": "Public washrooms along beach (clean, well-maintained)",
-        "parking": "Beach-area parking lots; rates vary"
+        "restroom": "沿海灘設有公共廁所",
+        "parking": "海灘周邊停車場"
       },
       "smartNotes": {
-        "photo": "Sokcho Eye Ferris wheel from the beach is the iconic shot. Multi-colored 'SOKCHO' staircase at central entrance. T-shaped pier with metal Tree of Hearts. Sunrise over East Sea (especially New Year).",
-        "facilities": "Restaurants and convenience shops along Haeoreum Road. Air/water pumps to clean shoes after sand. Photo zones with art installations.",
-        "tip": "Best for swim experience: July 4 - early August (also offers night swim 19:00-21:00). Best for photo + walking: spring/autumn (mild weather, fewer crowds). The northern part (around Sokcho Eye) is busier than the southern part. Strong wind even in summer — bring a windbreaker. Pair with the New Year sunrise visit if traveling in late December / early January."
+        "photo": "從海灘拍攝束草之眼摩天輪背景——代表性畫面。",
+        "facilities": "海歐路沿線餐廳及便利店。",
+        "tip": "遊泳最佳時節：7月4日至8月初。秋季人少景美。"
       },
       "_poi_meta": {
         "poi_key": "sokcho_beach",
@@ -386,9 +385,9 @@
     {
       "number": 5,
       "time": "≈ 16:00",
-      "duration": "150 min",
-      "name": "Return to Seoul",
-      "category": "Return",
+      "duration": "150分鐘",
+      "name": "下車（濟州市）",
+      "category": "返回",
       "description": "**返回首爾**。以高速公路直達，最大程度減少市區交通的影響，確保抵達時間可預測。預計晚上7時至8時返回首爾集合點，視交通狀況而定。如有當晚國內航班，建議最早訂22:00之後的班次。",
       "highlights": [
         "高速公路直達，最大程度減少交通延誤",
@@ -397,15 +396,15 @@
         "導遊可在車上為後續行程提供建議"
       ],
       "timeUsed": [
-        "Boarding and headcount at Sokcho departure point",
-        "~2.5 hr drive with one service-area rest stop",
-        "Drop-off in Seoul central area"
+        "惠裕園→濟州市向西轉移——約50分鐘",
+        "東門下車約17:50——5分鐘",
+        "市廳下車約18:05——5分鐘"
       ],
       "whyOnRoute": "返程選擇高速公路直達，最大程度降低市區交通影響，確保到達時間可預估。",
       "visitBasics": {},
       "convenience": {},
       "smartNotes": {
-        "tip": "Autumn-foliage Sunday returns can run 30-60 min late — build buffer into evening dinner reservations. Keep snacks / water for the return drive."
+        "tip": "秋葉旺季的週日返程可能晚30–60分鐘——請為晚餐計劃預留餘地。"
       },
       "_poi_meta": {
         "poi_key": "OPS_return",
@@ -418,56 +417,56 @@
   ],
   "routeFlowStops": [
     {
-      "name": "Seoul",
+      "name": "首爾",
       "type": "origin",
-      "theme": "Departure"
+      "theme": "出發"
     },
     {
-      "name": "Seoraksan National Park",
+      "name": "雪嶽山國立公園",
       "type": "primary",
-      "theme": "Mountain"
+      "theme": "山岳"
     },
     {
-      "name": "Sokcho Tourist Fishery Market",
+      "name": "束草觀光水產市場",
       "type": "primary",
-      "theme": "Market"
+      "theme": "市場"
     },
     {
-      "name": "Sokcho Beach",
+      "name": "束草海灘",
       "type": "secondary",
-      "theme": "Beach"
+      "theme": "海灘"
     },
     {
-      "name": "Seoul",
+      "name": "首爾",
       "type": "return",
-      "theme": "Return"
+      "theme": "返回"
     }
   ],
   "routePhases": [
     {
       "phase": "往程",
-      "duration": "≈ 2.5 hours",
-      "description": "Seoul → Sokcho via Yeongdong Expressway and Misiryeong Tunnel through the Taebaek mountains."
+      "duration": "約2.5小時",
+      "description": "首爾→經嶺東高速公路和彌矢嶺隧道穿越太白山脈前往束草。"
     },
     {
       "phase": "山區停留",
-      "duration": "≈ 3 hours",
-      "description": "Free time inside Seoraksan National Park (Sogongwon entrance)."
+      "duration": "約3小時",
+      "description": "雪嶽山國家公園內自由活動（俗公園入口）。"
     },
     {
       "phase": "海岸停留",
-      "duration": "≈ 2 hours",
-      "description": "Sokcho Fishery Market and Sokcho Beach, ≈15 minutes apart by road."
+      "duration": "約2小時",
+      "description": "束草水產市場和束草海水浴場，駕車約15分鐘。"
     },
     {
       "phase": "返程",
-      "duration": "≈ 3.5 hours",
-      "description": "Coastal road then expressway back into Seoul."
+      "duration": "約3.5小時",
+      "description": "沿海岸公路後走高速公路返回首爾。"
     }
   ],
   "routeShapeIntro": {
-    "title": "行程動線總覽",
-    "subtitle": "A mountain-then-sea linear loop east of Seoul. Three hours among Seoraksan's granite peaks in the morning, then a 30-minute drop down to the coast for a market lunch and a walk on Sokcho Beach. Two of Korea's most distinctive landscapes — the country's iconic national park and its friendliest east-coast port — without overnight planning."
+    "title": "行程路線一覽",
+    "subtitle": "首爾以東的山海線性環線。上午3小時穿行於雪嶽山的花崗巖峰巒，隨後30分鐘下行至海岸，享用市場午餐並漫步束草海灘。將韓國兩處最美山地景觀濃縮於一日之中。"
   },
   "whyTourWorks": {
     "bestFor": [
@@ -478,11 +477,11 @@
       "願意略過纜車、選擇平坦秘仙臺溪流步道的活躍旅客"
     ],
     "lessIdealFor": [
-      "需要當晚航班緩衝時間的旅客（首爾返程約19:30，國內班機建議22:00後）",
+      "需要當晚航班預留時間的旅客（首爾返程約19:30，國內班機建議22:00後）",
       "無法接受單程4小時車程換取5小時停留的旅客",
-      "7至8月以外以游泳為主要目的的海灘旅客（海水冰冷，無救生員值守）",
+      "7至8月以外以遊泳為主要目的的海灘旅客（海水冰冷，無救生員值守）",
       "期待長距離雪嶽山登山的旅客（蔚山巖∕大青峰需在束草住宿一晚）",
-      "行動不便的旅客——雪嶽山鋪設步道平坦，但纜車觀景台石階及海灘沙地仍有挑戰"
+      "行動不便的旅客——雪嶽山鋪設步道平坦，但纜車觀景臺石階及海灘沙地仍有挑戰"
     ],
     "routeLogicSections": [
       {
@@ -497,11 +496,11 @@
           },
           {
             "label": "真正的束草美食，而非觀光套餐",
-            "detail": "觀光水產市場是束草人真正用餐的地方——咸鏡道風格難民料理、東海生魚片、甘辣炸雞。自由時間讓您自選食物，而非坐等固定巴士午餐。"
+            "detail": "觀光水產市場是束草人真正用餐的地方——鹹鏡道風格難民料理、東海生魚片、甘辣炸雞。自由時間讓您自選食物，而非坐等固定巴士午餐。"
           },
           {
-            "label": "比山岳＋南怡島的組合更清晰",
-            "detail": "其他東向行程將雪嶽山與南怡島或晨靜樹木園組合成13至14小時的全日行程。本行程緊守束草軸線——山岳、市場、海灘——節奏更緊湊，不那麼倉促。"
+            "label": "比山嶽＋南怡島的組合更清晰",
+            "detail": "其他東向行程將雪嶽山與南怡島或晨靜樹木園組合成13至14小時的全日行程。本行程緊守束草軸線——山嶽、市場、海灘——節奏更緊湊，不那麼倉促。"
           },
           {
             "label": "四季皆適宜",
@@ -537,15 +536,15 @@
         "items": [
           {
             "label": "秋季紅葉高峰",
-            "detail": "10月中至11月初是雪嶽山的標誌性季節。纜車常滿員——抵達後立即購票，或直接略過。"
+            "detail": "10月中至11月初是雪嶽山的代表性季節。纜車常滿員——抵達後立即購票，或直接略過。"
           },
           {
             "label": "冬季雪景",
             "detail": "12至2月：神興寺及低海拔步道通常仍可行走；強風日纜車可能暫停。市場有完整遮蔭。束草海水浴場僅供拍照，不宜遠行。"
           },
           {
-            "label": "游泳窗口：7月中至8月下旬",
-            "detail": "唯一束草海灘設有救生員的時段。窗口之外水溫寒冷，僅供散步。"
+            "label": "遊泳時段：7月中至8月下旬",
+            "detail": "唯一束草海灘設有救生員的時段。時段之外水溫寒冷，僅供散步。"
           }
         ]
       }
@@ -602,7 +601,7 @@
       "content": [
         "出發前24小時可免費取消。",
         "當天取消及無故缺席將不予退款。",
-        "若因颱風或暴雪由運營商取消，將提供改期或退款選項。"
+        "若因颱風或暴雪由合作業者取消，將提供改期或退款選項。"
       ]
     },
     {
@@ -612,7 +611,7 @@
       "content": [
         "歡迎兒童，但全日行程長達12小時。",
         "市場及海灘適合嬰兒車通行；雪嶽山入口鋪設步道亦可，但秘仙臺步道不適合嬰兒車。",
-        "雪嶽山纜車站以外的設施對輪椅使用者無障礙設計有限。"
+        "雪嶽山纜車站以外的設施對輪椅使用者無障礙構成有限。"
       ]
     }
   ],
@@ -656,7 +655,7 @@
     },
     {
       "season": "夏季",
-      "description": "束草海水浴場開放游泳（通常7至8月）；雪嶽山步道林木蔥蘢，遮蔭充足。"
+      "description": "束草海水浴場開放遊泳（通常7至8月）；雪嶽山步道林木蔥蘢，遮蔭充足。"
     },
     {
       "season": "秋季",
@@ -664,33 +663,33 @@
     },
     {
       "season": "冬季",
-      "description": "白雪覆蓋的花崗岩山峰，遊客稀少，市場熱騰騰的阿爸伊魷魚腸更顯暖意。纜車可能在強風日停駛。"
+      "description": "白雪覆蓋的花崗巖山峰，遊客稀少，市場熱騰騰的阿爸伊魷魚腸更顯暖意。纜車可能在強風日停駛。"
     }
   ],
   "bookingTrustItems": [
     {
       "icon": "check-circle",
       "title": "當地持照合法業者",
-      "description": "持牌韓國旅遊運營商，備有完整保險",
+      "description": "持牌韓國旅遊合作業者，備有完整保險",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
-      "body": "持牌韓國旅遊運營商，備有完整保險"
+      "body": "持牌韓國旅遊合作業者，備有完整保險"
     },
     {
       "icon": "route",
       "title": "路線專家",
-      "description": "精心設計的行程，而非千篇一律的路線",
+      "description": "精心構成的行程，而非千篇一律的路線",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
-      "body": "精心設計的行程，而非千篇一律的路線"
+      "body": "精心構成的行程，而非千篇一律的路線"
     },
     {
       "icon": "users",
       "title": "精心控制團體人數",
-      "description": "車輛大小精準匹配本路線需求",
+      "description": "車輛大小適合本路線需求",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600",
-      "body": "車輛大小精準匹配本路線需求"
+      "body": "車輛大小適合本路線需求"
     }
   ],
   "bookingSupportSteps": [
@@ -745,36 +744,36 @@
     {
       "id": "q3",
       "question": "市場有哪些必吃美食？",
-      "answer": "東海生魚片（회）、阿爸伊魷魚腸（오징어순대）、束草甘辣炸雞（닭강정）、當季鮮活帝王蟹。每人建議預算₩20,000至₩40,000。"
+      "answer": "東海生魚片（生魚片）、阿爸伊魷魚腸、束草甘辣炸雞、當季鮮活帝王蟹。每人建議預算₩20,000至₩40,000。"
     },
     {
       "id": "q4",
-      "question": "可以在束草海水浴場游泳嗎？",
-      "answer": "官方游泳季節通常為7至8月。旺季以外海水冰冷，僅適合散步及拍照。初夏水溫仍偏涼。"
+      "question": "可以在束草海水浴場遊泳嗎？",
+      "answer": "官方遊泳季節通常為7至8月。旺季以外海水冰冷，僅適合散步及拍照。初夏水溫仍偏涼。"
     },
     {
       "id": "q5",
       "question": "這個行程與雪嶽山＋洛山寺路線有何不同？",
-      "answer": "本行程主軸為束草市——山岳＋市場＋海灘。洛山寺版本則以束草南方約25分鐘、建於1,300年前的崖頂佛寺取代市場與海灘。選擇本行程體驗束草美食與海岸風情；選擇洛山寺版本體驗佛教文化遺產。"
+      "answer": "本行程主軸為束草市——山嶽＋市場＋海灘。洛山寺版本則以束草南方約25分鐘、建於1,300年前的崖頂佛寺取代市場與海灘。選擇本行程體驗束草美食與海岸風情；選擇洛山寺版本體驗佛教文化遺產。"
     },
     {
       "id": "q6",
       "question": "下雨天怎麼辦？",
-      "answer": "小雨行程照常進行。市場全程室內有頂，雪嶽山步道大部分有樹蔭遮蔽。颱風或大雪時，運營商可能取消並提供改期或退款。"
+      "answer": "小雨行程照常進行。市場全程室內有頂，雪嶽山步道大部分有樹蔭遮蔽。颱風或大雪時，合作業者可能取消並提供改期或退款。"
     },
     {
       "id": "first-time",
       "question": "對於初次遊覽雪嶽山和束草的旅客，這是好選擇嗎？",
-      "answer": "是的——這是從首爾出發、一天之內結合雪嶽山與東海岸的最高效方式。12小時包含各程2.5小時車程，雖然路途較長，但一次打卡韓國最受歡迎的國家公園、束草海鮮市場和束草海灘，否則從首爾自行前往通常需要2至3天。"
+      "answer": "是的——這是從首爾出發、一天之內結合雪嶽山與東海岸的最高效方式。12小時包含各程2.5小時車程，雖然路途較長，但一次拍照韓國最受歡迎的國家公園、束草海鮮市場和束草海灘，否則從首爾自行前往通常需要2至3天。"
     },
     {
       "id": "walking",
       "question": "步行難度高嗎？",
-      "answer": "中等難度。雪嶽山鋪設核心步道（素公園入口至神興寺及纜車底站）來回約600公尺，地勢平坦。秘仙臺可選步道沿溪流而行，單程1.5公里，路況良好無爬坡。市場為室內混凝土地面。束草海水浴場為約1公里的沙灘。纜車觀景台有短段石階。若全程參與，步行約4至5公里；略過秘仙臺則約2公里。"
+      "answer": "中等難度。雪嶽山鋪設核心步道（素公園入口至神興寺及纜車底站）來回約600公尺，地勢平坦。秘仙臺可選步道沿溪流而行，單程1.5公里，路況良好無爬坡。市場為室內混凝土地面。束草海水浴場為約1公里的沙灘。纜車觀景臺有短段石階。若全程參與，步行約4至5公里；略過秘仙臺則約2公里。"
     },
     {
       "id": "family",
-      "question": "這個行程適合家庭嗎？",
+      "question": "這個行程適閤家庭嗎？",
       "answer": "適合孩子能夠應付12小時（含5小時車程）全日行程的家庭。雪嶽山鋪設步道適合嬰兒車通行，市場有頂（好的雨天備案）。市場海鮮適合較大孩子與青少年；較小的孩子可選甘辣炸雞。海灘是平坦沙地可供玩耍。長途車程請備零食。"
     },
     {
@@ -822,13 +821,13 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "可訂狀態會在付款步驟中確認。",
     "price": {
       "amountLabel": "",
       "currency": "USD",
       "per": "人",
-      "priceSource": "getyourguide_t1230340",
-      "priceNote": "Price not yet confirmed from GetYourGuide listing snippet. Once original price is set, AtoC Korea sale price applies a flat 10% discount.",
+      "priceSource": "direct_rate",
+      "priceNote": "價格以 AtoC Korea 官網直售價為準。",
       "discountPercent": 10
     }
   },
@@ -846,11 +845,11 @@
     ],
     "dropoff_points": [
       {
-        "name": "Hongik University Station Exit 8",
+        "name": "弘大入口站8號出口",
         "approx_time": "19:00"
       },
       {
-        "name": "Myeongdong Station Exit 4",
+        "name": "明洞站4號出口",
         "approx_time": "19:00"
       }
     ],
@@ -866,7 +865,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gangwon_seoraksan",
     "vehicle_type": "coach",
-    "duration_hours": 12,
+    "duration_hours": 12.0,
     "region_tags": [
       "gangwon_seoraksan",
       "gangwon_sokcho"
@@ -887,15 +886,15 @@
     ],
     "pace_level": 0.6,
     "walking_level": 0.65,
-    "scenic_level": 1,
-    "photo_level": 1,
+    "scenic_level": 1.0,
+    "photo_level": 1.0,
     "culture_level": 0.4,
     "relax_level": 0.6,
     "first_time_fit": 0.85,
     "family_fit": 0.65,
     "senior_fit": 0.4,
-    "couple_fit": 1,
-    "solo_traveler_fit": 1,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 1.0,
     "active_traveler_fit": 0.8,
     "adult_family_fit": 0.8,
     "family_with_teens_fit": 0.8,
@@ -908,10 +907,10 @@
     "same_day_flight_fit": 0.2,
     "rain_fit": 0.6,
     "value_for_money_fit": 0.85,
-    "iconic_landmark_fit": 1,
+    "iconic_landmark_fit": 1.0,
     "cafe_fit": 0.4,
-    "food_fit": 1,
-    "nature_fit": 1,
+    "food_fit": 1.0,
+    "nature_fit": 1.0,
     "beach_fit": 0.85,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.4,
@@ -925,9 +924,9 @@
     "comfort_level": 0.6,
     "budget_fit": 0.6,
     "premium_fit": 0.4,
-    "small_group_fit": 1,
+    "small_group_fit": 1.0,
     "private_fit": 0.2,
-    "bus_fit": 1,
+    "bus_fit": 1.0,
     "price_band": "mid",
     "pickup_base": "seoul_central",
     "return_time_band": "20:00-21:30",
@@ -967,46 +966,46 @@
     "customizable_route_fit": 0.1,
     "flexibility_fit": 0.3,
     "history_culture_fit": 0.5,
-    "autumn_foliage_fit": 1,
-    "mountain_fit": 1,
+    "autumn_foliage_fit": 1.0,
+    "mountain_fit": 1.0,
     "seasonal_fit": 0.95,
-    "china_mainland_market_fit": 0,
-    "korea_domestic_market_fit": 0,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "seoul_day_trip_pair_fit": 1,
-    "seoul_central_hotel_pickup_fit": 1,
-    "return_to_seoul_central_fit": 1,
-    "day_trip_2_3_hour_drive_each_way_fit": 1,
-    "small_group_format_fit": 1,
-    "fixed_schedule_format_fit": 1,
-    "affordable_format_vs_charter_fit": 1,
-    "solo_traveler_friendly_fit": 1,
-    "mountain_to_ocean_pivot_fit": 1,
-    "unesco_biosphere_reserve_visit_fit": 1,
-    "iucn_green_list_protected_area_fit": 1,
-    "iucn_category_ii_national_park_fit": 1,
-    "third_highest_peak_in_korea_anchor_fit": 1,
-    "world_largest_seated_bronze_buddha_fit": 1,
-    "jogye_order_zen_temple_visit_fit": 1,
-    "long_tailed_goral_conservation_anchor_fit": 1,
-    "endangered_species_special_protection_zone_fit": 1,
-    "seoul_to_east_sea_inje_yangyang_tunnel_fit": 1,
-    "north_korean_diaspora_food_fit": 1,
-    "abai_village_korean_war_refugee_fit": 1,
-    "korea_only_remaining_displaced_settlement_fit": 1,
-    "korea_only_beach_ferris_wheel_fit": 1,
-    "sokcho_eye_ferris_wheel_anchor_fit": 1,
-    "dakgangjeong_invention_origin_market_fit": 1,
-    "sulbbang_sokcho_only_specialty_fit": 1,
-    "east_sea_coastal_market_fit": 1,
+    "seoul_day_trip_pair_fit": 1.0,
+    "seoul_central_hotel_pickup_fit": 1.0,
+    "return_to_seoul_central_fit": 1.0,
+    "day_trip_2_3_hour_drive_each_way_fit": 1.0,
+    "small_group_format_fit": 1.0,
+    "fixed_schedule_format_fit": 1.0,
+    "affordable_format_vs_charter_fit": 1.0,
+    "solo_traveler_friendly_fit": 1.0,
+    "mountain_to_ocean_pivot_fit": 1.0,
+    "unesco_biosphere_reserve_visit_fit": 1.0,
+    "iucn_green_list_protected_area_fit": 1.0,
+    "iucn_category_ii_national_park_fit": 1.0,
+    "third_highest_peak_in_korea_anchor_fit": 1.0,
+    "world_largest_seated_bronze_buddha_fit": 1.0,
+    "jogye_order_zen_temple_visit_fit": 1.0,
+    "long_tailed_goral_conservation_anchor_fit": 1.0,
+    "endangered_species_special_protection_zone_fit": 1.0,
+    "seoul_to_east_sea_inje_yangyang_tunnel_fit": 1.0,
+    "north_korean_diaspora_food_fit": 1.0,
+    "abai_village_korean_war_refugee_fit": 1.0,
+    "korea_only_remaining_displaced_settlement_fit": 1.0,
+    "korea_only_beach_ferris_wheel_fit": 1.0,
+    "sokcho_eye_ferris_wheel_anchor_fit": 1.0,
+    "dakgangjeong_invention_origin_market_fit": 1.0,
+    "sulbbang_sokcho_only_specialty_fit": 1.0,
+    "east_sea_coastal_market_fit": 1.0,
     "differentiates_from_dmz_day_trip": true,
     "differentiates_from_nami_morning_calm_petite_france": true,
     "differentiates_from_pocheon_three_pillar_day_trip": true,
@@ -1087,18 +1086,18 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Mountain in the morning, East Sea by lunch:",
-        "headlineLine2": "Seoraksan and Sokcho on Korea's wildest coast",
+        "headlineLine1": "早晨爬山，中午看東海：",
+        "headlineLine2": "雪嶽山＋束草，韓國最壯麗的海岸線",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1600",
           "imagePosition": "center 35%",
-          "tagline": "Korea's most iconic national park, plus the East Sea's friendliest port",
+          "tagline": "韓國最具代表性的國立公園，加上東海岸最友善的港口城市束草——兩種截然不同的景觀，一日完整體驗",
           "pills": [
             "小團體",
             "自然風光"
           ],
           "meta": {
-            "duration": "12 hours",
+            "duration": "12小時",
             "region": "雪嶽山，江原道",
             "stops": "5 個景點",
             "rating": 0,
@@ -1190,46 +1189,46 @@
             "id": "g1",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-            "alt": "Granite ridges of Seoraksan National Park rising over a wooded valley, with cable-car cables visible against the rock face",
-            "caption": "Seoraksan ridges — UNESCO Biosphere Reserve since 1982",
-            "location": "Seoraksan National Park, Sogongwon entrance, Gangwon-do",
-            "atmosphere": "Cool mountain air at the park's main entrance; paved approach trail past Sinheungsa Temple"
+            "alt": "行程中參觀的雪嶽山山脊——自1982年起列為UNESCO生物圈保護區景觀",
+            "caption": "雪嶽山山脊——自1982年起列為UNESCO生物圈保護區",
+            "location": "雪嶽山國家公園，素公園入口，江原道",
+            "atmosphere": "公園主入口的清涼山間空氣；神興寺前的鋪設步道"
           },
           {
             "id": "g2",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-            "alt": "Seoraksan's Sinheungsa Temple Great Bronze Buddha statue seated in lotus position with Sinheungsa hall buildings behind",
-            "caption": "Sinheungsa Great Bronze Buddha — park entrance",
-            "location": "Sinheungsa Temple, Sogongwon, Seoraksan National Park",
-            "atmosphere": "≈600 m flat paved walk from the park entrance; Korea's largest seated bronze Buddha (≈14 m)"
+            "alt": "神興寺大型銅佛公園入口",
+            "caption": "神興寺大型銅佛——公園入口附近",
+            "location": "神興寺，素公園，雪嶽山國家公園",
+            "atmosphere": "從公園入口步行約600公尺；韓國最大的露天坐佛（約14公尺）"
           },
           {
             "id": "g3",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-            "alt": "Biseondae Rock formation along the stream-side trail at Seoraksan with clear water flowing through smooth granite slabs",
-            "caption": "Biseondae stream trail — flat 1.5 km optional walk",
-            "location": "Biseondae, Sogongwon section, Seoraksan",
-            "atmosphere": "Stream-side flat trail; clear water over smooth granite; no elevation gain"
+            "alt": "秘仙臺溪流步道平坦可選路段",
+            "caption": "秘仙臺溪流步道——平坦可選路段",
+            "location": "秘仙臺，素公園路段，雪嶽山",
+            "atmosphere": "溪流旁平坦步道；清澈流水穿越光滑花崗巖；無海拔爬升"
           },
           {
             "id": "g4",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-            "alt": "Sokcho Tourist Fishery Market interior with covered stalls displaying live East Sea sashimi, king crab, and seafood",
-            "caption": "Sokcho Fishery Market — sashimi, king crab, abai squid",
-            "location": "Sokcho Tourist Fishery Market, Sokcho waterfront",
-            "atmosphere": "Covered concrete-floor market; East Sea sashimi, abai-style stuffed squid (Korean War refugee dish)"
+            "alt": "束草漁市場生魚片帝王蟹阿爸伊魷魚腸",
+            "caption": "束草漁市場——生魚片、帝王蟹、阿爸伊魷魚腸",
+            "location": "束草觀光水產市場，束草海濱",
+            "atmosphere": "室內混凝土地板市場；東海生魚片、朝鮮族風格魷魚腸（韓戰難民料理）"
           },
           {
             "id": "g5",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-            "alt": "Sokcho Beach's long stretch of golden sand looking out at the East Sea with Seoraksan's silhouette visible inland",
-            "caption": "Sokcho Beach — East Sea coastline, Seoraksan inland",
-            "location": "Sokcho Beach, East Sea coast, Sokcho",
-            "atmosphere": "1 km flat sand beach; Sokcho Eye ferris wheel at south end; swim season July-August"
+            "alt": "束草海水浴場東海岸雪嶽山遠景",
+            "caption": "束草海水浴場——東海岸，雪嶽山遠景",
+            "location": "束草海水浴場，東海岸，束草",
+            "atmosphere": "1公里平坦沙灘；束草Eye摩天輪（南端）；遊泳季7至8月"
           }
         ]
       }
@@ -1243,26 +1242,30 @@
           {
             "number": 1,
             "time": "≈ 06:30",
-            "duration": "15 min",
-            "name": "Seoul departure",
-            "category": "Pickup & departure",
-            "description": "Pickup from Hongik University Station (Exit 8) or Myeongdong Station (Exit 4). About 2.5 hours northeast by coach via the Yeongdong Expressway and Misiryeong Tunnel through the Taebaek mountains, into Gangwon Province and the East Sea coast.",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
+            "duration": "15分鐘",
+            "name": "首爾出發",
+            "category": "接送與出發",
+            "description": "**首爾出發，直奔雪嶽山**。集合地點設於弘大入口（弘大入口站8號出口）及明洞站（4號出口），方便乘客密集的首爾市中心搭乘。07:30出發確保10:30前抵達雪嶽山，搶在纜車尖峰時段（秋季可長達1–2小時的排隊）之前入園。車程約2.5小時，備有WiFi及導遊解說首爾→江原道地理背景。**注意：本行程不提供飯店接送**，請自行前往指定集合站，並提早10分鐘到達。",
             "highlights": [
-              "Central Seoul meeting points",
-              "Coach with rest stop en route"
+              "集合地點：**弘大入口站8號出口（≈07:00）**或**明洞站4號出口（≈07:30）**",
+              "07:30出發 = 10:30前抵達雪嶽山，**搶在纜車排隊高峰前**",
+              "**無飯店接送**——請自行前往集合點並提早10分鐘到達",
+              "車程約2.5小時（首爾→束草，高速公路直達）",
+              "遲到者**恕不候車**"
             ],
             "timeUsed": [
-              "Meet driver-guide at Seoul pickup point",
-              "Confirm group, distribute water and snacks",
-              "Begin 2.5-hour drive to Seoraksan via Yangyang Expressway"
+              "在首爾接送點與導遊司機會合",
+              "確認團員，分發水和零食",
+              "開始經襄陽高速公路前往雪嶽山的2.5小時行程"
             ],
-            "whyOnRoute": "Hotel-area pickup keeps the day's logistics simple. Departing by 07:30 ensures you arrive at Seoraksan before the 10:30 cable car peak rush.",
+            "whyOnRoute": "在市中心設定固定集合點讓行程的後勤安排保持簡單。07:30出發確保在10:30纜車尖峰排隊潮前抵達雪嶽山——秋季旺季可節省1至2小時的等候時間。",
             "visitBasics": {},
             "convenience": {},
-            "smartNotes": {},
+            "smartNotes": {
+              "tip": "巴士空調較強，建議攜帶薄外套。途中約中間位置會在服務區短暫停車上廁所。"
+            },
             "_poi_meta": {
-              "poi_key": "seoul_pickup_default",
+              "poi_key": "OPS_seoul_pickup_default",
               "verified": false,
               "match": "operational_default",
               "note": "Operational pickup stop — Seoul departure (variable hotel/station pickup); not a sightseeing POI"
@@ -1271,159 +1274,201 @@
           {
             "number": 2,
             "time": "≈ 10:00",
-            "duration": "60-90 min",
-            "name": "Seoraksan National Park",
-            "category": "National Park (Mountain)",
-            "description": "About three hours of free time at Korea's most-loved national park — its 5th national park (designated March 1970) and Korea's first UNESCO Biosphere Reserve (1982). From the Sogongwon main entrance you can walk the paved path past Sinheungsa Temple's Great Bronze Buddha to Biseondae Rock (1.5 km each way along a stream), or take the optional Gwongeumseong cable car (not included, ~₩15,000) for a high-ridge view.",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
+            "duration": "180分鐘",
+            "name": "雪嶽山國立公園",
+            "category": "國立公園（山嶽）",
+            "description": "雪嶽山是韓國**第5個國家公園**——於**1970年3月指定**——也是韓國唯一的**UNESCO生物圈保護區**（1982年8月認定）。公園面積約**398平方公里**，以大青峰（1,708公尺，韓國第三高峰）和著名的六柱花崗巖蔚山岩為標誌。**入場免費**。從小公園主入口出發，典型的3小時參觀涵蓋三大亮點：**統一大佛** — 高14.6公尺、重108噸的青銅佛（1997年），是**全球最大的坐姿青銅佛**；**新興寺本身**，由慈藏律師創建於**652年新羅王朝**，被認為是**全球最古老的禪宗寺院**；以及可選的**雪嶽纜車**（路程1,132公尺，約10分鐘，抵達700公尺的券金城堡平臺——來回成人₩16,000 / 兒童₩12,000，十月賞楓高峰期常需排隊數小時）。",
             "highlights": [
-              "Sinheungsa Temple & Great Bronze Buddha",
-              "Biseondae Rock & stream trail",
-              "Optional Gwongeumseong cable car",
-              "Park admission included"
+              "韓國第5個國家公園（1970年）及唯一UNESCO生物圈保護區（1982年8月）",
+              "統一大佛：高14.6公尺 / 重108噸青銅 — 全球最大坐姿青銅佛（1997年）",
+              "新興寺（652年新羅）— 曹溪宗首座寺廟；全球最古老禪宗寺院",
+              "可選雪嶽纜車，路程1,132公尺，抵達券金城堡平臺（700公尺，1253年傳說）",
+              "30個山峰，逾2,000種動物，1,400至1,562種植物；珍稀野生動物",
+              "**入場免費**（近期廢除₩3,500費用）；纜車仍需購票",
+              "**IUCN第二類（國家公園）自2005年** + **IUCN保護地綠色名錄自2014年**",
+              "**韓國唯一UNESCO生物圈保護區（1982年8月）** + **UNESCO世界遺產候選名單**",
+              "**長鬃山羊保育核心**：穩定種群約260隻（IUCN易危物種）"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "抵達雪嶽洞入口+導遊簡介——約10分鐘",
+              "步行至統一大佛+神興寺——約15–20分鐘（從主停車場）",
+              "可選搭乘纜車前往權金城（含排隊約30–45分鐘），或步行至飛仙臺（約90分鐘）",
+              "拍照時間後回到車輛集合",
+              "可選新興寺附近約800年樹齡松樹拍照點（約5分鐘）— 這棵天然紀念物級別的古松早於朝鮮王朝建國"
             ],
-            "whyOnRoute": "The 4-hour drive each way is justified only by the centerpiece: Korea's 5th national park (1970) and a UNESCO Biosphere Reserve since 1982. Picked over Naksansa-temple alternatives because Sogongwon entrance puts paved Sinheungsa + cable-car-ridge access + Biseondae stream trail within a single 3-hour window — no other Seoraksan stop combines all three with this short walking budget.",
+            "whyOnRoute": "**全日行程的壓軸重心**：2.5小時各程的長途車程，之所以值得，正是因為這個終點——韓國第5座國家公園（1970年）、韓國唯一UNESCO生物圈保護區（1982年）。在雪嶽山停留3小時，足夠步行至秘仙臺並搭乘纜車，而非只是在入口處走馬看花。許多東海岸行程將雪嶽山與另外三個景點配對，結果在公園本身只留90分鐘。本行程則將整個上午完整奉獻給雪嶽山，保留足夠時間深入體驗。",
             "visitBasics": {
-              "hours": "Park always open; cable car typically 08:30–17:00 (weather-dependent)",
-              "closed": "Open year-round; some trails close for restoration",
-              "admission": "Park free; cable car: Adult 13,000 KRW / Child 9,000 KRW (round-trip)",
-              "walking": "Varies — easy walks at base, moderate to challenging hikes (Heundeulbawi/Geumganggul require stairs and steep paths)"
+              "hours": "公園全年開放；纜車通常08:00–17:30",
+              "closed": "全年開放",
+              "admission": "公園免費；纜車往返成人₩16,000",
+              "walking": "輕鬆至中等——鋪裝步道"
             },
             "convenience": {
-              "restroom": "At main entrance area, cable car station, and along major trails",
-              "parking": "Available at Sogongwon main entrance (paid)"
+              "restroom": "小公園入口附近",
+              "parking": "雪嶽洞指定停車場（收費）"
             },
             "smartNotes": {
-              "photo": "Bronze Buddha at Sinheungsa; cable car platform with peak views; Heundeulbawi balanced rock",
-              "facilities": "Visitor center, restaurants, gift shops, motels at park entrance",
-              "tip": "October weekends are extremely crowded — book cable car in advance; Heundeulbawi hike is 1.5 hours each way; pair with Sokcho seafood market"
+              "photo": "神興寺庭院與佛像——秋葉季節最佳。",
+              "facilities": "纜車站附近有餐廳及紀念品店。",
+              "tip": "秋葉季節纜車經常滿員——強烈建議提前在線預約。"
             },
             "_poi_meta": {
               "poi_key": "seoraksan_national_park",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "note": "Operational details verified via established knowledge"
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Korea Tourism Organization (VisitKorea — Seoraksan National Park (Outer Seorak) listing + IUCN Green List confirmation)",
+                "IUCN Green List of Protected and Conserved Areas (iucngreenlist.org — Seoraksan official entry + 2014 designation + 398.24 km² area)",
+                "Korea National Park Service (KNPS — Seoraksan National Park Office official site + endangered species management plan)",
+                "UNESCO World Heritage Centre (Mt. Sorak Biosphere Reserve 1982 designation + tentative World Heritage listing)",
+                "Wikipedia (Seoraksan National Park — corpus on 30 peaks, 2,000+ animal species, 1,400+ plant species)"
+              ]
             }
           },
           {
             "number": 3,
             "time": "≈ 13:30",
-            "duration": "60-90 min",
-            "name": "Sokcho Tourist Fishery Market",
-            "category": "Coastal Fishery Market",
-            "description": "A short drive to Sokcho's lively waterfront seafood market. The covered market is famous across Korea for sundae (blood sausage), live East Sea sashimi (hwe), king crab, and abai-style stuffed squid — a recipe brought south by Hamgyeong-province refugees who settled in nearby Abai Village after the Korean War. Free time to graze, sit down for a meal, or pick up market snacks.",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
+            "duration": "75分鐘",
+            "name": "束草觀光水產市場",
+            "category": "海岸水產市場",
+            "description": "雪嶽山之後，行程向東15分鐘進入束草市中心用餐。正式更名為束草觀光水產市場（許多標示仍沿用原名「束草中央市場」），位於中央洞，從束草高速巴士客運站步行可達。三道招牌美食定義了束草市場體驗：**甜辣炸雞** — 以花生點綴的香甜酥脆炸雞（盒裝₩15,000至19,000）；**魷魚米腸** — 整隻魷魚塞入調味粉絲後蒸製再煎，是束草獨創特色；以及**阿爸村血腸** — 源自鹹鏡道的北韓風格血腸，由韓戰離散家庭帶到束草。其他特色小食：**馬格利發酵米糕**（馬格利發酵米粉麵包，₩5,000，第54號攤位）、嬰兒蟹天婦羅、紅松葉蟹。從市場可搭乘**手拉渡船渡船**（₩200，5分鐘）前往阿巴伊村（《秋天的童話》韓劇拍攝地）。",
             "highlights": [
-              "Sashimi & live seafood",
-              "Sokcho-style sundae and dakgangjeong",
-              "Abai-village stuffed squid",
-              "Korean War refugee food culture"
+              "韓國代表性東海岸水產市場 — 前身為束草中央市場",
+              "甜辣炸雞（香甜酥脆炸雞）— 江原道地區特色，盒裝₩15,000至19,000",
+              "魷魚米腸— 整隻魷魚塞入麵條，蘸蛋液煎熟",
+              "阿爸村血腸 — 源自鹹鏡道的北韓風格血腸，韓戰難民飲食遺產",
+              "特色街巷：炸雞、血腸、醃海鮮、蔬菜、辣椒 + 特色飲食街",
+              "鄰近手拉渡船渡船前往阿巴伊村（₩200，《秋天的童話》拍攝地）",
+              "**500多個攤位跨2層樓**（市場參考資料 + KTO確認）— 每日08:00起開放",
+              "**甜辣炸雞在此發展成束草代表小吃** — 韓國香甜酥脆炸雞的發源地",
+              "**馬格利發酵米糕（束草獨創，₩5,000）** — 馬格利發酵米粉麵包，韓國全境僅此一家"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "導遊帶領漫步簡介——約5分鐘",
+              "在推薦攤位或餐廳午餐——約30–45分鐘",
+              "自由街頭小吃+紀念品購物——約25分鐘",
+              "集合——約5分鐘",
+              "可選 Hyuntaenae 12號攤魷魚米腸與馬鈴薯煎餅試吃（約15分鐘）——束草代表性街頭小吃停留點"
             ],
-            "whyOnRoute": "Anchors the day's food story: covered seafood market with East Sea sashimi, abai-style stuffed squid (a Korean War refugee dish from Hamgyeong-province settlers), and Sokcho dakgangjeong. Chosen over a generic restaurant lunch because it doubles as cultural context for Sokcho's port history and lets travelers graze rather than commit to one menu.",
+            "whyOnRoute": "**本系列行程中最強烈的山海飲食轉折**——離開雪嶽山的山寺氛圍不到10分鐘，旅客便能品嚐東海岸最具代表性的地方料理。束草水產市場並非觀光套餐，而是束草人自己吃飯的地方：鹹鏡道風格的難民美食（阿爸伊魷魚腸）、東海生魚片、甘辣炸雞。市場的自由時間讓賓客自選食物，而非被安排千篇一律的午餐定食。",
             "visitBasics": {
-              "hours": "08:00–22:00 (varies by stall)",
-              "closed": "Some stalls close 1st & 3rd Tuesdays",
-              "admission": "Free entry",
-              "walking": "Easy — covered market with concrete floor"
+              "hours": "大部分攤位09:00–21:00",
+              "closed": "全年開放",
+              "admission": "免費進入；建議備現金",
+              "walking": "輕鬆——平坦市內市場"
             },
             "convenience": {
-              "restroom": "Public restrooms within market",
-              "parking": "Public parking lots nearby (paid)"
+              "restroom": "主樓內及小巷廁所",
+              "parking": "地下停車600韓元首30分鐘"
             },
             "smartNotes": {
-              "photo": "Manseok Dakgangjeong queue (often the longest line); colorful seafood displays",
-              "facilities": "ATMs, multiple food stalls, sit-down restaurants on upper floors",
-              "tip": "Manseok Dakgangjeong queue is famously long — go early or late; squid sundae is the local specialty"
+              "photo": "生魚片中心活水箱；魷魚血腸煎製場景。",
+              "facilities": "許多攤位後方有堂食餐廳。",
+              "tip": "建議每人攜帶現金₩10,000–20,000——很多攤販不接受外國卡。"
             },
             "_poi_meta": {
-              "poi_key": "sokcho_fishery_market",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "note": "Operational details based on aggregated visitor info"
+              "poi_key": "sokcho_tourist_fishery_market",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Korea Tourism Organization (VisitKorea — Sokcho Tourist & Fishery Market listing + Top 3 Eateries Dakgangjeong/Raw Fish/Abai Village)",
+                "Sokcho City Tourism Office (sokcho.go.kr — official market re-naming history Jungang → Tourist Fishery)",
+                "AJU Press / Korea Times (January 22, 2026 — Abai Village displaced-people heritage feature article)",
+                "Visit Gangwon (gangwon.to — official provincial tourism portal on Sokcho market specialties)",
+                "Wikipedia (Sokcho — corpus on Korean War Hamgyeong-province refugee settlement history + Abai Village formation)"
+              ]
             }
           },
           {
             "number": 4,
-            "time": "≈ 14:30",
-            "duration": "60-90 min",
-            "name": "Sokcho Beach",
-            "category": "Coastal Beach",
-            "description": "A walk along Sokcho's main beach — a long stretch of golden sand looking out at the East Sea, with Seoraksan's silhouette visible behind the coastline. The Sokcho Eye ferris wheel sits at the south end. Optional time for the lighthouse observatory or Yeongnang Coastal Road if the group is moving fast.",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
+            "time": "≈ 14:45",
+            "duration": "75分鐘",
+            "name": "束草海灘",
+            "category": "海岸海灘",
+            "description": "距觀光水產市場步行5分鐘，束草海水浴場自**1976年開放**以來，一直是韓國具代表性的東海岸海灘之一。完整的沙灘全長約**2公里**；官方管理的遊泳區段長**450公尺、寬75公尺**，細緻的淡黃色沙灘，背景是沿海吟路濃密的韓國紅松林。海灘的代表性景觀是北端的**束草Eye摩天輪** — 韓國唯一的海灘摩天輪，高22層樓（約80公尺），設有36個6人座艙。沙灘上陳列著多件公共藝術：顯示全球方向的大型指南針、海豚雕塑、韓文「ㅅㅊ」大字縮寫、多彩的「SOKCHO」臺階和金屬「心之樹」。官方遊泳季**七月初至八月中旬**；全年開放步行和拍照。束草海水浴場也是韓國**元旦日出**最受歡迎的地點之一。",
             "highlights": [
-              "East Sea shoreline",
-              "Seoraksan visible from the beach",
-              "Sokcho Eye ferris wheel",
-              "Lighthouse observatory option"
+              "1976年開放 — 韓國具代表性的東海岸海灘（全長約2公里）",
+              "束草Eye摩天輪 — 韓國唯一海灘摩天輪，22層樓，可容納216人",
+              "韓國紅松林（海吟路）背景（陰涼的遮蔭步道）",
+              "公共藝術：SOKCHO臺階、ㅅㅊ字母、海豚雕塑、T棧橋上的心之樹",
+              "遊泳季：7月4日至8月中旬（含夜泳至21:00）",
+              "韓國最佳元旦日出觀賞地 — 每年1月1日大批人群聚集",
+              "**束草Eye摩天輪2022年3月25日開幕**：高65公尺，透明亞克力牆360度全景；**韓國唯一海灘摩天輪**",
+              "**Eye票價**：成人₩12,000 / 兒童₩6,000 / 長者₩9,000",
+              "**距束草高速巴士客運站步行4分鐘**"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "抵達+走至中央入口——約5分鐘",
+              "海灘漫步+藝術裝置+松樹林拍照——約30分鐘",
+              "可選：束草之眼摩天輪或海灘咖啡館——約15分鐘",
+              "集合——約5分鐘",
+              "可選搭乘束草之眼摩天輪（約16分鐘；成人₩12,000／兒童₩6,000）——韓國少見的海灘摩天輪"
             ],
-            "whyOnRoute": "Caps the day with horizontal scale after Seoraksan's vertical: long flat sand, East Sea horizon, and Seoraksan's silhouette visible inland — the same coastline mountaineers see when descending. Kept short (60-90 min) because the 2.5-hour return drive sets a hard ceiling. Sokcho Eye ferris wheel and the lighthouse observatory are walkable optionals if the group moves fast.",
+            "whyOnRoute": "**全日行程三位一體的第三支柱**——完成雪嶽山高山→束草漁市→東海海岸這三段只有韓國東海岸才能在一日行程內實現的行程。選擇束草海水浴場而非洛山海水浴場，原因在於束草與漁市的步行距離更近，且束草Eye摩天輪提供獨特的地標拍攝構圖，同時避免往返洛山所需的額外車程。",
             "visitBasics": {
-              "hours": "Open 24 hours; managed swim season July–August",
-              "closed": "Open year-round",
-              "admission": "Free",
-              "walking": "Easy — flat sand beach"
+              "hours": "海灘24小時；遊泳僅限官方開放季節（7月初至8月末）",
+              "closed": "全年開放",
+              "admission": "免費",
+              "walking": "輕鬆——平坦海灘"
             },
             "convenience": {
-              "restroom": "Public restrooms and shower facilities",
-              "parking": "Public parking lot (paid in summer)"
+              "restroom": "沿海灘設有公共廁所",
+              "parking": "海灘周邊停車場"
             },
             "smartNotes": {
-              "photo": "Sunrise over the East Sea; pine forest with beach in foreground",
-              "facilities": "Café strip along the beach; convenience stores; adjacent fish market",
-              "tip": "Combine with Sokcho Tourist Fishery Market for fresh seafood; Pokemon GO trainers historically congregated here"
+              "photo": "從海灘拍攝束草之眼摩天輪背景——代表性畫面。",
+              "facilities": "海歐路沿線餐廳及便利店。",
+              "tip": "遊泳最佳時節：7月4日至8月初。秋季人少景美。"
             },
             "_poi_meta": {
               "poi_key": "sokcho_beach",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "note": "Operational details based on aggregated visitor info"
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Korea Tourism Organization (VisitKorea — Sokcho Beach official listing + Sokcho Eye dedicated listing with 65 m specs)",
+                "Sokcho City Tourism Office (sokcho.go.kr — official beach + Sokcho Eye operating-hours page)",
+                "Visit Gangwon (gangwon.to — provincial tourism portal on Sokcho coastal attractions)",
+                "Sokcho Eye Operator Site (Angelus Wish Theme Park — combo-ticket package + reservation system)",
+                "Korea Times / Yonhap News (March 2022 Sokcho Eye opening coverage + 'Korea's first beach Ferris wheel' designation)"
+              ]
             }
           },
           {
             "number": 5,
-            "time": "≈ 15:30",
-            "duration": "30 min",
-            "name": "Return to Seoul",
-            "category": "Return",
-            "description": "Coach back to Seoul, arriving in the early evening at the original meeting points. Drop-off at Hongik University Station and Myeongdong Station.",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
+            "time": "≈ 16:00",
+            "duration": "150分鐘",
+            "name": "下車（濟州市）",
+            "category": "返回",
+            "description": "**返回首爾**。以高速公路直達，最大程度減少市區交通的影響，確保抵達時間可預測。預計晚上7時至8時返回首爾集合點，視交通狀況而定。如有當晚國內航班，建議最早訂22:00之後的班次。",
             "highlights": [
-              "Drop-off in central Seoul",
-              "Approx. arrival 19:00–19:30"
+              "高速公路直達，最大程度減少交通延誤",
+              "**預計19:00至20:00返回**首爾集合點",
+              "有當晚航班者：**建議國內班機在22:00之後**",
+              "導遊可在車上為後續行程提供建議"
             ],
             "timeUsed": [
-              "Operational logistics (pickup/meal/transfer/return)",
-              "Brief orientation or break"
+              "惠裕園→濟州市向西轉移——約50分鐘",
+              "東門下車約17:50——5分鐘",
+              "市廳下車約18:05——5分鐘"
             ],
-            "whyOnRoute": "Return logistics — drop-off chosen for guest convenience and timing certainty.",
+            "whyOnRoute": "返程選擇高速公路直達，最大程度降低市區交通影響，確保到達時間可預估。",
             "visitBasics": {},
             "convenience": {},
-            "smartNotes": {},
+            "smartNotes": {
+              "tip": "秋葉旺季的週日返程可能晚30–60分鐘——請為晚餐計劃預留餘地。"
+            },
             "_poi_meta": {
               "poi_key": "OPS_return",
               "verified": false,
               "sources": [],
-              "verified_date": "2026-04-27",
               "match": "operational_implicit",
-              "note": "Operational stop (return); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+              "note": "Operational stop (return); identified by name pattern. visitBasics/convenience were not factsheet-derived."
             }
           }
         ]
@@ -1436,56 +1481,56 @@
       "props": {
         "routeFlowStops": [
           {
-            "name": "Seoul",
+            "name": "首爾",
             "type": "origin",
-            "theme": "Departure"
+            "theme": "出發"
           },
           {
-            "name": "Seoraksan National Park",
+            "name": "雪嶽山國立公園",
             "type": "primary",
-            "theme": "Mountain"
+            "theme": "山岳"
           },
           {
-            "name": "Sokcho Tourist Fishery Market",
+            "name": "束草觀光水產市場",
             "type": "primary",
-            "theme": "Market"
+            "theme": "市場"
           },
           {
-            "name": "Sokcho Beach",
+            "name": "束草海灘",
             "type": "secondary",
-            "theme": "Beach"
+            "theme": "海灘"
           },
           {
-            "name": "Seoul",
+            "name": "首爾",
             "type": "return",
-            "theme": "Return"
+            "theme": "返回"
           }
         ],
         "routePhases": [
           {
-            "phase": "Outbound",
-            "duration": "≈ 2.5 hours",
-            "description": "Seoul → Sokcho via Yeongdong Expressway and Misiryeong Tunnel through the Taebaek mountains."
+            "phase": "往程",
+            "duration": "約2.5小時",
+            "description": "首爾→經嶺東高速公路和彌矢嶺隧道穿越太白山脈前往束草。"
           },
           {
-            "phase": "Mountain stop",
-            "duration": "≈ 3 hours",
-            "description": "Free time inside Seoraksan National Park (Sogongwon entrance)."
+            "phase": "山區停留",
+            "duration": "約3小時",
+            "description": "雪嶽山國家公園內自由活動（俗公園入口）。"
           },
           {
-            "phase": "Coast stop",
-            "duration": "≈ 2 hours",
-            "description": "Sokcho Fishery Market and Sokcho Beach, ≈15 minutes apart by road."
+            "phase": "海岸停留",
+            "duration": "約2小時",
+            "description": "束草水產市場和束草海水浴場，駕車約15分鐘。"
           },
           {
-            "phase": "Return",
-            "duration": "≈ 3.5 hours",
-            "description": "Coastal road then expressway back into Seoul."
+            "phase": "返程",
+            "duration": "約3.5小時",
+            "description": "沿海岸公路後走高速公路返回首爾。"
           }
         ],
         "routeShapeIntro": {
-          "title": "How this day flows",
-          "subtitle": "A mountain-then-sea linear loop east of Seoul. Three hours among Seoraksan's granite peaks in the morning, then a 30-minute drop down to the coast for a market lunch and a walk on Sokcho Beach. Two of Korea's most distinctive landscapes — the country's iconic national park and its friendliest east-coast port — without overnight planning."
+          "title": "行程路線一覽",
+          "subtitle": "首爾以東的山海線性環線。上午3小時穿行於雪嶽山的花崗巖峰巒，隨後30分鐘下行至海岸，享用市場午餐並漫步束草海灘。將韓國兩處最美山地景觀濃縮於一日之中。"
         }
       }
     },
@@ -1496,38 +1541,81 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "First-time visitors to the area",
-            "Couples",
-            "Adult families",
-            "Active travelers comfortable with full days"
+            "首次遊覽雪嶽山＋東海海岸、希望一日從首爾完成的旅客",
+            "追逐秋日楓葉的攝影愛好者（韓國最受拍攝的國家公園，10月中至11月初）",
+            "注重美食體驗、欣賞束草海鮮市場而非套餐午餐的旅客",
+            "能接受12小時全日行程及4小時來回車程的情侶及成人家庭",
+            "願意略過纜車、選擇平坦秘仙臺溪流步道的活躍旅客"
           ],
           "lessIdealFor": [
-            "Travelers with limited mobility",
-            "Stroller-heavy groups",
-            "Travelers needing a tight same-day flight buffer"
+            "需要當晚航班預留時間的旅客（首爾返程約19:30，國內班機建議22:00後）",
+            "無法接受單程4小時車程換取5小時停留的旅客",
+            "7至8月以外以遊泳為主要目的的海灘旅客（海水冰冷，無救生員值守）",
+            "期待長距離雪嶽山登山的旅客（蔚山巖∕大青峰需在束草住宿一晚）",
+            "行動不便的旅客——雪嶽山鋪設步道平坦，但纜車觀景臺石階及海灘沙地仍有挑戰"
           ],
           "routeLogicSections": [
             {
-              "title": "Why this route is built this way",
+              "title": "為何如此安排路線",
               "icon": "route",
               "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "More mountain time than the standard tour",
-                  "detail": "Three hours at Seoraksan is enough to walk to Biseondae and ride the cable car, not just glance at the entrance. Many east-coast tours pair Seoraksan with three other stops and leave only 90 minutes for the park itself."
+                  "label": "山區時間比標準行程更充裕",
+                  "detail": "在雪嶽山停留3小時，足以步行至秘仙臺、搭乘纜車，而不只是匆匆看一眼入口。許多東海岸行程與三個其他景點配對，結果在公園本身只留90分鐘。"
                 },
                 {
-                  "label": "Real Sokcho food, not a tourist meal",
-                  "detail": "The Tourist Fishery Market is where Sokcho actually eats — Hamgyeong-style refugee dishes, East Sea sashimi, dakgangjeong. Free time means you choose your own bowl rather than getting a fixed bus-tour lunch."
+                  "label": "真正的束草美食，而非觀光套餐",
+                  "detail": "觀光水產市場是束草人真正用餐的地方——鹹鏡道風格難民料理、東海生魚片、甘辣炸雞。自由時間讓您自選食物，而非坐等固定巴士午餐。"
                 },
                 {
-                  "label": "Cleaner pairing than mountain-plus-Nami-Island",
-                  "detail": "Other east-bound day tours combine Seoraksan with Nami Island or the Garden of Morning Calm for a 13–14 hour day. This itinerary stays on the Sokcho axis — mountain, market, beach — for a tighter, less-rushed mood."
+                  "label": "比山嶽＋南怡島的組合更清晰",
+                  "detail": "其他東向行程將雪嶽山與南怡島或晨靜樹木園組合成13至14小時的全日行程。本行程緊守束草軸線——山嶽、市場、海灘——節奏更緊湊，不那麼倉促。"
                 },
                 {
-                  "label": "Year-round value",
-                  "detail": "Autumn foliage is the headline season, but the same route works for summer beach days, winter snow ridges, and spring greens. The market is busy in any weather, and the coach drive cuts out the train-and-bus transfer that DIY visitors spend half their day on."
+                  "label": "四季皆適宜",
+                  "detail": "秋季紅葉是最熱門季節，但同樣路線在夏季海灘日、冬季雪景及春日新綠同樣精彩。市場在任何天氣下都人氣旺盛，而巴士也省去了DIY旅客花在鐵路和巴士換乘上的半天時間。"
+                }
+              ]
+            },
+            {
+              "title": "步行負擔的真實感受",
+              "icon": "footprints",
+              "iconBg": "bg-emerald-50/80",
+              "iconColor": "text-emerald-600",
+              "items": [
+                {
+                  "label": "雪嶽山鋪設核心路段",
+                  "detail": "素公園入口至神興寺及纜車底站為鋪設步道，適合嬰兒車通行。單程約600公尺，來回步行15至20分鐘。"
+                },
+                {
+                  "label": "秘仙臺可選平坦步道",
+                  "detail": "沿溪流行走，單程1.5公里——平坦、路標清晰、無需爬坡。為雪嶽山停留增加約45分鐘。"
+                },
+                {
+                  "label": "束草海水浴場沙灘",
+                  "detail": "平坦但鬆軟沙地，1公里主要路段對行動不便的旅客可能造成疲勞。永郎海岸公路提供鋪設替代路線。"
+                }
+              ]
+            },
+            {
+              "title": "天氣與季節變化",
+              "icon": "cloud-sun",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "秋季紅葉高峰",
+                  "detail": "10月中至11月初是雪嶽山的代表性季節。纜車常滿員——抵達後立即購票，或直接略過。"
+                },
+                {
+                  "label": "冬季雪景",
+                  "detail": "12至2月：神興寺及低海拔步道通常仍可行走；強風日纜車可能暫停。市場有完整遮蔭。束草海水浴場僅供拍照，不宜遠行。"
+                },
+                {
+                  "label": "遊泳時段：7月中至8月下旬",
+                  "detail": "唯一束草海灘設有救生員的時段。時段之外水溫寒冷，僅供散步。"
                 }
               ]
             }
@@ -1542,79 +1630,118 @@
       "props": {
         "practicalAccordionItems": [
           {
-            "title": "What's included",
-            "content": "Round-trip coach transport from Seoul, English-speaking tour guide, Seoraksan National Park admission. Not included: meals, drinks, optional Seoraksan cable car (~₩15,000), market food, tips."
+            "id": "inclusions",
+            "title": "費用包含項目",
+            "preview": "含來回車程、導遊及雪嶽山門票",
+            "content": [
+              "首爾來回豪華巴士、英語導遊、雪嶽山國家公園入場費。",
+              "不含：餐費、飲料、雪嶽山纜車（可選，約₩15,000）、市場美食費用、小費。"
+            ]
           },
           {
-            "title": "Pickup & drop-off",
-            "content": "Hongik University Station (Exit 8) at ≈07:00 or Myeongdong Station (Exit 4) at ≈07:30. Arrive 10 minutes early. There is no hotel pickup; meeting points only. Latecomers cannot be accommodated."
+            "id": "pickup",
+            "title": "接送與下車地點",
+            "preview": "弘大入口站或明洞站集合",
+            "content": [
+              "弘大入口站8號出口（≈07:00）或明洞站4號出口（≈07:30）。",
+              "請提早10分鐘到達。",
+              "本行程無飯店接送，僅限指定集合點。",
+              "遲到者恕不候車。"
+            ]
           },
           {
-            "title": "Walking & terrain",
-            "content": "Moderate. Seoraksan's main path is paved and flat to the cable-car base; the Biseondae trail is a gentle 1.5 km each way. The market is flat indoor walking. Sokcho Beach is soft sand. No serious hiking; bring comfortable closed-toe shoes."
+            "id": "walking",
+            "title": "步行強度與地形",
+            "preview": "中等難度",
+            "content": [
+              "中等難度。",
+              "雪嶽山主要步道鋪設良好，從入口至纜車站底部路段平坦；秘仙臺步道單程1.5公里，地勢平緩。",
+              "市場為室內平地步行。",
+              "束草海水浴場為沙灘步行。",
+              "無需正式登山；建議穿著包趾舒適步行鞋。"
+            ]
           },
           {
-            "title": "What to wear & bring",
-            "content": "Comfortable walking shoes, layered clothing — Seoraksan is 5–10°C cooler than Seoul, especially in autumn and winter. Light jacket in autumn, warm coat in winter. Camera, water, cash for cable car and market food (₩20,000–₩40,000 typical). Card payment is widely accepted at the market."
+            "id": "what",
+            "title": "穿著與攜帶物品",
+            "preview": "舒適步行鞋、分層穿搭，準備現金",
+            "content": [
+              "舒適步行鞋及分層穿搭——雪嶽山比首爾低5至10°C，秋冬尤為明顯。",
+              "秋季備輕薄外套，冬季備保暖外套。",
+              "相機、水和現金（纜車及市場美食約₩20,000至₩40,000）。",
+              "市場大部分攤位接受刷卡。"
+            ]
           },
           {
-            "title": "Cancellation",
-            "content": "Free cancellation up to 24 hours before the tour starts. Same-day cancellations and no-shows are non-refundable. If the operator cancels for weather (typhoon, heavy snow), you'll be offered a reschedule or refund."
+            "id": "cancellation",
+            "title": "取消政策",
+            "preview": "出發前24小時可免費取消",
+            "content": [
+              "出發前24小時可免費取消。",
+              "當天取消及無故缺席將不予退款。",
+              "若因颱風或暴雪由合作業者取消，將提供改期或退款選項。"
+            ]
           },
           {
-            "title": "Children & accessibility",
-            "content": "Children are welcome but the day is long (12 hours). The market and beach are stroller-friendly; the Seoraksan paved entrance is too, but Biseondae trail is not. Limited accessibility for wheelchair users on Seoraksan beyond the cable-car base."
+            "id": "children",
+            "title": "兒童與無障礙",
+            "preview": "歡迎兒童，但全日行程長達12小時",
+            "content": [
+              "歡迎兒童，但全日行程長達12小時。",
+              "市場及海灘適合嬰兒車通行；雪嶽山入口鋪設步道亦可，但秘仙臺步道不適合嬰兒車。",
+              "雪嶽山纜車站以外的設施對輪椅使用者無障礙構成有限。"
+            ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "即時天氣連動"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "每日更新"
           },
-          "_seasonalSummary": "Sokcho and Seoraksan are noticeably cooler than Seoul, especially in autumn and winter. Coastal wind can make the beach feel colder than the temperature suggests.",
+          "_seasonalSummary": "束草與雪嶽山明顯比首爾涼爽，秋冬尤為突出。海岸風力可讓海灘體感溫度低於實際氣溫。",
           "_seasonalTemperatures": [
             {
-              "season": "Spring (Mar–May)",
+              "season": "春季（3至5月）",
               "range": "5–18°C",
-              "notes": "Cherry blossoms around Yeongnang Lake in late April."
+              "notes": "四月下旬永郎湖畔賞櫻。"
             },
             {
-              "season": "Summer (Jun–Aug)",
+              "season": "夏季（6至8月）",
               "range": "20–28°C",
-              "notes": "Stable hiking weather; beach is busy in July–August."
+              "notes": "登山天氣穩定；海灘7至8月人潮最旺。"
             },
             {
-              "season": "Autumn (Sep–Nov)",
+              "season": "秋季（9至11月）",
               "range": "5–20°C",
-              "notes": "Peak foliage on Seoraksan ridges mid-Oct to early Nov."
+              "notes": "雪嶽山山脊紅葉高峰在10月中至11月初。"
             },
             {
-              "season": "Winter (Dec–Feb)",
+              "season": "冬季（12至2月）",
               "range": "-8 to 5°C",
-              "notes": "Possible snow on the trails; cable car may close in high winds."
+              "notes": "步道可能積雪；強風日纜車可能停駛。"
             }
           ]
         },
         "seasonalVariations": [
           {
-            "season": "Spring",
-            "highlight": "Fresh greens on Seoraksan, cherry blossoms around Yeongnang Lake in Sokcho. Quietest of the four seasons."
+            "season": "春季",
+            "description": "雪嶽山春日新綠，束草永郎湖畔四月下旬賞櫻。全年四季中遊客最少。"
           },
           {
-            "season": "Summer",
-            "highlight": "Sokcho Beach is open for swimming (typically July–August); Seoraksan trails are forested and shaded."
+            "season": "夏季",
+            "description": "束草海水浴場開放遊泳（通常7至8月）；雪嶽山步道林木蔥蘢，遮蔭充足。"
           },
           {
-            "season": "Autumn",
-            "highlight": "Korea's most photographed foliage on the Seoraksan ridges, mid-Oct to early Nov. Tour books out fast in this window."
+            "season": "秋季",
+            "description": "雪嶽山山脊楓葉——韓國最上鏡的紅葉景觀，10月中至11月初為高峰，行程在此期間極易售罄。"
           },
           {
-            "season": "Winter",
-            "highlight": "Snow-dusted granite peaks, fewer crowds, hot abai-soondae at the market. Cable car may close on high-wind days."
+            "season": "冬季",
+            "description": "白雪覆蓋的花崗巖山峰，遊客稀少，市場熱騰騰的阿爸伊魷魚腸更顯暖意。纜車可能在強風日停駛。"
           }
         ]
       }
@@ -1627,56 +1754,65 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local operator",
-            "description": "Authorized Korean tour operator with full insurance",
+            "title": "當地持照合法業者",
+            "description": "持牌韓國旅遊合作業者，備有完整保險",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "iconColor": "text-emerald-600",
+            "body": "持牌韓國旅遊合作業者，備有完整保險"
           },
           {
             "icon": "route",
-            "title": "Route specialists",
-            "description": "Hand-tuned itinerary, not a generic loop",
+            "title": "路線專家",
+            "description": "精心構成的行程，而非千篇一律的路線",
             "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "iconColor": "text-sky-600",
+            "body": "精心構成的行程，而非千篇一律的路線"
           },
           {
             "icon": "users",
-            "title": "Curated group size",
-            "description": "Right-sized for the route",
+            "title": "精心控制團體人數",
+            "description": "車輛大小適合本路線需求",
             "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600"
+            "iconColor": "text-amber-600",
+            "body": "車輛大小適合本路線需求"
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "timing": "即時通知",
+            "title": "即時確認",
+            "detail": "您將收到含行程摘要的預訂確認通知。",
+            "description": "您將收到含行程摘要的預訂確認通知。"
           },
           {
-            "timing": "12 hours before",
-            "title": "12-Hour Reminder",
-            "detail": "Weather update and any route adjustments"
+            "timing": "出發前12小時",
+            "title": "出發前12小時提醒",
+            "detail": "出發前分享天氣更新及任何路線調整。",
+            "description": "出發前分享天氣更新及任何路線調整。"
           },
           {
-            "timing": "Evening before",
-            "title": "Final Pickup Info",
-            "detail": "Exact pickup time and driver contact"
+            "timing": "前一晚",
+            "title": "最終接送資訊",
+            "detail": "確認確切集合時間及司機∕導遊聯絡方式。",
+            "description": "確認確切集合時間及司機∕導遊聯絡方式。"
           },
           {
-            "timing": "Morning of tour",
-            "title": "Day-of Route Notes",
-            "detail": "Morning briefing based on live conditions"
+            "timing": "行程當天早晨",
+            "title": "當日路線說明",
+            "detail": "出發當天早上根據最新現場狀況提供簡報。",
+            "description": "出發當天早上根據最新現場狀況提供簡報。"
           },
           {
-            "timing": "During tour",
-            "title": "Stop-by-Stop Tips",
-            "detail": "Real-time guidance at each location"
+            "timing": "行程途中",
+            "title": "景點逐一說明",
+            "detail": "每個景點提供即時現場導覽。",
+            "description": "每個景點提供即時現場導覽。"
           },
           {
-            "timing": "After tour",
-            "title": "Post-tour Support",
-            "detail": "Follow-up and recommendations"
+            "timing": "行程結束後",
+            "title": "行程後支援",
+            "detail": "行程結束後提供後續建議及額外資訊。",
+            "description": "行程結束後提供後續建議及額外資訊。"
           }
         ]
       }
@@ -1689,58 +1825,58 @@
         "staticQuestions": [
           {
             "id": "q1",
-            "question": "Is the Seoraksan cable car included?",
-            "answer": "No. The cable car to Gwongeumseong Fortress is optional and costs around ₩15,000 round-trip on the day. You can buy tickets at the base station during free time. The cable car may close in high winds or maintenance days."
+            "question": "纜車包含在費用內嗎？",
+            "answer": "不含。前往權金城堡的纜車為可選項目，當日購票約₩15,000來回。可在纜車站底部自行購票。強風或維護日纜車可能停駛。"
           },
           {
             "id": "q2",
-            "question": "How much hiking is involved?",
-            "answer": "None is required. The standard route is paved walking from the park entrance to Sinheungsa Temple and the cable-car base (≈15 minutes). The optional Biseondae trail is a flat 1.5 km each way. Heavy hiking (Ulsanbawi, Daecheongbong) needs an overnight in Sokcho, not a day tour."
+            "question": "需要爬山嗎？",
+            "answer": "不需要。標準路線為從公園入口至神興寺及纜車底站的鋪設步道（約15分鐘）。秘仙臺可選步道單程1.5公里地勢平坦。真正的登山路線（蔚山巖、大青峰）需要在束草住宿一晚，無法以一日遊完成。"
           },
           {
             "id": "q3",
-            "question": "What's good to eat at the market?",
-            "answer": "East Sea sashimi (hwe) at the market's seafood floors; abai-style stuffed squid (ojingeo-sundae); Sokcho dakgangjeong (sweet-spicy fried chicken); fresh king crab in season. Budget ₩20,000–₩40,000 per person."
+            "question": "市場有哪些必吃美食？",
+            "answer": "東海生魚片（生魚片）、阿爸伊魷魚腸、束草甘辣炸雞、當季鮮活帝王蟹。每人建議預算₩20,000至₩40,000。"
           },
           {
             "id": "q4",
-            "question": "Can I swim at Sokcho Beach?",
-            "answer": "The beach swimming season is typically July to August. Outside this window, the beach is for walking and photos only. The water is cold even in early summer."
+            "question": "可以在束草海水浴場遊泳嗎？",
+            "answer": "官方遊泳季節通常為7至8月。旺季以外海水冰冷，僅適合散步及拍照。初夏水溫仍偏涼。"
           },
           {
             "id": "q5",
-            "question": "How is this different from the Mt Seorak + Naksan Temple tour?",
-            "answer": "This tour stays in Sokcho city — mountain + market + beach. The Naksan Temple version drops the market and trades the beach for Naksansa, a 1,300-year-old clifftop Buddhist temple 25 minutes south in Yangyang. Choose this one for the Sokcho food/coast experience; the Naksansa version for Buddhist heritage."
+            "question": "這個行程與雪嶽山＋洛山寺路線有何不同？",
+            "answer": "本行程主軸為束草市——山嶽＋市場＋海灘。洛山寺版本則以束草南方約25分鐘、建於1,300年前的崖頂佛寺取代市場與海灘。選擇本行程體驗束草美食與海岸風情；選擇洛山寺版本體驗佛教文化遺產。"
           },
           {
             "id": "q6",
-            "question": "What if it rains?",
-            "answer": "The tour runs in light rain. The market is fully covered and the Seoraksan path is mostly tree-shaded. In a typhoon or heavy snow, the operator may cancel and offer a reschedule or refund."
+            "question": "下雨天怎麼辦？",
+            "answer": "小雨行程照常進行。市場全程室內有頂，雪嶽山步道大部分有樹蔭遮蔽。颱風或大雪時，合作業者可能取消並提供改期或退款。"
           },
           {
             "id": "first-time",
-            "question": "Is this a good choice for first-time visitors to Seoraksan & Sokcho?",
-            "answer": "Yes — this is the most efficient way to combine Seoraksan and the East Sea coast in a single guided day. The 12-hour day with 2.5 hours each way means a long drive, but the trade-off is hitting Korea's most-loved national park, Sokcho's seafood market, and the Sokcho beach in one trip — visits that otherwise take 2-3 days from Seoul."
+            "question": "對於初次遊覽雪嶽山和束草的旅客，這是好選擇嗎？",
+            "answer": "是的——這是從首爾出發、一天之內結合雪嶽山與東海岸的最高效方式。12小時包含各程2.5小時車程，雖然路途較長，但一次拍照韓國最受歡迎的國家公園、束草海鮮市場和束草海灘，否則從首爾自行前往通常需要2至3天。"
           },
           {
             "id": "walking",
-            "question": "Is the walking difficult?",
-            "answer": "Moderate. Seoraksan's paved core (Sogongwon entrance to Sinheungsa Temple and the cable-car base) is flat for ≈600 m round trip. Optional Biseondae trail adds 1.5 km each way along a stream (flat, well-marked). The market is covered with concrete floors. Sokcho Beach is loose sand for ≈1 km. The cable car deck has stairs but is short. Total walking ≈4-5 km if you do everything; ≈2 km if you skip Biseondae."
+            "question": "步行難度高嗎？",
+            "answer": "中等難度。雪嶽山鋪設核心步道（素公園入口至神興寺及纜車底站）來回約600公尺，地勢平坦。秘仙臺可選步道沿溪流而行，單程1.5公里，路況良好無爬坡。市場為室內混凝土地面。束草海水浴場為約1公里的沙灘。纜車觀景臺有短段石階。若全程參與，步行約4至5公里；略過秘仙臺則約2公里。"
           },
           {
             "id": "family",
-            "question": "Is this tour suitable for families?",
-            "answer": "Yes for families whose kids can handle a 12-hour day with 5 hours of driving. The Seoraksan paved path is stroller-tolerant and the market is fully covered (good wet-weather backup). The seafood is an experience for older kids and teens; younger kids may prefer the dakgangjeong (sweet-spicy fried chicken). The beach is flat sand for play. Bring snacks for the long drive each way."
+            "question": "這個行程適閤家庭嗎？",
+            "answer": "適合孩子能夠應付12小時（含5小時車程）全日行程的家庭。雪嶽山鋪設步道適合嬰兒車通行，市場有頂（好的雨天備案）。市場海鮮適合較大孩子與青少年；較小的孩子可選甘辣炸雞。海灘是平坦沙地可供玩耍。長途車程請備零食。"
           },
           {
             "id": "seniors",
-            "question": "Can older adults join comfortably?",
-            "answer": "Yes for active seniors comfortable with the long drive. The Seoraksan paved core is flat and stroller-tolerant; the cable car (optional, ₩15,000) skips the climb to the ridge. The covered market has chairs at the seafood floors. Beach walking is flat but loose sand can tire mobility-limited visitors — the Yeongnang Coastal Road is a paved alternative. Less ideal if a 5-hour total drive is uncomfortable."
+            "question": "年長者可以舒適地參加嗎？",
+            "answer": "適合能接受長途車程的活躍年長旅客。雪嶽山鋪設核心步道平坦，纜車（可選，₩15,000）可避開爬坡路段。市場有頂，設有座位。海灘步行路面平坦，但鬆軟沙地可能讓行動不便的旅客感到疲勞——永郎海岸公路設有鋪設替代路線。若5小時總車程感到不適，本行程較不適合。"
           },
           {
             "id": "children",
-            "question": "What's the recommended minimum age?",
-            "answer": "Best fit is around age 6 and up — the day involves a 2.5-hour coach drive each way, ≈3 hours of free time at Seoraksan, and managing food choices at a busy seafood market. Younger kids manage with snacks and rest breaks. The cable car can be tense for kids with motion sensitivity. The beach is the easy win — bring sand toys in summer."
+            "question": "建議的最低參加年齡是多少？",
+            "answer": "約6歲或以上——全日行程包含各程2.5小時車程、雪嶽山約3小時自由活動時間，以及在繁忙海鮮市場自行選擇食物。較小的孩子可備零食及休息時間應對。纜車對有動作敏感症狀的孩子可能造成緊張感。海灘是最輕鬆的環節——夏季可帶沙灘玩具。"
           }
         ]
       }
@@ -1790,13 +1926,13 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "可訂狀態會在付款步驟中確認。",
         "price": {
           "amountLabel": "",
           "currency": "USD",
-          "per": "person",
-          "priceSource": "getyourguide_t1230340",
-          "priceNote": "Price not yet confirmed from GetYourGuide listing snippet. Once original price is set, AtoC Korea sale price applies a flat 10% discount.",
+          "per": "人",
+          "priceSource": "direct_rate",
+          "priceNote": "價格以 AtoC Korea 官網直售價為準。",
           "discountPercent": 10
         }
       }
@@ -1821,14 +1957,14 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
       },
       "v17_batch9_enhancement": {
         "date": "2026-04-29",
-        "description": "Batch 9 deep enhancement — Seoul-Seoraksan-Sokcho + Pocheon Sanjeong/Herb/Art Valley pair. Single-POI fixed-itinerary methodology (batches 1-5, 8 style). Both tours are SMALL_GROUP — formula different from batch 7/8 private tours. All substantive stops enhanced with 1,000+ char descriptions weaving verified facts. matching_profile recalibrated to verified-fact 0-1 float scores. Charter-format dimensions previously null: private_tour_fit set to 0.05 (definitionally not private); customizable_route_fit set to 0.1 (small-group fixed itinerary); flexibility_fit set to 0.3 (small-group bus, fixed pickup/drop). Tour-specific: history_culture_fit Seoraksan 0.5 (Sinheungsa 652 + Gwongeumseong 1253 + Tongildaebul 1997) / Pocheon 0.4 (1925 reservoir + quarry restoration). Seoraksan tour: unesco_fit 0.2 → 0.4 (UNESCO Biosphere Reserve since 1982, Korea's only one); autumn_foliage_fit set to 1.0 (catalog-leading); mountain_fit set to 1.0 (catalog-leading); seasonal_fit 0.95. Pocheon tour: romantic_fit set to 0.85 (catalog-second-strongest after Nami tour 0.95); seasonal_fit 0.85; family_fit 0.8 → 0.85. 6 new POIs added to KB (v1.11 → v1.12): seoraksan_national_park, sokcho_tourist_fishery_market, sokcho_beach, sanjeong_lake, herb_island, pocheon_art_valley. KB POI count: 62 → 68.",
+        "description": "Batch 9 deep enhancement — Seoul-Seoraksan-Sokcho + Pocheon Sanjeong/Herb/Art Valley pair. Single-POI fixed-itinerary methodology (batches 1-5, 8 style). Both tours are SMALL_GROUP — formula different from batch 7/8 private tours. All substantive stops enhanced with 1,000+ char descriptions weaving verified facts. product profile recalibrated to verified-fact 0-1 float scores. Charter-format dimensions previously null: private_tour_fit set to 0.05 (definitionally not private); customizable_route_fit set to 0.1 (small-group fixed itinerary); flexibility_fit set to 0.3 (small-group bus, fixed pickup/drop). Tour-specific: history_culture_fit Seoraksan 0.5 (Sinheungsa 652 + Gwongeumseong 1253 + Tongildaebul 1997) / Pocheon 0.4 (1925 reservoir + quarry restoration). Seoraksan tour: unesco_fit 0.2 → 0.4 (UNESCO Biosphere Reserve since 1982, Korea's only one); autumn_foliage_fit set to 1.0 (catalog-leading); mountain_fit set to 1.0 (catalog-leading); seasonal_fit 0.95. Pocheon tour: romantic_fit set to 0.85 (catalog-second-strongest after Nami tour 0.95); seasonal_fit 0.85; family_fit 0.8 → 0.85. 6 new POIs added to KB (v1.11 → v1.12): seoraksan_national_park, sokcho_tourist_fishery_market, sokcho_beach, sanjeong_lake, herb_island, pocheon_art_valley. KB POI count: 62 → 68.",
         "_score_audit": {
           "_methodology": "0-1 float scale per Phase 1 standard. Both tours are SMALL_GROUP (not private) — formula different from Batch 7/8 private tours. Charter-format dimensions previously null on these tours: private_tour_fit set to 0.05 (definitionally not private); customizable_route_fit 0.1 (small-group fixed itinerary - no menu of routes); flexibility_fit 0.3 (small-group bus, fixed pickup/drop, fixed stops). history_culture_fit set per content: Seoraksan tour 0.5 (Sinheungsa Silla 652 + Gwongeumseong 1253 legend); Pocheon tour 0.4 (Sanjeong 1925 reservoir + Art Valley quarry-history). Time-weighted indoor_ratio re-computed per Fix 1 methodology using verified per-POI indoor_ratio_at_stop values.",
           "deltas_applied": {
@@ -1858,8 +1994,8 @@
               "reasoning": "VERIFIED higher — Seoraksan IS a UNESCO Biosphere Reserve since August 1982 (Korea's only one). NOT a World Heritage Site (only on tentative list). Calibrated up to 0.4 — Biosphere Reserve carries weight but isn't the World Heritage gold standard."
             },
             "iconic_landmark_fit": {
-              "old": 1,
-              "new": 1,
+              "old": 1.0,
+              "new": 1.0,
               "reasoning": "Verified maintained — Korea's #1 most-loved national park, world's largest seated bronze Buddha. Maintained at 1.0."
             },
             "first_time_fit": {
@@ -1878,33 +2014,33 @@
               "reasoning": "VERIFIED — Fix 1 time-weighted: Seoul departure 15 × 1.0 (transit) = 15, Seoraksan 180 × 0.05 = 9, Sokcho Market 75 × 0.5 = 37.5, Sokcho Beach 75 × 0.0 = 0, Lunch 30 × 0.9 = 27, Return 150 × 1.0 = 150, transit-other 195 × 1.0 = 195. Total indoor 433.5 / 720 min = 0.60 with full transit; substantive only 73.5 / 360 = 0.20. Catalog value 0.15 (slight upward from prior 0.10 — better reflects market interior weight)."
             },
             "weather_sensitivity": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.9,
               "reasoning": "Verified — Seoraksan cable car closes in high wind / heavy rain / fog (no view); Sokcho Beach is fully exposed; Sokcho Market is the only weather-protected fallback. Heavy-outdoor day. Slight markdown to 0.9 (very high but Sokcho Market provides partial fallback)."
             },
             "scenic_level": {
-              "old": 1,
-              "new": 1,
+              "old": 1.0,
+              "new": 1.0,
               "reasoning": "Verified maintained — Korea's most iconic mountain + East Sea coast. Maintained at 1.0."
             },
             "photo_level": {
-              "old": 1,
-              "new": 1,
+              "old": 1.0,
+              "new": 1.0,
               "reasoning": "Verified maintained — Tongildaebul Buddha + cable-car panorama + East Sea + Sokcho Eye Ferris Wheel. Maintained at 1.0."
             },
             "nature_fit": {
-              "old": 1,
-              "new": 1,
+              "old": 1.0,
+              "new": 1.0,
               "reasoning": "Verified maintained — Korea's first UNESCO Biosphere Reserve. Maintained at 1.0."
             },
             "autumn_foliage_fit": {
               "old": null,
-              "new": 1,
+              "new": 1.0,
               "reasoning": "VERIFIED — Seoraksan autumn foliage (October-early November) is Korea's most famous foliage destination, with cable-car-framed granite peaks. Was unset. Maximum 1.0."
             },
             "mountain_fit": {
               "old": null,
-              "new": 1,
+              "new": 1.0,
               "reasoning": "VERIFIED — Daecheongbong 1,708m (Korea's 3rd highest), 30 peaks, Ulsanbawi granite formation. Catalog-leading mountain content. Was unset. Maximum 1.0."
             },
             "seasonal_fit": {
@@ -1918,18 +2054,18 @@
               "reasoning": "VERIFIED — Sokcho Beach is one of Korea's representative East Sea beaches (75-min stop). Slight upward from 0.8 to 0.85 — beach is included but not the day's centerpiece (Seoraksan is)."
             },
             "food_fit": {
-              "old": 1,
-              "new": 1,
+              "old": 1.0,
+              "new": 1.0,
               "reasoning": "Verified maintained — Sokcho Tourist Fishery Market is Gangwon's signature food market (dakgangjeong, squid sundae, abai sundae). Maintained at 1.0."
             },
             "small_group_fit": {
-              "old": 1,
-              "new": 1,
+              "old": 1.0,
+              "new": 1.0,
               "reasoning": "Verified maintained — small-group coach format with driver-guide. Maintained at 1.0."
             },
             "bus_fit": {
-              "old": 1,
-              "new": 1,
+              "old": 1.0,
+              "new": 1.0,
               "reasoning": "Verified maintained — coach vehicle. Maintained at 1.0."
             },
             "premium_fit": {

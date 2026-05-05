@@ -5,25 +5,25 @@
   "locale": "zh-CN",
   "product_id": "busan-private-car-charter-cruise-shore",
   "seo": {
-    "pageTitle": "Busan Private Car Charter for Cruise Shore (8hr) | AtoC Korea",
-    "metaDescription": "8-hour fully customizable Busan private car charter for cruise passengers. English-speaking driver, on-time return guaranteed, hotel/KTX/cruise port pickup.",
+    "pageTitle": "釜山邮轮上岸私人包车游8小时 | AtoC Korea",
+    "metaDescription": "8小时全程定制釜山私人包车（邮轮游客专属）。联合国纪念公园、太宗台、甘川洞、龙头山、札嘎其市场。英语司导，准时返港保障。",
     "ogImage": "",
     "primaryKeywords": [
-      "Busan private car charter",
-      "Busan cruise shore excursion",
-      "Busan private day tour cruise",
-      "Busan English-speaking driver",
-      "8-hour Busan private tour"
+      "釜山私人包车",
+      "釜山邮轮靠港游览",
+      "釜山私人一日游邮轮",
+      "釜山英语导游司机",
+      "8小时釜山私人游"
     ],
     "title": "釜山私人包车邮轮岸上观光 · 8小时客制行程 | AtoC Korea",
-    "description": "釜山邮轮靠港私人包车服务：联合国纪念公墓→太宗台→甘川文化村→札嘎其市场，路线完全客制，准时返船保证。持照英语导游，无陌生旅客同乘。"
+    "description": "釜山邮轮靠港私人包车服务：联合国纪念公墓→太宗台→甘川文化村→札嘎其市场，路线完全客制，安全返回邮轮码头优先。持照英语导游，无陌生旅客同乘。"
   },
   "catalog_card": {
     "slug": "busan-private-car-charter-cruise-shore",
     "title": "釜山邮轮岸上私人包车一日游",
-    "subtitle": "Design your own Busan day with a licensed English-speaking driver-guide and an air-conditioned private vehicle — on-time return guaranteed.",
+    "subtitle": "在釜山打造专属私人游——持牌英语司导驾驶空调专车，安全返回邮轮码头优先。",
     "region": "釜山（邮轮港＋市区）",
-    "duration": "8 hours",
+    "duration": "8小时",
     "stopsCount": 5,
     "rating": 0,
     "reviewCount": 0,
@@ -34,22 +34,22 @@
     ],
     "heroImage": "",
     "thumbnail": "",
-    "priceLabel": "Per-vehicle pricing — confirm at booking",
-    "shortCardDescription": "An 8-hour private car charter for Busan cruise passengers with a licensed English-speaking driver-guide. Default itinerary covers UN Memorial Cemetery, Taejongdae cliffs, Gamcheon Culture Village, Yongdusan Park, and Jagalchi Market. Fully customizable. Pickup at the cruise terminal, KTX station, or any central Busan hotel; on-time return to the ship is guaranteed.",
+    "priceLabel": "按车辆计费 — 请于预订时确认",
+    "shortCardDescription": "为邮轮靠港旅客设计的8小时私人包车游，配持牌英语司导。默认行程涵盖联合国纪念公园、太宗台悬崖、甘川文化村、龙头山公园及扎嘎其市场，路线完全可定制。在邮轮码头、KTX车站或市内酒店接送，安全返回邮轮码头优先。",
     "tags": [
-      "private_tour",
-      "customizable_route",
-      "cruise_pickup_included",
-      "on_time_return_guaranteed"
+      "私家团",
+      "可定制路线",
+      "含邮轮码头接送",
+      "准时返港优先"
     ]
   },
   "headlineLine1": "釜山私人包车——",
-  "headlineLine2": "邮轮靠港客制化岸上行程",
+  "headlineLine2": "邮轮靠港定制化岸上行程",
   "price": {
     "amountLabel": "",
     "currency": "USD",
-    "per": "vehicle",
-    "priceNote": "私人包车邮轮岸游（全日8小时，含持照英语司机导游）。费用按车辆计算（不按人头）。AtoC Korea直接销售；相较于运营商底价享有10%折扣。"
+    "per": "车辆",
+    "priceNote": "私人包车邮轮岸游（全日8小时，含持照英语司导）。费用按车辆计算（不按人头）。AtoC Korea直接销售；相较于旅游服务团队底价享有10%折扣。"
   },
   "hero": {
     "imageUrl": "",
@@ -58,12 +58,12 @@
     "pills": [
       "私人专属车辆",
       "持照驾驶导游",
-      "准时返船保证"
+      "安全返回邮轮码头优先"
     ],
     "meta": {
-      "duration": "8 hours",
+      "duration": "8小时",
       "region": "釜山（邮轮港＋市区）",
-      "stops": "Custom",
+      "stops": "自定义",
       "rating": 0,
       "ratingStars": 0
     }
@@ -92,40 +92,34 @@
   ],
   "glanceItems": [
     {
-      "icon": "camera",
-      "label": "拍照潜力",
-      "value": "良好",
-      "level": 4
+      "icon": "car",
+      "label": "行程类型",
+      "value": "包车专属"
     },
     {
-      "icon": "mountain",
-      "label": "景点密度",
-      "value": "良好",
-      "level": 4
+      "icon": "map",
+      "label": "行车路线",
+      "value": "完全自订"
     },
     {
-      "icon": "footprints",
-      "label": "步行强度",
-      "value": "中等",
-      "level": 3
+      "icon": "user-check",
+      "label": "导游语言",
+      "value": "英语持照驾驶导游"
     },
     {
-      "icon": "cloud-rain",
-      "label": "雨天适合度",
-      "value": "极佳",
-      "level": 5
+      "icon": "clock",
+      "label": "行程时间",
+      "value": "8小时"
     },
     {
-      "icon": "users",
-      "label": "亲子适合度",
-      "value": "极佳",
-      "level": 5
+      "icon": "ticket",
+      "label": "门票费用",
+      "value": "现场自付"
     },
     {
-      "icon": "gauge",
-      "label": "行程节奏",
-      "value": "灵活",
-      "level": 5
+      "icon": "map-pin",
+      "label": "返船时间",
+      "value": "安全返回邮轮码头优先"
     }
   ],
   "galleryItems": [
@@ -187,17 +181,17 @@
   "itineraryStops": [
     {
       "number": 1,
-      "time": "Cruise arrival + 30 min",
-      "duration": "30 min",
-      "name": "釜山邮轮码头接送（或饭店/KTX）",
-      "category": "Departure",
-      "description": "私人司机在三个接送地点之一等候：**釜山港国际邮轮码头**（影岛区东三洞，大型邮轮指定码头——包括皇家加勒比、嘉年华、MSC等）；**釜山港国际客运码头**（草梁洞，中型邮轮及渡轮码头）；或**釜山市中心任一饭店或KTX釜山站**。船只停靠后30分钟缓冲吸收通关排队延误。",
+      "time": "邮轮抵达后约30分钟",
+      "duration": "30分钟",
+      "name": "釜山邮轮码头接送（或酒店/KTX）",
+      "category": "出发",
+      "description": "私人司机在三个接送地点之一等候：**釜山港国际邮轮码头**（影岛区东三洞，大型邮轮指定码头——包括皇家加勒比、嘉年华、MSC等）；**釜山港国际客运码头**（草梁洞，中型邮轮及渡轮码头）；或**釜山市中心任一酒店或KTX釜山站**。船只停靠后预留30分钟，应对通关排队延误。",
       "highlights": [
-        "**三个接送地点**：邮轮码头（影岛）、国际客运码头（草梁洞）或饭店/KTX",
+        "**三个接送地点**：邮轮码头（影岛）、国际客运码头（草梁洞）或酒店/KTX",
         "**私人车辆** — 您的团体独享，不共乘",
         "司机持名牌 + 韩英双语行程卡等候"
       ],
-      "whyOnRoute": "三个接送地点涵盖釜山两种类型的邮轮码头（东三洞大型邮轮码头，以及草梁洞的国际旅客码头）以及市区饭店和KTX。船只抵达后的30分钟缓冲可吸收通关延误——这在3,000名以上乘客同时下船时十分常见。",
+      "whyOnRoute": "三个接送地点涵盖釜山两种类型的邮轮码头（东三洞大型邮轮码头，以及草梁洞的国际旅客码头）以及市区酒店和KTX。船只抵达后的预留30分钟可应对通关延误——这在3,000名以上乘客同时下船时十分常见。",
       "_poi_meta": {
         "poi_key": "OPS_busan_cruise_pickup",
         "kb_version": "1.15",
@@ -212,10 +206,10 @@
     {
       "number": 2,
       "time": "≈ 09:30",
-      "duration": "60 min",
+      "duration": "60分钟",
       "name": "联合国军纪念公园（韩国战争）",
-      "category": "Memorial & History",
-      "description": "**驻韩联合国军纪念公园（UNMCK）——世界唯一的联合国军纪念公墓** — 由**联合国军司令部于1951年1月18日**在韩国战争期间创立，**1951年4月6日由马修·李奇威将军揭幕奉献**，并依联合国大会决议于**1959年由韩国政府永久捐赠予联合国**。公墓供奉著联合国军司令部**22个派遣国**（16个作战部队 + 6个医疗部队）的阵亡人员，目前保有**来自11个国家的2,300个墓地**（大多数遗骸已于1950年代末期迁回各自国家）。14公顷的园区内包含由韩国现代主义建筑师**金重业（1966年）**设计的**正门**、设有12分钟英文纪录片的**纪念礼堂**、22个派遣国国旗飘扬的**象征广场**、弗兰克·盖洛德创作的**美国韩国战争纪念雕塑（美国战役纪念委员会，2013年）**，以及**2006年落成的记忆之墙** — 在**140块大理石板上刻有40,896个名字**，代表每位在韩国牺牲的联合国军人。每年11月11日上午11时，**「面向釜山」仪式**同时在此公墓及22个国家的纪念地点举行——是全年唯一一次所有派遣国国旗同时降旗的时刻。**免费入场**，开放时间**09:00至18:00（5月至9月）/ 09:00至17:00（10月至4月）**，整个园区铺设铺装道路，**全无障碍设施**。",
+      "category": "纪念馆与历史",
+      "description": "**驻韩联合国军纪念公园（UNMCK）——世界唯一的联合国军纪念公墓** — 由**联合国军司令部于1951年1月18日**在韩国战争期间创立，**1951年4月6日由马修·李奇威将军揭幕奉献**，并依联合国大会决议于**1959年由韩国政府永久捐赠予联合国**。公墓安葬着联合国军司令部**22个派遣国**（16个作战部队 + 6个医疗部队）的阵亡人员，目前保有**来自11个国家的2,300个墓地**（大多数遗骸已于1950年代末期迁回各自国家）。14公顷的园区内包含由韩国现代主义建筑师**金重业（1966年）**设计的**正门**、设有12分钟英文纪录片的**纪念礼堂**、22个派遣国国旗飘扬的**象征广场**、弗兰克·盖洛德创作的**美国韩国战争纪念雕塑（美国战役纪念委员会，2013年）**，以及**2006年落成的记忆之墙** — 在**140块大理石板上刻有40,896个名字**，代表每位在韩国牺牲的联合国军人。每年11月11日上午11时，**「面向釜山」仪式**同时在此公墓及22个国家的纪念地点举行——是全年唯一一次所有派遣国国旗同时降旗的时刻。**免费入场**，开放时间**09:00至18:00（5月至9月）/ 09:00至17:00（10月至4月）**，整个园区铺设铺装道路，**全无障碍设施**。",
       "highlights": [
         "**世界唯一的联合国军纪念公墓** — 1951年1月18日创立；1959年韩国永久捐赠予联合国",
         "供奉**22个派遣国**；目前保有**11个国家的2,300个墓地**",
@@ -228,11 +222,11 @@
         "**联合国大会决议977（X）号（1955年12月15日）**正式确立UNMCK在国际联合国军纪念公墓委员会管理下的受保护地位"
       ],
       "timeUsed": [
-        "Symbolic Area + 22 sending-state flag plaza (~10 min)",
-        "Memorial Service Hall + 12-min English documentary (~15 min)",
-        "Wall of Remembrance + Memorabilia Hall (~20 min)",
-        "Reflection time + photographs (~10 min)",
-        "Walk back to vehicle (~5 min)"
+        "象征区域+22个参战国国旗广场（约10分钟）",
+        "纪念馆+12分钟英文纪录片（约15分钟）",
+        "纪念墙+纪念文物馆（约20分钟）",
+        "默哀时间+拍照（约10分钟）",
+        "返回车辆（约5分钟）"
       ],
       "whyOnRoute": "UNMCK是**釜山最具全球意义的韩国战争遗址**，也是今日沿海/文化环线行程的庄严对比起点。09:30抵达可抢在观光巴士高峰（约11:00）之前，60分钟的停留时间足以观看纪录片、参观记忆之墙并静心感受，不至于仓促。无障碍设施使其成为全日行动强度最低的停靠点——这是有意的设计，让行程从沉静开始，再逐渐走向色彩丰富的海岸和市区景点。",
       "_poi_meta": {
@@ -248,48 +242,34 @@
           "American Battle Monuments Commission (US Korean War Monument at Busan)",
           "UN General Assembly Resolution 977(X) (December 15, 1955)"
         ]
-      },
-      "visitBasics": {
-        "hours": "09:00–18:00（5–9月）／ 09:00–17:00（10–4月）",
-        "closed": "全年开放（追思仪式期间追思堂临时关闭）",
-        "admission": "免费入场",
-        "walking": "14公顷园区全程无障碍 — 平整铺装步道"
-      },
-      "convenience": {
-        "restroom": "游客中心与追思堂",
-        "parking": "免费停车场+大巴上下车区"
-      },
-      "smartNotes": {
-        "photo": "**追思墙**（140块大理石板上40,896位将士姓名）、**22派兵国国旗象征区**、**Frank Gaylord的美国朝鲜战争纪念雕塑（2013）** — 与华盛顿DC国家广场纪念碑同一雕塑家。可拍摄，请保持肃静。",
-        "tip": "**世界唯一的联合国墓地** — 联合国大会977(X)号决议（1955）下的联合国管辖保护领土。**每年11月11日11:00的'Turn Toward Busan'追思仪式**是22派兵国国旗一齐降半旗的唯一时刻。"
       }
     },
     {
       "number": 3,
       "time": "≈ 10:45",
-      "duration": "75 min",
+      "duration": "75分钟",
       "name": "太宗台海岸悬崖",
-      "category": "Coast",
-      "description": "**太宗台（태종대）——釜山纪念物第28号**（与五六岛共同列入）——是**影岛南端顶端的自然公园**，以**新罗太宗武烈王（604至661年，第29代国王）**命名，据说他在**统一三国后**曾在此练习射箭。标志性景观是影岛灯台下方的**「仙人岩」波蚀台地**——地质学家推断其形成于**第四间冰期（约12万年前）**，源于长期海浪侵蚀沉积岩，岩石上可见清晰的同心圆纹路和断层构造。**影岛灯台**屹立于悬崖之上，是**釜山最古老的灯台，建于1906年**（韩国第10座），现代新塔于2004年增建——原始灯光已指引釜山来港船只超过一个世纪，并于2004年改建为海洋文化空间（See & Sea画廊 + 自然史博物馆 + 观景台 + 咖啡厅）。步行全程4.3公里环线颇为费力；多数游客搭乘**多努比观光列车（约₩4,000来回票，成人，从入口广场发车）**，途经태원砾石海滩 → 구명사寺庙 → 观景台 → 影岛灯台 → 태종사寺庙。从**3层观景台**可远眺**茶壶岛（生岛）**，晴天时更可望见**韩国东南方50公里外的日本对马岛**。公园有两个传说：**망부석（忠妻石，一位忠贞的妻子等待被倭寇掳走的丈夫，化石为证）**和**「超越极限之光」雕塑**（韩国艺术家지술원경리创作：蓝环=海洋/天空，红=大地，银色尖端=灯台光束）。公园开放时间：**04:00至24:00（3月至10月）/ 05:00至24:00（11月至2月）**，**免费入场**。",
+      "category": "海岸",
+      "description": "**太宗台（太宗台）——釜山纪念物第28号**（与五六岛共同列入）——是**影岛南端顶端的自然公园**，以**新罗太宗武烈王（604至661年，第29代国王）**命名，据说他在**统一三国后**曾在此练习射箭。代表性景观是影岛灯台下方的**「仙人岩」波蚀台地**——地质学家推断其形成于**第四间冰期（约12万年前）**，源于长期海浪侵蚀沉积岩，岩石上可见清晰的同心圆纹路和断层构造。**影岛灯台**屹立于悬崖之上，是**釜山最古老的灯台，建于1906年**（韩国第10座），现代新塔于2004年增建——原始灯光已指引釜山来港船只超过一个世纪，并于2004年改建为海洋文化空间（See & Sea画廊 + 自然史博物馆 + 观景台 + 咖啡厅）。步行全程4.3公里环线颇为费力；多数游客搭乘**多努比观光列车（约₩4,000来回票，成人，从入口广场发车）**，途经砾石海滩 → 寺庙 → 观景台 → 影岛灯台 → 寺庙。从**3层观景台**可远眺**茶壶岛（生岛）**，晴天时更可望见**韩国东南方50公里外的日本对马岛**。公园有两个传说：**望夫石（忠妻石，一位忠贞的妻子等待被倭寇掳走的丈夫，化石为证）**和**「超越极限之光」雕塑**（韩国艺术家创作：蓝环=海洋/天空，红=大地，银色尖端=灯台光束）。公园开放时间：**04:00至24:00（3月至10月）/ 05:00至24:00（11月至2月）**，**免费入场**。",
       "highlights": [
         "**釜山纪念物第28号** — 波蚀台地约12万年前（第四间冰期）形成",
         "以**新罗太宗武烈王**（604至661年，三国统一者）命名",
         "**影岛灯台 — 釜山最古老，建于1906年**（韩国第10座）；2004年改建",
         "**3层观景台**可远眺**对马岛（日本，50公里外）**（晴天可见）",
         "**多努比观光列车**约₩4,000来回 — 沿4.3公里海岸环线设5个停靠站",
-        "**망부석传说** + **「超越极限之光」雕塑**（지술원경리）",
+        "**望夫石传说** + **「超越极限之光」雕塑**",
         "公园免费；步道崎岖（灯台区域多陡峭台阶）",
         "**2013年指定为釜山国家地质公园 + 2005年指定为国家指定文化财景胜地第17号** — 双重遗产保护地位",
         "**每年太宗寺绣球花文化节**（六月下旬至七月上旬）— 10万+人次到访"
       ],
       "timeUsed": [
-        "Coach drop-off + Danubi Train ticket purchase (~10 min)",
-        "Train to Observatory + 3-floor panorama (~20 min)",
-        "Walk to Yeongdo Lighthouse + 'Light Beyond Limitation' sculpture (~15 min)",
-        "Cliff-edge views toward Mangbuseok Rock + Sinseon Rock area (~20 min)",
-        "Train back to entrance + reassemble (~10 min)"
+        "大巴下车+购买多努比列车票——约10分钟",
+        "乘列车至观景台+3层全景——约20分钟",
+        "步行至影岛灯塔+'超越极限之光'雕塑——约15分钟",
+        "向望夫石方向悬崖观景——约20分钟",
+        "乘列车返回+集合——约10分钟"
       ],
-      "whyOnRoute": "太宗台是**釜山标志性自然景观的核心**，与后续的甘川文化村、龙头山 + 札嘎其水产市场形成完美的一日动线：全日行程从庄严（联合国公墓）→ 壮阔海岸（太宗台）→ 彩色城市（甘川文化村）→ 城市制高点（龙头山塔）→ 市场收尾（札嘎其）。75分钟的停留时间可完成观景台 + 灯台环线，无需走完费力的全程4.3公里；多努比观光列车选项也为行动不便的旅客提供替代方案。",
+      "whyOnRoute": "太宗台是**釜山代表性自然景观的核心**，与后续的甘川文化村、龙头山 + 札嘎其水产市场形成完美的一日路线：全日行程从庄严（联合国公墓）→ 壮阔海岸（太宗台）→ 彩色城市（甘川文化村）→ 城市制高点（龙头山塔）→ 市场收尾（札嘎其）。75分钟的停留时间可完成观景台 + 灯台环线，无需走完费力的全程4.3公里；多努比观光列车选项也为行动不便的旅客提供备选安排。",
       "_poi_meta": {
         "poi_key": "taejongdae",
         "kb_version": "1.25",
@@ -302,81 +282,53 @@
           "Yeongdo Lighthouse archive (1906 records)",
           "Busan National Geopark official (busan.go.kr/geopark)"
         ]
-      },
-      "visitBasics": {
-        "hours": "公园 04:00–24:00（3–10月）／ 05:00–24:00（11–2月）；多努比小火车 09:00～日落",
-        "closed": "全年开放（强风暴雨时小火车停运）",
-        "admission": "公园免费；**多努比小火车 成人约₩4,000 往返**，儿童约₩2,000",
-        "walking": "4.3公里海岸环线全程颇费力；**多努比小火车**：石滩 → 求命寺 → 观景台 → 影岛灯塔 → 太宗寺"
-      },
-      "convenience": {
-        "restroom": "入口广场、观景台、影岛灯塔附近",
-        "parking": "入口广场大型免费停车场"
-      },
-      "smartNotes": {
-        "photo": "**三层观景台**（晴日可远眺东南50公里**对马岛**）、**釜山最古老的影岛灯塔（1906年建）**、灯塔下约12万年前第四间冰期形成的**神仙岩浪蚀台**。",
-        "tip": "免4.3公里徒步，建议**多努比小火车**5站环线。**太宗寺绣球花节**于6月底至7月初。灯塔区段陡阶多，不适合婴儿车。"
       }
     },
     {
       "number": 4,
       "time": "≈ 12:30",
-      "duration": "60 min",
+      "duration": "60分钟",
       "name": "午餐（釜山当地餐厅）",
-      "category": "Meal",
-      "description": "午餐在司机推荐的**釜山当地餐厅**，位于影岛或南浦洞一带——餐厅依您的团体偏好选择。典型选项包括：**猪内脏汤饭（돼지국밥）** — 釜山招牌猪骨汤面饭，约₩9,000至13,000；**密面（밀면）** — 釜山小麦冷面，约₩10,000至14,000；或**生鱼片（회）** — 在市场附近按重量计费。午餐费用自付，约每人₩10,000至25,000。",
+      "category": "餐饮",
+      "description": "午餐在司机推荐的**釜山当地餐厅**，位于影岛或南浦洞一带——餐厅依您的团体偏好选择。典型选项包括：**猪内脏汤饭** — 釜山招牌猪骨汤面饭，约₩9,000至13,000；**密面** — 釜山小麦冷面，约₩10,000至14,000；或**生鱼片** — 在市场附近按重量计费。午餐费用自付，约每人₩10,000至25,000。",
       "highlights": [
         "司机依团体偏好推荐（韩式 / 海鲜 / 国际料理）",
-        "典型釜山选项：**猪内脏汤饭**、**密面**、**生鱼片（회）**",
+        "典型釜山选项：**猪内脏汤饭**、**密面**、**生鱼片**",
         "**午餐费用自付**（每人约₩10,000至25,000）"
       ],
-      "whyOnRoute": "12:30的午餐时段位于太宗台（沿海）和甘川文化村（山坡）之间，是全日节奏最自然的休息点。司机推荐的在地餐厅远胜于旅游区默认选项；旅客可接受推荐，或在早晨接送时告知特定料理偏好。",
+      "whyOnRoute": "12:30的午餐时段位于太宗台（沿海）和甘川文化村（山坡）之间，是全日节奏最自然的休息点。司机推荐的当地餐厅远胜于旅游区默认选项；旅客可接受推荐，或在早晨接送时告知特定料理偏好。",
       "_poi_meta": {
         "poi_key": "OPS_busan_lunch",
         "kb_version": "1.15",
         "verified_date": "2026-04-29"
-      },
-      "visitBasics": {
-        "hours": "视餐厅而定（通常11:30–14:30 午餐时段）",
-        "closed": "视餐厅而定；司机确认营业",
-        "admission": "**现场付款，每人约₩10,000–25,000**；午餐**不含**于团费",
-        "walking": "极少 — 车辆下车点5分钟内"
-      },
-      "convenience": {
-        "restroom": "餐厅内",
-        "parking": "司机于最近合法停车点等待"
-      },
-      "smartNotes": {
-        "photo": "**猪骨汤饭（돼지국밥）**（源自朝鲜战争避难民时代的釜山名菜）或**麦面（밀면）**（1950年代避难民厨房诞生的釜山式冷面）最能体现釜山美食。",
-        "tip": "**素食/清真/过敏请提前24小时告知**。司机按团组喜好（韩餐/海鲜/西餐）推荐 — 可采纳推荐或在接送时指定具体菜系。"
       }
     },
     {
       "number": 5,
       "time": "≈ 14:00",
-      "duration": "75 min",
+      "duration": "75分钟",
       "name": "甘川文化村",
-      "category": "Hillside Art Village",
-      "description": "**甘川文化村（감천문화마을）——釜山的「韩国马丘比丘」/「韩国圣托里尼」** — 是一个山坡上拥有**约10,000名居民、以彩色粉刷房屋**闻名的社区，源于1955年的难民聚落——当时**约800户（约4,000人）太极道宗教群体**（由조철제创立）在韩国战争后迁居至此。村庄的标志性特征——**没有任何屋顶遮挡后方住家视线**，形成著名的彩虹梯田效果——正是源自**太极道「让他人繁荣」哲学**。两个政府艺术计划将村庄打造成观光胜地：**韩国文化部委托的《马丘比丘之梦》（2009年）**和**《迷路迷路》（2010年）**，在迷宫般的巷弄中融入壁画、雕塑和装置艺术。村庄于**2012年荣获联合国人居署亚洲城镇景观奖**，目前每年吸引**约140万人次到访**。标志性打卡点包括：天空花园（하늘 마루观景台）的**小王子与狐狸长椅**（排队较长但免费）、星之眺望台的**彩虹屋顶全景**，以及**印章游盖地图**（约₩2,000，引导旅客参观9处编号装置）。**居民仍在此生活** — 请压低音量，禁止使用无人机，在巷弄中请勿使用闪光灯摄影，请自行带走垃圾。开放时间**09:00至18:00（3月至10月）/ 09:00至17:00（11月至2月）**，村庄**免费入场**，但陡峭的台阶和狭窄的巷弄**不适合婴儿车和轮椅**——请穿著抓地力良好的鞋款。",
+      "category": "山坡艺术村",
+      "description": "**甘川文化村（甘川文化村）——釜山的「韩国马丘比丘」/「韩国圣托里尼」** — 是一个山坡上拥有**约10,000名居民、以彩色粉刷房屋**闻名的社区，源于1955年的难民聚落——当时**约800户（约4,000人）太极道宗教群体**（由创立）在韩国战争后迁居至此。村庄的代表性特征——**没有任何屋顶遮挡后方住家视线**，形成著名的彩虹梯田效果——正是源自**太极道「让他人繁荣」哲学**。两个政府艺术计划将村庄打造成观光胜地：**韩国文化部委托的《马丘比丘之梦》（2009年）**和**《迷路迷路》（2010年）**，在迷宫般的巷弄中融入壁画、雕塑和装置艺术。村庄于**2012年荣获联合国人居署亚洲城镇景观奖**，目前每年吸引**约140万人次到访**。代表性拍照点包括：天空花园（ 观景台）的**小王子与狐狸长椅**（排队较长但免费）、星之眺望台的**彩虹屋顶全景**，以及**印章游盖地图**（约₩2,000，引导旅客参观9处编号装置）。**居民仍在此生活** — 请压低音量，禁止使用无人机，在巷弄中请勿使用闪光灯摄影，请自行带走垃圾。开放时间**09:00至18:00（3月至10月）/ 09:00至17:00（11月至2月）**，村庄**免费入场**，但陡峭的台阶和狭窄的巷弄**不适合婴儿车和轮椅**——请穿着抓地力良好的鞋款。",
       "highlights": [
-        "**1955年太极道难民聚落** — 约800户 / 约4,000人，由조철제创立",
+        "**1955年太极道难民聚落** — 约800户 / 约4,000人，由创立",
         "**太极道哲学「让他人繁荣」** = 没有任何屋顶遮挡邻居视线",
         "**《马丘比丘之梦》（2009年）** + **《迷路迷路》（2010年）** 文化部艺术计划",
         "**2012年联合国人居署亚洲城镇景观奖**",
         "每年吸引**约140万人次到访**",
-        "**小王子与狐狸长椅**（天空花园）= 标志性打卡（排队较长，免费）",
+        "**小王子与狐狸长椅**（天空花园）= 代表性拍照（排队较长，免费）",
         "印章游盖地图₩2,000（9处编号装置）",
         "陡峭巷弄和台阶 = 不适合婴儿车及轮椅",
         "**韩流拍摄圣地** — 《Running Man》第126集、《起源》（2021年）、《国际市场》（2014年）；**KTO「韩国必游景点100选」连续五年入选**"
       ],
       "timeUsed": [
-        "Coach drop-off at upper entrance (~5 min)",
-        "Star Viewing Hall + rainbow-roof panorama (~15 min)",
-        "Sky Garden + Little Prince & Fox bench photo (~20 min)",
-        "Maze-alley walk down through murals + craft shops (~25 min)",
-        "Reassemble at lower exit (~10 min)"
+        "大巴在上方入口下车（约5分钟）",
+        "观星台+彩虹屋顶全景（约15分钟）",
+        "天空花园+小王子与狐狸长椅拍照（约20分钟）",
+        "穿越壁画小巷+工艺品商铺下行（约25分钟）",
+        "在下方出口集合（约10分钟）"
       ],
-      "whyOnRoute": "甘川文化村是**任何釜山一日游中最具视觉冲击力的核心景点**，与下一站龙头山（相距4公里）自然搭配——两者都是山坡制高点，一个是充满艺术气息的住宅社区，另一个是市民公园。75分钟是最佳停留时长：足以完成天空花园 + 小王子长椅排队 + 有意义的巷弄探索，又不至于因午后高温/陡坡步行而在最后一个景点前体力透支。",
+      "whyOnRoute": "甘川文化村是**任何釜山一日游中最具景色冲击力的核心景点**，与下一站龙头山（相距4公里）自然搭配——两者都是山坡制高点，一个是充满艺术气息的住宅社区，另一个是市民公园。75分钟是最佳停留时长：足以完成天空花园 + 小王子长椅排队 + 有意义的巷弄探索，又不至于因午后高温/陡坡步行而在最后一个景点前体力透支。",
       "_poi_meta": {
         "poi_key": "gamcheon_culture_village",
         "kb_version": "1.25",
@@ -389,46 +341,32 @@
           "Korea Tourism Organization",
           "Korea Tourism Organization (100 Must-Visit Tourist Spots in Korea designation)"
         ]
-      },
-      "visitBasics": {
-        "hours": "09:00–18:00（3–10月）／ 09:00–17:00（11–2月）；游客中心同时段",
-        "closed": "全年开放",
-        "admission": "免费入村；**盖章地图 ₩2,000**（自选，含9处编号作品导览）",
-        "walking": "陡阶+窄巷 — **中等偏高**强度；**婴儿车/轮椅不友好**；防滑鞋必备"
-      },
-      "convenience": {
-        "restroom": "游客中心广场及主巷沿线",
-        "parking": "有限 — 游客中心附近上下车，无大型停车"
-      },
-      "smartNotes": {
-        "photo": "**'小王子与狐狸长椅'**于天空之台（排队较长，免费）、星观展望台**彩虹屋顶全景**、**壁画阶梯巷弄**。**禁止无人机·巷内禁用闪光**。",
-        "tip": "**村内约1万常住居民**（1955年太极道避难定居地） — **请轻声**、勿入民宅、垃圾带走。**2012 UN-HABITAT亚洲都市景观奖**、年访客约140万、韩国旅游发展局百选连续5次。"
       }
     },
     {
       "number": 6,
       "time": "≈ 15:45",
-      "duration": "45 min",
+      "duration": "45分钟",
       "name": "龙头山公园与釜山塔",
-      "category": "City Viewpoint",
-      "description": "**龙头山公园（용두산공원，「龙头山公园」）** — 位于南浦洞市中心的一座**69,000平方公尺**市民公园，种有**70个树种** — 是一个多层历史积淀的场域：曾是**朝鲜时代的倭馆**（草梁倭馆，**1678至1878年的日本贸易外交飞地**）、后为日式**龙头山神社（17世纪至20世纪初）**、再经历**韩战难民棚屋区**（大多在1950年代火灾中焚毁），最终改建为现代公园。**120公尺高的釜山塔**（原**1973年开幕**，**2021年改建后重新品牌命名为「釜山钻石塔」**）是公园核心——其**观景台顶部仿照庆州佛国寺多宝塔宝盖（国宝第20号）的样式设计**，是一个将釜山现代地标与新罗文化遗产明确相连的建筑引用。塔楼位于**海拔69公尺 + 塔高120公尺 = 总顶高189公尺**，提供360°全景俯瞰釜山港、影岛大桥、晴天时可见对马岛，以及山脚下的札嘎其市场。公园其他地标：**이순신将军（1545至1598年）铜像**（釜山出身的壬辰倭乱海军英雄，以**从未损失一艘船**著称）、由**10万名釜山市民捐赠的市民钟**（在**除夕和3月1日独立运动纪念日各敲响33次**），以及入口的**花时钟**和象征山名的**青铜龙雕塑**。入口通过**光复路时装街旁的有顶自动扶梯**进入（无回程扶梯——需步行下山）。**公园全天免费**；**釜山钻石塔观景台₩12,000 / 长者65+或儿童3至12岁₩9,000，开放时间10:00至22:00（最后入场21:30）**。",
+      "category": "城市展望台",
+      "description": "**龙头山公园（龙头山公园，「龙头山公园」）** — 位于南浦洞市中心的一座**69,000平方米**市民公园，种有**70个树种** — 是一个多层历史积淀的场域：曾是**朝鲜时代的倭馆**（草梁倭馆，**1678至1878年的日本贸易外交飞地**）、后为日式**龙头山神社（17世纪至20世纪初）**、再经历**韩战难民棚屋区**（大多在1950年代火灾中焚毁），最终改建为现代公园。**120米高的釜山塔**（原**1973年开幕**，**2021年改建后重新品牌命名为「釜山钻石塔」**）是公园核心——其**观景台顶部仿照庆州佛国寺多宝塔宝盖（国宝第20号）的样式设计**，是一个将釜山现代地标与新罗文化遗产明确相连的建筑引用。塔楼位于**海拔69米 + 塔高120米 = 总顶高189米**，提供360°全景俯瞰釜山港、影岛大桥、晴天时可见对马岛，以及山脚下的札嘎其市场。公园其他地标：**将军（1545至1598年）铜像**（釜山出身的壬辰倭乱海军英雄，以**从未损失一艘船**著称）、由**10万名釜山市民捐赠的市民钟**（在**除夕和3月1日独立运动纪念日各敲响33次**），以及入口的**花时钟**和象征山名的**青铜龙雕塑**。入口通过**光复路时装街旁的有顶自动扶梯**进入（无回程扶梯——需步行下山）。**公园全天免费**；**釜山钻石塔观景台₩12,000 / 长者65+或儿童3至12岁₩9,000，开放时间10:00至22:00（最后入场21:30）**。",
       "highlights": [
         "**「龙头山」** — 历史上抵御倭寇（日本海盗）的防护屏障",
         "**朝鲜时代倭馆（日本贸易飞地1678至1878年）** + **龙头山神社** + 韩战棚屋区遗址",
         "**釜山塔1973年开幕** → **2021年改建后更名釜山钻石塔**",
         "**塔顶仿照佛国寺多宝塔宝盖设计**（国宝第20号，庆州）— 新罗文化遗产引用",
-        "**이순신将军铜像**（1545至1598年）— 壬辰倭乱龟船英雄，从未损失一艘船",
+        "**将军铜像**（1545至1598年）— 壬辰倭乱龟船英雄，从未损失一艘船",
         "**市民钟** — 10万市民捐赠；除夕 + 3月1日各敲响33次",
         "观景台₩12,000 / 成人；公园全天免费",
         "**有顶自动扶梯从光复路进入** — 无回程扶梯",
-        "**市民钟33响仪式** — **33响纪念1919年《独立宣言》33位韩国签署人**；将釜山市民身份认同与国家独立叙事相连"
+        "**市民钟33响仪式** — **33响纪念1919年《独立宣言》33位韩国签署人**；将釜山市民身份认同与国家独立参观脉络相连"
       ],
       "timeUsed": [
-        "Escalator from Gwangbok-ro Fashion Street up to park (~5 min)",
-        "Flower clock + Yi Sun-sin statue + Citizens' Bell photos (~10 min)",
-        "Tower observatory ascent + 360° panorama (~25 min)",
-        "Descent via stairs (~5 min)",
-        "Citizens' Bell pavilion + flower clock + bronze dragon photo (~5 min)"
+        "从光复路时尚街乘自动扶梯上公园——约5分钟",
+        "花钟+李舜臣将军雕像+市民之钟拍照——约10分钟",
+        "登塔瞭望台+360°全景——约25分钟",
+        "走楼梯下山——约5分钟",
+        "市民之钟凉亭+花钟+铜龙拍照——约5分钟"
       ],
       "whyOnRoute": "龙头山在黄金时段夕照中提供**釜山最广为人知的360度全景** — 塔顶对佛国寺多宝塔宝盖的建筑引用，也将这一站与您可能搭配此包车行程的庆州文化遗产之旅在概念上相连。45分钟的停留时间精确计算了观景台的上下路程，无需在整个公园漫步；从光复路来的自动扶梯消除了攀登过程。",
       "_poi_meta": {
@@ -442,48 +380,34 @@
           "Korea Tourism Organization",
           "Busan Metropolitan City heritage records"
         ]
-      },
-      "visitBasics": {
-        "hours": "公园全天开放；**釜山钻石塔观景台 10:00–22:00（最后入场 21:30）**",
-        "closed": "全年开放（极端大风偶有关闭）",
-        "admission": "公园免费；**釜山钻石塔 成人 ₩12,000 / 65岁以上与3–12岁 ₩9,000**",
-        "walking": "**光复路时尚街顶棚扶梯**上行（下行需走阶梯）"
-      },
-      "convenience": {
-        "restroom": "公园广场及釜山钻石塔内",
-        "parking": "无停车 — 南浦洞公共停车后扶梯上行"
-      },
-      "smartNotes": {
-        "photo": "**120米釜山钻石塔观景台**（海拔189米）— 釜山港·影岛大桥·晴日远望对马**360°全景**。塔顶**借鉴庆州佛国寺多宝塔（国宝20号）宝盖样式**。**日落与夜景**最佳。",
-        "tip": "塔与**李舜臣将军像**（壬辰倭乱龟船名将，未失一船）、**市民钟**（除夕与3月1日**敲钟33次** — 纪念1919独立宣言33签署人）合游约30分钟。"
       }
     },
     {
       "number": 7,
       "time": "≈ 16:45",
-      "duration": "45 min",
+      "duration": "45分钟",
       "name": "南浦洞与札嘎其水产市场",
-      "category": "Market & Streetfood",
-      "description": "**札嘎其市场（자갈치시장）——韩国最大的水产市场** — 是**南浦洞**（釜山购物餐饮市区）的核心地带。「자갈치」名称源自**「자갈（砾石）」**，是市场起源地鹅卵石海岸的指称。1876年釜山开埠后及韩战后的繁荣期，**「자갈치 아줌마」女性摊贩**（战争寡妇和难民）以坚韧的女性水产经济建立了市场的身份认同。现代的**海鸥形状建筑**（由현준민设计）**2006年重新启用**，共有约**400名摊贩，占地66,000平方公尺** — 一楼为活水族缸（章鱼、鲍鱼、海参、比目鱼），二楼为生鱼片（회）餐厅，旅客可以在楼下买鱼后在楼上切片加工（搭配辣椒酱 + 烧酒的标准吃法）。市场开放时间**每日05:00至22:00**；**每月第1和第3个星期二休馆**（出行前请确认）。一年一度的**10月札嘎其文化观光节**是最盛大的年度活动。周边**南浦洞**还有**BIFF广场**（釜山国际电影节起源地，地面嵌有韩国明星手印 — 朴赞郁、奉俊昊等）、**国际市场**（韩战难民市场，至今仍有1,500多个摊位）和**光复路时装街**。地址：**中区자갈치해안로52号**。摄影礼仪：**拍摄活水族缸或摊贩前务必先询问**；자갈치 아줌마对相机可能直言不讳。",
+      "category": "市场与街头美食",
+      "description": "**札嘎其市场（札嘎其市场）——韩国最大的水产市场** — 是**南浦洞**（釜山购物餐饮市区）的核心地带。名称源自**「（砾石）」**，是市场起源地鹅卵石海岸的指称。1876年釜山开埠后及韩战后的繁荣期，**女性摊贩**（战争寡妇和难民）以坚韧的女性水产经济建立了市场的身份认同。现代的**海鸥形状建筑**（由设计）**2006年重新启用**，共有约**400名摊贩，占地66,000平方米** — 一楼为活水族缸（章鱼、鲍鱼、海参、比目鱼），二楼为生鱼片餐厅，旅客可以在楼下买鱼后在楼上切片加工（搭配辣椒酱 + 烧酒的标准吃法）。市场开放时间**每日05:00至22:00**；**每月第1和第3个星期二休馆**（出行前请确认）。一年一度的**10月札嘎其文化观光节**是最盛大的年度活动。周边**南浦洞**还有**BIFF广场**（釜山国际电影节起源地，地面嵌有韩国明星手印 — 朴赞郁、奉俊昊等）、**国际市场**（韩战难民市场，至今仍有1,500多个摊位）和**光复路时装街**。地址：**中区52号**。摄影礼仪：**拍摄活水族缸或摊贩前务必先询问**； 对相机可能直言不讳。",
       "highlights": [
-        "**韩国最大水产市场** — 约400名摊贩 / 66,000平方公尺",
-        "名称 = **「자갈（砾石）」** + **자갈치 아줌마**战后女性摊贩",
-        "**海鸥形状建筑2006年重新启用**（现준민设计）",
+        "**韩国最大水产市场** — 约400名摊贩 / 66,000平方米",
+        "名称 = **「（砾石）」** + ** **战后女性摊贩",
+        "**海鸥形状建筑2006年重新启用**（现设计）",
         "**每日05:00至22:00**；**每月第1和第3个星期二休馆**",
-        "**楼下买鱼、楼上加工生鱼片的流程**",
+        "**楼下买鱼、楼上加工生鱼片的方式**",
         "周边：**BIFF广场**（釜山电影节）、**国际市场**、**光复路**",
         "**10月札嘎其文化观光节**",
-        "地址：**中区자갈치해안로52号**",
-        "**산낙지（活章鱼生吃）是釜山的饮食标志** — 切成仍在蠕动的章鱼小块，配芝麻油和盐食用；正是《老男孩》（2003年）那幕名场面令这道菜走向国际"
+        "地址：**中区52号**",
+        "**（活章鱼生吃）是釜山的饮食标志** — 切成仍在蠕动的章鱼小块，配芝麻油和盐食用；正是《老男孩》（2003年）那幕名场面令这道菜走向国际"
       ],
       "timeUsed": [
-        "Walk from Yongdusan / drop-off near Jagalchi (~5 min)",
-        "Ground floor live-tank walkthrough (~15 min)",
-        "Second-floor hoe restaurant peek + Nampo-dong street photos (~15 min)",
-        "Optional snack purchase + Gwangbok-ro stroll (~10 min)",
-        "Stamp + souvenir purchase from Jagalchi Ajumma stalls (~5 min)"
+        "从龙头山/下车点步行前往（约5分钟）",
+        "一楼活水箱参观（约15分钟）",
+        "二楼生鱼片餐厅浏览+南浦洞街景拍照（约15分钟）",
+        "可选：购买小吃+光复路漫步（约10分钟）",
+        "在扎嘎其大妈摊位购买纪念品（约5分钟）"
       ],
-      "whyOnRoute": "札嘎其是**一日游中最能感受「釜山味道」的体验** — 搭配BIFF广场 + 国际市场，形成了与刚才龙头山制高俯瞰视角截然不同的地面街头感受。45分钟的停留时间设计短暂：龙头山之后只求打卡 + 感受市场氛围，而非完整用餐（这会影响邮轮登船时间）。札嘎其到码头的距离短，可根据邮轮离港要求灵活调整出发时间。",
+      "whyOnRoute": "札嘎其是**一日游中最能感受「釜山味道」的体验** — 搭配BIFF广场 + 国际市场，形成了与刚才龙头山制高俯瞰视角截然不同的地面街头感受。45分钟的停留时间设计短暂：龙头山之后只求拍照 + 感受市场氛围，而非完整用餐（这会影响邮轮登船时间）。札嘎其到码头的距离短，可根据邮轮离港要求灵活调整出发时间。",
       "_poi_meta": {
         "poi_key": "jagalchi_market",
         "kb_version": "1.25",
@@ -496,35 +420,21 @@
           "Busan Jung-gu official",
           "Busan Tourism Organization (Jagalchi Sannakji designation)"
         ]
-      },
-      "visitBasics": {
-        "hours": "**札嘎其市场 每日 05:00–22:00**；水产批发拍卖04:00开始（参观需预约）；南浦洞商街 10:30–22:00",
-        "closed": "**札嘎其：每月第一与第三个周二闭市**；南浦洞全年开放",
-        "admission": "免费；**二楼生鱼片店套餐 ₩30,000起**（按鱼种浮动）",
-        "walking": "平坦商街+市场 — 轻松；**二楼生鱼片店**需走小段阶梯"
-      },
-      "convenience": {
-        "restroom": "BIFF广场与札嘎其内公共卫生间",
-        "parking": "可用乐天百货或BIFF广场公共停车；市场无自有停车"
-      },
-      "smartNotes": {
-        "photo": "**海鸥造型现代建筑（2006重启，闵贤俊设计）**、**一楼活鱼水箱**、**BIFF广场掌印**（朴赞郁、奉俊昊等）、**国际市场**（1,500+商铺）。**拍商贩务必先打招呼** — 札嘎其阿姨对镜头直接。",
-        "tip": "**一楼采购→二楼料理**：一楼挑生鱼，二楼餐厅代加工（醋辣酱+烧酒为标配）。**生章鱼（산낙지）**是釜山饮食的标志 — 电影《老男孩》（2003）名场面的食物。"
       }
     },
     {
       "number": 8,
       "time": "≈ 17:30",
-      "duration": "30 min",
+      "duration": "30分钟",
       "name": "返回釜山邮轮码头",
-      "category": "Return",
-      "description": "私人车辆直接返回您的出发码头——大型邮轮回**釜山港国际邮轮码头**（影岛区东三洞），中型邮轮/渡轮回**釜山港国际客运码头**（草梁洞）。或依您要求改送至饭店或釜山KTX站。",
+      "category": "返回",
+      "description": "私人车辆直接返回您的出发码头——大型邮轮回**釜山港国际邮轮码头**（影岛区东三洞），中型邮轮/渡轮回**釜山港国际客运码头**（草梁洞）。或依您要求改送至酒店或釜山KTX站。",
       "highlights": [
         "直接返回原邮轮码头（东三洞或草梁洞）",
-        "**全员登船截止前60至90分钟**安全送达",
+        "**全体登船截止前60至90分钟**安全送达",
         "若当天行程时间有调整，即时调度协调"
       ],
-      "whyOnRoute": "直接返回不加停靠，充分保护登船缓冲时间。30分钟可覆盖南浦洞至任一码头在最糟尖峰时段的最长车程；若交通顺畅则更早送达（可根据您的首选抵达时间优化下车时间）。",
+      "whyOnRoute": "直接返回不加停靠，充分保护登船前预留时间。30分钟可覆盖南浦洞至任一码头在最糟尖峰时段的最长车程；若交通顺畅则更早送达（可根据您的首选抵达时间调整下车时间）。",
       "_poi_meta": {
         "poi_key": "OPS_busan_cruise_return",
         "kb_version": "1.15",
@@ -535,70 +445,70 @@
   "routeFlowStops": [
     {
       "type": "pickup",
-      "label": "Cruise Port"
+      "label": "邮轮码头"
     },
     {
       "type": "stop",
-      "label": "UN Cemetery"
+      "label": "联合国公墓"
     },
     {
       "type": "stop",
-      "label": "Taejongdae"
+      "label": "太宗台"
     },
     {
       "type": "stop",
-      "label": "Gamcheon Village"
+      "label": "甘川洞文化村"
     },
     {
       "type": "stop",
-      "label": "Yongdusan Park"
+      "label": "龙头山公园"
     },
     {
       "type": "stop",
-      "label": "Jagalchi Market"
+      "label": "札嘎其市场"
     },
     {
       "type": "return",
-      "label": "Cruise Port"
+      "label": "邮轮码头"
     }
   ],
   "routePhases": [
     {
       "phase": "去程",
-      "title": "Memory and the Sea",
-      "summary": "Quiet morning at UN Memorial Cemetery, then dramatic East Sea cliffs at Taejongdae. Reflective and scenic, away from crowds."
+      "title": "追忆与海洋",
+      "summary": "上午在联合国纪念公园静默悼念，随后前往太宗台俯瞰壮阔的东海断崖。沉静而壮丽，远离人群。"
     },
     {
       "phase": "中段",
-      "title": "Color, Heights, and Harbor",
-      "summary": "After lunch, climb into Gamcheon's painted alleys, then up Yongdusan Park for downtown panoramas, ending at Jagalchi Market by the working harbor."
+      "title": "色彩、高处与港湾",
+      "summary": "午餐后步入甘川洞彩色小巷，再登龙头山公园俯瞰市区全景，最后在自海鲜市场感受釜山烟火气。"
     },
     {
       "phase": "回程",
-      "title": "On-Time Return",
-      "summary": "Direct drive back to the cruise terminal with a 90-minute buffer before the ship's all-aboard call."
+      "title": "准时返港",
+      "summary": "直驶回邮轮码头，距离登船截止时间提前90分钟送达。"
     }
   ],
   "routeShapeIntro": {
-    "title": "行程动线总览",
-    "body": "The default 5-stop itinerary is shaped for cruise passengers: a quiet, easy-walking start (UN Cemetery), a dramatic East Sea moment (Taejongdae), a colorful midday peak (Gamcheon), a downtown panorama (Yongdusan), and a lively, food-forward finish (Jagalchi) — with the cruise terminal a 10-minute return drive from the last stop. Fully customizable: swap any stop for Haedong Yonggungsa Temple, the Sky Capsule, or Beomeosa Temple at booking."
+    "title": "行程路线一览",
+    "body": "默认5站行程适合邮轮乘客设计：从太宗台轻松漫步开始，到扎嘎其市场收尾。"
   },
   "whyTourWorks": {
     "bestFor": [
       "希望在8小时内充分感受釜山的邮轮旅客，并保障准时返回",
-      "偏好私人客制化行程而非固定团体游的情侣和家庭",
+      "偏好私人定制化行程而非固定团体游的情侣和家庭",
       "包含长辈的多代同行团体（私人车辆不需在换乘间步行）",
-      "希望览遍标志性景点但不想受团体行程节奏限制的初次釜山旅客",
+      "希望览遍代表性景点但不想受团体行程节奏限制的初次釜山旅客",
       "有行动、饮食或节奏需求、团体行程无法满足的旅客"
     ],
     "routeLogicSections": [
       {
         "title": "为什么私人包车是邮轮岸游的最佳选择",
-        "icon": "anchor",
+        "icon": "map-pin",
         "items": [
           {
             "label": "准时返船是一切的核心",
-            "detail": "团体游以固定时钟运行；私人包车意味著我们时刻监控您所在船只的具体登船截止时间，并动态调整全天行程，确保在90分钟缓冲前安全返回。"
+            "detail": "团体游以固定时钟运行；私人包车意味着我们时刻监控您所在船只的具体登船截止时间，并视情况调整全天行程，确保提前90分钟安全返回。"
           },
           {
             "label": "釜山地理上分散广",
@@ -606,7 +516,7 @@
           },
           {
             "label": "随心客制，无需重新报价",
-            "detail": "将札嘎其换成海东龙宫寺、跳过塔的观景台、加入天空胶囊或延长午餐时间——车辆按时计费，而非按景点收费，客制化不另增费用。"
+            "detail": "将札嘎其换成海东龙宫寺、跳过塔的观景台、加入天空胶囊或延长午餐时间——车辆按时计费，而非按景点收费，定制化不另增费用。"
           }
         ]
       },
@@ -616,15 +526,15 @@
         "items": [
           {
             "label": "已包含",
-            "detail": "私人车辆、英语司机导游、所有过路费和停车费；从邮轮码头/KTX/釜山市中心饭店接送。"
+            "detail": "私人车辆、英语司导、所有过路费和停车费；从邮轮码头/KTX/釜山市中心酒店接送。"
           },
           {
             "label": "自付费用",
-            "detail": "午餐（每人10,000至20,000韩圜）、太宗台多努比观光列车（₩4,000）、釜山塔观景台（₩12,000）及其他景点入场费。"
+            "detail": "午餐（每人10,000至20,000韩元）、太宗台多努比观光列车（₩4,000）、釜山塔观景台（₩12,000）及其他景点入场费。"
           },
           {
             "label": "附加选项",
-            "detail": "金海机场接送为另行计费的附加选项；加时费率为每小时30,000韩圜，现金支付给司机，视司机可用时间而定。"
+            "detail": "金海机场接送为另行计费的附加选项；加时费率为每小时30,000韩元，现金支付给司机，视司机可用时间而定。"
           }
         ]
       },
@@ -637,7 +547,7 @@
             "detail": "因天气原因（台风、浓雾）导致的船只取消，全额退款——不设任何附加条件。"
           },
           {
-            "label": "司机追踪您的邮轮出发时间窗口",
+            "label": "司机追踪您的邮轮出发时间时段",
             "detail": "我们查询您所在邮轮的具体行程，并以实际登船截止时间（而非宣传资料时间）为基准安排全天节奏。"
           },
           {
@@ -647,40 +557,40 @@
         ]
       }
     ],
-    "sourcing": "Tour design and operational details are based on AtoC Korea's standard private-charter cruise-shore product. Specific cruise lines served include Royal Caribbean, Princess, MSC, Costa, Diamond Princess, and other major operators arriving at Busan International Cruise Terminal."
+    "sourcing": "投诉设计和运营详情基于AtoC Korea的标准运营实践及本地现场知识。"
   },
   "practicalAccordionItems": [
     {
       "title": "接送、下车与8小时行程",
       "icon": "map-pin",
       "details": [
-        "Pickup is included from the Busan Cruise Terminal arrival hall, Busan Station (KTX) main exit, or any central Busan hotel (Haeundae, Seomyeon, Nampo-dong, Centum City).",
-        "Driver waits with an AtoC Korea sign and the vehicle plate number is shared in advance.",
-        "Drop-off is at the cruise terminal by default (≈ 90 min before all-aboard call) or any central Busan hotel.",
-        "The 8-hour service window starts from your pickup time. Overtime is charged at 30,000 KRW per hour, cash to driver, subject to availability.",
-        "Gimhae International Airport pickup or drop-off is available as a separate paid add-on (not included in the standard cruise-shore window)."
+        "包含从釜山邮轮码头到达大厅、釜山站（KTX）主出口，或釜山市中心酒店（海云台、西面、南浦洞、Centum City）接送。",
+        "司机会举着 AtoC Korea 标识等候，车辆牌照也会提前告知。",
+        "默认送回邮轮码头（约在全体登船截止时间前90分钟），也可送至釜山市中心酒店。",
+        "8小时服务时间从实际接送时间开始计算。超时费为每小时30,000韩元，现金支付给司机，并视司机当日时间安排而定。",
+        "金海国际机场接送可作为另行付费加项安排，不包含在标准邮轮岸上游服务时间内。"
       ],
-      "preview": "接送与8小时服务时段",
+      "preview": "接送与8小时用车时间",
       "content": [
-        "8小时服务时段从您的接送时间开始计算",
-        "接送地点：釜山邮轮码头（国际邮轮码头）、釜山站（KTX）主出口，或釜山市中心任一饭店",
+        "8小时用车时间从您的接送时间开始计算",
+        "接送地点：釜山邮轮码头（国际邮轮码头）、釜山站（KTX）主出口，或釜山市中心任一酒店",
         "司机在抵达大厅手持AtoC Korea牌子等候，通常在船只停靠后30分钟内",
-        "回程送至邮轮码头，通常在全员登船截止时间前90分钟",
-        "如需在饭店或KTX站下车，请在预约时告知"
+        "回程送至邮轮码头，通常在全体登船截止时间前90分钟",
+        "如需在酒店或KTX站下车，请在预约时告知"
       ]
     },
     {
       "title": "费用包含与现场自付",
       "icon": "wallet",
       "details": [
-        "Included: private vehicle, English-speaking driver-guide, all tolls and parking charges, fuel.",
-        "Pay direct: lunch (10,000–20,000 KRW per person), optional Danubi Train at Taejongdae (₩4,000 round-trip), optional Busan Tower observatory (₩12,000 adult), optional Sky Capsule at Haeundae if substituted in (40,000–50,000 KRW per capsule).",
-        "All site admissions on this default itinerary are free except the optional ones listed above."
+        "包含：私人车辆、英语司导、过路费、停车费和燃油费。",
+        "现场自付：午餐（每人10,000–20,000韩元）、太宗台 Danubi 小火车（往返₩4,000，可选）、釜山塔观景台（成人₩12,000，可选），如替换为海云台天空胶囊则每个胶囊约40,000–50,000韩元。",
+        "除上述可选项目外，默认行程中的景点门票均免费。"
       ],
       "preview": "已包含 vs. 自付费用",
       "content": [
-        "已包含：私人车辆、英语司机导游、所有过路费和停车费；从邮轮码头/KTX/釜山市中心饭店接送",
-        "自付费用：午餐（每人约10,000至20,000韩圜）、太宗台多努比观光列车（₩4,000）、釜山塔观景台（₩12,000）",
+        "已包含：私人车辆、英语司导、所有过路费和停车费；从邮轮码头/KTX/釜山市中心酒店接送",
+        "自付费用：午餐（每人约10,000至20,000韩元）、太宗台多努比观光列车（₩4,000）、釜山塔观景台（₩12,000）",
         "如加入天空胶囊等自选项目，费用另计",
         "可选司机小费不强制，但感谢您的心意"
       ]
@@ -689,11 +599,11 @@
       "title": "行程调整与景点更换",
       "icon": "sliders-horizontal",
       "details": [
-        "The default 5-stop cruise itinerary (UN Cemetery → Taejongdae → Gamcheon → Yongdusan → Jagalchi) is fully swappable.",
-        "Common alternates: Haedong Yonggungsa Temple (seaside Buddhist temple, ~40 min east of port), Cheongsapo & Haeundae Sky Capsule, Beomeosa Temple, Songdo Skywalk, Oryukdo Sunrise Park.",
-        "Send your preferred stops at booking and we'll confirm a workable order; we recommend 4–5 attraction stops within the 8-hour window."
+        "默认5站邮轮岸上行程（联合国纪念公园 → 太宗台 → 甘川文化村 → 龙头山 → 札嘎其）可灵活替换。",
+        "常见替代景点：海东龙宫寺（海边寺庙，码头以东约40分钟）、青沙浦与海云台天空胶囊、梵鱼寺、松岛天空步道、五六岛日出公园。",
+        "预订时请告知您偏好的景点，我们会确认可行顺序；8小时内建议安排4–5个景点。"
       ],
-      "preview": "客制化与景点替换",
+      "preview": "定制化与景点替换",
       "content": [
         "请在预约时告知您偏好或希望跳过的景点，我们将确认可行的路线顺序",
         "预设的5站邮轮行程只是起点，并非固定计划",
@@ -705,81 +615,81 @@
       "title": "车辆、驾驶与容量",
       "icon": "car",
       "details": [
-        "Private air-conditioned vehicle. Sedan or SUV for groups of 1–3 passengers, mid-size van for groups of 4–7.",
-        "All drivers are licensed and English-speaking. Multi-language support (Mandarin, Japanese) available on request at booking.",
-        "Vehicle plate number, driver name, and contact phone are shared via email or KakaoTalk before your arrival."
+        "私人空调车辆。1–3人通常安排轿车或SUV，4–7人通常安排中型商务车。",
+        "所有司机均持证并可使用英语服务；如需中文或日文支持，可在预订时咨询。",
+        "抵达前将通过电子邮件或KakaoTalk发送车辆牌照、司导姓名和联系电话。"
       ],
       "preview": "车辆、司机与乘客容量",
       "content": [
         "1至3名乘客：轿车或SUV",
-        "4至7名乘客：中型厢型车",
-        "更大的团体请联系我们获取客制化报价",
+        "4至7名乘客：中型商务车",
+        "更大的团体请联系我们获取定制化报价",
         "预约时请填写精确的乘客人数和行李件数，以便分配适当车型",
-        "额外加时收费：每小时30,000韩圜，现金支付给司机，视司机可用时间而定"
+        "额外加时收费：每小时30,000韩元，现金支付给司机，视司机可用时间而定"
       ]
     },
     {
       "title": "天候与船只取消政策",
       "icon": "cloud-rain",
       "details": [
-        "Full refund if your cruise ship cannot dock at Busan due to weather (typhoon, fog) — no fees, no questions.",
-        "If the day starts dry and turns rainy, the driver will reorder stops to maximize indoor time (Yongdusan Tower, Jagalchi 2F restaurants, museum substitutions).",
-        "Reschedule requests with at least 2 days' notice are processed without fee."
+        "若邮轮因天气（台风、浓雾等）无法停靠釜山，可全额退款，无手续费。",
+        "若当天先晴后雨，司机会调整游览顺序，尽量增加室内停留时间（如龙头山塔、札嘎其2楼餐厅或博物馆替代点）。",
+        "至少提前2天提出改期申请，可免费处理。"
       ],
       "preview": "天气政策与船只取消政策",
       "content": [
         "若您的邮轮因天气（台风、浓雾）无法靠泊釜山，全额退款——不设任何附加条件",
-        "若船只仅是延误，司机照常等候并调整行程；8小时服务时段从实际接送时间开始计算",
+        "若船只仅是延误，司机照常等候并调整行程；8小时用车时间从实际接送时间开始计算",
         "一般雨天：行程照常进行，行动不便景点可优先安排",
-        "台风警报日：运营商将主动联系您协商改期"
+        "台风警报日：旅游服务团队将主动联系您协商改期"
       ]
     },
     {
       "title": "语言与无障碍设施",
       "icon": "users",
       "details": [
-        "English-speaking licensed driver-guide is standard. Mandarin or Japanese guides available on request.",
-        "Vehicle is suitable for travelers with limited mobility — door-to-door pickup avoids most walking on transfers.",
-        "Some stops involve uphill or stair walking (Gamcheon, Taejongdae lighthouse stairs). Tell us about mobility needs at booking and we'll adjust the itinerary."
+        "标准服务为持证英文司导。普通话或日语司导可按需安排。",
+        "车辆适合行动不便的旅客，点到点接送可减少换乘步行。",
+        "部分景点涉及上坡或阶梯步行（如甘川文化村、太宗台灯塔阶梯）。如有行动不便需求，请在预订时告知，我们会调整行程。"
       ],
       "preview": "语言与无障碍设施",
       "content": [
         "主要服务语言：英语",
-        "如需普通话/广东话/日语导览，请在预约时提前告知（视可用性）",
+        "如需普通话/广东话/日语讲解，请在预约时提前告知（视可用性）",
         "联合国军纪念公园全程无障碍（铺装路面）",
         "甘川文化村的陡峭巷弄和台阶对轮椅和婴儿车较不友善",
-        "有行动需求的旅客请在预约时提前告知，司机可优化路线以减少不必要的步行"
+        "有行动需求的旅客请在预约时提前告知，司机可调整路线以减少不必要的步行"
       ]
     }
   ],
   "practicalWeatherStatic": {
-    "summary": "Busan has a humid subtropical climate with four distinct seasons. Cruise season concentrates in spring (Mar–May) and autumn (Sep–Nov), both pleasant 12–25°C with low rainfall. Summer (Jun–Aug) brings warm humid weather and occasional monsoon showers. Winter (Dec–Feb) is cool and windy.",
-    "advice": "Layered clothing in spring/autumn; sun protection and light rain shell in summer; warm coat and gloves in winter for the coastal cliffs at Taejongdae.",
+    "summary": "釜山属湿润亚热带气候，四季分明。邮轮旺季主要集中在春季（3–5月）和秋季（9–11月），气温约12–25°C、降雨较少。夏季（6–8月）温暖潮湿，偶有梅雨；冬季（12–2月）偏凉且多风。",
+    "advice": "春秋建议分层穿着；夏季注意防晒并携带轻便雨衣；冬季前往太宗台海岸悬崖时建议穿保暖外套并戴手套。",
     "_seasonalSummary": "釜山是韩国四季皆宜的港口城市。大多数景点全年开放，且均设有室内避雨空间。春季最宜步行，秋季天空湛蓝，夏季较湿热，冬季偶有强风但不影响行程。"
   },
   "seasonalVariations": [
     {
       "season": "春季（3至5月）",
-      "summary": "Cherry blossoms peak around late March to early April at Dalmaji Hill, Yongdusan Park, and Gwangalli Beach. Pleasant 12–22°C; light layers.",
-      "swaps": "Add a Dalmaji Hill cherry blossom drive-by between Taejongdae and Gamcheon during peak bloom week.",
+      "summary": "3月下旬至4月初，樱花在月莱山、龙头山公园和釜山达到顶峰。默认路线已是最佳安排。",
+      "swaps": "盛花期（3月下旬至4月初），可在太宗台和甘川之间加入月莱山樱花兜风。",
       "description": "大多数景点全年开放，春季额外加分：甘川文化村附近的釜山塔在花季期间被赏花树环绕，太宗台的社寺举办绣球花节（6月下旬至7月初）。"
     },
     {
       "season": "夏季（6至8月）",
-      "summary": "Warm and humid, 25–32°C, with monsoon showers possible Jun–Jul. Sunset is late, so an extra coastal stop at the end of the day works well.",
-      "swaps": "Swap the Tower observatory for the Haeundae Sky Capsule (covered, air-conditioned) or add Songdo Skywalk for a sea breeze.",
+      "summary": "温暖潮湿，25–32°C，6至7月可能有季风阵雨。日落较晚，有时会在海云台附近增加一次咖啡馆停留。",
+      "swaps": "将塔楼观景台换成海云台天空胶囊（有遮蔽、空调），或增加扎嘎其海鲜午餐。",
       "description": "夏季日照时间长，户外景点可停留更久；下午3至4点前需注意湿度和阳光。太宗台的多努比观光列车在暑假旺季人潮较多。"
     },
     {
       "season": "秋季（9至11月）",
-      "summary": "Korea's best travel weather — 15–25°C, low humidity, golden light. Cruise season peaks here.",
-      "swaps": "All default stops shine in autumn; consider adding Beomeosa Temple for autumn foliage.",
+      "summary": "韩国最佳旅行天气——15–25°C，低湿度，金色光线。邮轮旺季在此达到顶峰。",
+      "swaps": "所有默认景点在秋天都光彩照人；可考虑增加梵鱼寺赏秋叶。",
       "description": "秋季气温舒适，是步行景点最宜人的季节。甘川文化村的彩色建筑在深蓝色秋空下格外鲜艳；太宗台沿途的枫叶在10月下旬达到高峰。"
     },
     {
       "season": "冬季（12至2月）",
-      "summary": "Cool and windy, 0–10°C, but cruise traffic continues. Coastal stops are stark and beautiful.",
-      "swaps": "Limit outdoor time at Taejongdae lighthouse stairs; add a longer Jagalchi stop where indoor 2F restaurants and hot soup are easy options.",
+      "summary": "凉爽多风，0–10°C，但邮轮流量持续。海岸景点在冬日光线下呈现出一种别致的沉静之美。",
+      "swaps": "减少在太宗台灯塔台阶的户外时间；延长在扎嘎其的停留，那里有室内座位。",
       "description": "冬季景点仍全年开放，唯太宗台偶有强风。联合国军纪念公园在冬日晴空下气氛格外庄严，10月下旬至12月间人潮较少，可自由步行。"
     }
   ],
@@ -787,23 +697,23 @@
     {
       "icon": "shield-check",
       "title": "船只无法靠港提供全额退款",
-      "detail": "Weather-related cruise cancellations get a full refund — no fees, no questions.",
+      "detail": "因天气原因取消的邮轮行程可在24小时内全额退款。",
       "description": "若您的邮轮无法靠港，全额退款",
       "body": "若您的邮轮无法靠港，全额退款"
     },
     {
       "icon": "clock",
-      "title": "准时返船保证",
-      "detail": "We track your specific ship's departure window and pace the day to land you back with a 90-minute buffer.",
+      "title": "安全返回邮轮码头优先",
+      "detail": "我们追踪您所在船只的具体出港时间，并据此安排返回节奏。",
       "description": "准时返回码头，有保障",
       "body": "准时返回码头，有保障"
     },
     {
       "icon": "user-check",
       "title": "当地持照驾驶导游",
-      "detail": "All drivers are professionally licensed, English-speaking, and verified by AtoC Korea's Busan partner network.",
-      "description": "持照在地司机导游",
-      "body": "持照在地司机导游"
+      "detail": "所有司机均持有专业执照、能讲英语，并持有导游资格证。",
+      "description": "持照当地司导",
+      "body": "持照当地司导"
     }
   ],
   "bookingSupportSteps": [
@@ -816,7 +726,7 @@
     },
     {
       "step": 2,
-      "title": "提供邮轮详细资讯",
+      "title": "提供邮轮详细信息",
       "detail": "告知您的邮轮详情——船名、抵达日期和码头——我们在24小时内确认时间安排。",
       "timing": "",
       "description": "告知您的邮轮详情——船名、抵达日期和码头——我们在24小时内确认时间安排。"
@@ -830,7 +740,7 @@
     },
     {
       "step": 4,
-      "title": "收到驾驶资讯",
+      "title": "收到驾驶信息",
       "detail": "出发前一天收到车牌号码、司机姓名和联系电话。",
       "timing": "",
       "description": "出发前一天收到车牌号码、司机姓名和联系电话。"
@@ -845,19 +755,19 @@
     {
       "step": 6,
       "title": "准时返回船只",
-      "detail": "在全员登船截止时间前约90分钟安全返回码头。如需改为饭店或KTX送车，亦可安排。",
+      "detail": "在全体登船截止时间前约90分钟安全返回码头。如需改为酒店或KTX送车，亦可安排。",
       "timing": "",
-      "description": "在全员登船截止时间前约90分钟安全返回码头。如需改为饭店或KTX送车，亦可安排。"
+      "description": "在全体登船截止时间前约90分钟安全返回码头。如需改为酒店或KTX送车，亦可安排。"
     }
   ],
   "staticQuestions": [
     {
       "question": "私人车辆最多可以容纳多少人？",
-      "answer": "1至3名乘客适合轿车或SUV；4至7名乘客适合中型厢型车。更大的团体请联系我们获取客制化报价。"
+      "answer": "1至3名乘客适合轿车或SUV；4至7名乘客适合中型商务车。更大的团体请联系我们获取定制化报价。"
     },
     {
       "question": "如果我的邮轮延误或无法靠港怎么办？",
-      "answer": "若您的船只因天气原因无法靠泊釜山，您将获得全额退款——不设任何附加条件。若船只只是延误，司机照常等候并调整行程；8小时服务时段从实际接送时间开始计算。"
+      "answer": "若您的船只因天气原因无法靠泊釜山，您将获得全额退款——不设任何附加条件。若船只只是延误，司机照常等候并调整行程；8小时用车时间从实际接送时间开始计算。"
     },
     {
       "question": "可以自订景点吗？",
@@ -865,7 +775,7 @@
     },
     {
       "question": "行程包含金海机场接送吗？",
-      "answer": "不包含——金海机场接送是另行计费的附加选项（不含在标准邮轮岸游服务中），因为机场位于都会区的西端边缘。请在预约时提出需求，我们将提供附加费用报价。"
+      "answer": "不包含——金海机场接送是另行计费的附加选项（不含在标准邮轮岸游服务中），因为机场位于市区的西端边缘。请在预约时提出需求，我们将提供附加费用报价。"
     }
   ],
   "guestReviews": [],
@@ -873,16 +783,16 @@
     "totalReviews": 0,
     "averageRating": 0,
     "ratingDistribution": {
-      "1": 0,
-      "2": 0,
-      "3": 0,
+      "5": 0,
       "4": 0,
-      "5": 0
+      "3": 0,
+      "2": 0,
+      "1": 0
     },
     "lastUpdated": "2026-04-28"
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "可订状态将在支付步骤中确认。",
     "price": {
       "amountLabel": "",
       "currency": "USD",
@@ -894,34 +804,34 @@
     "meeting_points": [
       {
         "name": "釜山邮轮码头（国际邮轮港）",
-        "time": "Within 30 min of cruise disembarkation",
-        "note": "Driver waits at the arrival hall with an AtoC Korea sign; please share your cruise name and dock so we can confirm timing."
+        "time": "邮轮下船后30分钟内",
+        "note": "司机将在到达大厅手持 AtoC Korea 标识等候。请提供邮轮船名和靠泊码头，方便我们确认时间。"
       },
       {
         "name": "釜山站（KTX）主出口",
-        "time": "Flexible — confirm at booking",
-        "note": "If you arrive in Busan by KTX before joining the cruise tour, we can pick up at the station instead."
+        "time": "灵活安排——预订时确认",
+        "note": "如果您在参加邮轮岸上游前搭乘KTX抵达釜山，也可安排在釜山站接车。"
       },
       {
-        "name": "釜山市中心任一饭店",
-        "time": "Flexible — confirm at booking",
-        "note": "Door-to-door pickup at any hotel within central Busan (Haeundae, Seomyeon, Nampo-dong, Centum City)."
+        "name": "釜山市中心任一酒店",
+        "time": "灵活安排——预订时确认",
+        "note": "釜山市中心范围内酒店（海云台、西面、南浦洞、Centum City）可安排上门接送。"
       }
     ],
     "dropoff_points": [
       {
-        "name": "Busan Cruise Terminal (back to ship)",
-        "approx_time": "≈ 90 min before your ship's all-aboard call",
-        "note": "Guaranteed on-time return — we monitor your ship's departure window throughout the day."
+        "name": "釜山邮轮码头（返回登船）",
+        "approx_time": "约在邮轮全体登船截止时间前90分钟",
+        "note": "我们会全程关注船舶离港时间，并以登船截止前安全返回邮轮码头为最高优先。"
       },
       {
-        "name": "Any central Busan hotel",
-        "approx_time": "≈ end of service window",
-        "note": "Drop-off at any address within central Busan."
+        "name": "釜山市中心任意酒店",
+        "approx_time": "用车时间结束前后",
+        "note": "可送至釜山市中心范围内任意地址。"
       }
     ],
     "hotel_pickup_available": true,
-    "notes": "8小时服务时段从您的接送时间开始计算。金海国际机场接送为另行计费的附加选项（不含在标准邮轮岸游服务中），因为机场位于都会区的西端边缘。加时费率为每小时30,000韩圜，现金支付给司机，视司机可用时间而定。改期请求应在原预约日期前至少2天提出——天气导致的船只取消除外，此情况全额退款。"
+    "notes": "8小时用车时间从您的接送时间开始计算。金海国际机场接送为另行计费的附加选项（不含在标准邮轮岸游服务中），因为机场位于市区的西端边缘。加时费率为每小时30,000韩元，现金支付给司机，视司机可用时间而定。改期请求应在原预约日期前至少2天提出——天气导致的船只取消除外，此情况全额退款。"
   },
   "matching_profile": {
     "profile_version": 6,
@@ -932,7 +842,7 @@
     "destination_region": "korea_mainland",
     "region_type": "busan_city",
     "vehicle_type": "private_vehicle",
-    "duration_hours": 8,
+    "duration_hours": 8.0,
     "region_tags": [
       "busan",
       "busan_central",
@@ -964,7 +874,7 @@
     "first_time_fit": 0.95,
     "family_fit": 0.85,
     "senior_fit": 0.9,
-    "couple_fit": 1,
+    "couple_fit": 1.0,
     "solo_traveler_fit": 0.5,
     "active_traveler_fit": 0.65,
     "adult_family_fit": 0.85,
@@ -995,7 +905,7 @@
     "comfort_level": 0.85,
     "budget_fit": 0.2,
     "premium_fit": 0.85,
-    "small_group_fit": 0,
+    "small_group_fit": 0.0,
     "private_fit": 0.95,
     "bus_fit": 0.1,
     "price_band": "mid_to_premium",
@@ -1005,7 +915,7 @@
     "min_recommended_age": 0,
     "hard_constraints": [
       "Private charter — minimum 1 passenger, maximum 7 (van). Larger groups require multi-vehicle coordination.",
-      "Cruise on-time return is guaranteed only if booked with cruise itinerary details (ship name, arrival date, dock).",
+      "Cruise on-time return is guaranteed only if booked with cruise itinerary details (邮轮 name, arrival date, dock).",
       "Gimhae Airport pickup/drop-off is a paid add-on, not included in the standard 8-hour cruise window."
     ],
     "walking_notes": "Mostly door-to-door by vehicle. Walking is required at Gamcheon Culture Village (steep, ~30 min uphill alleys) and at the Taejongdae lighthouse (steep stairs, optional). Other stops are flat or have escalator/train alternatives.",
@@ -1042,101 +952,101 @@
       "yongdusan_park",
       "jagalchi_market"
     ],
-    "private_tour_fit": 1,
-    "shared_tour_fit": 0,
+    "private_tour_fit": 1.0,
+    "shared_tour_fit": 0.0,
     "customizable_route_fit": 0.6,
     "flexibility_fit": 0.85,
     "solo_fit": 0.5,
     "family_with_kids_fit": 0.95,
-    "small_party_fit": 1,
+    "small_party_fit": 1.0,
     "large_group_fit": 0.6,
-    "first_time_busan_fit": 1,
+    "first_time_busan_fit": 1.0,
     "repeat_visitor_fit": 0.6,
-    "cruise_passenger_fit": 1,
+    "cruise_passenger_fit": 1.0,
     "non_cruise_day_tripper_fit": 0.7,
-    "korean_war_history_fit": 1,
-    "war_memorial_fit": 1,
-    "un_heritage_fit": 1,
+    "korean_war_history_fit": 1.0,
+    "war_memorial_fit": 1.0,
+    "un_heritage_fit": 1.0,
     "wheelchair_accessible_anchor_fit": 0.6,
-    "buddhist_temple_fit": 0,
+    "buddhist_temple_fit": 0.0,
     "joseon_era_fit": 0.4,
     "silla_heritage_fit": 0.2,
     "modern_korean_history_fit": 0.85,
-    "coastal_fit": 1,
-    "coastal_cliff_fit": 1,
-    "coastal_lighthouse_fit": 1,
-    "city_viewpoint_fit": 1,
-    "panoramic_view_fit": 1,
-    "skywalk_fit": 0,
+    "coastal_fit": 1.0,
+    "coastal_cliff_fit": 1.0,
+    "coastal_lighthouse_fit": 1.0,
+    "city_viewpoint_fit": 1.0,
+    "panoramic_view_fit": 1.0,
+    "skywalk_fit": 0.0,
     "mountain_fit": 0.3,
     "forest_fit": 0.5,
     "geological_heritage_fit": 0.85,
-    "mural_village_fit": 1,
-    "hillside_village_fit": 1,
+    "mural_village_fit": 1.0,
+    "hillside_village_fit": 1.0,
     "art_immersive_fit": 0.85,
-    "photo_friendly_fit": 1,
-    "instagrammable_fit": 1,
-    "hanok_village_fit": 0,
-    "fish_market_fit": 1,
-    "seafood_fit": 1,
+    "photo_friendly_fit": 1.0,
+    "instagrammable_fit": 1.0,
+    "hanok_village_fit": 0.0,
+    "fish_market_fit": 1.0,
+    "seafood_fit": 1.0,
     "street_food_fit": 0.85,
-    "market_fit": 1,
-    "lunch_included_fit": 0,
-    "lunch_self_pay_fit": 1,
+    "market_fit": 1.0,
+    "lunch_included_fit": 0.0,
+    "lunch_self_pay_fit": 1.0,
     "walking_intensity": 0.7,
     "stairs_intensity": 0.85,
     "elderly_friendly_fit": 0.5,
     "stroller_friendly_fit": 0.4,
     "compact_route_fit": 0.7,
     "all_day_fit": 0.7,
-    "half_day_fit": 0,
-    "private_vehicle_fit": 1,
-    "minicoach_fit": 0,
+    "half_day_fit": 0.0,
+    "private_vehicle_fit": 1.0,
+    "minicoach_fit": 0.0,
     "public_transit_alternative_fit": 0.4,
-    "english_guide_fit": 1,
-    "korean_only_fit": 0,
+    "english_guide_fit": 1.0,
+    "korean_only_fit": 0.0,
     "multilingual_fit": 0.85,
     "spring_fit": 0.95,
     "summer_fit": 0.85,
-    "autumn_fit": 1,
+    "autumn_fit": 1.0,
     "winter_fit": 0.7,
     "rainy_day_fit": 0.4,
     "luxury_fit": 0.7,
     "value_priced_fit": 0.4,
     "scenic_intensity": 0.95,
-    "iconic_landmarks_fit": 1,
+    "iconic_landmarks_fit": 1.0,
     "off_beaten_path_fit": 0.3,
-    "cruise_shore_excursion_fit": 1,
-    "private_cruise_charter_fit": 1,
-    "downtown_busan_fit": 1,
-    "yongdusan_landmark_fit": 1,
-    "diamond_tower_fit": 1,
-    "china_mainland_market_fit": 0,
-    "korea_domestic_market_fit": 0,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "cruise_shore_excursion_fit": 1.0,
+    "private_cruise_charter_fit": 1.0,
+    "downtown_busan_fit": 1.0,
+    "yongdusan_landmark_fit": 1.0,
+    "diamond_tower_fit": 1.0,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "cruise_market_segment_fit": 1,
-    "busan_port_pickup_fit": 1,
-    "cruise_reboarding_safety_buffer_fit": 1,
-    "weather_fallback_dense_fit": 1,
-    "instagram_dense_route_fit": 1,
-    "private_charter_format_fit": 1,
-    "flexible_pickup_dropoff_fit": 1,
-    "premium_pacing_fit": 1,
-    "small_party_intimate_fit": 1,
+    "cruise_market_segment_fit": 1.0,
+    "busan_port_pickup_fit": 1.0,
+    "cruise_reboarding_safety_buffer_fit": 1.0,
+    "weather_fallback_dense_fit": 1.0,
+    "instagram_dense_route_fit": 1.0,
+    "private_charter_format_fit": 1.0,
+    "flexible_pickup_dropoff_fit": 1.0,
+    "premium_pacing_fit": 1.0,
+    "small_party_intimate_fit": 1.0,
     "differentiates_from_busan_small_group_cruise_pair_partner": true,
-    "busan_signature_route_fit": 1,
-    "seaside_temple_fit": 0,
-    "natural_geopark_fit": 1,
-    "city_panorama_tower_fit": 1,
-    "no_inter_city_travel_fit": 1,
+    "busan_signature_route_fit": 1.0,
+    "seaside_temple_fit": 0.0,
+    "natural_geopark_fit": 1.0,
+    "city_panorama_tower_fit": 1.0,
+    "no_inter_city_travel_fit": 1.0,
     "differentiates_from_busan_gyeongju_routes": true,
     "available_months_signature": [
       1,
@@ -1173,8 +1083,8 @@
       "busan-small-group-sightseeing-tour-cruise-passengers"
     ],
     "internal_competing_products_note": "Within the Busan portfolio, this is the canonical private-charter cruise-shore option. The small-group cruise tour (busan-small-group-sightseeing-tour-cruise-passengers) is the lower-priced fixed-group alternative. busan-top-attractions-day-tour serves the same stops for non-cruise day-trippers.",
-    "external_source": "GetYourGuide t899592",
-    "external_source_url": "https://www.getyourguide.com/-t899592/",
+    "external_source": "市场参考资料",
+    "external_source_url": "",
     "operator_partner": "AtoC Korea LLC (private charter network)",
     "last_competitive_review": "2026-04-28",
     "primary_themes": [
@@ -1204,7 +1114,7 @@
       "mobility_severely_limited"
     ],
     "anchor_pois": [
-      "UN Memorial Cemetery",
+      "UN 纪念公园 Cemetery",
       "Taejongdae",
       "Gamcheon Culture Village",
       "Yongdusan Park & Busan Diamond Tower",
@@ -1233,21 +1143,21 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Busan Private",
-        "headlineLine2": "Cruise Shore Charter",
+        "headlineLine1": "釜山私人包车——",
+        "headlineLine2": "邮轮靠港定制化岸上行程",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-          "imagePosition": "center 45%",
-          "tagline": "From UN Memorial Cemetery to Taejongdae cliffs to Gamcheon's painted alleys to Jagalchi's working harbor — eight private hours, your route, your pace, with on-time return to your ship guaranteed.",
+          "imageUrl": "",
+          "imagePosition": "center 50%",
+          "tagline": "从联合国纪念公墓到太宗台海崖，甘川文化村到札嘎其市场——全程私人包车，完全照您的节奏",
           "pills": [
             "私人专属车辆",
             "持照驾驶导游",
-            "准时返船保证"
+            "安全返回邮轮码头优先"
           ],
           "meta": {
-            "duration": "9 hours",
+            "duration": "8小时",
             "region": "釜山（邮轮港＋市区）",
-            "stops": "Custom",
+            "stops": "自定义",
             "rating": 0,
             "ratingStars": 0
           }
@@ -1302,12 +1212,12 @@
           {
             "icon": "user-check",
             "label": "导游语言",
-            "value": "持照驾驶导游"
+            "value": "英语持照驾驶导游"
           },
           {
             "icon": "clock",
             "label": "行程时间",
-            "value": "9小时"
+            "value": "8小时"
           },
           {
             "icon": "ticket",
@@ -1315,9 +1225,9 @@
             "value": "现场自付"
           },
           {
-            "icon": "utensils-crossed",
-            "label": "午餐安排",
-            "value": "现场自付"
+            "icon": "map-pin",
+            "label": "返船时间",
+            "value": "安全返回邮轮码头优先"
           }
         ]
       }
@@ -1331,47 +1241,56 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-            "alt": "Seongsan Ilchulbong sunrise peak",
-            "caption": "Seongsan Ilchulbong sunrise peak",
-            "location": "Seongsan Ilchulbong",
-            "atmosphere": "Jeju's most iconic UNESCO landmark, a flagship East-route stop"
+            "src": "https://images.unsplash.com/photo-1538485399081-7c8978d8ad8d?w=1200&q=80",
+            "alt": "釜山国际邮轮码头与停靠的船只",
+            "caption": "釜山邮轮码头出发",
+            "location": "邮轮码头",
+            "atmosphere": "顺畅的启程"
           },
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-            "alt": "Jusangjeolli basalt cliff",
-            "caption": "Jusangjeolli basalt cliff",
-            "location": "Jusangjeolli Cliff",
-            "atmosphere": "Hexagonal basalt columns on the South coast"
+            "src": "https://images.unsplash.com/photo-1601921004897-b7d582510a59?w=1200&q=80",
+            "alt": "联合国军纪念公园旗帜与记忆之墙",
+            "caption": "联合国军纪念公园 — 22个派遣国国旗",
+            "location": "联合国军纪念公园",
+            "atmosphere": "庄严沉静的氛围"
           },
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
-            "alt": "Hyeopjae Beach West Jeju",
-            "caption": "Hyeopjae Beach West Jeju",
-            "location": "Hyeopjae Beach",
-            "atmosphere": "Emerald water and white sand on the West coast"
+            "src": "https://images.unsplash.com/photo-1601181428771-79b56e6d2c25?w=1200&q=80",
+            "alt": "太宗台悬崖观景台与东海",
+            "caption": "太宗台悬崖与影岛灯台",
+            "location": "太宗台",
+            "atmosphere": "壮阔的海岸景观"
           },
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
-            "alt": "O'sulloc tea museum and fields",
-            "caption": "O'sulloc tea museum and fields",
-            "location": "O'sulloc Tea Fields",
-            "atmosphere": "Green tea-field rows and a calming midday reset"
+            "src": "https://images.unsplash.com/photo-1578167635648-df49e6c80f70?w=1200&q=80",
+            "alt": "甘川文化村粉彩山坡住宅",
+            "caption": "甘川文化村彩虹屋顶",
+            "location": "甘川文化村",
+            "atmosphere": "缤纷的艺术山坡社区"
           },
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
-            "alt": "Cheonjiyeon waterfall in Seogwipo",
-            "caption": "Cheonjiyeon waterfall in Seogwipo",
-            "location": "Cheonjiyeon Falls",
-            "atmosphere": "Forest waterfall on the South route"
+            "src": "https://images.unsplash.com/photo-1601574474635-6a0fd1c43cf6?w=1200&q=80",
+            "alt": "龙头山公园的釜山钻石塔",
+            "caption": "龙头山公园与釜山钻石塔",
+            "location": "龙头山公园",
+            "atmosphere": "城市全景俯瞰"
+          },
+          {
+            "id": "g6",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1565373679107-22fd2dee0a8c?w=1200&q=80",
+            "alt": "札嘎其水产市场摊位与活海鲜展示",
+            "caption": "札嘎其水产市场 — 韩国最大水产市场",
+            "location": "札嘎其市场",
+            "atmosphere": "热闹的市场氛围"
           }
         ]
       }
@@ -1384,173 +1303,264 @@
         "itineraryStops": [
           {
             "number": 1,
-            "time": "Flexible",
-            "duration": "Custom",
-            "name": "East Route: UNESCO & K-Drama Coast",
-            "category": "Seongsan, Udo, Manjanggul, Seopjikoji",
-            "description": "The most landmark-dense route option, covering Jeju's strongest UNESCO and K-drama spots. Typical stops include Seongsan Ilchulbong (UNESCO sunrise peak), Udo Island (ferry-access island with beaches), Manjanggul Lava Tube (UNESCO cave), Seopjikoji (drama-famous coastal cape), Seongeup Folk Village, and Hamdeok Beach.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "time": "邮轮抵达后约30分钟",
+            "duration": "30分钟",
+            "name": "釜山邮轮码头接送（或酒店/KTX）",
+            "category": "出发",
+            "description": "私人司机在三个接送地点之一等候：**釜山港国际邮轮码头**（影岛区东三洞，大型邮轮指定码头——包括皇家加勒比、嘉年华、MSC等）；**釜山港国际客运码头**（草梁洞，中型邮轮及渡轮码头）；或**釜山市中心任一酒店或KTX釜山站**。船只停靠后预留30分钟，应对通关排队延误。",
             "highlights": [
-              "Seongsan Ilchulbong: UNESCO World Natural Heritage and Jeju's flagship sunrise peak",
-              "Udo Island: ferry-access island with white-sand beaches and lighthouse views",
-              "Manjanggul: one of the world's longest lava-tube caves (UNESCO)",
-              "Seopjikoji and Seongeup: classic K-drama and folk-village atmosphere"
+              "**三个接送地点**：邮轮码头（影岛）、国际客运码头（草梁洞）或酒店/KTX",
+              "**私人车辆** — 您的团体独享，不共乘",
+              "司机持名牌 + 韩英双语行程卡等候"
             ],
-            "timeUsed": [
-              "Hotel pickup and transfer to the East coast",
-              "2 to 3 main landmark stops (driver-guide adjusts based on group pace)",
-              "Lunch break (free choice; usually near Seongsan or in the East coast)",
-              "Optional Udo ferry crossing (extra cost; vehicle parked or shipped)"
-            ],
-            "whyOnRoute": "It is the strongest route for first-time Jeju visitors who want maximum recognition: Seongsan Ilchulbong is the island's single most-photographed landmark, and Manjanggul gives the route a distinct UNESCO underground experience.",
-            "visitBasics": {
-              "hours": "Most stops 09:00 to 18:00; Manjanggul closes the first Wednesday of each month",
-              "closed": "Seongsan closed first Monday of each month; Manjanggul closed first Wednesday",
-              "admission": "Pay directly: Seongsan 5,000 KRW, Manjanggul 4,000 KRW, Seopjikoji 4,000 KRW, Udo ferry from 10,500 KRW round-trip",
-              "walking": "Moderate to high (Seongsan summit climb is the most demanding section)"
-            },
-            "convenience": {
-              "restroom": "Available at all major stops",
-              "parking": "Driver-guide handles all parking"
-            },
-            "smartNotes": {
-              "photo": "Seongsan summit at clear-weather morning is the strongest single photo on the route; Seopjikoji works better in afternoon side-light.",
-              "facilities": "Seongsan and Hamdeok Beach are the strongest meal hubs; the East route has stronger food density than the West.",
-              "tip": "The Seongsan summit climb is the route's bottleneck for senior or low-mobility travelers. Base-area viewing also works."
-            },
+            "whyOnRoute": "三个接送地点涵盖釜山两种类型的邮轮码头（东三洞大型邮轮码头，以及草梁洞的国际旅客码头）以及市区酒店和KTX。船只抵达后的预留30分钟可应对通关延误——这在3,000名以上乘客同时下船时十分常见。",
             "_poi_meta": {
-              "poi_key": "route_variant_east",
-              "verified": false,
-              "match": "route_variant_no_single_poi",
-              "note": "Route option for private charter — represents a multi-POI bundle (Seongsan, Udo, Manjanggul, Seopjikoji); not a single matchable POI"
+              "poi_key": "OPS_busan_cruise_pickup",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Busan Port Authority",
+                "CruiseMapper",
+                "NamuWiki"
+              ]
             }
           },
           {
             "number": 2,
-            "time": "Flexible",
-            "duration": "Custom",
-            "name": "West Route: Beaches, Tea & Cafe Coast",
-            "category": "Hyeopjae, Hallim Park, O'sulloc, Aewol",
-            "description": "The most photogenic and relaxed route. Typical stops include Hyeopjae Beach (Jeju's most iconic emerald-water beach), Hallim Park (subtropical gardens and lava caves), O'sulloc Tea Museum (tea fields and cafe), and Aewol Cafe Street (sunset coastal cafes). Strong fit for couples and photographers.",
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "time": "≈ 09:30",
+            "duration": "60分钟",
+            "name": "联合国军纪念公园（韩国战争）",
+            "category": "纪念馆与历史",
+            "description": "**驻韩联合国军纪念公园（UNMCK）——世界唯一的联合国军纪念公墓** — 由**联合国军司令部于1951年1月18日**在韩国战争期间创立，**1951年4月6日由马修·李奇威将军揭幕奉献**，并依联合国大会决议于**1959年由韩国政府永久捐赠予联合国**。公墓安葬着联合国军司令部**22个派遣国**（16个作战部队 + 6个医疗部队）的阵亡人员，目前保有**来自11个国家的2,300个墓地**（大多数遗骸已于1950年代末期迁回各自国家）。14公顷的园区内包含由韩国现代主义建筑师**金重业（1966年）**设计的**正门**、设有12分钟英文纪录片的**纪念礼堂**、22个派遣国国旗飘扬的**象征广场**、弗兰克·盖洛德创作的**美国韩国战争纪念雕塑（美国战役纪念委员会，2013年）**，以及**2006年落成的记忆之墙** — 在**140块大理石板上刻有40,896个名字**，代表每位在韩国牺牲的联合国军人。每年11月11日上午11时，**「面向釜山」仪式**同时在此公墓及22个国家的纪念地点举行——是全年唯一一次所有派遣国国旗同时降旗的时刻。**免费入场**，开放时间**09:00至18:00（5月至9月）/ 09:00至17:00（10月至4月）**，整个园区铺设铺装道路，**全无障碍设施**。",
             "highlights": [
-              "Hyeopjae Beach: emerald water, white sand, and Biyangdo island views",
-              "Hallim Park: subtropical garden with two on-site lava caves",
-              "O'sulloc: Jeju's most famous tea museum, with strong indoor support",
-              "Aewol Cafe Street: sunset coast and contemporary Jeju cafe culture"
+              "**世界唯一的联合国军纪念公墓** — 1951年1月18日创立；1959年韩国永久捐赠予联合国",
+              "供奉**22个派遣国**；目前保有**11个国家的2,300个墓地**",
+              "**记忆之墙（2006年）** — 140块大理石板上刻有40,896个名字",
+              "正门由韩国建筑师**金重业（1966年）**设计",
+              "**「面向釜山」仪式** — 每年11月11日上午11时（全球同步举行）",
+              "**免费入场**，全无障碍设施",
+              "**弗兰克·盖洛德美国韩国战争纪念雕塑（2013年，美国战役纪念委员会）** — 与1995年美国国家广场「方阵」韩战老兵纪念雕塑出自同一雕塑家",
+              "**联合国雕塑公园** — 21个参战国雕刻家捐赠的34座雕塑，2001年10月24日作为50周年纪念开放",
+              "**联合国大会决议977（X）号（1955年12月15日）**正式确立UNMCK在国际联合国军纪念公墓委员会管理下的受保护地位"
             ],
             "timeUsed": [
-              "Hotel pickup and transfer to the West coast",
-              "Beach and garden stops in the morning",
-              "Lunch break (free choice; strongest options near Hallim or Hyeopjae)",
-              "Tea museum and Aewol close to finish the day"
+              "象征区域+22个参战国国旗广场（约10分钟）",
+              "纪念馆+12分钟英文纪录片（约15分钟）",
+              "纪念墙+纪念文物馆（约20分钟）",
+              "默哀时间+拍照（约10分钟）",
+              "返回车辆（约5分钟）"
             ],
-            "whyOnRoute": "It is the strongest route for couples, photographers, and travelers wanting a softer pace. Aewol works particularly well as a sunset close, and O'sulloc gives the route a useful weather-buffer indoor section.",
-            "visitBasics": {
-              "hours": "Most stops 09:00 to 18:00; Aewol cafes vary",
-              "closed": "Most stops open year-round",
-              "admission": "Pay directly: Hallim Park 15,000 KRW, O'sulloc free entry (programs cost extra), beaches free",
-              "walking": "Easy to moderate"
-            },
-            "convenience": {
-              "restroom": "Available at all major stops",
-              "parking": "Driver-guide handles all parking"
-            },
-            "smartNotes": {
-              "photo": "Hyeopjae works best in late-morning sun for emerald-water color; Aewol photographs strongest at sunset.",
-              "facilities": "O'sulloc has the best indoor support of all the West stops; Aewol has the densest cafe and snack options.",
-              "tip": "If the day forecast is uncertain, the West route handles light rain better than the East route."
-            },
+            "whyOnRoute": "UNMCK是**釜山最具全球意义的韩国战争遗址**，也是今日沿海/文化环线行程的庄严对比起点。09:30抵达可抢在观光巴士高峰（约11:00）之前，60分钟的停留时间足以观看纪录片、参观记忆之墙并静心感受，不至于仓促。无障碍设施使其成为全日行动强度最低的停靠点——这是有意的设计，让行程从沉静开始，再逐渐走向色彩丰富的海岸和市区景点。",
             "_poi_meta": {
-              "poi_key": "route_variant_west",
-              "verified": false,
-              "match": "route_variant_no_single_poi",
-              "note": "Route option for private charter — multi-POI bundle (Hyeopjae, Hallim, O'sulloc, Aewol)"
+              "poi_key": "un_memorial_cemetery",
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNMCK official (unmck.or.kr)",
+                "Wikipedia",
+                "American Battle Monuments Commission",
+                "Korea Tourism Organization (VisitKorea)",
+                "Visit Busan official",
+                "American Battle Monuments Commission (US Korean War Monument at Busan)",
+                "UN General Assembly Resolution 977(X) (December 15, 1955)"
+              ]
             }
           },
           {
             "number": 3,
-            "time": "Flexible",
-            "duration": "Custom",
-            "name": "South Route: Waterfalls & Volcanic Coast",
-            "category": "Cheonjiyeon, Jusangjeolli, Sanbangsan, Olle Market",
-            "description": "The most scenically dramatic route. Typical stops include Cheonjiyeon Falls (forest waterfall), Jusangjeolli Cliff (basalt-column coastline), Yakcheonsa Temple (one of the largest temples in East Asia), Sanbangsan Mountain (volcanic dome with sea views), Jeongbang Waterfall (one of Asia's few waterfalls flowing directly into the sea), and Seogwipo Olle Market.",
-            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "time": "≈ 10:45",
+            "duration": "75分钟",
+            "name": "太宗台海岸悬崖",
+            "category": "海岸",
+            "description": "**太宗台（太宗台）——釜山纪念物第28号**（与五六岛共同列入）——是**影岛南端顶端的自然公园**，以**新罗太宗武烈王（604至661年，第29代国王）**命名，据说他在**统一三国后**曾在此练习射箭。代表性景观是影岛灯台下方的**「仙人岩」波蚀台地**——地质学家推断其形成于**第四间冰期（约12万年前）**，源于长期海浪侵蚀沉积岩，岩石上可见清晰的同心圆纹路和断层构造。**影岛灯台**屹立于悬崖之上，是**釜山最古老的灯台，建于1906年**（韩国第10座），现代新塔于2004年增建——原始灯光已指引釜山来港船只超过一个世纪，并于2004年改建为海洋文化空间（See & Sea画廊 + 自然史博物馆 + 观景台 + 咖啡厅）。步行全程4.3公里环线颇为费力；多数游客搭乘**多努比观光列车（约₩4,000来回票，成人，从入口广场发车）**，途经砾石海滩 → 寺庙 → 观景台 → 影岛灯台 → 寺庙。从**3层观景台**可远眺**茶壶岛（生岛）**，晴天时更可望见**韩国东南方50公里外的日本对马岛**。公园有两个传说：**望夫石（忠妻石，一位忠贞的妻子等待被倭寇掳走的丈夫，化石为证）**和**「超越极限之光」雕塑**（韩国艺术家创作：蓝环=海洋/天空，红=大地，银色尖端=灯台光束）。公园开放时间：**04:00至24:00（3月至10月）/ 05:00至24:00（11月至2月）**，**免费入场**。",
             "highlights": [
-              "Cheonjiyeon Falls: a classic Seogwipo forest waterfall",
-              "Jusangjeolli Cliff: hexagonal basalt columns on the south coast",
-              "Sanbangsan: volcanic dome with sea-cliff temple views",
-              "Olle Market: Seogwipo's most lively traditional market for snacks and souvenirs"
+              "**釜山纪念物第28号** — 波蚀台地约12万年前（第四间冰期）形成",
+              "以**新罗太宗武烈王**（604至661年，三国统一者）命名",
+              "**影岛灯台 — 釜山最古老，建于1906年**（韩国第10座）；2004年改建",
+              "**3层观景台**可远眺**对马岛（日本，50公里外）**（晴天可见）",
+              "**多努比观光列车**约₩4,000来回 — 沿4.3公里海岸环线设5个停靠站",
+              "**望夫石传说** + **「超越极限之光」雕塑**",
+              "公园免费；步道崎岖（灯台区域多陡峭台阶）",
+              "**2013年指定为釜山国家地质公园 + 2005年指定为国家指定文化财景胜地第17号** — 双重遗产保护地位",
+              "**每年太宗寺绣球花文化节**（六月下旬至七月上旬）— 10万+人次到访"
             ],
             "timeUsed": [
-              "Hotel pickup and transfer to the South coast",
-              "Morning waterfall and basalt-cliff stops",
-              "Lunch break in Seogwipo (free choice)",
-              "Afternoon mountain or temple stop, market close"
+              "大巴下车+购买多努比列车票——约10分钟",
+              "乘列车至观景台+3层全景——约20分钟",
+              "步行至影岛灯塔+'超越极限之光'雕塑——约15分钟",
+              "向望夫石方向悬崖观景——约20分钟",
+              "乘列车返回+集合——约10分钟"
             ],
-            "whyOnRoute": "It is the strongest route for travelers who want geological variety: a temple, a waterfall, a basalt cliff, a volcanic dome, and a market in one day cover Jeju's strongest 'volcanic island' identity.",
-            "visitBasics": {
-              "hours": "Most stops 09:00 to 17:30",
-              "closed": "Most stops open year-round",
-              "admission": "Pay directly: Cheonjiyeon 2,500 KRW, Jusangjeolli 2,000 KRW, Jeongbang 2,000 KRW, Yakcheonsa free, Sanbangsan 1,000 KRW",
-              "walking": "Moderate (Cheonjiyeon and Sanbangsan add the most walking)"
-            },
-            "convenience": {
-              "restroom": "Available at all major stops",
-              "parking": "Driver-guide handles all parking"
-            },
-            "smartNotes": {
-              "photo": "Jusangjeolli works best in afternoon side-light; Olle Market is strongest in late afternoon when the night-market section opens.",
-              "facilities": "Olle Market is the strongest food hub; Yakcheonsa offers the calmest indoor visit.",
-              "tip": "Cheonjiyeon and Sanbangsan both involve stairs. Travelers with knee issues should pick one rather than both."
-            },
+            "whyOnRoute": "太宗台是**釜山代表性自然景观的核心**，与后续的甘川文化村、龙头山 + 札嘎其水产市场形成完美的一日路线：全日行程从庄严（联合国公墓）→ 壮阔海岸（太宗台）→ 彩色城市（甘川文化村）→ 城市制高点（龙头山塔）→ 市场收尾（札嘎其）。75分钟的停留时间可完成观景台 + 灯台环线，无需走完费力的全程4.3公里；多努比观光列车选项也为行动不便的旅客提供备选安排。",
             "_poi_meta": {
-              "poi_key": "route_variant_south",
-              "verified": false,
-              "match": "route_variant_no_single_poi",
-              "note": "Route option for private charter — multi-POI bundle (Cheonjiyeon, Jusangjeolli, Yakcheonsa, Sanbangsan, Jeongbang)"
+              "poi_key": "taejongdae",
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Busan Geopark official",
+                "Visit Busan (visitbusan.net)",
+                "Wikipedia",
+                "Busan Metropolitan City",
+                "Yeongdo Lighthouse archive (1906 records)",
+                "Busan National Geopark official (busan.go.kr/geopark)"
+              ]
             }
           },
           {
             "number": 4,
-            "time": "Flexible",
-            "duration": "Custom",
-            "name": "Custom Route: Build Your Own Day",
-            "category": "Send Us Your Own Itinerary",
-            "description": "Beyond the three recommended routes, you can mix stops or send your own itinerary. Possible additions include the Jeju Aquarium Planet, ECO Land Theme Park, Sangumburi Crater, Hamdeok Beach, Camellia Hill, Teddy Bear Safari, Seogwipo Submarine (Munseom underwater tour), dolphin yacht tours, Songaksan, Cafe the Cliff, and Nanta show.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202311/22/c42559a5-c909-4603-ae16-24c2e03893a0.webp",
+            "time": "≈ 12:30",
+            "duration": "60分钟",
+            "name": "午餐（釜山当地餐厅）",
+            "category": "餐饮",
+            "description": "午餐在司机推荐的**釜山当地餐厅**，位于影岛或南浦洞一带——餐厅依您的团体偏好选择。典型选项包括：**猪内脏汤饭** — 釜山招牌猪骨汤面饭，约₩9,000至13,000；**密面** — 釜山小麦冷面，约₩10,000至14,000；或**生鱼片** — 在市场附近按重量计费。午餐费用自付，约每人₩10,000至25,000。",
             "highlights": [
-              "Mix East-coast UNESCO with West-coast tea fields if time permits",
-              "Add a haenyeo (female-diver) seafood lunch to any route",
-              "Combine a beach morning with a mountain or temple afternoon",
-              "Pair with K-drama filming locations specific to your favorite shows"
+              "司机依团体偏好推荐（韩式 / 海鲜 / 国际料理）",
+              "典型釜山选项：**猪内脏汤饭**、**密面**、**生鱼片**",
+              "**午餐费用自付**（每人约₩10,000至25,000）"
+            ],
+            "whyOnRoute": "12:30的午餐时段位于太宗台（沿海）和甘川文化村（山坡）之间，是全日节奏最自然的休息点。司机推荐的当地餐厅远胜于旅游区默认选项；旅客可接受推荐，或在早晨接送时告知特定料理偏好。",
+            "_poi_meta": {
+              "poi_key": "OPS_busan_lunch",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29"
+            }
+          },
+          {
+            "number": 5,
+            "time": "≈ 14:00",
+            "duration": "75分钟",
+            "name": "甘川文化村",
+            "category": "山坡艺术村",
+            "description": "**甘川文化村（甘川文化村）——釜山的「韩国马丘比丘」/「韩国圣托里尼」** — 是一个山坡上拥有**约10,000名居民、以彩色粉刷房屋**闻名的社区，源于1955年的难民聚落——当时**约800户（约4,000人）太极道宗教群体**（由创立）在韩国战争后迁居至此。村庄的代表性特征——**没有任何屋顶遮挡后方住家视线**，形成著名的彩虹梯田效果——正是源自**太极道「让他人繁荣」哲学**。两个政府艺术计划将村庄打造成观光胜地：**韩国文化部委托的《马丘比丘之梦》（2009年）**和**《迷路迷路》（2010年）**，在迷宫般的巷弄中融入壁画、雕塑和装置艺术。村庄于**2012年荣获联合国人居署亚洲城镇景观奖**，目前每年吸引**约140万人次到访**。代表性拍照点包括：天空花园（ 观景台）的**小王子与狐狸长椅**（排队较长但免费）、星之眺望台的**彩虹屋顶全景**，以及**印章游盖地图**（约₩2,000，引导旅客参观9处编号装置）。**居民仍在此生活** — 请压低音量，禁止使用无人机，在巷弄中请勿使用闪光灯摄影，请自行带走垃圾。开放时间**09:00至18:00（3月至10月）/ 09:00至17:00（11月至2月）**，村庄**免费入场**，但陡峭的台阶和狭窄的巷弄**不适合婴儿车和轮椅**——请穿着抓地力良好的鞋款。",
+            "highlights": [
+              "**1955年太极道难民聚落** — 约800户 / 约4,000人，由创立",
+              "**太极道哲学「让他人繁荣」** = 没有任何屋顶遮挡邻居视线",
+              "**《马丘比丘之梦》（2009年）** + **《迷路迷路》（2010年）** 文化部艺术计划",
+              "**2012年联合国人居署亚洲城镇景观奖**",
+              "每年吸引**约140万人次到访**",
+              "**小王子与狐狸长椅**（天空花园）= 代表性拍照（排队较长，免费）",
+              "印章游盖地图₩2,000（9处编号装置）",
+              "陡峭巷弄和台阶 = 不适合婴儿车及轮椅",
+              "**韩流拍摄圣地** — 《Running Man》第126集、《起源》（2021年）、《国际市场》（2014年）；**KTO「韩国必游景点100选」连续五年入选**"
             ],
             "timeUsed": [
-              "Discuss your plan with the driver-guide at pickup or before",
-              "Driver-guide adjusts pacing based on traffic and ferry timing",
-              "Return to your hotel within the 9-hour window"
+              "大巴在上方入口下车（约5分钟）",
+              "观星台+彩虹屋顶全景（约15分钟）",
+              "天空花园+小王子与狐狸长椅拍照（约20分钟）",
+              "穿越壁画小巷+工艺品商铺下行（约25分钟）",
+              "在下方出口集合（约10分钟）"
             ],
-            "whyOnRoute": "It is the most flexible option of the four. It works best for repeat Jeju visitors, travelers with niche interests (K-drama tracking, photography, food), and families who want a tailored mix.",
-            "visitBasics": {
-              "hours": "Depends on chosen stops",
-              "closed": "Depends on chosen stops",
-              "admission": "All admission fees pay directly",
-              "walking": "Depends on chosen stops"
-            },
-            "convenience": {
-              "restroom": "Driver-guide will plan around stop facilities",
-              "parking": "Driver-guide handles all parking"
-            },
-            "smartNotes": {
-              "photo": "Custom routes can target specific seasonal photo windows: canola fields in spring, hydrangeas in early summer, pink muhly in autumn.",
-              "facilities": "Discuss meal timing and rest stops with your driver-guide before departure.",
-              "tip": "Send your itinerary draft a few days before the tour so the driver-guide can flag any timing or access issues, especially around ferry schedules."
-            },
+            "whyOnRoute": "甘川文化村是**任何釜山一日游中最具景色冲击力的核心景点**，与下一站龙头山（相距4公里）自然搭配——两者都是山坡制高点，一个是充满艺术气息的住宅社区，另一个是市民公园。75分钟是最佳停留时长：足以完成天空花园 + 小王子长椅排队 + 有意义的巷弄探索，又不至于因午后高温/陡坡步行而在最后一个景点前体力透支。",
             "_poi_meta": {
-              "poi_key": "route_variant_custom",
-              "verified": false,
-              "match": "route_variant_no_single_poi",
-              "note": "Custom route — fully guest-defined; no fixed POI set"
+              "poi_key": "gamcheon_culture_village",
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan official",
+                "Wikipedia",
+                "UN-HABITAT 2012 Asian Townscape Awards",
+                "Saha-gu Gamcheon Culture Village Committee",
+                "Korea Tourism Organization",
+                "Korea Tourism Organization (100 Must-Visit Tourist Spots in Korea designation)"
+              ]
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:45",
+            "duration": "45分钟",
+            "name": "龙头山公园与釜山塔",
+            "category": "城市展望台",
+            "description": "**龙头山公园（龙头山公园，「龙头山公园」）** — 位于南浦洞市中心的一座**69,000平方米**市民公园，种有**70个树种** — 是一个多层历史积淀的场域：曾是**朝鲜时代的倭馆**（草梁倭馆，**1678至1878年的日本贸易外交飞地**）、后为日式**龙头山神社（17世纪至20世纪初）**、再经历**韩战难民棚屋区**（大多在1950年代火灾中焚毁），最终改建为现代公园。**120米高的釜山塔**（原**1973年开幕**，**2021年改建后重新品牌命名为「釜山钻石塔」**）是公园核心——其**观景台顶部仿照庆州佛国寺多宝塔宝盖（国宝第20号）的样式设计**，是一个将釜山现代地标与新罗文化遗产明确相连的建筑引用。塔楼位于**海拔69米 + 塔高120米 = 总顶高189米**，提供360°全景俯瞰釜山港、影岛大桥、晴天时可见对马岛，以及山脚下的札嘎其市场。公园其他地标：**将军（1545至1598年）铜像**（釜山出身的壬辰倭乱海军英雄，以**从未损失一艘船**著称）、由**10万名釜山市民捐赠的市民钟**（在**除夕和3月1日独立运动纪念日各敲响33次**），以及入口的**花时钟**和象征山名的**青铜龙雕塑**。入口通过**光复路时装街旁的有顶自动扶梯**进入（无回程扶梯——需步行下山）。**公园全天免费**；**釜山钻石塔观景台₩12,000 / 长者65+或儿童3至12岁₩9,000，开放时间10:00至22:00（最后入场21:30）**。",
+            "highlights": [
+              "**「龙头山」** — 历史上抵御倭寇（日本海盗）的防护屏障",
+              "**朝鲜时代倭馆（日本贸易飞地1678至1878年）** + **龙头山神社** + 韩战棚屋区遗址",
+              "**釜山塔1973年开幕** → **2021年改建后更名釜山钻石塔**",
+              "**塔顶仿照佛国寺多宝塔宝盖设计**（国宝第20号，庆州）— 新罗文化遗产引用",
+              "**将军铜像**（1545至1598年）— 壬辰倭乱龟船英雄，从未损失一艘船",
+              "**市民钟** — 10万市民捐赠；除夕 + 3月1日各敲响33次",
+              "观景台₩12,000 / 成人；公园全天免费",
+              "**有顶自动扶梯从光复路进入** — 无回程扶梯",
+              "**市民钟33响仪式** — **33响纪念1919年《独立宣言》33位韩国签署人**；将釜山市民身份认同与国家独立参观脉络相连"
+            ],
+            "timeUsed": [
+              "从光复路时尚街乘自动扶梯上公园——约5分钟",
+              "花钟+李舜臣将军雕像+市民之钟拍照——约10分钟",
+              "登塔瞭望台+360°全景——约25分钟",
+              "走楼梯下山——约5分钟",
+              "市民之钟凉亭+花钟+铜龙拍照——约5分钟"
+            ],
+            "whyOnRoute": "龙头山在黄金时段夕照中提供**釜山最广为人知的360度全景** — 塔顶对佛国寺多宝塔宝盖的建筑引用，也将这一站与您可能搭配此包车行程的庆州文化遗产之旅在概念上相连。45分钟的停留时间精确计算了观景台的上下路程，无需在整个公园漫步；从光复路来的自动扶梯消除了攀登过程。",
+            "_poi_meta": {
+              "poi_key": "yongdusan_park",
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan official",
+                "Wikipedia",
+                "Busan Diamond Tower official (busandiamondtower.co.kr)",
+                "Korea Tourism Organization",
+                "Busan Metropolitan City heritage records"
+              ]
+            }
+          },
+          {
+            "number": 7,
+            "time": "≈ 16:45",
+            "duration": "45分钟",
+            "name": "南浦洞与札嘎其水产市场",
+            "category": "市场与街头美食",
+            "description": "**札嘎其市场（札嘎其市场）——韩国最大的水产市场** — 是**南浦洞**（釜山购物餐饮市区）的核心地带。名称源自**「（砾石）」**，是市场起源地鹅卵石海岸的指称。1876年釜山开埠后及韩战后的繁荣期，**女性摊贩**（战争寡妇和难民）以坚韧的女性水产经济建立了市场的身份认同。现代的**海鸥形状建筑**（由设计）**2006年重新启用**，共有约**400名摊贩，占地66,000平方米** — 一楼为活水族缸（章鱼、鲍鱼、海参、比目鱼），二楼为生鱼片餐厅，旅客可以在楼下买鱼后在楼上切片加工（搭配辣椒酱 + 烧酒的标准吃法）。市场开放时间**每日05:00至22:00**；**每月第1和第3个星期二休馆**（出行前请确认）。一年一度的**10月札嘎其文化观光节**是最盛大的年度活动。周边**南浦洞**还有**BIFF广场**（釜山国际电影节起源地，地面嵌有韩国明星手印 — 朴赞郁、奉俊昊等）、**国际市场**（韩战难民市场，至今仍有1,500多个摊位）和**光复路时装街**。地址：**中区52号**。摄影礼仪：**拍摄活水族缸或摊贩前务必先询问**； 对相机可能直言不讳。",
+            "highlights": [
+              "**韩国最大水产市场** — 约400名摊贩 / 66,000平方米",
+              "名称 = **「（砾石）」** + ** **战后女性摊贩",
+              "**海鸥形状建筑2006年重新启用**（现设计）",
+              "**每日05:00至22:00**；**每月第1和第3个星期二休馆**",
+              "**楼下买鱼、楼上加工生鱼片的方式**",
+              "周边：**BIFF广场**（釜山电影节）、**国际市场**、**光复路**",
+              "**10月札嘎其文化观光节**",
+              "地址：**中区52号**",
+              "**（活章鱼生吃）是釜山的饮食标志** — 切成仍在蠕动的章鱼小块，配芝麻油和盐食用；正是《老男孩》（2003年）那幕名场面令这道菜走向国际"
+            ],
+            "timeUsed": [
+              "从龙头山/下车点步行前往（约5分钟）",
+              "一楼活水箱参观（约15分钟）",
+              "二楼生鱼片餐厅浏览+南浦洞街景拍照（约15分钟）",
+              "可选：购买小吃+光复路漫步（约10分钟）",
+              "在扎嘎其大妈摊位购买纪念品（约5分钟）"
+            ],
+            "whyOnRoute": "札嘎其是**一日游中最能感受「釜山味道」的体验** — 搭配BIFF广场 + 国际市场，形成了与刚才龙头山制高俯瞰视角截然不同的地面街头感受。45分钟的停留时间设计短暂：龙头山之后只求拍照 + 感受市场氛围，而非完整用餐（这会影响邮轮登船时间）。札嘎其到码头的距离短，可根据邮轮离港要求灵活调整出发时间。",
+            "_poi_meta": {
+              "poi_key": "jagalchi_market",
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan official",
+                "Jagalchi Market Association (jagalchimarket.bisco.or.kr)",
+                "Wikipedia",
+                "Korea Tourism Organization",
+                "Busan Jung-gu official",
+                "Busan Tourism Organization (Jagalchi Sannakji designation)"
+              ]
+            }
+          },
+          {
+            "number": 8,
+            "time": "≈ 17:30",
+            "duration": "30分钟",
+            "name": "返回釜山邮轮码头",
+            "category": "返回",
+            "description": "私人车辆直接返回您的出发码头——大型邮轮回**釜山港国际邮轮码头**（影岛区东三洞），中型邮轮/渡轮回**釜山港国际客运码头**（草梁洞）。或依您要求改送至酒店或釜山KTX站。",
+            "highlights": [
+              "直接返回原邮轮码头（东三洞或草梁洞）",
+              "**全体登船截止前60至90分钟**安全送达",
+              "若当天行程时间有调整，即时调度协调"
+            ],
+            "whyOnRoute": "直接返回不加停靠，充分保护登船前预留时间。30分钟可覆盖南浦洞至任一码头在最糟尖峰时段的最长车程；若交通顺畅则更早送达（可根据您的首选抵达时间调整下车时间）。",
+            "_poi_meta": {
+              "poi_key": "OPS_busan_cruise_return",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29"
             }
           }
         ]
@@ -1563,60 +1573,54 @@
       "props": {
         "routeFlowStops": [
           {
-            "id": "01",
-            "name": "Hotel Pickup",
-            "theme": "Start"
+            "type": "pickup",
+            "label": "邮轮码头"
           },
           {
-            "id": "02",
-            "name": "Choose Route",
-            "theme": "East/West/South"
+            "type": "stop",
+            "label": "联合国公墓"
           },
           {
-            "id": "03",
-            "name": "Lunch Break",
-            "theme": "Reset"
+            "type": "stop",
+            "label": "太宗台"
           },
           {
-            "id": "04",
-            "name": "Afternoon Stops",
-            "theme": "Continue"
+            "type": "stop",
+            "label": "甘川洞文化村"
           },
           {
-            "id": "05",
-            "name": "Hotel Dropoff",
-            "theme": "End"
+            "type": "stop",
+            "label": "龙头山公园"
+          },
+          {
+            "type": "stop",
+            "label": "札嘎其市场"
+          },
+          {
+            "type": "return",
+            "label": "邮轮码头"
           }
         ],
         "routePhases": [
           {
-            "label": "Start",
-            "range": "1",
-            "theme": "Pickup at Jeju Hotel",
-            "bgClass": "bg-sky-50/70",
-            "textClass": "text-sky-700",
-            "dotClass": "bg-sky-500"
+            "phase": "去程",
+            "title": "追忆与海洋",
+            "summary": "上午在联合国纪念公园静默悼念，随后前往太宗台俯瞰壮阔的东海断崖。沉静而壮丽，远离人群。"
           },
           {
-            "label": "Day Out",
-            "range": "2-4",
-            "theme": "Choose Your Route",
-            "bgClass": "bg-emerald-50/70",
-            "textClass": "text-emerald-700",
-            "dotClass": "bg-emerald-500"
+            "phase": "中段",
+            "title": "色彩、高处与港湾",
+            "summary": "午餐后步入甘川洞彩色小巷，再登龙头山公园俯瞰市区全景，最后在自海鲜市场感受釜山烟火气。"
           },
           {
-            "label": "Finish",
-            "range": "5",
-            "theme": "Return to Hotel",
-            "bgClass": "bg-amber-50/70",
-            "textClass": "text-amber-700",
-            "dotClass": "bg-amber-500"
+            "phase": "回程",
+            "title": "准时返港",
+            "summary": "直驶回邮轮码头，距离登船截止时间提前90分钟送达。"
           }
         ],
         "routeShapeIntro": {
-          "title": "How this private day moves",
-          "subtitle": "Pickup at your Jeju hotel between 08:00 and 09:00, then a fully flexible 9-hour day around the East, West, or South route—or your own custom plan. Driver-guide adjusts pacing based on weather and traffic. Return drop-off around 17:00 to 18:00."
+          "title": "行程路线一览",
+          "body": "默认5站行程适合邮轮乘客设计：从太宗台轻松漫步开始，到扎嘎其市场收尾。"
         }
       }
     },
@@ -1627,80 +1631,69 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "Families with children, including very young kids",
-            "Multi-generational groups including seniors",
-            "Couples and honeymooners wanting a relaxed K-drama day",
-            "Repeat Jeju visitors who want a tailored route",
-            "Photographers chasing specific seasonal scenes (canola, hydrangeas, pink muhly)"
+            "希望在8小时内充分感受釜山的邮轮旅客，并保障准时返回",
+            "偏好私人定制化行程而非固定团体游的情侣和家庭",
+            "包含长辈的多代同行团体（私人车辆不需在换乘间步行）",
+            "希望览遍代表性景点但不想受团体行程节奏限制的初次釜山旅客",
+            "有行动、饮食或节奏需求、团体行程无法满足的旅客"
           ],
           "routeLogicSections": [
             {
-              "title": "Why a private charter wins on Jeju",
-              "icon": "car",
-              "iconBg": "bg-sky-50/80",
-              "iconColor": "text-sky-600",
+              "title": "为什么私人包车是邮轮岸游的最佳选择",
+              "icon": "map-pin",
               "items": [
                 {
-                  "label": "Jeju is genuinely large",
-                  "detail": "The island spans about 73 km east-to-west. Group bus tours waste hours waiting at each stop; a private charter cuts that overhead."
+                  "label": "准时返船是一切的核心",
+                  "detail": "团体游以固定时钟运行；私人包车意味着我们时刻监控您所在船只的具体登船截止时间，并视情况调整全天行程，确保提前90分钟安全返回。"
                 },
                 {
-                  "label": "Weather changes fast",
-                  "detail": "Jeju microclimates shift hourly. A driver-guide can swap an outdoor stop for an indoor one (Hallim Park caves, O'sulloc, Yakcheonsa) without ruining the day."
+                  "label": "釜山地理上分散广",
+                  "detail": "从邮轮码头到太宗台、甘川文化村、札嘎其全程约25公里，跨越桥梁和单行道路段。私人车辆省去了30至45分钟的等待和换乘，让每个景点都有更充裕的时间。"
                 },
                 {
-                  "label": "Door-to-door comfort",
-                  "detail": "Hotel pickup means no airport-area shuttle, no late-evening bus stress, and no walking with luggage between transfers."
+                  "label": "随心客制，无需重新报价",
+                  "detail": "将札嘎其换成海东龙宫寺、跳过塔的观景台、加入天空胶囊或延长午餐时间——车辆按时计费，而非按景点收费，定制化不另增费用。"
                 }
               ]
             },
             {
-              "title": "How to choose between East, West, and South",
-              "icon": "map",
-              "iconBg": "bg-amber-50/80",
-              "iconColor": "text-amber-600",
+              "title": "已包含与自付费用",
+              "icon": "ticket",
               "items": [
                 {
-                  "label": "East for first-time landmark coverage",
-                  "detail": "Seongsan Ilchulbong and Manjanggul are Jeju's two strongest UNESCO names; the East route delivers maximum recognition value."
+                  "label": "已包含",
+                  "detail": "私人车辆、英语司导、所有过路费和停车费；从邮轮码头/KTX/釜山市中心酒店接送。"
                 },
                 {
-                  "label": "West for relaxed scenery and photos",
-                  "detail": "Hyeopjae Beach, Hallim Park, O'sulloc, and Aewol form a softer, more couple-friendly day with strong photo payoff and a sunset finish."
+                  "label": "自付费用",
+                  "detail": "午餐（每人10,000至20,000韩元）、太宗台多努比观光列车（₩4,000）、釜山塔观景台（₩12,000）及其他景点入场费。"
                 },
                 {
-                  "label": "South for geological drama",
-                  "detail": "Waterfalls, basalt cliffs, a volcanic dome, and a temple in one day give this route Jeju's strongest 'volcanic island' narrative."
+                  "label": "附加选项",
+                  "detail": "金海机场接送为另行计费的附加选项；加时费率为每小时30,000韩元，现金支付给司机，视司机可用时间而定。"
                 }
               ]
             },
             {
-              "title": "What changes on the day",
-              "icon": "clock-3",
-              "iconBg": "bg-slate-50/80",
-              "iconColor": "text-slate-698",
+              "title": "邮轮旅客专属保障",
+              "icon": "shield-check",
               "items": [
                 {
-                  "label": "Weather adjustments",
-                  "detail": "Light rain rarely affects the route; strong wind usually shortens coastal stops (Seongsan, Jusangjeolli, Aewol)."
+                  "label": "若邮轮无法靠港，全额退款",
+                  "detail": "因天气原因（台风、浓雾）导致的船只取消，全额退款——不设任何附加条件。"
                 },
                 {
-                  "label": "Udo ferry on the East route",
-                  "detail": "Udo Island requires a separate ferry. Vehicles can be shipped (extra cost) or left at the wharf. Ferry timing affects your overall day flow."
+                  "label": "司机追踪您的邮轮出发时间时段",
+                  "detail": "我们查询您所在邮轮的具体行程，并以实际登船截止时间（而非宣传资料时间）为基准安排全天节奏。"
                 },
                 {
-                  "label": "Overtime is possible",
-                  "detail": "If you need more than 9 hours, an extra hour is 25,000 KRW paid in cash to the driver, subject to driver availability."
+                  "label": "提前告知车牌号码",
+                  "detail": "您清楚知道在码头抵达大厅要找哪一辆车——无需在邮轮接待的人潮中手忙脚乱。"
                 }
               ]
             }
           ],
-          "lessIdealFor": [
-            "Solo budget travelers (private pricing is per vehicle)",
-            "Travelers wanting to mix with other guests for a social experience",
-            "Anyone needing a fully narrated certified-guide tour (driver-guide is licensed but not full guide-grade narration)",
-            "Travelers wanting fully included admission and meals"
-          ]
+          "sourcing": "投诉设计和运营详情基于AtoC Korea的标准运营实践及本地现场知识。"
         }
       }
     },
@@ -1711,121 +1704,136 @@
       "props": {
         "practicalAccordionItems": [
           {
-            "id": "pickup",
-            "title": "Pickup & drop-off",
-            "preview": "Hotel pickup anywhere on Jeju; lobby meeting 10 minutes early",
+            "title": "接送、下车与8小时行程",
+            "icon": "map-pin",
+            "details": [
+              "包含从釜山邮轮码头到达大厅、釜山站（KTX）主出口，或釜山市中心酒店（海云台、西面、南浦洞、Centum City）接送。",
+              "司机会举着 AtoC Korea 标识等候，车辆牌照也会提前告知。",
+              "默认送回邮轮码头（约在全体登船截止时间前90分钟），也可送至釜山市中心酒店。",
+              "8小时服务时间从实际接送时间开始计算。超时费为每小时30,000韩元，现金支付给司机，并视司机当日时间安排而定。",
+              "金海国际机场接送可作为另行付费加项安排，不包含在标准邮轮岸上游服务时间内。"
+            ],
+            "preview": "接送与8小时用车时间",
             "content": [
-              "Hotel pickup is included anywhere on Jeju Island (Jeju City, Seogwipo, Jungmun, etc.)",
-              "Pickup is typically arranged between 08:00 and 09:00",
-              "Please wait at the hotel lobby 10 minutes before the agreed departure time",
-              "Drop-off at your Jeju hotel or any Jeju-island location of your choice (e.g., a dinner restaurant or the airport)",
-              "Return is typically between 17:00 and 18:00 within the 9-hour window",
-              "If you need to reschedule, please contact the operator at least 2 days before the original reservation date"
+              "8小时用车时间从您的接送时间开始计算",
+              "接送地点：釜山邮轮码头（国际邮轮码头）、釜山站（KTX）主出口，或釜山市中心任一酒店",
+              "司机在抵达大厅手持AtoC Korea牌子等候，通常在船只停靠后30分钟内",
+              "回程送至邮轮码头，通常在全体登船截止时间前90分钟",
+              "如需在酒店或KTX站下车，请在预约时告知"
             ]
           },
           {
-            "id": "vehicle",
-            "title": "Vehicle and Group Size",
-            "preview": "Vehicle assigned by group size and luggage volume",
+            "title": "费用包含与现场自付",
+            "icon": "wallet",
+            "details": [
+              "包含：私人车辆、英语司导、过路费、停车费和燃油费。",
+              "现场自付：午餐（每人10,000–20,000韩元）、太宗台 Danubi 小火车（往返₩4,000，可选）、釜山塔观景台（成人₩12,000，可选），如替换为海云台天空胶囊则每个胶囊约40,000–50,000韩元。",
+              "除上述可选项目外，默认行程中的景点门票均免费。"
+            ],
+            "preview": "已包含 vs. 自付费用",
             "content": [
-              "The vehicle type is matched to the exact number of passengers and luggage pieces",
-              "Please fill in the exact passenger count and luggage count when booking",
-              "Typical vehicles include sedans for 1 to 3 guests, mid-size SUVs for 4 to 5 guests, and Staria or Carnival vans for 6 to 9 guests",
-              "Larger groups may be split across multiple vehicles or quoted separately"
+              "已包含：私人车辆、英语司导、所有过路费和停车费；从邮轮码头/KTX/釜山市中心酒店接送",
+              "自付费用：午餐（每人约10,000至20,000韩元）、太宗台多努比观光列车（₩4,000）、釜山塔观景台（₩12,000）",
+              "如加入天空胶囊等自选项目，费用另计",
+              "可选司机小费不强制，但感谢您的心意"
             ]
           },
           {
-            "id": "duration",
-            "title": "9-Hour Window and Overtime",
-            "preview": "Strict 9-hour service window from pickup",
+            "title": "行程调整与景点更换",
+            "icon": "sliders-horizontal",
+            "details": [
+              "默认5站邮轮岸上行程（联合国纪念公园 → 太宗台 → 甘川文化村 → 龙头山 → 札嘎其）可灵活替换。",
+              "常见替代景点：海东龙宫寺（海边寺庙，码头以东约40分钟）、青沙浦与海云台天空胶囊、梵鱼寺、松岛天空步道、五六岛日出公园。",
+              "预订时请告知您偏好的景点，我们会确认可行顺序；8小时内建议安排4–5个景点。"
+            ],
+            "preview": "定制化与景点替换",
             "content": [
-              "The 9-hour window starts from your hotel pickup time",
-              "Overtime is charged at 25,000 KRW per additional hour, paid in cash directly to the driver",
-              "Overtime is subject to driver availability and applicable hours of service rules",
-              "Udo Island ferry crossings count inside the 9-hour window unless otherwise agreed"
+              "请在预约时告知您偏好或希望跳过的景点，我们将确认可行的路线顺序",
+              "预设的5站邮轮行程只是起点，并非固定计划",
+              "常见替换景点包括：海东龙宫寺、天空胶囊（海云台蓝线公园）和梵鱼寺",
+              "如需金海国际机场接送，为另行计费的附加选项（不含在标准邮轮岸游服务中）"
             ]
           },
           {
-            "id": "extras",
-            "title": "Extra Fees You Should Know About",
-            "preview": "Udo ferry, admission costs, and meals",
+            "title": "车辆、驾驶与容量",
+            "icon": "car",
+            "details": [
+              "私人空调车辆。1–3人通常安排轿车或SUV，4–7人通常安排中型商务车。",
+              "所有司机均持证并可使用英语服务；如需中文或日文支持，可在预订时咨询。",
+              "抵达前将通过电子邮件或KakaoTalk发送车辆牌照、司导姓名和联系电话。"
+            ],
+            "preview": "车辆、司机与乘客容量",
             "content": [
-              "Udo Island vehicle ferry: extra cost (varies by vehicle size); foot-passenger ferry from ≈10,500 KRW round-trip per person",
-              "All admission fees are paid directly at each venue",
-              "Meals are paid directly; the driver-guide can recommend local specialties (heuk dwaeji black pork, gogi guksu, abalone porridge)",
-              "Optional driver gratuities are appreciated but not required"
+              "1至3名乘客：轿车或SUV",
+              "4至7名乘客：中型商务车",
+              "更大的团体请联系我们获取定制化报价",
+              "预约时请填写精确的乘客人数和行李件数，以便分配适当车型",
+              "额外加时收费：每小时30,000韩元，现金支付给司机，视司机可用时间而定"
             ]
           },
           {
-            "id": "weather",
-            "title": "Weather policy",
-            "preview": "Private format adapts well to changing Jeju conditions",
+            "title": "天候与船只取消政策",
+            "icon": "cloud-rain",
+            "details": [
+              "若邮轮因天气（台风、浓雾等）无法停靠釜山，可全额退款，无手续费。",
+              "若当天先晴后雨，司机会调整游览顺序，尽量增加室内停留时间（如龙头山塔、札嘎其2楼餐厅或博物馆替代点）。",
+              "至少提前2天提出改期申请，可免费处理。"
+            ],
+            "preview": "天气政策与船只取消政策",
             "content": [
-              "Light rain: most stops still operate; the driver-guide can shift toward indoor stops",
-              "Strong wind: coastal exposure at Seongsan, Jusangjeolli, and Aewol may be shortened",
-              "Typhoon-warning days: the operator will contact you to reschedule",
-              "Snow on Hallasan can close the 1100 Highland road; the driver-guide will substitute alternative inland stops"
+              "若您的邮轮因天气（台风、浓雾）无法靠泊釜山，全额退款——不设任何附加条件",
+              "若船只仅是延误，司机照常等候并调整行程；8小时用车时间从实际接送时间开始计算",
+              "一般雨天：行程照常进行，行动不便景点可优先安排",
+              "台风警报日：旅游服务团队将主动联系您协商改期"
             ]
           },
           {
-            "id": "included",
-            "title": "What's included",
-            "preview": "Vehicle and licensed driver-guide; admission and meals pay direct",
-            "variant": "included",
+            "title": "语言与无障碍设施",
+            "icon": "users",
+            "details": [
+              "标准服务为持证英文司导。普通话或日语司导可按需安排。",
+              "车辆适合行动不便的旅客，点到点接送可减少换乘步行。",
+              "部分景点涉及上坡或阶梯步行（如甘川文化村、太宗台灯塔阶梯）。如有行动不便需求，请在预订时告知，我们会调整行程。"
+            ],
+            "preview": "语言与无障碍设施",
             "content": [
-              "Private vehicle (sedan, SUV, or van based on group size)",
-              "Licensed English-speaking driver-guide",
-              "Hotel pickup and drop-off anywhere on Jeju",
-              "Fuel and tolls for the standard route",
-              "All admission fees are not included; pay directly at each venue",
-              "Meals are not included",
-              "Personal shopping is not included",
-              "Driver gratuities are not included"
+              "主要服务语言：英语",
+              "如需普通话/广东话/日语讲解，请在预约时提前告知（视可用性）",
+              "联合国军纪念公园全程无障碍（铺装路面）",
+              "甘川文化村的陡峭巷弄和台阶对轮椅和婴儿车较不友善",
+              "有行动需求的旅客请在预约时提前告知，司机可调整路线以减少不必要的步行"
             ]
           }
         ],
         "practicalWeatherStatic": {
-          "today": {
-            "temp": "—",
-            "label": "Live weather integration"
-          },
-          "tomorrow": {
-            "temp": "—",
-            "label": "Updated daily"
-          }
+          "summary": "釜山属湿润亚热带气候，四季分明。邮轮旺季主要集中在春季（3–5月）和秋季（9–11月），气温约12–25°C、降雨较少。夏季（6–8月）温暖潮湿，偶有梅雨；冬季（12–2月）偏凉且多风。",
+          "advice": "春秋建议分层穿着；夏季注意防晒并携带轻便雨衣；冬季前往太宗台海岸悬崖时建议穿保暖外套并戴手套。",
+          "_seasonalSummary": "釜山是韩国四季皆宜的港口城市。大多数景点全年开放，且均设有室内避雨空间。春季最宜步行，秋季天空湛蓝，夏季较湿热，冬季偶有强风但不影响行程。"
         },
         "seasonalVariations": [
           {
-            "name": "Spring",
-            "icon": "flower",
-            "description": "Canola flowers blanket the East coast in late March-April; cherry blossoms peak in early April. Mild temperatures and clear skies make this the most balanced season.",
-            "tag": "Canola season",
-            "bgClass": "bg-spring",
-            "iconColor": "text-pink-500"
+            "season": "春季（3至5月）",
+            "summary": "3月下旬至4月初，樱花在月莱山、龙头山公园和釜山达到顶峰。默认路线已是最佳安排。",
+            "swaps": "盛花期（3月下旬至4月初），可在太宗台和甘川之间加入月莱山樱花兜风。",
+            "description": "大多数景点全年开放，春季额外加分：甘川文化村附近的釜山塔在花季期间被赏花树环绕，太宗台的社寺举办绣球花节（6月下旬至7月初）。"
           },
           {
-            "name": "Summer",
-            "icon": "sun",
-            "description": "Peak beach season with Hyeopjae and Hamdeok at their strongest; June hydrangeas color the West coast. Expect humidity and possible typhoon weather in August.",
-            "tag": "Beach season",
-            "bgClass": "bg-summer",
-            "iconColor": "text-yellow-500"
+            "season": "夏季（6至8月）",
+            "summary": "温暖潮湿，25–32°C，6至7月可能有季风阵雨。日落较晚，有时会在海云台附近增加一次咖啡馆停留。",
+            "swaps": "将塔楼观景台换成海云台天空胶囊（有遮蔽、空调），或增加扎嘎其海鲜午餐。",
+            "description": "夏季日照时间长，户外景点可停留更久；下午3至4点前需注意湿度和阳光。太宗台的多努比观光列车在暑假旺季人潮较多。"
           },
           {
-            "name": "Autumn",
-            "icon": "leaf",
-            "description": "Pink muhly fields peak mid-October to early November; the strongest visibility window for Hallasan and Seongsan views. Often Jeju's best photo season.",
-            "tag": "Best photo season",
-            "bgClass": "bg-autumn",
-            "iconColor": "text-orange-500"
+            "season": "秋季（9至11月）",
+            "summary": "韩国最佳旅行天气——15–25°C，低湿度，金色光线。邮轮旺季在此达到顶峰。",
+            "swaps": "所有默认景点在秋天都光彩照人；可考虑增加梵鱼寺赏秋叶。",
+            "description": "秋季气温舒适，是步行景点最宜人的季节。甘川文化村的彩色建筑在深蓝色秋空下格外鲜艳；太宗台沿途的枫叶在10月下旬达到高峰。"
           },
           {
-            "name": "Winter",
-            "icon": "snowflake",
-            "description": "Camellia Hill blooms December to February; Hallasan can carry snow on its summit. Cold but visually rewarding, with fewer crowds at all major stops.",
-            "tag": "Camellia & snow",
-            "bgClass": "bg-winter",
-            "iconColor": "text-sky-500"
+            "season": "冬季（12至2月）",
+            "summary": "凉爽多风，0–10°C，但邮轮流量持续。海岸景点在冬日光线下呈现出一种别致的沉静之美。",
+            "swaps": "减少在太宗台灯塔台阶的户外时间；延长在扎嘎其的停留，那里有室内座位。",
+            "description": "冬季景点仍全年开放，唯太宗台偶有强风。联合国军纪念公园在冬日晴空下气氛格外庄严，10月下旬至12月间人潮较少，可自由步行。"
           }
         ]
       }
@@ -1837,57 +1845,69 @@
       "props": {
         "bookingTrustItems": [
           {
-            "icon": "check-circle",
-            "title": "Licensed local operator",
-            "description": "Authorized Korean tour operator with full insurance",
-            "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "icon": "shield-check",
+            "title": "船只无法靠港提供全额退款",
+            "detail": "因天气原因取消的邮轮行程可在24小时内全额退款。",
+            "description": "若您的邮轮无法靠港，全额退款",
+            "body": "若您的邮轮无法靠港，全额退款"
           },
           {
-            "icon": "route",
-            "title": "Route specialists",
-            "description": "Hand-tuned itinerary, not a generic loop",
-            "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "icon": "clock",
+            "title": "安全返回邮轮码头优先",
+            "detail": "我们追踪您所在船只的具体出港时间，并据此安排返回节奏。",
+            "description": "准时返回码头，有保障",
+            "body": "准时返回码头，有保障"
           },
           {
-            "icon": "users",
-            "title": "Curated group size",
-            "description": "Right-sized for the route",
-            "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600"
+            "icon": "user-check",
+            "title": "当地持照驾驶导游",
+            "detail": "所有司机均持有专业执照、能讲英语，并持有导游资格证。",
+            "description": "持照当地司导",
+            "body": "持照当地司导"
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "step": 1,
+            "title": "线上预约",
+            "detail": "选择日期线上预约——今天不需付款，先预约后付款。",
+            "timing": "",
+            "description": "选择日期线上预约——今天不需付款，先预约后付款。"
           },
           {
-            "timing": "12 hours before",
-            "title": "12-Hour Reminder",
-            "detail": "Weather update and any route adjustments"
+            "step": 2,
+            "title": "提供邮轮详细信息",
+            "detail": "告知您的邮轮详情——船名、抵达日期和码头——我们在24小时内确认时间安排。",
+            "timing": "",
+            "description": "告知您的邮轮详情——船名、抵达日期和码头——我们在24小时内确认时间安排。"
           },
           {
-            "timing": "Evening before",
-            "title": "Final Pickup Info",
-            "detail": "Exact pickup time and driver contact"
+            "step": 3,
+            "title": "自订景点（选填）",
+            "detail": "至少提前2天传送您希望调整的景点（可选）。",
+            "timing": "",
+            "description": "至少提前2天传送您希望调整的景点（可选）。"
           },
           {
-            "timing": "Morning of tour",
-            "title": "Day-of Route Notes",
-            "detail": "Morning briefing based on live conditions"
+            "step": 4,
+            "title": "收到驾驶信息",
+            "detail": "出发前一天收到车牌号码、司机姓名和联系电话。",
+            "timing": "",
+            "description": "出发前一天收到车牌号码、司机姓名和联系电话。"
           },
           {
-            "timing": "During tour",
-            "title": "Stop-by-Stop Tips",
-            "detail": "Real-time guidance at each location"
+            "step": 5,
+            "title": "邮轮码头集合",
+            "detail": "在邮轮抵达大厅等候，司机手持AtoC Korea牌子在下船后30分钟内等您。",
+            "timing": "",
+            "description": "在邮轮抵达大厅等候，司机手持AtoC Korea牌子在下船后30分钟内等您。"
           },
           {
-            "timing": "After tour",
-            "title": "Post-tour Support",
-            "detail": "Follow-up and recommendations"
+            "step": 6,
+            "title": "准时返回船只",
+            "detail": "在全体登船截止时间前约90分钟安全返回码头。如需改为酒店或KTX送车，亦可安排。",
+            "timing": "",
+            "description": "在全体登船截止时间前约90分钟安全返回码头。如需改为酒店或KTX送车，亦可安排。"
           }
         ]
       }
@@ -1899,24 +1919,20 @@
       "props": {
         "staticQuestions": [
           {
-            "id": "first-time",
-            "question": "Is this a good choice for first-time visitors to Jeju (East, West, or South)?",
-            "answer": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+            "question": "私人车辆最多可以容纳多少人？",
+            "answer": "1至3名乘客适合轿车或SUV；4至7名乘客适合中型商务车。更大的团体请联系我们获取定制化报价。"
           },
           {
-            "id": "walking",
-            "question": "Is the walking difficult?",
-            "answer": "Moderate walking with some active sections."
+            "question": "如果我的邮轮延误或无法靠港怎么办？",
+            "answer": "若您的船只因天气原因无法靠泊釜山，您将获得全额退款——不设任何附加条件。若船只只是延误，司机照常等候并调整行程；8小时用车时间从实际接送时间开始计算。"
           },
           {
-            "id": "family",
-            "question": "Is this tour suitable for families?",
-            "answer": "Yes — comfortable for most families."
+            "question": "可以自订景点吗？",
+            "answer": "可以——完全可以。请在预约时提交您偏好的景点，我们将确认合理的路线顺序。预设的5站邮轮行程只是起点，并非固定计划。常见替换选项包括海东龙宫寺、天空胶囊和梵鱼寺。"
           },
           {
-            "id": "seniors",
-            "question": "Can older adults join comfortably?",
-            "answer": "Yes — pacing and walking are comfortable for active seniors."
+            "question": "行程包含金海机场接送吗？",
+            "answer": "不包含——金海机场接送是另行计费的附加选项（不含在标准邮轮岸游服务中），因为机场位于市区的西端边缘。请在预约时提出需求，我们将提供附加费用报价。"
           }
         ]
       }
@@ -1928,36 +1944,16 @@
       "props": {
         "guestReviews": [],
         "reviewsSummary": {
-          "averageRating": 0,
           "totalReviews": 0,
-          "ratingDistribution": [
-            {
-              "stars": 5,
-              "count": 0,
-              "percentage": 0
-            },
-            {
-              "stars": 4,
-              "count": 0,
-              "percentage": 0
-            },
-            {
-              "stars": 3,
-              "count": 0,
-              "percentage": 0
-            },
-            {
-              "stars": 2,
-              "count": 0,
-              "percentage": 0
-            },
-            {
-              "stars": 1,
-              "count": 0,
-              "percentage": 0
-            }
-          ],
-          "highlights": []
+          "averageRating": 0,
+          "ratingDistribution": {
+            "5": 0,
+            "4": 0,
+            "3": 0,
+            "2": 0,
+            "1": 0
+          },
+          "lastUpdated": "2026-04-28"
         }
       }
     },
@@ -1966,11 +1962,11 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "可订状态将在支付步骤中确认。",
         "price": {
           "amountLabel": "",
           "currency": "USD",
-          "per": "vehicle"
+          "per": "人"
         }
       }
     }
@@ -1983,10 +1979,10 @@
       "v15.4_new_tour_creation"
     ],
     "fix_passes": {
-      "v15.4_new_tour_creation": "Created new tour from GYG product ID t899592 (Busan private car charter for cruise shore). Structural template: jeju-island-private-car-charter-tour. Content template: busan-small-group-sightseeing-tour-cruise-passengers. POI operational data (visitBasics/convenience/smartNotes) sourced from poi_knowledge_base.json (centralized KB built in Step 2). REASONABLE-ASSUMPTION FIELDS that may need patching once the live GYG page is reviewed: (1) price.amountLabel left empty per jeju-charter convention (per-vehicle pricing confirmed at booking); (2) catalog_card.priceFromUSD null; (3) vehicle capacity assumed 1-3 sedan / 4-7 van based on industry standard, not GYG-confirmed; (4) 8-hour duration assumed based on typical Busan cruise dwell time (6-9h common); (5) reviewsSummary populated with zeros — actual GYG reviews not imported in this pass; (6) hero/og images deferred per v15 P3 workflow. Pickup rule applied per Jason's directive: cruise terminal + KTX + central Busan hotel; Gimhae Airport pickup is a paid add-on, not bundled.",
+      "v15.4_new_tour_creation": "Created new tour from external reference product t899592 (Busan private car charter for cruise shore). Structural template: jeju-island-private-car-charter-tour. Content template: busan-small-group-sightseeing-tour-cruise-passengers. POI operational data (visitBasics/convenience/smartNotes) sourced from poi_knowledge_base.json (centralized KB built in Step 2). REASONABLE-ASSUMPTION FIELDS that may need patching once the live external reference page is reviewed: (1) price.amountLabel left empty per jeju-charter convention (per-vehicle pricing confirmed at booking); (2) catalog_card.priceFromUSD null; (3) vehicle capacity assumed 1-3 sedan / 4-7 van based on industry standard, not external reference-confirmed; (4) 8-hour duration assumed based on typical Busan cruise dwell time (6-9h common); (5) reviewsSummary populated with zeros — actual external reference reviews not imported in this pass; (6) hero/og images deferred per v15 P3 workflow. Pickup rule applied per Jason's directive: cruise terminal + KTX + central Busan hotel; Gimhae Airport pickup is a paid add-on, not bundled.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 0,
         "fields_skipped": 0,
         "fields_already_float": 42

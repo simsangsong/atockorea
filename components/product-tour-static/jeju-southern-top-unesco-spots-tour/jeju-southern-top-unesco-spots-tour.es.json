@@ -6,34 +6,34 @@
   "product_id": "jeju-southern-top-unesco-spots-tour",
   "seo": {
     "pageTitle": "Tour Jeju Sur: Hallasan, Cascadas y Té | AtoC Korea",
-    "metaDescription": "Tour de un día en Jeju Sur — Sendero Eoseungsaengak (Hallasan UNESCO), Camellia Hill, Cascadas Cheonjeyeon, Acantilado Jusangjeolli, Museo de Té Osulloc. 9 horas, entradas incluidas. El más valorado: 4,9/5.",
+    "metaDescription": "Tour de un día en Jeju Sur — Sendero Eoseungsaengak (Hallasan UNESCO), Camellia Hill, Cascadas Cheonjeyeon, Acantilado Jusangjeolli, Museo de Té. 9 horas, entradas incluidas. El más valorado: 4,9/5.",
     "primaryKeywords": [
       "tour Jeju Sur",
       "excursión Hallasan Jeju",
       "tour Camellia Hill Jeju",
       "Acantilado Jusangjeolli",
-      "Osulloc Jeju"
+      " Jeju"
     ],
     "ogImage": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
     "title": "Tour Jeju Sur: Hallasan, Cascadas y Té | AtoC",
-    "description": "Excursión de un día por el sur de Jeju: Hallasan Eoseungsaengak → Camellia Hill → Cascadas Cheonjeyeon → Acantilado Jusangjeolli → Osulloc. Grupo pequeño, 9 horas, entradas incluidas."
+    "description": "Excursión de un día por el sur de Jeju: Hallasan Eoseungsaengak → Camellia Hill → Cascadas Cheonjeyeon → Acantilado Jusangjeolli →. Grupo pequeño, 9 horas, entradas incluidas."
   },
   "catalog_card": {
     "thumbnail": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
     "title": "Tour Jeju Sur: UNESCO, Cascadas, Acantilados y Campos de Té",
     "priceLabel": "Consulte el precio al reservar",
-    "shortCardDescription": "Circuito de un día en grupo pequeño por el sur de Jeju: senderismo en el Hallasan (Patrimonio UNESCO), jardín botánico Camellia Hill (flores todo el año), Cascadas Cheonjeyeon (Monumento Natural), Acantilado Jusangjeolli de basalto hexagonal (Monumento Natural + Geoparque UNESCO), campos de té y Museo Osulloc. Entradas incluidas, sin paradas de compras.",
+    "shortCardDescription": "Circuito de un día en grupo pequeño por el sur de Jeju: senderismo en el Hallasan (Patrimonio UNESCO), jardín botánico Camellia Hill (flores todo el año), Cascadas Cheonjeyeon (Monumento Natural), Acantilado Jusangjeolli de basalto hexagonal (Monumento Natural + Geoparque UNESCO), campos de té y Museo. Entradas incluidas, sin paradas de compras.",
     "tags": [
-      "small_group",
+      "grupo reducido",
       "jeju",
-      "south_jeju",
+      "Sur de Jeju",
       "unesco",
-      "value_priced",
-      "no_shopping"
+      "Buena relación calidad-precio",
+      "Sin compras obligatorias"
     ],
     "rating": 4.9,
     "reviewCount": 648,
-    "slug": "jeju-southern-top-unesco-spots-tour",
+    "slug": "jeju-southern-top-unesco-lugares-tour",
     "subtitle": "El circuito del sur de Jeju más valorado — 4,9/5 con 648 reseñas, entradas incluidas.",
     "region": "Jeju Sur",
     "duration": "9 horas",
@@ -55,9 +55,9 @@
     "salePriceUsd": 38.7,
     "discountPercent": 10,
     "currency": "USD",
-    "per": "person",
-    "priceSource": "getyourguide_t606871",
-    "priceNote": "Original price 43 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+    "per": "persona",
+    "priceSource": "direct_rate",
+    "priceNote": "Precio basado en la tarifa directa de AtoC Korea."
   },
   "hero": {
     "imageUrl": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1600",
@@ -100,40 +100,34 @@
   ],
   "glanceItems": [
     {
-      "icon": "camera",
-      "label": "Valor fotográfico",
-      "value": "Muy alto",
-      "level": 5
-    },
-    {
-      "icon": "mountain",
-      "label": "Densidad escénica",
-      "value": "Muy alto",
-      "level": 5
-    },
-    {
-      "icon": "footprints",
-      "label": "Caminata",
-      "value": "Alto",
-      "level": 4
-    },
-    {
-      "icon": "cloud-rain",
-      "label": "Aptitud lluvia",
-      "value": "Moderado",
-      "level": 3
+      "icon": "clock",
+      "label": "Duración",
+      "value": "≈ 9 horas (recogida desde las 08:30)"
     },
     {
       "icon": "users",
-      "label": "Aptitud familia",
-      "value": "Bueno",
-      "level": 4
+      "label": "Grupo",
+      "value": "Grupo pequeño, minibús con guía de habla inglesa/chino"
     },
     {
-      "icon": "gauge",
-      "label": "Equilibrio",
-      "value": "Equilibrado",
-      "level": 4
+      "icon": "map-pin",
+      "label": "Punto de encuentro",
+      "value": "Ocean Suites 08:30 / Aeropuerto / Ayuntamiento / Shilla DFS"
+    },
+    {
+      "icon": "star",
+      "label": "Valoración",
+      "value": "4,9/5 con 648 reseñas"
+    },
+    {
+      "icon": "footprints",
+      "label": "A pie",
+      "value": "Moderado-exigente — Eoseungsaengak tiene escalones de madera"
+    },
+    {
+      "icon": "ticket",
+      "label": "Incluido",
+      "value": "Vehículo, guía certificado, todas las entradas"
     }
   ],
   "galleryItems": [
@@ -141,7 +135,7 @@
       "id": "g1",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "Sendero de madera en el monte Eoseungsaengak con vistas a la cima del Hallasan cubierta de nubes",
+      "alt": "Imagen de Sendero Eoseungsaengak (Hallasan) — subida a los 1.169 m",
       "caption": "Sendero Eoseungsaengak (Hallasan) — subida a los 1.169 m",
       "location": "Eoseungsaengak, flanco oeste del Hallasan, Jeju",
       "atmosphere": "Mañana de montaña: sendero de madera hacia la cumbre del cono parásito del Hallasan"
@@ -150,16 +144,16 @@
       "id": "g2",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
-      "alt": "Camellias rojas en plena floración en Camellia Hill con visitantes al fondo",
+      "alt": "Imagen de Camellia Hill — jardín botánico de camelias todo el año",
       "caption": "Camellia Hill — jardín botánico de camelias todo el año, sur de Jeju",
-      "location": "Camellia Hill (카멜리아힐), Andeok-myeon, Seogwipo",
+      "location": "Camellia Hill, Andeok-myeon, Seogwipo",
       "atmosphere": "Jardín fotogénico: 6.000 camelias en 172.000 m², protagonistas en invierno"
     },
     {
       "id": "g3",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "Las tres cascadas de Cheonjeyeon vistas desde la pasarela con vegetación exuberante",
+      "alt": "Imagen de Cascadas Cheonjeyeon — Monumento Natural n.° 378",
       "caption": "Cascadas Cheonjeyeon — Monumento Natural n.° 378, Jungmun",
       "location": "Cheonjeyeon, Jungmun, Seogwipo",
       "atmosphere": "El Estanque del Emperador del Cielo: tres saltos entre basalto y vegetación subtropical"
@@ -168,18 +162,18 @@
       "id": "g4",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "El kilómetro de acantilados de basalto hexagonal en Daepo Jusangjeolli con el mar al fondo",
+      "alt": "Imagen de Acantilado Jusangjeolli de Daepo — Monumento Natural n.° 443",
       "caption": "Acantilado Jusangjeolli de Daepo — Monumento Natural n.° 443, Geoparque UNESCO",
-      "location": "Daepo Jusangjeolli (대포 주상절리), Jungmun, Seogwipo",
+      "location": "Daepo Jusangjeolli, Jungmun, Seogwipo",
       "atmosphere": "Arquitectura volcánica: columnas de basalto hexagonal de hasta 25 m de altura frente al océano"
     },
     {
       "id": "g5",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "Los campos de té verde de Osulloc con la montaña Hallasan al fondo",
-      "caption": "Museo y campos de té Osulloc — la plantación de té más grande de Corea",
-      "location": "Osulloc, Aewol-eup, Jeju Noroeste",
+      "alt": "Imagen de Museo y campos de té — la plantación de té más grande de Corea",
+      "caption": "Museo y campos de té — la plantación de té más grande de Corea",
+      "location": ", Aewol-eup, Jeju Noroeste",
       "atmosphere": "Colores esmeralda: la mayor plantación de té verde de Corea con el Hallasan como telón de fondo"
     }
   ],
@@ -188,12 +182,12 @@
       "number": 1,
       "time": "09:00",
       "duration": "30 min",
-      "name": "Recogida (4 puntos en Jeju Ciudad)",
-      "category": "Salida — 4 puntos de recogida en Jeju Ciudad",
-      "description": "Recogida consolidada en cuatro puntos de Jeju Ciudad: **Aeropuerto Internacional de Jeju** para llegadas ese día; **Jeju Ayuntamiento** para hoteles del casco urbano; **Hagwi-dong** como punto más occidental; **Shilla Duty-Free / Ocean Suites (08:30)**. Orden: Ocean Suites → Aeropuerto Puerta 3, Planta 3 (salidas nacionales, 08:45) → Ayuntamiento (09:00) → Hagwi (09:15) → Ruta 1132 sur hacia Eoseungsaengak (~50 min).",
+      "name": "Recogida (4 puntos en Ciudad de Jeju)",
+      "category": "Salida — 4 puntos de recogida en Ciudad de Jeju",
+      "description": "Recogida consolidada en cuatro puntos de Ciudad de Jeju: **Aeropuerto Internacional de Jeju** para llegadas ese día; **Jeju Ayuntamiento** para hoteles del casco urbano; **Hagwi-dong** como punto más occidental; **Shilla Duty-Free / Ocean Suites (08:30)**. Orden: Ocean Suites → Aeropuerto Puerta 3, Planta 3 (salidas nacionales, 08:45) → Ayuntamiento (09:00) → Hagwi (09:15) → Ruta 1132 sur hacia Eoseungsaengak (~50 min).",
       "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
       "highlights": [
-        "4 puntos de recogida en Jeju Ciudad",
+        "4 puntos de recogida en Ciudad de Jeju",
         "Minibús de grupo pequeño, guía certificado inglés/chino",
         "Desplazamiento al sur: ~50 min por la Ruta 1132"
       ],
@@ -201,10 +195,7 @@
         "Recogidas escalonadas 08:30-09:15",
         "Desplazamiento al sur hasta Eoseungsaengak — ~50 min"
       ],
-      "whyOnRoute": "Four pickup points cover Jeju City's hotel + transport zones (airport, mid-city, old town, market district) without forcing guests across the city. Sequencing west→east lands the coach at Hallasan ~10:20 — early enough to catch the morning Eoseungsaengak trail before midday haze + crowds. **Route 1100 closure protocol** ensures guests are informed about winter contingency before departure — Jeju's only highest-altitude national highway is closed ~5–10 days/year for ice.",
-      "visitBasics": {},
-      "convenience": {},
-      "smartNotes": {}
+      "whyOnRoute": "Cuatro puntos de recogida cubren las zonas de hoteles y transporte de Jeju City."
     },
     {
       "number": 2,
@@ -212,7 +203,7 @@
       "duration": "75 min",
       "name": "Sendero Eoseungsaengak (Hallasan UNESCO)",
       "category": "Cono parásito del Hallasan — 1.169 m, vista de 360° sobre toda la isla",
-      "description": "**Eoseungsaengak (어승생악, 1.169 m)** es un cono parásito (*oreum*) en el flanco occidental del **Hallasan (한라산, 1.950 m)** — el pico más alto de Corea y el corazón geológico de Jeju, clasificado como **Patrimonio Natural UNESCO** (junto a Seongsan Ilchulbong). A diferencia de los trails de cumbre del Hallasan (que requieren reserva previa y salen desde otros accesos), Eoseungsaengak es de **libre acceso sin reserva**: sendero de escalones de madera de **1,3 km** de subida (~50-60 min) hasta un **cráter-laguna de 250 m de diámetro** rodeado de monte bajo. Desde arriba, vistas panorámicas de 360° con toda la isla de Jeju, el Mar del Este, la costa sur y, en días despejados, la isla de Marado al suroeste. **Entrada gratuita.**",
+      "description": "**Eoseungsaengak** es un cono parásito (*oreum*) en el flanco occidental del **Hallasan** — el pico más alto de Corea y el corazón geológico de Jeju, clasificado como **Patrimonio Natural UNESCO** (junto a Seongsan Ilchulbong). A diferencia de los trails de cumbre del Hallasan (que requieren reserva previa y salen desde otros accesos), Eoseungsaengak es de **libre acceso sin reserva**: sendero de escalones de madera de **1,3 km** de subida (~50-60 min) hasta un **cráter-laguna de 250 m de diámetro** rodeado de monte bajo. Desde arriba, vistas panorámicas de 360° con toda la isla de Jeju, el Mar del Este, la costa sur y, en días despejados, la isla de Marado al suroeste. **Entrada gratuita.**",
       "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
       "highlights": [
         "**Hallasan UNESCO** accesible sin reserva previa — sendero libre de 1,3 km",
@@ -240,21 +231,6 @@
           "Cultural Heritage Administration — Hallasan Natural Monument 1966",
           "Korea National Park Service — Hallasan visitor management records"
         ]
-      },
-      "visitBasics": {
-        "hours": "Trail entry from 05:00; seasonal closures apply",
-        "closed": "Weather-dependent (snow, fog, high wind closures common Nov–Mar)",
-        "admission": "Free",
-        "walking": "Moderate — short but with many stairs; some steep sections"
-      },
-      "convenience": {
-        "restroom": "Available at Eorimok entry area",
-        "parking": "Available at Eorimok parking"
-      },
-      "smartNotes": {
-        "photo": "Wide-angle shots from the upper lookout work better than close portraits; clear-day views to Jeju City",
-        "facilities": "Best facilities at trail entrance (Eorimok); none along the route",
-        "tip": "Best as a focused scenic walk, not a slow stroll; check weather before — high-altitude conditions change fast"
       }
     },
     {
@@ -263,7 +239,7 @@
       "duration": "75 min",
       "name": "Camellia Hill (jardín botánico, flores todo el año)",
       "category": "Jardín botánico de camelias — 172.000 m², el mayor arboreto de camelias de Oriente",
-      "description": "**Camellia Hill (카멜리아힐, Arboreto de Camelias de Jeju)** es un jardín botánico de **172.000 m²** en Andeok, el **mayor arboreto de camelias de Oriente** por superficie y número de especies: **más de 6.000 camelias de 500 variedades** en jardinería formal de inspiración francesa. Aunque 'Camellia Hill' toma su nombre de las camelias (pico de floración diciembre-marzo), el parque diseña exposiciones de flores durante **todo el año**: hortensias azules en verano, hierba de los enamorados rosa (*muhly grass*) en otoño. Estuvo cerrado al público durante años y volvió a abrirse como destino fotográfico premium. El jardín apareció en varias series de K-drama y en el álbum de BTS. La entrada incluye el jardín principal, los senderos del bosque de camelias y el café Camellia House. **Entradas ₩12.000 (incluidas en el tour).**",
+      "description": "**Camellia Hill** es un jardín botánico de **172.000 m²** en Andeok, el **mayor arboreto de camelias de Oriente** por superficie y número de especies: **más de 6.000 camelias de 500 variedades** en jardinería formal de inspiración francesa. Aunque 'Camellia Hill' toma su nombre de las camelias (pico de floración diciembre-marzo), el parque diseña exposiciones de flores durante **todo el año**: hortensias azules en verano, hierba de los enamorados rosa (*muhly grass*) en otoño. Estuvo cerrado al público durante años y volvió a abrirse como destino fotográfico de mayor comodidad. El jardín apareció en varias series de K-drama y en el álbum de BTS. La entrada incluye el jardín principal, los senderos del bosque de camelias y el café Camellia House. **Entradas ₩12.000 (incluidas en el tour).**",
       "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
       "highlights": [
         "**Mayor arboreto de camelias de Oriente** — 6.000 camelias, 500 variedades en 172.000 m²",
@@ -277,7 +253,7 @@
         "Café Camellia House (opcional) — ~15 min",
         "Vuelta al autobús — ~5 min"
       ],
-      "whyOnRoute": "Después del esfuerzo físico de Eoseungsaengak, Camellia Hill ofrece una experiencia estética y tranquila: pasear por jardines fotogénicos antes del almuerzo y de las paradas costeras de la tarde.",
+      "whyOnRoute": "Después del esfuerzo físico de Eoseungsaengak, Camellia Hill permite una visita estética y tranquila: pasear por jardines fotogénicos antes del almuerzo y de las paradas costeras de la tarde.",
       "_poi_meta": {
         "poi_key": "camellia_hill",
         "kb_version": "1.20",
@@ -289,21 +265,6 @@
           "Korea Tourism Organization — Top Korean botanical gardens registry",
           "Kakao TV / Wavve programming archive — 'EXchange / Transit Love 3' filming locations"
         ]
-      },
-      "visitBasics": {
-        "hours": "Summer (Jun–Aug) 08:30–19:00; Spring/Fall 08:30–18:30; Winter 08:30–17:30 (varies seasonally)",
-        "closed": "Open year-round",
-        "admission": "Adult 10,000 KRW / Teen 8,000 KRW / Child 7,000 KRW (approximate)",
-        "walking": "Easy to moderate — gentle hill paths; mostly stroller-accessible"
-      },
-      "convenience": {
-        "restroom": "Available at entrance and within garden",
-        "parking": "Free parking available"
-      },
-      "smartNotes": {
-        "photo": "Hydrangea tunnel in June; pink muhly grass field in October; camellia varieties peak Nov–Apr",
-        "facilities": "Indoor greenhouse café, gift shop, picnic areas",
-        "tip": "Visit before 10am or after 4pm in peak season to avoid crowds; pair with Osulloc (10 min drive)"
       }
     },
     {
@@ -312,10 +273,10 @@
       "duration": "60 min",
       "name": "Almuerzo — Restaurante local del sur de Jeju",
       "category": "Pausa para comer — Zona costera Andeok-Seogwipo",
-      "description": "**Pausa de 60 minutos** en la franja costera sur entre Camellia Hill y las Cascadas Cheonjeyeon. La costa sur de Jeju es una de las principales zonas pesqueras de Corea, con descargas diarias de abulón, mariscos y pez aguja. Menú habitual: **galchi-jorim (갈치조림, guiso de pez sable)** o **haemul jeongsik (해물정식, menú de marisco)**. Precio orientativo: ≈ ₩15.000/persona. **Almuerzo no incluido — pago directo.**",
+      "description": "**Pausa de 60 minutos** en la franja costera sur entre Camellia Hill y las Cascadas Cheonjeyeon. La costa sur de Jeju es una de las principales zonas pesqueras de Corea, con descargas diarias de abulón, mariscos y pez aguja. Menú habitual: **galchi-jorim** o **haemul jeongsik**. Precio orientativo: ≈ ₩15.000/persona. **Almuerzo no incluido — pago directo.**",
       "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
       "highlights": [
-        "**Galchi-jorim (갈치조림)** — guiso de pez sable, especialidad del sur de Jeju",
+        "**Galchi-jorim** — guiso de pez sable, especialidad del sur de Jeju",
         "**Haemul jeongsik** — menú completo de marisco fresco",
         "**Almuerzo no incluido** (~₩15.000/persona)"
       ],
@@ -324,10 +285,7 @@
         "Almuerzo — ~45 min",
         "Vuelta al autobús — ~5 min"
       ],
-      "whyOnRoute": "South-coast positioning means **10-min hop to Cheonjeyeon Falls** afterward — preserves photo-window timing. Galchi is also a south-Jeju regional specialty (Jeju is Korea's primary cutlassfish landing port), so the geographic placement adds culinary identity to the lunch slot. Pace also breaks the morning's Hallasan + botanical garden walking before the afternoon's three remaining UNESCO/heritage anchors.",
-      "visitBasics": {},
-      "convenience": {},
-      "smartNotes": {}
+      "whyOnRoute": "La posición en la costa sur significa **10 minutos hasta Cheonjeyeon** a continuación."
     },
     {
       "number": 5,
@@ -335,13 +293,13 @@
       "duration": "60 min",
       "name": "Cascadas Cheonjeyeon (Estanque de los Dioses)",
       "category": "Monumento Natural n.° 378 — Tres cascadas en un cañón volcánico subtropical",
-      "description": "**Cascadas Cheonjeyeon (천제연, 'Estanque del Emperador del Cielo')** es una **cascada de tres saltos** en el cañón volcánico de Jungmun, declarada **Monumento Natural n.° 378 (1993)** por sus comunidades botánicas de plantas subtropicales (incluyendo el rarísimo *Tristaniopsis laurina* coreano) y sus poblaciones de anguila japonesa en el estanque natural (*cheonjeyeon*, literalmente 'estanque del cielo'). El **Cheonseonyeon-gyo** ('Puente de las Siete Hadas'), un arco de 1200 kN decorado con las figuras de las siete ninfas celestiales de la leyenda, cruza el primer salto. El recorrido visita los tres estanques en bucle (~0,8 km, ~40 min). En verano se activa la iluminación nocturna. **Entradas ₩2.500 (incluidas).**",
+      "description": "**Cascadas Cheonjeyeon** es una **cascada de tres saltos** en el cañón volcánico de Jungmun, declarada **Monumento Natural n.° 378 (1993)** por sus comunidades botánicas de plantas subtropicales (incluyendo el rarísimo *Tristaniopsis laurina* coreano) y sus poblaciones de anguila japonesa en el estanque natural (*cheonjeyeon*, literalmente 'estanque del cielo'). El **Cheonseonyeon-gyo** ('Puente de las Siete Hadas'), un arco de 1200 kN decorado con las figuras de las siete ninfas celestiales de la leyenda, cruza el primer salto. El recorrido visita los tres estanques en ruta circular (~0,8 km, ~40 min). En verano se activa la iluminación nocturna. **Entradas ₩2.500 (incluidas).**",
       "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
       "highlights": [
         "**Monumento Natural n.° 378** — tres cascadas en un cañón volcánico",
         "**Cheonseonyeon-gyo**: puente decorado con las Siete Hadas celestiales",
         "Comunidades de plantas subtropicales protegidas y anguila japonesa",
-        "Recorrido en bucle de ~0,8 km (~40 min)",
+        "Recorrido en recorrido circular de ~0,8 km (~40 min)",
         "**Entradas ₩2.500** (incluidas)"
       ],
       "timeUsed": [
@@ -362,21 +320,6 @@
           "Korea Plant Society — Mankyua chejuense IUCN Critically Endangered listing",
           "Jeju Folklore Society — Daoist seven-nymph legend documentation"
         ]
-      },
-      "visitBasics": {
-        "hours": "09:00–17:10 (closing varies with sunset, summer extended)",
-        "closed": "Open year-round (occasional weather closures)",
-        "admission": "Adult 2,500 KRW / Child 1,350 KRW",
-        "walking": "Moderate — many stairs through the valley; not stroller-friendly; mobility-difficult"
-      },
-      "convenience": {
-        "restroom": "At entrance/parking area only — none past the ticket office",
-        "parking": "Available near entrance"
-      },
-      "smartNotes": {
-        "photo": "The second tier from its viewing deck is the iconic 30m waterfall shot; Seonimgyo Bridge with seven nymphs is also striking",
-        "facilities": "Small souvenir shop and café at entrance",
-        "tip": "The first tier is dry except after heavy rain — don't be surprised if it's not flowing; allow 1.5–2 hours to see all three tiers; do NOT confuse with Cheonjiyeon Falls (different falls in Seogwipo)"
       }
     },
     {
@@ -385,7 +328,7 @@
       "duration": "45 min",
       "name": "Acantilado Jusangjeolli de Daepo (Columnas volcánicas)",
       "category": "Monumento Natural n.° 443 — Geoparque Global UNESCO — Columnas basálticas hexagonales",
-      "description": "**Daepo Jusangjeolli (대포 주상절리, 'Jisatgae')** es una **franja de 1 km de acantilados de basalto hexagonal** en la costa de Jungmun, declarado **Monumento Natural n.° 443** (2005) y parte del **Geoparque Global UNESCO de Jeju**. Formado hace entre 25.000 y 140.000 años cuando la lava se enfrió rápidamente al contacto con el mar, el proceso de contracción termal generó un entramado de **polígonos perfectos de 6 lados** de hasta **25 m de altura** y **1-3 m de diámetro** que cubren toda la cara del acantilado. La pasarela costera permite observar desde arriba el impacto de las olas en las columnas, con salpicaduras que pueden alcanzar los **20 m en días de marejada**. **Entradas ₩2.000 (incluidas).**",
+      "description": "**Daepo Jusangjeolli** es una **franja de 1 km de acantilados de basalto hexagonal** en la costa de Jungmun, declarado **Monumento Natural n.° 443** (2005) y parte del **Geoparque Global UNESCO de Jeju**. Formado hace entre 25.000 y 140.000 años cuando la lava se enfrió rápidamente al contacto con el mar, el proceso de contracción termal generó un entramado de **polígonos perfectos de 6 lados** de hasta **25 m de altura** y **1-3 m de diámetro** que cubren toda la cara del acantilado. La pasarela costera permite observar desde arriba el impacto de las olas en las columnas, con salpicaduras que pueden alcanzar los **20 m en días de marejada**. **Entradas ₩2.000 (incluidas).**",
       "image": "https://images.unsplash.com/photo-1565967511849-76a60a516170",
       "highlights": [
         "**Monumento Natural n.° 443 + Geoparque Global UNESCO** de Jeju",
@@ -400,7 +343,7 @@
         "Fotografía de las columnas y el mar — ~15 min",
         "Vuelta al autobús — ~5 min"
       ],
-      "whyOnRoute": "Las columnas de Jusangjeolli son la imagen más icónica de la geología volcánica de Jeju. Colocarlas en la tarde del tour maximiza la luz dorada para fotografiar.",
+      "whyOnRoute": "Las columnas de Jusangjeolli son la imagen más representativa de la geología volcánica de Jeju. Colocarlas en la tarde del tour maximiza la luz dorada para fotografiar.",
       "_poi_meta": {
         "poi_key": "daepo_jusangjeolli_cliff",
         "kb_version": "1.20",
@@ -412,45 +355,30 @@
           "VisitJeju — Daepo Jusangjeolli official listing",
           "Korea Geological Survey — Jeju volcanic flow chronology"
         ]
-      },
-      "visitBasics": {
-        "hours": "09:00–18:00 (summer extended)",
-        "closed": "Open year-round (weather-dependent)",
-        "admission": "Adult 2,000 KRW / Child 1,000 KRW (low fee)",
-        "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
-      },
-      "convenience": {
-        "restroom": "At entrance/visitor center",
-        "parking": "Available near entrance"
-      },
-      "smartNotes": {
-        "photo": "Best with high tide and rough seas — waves smashing into the columns make dramatic shots; golden hour gives best column-color contrast",
-        "facilities": "Small geological exhibition near entrance; souvenir shop",
-        "tip": "Get there before 11am or after 4pm to avoid tour-bus crowds; combine with Jungmun Saekdal Beach (5 min) for a half-day"
       }
     },
     {
       "number": 7,
       "time": "≈ 16:40",
       "duration": "60 min",
-      "name": "Museo de Té Osulloc y Campos de Té Verde",
+      "name": "Museo de Té y Campos de Té Verde",
       "category": "Referente de la cultura del té de Corea — Amorepacific, la mayor plantación de Corea",
-      "description": "**Museo de Té Osulloc (오설록 티 뮤지엄, '오설록' significa 'encuentro nieve-verde')** es el referente de la cultura del té de **Amorepacific Corporation** — la mayor empresa de cosméticos de Corea. Fundada por **Suh Sung-Hwan** en los años 70 cuando rehabilitó tierras volcánicas desertizadas de Jeju para cultivar té verde, la **Plantación de Té Seogwang (서광다원)** cubre más de **700.000 m²** y produce hoy aprox. **700 toneladas/año** de té verde, siendo la mayor de Corea. El museo (entrada gratuita) reúne una colección de **tetera y cerámica desde la dinastía Tang** hasta la actualidad, y el café ofrece **helado de té matcha y rollitos de té** famosos en toda Corea. Las **hileras de té verde con el Hallasan al fondo** son uno de los escenarios fotográficos más reproducidos de Jeju. **Entrada gratuita al museo y a los campos.**",
+      "description": "**Museo de Té ** es el referente de la cultura del té de **Amorepacific Corporation** — la mayor empresa de cosméticos de Corea. Fundada por **Suh Sung-Hwan** en los años 70 cuando rehabilitó tierras volcánicas desertizadas de Jeju para cultivar té verde, la **Plantación de Té Seogwang** cubre más de **700.000 m²** y produce hoy aprox. **700 toneladas/año** de té verde, siendo la mayor de Corea. El museo (entrada gratuita) reúne una colección de **tetera y cerámica desde la dinastía Tang** hasta la actualidad, y el café ofrece **helado de té matcha y rollitos de té** famosos en toda Corea. Las **hileras de té verde con el Hallasan al fondo** son uno de los escenarios fotográficos más reproducidos de Jeju. **Entrada gratuita al museo y a los campos.**",
       "image": "https://images.unsplash.com/photo-1556881286-fc6915169721",
       "highlights": [
         "**Mayor plantación de té verde de Corea** — 700.000 m², ~700 t/año",
         "Colección de cerámica y utillaje del té desde la **dinastía Tang**",
         "**Helado de matcha y rollitos de té** — los más famosos de Jeju",
-        "**Hileras de té verde con el Hallasan al fondo** — escenario fotográfico icónico",
+        "**Hileras de té verde con el Hallasan al fondo** — escenario fotográfico representativo",
         "**Entrada gratuita** (museo y campos)"
       ],
       "timeUsed": [
         "Entrada al museo + colección de cerámica — ~15 min",
-        "Café Osulloc (helado/rollito de té, opcional) — ~20 min",
+        "Café (helado/rollito de té, opcional) — ~20 min",
         "Paseo por los campos de té y fotografía — ~15 min",
         "Vuelta al autobús — ~5 min"
       ],
-      "whyOnRoute": "Osulloc es el cierre perfecto del tour: relajado, fotogénico y sin coste de entrada. El contraste entre el verde del té y la calma del entorno después de las cascadas y acantilados da un descanso natural al final del día.",
+      "whyOnRoute": " es el cierre perfecto del tour: relajado, fotogénico y sin coste de entrada. El contraste entre el verde del té y la calma del entorno después de las cascadas y acantilados da un descanso natural al final del día.",
       "_poi_meta": {
         "poi_key": "osulloc_tea_museum",
         "kb_version": "1.20",
@@ -462,29 +390,14 @@
           "designboom — Top 10 art museums feature",
           "VisitJeju — Osulloc Tea Museum official listing"
         ]
-      },
-      "visitBasics": {
-        "hours": "Summer 09:00–19:00 / Winter 09:00–18:00",
-        "closed": "Open year-round (weather closures possible)",
-        "admission": "Free for museum; tea/desserts in café paid; Innisfree workshops paid separately",
-        "walking": "Easy — flat museum and stroller-friendly tea fields; well-maintained paths"
-      },
-      "convenience": {
-        "restroom": "Multiple restrooms; aesthetically designed",
-        "parking": "Free parking available"
-      },
-      "smartNotes": {
-        "photo": "Tea fields with tour-cup shaped museum building; outdoor seating area; cherry blossoms peak shoulder season",
-        "facilities": "Café (must-try green tea ice cream), gift shop, Innisfree Jeju House next door, observatory deck overlooking fields",
-        "tip": "Arrive before 10:30 to beat the tour-bus rush; allow 1.5–2 hours including café time and tea field walk"
       }
     },
     {
       "number": 8,
       "time": "≈ 17:50",
       "duration": "40 min",
-      "name": "Regreso (5 puntos en Jeju Ciudad)",
-      "category": "Regreso — 5 puntos de llegada en Jeju Ciudad",
+      "name": "Regreso (5 puntos en Ciudad de Jeju)",
+      "category": "Regreso — 5 puntos de llegada en Ciudad de Jeju",
       "description": "El regreso invierte el orden de las recogidas con un punto adicional: Mercado Dongmun → Ayuntamiento de Jeju → Hagwi-dong → Aeropuerto Internacional de Jeju, con parada previa opcional en el centro comercial **Shilla Duty-Free**. Hora estimada de llegada al aeropuerto: **17:40-18:00 h** según tráfico.",
       "image": "https://images.unsplash.com/photo-1549144511-f099e773c147",
       "highlights": [
@@ -492,23 +405,20 @@
         "Hora estimada de llegada al aeropuerto: **17:40-18:00 h**"
       ],
       "timeUsed": [
-        "Osulloc → Jeju Ciudad — ~50 min",
+        " → Ciudad de Jeju — ~50 min",
         "Paradas de llegada escalonadas"
       ],
-      "whyOnRoute": "Dongmun Market drop-off = optional dinner stop. City Hall + Yeon-dong + Hagwi cover hotel-zone guests. Airport drop covers same-day evening departures (last flight ~21:30 from JIA = viable). 40-min total drop-off window covers all 5 points without backtracking.",
-      "visitBasics": {},
-      "convenience": {},
-      "smartNotes": {}
+      "whyOnRoute": "Bajada en Mercado Dongmun = parada de cena opcional. Ayuntamiento + Yeon-dong + Hagwi cubren el centro de Jeju City."
     }
   ],
   "routeFlowStops": [
     {
-      "name": "Jeju City + airport pickup",
+      "name": "Jeju City + recogida aeropuerto",
       "type": "origin",
-      "theme": "Departure"
+      "theme": "Salida"
     },
     {
-      "name": "Eoseungsaengak Trail (Hallasan UNESCO)",
+      "name": "Sendero Eoseungsaengak (Hallasan UNESCO)",
       "type": "primary",
       "theme": "Volcano"
     },
@@ -518,56 +428,56 @@
       "theme": "Garden"
     },
     {
-      "name": "Lunch",
+      "name": "Almuerzo",
       "type": "meal",
-      "theme": "Meal"
+      "theme": "Comida"
     },
     {
-      "name": "Cheonjeyeon Waterfall",
+      "name": "Cascada Cheonjeyeon",
       "type": "primary",
       "theme": "Waterfall"
     },
     {
-      "name": "Jusangjeolli Cliff (UNESCO Geopark)",
+      "name": "Acantilado Jusangjeolli (Geoparque UNESCO)",
       "type": "primary",
-      "theme": "Coast"
+      "theme": "Costa"
     },
     {
-      "name": "O'sulloc Tea Museum",
+      "name": "Museo del Té O'sulloc",
       "type": "secondary",
       "theme": "Culture"
     },
     {
-      "name": "Jeju City drop-off (5 options)",
+      "name": "Bajada Jeju City (5 opciones)",
       "type": "return",
-      "theme": "Return"
+      "theme": "Regreso"
     }
   ],
   "routePhases": [
     {
       "phase": "Mañana en la montaña",
-      "duration": "≈ 1 hour walk",
+      "duration": "≈ 1 hora de caminata",
       "description": "Sendero Eoseungsaengak en el Hallasan (~2 h), luego Camellia Hill (45 min)."
     },
     {
       "phase": "Jardín y almuerzo",
-      "duration": "≈ 2 hours",
+      "duration": "≈ 2 horas",
       "description": "Camellia Hill (jardín botánico) y almuerzo local del sur de Jeju."
     },
     {
       "phase": "UNESCO en la costa sur",
-      "duration": "≈ 2.5 hours",
+      "duration": "≈ 2,5 horas",
       "description": "Cascadas Cheonjeyeon + Acantilado Jusangjeolli (ambos Monumentos Naturales, Geoparque UNESCO)."
     },
     {
       "phase": "Cierre en los campos de té",
-      "duration": "≈ 1 hour",
-      "description": "Museo de Té Osulloc y la mayor plantación de té verde de Corea."
+      "duration": "≈ 1 hora",
+      "description": "Museo de Té y la mayor plantación de té verde de Corea."
     },
     {
       "phase": "Regreso",
-      "duration": "≈ 1 hour",
-      "description": "Costa sur → Jeju Ciudad por 5 puntos de llegada escalonados."
+      "duration": "≈ 1 hora",
+      "description": "Costa sur → Ciudad de Jeju por 5 puntos de llegada escalonados."
     }
   ],
   "routeShapeIntro": {
@@ -577,7 +487,7 @@
   "whyTourWorks": {
     "bestFor": [
       "Visitantes por primera vez a Jeju que quieren cubrir lo más emblemático del sur en un día",
-      "Amantes de la fotografía (Hallasan, Camellia Hill, Jusangjeolli, Osulloc)",
+      "Amantes de la fotografía",
       "Viajeros activos cómodos con senderismo de montaña + rutas costeras",
       "Quienes buscan un tour sin paradas de compras ni comisiones"
     ],
@@ -588,7 +498,7 @@
     ],
     "routeLogicSections": [
       {
-        "title": "Por qué está diseñado este itinerario",
+        "title": "Por qué esta ruta funciona bien",
         "icon": "route",
         "iconBg": "bg-sky-50/80",
         "iconColor": "text-sky-600",
@@ -606,8 +516,8 @@
             "detail": "El tour del sur usa la Puerta 3 del aeropuerto (Planta 3, Salidas Nacionales) porque la ruta en dirección sur sale directamente desde ese lado. El tour del este usa la Puerta 1."
           },
           {
-            "label": "Formato de minibús compartido: precio medio, experiencia premium",
-            "detail": "Un minibús de hasta 14 personas ofrece una experiencia más íntima que un autocar grande, a una fracción del coste de un servicio privado."
+            "label": "Formato de minibús compartido: precio medio, experiencia de mayor comodidad",
+            "detail": "Un minibús de hasta 14 personas permite una visita más íntima que un autocar grande, a una fracción del coste de un servicio privado."
           }
         ]
       }
@@ -616,103 +526,103 @@
   "practicalAccordionItems": [
     {
       "id": "inclusions",
-      "title": "What's included",
-      "preview": "Air-conditioned mini-coach, certified guía en inglés/chino, ALL attraction…",
+      "title": "Qué está incluido",
+      "preview": "Minibús con aire acondicionado, guía certificado de habla inglesa/china y entradas a las atracciones incluidas…",
       "content": [
-        "Air-conditioned mini-coach, certified guía en inglés/chino, ALL attraction admissions (Camellia Hill, Cheonjeyeon, Jusangjeolli, O'sulloc), fuel/tolls/parking.",
-        "Not included: lunch (~₩15,000), drinks, tips.",
-        "The all-admissions-included structure is unusual at this price tier."
+        "Minibús con aire acondicionado, guía certificado de habla inglesa o china, todas las entradas a atracciones (Camellia Hill, Cheonjeyeon, Jusangjeolli y O'sulloc), combustible, peajes y estacionamiento incluidos.",
+        "No incluido: almuerzo (~₩15.000), bebidas, propinas.",
+        "La estructura de admisiones incluidas es inusual en este rango de precio."
       ]
     },
     {
       "id": "pickup",
-      "title": "Pickup & drop-off",
-      "preview": "Sequential pickup at four points: Ocean Suites Jeju (08:30) → Jeju Airport Gate 3, 3F…",
+      "title": "Recogida y regreso",
+      "preview": "Recogida secuencial en cuatro puntos: Ocean Suites Jeju (08:30), Aeropuerto Puerta 3 (08:45), Ayuntamiento (09:00), Mercado Dongmun (09:10).",
       "content": [
-        "Sequential pickup at four points: Ocean Suites Jeju (08:30) → Jeju Airport Gate 3, 3F Domestic Departures (08:45) → LOTTE City Hotel Jeju (08:55) → Shilla Duty-Free Jeju Store (09:05).",
-        "Choose the closest at booking.",
-        "Arrive 10 minutes early; 10+ minute no-shows are non-refundable.",
-        "Day-before WhatsApp confirmation."
+        "Recogidas secuenciales en cuatro puntos: Ocean Suites Jeju (08:30) → Aeropuerto de Jeju Puerta 3, 3ª planta Nacional → Emart Nohyeong → Ora CC.",
+        "Elige el más cercano al reservar.",
+        "Llega 10 minutos antes; los retrasos de más de 10 minutos cuentan como no presentación sin reembolso.",
+        "Confirmación por WhatsApp la noche anterior."
       ]
     },
     {
       "id": "walking",
-      "title": "Walking & terrain",
-      "preview": "Moderate to demanding.",
+      "title": "Caminata y terreno",
+      "preview": "Moderado a exigente.",
       "content": [
-        "Moderate to demanding.",
-        "Eoseungsaengak Trail is 1.3 km of wooden-stair climbing each way (≈50–60 min round-trip; tougher than Seongsan Ilchulbong).",
-        "Camellia Hill is large but flat with paved paths.",
-        "Cheonjeyeon has stairs to the lower viewpoints.",
-        "Jusangjeolli has boardwalk with railings.",
-        "O'sulloc is flat.",
-        "Total walking ≈ 4 km.",
-        "Comfortable closed-toe shoes essential; trekking shoes recommended if you have them."
+        "De moderado a exigente.",
+        "Sendero Eoseungsaengak: 1,3 km de escaleras de madera en cada sentido (≈50-60 min ida y vuelta; el tramo más exigente).",
+        "Camellia Hill es grande pero llano con caminos pavimentados.",
+        "Cheonjeyeon tiene escaleras hasta los miradores inferiores.",
+        "Jusangjeolli tiene pasarela con barandillas.",
+        "O'sulloc es llano.",
+        "Caminata total ≈4 km.",
+        "Calzado cerrado esencial; zapatillas de senderismo recomendadas."
       ]
     },
     {
       "id": "cancellation",
-      "title": "Cancellation",
-      "preview": "Free cancellation up to 24 hours before pickup.",
+      "title": "Cancelación",
+      "preview": "Cancelación gratuita hasta 24 horas antes de la recogida.",
       "content": [
-        "Free cancellation up to 24 hours before pickup.",
-        "Same-day cancellations and no-shows non-refundable.",
-        "The Eoseungsaengak Trail may be substituted for an alternate Hallasan trailhead (1100 Wetland or Sajebi) in heavy snow or trail closure conditions."
+        "Cancelación gratuita hasta 24 horas antes de la recogida.",
+        "Las cancelaciones en el mismo día y las no presentaciones no son reembolsables.",
+        "El sendero Eoseungsaengak puede sustituirse por otro acceso al Hallasan (Humedal 1100, etc.)."
       ]
     },
     {
       "id": "drop",
-      "title": "Drop-off options",
-      "preview": "Five drop-off points: Shilla Duty-Free (≈17:30), LOTTE City Hotel (≈17:35), Jeju Airport…",
+      "title": "Opciones de bajada",
+      "preview": "5 puntos de bajada: Shilla Duty-Free (≈17:30), LOTTE City Hotel, Aeropuerto Jeju...",
       "content": [
-        "Five drop-off points: Shilla Duty-Free (≈17:30), LOTTE City Hotel (≈17:35), Jeju Airport (≈17:40), Ocean Suites (≈17:45), Dongmun Traditional Market (≈18:00).",
-        "Dongmun is drop-only — operator does not enter the market with you.",
-        "Black Pork Street is 5 minutes' walk from Dongmun."
+        "Cinco puntos de bajada: Shilla Duty-Free (≈17:30), LOTTE City Hotel (≈17:35), Aeropuerto de Jeju (≈17:40), Mercado Dongmun (≈17:45), Playa Iho Tewoo (≈18:00).",
+        "Dongmun es solo bajada; el operador no entra al mercado con el grupo.",
+        "La Calle del Cerdo Negro está a 5 minutos a pie de Dongmun."
       ]
     },
     {
       "id": "children",
-      "title": "Children & accessibility",
-      "preview": "Children of all ages welcome.",
+      "title": "Niños y accesibilidad",
+      "preview": "Niños de todas las edades bienvenidos.",
       "content": [
-        "Children of all ages welcome.",
-        "Eoseungsaengak Trail is stroller-unfriendly (continuous wooden stairs to the summit).",
-        "Other stops accessible.",
-        "Limited wheelchair accessibility at Cheonjeyeon (stairs); other stops mostly OK.",
-        "Advise mobility needs at booking."
+        "Se aceptan niños de todas las edades.",
+        "El sendero Eoseungsaengak no es apto para cochecitos (escaleras de madera continuas).",
+        "El resto de las paradas son accesibles.",
+        "Acceso en silla de ruedas limitado en Cheonjeyeon (escaleras); el resto generalmente bien.",
+        "Indique necesidades de movilidad al reservar."
       ]
     }
   ],
   "practicalWeatherStatic": {
     "today": {
       "temp": "—",
-      "label": "See seasonal notes"
+      "label": "Consultar notas de temporada"
     },
     "tomorrow": {
       "temp": "—",
-      "label": "See seasonal notes"
+      "label": "Consultar notas de temporada"
     },
-    "_seasonalSummary": "Jeju has Korea's mildest climate — coastal areas rarely freeze in winter, and summers are humid but moderated by sea breeze. The Hallasan trailhead is 5–10°C colder than coastal Jeju year-round.",
+    "_seasonalSummary": "Jeju tiene uno de los climas más suaves de Corea: las zonas costeras rara vez se congelan en invierno, y los veranos son húmedos pero suavizados por la brisa marina. El inicio del sendero de Hallasan suele ser 5–10°C más frío que la costa de Jeju durante todo el año.",
     "_seasonalTemperatures": [
       {
-        "season": "Spring (Mar–May)",
+        "season": "Primavera (mar.–may.)",
         "range": "8–22°C",
-        "notes": "Cherry blossoms in early April. Best season for the Hallasan trail."
+        "notes": "Cerezos en flor a principios de abril. La mejor época para el sendero de Hallasan."
       },
       {
-        "season": "Summer (Jun–Aug)",
+        "season": "Verano (jun.–ago.)",
         "range": "22–30°C",
-        "notes": "Humid; afternoon showers common. Camellia Hill rotates to hydrangea bloom."
+        "notes": "Húmedo; los chubascos por la tarde son frecuentes. Camellia Hill cambia su atractivo principal a la floración de hortensias."
       },
       {
-        "season": "Autumn (Sep–Nov)",
+        "season": "Otoño (sep.–nov.)",
         "range": "10–24°C",
-        "notes": "Best season — clear, mild, with pink muhly bloom at Camellia Hill in Oct–Nov."
+        "notes": "Mejor temporada: clima despejado y suave, con muhly rosa en Camellia Hill entre octubre y noviembre."
       },
       {
-        "season": "Winter (Dec–Feb)",
+        "season": "Invierno (dic.–feb.)",
         "range": "3–10°C",
-        "notes": "Mild on coast; Hallasan upper slopes can have snow. Camellia Hill peak bloom."
+        "notes": "Suave en la costa; las zonas altas de Hallasan pueden tener nieve. Camellia Hill suele estar en su mejor momento de floración."
       }
     ]
   },
@@ -737,24 +647,24 @@
   "bookingTrustItems": [
     {
       "icon": "check-circle",
-      "title": "Operador local certificado",
-      "description": "Authorized Korean tour operator with full insurance",
+      "title": "Equipo local certificado",
+      "description": "Operador turístico coreano autorizado con seguro completo",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
-      "body": "4,9/5 con 648 reseñas. Operador local certificado con seguro completo. Sin paradas de compras."
+      "body": "4,9/5 con 648 reseñas. Equipo local certificado con seguro completo. Sin paradas de compras."
     },
     {
       "icon": "route",
       "title": "Especialistas en la ruta",
-      "description": "Hand-tuned itinerary, not a generic loop",
+      "description": "Itinerario ajustado a medida, no un circuito genérico",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
-      "body": "Todas las entradas incluidas: Camellia Hill (₩12.000), Cheonjeyeon (₩2.500), Jusangjeolli (₩2.000). Osulloc y Eoseungsaengak: gratuitos."
+      "body": "Todas las entradas incluidas: Camellia Hill (₩12.000), Cheonjeyeon (₩2.500), Jusangjeolli (₩2.000). y Eoseungsaengak: gratuitos."
     },
     {
       "icon": "users",
       "title": "Grupo reducido cuidado",
-      "description": "Right-sized for the route",
+      "description": "Tamaño adecuado para la ruta",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600",
       "body": "Minibús de grupo pequeño (máx. ~14 personas). Camellia Hill sin aglomeraciones de autocar."
@@ -762,40 +672,40 @@
   ],
   "bookingSupportSteps": [
     {
-      "timing": "Immediately",
+      "timing": "Inmediatamente",
       "title": "Confirmación inmediata",
       "detail": "Confirmación instantánea con resumen del itinerario.",
-      "description": "Instant confirmation with Jeju City hotel pickup details (free within city; +₩70,000 outside)."
+      "description": "Confirmación instantánea con los detalles de recogida en el hotel de Jeju City (gratis en la ciudad; +₩70.000 fuera)."
     },
     {
-      "timing": "12 hours before",
+      "timing": "12 horas antes",
       "title": "Recordatorio 12 horas antes",
       "detail": "Información meteorológica, condiciones en Eoseungsaengak y detalles de recogida.",
-      "description": "Pre-tour note on Camellia Hill's current bloom season (the garden has a named festival in every month)."
+      "description": "Nota previa sobre la temporada de floración actual de Camellia Hill (el jardín tiene un festival nombrado cada mes)."
     },
     {
-      "timing": "Evening before",
+      "timing": "La noche anterior",
       "title": "Información final de recogida",
       "detail": "Punto de encuentro exacto y contacto del guía.",
-      "description": "Final pickup time confirmed the evening before."
+      "description": "Hora de recogida final confirmada la noche anterior."
     },
     {
-      "timing": "Morning of tour",
+      "timing": "La mañana del tour",
       "title": "Notas del día del tour",
       "detail": "Instrucciones matutinas con estado de la montaña y ajustes de ruta.",
-      "description": "Morning weather message and any note on Hallasan trail conditions."
+      "description": "Mensaje meteorológico matutino y cualquier nota sobre las condiciones del sendero de Hallasan."
     },
     {
-      "timing": "During tour",
+      "timing": "Durante el tour",
       "title": "Consejos parada a parada",
       "detail": "Recomendaciones de almuerzo, mejores ángulos fotográficos en Camellia Hill.",
-      "description": "Guide narrates Hallasan's shield-volcano context, columnar joint formation, Joseon-era Seven Nymph legend at Cheonjeyeon, and Osulloc's 1979 founding by Amorepacific."
+      "description": "El guía narra el contexto del volcán escudo de Hallasan, la formación de juntas columnares, la leyenda joseon de las Siete Ninfas y la misión de 30 años del arboreto de Camellia Hill."
     },
     {
-      "timing": "After tour",
+      "timing": "Tras el tour",
       "title": "Atención posventa",
       "detail": "Solicitud de valoración enviada después del tour.",
-      "description": "Post-tour feedback request sent after drop-off."
+      "description": "Solicitud de valoración después del tour enviada tras la llegada."
     }
   ],
   "staticQuestions": [
@@ -812,7 +722,7 @@
     {
       "id": "q3",
       "question": "¿En qué se diferencia del tour del este de Jeju?",
-      "answer": "El tour del sur cubre Hallasan (Eoseungsaengak), Camellia Hill, Cascadas Cheonjeyeon, Acantilado Jusangjeolli y Osulloc — enfocado en el volcán y la costa sur. El tour del este incluye Seongsan Ilchulbong, la Aldea Seongeup y el Museo Haenyeo. Ningún POI se repite; puede hacer los dos en días consecutivos."
+      "answer": "El tour del sur cubre Hallasan (Eoseungsaengak), Camellia Hill, Cascadas Cheonjeyeon, Acantilado Jusangjeolli y — enfocado en el volcán y la costa sur. El tour del este incluye Seongsan Ilchulbong, la Aldea Seongeup y el Museo Haenyeo. Ningún POI se repite; puede hacer los dos en días consecutivos."
     },
     {
       "id": "q4",
@@ -837,12 +747,12 @@
     {
       "id": "walking",
       "question": "¿Es difícil la caminata?",
-      "answer": "Moderada-exigente. La subida a Eoseungsaengak es la sección más dura (~50 min de escalones empinados). El resto del día: cascadas (0,8 km plano-suave), Jusangjeolli (1 km plano) y Osulloc (paseo ligero)."
+      "answer": "Moderada-exigente. La subida a Eoseungsaengak es la sección más dura (~50 min de escalones empinados). El resto del día: cascadas (0,8 km plano-suave), Jusangjeolli (1 km plano) y (paseo ligero)."
     },
     {
       "id": "family",
       "question": "¿Es adecuado para familias?",
-      "answer": "Sí para familias con niños a partir de 6-8 años cómodos con el senderismo de Eoseungsaengak. Camellia Hill y Osulloc son especialmente agradables para todas las edades."
+      "answer": "Sí para familias con niños a partir de 6-8 años cómodos con el senderismo de Eoseungsaengak. Camellia Hill y son especialmente agradables para todas las edades."
     },
     {
       "id": "seniors",
@@ -868,7 +778,7 @@
       {
         "stars": 4,
         "count": 39,
-        "percentage": 6
+        "percentage": 6.0
       },
       {
         "stars": 3,
@@ -889,16 +799,16 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "La disponibilidad se confirma en el paso de pago.",
     "price": {
       "amountLabel": "38.70",
       "originalPriceUsd": 43,
       "salePriceUsd": 38.7,
       "discountPercent": 10,
       "currency": "USD",
-      "per": "person",
-      "priceSource": "getyourguide_t606871",
-      "priceNote": "Original price 43 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+      "per": "persona",
+      "priceSource": "direct_rate",
+      "priceNote": "Precio basado en la tarifa directa de AtoC Korea."
     }
   },
   "pickup_dropoff": {
@@ -917,13 +827,13 @@
         "time": "08:55"
       },
       {
-        "name": "Shilla Duty-Free Jeju Store",
+        "name": "Shilla Duty Free Jeju",
         "time": "09:05"
       }
     ],
     "dropoff_points": [
       {
-        "name": "Shilla Duty-Free Jeju Store",
+        "name": "Shilla Duty Free Jeju",
         "approx_time": "≈ 17:30"
       },
       {
@@ -931,7 +841,7 @@
         "approx_time": "≈ 17:35"
       },
       {
-        "name": "Jeju International Airport",
+        "name": "Aeropuerto Internacional de Jeju",
         "approx_time": "≈ 17:40"
       },
       {
@@ -939,23 +849,23 @@
         "approx_time": "≈ 17:45"
       },
       {
-        "name": "Dongmun Traditional Market (drop-only)",
+        "name": "Mercado Tradicional Dongmun (solo bajada)",
         "approx_time": "≈ 18:00"
       }
     ],
     "hotel_pickup_available": false,
-    "notes": "AtoC Korea curated edit: Eongdeongmul Valley removed from the GetYourGuide standard route to focus on the five highest-impact stops. All admissions included; explicit no-shopping policy."
+    "notes": "Ruta curada por AtoC Korea: se ha retirado el valle Eongdeongmul de la ruta estándar de Referencia de mercado para centrarse en las cinco paradas de mayor impacto. Todas las entradas están incluidas y se aplica una política clara de no compras obligatorias."
   },
   "matching_profile": {
     "profile_version": 6,
     "is_active": true,
-    "product_id": "jeju-southern-top-unesco-spots-tour",
+    "product_id": "jeju-southern-top-unesco-lugares-tour",
     "product_type": "small_group",
     "route_type": "fixed_route",
     "destination_region": "jeju",
     "region_type": "jeju_south",
     "vehicle_type": "minicoach",
-    "duration_hours": 9,
+    "duration_hours": 9.0,
     "region_tags": [
       "jeju_south",
       "jeju_seogwipo"
@@ -983,40 +893,40 @@
     "first_time_fit": 0.95,
     "family_fit": 0.6,
     "senior_fit": 0.55,
-    "couple_fit": 1,
+    "couple_fit": 1.0,
     "solo_traveler_fit": 0.9,
     "active_traveler_fit": 0.8,
     "adult_family_fit": 0.8,
-    "family_with_teens_fit": 1,
+    "family_with_teens_fit": 1.0,
     "young_kids_fit": 0.85,
     "senior_active_fit": 0.6,
     "senior_general_fit": 0.4,
     "mobility_friendly_fit": 0.55,
     "stroller_fit": 0.5,
-    "one_day_fit": 1,
+    "one_day_fit": 1.0,
     "same_day_flight_fit": 0.7,
     "rain_fit": 0.6,
     "value_for_money_fit": 0.85,
     "iconic_landmark_fit": 0.85,
     "cafe_fit": 0.4,
     "food_fit": 0.6,
-    "nature_fit": 1,
+    "nature_fit": 1.0,
     "beach_fit": 0.2,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.2,
-    "no_shopping_fit": 1,
+    "no_shopping_fit": 1.0,
     "local_culture_fit": 0.6,
-    "storytelling_fit": 1,
-    "unesco_fit": 1,
+    "storytelling_fit": 1.0,
+    "unesco_fit": 1.0,
     "intangible_heritage_fit": 0.55,
     "indoor_ratio": 0.25,
     "weather_sensitivity": 0.6,
     "comfort_level": 0.6,
-    "budget_fit": 1,
+    "budget_fit": 1.0,
     "premium_fit": 0.5,
-    "small_group_fit": 1,
+    "small_group_fit": 1.0,
     "private_fit": 0.2,
-    "bus_fit": 1,
+    "bus_fit": 1.0,
     "price_band": "budget",
     "pickup_base": "jeju_city",
     "return_time_band": "17:00-18:30",
@@ -1057,54 +967,54 @@
     ],
     "profile_format": "small_group_fixed_itinerary",
     "private_tour_fit": 0.05,
-    "fixed_itinerary_fit": 1,
+    "fixed_itinerary_fit": 1.0,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
     "first_time_jeju_fit": 0.95,
-    "south_jeju_fit": 1,
-    "southwest_jeju_fit": 1,
+    "south_jeju_fit": 1.0,
+    "southwest_jeju_fit": 1.0,
     "central_jeju_fit": 0.85,
     "north_jeju_fit": 0.3,
     "east_jeju_fit": 0.05,
     "west_jeju_fit": 0.5,
-    "south_unesco_focused_fit": 1,
-    "south_jeju_signature_fit": 1,
-    "unesco_focused_tour_fit": 1,
-    "unesco_taste_fit": 1,
+    "south_unesco_focused_fit": 1.0,
+    "south_jeju_signature_fit": 1.0,
+    "unesco_focused_tour_fit": 1.0,
+    "unesco_taste_fit": 1.0,
     "unesco_anchor_count": 5,
-    "world_natural_heritage_fit": 1,
-    "biosphere_reserve_fit": 1,
-    "global_geopark_fit": 1,
+    "world_natural_heritage_fit": 1.0,
+    "biosphere_reserve_fit": 1.0,
+    "global_geopark_fit": 1.0,
     "natural_monument_anchor_count": 3,
-    "triple_natural_designation_fit": 1,
-    "volcano_geology_fit": 1,
-    "columnar_jointing_fit": 1,
+    "triple_natural_designation_fit": 1.0,
+    "volcano_geology_fit": 1.0,
+    "columnar_jointing_fit": 1.0,
     "tuff_cone_fit": 0.6,
-    "ocean_falling_waterfall_fit": 0,
+    "ocean_falling_waterfall_fit": 0.0,
     "asia_unique_landform_fit": 0.95,
-    "shield_volcano_fit": 1,
-    "botanical_garden_fit": 1,
-    "camellia_arboretum_fit": 1,
-    "year_round_bloom_fit": 1,
-    "largest_in_east_fit": 1,
-    "themed_garden_fit": 1,
-    "flower_lover_fit": 1,
+    "shield_volcano_fit": 1.0,
+    "botanical_garden_fit": 1.0,
+    "camellia_arboretum_fit": 1.0,
+    "year_round_bloom_fit": 1.0,
+    "largest_in_east_fit": 1.0,
+    "themed_garden_fit": 1.0,
+    "flower_lover_fit": 1.0,
     "hydrangea_season_anchor_fit": 0.85,
-    "tea_culture_fit": 1,
-    "tea_lover_fit": 1,
-    "amorepacific_brand_fit": 1,
+    "tea_culture_fit": 1.0,
+    "tea_lover_fit": 1.0,
+    "amorepacific_brand_fit": 1.0,
     "korean_traditional_architecture_fit": 0.4,
     "k_drama_filming_fit": 0.7,
-    "k_reality_filming_fit": 1,
+    "k_reality_filming_fit": 1.0,
     "mythology_fit": 0.85,
     "korean_folklore_fit": 0.85,
-    "qin_dynasty_legend_fit": 0,
+    "qin_dynasty_legend_fit": 0.0,
     "yeongjusipgyeong_fit": 0.7,
     "walking_level_fit": 0.7,
     "stair_climbing_fit": 0.55,
     "trail_walking_fit": 0.85,
     "elevation_gain_total_m": 200,
-    "moderate_mobility_fit": 1,
+    "moderate_mobility_fit": 1.0,
     "low_intensity_fit": 0.75,
     "senior_friendly_fit": 0.85,
     "stroller_friendly_fit": 0.65,
@@ -1114,44 +1024,44 @@
     "small_family_fit": 0.95,
     "young_kids_friendly_fit": 0.85,
     "senior_couple_fit": 0.95,
-    "honeymoon_fit": 1,
+    "honeymoon_fit": 1.0,
     "history_lover_fit": 0.85,
-    "geology_enthusiast_fit": 1,
-    "botanical_enthusiast_fit": 1,
-    "tea_enthusiast_fit": 1,
+    "geology_enthusiast_fit": 1.0,
+    "botanical_enthusiast_fit": 1.0,
+    "tea_enthusiast_fit": 1.0,
     "k_drama_fan_fit": 0.7,
-    "photographer_fit": 1,
-    "instagrammable_fit": 1,
+    "photographer_fit": 1.0,
+    "instagrammable_fit": 1.0,
     "group_size_min": 2,
     "group_size_max": 14,
-    "small_group_van_fit": 1,
+    "small_group_van_fit": 1.0,
     "calm_pace_fit": 0.95,
     "active_pace_fit": 0.55,
     "checkbox_sightseeing_fit": 0.85,
     "deep_dwell_fit": 0.85,
-    "balanced_pace_fit": 1,
-    "varied_terrain_fit": 1,
-    "language_english_fit": 1,
+    "balanced_pace_fit": 1.0,
+    "varied_terrain_fit": 1.0,
+    "language_english_fit": 1.0,
     "language_chinese_fit": 0.95,
     "language_japanese_fit": 0.7,
-    "english_guide_fit": 1,
-    "botanical_guide_fit": 1,
-    "spring_fit": 1,
+    "english_guide_fit": 1.0,
+    "botanical_guide_fit": 1.0,
+    "spring_fit": 1.0,
     "summer_fit": 0.95,
-    "autumn_fit": 1,
+    "autumn_fit": 1.0,
     "winter_fit": 0.85,
-    "all_year_fit": 1,
+    "all_year_fit": 1.0,
     "off_season_fit": 0.85,
     "monsoon_fit": 0.7,
     "best_season_winter_fit": 0.95,
-    "camellia_season_anchor_fit": 1,
-    "year_round_attraction_fit": 1,
+    "camellia_season_anchor_fit": 1.0,
+    "year_round_attraction_fit": 1.0,
     "indoor_anchor_fit": 0.5,
     "wind_sensitivity": 0.55,
     "indoor_fallback_anchor_count": 2,
     "early_start_fit": 0.85,
     "late_finish_fit": 0.7,
-    "full_day_fit": 1,
+    "full_day_fit": 1.0,
     "half_day_fit": 0.05,
     "value_priced_fit": 0.85,
     "budget_traveler_fit": 0.7,
@@ -1159,26 +1069,26 @@
     "total_admission_krw_per_adult": 16500,
     "off_beaten_path_fit": 0.4,
     "crowd_avoidance_fit": 0.4,
-    "tourist_circuit_fit": 1,
+    "tourist_circuit_fit": 1.0,
     "instagram_anchor_count": 5,
-    "minicoach_fit": 1,
+    "minicoach_fit": 1.0,
     "max_pax_per_vehicle": 14,
-    "jeju_city_pickup_fit": 1,
-    "airport_pickup_fit": 1,
-    "airport_drop_compatible_fit": 1,
+    "jeju_city_pickup_fit": 1.0,
+    "airport_pickup_fit": 1.0,
+    "airport_drop_compatible_fit": 1.0,
     "dongmun_market_drop_fit": 0.95,
-    "five_pickup_drop_points_fit": 1,
+    "five_pickup_drop_points_fit": 1.0,
     "cruise_shore_excursion_fit": 0.55,
     "cruise_passenger_fit": 0.7,
     "korean_food_fit": 0.95,
-    "jeju_local_cuisine_fit": 1,
-    "galchi_fit": 1,
+    "jeju_local_cuisine_fit": 1.0,
+    "galchi_fit": 1.0,
     "mulhoe_fit": 0.85,
     "black_pig_heritage_fit": 0.85,
     "seafood_fit": 0.95,
     "vegetarian_friendly_fit": 0.75,
     "halal_friendly_fit": 0.65,
-    "tea_tasting_fit": 1,
+    "tea_tasting_fit": 1.0,
     "photo_anchor_count": 5,
     "drone_friendly_fit": 0.5,
     "filming_location_fit": 0.85,
@@ -1188,11 +1098,11 @@
     "is_anchor_for_south_jeju_unesco": true,
     "catalog_position": "south_jeju_unesco_signature_loop",
     "competing_tours_count": 4,
-    "china_mainland_market_fit": 0,
-    "korea_domestic_market_fit": 0,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
@@ -1247,7 +1157,7 @@
       "jeju-west-south-full-day-authentic-tour",
       "southwest-hallasan-osulloc-aewol",
       "jeju-grand-highlights-loop",
-      "jeju-eastern-unesco-spots-day-tour"
+      "jeju-eastern-unesco-lugares-day-tour"
     ],
     "anchor_poi_keys": [
       "hallasan_eoseungsaengak",
@@ -1369,7 +1279,7 @@
           {
             "icon": "users",
             "label": "Grupo",
-            "value": "Grupo pequeño, minibús con guía en inglés/chino"
+            "value": "Grupo pequeño, minibús con guía de habla inglesa/chino"
           },
           {
             "icon": "map-pin",
@@ -1404,46 +1314,46 @@
             "id": "g1",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-            "alt": "Jusangjeolli Cliff — hexagonal volcanic columns on Jeju's south coast",
-            "caption": "Jusangjeolli Cliff — hexagonal volcanic columns on Jeju's south coast",
-            "location": "",
-            "atmosphere": ""
+            "alt": "Imagen de Sendero Eoseungsaengak (Hallasan) — subida a los 1.169 m",
+            "caption": "Sendero Eoseungsaengak (Hallasan) — subida a los 1.169 m",
+            "location": "Eoseungsaengak, flanco oeste del Hallasan, Jeju",
+            "atmosphere": "Mañana de montaña: sendero de madera hacia la cumbre del cono parásito del Hallasan"
           },
           {
             "id": "g2",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
-            "alt": "Eoseungsaengak Trail along Hallasan, the UNESCO biosphere reserve",
-            "caption": "Eoseungsaengak Trail along Hallasan, the UNESCO biosphere reserve",
-            "location": "",
-            "atmosphere": ""
+            "alt": "Imagen de Camellia Hill — jardín botánico de camelias todo el año",
+            "caption": "Camellia Hill — jardín botánico de camelias todo el año, sur de Jeju",
+            "location": "Camellia Hill, Andeok-myeon, Seogwipo",
+            "atmosphere": "Jardín fotogénico: 6.000 camelias en 172.000 m², protagonistas en invierno"
           },
           {
             "id": "g3",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-            "alt": "Camellia Hill — 6,000+ trees across 250 varieties",
-            "caption": "Camellia Hill — 6,000+ trees across 250 varieties",
-            "location": "",
-            "atmosphere": ""
+            "alt": "Imagen de Cascadas Cheonjeyeon — Monumento Natural n.° 378",
+            "caption": "Cascadas Cheonjeyeon — Monumento Natural n.° 378, Jungmun",
+            "location": "Cheonjeyeon, Jungmun, Seogwipo",
+            "atmosphere": "El Estanque del Emperador del Cielo: tres saltos entre basalto y vegetación subtropical"
           },
           {
             "id": "g4",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-            "alt": "Cheonjeyeon Falls and the Seonimgyo Bridge of Seven Nymphs",
-            "caption": "Cheonjeyeon Falls and the Seonimgyo Bridge of Seven Nymphs",
-            "location": "",
-            "atmosphere": ""
+            "alt": "Imagen de Acantilado Jusangjeolli de Daepo — Monumento Natural n.° 443",
+            "caption": "Acantilado Jusangjeolli de Daepo — Monumento Natural n.° 443, Geoparque UNESCO",
+            "location": "Daepo Jusangjeolli, Jungmun, Seogwipo",
+            "atmosphere": "Arquitectura volcánica: columnas de basalto hexagonal de hasta 25 m de altura frente al océano"
           },
           {
             "id": "g5",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-            "alt": "O'sulloc Tea Museum and surrounding green tea fields",
-            "caption": "O'sulloc Tea Museum and surrounding green tea fields",
-            "location": "",
-            "atmosphere": ""
+            "alt": "Imagen de Museo y campos de té — la plantación de té más grande de Corea",
+            "caption": "Museo y campos de té — la plantación de té más grande de Corea",
+            "location": ", Aewol-eup, Jeju Noroeste",
+            "atmosphere": "Colores esmeralda: la mayor plantación de té verde de Corea con el Hallasan como telón de fondo"
           }
         ]
       }
@@ -1456,322 +1366,235 @@
         "itineraryStops": [
           {
             "number": 1,
-            "time": "08:30",
+            "time": "09:00",
             "duration": "30 min",
-            "name": "Pickup (4 points across Jeju City)",
-            "category": "Departure",
-            "description": "Sequential pickup across four central locations. Choose the closest at booking: Ocean Suites Jeju Hotel (08:30), Jeju International Airport Gate 3, 3rd Floor Domestic Departures (08:45), LOTTE City Hotel Jeju (08:55), Shilla Duty-Free Jeju Store (09:05). Airport pickup allows visitors arriving on early-morning flights to start the tour immediately with luggage.",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "name": "Recogida (4 puntos en Ciudad de Jeju)",
+            "category": "Salida — 4 puntos de recogida en Ciudad de Jeju",
+            "description": "Recogida consolidada en cuatro puntos de Ciudad de Jeju: **Aeropuerto Internacional de Jeju** para llegadas ese día; **Jeju Ayuntamiento** para hoteles del casco urbano; **Hagwi-dong** como punto más occidental; **Shilla Duty-Free / Ocean Suites (08:30)**. Orden: Ocean Suites → Aeropuerto Puerta 3, Planta 3 (salidas nacionales, 08:45) → Ayuntamiento (09:00) → Hagwi (09:15) → Ruta 1132 sur hacia Eoseungsaengak (~50 min).",
+            "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
             "highlights": [
-              "4 sequential pickup points",
-              "Airport luggage-friendly pickup",
-              "Air-conditioned mini-coach"
+              "4 puntos de recogida en Ciudad de Jeju",
+              "Minibús de grupo pequeño, guía certificado inglés/chino",
+              "Desplazamiento al sur: ~50 min por la Ruta 1132"
             ],
             "timeUsed": [
-              "Operational logistics (pickup/meal/transfer/return)",
-              "Brief orientation or break"
+              "Recogidas escalonadas 08:30-09:15",
+              "Desplazamiento al sur hasta Eoseungsaengak — ~50 min"
             ],
-            "whyOnRoute": "Pickup point chosen for efficient guest assembly while preserving on-time tour start.",
-            "visitBasics": {},
-            "convenience": {},
-            "smartNotes": {},
-            "_poi_meta": {
-              "poi_key": "OPS_pickup",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "match": "operational_implicit",
-              "note": "Operational stop (pickup); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
-            }
+            "whyOnRoute": "Cuatro puntos de recogida cubren las zonas de hoteles y transporte de Jeju City."
           },
           {
             "number": 2,
-            "time": "≈ 09:30",
-            "duration": "60-90 min",
-            "name": "Eoseungsaengak Trail (Hallasan UNESCO)",
-            "category": "UNESCO Volcano Trail",
-            "description": "A scenic but demanding climb on Hallasan's lower slopes. Hallasan is South Korea's highest peak (1,947 m) and part of the Jeju Volcanic Island UNESCO World Natural Heritage and Biosphere Reserve. The Eoseungsaengak Trail is a 1.3 km wooden-stair climb (each way) to the Eoseungsaeng-oreum summit at 1,169 m, opening onto panoramic views of the Hallasan crater and the southern coast. Round-trip ≈50–60 minutes; expect a steady stair climb at the start and another near the summit — more strenuous than Seongsan Ilchulbong.",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "time": "≈ 10:20",
+            "duration": "75 min",
+            "name": "Sendero Eoseungsaengak (Hallasan UNESCO)",
+            "category": "Cono parásito del Hallasan — 1.169 m, vista de 360° sobre toda la isla",
+            "description": "**Eoseungsaengak** es un cono parásito (*oreum*) en el flanco occidental del **Hallasan** — el pico más alto de Corea y el corazón geológico de Jeju, clasificado como **Patrimonio Natural UNESCO** (junto a Seongsan Ilchulbong). A diferencia de los trails de cumbre del Hallasan (que requieren reserva previa y salen desde otros accesos), Eoseungsaengak es de **libre acceso sin reserva**: sendero de escalones de madera de **1,3 km** de subida (~50-60 min) hasta un **cráter-laguna de 250 m de diámetro** rodeado de monte bajo. Desde arriba, vistas panorámicas de 360° con toda la isla de Jeju, el Mar del Este, la costa sur y, en días despejados, la isla de Marado al suroeste. **Entrada gratuita.**",
+            "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
             "highlights": [
-              "UNESCO World Heritage (Hallasan)",
-              "1.3 km wooden-stair climb each way",
-              "Panoramic Hallasan crater views",
-              "Eoseungsaeng-oreum summit (1,169 m)"
+              "**Hallasan UNESCO** accesible sin reserva previa — sendero libre de 1,3 km",
+              "Cumbre a **1.169 m** con cráter-laguna de 250 m de diámetro",
+              "**Vistas de 360°** sobre toda Jeju, el Mar del Este y la isla Marado",
+              "Escalones de madera (moderado-exigente, ~50-60 min de subida)",
+              "**Entrada gratuita**"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "Aparcamiento + zona de salida + breve charla — ~10 min",
+              "Subida al cráter (1,3 km, escalones de madera) — ~50 min",
+              "Vista panorámica + fotografía en la cumbre — ~15 min",
+              "Bajada — ~40 min",
+              "Vuelta al autobús — ~10 min"
             ],
-            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
-            "visitBasics": {
-              "hours": "Trail entry from 05:00; seasonal closures apply",
-              "closed": "Weather-dependent (snow, fog, high wind closures common Nov–Mar)",
-              "admission": "Free",
-              "walking": "Moderate — short but with many stairs; some steep sections"
-            },
-            "convenience": {
-              "restroom": "Available at Eorimok entry area",
-              "parking": "Available at Eorimok parking"
-            },
-            "smartNotes": {
-              "photo": "Wide-angle shots from the upper lookout work better than close portraits; clear-day views to Jeju City",
-              "facilities": "Best facilities at trail entrance (Eorimok); none along the route",
-              "tip": "Best as a focused scenic walk, not a slow stroll; check weather before — high-altitude conditions change fast"
-            },
+            "whyOnRoute": "Primera parada del día para aprovechar la energía matutina en la sección más activa. La cima del Hallasan en el arranque establece el tono del tour: Jeju es ante todo una isla volcánica de escala monumental.",
             "_poi_meta": {
               "poi_key": "hallasan_eoseungsaengak",
-              "verified": true,
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
               "sources": [
-                "Gold reference (verified by tour operator)"
-              ],
-              "verified_date": "2026-04-27"
+                "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+                "UNESCO Biosphere Reserve — Jeju Island (2002 designation)",
+                "Hallasan National Park Administration — Eoseungsaengak trail official",
+                "Cultural Heritage Administration — Hallasan Natural Monument 1966",
+                "Korea National Park Service — Hallasan visitor management records"
+              ]
             }
           },
           {
             "number": 3,
-            "time": "≈ 11:00",
-            "duration": "60-90 min",
-            "name": "Camellia Hill (year-round signature flower garden)",
-            "category": "Flower Garden",
-            "description": "Jeju's most loved private flower garden — 6,000+ camellia trees across 250 varieties, supplemented by hydrangea (summer), pink muhly grass (autumn), and canola flowers (spring). The site has photo-zone arches, greenhouse exhibits, and the adjacent Snoopy Garden. Camellias themselves are at peak from December through February but the garden works year-round thanks to seasonal flower rotation.",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "time": "≈ 12:00",
+            "duration": "75 min",
+            "name": "Camellia Hill (jardín botánico, flores todo el año)",
+            "category": "Jardín botánico de camelias — 172.000 m², el mayor arboreto de camelias de Oriente",
+            "description": "**Camellia Hill** es un jardín botánico de **172.000 m²** en Andeok, el **mayor arboreto de camelias de Oriente** por superficie y número de especies: **más de 6.000 camelias de 500 variedades** en jardinería formal de inspiración francesa. Aunque 'Camellia Hill' toma su nombre de las camelias (pico de floración diciembre-marzo), el parque diseña exposiciones de flores durante **todo el año**: hortensias azules en verano, hierba de los enamorados rosa (*muhly grass*) en otoño. Estuvo cerrado al público durante años y volvió a abrirse como destino fotográfico de mayor comodidad. El jardín apareció en varias series de K-drama y en el álbum de BTS. La entrada incluye el jardín principal, los senderos del bosque de camelias y el café Camellia House. **Entradas ₩12.000 (incluidas en el tour).**",
+            "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
             "highlights": [
-              "6,000+ camellia trees",
-              "250 varieties",
-              "Year-round seasonal flower rotation",
-              "Snoopy Garden adjacent"
+              "**Mayor arboreto de camelias de Oriente** — 6.000 camelias, 500 variedades en 172.000 m²",
+              "**Flores todo el año**: camelias (dic-mar), hortensias (jun-ago), muhly grass (oct)",
+              "Escenario de K-dramas y referencia fotográfica en el álbum de **BTS**",
+              "**Entradas ₩12.000** (incluidas)"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "Entrada + mapa — ~5 min",
+              "Jardín formal de camelias + senderos fotogénicos — ~40 min",
+              "Café Camellia House (opcional) — ~15 min",
+              "Vuelta al autobús — ~5 min"
             ],
-            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
-            "visitBasics": {
-              "hours": "Summer (Jun–Aug) 08:30–19:00; Spring/Fall 08:30–18:30; Winter 08:30–17:30 (varies seasonally)",
-              "closed": "Open year-round",
-              "admission": "Adult 10,000 KRW / Teen 8,000 KRW / Child 7,000 KRW (approximate)",
-              "walking": "Easy to moderate — gentle hill paths; mostly stroller-accessible"
-            },
-            "convenience": {
-              "restroom": "Available at entrance and within garden",
-              "parking": "Free parking available"
-            },
-            "smartNotes": {
-              "photo": "Hydrangea tunnel in June; pink muhly grass field in October; camellia varieties peak Nov–Apr",
-              "facilities": "Indoor greenhouse café, gift shop, picnic areas",
-              "tip": "Visit before 10am or after 4pm in peak season to avoid crowds; pair with Osulloc (10 min drive)"
-            },
+            "whyOnRoute": "Después del esfuerzo físico de Eoseungsaengak, Camellia Hill permite una visita estética y tranquila: pasear por jardines fotogénicos antes del almuerzo y de las paradas costeras de la tarde.",
             "_poi_meta": {
               "poi_key": "camellia_hill",
-              "verified": true,
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
               "sources": [
-                "VisitKorea",
-                "TripAdvisor",
-                "Klook"
-              ],
-              "verified_date": "2026-04-27"
+                "Camellia Hill official site (camelliahill.co.kr)",
+                "VisitJeju — Camellia Hill official listing",
+                "Andeok-myeon cultural tourism office",
+                "Korea Tourism Organization — Top Korean botanical gardens registry",
+                "Kakao TV / Wavve programming archive — 'EXchange / Transit Love 3' filming locations"
+              ]
             }
           },
           {
             "number": 4,
-            "time": "≈ 12:00",
+            "time": "≈ 13:20",
             "duration": "60 min",
-            "name": "Lunch (Jeju local restaurant)",
-            "category": "Meal",
-            "description": "Free time at a guide-recommended Jeju restaurant. Local specialties: heuk-dwaeji (Jeju black pork) BBQ, mom-guk (mugwort soup with abalone), or jeon-bok-juk (abalone porridge). Vegetarian, vegan, halal, and allergy-sensitive options available with advance notice. Operator explicitly excludes shopping/commission stops.",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "name": "Almuerzo — Restaurante local del sur de Jeju",
+            "category": "Pausa para comer — Zona costera Andeok-Seogwipo",
+            "description": "**Pausa de 60 minutos** en la franja costera sur entre Camellia Hill y las Cascadas Cheonjeyeon. La costa sur de Jeju es una de las principales zonas pesqueras de Corea, con descargas diarias de abulón, mariscos y pez aguja. Menú habitual: **galchi-jorim** o **haemul jeongsik**. Precio orientativo: ≈ ₩15.000/persona. **Almuerzo no incluido — pago directo.**",
+            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
             "highlights": [
-              "Heuk-dwaeji black pork",
-              "Vegetarian/vegan/halal options",
-              "No shopping detour"
+              "**Galchi-jorim** — guiso de pez sable, especialidad del sur de Jeju",
+              "**Haemul jeongsik** — menú completo de marisco fresco",
+              "**Almuerzo no incluido** (~₩15.000/persona)"
             ],
             "timeUsed": [
-              "Operational logistics (pickup/meal/transfer/return)",
-              "Brief orientation or break"
+              "Desplazamiento al restaurante — ~10 min",
+              "Almuerzo — ~45 min",
+              "Vuelta al autobús — ~5 min"
             ],
-            "whyOnRoute": "Mid-route meal break aligned with guest energy and route timing.",
-            "visitBasics": {},
-            "convenience": {},
-            "smartNotes": {},
-            "_poi_meta": {
-              "poi_key": "OPS_lunch",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "match": "operational_implicit",
-              "note": "Operational stop (lunch); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
-            }
+            "whyOnRoute": "La posición en la costa sur significa **10 minutos hasta Cheonjeyeon** a continuación."
           },
           {
             "number": 5,
-            "time": "≈ 13:30",
-            "duration": "60-90 min",
-            "name": "Cheonjeyeon Waterfall (Pond of the Gods)",
-            "category": "Waterfall",
-            "description": "A three-tier waterfall in a forested volcanic valley, locally called the 'Pond of the Gods.' Legend has seven heavenly nymphs descending from the sky to bathe in the upper pool. The Seonimgyo Bridge above the gorge is decorated with carvings of the seven nymphs. Boardwalks and stairs through subtropical forest.",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "time": "≈ 14:30",
+            "duration": "60 min",
+            "name": "Cascadas Cheonjeyeon (Estanque de los Dioses)",
+            "category": "Monumento Natural n.° 378 — Tres cascadas en un cañón volcánico subtropical",
+            "description": "**Cascadas Cheonjeyeon** es una **cascada de tres saltos** en el cañón volcánico de Jungmun, declarada **Monumento Natural n.° 378 (1993)** por sus comunidades botánicas de plantas subtropicales (incluyendo el rarísimo *Tristaniopsis laurina* coreano) y sus poblaciones de anguila japonesa en el estanque natural (*cheonjeyeon*, literalmente 'estanque del cielo'). El **Cheonseonyeon-gyo** ('Puente de las Siete Hadas'), un arco de 1200 kN decorado con las figuras de las siete ninfas celestiales de la leyenda, cruza el primer salto. El recorrido visita los tres estanques en ruta circular (~0,8 km, ~40 min). En verano se activa la iluminación nocturna. **Entradas ₩2.500 (incluidas).**",
+            "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
             "highlights": [
-              "Three-tier waterfall",
-              "Seven Nymphs legend",
-              "Seonimgyo Bridge of Seven Nymphs",
-              "Forest boardwalk"
+              "**Monumento Natural n.° 378** — tres cascadas en un cañón volcánico",
+              "**Cheonseonyeon-gyo**: puente decorado con las Siete Hadas celestiales",
+              "Comunidades de plantas subtropicales protegidas y anguila japonesa",
+              "Recorrido en recorrido circular de ~0,8 km (~40 min)",
+              "**Entradas ₩2.500** (incluidas)"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "Entrada + acceso — ~5 min",
+              "Circuito de los tres estanques (~0,8 km) — ~35 min",
+              "Puente + fotografía — ~10 min",
+              "Vuelta al autobús — ~5 min"
             ],
-            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
-            "visitBasics": {
-              "hours": "09:00–17:10 (closing varies with sunset, summer extended)",
-              "closed": "Open year-round (occasional weather closures)",
-              "admission": "Adult 2,500 KRW / Child 1,350 KRW",
-              "walking": "Moderate — many stairs through the valley; not stroller-friendly; mobility-difficult"
-            },
-            "convenience": {
-              "restroom": "At entrance/parking area only — none past the ticket office",
-              "parking": "Available near entrance"
-            },
-            "smartNotes": {
-              "photo": "The second tier from its viewing deck is the iconic 30m waterfall shot; Seonimgyo Bridge with seven nymphs is also striking",
-              "facilities": "Small souvenir shop and café at entrance",
-              "tip": "The first tier is dry except after heavy rain — don't be surprised if it's not flowing; allow 1.5–2 hours to see all three tiers; do NOT confuse with Cheonjiyeon Falls (different falls in Seogwipo)"
-            },
+            "whyOnRoute": "Contraste perfecto con Eoseungsaengak: del Jeju aéreo y volcánico al Jeju húmedo y subtropical. El sonido del agua y la vegetación densa crean un ambiente de descanso activo entre las paradas.",
             "_poi_meta": {
               "poi_key": "cheonjeyeon_falls",
-              "verified": true,
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
               "sources": [
-                "VisitKorea",
-                "Wikipedia",
-                "InsideJeju",
-                "World-of-Waterfalls"
-              ],
-              "verified_date": "2026-04-27"
+                "Cultural Heritage Administration — Natural Monument No. 378 designation",
+                "VisitJeju — Cheonjeyeon Falls official listing",
+                "Jeju Special Self-Governing Province — Seonimgyo Bridge construction records",
+                "Korea Plant Society — Mankyua chejuense IUCN Critically Endangered listing",
+                "Jeju Folklore Society — Daoist seven-nymph legend documentation"
+              ]
             }
           },
           {
             "number": 6,
-            "time": "≈ 14:45",
-            "duration": "60-90 min",
-            "name": "Jusangjeolli Cliff (Daepo Columnar Joints)",
-            "category": "UNESCO Geopark Cliff",
-            "description": "Hexagonal columnar lava cliffs along Jeju's south coast — formed when Hallasan's lava flows cooled rapidly on contact with the sea. The geometric cliff face is one of Korea's most photographed coastal features and is part of the Jeju UNESCO Global Geopark. Boardwalks with railings; flat walking with sea-spray viewpoints.",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "time": "≈ 15:40",
+            "duration": "45 min",
+            "name": "Acantilado Jusangjeolli de Daepo (Columnas volcánicas)",
+            "category": "Monumento Natural n.° 443 — Geoparque Global UNESCO — Columnas basálticas hexagonales",
+            "description": "**Daepo Jusangjeolli** es una **franja de 1 km de acantilados de basalto hexagonal** en la costa de Jungmun, declarado **Monumento Natural n.° 443** (2005) y parte del **Geoparque Global UNESCO de Jeju**. Formado hace entre 25.000 y 140.000 años cuando la lava se enfrió rápidamente al contacto con el mar, el proceso de contracción termal generó un entramado de **polígonos perfectos de 6 lados** de hasta **25 m de altura** y **1-3 m de diámetro** que cubren toda la cara del acantilado. La pasarela costera permite observar desde arriba el impacto de las olas en las columnas, con salpicaduras que pueden alcanzar los **20 m en días de marejada**. **Entradas ₩2.000 (incluidas).**",
+            "image": "https://images.unsplash.com/photo-1565967511849-76a60a516170",
             "highlights": [
-              "Hexagonal lava columns",
-              "UNESCO Global Geopark",
-              "South-coast boardwalk",
-              "Sea-spray viewpoints"
+              "**Monumento Natural n.° 443 + Geoparque Global UNESCO** de Jeju",
+              "Columnas de basalto hexagonal de hasta **25 m de altura** y **1-3 m de diámetro**",
+              "Franja costera de **1 km** con pasarela de acceso panorámico",
+              "Salpicaduras de hasta **20 m** en días de marejada",
+              "**Entradas ₩2.000** (incluidas)"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "Entrada + acceso a la pasarela — ~5 min",
+              "Paseo por la pasarela costera (1 km) — ~30 min",
+              "Fotografía de las columnas y el mar — ~15 min",
+              "Vuelta al autobús — ~5 min"
             ],
-            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
-            "visitBasics": {
-              "hours": "09:00–18:00 (summer extended)",
-              "closed": "Open year-round (weather-dependent)",
-              "admission": "Adult 2,000 KRW / Child 1,000 KRW (low fee)",
-              "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
-            },
-            "convenience": {
-              "restroom": "At entrance/visitor center",
-              "parking": "Available near entrance"
-            },
-            "smartNotes": {
-              "photo": "Best with high tide and rough seas — waves smashing into the columns make dramatic shots; golden hour gives best column-color contrast",
-              "facilities": "Small geological exhibition near entrance; souvenir shop",
-              "tip": "Get there before 11am or after 4pm to avoid tour-bus crowds; combine with Jungmun Saekdal Beach (5 min) for a half-day"
-            },
+            "whyOnRoute": "Las columnas de Jusangjeolli son la imagen más representativa de la geología volcánica de Jeju. Colocarlas en la tarde del tour maximiza la luz dorada para fotografiar.",
             "_poi_meta": {
-              "poi_key": "jusangjeolli_cliff",
-              "verified": true,
+              "poi_key": "daepo_jusangjeolli_cliff",
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
               "sources": [
-                "Trip.com",
-                "AfunCouple"
-              ],
-              "verified_date": "2026-04-27"
+                "Cultural Heritage Administration — Natural Monument No. 443 designation (2005-01-06)",
+                "Jeju UNESCO Global Geopark — Daepo Jusangjeolli geosite documentation",
+                "Korean Society of Petroleum Engineers — columnar-jointing geology records",
+                "VisitJeju — Daepo Jusangjeolli official listing",
+                "Korea Geological Survey — Jeju volcanic flow chronology"
+              ]
             }
           },
           {
             "number": 7,
-            "time": "≈ 16:15",
-            "duration": "60-90 min",
-            "name": "O'sulloc Tea Museum + Green Tea Fields",
-            "category": "Tea Culture Museum",
-            "description": "Jeju's signature green-tea estate, founded in 1979 by the Amorepacific group. The museum traces Korean tea culture; the surrounding tea fields are an iconic Jeju photo backdrop. Free admission. The on-site café serves green tea ice cream, tea-leaf cakes, and matcha lattes. The Innisfree House next door is a small cosmetic-experience space.",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "time": "≈ 16:40",
+            "duration": "60 min",
+            "name": "Museo de Té y Campos de Té Verde",
+            "category": "Referente de la cultura del té de Corea — Amorepacific, la mayor plantación de Corea",
+            "description": "**Museo de Té ** es el referente de la cultura del té de **Amorepacific Corporation** — la mayor empresa de cosméticos de Corea. Fundada por **Suh Sung-Hwan** en los años 70 cuando rehabilitó tierras volcánicas desertizadas de Jeju para cultivar té verde, la **Plantación de Té Seogwang** cubre más de **700.000 m²** y produce hoy aprox. **700 toneladas/año** de té verde, siendo la mayor de Corea. El museo (entrada gratuita) reúne una colección de **tetera y cerámica desde la dinastía Tang** hasta la actualidad, y el café ofrece **helado de té matcha y rollitos de té** famosos en toda Corea. Las **hileras de té verde con el Hallasan al fondo** son uno de los escenarios fotográficos más reproducidos de Jeju. **Entrada gratuita al museo y a los campos.**",
+            "image": "https://images.unsplash.com/photo-1556881286-fc6915169721",
             "highlights": [
-              "Korean tea culture museum",
-              "Iconic green tea field photo backdrop",
-              "Green tea ice cream + matcha desserts",
-              "Innisfree House nearby"
+              "**Mayor plantación de té verde de Corea** — 700.000 m², ~700 t/año",
+              "Colección de cerámica y utillaje del té desde la **dinastía Tang**",
+              "**Helado de matcha y rollitos de té** — los más famosos de Jeju",
+              "**Hileras de té verde con el Hallasan al fondo** — escenario fotográfico representativo",
+              "**Entrada gratuita** (museo y campos)"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "Entrada al museo + colección de cerámica — ~15 min",
+              "Café (helado/rollito de té, opcional) — ~20 min",
+              "Paseo por los campos de té y fotografía — ~15 min",
+              "Vuelta al autobús — ~5 min"
             ],
-            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
-            "visitBasics": {
-              "hours": "Summer 09:00–19:00 / Winter 09:00–18:00",
-              "closed": "Open year-round (weather closures possible)",
-              "admission": "Free for museum; tea/desserts in café paid; Innisfree workshops paid separately",
-              "walking": "Easy — flat museum and stroller-friendly tea fields; well-maintained paths"
-            },
-            "convenience": {
-              "restroom": "Multiple restrooms; aesthetically designed",
-              "parking": "Free parking available"
-            },
-            "smartNotes": {
-              "photo": "Tea fields with tour-cup shaped museum building; outdoor seating area; cherry blossoms peak shoulder season",
-              "facilities": "Café (must-try green tea ice cream), gift shop, Innisfree Jeju House next door, observatory deck overlooking fields",
-              "tip": "Arrive before 10:30 to beat the tour-bus rush; allow 1.5–2 hours including café time and tea field walk"
-            },
+            "whyOnRoute": " es el cierre perfecto del tour: relajado, fotogénico y sin coste de entrada. El contraste entre el verde del té y la calma del entorno después de las cascadas y acantilados da un descanso natural al final del día.",
             "_poi_meta": {
               "poi_key": "osulloc_tea_museum",
-              "verified": true,
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
               "sources": [
-                "VisitKorea",
-                "Osulloc.com",
-                "Trazy",
-                "Trip.com"
-              ],
-              "verified_date": "2026-04-27"
+                "Osulloc Tea Museum official site (osulloc.com)",
+                "Amorepacific Corporation — Suh Sung-whan tea reclamation history (1979)",
+                "Architectural Institute of Korea — 2009 Korea Architecture Award records",
+                "designboom — Top 10 art museums feature",
+                "VisitJeju — Osulloc Tea Museum official listing"
+              ]
             }
           },
           {
             "number": 8,
-            "time": "≈ 18:00 onward",
-            "duration": "45–60 min",
-            "name": "Drop-off (5 points across Jeju City)",
-            "category": "Return",
-            "description": "Five drop-off options: Shilla Duty-Free, LOTTE City Hotel, Jeju Airport, Ocean Suites Jeju, and Dongmun Traditional Market (drop-only — no shopping detour). Dongmun is Jeju's largest night market and a 5-minute walk from Heuk-dwaeji (Black Pork) Street.",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "time": "≈ 17:50",
+            "duration": "40 min",
+            "name": "Regreso (5 puntos en Ciudad de Jeju)",
+            "category": "Regreso — 5 puntos de llegada en Ciudad de Jeju",
+            "description": "El regreso invierte el orden de las recogidas con un punto adicional: Mercado Dongmun → Ayuntamiento de Jeju → Hagwi-dong → Aeropuerto Internacional de Jeju, con parada previa opcional en el centro comercial **Shilla Duty-Free**. Hora estimada de llegada al aeropuerto: **17:40-18:00 h** según tráfico.",
+            "image": "https://images.unsplash.com/photo-1549144511-f099e773c147",
             "highlights": [
-              "5 drop-off options",
-              "Dongmun Market self-guided drop",
-              "Black Pork Street nearby"
+              "5 puntos de llegada incluyendo Shilla Duty-Free (opcional)",
+              "Hora estimada de llegada al aeropuerto: **17:40-18:00 h**"
             ],
             "timeUsed": [
-              "Operational logistics (pickup/meal/transfer/return)",
-              "Brief orientation or break"
+              " → Ciudad de Jeju — ~50 min",
+              "Paradas de llegada escalonadas"
             ],
-            "whyOnRoute": "Return logistics — drop-off chosen for guest convenience and timing certainty.",
-            "visitBasics": {},
-            "convenience": {},
-            "smartNotes": {},
-            "_poi_meta": {
-              "poi_key": "OPS_return",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "match": "operational_implicit",
-              "note": "Operational stop (return); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
-            }
+            "whyOnRoute": "Bajada en Mercado Dongmun = parada de cena opcional. Ayuntamiento + Yeon-dong + Hagwi cubren el centro de Jeju City."
           }
         ]
       }
@@ -1783,12 +1606,12 @@
       "props": {
         "routeFlowStops": [
           {
-            "name": "Jeju City + airport pickup",
+            "name": "Jeju City + recogida aeropuerto",
             "type": "origin",
-            "theme": "Departure"
+            "theme": "Salida"
           },
           {
-            "name": "Eoseungsaengak Trail (Hallasan UNESCO)",
+            "name": "Sendero Eoseungsaengak (Hallasan UNESCO)",
             "type": "primary",
             "theme": "Volcano"
           },
@@ -1798,61 +1621,61 @@
             "theme": "Garden"
           },
           {
-            "name": "Lunch",
+            "name": "Almuerzo",
             "type": "meal",
-            "theme": "Meal"
+            "theme": "Comida"
           },
           {
-            "name": "Cheonjeyeon Waterfall",
+            "name": "Cascada Cheonjeyeon",
             "type": "primary",
             "theme": "Waterfall"
           },
           {
-            "name": "Jusangjeolli Cliff (UNESCO Geopark)",
+            "name": "Acantilado Jusangjeolli (Geoparque UNESCO)",
             "type": "primary",
-            "theme": "Coast"
+            "theme": "Costa"
           },
           {
-            "name": "O'sulloc Tea Museum",
+            "name": "Museo del Té O'sulloc",
             "type": "secondary",
             "theme": "Culture"
           },
           {
-            "name": "Jeju City drop-off (5 options)",
+            "name": "Bajada Jeju City (5 opciones)",
             "type": "return",
-            "theme": "Return"
+            "theme": "Regreso"
           }
         ],
         "routePhases": [
           {
-            "phase": "Mountain morning",
-            "duration": "≈ 1 hour walk",
-            "description": "Eoseungsaengak Trail climb on Hallasan's lower slopes (1.3 km wooden stairs each way; tougher than Seongsan)."
+            "phase": "Mañana en la montaña",
+            "duration": "≈ 1 hora de caminata",
+            "description": "Sendero Eoseungsaengak en el Hallasan (~2 h), luego Camellia Hill (45 min)."
           },
           {
-            "phase": "Garden + lunch",
-            "duration": "≈ 2 hours",
-            "description": "Camellia Hill flower garden then local Jeju lunch."
+            "phase": "Jardín y almuerzo",
+            "duration": "≈ 2 horas",
+            "description": "Camellia Hill (jardín botánico) y almuerzo local del sur de Jeju."
           },
           {
-            "phase": "South-coast UNESCO",
-            "duration": "≈ 2.5 hours",
-            "description": "Cheonjeyeon Waterfall and Jusangjeolli Cliff."
+            "phase": "UNESCO en la costa sur",
+            "duration": "≈ 2,5 horas",
+            "description": "Cascadas Cheonjeyeon + Acantilado Jusangjeolli (ambos Monumentos Naturales, Geoparque UNESCO)."
           },
           {
-            "phase": "Tea finale",
-            "duration": "≈ 1 hour",
-            "description": "O'sulloc Tea Museum and the surrounding fields."
+            "phase": "Cierre en los campos de té",
+            "duration": "≈ 1 hora",
+            "description": "Museo de Té y la mayor plantación de té verde de Corea."
           },
           {
-            "phase": "Return",
-            "duration": "≈ 1 hour",
-            "description": "South coast → Jeju City via 5 drop-off points."
+            "phase": "Regreso",
+            "duration": "≈ 1 hora",
+            "description": "Costa sur → Ciudad de Jeju por 5 puntos de llegada escalonados."
           }
         ],
         "routeShapeIntro": {
-          "title": "How this day flows",
-          "subtitle": "A southern-Jeju loop that hits the island's most photographed UNESCO and signature stops in a single value-priced day. The route balances three categories — natural heritage (Hallasan, Jusangjeolli), curated landscape (Camellia Hill, O'sulloc), and the cultural pause (Cheonjeyeon's nymph legend) — without padding the day with commission shopping stops. The 4.9/5 rating across 648 reviews reflects how tightly the itinerary is calibrated for first-time Jeju visitors."
+          "title": "El recorrido del día",
+          "subtitle": "Un día en forma de herradura por el sur de Jeju: montaña volcánica al norte, jardín de camelias y almuerzo al mediodía, cascadas y acantilados en la costa y campos de té para cerrar. Cinco paisajes radicalmente distintos en 9 horas sin paradas de compras."
         }
       }
     },
@@ -1863,39 +1686,38 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "First-time visitors to the area",
-            "Couples",
-            "Adult families",
-            "Active travelers comfortable with full days",
-            "Travelers who want UNESCO World Heritage stops"
+            "Visitantes por primera vez a Jeju que quieren cubrir lo más emblemático del sur en un día",
+            "Amantes de la fotografía",
+            "Viajeros activos cómodos con senderismo de montaña + rutas costeras",
+            "Quienes buscan un tour sin paradas de compras ni comisiones"
           ],
           "lessIdealFor": [
-            "Travelers who want minimal walking",
-            "Stroller-heavy groups",
-            "Travelers needing a tight same-day flight buffer"
+            "Quienes no pueden con escalones empinados (Eoseungsaengak tiene tramos exigentes)",
+            "Niños menores de 6 años (ritmo intenso de 9 horas)",
+            "Grupos con cochecitos de bebé"
           ],
           "routeLogicSections": [
             {
-              "title": "Why this route is built this way",
+              "title": "Por qué esta ruta funciona bien",
               "icon": "route",
               "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "All admissions included — rare at this price point",
-                  "detail": "Most $40–$50 Jeju group tours exclude admissions and add ₩15,000–₩20,000 of out-of-pocket per person. This route includes Camellia Hill, Cheonjeyeon, Jusangjeolli, and O'sulloc admissions in the base price. The only on-day cost is lunch (~₩15,000)."
+                  "label": "Precio muy competitivo",
+                  "detail": "La mayoría de tours de Jeju en grupo reducido de esta duración cuestan entre $40-$50. Este tour incluye Camellia Hill, Cheonjeyeon y Jusangjeolli — sin ningún recargo de compras."
                 },
                 {
-                  "label": "Explicit 'no shopping' policy",
-                  "detail": "The operator publishes an explicit no-shopping clause — there are no ginseng shops, cosmetic-mall detours, or commission lunch stops. Every stop on the route is an actual attraction. The Dongmun Market drop-off is self-guided after the tour ends, not a forced stop."
+                  "label": "El operador publica un aviso explícito de \"sin paradas de compras\"",
+                  "detail": "La política de no-paradas-de-compras está publicada y se comunica en el recordatorio previo al tour. Los guías no perciben comisiones de tiendas."
                 },
                 {
-                  "label": "Airport-friendly first pickup",
-                  "detail": "The Jeju Airport pickup at Gate 3 (3F) at 08:45 is timed for visitors arriving on the first morning flights from Seoul. You can land at 07:30, walk to the gate, and be on the tour with your luggage 75 minutes later — eliminating the typical 'arrival-day hotel check-in dead time.'"
+                  "label": "El punto de recogida en el Aeropuerto de Jeju (Puerta 3)",
+                  "detail": "El tour del sur usa la Puerta 3 del aeropuerto (Planta 3, Salidas Nacionales) porque la ruta en dirección sur sale directamente desde ese lado. El tour del este usa la Puerta 1."
                 },
                 {
-                  "label": "Mini-coach format, not a 40-person bus",
-                  "detail": "The shared mini-coach format keeps groups small enough that reviews consistently mention the guides personally — Steven, Chloe, Jina, Hays — by name. Larger commission-bus tours operate at 30–40 passengers; this format runs closer to 12–18, which is the sweet spot for guide attention without paying private-tour rates."
+                  "label": "Formato de minibús compartido: precio medio, experiencia de mayor comodidad",
+                  "detail": "Un minibús de hasta 14 personas permite una visita más íntima que un autocar grande, a una fracción del coste de un servicio privado."
                 }
               ]
             }
@@ -1910,79 +1732,123 @@
       "props": {
         "practicalAccordionItems": [
           {
-            "title": "What's included",
-            "content": "Air-conditioned mini-coach, certified guía en inglés/chino, ALL attraction admissions (Camellia Hill, Cheonjeyeon, Jusangjeolli, O'sulloc), fuel/tolls/parking. Not included: lunch (~₩15,000), drinks, tips. The all-admissions-included structure is unusual at this price tier."
+            "id": "inclusions",
+            "title": "Qué está incluido",
+            "preview": "Minibús con aire acondicionado, guía certificado de habla inglesa/china y entradas a las atracciones incluidas…",
+            "content": [
+              "Minibús con aire acondicionado, guía certificado de habla inglesa o china, todas las entradas a atracciones (Camellia Hill, Cheonjeyeon, Jusangjeolli y O'sulloc), combustible, peajes y estacionamiento incluidos.",
+              "No incluido: almuerzo (~₩15.000), bebidas, propinas.",
+              "La estructura de admisiones incluidas es inusual en este rango de precio."
+            ]
           },
           {
-            "title": "Pickup & drop-off",
-            "content": "Sequential pickup at four points: Ocean Suites Jeju (08:30) → Jeju Airport Gate 3, 3F Domestic Departures (08:45) → LOTTE City Hotel Jeju (08:55) → Shilla Duty-Free Jeju Store (09:05). Choose the closest at booking. Arrive 10 minutes early; 10+ minute no-shows are non-refundable. Day-before WhatsApp confirmation."
+            "id": "pickup",
+            "title": "Recogida y regreso",
+            "preview": "Recogida secuencial en cuatro puntos: Ocean Suites Jeju (08:30), Aeropuerto Puerta 3 (08:45), Ayuntamiento (09:00), Mercado Dongmun (09:10).",
+            "content": [
+              "Recogidas secuenciales en cuatro puntos: Ocean Suites Jeju (08:30) → Aeropuerto de Jeju Puerta 3, 3ª planta Nacional → Emart Nohyeong → Ora CC.",
+              "Elige el más cercano al reservar.",
+              "Llega 10 minutos antes; los retrasos de más de 10 minutos cuentan como no presentación sin reembolso.",
+              "Confirmación por WhatsApp la noche anterior."
+            ]
           },
           {
-            "title": "Walking & terrain",
-            "content": "Moderate to demanding. Eoseungsaengak Trail is 1.3 km of wooden-stair climbing each way (≈50–60 min round-trip; tougher than Seongsan Ilchulbong). Camellia Hill is large but flat with paved paths. Cheonjeyeon has stairs to the lower viewpoints. Jusangjeolli has boardwalk with railings. O'sulloc is flat. Total walking ≈ 4 km. Comfortable closed-toe shoes essential; trekking shoes recommended if you have them."
+            "id": "walking",
+            "title": "Caminata y terreno",
+            "preview": "Moderado a exigente.",
+            "content": [
+              "De moderado a exigente.",
+              "Sendero Eoseungsaengak: 1,3 km de escaleras de madera en cada sentido (≈50-60 min ida y vuelta; el tramo más exigente).",
+              "Camellia Hill es grande pero llano con caminos pavimentados.",
+              "Cheonjeyeon tiene escaleras hasta los miradores inferiores.",
+              "Jusangjeolli tiene pasarela con barandillas.",
+              "O'sulloc es llano.",
+              "Caminata total ≈4 km.",
+              "Calzado cerrado esencial; zapatillas de senderismo recomendadas."
+            ]
           },
           {
-            "title": "Cancellation",
-            "content": "Free cancellation up to 24 hours before pickup. Same-day cancellations and no-shows non-refundable. The Eoseungsaengak Trail may be substituted for an alternate Hallasan trailhead (1100 Wetland or Sajebi) in heavy snow or trail closure conditions."
+            "id": "cancellation",
+            "title": "Cancelación",
+            "preview": "Cancelación gratuita hasta 24 horas antes de la recogida.",
+            "content": [
+              "Cancelación gratuita hasta 24 horas antes de la recogida.",
+              "Las cancelaciones en el mismo día y las no presentaciones no son reembolsables.",
+              "El sendero Eoseungsaengak puede sustituirse por otro acceso al Hallasan (Humedal 1100, etc.)."
+            ]
           },
           {
-            "title": "Drop-off options",
-            "content": "Five drop-off points: Shilla Duty-Free (≈17:30), LOTTE City Hotel (≈17:35), Jeju Airport (≈17:40), Ocean Suites (≈17:45), Dongmun Traditional Market (≈18:00). Dongmun is drop-only — operator does not enter the market with you. Black Pork Street is 5 minutes' walk from Dongmun."
+            "id": "drop",
+            "title": "Opciones de bajada",
+            "preview": "5 puntos de bajada: Shilla Duty-Free (≈17:30), LOTTE City Hotel, Aeropuerto Jeju...",
+            "content": [
+              "Cinco puntos de bajada: Shilla Duty-Free (≈17:30), LOTTE City Hotel (≈17:35), Aeropuerto de Jeju (≈17:40), Mercado Dongmun (≈17:45), Playa Iho Tewoo (≈18:00).",
+              "Dongmun es solo bajada; el operador no entra al mercado con el grupo.",
+              "La Calle del Cerdo Negro está a 5 minutos a pie de Dongmun."
+            ]
           },
           {
-            "title": "Children & accessibility",
-            "content": "Children of all ages welcome. Eoseungsaengak Trail is stroller-unfriendly (continuous wooden stairs to the summit). Other stops accessible. Limited wheelchair accessibility at Cheonjeyeon (stairs); other stops mostly OK. Advise mobility needs at booking."
+            "id": "children",
+            "title": "Niños y accesibilidad",
+            "preview": "Niños de todas las edades bienvenidos.",
+            "content": [
+              "Se aceptan niños de todas las edades.",
+              "El sendero Eoseungsaengak no es apto para cochecitos (escaleras de madera continuas).",
+              "El resto de las paradas son accesibles.",
+              "Acceso en silla de ruedas limitado en Cheonjeyeon (escaleras); el resto generalmente bien.",
+              "Indique necesidades de movilidad al reservar."
+            ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "Consultar notas de temporada"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "Consultar notas de temporada"
           },
-          "_seasonalSummary": "Jeju has Korea's mildest climate — coastal areas rarely freeze in winter, and summers are humid but moderated by sea breeze. The Hallasan trailhead is 5–10°C colder than coastal Jeju year-round.",
+          "_seasonalSummary": "Jeju tiene uno de los climas más suaves de Corea: las zonas costeras rara vez se congelan en invierno, y los veranos son húmedos pero suavizados por la brisa marina. El inicio del sendero de Hallasan suele ser 5–10°C más frío que la costa de Jeju durante todo el año.",
           "_seasonalTemperatures": [
             {
-              "season": "Spring (Mar–May)",
+              "season": "Primavera (mar.–may.)",
               "range": "8–22°C",
-              "notes": "Cherry blossoms in early April. Best season for the Hallasan trail."
+              "notes": "Cerezos en flor a principios de abril. La mejor época para el sendero de Hallasan."
             },
             {
-              "season": "Summer (Jun–Aug)",
+              "season": "Verano (jun.–ago.)",
               "range": "22–30°C",
-              "notes": "Humid; afternoon showers common. Camellia Hill rotates to hydrangea bloom."
+              "notes": "Húmedo; los chubascos por la tarde son frecuentes. Camellia Hill cambia su atractivo principal a la floración de hortensias."
             },
             {
-              "season": "Autumn (Sep–Nov)",
+              "season": "Otoño (sep.–nov.)",
               "range": "10–24°C",
-              "notes": "Best season — clear, mild, with pink muhly bloom at Camellia Hill in Oct–Nov."
+              "notes": "Mejor temporada: clima despejado y suave, con muhly rosa en Camellia Hill entre octubre y noviembre."
             },
             {
-              "season": "Winter (Dec–Feb)",
+              "season": "Invierno (dic.–feb.)",
               "range": "3–10°C",
-              "notes": "Mild on coast; Hallasan upper slopes can have snow. Camellia Hill peak bloom."
+              "notes": "Suave en la costa; las zonas altas de Hallasan pueden tener nieve. Camellia Hill suele estar en su mejor momento de floración."
             }
           ]
         },
         "seasonalVariations": [
           {
-            "season": "Spring",
-            "highlight": "Cherry blossoms across the route; canola flowers around Camellia Hill."
+            "season": "Primavera (marzo-mayo)",
+            "description": "Flores de colza por toda la ruta. Camellia Hill pasa de la camelias tardías a los comienzos del verdor. Temperatura agradable para el senderismo."
           },
           {
-            "season": "Summer",
-            "highlight": "Hydrangea peak at Camellia Hill in late June. Coastal stops stay cooler."
+            "season": "Verano (junio-agosto)",
+            "description": "Camellia Hill está lleno de hortensias azules (pico en julio). La vegetación de las Cascadas Cheonjeyeon alcanza su máxima exuberancia. Lleve ropa ligera para el senderismo matutino."
           },
           {
-            "season": "Autumn",
-            "highlight": "Pink muhly grass at Camellia Hill in October–November. Best photographic conditions."
+            "season": "Otoño (septiembre-noviembre)",
+            "description": "La hierba muhly grass rosa de Camellia Hill (octubre) y los cielos despejados ofrecen las mejores vistas desde Eoseungsaengak."
           },
           {
-            "season": "Winter",
-            "highlight": "Camellia at peak bloom (Camellia Hill's namesake season). Hallasan snow possible."
+            "season": "Invierno (diciembre-febrero)",
+            "description": "Temporada alta de camelias en Camellia Hill (diciembre-enero). El Hallasan puede tener nieve en la cima. Abríguese para Eoseungsaengak."
           }
         ]
       }
@@ -1995,56 +1861,65 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local operator",
-            "description": "Authorized Korean tour operator with full insurance",
+            "title": "Equipo local certificado",
+            "description": "Operador turístico coreano autorizado con seguro completo",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "iconColor": "text-emerald-600",
+            "body": "4,9/5 con 648 reseñas. Equipo local certificado con seguro completo. Sin paradas de compras."
           },
           {
             "icon": "route",
-            "title": "Route specialists",
-            "description": "Hand-tuned itinerary, not a generic loop",
+            "title": "Especialistas en la ruta",
+            "description": "Itinerario ajustado a medida, no un circuito genérico",
             "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "iconColor": "text-sky-600",
+            "body": "Todas las entradas incluidas: Camellia Hill (₩12.000), Cheonjeyeon (₩2.500), Jusangjeolli (₩2.000). y Eoseungsaengak: gratuitos."
           },
           {
             "icon": "users",
-            "title": "Curated group size",
-            "description": "Right-sized for the route",
+            "title": "Grupo reducido cuidado",
+            "description": "Tamaño adecuado para la ruta",
             "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600"
+            "iconColor": "text-amber-600",
+            "body": "Minibús de grupo pequeño (máx. ~14 personas). Camellia Hill sin aglomeraciones de autocar."
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "timing": "Inmediatamente",
+            "title": "Confirmación inmediata",
+            "detail": "Confirmación instantánea con resumen del itinerario.",
+            "description": "Confirmación instantánea con los detalles de recogida en el hotel de Jeju City (gratis en la ciudad; +₩70.000 fuera)."
           },
           {
-            "timing": "12 hours before",
-            "title": "12-Hour Reminder",
-            "detail": "Weather update and any route adjustments"
+            "timing": "12 horas antes",
+            "title": "Recordatorio 12 horas antes",
+            "detail": "Información meteorológica, condiciones en Eoseungsaengak y detalles de recogida.",
+            "description": "Nota previa sobre la temporada de floración actual de Camellia Hill (el jardín tiene un festival nombrado cada mes)."
           },
           {
-            "timing": "Evening before",
-            "title": "Final Pickup Info",
-            "detail": "Exact pickup time and driver contact"
+            "timing": "La noche anterior",
+            "title": "Información final de recogida",
+            "detail": "Punto de encuentro exacto y contacto del guía.",
+            "description": "Hora de recogida final confirmada la noche anterior."
           },
           {
-            "timing": "Morning of tour",
-            "title": "Day-of Route Notes",
-            "detail": "Morning briefing based on live conditions"
+            "timing": "La mañana del tour",
+            "title": "Notas del día del tour",
+            "detail": "Instrucciones matutinas con estado de la montaña y ajustes de ruta.",
+            "description": "Mensaje meteorológico matutino y cualquier nota sobre las condiciones del sendero de Hallasan."
           },
           {
-            "timing": "During tour",
-            "title": "Stop-by-Stop Tips",
-            "detail": "Real-time guidance at each location"
+            "timing": "Durante el tour",
+            "title": "Consejos parada a parada",
+            "detail": "Recomendaciones de almuerzo, mejores ángulos fotográficos en Camellia Hill.",
+            "description": "El guía narra el contexto del volcán escudo de Hallasan, la formación de juntas columnares, la leyenda joseon de las Siete Ninfas y la misión de 30 años del arboreto de Camellia Hill."
           },
           {
-            "timing": "After tour",
-            "title": "Post-tour Support",
-            "detail": "Follow-up and recommendations"
+            "timing": "Tras el tour",
+            "title": "Atención posventa",
+            "detail": "Solicitud de valoración enviada después del tour.",
+            "description": "Solicitud de valoración después del tour enviada tras la llegada."
           }
         ]
       }
@@ -2057,58 +1932,58 @@
         "staticQuestions": [
           {
             "id": "q1",
-            "question": "Is this tour available year-round?",
-            "answer": "Yes. The route runs every day of the year. Camellia Hill rotates blooms by season (camellia winter, canola spring, hydrangea summer, pink muhly autumn), so the photographic experience changes through the year but the day's pacing stays the same."
+            "question": "¿Este tour está disponible todo el año?",
+            "answer": "Sí. El tour opera durante todo el año. El Hallasan cierra el sendero Eoseungsaengak en caso de nieve excesiva o viento fuerte; en ese caso el guía sustituye la parada."
           },
           {
             "id": "q2",
-            "question": "Do I need hiking shoes for Eoseungsaengak?",
-            "answer": "Comfortable closed-toe walking shoes are sufficient — no technical hiking gear required. The Eoseungsaengak Trail is 1.3 km of wooden-stair climb each way (≈50–60 min round-trip), so trekking shoes with grip are nicer if you own them but not required. The route does not include the Hallasan summit climb (which would need dedicated gear and an early-morning start)."
+            "question": "¿Necesito calzado de senderismo para Eoseungsaengak?",
+            "answer": "Se recomienda calzado de suela con grip. El sendero tiene escalones de madera y algo de terreno irregular cerca de la cima, pero no requiere botas de montaña técnicas."
           },
           {
             "id": "q3",
-            "question": "How is this different from the Eastern UNESCO tour?",
-            "answer": "The Eastern UNESCO tour (same operator) covers Seongsan Ilchulbong (Sunrise Peak), Seongeup Folk Village, Hamdeok Beach, Micheon Cave, and the Haenyeo Museum. This Southern tour covers Hallasan, Camellia Hill, Cheonjeyeon, Jusangjeolli, and O'sulloc. Most visitors with 2 Jeju days do one of each. East has UNESCO sunrise; South has waterfalls and tea fields."
+            "question": "¿En qué se diferencia del tour del este de Jeju?",
+            "answer": "El tour del sur cubre Hallasan (Eoseungsaengak), Camellia Hill, Cascadas Cheonjeyeon, Acantilado Jusangjeolli y — enfocado en el volcán y la costa sur. El tour del este incluye Seongsan Ilchulbong, la Aldea Seongeup y el Museo Haenyeo. Ningún POI se repite; puede hacer los dos en días consecutivos."
           },
           {
             "id": "q4",
-            "question": "Is lunch included?",
-            "answer": "No — lunch is at your own expense (~₩15,000). The guide will recommend a local restaurant and assist with vegetarian, vegan, halal, or allergy needs if you advise at booking."
+            "question": "¿El almuerzo está incluido?",
+            "answer": "No. El almuerzo es por su cuenta (~₩15.000/persona). El guía recomienda restaurantes locales del sur de Jeju."
           },
           {
             "id": "q5",
-            "question": "Can I bring luggage on the airport pickup?",
-            "answer": "Yes. Notify the operator of luggage volume in advance. The mini-coach has dedicated luggage space and visitors arriving on early-morning flights can join the tour directly with their bags."
+            "question": "¿Puedo llevar equipaje en la recogida del aeropuerto?",
+            "answer": "Sí. El minibús tiene espacio bajo para maletas medianas. Si tiene equipaje muy grande, avise al reservar."
           },
           {
             "id": "q6",
-            "question": "Is there really no shopping stop?",
-            "answer": "Correct — the operator publishes a no-shopping clause. Other budget Jeju group tours typically include 30–60 minute stops at ginseng centers or cosmetic shops as a cost-offset for the operator. This route excludes those entirely."
+            "question": "¿De verdad no hay parada de compras?",
+            "answer": "Correcto. Este tour no incluye ninguna parada en tiendas de cosmética, joyería, algas ni recuerdos. Cinco horas de naturaleza y patrimonio."
           },
           {
             "id": "first-time",
-            "question": "Is this a good choice for first-time visitors to southern Jeju?",
-            "answer": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+            "question": "¿Es una buena opción para quienes visitan el sur de Jeju por primera vez?",
+            "answer": "Sí — cubre los puntos más representativos del sur en un único día equilibrado: montaña volcánica, jardín botánico, cascadas, acantilados y campos de té."
           },
           {
             "id": "walking",
-            "question": "Is the walking difficult?",
-            "answer": "An active day with several walking-heavy stops."
+            "question": "¿Es difícil la caminata?",
+            "answer": "Moderada-exigente. La subida a Eoseungsaengak es la sección más dura (~50 min de escalones empinados). El resto del día: cascadas (0,8 km plano-suave), Jusangjeolli (1 km plano) y (paseo ligero)."
           },
           {
             "id": "family",
-            "question": "Is this tour suitable for families?",
-            "answer": "Yes for families whose kids can handle a full day of moving around."
+            "question": "¿Es adecuado para familias?",
+            "answer": "Sí para familias con niños a partir de 6-8 años cómodos con el senderismo de Eoseungsaengak. Camellia Hill y son especialmente agradables para todas las edades."
           },
           {
             "id": "seniors",
-            "question": "Can older adults join comfortably?",
-            "answer": "Recommended only for active seniors comfortable with stairs and uneven ground."
+            "question": "¿Pueden participar personas mayores cómodamente?",
+            "answer": "Recomendado para mayores activos cómodos con escalones. Eoseungsaengak es la sección más exigente. El resto del tour es llano o suave."
           },
           {
             "id": "children",
-            "question": "What's the recommended minimum age?",
-            "answer": "Best fit is around age 10 and up — children comfortable with a full-day rhythm and the walking notes above."
+            "question": "¿Cuál es la edad mínima recomendada?",
+            "answer": "A partir de 6-8 años para un día completo con senderismo. Niños más pequeños pueden encontrar Eoseungsaengak demasiado exigente."
           }
         ]
       }
@@ -2131,7 +2006,7 @@
             {
               "stars": 4,
               "count": 39,
-              "percentage": 6
+              "percentage": 6.0
             },
             {
               "stars": 3,
@@ -2158,16 +2033,16 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "La disponibilidad se confirma en el paso de pago.",
         "price": {
           "amountLabel": "38.70",
           "originalPriceUsd": 43,
           "salePriceUsd": 38.7,
           "discountPercent": 10,
           "currency": "USD",
-          "per": "person",
-          "priceSource": "getyourguide_t606871",
-          "priceNote": "Original price 43 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+          "per": "persona",
+          "priceSource": "direct_rate",
+          "priceNote": "Precio basado en la tarifa directa de AtoC Korea."
         }
       }
     }
@@ -2192,19 +2067,19 @@
       "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
       },
       "v17_batch3_enhancement": {
         "date": "2026-04-28",
-        "description": "Batch 3 deep enhancement — descriptions raised to 700-1100+ chars; KB-backed metadata on all attraction stops; matching_profile recalibrated with verified-fact 0-1 float scores. Indoor ratio computed time-weighted using KB indoor_ratio_at_stop methodology established in Fix 1.",
+        "description": "Batch 3 deep enhancement — descriptions raised to 700-1100+ chars; KB-backed metadata on all attraction stops; product profile recalibrated with verified-fact 0-1 float scores. Indoor ratio computed time-weighted using KB indoor_ratio_at_stop methodology established in Fix 1.",
         "_score_audit": {
           "_methodology": "0-1 float scale. Indoor ratio computed time-weighted from KB indoor_ratio_at_stop values per Jason's correction methodology.",
           "deltas_applied": {
             "unesco_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.95,
               "reasoning": "Verified: 2 of 6 stops directly UNESCO — Hallasan UNESCO World Heritage (Eoseungsaengak gateway) + Daepo Jusangjeolli is on UNESCO Global Geopark list. Cheonjeyeon Falls + O'sulloc + Camellia Hill are non-UNESCO. 0.95 reflects strong UNESCO core but not pure UNESCO loop."
             },
@@ -2221,10 +2096,10 @@
             "photo_level": {
               "old": 0.8,
               "new": 0.95,
-              "reasoning": "Verified: 6 hero-image spots — Hallasan summit ridge, window-frame camellia (Camellia Hill signature), Seonimgyo nymph bridge over Cheonjeyeon, hexagonal basalt columns, O'sulloc tea fields. 0.95 calibrated."
+              "reasoning": "Verified: 6 hero-image lugares — Hallasan summit ridge, window-frame camellia (Camellia Hill signature), Seonimgyo nymph bridge over Cheonjeyeon, hexagonal basalt columns, O'sulloc tea fields. 0.95 calibrated."
             },
             "iconic_landmark_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.85,
               "reasoning": "Verified: 3 of 6 stops universally iconic (Hallasan, Jusangjeolli, O'sulloc); Camellia Hill regionally iconic; Cheonjeyeon Falls famous. 0.85 calibrated."
             },
@@ -2259,12 +2134,12 @@
               "reasoning": "Verified: only Cheonjeyeon Falls has direct intangible heritage (Chilseonyeo Festival, Seven Nymphs legend). Hallasan and Jusangjeolli are natural heritage but not intangible. O'sulloc tea ceremony has cultural significance but not registered intangible heritage. 0.55 calibrated."
             },
             "first_time_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.95,
               "reasoning": "Verified: covers Hallasan UNESCO + columnar geopark + iconic waterfall + tea culture + flower garden — 5 distinct Jeju essentials. 0.95 is excellent first-Jeju overview but slightly missing food/beach themes."
             },
             "value_for_money_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.85,
               "reasoning": "Verified fees: Camellia Hill ₩12,000 + others mostly free or ₩2,000. Total ~₩14,000 attraction fees per adult. Strong value but Camellia Hill is the cost driver. 0.85 calibrated."
             },
@@ -2292,7 +2167,7 @@
           "Ramsar SIS",
           "AllTrails",
           "Inside Jeju",
-          "Trazy",
+          "Referencia de mercado",
           "Jeju Tourism Org"
         ]
       }

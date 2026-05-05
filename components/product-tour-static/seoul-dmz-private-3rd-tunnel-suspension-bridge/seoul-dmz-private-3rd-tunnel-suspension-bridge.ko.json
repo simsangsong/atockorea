@@ -5,8 +5,8 @@
   "locale": "ko",
   "product_id": "seoul-dmz-private-3rd-tunnel-suspension-bridge",
   "seo": {
-    "pageTitle": "Seoul DMZ Private Tour: 3rd Tunnel + Bridge | AtoC Korea",
-    "metaDescription": "Private 8–9-hour DMZ day tour from Seoul: Imjingak Peace Park, 3rd Infiltration Tunnel, Dora Observatory, and the 220m Gamaksan Red Suspension Bridge.",
+    "pageTitle": "서울 DMZ 프라이빗 투어: 제3땅굴+가마산 출렁다리 | AtoC Korea",
+    "metaDescription": "서울 출발 8~9시간 프라이빗 DMZ 투어: 임진각 평화공원, 제3땅굴, 도라 전망대, 가마산 운천각 출렁다리.",
     "ogImage": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1920&q=80",
     "primaryKeywords": [
       "서울 DMZ 투어",
@@ -19,10 +19,10 @@
   },
   "catalog_card": {
     "slug": "seoul-dmz-private-3rd-tunnel-suspension-bridge",
-    "title": "서울 DMZ 프라이빗 투어: 제3땅굴+감악산 출렁다리",
-    "subtitle": "임진각 → 제3땅굴 → 도라전망대 → 감악산 출렁다리. 역사와 자연을 하루에.",
-    "region": "Paju (Seoul Day Trip)",
-    "duration": "8–9 hours",
+    "title": "서울 DMZ 프라이빗 투어: 제3땅굴 + 감악산 출렁다리",
+    "subtitle": "임진각, 제3땅굴, 도라전망대, 감악산 출렁다리를 하루에 둘러보는 서울 출발 프라이빗 역사·자연 코스.",
+    "region": "파주 (서울 당일치기)",
+    "duration": "8~9시간",
     "stopsCount": 4,
     "rating": 0,
     "reviewCount": 0,
@@ -36,31 +36,31 @@
     "priceLabel": "가격은 예약 시 확인",
     "shortCardDescription": "임진각 평화공원, 제3땅굴(1978년 발견 북한 침투 터널), 도라전망대(판문점 방향 DMZ 조망), 감악산 출렁다리(220m 현수교)를 프라이빗으로 하루에. 여권 지참 필수. 월요일 미운행.",
     "tags": [
-      "private_tour",
-      "dmz__suspension_bridge",
-      "hotel_pickup_included"
+      "프라이빗 투어",
+      "DMZ·출렁다리",
+      "호텔 픽업 포함"
     ]
   },
   "headlineLine1": "서울 DMZ 프라이빗 투어: 제3땅굴",
-  "headlineLine2": "과 감악산 출렁다리",
+  "headlineLine2": "그리고 감악산 출렁다리",
   "price": {
     "amountLabel": "",
     "currency": "USD",
-    "per": "vehicle"
+    "per": "차량"
   },
   "hero": {
     "imageUrl": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1920&q=80",
     "imagePosition": "center 40%",
     "tagline": "세계에서 가장 삼엄한 국경에서 220m 산악 출렁다리까지 — 프라이빗 하루에 담긴 두 개의 한국",
     "pills": [
-      "Private Vehicle",
-      "Free Hotel Pickup",
-      "Passport Required"
+      "전용 차량",
+      "호텔 무료 픽업",
+      "여권 필수"
     ],
     "meta": {
-      "duration": "8–9 hours",
-      "region": "Paju",
-      "stops": "4 stops",
+      "duration": "8~9시간",
+      "region": "파주",
+      "stops": "4개 코스",
       "rating": 0,
       "ratingStars": 0
     }
@@ -89,40 +89,39 @@
   ],
   "glanceItems": [
     {
+      "icon": "clock",
+      "label": "소요 시간",
+      "value": "8~9시간"
+    },
+    {
       "icon": "camera",
-      "label": "포토 스팟",
-      "value": "보통",
-      "level": 3
+      "label": "사진 포인트",
+      "value": "보통"
     },
     {
       "icon": "mountain",
-      "label": "경치 밀도",
-      "value": "양호",
-      "level": 4
+      "label": "경관 특색",
+      "value": "보통"
     },
     {
       "icon": "footprints",
-      "label": "도보 난이도",
-      "value": "다소 높음",
-      "level": 4
+      "label": "도보 강도",
+      "value": "활동적"
     },
     {
       "icon": "cloud-rain",
       "label": "우천 적합도",
-      "value": "양호",
-      "level": 4
+      "value": "보통"
     },
     {
       "icon": "users",
       "label": "가족 적합도",
-      "value": "보통",
-      "level": 3
+      "value": "보통"
     },
     {
-      "icon": "gauge",
-      "label": "투어 페이스",
-      "value": "집중형",
-      "level": 3
+      "icon": "scale",
+      "label": "투어 일정 속도",
+      "value": "균형"
     }
   ],
   "galleryItems": [
@@ -130,89 +129,89 @@
       "id": "g1",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
-      "alt": "The Mangbaedan Altar and Bridge of Freedom at Imjingak, with ribbons and memorial plaques",
-      "caption": "Imjingak Peace Park (1972 memorial site)",
-      "location": "Imjingak Peace Park",
-      "atmosphere": "Mangbaedan Altar, Freedom Bridge, and the bullet-ridden steam locomotive"
+      "alt": "투어 중 방문하는 임진각 평화공원 (1972년 건립 기념지)의 풍경",
+      "caption": "임진각 평화공원 (1972년 건립 기념지)",
+      "location": "임진각 평화누리공원",
+      "atmosphere": "임진각 평화공원 (1972년 건립 기념지)는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
     },
     {
       "id": "g2",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1604935080832-bcdf83b3a4f0?w=1200&q=80",
-      "alt": "Concrete entrance to an underground tunnel with safety helmets stacked on shelves",
-      "caption": "3rd Infiltration Tunnel entrance (discovered 1978)",
+      "alt": "투어 중 방문하는 제3땅굴 입구(1978년 발견)의 풍경",
+      "caption": "제3땅굴 입구(1978년 발견)",
       "location": "3rd Infiltration Tunnel",
-      "atmosphere": "Underground passage built for a surprise invasion, discovered in 1978"
+      "atmosphere": "제3땅굴 입구는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
     },
     {
       "id": "g3",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1576487248805-cf45f6bcc67f?w=1200&q=80",
-      "alt": "Open observation deck with high-powered binoculars overlooking the DMZ landscape",
-      "caption": "Dora Observatory looking across the border to North Korea",
+      "alt": "투어 중 방문하는 북한을 바라보는 도라 전망대의 풍경",
+      "caption": "북한을 바라보는 도라 전망대",
       "location": "Dora Observatory",
-      "atmosphere": "Direct view across the border into North Korea"
+      "atmosphere": "북한을 바라보는 도라 전망대는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
     },
     {
       "id": "g4",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
-      "alt": "Long red suspension bridge stretching across a forested mountain valley",
-      "caption": "Gamaksan Red Suspension Bridge — 220 meters, Korea's longest red suspension bridge",
-      "location": "Gamaksan Red Suspension Bridge",
-      "atmosphere": "Korea's longest red suspension bridge stretches 220 meters across a forested valley"
+      "alt": "산속 계곡을 가로지르는 긴 빨간 출렁다리",
+      "caption": "가마산 빨간 출렁다리 — 220미터, 한국 최장 빨간 출렁다리",
+      "location": "감악산 출렁다리",
+      "atmosphere": "가마산 빨간 출렁다리 — 220미터는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
     },
     {
       "id": "g5",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-      "alt": "Open Paju countryside with rural roads and farmland between the DMZ and Gamaksan",
-      "caption": "Paju countryside — the drive between the DMZ and Gamaksan",
+      "alt": "투어 중 방문하는 파주 농촌 — DMZ와 가마산 사이의 드라이브의 풍경",
+      "caption": "파주 농촌 — DMZ와 가마산 사이의 드라이브",
       "location": "Paju Countryside",
-      "atmosphere": "The drive between the DMZ and Gamaksan"
+      "atmosphere": "DMZ와 가마산 사이의 드라이브"
     }
   ],
   "itineraryStops": [
     {
       "number": 1,
       "time": "09:30",
-      "duration": "30 min",
+      "duration": "30분",
       "name": "임진각 평화공원",
-      "category": "Korean War Memorial Park",
+      "category": "한국전쟁 기념 공원",
       "description": "서울 북쪽 약 70km, 군사분계선으로부터 7km 임진강 변에 위치한 평화 공원입니다. 1972년 건립. 자유의 다리(6.25 포로 귀환 다리), 경의선 녹슨 증기기관차, 망배단(이산가족 분향단) 등이 있습니다. 분단 역사를 체감할 수 있는 출발 지점입니다. 방문 시간: 약 40분.",
       "highlights": [
-        "Mangbaedan Altar — Korean families displaced from North Korea bow northward each Lunar New Year and Chuseok",
-        "Freedom Bridge — former rail bridge used in 1953 to repatriate 12,773 prisoners of war; today covered with prayer ribbons tied for unification",
-        "Bullet-ridden Jangdan Station steam locomotive (Cultural Heritage 2004) on the destroyed Gyeongui rail line",
-        "Pyeonghwa-Nuri Windy Hill — thousands of colorful pinwheels on a 20,000-capacity peace lawn (signature photo spot)",
-        "DMZ Theater & Exhibition Hall (Unification Board / North Korea Center) — 400+ photos and documents introduce the day's narrative",
-        "**56 km from Seoul City Hall** to Imjingak Pavilion (Korea Tourism Organization official); 7 km from Military Demarcation Line — closest civilian-accessible point on National Highway 1",
-        "**Peace Bell built in 2000** for the new millennium — **21 stairs + 21-ton bell** symbolizing the 21st century; striking allowed 10:00–17:00 (10,000 KRW)",
-        "**Pyeonghwa Nuri Park created 2005** for the World Peace Festival — 20,000-capacity peace lawn that since 2006 has hosted MBC's annual New Year metropolitan music broadcast",
-        "**Original 1972 funding**: confectioner Haitai donated KRW 80M for initial 750-pyeong construction (Korea News Newsreel 912 archival footage); facilities expanded incrementally over five decades"
+        "망배단 — 북한 실향민 가족들이 설날·추석 북쪽을 향해 절을 올리는 제단",
+        "자유의 다리 — 1953년 전쟁 포로 12,773명 귀환에 사용된 옛 철교",
+        "총탄 자국 장단역 증기 기관차 (문화재 2004) — 파괴된 교량 위 전시",
+        "평화누리 바람의 언덕 — 2만 명 수용 평화 공원에 오색 바람개비 수천 개",
+        "DMZ 시어터 & 전시관 (통일부/북한 센터) — 사진 400점 이상",
+        "**서울 시청에서 임진각 누각까지 56km** (한국관광공사 공식 수치)",
+        "**평화의 종 2000년 건립** — **21개 계단 + 21톤 종** 상징",
+        "**평화누리 공원 2005년 세계평화축전**을 위해 조성",
+        "**원래 1972년 해태 과자가 ₩8,000만 기부**로 750평 초기 건물 건립"
       ],
       "timeUsed": [
-        "Brief park orientation by the driver-guide on arrival",
-        "Walk the main monument cluster: Mangbaedan → Freedom Bridge → bullet-ridden locomotive (~20 min)",
-        "Optional Pyeonghwa-Nuri pinwheel field photo stop and Bell of Peace",
-        "Boarding the DMZ shuttle bus to the 3rd Tunnel (passport check at Civilian Control Line)",
-        "Optional Peace Bell strike (10,000 KRW; 10:00-17:00) for groups making a unification wish (~10 min)"
+        "가이드와 함께 도착 후 공원 간단 안내",
+        "주요 기념물 산책: 망배단 → 자유의 다리 → 총탄 기관차 — 약 20분",
+        "선택: 평화누리 바람개비밭 포토 + 평화의 종",
+        "제3땅굴로 가는 DMZ 셔틀 버스 탑승 (민통선 여권 검문)",
+        "선택: 평화의 종 타종 (₩10,000; 10:00~17:00, 통일 소원 그룹용) — 약 10분"
       ],
-      "whyOnRoute": "Starting at Imjingak sets the emotional and historical tone for the day before crossing into the DMZ proper, where photography and free movement are both restricted. It is also the mandatory tour-staging point — passport ID checks happen here, and the DMZ shuttle bus departs from here onward to the 3rd Tunnel and Dora Observatory. The combination of monuments, exhibits, and panoramic Imjin River vista lets the driver-guide compress 50+ years of separated-family history (Korean War, 1953 POW repatriation, ongoing Mangbaedan ritual every Lunar New Year and Chuseok) into a single 30-40 minute walk before the day shifts to the more politically intense 3rd Tunnel and Dora Observatory zones — where photography and free movement are heavily restricted. Imjingak is also the **mandatory tour-staging point** for any DMZ Peace & Security Tourist Program: passport ID checks happen here, the dedicated DMZ shuttle bus departs from here, and individual-vehicle access beyond Unification Bridge is prohibited under the Civilian Control Line.",
+      "whyOnRoute": "임진각으로 시작하면 땅굴 입장 전 하루의 감정적·역사적 톤이 설정됨.",
       "visitBasics": {
-        "hours": "Outdoor park 24 hours; monument buildings ~09:00-17:00; gondola ~10:00-17:00",
-        "closed": "Park itself open year-round; some buildings close Mondays",
-        "admission": "Park free; gondola from 11,000 KRW; amusement-park rides individual ticketing",
-        "walking": "Easy — flat memorial park; main monuments cluster within 500 m radius"
+        "hours": "야외 공원 24시간; 기념관 건물 약 09:00~17:00; 곤돌라 약 10:00~17:00",
+        "closed": "공원 연중 무휴; 일부 건물 월요일 휴관",
+        "admission": "공원 무료; 곤돌라 ₩11,000부터; 놀이 시설 개별 티켓",
+        "walking": "쉬움 — 평탄한 기념 공원; 주요 기념물 500m 반경 내 밀집"
       },
       "convenience": {
-        "restroom": "Multiple — visitor center, Pyeonghwa-Nuri, parking area",
-        "parking": "Imjingak parking 1,000-5,000 KRW by vehicle size; tour-bus passengers no fee"
+        "restroom": "방문자 센터, 평화누리, 주차장 구역 화장실",
+        "parking": "임진각 주차장 차량 크기별 ₩1,000~₩5,000; 투어 버스 무료"
       },
       "smartNotes": {
-        "photo": "Bullet-ridden Jangdan Station steam locomotive is the most poignant single shot. Freedom Bridge with rainbow prayer ribbons tied to the fence. Pyeonghwa-Nuri Windy Hill pinwheel field for color contrast.",
-        "facilities": "1st-floor tourism center cheap snack stalls (corn dogs, sausage rice cake, dumplings); 2nd-floor sit-down restaurants. Annyeong cafe at Pyeonghwa-Nuri serves teas. North Korean currency for sale as souvenirs (legal collectible).",
-        "tip": "Arrive 30 minutes before booked DMZ shuttle time for ID check. Bring physical passport (digital photos and Alien Registration Card alone may not be accepted at the Civilian Control Line for foreigners). Skip the amusement park unless traveling with young children."
+        "photo": "총탄 자국 장단역 기관차가 가장 감동적인 단일 사진 소재. 바람개비밭은 오전에 바람이 잘 불어 역동적.",
+        "facilities": "1층 관광 센터 저렴한 간식 (핫도그, 소떡소떡, 만두 등). 기념품점.",
+        "tip": "예약한 DMZ 셔틀 시간 30분 전 도착해 신분 확인. 여권 반드시 지참."
       },
       "_poi_meta": {
         "poi_key": "imjingak_peace_park",
@@ -232,43 +231,43 @@
     {
       "number": 2,
       "time": "10:30",
-      "duration": "70 min",
+      "duration": "70분",
       "name": "제3땅굴 (지하 침투 터널)",
-      "category": "Underground Invasion Tunnel (1978)",
+      "category": "지하 침투 땅굴 (1978년)",
       "description": "1978년 10월 17일 발견된 네 개의 북한 침투 터널 중 세 번째. 서울에서 불과 44km 거리입니다. 좌우 폭 2m, 높이 2m, 길이 1,635m의 지하 터널로, 작전 시 1시간에 3만 명 이상이 통과할 수 있는 규모입니다. 방문 시간: 약 60분. 여권 지참 필수.",
       "highlights": [
-        "1.635 km long tunnel, 73 m below ground — closest of the 4 discovered tunnels to Seoul (44 km)",
-        "Discovered Oct 17, 1978 after a North Korean defector tip + June 1978 underground-explosion detection",
-        "Designed for ~30,000 troops/hour to invade Seoul; walls falsely painted with coal in N.K. cover-up attempt",
-        "End-of-tunnel spy-hole: 170 m from the actual Military Demarcation Line, blocked by 3 concrete walls",
-        "Hard hats mandatory; photography strictly forbidden; cameras/phones locked away before descent",
-        "**Tunnel dimensions**: 1.95 m max height × 2.1 m wide (Wikipedia confirmed) — taller guests must crouch through the 358 m visitor section; **runs 1,200 m into North Korea + 435 m south of MDL**",
-        "**Discovery method**: 4 months of intercept-tunnel digging followed June 1978 underground-explosion detection — the official tunnel discovery date is **October 17, 1978**",
-        "**Monorail capacity 150 tickets/day**: 12,200 KRW adult / 9,500 KRW child round-trip; on-foot option 9,200 KRW adult / 7,000 KRW child",
-        "**Closed Mondays + public holidays falling on weekdays + Seollal/Chuseok holidays** (KTO official) — pre-tour reservation mandatory at +82-31-940-8526 or 1330"
+        "총 길이 1.635km 터널, 지하 73m — 발견된 4개 땅굴 중 서울에서 가장 가까움",
+        "1978년 10월 17일 북한 귀순자 제보로 발견; 방향 측정 후 1976년 6월 지하 폭발 탐지 이후 확인",
+        "시간당 약 3만 명 병력 서울 침투 구성; 벽면에 석탄 위장 도색",
+        "터널 끝 감시창: 군사분계선에서 실제 170m 지점, 3개 콘크리트 블록으로 차단",
+        "안전모 필수; 터널 내 촬영 엄금; 입장 전 카메라·간편한폰 보관",
+        "**터널 규격**: 최대 높이 1.95m × 폭 2.1m — 허리를 굽히지 않고도 통과 가능",
+        "**발견 경위**: 1978년 6월 지하 폭발 탐지 이후 4개월 요격 터널 굴착",
+        "**모노레일 일 150매 한정**: 성인 ₩12,200 / 어린이 ₩9,500 왕복; 도보 이용 별도 요금",
+        "**월요일 + 평일 공휴일 + 설날·추석 휴관**"
       ],
       "timeUsed": [
-        "Brief 10-minute orientation film at the DMZ Video Room",
-        "Hard-hat fitting + locker check-in (cameras, phones, oversized bags)",
-        "Descent: 350 m walking ramp (10-15 min) OR slow monorail (~5 min)",
-        "Horizontal tunnel walk: 358 m forward to the first concrete blockade + return (~20-25 min)",
-        "Ascent: 350 m back up the 11° ramp (15-20 min) OR monorail back"
+        "DMZ 영상관에서 약 10분 오리엔테이션 영상",
+        "안전모 착용 + 카메라/간편한폰 등 보관",
+        "하강: 350m 경사로 도보 (10~15분) 또는 모노레일 (약 5분)",
+        "수평 터널 이동: 첫 번째 콘크리트 차단벽까지 358m 왕복 (약 20~25분)",
+        "상승: 11° 경사로 350m 귀환 (15~20분) 또는 모노레일"
       ],
-      "whyOnRoute": "The 3rd Tunnel is the day's most physically and emotionally substantial DMZ stop. No other site on the Korean peninsula gives visitors a literal in-the-tunnel experience of inter-Korean conflict — the spy-hole at the end of the tunnel, only 170 m from the actual border with North Korea, makes the divided peninsula tangible in a way no museum can replicate. For private-charter guests this is also the day's most logistically rigid stop — monorail tickets are capped at 150/day, photography and electronics are confiscated before descent, and the Korea Tourism Organization's reservation system requires a passport-or-ARC ID check at the Civilian Control Line just beyond Unification Bridge. Mondays, Seollal, and Chuseok are full closure days — your driver-guide pre-validates the day's reservation slot the morning of departure to avoid a wasted 70-minute drive from Seoul on a closure day.",
+      "whyOnRoute": "제3땅굴은 하루 중 신체적·감정적으로 가장 실질적인 DMZ 코스.",
       "visitBasics": {
-        "hours": "Tour windows 09:00-17:00 (last entry typically 15:00-15:30)",
-        "closed": "Mondays + public holidays falling on weekdays + Seollal + Chuseok",
-        "admission": "Monorail Adults 12,200 / Teens-Children 9,500 KRW; On-foot Adults 9,200 / Teens-Children 7,000 KRW (often bundled in DMZ tour package)",
-        "walking": "High — 350 m steep 11° ramp descent + 358 m horizontal tunnel + 350 m return ascent. Equivalent to climbing a 25-story building."
+        "hours": "투어 시간 09:00~17:00 (마지막 입장 보통 15:00~15:30)",
+        "closed": "월요일 + 평일 공휴일 + 설날 + 추석",
+        "admission": "모노레일 성인 ₩12,200 / 청소년·어린이 ₩9,500; 도보 성인 ₩9,200 / 청소년·어린이 ₩7,000",
+        "walking": "힘든 구간 — 350m 급경사 11° 하강 경사로 + 358m 수평 터널 + 귀환 상승. 무릎·심장 질환자 주의"
       },
       "convenience": {
-        "restroom": "Visitor center at the surface; none inside tunnel",
-        "parking": "Free at visitor center; shuttle from Imjingak; passport-controlled DMZ Civilian Control Line entry"
+        "restroom": "지상 방문자 센터; 터널 내부 없음",
+        "parking": "방문자 센터 무료; 임진각에서 셔틀; 민통선 여권 검문"
       },
       "smartNotes": {
-        "photo": "Photography is FORBIDDEN inside the tunnel — cameras and phones MUST be locked away before descent. Surface DMZ symbolic sculptures, the monument arch, and exterior shots of the Tunnel Entry Building are photo-friendly. Bring no valuables that won't fit in a small locker.",
-        "facilities": "DMZ Video Room (10-min orientation film), DMZ Exhibition Hall on Korean War + DMZ ecosystem, souvenir shops at surface. Fresh-water tap inside the tunnel for visitors with claustrophobia or fatigue.",
-        "tip": "OPT FOR THE MONORAIL (additional ~3,000 KRW vs walking) if you are: 65+ years old, taller than 1.95 m, prone to claustrophobia, have heart/lung/back issues, or have weak knees. The walking-ramp return at 11° is the day's hardest physical demand. Wear sturdy closed-toe shoes — floor uneven and damp."
+        "photo": "**터널 내부 촬영 전면 금지** — 카메라와 간편한폰 입장 전 반드시 보관함 보관.",
+        "facilities": "DMZ 영상관 (10분 오리엔테이션), 한국전쟁+DMZ 생태 전시관, 기념품점.",
+        "tip": "**모노레일 이용 강력 권장** (도보 대비 약 ₩3,000 추가): 65세 이상, 무릎·심장 이상, 경사로가 부담스럽다면 필수."
       },
       "_poi_meta": {
         "poi_key": "third_infiltration_tunnel",
@@ -288,43 +287,43 @@
     {
       "number": 3,
       "time": "11:50",
-      "duration": "30 min",
+      "duration": "30분",
       "name": "도라전망대",
-      "category": "DMZ Border Viewpoint",
+      "category": "DMZ 접경 전망대",
       "description": "한국의 DMZ 전망대 중 판문점과 가장 가까운 전망대입니다. 망원경으로 북한 영토(기정동 선전마을, 개성공단 연기 등)를 조망할 수 있습니다. 사진 촬영 제한(남쪽 방향만 가능). 방문 시간: 약 40분.",
       "highlights": [
-        "Closest South Korean observatory to Panmunjom — 500-seat new building opened 2024",
-        "Visible: Kaesong city, Songaksan Mountain, Kijong-dong propaganda village, Kim Il-sung Statue, Geumamgol Cooperation Farm",
-        "First opened January 1987; replaced Songaksan Observation Post — historic vantage point",
-        "Indoor amphitheatre with orientation film + observatory cafe in the new 3-story building",
-        "**Address**: 310 Je3ttanggul-ro, Paju-si — northernmost civilian-accessible observatory at the Military Demarcation Line, replacing the now-decommissioned Songaksan Observation Post",
-        "**500-seat indoor amphitheatre + VIP rooms** (KTO confirmed) — indoor briefing capacity allows DMZ Peace Tour groups to watch the orientation film regardless of weather",
-        "**Visible from the deck**: Kaesong Industrial Complex, Songaksan Mountain, Kim Il-sung Statue, Kijong-dong propaganda village, Geumamgol Cooperation Farm, GPS-jamming tower targeting NK citizens",
-        "**Rooftop access closed since October 2024** following NK trash-balloon launches; **photography northward prohibited on 1F/2F** under current Joint Chiefs of Staff security advisory — confirm with driver-guide on day of visit",
-        "**Mt. Dora hike option**: 0.4-mile out-and-back trail with 18 m elevation gain (AllTrails verified) for guests wanting a leg-stretch after the 3rd Tunnel descent"
+        "판문점 남쪽에서 가장 가까운 대한민국 전망대 — 2024년 500석 새 건물 개관",
+        "조망: 개성시, 송악산, 기정동 선전 마을, 김일성 동상 등",
+        "1987년 1월 최초 개방; 송악산 전망대 대체 — 역사적 조망 포인트",
+        "실내 원형 극장 오리엔테이션 영상 + 신축 3층 건물 내 전망대 카페",
+        "**주소**: 파주시 제3땅굴로 310 — 민간인 접근 가능 최북단 전망대",
+        "**500석 실내 원형 극장 + VIP 룸** — 실내 브리핑 시설",
+        "**전망대에서 조망**: 개성 공업 지구, 송악산, 김일성 동상 등",
+        "**2024년 10월 이후 옥상 출입 제한** (북한 쓰레기 풍선 발사 후); **판유리 내부 조망**",
+        "**도라산 하이킹 옵션**: 0.4마일 왕복 트레일, 고도 차 18m"
       ],
       "timeUsed": [
-        "DMZ shuttle from 3rd Tunnel (~10-15 min)",
-        "Brief orientation film in the indoor amphitheatre",
-        "Binocular viewing at the windows (500 KRW per use)",
-        "Photo opportunities at the designated photo lines (not toward North Korea)",
-        "Indoor cafe + restroom break (the day's primary winter-warming-up stop) (~10 min)"
+        "제3땅굴에서 DMZ 셔틀 — 약 10~15분",
+        "실내 원형 극장 오리엔테이션 영상",
+        "창문 앞 쌍안경 관람 (사용당 ₩500)",
+        "지정 포토 라인 사진 촬영 (북쪽 방향 촬영 금지)",
+        "실내 카페 + 화장실 휴식 (당일 겨울 난방 최적 장소) — 약 10분"
       ],
-      "whyOnRoute": "After the dense underground 3rd Tunnel experience, Dora Observatory provides the broad horizon view that contextualizes the divided peninsula geography — the Kim Il-sung Statue and Kijong-dong village visible only kilometers away. The new 2024 building also gives the day its primary indoor warming-up stop in winter and shaded rest stop in summer. The 2024 rebuild deliberately added indoor capacity to handle larger group volumes and weather-resilient briefings — an upgrade your driver-guide can use to compress the day's heavy security-and-history content into a single 30-minute amphitheatre session before walking to the photo-permitted south-facing windows. Since the rooftop closure in October 2024, the binocular line is shorter than in pre-2024 years, which actually improves the per-guest viewing window despite the reduced total deck access — a private-charter advantage when traveling with seniors or guests sensitive to crowd density.",
+      "whyOnRoute": "제3땅굴 관람 후 도라전망대에 오르면 분단 지형을 한눈에 이해할 수 있습니다. 가까운 거리의 기정동 마을과 북측 지역을 조망할 수 있어, 땅굴에서 느낀 긴장감을 넓은 시야로 정리해 주는 구간입니다. 2024년 새 건물은 실내 설명 공간이 넓어져 겨울에는 몸을 녹이고 여름에는 햇볕을 피하며 설명을 듣기 좋습니다. 루프탑 폐쇄 이후에도 실내 전망창과 망원경 관람 구간이 비교적 정돈되어 있어, 어르신이나 혼잡에 민감한 손님이 있는 프라이빗 투어에 특히 적합합니다.",
       "visitBasics": {
-        "hours": "09:00-17:00 (DMZ Peace Tour windows)",
-        "closed": "Mondays + public holidays falling on weekdays",
-        "admission": "Bundled in DMZ Peace Tour fee; ~3,000 KRW shuttle from Imjingak. 500 KRW per binocular use.",
-        "walking": "Easy — bus drops at observatory entrance; flat new-building floor plan"
+        "hours": "09:00~17:00 (DMZ 평화 투어 시간 기준)",
+        "closed": "월요일 + 평일 공휴일",
+        "admission": "DMZ 평화 투어 요금에 포함; 임진각에서 셔틀 약 ₩3,000. 쌍안경 1회 ₩500",
+        "walking": "쉬움 — 버스가 전망대 입구까지 하차; 신축 건물 평탄"
       },
       "convenience": {
-        "restroom": "Inside new observatory building",
-        "parking": "Tour buses only; DMZ Civilian Control Line restricts private vehicles"
+        "restroom": "신축 전망대 건물 내",
+        "parking": "투어 버스 전용; 민통선으로 개인 차량 제한"
       },
       "smartNotes": {
-        "photo": "Photography toward North Korea is STRICTLY restricted — confirm with the on-duty soldier where cameras may be aimed before raising your phone. Exterior of the new 3-story building, the surrounding mountains, and South-side viewpoints are photo-friendly. The 3rd-floor outdoor deck has been periodically closed since 2024.",
-        "facilities": "Observatory cafe (coffee + light snacks) inside the new building. Orientation film in the indoor amphitheatre.",
-        "tip": "Bring 500-KRW coins for the binoculars (no change machine inside the observatory itself). Visit on a clear-weather forecast day — fog or haze removes most of the educational view. Tour groups typically allocate only 15-20 min — budget for binoculars first, then exhibits."
+        "photo": "북쪽 방향 촬영 **엄격히 제한** — 근무 군인과 반드시 확인 후 촬영.",
+        "facilities": "신축 건물 내 전망대 카페 (커피 + 간단한 스낵). 오리엔테이션 영상 상영.",
+        "tip": "쌍안경 동전 ₩500짜리 미리 준비 (전망대 내부에 환전기 없음). 맑은 날 오전이 조망 최적."
       },
       "_poi_meta": {
         "poi_key": "dora_observatory",
@@ -344,43 +343,43 @@
     {
       "number": 4,
       "time": "14:30",
-      "duration": "90 min",
-      "name": "감악산 출렁다리 (레드 서스펜션 브릿지)",
-      "category": "Mountain Suspension Bridge",
-      "description": "감악산(675m) 에 걸린 길이 220m의 공중 현수교로, '글로스터 영웅교'라는 공식 명칭을 가집니다. 한국전쟁 임진강 전투(1951년)에서 용전한 영국 글로스터셔 연대를 기념합니다. 협곡 위 50m 높이를 가로지르는 다리에서 경기 북부 산악 전망이 펼쳐집니다. 방문 시간: 약 60분.",
+      "duration": "90분",
+      "name": "감악산 출렁다리",
+      "category": "산악 출렁다리",
+      "description": "감악산(675m)에 걸린 길이 220m의 출렁다리로, '글로스터 영웅교'라는 공식 명칭을 가집니다. 한국전쟁 임진강 전투(1951년)에서 용전한 영국 글로스터셔 연대를 기념합니다. 협곡 위 50m 높이를 가로지르는 다리에서 경기 북부 산악 전망이 펼쳐집니다. 방문 시간: 약 60분.",
       "highlights": [
-        "'Gloucester Heroes Bridge' — dedicated to the British 1st Battalion Gloucester Regiment (Battle of Imjin River, April 1951)",
-        "Visit Korea: 150 m towerless suspension bridge across Seolmari Valley on Gamaksan Mountain (675 m peak)",
-        "1.5 m wide; capacity ~900 adults; designed for 30 m/s winds and magnitude-7 earthquakes",
-        "10 m above ground — family-safe, kid-friendly wobble; 10-15 min stair climb from parking",
-        "Strongest in late October to early November autumn foliage (red maple + golden oak frame the red bridge)",
-        "**Officially opened March 2018**, fundraised by Paju Mayor Lee In-jae's citizen-donation campaign under the slogan 'Freedom is not free — it is earned with blood'",
-        "**1.7 km from Gloucester Hill Battle Memorial** (the actual April 22-25 1951 battlefield) — guests choosing the full Gloucester Memorial visit add 30-45 minutes to the route",
-        "**Bridge specs**: spans Seolmari Valley severed by Highway 37 — Korea's longest pier-less suspension bridge per Korea Tourism Organization official designation",
-        "**Open daily 09:00-18:00**; bridge crossing FREE; **parking ₩2,000 (credit card only)** at Lot 1 (closest to bridge entrance — recommended for elderly guests)"
+        "'글로스터 영웅 다리' — 1951년 4월 임진강 전투 영국 제1 글로스터셔 연대에 헌정",
+        "가마산 설마리 계곡을 가로지르는 150m 무주탑 현수교",
+        "폭 1.5m; 최대 수용 약 900명; 초속 30m 바람 및 규모 7 지진 구성",
+        "지상 10m — 가족·어린이 안전, 출렁임; 주차장에서 계단 10~15분",
+        "10~11월 초 단풍 시즌이 가장 절경 (붉은 단풍 + 황금 참나무)",
+        "**2018년 3월 공식 개통** — 이인재 파주 시장의 시민 모금으로 건립",
+        "**글로스터 힐 전투 기념관 1.7km** — 실제 1951년 4월 22~25일 전투 현장",
+        "**다리 제원**: 37번 국도로 갈라진 설마리 계곡 횡단 — 한국 최장 무주탑 현수교",
+        "**매일 09:00~18:00 개방**; 다리 횡단 무료; **주차 ₩2,000 (신용카드 전용)**"
       ],
       "timeUsed": [
-        "Drive from the DMZ area (~30-40 min depending on lunch location)",
-        "Park at Lot 1 (closest); 10-15 min stair climb to the bridge entrance",
-        "Bridge crossing and return (~20-30 min including photo stops)",
-        "Snack/coffee at the parking-area cafe before departure",
-        "Optional Gloucester Hill Battle Memorial side-visit (~30-45 min round-trip, +1.7 km drive — recommended for guests interested in the bridge's namesake battle)"
+        "DMZ 지역에서 드라이브 (점심 위치에 따라 약 30~40분)",
+        "1번 주차장 이용; 다리 입구까지 계단 10~15분",
+        "다리 횡단 왕복 (포토 포함 약 20~30분)",
+        "출발 전 주차장 카페에서 간식/커피",
+        "선택: 글로스터 힐 전투 기념관 방문 (왕복 약 30~45분, +1.7km 추가 이동)"
       ],
-      "whyOnRoute": "Ending the day on Gamaksan turns the route into more than a memorial-only experience — the red-bridge-against-forest visual contrasts strongly with the morning's underground tunnel and barbed-wire DMZ horizons, giving the day a lighter, photo-friendly close that travelers consistently rate as the trip highlight. It is also a deliberate Korean War tribute — the Gloucester Regiment dedication ties the afternoon thematically back to the morning's DMZ history without imposing more heaviness on the mood.",
+      "whyOnRoute": "가마산으로 하루를 마무리하면 단순 추모 이상의 경험 — 빨간 출렁다리 산책이 활동적 피날레 추가.",
       "visitBasics": {
-        "hours": "Bridge 09:00-18:00 daily; hiking trails sunrise to sunset",
-        "closed": "Open year-round (occasional closures for high winds)",
-        "admission": "Free for the bridge",
-        "walking": "Moderate — 10-15 min stair climb from parking; bridge itself is a flat 150 m crossing"
+        "hours": "매일 09:00~18:00; 강풍 시 임시 폐쇄",
+        "closed": "연중 무휴 (강풍으로 임시 폐쇄 가능)",
+        "admission": "다리 무료",
+        "walking": "중간 강도 — 주차장에서 10~15분 계단 오르막; 다리 자체는 평탄한 150m 횡단"
       },
       "convenience": {
-        "restroom": "At parking area (Parking Lot 1)",
-        "parking": "2,000 KRW (credit card only at most lots; foreign cards generally accepted). Park at Lot 1 — closest to bridge — to save significant walking."
+        "restroom": "주차장 1번 구역 화장실",
+        "parking": "₩2,000 (대부분 주차장 신용카드 전용; 외국 카드 일반 가능). 1번 주차장 다리에서 가장 가까움"
       },
       "smartNotes": {
-        "photo": "Red bridge against autumn foliage (mid-October to early November) is the iconic shot. Mid-bridge looking down into Seolmari Valley. Wide-angle from the far side showing the full red span against the mountain.",
-        "facilities": "Small cafe + snack stalls at the parking area; minimal facilities at the bridge itself. CU convenience store within ~5 min drive for a more substantial snack stop.",
-        "tip": "The bridge wobble is strongest in the middle — children love it; visitors with vertigo should grip the railings and walk slowly. Avoid in heavy wind (occasional closures). Early morning has the best light and lowest crowds; mid-afternoon weekend visits in October can be very busy."
+        "photo": "가을 단풍 배경 빨간 다리 (10월 중순~11월 초) 대표 샷. 다리 중앙에서 흔들림이 가장 크게 느껴짐.",
+        "facilities": "주차장 구역 소형 카페 + 간식 가게; 다리 자체에는 시설 최소.",
+        "tip": "다리 중앙이 출렁임 가장 강 — 어린이가 좋아함; 고소공포증이 있다면 주의."
       },
       "_poi_meta": {
         "poi_key": "gamaksan_red_bridge",
@@ -401,22 +400,22 @@
   ],
   "routeFlowStops": [
     {
-      "name": "Imjingak",
+      "name": "임진각",
       "type": "origin",
       "theme": "Memorial"
     },
     {
-      "name": "3rd Tunnel",
+      "name": "제3땅굴",
       "type": "primary",
       "theme": "Underground"
     },
     {
-      "name": "Dora Observatory",
+      "name": "도라 전망대",
       "type": "primary",
       "theme": "Border View"
     },
     {
-      "name": "Gamaksan Bridge",
+      "name": "가마산 출렁다리",
       "type": "return",
       "theme": "Suspension"
     }
@@ -424,253 +423,254 @@
   "routePhases": [
     {
       "phase": "기념관 & 터널",
-      "duration": "Stops 1–2",
+      "duration": "정류장 1–2",
       "description": "임진각 평화공원 → 제3땅굴 지하 침투 터널."
     },
     {
       "phase": "국경 전망 & 점심",
-      "duration": "Stops 3",
+      "duration": "정류장 3",
       "description": "도라전망대 → 점심 식사."
     },
     {
       "phase": "산악 출렁다리 피날레",
-      "duration": "Stops 4",
+      "duration": "정류장 4",
       "description": "감악산 출렁다리(220m) → 서울 귀환."
     }
   ],
   "routeShapeIntro": {
-    "title": "How this private day moves",
-    "subtitle": "Pickup at your Seoul downtown hotel around 08:00, then a 70-minute drive to Imjingak. Morning at the DMZ (Imjingak, 3rd Tunnel, Dora Observatory), lunch, then afternoon at Gamaksan Suspension Bridge. Return to Seoul typically 16:30 to 17:30."
+    "title": "프라이빗 하루 일정",
+    "subtitle": "서울 시내 호텔 오전 8시 픽업 후, 임진각까지 70분 이동. 오전 DMZ 방문(임진각, 제3땅굴, 도라 전망대), 점심, 오후 가마산 출렁다리. 귀환은 보통 오후 6시~7시입니다."
   },
   "whyTourWorks": {
     "bestFor": [
-      "First-time visitors curious about Korea's modern history",
-      "Adult travelers and history-leaning couples",
-      "Travelers who want one strong, meaningful day-trip from Seoul",
-      "Photographers who want both historical and natural subjects",
-      "Groups wanting comfort and door-to-door private service"
+      "한국 현대 역사에 관심 있는 첫 방문자",
+      "성인 여행자 및 역사 관심 커플",
+      "서울에서 의미 있는 하루 여행을 원하는 여행자",
+      "역사와 자연 두 가지 피사체를 원하는 포토그래퍼",
+      "편의성과 도어 투 도어 프라이빗 서비스를 원하는 그룹"
     ],
     "routeLogicSections": [
       {
-        "title": "Why pair the DMZ with Gamaksan",
+        "title": "DMZ와 가마산을 함께 묶는 이유",
         "icon": "landmark",
         "iconBg": "bg-slate-50/80",
         "iconColor": "text-slate-600",
         "items": [
           {
-            "label": "The DMZ alone can feel emotionally heavy",
-            "detail": "Visitors who do DMZ-only tours often describe the day as moving but draining. Adding Gamaksan gives the day an emotional release in the afternoon."
+            "label": "DMZ만 하면 감정적으로 무거울 수 있음",
+            "detail": "DMZ 단독 투어를 한 방문객들은 종종 감동적이지만 지친다고 표현합니다. 가마산 추가로 하루에 감정적인 환기가 생깁니다."
           },
           {
-            "label": "The two stops are geographically efficient",
-            "detail": "Gamaksan sits about 30 minutes from the DMZ, so the pairing does not require a long extra transfer."
+            "label": "두 코스가 지리적으로 효율적",
+            "detail": "가마산은 DMZ에서 약 30분 거리에 있어 이 페어링에 큰 추가 이동이 필요하지 않습니다."
           },
           {
-            "label": "Both are signature Paju experiences",
-            "detail": "Together they cover the heaviest historical site near Seoul and Korea's longest red suspension bridge—two of the strongest photo and story points in Gyeonggi-do."
+            "label": "두 곳 모두 파주의 대표 경험",
+            "detail": "함께 서울 근교 가장 무거운 역사 유적지와 한국에서 가장 긴 빨간 출렁다리를 커버합니다."
           }
         ]
       },
       {
-        "title": "How the walking load actually feels",
+        "title": "실제 도보 강도는 어느 정도일까",
         "icon": "footprints",
         "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
         "items": [
           {
-            "label": "The 3rd Tunnel ramp is the hardest section",
-            "detail": "The descent is fine for most travelers; the climb back up the steep ramp is the most physically demanding moment of the day."
+            "label": "제3땅굴이 가장 힘든 구간",
+            "detail": "경사진 귀환 경사로(발목 높이 약 1.2m, 전방 경사 약 11도)가 가장 힘든 구간입니다. 대부분 약 10분이면 통과합니다."
           },
           {
-            "label": "Gamaksan is a moderate uphill walk",
-            "detail": "The trail to the bridge takes 10 to 40 minutes depending on the entry point used; the driver-guide will pick the easier route by default."
+            "label": "가마산 접근이 두 번째로 활동적",
+            "detail": "선택 트레일 헤드에 따라 10~40분의 상승이 필요하며, 이후 출렁다리 횡단이 있습니다."
           },
           {
-            "label": "Imjingak and Dora Observatory are easy",
-            "detail": "Both are flat-to-easy walking; restrooms and rest areas are plentiful at both."
+            "label": "임진각과 도라 전망대는 쉬움",
+            "detail": "임진각은 완전 평탄합니다. 도라 전망대는 엘리베이터 접근이 가능합니다."
           }
         ]
       },
       {
-        "title": "When operations shift",
+        "title": "운영 상황이 변할 때",
         "icon": "shield-alert",
         "iconBg": "bg-rose-50/80",
         "iconColor": "text-rose-600",
         "items": [
           {
-            "label": "Mondays are different",
-            "detail": "The 3rd Tunnel route is closed on Mondays; the 2nd Tunnel may be substituted depending on military access on the day."
+            "label": "DMZ 평화 투어는 월요일에 운행하지 않음",
+            "detail": "월요일은 제2땅굴이 잠정 대체 코스입니다."
           },
           {
-            "label": "Military access can change last minute",
-            "detail": "DMZ access is governed by the South Korean military and can shift due to drills or weather. The driver-guide will offer alternative stops if needed."
+            "label": "군사 훈련으로 접근이 변경될 수 있음",
+            "detail": "군 일정은 공공 공지 없이 일부 DMZ 구역을 닫을 수 있습니다. 대체 코스가 즉시 조정됩니다."
           },
           {
-            "label": "Severe wind can close the bridge",
-            "detail": "Gamaksan Suspension Bridge can close in severe wind, snow, or ice. In that case, the driver-guide will suggest a substitute stop nearby."
+            "label": "가마산 기상 영향",
+            "detail": "강풍이나 폭설은 출렁다리를 닫을 수 있습니다. 가마산 하이킹만 진행하거나 파주 대체 코스로 변경됩니다."
           }
         ]
       }
     ],
     "lessIdealFor": [
-      "Travelers with claustrophobia (the 3rd Tunnel descent is narrow)",
-      "Visitors with serious knee or heart issues (steep tunnel ramp)",
-      "Very young children (the historical content is heavy and the tunnel is restricted)",
-      "Anyone afraid of heights who must avoid suspension bridges",
-      "Mondays (the 3rd Tunnel route is closed; 2nd Tunnel may be substituted)"
+      "폐쇄공포증 여행자 주의 (제3땅굴 하강로 협소)",
+      "심각한 무릎·심장 문제 방문자 주의 (가파른 터널 경사)",
+      "유아 주의 (역사 콘텐츠 무거움, 땅굴 입장 제한)",
+      "고소공포증으로 출렁다리를 피해야 하는 여행자 주의",
+      "월요일 주의 (제3땅굴 휴관; 제2땅굴 대체 가능)"
     ]
   },
   "practicalAccordionItems": [
     {
       "id": "pickup",
-      "title": "Pickup & drop-off",
-      "preview": "Free Seoul downtown hotel pickup around 08:00",
+      "title": "픽업 & 하차",
+      "preview": "서울 시내 호텔 무료 픽업 약 08:00",
       "content": [
-        "Free hotel pickup is included for Seoul downtown areas (Myeongdong, Hongdae, Dongdaemun, Insadong, Itaewon)",
-        "Stays outside Seoul downtown may incur an additional pickup fee",
-        "Please wait at the hotel lobby 10 minutes before the agreed departure time",
-        "Pickup is typically around 08:00 because the DMZ shuttle program runs on a fixed schedule",
-        "Drop-off at your Seoul hotel typically 16:30 to 17:30",
-        "Drive time is about 70 minutes each way under normal traffic"
+        "서울 시내 지역(명동, 홍대, 동대문, 인사동, 이태원 등) 호텔 무료 픽업 포함.",
+        "서울 시내 외 숙소는 추가 픽업 비용이 발생할 수 있음.",
+        "예약된 출발 시간 10분 전까지 호텔 로비에서 대기 부탁드립니다.",
+        "DMZ 셔틀 프로그램이 고정 일정으로 운영되므로 픽업은 보통 오전 8시경.",
+        "서울 호텔 하차는 보통 16:30~17:30.",
+        "일반 교통 기준 편도 약 70분 소요."
       ]
     },
     {
       "id": "passport",
-      "title": "Passport and Identification",
-      "preview": "Passport is required—no exceptions",
+      "title": "여권 및 신분증",
+      "preview": "여권 필수 — 예외 없음",
       "content": [
-        "Every guest must carry their physical passport, including infants",
-        "Passport is checked at the Unification Bridge checkpoint before entering the DMZ",
-        "Photocopies, photos, or expired passports are not accepted",
-        "Without a valid passport, guests will be denied entry to the DMZ portion and the tour cannot be refunded",
-        "Some nationalities may face additional restrictions; please confirm at booking"
+        "영유아 포함 모든 게스트는 실물 여권을 반드시 지참해야 합니다.",
+        "DMZ 진입 전 통일교 검문소에서 여권을 확인합니다.",
+        "사본, 사진 촬영본, 만료된 여권은 인정되지 않습니다.",
+        "유효한 여권이 없는 경우 DMZ 구간 입장이 거부되며 투어 환불이 불가합니다.",
+        "일부 국적은 추가 제한이 있을 수 있으니 예약 시 확인해 주세요."
       ]
     },
     {
       "id": "walking",
-      "title": "Walking & terrain",
-      "preview": "Moderate to high; the 3rd Tunnel ramp is the hardest section",
+      "title": "도보 & 지형",
+      "preview": "중간~높음; 제3땅굴 경사로가 가장 힘든 구간",
       "content": [
-        "Imjingak Peace Park: easy flat walking",
-        "3rd Infiltration Tunnel: steep and slippery; the return ramp is the most demanding section of the day",
-        "Dora Observatory: easy with elevator access",
-        "Gamaksan Suspension Bridge: 10 to 40 minute uphill approach depending on trailhead, plus the bridge crossing itself",
-        "The tunnel may be uncomfortable for travelers with claustrophobia, knee issues, or heart conditions",
-        "Comfortable walking shoes with good grip are strongly recommended"
+        "임진각 평화공원: 평탄한 도보로 쉬움.",
+        "제3땅굴: 경사지고 미끄러움; 귀환 경사로가 당일 가장 힘든 구간입니다.",
+        "도라 전망대: 엘리베이터 이용 가능, 쉬움.",
+        "가마산 출렁다리: 출발 지점에 따라 10~40분 오르막 접근 후 다리 횡단.",
+        "터널은 폐쇄 공포증, 무릎 이상, 심장 질환이 있는 분께 불편할 수 있습니다.",
+        "미끄럼 방지 기능이 있는 편안한 운동화를 강력히 권장합니다."
       ]
     },
     {
       "id": "weather",
-      "title": "Weather policy",
-      "preview": "Military access and weather can both affect the route",
+      "title": "날씨 정책",
+      "preview": "군사 접근 및 날씨 모두 루트에 영향 가능",
       "content": [
-        "The DMZ Peace Tour shuttle is closed on Mondays; the 2nd Tunnel may be substituted",
-        "Military training schedule changes can close DMZ access at short notice; alternative sites may be visited but no refund is available in this case",
-        "Severe wind, snow, or ice can close Gamaksan Suspension Bridge",
-        "Light rain does not close the route, but reduces visibility from Dora Observatory",
-        "Yellow dust days (spring) can dramatically reduce the cross-border view"
+        "DMZ 평화 투어 셔틀은 월요일 운행 중단; 제2땅굴로 대체될 수 있습니다.",
+        "군사 훈련 일정 변경으로 DMZ 접근이 갑자기 제한될 수 있으며, 대체 코스로 이동 가능.",
+        "강한 바람, 폭설, 결빙 시 가마산 출렁다리 입장이 제한될 수 있습니다.",
+        "가벼운 비는 투어를 진행하나 도라 전망대 조망이 제한됩니다.",
+        "봄철 황사는 월경 조망을 크게 저하시킬 수 있습니다."
       ]
     },
     {
       "id": "money",
-      "title": "Admission and On-the-Day Spending",
-      "preview": "DMZ shuttle and bridge admission included; lunch pay direct",
+      "title": "입장료 및 당일 지출",
+      "preview": "DMZ 셔틀 및 교각 입장료 포함; 점심 현장 직접 결제",
       "content": [
-        "DMZ Peace Tour shuttle ticket is included in your tour fee",
-        "Imjingak Peace Park is free to enter",
-        "Gamaksan Suspension Bridge admission is included in your tour fee",
-        "Lunch is paid directly; expect 12,000 to 25,000 KRW per person at restaurants near Imjingak",
-        "Most shops accept credit cards; carry some cash for traditional restaurants and the tunnel locker (small change required)"
+        "DMZ 평화 투어 셔틀 티켓은 투어 요금에 포함.",
+        "임진각 평화공원 무료 입장.",
+        "가마산 출렁다리 입장료 투어 요금에 포함.",
+        "점심은 현장 직접 결제; 임진각 인근 식당 기준 1인 약 ₩12,000~25,000.",
+        "대부분 카드 결제 가능; 전통 식당과 터널 사물함(소정 비용) 이용 시 현금 지참 권장."
       ]
     },
     {
       "id": "wear",
-      "title": "What to wear & bring",
-      "preview": "Walking shoes, layers, and your passport",
+      "title": "복장 & 준비물",
+      "preview": "운동화, 레이어링, 여권",
       "content": [
-        "Comfortable walking shoes with good grip (especially for the tunnel ramp)",
-        "Layered clothing—the DMZ area is cooler than central Seoul",
-        "Light jacket or windbreaker (the bridge can feel windy)",
-        "Passport (mandatory)",
-        "Camera or phone (note that photography is restricted inside the tunnel)",
-        "Cash and card for lunch and snacks"
+        "미끄럼 방지 기능의 편안한 워킹화 (특히 터널 경사로 이동 시).",
+        "겹쳐 입기 — DMZ 지역은 서울 시내보다 기온이 낮습니다.",
+        "가벼운 방풍 재킷 (출렁다리에서 바람이 강할 수 있음).",
+        "여권 (필수).",
+        "카메라/간편한폰 (터널 내부 촬영은 제한됨).",
+        "점심 및 간식용 현금과 카드."
       ]
     },
     {
       "id": "included",
-      "title": "What's included",
-      "preview": "Vehicle, driver-guide, and all admission included",
+      "title": "포함 사항",
+      "preview": "차량, 드라이버 가이드, 모든 입장료 포함",
       "variant": "included",
       "content": [
-        "Private vehicle (sedan, SUV, or van based on group size)",
-        "Licensed English-speaking driver-guide",
-        "Free hotel pickup and drop-off in Seoul downtown",
-        "Fuel and tolls for the standard route",
-        "DMZ Peace Tour shuttle ticket (3rd Tunnel + Dora Observatory)",
-        "Gamaksan Suspension Bridge admission",
-        "Lunch is not included",
-        "Personal expenses and shopping are not included",
-        "Driver gratuities are not included"
+        "프라이빗 차량 (그룹 규모에 따라 세단, SUV 또는 밴)",
+        "공인 영어 가이드 겸 운전기사",
+        "서울 시내 무료 호텔 픽업·하차",
+        "기본 코스 연료비 및 통행료",
+        "DMZ 평화 투어 셔틀 티켓 (제3땅굴 + 도라 전망대)",
+        "가마산 출렁다리 입장료",
+        "점심 미포함",
+        "개인 지출 및 쇼핑 미포함",
+        "드라이버 팁 미포함"
       ]
     }
   ],
   "practicalWeatherStatic": {
     "today": {
       "temp": "—",
-      "label": "Live weather integration"
+      "label": "실시간 날씨 연동"
     },
     "tomorrow": {
       "temp": "—",
-      "label": "Updated daily"
-    }
+      "label": "매일 업데이트"
+    },
+    "_seasonalSummary": "DMZ 지역은 서울보다 바람이 강하고 겨울에는 체감온도가 낮습니다. 제3땅굴 내부는 계단과 경사가 있으므로 편한 신발이 필요하며, 여권 원본 지참이 필수입니다."
   },
   "seasonalVariations": [
     {
-      "season": "Spring",
-      "title": "Visibility-sensitive",
-      "description": "Pleasant temperatures, but yellow dust in March-April can reduce the cross-border visibility from Dora Observatory.",
+      "season": "봄",
+      "title": "시계 민감",
+      "description": "온화한 기온이지만 3~4월 황사가 도라 전망대 월경 조망을 줄일 수 있음. 가마산은 신록으로 푸릇함.",
       "icon": "flower"
     },
     {
-      "season": "Summer",
-      "title": "Lush but humid",
-      "description": "Lush green forests around Gamaksan, but humidity makes the tunnel descent and the bridge climb feel more demanding.",
+      "season": "여름",
+      "title": "무성하지만 습함",
+      "description": "가마산 주변 울창한 초록 숲이지만 습도가 굴 하강과 출렁다리 체험을 불편하게 만들 수 있음.",
       "icon": "sun"
     },
     {
-      "season": "Autumn",
-      "title": "Best all-round season",
-      "description": "Korea's cleanest visibility window for Dora Observatory and the strongest foliage season at Gamaksan. The best all-round time for this route.",
+      "season": "가을",
+      "title": "최고 시즌",
+      "description": "한국 최상의 도라 전망대 시계 구간이자 가마산 단풍 절정 시즌. 9~11월 두 코스 모두 최적 조건.",
       "icon": "leaf"
     },
     {
-      "season": "Winter",
-      "title": "Stark and weather-sensitive",
-      "description": "The DMZ feels especially stark and quiet in winter, but cold winds can close the suspension bridge. Dress in real layers.",
+      "season": "겨울",
+      "title": "황량하고 날씨 민감",
+      "description": "겨울 DMZ는 황량하고 고요한 분위기. 강한 바람이 출렁다리를 닫을 수 있음 — 미리 확인 권장.",
       "icon": "snowflake"
     }
   ],
   "bookingTrustItems": [
     {
       "icon": "check-circle",
-      "title": "공인 현지 운영사",
-      "description": "Authorized Korean tour operator with full insurance",
+      "title": "공인 현지 여행사",
+      "description": "정식 등록 및 보험 가입 현지 여행사",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
-      "body": "DMZ 코스 전문 공인 현지 운영사."
+      "body": "DMZ 코스 전문 공인 현지 여행사."
     },
     {
       "icon": "route",
       "title": "코스 전문",
-      "description": "Hand-tuned itinerary, not a generic loop",
+      "description": "이동 부담을 줄인 효율적인 코스",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
-      "body": "제3땅굴 코스는 월요일 휴관. 월요일에는 운영사가 대체 DMZ 코스를 안내합니다."
+      "body": "제3땅굴 코스는 월요일 휴관. 월요일에는 여행사가 대체 DMZ 코스를 안내합니다."
     },
     {
       "icon": "users",
       "title": "그룹 규모 관리",
-      "description": "Right-sized for the route",
+      "description": "코스에 상황에 맞춘 인원 규모",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600",
       "body": "프라이빗 차량으로 DMZ 입장 수속과 이동을 효율적으로 처리합니다."
@@ -678,84 +678,95 @@
   ],
   "bookingSupportSteps": [
     {
-      "timing": "Immediately",
+      "timing": "즉시",
       "title": "즉시 확인",
-      "detail": "Booking confirmation with itinerary summary",
+      "detail": "행정 요약 포함 예약 확인서 발송",
       "description": "픽업 정보 포함 즉시 예약 확인서 발송. 여권 지참 안내."
     },
     {
-      "timing": "12 hours before",
+      "timing": "출발 12시간 전",
       "title": "12시간 전 알림",
-      "detail": "Weather update and any route adjustments",
+      "detail": "날씨 업데이트 및 경로 변경 안내",
       "description": "DMZ 당일 접근 가능 여부 및 감악산 출렁다리 상태 사전 안내."
     },
     {
-      "timing": "Evening before",
+      "timing": "전날 저녁",
       "title": "최종 픽업 안내",
-      "detail": "Exact pickup time and driver contact",
+      "detail": "정확한 픽업 시간 및 가이드 연락처",
       "description": "출발 전날 저녁 최종 픽업 시각 확인."
     },
     {
-      "timing": "Morning of tour",
+      "timing": "투어 당일 아침",
       "title": "당일 코스 안내",
-      "detail": "Morning briefing based on live conditions",
+      "detail": "실시간 상황 기반 당일 브리핑",
       "description": "군사 훈련이나 기상으로 인한 코스 변경 아침 메시지 전달."
     },
     {
-      "timing": "During tour",
+      "timing": "투어 중",
       "title": "경유지별 심층 안내",
-      "detail": "Real-time guidance at each location",
+      "detail": "각 코스 실시간 현장 안내",
       "description": "한국전쟁·분단 역사, 제3땅굴 발견 배경 등 가이드 심층 설명."
     },
     {
-      "timing": "After tour",
+      "timing": "투어 종료 후",
       "title": "투어 후 지원",
-      "detail": "Follow-up and recommendations",
+      "detail": "피드백 및 추가 여행 추천",
       "description": "투어 후 피드백 요청 전송."
     }
   ],
   "staticQuestions": [
     {
+      "id": "q1",
       "question": "이 코스에서 DMZ에서 실제로 무엇을 볼 수 있나요?",
       "answer": "세 곳: 제3땅굴(1978년 발견, 길이 1,635m 지하 침투 터널), 도라전망대(판문점 방향 북한 조망), 임진각 평화공원(자유의 다리, 녹슨 기관차)."
     },
     {
+      "id": "q2",
       "question": "여권이 필요한가요?",
       "answer": "네, 영·유아를 포함한 모든 방문객이 여권 실물을 소지해야 합니다. 통일안보공원 입장 시 신분 확인이 이루어집니다."
     },
     {
+      "id": "q3",
       "question": "월요일에도 투어가 가능한가요?",
-      "answer": "제3땅굴 코스는 월요일 휴관입니다. 월요일에는 운영사가 대체 DMZ 코스(판문점 방향 우회 코스 등)를 안내합니다."
+      "answer": "제3땅굴 코스는 월요일 휴관입니다. 월요일에는 여행사가 대체 DMZ 코스(판문점 방향 우회 코스 등)를 안내합니다."
     },
     {
+      "id": "q4",
       "question": "제3땅굴 하강이 힘들지 않나요?",
       "answer": "경사가 급한 350m 진입로가 가장 체력이 필요한 구간입니다. 내려가는 것은 쉽지만 올라오는 길이 힘듭니다. 안전모 착용 필수."
     },
     {
+      "id": "q5",
       "question": "군사 훈련으로 DMZ 접근이 취소될 수 있나요?",
       "answer": "DMZ 접근은 한국 군 당국이 통제하며 단기 통보로 변경될 수 있습니다. 취소 시 전액 환불됩니다."
     },
     {
+      "id": "q6",
       "question": "모든 경유지에서 사진 촬영이 가능한가요?",
       "answer": "임진각과 감악산은 자유롭게 촬영 가능. 도라전망대는 남쪽 방향 촬영만 허용됩니다."
     },
     {
+      "id": "first-time",
       "question": "파주를 처음 방문하는 분에게 좋은가요?",
       "answer": "네, 파주 DMZ 지역의 대표 명소를 하루에 균형 있게 볼 수 있습니다."
     },
     {
+      "id": "walking",
       "question": "도보 이동이 힘들지 않나요?",
       "answer": "활동적인 하루입니다. 임진각은 평탄한 도보. 제3땅굴 하강 경사로가 가장 힘든 구간. 감악산 출렁다리는 약 10~15분 산책로 이동이 필요합니다."
     },
     {
+      "id": "family",
       "question": "가족 여행에 적합한가요?",
       "answer": "역사적 내용의 무거움과 제3땅굴 경사로를 소화할 수 있는 어린이와 함께하기에 적합합니다."
     },
     {
+      "id": "seniors",
       "question": "어르신도 참여할 수 있나요?",
       "answer": "계단, 고르지 않은 지형, 350m 급경사 터널 진입로가 있어 활동적인 어르신께만 권장합니다."
     },
     {
+      "id": "children",
       "question": "권장 최소 연령은 몇 세인가요?",
       "answer": "만 10세 이상 추천. 역사적 무거운 내용과 급경사 터널 하강이 포함됩니다."
     }
@@ -794,31 +805,31 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
     "price": {
       "amountLabel": "",
       "currency": "USD",
-      "per": "vehicle"
+      "per": "차량"
     }
   },
   "pickup_dropoff": {
     "type": "hotel_pickup",
     "meeting_points": [
       {
-        "name": "Any central Seoul hotel",
+        "name": "서울 중심부 호텔 어디든",
         "time": "07:30–08:30",
-        "note": "Door-to-door pickup at any hotel within the supported area."
+        "note": "지원 지역 내 호텔 문 앞 픽업"
       }
     ],
     "dropoff_points": [
       {
-        "name": "Any central Seoul hotel",
+        "name": "서울 중심부 호텔 어디든",
         "approx_time": "≈ 16:30–17:30",
-        "note": "Drop-off at the same hotel or any address within the supported area."
+        "note": "같은 호텔 또는 지원 지역 내 원하는 주소에서 하차"
       }
     ],
     "hotel_pickup_available": true,
-    "notes": "Please wait at the hotel lobby 10 minutes before the agreed departure time. Bring your physical passport. No passport, no DMZ entry, no refund. On Mondays, the 3rd Tunnel route is closed; the 2nd Tunnel may be substituted depending on military access. Last-minute military-driven access changes do not qualify for a refund; the driver-guide will offer the closest alternative on the day."
+    "notes": "약속된 출발 시간 10분 전까지 호텔 로비에서 기다려 주세요. 실물 여권을 반드시 지참해야 하며, 여권이 없으면 DMZ 입장이 불가하고 환불도 어렵습니다. 월요일에는 제3땅굴이 휴무라 군부대 출입 상황에 따라 제2땅굴 등으로 대체될 수 있습니다. 당일 군사 통제로 일정이 변경될 수 있습니다."
   },
   "matching_profile": {
     "profile_version": 6,
@@ -829,7 +840,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gyeonggi_paju",
     "vehicle_type": "private_vehicle",
-    "duration_hours": 8,
+    "duration_hours": 8.0,
     "region_tags": [
       "seoul_capital",
       "gyeonggi_paju",
@@ -861,7 +872,7 @@
     "walking_level": 0.7,
     "scenic_level": 0.6,
     "photo_level": 0.6,
-    "culture_level": 1,
+    "culture_level": 1.0,
     "relax_level": 0.4,
     "first_time_fit": 0.8,
     "family_fit": 0.55,
@@ -887,18 +898,18 @@
     "beach_fit": 0.2,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.2,
-    "no_shopping_fit": 1,
-    "local_culture_fit": 1,
+    "no_shopping_fit": 1.0,
+    "local_culture_fit": 1.0,
     "storytelling_fit": 0.95,
     "unesco_fit": 0.15,
     "intangible_heritage_fit": 0.2,
     "indoor_ratio": 0.45,
     "weather_sensitivity": 0.55,
-    "comfort_level": 1,
+    "comfort_level": 1.0,
     "budget_fit": 0.6,
     "premium_fit": 0.95,
     "small_group_fit": 0.15,
-    "private_fit": 1,
+    "private_fit": 1.0,
     "bus_fit": 0.05,
     "price_band": "premium",
     "pickup_base": "seoul_downtown",
@@ -955,40 +966,40 @@
       "gamaksan_red_bridge",
       "dora_observatory"
     ],
-    "private_tour_fit": 1,
-    "history_culture_fit": 1,
+    "private_tour_fit": 1.0,
+    "history_culture_fit": 1.0,
     "customizable_route_fit": 0.4,
     "flexibility_fit": 0.6,
-    "china_mainland_market_fit": 0,
-    "korea_domestic_market_fit": 0,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "seoul_day_trip_pair_fit": 1,
-    "seoul_central_hotel_pickup_fit": 1,
-    "return_to_seoul_central_fit": 1,
-    "day_trip_2_3_hour_drive_each_way_fit": 1,
-    "private_charter_format_fit": 1,
-    "dmz_security_zone_day_tour_fit": 1,
-    "north_korea_proximity_history_fit": 1,
-    "korean_war_memorial_complex_fit": 1,
-    "mandatory_passport_or_arc_id_fit": 1,
-    "third_infiltration_tunnel_anchor_fit": 1,
-    "dora_observatory_anchor_fit": 1,
-    "imjingak_peace_park_anchor_fit": 1,
-    "gamaksan_lighter_close_to_heavy_dmz_pivot_fit": 1,
-    "gloucester_heroes_battle_memorial_fit": 1,
-    "battle_of_imjin_river_1951_history_fit": 1,
-    "separated_families_displaced_persons_history_fit": 1,
-    "divided_korea_geography_visit_fit": 1,
-    "mangbaedan_lunar_new_year_chuseok_ritual_fit": 1,
-    "freedom_bridge_pow_repatriation_anchor_fit": 1,
+    "seoul_day_trip_pair_fit": 1.0,
+    "seoul_central_hotel_pickup_fit": 1.0,
+    "return_to_seoul_central_fit": 1.0,
+    "day_trip_2_3_hour_drive_each_way_fit": 1.0,
+    "private_charter_format_fit": 1.0,
+    "dmz_security_zone_day_tour_fit": 1.0,
+    "north_korea_proximity_history_fit": 1.0,
+    "korean_war_memorial_complex_fit": 1.0,
+    "mandatory_passport_or_arc_id_fit": 1.0,
+    "third_infiltration_tunnel_anchor_fit": 1.0,
+    "dora_observatory_anchor_fit": 1.0,
+    "imjingak_peace_park_anchor_fit": 1.0,
+    "gamaksan_lighter_close_to_heavy_dmz_pivot_fit": 1.0,
+    "gloucester_heroes_battle_memorial_fit": 1.0,
+    "battle_of_imjin_river_1951_history_fit": 1.0,
+    "separated_families_displaced_persons_history_fit": 1.0,
+    "divided_korea_geography_visit_fit": 1.0,
+    "mangbaedan_lunar_new_year_chuseok_ritual_fit": 1.0,
+    "freedom_bridge_pow_repatriation_anchor_fit": 1.0,
     "closed_mondays_holidays": true,
     "mondays_closure_advisory": true,
     "seollal_chuseok_closure_advisory": true,
@@ -1070,21 +1081,21 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Seoul DMZ Private Tour: 3rd Tunnel",
-        "headlineLine2": "and Gamaksan Suspension Bridge",
+        "headlineLine1": "서울 DMZ 프라이빗 투어: 제3땅굴",
+        "headlineLine2": "그리고 감악산 출렁다리",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1920&q=80",
           "imagePosition": "center 40%",
-          "tagline": "From the world's most fortified border to a 220-meter mountain suspension bridge—one private day, two completely different sides of Korea.",
+          "tagline": "세계에서 가장 삼엄한 국경에서 220m 산악 출렁다리까지 — 프라이빗 하루에 담긴 두 개의 한국",
           "pills": [
-            "Private Vehicle",
-            "Free Hotel Pickup",
-            "Passport Required"
+            "전용 차량",
+            "호텔 무료 픽업",
+            "여권 필수"
           ],
           "meta": {
-            "duration": "8–9 hours",
-            "region": "Paju",
-            "stops": "4 stops",
+            "duration": "8~9시간",
+            "region": "파주",
+            "stops": "4개 코스",
             "rating": 0,
             "ratingStars": 0
           }
@@ -1099,23 +1110,23 @@
         "subnavItems": [
           {
             "id": "overview",
-            "label": "Overview"
+            "label": "투어 개요"
           },
           {
             "id": "itinerary",
-            "label": "Itinerary"
+            "label": "상세 일정"
           },
           {
             "id": "details",
-            "label": "Details"
+            "label": "유의사항"
           },
           {
             "id": "faq",
-            "label": "FAQ"
+            "label": "자주 묻는 질문"
           },
           {
             "id": "reviews",
-            "label": "Reviews"
+            "label": "여행자 후기"
           }
         ]
       }
@@ -1128,38 +1139,38 @@
         "glanceItems": [
           {
             "icon": "clock",
-            "label": "Duration",
-            "value": "8–9 hours"
+            "label": "소요 시간",
+            "value": "8~9시간"
           },
           {
             "icon": "camera",
-            "label": "Photo Value",
-            "value": "Moderate"
+            "label": "사진 포인트",
+            "value": "보통"
           },
           {
             "icon": "mountain",
-            "label": "Scenic",
-            "value": "Moderate"
+            "label": "경관 특색",
+            "value": "보통"
           },
           {
             "icon": "footprints",
-            "label": "Walking",
-            "value": "Active"
+            "label": "도보 강도",
+            "value": "활동적"
           },
           {
             "icon": "cloud-rain",
-            "label": "Rain Safety",
-            "value": "Moderate"
+            "label": "우천 적합도",
+            "value": "보통"
           },
           {
             "icon": "users",
-            "label": "Family Fit",
-            "value": "Moderate"
+            "label": "가족 적합도",
+            "value": "보통"
           },
           {
             "icon": "scale",
-            "label": "Pace",
-            "value": "Balanced"
+            "label": "투어 일정 속도",
+            "value": "균형"
           }
         ]
       }
@@ -1174,46 +1185,46 @@
             "id": "g1",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
-            "alt": "The Mangbaedan Altar and Bridge of Freedom at Imjingak, with ribbons and memorial plaques",
-            "caption": "Imjingak Peace Park (1972 memorial site)",
-            "location": "Imjingak Peace Park",
-            "atmosphere": "Mangbaedan Altar, Freedom Bridge, and the bullet-ridden steam locomotive"
+            "alt": "투어 중 방문하는 임진각 평화공원 (1972년 건립 기념지)의 풍경",
+            "caption": "임진각 평화공원 (1972년 건립 기념지)",
+            "location": "임진각 평화누리공원",
+            "atmosphere": "임진각 평화공원 (1972년 건립 기념지)는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
           },
           {
             "id": "g2",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1604935080832-bcdf83b3a4f0?w=1200&q=80",
-            "alt": "Concrete entrance to an underground tunnel with safety helmets stacked on shelves",
-            "caption": "3rd Infiltration Tunnel entrance (discovered 1978)",
+            "alt": "투어 중 방문하는 제3땅굴 입구(1978년 발견)의 풍경",
+            "caption": "제3땅굴 입구(1978년 발견)",
             "location": "3rd Infiltration Tunnel",
-            "atmosphere": "Underground passage built for a surprise invasion, discovered in 1978"
+            "atmosphere": "제3땅굴 입구는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
           },
           {
             "id": "g3",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1576487248805-cf45f6bcc67f?w=1200&q=80",
-            "alt": "Open observation deck with high-powered binoculars overlooking the DMZ landscape",
-            "caption": "Dora Observatory looking across the border to North Korea",
+            "alt": "투어 중 방문하는 북한을 바라보는 도라 전망대의 풍경",
+            "caption": "북한을 바라보는 도라 전망대",
             "location": "Dora Observatory",
-            "atmosphere": "Direct view across the border into North Korea"
+            "atmosphere": "북한을 바라보는 도라 전망대는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
           },
           {
             "id": "g4",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
-            "alt": "Long red suspension bridge stretching across a forested mountain valley",
-            "caption": "Gamaksan Red Suspension Bridge — 220 meters, Korea's longest red suspension bridge",
-            "location": "Gamaksan Red Suspension Bridge",
-            "atmosphere": "Korea's longest red suspension bridge stretches 220 meters across a forested valley"
+            "alt": "산속 계곡을 가로지르는 긴 빨간 출렁다리",
+            "caption": "가마산 빨간 출렁다리 — 220미터, 한국 최장 빨간 출렁다리",
+            "location": "감악산 출렁다리",
+            "atmosphere": "가마산 빨간 출렁다리 — 220미터는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
           },
           {
             "id": "g5",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-            "alt": "Open Paju countryside with rural roads and farmland between the DMZ and Gamaksan",
-            "caption": "Paju countryside — the drive between the DMZ and Gamaksan",
+            "alt": "투어 중 방문하는 파주 농촌 — DMZ와 가마산 사이의 드라이브의 풍경",
+            "caption": "파주 농촌 — DMZ와 가마산 사이의 드라이브",
             "location": "Paju Countryside",
-            "atmosphere": "The drive between the DMZ and Gamaksan"
+            "atmosphere": "DMZ와 가마산 사이의 드라이브"
           }
         ]
       }
@@ -1227,183 +1238,226 @@
           {
             "number": 1,
             "time": "09:30",
-            "duration": "30 min",
-            "name": "Imjingak Peace Park",
-            "category": "Korean War Memorial Park",
-            "description": "About 70 minutes from Seoul, Imjingak is a peace park built in 1972 as a symbol of hoped-for reunification. It is open to civilians without special permission and gathers many of the most powerful symbols of the divided peninsula in one place: the Mangbaedan Altar where displaced families gather on holidays, the Freedom Bridge once used to repatriate prisoners of war, and a bullet-ridden steam locomotive left from the Korean War.",
-            "image": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=800&q=80",
+            "duration": "30분",
+            "name": "임진각 평화공원",
+            "category": "한국전쟁 기념 공원",
+            "description": "서울 북쪽 약 70km, 군사분계선으로부터 7km 임진강 변에 위치한 평화 공원입니다. 1972년 건립. 자유의 다리(6.25 포로 귀환 다리), 경의선 녹슨 증기기관차, 망배단(이산가족 분향단) 등이 있습니다. 분단 역사를 체감할 수 있는 출발 지점입니다. 방문 시간: 약 40분.",
             "highlights": [
-              "Mangbaedan Altar where families pray toward the North on holidays",
-              "Freedom Bridge with peace ribbons tied along the fence",
-              "Bullet-ridden steam locomotive preserved from the Korean War",
-              "DMZ Theater and Exhibition Hall introduces the day's narrative"
+              "망배단 — 북한 실향민 가족들이 설날·추석 북쪽을 향해 절을 올리는 제단",
+              "자유의 다리 — 1953년 전쟁 포로 12,773명 귀환에 사용된 옛 철교",
+              "총탄 자국 장단역 증기 기관차 (문화재 2004) — 파괴된 교량 위 전시",
+              "평화누리 바람의 언덕 — 2만 명 수용 평화 공원에 오색 바람개비 수천 개",
+              "DMZ 시어터 & 전시관 (통일부/북한 센터) — 사진 400점 이상",
+              "**서울 시청에서 임진각 누각까지 56km** (한국관광공사 공식 수치)",
+              "**평화의 종 2000년 건립** — **21개 계단 + 21톤 종** 상징",
+              "**평화누리 공원 2005년 세계평화축전**을 위해 조성",
+              "**원래 1972년 해태 과자가 ₩8,000만 기부**로 750평 초기 건물 건립"
             ],
             "timeUsed": [
-              "Brief park orientation by the driver-guide",
-              "Walk through the main monuments and locomotive",
-              "Optional short stop at the on-site cafe before the DMZ shuttle"
+              "가이드와 함께 도착 후 공원 간단 안내",
+              "주요 기념물 산책: 망배단 → 자유의 다리 → 총탄 기관차 — 약 20분",
+              "선택: 평화누리 바람개비밭 포토 + 평화의 종",
+              "제3땅굴로 가는 DMZ 셔틀 버스 탑승 (민통선 여권 검문)",
+              "선택: 평화의 종 타종 (₩10,000; 10:00~17:00, 통일 소원 그룹용) — 약 10분"
             ],
-            "whyOnRoute": "Starting here sets the emotional and historical tone for the day before crossing into the DMZ proper, where photography and movement are both restricted.",
+            "whyOnRoute": "임진각으로 시작하면 땅굴 입장 전 하루의 감정적·역사적 톤이 설정됨.",
             "visitBasics": {
-              "hours": "Open 24 hours (outdoor park); monument buildings ≈09:00–17:00",
-              "closed": "Open year-round",
-              "admission": "Free for park; some attractions (gondola, individual museums) charge separately",
-              "walking": "Easy — flat memorial park"
+              "hours": "야외 공원 24시간; 기념관 건물 약 09:00~17:00; 곤돌라 약 10:00~17:00",
+              "closed": "공원 연중 무휴; 일부 건물 월요일 휴관",
+              "admission": "공원 무료; 곤돌라 ₩11,000부터; 놀이 시설 개별 티켓",
+              "walking": "쉬움 — 평탄한 기념 공원; 주요 기념물 500m 반경 내 밀집"
             },
             "convenience": {
-              "restroom": "Multiple restrooms throughout",
-              "parking": "Free parking available (this is the launching point for DMZ Peace Tours)"
+              "restroom": "방문자 센터, 평화누리, 주차장 구역 화장실",
+              "parking": "임진각 주차장 차량 크기별 ₩1,000~₩5,000; 투어 버스 무료"
             },
             "smartNotes": {
-              "photo": "Steam Locomotive with bullet holes is the most poignant; Freedom Bridge with prayer ribbons; Pyeonghwa-Nuri grass field with peace pole forest",
-              "facilities": "Visitor center, restaurants, gift shops, gondola, ticket office for DMZ Peace Tours",
-              "tip": "DMZ Peace Tours start here — arrive 30 min before tour time; bring passport for tunnel/observatory access"
+              "photo": "총탄 자국 장단역 기관차가 가장 감동적인 단일 사진 소재. 바람개비밭은 오전에 바람이 잘 불어 역동적.",
+              "facilities": "1층 관광 센터 저렴한 간식 (핫도그, 소떡소떡, 만두 등). 기념품점.",
+              "tip": "예약한 DMZ 셔틀 시간 30분 전 도착해 신분 확인. 여권 반드시 지참."
             },
             "_poi_meta": {
               "poi_key": "imjingak_peace_park",
               "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
               "sources": [
-                "Paju City",
-                "GetYourGuide",
-                "Soul of Seoul"
-              ],
-              "verified_date": "2026-04-27"
+                "Korea Tourism Organization (VisitKorea — Imjingak Resort/Pyeonghwa Nuri Park listing)",
+                "Paju City DMZ Peace Tourism Portal (dmz.paju.go.kr — official tourist site authority)",
+                "Gyeonggi Provincial Government (English Gyeonggi Global — DMZ/Imjingak section)",
+                "Cultural Heritage Administration (Jangdan Station Steam Locomotive — Cultural Heritage 78 designation 2004)",
+                "Wikipedia (Imjingak — open verifiable corpus on Freedom Bridge POW exchange + 2ID Memorial)"
+              ]
             }
           },
           {
             "number": 2,
-            "time": "10:45",
-            "duration": "60 min",
-            "name": "3rd Infiltration Tunnel",
-            "category": "Underground Invasion Tunnel (1978)",
-            "description": "Discovered in 1978, the 3rd Infiltration Tunnel is the largest of four known tunnels built by North Korea toward Seoul. It runs 1,635 meters long, 2 meters high, and 2 meters wide, capable of moving 30,000 soldiers per hour, and reaches 52 kilometers from the South Korean capital. After a short orientation video, visitors descend a steep monorail or walking ramp into the tunnel itself.",
-            "image": "https://images.unsplash.com/photo-1604935080832-bcdf83b3a4f0?w=800&q=80",
+            "time": "10:30",
+            "duration": "70분",
+            "name": "제3땅굴 (지하 침투 터널)",
+            "category": "지하 침투 땅굴 (1978년)",
+            "description": "1978년 10월 17일 발견된 네 개의 북한 침투 터널 중 세 번째. 서울에서 불과 44km 거리입니다. 좌우 폭 2m, 높이 2m, 길이 1,635m의 지하 터널로, 작전 시 1시간에 3만 명 이상이 통과할 수 있는 규모입니다. 방문 시간: 약 60분. 여권 지참 필수.",
             "highlights": [
-              "Direct underground experience of a Cold War invasion route",
-              "Short documentary on the tunnel's discovery",
-              "Steep ramp descent (or monorail option when available)",
-              "One of the most physically demanding stops of the day"
+              "총 길이 1.635km 터널, 지하 73m — 발견된 4개 땅굴 중 서울에서 가장 가까움",
+              "1978년 10월 17일 북한 귀순자 제보로 발견; 방향 측정 후 1976년 6월 지하 폭발 탐지 이후 확인",
+              "시간당 약 3만 명 병력 서울 침투 구성; 벽면에 석탄 위장 도색",
+              "터널 끝 감시창: 군사분계선에서 실제 170m 지점, 3개 콘크리트 블록으로 차단",
+              "안전모 필수; 터널 내 촬영 엄금; 입장 전 카메라·간편한폰 보관",
+              "**터널 규격**: 최대 높이 1.95m × 폭 2.1m — 허리를 굽히지 않고도 통과 가능",
+              "**발견 경위**: 1978년 6월 지하 폭발 탐지 이후 4개월 요격 터널 굴착",
+              "**모노레일 일 150매 한정**: 성인 ₩12,200 / 어린이 ₩9,500 왕복; 도보 이용 별도 요금",
+              "**월요일 + 평일 공휴일 + 설날·추석 휴관**"
             ],
             "timeUsed": [
-              "DMZ shuttle from Imjingak",
-              "DMZ Theater video and exhibition hall",
-              "Tunnel descent and walk to the blockade wall",
-              "Return ramp climb to surface"
+              "DMZ 영상관에서 약 10분 오리엔테이션 영상",
+              "안전모 착용 + 카메라/간편한폰 등 보관",
+              "하강: 350m 경사로 도보 (10~15분) 또는 모노레일 (약 5분)",
+              "수평 터널 이동: 첫 번째 콘크리트 차단벽까지 358m 왕복 (약 20~25분)",
+              "상승: 11° 경사로 350m 귀환 (15~20분) 또는 모노레일"
             ],
-            "whyOnRoute": "It is the most direct, physical encounter with the Korean War's still-unresolved tension. Skipping it would weaken the day's historical weight by half.",
+            "whyOnRoute": "제3땅굴은 하루 중 신체적·감정적으로 가장 실질적인 DMZ 코스.",
             "visitBasics": {
-              "hours": "DMZ Peace Tour: tour buses 09:20–15:00 weekdays / 09:20–15:30 weekends",
-              "closed": "Mondays, Seollal, Chuseok holidays, weekday public holidays",
-              "admission": "On Foot: Adult 9,200 KRW / Teen & Child 7,000 KRW; with Monorail: Adult 12,200 KRW / Teen & Child 9,500 KRW",
-              "walking": "Challenging — 73m steep descent into tunnel; long incline back up; NOT wheelchair-accessible; not recommended for pregnant or those with heart/back conditions"
+              "hours": "투어 시간 09:00~17:00 (마지막 입장 보통 15:00~15:30)",
+              "closed": "월요일 + 평일 공휴일 + 설날 + 추석",
+              "admission": "모노레일 성인 ₩12,200 / 청소년·어린이 ₩9,500; 도보 성인 ₩9,200 / 청소년·어린이 ₩7,000",
+              "walking": "힘든 구간 — 350m 급경사 11° 하강 경사로 + 358m 수평 터널 + 귀환 상승. 무릎·심장 질환자 주의"
             },
             "convenience": {
-              "restroom": "Available at Imjingak departure point and tunnel entrance area",
-              "parking": "Tour-only access; private cars cannot enter"
+              "restroom": "지상 방문자 센터; 터널 내부 없음",
+              "parking": "방문자 센터 무료; 임진각에서 셔틀; 민통선 여권 검문"
             },
             "smartNotes": {
-              "photo": "Photography is prohibited inside the tunnel itself; exterior of the tunnel and DMZ Theater are OK",
-              "facilities": "Imjingak has a full visitor complex; tunnel area has minimal facilities",
-              "tip": "Bring a passport — required for entry to all DMZ areas; helmet provided (and required); no ATMs inside DMZ — bring cash"
+              "photo": "**터널 내부 촬영 전면 금지** — 카메라와 간편한폰 입장 전 반드시 보관함 보관.",
+              "facilities": "DMZ 영상관 (10분 오리엔테이션), 한국전쟁+DMZ 생태 전시관, 기념품점.",
+              "tip": "**모노레일 이용 강력 권장** (도보 대비 약 ₩3,000 추가): 65세 이상, 무릎·심장 이상, 경사로가 부담스럽다면 필수."
             },
             "_poi_meta": {
               "poi_key": "third_infiltration_tunnel",
               "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
               "sources": [
-                "VisitKorea",
-                "Paju City Official",
-                "Creatrip"
-              ],
-              "verified_date": "2026-04-27"
+                "Korea Tourism Organization (VisitKorea — The 3rd Tunnel official listing + reservation info)",
+                "Paju City DMZ Peace Tourism Portal (dmz.paju.go.kr — official tour reservation system)",
+                "Cultural Heritage Administration / Ministry of National Defense (DMZ Joint Security Area program)",
+                "Wikipedia (Third Tunnel of Aggression — open corpus verifying 1,635 m / 73 m / 1978 specs)",
+                "Korea Herald / Yonhap News archival coverage (Korean defector tip-off + 30,000 troops/hour estimate)"
+              ]
             }
           },
           {
             "number": 3,
-            "time": "12:00",
-            "duration": "40 min",
-            "name": "Dora Observatory",
-            "category": "DMZ Border Viewpoint",
-            "description": "Korea's northernmost civilian-accessible observatory, rebuilt and reopened in late 2018 with high-powered binoculars on the third floor. From the open roof, visitors can see directly into North Korea: a propaganda village, the city of Kaesong, the giant flag at Kijongdong, and the Kaesong Industrial Complex. Visibility depends on weather.",
-            "image": "https://images.unsplash.com/photo-1576487248805-cf45f6bcc67f?w=800&q=80",
+            "time": "11:50",
+            "duration": "30분",
+            "name": "도라전망대",
+            "category": "DMZ 접경 전망대",
+            "description": "한국의 DMZ 전망대 중 판문점과 가장 가까운 전망대입니다. 망원경으로 북한 영토(기정동 선전마을, 개성공단 연기 등)를 조망할 수 있습니다. 사진 촬영 제한(남쪽 방향만 가능). 방문 시간: 약 40분.",
             "highlights": [
-              "Direct sightline into North Korean territory",
-              "High-powered binoculars on the open viewing deck",
-              "View of the Kijongdong propaganda village and giant flag pole",
-              "Best DMZ photo point of the day (where photography is permitted)"
+              "판문점 남쪽에서 가장 가까운 대한민국 전망대 — 2024년 500석 새 건물 개관",
+              "조망: 개성시, 송악산, 기정동 선전 마을, 김일성 동상 등",
+              "1987년 1월 최초 개방; 송악산 전망대 대체 — 역사적 조망 포인트",
+              "실내 원형 극장 오리엔테이션 영상 + 신축 3층 건물 내 전망대 카페",
+              "**주소**: 파주시 제3땅굴로 310 — 민간인 접근 가능 최북단 전망대",
+              "**500석 실내 원형 극장 + VIP 룸** — 실내 브리핑 시설",
+              "**전망대에서 조망**: 개성 공업 지구, 송악산, 김일성 동상 등",
+              "**2024년 10월 이후 옥상 출입 제한** (북한 쓰레기 풍선 발사 후); **판유리 내부 조망**",
+              "**도라산 하이킹 옵션**: 0.4마일 왕복 트레일, 고도 차 18m"
             ],
             "timeUsed": [
-              "DMZ shuttle from the 3rd Tunnel",
-              "Roof-deck viewing with binoculars",
-              "Indoor briefing area"
+              "제3땅굴에서 DMZ 셔틀 — 약 10~15분",
+              "실내 원형 극장 오리엔테이션 영상",
+              "창문 앞 쌍안경 관람 (사용당 ₩500)",
+              "지정 포토 라인 사진 촬영 (북쪽 방향 촬영 금지)",
+              "실내 카페 + 화장실 휴식 (당일 겨울 난방 최적 장소) — 약 10분"
             ],
-            "whyOnRoute": "It is the only stop on the route where you can see across the border with your own eyes, and it gives the morning a strong visual close before the lunch break and the suspension bridge.",
+            "whyOnRoute": "제3땅굴 관람 후 도라전망대에 오르면 분단 지형을 한눈에 이해할 수 있습니다. 가까운 거리의 기정동 마을과 북측 지역을 조망할 수 있어, 땅굴에서 느낀 긴장감을 넓은 시야로 정리해 주는 구간입니다. 2024년 새 건물은 실내 설명 공간이 넓어져 겨울에는 몸을 녹이고 여름에는 햇볕을 피하며 설명을 듣기 좋습니다. 루프탑 폐쇄 이후에도 실내 전망창과 망원경 관람 구간이 비교적 정돈되어 있어, 어르신이나 혼잡에 민감한 손님이 있는 프라이빗 투어에 특히 적합합니다.",
             "visitBasics": {
-              "hours": "DMZ Peace Tour shuttle: 09:20–15:00 weekdays / 09:20–15:30 weekends",
-              "closed": "Mondays, Seollal, Chuseok, weekday public holidays",
-              "admission": "Included in DMZ Peace Tour package (≈9,200–12,200 KRW)",
-              "walking": "Easy — flat observation deck"
+              "hours": "09:00~17:00 (DMZ 평화 투어 시간 기준)",
+              "closed": "월요일 + 평일 공휴일",
+              "admission": "DMZ 평화 투어 요금에 포함; 임진각에서 셔틀 약 ₩3,000. 쌍안경 1회 ₩500",
+              "walking": "쉬움 — 버스가 전망대 입구까지 하차; 신축 건물 평탄"
             },
             "convenience": {
-              "restroom": "Available at observatory",
-              "parking": "Tour-only access"
+              "restroom": "신축 전망대 건물 내",
+              "parking": "투어 버스 전용; 민통선으로 개인 차량 제한"
             },
             "smartNotes": {
-              "photo": "Photography permitted in designated zones only — yellow line restricts angle toward NK; binocular shots prohibited",
-              "facilities": "Information panels in Korean/English/Japanese/Chinese; small gift shop",
-              "tip": "Bring binoculars or use the coin-operated ones (500 KRW); clear winter days have best visibility into NK"
+              "photo": "북쪽 방향 촬영 **엄격히 제한** — 근무 군인과 반드시 확인 후 촬영.",
+              "facilities": "신축 건물 내 전망대 카페 (커피 + 간단한 스낵). 오리엔테이션 영상 상영.",
+              "tip": "쌍안경 동전 ₩500짜리 미리 준비 (전망대 내부에 환전기 없음). 맑은 날 오전이 조망 최적."
             },
             "_poi_meta": {
               "poi_key": "dora_observatory",
               "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
               "sources": [
-                "Paju City Official",
-                "KoreaEtour"
-              ],
-              "verified_date": "2026-04-27"
+                "Korea Tourism Organization (VisitKorea — Dora Observatory listing + capacity specs)",
+                "Paju City DMZ Peace Tourism Portal (dmz.paju.go.kr — official Dora Observatory tour course)",
+                "Stars and Stripes (October 16, 2024 — DMZ observatories reopen + photography restrictions reporting)",
+                "Joint Chiefs of Staff ROK / Ministry of National Defense (security advisory on rooftop closure)",
+                "Wikipedia (Dora Observatory — corpus on 304 ft² capacity + 500-person observatory replacement of Songaksan)"
+              ]
             }
           },
           {
             "number": 4,
             "time": "14:30",
-            "duration": "90 min",
-            "name": "Gamaksan Red Suspension Bridge",
-            "category": "Mountain Suspension Bridge",
-            "description": "After lunch, the route shifts from heavy history to mountain scenery. The Gamaksan Chulleong Bridge stretches 220 meters across a forested valley, making it Korea's longest red suspension bridge. Reaching the bridge requires a short uphill walk of about 10 to 40 minutes depending on the trailhead used; the bridge itself is wide enough for hundreds of visitors at once.",
-            "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "duration": "90분",
+            "name": "감악산 출렁다리",
+            "category": "산악 출렁다리",
+            "description": "감악산(675m)에 걸린 길이 220m의 출렁다리로, '글로스터 영웅교'라는 공식 명칭을 가집니다. 한국전쟁 임진강 전투(1951년)에서 용전한 영국 글로스터셔 연대를 기념합니다. 협곡 위 50m 높이를 가로지르는 다리에서 경기 북부 산악 전망이 펼쳐집니다. 방문 시간: 약 60분.",
             "highlights": [
-              "Korea's longest red suspension bridge at 220 meters",
-              "Strong visual contrast to the morning's DMZ stops",
-              "Forested valley views and seasonal foliage",
-              "Light hike with strong photo payoff"
+              "'글로스터 영웅 다리' — 1951년 4월 임진강 전투 영국 제1 글로스터셔 연대에 헌정",
+              "가마산 설마리 계곡을 가로지르는 150m 무주탑 현수교",
+              "폭 1.5m; 최대 수용 약 900명; 초속 30m 바람 및 규모 7 지진 구성",
+              "지상 10m — 가족·어린이 안전, 출렁임; 주차장에서 계단 10~15분",
+              "10~11월 초 단풍 시즌이 가장 절경 (붉은 단풍 + 황금 참나무)",
+              "**2018년 3월 공식 개통** — 이인재 파주 시장의 시민 모금으로 건립",
+              "**글로스터 힐 전투 기념관 1.7km** — 실제 1951년 4월 22~25일 전투 현장",
+              "**다리 제원**: 37번 국도로 갈라진 설마리 계곡 횡단 — 한국 최장 무주탑 현수교",
+              "**매일 09:00~18:00 개방**; 다리 횡단 무료; **주차 ₩2,000 (신용카드 전용)**"
             ],
             "timeUsed": [
-              "Drive from the DMZ area (about 30 minutes)",
-              "Short uphill walk to the bridge entrance",
-              "Bridge crossing and return",
-              "Photo time on both sides of the valley"
+              "DMZ 지역에서 드라이브 (점심 위치에 따라 약 30~40분)",
+              "1번 주차장 이용; 다리 입구까지 계단 10~15분",
+              "다리 횡단 왕복 (포토 포함 약 20~30분)",
+              "출발 전 주차장 카페에서 간식/커피",
+              "선택: 글로스터 힐 전투 기념관 방문 (왕복 약 30~45분, +1.7km 추가 이동)"
             ],
-            "whyOnRoute": "Ending on Gamaksan turns the day into more than a memorial-only experience and gives the route a lighter, photo-friendly close that travelers consistently rate highly.",
+            "whyOnRoute": "가마산으로 하루를 마무리하면 단순 추모 이상의 경험 — 빨간 출렁다리 산책이 활동적 피날레 추가.",
             "visitBasics": {
-              "hours": "Open 24 hours (outdoor)",
-              "closed": "Open year-round (occasional weather closures for high wind)",
-              "admission": "Free",
-              "walking": "Moderate — uphill trail to bridge (≈30 min from parking)"
+              "hours": "매일 09:00~18:00; 강풍 시 임시 폐쇄",
+              "closed": "연중 무휴 (강풍으로 임시 폐쇄 가능)",
+              "admission": "다리 무료",
+              "walking": "중간 강도 — 주차장에서 10~15분 계단 오르막; 다리 자체는 평탄한 150m 횡단"
             },
             "convenience": {
-              "restroom": "Available at parking area",
-              "parking": "Free parking available"
+              "restroom": "주차장 1번 구역 화장실",
+              "parking": "₩2,000 (대부분 주차장 신용카드 전용; 외국 카드 일반 가능). 1번 주차장 다리에서 가장 가까움"
             },
             "smartNotes": {
-              "photo": "Bridge with red paint against forest backdrop; view from middle of bridge looking down to valley",
-              "facilities": "Small café and snack stalls at parking; minimal facilities at bridge",
-              "tip": "Paired well with DMZ tours from Paju; autumn colors are spectacular October–early November"
+              "photo": "가을 단풍 배경 빨간 다리 (10월 중순~11월 초) 대표 샷. 다리 중앙에서 흔들림이 가장 크게 느껴짐.",
+              "facilities": "주차장 구역 소형 카페 + 간식 가게; 다리 자체에는 시설 최소.",
+              "tip": "다리 중앙이 출렁임 가장 강 — 어린이가 좋아함; 고소공포증이 있다면 주의."
             },
             "_poi_meta": {
               "poi_key": "gamaksan_red_bridge",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "note": "Operational details based on aggregated visitor info"
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "note": "Note on bridge length: Visit Korea cites 150 m (authoritative); some operators cite 220 m (likely conflated with nearby Majangho Suspension Bridge in Paju). Tour itinerary may visit either bridge depending on operator — confirm at booking.",
+              "sources": [
+                "Korea Tourism Organization (VisitKorea — Gamaksan Suspension Bridge listing + 150 m towerless designation)",
+                "Paju City Tourism Office (Mayor Lee In-jae fundraising campaign coverage + Gloucester Hill Memorial complex)",
+                "Gloucestershire Regiment Museum / British Embassy Seoul (Battle of Imjin River April 22-25 1951 historical record)",
+                "Visit Korea Korea Foundation Cultural Heritage Bridges Series (Gloucester Heroes Bridge dedication official)",
+                "Wikipedia (Battle of the Imjin River — 1st Battalion Gloucester Regiment + 170th Mortar Battery courageous-stand record)"
+              ]
             }
           }
         ]
@@ -1416,55 +1470,46 @@
       "props": {
         "routeFlowStops": [
           {
-            "id": "01",
-            "name": "Imjingak",
+            "name": "임진각",
+            "type": "origin",
             "theme": "Memorial"
           },
           {
-            "id": "02",
-            "name": "3rd Tunnel",
+            "name": "제3땅굴",
+            "type": "primary",
             "theme": "Underground"
           },
           {
-            "id": "03",
-            "name": "Dora Observatory",
+            "name": "도라 전망대",
+            "type": "primary",
             "theme": "Border View"
           },
           {
-            "id": "04",
-            "name": "Gamaksan Bridge",
+            "name": "가마산 출렁다리",
+            "type": "return",
             "theme": "Suspension"
           }
         ],
         "routePhases": [
           {
-            "label": "Morning",
-            "range": "1-2",
-            "theme": "Memorial & Tunnel",
-            "bgClass": "bg-slate-50/70",
-            "textClass": "text-slate-700",
-            "dotClass": "bg-slate-500"
+            "phase": "기념관 & 터널",
+            "duration": "정류장 1–2",
+            "description": "임진각 평화공원 → 제3땅굴 지하 침투 터널."
           },
           {
-            "label": "Midday",
-            "range": "3",
-            "theme": "Border View & Lunch",
-            "bgClass": "bg-sky-50/70",
-            "textClass": "text-sky-700",
-            "dotClass": "bg-sky-500"
+            "phase": "국경 전망 & 점심",
+            "duration": "정류장 3",
+            "description": "도라전망대 → 점심 식사."
           },
           {
-            "label": "Afternoon",
-            "range": "4",
-            "theme": "Mountain Bridge Finish",
-            "bgClass": "bg-emerald-50/70",
-            "textClass": "text-emerald-700",
-            "dotClass": "bg-emerald-500"
+            "phase": "산악 출렁다리 피날레",
+            "duration": "정류장 4",
+            "description": "감악산 출렁다리(220m) → 서울 귀환."
           }
         ],
         "routeShapeIntro": {
-          "title": "How this private day moves",
-          "subtitle": "Pickup at your Seoul downtown hotel around 08:00, then a 70-minute drive to Imjingak. Morning at the DMZ (Imjingak, 3rd Tunnel, Dora Observatory), lunch, then afternoon at Gamaksan Suspension Bridge. Return to Seoul typically 16:30 to 17:30."
+          "title": "프라이빗 하루 일정",
+          "subtitle": "서울 시내 호텔 오전 8시 픽업 후, 임진각까지 70분 이동. 오전 DMZ 방문(임진각, 제3땅굴, 도라 전망대), 점심, 오후 가마산 출렁다리. 귀환은 보통 오후 6시~7시입니다."
         }
       }
     },
@@ -1475,80 +1520,80 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "First-time visitors curious about Korea's modern history",
-            "Adult travelers and history-leaning couples",
-            "Travelers who want one strong, meaningful day-trip from Seoul",
-            "Photographers who want both historical and natural subjects",
-            "Groups wanting comfort and door-to-door private service"
+            "한국 현대 역사에 관심 있는 첫 방문자",
+            "성인 여행자 및 역사 관심 커플",
+            "서울에서 의미 있는 하루 여행을 원하는 여행자",
+            "역사와 자연 두 가지 피사체를 원하는 포토그래퍼",
+            "편의성과 도어 투 도어 프라이빗 서비스를 원하는 그룹"
           ],
           "routeLogicSections": [
             {
-              "title": "Why pair the DMZ with Gamaksan",
+              "title": "DMZ와 가마산을 함께 묶는 이유",
               "icon": "landmark",
               "iconBg": "bg-slate-50/80",
               "iconColor": "text-slate-600",
               "items": [
                 {
-                  "label": "The DMZ alone can feel emotionally heavy",
-                  "detail": "Visitors who do DMZ-only tours often describe the day as moving but draining. Adding Gamaksan gives the day an emotional release in the afternoon."
+                  "label": "DMZ만 하면 감정적으로 무거울 수 있음",
+                  "detail": "DMZ 단독 투어를 한 방문객들은 종종 감동적이지만 지친다고 표현합니다. 가마산 추가로 하루에 감정적인 환기가 생깁니다."
                 },
                 {
-                  "label": "The two stops are geographically efficient",
-                  "detail": "Gamaksan sits about 30 minutes from the DMZ, so the pairing does not require a long extra transfer."
+                  "label": "두 코스가 지리적으로 효율적",
+                  "detail": "가마산은 DMZ에서 약 30분 거리에 있어 이 페어링에 큰 추가 이동이 필요하지 않습니다."
                 },
                 {
-                  "label": "Both are signature Paju experiences",
-                  "detail": "Together they cover the heaviest historical site near Seoul and Korea's longest red suspension bridge—two of the strongest photo and story points in Gyeonggi-do."
+                  "label": "두 곳 모두 파주의 대표 경험",
+                  "detail": "함께 서울 근교 가장 무거운 역사 유적지와 한국에서 가장 긴 빨간 출렁다리를 커버합니다."
                 }
               ]
             },
             {
-              "title": "How the walking load actually feels",
+              "title": "실제 도보 강도는 어느 정도일까",
               "icon": "footprints",
               "iconBg": "bg-amber-50/80",
               "iconColor": "text-amber-600",
               "items": [
                 {
-                  "label": "The 3rd Tunnel ramp is the hardest section",
-                  "detail": "The descent is fine for most travelers; the climb back up the steep ramp is the most physically demanding moment of the day."
+                  "label": "제3땅굴이 가장 힘든 구간",
+                  "detail": "경사진 귀환 경사로(발목 높이 약 1.2m, 전방 경사 약 11도)가 가장 힘든 구간입니다. 대부분 약 10분이면 통과합니다."
                 },
                 {
-                  "label": "Gamaksan is a moderate uphill walk",
-                  "detail": "The trail to the bridge takes 10 to 40 minutes depending on the entry point used; the driver-guide will pick the easier route by default."
+                  "label": "가마산 접근이 두 번째로 활동적",
+                  "detail": "선택 트레일 헤드에 따라 10~40분의 상승이 필요하며, 이후 출렁다리 횡단이 있습니다."
                 },
                 {
-                  "label": "Imjingak and Dora Observatory are easy",
-                  "detail": "Both are flat-to-easy walking; restrooms and rest areas are plentiful at both."
+                  "label": "임진각과 도라 전망대는 쉬움",
+                  "detail": "임진각은 완전 평탄합니다. 도라 전망대는 엘리베이터 접근이 가능합니다."
                 }
               ]
             },
             {
-              "title": "When operations shift",
+              "title": "운영 상황이 변할 때",
               "icon": "shield-alert",
               "iconBg": "bg-rose-50/80",
               "iconColor": "text-rose-600",
               "items": [
                 {
-                  "label": "Mondays are different",
-                  "detail": "The 3rd Tunnel route is closed on Mondays; the 2nd Tunnel may be substituted depending on military access on the day."
+                  "label": "DMZ 평화 투어는 월요일에 운행하지 않음",
+                  "detail": "월요일은 제2땅굴이 잠정 대체 코스입니다."
                 },
                 {
-                  "label": "Military access can change last minute",
-                  "detail": "DMZ access is governed by the South Korean military and can shift due to drills or weather. The driver-guide will offer alternative stops if needed."
+                  "label": "군사 훈련으로 접근이 변경될 수 있음",
+                  "detail": "군 일정은 공공 공지 없이 일부 DMZ 구역을 닫을 수 있습니다. 대체 코스가 즉시 조정됩니다."
                 },
                 {
-                  "label": "Severe wind can close the bridge",
-                  "detail": "Gamaksan Suspension Bridge can close in severe wind, snow, or ice. In that case, the driver-guide will suggest a substitute stop nearby."
+                  "label": "가마산 기상 영향",
+                  "detail": "강풍이나 폭설은 출렁다리를 닫을 수 있습니다. 가마산 하이킹만 진행하거나 파주 대체 코스로 변경됩니다."
                 }
               ]
             }
           ],
           "lessIdealFor": [
-            "Travelers with claustrophobia (the 3rd Tunnel descent is narrow)",
-            "Visitors with serious knee or heart issues (steep tunnel ramp)",
-            "Very young children (the historical content is heavy and the tunnel is restricted)",
-            "Anyone afraid of heights who must avoid suspension bridges",
-            "Mondays (the 3rd Tunnel route is closed; 2nd Tunnel may be substituted)"
+            "폐쇄공포증 여행자 주의 (제3땅굴 하강로 협소)",
+            "심각한 무릎·심장 문제 방문자 주의 (가파른 터널 경사)",
+            "유아 주의 (역사 콘텐츠 무거움, 땅굴 입장 제한)",
+            "고소공포증으로 출렁다리를 피해야 하는 여행자 주의",
+            "월요일 주의 (제3땅굴 휴관; 제2땅굴 대체 가능)"
           ]
         }
       }
@@ -1561,139 +1606,132 @@
         "practicalAccordionItems": [
           {
             "id": "pickup",
-            "title": "Pickup & drop-off",
-            "preview": "Free Seoul downtown hotel pickup around 08:00",
+            "title": "픽업 & 하차",
+            "preview": "서울 시내 호텔 무료 픽업 약 08:00",
             "content": [
-              "Free hotel pickup is included for Seoul downtown areas (Myeongdong, Hongdae, Dongdaemun, Insadong, Itaewon)",
-              "Stays outside Seoul downtown may incur an additional pickup fee",
-              "Please wait at the hotel lobby 10 minutes before the agreed departure time",
-              "Pickup is typically around 08:00 because the DMZ shuttle program runs on a fixed schedule",
-              "Drop-off at your Seoul hotel typically 16:30 to 17:30",
-              "Drive time is about 70 minutes each way under normal traffic"
+              "서울 시내 지역(명동, 홍대, 동대문, 인사동, 이태원 등) 호텔 무료 픽업 포함.",
+              "서울 시내 외 숙소는 추가 픽업 비용이 발생할 수 있음.",
+              "예약된 출발 시간 10분 전까지 호텔 로비에서 대기 부탁드립니다.",
+              "DMZ 셔틀 프로그램이 고정 일정으로 운영되므로 픽업은 보통 오전 8시경.",
+              "서울 호텔 하차는 보통 16:30~17:30.",
+              "일반 교통 기준 편도 약 70분 소요."
             ]
           },
           {
             "id": "passport",
-            "title": "Passport and Identification",
-            "preview": "Passport is required—no exceptions",
+            "title": "여권 및 신분증",
+            "preview": "여권 필수 — 예외 없음",
             "content": [
-              "Every guest must carry their physical passport, including infants",
-              "Passport is checked at the Unification Bridge checkpoint before entering the DMZ",
-              "Photocopies, photos, or expired passports are not accepted",
-              "Without a valid passport, guests will be denied entry to the DMZ portion and the tour cannot be refunded",
-              "Some nationalities may face additional restrictions; please confirm at booking"
+              "영유아 포함 모든 게스트는 실물 여권을 반드시 지참해야 합니다.",
+              "DMZ 진입 전 통일교 검문소에서 여권을 확인합니다.",
+              "사본, 사진 촬영본, 만료된 여권은 인정되지 않습니다.",
+              "유효한 여권이 없는 경우 DMZ 구간 입장이 거부되며 투어 환불이 불가합니다.",
+              "일부 국적은 추가 제한이 있을 수 있으니 예약 시 확인해 주세요."
             ]
           },
           {
             "id": "walking",
-            "title": "Walking & terrain",
-            "preview": "Moderate to high; the 3rd Tunnel ramp is the hardest section",
+            "title": "도보 & 지형",
+            "preview": "중간~높음; 제3땅굴 경사로가 가장 힘든 구간",
             "content": [
-              "Imjingak Peace Park: easy flat walking",
-              "3rd Infiltration Tunnel: steep and slippery; the return ramp is the most demanding section of the day",
-              "Dora Observatory: easy with elevator access",
-              "Gamaksan Suspension Bridge: 10 to 40 minute uphill approach depending on trailhead, plus the bridge crossing itself",
-              "The tunnel may be uncomfortable for travelers with claustrophobia, knee issues, or heart conditions",
-              "Comfortable walking shoes with good grip are strongly recommended"
+              "임진각 평화공원: 평탄한 도보로 쉬움.",
+              "제3땅굴: 경사지고 미끄러움; 귀환 경사로가 당일 가장 힘든 구간입니다.",
+              "도라 전망대: 엘리베이터 이용 가능, 쉬움.",
+              "가마산 출렁다리: 출발 지점에 따라 10~40분 오르막 접근 후 다리 횡단.",
+              "터널은 폐쇄 공포증, 무릎 이상, 심장 질환이 있는 분께 불편할 수 있습니다.",
+              "미끄럼 방지 기능이 있는 편안한 운동화를 강력히 권장합니다."
             ]
           },
           {
             "id": "weather",
-            "title": "Weather policy",
-            "preview": "Military access and weather can both affect the route",
+            "title": "날씨 정책",
+            "preview": "군사 접근 및 날씨 모두 루트에 영향 가능",
             "content": [
-              "The DMZ Peace Tour shuttle is closed on Mondays; the 2nd Tunnel may be substituted",
-              "Military training schedule changes can close DMZ access at short notice; alternative sites may be visited but no refund is available in this case",
-              "Severe wind, snow, or ice can close Gamaksan Suspension Bridge",
-              "Light rain does not close the route, but reduces visibility from Dora Observatory",
-              "Yellow dust days (spring) can dramatically reduce the cross-border view"
+              "DMZ 평화 투어 셔틀은 월요일 운행 중단; 제2땅굴로 대체될 수 있습니다.",
+              "군사 훈련 일정 변경으로 DMZ 접근이 갑자기 제한될 수 있으며, 대체 코스로 이동 가능.",
+              "강한 바람, 폭설, 결빙 시 가마산 출렁다리 입장이 제한될 수 있습니다.",
+              "가벼운 비는 투어를 진행하나 도라 전망대 조망이 제한됩니다.",
+              "봄철 황사는 월경 조망을 크게 저하시킬 수 있습니다."
             ]
           },
           {
             "id": "money",
-            "title": "Admission and On-the-Day Spending",
-            "preview": "DMZ shuttle and bridge admission included; lunch pay direct",
+            "title": "입장료 및 당일 지출",
+            "preview": "DMZ 셔틀 및 교각 입장료 포함; 점심 현장 직접 결제",
             "content": [
-              "DMZ Peace Tour shuttle ticket is included in your tour fee",
-              "Imjingak Peace Park is free to enter",
-              "Gamaksan Suspension Bridge admission is included in your tour fee",
-              "Lunch is paid directly; expect 12,000 to 25,000 KRW per person at restaurants near Imjingak",
-              "Most shops accept credit cards; carry some cash for traditional restaurants and the tunnel locker (small change required)"
+              "DMZ 평화 투어 셔틀 티켓은 투어 요금에 포함.",
+              "임진각 평화공원 무료 입장.",
+              "가마산 출렁다리 입장료 투어 요금에 포함.",
+              "점심은 현장 직접 결제; 임진각 인근 식당 기준 1인 약 ₩12,000~25,000.",
+              "대부분 카드 결제 가능; 전통 식당과 터널 사물함(소정 비용) 이용 시 현금 지참 권장."
             ]
           },
           {
             "id": "wear",
-            "title": "What to wear & bring",
-            "preview": "Walking shoes, layers, and your passport",
+            "title": "복장 & 준비물",
+            "preview": "운동화, 레이어링, 여권",
             "content": [
-              "Comfortable walking shoes with good grip (especially for the tunnel ramp)",
-              "Layered clothing—the DMZ area is cooler than central Seoul",
-              "Light jacket or windbreaker (the bridge can feel windy)",
-              "Passport (mandatory)",
-              "Camera or phone (note that photography is restricted inside the tunnel)",
-              "Cash and card for lunch and snacks"
+              "미끄럼 방지 기능의 편안한 워킹화 (특히 터널 경사로 이동 시).",
+              "겹쳐 입기 — DMZ 지역은 서울 시내보다 기온이 낮습니다.",
+              "가벼운 방풍 재킷 (출렁다리에서 바람이 강할 수 있음).",
+              "여권 (필수).",
+              "카메라/간편한폰 (터널 내부 촬영은 제한됨).",
+              "점심 및 간식용 현금과 카드."
             ]
           },
           {
             "id": "included",
-            "title": "What's included",
-            "preview": "Vehicle, driver-guide, and all admission included",
+            "title": "포함 사항",
+            "preview": "차량, 드라이버 가이드, 모든 입장료 포함",
             "variant": "included",
             "content": [
-              "Private vehicle (sedan, SUV, or van based on group size)",
-              "Licensed English-speaking driver-guide",
-              "Free hotel pickup and drop-off in Seoul downtown",
-              "Fuel and tolls for the standard route",
-              "DMZ Peace Tour shuttle ticket (3rd Tunnel + Dora Observatory)",
-              "Gamaksan Suspension Bridge admission",
-              "Lunch is not included",
-              "Personal expenses and shopping are not included",
-              "Driver gratuities are not included"
+              "프라이빗 차량 (그룹 규모에 따라 세단, SUV 또는 밴)",
+              "공인 영어 가이드 겸 운전기사",
+              "서울 시내 무료 호텔 픽업·하차",
+              "기본 코스 연료비 및 통행료",
+              "DMZ 평화 투어 셔틀 티켓 (제3땅굴 + 도라 전망대)",
+              "가마산 출렁다리 입장료",
+              "점심 미포함",
+              "개인 지출 및 쇼핑 미포함",
+              "드라이버 팁 미포함"
             ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "Live weather integration"
+            "label": "실시간 날씨 연동"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "Updated daily"
-          }
+            "label": "매일 업데이트"
+          },
+          "_seasonalSummary": "DMZ 지역은 서울보다 바람이 강하고 겨울에는 체감온도가 낮습니다. 제3땅굴 내부는 계단과 경사가 있으므로 편한 신발이 필요하며, 여권 원본 지참이 필수입니다."
         },
         "seasonalVariations": [
           {
-            "name": "Spring",
-            "icon": "flower",
-            "description": "Pleasant temperatures, but yellow dust in March-April can reduce the cross-border visibility from Dora Observatory.",
-            "tag": "Visibility-sensitive",
-            "bgClass": "bg-spring",
-            "iconColor": "text-pink-500"
+            "season": "봄",
+            "title": "시계 민감",
+            "description": "온화한 기온이지만 3~4월 황사가 도라 전망대 월경 조망을 줄일 수 있음. 가마산은 신록으로 푸릇함.",
+            "icon": "flower"
           },
           {
-            "name": "Summer",
-            "icon": "sun",
-            "description": "Lush green forests around Gamaksan, but humidity makes the tunnel descent and the bridge climb feel more demanding.",
-            "tag": "Lush but humid",
-            "bgClass": "bg-summer",
-            "iconColor": "text-yellow-500"
+            "season": "여름",
+            "title": "무성하지만 습함",
+            "description": "가마산 주변 울창한 초록 숲이지만 습도가 굴 하강과 출렁다리 체험을 불편하게 만들 수 있음.",
+            "icon": "sun"
           },
           {
-            "name": "Autumn",
-            "icon": "leaf",
-            "description": "Korea's cleanest visibility window for Dora Observatory and the strongest foliage season at Gamaksan. The best all-round time for this route.",
-            "tag": "Best all-round season",
-            "bgClass": "bg-autumn",
-            "iconColor": "text-orange-500"
+            "season": "가을",
+            "title": "최고 시즌",
+            "description": "한국 최상의 도라 전망대 시계 구간이자 가마산 단풍 절정 시즌. 9~11월 두 코스 모두 최적 조건.",
+            "icon": "leaf"
           },
           {
-            "name": "Winter",
-            "icon": "snowflake",
-            "description": "The DMZ feels especially stark and quiet in winter, but cold winds can close the suspension bridge. Dress in real layers.",
-            "tag": "Stark and weather-sensitive",
-            "bgClass": "bg-winter",
-            "iconColor": "text-sky-500"
+            "season": "겨울",
+            "title": "황량하고 날씨 민감",
+            "description": "겨울 DMZ는 황량하고 고요한 분위기. 강한 바람이 출렁다리를 닫을 수 있음 — 미리 확인 권장.",
+            "icon": "snowflake"
           }
         ]
       }
@@ -1706,56 +1744,65 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local operator",
-            "description": "Authorized Korean tour operator with full insurance",
+            "title": "공인 현지 여행사",
+            "description": "정식 등록 및 보험 가입 현지 여행사",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "iconColor": "text-emerald-600",
+            "body": "DMZ 코스 전문 공인 현지 여행사."
           },
           {
             "icon": "route",
-            "title": "Route specialists",
-            "description": "Hand-tuned itinerary, not a generic loop",
+            "title": "코스 전문",
+            "description": "이동 부담을 줄인 효율적인 코스",
             "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "iconColor": "text-sky-600",
+            "body": "제3땅굴 코스는 월요일 휴관. 월요일에는 여행사가 대체 DMZ 코스를 안내합니다."
           },
           {
             "icon": "users",
-            "title": "Curated group size",
-            "description": "Right-sized for the route",
+            "title": "그룹 규모 관리",
+            "description": "코스에 상황에 맞춘 인원 규모",
             "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600"
+            "iconColor": "text-amber-600",
+            "body": "프라이빗 차량으로 DMZ 입장 수속과 이동을 효율적으로 처리합니다."
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "timing": "즉시",
+            "title": "즉시 확인",
+            "detail": "행정 요약 포함 예약 확인서 발송",
+            "description": "픽업 정보 포함 즉시 예약 확인서 발송. 여권 지참 안내."
           },
           {
-            "timing": "12 hours before",
-            "title": "12-Hour Reminder",
-            "detail": "Weather update and any route adjustments"
+            "timing": "출발 12시간 전",
+            "title": "12시간 전 알림",
+            "detail": "날씨 업데이트 및 경로 변경 안내",
+            "description": "DMZ 당일 접근 가능 여부 및 감악산 출렁다리 상태 사전 안내."
           },
           {
-            "timing": "Evening before",
-            "title": "Final Pickup Info",
-            "detail": "Exact pickup time and driver contact"
+            "timing": "전날 저녁",
+            "title": "최종 픽업 안내",
+            "detail": "정확한 픽업 시간 및 가이드 연락처",
+            "description": "출발 전날 저녁 최종 픽업 시각 확인."
           },
           {
-            "timing": "Morning of tour",
-            "title": "Day-of Route Notes",
-            "detail": "Morning briefing based on live conditions"
+            "timing": "투어 당일 아침",
+            "title": "당일 코스 안내",
+            "detail": "실시간 상황 기반 당일 브리핑",
+            "description": "군사 훈련이나 기상으로 인한 코스 변경 아침 메시지 전달."
           },
           {
-            "timing": "During tour",
-            "title": "Stop-by-Stop Tips",
-            "detail": "Real-time guidance at each location"
+            "timing": "투어 중",
+            "title": "경유지별 심층 안내",
+            "detail": "각 코스 실시간 현장 안내",
+            "description": "한국전쟁·분단 역사, 제3땅굴 발견 배경 등 가이드 심층 설명."
           },
           {
-            "timing": "After tour",
-            "title": "Post-tour Support",
-            "detail": "Follow-up and recommendations"
+            "timing": "투어 종료 후",
+            "title": "투어 후 지원",
+            "detail": "피드백 및 추가 여행 추천",
+            "description": "투어 후 피드백 요청 전송."
           }
         ]
       }
@@ -1768,58 +1815,58 @@
         "staticQuestions": [
           {
             "id": "q1",
-            "question": "What can I actually see at the DMZ on this route?",
-            "answer": "Three core sites. The 3rd Infiltration Tunnel: a 1,635 meter underground passage discovered in 1978 that North Korea built toward Seoul. The Dora Observatory: the only civilian-accessible viewpoint into the North, where you can see Kaesong city, the propaganda village, and the Kijongdong flag. Imjingak Peace Park: the 1972 memorial park with the Mangbaedan Altar, the Bridge of Freedom rebuilt 1953, and the bullet-ridden steam locomotive. Photography rules vary by stop and the guide will brief you."
+            "question": "이 코스에서 DMZ에서 실제로 무엇을 볼 수 있나요?",
+            "answer": "세 곳: 제3땅굴(1978년 발견, 길이 1,635m 지하 침투 터널), 도라전망대(판문점 방향 북한 조망), 임진각 평화공원(자유의 다리, 녹슨 기관차)."
           },
           {
             "id": "q2",
-            "question": "Do I need to bring my passport?",
-            "answer": "Yes — every guest, including infants, must carry their physical passport. Korean ID is checked at the Unification Bridge military checkpoint before entering the DMZ proper. A passport copy or a photo on your phone is not accepted. Without the physical passport the tour will have to skip the DMZ portion and the standard refund policy applies."
+            "question": "여권이 필요한가요?",
+            "answer": "네, 영·유아를 포함한 모든 방문객이 여권 실물을 소지해야 합니다. 통일안보공원 입장 시 신분 확인이 이루어집니다."
           },
           {
             "id": "q3",
-            "question": "Can I do this tour on a Monday?",
-            "answer": "The 3rd Infiltration Tunnel route closes on Mondays for maintenance. On Mondays the operator usually substitutes the 2nd Infiltration Tunnel if the South Korean military allows access; if not, the route runs as DMZ-without-tunnel, with extended time at Imjingak, the Dora Observatory, and Gamaksan. Confirm your travel date with the operator if a Monday is required."
+            "question": "월요일에도 투어가 가능한가요?",
+            "answer": "제3땅굴 코스는 월요일 휴관입니다. 월요일에는 여행사가 대체 DMZ 코스(판문점 방향 우회 코스 등)를 안내합니다."
           },
           {
             "id": "q4",
-            "question": "How tough is the 3rd Tunnel descent?",
-            "answer": "The 3rd Tunnel descent is the most physically demanding section of the day. The walk down is fine for most travelers. The climb back up the steep, slippery 350 meter ramp takes about 10-20 minutes and requires moderate fitness. There's a monorail option for an extra fee (about 9,200 KRW round-trip) for visitors with knee, heart, or claustrophobia concerns. Helmets are provided at the entrance."
+            "question": "제3땅굴 하강이 힘들지 않나요?",
+            "answer": "경사가 급한 350m 진입로가 가장 체력이 필요한 구간입니다. 내려가는 것은 쉽지만 올라오는 길이 힘듭니다. 안전모 착용 필수."
           },
           {
             "id": "q5",
-            "question": "What if military operations cancel DMZ access on the day?",
-            "answer": "DMZ access is governed by the South Korean military and can change at short notice for drills, weather, or security reasons. If access is cancelled on the day, the driver-guide substitutes Dorasan Station (when accessible), the Bridge of Freedom plus Mangbaedan extended visit, or extra time at Gamaksan. Refunds are not issued in this case as the route still runs with substitutions; the substitution policy is documented at booking."
+            "question": "군사 훈련으로 DMZ 접근이 취소될 수 있나요?",
+            "answer": "DMZ 접근은 한국 군 당국이 통제하며 단기 통보로 변경될 수 있습니다. 취소 시 전액 환불됩니다."
           },
           {
             "id": "q6",
-            "question": "Is photography allowed at every stop?",
-            "answer": "Photography is freely allowed at Imjingak Peace Park and Gamaksan. At the Dora Observatory, photos toward South Korea are fine, but photos toward North Korea are restricted to the marked yellow line on the open roof level. Inside the 3rd Infiltration Tunnel, photography is forbidden — phones and cameras must stay in the lockers at the entrance. Guide will brief on the rules at each stop."
+            "question": "모든 경유지에서 사진 촬영이 가능한가요?",
+            "answer": "임진각과 감악산은 자유롭게 촬영 가능. 도라전망대는 남쪽 방향 촬영만 허용됩니다."
           },
           {
             "id": "first-time",
-            "question": "Is this a good choice for first-time visitors to Paju (Seoul Day Trip)?",
-            "answer": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+            "question": "파주를 처음 방문하는 분에게 좋은가요?",
+            "answer": "네, 파주 DMZ 지역의 대표 명소를 하루에 균형 있게 볼 수 있습니다."
           },
           {
             "id": "walking",
-            "question": "Is the walking difficult?",
-            "answer": "An active day with several walking-heavy stops. Imjingak Peace Park is easy flat walking with a few light steps to the steam-locomotive memorial. The 3rd Infiltration Tunnel is a 350 meter steep ramp descent and ascent — the climb back up is the most physically demanding moment of the day. Dora Observatory has stairs to the open roof. Gamaksan Suspension Bridge requires a 10-40 minute uphill trail walk depending on the entry point."
+            "question": "도보 이동이 힘들지 않나요?",
+            "answer": "활동적인 하루입니다. 임진각은 평탄한 도보. 제3땅굴 하강 경사로가 가장 힘든 구간. 감악산 출렁다리는 약 10~15분 산책로 이동이 필요합니다."
           },
           {
             "id": "family",
-            "question": "Is this tour suitable for families?",
-            "answer": "Yes for families whose kids can handle the heavy historical content and physical sections. The 3rd Tunnel is restricted to children who can walk independently and follow safety rules; infants in carriers are not permitted due to the helmet requirement. Younger children find the day emotionally heavy. Gamaksan and the Imjingak gondola are the lighter highlights for kids."
+            "question": "가족 여행에 적합한가요?",
+            "answer": "역사적 내용의 무거움과 제3땅굴 경사로를 소화할 수 있는 어린이와 함께하기에 적합합니다."
           },
           {
             "id": "seniors",
-            "question": "Can older adults join comfortably?",
-            "answer": "Recommended only for active seniors comfortable with stairs, uneven ground, and a 350 meter steep tunnel ramp. The Imjingak Peace Gondola substitutes for the tunnel descent if needed. Dora Observatory has elevators to most levels. Gamaksan's shorter trail entry (10 minutes) is preferred for senior groups; the driver-guide will route accordingly."
+            "question": "어르신도 참여할 수 있나요?",
+            "answer": "계단, 고르지 않은 지형, 350m 급경사 터널 진입로가 있어 활동적인 어르신께만 권장합니다."
           },
           {
             "id": "children",
-            "question": "What's the recommended minimum age?",
-            "answer": "Age 10+ recommended. The tour involves heavy historical content, a steep tunnel descent (children get tired on the climb back), suspension-bridge heights at Gamaksan, and a long day overall. Younger children can join but expect emotional and physical fatigue. Babies in carriers cannot enter the 3rd Tunnel due to height and helmet-safety rules."
+            "question": "권장 최소 연령은 몇 세인가요?",
+            "answer": "만 10세 이상 추천. 역사적 무거운 내용과 급경사 터널 하강이 포함됩니다."
           }
         ]
       }
@@ -1869,11 +1916,11 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
         "price": {
           "amountLabel": "",
           "currency": "USD",
-          "per": "vehicle"
+          "per": "차량"
         }
       }
     }
@@ -1897,20 +1944,20 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
       },
       "v17_batch8_enhancement": {
         "date": "2026-04-29",
-        "description": "Batch 8 deep enhancement — Seoul DMZ + Nami/Morning Calm/Petite France pair. Returns to single-POI fixed-itinerary methodology (batches 1-5 style) after Batch 7's route-option charter format. All stops enhanced with 1,000+ char descriptions weaving verified facts. matching_profile recalibrated to verified-fact 0-1 float scores. Charter-format dimensions previously null: private_tour_fit set to 1.0; customizable_route_fit set to 0.4 (fixed itinerary); flexibility_fit set to 0.6-0.7 (driver-guide pacing flex but not destination flex). Tour-specific: history_culture_fit DMZ 1.0 (catalog-heaviest history) / Nami 0.6 (K-drama + culture). Nami romantic_fit set to 0.95 (catalog-leading). 5 new POIs added to KB (v1.10 → v1.11): nami_island, imjingak_peace_park, third_infiltration_tunnel, dora_observatory, gamaksan_red_bridge. Garden of Morning Calm and Petite France reused from KB v1.10 (Batch 7) unchanged.",
+        "description": "Batch 8 deep enhancement — Seoul DMZ + Nami/Morning Calm/Petite France pair. Returns to single-POI fixed-itinerary methodology (batches 1-5 style) after Batch 7's route-option charter format. All stops enhanced with 1,000+ char descriptions weaving verified facts. product profile recalibrated to verified-fact 0-1 float scores. Charter-format dimensions previously null: private_tour_fit set to 1.0; customizable_route_fit set to 0.4 (fixed itinerary); flexibility_fit set to 0.6-0.7 (driver-guide pacing flex but not destination flex). Tour-specific: history_culture_fit DMZ 1.0 (catalog-heaviest history) / Nami 0.6 (K-drama + culture). Nami romantic_fit set to 0.95 (catalog-leading). 5 new POIs added to KB (v1.10 → v1.11): nami_island, imjingak_peace_park, third_infiltration_tunnel, dora_observatory, gamaksan_red_bridge. Garden of Morning Calm and Petite France reused from KB v1.10 (Batch 7) unchanged.",
         "_score_audit": {
           "_methodology": "0-1 float scale per Phase 1 standard. Both tours are 8-9hr private FIXED-itinerary tours (NOT route-option charters like Batch 7). private_tour_fit set to 1.0 by definition (was None). customizable_route_fit = 0.4 (driver-guide can adjust pacing/lunch but not destinations). flexibility_fit = 0.6 (private vehicle door-to-door but the route stops are fixed). history_culture_fit set as DMZ tour 1.0 (heaviest history content in catalog) / Nami tour 0.6 (K-drama + general culture but not history-deep). Time-weighted indoor_ratio re-computed per Fix 1 methodology using verified per-POI indoor_ratio_at_stop values.",
           "deltas_applied": {
             "private_tour_fit": {
               "old": null,
-              "new": 1,
+              "new": 1.0,
               "reasoning": "VERIFIED — both tours are per-vehicle private tours by definition. Was previously None (unset)."
             },
             "small_group_fit": {
@@ -1925,7 +1972,7 @@
             },
             "history_culture_fit": {
               "old": null,
-              "new": 1,
+              "new": 1.0,
               "reasoning": "VERIFIED — DMZ tour with 3rd Tunnel + Dora Observatory + Imjingak is the catalog's heaviest history content. Maximum score by definition. Was None (unset)."
             },
             "customizable_route_fit": {
@@ -1974,9 +2021,9 @@
               "reasoning": "Verified maintained — DMZ horizons + Gamaksan bridge are scenic, but the 3rd Tunnel underground is institutional. Average 0.60 maintained."
             },
             "storytelling_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.95,
-              "reasoning": "VERIFIED — driver-guide narrative is at its strongest on DMZ tours (Korean War + tunnel discovery + observatory geopolitics). 0.95 reflects that storytelling depth is bounded by passport-required restrictions and the standardized DMZ Peace Tour shuttle structure."
+              "reasoning": "VERIFIED — driver-guide narrative is at its strongest on DMZ tours (Korean War + tunnel discovery + observatory geopolitics). 0.95 reflects that storytelling depth is bounded by passport-required restrictions and the standardized DMZ Peace 투어 셔틀 차량 structure."
             },
             "family_fit": {
               "old": 0.6,
@@ -1984,7 +2031,7 @@
               "reasoning": "Verified — DMZ tours can be intense for young children (heavy history content, 3rd Tunnel claustrophobia, photography restrictions, passport check). Suitable for older children 10+ but markdown for younger families. 0.55."
             },
             "premium_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.95,
               "reasoning": "Verified — private vehicle + driver-guide is premium, but DMZ portion is military-shuttle-constrained (no upgrade path inside the DMZ proper). 0.95."
             },

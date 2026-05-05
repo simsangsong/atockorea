@@ -5,8 +5,8 @@
   "locale": "ko",
   "product_id": "jeju-hydrangea-festival-tour-southwest-route",
   "seo": {
-    "pageTitle": "Jeju Southwest Hydrangea Festival Day Tour | AtoC Korea",
-    "metaDescription": "Summer-only southwest Jeju day tour: Hyeopjae Beach, Hallim Park hydrangea festival, Jusangjeolli Cliff, Cheonjeyeon Falls, Camellia Hill, Osulloc tea fields.",
+    "pageTitle": "제주 서남부 수국 축제 소그룹 투어 | AtoC Korea",
+    "metaDescription": "여름 한정 서남부 제주 투어: 협재 에메랄드 해변, 수국 축제 정원, 주상절리(유네스코), 섭지코지.",
     "ogImage": "https://images.unsplash.com/photo-1559948638-e8e07b62b9c1?w=1920&q=80",
     "primaryKeywords": [
       "제주 수국 투어",
@@ -21,24 +21,24 @@
     "slug": "jeju-hydrangea-festival-tour-southwest-route",
     "title": "제주 서남부 수국 축제 소그룹 투어",
     "subtitle": "협재해변, 한림공원 수국 축제, 주상절리·천제연폭포, 카멜리아힐 수국 터널, 오설록 차밭을 소그룹으로.",
-    "region": "Southwest Jeju",
-    "duration": "9 hours",
+    "region": "서남 제주",
+    "duration": "9시간",
     "stopsCount": 6,
     "rating": 0,
     "reviewCount": 0,
     "badges": [
       "여름 한정",
       "수국 시즌",
-      "Southwest Jeju"
+      "Sout회st Jeju"
     ],
     "heroImage": "https://images.unsplash.com/photo-1559948638-e8e07b62b9c1?w=1920&q=80",
     "thumbnail": "https://images.unsplash.com/photo-1559948638-e8e07b62b9c1?w=600&q=80",
     "priceLabel": "가격은 예약 시 확인",
     "shortCardDescription": "협재해변, 한림공원 수국 축제(개방형 수국 정원), 주상절리(유네스코)·천제연폭포(묶음 관람), 카멜리아힐 수국 터널, 오설록 티뮤지엄을 소그룹으로 여름 하루에.",
     "tags": [
-      "summer_only",
-      "hydrangea_season",
-      "southwest_jeju"
+      "여름 한정",
+      "수국 시즌",
+      "제주 서남부"
     ]
   },
   "headlineLine1": "수국, 주상절리, 차밭",
@@ -46,21 +46,21 @@
   "price": {
     "amountLabel": "",
     "currency": "USD",
-    "per": "person"
+    "per": "인"
   },
   "hero": {
     "imageUrl": "https://images.unsplash.com/photo-1559948638-e8e07b62b9c1?w=1920&q=80",
     "imagePosition": "center 35%",
     "tagline": "해변에서 주상절리를 지나 수국 터널까지.",
     "pills": [
-      "Summer Only",
-      "Hydrangea Season",
-      "Southwest Jeju"
+      "여름 한정",
+      "수국 시즌",
+      "제주 서남부"
     ],
     "meta": {
-      "duration": "9 hours",
-      "region": "Southwest Jeju",
-      "stops": "6 stops",
+      "duration": "9시간",
+      "region": "서남부 제주",
+      "stops": "6개 코스",
       "rating": 0,
       "ratingStars": 0
     }
@@ -90,39 +90,33 @@
   "glanceItems": [
     {
       "icon": "camera",
-      "label": "포토 스팟",
-      "value": "높음",
-      "level": 5
+      "label": "사진 포인트",
+      "value": "매우 높음"
     },
     {
-      "icon": "mountain",
-      "label": "경치 밀도",
-      "value": "높음",
-      "level": 5
-    },
-    {
-      "icon": "footprints",
-      "label": "도보 난이도",
-      "value": "보통",
-      "level": 3
-    },
-    {
-      "icon": "cloud-rain",
-      "label": "우천 적합도",
-      "value": "낮음",
-      "level": 2
+      "icon": "calendar",
+      "label": "권장 시즌",
+      "value": "6월 - Mid 7월"
     },
     {
       "icon": "users",
-      "label": "가족 적합도",
-      "value": "양호",
-      "level": 4
+      "label": "최대 인원",
+      "value": "소그룹"
     },
     {
-      "icon": "gauge",
-      "label": "투어 페이스",
-      "value": "집중형",
-      "level": 3
+      "icon": "clock",
+      "label": "소요 시간",
+      "value": "9시간"
+    },
+    {
+      "icon": "map-pin",
+      "label": "투어 지역",
+      "value": "제주 서남부"
+    },
+    {
+      "icon": "footprints",
+      "label": "도보 강도",
+      "value": "쉬움~보통"
     }
   ],
   "galleryItems": [
@@ -130,85 +124,85 @@
       "id": "g1",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1559948638-e8e07b62b9c1?w=1200&q=80",
-      "alt": "Hydrangea blooms at Hallim Park",
-      "caption": "Hydrangea blooms at Hallim Park",
+      "alt": "투어 중 방문하는 한림공원 수국 축제의 풍경",
+      "caption": "한림공원 수국 축제",
       "location": "Hallim Park",
-      "atmosphere": "Hydrangea festival in full bloom"
+      "atmosphere": "수국 축제 만개"
     },
     {
       "id": "g2",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=1200&q=80",
-      "alt": "Hydrangea tunnel at Camellia Hill",
-      "caption": "Hydrangea tunnel at Camellia Hill",
-      "location": "Camellia Hill",
-      "atmosphere": "Hydrangea tunnel walk"
+      "alt": "투어 중 방문하는 카멜리아힐 수국 터널 풍경",
+      "caption": "카멜리아힐 수국 터널",
+      "location": "카멜리아힐",
+      "atmosphere": "수국 터널 산책"
     },
     {
       "id": "g3",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
-      "alt": "Hyeopjae Beach turquoise water",
-      "caption": "Hyeopjae Beach turquoise water",
-      "location": "Hyeopjae Beach",
-      "atmosphere": "Emerald water and white sand"
+      "alt": "투어 중 방문하는 협재해변의 에메랄드빛 바다의 풍경",
+      "caption": "협재해변의 에메랄드빛 바다",
+      "location": "협재 Beach",
+      "atmosphere": "에메랄드빛 바다와 흰 모래"
     },
     {
       "id": "g4",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200&q=80",
-      "alt": "Jusangjeolli columnar basalt cliff",
-      "caption": "Jusangjeolli columnar basalt cliff",
-      "location": "Jusangjeolli Cliff",
-      "atmosphere": "Columnar basalt formation"
+      "alt": "투어 중 방문하는 대포 주상절리 현무암 절벽의 풍경",
+      "caption": "대포 주상절리 현무암 절벽",
+      "location": "주상절리 Cliff",
+      "atmosphere": "주상절리 현무암 지형"
     },
     {
       "id": "g5",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1200&q=80",
-      "alt": "Cheonjeyeon three-tier waterfall",
-      "caption": "Cheonjeyeon three-tier waterfall",
-      "location": "Cheonjeyeon Falls",
-      "atmosphere": "Three-tier waterfall"
+      "alt": "천지연 3단 폭포",
+      "caption": "천지연 3단 폭포",
+      "location": "Cascada Cheonjeyeon",
+      "atmosphere": "3단 폭포"
     },
     {
       "id": "g6",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80",
-      "alt": "Osulloc green tea fields",
-      "caption": "Osulloc green tea fields",
-      "location": "Osulloc Tea Museum",
-      "atmosphere": "Endless green tea fields"
+      "alt": "투어 중 방문하는 오설록 녹차밭의 풍경",
+      "caption": "오설록 녹차밭",
+      "location": "오설록 티뮤지엄",
+      "atmosphere": "끝없는 녹차밭"
     }
   ],
   "itineraryStops": [
     {
       "number": 1,
       "time": "09:30",
-      "duration": "40 min",
+      "duration": "40분",
       "name": "협재해수욕장",
-      "category": "West-coast emerald beach + Biyangdo Island view",
+      "category": "서쪽 해안 에메랄드 해변 + 비양도 조망",
       "description": "제주 서부 대표 해수욕장. 에메랄드빛 바다와 비양도 풍경. 방문 시간: 약 40분.",
       "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
       "highlights": [
-        "**Top 3 west-coast Jeju beaches / Top 10 overall** — emerald-turquoise water + silvery sand",
-        "**Distinctive silvery-white sand** — crushed seashells + coral fragments",
-        "**9 km shoreline** when paired with twin-beach **Geumneung Beach** (less crowded, walkable)",
-        "**Biyangdo Island** — 1.2 km offshore, ~200 residents, **Korea's first carbon-free island certification**",
-        "**Sunset behind Biyangdo** — catalog's premier west-coast sunset framing",
-        "**Pine forest (Songlim) backdrop** with free camping ground",
-        "**Tidal pools at low tide** — hermit crabs, shrimp, juvenile fish; Biyangdo 'walkable' optical effect",
-        "**Lifeguarded swim period July 1 – August 31**; wheelchair-accessible ramp at multiple points",
-        "**Most-developed west-coast café strip** behind the beach"
+        "**제주 서쪽 해변 TOP 3 / 전체 TOP 10** — 에메랄드 청록색 바다 + 은빛 백사장",
+        "**독특한 은빛 흰 모래** — 조개껍질 + 산호 조각으로 이루어진 해변",
+        "쌍둥이 해변 **금능 해변**(더 한산함, 도보 가능)과 연결 시 **9km 해안선**",
+        "**비양도** — 해안에서 1.2km, 주민 약 200명, **한국 첫 번째 탄소 없는 섬** 프로젝트",
+        "**비양도 너머 일몰** — 카탈로그 최고의 서쪽 해안 일몰 구도",
+        "**소나무 숲(솔림) 배경** + 무료 야영지",
+        "**썰물 시 갯벌** — 집게, 새우, 치어 관찰; 비양도 '걸어서' 접근 가능한 시기 가끔",
+        "**7월 1일~8월 31일 안전 요원 상주 수영 기간**; 여러 지점 휠체어 접근용 경사로",
+        "**서쪽 해안 카페 거리 가장 발달** — 해변 뒤편"
       ],
       "timeUsed": [
-        "Coach arrival + parking — ~5 min",
-        "Main beach walk + photo windows — ~20 min",
-        "Geumneung twin-beach extension (optional) — ~15 min",
-        "Cafe strip break + snacks — ~15 min",
-        "Sunset photography vantage point — ~5 min"
+        "코치 도착 + 주차 — 약 5분",
+        "메인 해변 산책 + 포토 포인트 — 약 20분",
+        "금능 쌍둥이 해변 연장 (선택) — 약 15분",
+        "카페 거리 쉬기 + 간식 — 약 15분",
+        "일몰 촬영 포인트 — 약 5분"
       ],
-      "whyOnRoute": "**West-coast beach opener — and the natural pre-anchor for Hallim Park.** Three southwest-route reasons Hyeopjae is the morning opener at 09:30. (1) **Geographic pairing with Hallim**: Hyeopjae Beach sits **a 5-minute walk north of Hallim Park's main gate** — pairing them as a single morning duo is the local-operator standard and converts what would otherwise be 'two stops within 1 km' into a coherent Hyeopjae→Hallim arc. Visiting Hyeopjae first preserves a **clean, uncrowded beach morning** before the 10:30 Hallim gate-opening tour-bus rush. (2) **Light timing**: Hyeopjae's signature emerald-turquoise water + silvery-white seashell-sand contrast is most photogenic in the **9:30–10:30 morning window** when the sun is high enough to saturate the colors but the late-morning haze hasn't yet built up off the shoreline. (3) **Biyangdo Island anchor for the day's signature wide-landscape photo**: Biyangdo (1.2 km offshore, ~200 residents) sits as the day's first and only **horizon-island silhouette** — every subsequent stop is inland or coastal-cliff, so locking the Biyangdo wide-shot as the morning's first deliverable gives the day's photo set its required landscape breadth before pivoting into the garden + columnar-cliff + tea-fields close.",
+      "whyOnRoute": "**서해안 해변 오프닝 — 한림 공원의 자연스러운 사전 핵심 명소.**",
       "_poi_meta": {
         "poi_key": "hyeopjae_beach",
         "kb_version": "1.20",
@@ -220,50 +214,35 @@
           "Jeju Tourism Organization — west-coast sunset photography spots registry",
           "Hallim-eup local cultural office — Geumneung twin-beach pairing documentation"
         ]
-      },
-      "visitBasics": {
-        "hours": "Open 24 hours; managed swim season July–August",
-        "closed": "Open year-round",
-        "admission": "Free (parking ≈2,000 KRW summer)",
-        "walking": "Easy — flat beach"
-      },
-      "convenience": {
-        "restroom": "Public restrooms and shower facilities",
-        "parking": "Public parking lot (paid in summer)"
-      },
-      "smartNotes": {
-        "photo": "Sunset shots with Biyangdo silhouette; turquoise color is most vivid at midday under direct sun",
-        "facilities": "Multiple cafés along beachfront; convenience stores",
-        "tip": "Combine with Hallim Park (5 min walk); avoid summer weekends for fewer crowds"
       }
     },
     {
       "number": 2,
       "time": "10:30",
-      "duration": "120 min",
+      "duration": "120분",
       "name": "한림공원 (수국 축제)",
-      "category": "Hydrangea anchor + 9 themed gardens + 2 lava-tube caves",
+      "category": "수국 핵심 명소 + 9개 테마 정원 + 용암 동굴 2개",
       "description": "1971년 개장한 약 9만9,000㎡ 규모의 식물원으로, 수국 시즌(6~7월)에는 100여 종의 수국 품종이 공원 전체에 개화합니다. 쌍용굴·협재굴 용암동굴도 포함되어 있습니다. 입장료 별도(약 ₩15,000). 방문 시간: 약 70분.",
       "image": "https://images.unsplash.com/photo-1599598425947-5219dc1d4e93",
       "highlights": [
-        "**Founded 1971** by Song Bong-gyu — sandy wasteland transformed into a green paradise",
-        "**~99,000 m² / 80 acres** — 9 themed gardens + ~1.2 million visitors per year",
-        "**June Hydrangea Festival** — the park's signature June anchor",
-        "**Monthly festival calendar** — named active festival every month of the year",
-        "**Hyeopjaegul Cave** (~200m × 10m × 5m, ~25 million years old) — lava-tube + limestone stalactites",
-        "**Ssangyonggul Cave** ('Two Dragons', ~400m × 6m × 3m) — branching paths cave system",
-        "**'Two-dimensional caves'** — only lava-tube + limestone caves in the world (17 km system)",
-        "Cave temp **17–18°C year-round** — natural summer refuge",
-        "Diplomatic guest list: **Jiang Zemin, Nakasone, Kim Dae-jung, Lee Kun-hee, Chung Ju-yung**"
+        "**1971년 송봉규 개장** — 모래 황무지가 초록 낙원으로 변신",
+        "**약 99,000m² / 80에이커** — 9개 테마 정원 + 연간 약 120만 명 방문",
+        "**6월 수국 축제** — 정원의 대표 6월 핵심 명소",
+        "**연중 명칭 축제 일정** — 연중 매월 활성 축제 운영",
+        "**협재굴 동굴** (~200m × 10m × 5m, 약 2,500만 년 전) — 용암관 + 석회암 혼합 동굴",
+        "**쌍용굴 동굴** ('두 마리 용', ~400m × 6m × 3m) — 분기 경로 동굴",
+        "**'이차원 동굴'** — 세계 유일 용암관 + 석회암 동굴 (17km 방식)",
+        "동굴 기온 **연중 17~18°C** — 자연 여름 피서지",
+        "외교 귀빈 방명록: **장쩌민, 나카소네, 김대중, 이건희, 정주영**"
       ],
       "timeUsed": [
-        "Park entry + ticket + welcome — 10 min",
-        "Subtropical / Palm / Wild Flower gardens — 30 min",
-        "**Hyeopjaegul + Ssangyonggul caves** (cool down + photos) — 35 min",
-        "Hydrangea garden + Jae-Am Folk Village — 35 min",
-        "Restroom + park exit — 10 min"
+        "공원 입구 + 매표 + 환영 — 10분",
+        "아열대 / 야자 / 들꽃 정원 — 30분",
+        "협재·쌍용 용암 동굴 (선택) — 30~40분",
+        "피날레: 수국 가든 또는 분재원 — 20분",
+        "화장실 + 공원 출구 — 10분"
       ],
-      "whyOnRoute": "**The day's hydrangea anchor — and the southwest route's identity-defining stop.** Four reasons Hallim is the late-morning anchor at 10:30 with a generous 120-min dwell. (1) **Hydrangea season alignment**: June is the Hallim Park monthly-calendar **Hydrangea Festival month** — Hallim is the first of the day's three hydrangea-coded venues (Hallim morning anchor → Camellia Hill afternoon hydrangea tunnel → Osulloc tea-garden afternoon green tone). (2) **Cave-as-weather-fallback**: the **Hyeopjaegul + Ssangyonggul cave pairing** gives the day a guaranteed **indoor-equivalent refuge** against unpredictable southwest-Jeju June weather (June is Korea's pre-monsoon shoulder; afternoon thundershowers happen ~1 in 4 days). The 17–18°C cave temperature also serves as the day's **mid-morning cool-down** before the warm midday transit. (3) **120-min dwell justification**: Hallim's 9 themed gardens + 2 caves cannot be done meaningfully in less than 90 minutes — the 120-min slot accounts for **slow-walking in the caves** (uneven lava-tube floors), **photo dwell at hydrangea field**, and **typical 5-min queue at the cave entrance** during peak season. (4) **Operational pairing with Hyeopjae**: because Hyeopjae sits 5 min walk away, the morning Hyeopjae→Hallim arc consumes 160 min total but only 5 min of vehicle transit — extracting maximum guest value from the operator's morning fuel budget.",
+      "whyOnRoute": "**하루의 수국 핵심 명소 — 그리고 서남쪽 루트의 정체성을 정의하는 코스.**",
       "_poi_meta": {
         "poi_key": "hallim_park",
         "kb_version": "1.21",
@@ -271,97 +250,70 @@
         "sources": [
           "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=104761 — Hallim Park, Visit Korea (KTO)",
           "http://jejucvb.com/Hallim — Jeju CVB official Unique Venue page (founder Song Bong-gyu + diplomatic guest list)",
-          "https://www.tripadvisor.com/Attraction_Review-g297885-d2204895-Reviews-Hallim_Park-Jeju_Jeju_Island.html — Tripadvisor Hallim Park (annual visitors + 9 themed gardens + monthly festival calendar)",
-          "https://www.trazy.com/experience/detail/hallim-park-jeju-ticket — Trazy Hallim Park ticket page (cave system + 'two-dimensional caves' classification + Natural Monument designation)",
+          "Hallim Park (annual visitors + 9 themed gardens + monthly festival calendar)",
+          "Hallim Park ticket page (cave system + 'two-dimensional caves' classification + Natural Monument designation)",
           "https://www.expatolife.com/hallim-park-jeju-island-south-korea/ — Expatolife Hallim Park guide (cave dimensions + 17 km lava-tube system)"
         ]
-      },
-      "visitBasics": {
-        "hours": "Mar–May 09:00–18:30; Jun–Aug 09:00–19:00; Sep–Oct 09:00–18:30; Nov–Feb 09:00–17:30 (last admission 1 hour before close)",
-        "closed": "Open year-round",
-        "admission": "Adult 15,000 KRW / Teen 10,000 KRW / Child 9,000 KRW (online discount: ≈13,500 / 9,000 / 8,100)",
-        "walking": "Moderate — 2–3 hours of walking through 9 garden zones; mostly flat"
-      },
-      "convenience": {
-        "restroom": "Multiple restrooms throughout the park",
-        "parking": "Free parking on site"
-      },
-      "smartNotes": {
-        "photo": "Hydrangea Festival (June) and pink muhly (October) are peak photo seasons; lava caves with stalactite lighting are unique",
-        "facilities": "On-site restaurants, gift shop, cave museum",
-        "tip": "Last entry 90 minutes before closing; closing time depends on sunset; pair with Hyeopjae Beach (5–10 min walk)"
       }
     },
     {
       "number": 3,
       "time": "12:35",
-      "duration": "60 min",
+      "duration": "60분",
       "name": "점심 (제주 서남부 현지 식당)",
-      "category": "Operational stop — local southwest-Jeju lunch",
+      "category": "운영 정류장 — 동제주 현지 점심",
       "description": "한림·애월·안덕 지역 현지 식당. 점심 식사비 별도(약 ₩12,000~18,000).",
       "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
       "highlights": [
-        "**Southwest-Jeju local restaurant** — Hallim / Aewol-tail / Andeok corridor",
-        "Vetted shortlist: **English-friendly menus** + dietary accommodation",
-        "Signature options: **galchi-jorim, heuk-dwaeji bulgogi, mom-guk (regional), bibimbap**",
-        "**Mom-guk** = west-Jeju regional specialty (seaweed-pork soup) not on east tours",
-        "**Lunch at guests' own expense** (~₩12,000–₩18,000/person, not included)",
-        "Vegetarian + halal-friendly options on request"
+        "**동제주 현지 식당** — 표선 / 동성산 회랑",
+        "미리 확인한 추천 목록: **영어 친화 메뉴** + 식이 요건 수용",
+        "대표 메뉴: **갈치조림, 흑돼지 불고기, 비빔밥, 매운탕**",
+        "채식 + 할랄 친화 옵션 요청 시 제공",
+        "**점심은 게스트 자비 부담** (~₩12,000~18,000/인, 투어 미포함)",
+        "전날 그룹 규모 + 식이 요건 기준 식당 선정"
       ],
       "timeUsed": [
-        "Arrival + seating — 5 min",
-        "Order + dietary check — 5 min",
-        "Meal — 35 min",
-        "Settle bill + restroom — 10 min",
-        "Boarding + departure — 5 min"
+        "도착 + 착석 — 5분",
+        "주문 + 식이 확인 — 5분",
+        "식사 — 35분",
+        "화장실 + 집결 — 15분",
+        "탑승 + 출발 — 5분"
       ],
-      "whyOnRoute": "**Operational midday stop**, locked at 12:35 to bridge the morning Hyeopjae+Hallim anchor (120 min Hallim runs into early-lunch zone) and the afternoon Jusangjeolli/Cheonjeyeon + Camellia Hill arc. The 60-min slot also serves as a **buffer absorber** — if the Hallim cave queue runs long during peak-season weekends, the lunch window compresses to 50 min without disrupting the 13:50 columnar-cliff target.",
+      "whyOnRoute": "**운영 정오 코스**, 12:35에 고정.",
       "_poi_meta": {
         "poi_key": "OPS_lunch",
         "kb_version": "1.20",
         "verified_date": "2026-04-29",
         "sources": []
-      },
-      "visitBasics": {
-        "hours": "12:00-14:00 typical",
-        "admission": "Lunch cost paid direct, ≈10,000–15,000 KRW typical (Korean local restaurants near route)",
-        "walking": "Minimal"
-      },
-      "convenience": {
-        "restroom": "At restaurant",
-        "parking": "Available"
-      },
-      "smartNotes": {
-        "tip": "Vegetarian options on request — notify the day before."
       }
     },
     {
       "number": 4,
       "time": "13:50",
-      "duration": "75 min",
+      "duration": "75분",
       "name": "주상절리 & 천제연폭포",
-      "category": "Compound stop — Natural Monument 443 columnar joints + Natural Monument 378 three-tier waterfall",
+      "category": "화산 해안선 — 육각형 주상절리 용암",
       "description": "대포 주상절리(유네스코 지질공원 현무암 절벽)와 천제연폭포(3단 폭포)를 75분 합산 도보 코스로 묶어 관람합니다. 입장료 별도(주상절리 ₩2,000, 천제연 ₩2,500). 방문 시간: 약 75분.",
       "image": "https://images.unsplash.com/photo-1606112219348-204d7d8b94ee",
       "highlights": [
-        "**Compound stop** — 2 Natural Monuments paired in one 75-min walk (3 km / 7-min drive between)",
-        "**Daepo Jusangjeolli — Natural Monument No. 443 (2005)** — most recent Jeju coastal NM",
-        "**1.75 km coastal cliff** of hexagonal/pentagonal black basalt columns up to 30–40m tall",
-        "Part of **Jeju UNESCO Global Geopark (2010)** — formed ~140,000–250,000 years ago",
-        "**Wave heights up to 20m+** during peak south swells crashing against columns",
-        "**Cheonjeyeon Falls — Natural Monument No. 378 (1993)** — three-tier waterfall + transition forest",
-        "**Seven Nymphs (선녀) Joseon Daoist legend** — heavenly nymphs descended to bathe nightly",
-        "**Seonimgyo Bridge (선임교)** — 128-m arched footbridge with 7 nymph statues",
-        "**Floral counterpoint** — the day's only non-garden geological + waterfall stop"
+        "**천연기념물 제443호** — **2005년 1월 6일** 지정, 제주 해안 천연기념물 중 가장 최근 지정",
+        "기둥 높이 **30~40m**, **5~7각형 다각형**(주로 육각형)이 **1km**를 따라 밀집",
+        "형성 과정: **한라산 측면 용암이 약 25~14만 년 전 바닷물에 냉각**되면서 수축·균열",
+        "**동아시아 최고의 주상절리 명소** — 자이언츠 코즈웨이, 데빌스 포스트파일과 어깨를 나란히",
+        "**만조 시 최대 20m 파도 분수** — 파도 분수 촬영 포인트",
+        "**0.8km 데크 루프**, 약 15분 도보 — 장벽 없는 데크, 휠체어·유모차 접근 가능",
+        "**유네스코 세계지질공원(2010) 제주 글로벌 지오파크** — 섬 전체 13개 지질 명소 중 하나",
+        "입장료: **성인 ₩2,000 / 청소년 ₩1,000 / 7세 이하·65세 이상 무료**",
+        "맑은 날 북쪽으로 한라산 정상 조망 가능"
       ],
       "timeUsed": [
-        "Arrive Jusangjeolli + entry — 5 min",
-        "Jusangjeolli cliff observation deck + photos — 25 min",
-        "Drive to Cheonjeyeon (~7 min) + restroom — 12 min",
-        "Cheonjeyeon Seonimgyo Bridge + upper-pond viewpoint — 25 min",
-        "Cheonjeyeon exit + boarding — 8 min"
+        "주차 + 매표 + 입장 — 약 5분",
+        "첫 번째 전망대까지 이동 — 약 5분",
+        "절벽 기둥 관람 + 사진 — 약 15분",
+        "데크 루프 이동 — 약 10분",
+        "코치 귀환 — 약 10분"
       ],
-      "whyOnRoute": "**The day's geological + waterfall counterpoint to the three-garden floral arc.** Three southwest-route reasons this compound stop sits at 13:50. (1) **Geographic necessity**: Jusangjeolli + Cheonjeyeon are both in **Jungmun (~3 km apart)** — either both go in or both stay out. Going in is necessary because they are the **only Natural Monuments on the day's path** (alongside the Black Pig at Hueree on the sister tour) and provide the day's required UNESCO-Geopark anchor. (2) **Pacing counterweight**: without this stop, the southwest tour collapses into a garden-only sequence (Hallim hydrangea → Camellia Hill hydrangea → Osulloc tea) that loses visual variety after stop 2. The columnar cliff seascape + three-tier waterfall gorge give the afternoon the visual palette breadth that makes it a complete 'southwest Jeju day' rather than a flower-only tour. (3) **Compound efficiency**: pairing both as 75-min stop frees up **45+ min** vs. visiting each as separate ~60-min stops — that surplus is what funds Hallim's 120-min anchor dwell + Camellia Hill's afternoon photo time.",
+      "whyOnRoute": "**세 개의 꽃 정원 호가 있는 루프에서 하루의 지질학+폭포 대조점.**",
       "_poi_meta": {
         "poi_key": "daepo_jusangjeolli_cliff",
         "secondary_poi_keys": [
@@ -378,50 +330,35 @@
           "https://heritage.unesco.or.kr/jeju-volcanic-island-and-lava-tubes/ — Korea National Heritage Service Jeju Volcanic listing",
           "https://www.peek.com/seogwipo-si-jeju-do-south-korea/r0an9mv/jeju-island-hydrangeas-a-floral-paradise/a067e9nx — Peek 'Jeju Island Hydrangeas' tour itinerary documenting the compound-stop pattern"
         ]
-      },
-      "visitBasics": {
-        "hours": "09:00–18:00 (summer extended)",
-        "closed": "Open year-round (weather-dependent)",
-        "admission": "Jusangjeolli: Adult 2,000 / Child 1,000. Cheonjeyeon: Adult 2,500 / Child 1,350. Combined ≈4,500 KRW per adult.",
-        "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
-      },
-      "convenience": {
-        "restroom": "At entrance/visitor center",
-        "parking": "Available near entrance"
-      },
-      "smartNotes": {
-        "photo": "Best with high tide and rough seas — waves smashing into the columns make dramatic shots; golden hour gives best column-color contrast",
-        "tip": "Get there before 11am or after 4pm to avoid tour-bus crowds; combine with Jungmun Saekdal Beach (5 min) for a half-day",
-        "facilities": "Small geological exhibition near entrance; souvenir shop"
       }
     },
     {
       "number": 5,
       "time": "15:15",
-      "duration": "75 min",
+      "duration": "75분",
       "name": "카멜리아힐 (수국 터널)",
-      "category": "Hydrangea tunnel + 172,000 m² largest camellia arboretum in the East",
+      "category": "수국 터널 + 동양 최대 172,000m² 동백 수목원",
       "description": "카멜리아힐 172,000㎡ 식물원의 수국 터널 — 좁은 산책로 양쪽을 수국이 둘러싸는 독특한 터널 구성. 한림공원 개방형 수국 정원과 대조되는 구성미. 입장료 별도(약 ₩10,000). 방문 시간: 약 60분.",
       "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
       "highlights": [
-        "**172,000 m²** — largest camellia arboretum in the East",
-        "**6,000 trees / 500+ species from 80 countries** — accumulated 30+ years",
-        "**Year-round bloom calendar** — Nov–Mar camellias, Mar–May cherry + tulip, Jun–Aug hydrangea",
-        "**Themed sections**: European Garden, Korean Native Forest, Cherry Walk, Hydrangea Field",
-        "Glass **greenhouse + gallery + cafe** complex — indoor refuge (15% of visit)",
-        "**'EXchange / Transit Love 3'** filming location — Ju-won & Yu-jeong's date scene",
-        "**Open 365 days**; closes at sundown (no outdoor lighting)",
-        "Admission **₩12,000 adult / ₩10,000 youth+senior / ₩9,000 child (4–11) / FREE under 3**",
-        "**~85% outdoor** garden walking — comfortable shoes recommended"
+        "**172,000m²** — 동양 최대 동백 수목원",
+        "**수목 6,000그루 / 80개국 500여 품종** — 30년 이상 수집",
+        "**연중 개화 일정** — 11~3월 동백, 3~5월 벚꽃+튤립, 6~8월 수국",
+        "**테마 구역**: 유럽 정원, 한국 자생림, 벚꽃 산책로, 수국밭",
+        "**유리온실 + 갤러리 + 카페** 복합 시설 — 실내 피난처 (방문 시간의 약 15%)",
+        "**드라마 '환승연애3'** 촬영지 — 주원 & 유정의 데이트 장면",
+        "**연중 무휴**; 일몰 시 폐관 (야간 조명 없음)",
+        "입장료: **성인 ₩12,000 / 청소년·경로 ₩10,000 / 어린이(4~11세) ₩9,000 / 3세 이하 무료**",
+        "**야외 약 85%** — 편안한 신발 권장"
       ],
       "timeUsed": [
-        "Parking + entrance + welcome — ~10 min",
-        "Camellia + featured-bloom section walk — ~25 min",
-        "European Garden + Hydrangea Field — ~20 min",
-        "Greenhouse + cafe break (optional) — ~15 min",
-        "Buffer / restroom — ~5 min"
+        "주차 + 입장 + 환영 — 약 10분",
+        "동백 + 이달의 꽃 구역 산책 — 약 25분",
+        "유럽 정원 + 수국밭 — 약 20분",
+        "유리온실 + 카페 휴식 (선택) — 약 15분",
+        "이동 완충 — 약 5분"
       ],
-      "whyOnRoute": "**The afternoon's hydrangea-tunnel anchor — and the day's photographic centerpiece.** Three southwest-route reasons Camellia Hill is the afternoon-2 anchor at 15:15. (1) **Hydrangea Tunnel — Korea's earliest blooming hydrangeas**: Camellia Hill houses **Korea's earliest-blooming hydrangeas (early April indoor + outdoor full bloom from June)**, with the **Hydrangea Hall pergola tunnel** as the day's definitive Instagram-anchor photo (giant blue/pink/purple hydrangea balls hanging above a covered walkway). The June 10–25 peak window aligns exactly with this tour's seasonal positioning. (2) **Garden-pacing complementarity**: Camellia Hill's **1.2 km / 0.75-mile walking loop** is gentler than Hallim's 9-themed-garden complexity, making it the day's **photo-immersive low-effort garden** after the morning's higher-density Hallim anchor. The two gardens together build a **garden-pacing arc** (intensive Hallim → relaxed Camellia Hill) that wouldn't work if reversed. (3) **Late-afternoon light**: the 15:15–16:30 window catches the **warm late-afternoon golden light** that flatters the hydrangea pinks and blues (midday flat light desaturates them, same logic as Hueree on the east route). Camellia Hill's signature photographers'-mirror installation also captures golden-hour reflections from this slot. **Sister-route note**: this stop matches the afternoon timing of Hueree on the east route — both sister tours close their hydrangea anchor in late afternoon for matching sun angles.",
+      "whyOnRoute": "**오후의 수국 터널 핵심 명소 — 그리고 하루의 사진 중심.**",
       "_poi_meta": {
         "poi_key": "camellia_hill",
         "kb_version": "1.20",
@@ -433,50 +370,35 @@
           "Korea Tourism Organization — Top Korean botanical gardens registry",
           "Kakao TV / Wavve programming archive — 'EXchange / Transit Love 3' filming locations"
         ]
-      },
-      "visitBasics": {
-        "hours": "Summer (Jun–Aug) 08:30–19:00; Spring/Fall 08:30–18:30; Winter 08:30–17:30 (varies seasonally)",
-        "closed": "Open year-round",
-        "admission": "Adult 10,000 KRW / Teen 8,000 KRW / Child 7,000 KRW (approximate)",
-        "walking": "Easy to moderate — gentle hill paths; mostly stroller-accessible"
-      },
-      "convenience": {
-        "restroom": "Available at entrance and within garden",
-        "parking": "Free parking available"
-      },
-      "smartNotes": {
-        "photo": "Hydrangea tunnel in June; pink muhly grass field in October; camellia varieties peak Nov–Apr",
-        "tip": "Visit before 10am or after 4pm in peak season to avoid crowds; pair with Osulloc (10 min drive)",
-        "facilities": "Indoor greenhouse café, gift shop, picnic areas"
       }
     },
     {
       "number": 6,
       "time": "16:45",
-      "duration": "60 min",
+      "duration": "60분",
       "name": "오설록 티뮤지엄",
-      "category": "Amorepacific tea-culture flagship + green-tea fields finale",
+      "category": "아모레퍼시픽 차 문화 플래그십 + 녹차밭 피날레",
       "description": "아모레퍼시픽 운영 한국 최대 녹차 재배지 문화 공간. 녹차밭 전망, 음료·아이스크림 구매 가능. 입장 무료. 방문 시간: 약 40분.",
       "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085",
       "highlights": [
-        "**Amorepacific** flagship — Korea's largest beauty company; founder Suh Sung-whan pioneered Jeju tea **1979**",
-        "**Seogwang Dawon = Korea's largest green-tea field**; ~700 tonnes annual production",
-        "Museum **opened 2001** — designboom Top 10 art museums (architecture)",
-        "**FREE admission**, daily **09:00–18:00**, ~2 million annual visitors",
-        "Antique tea-ware collection spanning **Tang dynasty (618–907 CE)** to modern Korean Joseon ceramics",
-        "**Green tea rolling cake** + **green tea ice cream** = signature cafe items",
-        "**Innisfree Jeju House** 5-min walk — free, optional tangerine soap DIY ₩15,000",
-        "Plantation walking paths **best at golden hour (16:00–17:00)** for photography",
-        "Rooftop deck + ground-level rows give two distinct elevations for tea-row composition"
+        "**아모레퍼시픽** 플래그십 — 창업자 서성환이 1979년 제주 서광 다원을 개척하며 국내 녹차 문화를 부활",
+        "**서광 다원 = 한국 최대 녹차밭**; 연간 약 700톤 생산",
+        "뮤지엄 **2001년 개관** — designboom 선정 건축 상위 10대 미술관",
+        "**무료 입장**, 매일 **09:00~18:00**, 연간 방문객 약 200만 명",
+        "**당나라(618~907년)**부터 현대 조선 도자기까지 아우르는 고대 다완 컬렉션",
+        "**녹차 롤케이크** + **녹차 아이스크림** = 대표 카페 메뉴",
+        "**이니스프리 제주 하우스** 도보 5분 — 무료 입장, 선택: 귤 비누 DIY ₩15,000",
+        "**포토 골든 아워(16:00~17:00)** 다원 산책로 촬영 최적",
+        "루프탑 데크 + 지상 레벨 두 가지 앵글로 다원 구도 촬영"
       ],
       "timeUsed": [
-        "Parking + entrance — ~5 min",
-        "Museum interior + tea-ware collection — ~20 min",
-        "Tea House cafe (rolling cake + ice cream) — ~20 min",
-        "Plantation walking path — ~20 min",
-        "Optional Innisfree Jeju House visit — ~10 min"
+        "주차 + 입장 — 약 5분",
+        "뮤지엄 내부 + 다완 컬렉션 — 약 20분",
+        "티하우스 카페 (롤케이크 + 아이스크림) — 약 20분",
+        "다원 산책로 — 약 20분",
+        "선택: 이니스프리 제주 하우스 방문 — 약 10분"
       ],
-      "whyOnRoute": "**The day's tea-culture finale — and the southwest route's signature non-floral close.** Three reasons Osulloc closes the day at 16:45. (1) **Tea-color counterpoint to the day's hydrangea palette**: after 4 garden/cliff stops in varying flower-heavy palettes, Osulloc's **emerald-green tea-field rows + Innisfree Jeju House's white-glass architecture** give the day's photo set its closing color tone — saturated green that contrasts with the morning's hydrangea blues/pinks. (2) **Indoor-finale + restroom-buffer**: Osulloc's tea museum + cafe provide the day's **only indoor late-afternoon stop** — guests can use the museum's tea-tasting + ice-cream + restroom facilities to decompress before the **40-min westbound transit back to Jeju City**. The 60-min dwell is sized exactly to allow tea purchase + ice cream + 1 quick tea-field walk. (3) **Brand-cultural anchor**: Osulloc as the **Amorepacific tea flagship (founded 1979 by founder Suh Sung-whan)** ties the day's tour back to one of Korea's globally-recognized brands — a deliberate brand-cultural close that distinguishes this route from generic 'flower garden tours' and gives the day a clear cultural-economic finale story.",
+      "whyOnRoute": "**하루의 차 문화 피날레 — 그리고 서남쪽 루트의 대표 비꽃 코스.**",
       "_poi_meta": {
         "poi_key": "osulloc_tea_museum",
         "kb_version": "1.20",
@@ -488,251 +410,236 @@
           "Korea Tea Industry Association — production statistics",
           "VisitJeju — Osulloc Tea Museum"
         ]
-      },
-      "visitBasics": {
-        "hours": "Summer 09:00–19:00 / Winter 09:00–18:00",
-        "closed": "Open year-round (weather closures possible)",
-        "admission": "Free for museum; tea/desserts in café paid; Innisfree workshops paid separately",
-        "walking": "Easy — flat museum and stroller-friendly tea fields; well-maintained paths"
-      },
-      "convenience": {
-        "restroom": "Multiple restrooms; aesthetically designed",
-        "parking": "Free parking available"
-      },
-      "smartNotes": {
-        "photo": "Tea fields with tour-cup shaped museum building; outdoor seating area; cherry blossoms peak shoulder season",
-        "tip": "Arrive before 10:30 to beat the tour-bus rush; allow 1.5–2 hours including café time and tea field walk",
-        "facilities": "Café (must-try green tea ice cream), gift shop, Innisfree Jeju House next door, observatory deck overlooking fields"
       }
     }
   ],
   "routeFlowStops": [
     {
-      "name": "Hyeopjae",
+      "name": "협재",
       "type": "origin",
-      "theme": "Beach"
+      "theme": "해변"
     },
     {
-      "name": "Hallim Park",
+      "name": "한림 공원",
       "type": "primary",
-      "theme": "Hydrangea"
+      "theme": "수국"
     },
     {
-      "name": "Lunch",
+      "name": "점심",
       "type": "meal",
-      "theme": "Meal"
+      "theme": "식사"
     },
     {
-      "name": "Jusangjeolli + Cheonjeyeon",
+      "name": "주상절리 + 천지연",
       "type": "primary",
-      "theme": "Geology + Falls"
+      "theme": "지질과 폭포"
     },
     {
-      "name": "Camellia Hill",
+      "name": "카멜리아힐",
       "type": "primary",
       "theme": "Hydrangea Tunnel"
     },
     {
-      "name": "Osulloc",
+      "name": "오설록",
       "type": "return",
-      "theme": "Tea Culture"
+      "theme": "차 문화"
     }
   ],
   "routePhases": [
     {
       "phase": "해변 + 수국 축제",
-      "duration": "Stops 1–2",
+      "duration": "정류장 1–2",
       "description": "협재해변 → 한림공원 수국 축제."
     },
     {
       "phase": "점심",
-      "duration": "Stops 3",
+      "duration": "정류장 3",
       "description": "한림·애월·안덕 인근 제주 서남부 현지 식당."
     },
     {
       "phase": "지질·수국·차밭",
-      "duration": "Stops 4–6",
+      "duration": "정류장 4–6",
       "description": "주상절리+천제연폭포 → 카멜리아힐 수국 터널 → 오설록 차밭."
     }
   ],
   "routeShapeIntro": {
-    "title": "How this summer day moves",
-    "subtitle": "Beach warm-up, hydrangea festival, lunch reset, then UNESCO geology, hydrangea tunnel, and tea fields. 08:30 to 17:30."
+    "title": "이 여름날의 흐름",
+    "subtitle": "해변 워밍업, 수국 축제, 점심 휴식, 이후 유네스코 지질 명소, 수국 터널, 차밭으로 이어집니다. 오전 8시 30분 출발, 오후 5시 30분 귀환."
   },
   "whyTourWorks": {
     "bestFor": [
-      "First-time summer visitors",
-      "Couples and photo-focused travelers",
-      "Adult families",
-      "Travelers chasing peak hydrangea bloom"
+      "여름 첫 방문자",
+      "커플 및 사진 중심 여행자",
+      "성인 가족 단위",
+      "수국 절정을 쫓는 여행자"
     ],
     "routeLogicSections": [
       {
-        "title": "Pacing & structure",
+        "title": "일정 속도 & 구조",
         "icon": "sun",
         "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
         "items": [
           {
-            "label": "Beach as Light Opener",
-            "detail": "Hyeopjae as a low-intensity start lets the group settle before higher-attention bloom and geology sites."
+            "label": "가벼운 오프너로서의 해변",
+            "detail": "협재가 낮은 강도의 시작으로 그룹이 더 집중력이 필요한 꽃과 지질 명소 전에 여유를 가질 수 있습니다."
           },
           {
-            "label": "Two Hydrangea Stops, Different Formats",
-            "detail": "Hallim festival garden and Camellia tunnel give complementary compositions of the same flower — bookend morning and afternoon."
+            "label": "두 개의 수국 코스, 다른 형식",
+            "detail": "한림 축제 정원과 카멜리아 터널이 같은 꽃의 상호 보완적인 구도가 만들어집니다."
           },
           {
-            "label": "Tea to Close",
-            "detail": "Osulloc closes calmly — culture and rest after the visual intensity of bloom and falls."
+            "label": "마무리는 차로",
+            "detail": "오설록이 개화와 폭포의 눈에 보이는 강도 이후 차분하게 마무리됩니다."
           }
         ]
       },
       {
-        "title": "Why this is summer-only",
+        "title": "왜 여름 시즌 한정인가",
         "icon": "flower",
         "iconBg": "bg-pink-50/80",
         "iconColor": "text-pink-600",
         "items": [
           {
-            "label": "Hydrangea Window Late May - mid-July",
-            "detail": "Hydrangea blooms appear from late May, peak mid-June, and fade by mid-July. Outside this window the bloom stops lose their visual draw."
+            "label": "수국 시기 5월 말~7월 중순",
+            "detail": "수국은 5월 말에 피기 시작해 6월 중순이 절정, 7월 중순에 집니다. 이 시기 외에는 꽃 코스의 매력이 크게 줄어듭니다."
           },
           {
-            "label": "Outside Window, Pick SW-Small",
-            "detail": "If your dates fall outside hydrangea season, our West & South year-round route covers the same region with year-round POIs (Hallasan, Osulloc, Aewol)."
+            "label": "시기 외에는 서남부 연중 루트로",
+            "detail": "수국 시즌 밖 날짜라면 저희 서남부 연중 루트가 동일 지역을 연중 커버합니다."
           },
           {
-            "label": "Camellia Hill is Not Camellia Season",
-            "detail": "Despite the name, this tour visits Camellia Hill specifically for hydrangea — actual camellias bloom in winter."
+            "label": "카멜리아힐은 동백 시즌이 아님",
+            "detail": "이름에도 불구하고 이 투어는 수국을 위해 카멜리아힐을 방문합니다. 실제 동백은 겨울에 핍니다."
           }
         ]
       },
       {
-        "title": "Trade-offs honestly",
+        "title": "솔직한 트레이드오프",
         "icon": "info",
         "iconBg": "bg-sky-50/80",
         "iconColor": "text-sky-600",
         "items": [
           {
-            "label": "9 Hours Is Long",
-            "detail": "Six diverse stops in 9 hours — pace is fuller than east-small. Build energy with steady hydration."
+            "label": "9시간은 긴 편",
+            "detail": "9시간에 6개 다양한 코스 — 동쪽 소그룹보다 일정 속도가 충실합니다. 꾸준한 수분 섭취로 에너지를 유지하세요."
           },
           {
-            "label": "Some Stops Have Admission",
-            "detail": "Hallim Park (15,000 KRW) and Camellia Hill (10,000 KRW) admissions are paid on-site, not bundled into the tour price. Budget ≈30,000 KRW per person across all admissions (Jusangjeolli 2,000 + Cheonjeyeon 2,500 round it out)."
+            "label": "일부 코스는 유료 입장",
+            "detail": "한림 공원(₩15,000)과 카멜리아힐(₩10,000) 입장료는 현장에서 직접 결제하며 투어 요금에 포함되지 않습니다."
           },
           {
-            "label": "Heat Can Be Real",
-            "detail": "June Jeju can hit 30°C+ at midday. Bring sun protection — most stops are outdoor."
+            "label": "더위가 실질적일 수 있음",
+            "detail": "6월 제주는 낮에 30°C+에 달할 수 있습니다. 자외선 차단제를 가져오세요 — 대부분의 코스가 야외입니다."
           }
         ]
       }
     ],
     "lessIdealFor": [
-      "Off-season visitors (after mid-July)",
-      "Stroller-heavy groups (some uneven garden paths)",
-      "Travelers wanting mountain hiking"
+      "비시즌 방문자 주의 (7월 중순 이후)",
+      "유모차 이용 그룹 주의 (일부 불규칙 정원 길)",
+      "산악 하이킹을 원하는 여행자 주의"
     ]
   },
   "practicalAccordionItems": [
     {
       "id": "pickup",
-      "title": "Pickup & drop-off",
-      "preview": "Hotel lobby pickup in Jeju City area",
+      "title": "픽업 & 하차",
+      "preview": "제주 시내 호텔 로비 픽업",
       "content": [
-        "Pickup from your hotel lobby between 08:00-08:30",
-        "Return drop-off by approximately 17:30-18:00",
-        "Hotel lobby pickup within Jeju City is free. Pickup from Seogwipo, Aewol, or Seongsan adds 70,000 KRW due to extra driving distance."
+        "08:00~08:30 호텔 로비 픽업.",
+        "귀환 약 17:30~18:00.",
+        "제주시 내 호텔 픽업 무료. 서귀포·애월·성산 등 제주시 외는 추가 요금."
       ]
     },
     {
       "id": "what-to-bring",
-      "title": "What to wear & bring",
-      "preview": "Sun protection, comfortable shoes, camera",
+      "title": "복장 & 준비물",
+      "preview": "자외선 차단, 편한 신발, 카메라",
       "content": [
-        "Comfortable walking shoes (multiple garden walks)",
-        "Sun protection — hat, sunscreen, sunglasses",
-        "Light layer for AC vehicle and tea house",
-        "Cash or card for lunch and admission"
+        "편안한 워킹화 (여러 정원 구간 도보).",
+        "자외선 차단 — 모자, 선크림, 선글라스.",
+        "냉방 차량과 티하우스 대비 가벼운 겉옷.",
+        "점심 및 입장료용 현금 또는 카드."
       ]
     },
     {
       "id": "season",
-      "title": "Hydrangea season window",
-      "preview": "June through mid-July",
+      "title": "수국 시즌 기간",
+      "preview": "6월~7월 중순",
       "content": [
-        "Tour season: June 1 - July 15 (varies ±5 days year to year)",
-        "Peak window: June 25 - July 5 (best photographic conditions)",
-        "We update the booking page with year-specific bloom forecast in early May",
-        "If your travel dates fall outside the window, consider our West & South year-round route instead"
+        "투어 시즌: 6월 1일~7월 15일 (연도별 ±5일 변동).",
+        "절정 시기: 6월 25일~7월 5일 (최적 촬영 조건).",
+        "연도별 개화 예보는 5월 초에 예약 페이지에 업데이트됩니다.",
+        "시즌 외 날짜라면 서남부 연중 루트를 고려해 주세요."
       ]
     },
     {
       "id": "weather-policy",
-      "title": "Weather policy",
-      "preview": "Light rain operates; heavy rain reschedules",
+      "title": "날씨 정책",
+      "preview": "가벼운 비 운행; 폭우 시 일정 변경",
       "content": [
-        "Light rain: tour operates (hydrangea actually photographs well in soft rain)",
-        "Heavy rain: free rescheduling within season window",
-        "Outside-window cancellations follow the booking platform's standard terms — see the booking confirmation for specifics."
+        "가벼운 비: 투어 운영 (수국은 부드러운 비에도 사진 찍기 좋은).",
+        "폭우: 시즌 내 무료 일정 변경.",
+        "시즌 외 취소는 예약 플랫폼 표준 약관을 따릅니다."
       ]
     },
     {
       "id": "inclusions",
-      "title": "What's included",
-      "preview": "Transport, guide, and major admissions",
+      "title": "포함 사항",
+      "preview": "교통, 가이드, 주요 입장료",
       "content": [
-        "Hotel pickup and drop-off (Jeju City)",
-        "Air-conditioned van transport",
-        "Licensed English-speaking guide",
-        "Major admissions (Hallim Park, Camellia Hill, Jusangjeolli, Cheonjeyeon) are paid on-site, not bundled into the tour price",
-        "Lunch separate from base price"
+        "호텔 픽업·하차 (제주시)",
+        "에어컨 밴 교통",
+        "공인 영어 가이드",
+        "주요 입장료 (한림 공원, 카멜리아힐, 주상절리, 천제연) 현장 직접 결제",
+        "점심은 기본 요금에서 별도"
       ]
     }
   ],
   "practicalWeatherStatic": {
     "today": {
-      "label": "Summer weather guidance",
-      "temp": "Daytime ≈ 26–30 °C in hydrangea season (late May to mid-July, peak mid-June)",
+      "label": "여름 날씨 안내",
+      "temp": "수국 시즌 낮 기온 약 26~30°C(5월 말~7월 중순, 6월 중순 절정)",
       "icon": "cloud-sun"
     },
     "tomorrow": {
-      "label": "Live forecast available at the operator's booking page",
+      "label": "여행사 예약 페이지에서 실시간 예보 확인 가능",
       "temp": "—",
       "icon": "cloud"
     }
   },
   "seasonalVariations": [
     {
-      "season": "Early Summer (Jun 1-24)",
-      "title": "Tour operates",
-      "description": "Hydrangea opens — gradually intensifying",
+      "season": "초여름 (6/1~6/24)",
+      "title": "투어 운영",
+      "description": "수국 개화 시작 — 점점 깊어지는 중",
       "icon": "flower"
     },
     {
-      "season": "Peak (Jun 25 - Jul 5)",
-      "title": "Peak — books out fastest",
-      "description": "Peak hydrangea bloom across all gardens — best photographic conditions",
+      "season": "절정 (6/25~7/5)",
+      "title": "절정 — 가장 빨리 마감",
+      "description": "모든 정원에서 수국 절정 — 최상의 사진 조건",
       "icon": "flower"
     },
     {
-      "season": "Late Bloom (Jul 6-15)",
-      "title": "Tour operates",
-      "description": "Hydrangeas still strong but starting to fade. Less crowded.",
+      "season": "후기 개화 (7/6~7/15)",
+      "title": "투어 운영",
+      "description": "수국 여전히 아름답지만 서서히 퇴색. 상대적으로 한산.",
       "icon": "leaf"
     },
     {
-      "season": "Outside window (Jul 16 - May 31)",
-      "title": "Off-season",
-      "description": "Out of season — our West & South year-round route recommended",
+      "season": "시즌 외 (7/16~5/31)",
+      "title": "비시즌",
+      "description": "시즌 외 — 연중 서남부 루트를 추천합니다",
       "icon": "info"
     }
   ],
   "bookingTrustItems": [
     {
       "icon": "check-circle",
-      "title": "수국 시즌 전문 운영사",
-      "description": "Jeju-licensed guiding",
+      "title": "수국 시즌 전문 여행사",
+      "description": "제주 자격증 가이드",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
       "body": "5월 말~7월 수국 시즌 한정 투어. 개화 상태 실시간 안내."
@@ -740,7 +647,7 @@
     {
       "icon": "calendar",
       "title": "코스 전문",
-      "description": "Free rescheduling within bloom window",
+      "description": "개화 기간 내 무료 일정 변경",
       "iconBg": "bg-pink-50/80",
       "iconColor": "text-pink-600",
       "body": "한림공원 개방형 수국 정원과 카멜리아힐 수국 터널 — 같은 꽃, 서로 다른 구성미."
@@ -748,7 +655,7 @@
     {
       "icon": "shield",
       "title": "그룹 규모 관리",
-      "description": "Free reschedule on heavy rain",
+      "description": "폭우 시 무료 일정 변경",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
       "body": "소그룹으로 카멜리아힐 수국 터널을 여유 있게 탐방합니다."
@@ -756,84 +663,95 @@
   ],
   "bookingSupportSteps": [
     {
-      "timing": "Immediately",
+      "timing": "즉시",
       "title": "즉시 확인",
-      "detail": "Booking confirmation with itinerary summary",
+      "detail": "행정 요약 포함 예약 확인서 발송",
       "description": "제주시 호텔 픽업 정보 포함 즉시 예약 확인서 발송."
     },
     {
-      "timing": "2 days before",
+      "timing": "2일 전",
       "title": "12시간 전 알림",
-      "detail": "We monitor forecast and reach out if rebooking is recommended",
+      "detail": "예보를 모니터링하고 예약 변경이 권장되면 연락드립니다.",
       "description": "수국 개화 상태 사전 안내."
     },
     {
-      "timing": "Day before",
+      "timing": "전날",
       "title": "최종 픽업 안내",
-      "detail": "Pickup time, vehicle plate, and guide name via WhatsApp",
+      "detail": "픽업 시간, 차량 번호, 가이드 이름을 WhatsApp으로 발송.",
       "description": "출발 전날 저녁 최종 픽업 시각 확인."
     },
     {
-      "timing": "Morning of",
+      "timing": "투어 당일 오전",
       "title": "당일 코스 안내",
-      "detail": "Driver checks in 10 minutes before arrival",
+      "detail": "드라이버가 도착 10분 전에 연락합니다.",
       "description": "날씨 및 개화 상태 아침 메시지 전달."
     },
     {
-      "timing": "During tour",
+      "timing": "투어 중",
       "title": "경유지별 심층 안내",
-      "detail": "Direct line to operations if anything comes up",
+      "detail": "문제 발생 시 운영팀에 직접 연락 가능",
       "description": "수국 품종, 주상절리 생성 원리 등 가이드 설명."
     },
     {
-      "timing": "After tour",
+      "timing": "투어 종료 후",
       "title": "투어 후 지원",
-      "detail": "Optional review and follow-up",
+      "detail": "선택적 리뷰 및 후속 연락",
       "description": "투어 후 피드백 요청 전송."
     }
   ],
   "staticQuestions": [
     {
+      "id": "first-time",
       "question": "제주를 처음 방문하는 분에게 좋은가요?",
       "answer": "수국 시즌 방문 시 네. 그 외 시기에는 연중 운행 서부·남부 투어를 추천합니다."
     },
     {
+      "id": "season-timing",
       "question": "수국 시즌은 정확히 언제인가요?",
       "answer": "약 5월 말~7월 중순(절정 6월 중순). 매년 1~2주 변동. 예약 시 최신 정보를 안내합니다."
     },
     {
+      "id": "rain",
       "question": "비가 오면 어떻게 되나요?",
       "answer": "가벼운 비: 진행합니다. 수국은 부드러운 빗속에서 더 아름답게 촬영됩니다."
     },
     {
+      "id": "two-hydrangea-stops",
       "question": "왜 수국 경유지가 두 곳인가요?",
       "answer": "한림공원은 개방형 축제 정원, 카멜리아힐은 터널 형식입니다. 같은 꽃이지만 전혀 다른 촬영 구도와 분위기를 연출합니다."
     },
     {
+      "id": "kids",
       "question": "어린이와 함께할 수 있나요?",
       "answer": "만 6세 이상 추천. 대부분 경유지 도보가 보통 수준입니다."
     },
     {
+      "id": "seniors",
       "question": "어르신도 참여할 수 있나요?",
       "answer": "대부분 쉬운 도보. 천제연 폭포 계단은 건너뛰고 주상절리만 관람하면 됩니다."
     },
     {
+      "id": "pickup-area",
       "question": "픽업 장소는 어디인가요?",
       "answer": "제주시 호텔 로비 무료 픽업. 서귀포·애월·성산 픽업은 추가 비용(₩70,000)."
     },
     {
+      "id": "lunch",
       "question": "점심이 포함되어 있나요?",
       "answer": "포함되지 않습니다. 약 ₩12,000~18,000."
     },
     {
+      "id": "admission-fees",
       "question": "입장료가 포함되어 있나요?",
       "answer": "기본 포함되지 않습니다. 하루 약 ₩30,000: 한림공원 ₩15,000, 카멜리아힐 ₩10,000, 주상절리 ₩2,000, 천제연 ₩2,500. 오설록 무료."
     },
     {
+      "id": "tea-museum",
       "question": "오설록이 포함되어 있나요?",
       "answer": "네, 오설록 티뮤지엄은 무료 입장입니다. 다실 음료는 별도 구매."
     },
     {
+      "id": "compare-west-south-year-round",
       "question": "연중 서부·남부 투어와 어떻게 다른가요?",
       "answer": "이 투어는 수국 시즌 한정으로 한림공원·카멜리아힐 수국이 추가됩니다. 연중 투어는 한라산 1100고지·송악산·오설록을 포함합니다."
     }
@@ -872,11 +790,11 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
     "price": {
       "amountLabel": "",
       "currency": "USD",
-      "per": "person"
+      "per": "인"
     }
   },
   "matching_profile": {
@@ -888,7 +806,7 @@
     "destination_region": "jeju",
     "region_type": "jeju_southwest",
     "vehicle_type": "minicoach",
-    "duration_hours": 9,
+    "duration_hours": 9.0,
     "region_tags": [
       "jeju_west",
       "jeju_southwest"
@@ -917,13 +835,13 @@
     "pace_level": 0.55,
     "walking_level": 0.55,
     "scenic_level": 0.95,
-    "photo_level": 1,
+    "photo_level": 1.0,
     "culture_level": 0.6,
     "relax_level": 0.85,
     "first_time_fit": 0.85,
     "family_fit": 0.95,
     "senior_fit": 0.85,
-    "couple_fit": 1,
+    "couple_fit": 1.0,
     "solo_traveler_fit": 0.85,
     "active_traveler_fit": 0.6,
     "adult_family_fit": 0.95,
@@ -954,9 +872,9 @@
     "comfort_level": 0.8,
     "budget_fit": 0.6,
     "premium_fit": 0.6,
-    "small_group_fit": 1,
+    "small_group_fit": 1.0,
     "private_fit": 0.2,
-    "bus_fit": 1,
+    "bus_fit": 1.0,
     "price_band": "mid",
     "pickup_base": "jeju_city",
     "return_time_band": "17:30-18:00",
@@ -1008,83 +926,83 @@
     ],
     "profile_format": "small_group_fixed_itinerary",
     "private_tour_fit": 0.05,
-    "fixed_itinerary_fit": 1,
+    "fixed_itinerary_fit": 1.0,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
     "first_time_jeju_fit": 0.95,
-    "south_jeju_fit": 1,
-    "southwest_jeju_fit": 1,
+    "south_jeju_fit": 1.0,
+    "southwest_jeju_fit": 1.0,
     "central_jeju_fit": 0.6,
     "north_jeju_fit": 0.3,
     "east_jeju_fit": 0.05,
-    "west_jeju_fit": 1,
-    "west_coast_corridor_fit": 1,
-    "southwest_signature_fit": 1,
-    "jungmun_anchor_fit": 1,
-    "hallim_anchor_fit": 1,
+    "west_jeju_fit": 1.0,
+    "west_coast_corridor_fit": 1.0,
+    "southwest_signature_fit": 1.0,
+    "jungmun_anchor_fit": 1.0,
+    "hallim_anchor_fit": 1.0,
     "unesco_focused_tour_fit": 0.5,
     "unesco_taste_fit": 0.85,
-    "unesco_geopark_fit": 1,
+    "unesco_geopark_fit": 1.0,
     "unesco_world_heritage_fit": 0.5,
-    "natural_monument_fit": 1,
+    "natural_monument_fit": 1.0,
     "natural_monument_anchor_count": 2,
     "compound_stop_count": 1,
     "hydrangea_festival_anchor_count": 3,
-    "summer_flowers_hydrangea_fit": 1,
-    "june_peak_floral_fit": 1,
-    "early_summer_jeju_fit": 1,
+    "summer_flowers_hydrangea_fit": 1.0,
+    "june_peak_floral_fit": 1.0,
+    "early_summer_jeju_fit": 1.0,
     "named_seasonal_festival_anchor_count": 2,
-    "year_round_flower_park_fit": 1,
+    "year_round_flower_park_fit": 1.0,
     "garden_anchor_count": 3,
     "hydrangea_tunnel_visit": true,
     "hydrangea_greenhouse_fallback_fit": 0.5,
-    "multi_garden_pairing_fit": 1,
+    "multi_garden_pairing_fit": 1.0,
     "unesco_plus_floral_combo_fit": 0.7,
-    "tea_garden_finale_fit": 1,
+    "tea_garden_finale_fit": 1.0,
     "lava_tube_visit": true,
     "lava_tube_anchor_count": 2,
-    "two_dimensional_caves_fit": 1,
-    "columnar_joint_anchor_fit": 1,
-    "waterfall_anchor_fit": 1,
-    "tuff_cone_climb_fit": 0,
-    "volcanic_geology_fit": 1,
-    "rim_view_fit": 0,
-    "biyangdo_island_view_fit": 1,
+    "two_dimensional_caves_fit": 1.0,
+    "columnar_joint_anchor_fit": 1.0,
+    "waterfall_anchor_fit": 1.0,
+    "tuff_cone_climb_fit": 0.0,
+    "volcanic_geology_fit": 1.0,
+    "rim_view_fit": 0.0,
+    "biyangdo_island_view_fit": 1.0,
     "stair_climb_demand": 0.2,
     "physical_demand_level": 0.4,
     "leisure_traveler_fit": 0.95,
-    "honeymoon_fit": 1,
-    "wedding_photo_fit": 1,
+    "honeymoon_fit": 1.0,
+    "wedding_photo_fit": 1.0,
     "teen_kids_fit": 0.95,
     "senior_low_mobility_fit": 0.6,
     "wheelchair_fit": 0.45,
-    "pet_friendly_fit": 0,
-    "instagram_traveler_fit": 1,
-    "photographer_fit": 1,
+    "pet_friendly_fit": 0.0,
+    "instagram_traveler_fit": 1.0,
+    "photographer_fit": 1.0,
     "cultural_traveler_fit": 0.6,
-    "botanical_enthusiast_fit": 1,
-    "nature_lover_fit": 1,
-    "tea_culture_enthusiast_fit": 1,
-    "english_speaking_market_fit": 1,
+    "botanical_enthusiast_fit": 1.0,
+    "nature_lover_fit": 1.0,
+    "tea_culture_enthusiast_fit": 1.0,
+    "english_speaking_market_fit": 1.0,
     "mandarin_speaking_market_fit": 0.7,
     "japanese_speaking_market_fit": 0.7,
     "korean_speaking_market_fit": 0.05,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
-    "china_mainland_market_fit": 0,
+    "china_mainland_market_fit": 0.0,
     "southeast_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.9,
     "latin_america_market_fit": 0.75,
-    "honeymooner_global_market_fit": 1,
+    "honeymooner_global_market_fit": 1.0,
     "price_tier": "mid",
     "per_pax_pricing_tier": "mid",
     "group_size_max": 14,
     "group_size_min": 4,
-    "lunch_included_fit": 0,
+    "lunch_included_fit": 0.0,
     "ticket_inclusion_fit": 0.5,
     "english_guide_included": true,
     "hotel_pickup_included": true,
@@ -1106,13 +1024,13 @@
       "January",
       "February"
     ],
-    "snow_closure_risk": 0,
+    "snow_closure_risk": 0.0,
     "typhoon_disruption_risk_summer": 0.25,
     "signature_photo_count": 6,
-    "wide_landscape_fit": 1,
-    "macro_floral_fit": 1,
+    "wide_landscape_fit": 1.0,
+    "macro_floral_fit": 1.0,
     "hydrangea_tunnel_signature_photo": true,
-    "couple_portrait_fit": 1,
+    "couple_portrait_fit": 1.0,
     "instagram_anchor_count": 5,
     "kdrama_filming_location_count": 0,
     "differentiates_from_east_hydrangea_route": true,
@@ -1128,14 +1046,14 @@
       "vi",
       "es"
     ],
-    "korea_domestic_market_fit": 0,
+    "korea_domestic_market_fit": 0.0,
     "se_asia_market_fit": 0.95,
     "japan_market_fit": 0.85
   },
   "matching_metadata": {
     "matching_schema": "tour_matching_profiles_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
-    "source_of_truth_note": "matching_profile fields scored against atockorea matching algorithm v2. Single fixed route; no variant overrides.",
+    "source_of_truth_note": "Internal note: product profile checked against current route-selection rules. Single fixed route; no route option overrides.",
     "audit_summary": "Southwest-Jeju Hydrangea Festival route — 9-hr small-group minicoach loop. 5 substantive POI anchors + 1 compound-stop pairing: 1 west-coast emerald beach (Hyeopjae) + 1 120-min hydrangea festival anchor (Hallim Park, June Hydrangea Festival, 9 themed gardens + 2 lava-tube limestone caves) + 1 compound stop (Jusangjeolli columnar + Cheonjeyeon waterfall, Natural Monuments 443 + 378) + 1 hydrangea tunnel anchor (Camellia Hill — 172,000 m², Korea's earliest hydrangeas) + 1 tea-culture finale (Osulloc / Amorepacific). Designed for **June peak hydrangea window (June 10–25)** with Hallim caves + Camellia Hall + Osulloc museum as the 3-tier indoor weather-fallback stack. **Catalog-novel pattern**: Jusangjeolli+Cheonjeyeon compound stop is the first of its kind in the catalog. Cross-batch reuse: 3 of 5 substantive bodies imported verbatim (15a T2 Hyeopjae, 15a T1 Camellia Hill, 14a T2 Osulloc); Hallim Park authored fresh + compound stop authored fresh.",
     "score_rationale": {
       "high_scores": {
@@ -1269,21 +1187,21 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Hydrangea, columnar cliff, and tea fields",
-        "headlineLine2": "in one southwest Jeju summer day",
+        "headlineLine1": "수국, 주상절리, 차밭",
+        "headlineLine2": "제주 서남부 여름 하루에",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1559948638-e8e07b62b9c1?w=1920&q=80",
           "imagePosition": "center 35%",
-          "tagline": "Beach to columnar cliff to hydrangea tunnel.",
+          "tagline": "해변에서 주상절리를 지나 수국 터널까지.",
           "pills": [
-            "Summer Only",
-            "Hydrangea Season",
-            "Southwest Jeju"
+            "여름 한정",
+            "수국 시즌",
+            "제주 서남부"
           ],
           "meta": {
-            "duration": "9 hours",
-            "region": "Southwest Jeju",
-            "stops": "6 stops",
+            "duration": "9시간",
+            "region": "서남부 제주",
+            "stops": "6개 코스",
             "rating": 0,
             "ratingStars": 0
           }
@@ -1298,23 +1216,23 @@
         "subnavItems": [
           {
             "id": "overview",
-            "label": "Overview"
+            "label": "투어 개요"
           },
           {
             "id": "itinerary",
-            "label": "Itinerary"
+            "label": "상세 일정"
           },
           {
-            "id": "practical",
-            "label": "Practical"
+            "id": "details",
+            "label": "유의사항"
+          },
+          {
+            "id": "faq",
+            "label": "자주 묻는 질문"
           },
           {
             "id": "reviews",
-            "label": "Reviews"
-          },
-          {
-            "id": "booking",
-            "label": "Booking"
+            "label": "여행자 후기"
           }
         ]
       }
@@ -1327,33 +1245,33 @@
         "glanceItems": [
           {
             "icon": "camera",
-            "label": "Photo Value",
-            "value": "Very High"
+            "label": "사진 포인트",
+            "value": "매우 높음"
           },
           {
             "icon": "calendar",
-            "label": "Season",
-            "value": "Jun - Mid Jul"
+            "label": "권장 시즌",
+            "value": "6월 - Mid 7월"
           },
           {
             "icon": "users",
-            "label": "Group Size",
-            "value": "Small Group"
+            "label": "최대 인원",
+            "value": "소그룹"
           },
           {
             "icon": "clock",
-            "label": "Duration",
-            "value": "9 hours"
+            "label": "소요 시간",
+            "value": "9시간"
           },
           {
             "icon": "map-pin",
-            "label": "Region",
-            "value": "Southwest Jeju"
+            "label": "투어 지역",
+            "value": "제주 서남부"
           },
           {
             "icon": "footprints",
-            "label": "Walking",
-            "value": "Easy to moderate"
+            "label": "도보 강도",
+            "value": "쉬움~보통"
           }
         ]
       }
@@ -1368,55 +1286,55 @@
             "id": "g1",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1559948638-e8e07b62b9c1?w=1200&q=80",
-            "alt": "Hydrangea blooms at Hallim Park",
-            "caption": "Hydrangea blooms at Hallim Park",
+            "alt": "투어 중 방문하는 한림공원 수국 축제의 풍경",
+            "caption": "한림공원 수국 축제",
             "location": "Hallim Park",
-            "atmosphere": "Hydrangea festival in full bloom"
+            "atmosphere": "수국 축제 만개"
           },
           {
             "id": "g2",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=1200&q=80",
-            "alt": "Hydrangea tunnel at Camellia Hill",
-            "caption": "Hydrangea tunnel at Camellia Hill",
-            "location": "Camellia Hill",
-            "atmosphere": "Hydrangea tunnel walk"
+            "alt": "투어 중 방문하는 카멜리아힐 수국 터널 풍경",
+            "caption": "카멜리아힐 수국 터널",
+            "location": "카멜리아힐",
+            "atmosphere": "수국 터널 산책"
           },
           {
             "id": "g3",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
-            "alt": "Hyeopjae Beach turquoise water",
-            "caption": "Hyeopjae Beach turquoise water",
-            "location": "Hyeopjae Beach",
-            "atmosphere": "Emerald water and white sand"
+            "alt": "투어 중 방문하는 협재해변의 에메랄드빛 바다의 풍경",
+            "caption": "협재해변의 에메랄드빛 바다",
+            "location": "협재 Beach",
+            "atmosphere": "에메랄드빛 바다와 흰 모래"
           },
           {
             "id": "g4",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200&q=80",
-            "alt": "Jusangjeolli columnar basalt cliff",
-            "caption": "Jusangjeolli columnar basalt cliff",
-            "location": "Jusangjeolli Cliff",
-            "atmosphere": "Columnar basalt formation"
+            "alt": "투어 중 방문하는 대포 주상절리 현무암 절벽의 풍경",
+            "caption": "대포 주상절리 현무암 절벽",
+            "location": "주상절리 Cliff",
+            "atmosphere": "주상절리 현무암 지형"
           },
           {
             "id": "g5",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1200&q=80",
-            "alt": "Cheonjeyeon three-tier waterfall",
-            "caption": "Cheonjeyeon three-tier waterfall",
-            "location": "Cheonjeyeon Falls",
-            "atmosphere": "Three-tier waterfall"
+            "alt": "천지연 3단 폭포",
+            "caption": "천지연 3단 폭포",
+            "location": "Cascada Cheonjeyeon",
+            "atmosphere": "3단 폭포"
           },
           {
             "id": "g6",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80",
-            "alt": "Osulloc green tea fields",
-            "caption": "Osulloc green tea fields",
-            "location": "Osulloc Tea Museum",
-            "atmosphere": "Endless green tea fields"
+            "alt": "투어 중 방문하는 오설록 녹차밭의 풍경",
+            "caption": "오설록 녹차밭",
+            "location": "오설록 티뮤지엄",
+            "atmosphere": "끝없는 녹차밭"
           }
         ]
       }
@@ -1429,263 +1347,238 @@
         "itineraryStops": [
           {
             "number": 1,
-            "time": "08:30",
-            "duration": "60 min",
-            "name": "Hyeopjae Beach",
-            "category": "Coast & Beach",
-            "description": "One of Jeju's most photogenic beaches — emerald water, white sand, and Biyangdo island offshore. Easy morning warm-up before the day's main bloom stops.",
-            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+            "time": "09:30",
+            "duration": "40분",
+            "name": "협재해수욕장",
+            "category": "서쪽 해안 에메랄드 해변 + 비양도 조망",
+            "description": "제주 서부 대표 해수욕장. 에메랄드빛 바다와 비양도 풍경. 방문 시간: 약 40분.",
+            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
             "highlights": [
-              "Emerald turquoise water",
-              "View of Biyangdo island",
-              "White sand walking promenade"
+              "**제주 서쪽 해변 TOP 3 / 전체 TOP 10** — 에메랄드 청록색 바다 + 은빛 백사장",
+              "**독특한 은빛 흰 모래** — 조개껍질 + 산호 조각으로 이루어진 해변",
+              "쌍둥이 해변 **금능 해변**(더 한산함, 도보 가능)과 연결 시 **9km 해안선**",
+              "**비양도** — 해안에서 1.2km, 주민 약 200명, **한국 첫 번째 탄소 없는 섬** 프로젝트",
+              "**비양도 너머 일몰** — 카탈로그 최고의 서쪽 해안 일몰 구도",
+              "**소나무 숲(솔림) 배경** + 무료 야영지",
+              "**썰물 시 갯벌** — 집게, 새우, 치어 관찰; 비양도 '걸어서' 접근 가능한 시기 가끔",
+              "**7월 1일~8월 31일 안전 요원 상주 수영 기간**; 여러 지점 휠체어 접근용 경사로",
+              "**서쪽 해안 카페 거리 가장 발달** — 해변 뒤편"
             ],
             "timeUsed": [
-              "Beach walk and photos",
-              "Optional cafe break",
-              "Brief context on west coast geology"
+              "코치 도착 + 주차 — 약 5분",
+              "메인 해변 산책 + 포토 포인트 — 약 20분",
+              "금능 쌍둥이 해변 연장 (선택) — 약 15분",
+              "카페 거리 쉬기 + 간식 — 약 15분",
+              "일몰 촬영 포인트 — 약 5분"
             ],
-            "whyOnRoute": "Opens the day with the lightest stop — sets a relaxed pace before the higher-impact hydrangea sites.",
-            "visitBasics": {
-              "hours": "Open 24 hours; managed swim season July–August",
-              "closed": "Open year-round",
-              "admission": "Free (parking ≈2,000 KRW summer)",
-              "walking": "Easy — flat beach"
-            },
-            "convenience": {
-              "restroom": "Public restrooms and shower facilities",
-              "parking": "Public parking lot (paid in summer)"
-            },
-            "smartNotes": {
-              "photo": "Sunset shots with Biyangdo silhouette; turquoise color is most vivid at midday under direct sun",
-              "facilities": "Multiple cafés along beachfront; convenience stores",
-              "tip": "Combine with Hallim Park (5 min walk); avoid summer weekends for fewer crowds"
-            },
+            "whyOnRoute": "**서해안 해변 오프닝 — 한림 공원의 자연스러운 사전 핵심 명소.**",
             "_poi_meta": {
               "poi_key": "hyeopjae_beach",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "note": "Operational details based on aggregated visitor info"
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitJeju — Hyeopjae Beach + Biyangdo Island official listings",
+                "Jeju Special Self-Governing Province — Top Jeju beaches ranking + amenity registry",
+                "Korea Maritime + Ports Office — Hallim Port ferry schedule to Biyangdo",
+                "Jeju Tourism Organization — west-coast sunset photography spots registry",
+                "Hallim-eup local cultural office — Geumneung twin-beach pairing documentation"
+              ]
             }
           },
           {
             "number": 2,
-            "time": "10:00",
-            "duration": "100 min",
-            "name": "Hallim Park (Hydrangea Festival)",
-            "category": "Garden & Hydrangea Festival",
-            "description": "Botanical garden complex hosting Jeju's largest hydrangea festival in early summer — multiple themed gardens, a lava cave system on-site, and varied bloom colors.",
-            "image": "https://images.unsplash.com/photo-1559948638-e8e07b62b9c1?w=800&q=80",
+            "time": "10:30",
+            "duration": "120분",
+            "name": "한림공원 (수국 축제)",
+            "category": "수국 핵심 명소 + 9개 테마 정원 + 용암 동굴 2개",
+            "description": "1971년 개장한 약 9만9,000㎡ 규모의 식물원으로, 수국 시즌(6~7월)에는 100여 종의 수국 품종이 공원 전체에 개화합니다. 쌍용굴·협재굴 용암동굴도 포함되어 있습니다. 입장료 별도(약 ₩15,000). 방문 시간: 약 70분.",
+            "image": "https://images.unsplash.com/photo-1599598425947-5219dc1d4e93",
             "highlights": [
-              "Hydrangea festival main gardens",
-              "On-site lava tube cave system",
-              "Themed garden zones"
+              "**1971년 송봉규 개장** — 모래 황무지가 초록 낙원으로 변신",
+              "**약 99,000m² / 80에이커** — 9개 테마 정원 + 연간 약 120만 명 방문",
+              "**6월 수국 축제** — 정원의 대표 6월 핵심 명소",
+              "**연중 명칭 축제 일정** — 연중 매월 활성 축제 운영",
+              "**협재굴 동굴** (~200m × 10m × 5m, 약 2,500만 년 전) — 용암관 + 석회암 혼합 동굴",
+              "**쌍용굴 동굴** ('두 마리 용', ~400m × 6m × 3m) — 분기 경로 동굴",
+              "**'이차원 동굴'** — 세계 유일 용암관 + 석회암 동굴 (17km 방식)",
+              "동굴 기온 **연중 17~18°C** — 자연 여름 피서지",
+              "외교 귀빈 방명록: **장쩌민, 나카소네, 김대중, 이건희, 정주영**"
             ],
             "timeUsed": [
-              "Walk through hydrangea zones",
-              "Lava cave optional pass-through",
-              "Photo time at peak bloom areas"
+              "공원 입구 + 매표 + 환영 — 10분",
+              "아열대 / 야자 / 들꽃 정원 — 30분",
+              "협재·쌍용 용암 동굴 (선택) — 30~40분",
+              "피날레: 수국 가든 또는 분재원 — 20분",
+              "화장실 + 공원 출구 — 10분"
             ],
-            "whyOnRoute": "Peak hydrangea visual stop. Mid-morning timing gives best light without midday heat.",
-            "visitBasics": {
-              "hours": "Mar–May 09:00–18:30; Jun–Aug 09:00–19:00; Sep–Oct 09:00–18:30; Nov–Feb 09:00–17:30 (last admission 1 hour before close)",
-              "closed": "Open year-round",
-              "admission": "Adult 15,000 KRW / Teen 10,000 KRW / Child 9,000 KRW (online discount: ≈13,500 / 9,000 / 8,100)",
-              "walking": "Moderate — 2–3 hours of walking through 9 garden zones; mostly flat"
-            },
-            "convenience": {
-              "restroom": "Multiple restrooms throughout the park",
-              "parking": "Free parking on site"
-            },
-            "smartNotes": {
-              "photo": "Hydrangea Festival (June) and pink muhly (October) are peak photo seasons; lava caves with stalactite lighting are unique",
-              "facilities": "On-site restaurants, gift shop, cave museum",
-              "tip": "Last entry 90 minutes before closing; closing time depends on sunset; pair with Hyeopjae Beach (5–10 min walk)"
-            },
+            "whyOnRoute": "**하루의 수국 핵심 명소 — 그리고 서남쪽 루트의 정체성을 정의하는 코스.**",
             "_poi_meta": {
               "poi_key": "hallim_park",
-              "verified": true,
+              "kb_version": "1.21",
+              "verified_date": "2026-04-29",
               "sources": [
-                "VisitKorea",
-                "Trazy",
-                "Creatrip",
-                "Klook"
-              ],
-              "verified_date": "2026-04-27"
+                "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=104761 — Hallim Park, Visit Korea (KTO)",
+                "http://jejucvb.com/Hallim — Jeju CVB official Unique Venue page (founder Song Bong-gyu + diplomatic guest list)",
+                "Hallim Park (annual visitors + 9 themed gardens + monthly festival calendar)",
+                "Hallim Park ticket page (cave system + 'two-dimensional caves' classification + Natural Monument designation)",
+                "https://www.expatolife.com/hallim-park-jeju-island-south-korea/ — Expatolife Hallim Park guide (cave dimensions + 17 km lava-tube system)"
+              ]
             }
           },
           {
             "number": 3,
-            "time": "12:00",
-            "duration": "60 min",
-            "name": "Lunch (Southwest Jeju)",
-            "category": "Meal",
-            "description": "Local restaurant near Hallim or Daejeong — black pork, abalone porridge, or seasonal seafood. Group reset before afternoon stops.",
-            "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&q=80",
+            "time": "12:35",
+            "duration": "60분",
+            "name": "점심 (제주 서남부 현지 식당)",
+            "category": "운영 정류장 — 동제주 현지 점심",
+            "description": "한림·애월·안덕 지역 현지 식당. 점심 식사비 별도(약 ₩12,000~18,000).",
+            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
             "highlights": [
-              "Traditional Jeju cuisine",
-              "Regional restaurant"
+              "**동제주 현지 식당** — 표선 / 동성산 회랑",
+              "미리 확인한 추천 목록: **영어 친화 메뉴** + 식이 요건 수용",
+              "대표 메뉴: **갈치조림, 흑돼지 불고기, 비빔밥, 매운탕**",
+              "채식 + 할랄 친화 옵션 요청 시 제공",
+              "**점심은 게스트 자비 부담** (~₩12,000~18,000/인, 투어 미포함)",
+              "전날 그룹 규모 + 식이 요건 기준 식당 선정"
             ],
             "timeUsed": [
-              "Lunch order and meal",
-              "Brief group reset"
+              "도착 + 착석 — 5분",
+              "주문 + 식이 확인 — 5분",
+              "식사 — 35분",
+              "화장실 + 집결 — 15분",
+              "탑승 + 출발 — 5분"
             ],
-            "whyOnRoute": "Midday timing balances the morning bloom stops with the afternoon geology and culture stops.",
-            "visitBasics": {
-              "hours": "12:00-14:00 typical",
-              "admission": "Lunch cost paid direct, ≈10,000–15,000 KRW typical (Korean local restaurants near route)",
-              "walking": "Minimal"
-            },
-            "convenience": {
-              "restroom": "At restaurant",
-              "parking": "Available"
-            },
-            "smartNotes": {
-              "tip": "Vegetarian options on request — notify the day before."
-            },
+            "whyOnRoute": "**운영 정오 코스**, 12:35에 고정.",
             "_poi_meta": {
               "poi_key": "OPS_lunch",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "match": "operational_implicit",
-              "note": "Operational stop (lunch); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
+              "sources": []
             }
           },
           {
             "number": 4,
-            "time": "13:15",
-            "duration": "75 min",
-            "name": "Jusangjeolli Cliff & Cheonjeyeon Falls",
-            "category": "Geology & Waterfall",
-            "description": "UNESCO Geopark columnar basalt cliff at Jusangjeolli paired with the nearby three-tier Cheonjeyeon waterfall. Two adjacent UNESCO-recognized geological sites.",
-            "image": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&q=80",
+            "time": "13:50",
+            "duration": "75분",
+            "name": "주상절리 & 천제연폭포",
+            "category": "화산 해안선 — 육각형 주상절리 용암",
+            "description": "대포 주상절리(유네스코 지질공원 현무암 절벽)와 천제연폭포(3단 폭포)를 75분 합산 도보 코스로 묶어 관람합니다. 입장료 별도(주상절리 ₩2,000, 천제연 ₩2,500). 방문 시간: 약 75분.",
+            "image": "https://images.unsplash.com/photo-1606112219348-204d7d8b94ee",
             "highlights": [
-              "Hexagonal columnar basalt cliff",
-              "Three-tier waterfall in subtropical forest",
-              "UNESCO Geopark + Biosphere"
+              "**천연기념물 제443호** — **2005년 1월 6일** 지정, 제주 해안 천연기념물 중 가장 최근 지정",
+              "기둥 높이 **30~40m**, **5~7각형 다각형**(주로 육각형)이 **1km**를 따라 밀집",
+              "형성 과정: **한라산 측면 용암이 약 25~14만 년 전 바닷물에 냉각**되면서 수축·균열",
+              "**동아시아 최고의 주상절리 명소** — 자이언츠 코즈웨이, 데빌스 포스트파일과 어깨를 나란히",
+              "**만조 시 최대 20m 파도 분수** — 파도 분수 촬영 포인트",
+              "**0.8km 데크 루프**, 약 15분 도보 — 장벽 없는 데크, 휠체어·유모차 접근 가능",
+              "**유네스코 세계지질공원(2010) 제주 글로벌 지오파크** — 섬 전체 13개 지질 명소 중 하나",
+              "입장료: **성인 ₩2,000 / 청소년 ₩1,000 / 7세 이하·65세 이상 무료**",
+              "맑은 날 북쪽으로 한라산 정상 조망 가능"
             ],
             "timeUsed": [
-              "Jusangjeolli viewing platforms",
-              "Walk to Cheonjeyeon falls",
-              "Photos at both sites"
+              "주차 + 매표 + 입장 — 약 5분",
+              "첫 번째 전망대까지 이동 — 약 5분",
+              "절벽 기둥 관람 + 사진 — 약 15분",
+              "데크 루프 이동 — 약 10분",
+              "코치 귀환 — 약 10분"
             ],
-            "whyOnRoute": "Adds geological depth and a clear UNESCO narrative anchor in the southwest part of the day.",
-            "visitBasics": {
-              "hours": "09:00–18:00 (summer extended)",
-              "closed": "Open year-round (weather-dependent)",
-              "admission": "Jusangjeolli: Adult 2,000 / Child 1,000. Cheonjeyeon: Adult 2,500 / Child 1,350. Combined ≈4,500 KRW per adult.",
-              "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
-            },
-            "convenience": {
-              "restroom": "At entrance/visitor center",
-              "parking": "Available near entrance"
-            },
-            "smartNotes": {
-              "photo": "Best with high tide and rough seas — waves smashing into the columns make dramatic shots; golden hour gives best column-color contrast",
-              "tip": "Get there before 11am or after 4pm to avoid tour-bus crowds; combine with Jungmun Saekdal Beach (5 min) for a half-day",
-              "facilities": "Small geological exhibition near entrance; souvenir shop"
-            },
+            "whyOnRoute": "**세 개의 꽃 정원 호가 있는 루프에서 하루의 지질학+폭포 대조점.**",
             "_poi_meta": {
-              "poi_key": "jusangjeolli_cliff",
-              "verified": true,
-              "sources": [
-                "Trip.com",
-                "AfunCouple"
+              "poi_key": "daepo_jusangjeolli_cliff",
+              "secondary_poi_keys": [
+                "cheonjeyeon_falls"
               ],
-              "verified_date": "2026-04-27"
+              "kb_version": "1.21",
+              "verified_date": "2026-04-29",
+              "is_compound_stop": true,
+              "compound_stop_note": "Paired stop — Jusangjeolli + Cheonjeyeon visited within a single 75-min transit-shared window. Primary KB anchor `daepo_jusangjeolli_cliff` (facts in poi_knowledge_base_v1.21.json), secondary `cheonjeyeon_falls`.",
+              "sources": [
+                "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=78866 — Jusangjeolli Cliff, Visit Korea (KTO)",
+                "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=78918 — Cheonjeyeon Falls, Visit Korea (KTO)",
+                "https://en.wikipedia.org/wiki/Jeju_Volcanic_Island_and_Lava_Tubes — UNESCO Global Geopark (2010) overview",
+                "https://heritage.unesco.or.kr/jeju-volcanic-island-and-lava-tubes/ — Korea National Heritage Service Jeju Volcanic listing",
+                "https://www.peek.com/seogwipo-si-jeju-do-south-korea/r0an9mv/jeju-island-hydrangeas-a-floral-paradise/a067e9nx — Peek 'Jeju Island Hydrangeas' tour itinerary documenting the compound-stop pattern"
+              ]
             }
           },
           {
             "number": 5,
-            "time": "14:45",
-            "duration": "75 min",
-            "name": "Camellia Hill (Hydrangea Tunnel)",
-            "category": "Garden & Hydrangea Tunnel",
-            "description": "Botanical garden best known for its dense hydrangea tunnel — a long path lined with massive blue, purple, and pink blooms forming a tunnel canopy.",
-            "image": "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=800&q=80",
+            "time": "15:15",
+            "duration": "75분",
+            "name": "카멜리아힐 (수국 터널)",
+            "category": "수국 터널 + 동양 최대 172,000m² 동백 수목원",
+            "description": "카멜리아힐 172,000㎡ 식물원의 수국 터널 — 좁은 산책로 양쪽을 수국이 둘러싸는 독특한 터널 구성. 한림공원 개방형 수국 정원과 대조되는 구성미. 입장료 별도(약 ₩10,000). 방문 시간: 약 60분.",
+            "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
             "highlights": [
-              "Hydrangea tunnel walk",
-              "Camellia and rose garden zones (off-season for camellias)",
-              "Themed sculpture installations"
+              "**172,000m²** — 동양 최대 동백 수목원",
+              "**수목 6,000그루 / 80개국 500여 품종** — 30년 이상 수집",
+              "**연중 개화 일정** — 11~3월 동백, 3~5월 벚꽃+튤립, 6~8월 수국",
+              "**테마 구역**: 유럽 정원, 한국 자생림, 벚꽃 산책로, 수국밭",
+              "**유리온실 + 갤러리 + 카페** 복합 시설 — 실내 피난처 (방문 시간의 약 15%)",
+              "**드라마 '환승연애3'** 촬영지 — 주원 & 유정의 데이트 장면",
+              "**연중 무휴**; 일몰 시 폐관 (야간 조명 없음)",
+              "입장료: **성인 ₩12,000 / 청소년·경로 ₩10,000 / 어린이(4~11세) ₩9,000 / 3세 이하 무료**",
+              "**야외 약 85%** — 편안한 신발 권장"
             ],
             "timeUsed": [
-              "Walk through hydrangea tunnel",
-              "Garden cafe break optional",
-              "Photo time at tunnel peaks"
+              "주차 + 입장 + 환영 — 약 10분",
+              "동백 + 이달의 꽃 구역 산책 — 약 25분",
+              "유럽 정원 + 수국밭 — 약 20분",
+              "유리온실 + 카페 휴식 (선택) — 약 15분",
+              "이동 완충 — 약 5분"
             ],
-            "whyOnRoute": "Second hydrangea peak — the tunnel format is visually distinct from Hallim's open garden bloom field.",
-            "visitBasics": {
-              "hours": "Summer (Jun–Aug) 08:30–19:00; Spring/Fall 08:30–18:30; Winter 08:30–17:30 (varies seasonally)",
-              "closed": "Open year-round",
-              "admission": "Adult 10,000 KRW / Teen 8,000 KRW / Child 7,000 KRW (approximate)",
-              "walking": "Easy to moderate — gentle hill paths; mostly stroller-accessible"
-            },
-            "convenience": {
-              "restroom": "Available at entrance and within garden",
-              "parking": "Free parking available"
-            },
-            "smartNotes": {
-              "photo": "Hydrangea tunnel in June; pink muhly grass field in October; camellia varieties peak Nov–Apr",
-              "tip": "Visit before 10am or after 4pm in peak season to avoid crowds; pair with Osulloc (10 min drive)",
-              "facilities": "Indoor greenhouse café, gift shop, picnic areas"
-            },
+            "whyOnRoute": "**오후의 수국 터널 핵심 명소 — 그리고 하루의 사진 중심.**",
             "_poi_meta": {
               "poi_key": "camellia_hill",
-              "verified": true,
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
               "sources": [
-                "VisitKorea",
-                "TripAdvisor",
-                "Klook"
-              ],
-              "verified_date": "2026-04-27"
+                "Camellia Hill official site (camelliahill.co.kr)",
+                "VisitJeju — Camellia Hill official listing",
+                "Andeok-myeon cultural tourism office",
+                "Korea Tourism Organization — Top Korean botanical gardens registry",
+                "Kakao TV / Wavve programming archive — 'EXchange / Transit Love 3' filming locations"
+              ]
             }
           },
           {
             "number": 6,
-            "time": "16:15",
-            "duration": "60 min",
-            "name": "Osulloc Tea Museum & Tea Fields",
-            "category": "Tea Culture & Garden",
-            "description": "Endless green tea fields layered against Hallasan in the distance, plus the Osulloc tea museum and tea house. Closes the day with a tea culture context and relaxed pacing.",
-            "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
+            "time": "16:45",
+            "duration": "60분",
+            "name": "오설록 티뮤지엄",
+            "category": "아모레퍼시픽 차 문화 플래그십 + 녹차밭 피날레",
+            "description": "아모레퍼시픽 운영 한국 최대 녹차 재배지 문화 공간. 녹차밭 전망, 음료·아이스크림 구매 가능. 입장 무료. 방문 시간: 약 40분.",
+            "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085",
             "highlights": [
-              "Vast green tea field photo zones",
-              "Tea museum exhibits",
-              "Green tea ice cream and snacks at tea house"
+              "**아모레퍼시픽** 플래그십 — 창업자 서성환이 1979년 제주 서광 다원을 개척하며 국내 녹차 문화를 부활",
+              "**서광 다원 = 한국 최대 녹차밭**; 연간 약 700톤 생산",
+              "뮤지엄 **2001년 개관** — designboom 선정 건축 상위 10대 미술관",
+              "**무료 입장**, 매일 **09:00~18:00**, 연간 방문객 약 200만 명",
+              "**당나라(618~907년)**부터 현대 조선 도자기까지 아우르는 고대 다완 컬렉션",
+              "**녹차 롤케이크** + **녹차 아이스크림** = 대표 카페 메뉴",
+              "**이니스프리 제주 하우스** 도보 5분 — 무료 입장, 선택: 귤 비누 DIY ₩15,000",
+              "**포토 골든 아워(16:00~17:00)** 다원 산책로 촬영 최적",
+              "루프탑 데크 + 지상 레벨 두 가지 앵글로 다원 구도 촬영"
             ],
             "timeUsed": [
-              "Tea field walk and photos",
-              "Museum browse",
-              "Tea house break"
+              "주차 + 입장 — 약 5분",
+              "뮤지엄 내부 + 다완 컬렉션 — 약 20분",
+              "티하우스 카페 (롤케이크 + 아이스크림) — 약 20분",
+              "다원 산책로 — 약 20분",
+              "선택: 이니스프리 제주 하우스 방문 — 약 10분"
             ],
-            "whyOnRoute": "Closes the day calmly with a culture-tea anchor that contrasts with the morning bloom intensity.",
-            "visitBasics": {
-              "hours": "Summer 09:00–19:00 / Winter 09:00–18:00",
-              "closed": "Open year-round (weather closures possible)",
-              "admission": "Free for museum; tea/desserts in café paid; Innisfree workshops paid separately",
-              "walking": "Easy — flat museum and stroller-friendly tea fields; well-maintained paths"
-            },
-            "convenience": {
-              "restroom": "Multiple restrooms; aesthetically designed",
-              "parking": "Free parking available"
-            },
-            "smartNotes": {
-              "photo": "Tea fields with tour-cup shaped museum building; outdoor seating area; cherry blossoms peak shoulder season",
-              "tip": "Arrive before 10:30 to beat the tour-bus rush; allow 1.5–2 hours including café time and tea field walk",
-              "facilities": "Café (must-try green tea ice cream), gift shop, Innisfree Jeju House next door, observatory deck overlooking fields"
-            },
+            "whyOnRoute": "**하루의 차 문화 피날레 — 그리고 서남쪽 루트의 대표 비꽃 코스.**",
             "_poi_meta": {
               "poi_key": "osulloc_tea_museum",
-              "verified": true,
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
               "sources": [
-                "VisitKorea",
-                "Osulloc.com",
-                "Trazy",
-                "Trip.com"
-              ],
-              "verified_date": "2026-04-27"
+                "Amorepacific corporate history (amorepacific.com)",
+                "O'sulloc Tea Museum official site (osulloc.com)",
+                "designboom Top 10 art museums archival listing",
+                "Korea Tea Industry Association — production statistics",
+                "VisitJeju — Osulloc Tea Museum"
+              ]
             }
           }
         ]
@@ -1698,65 +1591,56 @@
       "props": {
         "routeFlowStops": [
           {
-            "id": "01",
-            "name": "Hyeopjae",
-            "theme": "Beach"
+            "name": "협재",
+            "type": "origin",
+            "theme": "해변"
           },
           {
-            "id": "02",
-            "name": "Hallim Park",
-            "theme": "Hydrangea"
+            "name": "한림 공원",
+            "type": "primary",
+            "theme": "수국"
           },
           {
-            "id": "03",
-            "name": "Lunch",
-            "theme": "Meal"
+            "name": "점심",
+            "type": "meal",
+            "theme": "식사"
           },
           {
-            "id": "04",
-            "name": "Jusangjeolli + Cheonjeyeon",
-            "theme": "Geology + Falls"
+            "name": "주상절리 + 천지연",
+            "type": "primary",
+            "theme": "지질과 폭포"
           },
           {
-            "id": "05",
-            "name": "Camellia Hill",
+            "name": "카멜리아힐",
+            "type": "primary",
             "theme": "Hydrangea Tunnel"
           },
           {
-            "id": "06",
-            "name": "Osulloc",
-            "theme": "Tea Culture"
+            "name": "오설록",
+            "type": "return",
+            "theme": "차 문화"
           }
         ],
         "routePhases": [
           {
-            "label": "Morning",
-            "range": "1-2",
-            "theme": "Beach + Hydrangea festival",
-            "bgClass": "bg-sky-50/70",
-            "textClass": "text-sky-700",
-            "dotClass": "bg-sky-500"
+            "phase": "해변 + 수국 축제",
+            "duration": "정류장 1–2",
+            "description": "협재해변 → 한림공원 수국 축제."
           },
           {
-            "label": "Midday",
-            "range": "3",
-            "theme": "Lunch",
-            "bgClass": "bg-amber-50/70",
-            "textClass": "text-amber-700",
-            "dotClass": "bg-amber-500"
+            "phase": "점심",
+            "duration": "정류장 3",
+            "description": "한림·애월·안덕 인근 제주 서남부 현지 식당."
           },
           {
-            "label": "Afternoon",
-            "range": "4-6",
-            "theme": "Geology, hydrangea tunnel, tea",
-            "bgClass": "bg-emerald-50/70",
-            "textClass": "text-emerald-700",
-            "dotClass": "bg-emerald-500"
+            "phase": "지질·수국·차밭",
+            "duration": "정류장 4–6",
+            "description": "주상절리+천제연폭포 → 카멜리아힐 수국 터널 → 오설록 차밭."
           }
         ],
         "routeShapeIntro": {
-          "title": "How this summer day moves",
-          "subtitle": "Beach warm-up, hydrangea festival, lunch reset, then UNESCO geology, hydrangea tunnel, and tea fields. 08:30 to 17:30."
+          "title": "이 여름날의 흐름",
+          "subtitle": "해변 워밍업, 수국 축제, 점심 휴식, 이후 유네스코 지질 명소, 수국 터널, 차밭으로 이어집니다. 오전 8시 30분 출발, 오후 5시 30분 귀환."
         }
       }
     },
@@ -1767,77 +1651,77 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "First-time summer visitors",
-            "Couples and photo-focused travelers",
-            "Adult families",
-            "Travelers chasing peak hydrangea bloom"
+            "여름 첫 방문자",
+            "커플 및 사진 중심 여행자",
+            "성인 가족 단위",
+            "수국 절정을 쫓는 여행자"
           ],
           "routeLogicSections": [
             {
-              "title": "Pacing & structure",
+              "title": "일정 속도 & 구조",
               "icon": "sun",
               "iconBg": "bg-amber-50/80",
               "iconColor": "text-amber-600",
               "items": [
                 {
-                  "label": "Beach as Light Opener",
-                  "detail": "Hyeopjae as a low-intensity start lets the group settle before higher-attention bloom and geology sites."
+                  "label": "가벼운 오프너로서의 해변",
+                  "detail": "협재가 낮은 강도의 시작으로 그룹이 더 집중력이 필요한 꽃과 지질 명소 전에 여유를 가질 수 있습니다."
                 },
                 {
-                  "label": "Two Hydrangea Stops, Different Formats",
-                  "detail": "Hallim festival garden and Camellia tunnel give complementary compositions of the same flower — bookend morning and afternoon."
+                  "label": "두 개의 수국 코스, 다른 형식",
+                  "detail": "한림 축제 정원과 카멜리아 터널이 같은 꽃의 상호 보완적인 구도가 만들어집니다."
                 },
                 {
-                  "label": "Tea to Close",
-                  "detail": "Osulloc closes calmly — culture and rest after the visual intensity of bloom and falls."
+                  "label": "마무리는 차로",
+                  "detail": "오설록이 개화와 폭포의 눈에 보이는 강도 이후 차분하게 마무리됩니다."
                 }
               ]
             },
             {
-              "title": "Why this is summer-only",
+              "title": "왜 여름 시즌 한정인가",
               "icon": "flower",
               "iconBg": "bg-pink-50/80",
               "iconColor": "text-pink-600",
               "items": [
                 {
-                  "label": "Hydrangea Window Late May - mid-July",
-                  "detail": "Hydrangea blooms appear from late May, peak mid-June, and fade by mid-July. Outside this window the bloom stops lose their visual draw."
+                  "label": "수국 시기 5월 말~7월 중순",
+                  "detail": "수국은 5월 말에 피기 시작해 6월 중순이 절정, 7월 중순에 집니다. 이 시기 외에는 꽃 코스의 매력이 크게 줄어듭니다."
                 },
                 {
-                  "label": "Outside Window, Pick SW-Small",
-                  "detail": "If your dates fall outside hydrangea season, our West & South year-round route covers the same region with year-round POIs (Hallasan, Osulloc, Aewol)."
+                  "label": "시기 외에는 서남부 연중 루트로",
+                  "detail": "수국 시즌 밖 날짜라면 저희 서남부 연중 루트가 동일 지역을 연중 커버합니다."
                 },
                 {
-                  "label": "Camellia Hill is Not Camellia Season",
-                  "detail": "Despite the name, this tour visits Camellia Hill specifically for hydrangea — actual camellias bloom in winter."
+                  "label": "카멜리아힐은 동백 시즌이 아님",
+                  "detail": "이름에도 불구하고 이 투어는 수국을 위해 카멜리아힐을 방문합니다. 실제 동백은 겨울에 핍니다."
                 }
               ]
             },
             {
-              "title": "Trade-offs honestly",
+              "title": "솔직한 트레이드오프",
               "icon": "info",
               "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "9 Hours Is Long",
-                  "detail": "Six diverse stops in 9 hours — pace is fuller than east-small. Build energy with steady hydration."
+                  "label": "9시간은 긴 편",
+                  "detail": "9시간에 6개 다양한 코스 — 동쪽 소그룹보다 일정 속도가 충실합니다. 꾸준한 수분 섭취로 에너지를 유지하세요."
                 },
                 {
-                  "label": "Some Stops Have Admission",
-                  "detail": "Hallim Park (15,000 KRW) and Camellia Hill (10,000 KRW) admissions are paid on-site, not bundled into the tour price. Budget ≈30,000 KRW per person across all admissions (Jusangjeolli 2,000 + Cheonjeyeon 2,500 round it out)."
+                  "label": "일부 코스는 유료 입장",
+                  "detail": "한림 공원(₩15,000)과 카멜리아힐(₩10,000) 입장료는 현장에서 직접 결제하며 투어 요금에 포함되지 않습니다."
                 },
                 {
-                  "label": "Heat Can Be Real",
-                  "detail": "June Jeju can hit 30°C+ at midday. Bring sun protection — most stops are outdoor."
+                  "label": "더위가 실질적일 수 있음",
+                  "detail": "6월 제주는 낮에 30°C+에 달할 수 있습니다. 자외선 차단제를 가져오세요 — 대부분의 코스가 야외입니다."
                 }
               ]
             }
           ],
           "lessIdealFor": [
-            "Off-season visitors (after mid-July)",
-            "Stroller-heavy groups (some uneven garden paths)",
-            "Travelers wanting mountain hiking"
+            "비시즌 방문자 주의 (7월 중순 이후)",
+            "유모차 이용 그룹 주의 (일부 불규칙 정원 길)",
+            "산악 하이킹을 원하는 여행자 주의"
           ]
         }
       }
@@ -1850,103 +1734,95 @@
         "practicalAccordionItems": [
           {
             "id": "pickup",
-            "title": "Pickup & drop-off",
-            "preview": "Hotel lobby pickup in Jeju City area",
+            "title": "픽업 & 하차",
+            "preview": "제주 시내 호텔 로비 픽업",
             "content": [
-              "Pickup from your hotel lobby between 08:00-08:30",
-              "Return drop-off by approximately 17:30-18:00",
-              "Hotel lobby pickup within Jeju City is free. Pickup from Seogwipo, Aewol, or Seongsan adds 70,000 KRW due to extra driving distance."
+              "08:00~08:30 호텔 로비 픽업.",
+              "귀환 약 17:30~18:00.",
+              "제주시 내 호텔 픽업 무료. 서귀포·애월·성산 등 제주시 외는 추가 요금."
             ]
           },
           {
             "id": "what-to-bring",
-            "title": "What to wear & bring",
-            "preview": "Sun protection, comfortable shoes, camera",
+            "title": "복장 & 준비물",
+            "preview": "자외선 차단, 편한 신발, 카메라",
             "content": [
-              "Comfortable walking shoes (multiple garden walks)",
-              "Sun protection — hat, sunscreen, sunglasses",
-              "Light layer for AC vehicle and tea house",
-              "Cash or card for lunch and admission"
+              "편안한 워킹화 (여러 정원 구간 도보).",
+              "자외선 차단 — 모자, 선크림, 선글라스.",
+              "냉방 차량과 티하우스 대비 가벼운 겉옷.",
+              "점심 및 입장료용 현금 또는 카드."
             ]
           },
           {
             "id": "season",
-            "title": "Hydrangea season window",
-            "preview": "June through mid-July",
+            "title": "수국 시즌 기간",
+            "preview": "6월~7월 중순",
             "content": [
-              "Tour season: June 1 - July 15 (varies ±5 days year to year)",
-              "Peak window: June 25 - July 5 (best photographic conditions)",
-              "We update the booking page with year-specific bloom forecast in early May",
-              "If your travel dates fall outside the window, consider our West & South year-round route instead"
+              "투어 시즌: 6월 1일~7월 15일 (연도별 ±5일 변동).",
+              "절정 시기: 6월 25일~7월 5일 (최적 촬영 조건).",
+              "연도별 개화 예보는 5월 초에 예약 페이지에 업데이트됩니다.",
+              "시즌 외 날짜라면 서남부 연중 루트를 고려해 주세요."
             ]
           },
           {
             "id": "weather-policy",
-            "title": "Weather policy",
-            "preview": "Light rain operates; heavy rain reschedules",
+            "title": "날씨 정책",
+            "preview": "가벼운 비 운행; 폭우 시 일정 변경",
             "content": [
-              "Light rain: tour operates (hydrangea actually photographs well in soft rain)",
-              "Heavy rain: free rescheduling within season window",
-              "Outside-window cancellations follow the booking platform's standard terms — see the booking confirmation for specifics."
+              "가벼운 비: 투어 운영 (수국은 부드러운 비에도 사진 찍기 좋은).",
+              "폭우: 시즌 내 무료 일정 변경.",
+              "시즌 외 취소는 예약 플랫폼 표준 약관을 따릅니다."
             ]
           },
           {
             "id": "inclusions",
-            "title": "What's included",
-            "preview": "Transport, guide, and major admissions",
+            "title": "포함 사항",
+            "preview": "교통, 가이드, 주요 입장료",
             "content": [
-              "Hotel pickup and drop-off (Jeju City)",
-              "Air-conditioned van transport",
-              "Licensed English-speaking guide",
-              "Major admissions (Hallim Park, Camellia Hill, Jusangjeolli, Cheonjeyeon) are paid on-site, not bundled into the tour price",
-              "Lunch separate from base price"
+              "호텔 픽업·하차 (제주시)",
+              "에어컨 밴 교통",
+              "공인 영어 가이드",
+              "주요 입장료 (한림 공원, 카멜리아힐, 주상절리, 천제연) 현장 직접 결제",
+              "점심은 기본 요금에서 별도"
             ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
-            "label": "Summer weather guidance",
-            "temp": "Daytime ≈ 26–30 °C in hydrangea season (late May to mid-July, peak mid-June)",
+            "label": "여름 날씨 안내",
+            "temp": "수국 시즌 낮 기온 약 26~30°C(5월 말~7월 중순, 6월 중순 절정)",
             "icon": "cloud-sun"
           },
           "tomorrow": {
-            "label": "Live forecast available at the operator's booking page",
+            "label": "여행사 예약 페이지에서 실시간 예보 확인 가능",
             "temp": "—",
             "icon": "cloud"
           }
         },
         "seasonalVariations": [
           {
-            "name": "Early Summer (Jun 1-24)",
-            "icon": "flower",
-            "description": "Hydrangea opens — gradually intensifying",
-            "tag": "Tour operates",
-            "bgClass": "bg-pink-100/70",
-            "iconColor": "text-pink-500"
+            "season": "초여름 (6/1~6/24)",
+            "title": "투어 운영",
+            "description": "수국 개화 시작 — 점점 깊어지는 중",
+            "icon": "flower"
           },
           {
-            "name": "Peak (Jun 25 - Jul 5)",
-            "icon": "flower",
-            "description": "Peak hydrangea bloom across all gardens — best photographic conditions",
-            "tag": "Peak — books out fastest",
-            "bgClass": "bg-pink-200/70",
-            "iconColor": "text-pink-600"
+            "season": "절정 (6/25~7/5)",
+            "title": "절정 — 가장 빨리 마감",
+            "description": "모든 정원에서 수국 절정 — 최상의 사진 조건",
+            "icon": "flower"
           },
           {
-            "name": "Late Bloom (Jul 6-15)",
-            "icon": "leaf",
-            "description": "Hydrangeas still strong but starting to fade. Less crowded.",
-            "tag": "Tour operates",
-            "bgClass": "bg-emerald-50/70",
-            "iconColor": "text-emerald-500"
+            "season": "후기 개화 (7/6~7/15)",
+            "title": "투어 운영",
+            "description": "수국 여전히 아름답지만 서서히 퇴색. 상대적으로 한산.",
+            "icon": "leaf"
           },
           {
-            "name": "Outside window (Jul 16 - May 31)",
-            "icon": "info",
-            "description": "Out of season — our West & South year-round route recommended",
-            "tag": "Off-season",
-            "bgClass": "bg-amber-50/70",
-            "iconColor": "text-amber-500"
+            "season": "시즌 외 (7/16~5/31)",
+            "title": "비시즌",
+            "description": "시즌 외 — 연중 서남부 루트를 추천합니다",
+            "icon": "info"
           }
         ]
       }
@@ -1959,56 +1835,65 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local",
-            "description": "Jeju-licensed guiding",
+            "title": "수국 시즌 전문 여행사",
+            "description": "제주 자격증 가이드",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "iconColor": "text-emerald-600",
+            "body": "5월 말~7월 수국 시즌 한정 투어. 개화 상태 실시간 안내."
           },
           {
             "icon": "calendar",
-            "title": "Season window flex",
-            "description": "Free rescheduling within bloom window",
+            "title": "코스 전문",
+            "description": "개화 기간 내 무료 일정 변경",
             "iconBg": "bg-pink-50/80",
-            "iconColor": "text-pink-600"
+            "iconColor": "text-pink-600",
+            "body": "한림공원 개방형 수국 정원과 카멜리아힐 수국 터널 — 같은 꽃, 서로 다른 구성미."
           },
           {
             "icon": "shield",
-            "title": "Weather guarantee",
-            "description": "Free reschedule on heavy rain",
+            "title": "그룹 규모 관리",
+            "description": "폭우 시 무료 일정 변경",
             "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "iconColor": "text-sky-600",
+            "body": "소그룹으로 카멜리아힐 수국 터널을 여유 있게 탐방합니다."
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "timing": "즉시",
+            "title": "즉시 확인",
+            "detail": "행정 요약 포함 예약 확인서 발송",
+            "description": "제주시 호텔 픽업 정보 포함 즉시 예약 확인서 발송."
           },
           {
-            "timing": "2 days before",
-            "title": "Weather Check-in",
-            "detail": "We monitor forecast and reach out if rebooking is recommended"
+            "timing": "2일 전",
+            "title": "12시간 전 알림",
+            "detail": "예보를 모니터링하고 예약 변경이 권장되면 연락드립니다.",
+            "description": "수국 개화 상태 사전 안내."
           },
           {
-            "timing": "Day before",
-            "title": "Vehicle & Guide Info",
-            "detail": "Pickup time, vehicle plate, and guide name via WhatsApp"
+            "timing": "전날",
+            "title": "최종 픽업 안내",
+            "detail": "픽업 시간, 차량 번호, 가이드 이름을 WhatsApp으로 발송.",
+            "description": "출발 전날 저녁 최종 픽업 시각 확인."
           },
           {
-            "timing": "Morning of",
-            "title": "Pickup Confirmation",
-            "detail": "Driver checks in 10 minutes before arrival"
+            "timing": "투어 당일 오전",
+            "title": "당일 코스 안내",
+            "detail": "드라이버가 도착 10분 전에 연락합니다.",
+            "description": "날씨 및 개화 상태 아침 메시지 전달."
           },
           {
-            "timing": "During tour",
-            "title": "On-tour Support",
-            "detail": "Direct line to operations if anything comes up"
+            "timing": "투어 중",
+            "title": "경유지별 심층 안내",
+            "detail": "문제 발생 시 운영팀에 직접 연락 가능",
+            "description": "수국 품종, 주상절리 생성 원리 등 가이드 설명."
           },
           {
-            "timing": "After tour",
-            "title": "Review & Followup",
-            "detail": "Optional review and follow-up"
+            "timing": "투어 종료 후",
+            "title": "투어 후 지원",
+            "detail": "선택적 리뷰 및 후속 연락",
+            "description": "투어 후 피드백 요청 전송."
           }
         ]
       }
@@ -2021,58 +1906,58 @@
         "staticQuestions": [
           {
             "id": "first-time",
-            "question": "Is this good for first-time visitors to Jeju?",
-            "answer": "Yes, if you're visiting during hydrangea season (late May to mid-July, peak mid-June). Outside that window, our West & South year-round route covers the same region with year-round POIs."
+            "question": "제주를 처음 방문하는 분에게 좋은가요?",
+            "answer": "수국 시즌 방문 시 네. 그 외 시기에는 연중 운행 서부·남부 투어를 추천합니다."
           },
           {
             "id": "season-timing",
-            "question": "When exactly is hydrangea season?",
-            "answer": "Approximately late May to mid-July (peak mid-June), with peak typically in mid-June. We update the booking page with year-specific forecast in early May."
+            "question": "수국 시즌은 정확히 언제인가요?",
+            "answer": "약 5월 말~7월 중순(절정 6월 중순). 매년 1~2주 변동. 예약 시 최신 정보를 안내합니다."
           },
           {
             "id": "rain",
-            "question": "What if it rains?",
-            "answer": "Light rain — we operate (hydrangea actually photographs beautifully in soft rain). Heavy rain — we offer free rescheduling within the season window."
+            "question": "비가 오면 어떻게 되나요?",
+            "answer": "가벼운 비: 진행합니다. 수국은 부드러운 빗속에서 더 아름답게 촬영됩니다."
           },
           {
             "id": "two-hydrangea-stops",
-            "question": "Why two hydrangea stops?",
-            "answer": "Hallim Park is an open festival garden; Camellia Hill is a tunnel format. Same flower, complementary compositions."
+            "question": "왜 수국 경유지가 두 곳인가요?",
+            "answer": "한림공원은 개방형 축제 정원, 카멜리아힐은 터널 형식입니다. 같은 꽃이지만 전혀 다른 촬영 구도와 분위기를 연출합니다."
           },
           {
             "id": "kids",
-            "question": "Is this suitable for children?",
-            "answer": "Yes, age 6+. Walking is moderate at most stops; hydrangea gardens are family-friendly."
+            "question": "어린이와 함께할 수 있나요?",
+            "answer": "만 6세 이상 추천. 대부분 경유지 도보가 보통 수준입니다."
           },
           {
             "id": "seniors",
-            "question": "Is this ok for seniors?",
-            "answer": "Yes, mostly easy walking. Cheonjeyeon waterfall path has some stairs — can be skipped while group views Jusangjeolli."
+            "question": "어르신도 참여할 수 있나요?",
+            "answer": "대부분 쉬운 도보. 천제연 폭포 계단은 건너뛰고 주상절리만 관람하면 됩니다."
           },
           {
             "id": "pickup-area",
-            "question": "Where do you pick up?",
-            "answer": "Hotel lobby pickup within Jeju City is free. Pickup from Seogwipo, Aewol, or Seongsan adds 70,000 KRW due to extra driving distance."
+            "question": "픽업 장소는 어디인가요?",
+            "answer": "제주시 호텔 로비 무료 픽업. 서귀포·애월·성산 픽업은 추가 비용(₩70,000)."
           },
           {
             "id": "lunch",
-            "question": "Is lunch included?",
-            "answer": "Lunch cost is separate. Expect 12,000-18,000 KRW per person."
+            "question": "점심이 포함되어 있나요?",
+            "answer": "포함되지 않습니다. 약 ₩12,000~18,000."
           },
           {
             "id": "admission-fees",
-            "question": "Are admission fees included?",
-            "answer": "Admissions are not bundled by default. Budget ≈30,000 KRW per person: Hallim Park 15,000, Camellia Hill 10,000, Jusangjeolli 2,000, Cheonjeyeon 2,500, Osulloc free."
+            "question": "입장료가 포함되어 있나요?",
+            "answer": "기본 포함되지 않습니다. 하루 약 ₩30,000: 한림공원 ₩15,000, 카멜리아힐 ₩10,000, 주상절리 ₩2,000, 천제연 ₩2,500. 오설록 무료."
           },
           {
             "id": "tea-museum",
-            "question": "Is Osulloc included?",
-            "answer": "Yes — museum entry is free. The tea house is separate (optional purchase)."
+            "question": "오설록이 포함되어 있나요?",
+            "answer": "네, 오설록 티뮤지엄은 무료 입장입니다. 다실 음료는 별도 구매."
           },
           {
-            "id": "compare-our West & South year-round route",
-            "question": "What's the difference vs our West & South year-round route?",
-            "answer": "Different POIs and seasonality. Our West & South year-round route is year-round and visits Hallasan 1100, Osulloc, and Aewol. This tour is summer-only and adds Hyeopjae, Hallim, Jusangjeolli, Cheonjeyeon, Camellia Hill while keeping Osulloc as the closing stop."
+            "id": "compare-west-south-year-round",
+            "question": "연중 서부·남부 투어와 어떻게 다른가요?",
+            "answer": "이 투어는 수국 시즌 한정으로 한림공원·카멜리아힐 수국이 추가됩니다. 연중 투어는 한라산 1100고지·송악산·오설록을 포함합니다."
           }
         ]
       }
@@ -2122,11 +2007,11 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
         "price": {
           "amountLabel": "",
           "currency": "USD",
-          "per": "person"
+          "per": "인"
         }
       }
     }
@@ -2135,39 +2020,39 @@
     "type": "hotel_pickup",
     "meeting_points": [
       {
-        "name": "Hotel within Jeju City",
-        "time": "≈08:30 (free)"
+        "name": "제주시 내 호텔",
+        "time": "약 08:30(무료)"
       },
       {
-        "name": "Hotel outside Jeju City (Seogwipo/Aewol/Seongsan)",
-        "time": "Earlier pickup; +₩70,000 surcharge"
+        "name": "제주시 외 지역 호텔(서귀포/애월/성산)",
+        "time": "조기 픽업; +₩70,000 추가요금"
       },
       {
-        "name": "Jeju International Airport",
+        "name": "제주국제공항",
         "time": "≈08:30"
       }
     ],
     "dropoff_points": [
       {
-        "name": "Hotel in Jeju City",
+        "name": "제주시 호텔",
         "approx_time": "≈18:00"
       },
       {
-        "name": "Dongmun Traditional Market",
+        "name": "동문전통시장",
         "approx_time": "≈18:00"
       },
       {
-        "name": "Jeju Airport",
+        "name": "제주공항",
         "approx_time": "≈18:00"
       }
     ],
     "hotel_pickup_available": true,
-    "notes": "Free pickup in Jeju City. Outside-city pickup adds ₩70,000. Hydrangea stops only in bloom late May to mid-July (peak mid-June); check before booking."
+    "notes": "제주시 내 픽업은 무료입니다. 시외 픽업은 70,000원이 추가됩니다. 수국 명소는 5월 말~7월 중순 개화 기간에만 운영되며, 절정은 보통 6월 중순입니다. 예약 전 개화 상태를 확인해 주세요."
   },
   "itinerary_variants": [],
   "priceSource": {
     "discountPct": 10,
-    "discountNote": "10% off marketplace baseline",
+    "discountNote": "마켓플레이스 기준가 대비 10% 할인",
     "amount": null,
     "currency": "USD"
   },
@@ -2188,19 +2073,19 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
       },
       "v17_batch5_enhancement": {
         "date": "2026-04-29",
-        "description": "Batch 5 deep enhancement — descriptions raised to 700-1300+ chars; KB-backed metadata on all attraction stops; matching_profile recalibrated with verified-fact 0-1 float scores. Time-weighted indoor_ratio per Fix 1 methodology.",
+        "description": "Batch 5 deep enhancement — descriptions raised to 700-1300+ chars; KB-backed metadata on all attraction stops; product profile recalibrated with verified-fact 0-1 float scores. Time-weighted indoor_ratio per Fix 1 methodology.",
         "_score_audit": {
           "_methodology": "0-1 float scale. Indoor ratio computed time-weighted with Fix 1 methodology.",
           "deltas_applied": {
             "unesco_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.45,
               "reasoning": "Verified — NO direct UNESCO World Heritage stops on this tour. Hallim Park caves are Korean National Monument (No. 236), NOT UNESCO. Jusangjeolli is Korean Natural Monument (No. 443), NOT UNESCO. Cheonjeyeon, Hyeopjae, Camellia Hill, Osulloc are non-UNESCO. Mechanical 1.0 was overstated. 0.45 reflects strong national-heritage anchors but no direct UNESCO."
             },
@@ -2210,12 +2095,12 @@
               "reasoning": "Verified: Hyeopjae photo-stop (minimal), Hallim 1.5-3 km flat with cave ducking, Jusangjeolli 0.5 km boardwalk, Cheonjeyeon ~150 stairs to mid falls, Camellia Hill ~1.5 km flat, Osulloc 0.5 km. Total ~5 km mostly flat with one stair section. 0.50 calibrated."
             },
             "scenic_level": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.9,
               "reasoning": "Verified: turquoise beach + 9-area botanical garden + 2 lava-tube caves + columnar basalt cliff + three-tier waterfall + camellia hydrangea tunnel + green tea fields. 7 distinct landscapes — among catalog's most diverse. 0.90 calibrated."
             },
             "photo_level": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.95,
               "reasoning": "Verified: 6+ hero shots — Hyeopjae beach + Hallim caves/folk village + Jusangjeolli columns + Cheonjeyeon nymphs + Camellia hydrangea tunnel + Osulloc fields. Catalog-leading photo density. 0.95."
             },
@@ -2230,7 +2115,7 @@
               "reasoning": "CORRECTION using time-weighted method (Fix 1 methodology): 108 indoor / 405 total = 0.27 with lunch; 60/345 = 0.17 without. Catalog value 0.20 represents both. Mechanical 0.4 overstated."
             },
             "weather_sensitivity": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.85,
               "reasoning": "VERIFIED 0.85 — hydrangea bloom timing weather-dependent; Hyeopjae + Jusangjeolli + Camellia Hill + Osulloc all primarily outdoor. Hallim caves provide partial weather refuge."
             },
@@ -2240,7 +2125,7 @@
               "reasoning": "Hallim caves (~600m total) + Osulloc indoor museum + restaurant lunch provide refuge. But majority of stops outdoor. 0.55 calibrated."
             },
             "first_time_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.85,
               "reasoning": "Verified: covers 7 distinct Jeju landscapes — among the most representative single-day southwest summaries. Season-specific to summer for hydrangea. 0.85."
             },
@@ -2275,7 +2160,7 @@
               "reasoning": "Verified: Hallim Folk Village + Cheonjeyeon Seven Nymphs legend + Osulloc tea heritage. 3/6 cultural anchors. 0.55."
             },
             "nature_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.9,
               "reasoning": "Verified: beach + botanical garden + caves + columnar cliff + waterfall + flower park + tea fields. Catalog-leading nature density. 0.90."
             },
@@ -2295,12 +2180,12 @@
           "Hunting for Bliss",
           "Soul of Seoul",
           "Roaming Sonaa",
-          "Trazy",
-          "KKday",
+          "시장 참고 자료",
+          "시장 참고 자료",
           "NOL World"
         ],
         "_extended_dimensions_documented_only": {
-          "note": "These dimensions (snow_fit, active_fit, geological_fit, experiential_fit) were assessed during the v17 verified-fact audit but are NOT yet part of the standard 68-key matching_profile. They are preserved here as documentation for future schema extension.",
+          "note": "These dimensions (snow_fit, active_fit, geological_fit, experiential_fit) were assessed during the v17 verified-fact audit but are NOT yet part of the standard 68-key product profile. They are preserved here as documentation for future schema extension.",
           "values": {
             "geological_fit": 0.85
           }

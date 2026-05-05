@@ -5,8 +5,8 @@
   "locale": "ko",
   "product_id": "incheon-seoul-private-car-shore-excursion-cruise",
   "seo": {
-    "pageTitle": "Incheon to Seoul Private Cruise Shore Excursion | AtoC Korea",
-    "metaDescription": "Private 8-hour shore excursion from Incheon Cruise Terminal to Seoul: Gyeongbokgung, Bukchon, Insadong, N Seoul Tower, Myeongdong. Sailaway-time guarantee.",
+    "pageTitle": "인천↔서울 크루즈 프라이빗 기항지 관광 | AtoC Korea",
+    "metaDescription": "인천 크루즈 터미널 출발 8시간 프라이빗 차량 투어. 경복궁, 북촌, 인사동, 명동 등 완전 맞춤. 승선 마감 전에 항구로 안전하게 복귀하는 것을 최우선으로 운영.",
     "primaryKeywords": [
       "인천 크루즈 서울 프라이빗 투어",
       "인천항 기항지 프라이빗",
@@ -21,21 +21,21 @@
     "thumbnail": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
     "title": "인천 크루즈 기항지 서울 프라이빗 투어",
     "priceLabel": "가격은 예약 시 확인",
-    "shortCardDescription": "인천 크루즈 터미널에서 갱웨이 픽업, 경복궁+수문장 교대, 북촌한옥마을+인사동, 선택 점심, N서울타워(남산), 명동 또는 조계사 중 선택. 완전 프라이빗, 귀선 보장.",
+    "shortCardDescription": "인천 크루즈 터미널에서 갱웨이 픽업, 경복궁+수문장 교대, 북촌한옥마을+인사동, 선택 점심, N서울타워(남산), 명동 또는 조계사 중 선택. 완전 프라이빗, 승선 마감 전에 항구로 안전하게 복귀하는 것을 최우선으로 운영.",
     "tags": [
-      "private",
-      "cruise",
-      "shore_excursion",
-      "seoul_highlights",
-      "customizable",
-      "guaranteed_return"
+      "프라이빗",
+      "크루즈",
+      "기항지 투어",
+      "서울 핵심 명소",
+      "맞춤 가능",
+      "항구 안전 복귀 우선"
     ],
     "rating": 0,
     "reviewCount": 0,
     "slug": "incheon-seoul-private-car-shore-excursion-cruise",
     "subtitle": "크루즈 터미널 갱웨이 픽업 → 경복궁·북촌·N서울타워·명동(또는 조계사). 귀선 시각 90분 전 터미널 귀환.",
-    "region": "Seoul (from Incheon cruise terminal)",
-    "duration": "8 hours",
+    "region": "서울 (인천 크루즈 터미널 출발)",
+    "duration": "8시간",
     "stopsCount": 7,
     "badges": [
       "프라이빗",
@@ -43,18 +43,18 @@
       "기항지 관광",
       "서울 핵심 코스",
       "맞춤 가능",
-      "귀선 보장"
+      "승선 마감 전에 항구로 안전하게 복귀하는 것을 최우선으로 운영"
     ],
     "heroImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800"
   },
-  "headlineLine1": "크루즈 항구에서 왕궁으로, 귀선 시각에 맞게 설계 —",
-  "headlineLine2": "우리 그룹만의 서울 하루, 귀선 보장 포함",
+  "headlineLine1": "크루즈 항구에서 왕궁으로, 귀선 시각에 맞게 구성 —",
+  "headlineLine2": "우리 그룹만의 서울 하루, 승선 마감 전에 항구로 안전하게 복귀하는 것을 최우선으로 운영 포함",
   "price": {
     "amountLabel": "",
     "currency": "USD",
-    "per": "group",
-    "priceSource": "getyourguide_t1249797",
-    "priceNote": "Price not yet set. Private tour pricing varies by vehicle size (sedan 1–3 pax, van 4–6 pax, large van 7–9 pax). Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+    "per": "그룹",
+    "priceSource": "direct_rate",
+    "priceNote": "가격 미정. 프라이빗 투어 가격은 차량 크기(세단 1~3인, 밴 등)에 따라 다름.",
     "discountPercent": 10
   },
   "hero": {
@@ -62,14 +62,14 @@
     "imagePosition": "center 35%",
     "tagline": "갱웨이에서 60분 만에 경복궁으로 — 선박 출항 시각에 맞게 조율된 프라이빗 서울 하루",
     "pills": [
-      "private",
-      "cruise",
+      "프라이빗",
+      "크루즈",
       "shore_excursion"
     ],
     "meta": {
-      "duration": "≈ 8 hours (pickup ≈ 09:30 from gangway, terminal drop-off ≈ 17:30; calibrated to your ship)",
-      "region": "Seoul (from Incheon cruise terminal)",
-      "stops": "7 stops",
+      "duration": "약 8시간(선박 하선구역 09:30 전후 픽업, 터미널 17:30 전후 하차 / 선박 일정에 맞춰 조정)",
+      "region": "서울 (인천 크루즈 터미널 출발)",
+      "stops": "7개 코스",
       "rating": 0,
       "ratingStars": 0
     }
@@ -98,40 +98,39 @@
   ],
   "glanceItems": [
     {
+      "icon": "clock",
+      "label": "소요 시간",
+      "value": "8시간"
+    },
+    {
       "icon": "camera",
-      "label": "포토 스팟",
-      "value": "높음",
-      "level": 5
+      "label": "사진 포인트",
+      "value": "매우 높음"
     },
     {
       "icon": "mountain",
-      "label": "경치 밀도",
-      "value": "양호",
-      "level": 4
+      "label": "경관 특색",
+      "value": "높음"
     },
     {
       "icon": "footprints",
-      "label": "도보 난이도",
-      "value": "보통",
-      "level": 3
+      "label": "도보 강도",
+      "value": "보통"
     },
     {
       "icon": "cloud-rain",
       "label": "우천 적합도",
-      "value": "양호",
-      "level": 4
+      "value": "보통"
     },
     {
       "icon": "users",
       "label": "가족 적합도",
-      "value": "우수",
-      "level": 5
+      "value": "보통"
     },
     {
-      "icon": "gauge",
-      "label": "투어 페이스",
-      "value": "유연",
-      "level": 5
+      "icon": "scale",
+      "label": "투어 일정 속도",
+      "value": "균형"
     }
   ],
   "galleryItems": [
@@ -139,88 +138,89 @@
       "id": "g1",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-      "alt": "Gangway-side pickup at Incheon Cruise Terminal arrival hall",
-      "caption": "Gyeongbokgung Palace's main throne hall",
-      "location": "Incheon Cruise Terminal",
-      "atmosphere": "Direct cruise terminal pickup"
+      "alt": "투어 중 방문하는 경복궁 근정전의 풍경",
+      "caption": "경복궁 근정전",
+      "location": "인천 크루즈터미널",
+      "atmosphere": "크루즈 터미널 직접 픽업"
     },
     {
       "id": "g2",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "Gyeongbokgung Palace throne hall and royal guard ceremony",
-      "caption": "Royal guard changing ceremony at Gyeongbokgung",
+      "alt": "경복궁 근정전과 수문장 교대식",
+      "caption": "경복궁 수문장 교대식",
       "location": "Gyeongbokgung, Seoul",
-      "atmosphere": "Joseon royal palace"
+      "atmosphere": "조선 왕궁"
     },
     {
       "id": "g3",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "Stone walls and tiled hanok roofs along Bukchon ridge",
-      "caption": "Bukchon Hanok Village's traditional rooflines",
-      "location": "Bukchon Hanok Village, Seoul",
-      "atmosphere": "Preserved Joseon-era residential alleys"
+      "alt": "투어 중 방문하는 북촌 한옥마을 전통 지붕선의 풍경",
+      "caption": "북촌 한옥마을 전통 지붕선",
+      "location": "북촌 한옥마을, Seoul",
+      "atmosphere": "보존된 조선시대 주거 골목"
     },
     {
       "id": "g4",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "Panoramic view of Seoul from Namsan with N Seoul Tower above",
-      "caption": "Jogyesa Temple's main hall and lantern displays",
-      "location": "N Seoul Tower (Namsan)",
-      "atmosphere": "City viewpoint"
+      "alt": "투어 중 방문하는 N서울타워 (Namsan)의 풍경",
+      "caption": "N서울타워 (Namsan)",
+      "location": "N서울타워 (Namsan)",
+      "atmosphere": "도시 전망대"
     },
     {
       "id": "g5",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "Lit street-food stalls along Myeongdong shopping street at dusk",
-      "caption": "N Seoul Tower at sunset, viewed from Namsan",
-      "location": "Myeongdong, Seoul",
-      "atmosphere": "Shopping and street food"
+      "alt": "투어 중 방문하는 해질녘 N서울타워의 풍경",
+      "caption": "남산에서 바라보는 해질녘 N서울타워",
+      "location": "명동, Seoul",
+      "atmosphere": "쇼핑과 길거리 음식"
     },
     {
       "id": "g6",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-      "alt": "Private car waiting at Incheon Cruise Terminal drop-off zone",
-      "caption": "Myeongdong street food and shopping",
-      "location": "Incheon Cruise Terminal",
-      "atmosphere": "Sailaway buffer return"
+      "alt": "투어 중 방문하는 인천 크루즈터미널의 풍경",
+      "caption": "인천 크루즈터미널",
+      "location": "인천 크루즈터미널",
+      "atmosphere": "출항 전 여유 귀환"
     }
   ],
   "itineraryStops": [
     {
       "number": 1,
       "time": "≈ 09:30",
-      "duration": "30 min",
+      "duration": "30분",
       "name": "크루즈 터미널 갱웨이 픽업",
-      "category": "Departure",
+      "category": "출발",
       "description": "프라이빗 드라이버 가이드가 인천 크루즈 터미널 입구에서 이름 팻말 들고 맞이. 인천 → 경복궁까지 약 60분 이동.",
       "highlights": [
-        "Private gangway pickup at Incheon Cruise Terminal",
-        "English-speaking driver-guide; private sedan or SUV (your group only)",
-        "60-90 min drive to central Seoul via Yeongjong Bridge + Incheon-Seoul Expressway",
-        "Flexible start time built around your ship's specific arrival/disembarkation",
-        "**South Korea's largest cruise terminal** — 2-story 7,364 m² building (1F arrivals / 2F departures); USD 580M total project investment; opened **April 25, 2019**",
-        "**Berths Royal Caribbean Oasis-Class** ships (228,000 GT, 6,370 passengers + 2,400 crew) — also handles MSC Bellissima, Diamond Princess, Spectrum of the Seas (2026/27 season)",
-        "**Private gangway pickup**: driver-guide commits to your group only — no shared-passenger waits at gangway, departure timed to your group's disembarkation pace",
-        "**200-vehicle parking lot** including 156 large-bus capacity; private charter typically uses sedan / minivan / SUV slots near terminal exit",
-        "**Mandatory digital e-Arrival Card since January 1, 2026** for visitors without K-ETA exemption — recommend K-ETA registration before sailing (USD 8, 3-year validity)"
+        "인천 크루즈 터미널 커브사이드 픽업 (2019년 4월 개항, 오아시스급 수용)",
+        "영종대교 + 인천-서울 고속도로로 서울 중심부까지 약 60~90분",
+        "영어 해설 가이드 겸 드라이버 동승",
+        "선박 전원 승선 시간 기준으로 일정 구성",
+        "**대한민국 최대 크루즈 터미널** — 2층 7,364m² 건물 (1층 입국/2층 출국)",
+        "**로열 캐리비안 오아시스급** 선박 수용 (22만8천 GT, 승객 6,370명 + 승무원 2,400명)",
+        "**인천 지하철 1호선 '국제업무지구역'까지 무료 항만 셔틀** 운행",
+        "**200대 주차 공간** (대형 버스 156대 포함) — 여행사 픽업 효율적",
+        "**2026년 1월 1일부터 K-ETA 없는 방문자에게 디지털 전자입국신고서 의무화**"
       ],
       "timeUsed": [
-        "Disembark cruise ship and clear Korean immigration (~30 min)",
-        "Meet driver-guide at terminal curbside with name placard",
-        "Begin private 60-90 min drive to first Seoul stop",
-        "Pre-departure check: K-ETA / e-Arrival Card status verification (~5 min)",
-        "Optional Songdo Central Park weather-fallback detour (~15 min if applicable)"
+        "크루즈 하선 및 한국 출입국 심사 — 약 30분",
+        "터미널 커브사이드 픽업 지점에서 드라이버 가이드와 만남",
+        "서울 첫 코스까지 약 60~90분 이동 시작",
+        "출발 전 K-ETA / 전자입국신고서 상태 확인 (~5분)",
+        "선택: 송도 센트럴 파크 우천 대안 (~15분, 해당 시)"
       ],
-      "whyOnRoute": "Private gangway pickup is the day's foundational guarantee — the driver-guide is committed to your group only, the ship all-aboard time is built into the schedule, and the language-barrier challenge of taxis and public transit is eliminated. For cruise guests prioritizing flexibility over cost, private charter eliminates the shared-van waiting window at the gangway, the fixed-departure pickup time, and the inflexibility of itinerary changes mid-day. The driver-guide can add or remove stops based on real-time interest (e.g. swap Myeongdong for Hongdae if your group leans young-traveler) and the all-aboard time is built into a 90-minute reboarding buffer.",
+      "whyOnRoute": "프라이빗 선착장 픽업이 하루의 기본 안전한 출발 지점 — 드라이버 가이드가 귀하의 그룹에만 전념.",
       "visitBasics": {},
       "convenience": {},
       "smartNotes": {
-        "tip": "Provide ship name + scheduled arrival + all-aboard time at booking. The driver-guide will arrive 30-60 min after your scheduled docking to allow immigration clearance. Cruise terminal Korean address: 인천항 크루즈터미널 (연수구 국제항만대로 438)."
+        "tip": "한국 출입국 심사 최소 30분 확보. 여권 + 크루즈 카드 접근 용이하게 준비.",
+        "photo": "터미널 외관 + 크루즈 기대감 포토 명소."
       },
       "_poi_meta": {
         "poi_key": "incheon_cruise_terminal",
@@ -241,43 +241,43 @@
     {
       "number": 2,
       "time": "≈ 10:30",
-      "duration": "75 min",
+      "duration": "75분",
       "name": "경복궁 + 수문장 교대 의식",
-      "category": "Joseon Royal Palace",
+      "category": "조선 왕조 제1 법궁 — 유네스코 역사지구 중심",
       "description": "1395년 창건 조선왕조 정궁. 수문장 교대 의식(10:00, 14:00 광화문 광장). 근정전, 경회루 탐방. 한복 착용 시 무료 입장. 화요일 휴관(창덕궁으로 대체). 방문 시간: 약 90분.",
       "highlights": [
-        "Joseon Dynasty's main palace — built 1395 as the heart of new Seoul",
-        "Geunjeongjeon Throne Hall — largest wooden building in Korea",
-        "Gyeonghoeru Pavilion — 48-pillar banquet pavilion on lotus pond",
-        "Hyangwonjeong Pavilion — Korea's most photographed garden scene",
-        "Royal Guard Changing Ceremony at Heungnyemun Gate (10:00 + 14:00 daily)",
-        "**Closed Tuesdays** — substitute Changdeokgung Palace (UNESCO World Heritage 1997)",
-        "FREE admission for hanbok-wearers",
-        "**Royal Guard Changing Ceremony re-enacted since 1996** based on Cultural Heritage Administration historical research — went on hiatus after 2008 Sungnyemun arson incident, resumed 2016 (with the 70+ performer authentic-armor format used today)",
-        "**3 additional ceremonies between main 10:00 + 14:00 changes**: Gwanghwamun Gate Guard Ceremony at 11:00 + 13:00; Public Training of Royal Guard Soldiers at 09:35 + 13:35 — total 6 daily reenactments (except Tuesdays)"
+        "조선 왕조의 제1 법궁 — 새 수도 한양의 심장으로 1395년 창건",
+        "근정전 — 한국 최대 목조 건물",
+        "경회루 — 48개 기둥 위 연못 누각 (왕실 연회 장소)",
+        "수문장 교대식 매일 10:00 + 14:00 (약 20분, 화요일 제외)",
+        "향원정 — 한국 가장 많이 촬영된 후원 장면",
+        "한복 착용 시 **무료 입장**",
+        "**화요일 휴관** — 대체: 창덕궁 (유네스코 세계유산 1997)",
+        "**1996년 이후 수문장 교대식 재현** — 문화재청 고증 기반",
+        "**광화문 수문장 교대 의식 등 주요 교대식 사이에 3회 추가 의식** 진행"
       ],
       "timeUsed": [
-        "Driver-guide drop-off at Gwanghwamun Square (~5 min)",
-        "Royal Guard Changing Ceremony if 10:00 timing (~20 min)",
-        "Throne Halls + Gyeonghoeru + Hyangwonjeong walk (~35-40 min)",
-        "Photo time + reassembly at vehicle",
-        "Optional National Folk Museum or National Palace Museum extension (within grounds, free) (~15 min if interested)"
+        "도착, 매표, 가이드 오리엔테이션 — 약 10분",
+        "시간이 맞으면 수문장 교대식 관람 (10:00 또는 14:00, 약 20분)",
+        "근정전 + 경회루 + 향원정 자유 탐방 — 약 50분",
+        "사진 + 차량 집결 — 약 10분",
+        "선택: 국립민속박물관 또는 국립고궁박물관 (경내 위치, 무료) — 약 15분"
       ],
-      "whyOnRoute": "Gyeongbokgung is Seoul's #1 must-see and the natural opener for a private cruise excursion. The flexible private-tour pace allows lingering at Royal Guard ceremony and pavilion photography that group bus tours rush. For cruise guests on private charter, the 90-min Gyeongbokgung dwell adapts to your group's pace — historians can extend at the throne hall while photo-takers move ahead to Gyeonghoeru Pavilion, with the driver-guide flexing the schedule by ±15 min. Picked over Deoksugung (Western-influenced, smaller) because the changing-of-the-guard pageantry, scale of the throne-hall complex, and photogenic Gyeonghoeru/Hyangwonjeong pavilions deliver a single 90-min visit that explains 500 years of Joseon court life in concrete visual terms — essential for cruise passengers with one day in Korea. Tuesday-arrival groups get redirected to Changdeokgung (UNESCO World Heritage 1997).",
+      "whyOnRoute": "경복궁은 서울 1위 필수 관광지이자 프라이빗 크루즈 당일 여행의 자연스러운 시작점.",
       "visitBasics": {
-        "hours": "Mar-May, Sep-Oct: 09:00-18:00; Jun-Aug: 09:00-18:30; Nov-Feb: 09:00-17:00 (last admission 1 hr before close)",
-        "closed": "**Tuesdays** (substitute Changdeokgung)",
-        "admission": "Adult 3,000 KRW / Child 1,500 KRW; FREE for hanbok-wearers",
-        "walking": "Moderate — flat extensive grounds; ~1.5-2 km of walking through main complex"
+        "hours": "3~5월·9~10월 09:00~18:00; 6~8월 09:00~18:30; 11~2월 09:00~17:00 (마지막 입장 1시간 전)",
+        "closed": "**화요일** (대체: 창덕궁)",
+        "admission": "성인 ₩3,000 / 어린이 ₩1,500; 한복 착용 시 무료; 궁궐 통합권 ₩10,000",
+        "walking": "중간 강도 — 넓은 평탄 마당; 주요 구역 도보 약 1.5~2km"
       },
       "convenience": {
-        "restroom": "At main entrance, mid-grounds, rear pavilion area",
-        "parking": "Driver-guide drops at Gwanghwamun and parks separately"
+        "restroom": "정문, 경내 중간, 후원 구역 화장실",
+        "parking": "제한적; 광화문 근처 투어 버스 승·하차 구역"
       },
       "smartNotes": {
-        "photo": "Gwanghwamun gate at sunrise / golden hour. Royal Guard Changing Ceremony 10:00 + 14:00. Gyeonghoeru reflected in lotus pond. Hyangwonjeong covered bridge in spring (cherry blossoms) or autumn (foliage).",
-        "facilities": "National Folk Museum + National Palace Museum INSIDE Gyeongbokgung grounds (free admission). Cafes, restrooms, gift shop near entrance.",
-        "tip": "Time arrival for 10:00 Changing of the Guard. Skip Tuesday — Changdeokgung substitute. If your group is interested in palace architecture beyond surface-level photos, ask the driver-guide for a 30-min walking commentary on Joseon hierarchy and royal etiquette."
+        "photo": "일출/황금빛 시간대 광화문. 수문장 교대식 10:00 + 14:00. 향원정 연못 반영.",
+        "facilities": "국립민속박물관 + 국립고궁박물관 모두 경복궁 경내 위치 (무료). 인근 한복 대여점.",
+        "tip": "10:00 교대식 관람 시 09:50까지 흥례문 앞에 도착. 한복 착용 시 입장료 절약. 화요일에는 창덕궁이 대체지."
       },
       "_poi_meta": {
         "poi_key": "gyeongbokgung_palace",
@@ -297,43 +297,43 @@
     {
       "number": 3,
       "time": "≈ 12:00",
-      "duration": "75 min",
+      "duration": "75분",
       "name": "북촌한옥마을 + 인사동",
-      "category": "Hanok Heritage Village + Crafts Street",
-      "description": "북촌(600년 전통 한옥 주거지) 포토 스팟 탐방 후 인사동(전통 공예·문화 거리)으로 이동. 전체 방문 시간: 약 60분.",
+      "category": "전통 한옥 보존 지구 — 서울 최대 규모",
+      "description": "북촌(600년 전통 한옥 주거지) 포토 명소 탐방 후 인사동(전통 공예·문화 거리)으로 이동. 전체 방문 시간: 약 60분.",
       "highlights": [
-        "Bukchon 8 Gyeong (8 Famous Views) — iconic hanok-roofline + N Seoul Tower at #6",
-        "~900 preserved hanok homes — Seoul's largest traditional residential district",
-        "Insadong Ssamzigil 4-story spiral cultural complex (70+ shops + rooftop terrace)",
-        "Traditional teahouses, hanji paper workshops, Goryeo celadon galleries",
-        "5-10 min walk between Bukchon and Insadong",
-        "Pedestrian-only weekends (Sat-Sun)",
-        "**~600 years old** — historic district between Gyeongbokgung and Changdeokgung Palaces, originally home to Joseon Dynasty high-ranking officials and aristocracy",
-        "**Resident-quiet hours 22:00–10:00 enforced** — village is a LIVING residential community (not a museum); cultural respect protocol critical (no flash photography in alleys, voices down, no drones)",
-        "**Combination Royal Palaces Ticket ₩10,000 adult / ₩5,000 child** covers all 4 royal palaces + Jongmyo Shrine — 3-month validity; savings vs single tickets if pairing with private hanok-tour day"
+        "서울 최대 한옥 보존 지구 — 좁은 면적에 약 900채 전통 가옥 밀집",
+        "북촌 8경 — #6 전망대의 N서울타워를 배경으로 한 한옥 지붕선이 대표 사진 포인트",
+        "박물관이 아닌 살아있는 주거 마을 — 주민들이 조용한 방문과 예의 있는 태도를 요청",
+        "문화 공방: 매듭 공예, 한지 공예, 다도, 자수",
+        "마을 외곽 한복 대여점 — 경복궁 무료 입장 콤보",
+        "인사동 문화 거리까지 도보 5~10분",
+        "**약 600년 역사** — 경복궁과 창덕궁 사이 역사 지구, 원래 조선 왕실 관리 거주지",
+        "**22:00~10:00 주민 요청 조용한 시간** — 살아있는 주거 공동체",
+        "**4궁 통합권 ₩10,000 성인 / ₩5,000 어린이** — 경복궁·창덕궁 등 4궁궐 포함"
       ],
       "timeUsed": [
-        "Driver-guide drop-off near Bukchon entrance (~5 min)",
-        "Bukchon 8 Views walk + photos (~30-40 min)",
-        "Walk south to Insadong (~5-10 min)",
-        "Insadong Ssamzigil + craft shopping (~30 min)",
-        "Reassembly at vehicle"
+        "가이드 간단 오리엔테이션 — 약 5분",
+        "북촌 8경 자유 탐방 — 약 50~60분",
+        "선택: 문화 공방 또는 찻집 또는 한복 사진 — 약 15분",
+        "집결 장소 이동",
+        "선택: 한복 대여 + 사진 촬영 (마을 외곽, ₩15,000~20,000 / 4시간) — 약 15분"
       ],
-      "whyOnRoute": "Pairing Bukchon and Insadong in a single 75-min stop reflects the private-tour flexibility — your driver-guide drops at Bukchon's north end and picks up at Insadong's south end, eliminating backtracking. Picked over the Namsangol Hanok Village curated open-air museum because Bukchon's living-village authenticity plus Insadong's craft-shopping commercial appeal cover both 'traditional residential' and 'traditional crafts' narratives in one walk. The private-charter format means the driver-guide can drop at Bukchon's north end (Bukchongil Road) and pick up at the south end near Insadong, eliminating backtracking and saving ~10 min vs the bus-tour drop-and-return pattern.",
+      "whyOnRoute": "북촌과 인사동을 75분 단일 코스로 묶는 것은 프라이빗 투어 유연성 반영.",
       "visitBasics": {
-        "hours": "Bukchon 24/7 (residents request quiet 22:00-10:00); Insadong shops 10:00-22:00",
-        "closed": "Open year-round (some Insadong galleries closed Mondays)",
-        "admission": "Free; pay-as-you-go for purchases, teahouses, workshops",
-        "walking": "Moderate — Bukchon has cobbled, sloped alleys; Insadong is flat"
+        "hours": "24시간 (골목 항상 접근 가능); 주민 22:00~10:00 조용한 시간 요청",
+        "closed": "연중 무휴; 일부 사설 한옥 박물관 월요일 휴관 가능",
+        "admission": "골목 무료 (공방·사설 박물관 ₩5,000~10,000)",
+        "walking": "중간 강도 — 자갈 포장, 경사 골목; 편안한 신발 필수"
       },
       "convenience": {
-        "restroom": "Tourist Information Center at Bukchon entrance + Anguk Station Exit 6",
-        "parking": "Driver-guide handles parking separately"
+        "restroom": "북촌 입구 관광안내소; 마을 내 카페",
+        "parking": "제한적; 경복궁에서 도보 거리"
       },
       "smartNotes": {
-        "photo": "Bukchon 8 Gyeong #6 viewpoint at Gye-dong-gil. Hanbok-wearers framed against tile-roof gables. Ssamzigil spiral interior + rooftop terrace. Korean wedding-color threads at hanbok-accessory shops.",
-        "facilities": "Tourist Information Centers, traditional teahouses, hanji workshops, ceramic galleries, multiple cafes throughout. Balwoo Gongyang (Michelin temple cuisine) at Jogyesa nearby.",
-        "tip": "Visit Bukchon before noon when residents are out + lanes are quietest. Insadong best on weekends when pedestrian-only. Best souvenirs: hanji paper crafts, traditional ink stamps (dojang), small ceramics, traditional tea sampler boxes. If interested in hanbok rental — shops cluster at Bukchon's southwestern edge, ~15,000-20,000 KRW for 4 hr."
+        "photo": "**북촌 8경 #6 전망대** — 계동길에서 N서울타워 배경 한옥 지붕선 구도. 이른 아침이 가장 한산.",
+        "facilities": "안국역 2번 출구 근처 다국어 안내 지도 제공 관광안내소. 카페, 공예 공방 분포.",
+        "tip": "주민 요청으로 낮 12시 전 또는 16시 이후 방문 권장. 주말 오전 10시 이전 가장 한산."
       },
       "_poi_meta": {
         "poi_key": "bukchon_hanok_village",
@@ -357,36 +357,36 @@
     {
       "number": 4,
       "time": "≈ 13:30",
-      "duration": "60 min",
+      "duration": "60분",
       "name": "점심 (선택)",
-      "category": "Meal — Customizable",
+      "category": "식사 — 맞춤형",
       "description": "드라이버 가이드가 그룹 취향에 맞게 세 가지 옵션 제안: (1) 광장시장 길거리 음식, (2) 인사동 한식당, (3) 남산 근처 레스토랑. 점심 비용은 별도.",
       "highlights": [
-        "Lunch venue YOUR choice — 4 vetted options (street food, traditional, institution, royal court)",
-        "Gwangjang Market: working-class streetfood paradise (Bourdain-famous)",
-        "Insadong hanok prix-fixe: mid-tier sit-down Korean (~15,000-25,000 KRW)",
-        "Myeongdong Kyoja / Hadongkwan: Korean dining institutions",
-        "Korea House: royal court cuisine premium experience (60,000-120,000 KRW)",
-        "Dietary needs accommodated at booking"
+        "점심 장소 직접 선택 — 4가지 검증 옵션 (길거리 음식, 전통, 기관식, 코스 요리)",
+        "광장시장: 서민 길거리 음식 천국 (앤서니 부르댕도 즐겨 찾은 곳)",
+        "인사동 한옥 세트 메뉴: 중가 한식 코스 (~₩15,000~25,000)",
+        "명동교자 / 하동관: 한국의 대표 식당",
+        "한국의집: 궁중 요리 고급 체험 (60,000~120,000원)",
+        "예약 시 식이 요건 수용"
       ],
       "timeUsed": [
-        "Driver-guide drop-off at chosen venue",
-        "Meal (~45-50 min)",
-        "Reassembly at vehicle"
+        "가이드 겸 드라이버가 선택 장소 하차",
+        "식사 (~45~50분)",
+        "차량에서 집결"
       ],
-      "whyOnRoute": "Genuine lunch customization is the private-tour value driver — group bus tours commit to a single lunch venue, but private cruise passengers often have specific dietary needs or strong preferences (e.g., 'no streetfood' for some / 'authentic only' for others). The 4-option menu covers 95%+ of mainstream cruise-passenger preferences without forcing a single choice.",
+      "whyOnRoute": "진정한 점심 맞춤화가 프라이빗 투어 가치.",
       "visitBasics": {
-        "hours": "Most options 11:00-15:00 lunch service",
-        "closed": "Varies by venue",
-        "admission": "Pay-as-you-go (12,000 — 120,000 KRW range depending on choice)",
-        "walking": "Easy — venue-dependent"
+        "hours": "대부분 11:00~15:00 점심 운영",
+        "closed": "장소에 따라 다름",
+        "admission": "현장 결제 (₩12,000~120,000 범위)",
+        "walking": "쉬움 — 장소별 상이"
       },
       "convenience": {
-        "restroom": "Restaurant restrooms",
-        "parking": "Driver-guide handles parking separately"
+        "restroom": "식당 화장실",
+        "parking": "가이드 겸 드라이버가 별도 처리"
       },
       "smartNotes": {
-        "tip": "Communicate dietary preferences (vegetarian, halal, no-spicy, gluten-free) at booking. Royal court cuisine at Korea House requires advance reservation — book 24+ hr ahead. Cash recommended for Gwangjang Market option (10,000-20,000 KRW per person)."
+        "tip": "식이 요건 (채식, 할랄, 맵지 않게, 글루텐 프리)은 예약 시 미리 알려주세요."
       },
       "_poi_meta": {
         "poi_key": "OPS_lunch_customizable",
@@ -398,43 +398,43 @@
     {
       "number": 5,
       "time": "≈ 14:30",
-      "duration": "60 min",
+      "duration": "60분",
       "name": "N서울타워 (남산)",
-      "category": "Iconic Tower (Viewpoint)",
+      "category": "서울 랜드마크 전망대",
       "description": "남산(해발 243m) 위에 세운 높이 236.7m 방송·전망 타워. 타워 정점은 해발 480m. 전망대(₩21,000 성인 선택)에서 서울 360° 파노라마 조망. 남산 케이블카(₩14,000 왕복 선택) 또는 도보로 접근. 방문 시간: 약 60분.",
       "highlights": [
-        "Seoul's most iconic landmark — 236.7 m tower atop Namsan (479.7 m above sea level)",
-        "Constructed 1969-1971, opened 1980, rebranded N Seoul Tower 2005",
-        "#1 tourist attraction by foreign-tourist survey (2012); 12 million annual visitors",
-        "360° observation deck (Adult 21,000 / Senior+Child 16,000 KRW)",
-        "Iconic Locks of Love wall + N Grill revolving restaurant (free observatory with reservation)",
-        "Namsan Cable Car — Korea's FIRST aerial tramway (1962), ~3 min ride",
-        "K-drama filming: My Love From The Star, Boys Over Flowers, Korean Odyssey",
-        "**Taxis PROHIBITED from entering the park** — cable car or shuttle bus only",
-        "**Namsan Cable Car (1962)** = Korea's FIRST aerial tramway; pre-N-Seoul-Tower-rebrand the structure was simply called 'Seoul Tower' from 1980 to December 2005 (CJ Foodville renovation + rebrand)"
+        "서울 가장 상징적인 랜드마크 — 남산(해발 479.7m) 위 236.7m 타워",
+        "1969~1971년 건설, 1980년 개방, 2005년 N서울타워로 재브랜딩",
+        "외국인 관광 만족도 조사 1위 (2012); 연간 1,200만 방문객",
+        "360° 전망대 (성인 ₩21,000 / 경로·어린이 ₩16,000)",
+        "상징적인 사랑의 자물쇠 벽 + N그릴 회전 레스토랑 (예약 시 전망대 무료)",
+        "남산 케이블카 — 한국 최초 가공 삭도 (1962년), 약 3분 탑승",
+        "K-드라마 촬영: 별에서 온 그대, 꽃보다 남자, 화유기",
+        "**공원 진입 택시 금지** — 케이블카 또는 순환 버스만 이용",
+        "**남산 케이블카 (1962년)** = 한국 최초 가공 삭도; N서울타워 리브랜딩 이전부터 존재"
       ],
       "timeUsed": [
-        "Driver-guide drop-off at Namsan Cable Car base or shuttle bus stop (~5 min)",
-        "Cable car ride up (~3 min) OR shuttle bus (~5 min)",
-        "Observation deck or panoramic concourse views (~30-35 min)",
-        "Locks of Love photo + cafe stop (~10-15 min)",
-        "Cable car / shuttle down + return to vehicle"
+        "남산 케이블카 탑승장 또는 순환 버스 정류장 하차 — 약 5분",
+        "케이블카 탑승 (약 3분) 또는 순환 버스 (약 5분)",
+        "전망대 또는 파노라마 라운지 — 약 30~35분",
+        "사랑의 자물쇠 사진 + 카페 — 약 10~15분",
+        "케이블카/버스 하강 + 차량 귀환"
       ],
-      "whyOnRoute": "N Seoul Tower is Seoul's #1 'photo this means I was in Korea' landmark — and the 360° view orientates first-time visitors to Seoul's geography (Bukhansan north, Han River south, Gangnam east). Picked over Lotte World Tower (taller at 555 m / world's 5th tallest) because Namsan's central location AND lower elevation actually deliver better intermediate-distance views of the historic central districts (Gyeongbokgung, Bukchon) that you've just visited. The 360° view also delivers a **memorable photo album anchor** — the 'Locks of Love' wall + N Seoul Tower exterior + the Seoul cityscape make this the day's most-shared social-media moment for first-time cruise visitors.",
+      "whyOnRoute": "N서울타워는 서울 1위 '한국에 왔음을 증명하는' 랜드마크.",
       "visitBasics": {
-        "hours": "Observation deck weekdays 10:30-22:00; weekends 10:00-23:00 (last admission 30 min before close). Cable car 10:00-23:00 (Mon stops 09:00-14:00 for inspection)",
-        "closed": "Open year-round 365 days",
-        "admission": "Observatory Adult 21,000 / Senior+Child 16,000 KRW; Cable Car Adult RT ~14,000 KRW separate; FREE base plaza views",
-        "walking": "Moderate — vehicle drops at Namsan Cable Car base or shuttle bus stop; cable car or short walk up"
+        "hours": "전망대 평일 10:30~22:00; 주말 10:00~23:00 (마지막 입장 30분 전)",
+        "closed": "연중 365일",
+        "admission": "전망대 성인 ₩21,000 / 경로·어린이 ₩16,000; 케이블카 성인 왕복 약 ₩14,000 별도",
+        "walking": "중간 강도 — 차량으로 남산 케이블카 탑승장까지; 케이블카 또는 셔틀로 타워 도착"
       },
       "convenience": {
-        "restroom": "Multiple levels of tower; observatory restrooms with floor-to-ceiling windows",
-        "parking": "Driver-guide drops at Namsan Yejang Parking or Namsan Cable Car base"
+        "restroom": "타워 여러 층; 전망대 화장실 통유리 창문 조망",
+        "parking": "가이드 겸 운전기사가 남산 예장 주차장 또는 케이블카 탑승장 하차"
       },
       "smartNotes": {
-        "photo": "Tower with Seoul skyline at night is the iconic shot — the panoramic concourse at the base is FREE and nearly as good as the paid observatory. Love Locks wall on terrace. Sunset from observatory windows.",
-        "facilities": "N Grill revolving restaurant (free observatory with reservation), HanCook (free observatory with reservation), Cinnabon, A Twosome Place, multiple cafes, Game Plaza arcade.",
-        "tip": "**FREE observatory hack**: book N Grill or HanCook in advance. Otherwise, the panoramic concourse views at the base are mostly FREE. Visit at sunset for the day-to-night transition (queue at 17:00 for 18:00 sunset in summer). Cable car queues hit 20+ min on weekends — plan accordingly. NEVER take a taxi — taxis are prohibited from the park."
+        "photo": "야경 서울 스카이라인이 대표 — 해질 무렵부터 야간이 최적. 사랑의 자물쇠 벽도 포토 명소.",
+        "facilities": "N그릴 회전 레스토랑 (예약 시 전망대 무료), 한쿡 레스토랑, 카페.",
+        "tip": "**전망대 무료 입장 꿀팁**: N그릴 또는 한쿡 사전 예약. 아니면 파노라마 라운지가 더 저렴한 대안."
       },
       "_poi_meta": {
         "poi_key": "n_seoul_tower",
@@ -454,43 +454,43 @@
     {
       "number": 6,
       "time": "≈ 15:30",
-      "duration": "60 min",
+      "duration": "60분",
       "name": "명동 또는 조계사 (선택)",
-      "category": "Shopping & Local Culture — Customizable",
+      "category": "쇼핑 & 현지 문화 — 맞춤형",
       "description": "하루의 마지막 경유지는 그룹이 선택: 옵션 A — 명동: 서울 최대 쇼핑·K뷰티 거리. 노점 길거리 음식과 대형 면세점. 옵션 B — 조계사: 서울 중심부 조계종 총본산 사찰(1395년 창건). 연등 시즌 특히 아름다움. 방문 시간: 약 40분.",
       "highlights": [
-        "**Myeongdong (Option A)**: Seoul's #1 shopping/K-beauty district + 1898 Myeongdong Cathedral",
-        "Major K-beauty flagships (Innisfree, Olive Young, etc.) with generous free samples",
-        "Myeongdong street food: tornado potatoes, hotteok, cheesy corn dogs, tanghulu",
-        "**Jogyesa Temple (Option B)**: Head temple of Jogye Order (Korea's largest Buddhist Order)",
-        "Daeungjeon = largest temple building in Seoul; 500-year-old Baeksong (Natural Monument No. 9)",
-        "Jogyesa FREE admission; Seoul's only major traditional temple in city center",
-        "Driver-guide adjusts based on your group's interest",
-        "**Myeongdong Cathedral (1898)** — Korea's first brick Gothic Catholic church; **historically significant role in 1980s democratization movement** as a sanctuary for protesters during military rule (1987 June Democratic Struggle key gathering point)",
-        "**Lotte Department Store Myeongdong main branch** — Korea's flagship department store with **rooftop garden + observation deck** (free); largest tax-refund counter in Korea for tourist purchases over ₩30,000"
+        "**명동 (옵션 A)**: 서울 최대 K-뷰티 쇼핑 구역 + 1898년 명동성당",
+        "주요 K-뷰티 플래그십 (이니스프리, 올리브영 등) 넉넉한 무료 샘플",
+        "명동 길거리 음식: 토네이도 감자, 호떡, 치즈 핫도그, 탕후루",
+        "**조계사 (옵션 B)**: 조계종 본사 (한국 최대 불교 종단) — 대웅전 = 서울 최대 사찰 건물",
+        "대웅전 = 서울 최대 사찰 건물; 500년 수령 백송 (천연기념물)",
+        "조계사 **무료 입장**; 서울 시내 유일 주요 전통 사찰",
+        "드라이버 가이드가 그룹 관심사에 따라 조정",
+        "**명동 성당 (1898)** — 한국 최초 벽돌 고딕 가톨릭 성당",
+        "**롯데 백화점 명동 본점** — 한국 플래그십 백화점"
       ],
       "timeUsed": [
-        "Driver-guide drop-off at chosen venue (~5 min)",
-        "Self-paced exploration (~50 min)",
-        "Reassembly at vehicle",
-        "Optional Myeongdong Cathedral interior visit (5-min walk from main shopping street, FREE) (~10 min)",
-        "Optional Lotte Department Store rooftop garden + tax-refund counter (~15 min)"
+        "선택 장소 가이드 드롭오프 — 약 5분",
+        "자유 탐방 — 약 50분",
+        "차량에서 집결",
+        "선택: 명동성당 내부 방문 (메인 쇼핑 거리에서 도보 5분)",
+        "선택: 롯데백화점 옥상 정원 + 택스 리펀드 카운터 (~15분)"
       ],
-      "whyOnRoute": "The Myeongdong-vs-Jogyesa choice covers the two most natural 'last hour in Seoul' frames: 'shop and eat' vs 'reflect and absorb.' Picked over forcing a single venue because the customizable choice IS the private-tour value proposition — group bus tours can't offer this binary in-the-moment decision. For cruise guests, the Myeongdong-Jogyesa choice is the day's most flexible private-charter advantage — your driver-guide reads the group's energy level and interest at ~16:00 and routes to whichever venue fits (Myeongdong's bustle for shoppers/foodies; Jogyesa's calm for cultural depth). The choice is impossible on bus tours where the route is fixed before departure.",
+      "whyOnRoute": "명동 vs 조계사 선택이 가장 자연스러운 두 가지 '서울의 마지막 한 시간' 프레임 커버.",
       "visitBasics": {
-        "hours": "Myeongdong: shops 10:30-22:00, street food 12:00-22:00. Jogyesa: grounds 24/7, main halls 06:00-18:00",
-        "closed": "Both open year-round",
-        "admission": "Both FREE (Myeongdong purchases pay-as-you-go; Jogyesa fee-free)",
-        "walking": "Easy at both — Myeongdong flat pedestrian zone; Jogyesa flat compact temple grounds"
+        "hours": "명동: 매장 10:30~22:00, 길거리 음식 12:00~22:00. 조계사: 경내 24시간, 주요 시간 07:00~21:00",
+        "closed": "연중 무휴",
+        "admission": "둘 다 무료 (명동 현금 지출; 조계사 무료)",
+        "walking": "쉬움 — 둘 다 평탄"
       },
       "convenience": {
-        "restroom": "Myeongdong: Lotte/Shinsegae department stores, subway stations. Jogyesa: on temple grounds",
-        "parking": "Driver-guide handles separately"
+        "restroom": "명동: 롯데/신세계 백화점, 지하철역. 조계사: 경내",
+        "parking": "가이드 겸 운전기사가 별도 처리"
       },
       "smartNotes": {
-        "photo": "Myeongdong: main pedestrian street at evening illumination with N Seoul Tower in the distance; Myeongdong Cathedral Gothic façade. Jogyesa: Daeungjeon Main Hall + Lotus Lanterns (May) + 500-year-old Baeksong pine + ten-story stone pagoda.",
-        "facilities": "Myeongdong: department stores, K-beauty flagships, street food, Tourist Information Centers, tax-refund counters. Jogyesa: Buddhist souvenir shops, foreign-language information center, Balwoo Gongyang Michelin temple cuisine restaurant 5 min away.",
-        "tip": "**Myeongdong**: bring CASH 20,000 KRW. Free K-beauty samples generous. POPMART for Labubu blind-boxes. **Jogyesa**: wear modest clothing entering Main Hall. Visit during Lotus Lantern Festival (May) for the iconic illumination experience. Pair with Insadong (5-min walk) if time allows."
+        "photo": "명동: 저녁 조명의 메인 보행자 거리 + N서울타워 배경. 조계사: 도심 속 전통 사찰 풍경.",
+        "facilities": "명동: 백화점, K-뷰티 플래그십, 길거리 음식, 관광안내소.",
+        "tip": "**명동**: 현금 ₩20,000 지참. K-뷰티 무료 샘플 넉넉함."
       },
       "_poi_meta": {
         "poi_key": "myeongdong",
@@ -512,26 +512,26 @@
     {
       "number": 7,
       "time": "≈ 16:30",
-      "duration": "≈ 90 min",
+      "duration": "약 90분",
       "name": "인천 크루즈 터미널 귀환",
-      "category": "Return — Sail-away Buffer Built In",
+      "category": "귀환",
       "description": "선박 출항 90분+ 전 인천 크루즈 터미널 귀환. 드라이버 가이드가 출항 일정을 실시간으로 파악해 이동합니다.",
       "highlights": [
-        "60-90 min private return drive via Incheon-Seoul Expressway",
-        "Driver-guide ensures arrival 90+ min before ship's all-aboard",
-        "Curbside drop-off at terminal entrance",
-        "Sail-away timing guaranteed (the 'Guaranteed return' product feature)"
+        "인천 크루즈 터미널까지 약 60~90분 드라이브",
+        "터미널 입구 커브사이드 하차",
+        "표준 전원 승선 시간 기준 60~90분 전 도착 구성",
+        "출항 시간에 맞춘 항구 안전 복귀"
       ],
       "timeUsed": [
-        "Boarding vehicle at final Seoul stop",
-        "60-90 min drive via expressway",
-        "Curbside drop-off at terminal — proceed to ship re-entry"
+        "마지막 서울 코스에서 밴 탑승",
+        "인천-서울 고속도로로 60~90분 이동",
+        "터미널 커브사이드 하차 — 선박 재입장"
       ],
-      "whyOnRoute": "Return logistics with sail-away guarantee — the private-tour structure means your group is not waiting on other passengers at multiple drop points; the driver routes direct to terminal. The 90-min buffer is the operator's commitment, not the cruise passenger's responsibility.",
+      "whyOnRoute": "출항 시간에 맞춘 항구 안전 복귀 물류 — 프라이빗 투어 구조로 다른 승객 대기 불필요.",
       "visitBasics": {},
       "convenience": {},
       "smartNotes": {
-        "tip": "Cruise terminal Korean address: 인천항 크루즈터미널 (연수구 국제항만대로 438) — keep handy. All-aboard time on your cruise card; confirm before driver-guide picks you up at last stop. Rare-traffic note: expressway delays during Korean public holidays (Chuseok, Lunar New Year) may extend transit."
+        "tip": "크루즈 터미널 한국어 주소: 인천항 크루즈터미널 (연수구 국제항만대로 438) — 긴급 상황 시 대비."
       },
       "_poi_meta": {
         "poi_key": "OPS_return_incheon",
@@ -543,106 +543,106 @@
   ],
   "routeFlowStops": [
     {
-      "name": "Incheon Cruise Terminal",
+      "name": "인천 크루즈 터미널",
       "type": "origin",
-      "theme": "Departure"
+      "theme": "출발"
     },
     {
-      "name": "Gyeongbokgung Palace",
+      "name": "경복궁",
       "type": "primary",
-      "theme": "Heritage Palace"
+      "theme": "문화유산 궁궐"
     },
     {
-      "name": "Bukchon Hanok Village + Insadong",
+      "name": "북촌 한옥 마을 + 인사동",
       "type": "primary",
-      "theme": "Heritage Village"
+      "theme": "전통 마을"
     },
     {
-      "name": "Lunch (Insadong / Tosokchon / BBQ)",
+      "name": "점심 (인사동/토속촌/BBQ)",
       "type": "meal",
-      "theme": "Meal"
+      "theme": "식사"
     },
     {
-      "name": "N Seoul Tower (Namsan)",
+      "name": "N서울타워 (남산)",
       "type": "secondary",
-      "theme": "City View"
+      "theme": "도시 전망"
     },
     {
-      "name": "Myeongdong or Jogyesa Temple",
+      "name": "명동 또는 조계사",
       "type": "secondary",
-      "theme": "Temple"
+      "theme": "사찰"
     },
     {
-      "name": "Incheon Cruise Terminal",
+      "name": "인천 크루즈 터미널",
       "type": "return",
-      "theme": "Return"
+      "theme": "귀환"
     }
   ],
   "routePhases": [
     {
       "phase": "출발 이동",
-      "duration": "≈ 1 hour",
+      "duration": "약 1시간",
       "description": "인천 크루즈 터미널 갱웨이 픽업 → 서울 중심(약 60분 이동)."
     },
     {
       "phase": "문화유산 핵심",
-      "duration": "≈ 3 hours",
+      "duration": "약 3시간",
       "description": "경복궁+수문장 교대 → 북촌한옥마을+인사동."
     },
     {
       "phase": "점심 + 전망대",
-      "duration": "≈ 2 hours",
+      "duration": "약 2시간",
       "description": "선택 점심 → N서울타워(남산)."
     },
     {
       "phase": "서울 마지막 경유지",
-      "duration": "≈ 1 hour",
+      "duration": "약 1시간",
       "description": "명동 또는 조계사 선택."
     },
     {
       "phase": "귀환 이동",
-      "duration": "≈ 1 hour",
-      "description": "서울 → 인천 크루즈 터미널. 귀선 90분 전 도착 보장."
+      "duration": "약 1시간",
+      "description": "서울 → 인천 크루즈 터미널. 승선 마감 90분 전 승선 마감 전에 항구로 안전하게 복귀하는 것을 최우선으로 운영."
     }
   ],
   "routeShapeIntro": {
-    "title": "How this day flows",
-    "subtitle": "A point-to-point loop that starts and ends at your ship's gangway. The Seoul itinerary itself is a cluster, not a line — Gyeongbokgung, Bukchon, Insadong, and Myeongdong are all within a 20-minute radius of each other, which is what makes a 7–9 hour port day workable. The driver-guide's main job, after the cultural commentary, is keeping your sail-away time visible at every transition."
+    "title": "하루 일정",
+    "subtitle": "선박 갱웨이에서 출발하고 도착하는 포인트-투-포인트 루프입니다. 서울 일정 자체는 직선이 아닌 권역 구성 — 경복궁, 북촌, 인사동, 명동이 모두 20분 반경 내에 있어 이동 없이 유연하게 탐방할 수 있습니다."
   },
   "whyTourWorks": {
     "bestFor": [
-      "First-time visitors to the area",
-      "Couples",
-      "Adult families"
+      "해당 지역 첫 방문자",
+      "커플",
+      "성인 가족 단위"
     ],
     "lessIdealFor": [
-      "Travelers wanting a fixed-group tour with set departures (this is private; book individually)",
-      "Cruise groups larger than the vehicle's seating (typical sedan 1–3 pax, SUV 4–6, van 7+; specify at booking)",
-      "Budget-first travelers — private format costs more than shared cruise excursions",
-      "Travelers whose all-aboard window is shorter than 7 hours (hard fit)"
+      "고정 그룹 투어를 원하는 분 주의 (프라이빗 투어)",
+      "차량 좌석 수를 초과하는 크루즈 그룹 (일반 세단/밴 최대 1~10인).",
+      "예산 우선 여행자 주의 (프라이빗은 공유 투어보다 비쌈)",
+      "전원 승선 창이 7시간 미만인 여행자 주의"
     ],
     "routeLogicSections": [
       {
-        "title": "Why this route is built this way",
+        "title": "이 코스의 추천 포인트",
         "icon": "route",
         "iconBg": "bg-sky-50/80",
         "iconColor": "text-sky-600",
         "items": [
           {
-            "label": "Built around your all-aboard time, not a fixed clock",
-            "detail": "Standard group tours run on the operator's schedule, not yours. A private cruise excursion starts the moment you disembark and ends well before your all-aboard, with a 60-minute safety buffer that absorbs Seoul traffic. The driver-guide treats the ship's departure time as the only deadline that matters."
+            "label": "고정 시계가 아닌 귀하의 전원 승선 시간에 맞춰 구성",
+            "detail": "일반 그룹 투어는 정해진 그룹 일정으로 운행됩니다. 프라이빗 크루즈 투어는 귀하가 하선하는 순간 시작되고 귀하의 특정 전원 승선 시간에 맞게 마무리됩니다."
           },
           {
-            "label": "Pickup at the gangway, not 'meet at a station in Seoul'",
-            "detail": "Cruise terminals at Incheon are 50 km from central Seoul. Public transit means a taxi to Incheon Airport, then the AREX train, then a subway line, then walking — easily 90+ minutes each way and a real risk if delayed. A private car is direct, door-to-door, and your luggage stays in the vehicle if you want."
+            "label": "'서울역에서 만나세요'가 아닌 선착장에서 픽업",
+            "detail": "인천 크루즈 터미널은 서울 중심부에서 50km 거리입니다. 대중교통으로 이동하면 인천공항까지 택시, 이후 AREX, 이후 지하철이 필요합니다. 프라이빗은 터미널 커브에서 시작합니다."
           },
           {
-            "label": "No mystery shopping stops, no group of 40",
-            "detail": "Many large cruise-line excursions include forced ginseng-shop or duty-free stops that eat 60–90 minutes of your day. A private car has no such commercial pressure: you stop where you want, for as long as you want, in your own group only."
+            "label": "미스터리 쇼핑 코스 없음, 40명 단체 없음",
+            "detail": "많은 대형 크루즈 라인 투어에는 인삼 가게나 면세점 강제 방문이 포함되어 60~90분을 소비합니다. 프라이빗 차터는 귀하의 시간을 귀하의 우선순위에 사용합니다."
           },
           {
-            "label": "Customizable on the day",
-            "detail": "Royal guard ceremony cancelled by rain? Skip Bukchon, add Jogyesa? Want to swap Myeongdong for the Korean War Memorial because your father served? All possible — a private guide-driver can rebuild the day mid-itinerary as long as the sailaway window holds."
+            "label": "당일 맞춤 가능",
+            "detail": "비로 왕실 교대식 취소? 북촌 생략하고 조계사 추가? 명동 대신 한국전쟁기념관으로 교체? 차량 안에서 조정됩니다."
           }
         ]
       }
@@ -651,129 +651,129 @@
   "practicalAccordionItems": [
     {
       "id": "inclusions",
-      "title": "What's included",
-      "preview": "Private vehicle (sedan, van, or large van depending on group size), English-speaking…",
+      "title": "포함 사항",
+      "preview": "프라이빗 차량 (그룹 크기에 따라 세단, 밴, 대형 밴), 영어 구사 드라이버 가이드",
       "content": [
-        "Private vehicle (sedan, van, or large van depending on group size), English-speaking driver-guide, fuel, tolls, parking.",
-        "Not included: admission tickets (Gyeongbokgung ₩3,000, N Seoul Tower deck ₩21,000, etc. — paid on the day), meals, tips.",
-        "The guide pre-buys palace tickets to skip lines if requested."
+        "프라이빗 차량(그룹 규모에 따라 세단, 밴, 대형 밴), 영어 가이드 겸 운전기사, 연료·통행료 포함.",
+        "미포함: 입장료(경복궁 ₩3,000, N서울타워 전망대 ₩21,000 등 — 요청 시 가이드가 사전 구매하여 줄서기 생략 가능).",
+        "가이드가 요청 시 궁궐 티켓을 사전 구매하여 줄서기를 줄여드립니다."
       ]
     },
     {
       "id": "pickup",
-      "title": "Pickup & drop-off",
-      "preview": "Driver-guide meets you at the Incheon Cruise Terminal arrival hall with a name sign.",
+      "title": "픽업 & 하차",
+      "preview": "드라이버 가이드가 이름 표지판을 들고 인천 크루즈 터미널 입국장에서 대기.",
       "content": [
-        "Driver-guide meets you at the Incheon Cruise Terminal arrival hall with a name sign.",
-        "Note that Incheon has multiple terminals — confirm with your cruise line which one your ship uses (Yeongjong-do or Songdo).",
-        "Pickup time is calibrated to your disembarkation, not a fixed clock."
+        "가이드 겸 운전기사가 이름 사인을 들고 인천 크루즈 터미널 입국장에서 대기.",
+        "인천에는 복수의 터미널이 있으니 크루즈 회사에 선박 기항 터미널을 미리 확인하세요.",
+        "픽업 시간은 귀하의 하선 시간 기준 (고정 시각 아님)."
       ]
     },
     {
       "id": "sail",
-      "title": "Sail-away timing",
-      "preview": "The driver-guide will ask for your all-aboard time at pickup.",
+      "title": "전원 승선 시간 안내",
+      "preview": "드라이버 가이드가 픽업 시 전원 승선 시간 확인 예정.",
       "content": [
-        "The driver-guide will ask for your all-aboard time at pickup.",
-        "The standard rule: you must be back on the ship at least 30 minutes before sail-away (most cruise lines).",
-        "The driver builds at least a 60-minute traffic buffer on top of that.",
-        "Seoul-Incheon transfers can take 60–90 minutes depending on rush hour."
+        "가이드 겸 운전기사가 픽업 시 전원 승선 시간을 확인합니다.",
+        "원칙: 출항 최소 30분 전 복귀 (대부분의 크루즈 회사 기준).",
+        "가이드는 여기에 최소 60분의 교통 완충을 추가합니다.",
+        "서울↔인천 이동은 러시아워에 따라 60~90분 소요."
       ]
     },
     {
       "id": "customization",
-      "title": "Customization & dietary needs",
-      "preview": "The itinerary is fully customizable.",
+      "title": "맞춤화 & 식이 요건",
+      "preview": "일정 완전 맞춤 가능.",
       "content": [
-        "The itinerary is fully customizable.",
-        "Tell us in advance about: dietary restrictions (halal, vegetarian, kosher, allergies), mobility limitations (wheelchair access at palace and tower), specific sites (Korean War Memorial, Lotte Tower observation deck, Hangang River).",
-        "The driver-guide will pre-plan the route accordingly."
+        "일정 완전 맞춤 가능.",
+        "사전에 알려주실 사항: 식이 제한(할랄, 채식, 코셔, 알레르기), 거동 필요 사항, 반드시 방문하고 싶은 코스.",
+        "가이드 겸 운전기사가 그에 맞게 루트를 사전 계획합니다."
       ]
     },
     {
       "id": "cancellation",
-      "title": "Cancellation",
-      "preview": "Free cancellation up to 24 hours before pickup.",
+      "title": "취소 정책",
+      "preview": "픽업 24시간 전까지 무료 취소 가능.",
       "content": [
-        "Free cancellation up to 24 hours before pickup.",
-        "Same-day cancellations and no-shows are non-refundable.",
-        "If your ship's port call is cancelled by the cruise line, full refund with documentation."
+        "픽업 24시간 전까지 무료 취소 가능.",
+        "당일 취소 및 노쇼는 환불 불가.",
+        "크루즈 회사 기항지 취소 시 취소 서류 제출 조건으로 전액 환불."
       ]
     },
     {
       "id": "children",
-      "title": "Children & accessibility",
-      "preview": "Children of all ages are welcome — child seats available on request (no extra cost, but…",
+      "title": "어린이 & 접근성",
+      "preview": "전 연령 어린이 환영 — 카시트 요청 시 제공 (무료, 사전 알림 필요)",
       "content": [
-        "Children of all ages are welcome — child seats available on request (no extra cost, but please advise number and age in advance).",
-        "Accessible vehicles available for wheelchair users — please request when booking, as not all vehicles in the fleet support a wheelchair lift."
+        "모든 연령 어린이 환영 — 요청 시 카시트 제공 (추가 비용 없음, 예약 시 알려주세요).",
+        "휠체어 사용자를 위한 접근성 차량 제공 가능 — 모든 차량이 장착된 것은 아니므로 예약 시 요청해 주세요."
       ]
     }
   ],
   "practicalWeatherStatic": {
     "today": {
       "temp": "—",
-      "label": "See seasonal notes"
+      "label": "계절별 안내 확인"
     },
     "tomorrow": {
       "temp": "—",
-      "label": "See seasonal notes"
+      "label": "계절별 안내 확인"
     },
-    "_seasonalSummary": "Seoul has four distinct seasons. Cruise calls in spring and autumn are typically the most pleasant; summer is hot and humid; winter is cold and dry but rarely freezing-rain.",
+    "_seasonalSummary": "서울은 사계절이 뚜렷합니다. 크루즈 기항 일정은 보통 봄과 가을이 가장 쾌적하며, 여름은 덥고 습하고 겨울은 춥고 건조하지만 결빙성 비는 드문 편입니다.",
     "_seasonalTemperatures": [
       {
-        "season": "Spring (Mar–May)",
+        "season": "봄 (3~5월)",
         "range": "5–22°C",
-        "notes": "Cherry blossoms in early–mid April. Best season for outdoor sightseeing."
+        "notes": "4월 초~중순에는 벚꽃이 피며, 야외 관광에 가장 좋은 시기입니다."
       },
       {
-        "season": "Summer (Jun–Aug)",
+        "season": "여름 (6~8월)",
         "range": "22–32°C",
-        "notes": "Hot and humid; July can have monsoon rain. Most palaces and museums are partially shaded."
+        "notes": "덥고 습하며 7월에는 장마가 있을 수 있습니다. 대부분의 궁궐과 박물관은 일부 그늘이 있습니다."
       },
       {
-        "season": "Autumn (Sep–Nov)",
+        "season": "가을 (9~11월)",
         "range": "8–22°C",
-        "notes": "Best season — clear skies, mild temperatures, foliage in late October."
+        "notes": "맑은 하늘과 온화한 기온, 10월 말 단풍까지 즐길 수 있는 최적기입니다."
       },
       {
-        "season": "Winter (Dec–Feb)",
+        "season": "겨울 (12~2월)",
         "range": "-5 to 6°C",
-        "notes": "Cold winds; bring a warm coat for the palace courtyard. Tower views often crystal clear."
+        "notes": "찬바람이 불 수 있어 궁궐 마당에서는 따뜻한 외투가 필요합니다. 타워 전망은 오히려 매우 선명한 날이 많습니다."
       }
     ]
   },
   "seasonalVariations": [
     {
-      "season": "Spring",
-      "description": "Cherry blossoms at Gyeongbokgung and along the Cheonggyecheon Stream; Bukchon's traditional houses in spring greens."
+      "season": "봄",
+      "description": "경복궁과 청계천 변 벚꽃; 북촌의 전통 한옥 골목이 봄 정취 가득."
     },
     {
-      "season": "Summer",
-      "description": "Long daylight hours mean you can squeeze N Seoul Tower into a tight window; many indoor museum options if it's hot."
+      "season": "여름",
+      "description": "긴 낮 시간으로 N서울타워를 타이트한 일정에 넣을 수 있음; 실내 박물관 많아 더운 날씨 대처 용이."
     },
     {
-      "season": "Autumn",
-      "description": "Maple foliage at Gyeongbokgung's rear garden (Hyangwonjeong) and along Bukchon ridges; clearest air for tower viewpoints."
+      "season": "가을",
+      "description": "경복궁 후원(향원정)과 북촌 능선 단풍; 크루즈 기항 최상의 시계 조건."
     },
     {
-      "season": "Winter",
-      "description": "Snow on the palace courtyards is one of Seoul's classic photographs; fewer crowds at major sites."
+      "season": "겨울",
+      "description": "눈 덮인 궁궐 마당은 서울 대표 포토 명소; 주요 명소 한산. 따뜻한 방한 준비 필수."
     }
   ],
   "bookingTrustItems": [
     {
       "icon": "check-circle",
-      "title": "공인 현지 운영사",
-      "description": "Authorized Korean tour operator with full insurance",
+      "title": "공인 현지 여행사",
+      "description": "정식 등록 및 보험 가입 현지 여행사",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
-      "body": "인천 크루즈 기항지 프라이빗 투어 전문 공인 현지 운영사. 귀선 90분 전 터미널 귀환 보장."
+      "body": "인천 크루즈 기항지 프라이빗 투어 전문 공인 현지 여행사. 승선 마감 90분 전 터미널 안전 복귀 최우선."
     },
     {
       "icon": "route",
       "title": "코스 전문",
-      "description": "Hand-tuned itinerary, not a generic loop",
+      "description": "이동 부담을 줄인 효율적인 코스",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
       "body": "드라이버 가이드가 선박 출항 일정을 실시간으로 파악. 화요일 경복궁 휴관 시 창덕궁으로 자동 대체."
@@ -781,7 +781,7 @@
     {
       "icon": "users",
       "title": "그룹 규모 관리",
-      "description": "Right-sized for the route",
+      "description": "코스에 상황에 맞춘 인원 규모",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600",
       "body": "완전 프라이빗 차량. 짐도 차량에 보관 가능 — 크루즈 당일 호텔 이동과 연계 편리."
@@ -789,84 +789,95 @@
   ],
   "bookingSupportSteps": [
     {
-      "timing": "Immediately",
+      "timing": "즉시",
       "title": "즉시 확인",
-      "detail": "Booking confirmation with itinerary summary",
+      "detail": "행정 요약 포함 예약 확인서 발송",
       "description": "선박명, 기항 날짜, 예상 도착 시각, 귀선 시각 포함 즉시 예약 확인서 발송."
     },
     {
-      "timing": "12 hours before",
+      "timing": "출발 12시간 전",
       "title": "12시간 전 알림",
-      "detail": "Weather update and any route adjustments",
+      "detail": "날씨 업데이트 및 경로 변경 안내",
       "description": "선박 도착 예정 시각 기반 픽업 시각 조율 안내."
     },
     {
-      "timing": "Evening before",
+      "timing": "전날 저녁",
       "title": "최종 픽업 안내",
-      "detail": "Exact pickup time and driver contact",
+      "detail": "정확한 픽업 시간 및 가이드 연락처",
       "description": "드라이버 가이드 정보(이름, 차량 번호판) 전날 저녁 전송."
     },
     {
-      "timing": "Morning of tour",
+      "timing": "투어 당일 아침",
       "title": "당일 코스 안내",
-      "detail": "Morning briefing based on live conditions",
+      "detail": "실시간 상황 기반 당일 브리핑",
       "description": "드라이버 가이드가 이름 팻말 들고 터미널에서 맞이합니다."
     },
     {
-      "timing": "During tour",
+      "timing": "투어 중",
       "title": "경유지별 심층 안내",
-      "detail": "Real-time guidance at each location",
+      "detail": "각 코스 실시간 현장 안내",
       "description": "귀선 일정에 충분한 여유를 두고 터미널 귀환. 직접 메시지로 실시간 조정."
     },
     {
-      "timing": "After tour",
+      "timing": "투어 종료 후",
       "title": "투어 후 지원",
-      "detail": "Follow-up and recommendations",
+      "detail": "피드백 및 추가 여행 추천",
       "description": "귀환 후 피드백 요청 전송."
     }
   ],
   "staticQuestions": [
     {
+      "id": "q1",
       "question": "선박이 인천 도착이 지연되면 어떻게 되나요?",
       "answer": "드라이버 가이드가 크루즈 일정을 실시간으로 추적합니다. 지연이 크면 코스를 일부 조정합니다."
     },
     {
+      "id": "q2",
       "question": "경복궁이 닫혀 있으면 어떻게 되나요?",
       "answer": "화요일 휴관 시 창덕궁+비원으로 자동 대체합니다."
     },
     {
+      "id": "q3",
       "question": "DMZ로 가는 것은 가능한가요?",
       "answer": "일반적으로 불가합니다. DMZ는 크루즈 터미널에서 50km 이상 북쪽으로, 왕복 이동 시간과 DMZ 입장 수속을 고려하면 당일 귀선 시각을 지키기 어렵습니다."
     },
     {
+      "id": "q4",
       "question": "가이드가 우리 선박 일정을 어떻게 알 수 있나요?",
       "answer": "예약 시 선박명, 기항 날짜, 예상 도착 시각, 귀선 시각을 제공해 주시면 가이드가 일정을 조율합니다."
     },
     {
+      "id": "q5",
       "question": "폭우나 태풍이 오면 어떻게 되나요?",
       "answer": "가벼운 비: 예정대로 진행. 실내 구간으로 유연하게 조정. 태풍 급 기상은 선사에 기항 여부를 문의하세요."
     },
     {
+      "id": "q6",
       "question": "차량에 짐을 보관할 수 있나요?",
       "answer": "네, 많은 크루즈 여행자들이 당일 호텔 이동 짐을 차에 싣고 하루를 보냅니다."
     },
     {
+      "id": "first-time",
       "question": "서울을 처음 방문하는 분에게 좋은가요?",
       "answer": "네, 서울 핵심 명소를 하루에 균형 있게 볼 수 있습니다."
     },
     {
+      "id": "walking",
       "question": "도보 이동이 힘들지 않나요?",
       "answer": "보통 수준. 경복궁 마당, N서울타워 남산길 이동이 활동적인 구간."
     },
     {
+      "id": "family",
       "question": "가족 여행에 적합한가요?",
       "answer": "하루 종일 이동 가능한 어린이가 동반하는 가족에게 적합합니다."
     },
     {
+      "id": "seniors",
       "question": "어르신도 참여할 수 있나요?",
       "answer": "활동적인 어르신에게 적합합니다. 남산 케이블카로 N서울타워 접근이 편리합니다."
     },
     {
+      "id": "children",
       "question": "권장 최소 연령은 몇 세인가요?",
       "answer": "만 6세 이상 추천."
     }
@@ -905,13 +916,13 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
     "price": {
       "amountLabel": "",
       "currency": "USD",
-      "per": "group",
-      "priceSource": "getyourguide_t1249797",
-      "priceNote": "Price not yet set. Private tour pricing varies by vehicle size (sedan 1–3 pax, van 4–6 pax, large van 7–9 pax). Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+      "per": "그룹",
+      "priceSource": "direct_rate",
+      "priceNote": "가격은 아직 확정 전입니다. 프라이빗 투어 요금은 차량 크기(세단 1~3명, 밴 4~6명, 대형 밴 7~9명)에 따라 달라집니다. 확정 후 AtoC Korea 직접 판매가는 10% 할인이 적용됩니다.",
       "discountPercent": 10
     }
   },
@@ -919,18 +930,18 @@
     "type": "cruise_terminal_pickup",
     "meeting_points": [
       {
-        "name": "Incheon Cruise Terminal — arrival hall (driver holds name sign)",
-        "time": "Calibrated to your disembarkation time"
+        "name": "인천 크루즈터미널 — 도착홀(드라이버가 이름 표지판을 들고 대기)",
+        "time": "고객님의 하선 시간에 맞춰 조정"
       }
     ],
     "dropoff_points": [
       {
-        "name": "Incheon Cruise Terminal — terminal gate",
-        "approx_time": "Minimum 60 minutes before all-aboard"
+        "name": "인천 크루즈 터미널 게이트",
+        "approx_time": "전원 승선 마감 최소 60분 전"
       }
     ],
     "hotel_pickup_available": false,
-    "notes": "Provide ship name, port-call date, expected arrival, and all-aboard time at booking. Driver maintains a 60-minute traffic buffer before all-aboard. Multiple terminals exist at Incheon — confirm with your cruise line which terminal your ship uses (Yeongjong-do or Songdo)."
+    "notes": "예약 시 선박명, 기항일, 예상 하선 시간, 승선 마감 시간을 알려 주세요. 가이드는 각 선박 일정을 확인해 항구 복귀 시간을 관리합니다."
   },
   "matching_profile": {
     "profile_version": 6,
@@ -1121,7 +1132,7 @@
       "hanok_village",
       "shopping",
       "tower",
-      "guaranteed_return"
+      "정시 복귀 우선"
     ],
     "best_for": [
       "cruise_passengers",
@@ -1173,20 +1184,21 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Cruise port to palace, custom-built around your sail-away time —",
-        "headlineLine2": "your Seoul day, just for your group, with the ship-return guarantee built in",
+        "headlineLine1": "크루즈 항구에서 왕궁으로, 귀선 시각에 맞게 구성 —",
+        "headlineLine2": "우리 그룹만의 서울 하루, 승선 마감 전에 항구로 안전하게 복귀하는 것을 최우선으로 운영 포함",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
           "imagePosition": "center 35%",
-          "tagline": "From the gangway to Gyeongbokgung in 60 minutes — a private Seoul day calibrated to your sailaway",
+          "tagline": "갱웨이에서 60분 만에 경복궁으로 — 선박 출항 시각에 맞게 조율된 프라이빗 서울 하루",
           "pills": [
-            "private",
-            "cruise"
+            "프라이빗",
+            "크루즈",
+            "shore_excursion"
           ],
           "meta": {
-            "duration": "7–9 hours (timed to your ship)",
-            "region": "",
-            "stops": "7 stops",
+            "duration": "약 8시간(선박 하선구역 09:30 전후 픽업, 터미널 17:30 전후 하차 / 선박 일정에 맞춰 조정)",
+            "region": "서울 (인천 크루즈 터미널 출발)",
+            "stops": "7개 코스",
             "rating": 0,
             "ratingStars": 0
           }
@@ -1201,23 +1213,23 @@
         "subnavItems": [
           {
             "id": "overview",
-            "label": "Overview"
+            "label": "투어 개요"
           },
           {
             "id": "itinerary",
-            "label": "Itinerary"
+            "label": "상세 일정"
           },
           {
             "id": "details",
-            "label": "Details"
+            "label": "유의사항"
           },
           {
             "id": "faq",
-            "label": "FAQ"
+            "label": "자주 묻는 질문"
           },
           {
             "id": "reviews",
-            "label": "Reviews"
+            "label": "여행자 후기"
           }
         ]
       }
@@ -1230,38 +1242,38 @@
         "glanceItems": [
           {
             "icon": "clock",
-            "label": "Duration",
-            "value": "8 hours"
+            "label": "소요 시간",
+            "value": "8시간"
           },
           {
             "icon": "camera",
-            "label": "Photo Value",
-            "value": "Very High"
+            "label": "사진 포인트",
+            "value": "매우 높음"
           },
           {
             "icon": "mountain",
-            "label": "Scenic",
-            "value": "High"
+            "label": "경관 특색",
+            "value": "높음"
           },
           {
             "icon": "footprints",
-            "label": "Walking",
-            "value": "Moderate"
+            "label": "도보 강도",
+            "value": "보통"
           },
           {
             "icon": "cloud-rain",
-            "label": "Rain Safety",
-            "value": "Moderate"
+            "label": "우천 적합도",
+            "value": "보통"
           },
           {
             "icon": "users",
-            "label": "Family Fit",
-            "value": "Moderate"
+            "label": "가족 적합도",
+            "value": "보통"
           },
           {
             "icon": "scale",
-            "label": "Pace",
-            "value": "Balanced"
+            "label": "투어 일정 속도",
+            "value": "균형"
           }
         ]
       }
@@ -1276,55 +1288,55 @@
             "id": "g1",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-            "alt": "Gangway-side pickup at Incheon Cruise Terminal arrival hall",
-            "caption": "Gyeongbokgung Palace's main throne hall",
-            "location": "Incheon Cruise Terminal",
-            "atmosphere": "Direct cruise terminal pickup"
+            "alt": "투어 중 방문하는 경복궁 근정전의 풍경",
+            "caption": "경복궁 근정전",
+            "location": "인천 크루즈터미널",
+            "atmosphere": "크루즈 터미널 직접 픽업"
           },
           {
             "id": "g2",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-            "alt": "Gyeongbokgung Palace throne hall and royal guard ceremony",
-            "caption": "Royal guard changing ceremony at Gyeongbokgung",
+            "alt": "경복궁 근정전과 수문장 교대식",
+            "caption": "경복궁 수문장 교대식",
             "location": "Gyeongbokgung, Seoul",
-            "atmosphere": "Joseon royal palace"
+            "atmosphere": "조선 왕궁"
           },
           {
             "id": "g3",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-            "alt": "Stone walls and tiled hanok roofs along Bukchon ridge",
-            "caption": "Bukchon Hanok Village's traditional rooflines",
-            "location": "Bukchon Hanok Village, Seoul",
-            "atmosphere": "Preserved Joseon-era residential alleys"
+            "alt": "투어 중 방문하는 북촌 한옥마을 전통 지붕선의 풍경",
+            "caption": "북촌 한옥마을 전통 지붕선",
+            "location": "북촌 한옥마을, Seoul",
+            "atmosphere": "보존된 조선시대 주거 골목"
           },
           {
             "id": "g4",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-            "alt": "Panoramic view of Seoul from Namsan with N Seoul Tower above",
-            "caption": "Jogyesa Temple's main hall and lantern displays",
-            "location": "N Seoul Tower (Namsan)",
-            "atmosphere": "City viewpoint"
+            "alt": "투어 중 방문하는 N서울타워 (Namsan)의 풍경",
+            "caption": "N서울타워 (Namsan)",
+            "location": "N서울타워 (Namsan)",
+            "atmosphere": "도시 전망대"
           },
           {
             "id": "g5",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-            "alt": "Lit street-food stalls along Myeongdong shopping street at dusk",
-            "caption": "N Seoul Tower at sunset, viewed from Namsan",
-            "location": "Myeongdong, Seoul",
-            "atmosphere": "Shopping and street food"
+            "alt": "투어 중 방문하는 해질녘 N서울타워의 풍경",
+            "caption": "남산에서 바라보는 해질녘 N서울타워",
+            "location": "명동, Seoul",
+            "atmosphere": "쇼핑과 길거리 음식"
           },
           {
             "id": "g6",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-            "alt": "Private car waiting at Incheon Cruise Terminal drop-off zone",
-            "caption": "Myeongdong street food and shopping",
-            "location": "Incheon Cruise Terminal",
-            "atmosphere": "Sailaway buffer return"
+            "alt": "투어 중 방문하는 인천 크루즈터미널의 풍경",
+            "caption": "인천 크루즈터미널",
+            "location": "인천 크루즈터미널",
+            "atmosphere": "출항 전 여유 귀환"
           }
         ]
       }
@@ -1338,198 +1350,352 @@
           {
             "number": 1,
             "time": "≈ 09:30",
-            "duration": "30 min",
-            "name": "Cruise terminal pickup",
-            "category": "Departure",
-            "description": "Driver-guide meets your group at the Incheon Cruise Terminal arrival hall with a name sign. Quick verification of your sail-away (all-aboard) time, then a one-hour drive into central Seoul. The drive itself doubles as an orientation — typical questions about currency, food, and history are handled before the first stop.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "duration": "30분",
+            "name": "크루즈 터미널 갱웨이 픽업",
+            "category": "출발",
+            "description": "프라이빗 드라이버 가이드가 인천 크루즈 터미널 입구에서 이름 팻말 들고 맞이. 인천 → 경복궁까지 약 60분 이동.",
             "highlights": [
-              "Door-of-ship pickup",
-              "1-hour transfer to Seoul",
-              "Sail-away time verified at start"
+              "인천 크루즈 터미널 커브사이드 픽업 (2019년 4월 개항, 오아시스급 수용)",
+              "영종대교 + 인천-서울 고속도로로 서울 중심부까지 약 60~90분",
+              "영어 해설 가이드 겸 드라이버 동승",
+              "선박 전원 승선 시간 기준으로 일정 구성",
+              "**대한민국 최대 크루즈 터미널** — 2층 7,364m² 건물 (1층 입국/2층 출국)",
+              "**로열 캐리비안 오아시스급** 선박 수용 (22만8천 GT, 승객 6,370명 + 승무원 2,400명)",
+              "**인천 지하철 1호선 '국제업무지구역'까지 무료 항만 셔틀** 운행",
+              "**200대 주차 공간** (대형 버스 156대 포함) — 여행사 픽업 효율적",
+              "**2026년 1월 1일부터 K-ETA 없는 방문자에게 디지털 전자입국신고서 의무화**"
             ],
             "timeUsed": [
-              "Operational logistics (pickup/meal/transfer/return)",
-              "Brief orientation or break"
+              "크루즈 하선 및 한국 출입국 심사 — 약 30분",
+              "터미널 커브사이드 픽업 지점에서 드라이버 가이드와 만남",
+              "서울 첫 코스까지 약 60~90분 이동 시작",
+              "출발 전 K-ETA / 전자입국신고서 상태 확인 (~5분)",
+              "선택: 송도 센트럴 파크 우천 대안 (~15분, 해당 시)"
             ],
-            "whyOnRoute": "Pickup point chosen for efficient guest assembly while preserving on-time tour start.",
+            "whyOnRoute": "프라이빗 선착장 픽업이 하루의 기본 안전한 출발 지점 — 드라이버 가이드가 귀하의 그룹에만 전념.",
             "visitBasics": {},
             "convenience": {},
-            "smartNotes": {}
+            "smartNotes": {
+              "tip": "한국 출입국 심사 최소 30분 확보. 여권 + 크루즈 카드 접근 용이하게 준비.",
+              "photo": "터미널 외관 + 크루즈 기대감 포토 명소."
+            },
+            "_poi_meta": {
+              "poi_key": "incheon_cruise_terminal",
+              "verified": true,
+              "match": "operational_pickup",
+              "kb_version": "1.26",
+              "verified_date": "2026-04-29",
+              "note": "Operational pickup stop; references KB POI for terminal facts",
+              "sources": [
+                "Incheon Port Authority (incheonport.kr)",
+                "Korea Tourism Organization (VisitKorea — Incheon Cruise Terminal listing)",
+                "Korea Herald (April 26, 2019 opening coverage)",
+                "Visit Korea — Incheon Tourist Attraction official",
+                "Wikipedia (Incheon Port + Songdo International Business District)"
+              ]
+            }
           },
           {
             "number": 2,
             "time": "≈ 10:30",
-            "duration": "60–90 min",
-            "name": "Gyeongbokgung Palace + royal guard ceremony",
-            "category": "Joseon Royal Palace",
-            "description": "The main royal palace of the Joseon Dynasty (1395–1910), and the most photographed site in Seoul. The royal guard changing ceremony runs at 10:00 and 14:00 daily (closed Tuesdays — Changdeokgung Palace is the substitute on Tuesdays). Your guide handles tickets and walks you through the throne hall, Gyeonghoeru pavilion, and the back garden if time allows.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "duration": "75분",
+            "name": "경복궁 + 수문장 교대 의식",
+            "category": "조선 왕조 제1 법궁 — 유네스코 역사지구 중심",
+            "description": "1395년 창건 조선왕조 정궁. 수문장 교대 의식(10:00, 14:00 광화문 광장). 근정전, 경회루 탐방. 한복 착용 시 무료 입장. 화요일 휴관(창덕궁으로 대체). 방문 시간: 약 90분.",
             "highlights": [
-              "Joseon-era main palace",
-              "Royal guard ceremony",
-              "Throne hall and Gyeonghoeru",
-              "Tuesdays: Changdeokgung instead"
+              "조선 왕조의 제1 법궁 — 새 수도 한양의 심장으로 1395년 창건",
+              "근정전 — 한국 최대 목조 건물",
+              "경회루 — 48개 기둥 위 연못 누각 (왕실 연회 장소)",
+              "수문장 교대식 매일 10:00 + 14:00 (약 20분, 화요일 제외)",
+              "향원정 — 한국 가장 많이 촬영된 후원 장면",
+              "한복 착용 시 **무료 입장**",
+              "**화요일 휴관** — 대체: 창덕궁 (유네스코 세계유산 1997)",
+              "**1996년 이후 수문장 교대식 재현** — 문화재청 고증 기반",
+              "**광화문 수문장 교대 의식 등 주요 교대식 사이에 3회 추가 의식** 진행"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "도착, 매표, 가이드 오리엔테이션 — 약 10분",
+              "시간이 맞으면 수문장 교대식 관람 (10:00 또는 14:00, 약 20분)",
+              "근정전 + 경회루 + 향원정 자유 탐방 — 약 50분",
+              "사진 + 차량 집결 — 약 10분",
+              "선택: 국립민속박물관 또는 국립고궁박물관 (경내 위치, 무료) — 약 15분"
             ],
-            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "whyOnRoute": "경복궁은 서울 1위 필수 관광지이자 프라이빗 크루즈 당일 여행의 자연스러운 시작점.",
             "visitBasics": {
-              "hours": "Mar–May & Sep–Oct: 09:00–18:00; Jun–Aug: 09:00–18:30; Nov–Feb: 09:00–17:00 (last admission 1 hour before close)",
-              "closed": "Tuesdays",
-              "admission": "Adult 3,000 KRW / Youth (7–18) 1,500 KRW; free for ≤6, seniors 65+, hanbok wearers",
-              "walking": "Moderate — large palace grounds (1–2 hours of walking); paths are gravel and stone"
+              "hours": "3~5월·9~10월 09:00~18:00; 6~8월 09:00~18:30; 11~2월 09:00~17:00 (마지막 입장 1시간 전)",
+              "closed": "**화요일** (대체: 창덕궁)",
+              "admission": "성인 ₩3,000 / 어린이 ₩1,500; 한복 착용 시 무료; 궁궐 통합권 ₩10,000",
+              "walking": "중간 강도 — 넓은 평탄 마당; 주요 구역 도보 약 1.5~2km"
             },
             "convenience": {
-              "restroom": "Multiple restrooms throughout the palace grounds",
-              "parking": "Limited paid parking near Gwanghwamun (subway is recommended)"
+              "restroom": "정문, 경내 중간, 후원 구역 화장실",
+              "parking": "제한적; 광화문 근처 투어 버스 승·하차 구역"
             },
             "smartNotes": {
-              "photo": "Gwanghwamun gate with N Seoul Tower in distance; Gyeonghoeru pavilion reflected in the pond; hanbok-wearing visitors against palace walls",
-              "facilities": "National Folk Museum (free) and National Palace Museum (free) within grounds; multiple gift shops",
-              "tip": "Free hanbok rental shops near Gwanghwamun = free admission AND great photos; Royal Guard Ceremony happens 10:00 & 14:00 (cancelled in heavy rain or extreme heat)"
+              "photo": "일출/황금빛 시간대 광화문. 수문장 교대식 10:00 + 14:00. 향원정 연못 반영.",
+              "facilities": "국립민속박물관 + 국립고궁박물관 모두 경복궁 경내 위치 (무료). 인근 한복 대여점.",
+              "tip": "10:00 교대식 관람 시 09:50까지 흥례문 앞에 도착. 한복 착용 시 입장료 절약. 화요일에는 창덕궁이 대체지."
+            },
+            "_poi_meta": {
+              "poi_key": "gyeongbokgung_palace",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.26",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Cultural Heritage Administration of Korea (Royal Palaces & Tombs Center)",
+                "Visit Seoul official (english.visitseoul.net)",
+                "Korea Tourism Organization (VisitKorea)",
+                "Korea.net (official ROK government portal)",
+                "Wikipedia (Gyeongbokgung Palace)"
+              ]
             }
           },
           {
             "number": 3,
             "time": "≈ 12:00",
-            "duration": "60–90 min",
-            "name": "Bukchon Hanok Village + Insadong",
-            "category": "Hanok Heritage Village",
-            "description": "A short drive — or a 10-minute walk — from the palace. Bukchon's preserved 15th-century alleys still house residents (so the village asks for quiet voices in marked sections). Insadong, just downhill, is the city's main traditional-arts and crafts district: ceramics, calligraphy supplies, traditional teas, hanji paper, hanbok rentals, and the curated Ssamziegil shopping complex.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "duration": "75분",
+            "name": "북촌한옥마을 + 인사동",
+            "category": "전통 한옥 보존 지구 — 서울 최대 규모",
+            "description": "북촌(600년 전통 한옥 주거지) 포토 명소 탐방 후 인사동(전통 공예·문화 거리)으로 이동. 전체 방문 시간: 약 60분.",
             "highlights": [
-              "15th-century hanok alleys",
-              "Traditional crafts and teas",
-              "Ssamziegil shopping spiral",
-              "Optional hanbok rental for photos"
+              "서울 최대 한옥 보존 지구 — 좁은 면적에 약 900채 전통 가옥 밀집",
+              "북촌 8경 — #6 전망대의 N서울타워를 배경으로 한 한옥 지붕선이 대표 사진 포인트",
+              "박물관이 아닌 살아있는 주거 마을 — 주민들이 조용한 방문과 예의 있는 태도를 요청",
+              "문화 공방: 매듭 공예, 한지 공예, 다도, 자수",
+              "마을 외곽 한복 대여점 — 경복궁 무료 입장 콤보",
+              "인사동 문화 거리까지 도보 5~10분",
+              "**약 600년 역사** — 경복궁과 창덕궁 사이 역사 지구, 원래 조선 왕실 관리 거주지",
+              "**22:00~10:00 주민 요청 조용한 시간** — 살아있는 주거 공동체",
+              "**4궁 통합권 ₩10,000 성인 / ₩5,000 어린이** — 경복궁·창덕궁 등 4궁궐 포함"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "가이드 간단 오리엔테이션 — 약 5분",
+              "북촌 8경 자유 탐방 — 약 50~60분",
+              "선택: 문화 공방 또는 찻집 또는 한복 사진 — 약 15분",
+              "집결 장소 이동",
+              "선택: 한복 대여 + 사진 촬영 (마을 외곽, ₩15,000~20,000 / 4시간) — 약 15분"
             ],
-            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "whyOnRoute": "북촌과 인사동을 75분 단일 코스로 묶는 것은 프라이빗 투어 유연성 반영.",
             "visitBasics": {
-              "hours": "Open 24 hours (outdoor); resident-quiet hours 10:00–17:00 enforced",
-              "closed": "Open year-round (residential — please be respectful)",
-              "admission": "Free; some hanok museums charge separately (≈ 3,000 KRW)",
-              "walking": "Moderate — uphill cobblestone alleys; not stroller-friendly in places"
+              "hours": "24시간 (골목 항상 접근 가능); 주민 22:00~10:00 조용한 시간 요청",
+              "closed": "연중 무휴; 일부 사설 한옥 박물관 월요일 휴관 가능",
+              "admission": "골목 무료 (공방·사설 박물관 ₩5,000~10,000)",
+              "walking": "중간 강도 — 자갈 포장, 경사 골목; 편안한 신발 필수"
             },
             "convenience": {
-              "restroom": "Public restrooms at Bukchon Cultural Center and main tourist info point",
-              "parking": "Limited; subway (Anguk Stn Line 3) strongly recommended"
+              "restroom": "북촌 입구 관광안내소; 마을 내 카페",
+              "parking": "제한적; 경복궁에서 도보 거리"
             },
             "smartNotes": {
-              "photo": "Bukchon-8 viewpoint #5 on Bukchon-ro 11-gil offers the iconic hanok-roofs-with-N-Seoul-Tower shot; mornings give the best light and fewest crowds",
-              "facilities": "Bukchon Cultural Center has free maps and cultural exhibits; many hanok cafés and craft shops",
-              "tip": "Residents have asked tourists to respect quiet hours (10:00–17:00) — speak softly and don't enter private gates; pair with Insadong (10 min walk south)"
+              "photo": "**북촌 8경 #6 전망대** — 계동길에서 N서울타워 배경 한옥 지붕선 구도. 이른 아침이 가장 한산.",
+              "facilities": "안국역 2번 출구 근처 다국어 안내 지도 제공 관광안내소. 카페, 공예 공방 분포.",
+              "tip": "주민 요청으로 낮 12시 전 또는 16시 이후 방문 권장. 주말 오전 10시 이전 가장 한산."
+            },
+            "_poi_meta": {
+              "poi_key": "bukchon_hanok_village",
+              "verified": true,
+              "match": "multi_poi_bundle",
+              "kb_version": "1.26",
+              "verified_date": "2026-04-29",
+              "secondary_pois": [
+                "insadong"
+              ],
+              "note": "Combined Bukchon + Insadong stop reflecting the 5-10 min walk between them",
+              "sources": [
+                "Visit Seoul official (english.visitseoul.net)",
+                "Bukchon Traditional Culture Center",
+                "Jongno-gu District Office (Bukchon Hanok Village preservation program)",
+                "Korea Tourism Organization (VisitKorea)",
+                "Wikipedia (Bukchon Hanok Village)"
+              ]
             }
           },
           {
             "number": 4,
             "time": "≈ 13:30",
-            "duration": "60 min",
-            "name": "Lunch (your choice)",
-            "category": "Meal",
-            "description": "Free time and your call: Insadong restaurants for traditional Korean court cuisine and bibimbap; Tosokchon for samgyetang (ginseng chicken soup) near the palace; or a casual Korean BBQ near Bukchon. Driver-guide makes specific recommendations based on dietary needs (halal, vegetarian, allergies — say in advance and a halal-friendly route can be planned).",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "duration": "60분",
+            "name": "점심 (선택)",
+            "category": "식사 — 맞춤형",
+            "description": "드라이버 가이드가 그룹 취향에 맞게 세 가지 옵션 제안: (1) 광장시장 길거리 음식, (2) 인사동 한식당, (3) 남산 근처 레스토랑. 점심 비용은 별도.",
             "highlights": [
-              "Insadong court cuisine",
-              "Tosokchon samgyetang",
-              "Korean BBQ options",
-              "Halal/vegetarian routes available"
+              "점심 장소 직접 선택 — 4가지 검증 옵션 (길거리 음식, 전통, 기관식, 코스 요리)",
+              "광장시장: 서민 길거리 음식 천국 (앤서니 부르댕도 즐겨 찾은 곳)",
+              "인사동 한옥 세트 메뉴: 중가 한식 코스 (~₩15,000~25,000)",
+              "명동교자 / 하동관: 한국의 대표 식당",
+              "한국의집: 궁중 요리 고급 체험 (60,000~120,000원)",
+              "예약 시 식이 요건 수용"
             ],
             "timeUsed": [
-              "Operational logistics (pickup/meal/transfer/return)",
-              "Brief orientation or break"
+              "가이드 겸 드라이버가 선택 장소 하차",
+              "식사 (~45~50분)",
+              "차량에서 집결"
             ],
-            "whyOnRoute": "Mid-route meal break aligned with guest energy and route timing.",
-            "visitBasics": {},
-            "convenience": {},
-            "smartNotes": {}
+            "whyOnRoute": "진정한 점심 맞춤화가 프라이빗 투어 가치.",
+            "visitBasics": {
+              "hours": "대부분 11:00~15:00 점심 운영",
+              "closed": "장소에 따라 다름",
+              "admission": "현장 결제 (₩12,000~120,000 범위)",
+              "walking": "쉬움 — 장소별 상이"
+            },
+            "convenience": {
+              "restroom": "식당 화장실",
+              "parking": "가이드 겸 드라이버가 별도 처리"
+            },
+            "smartNotes": {
+              "tip": "식이 요건 (채식, 할랄, 맵지 않게, 글루텐 프리)은 예약 시 미리 알려주세요."
+            },
+            "_poi_meta": {
+              "poi_key": "OPS_lunch_customizable",
+              "verified": false,
+              "match": "operational_meal_choice",
+              "note": "Customizable lunch — 4 vetted options spanning streetfood to royal court cuisine"
+            }
           },
           {
             "number": 5,
             "time": "≈ 14:30",
-            "duration": "60 min",
-            "name": "N Seoul Tower (Namsan) — optional viewpoint",
-            "category": "Iconic Tower (Viewpoint)",
-            "description": "Driven up Namsan to the tower base for the panoramic view of central Seoul, the Han River, and surrounding ridges. The optional observation-deck ride is ≈ ₩21,000 per person, paid separately. On tight sailaway windows the driver can skip the deck ride and stop only for the base-level photo viewpoint to save 30+ minutes.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "duration": "60분",
+            "name": "N서울타워 (남산)",
+            "category": "서울 랜드마크 전망대",
+            "description": "남산(해발 243m) 위에 세운 높이 236.7m 방송·전망 타워. 타워 정점은 해발 480m. 전망대(₩21,000 성인 선택)에서 서울 360° 파노라마 조망. 남산 케이블카(₩14,000 왕복 선택) 또는 도보로 접근. 방문 시간: 약 60분.",
             "highlights": [
-              "Panoramic city view",
-              "Love-locks photo spot",
-              "Optional observation deck (₩21,000)"
+              "서울 가장 상징적인 랜드마크 — 남산(해발 479.7m) 위 236.7m 타워",
+              "1969~1971년 건설, 1980년 개방, 2005년 N서울타워로 재브랜딩",
+              "외국인 관광 만족도 조사 1위 (2012); 연간 1,200만 방문객",
+              "360° 전망대 (성인 ₩21,000 / 경로·어린이 ₩16,000)",
+              "상징적인 사랑의 자물쇠 벽 + N그릴 회전 레스토랑 (예약 시 전망대 무료)",
+              "남산 케이블카 — 한국 최초 가공 삭도 (1962년), 약 3분 탑승",
+              "K-드라마 촬영: 별에서 온 그대, 꽃보다 남자, 화유기",
+              "**공원 진입 택시 금지** — 케이블카 또는 순환 버스만 이용",
+              "**남산 케이블카 (1962년)** = 한국 최초 가공 삭도; N서울타워 리브랜딩 이전부터 존재"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "남산 케이블카 탑승장 또는 순환 버스 정류장 하차 — 약 5분",
+              "케이블카 탑승 (약 3분) 또는 순환 버스 (약 5분)",
+              "전망대 또는 파노라마 라운지 — 약 30~35분",
+              "사랑의 자물쇠 사진 + 카페 — 약 10~15분",
+              "케이블카/버스 하강 + 차량 귀환"
             ],
-            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "whyOnRoute": "N서울타워는 서울 1위 '한국에 왔음을 증명하는' 랜드마크.",
             "visitBasics": {
-              "hours": "Mon–Thu, Sun 10:30–22:30; Fri–Sat & holidays 10:30–23:00 (last admission 30 min before close)",
-              "closed": "Open year-round",
-              "admission": "Observatory: Adult 21,000 KRW / Child 16,000 KRW; cable car separate (Adult 14,000 KRW round-trip)",
-              "walking": "Easy if using cable car; moderate hiking if walking up Namsan"
+              "hours": "전망대 평일 10:30~22:00; 주말 10:00~23:00 (마지막 입장 30분 전)",
+              "closed": "연중 365일",
+              "admission": "전망대 성인 ₩21,000 / 경로·어린이 ₩16,000; 케이블카 성인 왕복 약 ₩14,000 별도",
+              "walking": "중간 강도 — 차량으로 남산 케이블카 탑승장까지; 케이블카 또는 셔틀로 타워 도착"
             },
             "convenience": {
-              "restroom": "Multiple restrooms in tower base and observatory",
-              "parking": "Limited; cable car or Namsan Sunset Bus recommended"
+              "restroom": "타워 여러 층; 전망대 화장실 통유리 창문 조망",
+              "parking": "가이드 겸 운전기사가 남산 예장 주차장 또는 케이블카 탑승장 하차"
             },
             "smartNotes": {
-              "photo": "Sunset is peak; the observation deck offers 360° views; Locks of Love fence on lower deck is the iconic close-up",
-              "facilities": "n.GRILL rotating restaurant (top), café, gift shops, hanbok rental",
-              "tip": "Buy combo cable car + observatory ticket for savings; arrive 30 min before sunset for golden hour shots; Friday/Saturday extended hours"
+              "photo": "야경 서울 스카이라인이 대표 — 해질 무렵부터 야간이 최적. 사랑의 자물쇠 벽도 포토 명소.",
+              "facilities": "N그릴 회전 레스토랑 (예약 시 전망대 무료), 한쿡 레스토랑, 카페.",
+              "tip": "**전망대 무료 입장 꿀팁**: N그릴 또는 한쿡 사전 예약. 아니면 파노라마 라운지가 더 저렴한 대안."
+            },
+            "_poi_meta": {
+              "poi_key": "n_seoul_tower",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.26",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "N Seoul Tower official (nseoultower.co.kr)",
+                "Visit Seoul official",
+                "Korea Tourism Organization (VisitKorea)",
+                "CJ Foodville (operator since 2005 rebrand)",
+                "Wikipedia (N Seoul Tower)"
+              ]
             }
           },
           {
             "number": 6,
             "time": "≈ 15:30",
-            "duration": "60 min",
-            "name": "Myeongdong (shopping & street food) or Jogyesa Temple",
-            "category": "Shopping & local culture",
-            "description": "Two options based on your interest. Myeongdong (Korea's flagship shopping street) for K-beauty outlets, street-food stalls (egg bread, hotteok, tornado potato), and tax-refund counters. Jogyesa Temple (chief temple of Korean Jogye-order Buddhism) for a quieter finish — the country's tallest single-piece wooden Seokgamoni Buddha and a courtyard often dressed with seasonal lantern installations.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "duration": "60분",
+            "name": "명동 또는 조계사 (선택)",
+            "category": "쇼핑 & 현지 문화 — 맞춤형",
+            "description": "하루의 마지막 경유지는 그룹이 선택: 옵션 A — 명동: 서울 최대 쇼핑·K뷰티 거리. 노점 길거리 음식과 대형 면세점. 옵션 B — 조계사: 서울 중심부 조계종 총본산 사찰(1395년 창건). 연등 시즌 특히 아름다움. 방문 시간: 약 40분.",
             "highlights": [
-              "Myeongdong street food and K-beauty",
-              "Or Jogyesa Buddhist temple",
-              "Tax-refund counters at Myeongdong"
+              "**명동 (옵션 A)**: 서울 최대 K-뷰티 쇼핑 구역 + 1898년 명동성당",
+              "주요 K-뷰티 플래그십 (이니스프리, 올리브영 등) 넉넉한 무료 샘플",
+              "명동 길거리 음식: 토네이도 감자, 호떡, 치즈 핫도그, 탕후루",
+              "**조계사 (옵션 B)**: 조계종 본사 (한국 최대 불교 종단) — 대웅전 = 서울 최대 사찰 건물",
+              "대웅전 = 서울 최대 사찰 건물; 500년 수령 백송 (천연기념물)",
+              "조계사 **무료 입장**; 서울 시내 유일 주요 전통 사찰",
+              "드라이버 가이드가 그룹 관심사에 따라 조정",
+              "**명동 성당 (1898)** — 한국 최초 벽돌 고딕 가톨릭 성당",
+              "**롯데 백화점 명동 본점** — 한국 플래그십 백화점"
             ],
             "timeUsed": [
-              "Browse Myeongdong street food and shopping (cosmetics, fashion)",
-              "Or visit Jogyesa Temple — the head temple of Korean Jogye Buddhism in central Seoul"
+              "선택 장소 가이드 드롭오프 — 약 5분",
+              "자유 탐방 — 약 50분",
+              "차량에서 집결",
+              "선택: 명동성당 내부 방문 (메인 쇼핑 거리에서 도보 5분)",
+              "선택: 롯데백화점 옥상 정원 + 택스 리펀드 카운터 (~15분)"
             ],
-            "whyOnRoute": "Optional final-stop selected on the day based on traffic and guest preference. Myeongdong adds shopping/foodie value; Jogyesa adds a contemplative pause before returning to Incheon Cruise Terminal.",
-            "visitBasics": {},
-            "convenience": {},
-            "smartNotes": {}
+            "whyOnRoute": "명동 vs 조계사 선택이 가장 자연스러운 두 가지 '서울의 마지막 한 시간' 프레임 커버.",
+            "visitBasics": {
+              "hours": "명동: 매장 10:30~22:00, 길거리 음식 12:00~22:00. 조계사: 경내 24시간, 주요 시간 07:00~21:00",
+              "closed": "연중 무휴",
+              "admission": "둘 다 무료 (명동 현금 지출; 조계사 무료)",
+              "walking": "쉬움 — 둘 다 평탄"
+            },
+            "convenience": {
+              "restroom": "명동: 롯데/신세계 백화점, 지하철역. 조계사: 경내",
+              "parking": "가이드 겸 운전기사가 별도 처리"
+            },
+            "smartNotes": {
+              "photo": "명동: 저녁 조명의 메인 보행자 거리 + N서울타워 배경. 조계사: 도심 속 전통 사찰 풍경.",
+              "facilities": "명동: 백화점, K-뷰티 플래그십, 길거리 음식, 관광안내소.",
+              "tip": "**명동**: 현금 ₩20,000 지참. K-뷰티 무료 샘플 넉넉함."
+            },
+            "_poi_meta": {
+              "poi_key": "myeongdong",
+              "verified": true,
+              "match": "two_poi_choice",
+              "kb_version": "1.26",
+              "verified_date": "2026-04-29",
+              "alternative_poi": "jogyesa_temple",
+              "note": "Customizable choice between Myeongdong (shopping/streetfood) and Jogyesa Temple (Buddhist cultural)",
+              "sources": [
+                "Visit Seoul official",
+                "Korea Tourism Organization (VisitKorea)",
+                "Jung-gu District Office (Myeongdong Tourism)",
+                "Lotte Department Store official (Myeongdong main branch)",
+                "Wikipedia (Myeongdong)"
+              ]
+            }
           },
           {
             "number": 7,
             "time": "≈ 16:30",
-            "duration": "≈ 60 min",
-            "name": "Return to cruise terminal",
-            "category": "Return",
-            "description": "Direct drive Seoul → Incheon Cruise Terminal, ≈ 60 minutes. The driver-guide builds a 60-minute buffer between scheduled drop-off and your all-aboard time so traffic delays cannot make you miss the ship. Drop-off directly at the terminal gate.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "duration": "약 90분",
+            "name": "인천 크루즈 터미널 귀환",
+            "category": "귀환",
+            "description": "선박 출항 90분+ 전 인천 크루즈 터미널 귀환. 드라이버 가이드가 출항 일정을 실시간으로 파악해 이동합니다.",
             "highlights": [
-              "1-hour drive to Incheon",
-              "60-minute safety buffer before all-aboard",
-              "Dropoff at terminal gate"
+              "인천 크루즈 터미널까지 약 60~90분 드라이브",
+              "터미널 입구 커브사이드 하차",
+              "표준 전원 승선 시간 기준 60~90분 전 도착 구성",
+              "출항 시간에 맞춘 항구 안전 복귀"
             ],
             "timeUsed": [
-              "Operational logistics (pickup/meal/transfer/return)",
-              "Brief orientation or break"
+              "마지막 서울 코스에서 밴 탑승",
+              "인천-서울 고속도로로 60~90분 이동",
+              "터미널 커브사이드 하차 — 선박 재입장"
             ],
-            "whyOnRoute": "Return logistics — drop-off chosen for guest convenience and timing certainty.",
+            "whyOnRoute": "출항 시간에 맞춘 항구 안전 복귀 물류 — 프라이빗 투어 구조로 다른 승객 대기 불필요.",
             "visitBasics": {},
             "convenience": {},
-            "smartNotes": {}
+            "smartNotes": {
+              "tip": "크루즈 터미널 한국어 주소: 인천항 크루즈터미널 (연수구 국제항만대로 438) — 긴급 상황 시 대비."
+            },
+            "_poi_meta": {
+              "poi_key": "OPS_return_incheon",
+              "verified": false,
+              "match": "operational_implicit",
+              "note": "Operational return stop with sail-away buffer"
+            }
           }
         ]
       }
@@ -1541,71 +1707,71 @@
       "props": {
         "routeFlowStops": [
           {
-            "name": "Incheon Cruise Terminal",
+            "name": "인천 크루즈 터미널",
             "type": "origin",
-            "theme": "Departure"
+            "theme": "출발"
           },
           {
-            "name": "Gyeongbokgung Palace",
+            "name": "경복궁",
             "type": "primary",
-            "theme": "Heritage Palace"
+            "theme": "문화유산 궁궐"
           },
           {
-            "name": "Bukchon Hanok Village + Insadong",
+            "name": "북촌 한옥 마을 + 인사동",
             "type": "primary",
-            "theme": "Heritage Village"
+            "theme": "전통 마을"
           },
           {
-            "name": "Lunch (Insadong / Tosokchon / BBQ)",
+            "name": "점심 (인사동/토속촌/BBQ)",
             "type": "meal",
-            "theme": "Meal"
+            "theme": "식사"
           },
           {
-            "name": "N Seoul Tower (Namsan)",
+            "name": "N서울타워 (남산)",
             "type": "secondary",
-            "theme": "City View"
+            "theme": "도시 전망"
           },
           {
-            "name": "Myeongdong or Jogyesa Temple",
+            "name": "명동 또는 조계사",
             "type": "secondary",
-            "theme": "Temple"
+            "theme": "사찰"
           },
           {
-            "name": "Incheon Cruise Terminal",
+            "name": "인천 크루즈 터미널",
             "type": "return",
-            "theme": "Return"
+            "theme": "귀환"
           }
         ],
         "routePhases": [
           {
-            "phase": "Outbound transfer",
-            "duration": "≈ 1 hour",
-            "description": "Incheon Cruise Terminal → central Seoul via expressway."
+            "phase": "출발 이동",
+            "duration": "약 1시간",
+            "description": "인천 크루즈 터미널 갱웨이 픽업 → 서울 중심(약 60분 이동)."
           },
           {
-            "phase": "Heritage core",
-            "duration": "≈ 3 hours",
-            "description": "Gyeongbokgung (75 min), short transfer, Bukchon Hanok Village + Insadong (75 min) — all walkable cluster."
+            "phase": "문화유산 핵심",
+            "duration": "약 3시간",
+            "description": "경복궁+수문장 교대 → 북촌한옥마을+인사동."
           },
           {
-            "phase": "Lunch + viewpoint",
-            "duration": "≈ 2 hours",
-            "description": "Local restaurant + N Seoul Tower or quick city stop."
+            "phase": "점심 + 전망대",
+            "duration": "약 2시간",
+            "description": "선택 점심 → N서울타워(남산)."
           },
           {
-            "phase": "Last Seoul stop",
-            "duration": "≈ 1 hour",
-            "description": "Myeongdong shopping/street food OR Jogyesa Temple."
+            "phase": "서울 마지막 경유지",
+            "duration": "약 1시간",
+            "description": "명동 또는 조계사 선택."
           },
           {
-            "phase": "Return transfer",
-            "duration": "≈ 1 hour",
-            "description": "Seoul → Incheon Cruise Terminal with 60-minute buffer before all-aboard."
+            "phase": "귀환 이동",
+            "duration": "약 1시간",
+            "description": "서울 → 인천 크루즈 터미널. 승선 마감 90분 전 승선 마감 전에 항구로 안전하게 복귀하는 것을 최우선으로 운영."
           }
         ],
         "routeShapeIntro": {
-          "title": "How this day flows",
-          "subtitle": "A point-to-point loop that starts and ends at your ship's gangway. The Seoul itinerary itself is a cluster, not a line — Gyeongbokgung, Bukchon, Insadong, and Myeongdong are all within a 20-minute radius of each other, which is what makes a 7–9 hour port day workable. The driver-guide's main job, after the cultural commentary, is keeping your sail-away time visible at every transition."
+          "title": "하루 일정",
+          "subtitle": "선박 갱웨이에서 출발하고 도착하는 포인트-투-포인트 루프입니다. 서울 일정 자체는 직선이 아닌 권역 구성 — 경복궁, 북촌, 인사동, 명동이 모두 20분 반경 내에 있어 이동 없이 유연하게 탐방할 수 있습니다."
         }
       }
     },
@@ -1616,38 +1782,38 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "First-time visitors to the area",
-            "Couples",
-            "Adult families"
+            "해당 지역 첫 방문자",
+            "커플",
+            "성인 가족 단위"
           ],
           "lessIdealFor": [
-            "Travelers wanting a fixed-group tour with set departures (this is private; book individually)",
-            "Cruise groups larger than the vehicle's seating (typical sedan 1–3 pax, SUV 4–6, van 7+; specify at booking)",
-            "Budget-first travelers — private format costs more than shared cruise excursions",
-            "Travelers whose all-aboard window is shorter than 7 hours (hard fit)"
+            "고정 그룹 투어를 원하는 분 주의 (프라이빗 투어)",
+            "차량 좌석 수를 초과하는 크루즈 그룹 (일반 세단/밴 최대 1~10인).",
+            "예산 우선 여행자 주의 (프라이빗은 공유 투어보다 비쌈)",
+            "전원 승선 창이 7시간 미만인 여행자 주의"
           ],
           "routeLogicSections": [
             {
-              "title": "Why this route is built this way",
+              "title": "이 코스의 추천 포인트",
               "icon": "route",
               "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "Built around your all-aboard time, not a fixed clock",
-                  "detail": "Standard group tours run on the operator's schedule, not yours. A private cruise excursion starts the moment you disembark and ends well before your all-aboard, with a 60-minute safety buffer that absorbs Seoul traffic. The driver-guide treats the ship's departure time as the only deadline that matters."
+                  "label": "고정 시계가 아닌 귀하의 전원 승선 시간에 맞춰 구성",
+                  "detail": "일반 그룹 투어는 정해진 그룹 일정으로 운행됩니다. 프라이빗 크루즈 투어는 귀하가 하선하는 순간 시작되고 귀하의 특정 전원 승선 시간에 맞게 마무리됩니다."
                 },
                 {
-                  "label": "Pickup at the gangway, not 'meet at a station in Seoul'",
-                  "detail": "Cruise terminals at Incheon are 50 km from central Seoul. Public transit means a taxi to Incheon Airport, then the AREX train, then a subway line, then walking — easily 90+ minutes each way and a real risk if delayed. A private car is direct, door-to-door, and your luggage stays in the vehicle if you want."
+                  "label": "'서울역에서 만나세요'가 아닌 선착장에서 픽업",
+                  "detail": "인천 크루즈 터미널은 서울 중심부에서 50km 거리입니다. 대중교통으로 이동하면 인천공항까지 택시, 이후 AREX, 이후 지하철이 필요합니다. 프라이빗은 터미널 커브에서 시작합니다."
                 },
                 {
-                  "label": "No mystery shopping stops, no group of 40",
-                  "detail": "Many large cruise-line excursions include forced ginseng-shop or duty-free stops that eat 60–90 minutes of your day. A private car has no such commercial pressure: you stop where you want, for as long as you want, in your own group only."
+                  "label": "미스터리 쇼핑 코스 없음, 40명 단체 없음",
+                  "detail": "많은 대형 크루즈 라인 투어에는 인삼 가게나 면세점 강제 방문이 포함되어 60~90분을 소비합니다. 프라이빗 차터는 귀하의 시간을 귀하의 우선순위에 사용합니다."
                 },
                 {
-                  "label": "Customizable on the day",
-                  "detail": "Royal guard ceremony cancelled by rain? Skip Bukchon, add Jogyesa? Want to swap Myeongdong for the Korean War Memorial because your father served? All possible — a private guide-driver can rebuild the day mid-itinerary as long as the sailaway window holds."
+                  "label": "당일 맞춤 가능",
+                  "detail": "비로 왕실 교대식 취소? 북촌 생략하고 조계사 추가? 명동 대신 한국전쟁기념관으로 교체? 차량 안에서 조정됩니다."
                 }
               ]
             }
@@ -1662,79 +1828,115 @@
       "props": {
         "practicalAccordionItems": [
           {
-            "title": "What's included",
-            "content": "Private vehicle (sedan, van, or large van depending on group size), English-speaking driver-guide, fuel, tolls, parking. Not included: admission tickets (Gyeongbokgung ₩3,000, N Seoul Tower deck ₩21,000, etc. — paid on the day), meals, tips. The guide pre-buys palace tickets to skip lines if requested."
+            "id": "inclusions",
+            "title": "포함 사항",
+            "preview": "프라이빗 차량 (그룹 크기에 따라 세단, 밴, 대형 밴), 영어 구사 드라이버 가이드",
+            "content": [
+              "프라이빗 차량(그룹 규모에 따라 세단, 밴, 대형 밴), 영어 가이드 겸 운전기사, 연료·통행료 포함.",
+              "미포함: 입장료(경복궁 ₩3,000, N서울타워 전망대 ₩21,000 등 — 요청 시 가이드가 사전 구매하여 줄서기 생략 가능).",
+              "가이드가 요청 시 궁궐 티켓을 사전 구매하여 줄서기를 줄여드립니다."
+            ]
           },
           {
-            "title": "Pickup & drop-off",
-            "content": "Driver-guide meets you at the Incheon Cruise Terminal arrival hall with a name sign. Note that Incheon has multiple terminals — confirm with your cruise line which one your ship uses (Yeongjong-do or Songdo). Pickup time is calibrated to your disembarkation, not a fixed clock."
+            "id": "pickup",
+            "title": "픽업 & 하차",
+            "preview": "드라이버 가이드가 이름 표지판을 들고 인천 크루즈 터미널 입국장에서 대기.",
+            "content": [
+              "가이드 겸 운전기사가 이름 사인을 들고 인천 크루즈 터미널 입국장에서 대기.",
+              "인천에는 복수의 터미널이 있으니 크루즈 회사에 선박 기항 터미널을 미리 확인하세요.",
+              "픽업 시간은 귀하의 하선 시간 기준 (고정 시각 아님)."
+            ]
           },
           {
-            "title": "Sail-away timing",
-            "content": "The driver-guide will ask for your all-aboard time at pickup. The standard rule: you must be back on the ship at least 30 minutes before sail-away (most cruise lines). The driver builds at least a 60-minute traffic buffer on top of that. Seoul-Incheon transfers can take 60–90 minutes depending on rush hour."
+            "id": "sail",
+            "title": "전원 승선 시간 안내",
+            "preview": "드라이버 가이드가 픽업 시 전원 승선 시간 확인 예정.",
+            "content": [
+              "가이드 겸 운전기사가 픽업 시 전원 승선 시간을 확인합니다.",
+              "원칙: 출항 최소 30분 전 복귀 (대부분의 크루즈 회사 기준).",
+              "가이드는 여기에 최소 60분의 교통 완충을 추가합니다.",
+              "서울↔인천 이동은 러시아워에 따라 60~90분 소요."
+            ]
           },
           {
-            "title": "Customization & dietary needs",
-            "content": "The itinerary is fully customizable. Tell us in advance about: dietary restrictions (halal, vegetarian, kosher, allergies), mobility limitations (wheelchair access at palace and tower), specific sites (Korean War Memorial, Lotte Tower observation deck, Hangang River). The driver-guide will pre-plan the route accordingly."
+            "id": "customization",
+            "title": "맞춤화 & 식이 요건",
+            "preview": "일정 완전 맞춤 가능.",
+            "content": [
+              "일정 완전 맞춤 가능.",
+              "사전에 알려주실 사항: 식이 제한(할랄, 채식, 코셔, 알레르기), 거동 필요 사항, 반드시 방문하고 싶은 코스.",
+              "가이드 겸 운전기사가 그에 맞게 루트를 사전 계획합니다."
+            ]
           },
           {
-            "title": "Cancellation",
-            "content": "Free cancellation up to 24 hours before pickup. Same-day cancellations and no-shows are non-refundable. If your ship's port call is cancelled by the cruise line, full refund with documentation."
+            "id": "cancellation",
+            "title": "취소 정책",
+            "preview": "픽업 24시간 전까지 무료 취소 가능.",
+            "content": [
+              "픽업 24시간 전까지 무료 취소 가능.",
+              "당일 취소 및 노쇼는 환불 불가.",
+              "크루즈 회사 기항지 취소 시 취소 서류 제출 조건으로 전액 환불."
+            ]
           },
           {
-            "title": "Children & accessibility",
-            "content": "Children of all ages are welcome — child seats available on request (no extra cost, but please advise number and age in advance). Accessible vehicles available for wheelchair users — please request when booking, as not all vehicles in the fleet support a wheelchair lift."
+            "id": "children",
+            "title": "어린이 & 접근성",
+            "preview": "전 연령 어린이 환영 — 카시트 요청 시 제공 (무료, 사전 알림 필요)",
+            "content": [
+              "모든 연령 어린이 환영 — 요청 시 카시트 제공 (추가 비용 없음, 예약 시 알려주세요).",
+              "휠체어 사용자를 위한 접근성 차량 제공 가능 — 모든 차량이 장착된 것은 아니므로 예약 시 요청해 주세요."
+            ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "계절별 안내 확인"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "계절별 안내 확인"
           },
-          "_seasonalSummary": "Seoul has four distinct seasons. Cruise calls in spring and autumn are typically the most pleasant; summer is hot and humid; winter is cold and dry but rarely freezing-rain.",
+          "_seasonalSummary": "서울은 사계절이 뚜렷합니다. 크루즈 기항 일정은 보통 봄과 가을이 가장 쾌적하며, 여름은 덥고 습하고 겨울은 춥고 건조하지만 결빙성 비는 드문 편입니다.",
           "_seasonalTemperatures": [
             {
-              "season": "Spring (Mar–May)",
+              "season": "봄 (3~5월)",
               "range": "5–22°C",
-              "notes": "Cherry blossoms in early–mid April. Best season for outdoor sightseeing."
+              "notes": "4월 초~중순에는 벚꽃이 피며, 야외 관광에 가장 좋은 시기입니다."
             },
             {
-              "season": "Summer (Jun–Aug)",
+              "season": "여름 (6~8월)",
               "range": "22–32°C",
-              "notes": "Hot and humid; July can have monsoon rain. Most palaces and museums are partially shaded."
+              "notes": "덥고 습하며 7월에는 장마가 있을 수 있습니다. 대부분의 궁궐과 박물관은 일부 그늘이 있습니다."
             },
             {
-              "season": "Autumn (Sep–Nov)",
+              "season": "가을 (9~11월)",
               "range": "8–22°C",
-              "notes": "Best season — clear skies, mild temperatures, foliage in late October."
+              "notes": "맑은 하늘과 온화한 기온, 10월 말 단풍까지 즐길 수 있는 최적기입니다."
             },
             {
-              "season": "Winter (Dec–Feb)",
+              "season": "겨울 (12~2월)",
               "range": "-5 to 6°C",
-              "notes": "Cold winds; bring a warm coat for the palace courtyard. Tower views often crystal clear."
+              "notes": "찬바람이 불 수 있어 궁궐 마당에서는 따뜻한 외투가 필요합니다. 타워 전망은 오히려 매우 선명한 날이 많습니다."
             }
           ]
         },
         "seasonalVariations": [
           {
-            "season": "Spring",
-            "highlight": "Cherry blossoms at Gyeongbokgung and along the Cheonggyecheon Stream; Bukchon's traditional houses in spring greens."
+            "season": "봄",
+            "description": "경복궁과 청계천 변 벚꽃; 북촌의 전통 한옥 골목이 봄 정취 가득."
           },
           {
-            "season": "Summer",
-            "highlight": "Long daylight hours mean you can squeeze N Seoul Tower into a tight window; many indoor museum options if it's hot."
+            "season": "여름",
+            "description": "긴 낮 시간으로 N서울타워를 타이트한 일정에 넣을 수 있음; 실내 박물관 많아 더운 날씨 대처 용이."
           },
           {
-            "season": "Autumn",
-            "highlight": "Maple foliage at Gyeongbokgung's rear garden (Hyangwonjeong) and along Bukchon ridges; clearest air for tower viewpoints."
+            "season": "가을",
+            "description": "경복궁 후원(향원정)과 북촌 능선 단풍; 크루즈 기항 최상의 시계 조건."
           },
           {
-            "season": "Winter",
-            "highlight": "Snow on the palace courtyards is one of Seoul's classic photographs; fewer crowds at major sites."
+            "season": "겨울",
+            "description": "눈 덮인 궁궐 마당은 서울 대표 포토 명소; 주요 명소 한산. 따뜻한 방한 준비 필수."
           }
         ]
       }
@@ -1747,56 +1949,65 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local operator",
-            "description": "Authorized Korean tour operator with full insurance",
+            "title": "공인 현지 여행사",
+            "description": "정식 등록 및 보험 가입 현지 여행사",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "iconColor": "text-emerald-600",
+            "body": "인천 크루즈 기항지 프라이빗 투어 전문 공인 현지 여행사. 승선 마감 90분 전 터미널 안전 복귀 최우선."
           },
           {
             "icon": "route",
-            "title": "Route specialists",
-            "description": "Hand-tuned itinerary, not a generic loop",
+            "title": "코스 전문",
+            "description": "이동 부담을 줄인 효율적인 코스",
             "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "iconColor": "text-sky-600",
+            "body": "드라이버 가이드가 선박 출항 일정을 실시간으로 파악. 화요일 경복궁 휴관 시 창덕궁으로 자동 대체."
           },
           {
             "icon": "users",
-            "title": "Curated group size",
-            "description": "Right-sized for the route",
+            "title": "그룹 규모 관리",
+            "description": "코스에 상황에 맞춘 인원 규모",
             "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600"
+            "iconColor": "text-amber-600",
+            "body": "완전 프라이빗 차량. 짐도 차량에 보관 가능 — 크루즈 당일 호텔 이동과 연계 편리."
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "timing": "즉시",
+            "title": "즉시 확인",
+            "detail": "행정 요약 포함 예약 확인서 발송",
+            "description": "선박명, 기항 날짜, 예상 도착 시각, 귀선 시각 포함 즉시 예약 확인서 발송."
           },
           {
-            "timing": "12 hours before",
-            "title": "12-Hour Reminder",
-            "detail": "Weather update and any route adjustments"
+            "timing": "출발 12시간 전",
+            "title": "12시간 전 알림",
+            "detail": "날씨 업데이트 및 경로 변경 안내",
+            "description": "선박 도착 예정 시각 기반 픽업 시각 조율 안내."
           },
           {
-            "timing": "Evening before",
-            "title": "Final Pickup Info",
-            "detail": "Exact pickup time and driver contact"
+            "timing": "전날 저녁",
+            "title": "최종 픽업 안내",
+            "detail": "정확한 픽업 시간 및 가이드 연락처",
+            "description": "드라이버 가이드 정보(이름, 차량 번호판) 전날 저녁 전송."
           },
           {
-            "timing": "Morning of tour",
-            "title": "Day-of Route Notes",
-            "detail": "Morning briefing based on live conditions"
+            "timing": "투어 당일 아침",
+            "title": "당일 코스 안내",
+            "detail": "실시간 상황 기반 당일 브리핑",
+            "description": "드라이버 가이드가 이름 팻말 들고 터미널에서 맞이합니다."
           },
           {
-            "timing": "During tour",
-            "title": "Stop-by-Stop Tips",
-            "detail": "Real-time guidance at each location"
+            "timing": "투어 중",
+            "title": "경유지별 심층 안내",
+            "detail": "각 코스 실시간 현장 안내",
+            "description": "귀선 일정에 충분한 여유를 두고 터미널 귀환. 직접 메시지로 실시간 조정."
           },
           {
-            "timing": "After tour",
-            "title": "Post-tour Support",
-            "detail": "Follow-up and recommendations"
+            "timing": "투어 종료 후",
+            "title": "투어 후 지원",
+            "detail": "피드백 및 추가 여행 추천",
+            "description": "귀환 후 피드백 요청 전송."
           }
         ]
       }
@@ -1809,58 +2020,58 @@
         "staticQuestions": [
           {
             "id": "q1",
-            "question": "What if my ship is delayed arriving at Incheon?",
-            "answer": "The driver-guide tracks the cruise schedule and adjusts pickup time accordingly. If the delay is significant (over 2 hours), the day's itinerary may need to be shortened — your guide will recommend the best subset to fit the remaining window."
+            "question": "선박이 인천 도착이 지연되면 어떻게 되나요?",
+            "answer": "드라이버 가이드가 크루즈 일정을 실시간으로 추적합니다. 지연이 크면 코스를 일부 조정합니다."
           },
           {
             "id": "q2",
-            "question": "What if Gyeongbokgung is closed?",
-            "answer": "Gyeongbokgung is closed on Tuesdays. If your port day falls on Tuesday, the substitute is Changdeokgung Palace and its UNESCO-listed Secret Garden (Huwon) — equally worth the visit, sometimes preferred by repeat visitors."
+            "question": "경복궁이 닫혀 있으면 어떻게 되나요?",
+            "answer": "화요일 휴관 시 창덕궁+비원으로 자동 대체합니다."
           },
           {
             "id": "q3",
-            "question": "Can we go to the DMZ instead?",
-            "answer": "Generally no — DMZ tours from Incheon are tight on time (DMZ is ≈ 50 km north of Seoul, the cruise terminal is ≈ 50 km west). For most cruise schedules, a DMZ + Seoul highlights combo doesn't fit. If your port call is 10+ hours and you want DMZ-only, ask in advance — a separate Incheon-DMZ private tour is offered."
+            "question": "DMZ로 가는 것은 가능한가요?",
+            "answer": "일반적으로 불가합니다. DMZ는 크루즈 터미널에서 50km 이상 북쪽으로, 왕복 이동 시간과 DMZ 입장 수속을 고려하면 당일 귀선 시각을 지키기 어렵습니다."
           },
           {
             "id": "q4",
-            "question": "How does the guide know our ship's schedule?",
-            "answer": "You provide the ship name, port-call date, expected arrival time, and all-aboard time at booking. The guide cross-checks against the published cruise itinerary and the Incheon Port Authority's daily schedule. Any change communicated by your cruise line should also be relayed to the guide via WhatsApp."
+            "question": "가이드가 우리 선박 일정을 어떻게 알 수 있나요?",
+            "answer": "예약 시 선박명, 기항 날짜, 예상 도착 시각, 귀선 시각을 제공해 주시면 가이드가 일정을 조율합니다."
           },
           {
             "id": "q5",
-            "question": "What if there's heavy rain or a typhoon?",
-            "answer": "The tour runs in light rain. In a typhoon or heavy snow, the itinerary shifts indoors (palace covered halls, Jogyesa, Myeongdong's underground arcade, museum stops). The driver carries umbrellas. Outright cancellation only if a typhoon also cancels your ship's port call."
+            "question": "폭우나 태풍이 오면 어떻게 되나요?",
+            "answer": "가벼운 비: 예정대로 진행. 실내 구간으로 유연하게 조정. 태풍 급 기상은 선사에 기항 여부를 문의하세요."
           },
           {
             "id": "q6",
-            "question": "Can we leave luggage in the car?",
-            "answer": "Yes — many cruise guests use the day to also handle a hotel transfer or duty-free errand with luggage on board. The vehicle is locked when not in use; valuables should still be carried with you. Luggage capacity depends on vehicle size, so advise volume in advance."
+            "question": "차량에 짐을 보관할 수 있나요?",
+            "answer": "네, 많은 크루즈 여행자들이 당일 호텔 이동 짐을 차에 싣고 하루를 보냅니다."
           },
           {
             "id": "first-time",
-            "question": "Is this a good choice for first-time visitors to Seoul?",
-            "answer": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+            "question": "서울을 처음 방문하는 분에게 좋은가요?",
+            "answer": "네, 서울 핵심 명소를 하루에 균형 있게 볼 수 있습니다."
           },
           {
             "id": "walking",
-            "question": "Is the walking difficult?",
-            "answer": "Moderate walking with some active sections."
+            "question": "도보 이동이 힘들지 않나요?",
+            "answer": "보통 수준. 경복궁 마당, N서울타워 남산길 이동이 활동적인 구간."
           },
           {
             "id": "family",
-            "question": "Is this tour suitable for families?",
-            "answer": "Yes for families whose kids can handle a full day of moving around."
+            "question": "가족 여행에 적합한가요?",
+            "answer": "하루 종일 이동 가능한 어린이가 동반하는 가족에게 적합합니다."
           },
           {
             "id": "seniors",
-            "question": "Can older adults join comfortably?",
-            "answer": "Yes for active seniors; less ideal for low-mobility travelers."
+            "question": "어르신도 참여할 수 있나요?",
+            "answer": "활동적인 어르신에게 적합합니다. 남산 케이블카로 N서울타워 접근이 편리합니다."
           },
           {
             "id": "children",
-            "question": "What's the recommended minimum age?",
-            "answer": "Best fit is around age 6 and up — children comfortable with a full-day rhythm and the walking notes above."
+            "question": "권장 최소 연령은 몇 세인가요?",
+            "answer": "만 6세 이상 추천."
           }
         ]
       }
@@ -1910,13 +2121,13 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
         "price": {
           "amountLabel": "",
           "currency": "USD",
-          "per": "group",
-          "priceSource": "getyourguide_t1249797",
-          "priceNote": "Price not yet set. Private tour pricing varies by vehicle size (sedan 1–3 pax, van 4–6 pax, large van 7–9 pax). Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+          "per": "그룹",
+          "priceSource": "direct_rate",
+          "priceNote": "가격은 아직 확정 전입니다. 프라이빗 투어 요금은 차량 크기(세단 1~3명, 밴 4~6명, 대형 밴 7~9명)에 따라 달라집니다. 확정 후 AtoC Korea 직접 판매가는 10% 할인이 적용됩니다.",
           "discountPercent": 10
         }
       }
@@ -1941,14 +2152,14 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
       },
       "v17_batch10_enhancement": {
         "date": "2026-04-29",
-        "description": "Batch 10 deep enhancement — Incheon Cruise → Seoul shore-excursion pair. Tour 1 (from-incheon-seoul-day-tour-cruise-guests): Batch 9 small-group fixed-itinerary methodology. Tour 2 (incheon-seoul-private-car-shore-excursion-cruise): **RECLASSIFIED from small_group to private** — vehicle is private_vehicle, badges include 'Private', description specifies private group + driver-guide for your group only. Now uses Batch 8 private fixed-itinerary methodology with elevated customization (0.6) due to genuine within-stop choices (lunch your choice + Myeongdong/Jogyesa). All substantive stops enhanced with 1,200-2,000+ char descriptions weaving verified facts. matching_profile recalibrated to 0-1 float scale. 5 new POIs added to KB (v1.12 → v1.13): changdeokgung_palace (UNESCO World Heritage 1997, Tuesday substitute), n_seoul_tower (Korea's iconic 236.7m broadcasting tower, opened 1980, rebranded 2005), myeongdong (Seoul's #1 K-beauty/shopping district + 1898 Cathedral), jogyesa_temple (head temple of Jogye Order, founded 1395 origin, 1954 current name), incheon_cruise_terminal (opened April 2019, USD 580M facility for Oasis-Class ships). Reused KB POIs: gyeongbokgung_palace, bukchon_hanok_village, gwangjang_market, insadong (all from prior batches). KB POI count: 68 → 73.",
+        "description": "Batch 10 deep enhancement — Incheon Cruise → Seoul shore-excursion pair. Tour 1 (from-incheon-seoul-day-tour-cruise-guests): Batch 9 small-group fixed-itinerary methodology. Tour 2 (incheon-seoul-private-car-shore-excursion-cruise): **RECLASSIFIED from small_group to private** — vehicle is private_vehicle, badges include 'Private', description specifies private group + driver-guide for your group only. Now uses Batch 8 private fixed-itinerary methodology with elevated customization (0.6) due to genuine within-stop choices (lunch your choice + Myeongdong/Jogyesa). All substantive stops enhanced with 1,200-2,000+ char descriptions weaving verified facts. product profile recalibrated to 0-1 float scale. 5 new POIs added to KB (v1.12 → v1.13): changdeokgung_palace (UNESCO World Heritage 1997, Tuesday substitute), n_seoul_tower (Korea's iconic 236.7m broadcasting tower, opened 1980, rebranded 2005), myeongdong (Seoul's #1 K-beauty/shopping district + 1898 Cathedral), jogyesa_temple (head temple of Jogye Order, founded 1395 origin, 1954 current name), incheon_cruise_terminal (opened April 2019, USD 580M facility for Oasis-Class ships). Reused KB POIs: gyeongbokgung_palace, bukchon_hanok_village, gwangjang_market, insadong (all from prior batches). KB POI count: 68 → 73.",
         "_score_audit": {
           "_methodology": "Tour 1 = small-group shared-van fixed-itinerary (Batch 9 formula): private_tour_fit=0.05, customizable_route_fit=0.05 (tighter than Batch 9 due to fixed cruise schedule), flexibility_fit=0.3. Tour 2 = **RECLASSIFIED** small_group → private (Batch 8 formula with elevated customization): private_tour_fit=1.0, customizable_route_fit=0.6 (genuine within-stop choices), flexibility_fit=0.85 (sail-away built in). Both tours: cruise_passenger_fit=1.0 (catalog-leading new dimension). Tour 1 royal_palace_fit=1.0, hanok_fit=1.0, street_food_fit=1.0 — all catalog-leading new dimensions. Time-weighted indoor_ratio re-computed per Fix 1 methodology using verified per-POI indoor_ratio_at_stop values.",
           "deltas_applied": {

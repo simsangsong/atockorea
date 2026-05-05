@@ -5,41 +5,41 @@
   "locale": "zh-CN",
   "product_id": "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
   "seo": {
-    "pageTitle": "Suwon Hwaseong, Gwangmyeong Cave & Starfield Tour | AtoC Korea",
-    "metaDescription": "9-hour small-group day tour from Seoul: UNESCO Suwon Hwaseong Fortress, Hwaseong Haenggung, Suwon Nammun Market, Starfield Library, LED-lit Gwangmyeong Cave.",
+    "pageTitle": "水原华城·光明洞窟·星野图书馆一日游 | AtoC Korea",
+    "metaDescription": "首尔出发9小时小团游：UNESCO水原华城、光明洞窟、水原星野图书馆。",
     "primaryKeywords": [
-      "Suwon Hwaseong tour from Seoul",
-      "Gwangmyeong Cave day trip",
-      "Starfield Library Suwon tour",
-      "UNESCO Korea day tour"
+      "水原华城一日游从首尔",
+      "光明洞窟一日游",
+      "水原星野图书馆旅游",
+      "UNESCO韩国一日游"
     ],
     "ogImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
     "title": "水原华城＋光明洞窟＋星空图书馆一日游（首尔出发）| AtoC Korea",
-    "description": "首尔出发一日游：水原华城UNESCO世界遗产→南门市场街头美食→星空图书馆→光明洞窟（前日据金矿，龙丸龙雕＋LED隧道＋地下酒窖）。小团体，英语导游，含全部门票，周二至日。"
+    "description": "首尔出发一日游：水原华城UNESCO世界遗产→南门市场街头美食→星空图书馆→光明洞窟（前日据金矿，龙丸龙雕＋LED隧道＋地下酒窖）。小团，英语导游，含全部门票，周二至日。"
   },
   "catalog_card": {
     "thumbnail": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
     "title": "水原华城、光明洞窟＆星空图书馆一日游",
-    "priceLabel": "From US$54.00 per person (10% off, was $60)",
-    "shortCardDescription": "A small-group cultural day-trip from Seoul covering four contrasting sides of Gyeonggi Province: the UNESCO-listed Suwon Hwaseong Fortress with its 18th-century walls and Haenggung Palace, the dramatic LED-lit underground theme park inside Gwangmyeong Cave (a former Japanese-era gold mine), the four-floor Starfield Library Suwon, and the 1,000-year-old Nammun traditional market for street food. 9 hours with included transport and admissions.",
+    "priceLabel": "US$54.00起/每人 （九折优惠，原价$60）",
+    "shortCardDescription": "从首尔出发游览京畿道四大对比鲜明体验的小团一日游：水原华城（UNESCO）、光明洞窟（废弃矿洞改造景点）、星际图书馆及可选的南怡岛。全程约10小时。",
     "tags": [
-      "small_group",
-      "culture",
+      "小团",
+      "文化",
       "unesco",
-      "cave",
-      "library",
-      "shopping",
-      "day_trip"
+      "洞穴",
+      "图书馆",
+      "购物",
+      "一日游"
     ],
     "rating": 4.6,
     "reviewCount": 137,
     "slug": "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
-    "subtitle": "A small-group cultural day-trip from Seoul covering four contrasting sides of Gyeonggi Province: the UNESCO-listed Suwon Hwaseong Fortress with its…",
-    "region": "Gyeonggi-do (south of Seoul)",
-    "duration": "9 hours",
+    "subtitle": "从首尔出发的小团文化一日游，游览京畿道四大不同面貌。",
+    "region": "京畿道（首尔以南）",
+    "duration": "9小时",
     "stopsCount": 7,
     "badges": [
-      "小团体",
+      "小团",
       "文化体验",
       "世界遗产",
       "熔岩洞穴",
@@ -57,21 +57,21 @@
     "salePriceUsd": 54,
     "discountPercent": 10,
     "currency": "USD",
-    "per": "person",
-    "priceSource": "getyourguide_t816598",
-    "priceNote": "Original price 60 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+    "per": "人",
+    "priceSource": "direct_rate",
+    "priceNote": "价格以 AtoC Korea 官网直售价为准。"
   },
   "hero": {
     "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
     "imagePosition": "center 35%",
     "tagline": "韩国唯一的城墙要塞、前黄金矿山重生为艺术洞窟，以及全国最多人拍照的图书馆",
     "pills": [
-      "小团体",
+      "小团",
       "文化体验"
     ],
     "meta": {
-      "duration": "9 hours",
-      "region": "Gyeonggi-do (south of Seoul)",
+      "duration": "9小时",
+      "region": "京畿道（首尔南部）",
       "stops": "7 个景点",
       "rating": 4.6,
       "ratingStars": 5
@@ -101,40 +101,33 @@
   ],
   "glanceItems": [
     {
-      "icon": "camera",
-      "label": "拍照潜力",
-      "value": "极佳",
-      "level": 5
+      "icon": "clock",
+      "label": "行程时间",
+      "value": "约9小时（早上至傍晚）"
     },
     {
-      "icon": "mountain",
-      "label": "景点密度",
-      "value": "良好",
-      "level": 4
+      "icon": "users",
+      "label": "团体规模",
+      "value": "小团，英语导游"
+    },
+    {
+      "icon": "map-pin",
+      "label": "路线区域",
+      "value": "京畿道水原市及光明市"
     },
     {
       "icon": "footprints",
       "label": "步行强度",
-      "value": "稍高",
-      "level": 4
+      "value": "中等——要塞步行为石面上坡，洞窟含180余级台阶"
     },
     {
-      "icon": "cloud-rain",
-      "label": "雨天适合度",
-      "value": "极佳",
-      "level": 5
+      "icon": "ticket",
+      "label": "费用包含",
+      "value": "往返交通、英语导游，含水原华城及行宫门票。"
     },
     {
-      "icon": "users",
-      "label": "亲子适合度",
-      "value": "良好",
-      "level": 4
-    },
-    {
-      "icon": "gauge",
-      "label": "行程节奏",
-      "value": "均衡",
-      "level": 4
+      "label": "午餐安排",
+      "value": "不含——通常在星野购物中心美食广场用餐（优质选项₩5,000–30,000）。"
     }
   ],
   "galleryItems": [
@@ -143,18 +136,18 @@
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
       "alt": "光明洞窟龙丸龙雕",
-      "caption": "光明洞窟龙丸龙雕——41公尺玻璃纤维龙，韩国洞窟最高室内雕塑，前1912年日据金矿改建的地下艺术空间",
+      "caption": "光明洞窟龙丸龙雕——41米玻璃纤维龙，韩国洞窟最高室内雕塑，前1912年日据金矿改建的地下艺术空间",
       "location": "光明洞窟，光明，京畿道",
-      "atmosphere": "Stone walls built 1794-1796 under King Jeongjo; only walled fortress city remaining in Korea"
+      "atmosphere": "光明洞窟龙丸龙雕——41米玻璃纤维龙，韩国洞窟最高室内雕塑，前1912年日据金矿改建的地下艺术空间是本路线的代表性停靠点，适合拍照并感受现场氛围。"
     },
     {
       "id": "g2",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "光明洞窟LED艺术隧道春季灯光",
-      "caption": "光明洞窟LED艺术隧道——200公尺隧道，春季赏樱主题灯光，韩剧《阿尔罕布拉宫的回忆》取景地",
+      "alt": "行程中参观的光明洞窟LED艺术隧道——200米隧道，春季赏樱主题灯光，韩剧《阿尔罕布拉宫的回忆》取景地景观",
+      "caption": "光明洞窟LED艺术隧道——200米隧道，春季赏樱主题灯光，韩剧《阿尔罕布拉宫的回忆》取景地",
       "location": "光明洞窟，光明，京畿道",
-      "atmosphere": "Korea's largest haenggung; daily royal-guard ceremonies and martial-arts demos"
+      "atmosphere": "光明洞窟LED艺术隧道——200米隧道，春季赏樱主题灯光，韩剧《阿尔罕布拉宫的回忆》取景地是本路线的代表性停靠点，适合拍照并感受现场氛围。"
     },
     {
       "id": "g3",
@@ -163,43 +156,43 @@
       "alt": "水原华城城墙步道长安门段",
       "caption": "水原华城城墙步道——1997年UNESCO世界文化遗产，长安门至华西门约1.2公里最密集军事设施路段",
       "location": "水原华城，水原，京畿道",
-      "atmosphere": "Former Siheung gold mine (1912-1972); 7.8 km of tunnels; constant 12°C year-round"
+      "atmosphere": "旧始兴金矿（1912–1972），总长7.8公里坑道，全年约12°C"
     },
     {
       "id": "g4",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "星空图书馆水原22公尺书架中庭",
-      "caption": "星空图书馆水原——22公尺高圆柱形书架中庭，2024年1月开幕的신世界旗舰第二代星空购物中心",
+      "alt": "星空图书馆水原22米书架中庭",
+      "caption": "星空图书馆水原——22米高圆柱形书架中庭，2024年1月开幕的新世界旗舰第二代星空购物中心",
       "location": "星空水原购物中心，水原",
-      "atmosphere": "Korea's largest dragon (41 m, 800 kg, 'Lord of the Cave') built by Weta Workshop (Lord of the Rings prop studio)"
+      "atmosphere": "星空图书馆水原——22米高圆柱形书架中庭，2024年1月开幕的新世界旗舰第二代星空购物中心是本路线的代表性停靠点，适合拍照并感受现场氛围。"
     },
     {
       "id": "g5",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "Starfield Library Suwon's four-story atrium with 22-meter floor-to-ceiling bookshelves and reading lounges arranged on the lower floors",
-      "caption": "Starfield Library Suwon — 22 m bookshelves",
-      "location": "Starfield Suwon Library, Yeongtong-gu, Suwon",
-      "atmosphere": "Shinsegae's flagship 2nd-generation Starfield, opened January 2024; free entry; vinyl-record listening area"
+      "alt": "水原星际图书馆四层中庭，下层排列着22米落地书架与阅读休闲区",
+      "caption": "星际书店水原——22米书架",
+      "location": "星空图书馆水原, Yeongtong-gu, Suwon",
+      "atmosphere": "新世界2024年1月开业的旗舰第二代星际，免费入场，黑胶唱片欣赏区"
     },
     {
       "id": "g6",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-      "alt": "Suwon Nammun Market's covered alley with food stalls selling Suwon-style galbi, fried chicken, and traditional sweets",
-      "caption": "Suwon Nammun Market — 220-year King Jeongjo market",
-      "location": "Suwon Nammun Market, south gate of the fortress, Suwon",
-      "atmosphere": "220-year history; created by King Jeongjo during Hwaseong's construction; tongdak alley + 9 sub-markets"
+      "alt": "水原南门市场的室内美食巷——出售水原式排骨、炸鸡和传统糕点",
+      "caption": "水原南门市场——有220年历史的正祖市场",
+      "location": "水原华城南门一带的水原南门市场",
+      "atmosphere": "220年历史；正祖建造华城时所创；通小巷+9个子市场"
     }
   ],
   "itineraryStops": [
     {
       "number": 1,
       "time": "≈ 08:30",
-      "duration": "10 min",
+      "duration": "10分钟",
       "name": "首尔出发",
-      "category": "Pickup & departure",
+      "category": "接送与出发",
       "description": "从首尔两个中央集合点择一出发：**弘益大学站8号出口**或**明洞站2号或4号出口**。9小时行程设计使全团在人潮高峰前清空华城，留足时间进行南门市场＋星空图书馆＋光明洞窟的下午三连。**南下水原约1小时**，走京釜高速公路。",
       "highlights": [
         "弘益大学站8号出口或明洞站2 / 4号出口，约08:30集合",
@@ -207,14 +200,14 @@
         "9小时行程设计，清早出发确保城墙段清空人潮"
       ],
       "timeUsed": [
-        "Meet at designated Seoul pickup point (~5 min for boarding)",
-        "1-hour coach drive to Suwon (~60 min in light traffic)"
+        "在首尔接送点与导游司机会合",
+        "确认团员，分发水和零食"
       ],
-      "whyOnRoute": "An 09:30 Suwon arrival puts the group at Hwaseong Fortress with 60-90 min before midday crowds peak around 11:00. The day's clockwork — fortress → palace → market lunch → library → cave — minimizes coach repositioning and ends with the cave's reliable indoor finale.",
+      "whyOnRoute": "09:30到达水原，使团队在中午人群涌入前有60-90分钟游览华城。",
       "visitBasics": {},
       "convenience": {},
       "smartNotes": {
-        "tip": "Confirm exact pickup time and meeting point at booking. Bring water, sunscreen, and comfortable shoes for fortress wall walking — and a light jacket for the cave (12°C year-round)."
+        "tip": "巴士空调较强，建议携带薄外套。途中约中间位置会在服务区短暂停车上厕所。"
       },
       "_poi_meta": {
         "poi_key": "OPS_seoul_pickup_default",
@@ -228,41 +221,41 @@
     {
       "number": 2,
       "time": "≈ 09:30",
-      "duration": "60 min",
+      "duration": "60分钟",
       "name": "水原华城",
-      "category": "UNESCO Fortress",
-      "description": "**水原华城（수원화성）——1997年UNESCO世界文化遗产**——是韩国唯一同时保存有原始10册施工记录（《华城城役仪轨》，2007年另列入UNESCO世界记忆遗产）的城墙要塞城市。由正祖大王命令于**1794至1796年，仅2年9个月**建成，设计者丁若镛融合韩式、中式及西方城防科学，并发明거중기滑轮组吊车。城墙全周长**5.74公里**，设41处军事设施。今日导览步行长安门至华西门间最密集的约1.2公里段。**华城行宫**——韩国现存最大行宫（原576间），洛南轩是现场唯一保存自1796年的原建筑。**换岗仪式**周二至日上午11:00在新丰楼前举行（免费，约15分钟）。韩剧《大长今》（2003年）取景地。**门票含括在行程费用内**。",
+      "category": "UNESCO要塞",
+      "description": "**水原华城——1997年UNESCO世界文化遗产**——是韩国唯一同时保存有原始10册施工记录（《华城城役仪轨》，2007年另列入UNESCO世界记忆遗产）的城墙要塞城市。由正祖大王命令于**1794至1796年，仅2年9个月**建成，设计者丁若镛融合韩式、中式及西方城防科学，并发明滑轮组吊车。城墙全周长**5.74公里**，设41处军事设施。今日讲解步行长安门至华西门间最密集的约1.2公里段。**华城行宫**——韩国现存最大行宫（原576间），洛南轩是现场唯一保存自1796年的原建筑。**换岗仪式**周二至日上午11:00在新丰楼前举行（免费，约15分钟）。韩剧《大长今》（2003年）取景地。**门票含括在行程费用内**。",
       "highlights": [
         "**1997年UNESCO世界文化遗产**——韩国唯一保存原施工记录的城墙要塞",
         "1794至1796年正祖大王建造，丁若镛设计（韩式＋中式＋西方城防）",
-        "全周长5.74公里，41处军事设施；导览步行最密集的1.2公里段",
+        "全周长5.74公里，41处军事设施；讲解步行最密集的1.2公里段",
         "**韩国现存最大行宫（原576间）**，洛南轩是唯一原1796年建筑",
         "**换岗仪式周二至日上午11:00，免费，约15分钟**",
         "韩剧《大长今》（2003年）取景地",
         "**门票含括在行程费用内**"
       ],
       "timeUsed": [
-        "Coach drop-off near Janganmun (~5 min)",
-        "Brief group orientation (~5 min)",
-        "Walk Janganmun → Hwaseomun (~25-30 min)",
-        "Photo time + reassembly at vehicle (~10 min)",
-        "Optional Hwaseong Yeolcha sightseeing trolley Yeonmudae↔Paldalmun (~30 min one-way; ₩4,000 adult)"
+        "在长安门附近大巴下车——约5分钟",
+        "在长安门进行团体简介——约5分钟",
+        "长安门→华西门→华西将阁步道——约25–30分钟",
+        "拍照时间+返回车辆集合——约10分钟",
+        "可选：华城列车（练武台↔八达门）——另付费"
       ],
-      "whyOnRoute": "The route's UNESCO anchor — Korea's only remaining walled fortress city, built 1794-1796 under King Jeongjo. The Janganmun → Hwaseomun walk gives the highest density of preserved military structures in a 60-min stop, sized for a 9-hour day with 5 substantive stops. The full 5.74 km loop would consume 2.5+ hours and cannibalize the day's other heritage and modern stops. For this 5-stop itinerary, Hwaseong serves as the **morning anchor** — the 5.74 km perimeter is too long to circumnavigate in a single visit, so the day-trip format focuses on the Janganmun → Seojangdae western section (~25-30 min walking, highest preservation density). The 1801 **Hwaseong Seongyeok Uigwe** construction record — UNESCO Memory of the World since 2007 — documented every stone, beam, and laborer's wage, enabling faithful 1975-onwards reconstruction after Korean War damage. Jeong Yak-yong's **Geojunggi (거중기) pulley-and-block crane** is the world's first documented use of Western mechanical-advantage engineering on a Joseon-era construction site, predating Korea's industrial mechanization by ~120 years.",
+      "whyOnRoute": "路线的UNESCO核心景点——韩国唯一保存完好的城郭都市，于1794-1796年兴建。",
       "visitBasics": {
-        "hours": "Wall path 24 hours; recommended 09:00-18:00 summer / 09:00-17:00 winter",
-        "closed": "Open year-round (Hwaseong Trolley closed Mondays)",
-        "admission": "Adults 1,000 / Youth 700 / Children 500 KRW (FREE: children ≤6, seniors 65+, hanbok-wearers, last Wed of month)",
-        "walking": "Moderate — wall has steep sections; stairs at gates"
+        "hours": "城墙步道24小时（无闸门）；推荐09:00-18:00（夏季）/09:00-17:00（冬季）",
+        "closed": "全年开放（华城列车周一停运）",
+        "admission": "成人₩1,000 / 青少年₩700 / 儿童₩500（免费：6岁以下·65岁以上·穿韩服者·每月最后一个周三）",
+        "walking": "中等强度——城墙在西将台附近有陡坡；城门处有台阶；部分路段轮椅不便通行"
       },
       "convenience": {
-        "restroom": "At Janganmun, Hwaseomun, Paldalmun, Yeonmudae",
-        "parking": "Coach drop-off at Janganmun lot"
+        "restroom": "长安门、华西门、八达门及练武台均设有厕所",
+        "parking": "大巴在长安门停车场下客；练武台设有大巴专用停车位"
       },
       "smartNotes": {
-        "photo": "**Hwahongmun (north sluice gate)** with 7 arches over Suwoncheon Stream — the iconic shot. **Janganmun (largest existing royal gate in Korea)** at golden hour. **Seojangdae (west command post)** sunset over Paldalsan Mountain.",
-        "facilities": "Visitor Information Centers at all main gates; English-Korean signage throughout",
-        "tip": "Hanbok rental at Haenggung Square gives FREE fortress + palace admission. The Janganmun → Hwaseomun section gives the highest per-meter heritage density."
+        "photo": "**华虹门（北水门）**——7个拱门横跨水原川，是代表性拍摄构图，清晨或傍晚拍摄倒影效果最佳。",
+        "facilities": "长安门+八达门+行宫广场游客服务中心。英韩双语标识。华城列车（₩1,500往返）运行。",
+        "tip": "建议穿着舒适鞋履——城墙石材凹凸不平。行宫广场韩服租赁店可享受**免费入场**优惠。"
       },
       "_poi_meta": {
         "poi_key": "hwaseong_fortress",
@@ -285,10 +278,10 @@
     {
       "number": 3,
       "time": "≈ 10:45",
-      "duration": "60 min",
+      "duration": "60分钟",
       "name": "华城行宫",
-      "category": "Joseon Royal Detached Palace",
-      "description": "**华城行宫（화성행궁）——韩国现存最大行宫（离宫）**，1789至1796年与华城城墙同步建造，供正祖大王13次前往祭拜被闷死的父亲思悼世子时留宿。1795年皇室大移动（6,000名随从＋1,400匹马）记载于UNESCO世界记忆遗产。日据时代大部分拆毁；1996年起依仪轨复原，洛南轩是唯一原1796年真实建筑，其他均为复原重建物。韩剧《大长今》取景地。**门票含括在行程费用内**。",
+      "category": "韩国现存最大行宫——1789–1796年建造",
+      "description": "**华城行宫——韩国现存最大行宫（离宫）**，1789至1796年与华城城墙同步建造，供正祖大王13次前往祭拜被闷死的父亲思悼世子时留宿。1795年皇室大移动（6,000名随从＋1,400匹马）记载于UNESCO世界记忆遗产。日据时代大部分拆毁；1996年起依仪轨复原，洛南轩是唯一原1796年真实建筑，其他均为复原重建物。韩剧《大长今》取景地。**门票含括在行程费用内**。",
       "highlights": [
         "**韩国现存最大行宫（原576间）**",
         "正祖大王13次朝圣，1795年皇室大移动（UNESCO世界记忆遗产）",
@@ -297,27 +290,27 @@
         "**门票含括在行程费用内**"
       ],
       "timeUsed": [
-        "5 min walk from Hwaseong Fortress (Hwaseomun area)",
-        "Royal Guard Changing Ceremony at 11:00 (Tue-Sun) — ~15 min",
-        "Bongsudang + Naknamheon + Janganheon walk (~30 min)",
-        "Photo time + reassembly at vehicle (~10 min)",
-        "Optional Royal Guard Changing Ceremony at Sinpungnu Gate (Tue-Sun 11:00 AM, ~15 min, FREE — weather permitting)"
+        "从华城城墙（华西门区域）步行5分钟",
+        "抵达时间配合**11:00守门将交接仪式**在新丰楼前（约15分钟）",
+        "奉寿堂+洛南轩+长安轩参观（约30分钟）",
+        "拍照+返回车辆集合（约15分钟）",
+        "可选：新丰楼守门将交接仪式（周二至周日11:00，约15分钟，免费）"
       ],
-      "whyOnRoute": "The temporary royal residence is INSIDE the same UNESCO site as Hwaseong Fortress, 5 min walk apart. **Naknamheon = the only authentic original structure** (others rebuilt post-1996). Time arrival for the 11:00 AM Royal Guard Changing Ceremony — FREE, 15 min, one of the catalog's strongest free-experience hooks. Haenggung occupies the **historical and emotional center** of the Hwaseong project — the fortress walls were built around it (1794-1796) precisely to defend King Jeongjo's filial-piety pilgrimages to his father's tomb. Visiting Haenggung after the wall stretch converts an abstract military-architecture lesson into lived royal-Joseon spatial experience: the same **Bongsudang throne hall** also hosted the lavish 60th-birthday banquet for Jeongjo's mother Lady Hyegyeong in 1795 (depicted in the surviving Uigwe Banchado court-painting scrolls). The site has appeared in numerous K-dramas including Jewel in the Palace (2003), Sungkyunkwan Scandal (2010), and Moonlight Drawn by Clouds (2016). A **Combined Fortress + Haenggung ticket** at 3,500 KRW (vs 2,500 KRW separately) makes Haenggung a high-value addition to the day's anchor sequence.",
+      "whyOnRoute": "临时行宫与华城在同一UNESCO遗址内——无需额外交通，步行5分钟即达。",
       "visitBasics": {
-        "hours": "09:00-18:00 (last entry 17:30); summer May-Oct evening hours 18:00-21:00",
-        "closed": "Open year-round",
-        "admission": "Adult 1,500 / Teen 1,000 / Child 700 KRW. Combined Fortress + Haenggung 3,500 KRW. FREE for hanbok-wearers, seniors 65+",
-        "walking": "Easy — palace grounds mostly flat with some steps between courtyards"
+        "hours": "09:00–18:00（最晚入场17:30）；夏季5–10月延时18:00–21:00",
+        "closed": "全年开放",
+        "admission": "成人₩1,500/青少年₩1,000/儿童₩700；华城+行宫联票₩3,500；韩服/65岁以上/6岁以下免费",
+        "walking": "轻松——宫殿内大部分平坦，院落之间有少量台阶"
       },
       "convenience": {
-        "restroom": "At main entrance, near Bongsudang, at Haenggung Square",
-        "parking": "Hwaseong Haenggung public parking; Haenggung Square paid lots"
+        "restroom": "正门、奉寿堂附近及行宫广场设有厕所",
+        "parking": "华城行宫公共停车场；行宫广场收费停车场"
       },
       "smartNotes": {
-        "photo": "**Bongsudang Main Hall** + **Naknamheon (the only original 1796 structure)** + **Royal Guard Changing Ceremony at Sinpungnu (Tue-Sun 11:00 AM)**.",
-        "facilities": "Visitor Information Center, hanbok rental at Haenggung Square (15,000-20,000 KRW for 4 hr), Suwon Tongdak restaurants 5 min walk south.",
-        "tip": "**Time arrival for 11:00 AM Royal Guard Changing Ceremony Tue-Sun (FREE)**. **Naknamheon is THE single most historically important spot** — the only structure not rebuilt, surviving Japanese colonial demolition. Skip Mondays — Royal Guard Changing Ceremony performed Tue-Sun only."
+        "photo": "**奉寿堂正殿**——代表性宫殿照片。**洛南轩**——唯一的1796年原建筑。",
+        "facilities": "游客服务中心、厕所、纪念品商店。行宫广场有咖啡馆及韩服租赁店。",
+        "tip": "**安排在周二至周日11:00守门将交接仪式时间到达（免费）**。穿韩服可免费入场。"
       },
       "_poi_meta": {
         "poi_key": "hwaseong_haenggung",
@@ -340,40 +333,40 @@
     {
       "number": 4,
       "time": "≈ 12:00",
-      "duration": "75 min",
+      "duration": "75分钟",
       "name": "水原南门市场——午餐＋街头美食",
-      "category": "Traditional Market + Lunch",
-      "description": "**水原南门市场（수원남문시장）**——紧邻**八达门（팔달문，华城南城门）**南侧的历史商业市场，名称直译为「南门市场」；起源追溯至**18世纪末**正祖建造华城（1794至1796年）后，商人在南城门外设摊。市场**持续运营约230年**，由**9个分市场网络**组成，逾1,200家店铺横跨10公顷步行巷道。招牌景点：**水原통닭갈비街**——水原独有的통닭（整鸡烤）＋왕갈비（王式大肋骨烧烤）街，50年以上家族传承的创始餐厅群。街头美食：순대、떡볶이、호떡、빈대떡、鱼板（每道₩3,000至₩7,000）。韩剧**《请回答1988》（2015年）**取景巷道。建议携带现金（₩20,000以上）。",
+      "category": "传统市场+午餐",
+      "description": "**水原南门市场**——紧邻**八达门（，华城南城门）**南侧的历史商业市场，名称直译为「南门市场」；起源追溯至**18世纪末**正祖建造华城（1794至1796年）后，商人在南城门外设摊。市场**持续运营约230年**，由**9个分市场网络**组成，逾1,200家店铺横跨10公顷步行巷道。招牌景点：**水原街**——水原独有的（整鸡烤）＋（王式大肋骨烧烤）街，50年以上家族传承的创始餐厅群。街头美食：、、、、鱼板（每道₩3,000至₩7,000）。韩剧**《请回答1988》（2015年）**取景巷道。建议携带现金（₩20,000以上）。",
       "highlights": [
         "**约230年传统市场**——起源于正祖华城城市（1796年）",
         "韩国中小企业厅指定「文化观光市场」",
         "9个分市场＋逾1,200家店铺，横跨10公顷步行巷道",
-        "**水원통닭갈비街**——水原独有的통닭＋왕갈비，50年以上家族传承",
+        "**水街**——水原独有的＋，50年以上家族传承",
         "韩剧《请回答1988》（2015年）取景巷道",
-        "**水원式갈비**是韩国公认与首尔式갈비不同的地区料理——以「왕갈비（王式大肋）」和梨子姜汁腌制著称"
+        "**水式**是韩国公认与首尔式不同的地区料理——以「（王式大肋）」和梨子姜汁腌制著称"
       ],
       "timeUsed": [
-        "5-min walk from Hwaseong Haenggung Square south through Paldalmun gate",
-        "Sit-down Tongdak/Galbi lunch (~20-30 min)",
-        "Streetfood walk through Nammun Market alleys (~30-40 min)",
-        "Reassembly at vehicle near Paldalmun Plaza",
-        "Optional Suwon Tongdak Galbi lunch/dinner (₩15,000-30,000 pp; 45-60 min meal in Tongdak Galbi Street cluster)"
+        "从华城行宫广场向南经八达门步行5分钟",
+        "整鸡/排骨午餐——约20–30分钟",
+        "南门市场小巷街头小吃漫步——约30–40分钟",
+        "集合——约5分钟",
+        "可选水原炸鸡/排骨街午餐或晚餐（每人₩15,000–30,000；用餐约45–60分钟）"
       ],
-      "whyOnRoute": "Lunch at Suwon's most famous streetfood district — leveraging proximity (5 min walk from Hwaseong Haenggung) AND the Suwon Tongdak Galbi specialty (regional cuisine you cannot get in Seoul). Picked over Haenggung Square cafes (newer, less authentic) because Nammun Market provides the Joseon-era → working-class market continuity that elevates the day's heritage narrative. **CASH WARNING** built into pre-booking communication. Located **immediately south of Paldalmun** (the only fortress gate within central Suwon), Nammun Market connects the UNESCO walled district to its commercial-living context — the market literally translates as 'south-gate market.' The 9-sub-market network (Paldalmun + Yeongdong + Jidong + Motgol + Mi-charm + Mun-Ye + Nammun Rodeo + Yeongdong Suwon + Tongdak Galbi Street) is officially designated a **Korea SBA 'Cultural Tourism Market' (문화관광형시장)** — one of ~25 markets nationwide receiving government tourism investment. Best visited around **lunch (12:00-14:00) or dinner (17:00-20:00)** to catch the Tongdak Galbi cluster + streetfood at peak operation.",
+      "whyOnRoute": "在水原最著名的街头美食区午餐——利用与华城的近距离优势（步行5分钟）。",
       "visitBasics": {
-        "hours": "Most stalls 09:00-22:00; streetfood 12:00-late evening; Tongdak/Galbi restaurants 11:00-23:00",
-        "closed": "Open year-round (individual stalls may close Sundays)",
-        "admission": "Free entry; pay-as-you-go (cash recommended for streetfood; cards at sit-down restaurants)",
-        "walking": "Easy — flat pedestrian alleys; cobbled in places"
+        "hours": "大部分摊位09:00–22:00；街头小吃12:00至深夜",
+        "closed": "全年开放（部分摊位周日休息）",
+        "admission": "免费进入；建议备现金",
+        "walking": "轻松——平坦步行小巷"
       },
       "convenience": {
-        "restroom": "Public restrooms at Paldalmun Plaza and within larger sub-markets",
-        "parking": "Suwon Nammun Market Public Parking 1,000 KRW first 30 min; coach lot at Paldalmun Plaza"
+        "restroom": "八达门广场及大型子市场内公共厕所",
+        "parking": "水原南门市场公共停车场；八达门大巴专用区"
       },
       "smartNotes": {
-        "photo": "**Paldalmun (south gate of Hwaseong) framing the market entrance** — the iconic shot. **Suwon Tongdak Galbi Street** at evening illumination. **Reply 1988 filming alleys** — small 1980s-style streets at the eastern end. Hanbok-wearers browsing the market.",
-        "facilities": "Tourist Information Center at Paldalmun Plaza, ATMs, cash exchange shops, 24-hour convenience stores. Hwaseong Fortress access via Paldalmun directly.",
-        "tip": "**BRING CASH 20,000+ KRW** — many streetfood stalls don't accept cards. **Lunch recommendation: Suwon Tongdak (whole roast chicken) + makgeolli** — local cultural pairing, ~12,000-18,000 KRW per person at Tongdak Street. Pair with Hwaseong Fortress: Paldalmun south gate is the natural transition between fortress wall and market lunch."
+        "photo": "**以八达门（华城南门）为画框的市场入口**——代表性拍摄构图。",
+        "facilities": "八达门广场旅游信息中心、ATM、兑换店。",
+        "tip": "**携带现金₩20,000以上**——很多街头小吃摊不收卡。推荐整鸡+排骨组合午餐。"
       },
       "_poi_meta": {
         "poi_key": "suwon_nammun_market",
@@ -388,49 +381,49 @@
           "Wikipedia Suwon-style galbi",
           "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Paldalmun Market + Nammun Rodeo Market listings)",
           "Visit Suwon CVB (visitsuwon.org — Nammun Market 9-sub-market network + Suwon Tongdak Galbi Street)",
-          "Korea Small & Medium Business Administration (kosbi.or.kr — Cultural Tourism Market 문화관광형시장 designation)",
+          "Korea Small & Medium Business Administration (kosbi.or.kr — Cultural Tourism Market  designation)",
           "Wikipedia (Suwon-style galbi — wang-galbi origin + pear-and-ginger marinade)",
-          "Suwon City Tourism (suwon.go.kr/tour — Suwon Tongdak Galbi 거리 cluster + Reply 1988 filming credits)"
+          "Suwon City Tourism (suwon.go.kr/tour — Suwon Tongdak Galbi  cluster + Reply 1988 filming credits)"
         ]
       }
     },
     {
       "number": 5,
       "time": "≈ 13:30",
-      "duration": "75 min",
+      "duration": "75分钟",
       "name": "星空图书馆水原",
-      "category": "Modern Cultural Landmark",
-      "description": "**星空图书馆水原（별마당 도서관 수원）**——位于**신世界星空水原购物中心（2024年1月26日开幕）**，约33万4,000平方公尺，韩国第二大室内购物中心。由**BCHO Partners**设计，**22公尺高书架**是韩国最高的圆柱形书架建筑之一。图书馆横跨4层（一至四楼挑空中庭），馆藏约7万册。**免费开放**，每日10:00至22:00。特色：黑胶唱片聆听区、月度轮换当代艺术展、春季（3至4月）千朵粉色LED花瓣中庭装置。地下一楼**Eatopia美食广场**（30多家餐厅）。",
+      "category": "当代文化地标",
+      "description": "**星空图书馆水原**——位于**新世界星空水原购物中心（2024年1月26日开幕）**，约33万4,000平方米，韩国第二大室内购物中心。由**BCHO Partners**设计，**22米高书架**是韩国最高的圆柱形书架建筑之一。图书馆横跨4层（一至四楼挑空中庭），馆藏约7万册。**免费开放**，每日10:00至22:00。特色：黑胶唱片聆听区、月度轮换当代艺术展、春季（3至4月）千朵粉色LED花瓣中庭装置。地下一楼**Eatopia美食广场**（30多家餐厅）。",
       "highlights": [
-        "**신世界旗舰第二代星空购物中心——2024年1月26日开幕**",
-        "**4层图书馆，22公尺高书架**——韩国最高的圆柱形书架之一",
+        "**新世界旗舰第二代星空购物中心——2024年1月26日开幕**",
+        "**4层图书馆，22米高书架**——韩国最高的圆柱形书架之一",
         "约7万册书籍＋杂志，**免费开放**",
         "黑胶唱片聆听区、月度轮换当代艺术展",
         "春季（3至4月）中庭千朵粉色LED花瓣装置",
         "Eatopia美食广场（30多家餐厅），午餐推荐地点"
       ],
       "timeUsed": [
-        "15-min coach drive from Paldalmun Plaza to Starfield",
-        "Mall + library walking tour (~45 min)",
-        "Café break or shopping browse (~20 min)",
-        "Reassembly at coach (~10 min)",
-        "Optional Vinyl LP cafe lounge (5F, ~₩18,500 incl. drink + headphones + LP record-player access; ~30-45 min)"
+        "从龙仁/民俗村驾车15分钟",
+        "购物中心+图书馆参观——约45–50分钟",
+        "在图书馆或美食广场咖啡小歇——约15分钟",
+        "返回车辆集合",
+        "可选：黑胶咖啡厅（5楼，含饮品约₩18,500）"
       ],
-      "whyOnRoute": "The 'modern Korea' counterweight after fortress + palace + market lunch. Shinsegae's flagship 2nd-generation Starfield mall opened January 26, 2024; the four-floor library with 22 m bookshelves is the architectural highlight. **All-indoor reset stop** — buffers afternoon weather risk and provides genuine multi-generational appeal before Gwangmyeong Cave's industrial-heritage finale. Starfield Library is the **single most Instagram-photographed indoor space in Greater Seoul outside central Seoul** (per Korean travel-media surveys 2024-25) — the 22m bookshelves (vs Seoul COEX's 13m) span mall floors 4F-7F as a connected atrium void. **FREE admission, no membership, photos permitted, mall-wide free entry** — a no-friction photo stop with optional cafe/dining adjacency (Eatopia food hall on B1F with 30+ Korean and international restaurants). From Suwon Station: free Starfield shuttle bus (every 10-15 min from Suwon Station Exit 4) or Subway Line 1 → Hwaseo Station Exit 1/4 (8-min walk). Mall hours **10:00-22:00 daily**, library accessible during all mall hours.",
+      "whyOnRoute": "一日现代韩国反差体验 — 城堡+行宫+市场午餐之后，星际是感受当代首都圈文化基础设施的最佳核心亮点。",
       "visitBasics": {
-        "hours": "Mall 10:00-22:00; library accessible during all mall hours",
-        "closed": "1-2 monthly closure days (typically Mondays — verify online)",
-        "admission": "Library FREE; mall-wide free entry; Aquafield separate ~25,000-35,000 KRW",
-        "walking": "Easy — escalators and elevators between all floors; wheelchair/stroller accessible"
+        "hours": "购物中心10:00-22:00；图书馆在购物中心营业期间全程开放",
+        "closed": "每月1至2天休馆（通常为周一——建议参观前在线确认）",
+        "admission": "**图书馆免费**（购物中心全场免费入场；购物费用自理；Aquafield水上乐园另付约₩28,000）",
+        "walking": "轻松——全层设有自动扶梯及电梯；全场轮椅及婴儿车无障碍通行"
       },
       "convenience": {
-        "restroom": "Multiple restrooms on every floor; family-friendly stations",
-        "parking": "Underground ~5,000 spaces; first 3 hours FREE with mall purchase 30,000 KRW+; coach lot for groups"
+        "restroom": "各层设有多个卫生间；家庭洗手间内含尿布更换台",
+        "parking": "地下停车位约5,000个；消费₩30,000以上享3小时免费停车；设有大巴专用区"
       },
       "smartNotes": {
-        "photo": "**Library central atrium with 22-meter bookshelves** from 4F looking down. Vinyl Record Lounge for retro aesthetic. Cherry blossom installation in atrium (March-April). Christmas tree (December).",
-        "facilities": "Eatopia food hall B1F, Toy Kingdom 4F, Aquafield water park B1-2F, T-Joy + CGV + MEGABOX cinemas, free WiFi, multilingual customer service, tax-refund counters.",
-        "tip": "**Library is FREE** — exceptional value attraction. **22-meter bookshelves = Korea's tallest** (mention to guests for impact). **Cherry blossom installation March-April** is the seasonal must-see. Avoid Saturday afternoons (peak crowds). Verify Starfield monthly closure dates online."
+        "photo": "**图书馆中央中庭22米高书架**——从4楼画廊俯瞰是代表性拍摄角度。",
+        "facilities": "B1层Eatopia美食广场（30家以上餐厅₩5,000至40,000），4层玩具王国，B1至2层Aquafield水上乐园。",
+        "tip": "**图书馆免费**——极具性价比的拍照景点。**水原站出口有免费星野接驳巴士**（下车步行3分钟）。"
       },
       "_poi_meta": {
         "poi_key": "starfield_library_suwon",
@@ -444,7 +437,7 @@
           "Shinsegae press",
           "BCHO Partners",
           "Starfield Suwon official (starfield.co.kr/suwon — opening date 2024-01-26 + library 4F-7F + free admission)",
-          "Shinsegae Property press release (Jan 2024 grand opening + 5th Starfield mall + 2nd-generation flagship concept)",
+          "Shinsegae Property press release (Jan 2024 grand opening + 5th Starfield mall + 2nd-generation flag邮轮 concept)",
           "Korea Tourism Organization (english.visitkorea.or.kr — Starfield Library Suwon listing)",
           "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
           "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
@@ -454,44 +447,44 @@
     {
       "number": 6,
       "time": "≈ 15:30",
-      "duration": "100 min",
+      "duration": "100分钟",
       "name": "光明洞窟",
-      "category": "Industrial-Heritage Themed Cave",
-      "description": "**光明洞窟（광명동굴）**——原为**1912年日据时代开发的金、银、铜、锌矿**，运营60年至1972年。在开采期间，矿山产出52公斤黄金、6,070公斤白银、1,247吨铜及3,247吨锌。停产后，废弃隧道被用作**새우젓（虾酱）发酵储存设施**约40年——洞窟全年恒温12°C及高湿度，是韩国腌制海鲜陈化的理想环境。**光明市2011年以43亿韩圜收购洞窟**，并于同年8月重新开放，成为**韩国第一座由政府拥有的洞窟观光景点**。获得**2014年韩国旅游之星大奖**（韩国旅游的奥斯卡）。公众可进入的**路线约2公里**（洞窟总长7.8公里）。**主题展区**：**洞窟水族馆**（韩国最深的室内淡水鱼水族馆）；**酒窖**（韩国最大地下酒窖，储藏200种以上韩国及进口葡萄酒，葡萄酒品酒₩5,000 / 3杯）；**LED艺术隧道**（200公尺隧道，春季赏樱、秋季枫叶、冬季雪景主题季节性灯光）；**龙丸（용마루）龙雕**（41公尺长玻璃纤维龙——韩国任何洞窟中最高的室内雕塑，最多人社交媒体分享的打卡点）；**荧光壁画**（仅在紫外线 / 黑灯下可见的天然荧光颜料壁画）；**音乐厅**（200席声学最佳化表演场地）。韩剧**《阿尔罕布拉宫的回忆》（2018年）**取景地。年访客约**150万人次**（2024年数据）。**周一闭馆**，周二至日09:00至18:00（最后入场17:00）。成人₩7,000 / 青少年₩3,500 / 儿童₩2,000。主要路线可轮椅通行。**门票含括在行程费用内**。",
+      "category": "工业遗产主题洞窟",
+      "description": "**光明洞窟**——原为**1912年日据时代开发的金、银、铜、锌矿**，运营60年至1972年。在开采期间，矿山产出52公斤黄金、6,070公斤白银、1,247吨铜及3,247吨锌。停产后，废弃隧道被用作**（虾酱）发酵储存设施**约40年——洞窟全年恒温12°C及高湿度，是韩国腌制海鲜陈化的理想环境。**光明市2011年以43亿韩元收购洞窟**，并于同年8月重新开放，成为**韩国第一座由政府拥有的洞窟观光景点**。获得**2014年韩国旅游之星大奖**（韩国旅游的奥斯卡）。公众可进入的**路线约2公里**（洞窟总长7.8公里）。**主题展区**：**洞窟水族馆**（韩国最深的室内淡水鱼水族馆）；**酒窖**（韩国最大地下酒窖，储藏200种以上韩国及进口葡萄酒，葡萄酒品酒₩5,000 / 3杯）；**LED艺术隧道**（200米隧道，春季赏樱、秋季枫叶、冬季雪景主题季节性灯光）；**龙丸龙雕**（41米长玻璃纤维龙——韩国任何洞窟中最高的室内雕塑，最多人社交媒体分享的拍照点）；**荧光壁画**（仅在紫外线 / 黑灯下可见的天然荧光颜料壁画）；**音乐厅**（200席声学最佳化表演场地）。韩剧**《阿尔罕布拉宫的回忆》（2018年）**取景地。年访客约**150万人次**（2024年数据）。**周一闭馆**，周二至日09:00至18:00（最后入场17:00）。成人₩7,000 / 青少年₩3,500 / 儿童₩2,000。主要路线可轮椅通行。**门票含括在行程费用内**。",
       "highlights": [
         "**原为1912年日据时代金矿**——运营至1972年，停产后用作虾酱发酵库",
         "2011年8月重开，韩国第一座政府拥有洞窟观光景点",
         "**2014年韩国旅游之星大奖**（韩国旅游奥斯卡）",
         "公众路线约2公里，洞窟总长7.8公里",
         "**全年恒温12°C**——建议携带薄外套",
-        "**41公尺长龙丸（용마루）龙雕**——韩国洞窟中最高的室内雕塑",
+        "**41米长龙丸龙雕**——韩国洞窟中最高的室内雕塑",
         "酒窖——韩国最大地下酒窖（200种以上葡萄酒；品酒₩5,000）",
         "LED艺术隧道＋荧光壁画＋洞窟水族馆",
         "韩剧《阿尔罕布拉宫的回忆》（2018年）取景地",
         "**周一闭馆；周二至日09:00至18:00。门票含括在行程费用内**"
       ],
       "timeUsed": [
-        "30-min coach drive from Starfield Suwon to Gwangmyeong",
-        "Cave entrance + ticketing (~10 min)",
-        "Themed-zone walk: Aquarium → LED Tunnel → Dragon → Music Hall → Wine Cave → Folk Park (~70-80 min)",
-        "Optional wine tasting (~15 min, extra)",
-        "Reassembly at coach (~10 min)"
+        "从水原星野驾车30分钟至光明",
+        "洞窟入口+购票（约10分钟）",
+        "LED灯光主题区游览（酒窖、黄金瀑布、水世界）——约60–75分钟",
+        "可选葡萄酒试饮（约15分钟，另付费）",
+        "返回车辆集合（约10分钟）"
       ],
-      "whyOnRoute": "光明洞窟是全日「现代改造历史空间」的最强力收尾——日据时代金矿摇身一变为充满LED装置艺术的地下奇幻世界，提供在首尔周边找不到第二个类似的视觉体验。全程室内设计完美缓冲任何傍晚天气风险。",
+      "whyOnRoute": "光明洞窟是全日「现代改造历史空间」的最强力收尾——日据时代金矿摇身一变为充满LED装置艺术的地下奇幻世界，提供在首尔周边找不到第二个类似的景色体验。全程室内设计完美预留时间任何傍晚天气风险。",
       "visitBasics": {
-        "hours": "Tue-Sun 09:00-18:00 (last entry 17:00); summer Jul-Aug extended weekends to 19:00",
-        "closed": "**Mondays** (open if Mon is public holiday, closed next day instead)",
-        "admission": "Adult 7,000 / Youth 3,500 / Child 2,000 KRW; FREE for children ≤6 and seniors 65+",
-        "walking": "Easy to moderate — main route ~2 km, mostly level paved cave floor; wheelchair-accessible primary route"
+        "hours": "周二至周日09:00–18:00（最晚入场17:00）；7–8月周末延至19:00",
+        "closed": "**周一**（若周一为公休日，则顺延至次日休馆）",
+        "admission": "成人₩7,000/青少年₩3,500/儿童₩2,000；6岁以下·65岁以上免费",
+        "walking": "中等至较难——前往下层亮点（酒窖、黄金瀑布、水世界）需双向各爬约180级台阶；无电梯"
       },
       "convenience": {
-        "restroom": "At main entrance, mid-cave (Music Hall area), and exit",
-        "parking": "Large dedicated lot (~1,000 spaces); 2,000 KRW for cars / 5,000 KRW for buses; coach lot for groups"
+        "restroom": "入口区及洞窟中段",
+        "parking": "光明洞窟专用停车场"
       },
       "smartNotes": {
-        "photo": "**LED Art Tunnel** seasonal-themed lighting (spring cherry blossom, autumn foliage, winter snow) — most photographed zone. **41-m Dragon (Yongmaru)** — viral social-media spot. **Fluorescent Mural** under UV light. **Wine Cave bottle walls** with Korean wine producer labels.",
-        "facilities": "Cave restaurant (Korean-style buffet ~15,000 KRW), café with cave-aged wine list, gift shop, Wine Cave tasting room (5,000 KRW for 3 wines), Music Hall performance schedule.",
-        "tip": "**12°C year-round — bring light jacket** even in summer. Perfect for **summer escape from Korean heatwaves**. **Skip Mondays** — closed. **Wine tasting** (5,000 KRW for 3 wines) is the most underrated experience — Korean wines from regional wineries you can't find in Seoul. Plan 1.5-2 hours minimum; 2.5 hours with wine tasting and Music Hall concert."
+        "photo": "黄金瀑布LED灯光倒影；水世界水下灯光。",
+        "facilities": "洞窟内葡萄酒吧；外部咖啡馆。",
+        "tip": "周一休馆——推荐周三至周日参观。全年保持12°C——即使夏天也请携带外套。"
       },
       "_poi_meta": {
         "poi_key": "gwangmyeong_cave",
@@ -515,9 +508,9 @@
     {
       "number": 7,
       "time": "≈ 17:30",
-      "duration": "60 min",
+      "duration": "60分钟",
       "name": "返回首尔",
-      "category": "Return",
+      "category": "返回",
       "description": "**走西海岸高速公路（早晨走京釜高速，不同的回程路线）**返回首尔，回程路线的几何回路反映了光明位于西部（而非水原在南部）的地理位置。下车点为早晨集合点（弘益大学站8号出口或明洞站2 / 4号出口），典型抵达时间**18:30至19:00**。",
       "highlights": [
         "走西海岸高速返回首尔（与早晨京釜路线不同，因光明位于西部）",
@@ -525,14 +518,14 @@
         "典型抵达时间18:30至19:00"
       ],
       "timeUsed": [
-        "Coach drive from Gwangmyeong to Seoul (~60 min)",
-        "Drop-off at designated point"
+        "惠裕园→济州市向西转移——约50分钟",
+        "东门下车约17:50——5分钟"
       ],
-      "whyOnRoute": "Return logistics — Seohaean Expressway from Gwangmyeong is faster than backtracking via Gyeongbu Expressway from Suwon, exploiting the day's geographic loop.",
+      "whyOnRoute": "返程安排——从光明走西海岸高速公路比回水原再返首尔更快。",
       "visitBasics": {},
       "convenience": {},
       "smartNotes": {
-        "tip": "Final arrival depends on Friday-evening / weekend traffic; on heavy days the drop-off may add 15-20 min."
+        "tip": "最终到达时间取决于周五晚间/周末交通；堵车严重时，下车可能延后30–45分钟。"
       },
       "_poi_meta": {
         "poi_key": "OPS_return",
@@ -546,78 +539,78 @@
   ],
   "routeFlowStops": [
     {
-      "name": "Seoul",
+      "name": "首尔",
       "type": "origin",
-      "theme": "Departure"
+      "theme": "出发"
     },
     {
-      "name": "Suwon Hwaseong Fortress",
+      "name": "水原华城",
       "type": "primary",
-      "theme": "UNESCO Fortress"
+      "theme": "UNESCO城郭"
     },
     {
-      "name": "Hwaseong Haenggung Palace",
+      "name": "华城行宫",
       "type": "primary",
-      "theme": "Heritage Palace"
+      "theme": "历史宫殿"
     },
     {
-      "name": "Suwon Nammun Market",
+      "name": "水原南门市场",
       "type": "secondary",
-      "theme": "Market"
+      "theme": "市场"
     },
     {
-      "name": "Starfield Library Suwon",
+      "name": "水原星野图书馆",
       "type": "secondary",
-      "theme": "Modern Korea"
+      "theme": "现代韩国"
     },
     {
-      "name": "Gwangmyeong Cave",
+      "name": "光明洞窟",
       "type": "primary",
-      "theme": "Cave"
+      "theme": "洞穴"
     },
     {
-      "name": "Seoul",
+      "name": "首尔",
       "type": "return",
-      "theme": "Return"
+      "theme": "返回"
     }
   ],
   "routePhases": [
     {
       "phase": "出发（约1小时）",
-      "duration": "≈ 1 hour",
-      "description": "Seoul → Suwon city via Gyeongbu Expressway."
+      "duration": "约1小时",
+      "description": "首尔→经京釜高速公路前往水原市区。"
     },
     {
       "phase": "遗产半日（约3小时）",
-      "duration": "≈ 3 hours",
-      "description": "Suwon Hwaseong walls, Haenggung palace, and Nammun market — all within walking distance."
+      "duration": "约3小时",
+      "description": "水原华城城墙、行宫及南门市场——均在步行范围内。"
     },
     {
       "phase": "现代中枢（约1小时）",
-      "duration": "≈ 1 hour",
-      "description": "Drive 15 minutes to Starfield Suwon for the library and mall food hall."
+      "duration": "约1小时",
+      "description": "驾车15分钟至水原星野图书馆及购物中心美食广场。"
     },
     {
       "phase": "地下收尾（约1.5小时）",
-      "duration": "≈ 1.5 hours",
-      "description": "Drive 30 minutes northwest to Gwangmyeong Cave for the LED-lit themed park."
+      "duration": "约1.5小时",
+      "description": "驾车30分钟向西北前往光明洞窟LED主题公园。"
     },
     {
       "phase": "返回（约1小时）",
-      "duration": "≈ 1 hour",
-      "description": "Gwangmyeong → Seoul via Seohaean Expressway."
+      "duration": "约1小时",
+      "description": "光明→经西海岸高速公路返回首尔。"
     }
   ],
   "routeShapeIntro": {
-    "title": "行程动线总览",
-    "subtitle": "A triangular Gyeonggi loop south and southwest of Seoul: Suwon's UNESCO fortress city for the morning, Suwon's flagship modern mall for early afternoon, and Gwangmyeong's transformed gold mine for the late-afternoon finale. Three different kinds of public space — military, commercial, industrial — across 250 years, in a single coach loop."
+    "title": "行程路线一览",
+    "subtitle": "连接首尔南部与西南部的三角形京畿环线：上午游览水原UNESCO要塞城，午后初游水原旗舰现代购物中心，最后以光明的废金矿改造洞窟收尾。全程约10至11小时。"
   },
   "whyTourWorks": {
     "bestFor": [
       "初次造访水原和光明的旅客",
       "对独特地下景观感兴趣的旅客（日据金矿改建的LED艺术洞窟）",
       "希望在一日内涵盖UNESCO遗址＋现代设计＋奇特地下景观的旅客",
-      "喜欢打卡拍照的旅客（光明龙雕、星空书架、华城城墙）",
+      "喜欢拍照拍照的旅客（光明龙雕、星空书架、华城城墙）",
       "携带学龄儿童的家庭（洞窟是孩子最爱）"
     ],
     "lessIdealFor": [
@@ -627,66 +620,66 @@
     ],
     "routeLogicSections": [
       {
-        "title": "路线设计逻辑",
+        "title": "行程安排思路",
         "icon": "route",
         "iconBg": "bg-sky-50/80",
         "iconColor": "text-sky-600",
         "items": [
           {
             "label": "三层时间轴——韩国历史的三种面貌",
-            "detail": "华城（18世纪朝鲜UNESCO城墙）→星空图书馆（2024年现代韩国）→光明洞窟（1912年日据金矿→2011年再生为艺术空间）——三个景点各自代表不同时代的韩国，也各自代表不同的视觉语言：石砌城墙、22公尺书架、地下LED隧道。"
+            "detail": "华城（18世纪朝鲜UNESCO城墙）→星空图书馆（2024年现代韩国）→光明洞窟（1912年日据金矿→2011年再生为艺术空间）——三个景点各自代表不同时代的韩国，也各自代表不同的景色语言：石砌城墙、22米书架、地下LED隧道。"
           },
           {
             "label": "光明洞窟是首尔周边找不到第二个的独特景观",
-            "detail": "前殖民时代金矿改建为充满龙雕、LED隧道、地下酒窖和水族馆的地下世界，是韩国所有日归行程中最不一样的视觉体验——完全找不到类似的替代景点。"
+            "detail": "前殖民时代金矿改建为充满龙雕、LED隧道、地下酒窖和水族馆的地下世界，是韩国所有日归行程中最不一样的景色体验——完全找不到类似的替代景点。"
           },
           {
             "label": "南门市场作为地理和文化的过渡节点",
             "detail": "南门市场紧靠华城南城门，承接城墙历史的下午文化收尾，同时作为地理过渡点（华城→往西的光明）。230年持续运营的历史使其不只是午餐停留，而是城市文化体验的一部分。"
           },
           {
-            "label": "Cooler than a single-format day",
-            "detail": "Heritage tours can feel relentless. Library-and-mall tours can feel light. This itinerary deliberately shifts gears — UNESCO walls, market food, modern library, then an LED-lit underground theme park — so the day doesn't fall into a single rhythm."
+            "label": "比单一形式的一日游更为清爽",
+            "detail": "纯历史游可能让人疲惫；图书馆+商场游可能感觉单薄。本行程有意将两者交替搭配。"
           }
         ]
       },
       {
-        "title": "How the walking load actually feels",
+        "title": "实际步行强度究竟如何",
         "icon": "footprints",
         "iconBg": "bg-emerald-50/80",
         "iconColor": "text-emerald-600",
         "items": [
           {
-            "label": "Fortress wall: hardest section",
-            "detail": "≈1 km walked with steep gradients and stairs at gates. Comfortable shoes essential. Sweeping views reward the climb but it isn't wheelchair-friendly."
+            "label": "要塞城墙：最难路段",
+            "detail": "约1公里，有陡坡和城门台阶。必须穿舒适鞋履。"
           },
           {
-            "label": "Gwangmyeong Cave: ≈180 stairs each way",
-            "detail": "Stairs to the lower-level highlights (Wine Cave, Golden Waterfall, Aqua World) and the same back. No elevator. Visitors with mobility limits stay on the upper level — still ≈40 min of content there."
+            "label": "光明洞窟：单程约180级台阶",
+            "detail": "通往下层亮点（酒窖洞、黄金瀑布、水世界）需下台阶再上台阶。无电梯。"
           },
           {
-            "label": "Haenggung, Nammun Market, Starfield: easy",
-            "detail": "Palace and Starfield are flat and accessible. Nammun Market has crowds at lunch but no real walking load."
+            "label": "行宫、南门市场、星野：轻松",
+            "detail": "宫殿和星野平坦易走。南门市场午餐时间人多，但步行负担不大。"
           }
         ]
       },
       {
-        "title": "When weather and seasons shift",
+        "title": "当天气和季节变化时",
         "icon": "cloud-sun",
         "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
         "items": [
           {
-            "label": "Summer heat: Gwangmyeong is the relief",
-            "detail": "12°C constant inside the cave makes it the refuge stop on hot days. The wall walk lengthens shade breaks; market lunch shifts indoors at Starfield."
+            "label": "夏季高温：光明洞窟是避暑胜地",
+            "detail": "洞内恒温12°C，是炎热天气的避暑景点。城墙步行增加树荫休息。"
           },
           {
-            "label": "Winter cold: layer for the cave",
-            "detail": "12°C is cool when outside is colder. Bring a light jacket inside Gwangmyeong even in summer; in winter, expect to keep your outdoor layer on."
+            "label": "冬季寒冷：洞窟内需额外保暖",
+            "detail": "外面更冷时12°C显得凉爽。即便夏天进入光明洞窟也建议带薄夹克。"
           },
           {
-            "label": "Mondays are not available",
-            "detail": "Gwangmyeong Cave closes Mondays for maintenance. Tour doesn't operate. Pick the Folk Village or Waujeongsa version for Monday travel."
+            "label": "周一不开放",
+            "detail": "光明洞窟周一定期维护关闭。周一请选择民俗村或卧牛精舍版本。"
           }
         ]
       }
@@ -710,7 +703,7 @@
       "content": [
         "弘益大学站8号出口约08:00或明洞站2 / 4号出口约08:30",
         "请提前10分钟抵达集合点",
-        "本行程无饭店接送，仅提供指定地铁站集合"
+        "本行程无酒店接送，仅提供指定地铁站集合"
       ]
     },
     {
@@ -725,7 +718,7 @@
     },
     {
       "id": "what",
-      "title": "穿著与携带物品",
+      "title": "穿着与携带物品",
       "preview": "舒适步行鞋（运动鞋或登山鞋）＋薄外套——光明洞窟全年12°C，夏季也需要",
       "content": [
         "舒适步行鞋（运动鞋或登山鞋），薄外套——光明洞窟全年12°C，夏季也需薄夹克",
@@ -763,27 +756,27 @@
       "temp": "—",
       "label": "每日更新"
     },
-    "_seasonalSummary": "Suwon and Gwangmyeong track Seoul's weather closely (about 30 km south/southwest). Plan for hot, humid summers and cold, dry winters; the cave is a constant 12°C year-round, providing relief in summer and shelter in winter.",
+    "_seasonalSummary": "水原和光明的天气与首尔接近，夏季炎热潮湿，冬季寒冷干燥。光明洞窟内部全年约12°C，夏季凉爽，冬季也能作为稳定的室内景点。",
     "_seasonalTemperatures": [
       {
         "season": "春季（3至5月）",
         "range": "5–22°C",
-        "notes": "Cherry blossoms along the fortress wall in early–mid April."
+        "notes": "4月上旬至中旬，城墙沿线可见樱花盛开。"
       },
       {
         "season": "夏季（6至8月）",
         "range": "22–32°C",
-        "notes": "Hot and humid; cave is a cool refuge."
+        "notes": "天气炎热潮湿；洞窟内较凉爽，是很好的避暑点。"
       },
       {
         "season": "秋季（9至11月）",
         "range": "8–22°C",
-        "notes": "Best season — clear skies, mild temperatures."
+        "notes": "最佳季节——天空晴朗，气温温和。"
       },
       {
         "season": "冬季（12至2月）",
         "range": "-5 to 6°C",
-        "notes": "Cold winds on the fortress wall; library and cave are climate-controlled."
+        "notes": "城墙上寒风较明显；图书馆和洞窟为室内恒温空间。"
       }
     ]
   },
@@ -802,14 +795,14 @@
     },
     {
       "season": "冬季",
-      "description": "城墙段风大寒冷，建议穿著防风外套。光明洞窟全年恒温12°C，冬季反而比外部温暖。光明洞窟周一闭馆，全行程不排周一。"
+      "description": "城墙段风大寒冷，建议穿着防风外套。光明洞窟全年恒温12°C，冬季反而比外部温暖。光明洞窟周一闭馆，全行程不排周一。"
     }
   ],
   "bookingTrustItems": [
     {
       "icon": "check-circle",
       "title": "当地持照合法业者",
-      "description": "Authorized Korean tour operator with full insurance",
+      "description": "持有完整保险的韩国合法旅游业者",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
       "body": "持照英语导游全程陪同，熟悉华城历史及光明洞窟的各展区，提供深度解说而非自行摸索。"
@@ -817,15 +810,15 @@
     {
       "icon": "route",
       "title": "路线专家",
-      "description": "Hand-tuned itinerary, not a generic loop",
+      "description": "精心调校的行程，非泛用路线",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
-      "body": "行程序列（华城→南门市场→星空→光明洞窟）依地理效率及全日节奏精心设计：「UNESCO历史→在地美食→现代设计→地下艺术」四段清晰递进。"
+      "body": "行程序列（华城→南门市场→星空→光明洞窟）依地理效率及全日节奏精心设计：「UNESCO历史→当地美食→现代设计→地下艺术」四段清晰递进。"
     },
     {
       "icon": "users",
       "title": "精心控制团体人数",
-      "description": "Right-sized for the route",
+      "description": "规模恰到好处——适合本路线",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600",
       "body": "小型团体确保光明洞窟各展区保持舒适的参观节奏，不受大型旅行团拥挤影响。"
@@ -835,37 +828,37 @@
     {
       "timing": "即时通知",
       "title": "即时确认",
-      "detail": "Booking confirmation with itinerary summary",
-      "description": "预订即时收到确认信，含集合点资讯及非周一开班说明。"
+      "detail": "预订确认函含行程摘要",
+      "description": "预订即时收到确认信，含集合点信息及非周一开班说明。"
     },
     {
       "timing": "出发前12小时",
       "title": "出发前12小时提醒",
-      "detail": "Weather update and any route adjustments",
-      "description": "确认天气及路线调整资讯，如有变动提前通知。"
+      "detail": "天气更新及路线调整通知",
+      "description": "确认天气及路线调整信息，如有变动提前通知。"
     },
     {
       "timing": "前一晚",
-      "title": "最终接送资讯",
-      "detail": "Exact pickup time and driver contact",
+      "title": "最终接送信息",
+      "detail": "确切接客时间与司机联系方式",
       "description": "发送确切集合时间及导游联络方式。"
     },
     {
       "timing": "行程当天早晨",
       "title": "当日路线说明",
-      "detail": "Morning briefing based on live conditions",
+      "detail": "依实况提供当日行程说明",
       "description": "导游于集合前确认当日安排及集合标识说明。"
     },
     {
       "timing": "行程途中",
       "title": "景点逐一说明",
-      "detail": "Real-time guidance at each location",
+      "detail": "各景点即时现场讲解",
       "description": "导游提供华城历史解说，光明洞窟各展区带领说明，南门市场招牌街食现场推荐。"
     },
     {
       "timing": "行程结束后",
       "title": "行程后支援",
-      "detail": "Follow-up and recommendations",
+      "detail": "行程结束后反馈与后续建议",
       "description": "行程结束后发送问卷，欢迎意见回馈。"
     }
   ],
@@ -888,7 +881,7 @@
     {
       "id": "q4",
       "question": "光明洞窟有多少阶楼梯？",
-      "answer": "大约180阶抵达下层精华展区（酒窖、黄金瀑布、水族馆世界），回程同样180阶。无电梯。行动不便的旅客需认真考虑此段——下层展区是全日最具视觉冲击力的部分，但楼梯无法回避。"
+      "answer": "大约180阶抵达下层精华展区（酒窖、黄金瀑布、水族馆世界），回程同样180阶。无电梯。行动不便的旅客需认真考虑此段——下层展区是全日最具景色冲击力的部分，但楼梯无法回避。"
     },
     {
       "id": "q5",
@@ -898,7 +891,7 @@
     {
       "id": "q6",
       "question": "和水原＋民俗村行程有何不同？",
-      "answer": "两条路线均含华城、行宫及星空图书馆。本版本配合光明洞窟（地下LED艺术主题公园）和南门市场街头美食。民俗村版本则配合韩国民俗村（260栋传统建筑、骑马武艺表演）——偏向文化表演体验。洞窟版本更适合喜欢独特地下景观及龙雕打卡的旅客。"
+      "answer": "两条路线均含华城、行宫及星空图书馆。本版本配合光明洞窟（地下LED艺术主题公园）和南门市场街头美食。民俗村版本则配合韩国民俗村（260栋传统建筑、骑马武艺表演）——偏向文化表演体验。洞窟版本更适合喜欢独特地下景观及龙雕拍照的旅客。"
     },
     {
       "id": "first-time",
@@ -908,7 +901,7 @@
     {
       "id": "walking",
       "question": "步行难度如何？",
-      "answer": "全日活跃步行，含一段繁重阶梯。华城城墙有坡度石阶及不平整地面（约1公里）。光明洞窟下层精华展区需约180阶下行＋180阶返回。星空图书馆全程平坦室内。建议穿著有抓地力的舒适步行鞋。"
+      "answer": "全日活跃步行，含一段繁重阶梯。华城城墙有坡度石阶及不平整地面（约1公里）。光明洞窟下层精华展区需约180阶下行＋180阶返回。星空图书馆全程平坦室内。建议穿着有抓地力的舒适步行鞋。"
     },
     {
       "id": "family",
@@ -923,7 +916,7 @@
     {
       "id": "children",
       "question": "建议最低年龄是多少？",
-      "answer": "建议约10岁以上。城墙有不平整地面，洞窟有180阶，全日行程约9小时。较年幼的孩子可能在后半段体力不支，但对洞窟龙雕等视觉刺激通常反应积极。"
+      "answer": "建议约10岁以上。城墙有不平整地面，洞窟有180阶，全日行程约9小时。较年幼的孩子可能在后半段体力不支，但对洞窟龙雕等景色刺激通常反应积极。"
     }
   ],
   "guestReviews": [],
@@ -960,7 +953,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "可订状态将在支付步骤中确认。",
     "price": {
       "amountLabel": "54.00",
       "originalPriceUsd": 60,
@@ -968,34 +961,34 @@
       "discountPercent": 10,
       "currency": "USD",
       "per": "人",
-      "priceSource": "getyourguide_t816598",
-      "priceNote": "Original price 60 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+      "priceSource": "direct_rate",
+      "priceNote": "价格以 AtoC Korea 官网直售价为准。"
     }
   },
   "pickup_dropoff": {
     "type": "meeting_point",
     "meeting_points": [
       {
-        "name": "Hongik University Station Exit 8",
+        "name": "弘大入口站8号出口",
         "time": "08:00"
       },
       {
-        "name": "Myeongdong Station Exit 2 or 4",
+        "name": "明洞站2号或4号出口",
         "time": "08:30"
       }
     ],
     "dropoff_points": [
       {
-        "name": "Hongik University Station Exit 8",
+        "name": "弘大入口站8号出口",
         "approx_time": "17:30"
       },
       {
-        "name": "Myeongdong Station Exit 4",
+        "name": "明洞站4号出口",
         "approx_time": "17:30"
       }
     ],
     "hotel_pickup_available": false,
-    "notes": "Arrive 10 minutes early. Latecomers cannot be accommodated and are non-refundable. Tour does not operate on Mondays (Gwangmyeong Cave closed)."
+    "notes": "请提前10分钟抵达集合地点。迟到将无法等待或中途接驳，且不予退款。光明洞窟每周一闭馆，因此本行程周一不运营。"
   },
   "matching_profile": {
     "profile_version": 6,
@@ -1006,7 +999,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gyeonggi_south",
     "vehicle_type": "coach",
-    "duration_hours": 9,
+    "duration_hours": 9.0,
     "region_tags": [
       "gyeonggi_suwon",
       "gyeonggi_gwangmyeong",
@@ -1028,7 +1021,7 @@
     "pace_level": 0.8,
     "walking_level": 0.8,
     "scenic_level": 0.7,
-    "photo_level": 1,
+    "photo_level": 1.0,
     "culture_level": 0.8,
     "relax_level": 0.6,
     "first_time_fit": 0.85,
@@ -1037,14 +1030,14 @@
     "couple_fit": 0.95,
     "solo_traveler_fit": 0.85,
     "active_traveler_fit": 0.5,
-    "adult_family_fit": 1,
-    "family_with_teens_fit": 1,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 1.0,
     "young_kids_fit": 0.85,
     "senior_active_fit": 0.65,
     "senior_general_fit": 0.85,
     "mobility_friendly_fit": 0.7,
     "stroller_fit": 0.7,
-    "one_day_fit": 1,
+    "one_day_fit": 1.0,
     "same_day_flight_fit": 0.3,
     "rain_fit": 0.85,
     "value_for_money_fit": 0.95,
@@ -1052,22 +1045,22 @@
     "cafe_fit": 0.85,
     "food_fit": 0.85,
     "nature_fit": 0.4,
-    "beach_fit": 0,
+    "beach_fit": 0.0,
     "nightlife_fit": 0.05,
     "shopping_fit": 0.7,
     "no_shopping_fit": 0.5,
-    "local_culture_fit": 1,
-    "storytelling_fit": 1,
-    "unesco_fit": 1,
+    "local_culture_fit": 1.0,
+    "storytelling_fit": 1.0,
+    "unesco_fit": 1.0,
     "intangible_heritage_fit": 0.4,
     "indoor_ratio": 0.55,
     "weather_sensitivity": 0.4,
     "comfort_level": 0.6,
     "budget_fit": 0.7,
     "premium_fit": 0.45,
-    "small_group_fit": 1,
+    "small_group_fit": 1.0,
     "private_fit": 0.05,
-    "bus_fit": 1,
+    "bus_fit": 1.0,
     "price_band": "mid",
     "pickup_base": "seoul_central",
     "return_time_band": "17:00-18:30",
@@ -1109,81 +1102,81 @@
     "private_tour_fit": 0.05,
     "customizable_route_fit": 0.1,
     "flexibility_fit": 0.3,
-    "fortress_fit": 1,
-    "joseon_palace_fit": 1,
-    "cave_fit": 1,
-    "industrial_heritage_fit": 1,
-    "library_fit": 1,
+    "fortress_fit": 1.0,
+    "joseon_palace_fit": 1.0,
+    "cave_fit": 1.0,
+    "industrial_heritage_fit": 1.0,
+    "library_fit": 1.0,
     "modern_architecture_fit": 0.85,
-    "street_food_fit": 1,
-    "market_fit": 1,
+    "street_food_fit": 1.0,
+    "market_fit": 1.0,
     "k_drama_filming_fit": 0.85,
-    "led_art_fit": 1,
+    "led_art_fit": 1.0,
     "history_culture_fit": 0.95,
     "wheelchair_accessible_anchor_fit": 0.85,
     "seasonal_fit": 0.8,
     "romantic_fit": 0.75,
     "premium_dining_fit": 0.5,
-    "summer_escape_fit": 1,
-    "china_mainland_market_fit": 0,
-    "korea_domestic_market_fit": 0,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "summer_escape_fit": 1.0,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "suwon_hwaseong_route_fit": 1,
-    "suwon_central_anchor_fit": 1,
-    "seoul_to_suwon_30min_drive_fit": 1,
-    "seoul_central_hotel_pickup_fit": 1,
-    "return_to_seoul_central_fit": 1,
-    "small_group_format_fit": 1,
-    "fixed_schedule_format_fit": 1,
-    "unesco_world_heritage_anchor_fit": 1,
-    "unesco_world_heritage_1997_inscription_fit": 1,
-    "joseon_dynasty_late_18c_anchor_fit": 1,
-    "king_jeongjo_filial_piety_anchor_fit": 1,
-    "jeong_yak_yong_silhak_anchor_fit": 1,
-    "geojunggi_crane_engineering_anchor_fit": 1,
-    "uigwe_memory_of_world_2007_anchor_fit": 1,
-    "hwaseong_5_74km_perimeter_anchor_fit": 1,
-    "hwaseong_41_structures_anchor_fit": 1,
-    "naknamheon_only_original_1796_structure_fit": 1,
-    "joseon_royal_haenggung_largest_in_korea_fit": 1,
-    "royal_guard_changing_ceremony_anchor_fit": 1,
-    "muye_24_gi_martial_arts_anchor_fit": 1,
-    "suwon_galbi_tongdak_street_fit": 1,
-    "suwon_style_galbi_origin_fit": 1,
-    "wang_galbi_royal_sized_anchor_fit": 1,
-    "korea_sba_cultural_tourism_market_fit": 1,
-    "nammun_9_sub_market_network_fit": 1,
-    "paldalmun_south_gate_anchor_fit": 1,
-    "reply_1988_filming_location_fit": 1,
-    "starfield_library_photo_stop_fit": 1,
-    "starfield_22m_bookshelves_anchor_fit": 1,
-    "starfield_4f_to_7f_atrium_void_fit": 1,
-    "douglas_coupland_the_planets_rooftop_anchor_fit": 1,
-    "bcho_partners_architecture_anchor_fit": 1,
-    "starfield_free_admission_photo_permitted_fit": 1,
-    "starfield_vinyl_lp_cafe_anchor_fit": 1,
-    "shinsegae_second_generation_flagship_fit": 1,
-    "instagram_photo_density_high_fit": 1,
-    "gwangmyeong_cave_mining_heritage_fit": 1,
-    "japanese_colonial_1912_mine_anchor_fit": 1,
-    "korea_first_govt_owned_cave_tourism_fit": 1,
-    "industrial_heritage_repurpose_anchor_fit": 1,
-    "shrimp_paste_fermentation_storage_anchor_fit": 1,
-    "gwangmyeong_city_2011_purchase_anchor_fit": 1,
+    "suwon_hwaseong_route_fit": 1.0,
+    "suwon_central_anchor_fit": 1.0,
+    "seoul_to_suwon_30min_drive_fit": 1.0,
+    "seoul_central_hotel_pickup_fit": 1.0,
+    "return_to_seoul_central_fit": 1.0,
+    "small_group_format_fit": 1.0,
+    "fixed_schedule_format_fit": 1.0,
+    "unesco_world_heritage_anchor_fit": 1.0,
+    "unesco_world_heritage_1997_inscription_fit": 1.0,
+    "joseon_dynasty_late_18c_anchor_fit": 1.0,
+    "king_jeongjo_filial_piety_anchor_fit": 1.0,
+    "jeong_yak_yong_silhak_anchor_fit": 1.0,
+    "geojunggi_crane_engineering_anchor_fit": 1.0,
+    "uigwe_memory_of_world_2007_anchor_fit": 1.0,
+    "hwaseong_5_74km_perimeter_anchor_fit": 1.0,
+    "hwaseong_41_structures_anchor_fit": 1.0,
+    "naknamheon_only_original_1796_structure_fit": 1.0,
+    "joseon_royal_haenggung_largest_in_korea_fit": 1.0,
+    "royal_guard_changing_ceremony_anchor_fit": 1.0,
+    "muye_24_gi_martial_arts_anchor_fit": 1.0,
+    "suwon_galbi_tongdak_street_fit": 1.0,
+    "suwon_style_galbi_origin_fit": 1.0,
+    "wang_galbi_royal_sized_anchor_fit": 1.0,
+    "korea_sba_cultural_tourism_market_fit": 1.0,
+    "nammun_9_sub_market_network_fit": 1.0,
+    "paldalmun_south_gate_anchor_fit": 1.0,
+    "reply_1988_filming_location_fit": 1.0,
+    "starfield_library_photo_stop_fit": 1.0,
+    "starfield_22m_bookshelves_anchor_fit": 1.0,
+    "starfield_4f_to_7f_atrium_void_fit": 1.0,
+    "douglas_coupland_the_planets_rooftop_anchor_fit": 1.0,
+    "bcho_partners_architecture_anchor_fit": 1.0,
+    "starfield_free_admission_photo_permitted_fit": 1.0,
+    "starfield_vinyl_lp_cafe_anchor_fit": 1.0,
+    "shinsegae_second_generation_flagship_fit": 1.0,
+    "instagram_photo_density_high_fit": 1.0,
+    "gwangmyeong_cave_mining_heritage_fit": 1.0,
+    "japanese_colonial_1912_mine_anchor_fit": 1.0,
+    "korea_first_govt_owned_cave_tourism_fit": 1.0,
+    "industrial_heritage_repurpose_anchor_fit": 1.0,
+    "shrimp_paste_fermentation_storage_anchor_fit": 1.0,
+    "gwangmyeong_city_2011_purchase_anchor_fit": 1.0,
     "year_round_12c_constant_temperature_advisory": true,
-    "korea_largest_underground_wine_cellar_fit": 1,
-    "korea_tourism_star_award_2014_fit": 1,
-    "led_art_tunnel_200m_anchor_fit": 1,
-    "yongmaru_41m_dragon_anchor_fit": 1,
-    "memories_of_alhambra_filming_fit": 1,
+    "korea_largest_underground_wine_cellar_fit": 1.0,
+    "korea_tourism_star_award_2014_fit": 1.0,
+    "led_art_tunnel_200m_anchor_fit": 1.0,
+    "yongmaru_41m_dragon_anchor_fit": 1.0,
+    "memories_of_alhambra_filming_fit": 1.0,
     "gwangmyeong_cave_closed_mondays_advisory": true,
     "hwaseong_yeolcha_optional_advisory": true,
     "free_starfield_shuttle_from_suwon_station_advisory": true,
@@ -1271,19 +1264,19 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "UNESCO walls, an underground gold mine, and a four-floor library —",
-        "headlineLine2": "Gyeonggi Province's most photographed day in 9 hours",
+        "headlineLine1": "UNESCO城墙、地下金矿与四层书架——",
+        "headlineLine2": "京畿道最多人拍照的一日，9小时全览",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
           "imagePosition": "center 35%",
-          "tagline": "Korea's only walled fortress, a former gold mine reborn as art, and the country's most-photographed library",
+          "tagline": "韩国唯一的城墙要塞、前黄金矿山重生为艺术洞窟，以及全国最多人拍照的图书馆",
           "pills": [
-            "小团体",
+            "小团",
             "文化体验"
           ],
           "meta": {
-            "duration": "9 hours",
-            "region": "Gyeonggi-do (south of Seoul)",
+            "duration": "9小时",
+            "region": "京畿道（首尔南部）",
             "stops": "7 个景点",
             "rating": 4.6,
             "ratingStars": 5
@@ -1334,27 +1327,26 @@
           {
             "icon": "users",
             "label": "团体规模",
-            "value": "Small group, English-speaking guide"
+            "value": "小团，英语导游"
           },
           {
             "icon": "map-pin",
             "label": "路线区域",
-            "value": "Suwon & Gwangmyeong, Gyeonggi Province"
+            "value": "京畿道水原市及光明市"
           },
           {
             "icon": "footprints",
             "label": "步行强度",
-            "value": "Moderate — fortress walk is uphill on stone, cave includes 180+ steps"
+            "value": "中等——要塞步行为石面上坡，洞窟含180余级台阶"
           },
           {
             "icon": "ticket",
             "label": "费用包含",
-            "value": "Round-trip transport, English guide, Suwon Hwaseong Fortress + Haenggung Palace + Gwangmyeong Cave admissions"
+            "value": "往返交通、英语导游，含水原华城及行宫门票。"
           },
           {
-            "icon": "coffee",
             "label": "午餐安排",
-            "value": "Not included — typically eaten at Starfield mall food hall or Suwon Nammun Market"
+            "value": "不含——通常在星野购物中心美食广场用餐（优质选项₩5,000–30,000）。"
           }
         ]
       }
@@ -1369,55 +1361,55 @@
             "id": "g1",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-            "alt": "Suwon Hwaseong Fortress wall section with Janganmun gate visible in the distance and bastions along the ridgeline",
-            "caption": "Hwaseong Fortress — UNESCO since 1997",
-            "location": "Suwon Hwaseong Fortress, Janganmun-Hwaseomun section, Suwon",
-            "atmosphere": "Stone walls built 1794-1796 under King Jeongjo; only walled fortress city remaining in Korea"
+            "alt": "光明洞窟龙丸龙雕",
+            "caption": "光明洞窟龙丸龙雕——41米玻璃纤维龙，韩国洞窟最高室内雕塑，前1912年日据金矿改建的地下艺术空间",
+            "location": "光明洞窟，光明，京畿道",
+            "atmosphere": "光明洞窟龙丸龙雕——41米玻璃纤维龙，韩国洞窟最高室内雕塑，前1912年日据金矿改建的地下艺术空间是本路线的代表性停靠点，适合拍照并感受现场氛围。"
           },
           {
             "id": "g2",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-            "alt": "Hwaseong Haenggung Palace courtyard during a royal-guard reenactment with Joseon-era armor and traditional drums",
-            "caption": "Haenggung — royal guard reenactment",
-            "location": "Hwaseong Haenggung Palace, inside the fortress, Suwon",
-            "atmosphere": "Korea's largest haenggung; daily royal-guard ceremonies and martial-arts demos"
+            "alt": "行程中参观的光明洞窟LED艺术隧道——200米隧道，春季赏樱主题灯光，韩剧《阿尔罕布拉宫的回忆》取景地景观",
+            "caption": "光明洞窟LED艺术隧道——200米隧道，春季赏樱主题灯光，韩剧《阿尔罕布拉宫的回忆》取景地",
+            "location": "光明洞窟，光明，京畿道",
+            "atmosphere": "光明洞窟LED艺术隧道——200米隧道，春季赏樱主题灯光，韩剧《阿尔罕布拉宫的回忆》取景地是本路线的代表性停靠点，适合拍照并感受现场氛围。"
           },
           {
             "id": "g3",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-            "alt": "Gwangmyeong Cave's LED-lit Golden Road tunnel with curving illuminated walls inside the former colonial-era gold mine",
-            "caption": "Gwangmyeong Cave — Golden Road tunnel",
-            "location": "Gwangmyeong Cave, Gwangmyeong-si, Gyeonggi-do",
-            "atmosphere": "Former Siheung gold mine (1912-1972); 7.8 km of tunnels; constant 12°C year-round"
+            "alt": "水原华城城墙步道长安门段",
+            "caption": "水原华城城墙步道——1997年UNESCO世界文化遗产，长安门至华西门约1.2公里最密集军事设施路段",
+            "location": "水原华城，水原，京畿道",
+            "atmosphere": "旧始兴金矿（1912–1972），总长7.8公里坑道，全年约12°C"
           },
           {
             "id": "g4",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-            "alt": "The 41-meter dragon sculpture inside Gwangmyeong Cave's main chamber with its head curved upward toward LED lighting",
-            "caption": "41-m dragon sculpture — Korea's largest",
-            "location": "Gwangmyeong Cave main chamber",
-            "atmosphere": "Korea's largest dragon (41 m, 800 kg, 'Lord of the Cave') built by Weta Workshop (Lord of the Rings prop studio)"
+            "alt": "星空图书馆水原22米书架中庭",
+            "caption": "星空图书馆水原——22米高圆柱形书架中庭，2024年1月开幕的新世界旗舰第二代星空购物中心",
+            "location": "星空水原购物中心，水原",
+            "atmosphere": "星空图书馆水原——22米高圆柱形书架中庭，2024年1月开幕的新世界旗舰第二代星空购物中心是本路线的代表性停靠点，适合拍照并感受现场氛围。"
           },
           {
             "id": "g5",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-            "alt": "Starfield Library Suwon's four-story atrium with 22-meter floor-to-ceiling bookshelves and reading lounges arranged on the lower floors",
-            "caption": "Starfield Library Suwon — 22 m bookshelves",
-            "location": "Starfield Suwon Library, Yeongtong-gu, Suwon",
-            "atmosphere": "Shinsegae's flagship 2nd-generation Starfield, opened January 2024; free entry; vinyl-record listening area"
+            "alt": "水原星际图书馆四层中庭，下层排列着22米落地书架与阅读休闲区",
+            "caption": "星际书店水原——22米书架",
+            "location": "星空图书馆水原, Yeongtong-gu, Suwon",
+            "atmosphere": "新世界2024年1月开业的旗舰第二代星际，免费入场，黑胶唱片欣赏区"
           },
           {
             "id": "g6",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-            "alt": "Suwon Nammun Market's covered alley with food stalls selling Suwon-style galbi, fried chicken, and traditional sweets",
-            "caption": "Suwon Nammun Market — 220-year King Jeongjo market",
-            "location": "Suwon Nammun Market, south gate of the fortress, Suwon",
-            "atmosphere": "220-year history; created by King Jeongjo during Hwaseong's construction; tongdak alley + 9 sub-markets"
+            "alt": "水原南门市场的室内美食巷——出售水原式排骨、炸鸡和传统糕点",
+            "caption": "水原南门市场——有220年历史的正祖市场",
+            "location": "水原华城南门一带的水原南门市场",
+            "atmosphere": "220年历史；正祖建造华城时所创；通小巷+9个子市场"
           }
         ]
       }
@@ -1430,269 +1422,351 @@
         "itineraryStops": [
           {
             "number": 1,
-            "time": "≈ 08:00",
-            "duration": "10 min",
-            "name": "Seoul departure",
-            "category": "Pickup & departure",
-            "description": "Pickup from Hongik University Station (Exit 8) or Myeongdong Station (Exit 2 or 4). About one hour by coach south to Suwon, the old fortress city of Joseon's King Jeongjo.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "time": "≈ 08:30",
+            "duration": "10分钟",
+            "name": "首尔出发",
+            "category": "接送与出发",
+            "description": "从首尔两个中央集合点择一出发：**弘益大学站8号出口**或**明洞站2号或4号出口**。9小时行程设计使全团在人潮高峰前清空华城，留足时间进行南门市场＋星空图书馆＋光明洞窟的下午三连。**南下水原约1小时**，走京釜高速公路。",
             "highlights": [
-              "Central Seoul meeting points",
-              "1-hour transfer south"
+              "弘益大学站8号出口或明洞站2 / 4号出口，约08:30集合",
+              "走京釜高速公路，南下水原约1小时",
+              "9小时行程设计，清早出发确保城墙段清空人潮"
             ],
             "timeUsed": [
-              "Meet driver-guide at Seoul pickup point",
-              "Brief route overview",
-              "Begin 40-minute drive to Gwangmyeong"
+              "在首尔接送点与导游司机会合",
+              "确认团员，分发水和零食"
             ],
-            "whyOnRoute": "An early Seoul departure lets the group reach Gwangmyeong Cave before noon when underground sections are coolest and lighting effects are at their best.",
+            "whyOnRoute": "09:30到达水原，使团队在中午人群涌入前有60-90分钟游览华城。",
             "visitBasics": {},
             "convenience": {},
-            "smartNotes": {},
+            "smartNotes": {
+              "tip": "巴士空调较强，建议携带薄外套。途中约中间位置会在服务区短暂停车上厕所。"
+            },
             "_poi_meta": {
-              "poi_key": "seoul_pickup_default",
+              "poi_key": "OPS_seoul_pickup_default",
               "verified": false,
               "match": "operational_default",
-              "note": "Operational pickup — Seoul departure; not a sightseeing POI"
+              "kb_version": "v1.14",
+              "verified_date": "2026-04-29",
+              "note": "Operational pickup — Seoul departure"
             }
           },
           {
             "number": 2,
             "time": "≈ 09:30",
-            "duration": "60-90 min",
-            "name": "Suwon Hwaseong Fortress",
-            "category": "UNESCO Fortress",
-            "description": "Guided walk along a section of the 5.7 km UNESCO-listed fortress wall, built 1794–1796 under King Jeongjo as a planned new capital. Highlights typically include Janganmun (the largest gate), Hwaseomun, beacon mounds, and bastions, with sweeping city views from the wall.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "duration": "60分钟",
+            "name": "水原华城",
+            "category": "UNESCO要塞",
+            "description": "**水原华城——1997年UNESCO世界文化遗产**——是韩国唯一同时保存有原始10册施工记录（《华城城役仪轨》，2007年另列入UNESCO世界记忆遗产）的城墙要塞城市。由正祖大王命令于**1794至1796年，仅2年9个月**建成，设计者丁若镛融合韩式、中式及西方城防科学，并发明滑轮组吊车。城墙全周长**5.74公里**，设41处军事设施。今日讲解步行长安门至华西门间最密集的约1.2公里段。**华城行宫**——韩国现存最大行宫（原576间），洛南轩是现场唯一保存自1796年的原建筑。**换岗仪式**周二至日上午11:00在新丰楼前举行（免费，约15分钟）。韩剧《大长今》（2003年）取景地。**门票含括在行程费用内**。",
             "highlights": [
-              "UNESCO since 1997",
-              "Major fortress gates",
-              "Beacon mounds and bastions",
-              "Sweeping city views"
+              "**1997年UNESCO世界文化遗产**——韩国唯一保存原施工记录的城墙要塞",
+              "1794至1796年正祖大王建造，丁若镛设计（韩式＋中式＋西方城防）",
+              "全周长5.74公里，41处军事设施；讲解步行最密集的1.2公里段",
+              "**韩国现存最大行宫（原576间）**，洛南轩是唯一原1796年建筑",
+              "**换岗仪式周二至日上午11:00，免费，约15分钟**",
+              "韩剧《大长今》（2003年）取景地",
+              "**门票含括在行程费用内**"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "在长安门附近大巴下车——约5分钟",
+              "在长安门进行团体简介——约5分钟",
+              "长安门→华西门→华西将阁步道——约25–30分钟",
+              "拍照时间+返回车辆集合——约10分钟",
+              "可选：华城列车（练武台↔八达门）——另付费"
             ],
-            "whyOnRoute": "The route's UNESCO anchor — Korea's only remaining walled fortress city, built 1794-1796 under King Jeongjo. The walked section between Janganmun and Hwaseomun gives the highest density of named features per minute: largest gate, beacon mound, bastions, command posts. Sweeping city views from the wall reward the climb.",
+            "whyOnRoute": "路线的UNESCO核心景点——韩国唯一保存完好的城郭都市，于1794-1796年兴建。",
             "visitBasics": {
-              "hours": "Wall accessible 24h; recommended 09:00–18:00 (summer) / 09:00–17:00 (winter); evening hours 18:00–21:30 (May–Oct, Wed–Sun)",
-              "closed": "Open year-round",
-              "admission": "Fortress wall: 1,000 KRW adult / 700 KRW youth / 500 KRW child (free for children ≤6, seniors 65+, hanbok wearers, last Wed of month)",
-              "walking": "Moderate to challenging — wall has steep sections, stairs at gates and command posts; some sections wheelchair-difficult"
+              "hours": "城墙步道24小时（无闸门）；推荐09:00-18:00（夏季）/09:00-17:00（冬季）",
+              "closed": "全年开放（华城列车周一停运）",
+              "admission": "成人₩1,000 / 青少年₩700 / 儿童₩500（免费：6岁以下·65岁以上·穿韩服者·每月最后一个周三）",
+              "walking": "中等强度——城墙在西将台附近有陡坡；城门处有台阶；部分路段轮椅不便通行"
             },
             "convenience": {
-              "restroom": "Available at major gates and visitor centers",
-              "parking": "Available near Janganmun and Hwaseong Haenggung"
+              "restroom": "长安门、华西门、八达门及练武台均设有厕所",
+              "parking": "大巴在长安门停车场下客；练武台设有大巴专用停车位"
             },
             "smartNotes": {
-              "photo": "Janganmun (north gate) and Seojangdae command post offer the best wall-and-city panoramas",
-              "facilities": "Information centers at main gates; English maps available",
-              "tip": "Trolley (1,500 KRW adult) is good for elderly or limited-mobility visitors; runs Yeonmudae→Hwahongmun→Janganmun→Hwaseomun→Haenggung loop"
+              "photo": "**华虹门（北水门）**——7个拱门横跨水原川，是代表性拍摄构图，清晨或傍晚拍摄倒影效果最佳。",
+              "facilities": "长安门+八达门+行宫广场游客服务中心。英韩双语标识。华城列车（₩1,500往返）运行。",
+              "tip": "建议穿着舒适鞋履——城墙石材凹凸不平。行宫广场韩服租赁店可享受**免费入场**优惠。"
             },
             "_poi_meta": {
               "poi_key": "hwaseong_fortress",
               "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
               "sources": [
                 "UNESCO WHC",
                 "VisitKorea",
-                "KoreaToDo"
-              ],
-              "verified_date": "2026-04-27"
+                "Suwon CVB",
+                "UNESCO World Heritage Centre — Suwon Hwaseong (Criteria ii/iii inscription, 1997)",
+                "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Hwaseong Fortress + Hwaseong Seongyeok Uigwe Memory of the World 2007)",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Hwaseong Fortress official listing)",
+                "Suwon City Tourism (suwon.go.kr/tour — Hwaseong Yeolcha trolley + admission + opening hours)",
+                "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
+              ]
             }
           },
           {
             "number": 3,
-            "time": "≈ 10:30",
-            "duration": "60-90 min",
-            "name": "Hwaseong Haenggung Palace",
-            "category": "Joseon Royal Palace",
-            "description": "The temporary royal residence inside the fortress, used by King Jeongjo when he visited his father's tomb. The largest haenggung (detached palace) in Korea. Live performances — royal guard ceremonies, martial arts demos — run on most days.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "time": "≈ 10:45",
+            "duration": "60分钟",
+            "name": "华城行宫",
+            "category": "韩国现存最大行宫——1789–1796年建造",
+            "description": "**华城行宫——韩国现存最大行宫（离宫）**，1789至1796年与华城城墙同步建造，供正祖大王13次前往祭拜被闷死的父亲思悼世子时留宿。1795年皇室大移动（6,000名随从＋1,400匹马）记载于UNESCO世界记忆遗产。日据时代大部分拆毁；1996年起依仪轨复原，洛南轩是唯一原1796年真实建筑，其他均为复原重建物。韩剧《大长今》取景地。**门票含括在行程费用内**。",
             "highlights": [
-              "Largest detached palace in Korea",
-              "Royal guard reenactment",
-              "Martial-arts demonstrations"
+              "**韩国现存最大行宫（原576间）**",
+              "正祖大王13次朝圣，1795年皇室大移动（UNESCO世界记忆遗产）",
+              "**洛南轩＝唯一原1796年建筑**（其他均为依仪轨复原的重建物）",
+              "**换岗仪式周二至日上午11:00，新丰楼前（免费，约15分钟）**",
+              "**门票含括在行程费用内**"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "从华城城墙（华西门区域）步行5分钟",
+              "抵达时间配合**11:00守门将交接仪式**在新丰楼前（约15分钟）",
+              "奉寿堂+洛南轩+长安轩参观（约30分钟）",
+              "拍照+返回车辆集合（约15分钟）",
+              "可选：新丰楼守门将交接仪式（周二至周日11:00，约15分钟，免费）"
             ],
-            "whyOnRoute": "Pairs naturally with the wall — the same UNESCO site, 5 minutes apart. Korea's largest haenggung (detached palace), restored from 19th-century fire damage. Live royal-guard ceremonies and martial-arts demos add audio/visual variety after the quiet wall walk; performance times posted at the entrance.",
+            "whyOnRoute": "临时行宫与华城在同一UNESCO遗址内——无需额外交通，步行5分钟即达。",
             "visitBasics": {
-              "hours": "09:00–18:00 (last entry 17:30); summer extended hours 18:00–21:00 (May–Oct)",
-              "closed": "Open year-round (check for special closures)",
-              "admission": "Adult 1,500 KRW / Teen 1,000 KRW / Child 700 KRW (free for children ≤6, seniors 65+, hanbok wearers)",
-              "walking": "Easy — palace grounds are mostly flat; some steps between courtyards"
+              "hours": "09:00–18:00（最晚入场17:30）；夏季5–10月延时18:00–21:00",
+              "closed": "全年开放",
+              "admission": "成人₩1,500/青少年₩1,000/儿童₩700；华城+行宫联票₩3,500；韩服/65岁以上/6岁以下免费",
+              "walking": "轻松——宫殿内大部分平坦，院落之间有少量台阶"
             },
             "convenience": {
-              "restroom": "Available at entrance plaza and within palace grounds",
-              "parking": "Public parking at Haenggung Plaza (paid)"
+              "restroom": "正门、奉寿堂附近及行宫广场设有厕所",
+              "parking": "华城行宫公共停车场；行宫广场收费停车场"
             },
             "smartNotes": {
-              "photo": "Sinpungnu main gate and Bongsudang interior with throne are most photographable; royal guard ceremony makes a great action shot",
-              "facilities": "3-storey tourist info center & 3D theater outside front entrance (09:00–18:00); free hanbok rental nearby",
-              "tip": "Time your visit for the Royal Guard Ceremony (typically Sat 14:00, April–November)"
+              "photo": "**奉寿堂正殿**——代表性宫殿照片。**洛南轩**——唯一的1796年原建筑。",
+              "facilities": "游客服务中心、厕所、纪念品商店。行宫广场有咖啡馆及韩服租赁店。",
+              "tip": "**安排在周二至周日11:00守门将交接仪式时间到达（免费）**。穿韩服可免费入场。"
             },
             "_poi_meta": {
               "poi_key": "hwaseong_haenggung",
               "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
               "sources": [
+                "VisitKorea",
                 "Wikipedia",
-                "Trazy",
-                "TimeTravelTurtle"
-              ],
-              "verified_date": "2026-04-27"
+                "Suwon CVB",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Hwaseong Haenggung official listing)",
+                "Cultural Heritage Administration / Korea Heritage Service (cha.go.kr — Hwaseong Haenggung Historic Site No. 478)",
+                "Suwon City Tourism (suwon.go.kr/tour — Royal Guard Changing Ceremony + Mu-ye 24-gi schedule)",
+                "Wikipedia (Hwaseong Haenggung — Naknamheon-only-original-structure + 576-kan scale)",
+                "Visit Suwon CVB (visitsuwon.org — Suwon Pass combined ticket + Haenggung Square facilities)"
+              ]
             }
           },
           {
             "number": 4,
-            "time": "≈ 11:30",
-            "duration": "60 min",
-            "name": "Suwon Nammun Market (lunch & street food)",
-            "category": "Meal",
-            "description": "Free time at Suwon's largest traditional market — a 220-year-old market organized by King Jeongjo during Hwaseong's construction in the late 1700s, the only Korean market created by royal command. Located at Paldalmun (the fortress south gate), the market is famous for Suwon-style galbi, fried chicken (tongdak alley, ≈400 m of stalls), traditional sweets, and dozens of street-food kiosks. Nine sub-markets coexist under the Nammun umbrella; the guide recommends a few favorites if you want a sit-down lunch.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "time": "≈ 12:00",
+            "duration": "75分钟",
+            "name": "水原南门市场——午餐＋街头美食",
+            "category": "传统市场+午餐",
+            "description": "**水原南门市场**——紧邻**八达门（，华城南城门）**南侧的历史商业市场，名称直译为「南门市场」；起源追溯至**18世纪末**正祖建造华城（1794至1796年）后，商人在南城门外设摊。市场**持续运营约230年**，由**9个分市场网络**组成，逾1,200家店铺横跨10公顷步行巷道。招牌景点：**水原街**——水原独有的（整鸡烤）＋（王式大肋骨烧烤）街，50年以上家族传承的创始餐厅群。街头美食：、、、、鱼板（每道₩3,000至₩7,000）。韩剧**《请回答1988》（2015年）**取景巷道。建议携带现金（₩20,000以上）。",
             "highlights": [
-              "220-year history (King Jeongjo's market, only royal-organized market in Korea)",
-              "Suwon-style galbi (signature dish from cattle-market era)",
-              "Tongdak (whole fried chicken) alley — ≈400 m of stalls",
-              "Coalition of 9 sub-markets, the largest in Gyeonggi"
+              "**约230年传统市场**——起源于正祖华城城市（1796年）",
+              "韩国中小企业厅指定「文化观光市场」",
+              "9个分市场＋逾1,200家店铺，横跨10公顷步行巷道",
+              "**水街**——水原独有的＋，50年以上家族传承",
+              "韩剧《请回答1988》（2015年）取景巷道",
+              "**水式**是韩国公认与首尔式不同的地区料理——以「（王式大肋）」和梨子姜汁腌制著称"
             ],
             "timeUsed": [
-              "Operational logistics (pickup/meal/transfer/return)",
-              "Brief orientation or break"
+              "从华城行宫广场向南经八达门步行5分钟",
+              "整鸡/排骨午餐——约20–30分钟",
+              "南门市场小巷街头小吃漫步——约30–40分钟",
+              "集合——约5分钟",
+              "可选水原炸鸡/排骨街午餐或晚餐（每人₩15,000–30,000；用餐约45–60分钟）"
             ],
-            "whyOnRoute": "Mid-route meal break aligned with guest energy and route timing.",
-            "visitBasics": {},
-            "convenience": {},
-            "smartNotes": {},
+            "whyOnRoute": "在水原最著名的街头美食区午餐——利用与华城的近距离优势（步行5分钟）。",
+            "visitBasics": {
+              "hours": "大部分摊位09:00–22:00；街头小吃12:00至深夜",
+              "closed": "全年开放（部分摊位周日休息）",
+              "admission": "免费进入；建议备现金",
+              "walking": "轻松——平坦步行小巷"
+            },
+            "convenience": {
+              "restroom": "八达门广场及大型子市场内公共厕所",
+              "parking": "水原南门市场公共停车场；八达门大巴专用区"
+            },
+            "smartNotes": {
+              "photo": "**以八达门（华城南门）为画框的市场入口**——代表性拍摄构图。",
+              "facilities": "八达门广场旅游信息中心、ATM、兑换店。",
+              "tip": "**携带现金₩20,000以上**——很多街头小吃摊不收卡。推荐整鸡+排骨组合午餐。"
+            },
             "_poi_meta": {
-              "poi_key": "OPS_lunch",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "match": "operational_implicit",
-              "note": "Operational stop (lunch); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+              "poi_key": "suwon_nammun_market",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea",
+                "Visit Suwon",
+                "Korea SBA Cultural Tourism Market",
+                "Wikipedia Suwon-style galbi",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Paldalmun Market + Nammun Rodeo Market listings)",
+                "Visit Suwon CVB (visitsuwon.org — Nammun Market 9-sub-market network + Suwon Tongdak Galbi Street)",
+                "Korea Small & Medium Business Administration (kosbi.or.kr — Cultural Tourism Market  designation)",
+                "Wikipedia (Suwon-style galbi — wang-galbi origin + pear-and-ginger marinade)",
+                "Suwon City Tourism (suwon.go.kr/tour — Suwon Tongdak Galbi  cluster + Reply 1988 filming credits)"
+              ]
             }
           },
           {
             "number": 5,
-            "time": "≈ 13:00",
-            "duration": "60-90 min",
-            "name": "Starfield Library, Suwon",
-            "category": "Modern Cultural Landmark",
-            "description": "Inside Starfield Suwon — Shinsegae's flagship 'second-generation' Starfield mall opened January 2024 — the library spans four floors with bookshelves up to 22 meters tall, a vinyl-record listening area, and curated reading lounges. Bigger and quieter than the original Starfield Library at COEX in Seoul. Free time for photos, browsing, and coffee.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "time": "≈ 13:30",
+            "duration": "75分钟",
+            "name": "星空图书馆水原",
+            "category": "当代文化地标",
+            "description": "**星空图书馆水原**——位于**新世界星空水原购物中心（2024年1月26日开幕）**，约33万4,000平方米，韩国第二大室内购物中心。由**BCHO Partners**设计，**22米高书架**是韩国最高的圆柱形书架建筑之一。图书馆横跨4层（一至四楼挑空中庭），馆藏约7万册。**免费开放**，每日10:00至22:00。特色：黑胶唱片聆听区、月度轮换当代艺术展、春季（3至4月）千朵粉色LED花瓣中庭装置。地下一楼**Eatopia美食广场**（30多家餐厅）。",
             "highlights": [
-              "Four-floor library, 22 m shelves",
-              "Vinyl-record listening seats",
-              "Free admission (entry to library is free)"
+              "**新世界旗舰第二代星空购物中心——2024年1月26日开幕**",
+              "**4层图书馆，22米高书架**——韩国最高的圆柱形书架之一",
+              "约7万册书籍＋杂志，**免费开放**",
+              "黑胶唱片聆听区、月度轮换当代艺术展",
+              "春季（3至4月）中庭千朵粉色LED花瓣装置",
+              "Eatopia美食广场（30多家餐厅），午餐推荐地点"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "从龙仁/民俗村驾车15分钟",
+              "购物中心+图书馆参观——约45–50分钟",
+              "在图书馆或美食广场咖啡小歇——约15分钟",
+              "返回车辆集合",
+              "可选：黑胶咖啡厅（5楼，含饮品约₩18,500）"
             ],
-            "whyOnRoute": "The 'modern Korea' counterweight to the morning's heritage stops. Shinsegae's flagship 2nd-generation Starfield mall opened January 2024; four-floor library with 22 m bookshelves and vinyl-listening seats is the day's contemporary photo. Bigger and quieter than the original COEX library. Free entry, escalator-accessible.",
+            "whyOnRoute": "一日现代韩国反差体验 — 城堡+行宫+市场午餐之后，星际是感受当代首都圈文化基础设施的最佳核心亮点。",
             "visitBasics": {
-              "hours": "Mall 10:00–22:00; library accessible during mall hours",
-              "closed": "Open year-round (check for occasional Starfield monthly closures)",
-              "admission": "Free",
-              "walking": "Easy — escalators and elevators between floors"
+              "hours": "购物中心10:00-22:00；图书馆在购物中心营业期间全程开放",
+              "closed": "每月1至2天休馆（通常为周一——建议参观前在线确认）",
+              "admission": "**图书馆免费**（购物中心全场免费入场；购物费用自理；Aquafield水上乐园另付约₩28,000）",
+              "walking": "轻松——全层设有自动扶梯及电梯；全场轮椅及婴儿车无障碍通行"
             },
             "convenience": {
-              "restroom": "Multiple restrooms on every floor",
-              "parking": "Mall parking available (free for first 20 min, paid thereafter)"
+              "restroom": "各层设有多个卫生间；家庭洗手间内含尿布更换台",
+              "parking": "地下停车位约5,000个；消费₩30,000以上享3小时免费停车；设有大巴专用区"
             },
             "smartNotes": {
-              "photo": "View from 7F looking down at the library is the iconic shot; lower floors give the dramatic 22m bookshelf perspective",
-              "facilities": "B2 Traders Wholesale Club, multiple cafés/restaurants, Olive Young, Innisfree, dog-friendly stores",
-              "tip": "Located near Hwaseo Station (Line 1, exit 1); pet-friendly mall with dog-stroller rentals"
+              "photo": "**图书馆中央中庭22米高书架**——从4楼画廊俯瞰是代表性拍摄角度。",
+              "facilities": "B1层Eatopia美食广场（30家以上餐厅₩5,000至40,000），4层玩具王国，B1至2层Aquafield水上乐园。",
+              "tip": "**图书馆免费**——极具性价比的拍照景点。**水原站出口有免费星野接驳巴士**（下车步行3分钟）。"
             },
             "_poi_meta": {
               "poi_key": "starfield_library_suwon",
               "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
               "sources": [
-                "VisitSeoul",
-                "KoreaToDo",
-                "SeoulSearching"
-              ],
-              "verified_date": "2026-04-27"
+                "Starfield official",
+                "VisitKorea",
+                "Shinsegae press",
+                "BCHO Partners",
+                "Starfield Suwon official (starfield.co.kr/suwon — opening date 2024-01-26 + library 4F-7F + free admission)",
+                "Shinsegae Property press release (Jan 2024 grand opening + 5th Starfield mall + 2nd-generation flag邮轮 concept)",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Starfield Library Suwon listing)",
+                "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
+                "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
+              ]
             }
           },
           {
             "number": 6,
-            "time": "≈ 15:00",
-            "duration": "60-90 min",
-            "name": "Gwangmyeong Cave",
-            "category": "Underground Themed Attraction",
-            "description": "A 30-minute drive to Gwangmyeong, where the former Siheung gold mine — opened by Japanese colonial authorities in 1912 and worked under forced labor — has been reborn as Korea's largest themed cave park. The mine produced gold, silver, copper, and zinc until closure in 1972, then served as a salted-shrimp storage facility for 40 years before Gwangmyeong city converted it into a tourist attraction in 2011. Its 7.8 km of underground tunnels now host LED-lit tableaux, an underground winery (Wine Cave, 170+ Korean wines), an Aqua World aquarium, the Golden Waterfall, the Golden Road of wishes, and Korea's largest dragon sculpture — a 41 m, 800 kg sculpture named 'Lord of the Cave' built by Weta Workshop (the New Zealand prop studio behind Lord of the Rings). Year-round 12°C inside — an air-conditioned experience in summer, a sheltered one in winter.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "time": "≈ 15:30",
+            "duration": "100分钟",
+            "name": "光明洞窟",
+            "category": "工业遗产主题洞窟",
+            "description": "**光明洞窟**——原为**1912年日据时代开发的金、银、铜、锌矿**，运营60年至1972年。在开采期间，矿山产出52公斤黄金、6,070公斤白银、1,247吨铜及3,247吨锌。停产后，废弃隧道被用作**（虾酱）发酵储存设施**约40年——洞窟全年恒温12°C及高湿度，是韩国腌制海鲜陈化的理想环境。**光明市2011年以43亿韩元收购洞窟**，并于同年8月重新开放，成为**韩国第一座由政府拥有的洞窟观光景点**。获得**2014年韩国旅游之星大奖**（韩国旅游的奥斯卡）。公众可进入的**路线约2公里**（洞窟总长7.8公里）。**主题展区**：**洞窟水族馆**（韩国最深的室内淡水鱼水族馆）；**酒窖**（韩国最大地下酒窖，储藏200种以上韩国及进口葡萄酒，葡萄酒品酒₩5,000 / 3杯）；**LED艺术隧道**（200米隧道，春季赏樱、秋季枫叶、冬季雪景主题季节性灯光）；**龙丸龙雕**（41米长玻璃纤维龙——韩国任何洞窟中最高的室内雕塑，最多人社交媒体分享的拍照点）；**荧光壁画**（仅在紫外线 / 黑灯下可见的天然荧光颜料壁画）；**音乐厅**（200席声学最佳化表演场地）。韩剧**《阿尔罕布拉宫的回忆》（2018年）**取景地。年访客约**150万人次**（2024年数据）。**周一闭馆**，周二至日09:00至18:00（最后入场17:00）。成人₩7,000 / 青少年₩3,500 / 儿童₩2,000。主要路线可轮椅通行。**门票含括在行程费用内**。",
             "highlights": [
-              "Former Siheung Mine (1912-1972, gold/silver/copper/zinc)",
-              "7.8 km of LED-lit underground tunnels",
-              "41m dragon by Weta Workshop (Lord of the Rings prop studio)",
-              "Underground Wine Cave (170+ Korean wines)",
-              "Year-round 12°C — relief in summer, sheltered in winter"
+              "**原为1912年日据时代金矿**——运营至1972年，停产后用作虾酱发酵库",
+              "2011年8月重开，韩国第一座政府拥有洞窟观光景点",
+              "**2014年韩国旅游之星大奖**（韩国旅游奥斯卡）",
+              "公众路线约2公里，洞窟总长7.8公里",
+              "**全年恒温12°C**——建议携带薄外套",
+              "**41米长龙丸龙雕**——韩国洞窟中最高的室内雕塑",
+              "酒窖——韩国最大地下酒窖（200种以上葡萄酒；品酒₩5,000）",
+              "LED艺术隧道＋荧光壁画＋洞窟水族馆",
+              "韩剧《阿尔罕布拉宫的回忆》（2018年）取景地",
+              "**周一闭馆；周二至日09:00至18:00。门票含括在行程费用内**"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "从水原星野驾车30分钟至光明",
+              "洞窟入口+购票（约10分钟）",
+              "LED灯光主题区游览（酒窖、黄金瀑布、水世界）——约60–75分钟",
+              "可选葡萄酒试饮（约15分钟，另付费）",
+              "返回车辆集合（约10分钟）"
             ],
-            "whyOnRoute": "The day's most distinctive contrast: a Japanese-colonial-era gold and silver mine reborn as Korea's largest themed cave park. 7.8 km of underground tunnels with LED tableaux, an underground winery, an Aqua World aquarium, the Golden Waterfall, and Korea's largest dragon sculpture (41 m). The constant 12°C inside makes it a relief stop in summer and a sheltered one in winter.",
+            "whyOnRoute": "光明洞窟是全日「现代改造历史空间」的最强力收尾——日据时代金矿摇身一变为充满LED装置艺术的地下奇幻世界，提供在首尔周边找不到第二个类似的景色体验。全程室内设计完美预留时间任何傍晚天气风险。",
             "visitBasics": {
-              "hours": "09:00–18:00 (last entry 17:00); extended summer/holiday hours seasonally",
-              "closed": "Mondays (or Tuesday if Monday is a public holiday)",
-              "admission": "Adult 6,000 KRW / Teen 3,500 KRW / Child 2,000 KRW (Gwangmyeong residents discounted)",
-              "walking": "Easy to moderate — paved underground paths; some inclines"
+              "hours": "周二至周日09:00–18:00（最晚入场17:00）；7–8月周末延至19:00",
+              "closed": "**周一**（若周一为公休日，则顺延至次日休馆）",
+              "admission": "成人₩7,000/青少年₩3,500/儿童₩2,000；6岁以下·65岁以上免费",
+              "walking": "中等至较难——前往下层亮点（酒窖、黄金瀑布、水世界）需双向各爬约180级台阶；无电梯"
             },
             "convenience": {
-              "restroom": "Available at entrance; limited inside the cave",
-              "parking": "Free parking available"
+              "restroom": "入口区及洞窟中段",
+              "parking": "光明洞窟专用停车场"
             },
             "smartNotes": {
-              "photo": "The golden dragon hall and light tunnel are the most photographed; bring a flash-capable camera as the lighting is moody",
-              "facilities": "Wine tasting room, cave restaurant ('Cave Bistro'), gift shop",
-              "tip": "Bring a light jacket — the cave is constantly 12°C even in summer; the cave wine selection makes for unique souvenirs"
+              "photo": "黄金瀑布LED灯光倒影；水世界水下灯光。",
+              "facilities": "洞窟内葡萄酒吧；外部咖啡馆。",
+              "tip": "周一休馆——推荐周三至周日参观。全年保持12°C——即使夏天也请携带外套。"
             },
             "_poi_meta": {
               "poi_key": "gwangmyeong_cave",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "note": "Operational details based on aggregated tour info; verify hours seasonally"
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea",
+                "Wikipedia",
+                "Gwangmyeong City",
+                "KoreaToDo",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Gwangmyeong Cave official listing)",
+                "Gwangmyeong Cave official (gmcave.gm.go.kr — themed zones + operating hours + admission)",
+                "Gwangmyeong City Tourism (gm.go.kr/tour — 2011 city purchase 4.3 billion KRW + Korea's first govt-owned cave-tourism)",
+                "Wikipedia (Gwangmyeong Cave — 1912 Japanese colonial mine + 1972 closure + 7.8 km tunnel total)",
+                "Korea Tourism Star Award archive (Gwangmyeong Cave 2014 winner — Best New Tourist Attraction)"
+              ]
             }
           },
           {
             "number": 7,
-            "time": "≈ 16:30",
-            "duration": "30 min",
-            "name": "Return to Seoul",
-            "category": "Return",
-            "description": "Coach back to central Seoul, with drop-off at the same morning meeting points. Arrival around 17:00–17:30 depending on traffic.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "time": "≈ 17:30",
+            "duration": "60分钟",
+            "name": "返回首尔",
+            "category": "返回",
+            "description": "**走西海岸高速公路（早晨走京釜高速，不同的回程路线）**返回首尔，回程路线的几何回路反映了光明位于西部（而非水原在南部）的地理位置。下车点为早晨集合点（弘益大学站8号出口或明洞站2 / 4号出口），典型抵达时间**18:30至19:00**。",
             "highlights": [
-              "Drop-off in central Seoul"
+              "走西海岸高速返回首尔（与早晨京釜路线不同，因光明位于西部）",
+              "下车点：弘益大学站或明洞站（与早晨集合点相同）",
+              "典型抵达时间18:30至19:00"
             ],
             "timeUsed": [
-              "Operational logistics (pickup/meal/transfer/return)",
-              "Brief orientation or break"
+              "惠裕园→济州市向西转移——约50分钟",
+              "东门下车约17:50——5分钟"
             ],
-            "whyOnRoute": "Return logistics — drop-off chosen for guest convenience and timing certainty.",
+            "whyOnRoute": "返程安排——从光明走西海岸高速公路比回水原再返首尔更快。",
             "visitBasics": {},
             "convenience": {},
-            "smartNotes": {},
+            "smartNotes": {
+              "tip": "最终到达时间取决于周五晚间/周末交通；堵车严重时，下车可能延后30–45分钟。"
+            },
             "_poi_meta": {
               "poi_key": "OPS_return",
               "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
               "match": "operational_implicit",
-              "note": "Operational stop (return); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+              "kb_version": "v1.14",
+              "verified_date": "2026-04-29",
+              "note": "Operational stop (return)"
             }
           }
         ]
@@ -1705,71 +1779,71 @@
       "props": {
         "routeFlowStops": [
           {
-            "name": "Seoul",
+            "name": "首尔",
             "type": "origin",
-            "theme": "Departure"
+            "theme": "出发"
           },
           {
-            "name": "Suwon Hwaseong Fortress",
+            "name": "水原华城",
             "type": "primary",
-            "theme": "UNESCO Fortress"
+            "theme": "UNESCO城郭"
           },
           {
-            "name": "Hwaseong Haenggung Palace",
+            "name": "华城行宫",
             "type": "primary",
-            "theme": "Heritage Palace"
+            "theme": "历史宫殿"
           },
           {
-            "name": "Suwon Nammun Market",
+            "name": "水原南门市场",
             "type": "secondary",
-            "theme": "Market"
+            "theme": "市场"
           },
           {
-            "name": "Starfield Library Suwon",
+            "name": "水原星野图书馆",
             "type": "secondary",
-            "theme": "Modern Korea"
+            "theme": "现代韩国"
           },
           {
-            "name": "Gwangmyeong Cave",
+            "name": "光明洞窟",
             "type": "primary",
-            "theme": "Cave"
+            "theme": "洞穴"
           },
           {
-            "name": "Seoul",
+            "name": "首尔",
             "type": "return",
-            "theme": "Return"
+            "theme": "返回"
           }
         ],
         "routePhases": [
           {
-            "phase": "Outbound",
-            "duration": "≈ 1 hour",
-            "description": "Seoul → Suwon city via Gyeongbu Expressway."
+            "phase": "出发（约1小时）",
+            "duration": "约1小时",
+            "description": "首尔→经京釜高速公路前往水原市区。"
           },
           {
-            "phase": "Heritage half",
-            "duration": "≈ 3 hours",
-            "description": "Suwon Hwaseong walls, Haenggung palace, and Nammun market — all within walking distance."
+            "phase": "遗产半日（约3小时）",
+            "duration": "约3小时",
+            "description": "水原华城城墙、行宫及南门市场——均在步行范围内。"
           },
           {
-            "phase": "Modern hub",
-            "duration": "≈ 1 hour",
-            "description": "Drive 15 minutes to Starfield Suwon for the library and mall food hall."
+            "phase": "现代中枢（约1小时）",
+            "duration": "约1小时",
+            "description": "驾车15分钟至水原星野图书馆及购物中心美食广场。"
           },
           {
-            "phase": "Underground finale",
-            "duration": "≈ 1.5 hours",
-            "description": "Drive 30 minutes northwest to Gwangmyeong Cave for the LED-lit themed park."
+            "phase": "地下收尾（约1.5小时）",
+            "duration": "约1.5小时",
+            "description": "驾车30分钟向西北前往光明洞窟LED主题公园。"
           },
           {
-            "phase": "Return",
-            "duration": "≈ 1 hour",
-            "description": "Gwangmyeong → Seoul via Seohaean Expressway."
+            "phase": "返回（约1小时）",
+            "duration": "约1小时",
+            "description": "光明→经西海岸高速公路返回首尔。"
           }
         ],
         "routeShapeIntro": {
-          "title": "How this day flows",
-          "subtitle": "A triangular Gyeonggi loop south and southwest of Seoul: Suwon's UNESCO fortress city for the morning, Suwon's flagship modern mall for early afternoon, and Gwangmyeong's transformed gold mine for the late-afternoon finale. Three different kinds of public space — military, commercial, industrial — across 250 years, in a single coach loop."
+          "title": "行程路线一览",
+          "subtitle": "连接首尔南部与西南部的三角形京畿环线：上午游览水原UNESCO要塞城，午后初游水原旗舰现代购物中心，最后以光明的废金矿改造洞窟收尾。全程约10至11小时。"
         }
       }
     },
@@ -1780,40 +1854,79 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "First-time visitors to the area",
-            "Couples",
-            "Adult families",
-            "Active travelers comfortable with full days",
-            "Travelers who want UNESCO World Heritage stops"
+            "初次造访水原和光明的旅客",
+            "对独特地下景观感兴趣的旅客（日据金矿改建的LED艺术洞窟）",
+            "希望在一日内涵盖UNESCO遗址＋现代设计＋奇特地下景观的旅客",
+            "喜欢拍照拍照的旅客（光明龙雕、星空书架、华城城墙）",
+            "携带学龄儿童的家庭（洞窟是孩子最爱）"
           ],
           "lessIdealFor": [
-            "Travelers who want minimal walking",
-            "Travelers with limited mobility",
-            "Stroller-heavy groups",
-            "Travelers needing a tight same-day flight buffer"
+            "行动严重受限的旅客（洞窟180阶无电梯）",
+            "偏好民俗文化表演的旅客（建议选民俗村版本）",
+            "周一旅客（光明洞窟周一闭馆）"
           ],
           "routeLogicSections": [
             {
-              "title": "Why this route is built this way",
+              "title": "行程安排思路",
               "icon": "route",
               "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "More variety than the standard Suwon tour",
-                  "detail": "Most Suwon day tours combine the fortress, palace, and Starfield Library — three stops within ten minutes of each other. This version adds Gwangmyeong Cave, a completely different landscape (underground, art-themed, year-round 12°C) that you can't easily reach from Suwon by public transit."
+                  "label": "三层时间轴——韩国历史的三种面貌",
+                  "detail": "华城（18世纪朝鲜UNESCO城墙）→星空图书馆（2024年现代韩国）→光明洞窟（1912年日据金矿→2011年再生为艺术空间）——三个景点各自代表不同时代的韩国，也各自代表不同的景色语言：石砌城墙、22米书架、地下LED隧道。"
                 },
                 {
-                  "label": "Indoor-friendly fallback for any weather",
-                  "detail": "Two of the four major stops — Starfield Library and Gwangmyeong Cave — are fully indoors and climate-controlled. The fortress walks are short enough to handle rain or summer heat. A reliable choice when the weather is dramatic."
+                  "label": "光明洞窟是首尔周边找不到第二个的独特景观",
+                  "detail": "前殖民时代金矿改建为充满龙雕、LED隧道、地下酒窖和水族馆的地下世界，是韩国所有日归行程中最不一样的景色体验——完全找不到类似的替代景点。"
                 },
                 {
-                  "label": "Free admission, paid context",
-                  "detail": "Starfield Library is free to enter on your own — but it's much more rewarding with a guide who can explain why a mall built it (Shinsegae's MZ-generation strategy), how it differs from the COEX original, and where the best photo angles are without disturbing readers."
+                  "label": "南门市场作为地理和文化的过渡节点",
+                  "detail": "南门市场紧靠华城南城门，承接城墙历史的下午文化收尾，同时作为地理过渡点（华城→往西的光明）。230年持续运营的历史使其不只是午餐停留，而是城市文化体验的一部分。"
                 },
                 {
-                  "label": "Cooler than a single-format day",
-                  "detail": "Heritage tours can feel relentless. Library-and-mall tours can feel light. This itinerary deliberately shifts gears — UNESCO walls, market food, modern library, then an LED-lit underground theme park — so the day doesn't fall into a single rhythm."
+                  "label": "比单一形式的一日游更为清爽",
+                  "detail": "纯历史游可能让人疲惫；图书馆+商场游可能感觉单薄。本行程有意将两者交替搭配。"
+                }
+              ]
+            },
+            {
+              "title": "实际步行强度究竟如何",
+              "icon": "footprints",
+              "iconBg": "bg-emerald-50/80",
+              "iconColor": "text-emerald-600",
+              "items": [
+                {
+                  "label": "要塞城墙：最难路段",
+                  "detail": "约1公里，有陡坡和城门台阶。必须穿舒适鞋履。"
+                },
+                {
+                  "label": "光明洞窟：单程约180级台阶",
+                  "detail": "通往下层亮点（酒窖洞、黄金瀑布、水世界）需下台阶再上台阶。无电梯。"
+                },
+                {
+                  "label": "行宫、南门市场、星野：轻松",
+                  "detail": "宫殿和星野平坦易走。南门市场午餐时间人多，但步行负担不大。"
+                }
+              ]
+            },
+            {
+              "title": "当天气和季节变化时",
+              "icon": "cloud-sun",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "夏季高温：光明洞窟是避暑胜地",
+                  "detail": "洞内恒温12°C，是炎热天气的避暑景点。城墙步行增加树荫休息。"
+                },
+                {
+                  "label": "冬季寒冷：洞窟内需额外保暖",
+                  "detail": "外面更冷时12°C显得凉爽。即便夏天进入光明洞窟也建议带薄夹克。"
+                },
+                {
+                  "label": "周一不开放",
+                  "detail": "光明洞窟周一定期维护关闭。周一请选择民俗村或卧牛精舍版本。"
                 }
               ]
             }
@@ -1828,79 +1941,115 @@
       "props": {
         "practicalAccordionItems": [
           {
-            "title": "What's included",
-            "content": "Round-trip coach transport from Seoul, English-speaking tour guide, Suwon Hwaseong Fortress admission, Hwaseong Haenggung Palace admission, Gwangmyeong Cave admission. Not included: meals, drinks, optional cave-winery tasting, tips. Starfield Library entry is free."
+            "id": "inclusions",
+            "title": "费用包含项目",
+            "preview": "来回首尔巴士交通、英语导游、水原华城＋行宫＋光明洞窟门票",
+            "content": [
+              "来回首尔巴士交通、英语导游、水原华城门票、华城行宫门票、光明洞窟门票",
+              "不含：餐饮（南门市场街头美食或星空美食广场，自费）、选做洞窟酒窖品酒（₩5,000）、小费",
+              "星空图书馆免费入场"
+            ]
           },
           {
-            "title": "Pickup & drop-off",
-            "content": "Hongik University Station (Exit 8) at ≈08:00 or Myeongdong Station (Exit 2 or 4) at ≈08:30. Arrive 10 minutes early. There is no hotel pickup; meeting points only. Latecomers cannot be accommodated and are non-refundable."
+            "id": "pickup",
+            "title": "接送与下车地点",
+            "preview": "弘益大学站8号出口约08:00或明洞站2 / 4号出口约08:30",
+            "content": [
+              "弘益大学站8号出口约08:00或明洞站2 / 4号出口约08:30",
+              "请提前10分钟抵达集合点",
+              "本行程无酒店接送，仅提供指定地铁站集合"
+            ]
           },
           {
-            "title": "Walking & terrain",
-            "content": "Moderate. The fortress wall walk involves uphill stone steps. Gwangmyeong Cave has approximately 180 steps down to the lower levels and back up — there is no elevator. Comfortable closed-toe walking shoes are essential. Not recommended if you have significant mobility limitations."
+            "id": "walking",
+            "title": "步行强度与地形",
+            "preview": "中等，含一段繁重阶梯",
+            "content": [
+              "中等",
+              "城墙步道含坡度石阶及不平整地面",
+              "光明洞窟下层精华展区需约180阶下行＋180阶返回（无电梯替代）"
+            ]
           },
           {
-            "title": "What to wear & bring",
-            "content": "Comfortable walking shoes (sneakers or hiking shoes), a light jacket — Gwangmyeong Cave is 12°C year-round, so even in summer it's chilly. In winter, bring a warm coat for the fortress wall and a lighter layer for the cave. Camera, water, cash for lunch and street food (₩10,000–₩20,000 budget)."
+            "id": "what",
+            "title": "穿着与携带物品",
+            "preview": "舒适步行鞋（运动鞋或登山鞋）＋薄外套——光明洞窟全年12°C，夏季也需要",
+            "content": [
+              "舒适步行鞋（运动鞋或登山鞋），薄外套——光明洞窟全年12°C，夏季也需薄夹克",
+              "冬季：城墙段需防风外套，洞窟内则可换薄外套",
+              "现金用于南门市场街头美食（建议₩20,000以上）"
+            ]
           },
           {
-            "title": "Cancellation",
-            "content": "Free cancellation up to 24 hours before the tour starts. Same-day cancellations and no-shows are non-refundable. Tour does not operate on Mondays (Gwangmyeong Cave closed)."
+            "id": "cancellation",
+            "title": "取消政策",
+            "preview": "出发前24小时前可免费取消",
+            "content": [
+              "出发前24小时前可免费取消",
+              "当日取消及未到场者不予退款",
+              "光明洞窟周一闭馆——本行程不排周一"
+            ]
           },
           {
-            "title": "Children & accessibility",
-            "content": "Children typically enjoy this tour — the cave's lights, dragon sculpture, and Aqua World are popular with families. The fortress walk has stairs and uneven surfaces. The cave's 180+ stairs make it unsuitable for guests with mobility issues, strollers, or fear of confined spaces."
+            "id": "children",
+            "title": "儿童与无障碍",
+            "preview": "孩子通常喜欢此行程——洞窟的灯光、龙雕及水族馆是可靠的儿童亮点",
+            "content": [
+              "孩子通常喜欢此行程——洞窟的灯光、龙雕及水族馆是可靠的儿童亮点",
+              "城墙步道含不平整地面，洞窟含180阶——婴儿车在两处均不适用",
+              "光明洞窟主要路线可轮椅通行；下层展区较为困难"
+            ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "即时天气连动"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "每日更新"
           },
-          "_seasonalSummary": "Suwon and Gwangmyeong track Seoul's weather closely (about 30 km south/southwest). Plan for hot, humid summers and cold, dry winters; the cave is a constant 12°C year-round, providing relief in summer and shelter in winter.",
+          "_seasonalSummary": "水原和光明的天气与首尔接近，夏季炎热潮湿，冬季寒冷干燥。光明洞窟内部全年约12°C，夏季凉爽，冬季也能作为稳定的室内景点。",
           "_seasonalTemperatures": [
             {
-              "season": "Spring (Mar–May)",
+              "season": "春季（3至5月）",
               "range": "5–22°C",
-              "notes": "Cherry blossoms along the fortress wall in early–mid April."
+              "notes": "4月上旬至中旬，城墙沿线可见樱花盛开。"
             },
             {
-              "season": "Summer (Jun–Aug)",
+              "season": "夏季（6至8月）",
               "range": "22–32°C",
-              "notes": "Hot and humid; cave is a cool refuge."
+              "notes": "天气炎热潮湿；洞窟内较凉爽，是很好的避暑点。"
             },
             {
-              "season": "Autumn (Sep–Nov)",
+              "season": "秋季（9至11月）",
               "range": "8–22°C",
-              "notes": "Best season — clear skies, mild temperatures."
+              "notes": "最佳季节——天空晴朗，气温温和。"
             },
             {
-              "season": "Winter (Dec–Feb)",
+              "season": "冬季（12至2月）",
               "range": "-5 to 6°C",
-              "notes": "Cold winds on the fortress wall; library and cave are climate-controlled."
+              "notes": "城墙上寒风较明显；图书馆和洞窟为室内恒温空间。"
             }
           ]
         },
         "seasonalVariations": [
           {
-            "season": "Spring",
-            "highlight": "Cherry blossoms along the Hwaseong wall; cave opens spring-themed light installations."
+            "season": "春季",
+            "description": "华城水门附近野樱盛开，星空图书馆中庭同期设置千朵粉色LED花瓣装置——全年最受欢迎的拍摄组合。"
           },
           {
-            "season": "Summer",
-            "highlight": "Cave's 12°C interior is a popular escape from Seoul's humidity; Suwon Hwaseong Cultural Festival in summer."
+            "season": "夏季",
+            "description": "光明洞窟全年恒温12°C，是夏日酷暑中最受欢迎的天然凉爽景点。城墙段日照强烈，建议戴帽。星空图书馆提供全程室内空调环境。"
           },
           {
-            "season": "Autumn",
-            "highlight": "Maple foliage along the fortress wall; major Suwon Hwaseong Cultural Festival in October."
+            "season": "秋季",
+            "description": "秋叶映衬华城城墙，是全年城墙摄影最丰富的季节。光明洞窟全年灯光效果不受季节影响。"
           },
           {
-            "season": "Winter",
-            "highlight": "Snow on the fortress wall is a classic photo; cave hosts year-round LED tableaux undisturbed by weather."
+            "season": "冬季",
+            "description": "城墙段风大寒冷，建议穿着防风外套。光明洞窟全年恒温12°C，冬季反而比外部温暖。光明洞窟周一闭馆，全行程不排周一。"
           }
         ]
       }
@@ -1913,56 +2062,65 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local operator",
-            "description": "Authorized Korean tour operator with full insurance",
+            "title": "当地持照合法业者",
+            "description": "持有完整保险的韩国合法旅游业者",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "iconColor": "text-emerald-600",
+            "body": "持照英语导游全程陪同，熟悉华城历史及光明洞窟的各展区，提供深度解说而非自行摸索。"
           },
           {
             "icon": "route",
-            "title": "Route specialists",
-            "description": "Hand-tuned itinerary, not a generic loop",
+            "title": "路线专家",
+            "description": "精心调校的行程，非泛用路线",
             "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "iconColor": "text-sky-600",
+            "body": "行程序列（华城→南门市场→星空→光明洞窟）依地理效率及全日节奏精心设计：「UNESCO历史→当地美食→现代设计→地下艺术」四段清晰递进。"
           },
           {
             "icon": "users",
-            "title": "Curated group size",
-            "description": "Right-sized for the route",
+            "title": "精心控制团体人数",
+            "description": "规模恰到好处——适合本路线",
             "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600"
+            "iconColor": "text-amber-600",
+            "body": "小型团体确保光明洞窟各展区保持舒适的参观节奏，不受大型旅行团拥挤影响。"
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "timing": "即时通知",
+            "title": "即时确认",
+            "detail": "预订确认函含行程摘要",
+            "description": "预订即时收到确认信，含集合点信息及非周一开班说明。"
           },
           {
-            "timing": "12 hours before",
-            "title": "12-Hour Reminder",
-            "detail": "Weather update and any route adjustments"
+            "timing": "出发前12小时",
+            "title": "出发前12小时提醒",
+            "detail": "天气更新及路线调整通知",
+            "description": "确认天气及路线调整信息，如有变动提前通知。"
           },
           {
-            "timing": "Evening before",
-            "title": "Final Pickup Info",
-            "detail": "Exact pickup time and driver contact"
+            "timing": "前一晚",
+            "title": "最终接送信息",
+            "detail": "确切接客时间与司机联系方式",
+            "description": "发送确切集合时间及导游联络方式。"
           },
           {
-            "timing": "Morning of tour",
-            "title": "Day-of Route Notes",
-            "detail": "Morning briefing based on live conditions"
+            "timing": "行程当天早晨",
+            "title": "当日路线说明",
+            "detail": "依实况提供当日行程说明",
+            "description": "导游于集合前确认当日安排及集合标识说明。"
           },
           {
-            "timing": "During tour",
-            "title": "Stop-by-Stop Tips",
-            "detail": "Real-time guidance at each location"
+            "timing": "行程途中",
+            "title": "景点逐一说明",
+            "detail": "各景点即时现场讲解",
+            "description": "导游提供华城历史解说，光明洞窟各展区带领说明，南门市场招牌街食现场推荐。"
           },
           {
-            "timing": "After tour",
-            "title": "Post-tour Support",
-            "detail": "Follow-up and recommendations"
+            "timing": "行程结束后",
+            "title": "行程后支援",
+            "detail": "行程结束后反馈与后续建议",
+            "description": "行程结束后发送问卷，欢迎意见回馈。"
           }
         ]
       }
@@ -1975,58 +2133,58 @@
         "staticQuestions": [
           {
             "id": "q1",
-            "question": "Why isn't the tour available on Mondays?",
-            "answer": "Gwangmyeong Cave is closed on Mondays for maintenance. Since the cave is one of the four core stops, the tour doesn't operate on Mondays. If you want to visit on a Monday, consider the Suwon-only itineraries (Hwaseong + Folk Village or Hwaseong + Waujeongsa)."
+            "question": "为什么这个行程周一不开班？",
+            "answer": "光明洞窟周一因维护作业闭馆。由于洞窟是四大核心景点之一，周一不排班。若您想在周一造访水原但跳过洞窟，可询问业者是否有替代安排。"
           },
           {
             "id": "q2",
-            "question": "Are admissions included?",
-            "answer": "Yes — Suwon Hwaseong Fortress, Hwaseong Haenggung Palace, and Gwangmyeong Cave admissions are all included. Starfield Library is free for everyone. Optional cave-winery tasting and any folk-village extras are at your own cost."
+            "question": "门票含括在行程费用内吗？",
+            "answer": "含括——水原华城、华城行宫及光明洞窟门票全部含括。星空图书馆对外免费开放。选做洞窟酒窖品酒（₩5,000 / 3杯）现场自费。"
           },
           {
             "id": "q3",
-            "question": "Is lunch included?",
-            "answer": "No. Lunch is typically eaten during free time at Suwon Nammun Market (street food, Suwon galbi) or Starfield Suwon's food hall. Budget ₩10,000–₩20,000 per person."
+            "question": "午餐含括吗？",
+            "answer": "不含。午餐通常在水原南门市场的街头美食（₩3,000至₩7,000 / 道）或星空水原美食广场（₩10,000至₩20,000）。导游当日推荐最新选项。"
           },
           {
             "id": "q4",
-            "question": "How many stairs are in Gwangmyeong Cave?",
-            "answer": "Approximately 180 steps down to the lower-level highlights (Wine Cave, Golden Waterfall, Aqua World) and the same back up. There is no elevator. Visitors with mobility issues or fear of confined spaces typically stay on the upper level."
+            "question": "光明洞窟有多少阶楼梯？",
+            "answer": "大约180阶抵达下层精华展区（酒窖、黄金瀑布、水族馆世界），回程同样180阶。无电梯。行动不便的旅客需认真考虑此段——下层展区是全日最具景色冲击力的部分，但楼梯无法回避。"
           },
           {
             "id": "q5",
-            "question": "Is the cave warm or cold?",
-            "answer": "Cool. The cave is a constant 12°C (54°F) year-round. In summer that's a relief; in winter, you'll want to keep a layer on. Summer visitors often bring a light jacket just for this stop."
+            "question": "洞窟是温的还是凉的？",
+            "answer": "凉的。洞窟全年恒温12°C（54°F）。夏季是清凉的避暑选项；冬季建议保留一件薄外套。夏季旅客通常携带轻薄夹克备用。"
           },
           {
             "id": "q6",
-            "question": "How is this different from the Suwon + Folk Village tour?",
-            "answer": "Both visit the fortress, palace, and Starfield Library. This version pairs them with Gwangmyeong Cave (an underground LED-lit theme park) and Suwon Nammun Market. The Folk Village version drops the cave and adds the Korean Folk Village in Yongin (a 270-house open-air heritage park). Choose this one for variety and indoor weather; the Folk Village version for deeper Joseon-era heritage."
+            "question": "和水原＋民俗村行程有何不同？",
+            "answer": "两条路线均含华城、行宫及星空图书馆。本版本配合光明洞窟（地下LED艺术主题公园）和南门市场街头美食。民俗村版本则配合韩国民俗村（260栋传统建筑、骑马武艺表演）——偏向文化表演体验。洞窟版本更适合喜欢独特地下景观及龙雕拍照的旅客。"
           },
           {
             "id": "first-time",
-            "question": "Is this a good choice for first-time visitors to Suwon & Gwangmyeong?",
-            "answer": "Yes — strong first-time pick for travelers who want one UNESCO site (Hwaseong Fortress), one Joseon palace (Haenggung), one underground themed attraction (Gwangmyeong Cave), and one contemporary photo space (Starfield Library) in a single day. The format gives four very different cultural angles. Note: the tour doesn't operate on Mondays (Gwangmyeong Cave maintenance day)."
+            "question": "这是初次造访水原和光明的好选择吗？",
+            "answer": "是的——对想在一日内体验一个UNESCO遗址（华城）、一个朝鲜宫殿（行宫）、一个地下艺术景点（光明洞窟）和一个现代图书馆（星空）的旅客，是最强力的首选组合之一。"
           },
           {
             "id": "walking",
-            "question": "Is the walking difficult?",
-            "answer": "Active walking day with one heavy stair section. Hwaseong wall has steep sections and stairs (≈1 km walked). Gwangmyeong Cave's lower-level highlights require ≈180 stairs down and the same back up — no elevator. Haenggung Palace is mostly flat with some courtyard steps. Starfield Library is fully escalator/elevator-accessible. Total walking ≈4 km. Comfortable shoes essential, especially for the cave stairs."
+            "question": "步行难度如何？",
+            "answer": "全日活跃步行，含一段繁重阶梯。华城城墙有坡度石阶及不平整地面（约1公里）。光明洞窟下层精华展区需约180阶下行＋180阶返回。星空图书馆全程平坦室内。建议穿着有抓地力的舒适步行鞋。"
           },
           {
             "id": "family",
-            "question": "Is this tour suitable for families?",
-            "answer": "Yes for families whose kids can handle the wall walk and Gwangmyeong's stairs. The cave is a kid favorite — LED-lit tableaux, Aqua World aquarium, the 41 m dragon sculpture, the underground winery (parents only) and Golden Waterfall. Strollers don't work on the wall or in the cave's stair sections. Suwon Nammun Market is a hit for street-food-curious teens. Year-round 12°C inside the cave makes it a relief stop."
+            "question": "亲子家庭适合吗？",
+            "answer": "适合能应对城墙石阶及洞窟180阶的孩子。洞窟是孩子最爱——LED灯光、龙雕及水族馆。城墙石阶及长日程对年幼儿童较具挑战性，建议约10岁以上。"
           },
           {
             "id": "seniors",
-            "question": "Can older adults join comfortably?",
-            "answer": "Recommended only for active seniors comfortable with stairs and confined spaces. The 180 stairs at Gwangmyeong's lower levels have no elevator alternative — the upper level (≈40 min of content) is accessible if stairs aren't possible. The fortress wall has steep sections; easier flat segments are walkable. Haenggung and Starfield are fully accessible. Bring a light layer for the cave even in summer."
+            "question": "年长旅客能否舒适地参加？",
+            "answer": "建议能应对楼梯及封闭空间的活跃银发族。光明洞窟180阶无电梯是最大限制——如有疑虑请提前告知导游，可规划略过下层，留在上层展区（仍有LED艺术隧道等精彩展示）。"
           },
           {
             "id": "children",
-            "question": "What's the recommended minimum age?",
-            "answer": "Best fit is around age 10 and up. The fortress wall has uneven surfaces, the cave has 180 stairs each way, and the day is long (9 hours). Younger kids can manage if comfortable on stairs and with confined spaces (the cave's lower tunnels are narrow). Kids often love the cave's underground attractions — dragon sculpture, Aqua World, Wine Cave (visual only). The Suwon street-food market works for all ages."
+            "question": "建议最低年龄是多少？",
+            "answer": "建议约10岁以上。城墙有不平整地面，洞窟有180阶，全日行程约9小时。较年幼的孩子可能在后半段体力不支，但对洞窟龙雕等景色刺激通常反应积极。"
           }
         ]
       }
@@ -2076,16 +2234,16 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "可订状态将在支付步骤中确认。",
         "price": {
           "amountLabel": "54.00",
           "originalPriceUsd": 60,
           "salePriceUsd": 54,
           "discountPercent": 10,
           "currency": "USD",
-          "per": "person",
-          "priceSource": "getyourguide_t816598",
-          "priceNote": "Original price 60 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+          "per": "人",
+          "priceSource": "direct_rate",
+          "priceNote": "价格以 AtoC Korea 官网直售价为准。"
         }
       }
     }
@@ -2108,7 +2266,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

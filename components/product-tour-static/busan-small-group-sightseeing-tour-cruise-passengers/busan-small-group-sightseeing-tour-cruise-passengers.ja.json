@@ -24,16 +24,16 @@
     "priceLabel": "料金は予約時にご確認ください",
     "shortCardDescription": "釜山港発着のクルーズ寄港地少人数観光ツアー9時間：国連記念公園（世界唯一の国連記念墓地）→太宗台海岸断崖→甘川文化村（韓国のサントリーニ）→龍頭山公園＆釜山タワー→チャガルチ水産市場。昼食込み、帰船時間を厳守。",
     "tags": [
-      "small_group",
-      "busan",
-      "cruise_excursion",
-      "from_cruise",
-      "shared_van"
+      "少人数ツアー",
+      "釜山",
+      "クルーズ寄港地観光",
+      "クルーズ港発",
+      "乗合車両"
     ],
     "rating": 4.9,
     "reviewCount": 32,
     "slug": "busan-small-group-sightseeing-tour-cruise-passengers",
-    "subtitle": "釜山の主要スポットをクルーズ寄港地から少人数で一日で — 国連記念公園・太宗台・甘川・市場。",
+    "subtitle": "釜山の主要見どころをクルーズ寄港地から少人数で一日で — 国連記念公園・太宗台・甘川・市場。",
     "region": "釜山（クルーズ対応）",
     "duration": "9時間",
     "stopsCount": 8,
@@ -54,8 +54,8 @@
     "salePriceUsd": 58.5,
     "discountPercent": 10,
     "currency": "USD",
-    "per": "person",
-    "priceSource": "getyourguide_t1164092",
+    "per": "人",
+    "priceSource": "direct_rate",
     "priceNote": "少人数シェアバンツアーの価格はAtoC Korea直販価格です。予約時にご確認ください。"
   },
   "hero": {
@@ -70,7 +70,7 @@
     "meta": {
       "duration": "≈ 9時間（船→船）",
       "region": "釜山",
-      "stops": "8スポット",
+      "stops": "8見どころ",
       "rating": 4.9,
       "ratingStars": 5
     }
@@ -82,7 +82,7 @@
     },
     {
       "id": "itinerary",
-      "label": "旅程"
+      "label": "行程"
     },
     {
       "id": "details",
@@ -99,40 +99,34 @@
   ],
   "glanceItems": [
     {
-      "icon": "camera",
-      "label": "写真映え度",
-      "value": "最適",
-      "level": 5
-    },
-    {
-      "icon": "mountain",
-      "label": "景観の密度",
-      "value": "良好",
-      "level": 4
-    },
-    {
-      "icon": "footprints",
-      "label": "歩行難易度",
-      "value": "やや高い",
-      "level": 4
-    },
-    {
-      "icon": "cloud-rain",
-      "label": "雨天適性",
-      "value": "中程度",
-      "level": 3
+      "icon": "clock",
+      "label": "所要時間",
+      "value": "≈ 9時間（船→船、帰船時間に合わせて調整）"
     },
     {
       "icon": "users",
-      "label": "ファミリー適性",
-      "value": "中程度",
-      "level": 3
+      "label": "グループ人数",
+      "value": "少人数・シェアバン、英語対応ガイド付き"
     },
     {
-      "icon": "gauge",
-      "label": "ペース",
-      "value": "バランス型",
-      "level": 4
+      "icon": "map-pin",
+      "label": "ピックアップ",
+      "value": "釜山港国際クルーズターミナル到着ホール"
+    },
+    {
+      "icon": "footprints",
+      "label": "歩行",
+      "value": "中程度 — 太宗台の断崖遊歩道・甘川の丘の路地"
+    },
+    {
+      "icon": "ticket",
+      "label": "含まれるもの",
+      "value": "車両・認定ガイド・燃料/駐車料金・昼食込み"
+    },
+    {
+      "icon": "star",
+      "label": "評価",
+      "value": "4.9 / 5（32件のレビュー）"
     }
   ],
   "galleryItems": [
@@ -143,7 +137,7 @@
       "alt": "太宗台の海岸断崖から見える岩礁と五六島",
       "caption": "太宗台 — 影島の南端の自然公園",
       "location": "太宗台（テジョンデ）、影島区、釜山",
-      "atmosphere": "釜山市記念物第28号；影島の最南端の絶壁と海の眺め"
+      "atmosphere": "釜山市記念物第28号。影島の最南端の絶壁と海の眺め"
     },
     {
       "id": "g2",
@@ -161,7 +155,7 @@
       "alt": "カラフルな壁画と細い路地が連なる甘川文化村の鳥瞰図",
       "caption": "甘川文化村 — 韓国のサントリーニ",
       "location": "甘川文化村（カムチョン・ムナファマウル）、沙下区、釜山",
-      "atmosphere": "丘の斜面に色とりどりに塗られた家々；朝鮮戦争避難民が形成した歴史的なコミュニティ"
+      "atmosphere": "丘の斜面に色とりどりに塗られた家々。朝鮮戦争避難民が形成した歴史的なコミュニティ"
     },
     {
       "id": "g4",
@@ -186,7 +180,7 @@
     {
       "number": 1,
       "time": "≈ 08:30",
-      "duration": "30 min",
+      "duration": "30分",
       "name": "釜山港ピックアップ（クルーズターミナル到着ホール）",
       "category": "出発 — 釜山港国際クルーズターミナル",
       "description": "ツアーは大型クルーズ船用の**釜山港国際クルーズターミナル到着ホール（東三洞、影島区）**、または中小型船用の**釜山港第1ターミナル（中区、釜山駅近辺）**から始まります。ガイドは到着ホール出口エリアで**AtoC Koreaのサインボード**を掲げて待機します。少人数シェアバン（最大8名程度）で英語対応ガイド付き。**帰船時間を必ずご確認のうえ、予約時にお知らせください** — ガイドは帰船時間の90〜120分前にターミナルへ帰着するよう管理します。クルーズ船の到着が遅延した場合も、ガイドはターミナルで待機します。",
@@ -194,9 +188,9 @@
         "釜山港国際クルーズターミナルまたは釜山港第1ターミナルでピックアップ",
         "AtoC Koreaのサインボードを持ったガイドが到着ホール出口で待機",
         "少人数シェアバン（最大8名程度）",
-        "帰船時間の90〜120分前にターミナルへ帰着設計"
+        "帰船時間の90〜120分前にターミナルへ帰着できるようにしています"
       ],
-      "whyOnRoute": "釜山港（影島）から最初のスポット（国連記念公園・南区）へは20〜30分という近い距離。港からの出発でターミナルへの帰路も計算されたルート設計。",
+      "whyOnRoute": "釜山港（影島）から最初の見どころ（国連記念公園・南区）へは20〜30分という近い距離。港からの出発でターミナルへの帰路も計算された行程づくり。",
       "_poi_meta": {
         "poi_key": "OPS_busan_cruise_pickup",
         "kb_version": "1.15",
@@ -208,29 +202,29 @@
       },
       "timeUsed": [
         "ターミナルでの集合＋コーチ乗車 — 約10〜15分",
-        "第1スポット（国連記念公園）への移動 — 約20分"
+        "第1見どころ（国連記念公園）への移動 — 約20分"
       ]
     },
     {
       "number": 2,
       "time": "≈ 09:30",
-      "duration": "60 min",
+      "duration": "60分",
       "name": "在韓国連記念公園（朝鮮戦争）",
       "category": "世界唯一の国連記念墓地 — 朝鮮戦争（1950〜53年）",
-      "description": "**在韓国連記念公園（재한유엔기념공원、UNMCK） — 世界唯一の国連記念墓地** — 1951年1月に**国連軍司令部**によって設立され、朝鮮戦争で戦死した**16か国の国連軍兵士2,300名以上**が眠ります。整然と並んだ白い墓石と16か国の国旗が静かにたなびく。1955年に**韓国政府が国連に永久譲渡**した特別な国際領域。毎年11月11日の**「ターン・トゥワード・プサン」**では世界中の参戦国が同時に黙祷を捧げます。追悼館では朝鮮戦争の展示が英語で閲覧可能。**FREE入場**。クルーズ乗客の多くが来日前後に釜山に寄港するため、日本・米国・オーストラリア・英国出身の乗客に特に深く響くスポット。",
+      "description": "**在韓国連記念公園 — 世界唯一の国連記念墓地** — 1951年1月に**国連軍司令部**によって設立され、朝鮮戦争で戦死した**16か国の国連軍兵士2,300名以上**が眠ります。整然と並んだ白い墓石と16か国の国旗が静かにたなびく。1955年に**韓国政府が国連に永久譲渡**した特別な国際領域。毎年11月11日の**「ターン・トゥワード・プサン」**では世界中の参戦国が同時に黙祷を捧げます。追悼館では朝鮮戦争の展示が英語で閲覧可能。**入場無料**。クルーズ乗客の多くが来日前後に釜山に寄港するため、日本・米国・オーストラリア・英国出身の乗客に特に深く響く見どころ。",
       "highlights": [
         "**世界唯一の国連記念墓地** — 1951年設立、16か国の国連軍兵士2,300名以上",
         "1955年に韓国政府が**国連に永久譲渡**した特別な国際領域",
         "毎年11月11日の**「ターン・トゥワード・プサン」**",
         "追悼館に英語展示あり",
-        "**FREE入場**"
+        "**入場無料**"
       ],
       "timeUsed": [
         "入場＋追悼館展示 — 約20分",
         "墓地エリア散策 — 約25分",
         "バスに戻る — 約10分"
       ],
-      "whyOnRoute": "クルーズ乗客（多くが日本・米国・オーストラリア・英国出身）に特に深く響く、釜山の国際的な歴史層を体験できるスポット。",
+      "whyOnRoute": "クルーズ乗客（多くが日本・米国・オーストラリア・英国出身）に特に深く響く、釜山の国際的な歴史層を体験できる見どころ。",
       "_poi_meta": {
         "poi_key": "un_memorial_cemetery",
         "kb_version": "1.25",
@@ -244,32 +238,18 @@
           "American Battle Monuments Commission (US Korean War Monument at Busan)",
           "UN General Assembly Resolution 977(X) (December 15, 1955)"
         ]
-      },
-      "visitBasics": {
-        "hours": "09:00–18:00（5–9月）／ 09:00–17:00（10–4月）",
-        "closed": "通年開放（追悼式中は慰霊館閉鎖）",
-        "admission": "入場無料",
-        "walking": "14ヘクタールの敷地全体が車椅子可 — 平坦な舗装路"
-      },
-      "convenience": {
-        "restroom": "ビジターセンターおよび慰霊館",
-        "parking": "無料駐車場＋団体バス降車エリア"
-      },
-      "smartNotes": {
-        "photo": "**追悼壁**（140枚の大理石パネルに40,896名の刻名）、**22派遣国の国旗が並ぶ象徴区域**、**フランク・ゲイロードの米国朝鮮戦争記念碑（2013）** — ワシントンDCの記念碑と同じ彫刻家。撮影可、静粛にお願いします。",
-        "tip": "**世界唯一のUN墓地** — 1955年UN総会決議977(X)号によりUN管理保護領土。**毎年11月11日11時の『Turn Toward Busan』追悼式**は22派遣国の国旗が一斉に半旗となる年に一度の機会。"
       }
     },
     {
       "number": 3,
       "time": "≈ 10:45",
-      "duration": "75 min",
+      "duration": "75分",
       "name": "太宗台（テジョンデ）海岸断崖",
       "category": "釜山市記念物第28号 — 影島南端の自然公園",
-      "description": "**太宗台（태종대） — 釜山市記念物第28号**（五六島と共に）— は影島（ヨンド）の最南端に位置する**自然公園**で、**新羅の武烈王（太宗大王）が馬を走らせながら弓の練習をした場所**という伝説に名前の由来を持ちます。公園内には**断崖絶壁の海岸線**が広がり、岩礁に打ち寄せる波と岩礁展望台から見える**五六島（釜山市記念物第22号）**の眺めが圧巻。遊歩道（**タジラッギル、約4km）**を歩くか、**ダヌビ観光列車**（有料、約30〜40分一周）に乗車するかを選択できます。公園内には**灯台（1906年建設）**と願い事岩（望夫石）も。釜山港の国際クルーズターミナルから車で**10〜15分**の近距離に位置し、クルーズツアーに最適なロケーション。",
+      "description": "**太宗台 — 釜山市記念物第28号**（五六島と共に）— は影島（ヨンド）の最南端に位置する**自然公園**で、**新羅の武烈王（太宗大王）が馬を走らせながら弓の練習をした場所**という伝説に名前の由来を持ちます。公園内には**断崖絶壁の海岸線**が広がり、岩礁に打ち寄せる波と岩礁展望台から見える**五六島（釜山市記念物第22号）**の眺めが圧巻。遊歩道（**タジラッギル、約4km）**を歩くか、**ダヌビ観光列車**（有料、約30〜40分一周）に乗車するかを選択できます。公園内には**灯台（1906年建設）**と願い事岩（望夫石）も。釜山港の国際クルーズターミナルから車で**10〜15分**の近距離に位置し、クルーズツアーに最適なロケーション。",
       "highlights": [
         "釜山市記念物第28号 — 影島南端の断崖絶壁の海岸線",
-        "**五六島（오륙도）**の眺め — 釜山市記念物第22号",
+        "**五六島**の眺め — 釜山市記念物第22号",
         "遊歩道（タジラッギル）または**ダヌビ観光列車**（有料）",
         "1906年建設の**灯台**と望夫石",
         "釜山港から**車で10〜15分**"
@@ -280,7 +260,7 @@
         "灯台＋望夫石（任意） — 約15分",
         "バスに戻る — 約10分"
       ],
-      "whyOnRoute": "釜山港から最も近い大自然スポット（車で10〜15分）。国連記念公園の静寂の後、海岸断崖の雄大な自然でリフレッシュ。",
+      "whyOnRoute": "釜山港から最も近い大自然見どころ（車で10〜15分）。国連記念公園の静寂の後、海岸断崖の雄大な自然でリフレッシュ。",
       "_poi_meta": {
         "poi_key": "taejongdae",
         "kb_version": "1.25",
@@ -293,36 +273,22 @@
           "Yeongdo Lighthouse archive (1906 records)",
           "Busan National Geopark official (busan.go.kr/geopark)"
         ]
-      },
-      "visitBasics": {
-        "hours": "公園 04:00–24:00（3–10月）／ 05:00–24:00（11–2月）；ダヌビ列車 09:00～日没",
-        "closed": "通年営業（強風・大雨時はダヌビ列車運休）",
-        "admission": "公園無料；**ダヌビ列車 大人 約₩4,000 往復**、子供 約₩2,000",
-        "walking": "4.3 km海岸周回は本格的；**ダヌビ列車**：磯辺 → 求命寺 → 展望台 → 影島灯台 → 太宗寺"
-      },
-      "convenience": {
-        "restroom": "入口広場、展望台、影島灯台付近",
-        "parking": "入口広場の大型無料駐車場"
-      },
-      "smartNotes": {
-        "photo": "**3階展望台**（晴天時に南東50 kmの**対馬**まで展望）、**釜山最古の影島灯台（1906年建造）**、灯台下の約12万年前第4間氷期に形成された**神仙岩波食台**。",
-        "tip": "4.3 km歩行コースの代わりに**ダヌビ列車**5駅周回がおすすめ。**太宗寺の紫陽花祭り**は6月下旬〜7月上旬。灯台周辺は急な階段多く、ベビーカー不向き。"
       }
     },
     {
       "number": 4,
       "time": "≈ 12:15",
-      "duration": "60 min",
+      "duration": "60分",
       "name": "昼食（釜山の地元レストラン）",
       "category": "昼食込み — 釜山郷土料理",
-      "description": "**昼食はツアー代金に含まれています** — オペレーターが事前に手配した地元の釜山レストランで。典型的なメニュー：**돼지국밥（テジ・クッパッ）** — 釜山のソウルフード、豚骨スープと白飯のセット；または地元の海産物定食。食事中にガイドが甘川文化村の地図と見どころを解説。**ベジタリアン・ハラール対応**は事前申込で可能。",
+      "description": "**昼食はツアー代金に含まれています** — 催行会社が事前に手配した地元の釜山レストランで。典型的なメニュー：**（テジ・クッパッ）** — 釜山のソウルフード、豚骨スープと白飯のセット。または地元の海産物定食。食事中にガイドが甘川文化村の地図と見どころを解説。**ベジタリアン・ハラール対応**は事前申込で可能。",
       "highlights": [
         "**昼食はツアー代金に含まれています**",
-        "**돼지국밥（テジ・クッパッ）** — 釜山のソウルフード（豚骨スープ＋白飯）",
+        "**（テジ・クッパッ）** — 釜山のソウルフード（豚骨スープ＋白飯）",
         "食事中にガイドが甘川文化村の見どころを解説",
         "**ベジタリアン・ハラール対応**（事前申込）"
       ],
-      "whyOnRoute": "太宗台の海岸散策後の自然なリセット。昼食を挟むことで午後の甘川・龍頭山・チャガルチという文化・市場ゾーンへのエネルギーを補給。",
+      "whyOnRoute": "太宗台の海岸散策後の自然な休憩。昼食を挟むことで午後の甘川・龍頭山・チャガルチという文化・市場ゾーンへのエネルギーを補給。",
       "_poi_meta": {
         "poi_key": "OPS_busan_lunch",
         "kb_version": "1.15",
@@ -331,41 +297,27 @@
       "timeUsed": [
         "コーチで昼食会場へ — 約10分",
         "注文＋食事 — 約45分"
-      ],
-      "visitBasics": {
-        "hours": "店舗により異なる（通常11:30–14:30の昼営業）",
-        "closed": "店舗により異なる；ドライバーが営業確認",
-        "admission": "**現地払い、1人 約₩10,000–25,000**；昼食はツアー料金に**含まれず**",
-        "walking": "ほぼなし — 車両降車地点から徒歩5分以内"
-      },
-      "convenience": {
-        "restroom": "店内",
-        "parking": "ドライバーが最寄りの合法停車地点で待機"
-      },
-      "smartNotes": {
-        "photo": "**テジクッパ**（朝鮮戦争避難民時代由来の釜山名物）または**ミルミョン**（1950年代避難民厨房発祥の釜山風冷麺）が釜山の食写真として最も映える。",
-        "tip": "**ベジタリアン・ハラール・アレルゲン対応は24時間前の事前共有**必須。ドライバーが好み（韓食・海鮮・洋食）で推薦 — 推薦に乗るかピックアップ時に希望伝達。"
-      }
+      ]
     },
     {
       "number": 5,
       "time": "≈ 13:30",
-      "duration": "75 min",
+      "duration": "75分",
       "name": "甘川文化村（カムチョン・ムナファマウル）",
       "category": "丘の斜面のアート村 — 「韓国のサントリーニ」",
-      "description": "**甘川文化村（감천문화마을）** — 「韓国のマチュピチュ」「韓国のサントリーニ」と呼ばれる — は沙下区の丘の斜面に広がる住宅街で、朝鮮戦争中の1950年代に避難民が形成した歴史的なコミュニティ。密集した急斜面の路地に沿ってカラフルに塗られた家々が階段状に広がり、南側の釜山湾と絶影島が見渡せます。2009年から公共アートプロジェクトが開始され、街角に壁画・彫刻・インスタレーションが設置。代表的なフォトスポットは「星の王子さまと狐」の彫刻と、港を見下ろすメイン展望台。**入場無料**；急な坂道のため**グリップの良い靴推奨**。",
+      "description": "**甘川文化村** — 「韓国のマチュピチュ」「韓国のサントリーニ」と呼ばれる — は沙下区の丘の斜面に広がる住宅街で、朝鮮戦争中の1950年代に避難民が形成した歴史的なコミュニティ。密集した急斜面の路地に沿ってカラフルに塗られた家々が階段状に広がり、南側の釜山湾と絶影島が見渡せます。2009年から公共アートプロジェクトが開始され、街角に壁画・彫刻・インスタレーションが設置。代表的な撮影ポイントは「星の王子さまと狐」の彫刻と、港を見下ろすメイン展望台。**入場無料**。急な坂道のため**グリップの良い靴推奨**。",
       "highlights": [
         "「**韓国のサントリーニ**」「**韓国のマチュピチュ**」と呼ばれるカラフルな丘の住宅街",
         "朝鮮戦争（1950年代）の避難民が形成した歴史的コミュニティ",
-        "「**星の王子さまと狐**」の彫刻と釜山湾展望台が代表的フォトスポット",
-        "**入場無料**；急な坂道はグリップのある靴推奨"
+        "「**星の王子さまと狐**」の彫刻と釜山湾展望台が代表的撮影ポイント",
+        "**入場無料**。急な坂道はグリップのある靴推奨"
       ],
       "timeUsed": [
         "コーチ到着＋地図配布 — 約5分",
         "メインフォトゾーン（展望台・壁画・彫刻） — 約40〜50分",
         "バスに戻る — 約10分"
       ],
-      "whyOnRoute": "釜山で最も写真映えするスポット。昼食後のアクティブな散策として最適な位置に配置。",
+      "whyOnRoute": "釜山で最も写真映えする見どころ。昼食後のアクティブな散策として最適な位置に配置。",
       "_poi_meta": {
         "poi_key": "gamcheon_culture_village",
         "kb_version": "1.25",
@@ -378,29 +330,15 @@
           "Korea Tourism Organization",
           "Korea Tourism Organization (100 Must-Visit Tourist Spots in Korea designation)"
         ]
-      },
-      "visitBasics": {
-        "hours": "09:00–18:00（3–10月）／ 09:00–17:00（11–2月）；案内所同じ",
-        "closed": "年中無休",
-        "admission": "村は無料；**スタンプツアー地図 ₩2,000**（任意、9番号のインスタレーション案内）",
-        "walking": "急な階段・路地 — **やや難**；**ベビーカー・車椅子不向き**；滑りにくい靴必須"
-      },
-      "convenience": {
-        "restroom": "案内所広場およびメイン路地",
-        "parking": "限定的 — 案内所付近で乗降、大型駐車場なし"
-      },
-      "smartNotes": {
-        "photo": "**「星の王子さまとキツネのベンチ」**（ハヌルマル展望台、長い列、無料）、星見展望台の**虹色屋根パノラマ**、**壁画の階段路地**。**ドローン・路地でのフラッシュ撮影禁止**。",
-        "tip": "**約1万人の住民が暮らす集落**（1955年太極道避難定着地） — **静粛**、家屋立入禁止、ゴミ持ち帰り。**2012 UN-HABITATアジア都市景観賞**、年間約140万人来訪、韓国観光公社100選5回連続選定。"
       }
     },
     {
       "number": 6,
       "time": "≈ 15:00",
-      "duration": "45 min",
+      "duration": "45分",
       "name": "龍頭山公園＆釜山タワー",
       "category": "釜山中心部の展望公園 — 釜山タワー（高さ120m）",
-      "description": "**龍頭山公園（용두산공원、「龍の頭の山公園」）** — 69,000m²の市民公園で、70種の樹木が植わる南浦洞の中心 — は釜山の歴史と現代が交差する場所。公園内の**釜山タワー（高さ120m、1973年建設、2003年改修）**の展望台からは釜山市街地・釜山港・絶影島・アムナム公園・影島が360度のパノラマで見渡せます。展望台チケット：**大人₩12,000**（ツアーに含まれるかどうかは予約時にご確認ください）。公園内には**李舜臣将軍の銅像**（釜山港湾を守った16世紀の英雄）と日本統治時代の石灯籠の台座（現在は撤去済み）の跡地。甘川文化村から**車で約15〜20分**、チャガルチ市場から**徒歩5分**の距離に位置するため、一日の後半の動線として最も効率的。",
+      "description": "**龍頭山公園** — 69,000m²の市民公園で、70種の樹木が植わる南浦洞の中心 — は釜山の歴史と現代が交差する場所。公園内の**釜山タワー（高さ120m、1973年建設、2003年改修）**の展望台からは釜山市街地・釜山港・絶影島・アムナム公園・影島が360度のパノラマで見渡せます。展望台チケット：**大人₩12,000**（ツアーに含まれるかどうかは予約時にご確認ください）。公園内には**李舜臣将軍の銅像**（釜山港湾を守った16世紀の英雄）と日本統治時代の石灯籠の台座（現在は撤去済み）の跡地。甘川文化村から**車で約15〜20分**、チャガルチ市場から**徒歩5分**の距離に位置するため、一日の後半の路線安排として最も効率的。",
       "highlights": [
         "**釜山タワー（高さ120m）**から360度のパノラマ — 釜山市街・港・絶影島が一望",
         "**李舜臣将軍の銅像** — 16世紀に釜山港湾を守った英雄",
@@ -426,33 +364,19 @@
           "Korea Tourism Organization",
           "Busan Metropolitan City heritage records"
         ]
-      },
-      "visitBasics": {
-        "hours": "公園24時間；**釜山ダイヤモンドタワー展望台 10:00–22:00（最終入場 21:30）**",
-        "closed": "通年営業（強風時は一時閉鎖）",
-        "admission": "公園無料；**釜山ダイヤモンドタワー 大人 ₩12,000 / 65歳以上・3–12歳 ₩9,000**",
-        "walking": "**光復路ファッション通りからの屋根付きエスカレーター**で登り（下りは階段）"
-      },
-      "convenience": {
-        "restroom": "公園広場および釜山ダイヤモンドタワー内",
-        "parking": "駐車場なし — 南浦洞公共駐車場利用後エスカレーターで移動"
-      },
-      "smartNotes": {
-        "photo": "**120 m 釜山ダイヤモンドタワー展望台**（標高189 m）— 釜山港・影島大橋・晴天時の対馬まで**360°パノラマ**。タワー頂部は**慶州仏国寺多宝塔（国宝20号）の宝蓋様式を引用**。**夕景・夜景**がベスト。",
-        "tip": "タワーと合わせて**李舜臣将軍像**（壬辰倭乱の亀甲船で一隻も失わなかった名将）、**市民の鐘**（大晦日と3月1日に**33回打鐘** — 1919年独立宣言33人を追悼）まで30分。"
       }
     },
     {
       "number": 7,
       "time": "≈ 16:00",
-      "duration": "60 min",
+      "duration": "60分",
       "name": "南浦洞＆チャガルチ水産市場",
       "category": "韓国最大の水産市場 — 釜山南浦港",
-      "description": "**チャガルチ市場（자갈치시장） — 韓国最大の水産市場** — 中区の南浦港ウォーターフロントに立地。「자갈치」の名前は砂利（자갈）が敷かれたかつての海岸に由来。1950年代の朝鮮戦争後に形成された「아지매（アジメ）文化」 — 逞しい市場のおばちゃん文化 — の中心地。1階の活魚コーナーでは選んだ魚介をその場で2〜3階の食堂で刺身・海鮮料理にしてもらえます。**南浦洞**は釜山の中心商業地区で、繊維・ファッション・食品の専門店街が密集。チャガルチ市場から南浦洞一帯を散策してから、クルーズターミナルへの帰路は**約20〜30分**。",
+      "description": "**チャガルチ市場 — 韓国最大の水産市場** — 中区の南浦港ウォーターフロントに立地。「」の名前は砂利が敷かれたかつての海岸に由来。1950年代の朝鮮戦争後に形成された「（アジメ）文化」 — 逞しい市場のおばちゃん文化 — の中心地。1階の活魚コーナーでは選んだ魚介をその場で2〜3階の食堂で刺身・海鮮料理にしてもらえます。**南浦洞**は釜山の中心商業地区で、繊維・ファッション・食品の専門店街が密集。チャガルチ市場から南浦洞一帯を散策してから、クルーズターミナルへの帰路は**約20〜30分**。",
       "highlights": [
         "**韓国最大の水産市場** — 釜山南浦港ウォーターフロント",
-        "1階の活魚コーナーで選んで2〜3階の食堂で食べる「選魚→刺身」システム",
-        "釜山名物**오뎅（オデン）**屋台",
+        "1階の活魚コーナーで選んで2〜3階の食堂で食べる「選魚→刺身」スタイル",
+        "釜山名物**（オデン）**屋台",
         "**南浦洞**商業地区の散策（繊維・ファッション・食品）"
       ],
       "timeUsed": [
@@ -460,7 +384,7 @@
         "オデン屋台＋街歩きスナック（任意） — 約20分",
         "南浦洞商業地区（任意） — 約10分"
       ],
-      "whyOnRoute": "チャガルチは南浦洞の中心部にあり、釜山港クルーズターミナルへの帰路のルート上に位置。一日の最後に釜山の活気ある日常を体感できるフィナーレ。",
+      "whyOnRoute": "チャガルチは南浦洞の中心部にあり、釜山港クルーズターミナルへの帰路のルート上に位置。一日の最後に釜山の活気ある日常を感じられるフィナーレ。",
       "_poi_meta": {
         "poi_key": "jagalchi_market",
         "kb_version": "1.25",
@@ -473,32 +397,18 @@
           "Busan Jung-gu official",
           "Busan Tourism Organization (Jagalchi Sannakji designation)"
         ]
-      },
-      "visitBasics": {
-        "hours": "**チャガルチ市場 毎日 05:00–22:00**；水産卸売競りは04:00から（観光見学は事前予約）；南浦洞商店街 10:30–22:00",
-        "closed": "**チャガルチ：毎月第1・第3火曜休場**；南浦洞は年中無休",
-        "admission": "無料；**2階刺身店セット ₩30,000～**（魚種により変動）",
-        "walking": "平坦な商店街＋市場 — 容易；**2階刺身店**は短い階段"
-      },
-      "convenience": {
-        "restroom": "BIFF広場およびチャガルチ内公衆トイレ",
-        "parking": "ロッテ百貨店またはBIFF広場公共駐車場利用；市場自体の駐車場なし"
-      },
-      "smartNotes": {
-        "photo": "**カモメ型の現代建築（2006年再開、ミン・ヒョンジュン設計）**、**1階の生簀**、**BIFF広場のハンドプリント**（パク・チャヌク、ポン・ジュノ等）、**国際市場**（1,500+店舗）。**業者の撮影は必ず一声かけて** — チャガルチ・アジュンマはカメラに直接的。",
-        "tip": "**1階購入 → 2階調理**の流れ：1階で刺身選んで2階の店で捌く（チョコチュジャン＋焼酎が定番）。**サンナクチ（活タコの細切り）**は釜山食文化の象徴 — 映画『オールド・ボーイ』（2003）の名場面の料理。"
       }
     },
     {
       "number": 8,
       "time": "≈ 17:15",
-      "duration": "30 min",
+      "duration": "30分",
       "name": "釜山港クルーズターミナルへ帰着",
       "category": "帰着 — 釜山港国際クルーズターミナル",
-      "description": "少人数シェアバンで**ツアー開始時と同じクルーズターミナル**へ帰着 — 大型船用の釜山港国際クルーズターミナル（東三）または中小型船用の釜山港第1ターミナル（釜山駅近辺）。南浦洞・チャガルチからターミナルまで約**20〜30分**。ガイドは**帰船時間の90〜120分前**にターミナルへ到着するよう厳格に管理します。緊急時や渋滞時は観光スポットの滞在時間を短縮して帰船を優先します。**当日の出航時刻は予約確認時に必ずお知らせください**。",
+      "description": "少人数シェアバンで**ツアー開始時と同じクルーズターミナル**へ帰着 — 大型船用の釜山港国際クルーズターミナル（東三）または中小型船用の釜山港第1ターミナル（釜山駅近辺）。南浦洞・チャガルチからターミナルまで約**20〜30分**。ガイドは**帰船時間の90〜120分前**にターミナルへ到着するよう厳格に管理します。緊急時や渋滞時は観光見どころの滞在時間を短縮して帰船を優先します。**当日の出航時刻は予約確認時に必ずお知らせください**。",
       "highlights": [
         "出発時と同じクルーズターミナルへ帰着",
-        "**帰船時間の90〜120分前**にターミナル到着設計",
+        "**帰船時間の90〜120分前**にターミナル到着できるようにしています",
         "緊急時はガイドが滞在時間を短縮して帰船を優先",
         "**出航時刻は予約時に必ず通知**してください"
       ],
@@ -516,86 +426,86 @@
   ],
   "routeFlowStops": [
     {
-      "name": "Busan Port International Passenger Terminal",
+      "name": "釜山港国際旅客ターミナル",
       "type": "origin",
-      "theme": "Departure"
+      "theme": "出発"
     },
     {
-      "name": "UN Memorial Cemetery",
+      "name": "国連記念公園",
       "type": "primary",
       "theme": "Memorial"
     },
     {
-      "name": "Taejongdae coastal cliffs",
+      "name": "太宗台海岸絶壁",
       "type": "primary",
-      "theme": "Coastal cliffs"
+      "theme": "海岸断崖"
     },
     {
-      "name": "Lunch (local Busan restaurant)",
+      "name": "ランチ（釜山の地元レストラン）",
       "type": "meal",
-      "theme": "Meal"
+      "theme": "食事"
     },
     {
-      "name": "Gamcheon Culture Village",
+      "name": "甘川文化村",
       "type": "primary",
-      "theme": "Art village"
+      "theme": "アートの街"
     },
     {
-      "name": "Yongdusan Park + Busan Tower",
+      "name": "龍頭山公園＋釜山タワー",
       "type": "primary",
-      "theme": "City viewpoint"
+      "theme": "街を見渡せる展望スポット"
     },
     {
-      "name": "Nampo-dong + Jagalchi Market",
+      "name": "南浦洞＋ジャガルチ市場",
       "type": "primary",
-      "theme": "Market & streetfood"
+      "theme": "市場・屋台グルメ"
     },
     {
-      "name": "Busan Port International Passenger Terminal",
+      "name": "釜山港国際旅客ターミナル",
       "type": "return",
-      "theme": "Return"
+      "theme": "帰着"
     }
   ],
   "routePhases": [
     {
-      "phase": "Outbound transfer",
-      "duration": "≈ 1 hour",
-      "description": "Cruise terminal to UN Memorial Cemetery in Nam-gu (≈30 min) plus disembarkation buffer."
+      "phase": "出発移動",
+      "duration": "約1時間",
+      "description": "クルーズターミナルから南区国連記念公園まで（約30分）＋下船時間の余裕。"
     },
     {
       "phase": "記念公園＋海岸断崖",
-      "duration": "≈ 2.5 hours",
+      "duration": "約2時間30分",
       "description": "国連記念公園（世界唯一の国連墓地）→太宗台（影島の海岸断崖自然公園）。"
     },
     {
       "phase": "昼食（込み）",
-      "duration": "≈ 1 hour",
+      "duration": "約1時間",
       "description": "昼食込みで釜山の地元レストランへ。"
     },
     {
       "phase": "文化村＋タワー＋市場",
-      "duration": "≈ 2 hours",
+      "duration": "約2時間",
       "description": "甘川文化村→龍頭山公園＆釜山タワー→チャガルチ水産市場→港へ帰着。"
     },
     {
       "phase": "文化村＋タワー＋市場",
-      "duration": "≈ 1 hour",
+      "duration": "約1時間",
       "description": "甘川文化村→龍頭山公園＆釜山タワー→チャガルチ水産市場→港へ帰着。"
     },
     {
-      "phase": "Return",
-      "duration": "≈ 30 min + buffer",
-      "description": "Drop-off at cruise terminal at least 60 min before all-aboard."
+      "phase": "帰着",
+      "duration": "約30分＋時間の余裕",
+      "description": "最終乗船少なくとも60分前にクルーズターミナルに到着。"
     }
   ],
   "routeShapeIntro": {
     "title": "この一日の流れ",
-    "subtitle": "釜山港（影島）から出発し、歴史（国連記念公園）→自然（太宗台）→文化（甘川）→展望（龍頭山）→市場（チャガルチ）の順で巡り、同じ港へ帰着。9時間の船→船設計で帰船時間を厳守。"
+    "subtitle": "釜山港（影島）から出発し、歴史（国連記念公園）→自然（太宗台）→文化（甘川）→展望（龍頭山）→市場（チャガルチ）の順で巡り、同じ港へ帰着。9時間の船→船構成で帰船時間を厳守。"
   },
   "whyTourWorks": {
     "bestFor": [
       "釜山港に9時間以上の寄港がある乗客",
-      "少人数で釜山の主要スポットを一日で巡りたい初訪問者",
+      "少人数で釜山の主要見どころを一日で巡りたい初訪問者",
       "カップルと大人ファミリー",
       "海岸＋文化＋市場を一日でカバーしたい旅行者"
     ],
@@ -606,14 +516,14 @@
     ],
     "routeLogicSections": [
       {
-        "title": "クルーズ寄港地ツアーとしての設計理由",
+        "title": "クルーズ寄港地ツアーとしての推薦理由",
         "icon": "route",
         "iconBg": "bg-sky-50/80",
         "iconColor": "text-sky-600",
         "items": [
           {
-            "label": "釜山5大スポット＋帰船時間厳守",
-            "detail": "国連記念公園・太宗台・甘川文化村・龍頭山公園・チャガルチ市場という釜山の代表的な5スポットを一日でカバー。クルーズの帰船時間を最優先に設計。"
+            "label": "釜山5大見どころ＋帰船時間厳守",
+            "detail": "国連記念公園・太宗台・甘川文化村・龍頭山公園・チャガルチ市場という釜山の代表的な5見どころを一日でカバー。クルーズの帰船時間を最優先に進めます。"
           },
           {
             "label": "帰船時間の厳守",
@@ -625,7 +535,7 @@
           },
           {
             "label": "プライベートとコーチの中間価格帯の少人数シェアバン",
-            "detail": "釜山のプライベートクルーズ観光は$300〜500（1グループ）；大型コーチツアーは$40〜60（1人）。このツアーは少人数シェアバンで一人当たりコスパ最高の設計。"
+            "detail": "釜山のプライベートクルーズ観光は$300〜500（1グループ）。大型コーチツアーは$40〜60（1人）。このツアーは少人数シェアバンで一人当たりコスパ最高の構成。"
           }
         ]
       }
@@ -635,55 +545,55 @@
     {
       "id": "inclusions",
       "title": "含まれるもの・含まれないもの",
-      "preview": "Air-conditioned shared van, certified English/Chinese-speaking guide, fuel/tolls/parking.",
+      "preview": "エアコン付き共有バン、認定英語/中国語話者ガイド、燃料/通行料/駐車場。",
       "content": [
         "少人数シェアバン（最大8名程度）",
         "英語対応ガイド",
         "釜山港クルーズターミナル発着の送迎",
         "燃料・駐車料金",
-        "昼食（지정レストランでの食事）",
+        "昼食",
         "含まれないもの：個別の入場料（太宗台ダヌビ列車・釜山タワー展望台）・チップ"
       ]
     },
     {
       "id": "pickup",
       "title": "ピックアップと帰着",
-      "preview": "Group meets at the Busan Port International Passenger Terminal arrival hall.",
+      "preview": "釜山港国際旅客ターミナルの到着ホールでグループ集合。",
       "content": [
         "釜山港国際クルーズターミナル（影島）または釜山港第1ターミナル（釜山駅近辺）でピックアップ",
         "AtoC Koreaのサインボードを持ったガイドが到着ホール出口で待機",
-        "帰船時間の90〜120分前にターミナルへ帰着設計",
+        "帰船時間の90〜120分前にターミナルへ帰着できるようにしています",
         "予約時に必ず出航時刻をお知らせください"
       ]
     },
     {
       "id": "sailaway",
       "title": "出航時間の管理",
-      "preview": "Drop-off at the cruise terminal at least 60 minutes before your all-aboard time.",
+      "preview": "最終乗船時間の少なくとも60分前にクルーズターミナルで降車。クルーズ船の最終乗船時刻に間に合うよう、出港時刻の少なくとも60〜90分前に港へ戻ることを最優先に行程を調整します。交通状況、天候、入国・下船手続きの遅れがある場合は、観光地での滞在時間を短縮してでも、安全な帰港と時間内の再乗船を優先します。",
       "content": [
         "ガイドは出航時間を常に把握し、全ステップでタイムチェックを実施",
         "標準的な帰着余裕：出航時間の90〜120分前",
-        "渋滞・遅延時は観光スポットの滞在時間を短縮して帰船を優先",
+        "渋滞・遅延時は観光見どころの滞在時間を短縮して帰船を優先",
         "予約時に出航時刻を正確にお知らせください — 非常に重要です"
       ]
     },
     {
       "id": "walking",
       "title": "歩行と地形",
-      "preview": "Moderate.",
+      "preview": "中程度。",
       "content": [
         "太宗台：断崖沿いの遊歩道（ほぼフラット）または観光列車",
         "甘川文化村：急な坂道の路地、合計約1〜1.5km",
         "龍頭山公園：なだらかな公園内の歩行",
         "チャガルチ：フラットな市場内の歩行",
         "総歩行距離：約3〜4km",
-        "歩きやすいクローズドトゥシューズ必須；甘川はグリップのある靴を推奨"
+        "歩きやすいクローズドトゥシューズ必須。甘川はグリップのある靴を推奨"
       ]
     },
     {
       "id": "cancellation",
       "title": "キャンセルポリシー",
-      "preview": "Free cancellation up to 24 hours before pickup.",
+      "preview": "乗車24時間前まで無料キャンセル。",
       "content": [
         "出航の24時間前まで無料キャンセル",
         "当日キャンセルおよびノーショーは返金不可",
@@ -693,7 +603,7 @@
     {
       "id": "accessibility",
       "title": "お子様と車椅子対応",
-      "preview": "Children age 8 and up are welcome and the route works well for them — Taejongdae's Danubi…",
+      "preview": "8歳以上のお子様歓迎 — 太宗台のダヌビ列車が子供に人気",
       "content": [
         "6歳以上のお子様はほとんどの場合参加可能",
         "甘川の急坂はベビーカーには不向き",
@@ -705,67 +615,67 @@
   "practicalWeatherStatic": {
     "today": {
       "temp": "—",
-      "label": "See seasonal notes"
+      "label": "季節別の案内を確認"
     },
     "tomorrow": {
       "temp": "—",
-      "label": "See seasonal notes"
+      "label": "季節別の案内を確認"
     },
-    "_seasonalSummary": "Busan is South Korea's southernmost major city — milder and wetter than Seoul, with mild winters (5–10 °C lows). Summer is humid, with peak rainfall in July monsoon.",
+    "_seasonalSummary": "釜山は韓国南部の大都市で、ソウルより比較的温暖で雨が多い傾向があります。冬は比較的穏やかで、最低気温は5〜10℃前後です。夏は湿度が高く、7月の梅雨時期に雨が多くなります。",
     "_seasonalTemperatures": [
       {
-        "season": "Spring (Mar–May)",
+        "season": "春（3〜5月）",
         "range": "8–22 °C",
-        "notes": "Cherry blossoms in late March / early April."
+        "notes": "3月下旬〜4月上旬は桜の時期です。"
       },
       {
-        "season": "Summer (Jun–Aug)",
+        "season": "夏（6〜8月）",
         "range": "22–30 °C",
-        "notes": "Hot and humid; July monsoon possible. Sea breeze keeps Taejongdae mild."
+        "notes": "夏は蒸し暑く、7月は梅雨の影響を受けることがあります。太宗台は海風があるため、比較的過ごしやすく感じられます。"
       },
       {
-        "season": "Autumn (Sep–Nov)",
+        "season": "秋（9〜11月）",
         "range": "10–24 °C",
-        "notes": "Best season — clearest air, warmest sea. Foliage in late October."
+        "notes": "ベストシーズン。空気が最も澄み、海も比較的暖かい時期です。10月下旬は紅葉も見て回れます。"
       },
       {
-        "season": "Winter (Dec–Feb)",
+        "season": "冬（12〜2月）",
         "range": "0–10 °C",
-        "notes": "Mild for Korea but can be windy at coastal stops."
+        "notes": "韓国の冬としては穏やかですが、海沿いの観光地では風が強いことがあります。"
       }
     ]
   },
   "seasonalVariations": [
     {
-      "season": "Spring (Mar–May)",
-      "description": "Cherry blossoms at Yongdusan Park and along the Taejongdae coastal road in late March / early April. Best season for cruise calls."
+      "season": "春（3〜5月）",
+      "description": "3月末〜4月初頭、龍頭山公園と太宗台沿岸道路の桜。クルーズ寄港の最適シーズン。"
     },
     {
-      "season": "Summer (Jun–Aug)",
-      "description": "Long daylight; coastal Busan stays cooler than inland Korea thanks to sea breeze. July monsoon rain possible — check forecast."
+      "season": "夏（6〜8月）",
+      "description": "日照時間が長い。海風のおかげで内陸より涼しい釜山の海岸。7月の梅雨時期は折り畳み傘を推奨。"
     },
     {
-      "season": "Autumn (Sep–Nov)",
-      "description": "Clearest visibility for Tsushima views from Taejongdae; foliage in late October. Best season overall."
+      "season": "秋（9〜11月）",
+      "description": "太宗台からの対馬の眺めが最も鮮明。10月下旬の紅葉。クルーズ最盛期。"
     },
     {
-      "season": "Winter (Dec–Feb)",
-      "description": "Fewer crowds; clear sea views; mild compared to Seoul (Busan winter lows 5–10 °C)."
+      "season": "冬（12〜2月）",
+      "description": "最も閑散。澄んだ海の眺め。ソウルより温暖（冬の最低気温5〜10°C）。"
     }
   ],
   "bookingTrustItems": [
     {
       "icon": "check-circle",
-      "title": "認定地元オペレーター",
-      "description": "4.9/5（32件のレビュー）の認定韓国ツアーオペレーター",
+      "title": "現地を熟知した認定スタッフ",
+      "description": "4.9/5（32件のレビュー）の認定韓国ツアー催行会社",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
-      "body": "釜山全域を知り尽くした認定地元オペレーター。クルーズ船の帰船時間管理に豊富な実績。"
+      "body": "釜山全域を知り尽くした現地を熟知した認定スタッフ。クルーズ船の帰船時間管理に豊富な実績。"
     },
     {
       "icon": "route",
-      "title": "クルーズ専用設計",
-      "description": "帰船時間を最優先にしたルート設計",
+      "title": "クルーズ専用構成",
+      "description": "帰船時間を最優先にした行程",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
       "body": "帰船時間の90〜120分前にターミナルへ帰着。緊急時は即座に対応。"
@@ -781,37 +691,37 @@
   ],
   "bookingSupportSteps": [
     {
-      "timing": "Immediately",
+      "timing": "予約後すぐ",
       "title": "予約確認（即時）",
-      "detail": "旅程サマリー付きの予約確認",
+      "detail": "行程確認付きの予約確認",
       "description": "クルーズターミナルのピックアップ詳細付きで即時確認。"
     },
     {
-      "timing": "12 hours before",
+      "timing": "12時間前",
       "title": "12時間前リマインダー",
       "detail": "天気情報とルート変更のご案内",
       "description": "出航時刻の再確認と当日のコンタクト情報。"
     },
     {
-      "timing": "Evening before",
+      "timing": "前日の夜",
       "title": "最終お迎え情報",
       "detail": "ガイドの連絡先とターミナル集合場所",
       "description": "ガイドの携帯番号とターミナル集合場所の最終確認。"
     },
     {
-      "timing": "Morning of tour",
+      "timing": "当日の朝",
       "title": "当日ルート情報",
       "detail": "ライブ状況に基づく朝のブリーフィング",
       "description": "天候と交通状況の最新情報。"
     },
     {
-      "timing": "During tour",
-      "title": "各スポットでのガイダンス",
+      "timing": "ツアー中",
+      "title": "各訪問地でのガイダンス",
       "detail": "国連記念公園の歴史・甘川の文化背景・チャガルチの市場ガイドをナレーション",
       "description": "リアルタイムガイド。"
     },
     {
-      "timing": "After tour",
+      "timing": "ツアー後",
       "title": "ツアー後サポート",
       "detail": "フォローアップとおすすめ情報",
       "description": "解散後にフィードバックリクエストを送付。"
@@ -845,8 +755,8 @@
     },
     {
       "id": "q-customize",
-      "question": "旅程をカスタマイズできますか？",
-      "answer": "シェアバンツアーのため旅程の変更は難しいですが、事前にご要望がある場合はご相談ください。完全なカスタマイズを希望される場合はプライベートカーチャーターをお勧めします。"
+      "question": "行程をカスタマイズできますか？",
+      "answer": "シェアバンツアーのため行程の変更は難しいですが、事前にご要望がある場合はご相談ください。完全なカスタマイズを希望される場合はプライベートカーチャーターをお勧めします。"
     },
     {
       "id": "q-tower-tickets",
@@ -912,51 +822,51 @@
       {
         "stars": 3,
         "count": 0,
-        "percentage": 0
+        "percentage": 0.0
       },
       {
         "stars": 2,
         "count": 0,
-        "percentage": 0
+        "percentage": 0.0
       },
       {
         "stars": 1,
         "count": 0,
-        "percentage": 0
+        "percentage": 0.0
       }
     ],
     "highlights": [],
-    "source_attribution": "Aggregate metric from operator's GetYourGuide listing; individual review text not yet imported."
+    "source_attribution": "催行会社の市場参考資料掲載ページに基づく集計指標です。個別レビュー本文はまだ取り込まれていません。"
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "予約可否は決済ステップで確認されます。",
     "price": {
       "amountLabel": "58.50",
       "originalPriceUsd": 65,
       "salePriceUsd": 58.5,
       "discountPercent": 10,
       "currency": "USD",
-      "per": "person",
-      "priceSource": "getyourguide_t1164092",
-      "priceNote": "Original price USD 65 on the operator's listing. AtoC Korea sale price applies a flat 10% discount."
+      "per": "人",
+      "priceSource": "direct_rate",
+      "priceNote": "運行会社の掲載価格65米ドルを基準に、AtoC Koreaの直販価格は10%割引です。"
     }
   },
   "pickup_dropoff": {
     "type": "cruise_terminal_pickup",
     "meeting_points": [
       {
-        "name": "Busan Port International Passenger Terminal — arrival hall",
-        "time": "Calibrated to ship disembarkation"
+        "name": "釜山港国際旅客ターミナル — 到着ホール",
+        "time": "船の下船時間に合わせて調整"
       }
     ],
     "dropoff_points": [
       {
-        "name": "Busan Port International Passenger Terminal",
-        "approx_time": "Minimum 60 minutes before all-aboard"
+        "name": "釜山港国際旅客ターミナル",
+        "approx_time": "最終乗船時刻の少なくとも60分前。クルーズ船の最終乗船時刻に間に合うよう、出港時刻の少なくとも60〜90分前に港へ戻ることを最優先に行程を調整します。交通状況、天候、入国・下船手続きの遅れがある場合は、観光地での滞在時間を短縮してでも、安全な帰港と時間内の再乗船を優先します。"
       }
     ],
     "hotel_pickup_available": false,
-    "notes": "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Shared van with other cruise passengers from various ships. Early pickup (before 08:00) adds ₩10,000 per person to compensate the guide for the early start."
+    "notes": "予約時に船名、寄港日、下船予定時刻、最終乗船時刻をお知らせください。ガイドが各船のスケジュールを確認し、港への戻り時間を管理します。クルーズ船の最終乗船時刻に間に合うよう、出港時刻の少なくとも60〜90分前に港へ戻ることを最優先に行程を調整します。交通状況、天候、入国・下船手続きの遅れがある場合は、観光地での滞在時間を短縮してでも、安全な帰港と時間内の再乗船を優先します。"
   },
   "matching_profile": {
     "profile_version": 6,
@@ -967,7 +877,7 @@
     "destination_region": "korea_mainland",
     "region_type": "busan_city",
     "vehicle_type": "minicoach",
-    "duration_hours": 9,
+    "duration_hours": 9.0,
     "region_tags": [
       "busan_haeundae",
       "busan_jung_gu",
@@ -989,37 +899,37 @@
     ],
     "pace_level": 0.8,
     "walking_level": 0.8,
-    "scenic_level": 1,
-    "photo_level": 1,
+    "scenic_level": 1.0,
+    "photo_level": 1.0,
     "culture_level": 0.8,
     "relax_level": 0.6,
-    "first_time_fit": 1,
+    "first_time_fit": 1.0,
     "family_fit": 0.6,
     "senior_fit": 0.4,
-    "couple_fit": 1,
-    "solo_traveler_fit": 1,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 1.0,
     "active_traveler_fit": 0.8,
     "adult_family_fit": 0.8,
-    "family_with_teens_fit": 1,
+    "family_with_teens_fit": 1.0,
     "young_kids_fit": 0.8,
     "senior_active_fit": 0.6,
     "senior_general_fit": 0.4,
     "mobility_friendly_fit": 0.4,
     "stroller_fit": 0.2,
-    "one_day_fit": 1,
+    "one_day_fit": 1.0,
     "same_day_flight_fit": 0.2,
     "rain_fit": 0.6,
-    "value_for_money_fit": 1,
-    "iconic_landmark_fit": 1,
+    "value_for_money_fit": 1.0,
+    "iconic_landmark_fit": 1.0,
     "cafe_fit": 0.8,
-    "food_fit": 1,
+    "food_fit": 1.0,
     "nature_fit": 0.6,
     "beach_fit": 0.4,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.6,
     "no_shopping_fit": 0.6,
     "local_culture_fit": 0.8,
-    "storytelling_fit": 1,
+    "storytelling_fit": 1.0,
     "unesco_fit": 0.2,
     "intangible_heritage_fit": 0.2,
     "indoor_ratio": 0.15,
@@ -1027,9 +937,9 @@
     "comfort_level": 0.8,
     "budget_fit": 0.85,
     "premium_fit": 0.1,
-    "small_group_fit": 1,
+    "small_group_fit": 1.0,
     "private_fit": 0.2,
-    "bus_fit": 1,
+    "bus_fit": 1.0,
     "price_band": "mid",
     "pickup_base": "busan_cruise_terminal",
     "return_time_band": "17:00-18:30",
@@ -1069,101 +979,101 @@
       "jagalchi_market"
     ],
     "private_tour_fit": 0.05,
-    "shared_tour_fit": 1,
+    "shared_tour_fit": 1.0,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
-    "solo_fit": 1,
+    "solo_fit": 1.0,
     "family_with_kids_fit": 0.7,
     "small_party_fit": 0.85,
     "large_group_fit": 0.3,
-    "first_time_busan_fit": 1,
+    "first_time_busan_fit": 1.0,
     "repeat_visitor_fit": 0.4,
-    "cruise_passenger_fit": 1,
+    "cruise_passenger_fit": 1.0,
     "non_cruise_day_tripper_fit": 0.3,
-    "korean_war_history_fit": 1,
-    "war_memorial_fit": 1,
-    "un_heritage_fit": 1,
+    "korean_war_history_fit": 1.0,
+    "war_memorial_fit": 1.0,
+    "un_heritage_fit": 1.0,
     "wheelchair_accessible_anchor_fit": 0.5,
-    "buddhist_temple_fit": 0,
+    "buddhist_temple_fit": 0.0,
     "joseon_era_fit": 0.4,
     "silla_heritage_fit": 0.2,
     "modern_korean_history_fit": 0.85,
-    "coastal_fit": 1,
-    "coastal_cliff_fit": 1,
-    "coastal_lighthouse_fit": 1,
-    "city_viewpoint_fit": 1,
-    "panoramic_view_fit": 1,
-    "skywalk_fit": 0,
+    "coastal_fit": 1.0,
+    "coastal_cliff_fit": 1.0,
+    "coastal_lighthouse_fit": 1.0,
+    "city_viewpoint_fit": 1.0,
+    "panoramic_view_fit": 1.0,
+    "skywalk_fit": 0.0,
     "mountain_fit": 0.3,
     "forest_fit": 0.5,
     "geological_heritage_fit": 0.85,
-    "mural_village_fit": 1,
-    "hillside_village_fit": 1,
+    "mural_village_fit": 1.0,
+    "hillside_village_fit": 1.0,
     "art_immersive_fit": 0.85,
-    "photo_friendly_fit": 1,
-    "instagrammable_fit": 1,
-    "hanok_village_fit": 0,
-    "fish_market_fit": 1,
-    "seafood_fit": 1,
+    "photo_friendly_fit": 1.0,
+    "instagrammable_fit": 1.0,
+    "hanok_village_fit": 0.0,
+    "fish_market_fit": 1.0,
+    "seafood_fit": 1.0,
     "street_food_fit": 0.85,
-    "market_fit": 1,
-    "lunch_included_fit": 1,
-    "lunch_self_pay_fit": 0,
+    "market_fit": 1.0,
+    "lunch_included_fit": 1.0,
+    "lunch_self_pay_fit": 0.0,
     "walking_intensity": 0.7,
     "stairs_intensity": 0.85,
     "elderly_friendly_fit": 0.4,
     "stroller_friendly_fit": 0.3,
     "compact_route_fit": 0.7,
     "all_day_fit": 0.85,
-    "half_day_fit": 0,
+    "half_day_fit": 0.0,
     "private_vehicle_fit": 0.05,
-    "minicoach_fit": 1,
+    "minicoach_fit": 1.0,
     "public_transit_alternative_fit": 0.3,
-    "english_guide_fit": 1,
-    "korean_only_fit": 0,
+    "english_guide_fit": 1.0,
+    "korean_only_fit": 0.0,
     "multilingual_fit": 0.6,
     "spring_fit": 0.95,
     "summer_fit": 0.85,
-    "autumn_fit": 1,
+    "autumn_fit": 1.0,
     "winter_fit": 0.7,
     "rainy_day_fit": 0.4,
     "luxury_fit": 0.05,
-    "value_priced_fit": 1,
+    "value_priced_fit": 1.0,
     "scenic_intensity": 0.95,
-    "iconic_landmarks_fit": 1,
+    "iconic_landmarks_fit": 1.0,
     "off_beaten_path_fit": 0.3,
-    "cruise_shore_excursion_fit": 1,
-    "value_cruise_excursion_fit": 1,
-    "downtown_busan_fit": 1,
-    "yongdusan_landmark_fit": 1,
+    "cruise_shore_excursion_fit": 1.0,
+    "value_cruise_excursion_fit": 1.0,
+    "downtown_busan_fit": 1.0,
+    "yongdusan_landmark_fit": 1.0,
     "diamond_tower_fit": 0.85,
-    "china_mainland_market_fit": 0,
-    "korea_domestic_market_fit": 0,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "cruise_market_segment_fit": 1,
-    "busan_port_pickup_fit": 1,
-    "cruise_reboarding_safety_buffer_fit": 1,
-    "weather_fallback_dense_fit": 1,
-    "instagram_dense_route_fit": 1,
-    "small_group_format_fit": 1,
-    "affordable_cruise_excursion_fit": 1,
-    "mixed_pax_sociability_fit": 1,
-    "fixed_schedule_format_fit": 1,
-    "solo_traveler_friendly_fit": 1,
+    "cruise_market_segment_fit": 1.0,
+    "busan_port_pickup_fit": 1.0,
+    "cruise_reboarding_safety_buffer_fit": 1.0,
+    "weather_fallback_dense_fit": 1.0,
+    "instagram_dense_route_fit": 1.0,
+    "small_group_format_fit": 1.0,
+    "affordable_cruise_excursion_fit": 1.0,
+    "mixed_pax_sociability_fit": 1.0,
+    "fixed_schedule_format_fit": 1.0,
+    "solo_traveler_friendly_fit": 1.0,
     "differentiates_from_busan_charter_cruise_pair_partner": true,
-    "busan_signature_route_fit": 1,
-    "seaside_temple_fit": 0,
-    "natural_geopark_fit": 1,
-    "city_panorama_tower_fit": 1,
-    "no_inter_city_travel_fit": 1,
+    "busan_signature_route_fit": 1.0,
+    "seaside_temple_fit": 0.0,
+    "natural_geopark_fit": 1.0,
+    "city_panorama_tower_fit": 1.0,
+    "no_inter_city_travel_fit": 1.0,
     "differentiates_from_busan_gyeongju_routes": true,
     "available_months_signature": [
       1,
@@ -1262,14 +1172,14 @@
           "imagePosition": "center 35%",
           "tagline": "釜山港発着のクルーズ寄港地少人数ツアー — 国連記念公園・太宗台・甘川文化村・チャガルチ市場",
           "pills": [
-            "small_group",
-            "cruise",
-            "busan"
+            "少人数シェアバン",
+            "クルーズ対応",
+            "釜山"
           ],
           "meta": {
             "duration": "≈ 9時間（船→船）",
             "region": "釜山",
-            "stops": "8スポット",
+            "stops": "8見どころ",
             "rating": 4.9,
             "ratingStars": 5
           }
@@ -1288,7 +1198,7 @@
           },
           {
             "id": "itinerary",
-            "label": "旅程"
+            "label": "行程"
           },
           {
             "id": "details",
@@ -1354,46 +1264,46 @@
             "id": "g1",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1200",
-            "alt": "Colorful houses cascading down a hillside in Gamcheon Culture Village",
-            "caption": "Gamcheon Culture Village — painted in 2009 as part of Busan's public-art renewal of the postwar refugee neighborhood.",
-            "location": "Gamcheon Culture Village, Saha-gu",
-            "atmosphere": "Bright pastels, narrow alleys, hillside stairs"
+            "alt": "太宗台の海岸断崖から見える岩礁と五六島",
+            "caption": "太宗台 — 影島の南端の自然公園",
+            "location": "太宗台（テジョンデ）、影島区、釜山",
+            "atmosphere": "釜山市記念物第28号。影島の最南端の絶壁と海の眺め"
           },
           {
             "id": "g2",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-            "alt": "Sea cliffs with a white lighthouse on the horizon",
-            "caption": "Taejongdae coastal park, southern tip of Yeongdo Island. Tsushima visible on clear winter days.",
-            "location": "Taejongdae, Yeongdo-gu",
-            "atmosphere": "Open ocean, cliff edge, sea breeze"
+            "alt": "太極旗が並ぶ在韓国連記念公園の静寂な墓地と石碑",
+            "caption": "在韓国連記念公園 — 世界唯一の国連記念墓地",
+            "location": "在韓国連記念公園（UNMCK）、南区、釜山",
+            "atmosphere": "朝鮮戦争の国連軍兵士を祀る世界唯一の国連記念墓地"
           },
           {
             "id": "g3",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1601171291096-87099c2c4625?w=1200",
-            "alt": "Rows of identical white headstones with national flags at the UN Memorial Cemetery",
-            "caption": "UN Memorial Cemetery — the world's only UN cemetery, 2,300+ graves of soldiers from 21 nations.",
-            "location": "UN Memorial Cemetery, Nam-gu",
-            "atmosphere": "Quiet, formal, contemplative"
+            "alt": "カラフルな壁画と細い路地が連なる甘川文化村の鳥瞰図",
+            "caption": "甘川文化村 — 韓国のサントリーニ",
+            "location": "甘川文化村（カムチョン・ムナファマウル）、沙下区、釜山",
+            "atmosphere": "丘の斜面に色とりどりに塗られた家々。朝鮮戦争避難民が形成した歴史的なコミュニティ"
           },
           {
             "id": "g4",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?w=1200",
-            "alt": "Jagalchi Market vendors with displays of fresh fish on ice",
-            "caption": "Jagalchi Market — Korea's largest seafood market, operated since 1889 on Busan's waterfront.",
-            "location": "Jagalchi Market, Jung-gu",
-            "atmosphere": "Live fish stalls, market chatter, second-floor restaurants"
+            "alt": "釜山タワーから見た南浦洞の夜景と釜山港",
+            "caption": "龍頭山公園＆釜山タワー — 釜山中心部の展望",
+            "location": "龍頭山公園（ヨンドゥサン）、中区、釜山",
+            "atmosphere": "釜山タワー（120m）からの360度の釜山市街地・釜山港・絶影島の眺め"
           },
           {
             "id": "g5",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-            "alt": "Busan Tower rising above Yongdusan Park's pines and mid-rise city skyline",
-            "caption": "Yongdusan Park & Busan Tower (120 m, built 1973) — the central-Busan viewpoint.",
-            "location": "Yongdusan Park, Jung-gu",
-            "atmosphere": "Pine-covered hilltop, panoramic city views"
+            "alt": "釜山チャガルチ水産市場の活気ある生鮮海産物の屋台",
+            "caption": "チャガルチ水産市場 — 韓国最大の水産市場",
+            "location": "チャガルチ市場、中区、釜山南浦港",
+            "atmosphere": "釜山南浦港のウォーターフロントに広がる韓国最大の水産市場"
           }
         ]
       }
@@ -1407,156 +1317,248 @@
           {
             "number": 1,
             "time": "≈ 08:30",
-            "duration": "30 min",
-            "name": "Busan Port pickup (cruise terminal arrival hall)",
-            "category": "Departure",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
-            "description": "Group meets the guide in the Busan Port International Passenger Terminal arrival hall. Pickup time is calibrated to your specific ship's actual disembarkation, not a fixed 08:30 — the 08:30 here is a typical example. Provide ship name, port-call date, expected arrival time, and all-aboard time at booking; the guide tracks the schedule and adjusts pickup automatically. Ships that arrive before 07:00 trigger an early-pickup option (₩10,000/person surcharge to the guide for the early start) so you don't waste two hours at the terminal.",
-            "timeUsed": [
-              "Operational logistics (pickup/transfer)"
+            "duration": "30分",
+            "name": "釜山港ピックアップ（クルーズターミナル到着ホール）",
+            "category": "出発 — 釜山港国際クルーズターミナル",
+            "description": "ツアーは大型クルーズ船用の**釜山港国際クルーズターミナル到着ホール（東三洞、影島区）**、または中小型船用の**釜山港第1ターミナル（中区、釜山駅近辺）**から始まります。ガイドは到着ホール出口エリアで**AtoC Koreaのサインボード**を掲げて待機します。少人数シェアバン（最大8名程度）で英語対応ガイド付き。**帰船時間を必ずご確認のうえ、予約時にお知らせください** — ガイドは帰船時間の90〜120分前にターミナルへ帰着するよう管理します。クルーズ船の到着が遅延した場合も、ガイドはターミナルで待機します。",
+            "highlights": [
+              "釜山港国際クルーズターミナルまたは釜山港第1ターミナルでピックアップ",
+              "AtoC Koreaのサインボードを持ったガイドが到着ホール出口で待機",
+              "少人数シェアバン（最大8名程度）",
+              "帰船時間の90〜120分前にターミナルへ帰着できるようにしています"
             ],
-            "whyOnRoute": "Required logistics; calibrated to the specific cruise.",
+            "whyOnRoute": "釜山港（影島）から最初の見どころ（国連記念公園・南区）へは20〜30分という近い距離。港からの出発でターミナルへの帰路も計算された行程づくり。",
             "_poi_meta": {
-              "poi_key": "busan_cruise_pickup",
-              "is_attraction": false
-            }
+              "poi_key": "OPS_busan_cruise_pickup",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Busan Port Authority",
+                "CruiseMapper"
+              ]
+            },
+            "timeUsed": [
+              "ターミナルでの集合＋コーチ乗車 — 約10〜15分",
+              "第1見どころ（国連記念公園）への移動 — 約20分"
+            ]
           },
           {
             "number": 2,
             "time": "≈ 09:30",
-            "duration": "60 min",
-            "name": "UN Memorial Cemetery (Korean War)",
-            "category": "Memorial & History",
-            "image": "https://images.unsplash.com/photo-1601171291096-87099c2c4625?w=800",
-            "description": "The world's only United Nations cemetery, established in 1951 during the Korean War and granted permanent UN status by the General Assembly in 1955. Holds 2,300+ graves of soldiers from 21 nations who fought under the UN Command, with the largest national groups from the United Kingdom (885), Türkiye (462), Canada (378), and Australia (281). The grounds include a Memorial Hall with multilingual exhibits, a Wall of Remembrance listing all 40,896 UN Command war dead, and the daily flag ceremony at 10:00 (subject to weather). The cemetery is in Nam-gu, ≈30 minutes east of Yeongdo by road. Free entry; open daily 09:00–17:00 except Korean New Year and Chuseok.",
-            "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time"
+            "duration": "60分",
+            "name": "在韓国連記念公園（朝鮮戦争）",
+            "category": "世界唯一の国連記念墓地 — 朝鮮戦争（1950〜53年）",
+            "description": "**在韓国連記念公園 — 世界唯一の国連記念墓地** — 1951年1月に**国連軍司令部**によって設立され、朝鮮戦争で戦死した**16か国の国連軍兵士2,300名以上**が眠ります。整然と並んだ白い墓石と16か国の国旗が静かにたなびく。1955年に**韓国政府が国連に永久譲渡**した特別な国際領域。毎年11月11日の**「ターン・トゥワード・プサン」**では世界中の参戦国が同時に黙祷を捧げます。追悼館では朝鮮戦争の展示が英語で閲覧可能。**入場無料**。クルーズ乗客の多くが来日前後に釜山に寄港するため、日本・米国・オーストラリア・英国出身の乗客に特に深く響く見どころ。",
+            "highlights": [
+              "**世界唯一の国連記念墓地** — 1951年設立、16か国の国連軍兵士2,300名以上",
+              "1955年に韓国政府が**国連に永久譲渡**した特別な国際領域",
+              "毎年11月11日の**「ターン・トゥワード・プサン」**",
+              "追悼館に英語展示あり",
+              "**入場無料**"
             ],
-            "whyOnRoute": "Essential context for the Korean War's UN dimension; quiet, flat, fits early-morning energy.",
+            "timeUsed": [
+              "入場＋追悼館展示 — 約20分",
+              "墓地エリア散策 — 約25分",
+              "バスに戻る — 約10分"
+            ],
+            "whyOnRoute": "クルーズ乗客（多くが日本・米国・オーストラリア・英国出身）に特に深く響く、釜山の国際的な歴史層を体験できる見どころ。",
             "_poi_meta": {
               "poi_key": "un_memorial_cemetery",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "closed": "Korean New Year, Chuseok"
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNMCK official (unmck.or.kr)",
+                "Wikipedia",
+                "American Battle Monuments Commission",
+                "Korea Tourism Organization (VisitKorea)",
+                "Visit Busan official",
+                "American Battle Monuments Commission (US Korean War Monument at Busan)",
+                "UN General Assembly Resolution 977(X) (December 15, 1955)"
+              ]
             }
           },
           {
             "number": 3,
             "time": "≈ 10:45",
-            "duration": "75 min",
-            "name": "Taejongdae coastal cliffs",
-            "category": "Coast",
-            "image": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=800",
-            "description": "Coastal park on the southern tip of Yeongdo Island, named after King Taejong Muyeol of Silla (r. 654–661 CE), the king who allied with Tang China to unify the Korean peninsula. The 4.3 km loop trail circles cliffs that drop ≈100 m to the East Sea, passing the Yeongdo Lighthouse (1906) and an observatory point where, on clear winter days, Tsushima Island in Japan is visible ≈50 km offshore. Most cruise visitors use the Danubi Train (₩4,000 adult, ₩3,000 youth, optional, ≈30 min loop) instead of walking the full circuit. Free park entry; the lighthouse area is wheelchair-friendly but the cliff trail is not.",
-            "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+            "duration": "75分",
+            "name": "太宗台（テジョンデ）海岸断崖",
+            "category": "釜山市記念物第28号 — 影島南端の自然公園",
+            "description": "**太宗台 — 釜山市記念物第28号**（五六島と共に）— は影島（ヨンド）の最南端に位置する**自然公園**で、**新羅の武烈王（太宗大王）が馬を走らせながら弓の練習をした場所**という伝説に名前の由来を持ちます。公園内には**断崖絶壁の海岸線**が広がり、岩礁に打ち寄せる波と岩礁展望台から見える**五六島（釜山市記念物第22号）**の眺めが圧巻。遊歩道（**タジラッギル、約4km）**を歩くか、**ダヌビ観光列車**（有料、約30〜40分一周）に乗車するかを選択できます。公園内には**灯台（1906年建設）**と願い事岩（望夫石）も。釜山港の国際クルーズターミナルから車で**10〜15分**の近距離に位置し、クルーズツアーに最適なロケーション。",
+            "highlights": [
+              "釜山市記念物第28号 — 影島南端の断崖絶壁の海岸線",
+              "**五六島**の眺め — 釜山市記念物第22号",
+              "遊歩道（タジラッギル）または**ダヌビ観光列車**（有料）",
+              "1906年建設の**灯台**と望夫石",
+              "釜山港から**車で10〜15分**"
             ],
-            "whyOnRoute": "Open-sea cliff scenery is Busan's signature landscape — distinct from the rest of the day's urban stops.",
+            "timeUsed": [
+              "コーチ到着＋遊歩道入口 — 約5分",
+              "断崖展望台＋五六島パノラマ — 約30分",
+              "灯台＋望夫石（任意） — 約15分",
+              "バスに戻る — 約10分"
+            ],
+            "whyOnRoute": "釜山港から最も近い大自然見どころ（車で10〜15分）。国連記念公園の静寂の後、海岸断崖の雄大な自然でリフレッシュ。",
             "_poi_meta": {
               "poi_key": "taejongdae",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "optional_train_krw": 4000
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Busan Geopark official",
+                "Visit Busan (visitbusan.net)",
+                "Wikipedia",
+                "Busan Metropolitan City",
+                "Yeongdo Lighthouse archive (1906 records)",
+                "Busan National Geopark official (busan.go.kr/geopark)"
+              ]
             }
           },
           {
             "number": 4,
             "time": "≈ 12:15",
-            "duration": "60 min",
-            "name": "Lunch (local Busan restaurant)",
-            "category": "Meal",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
-            "description": "Sit-down restaurant chosen for English/Chinese menus and proximity to the next stop. Typical local choices: dwaeji-gukbap (Busan-style pork-and-rice soup, the city's signature, ≈₩10,000), milmyeon (cold wheat noodles, ≈₩9,000), or a bibimbap set. Lunch is paid by the guest; budget ₩10,000–₩20,000 per person. Vegetarian, halal, and gluten-free options possible with advance notice at booking.",
-            "timeUsed": [
-              "Operational logistics (meal break)"
+            "duration": "60分",
+            "name": "昼食（釜山の地元レストラン）",
+            "category": "昼食込み — 釜山郷土料理",
+            "description": "**昼食はツアー代金に含まれています** — 催行会社が事前に手配した地元の釜山レストランで。典型的なメニュー：**（テジ・クッパッ）** — 釜山のソウルフード、豚骨スープと白飯のセット。または地元の海産物定食。食事中にガイドが甘川文化村の地図と見どころを解説。**ベジタリアン・ハラール対応**は事前申込で可能。",
+            "highlights": [
+              "**昼食はツアー代金に含まれています**",
+              "**（テジ・クッパッ）** — 釜山のソウルフード（豚骨スープ＋白飯）",
+              "食事中にガイドが甘川文化村の見どころを解説",
+              "**ベジタリアン・ハラール対応**（事前申込）"
             ],
-            "whyOnRoute": "Mid-day refuel between coastal and inland stops.",
+            "whyOnRoute": "太宗台の海岸散策後の自然な休憩。昼食を挟むことで午後の甘川・龍頭山・チャガルチという文化・市場ゾーンへのエネルギーを補給。",
             "_poi_meta": {
-              "poi_key": "busan_lunch",
-              "is_attraction": false,
-              "fee_krw": "10000-20000"
-            }
+              "poi_key": "OPS_busan_lunch",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29"
+            },
+            "timeUsed": [
+              "コーチで昼食会場へ — 約10分",
+              "注文＋食事 — 約45分"
+            ]
           },
           {
             "number": 5,
             "time": "≈ 13:30",
-            "duration": "75 min",
-            "name": "Gamcheon Culture Village",
-            "category": "Hillside Art Village",
-            "image": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=800",
-            "description": "Hillside village originally built in the 1950s by Korean War refugees, now Busan's most-photographed neighborhood. The current colorful look dates to 2009, when the city sponsored the 'Dreaming of Machu Picchu in Busan' public-art project — local artists painted the houses, installed murals and small sculptures (the Little Prince & Fox bench is the most-photographed), and added the staircase mosaics. Houses are still occupied; the village asks visitors to keep voices down in residential lanes. The main photo route is a 30–40 minute walk on steep alleys and stairs — uphill at the start, downhill back. Most main viewpoints are reachable from the bus drop-off; deeper exploration requires more stairs. Optional 'stamp tour' map ₩2,000.",
-            "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+            "duration": "75分",
+            "name": "甘川文化村（カムチョン・ムナファマウル）",
+            "category": "丘の斜面のアート村 — 「韓国のサントリーニ」",
+            "description": "**甘川文化村** — 「韓国のマチュピチュ」「韓国のサントリーニ」と呼ばれる — は沙下区の丘の斜面に広がる住宅街で、朝鮮戦争中の1950年代に避難民が形成した歴史的なコミュニティ。密集した急斜面の路地に沿ってカラフルに塗られた家々が階段状に広がり、南側の釜山湾と絶影島が見渡せます。2009年から公共アートプロジェクトが開始され、街角に壁画・彫刻・インスタレーションが設置。代表的な撮影ポイントは「星の王子さまと狐」の彫刻と、港を見下ろすメイン展望台。**入場無料**。急な坂道のため**グリップの良い靴推奨**。",
+            "highlights": [
+              "「**韓国のサントリーニ**」「**韓国のマチュピチュ**」と呼ばれるカラフルな丘の住宅街",
+              "朝鮮戦争（1950年代）の避難民が形成した歴史的コミュニティ",
+              "「**星の王子さまと狐**」の彫刻と釜山湾展望台が代表的撮影ポイント",
+              "**入場無料**。急な坂道はグリップのある靴推奨"
             ],
-            "whyOnRoute": "Visual centerpiece of the day. Most cruisers come specifically for Gamcheon.",
+            "timeUsed": [
+              "コーチ到着＋地図配布 — 約5分",
+              "メインフォトゾーン（展望台・壁画・彫刻） — 約40〜50分",
+              "バスに戻る — 約10分"
+            ],
+            "whyOnRoute": "釜山で最も写真映えする見どころ。昼食後のアクティブな散策として最適な位置に配置。",
             "_poi_meta": {
               "poi_key": "gamcheon_culture_village",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "optional_stamp_map": 2000
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan official",
+                "Wikipedia",
+                "UN-HABITAT 2012 Asian Townscape Awards",
+                "Saha-gu Gamcheon Culture Village Committee",
+                "Korea Tourism Organization",
+                "Korea Tourism Organization (100 Must-Visit Tourist Spots in Korea designation)"
+              ]
             }
           },
           {
             "number": 6,
             "time": "≈ 15:00",
-            "duration": "45 min",
-            "name": "Yongdusan Park & Busan Tower",
-            "category": "City Viewpoint",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
-            "description": "Yongdusan ('Dragon Head Mountain') sits in central Busan above Nampo-dong; the 120-meter Diamond Tower (built 1973, renamed Busan Tower; observatory restored to public access in 2021 after a 2017 closure) tops out at 159 m above sea level and gives a panoramic view of the port, Yeongdo, Gwangan Bridge, and on clear days back to Taejongdae. Park entry is free and includes the statue of Admiral Yi Sun-sin and the Bell of Citizens; observatory ticket is ₩12,000 adult and is the only paid element. Reaching the park from Nampo Station: 8-minute walk uphill, or a covered outdoor escalator from the ground level.",
-            "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time"
+            "duration": "45分",
+            "name": "龍頭山公園＆釜山タワー",
+            "category": "釜山中心部の展望公園 — 釜山タワー（高さ120m）",
+            "description": "**龍頭山公園** — 69,000m²の市民公園で、70種の樹木が植わる南浦洞の中心 — は釜山の歴史と現代が交差する場所。公園内の**釜山タワー（高さ120m、1973年建設、2003年改修）**の展望台からは釜山市街地・釜山港・絶影島・アムナム公園・影島が360度のパノラマで見渡せます。展望台チケット：**大人₩12,000**（ツアーに含まれるかどうかは予約時にご確認ください）。公園内には**李舜臣将軍の銅像**（釜山港湾を守った16世紀の英雄）と日本統治時代の石灯籠の台座（現在は撤去済み）の跡地。甘川文化村から**車で約15〜20分**、チャガルチ市場から**徒歩5分**の距離に位置するため、一日の後半の路線安排として最も効率的。",
+            "highlights": [
+              "**釜山タワー（高さ120m）**から360度のパノラマ — 釜山市街・港・絶影島が一望",
+              "**李舜臣将軍の銅像** — 16世紀に釜山港湾を守った英雄",
+              "69,000m²の市民公園、70種の樹木",
+              "展望台チケット **大人₩12,000**（ツアーに含まれるかは予約時に確認）",
+              "チャガルチ市場から**徒歩5分**の好立地"
             ],
-            "whyOnRoute": "Compact orientation stop after Gamcheon. Walking distance to the next stop.",
+            "timeUsed": [
+              "コーチ到着＋タワー入口 — 約5分",
+              "釜山タワー展望台（任意） — 約20〜25分",
+              "公園内散策＋李舜臣像 — 約15分",
+              "チャガルチへ徒歩 — 約5分"
+            ],
+            "whyOnRoute": "チャガルチ市場の直前に位置するため、360度の釜山全景を眺めた後にウォーターフロントの市場へと自然につながります。",
             "_poi_meta": {
               "poi_key": "yongdusan_park",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "optional_observatory_krw": 12000
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan official",
+                "Wikipedia",
+                "Busan Diamond Tower official (busandiamondtower.co.kr)",
+                "Korea Tourism Organization",
+                "Busan Metropolitan City heritage records"
+              ]
             }
           },
           {
             "number": 7,
             "time": "≈ 16:00",
-            "duration": "60 min",
-            "name": "Nampo-dong & Jagalchi Fish Market",
-            "category": "Market & Streetfood",
-            "image": "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?w=800",
-            "description": "Korea's largest seafood market, operating on this Yeongdo-side waterfront since 1889 (formalized after 1945 when the Japanese-era market was reorganized by displaced Korean female fishmongers — Jagalchi means 'pebble-place' for the original beach). Modern indoor building has two floors: ground floor stalls sell live fish, shellfish, and dried seafood; second floor has restaurants where you can take a fish bought downstairs and have it prepared (sliced raw as hwe, grilled, or stewed) for a cooking fee of ₩10,000–₩20,000. Stalls are run mostly by women across multiple generations of the same families. Open ≈05:00–22:00 daily; closed first and third Tuesdays of the month. Nampo-dong's BIFF Square (Korean film stars' handprints, like Hollywood's Walk of Fame) and Gukje Market are within 5 minutes' walk.",
-            "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time"
+            "duration": "60分",
+            "name": "南浦洞＆チャガルチ水産市場",
+            "category": "韓国最大の水産市場 — 釜山南浦港",
+            "description": "**チャガルチ市場 — 韓国最大の水産市場** — 中区の南浦港ウォーターフロントに立地。「」の名前は砂利が敷かれたかつての海岸に由来。1950年代の朝鮮戦争後に形成された「（アジメ）文化」 — 逞しい市場のおばちゃん文化 — の中心地。1階の活魚コーナーでは選んだ魚介をその場で2〜3階の食堂で刺身・海鮮料理にしてもらえます。**南浦洞**は釜山の中心商業地区で、繊維・ファッション・食品の専門店街が密集。チャガルチ市場から南浦洞一帯を散策してから、クルーズターミナルへの帰路は**約20〜30分**。",
+            "highlights": [
+              "**韓国最大の水産市場** — 釜山南浦港ウォーターフロント",
+              "1階の活魚コーナーで選んで2〜3階の食堂で食べる「選魚→刺身」スタイル",
+              "釜山名物**（オデン）**屋台",
+              "**南浦洞**商業地区の散策（繊維・ファッション・食品）"
             ],
-            "whyOnRoute": "5-minute drive (or 10-minute walk) from Yongdusan; closes the day with a sensory peak.",
+            "timeUsed": [
+              "市場内散策＋活魚コーナー鑑賞 — 約30分",
+              "オデン屋台＋街歩きスナック（任意） — 約20分",
+              "南浦洞商業地区（任意） — 約10分"
+            ],
+            "whyOnRoute": "チャガルチは南浦洞の中心部にあり、釜山港クルーズターミナルへの帰路のルート上に位置。一日の最後に釜山の活気ある日常を感じられるフィナーレ。",
             "_poi_meta": {
               "poi_key": "jagalchi_market",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "closed": "1st and 3rd Tuesdays of month"
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan official",
+                "Jagalchi Market Association (jagalchimarket.bisco.or.kr)",
+                "Wikipedia",
+                "Korea Tourism Organization",
+                "Busan Jung-gu official",
+                "Busan Tourism Organization (Jagalchi Sannakji designation)"
+              ]
             }
           },
           {
             "number": 8,
             "time": "≈ 17:15",
-            "duration": "30 min",
-            "name": "Return to Busan Port",
-            "category": "Return",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
-            "description": "Jagalchi/Nampo to the Busan Port International Passenger Terminal is ≈5 km, 15–25 minutes by road. Drop-off is at the terminal entrance with a minimum 60-minute buffer before your ship's all-aboard time. The guide tracks each passenger's individual ship schedule and prioritizes return order if multiple ships sail at different times.",
-            "timeUsed": [
-              "Operational logistics (return)"
+            "duration": "30分",
+            "name": "釜山港クルーズターミナルへ帰着",
+            "category": "帰着 — 釜山港国際クルーズターミナル",
+            "description": "少人数シェアバンで**ツアー開始時と同じクルーズターミナル**へ帰着 — 大型船用の釜山港国際クルーズターミナル（東三）または中小型船用の釜山港第1ターミナル（釜山駅近辺）。南浦洞・チャガルチからターミナルまで約**20〜30分**。ガイドは**帰船時間の90〜120分前**にターミナルへ到着するよう厳格に管理します。緊急時や渋滞時は観光見どころの滞在時間を短縮して帰船を優先します。**当日の出航時刻は予約確認時に必ずお知らせください**。",
+            "highlights": [
+              "出発時と同じクルーズターミナルへ帰着",
+              "**帰船時間の90〜120分前**にターミナル到着できるようにしています",
+              "緊急時はガイドが滞在時間を短縮して帰船を優先",
+              "**出航時刻は予約時に必ず通知**してください"
             ],
-            "whyOnRoute": "Required logistics; on-time return is the operator's stated commitment.",
+            "whyOnRoute": "チャガルチ・南浦洞からターミナルへは最短経路（20〜30分）。一日のルートが港→港の完璧な円環を形成。",
             "_poi_meta": {
-              "poi_key": "busan_port_return",
-              "is_attraction": false
-            }
+              "poi_key": "OPS_busan_port_return",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29"
+            },
+            "timeUsed": [
+              "南浦洞/チャガルチ→ターミナル — 約20〜30分",
+              "ターミナル到着＋乗船 — 約10〜15分"
+            ]
           }
         ]
       }
@@ -1568,81 +1570,81 @@
       "props": {
         "routeFlowStops": [
           {
-            "id": "rf_pickup",
-            "name": "Busan Port International Passenger Terminal",
-            "theme": "Departure"
+            "name": "釜山港国際旅客ターミナル",
+            "type": "origin",
+            "theme": "出発"
           },
           {
-            "id": "rf_un",
-            "name": "UN Memorial Cemetery",
+            "name": "国連記念公園",
+            "type": "primary",
             "theme": "Memorial"
           },
           {
-            "id": "rf_taejongdae",
-            "name": "Taejongdae coastal cliffs",
-            "theme": "Coastal cliffs"
+            "name": "太宗台海岸絶壁",
+            "type": "primary",
+            "theme": "海岸断崖"
           },
           {
-            "id": "rf_lunch",
-            "name": "Lunch (local Busan restaurant)",
-            "theme": "Meal"
+            "name": "ランチ（釜山の地元レストラン）",
+            "type": "meal",
+            "theme": "食事"
           },
           {
-            "id": "rf_gamcheon",
-            "name": "Gamcheon Culture Village",
-            "theme": "Art village"
+            "name": "甘川文化村",
+            "type": "primary",
+            "theme": "アートの街"
           },
           {
-            "id": "rf_yongdusan",
-            "name": "Yongdusan Park + Busan Tower",
-            "theme": "City viewpoint"
+            "name": "龍頭山公園＋釜山タワー",
+            "type": "primary",
+            "theme": "街を見渡せる展望スポット"
           },
           {
-            "id": "rf_nampo",
-            "name": "Nampo-dong + Jagalchi Market",
-            "theme": "Market & streetfood"
+            "name": "南浦洞＋ジャガルチ市場",
+            "type": "primary",
+            "theme": "市場・屋台グルメ"
           },
           {
-            "id": "rf_return",
-            "name": "Busan Port International Passenger Terminal",
-            "theme": "Return"
+            "name": "釜山港国際旅客ターミナル",
+            "type": "return",
+            "theme": "帰着"
           }
         ],
         "routePhases": [
           {
-            "phase": "Outbound transfer",
-            "duration": "≈ 1 hour",
-            "description": "Cruise terminal to UN Memorial Cemetery in Nam-gu (≈30 min) plus disembarkation buffer."
+            "phase": "出発移動",
+            "duration": "約1時間",
+            "description": "クルーズターミナルから南区国連記念公園まで（約30分）＋下船時間の余裕。"
           },
           {
-            "phase": "Memorial + cliff",
-            "duration": "≈ 2.5 hours",
-            "description": "UN Cemetery (60 min) then drive 30 min to Taejongdae for 75 min of coastal cliffs."
+            "phase": "記念公園＋海岸断崖",
+            "duration": "約2時間30分",
+            "description": "国連記念公園（世界唯一の国連墓地）→太宗台（影島の海岸断崖自然公園）。"
           },
           {
-            "phase": "Lunch break",
-            "duration": "≈ 1 hour",
-            "description": "Local Busan restaurant near Saha-gu / Gamcheon transition."
+            "phase": "昼食（込み）",
+            "duration": "約1時間",
+            "description": "昼食込みで釜山の地元レストランへ。"
           },
           {
-            "phase": "Painted village + tower",
-            "duration": "≈ 2 hours",
-            "description": "Gamcheon Culture Village photo loop (75 min), then Yongdusan Park's central viewpoint (45 min)."
+            "phase": "文化村＋タワー＋市場",
+            "duration": "約2時間",
+            "description": "甘川文化村→龍頭山公園＆釜山タワー→チャガルチ水産市場→港へ帰着。"
           },
           {
-            "phase": "Market finale",
-            "duration": "≈ 1 hour",
-            "description": "Walk from Yongdusan down to Nampo-dong / Jagalchi Market for streetfood and seafood."
+            "phase": "文化村＋タワー＋市場",
+            "duration": "約1時間",
+            "description": "甘川文化村→龍頭山公園＆釜山タワー→チャガルチ水産市場→港へ帰着。"
           },
           {
-            "phase": "Return",
-            "duration": "≈ 30 min + buffer",
-            "description": "Drop-off at cruise terminal at least 60 min before all-aboard."
+            "phase": "帰着",
+            "duration": "約30分＋時間の余裕",
+            "description": "最終乗船少なくとも60分前にクルーズターミナルに到着。"
           }
         ],
         "routeShapeIntro": {
-          "title": "How this day flows",
-          "subtitle": "A circular shore-excursion route built around Busan's port. Unlike the Incheon equivalent, Busan's main attractions are within 30 minutes of the cruise terminal — meaning more time at sights and less time on the road. The route hits the four most-photographed Busan stops (Gamcheon, Taejongdae, Jagalchi, Busan Tower) plus the city's most thoughtful Korean War heritage site (UN Cemetery), all coordinated to your ship's all-aboard time. The 4.9/5 rating across 32 reviews reflects how tightly this circuit is calibrated."
+          "title": "この一日の流れ",
+          "subtitle": "釜山港（影島）から出発し、歴史（国連記念公園）→自然（太宗台）→文化（甘川）→展望（龍頭山）→市場（チャガルチ）の順で巡り、同じ港へ帰着。9時間の船→船構成で帰船時間を厳守。"
         }
       }
     },
@@ -1653,39 +1655,38 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "Cruise passengers with a 9+ hour port call in Busan",
-            "First-time visitors who want a single-day Busan overview",
-            "Couples and adult families",
-            "Travelers prioritizing coast + culture + market in one route"
+            "釜山港に9時間以上の寄港がある乗客",
+            "少人数で釜山の主要見どころを一日で巡りたい初訪問者",
+            "カップルと大人ファミリー",
+            "海岸＋文化＋市場を一日でカバーしたい旅行者"
           ],
           "lessIdealFor": [
-            "Travelers who want minimal walking",
-            "Travelers with limited mobility (Gamcheon hillside)",
-            "Stroller-heavy groups",
-            "Cruisers with a port call shorter than ≈9 hours"
+            "帰船時間が5〜6時間しかない乗客（時間が不足）",
+            "歩行・坂道を完全に避けたい方（甘川の丘の路地）",
+            "プライベートカーの柔軟性を求める旅行者"
           ],
           "routeLogicSections": [
             {
-              "title": "Why this route is built this way",
+              "title": "クルーズ寄港地ツアーとしての推薦理由",
               "icon": "route",
               "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "All five Busan signatures, with a return buffer",
-                  "detail": "Many cruise day tours skip either the UN Cemetery (too sober for a beach day) or Gamcheon (too far from the port). This route includes both, plus Taejongdae, Yongdusan/Busan Tower, and Jagalchi/Nampo-dong, and still leaves a 60-minute safety buffer for the return drive. The 9-hour window is built around realistic Busan traffic, not a brochure-ideal schedule."
+                  "label": "釜山5大見どころ＋帰船時間厳守",
+                  "detail": "国連記念公園・太宗台・甘川文化村・龍頭山公園・チャガルチ市場という釜山の代表的な5見どころを一日でカバー。クルーズの帰船時間を最優先に進めます。"
                 },
                 {
-                  "label": "Built for the cruise schedule, not the operator's clock",
-                  "detail": "Pickup is calibrated to your ship's actual arrival, not a fixed start. Ships that arrive before 07:00 trigger an early-bird option (₩10,000/person surcharge) so you don't waste time at the terminal. Drop-off is timed to leave at least a 60-minute buffer before your stated all-aboard time."
+                  "label": "帰船時間の厳守",
+                  "detail": "ガイドは全ステップでタイムチェックを行い、出航時間の90〜120分前には必ずターミナルに到着します。"
                 },
                 {
-                  "label": "Certified bilingual guide, no shopping detours",
-                  "detail": "Guides are licensed by the Korea Tourism Organization and fluent in English and Chinese. There are no ginseng shops, duty-free stops, or commissioned souvenir detours — every minute of the day is at attractions or in transit. This is rarer than it sounds for cruise group tours."
+                  "label": "認定バイリンガルガイド、ショッピング強制なし",
+                  "detail": "ガイドは韓国観光公社の認定を受けた地元ガイド。キックバックによるショッピング店への強制立ち寄りはありません。"
                 },
                 {
-                  "label": "Shared-van price between coach and private tour",
-                  "detail": "Private Busan cruise excursions run $300–500+ per group. Coach tours run 40+ passengers at a low per-person price. This shared-van version sits between, with up to ≈10 passengers per departure — accessible for solo cruisers, couples, and small groups who don't need a private vehicle. Trade-off: fixed circuit, not customizable."
+                  "label": "プライベートとコーチの中間価格帯の少人数シェアバン",
+                  "detail": "釜山のプライベートクルーズ観光は$300〜500（1グループ）。大型コーチツアーは$40〜60（1人）。このツアーは少人数シェアバンで一人当たりコスパ最高の構成。"
                 }
               ]
             }
@@ -1700,85 +1701,124 @@
       "props": {
         "practicalAccordionItems": [
           {
-            "title": "What's included",
             "id": "inclusions",
-            "content": "Air-conditioned shared van, certified English/Chinese-speaking guide, fuel/tolls/parking. Not included: lunch (≈₩10,000–₩20,000), optional Taejongdae Danubi Train (₩4,000 adult), optional Busan Tower observatory (₩12,000 adult), Gamcheon stamp-tour map (₩2,000), tips. UN Cemetery, Yongdusan Park, Gamcheon village, and Jagalchi Market are all free to enter. Total typical out-of-pocket: ₩20,000–₩40,000 per person."
+            "title": "含まれるもの・含まれないもの",
+            "preview": "エアコン付き共有バン、認定英語/中国語話者ガイド、燃料/通行料/駐車場。",
+            "content": [
+              "少人数シェアバン（最大8名程度）",
+              "英語対応ガイド",
+              "釜山港クルーズターミナル発着の送迎",
+              "燃料・駐車料金",
+              "昼食",
+              "含まれないもの：個別の入場料（太宗台ダヌビ列車・釜山タワー展望台）・チップ"
+            ]
           },
           {
-            "title": "Pickup & drop-off",
             "id": "pickup",
-            "content": "Group meets at the Busan Port International Passenger Terminal arrival hall. Pickup time is calibrated to your ship's actual disembarkation, not a fixed start. Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Early pickup (before 08:00) adds ₩10,000 per person."
+            "title": "ピックアップと帰着",
+            "preview": "釜山港国際旅客ターミナルの到着ホールでグループ集合。",
+            "content": [
+              "釜山港国際クルーズターミナル（影島）または釜山港第1ターミナル（釜山駅近辺）でピックアップ",
+              "AtoC Koreaのサインボードを持ったガイドが到着ホール出口で待機",
+              "帰船時間の90〜120分前にターミナルへ帰着できるようにしています",
+              "予約時に必ず出航時刻をお知らせください"
+            ]
           },
           {
-            "title": "Sail-away timing",
             "id": "sailaway",
-            "content": "Drop-off at the cruise terminal at least 60 minutes before your all-aboard time. Cruise rule of thumb: be back on the ship at least 30 minutes before stated departure. The guide tracks every passenger's individual ship schedule and prioritizes return order if multiple ships sail at different times. The route is built with a 60-minute buffer for return-drive traffic."
+            "title": "出航時間の管理",
+            "preview": "最終乗船時間の少なくとも60分前にクルーズターミナルで降車。クルーズ船の最終乗船時刻に間に合うよう、出港時刻の少なくとも60〜90分前に港へ戻ることを最優先に行程を調整します。交通状況、天候、入国・下船手続きの遅れがある場合は、観光地での滞在時間を短縮してでも、安全な帰港と時間内の再乗船を優先します。",
+            "content": [
+              "ガイドは出航時間を常に把握し、全ステップでタイムチェックを実施",
+              "標準的な帰着余裕：出航時間の90〜120分前",
+              "渋滞・遅延時は観光見どころの滞在時間を短縮して帰船を優先",
+              "予約時に出航時刻を正確にお知らせください — 非常に重要です"
+            ]
           },
           {
-            "title": "Walking & terrain",
             "id": "walking",
-            "content": "Moderate. Gamcheon Village has steep alleys and stairs (built into a hillside) — not wheelchair-friendly, and stroller-difficult. Taejongdae's full cliff loop is 4.3 km but the optional Danubi Train (₩4,000) avoids the climb. UN Cemetery and Yongdusan are flat. Total walking: ≈3–5 km depending on Taejongdae/Gamcheon choices. Comfortable closed-toe shoes essential."
+            "title": "歩行と地形",
+            "preview": "中程度。",
+            "content": [
+              "太宗台：断崖沿いの遊歩道（ほぼフラット）または観光列車",
+              "甘川文化村：急な坂道の路地、合計約1〜1.5km",
+              "龍頭山公園：なだらかな公園内の歩行",
+              "チャガルチ：フラットな市場内の歩行",
+              "総歩行距離：約3〜4km",
+              "歩きやすいクローズドトゥシューズ必須。甘川はグリップのある靴を推奨"
+            ]
           },
           {
-            "title": "Cancellation",
             "id": "cancellation",
-            "content": "Free cancellation up to 24 hours before pickup. Same-day cancellations and no-shows non-refundable. If your ship's port call is cancelled by the cruise line, full refund with cancellation documentation."
+            "title": "キャンセルポリシー",
+            "preview": "乗車24時間前まで無料キャンセル。",
+            "content": [
+              "出航の24時間前まで無料キャンセル",
+              "当日キャンセルおよびノーショーは返金不可",
+              "台風または荒天による寄港地変更の場合は全額返金"
+            ]
           },
           {
-            "title": "Children & accessibility",
             "id": "accessibility",
-            "content": "Children age 8 and up are welcome and the route works well for them — Taejongdae's Danubi Train is a kid favorite, and Jagalchi's live fish are reliably interesting. Strollers are not viable at Gamcheon (stairs); other stops accept them. Wheelchair users should consider a private cruise tour with route adjustments — Gamcheon and Taejongdae's cliff trail are the bottlenecks."
+            "title": "お子様と車椅子対応",
+            "preview": "8歳以上のお子様歓迎 — 太宗台のダヌビ列車が子供に人気",
+            "content": [
+              "6歳以上のお子様はほとんどの場合参加可能",
+              "甘川の急坂はベビーカーには不向き",
+              "車椅子利用の方は事前にご連絡ください — 太宗台の遊歩道は概ね対応可能ですが甘川は困難",
+              "国連記念公園とチャガルチはフラットでアクセスしやすい"
+            ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "季節別の案内を確認"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "季節別の案内を確認"
           },
-          "_seasonalSummary": "Busan is South Korea's southernmost major city — milder and wetter than Seoul, with mild winters (5–10 °C lows). Summer is humid, with peak rainfall in July monsoon.",
+          "_seasonalSummary": "釜山は韓国南部の大都市で、ソウルより比較的温暖で雨が多い傾向があります。冬は比較的穏やかで、最低気温は5〜10℃前後です。夏は湿度が高く、7月の梅雨時期に雨が多くなります。",
           "_seasonalTemperatures": [
             {
-              "season": "Spring (Mar–May)",
+              "season": "春（3〜5月）",
               "range": "8–22 °C",
-              "notes": "Cherry blossoms in late March / early April."
+              "notes": "3月下旬〜4月上旬は桜の時期です。"
             },
             {
-              "season": "Summer (Jun–Aug)",
+              "season": "夏（6〜8月）",
               "range": "22–30 °C",
-              "notes": "Hot and humid; July monsoon possible. Sea breeze keeps Taejongdae mild."
+              "notes": "夏は蒸し暑く、7月は梅雨の影響を受けることがあります。太宗台は海風があるため、比較的過ごしやすく感じられます。"
             },
             {
-              "season": "Autumn (Sep–Nov)",
+              "season": "秋（9〜11月）",
               "range": "10–24 °C",
-              "notes": "Best season — clearest air, warmest sea. Foliage in late October."
+              "notes": "ベストシーズン。空気が最も澄み、海も比較的暖かい時期です。10月下旬は紅葉も見て回れます。"
             },
             {
-              "season": "Winter (Dec–Feb)",
+              "season": "冬（12〜2月）",
               "range": "0–10 °C",
-              "notes": "Mild for Korea but can be windy at coastal stops."
+              "notes": "韓国の冬としては穏やかですが、海沿いの観光地では風が強いことがあります。"
             }
           ]
         },
         "seasonalVariations": [
           {
-            "season": "Spring (Mar–May)",
-            "highlight": "Cherry blossoms at Yongdusan Park and along the Taejongdae coastal road in late March / early April. Best season for cruise calls."
+            "season": "春（3〜5月）",
+            "description": "3月末〜4月初頭、龍頭山公園と太宗台沿岸道路の桜。クルーズ寄港の最適シーズン。"
           },
           {
-            "season": "Summer (Jun–Aug)",
-            "highlight": "Long daylight; coastal Busan stays cooler than inland Korea thanks to sea breeze. July monsoon rain possible — check forecast."
+            "season": "夏（6〜8月）",
+            "description": "日照時間が長い。海風のおかげで内陸より涼しい釜山の海岸。7月の梅雨時期は折り畳み傘を推奨。"
           },
           {
-            "season": "Autumn (Sep–Nov)",
-            "highlight": "Clearest visibility for Tsushima views from Taejongdae; foliage in late October. Best season overall."
+            "season": "秋（9〜11月）",
+            "description": "太宗台からの対馬の眺めが最も鮮明。10月下旬の紅葉。クルーズ最盛期。"
           },
           {
-            "season": "Winter (Dec–Feb)",
-            "highlight": "Fewer crowds; clear sea views; mild compared to Seoul (Busan winter lows 5–10 °C)."
+            "season": "冬（12〜2月）",
+            "description": "最も閑散。澄んだ海の眺め。ソウルより温暖（冬の最低気温5〜10°C）。"
           }
         ]
       }
@@ -1791,56 +1831,65 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local operator",
-            "description": "Authorized Korean tour operator with full insurance",
+            "title": "現地を熟知した認定スタッフ",
+            "description": "4.9/5（32件のレビュー）の認定韓国ツアー催行会社",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "iconColor": "text-emerald-600",
+            "body": "釜山全域を知り尽くした現地を熟知した認定スタッフ。クルーズ船の帰船時間管理に豊富な実績。"
           },
           {
             "icon": "route",
-            "title": "Route specialists",
-            "description": "Hand-tuned itinerary, not a generic loop",
+            "title": "クルーズ専用構成",
+            "description": "帰船時間を最優先にした行程",
             "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "iconColor": "text-sky-600",
+            "body": "帰船時間の90〜120分前にターミナルへ帰着。緊急時は即座に対応。"
           },
           {
             "icon": "users",
-            "title": "Curated group size",
-            "description": "Right-sized for the route",
+            "title": "少人数の快適な空間",
+            "description": "最大8名のシェアバン",
             "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600"
+            "iconColor": "text-amber-600",
+            "body": "大型コーチと異なり、少人数で機動力の高いシェアバン。"
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "timing": "予約後すぐ",
+            "title": "予約確認（即時）",
+            "detail": "行程確認付きの予約確認",
+            "description": "クルーズターミナルのピックアップ詳細付きで即時確認。"
           },
           {
-            "timing": "12 hours before",
-            "title": "12-Hour Reminder",
-            "detail": "Weather update and any route adjustments"
+            "timing": "12時間前",
+            "title": "12時間前リマインダー",
+            "detail": "天気情報とルート変更のご案内",
+            "description": "出航時刻の再確認と当日のコンタクト情報。"
           },
           {
-            "timing": "Evening before",
-            "title": "Final Pickup Info",
-            "detail": "Exact pickup time and driver contact"
+            "timing": "前日の夜",
+            "title": "最終お迎え情報",
+            "detail": "ガイドの連絡先とターミナル集合場所",
+            "description": "ガイドの携帯番号とターミナル集合場所の最終確認。"
           },
           {
-            "timing": "Morning of tour",
-            "title": "Day-of Route Notes",
-            "detail": "Morning briefing based on live conditions"
+            "timing": "当日の朝",
+            "title": "当日ルート情報",
+            "detail": "ライブ状況に基づく朝のブリーフィング",
+            "description": "天候と交通状況の最新情報。"
           },
           {
-            "timing": "During tour",
-            "title": "Stop-by-Stop Tips",
-            "detail": "Real-time guidance at each location"
+            "timing": "ツアー中",
+            "title": "各訪問地でのガイダンス",
+            "detail": "国連記念公園の歴史・甘川の文化背景・チャガルチの市場ガイドをナレーション",
+            "description": "リアルタイムガイド。"
           },
           {
-            "timing": "After tour",
-            "title": "Post-tour Support",
-            "detail": "Follow-up and recommendations"
+            "timing": "ツアー後",
+            "title": "ツアー後サポート",
+            "detail": "フォローアップとおすすめ情報",
+            "description": "解散後にフィードバックリクエストを送付。"
           }
         ]
       }
@@ -1853,78 +1902,78 @@
         "staticQuestions": [
           {
             "id": "q-cruise-busy-day",
-            "question": "Will the tour be full on busy cruise days?",
-            "answer": "The shared van seats up to ≈10 passengers. On peak cruise days the operator runs multiple vans simultaneously rather than overcrowding a single one — group dynamics are part of the format and you'll usually be with cruisers from several different ships."
+            "question": "混雑するクルーズ寄港日はツアーが満員になりますか？",
+            "answer": "少人数制（最大8名）のため、早めのご予約をお勧めします。複数のクルーズ船が同日に寄港する日は特に早めの予約が重要です。"
           },
           {
             "id": "q-early-arrival",
-            "question": "What if my ship arrives very early — can I still join?",
-            "answer": "Yes. Early pickup (before 08:00) is available with a ₩10,000 per-person surcharge. This is useful for cruises with 06:00–07:00 arrivals where the standard 08:30 start would otherwise leave you waiting two hours at the terminal."
+            "question": "船が非常に早く到着した場合でも参加できますか？",
+            "answer": "はい。到着時刻に合わせてピックアップ時間を調整します。早朝到着の場合はご予約時にお知らせください。"
           },
           {
             "id": "q-lunch",
-            "question": "Is lunch included?",
-            "answer": "No. Lunch is free time at a guide-recommended local Busan restaurant; budget ₩10,000–₩20,000 per person. Common choices are dwaeji-gukbap (Busan-style pork-and-rice soup), milmyeon (cold wheat noodles), or a bibimbap set. The guide can route to vegetarian, halal, or gluten-free kitchens with advance notice at booking."
+            "question": "昼食は含まれていますか？",
+            "answer": "はい。昼食はツアー代金に含まれています（地元の釜山レストランで）。ベジタリアン・ハラール対応は予約時にお申し出ください。"
           },
           {
             "id": "q-vs-private-cruise",
-            "question": "How is this different from a private Busan cruise tour?",
-            "answer": "Private cruise tours run only for your group, with a customizable itinerary and door-of-ship pickup, typically $90–$120+ per person (or $300–$500+ per group). This shared-van version runs at $58.50 per person on a fixed circuit. Choose this for budget; choose private if you want flexibility, accessibility, or to skip standard stops."
+            "question": "プライベート釜山クルーズツアーとの違いは何ですか？",
+            "answer": "このツアーは少人数（最大8名）のシェアバン形式です。プライベートツアーはグループ専用の車両とガイドを使用し、ルートを完全にカスタマイズできます。プライベートの柔軟性を優先する場合は釜山プライベートカーチャーターツアーをご検討ください。"
           },
           {
             "id": "q-gamcheon-stairs",
-            "question": "What if Gamcheon's stairs are too much?",
-            "answer": "Gamcheon's main photo zones are reachable by short walk from the bus drop-off — only deeper exploration requires the steep stairs. The guide can route you through the accessible upper section of the village. If mobility is a concern, advise at booking; for full accessibility a private tour with route adjustments is a better fit."
+            "question": "甘川の坂道がきつかった場合はどうなりますか？",
+            "answer": "ガイドが甘川の入口付近でお待ちすることもできます。主要なフォトゾーン（展望台・星の王子さまの彫刻）への最短ルートを案内しますので、全ての坂道を歩く必要はありません。"
           },
           {
             "id": "q-customize",
-            "question": "Can I customize the itinerary?",
-            "answer": "Limited — this is a fixed-route shared product. The guide can adjust timing within the route (spend longer at Gamcheon, less at Yongdusan, etc.) but cannot swap or drop stops. For full customization, a private Busan cruise tour is the right choice."
+            "question": "行程をカスタマイズできますか？",
+            "answer": "シェアバンツアーのため行程の変更は難しいですが、事前にご要望がある場合はご相談ください。完全なカスタマイズを希望される場合はプライベートカーチャーターをお勧めします。"
           },
           {
             "id": "q-tower-tickets",
-            "question": "Is the Busan Tower observatory ticket included?",
-            "answer": "No — the observatory is optional (₩12,000 adult, ₩9,000 youth). Yongdusan Park itself is free and gives a strong city view at ground level. Most groups skip the observatory due to the time cost vs. the time available; if you want to go up, advise the guide on arrival so they can build it into your stop time."
+            "question": "釜山タワーの展望台チケットは含まれていますか？",
+            "answer": "予約時にご確認ください。標準価格には含まれない場合があります（大人₩12,000）。ガイドが現地での購入をサポートします。"
           },
           {
             "id": "q-taejongdae-train",
-            "question": "Should we take the Danubi Train at Taejongdae?",
-            "answer": "If you have any concern about the 4.3 km cliff loop, yes — the Danubi Train (₩4,000 adult) covers the loop in ≈30 minutes with stops at the lighthouse and the cliff viewpoint, and it solves the climb at the start. Active walkers can do the trail in 60–75 minutes. The 75-minute stop time accommodates either choice."
+            "question": "太宗台のダヌビ観光列車に乗るべきですか？",
+            "answer": "ダヌビ列車（別途有料）は太宗台の観光ルートを30〜40分で一周する便利な乗り物です。時間に余裕がある場合はおすすめです。ガイドが当日の状況に合わせてアドバイスします。"
           },
           {
             "id": "q-jagalchi-eat",
-            "question": "Can we eat at Jagalchi instead of the lunch restaurant?",
-            "answer": "The route reaches Jagalchi at 16:00 — past lunch and before dinner — so eating there means streetfood snacks, hwe (raw sliced fish from a stall), or just browsing. If your priority is a Jagalchi seafood meal, advise at booking; the guide can move the lunch slot but the tour's pacing assumes the standard mid-day restaurant break."
+            "question": "昼食をチャガルチ市場で食べることはできますか？",
+            "answer": "昼食はツアーに含まれており、ガイドが手配した地元レストランでお取りいただく形式です。チャガルチでは一日の最後に軽い海産物スナック（オデンなど）を楽しむことをお勧めします。"
           },
           {
             "id": "first-time",
-            "question": "Is this a good choice for first-time visitors to Busan?",
-            "answer": "Yes — it covers the most distinctive Busan stops in a single balanced day, with a mix of memorial, coast, art village, viewpoint, and market. First-time visitors with one cruise port-call day are the primary audience for this product."
+            "question": "釜山初訪問者に良い選択ですか？",
+            "answer": "はい。国連記念公園・太宗台・甘川・龍頭山・チャガルチという釜山の多様な側面を一日でカバーできる、釜山の良い入門ツアーです。"
           },
           {
             "id": "walking",
-            "question": "How much walking is there?",
-            "answer": "≈3–5 km depending on choices. Gamcheon's hillside alleys and Taejongdae's cliff trail are the active sections; UN Cemetery and Yongdusan are flat. The Danubi Train at Taejongdae is an option to skip the climb. Comfortable closed-toe shoes are essential."
+            "question": "歩行量はどれくらいですか？",
+            "answer": "中程度。総歩行距離は約3〜4km。最もアクティブな区間は甘川文化村の丘の路地（急坂あり）です。太宗台は遊歩道またはダヌビ列車で対応可能。歩きやすいクローズドトゥシューズを推奨します。"
           },
           {
             "id": "family",
-            "question": "Is this suitable for families with children?",
-            "answer": "Yes for school-age children (≈8+) who can manage Gamcheon's stairs. Kids tend to respond best to the Danubi Train at Taejongdae and the live-fish floor at Jagalchi. The UN Cemetery is short and quiet."
+            "question": "お子様連れのファミリーに適していますか？",
+            "answer": "はい。6歳以上のお子様がいるファミリーに適しています。甘川の坂道が唯一の難所です。チャガルチの活魚コーナーは子供に人気です。"
           },
           {
             "id": "seniors",
-            "question": "Can older adults join comfortably?",
-            "answer": "Active seniors are fine; the Danubi Train solves Taejongdae and the Gamcheon upper section is mostly walkable. Travelers with significant mobility limitations should consider a private cruise tour instead — Gamcheon's hillside is the bottleneck."
+            "question": "高齢の方でも快適に参加できますか？",
+            "answer": "はい、活動的な高齢者の方はご参加いただけます。太宗台はダヌビ列車でも対応でき、甘川はゆっくり自分のペースで歩けます。"
           },
           {
             "id": "children",
-            "question": "What's the recommended minimum age?",
-            "answer": "Best fit is around age 8 and up. Children younger than that may struggle with Gamcheon's stairs and the full-day pace. If you bring younger kids, advise at booking so the guide can plan around the limit."
+            "question": "推奨される最低年齢は？",
+            "answer": "6歳以上が最適です。9時間の寄港地ツアーのリズムについてこられれば参加できます。"
           },
           {
             "id": "weather",
-            "question": "What if there's heavy rain or a typhoon?",
-            "answer": "Light rain: tour operates as planned. Heavy rain: Taejongdae's cliff trail closes; the Danubi Train still runs. Gamcheon stays open but is photo-limited. If a typhoon warning is issued, the operator offers rebooking or a full refund. If the cruise line cancels your port call, full refund with documentation."
+            "question": "大雨や台風の場合はどうなりますか？",
+            "answer": "大雨や台風で寄港地が変更になった場合は全額返金いたします。小雨ではツアーは通常通り実施されます。"
           }
         ]
       }
@@ -1952,21 +2001,21 @@
             {
               "stars": 3,
               "count": 0,
-              "percentage": 0
+              "percentage": 0.0
             },
             {
               "stars": 2,
               "count": 0,
-              "percentage": 0
+              "percentage": 0.0
             },
             {
               "stars": 1,
               "count": 0,
-              "percentage": 0
+              "percentage": 0.0
             }
           ],
           "highlights": [],
-          "source_attribution": "Aggregate metric from operator's GetYourGuide listing; individual review text not yet imported."
+          "source_attribution": "催行会社の市場参考資料掲載ページに基づく集計指標です。個別レビュー本文はまだ取り込まれていません。"
         }
       }
     },
@@ -1975,16 +2024,16 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "予約可否は決済ステップで確認されます。",
         "price": {
           "amountLabel": "58.50",
           "originalPriceUsd": 65,
           "salePriceUsd": 58.5,
           "discountPercent": 10,
           "currency": "USD",
-          "per": "person",
-          "priceSource": "getyourguide_t1164092",
-          "priceNote": "Original price USD 65 on the operator's listing. AtoC Korea sale price applies a flat 10% discount."
+          "per": "人",
+          "priceSource": "direct_rate",
+          "priceNote": "運行会社の掲載価格65米ドルを基準に、AtoC Koreaの直販価格は10%割引です。"
         }
       }
     }
@@ -2009,7 +2058,7 @@
       "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 5 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, VisitSeoul, official tourism boards.\n  - Stop #2 UN Memorial Cemetery (Korean War): filled [visitBasics, convenience, smartNotes]\n  - Stop #3 Taejongdae coastal cliffs: filled [visitBasics, convenience, smartNotes]\n  - Stop #5 Gamcheon Culture Village: filled [visitBasics, convenience, smartNotes]\n  - Stop #6 Yongdusan Park & Busan Tower: filled [visitBasics, convenience, smartNotes]\n  - Stop #7 Nampo-dong & Jagalchi Fish Market: filled [visitBasics, convenience, smartNotes]",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

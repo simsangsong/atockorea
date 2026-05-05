@@ -5,25 +5,25 @@
   "locale": "ko",
   "product_id": "southwest-hallasan-osulloc-aewol",
   "seo": {
-    "pageTitle": "Southwest Jeju Hallasan + Osulloc Tour | AtoC Korea",
-    "metaDescription": "Small-group 9-hour southwest Jeju tour: 1100 Highland on Hallasan, Osulloc tea fields, Aewol coast cafés, Hyeopjae Beach, Hallim Park.",
+    "pageTitle": "제주 서남부 한라산 + Osulloc + 애월 소그룹 투어 | AtoC Korea",
+    "metaDescription": "9시간 서남부 제주 소그룹 투어: 한라산 1100고지, Osulloc 차밭, 애월 해안 카페 거리, 한림 공원.",
     "primaryKeywords": [
       "제주 서남부 소그룹 투어",
       "한라산 어승생악 투어",
-      "오설록 애월 투어",
+      "Osulloc 애월 투어",
       "제주 한라산 오름 투어",
       "제주 카페거리 투어"
     ],
     "ogImage": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80",
-    "title": "제주 서남부 한라산·오설록·애월 소그룹 투어 | AtoC Korea",
-    "description": "제주 서남부 소그룹 투어: 한라산 어승생악 → 주상절리 → 천제연폭포 → 오설록 → 애월 카페거리. 첫 방문 추천 균형 코스, 공인 가이드."
+    "title": "제주 서남부 한라산·Osulloc·애월 소그룹 투어 | AtoC Korea",
+    "description": "제주 서남부 소그룹 투어: 한라산 어승생악 → 주상절리 → 천제연폭포 → Osulloc → 애월 카페거리. 첫 방문 추천 균형 코스, 공인 가이드."
   },
   "catalog_card": {
     "slug": "southwest-hallasan-osulloc-aewol",
-    "title": "제주 서남부 소그룹 투어: 한라산·오설록·애월",
+    "title": "제주 서남부 소그룹 투어: 한라산·Osulloc·애월",
     "subtitle": "한라산 짧은 오름 산책, 화산 절벽, 폭포, 차밭, 애월 카페거리까지 이어지는 여유로운 제주 서남부 하루 코스.",
-    "region": "Jeju Southwest",
-    "duration": "8 hours",
+    "region": "제주 서남부",
+    "duration": "8시간",
     "stopsCount": 6,
     "rating": 4.8,
     "reviewCount": 127,
@@ -34,14 +34,14 @@
     "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
     "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
     "priceLabel": "가격은 예약 시 확인",
-    "shortCardDescription": "어승생악(한라산 기생화산) 트레일을 시작으로 주상절리, 천제연폭포, 오설록 티뮤지엄을 거쳐 애월 한담 해안산책로 카페거리에서 마무리하는 제주 서남부 소그룹 투어입니다. 공인 가이드, 4.8/5 평점.",
+    "shortCardDescription": "어승생악(한라산 기생화산) 트레일을 시작으로 주상절리, 천제연폭포, Osulloc 티뮤지엄을 거쳐 애월 한담 해안산책로 카페거리에서 마무리하는 제주 서남부 소그룹 투어입니다. 공인 가이드, 4.8/5 평점.",
     "tags": [
-      "small_group",
+      "소그룹",
       "jeju",
-      "southwest_jeju",
-      "nature",
-      "cafe",
-      "hallasan"
+      "제주 서남부",
+      "자연",
+      "카페",
+      "한라산"
     ]
   },
   "headlineLine1": "제주 서남부: 한라산, 차밭, 애월",
@@ -49,9 +49,9 @@
   "price": {
     "amountLabel": "58",
     "currency": "USD",
-    "per": "person",
+    "per": "인",
     "priceSource": "internal",
-    "priceNote": "Small-group bilingual tour. AtoC Korea direct sale; 10% discount applied vs operator base.",
+    "priceNote": "소그룹 이중 언어 투어. AtoC Korea 직접 판매; 여행사 대비 10% 할인 적용.",
     "discountPercent": 10
   },
   "hero": {
@@ -59,13 +59,13 @@
     "imagePosition": "center 35%",
     "tagline": "짧은 한라산 오름 산책, 화산 절벽, 폭포 트레일, 차밭, 여유로운 애월 마무리 — 제주 서남부를 하루에.",
     "pills": [
-      "Great for First-Time Jeju Visitors",
-      "Jeju Southwest"
+      "제주 첫 방문자에게 최적",
+      "제주 서남부"
     ],
     "meta": {
-      "duration": "8 hours",
-      "region": "Jeju Southwest",
-      "stops": "6 stops",
+      "duration": "8시간",
+      "region": "제주 서남부",
+      "stops": "6개 코스",
       "rating": 4.8,
       "ratingStars": 5
     }
@@ -95,39 +95,33 @@
   "glanceItems": [
     {
       "icon": "camera",
-      "label": "포토 스팟",
-      "value": "우수",
-      "level": 5
+      "label": "포토 명소",
+      "value": "높음"
     },
     {
       "icon": "mountain",
-      "label": "경치 밀도",
-      "value": "양호",
-      "level": 4
+      "label": "풍경 볼거리",
+      "value": "높음"
     },
     {
       "icon": "footprints",
       "label": "도보 난이도",
-      "value": "보통",
-      "level": 3
+      "value": "보통"
     },
     {
       "icon": "cloud-rain",
       "label": "우천 적합도",
-      "value": "보통",
-      "level": 3
+      "value": "보통"
     },
     {
       "icon": "users",
       "label": "가족 적합도",
-      "value": "양호",
-      "level": 4
+      "value": "양호"
     },
     {
-      "icon": "gauge",
-      "label": "투어 페이스",
-      "value": "균형",
-      "level": 4
+      "icon": "scale",
+      "label": "투어 일정 속도",
+      "value": "균형"
     }
   ],
   "galleryItems": [
@@ -135,85 +129,85 @@
       "id": 1,
       "type": "video",
       "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-      "location": "Overall Route",
-      "atmosphere": "A full-day view of how the route flows",
-      "alt": "Overall atmosphere of the Jeju southwest route",
-      "caption": "Overall atmosphere of the Jeju southwest route"
+      "location": "전체 코스",
+      "atmosphere": "루트 흐름의 하루 전체 전경",
+      "alt": "제주 서남쪽 코스 전체 분위기",
+      "caption": "제주 서남쪽 코스 전체 분위기"
     },
     {
       "id": 2,
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
-      "location": "Hallasan Opening Stop",
-      "atmosphere": "Fresh mountain air",
-      "alt": "Hallasan Eoseungsaengak trail",
-      "caption": "Hallasan Eoseungsaengak trail"
+      "location": "한라산 Opening 정류장",
+      "atmosphere": "상쾌한 산 공기",
+      "alt": "한라산 어승생악 탐방로",
+      "caption": "한라산 어승생악 탐방로"
     },
     {
       "id": 3,
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
       "location": "Volcanic Coastline",
-      "atmosphere": "A powerful basalt shoreline",
-      "alt": "Basalt sea cliffs at Daepo Jusangjeolli",
-      "caption": "Basalt sea cliffs at Daepo Jusangjeolli"
+      "atmosphere": "강렬한 현무암 해안선",
+      "alt": "대포 주상절리 현무암 해안 절벽",
+      "caption": "대포 주상절리 현무암 해안 절벽"
     },
     {
       "id": 4,
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-      "location": "Forest Trail and Waterfall",
-      "atmosphere": "A cooler, calmer middle section",
-      "alt": "Forest trail at Cheonjeyeon Waterfall",
-      "caption": "Forest trail at Cheonjeyeon Waterfall"
+      "location": "숲길과 폭포",
+      "atmosphere": "더 시원하고 차분한 중간 구간",
+      "alt": "천제연폭포 숲길",
+      "caption": "천제연폭포 숲길"
     },
     {
       "id": 5,
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
-      "location": "Tea Fields Break",
-      "atmosphere": "Open green scenery with a softer mood",
-      "alt": "Atmosphere around O’Sulloc Tea Museum and the tea fields",
-      "caption": "Atmosphere around O’Sulloc Tea Museum and the tea fields"
+      "location": "차밭 휴식",
+      "atmosphere": "부드러운 분위기의 탁 트인 초록 풍경",
+      "alt": "투어 중 방문하는 Osulloc 티뮤지엄과 녹차밭 주변 분위기의 풍경",
+      "caption": "Osulloc 티뮤지엄과 녹차밭 주변 분위기"
     },
     {
       "id": 6,
       "type": "video",
       "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
-      "location": "Aewol Coastal Finale",
-      "atmosphere": "A relaxed close to the day",
-      "alt": "Aewol Cafe Street on the coast",
-      "caption": "Aewol Cafe Street on the coast"
+      "location": "애월 Coastal Finale",
+      "atmosphere": "여유로운 하루 마무리",
+      "alt": "해안의 애월 카페 거리",
+      "caption": "해안의 애월 카페 거리"
     }
   ],
   "itineraryStops": [
     {
       "number": 1,
       "time": "09:00",
-      "duration": "75 min",
+      "duration": "75분",
       "name": "한라산 어승생악",
-      "category": "Hallasan Foothill Trail (Eorimok) — UNESCO World Heritage Taste",
+      "category": "한라산 기슭 탐방로 (어리목) — 유네스코 세계유산 체험",
       "description": "어승생악(해발 1,169m)은 한라산 서쪽 사면의 기생화산(오름)입니다. 왕복 1.3km 목조 계단 트레일로, 정상에서 한라산 정상부와 제주 서쪽 해안 파노라마가 펼쳐집니다. 화구호와 곶자왈 숲이 인상적입니다. 체력이 가장 필요한 구간이지만, 하루 중 에너지가 가장 넘치는 오전에 배치되어 있습니다. 방문 시간: 약 70분.",
       "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
       "highlights": [
-        "**Hallasan = only Korean site with Triple Natural designation**: UNESCO World Heritage 2007 + Biosphere 2002 + National Park 1970",
-        "**Eoseungsaengak summit 1,169 m** — parasitic cone (oreum), one of 360+ on Jeju",
-        "Trail length **1.3 km one-way / ~200 m gain** — wide steps + boardwalk, doable in athletic shoes",
-        "Deck panorama covers **Hallasan's Baengnokdam crater, Yellow Sea, and southern oreum field**",
-        "Botanical transition zone — **Korean fir (*Abies koreana*, IUCN Near Threatened)** belt begins ~100 m above",
-        "Summit holds **1945 Imperial Japanese tochika pillbox** — a rare high-altitude WWII relic",
-        "**FREE admission** + free parking; no reservation cap (unlike Baengnokdam summit, capped at 1,000/day)",
-        "Hallasan harbors **2,000+ plant species** — half of all flora on the Korean Peninsula",
-        "Round-trip dwell **~60 minutes** = full 'UNESCO taste' without 9-hour Baengnokdam ascent"
+        "**한라산 = 한국 유일의 유네스코 자연 3중 지정**: 세계유산 2007 + 생물권보전지역 2002 + 세계지질공원 2010",
+        "**어승생악 정상 1,169m** — 기생화산(오름), 제주 360여 개 오름 중 하나",
+        "탐방로 **편도 1.3km / 고도 차 약 200m** — 넓은 계단 + 데크, 운동화로 가능",
+        "데크 파노라마: **한라산 백록담 화구, 황해, 남쪽 오름군** 조망",
+        "식물 천이대 — **구상나무(구상나무, IUCN 준위협)** 숲 시작 지점",
+        "정상부에 **1945년 일제 토치카(콘크리트 진지)** — 희귀한 고지대 WWII 유적",
+        "**무료 입장** + 무료 주차; 예약 정원 없음 (백록담 정상과 달리 하루 1,000명 제한 없음)",
+        "한라산에는 **식물 2,000종 이상** — 한반도 전체 식물상의 절반",
+        "왕복 체류 **약 60분** = 긴 백록담 9시간 등반 없이도 '유네스코 맛보기'"
       ],
       "timeUsed": [
-        "Eorimok parking + restroom + trail brief — ~10 min",
-        "Ascent 1.3 km to deck — ~25 min",
-        "Summit deck + photos + tochika viewing — ~15 min",
-        "Descent — ~20 min",
-        "Buffer / regroup — ~5 min"
+        "어리목 주차장 + 화장실 + 탐방로 안내 — 약 10분",
+        "데크까지 1.3km 등반 — 약 25분",
+        "정상 데크 + 사진 + 토치카 관람 — 약 15분",
+        "하산 — 약 20분",
+        "이동 완충 — 약 5분"
       ],
-      "whyOnRoute": "**Opening anchor of the southwest loop**. Starting at Hallasan establishes Jeju's geological foundation, but unlike the highlights-loop sister tour (which carries guests counter-clockwise to the east coast), this tour pivots **west and southwest** after the descent — heading directly to Jusangjeolli on the southern coast, then Cheonjeyeon (also south), inland to Osulloc tea fields, and finally **west to Aewol for the sunset finale**. The 09:00 earlier start (vs. 09:30 sister) recovers ~30 min for the leisurely afternoon Aewol coastal walk + cafe stop sequence. Eoseungsaengak is the **only Hallasan trail giving UNESCO World Heritage + Biosphere Reserve + Geopark in 60 minutes** without reservation hassle — Yeongsil and Seongpanak both require 5–9 hours, and Baengnokdam summit caps daily entry at 1,000.",
+      "whyOnRoute": "**서남쪽 루프의 오프닝 핵심 명소**. 한라산으로 시작해 제주의 지질학적 기반 확립.",
       "_poi_meta": {
         "poi_key": "hallasan_eoseungsaengak",
         "kb_version": "1.18",
@@ -225,50 +219,35 @@
           "VisitKorea — Hallasan Eoseungsaengak trail",
           "Korea Forest Service — Abies koreana red list status"
         ]
-      },
-      "visitBasics": {
-        "hours": "From 05:00, with seasonal restrictions possible",
-        "closed": "May be restricted in certain weather conditions",
-        "admission": "Free",
-        "walking": "Short route, but with many stairs and a moderate overall feel"
-      },
-      "convenience": {
-        "restroom": "At the Eorimok entrance area",
-        "parking": "Parking available"
-      },
-      "smartNotes": {
-        "photo": "Once you reach the higher lookout section, wide landscape shots usually work better than close portraits.",
-        "facilities": "Facilities are much better at the entrance than along the trail itself.",
-        "tip": "This stop works best as a focused scenic walk rather than a slow, lingering stroll."
       }
     },
     {
       "number": 2,
       "time": "10:50",
-      "duration": "45 min",
+      "duration": "45분",
       "name": "대포주상절리",
-      "category": "Volcanic Coastline — Hexagonal Columnar-Jointed Lava",
+      "category": "화산 해안선 — 육각형 주상절리 용암",
       "description": "대포 주상절리(중문대포해안 주상절리대)는 중문 해안을 따라 약 1km 이어지는 6각형 주상절리 현무암 절벽입니다. 화산 용암이 바다와 만나 급속 냉각되어 형성된 지형으로, 한라산 화산 이야기가 해안으로 이어지는 자연스러운 흐름을 만들어 줍니다. 입장료 포함. 방문 시간: 약 40분.",
       "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
       "highlights": [
-        "**Natural Monument No. 443** — designated **2005-01-06**, the most recent Jeju coastal NM",
-        "Columns rise **30–40 m**, packed in **5- to 7-sided polygons** (mostly hexagons) along **1 km** of coastline",
-        "Formation: **Hallasan flank lava cooled in the sea ~250,000–140,000 years ago**, contracting perpendicular to cooling face",
-        "**East Asia's premier columnar-jointing site** — peer to Giant's Causeway, Devils Postpile, Fingal's Cave",
-        "**Spray up to 20 m on high-tide days** — wave-fountain photography window",
-        "**0.8 km boardwalk loop**, ~15 min walk — barrier-free deck, wheelchair/stroller accessible",
-        "Part of **Jeju Global Geopark (UNESCO 2010-10)** — 13 island-wide geosites",
-        "Admission **₩2,000 adult / ₩1,000 youth / FREE under 7 + over 65**",
-        "Hallasan summit visible to the north on clear days, **directly downstream** geologically"
+        "**천연기념물 제443호** — **2005년 1월 6일** 지정, 제주 해안 천연기념물 중 가장 최근 지정",
+        "기둥 높이 **30~40m**, **5~7각형 다각형**(주로 육각형)이 **1km**를 따라 밀집",
+        "형성 과정: **한라산 측면 용암이 약 25~14만 년 전 바닷물에 냉각**되면서 수축·균열",
+        "**동아시아 최고의 주상절리 명소** — 자이언츠 코즈웨이, 데빌스 포스트파일과 어깨를 나란히",
+        "**만조 시 최대 20m 파도 분수** — 파도 분수 촬영 포인트",
+        "**0.8km 데크 루프**, 약 15분 도보 — 장벽 없는 데크, 휠체어·유모차 접근 가능",
+        "**유네스코 세계지질공원(2010) 제주 글로벌 지오파크** — 섬 전체 13개 지질 명소 중 하나",
+        "입장료: **성인 ₩2,000 / 청소년 ₩1,000 / 7세 이하·65세 이상 무료**",
+        "맑은 날 북쪽으로 한라산 정상 조망 가능"
       ],
       "timeUsed": [
-        "Parking + ticket purchase + entrance — ~5 min",
-        "Walk to first viewing platform — ~5 min",
-        "Cliff-edge column viewing + photos — ~15 min",
-        "Continue boardwalk loop — ~10 min",
-        "Return to coach — ~10 min"
+        "주차 + 매표 + 입장 — 약 5분",
+        "첫 번째 전망대까지 이동 — 약 5분",
+        "절벽 기둥 관람 + 사진 — 약 15분",
+        "데크 루프 이동 — 약 10분",
+        "코치 귀환 — 약 10분"
       ],
-      "whyOnRoute": "**Geological pivot of the southwest loop** — directly downstream from Hallasan geographically and geologically. After the Hallasan source, Jusangjeolli shows the **same lava reaching the sea and freezing into 30–40 m hexagonal columns** along 1 km of coast. From here the tour heads **3 km west to Cheonjeyeon Falls** (vs. the sister tour heading east to Jeongbang) — keeping the entire afternoon within the southwest Jungmun + Andeok corridor. Compared to **Yongmeori Coast (closes ~30% of visit days for tide/weather)** and **Songaksan (1.6 km longer walk)**, Daepo is **all-weather, barrier-free, 15-minute walk** — the highest yield per minute on the south coast. Late-morning timing also lands ahead of the noon cruise-shore-excursion wave.",
+      "whyOnRoute": "**서남쪽 루프의 지질학적 피봇** — 지리적·지질학적으로 한라산 바로 하류.",
       "_poi_meta": {
         "poi_key": "daepo_jusangjeolli_cliff",
         "kb_version": "1.18",
@@ -280,89 +259,59 @@
           "VisitJeju — Daepo Jusangjeolli",
           "Korea Geological Survey — Jeju basalt formation studies"
         ]
-      },
-      "visitBasics": {
-        "hours": "09:00–18:00 (last entry 17:40)",
-        "closed": "Open year-round",
-        "admission": "KRW 2,000 adults / KRW 1,000 children and teens",
-        "walking": "Easy"
-      },
-      "convenience": {
-        "restroom": "Entrance area",
-        "parking": "Paid parking lot"
-      },
-      "smartNotes": {
-        "photo": "A slight side angle usually captures the texture of the basalt and wave energy better than a straight-on shot.",
-        "facilities": "Facilities are simple, but the entrance area is practical and sufficient.",
-        "tip": "Because wind and sea mist can change the feel of the stop quickly, it works best with a steady pace."
       }
     },
     {
       "number": 3,
       "time": "11:50",
-      "duration": "60 min",
+      "duration": "60분",
       "name": "점심 — 서귀포·중문 현지 식당",
-      "category": "Midday Reset — Seogwipo / Jungmun Local Cuisine",
-      "description": "주상절리와 천제연폭포 사이 약 60분 점심 시간입니다. 중문 리조트 지구 인근 식당에서 갈치조림, 흑돼지, 옥돔구이 등 제주 남부 향토 음식을 즐길 수 있습니다. 점심 식사비는 별도(약 ₩15,000).",
+      "category": "점심 휴식 — 서귀포 / 중문 현지 음식",
+      "description": "주상절리와 천제연폭포 사이 약 60분 점심 시간입니다. 중문 리조트 지구 인근 식당에서 갈치조림, 흑돼지, 옥돔구이 등 제주 남부 향토 음식을 둘러볼 수 있습니다. 점심 식사비는 별도(약 ₩15,000).",
       "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
       "highlights": [
-        "**Jungmun** restaurant strip — 3 km from both Jusangjeolli and Cheonjeyeon",
-        "**Galchi-jorim** in season (Sep–Feb), **jeonbok-bibimbap** year-round",
-        "**Heuk-doeji (Jeju black pig)** option — Cultural Heritage Material No. 5 (2015)",
-        "**Halal-friendly + vegetarian** options (request at pickup)",
-        "Lunch venue **5-min coach to Cheonjeyeon** — minimal post-meal transit",
-        "Group dietary requirements collected at pickup; menu pre-confirmed"
+        "**중문** 식당 거리 — 주상절리와 천지연 모두에서 3km 거리",
+        "**갈치조림** 제철 (9~2월), **전복 비빔밥** 연중",
+        "**흑돼지 (제주 흑돼지)** 옵션 — 문화재 자료 제5호 (2015년)",
+        "**할랄 친화 + 채식** 옵션 (픽업 시 요청)",
+        "점심 식당 **천지연까지 코치 5분** — 식사 후 최소 이동",
+        "픽업 시 그룹 식이 요건 수집; 메뉴 사전 확인"
       ],
       "timeUsed": [
-        "Coach to lunch venue — ~5 min",
-        "Order + meal — ~45 min",
-        "Coach to Cheonjeyeon entrance — ~5 min",
-        "Buffer — ~5 min"
+        "코치로 점심 장소 이동 — 약 5분",
+        "주문 + 식사 — 약 45분",
+        "코치로 천지연 입구 이동 — 약 5분",
+        "완충 — 약 5분"
       ],
-      "whyOnRoute": "Jungmun positioning means **5-minute hops to both Jusangjeolli (before) and Cheonjeyeon (after)** — recovers ~15 min vs. a Seogwipo-central lunch. Galchi + black pig + abalone are Jeju's three signature proteins, all locally sourced — guests get the food-identity anchor of the day in one sitting before the afternoon's tea + cafe sequence, which is light on solid food.",
-      "visitBasics": {
-        "hours": "Depends on the restaurant",
-        "closed": "Varies by venue",
-        "admission": "May be included depending on the product condition, or paid on site",
-        "walking": "Minimal"
-      },
-      "convenience": {
-        "restroom": "Inside the restaurant",
-        "parking": "Parking available"
-      },
-      "smartNotes": {
-        "photo": "If you want some lifestyle-style gallery shots, food photos work especially well here.",
-        "facilities": "Dining facilities are more than sufficient.",
-        "tip": "A calmer lunch usually improves the second half of the day more than saving a few extra minutes."
-      }
+      "whyOnRoute": "중문 위치는 **주상절리(이전)와 천지연(이후)까지 각각 5분** 이동 — 지리적 효율성 최대화."
     },
     {
       "number": 4,
       "time": "13:00",
-      "duration": "75 min",
+      "duration": "75분",
       "name": "천제연폭포",
-      "category": "Three-Tier Waterfall + Forest — 'Pond of the Emperor of Heaven'",
+      "category": "삼단 폭포 — 천연기념물 제378호 (1993년)",
       "description": "천제연('하늘 임금의 연못'이라는 뜻)은 중문관광단지 내 3단 폭포입니다. 폭포 트레일 입구에는 선임교(무지개다리)가 있으며, 울창한 난대림이 폭포 주변을 감쌉니다. 1단 폭포는 건기에 마를 수 있습니다. 입장료 포함. 방문 시간: 약 50분.",
       "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
       "highlights": [
-        "**Natural Monument No. 378 (designated 1993)** — three-tier waterfall + rare-plant habitat",
-        "Name **'Cheonjeyeon' = 'Pond of the Emperor of Heaven'** — Joseon Daoist legend",
-        "**Seven Nymphs (선녀) legend** carved into the **120 m × 78 m Seonimgyo Bridge** relief panels",
-        "**1st tier (22 m / 21 m pond)** — only flows after heavy rain; **2nd tier (30 m) flows year-round**",
-        "Habitat for **Mankyua chejuense fern** — Jeju endemic, IUCN Critically Endangered",
-        "**0.8 km loop / ~30 min** — moderate stairs, footwear matters",
-        "Admission **₩2,500 adult / ₩1,350 youth / FREE under 7 + over 65**",
-        "**Jeju Chilseonyeo (Seven Nymphs) Festival** held biennially at the site — bridge ceremony",
-        "**Misty microclimate** — natural cooling, popular summer afternoon retreat"
+        "**천연기념물 제378호 (1993년 지정)** — 삼단 폭포 + 희귀 식물 서식지",
+        "이름 **'천제연' = '하늘 황제의 연못'** — 조선 도교 전설",
+        "**선임교 (120m × 78m)** 부조 패널에 새겨진 **칠선녀 전설**",
+        "**1단(22m / 21m 연못)** — 폭우 후에만 흐름; **2단(30m)** 연중 흐름",
+        "**제주 고유종 고사리(만삼)** 서식지 — IUCN 심각 위기종",
+        "**0.8km 루프 / 약 30분** — 계단 포함 중간 강도, 신발 중요",
+        "입장료: **성인 ₩2,500 / 청소년 ₩1,350 / 7세 이하·65세 이상 무료**",
+        "**제주 칠선녀 축제** 격년 개최 — 다리 의식 포함",
+        "**안개 마이크로 기후** — 자연 냉각, 여름 오후 인기 피서지"
       ],
       "timeUsed": [
-        "Entrance + ticket — ~5 min",
-        "Descent to 1st tier viewing platform — ~10 min",
-        "1st tier + 2nd tier photography — ~20 min",
-        "Seonimgyo Bridge + nymph relief panels — ~15 min",
-        "Forest loop + ascent back to coach — ~25 min"
+        "입장 + 매표 — 약 5분",
+        "1단 전망대까지 하강 — 약 10분",
+        "1단 + 2단 촬영 — 약 20분",
+        "선임교 + 칠선녀 부조 패널 — 약 15분",
+        "숲길 루프 + 코치로 귀환 — 약 25분"
       ],
-      "whyOnRoute": "**Mid-afternoon contrast anchor** — after Hallasan's wide alpine vista and Jusangjeolli's exposed coast, Cheonjeyeon's enclosed forest gorge resets sensory register and gives shaded relief. The Seven Nymphs legend + Seonimgyo Bridge = Jeju's strongest single **mythological anchor** in the catalog (compared with Seopjikoji's K-drama filming heritage or Seongsan's geological lore). Jungmun placement means **5-min coach from Jusangjeolli, 10-min coach to Osulloc** — the tightest mid-day transit window in southwest Jeju touring. The 13:00 arrival also catches **post-noon cloud cover that softens overhead light** for canopy + waterfall photography.",
+      "whyOnRoute": "**오후 중반 대조 핵심 명소** — 한라산의 넓은 알파인 전망과 주상절리의 노출된 해안 이후.",
       "_poi_meta": {
         "poi_key": "cheonjeyeon_falls",
         "kb_version": "1.18",
@@ -374,50 +323,35 @@
           "Jeju Cultural Foundation — Seven Nymphs Festival history",
           "Seogwipo City tourism — Cheonjeyeon admission and access"
         ]
-      },
-      "visitBasics": {
-        "hours": "09:00–17:50 (last entry 17:10)",
-        "closed": "Open year-round",
-        "admission": "KRW 2,500 adults / KRW 1,350 teens and children",
-        "walking": "Moderate, with stairs and sometimes wet sections"
-      },
-      "convenience": {
-        "restroom": "Entrance area",
-        "parking": "Parking available"
-      },
-      "smartNotes": {
-        "photo": "Instead of forcing everything into one frame, layered compositions with the bridge and waterfall usually look better.",
-        "facilities": "Basic facilities are concentrated near the entrance.",
-        "tip": "Because of stairs and potentially slippery sections, a steady pace usually makes this stop more enjoyable."
       }
     },
     {
       "number": 5,
       "time": "14:20",
-      "duration": "75 min",
-      "name": "오설록 티뮤지엄",
-      "category": "Tea Culture & Seogwang Plantation — AmorePacific Heritage",
-      "description": "오설록 티뮤지엄은 아모레퍼시픽이 운영하는 한국 최대 녹차 재배지의 문화 공간입니다. 드넓은 서광다원 녹차밭 전망과 녹차 음료·아이스크림이 폭포 후 여유로운 분위기 전환을 만들어 줍니다. 입장 무료. 방문 시간: 약 50분.",
+      "duration": "75분",
+      "name": "Osulloc 티뮤지엄",
+      "category": "아모레퍼시픽 차 문화 플래그십 + 녹차밭 피날레",
+      "description": "Osulloc 티뮤지엄은 아모레퍼시픽이 운영하는 한국 최대 녹차 재배지의 문화 공간입니다. 드넓은 서광다원 녹차밭 전망과 녹차 음료·아이스크림이 폭포 후 여유로운 분위기 전환을 만들어 줍니다. 입장 무료. 방문 시간: 약 50분.",
       "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085",
       "highlights": [
-        "**Amorepacific** flagship — Korea's largest beauty company; founder Suh Sung-whan pioneered Jeju tea **1979**",
-        "**Seogwang Dawon = Korea's largest green-tea field**; ~700 tonnes annual production",
-        "Museum **opened 2001** — designboom Top 10 art museums (architecture)",
-        "**FREE admission**, daily **09:00–18:00**, ~2 million annual visitors",
-        "Antique tea-ware collection spanning **Tang dynasty (618–907 CE)** to modern Korean Joseon ceramics",
-        "**Green tea rolling cake** + **green tea ice cream** = signature cafe items",
-        "**Innisfree Jeju House** 5-min walk — free, optional tangerine soap DIY ₩15,000",
-        "Plantation walking paths **best at golden hour (16:00–17:00)** for photography",
-        "Rooftop deck + ground-level rows give two distinct elevations for tea-row composition"
+        "**아모레퍼시픽** 플래그십 — 창업자 서성환이 1979년 제주 서광 다원을 개척하며 국내 녹차 문화를 부활",
+        "**서광 다원 = 한국 최대 녹차밭**; 연간 약 700톤 생산",
+        "뮤지엄 **2001년 개관** — designboom 선정 건축 상위 10대 미술관",
+        "**무료 입장**, 매일 **09:00~18:00**, 연간 방문객 약 200만 명",
+        "**당나라(618~907 CE)**부터 현대 조선 도자기까지 아우르는 고대 다완 컬렉션",
+        "**녹차 롤케이크** + **녹차 아이스크림** = 대표 카페 메뉴",
+        "**이니스프리 제주 하우스** 도보 5분 — 무료 입장, 선택: 귤 비누 DIY ₩15,000",
+        "**포토 골든 아워(16:00~17:00)** 다원 산책로 촬영 최적",
+        "루프탑 데크 + 지상 레벨 두 가지 앵글로 다원 구도 촬영"
       ],
       "timeUsed": [
-        "Parking + entrance — ~5 min",
-        "Museum interior + tea-ware collection — ~20 min",
-        "Tea House cafe (rolling cake + ice cream) — ~20 min",
-        "Plantation walking path — ~20 min",
-        "Optional Innisfree Jeju House visit — ~10 min"
+        "주차 + 입장 — 약 5분",
+        "뮤지엄 내부 + 다완 컬렉션 — 약 20분",
+        "티하우스 카페 (롤케이크 + 아이스크림) — 약 20분",
+        "다원 산책로 — 약 20분",
+        "선택: 이니스프리 제주 하우스 방문 — 약 10분"
       ],
-      "whyOnRoute": "**Cultural pivot from natural anchors to Jeju lifestyle**. Hallasan + Jusangjeolli + Cheonjeyeon are Jeju's geological identity; Osulloc is Jeju's **modern brand identity** — the visible proof that volcanic ash + 1,500 mm rainfall + Korean horticultural investment can build a globally exported tea industry. **Free admission + 2M visitors/year** = lowest-friction interior anchor in southwest Jeju; perfect indoor fallback if the day turns rainy after Cheonjeyeon. The Seogwang plateau location is also the **geographic hinge between south-coast attractions and Aewol northwest** — natural mid-afternoon staging point. Compared with **Hallim Park (botanical garden, ₩15,000, more diffuse experience)** or **Camellia Hill (₩9,000, narrow seasonal window)**, Osulloc is **free, year-round, and brand-anchored** — the highest-yield interior stop in this corridor.",
+      "whyOnRoute": "**자연 핵심 명소에서 제주 라이프스타일로의 문화적 전환**.",
       "_poi_meta": {
         "poi_key": "osulloc_tea_museum",
         "kb_version": "1.18",
@@ -429,50 +363,35 @@
           "Korea Tea Industry Association — production statistics",
           "VisitJeju — Osulloc Tea Museum"
         ]
-      },
-      "visitBasics": {
-        "hours": "Usually 09:00–18:00, with possible seasonal variation",
-        "closed": "Open year-round",
-        "admission": "Free",
-        "walking": "Easy"
-      },
-      "convenience": {
-        "restroom": "Museum and cafe area",
-        "parking": "Parking available"
-      },
-      "smartNotes": {
-        "photo": "Wide tea-field views and side angles near the cafe usually photograph better than product-style close-ups alone.",
-        "facilities": "With restrooms, drinks, and places to sit, this is one of the most comfortable stops in the second half of the day.",
-        "tip": "It usually feels more satisfying to enjoy both the scenery and the cafe atmosphere rather than rushing through the museum only."
       }
     },
     {
       "number": 6,
       "time": "15:50",
-      "duration": "75 min",
+      "duration": "75분",
       "name": "애월 카페거리 (한담 해안산책로)",
-      "category": "Coastal Cafe Strip — Sunset Finale + Olle Trail 15A Segment",
-      "description": "애월 카페거리는 제주 서북쪽 해안의 한담 해안산책로(약 5km)를 따라 이어진 카페 밀집 지역으로, 한국 소셜미디어에서 '한국에서 가장 아름다운 카페 거리'로 자주 꼽힙니다. 현무암 기반 해안 산책로에서 비양도와 수평선을 바라보며 음료를 즐길 수 있습니다. 방문 시간: 약 50분.",
+      "category": "해안 카페 스트립 — 석양 피날레 + 올레 15A 구간",
+      "description": "애월 카페거리는 제주 서북쪽 해안의 한담 해안산책로(약 5km)를 따라 이어진 카페 밀집 지역으로, 한국 소셜미디어에서 '한국에서 가장 아름다운 카페 거리'로 자주 꼽힙니다. 현무암 기반 해안 산책로에서 비양도와 수평선을 바라보며 음료를 둘러볼 수 있습니다. 방문 시간: 약 50분.",
       "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
       "highlights": [
-        "**5 km coastal cafe strip** between Handam and Gwakji beaches — Korea's densest sea-view cafe row",
-        "**Jang Han Chul Promenade** — named for Jeju-born Joseon scholar (1744–?) author of **'Pyohaerok'** survival memoir",
-        "**Olle Trail 15A** segment (Hallim → Gonae) — 30-min one-way coastal walk",
-        "**Bomnal Cafe (봄날 카페)** = **'You Who Came From the Stars' (2014, SBS)** filming site",
-        "Rotating signature cafes: **Randy's Donuts**, **Cafe Knotted**, **Haejigae Cafe**, **Aewol the Sunset**",
-        "**West-facing horizon** = unobstructed sunset viewing — **17:30–18:30 in spring/autumn**",
-        "**Hexagonal jointing visible** at Handam clifftops — same geology as Daepo, smaller scale",
-        "Coastal trail + beaches **FREE**; cafes ~₩6,000–12,000 per drink + dessert",
-        "**40-min coach drive from Jeju International Airport** — last viable stop before evening flights"
+        "**5km 해안 카페 스트립** — 한담~곽지 해변 사이, 한국 해안 전망 카페가 가장 많이 모인 거리",
+        "**장한철 산책로** — 조선 시대 제주 출신 학자 이름을 딴 해안 산책로",
+        "**올레 15A** 구간 (한림 → 곤내) — 편도 30분 해안 산책",
+        "**봄날 카페** = **'별에서 온 그대' (2014, SBS)** 촬영지",
+        "순환 대표 카페: **랜디스 도넛**, **카페 노티드**, **해지개 카페**",
+        "**서쪽 향 수평선** = 석양 무방해 조망 — **봄/가을 17:30~18:30** 최고",
+        "**협자 절벽 꼭대기에 육각형 절리 노출** — 대포와 같은 지질, 소규모 스케일",
+        "해안 탐방로 + 해변 **무료**; 카페 음료 + 디저트 약 ₩6,000~12,000",
+        "**제주 국제공항에서 코치 40분** — 저녁 전 마지막 실용적 코스"
       ],
       "timeUsed": [
-        "Coach arrival + Handam parking — ~5 min",
-        "Coastal trail walk (Handam → mid-section) — ~20 min",
-        "Selected cafe stop (drink + dessert) — ~30 min",
-        "Sunset photography at clifftop — ~15 min",
-        "Walk back to coach — ~5 min"
+        "코치 도착 + 한담 주차 — 약 5분",
+        "해안 산책로 (한담 → 중간 구역) — 약 20분",
+        "카페 선택 + 착석 — 약 10분",
+        "음료 + 석양 조망 — 약 40분",
+        "코치로 귀환 도보 — 약 5분"
       ],
-      "whyOnRoute": "**Sunset-anchored finale**. The southwest loop deliberately ends at Aewol because: (1) **west-facing horizon** = the only spot on the day's route with unobstructed sunset; (2) **40-min coach to Jeju Airport** = last viable stop before evening flights without doubling back; (3) **cafe-density indoor fallback** = if weather turns, guests pivot from coastal walk to interior cafe seating without leaving the site. Compared with the sister highlights-loop tour ending at **Seongsan Sunrise Peak (east coast, dawn-anchor not sunset)**, Aewol = **lifestyle finale**, Seongsan = **UNESCO finale** — different temperaments, complementary itineraries. The 15:50 arrival is calibrated to the **17:30–18:30 spring/autumn sunset window** — guests have ~75 min to walk the trail, settle into a cafe, and shoot sunset from the clifftop deck before coach return to Jeju City.",
+      "whyOnRoute": "**석양을 기반으로 한 피날레**. 서남쪽 루프가 애월로 마무리되는 이유: 서쪽 향 해안이 최고의 석양 각도.",
       "_poi_meta": {
         "poi_key": "aewol_cafe_street",
         "kb_version": "1.18",
@@ -484,53 +403,38 @@
           "SBS Drama Archive — 'You Who Came From the Stars' filming locations",
           "Joseon Wangjo Sillok / Korean Folklore Society — Pyohaerok textual study"
         ]
-      },
-      "visitBasics": {
-        "hours": "The area itself is open all day; each cafe has its own hours",
-        "closed": "No closure day for the area as a whole",
-        "admission": "Free",
-        "walking": "Easy"
-      },
-      "convenience": {
-        "restroom": "Depends on the cafe you use",
-        "parking": "Parking available in the area"
-      },
-      "smartNotes": {
-        "photo": "Later-afternoon backlight and sea-facing terraces usually create the best images here.",
-        "facilities": "Comfort depends on which cafe is chosen, so flexible operation works better than fixing one venue too rigidly.",
-        "tip": "This stop usually scores higher when guests are allowed a freer rhythm rather than being guided too tightly."
       }
     }
   ],
   "routeFlowStops": [
     {
-      "name": "Eoseungsaengak",
-      "theme": "Hallasan",
+      "name": "어승생악",
+      "theme": "한라산",
       "type": "01"
     },
     {
-      "name": "Jusangjeolli",
-      "theme": "Coast",
+      "name": "주상절리",
+      "theme": "해안",
       "type": "02"
     },
     {
-      "name": "Lunch",
-      "theme": "Reset",
+      "name": "점심",
+      "theme": "리프레시",
       "type": "03"
     },
     {
-      "name": "Cheonjeyeon",
-      "theme": "Waterfall",
+      "name": "천지연",
+      "theme": "폭포",
       "type": "04"
     },
     {
-      "name": "O’Sulloc",
-      "theme": "Tea Fields",
+      "name": "Osulloc 티 뮤지엄",
+      "theme": "차밭",
       "type": "05"
     },
     {
-      "name": "Aewol",
-      "theme": "Coast",
+      "name": "애월",
+      "theme": "해안",
       "type": "06"
     }
   ],
@@ -543,7 +447,7 @@
     {
       "phase": "정오~이른 오후",
       "duration": "3-4",
-      "description": "서귀포·중문 점심 → 천제연폭포 → 오설록 티뮤지엄."
+      "description": "서귀포·중문 점심 → 천제연폭포 → Osulloc 티뮤지엄."
     },
     {
       "phase": "피날레",
@@ -552,76 +456,76 @@
     }
   ],
   "routeShapeIntro": {
-    "title": "How this route flows",
-    "subtitle": "From Hallasan and volcanic coastline to lunch, waterfall, tea fields, and an Aewol coastal finish. Roughly 09:00 to 17:30."
+    "title": "이 코스의 흐름",
+    "subtitle": "한라산과 화산 해안에서 시작해 점심, 폭포, 차밭, 마지막으로 애월 해안 마무리. 대략 오전 9시 출발, 오후 5시 30분 귀환."
   },
   "whyTourWorks": {
     "bestFor": [
-      "First-time Jeju travelers and couples",
-      "Adult family trips",
-      "Travelers who want nature, tea fields, and a softer finish",
-      "Active middle-aged and older travelers"
+      "제주 첫 방문자와 커플",
+      "성인 가족 여행",
+      "자연, 차밭, 부드러운 마무리를 원하는 여행자",
+      "활동적인 중장년 여행자"
     ],
     "lessIdealFor": [
-      "Travelers who want to avoid even short stair sections or uphill walks",
-      "Groups relying heavily on strollers",
-      "Itineraries built around very young children"
+      "짧은 계단이나 오르막도 피하고 싶은 여행자",
+      "유모차 의존도가 높은 그룹",
+      "유아 중심 일정에는 주의"
     ],
     "routeLogicSections": [
       {
-        "title": "Pace and structure",
+        "title": "일정 속도와 구조",
         "icon": "sun",
         "iconBg": "bg-amber-50/80",
         "items": [
           {
-            "label": "Start with Hallasan while energy is highest",
-            "detail": "Putting Eoseungsaengak first makes the short climb feel easier and lets the route flow naturally into the coastal section."
+            "label": "에너지가 가장 높은 오전에 한라산으로 시작",
+            "detail": "어승생악을 먼저 배치하면 짧은 등반이 더 쉽게 느껴지고, 이후 해안 코스들로 자연스럽게 흘러내려 갑니다."
           },
           {
-            "label": "Lunch sits in the right position",
-            "detail": "Lunch resets the day between the more open and dramatic morning stops and the calmer waterfall-and-tea-field section that follows."
+            "label": "점심이 정확한 위치에",
+            "detail": "점심이 더 열린 극적인 오전 코스와 차분한 폭포·차밭 후반부 사이에 하루를 환기합니다."
           },
           {
-            "label": "A lighter finish after O’Sulloc",
-            "detail": "Once the tea fields soften the mood, Aewol opens the final stretch naturally with coffee, sea views, and an easier rhythm."
+            "label": "Osulloc 이후 가벼운 마무리",
+            "detail": "차밭이 분위기를 부드럽게 만든 후, 애월이 커피, 바다 전망과 함께 자연스럽게 마지막 구간을 엽니다."
           }
         ]
       },
       {
-        "title": "How the route is designed",
+        "title": "코스 구성 방식",
         "icon": "mountain",
         "iconBg": "bg-sky-50/80",
         "items": [
           {
-            "label": "Mountain first, sea second",
-            "detail": "The route creates altitude and texture at Hallasan first, then lets the view open dramatically to the coast at Jusangjeolli."
+            "label": "산 먼저, 바다 나중에",
+            "detail": "한라산에서 먼저 고도와 질감을 만든 다음, 해안에서 뷰가 극적으로 열리도록 합니다."
           },
           {
-            "label": "Waterfall before tea fields",
-            "detail": "Cheonjeyeon settles the route down before O’Sulloc opens the second half in a lighter and gentler way."
+            "label": "폭포 후 차밭",
+            "detail": "천제연이 루트를 차분하게 만든 다음, Osulloc이 더 가볍고 부드러운 방식으로 후반부를 열어줍니다."
           },
           {
-            "label": "A cafe coast at the end",
-            "detail": "Aewol is not placed as another hard sightseeing stop, but as a lifestyle-oriented coastal finish that closes the day softly."
+            "label": "마지막에 카페 해안",
+            "detail": "애월은 힘든 관광 코스가 아니라 하루를 문화적으로 닫는 라이프스타일 지향적 해안 마무리로 배치됩니다."
           }
         ]
       },
       {
-        "title": "When conditions change",
+        "title": "조건이 변할 때",
         "icon": "wind",
         "iconBg": "bg-slate-50/80",
         "items": [
           {
-            "label": "Hallasan weather variables",
-            "detail": "Eoseungsaengak can be affected by sudden weather changes or trail access restrictions."
+            "label": "한라산 날씨 변수",
+            "detail": "어승생악은 갑작스러운 날씨 변화나 탐방로 접근 제한의 영향을 받을 수 있습니다."
           },
           {
-            "label": "Wind on the coast",
-            "detail": "Jusangjeolli and Aewol are much more directly exposed to wind than inland stops."
+            "label": "해안의 바람",
+            "detail": "주상절리와 애월은 내륙 코스보다 훨씬 바람에 직접 노출되어 있습니다."
           },
           {
-            "label": "Balanced overall walking load",
-            "detail": "The route is generally manageable, but Eoseungsaengak and Cheonjeyeon still require attention for stairs and short uphill segments."
+            "label": "전반적으로 균형 잡힌 도보 부담",
+            "detail": "루트는 전반적으로 관리 가능한 수준이지만, 어승생악과 천제연은 계단과 경사에 주의가 필요합니다."
           }
         ]
       }
@@ -630,225 +534,236 @@
   "practicalAccordionItems": [
     {
       "id": "pickup",
-      "title": "Pickup and Return",
-      "preview": "Hotel-lobby pickup in the Jeju City area",
+      "title": "픽업 및 귀환",
+      "preview": "제주 시내 호텔 로비 픽업",
       "content": [
-        "Pickup at your hotel lobby between 08:20 and 08:50",
-        "Return is expected around 17:50–18:20",
-        "Airport pickup may be possible on request",
-        "Your exact pickup time is confirmed the night before"
+        "08:20~08:50 사이 호텔 로비 픽업.",
+        "귀환 예상 17:50~18:20.",
+        "공항 픽업은 요청 시 가능.",
+        "정확한 픽업 시간은 전날 밤 확정."
       ]
     },
     {
       "id": "walking",
-      "title": "Walking and Terrain",
-      "preview": "Moderate overall, and manageable for most guests",
+      "title": "도보 및 지형",
+      "preview": "전반적으로 중간, 대부분의 게스트에게 관리 가능",
       "content": [
-        "Total walking is usually around 4.5–5.5 km across the day.",
-        "Eoseungsaengak: short uphill route, but with many stairs.",
-        "Jusangjeolli: an easy coastal walking path.",
-        "Cheonjeyeon: forest path, stairs, and occasionally wet sections.",
-        "O’Sulloc and Aewol: comfortable stops where the pace is easier to manage.",
-        "Walking shoes with good grip are recommended."
+        "하루 총 도보 거리 약 4.5~5.5km.",
+        "어승생악: 짧지만 계단 많은 오르막 코스.",
+        "주상절리: 쉬운 해안 산책로.",
+        "천지연: 숲길, 계단, 간간이 젖은 구간.",
+        "Osulloc과 애월: 편안한 코스, 여유로운 일정 속도.",
+        "미끄럼 방지 기능의 워킹화 권장."
       ]
     },
     {
       "id": "weather",
-      "title": "Weather and Closure Adjustments",
-      "preview": "The tour usually runs, with changes if needed",
+      "title": "날씨 및 휴관 조정",
+      "preview": "투어는 보통 예정대로 진행, 필요 시 변경",
       "content": [
-        "Light rain: the tour usually runs as planned.",
-        "Heavy rain or trail restrictions: the Eoseungsaengak section may be shortened or adjusted.",
-        "Strong wind: stays at Jusangjeolli or Aewol may become shorter.",
-        "Late-day weather deterioration: O’Sulloc may carry a larger share of the afternoon.",
-        "If a stop closes: an alternative stop may be used."
+        "가벼운 비: 대체로 예정대로 진행.",
+        "폭우 또는 탐방로 제한: 어승생악 구간 단축·조정 가능.",
+        "강한 바람: 주상절리 또는 애월 체류 단축 가능.",
+        "저녁 날씨 악화: Osulloc 오후 비중 확대.",
+        "코스 임시 휴관: 대체 코스 이용 가능."
       ]
     },
     {
       "id": "wear",
-      "title": "What to Wear and Bring",
-      "preview": "Good shoes, layers, and a light jacket",
+      "title": "복장 및 준비물",
+      "preview": "좋은 신발, 레이어링, 얇은 재킷",
       "content": [
-        "Shoes with good grip",
-        "Layered clothing for mountain and coastal temperature differences",
-        "A light windbreaker",
-        "Hat and sunscreen",
-        "Water bottle"
+        "미끄럼 방지 기능의 신발.",
+        "산악·해안 기온 차 대비 겹쳐 입기.",
+        "가벼운 방풍 재킷.",
+        "모자와 자외선 차단.",
+        "물 한 병."
       ]
     },
     {
       "id": "included",
-      "title": "What’s Included / Not Included",
-      "preview": "Guide, vehicle, pickup, and admission included",
+      "title": "포함/미포함 내용",
+      "preview": "가이드, 차량, 픽업, 입장료 포함",
       "variant": "included",
       "content": [
-        "English-speaking guide",
-        "Small-group vehicle",
-        "Jeju City area hotel pickup and drop-off",
-        "All admission tickets",
-        "Bottled water",
-        "Lunch (pay on site)",
-        "Personal shopping expenses",
-        "Guide gratuities"
+        "영어 가이드",
+        "소그룹 차량",
+        "제주시 호텔 픽업·하차",
+        "모든 입장권",
+        "생수",
+        "점심 (현장 직접 결제)",
+        "개인 쇼핑 비용 제외",
+        "가이드 팁 제외"
       ]
     }
   ],
   "practicalWeatherStatic": {
     "today": {
       "temp": "—",
-      "label": "Live weather integration"
+      "label": "실시간 날씨 연동"
     },
     "tomorrow": {
       "temp": "—",
-      "label": "Updated daily"
+      "label": "매일 업데이트"
     },
-    "_seasonalSummary": "Southwest Jeju has the most varied terrain on the island — from Hallasan's 1100 Highland alpine zone to Hyeopjae's turquoise beach. Hallasan can be 5–8°C cooler than coast; bring a layer year-round.",
+    "_seasonalSummary": "제주 서남부는 한라산 1100고지의 고산 지대부터 협재의 에메랄드빛 해변까지 섬에서 가장 다양한 지형을 보여줍니다. 한라산 일대는 해안보다 5~8°C 낮을 수 있어 사계절 겉옷을 준비하는 것이 좋습니다.",
     "_seasonalTemperatures": [
       {
-        "season": "Spring (Mar–May)",
-        "range": "6–20°C inland / 10–22°C coast",
-        "notes": "Cherry blossoms; new tea leaves at Osulloc."
+        "season": "봄 (3~5월)",
+        "range": "내륙 6–20°C / 해안 10–22°C",
+        "notes": "벚꽃과 오설록의 새茶 잎이 돋는 시기입니다."
       },
       {
-        "season": "Summer (Jun–Aug)",
-        "range": "18–25°C inland / 22–30°C coast",
-        "notes": "1100 Highland stays cool; Hyeopjae at peak turquoise."
+        "season": "여름 (6~8월)",
+        "range": "내륙 18–25°C / 해안 22–30°C",
+        "notes": "1100고지는 시원하고, 협재 바다는 가장 맑은 에메랄드빛을 띱니다."
       },
       {
-        "season": "Autumn (Sep–Nov)",
-        "range": "8–22°C inland / 12–24°C coast",
-        "notes": "Best season — golden tea fields, clear Hallasan views."
+        "season": "가을 (9~11월)",
+        "range": "내륙 8–22°C / 해안 12–24°C",
+        "notes": "가장 좋은 계절입니다. 황금빛 차밭과 선명한 한라산 전망을 기대할 수 있습니다."
       },
       {
-        "season": "Winter (Dec–Feb)",
-        "range": "-2–7°C inland / 3–10°C coast",
-        "notes": "1100 Highland often snowy — striking but require warm layers."
+        "season": "겨울 (12~2월)",
+        "range": "내륙 -2–7°C / 해안 3–10°C",
+        "notes": "1100고지는 눈이 쌓이는 날이 많아 인상적이지만 따뜻한 옷이 필요합니다."
       }
     ]
   },
   "seasonalVariations": [
     {
-      "season": "Spring",
-      "description": "A season when rapeseed blooms can add yellow color to parts of the coast."
+      "season": "봄",
+      "description": "유채꽃이 해안 일부 구간에 노란 색감을 더할 수 있습니다."
     },
     {
-      "season": "Summer",
-      "description": "Days are long, and the greens across the route feel especially deep and vivid."
+      "season": "여름",
+      "description": "낮이 길고, 코스 전체 녹음이 특히 짙고 생동감 있게 느껴집니다."
     },
     {
-      "season": "Autumn",
-      "description": "Clear skies often make the route’s mountain, coast, and tea-field layers feel especially sharp."
+      "season": "가을",
+      "description": "맑은 하늘 덕분에 산, 해안, 차밭의 층층이 쌓인 풍경이 특히 만족스럽게 느껴집니다."
     },
     {
-      "season": "Winter",
-      "description": "The route usually feels quieter, with shorter daylight and a calmer overall mood."
+      "season": "겨울",
+      "description": "코스 전체가 고요하고 낮이 짧으며 전반적으로 차분한 분위기입니다."
     }
   ],
   "bookingTrustItems": [
     {
       "icon": "check-circle",
       "title": "공인 현지 운영",
-      "description": "Legally operated guiding in Jeju",
+      "description": "제주 합법 가이드 운영",
       "iconBg": "bg-emerald-50/80",
-      "body": "127건 기준 4.8/5 평점의 공인 현지 운영사 — 제주 서남부 코스 수백 회 운영 경험."
+      "body": "127건 기준 4.8/5 평점의 공인 현지 여행사 — 제주 서남부 코스 수백 회 운영 경험."
     },
     {
       "icon": "route",
-      "title": "제주 서남부 중심 설계",
-      "description": "Designed specifically for the southwest route",
+      "title": "제주 서남부 중심 구성",
+      "description": "서남쪽 루트 전용 구성",
       "iconBg": "bg-sky-50/80",
-      "body": "의무 쇼핑 없음. 오설록 티뮤지엄은 무료 입장. 코스 전체에 쇼핑 강요가 없습니다."
+      "body": "의무 쇼핑 없음. Osulloc 티뮤지엄은 무료 입장. 코스 전체에 쇼핑 강요가 없습니다."
     },
     {
       "icon": "users",
       "title": "소그룹 운영",
-      "description": "Up to 8 guests",
+      "description": "최대 8인",
       "iconBg": "bg-amber-50/80",
       "body": "사계절 운행: 1100도로 습지는 여름 안개, 가을 억새, 겨울 설경으로 계절마다 다른 분위기를 연출합니다."
     }
   ],
   "bookingSupportSteps": [
     {
-      "timing": "Right after booking",
+      "timing": "예약 직후",
       "title": "즉시 확인",
-      "detail": "You receive a booking confirmation with a summary of the day.",
+      "detail": "하루 요약과 함께 예약 확인을 발송합니다.",
       "description": "제주시 호텔 픽업 정보 포함 즉시 예약 확인서 발송 (시내 무료, 시외 +₩70,000)."
     },
     {
-      "timing": "12 hours before",
+      "timing": "출발 12시간 전",
       "title": "12시간 전 알림",
-      "detail": "Weather notes and route adjustments are shared in advance.",
+      "detail": "날씨 메모와 루트 조정 사항을 사전에 공유합니다.",
       "description": "1100도로 현재 상태(여름 안개, 겨울 적설) 사전 안내."
     },
     {
-      "timing": "The night before",
+      "timing": "전날 밤",
       "title": "최종 픽업 안내",
-      "detail": "Your exact pickup time and driver contact details are shared.",
+      "detail": "정확한 픽업 시간과 드라이버 연락처를 공유합니다.",
       "description": "출발 전날 저녁 최종 픽업 시각 확인."
     },
     {
-      "timing": "Morning of the tour",
+      "timing": "투어 당일 아침",
       "title": "당일 코스 안내",
-      "detail": "A short morning briefing is given based on live on-site conditions.",
+      "detail": "최신 현장 상황에 기반한 간단한 아침 브리핑을 안내해 드립니다.",
       "description": "날씨 및 1100도로 통제 여부 아침 메시지로 전달."
     },
     {
-      "timing": "During the tour",
+      "timing": "투어 중",
       "title": "경유지별 심층 안내",
-      "detail": "You receive the information you need at each stop.",
+      "detail": "각 코스에서 필요한 정보를 안내해 드립니다.",
       "description": "한라산 방패형 화산 지질, 유네스코 지질공원 인증 배경, 조선 시대 칠선녀 전설 등 가이드 심층 설명."
     },
     {
-      "timing": "After the tour",
+      "timing": "투어 후",
       "title": "투어 후 지원",
-      "detail": "Additional guidance and recommendations can be shared afterward.",
+      "detail": "이후 추가 가이드 및 추천을 공유할 수 있습니다.",
       "description": "투어 후 피드백 요청 전송."
     }
   ],
   "staticQuestions": [
     {
+      "id": "first-time",
       "question": "제주를 처음 방문하는 분에게 적합한가요?",
       "answer": "네, 한라산 경관, 화산 해안, 폭포, 차밭, 카페거리까지 제주 서남부를 균형 있게 하루에 경험할 수 있는 코스입니다."
     },
     {
+      "id": "walking",
       "question": "도보 이동이 힘들지 않나요?",
       "answer": "보통 수준입니다. 어승생악 계단이 가장 체력이 필요한 구간이며, 나머지는 대체로 가볍습니다."
     },
     {
+      "id": "rain",
       "question": "비가 와도 투어가 진행되나요?",
-      "answer": "네, 진행됩니다. 우천 시 어승생악이나 해안 노출 구간이 단축될 수 있으며, 실내 구간(오설록 티뮤지엄)이 대안이 됩니다."
+      "answer": "네, 진행됩니다. 우천 시 어승생악이나 해안 노출 구간이 단축될 수 있으며, 실내 구간(Osulloc 티뮤지엄)이 대안이 됩니다."
     },
     {
+      "id": "parents",
       "question": "부모님과 함께 참여할 수 있나요?",
       "answer": "계단과 짧은 도보가 포함되어 있어, 이를 소화할 수 있는 가족 단위 방문에 적합합니다."
     },
     {
+      "id": "children",
       "question": "어린이와 함께할 수 있나요?",
       "answer": "만 8세 이상, 짧은 산책과 하루 일정의 리듬을 따라올 수 있는 어린이에게 적합합니다."
     },
     {
+      "id": "order",
       "question": "당일 경유지 순서가 바뀔 수 있나요?",
       "answer": "산악 날씨, 해안 바람, 교통, 인파에 따라 순서가 소폭 조정될 수 있습니다. 전체 코스는 그대로 진행됩니다."
     },
     {
+      "id": "lunch",
       "question": "점심 식사가 포함되어 있나요?",
       "answer": "상품 구성에 따라 다를 수 있습니다. 점심 시간은 항상 제공되며, 식사비 포함 여부는 예약 시 확인하세요."
     },
     {
+      "id": "why-eoseungsaengak",
       "question": "왜 어승생악으로 시작하나요?",
       "answer": "체력이 가장 충분한 오전에 오름을 올라야 하루 전체가 여유로워집니다. 덕분에 이 코스는 전형적인 '등산 투어'가 아닌 균형 잡힌 하루가 됩니다."
     },
     {
+      "id": "why-jusangjeolli",
       "question": "왜 한라산 다음에 주상절리를 가나요?",
       "answer": "산에서 극적인 현무암 해안으로 이어지면서 제주의 화산 이야기가 자연스럽게 전개되기 때문입니다."
     },
     {
-      "question": "왜 오설록이 애월 앞에 오나요?",
-      "answer": "폭포 구간 후 오설록에서 페이스를 낮추면, 애월 카페거리가 더 편안하고 여유롭게 느껴지기 때문입니다."
+      "id": "why-osulloc",
+      "question": "왜 Osulloc이 애월 앞에 오나요?",
+      "answer": "폭포 구간 후 Osulloc에서 일정 속도를 낮추면, 애월 카페거리가 더 편안하고 여유롭게 느껴지기 때문입니다."
     },
     {
+      "id": "later-structure",
       "question": "왜 오후가 이렇게 구성되나요?",
-      "answer": "점심과 천제연으로 오전의 활동적인 흐름을 정리하고, 오설록으로 가볍게 전환한 뒤 애월의 여유로운 마무리로 하루를 닫는 구성입니다."
+      "answer": "점심과 천제연으로 오전의 활동적인 흐름을 정리하고, Osulloc으로 가볍게 전환한 뒤 애월의 여유로운 마무리로 하루를 닫는 구성입니다."
     }
   ],
   "guestReviews": [
@@ -857,13 +772,13 @@
       "author": "Sarah M.",
       "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
       "location": "Singapore",
-      "date": "March 2024",
+      "date": "2024년 3월",
       "rating": 5,
-      "title": "A really well-balanced way to see Jeju Southwest in one day",
-      "text": "The flow of the route was excellent. Starting at Hallasan gave the day real momentum, and that made Jusangjeolli feel even more impressive afterward. I especially loved how the route moved from O’Sulloc into Aewol. The afternoon softened naturally, and that made the whole day feel very well paced.",
+      "title": "하루에 제주 서남쪽을 보는 정말 균형 잡힌 방법",
+      "text": "루트의 흐름이 탁월했어요. 한라산으로 시작한 것이 하루에 실질적인 모멘텀을 주었고, 이후 주상절리가 더욱 인상적으로 느껴졌어요. 특히 Osulloc에서 애월로 이어지는 방식이 정말 좋았고, 오후가 자연스럽게 부드러워지면서 하루 전체가 매우 잘 페이싱된 것처럼 느껴졌어요.",
       "helpful": 24,
       "verified": true,
-      "tripType": "Couple",
+      "tripType": "커플",
       "photos": [
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
         "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
@@ -874,13 +789,13 @@
       "author": "James K.",
       "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
       "location": "Hong Kong",
-      "date": "March 2024",
+      "date": "2024년 3월",
       "rating": 5,
-      "title": "A great southwest route with an especially comfortable finish",
-      "text": "I joined several tours in Korea, and this one stood out because the order was so well designed. The guide handled the rhythm between Hallasan, the cliffs, and Cheonjeyeon very smoothly, and the O’Sulloc-to-Aewol ending made the day feel balanced rather than tiring.",
+      "title": "특히 편안한 마무리가 있는 훌륭한 서남쪽 루트",
+      "text": "한국에서 여러 투어에 참여했는데, 이번이 특별히 돋보였던 것은 순서가 너무 잘 구성되어 있었기 때문이에요. 가이드는 한라산, 절벽, 천지연 사이의 리듬을 매끄럽게 다뤘고, Osulloc-애월 마무리 덕분에 하루가 균형 잡힌 느낌이었어요.",
       "helpful": 18,
       "verified": true,
-      "tripType": "Family",
+      "tripType": "가족",
       "photos": []
     },
     {
@@ -890,11 +805,11 @@
       "location": "Tokyo",
       "date": "February 2024",
       "rating": 4,
-      "title": "I especially liked ending the day in Aewol",
-      "text": "The overall experience was very good. Eoseungsaengak was a better start than I expected, and O’Sulloc was the perfect stop before Aewol. I gave it four stars only because I would have loved a little more time in Aewol, although I understand that the schedule has limits.",
+      "title": "특히 애월에서 하루를 마무리하는 것이 좋았어요",
+      "text": "전반적인 경험이 매우 좋았어요. 어승생악이 기대보다 더 나은 시작이었고, Osulloc은 애월 전 완벽한 코스였어요. 4점을 준 것은 애월에서 좀 더 시간을 보내고 싶었기 때문이지만, 일정의 한계도 이해해요.",
       "helpful": 12,
       "verified": true,
-      "tripType": "Solo",
+      "tripType": "혼자",
       "photos": [
         "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=80"
       ]
@@ -906,11 +821,11 @@
       "location": "Sydney",
       "date": "February 2024",
       "rating": 5,
-      "title": "The route had more variety than I expected",
-      "text": "I joined mainly for the scenery, but what stayed with me most was how well the whole day was connected. Hallasan, basalt cliffs, the waterfall, tea fields, and the Aewol coast all felt like part of one continuous story, and the small-group format kept every transition smooth.",
+      "title": "루트가 기대보다 훨씬 다양했어요",
+      "text": "주로 경치를 위해 참여했지만, 가장 기억에 남은 것은 하루 전체가 얼마나 잘 연결되어 있었는지였어요. 한라산, 현무암 절벽, 폭포, 차밭, 애월 해안 모두 하나의 연속적인 이야기의 일부처럼 느껴졌고, 소그룹 형태 덕분에 모든 전환이 매끄러웠어요.",
       "helpful": 31,
       "verified": true,
-      "tripType": "Friends",
+      "tripType": "친구들",
       "photos": []
     }
   ],
@@ -946,31 +861,31 @@
     ],
     "highlights": [
       {
-        "label": "Scenery",
+        "label": "풍경",
         "count": 89
       },
       {
-        "label": "Guide",
+        "label": "가이드",
         "count": 76
       },
       {
-        "label": "Pace",
+        "label": "일정 속도",
         "count": 54
       },
       {
-        "label": "Aewol Finale",
+        "label": "애월 마무리",
         "count": 41
       }
     ]
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
     "price": {
       "amountLabel": "58",
       "currency": "USD",
-      "per": "person",
+      "per": "인",
       "priceSource": "internal",
-      "priceNote": "Small-group bilingual tour. AtoC Korea direct sale; 10% discount applied vs operator base.",
+      "priceNote": "소그룹 다국어 투어. AtoC Korea 직접 판매가 기준으로 여행사 기본가 대비 10% 할인이 적용됩니다.",
       "discountPercent": 10
     }
   },
@@ -1001,22 +916,22 @@
     ],
     "pace_level": 0.6,
     "walking_level": 0.8,
-    "scenic_level": 1,
-    "photo_level": 1,
+    "scenic_level": 1.0,
+    "photo_level": 1.0,
     "culture_level": 0.8,
     "relax_level": 0.8,
-    "first_time_fit": 1,
-    "family_fit": 1,
+    "first_time_fit": 1.0,
+    "family_fit": 1.0,
     "senior_fit": 0.8,
-    "couple_fit": 1,
+    "couple_fit": 1.0,
     "active_traveler_fit": 0.8,
-    "one_day_fit": 1,
+    "one_day_fit": 1.0,
     "same_day_flight_fit": 0.55,
     "rain_fit": 0.65,
-    "value_for_money_fit": 1,
+    "value_for_money_fit": 1.0,
     "iconic_landmark_fit": 0.8,
-    "cafe_fit": 1,
-    "adult_family_fit": 1,
+    "cafe_fit": 1.0,
+    "adult_family_fit": 1.0,
     "young_kids_fit": 0.55,
     "senior_active_fit": 0.8,
     "senior_general_fit": 0.8,
@@ -1028,9 +943,9 @@
     "shopping_fit": 0.4,
     "storytelling_fit": 0.8,
     "comfort_level": 0.8,
-    "budget_fit": 1,
+    "budget_fit": 1.0,
     "premium_fit": 0.6,
-    "small_group_fit": 1,
+    "small_group_fit": 1.0,
     "private_fit": 0.2,
     "bus_fit": 0.2,
     "price_band": "mid",
@@ -1069,7 +984,7 @@
       "balanced jeju day tour",
       "jeju first trip southwest",
       "제주 서남부 투어",
-      "오설록 애월 한라산"
+      "Osulloc 애월 한라산"
     ],
     "synonym_hints": [
       "jeju southwest highlights",
@@ -1086,7 +1001,7 @@
     "destination_region": "jeju",
     "vehicle_type": "minicoach",
     "vehicle_type_legacy": "minicoach",
-    "duration_hours": 9,
+    "duration_hours": 9.0,
     "anchor_poi_keys": [
       "hallasan_1100_highland",
       "osulloc_tea_museum",
@@ -1094,124 +1009,124 @@
     ],
     "pickup_base_normalized": "jeju_city",
     "unesco_fit": 0.85,
-    "family_with_teens_fit": 1,
+    "family_with_teens_fit": 1.0,
     "solo_traveler_fit": 0.9,
     "food_fit": 0.8,
-    "nature_fit": 1,
-    "beach_fit": 1,
+    "nature_fit": 1.0,
+    "beach_fit": 1.0,
     "nightlife_fit": 0.2,
-    "no_shopping_fit": 1,
+    "no_shopping_fit": 1.0,
     "intangible_heritage_fit": 0.55,
     "seasonality": "year_round",
     "profile_format": "small_group_fixed_itinerary",
     "private_tour_fit": 0.05,
-    "fixed_itinerary_fit": 1,
+    "fixed_itinerary_fit": 1.0,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
     "first_time_jeju_fit": 0.95,
     "jeju_highlights_fit": 0.85,
     "island_wide_fit": 0.5,
     "north_jeju_fit": 0.85,
-    "south_jeju_fit": 1,
+    "south_jeju_fit": 1.0,
     "east_jeju_fit": 0.05,
-    "west_jeju_fit": 1,
+    "west_jeju_fit": 1.0,
     "central_jeju_fit": 0.85,
-    "southwest_jeju_fit": 1,
-    "northwest_jeju_fit": 1,
+    "southwest_jeju_fit": 1.0,
+    "northwest_jeju_fit": 1.0,
     "unesco_taste_fit": 0.7,
     "world_natural_heritage_fit": 0.85,
     "biosphere_reserve_fit": 0.85,
     "global_geopark_fit": 0.95,
     "triple_unesco_fit": 0.05,
-    "volcano_geology_fit": 1,
-    "columnar_jointing_fit": 1,
+    "volcano_geology_fit": 1.0,
+    "columnar_jointing_fit": 1.0,
     "parasitic_cone_fit": 0.95,
     "tuff_cone_fit": 0.05,
-    "shield_volcano_fit": 1,
+    "shield_volcano_fit": 1.0,
     "lava_flow_fit": 0.9,
     "geological_education_fit": 0.85,
     "natural_monument_anchor_count": 3,
-    "waterfall_fit": 1,
+    "waterfall_fit": 1.0,
     "coastal_waterfall_fit": 0.05,
     "ocean_falling_waterfall_fit": 0.05,
-    "three_tier_waterfall_fit": 1,
-    "inland_waterfall_fit": 1,
-    "forest_gorge_fit": 1,
-    "tea_culture_fit": 1,
-    "green_tea_field_fit": 1,
+    "three_tier_waterfall_fit": 1.0,
+    "inland_waterfall_fit": 1.0,
+    "forest_gorge_fit": 1.0,
+    "tea_culture_fit": 1.0,
+    "green_tea_field_fit": 1.0,
     "amorepacific_brand_fit": 0.95,
     "korean_beauty_brand_fit": 0.85,
-    "cafe_culture_fit": 1,
-    "design_cafe_fit": 1,
-    "instagram_cafe_fit": 1,
+    "cafe_culture_fit": 1.0,
+    "design_cafe_fit": 1.0,
+    "instagram_cafe_fit": 1.0,
     "k_drama_filming_fit": 0.85,
-    "lifestyle_tour_fit": 1,
-    "sunset_anchor_fit": 1,
-    "aewol_sunset_fit": 1,
-    "west_coast_sunset_fit": 1,
-    "coastal_drive_fit": 1,
-    "coastal_walk_fit": 1,
-    "ocean_view_fit": 1,
-    "coastal_cliff_fit": 1,
+    "lifestyle_tour_fit": 1.0,
+    "sunset_anchor_fit": 1.0,
+    "aewol_sunset_fit": 1.0,
+    "west_coast_sunset_fit": 1.0,
+    "coastal_drive_fit": 1.0,
+    "coastal_walk_fit": 1.0,
+    "ocean_view_fit": 1.0,
+    "coastal_cliff_fit": 1.0,
     "olle_trail_fit": 0.85,
-    "seven_nymphs_legend_fit": 1,
+    "seven_nymphs_legend_fit": 1.0,
     "joseon_scholar_heritage_fit": 0.85,
     "wwii_history_fit": 0.5,
     "yeongjusipgyeong_fit": 0.5,
     "endemic_flora_fit": 0.95,
     "korean_fir_belt_fit": 0.85,
-    "national_park_fit": 1,
-    "rare_plant_habitat_fit": 1,
+    "national_park_fit": 1.0,
+    "rare_plant_habitat_fit": 1.0,
     "biodiversity_fit": 0.95,
     "walking_level_fit": 0.6,
     "stair_climbing_fit": 0.55,
     "trail_walking_fit": 0.85,
     "elevation_gain_total_m": 250,
-    "moderate_mobility_fit": 1,
+    "moderate_mobility_fit": 1.0,
     "low_intensity_fit": 0.85,
     "senior_friendly_fit": 0.75,
     "stroller_friendly_fit": 0.5,
     "wheelchair_accessible_anchor_fit": 0.5,
     "first_time_korea_fit": 0.85,
     "first_time_jeju_priority_fit": 0.95,
-    "honeymoon_fit": 1,
+    "honeymoon_fit": 1.0,
     "small_family_fit": 0.85,
     "senior_couple_fit": 0.9,
     "history_lover_fit": 0.7,
     "geology_enthusiast_fit": 0.85,
-    "tea_lover_fit": 1,
+    "tea_lover_fit": 1.0,
     "k_drama_fan_fit": 0.85,
-    "photographer_fit": 1,
-    "instagrammable_fit": 1,
-    "lifestyle_traveler_fit": 1,
+    "photographer_fit": 1.0,
+    "instagrammable_fit": 1.0,
+    "lifestyle_traveler_fit": 1.0,
     "group_size_min": 2,
     "group_size_max": 14,
-    "small_group_van_fit": 1,
+    "small_group_van_fit": 1.0,
     "calm_pace_fit": 0.85,
     "active_pace_fit": 0.7,
     "checkbox_sightseeing_fit": 0.4,
     "deep_dwell_fit": 0.85,
-    "balanced_pace_fit": 1,
-    "leisurely_finale_fit": 1,
-    "language_english_fit": 1,
+    "balanced_pace_fit": 1.0,
+    "leisurely_finale_fit": 1.0,
+    "language_english_fit": 1.0,
     "language_chinese_fit": 0.85,
     "language_japanese_fit": 0.5,
-    "english_guide_fit": 1,
-    "spring_fit": 1,
+    "english_guide_fit": 1.0,
+    "spring_fit": 1.0,
     "summer_fit": 0.85,
-    "autumn_fit": 1,
+    "autumn_fit": 1.0,
     "winter_fit": 0.85,
     "all_year_fit": 0.95,
     "off_season_fit": 0.75,
     "monsoon_fit": 0.6,
-    "best_season_spring_fit": 1,
-    "best_season_autumn_fit": 1,
-    "sunset_season_fit": 1,
+    "best_season_spring_fit": 1.0,
+    "best_season_autumn_fit": 1.0,
+    "sunset_season_fit": 1.0,
     "indoor_anchor_fit": 0.7,
     "indoor_fallback_anchor_count": 2,
     "early_start_fit": 0.85,
     "late_finish_fit": 0.95,
-    "full_day_fit": 1,
+    "full_day_fit": 1.0,
     "half_day_fit": 0.05,
     "value_priced_fit": 0.85,
     "budget_traveler_fit": 0.7,
@@ -1220,37 +1135,37 @@
     "off_beaten_path_fit": 0.6,
     "crowd_avoidance_fit": 0.55,
     "tourist_circuit_fit": 0.85,
-    "trendy_destination_fit": 1,
-    "minicoach_fit": 1,
+    "trendy_destination_fit": 1.0,
+    "minicoach_fit": 1.0,
     "max_pax_per_vehicle": 14,
-    "jeju_city_pickup_fit": 1,
-    "airport_drop_compatible_fit": 1,
+    "jeju_city_pickup_fit": 1.0,
+    "airport_drop_compatible_fit": 1.0,
     "cruise_shore_excursion_fit": 0.5,
     "cruise_passenger_fit": 0.6,
     "korean_food_fit": 0.95,
-    "jeju_local_cuisine_fit": 1,
+    "jeju_local_cuisine_fit": 1.0,
     "galchi_fit": 0.95,
     "black_pig_heritage_fit": 0.85,
     "seafood_fit": 0.95,
     "vegetarian_friendly_fit": 0.8,
     "halal_friendly_fit": 0.6,
-    "tea_tasting_fit": 1,
-    "dessert_anchor_fit": 1,
+    "tea_tasting_fit": 1.0,
+    "dessert_anchor_fit": 1.0,
     "photo_anchor_count": 5,
     "instagram_anchor_count": 5,
     "drone_friendly_fit": 0.55,
     "filming_location_fit": 0.85,
-    "sunset_photography_fit": 1,
+    "sunset_photography_fit": 1.0,
     "stair_anchor_count": 1,
     "barrier_free_anchor_fit": 0.55,
     "is_anchor_for_first_time_jeju_southwest": true,
     "catalog_position": "first_time_jeju_southwest_loop",
     "competing_tours_count": 4,
-    "china_mainland_market_fit": 0,
-    "korea_domestic_market_fit": 0,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
@@ -1308,7 +1223,7 @@
       "osulloc_tea_museum",
       "aewol_cafe_street"
     ],
-    "reviews_attribution": "Reviews curated from AtoC Korea operator feedback. 4.8/5 average across 142 verified bookings.",
+    "reviews_attribution": "Reseñas verificadas por AtoC Korea. 4.8/5 average across 142 verified bookings.",
     "unesco_fit_note": "unesco_fit=3: Hallasan is a UNESCO Biosphere Reserve and the centerpiece of the Jeju Volcanic Island and Lava Tubes World Heritage inscription, but the tour visits the 1100 Highland scenic zone (drive-up viewing area), not the inscribed lava tube system or the summit hike.",
     "competing_products": [
       "jeju-grand-highlights-loop",
@@ -1371,20 +1286,20 @@
       "id": "hero",
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Jeju Southwest: Hallasan, Tea Fields, and Aewol",
-        "headlineLine2": "Small Group Day Tour",
+        "headlineLine1": "제주 서남부: 한라산, 차밭, 애월",
+        "headlineLine2": "소그룹 일일 투어",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
           "imagePosition": "center 35%",
-          "tagline": "A short Hallasan walk, volcanic cliffs, a waterfall trail, tea fields, and a relaxed Aewol finish.",
+          "tagline": "짧은 한라산 오름 산책, 화산 절벽, 폭포 트레일, 차밭, 여유로운 애월 마무리 — 제주 서남부를 하루에.",
           "pills": [
-            "Great for First-Time Jeju Visitors",
-            "Jeju Southwest"
+            "제주 첫 방문자에게 최적",
+            "제주 서남부"
           ],
           "meta": {
-            "duration": "8 hours",
-            "region": "Jeju Southwest",
-            "stops": "6 stops",
+            "duration": "8시간",
+            "region": "제주 서남부",
+            "stops": "6개 코스",
             "rating": 4.8,
             "ratingStars": 5
           }
@@ -1398,23 +1313,23 @@
         "subnavItems": [
           {
             "id": "overview",
-            "label": "Overview"
+            "label": "투어 개요"
           },
           {
             "id": "itinerary",
-            "label": "Itinerary"
+            "label": "상세 일정"
           },
           {
             "id": "details",
-            "label": "Details"
+            "label": "유의사항"
           },
           {
             "id": "faq",
-            "label": "FAQ"
+            "label": "자주 묻는 질문"
           },
           {
             "id": "reviews",
-            "label": "Reviews"
+            "label": "여행자 후기"
           }
         ]
       }
@@ -1426,33 +1341,33 @@
         "glanceItems": [
           {
             "icon": "camera",
-            "label": "Photo Potential",
-            "value": "High"
+            "label": "포토 명소",
+            "value": "높음"
           },
           {
             "icon": "mountain",
-            "label": "Scenery Density",
-            "value": "High"
+            "label": "풍경 볼거리",
+            "value": "높음"
           },
           {
             "icon": "footprints",
-            "label": "Walking Difficulty",
-            "value": "Moderate"
+            "label": "도보 난이도",
+            "value": "보통"
           },
           {
             "icon": "cloud-rain",
-            "label": "Rain Suitability",
-            "value": "Moderate"
+            "label": "우천 적합도",
+            "value": "보통"
           },
           {
             "icon": "users",
-            "label": "Family Suitability",
-            "value": "Good"
+            "label": "가족 적합도",
+            "value": "양호"
           },
           {
             "icon": "scale",
-            "label": "Pace",
-            "value": "Balanced"
+            "label": "투어 일정 속도",
+            "value": "균형"
           }
         ]
       }
@@ -1466,55 +1381,55 @@
             "id": 1,
             "type": "video",
             "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-            "location": "Overall Route",
-            "atmosphere": "A full-day view of how the route flows",
-            "alt": "Overall atmosphere of the Jeju southwest route",
-            "caption": "Overall atmosphere of the Jeju southwest route"
+            "location": "전체 코스",
+            "atmosphere": "루트 흐름의 하루 전체 전경",
+            "alt": "제주 서남쪽 코스 전체 분위기",
+            "caption": "제주 서남쪽 코스 전체 분위기"
           },
           {
             "id": 2,
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
-            "location": "Hallasan Opening Stop",
-            "atmosphere": "Fresh mountain air",
-            "alt": "Hallasan Eoseungsaengak trail",
-            "caption": "Hallasan Eoseungsaengak trail"
+            "location": "한라산 Opening 정류장",
+            "atmosphere": "상쾌한 산 공기",
+            "alt": "한라산 어승생악 탐방로",
+            "caption": "한라산 어승생악 탐방로"
           },
           {
             "id": 3,
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
             "location": "Volcanic Coastline",
-            "atmosphere": "A powerful basalt shoreline",
-            "alt": "Basalt sea cliffs at Daepo Jusangjeolli",
-            "caption": "Basalt sea cliffs at Daepo Jusangjeolli"
+            "atmosphere": "강렬한 현무암 해안선",
+            "alt": "대포 주상절리 현무암 해안 절벽",
+            "caption": "대포 주상절리 현무암 해안 절벽"
           },
           {
             "id": 4,
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-            "location": "Forest Trail and Waterfall",
-            "atmosphere": "A cooler, calmer middle section",
-            "alt": "Forest trail at Cheonjeyeon Waterfall",
-            "caption": "Forest trail at Cheonjeyeon Waterfall"
+            "location": "숲길과 폭포",
+            "atmosphere": "더 시원하고 차분한 중간 구간",
+            "alt": "천제연폭포 숲길",
+            "caption": "천제연폭포 숲길"
           },
           {
             "id": 5,
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
-            "location": "Tea Fields Break",
-            "atmosphere": "Open green scenery with a softer mood",
-            "alt": "Atmosphere around O’Sulloc Tea Museum and the tea fields",
-            "caption": "Atmosphere around O’Sulloc Tea Museum and the tea fields"
+            "location": "차밭 휴식",
+            "atmosphere": "부드러운 분위기의 탁 트인 초록 풍경",
+            "alt": "투어 중 방문하는 Osulloc 티뮤지엄과 녹차밭 주변 분위기의 풍경",
+            "caption": "Osulloc 티뮤지엄과 녹차밭 주변 분위기"
           },
           {
             "id": 6,
             "type": "video",
             "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
-            "location": "Aewol Coastal Finale",
-            "atmosphere": "A relaxed close to the day",
-            "alt": "Aewol Cafe Street on the coast",
-            "caption": "Aewol Cafe Street on the coast"
+            "location": "애월 Coastal Finale",
+            "atmosphere": "여유로운 하루 마무리",
+            "alt": "해안의 애월 카페 거리",
+            "caption": "해안의 애월 카페 거리"
           }
         ]
       }
@@ -1527,217 +1442,225 @@
           {
             "number": 1,
             "time": "09:00",
-            "duration": "70 min",
-            "name": "Hallasan Eoseungsaengak",
-            "category": "Short Hallasan Trail",
-            "description": "The day starts at Hallasan while the air is at its freshest and the group still has full energy. Eoseungsaengak is one of the more approachable Hallasan walks, giving you a real sense of starting the day in Jeju’s mountains without turning the tour into a full-scale hike.",
-            "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "duration": "75분",
+            "name": "한라산 어승생악",
+            "category": "한라산 기슭 탐방로 (어리목) — 유네스코 세계유산 체험",
+            "description": "어승생악(해발 1,169m)은 한라산 서쪽 사면의 기생화산(오름)입니다. 왕복 1.3km 목조 계단 트레일로, 정상에서 한라산 정상부와 제주 서쪽 해안 파노라마가 펼쳐집니다. 화구호와 곶자왈 숲이 인상적입니다. 체력이 가장 필요한 구간이지만, 하루 중 에너지가 가장 넘치는 오전에 배치되어 있습니다. 방문 시간: 약 70분.",
+            "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
             "highlights": [
-              "A short Hallasan walk that still feels rewarding",
-              "Open views toward Jeju City, oreum scenery, and Hallasan’s upper slopes",
-              "A much more immersive opening than a simple roadside viewpoint",
-              "A good balance of activity and accessibility for mixed-age groups"
+              "**한라산 = 한국 유일의 유네스코 자연 3중 지정**: 세계유산 2007 + 생물권보전지역 2002 + 세계지질공원 2010",
+              "**어승생악 정상 1,169m** — 기생화산(오름), 제주 360여 개 오름 중 하나",
+              "탐방로 **편도 1.3km / 고도 차 약 200m** — 넓은 계단 + 데크, 운동화로 가능",
+              "데크 파노라마: **한라산 백록담 화구, 황해, 남쪽 오름군** 조망",
+              "식물 천이대 — **구상나무(구상나무, IUCN 준위협)** 숲 시작 지점",
+              "정상부에 **1945년 일제 토치카(콘크리트 진지)** — 희귀한 고지대 WWII 유적",
+              "**무료 입장** + 무료 주차; 예약 정원 없음 (백록담 정상과 달리 하루 1,000명 제한 없음)",
+              "한라산에는 **식물 2,000종 이상** — 한반도 전체 식물상의 절반",
+              "왕복 체류 **약 60분** = 긴 백록담 9시간 등반 없이도 '유네스코 맛보기'"
             ],
             "timeUsed": [
-              "Short trail briefing and pace check on arrival",
-              "Main uphill segment toward the viewpoint",
-              "Brief summit-area break, photos, and descent"
+              "어리목 주차장 + 화장실 + 탐방로 안내 — 약 10분",
+              "데크까지 1.3km 등반 — 약 25분",
+              "정상 데크 + 사진 + 토치카 관람 — 약 15분",
+              "하산 — 약 20분",
+              "이동 완충 — 약 5분"
             ],
-            "whyOnRoute": "It uses the group’s early energy well and gives the full day a clear story arc from mountain to coast.",
-            "visitBasics": {
-              "hours": "From 05:00, with seasonal restrictions possible",
-              "closed": "May be restricted in certain weather conditions",
-              "admission": "Free",
-              "walking": "Short route, but with many stairs and a moderate overall feel"
-            },
-            "convenience": {
-              "restroom": "At the Eorimok entrance area",
-              "parking": "Parking available"
-            },
-            "smartNotes": {
-              "photo": "Once you reach the higher lookout section, wide landscape shots usually work better than close portraits.",
-              "facilities": "Facilities are much better at the entrance than along the trail itself.",
-              "tip": "This stop works best as a focused scenic walk rather than a slow, lingering stroll."
+            "whyOnRoute": "**서남쪽 루프의 오프닝 핵심 명소**. 한라산으로 시작해 제주의 지질학적 기반 확립.",
+            "_poi_meta": {
+              "poi_key": "hallasan_eoseungsaengak",
+              "kb_version": "1.18",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007)",
+                "Hallasan National Park official site (hallasan.go.kr)",
+                "Korea National Park Service designation records",
+                "VisitKorea — Hallasan Eoseungsaengak trail",
+                "Korea Forest Service — Abies koreana red list status"
+              ]
             }
           },
           {
             "number": 2,
             "time": "10:50",
-            "duration": "40 min",
-            "name": "Daepo Jusangjeolli Cliff",
-            "category": "Basalt Coastline",
-            "description": "After starting at Hallasan, the view opens sharply to the sea. Daepo Jusangjeolli is a dramatic basalt cliff where volcanic rock meets the waves, and it delivers the day’s first major coastal highlight.",
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "duration": "45분",
+            "name": "대포주상절리",
+            "category": "화산 해안선 — 육각형 주상절리 용암",
+            "description": "대포 주상절리(중문대포해안 주상절리대)는 중문 해안을 따라 약 1km 이어지는 6각형 주상절리 현무암 절벽입니다. 화산 용암이 바다와 만나 급속 냉각되어 형성된 지형으로, 한라산 화산 이야기가 해안으로 이어지는 자연스러운 흐름을 만들어 줍니다. 입장료 포함. 방문 시간: 약 40분.",
+            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
             "highlights": [
-              "Jeju’s signature hexagonal basalt columns",
-              "A stronger coastal contrast because it follows the mountain section",
-              "A short stop with very high scenery payoff",
-              "A natural continuation of Jeju’s volcanic geology story after Hallasan"
+              "**천연기념물 제443호** — **2005년 1월 6일** 지정, 제주 해안 천연기념물 중 가장 최근 지정",
+              "기둥 높이 **30~40m**, **5~7각형 다각형**(주로 육각형)이 **1km**를 따라 밀집",
+              "형성 과정: **한라산 측면 용암이 약 25~14만 년 전 바닷물에 냉각**되면서 수축·균열",
+              "**동아시아 최고의 주상절리 명소** — 자이언츠 코즈웨이, 데빌스 포스트파일과 어깨를 나란히",
+              "**만조 시 최대 20m 파도 분수** — 파도 분수 촬영 포인트",
+              "**0.8km 데크 루프**, 약 15분 도보 — 장벽 없는 데크, 휠체어·유모차 접근 가능",
+              "**유네스코 세계지질공원(2010) 제주 글로벌 지오파크** — 섬 전체 13개 지질 명소 중 하나",
+              "입장료: **성인 ₩2,000 / 청소년 ₩1,000 / 7세 이하·65세 이상 무료**",
+              "맑은 날 북쪽으로 한라산 정상 조망 가능"
             ],
             "timeUsed": [
-              "Brief entrance-side introduction",
-              "Walk along the main route to the coastal viewpoint",
-              "Photo stop and regroup"
+              "주차 + 매표 + 입장 — 약 5분",
+              "첫 번째 전망대까지 이동 — 약 5분",
+              "절벽 기둥 관람 + 사진 — 약 15분",
+              "데크 루프 이동 — 약 10분",
+              "코치 귀환 — 약 10분"
             ],
-            "whyOnRoute": "It keeps Jeju’s mountain-to-coast volcanic story flowing without interruption.",
-            "visitBasics": {
-              "hours": "09:00–18:00 (last entry 17:40)",
-              "closed": "Open year-round",
-              "admission": "KRW 2,000 adults / KRW 1,000 children and teens",
-              "walking": "Easy"
-            },
-            "convenience": {
-              "restroom": "Entrance area",
-              "parking": "Paid parking lot"
-            },
-            "smartNotes": {
-              "photo": "A slight side angle usually captures the texture of the basalt and wave energy better than a straight-on shot.",
-              "facilities": "Facilities are simple, but the entrance area is practical and sufficient.",
-              "tip": "Because wind and sea mist can change the feel of the stop quickly, it works best with a steady pace."
+            "whyOnRoute": "**서남쪽 루프의 지질학적 피봇** — 지리적·지질학적으로 한라산 바로 하류.",
+            "_poi_meta": {
+              "poi_key": "daepo_jusangjeolli_cliff",
+              "kb_version": "1.18",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Cultural Heritage Administration — Natural Monument No. 443 designation (2005-01-06)",
+                "Jeju Global Geopark official site (geopark.jeju.go.kr)",
+                "UNESCO Global Geoparks Network — Jeju (2010 designation)",
+                "VisitJeju — Daepo Jusangjeolli",
+                "Korea Geological Survey — Jeju basalt formation studies"
+              ]
             }
           },
           {
             "number": 3,
             "time": "11:50",
-            "duration": "60 min",
-            "name": "Lunch",
-            "category": "Midday Reset",
-            "description": "Lunch acts as the reset point between the more dramatic south-coast scenery of the morning and the softer tea-field-and-cafe tone of the afternoon. After the early walking sections, it helps the second half feel noticeably more comfortable.",
-            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+            "duration": "60분",
+            "name": "점심 — 서귀포·중문 현지 식당",
+            "category": "점심 휴식 — 서귀포 / 중문 현지 음식",
+            "description": "주상절리와 천제연폭포 사이 약 60분 점심 시간입니다. 중문 리조트 지구 인근 식당에서 갈치조림, 흑돼지, 옥돔구이 등 제주 남부 향토 음식을 둘러볼 수 있습니다. 점심 식사비는 별도(약 ₩15,000).",
+            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
             "highlights": [
-              "A natural reset after Hallasan and Jusangjeolli",
-              "Good pace control for groups with a wide age range",
-              "Makes the shift into the waterfall and tea-field section smoother",
-              "Helps the Aewol finale feel relaxed rather than rushed"
+              "**중문** 식당 거리 — 주상절리와 천지연 모두에서 3km 거리",
+              "**갈치조림** 제철 (9~2월), **전복 비빔밥** 연중",
+              "**흑돼지 (제주 흑돼지)** 옵션 — 문화재 자료 제5호 (2015년)",
+              "**할랄 친화 + 채식** 옵션 (픽업 시 요청)",
+              "점심 식당 **천지연까지 코치 5분** — 식사 후 최소 이동",
+              "픽업 시 그룹 식이 요건 수집; 메뉴 사전 확인"
             ],
             "timeUsed": [
-              "Arrival and seating",
-              "Meal and short break",
-              "Prepare to move on to the next stop"
+              "코치로 점심 장소 이동 — 약 5분",
+              "주문 + 식사 — 약 45분",
+              "코치로 천지연 입구 이동 — 약 5분",
+              "완충 — 약 5분"
             ],
-            "whyOnRoute": "Placing lunch here keeps the full day feeling balanced rather than front-loaded.",
-            "visitBasics": {
-              "hours": "Depends on the restaurant",
-              "closed": "Varies by venue",
-              "admission": "May be included depending on the product condition, or paid on site",
-              "walking": "Minimal"
-            },
-            "convenience": {
-              "restroom": "Inside the restaurant",
-              "parking": "Parking available"
-            },
-            "smartNotes": {
-              "photo": "If you want some lifestyle-style gallery shots, food photos work especially well here.",
-              "facilities": "Dining facilities are more than sufficient.",
-              "tip": "A calmer lunch usually improves the second half of the day more than saving a few extra minutes."
-            }
+            "whyOnRoute": "중문 위치는 **주상절리(이전)와 천지연(이후)까지 각각 5분** 이동 — 지리적 효율성 최대화."
           },
           {
             "number": 4,
             "time": "13:00",
-            "duration": "50 min",
-            "name": "Cheonjeyeon Waterfall",
-            "category": "Waterfall and Forest Walk",
-            "description": "After the open coastline, Cheonjeyeon adds a cooler, greener layer to the route. Bridges, forest paths, and waterfall viewpoints create a softer change of tone before the route continues toward the tea fields and Aewol.",
-            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "duration": "75분",
+            "name": "천제연폭포",
+            "category": "삼단 폭포 — 천연기념물 제378호 (1993년)",
+            "description": "천제연('하늘 임금의 연못'이라는 뜻)은 중문관광단지 내 3단 폭포입니다. 폭포 트레일 입구에는 선임교(무지개다리)가 있으며, 울창한 난대림이 폭포 주변을 감쌉니다. 1단 폭포는 건기에 마를 수 있습니다. 입장료 포함. 방문 시간: 약 50분.",
+            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
             "highlights": [
-              "A shaded and calmer waterfall stop",
-              "A change in rhythm created by bridges and forest paths",
-              "Feels especially refreshing after the more open coastal section",
-              "A strong contrast point before the tea-field and cafe stretch"
+              "**천연기념물 제378호 (1993년 지정)** — 삼단 폭포 + 희귀 식물 서식지",
+              "이름 **'천제연' = '하늘 황제의 연못'** — 조선 도교 전설",
+              "**선임교 (120m × 78m)** 부조 패널에 새겨진 **칠선녀 전설**",
+              "**1단(22m / 21m 연못)** — 폭우 후에만 흐름; **2단(30m)** 연중 흐름",
+              "**제주 고유종 고사리(만삼)** 서식지 — IUCN 심각 위기종",
+              "**0.8km 루프 / 약 30분** — 계단 포함 중간 강도, 신발 중요",
+              "입장료: **성인 ₩2,500 / 청소년 ₩1,350 / 7세 이하·65세 이상 무료**",
+              "**제주 칠선녀 축제** 격년 개최 — 다리 의식 포함",
+              "**안개 마이크로 기후** — 자연 냉각, 여름 오후 인기 피서지"
             ],
             "timeUsed": [
-              "Short explanation of the walking route at the entrance",
-              "Main walk through the waterfall area",
-              "Viewpoint stop, photos, and return"
+              "입장 + 매표 — 약 5분",
+              "1단 전망대까지 하강 — 약 10분",
+              "1단 + 2단 촬영 — 약 20분",
+              "선임교 + 칠선녀 부조 패널 — 약 15분",
+              "숲길 루프 + 코치로 귀환 — 약 25분"
             ],
-            "whyOnRoute": "It softens the overall tone after Jusangjeolli and prepares the route for a quieter second half.",
-            "visitBasics": {
-              "hours": "09:00–17:50 (last entry 17:10)",
-              "closed": "Open year-round",
-              "admission": "KRW 2,500 adults / KRW 1,350 teens and children",
-              "walking": "Moderate, with stairs and sometimes wet sections"
-            },
-            "convenience": {
-              "restroom": "Entrance area",
-              "parking": "Parking available"
-            },
-            "smartNotes": {
-              "photo": "Instead of forcing everything into one frame, layered compositions with the bridge and waterfall usually look better.",
-              "facilities": "Basic facilities are concentrated near the entrance.",
-              "tip": "Because of stairs and potentially slippery sections, a steady pace usually makes this stop more enjoyable."
+            "whyOnRoute": "**오후 중반 대조 핵심 명소** — 한라산의 넓은 알파인 전망과 주상절리의 노출된 해안 이후.",
+            "_poi_meta": {
+              "poi_key": "cheonjeyeon_falls",
+              "kb_version": "1.18",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Cultural Heritage Administration — Natural Monument No. 378 (1993 designation)",
+                "VisitJeju — Cheonjeyeon Pokpo official listing",
+                "Korea National Arboretum — Mankyua chejuense conservation records",
+                "Jeju Cultural Foundation — Seven Nymphs Festival history",
+                "Seogwipo City tourism — Cheonjeyeon admission and access"
+              ]
             }
           },
           {
             "number": 5,
             "time": "14:20",
-            "duration": "60 min",
-            "name": "O’Sulloc Tea Museum",
-            "category": "Tea Fields and Culture Stop",
-            "description": "After the waterfall walk, O’Sulloc gives the route a clear emotional reset. The tea museum, shop, and wide green tea fields help the afternoon open up before the day finishes along the coast in Aewol.",
-            "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+            "duration": "75분",
+            "name": "Osulloc 티뮤지엄",
+            "category": "아모레퍼시픽 차 문화 플래그십 + 녹차밭 피날레",
+            "description": "Osulloc 티뮤지엄은 아모레퍼시픽이 운영하는 한국 최대 녹차 재배지의 문화 공간입니다. 드넓은 서광다원 녹차밭 전망과 녹차 음료·아이스크림이 폭포 후 여유로운 분위기 전환을 만들어 줍니다. 입장 무료. 방문 시간: 약 50분.",
+            "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085",
             "highlights": [
-              "Jeju tea fields in a broad, open setting",
-              "A tea-culture stop that feels especially light after the forest section",
-              "Plenty of photo opportunities across the green rows, modern buildings, and desserts",
-              "A softer emotional transition before the Aewol finale"
+              "**아모레퍼시픽** 플래그십 — 창업자 서성환이 1979년 제주 서광 다원을 개척하며 국내 녹차 문화를 부활",
+              "**서광 다원 = 한국 최대 녹차밭**; 연간 약 700톤 생산",
+              "뮤지엄 **2001년 개관** — designboom 선정 건축 상위 10대 미술관",
+              "**무료 입장**, 매일 **09:00~18:00**, 연간 방문객 약 200만 명",
+              "**당나라(618~907 CE)**부터 현대 조선 도자기까지 아우르는 고대 다완 컬렉션",
+              "**녹차 롤케이크** + **녹차 아이스크림** = 대표 카페 메뉴",
+              "**이니스프리 제주 하우스** 도보 5분 — 무료 입장, 선택: 귤 비누 DIY ₩15,000",
+              "**포토 골든 아워(16:00~17:00)** 다원 산책로 촬영 최적",
+              "루프탑 데크 + 지상 레벨 두 가지 앵글로 다원 구도 촬영"
             ],
             "timeUsed": [
-              "Short orientation around the museum area",
-              "Tea-field views, museum or shop browsing, and cafe time",
-              "Regroup before departing for Aewol"
+              "주차 + 입장 — 약 5분",
+              "뮤지엄 내부 + 다완 컬렉션 — 약 20분",
+              "티하우스 카페 (롤케이크 + 아이스크림) — 약 20분",
+              "다원 산책로 — 약 20분",
+              "선택: 이니스프리 제주 하우스 방문 — 약 10분"
             ],
-            "whyOnRoute": "It lowers the day’s physical intensity after the more active morning and hands the final stretch over in a gentler mood.",
-            "visitBasics": {
-              "hours": "Usually 09:00–18:00, with possible seasonal variation",
-              "closed": "Open year-round",
-              "admission": "Free",
-              "walking": "Easy"
-            },
-            "convenience": {
-              "restroom": "Museum and cafe area",
-              "parking": "Parking available"
-            },
-            "smartNotes": {
-              "photo": "Wide tea-field views and side angles near the cafe usually photograph better than product-style close-ups alone.",
-              "facilities": "With restrooms, drinks, and places to sit, this is one of the most comfortable stops in the second half of the day.",
-              "tip": "It usually feels more satisfying to enjoy both the scenery and the cafe atmosphere rather than rushing through the museum only."
+            "whyOnRoute": "**자연 핵심 명소에서 제주 라이프스타일로의 문화적 전환**.",
+            "_poi_meta": {
+              "poi_key": "osulloc_tea_museum",
+              "kb_version": "1.18",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Amorepacific corporate history (amorepacific.com)",
+                "O'sulloc Tea Museum official site (osulloc.com)",
+                "designboom Top 10 art museums archival listing",
+                "Korea Tea Industry Association — production statistics",
+                "VisitJeju — Osulloc Tea Museum"
+              ]
             }
           },
           {
             "number": 6,
             "time": "15:50",
-            "duration": "60 min",
-            "name": "Aewol Cafe Street",
-            "category": "Seaside Cafe Finale",
-            "description": "Aewol closes the day on a lighter, more relaxed note. After mountain air, basalt cliffs, a waterfall walk, and tea fields, the sea view, cafe terraces, and easy coastal rhythm fit the final stop especially well.",
-            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+            "duration": "75분",
+            "name": "애월 카페거리 (한담 해안산책로)",
+            "category": "해안 카페 스트립 — 석양 피날레 + 올레 15A 구간",
+            "description": "애월 카페거리는 제주 서북쪽 해안의 한담 해안산책로(약 5km)를 따라 이어진 카페 밀집 지역으로, 한국 소셜미디어에서 '한국에서 가장 아름다운 카페 거리'로 자주 꼽힙니다. 현무암 기반 해안 산책로에서 비양도와 수평선을 바라보며 음료를 둘러볼 수 있습니다. 방문 시간: 약 50분.",
+            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
             "highlights": [
-              "A coastal cafe atmosphere that fits the end of the day perfectly",
-              "A softer, lifestyle-oriented finish around the Handam coast area",
-              "Free time for coffee, photos, and a short seaside walk",
-              "A comfortable contrast to the more active tone of the morning"
+              "**5km 해안 카페 스트립** — 한담~곽지 해변 사이, 한국 해안 전망 카페가 가장 많이 모인 거리",
+              "**장한철 산책로** — 조선 시대 제주 출신 학자 이름을 딴 해안 산책로",
+              "**올레 15A** 구간 (한림 → 곤내) — 편도 30분 해안 산책",
+              "**봄날 카페** = **'별에서 온 그대' (2014, SBS)** 촬영지",
+              "순환 대표 카페: **랜디스 도넛**, **카페 노티드**, **해지개 카페**",
+              "**서쪽 향 수평선** = 석양 무방해 조망 — **봄/가을 17:30~18:30** 최고",
+              "**협자 절벽 꼭대기에 육각형 절리 노출** — 대포와 같은 지질, 소규모 스케일",
+              "해안 탐방로 + 해변 **무료**; 카페 음료 + 디저트 약 ₩6,000~12,000",
+              "**제주 국제공항에서 코치 40분** — 저녁 전 마지막 실용적 코스"
             ],
             "timeUsed": [
-              "Short orientation around the area on arrival",
-              "Free time for coffee or a short coastal walk",
-              "Regroup before departure"
+              "코치 도착 + 한담 주차 — 약 5분",
+              "해안 산책로 (한담 → 중간 구역) — 약 20분",
+              "카페 선택 + 착석 — 약 10분",
+              "음료 + 석양 조망 — 약 40분",
+              "코치로 귀환 도보 — 약 5분"
             ],
-            "whyOnRoute": "Aewol is one of the best places to close the day emotionally. It opens up the rhythm at the end and leaves the route feeling lighter rather than heavier.",
-            "visitBasics": {
-              "hours": "The area itself is open all day; each cafe has its own hours",
-              "closed": "No closure day for the area as a whole",
-              "admission": "Free",
-              "walking": "Easy"
-            },
-            "convenience": {
-              "restroom": "Depends on the cafe you use",
-              "parking": "Parking available in the area"
-            },
-            "smartNotes": {
-              "photo": "Later-afternoon backlight and sea-facing terraces usually create the best images here.",
-              "facilities": "Comfort depends on which cafe is chosen, so flexible operation works better than fixing one venue too rigidly.",
-              "tip": "This stop usually scores higher when guests are allowed a freer rhythm rather than being guided too tightly."
+            "whyOnRoute": "**석양을 기반으로 한 피날레**. 서남쪽 루프가 애월로 마무리되는 이유: 서쪽 향 해안이 최고의 석양 각도.",
+            "_poi_meta": {
+              "poi_key": "aewol_cafe_street",
+              "kb_version": "1.18",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Jeju Olle Foundation — Trail 15A official map (Hallim → Gonae)",
+                "Aewol-eup Cultural Office — Jang Han Chul historical records",
+                "VisitJeju — Aewol Cafe Street",
+                "SBS Drama Archive — 'You Who Came From the Stars' filming locations",
+                "Joseon Wangjo Sillok / Korean Folklore Society — Pyohaerok textual study"
+              ]
             }
           }
         ]
@@ -1749,56 +1672,56 @@
       "props": {
         "routeFlowStops": [
           {
-            "name": "Eoseungsaengak",
-            "theme": "Hallasan",
+            "name": "어승생악",
+            "theme": "한라산",
             "type": "01"
           },
           {
-            "name": "Jusangjeolli",
-            "theme": "Coast",
+            "name": "주상절리",
+            "theme": "해안",
             "type": "02"
           },
           {
-            "name": "Lunch",
-            "theme": "Reset",
+            "name": "점심",
+            "theme": "리프레시",
             "type": "03"
           },
           {
-            "name": "Cheonjeyeon",
-            "theme": "Waterfall",
+            "name": "천지연",
+            "theme": "폭포",
             "type": "04"
           },
           {
-            "name": "O’Sulloc",
-            "theme": "Tea Fields",
+            "name": "Osulloc 티 뮤지엄",
+            "theme": "차밭",
             "type": "05"
           },
           {
-            "name": "Aewol",
-            "theme": "Coast",
+            "name": "애월",
+            "theme": "해안",
             "type": "06"
           }
         ],
         "routePhases": [
           {
-            "phase": "Morning",
+            "phase": "오전",
             "duration": "1-2",
-            "description": ""
+            "description": "어승생악 트레일 → 주상절리."
           },
           {
-            "phase": "Midday to Early Afternoon",
+            "phase": "정오~이른 오후",
             "duration": "3-4",
-            "description": ""
+            "description": "서귀포·중문 점심 → 천제연폭포 → Osulloc 티뮤지엄."
           },
           {
-            "phase": "Finale",
+            "phase": "피날레",
             "duration": "5-6",
-            "description": ""
+            "description": "애월 카페거리(한담 해안산책로) → 제주시 귀환."
           }
         ],
         "routeShapeIntro": {
-          "title": "How this route flows",
-          "subtitle": "From Hallasan and volcanic coastline to lunch, waterfall, tea fields, and an Aewol coastal finish. Roughly 09:00 to 17:30."
+          "title": "이 코스의 흐름",
+          "subtitle": "한라산과 화산 해안에서 시작해 점심, 폭포, 차밭, 마지막으로 애월 해안 마무리. 대략 오전 9시 출발, 오후 5시 30분 귀환."
         }
       }
     },
@@ -1808,71 +1731,71 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "First-time Jeju travelers and couples",
-            "Adult family trips",
-            "Travelers who want nature, tea fields, and a softer finish",
-            "Active middle-aged and older travelers"
+            "제주 첫 방문자와 커플",
+            "성인 가족 여행",
+            "자연, 차밭, 부드러운 마무리를 원하는 여행자",
+            "활동적인 중장년 여행자"
           ],
           "lessIdealFor": [
-            "Travelers who want to avoid even short stair sections or uphill walks",
-            "Groups relying heavily on strollers",
-            "Itineraries built around very young children"
+            "짧은 계단이나 오르막도 피하고 싶은 여행자",
+            "유모차 의존도가 높은 그룹",
+            "유아 중심 일정에는 주의"
           ],
           "routeLogicSections": [
             {
-              "title": "Pace and structure",
+              "title": "일정 속도와 구조",
               "icon": "sun",
               "iconBg": "bg-amber-50/80",
               "items": [
                 {
-                  "label": "Start with Hallasan while energy is highest",
-                  "detail": "Putting Eoseungsaengak first makes the short climb feel easier and lets the route flow naturally into the coastal section."
+                  "label": "에너지가 가장 높은 오전에 한라산으로 시작",
+                  "detail": "어승생악을 먼저 배치하면 짧은 등반이 더 쉽게 느껴지고, 이후 해안 코스들로 자연스럽게 흘러내려 갑니다."
                 },
                 {
-                  "label": "Lunch sits in the right position",
-                  "detail": "Lunch resets the day between the more open and dramatic morning stops and the calmer waterfall-and-tea-field section that follows."
+                  "label": "점심이 정확한 위치에",
+                  "detail": "점심이 더 열린 극적인 오전 코스와 차분한 폭포·차밭 후반부 사이에 하루를 환기합니다."
                 },
                 {
-                  "label": "A lighter finish after O’Sulloc",
-                  "detail": "Once the tea fields soften the mood, Aewol opens the final stretch naturally with coffee, sea views, and an easier rhythm."
+                  "label": "Osulloc 이후 가벼운 마무리",
+                  "detail": "차밭이 분위기를 부드럽게 만든 후, 애월이 커피, 바다 전망과 함께 자연스럽게 마지막 구간을 엽니다."
                 }
               ]
             },
             {
-              "title": "How the route is designed",
+              "title": "코스 구성 방식",
               "icon": "mountain",
               "iconBg": "bg-sky-50/80",
               "items": [
                 {
-                  "label": "Mountain first, sea second",
-                  "detail": "The route creates altitude and texture at Hallasan first, then lets the view open dramatically to the coast at Jusangjeolli."
+                  "label": "산 먼저, 바다 나중에",
+                  "detail": "한라산에서 먼저 고도와 질감을 만든 다음, 해안에서 뷰가 극적으로 열리도록 합니다."
                 },
                 {
-                  "label": "Waterfall before tea fields",
-                  "detail": "Cheonjeyeon settles the route down before O’Sulloc opens the second half in a lighter and gentler way."
+                  "label": "폭포 후 차밭",
+                  "detail": "천제연이 루트를 차분하게 만든 다음, Osulloc이 더 가볍고 부드러운 방식으로 후반부를 열어줍니다."
                 },
                 {
-                  "label": "A cafe coast at the end",
-                  "detail": "Aewol is not placed as another hard sightseeing stop, but as a lifestyle-oriented coastal finish that closes the day softly."
+                  "label": "마지막에 카페 해안",
+                  "detail": "애월은 힘든 관광 코스가 아니라 하루를 문화적으로 닫는 라이프스타일 지향적 해안 마무리로 배치됩니다."
                 }
               ]
             },
             {
-              "title": "When conditions change",
+              "title": "조건이 변할 때",
               "icon": "wind",
               "iconBg": "bg-slate-50/80",
               "items": [
                 {
-                  "label": "Hallasan weather variables",
-                  "detail": "Eoseungsaengak can be affected by sudden weather changes or trail access restrictions."
+                  "label": "한라산 날씨 변수",
+                  "detail": "어승생악은 갑작스러운 날씨 변화나 탐방로 접근 제한의 영향을 받을 수 있습니다."
                 },
                 {
-                  "label": "Wind on the coast",
-                  "detail": "Jusangjeolli and Aewol are much more directly exposed to wind than inland stops."
+                  "label": "해안의 바람",
+                  "detail": "주상절리와 애월은 내륙 코스보다 훨씬 바람에 직접 노출되어 있습니다."
                 },
                 {
-                  "label": "Balanced overall walking load",
-                  "detail": "The route is generally manageable, but Eoseungsaengak and Cheonjeyeon still require attention for stairs and short uphill segments."
+                  "label": "전반적으로 균형 잡힌 도보 부담",
+                  "detail": "루트는 전반적으로 관리 가능한 수준이지만, 어승생악과 천제연은 계단과 경사에 주의가 필요합니다."
                 }
               ]
             }
@@ -1887,118 +1810,118 @@
         "practicalAccordionItems": [
           {
             "id": "pickup",
-            "title": "Pickup and Return",
-            "preview": "Hotel-lobby pickup in the Jeju City area",
+            "title": "픽업 및 귀환",
+            "preview": "제주 시내 호텔 로비 픽업",
             "content": [
-              "Pickup at your hotel lobby between 08:20 and 08:50",
-              "Return is expected around 17:50–18:20",
-              "Airport pickup may be possible on request",
-              "Your exact pickup time is confirmed the night before"
+              "08:20~08:50 사이 호텔 로비 픽업.",
+              "귀환 예상 17:50~18:20.",
+              "공항 픽업은 요청 시 가능.",
+              "정확한 픽업 시간은 전날 밤 확정."
             ]
           },
           {
             "id": "walking",
-            "title": "Walking and Terrain",
-            "preview": "Moderate overall, and manageable for most guests",
+            "title": "도보 및 지형",
+            "preview": "전반적으로 중간, 대부분의 게스트에게 관리 가능",
             "content": [
-              "Total walking is usually around 4.5–5.5 km across the day.",
-              "Eoseungsaengak: short uphill route, but with many stairs.",
-              "Jusangjeolli: an easy coastal walking path.",
-              "Cheonjeyeon: forest path, stairs, and occasionally wet sections.",
-              "O’Sulloc and Aewol: comfortable stops where the pace is easier to manage.",
-              "Walking shoes with good grip are recommended."
+              "하루 총 도보 거리 약 4.5~5.5km.",
+              "어승생악: 짧지만 계단 많은 오르막 코스.",
+              "주상절리: 쉬운 해안 산책로.",
+              "천지연: 숲길, 계단, 간간이 젖은 구간.",
+              "Osulloc과 애월: 편안한 코스, 여유로운 일정 속도.",
+              "미끄럼 방지 기능의 워킹화 권장."
             ]
           },
           {
             "id": "weather",
-            "title": "Weather and Closure Adjustments",
-            "preview": "The tour usually runs, with changes if needed",
+            "title": "날씨 및 휴관 조정",
+            "preview": "투어는 보통 예정대로 진행, 필요 시 변경",
             "content": [
-              "Light rain: the tour usually runs as planned.",
-              "Heavy rain or trail restrictions: the Eoseungsaengak section may be shortened or adjusted.",
-              "Strong wind: stays at Jusangjeolli or Aewol may become shorter.",
-              "Late-day weather deterioration: O’Sulloc may carry a larger share of the afternoon.",
-              "If a stop closes: an alternative stop may be used."
+              "가벼운 비: 대체로 예정대로 진행.",
+              "폭우 또는 탐방로 제한: 어승생악 구간 단축·조정 가능.",
+              "강한 바람: 주상절리 또는 애월 체류 단축 가능.",
+              "저녁 날씨 악화: Osulloc 오후 비중 확대.",
+              "코스 임시 휴관: 대체 코스 이용 가능."
             ]
           },
           {
             "id": "wear",
-            "title": "What to Wear and Bring",
-            "preview": "Good shoes, layers, and a light jacket",
+            "title": "복장 및 준비물",
+            "preview": "좋은 신발, 레이어링, 얇은 재킷",
             "content": [
-              "Shoes with good grip",
-              "Layered clothing for mountain and coastal temperature differences",
-              "A light windbreaker",
-              "Hat and sunscreen",
-              "Water bottle"
+              "미끄럼 방지 기능의 신발.",
+              "산악·해안 기온 차 대비 겹쳐 입기.",
+              "가벼운 방풍 재킷.",
+              "모자와 자외선 차단.",
+              "물 한 병."
             ]
           },
           {
             "id": "included",
-            "title": "What’s Included / Not Included",
-            "preview": "Guide, vehicle, pickup, and admission included",
+            "title": "포함/미포함 내용",
+            "preview": "가이드, 차량, 픽업, 입장료 포함",
             "variant": "included",
             "content": [
-              "English-speaking guide",
-              "Small-group vehicle",
-              "Jeju City area hotel pickup and drop-off",
-              "All admission tickets",
-              "Bottled water",
-              "Lunch (pay on site)",
-              "Personal shopping expenses",
-              "Guide gratuities"
+              "영어 가이드",
+              "소그룹 차량",
+              "제주시 호텔 픽업·하차",
+              "모든 입장권",
+              "생수",
+              "점심 (현장 직접 결제)",
+              "개인 쇼핑 비용 제외",
+              "가이드 팁 제외"
             ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "Live weather integration"
+            "label": "실시간 날씨 연동"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "Updated daily"
+            "label": "매일 업데이트"
           },
-          "_seasonalSummary": "Southwest Jeju has the most varied terrain on the island — from Hallasan's 1100 Highland alpine zone to Hyeopjae's turquoise beach. Hallasan can be 5–8°C cooler than coast; bring a layer year-round.",
+          "_seasonalSummary": "제주 서남부는 한라산 1100고지의 고산 지대부터 협재의 에메랄드빛 해변까지 섬에서 가장 다양한 지형을 보여줍니다. 한라산 일대는 해안보다 5~8°C 낮을 수 있어 사계절 겉옷을 준비하는 것이 좋습니다.",
           "_seasonalTemperatures": [
             {
-              "season": "Spring (Mar–May)",
-              "range": "6–20°C inland / 10–22°C coast",
-              "notes": "Cherry blossoms; new tea leaves at Osulloc."
+              "season": "봄 (3~5월)",
+              "range": "내륙 6–20°C / 해안 10–22°C",
+              "notes": "벚꽃과 오설록의 새茶 잎이 돋는 시기입니다."
             },
             {
-              "season": "Summer (Jun–Aug)",
-              "range": "18–25°C inland / 22–30°C coast",
-              "notes": "1100 Highland stays cool; Hyeopjae at peak turquoise."
+              "season": "여름 (6~8월)",
+              "range": "내륙 18–25°C / 해안 22–30°C",
+              "notes": "1100고지는 시원하고, 협재 바다는 가장 맑은 에메랄드빛을 띱니다."
             },
             {
-              "season": "Autumn (Sep–Nov)",
-              "range": "8–22°C inland / 12–24°C coast",
-              "notes": "Best season — golden tea fields, clear Hallasan views."
+              "season": "가을 (9~11월)",
+              "range": "내륙 8–22°C / 해안 12–24°C",
+              "notes": "가장 좋은 계절입니다. 황금빛 차밭과 선명한 한라산 전망을 기대할 수 있습니다."
             },
             {
-              "season": "Winter (Dec–Feb)",
-              "range": "-2–7°C inland / 3–10°C coast",
-              "notes": "1100 Highland often snowy — striking but require warm layers."
+              "season": "겨울 (12~2월)",
+              "range": "내륙 -2–7°C / 해안 3–10°C",
+              "notes": "1100고지는 눈이 쌓이는 날이 많아 인상적이지만 따뜻한 옷이 필요합니다."
             }
           ]
         },
         "seasonalVariations": [
           {
-            "season": "Spring",
-            "description": "A season when rapeseed blooms can add yellow color to parts of the coast."
+            "season": "봄",
+            "description": "유채꽃이 해안 일부 구간에 노란 색감을 더할 수 있습니다."
           },
           {
-            "season": "Summer",
-            "description": "Days are long, and the greens across the route feel especially deep and vivid."
+            "season": "여름",
+            "description": "낮이 길고, 코스 전체 녹음이 특히 짙고 생동감 있게 느껴집니다."
           },
           {
-            "season": "Autumn",
-            "description": "Clear skies often make the route’s mountain, coast, and tea-field layers feel especially sharp."
+            "season": "가을",
+            "description": "맑은 하늘 덕분에 산, 해안, 차밭의 층층이 쌓인 풍경이 특히 만족스럽게 느껴집니다."
           },
           {
-            "season": "Winter",
-            "description": "The route usually feels quieter, with shorter daylight and a calmer overall mood."
+            "season": "겨울",
+            "description": "코스 전체가 고요하고 낮이 짧으며 전반적으로 차분한 분위기입니다."
           }
         ]
       }
@@ -2009,54 +1932,63 @@
       "props": {
         "bookingSupportSteps": [
           {
-            "timing": "Right after booking",
-            "title": "Instant confirmation",
-            "detail": "You receive a booking confirmation with a summary of the day."
+            "timing": "예약 직후",
+            "title": "즉시 확인",
+            "detail": "하루 요약과 함께 예약 확인을 발송합니다.",
+            "description": "제주시 호텔 픽업 정보 포함 즉시 예약 확인서 발송 (시내 무료, 시외 +₩70,000)."
           },
           {
-            "timing": "12 hours before",
-            "title": "12-hour reminder",
-            "detail": "Weather notes and route adjustments are shared in advance."
+            "timing": "출발 12시간 전",
+            "title": "12시간 전 알림",
+            "detail": "날씨 메모와 루트 조정 사항을 사전에 공유합니다.",
+            "description": "1100도로 현재 상태(여름 안개, 겨울 적설) 사전 안내."
           },
           {
-            "timing": "The night before",
-            "title": "Final pickup notice",
-            "detail": "Your exact pickup time and driver contact details are shared."
+            "timing": "전날 밤",
+            "title": "최종 픽업 안내",
+            "detail": "정확한 픽업 시간과 드라이버 연락처를 공유합니다.",
+            "description": "출발 전날 저녁 최종 픽업 시각 확인."
           },
           {
-            "timing": "Morning of the tour",
-            "title": "Day-of route note",
-            "detail": "A short morning briefing is given based on live on-site conditions."
+            "timing": "투어 당일 아침",
+            "title": "당일 코스 안내",
+            "detail": "최신 현장 상황에 기반한 간단한 아침 브리핑을 안내해 드립니다.",
+            "description": "날씨 및 1100도로 통제 여부 아침 메시지로 전달."
           },
           {
-            "timing": "During the tour",
-            "title": "Live stop-by-stop guidance",
-            "detail": "You receive the information you need at each stop."
+            "timing": "투어 중",
+            "title": "경유지별 심층 안내",
+            "detail": "각 코스에서 필요한 정보를 안내해 드립니다.",
+            "description": "한라산 방패형 화산 지질, 유네스코 지질공원 인증 배경, 조선 시대 칠선녀 전설 등 가이드 심층 설명."
           },
           {
-            "timing": "After the tour",
-            "title": "Post-tour support",
-            "detail": "Additional guidance and recommendations can be shared afterward."
+            "timing": "투어 후",
+            "title": "투어 후 지원",
+            "detail": "이후 추가 가이드 및 추천을 공유할 수 있습니다.",
+            "description": "투어 후 피드백 요청 전송."
           }
         ],
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local operation",
-            "description": "Legally operated guiding in Jeju",
-            "iconBg": "bg-emerald-50/80"
+            "title": "공인 현지 운영",
+            "description": "제주 합법 가이드 운영",
+            "iconBg": "bg-emerald-50/80",
+            "body": "127건 기준 4.8/5 평점의 공인 현지 여행사 — 제주 서남부 코스 수백 회 운영 경험."
           },
           {
             "icon": "route",
-            "title": "Built around Jeju Southwest",
-            "description": "Designed specifically for the southwest route",
-            "iconBg": "bg-sky-50/80"
+            "title": "제주 서남부 중심 구성",
+            "description": "서남쪽 루트 전용 구성",
+            "iconBg": "bg-sky-50/80",
+            "body": "의무 쇼핑 없음. Osulloc 티뮤지엄은 무료 입장. 코스 전체에 쇼핑 강요가 없습니다."
           },
           {
             "icon": "users",
-            "title": "Operates in a small group",
-            "description": "Up to 8 guests",
-            "iconBg": "bg-amber-50/80"
+            "title": "소그룹 운영",
+            "description": "최대 8인",
+            "iconBg": "bg-amber-50/80",
+            "body": "사계절 운행: 1100도로 습지는 여름 안개, 가을 억새, 겨울 설경으로 계절마다 다른 분위기를 연출합니다."
           }
         ]
       }
@@ -2068,58 +2000,58 @@
         "staticQuestions": [
           {
             "id": "first-time",
-            "question": "Is this a good choice for first-time Jeju travelers?",
-            "answer": "Yes. It gives you a balanced one-day experience of Hallasan scenery, volcanic coastline, a waterfall walk, tea-field atmosphere, and a relaxed Aewol finish."
+            "question": "제주를 처음 방문하는 분에게 적합한가요?",
+            "answer": "네, 한라산 경관, 화산 해안, 폭포, 차밭, 카페거리까지 제주 서남부를 균형 있게 하루에 경험할 수 있는 코스입니다."
           },
           {
             "id": "walking",
-            "question": "Is the walking level difficult?",
-            "answer": "Not especially. Eoseungsaengak is the most active section and includes many stairs, but the rest of the day is generally manageable."
+            "question": "도보 이동이 힘들지 않나요?",
+            "answer": "보통 수준입니다. 어승생악 계단이 가장 체력이 필요한 구간이며, 나머지는 대체로 가볍습니다."
           },
           {
             "id": "rain",
-            "question": "Does the tour run in rainy weather?",
-            "answer": "Yes. The route can still run in rain, though Eoseungsaengak or the more exposed coastal sections may be shortened depending on conditions."
+            "question": "비가 와도 투어가 진행되나요?",
+            "answer": "네, 진행됩니다. 우천 시 어승생악이나 해안 노출 구간이 단축될 수 있으며, 실내 구간(Osulloc 티뮤지엄)이 대안이 됩니다."
           },
           {
             "id": "parents",
-            "question": "Is it suitable for traveling with parents or older family members?",
-            "answer": "Yes, in many cases. It works well for adult family trips, especially when everyone is comfortable with stairs and short uphill sections."
+            "question": "부모님과 함께 참여할 수 있나요?",
+            "answer": "계단과 짧은 도보가 포함되어 있어, 이를 소화할 수 있는 가족 단위 방문에 적합합니다."
           },
           {
             "id": "children",
-            "question": "Can I join with children?",
-            "answer": "Yes. It is especially suitable for children around age 8 and up who can keep up with short walks and the rhythm of a full-day tour."
+            "question": "어린이와 함께할 수 있나요?",
+            "answer": "만 8세 이상, 짧은 산책과 하루 일정의 리듬을 따라올 수 있는 어린이에게 적합합니다."
           },
           {
             "id": "order",
-            "question": "Can the stop order change depending on on-site conditions?",
-            "answer": "Yes. Mountain weather, coastal wind, traffic, and visitor flow can all lead to small changes in the order, especially around Eoseungsaengak and the coast."
+            "question": "당일 경유지 순서가 바뀔 수 있나요?",
+            "answer": "산악 날씨, 해안 바람, 교통, 인파에 따라 순서가 소폭 조정될 수 있습니다. 전체 코스는 그대로 진행됩니다."
           },
           {
             "id": "lunch",
-            "question": "Is lunch included?",
-            "answer": "That depends on the product condition. Lunch time is built into the route, but whether the meal itself is included follows your booked plan."
+            "question": "점심 식사가 포함되어 있나요?",
+            "answer": "상품 구성에 따라 다를 수 있습니다. 점심 시간은 항상 제공되며, 식사비 포함 여부는 예약 시 확인하세요."
           },
           {
             "id": "why-eoseungsaengak",
-            "question": "Why does the route start at Eoseungsaengak?",
-            "answer": "Because it opens the day with a real Hallasan feel while the group still has the most energy, without turning the route into a heavy hiking itinerary."
+            "question": "왜 어승생악으로 시작하나요?",
+            "answer": "체력이 가장 충분한 오전에 오름을 올라야 하루 전체가 여유로워집니다. 덕분에 이 코스는 전형적인 '등산 투어'가 아닌 균형 잡힌 하루가 됩니다."
           },
           {
             "id": "why-jusangjeolli",
-            "question": "Why do you go to Jusangjeolli after Hallasan?",
-            "answer": "Because it lets Jeju’s volcanic story unfold naturally from mountain terrain into a dramatic basalt coastline."
+            "question": "왜 한라산 다음에 주상절리를 가나요?",
+            "answer": "산에서 극적인 현무암 해안으로 이어지면서 제주의 화산 이야기가 자연스럽게 전개되기 때문입니다."
           },
           {
             "id": "why-osulloc",
-            "question": "Why does O’Sulloc come before Aewol?",
-            "answer": "Because O’Sulloc softens the mood after the waterfall section, which makes Aewol feel even more relaxed and comfortable as the final stop."
+            "question": "왜 Osulloc이 애월 앞에 오나요?",
+            "answer": "폭포 구간 후 Osulloc에서 일정 속도를 낮추면, 애월 카페거리가 더 편안하고 여유롭게 느껴지기 때문입니다."
           },
           {
             "id": "later-structure",
-            "question": "Why is the second half structured this way?",
-            "answer": "Lunch and Cheonjeyeon settle the rhythm after the more open morning section, O’Sulloc adds a lighter tea-field break, and Aewol closes the day without making the ending feel heavy."
+            "question": "왜 오후가 이렇게 구성되나요?",
+            "answer": "점심과 천제연으로 오전의 활동적인 흐름을 정리하고, Osulloc으로 가볍게 전환한 뒤 애월의 여유로운 마무리로 하루를 닫는 구성입니다."
           }
         ]
       }
@@ -2134,13 +2066,13 @@
             "author": "Sarah M.",
             "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
             "location": "Singapore",
-            "date": "March 2024",
+            "date": "2024년 3월",
             "rating": 5,
-            "title": "A really well-balanced way to see Jeju Southwest in one day",
-            "text": "The flow of the route was excellent. Starting at Hallasan gave the day real momentum, and that made Jusangjeolli feel even more impressive afterward. I especially loved how the route moved from O’Sulloc into Aewol. The afternoon softened naturally, and that made the whole day feel very well paced.",
+            "title": "하루에 제주 서남쪽을 보는 정말 균형 잡힌 방법",
+            "text": "루트의 흐름이 탁월했어요. 한라산으로 시작한 것이 하루에 실질적인 모멘텀을 주었고, 이후 주상절리가 더욱 인상적으로 느껴졌어요. 특히 Osulloc에서 애월로 이어지는 방식이 정말 좋았고, 오후가 자연스럽게 부드러워지면서 하루 전체가 매우 잘 페이싱된 것처럼 느껴졌어요.",
             "helpful": 24,
             "verified": true,
-            "tripType": "Couple",
+            "tripType": "커플",
             "photos": [
               "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
               "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
@@ -2151,13 +2083,13 @@
             "author": "James K.",
             "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
             "location": "Hong Kong",
-            "date": "March 2024",
+            "date": "2024년 3월",
             "rating": 5,
-            "title": "A great southwest route with an especially comfortable finish",
-            "text": "I joined several tours in Korea, and this one stood out because the order was so well designed. The guide handled the rhythm between Hallasan, the cliffs, and Cheonjeyeon very smoothly, and the O’Sulloc-to-Aewol ending made the day feel balanced rather than tiring.",
+            "title": "특히 편안한 마무리가 있는 훌륭한 서남쪽 루트",
+            "text": "한국에서 여러 투어에 참여했는데, 이번이 특별히 돋보였던 것은 순서가 너무 잘 구성되어 있었기 때문이에요. 가이드는 한라산, 절벽, 천지연 사이의 리듬을 매끄럽게 다뤘고, Osulloc-애월 마무리 덕분에 하루가 균형 잡힌 느낌이었어요.",
             "helpful": 18,
             "verified": true,
-            "tripType": "Family",
+            "tripType": "가족",
             "photos": []
           },
           {
@@ -2167,11 +2099,11 @@
             "location": "Tokyo",
             "date": "February 2024",
             "rating": 4,
-            "title": "I especially liked ending the day in Aewol",
-            "text": "The overall experience was very good. Eoseungsaengak was a better start than I expected, and O’Sulloc was the perfect stop before Aewol. I gave it four stars only because I would have loved a little more time in Aewol, although I understand that the schedule has limits.",
+            "title": "특히 애월에서 하루를 마무리하는 것이 좋았어요",
+            "text": "전반적인 경험이 매우 좋았어요. 어승생악이 기대보다 더 나은 시작이었고, Osulloc은 애월 전 완벽한 코스였어요. 4점을 준 것은 애월에서 좀 더 시간을 보내고 싶었기 때문이지만, 일정의 한계도 이해해요.",
             "helpful": 12,
             "verified": true,
-            "tripType": "Solo",
+            "tripType": "혼자",
             "photos": [
               "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=80"
             ]
@@ -2183,11 +2115,11 @@
             "location": "Sydney",
             "date": "February 2024",
             "rating": 5,
-            "title": "The route had more variety than I expected",
-            "text": "I joined mainly for the scenery, but what stayed with me most was how well the whole day was connected. Hallasan, basalt cliffs, the waterfall, tea fields, and the Aewol coast all felt like part of one continuous story, and the small-group format kept every transition smooth.",
+            "title": "루트가 기대보다 훨씬 다양했어요",
+            "text": "주로 경치를 위해 참여했지만, 가장 기억에 남은 것은 하루 전체가 얼마나 잘 연결되어 있었는지였어요. 한라산, 현무암 절벽, 폭포, 차밭, 애월 해안 모두 하나의 연속적인 이야기의 일부처럼 느껴졌고, 소그룹 형태 덕분에 모든 전환이 매끄러웠어요.",
             "helpful": 31,
             "verified": true,
-            "tripType": "Friends",
+            "tripType": "친구들",
             "photos": []
           }
         ],
@@ -2223,19 +2155,19 @@
           ],
           "highlights": [
             {
-              "label": "Scenery",
+              "label": "풍경",
               "count": 89
             },
             {
-              "label": "Guide",
+              "label": "가이드",
               "count": 76
             },
             {
-              "label": "Pace",
+              "label": "일정 속도",
               "count": 54
             },
             {
-              "label": "Aewol Finale",
+              "label": "애월 마무리",
               "count": 41
             }
           ]
@@ -2246,13 +2178,13 @@
       "id": "sticky_booking",
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
         "price": {
           "amountLabel": "58",
           "currency": "USD",
-          "per": "person",
+          "per": "인",
           "priceSource": "internal",
-          "priceNote": "Small-group bilingual tour. AtoC Korea direct sale; 10% discount applied vs operator base.",
+          "priceNote": "소그룹 다국어 투어. AtoC Korea 직접 판매가 기준으로 여행사 기본가 대비 10% 할인이 적용됩니다.",
           "discountPercent": 10
         }
       }
@@ -2262,18 +2194,18 @@
     "type": "hotel_lobby",
     "meeting_points": [
       {
-        "name": "Jeju City hotel lobbies",
+        "name": "제주시 호텔 로비",
         "time": "08:30–09:00"
       }
     ],
     "dropoff_points": [
       {
-        "name": "Jeju City hotels (return)",
+        "name": "제주시 호텔 복귀",
         "approx_time": "≈ 17:30–18:00"
       }
     ],
     "hotel_pickup_available": true,
-    "notes": "Pickup window 08:30–09:00 from hotel lobbies in Jeju City; final time confirmed the night before. Airport pickup may be possible depending on circumstances."
+    "notes": "제주시 호텔 로비에서 08:30~09:00 사이 픽업합니다. 정확한 시간은 전날 밤 확정되며, 상황에 따라 공항 픽업도 가능할 수 있습니다."
   },
   "itinerary_variants": [],
   "_publication": {
@@ -2284,10 +2216,10 @@
       "v15_unified"
     ],
     "fix_passes": {
-      "v15_unified": "Migrated from small-group v1 schema to v15 canonical: schema_version 1→7; SEO expanded (primaryKeywords, ogImage, title); price expanded (priceSource, priceNote, discountPercent); routeFlowStops id→type; routePhases stripped of Tailwind classes (bgClass/dotClass/textClass), reshaped to {phase,duration,description}; seasonalVariations stripped of Tailwind, reshaped to {season,description}; whyTourWorks.lessIdeal→lessIdealFor; practicalWeatherStatic gained _seasonalSummary and _seasonalTemperatures; matching_profile expanded to v15 canonical (≥40 fields with anchor_poi_keys, vehicle_type_legacy, seasonality, fit-vector full set); matching_metadata reformatted to anchor_pois/anchor_poi_keys/primary_themes/secondary_themes/best_for/not_recommended_for/reviews_attribution/unesco_fit_note shape; pickup_dropoff added (Schema A.1); itinerary_variants=[]; _publication block added. PRESERVED from source (richer than catalog v15): itineraryStops[*].visitBasics, .convenience, .smartNotes (operational data), guestReviews[4 each], reviewsSummary.highlights.",
+      "v15_unified": "Migrated from small-group v1 schema to v15 canonical: schema_version 1→7; SEO expanded (primaryKeywords, ogImage, title); price expanded (priceSource, priceNote, discountPercent); routeFlowStops id→type; routePhases stripped of Tailwind classes (bgClass/dotClass/textClass), reshaped to {phase,duration,description}; seasonalVariations stripped of Tailwind, reshaped to {season,description}; whyTourWorks.lessIdeal→lessIdealFor; practicalWeatherStatic gained _seasonalSummary and _seasonalTemperatures; product profile expanded to v15 canonical (≥40 fields with anchor_poi_keys, vehicle_type_legacy, seasonality, fit-vector full set); matching_metadata reformatted to anchor_pois/anchor_poi_keys/primary_themes/secondary_themes/best_for/not_recommended_for/reviews_attribution/unesco_fit_note shape; pickup_dropoff added (Schema A.1); itinerary_variants=[]; _publication block added. PRESERVED from source (richer than catalog v15): itineraryStops[*].visitBasics, .convenience, .smartNotes (operational data), guestReviews[4 each], reviewsSummary.highlights.",
       "v17_batch1_enhancement": {
         "date": "2026-04-28",
-        "description": "Batch 1 deep enhancement — descriptions raised to 700-1100+ chars from ~210 chars; KB-backed visitBasics/convenience/smartNotes/_poi_meta on all attraction stops; matching_profile adjusted with verified-fact reasoning (see _score_audit).",
+        "description": "Batch 1 deep enhancement — descriptions raised to 700-1100+ chars from ~210 chars; KB-backed visitBasics/convenience/smartNotes/_poi_meta on all attraction stops; product profile adjusted with verified-fact reasoning (see _score_audit).",
         "_score_audit": {
           "_methodology": "Scores on 1-5 integer scale. Each delta anchored to verified facts.",
           "deltas_applied": {
@@ -2364,15 +2296,15 @@
           "Wikipedia",
           "Hallasan National Park",
           "AllTrails",
-          "Trazy",
+          "시장 참고 자료",
           "Inside Jeju",
           "World of Waterfalls",
-          "Trip.com Korea"
+          "시장 참고 자료"
         ]
       },
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

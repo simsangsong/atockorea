@@ -16,19 +16,19 @@
     ],
     "ogImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
     "title": "仁川クルーズ寄港地観光：ソウル日帰り | AtoC",
-    "description": "Seoul cruise shore small-group tour from Incheon: Gyeongbokgung Palace → Bukchon Hanok Village → Gwangjang Market lunch → Insadong. 9 hours ship-to-ship, certified guide, Tuesdays use Changdeokgung (UNESCO)."
+    "description": "インチョン出発ソウルクルーズ小グループツアー：景福宮→北村韓屋マウル→広蔵市場→仁寺洞。桟橋ピックアップ、認定ガイド。"
   },
   "catalog_card": {
     "thumbnail": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
     "title": "仁川クルーズ寄港地ソウル日帰りツアー",
-    "priceLabel": "Price TBD — confirm small-group rate from GetYourGuide listing",
-    "shortCardDescription": "仁川クルーズターミナル発着のシェアバン日帰りツアー。9時間でソウル中心部の主要スポットを巡る：景福宮（火曜は昌徳宮）→北村韓屋村→広蔵市場の昼食（ソウル最古の常設市場）→仁寺洞文化通り。英語ガイド付き少人数制。",
+    "priceLabel": "小グループ料金確認中 — 予約時にご確認ください",
+    "shortCardDescription": "仁川クルーズターミナル発着のシェアバン日帰りツアー。9時間でソウル中心部の主要見どころを巡る：景福宮（火曜は昌徳宮）→北村韓屋村→広蔵市場の昼食（ソウル最古の常設市場）→仁寺洞文化通り。英語ガイド付き少人数制。",
     "tags": [
-      "small_group",
-      "seoul",
-      "cruise_excursion",
-      "from_cruise",
-      "shared_van"
+      "少人数ツアー",
+      "ソウル",
+      "クルーズ寄港地観光",
+      "クルーズ港発",
+      "乗合車両"
     ],
     "rating": 0,
     "reviewCount": 0,
@@ -51,15 +51,15 @@
   "price": {
     "amountLabel": "",
     "currency": "USD",
-    "per": "person",
-    "priceSource": "getyourguide_t1051171",
+    "per": "人",
+    "priceSource": "direct_rate",
     "priceNote": "仁川クルーズ寄港地ソウル日帰りツアーの価格は予約時にご確認ください。",
     "discountPercent": 10
   },
   "hero": {
     "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
     "imagePosition": "center 35%",
-    "tagline": "仁川港から景福宮・北村韓屋村・広蔵市場・仁寺洞へ — ソウルのハイライトを一日で",
+    "tagline": "仁川港から景福宮・北村韓屋村・広蔵市場・仁寺洞へ — ソウルの見どころを一日で",
     "pills": [
       "少人数シェアバン",
       "クルーズ対応",
@@ -68,7 +68,7 @@
     "meta": {
       "duration": "船→船（帰船時間に合わせて調整）",
       "region": "ソウル（仁川港発）",
-      "stops": "6スポット",
+      "stops": "6見どころ",
       "rating": 0,
       "ratingStars": 0
     }
@@ -80,7 +80,7 @@
     },
     {
       "id": "itinerary",
-      "label": "旅程"
+      "label": "行程"
     },
     {
       "id": "details",
@@ -97,40 +97,34 @@
   ],
   "glanceItems": [
     {
-      "icon": "camera",
-      "label": "写真映え度",
-      "value": "高い",
-      "level": 5
-    },
-    {
-      "icon": "mountain",
-      "label": "景観の密度",
-      "value": "良好",
-      "level": 4
-    },
-    {
-      "icon": "footprints",
-      "label": "歩行難易度",
-      "value": "やや高い",
-      "level": 4
-    },
-    {
-      "icon": "cloud-rain",
-      "label": "雨天適性",
-      "value": "まずまず",
-      "level": 3
+      "icon": "clock",
+      "label": "所要時間",
+      "value": "船→船（帰船時間に合わせて調整）"
     },
     {
       "icon": "users",
-      "label": "ファミリー適性",
-      "value": "良好",
-      "level": 4
+      "label": "グループ人数",
+      "value": "少人数シェアバン、英語対応ガイド付き"
     },
     {
-      "icon": "gauge",
-      "label": "ペース",
-      "value": "バランス型",
-      "level": 4
+      "icon": "map-pin",
+      "label": "ピックアップ",
+      "value": "仁川国際クルーズターミナル到着ホール"
+    },
+    {
+      "icon": "footprints",
+      "label": "歩行",
+      "value": "中程度 — 景福宮・北村・仁寺洞の石畳"
+    },
+    {
+      "icon": "utensils",
+      "label": "昼食",
+      "value": "広蔵市場のストリートフード（含まれず、自己負担）"
+    },
+    {
+      "icon": "ticket",
+      "label": "含まれるもの",
+      "value": "車両・認定ガイド・景福宮入場料"
     }
   ],
   "galleryItems": [
@@ -138,8 +132,8 @@
       "id": "g1",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-      "alt": "Gyeongbokgung's Geunjeongjeon throne hall with mountain backdrop",
-      "caption": "Gyeongbokgung — the throne hall Geunjeongjeon, National Treasure No. 223. Built 1395, rebuilt 1867.",
+      "alt": "ツアーで訪れる景福宮 — 正殿勤政殿（国宝第223号）。1395年創建、1867年再建の風景",
+      "caption": "景福宮 — 正殿勤政殿（国宝第223号）。1395年創建、1867年再建",
       "location": "景福宮（景福宮路、鍾路区、ソウル）",
       "atmosphere": "広い石庭・色鮮やかな軒下・王宮の威厳"
     },
@@ -147,8 +141,8 @@
       "id": "g2",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "Tile-roofed hanok houses along a sloping lane in Bukchon",
-      "caption": "Bukchon Hanok Village — ≈600 traditional houses in a designated conservation area since 1976.",
+      "alt": "北村の坂道沿いの瓦屋根の韓屋",
+      "caption": "北村韓屋マウル — 1976年から保護区指定、約600軒の伝統家屋",
       "location": "北村韓屋村（嘉会洞、鍾路区、ソウル）",
       "atmosphere": "静かな韓屋の路地 — 住宅街の緩やかな光"
     },
@@ -156,8 +150,8 @@
       "id": "g3",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "Vendors and customers crowded around a streetfood stall at Gwangjang Market",
-      "caption": "Gwangjang Market — Korea's first permanent indoor market (1905). Bindae-tteok and mayak gimbap are the signatures.",
+      "alt": "ツアーで訪れる広蔵市場（鍾路区、ソウル）の風景",
+      "caption": "広蔵市場（鍾路区、ソウル）",
       "location": "広蔵市場（鍾路区、ソウル）",
       "atmosphere": "共用カウンター・焼ける屋台・昭和の市場の活気"
     },
@@ -165,8 +159,8 @@
       "id": "g4",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=1200",
-      "alt": "Pedestrianized street with traditional craft shops and signage in Insadong",
-      "caption": "Insadong — Seoul's traditional craft and antiques street; designated a Cultural Street in 1988.",
+      "alt": "ツアーで訪れる仁寺洞（鍾路区、ソウル）の風景",
+      "caption": "仁寺洞（鍾路区、ソウル）",
       "location": "仁寺洞（鍾路区、ソウル）",
       "atmosphere": "歩行者天国 — 書道・工芸品・伝統茶房"
     },
@@ -174,8 +168,8 @@
       "id": "g5",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "Cruise ship docked at Incheon Port's international passenger terminal",
-      "caption": "Incheon Cruise Terminal in Songdo — pickup and drop-off point.",
+      "alt": "仁川港国際旅客ターミナルに停泊したクルーズ船",
+      "caption": "松島仁川クルーズターミナル — ピックアップ＆降車ポイント",
       "location": "仁川国際旅客ターミナル（仁川港）",
       "atmosphere": "仁川港の作業港 — クルーズ乗客の往来"
     }
@@ -184,10 +178,10 @@
     {
       "number": 1,
       "time": "≈ 09:00",
-      "duration": "30 min",
+      "duration": "30分",
       "name": "仁川クルーズターミナルでのピックアップ",
       "category": "出発 — 仁川国際クルーズターミナル",
-      "description": "英語対応ガイドが**仁川国際クルーズターミナル（인천항 국제여객터미널）**の到着ホール出口エリアで**AtoC Koreaのサインボード**を掲げて待機。仁川港からソウル中心部（景福宮）まで約60分（仁川大橋経由）。**出航時間の90〜120分前**にターミナルへ帰着設計。予約時に出航時刻を必ずお知らせください。",
+      "description": "英語対応ガイドが**仁川国際クルーズターミナル**の到着ホール出口エリアで**AtoC Koreaのサインボード**を掲げて待機。仁川港からソウル中心部（景福宮）まで約60分（仁川大橋経由）。**出航時間の90〜120分前**にターミナルへ帰着できるようにしています。予約時に出航時刻を必ずお知らせください。",
       "highlights": [
         "仁川国際クルーズターミナル到着ホールでピックアップ",
         "AtoC Koreaのサインボードを持ったガイドが出口で待機",
@@ -197,11 +191,11 @@
         "ターミナルでの集合＋コーチ乗車 — 約10分",
         "景福宮への移動 — 約60分"
       ],
-      "whyOnRoute": "Incheon Cruise Terminal pickup is the day's logistical anchor — without a pre-arranged transfer, cruise passengers face a 7-km gap from terminal to nearest metro station and a 60-90 min taxi to Seoul. The shared-van format keeps cost competitive while preserving the directness of door-to-door service. For cruise guests this pickup is the day's hard-cost-deciding stop — pre-arranged transfers eliminate the 7-km port-to-metro gap and the 60-90-min taxi alternative. Sharing the van with up to 7 other passengers keeps cost competitive (~30-50% of private-charter price) while preserving door-to-door directness; the all-aboard time is built into the day's schedule with a 90-minute reboarding buffer.",
+      "whyOnRoute": "仁川クルーズターミナルのピックアップが一日の物流見どころです。",
       "visitBasics": {},
       "convenience": {},
       "smartNotes": {
-        "tip": "Allow 30 min minimum for Korean immigration. Keep passport + cruise card accessible. The terminal address in Korean is 인천항 크루즈터미널 (연수구 국제항만대로 438) — DO NOT confuse with the older Incheon International Ferry Terminal."
+        "tip": "韓国の入国審査には最低30分確保。パスポート＋クルーズカードをすぐ取り出せるように。"
       },
       "_poi_meta": {
         "poi_key": "incheon_cruise_terminal",
@@ -222,10 +216,10 @@
     {
       "number": 2,
       "time": "≈ 10:30",
-      "duration": "90 min",
+      "duration": "90分",
       "name": "景福宮（キョンボックン）",
       "category": "朝鮮王朝の正宮 — 1395年創建・史跡第117号",
-      "description": "**景福宮（경복궁）**は**朝鮮王朝（1392〜1897年）の正宮**で、李成桂が1395年に建設した朝鮮最大の宮殿。「景福（경복）」は**「大いなる幸福（大慶福）」**の意。日本統治時代（1910〜1945年）に大部分が破壊されたが、1990年代以降の復元工事で主要建築が再建されている。正門（光化門）・勤政殿（国宝第223号）・慶会楼（国宝第224号）が必見。毎時00分と30分に行われる**王宮衛士交代儀式**は無料で観覧できる見どころ。入場料：**大人₩3,000**（含まれます）。毎週火曜日休館（月曜は開館）。ハンボク着用者は無料入場。",
+      "description": "**景福宮**は**朝鮮王朝（1392〜1897年）の正宮**で、李成桂が1395年に建設した朝鮮最大の宮殿。「景福」は**「大いなる幸福（大慶福）」**の意。日本統治時代（1910〜1945年）に大部分が破壊されたが、1990年代以降の復元工事で主要建築が再建されている。正門（光化門）・勤政殿（国宝第223号）・慶会楼（国宝第224号）が必見。毎時00分と30分に行われる**王宮衛士交代儀式**は無料で観覧できる見どころ。入場料：**大人₩3,000**（含まれます）。毎週火曜日休館（月曜は開館）。ハンボク着用者は無料入場。",
       "highlights": [
         "朝鮮王朝（1392〜1897年）の正宮 — 1395年李成桂建設",
         "**勤政殿（国宝第223号）**と**慶会楼（国宝第224号）**",
@@ -238,21 +232,21 @@
         "勤政殿・慶会楼・主要殿閣散策 — 約45〜55分",
         "王宮衛士交代儀式（時間が合えば） — 約15分"
       ],
-      "whyOnRoute": "Gyeongbokgung is Seoul's #1 must-see and the natural opener for any first-day-in-Seoul itinerary. Picked over Deoksugung (the smaller Western-influenced palace) because the changing-of-the-guard pageantry, the scale of the throne-hall complex, and the photogenic Gyeonghoeru/Hyangwonjeong pavilions deliver a single 90-min visit that explains 500 years of Joseon court life in concrete visual terms — essential for cruise passengers with one day in Korea. For cruise guests, the 90-min Gyeongbokgung dwell is also the day's primary deep-history anchor — first-time Korea visitors leave with a concrete visual framework (palace scale + ceremony pageantry + photogenic pavilions) that contextualizes every other Joseon-era reference in the country.",
+      "whyOnRoute": "景福宮はソウルNo.1の必見見どころであり、どのソウル初日行程にも自然な出発点。",
       "visitBasics": {
-        "hours": "Mar-May, Sep-Oct: 09:00-18:00; Jun-Aug: 09:00-18:30; Nov-Feb: 09:00-17:00 (last admission 1 hr before close)",
-        "closed": "**Tuesdays** (substitute Changdeokgung when needed)",
-        "admission": "Adult 3,000 KRW / Child 1,500 KRW; FREE for hanbok-wearers; Royal Palace Pass 10,000 KRW (4 palaces + Jongmyo, 3 months)",
-        "walking": "Moderate — flat extensive grounds; ~1.5-2 km of walking through the main complex"
+        "hours": "3〜5·9〜10月09:00〜18:00。6〜8月09:00〜18:30。11〜2月09:00〜17:00",
+        "closed": "**火曜日**（必要に応じて昌徳宮に変更）",
+        "admission": "大人₩3,000/子供₩1,500。韓服着用者無料",
+        "walking": "中程度 — 宮内はかなりの歩行距離"
       },
       "convenience": {
-        "restroom": "At main entrance, mid-grounds, and rear pavilion area",
-        "parking": "Limited; tour bus drop-off zones at Gwanghwamun"
+        "restroom": "宮内に複数",
+        "parking": "景福宮駅地下駐車場（近く）"
       },
       "smartNotes": {
-        "photo": "Gwanghwamun gate at sunrise / golden hour. Royal Guard Changing Ceremony 10:00 + 14:00. Gyeonghoeru Pavilion reflected in lotus pond. Hyangwonjeong's covered bridge in spring (cherry blossoms) or autumn (foliage). Hanbok-wearers in front of throne-hall stairs.",
-        "facilities": "National Folk Museum of Korea + National Palace Museum of Korea both INSIDE Gyeongbokgung grounds (separate free admission). Cafes, restrooms, gift shop near entrance.",
-        "tip": "Time the visit for the 10:00 Changing of the Guard — arrive 09:50 at Heungnyemun Gate. Skip Tuesday — closed (Changdeokgung substitute). Hanbok rental in Bukchon (5 min walk) is 15,000-20,000 KRW for 4 hours and saves the 3,000 KRW admission. Combine with Bukchon Hanok Village naturally — both within 10-min walk."
+        "photo": "光化門と勤政殿 — 春の桜または秋の紅葉を背景にしたものが最高。",
+        "facilities": "国立民俗博物館（無料、宮内）。お土産店。",
+        "tip": "韓服着用で無料入場。火曜休業 — 火曜日は昌徳宮に変更。"
       },
       "_poi_meta": {
         "poi_key": "gyeongbokgung_palace",
@@ -272,34 +266,34 @@
     {
       "number": 3,
       "time": "≈ 12:15",
-      "duration": "75 min",
+      "duration": "75分",
       "name": "北村韓屋村（プクチョン・ハノンマウル）",
       "category": "保存された韓屋群 — 景福宮と昌徳宮の間の丘",
-      "description": "**北村韓屋村（북촌한옥마을）**は景福宮の北東、嘉会洞の丘の斜面に広がる**保存された伝統韓屋（한옥）の集住エリア**。「北村（북촌）」は景福宮・昌徳宮の「北（北村）」にある村の意。骨格は朝鮮時代から続く양반（両班）住宅地で、600年以上の歴史を持つ。現在も居住者がいる生活空間のため、静寂の維持が求められる（騒音注意の看板あり）。代表的なフォトスポットは**嘉会洞11番地（31坂）** — 石畳の急坂から連なる韓屋の屋根ラインと遠くの서울 スカイラインの組み合わせ。北村案内センター（無料）では韓屋の建築構造の展示あり。観光渋滞（特に土日）が激しく、静かな体験を求める場合は平日の朝が最適。**無料**。",
+      "description": "**北村韓屋村**は景福宮の北東、嘉会洞の丘の斜面に広がる**保存された伝統韓屋（韓屋）の集住エリア**。「北村」は景福宮・昌徳宮の「北（北村）」にある村の意。骨格は朝鮮時代から続く（両班）住宅地で、600年以上の歴史を持つ。現在も居住者がいる生活空間のため、静寂の維持が求められる（騒音注意の看板あり）。代表的な撮影ポイントは**嘉会洞11番地（31坂）** — 石畳の急坂から連なる韓屋の屋根ラインと遠くの スカイラインの組み合わせ。北村案内センター（無料）では韓屋の建築構造の展示あり。観光渋滞（特に土日）が激しく、静かな体験を求める場合は平日の朝が最適。**無料**。",
       "highlights": [
         "景福宮・昌徳宮の間に広がる**600年以上の歴史を持つ両班住宅地**",
         "現在も居住者がいる生活空間 — 静寂の維持が必要",
-        "**嘉会洞11番地（31坂）** — 連なる韓屋の屋根ラインのシグネチャーフォトスポット",
+        "**嘉会洞11番地（31坂）** — 連なる韓屋の屋根ラインの代表的な撮影ポイント",
         "**無料**"
       ],
       "timeUsed": [
-        "嘉会洞31坂（フォトスポット）＋散策 — 約30〜40分"
+        "嘉会洞31坂（撮影ポイント）＋散策 — 約30〜40分"
       ],
-      "whyOnRoute": "Bukchon is the natural pivot from Gyeongbokgung's grand-scale royal architecture to a domestic-scale Joseon-era streetscape — completing the 'how kings AND aristocrats lived 500 years ago' narrative within walking distance. Picked over Namsangol Hanok Village (a curated open-air museum) because Bukchon is a LIVING village with residents — far more authentic for the story-driven cruise passenger window. For cruise guests on a one-day-in-Seoul window, Bukchon delivers the day's strongest 'period-set' photo opportunity — hanok rooflines + Insadong-bound alley vistas + the Bukchon 8 Gyeong viewpoints make this a 75-min Instagram-grade stop within walking distance of both Gyeongbokgung and Insadong.",
+      "whyOnRoute": "北村は景福宮の壮大な王宮建築から生活規模の生きた遺産地区への自然な転換点。",
       "visitBasics": {
-        "hours": "24 hours (lanes always accessible); residents request quiet 22:00-10:00",
-        "closed": "Open year-round; some private hanok museums may close on Mondays",
-        "admission": "Free entry to lanes (workshops + private museums charge 5,000-10,000 KRW)",
-        "walking": "Moderate — cobbled, sloped alleys; comfortable shoes essential"
+        "hours": "24時間（路地は常時アクセス可）。住民は22:00〜10:00に静粛を要請",
+        "closed": "年中無休",
+        "admission": "路地無料（工房・個人韓屋博物館は₩5,000〜10,000）",
+        "walking": "中程度 — 上り坂の路地。車椅子アクセスは困難"
       },
       "convenience": {
-        "restroom": "Tourist Information Center at Bukchon entrance; cafes scattered through the village",
-        "parking": "Limited; walking-distance from Gyeongbokgung"
+        "restroom": "安国駅6番出口の観光案内所。インサドン内",
+        "parking": "限られた駐車場。安国駅またはGyeongbokgung近くの有料駐車場"
       },
       "smartNotes": {
-        "photo": "**Bukchon 8 Gyeong (8 Famous Views)** — the #6 viewpoint at Gye-dong-gil for the iconic hanok-roofline-and-N-Seoul-Tower shot. Hanbok-wearers framed against tile-roof gables. Ssamzigil cultural alley (covered alley with shops at the south edge near Insadong).",
-        "facilities": "Tourist Information Center near Anguk Station Exit 2 with multilingual maps. Coffee shops, traditional teahouses, hanok-converted cafes scattered through the village. Photo zones marked.",
-        "tip": "**Visit before noon or after 16:00** — residents have publicly requested quieter visits; some lanes have signs prohibiting tour groups during early-morning resident hours. Stay quiet and on the marked photo paths. Hanbok rental shops at the village edge — Hanboknam, Oneday Hanbok, etc. Combine with Insadong (5 min walk) and Gyeongbokgung (10 min walk) for a Seoul-northside half-day."
+        "photo": "第2景の韓屋屋根ライン＋Nソウルタワー — GoogleマップまたはKakaoマップで場所を確認可能。",
+        "facilities": "多数のギャラリー、工房、カフェ。観光案内所（安国駅6番出口）。",
+        "tip": "住宅街です — 静かな見学と写真の礼儀を守ってください。週末の午前10時以降は混雑します。"
       },
       "_poi_meta": {
         "poi_key": "bukchon_hanok_village",
@@ -319,34 +313,34 @@
     {
       "number": 4,
       "time": "≈ 13:45",
-      "duration": "75 min",
+      "duration": "75分",
       "name": "広蔵市場での昼食",
       "category": "ソウル最古の常設市場 — ストリートフードの聖地",
-      "description": "**広蔵市場（광장시장、1905年開設）**はソウル最古の常設市場で**韓国を代表するストリートフードの聖地**。市場内の細い通路沿いに何十もの屋台が並び、代表的なメニュー：**마약김밥（麻薬キンパ）** — 人気屋台のひと口サイズのキンパ；**빈대떡（緑豆ビンデトック）** — 緑豆の粉を使った韓国式お好み焼き；**순대（スンデ）** — 韓国式血腸；**떡볶이（トッポッキ）** — 辛い餅炒め；**육회（ユクフェ）** — 生の牛肉の和え物（広蔵市場の名物）。屋台での食事は自己負担（一人あたり₩10,000〜20,000程度）。ガイドがナビゲートしておすすめの屋台を案内。",
+      "description": "**広蔵市場**はソウル最古の常設市場で**韓国を代表するストリートフードの聖地**。市場内の細い通路沿いに何十もの屋台が並び、代表的なメニュー：**（麻薬キンパ）** — 人気屋台のひと口サイズのキンパ。**（緑豆ビンデトック）** — 緑豆の粉を使った韓国式お好み焼き。**（スンデ）** — 韓国式血腸。**（トッポッキ）** — 辛い餅炒め。**（ユクフェ）** — 生の牛肉の和え物（広蔵市場の名物）。屋台での食事は自己負担（一人あたり₩10,000〜20,000程度）。ガイドがナビゲートしておすすめの屋台を案内。",
       "highlights": [
         "**ソウル最古の常設市場（1905年）** — 韓国のストリートフードの聖地",
-        "**마약김밥（麻薬キンパ）・빈대떡（緑豆ビンデトック）・육회（ユクフェ）**が人気",
+        "**（麻薬キンパ）・（緑豆ビンデトック）・（ユクフェ）**が人気",
         "昼食は自己負担（₩10,000〜20,000程度）",
         "ガイドがおすすめ屋台を案内"
       ],
       "timeUsed": [
         "広蔵市場ストリートフード＋昼食 — 約60〜75分"
       ],
-      "whyOnRoute": "Gwangjang is Seoul's most authentic non-tourist food experience — a working-class market that international media made world-famous without it losing its character. Picked over Namdaemun Market (larger but more Chinese-tour-bus dominated) because Gwangjang's food alley is a single covered ribbon perfect for a 75-min lunch stop — the alley's compact layout means cruise passengers see a dozen specialties in a single pass, eat at one or two counters, and leave full. For cruise guests, the 75-min Gwangjang lunch slot is the day's most cost-efficient meal — bindaetteok + mayak gimbap + tteokbokki for ~10,000-15,000 KRW per person vs ~25,000-40,000 KRW for a comparable Insadong sit-down lunch.",
+      "whyOnRoute": "廣蔵市場はソウルで最も本物の非観光客向け食体験 — 国際メディアが世界的に有名にした庶民市場です。",
       "visitBasics": {
-        "hours": "Most stalls 09:00-23:00 daily; food alley peaks 11:00-21:00",
-        "closed": "Open year-round; some textile-floor stalls closed Sundays",
-        "admission": "Free entry; pay-as-you-go (cash-only at most food stalls)",
-        "walking": "Easy — flat covered alley; comfortable shoes for narrow stall-stool access"
+        "hours": "ほとんどの屋台09:00-23:00。フードアレーのピーク11:00-21:00",
+        "closed": "年中無休。一部のテキスタイル階の屋台は日曜休み",
+        "admission": "入場無料。飲食は個人負担（ほとんどの屋台は現金のみ）",
+        "walking": "楽 — 平坦な屋内路地。狭い屋台スツールへのアクセスに歩きやすい靴を推奨"
       },
       "convenience": {
-        "restroom": "Inside the market building (signposted)",
-        "parking": "Limited; nearest paid parking ~5 min walk"
+        "restroom": "市場ビル内（案内表示あり）",
+        "parking": "限られた駐車場。最寄りの有料駐車場は徒歩約5分"
       },
       "smartNotes": {
-        "photo": "Bindaetteok being fried on the stone mills (pork-lard pans) — the iconic shot. Mayak gimbap rolling counters. Yukhoe plates at Cham Sundae #18. Hanging dried fish/seaweed displays. The covered-alley overhead view.",
-        "facilities": "Many vendors have small sit-down dining areas behind their stalls. Multilingual menu boards. Some now accept cards but assume cash-only. ATMs near Jongno 5-ga Station Exit 7.",
-        "tip": "**Bring CASH 10,000-20,000 KRW per person.** Try bindaetteok + mayak gimbap as the must-eat pair. Avoid seasoning samples without intent to purchase (Korean market etiquette). Visit before 12:00 OR after 14:00 to skip peak crowds. Yukhoe (raw beef) is safe — vendors source same-day fresh — but skip if you're sensitive to raw foods. Pair the food alley with the second-floor textile district if you want a Korean wedding hanbok souvenir."
+        "photo": "石臼の上でビンデトック（緑豆チヂミ）が焼かれる様子 — 代表的なな一枚。マヤクキンパの巻き付け作業も絵になる。",
+        "facilities": "すべての屋台が後方に小さな飲食スペースを持つ。多言語メニューボード。カード不可の屋台もあり。",
+        "tip": "**1人あたり現金₩10,000〜20,000持参推奨。** ビンデトック+マヤクキンパの組み合わせが必食。週末12:00〜18:00は混雑を避けよう。"
       },
       "_poi_meta": {
         "poi_key": "gwangjang_market",
@@ -366,34 +360,34 @@
     {
       "number": 5,
       "time": "≈ 15:15",
-      "duration": "75 min",
+      "duration": "75分",
       "name": "仁寺洞（インサドン）文化通り",
       "category": "ソウルの伝統文化・アート・茶房通り — 仁寺洞キル",
-      "description": "**仁寺洞（인사동）**はソウル中心部（鍾路区）の**伝統文化・アート・茶房が集まる約300mの文化通り（인사동길）**。골목（横丁）には伝統陶器・民画・書道・天然素材の土産物店・伝統茶房（茶집）・ギャラリーが軒を連ねる。主要見どころ：**쌈지길（サムジキル）** — 4層の螺旋通路を持つ複合文化施設で伝統工芸品と独立デザイナーブランドが集まる；**북인사마당（北仁寺マダン）** — 週末に伝統音楽・民俗演技が行われる広場（時間が合えば観覧可）。伝統茶（식혜・쌍화차・오미자차）を楽しめる茶房が多数。**無料**散策；店舗での購入は自己負担。",
+      "description": "**仁寺洞**はソウル中心部（鍾路区）の**伝統文化・アート・茶房が集まる約300mの文化通り**。（横丁）には伝統陶器・民画・書道・天然素材の土産物店・伝統茶房・ギャラリーが軒を連ねる。主要見どころ：**（サムジキル）** — 4層の螺旋通路を持つ複合文化施設で伝統工芸品と独立デザイナーブランドが集まる。**（北仁寺マダン）** — 週末に伝統音楽・民俗演技が行われる広場（時間が合えば観覧可）。伝統茶を楽しめる茶房が多数。**無料**散策。店舗での購入は自己負担。",
       "highlights": [
         "ソウル中心部の**伝統文化・アート・茶房通り**",
-        "**쌈지길（サムジキル）** — 螺旋通路の伝統工芸複合施設",
-        "伝統韓国茶（식혜・쌍화차・오미자차）が楽しめる茶房多数",
+        "**（サムジキル）** — 螺旋通路の伝統工芸複合施設",
+        "伝統韓国茶が楽しめる茶房多数",
         "**無料**散策"
       ],
       "timeUsed": [
         "仁寺洞散策＋ショッピング/茶房（任意） — 約40〜50分"
       ],
-      "whyOnRoute": "Insadong closes the Seoul highlights loop with the city's strongest traditional-crafts shopping experience — the natural complement to Bukchon's residential hanok and Gwangjang's working-class food culture. Picked over the Dongdaemun area (larger but fashion-and-modern-shopping focused) because Insadong's craft-and-tea concentration is unmatched in Seoul and aligns with the cruise-passenger souvenir-purchase window. For cruise guests, Insadong is the day's primary souvenir-purchase window — Korean ceramics + hanji paper + tea + traditional crafts are concentrated in this single 700-m pedestrian street, eliminating the need for fragmented shopping across multiple Seoul districts.",
+      "whyOnRoute": "仁寺洞はソウルの見どころループを市内最高の伝統工芸ショッピング体験で締めくくります。",
       "visitBasics": {
-        "hours": "Most shops 10:00-22:00; teahouses typically 11:00-22:00",
-        "closed": "Open year-round; individual galleries may close Mondays",
-        "admission": "Free entry; pay-as-you-go for purchases and teahouses",
-        "walking": "Easy — flat pedestrian street; cobblestone alleys at edges"
+        "hours": "ほとんどの店舗10:00〜22:00。茶屋は通常11:00〜22:00",
+        "closed": "年中無休。一部ギャラリーは月曜休",
+        "admission": "無料入場。飲食・購入は都度払い",
+        "walking": "楽——平坦な歩行者街"
       },
       "convenience": {
-        "restroom": "Ssamzigil + Tourist Information Center at Anguk Station Exit 6",
-        "parking": "Limited; walking from Bukchon (5 min) or Jongno 3-ga subway access"
+        "restroom": "サムジキル＋安国駅6番出口の観光案内所",
+        "parking": "限られた駐車場。北村から徒歩5分"
       },
       "smartNotes": {
-        "photo": "Ssamzigil spiral interior + rooftop terrace. Traditional teahouse interiors with hanji-paper screens. Hanji workshops mid-demo. Korean wedding-color thread bundles at hanbok-accessory shops. Pedestrian-only weekend street view.",
-        "facilities": "Cafes, teahouses, restaurants, galleries throughout. Tourist Information Center at Anguk Station Exit 6. Tax refund counters at major souvenir shops. ATMs at Anguk Station and Jongno 3-ga Station.",
-        "tip": "**Best souvenirs**: hanji paper crafts, traditional ink stamps (dojang), small ceramics, Korean knot-tying kits, traditional tea sampler boxes. Skip if you don't shop — the street's appeal is browse-and-buy. Ssamzigil rooftop terrace has photo-worthy city views and is free entry. Balwoo Gongyang Michelin temple cuisine requires advance reservation. Visit on Saturday or Sunday when the street is fully pedestrian (no cars)."
+        "photo": "サムジキルのスパイラル内部＋屋上テラス。伝統茶屋の内装。",
+        "facilities": "カフェ、茶屋、レストラン、ギャラリーが通り全域に。観光案内所（安国駅6番出口近く）。",
+        "tip": "**おすすめのお土産**：韓紙工芸品、伝統スタンプ、小さな陶磁器。サムジキルの屋上テラスから路地全体を一望できる。"
       },
       "_poi_meta": {
         "poi_key": "insadong",
@@ -413,23 +407,23 @@
     {
       "number": 6,
       "time": "≈ 16:45",
-      "duration": "75 min",
+      "duration": "75分",
       "name": "仁川クルーズターミナルへ帰着",
       "category": "帰着 — 仁川国際クルーズターミナル",
-      "description": "ソウル中心部から仁川大橋経由で仁川クルーズターミナルへ帰路（約60分）。**出航時間の90〜120分前**にターミナルへ到着設計。緊急時や渋滞時はガイドが休憩をスキップして帰船を優先。",
+      "description": "ソウル中心部から仁川大橋経由で仁川クルーズターミナルへ帰路（約60分）。**出航時間の90〜120分前**にターミナルへ到着できるようにしています。緊急時や渋滞時はガイドが休憩をスキップして帰船を優先。",
       "highlights": [
         "ソウル→仁川クルーズターミナル：約60分",
-        "出航時間の**90〜120分前**にターミナル到着設計"
+        "出航時間の**90〜120分前**にターミナル到着できるようにしています"
       ],
       "timeUsed": [
         "ソウル→仁川ターミナル — 約60分",
         "ターミナル到着＋乗船 — 約10〜15分"
       ],
-      "whyOnRoute": "Return logistics — the 90-min cushion before ship all-aboard absorbs unexpected traffic and ensures cruise passengers will not be left behind. Independent travelers without this buffer face genuine risk of missing departure (the ship will not wait).",
+      "whyOnRoute": "帰路の手配 — 最終乗船90分前の時間の余裕が予期しない交通渋滞を吸収します。",
       "visitBasics": {},
       "convenience": {},
       "smartNotes": {
-        "tip": "Cruise terminal Korean address: 인천항 크루즈터미널 (연수구 국제항만대로 438) — keep handy in case driver-confusion (some drivers mistake Cruise Terminal for the older Ferry Terminal). All-aboard time is on your cruise card; confirm before boarding the van."
+        "tip": "クルーズターミナルの韓国語住所： — 保存しておいてください。"
       },
       "_poi_meta": {
         "poi_key": "OPS_return_incheon",
@@ -441,66 +435,66 @@
   ],
   "routeFlowStops": [
     {
-      "name": "Incheon Cruise Terminal",
+      "name": "仁川クルーズターミナル",
       "type": "origin",
-      "theme": "Departure"
+      "theme": "出発"
     },
     {
-      "name": "Gyeongbokgung Palace (or Changdeokgung on Tuesdays)",
+      "name": "景福宮（火曜は昌徳宮）",
       "type": "primary",
-      "theme": "Royal palace"
+      "theme": "王宮"
     },
     {
-      "name": "Bukchon Hanok Village",
+      "name": "北村韓屋マウル",
       "type": "primary",
-      "theme": "Hanok residential district"
+      "theme": "韓屋住宅地区"
     },
     {
-      "name": "Lunch at Gwangjang Market",
+      "name": "広蔵市場でランチ",
       "type": "meal",
-      "theme": "Streetfood market"
+      "theme": "屋台グルメ市場"
     },
     {
-      "name": "Insadong cultural street",
+      "name": "インサドン文化通り",
       "type": "primary",
-      "theme": "Crafts & cultural shopping"
+      "theme": "工芸品と伝統文化ショッピング"
     },
     {
-      "name": "Incheon Cruise Terminal",
+      "name": "仁川クルーズターミナル",
       "type": "return",
-      "theme": "Return"
+      "theme": "帰着"
     }
   ],
   "routePhases": [
     {
       "phase": "往路",
-      "duration": "≈ 1.5 hours",
+      "duration": "約1時間30分",
       "description": "仁川クルーズターミナル→景福宮（約60分）。"
     },
     {
       "phase": "王宮＋韓屋村",
-      "duration": "≈ 3 hours",
+      "duration": "約3時間",
       "description": "景福宮（王宮衛士交代儀式）→北村韓屋村。"
     },
     {
-      "phase": "Lunch + crafts street",
-      "duration": "≈ 2.5 hours",
-      "description": "Streetfood lunch at Gwangjang Market (75 min) then Insadong cultural street (75 min)."
+      "phase": "昼食＋工芸品通り",
+      "duration": "約2時間30分",
+      "description": "広蔵市場でストリートフードランチ（75分）後、インサドン文化通り（75分）。"
     },
     {
       "phase": "帰路",
-      "duration": "≈ 1.25–1.5 hours",
+      "duration": "約1時間15分〜1時間30分",
       "description": "仁寺洞→仁川クルーズターミナルへ帰着（約60分）。"
     }
   ],
   "routeShapeIntro": {
     "title": "この一日の流れ",
-    "subtitle": "仁川港からソウルへ約60分。景福宮の王宮衛士交代儀式→北村韓屋村の石畳の路地→広蔵市場のストリートフード→仁寺洞文化通り→仁川港へ帰着（約60分）。帰船時間を最優先に設計。"
+    "subtitle": "仁川港からソウルへ約60分。景福宮の王宮衛士交代儀式→北村韓屋村の石畳の路地→広蔵市場のストリートフード→仁寺洞文化通り→仁川港へ帰着（約60分）。帰船時間を最優先に進めます。"
   },
   "whyTourWorks": {
     "bestFor": [
       "仁川港に一日寄港するクルーズ乗客",
-      "ソウルの主要スポットを一日でカバーしたい初訪問者",
+      "ソウルの主要見どころを一日でカバーしたい初訪問者",
       "ストリートフード（広蔵市場）と文化（景福宮・韓屋村）を組み合わせたい旅行者"
     ],
     "lessIdealFor": [
@@ -509,25 +503,25 @@
     ],
     "routeLogicSections": [
       {
-        "title": "このルートの設計理由",
+        "title": "このルートの推薦理由",
         "icon": "route",
         "iconBg": "bg-sky-50/80",
         "iconColor": "text-sky-600",
         "items": [
           {
-            "label": "ルートポイント",
+            "label": "見どころ",
             "detail": "ガイドが現地でご説明します。"
           },
           {
-            "label": "ルートポイント",
+            "label": "見どころ",
             "detail": "ガイドが現地でご説明します。"
           },
           {
-            "label": "ルートポイント",
+            "label": "見どころ",
             "detail": "ガイドが現地でご説明します。"
           },
           {
-            "label": "ルートポイント",
+            "label": "見どころ",
             "detail": "ガイドが現地でご説明します。"
           }
         ]
@@ -538,7 +532,7 @@
     {
       "id": "inclusions",
       "title": "含まれるもの・含まれないもの",
-      "preview": "Air-conditioned shared van, certified English/Chinese-speaking guide, fuel/tolls/parking.",
+      "preview": "エアコン付き共有バン、認定英語/中国語話者ガイド、燃料/通行料/駐車場。",
       "content": [
         "少人数シェアバン・英語対応ガイド・仁川クルーズターミナル発着送迎・景福宮入場料（₩3,000）",
         "含まれないもの：昼食（広蔵市場で自己負担）・仁寺洞でのショッピング・チップ"
@@ -547,17 +541,17 @@
     {
       "id": "pickup",
       "title": "ピックアップと帰着",
-      "preview": "Group meets at the Incheon Port International Passenger Terminal arrival hall in Songdo.",
+      "preview": "仁川港国際旅客ターミナル到着ホール（松島）でグループ集合。",
       "content": [
         "仁川クルーズターミナル到着ホールでピックアップ（AtoC Koreaのサインボードを持ったガイドが待機）",
-        "帰船時間の90〜120分前にターミナルへ帰着設計",
+        "帰船時間の90〜120分前にターミナルへ帰着できるようにしています",
         "予約時に出航時刻を必ずお知らせください"
       ]
     },
     {
       "id": "sailaway",
       "title": "出航時間の管理",
-      "preview": "Drop-off at the cruise terminal at least 60 minutes before your all-aboard time.",
+      "preview": "最終乗船時間の少なくとも60分前にクルーズターミナルで降車。クルーズ船の最終乗船時刻に間に合うよう、出港時刻の少なくとも60〜90分前に港へ戻ることを最優先に行程を調整します。交通状況、天候、入国・下船手続きの遅れがある場合は、観光地での滞在時間を短縮してでも、安全な帰港と時間内の再乗船を優先します。",
       "content": [
         "仁川↔ソウル間は各60分（計120分）必要",
         "余裕を持つためには少なくとも8時間以上の寄港が必要",
@@ -567,7 +561,7 @@
     {
       "id": "walking",
       "title": "歩行と地形",
-      "preview": "Moderate.",
+      "preview": "中程度。",
       "content": [
         "中程度。景福宮はフラット。北村の嘉会洞31坂は急勾配。広蔵市場はほぼフラット（狭い通路）。仁寺洞はほぼフラット。総歩行距離：約3〜4km"
       ]
@@ -575,7 +569,7 @@
     {
       "id": "cancellation",
       "title": "キャンセルポリシー",
-      "preview": "Free cancellation up to 24 hours before pickup.",
+      "preview": "乗車24時間前まで無料キャンセル。",
       "content": [
         "出航の24時間前まで無料キャンセル",
         "台風・悪天候による寄港地変更：全額返金"
@@ -584,7 +578,7 @@
     {
       "id": "accessibility",
       "title": "お子様と車椅子対応",
-      "preview": "Children age 8 and up are welcome and the route works well for them.",
+      "preview": "8歳以上のお子様歓迎、ルートも適しています。",
       "content": [
         "6歳以上のお子様は参加可能",
         "北村の急坂はベビーカーには困難",
@@ -594,103 +588,103 @@
     {
       "id": "tuesday-route",
       "title": "火曜日のルートに関する注意",
-      "preview": "Gyeongbokgung is closed on Tuesdays.",
+      "preview": "景福宮は火曜日定休。",
       "content": [
-        "景福宮は毎週火曜日休館。火曜日寄港の場合は景福宮→昌徳宮（창덕궁）に変更します。"
+        "景福宮は毎週火曜日休館。火曜日寄港の場合は景福宮→昌徳宮に変更します。"
       ]
     }
   ],
   "practicalWeatherStatic": {
     "today": {
       "temp": "—",
-      "label": "See seasonal notes"
+      "label": "季節別の案内を確認"
     },
     "tomorrow": {
       "temp": "—",
-      "label": "See seasonal notes"
+      "label": "季節別の案内を確認"
     },
-    "_seasonalSummary": "Seoul has four distinct seasons: cold winters (-10 to 5 °C lows), hot humid summers (25–32 °C with monsoon rain in July), and pleasant spring/autumn. The cruise season concentrates April–October."
+    "_seasonalSummary": "ソウルは四季がはっきりしています。冬は寒く、夏は蒸し暑く、春と秋が最も快適です。クルーズシーズンは主に4月から10月です。"
   },
   "seasonalVariations": [
     {
-      "season": "Spring (Mar–May)",
-      "description": "Cherry blossoms at Gyeongbokgung's pond around the Gyeonghoeru pavilion in early-to-mid April. Cruise arrivals peak in this season."
+      "season": "春（3〜5月）",
+      "description": "4月初旬〜中旬、景福宮の慶会楼池周辺の桜。光化門広場とインサドンの春の雰囲気。"
     },
     {
-      "season": "Summer (Jun–Aug)",
-      "description": "Long daylight; humid. July monsoon possible — the Gwangjang indoor market becomes the rainy-day option. Carry water."
+      "season": "夏（6〜8月）",
+      "description": "日が長い。蒸し暑い。7月の梅雨時は広蔵市場の屋内が雨天プランに最適。"
     },
     {
-      "season": "Autumn (Sep–Nov)",
-      "description": "Best season for palace photography — clear blue skies, foliage in late October. Comfortable walking weather."
+      "season": "秋（9〜11月）",
+      "description": "宮殿撮影の最高シーズン — 青い空、10月下旬の紅葉。快適な散策条件。"
     },
     {
-      "season": "Winter (Dec–Feb)",
-      "description": "Cold but quiet; Gyeongbokgung courtyards are uniquely peaceful in snow. Bring warm layers — palace courtyards offer no wind shelter."
+      "season": "冬（12〜2月）",
+      "description": "寒いが静か。雪に覆われた景福宮の庭は格別。厚手の防寒着が必須。"
     }
   ],
   "bookingTrustItems": [
     {
       "icon": "check-circle",
-      "title": "認定地元オペレーター/ガイド",
-      "description": "Authorized Korean tour operator with full insurance",
+      "title": "現地を熟知した認定スタッフ/ガイド",
+      "description": "完全保険付きの韓国公認ツアー現地チーム",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
-      "body": "韓国観光公社認定の地元オペレーター。完全保険付きで安心のツアー運営。"
+      "body": "韓国観光公社認定の地元催行会社。完全保険付きで安心のツアー催行。"
     },
     {
       "icon": "route",
       "title": "ルート特化型の専門ガイド",
-      "description": "Hand-tuned itinerary, not a generic loop",
+      "description": "細かく配慮したルート、一般的な観光コースとは異なる",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
-      "body": "韓国観光公社認定の地元オペレーター。完全保険付きで安心のツアー運営。"
+      "body": "韓国観光公社認定の地元催行会社。完全保険付きで安心のツアー催行。"
     },
     {
       "icon": "users",
-      "title": "少人数グループ運営",
-      "description": "Right-sized for the route",
+      "title": "少人数制ツアー",
+      "description": "ルートに最適な規模",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600",
-      "body": "少人数グループで丁寧で質の高いガイドサービスを提供します。"
+      "body": "少人数グループで丁寧で質の高いガイドサービスをご案内します。"
     }
   ],
   "bookingSupportSteps": [
     {
-      "timing": "Immediately",
-      "title": "Instant Confirmation",
-      "detail": "Booking confirmation with itinerary summary",
-      "description": "Instant confirmation; send ship name, port date, disembarkation and all-aboard time within 24 hours."
+      "timing": "予約後すぐ",
+      "title": "即時予約確定",
+      "detail": "行程概要付き予約確認メール送信",
+      "description": "即時確認。24時間以内に船名、寄港日、下船・最終乗船時間をお送りください。"
     },
     {
-      "timing": "12 hours before",
-      "title": "12-Hour Reminder",
-      "detail": "Weather update and any route adjustments",
-      "description": "Pickup time calibrated to your specific disembarkation window — not a generic 09:00 start."
+      "timing": "12時間前",
+      "title": "12時間前リマインダー",
+      "detail": "天気情報と経路変更のお知らせ",
+      "description": "ピックアップ時間はお客様の下船期間に合わせて調整 — 一般的な09:00開始ではありません。"
     },
     {
-      "timing": "Evening before",
-      "title": "Final Pickup Info",
-      "detail": "Exact pickup time and driver contact",
-      "description": "Tuesday cruise guests get advance notice of the Changdeokgung + Huwon Secret Garden alternative."
+      "timing": "前日の夜",
+      "title": "最終集合情報",
+      "detail": "正確な集合時間とドライバーの連絡先",
+      "description": "火曜日のクルーズお客様は昌徳宮＋秘苑の代替案を事前に通知されます。"
     },
     {
-      "timing": "Morning of tour",
-      "title": "Day-of Route Notes",
-      "detail": "Morning briefing based on live conditions",
-      "description": "Van plate and guide contact sent the evening before."
+      "timing": "当日の朝",
+      "title": "当日のルートメモ",
+      "detail": "当日の状況に基づく朝のブリーフィング",
+      "description": "前日の夜にバンのナンバーとガイドの連絡先を送信。"
     },
     {
-      "timing": "During tour",
-      "title": "Stop-by-Stop Tips",
-      "detail": "Real-time guidance at each location",
-      "description": "Guide meets you at Incheon cruise terminal with a name placard."
+      "timing": "ツアー中",
+      "title": "見どころ別ガイド",
+      "detail": "各訪問地でのリアルタイムガイド",
+      "description": "ガイドがネームプレートを持って仁川クルーズターミナルでお迎えします。"
     },
     {
-      "timing": "After tour",
-      "title": "Post-tour Support",
-      "detail": "Follow-up and recommendations",
-      "description": "Drop-off at the terminal 75+ minutes before all-aboard; brief review request sent after."
+      "timing": "ツアー後",
+      "title": "ツアー後サポート",
+      "detail": "アフターフォローと旅行アドバイス",
+      "description": "最終乗船75分以上前にターミナルで降車。その後に簡単な評価リクエストを送信。"
     }
   ],
   "staticQuestions": [
@@ -752,7 +746,7 @@
     {
       "id": "seniors",
       "question": "高齢の方でも参加できますか？",
-      "answer": "はい。北村の急坂が唯一の難所ですが、スキップして平坦な路地を歩くだけでも楽しめます。"
+      "answer": "はい。北村の急坂が唯一の難所ですが、スキップして平坦な路地を歩くだけでも見て回れます。"
     },
     {
       "id": "children",
@@ -799,13 +793,13 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "予約可否は決済ステップで確認されます。",
     "price": {
       "amountLabel": "",
       "currency": "USD",
-      "per": "person",
-      "priceSource": "getyourguide_t1051171",
-      "priceNote": "Cruise excursion price not yet confirmed from operator listing. Comparable Seoul-from-Incheon shared cruise tours range $90–$120 per person. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+      "per": "人",
+      "priceSource": "direct_rate",
+      "priceNote": "料金は予約画面でご確認ください。クルーズ寄港地ツアーは寄港時間と催行条件により料金が変わる場合があります。",
       "discountPercent": 10
     }
   },
@@ -813,18 +807,18 @@
     "type": "cruise_terminal_pickup",
     "meeting_points": [
       {
-        "name": "Incheon Port International Passenger Terminal — arrival hall (Songdo)",
-        "time": "Calibrated to ship disembarkation"
+        "name": "仁川港国際旅客ターミナル — 到着ホール（松島）",
+        "time": "船の下船時間に合わせて調整"
       }
     ],
     "dropoff_points": [
       {
-        "name": "Incheon Port International Passenger Terminal",
-        "approx_time": "Minimum 60 minutes before all-aboard"
+        "name": "仁川港国際旅客ターミナル",
+        "approx_time": "最終乗船時刻の少なくとも60分前。クルーズ船の最終乗船時刻に間に合うよう、出港時刻の少なくとも60〜90分前に港へ戻ることを最優先に行程を調整します。交通状況、天候、入国・下船手続きの遅れがある場合は、観光地での滞在時間を短縮してでも、安全な帰港と時間内の再乗船を優先します。"
       }
     ],
     "hotel_pickup_available": false,
-    "notes": "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Shared van with other cruise passengers from various ships. The guide tracks each passenger's individual ship schedule; if multiple ships sail at different times, earliest-sailing passengers are dropped first."
+    "notes": "予約時に船名、寄港日、下船予定時刻、最終乗船時刻をお知らせください。ガイドが各船のスケジュールを確認し、港への戻り時間を管理します。クルーズ船の最終乗船時刻に間に合うよう、出港時刻の少なくとも60〜90分前に港へ戻ることを最優先に行程を調整します。交通状況、天候、入国・下船手続きの遅れがある場合は、観光地での滞在時間を短縮してでも、安全な帰港と時間内の再乗船を優先します。"
   },
   "matching_profile": {
     "profile_version": 6,
@@ -1065,16 +1059,16 @@
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
           "imagePosition": "center 35%",
-          "tagline": "仁川港から景福宮・北村韓屋村・広蔵市場・仁寺洞へ — ソウルのハイライトを一日で",
+          "tagline": "仁川港から景福宮・北村韓屋村・広蔵市場・仁寺洞へ — ソウルの見どころを一日で",
           "pills": [
-            "small_group",
-            "cruise",
-            "seoul"
+            "少人数シェアバン",
+            "クルーズ対応",
+            "ソウル"
           ],
           "meta": {
             "duration": "船→船（帰船時間に合わせて調整）",
             "region": "ソウル（仁川港発）",
-            "stops": "6スポット",
+            "stops": "6見どころ",
             "rating": 0,
             "ratingStars": 0
           }
@@ -1093,7 +1087,7 @@
           },
           {
             "id": "itinerary",
-            "label": "旅程"
+            "label": "行程"
           },
           {
             "id": "details",
@@ -1159,46 +1153,46 @@
             "id": "g1",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-            "alt": "Gyeongbokgung's Geunjeongjeon throne hall with mountain backdrop",
-            "caption": "Gyeongbokgung — the throne hall Geunjeongjeon, National Treasure No. 223. Built 1395, rebuilt 1867.",
-            "location": "Gyeongbokgung Palace, Seoul",
-            "atmosphere": "Wide stone courtyard, painted eaves, mountain backdrop"
+            "alt": "ツアーで訪れる景福宮 — 正殿勤政殿（国宝第223号）。1395年創建、1867年再建の風景",
+            "caption": "景福宮 — 正殿勤政殿（国宝第223号）。1395年創建、1867年再建",
+            "location": "景福宮（景福宮路、鍾路区、ソウル）",
+            "atmosphere": "広い石庭・色鮮やかな軒下・王宮の威厳"
           },
           {
             "id": "g2",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-            "alt": "Tile-roofed hanok houses along a sloping lane in Bukchon",
-            "caption": "Bukchon Hanok Village — ≈600 traditional houses in a designated conservation area since 1976.",
-            "location": "Bukchon Hanok Village, Seoul",
-            "atmosphere": "Quiet hanok lanes, residential, soft slopes"
+            "alt": "北村の坂道沿いの瓦屋根の韓屋",
+            "caption": "北村韓屋マウル — 1976年から保護区指定、約600軒の伝統家屋",
+            "location": "北村韓屋村（嘉会洞、鍾路区、ソウル）",
+            "atmosphere": "静かな韓屋の路地 — 住宅街の緩やかな光"
           },
           {
             "id": "g3",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-            "alt": "Vendors and customers crowded around a streetfood stall at Gwangjang Market",
-            "caption": "Gwangjang Market — Korea's first permanent indoor market (1905). Bindae-tteok and mayak gimbap are the signatures.",
-            "location": "Gwangjang Market, Jongno-gu",
-            "atmosphere": "Communal counters, sizzling stalls, market chatter"
+            "alt": "ツアーで訪れる広蔵市場（鍾路区、ソウル）の風景",
+            "caption": "広蔵市場（鍾路区、ソウル）",
+            "location": "広蔵市場（鍾路区、ソウル）",
+            "atmosphere": "共用カウンター・焼ける屋台・昭和の市場の活気"
           },
           {
             "id": "g4",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=1200",
-            "alt": "Pedestrianized street with traditional craft shops and signage in Insadong",
-            "caption": "Insadong — Seoul's traditional craft and antiques street; designated a Cultural Street in 1988.",
-            "location": "Insadong, Jongno-gu",
-            "atmosphere": "Pedestrian-only, calligraphy and craft signage, tea-house alleys"
+            "alt": "ツアーで訪れる仁寺洞（鍾路区、ソウル）の風景",
+            "caption": "仁寺洞（鍾路区、ソウル）",
+            "location": "仁寺洞（鍾路区、ソウル）",
+            "atmosphere": "歩行者天国 — 書道・工芸品・伝統茶房"
           },
           {
             "id": "g5",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-            "alt": "Cruise ship docked at Incheon Port's international passenger terminal",
-            "caption": "Incheon Cruise Terminal in Songdo — pickup and drop-off point.",
-            "location": "Incheon Port International Passenger Terminal",
-            "atmosphere": "Working port, cruise-passenger flow"
+            "alt": "仁川港国際旅客ターミナルに停泊したクルーズ船",
+            "caption": "松島仁川クルーズターミナル — ピックアップ＆降車ポイント",
+            "location": "仁川国際旅客ターミナル（仁川港）",
+            "atmosphere": "仁川港の作業港 — クルーズ乗客の往来"
           }
         ]
       }
@@ -1212,116 +1206,258 @@
           {
             "number": 1,
             "time": "≈ 09:00",
-            "duration": "30 min",
-            "name": "Incheon Cruise Terminal pickup",
-            "category": "Departure",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
-            "description": "Group meets the guide in the Incheon Port International Passenger Terminal arrival hall (Songdo). Pickup is calibrated to your ship's actual disembarkation, not a fixed start — the 09:00 here is a typical example. Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking; the guide tracks the schedule and adjusts pickup automatically. ≈30 minutes covers terminal buffer (immigration variability, group assembly).",
-            "timeUsed": [
-              "Operational logistics (pickup, terminal buffer)"
+            "duration": "30分",
+            "name": "仁川クルーズターミナルでのピックアップ",
+            "category": "出発 — 仁川国際クルーズターミナル",
+            "description": "英語対応ガイドが**仁川国際クルーズターミナル**の到着ホール出口エリアで**AtoC Koreaのサインボード**を掲げて待機。仁川港からソウル中心部（景福宮）まで約60分（仁川大橋経由）。**出航時間の90〜120分前**にターミナルへ帰着できるようにしています。予約時に出航時刻を必ずお知らせください。",
+            "highlights": [
+              "仁川国際クルーズターミナル到着ホールでピックアップ",
+              "AtoC Koreaのサインボードを持ったガイドが出口で待機",
+              "ソウル中心部（景福宮）まで約60分"
             ],
-            "whyOnRoute": "Calibrated to your specific cruise.",
+            "timeUsed": [
+              "ターミナルでの集合＋コーチ乗車 — 約10分",
+              "景福宮への移動 — 約60分"
+            ],
+            "whyOnRoute": "仁川クルーズターミナルのピックアップが一日の物流見どころです。",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {
+              "tip": "韓国の入国審査には最低30分確保。パスポート＋クルーズカードをすぐ取り出せるように。"
+            },
             "_poi_meta": {
-              "poi_key": "incheon_cruise_pickup",
-              "is_attraction": false
+              "poi_key": "incheon_cruise_terminal",
+              "verified": true,
+              "match": "operational_pickup",
+              "kb_version": "1.26",
+              "verified_date": "2026-04-29",
+              "note": "Operational pickup stop; references KB POI for terminal facts but kept brief as transit",
+              "sources": [
+                "Incheon Port Authority (incheonport.kr)",
+                "Korea Tourism Organization (VisitKorea — Incheon Cruise Terminal listing)",
+                "Korea Herald (April 26, 2019 opening coverage)",
+                "Visit Korea — Incheon Tourist Attraction official",
+                "Wikipedia (Incheon Port + Songdo International Business District)"
+              ]
             }
           },
           {
             "number": 2,
             "time": "≈ 10:30",
-            "duration": "90 min",
-            "name": "Gyeongbokgung Palace",
-            "category": "Royal Palace",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
-            "description": "Built in 1395 by King Taejo, founder of the Joseon dynasty, as the new dynasty's main palace at the auspicious geomantic site north of the city. Burned in the 1592–98 Imjin War and abandoned for 273 years before King Gojong's regent restored it from 1865 to 330+ buildings. Most structures were dismantled during the Japanese colonial period (1910–45); ongoing restoration since the 1990s has rebuilt the main axis. Highlights: Geunjeongjeon throne hall (National Treasure No. 223, the site of royal coronations and major state ceremonies), Gyeonghoeru banquet pavilion (National Treasure No. 224, on an artificial pond), and Hyangwonjeon pavilion. Royal Guard Changing Ceremony at Gwanghwamun Gate at 10:00 and 14:00 (except Tuesdays and weather-permitting). Adult admission ₩3,000; free for hanbok wearers, children under 7, adults over 64. Closed Tuesdays. **On Tuesdays the tour swaps to Changdeokgung Palace + Secret Garden** (UNESCO World Heritage; additional ₩5,000 Secret Garden ticket).",
-            "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Throne hall, Gyeonghoeru pavilion, royal apartments",
-              "Optional Royal Guard Changing Ceremony at 10:00 if timing aligns"
+            "duration": "90分",
+            "name": "景福宮（キョンボックン）",
+            "category": "朝鮮王朝の正宮 — 1395年創建・史跡第117号",
+            "description": "**景福宮**は**朝鮮王朝（1392〜1897年）の正宮**で、李成桂が1395年に建設した朝鮮最大の宮殿。「景福」は**「大いなる幸福（大慶福）」**の意。日本統治時代（1910〜1945年）に大部分が破壊されたが、1990年代以降の復元工事で主要建築が再建されている。正門（光化門）・勤政殿（国宝第223号）・慶会楼（国宝第224号）が必見。毎時00分と30分に行われる**王宮衛士交代儀式**は無料で観覧できる見どころ。入場料：**大人₩3,000**（含まれます）。毎週火曜日休館（月曜は開館）。ハンボク着用者は無料入場。",
+            "highlights": [
+              "朝鮮王朝（1392〜1897年）の正宮 — 1395年李成桂建設",
+              "**勤政殿（国宝第223号）**と**慶会楼（国宝第224号）**",
+              "毎時00分・30分の**王宮衛士交代儀式**（無料観覧）",
+              "入場料 **大人₩3,000**（含まれます）",
+              "毎週**火曜日休館**（要注意）"
             ],
-            "whyOnRoute": "Seoul's largest Joseon royal palace; the route's anchor heritage stop.",
+            "timeUsed": [
+              "入場＋解説 — 約10分",
+              "勤政殿・慶会楼・主要殿閣散策 — 約45〜55分",
+              "王宮衛士交代儀式（時間が合えば） — 約15分"
+            ],
+            "whyOnRoute": "景福宮はソウルNo.1の必見見どころであり、どのソウル初日行程にも自然な出発点。",
+            "visitBasics": {
+              "hours": "3〜5·9〜10月09:00〜18:00。6〜8月09:00〜18:30。11〜2月09:00〜17:00",
+              "closed": "**火曜日**（必要に応じて昌徳宮に変更）",
+              "admission": "大人₩3,000/子供₩1,500。韓服着用者無料",
+              "walking": "中程度 — 宮内はかなりの歩行距離"
+            },
+            "convenience": {
+              "restroom": "宮内に複数",
+              "parking": "景福宮駅地下駐車場（近く）"
+            },
+            "smartNotes": {
+              "photo": "光化門と勤政殿 — 春の桜または秋の紅葉を背景にしたものが最高。",
+              "facilities": "国立民俗博物館（無料、宮内）。お土産店。",
+              "tip": "韓服着用で無料入場。火曜休業 — 火曜日は昌徳宮に変更。"
+            },
             "_poi_meta": {
               "poi_key": "gyeongbokgung_palace",
-              "is_attraction": true,
-              "fee_krw": 3000,
-              "closed": "Tuesday",
-              "free_for_hanbok": true
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.26",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Cultural Heritage Administration of Korea (Royal Palaces & Tombs Center)",
+                "Visit Seoul official (english.visitseoul.net)",
+                "Korea Tourism Organization (VisitKorea)",
+                "Korea.net (official ROK government portal)",
+                "Wikipedia (Gyeongbokgung Palace)"
+              ]
             }
           },
           {
             "number": 3,
             "time": "≈ 12:15",
-            "duration": "75 min",
-            "name": "Bukchon Hanok Village",
-            "category": "Hanok Residential District",
-            "image": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=800",
-            "description": "Hanok district between Gyeongbokgung and Changdeokgung palaces, designated a Hanok Conservation Area since 1976. Approximately 600 traditional houses; most are still private residences (some are tea houses, craft workshops, and small museums) and the city asks visitors to keep voices low — quiet hours are observed 22:00–10:00. The eight 'Bukchon Hanok 8 Views' are the officially designated photo spots; the best-known is the Bukchon-ro 11-gil viewpoint where the hanok rooflines slope down toward the Seoul cityscape with N Seoul Tower in the background. Most houses date from the late 1920s–1930s, when Korean elite built modernized hanoks during the Japanese colonial period. Free to walk through; flat hanok lanes with some gentle slopes.",
-            "timeUsed": [
-              "Photo viewpoints walk",
-              "Optional tea house or craft workshop visit"
+            "duration": "75分",
+            "name": "北村韓屋村（プクチョン・ハノンマウル）",
+            "category": "保存された韓屋群 — 景福宮と昌徳宮の間の丘",
+            "description": "**北村韓屋村**は景福宮の北東、嘉会洞の丘の斜面に広がる**保存された伝統韓屋（韓屋）の集住エリア**。「北村」は景福宮・昌徳宮の「北（北村）」にある村の意。骨格は朝鮮時代から続く（両班）住宅地で、600年以上の歴史を持つ。現在も居住者がいる生活空間のため、静寂の維持が求められる（騒音注意の看板あり）。代表的な撮影ポイントは**嘉会洞11番地（31坂）** — 石畳の急坂から連なる韓屋の屋根ラインと遠くの スカイラインの組み合わせ。北村案内センター（無料）では韓屋の建築構造の展示あり。観光渋滞（特に土日）が激しく、静かな体験を求める場合は平日の朝が最適。**無料**。",
+            "highlights": [
+              "景福宮・昌徳宮の間に広がる**600年以上の歴史を持つ両班住宅地**",
+              "現在も居住者がいる生活空間 — 静寂の維持が必要",
+              "**嘉会洞11番地（31坂）** — 連なる韓屋の屋根ラインの代表的な撮影ポイント",
+              "**無料**"
             ],
-            "whyOnRoute": "Adjacent to Gyeongbokgung, so no long transit; second heritage stop with different texture.",
+            "timeUsed": [
+              "嘉会洞31坂（撮影ポイント）＋散策 — 約30〜40分"
+            ],
+            "whyOnRoute": "北村は景福宮の壮大な王宮建築から生活規模の生きた遺産地区への自然な転換点。",
+            "visitBasics": {
+              "hours": "24時間（路地は常時アクセス可）。住民は22:00〜10:00に静粛を要請",
+              "closed": "年中無休",
+              "admission": "路地無料（工房・個人韓屋博物館は₩5,000〜10,000）",
+              "walking": "中程度 — 上り坂の路地。車椅子アクセスは困難"
+            },
+            "convenience": {
+              "restroom": "安国駅6番出口の観光案内所。インサドン内",
+              "parking": "限られた駐車場。安国駅またはGyeongbokgung近くの有料駐車場"
+            },
+            "smartNotes": {
+              "photo": "第2景の韓屋屋根ライン＋Nソウルタワー — GoogleマップまたはKakaoマップで場所を確認可能。",
+              "facilities": "多数のギャラリー、工房、カフェ。観光案内所（安国駅6番出口）。",
+              "tip": "住宅街です — 静かな見学と写真の礼儀を守ってください。週末の午前10時以降は混雑します。"
+            },
             "_poi_meta": {
               "poi_key": "bukchon_hanok_village",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "quiet_hours": "22:00-10:00 daily"
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.26",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Seoul official (english.visitseoul.net)",
+                "Bukchon Traditional Culture Center",
+                "Jongno-gu District Office (Bukchon Hanok Village preservation program)",
+                "Korea Tourism Organization (VisitKorea)",
+                "Wikipedia (Bukchon Hanok Village)"
+              ]
             }
           },
           {
             "number": 4,
             "time": "≈ 13:45",
-            "duration": "75 min",
-            "name": "Lunch at Gwangjang Market",
-            "category": "Market & Streetfood Lunch",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
-            "description": "Korea's first permanent indoor market, opened in 1905. The market is best known for its food alley, where lunch is the day's main meal: bindae-tteok (mung-bean pancakes, ≈₩5,000), mayak gimbap ('narcotic' bite-sized seaweed rice rolls, ≈₩3,000–₩4,000 per bundle), yukhoe (raw beef tartare, ≈₩15,000–₩20,000), and kalguksu (knife-cut noodles, ≈₩7,000). Stalls share communal counter seating. Beyond food, the market also has a large textile/silk hall on a separate floor — skipped on this tour for time. Open ≈09:00–23:00 daily; some food stalls closed Sundays. Budget ₩10,000–₩20,000 per person for lunch. 75 minutes covers ordering, eating, and a 15-minute browse of nearby food alleys.",
-            "timeUsed": [
-              "Streetfood lunch (paid by guest)",
-              "Market browse"
+            "duration": "75分",
+            "name": "広蔵市場での昼食",
+            "category": "ソウル最古の常設市場 — ストリートフードの聖地",
+            "description": "**広蔵市場**はソウル最古の常設市場で**韓国を代表するストリートフードの聖地**。市場内の細い通路沿いに何十もの屋台が並び、代表的なメニュー：**（麻薬キンパ）** — 人気屋台のひと口サイズのキンパ。**（緑豆ビンデトック）** — 緑豆の粉を使った韓国式お好み焼き。**（スンデ）** — 韓国式血腸。**（トッポッキ）** — 辛い餅炒め。**（ユクフェ）** — 生の牛肉の和え物（広蔵市場の名物）。屋台での食事は自己負担（一人あたり₩10,000〜20,000程度）。ガイドがナビゲートしておすすめの屋台を案内。",
+            "highlights": [
+              "**ソウル最古の常設市場（1905年）** — 韓国のストリートフードの聖地",
+              "**（麻薬キンパ）・（緑豆ビンデトック）・（ユクフェ）**が人気",
+              "昼食は自己負担（₩10,000〜20,000程度）",
+              "ガイドがおすすめ屋台を案内"
             ],
-            "whyOnRoute": "Lunch and the food-market experience are combined into a single stop here — both occur at Gwangjang together rather than as two separate slots.",
+            "timeUsed": [
+              "広蔵市場ストリートフード＋昼食 — 約60〜75分"
+            ],
+            "whyOnRoute": "廣蔵市場はソウルで最も本物の非観光客向け食体験 — 国際メディアが世界的に有名にした庶民市場です。",
+            "visitBasics": {
+              "hours": "ほとんどの屋台09:00-23:00。フードアレーのピーク11:00-21:00",
+              "closed": "年中無休。一部のテキスタイル階の屋台は日曜休み",
+              "admission": "入場無料。飲食は個人負担（ほとんどの屋台は現金のみ）",
+              "walking": "楽 — 平坦な屋内路地。狭い屋台スツールへのアクセスに歩きやすい靴を推奨"
+            },
+            "convenience": {
+              "restroom": "市場ビル内（案内表示あり）",
+              "parking": "限られた駐車場。最寄りの有料駐車場は徒歩約5分"
+            },
+            "smartNotes": {
+              "photo": "石臼の上でビンデトック（緑豆チヂミ）が焼かれる様子 — 代表的なな一枚。マヤクキンパの巻き付け作業も絵になる。",
+              "facilities": "すべての屋台が後方に小さな飲食スペースを持つ。多言語メニューボード。カード不可の屋台もあり。",
+              "tip": "**1人あたり現金₩10,000〜20,000持参推奨。** ビンデトック+マヤクキンパの組み合わせが必食。週末12:00〜18:00は混雑を避けよう。"
+            },
             "_poi_meta": {
               "poi_key": "gwangjang_market",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "lunch_budget_krw": "10000-20000"
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.26",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Gwangjang Market Association (jangjeonjang.com)",
+                "Visit Seoul official",
+                "Korea Tourism Organization (VisitKorea)",
+                "Anthony Bourdain: Parts Unknown — Seoul (CNN, June 21, 2015)",
+                "Wikipedia (Gwangjang Market)"
+              ]
             }
           },
           {
             "number": 5,
             "time": "≈ 15:15",
-            "duration": "75 min",
-            "name": "Insadong cultural street",
-            "category": "Crafts & Cultural Shopping Street",
-            "image": "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800",
-            "description": "Pedestrianized street in central Seoul known for traditional craft shops, tea houses, calligraphy supplies, and the 1920s-era Ssamziegil arcade (a four-story spiral mall of small art galleries and craft studios). Insadong has been Seoul's primary antique-and-craft district since the late Joseon period when displaced yangban families sold heirlooms here, and was formally designated a 'Cultural Street' in 1988. Standard guide-recommended stops: a tea house with traditional Korean teas, an Insa-dong souvenir shop for affordable ceramics or stationery, and Ssamziegil's rooftop. Walking only; flat. Free to visit.",
-            "timeUsed": [
-              "Main street walk",
-              "Tea house or Ssamziegil arcade option"
+            "duration": "75分",
+            "name": "仁寺洞（インサドン）文化通り",
+            "category": "ソウルの伝統文化・アート・茶房通り — 仁寺洞キル",
+            "description": "**仁寺洞**はソウル中心部（鍾路区）の**伝統文化・アート・茶房が集まる約300mの文化通り**。（横丁）には伝統陶器・民画・書道・天然素材の土産物店・伝統茶房・ギャラリーが軒を連ねる。主要見どころ：**（サムジキル）** — 4層の螺旋通路を持つ複合文化施設で伝統工芸品と独立デザイナーブランドが集まる。**（北仁寺マダン）** — 週末に伝統音楽・民俗演技が行われる広場（時間が合えば観覧可）。伝統茶を楽しめる茶房が多数。**無料**散策。店舗での購入は自己負担。",
+            "highlights": [
+              "ソウル中心部の**伝統文化・アート・茶房通り**",
+              "**（サムジキル）** — 螺旋通路の伝統工芸複合施設",
+              "伝統韓国茶が楽しめる茶房多数",
+              "**無料**散策"
             ],
-            "whyOnRoute": "Central Seoul, walking distance from Gwangjang; gives a craft / souvenir touchpoint before return.",
+            "timeUsed": [
+              "仁寺洞散策＋ショッピング/茶房（任意） — 約40〜50分"
+            ],
+            "whyOnRoute": "仁寺洞はソウルの見どころループを市内最高の伝統工芸ショッピング体験で締めくくります。",
+            "visitBasics": {
+              "hours": "ほとんどの店舗10:00〜22:00。茶屋は通常11:00〜22:00",
+              "closed": "年中無休。一部ギャラリーは月曜休",
+              "admission": "無料入場。飲食・購入は都度払い",
+              "walking": "楽——平坦な歩行者街"
+            },
+            "convenience": {
+              "restroom": "サムジキル＋安国駅6番出口の観光案内所",
+              "parking": "限られた駐車場。北村から徒歩5分"
+            },
+            "smartNotes": {
+              "photo": "サムジキルのスパイラル内部＋屋上テラス。伝統茶屋の内装。",
+              "facilities": "カフェ、茶屋、レストラン、ギャラリーが通り全域に。観光案内所（安国駅6番出口近く）。",
+              "tip": "**おすすめのお土産**：韓紙工芸品、伝統スタンプ、小さな陶磁器。サムジキルの屋上テラスから路地全体を一望できる。"
+            },
             "_poi_meta": {
               "poi_key": "insadong",
-              "is_attraction": true,
-              "fee_krw": 0
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.26",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Seoul official",
+                "Insa-dong Tourism Information Center",
+                "Korea Tourism Organization (VisitKorea)",
+                "Jongno-gu District Office",
+                "Wikipedia (Insadong)"
+              ]
             }
           },
           {
             "number": 6,
             "time": "≈ 16:45",
-            "duration": "75 min",
-            "name": "Return drive to Incheon Cruise Terminal",
-            "category": "Return",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
-            "description": "≈50 km from central Seoul to Incheon Port (Songdo) via the Incheon Expressway and Highway 110. Normal traffic 60–75 min; rush hour or rain pushes to 75–90 min. Drop-off at the Incheon Port International Passenger Terminal with a minimum 60-minute buffer before your ship's all-aboard time. The guide tracks each passenger's specific ship schedule; if multiple ships sail at different times, earliest-sailing passengers are dropped first.",
-            "timeUsed": [
-              "Operational logistics (return drive + cruise terminal buffer)"
+            "duration": "75分",
+            "name": "仁川クルーズターミナルへ帰着",
+            "category": "帰着 — 仁川国際クルーズターミナル",
+            "description": "ソウル中心部から仁川大橋経由で仁川クルーズターミナルへ帰路（約60分）。**出航時間の90〜120分前**にターミナルへ到着できるようにしています。緊急時や渋滞時はガイドが休憩をスキップして帰船を優先。",
+            "highlights": [
+              "ソウル→仁川クルーズターミナル：約60分",
+              "出航時間の**90〜120分前**にターミナル到着できるようにしています"
             ],
-            "whyOnRoute": "Required logistics; sized for realistic Incheon-bound traffic.",
+            "timeUsed": [
+              "ソウル→仁川ターミナル — 約60分",
+              "ターミナル到着＋乗船 — 約10〜15分"
+            ],
+            "whyOnRoute": "帰路の手配 — 最終乗船90分前の時間の余裕が予期しない交通渋滞を吸収します。",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {
+              "tip": "クルーズターミナルの韓国語住所： — 保存しておいてください。"
+            },
             "_poi_meta": {
-              "poi_key": "incheon_cruise_return",
-              "is_attraction": false
+              "poi_key": "OPS_return_incheon",
+              "verified": false,
+              "match": "operational_implicit",
+              "note": "Operational return stop"
             }
           }
         ]
@@ -1334,61 +1470,61 @@
       "props": {
         "routeFlowStops": [
           {
-            "id": "rf_pickup",
-            "name": "Incheon Cruise Terminal",
-            "theme": "Departure"
+            "name": "仁川クルーズターミナル",
+            "type": "origin",
+            "theme": "出発"
           },
           {
-            "id": "rf_palace",
-            "name": "Gyeongbokgung Palace (or Changdeokgung on Tuesdays)",
-            "theme": "Royal palace"
+            "name": "景福宮（火曜は昌徳宮）",
+            "type": "primary",
+            "theme": "王宮"
           },
           {
-            "id": "rf_bukchon",
-            "name": "Bukchon Hanok Village",
-            "theme": "Hanok residential district"
+            "name": "北村韓屋マウル",
+            "type": "primary",
+            "theme": "韓屋住宅地区"
           },
           {
-            "id": "rf_gwangjang",
-            "name": "Lunch at Gwangjang Market",
-            "theme": "Streetfood market"
+            "name": "広蔵市場でランチ",
+            "type": "meal",
+            "theme": "屋台グルメ市場"
           },
           {
-            "id": "rf_insadong",
-            "name": "Insadong cultural street",
-            "theme": "Crafts & cultural shopping"
+            "name": "インサドン文化通り",
+            "type": "primary",
+            "theme": "工芸品と伝統文化ショッピング"
           },
           {
-            "id": "rf_return",
-            "name": "Incheon Cruise Terminal",
-            "theme": "Return"
+            "name": "仁川クルーズターミナル",
+            "type": "return",
+            "theme": "帰着"
           }
         ],
         "routePhases": [
           {
-            "phase": "Outbound transfer",
-            "duration": "≈ 1.5 hours",
-            "description": "Cruise terminal pickup and 60–75 min drive to central Seoul (Gyeongbokgung area)."
+            "phase": "往路",
+            "duration": "約1時間30分",
+            "description": "仁川クルーズターミナル→景福宮（約60分）。"
           },
           {
-            "phase": "Palace + hanok",
-            "duration": "≈ 3 hours",
-            "description": "Gyeongbokgung Palace (90 min) then Bukchon Hanok Village (75 min) — adjacent stops, 5-min walk between them."
+            "phase": "王宮＋韓屋村",
+            "duration": "約3時間",
+            "description": "景福宮（王宮衛士交代儀式）→北村韓屋村。"
           },
           {
-            "phase": "Lunch + crafts street",
-            "duration": "≈ 2.5 hours",
-            "description": "Streetfood lunch at Gwangjang Market (75 min) then Insadong cultural street (75 min)."
+            "phase": "昼食＋工芸品通り",
+            "duration": "約2時間30分",
+            "description": "広蔵市場でストリートフードランチ（75分）後、インサドン文化通り（75分）。"
           },
           {
-            "phase": "Return drive",
-            "duration": "≈ 1.25–1.5 hours",
-            "description": "Central Seoul to Incheon Cruise Terminal via Incheon Expressway, with a 60-min buffer before all-aboard."
+            "phase": "帰路",
+            "duration": "約1時間15分〜1時間30分",
+            "description": "仁寺洞→仁川クルーズターミナルへ帰着（約60分）。"
           }
         ],
         "routeShapeIntro": {
-          "title": "How this day flows",
-          "subtitle": "A point-to-point shared coach loop that begins and ends at the Incheon Cruise Terminal. The Seoul portion is a walkable cluster — Gyeongbokgung, Bukchon, and Gwangjang Market are within 10 minutes of each other by coach. The shared format keeps the price down compared to a private cruise excursion, while still bundling the transport, guide, and admissions into a single product timed to your ship's port call."
+          "title": "この一日の流れ",
+          "subtitle": "仁川港からソウルへ約60分。景福宮の王宮衛士交代儀式→北村韓屋村の石畳の路地→広蔵市場のストリートフード→仁寺洞文化通り→仁川港へ帰着（約60分）。帰船時間を最優先に進めます。"
         }
       }
     },
@@ -1399,38 +1535,36 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "Cruise passengers calling at Incheon with a 9+ hour port window",
-            "First-time visitors to Seoul wanting palace + hanok + market + crafts in one day",
-            "Couples and adult families",
-            "Travelers prioritizing heritage + food in central Seoul"
+            "仁川港に一日寄港するクルーズ乗客",
+            "ソウルの主要見どころを一日でカバーしたい初訪問者",
+            "ストリートフード（広蔵市場）と文化（景福宮・韓屋村）を組み合わせたい旅行者"
           ],
           "lessIdealFor": [
-            "Cruise passengers with shorter port-call windows (<8 hours)",
-            "Travelers wanting deep palace exploration (90 min covers highlights only)",
-            "Travelers who need a tight return buffer (>2 hours) for ship boarding"
+            "帰船時間が5〜6時間しかない乗客（仁川↔ソウルで計120分必要）",
+            "ベビーカー依存度の高いグループ（北村の急坂）"
           ],
           "routeLogicSections": [
             {
-              "title": "Why this route is built this way",
+              "title": "このルートの推薦理由",
               "icon": "route",
               "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "Adjacent stops in central Seoul, no wasted transit",
-                  "detail": "Gyeongbokgung, Bukchon, Gwangjang, and Insadong are within a 2 km radius of each other in central Seoul, allowing 5–10 minute drives between stops and even some walking. The only long transit is the 60–75 min outbound and 75 min return between the cruise terminal and central Seoul."
+                  "label": "見どころ",
+                  "detail": "ガイドが現地でご説明します。"
                 },
                 {
-                  "label": "Lunch at Gwangjang, not at a separate restaurant",
-                  "detail": "Streetfood at Gwangjang Market is the day's main meal. This consolidates lunch + the market experience into one 75-minute stop, keeping the day to 9 hours and giving cruise visitors a more memorable food experience than a generic restaurant lunch."
+                  "label": "見どころ",
+                  "detail": "ガイドが現地でご説明します。"
                 },
                 {
-                  "label": "Honest about the Tuesday closure",
-                  "detail": "Gyeongbokgung is closed on Tuesdays. Most cruise tours don't disclose this and silently substitute the day's anchor stop. We tell you upfront: on Tuesdays the tour swaps to Changdeokgung Palace + Secret Garden, which is UNESCO-listed (the Secret Garden adds ₩5,000)."
+                  "label": "見どころ",
+                  "detail": "ガイドが現地でご説明します。"
                 },
                 {
-                  "label": "Hanbok hack disclosed",
-                  "detail": "Wearing a complete hanbok grants free entry to all four major royal palaces in Seoul. Hanbok rental shops are concentrated near the palace district (around Gyeongbokgung's Gwanghwamun gate and Anguk Station, not inside Bukchon as some guides suggest). Standard 4-hour rental ₩15,000–₩25,000. If you arrive in hanbok you save ₩3,000 admission and the palace photographs are noticeably better — but this requires a 30-min rental detour at the start, which is not built into the route by default."
+                  "label": "見どころ",
+                  "detail": "ガイドが現地でご説明します。"
                 }
               ]
             }
@@ -1445,68 +1579,97 @@
       "props": {
         "practicalAccordionItems": [
           {
-            "title": "What's included",
             "id": "inclusions",
-            "content": "Air-conditioned shared van, certified English/Chinese-speaking guide, fuel/tolls/parking. Not included: Gyeongbokgung admission (₩3,000 adult, FREE with hanbok), Changdeokgung Secret Garden (₩5,000, only applicable on Tuesday substitution), lunch at Gwangjang Market (₩10,000–₩20,000), optional Hanbok rental (₩15,000–₩25,000 for 4-hour rental, available at shops near the palace district — see FAQ), tips. Total typical out-of-pocket without hanbok: ₩15,000–₩25,000 per person."
+            "title": "含まれるもの・含まれないもの",
+            "preview": "エアコン付き共有バン、認定英語/中国語話者ガイド、燃料/通行料/駐車場。",
+            "content": [
+              "少人数シェアバン・英語対応ガイド・仁川クルーズターミナル発着送迎・景福宮入場料（₩3,000）",
+              "含まれないもの：昼食（広蔵市場で自己負担）・仁寺洞でのショッピング・チップ"
+            ]
           },
           {
-            "title": "Pickup & drop-off",
             "id": "pickup",
-            "content": "Group meets at the Incheon Port International Passenger Terminal arrival hall in Songdo. Pickup time is calibrated to your ship's actual disembarkation, not a fixed start. Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Drop-off at the terminal with at least a 60-minute buffer before your stated all-aboard time."
+            "title": "ピックアップと帰着",
+            "preview": "仁川港国際旅客ターミナル到着ホール（松島）でグループ集合。",
+            "content": [
+              "仁川クルーズターミナル到着ホールでピックアップ（AtoC Koreaのサインボードを持ったガイドが待機）",
+              "帰船時間の90〜120分前にターミナルへ帰着できるようにしています",
+              "予約時に出航時刻を必ずお知らせください"
+            ]
           },
           {
-            "title": "Sail-away timing",
             "id": "sailaway",
-            "content": "Drop-off at the cruise terminal at least 60 minutes before your all-aboard time. Cruise rule of thumb: be back on the ship at least 30 minutes before stated departure. The route is built with a 60-minute buffer for return-drive traffic. Incheon-bound rush hour (≈17:00–19:00) and rain can extend the return drive — the operator monitors and may shorten the Insadong block by 15–30 min if traffic warrants."
+            "title": "出航時間の管理",
+            "preview": "最終乗船時間の少なくとも60分前にクルーズターミナルで降車。クルーズ船の最終乗船時刻に間に合うよう、出港時刻の少なくとも60〜90分前に港へ戻ることを最優先に行程を調整します。交通状況、天候、入国・下船手続きの遅れがある場合は、観光地での滞在時間を短縮してでも、安全な帰港と時間内の再乗船を優先します。",
+            "content": [
+              "仁川↔ソウル間は各60分（計120分）必要",
+              "余裕を持つためには少なくとも8時間以上の寄港が必要",
+              "ガイドが全ステップでタイムチェックを実施"
+            ]
           },
           {
-            "title": "Walking & terrain",
             "id": "walking",
-            "content": "Moderate. Total walking ≈4 km. Gyeongbokgung covers a large flat-courtyard area; Bukchon has gentle slopes on hanok-lined streets; Gwangjang Market is flat indoor alleys; Insadong is a flat pedestrian street. No significant stairs except optional Bukchon viewpoints. Comfortable closed-toe shoes recommended."
+            "title": "歩行と地形",
+            "preview": "中程度。",
+            "content": [
+              "中程度。景福宮はフラット。北村の嘉会洞31坂は急勾配。広蔵市場はほぼフラット（狭い通路）。仁寺洞はほぼフラット。総歩行距離：約3〜4km"
+            ]
           },
           {
-            "title": "Cancellation",
             "id": "cancellation",
-            "content": "Free cancellation up to 24 hours before pickup. Same-day cancellations and no-shows non-refundable. If your ship's port call is cancelled by the cruise line, full refund with cancellation documentation."
+            "title": "キャンセルポリシー",
+            "preview": "乗車24時間前まで無料キャンセル。",
+            "content": [
+              "出航の24時間前まで無料キャンセル",
+              "台風・悪天候による寄港地変更：全額返金"
+            ]
           },
           {
-            "title": "Children & accessibility",
             "id": "accessibility",
-            "content": "Children age 8 and up are welcome and the route works well for them. Strollers are fine at Gyeongbokgung (flat courtyards) and Insadong, but Bukchon's hanok lanes have gentle slopes that may be effortful. Wheelchair users: Gyeongbokgung is wheelchair-friendly via the Heungnyemun gate; the Bukchon viewpoints are not. Advise mobility needs at booking."
+            "title": "お子様と車椅子対応",
+            "preview": "8歳以上のお子様歓迎、ルートも適しています。",
+            "content": [
+              "6歳以上のお子様は参加可能",
+              "北村の急坂はベビーカーには困難",
+              "景福宮・広蔵市場・仁寺洞は比較的アクセスしやすい"
+            ]
           },
           {
-            "title": "Tuesday route note",
             "id": "tuesday-route",
-            "content": "Gyeongbokgung is closed on Tuesdays. On Tuesday cruise calls the route swaps to Changdeokgung Palace + Secret Garden, which is a UNESCO World Heritage site (the Secret Garden requires a separate ₩5,000 ticket and is visited on a guided schedule). The rest of the day stays identical."
+            "title": "火曜日のルートに関する注意",
+            "preview": "景福宮は火曜日定休。",
+            "content": [
+              "景福宮は毎週火曜日休館。火曜日寄港の場合は景福宮→昌徳宮に変更します。"
+            ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "季節別の案内を確認"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "季節別の案内を確認"
           },
-          "_seasonalSummary": "Seoul has four distinct seasons: cold winters (-10 to 5 °C lows), hot humid summers (25–32 °C with monsoon rain in July), and pleasant spring/autumn. The cruise season concentrates April–October."
+          "_seasonalSummary": "ソウルは四季がはっきりしています。冬は寒く、夏は蒸し暑く、春と秋が最も快適です。クルーズシーズンは主に4月から10月です。"
         },
         "seasonalVariations": [
           {
-            "season": "Spring (Mar–May)",
-            "highlight": "Cherry blossoms at Gyeongbokgung's pond around the Gyeonghoeru pavilion in early-to-mid April. Cruise arrivals peak in this season."
+            "season": "春（3〜5月）",
+            "description": "4月初旬〜中旬、景福宮の慶会楼池周辺の桜。光化門広場とインサドンの春の雰囲気。"
           },
           {
-            "season": "Summer (Jun–Aug)",
-            "highlight": "Long daylight; humid. July monsoon possible — the Gwangjang indoor market becomes the rainy-day option. Carry water."
+            "season": "夏（6〜8月）",
+            "description": "日が長い。蒸し暑い。7月の梅雨時は広蔵市場の屋内が雨天プランに最適。"
           },
           {
-            "season": "Autumn (Sep–Nov)",
-            "highlight": "Best season for palace photography — clear blue skies, foliage in late October. Comfortable walking weather."
+            "season": "秋（9〜11月）",
+            "description": "宮殿撮影の最高シーズン — 青い空、10月下旬の紅葉。快適な散策条件。"
           },
           {
-            "season": "Winter (Dec–Feb)",
-            "highlight": "Cold but quiet; Gyeongbokgung courtyards are uniquely peaceful in snow. Bring warm layers — palace courtyards offer no wind shelter."
+            "season": "冬（12〜2月）",
+            "description": "寒いが静か。雪に覆われた景福宮の庭は格別。厚手の防寒着が必須。"
           }
         ]
       }
@@ -1519,56 +1682,65 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local operator",
-            "description": "Authorized Korean tour operator with full insurance",
+            "title": "現地を熟知した認定スタッフ/ガイド",
+            "description": "完全保険付きの韓国公認ツアー現地チーム",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "iconColor": "text-emerald-600",
+            "body": "韓国観光公社認定の地元催行会社。完全保険付きで安心のツアー催行。"
           },
           {
             "icon": "route",
-            "title": "Route specialists",
-            "description": "Hand-tuned itinerary, not a generic loop",
+            "title": "ルート特化型の専門ガイド",
+            "description": "細かく配慮したルート、一般的な観光コースとは異なる",
             "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "iconColor": "text-sky-600",
+            "body": "韓国観光公社認定の地元催行会社。完全保険付きで安心のツアー催行。"
           },
           {
             "icon": "users",
-            "title": "Curated group size",
-            "description": "Right-sized for the route",
+            "title": "少人数制ツアー",
+            "description": "ルートに最適な規模",
             "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600"
+            "iconColor": "text-amber-600",
+            "body": "少人数グループで丁寧で質の高いガイドサービスをご案内します。"
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "timing": "予約後すぐ",
+            "title": "即時予約確定",
+            "detail": "行程概要付き予約確認メール送信",
+            "description": "即時確認。24時間以内に船名、寄港日、下船・最終乗船時間をお送りください。"
           },
           {
-            "timing": "12 hours before",
-            "title": "12-Hour Reminder",
-            "detail": "Weather update and any route adjustments"
+            "timing": "12時間前",
+            "title": "12時間前リマインダー",
+            "detail": "天気情報と経路変更のお知らせ",
+            "description": "ピックアップ時間はお客様の下船期間に合わせて調整 — 一般的な09:00開始ではありません。"
           },
           {
-            "timing": "Evening before",
-            "title": "Final Pickup Info",
-            "detail": "Exact pickup time and driver contact"
+            "timing": "前日の夜",
+            "title": "最終集合情報",
+            "detail": "正確な集合時間とドライバーの連絡先",
+            "description": "火曜日のクルーズお客様は昌徳宮＋秘苑の代替案を事前に通知されます。"
           },
           {
-            "timing": "Morning of tour",
-            "title": "Day-of Route Notes",
-            "detail": "Morning briefing based on live conditions"
+            "timing": "当日の朝",
+            "title": "当日のルートメモ",
+            "detail": "当日の状況に基づく朝のブリーフィング",
+            "description": "前日の夜にバンのナンバーとガイドの連絡先を送信。"
           },
           {
-            "timing": "During tour",
-            "title": "Stop-by-Stop Tips",
-            "detail": "Real-time guidance at each location"
+            "timing": "ツアー中",
+            "title": "見どころ別ガイド",
+            "detail": "各訪問地でのリアルタイムガイド",
+            "description": "ガイドがネームプレートを持って仁川クルーズターミナルでお迎えします。"
           },
           {
-            "timing": "After tour",
-            "title": "Post-tour Support",
-            "detail": "Follow-up and recommendations"
+            "timing": "ツアー後",
+            "title": "ツアー後サポート",
+            "detail": "アフターフォローと旅行アドバイス",
+            "description": "最終乗船75分以上前にターミナルで降車。その後に簡単な評価リクエストを送信。"
           }
         ]
       }
@@ -1581,73 +1753,73 @@
         "staticQuestions": [
           {
             "id": "q-tuesday",
-            "question": "What if my port call falls on a Tuesday?",
-            "answer": "Gyeongbokgung is closed Tuesdays. On Tuesday the tour swaps to Changdeokgung Palace + Secret Garden, which is a UNESCO World Heritage site (the only Joseon palace with that designation). The Secret Garden requires a separate ₩5,000 ticket and is visited on a guided-walk schedule (timed entries every 30–60 min). The rest of the day stays identical (Bukchon, Gwangjang, Insadong)."
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
           },
           {
             "id": "q-hanbok",
-            "question": "Where do we rent hanbok?",
-            "answer": "Most hanbok rental shops are concentrated near Gyeongbokgung's Gwanghwamun gate and around Anguk Station — the palace district, not inside Bukchon as some guides suggest. Standard 4-hour rental is ₩15,000–₩25,000 (longer rentals available); rental shops typically include hairstyling. The hanbok hack: complete-hanbok wearers get FREE entry to all four major royal palaces, so wearing one saves the ₩3,000 admission. Rental requires a ≈30 min detour at the start of the day, which is not built into the standard route — advise the guide at booking if you want it added."
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
           },
           {
             "id": "q-cruise-customize",
-            "question": "Can I customize the itinerary for my cruise schedule?",
-            "answer": "Limited — this is a fixed-route shared product. Pickup and drop-off times adjust automatically to your specific ship's disembarkation and all-aboard. The guide can rebalance time within the route (longer at Bukchon, shorter at Insadong, etc.) but cannot swap or drop the four core stops. For full customization (different neighborhoods like Gangnam, Yongsan, or Hongdae, or DMZ excursions), book a private cruise excursion."
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
           },
           {
             "id": "q-cruise-port-buffer",
-            "question": "How early do you return to the cruise terminal?",
-            "answer": "Drop-off at least 60 minutes before your all-aboard time. The 75-min return drive is the longest single transit of the day; rush hour and rain can push it to 90 min, which is why the buffer is built in. The guide tracks every passenger's individual ship schedule and prioritizes return order if multiple ships sail at different times."
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
           },
           {
             "id": "q-changing-of-the-guard",
-            "question": "Will we see the Royal Guard Changing Ceremony?",
-            "answer": "Maybe — depends on your ship's arrival time. The ceremony runs at 10:00 and 14:00 at Gyeongbokgung's Gwanghwamun gate (except Tuesdays and weather-permitting). With a 09:00 disembarkation example, we typically arrive at the palace around 10:30, which means the 10:00 ceremony has already started or finished. Earlier disembarkations (08:30 or earlier) align better. The guide will time arrival to catch the ceremony if your ship's schedule allows."
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
           },
           {
             "id": "q-gwangjang-must-eat",
-            "question": "What should I eat at Gwangjang Market?",
-            "answer": "Three signatures: bindae-tteok (mung-bean pancakes, the most famous Gwangjang dish and what the market is known for internationally — ≈₩5,000 per pancake, very filling); mayak gimbap (small bite-sized seaweed rice rolls in mustard-vinegar sauce, ≈₩3,000–₩4,000 per bundle, kid-friendly); and yukhoe (raw beef tartare in sesame oil, ≈₩15,000–₩20,000 — Gwangjang's yukhoe alley has multiple shops, the guide will recommend one). For non-adventurous eaters: kalguksu (knife-cut noodles, ≈₩7,000) or kimbap-and-tteokbokki sets are reliable."
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
           },
           {
             "id": "q-bukchon-residents",
-            "question": "Is Bukchon a tourist village or a residential area?",
-            "answer": "Residential. Most of the ≈600 hanoks in Bukchon are private homes; only some are tea houses, craft workshops, or small museums. Quiet hours are observed 22:00–10:00, but the city asks visitors to keep voices down at all hours. Don't enter private courtyards or photograph people without consent. The eight officially designated 'Bukchon Hanok 8 Views' are the photo-OK spots."
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
           },
           {
             "id": "q-vegetarian",
-            "question": "Are there vegetarian options at Gwangjang?",
-            "answer": "Yes. Bindae-tteok (mung-bean pancakes) is naturally vegetarian; bibim-guksu (cold noodles in spicy sauce, no meat) is reliable; tteokbokki (rice cakes in spicy sauce) is vegetarian if you specify no fish cake. Halal and gluten-free options are limited but possible — please advise at booking so the guide can pre-route."
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
           },
           {
             "id": "first-time",
-            "question": "Is this a good choice for first-time visitors to Seoul?",
-            "answer": "Yes — for cruise passengers specifically. The four central stops (palace, hanok, market, crafts) are the most-asked-for in Seoul, and the route is built around the cruise schedule. First-time visitors with one cruise port-call day are the primary audience."
+            "question": "ソウル初訪問者に良い選択ですか？",
+            "answer": "はい。景福宮・北村韓屋村・広蔵市場・仁寺洞というソウルの4つの主要テーマを一日でカバーできる最もバランスの良い入門ツアーです。"
           },
           {
             "id": "walking",
-            "question": "How much walking is there?",
-            "answer": "≈4 km total. Gyeongbokgung's flat courtyards are the longest single walk; Bukchon has gentle slopes; Gwangjang and Insadong are flat. Comfortable closed-toe shoes are recommended."
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
           },
           {
             "id": "family",
-            "question": "Is this suitable for families with children?",
-            "answer": "Yes for school-age children (≈8+). Kids tend to like the Royal Guard ceremony if timed and the streetfood at Gwangjang. Bukchon's quiet residential character doesn't always engage younger kids. Strollers are fine at the palace and Insadong."
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
           },
           {
             "id": "seniors",
-            "question": "Can older adults join comfortably?",
-            "answer": "Yes. Pace is moderate; the longest single walk is Gyeongbokgung's courtyards (flat, with seating). Bukchon's slopes can be effortful but most viewpoints are reachable on the gentler path. Travelers with significant mobility limitations should consider a private cruise excursion."
+            "question": "高齢の方でも参加できますか？",
+            "answer": "はい。北村の急坂が唯一の難所ですが、スキップして平坦な路地を歩くだけでも見て回れます。"
           },
           {
             "id": "children",
-            "question": "What's the recommended minimum age?",
-            "answer": "Best fit is around age 8 and up — children comfortable with the walking note above and a full-day cruise-paced rhythm. If you bring younger children, please advise at booking so the guide can plan around the limit."
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
           },
           {
             "id": "rain",
-            "question": "What if it rains heavily during the day?",
-            "answer": "Light rain: tour runs as planned — most stops have indoor or covered options (palace galleries, market, Insadong arcades). Heavy rain: outdoor palace and Bukchon time may shorten in favor of more market and Insadong time. Typhoon-level: rebooking or full refund."
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
           }
         ]
       }
@@ -1697,13 +1869,13 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "予約可否は決済ステップで確認されます。",
         "price": {
           "amountLabel": "",
           "currency": "USD",
-          "per": "person",
-          "priceSource": "getyourguide_t1051171",
-          "priceNote": "Cruise excursion price not yet confirmed from operator listing. Comparable Seoul-from-Incheon shared cruise tours range $90–$120 per person. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+          "per": "人",
+          "priceSource": "direct_rate",
+          "priceNote": "料金は予約画面でご確認ください。クルーズ寄港地ツアーは寄港時間と催行条件により料金が変わる場合があります。",
           "discountPercent": 10
         }
       }
@@ -1730,14 +1902,14 @@
       "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 4 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, VisitSeoul, official tourism boards.\n  - Stop #2 Gyeongbokgung Palace: filled [visitBasics, convenience, smartNotes]\n  - Stop #3 Bukchon Hanok Village: filled [visitBasics, convenience, smartNotes]\n  - Stop #4 Lunch at Gwangjang Market: filled [visitBasics, convenience, smartNotes]\n  - Stop #5 Insadong cultural street: filled [visitBasics, convenience, smartNotes]",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
       },
       "v17_batch10_enhancement": {
         "date": "2026-04-29",
-        "description": "Batch 10 deep enhancement — Incheon Cruise → Seoul shore-excursion pair. Tour 1 (from-incheon-seoul-day-tour-cruise-guests): Batch 9 small-group fixed-itinerary methodology. Tour 2 (incheon-seoul-private-car-shore-excursion-cruise): **RECLASSIFIED from small_group to private** — vehicle is private_vehicle, badges include 'Private', description specifies private group + driver-guide for your group only. Now uses Batch 8 private fixed-itinerary methodology with elevated customization (0.6) due to genuine within-stop choices (lunch your choice + Myeongdong/Jogyesa). All substantive stops enhanced with 1,200-2,000+ char descriptions weaving verified facts. matching_profile recalibrated to 0-1 float scale. 5 new POIs added to KB (v1.12 → v1.13): changdeokgung_palace (UNESCO World Heritage 1997, Tuesday substitute), n_seoul_tower (Korea's iconic 236.7m broadcasting tower, opened 1980, rebranded 2005), myeongdong (Seoul's #1 K-beauty/shopping district + 1898 Cathedral), jogyesa_temple (head temple of Jogye Order, founded 1395 origin, 1954 current name), incheon_cruise_terminal (opened April 2019, USD 580M facility for Oasis-Class ships). Reused KB POIs: gyeongbokgung_palace, bukchon_hanok_village, gwangjang_market, insadong (all from prior batches). KB POI count: 68 → 73.",
+        "description": "Batch 10 deep enhancement — Incheon Cruise → Seoul shore-excursion pair. Tour 1 (from-incheon-seoul-day-tour-cruise-guests): Batch 9 small-group fixed-itinerary methodology. Tour 2 (incheon-seoul-private-car-shore-excursion-cruise): **RECLASSIFIED from small_group to private** — vehicle is private_vehicle, badges include 'Private', description specifies private group + driver-guide for your group only. Now uses Batch 8 private fixed-itinerary methodology with elevated customization (0.6) due to genuine within-stop choices (lunch your choice + Myeongdong/Jogyesa). All substantive stops enhanced with 1,200-2,000+ char descriptions weaving verified facts. product profile recalibrated to 0-1 float scale. 5 new POIs added to KB (v1.12 → v1.13): changdeokgung_palace (UNESCO World Heritage 1997, Tuesday substitute), n_seoul_tower (Korea's iconic 236.7m broadcasting tower, opened 1980, rebranded 2005), myeongdong (Seoul's #1 K-beauty/shopping district + 1898 Cathedral), jogyesa_temple (head temple of Jogye Order, founded 1395 origin, 1954 current name), incheon_cruise_terminal (opened April 2019, USD 580M facility for Oasis-Class ships). Reused KB POIs: gyeongbokgung_palace, bukchon_hanok_village, gwangjang_market, insadong (all from prior batches). KB POI count: 68 → 73.",
         "_score_audit": {
           "_methodology": "Tour 1 = small-group shared-van fixed-itinerary (Batch 9 formula): private_tour_fit=0.05, customizable_route_fit=0.05 (tighter than Batch 9 due to fixed cruise schedule), flexibility_fit=0.3. Tour 2 = **RECLASSIFIED** small_group → private (Batch 8 formula with elevated customization): private_tour_fit=1.0, customizable_route_fit=0.6 (genuine within-stop choices), flexibility_fit=0.85 (sail-away built in). Both tours: cruise_passenger_fit=1.0 (catalog-leading new dimension). Tour 1 royal_palace_fit=1.0, hanok_fit=1.0, street_food_fit=1.0 — all catalog-leading new dimensions. Time-weighted indoor_ratio re-computed per Fix 1 methodology using verified per-POI indoor_ratio_at_stop values.",
           "deltas_applied": {

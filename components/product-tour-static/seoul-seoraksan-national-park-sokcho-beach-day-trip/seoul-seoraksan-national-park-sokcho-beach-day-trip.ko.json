@@ -5,8 +5,8 @@
   "locale": "ko",
   "product_id": "seoul-seoraksan-national-park-sokcho-beach-day-trip",
   "seo": {
-    "pageTitle": "Seoraksan & Sokcho Beach Day Trip from Seoul | AtoC Korea",
-    "metaDescription": "12-hour small-group day trip from Seoul to the East Sea coast: hike Seoraksan National Park, browse Sokcho Tourist Fishery Market, and walk Sokcho Beach.",
+    "pageTitle": "설악산 국립공원 & 속초 해변 당일 여행 | AtoC Korea",
+    "metaDescription": "서울 출발 12시간 소그룹 동해안 투어: 설악산 케이블카 또는 비룡 폭포, 속초 해산물 시장, 속초 해수욕장.",
     "primaryKeywords": [
       "설악산 투어",
       "속초 투어",
@@ -23,20 +23,20 @@
     "priceLabel": "가격은 예약 시 확인",
     "shortCardDescription": "설악산국립공원(유네스코 생물권보전지역, 신흥사, 케이블카 선택), 속초관광수산시장(동해 해산물), 속초해변을 소그룹으로 하루에. 서울 왕복 차량 포함.",
     "tags": [
-      "small_group",
-      "nature",
-      "scenic",
-      "beach",
-      "seafood_market",
-      "autumn_foliage",
-      "day_trip"
+      "소그룹",
+      "자연",
+      "경치 좋은 코스",
+      "해변",
+      "해산물 시장",
+      "단풍",
+      "당일 투어"
     ],
     "rating": 0,
     "reviewCount": 0,
     "slug": "seoul-seoraksan-national-park-sokcho-beach-day-trip",
     "subtitle": "설악산국립공원, 속초관광수산시장, 속초해변을 소그룹으로 하루에.",
-    "region": "Seoraksan, Gangwon-do",
-    "duration": "12 hours",
+    "region": "설악산, 강원도",
+    "duration": "12시간",
     "stopsCount": 5,
     "badges": [
       "소그룹",
@@ -54,9 +54,9 @@
   "price": {
     "amountLabel": "",
     "currency": "USD",
-    "per": "person",
-    "priceSource": "getyourguide_t1230340",
-    "priceNote": "Price not yet confirmed from GetYourGuide listing snippet. Once original price is set, AtoC Korea sale price applies a flat 10% discount.",
+    "per": "인",
+    "priceSource": "direct_rate",
+    "priceNote": "AtoC Korea 공식 판매가 기준입니다.",
     "discountPercent": 10
   },
   "hero": {
@@ -64,13 +64,13 @@
     "imagePosition": "center 35%",
     "tagline": "한국에서 가장 상징적인 국립공원과 동해에서 가장 친근한 항구 도시",
     "pills": [
-      "Small Group",
-      "Nature"
+      "소그룹",
+      "자연"
     ],
     "meta": {
-      "duration": "12 hours",
-      "region": "Seoraksan, Gangwon-do",
-      "stops": "5 stops",
+      "duration": "12시간",
+      "region": "강원도 설악산",
+      "stops": "5개 코스",
       "rating": 0,
       "ratingStars": 0
     }
@@ -99,40 +99,39 @@
   ],
   "glanceItems": [
     {
+      "icon": "clock",
+      "label": "소요 시간",
+      "value": "12시간"
+    },
+    {
       "icon": "camera",
-      "label": "포토 스팟",
-      "value": "우수",
-      "level": 5
+      "label": "사진 포인트",
+      "value": "매우 높음"
     },
     {
       "icon": "mountain",
-      "label": "경치 밀도",
-      "value": "높음",
-      "level": 5
+      "label": "경관 특색",
+      "value": "매우 높음"
     },
     {
       "icon": "footprints",
-      "label": "도보 난이도",
-      "value": "다소 높음",
-      "level": 4
+      "label": "도보 강도",
+      "value": "보통"
     },
     {
       "icon": "cloud-rain",
       "label": "우천 적합도",
-      "value": "낮음",
-      "level": 2
+      "value": "보통"
     },
     {
       "icon": "users",
       "label": "가족 적합도",
-      "value": "보통",
-      "level": 3
+      "value": "보통"
     },
     {
-      "icon": "gauge",
-      "label": "투어 페이스",
-      "value": "빠름",
-      "level": 3
+      "icon": "scale",
+      "label": "투어 일정 속도",
+      "value": "균형"
     }
   ],
   "galleryItems": [
@@ -140,72 +139,72 @@
       "id": "g1",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "Granite ridges of Seoraksan National Park rising over a wooded valley, with cable-car cables visible against the rock face",
-      "caption": "Seoraksan ridges — UNESCO Biosphere Reserve since 1982",
-      "location": "Seoraksan National Park, Sogongwon entrance, Gangwon-do",
-      "atmosphere": "Cool mountain air at the park's main entrance; paved approach trail past Sinheungsa Temple"
+      "alt": "케이블카 선이 암벽 위에 보이는 수목이 우거진 계곡 위로 솟은 설악산 국립공원의 화강암 능선",
+      "caption": "설악산 능선 — 1982년 유네스코 생물권보전지역",
+      "location": "강원도 설악산국립공원 소공원 입구",
+      "atmosphere": "설악산 능선 — 1982년 유네스코 생물권보전지역는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
     },
     {
       "id": "g2",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "Seoraksan's Sinheungsa Temple Great Bronze Buddha statue seated in lotus position with Sinheungsa hall buildings behind",
-      "caption": "Sinheungsa Great Bronze Buddha — park entrance",
-      "location": "Sinheungsa Temple, Sogongwon, Seoraksan National Park",
-      "atmosphere": "≈600 m flat paved walk from the park entrance; Korea's largest seated bronze Buddha (≈14 m)"
+      "alt": "투어 중 방문하는 신흥사 통일대불 — 설악산 소공원 입구의 풍경",
+      "caption": "신흥사 통일대불 — 설악산 소공원 입구",
+      "location": "신흥사, 설악산 소공원, 설악산국립공원",
+      "atmosphere": "신흥사 통일대불 — 설악산 소공원 입구는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
     },
     {
       "id": "g3",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "Biseondae Rock formation along the stream-side trail at Seoraksan with clear water flowing through smooth granite slabs",
-      "caption": "Biseondae stream trail — flat 1.5 km optional walk",
-      "location": "Biseondae, Sogongwon section, Seoraksan",
-      "atmosphere": "Stream-side flat trail; clear water over smooth granite; no elevation gain"
+      "alt": "투어 중 방문하는 Biseondae의 풍경",
+      "caption": "Biseondae",
+      "location": "설악산 소공원 구간 비선대",
+      "atmosphere": "계곡 옆 평탄한 산책로로, 매끈한 화강암 위로 맑은 물이 흐르며 큰 오르막은 없습니다."
     },
     {
       "id": "g4",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "Sokcho Tourist Fishery Market interior with covered stalls displaying live East Sea sashimi, king crab, and seafood",
-      "caption": "Sokcho Fishery Market — sashimi, king crab, abai squid",
-      "location": "Sokcho Tourist Fishery Market, Sokcho waterfront",
-      "atmosphere": "Covered concrete-floor market; East Sea sashimi, abai-style stuffed squid (Korean War refugee dish)"
+      "alt": "속초관광수산시장 길거리 음식과 해산물",
+      "caption": "속초관광수산시장 — 회, 대게, 아바이 오징어순대",
+      "location": "속초관광수산시장, 속초 해안가",
+      "atmosphere": "동해안 시장 특유의 활기와 해산물 먹거리를 함께 체험할 수 있습니다."
     },
     {
       "id": "g5",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-      "alt": "Sokcho Beach's long stretch of golden sand looking out at the East Sea with Seoraksan's silhouette visible inland",
-      "caption": "Sokcho Beach — East Sea coastline, Seoraksan inland",
-      "location": "Sokcho Beach, East Sea coast, Sokcho",
-      "atmosphere": "1 km flat sand beach; Sokcho Eye ferris wheel at south end; swim season July-August"
+      "alt": "투어 중 방문하는 속초해수욕장 — East Sea coastline의 풍경",
+      "caption": "속초해수욕장 — 동해안과 내륙 설악산을 함께 느낄 수 있는 구간",
+      "location": "속초해수욕장, 동해안, 속초",
+      "atmosphere": "속초해수욕장 — East Sea coastline는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
     }
   ],
   "itineraryStops": [
     {
       "number": 1,
       "time": "≈ 06:30",
-      "duration": "15 min",
+      "duration": "15분",
       "name": "서울 출발",
-      "category": "Pickup & departure",
+      "category": "픽업 & 출발",
       "description": "홍익대학교역 8번 출구 또는 명동역에서 집결. 서울양양고속도로(인제양양터널)로 약 2.5시간 이동.",
       "highlights": [
-        "Central Seoul meeting points (Hongdae + Myeongdong)",
-        "Seoul-Yangyang Expressway via Inje-Yangyang Tunnel (11 km, Korea's longest)",
-        "Coach with rest stop en route",
-        "Departure timed to beat Seoraksan cable-car peak queue"
+        "서울 중심부 집합 장소 (홍대 + 명동)",
+        "인제-양양 터널 (11km, 한국 최장)을 통한 서울-양양 고속도로",
+        "도중 휴게소 있는 코치 이동",
+        "설악산 케이블카 피크 대기를 피하기 위한 출발 시간 조정"
       ],
       "timeUsed": [
-        "Meet driver-guide at Seoul pickup point",
-        "Confirm group, distribute water and snacks",
-        "Begin 2.5-hour drive to Seoraksan via Yangyang Expressway"
+        "서울 픽업 지점에서 가이드 겸 운전기사와 만남",
+        "그룹 확인, 물과 간식 배포",
+        "양양 고속도로를 통해 설악산까지 2.5시간 드라이브 시작"
       ],
-      "whyOnRoute": "Hotel-area pickup keeps the day's logistics simple. Departing by 07:30 ensures you arrive at Seoraksan before the 10:30 cable car peak rush — saving 1-2 hours of queueing in the autumn high season.",
+      "whyOnRoute": "호텔 인근 픽업으로 당일 물류 간소화.",
       "visitBasics": {},
       "convenience": {},
       "smartNotes": {
-        "tip": "Bring a light layer — coach AC can run cool. Restroom break ~halfway at a service area en route. Window seat on left side gives the best Taebaek mountain views before the tunnel."
+        "tip": "코치 에어컨이 강할 수 있으니 가벼운 겉옷 지참. 중간쯤 서비스 에어리어에서 화장실 휴식."
       },
       "_poi_meta": {
         "poi_key": "OPS_seoul_pickup_default",
@@ -217,43 +216,43 @@
     {
       "number": 2,
       "time": "≈ 10:00",
-      "duration": "180 min",
+      "duration": "180분",
       "name": "설악산국립공원",
-      "category": "National Park (Mountain)",
-      "description": "설악산국립공원은 1970년 한국 5번째 국립공원으로 지정, 1982년 유네스코 생물권보전지역으로 인정받았습니다. 소공원 입구에서 신흥사(1,300년 역사 사찰)까지 포장 산책로(약 20분)는 평탄합니다. 권금성 케이블카(₩15,000 선택)는 해발 700m에서 설악 전경을 조망합니다. 비선대까지의 트레킹은 소그룹 페이스에 따라 선택 가능합니다. 방문 시간: 약 150분.",
+      "category": "국립공원 & 유네스코 생물권 보전지역",
+      "description": "설악산국립공원은 1970년 한국 5번째 국립공원으로 지정, 1982년 유네스코 생물권보전지역으로 인정받았습니다. 소공원 입구에서 신흥사(1,300년 역사 사찰)까지 포장 산책로(약 20분)는 평탄합니다. 권금성 케이블카(₩15,000 선택)는 해발 700m에서 설악 전경을 조망합니다. 비선대까지의 트레킹은 소그룹 일정 속도에 따라 선택 가능합니다. 방문 시간: 약 150분.",
       "highlights": [
-        "Korea's 5th national park (1970) and only UNESCO Biosphere Reserve (Aug 1982)",
-        "Tongildaebul: 14.6 m / 108 tons bronze — world's largest seated bronze Buddha (1997)",
-        "Sinheungsa Temple (652 CE Silla) — head temple of the Jogye Order; world's oldest Seon (Zen) temple",
-        "Optional Seorak Cable Car 1,132 m to Gwongeumseong Fortress platform (700 m, 1253 legend)",
-        "30 peaks, 2,000+ animal species, 1,400-1,562 plant species; rare wildlife (musk deer, goral, Asian black bear)",
-        "Park entrance FREE since recent abolition (was 3,500 KRW); cable car still paid",
-        "**IUCN Category II (National Park) since 2005 + IUCN Green List of Protected Areas since 2014** — Korea's first national park to enter the Green List during the Pilot Phase, alongside Odaesan and Jirisan",
-        "**Korea's only UNESCO Biosphere Reserve since August 1982** + **listed as UNESCO World Heritage tentative site** — combined recognition unmatched by any other Korean national park",
-        "**Long-tailed goral conservation centerpiece**: stable population of ~260 individuals (vulnerable on IUCN Red List) — the park manages 10 Special Protection Zones covering 39 km² (10% of total park area) for endangered species"
+        "한국 5번째 국립공원 (1970년) + 유일한 유네스코 생물권 보전지역 (1982년 8월)",
+        "통일대불: 14.6m/108톤 청동 — 세계 최대 좌불상 (1997년)",
+        "신흥사 (652년 신라 창건) — 조계종 본사; 세계에서 가장 오래된 석조 건물 중 하나",
+        "선택: 설악 케이블카 1,132m 권금성 플랫폼까지 (700m, 계단 1,253개)",
+        "30개 봉우리, 동물 2,000종 이상, 식물 1,400~1,562종; 희귀 야생동물 (사향노루 등)",
+        "공원 입장 무료 (최근 ₩3,500 폐지); 케이블카는 유료",
+        "**IUCN 카테고리 II + IUCN 녹색 목록** (2022년)",
+        "**1982년 8월 한국 유일의 유네스코 생물권 보전지역** + **유네스코 세계 자연유산 후보**",
+        "**산양 보전 핵심**: 안정된 개체수 약 260마리"
       ],
       "timeUsed": [
-        "Arrival at Seorakdong Entrance + driver-guide orientation (~10 min)",
-        "Walk to Tongildaebul + Sinheungsa Temple (~15-20 min from main parking)",
-        "Optional cable car to Gwongeumseong (~30-45 min including queue) OR Biseondae walk (~90 min)",
-        "Photo time + reassembly at vehicle",
-        "Optional 800-year-old Pine Tree photo stop near Sinheungsa (~5 min) — natural-monument-grade tree predating Joseon Dynasty founding"
+        "설악동 입구 도착 + 가이드 오리엔테이션 — 약 10분",
+        "통일대불 + 신흥사까지 도보 — 약 15~20분",
+        "선택: 케이블카 권금성까지 (대기 포함 약 30~45분) 또는 비선대 트레일 (약 90분)",
+        "포토 타임 + 차량 집결",
+        "선택: 수령 800년 소나무 포토 (신흥사 근처 약 5분)"
       ],
-      "whyOnRoute": "The 2.5-hour drive each way is justified only by the centerpiece: Korea's 5th national park (1970) and the country's only UNESCO Biosphere Reserve (1982) — combined with the world's largest seated bronze Buddha and the world's oldest Zen Buddhist temple, all within a 15-minute walk of the Sogongwon entrance. Picked over Naksansa-temple alternatives because Seorakdong Entrance puts paved Sinheungsa + cable-car-ridge access + Biseondae stream trail within a single 3-hour window — no other Seoraksan stop combines all three with this short walking budget. Seoraksan's combined IUCN Green List + UNESCO Biosphere Reserve + tentative World Heritage status makes it **Korea's most-recognized natural-heritage park** — a credential that helps the day-trip earn its 5-hour round-trip drive cost in a way that pure-scenery alternatives (Odaesan, Jirisan) cannot match for first-time-Korea travelers seeking a single mountain anchor.",
+      "whyOnRoute": "왕복 2.5시간 드라이브는 중심 자원으로만 정당화: 한국 5번째 국립공원(1970)이자 서울 당일 여행 거리 내 가장 극적인 고산 풍경.",
       "visitBasics": {
-        "hours": "Park always open; Cable car typically 08:00-17:30 (weather-dependent); Sinheungsa Temple 06:00-sunset",
-        "closed": "Open year-round; some trails may close periodically for restoration",
-        "admission": "Park entrance FREE (was 3,500 KRW until recent abolition); Cable car RT Adult 16,000 / Child 12,000 KRW (on-site only, no advance booking)",
-        "walking": "Easy paths at base (Sinheungsa, cable-car base); moderate to challenging hikes (Biseondae 3 km, Ulsanbawi steep stairs, Heundeulbawi 1.5 hr each way)"
+        "hours": "공원 항상 개방; 케이블카 보통 08:00~17:30 (날씨 의존)",
+        "closed": "연중 무휴; 일부 탐방로 복원 중 임시 폐쇄 가능",
+        "admission": "공원 입장 무료; 케이블카 왕복 성인 ₩16,000",
+        "walking": "기저부 쉬운 포장 길 (신흥사, 케이블카 탑승장); 중간~어려운 하이킹 (비선대 등)"
       },
       "convenience": {
-        "restroom": "At main entrance area, cable car station, Sinheungsa Temple grounds, along major trails",
-        "parking": "Available at Sogongwon main entrance (paid)"
+        "restroom": "설악동 입구, 케이블카 탑승장, 신흥사 경내, 주요 탐방로 화장실",
+        "parking": "소공원 주 입구 유료 주차"
       },
       "smartNotes": {
-        "photo": "Tongildaebul (14.6 m bronze Buddha) is the iconic single shot. Cable car ride frames Sinheungsa + Ulsanbawi Rock + Sokcho City + East Sea. October foliage against granite peaks is world-famous.",
-        "facilities": "Visitor center, cafes (Dahyang Cafe), restaurants, gift shops at Seorakdong Entrance. Free hiking equipment rental 9:00-14:00 (return by 16:00). Asiatic Black Bear Statue mascot near entrance.",
-        "tip": "Cable car tickets ARE NOT bookable in advance — queues can exceed 1-2 hours in October. If skies are foggy, skip the cable car entirely (no view). Best 3-hour budget: Tongildaebul + Sinheungsa + Biseondae streamside walk. Wear sturdy closed-toe shoes — paths are rocky and damp in places."
+        "photo": "통일대불 (14.6m 청동 불상)이 대표 단일 샷. 케이블카에서 화강암 봉우리 파노라마.",
+        "facilities": "설악동 입구 방문자 센터, 카페, 식당, 기념품점.",
+        "tip": "케이블카 사전 예약 불가 — 10월에는 대기 1~2시간 이상. 오전 일찍 도착해야 합니다."
       },
       "_poi_meta": {
         "poi_key": "seoraksan_national_park",
@@ -273,43 +272,43 @@
     {
       "number": 3,
       "time": "≈ 13:30",
-      "duration": "75 min",
+      "duration": "75분",
       "name": "속초관광수산시장",
-      "category": "Coastal Fishery Market",
-      "description": "설악산에서 15분 이동. 동해 해산물 전문 시장으로, 2022년 '속초관광수산시장'으로 재명명. 동해 회(hwe, 생선회), 아바이 오징어순대, 닭강정(속초 명물 간식)을 즐길 수 있습니다. 시장은 실내 구조로 우천 시에도 쾌적합니다. 방문 시간: 약 60분.",
+      "category": "해안 수산 시장",
+      "description": "설악산에서 15분 이동. 동해 해산물 전문 시장으로, 2022년 '속초관광수산시장'으로 재명명. 동해 회(회, 생선회), 아바이 오징어순대, 닭강정(속초 명물 간식)을 둘러볼 수 있습니다. 시장은 실내 구조로 우천 시에도 쾌적합니다. 방문 시간: 약 60분.",
       "highlights": [
-        "Korea's signature East Sea fishery market — formerly Sokcho Jungang Market",
-        "Dakgangjeong (sweet-spicy crispy chicken) — Gangwon-do regional specialty, 15,000-19,000 KRW box",
-        "Ojingeo sundae (Sokcho squid sundae) — whole squid stuffed with noodles/rice, pan-fried with egg",
-        "Abai sundae — North Korean Hamgyeong-province blood sausage, refugee heritage from Korean War",
-        "Specialized alleys: chicken, blood sausage, salted seafood, vegetables, chili peppers + Special Food Street",
-        "Adjacent gaetbae ferry to Abai Village (200 KRW, filmed for 'Autumn in My Heart' K-drama)",
-        "**500+ stalls across 2 floors + basement raw-fish center** (Tripadvisor + KTO confirmed) — daily 08:00 open, no entrance fee; raw fish center closed 2nd Wednesday monthly",
-        "**Dakgangjeong was first invented here** — Gangwon-do's poultry-farm density made the market the original innovation site for the now-nationwide sweet-spicy crispy-chicken dish (KTO's 'Top 3 Eateries' anchor)",
-        "**Sulbbang (술빵)**: a Sokcho-only specialty (Stall #54, ₩5,000) — naturally-fermented makgeolli rice-flour bread topped with red and green beans, found nowhere else in Korea"
+        "한국 대표 동해 수산 시장 — 구 속초 중앙 시장",
+        "닭강정 (달콤 매콤 바삭 치킨) — 강원도 지역 특산물, ₩15,000 정도",
+        "오징어 순대 (속초 오징어 순대) — 오징어에 면·쌀을 채운 향토 명물",
+        "아바이 순대 — 함경도 출신 피순대, 피난민 유산",
+        "회 센터 활어 수조, 오징어 순대 지지는 풍경",
+        "인접한 갯배로 아바이 마을 이동 (200원, '가을동화' 촬영지)",
+        "**2층 + 지하 활어 센터 500개 이상 상점** (트립어드바이저 속초 #1)",
+        "**닭강정이 여기서 처음 발명됨** — 강원도 가금류 농장 지구 인접이 유래",
+        "**술빵**: 속초만의 특산품 (54번 상점, ₩5,000) — 천연 발효 쌀빵"
       ],
       "timeUsed": [
-        "Walk-through orientation by driver-guide (~5 min)",
-        "Lunch at recommended stall or restaurant (~30-45 min)",
-        "Free time for street-food snacks and souvenir shopping (~25 min)",
-        "Optional gaetbae ferry to Abai Village (~10 min round-trip)",
-        "Optional Hyuntaenae Stall #12 squid-sundae and gamja-jeon tasting (~15 min) — Sokcho-specialty street-food anchor"
+        "가이드의 산책 오리엔테이션 — 약 5분",
+        "추천 매대 또는 식당에서 점심 — 약 30~45분",
+        "길거리 음식 + 기념품 쇼핑 자유 시간 — 약 25분",
+        "집결 — 약 5분",
+        "선택: 현태내 12호 오징어순대와 감자전 시식 (~15분)"
       ],
-      "whyOnRoute": "The Sokcho market is the catalog's strongest mountain-and-ocean food pivot — within 10 minutes of leaving Seoraksan's mountain temple atmosphere, travelers eat the East Sea coast's most distinctive working-port lunch. Picked over Daepohang Port Raw Fish Street alternatives because the market's all-weather indoor structure plus the takeaway-friendly dakgangjeong format absorbs typical small-group group dynamics (mixed seafood preferences) without forcing a sit-down raw-fish commitment. Beyond mere dining, the market is the entry point to **Korea's only remaining collective settlement of displaced Korean War people** — Abai Village, accessible via the 200-KRW gaetbae hand-pulled ferry across the 92m Cheongho Lake channel — where Hamheung-style cold noodles, abai sundae, ojingeo sundae, and gajami sikhae form a North-Korean-diaspora food map preserved nowhere else in South Korea.",
+      "whyOnRoute": "속초 시장은 카탈로그의 가장 강력한 산악-해양 음식 피봇 — 설악산 출발 10분 이내.",
       "visitBasics": {
-        "hours": "Most stalls 09:00-21:00 daily; individual stall hours vary",
-        "closed": "Open year-round; individual stalls may close on Sundays or rotating off-days",
-        "admission": "Free entry; pay-as-you-go",
-        "walking": "Easy — flat downtown market; comfortable shoes for ~30-90 min wandering"
+        "hours": "대부분 매대 09:00~21:00",
+        "closed": "연중 무휴 (개인 매대 순환 휴무 가능)",
+        "admission": "무료 입장; 현금 권장",
+        "walking": "쉬움 — 평탄한 시내 시장"
       },
       "convenience": {
-        "restroom": "Inside main building; alley restrooms",
-        "parking": "Underground parking 600 KRW first 30 min, 400 KRW per 10 min thereafter, max 12,000 KRW/day"
+        "restroom": "메인 건물 내; 골목 화장실",
+        "parking": "지하 주차 600원 (첫 30분), 이후 10분당 400원"
       },
       "smartNotes": {
-        "photo": "Live-fish tanks at the Raw Fish Center; squid sundae frying on the pan; the multi-colored 'SOKCHO' staircase at the central entrance; the Hyuntaenae stall #12 yellow signage; rainbow-colored rice cakes and gimbap.",
-        "facilities": "Sit-down restaurants behind many street-food stalls. Hanaro Mart for take-home gifts (dried fish, dried mackerel, dried pollack). Multilingual signs.",
-        "tip": "Bring CASH 10,000-20,000 KRW per person — many vendors don't accept foreign cards. Try the dakgangjeong + squid sundae pair as the must-eat combo. Avoid eating free samples without intent to purchase (Korean market etiquette). Visit before 12:30 to skip the lunchtime peak."
+        "photo": "회 센터 활어 수조; 오징어 순대 지지는 풍경; 다채로운 시장 건물.",
+        "facilities": "많은 매대 뒤 좌석 식당. 한라로 마트 테이크아웃 식품.",
+        "tip": "현금 1인당 ₩10,000~20,000 지참 권장 — 외국 카드 불가 매대 많음."
       },
       "_poi_meta": {
         "poi_key": "sokcho_tourist_fishery_market",
@@ -329,43 +328,43 @@
     {
       "number": 4,
       "time": "≈ 14:45",
-      "duration": "75 min",
+      "duration": "75분",
       "name": "속초해변",
-      "category": "Coastal Beach",
-      "description": "시장에서 5분 거리. 속초해변은 1976년 개장 이후 동해안 대표 해수욕장 중 하나입니다. 백사장 약 1km, 영랑호 방면 전망이 아름답습니다. 수영 시즌은 7~8월. 그 외 시기에는 산책과 포토 스팟. 방문 시간: 약 60분.",
+      "category": "해안 해변",
+      "description": "시장에서 5분 거리. 속초해변은 1976년 개장 이후 동해안 대표 해수욕장 중 하나입니다. 백사장 약 1km, 영랑호 방면 전망이 아름답습니다. 수영 시즌은 7~8월. 그 외 시기에는 산책과 포토 명소. 방문 시간: 약 60분.",
       "highlights": [
-        "Opened 1976 — Korea's representative East Sea beach (~2 km total / 450 m × 75 m swimming zone)",
-        "Sokcho Eye Ferris Wheel — Korea's only beach ferris wheel, 22 stories, 216 capacity",
-        "Korean pine forest backdrop along Haeoreum Road (cooling shaded paths)",
-        "Public art: SOKCHO staircase, ㅅㅊ letters, dolphin sculpture, Tree of Hearts on T-pier",
-        "Swimming season: July 4 - mid-August (with night swim 19:00-21:00)",
-        "Top New Year sunrise destination — crowds gather every January 1st",
-        "**Sokcho Eye Ferris Wheel opened March 25, 2022**: 65 m tall (22 stories), 36 cabins × 6-pax = 216 max simultaneous capacity, transparent acrylic walls for 360° views, ~16-min ride; **Korea's only beach Ferris wheel**",
-        "**Eye operating hours**: weekdays 10:00-20:00 / weekends 10:00-21:00 (last admission 1 hr before close); ₩12,000 adult / ₩6,000 child / ₩9,000 senior or 20+ group; 50% Sokcho-resident discount",
-        "**Beach address**: 186 Haeoreum-ro, Joyang-dong; 4-minute walk from Sokcho Express Bus Terminal — making this Korea's most bus-accessible East Sea beach in a single transfer from Seoul"
+        "**1976년 개장** — 한국 대표 동해 해변 (총 2km / 450m × 75m)",
+        "**속초 아이 대관람차** — 한국 유일 해변 대관람차, 22층 높이, 216명 수용",
+        "해오름 도로를 따라 한국 소나무 숲 배경 (그늘진 산책로)",
+        "공공 미술: SOKCHO 계단, ㅅㅊ 글자, 돌고래 조각, 트리 오브 하트(테디 베어 인형),",
+        "속초 아이 대관람차 — 해변과 함께 대표 포토 명소",
+        "최고의 새해 일출 명소 — 매년 1월 1일 인파 집결",
+        "**속초아이 대관람차**는 2022년 3월 25일 개장했습니다. 높이 65m(약 22층), 36개 캐빈에 최대 216명 동시 탑승이 가능하며, 투명 아크릴 벽을 통해 360도 전망을 둘러볼 수 있습니다. 탑승 시간은 약 16분이며, 국내 해변에 자리한 대표 대관람차입니다.",
+        "**속초아이 운영시간**: 평일 10:00~20:00 / 주말 10:00~21:00(마감 1시간 전 입장 마감). 요금은 성인 ₩12,000 / 어린이 ₩6,000 / 경로 또는 20인 이상 단체 ₩9,000이며, 속초시민은 50% 할인이 적용됩니다.",
+        "**속초해수욕장 주소**: 강원특별자치도 속초시 해오름로 186(조양동). 속초고속버스터미널에서 도보 약 4분 거리라, 서울에서 한 번에 이동하기 좋은 동해안 해변입니다."
       ],
       "timeUsed": [
-        "Arrival and walk to the central entrance (~5 min)",
-        "Beach walk + photo stops at art installations and pine forest (~30-45 min)",
-        "Optional Sokcho Eye Ferris Wheel ride or beachfront cafe stop (~15-20 min)",
-        "Reassembly at vehicle",
-        "Optional Sokcho Eye Ferris Wheel ride (~16 min ride; ₩12,000 adult / ₩6,000 child) — Korea's only beach Ferris wheel"
+        "도착 + 중앙 입구 이동 — 약 5분",
+        "해변 산책 + 미술 설치 + 소나무 숲 사진 — 약 30분",
+        "선택: 속초 아이 대관람차 탑승 또는 해변 카페 — 약 15분",
+        "집결 — 약 5분",
+        "선택: 속초아이 관람차 탑승 (~16분 탑승; 성인 ₩12,000 / 아동 ₩6,000)"
       ],
-      "whyOnRoute": "Sokcho Beach is the day's third pillar — completing the Seoraksan mountain → Sokcho fishery → East Sea coast triad that only Korea's east coast offers in a single day-trip. Picked over Naksan Beach to the south because Sokcho Beach is walkable from the Tourist Fishery Market and the Express Bus Terminal, eliminating an extra 15-min drive. The **Sokcho Eye Ferris Wheel** elevates Sokcho Beach beyond a generic East-Sea shore — its 65m height + transparent acrylic walls + 16-minute ride deliver a panoramic that captures Seolak Bridge / Geumgang Bridge / Abai Village / Sokcho Lighthouse Observatory / Yeonggeumjeong Pavilion / Dongmyeong Port / Jodo Island / Seoraksan in a single circular sequence, completing the day's mountain-and-ocean narrative with one final aerial-perspective photograph that no other East Coast beach in Korea can match.",
+      "whyOnRoute": "속초 해변은 하루 세 번째 기둥 — 설악산 → 속초 수산 → 동해안 시퀀스 완성.",
       "visitBasics": {
-        "hours": "Beach open 24 hours; swimming permitted only during officially-open season (July 4 - early-mid August 2025)",
-        "closed": "Open year-round for walking; swimming closed September-June",
-        "admission": "Free (parasol/lounger rentals 20,000-30,000 KRW during swim season)",
-        "walking": "Easy — flat beach; pine forest park trail behind"
+        "hours": "해변 24시간; 수영 공식 시즌 (7월 초~8월 말) 한정",
+        "closed": "연중 무휴 (수영 9월~6월 금지)",
+        "admission": "무료 (수영 시즌 파라솔·라운저 ₩20,000~30,000)",
+        "walking": "쉬움 — 평탄한 해변; 뒤편 소나무 숲 산책로"
       },
       "convenience": {
-        "restroom": "Public washrooms along beach (clean, well-maintained)",
-        "parking": "Beach-area parking lots; rates vary"
+        "restroom": "해변 따라 공중화장실 (청결 양호)",
+        "parking": "해변 주변 주차장"
       },
       "smartNotes": {
-        "photo": "Sokcho Eye Ferris wheel from the beach is the iconic shot. Multi-colored 'SOKCHO' staircase at central entrance. T-shaped pier with metal Tree of Hearts. Sunrise over East Sea (especially New Year).",
-        "facilities": "Restaurants and convenience shops along Haeoreum Road. Air/water pumps to clean shoes after sand. Photo zones with art installations.",
-        "tip": "Best for swim experience: July 4 - early August (also offers night swim 19:00-21:00). Best for photo + walking: spring/autumn (mild weather, fewer crowds). The northern part (around Sokcho Eye) is busier than the southern part. Strong wind even in summer — bring a windbreaker. Pair with the New Year sunrise visit if traveling in late December / early January."
+        "photo": "해변에서 속초 아이 대관람차 배경 포토 — 대표 샷.",
+        "facilities": "해오름 도로 따라 식당·편의점.",
+        "tip": "수영 최적 시기: 7월 4일~8월 초 (야간 수영 19:00~21:00 가능). 가을에는 한산하고 경치 좋음."
       },
       "_poi_meta": {
         "poi_key": "sokcho_beach",
@@ -385,25 +384,25 @@
     {
       "number": 5,
       "time": "≈ 16:00",
-      "duration": "150 min",
+      "duration": "150분",
       "name": "서울 귀환",
-      "category": "Return",
+      "category": "귀환",
       "description": "서울양양고속도로로 서울 귀환(약 2.5시간, 중간 휴게소 1회). 저녁 이른 시간 도착.",
       "highlights": [
-        "Drop-off in central Seoul (Hongdae + Myeongdong)",
-        "Approx. arrival 18:30-19:00 (weekend autumn Sundays may run later)",
-        "Mid-route service-area rest break"
+        "**4개 하차 지점** — 동문, 시청, 공항, 하귀 (픽업 역순)",
+        "동문 먼저 (약 17:50) — 저녁 길거리 음식 연장 방문자용",
+        "**공항 하차** 당일 출발자 권장 — 국제선 기준 2.5시간 여유 권장"
       ],
       "timeUsed": [
-        "Boarding and headcount at Sokcho departure point",
-        "~2.5 hr drive with one service-area rest stop",
-        "Drop-off in Seoul central area"
+        "후리에 → 제주시 서쪽으로 이동 — 약 50분",
+        "동문 하차 약 17:50 — 5분",
+        "시청 하차 약 18:05 — 5분"
       ],
-      "whyOnRoute": "Return logistics — drop-off chosen for guest convenience and timing certainty; expressway route minimizes exposure to local traffic and ensures predictable arrival window.",
+      "whyOnRoute": "귀환 물류 — 게스트 편의와 시간 확실성 위한 하차.",
       "visitBasics": {},
       "convenience": {},
       "smartNotes": {
-        "tip": "Autumn-foliage Sunday returns can run 30-60 min late — build buffer into evening dinner reservations. Keep snacks / water for the return drive."
+        "tip": "가을 단풍 일요일 귀환은 30~60분 지연될 수 있어요 — 저녁 식사 계획에 완충 시간을 두세요."
       },
       "_poi_meta": {
         "poi_key": "OPS_return",
@@ -416,134 +415,134 @@
   ],
   "routeFlowStops": [
     {
-      "name": "Seoul",
+      "name": "서울",
       "type": "origin",
-      "theme": "Departure"
+      "theme": "출발"
     },
     {
-      "name": "Seoraksan National Park",
+      "name": "설악산 국립공원",
       "type": "primary",
-      "theme": "Mountain"
+      "theme": "산"
     },
     {
-      "name": "Sokcho Tourist Fishery Market",
+      "name": "속초 관광 수산 시장",
       "type": "primary",
-      "theme": "Market"
+      "theme": "시장"
     },
     {
-      "name": "Sokcho Beach",
+      "name": "속초 해수욕장",
       "type": "secondary",
-      "theme": "Beach"
+      "theme": "해변"
     },
     {
-      "name": "Seoul",
+      "name": "서울",
       "type": "return",
-      "theme": "Return"
+      "theme": "귀환"
     }
   ],
   "routePhases": [
     {
       "phase": "출발",
-      "duration": "≈ 2.5 hours",
+      "duration": "약 2시간 30분",
       "description": "서울 → 서울양양고속도로 → 설악산(약 2.5시간)."
     },
     {
       "phase": "산악 구간",
-      "duration": "≈ 3 hours",
+      "duration": "약 3시간",
       "description": "설악산국립공원 탐방(신흥사·케이블카 선택)."
     },
     {
       "phase": "해안 구간",
-      "duration": "≈ 2 hours",
+      "duration": "약 2시간",
       "description": "속초관광수산시장 점심 → 속초해변."
     },
     {
       "phase": "귀환",
-      "duration": "≈ 3.5 hours",
+      "duration": "약 3시간 30분",
       "description": "서울로 귀환(약 2.5시간)."
     }
   ],
   "routeShapeIntro": {
-    "title": "How this day flows",
-    "subtitle": "A mountain-then-sea linear loop east of Seoul. Three hours among Seoraksan's granite peaks in the morning, then a 30-minute drop down to the coast for a market lunch and a walk on Sokcho Beach. Two of Korea's most distinctive landscapes — the country's iconic national park and its friendliest east-coast port — without overnight planning."
+    "title": "하루 일정",
+    "subtitle": "서울 동쪽의 산-해 선형 루프. 오전 3시간 설악산 화강암 봉우리 탐방 후, 30분 이동해 해안으로 내려와 시장 점심과 속초 해변 산책. 한국에서 가장 아름다운 산악 경관 두 곳을 하루에 담아냅니다."
   },
   "whyTourWorks": {
     "bestFor": [
-      "First-time visitors wanting the Seoraksan + East Sea coast pairing in a single day from Seoul",
-      "Photographers chasing autumn foliage (mid-October to early November) at Korea's most photographed national park",
-      "Food-focused travelers who'll appreciate Sokcho's seafood market over a packaged lunch",
-      "Couples and adult families comfortable with a 12-hour day and a 4-hour drive each way",
-      "Active travelers willing to skip the cable car for the flat Biseondae stream trail"
+      "서울에서 하루에 설악산+동해안을 원하는 첫 방문자",
+      "가을 단풍을 쫓는 사진 작가 (10월 중순~11월 초가 절정).",
+      "포장 점심 대신 속초 수산 시장을 원하는 음식 중심 여행자",
+      "12시간 하루 + 편도 4시간 이동이 괜찮은 커플 및 성인 가족",
+      "케이블카 대신 평탄한 비선대 계류 트레일을 선택할 활동적 여행자"
     ],
     "lessIdealFor": [
-      "Travelers needing same-day flight buffer (Seoul return ≈ 19:30; book domestic flights after 22:00 only)",
-      "Anyone uncomfortable with 4 hours of one-way coach travel for 5 hours of stops",
-      "Beach/swimming-focused visitors outside July-August (water is cold, lifeguards off-duty, swim season is short)",
-      "Visitors expecting a long Seoraksan hike (Ulsanbawi/Daecheongbong require an overnight in Sokcho, not a day tour)",
-      "Travelers with limited mobility — Seoraksan paved paths are flat but cable-car deck stairs and beach sand are not"
+      "당일 항공편 완충이 필요한 여행자.",
+      "5시간 코스를 위한 편도 4시간 코치 이동이 불편한 여행자 주의",
+      "7~8월 외 해수욕 위주 방문자.",
+      "긴 설악산 하이킹을 기대하는 방문자.",
+      "거동이 불편한 여행자."
     ],
     "routeLogicSections": [
       {
-        "title": "Why this route is built this way",
+        "title": "이 코스의 추천 포인트",
         "icon": "route",
         "iconBg": "bg-sky-50/80",
         "iconColor": "text-sky-600",
         "items": [
           {
-            "label": "More mountain time than the standard tour",
-            "detail": "Three hours at Seoraksan is enough to walk to Biseondae and ride the cable car, not just glance at the entrance. Many east-coast tours pair Seoraksan with three other stops and leave only 90 minutes for the park itself."
+            "label": "표준 투어보다 더 많은 산 시간",
+            "detail": "설악산 3시간은 비선대까지 걷고 케이블카도 탈 수 있는 시간입니다. 단순히 입구만 훑어보는 것이 아닙니다."
           },
           {
-            "label": "Real Sokcho food, not a tourist meal",
-            "detail": "The Tourist Fishery Market is where Sokcho actually eats — Hamgyeong-style refugee dishes, East Sea sashimi, dakgangjeong. Free time means you choose your own bowl rather than getting a fixed bus-tour lunch."
+            "label": "관광지 식사가 아닌 진짜 속초 음식",
+            "detail": "관광 수산 시장은 속초 사람들이 실제로 먹는 곳입니다 — 함경도 스타일 피난민 음식, 동해 회, 닭강정."
           },
           {
-            "label": "Cleaner pairing than mountain-plus-Nami-Island",
-            "detail": "Other east-bound day tours combine Seoraksan with Nami Island or the Garden of Morning Calm for a 13–14 hour day. This itinerary stays on the Sokcho axis — mountain, market, beach — for a tighter, less-rushed mood."
+            "label": "산+나미섬 조합보다 깔끔한 페어링",
+            "detail": "다른 동쪽 행 당일 투어들은 설악산과 남이섬 또는 아침고요수목원을 합쳐 13~14시간짜리로 만듭니다. 이 루트는 12시간으로 더 깔끔합니다."
           },
           {
-            "label": "Year-round value",
-            "detail": "Autumn foliage is the headline season, but the same route works for summer beach days, winter snow ridges, and spring greens. The market is busy in any weather, and the coach drive cuts out the train-and-bus transfer that DIY visitors spend half their day on."
+            "label": "연중 가치",
+            "detail": "단풍이 대표적이지만 같은 루트가 여름 해변, 겨울 설경, 봄 해동 계류에도 유효합니다."
           }
         ]
       },
       {
-        "title": "How the walking load actually feels",
+        "title": "실제 도보 강도는 어느 정도일까",
         "icon": "footprints",
         "iconBg": "bg-emerald-50/80",
         "iconColor": "text-emerald-600",
         "items": [
           {
-            "label": "Seoraksan paved core",
-            "detail": "The Sogongwon entrance to Sinheungsa Temple and the cable-car base is paved and stroller-tolerant. ≈600 m one-way; 15-20 min round trip on foot."
+            "label": "설악산 포장 핵심 구역",
+            "detail": "소공원 입구에서 신흥사와 케이블카 탑승장까지 포장 길로 유모차 가능합니다. 편도 약 600m."
           },
           {
-            "label": "Biseondae optional flat trail",
-            "detail": "1.5 km each way along a stream — flat, well-marked, no real elevation gain. Adds ≈45 min to the Seoraksan stop."
+            "label": "비선대 선택 평지 트레일",
+            "detail": "계류를 따라 편도 1.5km — 평탄하고 표시가 잘 되어 있으며 실질적인 고도 변화 없음. 설악산 코스에 약 45분 추가."
           },
           {
-            "label": "Sokcho Beach sand",
-            "detail": "Flat but loose sand can tire mobility-limited visitors over the 1 km main stretch. The Yeongnang Coastal Road has a paved alternative."
+            "label": "속초 해변 모래",
+            "detail": "1km 메인 구간은 평탄하지만 느슨한 모래가 거동 불편자에게 피로감을 줄 수 있습니다."
           }
         ]
       },
       {
-        "title": "When weather and seasons shift",
+        "title": "날씨와 계절이 바뀔 때",
         "icon": "cloud-sun",
         "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
         "items": [
           {
-            "label": "Autumn foliage peak",
-            "detail": "Mid-October to early November is Seoraksan's defining season. The cable car often runs at capacity — buy tickets immediately on arrival or skip it."
+            "label": "단풍 절정",
+            "detail": "10월 중순~11월 초가 설악산의 대표 시즌입니다. 케이블카는 만원 운행 가능 — 시장 참고 자료 등을 통해 미리 예약하세요."
           },
           {
-            "label": "Winter snow days",
-            "detail": "December-February: Sinheungsa and lower paths are usually walkable; cable car can suspend in high winds. The market stays fully covered. Sokcho Beach is for photos, not walking far."
+            "label": "겨울 눈 날",
+            "detail": "12~2월: 신흥사와 하단 길은 대체로 걸을 수 있음; 강풍 시 케이블카 운행 중단 가능."
           },
           {
-            "label": "Swim window mid-July to late August",
-            "detail": "The only time Sokcho Beach is staffed for swimming. Outside this window the water is cold and the beach is for walking only."
+            "label": "수영 시즌 7월 초~8월 말",
+            "detail": "속초 해변에 인명구조원이 배치되는 유일한 기간입니다."
           }
         ]
       }
@@ -552,132 +551,132 @@
   "practicalAccordionItems": [
     {
       "id": "inclusions",
-      "title": "What's included",
-      "preview": "Round-trip coach transport from Seoul, English-speaking tour guide, Seoraksan National…",
+      "title": "포함 사항",
+      "preview": "서울 왕복 코치, 영어 가이드, 설악산 국립공원",
       "content": [
-        "Round-trip coach transport from Seoul, English-speaking tour guide, Seoraksan National Park admission.",
-        "Not included: meals, drinks, optional Seoraksan cable car (~₩15,000), market food, tips."
+        "서울 왕복 코치 교통, 영어 투어 가이드, 설악산 국립공원 입장권 포함.",
+        "미포함: 식사, 음료, 선택 설악산 케이블카(약 ₩15,000), 시장 음식, 팁."
       ]
     },
     {
       "id": "pickup",
-      "title": "Pickup & drop-off",
-      "preview": "Hongik University Station (Exit 8) at ≈07:00 or Myeongdong Station (Exit 4) at ≈07:30.",
+      "title": "픽업 & 하차",
+      "preview": "홍익대 입구역 (8번 출구) 약 07:00 또는 명동역 (4번 출구) 약 07:30.",
       "content": [
-        "Hongik University Station (Exit 8) at ≈07:00 or Myeongdong Station (Exit 4) at ≈07:30.",
-        "Arrive 10 minutes early.",
-        "There is no hotel pickup; meeting points only.",
-        "Latecomers cannot be accommodated."
+        "홍익대 입구역(8번 출구) 약 07:00 또는 명동역(4번 출구) 약 07:30.",
+        "10분 전까지 도착.",
+        "호텔 픽업 없음; 집합 장소만.",
+        "지각자 탑승 불가."
       ]
     },
     {
       "id": "walking",
-      "title": "Walking & terrain",
-      "preview": "Moderate.",
+      "title": "도보 & 지형",
+      "preview": "중간 강도.",
       "content": [
-        "Moderate.",
-        "Seoraksan's main path is paved and flat to the cable-car base; the Biseondae trail is a gentle 1.5 km each way.",
-        "The market is flat indoor walking.",
-        "Sokcho Beach is soft sand.",
-        "No serious hiking; bring comfortable closed-toe shoes."
+        "중간 강도.",
+        "설악산 메인 길은 케이블카 탑승장까지 포장 평지; 비선대 트레일은 약 1km 왕복 바위길.",
+        "시장은 평탄한 실내 도보.",
+        "속초 해변은 부드러운 모래.",
+        "본격 등산 없음; 편안한 발가락 보호형 신발 지참."
       ]
     },
     {
       "id": "what",
-      "title": "What to wear & bring",
-      "preview": "Comfortable walking shoes, layered clothing — Seoraksan is 5–10°C cooler than Seoul,…",
+      "title": "복장 & 준비물",
+      "preview": "편한 운동화, 레이어링 — 설악산은 서울보다 5~10°C 낮음",
       "content": [
-        "Comfortable walking shoes, layered clothing — Seoraksan is 5–10°C cooler than Seoul, especially in autumn and winter.",
-        "Light jacket in autumn, warm coat in winter.",
-        "Camera, water, cash for cable car and market food (₩20,000–₩40,000 typical).",
-        "Card payment is widely accepted at the market."
+        "편안한 워킹화, 겹쳐 입기 — 설악산은 서울보다 5~10°C 낮음, 특히 아침.",
+        "가을 가벼운 재킷, 겨울 따뜻한 코트.",
+        "카메라, 물, 케이블카 및 시장 음식 현금(예상 ₩20,000~₩40,000).",
+        "시장에서 카드 결제 폭넓게 가능."
       ]
     },
     {
       "id": "cancellation",
-      "title": "Cancellation",
-      "preview": "Free cancellation up to 24 hours before the tour starts.",
+      "title": "취소 정책",
+      "preview": "투어 시작 24시간 전까지 무료 취소.",
       "content": [
-        "Free cancellation up to 24 hours before the tour starts.",
-        "Same-day cancellations and no-shows are non-refundable.",
-        "If the operator cancels for weather (typhoon, heavy snow), you'll be offered a reschedule or refund."
+        "투어 시작 24시간 전까지 무료 취소 가능.",
+        "당일 취소 및 노쇼는 환불 불가.",
+        "태풍·폭설 등 현장 사정으로 취소 시 재예약 또는 환불 처리."
       ]
     },
     {
       "id": "children",
-      "title": "Children & accessibility",
-      "preview": "Children are welcome but the day is long (12 hours).",
+      "title": "어린이 & 접근성",
+      "preview": "어린이 환영, 단 하루 일정이 깁니다 (12시간).",
       "content": [
-        "Children are welcome but the day is long (12 hours).",
-        "The market and beach are stroller-friendly; the Seoraksan paved entrance is too, but Biseondae trail is not.",
-        "Limited accessibility for wheelchair users on Seoraksan beyond the cable-car base."
+        "어린이 환영; 단 하루 12시간으로 긴 일정.",
+        "시장과 해변은 유모차 친화적; 설악산 포장 입구도 가능하나 비선대 트레일은 불가.",
+        "설악산 케이블카 승강장 이후 구간은 휠체어 접근 제한."
       ]
     }
   ],
   "practicalWeatherStatic": {
     "today": {
       "temp": "—",
-      "label": "See seasonal notes"
+      "label": "계절별 안내 확인"
     },
     "tomorrow": {
       "temp": "—",
-      "label": "See seasonal notes"
+      "label": "계절별 안내 확인"
     },
-    "_seasonalSummary": "Sokcho and Seoraksan are noticeably cooler than Seoul, especially in autumn and winter. Coastal wind can make the beach feel colder than the temperature suggests.",
+    "_seasonalSummary": "속초와 설악산은 특히 가을·겨울에 서울보다 체감기온이 낮은 편입니다. 해안 바람 때문에 해변에서는 실제 기온보다 더 춥게 느껴질 수 있습니다.",
     "_seasonalTemperatures": [
       {
-        "season": "Spring (Mar–May)",
+        "season": "봄 (3~5월)",
         "range": "5–18°C",
-        "notes": "Cherry blossoms around Yeongnang Lake in late April."
+        "notes": "4월 말 영랑호 주변 벚꽃 시즌입니다."
       },
       {
-        "season": "Summer (Jun–Aug)",
+        "season": "여름 (6~8월)",
         "range": "20–28°C",
-        "notes": "Stable hiking weather; beach is busy in July–August."
+        "notes": "등산하기 안정적인 날씨이며, 7~8월에는 해변이 붐빕니다."
       },
       {
-        "season": "Autumn (Sep–Nov)",
+        "season": "가을 (9~11월)",
         "range": "5–20°C",
-        "notes": "Peak foliage on Seoraksan ridges mid-Oct to early Nov."
+        "notes": "10월 중순~11월 초 설악산 능선 단풍이 절정입니다."
       },
       {
-        "season": "Winter (Dec–Feb)",
+        "season": "겨울 (12~2월)",
         "range": "-8 to 5°C",
-        "notes": "Possible snow on the trails; cable car may close in high winds."
+        "notes": "산책로에 눈이 있을 수 있으며, 강풍 시 케이블카 운행이 중단될 수 있습니다."
       }
     ]
   },
   "seasonalVariations": [
     {
-      "season": "Spring",
-      "description": "Fresh greens on Seoraksan, cherry blossoms around Yeongnang Lake in Sokcho. Quietest of the four seasons."
+      "season": "봄",
+      "description": "설악산 신록, 속초 영랑호 주변 벚꽃. 비교적 한산한 시즌."
     },
     {
-      "season": "Summer",
-      "description": "Sokcho Beach is open for swimming (typically July–August); Seoraksan trails are forested and shaded."
+      "season": "여름",
+      "description": "속초 해수욕장 수영 가능 (보통 7~8월); 설악산 탐방로는 울창한 숲. 가장 혼잡한 시즌."
     },
     {
-      "season": "Autumn",
-      "description": "Korea's most photographed foliage on the Seoraksan ridges, mid-Oct to early Nov. Tour books out fast in this window."
+      "season": "가을",
+      "description": "설악산 능선 한국에서 가장 많이 촬영되는 단풍 명소, 10월 중순~11월 초. 투어 예약 가장 빠름."
     },
     {
-      "season": "Winter",
-      "description": "Snow-dusted granite peaks, fewer crowds, hot abai-soondae at the market. Cable car may close on high-wind days."
+      "season": "겨울",
+      "description": "눈 덮인 화강암 봉우리, 관광객 적음, 시장에서 뜨거운 아바이 순대. 케이블카는 운영 중단 가능."
     }
   ],
   "bookingTrustItems": [
     {
       "icon": "check-circle",
-      "title": "공인 현지 운영사",
-      "description": "Authorized Korean tour operator with full insurance",
+      "title": "공인 현지 여행사",
+      "description": "정식 등록 및 보험 가입 현지 여행사",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
-      "body": "설악산·속초 코스 전문 공인 현지 운영사."
+      "body": "설악산·속초 코스 전문 공인 현지 여행사."
     },
     {
       "icon": "route",
       "title": "코스 전문",
-      "description": "Hand-tuned itinerary, not a generic loop",
+      "description": "이동 부담을 줄인 효율적인 코스",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
       "body": "서울-속초 고속도로로 이동 시간 최소화. 속초시장에서 현지 해산물 직접 구매 안내."
@@ -685,7 +684,7 @@
     {
       "icon": "users",
       "title": "그룹 규모 관리",
-      "description": "Right-sized for the route",
+      "description": "코스에 상황에 맞춘 인원 규모",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600",
       "body": "소그룹 버스로 설악산 공원 입구에서 여유 있게 이동합니다."
@@ -693,84 +692,95 @@
   ],
   "bookingSupportSteps": [
     {
-      "timing": "Immediately",
+      "timing": "즉시",
       "title": "즉시 확인",
-      "detail": "Booking confirmation with itinerary summary",
+      "detail": "행정 요약 포함 예약 확인서 발송",
       "description": "집결 장소·시각 포함 즉시 예약 확인서 발송."
     },
     {
-      "timing": "12 hours before",
+      "timing": "출발 12시간 전",
       "title": "12시간 전 알림",
-      "detail": "Weather update and any route adjustments",
+      "detail": "날씨 업데이트 및 경로 변경 안내",
       "description": "설악산 날씨 및 케이블카 운행 상태 사전 안내."
     },
     {
-      "timing": "Evening before",
+      "timing": "전날 저녁",
       "title": "최종 픽업 안내",
-      "detail": "Exact pickup time and driver contact",
+      "detail": "정확한 픽업 시간 및 가이드 연락처",
       "description": "출발 전날 저녁 최종 집결 시각 확인."
     },
     {
-      "timing": "Morning of tour",
+      "timing": "투어 당일 아침",
       "title": "당일 코스 안내",
-      "detail": "Morning briefing based on live conditions",
+      "detail": "실시간 상황 기반 당일 브리핑",
       "description": "날씨 및 코스 안내 아침 메시지 전달."
     },
     {
-      "timing": "During tour",
+      "timing": "투어 중",
       "title": "경유지별 심층 안내",
-      "detail": "Real-time guidance at each location",
+      "detail": "각 코스 실시간 현장 안내",
       "description": "설악산 국립공원 지정 역사, 동해 해산물 시장 문화 등 가이드 설명."
     },
     {
-      "timing": "After tour",
+      "timing": "투어 종료 후",
       "title": "투어 후 지원",
-      "detail": "Follow-up and recommendations",
+      "detail": "피드백 및 추가 여행 추천",
       "description": "투어 후 피드백 요청 전송."
     }
   ],
   "staticQuestions": [
     {
+      "id": "q1",
       "question": "설악산 케이블카가 포함되어 있나요?",
       "answer": "포함되지 않습니다. 권금성 케이블카(₩15,000 왕복)는 선택 사항으로 현장 구매합니다."
     },
     {
+      "id": "q2",
       "question": "하이킹이 필수인가요?",
       "answer": "아닙니다. 기본 코스는 소공원 입구에서 신흥사까지 포장 산책로(약 20분 왕복)로, 대부분 평탄합니다."
     },
     {
+      "id": "q3",
       "question": "시장에서 뭘 먹으면 좋을까요?",
       "answer": "동해 회(생선회), 아바이 오징어순대, 속초 닭강정(SNS 명물)을 추천합니다."
     },
     {
+      "id": "q4",
       "question": "속초해변에서 수영할 수 있나요?",
       "answer": "공식 수영 시즌은 7~8월입니다. 그 외 시기에는 산책과 사진 촬영에 적합합니다."
     },
     {
+      "id": "q5",
       "question": "설악산+낙산사 투어와 어떻게 다른가요?",
       "answer": "이 투어는 속초 시내 — 산+시장+해변에 집중합니다. 낙산사 버전은 시장을 빼고 낙산사 사찰과 해돋이 명소를 추가합니다."
     },
     {
+      "id": "q6",
       "question": "비가 오면 어떻게 되나요?",
       "answer": "가벼운 비: 진행합니다. 설악산 산책로는 나무 그늘이 많고 시장은 실내. 강풍 시 케이블카가 운휴할 수 있습니다."
     },
     {
+      "id": "first-time",
       "question": "설악산·속초를 처음 방문하는 분에게 좋은가요?",
       "answer": "네, 하루에 설악산과 동해를 함께 볼 수 있는 가장 효율적인 코스입니다."
     },
     {
+      "id": "walking",
       "question": "도보 이동이 힘들지 않나요?",
       "answer": "보통 수준. 설악산 기본 코스는 포장 평지. 비선대 트레킹(약 3.6km, 왕복 90분)은 선택."
     },
     {
+      "id": "family",
       "question": "가족 여행에 적합한가요?",
       "answer": "12시간+이동 5시간을 소화할 수 있는 어린이가 동반하는 가족에게 적합합니다. 설악산 포장 산책로는 어린이 친화적."
     },
     {
+      "id": "seniors",
       "question": "어르신도 참여할 수 있나요?",
       "answer": "긴 이동을 소화할 수 있는 활동적인 어르신께 적합합니다. 설악산 기본 포장 코스는 평탄합니다."
     },
     {
+      "id": "children",
       "question": "권장 최소 연령은 몇 세인가요?",
       "answer": "만 6세 이상 추천. 왕복 약 5시간 버스 이동, 설악산 약 3시간 자유 시간."
     }
@@ -809,13 +819,13 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
     "price": {
       "amountLabel": "",
       "currency": "USD",
-      "per": "person",
-      "priceSource": "getyourguide_t1230340",
-      "priceNote": "Price not yet confirmed from GetYourGuide listing snippet. Once original price is set, AtoC Korea sale price applies a flat 10% discount.",
+      "per": "인",
+      "priceSource": "direct_rate",
+      "priceNote": "AtoC Korea 공식 판매가 기준입니다.",
       "discountPercent": 10
     }
   },
@@ -823,26 +833,26 @@
     "type": "meeting_point",
     "meeting_points": [
       {
-        "name": "Hongik University Station Exit 8",
+        "name": "홍대입구역 8번 출구",
         "time": "07:00"
       },
       {
-        "name": "Myeongdong Station Exit 4",
+        "name": "명동역 4번 출구",
         "time": "07:30"
       }
     ],
     "dropoff_points": [
       {
-        "name": "Hongik University Station Exit 8",
+        "name": "홍대입구역 8번 출구",
         "approx_time": "19:00"
       },
       {
-        "name": "Myeongdong Station Exit 4",
+        "name": "명동역 4번 출구",
         "approx_time": "19:00"
       }
     ],
     "hotel_pickup_available": false,
-    "notes": "Arrive 10 minutes early. Latecomers cannot be accommodated and are non-refundable."
+    "notes": "10분 일찍 도착해 주세요. 지각 시 투어 참여가 어려울 수 있으며 환불이 불가합니다."
   },
   "matching_profile": {
     "profile_version": 6,
@@ -853,7 +863,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gangwon_seoraksan",
     "vehicle_type": "coach",
-    "duration_hours": 12,
+    "duration_hours": 12.0,
     "region_tags": [
       "gangwon_seoraksan",
       "gangwon_sokcho"
@@ -874,15 +884,15 @@
     ],
     "pace_level": 0.6,
     "walking_level": 0.65,
-    "scenic_level": 1,
-    "photo_level": 1,
+    "scenic_level": 1.0,
+    "photo_level": 1.0,
     "culture_level": 0.4,
     "relax_level": 0.6,
     "first_time_fit": 0.85,
     "family_fit": 0.65,
     "senior_fit": 0.4,
-    "couple_fit": 1,
-    "solo_traveler_fit": 1,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 1.0,
     "active_traveler_fit": 0.8,
     "adult_family_fit": 0.8,
     "family_with_teens_fit": 0.8,
@@ -895,10 +905,10 @@
     "same_day_flight_fit": 0.2,
     "rain_fit": 0.6,
     "value_for_money_fit": 0.85,
-    "iconic_landmark_fit": 1,
+    "iconic_landmark_fit": 1.0,
     "cafe_fit": 0.4,
-    "food_fit": 1,
-    "nature_fit": 1,
+    "food_fit": 1.0,
+    "nature_fit": 1.0,
     "beach_fit": 0.85,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.4,
@@ -912,9 +922,9 @@
     "comfort_level": 0.6,
     "budget_fit": 0.6,
     "premium_fit": 0.4,
-    "small_group_fit": 1,
+    "small_group_fit": 1.0,
     "private_fit": 0.2,
-    "bus_fit": 1,
+    "bus_fit": 1.0,
     "price_band": "mid",
     "pickup_base": "seoul_central",
     "return_time_band": "20:00-21:30",
@@ -954,46 +964,46 @@
     "customizable_route_fit": 0.1,
     "flexibility_fit": 0.3,
     "history_culture_fit": 0.5,
-    "autumn_foliage_fit": 1,
-    "mountain_fit": 1,
+    "autumn_foliage_fit": 1.0,
+    "mountain_fit": 1.0,
     "seasonal_fit": 0.95,
-    "china_mainland_market_fit": 0,
-    "korea_domestic_market_fit": 0,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "seoul_day_trip_pair_fit": 1,
-    "seoul_central_hotel_pickup_fit": 1,
-    "return_to_seoul_central_fit": 1,
-    "day_trip_2_3_hour_drive_each_way_fit": 1,
-    "small_group_format_fit": 1,
-    "fixed_schedule_format_fit": 1,
-    "affordable_format_vs_charter_fit": 1,
-    "solo_traveler_friendly_fit": 1,
-    "mountain_to_ocean_pivot_fit": 1,
-    "unesco_biosphere_reserve_visit_fit": 1,
-    "iucn_green_list_protected_area_fit": 1,
-    "iucn_category_ii_national_park_fit": 1,
-    "third_highest_peak_in_korea_anchor_fit": 1,
-    "world_largest_seated_bronze_buddha_fit": 1,
-    "jogye_order_zen_temple_visit_fit": 1,
-    "long_tailed_goral_conservation_anchor_fit": 1,
-    "endangered_species_special_protection_zone_fit": 1,
-    "seoul_to_east_sea_inje_yangyang_tunnel_fit": 1,
-    "north_korean_diaspora_food_fit": 1,
-    "abai_village_korean_war_refugee_fit": 1,
-    "korea_only_remaining_displaced_settlement_fit": 1,
-    "korea_only_beach_ferris_wheel_fit": 1,
-    "sokcho_eye_ferris_wheel_anchor_fit": 1,
-    "dakgangjeong_invention_origin_market_fit": 1,
-    "sulbbang_sokcho_only_specialty_fit": 1,
-    "east_sea_coastal_market_fit": 1,
+    "seoul_day_trip_pair_fit": 1.0,
+    "seoul_central_hotel_pickup_fit": 1.0,
+    "return_to_seoul_central_fit": 1.0,
+    "day_trip_2_3_hour_drive_each_way_fit": 1.0,
+    "small_group_format_fit": 1.0,
+    "fixed_schedule_format_fit": 1.0,
+    "affordable_format_vs_charter_fit": 1.0,
+    "solo_traveler_friendly_fit": 1.0,
+    "mountain_to_ocean_pivot_fit": 1.0,
+    "unesco_biosphere_reserve_visit_fit": 1.0,
+    "iucn_green_list_protected_area_fit": 1.0,
+    "iucn_category_ii_national_park_fit": 1.0,
+    "third_highest_peak_in_korea_anchor_fit": 1.0,
+    "world_largest_seated_bronze_buddha_fit": 1.0,
+    "jogye_order_zen_temple_visit_fit": 1.0,
+    "long_tailed_goral_conservation_anchor_fit": 1.0,
+    "endangered_species_special_protection_zone_fit": 1.0,
+    "seoul_to_east_sea_inje_yangyang_tunnel_fit": 1.0,
+    "north_korean_diaspora_food_fit": 1.0,
+    "abai_village_korean_war_refugee_fit": 1.0,
+    "korea_only_remaining_displaced_settlement_fit": 1.0,
+    "korea_only_beach_ferris_wheel_fit": 1.0,
+    "sokcho_eye_ferris_wheel_anchor_fit": 1.0,
+    "dakgangjeong_invention_origin_market_fit": 1.0,
+    "sulbbang_sokcho_only_specialty_fit": 1.0,
+    "east_sea_coastal_market_fit": 1.0,
     "differentiates_from_dmz_day_trip": true,
     "differentiates_from_nami_morning_calm_petite_france": true,
     "differentiates_from_pocheon_three_pillar_day_trip": true,
@@ -1074,20 +1084,20 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Mountain in the morning, East Sea by lunch:",
-        "headlineLine2": "Seoraksan and Sokcho on Korea's wildest coast",
+        "headlineLine1": "오전엔 산, 점심엔 동해:",
+        "headlineLine2": "설악산과 속초, 한국에서 가장 야생적인 해안에서",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1600",
           "imagePosition": "center 35%",
-          "tagline": "Korea's most iconic national park, plus the East Sea's friendliest port",
+          "tagline": "한국에서 가장 상징적인 국립공원과 동해에서 가장 친근한 항구 도시",
           "pills": [
-            "Small Group",
-            "Nature"
+            "소그룹",
+            "자연"
           ],
           "meta": {
-            "duration": "12 hours",
-            "region": "Seoraksan, Gangwon-do",
-            "stops": "5 stops",
+            "duration": "12시간",
+            "region": "강원도 설악산",
+            "stops": "5개 코스",
             "rating": 0,
             "ratingStars": 0
           }
@@ -1102,23 +1112,23 @@
         "subnavItems": [
           {
             "id": "overview",
-            "label": "Overview"
+            "label": "투어 개요"
           },
           {
             "id": "itinerary",
-            "label": "Itinerary"
+            "label": "상세 일정"
           },
           {
             "id": "details",
-            "label": "Details"
+            "label": "유의사항"
           },
           {
             "id": "faq",
-            "label": "FAQ"
+            "label": "자주 묻는 질문"
           },
           {
             "id": "reviews",
-            "label": "Reviews"
+            "label": "여행자 후기"
           }
         ]
       }
@@ -1131,38 +1141,38 @@
         "glanceItems": [
           {
             "icon": "clock",
-            "label": "Duration",
-            "value": "12 hours"
+            "label": "소요 시간",
+            "value": "12시간"
           },
           {
             "icon": "camera",
-            "label": "Photo Value",
-            "value": "Very High"
+            "label": "사진 포인트",
+            "value": "매우 높음"
           },
           {
             "icon": "mountain",
-            "label": "Scenic",
-            "value": "Very High"
+            "label": "경관 특색",
+            "value": "매우 높음"
           },
           {
             "icon": "footprints",
-            "label": "Walking",
-            "value": "Moderate"
+            "label": "도보 강도",
+            "value": "보통"
           },
           {
             "icon": "cloud-rain",
-            "label": "Rain Safety",
-            "value": "Moderate"
+            "label": "우천 적합도",
+            "value": "보통"
           },
           {
             "icon": "users",
-            "label": "Family Fit",
-            "value": "Moderate"
+            "label": "가족 적합도",
+            "value": "보통"
           },
           {
             "icon": "scale",
-            "label": "Pace",
-            "value": "Balanced"
+            "label": "투어 일정 속도",
+            "value": "균형"
           }
         ]
       }
@@ -1177,46 +1187,46 @@
             "id": "g1",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-            "alt": "Granite ridges of Seoraksan National Park rising over a wooded valley, with cable-car cables visible against the rock face",
-            "caption": "Seoraksan ridges — UNESCO Biosphere Reserve since 1982",
-            "location": "Seoraksan National Park, Sogongwon entrance, Gangwon-do",
-            "atmosphere": "Cool mountain air at the park's main entrance; paved approach trail past Sinheungsa Temple"
+            "alt": "케이블카 선이 암벽 위에 보이는 수목이 우거진 계곡 위로 솟은 설악산 국립공원의 화강암 능선",
+            "caption": "설악산 능선 — 1982년 유네스코 생물권보전지역",
+            "location": "강원도 설악산국립공원 소공원 입구",
+            "atmosphere": "설악산 능선 — 1982년 유네스코 생물권보전지역는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
           },
           {
             "id": "g2",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-            "alt": "Seoraksan's Sinheungsa Temple Great Bronze Buddha statue seated in lotus position with Sinheungsa hall buildings behind",
-            "caption": "Sinheungsa Great Bronze Buddha — park entrance",
-            "location": "Sinheungsa Temple, Sogongwon, Seoraksan National Park",
-            "atmosphere": "≈600 m flat paved walk from the park entrance; Korea's largest seated bronze Buddha (≈14 m)"
+            "alt": "투어 중 방문하는 신흥사 통일대불 — 설악산 소공원 입구의 풍경",
+            "caption": "신흥사 통일대불 — 설악산 소공원 입구",
+            "location": "신흥사, 설악산 소공원, 설악산국립공원",
+            "atmosphere": "신흥사 통일대불 — 설악산 소공원 입구는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
           },
           {
             "id": "g3",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-            "alt": "Biseondae Rock formation along the stream-side trail at Seoraksan with clear water flowing through smooth granite slabs",
-            "caption": "Biseondae stream trail — flat 1.5 km optional walk",
-            "location": "Biseondae, Sogongwon section, Seoraksan",
-            "atmosphere": "Stream-side flat trail; clear water over smooth granite; no elevation gain"
+            "alt": "투어 중 방문하는 Biseondae의 풍경",
+            "caption": "Biseondae",
+            "location": "설악산 소공원 구간 비선대",
+            "atmosphere": "계곡 옆 평탄한 산책로로, 매끈한 화강암 위로 맑은 물이 흐르며 큰 오르막은 없습니다."
           },
           {
             "id": "g4",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-            "alt": "Sokcho Tourist Fishery Market interior with covered stalls displaying live East Sea sashimi, king crab, and seafood",
-            "caption": "Sokcho Fishery Market — sashimi, king crab, abai squid",
-            "location": "Sokcho Tourist Fishery Market, Sokcho waterfront",
-            "atmosphere": "Covered concrete-floor market; East Sea sashimi, abai-style stuffed squid (Korean War refugee dish)"
+            "alt": "속초관광수산시장 길거리 음식과 해산물",
+            "caption": "속초관광수산시장 — 회, 대게, 아바이 오징어순대",
+            "location": "속초관광수산시장, 속초 해안가",
+            "atmosphere": "동해안 시장 특유의 활기와 해산물 먹거리를 함께 체험할 수 있습니다."
           },
           {
             "id": "g5",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-            "alt": "Sokcho Beach's long stretch of golden sand looking out at the East Sea with Seoraksan's silhouette visible inland",
-            "caption": "Sokcho Beach — East Sea coastline, Seoraksan inland",
-            "location": "Sokcho Beach, East Sea coast, Sokcho",
-            "atmosphere": "1 km flat sand beach; Sokcho Eye ferris wheel at south end; swim season July-August"
+            "alt": "투어 중 방문하는 속초해수욕장 — East Sea coastline의 풍경",
+            "caption": "속초해수욕장 — 동해안과 내륙 설악산을 함께 느낄 수 있는 구간",
+            "location": "속초해수욕장, 동해안, 속초",
+            "atmosphere": "속초해수욕장 — East Sea coastline는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
           }
         ]
       }
@@ -1230,26 +1240,29 @@
           {
             "number": 1,
             "time": "≈ 06:30",
-            "duration": "15 min",
-            "name": "Seoul departure",
-            "category": "Pickup & departure",
-            "description": "Pickup from Hongik University Station (Exit 8) or Myeongdong Station (Exit 4). About 2.5 hours northeast by coach via the Yeongdong Expressway and Misiryeong Tunnel through the Taebaek mountains, into Gangwon Province and the East Sea coast.",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
+            "duration": "15분",
+            "name": "서울 출발",
+            "category": "픽업 & 출발",
+            "description": "홍익대학교역 8번 출구 또는 명동역에서 집결. 서울양양고속도로(인제양양터널)로 약 2.5시간 이동.",
             "highlights": [
-              "Central Seoul meeting points",
-              "Coach with rest stop en route"
+              "서울 중심부 집합 장소 (홍대 + 명동)",
+              "인제-양양 터널 (11km, 한국 최장)을 통한 서울-양양 고속도로",
+              "도중 휴게소 있는 코치 이동",
+              "설악산 케이블카 피크 대기를 피하기 위한 출발 시간 조정"
             ],
             "timeUsed": [
-              "Meet driver-guide at Seoul pickup point",
-              "Confirm group, distribute water and snacks",
-              "Begin 2.5-hour drive to Seoraksan via Yangyang Expressway"
+              "서울 픽업 지점에서 가이드 겸 운전기사와 만남",
+              "그룹 확인, 물과 간식 배포",
+              "양양 고속도로를 통해 설악산까지 2.5시간 드라이브 시작"
             ],
-            "whyOnRoute": "Hotel-area pickup keeps the day's logistics simple. Departing by 07:30 ensures you arrive at Seoraksan before the 10:30 cable car peak rush.",
+            "whyOnRoute": "호텔 인근 픽업으로 당일 물류 간소화.",
             "visitBasics": {},
             "convenience": {},
-            "smartNotes": {},
+            "smartNotes": {
+              "tip": "코치 에어컨이 강할 수 있으니 가벼운 겉옷 지참. 중간쯤 서비스 에어리어에서 화장실 휴식."
+            },
             "_poi_meta": {
-              "poi_key": "seoul_pickup_default",
+              "poi_key": "OPS_seoul_pickup_default",
               "verified": false,
               "match": "operational_default",
               "note": "Operational pickup stop — Seoul departure (variable hotel/station pickup); not a sightseeing POI"
@@ -1258,159 +1271,200 @@
           {
             "number": 2,
             "time": "≈ 10:00",
-            "duration": "60-90 min",
-            "name": "Seoraksan National Park",
-            "category": "National Park (Mountain)",
-            "description": "About three hours of free time at Korea's most-loved national park — its 5th national park (designated March 1970) and Korea's first UNESCO Biosphere Reserve (1982). From the Sogongwon main entrance you can walk the paved path past Sinheungsa Temple's Great Bronze Buddha to Biseondae Rock (1.5 km each way along a stream), or take the optional Gwongeumseong cable car (not included, ~₩15,000) for a high-ridge view.",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
+            "duration": "180분",
+            "name": "설악산국립공원",
+            "category": "국립공원 & 유네스코 생물권 보전지역",
+            "description": "설악산국립공원은 1970년 한국 5번째 국립공원으로 지정, 1982년 유네스코 생물권보전지역으로 인정받았습니다. 소공원 입구에서 신흥사(1,300년 역사 사찰)까지 포장 산책로(약 20분)는 평탄합니다. 권금성 케이블카(₩15,000 선택)는 해발 700m에서 설악 전경을 조망합니다. 비선대까지의 트레킹은 소그룹 일정 속도에 따라 선택 가능합니다. 방문 시간: 약 150분.",
             "highlights": [
-              "Sinheungsa Temple & Great Bronze Buddha",
-              "Biseondae Rock & stream trail",
-              "Optional Gwongeumseong cable car",
-              "Park admission included"
+              "한국 5번째 국립공원 (1970년) + 유일한 유네스코 생물권 보전지역 (1982년 8월)",
+              "통일대불: 14.6m/108톤 청동 — 세계 최대 좌불상 (1997년)",
+              "신흥사 (652년 신라 창건) — 조계종 본사; 세계에서 가장 오래된 석조 건물 중 하나",
+              "선택: 설악 케이블카 1,132m 권금성 플랫폼까지 (700m, 계단 1,253개)",
+              "30개 봉우리, 동물 2,000종 이상, 식물 1,400~1,562종; 희귀 야생동물 (사향노루 등)",
+              "공원 입장 무료 (최근 ₩3,500 폐지); 케이블카는 유료",
+              "**IUCN 카테고리 II + IUCN 녹색 목록** (2022년)",
+              "**1982년 8월 한국 유일의 유네스코 생물권 보전지역** + **유네스코 세계 자연유산 후보**",
+              "**산양 보전 핵심**: 안정된 개체수 약 260마리"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "설악동 입구 도착 + 가이드 오리엔테이션 — 약 10분",
+              "통일대불 + 신흥사까지 도보 — 약 15~20분",
+              "선택: 케이블카 권금성까지 (대기 포함 약 30~45분) 또는 비선대 트레일 (약 90분)",
+              "포토 타임 + 차량 집결",
+              "선택: 수령 800년 소나무 포토 (신흥사 근처 약 5분)"
             ],
-            "whyOnRoute": "The 4-hour drive each way is justified only by the centerpiece: Korea's 5th national park (1970) and a UNESCO Biosphere Reserve since 1982. Picked over Naksansa-temple alternatives because Sogongwon entrance puts paved Sinheungsa + cable-car-ridge access + Biseondae stream trail within a single 3-hour window — no other Seoraksan stop combines all three with this short walking budget.",
+            "whyOnRoute": "왕복 2.5시간 드라이브는 중심 자원으로만 정당화: 한국 5번째 국립공원(1970)이자 서울 당일 여행 거리 내 가장 극적인 고산 풍경.",
             "visitBasics": {
-              "hours": "Park always open; cable car typically 08:30–17:00 (weather-dependent)",
-              "closed": "Open year-round; some trails close for restoration",
-              "admission": "Park free; cable car: Adult 13,000 KRW / Child 9,000 KRW (round-trip)",
-              "walking": "Varies — easy walks at base, moderate to challenging hikes (Heundeulbawi/Geumganggul require stairs and steep paths)"
+              "hours": "공원 항상 개방; 케이블카 보통 08:00~17:30 (날씨 의존)",
+              "closed": "연중 무휴; 일부 탐방로 복원 중 임시 폐쇄 가능",
+              "admission": "공원 입장 무료; 케이블카 왕복 성인 ₩16,000",
+              "walking": "기저부 쉬운 포장 길 (신흥사, 케이블카 탑승장); 중간~어려운 하이킹 (비선대 등)"
             },
             "convenience": {
-              "restroom": "At main entrance area, cable car station, and along major trails",
-              "parking": "Available at Sogongwon main entrance (paid)"
+              "restroom": "설악동 입구, 케이블카 탑승장, 신흥사 경내, 주요 탐방로 화장실",
+              "parking": "소공원 주 입구 유료 주차"
             },
             "smartNotes": {
-              "photo": "Bronze Buddha at Sinheungsa; cable car platform with peak views; Heundeulbawi balanced rock",
-              "facilities": "Visitor center, restaurants, gift shops, motels at park entrance",
-              "tip": "October weekends are extremely crowded — book cable car in advance; Heundeulbawi hike is 1.5 hours each way; pair with Sokcho seafood market"
+              "photo": "통일대불 (14.6m 청동 불상)이 대표 단일 샷. 케이블카에서 화강암 봉우리 파노라마.",
+              "facilities": "설악동 입구 방문자 센터, 카페, 식당, 기념품점.",
+              "tip": "케이블카 사전 예약 불가 — 10월에는 대기 1~2시간 이상. 오전 일찍 도착해야 합니다."
             },
             "_poi_meta": {
               "poi_key": "seoraksan_national_park",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "note": "Operational details verified via established knowledge"
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Korea Tourism Organization (VisitKorea — Seoraksan National Park (Outer Seorak) listing + IUCN Green List confirmation)",
+                "IUCN Green List of Protected and Conserved Areas (iucngreenlist.org — Seoraksan official entry + 2014 designation + 398.24 km² area)",
+                "Korea National Park Service (KNPS — Seoraksan National Park Office official site + endangered species management plan)",
+                "UNESCO World Heritage Centre (Mt. Sorak Biosphere Reserve 1982 designation + tentative World Heritage listing)",
+                "Wikipedia (Seoraksan National Park — corpus on 30 peaks, 2,000+ animal species, 1,400+ plant species)"
+              ]
             }
           },
           {
             "number": 3,
             "time": "≈ 13:30",
-            "duration": "60-90 min",
-            "name": "Sokcho Tourist Fishery Market",
-            "category": "Coastal Fishery Market",
-            "description": "A short drive to Sokcho's lively waterfront seafood market. The covered market is famous across Korea for sundae (blood sausage), live East Sea sashimi (hwe), king crab, and abai-style stuffed squid — a recipe brought south by Hamgyeong-province refugees who settled in nearby Abai Village after the Korean War. Free time to graze, sit down for a meal, or pick up market snacks.",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
+            "duration": "75분",
+            "name": "속초관광수산시장",
+            "category": "해안 수산 시장",
+            "description": "설악산에서 15분 이동. 동해 해산물 전문 시장으로, 2022년 '속초관광수산시장'으로 재명명. 동해 회(회, 생선회), 아바이 오징어순대, 닭강정(속초 명물 간식)을 둘러볼 수 있습니다. 시장은 실내 구조로 우천 시에도 쾌적합니다. 방문 시간: 약 60분.",
             "highlights": [
-              "Sashimi & live seafood",
-              "Sokcho-style sundae and dakgangjeong",
-              "Abai-village stuffed squid",
-              "Korean War refugee food culture"
+              "한국 대표 동해 수산 시장 — 구 속초 중앙 시장",
+              "닭강정 (달콤 매콤 바삭 치킨) — 강원도 지역 특산물, ₩15,000 정도",
+              "오징어 순대 (속초 오징어 순대) — 오징어에 면·쌀을 채운 향토 명물",
+              "아바이 순대 — 함경도 출신 피순대, 피난민 유산",
+              "회 센터 활어 수조, 오징어 순대 지지는 풍경",
+              "인접한 갯배로 아바이 마을 이동 (200원, '가을동화' 촬영지)",
+              "**2층 + 지하 활어 센터 500개 이상 상점** (트립어드바이저 속초 #1)",
+              "**닭강정이 여기서 처음 발명됨** — 강원도 가금류 농장 지구 인접이 유래",
+              "**술빵**: 속초만의 특산품 (54번 상점, ₩5,000) — 천연 발효 쌀빵"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "가이드의 산책 오리엔테이션 — 약 5분",
+              "추천 매대 또는 식당에서 점심 — 약 30~45분",
+              "길거리 음식 + 기념품 쇼핑 자유 시간 — 약 25분",
+              "집결 — 약 5분",
+              "선택: 현태내 12호 오징어순대와 감자전 시식 (~15분)"
             ],
-            "whyOnRoute": "Anchors the day's food story: covered seafood market with East Sea sashimi, abai-style stuffed squid (a Korean War refugee dish from Hamgyeong-province settlers), and Sokcho dakgangjeong. Chosen over a generic restaurant lunch because it doubles as cultural context for Sokcho's port history and lets travelers graze rather than commit to one menu.",
+            "whyOnRoute": "속초 시장은 카탈로그의 가장 강력한 산악-해양 음식 피봇 — 설악산 출발 10분 이내.",
             "visitBasics": {
-              "hours": "08:00–22:00 (varies by stall)",
-              "closed": "Some stalls close 1st & 3rd Tuesdays",
-              "admission": "Free entry",
-              "walking": "Easy — covered market with concrete floor"
+              "hours": "대부분 매대 09:00~21:00",
+              "closed": "연중 무휴 (개인 매대 순환 휴무 가능)",
+              "admission": "무료 입장; 현금 권장",
+              "walking": "쉬움 — 평탄한 시내 시장"
             },
             "convenience": {
-              "restroom": "Public restrooms within market",
-              "parking": "Public parking lots nearby (paid)"
+              "restroom": "메인 건물 내; 골목 화장실",
+              "parking": "지하 주차 600원 (첫 30분), 이후 10분당 400원"
             },
             "smartNotes": {
-              "photo": "Manseok Dakgangjeong queue (often the longest line); colorful seafood displays",
-              "facilities": "ATMs, multiple food stalls, sit-down restaurants on upper floors",
-              "tip": "Manseok Dakgangjeong queue is famously long — go early or late; squid sundae is the local specialty"
+              "photo": "회 센터 활어 수조; 오징어 순대 지지는 풍경; 다채로운 시장 건물.",
+              "facilities": "많은 매대 뒤 좌석 식당. 한라로 마트 테이크아웃 식품.",
+              "tip": "현금 1인당 ₩10,000~20,000 지참 권장 — 외국 카드 불가 매대 많음."
             },
             "_poi_meta": {
-              "poi_key": "sokcho_fishery_market",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "note": "Operational details based on aggregated visitor info"
+              "poi_key": "sokcho_tourist_fishery_market",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Korea Tourism Organization (VisitKorea — Sokcho Tourist & Fishery Market listing + Top 3 Eateries Dakgangjeong/Raw Fish/Abai Village)",
+                "Sokcho City Tourism Office (sokcho.go.kr — official market re-naming history Jungang → Tourist Fishery)",
+                "AJU Press / Korea Times (January 22, 2026 — Abai Village displaced-people heritage feature article)",
+                "Visit Gangwon (gangwon.to — official provincial tourism portal on Sokcho market specialties)",
+                "Wikipedia (Sokcho — corpus on Korean War Hamgyeong-province refugee settlement history + Abai Village formation)"
+              ]
             }
           },
           {
             "number": 4,
-            "time": "≈ 14:30",
-            "duration": "60-90 min",
-            "name": "Sokcho Beach",
-            "category": "Coastal Beach",
-            "description": "A walk along Sokcho's main beach — a long stretch of golden sand looking out at the East Sea, with Seoraksan's silhouette visible behind the coastline. The Sokcho Eye ferris wheel sits at the south end. Optional time for the lighthouse observatory or Yeongnang Coastal Road if the group is moving fast.",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
+            "time": "≈ 14:45",
+            "duration": "75분",
+            "name": "속초해변",
+            "category": "해안 해변",
+            "description": "시장에서 5분 거리. 속초해변은 1976년 개장 이후 동해안 대표 해수욕장 중 하나입니다. 백사장 약 1km, 영랑호 방면 전망이 아름답습니다. 수영 시즌은 7~8월. 그 외 시기에는 산책과 포토 명소. 방문 시간: 약 60분.",
             "highlights": [
-              "East Sea shoreline",
-              "Seoraksan visible from the beach",
-              "Sokcho Eye ferris wheel",
-              "Lighthouse observatory option"
+              "**1976년 개장** — 한국 대표 동해 해변 (총 2km / 450m × 75m)",
+              "**속초 아이 대관람차** — 한국 유일 해변 대관람차, 22층 높이, 216명 수용",
+              "해오름 도로를 따라 한국 소나무 숲 배경 (그늘진 산책로)",
+              "공공 미술: SOKCHO 계단, ㅅㅊ 글자, 돌고래 조각, 트리 오브 하트(테디 베어 인형),",
+              "속초 아이 대관람차 — 해변과 함께 대표 포토 명소",
+              "최고의 새해 일출 명소 — 매년 1월 1일 인파 집결",
+              "**속초아이 대관람차**는 2022년 3월 25일 개장했습니다. 높이 65m(약 22층), 36개 캐빈에 최대 216명 동시 탑승이 가능하며, 투명 아크릴 벽을 통해 360도 전망을 둘러볼 수 있습니다. 탑승 시간은 약 16분이며, 국내 해변에 자리한 대표 대관람차입니다.",
+              "**속초아이 운영시간**: 평일 10:00~20:00 / 주말 10:00~21:00(마감 1시간 전 입장 마감). 요금은 성인 ₩12,000 / 어린이 ₩6,000 / 경로 또는 20인 이상 단체 ₩9,000이며, 속초시민은 50% 할인이 적용됩니다.",
+              "**속초해수욕장 주소**: 강원특별자치도 속초시 해오름로 186(조양동). 속초고속버스터미널에서 도보 약 4분 거리라, 서울에서 한 번에 이동하기 좋은 동해안 해변입니다."
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "도착 + 중앙 입구 이동 — 약 5분",
+              "해변 산책 + 미술 설치 + 소나무 숲 사진 — 약 30분",
+              "선택: 속초 아이 대관람차 탑승 또는 해변 카페 — 약 15분",
+              "집결 — 약 5분",
+              "선택: 속초아이 관람차 탑승 (~16분 탑승; 성인 ₩12,000 / 아동 ₩6,000)"
             ],
-            "whyOnRoute": "Caps the day with horizontal scale after Seoraksan's vertical: long flat sand, East Sea horizon, and Seoraksan's silhouette visible inland — the same coastline mountaineers see when descending. Kept short (60-90 min) because the 2.5-hour return drive sets a hard ceiling. Sokcho Eye ferris wheel and the lighthouse observatory are walkable optionals if the group moves fast.",
+            "whyOnRoute": "속초 해변은 하루 세 번째 기둥 — 설악산 → 속초 수산 → 동해안 시퀀스 완성.",
             "visitBasics": {
-              "hours": "Open 24 hours; managed swim season July–August",
-              "closed": "Open year-round",
-              "admission": "Free",
-              "walking": "Easy — flat sand beach"
+              "hours": "해변 24시간; 수영 공식 시즌 (7월 초~8월 말) 한정",
+              "closed": "연중 무휴 (수영 9월~6월 금지)",
+              "admission": "무료 (수영 시즌 파라솔·라운저 ₩20,000~30,000)",
+              "walking": "쉬움 — 평탄한 해변; 뒤편 소나무 숲 산책로"
             },
             "convenience": {
-              "restroom": "Public restrooms and shower facilities",
-              "parking": "Public parking lot (paid in summer)"
+              "restroom": "해변 따라 공중화장실 (청결 양호)",
+              "parking": "해변 주변 주차장"
             },
             "smartNotes": {
-              "photo": "Sunrise over the East Sea; pine forest with beach in foreground",
-              "facilities": "Café strip along the beach; convenience stores; adjacent fish market",
-              "tip": "Combine with Sokcho Tourist Fishery Market for fresh seafood; Pokemon GO trainers historically congregated here"
+              "photo": "해변에서 속초 아이 대관람차 배경 포토 — 대표 샷.",
+              "facilities": "해오름 도로 따라 식당·편의점.",
+              "tip": "수영 최적 시기: 7월 4일~8월 초 (야간 수영 19:00~21:00 가능). 가을에는 한산하고 경치 좋음."
             },
             "_poi_meta": {
               "poi_key": "sokcho_beach",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "note": "Operational details based on aggregated visitor info"
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Korea Tourism Organization (VisitKorea — Sokcho Beach official listing + Sokcho Eye dedicated listing with 65 m specs)",
+                "Sokcho City Tourism Office (sokcho.go.kr — official beach + Sokcho Eye operating-hours page)",
+                "Visit Gangwon (gangwon.to — provincial tourism portal on Sokcho coastal attractions)",
+                "Sokcho Eye Operator Site (Angelus Wish Theme Park — combo-ticket package + reservation system)",
+                "Korea Times / Yonhap News (March 2022 Sokcho Eye opening coverage + 'Korea's first beach Ferris wheel' designation)"
+              ]
             }
           },
           {
             "number": 5,
-            "time": "≈ 15:30",
-            "duration": "30 min",
-            "name": "Return to Seoul",
-            "category": "Return",
-            "description": "Coach back to Seoul, arriving in the early evening at the original meeting points. Drop-off at Hongik University Station and Myeongdong Station.",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
+            "time": "≈ 16:00",
+            "duration": "150분",
+            "name": "서울 귀환",
+            "category": "귀환",
+            "description": "서울양양고속도로로 서울 귀환(약 2.5시간, 중간 휴게소 1회). 저녁 이른 시간 도착.",
             "highlights": [
-              "Drop-off in central Seoul",
-              "Approx. arrival 19:00–19:30"
+              "**4개 하차 지점** — 동문, 시청, 공항, 하귀 (픽업 역순)",
+              "동문 먼저 (약 17:50) — 저녁 길거리 음식 연장 방문자용",
+              "**공항 하차** 당일 출발자 권장 — 국제선 기준 2.5시간 여유 권장"
             ],
             "timeUsed": [
-              "Operational logistics (pickup/meal/transfer/return)",
-              "Brief orientation or break"
+              "후리에 → 제주시 서쪽으로 이동 — 약 50분",
+              "동문 하차 약 17:50 — 5분",
+              "시청 하차 약 18:05 — 5분"
             ],
-            "whyOnRoute": "Return logistics — drop-off chosen for guest convenience and timing certainty.",
+            "whyOnRoute": "귀환 물류 — 게스트 편의와 시간 확실성 위한 하차.",
             "visitBasics": {},
             "convenience": {},
-            "smartNotes": {},
+            "smartNotes": {
+              "tip": "가을 단풍 일요일 귀환은 30~60분 지연될 수 있어요 — 저녁 식사 계획에 완충 시간을 두세요."
+            },
             "_poi_meta": {
               "poi_key": "OPS_return",
               "verified": false,
               "sources": [],
-              "verified_date": "2026-04-27",
               "match": "operational_implicit",
-              "note": "Operational stop (return); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+              "note": "Operational stop (return); identified by name pattern. visitBasics/convenience were not factsheet-derived."
             }
           }
         ]
@@ -1423,56 +1477,56 @@
       "props": {
         "routeFlowStops": [
           {
-            "name": "Seoul",
+            "name": "서울",
             "type": "origin",
-            "theme": "Departure"
+            "theme": "출발"
           },
           {
-            "name": "Seoraksan National Park",
+            "name": "설악산 국립공원",
             "type": "primary",
-            "theme": "Mountain"
+            "theme": "산"
           },
           {
-            "name": "Sokcho Tourist Fishery Market",
+            "name": "속초 관광 수산 시장",
             "type": "primary",
-            "theme": "Market"
+            "theme": "시장"
           },
           {
-            "name": "Sokcho Beach",
+            "name": "속초 해수욕장",
             "type": "secondary",
-            "theme": "Beach"
+            "theme": "해변"
           },
           {
-            "name": "Seoul",
+            "name": "서울",
             "type": "return",
-            "theme": "Return"
+            "theme": "귀환"
           }
         ],
         "routePhases": [
           {
-            "phase": "Outbound",
-            "duration": "≈ 2.5 hours",
-            "description": "Seoul → Sokcho via Yeongdong Expressway and Misiryeong Tunnel through the Taebaek mountains."
+            "phase": "출발",
+            "duration": "약 2시간 30분",
+            "description": "서울 → 서울양양고속도로 → 설악산(약 2.5시간)."
           },
           {
-            "phase": "Mountain stop",
-            "duration": "≈ 3 hours",
-            "description": "Free time inside Seoraksan National Park (Sogongwon entrance)."
+            "phase": "산악 구간",
+            "duration": "약 3시간",
+            "description": "설악산국립공원 탐방(신흥사·케이블카 선택)."
           },
           {
-            "phase": "Coast stop",
-            "duration": "≈ 2 hours",
-            "description": "Sokcho Fishery Market and Sokcho Beach, ≈15 minutes apart by road."
+            "phase": "해안 구간",
+            "duration": "약 2시간",
+            "description": "속초관광수산시장 점심 → 속초해변."
           },
           {
-            "phase": "Return",
-            "duration": "≈ 3.5 hours",
-            "description": "Coastal road then expressway back into Seoul."
+            "phase": "귀환",
+            "duration": "약 3시간 30분",
+            "description": "서울로 귀환(약 2.5시간)."
           }
         ],
         "routeShapeIntro": {
-          "title": "How this day flows",
-          "subtitle": "A mountain-then-sea linear loop east of Seoul. Three hours among Seoraksan's granite peaks in the morning, then a 30-minute drop down to the coast for a market lunch and a walk on Sokcho Beach. Two of Korea's most distinctive landscapes — the country's iconic national park and its friendliest east-coast port — without overnight planning."
+          "title": "하루 일정",
+          "subtitle": "서울 동쪽의 산-해 선형 루프. 오전 3시간 설악산 화강암 봉우리 탐방 후, 30분 이동해 해안으로 내려와 시장 점심과 속초 해변 산책. 한국에서 가장 아름다운 산악 경관 두 곳을 하루에 담아냅니다."
         }
       }
     },
@@ -1483,38 +1537,81 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "First-time visitors to the area",
-            "Couples",
-            "Adult families",
-            "Active travelers comfortable with full days"
+            "서울에서 하루에 설악산+동해안을 원하는 첫 방문자",
+            "가을 단풍을 쫓는 사진 작가 (10월 중순~11월 초가 절정).",
+            "포장 점심 대신 속초 수산 시장을 원하는 음식 중심 여행자",
+            "12시간 하루 + 편도 4시간 이동이 괜찮은 커플 및 성인 가족",
+            "케이블카 대신 평탄한 비선대 계류 트레일을 선택할 활동적 여행자"
           ],
           "lessIdealFor": [
-            "Travelers with limited mobility",
-            "Stroller-heavy groups",
-            "Travelers needing a tight same-day flight buffer"
+            "당일 항공편 완충이 필요한 여행자.",
+            "5시간 코스를 위한 편도 4시간 코치 이동이 불편한 여행자 주의",
+            "7~8월 외 해수욕 위주 방문자.",
+            "긴 설악산 하이킹을 기대하는 방문자.",
+            "거동이 불편한 여행자."
           ],
           "routeLogicSections": [
             {
-              "title": "Why this route is built this way",
+              "title": "이 코스의 추천 포인트",
               "icon": "route",
               "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "More mountain time than the standard tour",
-                  "detail": "Three hours at Seoraksan is enough to walk to Biseondae and ride the cable car, not just glance at the entrance. Many east-coast tours pair Seoraksan with three other stops and leave only 90 minutes for the park itself."
+                  "label": "표준 투어보다 더 많은 산 시간",
+                  "detail": "설악산 3시간은 비선대까지 걷고 케이블카도 탈 수 있는 시간입니다. 단순히 입구만 훑어보는 것이 아닙니다."
                 },
                 {
-                  "label": "Real Sokcho food, not a tourist meal",
-                  "detail": "The Tourist Fishery Market is where Sokcho actually eats — Hamgyeong-style refugee dishes, East Sea sashimi, dakgangjeong. Free time means you choose your own bowl rather than getting a fixed bus-tour lunch."
+                  "label": "관광지 식사가 아닌 진짜 속초 음식",
+                  "detail": "관광 수산 시장은 속초 사람들이 실제로 먹는 곳입니다 — 함경도 스타일 피난민 음식, 동해 회, 닭강정."
                 },
                 {
-                  "label": "Cleaner pairing than mountain-plus-Nami-Island",
-                  "detail": "Other east-bound day tours combine Seoraksan with Nami Island or the Garden of Morning Calm for a 13–14 hour day. This itinerary stays on the Sokcho axis — mountain, market, beach — for a tighter, less-rushed mood."
+                  "label": "산+나미섬 조합보다 깔끔한 페어링",
+                  "detail": "다른 동쪽 행 당일 투어들은 설악산과 남이섬 또는 아침고요수목원을 합쳐 13~14시간짜리로 만듭니다. 이 루트는 12시간으로 더 깔끔합니다."
                 },
                 {
-                  "label": "Year-round value",
-                  "detail": "Autumn foliage is the headline season, but the same route works for summer beach days, winter snow ridges, and spring greens. The market is busy in any weather, and the coach drive cuts out the train-and-bus transfer that DIY visitors spend half their day on."
+                  "label": "연중 가치",
+                  "detail": "단풍이 대표적이지만 같은 루트가 여름 해변, 겨울 설경, 봄 해동 계류에도 유효합니다."
+                }
+              ]
+            },
+            {
+              "title": "실제 도보 강도는 어느 정도일까",
+              "icon": "footprints",
+              "iconBg": "bg-emerald-50/80",
+              "iconColor": "text-emerald-600",
+              "items": [
+                {
+                  "label": "설악산 포장 핵심 구역",
+                  "detail": "소공원 입구에서 신흥사와 케이블카 탑승장까지 포장 길로 유모차 가능합니다. 편도 약 600m."
+                },
+                {
+                  "label": "비선대 선택 평지 트레일",
+                  "detail": "계류를 따라 편도 1.5km — 평탄하고 표시가 잘 되어 있으며 실질적인 고도 변화 없음. 설악산 코스에 약 45분 추가."
+                },
+                {
+                  "label": "속초 해변 모래",
+                  "detail": "1km 메인 구간은 평탄하지만 느슨한 모래가 거동 불편자에게 피로감을 줄 수 있습니다."
+                }
+              ]
+            },
+            {
+              "title": "날씨와 계절이 바뀔 때",
+              "icon": "cloud-sun",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "단풍 절정",
+                  "detail": "10월 중순~11월 초가 설악산의 대표 시즌입니다. 케이블카는 만원 운행 가능 — 시장 참고 자료 등을 통해 미리 예약하세요."
+                },
+                {
+                  "label": "겨울 눈 날",
+                  "detail": "12~2월: 신흥사와 하단 길은 대체로 걸을 수 있음; 강풍 시 케이블카 운행 중단 가능."
+                },
+                {
+                  "label": "수영 시즌 7월 초~8월 말",
+                  "detail": "속초 해변에 인명구조원이 배치되는 유일한 기간입니다."
                 }
               ]
             }
@@ -1529,79 +1626,118 @@
       "props": {
         "practicalAccordionItems": [
           {
-            "title": "What's included",
-            "content": "Round-trip coach transport from Seoul, English-speaking tour guide, Seoraksan National Park admission. Not included: meals, drinks, optional Seoraksan cable car (~₩15,000), market food, tips."
+            "id": "inclusions",
+            "title": "포함 사항",
+            "preview": "서울 왕복 코치, 영어 가이드, 설악산 국립공원",
+            "content": [
+              "서울 왕복 코치 교통, 영어 투어 가이드, 설악산 국립공원 입장권 포함.",
+              "미포함: 식사, 음료, 선택 설악산 케이블카(약 ₩15,000), 시장 음식, 팁."
+            ]
           },
           {
-            "title": "Pickup & drop-off",
-            "content": "Hongik University Station (Exit 8) at ≈07:00 or Myeongdong Station (Exit 4) at ≈07:30. Arrive 10 minutes early. There is no hotel pickup; meeting points only. Latecomers cannot be accommodated."
+            "id": "pickup",
+            "title": "픽업 & 하차",
+            "preview": "홍익대 입구역 (8번 출구) 약 07:00 또는 명동역 (4번 출구) 약 07:30.",
+            "content": [
+              "홍익대 입구역(8번 출구) 약 07:00 또는 명동역(4번 출구) 약 07:30.",
+              "10분 전까지 도착.",
+              "호텔 픽업 없음; 집합 장소만.",
+              "지각자 탑승 불가."
+            ]
           },
           {
-            "title": "Walking & terrain",
-            "content": "Moderate. Seoraksan's main path is paved and flat to the cable-car base; the Biseondae trail is a gentle 1.5 km each way. The market is flat indoor walking. Sokcho Beach is soft sand. No serious hiking; bring comfortable closed-toe shoes."
+            "id": "walking",
+            "title": "도보 & 지형",
+            "preview": "중간 강도.",
+            "content": [
+              "중간 강도.",
+              "설악산 메인 길은 케이블카 탑승장까지 포장 평지; 비선대 트레일은 약 1km 왕복 바위길.",
+              "시장은 평탄한 실내 도보.",
+              "속초 해변은 부드러운 모래.",
+              "본격 등산 없음; 편안한 발가락 보호형 신발 지참."
+            ]
           },
           {
-            "title": "What to wear & bring",
-            "content": "Comfortable walking shoes, layered clothing — Seoraksan is 5–10°C cooler than Seoul, especially in autumn and winter. Light jacket in autumn, warm coat in winter. Camera, water, cash for cable car and market food (₩20,000–₩40,000 typical). Card payment is widely accepted at the market."
+            "id": "what",
+            "title": "복장 & 준비물",
+            "preview": "편한 운동화, 레이어링 — 설악산은 서울보다 5~10°C 낮음",
+            "content": [
+              "편안한 워킹화, 겹쳐 입기 — 설악산은 서울보다 5~10°C 낮음, 특히 아침.",
+              "가을 가벼운 재킷, 겨울 따뜻한 코트.",
+              "카메라, 물, 케이블카 및 시장 음식 현금(예상 ₩20,000~₩40,000).",
+              "시장에서 카드 결제 폭넓게 가능."
+            ]
           },
           {
-            "title": "Cancellation",
-            "content": "Free cancellation up to 24 hours before the tour starts. Same-day cancellations and no-shows are non-refundable. If the operator cancels for weather (typhoon, heavy snow), you'll be offered a reschedule or refund."
+            "id": "cancellation",
+            "title": "취소 정책",
+            "preview": "투어 시작 24시간 전까지 무료 취소.",
+            "content": [
+              "투어 시작 24시간 전까지 무료 취소 가능.",
+              "당일 취소 및 노쇼는 환불 불가.",
+              "태풍·폭설 등 현장 사정으로 취소 시 재예약 또는 환불 처리."
+            ]
           },
           {
-            "title": "Children & accessibility",
-            "content": "Children are welcome but the day is long (12 hours). The market and beach are stroller-friendly; the Seoraksan paved entrance is too, but Biseondae trail is not. Limited accessibility for wheelchair users on Seoraksan beyond the cable-car base."
+            "id": "children",
+            "title": "어린이 & 접근성",
+            "preview": "어린이 환영, 단 하루 일정이 깁니다 (12시간).",
+            "content": [
+              "어린이 환영; 단 하루 12시간으로 긴 일정.",
+              "시장과 해변은 유모차 친화적; 설악산 포장 입구도 가능하나 비선대 트레일은 불가.",
+              "설악산 케이블카 승강장 이후 구간은 휠체어 접근 제한."
+            ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "계절별 안내 확인"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "계절별 안내 확인"
           },
-          "_seasonalSummary": "Sokcho and Seoraksan are noticeably cooler than Seoul, especially in autumn and winter. Coastal wind can make the beach feel colder than the temperature suggests.",
+          "_seasonalSummary": "속초와 설악산은 특히 가을·겨울에 서울보다 체감기온이 낮은 편입니다. 해안 바람 때문에 해변에서는 실제 기온보다 더 춥게 느껴질 수 있습니다.",
           "_seasonalTemperatures": [
             {
-              "season": "Spring (Mar–May)",
+              "season": "봄 (3~5월)",
               "range": "5–18°C",
-              "notes": "Cherry blossoms around Yeongnang Lake in late April."
+              "notes": "4월 말 영랑호 주변 벚꽃 시즌입니다."
             },
             {
-              "season": "Summer (Jun–Aug)",
+              "season": "여름 (6~8월)",
               "range": "20–28°C",
-              "notes": "Stable hiking weather; beach is busy in July–August."
+              "notes": "등산하기 안정적인 날씨이며, 7~8월에는 해변이 붐빕니다."
             },
             {
-              "season": "Autumn (Sep–Nov)",
+              "season": "가을 (9~11월)",
               "range": "5–20°C",
-              "notes": "Peak foliage on Seoraksan ridges mid-Oct to early Nov."
+              "notes": "10월 중순~11월 초 설악산 능선 단풍이 절정입니다."
             },
             {
-              "season": "Winter (Dec–Feb)",
+              "season": "겨울 (12~2월)",
               "range": "-8 to 5°C",
-              "notes": "Possible snow on the trails; cable car may close in high winds."
+              "notes": "산책로에 눈이 있을 수 있으며, 강풍 시 케이블카 운행이 중단될 수 있습니다."
             }
           ]
         },
         "seasonalVariations": [
           {
-            "season": "Spring",
-            "highlight": "Fresh greens on Seoraksan, cherry blossoms around Yeongnang Lake in Sokcho. Quietest of the four seasons."
+            "season": "봄",
+            "description": "설악산 신록, 속초 영랑호 주변 벚꽃. 비교적 한산한 시즌."
           },
           {
-            "season": "Summer",
-            "highlight": "Sokcho Beach is open for swimming (typically July–August); Seoraksan trails are forested and shaded."
+            "season": "여름",
+            "description": "속초 해수욕장 수영 가능 (보통 7~8월); 설악산 탐방로는 울창한 숲. 가장 혼잡한 시즌."
           },
           {
-            "season": "Autumn",
-            "highlight": "Korea's most photographed foliage on the Seoraksan ridges, mid-Oct to early Nov. Tour books out fast in this window."
+            "season": "가을",
+            "description": "설악산 능선 한국에서 가장 많이 촬영되는 단풍 명소, 10월 중순~11월 초. 투어 예약 가장 빠름."
           },
           {
-            "season": "Winter",
-            "highlight": "Snow-dusted granite peaks, fewer crowds, hot abai-soondae at the market. Cable car may close on high-wind days."
+            "season": "겨울",
+            "description": "눈 덮인 화강암 봉우리, 관광객 적음, 시장에서 뜨거운 아바이 순대. 케이블카는 운영 중단 가능."
           }
         ]
       }
@@ -1614,56 +1750,65 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local operator",
-            "description": "Authorized Korean tour operator with full insurance",
+            "title": "공인 현지 여행사",
+            "description": "정식 등록 및 보험 가입 현지 여행사",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "iconColor": "text-emerald-600",
+            "body": "설악산·속초 코스 전문 공인 현지 여행사."
           },
           {
             "icon": "route",
-            "title": "Route specialists",
-            "description": "Hand-tuned itinerary, not a generic loop",
+            "title": "코스 전문",
+            "description": "이동 부담을 줄인 효율적인 코스",
             "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "iconColor": "text-sky-600",
+            "body": "서울-속초 고속도로로 이동 시간 최소화. 속초시장에서 현지 해산물 직접 구매 안내."
           },
           {
             "icon": "users",
-            "title": "Curated group size",
-            "description": "Right-sized for the route",
+            "title": "그룹 규모 관리",
+            "description": "코스에 상황에 맞춘 인원 규모",
             "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600"
+            "iconColor": "text-amber-600",
+            "body": "소그룹 버스로 설악산 공원 입구에서 여유 있게 이동합니다."
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "timing": "즉시",
+            "title": "즉시 확인",
+            "detail": "행정 요약 포함 예약 확인서 발송",
+            "description": "집결 장소·시각 포함 즉시 예약 확인서 발송."
           },
           {
-            "timing": "12 hours before",
-            "title": "12-Hour Reminder",
-            "detail": "Weather update and any route adjustments"
+            "timing": "출발 12시간 전",
+            "title": "12시간 전 알림",
+            "detail": "날씨 업데이트 및 경로 변경 안내",
+            "description": "설악산 날씨 및 케이블카 운행 상태 사전 안내."
           },
           {
-            "timing": "Evening before",
-            "title": "Final Pickup Info",
-            "detail": "Exact pickup time and driver contact"
+            "timing": "전날 저녁",
+            "title": "최종 픽업 안내",
+            "detail": "정확한 픽업 시간 및 가이드 연락처",
+            "description": "출발 전날 저녁 최종 집결 시각 확인."
           },
           {
-            "timing": "Morning of tour",
-            "title": "Day-of Route Notes",
-            "detail": "Morning briefing based on live conditions"
+            "timing": "투어 당일 아침",
+            "title": "당일 코스 안내",
+            "detail": "실시간 상황 기반 당일 브리핑",
+            "description": "날씨 및 코스 안내 아침 메시지 전달."
           },
           {
-            "timing": "During tour",
-            "title": "Stop-by-Stop Tips",
-            "detail": "Real-time guidance at each location"
+            "timing": "투어 중",
+            "title": "경유지별 심층 안내",
+            "detail": "각 코스 실시간 현장 안내",
+            "description": "설악산 국립공원 지정 역사, 동해 해산물 시장 문화 등 가이드 설명."
           },
           {
-            "timing": "After tour",
-            "title": "Post-tour Support",
-            "detail": "Follow-up and recommendations"
+            "timing": "투어 종료 후",
+            "title": "투어 후 지원",
+            "detail": "피드백 및 추가 여행 추천",
+            "description": "투어 후 피드백 요청 전송."
           }
         ]
       }
@@ -1676,58 +1821,58 @@
         "staticQuestions": [
           {
             "id": "q1",
-            "question": "Is the Seoraksan cable car included?",
-            "answer": "No. The cable car to Gwongeumseong Fortress is optional and costs around ₩15,000 round-trip on the day. You can buy tickets at the base station during free time. The cable car may close in high winds or maintenance days."
+            "question": "설악산 케이블카가 포함되어 있나요?",
+            "answer": "포함되지 않습니다. 권금성 케이블카(₩15,000 왕복)는 선택 사항으로 현장 구매합니다."
           },
           {
             "id": "q2",
-            "question": "How much hiking is involved?",
-            "answer": "None is required. The standard route is paved walking from the park entrance to Sinheungsa Temple and the cable-car base (≈15 minutes). The optional Biseondae trail is a flat 1.5 km each way. Heavy hiking (Ulsanbawi, Daecheongbong) needs an overnight in Sokcho, not a day tour."
+            "question": "하이킹이 필수인가요?",
+            "answer": "아닙니다. 기본 코스는 소공원 입구에서 신흥사까지 포장 산책로(약 20분 왕복)로, 대부분 평탄합니다."
           },
           {
             "id": "q3",
-            "question": "What's good to eat at the market?",
-            "answer": "East Sea sashimi (hwe) at the market's seafood floors; abai-style stuffed squid (ojingeo-sundae); Sokcho dakgangjeong (sweet-spicy fried chicken); fresh king crab in season. Budget ₩20,000–₩40,000 per person."
+            "question": "시장에서 뭘 먹으면 좋을까요?",
+            "answer": "동해 회(생선회), 아바이 오징어순대, 속초 닭강정(SNS 명물)을 추천합니다."
           },
           {
             "id": "q4",
-            "question": "Can I swim at Sokcho Beach?",
-            "answer": "The beach swimming season is typically July to August. Outside this window, the beach is for walking and photos only. The water is cold even in early summer."
+            "question": "속초해변에서 수영할 수 있나요?",
+            "answer": "공식 수영 시즌은 7~8월입니다. 그 외 시기에는 산책과 사진 촬영에 적합합니다."
           },
           {
             "id": "q5",
-            "question": "How is this different from the Mt Seorak + Naksan Temple tour?",
-            "answer": "This tour stays in Sokcho city — mountain + market + beach. The Naksan Temple version drops the market and trades the beach for Naksansa, a 1,300-year-old clifftop Buddhist temple 25 minutes south in Yangyang. Choose this one for the Sokcho food/coast experience; the Naksansa version for Buddhist heritage."
+            "question": "설악산+낙산사 투어와 어떻게 다른가요?",
+            "answer": "이 투어는 속초 시내 — 산+시장+해변에 집중합니다. 낙산사 버전은 시장을 빼고 낙산사 사찰과 해돋이 명소를 추가합니다."
           },
           {
             "id": "q6",
-            "question": "What if it rains?",
-            "answer": "The tour runs in light rain. The market is fully covered and the Seoraksan path is mostly tree-shaded. In a typhoon or heavy snow, the operator may cancel and offer a reschedule or refund."
+            "question": "비가 오면 어떻게 되나요?",
+            "answer": "가벼운 비: 진행합니다. 설악산 산책로는 나무 그늘이 많고 시장은 실내. 강풍 시 케이블카가 운휴할 수 있습니다."
           },
           {
             "id": "first-time",
-            "question": "Is this a good choice for first-time visitors to Seoraksan & Sokcho?",
-            "answer": "Yes — this is the most efficient way to combine Seoraksan and the East Sea coast in a single guided day. The 12-hour day with 2.5 hours each way means a long drive, but the trade-off is hitting Korea's most-loved national park, Sokcho's seafood market, and the Sokcho beach in one trip — visits that otherwise take 2-3 days from Seoul."
+            "question": "설악산·속초를 처음 방문하는 분에게 좋은가요?",
+            "answer": "네, 하루에 설악산과 동해를 함께 볼 수 있는 가장 효율적인 코스입니다."
           },
           {
             "id": "walking",
-            "question": "Is the walking difficult?",
-            "answer": "Moderate. Seoraksan's paved core (Sogongwon entrance to Sinheungsa Temple and the cable-car base) is flat for ≈600 m round trip. Optional Biseondae trail adds 1.5 km each way along a stream (flat, well-marked). The market is covered with concrete floors. Sokcho Beach is loose sand for ≈1 km. The cable car deck has stairs but is short. Total walking ≈4-5 km if you do everything; ≈2 km if you skip Biseondae."
+            "question": "도보 이동이 힘들지 않나요?",
+            "answer": "보통 수준. 설악산 기본 코스는 포장 평지. 비선대 트레킹(약 3.6km, 왕복 90분)은 선택."
           },
           {
             "id": "family",
-            "question": "Is this tour suitable for families?",
-            "answer": "Yes for families whose kids can handle a 12-hour day with 5 hours of driving. The Seoraksan paved path is stroller-tolerant and the market is fully covered (good wet-weather backup). The seafood is an experience for older kids and teens; younger kids may prefer the dakgangjeong (sweet-spicy fried chicken). The beach is flat sand for play. Bring snacks for the long drive each way."
+            "question": "가족 여행에 적합한가요?",
+            "answer": "12시간+이동 5시간을 소화할 수 있는 어린이가 동반하는 가족에게 적합합니다. 설악산 포장 산책로는 어린이 친화적."
           },
           {
             "id": "seniors",
-            "question": "Can older adults join comfortably?",
-            "answer": "Yes for active seniors comfortable with the long drive. The Seoraksan paved core is flat and stroller-tolerant; the cable car (optional, ₩15,000) skips the climb to the ridge. The covered market has chairs at the seafood floors. Beach walking is flat but loose sand can tire mobility-limited visitors — the Yeongnang Coastal Road is a paved alternative. Less ideal if a 5-hour total drive is uncomfortable."
+            "question": "어르신도 참여할 수 있나요?",
+            "answer": "긴 이동을 소화할 수 있는 활동적인 어르신께 적합합니다. 설악산 기본 포장 코스는 평탄합니다."
           },
           {
             "id": "children",
-            "question": "What's the recommended minimum age?",
-            "answer": "Best fit is around age 6 and up — the day involves a 2.5-hour coach drive each way, ≈3 hours of free time at Seoraksan, and managing food choices at a busy seafood market. Younger kids manage with snacks and rest breaks. The cable car can be tense for kids with motion sensitivity. The beach is the easy win — bring sand toys in summer."
+            "question": "권장 최소 연령은 몇 세인가요?",
+            "answer": "만 6세 이상 추천. 왕복 약 5시간 버스 이동, 설악산 약 3시간 자유 시간."
           }
         ]
       }
@@ -1777,13 +1922,13 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
         "price": {
           "amountLabel": "",
           "currency": "USD",
-          "per": "person",
-          "priceSource": "getyourguide_t1230340",
-          "priceNote": "Price not yet confirmed from GetYourGuide listing snippet. Once original price is set, AtoC Korea sale price applies a flat 10% discount.",
+          "per": "인",
+          "priceSource": "direct_rate",
+          "priceNote": "AtoC Korea 공식 판매가 기준입니다.",
           "discountPercent": 10
         }
       }
@@ -1808,14 +1953,14 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
       },
       "v17_batch9_enhancement": {
         "date": "2026-04-29",
-        "description": "Batch 9 deep enhancement — Seoul-Seoraksan-Sokcho + Pocheon Sanjeong/Herb/Art Valley pair. Single-POI fixed-itinerary methodology (batches 1-5, 8 style). Both tours are SMALL_GROUP — formula different from batch 7/8 private tours. All substantive stops enhanced with 1,000+ char descriptions weaving verified facts. matching_profile recalibrated to verified-fact 0-1 float scores. Charter-format dimensions previously null: private_tour_fit set to 0.05 (definitionally not private); customizable_route_fit set to 0.1 (small-group fixed itinerary); flexibility_fit set to 0.3 (small-group bus, fixed pickup/drop). Tour-specific: history_culture_fit Seoraksan 0.5 (Sinheungsa 652 + Gwongeumseong 1253 + Tongildaebul 1997) / Pocheon 0.4 (1925 reservoir + quarry restoration). Seoraksan tour: unesco_fit 0.2 → 0.4 (UNESCO Biosphere Reserve since 1982, Korea's only one); autumn_foliage_fit set to 1.0 (catalog-leading); mountain_fit set to 1.0 (catalog-leading); seasonal_fit 0.95. Pocheon tour: romantic_fit set to 0.85 (catalog-second-strongest after Nami tour 0.95); seasonal_fit 0.85; family_fit 0.8 → 0.85. 6 new POIs added to KB (v1.11 → v1.12): seoraksan_national_park, sokcho_tourist_fishery_market, sokcho_beach, sanjeong_lake, herb_island, pocheon_art_valley. KB POI count: 62 → 68.",
+        "description": "Batch 9 deep enhancement — Seoul-Seoraksan-Sokcho + Pocheon Sanjeong/Herb/Art Valley pair. Single-POI fixed-itinerary methodology (batches 1-5, 8 style). Both tours are SMALL_GROUP — formula different from batch 7/8 private tours. All substantive stops enhanced with 1,000+ char descriptions weaving verified facts. product profile recalibrated to verified-fact 0-1 float scores. Charter-format dimensions previously null: private_tour_fit set to 0.05 (definitionally not private); customizable_route_fit set to 0.1 (small-group fixed itinerary); flexibility_fit set to 0.3 (small-group bus, fixed pickup/drop). Tour-specific: history_culture_fit Seoraksan 0.5 (Sinheungsa 652 + Gwongeumseong 1253 + Tongildaebul 1997) / Pocheon 0.4 (1925 reservoir + quarry restoration). Seoraksan tour: unesco_fit 0.2 → 0.4 (UNESCO Biosphere Reserve since 1982, Korea's only one); autumn_foliage_fit set to 1.0 (catalog-leading); mountain_fit set to 1.0 (catalog-leading); seasonal_fit 0.95. Pocheon tour: romantic_fit set to 0.85 (catalog-second-strongest after Nami tour 0.95); seasonal_fit 0.85; family_fit 0.8 → 0.85. 6 new POIs added to KB (v1.11 → v1.12): seoraksan_national_park, sokcho_tourist_fishery_market, sokcho_beach, sanjeong_lake, herb_island, pocheon_art_valley. KB POI count: 62 → 68.",
         "_score_audit": {
           "_methodology": "0-1 float scale per Phase 1 standard. Both tours are SMALL_GROUP (not private) — formula different from Batch 7/8 private tours. Charter-format dimensions previously null on these tours: private_tour_fit set to 0.05 (definitionally not private); customizable_route_fit 0.1 (small-group fixed itinerary - no menu of routes); flexibility_fit 0.3 (small-group bus, fixed pickup/drop, fixed stops). history_culture_fit set per content: Seoraksan tour 0.5 (Sinheungsa Silla 652 + Gwongeumseong 1253 legend); Pocheon tour 0.4 (Sanjeong 1925 reservoir + Art Valley quarry-history). Time-weighted indoor_ratio re-computed per Fix 1 methodology using verified per-POI indoor_ratio_at_stop values.",
           "deltas_applied": {
@@ -1845,8 +1990,8 @@
               "reasoning": "VERIFIED higher — Seoraksan IS a UNESCO Biosphere Reserve since August 1982 (Korea's only one). NOT a World Heritage Site (only on tentative list). Calibrated up to 0.4 — Biosphere Reserve carries weight but isn't the World Heritage gold standard."
             },
             "iconic_landmark_fit": {
-              "old": 1,
-              "new": 1,
+              "old": 1.0,
+              "new": 1.0,
               "reasoning": "Verified maintained — Korea's #1 most-loved national park, world's largest seated bronze Buddha. Maintained at 1.0."
             },
             "first_time_fit": {
@@ -1865,33 +2010,33 @@
               "reasoning": "VERIFIED — Fix 1 time-weighted: Seoul departure 15 × 1.0 (transit) = 15, Seoraksan 180 × 0.05 = 9, Sokcho Market 75 × 0.5 = 37.5, Sokcho Beach 75 × 0.0 = 0, Lunch 30 × 0.9 = 27, Return 150 × 1.0 = 150, transit-other 195 × 1.0 = 195. Total indoor 433.5 / 720 min = 0.60 with full transit; substantive only 73.5 / 360 = 0.20. Catalog value 0.15 (slight upward from prior 0.10 — better reflects market interior weight)."
             },
             "weather_sensitivity": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.9,
               "reasoning": "Verified — Seoraksan cable car closes in high wind / heavy rain / fog (no view); Sokcho Beach is fully exposed; Sokcho Market is the only weather-protected fallback. Heavy-outdoor day. Slight markdown to 0.9 (very high but Sokcho Market provides partial fallback)."
             },
             "scenic_level": {
-              "old": 1,
-              "new": 1,
+              "old": 1.0,
+              "new": 1.0,
               "reasoning": "Verified maintained — Korea's most iconic mountain + East Sea coast. Maintained at 1.0."
             },
             "photo_level": {
-              "old": 1,
-              "new": 1,
+              "old": 1.0,
+              "new": 1.0,
               "reasoning": "Verified maintained — Tongildaebul Buddha + cable-car panorama + East Sea + Sokcho Eye Ferris Wheel. Maintained at 1.0."
             },
             "nature_fit": {
-              "old": 1,
-              "new": 1,
+              "old": 1.0,
+              "new": 1.0,
               "reasoning": "Verified maintained — Korea's first UNESCO Biosphere Reserve. Maintained at 1.0."
             },
             "autumn_foliage_fit": {
               "old": null,
-              "new": 1,
+              "new": 1.0,
               "reasoning": "VERIFIED — Seoraksan autumn foliage (October-early November) is Korea's most famous foliage destination, with cable-car-framed granite peaks. Was unset. Maximum 1.0."
             },
             "mountain_fit": {
               "old": null,
-              "new": 1,
+              "new": 1.0,
               "reasoning": "VERIFIED — Daecheongbong 1,708m (Korea's 3rd highest), 30 peaks, Ulsanbawi granite formation. Catalog-leading mountain content. Was unset. Maximum 1.0."
             },
             "seasonal_fit": {
@@ -1905,18 +2050,18 @@
               "reasoning": "VERIFIED — Sokcho Beach is one of Korea's representative East Sea beaches (75-min stop). Slight upward from 0.8 to 0.85 — beach is included but not the day's centerpiece (Seoraksan is)."
             },
             "food_fit": {
-              "old": 1,
-              "new": 1,
+              "old": 1.0,
+              "new": 1.0,
               "reasoning": "Verified maintained — Sokcho Tourist Fishery Market is Gangwon's signature food market (dakgangjeong, squid sundae, abai sundae). Maintained at 1.0."
             },
             "small_group_fit": {
-              "old": 1,
-              "new": 1,
+              "old": 1.0,
+              "new": 1.0,
               "reasoning": "Verified maintained — small-group coach format with driver-guide. Maintained at 1.0."
             },
             "bus_fit": {
-              "old": 1,
-              "new": 1,
+              "old": 1.0,
+              "new": 1.0,
               "reasoning": "Verified maintained — coach vehicle. Maintained at 1.0."
             },
             "premium_fit": {

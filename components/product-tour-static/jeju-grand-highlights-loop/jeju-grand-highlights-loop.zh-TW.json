@@ -16,14 +16,14 @@
     ],
     "ogImage": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80",
     "title": "濟州全島精華小團體一日遊 · 城山日出峰＋萬丈窟＋山房山 | AtoC Korea",
-    "description": "濟州全島精華一日遊：城山日出峰UNESCO世界遺產→萬丈窟熔岩管→中文觀光地帶→오설록茶博物館。小團體英語導遊，涵蓋東西南主要景點，全年開團。"
+    "description": "濟州全島精華一日遊：城山日出峰UNESCO世界遺產→萬丈窟熔岩管→中文觀光地帶→Osulloc茶博物館。小團體英語導遊，涵蓋東西南主要景點，全年開團。"
   },
   "catalog_card": {
     "slug": "jeju-grand-highlights-loop",
     "title": "濟州全島精華小團體一日遊",
-    "subtitle": "城山日出峰 · 萬丈窟 · 柱狀節理帶 · 山房山 — 一天玩遍全島精華",
+    "subtitle": "從漢拿山到城山日出峰，一天盡覽濟州島代表性亮點。",
     "region": "濟州全島路線",
-    "duration": "9–9.5 hours",
+    "duration": "9–9.5小時",
     "stopsCount": 5,
     "rating": 0,
     "reviewCount": 0,
@@ -34,14 +34,14 @@
     "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
     "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
     "priceLabel": "每人US$72起",
-    "shortCardDescription": "濟州最受歡迎的全島精華路線——聯合國世界遺產火山口、熔岩洞穴、玄武岩海崖、山茶花丘，小團體出行。",
+    "shortCardDescription": "為時間有限的旅客構成的高效全島路線，串聯西部、南部及東部精華。行程包括協才海灘、漢拿山生態步道入口、城山日出峰（UNESCO）、正房瀑布及漢拿樹木園。全程約11小時。",
     "tags": [
-      "small_group",
+      "小團",
       "jeju",
-      "island_wide",
+      "環島路線",
       "unesco",
-      "first_time_friendly",
-      "highlights"
+      "適合初次到訪",
+      "精華景點"
     ]
   },
   "headlineLine1": "濟州全島精華一日遊",
@@ -49,9 +49,9 @@
   "price": {
     "amountLabel": "78",
     "currency": "USD",
-    "per": "person",
+    "per": "人",
     "priceSource": "internal",
-    "priceNote": "小團體雙語全島導覽。AtoC Korea直接銷售；相較於運營商底價享有10%折扣。",
+    "priceNote": "小團體雙語全島導覽。AtoC Korea直接銷售；相較於合作業者底價享有10%折扣。",
     "discountPercent": 10
   },
   "hero": {
@@ -61,10 +61,10 @@
     "pills": [
       "一日遊首選",
       "小團體一日遊",
-      "標誌性精華"
+      "代表性精華"
     ],
     "meta": {
-      "duration": "9–9.5 hours",
+      "duration": "9–9.5小時",
       "region": "濟州全島路線",
       "stops": "5 個景點",
       "rating": 0,
@@ -97,38 +97,32 @@
     {
       "icon": "camera",
       "label": "拍照潛力",
-      "value": "高",
-      "level": 5
+      "value": "高"
     },
     {
       "icon": "mountain",
-      "label": "景點密度",
-      "value": "高",
-      "level": 5
+      "label": "景點豐富度",
+      "value": "極高"
     },
     {
       "icon": "footprints",
       "label": "步行強度",
-      "value": "稍高",
-      "level": 4
+      "value": "中等偏高"
     },
     {
       "icon": "cloud-rain",
       "label": "雨天適合度",
-      "value": "中等",
-      "level": 3
+      "value": "中等"
     },
     {
       "icon": "users",
       "label": "親子適合度",
-      "value": "中等",
-      "level": 3
+      "value": "中等"
     },
     {
       "icon": "gauge",
       "label": "行程節奏",
-      "value": "緊湊",
-      "level": 3
+      "value": "緊湊"
     }
   ],
   "galleryItems": [
@@ -137,7 +131,7 @@
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
       "location": "整體路線",
-      "atmosphere": "在一日之內遍覽濟州標誌性風光",
+      "atmosphere": "在一日之內遍覽濟州代表性風光",
       "alt": "濟州精華一日遊的整體氛圍",
       "caption": "濟州精華一日遊的整體氛圍"
     },
@@ -147,15 +141,15 @@
       "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
       "location": "漢拏山起點",
       "atmosphere": "高海拔的清新山嵐氣息",
-      "alt": "漢拏山御乘生岳步道的氛圍",
-      "caption": "漢拏山御乘生岳步道的氛圍"
+      "alt": "漢拏山御乘生嶽步道的氛圍",
+      "caption": "漢拏山御乘生嶽步道的氛圍"
     },
     {
       "id": 3,
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
       "location": "柱狀節理海岸",
-      "atmosphere": "海浪與懸崖的磅礴視覺對比",
+      "atmosphere": "海浪與懸崖的磅礴景色對比",
       "alt": "濟州海岸的大浦柱狀節理海岸",
       "caption": "濟州海岸的大浦柱狀節理海岸"
     },
@@ -182,30 +176,30 @@
     {
       "number": 1,
       "time": "09:30",
-      "duration": "75 min",
-      "name": "漢拏山御乘生岳",
-      "category": "Hallasan Foothill Trail (Eorimok) — UNESCO World Heritage Taste",
-      "description": "**御乘生岳（어승생악，1,169 m）** 是**漢拏山（한라산，1,950 m）** 西麓的一座寄生火山錐（오름 / *oreum*）——漢拏山是韓國最高峰，也是濟州島的地質核心。漢拏山本身擁有**無與倫比的榮銜疊加**：**UNESCO世界自然遺產（2007-07-02登錄）**、**UNESCO生物圈保護區（2002年）**、**韓國國家公園（1970-03-24指定）**，以及**天然紀念物第182號（1966年）**——是韓國唯一同時持有UNESCO三大自然指定的地點。御乘生岳登山口位於**於林木訪客中心（Eorimok Visitor Center）**，全程僅需**在1.3公里內爬升約200公尺**，到達寬闊的山頂觀景台——來回約60分鐘，即可體驗**「漢拏山UNESCO精髓」**，無需耗費9小時攀登白鹿潭火口。天晴時，從觀景台可遠眺**黃海、漢拏山白鹿潭火口（백록담）以及向南延伸的寄生火山錐群**。植物亮點：此海拔帶（1,000–1,300 m）是**闊葉落葉林與韓國冷杉（구상나무，*Abies koreana*——IUCN近危物種，韓國高山特有種）**混生的過渡帶。漢拏山共記錄**超過2,000種植物**——約佔**朝鮮半島全部植物種類的一半**。山頂觀景台旁還留有一段歷史遺跡：**1945年帝國日本建造的토치카（混凝土碉堡/通訊站）**，建於二戰最後幾個月，是韓國現存海拔最高的二戰日軍工事之一。入場費及停車費均為**免費**；**無需預約**（不同於白鹿潭峰頂每日限額1,000人）。",
+      "duration": "75分鐘",
+      "name": "漢拏山御乘生嶽",
+      "category": "漢拿山山麓步道（御林目）——UNESCO世界遺產體驗",
+      "description": "**御乘生嶽（御乘生嶽，1,169 m）** 是**漢拏山（漢拏山，1,950 m）** 西麓的一座寄生火山錐（火山錐 / *oreum*）——漢拏山是韓國最高峰，也是濟州島的地質核心。漢拏山本身擁有**無與倫比的榮銜疊加**：**UNESCO世界自然遺產（2007-07-02登載）**、**UNESCO生物圈保護區（2002年）**、**韓國國家公園（1970-03-24指定）**，以及**天然紀念物第182號（1966年）**——是韓國唯一同時持有UNESCO三大自然指定的地點。御乘生嶽登山口位於**於林木訪客中心（御里牧遊客中心）**，全程僅需**在1.3公里內爬升約200公尺**，到達寬闊的山頂觀景臺——來回約60分鐘，即可體驗**「漢拏山UNESCO代表看點」**，無需耗費9小時攀登白鹿潭火口。天晴時，從觀景臺可遠眺**黃海、漢拏山白鹿潭火口以及向南延伸的寄生火山錐群**。植物亮點：此海拔帶（1,000–1,300 m）是**闊葉落葉林與韓國冷杉**混生的過渡帶。漢拏山共記錄**超過2,000種植物**——約佔**朝鮮半島全部植物種類的一半**。山頂觀景臺旁還留有一段歷史遺蹟：**1945年帝國日本建造的鋼筋混凝土碉堡/通訊設施**，建於二戰最後幾個月，是韓國現存海拔最高的二戰日軍工事之一。入場費及停車費均為**免費**；**無需預約**（不同於白鹿潭峰頂每日限額1,000人）。",
       "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
       "highlights": [
         "**漢拏山 = 韓國唯一「三重自然指定」地點**：UNESCO世界遺產2007年 + 生物圈保護區2002年 + 國家公園1970年",
-        "**御乘生岳峰頂1,169 m** — 寄生火山錐（오름），為濟州360餘座火山錐之一",
-        "步道全長**單程1.3公里 / 爬升約200公尺** — 寬闊台階與木棧道，運動鞋即可應對",
-        "觀景台全景涵蓋**漢拏山白鹿潭火口、黃海及南部寄生火山錐群**",
-        "植物過渡帶——**韓國冷杉（*Abies koreana*，IUCN近危物種）**林帶約在100公尺以上",
-        "山頂保留**1945年帝國日本토치카碉堡** — 罕見的高海拔二戰遺跡",
+        "**御乘生嶽峰頂1,169 m** — 寄生火山錐（火山錐），為濟州360餘座火山錐之一",
+        "步道全長**單程1.3公里 / 爬升約200公尺** — 寬闊臺階與木棧道，運動鞋即可應對",
+        "觀景臺全景涵蓋**漢拏山白鹿潭火口、黃海及南部寄生火山錐群**",
+        "植物過渡帶——**韓國冷杉（韓國冷杉，IUCN近危物種）**林帶約在100公尺以上",
+        "山頂保留**1945年帝國日本碉堡碉堡** — 罕見的高海拔二戰遺蹟",
         "**免費入場** + 免費停車；無需預約上限（不同於白鹿潭峰頂每日限額1,000人）",
         "漢拏山共記錄**超過2,000種植物** — 約佔朝鮮半島植物種類的一半",
-        "來回停留**約60分鐘** = 完整體驗「UNESCO精髓」，無需9小時全程登頂白鹿潭"
+        "來回停留**約60分鐘** = 完整體驗「UNESCO代表看點」，無需9小時全程登頂白鹿潭"
       ],
       "timeUsed": [
-        "Eorimok parking + restroom + trail brief — ~10 min",
-        "Ascent 1.3 km to deck — ~25 min",
-        "Summit deck + photos + tochika viewing — ~15 min",
-        "Descent — ~20 min",
-        "Buffer / regroup — ~5 min"
+        "御林目停車場+廁所+步道簡介——約10分鐘",
+        "登頂1.3公里至觀景臺——約25分鐘",
+        "頂部觀景臺+拍照+碉堡參觀——約15分鐘",
+        "下山——約20分鐘",
+        "集合時間——約5分鐘"
       ],
-      "whyOnRoute": "**全島精華環線的起點錨點**。以漢拏山作為行程起點，能讓旅客*首先*建立對濟州島地質輪廓的認識——整個島嶼就是一座盾形火山的側翼，而後續所有景點（柱狀節理海岸的熔岩 → 正房瀑布直落入海 → 城山日出峰的凝灰岩錐）都是同一次漢拏山噴發歷史的延伸表現。御乘生岳是**唯一能在一個地點、60分鐘內、無需預約**同時獲得「UNESCO世界遺產 + 生物圈保護區 + 地質公園」體驗的漢拏山步道——靈室和城板岳步道均需**5至9小時**，且白鹿潭峰頂每日限額1,000人。對於初次造訪濟州的旅客，這是行程目錄中性價比最高的漢拏山入門方式。09:30的早出發也能趕在**11:00前**——漢拏山春夏季節常出現雲霧籠罩的時間點之前——順利抵達山頂。",
+      "whyOnRoute": "**全島精華環線的起點核心景點**。以漢拏山作為行程起點，能讓旅客*首先*建立對濟州島地質輪廓的認識——整個島嶼就是一座盾形火山的側翼，而後續所有景點（柱狀節理海岸的熔岩 → 正房瀑布直落入海 → 城山日出峰的凝灰岩錐）都是同一次漢拏山噴發歷史的延伸表現。御乘生嶽是**唯一能在一個地點、60分鐘內、無需預約**同時獲得「UNESCO世界遺產 + 生物圈保護區 + 地質公園」體驗的漢拏山步道——靈室和城板嶽步道均需**5至9小時**，且白鹿潭峰頂每日限額1,000人。對於初次造訪濟州的旅客，這是行程目錄中性價比最高的漢拏山入門方式。09:30的早出發也能趕在**11:00前**——漢拏山春夏季節常出現雲霧籠罩的時間點之前——順利抵達山頂。",
       "_poi_meta": {
         "poi_key": "hallasan_eoseungsaengak",
         "kb_version": "1.18",
@@ -217,46 +211,31 @@
           "VisitKorea — Hallasan Eoseungsaengak trail",
           "Korea Forest Service — Abies koreana red list status"
         ]
-      },
-      "visitBasics": {
-        "hours": "From 05:00, with possible seasonal restrictions",
-        "closed": "May be restricted in severe weather",
-        "admission": "Free",
-        "walking": "Moderate incline"
-      },
-      "convenience": {
-        "restroom": "At the trail entrance",
-        "parking": "Parking available"
-      },
-      "smartNotes": {
-        "photo": "In clear weather, wide shots of the ridge and distant views usually work better than tight portraits.",
-        "facilities": "Basic facilities are mainly concentrated near the entrance area.",
-        "tip": "Especially after rain or in colder seasons, grip and warmth matter more here than at most other stops."
       }
     },
     {
       "number": 2,
       "time": "11:15",
-      "duration": "45 min",
+      "duration": "45分鐘",
       "name": "大浦柱狀節理海岸",
       "category": "天然紀念物第443號 — 玄武岩海崖",
-      "description": "**大浦柱狀節理（대포 주상절리，「支石蓋」）**是一段**全長1公里的六角形柱狀節理玄武岩懸崖**，位於中文海岸線，於**2005年1月6日被指定為天然紀念物第443號**。石柱高達**30至40公尺**，緊密排列著**五至七邊形棱柱**（以六邊形為主）——這種幾何形態是由於**漢拏山側翼噴出的玄武岩熔岩（約25萬至14萬年前）抵達海洋後，在冷卻收縮時垂直於冷卻面斷裂**而形成。全球最著名的柱狀節理景觀包括**英國巨人堤道**、**美國魔鬼柱**和**蘇格蘭芬加爾洞穴**——大浦柱狀節理是**東亞最具代表性的柱狀節理景點**，也是其中最易到訪的。沿岸的800公尺**木棧道環線**帶領大家前往有欄杆防護的懸崖邊緣，直接俯瞰石柱；**漲潮時海浪衝擊石柱，水花飛濺高達20公尺**，偶爾越過欄杆。入場費：**成人₩2,000 / 青少年₩1,000 / 7歲以下及65歲以上免費**。本景點屬於**濟州全球地質公園（UNESCO 2010-10認定）**的一部分，是全島**13個官方地質遺址**之一，與城山日出峰、萬丈窟熔岩洞和水月峰並列。懸崖頂觀景台為**無障礙設施**（輪椅及嬰兒車可通行）。沿步道環線設有三個觀景台，提供不同角度觀賞：**第一觀景台**以側面呈現石柱（最適合拍攝六邊形幾何構圖），**中央觀景台**提供俯拍石柱頂端的圖案，**遠端觀景台**則可捕捉1公里海岸線全景，晴天時可見漢拏山作為背景。**攝影最佳時段：14:00至16:00**，西偏太陽正面照亮石柱；日落時分可拍攝剪影，但會失去石柱表面紋理細節。開放時間：**每日09:00至18:00（最後入場17:30）**，全年運營。",
+      "description": "**大浦柱狀節理**是一段**全長1公里的六角形柱狀節理玄武岩懸崖**，位於中文海岸線，於**2005年1月6日被指定為天然紀念物第443號**。石柱高達**30至40公尺**，緊密排列著**五至七邊形稜柱**（以六邊形為主）——這種幾何形態是由於**漢拏山側翼噴出的玄武岩熔岩（約25萬至14萬年前）抵達海洋後，在冷卻收縮時垂直於冷卻面斷裂**而形成。全球最著名的柱狀節理景觀包括**英國巨人堤道**、**美國魔鬼柱**和**蘇格蘭芬加爾洞穴**——大浦柱狀節理是**東亞最具代表性的柱狀節理景點**，也是其中最易到訪的。沿岸的800公尺**木棧道環線**帶領大家前往有欄杆防護的懸崖邊緣，直接俯瞰石柱；**漲潮時海浪沖擊石柱，水花飛濺高達20公尺**，偶爾越過欄杆。入場費：**成人₩2,000 / 青少年₩1,000 / 7歲以下及65歲以上免費**。本景點屬於**濟州全球地質公園（UNESCO 2010-10認定）**的一部分，是全島**13個官方地質遺址**之一，與城山日出峰、萬丈窟熔岩洞和水月峰並列。懸崖頂觀景臺為**無障礙設施**（輪椅及嬰兒車可通行）。沿步道環線設有三個觀景臺，提供不同角度觀賞：**第一觀景臺**以側面呈現石柱（最適合拍攝六邊形幾何構圖），**中央觀景臺**提供俯拍石柱頂端的圖案，**遠端觀景臺**則可捕捉1公里海岸線全景，晴天時可見漢拏山作為背景。**攝影最佳時段：14:00至16:00**，西偏太陽正面照亮石柱；日落時分可拍攝剪影，但會失去石柱表面紋理細節。開放時間：**每日09:00至18:00（最後入場17:30）**，全年運營。",
       "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
       "highlights": [
         "**天然紀念物第443號** — **2005年1月6日**指定，為濟州海岸天然紀念物中最近期的一處",
-        "石柱高達**30至40公尺**，沿**1公里**海岸線緊密排列著**五至七邊形棱柱**（以六邊形為主）",
+        "石柱高達**30至40公尺**，沿**1公里**海岸線緊密排列著**五至七邊形稜柱**（以六邊形為主）",
         "成因：**漢拏山側翼熔岩約25萬至14萬年前流入海中冷卻收縮**，垂直於冷卻面裂開",
         "**東亞最具代表性的柱狀節理景點** — 媲美英國巨人堤道、美國魔鬼柱、蘇格蘭芬加爾洞穴",
         "**漲潮時水花飛濺高達20公尺** — 海浪噴泉攝影時機",
-        "**0.8公里木棧道環線**，約15分鐘步行 — 無障礙觀景台，輪椅及嬰兒車可通行",
+        "**0.8公里木棧道環線**，約15分鐘步行 — 無障礙觀景臺，輪椅及嬰兒車可通行",
         "屬於**濟州全球地質公園（UNESCO 2010-10）** — 全島13處官方地質遺址之一",
         "成人₩2,000 / 青少年₩1,000 / **7歲以下及65歲以上免費**",
-        "晴天時可遠眺漢拏山峰頂，地質上**直接位於其下游**"
+        "晴天時可遠眺漢拏山峰頂，地質上**直接位於其下遊**"
       ],
       "timeUsed": [
         "海崖欣賞 — 約25分鐘"
       ],
-      "whyOnRoute": "**環線的「柱狀熔岩」錨點**。在漢拏山確立了噴發源頭之後，大浦柱狀節理展示的是**同樣的熔岩抵達海洋後凝固成幾何形態**——一段延伸30公里海岸線、完整連貫的地質故事。中文地區也是從西南海岸折返東邊，朝向正房瀑布與城山方向的自然轉折點，因此這個景點同時扮演著地理樞紐的角色。相較於**龍頭海岸（漲潮或天候不佳時可能關閉，約30%的造訪日）**或**松岳山（步行距離多1.6公里，石柱較不集中）**，大浦柱狀節理**全天候開放、無障礙設施、從車廂步行僅需15分鐘**——是南部海岸單位時間最高效的觀景點。11:15的抵達時段也能搶在**郵輪岸上觀光人潮（12:15後大量湧入）**之前完成參觀。",
+      "whyOnRoute": "**環線的「柱狀熔岩」核心亮點**。在漢拏山確立了噴發源頭之後，大浦柱狀節理展示的是**同樣的熔岩抵達海洋後凝固成幾何形態**——一段延伸30公里海岸線、完整連貫的地質故事。中文地區也是從西南海岸折返東邊，朝向正房瀑布與城山方向的自然轉折點，因此這個景點同時扮演著地理樞紐的角色。相較於**龍頭海岸（漲潮或天候不佳時可能關閉，約30%的造訪日）**或**松嶽山（步行距離多1.6公里，石柱較不集中）**，大浦柱狀節理**全天候開放、無障礙設施、從車廂步行僅需15分鐘**——是南部海岸單位時間最高效的觀景點。11:15的抵達時段也能搶在**郵輪岸上觀光人潮（12:15後大量湧入）**之前完成參觀。",
       "_poi_meta": {
         "poi_key": "daepo_jusangjeolli_cliff",
         "kb_version": "1.18",
@@ -268,89 +247,59 @@
           "VisitJeju — Daepo Jusangjeolli",
           "Korea Geological Survey — Jeju basalt formation studies"
         ]
-      },
-      "visitBasics": {
-        "hours": "09:00–18:00 (last entry 17:40)",
-        "closed": "Open year-round",
-        "admission": "KRW 2,000 adults / KRW 1,000 children and teens",
-        "walking": "Easy to moderate"
-      },
-      "convenience": {
-        "restroom": "Entrance area",
-        "parking": "Parking available (paid lot)"
-      },
-      "smartNotes": {
-        "photo": "Wave direction, spray, and side light can change the mood quickly, so wide coastal framing works especially well here.",
-        "facilities": "The entrance area is well equipped, and the viewpoint path itself is relatively straightforward.",
-        "tip": "Even on a sunny day, the coast usually feels colder and windier than inland Jeju."
       }
     },
     {
       "number": 3,
       "time": "12:15",
-      "duration": "60 min",
+      "duration": "60分鐘",
       "name": "午餐 — 西歸浦當地料理",
-      "category": "Midday Reset — Seogwipo Local Cuisine",
-      "description": "**在西歸浦（서귀포）市中心享用60分鐘的午休**——濟州島南部城市，以**西歸浦每日奧勒市場（서귀포매일올레시장）**新鮮到岸的海鮮及鮑魚豐富的海岸聞名。根據季節和團體規模靈活搭配：**갈치조림（白帶魚燉煮）**在船隻靠岸季節（9月至2月）可在西歸浦名店品嚐、**전복비빔밥（鮑魚拌飯）**全年供應於面向市場的餐廳，或是**흑돼지구이（濟州黑豬燒烤）**供偏好烤肉的旅客選擇。濟州黑豬（***Sus scrofa* domesticus，濟州黑豬品種**）於2015年被列為**文化財料第5號**，至今仍是受濟州保護的品種。素食替代方案可預約：**비빔국수（涼拌辣麵）**佐時令蔬菜。午餐地點距**正房瀑布僅5分鐘步行路程**——食慾旺盛的旅客若想在繼續行程前順道享用一杯咖啡，可前往市場旁的茶飲咖啡排。",
+      "category": "午間休息——西歸浦本地菜",
+      "description": "**在西歸浦市中心享用60分鐘的午休**——濟州島南部城市，以**西歸浦每日奧勒市場**新鮮到岸的海鮮及鮑魚豐富的海岸聞名。根據季節和團體規模靈活搭配：**辣燉白帶魚（白帶魚燉煮）**在船隻靠岸季節（9月至2月）可在西歸浦名店品嚐、**鮑魚拌飯（鮑魚拌飯）**全年供應於面向市場的餐廳，或是**濟州黑毛豬烤肉（濟州黑豬燒烤）**供偏好烤肉的旅客選擇。濟州黑豬（**濟州黑豬，濟州黑豬品種**）於2015年被列為**文化財料第5號**，至今仍是受濟州保護的品種。素食備選安排可預約：**涼拌辣醬麵（涼拌辣面）**佐時令蔬菜。午餐地點距**正房瀑布僅5分鐘步行路程**——食慾旺盛的旅客若想在繼續行程前順道享用一杯咖啡，可前往市場旁的茶飲咖啡排。",
       "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
       "highlights": [
         "濟州島南部漁業及海鮮重鎮——**西歸浦**市中心",
-        "當季（9月至2月）享用**갈치조림（白帶魚燉煮）**，全年供應**전복비빔밥（鮑魚拌飯）**",
-        "**흑돼지（濟州黑豬）**選項 — 文化財料第5號（2015年）",
-        "素食客可選擇**비빔국수（涼拌辣麵）**",
+        "當季（9月至2月）享用**辣燉白帶魚（白帶魚燉煮）**，全年供應**鮑魚拌飯（鮑魚拌飯）**",
+        "**濟州黑毛豬（濟州黑豬）**選項 — 文化財料第5號（2015年）",
+        "素食客可選擇**涼拌辣醬麵（涼拌辣面）**",
         "午餐地點距**正房瀑布入口僅5分鐘步行** — 車輛轉乘時間極少",
         "接送前收集團體飲食需求；菜單提前確認"
       ],
       "timeUsed": [
-        "Walk to lunch venue — ~5 min",
-        "Order + meal + drinks — ~45 min",
-        "Walk to Jeongbang Falls entrance — ~5 min",
-        "Buffer — ~5 min"
+        "步行至午餐地點 — 約5分鐘",
+        "點餐 + 用餐 + 飲料 — 約45分鐘",
+        "步行至正房瀑布入口 — 約5分鐘",
+        "集合時間 — 約5分鐘"
       ],
-      "whyOnRoute": "西歸浦的市中心位置讓**正房瀑布成為下一個步行可達的景點**（午餐與第4站之間無需搭車）——相較於中文地區的午餐，節省約15分鐘行程時間。白帶魚 + 黑豬 + 鮑魚是濟州三大代表性食材，均在當地捕撈或飼養——旅客一頓飯即可完整體驗全日的飲食文化。用餐節奏也讓旅客在下午攀登城山日出峰前，得以稍作喘息，恢復上午漢拏山與海岸步行的體力。",
-      "visitBasics": {
-        "hours": "Depends on restaurant operating hours",
-        "closed": "Varies by venue",
-        "admission": "Meal is paid on site unless otherwise specified",
-        "walking": "Minimal"
-      },
-      "convenience": {
-        "restroom": "Inside the restaurant",
-        "parking": "Parking available"
-      },
-      "smartNotes": {
-        "photo": "Since most of the day centers on landscapes, food photos can help vary the visual rhythm of the route.",
-        "facilities": "Dining-related facilities are usually more than sufficient.",
-        "tip": "It is better to eat at a comfortable pace here than to rush and lose energy for the afternoon."
-      }
+      "whyOnRoute": "西歸浦的市中心位置讓**正房瀑布成為下一個步行可達的景點**（午餐與第4站之間無需搭車）——相較於中文地區的午餐，節省約15分鐘行程時間。白帶魚 + 黑豬 + 鮑魚是濟州三大代表性食材，均在當地捕撈或飼養——旅客一頓飯即可完整體驗全日的飲食文化。用餐節奏也讓旅客在下午攀登城山日出峰前，得以稍作喘息，恢複上午漢拏山與海岸步行的體力。"
     },
     {
       "number": 4,
       "time": "13:35",
-      "duration": "60 min",
+      "duration": "60分鐘",
       "name": "正房瀑布",
-      "category": "Coastal Waterfall — Falls Directly Into Ocean (Asia Unique)",
-      "description": "**正房瀑布（정방폭포，「直落入海之瀑」）**是**亞洲唯一直接落入大海的瀑布**——從玄武岩懸崖**垂直落下23公尺**直入太平洋，沒有中途水潭，也沒有河口入海口。瀑布寬**8公尺**，底部5公尺水潭隨每次潮汐直通外海。這一獨特的地理標誌使正房瀑布成為**「瀛洲十景（영주십경，濟州十大詩意景觀）」**之一——朝鮮時代文人確立的濟州最富詩情的景觀典範。瀛洲十景由**18世紀儒學學者李源祚（이원조）**定稿，其中還包括城山日出、漢拏山峰頂和天帝淵——也就是說，今天的環線一日之內遊覽了**十景中的三處**。瀑布旁的崖壁上刻有**「徐市過此（서불과차）」**碑文，相傳為秦朝方士**徐福（서복）**所留，他是**秦始皇（約公元前219年）**派遣尋找長生不老藥的使者。據當地傳說，徐福途經此地返程，此碑文即為地名**「西歸浦（서귀포，意為「徐向西而歸之地」）」**的字源。前往瀑布需沿**130級石階**下行至海灣（坡度較陡——建議穿著護膝友善的鞋款）。入場費：**成人₩2,000 / 青少年₩1,000 / 7歲以下及65歲以上免費**。瀑底水霧瀰漫的小氣候是著名的夏日消暑勝地。**海女（해녀，UNESCO 2016年非物質文化遺產）**有時會在風平浪靜的日子在海灣直接販售新鮮海膽、鮑魚和鳳螺——是在正式博物館場合之外，難得一見的海女勞作攝影機會。",
+      "category": "海岸瀑布——直接落入大海（亞洲唯一）",
+      "description": "**正房瀑布（正房瀑布，「直落入海之瀑」）**是**亞洲唯一直接落入大海的瀑布**——從玄武岩懸崖**垂直落下23公尺**直入太平洋，沒有中途水潭，也沒有河口入海口。瀑布寬**8公尺**，底部5公尺水潭隨每次潮汐直通外海。這一獨特的地理標誌使正房瀑布成為**「瀛洲十景」**之一——朝鮮時代文人確立的濟州最富詩情的景觀典範。瀛洲十景由**18世紀儒學學者李源祚**定稿，其中還包括城山日出、漢拏山峰頂和天帝淵——也就是說，今天的環線一日之內遊覽了**十景中的三處**。瀑布旁的崖壁上刻有**「徐市過此」**碑文，相傳為秦朝方士**徐福**所留，他是**秦始皇（約公元前219年）**派遣尋找長生不老藥的使者。據當地傳說，徐福途經此地返程，此碑文即為地名**「西歸浦」**的字源。前往瀑布需沿**130級石階**下行至海灣（坡度較陡——建議穿著護膝友善的鞋款）。入場費：**成人₩2,000 / 青少年₩1,000 / 7歲以下及65歲以上免費**。瀑底水霧瀰漫的小氣候是著名的夏日消暑勝地。**海女**有時會在風平浪靜的日子在海灣直接販售新鮮海膽、鮑魚和鳳螺——是在正式博物館場合之外，難得一見的海女勞作攝影機會。",
       "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
       "highlights": [
-        "**亞洲唯一直接落入大海的瀑布** — 垂直落下23公尺，無河床緩衝",
+        "**亞洲唯一直接落入大海的瀑布** — 垂直落下23公尺，無河床預留時間",
         "瀑布**寬8公尺**，底部5公尺水潭隨潮汐直通太平洋",
         "「**瀛洲十景**」之一 — 朝鮮時代確立的濟州十大詩意景觀",
         "**「徐市過此」碑文** — 相傳為秦朝方士徐福（約公元前219年）所刻，為地名「西歸浦」字源",
         "下行**130級石階**通往海灣 — 建議穿著護膝友善鞋款",
         "成人₩2,000 / 青少年₩1,000 / **7歲以下及65歲以上免費**",
         "瀑底水霧小氣候 — 天然夏日消暑勝地",
-        "本地**海女（해녀）**在風平浪靜的日子有時在海灣販售新鮮漁獲",
+        "本地**海女**在風平浪靜的日子有時在海灣販售新鮮漁獲",
         "通常的**最佳攝影時段為14:00至14:30**，太陽從西方正面照亮瀑布"
       ],
       "timeUsed": [
-        "Entrance + ticket + descent (130 steps) — ~10 min",
-        "Cove viewpoint + falls photography — ~25 min",
-        "Optional cliff-side path + Seobul inscription — ~10 min",
-        "Ascent back to coach — ~10 min",
-        "Buffer — ~5 min"
+        "入場 + 購票 + 下行（130級臺階）— 約10分鐘",
+        "海灣觀景臺 + 瀑布拍照 — 約25分鐘",
+        "可選擇崖邊步道＋徐福碑 — 約10分鐘",
+        "返回大巴 — 約10分鐘",
+        "集合時間 — 約5分鐘"
       ],
-      "whyOnRoute": "正房瀑布是**環線上唯一一處地質學、神話與地名字源匯聚於同一框景之中**的景點——瀑布直落入海的景象，讓「西歸浦」地名的由來說得如字面般直白。相較於**天帝淵（三層內陸瀑布，位於中文以北約3公里）**，正房的遊覽**時間更短、更為壯觀、且從午餐步行可達**——天帝淵需要繞道中文，並在其森林環線上花費30分鐘以上。13:35的午後時段也恰好在**拍攝瀑布的陽光窗口（14:00至14:30）**前抵達。之後車輛沿1132號公路東行前往城山日出峰——途中65分鐘的沿海行駛，車窗外盡是**濟州東部的寄生火山錐群**。",
+      "whyOnRoute": "正房瀑布是**環線上唯一一處地質學、神話與地名字源匯聚於同一框景之中**的景點——瀑布直落入海的景象，讓「西歸浦」地名的由來說得如字面般直白。相較於**天帝淵（三層內陸瀑布，位於中文以北約3公里）**，正房的遊覽**時間更短、更為壯觀、且從午餐步行可達**——天帝淵需要繞道中文，並在其森林環線上花費30分鐘以上。13:35的午後時段也恰好在**拍攝瀑布的陽光時段（14:00至14:30）**前抵達。之後車輛沿1132號公路東行前往城山日出峰——途中65分鐘的沿海行駛，車窗外盡是**濟州東部的寄生火山錐群**。",
       "_poi_meta": {
         "poi_key": "jeongbang_falls",
         "kb_version": "1.18",
@@ -362,34 +311,19 @@
           "Korea Geological Survey — coastal waterfall inventory",
           "Jeju Folklore Records — Xu Fu / Seobulgwacha inscription study"
         ]
-      },
-      "visitBasics": {
-        "hours": "09:00–17:20",
-        "closed": "Open year-round",
-        "admission": "KRW 2,000 adults / KRW 1,000 children",
-        "walking": "Moderate, with stairs"
-      },
-      "convenience": {
-        "restroom": "Entrance area",
-        "parking": "Parking available"
-      },
-      "smartNotes": {
-        "photo": "The rocky area below works well for atmosphere-rich shots, but footing and sea spray can make the experience feel more demanding.",
-        "facilities": "Basic facilities are located near the entrance.",
-        "tip": "Because of the stairs and rocky path, it usually feels more physically active on site than it appears on the map."
       }
     },
     {
       "number": 5,
       "time": "15:25",
-      "duration": "90 min",
+      "duration": "90分鐘",
       "name": "城山日出峰",
       "category": "聯合國世界遺產三冠王 — 5,000年水成火山凝灰岩",
-      "description": "**城山日出峰（성산일출봉，「日出峰」）**是一座**距今5,000年的薩托謝安式（Surtseyan）水火山凝灰岩錐**——這是一種罕見的地形，形成於海底玄武岩噴發衝出海面之時，岩漿接觸海水引發蒸汽爆炸，堆積的火山灰形成**182公尺高、形如城堡的火口**邊緣，而非典型的熔岩錐。UNESCO將其正式定義為**「薩托謝安式火山構造典型範例」**。火口**直徑600公尺、深90公尺**，周圍環繞著**99塊鋸齒狀的邊緣岩石**，當地傳說將其比喻為石冠。城山日出峰擁有**UNESCO三重認定**：**世界自然遺產（2007-07-02登錄）**，是**「濟州火山島與熔岩洞窟」**遺址的組成部分；**生物圈保護區（2002年）**；以及**全球地質公園（2010-10）**——這一榮銜僅與漢拏山本身並列，為韓國景點中的最高規格。峰體向海一側隧道有**18座帝國日本二戰地下掩體**（1945年神風特攻隊自殺艇掩體）。步道：**單程0.8公里，爬升約140公尺，來回60分鐘**，沿寬闊石階攀登。**海女表演**每日在峰下岩石海灣**13:30和15:00**各舉行一場——無需氧氣罐的濟州女性潛水員（UNESCO 2016年非物質文化遺產）。門票於**2025年4月更新**：**成人₩5,000 / 青少年+兒童₩2,500 / 團體成人₩1,600**，7歲以下及65歲以上免費。山頂觀景台同屬**瀛洲十景**，長期以來是韓國**元旦日出朝聖**的首選地——每年1月1日有逾5萬人在黎明前登頂，自1995年起設有市政日出節活動。**牛島（우도，「牛島」）** —— 韓國最大的次級火山島——在山頂可清晰看見，位於4公里外海域，搭乘**15分鐘渡輪自城山港出發**可前往（來回₩10,500），適合其他行程時間充裕的旅客。",
+      "description": "**城山日出峰（城山日出峰，「日出峰」）**是一座**距今5,000年的蘇爾特塞式（Surtseyan）水成火山凝灰岩錐**——這是一種罕見的地形，形成於海底玄武岩噴發沖出海面之時，岩漿接觸海水引發蒸汽爆炸，堆積的火山灰形成**182公尺高、形如城堡的火口**邊緣，而非典型的熔岩錐。UNESCO將其正式定義為**「薩託謝安式火山構造典型範例」**。火口**直徑600公尺、深90公尺**，周圍環繞著**99塊鋸齒狀的邊緣岩石**，當地傳說將其比喻為石冠。城山日出峰擁有**UNESCO三重認定**：**世界自然遺產（2007-07-02登載）**，是**「濟州火山島與熔岩洞窟」**遺址的組成部分；**生物圈保護區（2002年）**；以及**全球地質公園（2010-10）**——這一榮銜僅與漢拏山本身並列，為韓國景點中的最高規格。峰體向海一側隧道有**18座帝國日本二戰地下掩體**（1945年神風特攻隊自殺艇掩體）。步道：**單程0.8公里，爬升約140公尺，來回60分鐘**，沿寬闊石階攀登。**海女表演**每日在峰下岩石海灣**13:30和15:00**各舉行一場——無需氧氣罐的濟州女性潛水員（UNESCO 2016年非物質文化遺產）。門票於**2025年4月更新**：**成人₩5,000 / 青少年+兒童₩2,500 / 團體成人₩1,600**，7歲以下及65歲以上免費。山頂觀景臺同屬**瀛洲十景**，長期以來是韓國**元旦日出朝聖**的首選地——每年1月1日有逾5萬人在黎明前登頂，自1995年起設有市政日出節活動。**牛島** —— 韓國最大的次級火山島——在山頂可清晰看見，位於4公里外海域，搭乘**15分鐘渡輪自城山港出發**可前往（來回₩10,500），適合其他行程時間充裕的旅客。",
       "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
       "highlights": [
         "**UNESCO三重認定**：世界遺產2007-07-02 + 生物圈保護區2002年 + 全球地質公園2010-10",
-        "**距今5,000年** — 薩托謝安式水火山噴發，岩漿遇海水引發蒸汽爆炸誕生",
+        "**距今5,000年** — 薩託謝安式水火山噴發，岩漿遇海水引發蒸汽爆炸誕生",
         "火口**直徑600公尺、深90公尺**，環繞著**99塊鋸齒狀邊緣岩石**（「石冠」）",
         "**海拔182公尺** — 單程0.8公里 / 爬升約140公尺，石階步道來回60分鐘",
         "峰體基部有**18座帝國日本二戰地下掩體** — 1945年神風特攻隊自殺艇掩體",
@@ -401,7 +335,7 @@
       "timeUsed": [
         "登頂、觀景、下山 — 約75分鐘"
       ],
-      "whyOnRoute": "**精華環線的終點錨點** — 島上最集中的UNESCO代表景點，也是全日唯一能在**5,000年前水火山地形**上，同時將**濟州島全景、大海與漢拏山盡收眼底**的地方。從地理位置上看是東海岸的壓軸終點，從地質上則是繼漢拏山源頭和大浦柱狀節理熔岩之後的**第三個火山章節**。下午15:25抵達，可在登頂前先觀賞**15:00海女表演**，在**16:30前後**欣賞**柔和的黃金時段光線灑落在火口邊緣**，並在**19:00公園關閉**前離開峰頂。春秋兩季晚間的額外驚喜：下山時間恰好讓旅客在**日出峰村落**趕上日落——山頂邊緣從西方接收夕陽餘暉，為全日畫下最美的句點。相較於日出參觀（雖受歡迎，但需04:30出發，且錯過白日的環島行程），午後的城山日出峰雖放棄了日出奇觀，換來的是一個完整的全島UNESCO一日遊體驗。",
+      "whyOnRoute": "**精華環線的壓軸核心景點** — 島上最集中的UNESCO代表景點，也是全日唯一能在**5,000年前水火山地形**上，同時將**濟州島全景、大海與漢拏山盡收眼底**的地方。從地理位置上看是東海岸的壓軸終點，從地質上則是繼漢拏山源頭和大浦柱狀節理熔岩之後的**第三個火山章節**。下午15:25抵達，可在登頂前先觀賞**15:00海女表演**，在**16:30前後**欣賞**柔和的黃金時段光線灑落在火口邊緣**，並在**19:00公園關閉**前離開峰頂。春秋兩季晚間的額外驚喜：下山時間恰好讓旅客在**日出峰村落**趕上日落——山頂邊緣從西方接收夕陽餘暉，為全日畫下最美的句點。相較於日出參觀（雖受歡迎，但需04:30出發，且錯過白日的環島行程），午後的城山日出峰雖放棄了日出奇觀，換來的是一個完整的全島UNESCO一日遊體驗。",
       "_poi_meta": {
         "poi_key": "seongsan_ilchulbong",
         "kb_version": "1.18",
@@ -413,60 +347,45 @@
           "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
           "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
         ]
-      },
-      "visitBasics": {
-        "hours": "Paid entry hours may vary by season",
-        "closed": "Closed on the first Monday of each month (or the following day if it falls on a public holiday)",
-        "admission": "KRW 5,000 adults / KRW 2,500 children",
-        "walking": "Moderate to moderately demanding if you choose to summit"
-      },
-      "convenience": {
-        "restroom": "Lower area and surrounding facilities",
-        "parking": "Large parking lot available"
-      },
-      "smartNotes": {
-        "photo": "Rather than photographing only the summit, wider compositions that include both the crater and coastline usually feel more rewarding.",
-        "facilities": "Facilities at the base area are well developed.",
-        "tip": "Crowds, weather, and group fitness level can all affect how demanding and satisfying the summit experience feels."
       }
     }
   ],
   "routeFlowStops": [
     {
-      "name": "Eoseungsaengak",
-      "theme": "Hallasan",
+      "name": "御乘生嶽",
+      "theme": "漢拏山",
       "type": "01"
     },
     {
-      "name": "Jusangjeolli",
-      "theme": "Cliffs",
+      "name": "柱狀節理",
+      "theme": "海崖",
       "type": "02"
     },
     {
-      "name": "Lunch",
-      "theme": "Reset",
+      "name": "午餐",
+      "theme": "放鬆轉換",
       "type": "03"
     },
     {
-      "name": "Jeongbang",
-      "theme": "Waterfall",
+      "name": "正房瀑布",
+      "theme": "瀑布",
       "type": "04"
     },
     {
-      "name": "Seongsan",
-      "theme": "Crater",
+      "name": "城山",
+      "theme": "火山口",
       "type": "05"
     }
   ],
   "routePhases": [
     {
       "phase": "上午",
-      "duration": "1-2",
+      "duration": "1–2",
       "description": ""
     },
     {
       "phase": "中午至午後",
-      "duration": "3-4",
+      "duration": "3–4",
       "description": ""
     },
     {
@@ -476,19 +395,19 @@
     }
   ],
   "routeShapeIntro": {
-    "title": "行程動線總覽",
+    "title": "行程路線一覽",
     "subtitle": "從城山日出峰出發，穿越萬丈窟、柱狀節理帶，直抵西南部的山房山與O'sulloc茶田。"
   },
   "whyTourWorks": {
     "bestFor": [
       "只有一天在濟州的旅客",
       "早晨抵達濟州的旅客",
-      "希望遊覽標誌性景點的旅客",
+      "希望遊覽代表性景點的旅客",
       "喜愛活躍觀光方式的旅客"
     ],
     "routeLogicSections": [
       {
-        "title": "專為時間有限的旅客而設計",
+        "title": "適合時間有限的旅客而構成",
         "icon": "clock-3",
         "iconBg": "bg-amber-50/80",
         "items": [
@@ -498,7 +417,7 @@
           },
           {
             "label": "南部海岸置於行程中段",
-            "detail": "大浦柱狀節理、午餐與正房瀑布保持從西向東的流動節奏，同時維持全日強烈的視覺密度。"
+            "detail": "大浦柱狀節理、午餐與正房瀑布保持從西向東的流動節奏，同時維持全日強烈的景色豐富度。"
           },
           {
             "label": "以城山日出峰作為壓軸",
@@ -513,11 +432,11 @@
         "items": [
           {
             "label": "兩段較為活躍的步行段落",
-            "detail": "御乘生岳和城山日出峰使這條路線比典型的小團體一日遊在體力上更為消耗。"
+            "detail": "御乘生嶽和城山日出峰使這條路線比典型的小團體一日遊在體力上更為消耗。"
           },
           {
-            "label": "以景觀密度為優先",
-            "detail": "這不是一條慢慢觀賞的路線，而是為希望在一天內體驗更全面、更豐富的濟州之旅的旅客而設計。"
+            "label": "以景觀豐富度為優先",
+            "detail": "這不是一條慢慢觀賞的路線，而是為希望在一天內體驗更全面、更豐富的濟州之旅的旅客而構成。"
           },
           {
             "label": "時間有限時尤其值得",
@@ -532,7 +451,7 @@
         "items": [
           {
             "label": "漢拏山通行限制",
-            "detail": "御乘生岳可能受季節性規定或天氣管制影響。"
+            "detail": "御乘生嶽可能受季節性規定或天氣管制影響。"
           },
           {
             "label": "暴露海岸景點的強風影響",
@@ -547,7 +466,7 @@
     ],
     "lessIdealFor": [
       "偏好悠閒節奏的旅客",
-      "希望避免台階或上坡步行的旅客",
+      "希望避免臺階或上坡步行的旅客",
       "攜帶幼齡兒童的團體",
       "高度依賴嬰兒車的團體"
     ]
@@ -570,8 +489,8 @@
       "preview": "比一般路線更為活躍",
       "content": [
         "此路線包含兩段較為吃力的步行段落。",
-        "御乘生岳包含上坡步行和台階。",
-        "正房瀑布包含台階和岩石步道。",
+        "御乘生嶽包含上坡步行和臺階。",
+        "正房瀑布包含臺階和岩石步道。",
         "若團體選擇登頂，城山日出峰的體力消耗會更為明顯。",
         "強烈建議穿著舒適、有良好抓地力的鞋款。"
       ]
@@ -583,17 +502,17 @@
       "content": [
         "小雨：行程通常照常進行",
         "強風：大浦柱狀節理或城山日出峰等暴露路段可能縮短停留時間",
-        "漢拏山限制：若御乘生岳受管制，路線可能調整或替換",
+        "漢拏山限制：若御乘生嶽受管制，路線可能調整或替換",
         "休館日：若有必要，將使用替代景點或調整停留時間"
       ]
     },
     {
       "id": "flight",
       "title": "同日抵達或離開濟州的旅客",
-      "preview": "需要充裕的傍晚緩衝時間",
+      "preview": "需要充裕的傍晚預留時間",
       "content": [
-        "此為高密度路線，在一天內涵蓋濟州島的代表性精華景點。",
-        "同日抵達或出發可以配合，但須預留足夠的傍晚緩衝時間。",
+        "此為內容豐富路線，在一天內涵蓋濟州島的代表性精華景點。",
+        "同日抵達或出發可以配合，但須預留足夠的傍晚預留時間。",
         "強烈建議選擇晚間航班。",
         "判斷時程風險時，請將交通、步行節奏及現場狀況一併考量。"
       ]
@@ -612,7 +531,7 @@
     },
     {
       "id": "included",
-      "title": "What’s Included / Not Included",
+      "title": "包含/不包含內容",
       "preview": "包含導遊、車輛、接送及入場費",
       "variant": "included",
       "content": [
@@ -646,7 +565,7 @@
       {
         "season": "夏季（6至8月）",
         "range": "22–30°C",
-        "notes": "天氣炎熱，但沿海行駛時濕度較為緩和。天帝淵瀑布水量在此季節達到高峰。"
+        "notes": "天氣炎熱，但沿海行駛時溼度較為緩和。天帝淵瀑布水量在此季節達到高峰。"
       },
       {
         "season": "秋季（9至11月）",
@@ -682,13 +601,13 @@
     {
       "icon": "clock-3",
       "title": "一天內看遍最多精華",
-      "description": "專為時間有限的旅客設計",
+      "description": "適合時間有限的旅客構成",
       "iconBg": "bg-emerald-50/80",
-      "body": "專為時間有限的旅客設計"
+      "body": "適合時間有限的旅客構成"
     },
     {
       "icon": "mountain",
-      "title": "專注標誌性景點",
+      "title": "專注代表性景點",
       "description": "從漢拏山一路覽至城山日出峰",
       "iconBg": "bg-sky-50/80",
       "body": "從漢拏山一路覽至城山日出峰"
@@ -743,7 +662,7 @@
     {
       "id": "one-day",
       "question": "若我在濟州只有一天，這條路線合適嗎？",
-      "answer": "是的。這條路線專為希望在一天內覽遍濟州核心景點的旅客而設計，節奏比一般一日遊更快。"
+      "answer": "是的。這條路線適合希望在一天內覽遍濟州核心景點的旅客而構成，節奏比一般一日遊更快。"
     },
     {
       "id": "tiring",
@@ -758,7 +677,7 @@
     {
       "id": "flight",
       "question": "如果我當天抵達或離開濟州，可以參加嗎？",
-      "answer": "可能可以，但前提是傍晚需有充裕的緩衝時間。若您的航班時間緊湊，不建議選擇此路線。"
+      "answer": "可能可以，但前提是傍晚需有充裕的預留時間。若您的航班時間緊湊，不建議選擇此路線。"
     },
     {
       "id": "order",
@@ -810,13 +729,13 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "可訂狀態會在付款步驟中確認。",
     "price": {
       "amountLabel": "78",
       "currency": "USD",
       "per": "人",
       "priceSource": "internal",
-      "priceNote": "Small-group bilingual full-island tour. AtoC Korea direct sale; 10% discount applied vs operator base.",
+      "priceNote": "濟州全島小團雙語路線。AtoC Korea官網直售，較當地團隊基準價優惠10%。",
       "discountPercent": 10
     }
   },
@@ -845,24 +764,24 @@
       "jusangjeolli",
       "hallim_park"
     ],
-    "pace_level": 1,
+    "pace_level": 1.0,
     "walking_level": 0.8,
-    "scenic_level": 1,
-    "photo_level": 1,
+    "scenic_level": 1.0,
+    "photo_level": 1.0,
     "culture_level": 0.4,
     "relax_level": 0.4,
-    "first_time_fit": 1,
+    "first_time_fit": 1.0,
     "family_fit": 0.8,
     "senior_fit": 0.6,
-    "couple_fit": 1,
+    "couple_fit": 1.0,
     "active_traveler_fit": 0.8,
-    "one_day_fit": 1,
+    "one_day_fit": 1.0,
     "same_day_flight_fit": 0.4,
     "rain_fit": 0.5,
-    "value_for_money_fit": 1,
-    "iconic_landmark_fit": 1,
+    "value_for_money_fit": 1.0,
+    "iconic_landmark_fit": 1.0,
     "cafe_fit": 0.2,
-    "adult_family_fit": 1,
+    "adult_family_fit": 1.0,
     "young_kids_fit": 0.5,
     "senior_active_fit": 0.8,
     "senior_general_fit": 0.6,
@@ -876,7 +795,7 @@
     "comfort_level": 0.4,
     "budget_fit": 0.6,
     "premium_fit": 0.5,
-    "small_group_fit": 1,
+    "small_group_fit": 1.0,
     "private_fit": 0.2,
     "bus_fit": 0.2,
     "price_band": "mid",
@@ -933,116 +852,116 @@
     "destination_region": "jeju",
     "vehicle_type": "minicoach",
     "vehicle_type_legacy": "minicoach",
-    "duration_hours": 10,
+    "duration_hours": 10.0,
     "anchor_poi_keys": [
       "seongsan_ilchulbong",
       "manjanggul_cave",
       "jusangjeolli"
     ],
     "pickup_base_normalized": "jeju_city",
-    "unesco_fit": 1,
-    "family_with_teens_fit": 1,
+    "unesco_fit": 1.0,
+    "family_with_teens_fit": 1.0,
     "solo_traveler_fit": 0.85,
     "food_fit": 0.6,
-    "nature_fit": 1,
+    "nature_fit": 1.0,
     "beach_fit": 0.6,
     "nightlife_fit": 0.2,
-    "no_shopping_fit": 1,
+    "no_shopping_fit": 1.0,
     "intangible_heritage_fit": 0.85,
     "seasonality": "year_round",
     "profile_format": "small_group_fixed_itinerary",
     "private_tour_fit": 0.05,
-    "fixed_itinerary_fit": 1,
+    "fixed_itinerary_fit": 1.0,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
-    "first_time_jeju_fit": 1,
-    "jeju_highlights_fit": 1,
-    "island_wide_fit": 1,
+    "first_time_jeju_fit": 1.0,
+    "jeju_highlights_fit": 1.0,
+    "island_wide_fit": 1.0,
     "north_jeju_fit": 0.85,
-    "south_jeju_fit": 1,
-    "east_jeju_fit": 1,
+    "south_jeju_fit": 1.0,
+    "east_jeju_fit": 1.0,
     "west_jeju_fit": 0.3,
     "central_jeju_fit": 0.6,
-    "unesco_taste_fit": 1,
-    "world_natural_heritage_fit": 1,
-    "biosphere_reserve_fit": 1,
-    "global_geopark_fit": 1,
-    "triple_unesco_fit": 1,
-    "volcano_geology_fit": 1,
-    "columnar_jointing_fit": 1,
+    "unesco_taste_fit": 1.0,
+    "world_natural_heritage_fit": 1.0,
+    "biosphere_reserve_fit": 1.0,
+    "global_geopark_fit": 1.0,
+    "triple_unesco_fit": 1.0,
+    "volcano_geology_fit": 1.0,
+    "columnar_jointing_fit": 1.0,
     "parasitic_cone_fit": 0.95,
-    "tuff_cone_fit": 1,
-    "surtseyan_eruption_fit": 1,
+    "tuff_cone_fit": 1.0,
+    "surtseyan_eruption_fit": 1.0,
     "lava_flow_fit": 0.9,
-    "shield_volcano_fit": 1,
-    "geological_education_fit": 1,
+    "shield_volcano_fit": 1.0,
+    "geological_education_fit": 1.0,
     "natural_monument_anchor_count": 3,
-    "waterfall_fit": 1,
-    "coastal_waterfall_fit": 1,
-    "ocean_falling_waterfall_fit": 1,
-    "asia_unique_landform_fit": 1,
+    "waterfall_fit": 1.0,
+    "coastal_waterfall_fit": 1.0,
+    "ocean_falling_waterfall_fit": 1.0,
+    "asia_unique_landform_fit": 1.0,
     "haenyeo_culture_fit": 0.85,
     "wwii_history_fit": 0.7,
     "japanese_colonial_history_fit": 0.7,
     "qin_dynasty_legend_fit": 0.85,
     "place_name_etymology_fit": 0.85,
-    "yeongjusipgyeong_fit": 1,
+    "yeongjusipgyeong_fit": 1.0,
     "korean_fir_belt_fit": 0.85,
     "endemic_flora_fit": 0.85,
     "biodiversity_fit": 0.95,
-    "national_park_fit": 1,
+    "national_park_fit": 1.0,
     "nature_walk_fit": 0.85,
     "scenic_drive_fit": 0.95,
-    "coastal_cliff_fit": 1,
-    "ocean_view_fit": 1,
+    "coastal_cliff_fit": 1.0,
+    "ocean_view_fit": 1.0,
     "tide_dependent_fit": 0.7,
     "high_tide_spectacle_fit": 0.85,
     "walking_level_fit": 0.65,
     "stair_climbing_fit": 0.6,
     "trail_walking_fit": 0.85,
     "elevation_gain_total_m": 340,
-    "moderate_mobility_fit": 1,
+    "moderate_mobility_fit": 1.0,
     "low_intensity_fit": 0.85,
     "senior_friendly_fit": 0.7,
     "stroller_friendly_fit": 0.4,
     "wheelchair_accessible_anchor_fit": 0.4,
     "first_time_korea_fit": 0.85,
-    "first_time_jeju_priority_fit": 1,
+    "first_time_jeju_priority_fit": 1.0,
     "small_family_fit": 0.85,
     "senior_couple_fit": 0.85,
     "honeymoon_fit": 0.9,
     "history_lover_fit": 0.85,
-    "geology_enthusiast_fit": 1,
-    "photographer_fit": 1,
-    "instagrammable_fit": 1,
+    "geology_enthusiast_fit": 1.0,
+    "photographer_fit": 1.0,
+    "instagrammable_fit": 1.0,
     "group_size_min": 2,
     "group_size_max": 14,
-    "small_group_van_fit": 1,
+    "small_group_van_fit": 1.0,
     "calm_pace_fit": 0.7,
     "active_pace_fit": 0.85,
     "checkbox_sightseeing_fit": 0.4,
     "deep_dwell_fit": 0.85,
-    "balanced_pace_fit": 1,
-    "language_english_fit": 1,
+    "balanced_pace_fit": 1.0,
+    "language_english_fit": 1.0,
     "language_chinese_fit": 0.85,
     "language_japanese_fit": 0.5,
-    "english_guide_fit": 1,
-    "geology_guide_fit": 1,
-    "spring_fit": 1,
+    "english_guide_fit": 1.0,
+    "geology_guide_fit": 1.0,
+    "spring_fit": 1.0,
     "summer_fit": 0.85,
-    "autumn_fit": 1,
+    "autumn_fit": 1.0,
     "winter_fit": 0.7,
     "all_year_fit": 0.85,
     "off_season_fit": 0.6,
     "monsoon_fit": 0.55,
-    "best_season_spring_fit": 1,
-    "best_season_autumn_fit": 1,
+    "best_season_spring_fit": 1.0,
+    "best_season_autumn_fit": 1.0,
     "indoor_anchor_fit": 0.05,
     "fog_sensitivity": 0.6,
     "wind_sensitivity": 0.5,
     "early_start_fit": 0.85,
     "late_finish_fit": 0.7,
-    "full_day_fit": 1,
+    "full_day_fit": 1.0,
     "half_day_fit": 0.05,
     "value_priced_fit": 0.95,
     "budget_traveler_fit": 0.85,
@@ -1050,15 +969,15 @@
     "total_admission_krw_per_adult": 9000,
     "off_beaten_path_fit": 0.4,
     "crowd_avoidance_fit": 0.4,
-    "tourist_circuit_fit": 1,
-    "minicoach_fit": 1,
+    "tourist_circuit_fit": 1.0,
+    "minicoach_fit": 1.0,
     "max_pax_per_vehicle": 14,
-    "jeju_city_pickup_fit": 1,
+    "jeju_city_pickup_fit": 1.0,
     "seogwipo_pickup_fit": 0.85,
     "cruise_shore_excursion_fit": 0.55,
     "cruise_passenger_fit": 0.6,
     "korean_food_fit": 0.95,
-    "jeju_local_cuisine_fit": 1,
+    "jeju_local_cuisine_fit": 1.0,
     "galchi_fit": 0.95,
     "black_pig_heritage_fit": 0.85,
     "seafood_fit": 0.95,
@@ -1073,11 +992,11 @@
     "is_anchor_for_first_time_jeju": true,
     "catalog_position": "first_time_jeju_intro_loop",
     "competing_tours_count": 3,
-    "china_mainland_market_fit": 0,
-    "korea_domestic_market_fit": 0,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
@@ -1131,7 +1050,7 @@
       "jeongbang_falls",
       "seongsan_ilchulbong"
     ],
-    "reviews_attribution": "Reviews curated from AtoC Korea operator feedback. 4.7/5 average across 168 verified bookings.",
+    "reviews_attribution": "Reseñas verificadas por AtoC Korea. 4.7/5 average across 168 verified bookings.",
     "unesco_fit_note": "unesco_fit=5: two UNESCO Natural Heritage sites on route from the Jeju Volcanic Island and Lava Tubes inscription (2007) — Manjanggul Cave and Seongsan Ilchulbong. Highest possible UNESCO density for a one-day Jeju tour.",
     "competing_products": [
       "southwest-hallasan-osulloc-aewol",
@@ -1187,19 +1106,19 @@
       "id": "hero",
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Jeju Grand Highlights Loop",
-        "headlineLine2": "Small Group Day Tour",
+        "headlineLine1": "濟州全島精華一日遊",
+        "headlineLine2": "東西南全島環島小團體",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
           "imagePosition": "center 35%",
-          "tagline": "Built for travelers with limited time, this high-density route covers Hallasan, dramatic south-coast scenery, a waterfall, and Seongsan Ilchulbong in one day.",
+          "tagline": "一天走遍濟州東西南——世界遺產城山日出峰、萬丈窟熔岩洞穴、柱狀節理帶海崖，盡在一日之內。",
           "pills": [
             "一日遊首選",
             "小團體一日遊",
-            "標誌性精華"
+            "代表性精華"
           ],
           "meta": {
-            "duration": "9–9.5 hours",
+            "duration": "9–9.5小時",
             "region": "濟州全島路線",
             "stops": "5 個景點",
             "rating": 0,
@@ -1248,7 +1167,7 @@
           },
           {
             "icon": "mountain",
-            "label": "景點密度",
+            "label": "景點豐富度",
             "value": "極高"
           },
           {
@@ -1283,46 +1202,46 @@
             "id": 1,
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-            "location": "Overall Route",
-            "atmosphere": "See Jeju’s signature landscapes in a single day",
-            "alt": "Overall atmosphere of a Jeju highlights day tour",
-            "caption": "Overall atmosphere of a Jeju highlights day tour"
+            "location": "整體路線",
+            "atmosphere": "在一日之內遍覽濟州代表性風光",
+            "alt": "濟州精華一日遊的整體氛圍",
+            "caption": "濟州精華一日遊的整體氛圍"
           },
           {
             "id": 2,
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
-            "location": "Hallasan Opening Stop",
-            "atmosphere": "Crisp mountain air at higher elevation",
-            "alt": "Atmosphere of the Hallasan Eoseungsaengak trail",
-            "caption": "Atmosphere of the Hallasan Eoseungsaengak trail"
+            "location": "漢拏山起點",
+            "atmosphere": "高海拔的清新山嵐氣息",
+            "alt": "漢拏山御乘生嶽步道的氛圍",
+            "caption": "漢拏山御乘生嶽步道的氛圍"
           },
           {
             "id": 3,
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
-            "location": "Jusangjeolli Coast",
-            "atmosphere": "A dramatic contrast of waves and cliffs",
-            "alt": "Daepo Jusangjeolli Cliff on Jeju’s coast",
-            "caption": "Daepo Jusangjeolli Cliff on Jeju’s coast"
+            "location": "柱狀節理海岸",
+            "atmosphere": "海浪與懸崖的磅礴景色對比",
+            "alt": "濟州海岸的大浦柱狀節理海岸",
+            "caption": "濟州海岸的大浦柱狀節理海岸"
           },
           {
             "id": 4,
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-            "location": "Waterfall by the Sea",
-            "atmosphere": "A change of texture in the afternoon route",
-            "alt": "Coastal scenery at Jeongbang Waterfall",
-            "caption": "Coastal scenery at Jeongbang Waterfall"
+            "location": "海邊瀑布",
+            "atmosphere": "午後行程中截然不同的地景質感",
+            "alt": "正房瀑布的海濱風光",
+            "caption": "正房瀑布的海濱風光"
           },
           {
             "id": 5,
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
-            "location": "Crater Finale",
-            "atmosphere": "A symbolic closing view with real impact",
-            "alt": "Seongsan Ilchulbong crater and coastline",
-            "caption": "Seongsan Ilchulbong crater and coastline"
+            "location": "火口壓軸",
+            "atmosphere": "撼動人心的壓軸景觀",
+            "alt": "城山日出峰的火口與海岸線",
+            "caption": "城山日出峰的火口與海岸線"
           }
         ]
       }
@@ -1335,181 +1254,177 @@
           {
             "number": 1,
             "time": "09:30",
-            "duration": "70 min",
-            "name": "Hallasan Eoseungsaengak",
-            "category": "Hallasan Foothill Trail",
-            "description": "The day begins in the clear highland air of Hallasan. Eoseungsaengak links forest trail, volcanic slope, and lookout points, giving the route a strong opening from the very first stop.",
-            "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "duration": "75分鐘",
+            "name": "漢拏山御乘生嶽",
+            "category": "漢拿山山麓步道（御林目）——UNESCO世界遺產體驗",
+            "description": "**御乘生嶽（御乘生嶽，1,169 m）** 是**漢拏山（漢拏山，1,950 m）** 西麓的一座寄生火山錐（火山錐 / *oreum*）——漢拏山是韓國最高峰，也是濟州島的地質核心。漢拏山本身擁有**無與倫比的榮銜疊加**：**UNESCO世界自然遺產（2007-07-02登載）**、**UNESCO生物圈保護區（2002年）**、**韓國國家公園（1970-03-24指定）**，以及**天然紀念物第182號（1966年）**——是韓國唯一同時持有UNESCO三大自然指定的地點。御乘生嶽登山口位於**於林木訪客中心（御里牧遊客中心）**，全程僅需**在1.3公里內爬升約200公尺**，到達寬闊的山頂觀景臺——來回約60分鐘，即可體驗**「漢拏山UNESCO代表看點」**，無需耗費9小時攀登白鹿潭火口。天晴時，從觀景臺可遠眺**黃海、漢拏山白鹿潭火口以及向南延伸的寄生火山錐群**。植物亮點：此海拔帶（1,000–1,300 m）是**闊葉落葉林與韓國冷杉**混生的過渡帶。漢拏山共記錄**超過2,000種植物**——約佔**朝鮮半島全部植物種類的一半**。山頂觀景臺旁還留有一段歷史遺蹟：**1945年帝國日本建造的鋼筋混凝土碉堡/通訊設施**，建於二戰最後幾個月，是韓國現存海拔最高的二戰日軍工事之一。入場費及停車費均為**免費**；**無需預約**（不同於白鹿潭峰頂每日限額1,000人）。",
+            "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
             "highlights": [
-              "One of Hallasan’s most approachable signature viewpoints",
-              "A refreshing start built around forest trail and mountain air",
-              "More memorable than heading straight from the city to the coast",
-              "A first stop that leaves a strong impression even with limited time"
+              "**漢拏山 = 韓國唯一「三重自然指定」地點**：UNESCO世界遺產2007年 + 生物圈保護區2002年 + 國家公園1970年",
+              "**御乘生嶽峰頂1,169 m** — 寄生火山錐（火山錐），為濟州360餘座火山錐之一",
+              "步道全長**單程1.3公里 / 爬升約200公尺** — 寬闊臺階與木棧道，運動鞋即可應對",
+              "觀景臺全景涵蓋**漢拏山白鹿潭火口、黃海及南部寄生火山錐群**",
+              "植物過渡帶——**韓國冷杉（韓國冷杉，IUCN近危物種）**林帶約在100公尺以上",
+              "山頂保留**1945年帝國日本碉堡碉堡** — 罕見的高海拔二戰遺蹟",
+              "**免費入場** + 免費停車；無需預約上限（不同於白鹿潭峰頂每日限額1,000人）",
+              "漢拏山共記錄**超過2,000種植物** — 約佔朝鮮半島植物種類的一半",
+              "來回停留**約60分鐘** = 完整體驗「UNESCO代表看點」，無需9小時全程登頂白鹿潭"
             ],
             "timeUsed": [
-              "Trail briefing and pace check on arrival",
-              "Main uphill walk toward the viewpoint",
-              "Short photo and rest stop before heading down"
+              "御林目停車場+廁所+步道簡介——約10分鐘",
+              "登頂1.3公里至觀景臺——約25分鐘",
+              "頂部觀景臺+拍照+碉堡參觀——約15分鐘",
+              "下山——約20分鐘",
+              "集合時間——約5分鐘"
             ],
-            "whyOnRoute": "Starting here builds altitude, energy, and a strong sense of Hallasan before the route turns toward the south coast.",
-            "visitBasics": {
-              "hours": "From 05:00, with possible seasonal restrictions",
-              "closed": "May be restricted in severe weather",
-              "admission": "Free",
-              "walking": "Moderate incline"
-            },
-            "convenience": {
-              "restroom": "At the trail entrance",
-              "parking": "Parking available"
-            },
-            "smartNotes": {
-              "photo": "In clear weather, wide shots of the ridge and distant views usually work better than tight portraits.",
-              "facilities": "Basic facilities are mainly concentrated near the entrance area.",
-              "tip": "Especially after rain or in colder seasons, grip and warmth matter more here than at most other stops."
+            "whyOnRoute": "**全島精華環線的起點核心景點**。以漢拏山作為行程起點，能讓旅客*首先*建立對濟州島地質輪廓的認識——整個島嶼就是一座盾形火山的側翼，而後續所有景點（柱狀節理海岸的熔岩 → 正房瀑布直落入海 → 城山日出峰的凝灰岩錐）都是同一次漢拏山噴發歷史的延伸表現。御乘生嶽是**唯一能在一個地點、60分鐘內、無需預約**同時獲得「UNESCO世界遺產 + 生物圈保護區 + 地質公園」體驗的漢拏山步道——靈室和城板嶽步道均需**5至9小時**，且白鹿潭峰頂每日限額1,000人。對於初次造訪濟州的旅客，這是行程目錄中性價比最高的漢拏山入門方式。09:30的早出發也能趕在**11:00前**——漢拏山春夏季節常出現雲霧籠罩的時間點之前——順利抵達山頂。",
+            "_poi_meta": {
+              "poi_key": "hallasan_eoseungsaengak",
+              "kb_version": "1.18",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007)",
+                "Hallasan National Park official site (hallasan.go.kr)",
+                "Korea National Park Service designation records",
+                "VisitKorea — Hallasan Eoseungsaengak trail",
+                "Korea Forest Service — Abies koreana red list status"
+              ]
             }
           },
           {
             "number": 2,
             "time": "11:15",
-            "duration": "40 min",
-            "name": "Daepo Jusangjeolli Cliff",
-            "category": "Basalt Coastline",
-            "description": "After coming down from Hallasan, the mood shifts sharply on the south coast. Waves, basalt columns, and cliffside contrast make this a high-impact stop that quickly raises the visual intensity of the day before lunch.",
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "duration": "45分鐘",
+            "name": "大浦柱狀節理海岸",
+            "category": "天然紀念物第443號 — 玄武岩海崖",
+            "description": "**大浦柱狀節理**是一段**全長1公里的六角形柱狀節理玄武岩懸崖**，位於中文海岸線，於**2005年1月6日被指定為天然紀念物第443號**。石柱高達**30至40公尺**，緊密排列著**五至七邊形稜柱**（以六邊形為主）——這種幾何形態是由於**漢拏山側翼噴出的玄武岩熔岩（約25萬至14萬年前）抵達海洋後，在冷卻收縮時垂直於冷卻面斷裂**而形成。全球最著名的柱狀節理景觀包括**英國巨人堤道**、**美國魔鬼柱**和**蘇格蘭芬加爾洞穴**——大浦柱狀節理是**東亞最具代表性的柱狀節理景點**，也是其中最易到訪的。沿岸的800公尺**木棧道環線**帶領大家前往有欄杆防護的懸崖邊緣，直接俯瞰石柱；**漲潮時海浪沖擊石柱，水花飛濺高達20公尺**，偶爾越過欄杆。入場費：**成人₩2,000 / 青少年₩1,000 / 7歲以下及65歲以上免費**。本景點屬於**濟州全球地質公園（UNESCO 2010-10認定）**的一部分，是全島**13個官方地質遺址**之一，與城山日出峰、萬丈窟熔岩洞和水月峰並列。懸崖頂觀景臺為**無障礙設施**（輪椅及嬰兒車可通行）。沿步道環線設有三個觀景臺，提供不同角度觀賞：**第一觀景臺**以側面呈現石柱（最適合拍攝六邊形幾何構圖），**中央觀景臺**提供俯拍石柱頂端的圖案，**遠端觀景臺**則可捕捉1公里海岸線全景，晴天時可見漢拏山作為背景。**攝影最佳時段：14:00至16:00**，西偏太陽正面照亮石柱；日落時分可拍攝剪影，但會失去石柱表面紋理細節。開放時間：**每日09:00至18:00（最後入場17:30）**，全年運營。",
+            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
             "highlights": [
-              "Hexagonal basalt columns stretching along the shoreline",
-              "A striking sea-cliff contrast after the Hallasan section",
-              "A short but highly efficient stop with strong visual impact",
-              "One of South Jeju’s signature photo spots"
+              "**天然紀念物第443號** — **2005年1月6日**指定，為濟州海岸天然紀念物中最近期的一處",
+              "石柱高達**30至40公尺**，沿**1公里**海岸線緊密排列著**五至七邊形稜柱**（以六邊形為主）",
+              "成因：**漢拏山側翼熔岩約25萬至14萬年前流入海中冷卻收縮**，垂直於冷卻面裂開",
+              "**東亞最具代表性的柱狀節理景點** — 媲美英國巨人堤道、美國魔鬼柱、蘇格蘭芬加爾洞穴",
+              "**漲潮時水花飛濺高達20公尺** — 海浪噴泉攝影時機",
+              "**0.8公里木棧道環線**，約15分鐘步行 — 無障礙觀景臺，輪椅及嬰兒車可通行",
+              "屬於**濟州全球地質公園（UNESCO 2010-10）** — 全島13處官方地質遺址之一",
+              "成人₩2,000 / 青少年₩1,000 / **7歲以下及65歲以上免費**",
+              "晴天時可遠眺漢拏山峰頂，地質上**直接位於其下遊**"
             ],
             "timeUsed": [
-              "Short introduction at the entrance",
-              "Walk to the main coastal viewpoint",
-              "Photo stop and return to the meeting point"
+              "海崖欣賞 — 約25分鐘"
             ],
-            "whyOnRoute": "It captures the visual identity of Jeju’s south coast without adding another long walking segment to the morning.",
-            "visitBasics": {
-              "hours": "09:00–18:00 (last entry 17:40)",
-              "closed": "Open year-round",
-              "admission": "KRW 2,000 adults / KRW 1,000 children and teens",
-              "walking": "Easy to moderate"
-            },
-            "convenience": {
-              "restroom": "Entrance area",
-              "parking": "Parking available (paid lot)"
-            },
-            "smartNotes": {
-              "photo": "Wave direction, spray, and side light can change the mood quickly, so wide coastal framing works especially well here.",
-              "facilities": "The entrance area is well equipped, and the viewpoint path itself is relatively straightforward.",
-              "tip": "Even on a sunny day, the coast usually feels colder and windier than inland Jeju."
+            "whyOnRoute": "**環線的「柱狀熔岩」核心亮點**。在漢拏山確立了噴發源頭之後，大浦柱狀節理展示的是**同樣的熔岩抵達海洋後凝固成幾何形態**——一段延伸30公里海岸線、完整連貫的地質故事。中文地區也是從西南海岸折返東邊，朝向正房瀑布與城山方向的自然轉折點，因此這個景點同時扮演著地理樞紐的角色。相較於**龍頭海岸（漲潮或天候不佳時可能關閉，約30%的造訪日）**或**松嶽山（步行距離多1.6公里，石柱較不集中）**，大浦柱狀節理**全天候開放、無障礙設施、從車廂步行僅需15分鐘**——是南部海岸單位時間最高效的觀景點。11:15的抵達時段也能搶在**郵輪岸上觀光人潮（12:15後大量湧入）**之前完成參觀。",
+            "_poi_meta": {
+              "poi_key": "daepo_jusangjeolli_cliff",
+              "kb_version": "1.18",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Cultural Heritage Administration — Natural Monument No. 443 designation (2005年1月6日)",
+                "Jeju Global Geopark official site (geopark.jeju.go.kr)",
+                "UNESCO Global Geoparks Network — Jeju (2010 designation)",
+                "VisitJeju — Daepo Jusangjeolli",
+                "Korea Geological Survey — Jeju basalt formation studies"
+              ]
             }
           },
           {
             "number": 3,
             "time": "12:15",
-            "duration": "60 min",
-            "name": "Lunch",
-            "category": "Lunch Stop",
-            "description": "This is not just a break in the schedule. It is the key reset point that helps preserve energy for Jeongbang Waterfall and Seongsan Ilchulbong in the second half of the day.",
-            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+            "duration": "60分鐘",
+            "name": "午餐 — 西歸浦當地料理",
+            "category": "午間休息——西歸浦本地菜",
+            "description": "**在西歸浦市中心享用60分鐘的午休**——濟州島南部城市，以**西歸浦每日奧勒市場**新鮮到岸的海鮮及鮑魚豐富的海岸聞名。根據季節和團體規模靈活搭配：**辣燉白帶魚（白帶魚燉煮）**在船隻靠岸季節（9月至2月）可在西歸浦名店品嚐、**鮑魚拌飯（鮑魚拌飯）**全年供應於面向市場的餐廳，或是**濟州黑毛豬烤肉（濟州黑豬燒烤）**供偏好烤肉的旅客選擇。濟州黑豬（**濟州黑豬，濟州黑豬品種**）於2015年被列為**文化財料第5號**，至今仍是受濟州保護的品種。素食備選安排可預約：**涼拌辣醬麵（涼拌辣面）**佐時令蔬菜。午餐地點距**正房瀑布僅5分鐘步行路程**——食慾旺盛的旅客若想在繼續行程前順道享用一杯咖啡，可前往市場旁的茶飲咖啡排。",
+            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
             "highlights": [
-              "A clearly defined recovery point in a fast-moving route",
-              "Time to reset energy before heading east",
-              "Useful for active travelers across different age groups",
-              "Helps prevent the day from feeling too compressed"
+              "濟州島南部漁業及海鮮重鎮——**西歸浦**市中心",
+              "當季（9月至2月）享用**辣燉白帶魚（白帶魚燉煮）**，全年供應**鮑魚拌飯（鮑魚拌飯）**",
+              "**濟州黑毛豬（濟州黑豬）**選項 — 文化財料第5號（2015年）",
+              "素食客可選擇**涼拌辣醬麵（涼拌辣面）**",
+              "午餐地點距**正房瀑布入口僅5分鐘步行** — 車輛轉乘時間極少",
+              "接送前收集團體飲食需求；菜單提前確認"
             ],
             "timeUsed": [
-              "Arrival and seating",
-              "Meal and short break",
-              "Prepare to depart for the afternoon route"
+              "步行至午餐地點 — 約5分鐘",
+              "點餐 + 用餐 + 飲料 — 約45分鐘",
+              "步行至正房瀑布入口 — 約5分鐘",
+              "集合時間 — 約5分鐘"
             ],
-            "whyOnRoute": "Placing lunch here helps stabilize the second half of the day so the route does not feel like pure transit.",
-            "visitBasics": {
-              "hours": "Depends on restaurant operating hours",
-              "closed": "Varies by venue",
-              "admission": "Meal is paid on site unless otherwise specified",
-              "walking": "Minimal"
-            },
-            "convenience": {
-              "restroom": "Inside the restaurant",
-              "parking": "Parking available"
-            },
-            "smartNotes": {
-              "photo": "Since most of the day centers on landscapes, food photos can help vary the visual rhythm of the route.",
-              "facilities": "Dining-related facilities are usually more than sufficient.",
-              "tip": "It is better to eat at a comfortable pace here than to rush and lose energy for the afternoon."
-            }
+            "whyOnRoute": "西歸浦的市中心位置讓**正房瀑布成為下一個步行可達的景點**（午餐與第4站之間無需搭車）——相較於中文地區的午餐，節省約15分鐘行程時間。白帶魚 + 黑豬 + 鮑魚是濟州三大代表性食材，均在當地捕撈或飼養——旅客一頓飯即可完整體驗全日的飲食文化。用餐節奏也讓旅客在下午攀登城山日出峰前，得以稍作喘息，恢複上午漢拏山與海岸步行的體力。"
           },
           {
             "number": 4,
             "time": "13:35",
-            "duration": "50 min",
-            "name": "Jeongbang Waterfall",
-            "category": "Waterfall Meeting the Sea",
-            "description": "After lunch, Jeongbang Waterfall adds a very different texture to the route. Stone steps, sea mist, and a waterfall dropping toward the coast create one of South Jeju’s most distinctive landscapes.",
-            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "duration": "60分鐘",
+            "name": "正房瀑布",
+            "category": "海岸瀑布——直接落入大海（亞洲唯一）",
+            "description": "**正房瀑布（正房瀑布，「直落入海之瀑」）**是**亞洲唯一直接落入大海的瀑布**——從玄武岩懸崖**垂直落下23公尺**直入太平洋，沒有中途水潭，也沒有河口入海口。瀑布寬**8公尺**，底部5公尺水潭隨每次潮汐直通外海。這一獨特的地理標誌使正房瀑布成為**「瀛洲十景」**之一——朝鮮時代文人確立的濟州最富詩情的景觀典範。瀛洲十景由**18世紀儒學學者李源祚**定稿，其中還包括城山日出、漢拏山峰頂和天帝淵——也就是說，今天的環線一日之內遊覽了**十景中的三處**。瀑布旁的崖壁上刻有**「徐市過此」**碑文，相傳為秦朝方士**徐福**所留，他是**秦始皇（約公元前219年）**派遣尋找長生不老藥的使者。據當地傳說，徐福途經此地返程，此碑文即為地名**「西歸浦」**的字源。前往瀑布需沿**130級石階**下行至海灣（坡度較陡——建議穿著護膝友善的鞋款）。入場費：**成人₩2,000 / 青少年₩1,000 / 7歲以下及65歲以上免費**。瀑底水霧瀰漫的小氣候是著名的夏日消暑勝地。**海女**有時會在風平浪靜的日子在海灣直接販售新鮮海膽、鮑魚和鳳螺——是在正式博物館場合之外，難得一見的海女勞作攝影機會。",
+            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
             "highlights": [
-              "A compact scene where waterfall and rocky shore sit in the same frame",
-              "A noticeable shift in atmosphere after lunch",
-              "Keeps visual tension strong before the drive east",
-              "Adds variety even within a high-density highlights route"
+              "**亞洲唯一直接落入大海的瀑布** — 垂直落下23公尺，無河床預留時間",
+              "瀑布**寬8公尺**，底部5公尺水潭隨潮汐直通太平洋",
+              "「**瀛洲十景**」之一 — 朝鮮時代確立的濟州十大詩意景觀",
+              "**「徐市過此」碑文** — 相傳為秦朝方士徐福（約公元前219年）所刻，為地名「西歸浦」字源",
+              "下行**130級石階**通往海灣 — 建議穿著護膝友善鞋款",
+              "成人₩2,000 / 青少年₩1,000 / **7歲以下及65歲以上免費**",
+              "瀑底水霧小氣候 — 天然夏日消暑勝地",
+              "本地**海女**在風平浪靜的日子有時在海灣販售新鮮漁獲",
+              "通常的**最佳攝影時段為14:00至14:30**，太陽從西方正面照亮瀑布"
             ],
             "timeUsed": [
-              "Arrival and entrance flow check",
-              "Visit to the main waterfall zone",
-              "Photo stop, short rest, and return"
+              "入場 + 購票 + 下行（130級臺階）— 約10分鐘",
+              "海灣觀景臺 + 瀑布拍照 — 約25分鐘",
+              "可選擇崖邊步道＋徐福碑 — 約10分鐘",
+              "返回大巴 — 約10分鐘",
+              "集合時間 — 約5分鐘"
             ],
-            "whyOnRoute": "It deepens the impression of the south coast one more time before the longer drive toward Seongsan.",
-            "visitBasics": {
-              "hours": "09:00–17:20",
-              "closed": "Open year-round",
-              "admission": "KRW 2,000 adults / KRW 1,000 children",
-              "walking": "Moderate, with stairs"
-            },
-            "convenience": {
-              "restroom": "Entrance area",
-              "parking": "Parking available"
-            },
-            "smartNotes": {
-              "photo": "The rocky area below works well for atmosphere-rich shots, but footing and sea spray can make the experience feel more demanding.",
-              "facilities": "Basic facilities are located near the entrance.",
-              "tip": "Because of the stairs and rocky path, it usually feels more physically active on site than it appears on the map."
+            "whyOnRoute": "正房瀑布是**環線上唯一一處地質學、神話與地名字源匯聚於同一框景之中**的景點——瀑布直落入海的景象，讓「西歸浦」地名的由來說得如字面般直白。相較於**天帝淵（三層內陸瀑布，位於中文以北約3公里）**，正房的遊覽**時間更短、更為壯觀、且從午餐步行可達**——天帝淵需要繞道中文，並在其森林環線上花費30分鐘以上。13:35的午後時段也恰好在**拍攝瀑布的陽光時段（14:00至14:30）**前抵達。之後車輛沿1132號公路東行前往城山日出峰——途中65分鐘的沿海行駛，車窗外盡是**濟州東部的寄生火山錐群**。",
+            "_poi_meta": {
+              "poi_key": "jeongbang_falls",
+              "kb_version": "1.18",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Korea Cultural Heritage Foundation — Yeongjusipgyeong canon",
+                "VisitJeju — Jeongbang Pokpo official listing",
+                "Seogwipo City tourism office — admission and access",
+                "Korea Geological Survey — coastal waterfall inventory",
+                "Jeju Folklore Records — Xu Fu / Seobulgwacha inscription study"
+              ]
             }
           },
           {
             "number": 5,
             "time": "15:25",
-            "duration": "70 min",
-            "name": "Seongsan Ilchulbong",
-            "category": "Volcanic Crater Finale",
-            "description": "Ending with Seongsan Ilchulbong gives this route its clearest signature finish. After Hallasan, the south coast, and Jeongbang Waterfall, closing the day at one of Jeju’s most iconic landmarks makes the full route feel complete.",
-            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
+            "duration": "90分鐘",
+            "name": "城山日出峰",
+            "category": "聯合國世界遺產三冠王 — 5,000年水成火山凝灰岩",
+            "description": "**城山日出峰（城山日出峰，「日出峰」）**是一座**距今5,000年的蘇爾特塞式（Surtseyan）水成火山凝灰岩錐**——這是一種罕見的地形，形成於海底玄武岩噴發沖出海面之時，岩漿接觸海水引發蒸汽爆炸，堆積的火山灰形成**182公尺高、形如城堡的火口**邊緣，而非典型的熔岩錐。UNESCO將其正式定義為**「薩託謝安式火山構造典型範例」**。火口**直徑600公尺、深90公尺**，周圍環繞著**99塊鋸齒狀的邊緣岩石**，當地傳說將其比喻為石冠。城山日出峰擁有**UNESCO三重認定**：**世界自然遺產（2007-07-02登載）**，是**「濟州火山島與熔岩洞窟」**遺址的組成部分；**生物圈保護區（2002年）**；以及**全球地質公園（2010-10）**——這一榮銜僅與漢拏山本身並列，為韓國景點中的最高規格。峰體向海一側隧道有**18座帝國日本二戰地下掩體**（1945年神風特攻隊自殺艇掩體）。步道：**單程0.8公里，爬升約140公尺，來回60分鐘**，沿寬闊石階攀登。**海女表演**每日在峰下岩石海灣**13:30和15:00**各舉行一場——無需氧氣罐的濟州女性潛水員（UNESCO 2016年非物質文化遺產）。門票於**2025年4月更新**：**成人₩5,000 / 青少年+兒童₩2,500 / 團體成人₩1,600**，7歲以下及65歲以上免費。山頂觀景臺同屬**瀛洲十景**，長期以來是韓國**元旦日出朝聖**的首選地——每年1月1日有逾5萬人在黎明前登頂，自1995年起設有市政日出節活動。**牛島** —— 韓國最大的次級火山島——在山頂可清晰看見，位於4公里外海域，搭乘**15分鐘渡輪自城山港出發**可前往（來回₩10,500），適合其他行程時間充裕的旅客。",
+            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
             "highlights": [
-              "Jeju’s signature landmark as the closing stop",
-              "A strong visual payoff at the end of a high-density day",
-              "Flexibility to summit or stay around the lower viewpoints depending on group pace",
-              "A particularly clear finale for first-time visitors with limited time"
+              "**UNESCO三重認定**：世界遺產2007-07-02 + 生物圈保護區2002年 + 全球地質公園2010-10",
+              "**距今5,000年** — 薩託謝安式水火山噴發，岩漿遇海水引發蒸汽爆炸誕生",
+              "火口**直徑600公尺、深90公尺**，環繞著**99塊鋸齒狀邊緣岩石**（「石冠」）",
+              "**海拔182公尺** — 單程0.8公里 / 爬升約140公尺，石階步道來回60分鐘",
+              "峰體基部有**18座帝國日本二戰地下掩體** — 1945年神風特攻隊自殺艇掩體",
+              "**每日13:30 + 15:00海女表演**，在海濱海灣舉行 — UNESCO非物質文化遺產2016年",
+              "**門票2025年4月更新**：成人₩5,000 / 青少年₩2,500 / 7歲以下及65歲以上免費",
+              "春秋季開放時間 **05:00至19:00**（最後入場18:20）",
+              "**每月第一個星期一休館**（偶爾休息日）"
             ],
             "timeUsed": [
-              "Arrival briefing on route and walking pace",
-              "Main walk or lower-viewpoint option",
-              "Photo stop, regroup, and depart for Jeju City"
+              "登頂、觀景、下山 — 約75分鐘"
             ],
-            "whyOnRoute": "It is the most symbolic place to end the day and the stop that makes the route feel like a true full-island Jeju highlights journey.",
-            "visitBasics": {
-              "hours": "Paid entry hours may vary by season",
-              "closed": "Closed on the first Monday of each month (or the following day if it falls on a public holiday)",
-              "admission": "KRW 5,000 adults / KRW 2,500 children",
-              "walking": "Moderate to moderately demanding if you choose to summit"
-            },
-            "convenience": {
-              "restroom": "Lower area and surrounding facilities",
-              "parking": "Large parking lot available"
-            },
-            "smartNotes": {
-              "photo": "Rather than photographing only the summit, wider compositions that include both the crater and coastline usually feel more rewarding.",
-              "facilities": "Facilities at the base area are well developed.",
-              "tip": "Crowds, weather, and group fitness level can all affect how demanding and satisfying the summit experience feels."
+            "whyOnRoute": "**精華環線的壓軸核心景點** — 島上最集中的UNESCO代表景點，也是全日唯一能在**5,000年前水火山地形**上，同時將**濟州島全景、大海與漢拏山盡收眼底**的地方。從地理位置上看是東海岸的壓軸終點，從地質上則是繼漢拏山源頭和大浦柱狀節理熔岩之後的**第三個火山章節**。下午15:25抵達，可在登頂前先觀賞**15:00海女表演**，在**16:30前後**欣賞**柔和的黃金時段光線灑落在火口邊緣**，並在**19:00公園關閉**前離開峰頂。春秋兩季晚間的額外驚喜：下山時間恰好讓旅客在**日出峰村落**趕上日落——山頂邊緣從西方接收夕陽餘暉，為全日畫下最美的句點。相較於日出參觀（雖受歡迎，但需04:30出發，且錯過白日的環島行程），午後的城山日出峰雖放棄了日出奇觀，換來的是一個完整的全島UNESCO一日遊體驗。",
+            "_poi_meta": {
+              "poi_key": "seongsan_ilchulbong",
+              "kb_version": "1.18",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+                "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
+                "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
+                "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
+                "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
+              ]
             }
           }
         ]
@@ -1521,51 +1436,51 @@
       "props": {
         "routeFlowStops": [
           {
-            "name": "Eoseungsaengak",
-            "theme": "Hallasan",
+            "name": "御乘生嶽",
+            "theme": "漢拏山",
             "type": "01"
           },
           {
-            "name": "Jusangjeolli",
-            "theme": "Cliffs",
+            "name": "柱狀節理",
+            "theme": "海崖",
             "type": "02"
           },
           {
-            "name": "Lunch",
-            "theme": "Reset",
+            "name": "午餐",
+            "theme": "放鬆轉換",
             "type": "03"
           },
           {
-            "name": "Jeongbang",
-            "theme": "Waterfall",
+            "name": "正房瀑布",
+            "theme": "瀑布",
             "type": "04"
           },
           {
-            "name": "Seongsan",
-            "theme": "Crater",
+            "name": "城山",
+            "theme": "火山口",
             "type": "05"
           }
         ],
         "routePhases": [
           {
-            "phase": "Morning",
-            "duration": "1-2",
+            "phase": "上午",
+            "duration": "1–2",
             "description": ""
           },
           {
-            "phase": "Midday to Early Afternoon",
-            "duration": "3-4",
+            "phase": "中午至午後",
+            "duration": "3–4",
             "description": ""
           },
           {
-            "phase": "Finale",
+            "phase": "最終章",
             "duration": "5",
             "description": ""
           }
         ],
         "routeShapeIntro": {
-          "title": "How the day flows",
-          "subtitle": "The route starts at Hallasan, moves through the south coast, and finishes at Seongsan Ilchulbong. Pickup usually runs between 08:30 and 09:00, with return to Jeju City around 17:40–18:00."
+          "title": "行程路線一覽",
+          "subtitle": "從城山日出峰出發，穿越萬丈窟、柱狀節理帶，直抵西南部的山房山與O'sulloc茶田。"
         }
       }
     },
@@ -1575,75 +1490,75 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "Travelers who only have one day in Jeju",
-            "Travelers arriving in Jeju in the morning",
-            "Travelers who want iconic landmarks",
-            "Travelers who enjoy active sightseeing"
+            "只有一天在濟州的旅客",
+            "早晨抵達濟州的旅客",
+            "希望遊覽代表性景點的旅客",
+            "喜愛活躍觀光方式的旅客"
           ],
           "routeLogicSections": [
             {
-              "title": "Built for travelers with limited time",
+              "title": "適合時間有限的旅客而構成",
               "icon": "clock-3",
               "iconBg": "bg-amber-50/80",
               "items": [
                 {
-                  "label": "Start with Hallasan",
-                  "detail": "Beginning at Hallasan gives the day a strong sense of Jeju’s mountain geography before the longer cross-island drive begins."
+                  "label": "以漢拏山作為起點",
+                  "detail": "以漢拏山揭開行程，讓旅客在漫長的跨島車程開始前，先對濟州的山地地貌建立深刻的印象。"
                 },
                 {
-                  "label": "Place the south coast in the middle",
-                  "detail": "Jusangjeolli, lunch, and Jeongbang keep the west-to-east flow moving while maintaining strong visual density throughout the day."
+                  "label": "南部海岸置於行程中段",
+                  "detail": "大浦柱狀節理、午餐與正房瀑布保持從西向東的流動節奏，同時維持全日強烈的景色豐富度。"
                 },
                 {
-                  "label": "Finish with Seongsan Ilchulbong",
-                  "detail": "Ending at Seongsan makes the route feel less like separate regional stops and more like a complete Jeju highlights journey."
+                  "label": "以城山日出峰作為壓軸",
+                  "detail": "以城山日出峰作結，讓整段路線感覺不像各地區的獨立站點，而更像一趟完整的濟州精華之旅。"
                 }
               ]
             },
             {
-              "title": "Why this day feels especially substantial",
+              "title": "為何這一天格外充實飽滿",
               "icon": "mountain",
               "iconBg": "bg-sky-50/80",
               "items": [
                 {
-                  "label": "Two more active walking sections",
-                  "detail": "Eoseungsaengak and Seongsan Ilchulbong make this route more physically active than a typical small group day tour."
+                  "label": "兩段較為活躍的步行段落",
+                  "detail": "御乘生嶽和城山日出峰使這條路線比典型的小團體一日遊在體力上更為消耗。"
                 },
                 {
-                  "label": "Prioritizes scenery density",
-                  "detail": "This is not a slow-look route. It is designed for travelers who want a fuller, stronger one-day experience of Jeju."
+                  "label": "以景觀豐富度為優先",
+                  "detail": "這不是一條慢慢觀賞的路線，而是為希望在一天內體驗更全面、更豐富的濟州之旅的旅客而構成。"
                 },
                 {
-                  "label": "Especially worthwhile when time is short",
-                  "detail": "If you only have one day, it often makes more sense to concentrate on Jeju’s strongest representative landmarks rather than keep the pace too relaxed."
+                  "label": "時間有限時尤其值得",
+                  "detail": "若您只有一天，集中在濟州最具代表性的標誌景點，往往比保持過於悠閒的節奏更有意義。"
                 }
               ]
             },
             {
-              "title": "When on-site conditions change",
+              "title": "當現場條件發生變化時",
               "icon": "wind",
               "iconBg": "bg-slate-50/80",
               "items": [
                 {
-                  "label": "Hallasan access restrictions",
-                  "detail": "Eoseungsaengak may be affected by seasonal regulations or weather-related controls."
+                  "label": "漢拏山通行限制",
+                  "detail": "御乘生嶽可能受季節性規定或天氣管制影響。"
                 },
                 {
-                  "label": "Wind on exposed coastal stops",
-                  "detail": "Jusangjeolli and Seongsan Ilchulbong are the two coastal highlights most likely to be affected by weather."
+                  "label": "暴露海岸景點的強風影響",
+                  "detail": "大浦柱狀節理和城山日出峰是全日最可能受天氣影響的兩處海岸精華景點。"
                 },
                 {
-                  "label": "Return time may shift slightly",
-                  "detail": "Traffic, group walking speed, and on-site crowd levels can all cause small changes to the final return time."
+                  "label": "回程時間可能稍有變動",
+                  "detail": "交通狀況、團體步行速度及現場人潮，都可能造成最終回程時間的小幅變動。"
                 }
               ]
             }
           ],
           "lessIdealFor": [
-            "Travelers who prefer a slow pace",
-            "Travelers who want to avoid stairs or uphill walking",
-            "Groups traveling with very young children",
-            "Groups relying heavily on strollers"
+            "偏好悠閒節奏的旅客",
+            "希望避免臺階或上坡步行的旅客",
+            "攜帶幼齡兒童的團體",
+            "高度依賴嬰兒車的團體"
           ]
         }
       }
@@ -1655,127 +1570,127 @@
         "practicalAccordionItems": [
           {
             "id": "pickup",
-            "title": "Pickup and Return Times",
-            "preview": "Early start, return to Jeju City in the evening",
+            "title": "接送與回程時間",
+            "preview": "早出發，傍晚返回濟州市",
             "content": [
-              "Pickup in Jeju City between 08:30 and 09:00",
-              "Return to Jeju City around 17:40–18:00",
-              "Airport pickup can be arranged depending on circumstances",
-              "Final meeting time is confirmed the night before"
+              "濟州市接送時間為08:30至09:00",
+              "傍晚約17:40至18:00返回濟州市",
+              "機場接送可視情況安排",
+              "最終集合時間於前一晚確認"
             ]
           },
           {
             "id": "walking",
-            "title": "Walking and Terrain",
-            "preview": "More active than a standard route",
+            "title": "步行強度與地形",
+            "preview": "比一般路線更為活躍",
             "content": [
-              "This route includes two relatively more active walking sections.",
-              "Eoseungsaengak includes uphill walking and stairs.",
-              "Jeongbang Waterfall includes stairs and a rocky walking path.",
-              "If the group chooses to summit, Seongsan Ilchulbong will feel more demanding.",
-              "Comfortable shoes with good grip are strongly recommended."
+              "此路線包含兩段較為吃力的步行段落。",
+              "御乘生嶽包含上坡步行和臺階。",
+              "正房瀑布包含臺階和岩石步道。",
+              "若團體選擇登頂，城山日出峰的體力消耗會更為明顯。",
+              "強烈建議穿著舒適、有良好抓地力的鞋款。"
             ]
           },
           {
             "id": "weather",
-            "title": "Weather and Closure Adjustments",
-            "preview": "Usually runs as planned, with adjustments if needed",
+            "title": "天候與臨時調整",
+            "preview": "通常按計劃進行，視情況作調整",
             "content": [
-              "Light rain: the tour usually runs as normal",
-              "Strong wind: exposed sections such as Jusangjeolli or Seongsan Ilchulbong may have shorter stays",
-              "Hallasan restrictions: if Eoseungsaengak is limited, the route may be adjusted or replaced",
-              "Closure days: alternative stops or revised stay times may be used when necessary"
+              "小雨：行程通常照常進行",
+              "強風：大浦柱狀節理或城山日出峰等暴露路段可能縮短停留時間",
+              "漢拏山限制：若御乘生嶽受管制，路線可能調整或替換",
+              "休館日：若有必要，將使用替代景點或調整停留時間"
             ]
           },
           {
             "id": "flight",
-            "title": "If You Arrive in or Leave Jeju the Same Day",
-            "preview": "You need a generous evening buffer",
+            "title": "同日抵達或離開濟州的旅客",
+            "preview": "需要充裕的傍晚預留時間",
             "content": [
-              "This is a high-density route covering Jeju’s signature highlights in one day.",
-              "Same-day arrival or departure can work depending on your schedule, but only if you leave enough evening buffer.",
-              "A late flight is strongly recommended.",
-              "Please factor in traffic, walking pace, and on-site conditions when judging timing risk."
+              "此為內容豐富路線，在一天內涵蓋濟州島的代表性精華景點。",
+              "同日抵達或出發可以配合，但須預留足夠的傍晚預留時間。",
+              "強烈建議選擇晚間航班。",
+              "判斷時程風險時，請將交通、步行節奏及現場狀況一併考量。"
             ]
           },
           {
             "id": "wear",
-            "title": "What to Wear and Bring",
-            "preview": "Walking shoes, layers, and a light windproof jacket",
+            "title": "穿著與攜帶物品建議",
+            "preview": "步行鞋、多層穿搭及輕薄防風外套",
             "content": [
-              "Walking shoes with good grip",
-              "Layered clothing for mountain and coastal temperature differences",
-              "A light windproof jacket",
-              "Hat and sun protection",
-              "Water bottle"
+              "抓地力良好的步行鞋",
+              "山區與海岸溫差所需的多層穿搭",
+              "輕薄防風外套",
+              "帽子與防曬用品",
+              "水壺"
             ]
           },
           {
             "id": "included",
-            "title": "What’s Included / Not Included",
-            "preview": "Guide, vehicle, pickup, and admission included",
+            "title": "包含/不包含內容",
+            "preview": "包含導遊、車輛、接送及入場費",
             "variant": "included",
             "content": [
-              "Professional English-speaking guide",
-              "Small-group vehicle",
-              "Jeju City hotel pickup and drop-off",
-              "All admission tickets",
-              "Bottled water",
-              "Lunch (pay on site)",
-              "Personal shopping expenses",
-              "Guide gratuities"
+              "專業英語導遊",
+              "小型團體車輛",
+              "濟州市飯店接送",
+              "全部入場票券",
+              "瓶裝水",
+              "午餐（現場自付）",
+              "個人購物費用",
+              "導遊小費"
             ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "Live weather integration"
+            "label": "即時天氣連動"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "Updated daily"
+            "label": "每日更新"
           },
-          "_seasonalSummary": "A full-island loop covering east, south, and west Jeju in one day. Weather can vary between regions — coastal stops mild year-round, but inland transit can be cooler and windier.",
+          "_seasonalSummary": "全島環線，一日內涵蓋濟州東部、南部及西部。各地區天氣可能有所差異——海岸景點全年氣候溫和，但內陸路段可能較為涼爽且風勢較強。",
           "_seasonalTemperatures": [
             {
-              "season": "Spring (Mar–May)",
+              "season": "春季（3至5月）",
               "range": "8–22°C",
-              "notes": "Cherry blossoms on east coast in early April; mild driving conditions."
+              "notes": "四月初東部海岸櫻花盛開；行車條件舒適。"
             },
             {
-              "season": "Summer (Jun–Aug)",
+              "season": "夏季（6至8月）",
               "range": "22–30°C",
-              "notes": "Hot but humidity moderated by coastal driving. Cheonjiyeon falls at peak flow."
+              "notes": "天氣炎熱，但沿海行駛時溼度較為緩和。天帝淵瀑布水量在此季節達到高峰。"
             },
             {
-              "season": "Autumn (Sep–Nov)",
+              "season": "秋季（9至11月）",
               "range": "10–24°C",
-              "notes": "Best season — clearest visibility across all stops, comfortable walking temps."
+              "notes": "最佳季節——所有景點的能見度最為清晰，步行溫度舒適。"
             },
             {
-              "season": "Winter (Dec–Feb)",
+              "season": "冬季（12至2月）",
               "range": "3–10°C",
-              "notes": "Wind chill significant at Seongsan rim and Jusangjeolli cliffs. Fewer crowds at all stops."
+              "notes": "城山日出峰頂及大浦柱狀節理懸崖的風寒效應顯著，各景點遊客較少。"
             }
           ]
         },
         "seasonalVariations": [
           {
-            "season": "Spring",
-            "description": "Mountain air feels especially fresh, and island-wide visibility is often cleaner and brighter."
+            "season": "春季",
+            "description": "山間空氣格外清新，島嶼整體能見度往往更加清晰明亮。"
           },
           {
-            "season": "Summer",
-            "description": "Days are longest, and the coastal colors tend to feel the most vivid and saturated."
+            "season": "夏季",
+            "description": "白晝最長，海岸色彩往往顯得最為生動飽和。"
           },
           {
-            "season": "Autumn",
-            "description": "Clear skies often make the full-island route feel especially satisfying from start to finish."
+            "season": "秋季",
+            "description": "晴朗的天空讓全島路線從頭到尾都令人感到特別充實滿足。"
           },
           {
-            "season": "Winter",
-            "description": "The air turns sharper and clearer, and the contrast between mountain and sea becomes even stronger."
+            "season": "冬季",
+            "description": "空氣變得更為清冽透明，山脈與海洋之間的對比也愈發鮮明強烈。"
           }
         ]
       }
@@ -1786,54 +1701,63 @@
       "props": {
         "bookingSupportSteps": [
           {
-            "timing": "After booking",
-            "title": "Instant confirmation",
-            "detail": "A booking confirmation is sent with a summary of the route."
+            "timing": "預約完成後",
+            "title": "即時確認",
+            "detail": "預約確認函連同路線摘要一併寄出。",
+            "description": "預約確認函連同路線摘要一併寄出。"
           },
           {
-            "timing": "12 hours before",
-            "title": "Pre-departure reminder",
-            "detail": "Weather notes and route adjustment guidance are shared in advance."
+            "timing": "出發前12小時",
+            "title": "出發前提醒",
+            "detail": "提前分享天氣資訊及路線調整說明。",
+            "description": "提前分享天氣資訊及路線調整說明。"
           },
           {
-            "timing": "The night before",
-            "title": "Final pickup notice",
-            "detail": "You receive your exact pickup time and contact details."
+            "timing": "前一晚",
+            "title": "最終接送通知",
+            "detail": "您將收到確切的接送時間及聯絡方式。",
+            "description": "您將收到確切的接送時間及聯絡方式。"
           },
           {
-            "timing": "Morning of departure",
-            "title": "Day-of route note",
-            "detail": "Any latest on-site updates are briefly shared before departure."
+            "timing": "出發當天早晨",
+            "title": "當日路線說明",
+            "detail": "出發前簡短分享最新的現場資訊。",
+            "description": "出發前簡短分享最新的現場資訊。"
           },
           {
-            "timing": "During the tour",
-            "title": "Stop-by-stop guidance",
-            "detail": "Key information is shared at each stop as needed."
+            "timing": "行程途中",
+            "title": "景點逐一導覽",
+            "detail": "每個景點視需要分享相關重點資訊。",
+            "description": "每個景點視需要分享相關重點資訊。"
           },
           {
-            "timing": "After the tour",
-            "title": "Post-tour support",
-            "detail": "Follow-up support and additional recommendations are available if needed."
+            "timing": "行程結束後",
+            "title": "行程後支援",
+            "detail": "如需要，可提供後續支援及額外建議。",
+            "description": "如需要，可提供後續支援及額外建議。"
           }
         ],
         "bookingTrustItems": [
           {
             "icon": "clock-3",
-            "title": "Maximizes what you can see in one day",
-            "description": "Designed for travelers with limited time",
-            "iconBg": "bg-emerald-50/80"
+            "title": "一天內看遍最多精華",
+            "description": "適合時間有限的旅客構成",
+            "iconBg": "bg-emerald-50/80",
+            "body": "適合時間有限的旅客構成"
           },
           {
             "icon": "mountain",
-            "title": "Focused on iconic landmarks",
-            "description": "From Hallasan all the way to Seongsan",
-            "iconBg": "bg-sky-50/80"
+            "title": "專注代表性景點",
+            "description": "從漢拏山一路覽至城山日出峰",
+            "iconBg": "bg-sky-50/80",
+            "body": "從漢拏山一路覽至城山日出峰"
           },
           {
             "icon": "users",
-            "title": "Small-group operation",
-            "description": "Better able to adapt to road and on-site conditions",
-            "iconBg": "bg-amber-50/80"
+            "title": "小團體出行",
+            "description": "更能因應路況與現場條件靈活調整",
+            "iconBg": "bg-amber-50/80",
+            "body": "更能因應路況與現場條件靈活調整"
           }
         ]
       }
@@ -1845,38 +1769,38 @@
         "staticQuestions": [
           {
             "id": "one-day",
-            "question": "If I only have one day in Jeju, is this the right route?",
-            "answer": "Yes. This route is built for travelers who want to cover Jeju’s core landmarks in one day, and the pace is faster than a standard day tour."
+            "question": "若我在濟州只有一天，這條路線合適嗎？",
+            "answer": "是的。這條路線適合希望在一天內覽遍濟州核心景點的旅客而構成，節奏比一般一日遊更快。"
           },
           {
             "id": "tiring",
-            "question": "Will this route feel tiring?",
-            "answer": "It usually feels more active than a typical small group day tour because there are two more noticeable walking sections and the route covers a large part of the island."
+            "question": "這條路線會讓人感到疲累嗎？",
+            "answer": "通常比典型的小團體一日遊更為活躍，因為有兩段較明顯的步行段落，且路線涵蓋了濟州島的大部分地區。"
           },
           {
             "id": "parents",
-            "question": "Is it suitable for traveling with parents?",
-            "answer": "That depends on how comfortable they are with walking and a faster sightseeing pace. This route is better for active adult travelers than for fully relaxed sightseeing."
+            "question": "適合與父母同行嗎？",
+            "answer": "視他們的步行能力及對較快觀光節奏的接受程度而定。這條路線更適合體力較佳的成人旅客，而非以悠閒觀光為主的遊客。"
           },
           {
             "id": "flight",
-            "question": "Can I join if I arrive in or leave Jeju on the same day?",
-            "answer": "Possibly, but only if you have a generous time buffer in the evening. If your flight timing is tight, this route is not recommended."
+            "question": "如果我當天抵達或離開濟州，可以參加嗎？",
+            "answer": "可能可以，但前提是傍晚需有充裕的預留時間。若您的航班時間緊湊，不建議選擇此路線。"
           },
           {
             "id": "order",
-            "question": "Can the stop order change on the day?",
-            "answer": "Yes. To keep the day running smoothly, the stop order may be adjusted slightly depending on traffic, weather, and crowd conditions."
+            "question": "當天的景點順序可以調整嗎？",
+            "answer": "可以。為使行程順暢進行，景點順序可能根據交通、天氣及人潮狀況稍作調整。"
           },
           {
             "id": "seongsan-last",
-            "question": "Why is Seongsan Ilchulbong scheduled last?",
-            "answer": "Because it gives the day a stronger finish. After Hallasan, the south coast, and Jeongbang Waterfall, Seongsan works best as the most symbolic finale."
+            "question": "為什麼城山日出峰排在最後？",
+            "answer": "因為它能讓行程畫下更有力量的句點。在漢拏山、南部海岸與正房瀑布之後，城山日出峰作為最具象徵意義的壓軸最為適合。"
           },
           {
             "id": "summit",
-            "question": "Do we have to summit Seongsan Ilchulbong?",
-            "answer": "Not necessarily. Whether the group summits, and how strongly that section is emphasized, can change depending on pace, weather, and crowd levels."
+            "question": "一定要登頂城山日出峰嗎？",
+            "answer": "不一定。團體是否登頂，以及這個環節的側重程度，可視節奏、天氣和人潮狀況靈活調整。"
           }
         ]
       }
@@ -1924,13 +1848,13 @@
       "id": "sticky_booking",
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "可訂狀態會在付款步驟中確認。",
         "price": {
           "amountLabel": "78",
           "currency": "USD",
-          "per": "person",
+          "per": "人",
           "priceSource": "internal",
-          "priceNote": "Small-group bilingual full-island tour. AtoC Korea direct sale; 10% discount applied vs operator base.",
+          "priceNote": "濟州全島小團雙語路線。AtoC Korea官網直售，較當地團隊基準價優惠10%。",
           "discountPercent": 10
         }
       }
@@ -1946,7 +1870,7 @@
     ],
     "dropoff_points": [
       {
-        "name": "Jeju City hotels (return)",
+        "name": "返回濟州市飯店",
         "approx_time": "≈ 18:00–18:30"
       }
     ],
@@ -1962,10 +1886,10 @@
       "v15_unified"
     ],
     "fix_passes": {
-      "v15_unified": "Migrated from small-group v1 schema to v15 canonical: schema_version 1→7; SEO expanded (primaryKeywords, ogImage, title); price expanded (priceSource, priceNote, discountPercent); routeFlowStops id→type; routePhases stripped of Tailwind classes (bgClass/dotClass/textClass), reshaped to {phase,duration,description}; seasonalVariations stripped of Tailwind, reshaped to {season,description}; whyTourWorks.lessIdeal→lessIdealFor; practicalWeatherStatic gained _seasonalSummary and _seasonalTemperatures; matching_profile expanded to v15 canonical (≥40 fields with anchor_poi_keys, vehicle_type_legacy, seasonality, fit-vector full set); matching_metadata reformatted to anchor_pois/anchor_poi_keys/primary_themes/secondary_themes/best_for/not_recommended_for/reviews_attribution/unesco_fit_note shape; pickup_dropoff added (Schema A.1); itinerary_variants=[]; _publication block added. PRESERVED from source (richer than catalog v15): itineraryStops[*].visitBasics, .convenience, .smartNotes (operational data), guestReviews[4 each], reviewsSummary.highlights.",
+      "v15_unified": "Migrated from small-group v1 schema to v15 canonical: schema_version 1→7; SEO expanded (primaryKeywords, ogImage, title); price expanded (priceSource, priceNote, discountPercent); routeFlowStops id→type; routePhases stripped of Tailwind classes (bgClass/dotClass/textClass), reshaped to {phase,duration,description}; seasonalVariations stripped of Tailwind, reshaped to {season,description}; whyTourWorks.lessIdeal→lessIdealFor; practicalWeatherStatic gained _seasonalSummary and _seasonalTemperatures; product profile expanded to v15 canonical (≥40 fields with anchor_poi_keys, vehicle_type_legacy, seasonality, fit-vector full set); matching_metadata reformatted to anchor_pois/anchor_poi_keys/primary_themes/secondary_themes/best_for/not_recommended_for/reviews_attribution/unesco_fit_note shape; pickup_dropoff added (Schema A.1); itinerary_variants=[]; _publication block added. PRESERVED from source (richer than catalog v15): itineraryStops[*].visitBasics, .convenience, .smartNotes (operational data), guestReviews[4 each], reviewsSummary.highlights.",
       "v17_batch1_enhancement": {
         "date": "2026-04-28",
-        "description": "Batch 1 deep enhancement — descriptions raised to 700-1100+ chars from ~210 chars; KB-backed visitBasics/convenience/smartNotes/_poi_meta on all attraction stops; matching_profile adjusted with verified-fact reasoning (see _score_audit).",
+        "description": "Batch 1 deep enhancement — descriptions raised to 700-1100+ chars from ~210 chars; KB-backed visitBasics/convenience/smartNotes/_poi_meta on all attraction stops; product profile adjusted with verified-fact reasoning (see _score_audit).",
         "_score_audit": {
           "_methodology": "Scores on 1-5 integer scale (existing tours convention). Each delta anchored to a verified fact.",
           "scale_note": "1-5 integer scale matches 24 of 30 tours; 3 new Step3 tours use 0-1 float scale (separate harmonization task).",
@@ -2048,15 +1972,15 @@
           "Wikipedia",
           "Hallasan National Park",
           "AllTrails",
-          "Trazy",
+          "市場參考資料",
           "Inside Jeju",
           "World of Waterfalls",
-          "Trip.com Korea"
+          "市場參考資料"
         ]
       },
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

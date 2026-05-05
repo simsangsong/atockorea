@@ -5,15 +5,15 @@
   "locale": "zh-TW",
   "product_id": "jeju-cherry-blossom-tour-east-route",
   "seo": {
-    "pageTitle": "Jeju East Cherry Blossom Spring Day Tour | AtoC Korea",
-    "metaDescription": "Spring-only east Jeju day tour: Jeonnong-ro cherry blossom street, Gasi-ri 10km canola-and-blossom road, Micheon lava cave, Seongsan Ilchulbong. Mid-Mar to Apr.",
+    "pageTitle": "濟州東部春季櫻花小團體遊 | AtoC Korea",
+    "metaDescription": "春季專屬東濟州遊：田農路櫻花街、加時裡10公里油菜+櫻花大道、萬丈窟（UNESCO）、城山日出峰（UNESCO）。",
     "ogImage": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
     "primaryKeywords": [
-      "Jeju cherry blossom tour",
-      "Jeju spring tour",
-      "Seongsan Ilchulbong tour",
-      "Jeju east route day tour",
-      "Jeju hanbok cherry blossom"
+      "濟州櫻花旅遊",
+      "濟州春季遊",
+      "城山日出峰旅遊",
+      "濟州東線一日遊",
+      "濟州春季賞花"
     ],
     "title": "濟州賞櫻一日遊 · 東部路線 · 春季限定 | AtoC Korea",
     "description": "濟州東部春季限定賞櫻一日遊：城邑民俗村→大天德里油菜花賞櫻路→城山日出峰UNESCO世界遺產→熔岩管洞窟。小團體，英語導遊，3月下旬至4月中旬限定。"
@@ -21,9 +21,9 @@
   "catalog_card": {
     "slug": "jeju-cherry-blossom-tour-east-route",
     "title": "濟州東部賞櫻小團體一日遊",
-    "subtitle": "Blossom streets to lava tube to sunrise peak.",
+    "subtitle": "櫻花街道、熔岩洞穴、日出峰。",
     "region": "濟州東部",
-    "duration": "8 hours",
+    "duration": "8小時",
     "stopsCount": 6,
     "rating": 0,
     "reviewCount": 0,
@@ -34,12 +34,12 @@
     ],
     "heroImage": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
     "thumbnail": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=600&q=80",
-    "priceLabel": "Price varies by season — confirm at booking",
-    "shortCardDescription": "Spring-only east Jeju route through cherry blossom streets, the 10km canola road, a lava tube cave, and the iconic Seongsan crater.",
+    "priceLabel": "價格因季節而異 — 請於預訂時確認",
+    "shortCardDescription": "東濟州限定春季路線——穿越櫻花街道、10公里油菜花田大道、萬丈窟熔岩洞穴（UNESCO）及城山日出峰（UNESCO）。3月下旬至4月中旬運營，每日根據開花情況安排行程。",
     "tags": [
-      "spring_only",
-      "cherry_blossom_season",
-      "east_jeju"
+      "僅春季",
+      "櫻花季",
+      "濟州東部"
     ]
   },
   "headlineLine1": "野櫻、油菜花田與熔岩管——",
@@ -47,8 +47,8 @@
   "price": {
     "amountLabel": "",
     "currency": "USD",
-    "per": "person",
-    "priceNote": "春季限定賞花行程（3月下旬至4月初）。含英語導遊 + 空調廂型車 + 主要入場費。午餐費用自付。AtoC Korea直接銷售；相較於運營商底價享有10%折扣。"
+    "per": "人",
+    "priceNote": "春季限定賞花行程（3月下旬至4月初）。含英語導遊 + 空調廂型車 + 主要入場費。午餐費用自付。AtoC Korea直接銷售；相較於合作業者底價享有10%折扣。"
   },
   "hero": {
     "imageUrl": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
@@ -60,7 +60,7 @@
       "濟州東部"
     ],
     "meta": {
-      "duration": "8 hours",
+      "duration": "8小時",
       "region": "濟州東部",
       "stops": "6 個景點",
       "rating": 0,
@@ -92,39 +92,33 @@
   "glanceItems": [
     {
       "icon": "camera",
-      "label": "拍照潛力",
-      "value": "極佳",
-      "level": 5
+      "label": "拍照亮點",
+      "value": "極高"
     },
     {
-      "icon": "mountain",
-      "label": "景點密度",
-      "value": "良好",
-      "level": 4
+      "icon": "calendar",
+      "label": "推薦季節",
+      "value": "3月25日至4月10日"
+    },
+    {
+      "icon": "users",
+      "label": "人數上限",
+      "value": "小團體"
+    },
+    {
+      "icon": "clock",
+      "label": "行程時間",
+      "value": "8小時"
+    },
+    {
+      "icon": "map-pin",
+      "label": "路線區域",
+      "value": "濟州東部"
     },
     {
       "icon": "footprints",
       "label": "步行強度",
-      "value": "中等",
-      "level": 3
-    },
-    {
-      "icon": "cloud-rain",
-      "label": "雨天適合度",
-      "value": "較低",
-      "level": 2
-    },
-    {
-      "icon": "users",
-      "label": "親子適合度",
-      "value": "良好",
-      "level": 4
-    },
-    {
-      "icon": "gauge",
-      "label": "行程節奏",
-      "value": "均衡",
-      "level": 4
+      "value": "中等"
     }
   ],
   "galleryItems": [
@@ -141,9 +135,9 @@
       "id": "g2",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&q=80",
-      "alt": "加時里鹿山路沿線的賞花樹與金黃油菜花田",
+      "alt": "加時裡鹿山路沿線的賞花樹與金黃油菜花田",
       "caption": "鹿山路賞花與油菜花",
-      "location": "鹿山路 / 加時里",
+      "location": "鹿山路 / 加時裡",
       "atmosphere": "10公里賞花與油菜花"
     },
     {
@@ -168,7 +162,7 @@
       "id": "g5",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1551649001-7a2482d98d05?w=1200&q=80",
-      "alt": "從峰下打卡點俯瞰城山日出峰凝灰岩錐輪廓",
+      "alt": "從峰下拍照點俯瞰城山日出峰凝灰岩錐輪廓",
       "caption": "城山日出峰UNESCO火口",
       "location": "城山日出峰",
       "atmosphere": "日出火口邊緣"
@@ -187,29 +181,29 @@
     {
       "number": 1,
       "time": "09:00",
-      "duration": "75 min",
+      "duration": "75分鐘",
       "name": "全農路賞花街",
-      "category": "King Cherry Blossom corridor — Jeju City",
-      "description": "**全農路（전농로）**是濟州市區最著名的賞櫻街道之一，以**王陵路（왕릉로）**周邊的大片王陵王冠（王冠)櫻花樹行道樹聞名。每年3月下旬至4月初，全農路的櫻花隧道與濟州特有的**油菜花（유채）**黃色田野交相輝映，形成濟州最具代表性的春季雙色景觀——粉白的櫻花覆頂，金黃的油菜花鋪地。此路線通常在**3月下旬至4月初的短暫盛花窗口期**開放，是季節限定行程的核心起點，結束後前往其他賞櫻景點形成完整的春季主題路線。**免費參觀**；沿街可漫步拍照。",
+      "category": "王櫻花大道——濟州市",
+      "description": "**全農路**是濟州市區最著名的賞櫻街道之一，以**王陵路**周邊的大片王陵與金冠（王冠)櫻花樹行道樹聞名。每年3月下旬至4月初，全農路的櫻花隧道與濟州特有的**油菜花**黃色田野交相輝映，形成濟州最具代表性的春季雙色景觀——粉白的櫻花覆頂，金黃的油菜花鋪地。此路線通常在**3月下旬至4月初的短暫盛花時段期**開放，是季節限定行程的核心起點，結束後前往其他賞櫻景點形成完整的春季主題路線。**免費參觀**；沿街可漫步拍照。",
       "highlights": [
         "濟州市區最著名的賞櫻街道之一",
-        "**王陵路周邊大片王陵王冠（王冠）櫻花隧道**",
+        "**王陵路周邊大片王陵與金冠（王冠）櫻花隧道**",
         "粉白櫻花 + 金黃油菜花 = 濟州春季最具代表性的雙色景觀",
         "**盛花期：3月下旬至4月初**（每年略有差異）",
         "季節限定行程的核心起點",
         "**免費參觀**；沿街漫步拍照",
         "與濟州其他賞櫻景點組成完整的春季主題路線",
         "結合日出樂園、城山日出峰形成濟州東部精華春季路線",
-        "賞花窗口期通常僅**10至14天**——出發前確認當年開花狀況"
+        "賞花時段期通常僅**10至14天**——出發前確認當年開花狀況"
       ],
       "timeUsed": [
-        "Coach drop-off at Jeju Sports Complex parking (~5 min)",
-        "Walk west end of corridor + photo time (~25 min)",
-        "Slow walk east through cherry tunnel (~30 min)",
-        "Festival booth food/drink option (~10 min)",
-        "Reassemble at coach (~5 min)"
+        "大巴停至濟州綜合運動場停車場 (~5分鐘)",
+        "步行走廊西端 + 拍照時間 (~25分鐘)",
+        "漫步穿越櫻花隧道東段 (~30分鐘)",
+        "節日攤位飲食選擇 (~10分鐘)",
+        "在大巴集合 (~5分鐘)"
       ],
-      "whyOnRoute": "全農路是**目錄中任何濟州賞花行程的首選開場錨點** — 韓國本地王陵王冠（왕벚꽃）原生賞花樹密度最高的地帶，位於平坦的1.2公里節慶步行廊道中。09:00出發可在**柔和的晨光 + 觀光巴士11:00前大量湧至前的最低人潮密度**中盡情拍攝。優先選擇全農路而非濟州大學路的原因在於：全農路的路樹為老齡王陵王冠品種（花冠更大、顏色更深），且步行廊道相對封閉於車流，更適合拍攝。",
+      "whyOnRoute": "全農路是**目錄中任何濟州賞花行程的首選開場核心亮點** — 韓國本地王陵與金冠原生賞花樹豐富度最高的地帶，位於平坦的1.2公里節慶步行廊道中。09:00出發可在**柔和的晨光 + 觀光巴士11:00前大量湧至前的最低人潮豐富度**中盡情拍攝。優先選擇全農路而非濟州大學路的原因在於：全農路的路樹為老齡王陵與金冠品種（花冠更大、顏色更深），且步行廊道相對封閉於車流，更適合拍攝。",
       "_poi_meta": {
         "poi_key": "jeonnong_ro_cherry_blossom_street",
         "kb_version": "1.29",
@@ -225,34 +219,19 @@
           "Korea Forest Service (forest.go.kr — King Cherry / Wangbeotnamu native species record + 1908 Émile Taquet Hallasan documentation)",
           "Wikipedia (Prunus × yedoensis — King Cherry vs Yoshino Cherry botanical classification debate)"
         ]
-      },
-      "visitBasics": {
-        "hours": "Open access",
-        "closed": "None",
-        "admission": "Free",
-        "walking": "Easy (flat urban)"
-      },
-      "convenience": {
-        "restroom": "Nearby cafes",
-        "parking": "Limited street parking"
-      },
-      "smartNotes": {
-        "photo": "Morning low light gives the softest blossom glow.",
-        "facilities": "Use restroom at pickup before leaving city.",
-        "tip": "Cherry timing window is 7-10 days only — go on day 1 of your trip if possible."
       }
     },
     {
       "number": 2,
       "time": "10:30",
-      "duration": "90 min",
-      "name": "鹿山路（加時里10公里賞花 + 油菜花路）",
-      "category": "Cherry + canola country drive — Joseon horse pastures",
-      "description": "**鹿山路（녹산로）**是濟州島最著名的**10公里「雙花道」** — 道路兩側種植的**王陵王冠（王冠）櫻花樹**形成壯觀的花卉隧道，而道路中間分隔帶和周邊田野則遍植**金黃色油菜花（유채）**，形成全韓國最具攝影魅力的春季景觀之一。位於서귀포시 표선면 가시리（加時里）地區，是濟州最廣為人知的賞花路線。盛花期通常在**3月下旬至4月初**，與全農路類似，但因地理位置稍偏南，開花時間可能略有差異。路線全程適合**自駕或隨行巴士遊覽**，沿途多個停車區供下車拍照。**免費參觀**；春季節慶期間人潮較多，建議早出發。",
+      "duration": "90分鐘",
+      "name": "鹿山路（加時裡10公里賞花 + 油菜花路）",
+      "category": "櫻花+油菜花景觀公路——朝鮮王室牧場",
+      "description": "**鹿山路**是濟州島最著名的**10公里「雙花道」** — 道路兩側種植的**王陵與金冠（王冠）櫻花樹**形成壯觀的花卉隧道，而道路中間分隔帶和周邊田野則遍植**金黃色油菜花**，形成韓國全境最具攝影魅力的春季景觀之一。位於西歸浦市 表善面 加時里（加時裡）地區，是濟州最廣為人知的賞花路線。盛花期通常在**3月下旬至4月初**，與全農路類似，但因地理位置稍偏南，開花時間可能略有差異。路線全程適合**自駕或隨行巴士遊覽**，沿途多個停車區供下車拍照。**免費參觀**；春季節慶期間人潮較多，建議早出發。",
       "highlights": [
         "**10公里「雙花道」** — 濟州最著名的春季景觀之一",
-        "王陵王冠（王冠）櫻花隧道 + 金黃油菜花田 = 全韓最具攝影魅力的春季景觀",
-        "位於加時里地區（서귀포시 표선면）",
+        "王陵與金冠（王冠）櫻花隧道 + 金黃油菜花田 = 韓國全境最具攝影魅力的春季景觀",
+        "位於加時裡地區",
         "**盛花期：3月下旬至4月初**（每年略有差異）",
         "全程適合自駕或隨行巴士遊覽",
         "沿途多個停車區供下車拍照",
@@ -261,14 +240,14 @@
         "與全農路組成濟州春季賞花路線的黃金組合"
       ],
       "timeUsed": [
-        "Drive from Jeonnong-ro to Noksan-ro entry (~50 min via Hwy 1132 + 1116)",
-        "Photo stop #1: Jeju Horse Park parking + canola plaza (~25 min)",
-        "Slow drive through 10 km corridor with 2–3 pull-outs (~25 min)",
-        "Photo stop #2: Wind turbines + cherry tunnel mid-section (~15 min)",
-        "Final photo + walk near Jorangmal Experience Center (~15 min)",
-        "Drive to lunch venue (~10 min)"
+        "從田農路出發至鹿山路入口（經1132號道路，約50分鐘）",
+        "攝影點1：濟州馬放牧地停車場+油菜花廣場——約25分鐘",
+        "沿10公里路段緩慢行駛（含2–3處停靠拍攝）——約25分鐘",
+        "拍照點2：風力發電機與櫻花隧道中段（約15分鐘）",
+        "於 Jorangmal 體驗中心附近最後拍照與散步（約15分鐘）",
+        "前往午餐地點 (~10分鐘)"
       ],
-      "whyOnRoute": "鹿山路是**濟州標誌性的賞花行車體驗** — 從根本上不同於城市的全農路節慶（靜態步行廊道）。將兩者安排在同一個早上，讓旅客可以體驗**城市節慶密度**與**農村田園風光的寧靜**兩種截然不同的濟州賞花面向，這是在任何其他行程中都無法實現的對比。沿途10公里的賞花樹與油菜花複合景觀，讓「鹿山路」成為濟州春季最多分享的社交媒體拍攝景觀。",
+      "whyOnRoute": "鹿山路是**濟州代表性的賞花行車體驗** — 從根本上不同於城市的全農路節慶（靜態步行廊道）。將兩者安排在同一個早上，讓旅客可以體驗**城市節慶豐富度**與**農村田園風光的寧靜**兩種截然不同的濟州賞花面向，這是在任何其他行程中都無法實現的對比。沿途10公里的賞花樹與油菜花複合景觀，讓「鹿山路」成為濟州春季最多分享的社交媒體拍攝景觀。",
       "_poi_meta": {
         "poi_key": "noksan_ro_gasiri_blossom_road",
         "kb_version": "1.29",
@@ -284,66 +263,39 @@
           "Visit Jeju official (visitjeju.net — Gasi-ri Village + Noksanjang/Gammajang royal horse pasture heritage + 600-year history)",
           "Wikipedia (Gasi-ri — When Life Gives You Tangerines 2024 Netflix + Welcome to Samdal-ri 2023 JTBC filming credits)"
         ]
-      },
-      "visitBasics": {
-        "hours": "Open access (daylight)",
-        "closed": "None",
-        "admission": "Free",
-        "walking": "Easy to moderate"
-      },
-      "convenience": {
-        "restroom": "Limited rural facilities",
-        "parking": "Roadside pull-offs"
-      },
-      "smartNotes": {
-        "photo": "Wide compositions catch the layered pink/yellow effect.",
-        "facilities": "Use restroom before this stop — rural section.",
-        "tip": "Best window is late March to early April; canola can outlast cherry by 1-2 weeks."
       }
     },
     {
       "number": 3,
       "time": "12:15",
-      "duration": "60 min",
+      "duration": "60分鐘",
       "name": "午餐（濟州東部當地料理）",
-      "category": "Midday meal — East Jeju regional",
-      "description": "在東部濟州的當地餐廳享用午餐（費用自付，導遊推薦）。典型選項：**豬肉拌飯**（흑돼지 비빔밥，濟州黑豬豬肉拌飯）；**海女章魚拌飯**（해녀 문어 비빔밥）；**濟州鮑魚粥**（전복죽，約₩12,000至18,000）。導遊協助點餐。",
+      "category": "餐飲",
+      "description": "在東部濟州的當地餐廳享用午餐（費用自付，導遊推薦）。典型選項：**豬肉拌飯**；**海女章魚拌飯**；**濟州鮑魚粥**。導遊協助點餐。",
       "highlights": [
         "**豬肉拌飯**——濟州黑豬豬肉拌飯",
         "**海女章魚拌飯**——東部濟州的當地海鮮特色",
-        "**濟州鮑魚粥**（전복죽，約₩12,000至18,000）"
+        "**濟州鮑魚粥**"
       ],
       "timeUsed": [
-        "Drive from Noksan-ro to lunch venue (~10 min)",
-        "Order + meal (~50 min)",
-        "Reassemble at coach (~5 min)"
+        "從鹿山路至餐廳駕車（約10分鐘）",
+        "點餐+用餐（約50分鐘）",
+        "在大巴集合 (~5分鐘)"
       ],
-      "whyOnRoute": "午餐的時間安排在上午賞花路段和下午日出樂園 + 城山日出峰路段的地理中間點——最大限度減少回頭路，並在兩段戶外行程之間為旅客提供一頓溫熱餐食的緩衝。",
+      "whyOnRoute": "午餐的時間安排在上午賞花路段和下午日出樂園 + 城山日出峰路段的地理中間點——最大限度減少回頭路，並在兩段戶外行程之間為旅客提供一頓溫熱餐食的預留時間。",
       "_poi_meta": {
         "poi_key": "OPS_east_jeju_lunch",
         "kb_version": "1.17",
         "verified_date": "2026-04-29"
-      },
-      "visitBasics": {
-        "hours": "12:00-14:00 typical",
-        "admission": "Lunch cost paid separately (≈ ₩12,000–18,000 per person)",
-        "walking": "Minimal"
-      },
-      "convenience": {
-        "restroom": "At restaurant",
-        "parking": "Available"
-      },
-      "smartNotes": {
-        "tip": "Vegetarian options on request — notify the day before."
       }
     },
     {
       "number": 4,
       "time": "13:30",
-      "duration": "60 min",
+      "duration": "60分鐘",
       "name": "彌天窟（日出樂園）",
-      "category": "Lava tube — Manjang Cave alternate",
-      "description": "**彌天窟（미천굴）**是日出樂園的核心熔岩管洞穴，全長**1,700公尺**，其中**365公尺人工平整路段**開放（約25分鐘穿越）。與UNESCO世界自然遺產**萬丈窟**屬同一熔岩管系統；**萬丈窟關閉時**作為最佳替代方案。人工平整步道使洞穴更易到達；七色LED燈光照明洞穴構造。洞穴外，日出樂園40萬平方公尺公園場地另設傳統濟州村落、盆景園和泡腳咖啡廳。濟州唯一設有現場穆斯林祈禱室。入場費：**成人₩12,000 / 青少年₩9,000 / 兒童₩7,000**。",
+      "category": "熔岩洞穴+主題公園——萬丈窟備選（緊鄰UNESCO認定區域）",
+      "description": "**彌天窟**是日出樂園的核心熔岩管洞穴，全長**1,700公尺**，其中**365公尺人工平整路段**開放（約25分鐘穿越）。與UNESCO世界自然遺產**萬丈窟**屬同一熔岩管體系；**萬丈窟關閉時**作為最佳備選安排。人工平整步道使洞穴更易到達；七色LED燈光照明洞穴構造。洞穴外，日出樂園40萬平方公尺公園場地另設傳統濟州村落、盆景園和泡腳咖啡廳。濟州唯一設有現場穆斯林祈禱室。入場費：**成人₩12,000 / 青少年₩9,000 / 兒童₩7,000**。",
       "highlights": [
         "**全長1,700公尺**熔岩管；**365公尺開放路段**（約25分鐘穿行）",
         "**萬丈窟UNESCO備用方案**",
@@ -356,13 +308,13 @@
         "《Running Man》第89集拍攝（2012年）"
       ],
       "timeUsed": [
-        "Coach drop-off + ticketing at Ilchul Land entrance (~10 min)",
-        "Walk to cave entrance through entrance plaza (~5 min)",
-        "Cave traverse (round-trip 365 m × 2) with photo stops (~30 min)",
-        "Exit + brief restroom + reassemble for next stop (~15 min)",
-        "Optional Ilchul Land themed-garden plaza traverse via blue-line path connector (~5 min) before pivoting to next stop"
+        "停車+購票+入場——約5分鐘",
+        "米川窟穿越（365米/約25分鐘）——約30分鐘",
+        "水邊公園+雕塑街——約20分鐘",
+        "可選：盆景/仙人掌園+足浴咖啡館——約15分鐘",
+        "集合時間——約5分鐘"
       ],
-      "whyOnRoute": "彌天窟是任何濟州東部路線的**雨天保險** — 天氣轉濕時，30分鐘的洞穴步行是一個可靠的室內體驗，同時仍能展示濟州的火山地質。優先選擇彌天窟而非**萬丈窟**（UNESCO列名但地點更偏遠的替代選擇）的原因在於：萬丈窟的主要公共路段目前**因生態恢復而關閉**，而彌天窟的人工平整步道也讓各年齡段的旅客更易到達。",
+      "whyOnRoute": "彌天窟是任何濟州東部路線的**雨天保險** — 天氣轉溼時，30分鐘的洞穴步行是一個可靠的室內體驗，同時仍能展示濟州的火山地質。優先選擇彌天窟而非**萬丈窟**（UNESCO列名但地點更偏遠的替代選擇）的原因在於：萬丈窟的主要公共路段目前**因生態恢複而關閉**，而彌天窟的人工平整步道也讓各年齡段的旅客更易到達。",
       "_poi_meta": {
         "poi_key": "ilchulland_micheon_cave",
         "kb_version": "1.29",
@@ -378,33 +330,18 @@
           "Korea Heritage Service (cha.go.kr — Jeju lava-tube cave systems + UNESCO Geomunoreum lava-tube system inheritance)",
           "Wikipedia (Ilchul Land — Micheon Cave geology + ~14°C constant temperature + Jeju lava tube formation)"
         ]
-      },
-      "visitBasics": {
-        "hours": "09:00-18:00",
-        "closed": "Check seasonal",
-        "admission": "Adults 9,000 KRW",
-        "walking": "Easy (paved cave path)"
-      },
-      "convenience": {
-        "restroom": "At entrance",
-        "parking": "Available"
-      },
-      "smartNotes": {
-        "photo": "Tripod or steady hand needed — low ambient light.",
-        "facilities": "Cave temperature is ≈ 14C year-round; bring a light layer.",
-        "tip": "Connects with Ilchul Land via combined ticket — bundled with stop 5."
       }
     },
     {
       "number": 5,
       "time": "15:00",
-      "duration": "75 min",
+      "duration": "75分鐘",
       "name": "日出樂園主題花園",
-      "category": "Themed gardens — Folk Village + Cactus + Bonsai + Sculpture Path",
-      "description": "彌天窟洞穴外，**日出樂園**的**40萬平方公尺公園場地**設有多個主題花園和體驗設施。復原的**傳統濟州村落**還原了石牆茅草屋和傳統生活場景；**野花盆景園**展示濟州原生植物；**仙人掌溫室**全年開放；**雕塑街**沿步道散置藝術裝置。**泡腳咖啡廳（精油足浴Spa）**是步行後的肌肉放鬆選擇。日出樂園是**濟州唯一設有現場穆斯林祈禱室**的景點。入場費包含彌天窟洞穴和所有主題花園：**成人₩12,000 / 青少年₩9,000 / 兒童₩7,000**。",
+      "category": "主題花園——民俗村+仙人掌+盆景+雕塑步道",
+      "description": "彌天窟洞穴外，**日出樂園**的**40萬平方公尺公園場地**設有多個主題花園和體驗設施。複原的**傳統濟州村落**還原了石牆茅草屋和傳統生活場景；**野花盆景園**展示濟州原生植物；**仙人掌溫室**全年開放；**雕塑街**沿步道散置藝術裝置。**泡腳咖啡廳（精油足浴Spa）**是步行後的肌肉放鬆選擇。日出樂園是**濟州唯一設有現場穆斯林祈禱室**的景點。入場費包含彌天窟洞穴和所有主題花園：**成人₩12,000 / 青少年₩9,000 / 兒童₩7,000**。",
       "highlights": [
         "40萬平方公尺主題公園場地 — 洞穴 + 花園 + 溫室 + 傳統村落",
-        "復原的**傳統濟州村落** — 石牆茅草屋",
+        "複原的**傳統濟州村落** — 石牆茅草屋",
         "**野花盆景園** + **仙人掌溫室**（全年開放）",
         "**泡腳咖啡廳（精油足浴）** — 步行後的肌肉放鬆",
         "**濟州唯一設有現場穆斯林祈禱室**",
@@ -414,11 +351,11 @@
         "緊鄰城山日出峰 — 適合組合在同一行程"
       ],
       "timeUsed": [
-        "Walk via blue-line path to Folk Village (~5 min)",
-        "Folk Village + black pigs + Eung Tae-seok (~20 min)",
-        "Bonsai Garden + Cactus Greenhouse + Subyeon Park (~25 min)",
-        "Sculpture Path + spring flower walk + photo time (~15 min)",
-        "Optional Aroma Footbath OR free time + reassemble (~10 min)"
+        "沿藍線步道步行至民俗村 (~5分鐘)",
+        "民俗村、黑豬與應泰石相關故事（約20分鐘）",
+        "盆栽庭園＋仙人掌溫室＋水邊公園（約25分鐘）",
+        "雕塑步道＋春花散步＋拍照時間（約15分鐘）",
+        "可選香氛足浴或自由活動時間 + reassemble (~10 min)"
       ],
       "whyOnRoute": "日出樂園的主題花園是**昏暗洞穴上午**與**壓軸城山日出峰黃昏**之間理想的節奏轉換** — 75分鐘在多樣花園中的戶外步行讓旅客得以調整狀態。傳統濟州村落 + 黑豬表演也為全天提供了**唯一的文化遺產停靠點**（全農路和鹿山路以自然為主；城山日出峰以地質為主），讓行程在賞花與地質之外增添了一層民俗文化的均衡感。",
       "_poi_meta": {
@@ -429,36 +366,22 @@
           "Visit Korea Ilchul Land page",
           "Creatrip Ilchul Land guide",
           "Wanderlog Ilchul Land reviews",
-          "Trazy Ilchul Land listing",
+          "Ilchul Land listing",
           "Visit Korea (Korea Tourism Organization — Ilchul Land themed-garden complex + Folk Village + Wild Flower Bonsai Garden)",
           "Ilchul Land official (ilchulland.com — blue-line walking path + Folk Village + Cactus Greenhouse + Subyeon Park)",
           "Visit Jeju official (visitjeju.net — Eung Tae-seok 'stones that lay eggs' fertility folklore + Sculpture Path)",
           "Korea Tourism Organization Filming Locations Guide (Running Man Episode 89 2012 + What Star Do You Come From 2006 MBC)",
           "Wikipedia (Jeju Black Pig — Cultural Heritage Material No. 5 designation 2015)"
         ]
-      },
-      "visitBasics": {
-        "hours": "08:30-18:00",
-        "closed": "None",
-        "admission": "Adults 12,000 KRW (combined with Micheongul)",
-        "walking": "Easy (flat garden paths)"
-      },
-      "convenience": {
-        "restroom": "Multiple",
-        "parking": "Available"
-      },
-      "smartNotes": {
-        "photo": "Mix of natural and sculptural compositions works best in afternoon light.",
-        "tip": "Combined ticket with Micheongul Cave gives ≈ 20% saving."
       }
     },
     {
       "number": 6,
       "time": "16:15",
-      "duration": "75 min",
-      "name": "城山日出峰（UNESCO打卡景點）",
-      "category": "UNESCO World Natural Heritage — tuff cone",
-      "description": "**城山日出峰（성산일출봉，「日出峰」）**是一座**距今5,000年的薩托謝安式水火山凝灰岩錐**，火口**直徑600公尺、深90公尺**，周圍環繞著**99塊鋸齒狀的邊緣岩石**。城山日出峰擁有**UNESCO三重認定**（世界遺產 + 生物圈保護區 + 全球地質公園）。步道：**單程0.8公里，爬升約140公尺，來回60分鐘**。**海女表演**每日在峰下海灣**13:30和15:00**各舉行一場。門票於**2025年4月更新**：**成人₩5,000 / 青少年₩2,500**，7歲以下及65歲以上免費。山頂觀景台是欣賞**日出峰全景與牛島**的最佳位置，也是韓國**元旦日出朝聖**的首選地。",
+      "duration": "75分鐘",
+      "name": "城山日出峰（UNESCO拍照景點）",
+      "category": "UNESCO凝灰岩錐——日出峰（三重UNESCO認定）",
+      "description": "**城山日出峰（城山日出峰，「日出峰」）**是一座**距今5,000年的薩託謝安式水火山凝灰岩錐**，火口**直徑600公尺、深90公尺**，周圍環繞著**99塊鋸齒狀的邊緣岩石**。城山日出峰擁有**UNESCO三重認定**（世界遺產 + 生物圈保護區 + 全球地質公園）。步道：**單程0.8公里，爬升約140公尺，來回60分鐘**。**海女表演**每日在峰下海灣**13:30和15:00**各舉行一場。門票於**2025年4月更新**：**成人₩5,000 / 青少年₩2,500**，7歲以下及65歲以上免費。山頂觀景臺是欣賞**日出峰全景與牛島**的最佳位置，也是韓國**元旦日出朝聖**的首選地。",
       "highlights": [
         "**UNESCO三重認定**：世界遺產2007 + 生物圈保護區2002 + 全球地質公園2010",
         "火口**直徑600公尺、深90公尺**，環繞著**99塊鋸齒狀邊緣岩石**（「石冠」）",
@@ -467,17 +390,17 @@
         "門票：成人₩5,000 / 青少年₩2,500 / 7歲以下及65歲以上免費",
         "春秋季開放時間 **05:00至19:00**",
         "**每月第一個星期一休館**",
-        "**牛島（우도）**在山頂清晰可見，4公里外，渡輪15分鐘可達",
+        "**牛島**在山頂清晰可見，4公里外，渡輪15分鐘可達",
         "韓國**元旦日出朝聖**首選地，每年逾5萬人登頂"
       ],
       "timeUsed": [
-        "Drive from Ilchul Land to Seongsan parking (~10 min)",
-        "Free entry-plaza walk for crown side-on photo (~15 min)",
-        "Optional partial trail climb OR coastal cove for haenyeo demo viewing (~30 min)",
-        "Free time + souvenir shops near entrance (~15 min)",
-        "Reassemble at coach (~5 min)"
+        "停車+購票+底部簡介——約10分鐘",
+        "登頂觀景臺（0.8公里/高差140米）——約30分鐘",
+        "頂部觀景+火山口邊緣拍照——約20分鐘",
+        "下山——約20分鐘",
+        "可選：在底部觀看海女表演（15:00場次）——約10分鐘"
       ],
-      "whyOnRoute": "城山日出峰是這條濟州東部路線上**唯一的UNESCO世界自然遺產錨點** — 以韓國最具代表性的火山地標作為全天的壓軸。16:15的刻意晚到時間讓旅客在**午後黃金光線**下拍攝峰頂（清晨的日出人潮早已消散）。75分鐘的停留視窗是**純打卡格式** — 在峰下各角度拍攝為主，不攀登峰頂（峰頂攀登是全年東部UNESCO行程的一部分，但不在這個春季行程中）。",
+      "whyOnRoute": "城山日出峰是這條濟州東部路線上**唯一的UNESCO世界自然遺產核心亮點** — 以韓國最具代表性的火山地標作為全天的壓軸。16:15的刻意晚到時間讓旅客在**午後黃金光線**下拍攝峰頂（清晨的日出人潮早已消散）。75分鐘的停留時間是**純拍照格式** — 在峰下各角度拍攝為主，不攀登峰頂（峰頂攀登是全年東部UNESCO行程的一部分，但不在這個春季行程中）。",
       "_poi_meta": {
         "poi_key": "seongsan_ilchulbong",
         "kb_version": "1.29",
@@ -493,76 +416,61 @@
           "UNESCO Global Geoparks Network (Jeju Island Global Geopark inscription 2010-10)",
           "Wikipedia (Seongsan Ilchulbong — Surtseyan-type hydrovolcanic eruption + 18 Japanese WWII caves + haenyeo demonstrations)"
         ]
-      },
-      "visitBasics": {
-        "hours": "Mar–Apr & Sep–Oct: 05:00–19:00; May–Aug: 04:30–20:00; Nov–Feb: 06:00–18:00 (last ticketing 1 hour before closing)",
-        "closed": "Open year-round (weather closures possible)",
-        "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
-        "walking": "Moderate — 20–30 min steady stair climb (≈ 600 stairs); benches every few minutes for rest"
-      },
-      "convenience": {
-        "restroom": "Available at entrance and base",
-        "parking": "Large free parking lot"
-      },
-      "smartNotes": {
-        "photo": "Summit view of Hallasan to the west and Udo island to the north on clear days; haenyeo black-sand beach view from descending path",
-        "tip": "All stairs but well-maintained — manageable in casual clothes; family-friendly with rest stops; sunrise visits popular but crowds gather pre-dawn",
-        "facilities": "Café (Fritz Coffee 1.3km away has best exterior views of the peak); ferry to Udo Island from Seongsan Port (1.5km/15 min walk)"
       }
     }
   ],
   "routeFlowStops": [
     {
-      "name": "Jeonnong-ro",
+      "name": "田農路",
       "type": "origin",
-      "theme": "Urban Bloom"
+      "theme": "城市花路"
     },
     {
-      "name": "Noksan-ro",
+      "name": "鹿山路",
       "type": "primary",
-      "theme": "Country Bloom"
+      "theme": "田園花路"
     },
     {
-      "name": "Lunch",
+      "name": "午餐",
       "type": "meal",
-      "theme": "Meal"
+      "theme": "餐飲"
     },
     {
-      "name": "Micheongul",
+      "name": "米川窟",
       "type": "primary",
-      "theme": "Cave"
+      "theme": "洞穴"
     },
     {
-      "name": "Ilchul Land",
+      "name": "日出樂園",
       "type": "primary",
-      "theme": "Garden"
+      "theme": "花園"
     },
     {
-      "name": "Seongsan",
+      "name": "城山",
       "type": "return",
-      "theme": "UNESCO Volcano"
+      "theme": "UNESCO火山"
     }
   ],
   "routePhases": [
     {
       "phase": "賞花高峰",
-      "duration": "Stops 1–2",
-      "description": "Morning: Cherry blossom peaks"
+      "duration": "第1–2站",
+      "description": "上午：櫻花綻放"
     },
     {
       "phase": "午餐",
-      "duration": "Stops 3",
-      "description": "Midday: Lunch"
+      "duration": "第3站",
+      "description": "中午：午餐"
     },
     {
       "phase": "洞穴到花園到火口",
-      "duration": "Stops 4–6",
-      "description": "Afternoon: Cave to garden to crater"
+      "duration": "第4–6站",
+      "description": "下午：洞穴→花園→火山口"
     }
   ],
   "routeShapeIntro": {
-    "title": "行程動線總覽",
-    "subtitle": "Cherry blossoms first while light is soft, lava tube and garden in the afternoon, Seongsan to close. 09:00 to 17:30."
+    "title": "行程路線一覽",
+    "subtitle": "趁光線柔和先賞櫻花，下午遊覽熔岩洞穴和花園，以城山收尾。09:00出發，17:30返回。"
   },
   "whyTourWorks": {
     "bestFor": [
@@ -583,12 +491,12 @@
             "detail": "兩個賞花景點均安排在中午之前，光線較柔和，花瓣也未因午後風力而飄落。"
           },
           {
-            "label": "洞穴作為天氣緩衝",
+            "label": "洞穴作為天氣預留時間",
             "detail": "彌天窟在中午提供一個穩定的室內停靠點——若下午天氣轉壞，這是很好的應急備選。"
           },
           {
             "label": "火口壓軸作為東部地標",
-            "detail": "城山以東濟州最具代表性的視覺地標作為全天收尾，不在行程結尾加入體力消耗較大的峰頂攀登。"
+            "detail": "城山以東濟州最具代表性的景色地標作為全天收尾，不在行程結尾加入體力消耗較大的峰頂攀登。"
           }
         ]
       },
@@ -599,12 +507,12 @@
         "iconColor": "text-pink-600",
         "items": [
           {
-            "label": "王陵王冠賞花視窗僅7至10天",
-            "detail": "王陵王冠（濟州原生品種）賞花在3月下旬至4月初短暫盛開——如果可以的話，建議安排在濟州行程的第一天。"
+            "label": "王陵與金冠賞花時間安排僅7至10天",
+            "detail": "王陵與金冠（濟州原生品種）賞花在3月下旬至4月初短暫盛開——如果可以的話，建議安排在濟州行程的第一天。"
           },
           {
-            "label": "油菜花延長1至2週",
-            "detail": "油菜花田往往比賞花延長1至2週，因此鹿山路的景觀視覺衝擊力持續稍長。"
+            "label": "油菜花延長1至2周",
+            "detail": "油菜花田往往比賞花延長1至2周，因此鹿山路的景觀景色沖擊力持續稍長。"
           },
           {
             "label": "賞花季以外，選擇東部小型全年行程",
@@ -620,11 +528,11 @@
         "items": [
           {
             "label": "不含城山峰頂攀登",
-            "detail": "我們只在峰下打卡拍攝——為了在不加入陡峭峰頂攀登的前提下，爭取更多賞花街的時間。"
+            "detail": "我們只在峰下拍照拍攝——為了在不加入陡峭峰頂攀登的前提下，爭取更多賞花街的時間。"
           },
           {
             "label": "強降雨是真實風險",
-            "detail": "大雨天賞花的視覺衝擊大幅下降。建議提前2至3天確認天氣預報，若有暴雨在即，考慮改期。"
+            "detail": "大雨天賞花的景色沖擊大幅下降。建議提前2至3天確認天氣預報，若有暴雨在即，考慮改期。"
           },
           {
             "label": "高峰期人潮較多",
@@ -665,12 +573,12 @@
     {
       "id": "season",
       "title": "賞櫻期間說明",
-      "preview": "賞花視窗：3月下旬至4月初",
+      "preview": "賞花時間安排：3月下旬至4月初",
       "content": [
-        "高峰期視窗：約3月25日至4月10日（每年略有差異）",
-        "油菜花比賞花延長1至2週",
+        "高峰期時間安排：約3月25日至4月10日（每年略有差異）",
+        "油菜花比賞花延長1至2周",
         "建議安排在您的濟州行程第一天出發",
-        "若您的旅遊日期在視窗以外，建議改訂全年東部UNESCO行程"
+        "若您的旅遊日期在時間安排以外，建議改訂全年東部UNESCO行程"
       ]
     },
     {
@@ -679,8 +587,8 @@
       "preview": "強降雨可能安排改期",
       "content": [
         "小雨：行程正常進行",
-        "強降雨：可在賞花季視窗內免費改期",
-        "視窗以外的取消，依atockorea標準條款處理（見預約支援）"
+        "強降雨：可在賞花季時間安排內免費改期",
+        "時間安排以外的取消，依atockorea標準條款處理（見預約支援）"
       ]
     },
     {
@@ -693,7 +601,7 @@
         "持照英語導遊",
         "主要入場費（彌天窟 + 日出樂園套票，約₩12,000）",
         "不含：午餐（費用自付）",
-        "不含：城山日出峰入場費（此行程為峰下打卡，不含峰頂攀登）",
+        "不含：城山日出峰入場費（此行程為峰下拍照，不含峰頂攀登）",
         "不含：任何點餐飲品或自選購物"
       ]
     }
@@ -701,7 +609,7 @@
   "practicalWeatherStatic": {
     "today": {
       "label": "即時天氣連動",
-      "temp": "Daytime ≈ 12–18 °C in cherry season",
+      "temp": "櫻花季白天氣溫約12–18°C",
       "icon": "cloud-sun"
     },
     "tomorrow": {
@@ -714,25 +622,25 @@
   "seasonalVariations": [
     {
       "season": "春季（3至4月）",
-      "title": "Tour operates",
-      "description": "高峰季——濟州市全農路和加時里鹿山路的賞花與油菜花同時盛開。賞花高峰期通常3月25日至4月10日，油菜花再延長1至2週。",
+      "title": "投行運營中",
+      "description": "高峰季——濟州市全農路和加時裡鹿山路的賞花與油菜花同時盛開。賞花高峰期通常3月25日至4月10日，油菜花再延長1至2周。",
       "icon": "flower"
     },
     {
       "season": "暮春（5月）",
-      "title": "Off-season",
+      "title": "淡季",
       "description": "賞花季已結束；建議改訂全年東部UNESCO行程替代。",
       "icon": "leaf"
     },
     {
       "season": "夏秋季（6至11月）",
-      "title": "Off-season",
+      "title": "淡季",
       "description": "賞花季以外——建議選擇全年東部UNESCO行程。",
       "icon": "sun"
     },
     {
       "season": "冬季（12至2月）",
-      "title": "Off-season",
+      "title": "淡季",
       "description": "賞花季以外——建議選擇全年東部UNESCO行程。",
       "icon": "snowflake"
     }
@@ -749,10 +657,10 @@
     {
       "icon": "calendar",
       "title": "季節彈性調整",
-      "description": "賞花視窗彈性，可在花期內免費改期",
+      "description": "賞花時間安排彈性，可在花期內免費改期",
       "iconBg": "bg-pink-50/80",
       "iconColor": "text-pink-600",
-      "body": "賞花視窗彈性，可在花期內免費改期"
+      "body": "賞花時間安排彈性，可在花期內免費改期"
     },
     {
       "icon": "shield",
@@ -773,8 +681,8 @@
     {
       "timing": "出發前2天",
       "title": "天候確認",
-      "detail": "出發前2天監測天氣預報，若建議改期會主動聯繫。",
-      "description": "出發前2天監測天氣預報，若建議改期會主動聯繫。"
+      "detail": "出發前2天監測天氣預報，若建議改期會主動聯系。",
+      "description": "出發前2天監測天氣預報，若建議改期會主動聯系。"
     },
     {
       "timing": "前一日",
@@ -791,8 +699,8 @@
     {
       "timing": "行程途中",
       "title": "行程中支援",
-      "detail": "行程途中若有任何問題，提供直達運營商熱線。",
-      "description": "行程途中若有任何問題，提供直達運營商熱線。"
+      "detail": "行程途中若有任何問題，提供直達合作業者熱線。",
+      "description": "行程途中若有任何問題，提供直達合作業者熱線。"
     },
     {
       "timing": "行程結束後",
@@ -815,12 +723,12 @@
     {
       "id": "rain",
       "question": "下雨天怎麼辦？",
-      "answer": "小雨——行程正常進行。在賞花季視窗內遇強降雨預報——我們在出發前2天主動聯繫，提供免費改期服務。在賞花季以外，本行程不開辦。"
+      "answer": "小雨——行程正常進行。在賞花季時間安排內遇強降雨預報——我們在出發前2天主動聯系，提供免費改期服務。在賞花季以外，本行程不開辦。"
     },
     {
       "id": "summit",
       "question": "我們會登上城山日出峰嗎？",
-      "answer": "不——我們只在峰下打卡拍攝。峰頂攀登是我們的全年東部UNESCO行程的一部分，但不在這個春季行程中。"
+      "answer": "不——我們只在峰下拍照拍攝。峰頂攀登是我們的全年東部UNESCO行程的一部分，但不在這個春季行程中。"
     },
     {
       "id": "kids",
@@ -845,7 +753,7 @@
     {
       "id": "lunch",
       "question": "午餐含在行程費用中嗎？",
-      "answer": "午餐費用自付。導遊帶團到當地餐廳用餐，每人約12,000至18,000韓圜，視菜品而定。"
+      "answer": "午餐費用自付。導遊帶團到當地餐廳用餐，每人約12,000至18,000韓元，視菜品而定。"
     },
     {
       "id": "admission-fees",
@@ -855,7 +763,7 @@
     {
       "id": "compare-eastern-unesco",
       "question": "與全年東部UNESCO行程有什麼差別？",
-      "answer": "景點和季節性不同。東部小型全年行程可全年出發，參觀石頭文化公園、涉地可支、城邑民俗村、日出樂園和城山日出峰（含峰頂攀登）。本行程僅在春季限定開辦，參觀賞花街、鹿山路、彌天窟、日出樂園花園和城山峰下打卡。"
+      "answer": "景點和季節性不同。東部小型全年行程可全年出發，參觀石頭文化公園、涉地可支、城邑民俗村、日出樂園和城山日出峰（含峰頂攀登）。本行程僅在春季限定開辦，參觀賞花街、鹿山路、彌天窟、日出樂園花園和城山峰下拍照。"
     }
   ],
   "guestReviews": [],
@@ -892,7 +800,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "可訂狀態會在付款步驟中確認。",
     "price": {
       "amountLabel": "",
       "currency": "USD",
@@ -908,7 +816,7 @@
     "destination_region": "jeju",
     "region_type": "jeju_east",
     "vehicle_type": "minicoach",
-    "duration_hours": 8,
+    "duration_hours": 8.0,
     "region_tags": [
       "jeju_east"
     ],
@@ -941,7 +849,7 @@
     "first_time_fit": 0.85,
     "family_fit": 0.8,
     "senior_fit": 0.65,
-    "couple_fit": 1,
+    "couple_fit": 1.0,
     "solo_traveler_fit": 0.85,
     "active_traveler_fit": 0.6,
     "adult_family_fit": 0.8,
@@ -958,21 +866,21 @@
     "iconic_landmark_fit": 0.75,
     "cafe_fit": 0.4,
     "food_fit": 0.6,
-    "nature_fit": 1,
+    "nature_fit": 1.0,
     "beach_fit": 0.2,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.2,
-    "no_shopping_fit": 1,
+    "no_shopping_fit": 1.0,
     "local_culture_fit": 0.6,
     "storytelling_fit": 0.8,
-    "unesco_fit": 1,
+    "unesco_fit": 1.0,
     "intangible_heritage_fit": 0.2,
     "indoor_ratio": 0.18,
     "weather_sensitivity": 0.85,
     "comfort_level": 0.8,
     "budget_fit": 0.6,
     "premium_fit": 0.45,
-    "small_group_fit": 1,
+    "small_group_fit": 1.0,
     "private_fit": 0.2,
     "bus_fit": 0.2,
     "price_band": "mid",
@@ -1027,183 +935,183 @@
       "noksan_ro_gasi_ri"
     ],
     "profile_format": "small_group_fixed_itinerary",
-    "tour_type_fit": 1,
+    "tour_type_fit": 1.0,
     "private_tour_fit": 0.05,
     "self_drive_fit": 0.1,
-    "jeju_anchor_fit": 1,
-    "east_jeju_fit": 1,
-    "from_jeju_city_fit": 1,
-    "jeju_city_pickup_fit": 1,
+    "jeju_anchor_fit": 1.0,
+    "east_jeju_fit": 1.0,
+    "from_jeju_city_fit": 1.0,
+    "jeju_city_pickup_fit": 1.0,
     "seogwipo_pickup_fit": 0.6,
-    "central_jeju_pickup_fit": 1,
-    "cherry_blossom_fit": 1,
-    "king_cherry_blossom_fit": 1,
-    "canola_flower_fit": 1,
-    "dual_bloom_fit": 1,
-    "spring_seasonal_fit": 1,
-    "seasonal_only_fit": 1,
+    "central_jeju_pickup_fit": 1.0,
+    "cherry_blossom_fit": 1.0,
+    "king_cherry_blossom_fit": 1.0,
+    "canola_flower_fit": 1.0,
+    "dual_bloom_fit": 1.0,
+    "spring_seasonal_fit": 1.0,
+    "seasonal_only_fit": 1.0,
     "festival_fit": 0.95,
-    "wangbeotnamu_fit": 1,
+    "wangbeotnamu_fit": 1.0,
     "yoshino_cherry_fit": 0.85,
-    "100_beautiful_roads_korea_fit": 1,
-    "scenic_drive_fit": 1,
-    "scenic_corridor_fit": 1,
-    "triple_unesco_fit": 1,
-    "world_natural_heritage_fit": 1,
-    "biosphere_reserve_fit": 1,
-    "global_geopark_fit": 1,
-    "tuff_cone_fit": 1,
-    "volcanic_landscape_fit": 1,
-    "surtseyan_eruption_fit": 1,
-    "crater_fit": 1,
-    "lava_tube_fit": 1,
-    "cave_fit": 1,
-    "geomunoreum_alternative_fit": 1,
-    "indoor_cave_fit": 1,
-    "joseon_horse_pasture_fit": 1,
+    "100_beautiful_roads_korea_fit": 1.0,
+    "scenic_drive_fit": 1.0,
+    "scenic_corridor_fit": 1.0,
+    "triple_unesco_fit": 1.0,
+    "world_natural_heritage_fit": 1.0,
+    "biosphere_reserve_fit": 1.0,
+    "global_geopark_fit": 1.0,
+    "tuff_cone_fit": 1.0,
+    "volcanic_landscape_fit": 1.0,
+    "surtseyan_eruption_fit": 1.0,
+    "crater_fit": 1.0,
+    "lava_tube_fit": 1.0,
+    "cave_fit": 1.0,
+    "geomunoreum_alternative_fit": 1.0,
+    "indoor_cave_fit": 1.0,
+    "joseon_horse_pasture_fit": 1.0,
     "nomadic_culture_fit": 0.85,
     "korean_folk_culture_fit": 0.85,
     "jeju_traditional_house_fit": 0.85,
-    "black_pig_heritage_fit": 1,
-    "k_drama_filming_fit": 1,
-    "running_man_filming_fit": 1,
+    "black_pig_heritage_fit": 1.0,
+    "k_drama_filming_fit": 1.0,
+    "running_man_filming_fit": 1.0,
     "netflix_filming_fit": 0.9,
     "walking_level_fit": 0.7,
     "stair_climbing_fit": 0.55,
     "elderly_friendly_fit": 0.75,
     "wheelchair_accessible_anchor_fit": 0.45,
     "stroller_friendly_fit": 0.7,
-    "moderate_mobility_fit": 1,
+    "moderate_mobility_fit": 1.0,
     "low_intensity_fit": 0.8,
-    "honeymoon_fit": 1,
+    "honeymoon_fit": 1.0,
     "small_family_fit": 0.85,
     "senior_couple_fit": 0.85,
     "first_time_korea_fit": 0.95,
-    "first_time_jeju_fit": 1,
+    "first_time_jeju_fit": 1.0,
     "repeat_visitor_fit": 0.85,
-    "photographer_fit": 1,
-    "instagrammable_fit": 1,
+    "photographer_fit": 1.0,
+    "instagrammable_fit": 1.0,
     "group_size_min": 2,
     "group_size_max": 14,
-    "small_group_van_fit": 1,
+    "small_group_van_fit": 1.0,
     "intimate_group_fit": 0.95,
     "customizable_route_fit": 0.05,
-    "fixed_itinerary_fit": 1,
+    "fixed_itinerary_fit": 1.0,
     "flexibility_fit": 0.3,
-    "language_english_fit": 1,
+    "language_english_fit": 1.0,
     "language_chinese_fit": 0.7,
     "language_japanese_fit": 0.5,
-    "english_guide_fit": 1,
-    "spring_fit": 1,
+    "english_guide_fit": 1.0,
+    "spring_fit": 1.0,
     "summer_fit": 0.1,
     "autumn_fit": 0.1,
     "winter_fit": 0.05,
     "all_year_fit": 0.05,
-    "march_fit": 1,
-    "early_april_fit": 1,
-    "late_march_fit": 1,
-    "cherry_bloom_window_fit": 1,
-    "canola_bloom_window_fit": 1,
+    "march_fit": 1.0,
+    "early_april_fit": 1.0,
+    "late_march_fit": 1.0,
+    "cherry_bloom_window_fit": 1.0,
+    "canola_bloom_window_fit": 1.0,
     "monsoon_fit": 0.2,
     "rainy_day_fallback_fit": 0.45,
     "indoor_anchor_fit": 0.4,
     "early_start_fit": 0.85,
     "late_finish_fit": 0.4,
-    "full_day_fit": 1,
+    "full_day_fit": 1.0,
     "half_day_fit": 0.05,
     "value_priced_fit": 0.85,
     "budget_traveler_fit": 0.85,
     "off_beaten_path_fit": 0.55,
     "crowd_avoidance_fit": 0.55,
     "no_public_bus_access_anchor_count": 1,
-    "minicoach_fit": 1,
+    "minicoach_fit": 1.0,
     "max_pax_per_vehicle": 14,
-    "festival_corridor_fit": 1,
-    "country_drive_fit": 1,
+    "festival_corridor_fit": 1.0,
+    "country_drive_fit": 1.0,
     "wind_turbine_landscape_fit": 0.9,
     "horse_park_fit": 0.9,
     "muslim_prayer_room_fit": 0.7,
     "halal_friendly_fit": 0.6,
     "haenyeo_demonstration_fit": 0.85,
-    "k_drama_running_man_fit": 1,
-    "romantic_atmosphere_fit": 1,
+    "k_drama_running_man_fit": 1.0,
+    "romantic_atmosphere_fit": 1.0,
     "wedding_photo_fit": 0.85,
-    "honeymoon_seasonal_fit": 1,
-    "china_mainland_market_fit": 0,
-    "korea_domestic_market_fit": 0,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "honeymoon_seasonal_fit": 1.0,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "jeju_cherry_blossom_east_route_fit": 1,
-    "jeju_spring_seasonal_anchor_fit": 1,
-    "east_jeju_full_day_route_fit": 1,
-    "central_jeju_pickup_to_seongsan_route_fit": 1,
-    "two_temperament_cherry_pair_fit": 1,
-    "spring_only_seasonal_lock_fit": 1,
-    "small_group_format_fit": 1,
-    "fixed_schedule_format_fit": 1,
-    "king_cherry_native_jeju_anchor_fit": 1,
-    "wangbeotnamu_native_hallasan_origin_fit": 1,
-    "emile_taquet_1908_documentation_anchor_fit": 1,
-    "yoshino_cherry_korean_japanese_botanical_debate_fit": 1,
-    "100_year_old_cherry_trees_anchor_fit": 1,
-    "jeonnong_ro_oldest_cherry_street_jeju_fit": 1,
-    "jeju_king_cherry_blossom_festival_anchor_fit": 1,
-    "festival_19th_edition_2026_anchor_fit": 1,
-    "festival_night_illumination_18_to_22_anchor_fit": 1,
-    "festival_car_free_corridor_anchor_fit": 1,
-    "free_admission_public_street_fit": 1,
-    "cherry_canola_dual_bloom_anchor_fit": 1,
-    "pink_yellow_simultaneous_bloom_unique_korea_fit": 1,
-    "5_to_7_day_peak_overlap_window_fit": 1,
-    "march_29_to_april_1_ideal_window_fit": 1,
-    "noksan_ro_gasiri_anchor_fit": 1,
-    "korea_100_most_beautiful_roads_anchor_fit": 1,
-    "korea_forest_service_2006_designation_fit": 1,
-    "joseon_royal_horse_pasture_600_year_heritage_fit": 1,
-    "noksanjang_gammajang_anchor_fit": 1,
-    "jeju_horse_park_first_community_run_museum_fit": 1,
-    "gasiri_wind_power_plant_anchor_fit": 1,
-    "ttarabi_oreum_anchor_fit": 1,
-    "drive_only_access_low_crowd_density_fit": 1,
-    "batdam_jeju_stone_walls_anchor_fit": 1,
-    "jeju_spring_k_drama_filming_route_fit": 1,
-    "when_life_gives_you_tangerines_2024_netflix_fit": 1,
-    "welcome_to_samdal_ri_2023_jtbc_fit": 1,
-    "running_man_ep89_2012_alice_in_wonderland_fit": 1,
-    "what_star_do_you_come_from_2006_mbc_fit": 1,
-    "triple_unesco_designation_anchor_fit": 1,
-    "seongsan_world_natural_heritage_2007_fit": 1,
-    "seongsan_biosphere_reserve_2002_fit": 1,
-    "seongsan_global_geopark_2010_fit": 1,
-    "only_triple_unesco_site_in_korea_fit": 1,
-    "surtseyan_hydrovolcanic_tuff_cone_anchor_fit": 1,
-    "182m_height_99_crown_rocks_anchor_fit": 1,
-    "5000_year_old_volcanic_formation_fit": 1,
-    "natural_monument_2000_designation_fit": 1,
-    "haenyeo_demonstration_13_30_15_00_anchor_fit": 1,
-    "japanese_wwii_18_caves_anchor_fit": 1,
-    "lava_tube_cave_anchor_fit": 1,
-    "micheon_cave_1700m_total_anchor_fit": 1,
-    "micheon_cave_365m_public_access_anchor_fit": 1,
-    "samdal_ri_eastern_cave_group_fit": 1,
-    "manjanggul_alternative_anchor_fit": 1,
+    "jeju_cherry_blossom_east_route_fit": 1.0,
+    "jeju_spring_seasonal_anchor_fit": 1.0,
+    "east_jeju_full_day_route_fit": 1.0,
+    "central_jeju_pickup_to_seongsan_route_fit": 1.0,
+    "two_temperament_cherry_pair_fit": 1.0,
+    "spring_only_seasonal_lock_fit": 1.0,
+    "small_group_format_fit": 1.0,
+    "fixed_schedule_format_fit": 1.0,
+    "king_cherry_native_jeju_anchor_fit": 1.0,
+    "wangbeotnamu_native_hallasan_origin_fit": 1.0,
+    "emile_taquet_1908_documentation_anchor_fit": 1.0,
+    "yoshino_cherry_korean_japanese_botanical_debate_fit": 1.0,
+    "100_year_old_cherry_trees_anchor_fit": 1.0,
+    "jeonnong_ro_oldest_cherry_street_jeju_fit": 1.0,
+    "jeju_king_cherry_blossom_festival_anchor_fit": 1.0,
+    "festival_19th_edition_2026_anchor_fit": 1.0,
+    "festival_night_illumination_18_to_22_anchor_fit": 1.0,
+    "festival_car_free_corridor_anchor_fit": 1.0,
+    "free_admission_public_street_fit": 1.0,
+    "cherry_canola_dual_bloom_anchor_fit": 1.0,
+    "pink_yellow_simultaneous_bloom_unique_korea_fit": 1.0,
+    "5_to_7_day_peak_overlap_window_fit": 1.0,
+    "march_29_to_april_1_ideal_window_fit": 1.0,
+    "noksan_ro_gasiri_anchor_fit": 1.0,
+    "korea_100_most_beautiful_roads_anchor_fit": 1.0,
+    "korea_forest_service_2006_designation_fit": 1.0,
+    "joseon_royal_horse_pasture_600_year_heritage_fit": 1.0,
+    "noksanjang_gammajang_anchor_fit": 1.0,
+    "jeju_horse_park_first_community_run_museum_fit": 1.0,
+    "gasiri_wind_power_plant_anchor_fit": 1.0,
+    "ttarabi_oreum_anchor_fit": 1.0,
+    "drive_only_access_low_crowd_density_fit": 1.0,
+    "batdam_jeju_stone_walls_anchor_fit": 1.0,
+    "jeju_spring_k_drama_filming_route_fit": 1.0,
+    "when_life_gives_you_tangerines_2024_netflix_fit": 1.0,
+    "welcome_to_samdal_ri_2023_jtbc_fit": 1.0,
+    "running_man_ep89_2012_alice_in_wonderland_fit": 1.0,
+    "what_star_do_you_come_from_2006_mbc_fit": 1.0,
+    "triple_unesco_designation_anchor_fit": 1.0,
+    "seongsan_world_natural_heritage_2007_fit": 1.0,
+    "seongsan_biosphere_reserve_2002_fit": 1.0,
+    "seongsan_global_geopark_2010_fit": 1.0,
+    "only_triple_unesco_site_in_korea_fit": 1.0,
+    "surtseyan_hydrovolcanic_tuff_cone_anchor_fit": 1.0,
+    "182m_height_99_crown_rocks_anchor_fit": 1.0,
+    "5000_year_old_volcanic_formation_fit": 1.0,
+    "natural_monument_2000_designation_fit": 1.0,
+    "haenyeo_demonstration_13_30_15_00_anchor_fit": 1.0,
+    "japanese_wwii_18_caves_anchor_fit": 1.0,
+    "lava_tube_cave_anchor_fit": 1.0,
+    "micheon_cave_1700m_total_anchor_fit": 1.0,
+    "micheon_cave_365m_public_access_anchor_fit": 1.0,
+    "samdal_ri_eastern_cave_group_fit": 1.0,
+    "manjanggul_alternative_anchor_fit": 1.0,
     "manjanggul_2023_main_section_closure_advisory": true,
-    "rainy_day_indoor_insurance_fit": 1,
+    "rainy_day_indoor_insurance_fit": 1.0,
     "constant_14c_year_round_advisory": true,
-    "ilchulland_themed_garden_complex_fit": 1,
-    "ilchulland_2002_opening_anchor_fit": 1,
-    "jeju_black_pig_cultural_heritage_material_no_5_fit": 1,
-    "jeju_black_pig_2015_designation_fit": 1,
-    "eung_tae_seok_fertility_folklore_anchor_fit": 1,
-    "ilchulland_aroma_footbath_anchor_fit": 1,
-    "ilchulland_muslim_prayer_room_anchor_fit": 1,
+    "ilchulland_themed_garden_complex_fit": 1.0,
+    "ilchulland_2002_opening_anchor_fit": 1.0,
+    "jeju_black_pig_cultural_heritage_material_no_5_fit": 1.0,
+    "jeju_black_pig_2015_designation_fit": 1.0,
+    "eung_tae_seok_fertility_folklore_anchor_fit": 1.0,
+    "ilchulland_aroma_footbath_anchor_fit": 1.0,
+    "ilchulland_muslim_prayer_room_anchor_fit": 1.0,
     "jeju_2026_bloom_forecast_2_to_7_days_early_advisory": true,
     "ilchulland_aroma_footbath_separate_fee_advisory": true,
     "lunch_60_min_window_advisory": true,
@@ -1223,7 +1131,7 @@
   "matching_metadata": {
     "matching_schema": "tour_matching_profiles_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
-    "source_of_truth_note": "matching_profile fields scored against atockorea matching algorithm v2. Variant-level overrides are not used for this product (single fixed route).",
+    "source_of_truth_note": "Internal note: product profile checked against current route-selection rules. This product uses one fixed route.",
     "audit_summary": "Spring-only east Jeju cherry+canola route. Strong substitution relationship with jeju-eastern-unesco-spots-day-tour (off-season fallback). Hard constraint on cherry season dates; weather_sensitivity=0.85 reflects bloom dependency. New POI added in v1.17: ilchulland_themed_gardens (separated from cave, prior version mistakenly used same key).",
     "score_rationale": {
       "high_scores": {
@@ -1313,19 +1221,19 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Cherry blossoms, canola fields, and a lava tube",
-        "headlineLine2": "in one east Jeju spring day",
+        "headlineLine1": "野櫻、油菜花田與熔岩管——",
+        "headlineLine2": "東濟州春日賞花完整一日",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
           "imagePosition": "center 40%",
-          "tagline": "Blossom streets to lava tube to sunrise peak.",
+          "tagline": "從賞花街道到熔岩管，再到城山日出峰——東濟州春季最美的三重奏",
           "pills": [
             "僅限春季",
             "櫻花季",
             "濟州東部"
           ],
           "meta": {
-            "duration": "8 hours",
+            "duration": "8小時",
             "region": "濟州東部",
             "stops": "6 個景點",
             "rating": 0,
@@ -1412,55 +1320,55 @@
             "id": "g1",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
-            "alt": "Cherry blossom street in Jeju City",
-            "caption": "Cherry blossom street in Jeju City",
-            "location": "Jeonnong-ro",
-            "atmosphere": "Cherry tunnel in Jeju City"
+            "alt": "濟州市全農路街道上方的粉色賞花花冠",
+            "caption": "濟州市全農路賞花街",
+            "location": "全農路",
+            "atmosphere": "濟州市區的賞花隧道"
           },
           {
             "id": "g2",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&q=80",
-            "alt": "Cherry blossoms and canola flowers along Noksan-ro",
-            "caption": "Cherry blossoms and canola flowers along Noksan-ro",
-            "location": "Noksan-ro / Gasi-ri",
-            "atmosphere": "10km of cherry and canola"
+            "alt": "加時裡鹿山路沿線的賞花樹與金黃油菜花田",
+            "caption": "鹿山路賞花與油菜花",
+            "location": "鹿山路 / 加時裡",
+            "atmosphere": "10公里賞花與油菜花"
           },
           {
             "id": "g3",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1200&q=80",
-            "alt": "Lava tube interior at Micheongul Cave",
-            "caption": "Lava tube interior at Micheongul Cave",
-            "location": "Micheongul Cave",
-            "atmosphere": "Inside the lava tube"
+            "alt": "日出樂園彌天窟洞穴的熔岩管內部與鐘乳石",
+            "caption": "彌天窟熔岩管洞穴內部",
+            "location": "彌天窟",
+            "atmosphere": "熔岩管洞穴內部"
           },
           {
             "id": "g4",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=1200&q=80",
-            "alt": "Themed botanical gardens at Ilchul Land",
-            "caption": "Themed botanical gardens at Ilchul Land",
-            "location": "Ilchul Land",
-            "atmosphere": "Themed gardens"
+            "alt": "日出樂園花園中春日花卉之間的雕塑裝置",
+            "caption": "日出樂園主題植物花園",
+            "location": "日出樂園",
+            "atmosphere": "主題花園"
           },
           {
             "id": "g5",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1551649001-7a2482d98d05?w=1200&q=80",
-            "alt": "Seongsan Ilchulbong UNESCO crater",
-            "caption": "Seongsan Ilchulbong UNESCO crater",
-            "location": "Seongsan Ilchulbong",
-            "atmosphere": "Sunrise crater rim"
+            "alt": "從峰下拍照點俯瞰城山日出峰凝灰岩錐輪廓",
+            "caption": "城山日出峰UNESCO火口",
+            "location": "城山日出峰",
+            "atmosphere": "日出火口邊緣"
           },
           {
             "id": "g6",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
-            "alt": "East Jeju cherry blossom route overview",
-            "caption": "East Jeju cherry blossom route overview",
-            "location": "Route Overview",
-            "atmosphere": "The day at a glance"
+            "alt": "東部濟州當地餐廳供應的黑豬拌飯",
+            "caption": "濟州東部賞花路線全覽",
+            "location": "路線全覽",
+            "atmosphere": "全天行程一覽"
           }
         ]
       }
@@ -1474,205 +1382,241 @@
           {
             "number": 1,
             "time": "09:00",
-            "duration": "60 min",
-            "name": "Jeonnong-ro Cherry Blossom Street",
-            "category": "Spring Bloom & Urban",
-            "description": "≈ 1.2 km of King Cherry trees lining Jeonnong Road in central Jeju City — among the earliest blooming sites on the island each year (Jeju typically opens Korea's cherry season around late March). The road runs east of the Jeju Provincial Office and anchors the annual Jeju Cherry Blossom Festival. Sidewalks are wide and flat, making this a stroll rather than a hike.",
-            "image": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=800&q=80",
+            "duration": "75分鐘",
+            "name": "全農路賞花街",
+            "category": "王櫻花大道——濟州市",
+            "description": "**全農路**是濟州市區最著名的賞櫻街道之一，以**王陵路**周邊的大片王陵與金冠（王冠)櫻花樹行道樹聞名。每年3月下旬至4月初，全農路的櫻花隧道與濟州特有的**油菜花**黃色田野交相輝映，形成濟州最具代表性的春季雙色景觀——粉白的櫻花覆頂，金黃的油菜花鋪地。此路線通常在**3月下旬至4月初的短暫盛花時段期**開放，是季節限定行程的核心起點，結束後前往其他賞櫻景點形成完整的春季主題路線。**免費參觀**；沿街可漫步拍照。",
             "highlights": [
-              "Cherry tunnel in central Jeju City",
-              "Walkable urban blossom street",
-              "Easy photo access from pickup"
+              "濟州市區最著名的賞櫻街道之一",
+              "**王陵路周邊大片王陵與金冠（王冠）櫻花隧道**",
+              "粉白櫻花 + 金黃油菜花 = 濟州春季最具代表性的雙色景觀",
+              "**盛花期：3月下旬至4月初**（每年略有差異）",
+              "季節限定行程的核心起點",
+              "**免費參觀**；沿街漫步拍照",
+              "與濟州其他賞櫻景點組成完整的春季主題路線",
+              "結合日出樂園、城山日出峰形成濟州東部精華春季路線",
+              "賞花時段期通常僅**10至14天**——出發前確認當年開花狀況"
             ],
             "timeUsed": [
-              "Walk through main blossom corridor",
-              "Photo time across multiple angles",
-              "Brief context on Jeju spring climate"
+              "大巴停至濟州綜合運動場停車場 (~5分鐘)",
+              "步行走廊西端 + 拍照時間 (~25分鐘)",
+              "漫步穿越櫻花隧道東段 (~30分鐘)",
+              "節日攤位飲食選擇 (~10分鐘)",
+              "在大巴集合 (~5分鐘)"
             ],
-            "whyOnRoute": "Starts the day at peak blossom freshness before crowds build up at rural sites.",
-            "visitBasics": {
-              "hours": "Open access",
-              "closed": "None",
-              "admission": "Free",
-              "walking": "Easy (flat urban)"
-            },
-            "convenience": {
-              "restroom": "Nearby cafes",
-              "parking": "Limited street parking"
-            },
-            "smartNotes": {
-              "photo": "Morning low light gives the softest blossom glow.",
-              "facilities": "Use restroom at pickup before leaving city.",
-              "tip": "Cherry timing window is 7-10 days only — go on day 1 of your trip if possible."
+            "whyOnRoute": "全農路是**目錄中任何濟州賞花行程的首選開場核心亮點** — 韓國本地王陵與金冠原生賞花樹豐富度最高的地帶，位於平坦的1.2公里節慶步行廊道中。09:00出發可在**柔和的晨光 + 觀光巴士11:00前大量湧至前的最低人潮豐富度**中盡情拍攝。優先選擇全農路而非濟州大學路的原因在於：全農路的路樹為老齡王陵與金冠品種（花冠更大、顏色更深），且步行廊道相對封閉於車流，更適合拍攝。",
+            "_poi_meta": {
+              "poi_key": "jeonnong_ro_cherry_blossom_street",
+              "kb_version": "1.29",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Jeju official",
+                "Korea Tourism Organization 2026 forecast",
+                "Best of Korea 2026 cherry blossom guide",
+                "90DayKorean cherry blossom guide",
+                "Visit Jeju official (visitjeju.net — Jeonnong-ro Cherry Blossom Festival listing + 1.2 km corridor + Sin-jeju location)",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Jeju Cherry Blossom Festival 2026 forecast + bloom timing)",
+                "Jeju Cherry Blossom Festival official organizing committee (Jeonnong-ro 19th edition 2026 — car-free corridor + lanterns + night illumination)",
+                "Korea Forest Service (forest.go.kr — King Cherry / Wangbeotnamu native species record + 1908 Émile Taquet Hallasan documentation)",
+                "Wikipedia (Prunus × yedoensis — King Cherry vs Yoshino Cherry botanical classification debate)"
+              ]
             }
           },
           {
             "number": 2,
             "time": "10:30",
-            "duration": "90 min",
-            "name": "Noksan-ro (Gasi-ri 10km Blossom Road)",
-            "category": "Spring Bloom & Countryside",
-            "description": "A ≈ 10 km country road through Gasi-ri Village in Pyoseon-myeon, lined with cherry trees overhead and bright yellow rapeseed (yuchae / canola) fields beneath — the layered pink-and-yellow canopy is the most-photographed Jeju spring scene. The road is rural with no continuous sidewalk, so visits stay near pull-out points; passing the Jeongseok Aviation Museum and Yusu-am Hermitage along the way.",
-            "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80",
+            "duration": "90分鐘",
+            "name": "鹿山路（加時裡10公里賞花 + 油菜花路）",
+            "category": "櫻花+油菜花景觀公路——朝鮮王室牧場",
+            "description": "**鹿山路**是濟州島最著名的**10公里「雙花道」** — 道路兩側種植的**王陵與金冠（王冠）櫻花樹**形成壯觀的花卉隧道，而道路中間分隔帶和周邊田野則遍植**金黃色油菜花**，形成韓國全境最具攝影魅力的春季景觀之一。位於西歸浦市 表善面 加時里（加時裡）地區，是濟州最廣為人知的賞花路線。盛花期通常在**3月下旬至4月初**，與全農路類似，但因地理位置稍偏南，開花時間可能略有差異。路線全程適合**自駕或隨行巴士遊覽**，沿途多個停車區供下車拍照。**免費參觀**；春季節慶期間人潮較多，建議早出發。",
             "highlights": [
-              "10km cherry blossom + canola road",
-              "Layered pink and yellow florals",
-              "Wide-open countryside vistas"
+              "**10公里「雙花道」** — 濟州最著名的春季景觀之一",
+              "王陵與金冠（王冠）櫻花隧道 + 金黃油菜花田 = 韓國全境最具攝影魅力的春季景觀",
+              "位於加時裡地區",
+              "**盛花期：3月下旬至4月初**（每年略有差異）",
+              "全程適合自駕或隨行巴士遊覽",
+              "沿途多個停車區供下車拍照",
+              "**免費參觀**；春季節慶期間人潮較多",
+              "建議早出發以避開節慶高峰人潮",
+              "與全農路組成濟州春季賞花路線的黃金組合"
             ],
             "timeUsed": [
-              "Multiple drive-through photo stops",
-              "Walking sections at peak viewpoints",
-              "Time to explore canola fields"
+              "從田農路出發至鹿山路入口（經1132號道路，約50分鐘）",
+              "攝影點1：濟州馬放牧地停車場+油菜花廣場——約25分鐘",
+              "沿10公里路段緩慢行駛（含2–3處停靠拍攝）——約25分鐘",
+              "拍照點2：風力發電機與櫻花隧道中段（約15分鐘）",
+              "於 Jorangmal 體驗中心附近最後拍照與散步（約15分鐘）",
+              "前往午餐地點 (~10分鐘)"
             ],
-            "whyOnRoute": "The peak visual moment of the day — cherry blossoms with canola underneath is a uniquely Jeju spring composition.",
-            "visitBasics": {
-              "hours": "Open access (daylight)",
-              "closed": "None",
-              "admission": "Free",
-              "walking": "Easy to moderate"
-            },
-            "convenience": {
-              "restroom": "Limited rural facilities",
-              "parking": "Roadside pull-offs"
-            },
-            "smartNotes": {
-              "photo": "Wide compositions catch the layered pink/yellow effect.",
-              "facilities": "Use restroom before this stop — rural section.",
-              "tip": "Best window is late March to early April; canola can outlast cherry by 1-2 weeks."
+            "whyOnRoute": "鹿山路是**濟州代表性的賞花行車體驗** — 從根本上不同於城市的全農路節慶（靜態步行廊道）。將兩者安排在同一個早上，讓旅客可以體驗**城市節慶豐富度**與**農村田園風光的寧靜**兩種截然不同的濟州賞花面向，這是在任何其他行程中都無法實現的對比。沿途10公里的賞花樹與油菜花複合景觀，讓「鹿山路」成為濟州春季最多分享的社交媒體拍攝景觀。",
+            "_poi_meta": {
+              "poi_key": "noksan_ro_gasiri_blossom_road",
+              "kb_version": "1.29",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Korea (Korea Tourism Organization)",
+                "Jeju Horse Park official",
+                "The Soul of Seoul Jeju spring guide",
+                "Calm Chronicle Jeju guide",
+                "Visit Korea (Korea Tourism Organization — Noksan-ro 'Jeju's Most Beautiful Spring Road' + Korea's 100 Most Beautiful Roads listing)",
+                "Jeju Horse Park (jejuhorsepark.com — Jorangmal Experience Center + first community-run national museum in Korea)",
+                "Korea Forest Service (forest.go.kr — Korea's 100 Most Beautiful Roads designation methodology)",
+                "Visit Jeju official (visitjeju.net — Gasi-ri Village + Noksanjang/Gammajang royal horse pasture heritage + 600-year history)",
+                "Wikipedia (Gasi-ri — When Life Gives You Tangerines 2024 Netflix + Welcome to Samdal-ri 2023 JTBC filming credits)"
+              ]
             }
           },
           {
             "number": 3,
             "time": "12:15",
-            "duration": "60 min",
-            "name": "Lunch (East Jeju local cuisine)",
-            "category": "Meal",
-            "description": "Local restaurant near Pyoseon — typical East Jeju lunches feature black pork (heuk-dwaeji) bibimbap, abalone porridge (jeonbok-juk), or seasonal seafood. Group reset before the afternoon stops; lunch cost paid separately.",
-            "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&q=80",
+            "duration": "60分鐘",
+            "name": "午餐（濟州東部當地料理）",
+            "category": "餐飲",
+            "description": "在東部濟州的當地餐廳享用午餐（費用自付，導遊推薦）。典型選項：**豬肉拌飯**；**海女章魚拌飯**；**濟州鮑魚粥**。導遊協助點餐。",
             "highlights": [
-              "Traditional Jeju cuisine",
-              "Regional restaurant near Pyoseon"
+              "**豬肉拌飯**——濟州黑豬豬肉拌飯",
+              "**海女章魚拌飯**——東部濟州的當地海鮮特色",
+              "**濟州鮑魚粥**"
             ],
             "timeUsed": [
-              "Lunch order and meal",
-              "Brief group reset"
+              "從鹿山路至餐廳駕車（約10分鐘）",
+              "點餐+用餐（約50分鐘）",
+              "在大巴集合 (~5分鐘)"
             ],
-            "whyOnRoute": "Midday timing creates a clean reset before the cave and crater stops.",
-            "visitBasics": {
-              "hours": "12:00-14:00 typical",
-              "admission": "Lunch cost paid separately (≈ ₩12,000–18,000 per person)",
-              "walking": "Minimal"
-            },
-            "convenience": {
-              "restroom": "At restaurant",
-              "parking": "Available"
-            },
-            "smartNotes": {
-              "tip": "Vegetarian options on request — notify the day before."
+            "whyOnRoute": "午餐的時間安排在上午賞花路段和下午日出樂園 + 城山日出峰路段的地理中間點——最大限度減少回頭路，並在兩段戶外行程之間為旅客提供一頓溫熱餐食的預留時間。",
+            "_poi_meta": {
+              "poi_key": "OPS_east_jeju_lunch",
+              "kb_version": "1.17",
+              "verified_date": "2026-04-29"
             }
           },
           {
             "number": 4,
             "time": "13:30",
-            "duration": "60 min",
-            "name": "Micheon Cave (at Ilchul Land)",
-            "category": "Lava Tube & Geology",
-            "description": "A privately-managed lava tube at Ilchul Land theme park near Pyoseon — distinct from Jeju's UNESCO-listed Manjanggul on the north coast. The walkable section runs ≈ 365 m with chamber heights up to 30 m; interior temperature stays ≈ 13 °C year-round, making this an indoor relief stop on rainy or hot days. Lava stalagmites and cooling-flow structures are illuminated along a paved path.",
-            "image": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=800&q=80",
+            "duration": "60分鐘",
+            "name": "彌天窟（日出樂園）",
+            "category": "熔岩洞穴+主題公園——萬丈窟備選（緊鄰UNESCO認定區域）",
+            "description": "**彌天窟**是日出樂園的核心熔岩管洞穴，全長**1,700公尺**，其中**365公尺人工平整路段**開放（約25分鐘穿越）。與UNESCO世界自然遺產**萬丈窟**屬同一熔岩管體系；**萬丈窟關閉時**作為最佳備選安排。人工平整步道使洞穴更易到達；七色LED燈光照明洞穴構造。洞穴外，日出樂園40萬平方公尺公園場地另設傳統濟州村落、盆景園和泡腳咖啡廳。濟州唯一設有現場穆斯林祈禱室。入場費：**成人₩12,000 / 青少年₩9,000 / 兒童₩7,000**。",
             "highlights": [
-              "Large lava tube interior",
-              "Lava stalagmites and floor formations",
-              "Stable temperature year-round"
+              "**全長1,700公尺**熔岩管；**365公尺開放路段**（約25分鐘穿行）",
+              "**萬丈窟UNESCO備用方案**",
+              "**洞底人工平整** — 更易到達",
+              "七色裝飾燈光",
+              "40萬平方公尺公園 — 傳統村落、盆景、泡腳咖啡廳",
+              "濟州唯一設有現場穆斯林祈禱室",
+              "入場費 **₩12,000 / 成人；₩7,000 / 兒童**",
+              "30%室內 / 70%戶外",
+              "《Running Man》第89集拍攝（2012年）"
             ],
             "timeUsed": [
-              "Guided cave walk-through",
-              "Geology interpretation",
-              "Photo time at main chamber"
+              "停車+購票+入場——約5分鐘",
+              "米川窟穿越（365米/約25分鐘）——約30分鐘",
+              "水邊公園+雕塑街——約20分鐘",
+              "可選：盆景/仙人掌園+足浴咖啡館——約15分鐘",
+              "集合時間——約5分鐘"
             ],
-            "whyOnRoute": "Adds geological depth to the volcanic story and gives a weather-resilient indoor stop in case of afternoon rain.",
-            "visitBasics": {
-              "hours": "09:00-18:00",
-              "closed": "Check seasonal",
-              "admission": "Adults 9,000 KRW",
-              "walking": "Easy (paved cave path)"
-            },
-            "convenience": {
-              "restroom": "At entrance",
-              "parking": "Available"
-            },
-            "smartNotes": {
-              "photo": "Tripod or steady hand needed — low ambient light.",
-              "facilities": "Cave temperature is ≈ 14C year-round; bring a light layer.",
-              "tip": "Connects with Ilchul Land via combined ticket — bundled with stop 5."
+            "whyOnRoute": "彌天窟是任何濟州東部路線的**雨天保險** — 天氣轉溼時，30分鐘的洞穴步行是一個可靠的室內體驗，同時仍能展示濟州的火山地質。優先選擇彌天窟而非**萬丈窟**（UNESCO列名但地點更偏遠的替代選擇）的原因在於：萬丈窟的主要公共路段目前**因生態恢複而關閉**，而彌天窟的人工平整步道也讓各年齡段的旅客更易到達。",
+            "_poi_meta": {
+              "poi_key": "ilchulland_micheon_cave",
+              "kb_version": "1.29",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Jeju official (Micheongul Cave page)",
+                "Visit Korea Ilchul Land page",
+                "Creatrip Ilchul Land guide",
+                "Wanderlog Ilchul Land reviews",
+                "Visit Jeju official (visitjeju.net — Micheongul Cave + Samdal-ri eastern cave group of 15 Jeju cave systems)",
+                "Visit Korea (Korea Tourism Organization — Ilchul Land + Micheon Cave 1,700m total / 365m public-access listing)",
+                "Ilchul Land official (ilchulland.com — 2002 opening + admission + 09:00-18:00 hours + 7-color lighting installation)",
+                "Korea Heritage Service (cha.go.kr — Jeju lava-tube cave systems + UNESCO Geomunoreum lava-tube system inheritance)",
+                "Wikipedia (Ilchul Land — Micheon Cave geology + ~14°C constant temperature + Jeju lava tube formation)"
+              ]
             }
           },
           {
             "number": 5,
             "time": "15:00",
-            "duration": "60 min",
-            "name": "Ilchul Land Themed Gardens",
-            "category": "Garden & Sculpture",
-            "description": "Themed gardens combined with sculpture installations at the same complex as Micheon Cave (combo ticket). ≈ 50,000 m² of paths through subtropical plantings, with cherry blossoms and rapeseed in spring overlapping the bloom-tour theme. Easy walking on flat garden paths.",
-            "image": "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=800&q=80",
+            "duration": "75分鐘",
+            "name": "日出樂園主題花園",
+            "category": "主題花園——民俗村+仙人掌+盆景+雕塑步道",
+            "description": "彌天窟洞穴外，**日出樂園**的**40萬平方公尺公園場地**設有多個主題花園和體驗設施。複原的**傳統濟州村落**還原了石牆茅草屋和傳統生活場景；**野花盆景園**展示濟州原生植物；**仙人掌溫室**全年開放；**雕塑街**沿步道散置藝術裝置。**泡腳咖啡廳（精油足浴Spa）**是步行後的肌肉放鬆選擇。日出樂園是**濟州唯一設有現場穆斯林祈禱室**的景點。入場費包含彌天窟洞穴和所有主題花園：**成人₩12,000 / 青少年₩9,000 / 兒童₩7,000**。",
             "highlights": [
-              "Themed garden zones",
-              "Sculpture and art installations",
-              "Seasonal blooms layered with sculpture"
+              "40萬平方公尺主題公園場地 — 洞穴 + 花園 + 溫室 + 傳統村落",
+              "複原的**傳統濟州村落** — 石牆茅草屋",
+              "**野花盆景園** + **仙人掌溫室**（全年開放）",
+              "**泡腳咖啡廳（精油足浴）** — 步行後的肌肉放鬆",
+              "**濟州唯一設有現場穆斯林祈禱室**",
+              "入場費包含彌天窟：**成人₩12,000 / 兒童₩7,000**",
+              "30%室內 / 70%戶外",
+              "《Running Man》第89集拍攝（2012年）",
+              "緊鄰城山日出峰 — 適合組合在同一行程"
             ],
             "timeUsed": [
-              "Walk through main garden zones",
-              "Photo time at sculpture installations",
-              "Garden cafe or rest area"
+              "沿藍線步道步行至民俗村 (~5分鐘)",
+              "民俗村、黑豬與應泰石相關故事（約20分鐘）",
+              "盆栽庭園＋仙人掌溫室＋水邊公園（約25分鐘）",
+              "雕塑步道＋春花散步＋拍照時間（約15分鐘）",
+              "可選香氛足浴或自由活動時間 + reassemble (~10 min)"
             ],
-            "whyOnRoute": "Slows the pace after the active cave walk and prepares group for the optional Seongsan stop.",
-            "visitBasics": {
-              "hours": "08:30-18:00",
-              "closed": "None",
-              "admission": "Adults 12,000 KRW (combined with Micheongul)",
-              "walking": "Easy (flat garden paths)"
-            },
-            "convenience": {
-              "restroom": "Multiple",
-              "parking": "Available"
-            },
-            "smartNotes": {
-              "photo": "Mix of natural and sculptural compositions works best in afternoon light.",
-              "tip": "Combined ticket with Micheongul Cave gives ≈ 20% saving."
+            "whyOnRoute": "日出樂園的主題花園是**昏暗洞穴上午**與**壓軸城山日出峰黃昏**之間理想的節奏轉換** — 75分鐘在多樣花園中的戶外步行讓旅客得以調整狀態。傳統濟州村落 + 黑豬表演也為全天提供了**唯一的文化遺產停靠點**（全農路和鹿山路以自然為主；城山日出峰以地質為主），讓行程在賞花與地質之外增添了一層民俗文化的均衡感。",
+            "_poi_meta": {
+              "poi_key": "ilchulland_themed_gardens",
+              "kb_version": "1.29",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Korea Ilchul Land page",
+                "Creatrip Ilchul Land guide",
+                "Wanderlog Ilchul Land reviews",
+                "Ilchul Land listing",
+                "Visit Korea (Korea Tourism Organization — Ilchul Land themed-garden complex + Folk Village + Wild Flower Bonsai Garden)",
+                "Ilchul Land official (ilchulland.com — blue-line walking path + Folk Village + Cactus Greenhouse + Subyeon Park)",
+                "Visit Jeju official (visitjeju.net — Eung Tae-seok 'stones that lay eggs' fertility folklore + Sculpture Path)",
+                "Korea Tourism Organization Filming Locations Guide (Running Man Episode 89 2012 + What Star Do You Come From 2006 MBC)",
+                "Wikipedia (Jeju Black Pig — Cultural Heritage Material No. 5 designation 2015)"
+              ]
             }
           },
           {
             "number": 6,
             "time": "16:15",
-            "duration": "45 min",
-            "name": "Seongsan Ilchulbong (Photo Stop)",
-            "category": "UNESCO Volcano",
-            "description": "UNESCO World Heritage tuff cone — a hydrovolcanic crater rising ≈ 180 m from the sea, formed by an underwater eruption ≈ 5,000 years ago. This tour takes the base-level photo viewpoint only (no summit climb); the silhouette of the crater rim against the east-coast sky closes the day. Summit climb is part of our year-round Eastern UNESCO tour.",
-            "image": "https://images.unsplash.com/photo-1551649001-7a2482d98d05?w=800&q=80",
+            "duration": "75分鐘",
+            "name": "城山日出峰（UNESCO拍照景點）",
+            "category": "UNESCO凝灰岩錐——日出峰（三重UNESCO認定）",
+            "description": "**城山日出峰（城山日出峰，「日出峰」）**是一座**距今5,000年的薩託謝安式水火山凝灰岩錐**，火口**直徑600公尺、深90公尺**，周圍環繞著**99塊鋸齒狀的邊緣岩石**。城山日出峰擁有**UNESCO三重認定**（世界遺產 + 生物圈保護區 + 全球地質公園）。步道：**單程0.8公里，爬升約140公尺，來回60分鐘**。**海女表演**每日在峰下海灣**13:30和15:00**各舉行一場。門票於**2025年4月更新**：**成人₩5,000 / 青少年₩2,500**，7歲以下及65歲以上免費。山頂觀景臺是欣賞**日出峰全景與牛島**的最佳位置，也是韓國**元旦日出朝聖**的首選地。",
             "highlights": [
-              "UNESCO crater silhouette",
-              "Coastal viewpoint photos",
-              "End-of-day east Jeju anchor"
+              "**UNESCO三重認定**：世界遺產2007 + 生物圈保護區2002 + 全球地質公園2010",
+              "火口**直徑600公尺、深90公尺**，環繞著**99塊鋸齒狀邊緣岩石**（「石冠」）",
+              "**海拔182公尺** — 石階步道來回60分鐘",
+              "**每日13:30 + 15:00海女表演** — UNESCO非物質文化遺產2016年",
+              "門票：成人₩5,000 / 青少年₩2,500 / 7歲以下及65歲以上免費",
+              "春秋季開放時間 **05:00至19:00**",
+              "**每月第一個星期一休館**",
+              "**牛島**在山頂清晰可見，4公里外，渡輪15分鐘可達",
+              "韓國**元旦日出朝聖**首選地，每年逾5萬人登頂"
             ],
             "timeUsed": [
-              "Walk to base viewpoint",
-              "Photo stop at iconic angles",
-              "Brief context on volcanic formation"
+              "停車+購票+底部簡介——約10分鐘",
+              "登頂觀景臺（0.8公里/高差140米）——約30分鐘",
+              "頂部觀景+火山口邊緣拍照——約20分鐘",
+              "下山——約20分鐘",
+              "可選：在底部觀看海女表演（15:00場次）——約10分鐘"
             ],
-            "whyOnRoute": "Closes the route on east Jeju's most recognized landmark without adding a steep summit climb at end of day.",
-            "visitBasics": {
-              "hours": "Mar–Apr & Sep–Oct: 05:00–19:00; May–Aug: 04:30–20:00; Nov–Feb: 06:00–18:00 (last ticketing 1 hour before closing)",
-              "closed": "Open year-round (weather closures possible)",
-              "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
-              "walking": "Moderate — 20–30 min steady stair climb (≈ 600 stairs); benches every few minutes for rest"
-            },
-            "convenience": {
-              "restroom": "Available at entrance and base",
-              "parking": "Large free parking lot"
-            },
-            "smartNotes": {
-              "photo": "Summit view of Hallasan to the west and Udo island to the north on clear days; haenyeo black-sand beach view from descending path",
-              "tip": "All stairs but well-maintained — manageable in casual clothes; family-friendly with rest stops; sunrise visits popular but crowds gather pre-dawn",
-              "facilities": "Café (Fritz Coffee 1.3km away has best exterior views of the peak); ferry to Udo Island from Seongsan Port (1.5km/15 min walk)"
+            "whyOnRoute": "城山日出峰是這條濟州東部路線上**唯一的UNESCO世界自然遺產核心亮點** — 以韓國最具代表性的火山地標作為全天的壓軸。16:15的刻意晚到時間讓旅客在**午後黃金光線**下拍攝峰頂（清晨的日出人潮早已消散）。75分鐘的停留時間是**純拍照格式** — 在峰下各角度拍攝為主，不攀登峰頂（峰頂攀登是全年東部UNESCO行程的一部分，但不在這個春季行程中）。",
+            "_poi_meta": {
+              "poi_key": "seongsan_ilchulbong",
+              "kb_version": "1.29",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO World Heritage Centre",
+                "Visit Jeju official",
+                "Inside Jeju 2026 admission guide",
+                "Cultural Heritage Administration of Korea",
+                "UNESCO World Heritage Centre (whc.unesco.org — Jeju Volcanic Island and Lava Tubes inscription 2007-07-02)",
+                "Visit Jeju official (visitjeju.net — Seongsan Ilchulbong Sunrise Peak listing + 99-crown-rocks + 5,000-year tuff cone)",
+                "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Natural Monument designation 2000-07-19)",
+                "UNESCO Global Geoparks Network (Jeju Island Global Geopark inscription 2010-10)",
+                "Wikipedia (Seongsan Ilchulbong — Surtseyan-type hydrovolcanic eruption + 18 Japanese WWII caves + haenyeo demonstrations)"
+              ]
             }
           }
         ]
@@ -1685,65 +1629,56 @@
       "props": {
         "routeFlowStops": [
           {
-            "id": "01",
-            "name": "Jeonnong-ro",
-            "theme": "Urban Bloom"
+            "name": "田農路",
+            "type": "origin",
+            "theme": "城市花路"
           },
           {
-            "id": "02",
-            "name": "Noksan-ro",
-            "theme": "Country Bloom"
+            "name": "鹿山路",
+            "type": "primary",
+            "theme": "田園花路"
           },
           {
-            "id": "03",
-            "name": "Lunch",
-            "theme": "Meal"
+            "name": "午餐",
+            "type": "meal",
+            "theme": "餐飲"
           },
           {
-            "id": "04",
-            "name": "Micheongul",
-            "theme": "Cave"
+            "name": "米川窟",
+            "type": "primary",
+            "theme": "洞穴"
           },
           {
-            "id": "05",
-            "name": "Ilchul Land",
-            "theme": "Garden"
+            "name": "日出樂園",
+            "type": "primary",
+            "theme": "花園"
           },
           {
-            "id": "06",
-            "name": "Seongsan",
-            "theme": "UNESCO Volcano"
+            "name": "城山",
+            "type": "return",
+            "theme": "UNESCO火山"
           }
         ],
         "routePhases": [
           {
-            "label": "Morning",
-            "range": "1-2",
-            "theme": "Cherry blossom peaks",
-            "bgClass": "bg-pink-50/70",
-            "textClass": "text-pink-700",
-            "dotClass": "bg-pink-500"
+            "phase": "賞花高峰",
+            "duration": "第1–2站",
+            "description": "上午：櫻花綻放"
           },
           {
-            "label": "Midday",
-            "range": "3",
-            "theme": "Lunch",
-            "bgClass": "bg-amber-50/70",
-            "textClass": "text-amber-700",
-            "dotClass": "bg-amber-500"
+            "phase": "午餐",
+            "duration": "第3站",
+            "description": "中午：午餐"
           },
           {
-            "label": "Afternoon",
-            "range": "4-6",
-            "theme": "Cave to garden to crater",
-            "bgClass": "bg-emerald-50/70",
-            "textClass": "text-emerald-700",
-            "dotClass": "bg-emerald-500"
+            "phase": "洞穴到花園到火口",
+            "duration": "第4–6站",
+            "description": "下午：洞穴→花園→火山口"
           }
         ],
         "routeShapeIntro": {
-          "title": "How this spring day moves",
-          "subtitle": "Cherry blossoms first while light is soft, lava tube and garden in the afternoon, Seongsan to close. 09:00 to 17:30."
+          "title": "行程路線一覽",
+          "subtitle": "趁光線柔和先賞櫻花，下午遊覽熔岩洞穴和花園，以城山收尾。09:00出發，17:30返回。"
         }
       }
     },
@@ -1754,77 +1689,77 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "First-time spring visitors",
-            "Couples and photo-focused travelers",
-            "Adult families",
-            "Travelers chasing peak cherry blossom"
+            "初次造訪濟州的春季旅客",
+            "情侶和以攝影為主的旅客",
+            "成人家庭",
+            "追尋賞花高峰的旅客"
           ],
           "routeLogicSections": [
             {
-              "title": "Pacing & structure",
+              "title": "行程節奏與結構",
               "icon": "sun",
               "iconBg": "bg-amber-50/80",
               "iconColor": "text-amber-600",
               "items": [
                 {
-                  "label": "Blossoms First, Before Heat",
-                  "detail": "Both cherry blossom stops happen before midday so the light is softer and the petals haven't dropped from afternoon wind."
+                  "label": "賞花優先，避開高溫",
+                  "detail": "兩個賞花景點均安排在中午之前，光線較柔和，花瓣也未因午後風力而飄落。"
                 },
                 {
-                  "label": "Cave as Weather Buffer",
-                  "detail": "Micheongul Cave at midday provides a stable indoor stop — useful insurance if afternoon weather turns."
+                  "label": "洞穴作為天氣預留時間",
+                  "detail": "彌天窟在中午提供一個穩定的室內停靠點——若下午天氣轉壞，這是很好的應急備選。"
                 },
                 {
-                  "label": "Crater Last, As Anchor",
-                  "detail": "Seongsan closes the route as a recognizable east Jeju visual anchor without adding a summit climb at end of day."
+                  "label": "火口壓軸作為東部地標",
+                  "detail": "城山以東濟州最具代表性的景色地標作為全天收尾，不在行程結尾加入體力消耗較大的峰頂攀登。"
                 }
               ]
             },
             {
-              "title": "Why this is spring-only",
+              "title": "為什麼這是限定春季行程",
               "icon": "flower",
               "iconBg": "bg-pink-50/80",
               "iconColor": "text-pink-600",
               "items": [
                 {
-                  "label": "Cherry Window is 7-10 Days",
-                  "detail": "King cherry blossoms peak briefly between late March and early April — book day 1 of your Jeju trip if you can."
+                  "label": "王陵與金冠賞花時間安排僅7至10天",
+                  "detail": "王陵與金冠（濟州原生品種）賞花在3月下旬至4月初短暫盛開——如果可以的話，建議安排在濟州行程的第一天。"
                 },
                 {
-                  "label": "Canola Adds 1-2 Weeks",
-                  "detail": "Canola fields often outlast cherry by 1-2 weeks, so the Noksan-ro stop holds its visual impact slightly longer."
+                  "label": "油菜花延長1至2周",
+                  "detail": "油菜花田往往比賞花延長1至2周，因此鹿山路的景觀景色沖擊力持續稍長。"
                 },
                 {
-                  "label": "Outside Bloom Window, Pick East-Small",
-                  "detail": "If your dates fall outside cherry season, our jeju-eastern-unesco-spots-day-tour route covers the same region with year-round POIs (Stone Park, Seopjikoji, Folk Village)."
+                  "label": "賞花季以外，選擇東部小型全年行程",
+                  "detail": "若您的日期不在賞花季內，我們的全年東部UNESCO行程涵蓋同一地區並提供全年景點（石頭文化公園、涉地可支、城邑民俗村）。"
                 }
               ]
             },
             {
-              "title": "Trade-offs honestly",
+              "title": "如實說明的取捨",
               "icon": "info",
               "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "No Seongsan Summit",
-                  "detail": "We do a base viewpoint photo stop only — to fit cherry blossom street time without the steep summit climb."
+                  "label": "不含城山峰頂攀登",
+                  "detail": "我們只在峰下拍照拍攝——為了在不加入陡峭峰頂攀登的前提下，爭取更多賞花街的時間。"
                 },
                 {
-                  "label": "Rain is a Real Risk",
-                  "detail": "Cherry blossom impact drops sharply in heavy rain. Check forecast 2-3 days out and consider rebooking if storms loom."
+                  "label": "強降雨是真實風險",
+                  "detail": "大雨天賞花的景色沖擊大幅下降。建議提前2至3天確認天氣預報，若有暴雨在即，考慮改期。"
                 },
                 {
-                  "label": "Crowds at Peak",
-                  "detail": "Last weekend of March and first weekend of April are the busiest. Weekday departures get more space."
+                  "label": "高峰期人潮較多",
+                  "detail": "3月最後一個週末和4月第一個週末是人潮最多的時段。平日出發可享有更多空間。"
                 }
               ]
             }
           ],
           "lessIdealFor": [
-            "Off-season visitors (after Apr 15)",
-            "Groups avoiding caves",
-            "Stroller-heavy groups (rural roadsides)"
+            "4月15日後的旅客（賞花季已結束）",
+            "迴避洞穴的旅客",
+            "攜帶大量嬰兒車的團體（農村路邊狀況）"
           ]
         }
       }
@@ -1837,104 +1772,99 @@
         "practicalAccordionItems": [
           {
             "id": "pickup",
-            "title": "Pickup & drop-off",
-            "preview": "Hotel lobby pickup in Jeju City area",
+            "title": "接送與下車地點",
+            "preview": "濟州市區飯店大廳接送",
             "content": [
-              "Pickup from your hotel lobby between 08:30-09:00",
-              "Return drop-off by approximately 17:30",
-              "Airport pickup available on request",
-              "Pickup outside Jeju City (Seogwipo, Aewol) — surcharge applies; rate confirmed at booking."
+              "濟州市區的飯店大廳接送，08:30至09:00之間",
+              "回程下車時間約17:30",
+              "可提供機場接送（請預約時告知）",
+              "濟州市以外接送（西歸浦、愛月）須加收費用；費率在預約時確認"
             ]
           },
           {
             "id": "what-to-bring",
-            "title": "What to wear & bring",
-            "preview": "Comfortable shoes, light layers, camera",
+            "title": "穿著與攜帶物品",
+            "preview": "舒適步行鞋、輕薄外套、相機",
             "content": [
-              "Comfortable walking shoes (multiple short walks)",
-              "Light jacket — spring temperatures range 10-18°C",
-              "Camera or smartphone for blossom photos",
-              "Cash or card for lunch and admission fees"
+              "舒適的步行鞋（多段短程步行）",
+              "薄外套——春季氣溫約10至18°C",
+              "相機或智慧型手機（賞花拍攝用）",
+              "現金或信用卡（午餐和入場費用）"
             ]
           },
           {
             "id": "season",
-            "title": "Cherry blossom season window",
-            "preview": "Late March to early April",
+            "title": "賞櫻期間說明",
+            "preview": "賞花時間安排：3月下旬至4月初",
             "content": [
-              "Peak window: approximately March 25 - April 10 (varies year to year)",
-              "Canola flowers extend 1-2 weeks beyond cherry peak",
-              "We recommend booking day 1 of your Jeju trip during the window",
-              "If your travel dates fall outside the window, consider jeju-eastern-unesco-spots-day-tour route instead"
+              "高峰期時間安排：約3月25日至4月10日（每年略有差異）",
+              "油菜花比賞花延長1至2周",
+              "建議安排在您的濟州行程第一天出發",
+              "若您的旅遊日期在時間安排以外，建議改訂全年東部UNESCO行程"
             ]
           },
           {
             "id": "weather-policy",
-            "title": "Weather policy",
-            "preview": "Heavy rain may affect rebooking",
+            "title": "天候政策",
+            "preview": "強降雨可能安排改期",
             "content": [
-              "Light rain: tour operates on schedule",
-              "Heavy rain: free rescheduling available within season window",
-              "Outside-window cancellation policies follow standard atockorea terms (see Booking Support)."
+              "小雨：行程正常進行",
+              "強降雨：可在賞花季時間安排內免費改期",
+              "時間安排以外的取消，依atockorea標準條款處理（見預約支援）"
             ]
           },
           {
             "id": "inclusions",
-            "title": "What's included",
-            "preview": "Transport, guide, and major admissions",
+            "title": "費用包含項目",
+            "preview": "已含：交通、導遊和主要入場費",
             "content": [
-              "Hotel pickup and drop-off (Jeju City)",
-              "Air-conditioned van transport",
-              "Licensed English-speaking guide",
-              "Major admission fees (Micheongul + Ilchul Land combo)",
-              "Lunch is paid separately. Seongsan admission isn't applicable on this tour (we do a base-level photo stop, not the summit climb)."
+              "飯店接送（濟州市）",
+              "空調廂型車交通",
+              "持照英語導遊",
+              "主要入場費（彌天窟 + 日出樂園套票，約₩12,000）",
+              "不含：午餐（費用自付）",
+              "不含：城山日出峰入場費（此行程為峰下拍照，不含峰頂攀登）",
+              "不含：任何點餐飲品或自選購物"
             ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
-            "label": "Spring weather guidance",
-            "temp": "Daytime ≈ 12–18 °C in cherry season",
+            "label": "即時天氣連動",
+            "temp": "櫻花季白天氣溫約12–18°C",
             "icon": "cloud-sun"
           },
           "tomorrow": {
-            "label": "Live forecast available at the operator's booking page",
+            "label": "每日更新",
             "temp": "—",
             "icon": "cloud"
-          }
+          },
+          "_seasonalSummary": "春季賞花限定行程（3月下旬至4月初）。濟州春季天氣多變——清晨較涼（約10至13°C），午後回暖（15至18°C）。偶有春雨，但雨中的粉白落英也是珍貴的攝影景觀，小雨天行程照常進行。"
         },
         "seasonalVariations": [
           {
-            "name": "Spring (Mar-Apr)",
-            "icon": "flower",
-            "description": "Peak season — cherry blossoms and canola fields",
-            "tag": "Tour operates",
-            "bgClass": "bg-pink-100/70",
-            "iconColor": "text-pink-500"
+            "season": "春季（3至4月）",
+            "title": "投行運營中",
+            "description": "高峰季——濟州市全農路和加時裡鹿山路的賞花與油菜花同時盛開。賞花高峰期通常3月25日至4月10日，油菜花再延長1至2周。",
+            "icon": "flower"
           },
           {
-            "name": "Late Spring (May)",
-            "icon": "leaf",
-            "description": "Cherry season ended; consider our year-round Eastern UNESCO tour instead",
-            "tag": "Off-season",
-            "bgClass": "bg-emerald-50/70",
-            "iconColor": "text-emerald-500"
+            "season": "暮春（5月）",
+            "title": "淡季",
+            "description": "賞花季已結束；建議改訂全年東部UNESCO行程替代。",
+            "icon": "leaf"
           },
           {
-            "name": "Summer-Autumn (Jun-Nov)",
-            "icon": "sun",
-            "description": "Out of season — our year-round Eastern UNESCO tour route recommended",
-            "tag": "Off-season",
-            "bgClass": "bg-amber-50/70",
-            "iconColor": "text-amber-500"
+            "season": "夏秋季（6至11月）",
+            "title": "淡季",
+            "description": "賞花季以外——建議選擇全年東部UNESCO行程。",
+            "icon": "sun"
           },
           {
-            "name": "Winter (Dec-Feb)",
-            "icon": "snowflake",
-            "description": "Out of season — our year-round Eastern UNESCO tour route recommended",
-            "tag": "Off-season",
-            "bgClass": "bg-sky-50/70",
-            "iconColor": "text-sky-500"
+            "season": "冬季（12至2月）",
+            "title": "淡季",
+            "description": "賞花季以外——建議選擇全年東部UNESCO行程。",
+            "icon": "snowflake"
           }
         ]
       }
@@ -1947,56 +1877,65 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local",
-            "description": "Jeju-licensed guiding",
+            "title": "當地持照業者",
+            "description": "持照在地導遊，濟州認證",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "iconColor": "text-emerald-600",
+            "body": "持照在地導遊，濟州認證"
           },
           {
             "icon": "calendar",
-            "title": "Season window flex",
-            "description": "Free rescheduling within bloom window",
+            "title": "季節彈性調整",
+            "description": "賞花時間安排彈性，可在花期內免費改期",
             "iconBg": "bg-pink-50/80",
-            "iconColor": "text-pink-600"
+            "iconColor": "text-pink-600",
+            "body": "賞花時間安排彈性，可在花期內免費改期"
           },
           {
             "icon": "shield",
-            "title": "Weather guarantee",
-            "description": "Free reschedule on heavy rain",
+            "title": "天候保障政策",
+            "description": "強降雨天氣保障，可免費改期",
             "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "iconColor": "text-sky-600",
+            "body": "強降雨天氣保障，可免費改期"
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "timing": "即時通知",
+            "title": "即時確認",
+            "detail": "預約確認函連同行程摘要一併寄出。",
+            "description": "預約確認函連同行程摘要一併寄出。"
           },
           {
-            "timing": "2 days before",
-            "title": "Weather Check-in",
-            "detail": "We monitor forecast and reach out if rebooking is recommended"
+            "timing": "出發前2天",
+            "title": "天候確認",
+            "detail": "出發前2天監測天氣預報，若建議改期會主動聯系。",
+            "description": "出發前2天監測天氣預報，若建議改期會主動聯系。"
           },
           {
-            "timing": "Day before",
-            "title": "Vehicle & Guide Info",
-            "detail": "Pickup time, vehicle plate, and guide name via WhatsApp"
+            "timing": "前一日",
+            "title": "車輛與導遊資訊",
+            "detail": "前一天透過WhatsApp發送接送時間、車牌號碼和導遊姓名。",
+            "description": "前一天透過WhatsApp發送接送時間、車牌號碼和導遊姓名。"
           },
           {
-            "timing": "Morning of",
-            "title": "Pickup Confirmation",
-            "detail": "Driver checks in 10 minutes before arrival"
+            "timing": "當天早晨",
+            "title": "接送確認",
+            "detail": "出發當天早晨，司機在抵達前10分鐘確認行程。",
+            "description": "出發當天早晨，司機在抵達前10分鐘確認行程。"
           },
           {
-            "timing": "During tour",
-            "title": "On-tour Support",
-            "detail": "Direct line to operations if anything comes up"
+            "timing": "行程途中",
+            "title": "行程中支援",
+            "detail": "行程途中若有任何問題，提供直達合作業者熱線。",
+            "description": "行程途中若有任何問題，提供直達合作業者熱線。"
           },
           {
-            "timing": "After tour",
-            "title": "Review & Followup",
-            "detail": "Optional review and tip on next trip"
+            "timing": "行程結束後",
+            "title": "評價與後續追蹤",
+            "detail": "行程結束後可選擇留評論，以及下次旅行的建議。",
+            "description": "行程結束後可選擇留評論，以及下次旅行的建議。"
           }
         ]
       }
@@ -2009,58 +1948,58 @@
         "staticQuestions": [
           {
             "id": "first-time",
-            "question": "Is this good for first-time visitors to Jeju?",
-            "answer": "Yes, if you're visiting during cherry blossom season (late March to early April). Outside that window, our year-round Eastern UNESCO tour covers the same region with year-round POIs."
+            "question": "這個行程適合初次造訪濟州的旅客嗎？",
+            "answer": "是的，如果您在賞花季期間到訪（3月下旬至4月初）。在賞花季以外，我們的全年東部UNESCO行程涵蓋同一地區並提供全年景點。"
           },
           {
             "id": "season-timing",
-            "question": "When exactly is cherry blossom season?",
-            "answer": "Approximately March 25 to April 10. Exact dates vary 5-7 days year to year. We update the booking page with current-year forecast in early March."
+            "question": "賞花季確切在什麼時候？",
+            "answer": "約3月25日至4月10日。確切日期每年差異約5至7天。我們在3月初更新預約頁面上的當年預測資料。"
           },
           {
             "id": "rain",
-            "question": "What if it rains?",
-            "answer": "Light rain — we operate. Heavy rain forecasts within the season window — we reach out 2 days before to offer free rescheduling. Outside the season, this tour doesn't operate."
+            "question": "下雨天怎麼辦？",
+            "answer": "小雨——行程正常進行。在賞花季時間安排內遇強降雨預報——我們在出發前2天主動聯系，提供免費改期服務。在賞花季以外，本行程不開辦。"
           },
           {
             "id": "summit",
-            "question": "Do we climb Seongsan Ilchulbong?",
-            "answer": "No — we do a base viewpoint photo stop only. The summit climb is part of our year-round Eastern UNESCO tour (year-round) but not this spring tour."
+            "question": "我們會登上城山日出峰嗎？",
+            "answer": "不——我們只在峰下拍照拍攝。峰頂攀登是我們的全年東部UNESCO行程的一部分，但不在這個春季行程中。"
           },
           {
             "id": "kids",
-            "question": "Is this suitable for children?",
-            "answer": "Yes, age 6+. The longest walks are at the cherry blossom streets. Stroller use is possible at most stops but check Noksan-ro rural roadside conditions."
+            "question": "適合攜帶兒童的家庭嗎？",
+            "answer": "是的，6歲以上兒童適合。賞花街的步行量最大。大多數景點可使用嬰兒車，但鹿山路的農村路邊狀況請提前確認。"
           },
           {
             "id": "seniors",
-            "question": "Is this ok for seniors?",
-            "answer": "Mostly yes. Walking is easy to moderate, mostly flat, with several short walks rather than one long hike. The cave has paved paths."
+            "question": "適合長輩嗎？",
+            "answer": "大多數情況適合。步行為輕鬆至中等難度，多以平地短程步行為主，而非單一長程健行。洞穴有鋪裝路面。"
           },
           {
             "id": "cave-claustrophobia",
-            "question": "Is the cave claustrophobic?",
-            "answer": "Micheongul has a large open chamber rather than tight passages — typically fine for mild claustrophobia. Tell your guide in advance if you'd rather skip."
+            "question": "洞穴會讓人有幽閉感嗎？",
+            "answer": "彌天窟設有寬敞的開放式空間，而非狹窄通道——通常對輕度幽閉症旅客不構成問題。如果您不確定，請提前告知導遊，可選擇跳過洞穴部分。"
           },
           {
             "id": "pickup-area",
-            "question": "Where do you pick up?",
-            "answer": "Hotel lobby pickup within Jeju City is included. Pickup from Seogwipo or Aewol is available with a surcharge — confirm the rate at booking."
+            "question": "在哪裡接送？",
+            "answer": "含濟州市區飯店大廳接送。西歸浦或愛月的接送有附加費用——請在預約時確認費率。"
           },
           {
             "id": "lunch",
-            "question": "Is lunch included?",
-            "answer": "Lunch cost is separate. The guide brings the group to a local restaurant; expect 12,000-18,000 KRW per person depending on dish."
+            "question": "午餐含在行程費用中嗎？",
+            "answer": "午餐費用自付。導遊帶團到當地餐廳用餐，每人約12,000至18,000韓元，視菜品而定。"
           },
           {
             "id": "admission-fees",
-            "question": "Are admission fees included?",
-            "answer": "Major admissions (Micheongul Cave + Ilchul Land combined ticket, ≈ ₩12,000) are included in the tour price. Lunch and any à-la-carte purchases (e.g. hanbok rental at the cherry-blossom street, café orders) are paid separately."
+            "question": "入場費含在行程費用中嗎？",
+            "answer": "主要入場費（彌天窟洞穴 + 日出樂園套票，約₩12,000）含在行程費用中。午餐及其他自選消費（如賞花街韓服租借、咖啡廳點飲）需另行支付。"
           },
           {
             "id": "compare-eastern-unesco",
-            "question": "What's the difference vs the our year-round Eastern UNESCO tour tour?",
-            "answer": "Different POIs and seasonality. East-small is year-round and visits Stone Park, Seopjikoji, Seongeup Folk Village, Ilchulland, and Seongsan summit. This tour is spring-only and visits cherry blossom streets, Noksan-ro, Micheongul Cave, Ilchul Land, and Seongsan base. Pick our year-round Eastern UNESCO tour if outside bloom window or if Folk Village/summit matters more than blossoms."
+            "question": "與全年東部UNESCO行程有什麼差別？",
+            "answer": "景點和季節性不同。東部小型全年行程可全年出發，參觀石頭文化公園、涉地可支、城邑民俗村、日出樂園和城山日出峰（含峰頂攀登）。本行程僅在春季限定開辦，參觀賞花街、鹿山路、彌天窟、日出樂園花園和城山峰下拍照。"
           }
         ]
       }
@@ -2110,11 +2049,11 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "可訂狀態會在付款步驟中確認。",
         "price": {
           "amountLabel": "",
           "currency": "USD",
-          "per": "person"
+          "per": "人"
         }
       }
     }
@@ -2124,29 +2063,29 @@
     "meeting_points": [
       {
         "name": "濟州市內飯店大廳接送",
-        "note": "Free; provide hotel name and pickup time at booking. Default first pickup window 08:30–09:00.",
-        "region": "Jeju City"
+        "note": "免費接送。請在預訂時提供飯店名稱與接送時間。預設第一輪接送時間為08:30–09:00。",
+        "region": "濟州市"
       },
       {
         "name": "西歸浦或愛月飯店接送（需加收費用，請預約時確認）",
-        "note": "Available with surcharge — confirm rate at booking.",
-        "region": "Seogwipo / Aewol"
+        "note": "可付費安排，費用請於預訂時確認。",
+        "region": "西歸浦 / 涯月"
       }
     ],
     "dropoff_points": [
       {
-        "name": "Drop-off at Jeju City hotels",
-        "note": "Standard return ≈ 17:30–18:00.",
-        "region": "Jeju City"
+        "name": "濟州市飯店下車",
+        "note": "標準返回時間約為17:30–18:00。",
+        "region": "濟州市"
       }
     ],
     "hotel_pickup_available": true,
-    "notes": "春季限定行程：3月下旬至4月初。在賞花視窗以外，建議選擇全年東部UNESCO行程替代。"
+    "notes": "春季限定行程：3月下旬至4月初。在賞花時間安排以外，建議選擇全年東部UNESCO行程替代。"
   },
   "itinerary_variants": [],
   "priceSource": {
     "discountPct": 10,
-    "discountNote": "10% off marketplace baseline",
+    "discountNote": "較平臺基準價優惠10%",
     "amount": null,
     "currency": "USD"
   },
@@ -2169,14 +2108,14 @@
       "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
       },
       "v17_batch4_enhancement": {
         "date": "2026-04-29",
-        "description": "Batch 4 deep enhancement — descriptions raised to 700-1300+ chars; KB-backed metadata on all attraction stops; matching_profile recalibrated with verified-fact 0-1 float scores. Time-weighted indoor_ratio computation per Fix 1 methodology.",
+        "description": "Batch 4 deep enhancement — descriptions raised to 700-1300+ chars; KB-backed metadata on all attraction stops; product profile recalibrated with verified-fact 0-1 float scores. Time-weighted indoor_ratio computation per Fix 1 methodology.",
         "_score_audit": {
           "_methodology": "0-1 float scale. Indoor ratio computed time-weighted using KB indoor_ratio_at_stop methodology. Note this tour SPLITS the Ilchul Land visit into two stops — the cave (high indoor ratio at 100%) and the gardens (low indoor ratio at 20%) — so the average works out to ~30% across the combined Ilchul Land time, consistent with KB.",
           "deltas_applied": {
@@ -2191,12 +2130,12 @@
               "reasoning": "Verified: Jeonnong-ro 1.2 km flat (easy), Noksan-ro is drive-and-stop (minimal walking), Micheon Cave 365 m flat, Ilchul Land 1 km flat, Seongsan photo-stop format excludes the climb. Total walking ~3 km flat. 0.45 calibrated."
             },
             "scenic_level": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.95,
               "reasoning": "Verified — exceptional spring scenery: city cherry tunnel + 10 km cherry+canola+turbine country road + lava tube colored lighting + UNESCO peak. 0.95 — high diversity in spring window."
             },
             "photo_level": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.95,
               "reasoning": "Verified: 5 distinct hero shots — Jeonnong cherry tunnel, Noksan cherry+canola+windmill, 7-color cave, Seongsan crater. Among most photogenic Jeju tours but season-dependent. 0.95."
             },
@@ -2211,7 +2150,7 @@
               "reasoning": "MAJOR CORRECTION using time-weighted method (Fix 1 methodology): substantive stops are predominantly outdoor cherry-blossom corridors. Time-weighted: 42 indoor / 270 substantive min = 0.16. With lunch: 0.27. Catalog value 0.20 represents both. Mechanical Phase 1 conversion 0.4 was overstated."
             },
             "weather_sensitivity": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.9,
               "reasoning": "VERIFIED — extremely weather-sensitive: cherry blossoms are season-AND-weather dependent (rain destroys blossoms within hours; wind blows down petals); 80%+ outdoor stops. Highest weather-sensitivity in catalog after spring-only flower tours."
             },
@@ -2221,7 +2160,7 @@
               "reasoning": "DOWNGRADED — cherry blossoms are particularly rain-vulnerable (blossoms fall within hours of heavy rain). Only Micheon Cave + Ilchul Land partial indoor provide refuge. 0.30 calibrated for honest rain-fit."
             },
             "first_time_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.85,
               "reasoning": "Verified: excellent SPRING first-Jeju but season-locked to ~10 days/year. Outside cherry season this tour wouldn't run. 0.85 calibrated for season-specific value."
             },
@@ -2263,8 +2202,8 @@
           "VisitKorea",
           "Visit Jeju",
           "Jeju Tourism Organization",
-          "Trazy",
-          "KKday",
+          "市場參考資料",
+          "市場參考資料",
           "NOL World",
           "Hueree Park official"
         ]

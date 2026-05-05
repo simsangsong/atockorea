@@ -6,31 +6,31 @@
   "product_id": "seoul-suwon-hwaseong-folk-village-starfield-library",
   "seo": {
     "pageTitle": "水原華城・民俗村・スターフィールド日帰り | AtoC Korea",
-    "metaDescription": "ソウル発・水原華城（UNESCO）＋韓国民俗村（龍仁）＋スターフィールド図書館10時間少人数ツアー。朝鮮の世界遺産・野外民俗博物館・現代建築の3テーマを一日で。英語ガイド付き。",
+    "metaDescription": "ソウル発・水原華城（ユネスコ）＋韓国民俗村（龍仁）＋スターフィールド図書館10時間少人数ツアー。朝鮮の世界遺産・野外民俗博物館・現代建築の3テーマを一日で。英語ガイド付き。",
     "primaryKeywords": [
       "水原華城ツアー",
       "韓国民俗村ツアー",
       "スターフィールド水原",
       "ソウル発日帰りツアー",
-      "水原UNESCOツアー"
+      "水原ユネスコツアー"
     ],
     "ogImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
     "title": "水原華城・民俗村・スターフィールド図書館 | AtoC",
-    "description": "ソウル発・水原華城（UNESCO世界遺産）→韓国民俗村（龍仁）→スターフィールド・スウォン図書館の10時間少人数ツアー。英語ガイド付き。"
+    "description": "ソウル発・水原華城（ユネスコ世界遺産）→韓国民俗村（龍仁）→スターフィールド・スウォン図書館の10時間少人数ツアー。英語ガイド付き。"
   },
   "catalog_card": {
     "thumbnail": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
     "title": "水原華城・民俗村・スターフィールド図書館日帰りツアー",
     "priceLabel": "料金は予約時にご確認ください",
-    "shortCardDescription": "ソウルから日帰りで京畿道の4つの対照的な側面を体験：UNESCO世界遺産の水原華城の城壁ウォーク・朝鮮時代の離宮・韓国最初の野外民俗博物館（韓国民俗村）・22mの書架が連なるスターフィールド・スウォン図書館。少人数英語ガイド付き。",
+    "shortCardDescription": "ソウルから日帰りで京畿道の4つの対照的な側面を体験：ユネスコ世界遺産の水原華城の城壁ウォーク・朝鮮時代の離宮・韓国最初の野外民俗博物館（韓国民俗村）・22mの書架が連なるスターフィールド・スウォン図書館。少人数英語ガイド付き。",
     "tags": [
-      "small_group",
-      "culture",
+      "少人数ツアー",
+      "文化",
       "unesco",
-      "heritage",
-      "library",
-      "folk_village",
-      "day_trip"
+      "歴史遺産",
+      "図書館",
+      "民俗村",
+      "日帰り"
     ],
     "rating": 4.9,
     "reviewCount": 79,
@@ -42,13 +42,13 @@
     "badges": [
       "少人数",
       "水原",
-      "UNESCO",
+      "ユネスコ",
       "民俗村",
       "ソウル発"
     ],
     "heroImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800"
   },
-  "headlineLine1": "UNESCO城壁、朝鮮の離宮、四層吹き抜けの図書館 —",
+  "headlineLine1": "ユネスコ城壁、朝鮮の離宮、四層吹き抜けの図書館 —",
   "headlineLine2": "韓国の遺産と現代の静けさを10時間の一日に",
   "price": {
     "amountLabel": "60.30",
@@ -56,8 +56,8 @@
     "salePriceUsd": 60.3,
     "discountPercent": 10,
     "currency": "USD",
-    "per": "person",
-    "priceSource": "getyourguide_t867578",
+    "per": "人",
+    "priceSource": "direct_rate",
     "priceNote": "詳しい料金は予約時にご確認ください。"
   },
   "hero": {
@@ -71,7 +71,7 @@
     "meta": {
       "duration": "≈ 10時間（朝〜夕方）",
       "region": "水原・龍仁（京畿道）",
-      "stops": "6スポット",
+      "stops": "6見どころ",
       "rating": 4.9,
       "ratingStars": 5
     }
@@ -83,7 +83,7 @@
     },
     {
       "id": "itinerary",
-      "label": "旅程"
+      "label": "行程"
     },
     {
       "id": "details",
@@ -100,40 +100,34 @@
   ],
   "glanceItems": [
     {
-      "icon": "camera",
-      "label": "写真映え度",
-      "value": "最適",
-      "level": 5
-    },
-    {
-      "icon": "mountain",
-      "label": "景観の密度",
-      "value": "良好",
-      "level": 4
-    },
-    {
-      "icon": "footprints",
-      "label": "歩行難易度",
-      "value": "やや高い",
-      "level": 4
-    },
-    {
-      "icon": "cloud-rain",
-      "label": "雨天適性",
-      "value": "良好",
-      "level": 4
+      "icon": "clock",
+      "label": "所要時間",
+      "value": "10時間（朝〜夕方）"
     },
     {
       "icon": "users",
-      "label": "ファミリー適性",
-      "value": "良好",
-      "level": 4
+      "label": "グループ人数",
+      "value": "少人数、英語対応ガイド付き"
     },
     {
-      "icon": "gauge",
-      "label": "ペース",
-      "value": "バランス型",
-      "level": 4
+      "icon": "map-pin",
+      "label": "エリア",
+      "value": "水原・龍仁（京畿道）"
+    },
+    {
+      "icon": "footprints",
+      "label": "歩行",
+      "value": "中程度 — 城壁ウォークは上り坂あり、民俗村は広大な野外エリア"
+    },
+    {
+      "icon": "ticket",
+      "label": "含まれるもの",
+      "value": "往復送迎、英語ガイド、全入場料"
+    },
+    {
+      "icon": "utensils",
+      "label": "昼食",
+      "value": "含まれず — 通常、水原南門市場または民俗村内のレストランで自己負担"
     }
   ],
   "galleryItems": [
@@ -142,18 +136,18 @@
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
       "alt": "水原華城の城壁と遠くに見える水原市街地のパノラマ",
-      "caption": "水原華城 — UNESCO世界遺産の朝鮮時代の城郭都市",
-      "location": "水原華城（수원화성）、水原市、京畿道",
-      "atmosphere": "1797年完成の韓国唯一の完全に保存された朝鮮時代の城郭都市；UNESCO世界遺産1997年登録"
+      "caption": "水原華城 — ユネスコ世界遺産の朝鮮時代の城郭都市",
+      "location": "水原華城（水原華城）、水原市、京畿道",
+      "atmosphere": "1797年完成の韓国唯一の完全に保存された朝鮮時代の城郭都市。ユネスコ世界遺産1997年登録"
     },
     {
       "id": "g2",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "華城行宮の大궐문（大門）と朝鮮時代の宮廷建築",
+      "alt": "華城行宮の大（大門）と朝鮮時代の宮廷建築",
       "caption": "華城行宮 — 韓国最大の行宮（離宮）",
-      "location": "華城行宮（화성행궁）、水原市、京畿道",
-      "atmosphere": "正祖王が建設した576室の韓国最大の行宮；韓国時代劇のロケ地"
+      "location": "華城行宮（華城行宮）、水原市、京畿道",
+      "atmosphere": "正祖王が建設した576室の韓国最大の行宮。韓国時代劇のロケ地"
     },
     {
       "id": "g3",
@@ -161,7 +155,7 @@
       "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
       "alt": "広大な野外エリアに復元された朝鮮時代の家屋が並ぶ韓国民俗村",
       "caption": "韓国民俗村 — 韓国初の野外民俗博物館",
-      "location": "韓国民俗村（한국민속촌）、龍仁市、京畿道",
+      "location": "韓国民俗村、龍仁市、京畿道",
       "atmosphere": "245エーカーの自然の谷に復元された朝鮮時代の農村・市場・両班屋敷"
     },
     {
@@ -171,14 +165,14 @@
       "alt": "スターフィールド・スウォンの22m吹き抜け書架が連なるスターフィールド図書館",
       "caption": "スターフィールド・スウォン図書館 — Instagramで話題の現代建築",
       "location": "スターフィールド・スウォン図書館、水原市、京畿道",
-      "atmosphere": "22mの書架と四層吹き抜けのアトリウム；2024年1月開業の韓国最大のスタフィールドモール内"
+      "atmosphere": "22mの書架と四層吹き抜けのアトリウム。2024年1月開業の韓国最大のスタフィールドモール内"
     },
     {
       "id": "g5",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "Starfield Library Suwon's four-story atrium with 22-meter-tall floor-to-ceiling bookshelves and reading lounges below",
-      "caption": "Starfield Library Suwon — 22 m bookshelves",
+      "alt": "水原スターフィールドライブラリの22メートル床から天井までの書架と読書ラウンジを持つ4階のアトリウム",
+      "caption": "スターフィールドライブラリ水原 — 22m書架",
       "location": "韓国",
       "atmosphere": "韓国の美しい景観"
     }
@@ -187,10 +181,10 @@
     {
       "number": 1,
       "time": "≈ 08:00",
-      "duration": "10 min",
+      "duration": "10分",
       "name": "ソウル出発",
       "category": "出発 — ソウル中心部2か所の集合場所",
-      "description": "ソウル中心部の2か所の集合場所のいずれかでピックアップ：**弘益大学駅8番出口（ホンデ、ソウル地下鉄2号線/空港鉄道）** — 弘大エリア・麻浦区の宿泊のお客様向け；**明洞駅2番または4番出口（ソウル地下鉄4号線）** — 明洞・乙支路・南山エリアの宿泊のお客様向け。少人数制ミニバンに全員乗車後、京釜高速道路経由で水原市へ出発（約50〜60分）。早朝の高速道路は渋滞が少ないため、水原華城の開門前の人が少ない時間帯に到着可能。",
+      "description": "ソウル中心部の2か所の集合場所のいずれかでピックアップ：**弘益大学駅8番出口（ホンデ、ソウル地下鉄2号線/空港鉄道）** — 弘大エリア・麻浦区の宿泊のお客様向け。**明洞駅2番または4番出口（ソウル地下鉄4号線）** — 明洞・乙支路・南山エリアの宿泊のお客様向け。少人数制ミニバンに全員乗車後、京釜高速道路経由で水原市へ出発（約50〜60分）。早朝の高速道路は渋滞が少ないため、水原華城の開門前の人が少ない時間帯に到着可能。",
       "highlights": [
         "集合場所2か所 — 弘益大学駅8番出口または明洞駅2/4番出口",
         "少人数制ミニバン、英語対応ガイド付き",
@@ -205,7 +199,7 @@
       "visitBasics": {},
       "convenience": {},
       "smartNotes": {
-        "tip": "Confirm exact pickup time and meeting point at booking — Seoul morning rush hour (07:00-09:00) makes punctuality critical. Bring water, sunscreen, and comfortable shoes for the fortress wall walking."
+        "tip": "コーチのAC強め — 薄手の上着を持参。ほぼ中間点のサービスエリアでトイレ休憩あり。"
       },
       "_poi_meta": {
         "poi_key": "OPS_seoul_pickup_default",
@@ -219,12 +213,12 @@
     {
       "number": 2,
       "time": "≈ 09:30",
-      "duration": "75 min",
+      "duration": "75分",
       "name": "水原華城（スウォン・ファソン）",
-      "category": "UNESCO世界遺産（1997年） — 朝鮮時代の完全保存城郭都市",
-      "description": "**水原華城（수원화성） — 1997年UNESCO世界遺産登録** — は韓国唯一の、10巻に及ぶ建設記録（『華城城役儀軌』、別途UNESCO記録遺産2007年登録）が完全に現存する城郭都市。**正祖王（在位1776〜1800年）が1789〜1797年に建設**、父の思悼世子の無念を晴らすため、そして党争の腐敗した漢陽宮廷から独立した新しい政治の中心を水原に構築しようとした王の夢の結晶。城壁全長は**5.7km（徒歩全周約2〜3時間）**で、48の軍事施設（砲郭・砲楼・水門・暗門）が現存。今回のツアーでは城壁の最も景観の良い**北西区間（장안문→화서문→西将台）**を約1〜1.5時間歩きます。入場料：**大人₩1,000**（ほぼ無料）。",
+      "category": "ユネスコ世界遺産（1997年） — 朝鮮時代の完全保存城郭都市",
+      "description": "**水原華城（水原華城） — 1997年ユネスコ世界遺産登録** — は韓国唯一の、10巻に及ぶ建設記録（『華城城役儀軌』、別途ユネスコ記録遺産2007年登録）が完全に現存する城郭都市。**正祖王（在位1776〜1800年）が1789〜1797年に建設**、父の思悼世子の無念を晴らすため、そして党争の腐敗した漢陽宮廷から独立した新しい政治の中心を水原に構築しようとした王の夢の結晶。城壁全長は**5.7km（徒歩全周約2〜3時間）**で、48の軍事施設（砲郭・砲楼・水門・暗門）が現存。今回のツアーでは城壁の最も景観の良い**北西区間**を約1〜1.5時間歩きます。入場料：**大人₩1,000**（ほぼ無料）。",
       "highlights": [
-        "**UNESCO世界遺産1997年登録** — 建設記録『華城城役儀軌』もUNESCO記録遺産2007年",
+        "**ユネスコ世界遺産1997年登録** — 建設記録『華城城役儀軌』もユネスコ記録遺産2007年",
         "**正祖王（1789〜1797年）建設** — 父の悲劇と政治改革への意志の結晶",
         "城壁全長**5.7km**、48の軍事施設が現存",
         "今回は北西区間（長安門→華西門→西将台）を約**1〜1.5時間**歩行",
@@ -236,21 +230,21 @@
         "展望台からの眺め＋写真撮影 — 約15分",
         "バスに戻る — 約10分"
       ],
-      "whyOnRoute": "水原華城はこのルートの文化遺産の核心アンカー。朝の比較的涼しく人の少ない時間帯に城壁ウォークを配置することで、快適な観光が可能。",
+      "whyOnRoute": "水原華城はこのルートの文化遺産の中心となる見どころ。朝の比較的涼しく人の少ない時間帯に城壁ウォークを配置することで、快適な観光が可能。",
       "visitBasics": {
-        "hours": "Wall path 24 hours (no gates); recommended 09:00-18:00 summer / 09:00-17:00 winter; evening hours May-Oct Wed-Sun 18:00-21:30",
-        "closed": "Open year-round (Hwaseong Trolley closed Mondays)",
-        "admission": "Adults 1,000 / Youth 700 / Children 500 KRW (FREE: children ≤6, seniors 65+, hanbok-wearers, last Wed of month). Hwaseong Trolley separate 4,000 KRW",
-        "walking": "Moderate — wall has steep sections at Seojangdae; stairs at gates; some sections wheelchair-difficult"
+        "hours": "城壁散策路24時間（ゲートなし）。推奨09:00-18:00（夏）/09:00-17:00（冬）",
+        "closed": "年中無休（華城トロリー月曜運休）",
+        "admission": "大人₩1,000 / 青少年₩700 / 子供₩500 （無料：6歳以下・65歳以上・韓服着用者・毎月最終水曜）",
+        "walking": "中程度 — 城壁はソジャンデ付近に急坂。各門に階段。一部区間は車椅子困難"
       },
       "convenience": {
-        "restroom": "At Janganmun, Hwaseomun, Paldalmun, and Yeonmudae",
-        "parking": "Coach drop-off at Janganmun lot; designated coach parking at Yeonmudae"
+        "restroom": "長安門・華西門・八達門・練武台にトイレあり",
+        "parking": "長安門駐車場でコーチ降車。練武台にコーチ専用駐車場"
       },
       "smartNotes": {
-        "photo": "**Hwahongmun (north sluice gate)** with 7 arches over Suwoncheon Stream — the iconic shot, especially in spring (cherry blossoms) and autumn (foliage). **Janganmun (largest existing royal gate in Korea)** at golden hour. **Seojangdae (west command post)** sunset over Paldalsan Mountain.",
-        "facilities": "Visitor Information Center at Janganmun + Paldalmun + Hwaseong Haenggung Square. English-Korean signage throughout. Hwaseong audio guide rental at Janganmun.",
-        "tip": "Wear comfortable shoes — wall stones are uneven. Hanbok rental shops at Haenggung Square give FREE fortress + palace admission. **Avoid full 5.74 km loop unless allowing 2.5+ hours** — the Janganmun → Hwaseomun section gives the highest per-meter heritage density."
+        "photo": "水原川に7つのアーチを持つ**華虹門（北水門）**——早朝か夕方が水面反射撮影に最適。",
+        "facilities": "長安門+八達門+行宮広場に観光案内所。英韓バイリンガル案内板。華城トロリー（₩1,500往復）運行。",
+        "tip": "歩きやすい靴を推奨 — 城壁の石は不均一。行宮広場の韓服レンタル店利用で**無料入場**特典あり。"
       },
       "_poi_meta": {
         "poi_key": "hwaseong_fortress",
@@ -274,10 +268,10 @@
     {
       "number": 3,
       "time": "≈ 11:00",
-      "duration": "75 min",
+      "duration": "75分",
       "name": "華城行宮（ファソン・ヘングン）",
       "category": "韓国最大の行宮（離宮） — 576室・正祖王建設（1789〜1796年）",
-      "description": "**華城行宮（화성행궁） — 韓国最大の現存する行宮（離宮）** — は正祖王が統一した華城城郭都市計画の一部として**1789〜1796年に建設**。**行宮**とは王が地方行幸の際に宿泊・執務を行う臨時の宮殿で、本来は576室を誇った規模であり、韓国に現存する行宮の中で群を抜く最大規模。正祖は13年間（1789〜1800年）にわたって毎年亡き父（思悼世子）の墓参のため水原へ行幸し、この行宮を使用した。**日本統治時代（1910〜1945年）に病院として転用・改造**され大幅に損傷したが、1996〜2003年の復元工事で主要区画が再建。**韓国の代表的な時代劇ロケ地**として『이산（李山）』（正祖の生涯を描いた大河ドラマ）をはじめ多くの作品に登場。入場料：**大人₩1,500**（華城との共通券で合わせて₩2,000程度）。",
+      "description": "**華城行宮（華城行宮） — 韓国最大の現存する行宮（離宮）** — は正祖王が統一した華城城郭都市計画の一部として**1789〜1796年に建設**。**行宮**とは王が地方行幸の際に宿泊・執務を行う臨時の宮殿で、本来は576室を誇った規模であり、韓国に現存する行宮の中で群を抜く最大規模。正祖は13年間（1789〜1800年）にわたって毎年亡き父（思悼世子）の墓参のため水原へ行幸し、この行宮を使用した。**日本統治時代（1910〜1945年）に病院として転用・改造**され大幅に損傷したが、1996〜2003年の復元工事で主要区画が再建。**韓国の代表的な時代劇ロケ地**として『（李山）』（正祖の生涯を描いた大河ドラマ）をはじめ多くの作品に登場。入場料：**大人₩1,500**（華城との共通券で合わせて₩2,000程度）。",
       "highlights": [
         "**韓国最大の現存する行宮** — 576室（復元前）",
         "正祖王が**13年間毎年父の墓参のため**水原行幸に使用",
@@ -288,24 +282,24 @@
       "timeUsed": [
         "正門（鳳南門）エリア＋解説 — 約10分",
         "正堂（奉壽堂）・內堂・外堂・中庭散策 — 約40分",
-        "時代劇ロケ地スポット＋写真撮影 — 約15分",
+        "時代劇ロケ地見どころ＋写真撮影 — 約15分",
         "バスに戻る — 約5分"
       ],
       "whyOnRoute": "華城行宮は水原華城の城壁ウォークの自然な延長線上にある（徒歩圏内）。城壁→行宮のセットで正祖の水原プロジェクト全体の物語が完成します。",
       "visitBasics": {
-        "hours": "09:00-18:00 (last entry 17:30); summer May-Oct evening hours 18:00-21:00",
-        "closed": "Open year-round",
-        "admission": "Adult 1,500 / Teen 1,000 / Child 700 KRW. Combined Fortress + Haenggung 3,500 KRW. FREE for hanbok-wearers, seniors 65+, children ≤6",
-        "walking": "Easy — palace grounds are mostly flat with some steps between courtyards"
+        "hours": "09:00〜18:00（最終入場17:30）。夏季5〜10月夜間時間18:00〜21:00",
+        "closed": "年中無休",
+        "admission": "大人₩1,500/青少年₩1,000/子供₩700。華城＋行宮セット₩3,500",
+        "walking": "楽 — 宮殿の敷地はほとんど平坦で、中庭間に数段の階段あり"
       },
       "convenience": {
-        "restroom": "At main entrance, near Bongsudang, and at Haenggung Square",
-        "parking": "Hwaseong Haenggung public parking; Haenggung Square paid lots"
+        "restroom": "メイン入口、奉壽堂近く、行宮広場にあり",
+        "parking": "華城行宮公営駐車場。行宮広場有料駐車場"
       },
       "smartNotes": {
-        "photo": "**Bongsudang Main Hall** — the iconic throne hall shot. **Naknamheon** — the only original 1796 structure (the most historically authentic photo). **Royal Guard Changing Ceremony at Sinpungnu Gate** (Tue-Sun 11:00 AM). Hanbok-wearers in front of Sinpungnu — Suwon's most popular hanbok photo spot.",
-        "facilities": "Visitor Information Center, restrooms, gift shop. Haenggung Square cafes and hanbok rental (15,000-20,000 KRW for 4 hr). Suwon Tongdak (whole roast chicken) restaurants 5 min walk.",
-        "tip": "**Time arrival for 11:00 AM Royal Guard Changing Ceremony Tue-Sun (FREE)**. Hanbok rental gives FREE admission to BOTH Fortress and Haenggung. **Naknamheon is THE single most historically important spot** — the only structure not rebuilt, surviving Japanese colonial demolition. Skip Mondays — Royal Guard Changing Ceremony performed Tue-Sun only."
+        "photo": "**奉壽堂メインホール** — 代表的なな王座の間。**洛南軒** — 花園を望む唯一の建物",
+        "facilities": "観光インフォメーションセンター、トイレ、ギフトショップ。行宮広場のカフェと韓服レンタル",
+        "tip": "**午前11時の王室衛兵交代式に合わせて到着（火〜日、無料）**。韓服着用で入場無料"
       },
       "_poi_meta": {
         "poi_key": "hwaseong_haenggung",
@@ -317,7 +311,7 @@
           "VisitKorea",
           "Wikipedia",
           "Suwon CVB",
-          "Trazy",
+          "市場参考資料",
           "Korea Tourism Organization (english.visitkorea.or.kr — Hwaseong Haenggung official listing)",
           "Cultural Heritage Administration / Korea Heritage Service (cha.go.kr — Hwaseong Haenggung Historic Site No. 478)",
           "Suwon City Tourism (suwon.go.kr/tour — Royal Guard Changing Ceremony + Mu-ye 24-gi schedule)",
@@ -329,15 +323,15 @@
     {
       "number": 4,
       "time": "≈ 12:30",
-      "duration": "120 min",
+      "duration": "120分",
       "name": "韓国民俗村（龍仁）",
       "category": "韓国初の野外民俗博物館 — 245エーカー（99万m²）の復元村落",
-      "description": "**韓国民俗村（한국민속촌、龍仁） — 韓国初・最大の野外伝統民俗文化博物館**、龍仁市の自然の谷地形に広がる**99万m²（245エーカー）**の敷地。1974年開業以来、朝鮮時代の農村・市場・両班屋敷・官庁・寺院・水車小屋など**260棟以上の伝統建築**が実際の資材と工法で復元されている。住民役のスタッフが伝統的な農具・手工芸・食品加工を日常的に実演し、訪問者は朝鮮時代の生活を直接体験できる。**韓国の歴史ドラマ（사극）のロケ地**として業界標準の野外撮影地 — 『朱蒙』『大長今（チャングム）』『善徳女王』『奇皇后』などが撮影。**ハンボク（韓服）レンタル**（有料、別途）も可能で、写真撮影を楽しみながら村を歩けます。1〜2時間あれば主要エリアを回れますが、2〜3時間かけてゆっくり歩くのが理想。昼食は村内の伝統的なレストランまたは屋台フードで取ることが多い。",
+      "description": "**韓国民俗村 — 韓国初・最大の野外伝統民俗文化博物館**、龍仁市の自然の谷地形に広がる**99万m²（245エーカー）**の敷地。1974年開業以来、朝鮮時代の農村・市場・両班屋敷・官庁・寺院・水車小屋など**260棟以上の伝統建築**が実際の資材と工法で復元されている。住民役のスタッフが伝統的な農具・手工芸・食品加工を日常的に実演し、訪問者は朝鮮時代の生活を直接体験できる。**韓国の歴史ドラマのロケ地**として業界標準の野外撮影地 — 『朱蒙』『大長今（チャングム）』『善徳女王』『奇皇后』などが撮影。**ハンボク（韓服）レンタル**（有料、別途）も可能で、写真撮影を楽しみながら村を歩けます。1〜2時間あれば主要エリアを回れますが、2〜3時間かけてゆっくり歩くのが理想。昼食は村内の伝統的なレストランまたは屋台フードで取ることが多い。",
       "highlights": [
         "**韓国初・最大の野外民俗博物館** — 99万m²の敷地に260棟以上の伝統建築",
         "朝鮮時代の農村・市場・両班屋敷・官庁・寺院を実際の工法で復元",
         "住民役スタッフが農具・手工芸・食品加工を日常的に実演",
-        "**韓国時代劇（사극）の業界標準ロケ地** — 『チャングム』『善徳女王』など多数",
+        "**韓国時代劇の業界標準ロケ地** — 『チャングム』『善徳女王』など多数",
         "**ハンボク（韓服）レンタル**（有料）で写真撮影"
       ],
       "timeUsed": [
@@ -347,21 +341,21 @@
         "ハンボクレンタル＋写真（任意） — 約20分",
         "バスに戻る — 約10分"
       ],
-      "whyOnRoute": "水原華城で朝鮮後期の城郭都市を体験した後、民俗村で朝鮮時代の農村生活を体験することで、1日に朝鮮時代の2つの異なる側面（王権の象徴・庶民の生活）を対比的に体験できます。",
+      "whyOnRoute": "水原華城で朝鮮後期の城郭都市を体験した後、民俗村で朝鮮時代の農村生活を体験することで、1日に朝鮮時代の2つの異なる側面（王権の象徴・庶民の生活）を対比的に体験していただけます。",
       "visitBasics": {
-        "hours": "Mon-Thu 10:00-18:00; Fri-Sun and holidays 10:00-22:00 (winter shorter — Nov-Feb 09:30-17:30)",
-        "closed": "Open year-round",
-        "admission": "Adult 37,000 / Teen 32,000 / Child 26,000 KRW (Visit Korea official; combo includes amusement-rides section). Folk Village only ~22,000 KRW adult",
-        "walking": "Moderate — large grounds (~5-7 km if exploring fully); paths are flat to gently sloping dirt and gravel"
+        "hours": "月〜木10:00〜18:00。金〜日・祝日10:00〜22:00（冬は短め — 11月〜2月は17:00まで）",
+        "closed": "年中無休",
+        "admission": "大人₩37,000/青少年₩32,000/子供₩26,000（スタンダード入場。コンボチケット要確認）",
+        "walking": "中程度 — 広大な敷地（完全探索で約5〜7km）。路は平坦〜緩やかな傾斜"
       },
       "convenience": {
-        "restroom": "Multiple restrooms throughout, signposted",
-        "parking": "Dedicated lot — passenger cars 2,000 KRW, SUVs/trucks 3,000 KRW; tour-coach lot accommodates groups"
+        "restroom": "各所に複数あり、標識あり",
+        "parking": "専用駐車場 — 乗用車₩2,000、SUV/トラック₩3,000。ツアーコーチは別料金"
       },
       "smartNotes": {
-        "photo": "**Last two weeks of October peak for golden ginkgo + maples** in the nobleman's compound. The yangban two-story house and the marketplace street are the most visually rich. Hanbok rental + traditional arena makes for the most popular family shots. Jultagi tightrope-walking performance is high-action photo opportunity.",
-        "facilities": "Traditional street-market stalls sell local snacks (Imsil cheese pizza, railroad hotdogs, Winibini candy). Multiple sit-down restaurants serving Korean village-style menus. Hanbok rental free 30-min trial inside the gate.",
-        "tip": "**Check the daily English performance timetable at the gate** — Jultagi (UNESCO Intangible Heritage tightrope walking) and Nong-ak farmers' percussion + traditional Joseon wedding reenactment are the can't-miss shows. **Best visit October 20-November 5** for autumn foliage peak. Pair with Hwaseong Fortress for a coherent Joseon-themed day. Allow 2 hours minimum; some visitors easily spend 3-4 hours."
+        "photo": "**10月最後の2週間が金色のイチョウ+紅葉のピーク** — 貴族屋敷エリアが最強の秋の写真",
+        "facilities": "伝統屋台で地元の軽食（臨実チーズピザ、レインボーアイスクリーム）を販売",
+        "tip": "**ゲートで毎日の英語パフォーマンス時刻表を確認** — ジュルタギ（ユネスコ）は必見"
       },
       "_poi_meta": {
         "poi_key": "korean_folk_village_yongin",
@@ -385,15 +379,15 @@
     {
       "number": 5,
       "time": "≈ 15:30",
-      "duration": "75 min",
+      "duration": "75分",
       "name": "スターフィールド・スウォン図書館",
       "category": "現代建築のランドマーク — 2024年1月開業の韓国最大のスターフィールドモール内",
-      "description": "**スターフィールド図書館スウォン（별마당 도서관 수원）** — **スターフィールド・スウォン**内（新世界グループの旗艦第2世代スターフィールドモール、2024年1月26日開業、5番目のスターフィールドモールで延べ面積最大）。スターフィールド図書館は**高さ22mの4層吹き抜けアトリウム**に約3万5,000冊の書籍を収容する開放型ライブラリーで、韓国のInstagramおよびYouTubeで「韓国最も美しい図書館」として最もよく紹介される現代空間のひとつ。図書館空間自体は**無料**で入場可能；スターフィールド・スウォン全体はショッピング・映画館・フードホール（地下1〜2階、「フードレジェンド」）・ウォーターパーク等の複合施設。図書館での所要時間は30〜60分が一般的。昼食または夕食としてフードホールを利用することも可能（ガイドがおすすめを案内）。水原市の南部（権善洞）に位置し、水原駅から地下鉄1号線で15分程度。",
+      "description": "**スターフィールド図書館スウォン** — **スターフィールド・スウォン**内（新世界グループの旗艦第2世代スターフィールドモール、2024年1月26日開業、5番目のスターフィールドモールで延べ面積最大）。スターフィールド図書館は**高さ22mの4層吹き抜けアトリウム**に約3万5,000冊の書籍を収容する開放型ライブラリーで、韓国のInstagramおよびYouTubeで「韓国最も美しい図書館」として最もよく紹介される現代空間のひとつ。図書館空間自体は**無料**で入場可能。スターフィールド・スウォン全体はショッピング・映画館・フードホール（地下1〜2階、「フードレジェンド」）・ウォーターパーク等の複合施設。図書館での所要時間は30〜60分が一般的。昼食または夕食としてフードホールを利用することも可能（ガイドがおすすめを案内）。水原市の南部（権善洞）に位置し、水原駅から地下鉄1号線で15分程度。",
       "highlights": [
         "**高さ22mの4層吹き抜け書架**が連なる開放型ライブラリー",
         "**2024年1月26日開業** — 韓国最大のスターフィールドモール内",
         "韓国のInstagram・YouTubeで「韓国最も美しい図書館」として話題",
-        "**図書館入場は無料**；フードホール（フードレジェンド）で昼食も可能",
+        "**図書館入場は無料**。フードホール（フードレジェンド）で昼食も可能",
         "水原駅から地下鉄1号線で15分"
       ],
       "timeUsed": [
@@ -402,21 +396,21 @@
         "フードホールでの食事または軽食（任意） — 約30〜45分",
         "バスに戻る — 約5分"
       ],
-      "whyOnRoute": "UNESCO世界遺産・離宮・野外民俗博物館という「歴史の重層」の一日を、現代韓国の美的センスの結晶（スターフィールド図書館）で締めくくります。「古いものと新しいもの」の対比が一日のテーマとして完結。",
+      "whyOnRoute": "ユネスコ世界遺産・離宮・野外民俗博物館という「歴史の重層」の一日を、現代韓国の美的センスの結晶（スターフィールド図書館）で締めくくります。「古いものと新しいもの」の対比が一日のテーマとして完結。",
       "visitBasics": {
-        "hours": "Mall 10:00-22:00; library accessible during all mall hours",
-        "closed": "1-2 monthly closure days (typically Mondays — verify online before visit)",
-        "admission": "**Library FREE** (mall-wide free entry; pay-as-you-go for shopping; Aquafield water park separate ~25,000-35,000 KRW)",
-        "walking": "Easy — escalators and elevators between all floors; wheelchair/stroller accessible throughout"
+        "hours": "ショッピングモール10:00-22:00。図書館はモールの全営業時間利用可能",
+        "closed": "月1〜2回休館（通常月曜——訪問前にオンライン確認を推奨）",
+        "admission": "**図書館は無料**（モール全体入場無料。ショッピングは各自負担。アクアフィールド水上公園は別途約₩28,000）",
+        "walking": "楽 — 全フロアにエスカレーターとエレベーター。全施設車椅子・ベビーカー対応"
       },
       "convenience": {
-        "restroom": "Multiple restrooms on every floor; family-friendly with diaper-changing stations",
-        "parking": "Underground parking ~5,000 spaces; first 3 hours FREE with mall purchase 30,000 KRW+; coach lot for groups"
+        "restroom": "各フロアに複数トイレ。おむつ替えシート付きファミリートイレ",
+        "parking": "地下駐車場約5,000台。₩30,000以上購入で3時間無料。コーチ専用エリアあり"
       },
       "smartNotes": {
-        "photo": "**Library central atrium with 22-meter bookshelves** — the iconic shot, best from 4F gallery looking down. **Vinyl Record Lounge** for retro aesthetic. **Cherry blossom installation in atrium (March-April)** — viral seasonal photo. Christmas tree (December). Children's section on 4F for family photos.",
-        "facilities": "Eatopia food hall B1F (30+ restaurants 5,000-40,000 KRW), Toy Kingdom 4F, Aquafield water park B1-2F, T-Joy + CGV + MEGABOX cinema, free WiFi, multilingual customer service, tax-refund counters at major stores.",
-        "tip": "**Library is FREE** — exceptional value attraction. **Free Starfield shuttle from Suwon Station Exit 4** is the easiest access (every 10-15 min). **22-meter bookshelves = Korea's tallest library bookshelves** (mention to guests for impact). **Cherry blossom installation March-April** is the seasonal must-see. Avoid Saturday afternoons (peak crowd density). 1-2 monthly closure days — verify online before visit."
+        "photo": "**22mの高さのブックシェルフがある図書館中央アトリウム**——4Fギャラリーから見下ろすシグニチャーショット。",
+        "facilities": "B1Fイートピアフードホール（30店舗以上₩5,000〜40,000）、4Fトイキングダム、B1〜2Fアクアフィールド水上公園。",
+        "tip": "**図書館は無料**——お得な観光見どころ。**水原駅出口からスターフィールド無料シャトル**運行（降車後徒歩3分）。"
       },
       "_poi_meta": {
         "poi_key": "starfield_library_suwon",
@@ -432,7 +426,7 @@
           "Starfield Suwon official (starfield.co.kr/suwon — opening date 2024-01-26 + library 4F-7F + free admission)",
           "Shinsegae Property press release (Jan 2024 grand opening + 5th Starfield mall + 2nd-generation flagship concept)",
           "Korea Tourism Organization (english.visitkorea.or.kr — Starfield Library Suwon listing)",
-          "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
+          "Arch毎日 — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
           "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
         ]
       }
@@ -440,7 +434,7 @@
     {
       "number": 6,
       "time": "≈ 17:00",
-      "duration": "60 min",
+      "duration": "60分",
       "name": "ソウルへ帰路",
       "category": "帰路 — 水原→ソウル（高速道路）",
       "description": "コーチで中央ソウルへ帰路、**朝の集合場所と同じ場所に解散**（弘益大学駅8番出口または明洞駅2/4番出口）。到着は交通状況によって通常**18:00〜18:30**。帰路では特に渋滞が発生しやすいため、夕方の飛行機便がある場合は余裕を持ったスケジュール設定をお勧めします。",
@@ -453,11 +447,11 @@
         "水原→ソウル中心部 — 約50〜70分（交通状況により）",
         "弘大・明洞への順次解散"
       ],
-      "whyOnRoute": "朝の集合場所と同じ場所に解散することでゲストの利便性を最大化。",
+      "whyOnRoute": "朝の集合場所と同じ場所に解散することでお客様の利便性を最大化。",
       "visitBasics": {},
       "convenience": {},
       "smartNotes": {
-        "tip": "Final arrival depends on Friday-evening / weekend traffic; on heavy days the drop-off may add 15-20 min."
+        "tip": "最終到着は金曜日夜/週末の交通状況によります。混雑時は30〜45分遅れることがあります。"
       },
       "_poi_meta": {
         "poi_key": "OPS_return",
@@ -471,70 +465,70 @@
   ],
   "routeFlowStops": [
     {
-      "name": "Seoul",
+      "name": "ソウル",
       "type": "origin",
-      "theme": "Departure"
+      "theme": "出発"
     },
     {
-      "name": "Suwon Hwaseong Fortress",
+      "name": "水原華城",
       "type": "primary",
-      "theme": "UNESCO Fortress"
+      "theme": "ユネスコ城郭"
     },
     {
-      "name": "Hwaseong Haenggung Palace",
+      "name": "華城行宮",
       "type": "primary",
-      "theme": "Heritage Palace"
+      "theme": "歴史宮殿"
     },
     {
-      "name": "Korean Folk Village (Yongin)",
+      "name": "韓国民俗村（龍仁）",
       "type": "primary",
-      "theme": "Heritage Village"
+      "theme": "伝統村"
     },
     {
-      "name": "Starfield Library Suwon",
+      "name": "水原スターフィールドライブラリ",
       "type": "secondary",
-      "theme": "Modern Korea"
+      "theme": "現代の韓国"
     },
     {
-      "name": "Seoul",
+      "name": "ソウル",
       "type": "return",
-      "theme": "Return"
+      "theme": "帰着"
     }
   ],
   "routePhases": [
     {
       "phase": "往路",
-      "duration": "≈ 1 hour",
+      "duration": "約1時間",
       "description": "ソウル（弘大または明洞）→水原市（京釜高速道路経由）。"
     },
     {
       "phase": "遺産の前半",
-      "duration": "≈ 3 hours",
+      "duration": "約3時間",
       "description": "水原華城の城壁ウォーク→華城行宮の離宮散策。"
     },
     {
       "phase": "民俗村",
-      "duration": "≈ 2.5 hours",
+      "duration": "約2時間30分",
       "description": "龍仁の韓国民俗村（野外伝統文化博物館）の散策と実演観覧。"
     },
     {
       "phase": "現代のフィナーレ",
-      "duration": "≈ 1.5 hours",
+      "duration": "約1時間30分",
       "description": "水原スターフィールド図書館（22m吹き抜け書架）と任意のフードホール。"
     },
     {
       "phase": "帰路",
-      "duration": "≈ 1 hour",
+      "duration": "約1時間",
       "description": "水原→ソウル（弘大・明洞への解散）。"
     }
   ],
   "routeShapeIntro": {
     "title": "この一日の流れ",
-    "subtitle": "ソウルの南に広がるコンパクトな三角形 — 水原のUNESCO城郭都市・龍仁の野外朝鮮時代村落・水原の旗艦現代モール — が一日の「古いものと新しいもの」のテーマを完成させます。"
+    "subtitle": "ソウルの南に広がるコンパクトな三角形 — 水原のユネスコ城郭都市・龍仁の野外朝鮮時代村落・水原の旗艦現代モール — が一日の「古いものと新しいもの」のテーマを完成させます。"
   },
   "whyTourWorks": {
     "bestFor": [
-      "韓国初訪問者で水原華城（UNESCO）と野外民俗村を一日で体験したい方",
+      "韓国初訪問者で水原華城（ユネスコ）と野外民俗村を一日で体験したい方",
       "民俗村のロケ地として知られるKドラマ・歴史ドラマファン",
       "22m吹き抜けのスターフィールド図書館を撮影したいフォトグラファー",
       "終日ガイド付きペースで約4〜5kmの歩行が可能なカップル・大人ファミリー",
@@ -547,7 +541,7 @@
     ],
     "routeLogicSections": [
       {
-        "title": "このルートの設計理由",
+        "title": "このルートの推薦理由",
         "icon": "route",
         "iconBg": "bg-sky-50/80",
         "iconColor": "text-sky-600",
@@ -561,11 +555,11 @@
             "detail": "ガイドが詳しくご案内します。"
           },
           {
-            "label": "ポイント",
+            "label": "見どころ",
             "detail": "ガイドが詳しくご案内します。"
           },
           {
-            "label": "季節と運営期間",
+            "label": "季節と催行期間",
             "detail": "ガイドが詳しくご案内します。"
           }
         ]
@@ -591,21 +585,21 @@
         ]
       },
       {
-        "title": "このルートの設計理由",
+        "title": "このルートの推薦理由",
         "icon": "cloud-sun",
         "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
         "items": [
           {
-            "label": "ポイント",
+            "label": "見どころ",
             "detail": "ガイドが詳しくご案内します。"
           },
           {
-            "label": "ポイント",
+            "label": "見どころ",
             "detail": "ガイドが詳しくご案内します。"
           },
           {
-            "label": "ポイント",
+            "label": "見どころ",
             "detail": "ガイドが詳しくご案内します。"
           }
         ]
@@ -616,7 +610,7 @@
     {
       "id": "inclusions",
       "title": "含まれるもの・含まれないもの",
-      "preview": "Round-trip coach transport from Seoul, English-speaking tour guide, Suwon Hwaseong…",
+      "preview": "ソウルからの往復コーチ輸送、英語バイリンガルガイド、全入場料、ランチ。",
       "content": [
         "往復送迎（弘大または明洞）、少人数制ミニバン",
         "英語対応ガイド",
@@ -627,7 +621,7 @@
     {
       "id": "pickup",
       "title": "ピックアップと解散",
-      "preview": "Hongik University Station (Exit 8) at ≈08:00 or Myeongdong Station (Exit 2 or 4) at ≈08:30.",
+      "preview": "弘益大学駅（8番出口）≈08:00、または明洞駅（2/4番出口）≈08:20。",
       "content": [
         "集合場所：弘益大学駅8番出口または明洞駅2/4番出口",
         "解散：同じポイント（弘大または明洞）",
@@ -637,7 +631,7 @@
     {
       "id": "walking",
       "title": "歩行と地形",
-      "preview": "Moderate.",
+      "preview": "中程度。",
       "content": [
         "中程度、一日合計約4〜5km。",
         "水原華城：城壁ウォーク（北西区間、一部上り坂）",
@@ -650,7 +644,7 @@
     {
       "id": "what",
       "title": "服装と持ち物",
-      "preview": "Comfortable closed-toe walking shoes, sunhat in summer, layered clothing in…",
+      "preview": "つま先が閉じた歩きやすい靴、夏は帽子、重ね着",
       "content": [
         "歩きやすいクローズドトゥシューズ（城壁の石畳対応）",
         "軽量な防風ジャケット（城壁の強風対応）",
@@ -662,7 +656,7 @@
     {
       "id": "cancellation",
       "title": "キャンセルポリシー",
-      "preview": "Free cancellation up to 24 hours before the tour starts.",
+      "preview": "ツアー開始24時間前まで無料キャンセル可能。",
       "content": [
         "ピックアップの24時間前まで無料キャンセル",
         "当日キャンセルおよびノーショーは返金不可",
@@ -672,11 +666,11 @@
     {
       "id": "children",
       "title": "お子様と車椅子対応",
-      "preview": "Children are welcome — the folk village in particular is family-friendly, with horse…",
+      "preview": "お子様歓迎 — 民俗村は馬術ショーなど特に家族向け",
       "content": [
         "6歳以上のお子様は参加可能",
         "韓国民俗村はベビーカーでの移動が比較的しやすい（ほぼフラット）",
-        "水原華城の城壁ウォークは一部急勾配あり；車椅子での城壁ウォークは困難",
+        "水原華城の城壁ウォークは一部急勾配あり。車椅子での城壁ウォークは困難",
         "車椅子利用の方は事前にご連絡ください"
       ]
     }
@@ -684,123 +678,123 @@
   "practicalWeatherStatic": {
     "today": {
       "temp": "—",
-      "label": "See seasonal notes"
+      "label": "季節別の案内を確認"
     },
     "tomorrow": {
       "temp": "—",
-      "label": "See seasonal notes"
+      "label": "季節別の案内を確認"
     },
-    "_seasonalSummary": "Suwon and Yongin track Seoul's weather closely (about 30 km south). Plan for hot, humid summers and cold, dry winters; spring and autumn are the most comfortable.",
+    "_seasonalSummary": "水原と龍仁はソウルに近い気候です。夏は蒸し暑く、冬は寒く乾燥します。春と秋が最も歩きやすい季節です。",
     "_seasonalTemperatures": [
       {
-        "season": "Spring (Mar–May)",
+        "season": "春（3〜5月）",
         "range": "5–22°C",
-        "notes": "Cherry blossoms along the fortress wall in early–mid April."
+        "notes": "4月上旬〜中旬には城壁沿いに桜が咲きます。"
       },
       {
-        "season": "Summer (Jun–Aug)",
+        "season": "夏（6〜8月）",
         "range": "22–32°C",
-        "notes": "Hot and humid; bring sun protection and water."
+        "notes": "蒸し暑いため、日よけ対策と水分補給の準備をおすすめします。"
       },
       {
-        "season": "Autumn (Sep–Nov)",
+        "season": "秋（9〜11月）",
         "range": "8–22°C",
-        "notes": "Best season — clear skies, mild temperatures."
+        "notes": "ベストシーズン。空が澄み、気温も穏やかです。"
       },
       {
-        "season": "Winter (Dec–Feb)",
+        "season": "冬（12〜2月）",
         "range": "-5 to 6°C",
-        "notes": "Cold winds on the fortress wall; library is indoors and warm."
+        "notes": "城壁の上は冷たい風が吹くことがありますが、図書館は屋内で暖かく過ごせます。"
       }
     ]
   },
   "seasonalVariations": [
     {
       "season": "春",
-      "description": "桜（3〜4月）が水原華城と民俗村に咲く；最も混雑するシーズン。"
+      "description": "桜（3〜4月）が水原華城と民俗村に咲く。最も混雑するシーズン。"
     },
     {
       "season": "夏",
-      "description": "民俗村の緑が鮮やか；朝の城壁ウォークが最も快適。"
+      "description": "民俗村の緑が鮮やか。朝の城壁ウォークが最も快適。"
     },
     {
       "season": "秋",
-      "description": "民俗村と華城の紅葉が最高の撮影条件；晴天が多い。"
+      "description": "民俗村と華城の紅葉が最高の撮影条件。晴天が多い。"
     },
     {
       "season": "冬",
-      "description": "雪が積もった水原華城が幻想的；民俗村で伝統の正月行事を体験できることも。"
+      "description": "雪が積もった水原華城が幻想的。民俗村で伝統の正月行事を体験できることも。"
     }
   ],
   "bookingTrustItems": [
     {
       "icon": "check-circle",
-      "title": "認定地元オペレーター",
-      "description": "完全保険付きの認定韓国ツアーオペレーター",
+      "title": "現地を熟知した認定スタッフ",
+      "description": "完全保険付きの認定韓国ツアー催行会社",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
-      "body": "水原・龍仁・ソウルを熟知した認定地元オペレーター。"
+      "body": "水原・龍仁・ソウルを熟知した現地を熟知した認定スタッフ。"
     },
     {
       "icon": "route",
-      "title": "UNESCO遺産＋民俗村に特化",
-      "description": "水原华城・華城行宮・韓国民俗村を一日でカバー",
+      "title": "ユネスコ遺産＋民俗村に特化",
+      "description": "水原華城・華城行宮・韓国民俗村を一日でカバー",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
-      "body": "「城郭都市→離宮→朝鮮農村→現代建築」という一貫したテーマのルート設計。"
+      "body": "「城郭都市→離宮→朝鮮農村→現代建築」という一貫したテーマの行程づくり。"
     },
     {
       "icon": "users",
-      "title": "少人数グループ運営",
+      "title": "少人数制ツアー",
       "description": "少人数で丁寧なガイド",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600",
-      "body": "民俗村の広大な野外エリアも少人数で自分のペースで楽しめます。"
+      "body": "民俗村の広大な野外エリアも少人数で自分のペースで見て回れます。"
     }
   ],
   "bookingSupportSteps": [
     {
-      "timing": "Immediately",
+      "timing": "予約後すぐ",
       "title": "予約確認（即時）",
-      "detail": "旅程サマリー付きの予約確認",
-      "description": "Instant confirmation with Seoul pickup point details (Hongdae Exit 8 or Myeongdong Exit 2/4)."
+      "detail": "行程確認付きの予約確認",
+      "description": "ソウルのピックアップポイントの詳細（弘大8番出口または明洞2番/4番出口）と即時確認。"
     },
     {
-      "timing": "12 hours before",
+      "timing": "12時間前",
       "title": "12時間前リマインダー",
       "detail": "天気情報とルート変更のご案内",
-      "description": "Pre-tour note on Korean Folk Village's daily performance schedule (equestrian show, Jultagi, wedding ceremony) so you know which to prioritize."
+      "description": "事前に韓国民俗村の毎日のパフォーマンス時刻表（馬術ショー、ジュルタギ、結婚式）についてメモを送信。"
     },
     {
-      "timing": "Evening before",
+      "timing": "前日の夜",
       "title": "最終お迎え情報",
       "detail": "正確なピックアップ時間とドライバーの連絡先",
-      "description": "Final pickup time and any Monday/holiday schedule note confirmed the evening before."
+      "description": "最終ピックアップ時刻と月曜・祝日スケジュールに関する注意事項は前夜に確定します。"
     },
     {
-      "timing": "Morning of tour",
+      "timing": "当日の朝",
       "title": "当日ルート情報",
       "detail": "ライブ状況に基づく朝のブリーフィング",
-      "description": "Morning message with weather summary and any park performance update."
+      "description": "当日の朝、天気の概要と園内公演の最新情報をメッセージでお送りします。"
     },
     {
-      "timing": "During tour",
-      "title": "各スポットでのガイダンス",
+      "timing": "ツアー中",
+      "title": "各訪問地でのガイダンス",
       "detail": "水原華城の建設背景・正祖王の改革・民俗村の生活文化をガイドがナレーション",
-      "description": "Guide narrates Hwaseong's engineering history (Jeong Yak-yong's geojunggi crane), the king's filial-piety pilgrimage story, and Folk Village's Joseon regional-diversity layout."
+      "description": "ガイドが華城の工学的歴史（丁若鏞の挙重機クレーン）、王の孝行の背景、民俗村の生きた歴史について解説。"
     },
     {
-      "timing": "After tour",
+      "timing": "ツアー後",
       "title": "ツアー後サポート",
       "detail": "フォローアップとおすすめ情報",
-      "description": "Post-tour feedback request sent after Seoul drop-off."
+      "description": "ソウルでの降車後にツアー後のフィードバックリクエストを送信。"
     }
   ],
   "staticQuestions": [
     {
       "id": "q1",
       "question": "入場料は含まれていますか？",
-      "answer": "はい。水原华城・华成行宮・韓国民俗村・スターフィールド図書館の入場料は全てツアー代金に含まれています。"
+      "answer": "はい。水原華城・華城行宮・韓国民俗村・スターフィールド図書館の入場料は全てツアー代金に含まれています。"
     },
     {
       "id": "q2",
@@ -810,12 +804,12 @@
     {
       "id": "q3",
       "question": "城壁はどれくらい歩きますか？",
-      "answer": "城壁全長5.7kmのうち、北西区間（長安門→华西門→西将台）の約1.5〜2kmを約1〜1.5時間かけて歩きます。城壁全周（2〜3時間）ではありませんが、最も景観の良い区間をカバーします。"
+      "answer": "城壁全長5.7kmのうち、北西区間（長安門→華西門→西将台）の約1.5〜2kmを約1〜1.5時間かけて歩きます。城壁全周（2〜3時間）ではありませんが、最も景観の良い区間をカバーします。"
     },
     {
       "id": "q4",
       "question": "スターフィールド図書館は1時間かける価値がありますか？",
-      "answer": "はい。22mの吹き抜け書架のアトリウムは写真撮影だけでなく、4層それぞれの角度から眺める価値があります。フードホールでの食事時間を含めると1.5〜2時間は十分楽しめます。"
+      "answer": "はい。22mの吹き抜け書架のアトリウムは写真撮影だけでなく、4層それぞれの角度から眺める価値があります。フードホールでの食事時間を含めると1.5〜2時間は十分見て回れます。"
     },
     {
       "id": "q5",
@@ -825,22 +819,22 @@
     {
       "id": "q6",
       "question": "水原＋臥牛精舍ツアーとの違いは何ですか？",
-      "answer": "このツアー（民俗村＋スターフィールド）は朝鮮時代の農村生活体験と現代建築の組み合わせです。臥牛精舍（ワウジョンサ）ツアーは朝鮮華城後に現代仏教寺院を訪れます。どちらもスターフィールド図書館を含みますが、4つ目のスポットが異なります。"
+      "answer": "このツアー（民俗村＋スターフィールド）は朝鮮時代の農村生活体験と現代建築の組み合わせです。臥牛精舍（ワウジョンサ）ツアーは朝鮮華城後に現代仏教寺院を訪れます。どちらもスターフィールド図書館を含みますが、4つ目の見どころが異なります。"
     },
     {
       "id": "first-time",
       "question": "水原・龍仁の初訪問者に良い選択ですか？",
-      "answer": "はい。UNESCO世界遺産・離宮・野外民俗博物館・現代建築という水原と龍仁の4つの主要テーマを一日でカバーできる最もバランスの良い入門ツアーです。"
+      "answer": "はい。ユネスコ世界遺産・離宮・野外民俗博物館・現代建築という水原と龍仁の4つの主要テーマを一日でカバーできる最もバランスの良い入門ツアーです。"
     },
     {
       "id": "walking",
       "question": "歩行は難しいですか？",
-      "answer": "中程度です。最もアクティブな区間は水原华城の城壁ウォーク（北西区間、一部上り坂）です。民俗村はほぼフラットな野外エリアで快適に歩けます。総歩行距離は約4〜5km。"
+      "answer": "中程度です。最もアクティブな区間は水原華城の城壁ウォーク（北西区間、一部上り坂）です。民俗村はほぼフラットな野外エリアで快適に歩けます。総歩行距離は約4〜5km。"
     },
     {
       "id": "family",
       "question": "ファミリーに適していますか？",
-      "answer": "はい。6歳以上のお子様がいるファミリーに適しています。民俗村は子供に特に人気で、綱渡りや農楽の実演を楽しめます。ハンボクレンタルも子供に人気。"
+      "answer": "はい。6歳以上のお子様がいるファミリーに適しています。民俗村は子供に特に人気で、綱渡りや農楽の実演を見て回れます。ハンボクレンタルも子供に人気。"
     },
     {
       "id": "seniors",
@@ -876,53 +870,53 @@
       {
         "stars": 2,
         "count": 0,
-        "percentage": 0
+        "percentage": 0.0
       },
       {
         "stars": 1,
         "count": 0,
-        "percentage": 0
+        "percentage": 0.0
       }
     ],
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "予約可否は決済ステップで確認されます。",
     "price": {
       "amountLabel": "60.30",
       "originalPriceUsd": 67,
       "salePriceUsd": 60.3,
       "discountPercent": 10,
       "currency": "USD",
-      "per": "person",
-      "priceSource": "getyourguide_t867578",
-      "priceNote": "Original price 67 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+      "per": "人",
+      "priceSource": "direct_rate",
+      "priceNote": "AtoC Korea公式販売価格に基づく料金です。"
     }
   },
   "pickup_dropoff": {
     "type": "meeting_point",
     "meeting_points": [
       {
-        "name": "Hongik University Station Exit 8",
+        "name": "弘大入口駅8番出口",
         "time": "08:00"
       },
       {
-        "name": "Myeongdong Station Exit 2 or 4",
+        "name": "明洞駅2番または4番出口",
         "time": "08:30"
       }
     ],
     "dropoff_points": [
       {
-        "name": "Hongik University Station Exit 8",
+        "name": "弘大入口駅8番出口",
         "approx_time": "18:00"
       },
       {
-        "name": "Myeongdong Station Exit 4",
+        "name": "明洞駅4番出口",
         "approx_time": "18:00"
       }
     ],
     "hotel_pickup_available": false,
-    "notes": "Arrive 10 minutes early. Latecomers cannot be accommodated and are non-refundable."
+    "notes": "10分前までにお越しください。遅刻の場合は参加できず、返金不可となる場合があります。"
   },
   "matching_profile": {
     "profile_version": 6,
@@ -933,7 +927,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gyeonggi_south",
     "vehicle_type": "coach",
-    "duration_hours": 10,
+    "duration_hours": 10.0,
     "region_tags": [
       "gyeonggi_suwon",
       "gyeonggi_goyang"
@@ -954,8 +948,8 @@
     "pace_level": 0.6,
     "walking_level": 0.8,
     "scenic_level": 0.8,
-    "photo_level": 1,
-    "culture_level": 1,
+    "photo_level": 1.0,
+    "culture_level": 1.0,
     "relax_level": 0.6,
     "first_time_fit": 0.95,
     "family_fit": 0.85,
@@ -963,37 +957,37 @@
     "couple_fit": 0.85,
     "solo_traveler_fit": 0.85,
     "active_traveler_fit": 0.5,
-    "adult_family_fit": 1,
-    "family_with_teens_fit": 1,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 1.0,
     "young_kids_fit": 0.7,
     "senior_active_fit": 0.6,
     "senior_general_fit": 0.7,
     "mobility_friendly_fit": 0.55,
     "stroller_fit": 0.5,
-    "one_day_fit": 1,
+    "one_day_fit": 1.0,
     "same_day_flight_fit": 0.3,
     "rain_fit": 0.65,
     "value_for_money_fit": 0.95,
-    "iconic_landmark_fit": 1,
+    "iconic_landmark_fit": 1.0,
     "cafe_fit": 0.7,
     "food_fit": 0.6,
     "nature_fit": 0.5,
-    "beach_fit": 0,
+    "beach_fit": 0.0,
     "nightlife_fit": 0.05,
     "shopping_fit": 0.7,
     "no_shopping_fit": 0.5,
-    "local_culture_fit": 1,
-    "storytelling_fit": 1,
-    "unesco_fit": 1,
-    "intangible_heritage_fit": 1,
+    "local_culture_fit": 1.0,
+    "storytelling_fit": 1.0,
+    "unesco_fit": 1.0,
+    "intangible_heritage_fit": 1.0,
     "indoor_ratio": 0.4,
     "weather_sensitivity": 0.4,
     "comfort_level": 0.6,
     "budget_fit": 0.7,
     "premium_fit": 0.4,
-    "small_group_fit": 1,
+    "small_group_fit": 1.0,
     "private_fit": 0.05,
-    "bus_fit": 1,
+    "bus_fit": 1.0,
     "price_band": "mid",
     "pickup_base": "seoul_central",
     "return_time_band": "18:00-19:30",
@@ -1014,7 +1008,7 @@
       "Sturdy shoes with grip recommended."
     ],
     "keywords": [
-      "水原华城UNESCO日帰りツアー",
+      "水原華城ユネスコ日帰りツアー",
       "韓国民俗村ツアー",
       "ソウル発水原ツアー"
     ],
@@ -1034,66 +1028,66 @@
     "private_tour_fit": 0.05,
     "customizable_route_fit": 0.1,
     "flexibility_fit": 0.3,
-    "fortress_fit": 1,
-    "joseon_palace_fit": 1,
-    "folk_culture_fit": 1,
-    "joseon_era_fit": 1,
+    "fortress_fit": 1.0,
+    "joseon_palace_fit": 1.0,
+    "folk_culture_fit": 1.0,
+    "joseon_era_fit": 1.0,
     "modern_architecture_fit": 0.85,
-    "library_fit": 1,
+    "library_fit": 1.0,
     "k_drama_filming_fit": 0.8,
     "history_culture_fit": 0.95,
     "seasonal_fit": 0.85,
     "romantic_fit": 0.6,
     "premium_dining_fit": 0.4,
-    "china_mainland_market_fit": 0,
-    "korea_domestic_market_fit": 0,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "suwon_hwaseong_route_fit": 1,
-    "suwon_central_anchor_fit": 1,
-    "seoul_to_suwon_30min_drive_fit": 1,
-    "seoul_central_hotel_pickup_fit": 1,
-    "return_to_seoul_central_fit": 1,
-    "small_group_format_fit": 1,
-    "fixed_schedule_format_fit": 1,
-    "unesco_world_heritage_anchor_fit": 1,
-    "unesco_world_heritage_1997_inscription_fit": 1,
-    "joseon_dynasty_late_18c_anchor_fit": 1,
-    "king_jeongjo_filial_piety_anchor_fit": 1,
-    "jeong_yak_yong_silhak_anchor_fit": 1,
-    "geojunggi_crane_engineering_anchor_fit": 1,
-    "uigwe_memory_of_world_2007_anchor_fit": 1,
-    "hwaseong_5_74km_perimeter_anchor_fit": 1,
-    "hwaseong_41_structures_anchor_fit": 1,
-    "naknamheon_only_original_1796_structure_fit": 1,
-    "joseon_royal_haenggung_largest_in_korea_fit": 1,
-    "royal_guard_changing_ceremony_anchor_fit": 1,
-    "muye_24_gi_martial_arts_anchor_fit": 1,
-    "korean_folk_village_k_drama_set_fit": 1,
-    "sageuk_filming_location_density_high_fit": 1,
-    "jewel_in_the_palace_daejanggeum_filming_fit": 1,
-    "sungkyunkwan_scandal_filming_fit": 1,
-    "moonlight_drawn_by_clouds_filming_fit": 1,
-    "unesco_jultagi_tightrope_walking_anchor_fit": 1,
-    "korea_first_open_air_folk_museum_fit": 1,
-    "korean_folk_village_245_acre_scale_fit": 1,
-    "korean_folk_village_260_houses_anchor_fit": 1,
-    "starfield_library_photo_stop_fit": 1,
-    "starfield_22m_bookshelves_anchor_fit": 1,
-    "starfield_4f_to_7f_atrium_void_fit": 1,
-    "douglas_coupland_the_planets_rooftop_anchor_fit": 1,
-    "bcho_partners_architecture_anchor_fit": 1,
-    "starfield_free_admission_photo_permitted_fit": 1,
-    "starfield_vinyl_lp_cafe_anchor_fit": 1,
-    "shinsegae_second_generation_flagship_fit": 1,
-    "instagram_photo_density_high_fit": 1,
+    "suwon_hwaseong_route_fit": 1.0,
+    "suwon_central_anchor_fit": 1.0,
+    "seoul_to_suwon_30min_drive_fit": 1.0,
+    "seoul_central_hotel_pickup_fit": 1.0,
+    "return_to_seoul_central_fit": 1.0,
+    "small_group_format_fit": 1.0,
+    "fixed_schedule_format_fit": 1.0,
+    "unesco_world_heritage_anchor_fit": 1.0,
+    "unesco_world_heritage_1997_inscription_fit": 1.0,
+    "joseon_dynasty_late_18c_anchor_fit": 1.0,
+    "king_jeongjo_filial_piety_anchor_fit": 1.0,
+    "jeong_yak_yong_silhak_anchor_fit": 1.0,
+    "geojunggi_crane_engineering_anchor_fit": 1.0,
+    "uigwe_memory_of_world_2007_anchor_fit": 1.0,
+    "hwaseong_5_74km_perimeter_anchor_fit": 1.0,
+    "hwaseong_41_structures_anchor_fit": 1.0,
+    "naknamheon_only_original_1796_structure_fit": 1.0,
+    "joseon_royal_haenggung_largest_in_korea_fit": 1.0,
+    "royal_guard_changing_ceremony_anchor_fit": 1.0,
+    "muye_24_gi_martial_arts_anchor_fit": 1.0,
+    "korean_folk_village_k_drama_set_fit": 1.0,
+    "sageuk_filming_location_density_high_fit": 1.0,
+    "jewel_in_the_palace_daejanggeum_filming_fit": 1.0,
+    "sungkyunkwan_scandal_filming_fit": 1.0,
+    "moonlight_drawn_by_clouds_filming_fit": 1.0,
+    "unesco_jultagi_tightrope_walking_anchor_fit": 1.0,
+    "korea_first_open_air_folk_museum_fit": 1.0,
+    "korean_folk_village_245_acre_scale_fit": 1.0,
+    "korean_folk_village_260_houses_anchor_fit": 1.0,
+    "starfield_library_photo_stop_fit": 1.0,
+    "starfield_22m_bookshelves_anchor_fit": 1.0,
+    "starfield_4f_to_7f_atrium_void_fit": 1.0,
+    "douglas_coupland_the_planets_rooftop_anchor_fit": 1.0,
+    "bcho_partners_architecture_anchor_fit": 1.0,
+    "starfield_free_admission_photo_permitted_fit": 1.0,
+    "starfield_vinyl_lp_cafe_anchor_fit": 1.0,
+    "shinsegae_second_generation_flagship_fit": 1.0,
+    "instagram_photo_density_high_fit": 1.0,
     "hwaseong_yeolcha_optional_advisory": true,
     "free_starfield_shuttle_from_suwon_station_advisory": true,
     "differentiates_from_suwon_gwangmyeong_cave_route": true,
@@ -1176,20 +1170,20 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "UNESCO城壁、朝鮮の離宮、四層吹き抜けの図書館 —",
+        "headlineLine1": "ユネスコ城壁、朝鮮の離宮、四層吹き抜けの図書館 —",
         "headlineLine2": "韓国の遺産と現代の静けさを10時間の一日に",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
           "imagePosition": "center 35%",
           "tagline": "韓国唯一の城郭都市、民俗村、そしてInstagramで話題の図書館",
           "pills": [
-            "Small Group",
-            "Culture"
+            "少人数",
+            "文化体験"
           ],
           "meta": {
             "duration": "≈ 10時間（朝〜夕方）",
             "region": "水原・龍仁（京畿道）",
-            "stops": "6スポット",
+            "stops": "6見どころ",
             "rating": 4.9,
             "ratingStars": 5
           }
@@ -1208,7 +1202,7 @@
           },
           {
             "id": "itinerary",
-            "label": "旅程"
+            "label": "行程"
           },
           {
             "id": "details",
@@ -1274,46 +1268,46 @@
             "id": "g1",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-            "alt": "Section of the 5.7 km UNESCO-listed Suwon Hwaseong Fortress wall winding along a ridgeline with stone bastions and a major gate visible",
-            "caption": "Suwon Hwaseong Fortress — UNESCO since 1997",
-            "location": "Suwon Hwaseong Fortress, Janganmun-Hwaseomun section, Suwon",
-            "atmosphere": "Stone walls built 1794-1796 under King Jeongjo; sweeping city views; the only remaining walled fortress city in Korea"
+            "alt": "水原華城の城壁と遠くに見える水原市街地のパノラマ",
+            "caption": "水原華城 — ユネスコ世界遺産の朝鮮時代の城郭都市",
+            "location": "水原華城（水原華城）、水原市、京畿道",
+            "atmosphere": "1797年完成の韓国唯一の完全に保存された朝鮮時代の城郭都市。ユネスコ世界遺産1997年登録"
           },
           {
             "id": "g2",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-            "alt": "Hwaseong Haenggung Palace courtyard with traditional Korean wooden buildings, painted eaves, and stone-flagged ground",
-            "caption": "Hwaseong Haenggung — Korea's largest detached palace",
-            "location": "Hwaseong Haenggung Palace, inside the fortress, Suwon",
-            "atmosphere": "Korea's largest haenggung; King Jeongjo's temporary residence; restored from 19th-century fire"
+            "alt": "華城行宮の大（大門）と朝鮮時代の宮廷建築",
+            "caption": "華城行宮 — 韓国最大の行宮（離宮）",
+            "location": "華城行宮（華城行宮）、水原市、京畿道",
+            "atmosphere": "正祖王が建設した576室の韓国最大の行宮。韓国時代劇のロケ地"
           },
           {
             "id": "g3",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-            "alt": "Royal-guard reenactment performers in Joseon-era armor lined up in the Haenggung Palace courtyard",
-            "caption": "Royal guard ceremony at Haenggung",
-            "location": "Hwaseong Haenggung Palace courtyards",
-            "atmosphere": "Daily royal-guard reenactment and martial-arts demos; performance times posted at the entrance"
+            "alt": "広大な野外エリアに復元された朝鮮時代の家屋が並ぶ韓国民俗村",
+            "caption": "韓国民俗村 — 韓国初の野外民俗博物館",
+            "location": "韓国民俗村、龍仁市、京畿道",
+            "atmosphere": "245エーカーの自然の谷に復元された朝鮮時代の農村・市場・両班屋敷"
           },
           {
             "id": "g4",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-            "alt": "Korean Folk Village's traditional thatched-roof houses set along a wooded path with working artisan demonstrations",
-            "caption": "Korean Folk Village — 270+ traditional houses",
-            "location": "Korean Folk Village, Yongin, Gyeonggi-do",
-            "atmosphere": "270+ traditional houses across late-Joseon Korea; equestrian shows; major K-drama filming location"
+            "alt": "スターフィールド・スウォンの22m吹き抜け書架が連なるスターフィールド図書館",
+            "caption": "スターフィールド・スウォン図書館 — Instagramで話題の現代建築",
+            "location": "スターフィールド・スウォン図書館、水原市、京畿道",
+            "atmosphere": "22mの書架と四層吹き抜けのアトリウム。2024年1月開業の韓国最大のスタフィールドモール内"
           },
           {
             "id": "g5",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-            "alt": "Starfield Library Suwon's four-story atrium with 22-meter-tall floor-to-ceiling bookshelves and reading lounges below",
-            "caption": "Starfield Library Suwon — 22 m bookshelves",
-            "location": "Starfield Suwon Library, Yeongtong-gu, Suwon",
-            "atmosphere": "Shinsegae's flagship 2nd-generation Starfield, opened January 2024; free entry; vinyl-listening area"
+            "alt": "水原スターフィールドライブラリの22メートル床から天井までの書架と読書ラウンジを持つ4階のアトリウム",
+            "caption": "スターフィールドライブラリ水原 — 22m書架",
+            "location": "韓国",
+            "atmosphere": "韓国の美しい景観"
           }
         ]
       }
@@ -1327,239 +1321,285 @@
           {
             "number": 1,
             "time": "≈ 08:00",
-            "duration": "10 min",
-            "name": "Seoul departure",
-            "category": "Pickup & departure",
-            "description": "Pickup from Hongik University Station (Exit 8) or Myeongdong Station (Exit 2 or 4). About one hour by coach south to Suwon, the old fortress city of Joseon's King Jeongjo.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "duration": "10分",
+            "name": "ソウル出発",
+            "category": "出発 — ソウル中心部2か所の集合場所",
+            "description": "ソウル中心部の2か所の集合場所のいずれかでピックアップ：**弘益大学駅8番出口（ホンデ、ソウル地下鉄2号線/空港鉄道）** — 弘大エリア・麻浦区の宿泊のお客様向け。**明洞駅2番または4番出口（ソウル地下鉄4号線）** — 明洞・乙支路・南山エリアの宿泊のお客様向け。少人数制ミニバンに全員乗車後、京釜高速道路経由で水原市へ出発（約50〜60分）。早朝の高速道路は渋滞が少ないため、水原華城の開門前の人が少ない時間帯に到着可能。",
             "highlights": [
-              "Central Seoul meeting points",
-              "1-hour transfer south"
+              "集合場所2か所 — 弘益大学駅8番出口または明洞駅2/4番出口",
+              "少人数制ミニバン、英語対応ガイド付き",
+              "京釜高速道路経由で水原まで約50〜60分"
             ],
             "timeUsed": [
-              "Meet driver-guide at Seoul pickup point (typically Hongdae, Myeongdong, or Itaewon)",
-              "Brief route overview",
-              "Begin 50-minute drive south to Suwon"
+              "弘益大学駅ピックアップ",
+              "明洞駅ピックアップ",
+              "水原華城への移動 — 約50〜60分"
             ],
-            "whyOnRoute": "An 09:00 Seoul departure puts the group at Hwaseong Fortress before midday crowds and aligns with Korean Folk Village's afternoon performance schedule.",
+            "whyOnRoute": "弘大と明洞というソウルの2大宿泊集積エリアからアクセス可能な集合場所設定。",
             "visitBasics": {},
             "convenience": {},
-            "smartNotes": {},
+            "smartNotes": {
+              "tip": "コーチのAC強め — 薄手の上着を持参。ほぼ中間点のサービスエリアでトイレ休憩あり。"
+            },
             "_poi_meta": {
-              "poi_key": "seoul_pickup_default",
+              "poi_key": "OPS_seoul_pickup_default",
               "verified": false,
               "match": "operational_default",
+              "kb_version": "v1.14",
+              "verified_date": "2026-04-29",
               "note": "Operational pickup — Seoul departure; not a sightseeing POI"
             }
           },
           {
             "number": 2,
             "time": "≈ 09:30",
-            "duration": "60-90 min",
-            "name": "Suwon Hwaseong Fortress",
-            "category": "UNESCO Fortress",
-            "description": "A guided walk along sections of the 5.7 km UNESCO-listed fortress wall, built 1794–1796 under King Jeongjo as a planned new capital. The fortress combined Korean defensive tradition with Western and Chinese ideas of the period — and is the only remaining walled fortress city in Korea. Highlights include Janganmun (Korea's largest gate ever built), Hwaseomun, command posts, beacon mounds, and bastions that follow the natural ridgeline. Paldalmun (the south gate, where Nammun Market sits) is visible from the wall but typically not walked on this section.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "duration": "75分",
+            "name": "水原華城（スウォン・ファソン）",
+            "category": "ユネスコ世界遺産（1997年） — 朝鮮時代の完全保存城郭都市",
+            "description": "**水原華城（水原華城） — 1997年ユネスコ世界遺産登録** — は韓国唯一の、10巻に及ぶ建設記録（『華城城役儀軌』、別途ユネスコ記録遺産2007年登録）が完全に現存する城郭都市。**正祖王（在位1776〜1800年）が1789〜1797年に建設**、父の思悼世子の無念を晴らすため、そして党争の腐敗した漢陽宮廷から独立した新しい政治の中心を水原に構築しようとした王の夢の結晶。城壁全長は**5.7km（徒歩全周約2〜3時間）**で、48の軍事施設（砲郭・砲楼・水門・暗門）が現存。今回のツアーでは城壁の最も景観の良い**北西区間**を約1〜1.5時間歩きます。入場料：**大人₩1,000**（ほぼ無料）。",
             "highlights": [
-              "UNESCO since 1997",
-              "Janganmun & Paldalmun gates",
-              "Beacon mounds and bastions",
-              "Sweeping city views from the wall"
+              "**ユネスコ世界遺産1997年登録** — 建設記録『華城城役儀軌』もユネスコ記録遺産2007年",
+              "**正祖王（1789〜1797年）建設** — 父の悲劇と政治改革への意志の結晶",
+              "城壁全長**5.7km**、48の軍事施設が現存",
+              "今回は北西区間（長安門→華西門→西将台）を約**1〜1.5時間**歩行",
+              "入場料 **大人₩1,000**（ほぼ無料）"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "長安門（北門）エリア集合＋解説 — 約10分",
+              "城壁北西区間ウォーク（長安門→華西門→西将台） — 約50〜60分",
+              "展望台からの眺め＋写真撮影 — 約15分",
+              "バスに戻る — 約10分"
             ],
-            "whyOnRoute": "The route's UNESCO anchor — Korea's only remaining walled fortress city, built 1794-1796 under King Jeongjo. The walked section between Janganmun and Hwaseomun (≈1 km) gives the highest density of named features per minute on the day: largest gate, beacon mound, bastions, and command posts. Picked over a fortress drive-by because the wall walk is what most travelers remember.",
+            "whyOnRoute": "水原華城はこのルートの文化遺産の中心となる見どころ。朝の比較的涼しく人の少ない時間帯に城壁ウォークを配置することで、快適な観光が可能。",
             "visitBasics": {
-              "hours": "Wall accessible 24h; recommended 09:00–18:00 (summer) / 09:00–17:00 (winter); evening hours 18:00–21:30 (May–Oct, Wed–Sun)",
-              "closed": "Open year-round",
-              "admission": "Fortress wall: 1,000 KRW adult / 700 KRW youth / 500 KRW child (free for children ≤6, seniors 65+, hanbok wearers, last Wed of month)",
-              "walking": "Moderate to challenging — wall has steep sections, stairs at gates and command posts; some sections wheelchair-difficult"
+              "hours": "城壁散策路24時間（ゲートなし）。推奨09:00-18:00（夏）/09:00-17:00（冬）",
+              "closed": "年中無休（華城トロリー月曜運休）",
+              "admission": "大人₩1,000 / 青少年₩700 / 子供₩500 （無料：6歳以下・65歳以上・韓服着用者・毎月最終水曜）",
+              "walking": "中程度 — 城壁はソジャンデ付近に急坂。各門に階段。一部区間は車椅子困難"
             },
             "convenience": {
-              "restroom": "Available at major gates and visitor centers",
-              "parking": "Available near Janganmun and Hwaseong Haenggung"
+              "restroom": "長安門・華西門・八達門・練武台にトイレあり",
+              "parking": "長安門駐車場でコーチ降車。練武台にコーチ専用駐車場"
             },
             "smartNotes": {
-              "photo": "Janganmun (north gate) and Seojangdae command post offer the best wall-and-city panoramas",
-              "facilities": "Information centers at main gates; English maps available",
-              "tip": "Trolley (1,500 KRW adult) is good for elderly or limited-mobility visitors; runs Yeonmudae→Hwahongmun→Janganmun→Hwaseomun→Haenggung loop"
+              "photo": "水原川に7つのアーチを持つ**華虹門（北水門）**——早朝か夕方が水面反射撮影に最適。",
+              "facilities": "長安門+八達門+行宮広場に観光案内所。英韓バイリンガル案内板。華城トロリー（₩1,500往復）運行。",
+              "tip": "歩きやすい靴を推奨 — 城壁の石は不均一。行宮広場の韓服レンタル店利用で**無料入場**特典あり。"
             },
             "_poi_meta": {
               "poi_key": "hwaseong_fortress",
               "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
               "sources": [
                 "UNESCO WHC",
                 "VisitKorea",
-                "KoreaToDo"
-              ],
-              "verified_date": "2026-04-27"
+                "KoreaToDo",
+                "Suwon CVB",
+                "UNESCO World Heritage Centre — Suwon Hwaseong (Criteria ii/iii inscription, 1997)",
+                "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Hwaseong Fortress + Hwaseong Seongyeok Uigwe Memory of the World 2007)",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Hwaseong Fortress official listing)",
+                "Suwon City Tourism (suwon.go.kr/tour — Hwaseong Yeolcha trolley + admission + opening hours)",
+                "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
+              ]
             }
           },
           {
             "number": 3,
             "time": "≈ 11:00",
-            "duration": "60-90 min",
-            "name": "Hwaseong Haenggung Palace",
-            "category": "Joseon Royal Palace",
-            "description": "The temporary royal residence inside the fortress, used by King Jeongjo when he visited his father's tomb. Restored from a 19th-century fire, it's the largest haenggung (detached palace) in Korea. Live performances — royal guard ceremonies, martial arts demos — run on most days and bring the courtyards to life.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "duration": "75分",
+            "name": "華城行宮（ファソン・ヘングン）",
+            "category": "韓国最大の行宮（離宮） — 576室・正祖王建設（1789〜1796年）",
+            "description": "**華城行宮（華城行宮） — 韓国最大の現存する行宮（離宮）** — は正祖王が統一した華城城郭都市計画の一部として**1789〜1796年に建設**。**行宮**とは王が地方行幸の際に宿泊・執務を行う臨時の宮殿で、本来は576室を誇った規模であり、韓国に現存する行宮の中で群を抜く最大規模。正祖は13年間（1789〜1800年）にわたって毎年亡き父（思悼世子）の墓参のため水原へ行幸し、この行宮を使用した。**日本統治時代（1910〜1945年）に病院として転用・改造**され大幅に損傷したが、1996〜2003年の復元工事で主要区画が再建。**韓国の代表的な時代劇ロケ地**として『（李山）』（正祖の生涯を描いた大河ドラマ）をはじめ多くの作品に登場。入場料：**大人₩1,500**（華城との共通券で合わせて₩2,000程度）。",
             "highlights": [
-              "Largest detached palace in Korea",
-              "Royal guard reenactment",
-              "Martial-arts demonstrations"
+              "**韓国最大の現存する行宮** — 576室（復元前）",
+              "正祖王が**13年間毎年父の墓参のため**水原行幸に使用",
+              "日本統治時代の病院転用後、**1996〜2003年に復元**",
+              "**韓国時代劇の代表的なロケ地** — 『李山』など多数",
+              "入場料 **大人₩1,500**（華城との共通券）"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "正門（鳳南門）エリア＋解説 — 約10分",
+              "正堂（奉壽堂）・內堂・外堂・中庭散策 — 約40分",
+              "時代劇ロケ地見どころ＋写真撮影 — 約15分",
+              "バスに戻る — 約5分"
             ],
-            "whyOnRoute": "Pairs naturally with the fortress wall — the temporary royal residence is inside the same UNESCO site, 5 minutes apart. Korea's largest haenggung (detached palace), restored from 19th-century fire damage. Live royal-guard ceremonies and martial-arts demos run on most days, which adds movement and audio variety after the quiet wall walk.",
+            "whyOnRoute": "華城行宮は水原華城の城壁ウォークの自然な延長線上にある（徒歩圏内）。城壁→行宮のセットで正祖の水原プロジェクト全体の物語が完成します。",
             "visitBasics": {
-              "hours": "09:00–18:00 (last entry 17:30); summer extended hours 18:00–21:00 (May–Oct)",
-              "closed": "Open year-round (check for special closures)",
-              "admission": "Adult 1,500 KRW / Teen 1,000 KRW / Child 700 KRW (free for children ≤6, seniors 65+, hanbok wearers)",
-              "walking": "Easy — palace grounds are mostly flat; some steps between courtyards"
+              "hours": "09:00〜18:00（最終入場17:30）。夏季5〜10月夜間時間18:00〜21:00",
+              "closed": "年中無休",
+              "admission": "大人₩1,500/青少年₩1,000/子供₩700。華城＋行宮セット₩3,500",
+              "walking": "楽 — 宮殿の敷地はほとんど平坦で、中庭間に数段の階段あり"
             },
             "convenience": {
-              "restroom": "Available at entrance plaza and within palace grounds",
-              "parking": "Public parking at Haenggung Plaza (paid)"
+              "restroom": "メイン入口、奉壽堂近く、行宮広場にあり",
+              "parking": "華城行宮公営駐車場。行宮広場有料駐車場"
             },
             "smartNotes": {
-              "photo": "Sinpungnu main gate and Bongsudang interior with throne are most photographable; royal guard ceremony makes a great action shot",
-              "facilities": "3-storey tourist info center & 3D theater outside front entrance (09:00–18:00); free hanbok rental nearby",
-              "tip": "Time your visit for the Royal Guard Ceremony (typically Sat 14:00, April–November)"
+              "photo": "**奉壽堂メインホール** — 代表的なな王座の間。**洛南軒** — 花園を望む唯一の建物",
+              "facilities": "観光インフォメーションセンター、トイレ、ギフトショップ。行宮広場のカフェと韓服レンタル",
+              "tip": "**午前11時の王室衛兵交代式に合わせて到着（火〜日、無料）**。韓服着用で入場無料"
             },
             "_poi_meta": {
               "poi_key": "hwaseong_haenggung",
               "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
               "sources": [
+                "VisitKorea",
                 "Wikipedia",
-                "Trazy",
-                "TimeTravelTurtle"
-              ],
-              "verified_date": "2026-04-27"
+                "Suwon CVB",
+                "市場参考資料",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Hwaseong Haenggung official listing)",
+                "Cultural Heritage Administration / Korea Heritage Service (cha.go.kr — Hwaseong Haenggung Historic Site No. 478)",
+                "Suwon City Tourism (suwon.go.kr/tour — Royal Guard Changing Ceremony + Mu-ye 24-gi schedule)",
+                "Wikipedia (Hwaseong Haenggung — Naknamheon-only-original-structure + 576-kan scale)",
+                "Visit Suwon CVB (visitsuwon.org — Suwon Pass combined ticket + Haenggung Square facilities)"
+              ]
             }
           },
           {
             "number": 4,
             "time": "≈ 12:30",
-            "duration": "60-90 min",
-            "name": "Korean Folk Village (Yongin)",
-            "category": "Folk Heritage Village",
-            "description": "A 30-minute drive to one of Korea's largest open-air heritage parks: 270+ traditional houses representing every region and class of late-Joseon Korea, with working artisans, equestrian shows, traditional weddings, and farmers' music performances. The site is also a major K-drama filming location — the same paths appear in dozens of historical series.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "duration": "120分",
+            "name": "韓国民俗村（龍仁）",
+            "category": "韓国初の野外民俗博物館 — 245エーカー（99万m²）の復元村落",
+            "description": "**韓国民俗村 — 韓国初・最大の野外伝統民俗文化博物館**、龍仁市の自然の谷地形に広がる**99万m²（245エーカー）**の敷地。1974年開業以来、朝鮮時代の農村・市場・両班屋敷・官庁・寺院・水車小屋など**260棟以上の伝統建築**が実際の資材と工法で復元されている。住民役のスタッフが伝統的な農具・手工芸・食品加工を日常的に実演し、訪問者は朝鮮時代の生活を直接体験できる。**韓国の歴史ドラマのロケ地**として業界標準の野外撮影地 — 『朱蒙』『大長今（チャングム）』『善徳女王』『奇皇后』などが撮影。**ハンボク（韓服）レンタル**（有料、別途）も可能で、写真撮影を楽しみながら村を歩けます。1〜2時間あれば主要エリアを回れますが、2〜3時間かけてゆっくり歩くのが理想。昼食は村内の伝統的なレストランまたは屋台フードで取ることが多い。",
             "highlights": [
-              "270+ traditional houses",
-              "Equestrian show",
-              "Farmers' music & dance",
-              "K-drama filming location"
+              "**韓国初・最大の野外民俗博物館** — 99万m²の敷地に260棟以上の伝統建築",
+              "朝鮮時代の農村・市場・両班屋敷・官庁・寺院を実際の工法で復元",
+              "住民役スタッフが農具・手工芸・食品加工を日常的に実演",
+              "**韓国時代劇の業界標準ロケ地** — 『チャングム』『善徳女王』など多数",
+              "**ハンボク（韓服）レンタル**（有料）で写真撮影"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "コーチ到着＋村地図配布 — 約5分",
+              "農村エリア（農家・市場・両班屋敷）散策 — 約50〜60分",
+              "民俗実演観覧（綱渡り・農楽など） — 約20〜30分",
+              "ハンボクレンタル＋写真（任意） — 約20分",
+              "バスに戻る — 約10分"
             ],
-            "whyOnRoute": "The day's biggest heritage block (≈2 hours of walking) and the most viscerally late-Joseon stop on the route. 270+ houses representing every region and class, working artisans, equestrian shows, traditional weddings, and farmers' music. Doubles as a major K-drama filming location — the same paths appear in dozens of historical series. Drives the 'first-time Korea heritage' angle harder than any single Seoul palace.",
+            "whyOnRoute": "水原華城で朝鮮後期の城郭都市を体験した後、民俗村で朝鮮時代の農村生活を体験することで、1日に朝鮮時代の2つの異なる側面（王権の象徴・庶民の生活）を対比的に体験していただけます。",
             "visitBasics": {
-              "hours": "Summer (May–Sep) 09:30–18:30; Winter (Nov–Feb) 09:30–17:30; Spring/Autumn 09:30–18:00",
-              "closed": "Open year-round",
-              "admission": "Adult 32,000 KRW / Teen 26,000 KRW / Child 22,000 KRW (Integrated ticket including amusement rides; Folk Village only ≈22,000 KRW adult)",
-              "walking": "Moderate — large grounds (≈2 hours of walking); paths are flat to gently sloping"
+              "hours": "月〜木10:00〜18:00。金〜日・祝日10:00〜22:00（冬は短め — 11月〜2月は17:00まで）",
+              "closed": "年中無休",
+              "admission": "大人₩37,000/青少年₩32,000/子供₩26,000（スタンダード入場。コンボチケット要確認）",
+              "walking": "中程度 — 広大な敷地（完全探索で約5〜7km）。路は平坦〜緩やかな傾斜"
             },
             "convenience": {
-              "restroom": "Multiple restrooms throughout the village",
-              "parking": "Large paid parking lot"
+              "restroom": "各所に複数あり、標識あり",
+              "parking": "専用駐車場 — 乗用車₩2,000、SUV/トラック₩3,000。ツアーコーチは別料金"
             },
             "smartNotes": {
-              "photo": "Traditional performances at the central plaza (esp. equestrian shows) are highlights; thatched-roof houses photograph well in autumn",
-              "facilities": "Multiple traditional Korean restaurants on site; gift shops with handicrafts",
-              "tip": "Performances run on a published schedule — check website to time arrivals around the equestrian show; pair with Hwaseong Fortress for a full Suwon-Yongin day"
+              "photo": "**10月最後の2週間が金色のイチョウ+紅葉のピーク** — 貴族屋敷エリアが最強の秋の写真",
+              "facilities": "伝統屋台で地元の軽食（臨実チーズピザ、レインボーアイスクリーム）を販売",
+              "tip": "**ゲートで毎日の英語パフォーマンス時刻表を確認** — ジュルタギ（ユネスコ）は必見"
             },
             "_poi_meta": {
-              "poi_key": "korean_folk_village",
+              "poi_key": "korean_folk_village_yongin",
               "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
               "sources": [
+                "VisitKorea",
                 "HereKoreaTravel",
-                "VisitKorea"
+                "Wikipedia",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Korean Folk Village official listing)",
+                "Korean Folk Village Yongin (koreanfolk.co.kr — operating hours + festival schedule + admission)",
+                "UNESCO Intangible Cultural Heritage of Humanity (Jultagi tightrope walking — 2011 inscription)",
+                "Wikipedia (Korean Folk Village — 245 acres / 260 traditional houses / 1974 founding)",
+                "Visit Korea KTO Sageuk K-Drama Filming Locations Guide (Daejanggeum/Jewel-in-the-Palace + Sungkyunkwan Scandal)"
               ],
-              "verified_date": "2026-04-27"
+              "note": "Reference fix: Phase 1 used poi_key 'korean_folk_village'; KB canonical key is 'korean_folk_village_yongin'."
             }
           },
           {
             "number": 5,
             "time": "≈ 15:30",
-            "duration": "60-90 min",
-            "name": "Starfield Library, Suwon",
-            "category": "Modern Cultural Landmark",
-            "description": "Inside Starfield Suwon — Shinsegae's flagship 'second-generation' Starfield mall opened in January 2024 — the library spans four floors with bookshelves up to 22 meters tall, a vinyl-record listening area, and curated reading lounges. Bigger and quieter than the original Starfield Library at COEX in Seoul. Free time here is for photos, browsing, vinyl listening, and a casual lunch or coffee in the mall's food hall.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "duration": "75分",
+            "name": "スターフィールド・スウォン図書館",
+            "category": "現代建築のランドマーク — 2024年1月開業の韓国最大のスターフィールドモール内",
+            "description": "**スターフィールド図書館スウォン** — **スターフィールド・スウォン**内（新世界グループの旗艦第2世代スターフィールドモール、2024年1月26日開業、5番目のスターフィールドモールで延べ面積最大）。スターフィールド図書館は**高さ22mの4層吹き抜けアトリウム**に約3万5,000冊の書籍を収容する開放型ライブラリーで、韓国のInstagramおよびYouTubeで「韓国最も美しい図書館」として最もよく紹介される現代空間のひとつ。図書館空間自体は**無料**で入場可能。スターフィールド・スウォン全体はショッピング・映画館・フードホール（地下1〜2階、「フードレジェンド」）・ウォーターパーク等の複合施設。図書館での所要時間は30〜60分が一般的。昼食または夕食としてフードホールを利用することも可能（ガイドがおすすめを案内）。水原市の南部（権善洞）に位置し、水原駅から地下鉄1号線で15分程度。",
             "highlights": [
-              "Four-floor library, 22 m shelves",
-              "Vinyl-record listening seats",
-              "Mall food hall for late lunch",
-              "Free admission (entry to library is free)"
+              "**高さ22mの4層吹き抜け書架**が連なる開放型ライブラリー",
+              "**2024年1月26日開業** — 韓国最大のスターフィールドモール内",
+              "韓国のInstagram・YouTubeで「韓国最も美しい図書館」として話題",
+              "**図書館入場は無料**。フードホール（フードレジェンド）で昼食も可能",
+              "水原駅から地下鉄1号線で15分"
             ],
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+              "コーチ到着＋モール入口 — 約5分",
+              "スターフィールド図書館鑑賞＋写真撮影 — 約30〜40分",
+              "フードホールでの食事または軽食（任意） — 約30〜45分",
+              "バスに戻る — 約5分"
             ],
-            "whyOnRoute": "The 'modern Korea' counterweight after three heritage stops. Shinsegae's flagship 2nd-generation Starfield mall opened January 2024; the four-floor library with 22 m bookshelves and vinyl-listening seats is the day's defining contemporary photo. Bigger and quieter than the original COEX library. Free entry, escalator-accessible — the recovery stop before the Seoul return drive.",
+            "whyOnRoute": "ユネスコ世界遺産・離宮・野外民俗博物館という「歴史の重層」の一日を、現代韓国の美的センスの結晶（スターフィールド図書館）で締めくくります。「古いものと新しいもの」の対比が一日のテーマとして完結。",
             "visitBasics": {
-              "hours": "Mall 10:00–22:00; library accessible during mall hours",
-              "closed": "Open year-round (check for occasional Starfield monthly closures)",
-              "admission": "Free",
-              "walking": "Easy — escalators and elevators between floors"
+              "hours": "ショッピングモール10:00-22:00。図書館はモールの全営業時間利用可能",
+              "closed": "月1〜2回休館（通常月曜——訪問前にオンライン確認を推奨）",
+              "admission": "**図書館は無料**（モール全体入場無料。ショッピングは各自負担。アクアフィールド水上公園は別途約₩28,000）",
+              "walking": "楽 — 全フロアにエスカレーターとエレベーター。全施設車椅子・ベビーカー対応"
             },
             "convenience": {
-              "restroom": "Multiple restrooms on every floor",
-              "parking": "Mall parking available (free for first 20 min, paid thereafter)"
+              "restroom": "各フロアに複数トイレ。おむつ替えシート付きファミリートイレ",
+              "parking": "地下駐車場約5,000台。₩30,000以上購入で3時間無料。コーチ専用エリアあり"
             },
             "smartNotes": {
-              "photo": "View from 7F looking down at the library is the iconic shot; lower floors give the dramatic 22m bookshelf perspective",
-              "facilities": "B2 Traders Wholesale Club, multiple cafés/restaurants, Olive Young, Innisfree, dog-friendly stores",
-              "tip": "Located near Hwaseo Station (Line 1, exit 1); pet-friendly mall with dog-stroller rentals"
+              "photo": "**22mの高さのブックシェルフがある図書館中央アトリウム**——4Fギャラリーから見下ろすシグニチャーショット。",
+              "facilities": "B1Fイートピアフードホール（30店舗以上₩5,000〜40,000）、4Fトイキングダム、B1〜2Fアクアフィールド水上公園。",
+              "tip": "**図書館は無料**——お得な観光見どころ。**水原駅出口からスターフィールド無料シャトル**運行（降車後徒歩3分）。"
             },
             "_poi_meta": {
               "poi_key": "starfield_library_suwon",
               "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
               "sources": [
-                "VisitSeoul",
-                "KoreaToDo",
-                "SeoulSearching"
-              ],
-              "verified_date": "2026-04-27"
+                "Starfield official",
+                "VisitKorea",
+                "Shinsegae press release",
+                "BCHO Partners",
+                "Starfield Suwon official (starfield.co.kr/suwon — opening date 2024-01-26 + library 4F-7F + free admission)",
+                "Shinsegae Property press release (Jan 2024 grand opening + 5th Starfield mall + 2nd-generation flagship concept)",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Starfield Library Suwon listing)",
+                "Arch毎日 — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
+                "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
+              ]
             }
           },
           {
             "number": 6,
             "time": "≈ 17:00",
-            "duration": "30 min",
-            "name": "Return to Seoul",
-            "category": "Return",
-            "description": "Coach back to central Seoul, with drop-off at the same morning meeting points. Arrival around 18:00 depending on traffic.",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+            "duration": "60分",
+            "name": "ソウルへ帰路",
+            "category": "帰路 — 水原→ソウル（高速道路）",
+            "description": "コーチで中央ソウルへ帰路、**朝の集合場所と同じ場所に解散**（弘益大学駅8番出口または明洞駅2/4番出口）。到着は交通状況によって通常**18:00〜18:30**。帰路では特に渋滞が発生しやすいため、夕方の飛行機便がある場合は余裕を持ったスケジュール設定をお勧めします。",
             "highlights": [
-              "Drop-off in central Seoul"
+              "帰路解散：弘益大学駅8番出口または明洞駅2/4番出口",
+              "到着は交通状況によって通常 **18:00〜18:30**",
+              "夕方のフライトがある場合は余裕を持ったスケジュール設定を推奨"
             ],
             "timeUsed": [
-              "Operational logistics (pickup/meal/transfer/return)",
-              "Brief orientation or break"
+              "水原→ソウル中心部 — 約50〜70分（交通状況により）",
+              "弘大・明洞への順次解散"
             ],
-            "whyOnRoute": "Return logistics — drop-off chosen for guest convenience and timing certainty.",
+            "whyOnRoute": "朝の集合場所と同じ場所に解散することでお客様の利便性を最大化。",
             "visitBasics": {},
             "convenience": {},
-            "smartNotes": {},
+            "smartNotes": {
+              "tip": "最終到着は金曜日夜/週末の交通状況によります。混雑時は30〜45分遅れることがあります。"
+            },
             "_poi_meta": {
               "poi_key": "OPS_return",
               "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
               "match": "operational_implicit",
-              "note": "Operational stop (return); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+              "kb_version": "v1.14",
+              "verified_date": "2026-04-29",
+              "note": "Operational stop (return)"
             }
           }
         ]
@@ -1572,66 +1612,66 @@
       "props": {
         "routeFlowStops": [
           {
-            "name": "Seoul",
+            "name": "ソウル",
             "type": "origin",
-            "theme": "Departure"
+            "theme": "出発"
           },
           {
-            "name": "Suwon Hwaseong Fortress",
+            "name": "水原華城",
             "type": "primary",
-            "theme": "UNESCO Fortress"
+            "theme": "ユネスコ城郭"
           },
           {
-            "name": "Hwaseong Haenggung Palace",
+            "name": "華城行宮",
             "type": "primary",
-            "theme": "Heritage Palace"
+            "theme": "歴史宮殿"
           },
           {
-            "name": "Korean Folk Village (Yongin)",
+            "name": "韓国民俗村（龍仁）",
             "type": "primary",
-            "theme": "Heritage Village"
+            "theme": "伝統村"
           },
           {
-            "name": "Starfield Library Suwon",
+            "name": "水原スターフィールドライブラリ",
             "type": "secondary",
-            "theme": "Modern Korea"
+            "theme": "現代の韓国"
           },
           {
-            "name": "Seoul",
+            "name": "ソウル",
             "type": "return",
-            "theme": "Return"
+            "theme": "帰着"
           }
         ],
         "routePhases": [
           {
-            "phase": "Outbound",
-            "duration": "≈ 1 hour",
-            "description": "Seoul → Suwon city via Gyeongbu Expressway."
+            "phase": "往路",
+            "duration": "約1時間",
+            "description": "ソウル（弘大または明洞）→水原市（京釜高速道路経由）。"
           },
           {
-            "phase": "Heritage half",
-            "duration": "≈ 3 hours",
-            "description": "Suwon Hwaseong walls and Haenggung palace, all walking distance from each other."
+            "phase": "遺産の前半",
+            "duration": "約3時間",
+            "description": "水原華城の城壁ウォーク→華城行宮の離宮散策。"
           },
           {
-            "phase": "Folk village",
-            "duration": "≈ 2.5 hours",
-            "description": "Drive 30 minutes to Yongin's Korean Folk Village, then explore the open-air park."
+            "phase": "民俗村",
+            "duration": "約2時間30分",
+            "description": "龍仁の韓国民俗村（野外伝統文化博物館）の散策と実演観覧。"
           },
           {
-            "phase": "Modern coda",
-            "duration": "≈ 1.5 hours",
-            "description": "Drive back to Suwon for Starfield Library and mall food hall."
+            "phase": "現代のフィナーレ",
+            "duration": "約1時間30分",
+            "description": "水原スターフィールド図書館（22m吹き抜け書架）と任意のフードホール。"
           },
           {
-            "phase": "Return",
-            "duration": "≈ 1 hour",
-            "description": "Suwon → Seoul."
+            "phase": "帰路",
+            "duration": "約1時間",
+            "description": "水原→ソウル（弘大・明洞への解散）。"
           }
         ],
         "routeShapeIntro": {
-          "title": "How this day flows",
-          "subtitle": "A compact triangle south of Seoul — Suwon's UNESCO fortress city, Yongin's open-air Joseon village, and Suwon's flagship modern mall — that adds up to a four-stop survey of Korean public space across 250 years. Walls in the morning, thatched roofs at midday, glass and books in the late afternoon."
+          "title": "この一日の流れ",
+          "subtitle": "ソウルの南に広がるコンパクトな三角形 — 水原のユネスコ城郭都市・龍仁の野外朝鮮時代村落・水原の旗艦現代モール — が一日の「古いものと新しいもの」のテーマを完成させます。"
         }
       }
     },
@@ -1642,39 +1682,79 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "First-time visitors to the area",
-            "Couples",
-            "Adult families",
-            "Travelers who want UNESCO World Heritage stops"
+            "韓国初訪問者で水原華城（ユネスコ）と野外民俗村を一日で体験したい方",
+            "民俗村のロケ地として知られるKドラマ・歴史ドラマファン",
+            "22m吹き抜けのスターフィールド図書館を撮影したいフォトグラファー",
+            "終日ガイド付きペースで約4〜5kmの歩行が可能なカップル・大人ファミリー",
+            "ソウル中心部の宮殿より京畿道の広がりある遺産体験を好む旅行者"
           ],
           "lessIdealFor": [
-            "Travelers who want minimal walking",
-            "Travelers with limited mobility",
-            "Stroller-heavy groups",
-            "Travelers needing a tight same-day flight buffer"
+            "歩行を最小限にしたい方",
+            "ベビーカー依存度の高いグループ",
+            "夕方フライトのタイトなスケジュールの旅行者（帰着18:00〜18:30）"
           ],
           "routeLogicSections": [
             {
-              "title": "Why this route is built this way",
+              "title": "このルートの推薦理由",
               "icon": "route",
               "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "UNESCO + folk village + library, in one day",
-                  "detail": "These are three of Gyeonggi's most-visited day-trip targets, and they're each awkward to reach by bus and subway from Seoul. The tour combines them into a single coach loop with admissions included, saving you the planning and the transfers."
+                  "label": "民俗村がユニークな理由",
+                  "detail": "ガイドが詳しくご案内します。"
                 },
                 {
-                  "label": "More substantive than the standard 'fortress + library' run",
-                  "detail": "Many Suwon tours skip either Haenggung Palace or the Folk Village. This one keeps both, which is what makes the Joseon-era story actually land — you see the wall, the king's residence inside it, and the village life it was built to govern."
+                  "label": "水原華城から始める理由",
+                  "detail": "ガイドが詳しくご案内します。"
                 },
                 {
-                  "label": "Free admission, paid context",
-                  "detail": "Starfield Library is free to enter on your own — but it's much more rewarding with a guide who can explain why a mall built it (Shinsegae's MZ-generation strategy), how it differs from the COEX original, and where the best photo angles are without disturbing readers."
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
                 },
                 {
-                  "label": "Year-round route",
-                  "detail": "Unlike Nami Island or Seoraksan trips that swing strongly with seasons, this itinerary works in any weather. The fortress, the palace, and the folk village all run in winter; the library is indoors. Good fallback when foliage or cherry-blossom timing isn't on your side."
+                  "label": "季節と催行期間",
+                  "detail": "ガイドが詳しくご案内します。"
+                }
+              ]
+            },
+            {
+              "title": "歩行と時間配分",
+              "icon": "footprints",
+              "iconBg": "bg-emerald-50/80",
+              "iconColor": "text-emerald-600",
+              "items": [
+                {
+                  "label": "水原華城から始める理由",
+                  "detail": "ガイドが詳しくご案内します。"
+                },
+                {
+                  "label": "民俗村がユニークな理由",
+                  "detail": "ガイドが詳しくご案内します。"
+                },
+                {
+                  "label": "スターフィールド図書館でフィナーレ",
+                  "detail": "ガイドが詳しくご案内します。"
+                }
+              ]
+            },
+            {
+              "title": "このルートの推薦理由",
+              "icon": "cloud-sun",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                },
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                },
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
                 }
               ]
             }
@@ -1689,79 +1769,122 @@
       "props": {
         "practicalAccordionItems": [
           {
-            "title": "What's included",
-            "content": "Round-trip coach transport from Seoul, English-speaking tour guide, Suwon Hwaseong Fortress admission, Hwaseong Haenggung Palace admission, Korean Folk Village admission. Not included: meals, drinks, optional folk-village experiences (hanbok rental, archery), tips. Starfield Library entry is free."
+            "id": "inclusions",
+            "title": "含まれるもの・含まれないもの",
+            "preview": "ソウルからの往復コーチ輸送、英語バイリンガルガイド、全入場料、ランチ。",
+            "content": [
+              "往復送迎（弘大または明洞）、少人数制ミニバン",
+              "英語対応ガイド",
+              "全入場料（水原華城・華城行宮・韓国民俗村・スターフィールド図書館）",
+              "含まれないもの：昼食（水原南門市場または民俗村内の食堂で自己負担）・チップ"
+            ]
           },
           {
-            "title": "Pickup & drop-off",
-            "content": "Hongik University Station (Exit 8) at ≈08:00 or Myeongdong Station (Exit 2 or 4) at ≈08:30. Arrive 10 minutes early. There is no hotel pickup; meeting points only. Latecomers cannot be accommodated."
+            "id": "pickup",
+            "title": "ピックアップと解散",
+            "preview": "弘益大学駅（8番出口）≈08:00、または明洞駅（2/4番出口）≈08:20。",
+            "content": [
+              "集合場所：弘益大学駅8番出口または明洞駅2/4番出口",
+              "解散：同じポイント（弘大または明洞）",
+              "到着は交通状況によって通常18:00〜18:30"
+            ]
           },
           {
-            "title": "Walking & terrain",
-            "content": "Moderate. The fortress wall walk involves uphill stone steps and uneven surfaces — about 1 km of the 5.7 km loop is typically covered. The Folk Village is a large open-air site (≈245 acres) but flat. Starfield Library involves stairs and escalators between floors. Comfortable walking shoes essential."
+            "id": "walking",
+            "title": "歩行と地形",
+            "preview": "中程度。",
+            "content": [
+              "中程度、一日合計約4〜5km。",
+              "水原華城：城壁ウォーク（北西区間、一部上り坂）",
+              "華城行宮：境内の砂利道・石畳（フラット）",
+              "韓国民俗村：広大な野外エリア（ほぼフラット）",
+              "スターフィールド図書館：屋内フラット",
+              "歩きやすいクローズドトゥシューズ推奨"
+            ]
           },
           {
-            "title": "What to wear & bring",
-            "content": "Comfortable closed-toe walking shoes, sunhat in summer, layered clothing in spring/autumn, warm coat in winter (the fortress walls are exposed to wind). Camera, water, light snacks. Cash for lunch and any optional folk-village add-ons."
+            "id": "what",
+            "title": "服装と持ち物",
+            "preview": "つま先が閉じた歩きやすい靴、夏は帽子、重ね着",
+            "content": [
+              "歩きやすいクローズドトゥシューズ（城壁の石畳対応）",
+              "軽量な防風ジャケット（城壁の強風対応）",
+              "帽子と日焼け止め（特に夏）",
+              "水（少なくとも1L）",
+              "民俗村でのハンボクレンタルを希望する場合は別途費用（₩15,000〜25,000）"
+            ]
           },
           {
-            "title": "Cancellation",
-            "content": "Free cancellation up to 24 hours before the tour starts. Same-day cancellations and no-shows are non-refundable."
+            "id": "cancellation",
+            "title": "キャンセルポリシー",
+            "preview": "ツアー開始24時間前まで無料キャンセル可能。",
+            "content": [
+              "ピックアップの24時間前まで無料キャンセル",
+              "当日キャンセルおよびノーショーは返金不可",
+              "悪天候（台風・大雪）の場合は全額返金または日程変更"
+            ]
           },
           {
-            "title": "Children & accessibility",
-            "content": "Children are welcome — the folk village in particular is family-friendly, with horse shows and traditional games. Strollers can navigate Haenggung and the folk village's main paths. The fortress wall walk has stairs and is not stroller-friendly. Limited accessibility for wheelchair users on fortress sections."
+            "id": "children",
+            "title": "お子様と車椅子対応",
+            "preview": "お子様歓迎 — 民俗村は馬術ショーなど特に家族向け",
+            "content": [
+              "6歳以上のお子様は参加可能",
+              "韓国民俗村はベビーカーでの移動が比較的しやすい（ほぼフラット）",
+              "水原華城の城壁ウォークは一部急勾配あり。車椅子での城壁ウォークは困難",
+              "車椅子利用の方は事前にご連絡ください"
+            ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "季節別の案内を確認"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "季節別の案内を確認"
           },
-          "_seasonalSummary": "Suwon and Yongin track Seoul's weather closely (about 30 km south). Plan for hot, humid summers and cold, dry winters; spring and autumn are the most comfortable.",
+          "_seasonalSummary": "水原と龍仁はソウルに近い気候です。夏は蒸し暑く、冬は寒く乾燥します。春と秋が最も歩きやすい季節です。",
           "_seasonalTemperatures": [
             {
-              "season": "Spring (Mar–May)",
+              "season": "春（3〜5月）",
               "range": "5–22°C",
-              "notes": "Cherry blossoms along the fortress wall in early–mid April."
+              "notes": "4月上旬〜中旬には城壁沿いに桜が咲きます。"
             },
             {
-              "season": "Summer (Jun–Aug)",
+              "season": "夏（6〜8月）",
               "range": "22–32°C",
-              "notes": "Hot and humid; bring sun protection and water."
+              "notes": "蒸し暑いため、日よけ対策と水分補給の準備をおすすめします。"
             },
             {
-              "season": "Autumn (Sep–Nov)",
+              "season": "秋（9〜11月）",
               "range": "8–22°C",
-              "notes": "Best season — clear skies, mild temperatures."
+              "notes": "ベストシーズン。空が澄み、気温も穏やかです。"
             },
             {
-              "season": "Winter (Dec–Feb)",
+              "season": "冬（12〜2月）",
               "range": "-5 to 6°C",
-              "notes": "Cold winds on the fortress wall; library is indoors and warm."
+              "notes": "城壁の上は冷たい風が吹くことがありますが、図書館は屋内で暖かく過ごせます。"
             }
           ]
         },
         "seasonalVariations": [
           {
-            "season": "Spring",
-            "highlight": "Cherry blossoms along the Hwaseong wall and at the folk village; major Suwon Hwaseong Cultural Festival in early autumn."
+            "season": "春",
+            "description": "桜（3〜4月）が水原華城と民俗村に咲く。最も混雑するシーズン。"
           },
           {
-            "season": "Summer",
-            "highlight": "Folk-village water festival; evening lighting at Haenggung on selected nights."
+            "season": "夏",
+            "description": "民俗村の緑が鮮やか。朝の城壁ウォークが最も快適。"
           },
           {
-            "season": "Autumn",
-            "highlight": "Maple foliage along the fortress wall, peak Korean Folk Village season for traditional weddings and harvest demos."
+            "season": "秋",
+            "description": "民俗村と華城の紅葉が最高の撮影条件。晴天が多い。"
           },
           {
-            "season": "Winter",
-            "highlight": "Snow on the fortress wall is one of Korea's classic photographs; folk village hosts winter customs (kimjang, ondol fires)."
+            "season": "冬",
+            "description": "雪が積もった水原華城が幻想的。民俗村で伝統の正月行事を体験できることも。"
           }
         ]
       }
@@ -1774,56 +1897,65 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local operator",
-            "description": "Authorized Korean tour operator with full insurance",
+            "title": "現地を熟知した認定スタッフ",
+            "description": "完全保険付きの認定韓国ツアー催行会社",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "iconColor": "text-emerald-600",
+            "body": "水原・龍仁・ソウルを熟知した現地を熟知した認定スタッフ。"
           },
           {
             "icon": "route",
-            "title": "Route specialists",
-            "description": "Hand-tuned itinerary, not a generic loop",
+            "title": "ユネスコ遺産＋民俗村に特化",
+            "description": "水原華城・華城行宮・韓国民俗村を一日でカバー",
             "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "iconColor": "text-sky-600",
+            "body": "「城郭都市→離宮→朝鮮農村→現代建築」という一貫したテーマの行程づくり。"
           },
           {
             "icon": "users",
-            "title": "Curated group size",
-            "description": "Right-sized for the route",
+            "title": "少人数制ツアー",
+            "description": "少人数で丁寧なガイド",
             "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600"
+            "iconColor": "text-amber-600",
+            "body": "民俗村の広大な野外エリアも少人数で自分のペースで見て回れます。"
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "timing": "予約後すぐ",
+            "title": "予約確認（即時）",
+            "detail": "行程確認付きの予約確認",
+            "description": "ソウルのピックアップポイントの詳細（弘大8番出口または明洞2番/4番出口）と即時確認。"
           },
           {
-            "timing": "12 hours before",
-            "title": "12-Hour Reminder",
-            "detail": "Weather update and any route adjustments"
+            "timing": "12時間前",
+            "title": "12時間前リマインダー",
+            "detail": "天気情報とルート変更のご案内",
+            "description": "事前に韓国民俗村の毎日のパフォーマンス時刻表（馬術ショー、ジュルタギ、結婚式）についてメモを送信。"
           },
           {
-            "timing": "Evening before",
-            "title": "Final Pickup Info",
-            "detail": "Exact pickup time and driver contact"
+            "timing": "前日の夜",
+            "title": "最終お迎え情報",
+            "detail": "正確なピックアップ時間とドライバーの連絡先",
+            "description": "最終ピックアップ時刻と月曜・祝日スケジュールに関する注意事項は前夜に確定します。"
           },
           {
-            "timing": "Morning of tour",
-            "title": "Day-of Route Notes",
-            "detail": "Morning briefing based on live conditions"
+            "timing": "当日の朝",
+            "title": "当日ルート情報",
+            "detail": "ライブ状況に基づく朝のブリーフィング",
+            "description": "当日の朝、天気の概要と園内公演の最新情報をメッセージでお送りします。"
           },
           {
-            "timing": "During tour",
-            "title": "Stop-by-Stop Tips",
-            "detail": "Real-time guidance at each location"
+            "timing": "ツアー中",
+            "title": "各訪問地でのガイダンス",
+            "detail": "水原華城の建設背景・正祖王の改革・民俗村の生活文化をガイドがナレーション",
+            "description": "ガイドが華城の工学的歴史（丁若鏞の挙重機クレーン）、王の孝行の背景、民俗村の生きた歴史について解説。"
           },
           {
-            "timing": "After tour",
-            "title": "Post-tour Support",
-            "detail": "Follow-up and recommendations"
+            "timing": "ツアー後",
+            "title": "ツアー後サポート",
+            "detail": "フォローアップとおすすめ情報",
+            "description": "ソウルでの降車後にツアー後のフィードバックリクエストを送信。"
           }
         ]
       }
@@ -1836,58 +1968,58 @@
         "staticQuestions": [
           {
             "id": "q1",
-            "question": "Are admissions included?",
-            "answer": "Yes — Suwon Hwaseong Fortress, Hwaseong Haenggung Palace, and Korean Folk Village admission are all included. Starfield Library is free for everyone. Hanbok rental, archery, or other optional folk-village add-ons are at your own cost."
+            "question": "入場料は含まれていますか？",
+            "answer": "はい。水原華城・華城行宮・韓国民俗村・スターフィールド図書館の入場料は全てツアー代金に含まれています。"
           },
           {
             "id": "q2",
-            "question": "Is lunch included?",
-            "answer": "No. Lunch is typically eaten during free time at Starfield Suwon's food hall (large variety, ₩10,000–₩20,000) or at a small Suwon eatery near the fortress (Suwon-style galbi or chicken)."
+            "question": "昼食は含まれていますか？",
+            "answer": "含まれていません。昼食は水原南門市場（₩10,000〜15,000程度）または民俗村内の食堂で自己負担です。ガイドがおすすめを案内します。"
           },
           {
             "id": "q3",
-            "question": "How much of the fortress wall do we walk?",
-            "answer": "About 1 km of the 5.7 km loop, typically the section between Janganmun and Hwaseomun, including some bastions and a beacon mound. The full loop takes 3+ hours and isn't covered in this itinerary."
+            "question": "城壁はどれくらい歩きますか？",
+            "answer": "城壁全長5.7kmのうち、北西区間（長安門→華西門→西将台）の約1.5〜2kmを約1〜1.5時間かけて歩きます。城壁全周（2〜3時間）ではありませんが、最も景観の良い区間をカバーします。"
           },
           {
             "id": "q4",
-            "question": "Is Starfield Library worth a full hour?",
-            "answer": "Yes for first-time visitors — it's an architectural draw on its own. Free time is also for late lunch, coffee, or browsing the Starfield Suwon mall (Korea's flagship 2nd-generation Starfield, opened January 2024)."
+            "question": "スターフィールド図書館は1時間かける価値がありますか？",
+            "answer": "はい。22mの吹き抜け書架のアトリウムは写真撮影だけでなく、4層それぞれの角度から眺める価値があります。フードホールでの食事時間を含めると1.5〜2時間は十分見て回れます。"
           },
           {
             "id": "q5",
-            "question": "Can I rent a hanbok at the Folk Village?",
-            "answer": "Yes, hanbok rental is available on-site for an extra fee (typically ₩10,000–₩20,000 for 1–2 hours). Wearing hanbok also gets you discounts on traditional-experience activities. The guide can point you to the rental booth."
+            "question": "民俗村でハンボクのレンタルはできますか？",
+            "answer": "はい。民俗村内にハンボク（韓服）のレンタルショップがあります（₩15,000〜25,000程度、写真撮影用）。ツアー代金には含まれていません。"
           },
           {
             "id": "q6",
-            "question": "Is there a difference from the Suwon + Waujeongsa tour?",
-            "answer": "Yes. This tour adds the Korean Folk Village (a major heritage site) and uses Starfield Library as the modern stop. The Waujeongsa version drops the Folk Village and replaces it with the giant-Buddha temple in Yongin. Choose this one if heritage depth matters more; the Waujeongsa version if Buddhist sculpture matters more."
+            "question": "水原＋臥牛精舍ツアーとの違いは何ですか？",
+            "answer": "このツアー（民俗村＋スターフィールド）は朝鮮時代の農村生活体験と現代建築の組み合わせです。臥牛精舍（ワウジョンサ）ツアーは朝鮮華城後に現代仏教寺院を訪れます。どちらもスターフィールド図書館を含みますが、4つ目の見どころが異なります。"
           },
           {
             "id": "first-time",
-            "question": "Is this a good choice for first-time visitors to Suwon & Yongin?",
-            "answer": "Yes — strong first-time pick for travelers wanting one UNESCO site (Hwaseong Fortress), one heritage village (Korean Folk Village), one Joseon palace (Haenggung), and one contemporary photo space (Starfield Library) in a single day. The format covers four contrasting sides of Korean culture without retreading central Seoul palaces. Geographically the route stays in the Suwon-Yongin corridor."
+            "question": "水原・龍仁の初訪問者に良い選択ですか？",
+            "answer": "はい。ユネスコ世界遺産・離宮・野外民俗博物館・現代建築という水原と龍仁の4つの主要テーマを一日でカバーできる最もバランスの良い入門ツアーです。"
           },
           {
             "id": "walking",
-            "question": "Is the walking difficult?",
-            "answer": "Active walking day, ≈4-5 km total. Hwaseong wall is the hardest section: 1 km walked between Janganmun and Hwaseomun, with steep gradients, stairs at gates, and uneven historic surfaces. Korean Folk Village adds ≈2 hours of walking on flat-to-gently-sloping paths (270+ houses spread out). Haenggung Palace and Starfield Library are easy indoor/courtyard surfaces. Comfortable shoes essential."
+            "question": "歩行は難しいですか？",
+            "answer": "中程度です。最もアクティブな区間は水原華城の城壁ウォーク（北西区間、一部上り坂）です。民俗村はほぼフラットな野外エリアで快適に歩けます。総歩行距離は約4〜5km。"
           },
           {
             "id": "family",
-            "question": "Is this tour suitable for families?",
-            "answer": "Yes for families whose kids can handle a 10-hour day with several walking-heavy stops. The Folk Village is the family highlight — 270+ traditional houses, equestrian shows, K-drama filming locations, traditional weddings on weekends. Hanbok rental at Haenggung Palace is a fun photo moment (and gets free fortress admission for hanbok wearers). Strollers difficult on the wall, fine at Starfield and Folk Village."
+            "question": "ファミリーに適していますか？",
+            "answer": "はい。6歳以上のお子様がいるファミリーに適しています。民俗村は子供に特に人気で、綱渡りや農楽の実演を見て回れます。ハンボクレンタルも子供に人気。"
           },
           {
             "id": "seniors",
-            "question": "Can older adults join comfortably?",
-            "answer": "Recommended only for active seniors comfortable with stairs and uneven ground. The fortress wall is the hardest section — steep gradients and stairs make some stretches wheelchair-difficult. Seniors can walk easier wall segments and skip command posts. Folk Village paths are flat to gently sloping, walkable for most. Haenggung is mostly flat. Starfield is fully escalator/elevator-accessible."
+            "question": "高齢の方でも参加できますか？",
+            "answer": "はい、活動的な高齢者の方はご参加いただけます。城壁ウォークに若干の上り坂がありますが、自分のペースで歩けます。民俗村はほぼフラット。"
           },
           {
             "id": "children",
-            "question": "What's the recommended minimum age?",
-            "answer": "Best fit is around age 10 and up — the day involves significant walking on the fortress wall (uneven surfaces), an active Folk Village exploration, and a long day overall. Younger children can join with carriers but the 1 km wall walk plus the 2-hour Folk Village can tire 6-9 year-olds. Equestrian shows and traditional performances at the Folk Village are crowd-pleasers for older kids."
+            "question": "推奨される最低年齢は？",
+            "answer": "6歳以上が最適です。10時間のツアーのリズムについてこられる体力があれば参加できます。民俗村と民俗実演は特に子供に楽しい体験です。"
           }
         ]
       }
@@ -1920,12 +2052,12 @@
             {
               "stars": 2,
               "count": 0,
-              "percentage": 0
+              "percentage": 0.0
             },
             {
               "stars": 1,
               "count": 0,
-              "percentage": 0
+              "percentage": 0.0
             }
           ],
           "highlights": []
@@ -1937,16 +2069,16 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "予約可否は決済ステップで確認されます。",
         "price": {
           "amountLabel": "60.30",
           "originalPriceUsd": 67,
           "salePriceUsd": 60.3,
           "discountPercent": 10,
           "currency": "USD",
-          "per": "person",
-          "priceSource": "getyourguide_t867578",
-          "priceNote": "Original price 67 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+          "per": "人",
+          "priceSource": "direct_rate",
+          "priceNote": "AtoC Korea公式販売価格に基づく料金です。"
         }
       }
     }
@@ -1969,7 +2101,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

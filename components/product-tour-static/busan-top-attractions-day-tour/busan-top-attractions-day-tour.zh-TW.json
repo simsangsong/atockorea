@@ -5,15 +5,15 @@
   "locale": "zh-TW",
   "product_id": "busan-top-attractions-day-tour",
   "seo": {
-    "pageTitle": "Busan Top Attractions Small-Group Day Tour | AtoC Korea",
-    "metaDescription": "10.5-hour Busan small-group classic: Haedong Yonggungsa Temple, Cheongsapo Blue Line, UN Memorial, Gamcheon Culture Village, Jagalchi Market. 3 pickup points.",
+    "pageTitle": "釜山經典景點小團體一日遊 | AtoC Korea",
+    "metaDescription": "10.5小時釜山小團體經典路線：海東龍宮寺、青沙浦藍線公園、聯合國紀念公園、甘川文化村、札嘎其市場。",
     "ogImage": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1920&q=80",
     "primaryKeywords": [
-      "Busan day tour",
-      "Haedong Yonggungsa Temple",
-      "Gamcheon Culture Village tour",
-      "Busan small group tour",
-      "Cheongsapo Blue Line Park"
+      "釜山一日遊",
+      "海東龍宮寺",
+      "甘川文化村旅遊",
+      "釜山小團體遊",
+      "青沙浦藍線公園"
     ],
     "title": "釜山一日遊七大精華景點 小團體觀光 | AtoC Korea",
     "description": "釜山精華七大景點小團體一日遊：海東龍宮寺→青沙浦藍線公園→聯合國紀念公墓→甘川文化村→札嘎其市場。10.5小時，小團體共乘，認證英語 / 中文導遊，全年開團。"
@@ -21,9 +21,9 @@
   "catalog_card": {
     "slug": "busan-top-attractions-day-tour",
     "title": "釜山精華景點小團體一日遊",
-    "subtitle": "Busan's classic seven-stop circuit in one balanced day with three pickup points.",
+    "subtitle": "釜山經典七站，三個上車點，一天均衡遊覽。",
     "region": "釜山",
-    "duration": "10.5 hours",
+    "duration": "10.5小時",
     "stopsCount": 7,
     "rating": 0,
     "reviewCount": 0,
@@ -35,14 +35,14 @@
     ],
     "heroImage": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1920&q=80",
     "thumbnail": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=600&q=80",
-    "priceLabel": "Price varies — confirm at booking",
-    "shortCardDescription": "Single-day, 7-stop small-group tour covering Busan's classic circuit: Haedong Yonggungsa seaside temple, Cheongsapo & Blue Line Park (optional Sky Capsule), local Busan lunch, UN Memorial Cemetery, Gamcheon Culture Village's painted hillside, and Jagalchi Fish Market. Three pickup points across central Busan; certified English-speaking guide; mini-coach (≈12 max). All site admissions are free; only lunch and optional tickets are paid on-day.",
+    "priceLabel": "價格因投行而異 — 請於預訂時確認",
+    "shortCardDescription": "覆蓋釜山經典線路的小團體一日遊（七站）：海東龍宮寺、機張市場螃蟹、太宗臺懸崖、甘川文化村、廣安大橋及海雲臺海濱、南浦洞與札嘎其市場。三個釜山地鐵站可上車，全程約10小時。",
     "tags": [
-      "small_group",
-      "busan",
-      "first_time",
-      "value",
-      "year_round"
+      "小團",
+      "釜山",
+      "初次到訪",
+      "價格實惠",
+      "全年可訂"
     ]
   },
   "headlineLine1": "海邊寺廟、藍色海岸線、彩色山坡村落、海鮮市場——",
@@ -50,8 +50,8 @@
   "price": {
     "amountLabel": "",
     "currency": "USD",
-    "per": "person",
-    "priceNote": "Small-group price not yet confirmed from operator listing. Comparable Busan one-day tours range $41–$70 across operators. Once confirmed, AtoC Korea sale price applies a flat 10% discount."
+    "per": "人",
+    "priceNote": "合作業者列表小團價格尚未確認。參考可比較的釜山一日遊價格。"
   },
   "hero": {
     "imageUrl": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1920&q=80",
@@ -63,7 +63,7 @@
       "初訪首選"
     ],
     "meta": {
-      "duration": "10.5 hours (08:30 first pickup, ≈ 19:00 last drop)",
+      "duration": "10.5小時（08:30首次接送，≈ 19:00最後下車）",
       "region": "釜山",
       "stops": "5 個景點",
       "rating": 0,
@@ -94,40 +94,34 @@
   ],
   "glanceItems": [
     {
-      "icon": "camera",
-      "label": "拍照潛力",
-      "value": "高",
-      "level": 5
+      "icon": "clock",
+      "label": "行程時間",
+      "value": "約10.5小時（08:30第一接送，約19:00最後下車）"
     },
     {
-      "icon": "mountain",
-      "label": "景點密度",
-      "value": "良好",
-      "level": 4
-    },
-    {
-      "icon": "footprints",
-      "label": "步行強度",
-      "value": "稍高",
-      "level": 4
-    },
-    {
-      "icon": "cloud-rain",
-      "label": "雨天適合度",
-      "value": "中等",
-      "level": 3
+      "icon": "calendar",
+      "label": "最佳季節",
+      "value": "全年；青沙浦海岸野櫻花約三月下旬至四月初"
     },
     {
       "icon": "users",
-      "label": "親子適合度",
-      "value": "良好",
-      "level": 4
+      "label": "人數上限",
+      "value": "小團體（最多約12人），共乘小型巴士"
     },
     {
-      "icon": "gauge",
-      "label": "行程節奏",
-      "value": "均衡",
-      "level": 4
+      "icon": "hiking",
+      "label": "步行強度",
+      "value": "中等至有點挑戰性——龍宮寺108級石階（可略過）、甘川山坡、市場巷道"
+    },
+    {
+      "icon": "map-pin",
+      "label": "路線區域",
+      "value": "釜山（海雲臺周邊＋釜山市中心）"
+    },
+    {
+      "icon": "check",
+      "label": "費用包含",
+      "value": "全日往返交通、認證導遊。不含午餐、選做Sky膠囊 / 海灘列車、選做釜山塔（₩12,000）"
     }
   ],
   "galleryItems": [
@@ -138,7 +132,7 @@
       "alt": "海東龍宮寺海崖佛寺全景",
       "caption": "海東龍宮寺——韓國最著名的海崖佛寺，高麗王朝1376年創立",
       "location": "機張，釜山",
-      "atmosphere": "Sea spray, granite cliffs, smell of incense"
+      "atmosphere": "海浪水氣、花崗岩海崖與淡淡香火氣息"
     },
     {
       "id": "g2",
@@ -147,16 +141,16 @@
       "alt": "甘川文化村彩色梯田住宅全景",
       "caption": "甘川文化村——「韓國的馬丘比丘」，粉彩梯田房屋與小王子長椅",
       "location": "沙河區，釜山",
-      "atmosphere": "Open coast, gentle wind, train horn"
+      "atmosphere": "開闊海岸、輕柔海風與海岸列車聲"
     },
     {
       "id": "g3",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1601171291096-87099c2c4625?w=1200",
-      "alt": "青沙浦藍線公園玻璃底眺望台",
-      "caption": "青沙浦藍線公園——海面上方20公尺的玻璃底眺望台與雙子燈塔",
-      "location": "青沙浦，海雲台，釜山",
-      "atmosphere": "Quiet, formal, contemplative"
+      "alt": "青沙浦藍線公園玻璃底眺望臺",
+      "caption": "青沙浦藍線公園——海面上方20公尺的玻璃底眺望臺與雙子燈塔",
+      "location": "青沙浦，海雲臺，釜山",
+      "atmosphere": "安靜、莊重、沉靜"
     },
     {
       "id": "g4",
@@ -165,7 +159,7 @@
       "alt": "札嘎其海鮮市場活魚展區",
       "caption": "札嘎其海鮮市場——韓國最大海鮮市場，一樓選魚二樓代客料理",
       "location": "中區，南浦，釜山",
-      "atmosphere": "Bright pastels, narrow alleys, hillside stairs"
+      "atmosphere": "明亮粉彩色調、狹窄巷弄與山坡階梯"
     },
     {
       "id": "g5",
@@ -174,40 +168,40 @@
       "alt": "聯合國紀念公墓悼念牆",
       "caption": "聯合國紀念公墓——全球唯一聯合國紀念公墓，悼念牆鐫刻40,896名韓戰傷亡",
       "location": "南區，釜山",
-      "atmosphere": "Live tanks, market chatter, sea-salt smell"
+      "atmosphere": "活魚水槽、市場人聲與海鹽氣息"
     },
     {
       "id": "g6",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "A bowl of dwaeji-gukbap with side dishes on a Busan restaurant table",
-      "caption": "Lunch is local — dwaeji-gukbap, milmyeon, or seafood pancake at a Busan restaurant.",
-      "location": "Local Busan restaurant",
-      "atmosphere": "Quick, no-frills, regional flavors"
+      "alt": "釜山餐廳桌上擺放著一碗豬肉湯飯和小菜",
+      "caption": "午餐是本地特色——釜山餐廳的豬肉湯飯、小麥冷麵或海鮮煎餅",
+      "location": "釜山在地餐廳",
+      "atmosphere": "快捷、簡單的地方風味"
     }
   ],
   "itineraryStops": [
     {
       "number": 1,
       "time": "≈ 09:00",
-      "duration": "30 min",
+      "duration": "30分鐘",
       "name": "接送（釜山3處中心車站）",
-      "category": "Transit / Pickup",
-      "description": "接送整合於釜山三大交通樞紐，避免橫跨全城接送而浪費時間：**釜山站（1號線）**，適合入住KTX站附近或草梁洞 / 南浦洞的旅客；**西面站（1＆2號線互轉）**——釜山最繁忙的地鐵換乘站，適合樂天酒店釜山或西面醫療街周邊的旅客；**海雲台站（2號線）**，適合入住Westin朝鮮、Park Hyatt及其他海雲台海灘度假區的旅客。",
+      "category": "交通 / 接客",
+      "description": "接送整合於釜山三大交通樞紐，避免橫跨全城接送而浪費時間：**釜山站（1號線）**，適合入住KTX站附近或草梁洞 / 南浦洞的旅客；**西面站（1＆2號線互轉）**——釜山最繁忙的地鐵換乘站，適合樂天飯店釜山或西面醫療街周邊的旅客；**海雲臺站（2號線）**，適合入住Westin朝鮮、Park Hyatt及其他海雲臺海灘度假區的旅客。",
       "highlights": [
-        "釜山三處中心接送點（釜山站、西面、海雲台）",
+        "釜山三處中心接送點（釜山站、西面、海雲臺）",
         "小型巴士（最多約14人）",
         "前往首站全程約30至40分鐘",
         "接送時發放中英文雙語行程說明卡"
       ],
       "timeUsed": [
-        "Busan Station pickup (~09:00, ~5 min)",
-        "Drive to Seomyeon Station (~10 min)",
-        "Seomyeon pickup (~09:15, ~5 min)",
-        "Drive to Haeundae Station (~15 min)",
-        "Haeundae pickup (~09:30, ~5 min)"
+        "釜山站接送（約09:00，約5分鐘）",
+        "駕車至西面站（約10分鐘）",
+        "西面接送 (~09:15, ~5分鐘)",
+        "前往海雲臺站 (~15分鐘)",
+        "海雲臺接送 (~09:30, ~5分鐘)"
       ],
-      "whyOnRoute": "三站式接送設計讓釜山不同區域的旅客都能就近搭乘，同時避免跨城拉車耗費行程時間。集合時間設計從最外圍（釜山站）逐步向東移動，與全日由北向南的路線方向完全一致。",
+      "whyOnRoute": "三站式接送構成讓釜山不同區域的旅客都能就近搭乘，同時避免跨城拉車耗費行程時間。集合時間構成從最外圍（釜山站）逐步向東移動，與全日由北向南的路線方向完全一致。",
       "_poi_meta": {
         "poi_key": "OPS_busan_pickup_central",
         "verified": true,
@@ -223,39 +217,39 @@
     {
       "number": 2,
       "time": "≈ 10:00",
-      "duration": "75 min",
+      "duration": "75分鐘",
       "name": "海東龍宮寺",
-      "category": "Buddhist Temple / Coastal",
-      "description": "**海東龍宮寺（해동 용궁사）——韓國最著名的海崖佛寺**——矗立在釜山機張郡的海崖峭壁上，是韓國極少數不設於山中的重要佛寺之一。**1376年高麗王朝由高僧懶翁慧勤（1320-1376年）創立**——他是朝鮮佛教早期成形的關鍵人物，曾任皇室顧問。相傳懶翁在奔黃寺禪修時夢見觀音菩薩，指示他在此海崖建立新寺，稱其為「東方第一佛刹」。寺廟於1592年壬辰倭亂中焚毀，其後多次重建；**現有格局由鄭岩法師（정암스님）於1974年全面重修後定名「海東龍宮寺」**，源於鄭岩法師親見龍神與觀世音菩薩同時現身的異象。入口標誌：**十二支神將石像**守護山門，**「無事故石塔」**供旅客投幣祈福。**108石階**下行至寺院主殿，108的數字象徵佛教「一百零八煩惱」，是全日體力需求最集中的一段，可選擇略過。主殿（大雄殿）後方的**海水觀音大佛像**面向大海，俯瞰礁岩台座，是寺廟最具代表性的拍攝構圖。",
+      "category": "佛教寺院/海岸",
+      "description": "**海東龍宮寺（海東龍宮寺）——韓國最著名的海崖佛寺**——矗立在釜山機張郡的海崖峭壁上，是韓國極少數不設於山中的重要佛寺之一。**1376年高麗王朝由高僧懶翁慧勤（1320-1376年）創立**——他是朝鮮佛教早期成形的關鍵人物，曾任皇室顧問。相傳懶翁在奔黃寺禪修時夢見觀音菩薩，指示他在此海崖建立新寺，稱其為「東方第一佛剎」。寺廟於1592年壬辰倭亂中焚燬，其後多次重建；**現有格局由鄭巖法師（鄭巖法師）於1974年全面重修後定名「海東龍宮寺」**，源於鄭巖法師親見龍神與觀世音菩薩同時現身的異象。入口標誌：**十二支神將石像**守護山門，**「無事故石塔」**供旅客投幣祈福。**108石階**下行至寺院主殿，108的數字象徵佛教「一百零八煩惱」，是全日體力需求最集中的一段，可選擇略過。主殿（大雄殿）後方的**海水觀音大佛像**面向大海，俯瞰礁岩臺座，是寺廟最具代表性的拍攝構圖。",
       "highlights": [
         "**1376年由佛教高師懶翁慧勤創立**（原名「普門寺」）",
         "韓國極少數設於海岸的重要佛寺（多數設於山中）",
-        "**1974年鄭岩法師重修後更名**海東龍宮寺，源於龍神與觀音顯靈異象",
+        "**1974年鄭巖法師重修後更名**海東龍宮寺，源於龍神與觀音顯靈異象",
         "**108石階**＝佛教108煩惱之象徵",
         "**十二支神將（十二生肖守護神）**守山門；**「無事故石塔」**投幣祈福"
       ],
       "timeUsed": [
-        "Coach drop-off + walk through vendor lane to entry plaza (~10 min)",
-        "Twelve Zodiac Generals + No-Accident Pagoda (~10 min)",
-        "108 stairs descent + Daeungjeon main hall + seaside terraces (~30 min)",
-        "Haesu Gwaneum statue viewpoint + photo time (~15 min)",
-        "Walk back up + reassemble at coach (~10 min)"
+        "大巴下車+經商鋪走廊至入場廣場步行——約10分鐘",
+        "十二生肖神將+無事故塔——約10分鐘",
+        "108級石階下行+大雄殿+沿海臺階——約30分鐘",
+        "海水觀音大佛觀景+拍照——約15分鐘",
+        "返回大巴集合——約10分鐘"
       ],
       "whyOnRoute": "龍宮寺是全日最獨特的景點——韓國唯一可在大海背景前禮佛拍照的重要佛寺。安排為上午第一站（約10:00抵達）有三個理由：（1）日照角度，此時東面庭院受晨光照射最佳；（2）搶在正午遊覽車團湧入前享有相對寬鬆的空間；（3）寺廟嚴肅莊嚴的氣氛，最適合全日首個文化景點的節奏定調。",
       "visitBasics": {
-        "hours": "Daily 04:30–19:20 (last admission 18:50)",
-        "closed": "Open year-round",
-        "admission": "Free; private-car parking is paid",
-        "walking": "Moderate — 108 steps through pine grove, multiple seaside terraces and stairs"
+        "hours": "每日04:30–19:20（最晚入場18:50）",
+        "closed": "全年開放",
+        "admission": "免費；私家車停車收費",
+        "walking": "中等強度——松樹林中108級石階，多處沿海臺階"
       },
       "convenience": {
-        "restroom": "Available near main entrance and inside complex",
-        "parking": "Haedong Yonggungsa Parking Lot (paid, per Visit Busan official)"
+        "restroom": "正門附近及寺院內部",
+        "parking": "海東龍宮寺停車場（收費）"
       },
       "smartNotes": {
-        "photo": "Sunrise rock at the seaward edge; stairs next to Daeungjeon Hall give the classic ocean-and-temple frame; Haesu Gwaneum statue from the upper cliff gives the wide-angle temple-and-East-Sea view",
-        "facilities": "Souvenir/snack stalls and small cafe at upper plaza; coastal trail leads further along the rocks",
-        "tip": "Side doors for entering halls (front door reserved for monks); Buddha's Birthday (Apr–May) brings the lantern display; arrive before 10:30 to avoid the worst tour-bus crowds"
+        "photo": "海邊日出岩石；大雄殿旁臺階可拍攝以大海為背景的經典畫面。",
+        "facilities": "上方廣場有紀念品/小吃攤及小型咖啡館。",
+        "tip": "進殿請使用側門（正門為僧侶專用）。佛誕日（4–5月）花燈節值得一看。"
       },
       "_poi_meta": {
         "poi_key": "haedong_yonggungsa",
@@ -276,39 +270,39 @@
     {
       "number": 3,
       "time": "≈ 11:30",
-      "duration": "75 min",
-      "name": "青沙浦＆海雲台藍線公園",
-      "category": "Coastal Park / Photo Spot",
-      "description": "**海雲台藍線公園（해운대 블루라인파크）**是廢棄東海南部海岸鐵路的生態改造項目，**2020年向公眾開放**。複合設施沿釜山最上鏡的4.8公里海岸線延伸，從**尾浦站**（近海雲台海灘）至**松亭站**（近松亭海灘），提供三種體驗方式：**(1) Sky膠囊列車（스카이캡슐）**——海岸上方7至10公尺高架軌道上的4人彩色膠囊車廂，單程2.3公里（美波至青沙浦）；**(2) 海灘列車（해변열차）**——6節車廂火車車窗朝向大海，全程4.8公里，設6個停靠站；**(3) 綠色鐵道步道**——原有鐵軌改建的步行走廊。本行程以**青沙浦站**為中心停留。**青沙浦다릿돌眺望台（달릿돌스카이워크，2017年8月啟用）**：72.5公尺長玻璃底眺望台，懸掛於海面上方20公尺——**免費入場**，是旅客在不購買Sky膠囊車的情況下體驗「踏空感」的最佳免費選項。**青沙浦雙子燈塔**（紅＋白）與塗鴉風格的斑馬線是動漫《灌籃高手》風格的熱門打卡點。",
+      "duration": "75分鐘",
+      "name": "青沙浦＆海雲臺藍線公園",
+      "category": "海岸公園/拍照景點",
+      "description": "**海雲臺藍線公園**是廢棄東海南部海岸鐵路的生態改造項目，**2020年向公眾開放**。複合設施沿釜山最上鏡的4.8公里海岸線延伸，從**尾浦站**（近海雲臺海灘）至**松亭站**（近松亭海灘），提供三種體驗方式：**(1) Sky膠囊列車**——海岸上方7至10公尺高架軌道上的4人彩色膠囊車廂，單程2.3公里（美波至青沙浦）；**(2) 海灘列車**——6節車廂火車車窗朝向大海，全程4.8公里，設6個停靠站；**(3) 綠色鐵道步道**——原有鐵軌改建的步行走廊。本行程以**青沙浦站**為中心停留。**青沙浦Darytdol眺望臺**：72.5公尺長玻璃底眺望臺，懸掛於海面上方20公尺——**免費入場**，是旅客在不購買Sky膠囊車的情況下體驗「踏空感」的最佳免費選項。**青沙浦雙子燈塔**（紅＋白）與塗鴉風格的斑馬線是動漫《灌籃高手》風格的熱門拍照點。",
       "highlights": [
-        "**海雲台藍線公園2020年開放**，利用廢棄東海南部海岸鐵路改建",
+        "**海雲臺藍線公園2020年開放**，利用廢棄東海南部海岸鐵路改建",
         "**Sky膠囊列車**（2.3公里高架）＋**海灘列車**（4.8公里，6站）＋綠色鐵道步道",
-        "**青沙浦다릿돌眺望台（2017年8月）**：72.5公尺玻璃底眺望台，海面上方20公尺——**免費**",
+        "**青沙浦Darytdol眺望臺（2017年8月）**：72.5公尺玻璃底眺望臺，海面上方20公尺——**免費**",
         "**Sky膠囊列車票價**：₩30,000（2人）/ ₩39,000（3人）/ ₩44,000（4人）單程",
-        "青沙浦雙子燈塔（紅＋白）——《灌籃高手》風格動漫十字路口打卡點"
+        "青沙浦雙子燈塔（紅＋白）——《灌籃高手》風格動漫十字路口拍照點"
       ],
       "timeUsed": [
-        "Drop-off at Cheongsapo Station (~5 min)",
-        "Daritdol Skywalk walk-out + glass-floor experience (~25 min)",
-        "Twin lighthouses + crosswalk photo spots (~15 min)",
-        "Optional Sky Capsule one-way OR seafood snack at village stalls (~25 min)",
-        "Reassemble at coach (~5 min)"
+        "在青沙浦站下車——約5分鐘",
+        "達力石空中步道+玻璃地板體驗——約25分鐘",
+        "雙燈塔+拍照點——約15分鐘",
+        "沿海散步+咖啡館小歇——約15分鐘",
+        "集合——約5分鐘"
       ],
-      "whyOnRoute": "青沙浦是連接龍宮寺與返回市中心路線上最自然的沿途停留點，同時提供全日最具現代感的海岸景觀體驗。玻璃底眺望台（免費）確保即使不購買Sky膠囊車的旅客也有完整的停留體驗。",
+      "whyOnRoute": "青沙浦是連接龍宮寺與返回市中心路線上最自然的沿途停留點，同時提供全日最具現代感的海岸景觀體驗。玻璃底眺望臺（免費）確保即使不購買Sky膠囊車的旅客也有完整的停留體驗。",
       "visitBasics": {
-        "hours": "Sky Capsule and Beach Train ~09:30–18:30 (extended to 20:30 in summer); Cheongsapo Daritdol Skywalk free 24h",
-        "closed": "Operations weather-dependent; check the day of",
-        "admission": "Free area; Sky Capsule 30,000 KRW (2 ppl) / 39,000 (3) / 44,000 (4) one-way; Beach Train ₩7,000 single / ₩10,000 re-board once",
-        "walking": "Easy along the wooden Green Railway boardwalk (Mipo↔Cheongsapo 2.3 km, ~30 min); flat at stations"
+        "hours": "天空膠囊/海灘列車約09:30–18:30（夏季至20:30）",
+        "closed": "運營視天氣而定",
+        "admission": "免費區域；天空膠囊₩30,000（2人）/₩39,000（3人）/₩44,000（4人）單程",
+        "walking": "輕鬆——綠色鐵路木棧道（美浦↔青沙浦2.3公里，約30分鐘）"
       },
       "convenience": {
-        "restroom": "Available at Mipo, Cheongsapo and Songjeong stations",
-        "parking": "Public lots near Mipo Station and Cheongsapo Station (paid)"
+        "restroom": "美浦、青沙浦、松亭站設有廁所",
+        "parking": "各站附近公共停車場（收費）"
       },
       "smartNotes": {
-        "photo": "Cheongsapo Station crosswalk for the famous Slam Dunk-style frame; Daritdol Skywalk for glass-bottom sea view; Mipo→Cheongsapo direction on Sky Capsule has the best afternoon light",
-        "facilities": "In-person ticketing at Mipo, Cheongsapo and Songjeong only (automated kiosks at Dalmaji Tunnel, Daritdol, Gudeokpo); convenience store and food at Mipo plaza",
-        "tip": "Sky Capsule books out fast at sunset slots — reserve 1-2 weeks in advance via Klook or bluelinepark.com; bring backup for refunds — no refunds/changes for missed slots"
+        "photo": "青沙浦站人行道可拍攝灌籃高手風格畫面；達力石空中步道玻璃地板懸空海面。",
+        "facilities": "僅美浦、青沙浦、松亭站提供現場購票。",
+        "tip": "天空膠囊日落時段票很快售罄——建議提前1–2周通過市場參考資料等平臺預約。"
       },
       "_poi_meta": {
         "poi_key": "cheongsapo_blue_line_park",
@@ -329,23 +323,23 @@
     {
       "number": 4,
       "time": "≈ 13:00",
-      "duration": "60 min",
+      "duration": "60分鐘",
       "name": "午餐（釜山在地餐廳）",
-      "category": "Lunch / Local Cuisine",
-      "description": "午餐安排在巴士友善的在地餐廳，位於從海雲台返回市中心前往南區聯合國紀念公墓的途中。**兩個典型選項**依路線及團體偏好決定：**(1) 豬骨湯飯（돼지국밥）**——釜山招牌豬骨清湯泡飯，城市韓戰難民時代起的庶民美食，附蘿蔔泡菜、蝦醬、韭菜與白飯（約₩9,000至₩12,000 / 碗）；**(2) 冷麵（밀면）**——釜山特有的冷小麥麵，源自韓戰難民將北方冷麵傳統改良為小麥版本（釜山無蕎麥，改用麵粉），清爽的夏季版本在本地比韓國其他地區更受歡迎。**兩道菜均有韓戰難民的在地歷史淵源**，是了解釜山食文化背景的絕佳機會。素食 / 清真友善替代選項需於預訂時告知。",
+      "category": "餐飲",
+      "description": "午餐安排在方便團體用餐的在地餐廳，位於從海雲臺返回市中心前往南區聯合國紀念公墓的途中。**兩個典型選項**依路線及團體偏好決定：**(1) 豬骨湯飯**——釜山招牌豬骨清湯泡飯，城市韓戰難民時代起的庶民美食，附蘿蔔泡菜、蝦醬、韭菜與白飯（約₩9,000至₩12,000 / 碗）；**(2) 冷麵**——釜山特有的冷小麥面，源自韓戰難民將北方冷麵傳統改良為小麥版本（釜山無蕎麥，改用麵粉），清爽的夏季版本在本地比韓國其他地區更受歡迎。**兩道菜均有韓戰難民的在地歷史淵源**，是瞭解釜山食文化背景的絕佳機會。素食 / 清真友善替代選項需於預訂時告知。",
       "highlights": [
-        "**豬骨湯飯**（釜山豬骨清湯泡飯）或**冷麵**（釜山特有冷小麥麵）——均為地域特色",
+        "**豬骨湯飯**（釜山豬骨清湯泡飯）或**冷麵**（釜山特有冷小麥面）——均為地域特色",
         "兩道菜均有**韓戰難民**的獨特歷史淵源，為釜山所獨有",
         "每道菜典型價格約**₩8,000至₩12,000**（旅客自費）",
         "素食 / 清真友善替代選項，需預訂時告知",
         "60分鐘停留——高效安排，確保聯合國公墓及甘川如期進行"
       ],
       "timeUsed": [
-        "Coach drop-off + walk to restaurant (~5 min)",
-        "Order + meal (~40 min)",
-        "Restroom + reassemble at coach (~15 min)"
+        "大巴下車 + 步行至餐廳 (~5分鐘)",
+        "點餐 + 用餐 (~40分鐘)",
+        "衛生間 + 在大巴集合 (~15分鐘)"
       ],
-      "whyOnRoute": "午餐位置設計在從海雲台返回市中心的路線中途，地理動線流暢，同時作為全日前後兩段（上午海岸→下午歷史文化）的分隔緩衝，讓旅客有時間休息調整。",
+      "whyOnRoute": "午餐位置構成在從海雲臺返回市中心的路線中途，地理位置和遊覽順序流暢，同時作為全日前後兩段（上午海岸→下午歷史文化）的中間休息段，讓旅客有時間休息調整。",
       "_poi_meta": {
         "poi_key": "OPS_busan_lunch",
         "verified": true,
@@ -361,10 +355,10 @@
     {
       "number": 5,
       "time": "≈ 14:15",
-      "duration": "60 min",
+      "duration": "60分鐘",
       "name": "聯合國紀念公墓",
-      "category": "Memorial / War History",
-      "description": "**韓國聯合國紀念公墓（재한유엔기념공원，UNMCK）**是**全球唯一一座聯合國紀念公墓**——1951年1月18日由聯合國軍司令部設立，1951年4月6日由美國陸軍上將馬修·李奇威（Matthew Ridgway）主持奉獻典禮，並由韓國於**1959年**正式捐贈給聯合國，以感謝犧牲於韓戰的聯合國軍士兵。**韓戰（1950至1953年）期間共22個聯盟國在聯合國旗下參戰**——16國提供戰鬥部隊，6國提供醫療支援，其中5個國家（美國、英國、加拿大、澳洲、荷蘭）在此地有大量安葬。今日園區設有來自**11個國家的2,300個墓葬**（停戰後多數已移送回本國）。**2006年建立的悼念牆**：140塊大理石板上鐫刻40,896名聯合國傷亡名單。公園入口設有**12分鐘韓戰紀錄片播映廳**，為後續的園區參觀提供有力的歷史背景。",
+      "category": "紀念館與歷史",
+      "description": "**韓國聯合國紀念公墓**是**全球唯一一座聯合國紀念公墓**——1951年1月18日由聯合國軍司令部設立，1951年4月6日由美國陸軍上將馬修·李奇威（Matthew Ridgway）主持奉獻典禮，並由韓國於**1959年**正式捐贈給聯合國，以感謝犧牲於韓戰的聯合國軍士兵。**韓戰（1950至1953年）期間共22個聯盟國在聯合國旗下參戰**——16國提供戰鬥部隊，6國提供醫療支援，其中5個國家（美國、英國、加拿大、澳洲、荷蘭）在此地有大量安葬。今日園區設有來自**11個國家的2,300個墓葬**（停戰後多數已移送回本國）。**2006年建立的悼念牆**：140塊大理石板上鐫刻40,896名聯合國傷亡名單。公園入口設有**12分鐘韓戰紀錄片播映廳**，為後續的園區參觀提供有力的歷史背景。",
       "highlights": [
         "**全球唯一的聯合國紀念公墓**——1951年1月由聯合國軍司令部設立",
         "**1959年**韓國將土地捐贈給聯合國，銘記韓戰犧牲的聯合國軍",
@@ -373,26 +367,26 @@
         "**2006年悼念牆**：140塊大理石板，鐫刻40,896名聯合國傷亡名單"
       ],
       "timeUsed": [
-        "Coach drop-off + walk to Memorial Hall (~5 min)",
-        "12-minute Korean War documentary + introduction (~15 min)",
-        "Symbolic Area (22 flags) + Wall of Remembrance (~20 min)",
-        "Walk grounds + return to coach (~20 min)"
+        "象徵區域+22個參戰國國旗廣場（約10分鐘）",
+        "紀念館+12分鐘英文紀錄片（約15分鐘）",
+        "紀念牆+紀念文物館（約20分鐘）",
+        "默哀時間+拍照（約10分鐘）"
       ],
-      "whyOnRoute": "聯合國紀念公墓是全日最具歷史深度和情感份量的景點。作為下午首站，在海岸觀光的輕鬆氛圍之後引入莊重的歷史反思，使全日行程兼具娛樂性與文化深度。對台灣、香港等華語旅客而言，韓戰是亞洲冷戰史的重要章節，具有特殊的歷史意義。",
+      "whyOnRoute": "聯合國紀念公墓是全日最具歷史深度和情感份量的景點。作為下午首站，在海岸觀光的輕鬆氛圍之後引入莊重的歷史反思，使全日行程兼具娛樂性與文化深度。對臺灣、香港等華語旅客而言，韓戰是亞洲冷戰史的重要章節，具有特殊的歷史意義。",
       "visitBasics": {
-        "hours": "Daily 09:00–18:00 (May–Sep) / 09:00–17:00 (Oct–Apr)",
-        "closed": "Open year-round",
-        "admission": "Free",
-        "walking": "Easy — flat grass paths and paved walkways across 14 ha of grounds; 100% wheelchair-accessible"
+        "hours": "3–10月09:00–18:00；11–2月09:00–17:00",
+        "closed": "全年開放",
+        "admission": "免費",
+        "walking": "輕鬆——全區平坦，100%無障礙"
       },
       "convenience": {
-        "restroom": "Available at Memorial Service Hall and visitor center",
-        "parking": "On-site lot — free for first 90 min, then ₩1,200/hr"
+        "restroom": "入口及公園內部設有廁所",
+        "parking": "公園附近設有指定停車區域"
       },
       "smartNotes": {
-        "photo": "Wall of Remembrance (40,896 names on 140 marble panels) and the Symbolic Area where the 22 sending-state flags fly",
-        "facilities": "Memorial Service Hall, Memorabilia Hall, UN Forces Monument, US Korean War Memorial (2013 Frank Gaylord sculpture), and adjacent UN Peace Memorial Hall",
-        "tip": "Watch the 12-minute documentary in Memorial Service Hall first (English available); dress neatly, keep voices low, and no food on the grounds; ground is sacred — no climbing on graves or grass between markers"
+        "photo": "紀念牆與22面國旗飄揚的全景構圖。清晨人最少，光線最好。",
+        "facilities": "遊客服務中心、紀念館、紀念品商店。附近有咖啡館及餐廳。",
+        "tip": "11月11日上午11時的'向釜山致敬'儀式是特殊體驗。對韓國戰爭感興趣者務必觀看12分鐘紀錄片。"
       },
       "_poi_meta": {
         "poi_key": "un_memorial_cemetery",
@@ -414,39 +408,39 @@
     {
       "number": 6,
       "time": "≈ 15:30",
-      "duration": "75 min",
+      "duration": "75分鐘",
       "name": "甘川文化村",
-      "category": "Cultural Village / Mural Art",
-      "description": "**甘川文化村（감천문화마을）**——同時獲得**「韓國的馬丘比丘」**和**「韓國的聖托里尼」**之稱——是釜山沙河區的一處山城住宅區，粉彩色房屋沿坡面層疊而下。聚落始於**1920至1930年代**釜山市政機關將工人階級遷離港口區。村落現有特色在**1955年**由**太極道宗教社群的約800個家庭（約4,000人）**定型——這是一個獨特的韓國新宗教，其「讓他人富足」的哲學核心（성통공완，聖通功完）演化為一條不成文的建築規範：**任何房屋不能遮擋後方鄰屋的採光和視野**，由此形成聞名遐邇的梯田式層疊立面。2009年韓國文化體育觀光部**「馬丘比丘之夢」公共藝術計畫**及2010年**「迷路迷路」壁畫計畫**啟動後，村落從衰敗的貧困聚落搖身一變為觀光目的地，並榮獲**2012年聯合國人居署亞洲都市景觀大獎**。最具代表性的打卡點：**「小王子與狐狸」長椅**，位於天空花園觀景台，是村內最多人拍照的地點。",
+      "category": "山坡藝術村",
+      "description": "**甘川文化村**——同時獲得**「韓國的馬丘比丘」**和**「韓國的聖托里尼」**之稱——是釜山沙河區的一處山城住宅區，粉彩色房屋沿坡面層疊而下。聚落始於**1920至1930年代**釜山市政機關將工人階級遷離港口區。村落現有特色在**1955年**由**太極道宗教社群的約800個家庭（約4,000人）**定型——這是一個獨特的韓國新宗教，其「讓他人富足」的哲學核心演化為一條不成文的建築規範：**任何房屋不能遮擋後方鄰屋的採光和視野**，由此形成聞名遐邇的梯田式層疊立面。2009年韓國文化體育觀光部**「馬丘比丘之夢」公共藝術計劃**及2010年**「迷路迷路」壁畫計劃**啟動後，村落從衰敗的貧困聚落搖身一變為觀光目的地，並榮獲**2012年聯合國人居署亞洲都市景觀大獎**。最具代表性的拍照點：**「小王子與狐狸」長椅**，位於天空花園觀景臺，是村內最多人拍照的地點。",
       "highlights": [
         "**「韓國的馬丘比丘」/「韓國的聖托里尼」**——2012年聯合國人居署亞洲都市景觀大獎",
         "起源：**1920至1930年代**釜山市政遷移＋**1955年太極道難民**（約800個家庭）",
         "**太極道「讓他人富足」哲學**＝任何房屋不遮後方鄰屋——形成梯田式立面",
-        "**2009年「馬丘比丘之夢」＋2010年「迷路迷路」**文化部公共藝術計畫",
-        "**「小王子與狐狸」長椅**，天空花園——村內最多人打卡的地點"
+        "**2009年「馬丘比丘之夢」＋2010年「迷路迷路」**文化部公共藝術計劃",
+        "**「小王子與狐狸」長椅**，天空花園——村內最多人拍照的地點"
       ],
       "timeUsed": [
-        "Coach drop-off at Public Parking Lot 2 + walk to entrance (~5 min)",
-        "Tourist Information Center + Stamp Map purchase (~10 min)",
-        "Sky Garden viewpoint + Little Prince bench (~25 min)",
-        "Alley walk past murals + small cafe pause (~25 min)",
-        "Reassemble at coach (~10 min)"
+        "大巴在上方入口下車（約5分鐘）",
+        "觀星臺+彩虹屋頂全景（約15分鐘）",
+        "天空花園+小王子與狐狸長椅拍照（約20分鐘）",
+        "穿越壁畫小巷+工藝品商鋪下行（約25分鐘）",
+        "在下方出口集合（約10分鐘）"
       ],
-      "whyOnRoute": "甘川是全日最具視覺衝擊力的景點——粉彩梯田村落＋港灣俯瞰構成釜山最上鏡的城市風景。作為下午最後一個主景點，旅客在前一站聯合國公墓的歷史沉澱後，以活潑鮮豔的社區藝術村落重新調動拍攝熱情。",
+      "whyOnRoute": "甘川是全日最具景色沖擊力的景點——粉彩梯田村落＋港灣俯瞰構成釜山最上鏡的城市風景。作為下午最後一個主景點，旅客在前一站聯合國公墓的歷史沉澱後，以活潑鮮豔的社區藝術村落重新調動拍攝熱情。",
       "visitBasics": {
-        "hours": "Daily 09:00–18:00 (Mar–Oct) / 09:00–17:00 (Nov–Feb); some shops/cafes keep their own hours",
-        "closed": "Open year-round (a living residential community)",
-        "admission": "Free village entry; optional Stamp Map ≈ 2,000 KRW",
-        "walking": "Strenuous — very steep alleys and stairs; not stroller- or wheelchair-friendly in many sections"
+        "hours": "村落全天開放（部分設施有營業時間）",
+        "closed": "全年開放",
+        "admission": "村落免費進入；蓋章遊地圖₩2,000",
+        "walking": "體力要求較高——陡坡小巷與臺階；防滑鞋履必備"
       },
       "convenience": {
-        "restroom": "Public restrooms at the Tourist Information Center and around the main viewpoints",
-        "parking": "Gamcheon Public Parking Lot 2 (paid)"
+        "restroom": "上方入口及村內多處設有廁所",
+        "parking": "遊客停車位有限；請使用指定大巴上下客區域"
       },
       "smartNotes": {
-        "photo": "Little Prince and Fox bench (long queue) and Haneul Maru / Sky Garden Observatory for the sweeping rainbow-roof and bay view",
-        "facilities": "Hanbok rental, craft workshops, Korean candy stalls, cafes; small village museum at the entrance; the stamp map is the easiest way to navigate",
-        "tip": "Residents live here — keep voices down, no drones, take rubbish with you; wear grippy shoes for the steep lanes; afternoon golden hour ~16:00-17:00 is the village's best light"
+        "photo": "小王子長椅可能需要排隊但免費。從觀景臺俯瞰彩色屋頂的全景構圖絕佳。",
+        "facilities": "村內分佈有小型咖啡館及工藝品商鋪。蓋章遊信息站。",
+        "tip": "清晨參觀可減少小王子長椅排隊時間。臺階較多，務必穿著結實的鞋履。"
       },
       "_poi_meta": {
         "poi_key": "gamcheon_culture_village",
@@ -468,39 +462,39 @@
     {
       "number": 7,
       "time": "≈ 17:15",
-      "duration": "60 min",
+      "duration": "60分鐘",
       "name": "札嘎其海鮮市場",
-      "category": "Fish Market / Local Culture",
-      "description": "**札嘎其市場（자갈치시장）**——**韓國最大的海鮮市場**，釜山十大地標之一——位於中區南浦港碼頭旁，步行7分鐘可達地鐵札嘎其站（1號線）或南浦站。**「札嘎其」**名稱源自**「자갈」（礫石）**，來自曾鋪滿此地的卵石海岸。市場的現代性格在**韓戰（1950至1953年）後**逐步形成：戰時及戰後，許多男性陣亡或仍在戰場，**喪夫及流離失所的婦女——「札嘎其阿姨（자갈치 아줌마）」——撐起整個市場運營**，成為釜山的標誌性形象。市場佔地**66,000平方公尺，約400個攤位**。最道地的在地玩法：**在一樓選購活魚→帶至二樓代客料理**，加收小額加工費。**現代海鷗形狀建築2006年重新啟用**；建築頂層設有Sky Park屋頂觀景台，俯瞰南浦港全景。",
+      "category": "市場與街頭美食",
+      "description": "**札嘎其市場（札嘎其市場）**——**韓國最大的海鮮市場**，釜山十大地標之一——位於中區南浦港碼頭旁，步行7分鐘可達地鐵札嘎其站（1號線）或南浦站。**「札嘎其」**名稱源自**「礫石」（礫石）**，來自曾鋪滿此地的卵石海岸。市場的今日樣貌在**韓戰（1950至1953年）後**逐步形成：戰時及戰後，許多男性陣亡或仍在戰場，**喪夫及流離失所的婦女——「札嘎其阿姨（札嘎其阿姨）」——撐起整個市場運營**，成為釜山的代表性形象。市場佔地**66,000平方公尺，約400個攤位**。最道地的在地玩法：**在一樓選購活魚→帶至二樓代客料理**，加收小額加工費。**現代海鷗形狀建築2006年重新啟用**；建築頂層設有Sky Park屋頂觀景臺，俯瞰南浦港全景。",
       "highlights": [
         "**韓國最大海鮮市場**——佔地66,000平方公尺，約400個攤位",
-        "**「札嘎其」＝礫石（자갈）**，源自原有的卵石海岸地名",
+        "**「札嘎其」＝礫石（礫石）**，源自原有的卵石海岸地名",
         "**「札嘎其阿姨」**＝韓戰後喪夫及流離失所的婦女魚販——釜山的歷史標誌",
         "**在一樓選魚→帶至二樓代客料理**，加小額加工費＝最道地的在地體驗",
         "**2006年重啟的現代海鷗形狀建築**"
       ],
       "timeUsed": [
-        "Coach drop-off + walk to main building (~5 min)",
-        "1F live-seafood walk-through with guide commentary (~20 min)",
-        "Outdoor pier + dried-seafood lanes (~15 min)",
-        "Optional sashimi snack OR Sky Park rooftop (~15 min)",
-        "Reassemble at coach + drop-off at pickup points (~5 min)"
+        "從龍頭山/下車點步行前往（約5分鐘）",
+        "一樓活水箱參觀（約15分鐘）",
+        "二樓生魚片餐廳瀏覽+南浦洞街景拍照（約15分鐘）",
+        "可選：購買小吃+光複路漫步（約10分鐘）",
+        "在札嘎其大媽攤位購買紀念品（約5分鐘）"
       ],
       "whyOnRoute": "札嘎其是釜山全日的最自然收尾——用海鮮市場的活力與煙火氣，為前一站甘川文化村的藝術氛圍後畫上完整的釜山庶民生活句點。市場位置緊鄰南浦站，也讓不同區域的旅客方便就近分散返回。",
       "visitBasics": {
-        "hours": "Daily 05:00–22:00 (vendor hours vary; live-fish section officially 06:00–22:00)",
-        "closed": "1st and 3rd Tuesdays of every month",
-        "admission": "Free entry; pay-as-you-go for seafood and 2F cooking-fee",
-        "walking": "Moderate — ground floor flat (wet, can be slippery); stairs to 2F sashimi/restaurant level"
+        "hours": "大部分攤位05:00–22:00；美食巷高峰11:00–21:00",
+        "closed": "全年開放；部分紡織樓層攤位週日休息",
+        "admission": "免費進入；消費自理（大部分攤位僅收現金）",
+        "walking": "輕鬆——平坦的室內小巷"
       },
       "convenience": {
-        "restroom": "Available inside the main building on each floor",
-        "parking": "Basement lot at the main building, ₩700 / 10 min"
+        "restroom": "市場大樓內設有廁所（有指示牌）",
+        "parking": "停車位有限；最近收費停車場約步行5分鐘"
       },
       "smartNotes": {
-        "photo": "Outdoor pier behind the building for the harbor-and-fishing-boat shot; Jagalchi ajummas at the live-fish stalls (always ask permission first)",
-        "facilities": "1F live seafood, 2F sashimi & restaurants, dried-fish section, rooftop Sky Park (when open), Sashimi Center buffet on 5F",
-        "tip": "Buy the fish on 1F, then bring it upstairs to a 2F restaurant and pay a small cooking fee — that's the local way; address 52 Jagalchihaean-ro, Jung-gu; floor is wet — closed-toe shoes recommended; cash works better than cards at smaller stalls"
+        "photo": "綠豆餅在石磨鐵板上煎制——是代表性拍攝畫面。麻藥紫菜包飯卷制過程同樣上鏡。",
+        "facilities": "許多攤主在攤位後方設有小型堂食區。多語言菜單。",
+        "tip": "**建議每人攜帶現金₩10,000至20,000。** 綠豆餅+麻藥紫菜包飯是必點組合。避開週末12:00至18:00。"
       },
       "_poi_meta": {
         "poi_key": "jagalchi_market",
@@ -522,66 +516,66 @@
   ],
   "routeFlowStops": [
     {
-      "name": "Pickup (3 central Busan stations)",
+      "name": "接送（釜山市中心3站）",
       "type": "origin",
-      "theme": "Departure"
+      "theme": "出發"
     },
     {
-      "name": "Haedong Yonggungsa Temple",
+      "name": "海東龍宮寺",
       "type": "primary",
-      "theme": "Seaside temple"
+      "theme": "海邊寺廟"
     },
     {
-      "name": "Cheongsapo & Blue Line Park",
+      "name": "青沙浦&藍線公園",
       "type": "primary",
-      "theme": "Coast & beach train"
+      "theme": "海岸與海灘列車"
     },
     {
-      "name": "Lunch (local Busan restaurant)",
+      "name": "午餐（釜山當地餐廳）",
       "type": "meal",
-      "theme": "Meal"
+      "theme": "餐飲"
     },
     {
-      "name": "UN Memorial Cemetery",
+      "name": "聯合國紀念公園",
       "type": "primary",
       "theme": "Memorial"
     },
     {
-      "name": "Gamcheon Culture Village",
+      "name": "甘川文化村",
       "type": "primary",
-      "theme": "Art village"
+      "theme": "藝術村"
     },
     {
-      "name": "Jagalchi Fish Market",
+      "name": "札嘎其魚市場",
       "type": "return",
-      "theme": "Seafood market"
+      "theme": "海鮮市場"
     }
   ],
   "routePhases": [
     {
       "phase": "海岸上午（約3小時）",
-      "duration": "≈ 3 hours",
-      "description": "Pickup (60 min window) and drive to Yonggungsa Temple, then south to Cheongsapo Blue Line Park."
+      "duration": "約3小時",
+      "description": "接送（60分鐘接送時段），駕車前往龍宮寺，隨後向南經青沙浦藍線公園。"
     },
     {
       "phase": "午餐（約1小時）",
-      "duration": "≈ 1 hour",
-      "description": "Mid-day at a local Busan restaurant (dwaeji-gukbap, milmyeon, or seafood pancake)."
+      "duration": "約1小時",
+      "description": "釜山當地餐廳午餐（豬肉湯飯、蕎麥冷麵或海鮮餅）。"
     },
     {
       "phase": "紀念＋山城村落（約3.5小時）",
-      "duration": "≈ 3.5 hours",
-      "description": "UN Memorial Cemetery (60 min) then Gamcheon Culture Village's photo loop (120 min)."
+      "duration": "約3.5小時",
+      "description": "聯合國紀念公園（60分鐘），隨後甘川文化村攝影路線（120分鐘）。"
     },
     {
       "phase": "市場收尾（約1.5小時）",
-      "duration": "≈ 1.5 hours",
-      "description": "Jagalchi Market browse and streetfood (75 min); central-Busan drop-offs follow."
+      "duration": "約1.5小時",
+      "description": "札嘎其市場遊覽及街頭美食（75分鐘）；隨後在釜山市中心各站下車。"
     }
   ],
   "routeShapeIntro": {
-    "title": "行程動線總覽",
-    "subtitle": "Northeast coastal temple first, blue line park, UN memorial mid-day, Gamcheon village with lunch, then close at Jagalchi market in central Busan. 08:30 to 18:00."
+    "title": "行程路線一覽",
+    "subtitle": "東北方向海岸寺廟開場，藍線公園，聯合國紀念公園午間，含午餐的甘川文化村，最後在釜山中心區札嘎其市場收尾。08:30出發，18:00返回。"
   },
   "whyTourWorks": {
     "bestFor": [
@@ -599,7 +593,7 @@
     ],
     "routeLogicSections": [
       {
-        "title": "路線設計邏輯",
+        "title": "行程安排思路",
         "icon": "sun",
         "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
@@ -609,48 +603,48 @@
             "detail": "七個景點涵蓋釜山最具代表性的五大主題：佛教文化（龍宮寺）、海岸景觀（藍線公園）、國際歷史（聯合國公墓）、都市藝術（甘川）、在地市場（札嘎其）。這樣的組合確保旅客離開釜山時對城市有全面立體的印象。"
           },
           {
-            "label": "景點序列節奏經過精心設計",
+            "label": "景點序列節奏經過精心構成",
             "detail": "上午海岸輕鬆起步（龍宮寺→藍線公園）→午餐休息→下午引入歷史深度（聯合國公墓）→以活力市場收尾（甘川→札嘎其）。這種節奏避免了早上就安排沉重歷史內容，讓旅客在精力最充沛時享受步行難度最高的早段景點。"
           },
           {
-            "label": "三站式接送設計提升釜山旅客便利性",
-            "detail": "釜山住宿分散於釜山站、西面及海雲台三大旅遊區。三站式接送讓不同區域的旅客都能就近搭乘，而接送順序（西面→釜山站→海雲台）與全日路線方向完全吻合，最小化空駛距離。"
+            "label": "三站式接送構成提升釜山旅客便利性",
+            "detail": "釜山住宿分散於釜山站、西面及海雲臺三大旅遊區。三站式接送讓不同區域的旅客都能就近搭乘，而接送順序（西面→釜山站→海雲臺）與全日路線方向完全吻合，最小化移動距離。"
           }
         ]
       },
       {
-        "title": "Why this works in 10.5 hours",
+        "title": "為什麼10.5小時能做到這些",
         "icon": "clock",
         "iconBg": "bg-pink-50/80",
         "iconColor": "text-pink-600",
         "items": [
           {
-            "label": "Six substantive stops + lunch",
-            "detail": "Two coastal sites, one memorial, one village (extended), one market, plus lunch — each block long enough to feel real, none rushed. Compares favorably to 5-stop tours that drop either Yonggungsa (too far) or Cheongsapo (too new) to fit."
+            "label": "六個實質性景點+午餐",
+            "detail": "兩處海岸、一處紀念館、一處村落（加長）、一處市場加午餐——每段時間足夠充實，不會超負荷。"
           },
           {
-            "label": "Mostly outdoor, market closes indoor",
-            "detail": "≈80% outdoor across the day; Jagalchi is the only fully indoor block. Works in most weather conditions; the market gives a covered finish in a late-afternoon shower."
+            "label": "主要戶外活動，市場室內收尾",
+            "detail": "全天約80%在戶外；札嘎其是唯一全室內環節。大多數天氣均可進行。"
           },
           {
-            "label": "Three pickup locations",
-            "detail": "Pickup at Seomyeon, Busan Station, or Haeundae — accessible from most central-Busan accommodations. Choose the exit closest to your hotel; tour duration adjusts ±30 min based on pickup point."
+            "label": "三處接送地點",
+            "detail": "在西面、釜山站或海雲臺接送——釜山市中心大多數住宿均可便利前往。"
           }
         ]
       },
       {
-        "title": "Trade-offs honestly",
+        "title": "誠實的權衡",
         "icon": "info",
         "iconBg": "bg-sky-50/80",
         "iconColor": "text-sky-600",
         "items": [
           {
-            "label": "Yonggungsa has 108 stairs (skippable)",
-            "detail": "The 108 steps go down to the temple platform. Upper viewing areas are accessible without descending. If the climb back up is a concern, the viewpoint above the temple is the recommended turnaround."
+            "label": "龍宮寺有108級臺階（可跳過）",
+            "detail": "108級臺階通往寺院平臺。上方觀景區無需下行即可到達。若上坡返回令人擔憂，可從上方俯瞰。"
           },
           {
-            "label": "Gamcheon's alleys are steep — slippery in rain",
-            "detail": "Wear shoes with grip and pace yourself uphill. The main photo zone is reachable on a relatively gentle path; deeper exploration requires the steepest stairs."
+            "label": "甘川小巷陡峭——雨天易滑",
+            "detail": "請穿防滑鞋，上坡時注意節奏。主要拍照區通過相對平緩的路徑可達。"
           }
         ]
       }
@@ -660,11 +654,11 @@
     {
       "id": "pickup",
       "title": "接送與下車地點",
-      "preview": "釜山地鐵三站集合：西面站4號出口（08:30）、釜山站4號出口（08:50）、海雲台站5號出口（09:30）",
+      "preview": "釜山地鐵三站集合：西面站4號出口（08:30）、釜山站4號出口（08:50）、海雲臺站5號出口（09:30）",
       "content": [
-        "接送三站：西面站4號出口（08:30）、釜山站4號出口——非KTX月台（08:50）、海雲台站5號出口（09:30）",
-        "返程下車依序：南浦洞 / 札嘎其約17:50、釜山站約18:10、西面約18:30、海雲台約19:00",
-        "有效行程時間依集合點而異：西面約10小時，海雲台約9.5小時"
+        "接送三站：西面站4號出口（08:30）、釜山站4號出口——非KTX月臺（08:50）、海雲臺站5號出口（09:30）",
+        "返程下車依序：南浦洞 / 札嘎其約17:50、釜山站約18:10、西面約18:30、海雲臺約19:00",
+        "有效行程時間依集合點而異：西面約10小時，海雲臺約9.5小時"
       ]
     },
     {
@@ -685,8 +679,8 @@
       "content": [
         "全年開團",
         "小雨：照常出發——龍宮寺在雨中別有氛圍，甘川巷道仍可安全通行",
-        "大雨或暴風雨：業者可能調整路線（龍宮寺下層台座濕滑、甘川樓梯危險），並可提前通知安排改期",
-        "颱風級天氣：全額退款或改期"
+        "大雨或暴風雨：業者可能調整路線（龍宮寺下層臺座溼滑、甘川樓梯危險），並可提前通知安排改期",
+        "臺風級天氣：全額退款或改期"
       ]
     },
     {
@@ -695,7 +689,7 @@
       "preview": "釜山三站接送、冷氣小型巴士、持照英語導遊",
       "content": [
         "三站接送與返程下車、冷氣小型巴士交通、持照英語導遊全程陪同",
-        "不含：午餐（₩10,000至₩20,000）、選做青沙浦Sky膠囊（₩30,000至₩35,000 / 4人膠囊）或海灘列車（₩7,000）、選做釜山塔觀景台（₩12,000）",
+        "不含：午餐（₩10,000至₩20,000）、選做青沙浦Sky膠囊（₩30,000至₩35,000 / 4人膠囊）或海灘列車（₩7,000）、選做釜山塔觀景臺（₩12,000）",
         "其他所有景點免費入場：龍宮寺、聯合國紀念公墓、甘川文化村、札嘎其市場"
       ]
     },
@@ -715,7 +709,7 @@
       "preview": "中等至有點挑戰性",
       "content": [
         "中等至有點挑戰性",
-        "龍宮寺108級石階下行至寺院（可略過——上方觀景台仍可欣賞海景）",
+        "龍宮寺108級石階下行至寺院（可略過——上方觀景臺仍可欣賞海景）",
         "甘川文化村為陡峭山城巷道＋樓梯密集，攝影路線全程需止滑鞋",
         "聯合國紀念公墓地形平坦",
         "札嘎其室內市場平坦但人潮較多",
@@ -732,7 +726,7 @@
       "temp": "—",
       "label": "每日更新"
     },
-    "_seasonalSummary": "Busan: Korea's southernmost major city, milder and wetter than Seoul. Mild winters (5–10 °C), humid summers, peak rainfall in July monsoon."
+    "_seasonalSummary": "釜山是韓國南部代表性海濱城市，冬季比首爾溫和，降雨也相對更多。夏季潮濕，7月梅雨季降雨量較高。"
   },
   "seasonalVariations": [
     {
@@ -741,7 +735,7 @@
     },
     {
       "season": "夏季（6至8月）",
-      "description": "海雲台周邊人潮最多，建議早起接送以錯開龍宮寺早上高峰。甘川文化村在自然光下色彩最飽滿，夏日拍攝效果佳。"
+      "description": "海雲臺周邊人潮最多，建議早起接送以錯開龍宮寺早上高峰。甘川文化村在自然光下色彩最飽滿，夏日拍攝效果佳。"
     },
     {
       "season": "秋季（9至11月）",
@@ -756,15 +750,15 @@
     {
       "icon": "check-circle",
       "title": "當地持照業者",
-      "description": "Busan-licensed guiding",
+      "description": "釜山持證導遊",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
-      "body": "本路線專為對釜山陌生的旅客設計，一日涵蓋最具代表性的七大景點，無需自行研究路線或應付公共交通的複雜轉乘。"
+      "body": "本路線適合對釜山陌生的旅客構成，一日涵蓋最具代表性的七大景點，無需自行研究路線或應付公共交通的複雜轉乘。"
     },
     {
       "icon": "users",
       "title": "小團體",
-      "description": "≈12 guests max",
+      "description": "最多約12人",
       "iconBg": "bg-pink-50/80",
       "iconColor": "text-pink-600",
       "body": "最多約14人的小型巴士確保靈活的移動速度，並讓導遊能夠對每位旅客提供個人化關注，不同於大型遊覽車的制式體驗。"
@@ -772,7 +766,7 @@
     {
       "icon": "shield",
       "title": "含全部門票",
-      "description": "Major admissions covered",
+      "description": "主要景點門票已包含",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
       "body": "全程認證導遊隨行，負責菜單翻譯、攤位溝通、景點深度解說及突發狀況應對，讓旅客全程專注享受。"
@@ -782,65 +776,65 @@
     {
       "timing": "即時通知",
       "title": "即時確認",
-      "detail": "Booking confirmation with itinerary summary",
+      "detail": "預訂確認函含行程摘要",
       "description": "預訂即時收到確認信，含集合點資訊與付款摘要。"
     },
     {
       "timing": "前一日",
       "title": "接送細節",
-      "detail": "Exact pickup location and vehicle info via WhatsApp",
+      "detail": "通過WhatsApp發送精確接送地點和車輛信息",
       "description": "確認天氣預報及路線調整資訊，如遇特殊情況提前通知。"
     },
     {
       "timing": "當天早晨",
       "title": "接送確認",
-      "detail": "Driver checks in 10 minutes before arrival",
+      "detail": "司機在到達前10分鐘確認聯系",
       "description": "發送確切集合時間、導遊聯絡方式及當日行程說明。"
     },
     {
       "timing": "行程途中",
       "title": "行程中支援",
-      "detail": "Direct line to operations",
+      "detail": "直接聯系運營團隊",
       "description": "導遊於集合前以訊息確認到達時間及車牌資訊。"
     },
     {
       "timing": "行程結束",
       "title": "彈性下車地點",
-      "detail": "Choose drop-off at Nampo-dong, Busan Station, Seomyeon, or Haeundae",
+      "detail": "可選擇在南浦洞、釜山站、西面或海雲臺下車",
       "description": "導遊於各景點提供深度解說，並即時回應旅客問題。"
     },
     {
       "timing": "行程結束後",
       "title": "評價與後續追蹤",
-      "detail": "Optional review and follow-up",
-      "description": "行程結束後發送問卷，歡迎提供意見；如有後續問題亦可聯繫。"
+      "detail": "可選的評價和後續跟進",
+      "description": "行程結束後發送問卷，歡迎提供意見；如有後續問題亦可聯系。"
     }
   ],
   "staticQuestions": [
     {
       "id": "first-time",
       "question": "這條路線適合初次造訪釜山的旅客嗎？",
-      "answer": "非常適合——這是涵蓋佛寺、海岸、紀念公墓、藝術村落和海鮮市場的釜山經典一日路線。如果您只有一天，想把釜山最多人打卡和最常被問到的景點都走一遍，這條路線就是為您設計的。"
+      "answer": "非常適合——這是涵蓋佛寺、海岸、紀念公墓、藝術村落和海鮮市場的釜山經典一日路線。如果您只有一天，想把釜山最多人拍照和最常被問到的景點都走一遍，這條路線就是為您構成的。"
     },
     {
       "id": "stairs",
       "question": "龍宮寺有多少階石階？",
-      "answer": "108級石階從上方廣場下行至寺院主殿台座——是全日體力需求最集中的一段。108這個數字具有象徵意義，代表佛教的一百零八煩惱。如需略過，可留在上方廣場欣賞海景；不影響其餘全日行程。"
+      "answer": "108級石階從上方廣場下行至寺院主殿臺座——是全日體力需求最集中的一段。108這個數字具有象徵意義，代表佛教的一百零八煩惱。如需略過，可留在上方廣場欣賞海景；不影響其餘全日行程。"
     },
     {
       "id": "gamcheon-walking",
       "question": "甘川文化村的山坡難走嗎？",
-      "answer": "中等至有點挑戰性——巷道陡峭、狹窄，樓梯較多。建議穿著有止滑底的鞋子，慢慢走並善用欄杆。主要打卡點（小王子雕像、馬賽克階梯）位於相對早段，不一定需要走完全部巷道。"
+      "answer": "中等至有點挑戰性——巷道陡峭、狹窄，樓梯較多。建議穿著有止滑底的鞋子，慢慢走並善用欄杆。主要拍照點（小王子雕像、馬賽克階梯）位於相對早段，不一定需要走完全部巷道。"
     },
     {
       "id": "sky-capsule",
       "question": "青沙浦的Sky膠囊列車含括在行程費用內嗎？",
-      "answer": "不含——為選做自費項目。Sky膠囊列車（4人膠囊₩30,000至₩35,000單程）及海灘列車（₩7,000來回）均行駛於4.8公里的藍線公園路線上。Sky膠囊列車現場購票為主（可提前線上預訂）；停留時間約75分鐘，若選做需把握時間。玻璃底眺望台免費，同樣精彩。"
+      "answer": "不含——為選做自費項目。Sky膠囊列車（4人膠囊₩30,000至₩35,000單程）及海灘列車（₩7,000來回）均行駛於4.8公里的藍線公園路線上。Sky膠囊列車現場購票為主（可提前線上預訂）；停留時間約75分鐘，若選做需把握時間。玻璃底眺望臺免費，同樣精彩。"
     },
     {
       "id": "lunch",
       "question": "午餐含括在行程費用內嗎？有哪些選項？",
-      "answer": "不含——午餐由旅客自費（約₩10,000至₩20,000 / 人）。典型在地選項：豬骨湯飯（釜山豬骨清湯泡飯）、冷麵（釜山特有冷小麥麵）、하모니（海鰻）。素食 / 清真友善替代選項需於預訂時告知。"
+      "answer": "不含——午餐由旅客自費（約₩10,000至₩20,000 / 人）。典型在地選項：豬骨湯飯、釜山冷麵（小麥冷麵）、海鰻（海鰻）。素食 / 清真友善替代選項需於預訂時告知。"
     },
     {
       "id": "kids",
@@ -850,7 +844,7 @@
     {
       "id": "seniors",
       "question": "年長旅客適合嗎？",
-      "answer": "由於龍宮寺石階和甘川文化村山坡，本路線對行動受限的旅客較具挑戰性。活躍的銀髮族完全勝任，海灘列車選項也能讓青沙浦段更輕鬆；建議行動不便的旅客考慮我們的釜山私人包車行程，可針對個人狀況量身調整。"
+      "answer": "由於龍宮寺石階和甘川文化村山坡，本路線對行動受限的旅客較具挑戰性。活躍的銀發族完全勝任，海灘列車選項也能讓青沙浦段更輕鬆；建議行動不便的旅客考慮我們的釜山私人包車行程，可針對個人狀況量身調整。"
     },
     {
       "id": "language",
@@ -860,12 +854,12 @@
     {
       "id": "pickup",
       "question": "在哪裡接送？",
-      "answer": "釜山三大中心車站：西面站4號出口（08:30）、釜山站4號出口——非KTX月台出口（08:50）、海雲台站5號出口（09:30）。預訂時請選擇距您飯店最近的集合點。"
+      "answer": "釜山三大中心車站：西面站4號出口（08:30）、釜山站4號出口——非KTX月臺出口（08:50）、海雲臺站5號出口（09:30）。預訂時請選擇距您飯店最近的集合點。"
     },
     {
       "id": "drop-off",
       "question": "在哪裡下車？",
-      "answer": "返程沿途設多個下車點：南浦洞 / 札嘎其（約17:50，即最後一個景點）、釜山站（約18:10）、西面（約18:30）、海雲台（約19:00）。入住札嘎其 / 南浦周邊的旅客可直接在最後景點下車，無需再乘車折返。"
+      "answer": "返程沿途設多個下車點：南浦洞 / 札嘎其（約17:50，即最後一個景點）、釜山站（約18:10）、西面（約18:30）、海雲臺（約19:00）。入住札嘎其 / 南浦周邊的旅客可直接在最後景點下車，無需再乘車折返。"
     },
     {
       "id": "compare",
@@ -875,12 +869,12 @@
     {
       "id": "yonggungsa-best-time",
       "question": "參觀龍宮寺的最佳時間是什麼時候？",
-      "answer": "本行程約10:00抵達——足夠早以避開正午大型遊覽車團，日照角度使東面庭院呈現最佳光感。如果是獨立旅行，元旦日出是全年最熱鬧的時段；春節（舊曆新年）和中秋期間人潮最少。"
+      "answer": "本行程約10:00抵達——足夠早以避開正午大型遊覽車團，日照角度使東面庭院呈現最佳光感。如果是獨立旅行，元旦日出是全年最熱鬧的時段；春節（舊歷新年）和中秋期間人潮最少。"
     },
     {
       "id": "tower-included",
-      "question": "釜山塔觀景台包含在行程內嗎？",
-      "answer": "不包含——釜山塔 / 龍頭山公園不在本七站路線上。路線以甘川和青沙浦作為視覺亮點景點。若釜山塔是您的優先目標，請參閱我們的釜山郵輪岸上觀光行程（含南浦洞區域）。"
+      "question": "釜山塔觀景臺包含在行程內嗎？",
+      "answer": "不包含——釜山塔 / 龍頭山公園不在本七站路線上。路線以甘川和青沙浦作為景色亮點景點。若釜山塔是您的優先目標，請參閱我們的釜山郵輪岸上觀光行程（含南浦洞區域）。"
     },
     {
       "id": "walking",
@@ -895,7 +889,7 @@
     {
       "id": "rain",
       "question": "下雨怎麼辦？",
-      "answer": "小雨照常出發。大雨時：龍宮寺下層台座可能濕滑、甘川巷道樓梯危險——導遊可能縮短這兩段的戶外時間並延長市場等室內停留。全日大部分景點均有屋簷可避雨，整體抗雨能力相當好。"
+      "answer": "小雨照常出發。大雨時：龍宮寺下層臺座可能溼滑、甘川巷道樓梯危險——導遊可能縮短這兩段的戶外時間並延長市場等室內停留。全日大部分景點均有屋簷可避雨，整體抗雨能力相當好。"
     }
   ],
   "guestReviews": [],
@@ -932,12 +926,12 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "可訂狀態會在付款步驟中確認。",
     "price": {
       "amountLabel": "",
       "currency": "USD",
       "per": "人",
-      "priceNote": "Small-group price not yet confirmed from operator listing. Comparable Busan one-day tours range $41–$70 across operators. Once confirmed, AtoC Korea sale price applies a flat 10% discount."
+      "priceNote": "小團體價格尚待業者最終確認。類似釜山一日遊在不同業者間約為41–70美元；確認後，AtoC Korea 銷售價格將套用固定10%折扣。"
     }
   },
   "matching_profile": {
@@ -1103,8 +1097,8 @@
   "matching_metadata": {
     "matching_schema": "tour_matching_profiles_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
-    "source_of_truth_note": "matching_profile fields scored against atockorea matching algorithm v2. island=busan introduces new island filter. Single fixed route; no variant overrides.",
-    "audit_summary": "Year-round Busan classic 5-stop route. First Busan product in catalog — establishes busan_ region_tag prefix convention parallel to jeju_ used elsewhere. value_for_money_fit=5 reflects $41-47 GetYourGuide market rate.",
+    "source_of_truth_note": "Internal note: product profile checked against current Busan route-selection rules. Single fixed route; no route option overrides.",
+    "audit_summary": "Year-round Busan classic 5-stop route. First Busan product in catalog — establishes busan_ region_tag prefix convention parallel to jeju_ used elsewhere. value_for_money_fit=5 reflects $41-47 市場參考資料 market rate.",
     "score_rationale": {
       "high_scores": {
         "first_time_fit=5, iconic_landmark_fit=5, one_day_fit=5": "Hits all of Busan's most-recognized landmarks in one curated day — exactly what first-timers need.",
@@ -1194,19 +1188,19 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Seaside temple, blue-line coast, painted hillside, fish market —",
-        "headlineLine2": "Busan's seven-stop classic in one balanced day",
+        "headlineLine1": "海邊寺廟、藍色海岸線、彩色山坡村落、海鮮市場——",
+        "headlineLine2": "釜山七大經典景點，一日均衡盡覽",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1920&q=80",
           "imagePosition": "center 40%",
-          "tagline": "Busan's most-asked-for seven stops in a single small-group day",
+          "tagline": "釜山最受歡迎的七個必訪景點，小團體一日盡收",
           "pills": [
             "小團體",
             "釜山",
             "初訪首選"
           ],
           "meta": {
-            "duration": "10.5 hours (08:30 first pickup, ≈ 19:00 last drop)",
+            "duration": "10.5小時（08:30首次接送，≈ 19:00最後下車）",
             "region": "釜山",
             "stops": "5 個景點",
             "rating": 0,
@@ -1253,32 +1247,32 @@
           {
             "icon": "clock",
             "label": "行程時間",
-            "value": "≈ 10.5 hours (08:30 first pickup, ≈ 19:00 last drop)"
+            "value": "約10.5小時（08:30第一接送，約19:00最後下車）"
           },
           {
             "icon": "calendar",
             "label": "最佳季節",
-            "value": "Year-round; cherry blossoms at Cheongsapo coast late March–early April"
+            "value": "全年；青沙浦海岸野櫻花約三月下旬至四月初"
           },
           {
             "icon": "users",
             "label": "人數上限",
-            "value": "Small group (≈12 max), shared mini-coach"
+            "value": "小團體（最多約12人），共乘小型巴士"
           },
           {
-            "icon": "footprints",
+            "icon": "hiking",
             "label": "步行強度",
-            "value": "Moderate–challenging — Yonggungsa 108 stairs (skippable), Gamcheon hillside, market alleys"
+            "value": "中等至有點挑戰性——龍宮寺108級石階（可略過）、甘川山坡、市場巷道"
           },
           {
             "icon": "map-pin",
             "label": "路線區域",
-            "value": "Busan (Haeundae area + central Busan)"
+            "value": "釜山（海雲臺周邊＋釜山市中心）"
           },
           {
-            "icon": "ticket",
+            "icon": "check",
             "label": "費用包含",
-            "value": "Round-trip transport, certified guide. Excludes lunch, optional Sky Capsule / Beach Train, optional Busan Tower (₩12,000)."
+            "value": "全日往返交通、認證導遊。不含午餐、選做Sky膠囊 / 海灘列車、選做釜山塔（₩12,000）"
           }
         ]
       }
@@ -1293,55 +1287,55 @@
             "id": "g1",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
-            "alt": "Buddhist temple buildings perched on cliffs above the East Sea at Haedong Yonggungsa",
-            "caption": "Haedong Yonggungsa — Korea's most distinctive coastal temple, rebuilt in the 1930s on a 1376 foundation.",
-            "location": "Haedong Yonggungsa, Gijang-gun",
-            "atmosphere": "Sea spray, granite cliffs, smell of incense"
+            "alt": "海東龍宮寺海崖佛寺全景",
+            "caption": "海東龍宮寺——韓國最著名的海崖佛寺，高麗王朝1376年創立",
+            "location": "機張，釜山",
+            "atmosphere": "海浪水氣、花崗岩海崖與淡淡香火氣息"
           },
           {
             "id": "g2",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=1200",
-            "alt": "Open-air beach train running on a coastal track beside a wide sandy beach",
-            "caption": "Cheongsapo Blue Line Park — repurposed 1934 railway converted into a 4.8 km coastal beach-train corridor in 2020.",
-            "location": "Cheongsapo Blue Line Park, Haeundae",
-            "atmosphere": "Open coast, gentle wind, train horn"
+            "alt": "甘川文化村彩色梯田住宅全景",
+            "caption": "甘川文化村——「韓國的馬丘比丘」，粉彩梯田房屋與小王子長椅",
+            "location": "沙河區，釜山",
+            "atmosphere": "開闊海岸、輕柔海風與海岸列車聲"
           },
           {
             "id": "g3",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1601171291096-87099c2c4625?w=1200",
-            "alt": "Identical headstones in formal rows at the UN Memorial Cemetery",
-            "caption": "UN Memorial Cemetery — 2,300+ graves of soldiers from 21 nations, the only UN cemetery in the world.",
-            "location": "UN Memorial Cemetery, Nam-gu",
-            "atmosphere": "Quiet, formal, contemplative"
+            "alt": "青沙浦藍線公園玻璃底眺望臺",
+            "caption": "青沙浦藍線公園——海面上方20公尺的玻璃底眺望臺與雙子燈塔",
+            "location": "青沙浦，海雲臺，釜山",
+            "atmosphere": "安靜、莊重、沉靜"
           },
           {
             "id": "g4",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1200",
-            "alt": "Pastel-colored houses cascading down a hillside in Gamcheon Culture Village",
-            "caption": "Gamcheon Culture Village — postwar refugee neighborhood transformed into a public-art project in 2009.",
-            "location": "Gamcheon Culture Village, Saha-gu",
-            "atmosphere": "Bright pastels, narrow alleys, hillside stairs"
+            "alt": "札嘎其海鮮市場活魚展區",
+            "caption": "札嘎其海鮮市場——韓國最大海鮮市場，一樓選魚二樓代客料理",
+            "location": "中區，南浦，釜山",
+            "atmosphere": "明亮粉彩色調、狹窄巷弄與山坡階梯"
           },
           {
             "id": "g5",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?w=1200",
-            "alt": "Rows of fresh seafood on ice at Jagalchi Fish Market",
-            "caption": "Jagalchi — Korea's largest seafood market, run mostly by women across multiple generations.",
-            "location": "Jagalchi Market, Jung-gu",
-            "atmosphere": "Live tanks, market chatter, sea-salt smell"
+            "alt": "聯合國紀念公墓悼念牆",
+            "caption": "聯合國紀念公墓——全球唯一聯合國紀念公墓，悼念牆鐫刻40,896名韓戰傷亡",
+            "location": "南區，釜山",
+            "atmosphere": "活魚水槽、市場人聲與海鹽氣息"
           },
           {
             "id": "g6",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-            "alt": "A bowl of dwaeji-gukbap with side dishes on a Busan restaurant table",
-            "caption": "Lunch is local — dwaeji-gukbap, milmyeon, or seafood pancake at a Busan restaurant.",
-            "location": "Local Busan restaurant",
-            "atmosphere": "Quick, no-frills, regional flavors"
+            "alt": "釜山餐廳桌上擺放著一碗豬肉湯飯和小菜",
+            "caption": "午餐是本地特色——釜山餐廳的豬肉湯飯、小麥冷麵或海鮮煎餅",
+            "location": "釜山在地餐廳",
+            "atmosphere": "快捷、簡單的地方風味"
           }
         ]
       }
@@ -1354,138 +1348,334 @@
         "itineraryStops": [
           {
             "number": 1,
-            "time": "08:30",
-            "duration": "60 min",
-            "name": "Pickup (3 central Busan stations)",
-            "category": "Departure",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
-            "description": "Sequential pickup along Busan Subway Line 1 / Line 2: Seomyeon Station Exit 4 (08:30), Busan Station Exit 4 (08:50), Haeundae Station Exit 5 (09:30). Choose the exit closest to your hotel. The Haeundae passenger boards last because the route then runs eastbound to Yonggungsa, which sits in Gijang-gun (≈25 minutes from Haeundae).",
-            "timeUsed": [
-              "Operational logistics (pickup)"
+            "time": "≈ 09:00",
+            "duration": "30分鐘",
+            "name": "接送（釜山3處中心車站）",
+            "category": "交通 / 接客",
+            "description": "接送整合於釜山三大交通樞紐，避免橫跨全城接送而浪費時間：**釜山站（1號線）**，適合入住KTX站附近或草梁洞 / 南浦洞的旅客；**西面站（1＆2號線互轉）**——釜山最繁忙的地鐵換乘站，適合樂天飯店釜山或西面醫療街周邊的旅客；**海雲臺站（2號線）**，適合入住Westin朝鮮、Park Hyatt及其他海雲臺海灘度假區的旅客。",
+            "highlights": [
+              "釜山三處中心接送點（釜山站、西面、海雲臺）",
+              "小型巴士（最多約14人）",
+              "前往首站全程約30至40分鐘",
+              "接送時發放中英文雙語行程說明卡"
             ],
-            "whyOnRoute": "Three pickup options cover most central-Busan accommodation areas.",
+            "timeUsed": [
+              "釜山站接送（約09:00，約5分鐘）",
+              "駕車至西面站（約10分鐘）",
+              "西面接送 (~09:15, ~5分鐘)",
+              "前往海雲臺站 (~15分鐘)",
+              "海雲臺接送 (~09:30, ~5分鐘)"
+            ],
+            "whyOnRoute": "三站式接送構成讓釜山不同區域的旅客都能就近搭乘，同時避免跨城拉車耗費行程時間。集合時間構成從最外圍（釜山站）逐步向東移動，與全日由北向南的路線方向完全一致。",
             "_poi_meta": {
-              "poi_key": "busan_pickup_central",
-              "is_attraction": false
+              "poi_key": "OPS_busan_pickup_central",
+              "verified": true,
+              "match": "transit_only",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan",
+                "Busan Metro"
+              ]
             }
           },
           {
             "number": 2,
             "time": "≈ 10:00",
-            "duration": "75 min",
-            "name": "Haedong Yonggungsa Temple",
-            "category": "Seaside Buddhist Temple",
-            "image": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=800",
-            "description": "Founded in 1376 by the monk Naong, royal teacher to King Gongmin of Goryeo. Destroyed during the Imjin War (1592–98), rebuilt in the 1930s. Distinctive among Korean temples for its coastal setting — most Korean Buddhist temples sit deep in the mountains, while Yonggungsa is built directly onto cliffs above the East Sea, making it the country's most-photographed coastal temple. The 108 stone steps from the upper plaza down to the temple represent the 108 worldly defilements in Buddhist teaching; descending and re-ascending them is an option, not a requirement — viewing platforms above the temple are accessible without the stair climb. Twelve zodiac animal stone figures line the entrance path. Free admission; open ≈05:00–19:30 (seasonal variation; opens with sunrise on January 1 for the New Year crowd).",
-            "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction with photos",
-              "Wrap-up"
+            "duration": "75分鐘",
+            "name": "海東龍宮寺",
+            "category": "佛教寺院/海岸",
+            "description": "**海東龍宮寺（海東龍宮寺）——韓國最著名的海崖佛寺**——矗立在釜山機張郡的海崖峭壁上，是韓國極少數不設於山中的重要佛寺之一。**1376年高麗王朝由高僧懶翁慧勤（1320-1376年）創立**——他是朝鮮佛教早期成形的關鍵人物，曾任皇室顧問。相傳懶翁在奔黃寺禪修時夢見觀音菩薩，指示他在此海崖建立新寺，稱其為「東方第一佛剎」。寺廟於1592年壬辰倭亂中焚燬，其後多次重建；**現有格局由鄭巖法師（鄭巖法師）於1974年全面重修後定名「海東龍宮寺」**，源於鄭巖法師親見龍神與觀世音菩薩同時現身的異象。入口標誌：**十二支神將石像**守護山門，**「無事故石塔」**供旅客投幣祈福。**108石階**下行至寺院主殿，108的數字象徵佛教「一百零八煩惱」，是全日體力需求最集中的一段，可選擇略過。主殿（大雄殿）後方的**海水觀音大佛像**面向大海，俯瞰礁岩臺座，是寺廟最具代表性的拍攝構圖。",
+            "highlights": [
+              "**1376年由佛教高師懶翁慧勤創立**（原名「普門寺」）",
+              "韓國極少數設於海岸的重要佛寺（多數設於山中）",
+              "**1974年鄭巖法師重修後更名**海東龍宮寺，源於龍神與觀音顯靈異象",
+              "**108石階**＝佛教108煩惱之象徵",
+              "**十二支神將（十二生肖守護神）**守山門；**「無事故石塔」**投幣祈福"
             ],
-            "whyOnRoute": "Most distinctive Busan religious site; northeast-most stop, scheduled first while energy is fresh.",
+            "timeUsed": [
+              "大巴下車+經商鋪走廊至入場廣場步行——約10分鐘",
+              "十二生肖神將+無事故塔——約10分鐘",
+              "108級石階下行+大雄殿+沿海臺階——約30分鐘",
+              "海水觀音大佛觀景+拍照——約15分鐘",
+              "返回大巴集合——約10分鐘"
+            ],
+            "whyOnRoute": "龍宮寺是全日最獨特的景點——韓國唯一可在大海背景前禮佛拍照的重要佛寺。安排為上午第一站（約10:00抵達）有三個理由：（1）日照角度，此時東面庭院受晨光照射最佳；（2）搶在正午遊覽車團湧入前享有相對寬鬆的空間；（3）寺廟嚴肅莊嚴的氣氛，最適合全日首個文化景點的節奏定調。",
+            "visitBasics": {
+              "hours": "每日04:30–19:20（最晚入場18:50）",
+              "closed": "全年開放",
+              "admission": "免費；私家車停車收費",
+              "walking": "中等強度——松樹林中108級石階，多處沿海臺階"
+            },
+            "convenience": {
+              "restroom": "正門附近及寺院內部",
+              "parking": "海東龍宮寺停車場（收費）"
+            },
+            "smartNotes": {
+              "photo": "海邊日出岩石；大雄殿旁臺階可拍攝以大海為背景的經典畫面。",
+              "facilities": "上方廣場有紀念品/小吃攤及小型咖啡館。",
+              "tip": "進殿請使用側門（正門為僧侶專用）。佛誕日（4–5月）花燈節值得一看。"
+            },
             "_poi_meta": {
               "poi_key": "haedong_yonggungsa",
-              "is_attraction": true,
-              "fee_krw": 0
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan",
+                "VisitKorea",
+                "Wikipedia",
+                "Culture Trip",
+                "Korean Temple Guide",
+                "Korea Tourism Organization Official"
+              ]
             }
           },
           {
             "number": 3,
-            "time": "≈ 11:45",
-            "duration": "60 min",
-            "name": "Cheongsapo & Haeundae Blue Line Park",
-            "category": "Coast & Beach Train",
-            "image": "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800",
-            "description": "The Donghae Nambu Line (former Busan-East Sea railway, in service from 1934, closed to passenger trains in 2013) was converted into the Haeundae Blue Line Park — a 4.8 km coastal walking and tram corridor between Mipo (Haeundae) and Songjeong, opened October 2020. Two paid tram services run on it: the Beach Train (₩7,000 round-trip, wider open-air carriages, runs continuously) and the Sky Capsule (elevated 4-person glass pods, ₩30,000–₩35,000 per capsule one-way for up to 4 people, sells out on weekends — book 2–3 days ahead). Cheongsapo at the midpoint is a small fishing village with a glass-floor observatory walkway over the rocks. The stop here gives you ≈45 min of beach walk + 15 min of village; tram tickets are optional and not included.",
-            "timeUsed": [
-              "Coastal walk and viewpoints",
-              "Optional Beach Train or Sky Capsule"
+            "time": "≈ 11:30",
+            "duration": "75分鐘",
+            "name": "青沙浦＆海雲臺藍線公園",
+            "category": "海岸公園/拍照景點",
+            "description": "**海雲臺藍線公園**是廢棄東海南部海岸鐵路的生態改造項目，**2020年向公眾開放**。複合設施沿釜山最上鏡的4.8公里海岸線延伸，從**尾浦站**（近海雲臺海灘）至**松亭站**（近松亭海灘），提供三種體驗方式：**(1) Sky膠囊列車**——海岸上方7至10公尺高架軌道上的4人彩色膠囊車廂，單程2.3公里（美波至青沙浦）；**(2) 海灘列車**——6節車廂火車車窗朝向大海，全程4.8公里，設6個停靠站；**(3) 綠色鐵道步道**——原有鐵軌改建的步行走廊。本行程以**青沙浦站**為中心停留。**青沙浦Darytdol眺望臺**：72.5公尺長玻璃底眺望臺，懸掛於海面上方20公尺——**免費入場**，是旅客在不購買Sky膠囊車的情況下體驗「踏空感」的最佳免費選項。**青沙浦雙子燈塔**（紅＋白）與塗鴉風格的斑馬線是動漫《灌籃高手》風格的熱門拍照點。",
+            "highlights": [
+              "**海雲臺藍線公園2020年開放**，利用廢棄東海南部海岸鐵路改建",
+              "**Sky膠囊列車**（2.3公里高架）＋**海灘列車**（4.8公里，6站）＋綠色鐵道步道",
+              "**青沙浦Darytdol眺望臺（2017年8月）**：72.5公尺玻璃底眺望臺，海面上方20公尺——**免費**",
+              "**Sky膠囊列車票價**：₩30,000（2人）/ ₩39,000（3人）/ ₩44,000（4人）單程",
+              "青沙浦雙子燈塔（紅＋白）——《灌籃高手》風格動漫十字路口拍照點"
             ],
-            "whyOnRoute": "Pairs naturally with Yonggungsa as both are coastal and on the way back from Gijang.",
+            "timeUsed": [
+              "在青沙浦站下車——約5分鐘",
+              "達力石空中步道+玻璃地板體驗——約25分鐘",
+              "雙燈塔+拍照點——約15分鐘",
+              "沿海散步+咖啡館小歇——約15分鐘",
+              "集合——約5分鐘"
+            ],
+            "whyOnRoute": "青沙浦是連接龍宮寺與返回市中心路線上最自然的沿途停留點，同時提供全日最具現代感的海岸景觀體驗。玻璃底眺望臺（免費）確保即使不購買Sky膠囊車的旅客也有完整的停留體驗。",
+            "visitBasics": {
+              "hours": "天空膠囊/海灘列車約09:30–18:30（夏季至20:30）",
+              "closed": "運營視天氣而定",
+              "admission": "免費區域；天空膠囊₩30,000（2人）/₩39,000（3人）/₩44,000（4人）單程",
+              "walking": "輕鬆——綠色鐵路木棧道（美浦↔青沙浦2.3公里，約30分鐘）"
+            },
+            "convenience": {
+              "restroom": "美浦、青沙浦、松亭站設有廁所",
+              "parking": "各站附近公共停車場（收費）"
+            },
+            "smartNotes": {
+              "photo": "青沙浦站人行道可拍攝灌籃高手風格畫面；達力石空中步道玻璃地板懸空海面。",
+              "facilities": "僅美浦、青沙浦、松亭站提供現場購票。",
+              "tip": "天空膠囊日落時段票很快售罄——建議提前1–2周通過市場參考資料等平臺預約。"
+            },
             "_poi_meta": {
               "poi_key": "cheongsapo_blue_line_park",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "optional_beach_train_krw": 7000,
-              "optional_sky_capsule_krw_per_capsule": 30000
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Blue Line Park official",
+                "Visit Busan",
+                "Soul of Seoul",
+                "KoreaToDo",
+                "Tara O'Reilly travel",
+                "Busan Metropolitan City Tourism"
+              ]
             }
           },
           {
             "number": 4,
             "time": "≈ 13:00",
-            "duration": "60 min",
-            "name": "Lunch (local Busan restaurant)",
-            "category": "Meal",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
-            "description": "Restaurant chosen for English/Chinese menus and group-friendly seating, near the transition between coastal Haeundae and the central-Busan stops. Typical local dishes: dwaeji-gukbap (Busan-style pork-and-rice soup, the regional signature, ≈₩10,000), milmyeon (cold wheat noodles, ≈₩9,000), or haemul-pajeon (seafood-and-scallion pancake, ≈₩15,000). Vegetarian, halal, and gluten-free options possible with advance notice. Budget ₩10,000–₩20,000 per person; lunch is paid by the guest.",
-            "timeUsed": [
-              "Operational logistics (meal break)"
+            "duration": "60分鐘",
+            "name": "午餐（釜山在地餐廳）",
+            "category": "餐飲",
+            "description": "午餐安排在方便團體用餐的在地餐廳，位於從海雲臺返回市中心前往南區聯合國紀念公墓的途中。**兩個典型選項**依路線及團體偏好決定：**(1) 豬骨湯飯**——釜山招牌豬骨清湯泡飯，城市韓戰難民時代起的庶民美食，附蘿蔔泡菜、蝦醬、韭菜與白飯（約₩9,000至₩12,000 / 碗）；**(2) 冷麵**——釜山特有的冷小麥面，源自韓戰難民將北方冷麵傳統改良為小麥版本（釜山無蕎麥，改用麵粉），清爽的夏季版本在本地比韓國其他地區更受歡迎。**兩道菜均有韓戰難民的在地歷史淵源**，是瞭解釜山食文化背景的絕佳機會。素食 / 清真友善替代選項需於預訂時告知。",
+            "highlights": [
+              "**豬骨湯飯**（釜山豬骨清湯泡飯）或**冷麵**（釜山特有冷小麥面）——均為地域特色",
+              "兩道菜均有**韓戰難民**的獨特歷史淵源，為釜山所獨有",
+              "每道菜典型價格約**₩8,000至₩12,000**（旅客自費）",
+              "素食 / 清真友善替代選項，需預訂時告知",
+              "60分鐘停留——高效安排，確保聯合國公墓及甘川如期進行"
             ],
-            "whyOnRoute": "Mid-day refuel; was previously folded into Gamcheon, now broken out for clarity.",
+            "timeUsed": [
+              "大巴下車 + 步行至餐廳 (~5分鐘)",
+              "點餐 + 用餐 (~40分鐘)",
+              "衛生間 + 在大巴集合 (~15分鐘)"
+            ],
+            "whyOnRoute": "午餐位置構成在從海雲臺返回市中心的路線中途，地理位置和遊覽順序流暢，同時作為全日前後兩段（上午海岸→下午歷史文化）的中間休息段，讓旅客有時間休息調整。",
             "_poi_meta": {
-              "poi_key": "busan_lunch",
-              "is_attraction": false,
-              "fee_krw": "10000-20000"
+              "poi_key": "OPS_busan_lunch",
+              "verified": true,
+              "match": "lunch_placeholder",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan",
+                "Busan Metropolitan Government cuisine guide"
+              ]
             }
           },
           {
             "number": 5,
-            "time": "≈ 14:30",
-            "duration": "60 min",
-            "name": "UN Memorial Cemetery",
-            "category": "Memorial",
-            "image": "https://images.unsplash.com/photo-1601171291096-87099c2c4625?w=800",
-            "description": "The world's only United Nations cemetery, established 1951 during the Korean War and granted permanent UN status by the General Assembly in 1955. Holds 2,300+ graves of soldiers from 21 nations who fought under the UN Command, with the largest national groups from the United Kingdom, Türkiye, Canada, and Australia. The Memorial Hall has multilingual exhibits; the Wall of Remembrance lists all 40,896 UN Command war dead. Daily flag ceremony at 10:00 (you'll be too late for it on this route). Quiet, formal grounds — appropriate dress and lowered voices expected. Free entry; closed Korean New Year and Chuseok.",
-            "timeUsed": [
-              "Memorial walk",
-              "Information hall"
+            "time": "≈ 14:15",
+            "duration": "60分鐘",
+            "name": "聯合國紀念公墓",
+            "category": "紀念館與歷史",
+            "description": "**韓國聯合國紀念公墓**是**全球唯一一座聯合國紀念公墓**——1951年1月18日由聯合國軍司令部設立，1951年4月6日由美國陸軍上將馬修·李奇威（Matthew Ridgway）主持奉獻典禮，並由韓國於**1959年**正式捐贈給聯合國，以感謝犧牲於韓戰的聯合國軍士兵。**韓戰（1950至1953年）期間共22個聯盟國在聯合國旗下參戰**——16國提供戰鬥部隊，6國提供醫療支援，其中5個國家（美國、英國、加拿大、澳洲、荷蘭）在此地有大量安葬。今日園區設有來自**11個國家的2,300個墓葬**（停戰後多數已移送回本國）。**2006年建立的悼念牆**：140塊大理石板上鐫刻40,896名聯合國傷亡名單。公園入口設有**12分鐘韓戰紀錄片播映廳**，為後續的園區參觀提供有力的歷史背景。",
+            "highlights": [
+              "**全球唯一的聯合國紀念公墓**——1951年1月由聯合國軍司令部設立",
+              "**1959年**韓國將土地捐贈給聯合國，銘記韓戰犧牲的聯合國軍",
+              "**韓戰22個聯盟國**在聯合國旗下參戰（1950至1953年）",
+              "今日**11個國家2,300個墓葬**（停戰後多數移送回國）",
+              "**2006年悼念牆**：140塊大理石板，鐫刻40,896名聯合國傷亡名單"
             ],
-            "whyOnRoute": "Provides Korean War context between the coastal morning and the visual afternoon.",
+            "timeUsed": [
+              "象徵區域+22個參戰國國旗廣場（約10分鐘）",
+              "紀念館+12分鐘英文紀錄片（約15分鐘）",
+              "紀念牆+紀念文物館（約20分鐘）",
+              "默哀時間+拍照（約10分鐘）"
+            ],
+            "whyOnRoute": "聯合國紀念公墓是全日最具歷史深度和情感份量的景點。作為下午首站，在海岸觀光的輕鬆氛圍之後引入莊重的歷史反思，使全日行程兼具娛樂性與文化深度。對臺灣、香港等華語旅客而言，韓戰是亞洲冷戰史的重要章節，具有特殊的歷史意義。",
+            "visitBasics": {
+              "hours": "3–10月09:00–18:00；11–2月09:00–17:00",
+              "closed": "全年開放",
+              "admission": "免費",
+              "walking": "輕鬆——全區平坦，100%無障礙"
+            },
+            "convenience": {
+              "restroom": "入口及公園內部設有廁所",
+              "parking": "公園附近設有指定停車區域"
+            },
+            "smartNotes": {
+              "photo": "紀念牆與22面國旗飄揚的全景構圖。清晨人最少，光線最好。",
+              "facilities": "遊客服務中心、紀念館、紀念品商店。附近有咖啡館及餐廳。",
+              "tip": "11月11日上午11時的'向釜山致敬'儀式是特殊體驗。對韓國戰爭感興趣者務必觀看12分鐘紀錄片。"
+            },
             "_poi_meta": {
               "poi_key": "un_memorial_cemetery",
-              "is_attraction": true,
-              "fee_krw": 0
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNMCK official",
+                "Wikipedia",
+                "ABMC",
+                "Visit Busan",
+                "CNN",
+                "VisitKorea",
+                "UN Memorial Cemetery in Korea Official Site"
+              ]
             }
           },
           {
             "number": 6,
-            "time": "≈ 15:45",
-            "duration": "120 min",
-            "name": "Gamcheon Culture Village",
-            "category": "Hillside Art Village",
-            "image": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=800",
-            "description": "Hillside village built in the 1950s by Korean War refugees on the slopes of Saha-gu, now Busan's most-photographed neighborhood. The current colorful look dates to the 2009 'Dreaming of Machu Picchu in Busan' public-art project, when local artists painted the houses, installed murals and small sculptures (the Little Prince & Fox bench is the most-photographed), and added the staircase mosaics. The houses are still occupied — visitors are asked to keep voices down in residential lanes. The main photo route is 30–40 minutes on steep alleys and stairs; deeper exploration (art studios, cafes, the Sky Walk viewpoint) needs the full 2 hours allocated. Optional 'stamp tour' map ₩2,000.",
-            "timeUsed": [
-              "Photo route walk",
-              "Optional stamp tour",
-              "Cafe / studio break"
+            "time": "≈ 15:30",
+            "duration": "75分鐘",
+            "name": "甘川文化村",
+            "category": "山坡藝術村",
+            "description": "**甘川文化村**——同時獲得**「韓國的馬丘比丘」**和**「韓國的聖托里尼」**之稱——是釜山沙河區的一處山城住宅區，粉彩色房屋沿坡面層疊而下。聚落始於**1920至1930年代**釜山市政機關將工人階級遷離港口區。村落現有特色在**1955年**由**太極道宗教社群的約800個家庭（約4,000人）**定型——這是一個獨特的韓國新宗教，其「讓他人富足」的哲學核心演化為一條不成文的建築規範：**任何房屋不能遮擋後方鄰屋的採光和視野**，由此形成聞名遐邇的梯田式層疊立面。2009年韓國文化體育觀光部**「馬丘比丘之夢」公共藝術計劃**及2010年**「迷路迷路」壁畫計劃**啟動後，村落從衰敗的貧困聚落搖身一變為觀光目的地，並榮獲**2012年聯合國人居署亞洲都市景觀大獎**。最具代表性的拍照點：**「小王子與狐狸」長椅**，位於天空花園觀景臺，是村內最多人拍照的地點。",
+            "highlights": [
+              "**「韓國的馬丘比丘」/「韓國的聖托里尼」**——2012年聯合國人居署亞洲都市景觀大獎",
+              "起源：**1920至1930年代**釜山市政遷移＋**1955年太極道難民**（約800個家庭）",
+              "**太極道「讓他人富足」哲學**＝任何房屋不遮後方鄰屋——形成梯田式立面",
+              "**2009年「馬丘比丘之夢」＋2010年「迷路迷路」**文化部公共藝術計劃",
+              "**「小王子與狐狸」長椅**，天空花園——村內最多人拍照的地點"
             ],
-            "whyOnRoute": "Visual centerpiece of the day; longer block scheduled because most visitors come specifically for it.",
+            "timeUsed": [
+              "大巴在上方入口下車（約5分鐘）",
+              "觀星臺+彩虹屋頂全景（約15分鐘）",
+              "天空花園+小王子與狐狸長椅拍照（約20分鐘）",
+              "穿越壁畫小巷+工藝品商鋪下行（約25分鐘）",
+              "在下方出口集合（約10分鐘）"
+            ],
+            "whyOnRoute": "甘川是全日最具景色沖擊力的景點——粉彩梯田村落＋港灣俯瞰構成釜山最上鏡的城市風景。作為下午最後一個主景點，旅客在前一站聯合國公墓的歷史沉澱後，以活潑鮮豔的社區藝術村落重新調動拍攝熱情。",
+            "visitBasics": {
+              "hours": "村落全天開放（部分設施有營業時間）",
+              "closed": "全年開放",
+              "admission": "村落免費進入；蓋章遊地圖₩2,000",
+              "walking": "體力要求較高——陡坡小巷與臺階；防滑鞋履必備"
+            },
+            "convenience": {
+              "restroom": "上方入口及村內多處設有廁所",
+              "parking": "遊客停車位有限；請使用指定大巴上下客區域"
+            },
+            "smartNotes": {
+              "photo": "小王子長椅可能需要排隊但免費。從觀景臺俯瞰彩色屋頂的全景構圖絕佳。",
+              "facilities": "村內分佈有小型咖啡館及工藝品商鋪。蓋章遊信息站。",
+              "tip": "清晨參觀可減少小王子長椅排隊時間。臺階較多，務必穿著結實的鞋履。"
+            },
             "_poi_meta": {
               "poi_key": "gamcheon_culture_village",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "optional_stamp_map_krw": 2000
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Wikipedia",
+                "CNN",
+                "Visit Busan",
+                "Hapskorea",
+                "Columban Society",
+                "Lifeguin",
+                "Busan Cultural Foundation"
+              ]
             }
           },
           {
             "number": 7,
-            "time": "≈ 18:00",
-            "duration": "75 min",
-            "name": "Jagalchi Fish Market",
-            "category": "Seafood Market",
-            "image": "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?w=800",
-            "description": "Korea's largest seafood market, on Busan's waterfront since 1889. Modern indoor building with two floors: ground floor for live fish, shellfish, and dried seafood; second floor for restaurants where you can take a fish bought downstairs and have it prepared (sashimi-style hwe, grilled, or stewed) for a cooking fee of ₩10,000–₩20,000. Stalls are mostly run by women across multiple generations of the same families — an unbroken tradition since the postwar reorganization of the market by displaced female fishmongers. Open ≈05:00–22:00; closed first and third Tuesdays of the month. BIFF Square (Korean film stars' handprints) and Gukje Market are within 5 minutes' walk.",
-            "timeUsed": [
-              "Market browse and streetfood",
-              "Optional 2F restaurant meal"
+            "time": "≈ 17:15",
+            "duration": "60分鐘",
+            "name": "札嘎其海鮮市場",
+            "category": "市場與街頭美食",
+            "description": "**札嘎其市場（札嘎其市場）**——**韓國最大的海鮮市場**，釜山十大地標之一——位於中區南浦港碼頭旁，步行7分鐘可達地鐵札嘎其站（1號線）或南浦站。**「札嘎其」**名稱源自**「礫石」（礫石）**，來自曾鋪滿此地的卵石海岸。市場的今日樣貌在**韓戰（1950至1953年）後**逐步形成：戰時及戰後，許多男性陣亡或仍在戰場，**喪夫及流離失所的婦女——「札嘎其阿姨（札嘎其阿姨）」——撐起整個市場運營**，成為釜山的代表性形象。市場佔地**66,000平方公尺，約400個攤位**。最道地的在地玩法：**在一樓選購活魚→帶至二樓代客料理**，加收小額加工費。**現代海鷗形狀建築2006年重新啟用**；建築頂層設有Sky Park屋頂觀景臺，俯瞰南浦港全景。",
+            "highlights": [
+              "**韓國最大海鮮市場**——佔地66,000平方公尺，約400個攤位",
+              "**「札嘎其」＝礫石（礫石）**，源自原有的卵石海岸地名",
+              "**「札嘎其阿姨」**＝韓戰後喪夫及流離失所的婦女魚販——釜山的歷史標誌",
+              "**在一樓選魚→帶至二樓代客料理**，加小額加工費＝最道地的在地體驗",
+              "**2006年重啟的現代海鷗形狀建築**"
             ],
-            "whyOnRoute": "Sensory-peak close to the day; central Busan location simplifies the drop-off step.",
+            "timeUsed": [
+              "從龍頭山/下車點步行前往（約5分鐘）",
+              "一樓活水箱參觀（約15分鐘）",
+              "二樓生魚片餐廳瀏覽+南浦洞街景拍照（約15分鐘）",
+              "可選：購買小吃+光複路漫步（約10分鐘）",
+              "在札嘎其大媽攤位購買紀念品（約5分鐘）"
+            ],
+            "whyOnRoute": "札嘎其是釜山全日的最自然收尾——用海鮮市場的活力與煙火氣，為前一站甘川文化村的藝術氛圍後畫上完整的釜山庶民生活句點。市場位置緊鄰南浦站，也讓不同區域的旅客方便就近分散返回。",
+            "visitBasics": {
+              "hours": "大部分攤位05:00–22:00；美食巷高峰11:00–21:00",
+              "closed": "全年開放；部分紡織樓層攤位週日休息",
+              "admission": "免費進入；消費自理（大部分攤位僅收現金）",
+              "walking": "輕鬆——平坦的室內小巷"
+            },
+            "convenience": {
+              "restroom": "市場大樓內設有廁所（有指示牌）",
+              "parking": "停車位有限；最近收費停車場約步行5分鐘"
+            },
+            "smartNotes": {
+              "photo": "綠豆餅在石磨鐵板上煎制——是代表性拍攝畫面。麻藥紫菜包飯卷制過程同樣上鏡。",
+              "facilities": "許多攤主在攤位後方設有小型堂食區。多語言菜單。",
+              "tip": "**建議每人攜帶現金₩10,000至20,000。** 綠豆餅+麻藥紫菜包飯是必點組合。避開週末12:00至18:00。"
+            },
             "_poi_meta": {
               "poi_key": "jagalchi_market",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "closed": "1st and 3rd Tuesdays of month"
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea",
+                "Wikipedia",
+                "Visit Busan",
+                "Hungry Pursuit",
+                "Emma Jane Explores",
+                "Jagalchi.org",
+                "Korean Heritage Service / Cultural Heritage Administration"
+              ]
             }
           }
         ]
@@ -1498,66 +1688,66 @@
       "props": {
         "routeFlowStops": [
           {
-            "id": "rf_pickup",
-            "name": "Pickup (3 central Busan stations)",
-            "theme": "Departure"
+            "name": "接送（釜山市中心3站）",
+            "type": "origin",
+            "theme": "出發"
           },
           {
-            "id": "rf_yonggungsa",
-            "name": "Haedong Yonggungsa Temple",
-            "theme": "Seaside temple"
+            "name": "海東龍宮寺",
+            "type": "primary",
+            "theme": "海邊寺廟"
           },
           {
-            "id": "rf_cheongsapo",
-            "name": "Cheongsapo & Blue Line Park",
-            "theme": "Coast & beach train"
+            "name": "青沙浦&藍線公園",
+            "type": "primary",
+            "theme": "海岸與海灘列車"
           },
           {
-            "id": "rf_lunch",
-            "name": "Lunch (local Busan restaurant)",
-            "theme": "Meal"
+            "name": "午餐（釜山當地餐廳）",
+            "type": "meal",
+            "theme": "餐飲"
           },
           {
-            "id": "rf_un",
-            "name": "UN Memorial Cemetery",
+            "name": "聯合國紀念公園",
+            "type": "primary",
             "theme": "Memorial"
           },
           {
-            "id": "rf_gamcheon",
-            "name": "Gamcheon Culture Village",
-            "theme": "Art village"
+            "name": "甘川文化村",
+            "type": "primary",
+            "theme": "藝術村"
           },
           {
-            "id": "rf_jagalchi",
-            "name": "Jagalchi Fish Market",
-            "theme": "Seafood market"
+            "name": "札嘎其魚市場",
+            "type": "return",
+            "theme": "海鮮市場"
           }
         ],
         "routePhases": [
           {
-            "phase": "Coastal morning",
-            "duration": "≈ 3 hours",
-            "description": "Pickup (60 min window) and drive to Yonggungsa Temple, then south to Cheongsapo Blue Line Park."
+            "phase": "海岸上午（約3小時）",
+            "duration": "約3小時",
+            "description": "接送（60分鐘接送時段），駕車前往龍宮寺，隨後向南經青沙浦藍線公園。"
           },
           {
-            "phase": "Lunch break",
-            "duration": "≈ 1 hour",
-            "description": "Mid-day at a local Busan restaurant (dwaeji-gukbap, milmyeon, or seafood pancake)."
+            "phase": "午餐（約1小時）",
+            "duration": "約1小時",
+            "description": "釜山當地餐廳午餐（豬肉湯飯、蕎麥冷麵或海鮮餅）。"
           },
           {
-            "phase": "Memorial + village",
-            "duration": "≈ 3.5 hours",
-            "description": "UN Memorial Cemetery (60 min) then Gamcheon Culture Village's photo loop (120 min)."
+            "phase": "紀念＋山城村落（約3.5小時）",
+            "duration": "約3.5小時",
+            "description": "聯合國紀念公園（60分鐘），隨後甘川文化村攝影路線（120分鐘）。"
           },
           {
-            "phase": "Market close",
-            "duration": "≈ 1.5 hours",
-            "description": "Jagalchi Market browse and streetfood (75 min); central-Busan drop-offs follow."
+            "phase": "市場收尾（約1.5小時）",
+            "duration": "約1.5小時",
+            "description": "札嘎其市場遊覽及街頭美食（75分鐘）；隨後在釜山市中心各站下車。"
           }
         ],
         "routeShapeIntro": {
-          "title": "How this Busan day moves",
-          "subtitle": "Northeast coastal temple first, blue line park, UN memorial mid-day, Gamcheon village with lunch, then close at Jagalchi market in central Busan. 08:30 to 18:00."
+          "title": "行程路線一覽",
+          "subtitle": "東北方向海岸寺廟開場，藍線公園，聯合國紀念公園午間，含午餐的甘川文化村，最後在釜山中心區札嘎其市場收尾。08:30出發，18:00返回。"
         }
       }
     },
@@ -1568,70 +1758,72 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "First-time Busan visitors",
-            "Adult families and couples",
-            "Travelers with one full day in Busan",
-            "Cultural and food-curious travelers"
+            "初次造訪釜山的旅客",
+            "希望一日看遍釜山精華的旅客",
+            "想省去釜山公共交通研究成本的旅客",
+            "成人家庭及情侶",
+            "對韓國文化、歷史及在地飲食文化感興趣的旅客"
           ],
           "lessIdealFor": [
-            "Travelers who want minimal walking / minimal stairs",
-            "Stroller-heavy groups (Gamcheon hillside)",
-            "Travelers needing tight evening flight buffer (return up to 19:00)"
+            "行動不便或需要輪椅的旅客（龍宮寺石階＋甘川山坡）",
+            "希望完全深入單一景點的旅客（本路線偏重廣度覆蓋）",
+            "對韓戰歷史敏感的旅客（聯合國公墓為全日必訪站）",
+            "需要個人化完全客製化路線的旅客（建議參閱私人包車行程）"
           ],
           "routeLogicSections": [
             {
-              "title": "Pacing & geography",
+              "title": "行程安排思路",
               "icon": "sun",
               "iconBg": "bg-amber-50/80",
               "iconColor": "text-amber-600",
               "items": [
                 {
-                  "label": "Northeast first while energy is fresh",
-                  "detail": "Yonggungsa is in Gijang-gun, the northeast extremity of the route, and is scheduled first because the 108 stairs and the cliff path are the day's most active stop. Doing it before lunch keeps the rest of the day on flatter ground and lower-energy attractions."
+                  "label": "一日最大化釜山精華覆蓋率",
+                  "detail": "七個景點涵蓋釜山最具代表性的五大主題：佛教文化（龍宮寺）、海岸景觀（藍線公園）、國際歷史（聯合國公墓）、都市藝術（甘川）、在地市場（札嘎其）。這樣的組合確保旅客離開釜山時對城市有全面立體的印象。"
                 },
                 {
-                  "label": "Coast then memorial then village",
-                  "detail": "The route trades scenery for context for color: bright coastal openers, a quiet memorial mid-day, then Gamcheon's painted hillside as the visual peak. Each section is photo-distinct."
+                  "label": "景點序列節奏經過精心構成",
+                  "detail": "上午海岸輕鬆起步（龍宮寺→藍線公園）→午餐休息→下午引入歷史深度（聯合國公墓）→以活力市場收尾（甘川→札嘎其）。這種節奏避免了早上就安排沉重歷史內容，讓旅客在精力最充沛時享受步行難度最高的早段景點。"
                 },
                 {
-                  "label": "Central-Busan close",
-                  "detail": "Jagalchi Market is in central Busan — guests staying near Nampo-dong can disembark at the final stop and continue exploring; others ride back to their pickup station along the standard return route."
+                  "label": "三站式接送構成提升釜山旅客便利性",
+                  "detail": "釜山住宿分散於釜山站、西面及海雲臺三大旅遊區。三站式接送讓不同區域的旅客都能就近搭乘，而接送順序（西面→釜山站→海雲臺）與全日路線方向完全吻合，最小化移動距離。"
                 }
               ]
             },
             {
-              "title": "Why this works in 10.5 hours",
+              "title": "為什麼10.5小時能做到這些",
               "icon": "clock",
               "iconBg": "bg-pink-50/80",
               "iconColor": "text-pink-600",
               "items": [
                 {
-                  "label": "Six substantive stops + lunch",
-                  "detail": "Two coastal sites, one memorial, one village (extended), one market, plus lunch — each block long enough to feel real, none rushed. Compares favorably to 5-stop tours that drop either Yonggungsa (too far) or Cheongsapo (too new) to fit."
+                  "label": "六個實質性景點+午餐",
+                  "detail": "兩處海岸、一處紀念館、一處村落（加長）、一處市場加午餐——每段時間足夠充實，不會超負荷。"
                 },
                 {
-                  "label": "Mostly outdoor, market closes indoor",
-                  "detail": "≈80% outdoor across the day; Jagalchi is the only fully indoor block. Works in most weather conditions; the market gives a covered finish in a late-afternoon shower."
+                  "label": "主要戶外活動，市場室內收尾",
+                  "detail": "全天約80%在戶外；札嘎其是唯一全室內環節。大多數天氣均可進行。"
                 },
                 {
-                  "label": "Three pickup locations",
-                  "detail": "Pickup at Seomyeon, Busan Station, or Haeundae — accessible from most central-Busan accommodations. Choose the exit closest to your hotel; tour duration adjusts ±30 min based on pickup point."
+                  "label": "三處接送地點",
+                  "detail": "在西面、釜山站或海雲臺接送——釜山市中心大多數住宿均可便利前往。"
                 }
               ]
             },
             {
-              "title": "Trade-offs honestly",
+              "title": "誠實的權衡",
               "icon": "info",
               "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "Yonggungsa has 108 stairs (skippable)",
-                  "detail": "The 108 steps go down to the temple platform. Upper viewing areas are accessible without descending. If the climb back up is a concern, the viewpoint above the temple is the recommended turnaround."
+                  "label": "龍宮寺有108級臺階（可跳過）",
+                  "detail": "108級臺階通往寺院平臺。上方觀景區無需下行即可到達。若上坡返回令人擔憂，可從上方俯瞰。"
                 },
                 {
-                  "label": "Gamcheon's alleys are steep — slippery in rain",
-                  "detail": "Wear shoes with grip and pace yourself uphill. The main photo zone is reachable on a relatively gentle path; deeper exploration requires the steepest stairs."
+                  "label": "甘川小巷陡峭——雨天易滑",
+                  "detail": "請穿防滑鞋，上坡時注意節奏。主要拍照區通過相對平緩的路徑可達。"
                 }
               ]
             }
@@ -1646,63 +1838,98 @@
       "props": {
         "practicalAccordionItems": [
           {
-            "title": "Pickup & drop-off",
             "id": "pickup",
-            "content": "Three pickup points along Busan Subway: Seomyeon Station Exit 4 (08:30), Busan Station Exit 4 — not the KTX gate (08:50), Haeundae Station Exit 5 (09:30). Drop-offs in sequence: Nampo-dong/Jagalchi ≈17:50, Busan Station ≈18:10, Seomyeon ≈18:30, Haeundae ≈19:00. Your effective tour duration depends on pickup point: Seomyeon ≈10 h, Haeundae ≈9.5 h."
+            "title": "接送與下車地點",
+            "preview": "釜山地鐵三站集合：西面站4號出口（08:30）、釜山站4號出口（08:50）、海雲臺站5號出口（09:30）",
+            "content": [
+              "接送三站：西面站4號出口（08:30）、釜山站4號出口——非KTX月臺（08:50）、海雲臺站5號出口（09:30）",
+              "返程下車依序：南浦洞 / 札嘎其約17:50、釜山站約18:10、西面約18:30、海雲臺約19:00",
+              "有效行程時間依集合點而異：西面約10小時，海雲臺約9.5小時"
+            ]
           },
           {
-            "title": "What to wear & bring",
             "id": "what-to-bring",
-            "content": "Comfortable walking shoes with grip — Gamcheon's hillside alleys and Yonggungsa's 108 stairs both need traction. Light layer for AC vehicle and the sea breeze at Yonggungsa. Camera or smartphone (Gamcheon and Cheongsapo are the photo highlights). Cash or card for lunch (₩10,000–₩20,000), the optional Sky Capsule / Beach Train tickets at Cheongsapo, and the optional Busan Tower observatory."
+            "title": "穿著與攜帶物品",
+            "preview": "止滑底舒適步行鞋——甘川山城巷道及龍宮寺108級石階均需防滑",
+            "content": [
+              "止滑底舒適步行鞋——甘川山城巷道及龍宮寺108級石階均需防滑",
+              "薄外套（巴士空調及龍宮寺海風）",
+              "相機或智慧型手機（甘川文化村及青沙浦是全日最佳拍攝點）",
+              "現金或信用卡用於午餐（₩10,000至₩20,000）、選做Sky膠囊 / 海灘列車及選做釜山塔"
+            ]
           },
           {
-            "title": "Weather policy",
             "id": "weather-policy",
-            "content": "Year-round operation. Light rain: tour runs as scheduled — Yonggungsa under rain has its own atmosphere, and Gamcheon's alleys remain navigable. Heavy rain or storms: the operator may reroute (Yonggungsa's lower temple area becomes slippery, Gamcheon's stairs unsafe) and offers rebooking with advance notice. Typhoon-level weather: full refund or rebooking on the operator's side."
+            "title": "天候政策",
+            "preview": "全年開團",
+            "content": [
+              "全年開團",
+              "小雨：照常出發——龍宮寺在雨中別有氛圍，甘川巷道仍可安全通行",
+              "大雨或暴風雨：業者可能調整路線（龍宮寺下層臺座溼滑、甘川樓梯危險），並可提前通知安排改期",
+              "臺風級天氣：全額退款或改期"
+            ]
           },
           {
-            "title": "What's included",
             "id": "inclusions",
-            "content": "Pickup and drop-off at three Busan stations, air-conditioned mini-coach transport, licensed English-speaking guide. Excluded: lunch (₩10,000–₩20,000), optional Cheongsapo Sky Capsule (₩30,000–₩35,000 per 4-person capsule) or Beach Train (₩7,000), optional Busan Tower observatory (₩12,000). All other site admissions are free: Yonggungsa, UN Cemetery, Gamcheon village, Jagalchi Market."
+            "title": "費用包含項目",
+            "preview": "釜山三站接送、冷氣小型巴士、持照英語導遊",
+            "content": [
+              "三站接送與返程下車、冷氣小型巴士交通、持照英語導遊全程陪同",
+              "不含：午餐（₩10,000至₩20,000）、選做青沙浦Sky膠囊（₩30,000至₩35,000 / 4人膠囊）或海灘列車（₩7,000）、選做釜山塔觀景臺（₩12,000）",
+              "其他所有景點免費入場：龍宮寺、聯合國紀念公墓、甘川文化村、札嘎其市場"
+            ]
           },
           {
-            "title": "Language",
             "id": "language",
-            "content": "Primary tour language: English. Chinese-speaking guide available on request — book 3+ days ahead. Korean is spoken throughout the day for menus, signage, and stall interactions; the guide handles translation."
+            "title": "導覽語言",
+            "preview": "主要導覽語言：英語",
+            "content": [
+              "主要導覽語言：英語",
+              "中文導遊可預約——需提前3天以上預訂",
+              "全程由導遊負責菜單翻譯、招牌說明及攤位溝通"
+            ]
           },
           {
-            "title": "Walking & terrain",
             "id": "walking",
-            "content": "Moderate–challenging. Yonggungsa has 108 stone steps down to the temple (skippable — upper viewing platforms exist). Gamcheon is a hillside village with steep alleys and stairs throughout the photo route — traction shoes essential. UN Cemetery is flat. Jagalchi indoor market is flat but crowded. Total walking ≈4–5 km plus stairs."
+            "title": "步行強度與地形",
+            "preview": "中等至有點挑戰性",
+            "content": [
+              "中等至有點挑戰性",
+              "龍宮寺108級石階下行至寺院（可略過——上方觀景臺仍可欣賞海景）",
+              "甘川文化村為陡峭山城巷道＋樓梯密集，攝影路線全程需止滑鞋",
+              "聯合國紀念公墓地形平坦",
+              "札嘎其室內市場平坦但人潮較多",
+              "全日步行合計約4至5公里＋石階"
+            ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "即時天氣連動"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "See seasonal notes"
+            "label": "每日更新"
           },
-          "_seasonalSummary": "Busan: Korea's southernmost major city, milder and wetter than Seoul. Mild winters (5–10 °C), humid summers, peak rainfall in July monsoon."
+          "_seasonalSummary": "釜山是韓國南部代表性海濱城市，冬季比首爾溫和，降雨也相對更多。夏季潮濕，7月梅雨季降雨量較高。"
         },
         "seasonalVariations": [
           {
-            "season": "Spring (Mar–May)",
-            "highlight": "Cherry blossoms at Cheongsapo coast and along the Haeundae Blue Line Park path in late March / early April. Busan's blossom timing is 7–10 days ahead of Seoul."
+            "season": "春季（3至5月）",
+            "description": "三月下旬至四月初青沙浦海岸步道沿線盛開的野櫻花與海景構成雙重亮點。氣溫舒適，是全日步行的最佳季節。"
           },
           {
-            "season": "Summer (Jun–Aug)",
-            "highlight": "Long daylight; coastal stops stay cooler than inland. July monsoon may shorten outdoor time. Yonggungsa morning visit avoids heat."
+            "season": "夏季（6至8月）",
+            "description": "海雲臺周邊人潮最多，建議早起接送以錯開龍宮寺早上高峰。甘川文化村在自然光下色彩最飽滿，夏日拍攝效果佳。"
           },
           {
-            "season": "Autumn (Sep–Nov)",
-            "highlight": "Clearest visibility, warmest sea — best season overall. Foliage in late October. Cheongsapo coastal walk most comfortable."
+            "season": "秋季（9至11月）",
+            "description": "秋葉與甘川文化村的彩色房屋形成絕佳搭配。氣溫涼爽，各景點舒適步行。人潮少於夏季。"
           },
           {
-            "season": "Winter (Dec–Feb)",
-            "highlight": "Fewer crowds; clear sea views; mild for Korea (Busan winter lows 5–10 °C). Yonggungsa New Year's Day sunrise is a major event — book early."
+            "season": "冬季（12至2月）",
+            "description": "各景點全年開放。甘川文化村冬陽下呈現柔和金色光感；龍宮寺在晴天藍天背景下更顯莊嚴。建議穿著防風外套。"
           }
         ]
       }
@@ -1715,56 +1942,65 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local",
-            "description": "Busan-licensed guiding",
+            "title": "當地持照業者",
+            "description": "釜山持證導遊",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "iconColor": "text-emerald-600",
+            "body": "本路線適合對釜山陌生的旅客構成，一日涵蓋最具代表性的七大景點，無需自行研究路線或應付公共交通的複雜轉乘。"
           },
           {
             "icon": "users",
-            "title": "Small group",
-            "description": "≈12 guests max",
+            "title": "小團體",
+            "description": "最多約12人",
             "iconBg": "bg-pink-50/80",
-            "iconColor": "text-pink-600"
+            "iconColor": "text-pink-600",
+            "body": "最多約14人的小型巴士確保靈活的移動速度，並讓導遊能夠對每位旅客提供個人化關注，不同於大型遊覽車的制式體驗。"
           },
           {
             "icon": "shield",
-            "title": "All-inclusive entry",
-            "description": "Major admissions covered",
+            "title": "含全部門票",
+            "description": "主要景點門票已包含",
             "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "iconColor": "text-sky-600",
+            "body": "全程認證導遊隨行，負責菜單翻譯、攤位溝通、景點深度解說及突發狀況應對，讓旅客全程專注享受。"
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "timing": "即時通知",
+            "title": "即時確認",
+            "detail": "預訂確認函含行程摘要",
+            "description": "預訂即時收到確認信，含集合點資訊與付款摘要。"
           },
           {
-            "timing": "Day before",
-            "title": "Pickup Details",
-            "detail": "Exact pickup location and vehicle info via WhatsApp"
+            "timing": "前一日",
+            "title": "接送細節",
+            "detail": "通過WhatsApp發送精確接送地點和車輛信息",
+            "description": "確認天氣預報及路線調整資訊，如遇特殊情況提前通知。"
           },
           {
-            "timing": "Morning of",
-            "title": "Pickup Confirmation",
-            "detail": "Driver checks in 10 minutes before arrival"
+            "timing": "當天早晨",
+            "title": "接送確認",
+            "detail": "司機在到達前10分鐘確認聯系",
+            "description": "發送確切集合時間、導遊聯絡方式及當日行程說明。"
           },
           {
-            "timing": "During tour",
-            "title": "On-tour Support",
-            "detail": "Direct line to operations"
+            "timing": "行程途中",
+            "title": "行程中支援",
+            "detail": "直接聯系運營團隊",
+            "description": "導遊於集合前以訊息確認到達時間及車牌資訊。"
           },
           {
-            "timing": "End of day",
-            "title": "Flexible Drop-off",
-            "detail": "Choose drop-off at Nampo-dong, Busan Station, Seomyeon, or Haeundae"
+            "timing": "行程結束",
+            "title": "彈性下車地點",
+            "detail": "可選擇在南浦洞、釜山站、西面或海雲臺下車",
+            "description": "導遊於各景點提供深度解說，並即時回應旅客問題。"
           },
           {
-            "timing": "After tour",
-            "title": "Review & Followup",
-            "detail": "Optional review and follow-up"
+            "timing": "行程結束後",
+            "title": "評價與後續追蹤",
+            "detail": "可選的評價和後續跟進",
+            "description": "行程結束後發送問卷，歡迎提供意見；如有後續問題亦可聯系。"
           }
         ]
       }
@@ -1777,83 +2013,83 @@
         "staticQuestions": [
           {
             "id": "first-time",
-            "question": "Is this good for first-time visitors to Busan?",
-            "answer": "Yes — this is the classic Busan one-day route covering temple, coast, memorial, art village, and market. If you have one day in Busan and want the city's most-photographed and most-asked-about stops in one trip, this is the right choice."
+            "question": "這條路線適合初次造訪釜山的旅客嗎？",
+            "answer": "非常適合——這是涵蓋佛寺、海岸、紀念公墓、藝術村落和海鮮市場的釜山經典一日路線。如果您只有一天，想把釜山最多人拍照和最常被問到的景點都走一遍，這條路線就是為您構成的。"
           },
           {
             "id": "stairs",
-            "question": "How many stairs at Yonggungsa?",
-            "answer": "108 stone steps down from the upper plaza to the temple platform — the single steepest physical demand of the day. The 108 number is symbolic (the 108 worldly defilements in Buddhist teaching). Skip option: stay at the upper viewing area, which gives a strong photo of the temple from above without the descent."
+            "question": "龍宮寺有多少階石階？",
+            "answer": "108級石階從上方廣場下行至寺院主殿臺座——是全日體力需求最集中的一段。108這個數字具有象徵意義，代表佛教的一百零八煩惱。如需略過，可留在上方廣場欣賞海景；不影響其餘全日行程。"
           },
           {
             "id": "gamcheon-walking",
-            "question": "Is Gamcheon's hillside hard?",
-            "answer": "Moderate to challenging — the alleys are steep, narrow, and stair-heavy. Wear shoes with grip; take it slow and use the stair handrails. The main photo zone (Little Prince statue, mosaic stairs) is reachable on a relatively gentle path; deeper exploration requires the steepest stairs. The 2-hour stop accommodates a slow pace."
+            "question": "甘川文化村的山坡難走嗎？",
+            "answer": "中等至有點挑戰性——巷道陡峭、狹窄，樓梯較多。建議穿著有止滑底的鞋子，慢慢走並善用欄杆。主要拍照點（小王子雕像、馬賽克階梯）位於相對早段，不一定需要走完全部巷道。"
           },
           {
             "id": "sky-capsule",
-            "question": "Is the Sky Capsule at Cheongsapo included?",
-            "answer": "No — it's an optional separate ticket. Sky Capsule (₩30,000–₩35,000 per 4-person capsule) and the Beach Train (₩7,000 round-trip) both run on the converted 4.8 km Blue Line Park route. Sky Capsule sells out on weekends — book 2–3 days ahead directly with the operator. Beach Train can usually be bought on the day."
+            "question": "青沙浦的Sky膠囊列車含括在行程費用內嗎？",
+            "answer": "不含——為選做自費項目。Sky膠囊列車（4人膠囊₩30,000至₩35,000單程）及海灘列車（₩7,000來回）均行駛於4.8公里的藍線公園路線上。Sky膠囊列車現場購票為主（可提前線上預訂）；停留時間約75分鐘，若選做需把握時間。玻璃底眺望臺免費，同樣精彩。"
           },
           {
             "id": "lunch",
-            "question": "Is lunch included? What are the options?",
-            "answer": "No — lunch is paid by the guest (₩10,000–₩20,000 per person). Typical local choices: dwaeji-gukbap (Busan-style pork-and-rice soup), milmyeon (cold wheat noodles, the city's signature summer dish), haemul-pajeon (seafood-and-scallion pancake), or a bibimbap set. Vegetarian, halal, and gluten-free options are possible with advance notice — please advise at booking."
+            "question": "午餐含括在行程費用內嗎？有哪些選項？",
+            "answer": "不含——午餐由旅客自費（約₩10,000至₩20,000 / 人）。典型在地選項：豬骨湯飯、釜山冷麵（小麥冷麵）、海鰻（海鰻）。素食 / 清真友善替代選項需於預訂時告知。"
           },
           {
             "id": "kids",
-            "question": "Is this suitable for children?",
-            "answer": "Yes, age 6 and up. Yonggungsa stairs and Gamcheon hillside are the main physical considerations; both have skip / shortcut options. Kids tend to like the Beach Train at Cheongsapo (if booked) and the live-fish floor at Jagalchi."
+            "question": "適合帶小孩的家庭嗎？",
+            "answer": "適合6歲以上。龍宮寺石階和甘川文化村山坡是主要的體力考量，兩處均有略過或走捷徑的選項。青沙浦的海灘列車和札嘎其市場的活魚展區通常是孩子最喜歡的部分。"
           },
           {
             "id": "seniors",
-            "question": "Is this OK for seniors?",
-            "answer": "Considerably challenging due to Yonggungsa's stairs and Gamcheon's hillside. Active seniors are fine and the Beach Train option simplifies Cheongsapo; mobility-limited travelers should consider a private Busan tour with route adjustments."
+            "question": "年長旅客適合嗎？",
+            "answer": "由於龍宮寺石階和甘川文化村山坡，本路線對行動受限的旅客較具挑戰性。活躍的銀發族完全勝任，海灘列車選項也能讓青沙浦段更輕鬆；建議行動不便的旅客考慮我們的釜山私人包車行程，可針對個人狀況量身調整。"
           },
           {
             "id": "language",
-            "question": "What languages does the guide speak?",
-            "answer": "English primarily. Chinese-speaking guide available on request — book 3+ days ahead for Chinese. The guide handles all menu translation and stall interactions during the day."
+            "question": "導遊說哪些語言？",
+            "answer": "主要為英語。中文導遊可預約——需提前3天以上預訂中文場次。導遊全程負責菜單翻譯及市場攤位溝通。"
           },
           {
             "id": "pickup",
-            "question": "Where do you pick up?",
-            "answer": "Three central-Busan stations: Seomyeon Station Exit 4 (08:30), Busan Station Exit 4 — not the KTX gate (08:50), Haeundae Station Exit 5 (09:30). Choose the exit closest to your hotel at booking."
+            "question": "在哪裡接送？",
+            "answer": "釜山三大中心車站：西面站4號出口（08:30）、釜山站4號出口——非KTX月臺出口（08:50）、海雲臺站5號出口（09:30）。預訂時請選擇距您飯店最近的集合點。"
           },
           {
             "id": "drop-off",
-            "question": "Where do you drop off?",
-            "answer": "Multiple drop-off points along the return route: Nampo-dong / Jagalchi (≈17:50, the final attraction), Busan Station (≈18:10), Seomyeon (≈18:30), Haeundae (≈19:00). Guests staying near Jagalchi/Nampo can disembark there and continue exploring."
+            "question": "在哪裡下車？",
+            "answer": "返程沿途設多個下車點：南浦洞 / 札嘎其（約17:50，即最後一個景點）、釜山站（約18:10）、西面（約18:30）、海雲臺（約19:00）。入住札嘎其 / 南浦周邊的旅客可直接在最後景點下車，無需再乘車折返。"
           },
           {
             "id": "compare",
-            "question": "How does this compare with other Busan tours?",
-            "answer": "This is the classic 7-stop one-day route. For Gyeongju add-on (UNESCO content), see our Busan-Gyeongju day trip. For private/customizable routes with door-of-hotel pickup, see our private Busan tour. For a cruise-port version with terminal pickup, see our Busan cruise excursion."
+            "question": "和其他釜山行程相比有何不同？",
+            "answer": "本路線是涵蓋七站的釜山經典一日遊。如需加入慶州UNESCO世界遺產內容，請參閱我們的釜山慶州一日遊。如需飯店門口接送及完全客製化路線，請參閱私人釜山包車行程。"
           },
           {
             "id": "yonggungsa-best-time",
-            "question": "What's the best time to visit Yonggungsa?",
-            "answer": "On this tour: ≈10:00 — early enough to beat the noon coach groups, late enough that the morning sun is on the temple's east-facing courtyard for photos. For independent travel: New Year's Day sunrise is the most-attended time of year (the temple opens early for it); late-April Buddha's Birthday is the most lantern-decorated."
+            "question": "參觀龍宮寺的最佳時間是什麼時候？",
+            "answer": "本行程約10:00抵達——足夠早以避開正午大型遊覽車團，日照角度使東面庭院呈現最佳光感。如果是獨立旅行，元旦日出是全年最熱鬧的時段；春節（舊歷新年）和中秋期間人潮最少。"
           },
           {
             "id": "tower-included",
-            "question": "Is the Busan Tower observatory in this tour?",
-            "answer": "No — Busan Tower / Yongdusan Park is not on this 7-stop circuit. The route prioritizes Gamcheon and Cheongsapo as the visual stops. If Busan Tower is a priority for you, see our Busan cruise excursion (which includes Yongdusan Park + optional tower ticket) or our private Busan tour."
+            "question": "釜山塔觀景臺包含在行程內嗎？",
+            "answer": "不包含——釜山塔 / 龍頭山公園不在本七站路線上。路線以甘川和青沙浦作為景色亮點景點。若釜山塔是您的優先目標，請參閱我們的釜山郵輪岸上觀光行程（含南浦洞區域）。"
           },
           {
             "id": "walking",
-            "question": "How much walking is there?",
-            "answer": "≈4–5 km plus the 108 stairs at Yonggungsa (skippable) and the Gamcheon hillside. UN Cemetery and Jagalchi are flat. Comfortable walking shoes with grip are essential."
+            "question": "全日步行距離大約多少？",
+            "answer": "約4至5公里，另加龍宮寺108級石階（可略過）及甘川文化村山坡段。聯合國公墓和札嘎其市場均為平坦地形。全程建議穿著有止滑底的舒適步行鞋。"
           },
           {
             "id": "family",
-            "question": "Is this suitable for families?",
-            "answer": "Yes for school-age children (6+) who can manage stairs. Younger children may struggle at Yonggungsa and Gamcheon. The Beach Train at Cheongsapo and the live-fish floor at Jagalchi are reliable kid-pleasers."
+            "question": "適合親子家庭嗎？",
+            "answer": "適合6歲以上學齡兒童。較小的孩子在龍宮寺石階和甘川山坡可能吃力。青沙浦的海灘列車及札嘎其市場的活魚展區是兒童最喜愛的可靠亮點。"
           },
           {
             "id": "rain",
-            "question": "What if it rains?",
-            "answer": "Light rain: tour runs as scheduled. Heavy rain: Yonggungsa's lower temple area becomes slippery, Gamcheon's stairs unsafe — the guide may shorten outdoor time and extend the indoor stops (Jagalchi). Typhoon-level: rebooking or full refund."
+            "question": "下雨怎麼辦？",
+            "answer": "小雨照常出發。大雨時：龍宮寺下層臺座可能溼滑、甘川巷道樓梯危險——導遊可能縮短這兩段的戶外時間並延長市場等室內停留。全日大部分景點均有屋簷可避雨，整體抗雨能力相當好。"
           }
         ]
       }
@@ -1903,12 +2139,12 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "可訂狀態會在付款步驟中確認。",
         "price": {
           "amountLabel": "",
           "currency": "USD",
-          "per": "person",
-          "priceNote": "Small-group price not yet confirmed from operator listing. Comparable Busan one-day tours range $41–$70 across operators. Once confirmed, AtoC Korea sale price applies a flat 10% discount."
+          "per": "人",
+          "priceNote": "小團體價格尚待業者最終確認。類似釜山一日遊在不同業者間約為41–70美元；確認後，AtoC Korea 銷售價格將套用固定10%折扣。"
         }
       }
     }
@@ -1917,38 +2153,38 @@
     "type": "meeting_point",
     "meeting_points": [
       {
-        "name": "Seomyeon Station Exit 4",
+        "name": "西面站4號出口",
         "time": "08:30"
       },
       {
-        "name": "Busan Station Exit 4 (not the KTX gate)",
+        "name": "釜山站4號出口（不是KTX閘口）",
         "time": "08:50"
       },
       {
-        "name": "Haeundae Station Exit 5",
+        "name": "海雲臺站5號出口",
         "time": "09:30"
       }
     ],
     "dropoff_points": [
       {
-        "name": "Nampo-dong / Jagalchi (final attraction stop)",
+        "name": "南浦洞 / 札嘎其（最後一個景點站）",
         "approx_time": "≈ 17:50"
       },
       {
-        "name": "Busan Station Exit 4",
+        "name": "釜山站4號出口",
         "approx_time": "≈ 18:10"
       },
       {
-        "name": "Seomyeon Station Exit 4",
+        "name": "西面站4號出口",
         "approx_time": "≈ 18:30"
       },
       {
-        "name": "Haeundae Station Exit 5",
+        "name": "海雲臺站5號出口",
         "approx_time": "≈ 19:00"
       }
     ],
     "hotel_pickup_available": false,
-    "notes": "Choose the pickup exit closest to your hotel at booking. Drop-offs are sequential along the return route; passengers boarding at Seomyeon (08:30) experience the longest day (≈10 hours), Haeundae passengers the shortest (≈9.5 hours)."
+    "notes": "預訂時請選擇距離酒店最近的集合出口。返程會按路線順序依次下車；在西面（08:30）上車的客人行程最長（約10小時），在海雲臺上車的客人行程最短（約9.5小時）。"
   },
   "itinerary_variants": [],
   "_publication": {
@@ -1970,7 +2206,7 @@
       "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 5 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, VisitSeoul, official tourism boards.\n  - Stop #2 Haedong Yonggungsa Temple: filled [visitBasics, convenience, smartNotes]\n  - Stop #3 Cheongsapo & Haeundae Blue Line Park: filled [visitBasics, convenience, smartNotes]\n  - Stop #5 UN Memorial Cemetery: filled [visitBasics, convenience, smartNotes]\n  - Stop #6 Gamcheon Culture Village: filled [visitBasics, convenience, smartNotes]\n  - Stop #7 Jagalchi Fish Market: filled [visitBasics, convenience, smartNotes]",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
@@ -1979,7 +2215,7 @@
   },
   "priceSource": {
     "discountPct": 10,
-    "discountNote": "10% off marketplace baseline",
+    "discountNote": "較平臺基準價優惠10%",
     "amount": null,
     "currency": "USD"
   }

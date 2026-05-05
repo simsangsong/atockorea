@@ -5,8 +5,8 @@
   "locale": "ko",
   "product_id": "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
   "seo": {
-    "pageTitle": "Busan to Yangsan Tongdosa & Gyeongju Plum + Cherry Blossom Tour | AtoC Korea",
-    "metaDescription": "8.5-hour Busan-departure spring tour covering Tongdosa Temple (UNESCO Sansa + Jajangmae plum), Wondong Plum Village, Bulguksa, Bomun Lake. Operates Feb 25 – Apr 10.",
+    "pageTitle": "부산 출발 통도사·경주 매화+벚꽃 투어 (2~4월 한정) | AtoC Korea",
+    "metaDescription": "8.5시간 봄 시즌 투어 — 통도사(유네스코 산사+자장매), 원동 미나리 삼겹살, 불국사, 보문호 벚꽃. 2월 25일~4월 10일 운행.",
     "ogImage": "",
     "primaryKeywords": [
       "부산 매화 벚꽃 투어",
@@ -20,9 +20,9 @@
   "catalog_card": {
     "slug": "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
     "title": "부산 출발 매화·벚꽃 투어 · 양산+경주",
-    "subtitle": "통도사 자장매부터 불국사, 보문호 벚꽃까지 — 봄 시즌 한정(2/25~4/10) 부산 출발 소그룹 투어.",
-    "region": "Yangsan + Gyeongju (from Busan)",
-    "duration": "8.5 hours",
+    "subtitle": "통도사(유네스코 산사 + 자장매 350년 홍매)부터 원동 매화마을, 불국사(유네스코), 보문호 벚꽃 8km 루프까지 — 8.5시간 봄꽃 투어 (2/25~4/10 한정 운영).",
+    "region": "양산 + 경주 (부산 출발)",
+    "duration": "8.5시간",
     "stopsCount": 4,
     "rating": 0,
     "reviewCount": 0,
@@ -34,16 +34,16 @@
     ],
     "heroImage": "",
     "thumbnail": "",
-    "priceLabel": "가격은 예약 시 확인",
+    "priceLabel": "1인 요금 — 예약 시 확인",
     "shortCardDescription": "통도사(유네스코 산사, 350년 자장매), 불국사(유네스코 세계문화유산), 보문호(경주 대표 벚꽃 명소)를 하루에 잇는 봄 시즌 한정 투어. 소그룹 밴, 공인 가이드.",
     "tags": [
-      "spring_seasonal",
-      "plum_blossom_tour",
-      "cherry_blossom_tour",
-      "unesco_sites",
-      "three_jewel_temple",
-      "busan_subway_pickup",
-      "small_group_shuttle"
+      "봄 시즌",
+      "매화 투어",
+      "벚꽃 투어",
+      "유네스코 명소",
+      "유서 깊은 사찰",
+      "부산 지하철역 픽업",
+      "소그룹 셔틀"
     ]
   },
   "headlineLine1": "매화·벚꽃",
@@ -51,21 +51,21 @@
   "price": {
     "amountLabel": "",
     "currency": "USD",
-    "per": "person"
+    "per": "인"
   },
   "hero": {
     "imageUrl": "",
     "imagePosition": "center 50%",
     "tagline": "통도사 350년 자장매 매화나무에서 원동 철길 벚꽃 전망, 보문호 벚꽃 터널까지",
     "pills": [
-      "Feb 25 – Apr 10",
-      "Plum + Cherry Dual Season",
-      "2 UNESCO Temples"
+      "2월 25일 – 4월 10일",
+      "매화 + 벚꽃 투시즌",
+      "유네스코 사찰 2곳"
     ],
     "meta": {
-      "duration": "8.5 hours",
-      "region": "Yangsan + Gyeongju (from Busan)",
-      "stops": "Daily peak-bloom selection",
+      "duration": "8.5시간",
+      "region": "양산 + 경주 (부산 출발)",
+      "stops": "당일 개화 절정 코스 구성",
       "rating": 0,
       "ratingStars": 0
     }
@@ -94,40 +94,34 @@
   ],
   "glanceItems": [
     {
-      "icon": "camera",
-      "label": "포토 스팟",
-      "value": "높음",
-      "level": 5
+      "icon": "flower-2",
+      "label": "투어 유형",
+      "value": "매화+벚꽃"
     },
     {
-      "icon": "mountain",
-      "label": "경치 밀도",
-      "value": "높음",
-      "level": 5
+      "icon": "calendar-days",
+      "label": "운행 기간",
+      "value": "2월 25일 ~ 4월 10일 한정 운행"
     },
     {
-      "icon": "footprints",
-      "label": "도보 난이도",
-      "value": "보통",
-      "level": 3
+      "icon": "user-check",
+      "label": "가이드 언어",
+      "value": "이중언어 투어 가이드"
     },
     {
-      "icon": "cloud-rain",
-      "label": "우천 적합도",
-      "value": "낮음",
-      "level": 2
+      "icon": "clock",
+      "label": "소요 시간",
+      "value": "8.5시간"
     },
     {
-      "icon": "users",
-      "label": "가족 적합도",
-      "value": "양호",
-      "level": 4
+      "icon": "ticket",
+      "label": "입장료",
+      "value": "4개 명소 모두 무료 입장"
     },
     {
-      "icon": "gauge",
-      "label": "투어 페이스",
-      "value": "집중형",
-      "level": 3
+      "icon": "utensils-crossed",
+      "label": "점심 식사",
+      "value": "현장 직접 결제"
     }
   ],
   "galleryItems": [
@@ -135,79 +129,79 @@
       "id": "g1",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1571156425562-12341e7c9aae?w=1200&q=80",
-      "alt": "Plum blossom branches with Tongdosa Temple in background",
-      "caption": "Tongdosa Temple Jajangmae (350-year red plum)",
-      "location": "Tongdosa Temple",
-      "atmosphere": "Sacred spring"
+      "alt": "배경에 통도사를 둔 매화 가지",
+      "caption": "통도사 자장매 (수령 350년 붉은 매화)",
+      "location": "통도사",
+      "atmosphere": "신성한 봄"
     },
     {
       "id": "g2",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1601901574849-2ce39f2e0867?w=1200&q=80",
-      "alt": "Tongdosa Daeungjeon hall and pine forest approach",
-      "caption": "Tongdosa Daeungjeon (National Treasure #290)",
-      "location": "Tongdosa Temple",
-      "atmosphere": "UNESCO Sansa"
+      "alt": "통도사 대웅전과 솔숲 진입로",
+      "caption": "통도사 대웅전 (국보 제290호)",
+      "location": "통도사",
+      "atmosphere": "유네스코 산사"
     },
     {
       "id": "g3",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1601822336970-8af7c01f3a91?w=1200&q=80",
-      "alt": "Plum blossoms and railway tracks at Wondong Yangsan",
-      "caption": "Wondong Plum Blossom Village — railway and blossoms",
-      "location": "Wondong Plum Village",
-      "atmosphere": "Nostalgic"
+      "alt": "원동 양산 철길과 매화",
+      "caption": "원동 매화마을 — 철길과 매화",
+      "location": "원동 매화마을",
+      "atmosphere": "향수"
     },
     {
       "id": "g4",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1601649308334-2cc8e6f0e21f?w=1200&q=80",
-      "alt": "Bulguksa stone pagodas with cherry blossoms in background",
-      "caption": "Bulguksa Temple cherry blossom road",
-      "location": "Bulguksa Temple",
-      "atmosphere": "UNESCO heritage"
+      "alt": "배경에 벚꽃이 핀 불국사 석탑",
+      "caption": "불국사 벚꽃길",
+      "location": "불국사",
+      "atmosphere": "유네스코 유산"
     },
     {
       "id": "g5",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1614853128977-b1f1d7e64fae?w=1200&q=80",
-      "alt": "Bomun Lake cherry blossom path and pavilion",
-      "caption": "Bomun Lake cherry blossom loop",
+      "alt": "보문호 벚꽃 산책로와 정자",
+      "caption": "보문호 벚꽃 루프",
       "location": "Bomun Lake",
-      "atmosphere": "Spring scenic"
+      "atmosphere": "봄 경관"
     },
     {
       "id": "g6",
       "type": "photo",
       "src": "https://images.unsplash.com/photo-1567427361984-0cbe7396fc6c?w=1200&q=80",
-      "alt": "Minari Samgyeopsal grilled pork belly with parsley",
-      "caption": "Wondong Minari Samgyeopsal (seasonal regional dish)",
+      "alt": "미나리 삼겹살 (미나리와 함께 구운 삼겹살)",
+      "caption": "원동 미나리 삼겹살 (계절 지역 음식)",
       "location": "Wondong",
-      "atmosphere": "Foodie"
+      "atmosphere": "미식"
     }
   ],
   "itineraryStops": [
     {
       "number": 1,
       "time": "≈ 08:00",
-      "duration": "30 min",
+      "duration": "30분",
       "name": "픽업 (부산 지하철 3개 역)",
-      "category": "Transit / Pickup",
+      "category": "이동 / 픽업",
       "description": "부산역(약 08:00), 서면역(약 08:20), 해운대역(약 09:00) 순차 픽업 후 양산 통도사로 이동.",
       "highlights": [
-        "Three Busan pickup options: Busan Station, Seomyeon, Haeundae",
-        "**Early 08:00-08:30 start essential during plum blossom peak** (late Feb - early Mar)",
-        "Coach transit Busan → Tongdosa ~30 km / ~25 min via Gyeongbu Expressway",
-        "Light snacks provided on the coach; lunch own expense in Wondong or Gyeongju"
+        "부산역·서면역·해운대역 세 곳 중 편한 곳에서 탑승",
+        "**매화 절정기(2월 하순~3월 초)에는 08:00~08:30 이른 출발 필수**",
+        "경부고속도로 경유 통도사까지 약 30분",
+        "차 안 간식 제공; 점심은 원동 또는 경주에서 개인 부담"
       ],
       "timeUsed": [
-        "Busan Station pickup (~08:00, ~5 min)",
-        "Drive to Seomyeon Station (~10 min)",
-        "Seomyeon pickup (~08:15, ~5 min)",
-        "Drive to Haeundae Station (~15 min)",
-        "Haeundae pickup (~08:30, ~5 min)"
+        "부산역 픽업 (약 08:00, 5분)",
+        "서면역으로 이동 (약 15분)",
+        "서면역 픽업 (약 08:15, 5분)",
+        "해운대역으로 이동 (약 15분)",
+        "해운대역 픽업 + 양산 방면 출발 (약 08:30, 20분)"
       ],
-      "whyOnRoute": "Three pickup points cover Busan's three main hotel zones efficiently. Sequencing northwest→east minimizes coach distance and lands the group at Tongdosa by ~09:00 — before the morning tour-bus surge — giving 75 min of comfortable temple walking during the most photogenic morning light on the Jajangmae plum tree.",
+      "whyOnRoute": "세 곳의 픽업 포인트는 부산의 주요 숙박지를 효율적으로 커버합니다. 북서에서 동쪽 순서로 이동하면 통도사까지의 버스 거리를 최소화하고, 오후의 경주 벚꽃 코스를 여유롭게 소화할 수 있습니다.",
       "_poi_meta": {
         "poi_key": "OPS_busan_subway_pickup",
         "verified": true,
@@ -223,45 +217,45 @@
     {
       "number": 2,
       "time": "≈ 09:00",
-      "duration": "90 min",
+      "duration": "90분",
       "name": "통도사 (유네스코 산사 + 자장매)",
-      "category": "UNESCO Buddhist Temple",
+      "category": "유네스코 산사 + 매화",
       "description": "통도사는 2018년 '한국의 산지 승원'으로 유네스코 세계문화유산에 등재된 한국 삼보사찰 중 불보사찰입니다. 경내에 자라는 자장매(자장율사가 심었다는 전설의 매화나무)는 수령 약 350년으로, 매년 2월 말~3월 중순 만개합니다. 통도사 계곡 산책로는 봄 경치가 특히 아름답습니다. 무료 입장(주차비 별도). 방문 시간: 약 75분.",
       "highlights": [
-        "**UNESCO World Heritage 'Sansa, Buddhist Mountain Monasteries' (inscribed 2018)**",
-        "**One of Three Jewel Temples** — represents the Buddha himself (Bul jewel)",
-        "Founded **646 CE by Master Jajang** with genuine Buddha sarira from Tang China",
-        "**'Temple without a Buddha'** — main hall has no Buddha image; relics in Diamond Stairway",
-        "**Daeungjeon = National Treasure No. 290** (unique no-Buddha-image hall)",
-        "**Korea's largest temple** — 65 buildings + 17 hermitages on Yeongchuksan",
-        "**Jajangmae plum tree** — 350+ years old, 'first messenger of spring' (peak late Feb / early Mar)",
-        "**Seongbo Museum** — Korea's first Buddhist museum (30,000+ artifacts)",
-        "Riverside 1.2 km pine-forest approach — curved 'dragon-branch' red pines",
-        "Temple grounds FREE; Seongbo Museum ~₩2,000-3,000"
+        "**유네스코 세계유산 '산사, 한국의 불교 산지 승원' 2018년 등재**",
+        "**삼보사찰 중 '불(佛)'의 보(寶)를 상징하는 통도사**",
+        "**646년 자장율사 창건** — 당나라에서 직접 가져온 진신사리 봉안",
+        "**'불상 없는 절'** — 대웅전에 불상 없는 유일무이한 형식; 사리는 금강계단에",
+        "**대웅전(국보 제290호)** — 불상 없는 독특한 법당 구조",
+        "**국내 최대 규모 사찰** — 영축산 65동 전각 + 17개 암자",
+        "**자장매** — 수령 350년 이상, '봄의 첫 전령사' (절정 2월 하순~3월 초)",
+        "**성보박물관** — 한국 최초 불교 전문 박물관 (유물 3만여 점)",
+        "동문 1.2km 솔숲 산책로 — 구불구불 용비처럼 뻗은 적송",
+        "사찰 경내 무료; 성보박물관 약 ₩2,000~3,000"
       ],
       "timeUsed": [
-        "Coach drop-off at Yangsan/Tongdosa parking (~5 min)",
-        "Riverside pine-forest walk to Iljumun gate (~15 min)",
-        "Iljumun → Cheonwangmun → Daeungjeon courtyard + Diamond Stairway (~25 min)",
-        "Jajangmae plum tree photo time (seasonal, peak late Feb-early Mar) (~15 min)",
-        "Seongbo Museum (optional, ~20 min)",
-        "Walk back + reassemble at coach (~10 min)"
+        "양산/통도사 주차장 버스 하차 (약 5분)",
+        "강변 소나무 숲길 일주문까지 도보 (약 15분)",
+        "일주문 → 천왕문 → 대웅전 마당 + 금강계단 (약 25분)",
+        "자장매 홍매화 촬영 시간 (시즌별, 절정 2월 말~3월 초) (약 15분)",
+        "성보박물관 선택 관람 (약 20분)",
+        "집결 장소로 복귀 + 버스 집합 (약 10분)"
       ],
-      "whyOnRoute": "The route's **UNESCO seasonal anchor** — Tongdosa's Jajangmae plum tree blooms BEFORE Korea's cherry blossoms by 3-4 weeks, making this tour effectively a **back-to-back plum-then-cherry blossom day** in early March (year-dependent). The temple itself is also the only UNESCO Sansa monastery in the southeast accessible as a day trip from Busan (Haeinsa is 3+ hours by bus into Gayasan National Park). The 09:00 arrival lands well before the 11:00 tour-bus surge and gives soft morning light on the plum tree's red blossoms — the peak photographic moment. The 90-min stop accommodates both a contemplative pace and the museum visit.",
+      "whyOnRoute": "이 코스의 **유네스코·매화 핵심 하이라이트** — 통도사 자장매는 한국 벚꽃보다 3~4주 앞서 개화해 하루 안에 두 개의 유네스코 세계유산과 두 가지 꽃을 모두 담는 독보적인 구성이 됩니다. 동문 솔숲 산책로는 계절에 관계없이 최고의 포토 포인트입니다.",
       "visitBasics": {
-        "hours": "Outdoor temple grounds 24h; Seongbo Museum 09:00–17:00; Daeungjeon main hall typically open daylight hours",
-        "closed": "Open year-round; Seongbo Museum closed Mondays",
-        "admission": "Temple grounds: Free (most general visit areas); Seongbo Museum (first Buddhist museum in Korea, 600+ paintings, 30,000 artifacts): typically ₩2,000–3,000 adult — confirm at entrance",
-        "walking": "Moderate — 1.2 km riverside paved trail from parking lot to main temple entrance (flat, can go barefoot per VisitKorea), then temple courtyards spread across hillside slopes (some stairs and gentle inclines)"
+        "hours": "경내 24시간 개방; 성보박물관 09:00–17:00; 대웅전 통상 낮 시간 개방",
+        "closed": "연중 무휴; 성보박물관 월요일 휴관",
+        "admission": "경내 무료(일반 관람 구역 대부분); 성보박물관(한국 최초 불교박물관, 그림 600점+·유물 3만점): 성인 보통 ₩2,000~3,000 — 입구에서 확인",
+        "walking": "중간 강도 — 주차장에서 본당 입구까지 강변 포장로 1.2km(평탄); 이후 사찰 경내 경사 분포(일부 계단·완경사)"
       },
       "convenience": {
-        "restroom": "Public restrooms at the parking lot, Seongbo Museum entrance, and inside the main temple compound near Daeungjeon",
-        "parking": "Two large paid parking lots near the trailhead (Yangsan City + Tongdosa joint operation); fills during festivals (plum blossom, Buddha's Birthday lantern festival)"
+        "restroom": "주차장, 성보박물관 입구, 대웅전 근처 경내에 화장실 있음",
+        "parking": "등산로 입구 근처 대형 유료 주차장 2개소 (양산시+통도사 공동 운영); 축제 기간 만차 빈번"
       },
       "smartNotes": {
-        "photo": "Jajangmae (지장매) — the 350-year-old red plum tree planted by Master Jajang, peak ~Late February to Early March, 'first messenger of spring'; Daeungjeon (National Treasure #290 — unique because it has no Buddha image inside, instead the Diamond Stairway/Geumgang Gyedan enshrines actual Buddha relics behind it); the riverside pine forest trail (curved 'dragon-branch' red pines, Iljumun gate approach)",
-        "facilities": "Templestay program available in English (lotus lanterns, tea ceremony, meditation, 108 prostrations); Seongbo Museum (largest Buddhist museum in Korea); 17 hermitages on the mountain (most require additional hiking — not part of standard temple visit)",
-        "tip": "UNESCO World Heritage 'Sansa, Buddhist Mountain Monasteries in Korea' (2018) — one of Korea's Three Jewel Temples (Bulbo Temple, enshrining genuine Buddha relics). Daeungjeon famously contains NO Buddha image — only an altar facing the Diamond Stairway. Best visit time is early morning before tour buses arrive (08:30–10:00) or late afternoon (15:00–16:30) for golden light on the temple"
+        "photo": "자장매(지장매) — 자장율사가 심은 350년 홍매화, 절정 약 2월 말~3월 초. 사찰 내 가장 격조 있는 매화나무.",
+        "facilities": "영어 대응 템플스테이 프로그램 있음 (연등, 다례, 명상, 108배); 성보박물관(한국 최초 불교박물관).",
+        "tip": "유네스코 세계유산 「한국의 산지 승원」(2018년) — 한국 삼보사찰 중 불보사찰. 통도사는 부처님 진신사리 봉안."
       },
       "_poi_meta": {
         "poi_key": "tongdosa_temple",
@@ -282,23 +276,23 @@
     {
       "number": 3,
       "time": "≈ 11:15",
-      "duration": "60 min",
-      "name": "점심 — 원동 미나리 삼겹살 또는 경주 현지식",
-      "category": "Lunch / Local Cuisine",
-      "description": "시즌과 코스에 따라 두 가지 점심 중 선택: (1) 원동면 미나리 삼겹살 — 원동은 봄철 미나리와 삼겹살 조합으로 유명한 지역 향토식. (2) 경주 현지 식당 — 경주 쌈밥 또는 한정식. 점심 식사비 별도(약 ₩15,000~20,000).",
+      "duration": "60분",
+      "name": "점심 — 원동 미나리삼겹살 (매화 시즌) 또는 경주 현지",
+      "category": "점심 / 개인 부담",
+      "description": "시즌과 코스에 따라 두 가지 점심 옵션 중 선택할 수 있습니다. ① 원동면 미나리 삼겹살: 봄철 미나리와 삼겹살 조합으로 유명한 지역 향토식입니다. ② 경주 현지 식당: 경주 쌈밥 정식 또는 한정식 등 현지 한식 메뉴를 선택할 수 있습니다. 점심 식사비는 별도입니다(약 ₩15,000~20,000).",
       "highlights": [
-        "**Wondong Minari Samgyeopsal** — dropwort + pork belly seasonal pairing (Feb-Apr peak)",
-        "Minari season conveniently overlaps Tongdosa's Jajangmae plum-blossom season",
-        "Alternate: **Gyeongju ssambap** (wrap-and-eat set) ~₩13,000-18,000",
-        "Premium alternate: **Gyodong Beopju** rice wine set at Yosukgung 1779",
-        "Lunch own expense; vegetarian / halal substitution available on request"
+        "**원동 미나리 삼겹살** — 미나리와 삼겹살의 계절 조합 (2~4월 절정)",
+        "미나리 제철이 통도사 자장매 개화 시즌과 절묘하게 겹침",
+        "대안: **경주 쌈밥 정식** — 쌈, 밥, 반찬으로 구성된 한식 메뉴(약 ₩13,000~18,000)",
+        "고급 대안: 요석궁 1779의 **교동법주** 막걸리 코스",
+        "점심 개인 부담; 채식·할랄 대체 메뉴 사전 요청 가능"
       ],
       "timeUsed": [
-        "Coach drop-off + walk to restaurant (~5 min)",
-        "Order + meal (~40 min)",
-        "Restroom + reassemble at coach (~15 min)"
+        "식당 이동 + 착석 (약 10분)",
+        "주문 + 조리 (약 15분)",
+        "식사 (약 35분)"
       ],
-      "whyOnRoute": "Lunch is timed at 11:15 immediately after Tongdosa to bridge the morning's Yangsan cluster and the afternoon's Gyeongju cluster (Bulguksa + Bomun Lake). The Wondong minari samgyeopsal option is intentional during plum/cherry season because Wondong-myeon (~10 min from Tongdosa) is on the natural coach route toward Gyeongju and leverages a regional seasonal specialty that pairs the day's plum-cherry theme with an authentic plate-level Korean farm-to-table experience that's very rare in international tour itineraries.",
+      "whyOnRoute": "점심은 통도사 직후인 11:15로 설정해, 오전 양산 구간와 오후 경주 코스를 자연스럽게 이어줍니다. 매화 시즌에는 원동 미나리 삼겹살 식당이 사찰 바로 근처에 있어 이동 없이 계절 별미를 둘러볼 수 있습니다.",
       "_poi_meta": {
         "poi_key": "OPS_wondong_or_gyeongju_lunch",
         "verified": true,
@@ -314,43 +308,43 @@
     {
       "number": 4,
       "time": "≈ 12:45",
-      "duration": "90 min",
+      "duration": "90분",
       "name": "불국사 (유네스코 세계문화유산)",
-      "category": "UNESCO Buddhist Temple",
+      "category": "유네스코 불교 사원",
       "description": "751년 신라 창건, 1995년 유네스코 세계문화유산 등재. 국보 4점(다보탑·석가탑·연화교칠보교·청운교백운교) 보유. 2023년 5월부터 무료 입장. 방문 시간: 약 60분.",
       "highlights": [
-        "**UNESCO World Heritage 1995** + **Korea's Historic and Scenic Site No. 1**",
-        "Built **528 CE → expanded 751 CE by PM Kim Daeseong → completed 774 CE**",
-        "**Six Korean National Treasures** in one temple",
-        "**Dabotap (NT 20)** = image on Korea's 10-won coin",
-        "**Seokgatap (NT 21) + Pure Light Dharani Sutra** = world's oldest extant woodblock print (704-751 CE)",
-        "Cheongungyo/Baegungyo (NT 23): 34 steps = the 34 steps to Buddhist enlightenment",
-        "Yeonhwagyo/Chilbogyo (NT 22): leading to Geuknakjeon Pure Land Hall",
-        "**FREE admission since 2023** (Cultural Heritage Protection Act revision)",
-        "Hours daily 09:00-18:00, last entry 17:00"
+        "**1995년 유네스코 세계문화유산** 지정 + 사적 제1호",
+        "**528년 창건 → 751년 김대성 재상 중건 → 774년 완공**",
+        "**국보 6점**이 한 사찰 안에",
+        "**다보탑(국보 제20호)** = 10원짜리 동전 앞면 도안",
+        "**석가탑(국보 제21호) + 무구정광대다라니경** = 현존 세계 최고 목판 인쇄물 (704~751년)",
+        "청운교·백운교(국보 제23호): 33계단 = 불교 33천 상징",
+        "연화교·칠보교(국보 제22호): 극락전으로 이어지는 다리",
+        "**2023년부터 무료 입장** (문화재보호법 개정)",
+        "매일 09:00~18:00, 마지막 입장 17:00"
       ],
       "timeUsed": [
-        "Coach drop-off + walk through pine-lined approach (~10 min)",
-        "Iljumun + Cheongungyo/Baegungyo photo time (~15 min)",
-        "Daeungjeon courtyard + Dabotap + Seokgatap (~25 min)",
-        "Birojeon Vairocana Hall + Geuknakjeon Pure Land Hall (~20 min)",
-        "Free time + reassemble at coach (~20 min)"
+        "버스 하차 + 소나무 숲 진입로 도보 (약 10분)",
+        "일주문 + 청운교/백운교 촬영 (약 15분)",
+        "대웅전 마당 + 다보탑 + 석가탑 (약 25분)",
+        "비로전 + 극락전 (약 20분)",
+        "자유 시간 + 버스 집합 (약 20분)"
       ],
-      "whyOnRoute": "The route's **single most significant cultural anchor** — Bulguksa is the essential UNESCO site for any Gyeongju day tour. Pairing Bulguksa with Tongdosa in the same day is unusual but powerful: both sites are **Master Jajang's spiritual lineage** (Tongdosa founded 646 CE by Jajang; Bulguksa expanded by his successors a century later), making this tour effectively a **'Three Jewel Temple → Buddha Land Temple' pilgrimage** spanning ~125 years of Silla Buddhist history. The 12:45 arrival catches Bulguksa during its post-lunch lull (the busiest 10:00-12:00 tour-bus window has passed) with golden afternoon light on the stone pagodas, the temple's most photogenic time.",
+      "whyOnRoute": "이 코스에서 가장 중요한 문화 거점 — 불국사는 경주 당일 투어의 필수 유네스코 명소입니다. 4월 중순 겹벚꽃 절정기를 노리면 봄의 황금 조합이 완성됩니다.",
       "visitBasics": {
-        "hours": "Daily 09:00–18:00 (last admission 17:00)",
-        "closed": "Open year-round",
-        "admission": "Free (since 2023, per the revised Cultural Heritage Protection Act)",
-        "walking": "Moderate — stone steps, slopes and gravel paths; comfortable shoes recommended"
+        "hours": "매일 09:00–18:00 (최종 입장 17:00)",
+        "closed": "연중 무휴",
+        "admission": "무료 (2023년 문화재보호법 개정 이후)",
+        "walking": "중간 강도 — 석계, 경사로, 자갈길; 편안한 신발 권장"
       },
       "convenience": {
-        "restroom": "Free public restrooms (designed in mini-temple style) inside the complex",
-        "parking": "On-site lot (paid)"
+        "restroom": "경내 소형 사찰 양식 공중 화장실 무료",
+        "parking": "경내 주차장 (유료)"
       },
       "smartNotes": {
-        "photo": "Cheongungyo / Baegungyo bridge stairway (NT 23) below Jahamun Gate; Dabotap (NT 20) and Seokgatap (NT 21) pagodas in the main courtyard; spring cherry blossoms along the approach road",
-        "facilities": "Tourist Information Center at the entrance; Bulguksa Museum (separate ticket 2,000 / 1,000 KRW, closed Mondays)",
-        "tip": "Modest dress; remove shoes when entering the halls; no drones; do not photograph monks or worshippers (signs marked clearly); the temple is still an active Jogye Order head temple (11th district)"
+        "photo": "자하문 아래 청운교/백운교 (국보 제23호); 다보탑(국보 제20호)과 석가탑(국보 제21호) 정면 대칭 구도.",
+        "facilities": "입구 관광안내소; 불국사박물관 (별도 입장 ₩2,000/₩1,000, 월요일 휴관).",
+        "tip": "단정한 복장; 법당 내 신발 탈착; 드론 촬영 금지; 스님·불자 촬영 금지."
       },
       "_poi_meta": {
         "poi_key": "bulguksa_temple",
@@ -370,43 +364,43 @@
     {
       "number": 5,
       "time": "≈ 14:45",
-      "duration": "75 min",
-      "name": "보문호 (벚꽃 명소)",
-      "category": "Lake / Cherry Blossom Spot",
+      "duration": "75분",
+      "name": "보문호 (벚꽃 하이라이트)",
+      "category": "벚꽃 호수 루프",
       "description": "보문호는 1979년 개장한 경주 보문관광단지의 중심 호수로, 8km 둘레 산책로를 따라 벚꽃 터널이 펼쳐집니다. 벚꽃 절정 시기(3월 말~4월 초) 수면 반영 사진이 압권입니다. 첨성대(국보 31호)까지 도보 이동 가능. 무료 입장. 방문 시간: 약 50분.",
       "highlights": [
-        "**Korea's first comprehensive large-scale resort — opened April 6, 1979**",
-        "**'The History of Tourism in Korea Begins Here'** — Watermill Square plaque",
-        "**~2,800 cherry trees** along the 8 km loop — peak last week March/first week April",
-        "Bomunjeong Pavilion = **CNN '50 Most Beautiful Places in Korea'**",
-        "**BTS 'Butterfly' music video** filming location",
-        "**Hosted 2025 APEC Summit** at HICO Convention Center",
-        "FREE access to lake; paddle boats / tandem bikes ~₩10,000/3hr extra",
-        "Late-afternoon light = day's photographic climax",
-        "**HICO Convention Center on Bomun Lake hosted the 2025 APEC Summit** — recent international milestone reinforcing Bomun's status as Korea's first comprehensive resort"
+        "**한국 최초 대규모 종합 리조트 — 1979년 4월 6일 개장**",
+        "**'한국 관광의 역사가 시작된 곳'** — 물레방아 광장 표지",
+        "**왕벚나무 약 2,800그루** 8km 벚꽃 산책로 — 절정 3월 말~4월 초",
+        "보문정 정자 = **CNN '한국에서 가장 아름다운 50곳'** 선정",
+        "**BTS '버터플라이' 뮤직비디오** 촬영지",
+        "**2025 APEC 정상회의** HICO 컨벤션 센터 개최지",
+        "호수 입장 무료; 패들보트·2인용 자전거 약 ₩10,000/3시간 별도",
+        "오후 햇살 = 하루 최고 포토 타임",
+        "**보문호 HICO 컨벤션 센터에서 2025 APEC 정상회의 개최** — 한국 최초 종합 리조트의 국제적 위상 재확인"
       ],
       "timeUsed": [
-        "Coach drop-off near Hoban Square or Bomunjeong (~5 min)",
-        "Bomunjeong Pavilion + lakeside cherry-blossom walk (~30 min)",
-        "Watermill Square + waterfall + tourism plaque (~15 min)",
-        "Free time for photos / paddle boats / cafe (~20 min)",
-        "Reassemble at coach (~5 min)"
+        "호반광장 또는 보문정 근처 버스 하차 (약 5분)",
+        "보문정 + 호수 벚꽃길 산책 (약 30분)",
+        "물레방아 광장 + 폭포 + 관광 안내판 (약 15분)",
+        "사진 자유 시간 / 패들 보트 / 카페 (약 20분)",
+        "버스 집합 (약 5분)"
       ],
-      "whyOnRoute": "The route's **cherry-blossom climax** — placing Bomun as the day's final substantive stop creates a satisfying **plum-blossom morning (Tongdosa) → cherry-blossom afternoon (Bomun)** seasonal arc, with Bulguksa as the cultural pivot in between. The 14:45 arrival catches afternoon-into-golden-hour light on the cherry blossoms reflected in the lake — the most photogenic window. The 75 min stop accommodates the cherry-blossom walk + Bomunjeong pavilion + optional paddle boats while still departing at 16:00 for a comfortable Busan return.",
+      "whyOnRoute": "이 코스의 **벚꽃 클라이맥스** — 보문호를 하루의 마지막 메인 방문지로 배치해 매화에서 벚꽃으로 이어지는 감동적인 계절 흐름을 완성합니다. 8km 벚꽃 루프의 오후 햇살은 하루 중 가장 아름다운 포토 타임입니다.",
       "visitBasics": {
-        "hours": "Outdoor 24h year-round; cherry blossom illumination ~sunset to 22:00 in early April",
-        "closed": "Open year-round; some lakeside cafes close Mondays",
-        "admission": "Free (lake and walking trail); paddle boats and bike rentals priced separately",
-        "walking": "Easy — flat 8km paved loop trail along the lakeside; can be sampled in 1–2 km segments without doing the full loop"
+        "hours": "야외 연중 24시간; 벚꽃 조명은 4월 초 일몰~약 22:00",
+        "closed": "연중 무휴; 일부 호수 카페 월요일 휴업",
+        "admission": "무료 (호수·산책로); 보트·자전거 렌탈 별도",
+        "walking": "편안함 — 호수변 8km 포장 루프 (평탄); 1~2km 부분 탐방도 충분히 즐거움"
       },
       "convenience": {
-        "restroom": "Available at the Tourist Information Center, Bomun Pavilion, and major resort access points along the loop",
-        "parking": "Multiple free public lots around the resort complex (Hoban Square, Bomun Pavilion); fills quickly during the festival weekend"
+        "restroom": "관광안내소, 보문정, 루프 주요 리조트 접근 지점에 화장실",
+        "parking": "리조트 주변 무료 공용 주차장 다수 (호반광장, 보문정); 축제 주말 빠른 만차"
       },
       "smartNotes": {
-        "photo": "Bomun Pavilion (CNN '50 most beautiful places in Korea') and the wooden bridge for reflection shots; sunset around the east shore near Gyeongju World; BTS 'Butterfly' MV bench locations along the south shore",
-        "facilities": "Bicycle and tandem rentals (~₩10,000/3hr), paddle boats, lakeside cafes and restaurants, Bomun Open Air Stage with free traditional music performances Apr–Jan",
-        "tip": "Cherry blossom peak is typically late March to early April (~7-day window); arrive on a weekday morning or after 16:00 to avoid the worst weekend crowds — full loop walk takes ~2 hours, but most tours sample only 1–2 km"
+        "photo": "보문정 (CNN 「한국의 가장 아름다운 장소 50선」)과 목교 수면 반영; 정자 주변 석양 빛이 특히 아름다움.",
+        "facilities": "자전거·탠덤 렌탈 (약 ₩10,000/3시간), 패들 보트, 호수변 카페·식당, 무료 공연 보문 야외 무대.",
+        "tip": "벚꽃 절정은 보통 3월 말~4월 초 (약 7일간); 축제 주말 혼잡 피하려면 평일 오전 또는 16시 이후 방문."
       },
       "_poi_meta": {
         "poi_key": "bomun_lake",
@@ -427,22 +421,23 @@
     {
       "number": 6,
       "time": "≈ 16:00",
-      "duration": "75 min",
+      "duration": "75분",
       "name": "부산 귀환",
-      "category": "Transit / Return",
+      "category": "이동 / 귀환",
       "description": "동해고속도로·경부고속도로로 부산 귀환(약 75~90분). 해운대 → 서면 → 부산역 역순 하차.",
       "highlights": [
-        "Coach return ~85 km Bomun Lake → Busan via Donghae/Gyeongbu Expressway",
-        "Drop-offs reverse pickup: Haeundae → Seomyeon → Busan Station",
-        "Coach has Wi-Fi (signal-dependent) + USB charging",
-        "Estimated total transit: 75-90 min depending on traffic"
+        "보문호에서 동해·경부고속도로 경유 부산까지 약 85km",
+        "하차 순서: 해운대 → 서면 → 부산역",
+        "차 안 Wi-Fi(신호 환경 따라 다름) + USB 충전",
+        "총 이동 예상: 교통 상황에 따라 75~90분"
       ],
       "timeUsed": [
-        "Boarding + departure from Bomun parking (~10 min)",
-        "Bomun → Busan transit (~75-80 min)",
-        "Drop-offs at Haeundae → Seomyeon → Busan Station (~5 min each)"
+        "보문호 출발 (약 5분)",
+        "경부고속도로로 부산 방면 이동 (약 60분)",
+        "해운대역 하차 (약 5분)",
+        "서면역 + 부산역 순차 하차 (약 5분)"
       ],
-      "whyOnRoute": "The 16:00 departure from Bomun Lake lands the coach at Busan's drop-off points between 17:15 and 17:45 — early enough that guests can still make dinner reservations or light Busan evening activity. Returning before 18:30 also matches the typical Busan tour-coach return contract window.",
+      "whyOnRoute": "보문호를 16:00에 출발하면 부산 하차 지점에 17:15~17:45 사이에 도착합니다 — 저녁 일정이나 당일 귀국 항공편에 여유 있게 맞출 수 있는 시간입니다.",
       "_poi_meta": {
         "poi_key": "OPS_busan_return",
         "verified": true,
@@ -459,259 +454,259 @@
   "routeFlowStops": [
     {
       "type": "pickup",
-      "label": "Busan (3 stations)"
+      "label": "부산 (3개 역)"
     },
     {
       "type": "stop",
-      "label": "Tongdosa Temple"
+      "label": "통도사"
     },
     {
       "type": "stop",
-      "label": "Wondong / Gyeongju Lunch"
+      "label": "원동/경주 점심"
     },
     {
       "type": "stop",
-      "label": "Bulguksa Temple"
+      "label": "불국사"
     },
     {
       "type": "stop",
-      "label": "Bomun Lake"
+      "label": "보문호"
     },
     {
       "type": "return",
-      "label": "Busan (3 stations)"
+      "label": "부산 (3개 역)"
     }
   ],
   "routePhases": [
     {
       "phase": "출발",
-      "title": "Yangsan: Tongdosa + Plum Blossoms",
-      "summary": "Morning at Tongdosa Temple — UNESCO Sansa, Three Jewel Temple, 350-year Jajangmae plum tree, the riverside pine trail. During plum season (~Feb 25 – Mar 20) the day extends to Wondong Plum Blossom Village for Minari Samgyeopsal lunch.",
+      "title": "양산: 통도사 + 매화",
+      "summary": "오전 통도사 — 유네스코 산사, 삼보사찰, 350년 자장매, 강변 소나무 숲길. 매화 시즌(약 2/25~3/20)에는 원동 매화마을 미나리삼겹살 점심까지 연장.",
       "description": "부산 지하철 3개 역 픽업 후 양산 통도사로 이동."
     },
     {
       "phase": "봄 시즌 하이라이트",
-      "title": "Gyeongju: UNESCO + Cherry Blossoms",
-      "summary": "Afternoon pivots to Gyeongju cherry blossoms. Bulguksa Temple (UNESCO 1995, mid-April yaezakura peak) and Bomun Lake (8 km cherry blossom loop, 9,000 trees) — the two most-photographed Gyeongju spring stops.",
+      "title": "경주: 유네스코 + 벚꽃",
+      "summary": "오후 경주 벚꽃으로 이동. 불국사(유네스코 1995, 4월 중순 겹벚꽃 절정)와 보문호(8km 벚꽃 루프, 9,000그루) — 경주 봄 사진 명소 쌍두마차.",
       "description": "통도사 산사 탐방 → 원동 미나리 삼겹살 점심 또는 경주 현지 점심."
     },
     {
       "phase": "경주 피날레",
-      "title": "Return to Busan",
-      "summary": "Direct expressway drive back to Busan with drop-off at the three pickup stations in reverse order, arriving ≈ 16:30.",
+      "title": "부산 귀환",
+      "summary": "고속도로 직행으로 부산 귀환, 3개 픽업 역 역순 하차, 약 16:30 도착.",
       "description": "불국사(유네스코) → 보문호 벚꽃 터널 → 부산 귀환."
     }
   ],
   "routeShapeIntro": {
-    "title": "Dual-season rhythm: Yangsan plum → Gyeongju cherry",
-    "body": "The default 4-stop itinerary covers the natural spring progression: Yangsan first (Tongdosa Temple's 350-year Jajangmae plum + Wondong's railway-blossoms scene), then Gyeongju (Bulguksa Temple UNESCO + Bomun Lake cherry blossom loop). Daily emphasis shifts: plum-season days (~Feb 25 – Mar 20) extend Yangsan time and Wondong lunch; cherry-season days (~Mar 28 – Apr 10) extend Gyeongju time. Mid-season (~Mar 15 – Mar 28) covers all 4 attractions at full duration."
+    "title": "듀얼 시즌 리듬: 양산 매화 → 경주 벚꽃",
+    "body": "기본 4코스 일정은 봄꽃의 자연스러운 진행 순서를 따릅니다: 양산 먼저(통도사 350년 자장매 + 원동 철길 벚꽃 풍경), 이후 경주(불국사 유네스코 + 보문호 벚꽃 루프). 매화 시즌(약 2/25~3/20)에는 양산 체류 시간을 늘리고 원동 점심을 포함; 벚꽃 시즌(약 3/28~4/10)에는 경주 체류 시간을 연장. 중간 시즌(약 3/15~3/28)에는 4개 명소 모두 풀 타임으로 방문."
   },
   "whyTourWorks": {
     "bestFor": [
-      "Travelers who want BOTH plum and cherry blossoms in one tour (rare — most tours cover only one)",
-      "First-time visitors who want UNESCO + flowers in a single day (3 of 4 stops are UNESCO)",
-      "Couples and photographers chasing peak-bloom Korea spring scenery",
-      "Foodies — the Wondong Minari Samgyeopsal during plum season is a unique seasonal dish",
-      "Travelers based in Busan who want maximum spring coverage with one booking",
-      "Cruise passengers with a long Busan port day during late February to early April"
+      "하루에 매화와 벚꽃을 함께 보고 싶은 여행자 (두 꽃을 모두 다루는 투어는 드뭄)",
+      "유네스코 + 꽃구경을 하루에 원하는 첫 방문자 (4개 명소 중 3곳이 유네스코)",
+      "절정 개화기 한국 봄 풍경을 쫓는 커플 및 사진 애호가",
+      "미식가 — 매화 시즌 원동 미나리 삼겹살은 계절 한정 별미",
+      "한 번의 예약으로 봄 꽃구경을 최대한 즐기고 싶은 부산 기반 여행자",
+      "2월 하순~4월 초 크루즈 입항 여행자 (긴 부산 정박 시간 활용)"
     ],
     "routeLogicSections": [
       {
-        "title": "Why a dual-season plum + cherry tour wins",
+        "title": "매화+벚꽃 듀얼 시즌 투어가 이기는 이유",
         "icon": "flower-2",
         "items": [
           {
-            "label": "Plum + cherry are 2–3 weeks apart",
-            "detail": "Plum blossoms (매화) peak ~early March; cherry blossoms (벚꽃) peak ~late March / early April. Most blossom tours commit to one season. This tour's wider operating window (~Feb 25 – Apr 10) and Yangsan + Gyeongju geography lets the daily route adjust to whichever season is currently in peak."
+            "label": "매화와 벚꽃 개화 시기는 2~3주 차이",
+            "detail": "매화(매화) 절정은 3월 초, 벚꽃(벚꽃) 절정은 3월 말~4월 초. 대부분의 꽃 투어는 한 시즌만 다룹니다. 이 투어의 넓은 운영 기간(약 2/25~4/10)과 양산+경주 지리적 조합이 두 시즌을 모두 커버합니다."
           },
           {
-            "label": "Tongdosa anchors both seasons",
-            "detail": "The 350-year Jajangmae plum tree at Tongdosa peaks in early March; the temple grounds also have cherry trees that bloom in late March. So Tongdosa is the only stop that delivers regardless of which side of the season you book."
+            "label": "통도사가 두 시즌 모두의 핵심 명소",
+            "detail": "통도사의 350년 자장매는 3월 초 절정; 사찰 경내에 벚꽃 나무도 있어 4월에도 방문 가치가 있습니다. 단일 명소가 두 시즌 모두에서 활용되는 드문 케이스."
           },
           {
-            "label": "Yangsan + Gyeongju geography is route-efficient",
-            "detail": "Yangsan is on the way from Busan to Gyeongju (Busan → Tongdosa ~25 min → Wondong ~15 min → Gyeongju ~50 min). The dual-city day is geographically tight, no doubling back."
+            "label": "양산+경주 지리가 루트 효율적",
+            "detail": "양산은 부산에서 경주로 가는 길목에 위치 (부산→통도사 약 25분→원동 약 15분→경주 약 50분). 역순 이동 없이 자연스럽게 두 도시를 커버."
           }
         ]
       },
       {
-        "title": "Why this is genuinely cultural, not just a flower tour",
+        "title": "단순 꽃 투어가 아닌 진짜 문화 투어인 이유",
         "icon": "landmark",
         "items": [
           {
-            "label": "Two UNESCO temples in one day",
-            "detail": "Tongdosa (UNESCO Sansa, 2018, Three Jewel Temple) + Bulguksa (UNESCO World Heritage, 1995, six National Treasures) — these are two of Korea's most important Buddhist temples, and visiting both in one day delivers the 'Three Jewel + Mountain Monasteries' narrative arc."
+            "label": "하루에 두 개의 유네스코 사원",
+            "detail": "통도사(유네스코 산사, 2018, 삼보사찰) + 불국사(유네스코 세계유산, 1995, 국보 6점). 하루에 두 유네스코 지정지를 방문하는 코스는 드뭅니다."
           },
           {
-            "label": "Tongdosa's unique 'no Buddha image' Daeungjeon",
-            "detail": "Daeungjeon (National Treasure #290) is the only major Korean Buddhist hall without a Buddha image inside — instead the altar faces the Diamond Stairway behind, where Master Jajang enshrined actual Buddha relics in 646 AD."
+            "label": "통도사만의 '부처 없는' 대웅전",
+            "detail": "대웅전(국보 제290호)은 내부에 불상이 없는 한국의 유일한 주요 법당 — 대신 통도사가 부처님 진신사리를 봉안하고 있기 때문입니다. 대부분의 가이드가 설명 없이 지나치는 독특한 사실."
           },
           {
-            "label": "350-year-old plum tree with a name",
-            "detail": "Jajangmae (지장매) is named after Master Jajang himself. It has been the 'first messenger of spring' for 350+ years and is a designated cultural element of the temple, not just decoration."
+            "label": "이름이 있는 350년 된 매화나무",
+            "detail": "자장매(지장매)는 자장율사 이름에서 따온 것입니다. 350년 넘게 '봄의 첫 전령'으로 자리잡아 왔으며, 한국 불교 역사에서 가장 유명한 매화나무입니다."
           }
         ]
       },
       {
-        "title": "What's included vs. pay-direct",
+        "title": "포함 항목 vs 현장 직접 결제 항목",
         "icon": "ticket",
         "items": [
           {
-            "label": "Included",
-            "detail": "Round-trip transport from Busan, bilingual tour leader, all parking and toll fees. All three default attraction stops (Tongdosa main grounds, Bulguksa, Bomun Lake) are FREE admission. Wondong Village access is also free."
+            "label": "포함",
+            "detail": "부산 왕복 교통, 바이링궐 투어 리더, 주차·통행료 전액. 기본 3개 명소 모두 무료 입장."
           },
           {
-            "label": "Pay direct",
-            "detail": "Lunch (10,000–20,000 KRW per person — Minari Samgyeopsal during plum season, Gyeongju local during cherry season), optional Tongdosa Seongbo Museum (₩2,000–3,000), optional Bomun Lake bike rental (~₩10,000/3hr tandem)."
+            "label": "현장 직접 결제",
+            "detail": "점심(₩10,000~20,000 — 매화 시즌: 원동 미나리삼겹살, 벚꽃 시즌: 경주 현지 식사), 원동역 플랫폼 입장(₩1,000), 보문호 자전거/보트 렌탈(선택 사항)."
           },
           {
-            "label": "Tour cancellation policy",
-            "detail": "Wider operating window means lower cancellation risk than a cherry-only tour. If both plum and cherry are materially delayed/finished and the day can't deliver meaningful blossoms, full refund with at least 3 days' notice."
+            "label": "취소 정책",
+            "detail": "벚꽃만 운영하는 투어보다 취소 리스크가 낮은 넓은 운영 기간. 매화·벚꽃 모두 현저히 지연/종료된 경우 최소 3일 전 전액 환불."
           }
         ]
       }
     ],
-    "sourcing": "Tour design follows the dual-season plum + cherry blossom standard (verified via Trazy 'Busan & Gyeongju Cherry Blossom Private Tour' listing, Yangsan tourism office, Wondong Plum Blossom Festival annual data, KMA bloom forecasts). UNESCO designations cross-checked with the official UNESCO World Heritage List entries for 'Bulguksa Temple' (1995) and 'Sansa, Buddhist Mountain Monasteries in Korea' (2018)."
+    "sourcing": "투어 구성은 매화+벚꽃 듀얼 시즌 기준을 따릅니다 (시장 참고 자료의 「부산·경주 벚꽃 프라이빗 투어」, 양산시 관광청, 원동 매화 축제 연간 데이터, 기상청(KMA) 개화 예보 검증). 유네스코 지정 사항은 공식 세계유산 리스트의 「불국사」(1995년)와 「한국의 산지 승원」(2018년) 항목으로 교차 확인."
   },
   "practicalAccordionItems": [
     {
-      "title": "Operating window — wider than a cherry-only tour",
-      "preview": "Feb 25 – Apr 10 covers both plum peak (late Feb – early Mar) and cherry peak (late Mar – early Apr)",
+      "title": "운행 기간 — 벚꽃 단독 투어보다 넓은 기간",
+      "preview": "2월 25일~4월 10일은 매화 절정(2월 하순~3월 초)과 벚꽃 절정(3월 말~4월 초)을 모두 커버…",
       "content": [
-        "This tour operates Feb 25 – Apr 10, bridging both blossom seasons in a single product.",
-        "Plum blossom peak at Tongdosa is typically late February to early March; cherry blossom peak at Bomun Lake and Bulguksa is typically late March to early April.",
-        "Full refund if neither blossom type is at a meaningful bloom level on your date."
+        "이 투어는 2/25~4/10 운영으로 두 꽃 시즌을 하나의 상품에 담습니다.",
+        "통도사 매화 절정은 2월 말~3월 초; 보문호·불국사 벚꽃 절정은 3월 말~4월 초.",
+        "선택 날짜에 두 꽃 모두 의미 있는 개화 상태가 아닌 경우 전액 환불."
       ]
     },
     {
-      "title": "Pickup, drop-off, and the 8.5-hour window",
-      "preview": "Three Busan subway stations; 08:00–08:30 departure, ~16:30 return",
+      "title": "픽업·하차 및 8.5시간 일정",
+      "preview": "부산 지하철 3개소; 08:00~08:30 출발, 약 16:30 귀환",
       "content": [
-        "Pickup runs in sequence: Busan Station (~08:00), Seomyeon Station (~08:15), Haeundae Station (~08:30).",
-        "Return drop-off at the same stations in reverse order, typically 16:00–16:45 depending on bloom routing.",
-        "Select your preferred station at booking."
+        "픽업 순서: 부산역(약 08:00), 서면역(약 08:15), 해운대역(약 08:30).",
+        "귀환 하차는 동일 역 역순, 개화 루트에 따라 보통 16:00~16:45.",
+        "예약 시 선호 역 선택."
       ]
     },
     {
-      "title": "What's included vs. pay-direct",
-      "preview": "Transport and guide included; admissions and lunch pay direct",
+      "title": "포함 사항 vs. 현장 직접 결제",
+      "preview": "교통 및 가이드 포함; 입장료 및 점심은 현장 개인 결제",
       "content": [
-        "Included: round-trip transport, bilingual certified guide.",
-        "Tongdosa Temple grounds are free; Seongbo Museum optional ~₩2,000–3,000.",
-        "Bulguksa Temple is free (since May 2023); Bomun Lake walking trail is free.",
-        "Lunch at own expense ~₩10,000–15,000 in Wondong or Gyeongju."
+        "포함: 왕복 교통, 공인 바이링궐 가이드.",
+        "통도사 경내 무료; 성보박물관 선택 약 ₩2,000~3,000.",
+        "불국사 무료(2023년 5월부터); 보문호 산책로 무료.",
+        "점심 개인 부담 약 ₩10,000~15,000 (원동 또는 경주 현지)."
       ]
     },
     {
-      "title": "Daily route adjustments based on bloom",
-      "preview": "Guide confirms each morning which stops lead based on live bloom data",
+      "title": "당일 개화 상황에 따른 코스 조정",
+      "preview": "가이드가 매일 아침 실시간 개화 확인된 정보 기준으로 당일 우선 방문지 확정",
       "content": [
-        "The morning of your tour, the guide checks real-time bloom reports from Tongdosa, Wondong, and Bomun Lake.",
-        "If plum is at full peak, Tongdosa and Wondong get extended time; if cherry is peaking, Bomun Lake and Bulguksa's approach road get priority.",
-        "You'll receive a WhatsApp message by 08:00 confirming the day's emphasis."
+        "투어 당일 아침, 가이드가 통도사·원동·보문호 실시간 개화 리포트를 확인합니다.",
+        "매화 절정 → 통도사·원동 체류 연장; 벚꽃 절정 → 보문호·불국사 입구 길 체류 연장.",
+        "당일 중점 코스를 확정한 WhatsApp 메시지를 08:00 전에 발송."
       ]
     },
     {
-      "title": "Vehicle, group size, and accessibility",
-      "preview": "Small-group mini-van, max ~10 passengers",
+      "title": "차량, 그룹 규모 및 접근성",
+      "preview": "소그룹 미니밴, 최대 약 10명",
       "content": [
-        "Mini-van (typically up to ~10 passengers); air-conditioned with USB charging.",
-        "Not suitable for wheelchairs — Tongdosa's riverside pine path and Bomun Lake trail involve uneven ground.",
-        "Strollers are workable at Bomun Lake but difficult at Tongdosa's approach path."
+        "미니밴(최대 약 10명); 에어컨 및 USB 충전 완비.",
+        "휠체어 이용 불가 — 통도사 강변 소나무 길과 보문호 산책로 일부 지면이 고르지 않음.",
+        "유모차는 보문호에서는 가능하나 통도사 진입로에서는 어려울 수 있음."
       ]
     },
     {
-      "title": "What to bring and weather notes",
-      "preview": "Layers for early morning; waterproof shoes if recent rain",
+      "title": "준비물 및 날씨 안내",
+      "preview": "이른 아침을 위한 레이어드 착용; 최근 비가 왔다면 방수 신발 권장",
       "content": [
-        "Late February and early March mornings can be cold (~2–8°C); bring a warm layer even if the forecast looks mild.",
-        "Cherry blossom season (late March – early April) is warmer but can bring light rain — a compact umbrella is useful.",
-        "Light rain does not cancel the tour; heavy rain or typhoon-force wind prompts a reschedule or refund."
+        "2월 말~3월 초 아침은 쌀쌀(약 2~8°C); 예보가 온화해 보여도 따뜻한 겉옷 지참 권장.",
+        "벚꽃 시즌(3월 말~4월 초)은 더 따뜻하지만 가벼운 비가 올 수 있음 — 접이식 우산 유용.",
+        "가벼운 비는 투어 정상 진행; 강우 또는 태풍급 강풍 시 일정 변경 또는 환불 처리."
       ]
     }
   ],
   "practicalWeatherStatic": {
-    "summary": "Late February to early April spans winter→spring transition: 0–18°C with highly variable conditions. Plum blossoms are more cold-tolerant than cherry; cherry is more rain-sensitive. Both are wind-sensitive — heavy gusts can knock petals off in 24 hours.",
-    "advice": "Layered dress (warm jacket morning if visiting in late Feb, lighter mid-day). Light rain shell — Korea spring rain is common. Comfortable walking shoes (~4–6 km total). Camera + portable battery."
+    "summary": "2월 말부터 4월 초까지는 겨울에서 봄으로 넘어가는 시기로, 기온은 약 0~18°C이며 날씨 변화가 큽니다. 매화는 벚꽃보다 추위에 강하고, 벚꽃은 비에 더 민감합니다. 두 꽃 모두 바람에 약해 강풍이 불면 24시간 안에 꽃잎이 많이 떨어질 수 있습니다.",
+    "advice": "겹쳐 입기 좋은 복장을 추천합니다. 2월 말 방문 시 아침에는 따뜻한 재킷이 필요하고, 낮에는 조금 가벼운 옷차림이 좋습니다. 한국의 봄에는 비가 잦을 수 있어 얇은 우비나 방수 재킷을 준비하면 좋습니다. 총 도보 거리는 약 4~6km이므로 편한 신발, 카메라, 보조배터리를 준비해 주세요."
   },
   "seasonalVariations": [
     {
-      "season": "Plum Season (Feb 25 – Mar 20) — OPERATING",
-      "summary": "Yangsan emphasis. Tongdosa Jajangmae (350-year red plum, peak ~Mar 1–15) is the centerpiece. Lunch at Wondong Plum Blossom Village with Minari Samgyeopsal. Gyeongju cherry blossom may not yet have started.",
-      "swaps": "If cherry hasn't started: skip Bomun Lake, extend Tongdosa to 120 min, add Wondong walking time."
+      "season": "매화 시즌 (2/25~3/20) — 운영 중",
+      "summary": "양산 중심. 통도사 자장매(350년 홍매, 절정 약 3/1~3/15)가 주인공. 원동 매화마을에서 미나리삼겹살 점심. 경주 벚꽃은 아직 시작 전일 수 있음.",
+      "swaps": "벚꽃이 아직 안 피었다면: 보문호 생략, 통도사 체류 120분으로 연장, 원동 도보 시간 추가."
     },
     {
-      "season": "Mid-Season (Mar 15 – Mar 28) — OPERATING (best coverage)",
-      "summary": "Both plum (late peak) and early cherry (early peak) bloom simultaneously. Default 4-attraction itinerary works at full duration.",
-      "swaps": "All four attractions visited; this is the best-value date range for the tour."
+      "season": "중간 시즌 (3/15~3/28) — 운영 중 (최고 커버리지)",
+      "summary": "매화(후기 절정)와 벚꽃 초기(초기 절정)가 동시에 개화. 기본 4코스 전체 풀 타임 방문 가능.",
+      "swaps": "4개 명소 전부 방문; 이 시기가 투어 최고 가성비 날짜 범위."
     },
     {
-      "season": "Cherry Season (Mar 28 – Apr 10) — OPERATING",
-      "summary": "Gyeongju emphasis. Bulguksa cherry blossom road and Bomun Lake become centerpieces. Tongdosa shifts from plum to cherry trees; Jajangmae plum is finished.",
-      "swaps": "Skip Wondong (plum finished), shorten Tongdosa to cherry-blossom focus (60 min), longer Bulguksa + Bomun Lake."
+      "season": "벚꽃 시즌 (3/28~4/10) — 운영 중",
+      "summary": "경주 중심. 불국사 벚꽃길과 보문호가 주인공이 됨. 통도사는 매화에서 벚꽃 나무로 이동; 자장매 매화는 종료.",
+      "swaps": "원동 생략(매화 종료), 통도사 벚꽃 집중으로 60분 단축, 불국사 + 보문호 체류 연장."
     },
     {
-      "season": "Outside Spring — TOUR DOES NOT OPERATE",
-      "summary": "This is a season-locked spring product. For year-round Yangsan or Gyeongju access, see other tours in our catalog.",
-      "swaps": "For year-round Gyeongju, book busan-gyeongju-unesco-legacy-tour-national-museum or from-busan-gyeongju-ancient-capital-day-tour."
+      "season": "봄 시즌 외 — 투어 미운영",
+      "summary": "봄 시즌 한정 상품입니다. 연중 양산 또는 경주 방문이 목적이라면 다른 투어를 확인하세요.",
+      "swaps": "연중 경주 여행은 ‘부산 출발 경주 유네스코 레거시 투어’ 또는 ‘부산 출발 경주 고도 일일 투어’를 이용해 주세요."
     }
   ],
   "bookingTrustItems": [
     {
       "icon": "shield-check",
-      "title": "봄 시즌 전문 운영사",
-      "detail": "Wider operating window means lower cancellation risk than cherry-only tours. If both plum and cherry are materially delayed/finished, full refund with at least 3 days' notice.",
-      "body": "2/25~4/10 봄 시즌 한정 투어 — 매화·벚꽃 개화 정보를 실시간으로 안내합니다."
+      "title": "두 시즌 모두 놓쳤을 때 전액 환불",
+      "detail": "벚꽃만 운영하는 투어보다 취소 리스크가 낮은 넓은 운영 기간. 매화·벚꽃 모두 현저히 지연/종료된 경우 최소 3일 전 전액 환불.",
+      "body": "매화·벚꽃 두 시즌 모두 놓친 경우 전액 환불 — 매일 개화 리포트를 추적하며 어느 쪽도 피지 않으면 투어를 운영하지 않습니다."
     },
     {
       "icon": "calendar-check",
-      "title": "코스 전문",
-      "detail": "Each morning the tour leader confirms whether to emphasize Yangsan (plum) or Gyeongju (cherry) based on Yangsan and Gyeongju city tourism office daily reports.",
-      "body": "통도사 자장매와 원동 벚꽃 철길, 보문호 8km 벚꽃 터널을 하루에 연결하는 최적 코스."
+      "title": "당일 아침 개화 리포트로 루트 확정",
+      "detail": "매일 아침 투어 리더가 양산시·경주시 관광청 일일 리포트를 기반으로 양산(매화) 또는 경주(벚꽃) 중점 여부를 확정합니다.",
+      "body": "픽업 전 아침 개화 리포트로 중점 루트(매화 위주 또는 벚꽃 위주)를 확정하여 안내해 드립니다."
     },
     {
       "icon": "user-check",
-      "title": "그룹 규모 관리",
-      "detail": "All tour leaders are licensed and English-speaking. Mandarin support available on request at booking.",
-      "body": "소그룹 밴으로 통도사 경내와 보문호 산책을 여유롭게 즐깁니다."
+      "title": "공인 바이링궐 투어 리더",
+      "detail": "모든 투어 리더는 공인 자격 보유 영어 가능자. 예약 시 요청 시 중국어 지원 가능.",
+      "body": "통도사의 유네스코 산사 지정 배경과 꽃의 식물학적 이야기에 정통한 공인 바이링궐 가이드가 안내합니다."
     }
   ],
   "bookingSupportSteps": [
     {
       "step": 1,
-      "title": "즉시 확인",
-      "detail": "Pick a date in the Feb 25 – Apr 10 window — pay nothing today, reserve now & pay later.",
-      "description": "픽업 역·시각 포함 즉시 예약 확인서 발송."
+      "title": "온라인 예약",
+      "detail": "2/25~4/10 운영 기간 내 날짜 선택 — 오늘 결제 없음, 지금 예약·나중에 결제.",
+      "description": "온라인 예약 완료 즉시 확인서 발송 — 운영 기간(2/25~4/10)과 개화 환불 정책 포함."
     },
     {
       "step": 2,
-      "title": "12시간 전 알림",
-      "detail": "Pick one of three Busan stations: Busan Station (KTX) 08:00, Seomyeon 08:15, or Nopo 08:30.",
-      "description": "매화·벚꽃 당일 개화 상태 및 추천 코스 사전 안내."
+      "title": "픽업 지점 선택",
+      "detail": "3개 부산 지하철역 중 선택: 부산역(KTX) 08:00, 서면 08:15, 노포 08:30.",
+      "description": "예약 시 픽업 역(부산역/서면/해운대) 선택."
     },
     {
       "step": 3,
-      "title": "최종 픽업 안내",
-      "detail": "By mid-February (plum) and mid-March (cherry) we confirm the operating window using KMA forecast; early notification if your date shifts.",
-      "description": "출발 전날 저녁 최종 픽업 시각 확인."
+      "title": "개화 예보 안내",
+      "detail": "매화는 2월 중순, 벚꽃은 3월 중순에 기상청(KMA) 예보로 운영 기간을 확정; 일정 변경 시 조기 안내.",
+      "description": "투어 2~3일 전 개화 예보 발송 — 당일 매화/벚꽃 중 어느 쪽이 중심이 될지 미리 안내."
     },
     {
       "step": 4,
-      "title": "당일 코스 안내",
-      "detail": "Tour leader confirms Yangsan-emphasis vs Gyeongju-emphasis day based on bloom condition the morning of the tour.",
-      "description": "날씨 및 개화 상태 아침 메시지 전달."
+      "title": "당일 아침 중점 코스 확정",
+      "detail": "투어 리더가 당일 아침 개화 상황에 따라 양산 중점(매화) 또는 경주 중점(벚꽃) 여부를 확정.",
+      "description": "매일 아침 개화 리포트를 기반으로 당일 루트(통도사 매화 vs 보문호 벚꽃) 확정 안내."
     },
     {
       "step": 5,
-      "title": "경유지별 심층 안내",
-      "detail": "Tour leader waits at the platform with an AtoC Korea sign at your scheduled pickup time.",
-      "description": "통도사 삼보사찰 의미, 자장매 350년 역사 등 가이드 설명."
+      "title": "선택 역에서 만남",
+      "detail": "투어 리더가 AtoC Korea 사인을 들고 예약 시간에 플랫폼에서 대기.",
+      "description": "선택한 역에서 이름 카드를 든 드라이버가 출영."
     },
     {
       "step": 6,
-      "title": "투어 후 지원",
-      "detail": "Drop-off at the same station ≈ 16:30; total tour ~8.5 hours.",
-      "description": "투어 후 피드백 요청 전송."
+      "title": "선택 역으로 귀환",
+      "detail": "동일 역 약 16:30 하차; 총 투어 시간 약 8.5시간.",
+      "description": "동일 역에 귀착 후 간단한 피드백 메시지 발송."
     }
   ],
   "staticQuestions": [
@@ -746,41 +741,41 @@
     "lastUpdated": "2026-04-28"
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
     "price": {
       "amountLabel": "",
       "currency": "USD",
-      "per": "person"
+      "per": "인"
     }
   },
   "pickup_dropoff": {
     "type": "multi_point_pickup",
     "meeting_points": [
       {
-        "name": "Busan Station (KTX) main exit",
+        "name": "부산역(KTX) 메인 출구",
         "time": "08:00",
-        "note": "Group meeting point at the main exit; staff with AtoC Korea sign."
+        "note": "메인 출구 앞 단체 미팅 지점입니다. AtoC Korea 표지판을 든 직원이 대기합니다."
       },
       {
-        "name": "Seomyeon Station Exit 7",
+        "name": "서면역 7번 출구",
         "time": "08:15",
-        "note": "Second pickup point on the way out of central Busan."
+        "note": "부산 중심부에서 출발하는 두 번째 픽업 지점입니다."
       },
       {
-        "name": "Nopo Station Exit 3",
+        "name": "노포역 3번 출구",
         "time": "08:30",
-        "note": "Third pickup — Nopo is the closest Busan subway station to Tongdosa (~25 min drive), so this point fits the Yangsan-first day."
+        "note": "세 번째 픽업 — 노포역은 통도사에서 가장 가까운 부산 지하철역입니다(차량 약 25분). 양산을 먼저 방문하는 일정에 가장 적합한 픽업 지점입니다."
       }
     ],
     "dropoff_points": [
       {
-        "name": "Same three stations in reverse order",
+        "name": "동일한 세 정류장에 역순으로 하차",
         "approx_time": "≈ 16:30",
-        "note": "Drop-off at any of the three pickup stations on request; total tour ~8.5 hours from Busan Station pickup to Busan Station drop-off."
+        "note": "요청 시 세 곳의 픽업 지점 중 원하는 곳에서 하차할 수 있습니다. 부산역 기준 전체 투어 시간은 약 8.5시간입니다."
       }
     ],
     "hotel_pickup_available": false,
-    "notes": "This tour operates ONLY during the spring blossom window — approximately Feb 25 to Apr 10, 2026. It is a DUAL-SEASON product: plum blossom (매화, peak ~Mar 1–15 at Tongdosa Jajangmae and Yangsan Wondong) blends into cherry blossom (벚꽃, peak ~Mar 28–Apr 10 at Bulguksa and Bomun Lake). Daily route is adjusted by season: early dates emphasize Yangsan (Tongdosa + Wondong); later dates pivot to Gyeongju (Bulguksa + Bomun Lake). Mid-season days cover both. Departure is a fixed group shuttle (small_group product) so pickup times are not flexible. Lunch is at own expense (~10,000–20,000 KRW); during plum season the recommended lunch is Wondong's Minari Samgyeopsal (clean-water parsley grilled with pork belly, only available this season). Wheelchair and stroller travelers — please notify at booking; Tongdosa has a 1.2 km riverside walk and gentle slopes, Bulguksa has stairs."
+    "notes": "이 투어는 봄꽃 시즌에만 운영됩니다(대략 2026년 2월 25일~4월 10일). 매화 시즌에는 통도사 자장매와 양산 원동, 벚꽃 시즌에는 불국사와 보문호를 위주로 진행됩니다. 날짜별 개화 상황에 따라 양산 또는 경주 중심 코스로 조정되며, 중간 시즌에는 두 지역을 함께 방문할 수 있습니다. 소그룹 고정 출발 상품이라 픽업 시간은 유동적으로 변경하기 어렵습니다. 점심은 현장 개별 부담이며, 매화 시즌에는 원동 미나리삼겹살을 추천합니다. 휠체어 또는 유모차 이용 고객은 예약 시 미리 알려 주세요. 통도사에는 약 1.2km 강변 산책 구간과 완만한 경사가 있고, 불국사에는 계단이 있습니다."
   },
   "matching_profile": {
     "profile_version": 6,
@@ -959,9 +954,9 @@
     "downgrade_to": [
       "busan-spring-cherry-blossom-gyeongju-highlights-day-tour"
     ],
-    "internal_competing_products_note": "Within the Busan-departure spring portfolio, this is the WIDER-WINDOW dual-season (plum + cherry) variant covering Yangsan + Gyeongju. The cherry-only tour (busan-spring-cherry-blossom-gyeongju-highlights-day-tour) is the narrower-window (Mar 28 – Apr 10) Gyeongju-only alternative. The two year-round Gyeongju tours (busan-gyeongju-unesco-legacy-tour-national-museum, from-busan-gyeongju-ancient-capital-day-tour) cover the same UNESCO core year-round but skip Yangsan and the seasonal blossom POIs.",
-    "external_source": "GetYourGuide t1199329",
-    "external_source_url": "https://www.getyourguide.com/-t1199329/",
+    "internal_competing_products_note": "Within the Busan-departure spring portfolio, this is the WIDER-SEASON dual-season (plum + cherry) variant covering Yangsan + Gyeongju. The cherry-only tour (busan-spring-cherry-blossom-gyeongju-highlights-day-tour) is the shorter-season (Mar 28 – Apr 10) Gyeongju-only alternative. The two year-round Gyeongju tours (busan-gyeongju-unesco-legacy-tour-national-museum, from-busan-gyeongju-ancient-capital-day-tour) cover the same UNESCO core year-round but skip Yangsan and the seasonal blossom POIs.",
+    "external_source": "t1199329",
+    "external_source_url": "",
     "operator_partner": "AtoC Korea LLC (seasonal plum + cherry blossom shuttle)",
     "last_competitive_review": "2026-04-28",
     "primary_themes": [
@@ -1015,21 +1010,21 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Bulguksa to the National Museum, bamboo forest to bridge —",
-        "headlineLine2": "Korea's 1,000-year capital in a single day from Busan",
+        "headlineLine1": "매화·벚꽃",
+        "headlineLine2": "양산+경주 일일 투어",
         "hero": {
-          "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
-          "imagePosition": "center 35%",
-          "tagline": "Korea's 'museum without walls' — Gyeongju, where seven UNESCO sites cluster within 15 km",
+          "imageUrl": "",
+          "imagePosition": "center 50%",
+          "tagline": "통도사 350년 자장매 매화나무에서 원동 철길 벚꽃 전망, 보문호 벚꽃 터널까지",
           "pills": [
-            "small_group",
-            "gyeongju",
-            "unesco_legacy"
+            "2월 25일 – 4월 10일",
+            "매화 + 벚꽃 투시즌",
+            "유네스코 사찰 2곳"
           ],
           "meta": {
-            "duration": "≈ 11.5 hours (08:10 first pickup, ≈ 19:45 last drop)",
-            "region": "Gyeongju (from Busan)",
-            "stops": "8 stops",
+            "duration": "8.5시간",
+            "region": "양산 + 경주 (부산 출발)",
+            "stops": "당일 개화 절정 코스 구성",
             "rating": 0,
             "ratingStars": 0
           }
@@ -1044,23 +1039,23 @@
         "subnavItems": [
           {
             "id": "overview",
-            "label": "Overview"
+            "label": "투어 개요"
           },
           {
             "id": "itinerary",
-            "label": "Itinerary"
+            "label": "상세 일정"
           },
           {
             "id": "details",
-            "label": "Details"
+            "label": "유의사항"
           },
           {
             "id": "faq",
-            "label": "FAQ"
+            "label": "자주 묻는 질문"
           },
           {
             "id": "reviews",
-            "label": "Reviews"
+            "label": "여행자 후기"
           }
         ]
       }
@@ -1072,34 +1067,34 @@
       "props": {
         "glanceItems": [
           {
+            "icon": "flower-2",
+            "label": "투어 유형",
+            "value": "매화+벚꽃"
+          },
+          {
+            "icon": "calendar-days",
+            "label": "운행 기간",
+            "value": "2월 25일 ~ 4월 10일 한정 운행"
+          },
+          {
+            "icon": "user-check",
+            "label": "가이드 언어",
+            "value": "이중언어 투어 가이드"
+          },
+          {
             "icon": "clock",
-            "label": "Duration",
-            "value": "≈ 11.5 hours (08:10 first pickup, ≈ 19:45 last drop)"
-          },
-          {
-            "icon": "users",
-            "label": "Group",
-            "value": "Small group, mini-van (typically up to ≈10 passengers)"
-          },
-          {
-            "icon": "subway",
-            "label": "Pickup",
-            "value": "Busan Station Exit 4 (08:10), Seomyeon Exit 4 (08:30), Haeundae Exit 5 (09:10)"
-          },
-          {
-            "icon": "calendar",
-            "label": "Best season",
-            "value": "Year-round; cherry-blossom alt route mid-Mar to mid-Apr (Ahopsan replaced by Haeundae Dalmaji Hill)"
-          },
-          {
-            "icon": "footprints",
-            "label": "Walking",
-            "value": "Moderate — ≈4–5 km total. Bulguksa terraces and steps; flat at the museum, hanok village, and bridge."
+            "label": "소요 시간",
+            "value": "8.5시간"
           },
           {
             "icon": "ticket",
-            "label": "Includes",
-            "value": "Round-trip transport, certified guide. Entry fees: Bulguksa free (since May 2023), museum free, Gyochon free, bridge free; only Ahopsan (₩5,000) is paid on-site. Lunch on guest."
+            "label": "입장료",
+            "value": "4개 명소 모두 무료 입장"
+          },
+          {
+            "icon": "utensils-crossed",
+            "label": "점심 식사",
+            "value": "현장 직접 결제"
           }
         ]
       }
@@ -1113,47 +1108,56 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-            "alt": "Stone bridges and Dabotap pagoda at Bulguksa Temple, late afternoon light",
-            "caption": "Bulguksa — UNESCO World Heritage. The two pagodas are National Treasures No. 20 and 21.",
-            "location": "Bulguksa Temple, Gyeongju",
-            "atmosphere": "Stone, wood, and 8th-century pagoda silhouettes"
+            "src": "https://images.unsplash.com/photo-1571156425562-12341e7c9aae?w=1200&q=80",
+            "alt": "배경에 통도사를 둔 매화 가지",
+            "caption": "통도사 자장매 (수령 350년 붉은 매화)",
+            "location": "통도사",
+            "atmosphere": "신성한 봄"
           },
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-            "alt": "Silla gold crown displayed in glass case under museum lighting",
-            "caption": "Gyeongju National Museum — gold crown from Cheonmachong tomb (National Treasure No. 188).",
-            "location": "Gyeongju National Museum",
-            "atmosphere": "Quiet gallery, single object focus"
+            "src": "https://images.unsplash.com/photo-1601901574849-2ce39f2e0867?w=1200&q=80",
+            "alt": "통도사 대웅전과 솔숲 진입로",
+            "caption": "통도사 대웅전 (국보 제290호)",
+            "location": "통도사",
+            "atmosphere": "유네스코 산사"
           },
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-            "alt": "Tile-roofed hanok houses and a stone wall along a quiet alley in Gyochon village",
-            "caption": "Gyochon Hanok Village — the Choi family compound and Confucian school.",
-            "location": "Gyochon Hanok Village, Gyeongju",
-            "atmosphere": "Restored hanok lanes, low traffic"
+            "src": "https://images.unsplash.com/photo-1601822336970-8af7c01f3a91?w=1200&q=80",
+            "alt": "원동 양산 철길과 매화",
+            "caption": "원동 매화마을 — 철길과 매화",
+            "location": "원동 매화마을",
+            "atmosphere": "향수"
           },
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=1200",
-            "alt": "Light filtering through dense bamboo stalks along a forest path",
-            "caption": "Ahopsan Bamboo Forest — privately preserved by the Mun clan since 1638.",
-            "location": "Ahopsan Forest, Gijang-gun, Busan",
-            "atmosphere": "Cool, green, filtered light"
+            "src": "https://images.unsplash.com/photo-1601649308334-2cc8e6f0e21f?w=1200&q=80",
+            "alt": "배경에 벚꽃이 핀 불국사 석탑",
+            "caption": "불국사 벚꽃길",
+            "location": "불국사",
+            "atmosphere": "유네스코 유산"
           },
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
-            "alt": "Wooden bridge pavilion reflected in water at dusk",
-            "caption": "Woljeonggyo Bridge — 66-meter Silla-style reconstruction completed in 2018.",
-            "location": "Woljeonggyo Bridge, Gyeongju",
-            "atmosphere": "Wood, water, soft evening light"
+            "src": "https://images.unsplash.com/photo-1614853128977-b1f1d7e64fae?w=1200&q=80",
+            "alt": "보문호 벚꽃 산책로와 정자",
+            "caption": "보문호 벚꽃 루프",
+            "location": "Bomun Lake",
+            "atmosphere": "봄 경관"
+          },
+          {
+            "id": "g6",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1567427361984-0cbe7396fc6c?w=1200&q=80",
+            "alt": "미나리 삼겹살 (미나리와 함께 구운 삼겹살)",
+            "caption": "원동 미나리 삼겹살 (계절 지역 음식)",
+            "location": "Wondong",
+            "atmosphere": "미식"
           }
         ]
       }
@@ -1166,167 +1170,271 @@
         "itineraryStops": [
           {
             "number": 1,
-            "time": "08:10",
-            "duration": "60 min",
-            "name": "Busan pickup (3 subway stations)",
-            "category": "Departure",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
-            "description": "Sequential pickup along Busan Subway Line 1: Busan Station Exit 4 (08:10), Seomyeon Station Exit 4 (08:30), Haeundae Station Exit 5 (09:10). The Haeundae pickup adds ≈30 min relative to the Busan-Station start because the pickup vehicle loops east before turning north toward Gyeongju. Choose the exit closest to your hotel.",
-            "timeUsed": [
-              "Operational logistics (pickup/meal/transfer/return)",
-              "Brief orientation or break"
+            "time": "≈ 08:00",
+            "duration": "30분",
+            "name": "픽업 (부산 지하철 3개 역)",
+            "category": "이동 / 픽업",
+            "description": "부산역(약 08:00), 서면역(약 08:20), 해운대역(약 09:00) 순차 픽업 후 양산 통도사로 이동.",
+            "highlights": [
+              "부산역·서면역·해운대역 세 곳 중 편한 곳에서 탑승",
+              "**매화 절정기(2월 하순~3월 초)에는 08:00~08:30 이른 출발 필수**",
+              "경부고속도로 경유 통도사까지 약 30분",
+              "차 안 간식 제공; 점심은 원동 또는 경주에서 개인 부담"
             ],
-            "whyOnRoute": "Three pickup points let guests across central Busan reach the meeting van without taxi cost.",
+            "timeUsed": [
+              "부산역 픽업 (약 08:00, 5분)",
+              "서면역으로 이동 (약 15분)",
+              "서면역 픽업 (약 08:15, 5분)",
+              "해운대역으로 이동 (약 15분)",
+              "해운대역 픽업 + 양산 방면 출발 (약 08:30, 20분)"
+            ],
+            "whyOnRoute": "세 곳의 픽업 포인트는 부산의 주요 숙박지를 효율적으로 커버합니다. 북서에서 동쪽 순서로 이동하면 통도사까지의 버스 거리를 최소화하고, 오후의 경주 벚꽃 코스를 여유롭게 소화할 수 있습니다.",
             "_poi_meta": {
-              "poi_key": "busan_subway_pickup",
-              "is_attraction": false
+              "poi_key": "OPS_busan_subway_pickup",
+              "verified": true,
+              "match": "transit_only",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Busan Metro",
+                "Korea Expressway Corporation"
+              ]
             }
           },
           {
             "number": 2,
-            "time": "≈ 09:50",
-            "duration": "60 min",
-            "name": "Ahopsan Bamboo Forest",
-            "category": "Bamboo Forest",
-            "image": "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=800",
-            "description": "Privately preserved bamboo grove inside the Nampyeong Mun clan's ancestral estate in Gijang-gun, Busan — the family has owned and maintained the forest since 1638 (roughly 400 years). Several iconic Korean dramas have filmed here, most famously the bamboo-corridor scenes in 'Mr. Sunshine' (2018). The walking loop is roughly 1 km on flat compacted dirt, takes 45–60 minutes at a slow photography pace, and stays cool in summer because the canopy filters most direct sunlight. Adult admission ₩5,000 (cash; not included in tour price). Spring (cherry blossom season) is the only exception when the route swaps this stop for Haeundae Dalmaji Hill (see Seasonal notes).",
-            "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+            "time": "≈ 09:00",
+            "duration": "90분",
+            "name": "통도사 (유네스코 산사 + 자장매)",
+            "category": "유네스코 산사 + 매화",
+            "description": "통도사는 2018년 '한국의 산지 승원'으로 유네스코 세계문화유산에 등재된 한국 삼보사찰 중 불보사찰입니다. 경내에 자라는 자장매(자장율사가 심었다는 전설의 매화나무)는 수령 약 350년으로, 매년 2월 말~3월 중순 만개합니다. 통도사 계곡 산책로는 봄 경치가 특히 아름답습니다. 무료 입장(주차비 별도). 방문 시간: 약 75분.",
+            "highlights": [
+              "**유네스코 세계유산 '산사, 한국의 불교 산지 승원' 2018년 등재**",
+              "**삼보사찰 중 '불(佛)'의 보(寶)를 상징하는 통도사**",
+              "**646년 자장율사 창건** — 당나라에서 직접 가져온 진신사리 봉안",
+              "**'불상 없는 절'** — 대웅전에 불상 없는 유일무이한 형식; 사리는 금강계단에",
+              "**대웅전(국보 제290호)** — 불상 없는 독특한 법당 구조",
+              "**국내 최대 규모 사찰** — 영축산 65동 전각 + 17개 암자",
+              "**자장매** — 수령 350년 이상, '봄의 첫 전령사' (절정 2월 하순~3월 초)",
+              "**성보박물관** — 한국 최초 불교 전문 박물관 (유물 3만여 점)",
+              "동문 1.2km 솔숲 산책로 — 구불구불 용비처럼 뻗은 적송",
+              "사찰 경내 무료; 성보박물관 약 ₩2,000~3,000"
             ],
-            "whyOnRoute": "Ahopsan sits between Busan and Gyeongju on the way north, adding a sensory-distinct opener (cool, green, photogenic) before the heritage-heavy core of the day.",
+            "timeUsed": [
+              "양산/통도사 주차장 버스 하차 (약 5분)",
+              "강변 소나무 숲길 일주문까지 도보 (약 15분)",
+              "일주문 → 천왕문 → 대웅전 마당 + 금강계단 (약 25분)",
+              "자장매 홍매화 촬영 시간 (시즌별, 절정 2월 말~3월 초) (약 15분)",
+              "성보박물관 선택 관람 (약 20분)",
+              "집결 장소로 복귀 + 버스 집합 (약 10분)"
+            ],
+            "whyOnRoute": "이 코스의 **유네스코·매화 핵심 하이라이트** — 통도사 자장매는 한국 벚꽃보다 3~4주 앞서 개화해 하루 안에 두 개의 유네스코 세계유산과 두 가지 꽃을 모두 담는 독보적인 구성이 됩니다. 동문 솔숲 산책로는 계절에 관계없이 최고의 포토 포인트입니다.",
+            "visitBasics": {
+              "hours": "경내 24시간 개방; 성보박물관 09:00–17:00; 대웅전 통상 낮 시간 개방",
+              "closed": "연중 무휴; 성보박물관 월요일 휴관",
+              "admission": "경내 무료(일반 관람 구역 대부분); 성보박물관(한국 최초 불교박물관, 그림 600점+·유물 3만점): 성인 보통 ₩2,000~3,000 — 입구에서 확인",
+              "walking": "중간 강도 — 주차장에서 본당 입구까지 강변 포장로 1.2km(평탄); 이후 사찰 경내 경사 분포(일부 계단·완경사)"
+            },
+            "convenience": {
+              "restroom": "주차장, 성보박물관 입구, 대웅전 근처 경내에 화장실 있음",
+              "parking": "등산로 입구 근처 대형 유료 주차장 2개소 (양산시+통도사 공동 운영); 축제 기간 만차 빈번"
+            },
+            "smartNotes": {
+              "photo": "자장매(지장매) — 자장율사가 심은 350년 홍매화, 절정 약 2월 말~3월 초. 사찰 내 가장 격조 있는 매화나무.",
+              "facilities": "영어 대응 템플스테이 프로그램 있음 (연등, 다례, 명상, 108배); 성보박물관(한국 최초 불교박물관).",
+              "tip": "유네스코 세계유산 「한국의 산지 승원」(2018년) — 한국 삼보사찰 중 불보사찰. 통도사는 부처님 진신사리 봉안."
+            },
             "_poi_meta": {
-              "poi_key": "ahopsan_bamboo_forest",
-              "is_attraction": true,
-              "fee_krw": 5000
+              "poi_key": "tongdosa_temple",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO World Heritage Centre (2018 Sansa decision 42 COM 8B.23)",
+                "Wikipedia",
+                "Korea.net",
+                "Korean Sansa official",
+                "Busanpedia",
+                "VisitKorea"
+              ]
             }
           },
           {
             "number": 3,
-            "time": "≈ 11:30",
-            "duration": "75 min",
-            "name": "Bulguksa Temple (UNESCO World Heritage)",
-            "category": "UNESCO Buddhist Temple",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
-            "description": "Inscribed by UNESCO together with Seokguram Grotto in December 1995. The temple was founded in 528 CE under Silla King Beopheung, expanded to its current scale in 751 CE by chief minister Kim Daeseong, burned in the 1592–98 Imjin War, and progressively restored from 1920 onward; the wooden structures visible today were largely rebuilt in 1973 around the original stone foundations. The two pagodas in the main courtyard — ornate Dabotap and austere Seokgatap, both dating to the 8th century — are National Treasures No. 20 and No. 21. The two stone bridges at the lower terrace, Cheongun-gyo and Baegun-gyo, each have 33 steps representing the 33 heavens of Buddhist cosmology. Admission was made FREE in May 2023 (parking ₩1,000–₩2,000). Allow 60–75 minutes; weekend mornings get coach traffic from Busan/Daegu so a weekday visit is meaningfully quieter.",
-            "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+            "time": "≈ 11:15",
+            "duration": "60분",
+            "name": "점심 — 원동 미나리삼겹살 (매화 시즌) 또는 경주 현지",
+            "category": "점심 / 개인 부담",
+            "description": "시즌과 코스에 따라 두 가지 점심 옵션 중 선택할 수 있습니다. ① 원동면 미나리 삼겹살: 봄철 미나리와 삼겹살 조합으로 유명한 지역 향토식입니다. ② 경주 현지 식당: 경주 쌈밥 정식 또는 한정식 등 현지 한식 메뉴를 선택할 수 있습니다. 점심 식사비는 별도입니다(약 ₩15,000~20,000).",
+            "highlights": [
+              "**원동 미나리 삼겹살** — 미나리와 삼겹살의 계절 조합 (2~4월 절정)",
+              "미나리 제철이 통도사 자장매 개화 시즌과 절묘하게 겹침",
+              "대안: **경주 쌈밥 정식** — 쌈, 밥, 반찬으로 구성된 한식 메뉴(약 ₩13,000~18,000)",
+              "고급 대안: 요석궁 1779의 **교동법주** 막걸리 코스",
+              "점심 개인 부담; 채식·할랄 대체 메뉴 사전 요청 가능"
             ],
-            "whyOnRoute": "The architectural anchor of the day. Without Bulguksa, no Gyeongju day tour can claim 'UNESCO heritage'.",
+            "timeUsed": [
+              "식당 이동 + 착석 (약 10분)",
+              "주문 + 조리 (약 15분)",
+              "식사 (약 35분)"
+            ],
+            "whyOnRoute": "점심은 통도사 직후인 11:15로 설정해, 오전 양산 구간와 오후 경주 코스를 자연스럽게 이어줍니다. 매화 시즌에는 원동 미나리 삼겹살 식당이 사찰 바로 근처에 있어 이동 없이 계절 별미를 둘러볼 수 있습니다.",
             "_poi_meta": {
-              "poi_key": "bulguksa_temple",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "unesco": "world_heritage",
-              "national_treasures": [
-                "No. 20 Dabotap",
-                "No. 21 Seokgatap"
+              "poi_key": "OPS_wondong_or_gyeongju_lunch",
+              "verified": true,
+              "match": "lunch_placeholder",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea Wondong minari guide",
+                "Visit Gyeongju official"
               ]
             }
           },
           {
             "number": 4,
-            "time": "≈ 13:00",
-            "duration": "60 min",
-            "name": "Lunch (Gyeongju local restaurant)",
-            "category": "Meal",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
-            "description": "Sit-down restaurant within 5 minutes' drive of Bulguksa, chosen for English/Chinese menus and group-friendly seating. Typical options: Gyeongju ssambap (banchan-heavy rice-and-leaf wraps, the local signature, ≈₩15,000–₩20,000), bulgogi set, or vegetarian banchan platter on request. Lunch is paid on the day; budget ₩15,000–₩25,000 per person. Advise dietary requirements (halal, vegetarian, gluten-free) at booking — the guide can route to a suitable kitchen.",
-            "timeUsed": [
-              "Operational logistics (pickup/meal/transfer/return)",
-              "Brief orientation or break"
+            "time": "≈ 12:45",
+            "duration": "90분",
+            "name": "불국사 (유네스코 세계문화유산)",
+            "category": "유네스코 불교 사원",
+            "description": "751년 신라 창건, 1995년 유네스코 세계문화유산 등재. 국보 4점(다보탑·석가탑·연화교칠보교·청운교백운교) 보유. 2023년 5월부터 무료 입장. 방문 시간: 약 60분.",
+            "highlights": [
+              "**1995년 유네스코 세계문화유산** 지정 + 사적 제1호",
+              "**528년 창건 → 751년 김대성 재상 중건 → 774년 완공**",
+              "**국보 6점**이 한 사찰 안에",
+              "**다보탑(국보 제20호)** = 10원짜리 동전 앞면 도안",
+              "**석가탑(국보 제21호) + 무구정광대다라니경** = 현존 세계 최고 목판 인쇄물 (704~751년)",
+              "청운교·백운교(국보 제23호): 33계단 = 불교 33천 상징",
+              "연화교·칠보교(국보 제22호): 극락전으로 이어지는 다리",
+              "**2023년부터 무료 입장** (문화재보호법 개정)",
+              "매일 09:00~18:00, 마지막 입장 17:00"
             ],
-            "whyOnRoute": "Gyeongju ssambap is the signature regional dish; eating it inside Gyeongju is part of the day.",
+            "timeUsed": [
+              "버스 하차 + 소나무 숲 진입로 도보 (약 10분)",
+              "일주문 + 청운교/백운교 촬영 (약 15분)",
+              "대웅전 마당 + 다보탑 + 석가탑 (약 25분)",
+              "비로전 + 극락전 (약 20분)",
+              "자유 시간 + 버스 집합 (약 20분)"
+            ],
+            "whyOnRoute": "이 코스에서 가장 중요한 문화 거점 — 불국사는 경주 당일 투어의 필수 유네스코 명소입니다. 4월 중순 겹벚꽃 절정기를 노리면 봄의 황금 조합이 완성됩니다.",
+            "visitBasics": {
+              "hours": "매일 09:00–18:00 (최종 입장 17:00)",
+              "closed": "연중 무휴",
+              "admission": "무료 (2023년 문화재보호법 개정 이후)",
+              "walking": "중간 강도 — 석계, 경사로, 자갈길; 편안한 신발 권장"
+            },
+            "convenience": {
+              "restroom": "경내 소형 사찰 양식 공중 화장실 무료",
+              "parking": "경내 주차장 (유료)"
+            },
+            "smartNotes": {
+              "photo": "자하문 아래 청운교/백운교 (국보 제23호); 다보탑(국보 제20호)과 석가탑(국보 제21호) 정면 대칭 구도.",
+              "facilities": "입구 관광안내소; 불국사박물관 (별도 입장 ₩2,000/₩1,000, 월요일 휴관).",
+              "tip": "단정한 복장; 법당 내 신발 탈착; 드론 촬영 금지; 스님·불자 촬영 금지."
+            },
             "_poi_meta": {
-              "poi_key": "gyeongju_lunch",
-              "is_attraction": false,
-              "fee_krw": "15000-25000"
+              "poi_key": "bulguksa_temple",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO World Heritage Centre",
+                "Wikipedia",
+                "World History Encyclopedia",
+                "VisitKorea",
+                "Visit Gyeongju official"
+              ]
             }
           },
           {
             "number": 5,
-            "time": "≈ 14:15",
-            "duration": "75 min",
-            "name": "Gyeongju National Museum",
-            "category": "National Museum (Silla)",
-            "image": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=800",
-            "description": "Korea's primary repository of Silla-era artifacts, free admission since November 2008. Three permanent halls cover the main themes: Silla History, Silla Art, and the Wolji Hall (artifacts excavated from the Wolji Pond palace site, formerly called Anapji). The two single objects most visitors come to see are the Cheonmachong gold crown (National Treasure No. 188, recovered 1973 from the 'Heavenly Horse Tomb') and the Sacred Bell of Great King Seongdeok (National Treasure No. 29, cast 771 CE, 18.9 metric tons — the largest existing Korean bell, displayed outdoors near the entrance). English and Chinese exhibit panels are present throughout. Closed Mondays. Open 10:00–18:00 weekdays, 19:00 Saturdays.",
-            "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+            "time": "≈ 14:45",
+            "duration": "75분",
+            "name": "보문호 (벚꽃 하이라이트)",
+            "category": "벚꽃 호수 루프",
+            "description": "보문호는 1979년 개장한 경주 보문관광단지의 중심 호수로, 8km 둘레 산책로를 따라 벚꽃 터널이 펼쳐집니다. 벚꽃 절정 시기(3월 말~4월 초) 수면 반영 사진이 압권입니다. 첨성대(국보 31호)까지 도보 이동 가능. 무료 입장. 방문 시간: 약 50분.",
+            "highlights": [
+              "**한국 최초 대규모 종합 리조트 — 1979년 4월 6일 개장**",
+              "**'한국 관광의 역사가 시작된 곳'** — 물레방아 광장 표지",
+              "**왕벚나무 약 2,800그루** 8km 벚꽃 산책로 — 절정 3월 말~4월 초",
+              "보문정 정자 = **CNN '한국에서 가장 아름다운 50곳'** 선정",
+              "**BTS '버터플라이' 뮤직비디오** 촬영지",
+              "**2025 APEC 정상회의** HICO 컨벤션 센터 개최지",
+              "호수 입장 무료; 패들보트·2인용 자전거 약 ₩10,000/3시간 별도",
+              "오후 햇살 = 하루 최고 포토 타임",
+              "**보문호 HICO 컨벤션 센터에서 2025 APEC 정상회의 개최** — 한국 최초 종합 리조트의 국제적 위상 재확인"
             ],
-            "whyOnRoute": "Bulguksa shows the architecture of Silla; the Museum shows what was inside the tombs and palaces. Most one-day Gyeongju tours skip the museum to add another outdoor stop, which leaves visitors with the empty shells but not the contents.",
+            "timeUsed": [
+              "호반광장 또는 보문정 근처 버스 하차 (약 5분)",
+              "보문정 + 호수 벚꽃길 산책 (약 30분)",
+              "물레방아 광장 + 폭포 + 관광 안내판 (약 15분)",
+              "사진 자유 시간 / 패들 보트 / 카페 (약 20분)",
+              "버스 집합 (약 5분)"
+            ],
+            "whyOnRoute": "이 코스의 **벚꽃 클라이맥스** — 보문호를 하루의 마지막 메인 방문지로 배치해 매화에서 벚꽃으로 이어지는 감동적인 계절 흐름을 완성합니다. 8km 벚꽃 루프의 오후 햇살은 하루 중 가장 아름다운 포토 타임입니다.",
+            "visitBasics": {
+              "hours": "야외 연중 24시간; 벚꽃 조명은 4월 초 일몰~약 22:00",
+              "closed": "연중 무휴; 일부 호수 카페 월요일 휴업",
+              "admission": "무료 (호수·산책로); 보트·자전거 렌탈 별도",
+              "walking": "편안함 — 호수변 8km 포장 루프 (평탄); 1~2km 부분 탐방도 충분히 즐거움"
+            },
+            "convenience": {
+              "restroom": "관광안내소, 보문정, 루프 주요 리조트 접근 지점에 화장실",
+              "parking": "리조트 주변 무료 공용 주차장 다수 (호반광장, 보문정); 축제 주말 빠른 만차"
+            },
+            "smartNotes": {
+              "photo": "보문정 (CNN 「한국의 가장 아름다운 장소 50선」)과 목교 수면 반영; 정자 주변 석양 빛이 특히 아름다움.",
+              "facilities": "자전거·탠덤 렌탈 (약 ₩10,000/3시간), 패들 보트, 호수변 카페·식당, 무료 공연 보문 야외 무대.",
+              "tip": "벚꽃 절정은 보통 3월 말~4월 초 (약 7일간); 축제 주말 혼잡 피하려면 평일 오전 또는 16시 이후 방문."
+            },
             "_poi_meta": {
-              "poi_key": "gyeongju_national_museum",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "closed": "Monday",
-              "national_treasures": [
-                "No. 29 Sacred Bell",
-                "No. 188 Gold Crown"
+              "poi_key": "bomun_lake",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea",
+                "Wikipedia",
+                "Visit Gyeongju official",
+                "MCST",
+                "Gyeongju.go.kr",
+                "Gyeongju Tourism Organization"
               ]
             }
           },
           {
             "number": 6,
-            "time": "≈ 15:50",
-            "duration": "60 min",
-            "name": "Gyochon Hanok Village",
-            "category": "Hanok Heritage Village",
-            "image": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=800",
-            "description": "Restored Joseon-era hanok district built around the ancestral home of the Gyeongju Choi family — the 'Choi the Wealthy' (최부자) clan, famous in Korean civic memory for their twelve-generation rules of conduct: never let neighbors starve in famine years, never hold land beyond a 100-ri radius, never accept rent that tenants couldn't afford. The Choi residence has been preserved as a small museum (free entry) and the surrounding alleys hold tea houses, traditional craft workshops, and the Gyeongju Hyanggyo (Confucian school whose current buildings date to 1492). Most visitors walk the central loop in 30–40 minutes; the hanok lanes are flat and stroller-friendly.",
-            "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
-              "Main attraction exploration with photo time",
-              "Wrap-up and reassembly at vehicle"
+            "time": "≈ 16:00",
+            "duration": "75분",
+            "name": "부산 귀환",
+            "category": "이동 / 귀환",
+            "description": "동해고속도로·경부고속도로로 부산 귀환(약 75~90분). 해운대 → 서면 → 부산역 역순 하차.",
+            "highlights": [
+              "보문호에서 동해·경부고속도로 경유 부산까지 약 85km",
+              "하차 순서: 해운대 → 서면 → 부산역",
+              "차 안 Wi-Fi(신호 환경 따라 다름) + USB 충전",
+              "총 이동 예상: 교통 상황에 따라 75~90분"
             ],
-            "whyOnRoute": "Gyochon is a ten-minute drive from the museum and provides the day's flat-walking interlude before the bridge stop.",
-            "_poi_meta": {
-              "poi_key": "gyochon_hanok_village",
-              "is_attraction": true,
-              "fee_krw": 0
-            }
-          },
-          {
-            "number": 7,
-            "time": "≈ 17:00",
-            "duration": "40 min",
-            "name": "Woljeonggyo Bridge",
-            "category": "Reconstructed Silla Bridge",
-            "image": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=800",
-            "description": "Wooden bridge crossing the Namcheon stream beside Gyochon. The original Silla bridge stood here from 760 CE until the Mongol invasions of the 13th century destroyed it. The current 66-meter reconstruction was completed in 2018 after archaeological excavations begun in 1986; it has two-story gate pavilions on each end and is illuminated nightly from sunset until ≈22:00. **Important seasonal note**: at the scheduled 17:00 arrival the bridge is in daylight from late March through early October — the post-sunset 'reflection' shot you'll see in promotional photos is primarily a winter (November–February) experience when the sun sets between 17:15 and 17:30. The bridge structure itself is worth photographing in any light. Free entry.",
             "timeUsed": [
-              "Main attraction exploration with photo time",
-              "Bridge crossing and reflection viewpoint"
+              "보문호 출발 (약 5분)",
+              "경부고속도로로 부산 방면 이동 (약 60분)",
+              "해운대역 하차 (약 5분)",
+              "서면역 + 부산역 순차 하차 (약 5분)"
             ],
-            "whyOnRoute": "A short, low-walking, scenic close to the day. Pairs naturally with Gyochon, which is 5 minutes' walk away.",
+            "whyOnRoute": "보문호를 16:00에 출발하면 부산 하차 지점에 17:15~17:45 사이에 도착합니다 — 저녁 일정이나 당일 귀국 항공편에 여유 있게 맞출 수 있는 시간입니다.",
             "_poi_meta": {
-              "poi_key": "woljeonggyo_bridge",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "illumination": "sunset to ≈22:00 daily"
-            }
-          },
-          {
-            "number": 8,
-            "time": "≈ 17:45",
-            "duration": "75 min",
-            "name": "Return drive to Busan",
-            "category": "Return",
-            "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
-            "description": "≈80 km / 75 min on the Gyeongbu Expressway in normal traffic; 90 min in Friday-evening or Sunday-return traffic. Drop-off in reverse pickup order: Haeundae Station Exit 5 ≈19:00, Seomyeon Station Exit 4 ≈19:25, Busan Station Exit 4 ≈19:45.",
-            "timeUsed": [
-              "Operational logistics (pickup/meal/transfer/return)",
-              "Brief orientation or break"
-            ],
-            "whyOnRoute": "Required logistics.",
-            "_poi_meta": {
-              "poi_key": "busan_return",
-              "is_attraction": false
+              "poi_key": "OPS_busan_return",
+              "verified": true,
+              "match": "transit_only",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Korea Expressway Corporation",
+                "Busan Metro"
+              ]
             }
           }
         ]
@@ -1339,76 +1447,53 @@
       "props": {
         "routeFlowStops": [
           {
-            "id": "rf_pickup",
-            "name": "Busan subway pickup",
-            "theme": "Departure"
+            "type": "pickup",
+            "label": "부산 (3개 역)"
           },
           {
-            "id": "rf_ahopsan",
-            "name": "Ahopsan Bamboo Forest (or Haeundae Dalmaji Hill in cherry season)",
-            "theme": "Forest / Coastal road (seasonal)"
+            "type": "stop",
+            "label": "통도사"
           },
           {
-            "id": "rf_bulguksa",
-            "name": "Bulguksa Temple (UNESCO)",
-            "theme": "UNESCO heritage"
+            "type": "stop",
+            "label": "원동/경주 점심"
           },
           {
-            "id": "rf_lunch",
-            "name": "Lunch (Gyeongju ssambap)",
-            "theme": "Meal"
+            "type": "stop",
+            "label": "불국사"
           },
           {
-            "id": "rf_museum",
-            "name": "Gyeongju National Museum",
-            "theme": "Silla artifacts"
+            "type": "stop",
+            "label": "보문호"
           },
           {
-            "id": "rf_gyochon",
-            "name": "Gyochon Hanok Village",
-            "theme": "Heritage village"
-          },
-          {
-            "id": "rf_bridge",
-            "name": "Woljeonggyo Bridge",
-            "theme": "Reconstructed Silla bridge"
-          },
-          {
-            "id": "rf_return",
-            "name": "Busan subway drop-off",
-            "theme": "Return"
+            "type": "return",
+            "label": "부산 (3개 역)"
           }
         ],
         "routePhases": [
           {
-            "phase": "Outbound + Ahopsan",
-            "duration": "≈ 2.5 hours",
-            "description": "Sequential pickup at three Busan subway exits (08:10, 08:30, 09:10), then drive ≈30 min to Ahopsan Bamboo Forest in Gijang."
+            "phase": "출발",
+            "title": "양산: 통도사 + 매화",
+            "summary": "오전 통도사 — 유네스코 산사, 삼보사찰, 350년 자장매, 강변 소나무 숲길. 매화 시즌(약 2/25~3/20)에는 원동 매화마을 미나리삼겹살 점심까지 연장.",
+            "description": "부산 지하철 3개 역 픽업 후 양산 통도사로 이동."
           },
           {
-            "phase": "UNESCO core",
-            "duration": "≈ 2 hours",
-            "description": "Drive ≈70 min from Ahopsan to Bulguksa, then 75 min walking the temple."
+            "phase": "봄 시즌 하이라이트",
+            "title": "경주: 유네스코 + 벚꽃",
+            "summary": "오후 경주 벚꽃으로 이동. 불국사(유네스코 1995, 4월 중순 겹벚꽃 절정)와 보문호(8km 벚꽃 루프, 9,000그루) — 경주 봄 사진 명소 쌍두마차.",
+            "description": "통도사 산사 탐방 → 원동 미나리 삼겹살 점심 또는 경주 현지 점심."
           },
           {
-            "phase": "Lunch + museum",
-            "duration": "≈ 2.5 hours",
-            "description": "Local Gyeongju lunch (60 min) then 75 min in the National Museum's Silla galleries."
-          },
-          {
-            "phase": "Hanok village + bridge",
-            "duration": "≈ 2 hours",
-            "description": "Gyochon Hanok Village walk (60 min) then 40 min at Woljeonggyo Bridge."
-          },
-          {
-            "phase": "Return drive",
-            "duration": "≈ 1.25–1.5 hours",
-            "description": "Gyeongju to Busan via Gyeongbu Expressway. Drop-offs at Haeundae, Seomyeon, Busan Station."
+            "phase": "경주 피날레",
+            "title": "부산 귀환",
+            "summary": "고속도로 직행으로 부산 귀환, 3개 픽업 역 역순 하차, 약 16:30 도착.",
+            "description": "불국사(유네스코) → 보문호 벚꽃 터널 → 부산 귀환."
           }
         ],
         "routeShapeIntro": {
-          "title": "How this day flows",
-          "subtitle": "A culture-first day trip from Busan to Gyeongju that emphasizes the 'legacy' theme — Korea's longest-ruling kingdom (Silla, 992 years) and the artifacts that survive. Where most Gyeongju day tours pack in 5–7 outdoor sites, this version slows the pace and includes the National Museum (a stop most tours skip). The night-illumination finale at Woljeonggyo Bridge gives the day a closing emotional beat that other circuits miss. The cherry-blossom season swap to Haeundae Dalmaji Hill is a subtle quality detail — the operator clearly designs around peak conditions rather than a fixed itinerary."
+          "title": "듀얼 시즌 리듬: 양산 매화 → 경주 벚꽃",
+          "body": "기본 4코스 일정은 봄꽃의 자연스러운 진행 순서를 따릅니다: 양산 먼저(통도사 350년 자장매 + 원동 철길 벚꽃 풍경), 이후 경주(불국사 유네스코 + 보문호 벚꽃 루프). 매화 시즌(약 2/25~3/20)에는 양산 체류 시간을 늘리고 원동 점심을 포함; 벚꽃 시즌(약 3/28~4/10)에는 경주 체류 시간을 연장. 중간 시즌(약 3/15~3/28)에는 4개 명소 모두 풀 타임으로 방문."
         }
       }
     },
@@ -1419,43 +1504,70 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "First-time visitors to Korea who want UNESCO content in a single day",
-            "Couples and adult families",
-            "History-curious travelers willing to read museum panels",
-            "Photographers (Bulguksa pagodas + Gyochon hanok + bridge)"
-          ],
-          "lessIdealFor": [
-            "Travelers needing minimal walking",
-            "Stroller-heavy groups (Bulguksa stone steps)",
-            "Very young children (full-day rhythm)",
-            "Travelers needing a tight same-day flight buffer (return is ≈19:45 latest)"
+            "하루에 매화와 벚꽃을 함께 보고 싶은 여행자 (두 꽃을 모두 다루는 투어는 드뭄)",
+            "유네스코 + 꽃구경을 하루에 원하는 첫 방문자 (4개 명소 중 3곳이 유네스코)",
+            "절정 개화기 한국 봄 풍경을 쫓는 커플 및 사진 애호가",
+            "미식가 — 매화 시즌 원동 미나리 삼겹살은 계절 한정 별미",
+            "한 번의 예약으로 봄 꽃구경을 최대한 즐기고 싶은 부산 기반 여행자",
+            "2월 하순~4월 초 크루즈 입항 여행자 (긴 부산 정박 시간 활용)"
           ],
           "routeLogicSections": [
             {
-              "title": "Why this route is built this way",
-              "icon": "route",
-              "iconBg": "bg-sky-50/80",
-              "iconColor": "text-sky-600",
+              "title": "매화+벚꽃 듀얼 시즌 투어가 이기는 이유",
+              "icon": "flower-2",
               "items": [
                 {
-                  "label": "The National Museum is included (most one-day tours skip it)",
-                  "detail": "Most Gyeongju day tours skip the National Museum because it's indoor and quiet, then add a second outdoor stop to compensate. The trade-off is that visitors leave Gyeongju having seen the empty shells (royal tombs, palace ruins) but never the actual contents. The museum holds the Silla gold crown from Cheonmachong, the 18.9-ton Sacred Bell of Great King Seongdeok, and the Wolji palace excavations. This route deliberately keeps the museum in."
+                  "label": "매화와 벚꽃 개화 시기는 2~3주 차이",
+                  "detail": "매화(매화) 절정은 3월 초, 벚꽃(벚꽃) 절정은 3월 말~4월 초. 대부분의 꽃 투어는 한 시즌만 다룹니다. 이 투어의 넓은 운영 기간(약 2/25~4/10)과 양산+경주 지리적 조합이 두 시즌을 모두 커버합니다."
                 },
                 {
-                  "label": "Reconstructed Silla bridge as the day's quiet close",
-                  "detail": "Woljeonggyo Bridge is short, flat, and photogenic — a low-walking final stop after the museum's reading-heavy hour. It is illuminated nightly from sunset until ≈22:00; on this 11.5-hour route the bridge is reached at ≈17:00, which means daylight or twilight visit during late March–early October and a post-sunset / illumination visit in November–February."
+                  "label": "통도사가 두 시즌 모두의 핵심 명소",
+                  "detail": "통도사의 350년 자장매는 3월 초 절정; 사찰 경내에 벚꽃 나무도 있어 4월에도 방문 가치가 있습니다. 단일 명소가 두 시즌 모두에서 활용되는 드문 케이스."
                 },
                 {
-                  "label": "Year-round, with one smart seasonal swap",
-                  "detail": "The Ahopsan Bamboo Forest opener is replaced by Haeundae Dalmaji Hill during cherry-blossom season (mid-March to mid-April). The rest of the day stays identical. This keeps the route equally strong in spring without forcing the bamboo forest stop through a season when cherry blossoms in Busan are the more compelling photograph."
+                  "label": "양산+경주 지리가 루트 효율적",
+                  "detail": "양산은 부산에서 경주로 가는 길목에 위치 (부산→통도사 약 25분→원동 약 15분→경주 약 50분). 역순 이동 없이 자연스럽게 두 도시를 커버."
+                }
+              ]
+            },
+            {
+              "title": "단순 꽃 투어가 아닌 진짜 문화 투어인 이유",
+              "icon": "landmark",
+              "items": [
+                {
+                  "label": "하루에 두 개의 유네스코 사원",
+                  "detail": "통도사(유네스코 산사, 2018, 삼보사찰) + 불국사(유네스코 세계유산, 1995, 국보 6점). 하루에 두 유네스코 지정지를 방문하는 코스는 드뭅니다."
                 },
                 {
-                  "label": "Mini-van size between coach tour and private tour",
-                  "detail": "Coach tours from Busan to Gyeongju typically run 35–45 passengers at a low per-person price; private tours run 1–4 passengers at ~$300+ per group. This small-group mini-van format sits between — usually under 10 passengers per departure — at a per-person price closer to coach economics. Guests who have compared report a private-feeling pace without private-tour cost."
+                  "label": "통도사만의 '부처 없는' 대웅전",
+                  "detail": "대웅전(국보 제290호)은 내부에 불상이 없는 한국의 유일한 주요 법당 — 대신 통도사가 부처님 진신사리를 봉안하고 있기 때문입니다. 대부분의 가이드가 설명 없이 지나치는 독특한 사실."
+                },
+                {
+                  "label": "이름이 있는 350년 된 매화나무",
+                  "detail": "자장매(지장매)는 자장율사 이름에서 따온 것입니다. 350년 넘게 '봄의 첫 전령'으로 자리잡아 왔으며, 한국 불교 역사에서 가장 유명한 매화나무입니다."
+                }
+              ]
+            },
+            {
+              "title": "포함 항목 vs 현장 직접 결제 항목",
+              "icon": "ticket",
+              "items": [
+                {
+                  "label": "포함",
+                  "detail": "부산 왕복 교통, 바이링궐 투어 리더, 주차·통행료 전액. 기본 3개 명소 모두 무료 입장."
+                },
+                {
+                  "label": "현장 직접 결제",
+                  "detail": "점심(₩10,000~20,000 — 매화 시즌: 원동 미나리삼겹살, 벚꽃 시즌: 경주 현지 식사), 원동역 플랫폼 입장(₩1,000), 보문호 자전거/보트 렌탈(선택 사항)."
+                },
+                {
+                  "label": "취소 정책",
+                  "detail": "벚꽃만 운영하는 투어보다 취소 리스크가 낮은 넓은 운영 기간. 매화·벚꽃 모두 현저히 지연/종료된 경우 최소 3일 전 전액 환불."
                 }
               ]
             }
-          ]
+          ],
+          "sourcing": "투어 구성은 매화+벚꽃 듀얼 시즌 기준을 따릅니다 (시장 참고 자료의 「부산·경주 벚꽃 프라이빗 투어」, 양산시 관광청, 원동 매화 축제 연간 데이터, 기상청(KMA) 개화 예보 검증). 유네스코 지정 사항은 공식 세계유산 리스트의 「불국사」(1995년)와 「한국의 산지 승원」(2018년) 항목으로 교차 확인."
         }
       }
     },
@@ -1466,80 +1578,85 @@
       "props": {
         "practicalAccordionItems": [
           {
-            "title": "What's included",
-            "id": "inclusions",
-            "content": "Round-trip mini-van transport from Busan, certified English/Chinese-speaking guide, fuel/tolls/parking. Not included: lunch (≈₩15,000–₩25,000), Ahopsan Bamboo Forest admission (₩5,000, paid on site), tips. All other site admissions are free: Bulguksa (free since May 2023), Gyeongju National Museum (free since 2008), Gyochon Hanok Village, Woljeonggyo Bridge."
+            "title": "운행 기간 — 벚꽃 단독 투어보다 넓은 기간",
+            "preview": "2월 25일~4월 10일은 매화 절정(2월 하순~3월 초)과 벚꽃 절정(3월 말~4월 초)을 모두 커버…",
+            "content": [
+              "이 투어는 2/25~4/10 운영으로 두 꽃 시즌을 하나의 상품에 담습니다.",
+              "통도사 매화 절정은 2월 말~3월 초; 보문호·불국사 벚꽃 절정은 3월 말~4월 초.",
+              "선택 날짜에 두 꽃 모두 의미 있는 개화 상태가 아닌 경우 전액 환불."
+            ]
           },
           {
-            "title": "Pickup & drop-off",
-            "id": "pickup",
-            "content": "Three sequential pickup points along Busan Subway Line 1: Busan Station Exit 4 (08:10), Seomyeon Station Exit 4 (08:30), Haeundae Station Exit 5 (09:10). Choose the exit closest to your hotel at booking. Drop-offs in reverse order: Haeundae ≈19:00, Seomyeon ≈19:25, Busan Station ≈19:45. Provide a WhatsApp / KakaoTalk number at booking; the guide will message the day before with vehicle details."
+            "title": "픽업·하차 및 8.5시간 일정",
+            "preview": "부산 지하철 3개소; 08:00~08:30 출발, 약 16:30 귀환",
+            "content": [
+              "픽업 순서: 부산역(약 08:00), 서면역(약 08:15), 해운대역(약 08:30).",
+              "귀환 하차는 동일 역 역순, 개화 루트에 따라 보통 16:00~16:45.",
+              "예약 시 선호 역 선택."
+            ]
           },
           {
-            "title": "Walking & terrain",
-            "id": "walking",
-            "content": "Moderate. Total walking distance ≈4–5 km across the day. Bulguksa has stone steps between the temple terraces (the lower bridges have 33 steps each, used as a viewing feature; the main visitor route uses a sloped path that bypasses them). The National Museum is flat indoor walking with seating. Gyochon is flat hanok alleys. Woljeonggyo is a flat bridge crossing. Comfortable closed-toe shoes essential — Bulguksa's stone is uneven and slippery when wet."
+            "title": "포함 사항 vs. 현장 직접 결제",
+            "preview": "교통 및 가이드 포함; 입장료 및 점심은 현장 개인 결제",
+            "content": [
+              "포함: 왕복 교통, 공인 바이링궐 가이드.",
+              "통도사 경내 무료; 성보박물관 선택 약 ₩2,000~3,000.",
+              "불국사 무료(2023년 5월부터); 보문호 산책로 무료.",
+              "점심 개인 부담 약 ₩10,000~15,000 (원동 또는 경주 현지)."
+            ]
           },
           {
-            "title": "Cancellation",
-            "id": "cancellation",
-            "content": "Free cancellation up to 24 hours before pickup. Same-day cancellations and no-shows are non-refundable. If the operator cancels (force majeure, weather, road closure), full refund."
+            "title": "당일 개화 상황에 따른 코스 조정",
+            "preview": "가이드가 매일 아침 실시간 개화 확인된 정보 기준으로 당일 우선 방문지 확정",
+            "content": [
+              "투어 당일 아침, 가이드가 통도사·원동·보문호 실시간 개화 리포트를 확인합니다.",
+              "매화 절정 → 통도사·원동 체류 연장; 벚꽃 절정 → 보문호·불국사 입구 길 체류 연장.",
+              "당일 중점 코스를 확정한 WhatsApp 메시지를 08:00 전에 발송."
+            ]
           },
           {
-            "title": "Seasonal route notes",
-            "id": "seasonal",
-            "content": "Cherry blossom season (typically mid-March to mid-April; exact dates vary by ≈7–10 days year-to-year): Ahopsan Bamboo Forest is replaced by Haeundae Dalmaji Hill, Busan's coastal cherry-tunnel road. Winter (November–February): Woljeonggyo Bridge begins to illuminate before the 17:00 arrival because sunset is 17:15–17:30 — this is the only window when the post-sunset reflection shot is reliably possible."
+            "title": "차량, 그룹 규모 및 접근성",
+            "preview": "소그룹 미니밴, 최대 약 10명",
+            "content": [
+              "미니밴(최대 약 10명); 에어컨 및 USB 충전 완비.",
+              "휠체어 이용 불가 — 통도사 강변 소나무 길과 보문호 산책로 일부 지면이 고르지 않음.",
+              "유모차는 보문호에서는 가능하나 통도사 진입로에서는 어려울 수 있음."
+            ]
+          },
+          {
+            "title": "준비물 및 날씨 안내",
+            "preview": "이른 아침을 위한 레이어드 착용; 최근 비가 왔다면 방수 신발 권장",
+            "content": [
+              "2월 말~3월 초 아침은 쌀쌀(약 2~8°C); 예보가 온화해 보여도 따뜻한 겉옷 지참 권장.",
+              "벚꽃 시즌(3월 말~4월 초)은 더 따뜻하지만 가벼운 비가 올 수 있음 — 접이식 우산 유용.",
+              "가벼운 비는 투어 정상 진행; 강우 또는 태풍급 강풍 시 일정 변경 또는 환불 처리."
+            ]
           }
         ],
         "practicalWeatherStatic": {
-          "today": {
-            "temp": "—",
-            "label": "See seasonal notes"
-          },
-          "tomorrow": {
-            "temp": "—",
-            "label": "See seasonal notes"
-          },
-          "_seasonalSummary": "Gyeongju has continental Korean weather — colder than Busan in winter, hotter in summer. Best seasons are April (cherry blossoms in Gyeongju as well) and October–November (foliage at Bulguksa).",
-          "_seasonalTemperatures": [
-            {
-              "season": "Spring (Mar–May)",
-              "range": "5–22°C",
-              "notes": "Cherry blossoms peak early April. Best season overall."
-            },
-            {
-              "season": "Summer (Jun–Aug)",
-              "range": "22–32°C",
-              "notes": "Hot and humid; museum is air-conditioned."
-            },
-            {
-              "season": "Autumn (Sep–Nov)",
-              "range": "8–24°C",
-              "notes": "Foliage at Bulguksa in late October — exceptional."
-            },
-            {
-              "season": "Winter (Dec–Feb)",
-              "range": "-3 to 8°C",
-              "notes": "Cold; museum and indoor café options become more valuable."
-            }
-          ]
+          "summary": "2월 말부터 4월 초까지는 겨울에서 봄으로 넘어가는 시기로, 기온은 약 0~18°C이며 날씨 변화가 큽니다. 매화는 벚꽃보다 추위에 강하고, 벚꽃은 비에 더 민감합니다. 두 꽃 모두 바람에 약해 강풍이 불면 24시간 안에 꽃잎이 많이 떨어질 수 있습니다.",
+          "advice": "겹쳐 입기 좋은 복장을 추천합니다. 2월 말 방문 시 아침에는 따뜻한 재킷이 필요하고, 낮에는 조금 가벼운 옷차림이 좋습니다. 한국의 봄에는 비가 잦을 수 있어 얇은 우비나 방수 재킷을 준비하면 좋습니다. 총 도보 거리는 약 4~6km이므로 편한 신발, 카메라, 보조배터리를 준비해 주세요."
         },
         "seasonalVariations": [
           {
-            "season": "Spring (mid-Mar to mid-Apr, cherry blossom window)",
-            "highlight": "Ahopsan opener swaps for Haeundae Dalmaji Hill cherry-blossom road. Bulguksa grounds peak in mid-April; Dabotap framed by double cherry blossoms is the classic photo."
+            "season": "매화 시즌 (2/25~3/20) — 운영 중",
+            "summary": "양산 중심. 통도사 자장매(350년 홍매, 절정 약 3/1~3/15)가 주인공. 원동 매화마을에서 미나리삼겹살 점심. 경주 벚꽃은 아직 시작 전일 수 있음.",
+            "swaps": "벚꽃이 아직 안 피었다면: 보문호 생략, 통도사 체류 120분으로 연장, 원동 도보 시간 추가."
           },
           {
-            "season": "Summer (Jun–Aug)",
-            "highlight": "Bamboo forest stays cool under canopy; museum air-conditioned. Bulguksa's mountain setting milder than coastal Busan. Bridge is in full daylight at 17:00 arrival."
+            "season": "중간 시즌 (3/15~3/28) — 운영 중 (최고 커버리지)",
+            "summary": "매화(후기 절정)와 벚꽃 초기(초기 절정)가 동시에 개화. 기본 4코스 전체 풀 타임 방문 가능.",
+            "swaps": "4개 명소 전부 방문; 이 시기가 투어 최고 가성비 날짜 범위."
           },
           {
-            "season": "Autumn (late Sep to late Oct)",
-            "highlight": "Bulguksa late-October foliage is one of Korea's classic photographic shots. Gyeongju's tomb mounds also turn. Bridge at 17:00 enters twilight by mid-October."
+            "season": "벚꽃 시즌 (3/28~4/10) — 운영 중",
+            "summary": "경주 중심. 불국사 벚꽃길과 보문호가 주인공이 됨. 통도사는 매화에서 벚꽃 나무로 이동; 자장매 매화는 종료.",
+            "swaps": "원동 생략(매화 종료), 통도사 벚꽃 집중으로 60분 단축, 불국사 + 보문호 체류 연장."
           },
           {
-            "season": "Winter (Nov–Feb)",
-            "highlight": "Quietest crowds; museum becomes the most-valued indoor stop. Sunset 17:15–17:30 means the bridge begins to illuminate during your visit — the only window for the post-sunset reflection shot."
+            "season": "봄 시즌 외 — 투어 미운영",
+            "summary": "봄 시즌 한정 상품입니다. 연중 양산 또는 경주 방문이 목적이라면 다른 투어를 확인하세요.",
+            "swaps": "연중 경주 여행은 ‘부산 출발 경주 유네스코 레거시 투어’ 또는 ‘부산 출발 경주 고도 일일 투어’를 이용해 주세요."
           }
         ]
       }
@@ -1551,57 +1668,60 @@
       "props": {
         "bookingTrustItems": [
           {
-            "icon": "check-circle",
-            "title": "Licensed local operator",
-            "description": "Authorized Korean tour operator with full insurance",
-            "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "icon": "shield-check",
+            "title": "두 시즌 모두 놓쳤을 때 전액 환불",
+            "detail": "벚꽃만 운영하는 투어보다 취소 리스크가 낮은 넓은 운영 기간. 매화·벚꽃 모두 현저히 지연/종료된 경우 최소 3일 전 전액 환불.",
+            "body": "매화·벚꽃 두 시즌 모두 놓친 경우 전액 환불 — 매일 개화 리포트를 추적하며 어느 쪽도 피지 않으면 투어를 운영하지 않습니다."
           },
           {
-            "icon": "route",
-            "title": "Route specialists",
-            "description": "Hand-tuned itinerary, not a generic loop",
-            "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "icon": "calendar-check",
+            "title": "당일 아침 개화 리포트로 루트 확정",
+            "detail": "매일 아침 투어 리더가 양산시·경주시 관광청 일일 리포트를 기반으로 양산(매화) 또는 경주(벚꽃) 중점 여부를 확정합니다.",
+            "body": "픽업 전 아침 개화 리포트로 중점 루트(매화 위주 또는 벚꽃 위주)를 확정하여 안내해 드립니다."
           },
           {
-            "icon": "users",
-            "title": "Curated group size",
-            "description": "Right-sized for the route",
-            "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600"
+            "icon": "user-check",
+            "title": "공인 바이링궐 투어 리더",
+            "detail": "모든 투어 리더는 공인 자격 보유 영어 가능자. 예약 시 요청 시 중국어 지원 가능.",
+            "body": "통도사의 유네스코 산사 지정 배경과 꽃의 식물학적 이야기에 정통한 공인 바이링궐 가이드가 안내합니다."
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "step": 1,
+            "title": "온라인 예약",
+            "detail": "2/25~4/10 운영 기간 내 날짜 선택 — 오늘 결제 없음, 지금 예약·나중에 결제.",
+            "description": "온라인 예약 완료 즉시 확인서 발송 — 운영 기간(2/25~4/10)과 개화 환불 정책 포함."
           },
           {
-            "timing": "12 hours before",
-            "title": "12-Hour Reminder",
-            "detail": "Weather update and any route adjustments"
+            "step": 2,
+            "title": "픽업 지점 선택",
+            "detail": "3개 부산 지하철역 중 선택: 부산역(KTX) 08:00, 서면 08:15, 노포 08:30.",
+            "description": "예약 시 픽업 역(부산역/서면/해운대) 선택."
           },
           {
-            "timing": "Evening before",
-            "title": "Final Pickup Info",
-            "detail": "Exact pickup time and driver contact"
+            "step": 3,
+            "title": "개화 예보 안내",
+            "detail": "매화는 2월 중순, 벚꽃은 3월 중순에 기상청(KMA) 예보로 운영 기간을 확정; 일정 변경 시 조기 안내.",
+            "description": "투어 2~3일 전 개화 예보 발송 — 당일 매화/벚꽃 중 어느 쪽이 중심이 될지 미리 안내."
           },
           {
-            "timing": "Morning of tour",
-            "title": "Day-of Route Notes",
-            "detail": "Morning briefing based on live conditions"
+            "step": 4,
+            "title": "당일 아침 중점 코스 확정",
+            "detail": "투어 리더가 당일 아침 개화 상황에 따라 양산 중점(매화) 또는 경주 중점(벚꽃) 여부를 확정.",
+            "description": "매일 아침 개화 리포트를 기반으로 당일 루트(통도사 매화 vs 보문호 벚꽃) 확정 안내."
           },
           {
-            "timing": "During tour",
-            "title": "Stop-by-Stop Tips",
-            "detail": "Real-time guidance at each location"
+            "step": 5,
+            "title": "선택 역에서 만남",
+            "detail": "투어 리더가 AtoC Korea 사인을 들고 예약 시간에 플랫폼에서 대기.",
+            "description": "선택한 역에서 이름 카드를 든 드라이버가 출영."
           },
           {
-            "timing": "After tour",
-            "title": "Post-tour Support",
-            "detail": "Follow-up and recommendations"
+            "step": 6,
+            "title": "선택 역으로 귀환",
+            "detail": "동일 역 약 16:30 하차; 총 투어 시간 약 8.5시간.",
+            "description": "동일 역에 귀착 후 간단한 피드백 메시지 발송."
           }
         ]
       }
@@ -1613,74 +1733,20 @@
       "props": {
         "staticQuestions": [
           {
-            "id": "q-bridge-night-view",
-            "question": "Is the bridge actually illuminated when we visit?",
-            "answer": "It depends on the season. The bridge is illuminated nightly year-round from sunset until ≈22:00, but this tour reaches the bridge at ≈17:00. In Gyeongju, sunset is 17:15–17:30 in November–February (so you arrive just before illumination begins and see the lights come on), 18:00–18:30 in March/April and September/October (twilight, lights begin around your departure), and 19:00–19:40 in May–August (full daylight). If the post-sunset reflection shot is your priority, book this route in late autumn or winter."
+            "question": "봄 벚꽃 경주 투어와 어떻게 다른가요?",
+            "answer": "이 투어는 운영 기간이 더 넓습니다(2/25~4/10 vs 벚꽃만 3/28~4/10). 양산 통도사 매화나무와 원동 벚꽃 철길 전망을 추가로 방문합니다."
           },
           {
-            "id": "q-vs-ancient-capital",
-            "question": "How is this different from the 'Ancient Capital' day tour from Busan?",
-            "answer": "Both tours run on a similar route (Ahopsan → Bulguksa → museum → Gyochon → bridge). The 'UNESCO Legacy' framing on this product emphasizes the heritage value of the stops and includes a slightly longer museum block (75 min vs 60 min). The 'Ancient Capital' framing leans general-interest and runs ≈30 min shorter overall. If you specifically want time inside the museum, choose this one; if you prefer a calmer pace and earlier return, choose the Ancient Capital version."
+            "question": "각 시즌 절정 시기는 언제인가요?",
+            "answer": "매화(매화) 절정 약 3월 1~15일 — 통도사 자장매와 원동마을. 벚꽃(벚꽃) 절정 약 3월 말~4월 초. 매년 약 5~7일 변동."
           },
           {
-            "id": "q-seokguram",
-            "question": "What about Seokguram Grotto? It's the other UNESCO site at Bulguksa.",
-            "answer": "Seokguram is on the same UNESCO inscription as Bulguksa but sits 8 km up the mountain by a steep, narrow road. The combination of distance, parking constraints, and the 10-minute walk from the Seokguram parking lot makes it impractical to add to a Bulguksa-plus-museum-plus-bridge day. Most one-day Gyeongju tours include either Bulguksa or Seokguram, not both. For Seokguram, see the alternate Gyeongju UNESCO tours that skip the museum and Gyochon."
+            "question": "통도사는 어르신·유모차 접근이 가능한가요?",
+            "answer": "통도사까지 이어지는 1.2km 계곡 포장 산책로는 평탄하여 유모차·휠체어 접근이 가능합니다. 경내 일부 구간은 돌계단이 있지만 우회로가 있습니다."
           },
           {
-            "id": "q-admissions",
-            "question": "Are admissions included?",
-            "answer": "Most are free, so the only out-of-pocket admission is Ahopsan Bamboo Forest (₩5,000 cash, paid on-site). Bulguksa Temple has been free since May 2023; Gyeongju National Museum has been free since November 2008; Gyochon Hanok Village and Woljeonggyo Bridge are free. Plan ₩15,000–₩25,000 for lunch and ₩5,000 for Ahopsan, so total typical out-of-pocket ≈ ₩20,000–₩30,000 per person."
-          },
-          {
-            "id": "q-museum-language",
-            "question": "Is there English signage in the museum?",
-            "answer": "Yes. The Gyeongju National Museum has English and Chinese exhibit panels throughout the three permanent halls (Silla History, Silla Art, Wolji Hall). The Sacred Bell outside the entrance has multilingual interpretive panels. Free English audio guides are available at the information desk with ID deposit; reserving one in advance via the museum website is reliable."
-          },
-          {
-            "id": "q-bulguksa-photography",
-            "question": "Can I take photos at Bulguksa?",
-            "answer": "Photography is allowed throughout the temple grounds, including the two pagodas and the lower-terrace stone bridges. Avoid flash and tripods inside the worship halls (Daeungjeon and adjacent buildings) where services may be in progress, and please lower your voice near monks. Cherry blossoms peak in mid-April and frame Dabotap; autumn foliage peaks late October — both are the most-photographed times."
-          },
-          {
-            "id": "q-bulguksa-stairs",
-            "question": "Do I have to climb the 33-step stone bridges at Bulguksa?",
-            "answer": "No. The two stone bridges (Cheongun-gyo / Baegun-gyo) are National Treasures and are preserved as viewing features — visitors observe them from the lower courtyard rather than walking up them. The visitor path uses a separate sloped route up to the main courtyard, suitable for most fitness levels."
-          },
-          {
-            "id": "q-vegetarian",
-            "question": "Are there vegetarian options for lunch?",
-            "answer": "Yes. Gyeongju ssambap (banchan-heavy rice-and-leaf wraps, the regional signature) is naturally heavy on vegetable side dishes; ordering it without meat banchan is straightforward. The guide can also route to a temple-cuisine (사찰음식) restaurant for fully vegetarian meals on request — please advise at booking. Halal and gluten-free options are limited but possible with advance notice."
-          },
-          {
-            "id": "q-rain",
-            "question": "What if it rains?",
-            "answer": "Light rain: tour operates as planned. Heavy rain: Bulguksa stone steps become slippery and the Ahopsan path can muddy; the guide may shorten outdoor time and extend the museum visit (covered, climate-controlled). Typhoon-level weather: if regional warnings are issued, the operator will offer rebooking or a full refund."
-          },
-          {
-            "id": "first-time",
-            "question": "Is this a good choice for first-time visitors to Gyeongju?",
-            "answer": "Yes — it covers the most distinctive UNESCO and cultural stops in Gyeongju in a single balanced day, with both indoor (museum) and outdoor (temple, village, bridge) content. First-time visitors who want UNESCO heritage content as part of a Korea trip are the primary audience for this product."
-          },
-          {
-            "id": "walking",
-            "question": "How much walking is there?",
-            "answer": "≈4–5 km total. Bulguksa Temple has the most active walking (uneven stone, gentle uphill); the museum is flat indoors; Gyochon and the bridge are flat. Comfortable closed-toe shoes are essential."
-          },
-          {
-            "id": "family",
-            "question": "Is this suitable for families with children?",
-            "answer": "Yes for school-age children (≈8+) who can handle a full-day rhythm. The museum's gold crown and the giant bell are typically the kid-favorite stops; the bamboo forest is sensory-friendly. Younger children may find the museum's quiet halls less engaging."
-          },
-          {
-            "id": "seniors",
-            "question": "Can older adults join comfortably?",
-            "answer": "Recommended for active seniors comfortable with 4–5 km of walking and uneven stone at Bulguksa. The pace is moderate with seated museum time built in. Travelers using a cane manage the route; wheelchair users should consider a private tour with route adjustments."
-          },
-          {
-            "id": "children",
-            "question": "What's the recommended minimum age?",
-            "answer": "Best fit is around age 8 and up — children comfortable with the walking note above and a full-day pace. Children younger than that may flag during the museum visit."
+            "question": "점심 비용은 얼마인가요? 미나리 삼겹살이 무엇인가요?",
+            "answer": "점심 식사비는 별도(약 ₩15,000~20,000). 미나리 삼겹살은 원동 지역 봄 향토 음식으로, 신선한 미나리와 삼겹살을 함께 구워 먹는 조합입니다."
           }
         ]
       }
@@ -1692,36 +1758,16 @@
       "props": {
         "guestReviews": [],
         "reviewsSummary": {
-          "averageRating": 0,
           "totalReviews": 0,
-          "ratingDistribution": [
-            {
-              "stars": 5,
-              "count": 0,
-              "percentage": 0
-            },
-            {
-              "stars": 4,
-              "count": 0,
-              "percentage": 0
-            },
-            {
-              "stars": 3,
-              "count": 0,
-              "percentage": 0
-            },
-            {
-              "stars": 2,
-              "count": 0,
-              "percentage": 0
-            },
-            {
-              "stars": 1,
-              "count": 0,
-              "percentage": 0
-            }
-          ],
-          "highlights": []
+          "averageRating": 0,
+          "ratingDistribution": {
+            "5": 0,
+            "4": 0,
+            "3": 0,
+            "2": 0,
+            "1": 0
+          },
+          "lastUpdated": "2026-04-28"
         }
       }
     },
@@ -1730,14 +1776,11 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
         "price": {
           "amountLabel": "",
           "currency": "USD",
-          "per": "person",
-          "priceSource": "getyourguide_t1031312",
-          "priceNote": "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across packages and operators. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
-          "discountPercent": 10
+          "per": "인"
         }
       }
     }
@@ -1750,10 +1793,10 @@
       "v15.4_new_tour_creation"
     ],
     "fix_passes": {
-      "v15.4_new_tour_creation": "Created new tour from GYG product ID t1199329 (Busan plum + cherry blossom day tour to Yangsan + Gyeongju). Structural template: busan-spring-cherry-blossom-gyeongju-highlights-day-tour (Step 3b — same Busan-departure shuttle pattern, same 8.5h, same fact-grounded scoring methodology). POI knowledge base extended to v1.2 (19 → 21 POIs): added tongdosa_temple, wondong_plum_blossom_village. Wonhyoam Hermitage was researched but EXCLUDED from KB — its 8 km mountain road approach + 900 m elevation makes it unsuitable for a day tour with mixed-mobility shuttle group. POI operational data sourced from VisitKorea, Yangsan City tourism office, Korean Sansa World Heritage Committee, Trazy plum blossom listings, Trip.com Yangsan moments, Wondong Plum Festival annual reports (cross-verified across 5–7 sources per POI). OPERATING WINDOW: Approximately Feb 25 – Apr 10 each year (~6 weeks, wider than the cherry-only Step 3b tour at Mar 28 – Apr 10) due to dual-season coverage (plum peak ~Mar 1–15 + cherry peak ~Mar 28 – Apr 10). MATCHING-PROFILE SCORING METHODOLOGY (per Jason's directive: 'matching scores grounded in facts and actual attraction info, carefully calibrated'): All 68 fields scored from verified facts about the actual stops in the default itinerary. Inline reasoning for each non-trivial score is captured as comments in the generator script step3c_create_plum_cherry_tour.py — Jason can review or adjust any specific score by editing the generator and re-running. Key derivations vs Step 3b cherry-only: (1) walking_level=0.55 (vs Step 3b 0.50) — Tongdosa's 1.2 km riverside approach adds walking distance; (2) culture_level=0.90 (vs Step 3b 0.85) — Tongdosa is a Three Jewel Temple with the unique 'no Buddha image' Daeungjeon NT#290 + 1,400-year continuous monastic practice; (3) intangible_heritage_fit=0.65 (vs Step 3b 0.30) — Tongdosa Sansa designation is specifically for living intangible monastic heritage; (4) food_fit=0.70 (vs Step 3b 0.55) — Wondong's Minari Samgyeopsal is a documented seasonal regional dish, not generic lunch; (5) unesco_fit=0.85 (vs Step 3b 0.95) — 2 of 4 stops UNESCO (Tongdosa Sansa 2018 + Bulguksa 1995), one less than Step 3b; (6) value_for_money_fit=0.90 (vs Step 3b 0.85) — wider operating window = same price for more booking flexibility; (7) mobility_friendly_fit=0.60 (vs Step 3b 0.55) — Tongdosa flat barefoot-friendly approach (verified VisitKorea) is more accessible than Cheomseongdae/Daereungwon's grass paths; (8) seasonality.spring=1.0 (operating Feb 25 – Apr 10), others=0.0 (does not operate). REASONABLE-ASSUMPTION FIELDS that may need patching once the live GYG page is reviewed: (a) price.amountLabel left empty (per-person pricing TBD); (b) catalog_card.priceFromUSD null; (c) exact pickup times (08:00/08:15/08:30) and Nopo Station as third pickup point assumed from typical Busan-Yangsan shuttle schedule; (d) reviewsSummary populated with zeros — actual GYG reviews not imported in this pass; (e) hero/og images deferred per v15 P3 image workflow.",
+      "v15.4_new_tour_creation": "Created new tour from external reference product t1199329 (Busan plum + cherry blossom day tour to Yangsan + Gyeongju). Structural template: busan-spring-cherry-blossom-gyeongju-highlights-day-tour (Step 3b — same Busan-departure shuttle pattern, same 8.5h, same fact-grounded review method). POI knowledge base extended to v1.2 (19 → 21 POIs): added tongdosa_temple, wondong_plum_blossom_village. Wonhyoam Hermitage was researched but EXCLUDED from KB — its 8 km mountain road approach + 900 m elevation makes it unsuitable for a day tour with mixed-mobility shuttle group. POI operational data sourced from VisitKorea, Yangsan City tourism office, Korean Sansa World Heritage Committee, 시장 참고 자료 plum blossom listings, 시장 참고 자료 Yangsan moments, Wondong Plum Festival annual reports (cross-verified across 5–7 sources per POI). OPERATING WINDOW: Approximately Feb 25 – Apr 10 each year (~6 weeks, wider than the cherry-only Step 3b tour at Mar 28 – Apr 10) due to dual-season coverage (plum peak ~Mar 1–15 + cherry peak ~Mar 28 – Apr 10). MATCHING-PROFILE SCORING METHODOLOGY (per Jason's directive: 'matching scores grounded in facts and actual attraction info, carefully calibrated'): All 68 fields scored from verified facts about the actual stops in the default itinerary. Inline reasoning for each non-trivial score is captured as comments in the generator script step3c_create_plum_cherry_tour.py — Jason can review or adjust any specific score by editing the generator and re-running. Key derivations vs Step 3b cherry-only: (1) walking_level=0.55 (vs Step 3b 0.50) — Tongdosa's 1.2 km riverside approach adds walking distance; (2) culture_level=0.90 (vs Step 3b 0.85) — Tongdosa is a Three Jewel Temple with the unique 'no Buddha image' Daeungjeon NT#290 + 1,400-year continuous monastic practice; (3) intangible_heritage_fit=0.65 (vs Step 3b 0.30) — Tongdosa Sansa designation is specifically for living intangible monastic heritage; (4) food_fit=0.70 (vs Step 3b 0.55) — Wondong's Minari Samgyeopsal is a documented seasonal regional dish, not generic lunch; (5) unesco_fit=0.85 (vs Step 3b 0.95) — 2 of 4 stops UNESCO (Tongdosa Sansa 2018 + Bulguksa 1995), one less than Step 3b; (6) value_for_money_fit=0.90 (vs Step 3b 0.85) — wider operating window = same price for more booking flexibility; (7) mobility_friendly_fit=0.60 (vs Step 3b 0.55) — Tongdosa flat barefoot-friendly approach (verified VisitKorea) is more accessible than Cheomseongdae/Daereungwon's grass paths; (8) seasonality.spring=1.0 (operating Feb 25 – Apr 10), others=0.0 (does not operate). REASONABLE-ASSUMPTION FIELDS that may need patching once the live external reference page is reviewed: (a) price.amountLabel left empty (per-person pricing TBD); (b) catalog_card.priceFromUSD null; (c) exact pickup times (08:00/08:15/08:30) and Nopo Station as third pickup point assumed from typical Busan-Yangsan shuttle schedule; (d) reviewsSummary populated with zeros — actual external reference reviews not imported in this pass; (e) hero/og images deferred per v15 P3 image workflow.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 0,
         "fields_skipped": 0,
         "fields_already_float": 42

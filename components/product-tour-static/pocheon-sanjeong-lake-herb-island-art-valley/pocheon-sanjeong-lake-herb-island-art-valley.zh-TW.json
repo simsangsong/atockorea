@@ -5,15 +5,15 @@
   "locale": "zh-TW",
   "product_id": "pocheon-sanjeong-lake-herb-island-art-valley",
   "seo": {
-    "pageTitle": "Pocheon Day Trip: Lake, Herb Island & Art Valley | AtoC Korea",
-    "metaDescription": "Relaxed 10-hour Pocheon day trip from Seoul: Sanjeong Lake trails, Mediterranean-style Herb Island, and the Art Valley monorail above emerald Cheonjuho Lake.",
+    "pageTitle": "抱川一日遊：三井湖·香草島樂園·藝術谷 | AtoC Korea",
+    "metaDescription": "從首爾出發10小時抱川悠閒一日遊：三井湖步道、地中海風格香草島樂園、採石場改造的抱川藝術谷。",
     "ogImage": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&q=80",
     "primaryKeywords": [
-      "Pocheon day tour from Seoul",
-      "Sanjeong Lake tour",
-      "Herb Island Pocheon",
-      "Pocheon Art Valley tour",
-      "Seoul Pocheon day trip"
+      "抱川一日遊從首爾",
+      "三井湖旅遊",
+      "香草島樂園抱川",
+      "抱川藝術谷旅遊",
+      "首爾抱川一日遊"
     ],
     "title": "首爾出發抱川一日遊：山亭湖、香草島＆藝術谷 | AtoC Korea",
     "description": "首爾出發抱川日歸一日遊：山亭湖山間湖景→香草島地中海風香草主題村→抱川藝術谷（廢棄花崗岩採石場改造）。小團體英語導遊，全年開團，含接送。"
@@ -21,9 +21,9 @@
   "catalog_card": {
     "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
     "title": "抱川一日遊：山亭湖、香草島＆抱川藝術谷",
-    "subtitle": "Mountain lake, Mediterranean herb gardens, and a quarry-turned-art-park—the calmest seasonal day-trip from Seoul.",
+    "subtitle": "山間湖泊、地中海風格香草花園、廢棄採石場變身藝術公園——首爾近郊最寧靜的一日遊。",
     "region": "抱川（首爾日歸）",
-    "duration": "10 hours",
+    "duration": "10小時",
     "stopsCount": 3,
     "rating": 4.8,
     "reviewCount": 0,
@@ -34,12 +34,12 @@
     ],
     "heroImage": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&q=80",
     "thumbnail": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80",
-    "priceLabel": "From US$55.80 per person (10% off, was $62)",
-    "shortCardDescription": "A relaxed seasonal day-trip from Seoul to Pocheon, the Gyeonggi countryside known for its lakes, herb gardens, and dramatic art-park landscapes. The route combines Sanjeong Lake's mountain-circled waters, Herb Island's Mediterranean-style gardens and evening lights, and Pocheon Art Valley's monorail-accessed quarry observatory. Less crowded than Nami Island and built around photo-led calm rather than landmark sprint.",
+    "priceLabel": "每人 US$55.80 起 （九折優惠，原價$62）",
+    "shortCardDescription": "從首爾出發的悠閒季節性一日郊遊，前往京畿道抱川——以漢灘江玄武岩地貌、山水風光及秋季銀杏著稱。行程包括三井湖、香草島樂園香草園及抱川藝術谷石灰岩採石場。",
     "tags": [
-      "nature__photo_trip",
-      "seasonal_highlights",
-      "romantic_evening_lights"
+      "自然與拍照",
+      "季節亮點",
+      "浪漫夜景"
     ]
   },
   "headlineLine1": "抱川一日遊：山亭湖、",
@@ -50,21 +50,21 @@
     "salePriceUsd": 55.8,
     "discountPercent": 10,
     "currency": "USD",
-    "per": "person",
-    "priceSource": "getyourguide_t1168134",
-    "priceNote": "GetYourGuide原始定價62美元；AtoC Korea直售價格享9折優惠。"
+    "per": "人",
+    "priceSource": "direct_rate",
+    "priceNote": "價格以 AtoC Korea 官網直售價為準。"
   },
   "hero": {
     "imageUrl": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&q=80",
     "imagePosition": "center 50%",
-    "tagline": "山間湖泊、地中海風格香草村落，以及廢棄花崗岩採石場改造的藝術谷——首爾出發最清幽的京畿道日歸",
+    "tagline": "山間湖泊、地中海風格香草村落，以及廢棄花崗巖採石場改造的藝術谷——首爾出發最清幽的京畿道日歸",
     "pills": [
       "自然風光一日遊",
       "絕佳攝影路線",
       "四季各有特色"
     ],
     "meta": {
-      "duration": "10 hours",
+      "duration": "10小時",
       "region": "抱川",
       "stops": "3 個景點",
       "rating": 4.8,
@@ -95,40 +95,39 @@
   ],
   "glanceItems": [
     {
-      "icon": "camera",
-      "label": "拍照潛力",
-      "value": "良好",
-      "level": 4
+      "icon": "clock",
+      "label": "行程時間",
+      "value": "10小時"
     },
     {
-      "icon": "mountain",
-      "label": "景點密度",
-      "value": "良好",
-      "level": 4
+      "icon": "tree-pine",
+      "label": "景色評級",
+      "value": "湖泊與庭園"
+    },
+    {
+      "icon": "camera",
+      "label": "拍照潛力",
+      "value": "極高"
     },
     {
       "icon": "footprints",
       "label": "步行強度",
-      "value": "中等",
-      "level": 3
-    },
-    {
-      "icon": "cloud-rain",
-      "label": "雨天適合度",
-      "value": "良好",
-      "level": 4
+      "value": "輕鬆至中等"
     },
     {
       "icon": "users",
-      "label": "親子適合度",
-      "value": "極佳",
-      "level": 5
+      "label": "參團形式",
+      "value": "小團體"
+    },
+    {
+      "icon": "ticket",
+      "label": "門票費用",
+      "value": "已包含"
     },
     {
       "icon": "gauge",
       "label": "行程節奏",
-      "value": "靈活",
-      "level": 5
+      "value": "悠閒"
     }
   ],
   "galleryItems": [
@@ -182,43 +181,43 @@
     {
       "number": 1,
       "time": "10:30",
-      "duration": "90 min",
-      "name": "Sanjeong Lake",
-      "category": "Mountain-Circled Walking Lake",
-      "description": "從首爾市中心向東北車程約75分鐘，**山井湖（산정호수）**靜靜地依偎在명성산（922公尺）、망봉산和망무봉三峰之間。水庫**建於1925年**，湖名字義為「清澈如山中井水」。湖畔設有保養良好的**3公里環湖步行小徑**（含浮橋和觀景台，輕鬆步行約50至60分鐘）。深度健行者可選擇明星山全程環線（12.5公里，爬升770公尺，約5至5.5小時），途中穿過著名的**銀草棲息地**（秋季銀草節舉辦地）。全年家庭設施：天鵝/鴨子腳踏船、冬季結冰湖面傳統雪橇節、冰上溜冰。**湖畔步道免費且24小時開放**，但**日落後至日出前2小時嚴格禁止入內**。當地餐廳以淡水螺料理和蘑菇料理聞名。",
+      "duration": "90分鐘",
+      "name": "三井湖",
+      "category": "山中步行湖",
+      "description": "從首爾市中心向東北車程約75分鐘，**山井湖**靜靜地依偎在鳴聲山（922公尺）、望峰山和望武峰三峰之間。水庫**建於1925年**，湖名字義為「清澈如山中井水」。湖畔設有保養良好的**3公里環湖步行小徑**（含浮橋和觀景臺，輕鬆步行約50至60分鐘）。深度健行者可選擇明星山全程環線（12.5公里，爬升770公尺，約5至5.5小時），途中穿過著名的**銀草棲息地**（秋季銀草節舉辦地）。全年家庭設施：天鵝/鴨子腳踏船、冬季結冰湖面傳統雪橇節、冰上溜冰。**湖畔步道免費且24小時開放**，但**日落後至日出前2小時嚴格禁止入內**。當地餐廳以淡水螺料理和蘑菇料理聞名。",
       "highlights": [
         "1925年建成農業水庫；「清澈如山中井水」— 被三山環抱",
-        "3公里環湖步行小徑（約50至60分鐘輕鬆步行），含浮橋和觀景台",
-        "명성산銀草棲息地 — 秋季銀草節拍攝勝地",
+        "3公里環湖步行小徑（約50至60分鐘輕鬆步行），含浮橋和觀景臺",
+        "鳴聲山銀草棲息地 — 秋季銀草節拍攝勝地",
         "全年家庭活動：天鵝/鴨子腳踏船、冬季結冰湖面雪橇節、冰上溜冰",
         "免費入場湖畔步道；各項活動另行收費",
         "韓國麝鹿 / 長鬃山羊偶現周邊山中",
         "**精確建成日期1925年3月20日**；現由**韓國農村社區公社**管理",
         "**1977年指定為國家旅遊地**",
-        "**山井湖雪橇節自2010年起** — 韓國標誌性傳統雪橇場地"
+        "**山井湖雪橇節自2010年起** — 韓國代表性傳統雪橇場地"
       ],
       "timeUsed": [
-        "Arrival and brief orientation by driver-guide (~5 min)",
-        "Free walking time on the 3 km loop trail (~60 min)",
-        "Optional swan/duck boat ride or amusement park visit (~20 min, extra cost)",
-        "Reassembly at vehicle",
-        "Optional Sanjeong Lake Sledding Festival winter activity (mid-Dec to mid-Feb; vintage Korean sled or rubber-duck sled, ₩5,000 rental) (~30 min)"
+        "抵達+導遊簡短介紹——約5分鐘",
+        "3公里環線步道自由漫步——約60分鐘",
+        "可選：天鵝/鴨子船或遊樂園參觀——約20分鐘（另付費）",
+        "在車輛處集合",
+        "可選：山井湖水冬季雪橇節活動（12月中旬至2月中旬；復古韓式雪橇或橡皮鴨雪橇，租借₩5,000，約30分鐘）"
       ],
       "whyOnRoute": "**山井湖以最溫和的步行體驗開啟抱川行程**——50至60分鐘的輕鬆環湖步道暖身熱腿，為香草島規模更大的主題公園式遊覽設定全日輕鬆節奏。湖面被明聖山群山環抱，早晨光線柔和，是全日最後幾個高強度景點登場之前建立平靜感的理想開場。湖畔春季賞花（四月初）、秋季銀芒草及冬季滑鴨（水面結冰時）的季節性亮點讓此站在不同月份均值得一遊。",
       "visitBasics": {
-        "hours": "Open 24 hours but no admission from sunset to 2 hr before sunrise",
-        "closed": "Open year-round",
-        "admission": "Free entry to lake/trail; activities (boating, sledding, amusement park) cost separately",
-        "walking": "Easy — flat 3 km loop in 50-60 min"
+        "hours": "全年24小時（日落至日出前2小時內不開放）",
+        "closed": "全年開放",
+        "admission": "湖泊/步道免費；遊玩活動另付費",
+        "walking": "輕鬆——3公里平坦環線，50–60分鐘"
       },
       "convenience": {
-        "restroom": "At parking area and amusement-park section",
-        "parking": "Available, paid"
+        "restroom": "停車區及遊樂園區",
+        "parking": "收費停車場"
       },
       "smartNotes": {
-        "photo": "Lake-with-mountain reflection — best with morning fog (spring/autumn). Silver grass on Myeongseongsan slopes mid-October to early November. Floating bridge mid-loop. Frozen-lake winter sledding view. Autumn foliage circles the lake.",
-        "facilities": "Sanjeong Lake Amusement Park, sledding hill, ice skating rink, hot springs, picnic grounds, sculpture park, swimming pools, boating dock. Local restaurants serving freshwater snail and mushroom dishes.",
-        "tip": "Best season: October (silver grass + autumn foliage + Silvergrass Festival) or December-February (frozen lake sledding). Early morning fog days in spring and autumn are magical for photography. The 3 km easy loop is the family default; only experienced hikers should attempt the Myeongseongsan summit (5+ hours)."
+        "photo": "春秋清晨薄霧中的湖光山色倒影最為迷人。秋季芒草節景色絕佳。",
+        "facilities": "三井湖遊樂園、雪橇場、溜冰場、溫泉、野餐區。",
+        "tip": "最佳時節：10月（芒草+紅葉+芒草節）或12月至1月（冰橇）。"
       },
       "_poi_meta": {
         "poi_key": "sanjeong_lake",
@@ -231,20 +230,20 @@
           "Korea Rural Community Corporation / Ministry of Agriculture (1925 reservoir construction + ownership/management designation)",
           "Pocheon City Tourism Office (pocheon.go.kr — National Tourist Site designation + Sledding Festival official organization)",
           "Visit Gyeonggi (ggtour.or.kr — provincial tourism portal on Sanjeong Lake winter activities)",
-          "NamuWiki (en.namu.wiki/w/산정호수 — Korean-language verified facts on construction date + depth + 1945-armistice administrative history)"
+          "NamuWiki (en.namu.wiki/w/山井湖 — Korean-language verified facts on construction date + depth + 1945-armistice administrative history)"
         ]
       }
     },
     {
       "number": 2,
       "time": "13:30",
-      "duration": "150 min",
-      "name": "Pocheon Herb Island",
-      "category": "Mediterranean-Style Herb Botanical Park",
-      "description": "距山井湖東方約30分鐘車程，**抱川香草島（포천 허브아일랜드）**是一座融合地中海主題植物園和主題樂園的複合設施，佔地約**82英畝（約33萬平方公尺）**，**1998年首次開放**。園區種植了來自全球的**250多個品種的香草**，設有韓國最大的香草博物館、多個主題村和全年工藝與烹飪活動。主題村包括：**聖誕老人村**（300多個雕像，冬季最為迷人）、**威尼斯村**（貢多拉遊船和迪士尼公主服裝租借）、**療癒中心**（韓國25個必訪康養目的地之一）。公園標誌性活動是全年燈光秀——**11月至2月**最為壯觀，每日從**16:00起**亮燈。別錯過著名的**香草烘焙坊**（以馥郁大蒜麵包聞名）。",
+      "duration": "150分鐘",
+      "name": "抱川香草島樂園",
+      "category": "地中海風格草本植物園",
+      "description": "距山井湖東方約30分鐘車程，**抱川香草島**是一座融合地中海主題植物園和主題樂園的複合設施，佔地約**82英畝（約33萬平方公尺）**，**1998年首次開放**。園區種植了來自全球的**250多個品種的香草**，設有韓國最大的香草博物館、多個主題村和全年工藝與烹飪活動。主題村包括：**聖誕老人村**（300多個雕像，冬季最為迷人）、**威尼斯村**（貢多拉遊船和迪士尼公主服裝租借）、**療愈中心**（韓國25個必訪康養目的地之一）。公園代表性活動是全年燈光秀——**11月至2月**最為壯觀，每日從**16:00起**亮燈。別錯過著名的**香草烘焙坊**（以馥郁大蒜麵包聞名）。",
       "highlights": [
         "1998年開放；約82英畝地中海香草園（250多個品種）",
-        "主題村：聖誕老人村（300多個雕像）、威尼斯村、療癒中心（韓國前25名康養景點）",
+        "主題村：聖誕老人村（300多個雕像）、威尼斯村、療愈中心（韓國前25名康養景點）",
         "全年燈光節 — 11月至2月最為壯觀，粉紅許願隧道 + 聖誕老人燈光秀",
         "每日燈光秀從16:00起亮燈",
         "香草烘焙坊（著名大蒜麵包）",
@@ -254,27 +253,27 @@
         "**週三休館**；成人平日₩10,000 / 週末₩12,000"
       ],
       "timeUsed": [
-        "Entry + brief orientation by driver-guide (~10 min)",
-        "Daytime herb gardens + themed villages walk (~60-75 min)",
-        "Optional craft program OR Herb Bakery / herb cafe stop (~30 min)",
-        "Lighting Festival illumination (16:00 onward — Nov-Feb most magical, ~30-45 min)",
-        "Reassembly at vehicle"
+        "入場+導遊簡短介紹——約10分鐘",
+        "白天草本花園+主題村落漫步——約60–75分鐘",
+        "可選工藝體驗或草本麵包坊/咖啡館——約30分鐘",
+        "燈光節點燈時間（16:00後；11月至2月氣氛最佳，約30–45分鐘）",
+        "在車輛處集合"
       ],
-      "whyOnRoute": "**將香草島安排在13:30，可在單次2.5小時停留內同時涵蓋日間香草園及16:00開始的燈光秀**——從行程中最具拍攝價值的目的地榨取最大收益。相比南怡島＋晨靜樹木園＋普蒂法國的京畿道行程，香草島提供**地中海主題建築＋140種香草植物＋全年燈光裝置**的三合一體驗，且遊客密度明顯更低。薰衣草高峰（6月中至7月中）是全年單一最強的拍攝窗口。",
+      "whyOnRoute": "**將香草島安排在13:30，可在單次2.5小時停留內同時涵蓋日間香草園及16:00開始的燈光秀**——從行程中最具拍攝價值的目的地榨取最大收益。相比南怡島＋晨靜樹木園＋普蒂法國的京畿道行程，香草島提供**地中海主題建築＋140種香草植物＋全年燈光裝置**的三合一體驗，且遊客豐富度明顯更低。薰衣草高峰（6月中至7月中）是全年單一最強的拍攝時段。",
       "visitBasics": {
-        "hours": "Sun-Fri 09:00/10:00-21:00/22:00; Sat & holidays until 23:00 (varies seasonally; lighting from 16:00)",
-        "closed": "Open year-round",
-        "admission": "Weekday Adult 10,000 / Senior+Child 8,000 KRW; Weekend Adult 12,000 / Senior+Child 10,000 KRW",
-        "walking": "Moderate — extensive themed gardens and villages over rolling terrain; allow 2-3 hours"
+        "hours": "週日至週五09:00/10:00–21:00/22:00；週六及節假日至23:00",
+        "closed": "全年開放",
+        "admission": "平日成人₩10,000/長者·兒童₩8,000；週末成人₩12,000",
+        "walking": "中等強度——寬闊主題花園與村落，地形起伏"
       },
       "convenience": {
-        "restroom": "Multiple, signposted",
-        "parking": "Free parking near the festival grounds"
+        "restroom": "多處，有標識",
+        "parking": "節慶場地附近免費停車"
       },
       "smartNotes": {
-        "photo": "Pink wish tunnel (signature year-round). Santa Village 300+ statues at golden hour. Venice Village gondolas. Christmas-themed light displays Nov-Feb (best after 17:00). Lavender field April-June. Pink muhly grass autumn.",
-        "facilities": "Herb Bakery (garlic bread), herb-cuisine restaurants, herb cafe, souvenir/skincare shops, Healing Center spa, craft workshop rooms, Herb Museum.",
-        "tip": "Best visit time: arrive by 14:00-15:00 to see daylight herb gardens, then stay through 16:00 illumination start to peak winter wonderland atmosphere. December-February is most spectacular. The outdoor Santa statues feel slightly faded — focus on indoor facilities (Healing Center, Herb Bakery, Herb Museum) which are well-maintained. Public transport from Seoul is impractical (~2 hr 20 min) — tour or self-drive recommended."
+        "photo": "粉色許願隧道（全年代表性景觀）。黃金時段聖誕村300餘雕像。",
+        "facilities": "草本麵包坊（大蒜麵包）、草本餐廳、咖啡館、紀念品/護膚品商店。",
+        "tip": "建議14:00–15:00到達，先欣賞白天花園，再留下來觀看16:00點燈儀式。"
       },
       "_poi_meta": {
         "poi_key": "herb_island",
@@ -294,44 +293,44 @@
     {
       "number": 3,
       "time": "16:30",
-      "duration": "75 min",
-      "name": "Pocheon Art Valley",
-      "category": "Quarry-Turned-Art-Park with Monorail",
-      "description": "這是當日最具震撼視覺效果的壓軸景點——**抱川藝術谷（포천 아트밸리）**坐落在一個1970年代活躍花崗岩採石場的遺址上，抱川石（포천석）曾從這裡開採，用於建設**青瓦台（總統官邸）、國會大廈和仁川國際機場**等重要地標。採石場於**2003年廢棄**，2005年抱川市啟動了韓國**首個廢棄採石場生態修復計劃**，並於**2009年重新對外開放**，截至2014年已累計突破**100萬人次**。視覺中心是**천주호（泉珠湖）** — 一座在前採石場坑底自然形成的翡翠/碧藍色泉水湖，海拔約340公尺，四周環繞著**50公尺高的垂直花崗岩峭壁**。420公尺單軌列車（約5分鐘；成人來回₩4,500）攀升至頂部花園。韓劇拍攝記錄：《藍色大海的傳說》、《步步驚心：麗》、《韓版花遊記》。",
+      "duration": "75分鐘",
+      "name": "抱川藝術谷",
+      "category": "設有單軌鐵路的採石場改造藝術公園",
+      "description": "這是當日最具震撼畫面效果的壓軸景點——**抱川藝術谷**坐落在一個1970年代活躍花崗巖採石場的遺址上，抱川石曾從這裡開採，用於建設**青瓦臺（總統官邸）、國會大廈和仁川國際機場**等重要地標。採石場於**2003年廢棄**，2005年抱川市啟動了韓國**首個廢棄採石場生態修複計劃**，並於**2009年重新對外開放**，截至2014年已累計突破**100萬人次**。景色中心是**天柱湖（泉珠湖）** — 一座在前採石場坑底自然形成的翡翠/碧藍色泉水湖，海拔約340公尺，四周環繞著**50公尺高的垂直花崗巖峭壁**。420公尺單軌列車（約5分鐘；成人來回₩4,500）攀升至頂部花園。韓劇拍攝記錄：《藍色大海的傳說》、《步步驚心：麗》、《韓版花遊記》。",
       "highlights": [
-        "韓國首個廢棄1970年代花崗岩採石場生態修復計劃 — 포천석曾用於建設青瓦台、國會大廈、仁川機場",
-        "採石場2003年廢棄；2005至2011年修復；2009年開放（截至2014年超100萬人次）",
-        "천주호 — 海拔340公尺翡翠泉水湖，四周環繞50公尺垂直花崗岩峭壁",
+        "韓國首個廢棄1970年代花崗巖採石場生態修複計劃 — 抱川石曾用於建設青瓦臺、國會大廈、仁川機場",
+        "採石場2003年廢棄；2005至2011年修複；2009年開放（截至2014年超100萬人次）",
+        "天柱湖 — 海拔340公尺翡翠泉水湖，四周環繞50公尺垂直花崗巖峭壁",
         "420公尺單軌列車抵達頂部花園（成人來回₩4,500）",
         "韓劇拍攝：《藍色大海的傳說》、《步步驚心：麗》、《韓版花遊記》",
-        "天文科學博物館（2014年8月）、호수音樂台（300人容量）",
-        "**韓國首個廢棄花崗岩採石場生態修復計劃**（2005至2011年；2009年開放）",
-        "**포천석花崗岩原料來源地**：青瓦台、國會大廈、仁川機場",
+        "天文科學博物館（2014年8月）、湖水音樂臺（300人容量）",
+        "**韓國首個廢棄花崗巖採石場生態修複計劃**（2005至2011年；2009年開放）",
+        "**抱川石花崗巖原料來源地**：青瓦臺、國會大廈、仁川機場",
         "**入場費**：成人₩5,000 + 單軌來回₩4,500"
       ],
       "timeUsed": [
-        "Ticketing + monorail boarding (~10 min)",
-        "Monorail ride up (~5 min) → Sky Garden of Hope + Astronomical Science Museum (~15 min)",
-        "Lake Observatory + lakeside patio for the iconic Cheonjuho photo (~15-20 min)",
-        "Healing Forest Promenade walk down (~10-15 min)",
-        "Optional cafe stop (Jeonmang Cafe — Art Valley banknotes from admission give discounts)",
-        "Reassembly at vehicle"
+        "購票+單軌乘車——約10分鐘",
+        "單軌上行（約5分鐘）→希望天空花園+天文科學館",
+        "湖泊觀景臺+湖畔露臺拍攝天柱湖代表性照片",
+        "Healing Forest 散步道下行步行 (~10-15 min)",
+        "可選咖啡休息（展望咖啡館 — 抱川藝術谷入場時領取的紙幣券可用於折扣）",
+        "在車輛處集合"
       ],
-      "whyOnRoute": "**抱川藝術谷以行程中最具戲劇性的單一景觀作為全日壓軸**——前採石場內碧翠色天柱湖＋垂直花崗岩崖壁，秋季紅葉或冬季結冰均極具視覺衝擊力。與全首爾日行程範圍內的其他任何景點相比，採石場＋湖泊的地景在Seoul圈內獨一無二。單軌列車消化爬坡，讓行動能力各異的賓客均可到達採石場觀景台。",
+      "whyOnRoute": "**抱川藝術谷以行程中最具戲劇性的單一景觀作為全日壓軸**——前採石場內碧翠色天柱湖＋垂直花崗巖崖壁，秋季紅葉或冬季結冰均極具景色沖擊力。與全首爾日行程範圍內的其他任何景點相比，採石場＋湖泊的地景在Seoul圈內獨一無二。單軌列車消化爬坡，讓行動能力各異的賓客均可到達採石場觀景臺。",
       "visitBasics": {
-        "hours": "09:00-19:00 (last admission ~17:30); seasonal variation",
-        "closed": "Open year-round",
-        "admission": "Adult 5,000 / Child (7-12) 1,500 KRW. Monorail extra: Adult RT 4,500 / OW 3,500 KRW",
-        "walking": "Moderate — steep hill from base to top (recommend monorail up); flat at top garden; Doleum Stairway is steep spiral; Healing Forest down-walk 10-15 min"
+        "hours": "09:00–19:00（最晚入場約17:30）；季節性調整",
+        "closed": "全年開放",
+        "admission": "成人₩5,000/兒童（7–12歲）₩1,500；單軌成人往返₩4,500",
+        "walking": "中等強度——底部至頂部有坡度（推薦乘單軌）"
       },
       "convenience": {
-        "restroom": "At base ticket office and top garden area",
-        "parking": "Free parking; direct buses run every ~2 hours from Pocheon"
+        "restroom": "底部售票處及頂部花園區",
+        "parking": "免費停車；抱川出發約每2小時一班直達巴士"
       },
       "smartNotes": {
-        "photo": "Cheonjuho Lake from the main lakeside patio is the iconic shot — emerald water against vertical granite cliffs. Lake Observatory gazebo gives the elevated angle. Frozen lake in winter is exceptional. K-drama scene-spotting (Legend of the Blue Sea, Moon Lovers, Hwayugi). Quarry shot-holes near the concert hall are the only physical trace of the mining era.",
-        "facilities": "Observatory cafe (Jeonmang Cafe — Art Valley banknotes from admission give discounts), small Korean restaurant (Manbeokal), snack bar, Sky Garden, planetarium.",
-        "tip": "Take monorail UP (5 min) and walk DOWN via Healing Forest Promenade (~15 min) for the best blend of efficiency + scenery. Visit on weekdays (Tue-Fri) — far less crowded than Nami / Morning Calm. Best in autumn (October foliage) or winter (frozen turquoise lake). 'Entering the lake water is prohibited for safety and environmental protection' — admire from the patio only."
+        "photo": "從主湖畔露臺俯瞰天柱湖——翡翠水色與峭壁背景的代表性構圖。",
+        "facilities": "瞭望咖啡館（持藝術谷代金券可享折扣）。",
+        "tip": "乘單軌上山，沿療愈森林步道下山（約15分鐘）可欣賞更多景色。"
       },
       "_poi_meta": {
         "poi_key": "pocheon_art_valley",
@@ -351,17 +350,17 @@
   ],
   "routeFlowStops": [
     {
-      "name": "Sanjeong Lake",
+      "name": "三井湖",
       "type": "origin",
       "theme": "Mountain Lake"
     },
     {
-      "name": "Herb Island",
+      "name": "香草島樂園草本樂園",
       "type": "meal",
       "theme": "Garden & Lunch"
     },
     {
-      "name": "Art Valley",
+      "name": "藝術谷",
       "type": "return",
       "theme": "Quarry Finale"
     }
@@ -369,23 +368,23 @@
   "routePhases": [
     {
       "phase": "湖畔開場",
-      "duration": "Stops 1",
-      "description": "Morning: Lakeside Opener"
+      "duration": "第1站",
+      "description": "上午：湖畔開幕"
     },
     {
       "phase": "香草園＋午餐",
-      "duration": "Stops 2",
-      "description": "Midday: Herb Garden & Lunch"
+      "duration": "第2站",
+      "description": "中午：草本花園與午餐"
     },
     {
       "phase": "藝術谷壓軸",
-      "duration": "Stops 3",
-      "description": "Afternoon: Art Valley Finale"
+      "duration": "第3站",
+      "description": "下午：藝術谷收尾"
     }
   ],
   "routeShapeIntro": {
-    "title": "行程動線總覽",
-    "subtitle": "Pickup at Seoul meeting points around 08:00 to 09:00, then a 1.5-hour drive northeast to Pocheon. Lake first for calm morning light, Herb Island for lunch and the longest stop, Art Valley to close the day. Return to Seoul typically 18:30 to 19:30."
+    "title": "行程路線一覽",
+    "subtitle": "在首爾集合點約08:00至09:00接送，隨後向東北行駛1.5小時抵達抱川。先遊三井湖享受清晨寧靜的光線，香草島樂園作為最長的一站兼午餐，最後以藝術谷收尾。約18:00至19:00返回首爾。"
   },
   "whyTourWorks": {
     "bestFor": [
@@ -404,7 +403,7 @@
         "items": [
           {
             "label": "比南怡島人潮少",
-            "detail": "加平的南怡島＋晨靜樹木園＋普蒂法國路線人流日益增加。抱川的湖泊與花園擁有相似的自然吸引力，但遊客密度明顯更低。"
+            "detail": "加平的南怡島＋晨靜樹木園＋普蒂法國路線人流日益增加。抱川的湖泊與花園擁有相似的自然吸引力，但遊客豐富度明顯更低。"
           },
           {
             "label": "更強的季節多樣性",
@@ -444,11 +443,11 @@
         "items": [
           {
             "label": "季節性替代安排常見",
-            "detail": "部分運營商版本在春秋加入碧桃尼瀑布、10月增設蘋果農場、冬季安排草莓農場或冰壁咖啡廳。"
+            "detail": "部分合作業者版本在春秋加入碧桃尼瀑布、10月增設蘋果農場、冬季安排草莓農場或冰壁咖啡廳。"
           },
           {
             "label": "香草島週三休館",
-            "detail": "香草島部分週三休館。運營商通常以延長山井湖時間或增加藝術谷時間替代。若出遊日期為週三，建議確認運營狀態。"
+            "detail": "香草島部分週三休館。合作業者通常以延長山井湖時間或增加藝術谷時間替代。若出遊日期為週三，建議確認運營狀態。"
           },
           {
             "label": "冬季遊覽注意事項",
@@ -470,7 +469,7 @@
       "title": "接送與下車地點",
       "preview": "首爾集合點；07:50至09:00出發",
       "content": [
-        "接送點通常為弘大입口站（4號出口）、明洞新世界免稅店及東大門歷史文化公園站（10號出口）",
+        "接送點通常為弘大入口口站（4號出口）、明洞新世界免稅店及東大門歷史文化公園站（10號出口）",
         "第一個集合點通常07:50至09:00出發",
         "請在您所選集合點提早至少10分鐘到達",
         "返回時在同一首爾集合點下車",
@@ -496,7 +495,7 @@
       "preview": "季節性變化豐富；常有替代安排",
       "content": [
         "春季（3至6月）：賞櫻、薰衣草即將達到高峰、可選草莓農場",
-        "夏季（6至8月）：香草島薰衣草6月中至7月高峰；預期潮濕及可能的梅雨",
+        "夏季（6至8月）：香草島薰衣草6月中至7月高峰；預期潮溼及可能的梅雨",
         "秋季（9至11月）：香草島粉黛亂子草、山井湖銀芒草、藝術谷紅葉",
         "冬季（12至2月）：可選冰上活動（視天氣決定）、香草島燈光節仍照常舉辦",
         "小雨：行程通常繼續；大雨可能縮短戶外停留時間"
@@ -547,25 +546,25 @@
   "seasonalVariations": [
     {
       "season": "春季",
-      "title": "Strawberry season",
-      "description": "四月初山井湖畔賞櫻；春日新綠重返藝術谷。部分運營商版本包含草莓農場體驗，延至六月。",
+      "title": "草莓季",
+      "description": "四月初山井湖畔賞櫻；春日新綠重返藝術谷。部分合作業者版本包含草莓農場體驗，延至六月。",
       "icon": "flower"
     },
     {
       "season": "夏季",
-      "title": "Lavender peak",
-      "description": "香草島薰衣草6月中至7月下旬盛開，是全年單一最強拍攝窗口。預期潮濕和可能的梅雨。",
+      "title": "薰衣草綻放期",
+      "description": "香草島薰衣草6月中至7月下旬盛開，是全年單一最強拍攝時段。預期潮溼和可能的梅雨。",
       "icon": "sun"
     },
     {
       "season": "秋季",
-      "title": "Pink muhly season",
+      "title": "粉黛草季節",
       "description": "香草島粉黛亂子草及山井湖銀芒草讓秋季成為全年最具拍攝價值的季節。蘋果採摘活動在部分版本的10月至11月推出。",
       "icon": "leaf"
     },
     {
       "season": "冬季",
-      "title": "Lights & ice season",
+      "title": "燈光與冰雪季",
       "description": "香草島燈光節及聖誕村；山井湖鴨型雪橇和冰上活動視安全冰況而定。冰壁咖啡廳版本在深冬推出。",
       "icon": "snowflake"
     }
@@ -574,18 +573,18 @@
     {
       "icon": "check-circle",
       "title": "當地持照合法業者",
-      "description": "持牌韓國旅遊運營商，備有完整保險",
+      "description": "持牌韓國旅遊合作業者，備有完整保險",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
-      "body": "持牌韓國旅遊運營商，備有完整保險"
+      "body": "持牌韓國旅遊合作業者，備有完整保險"
     },
     {
       "icon": "route",
       "title": "路線專家",
-      "description": "精心設計的行程，而非千篇一律的路線",
+      "description": "精心構成的行程，而非千篇一律的路線",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
-      "body": "精心設計的行程，而非千篇一律的路線"
+      "body": "精心構成的行程，而非千篇一律的路線"
     },
     {
       "icon": "users",
@@ -643,17 +642,17 @@
     {
       "id": "q2",
       "question": "香草島的薰衣草何時盛開？",
-      "answer": "6月中至7月下旬是盛開高峰——大約四至六週的滿開期。粉黛亂子草從9月下旬至10月接替薰衣草。窗口之外，香草園全年展示140種以上香草植物，地中海建築在任何季節均具有拍攝價值。"
+      "answer": "6月中至7月下旬是盛開高峰——大約四至六週的滿開期。粉黛亂子草從9月下旬至10月接替薰衣草。時段之外，香草園全年展示140種以上香草植物，地中海建築在任何季節均具有拍攝價值。"
     },
     {
       "id": "q3",
       "question": "如果香草島週三休館怎麼辦？",
-      "answer": "香草島部分週三休館，並非每週。遇到此情況，運營商通常延長山井湖停留時間、增加抱川藝術谷時間，或以碧桃尼瀑布替代。若出遊日期為週三，請在預訂時確認運營狀態；如需替換，運營商將提前通知。"
+      "answer": "香草島部分週三休館，並非每週。遇到此情況，合作業者通常延長山井湖停留時間、增加抱川藝術谷時間，或以碧桃尼瀑布替代。若出遊日期為週三，請在預訂時確認運營狀態；如需替換，合作業者將提前通知。"
     },
     {
       "id": "q4",
       "question": "抱川藝術谷的單軌列車如何使用？",
-      "answer": "單軌列車為可選項目，從入口沿線上升至採石場觀景台。現場購買單程票₩3,500，來回票₩4,500（不含在行程費用中）。步行替代路線約需10至15分鐘上坡路程。多數旅客選擇搭車上去、步行下來以節省時間和費用。"
+      "answer": "單軌列車為可選項目，從入口沿線上升至採石場觀景臺。現場購買單程票₩3,500，來回票₩4,500（不含在行程費用中）。步行替代路線約需10至15分鐘上坡路程。多數旅客選擇搭車上去、步行下來以節省時間和費用。"
     },
     {
       "id": "q5",
@@ -668,17 +667,17 @@
     {
       "id": "first-time",
       "question": "對於初次遊覽抱川的旅客，這是好選擇嗎？",
-      "answer": "適合初次遊覽，但更偏向精選路線而非「必遊名勝」式行程。"
+      "answer": "適合初次遊覽，但更偏向推薦路線而非「必遊名勝」式行程。"
     },
     {
       "id": "walking",
       "question": "步行難度高嗎？",
-      "answer": "全程以輕鬆步行為主。山井湖為平坦湖畔小徑（完整4公里，可選2公里半圈）。香草島為平坦花園步道，地勢起伏輕微。抱川藝術谷是最活躍的路段：步行至採石場觀景台約10至15分鐘上坡（或搭單軌列車），加上天空公園可選螺旋梯（不適合嬰兒車）。湖畔區本身地勢平坦。"
+      "answer": "全程以輕鬆步行為主。山井湖為平坦湖畔小徑（完整4公里，可選2公里半圈）。香草島為平坦花園步道，地勢起伏輕微。抱川藝術谷是最活躍的路段：步行至採石場觀景臺約10至15分鐘上坡（或搭單軌列車），加上天空公園可選螺旋梯（不適合嬰兒車）。湖畔區本身地勢平坦。"
     },
     {
       "id": "family",
-      "question": "這個行程適合家庭嗎？",
-      "answer": "適合大多數家庭。山井湖的腳踏船和遊樂區是孩子最喜歡的環節。香草島有香水、麵包等工作坊。抱川藝術谷的單軌列車深受孩子歡迎。天空公園螺旋梯不適合嬰兒車；否則本路線是首爾出發日行程中較適合家庭的選擇之一。"
+      "question": "這個行程適閤家庭嗎？",
+      "answer": "適合大多數家庭。山井湖的腳踏船和遊樂區是孩子最喜歡的環節。香草島有香水、麵包等工作坊。抱川藝術谷的單軌列車深受孩子歡迎。天空公園螺旋梯不適合嬰兒車；否則本路線是首爾出發日行程中較適閤家庭的選擇之一。"
     },
     {
       "id": "seniors",
@@ -725,7 +724,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "可訂狀態會在付款步驟中確認。",
     "price": {
       "amountLabel": "55.80",
       "originalPriceUsd": 62,
@@ -733,8 +732,8 @@
       "discountPercent": 10,
       "currency": "USD",
       "per": "人",
-      "priceSource": "getyourguide_t1168134",
-      "priceNote": "Original price 62 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+      "priceSource": "direct_rate",
+      "priceNote": "價格以 AtoC Korea 官網直售價為準。"
     }
   },
   "pickup_dropoff": {
@@ -743,31 +742,31 @@
       {
         "name": "弘大入口站4號出口",
         "time": "07:50",
-        "note": "First Seoul meeting point; please arrive 10 minutes early."
+        "note": "首爾第一個集合點，請提前10分鐘抵達。"
       },
       {
         "name": "明洞新世界免稅店",
         "time": "08:30",
-        "note": "Second Seoul meeting point."
+        "note": "首爾第二個集合點。"
       },
       {
         "name": "東大門歷史文化公園站10號出口",
         "time": "08:40",
-        "note": "Third Seoul meeting point."
+        "note": "第三個首爾集合點。"
       }
     ],
     "dropoff_points": [
       {
-        "name": "Dongdaemun History & Culture Park Station",
-        "note": "Standard Seoul drop-off point."
+        "name": "東大門歷史文化公園站",
+        "note": "首爾標準下車點"
       },
       {
-        "name": "Myeongdong Station",
-        "note": "Standard Seoul drop-off point."
+        "name": "明洞 Station",
+        "note": "首爾標準下車點"
       },
       {
-        "name": "Hongik University Station",
-        "note": "Standard Seoul drop-off point."
+        "name": "弘大入口站",
+        "note": "首爾標準下車點"
       }
     ],
     "hotel_pickup_available": false,
@@ -782,7 +781,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gyeonggi_pocheon",
     "vehicle_type": "minicoach",
-    "duration_hours": 10,
+    "duration_hours": 10.0,
     "region_tags": [
       "seoul_capital",
       "gyeonggi_pocheon",
@@ -809,16 +808,16 @@
     "pace_level": 0.4,
     "walking_level": 0.45,
     "scenic_level": 0.95,
-    "photo_level": 1,
+    "photo_level": 1.0,
     "culture_level": 0.4,
-    "relax_level": 1,
+    "relax_level": 1.0,
     "first_time_fit": 0.6,
     "family_fit": 0.85,
     "senior_fit": 0.8,
-    "couple_fit": 1,
+    "couple_fit": 1.0,
     "solo_traveler_fit": 0.8,
     "active_traveler_fit": 0.4,
-    "adult_family_fit": 1,
+    "adult_family_fit": 1.0,
     "family_with_teens_fit": 0.6,
     "young_kids_fit": 0.6,
     "senior_active_fit": 0.8,
@@ -846,7 +845,7 @@
     "comfort_level": 0.8,
     "budget_fit": 0.6,
     "premium_fit": 0.4,
-    "small_group_fit": 1,
+    "small_group_fit": 1.0,
     "private_fit": 0.2,
     "bus_fit": 0.4,
     "price_band": "mid",
@@ -905,43 +904,43 @@
     "history_culture_fit": 0.4,
     "romantic_fit": 0.85,
     "seasonal_fit": 0.85,
-    "china_mainland_market_fit": 0,
-    "korea_domestic_market_fit": 0,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "seoul_day_trip_pair_fit": 1,
-    "seoul_central_hotel_pickup_fit": 1,
-    "return_to_seoul_central_fit": 1,
-    "day_trip_2_3_hour_drive_each_way_fit": 1,
-    "small_group_format_fit": 1,
-    "fixed_schedule_format_fit": 1,
-    "affordable_format_vs_charter_fit": 1,
-    "quarry_restoration_anchor_fit": 1,
-    "korea_first_ecological_restoration_project_fit": 1,
-    "pocheon_seok_granite_anchor_fit": 1,
-    "blue_house_national_assembly_incheon_airport_granite_source_fit": 1,
-    "abandoned_quarry_to_culture_park_fit": 1,
-    "emerald_quarry_lake_anchor_fit": 1,
-    "hosur_concert_hall_quarry_cliff_venue_fit": 1,
-    "pocheon_three_pillar_day_trip_fit": 1,
-    "agricultural_reservoir_lake_visit_fit": 1,
-    "1925_irrigation_lake_anchor_fit": 1,
-    "national_tourist_site_1977_designation_fit": 1,
-    "myeongseongsan_silver_grass_autumn_fit": 1,
-    "sanjeong_lake_sledding_festival_winter_fit": 1,
-    "mediterranean_herb_garden_fit": 1,
-    "year_round_lighting_festival_fit": 1,
-    "korea_largest_herb_museum_fit": 1,
-    "korea_drama_filming_density_high_fit": 1,
-    "legend_of_the_blue_sea_filming_fit": 1,
-    "moon_lovers_scarlet_heart_ryeo_filming_fit": 1,
+    "seoul_day_trip_pair_fit": 1.0,
+    "seoul_central_hotel_pickup_fit": 1.0,
+    "return_to_seoul_central_fit": 1.0,
+    "day_trip_2_3_hour_drive_each_way_fit": 1.0,
+    "small_group_format_fit": 1.0,
+    "fixed_schedule_format_fit": 1.0,
+    "affordable_format_vs_charter_fit": 1.0,
+    "quarry_restoration_anchor_fit": 1.0,
+    "korea_first_ecological_restoration_project_fit": 1.0,
+    "pocheon_seok_granite_anchor_fit": 1.0,
+    "blue_house_national_assembly_incheon_airport_granite_source_fit": 1.0,
+    "abandoned_quarry_to_culture_park_fit": 1.0,
+    "emerald_quarry_lake_anchor_fit": 1.0,
+    "hosur_concert_hall_quarry_cliff_venue_fit": 1.0,
+    "pocheon_three_pillar_day_trip_fit": 1.0,
+    "agricultural_reservoir_lake_visit_fit": 1.0,
+    "1925_irrigation_lake_anchor_fit": 1.0,
+    "national_tourist_site_1977_designation_fit": 1.0,
+    "myeongseongsan_silver_grass_autumn_fit": 1.0,
+    "sanjeong_lake_sledding_festival_winter_fit": 1.0,
+    "mediterranean_herb_garden_fit": 1.0,
+    "year_round_lighting_festival_fit": 1.0,
+    "korea_largest_herb_museum_fit": 1.0,
+    "korea_drama_filming_density_high_fit": 1.0,
+    "legend_of_the_blue_sea_filming_fit": 1.0,
+    "moon_lovers_scarlet_heart_ryeo_filming_fit": 1.0,
     "differentiates_from_dmz_day_trip": true,
     "differentiates_from_nami_morning_calm_petite_france": true,
     "differentiates_from_seoraksan_sokcho_day_trip": true,
@@ -1015,19 +1014,19 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Pocheon Day Trip: Sanjeong Lake,",
-        "headlineLine2": "Herb Island & Art Valley",
+        "headlineLine1": "抱川一日遊：山亭湖、",
+        "headlineLine2": "香草島＆藝術谷",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&q=80",
           "imagePosition": "center 50%",
-          "tagline": "Mountain lake, Mediterranean-style herb village, and a former granite quarry transformed into an art park—Pocheon's three softest-and-most-photogenic stops in one Seoul day-trip.",
+          "tagline": "山間湖泊、地中海風格香草村落，以及廢棄花崗巖採石場改造的藝術谷——首爾出發最清幽的京畿道日歸",
           "pills": [
             "自然風光一日遊",
             "絕佳攝影路線",
-            "四季各具特色"
+            "四季各有特色"
           ],
           "meta": {
-            "duration": "10 hours",
+            "duration": "10小時",
             "region": "抱川",
             "stops": "3 個景點",
             "rating": 4.8,
@@ -1119,46 +1118,46 @@
             "id": "g1",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
-            "alt": "Mediterranean-style garden zones with whitewashed walls, herb beds, and seasonal lavender displays",
-            "caption": "Herb Island Mediterranean herb gardens (Pocheon)",
-            "location": "Herb Island",
-            "atmosphere": "Mediterranean-style herb gardens with seasonal lavender, daisies, and pink muhly"
+            "alt": "香草島地中海香草園抱川",
+            "caption": "香草島地中海香草園（抱川）",
+            "location": "香草島",
+            "atmosphere": "季節性薰衣草、雛菊及粉黛亂子草"
           },
           {
             "id": "g2",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
-            "alt": "Mountain-circled lake with a flat lakeside path and forested cliffs reflected in the water",
-            "caption": "Sanjeong Lake at Mount Myeongseongsan (Pocheon)",
-            "location": "Sanjeong Lake",
-            "atmosphere": "Mountain-circled lake with walking paths and lakeside cafes"
+            "alt": "明聖山環抱山井湖抱川",
+            "caption": "明聖山環抱的山井湖（抱川）",
+            "location": "山井湖",
+            "atmosphere": "群山環繞的湖畔步道與湖邊咖啡廳"
           },
           {
             "id": "g3",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-            "alt": "Emerald-green quarry lake surrounded by sheer granite cliff walls",
-            "caption": "Cheonjuho Lake inside Pocheon Art Valley quarry",
-            "location": "Pocheon Art Valley",
-            "atmosphere": "Emerald Cheonjuho Lake inside the former granite quarry"
+            "alt": "抱川藝術谷前採石場天柱湖",
+            "caption": "抱川藝術谷前採石場內的天柱湖",
+            "location": "抱川藝術谷",
+            "atmosphere": "前採石場內的翠綠色天柱湖"
           },
           {
             "id": "g4",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=1200&q=80",
-            "alt": "Garden paths illuminated with strings of evening lights and themed installations",
-            "caption": "Herb Island light festival evening (year-round Santa Village area)",
-            "location": "Herb Island Evening Lights",
-            "atmosphere": "Romantic light displays after sunset"
+            "alt": "香草島燈光節夜景全年聖誕村",
+            "caption": "香草島燈光節夜景（全年聖誕村）",
+            "location": "香草島夜間燈光",
+            "atmosphere": "日落後浪漫燈光裝置"
           },
           {
             "id": "g5",
             "type": "photo",
             "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
-            "alt": "Forest waterfall cascading over rock ledges into a pool",
-            "caption": "Bidulginang Cascade — seasonal substitute stop near Pocheon",
-            "location": "Bidulginang Cascade",
-            "atmosphere": "Optional waterfall stop on seasonal versions of the route"
+            "alt": "碧桃尼瀑布季節性替代景點抱川",
+            "caption": "碧桃尼瀑布——季節性替代景點",
+            "location": "碧桃尼瀑布",
+            "atmosphere": "可選瀑布停留，春秋季節安排"
           }
         ]
       }
@@ -1172,137 +1171,170 @@
           {
             "number": 1,
             "time": "10:30",
-            "duration": "90 min",
-            "name": "Sanjeong Lake",
-            "category": "Mountain-Circled Walking Lake",
-            "description": "Sanjeong Lake (Sanjeong-ho) is an artificial lake at the base of Mount Myeongseongsan, surrounded by towering cliffs and lush forest. The 4-kilometer perimeter trail is one of Gyeonggi's most-loved gentle walks, with lakeside cafes, duck-shaped pedal boats, and a small amusement zone. In autumn the surrounding silver grass turns gold; in winter the frozen lake hosts duck-sled and ice activities.",
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "duration": "90分鐘",
+            "name": "三井湖",
+            "category": "山中步行湖",
+            "description": "從首爾市中心向東北車程約75分鐘，**山井湖**靜靜地依偎在鳴聲山（922公尺）、望峰山和望武峰三峰之間。水庫**建於1925年**，湖名字義為「清澈如山中井水」。湖畔設有保養良好的**3公里環湖步行小徑**（含浮橋和觀景臺，輕鬆步行約50至60分鐘）。深度健行者可選擇明星山全程環線（12.5公里，爬升770公尺，約5至5.5小時），途中穿過著名的**銀草棲息地**（秋季銀草節舉辦地）。全年家庭設施：天鵝/鴨子腳踏船、冬季結冰湖面傳統雪橇節、冰上溜冰。**湖畔步道免費且24小時開放**，但**日落後至日出前2小時嚴格禁止入內**。當地餐廳以淡水螺料理和蘑菇料理聞名。",
             "highlights": [
-              "4 km lakeside walking trail with low elevation change",
-              "Mountain-circled scenery and on-site cafes",
-              "Seasonal duck-pedal boats (warm months) and duck sleds (winter, ice-conditions permitting)",
-              "Far less crowded than Nami Island"
+              "1925年建成農業水庫；「清澈如山中井水」— 被三山環抱",
+              "3公里環湖步行小徑（約50至60分鐘輕鬆步行），含浮橋和觀景臺",
+              "鳴聲山銀草棲息地 — 秋季銀草節拍攝勝地",
+              "全年家庭活動：天鵝/鴨子腳踏船、冬季結冰湖面雪橇節、冰上溜冰",
+              "免費入場湖畔步道；各項活動另行收費",
+              "韓國麝鹿 / 長鬃山羊偶現周邊山中",
+              "**精確建成日期1925年3月20日**；現由**韓國農村社區公社**管理",
+              "**1977年指定為國家旅遊地**",
+              "**山井湖雪橇節自2010年起** — 韓國代表性傳統雪橇場地"
             ],
             "timeUsed": [
-              "Drive from Seoul (about 1.5 hours)",
-              "Lakeside walk (full or partial loop)",
-              "Optional duck boat or duck sled (extra cost, seasonal)",
-              "Photo time and short cafe break"
+              "抵達+導遊簡短介紹——約5分鐘",
+              "3公里環線步道自由漫步——約60分鐘",
+              "可選：天鵝/鴨子船或遊樂園參觀——約20分鐘（另付費）",
+              "在車輛處集合",
+              "可選：山井湖水冬季雪橇節活動（12月中旬至2月中旬；復古韓式雪橇或橡皮鴨雪橇，租借₩5,000，約30分鐘）"
             ],
-            "whyOnRoute": "Starting at Sanjeong Lake gives the day a calm opening with strong nature scenery before the more curated stops at Herb Island and Art Valley.",
+            "whyOnRoute": "**山井湖以最溫和的步行體驗開啟抱川行程**——50至60分鐘的輕鬆環湖步道暖身熱腿，為香草島規模更大的主題公園式遊覽設定全日輕鬆節奏。湖面被明聖山群山環抱，早晨光線柔和，是全日最後幾個高強度景點登場之前建立平靜感的理想開場。湖畔春季賞花（四月初）、秋季銀芒草及冬季滑鴨（水面結冰時）的季節性亮點讓此站在不同月份均值得一遊。",
             "visitBasics": {
-              "hours": "Open 24 hours (lake area); botanical garden ≈09:00–18:00",
-              "closed": "Open year-round",
-              "admission": "Free for lake area; botanical garden has separate fee (≈5,000 KRW)",
-              "walking": "Easy — flat lakeside path"
+              "hours": "全年24小時（日落至日出前2小時內不開放）",
+              "closed": "全年開放",
+              "admission": "湖泊/步道免費；遊玩活動另付費",
+              "walking": "輕鬆——3公里平坦環線，50–60分鐘"
             },
             "convenience": {
-              "restroom": "Available at parking and around the lake",
-              "parking": "Free parking available"
+              "restroom": "停車區及遊樂園區",
+              "parking": "收費停車場"
             },
             "smartNotes": {
-              "photo": "Lake reflecting the surrounding mountains; pink muhly in autumn at the botanical garden; Dambo wood giants in the forest",
-              "facilities": "Lakeside cafés and restaurants; Hanwha Resort Annecy nearby",
-              "tip": "Easy to combine with Pocheon Art Valley and Herb Island for a Pocheon day-trip from Seoul"
+              "photo": "春秋清晨薄霧中的湖光山色倒影最為迷人。秋季芒草節景色絕佳。",
+              "facilities": "三井湖遊樂園、雪橇場、溜冰場、溫泉、野餐區。",
+              "tip": "最佳時節：10月（芒草+紅葉+芒草節）或12月至1月（冰橇）。"
             },
             "_poi_meta": {
               "poi_key": "sanjeong_lake",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "note": "Operational details based on aggregated visitor info"
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Korea Tourism Organization (VisitKorea — Pocheon Sanjeonghosu Lake official listing + 3 km loop trail + Myeongseongsan silver-grass habitat)",
+                "Korea Rural Community Corporation / Ministry of Agriculture (1925 reservoir construction + ownership/management designation)",
+                "Pocheon City Tourism Office (pocheon.go.kr — National Tourist Site designation + Sledding Festival official organization)",
+                "Visit Gyeonggi (ggtour.or.kr — provincial tourism portal on Sanjeong Lake winter activities)",
+                "NamuWiki (en.namu.wiki/w/山井湖 — Korean-language verified facts on construction date + depth + 1945-armistice administrative history)"
+              ]
             }
           },
           {
             "number": 2,
             "time": "13:30",
-            "duration": "150 min",
-            "name": "Herb Island",
-            "category": "Mediterranean-Style Herb Botanical Park",
-            "description": "Korea's largest herb-themed botanical park, designed to evoke a Mediterranean village with whitewashed walls, olive groves, and themed garden zones. More than 140 herb varieties grow across the gardens; on-site experiences include perfume making, candle making, and a herb-bread bakery. After sunset, Herb Island transforms into a romantic light-display zone with the famous 'Santa Village' open year-round.",
-            "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+            "duration": "150分鐘",
+            "name": "抱川香草島樂園",
+            "category": "地中海風格草本植物園",
+            "description": "距山井湖東方約30分鐘車程，**抱川香草島**是一座融合地中海主題植物園和主題樂園的複合設施，佔地約**82英畝（約33萬平方公尺）**，**1998年首次開放**。園區種植了來自全球的**250多個品種的香草**，設有韓國最大的香草博物館、多個主題村和全年工藝與烹飪活動。主題村包括：**聖誕老人村**（300多個雕像，冬季最為迷人）、**威尼斯村**（貢多拉遊船和迪士尼公主服裝租借）、**療愈中心**（韓國25個必訪康養目的地之一）。公園代表性活動是全年燈光秀——**11月至2月**最為壯觀，每日從**16:00起**亮燈。別錯過著名的**香草烘焙坊**（以馥郁大蒜麵包聞名）。",
             "highlights": [
-              "Mediterranean-style village atmosphere with herb gardens",
-              "Seasonal flower displays: lavender, daisies, pink muhly grass",
-              "Year-round Santa Village and evening light displays",
-              "Optional perfume, candle, or herb-bread workshops (extra cost)"
+              "1998年開放；約82英畝地中海香草園（250多個品種）",
+              "主題村：聖誕老人村（300多個雕像）、威尼斯村、療愈中心（韓國前25名康養景點）",
+              "全年燈光節 — 11月至2月最為壯觀，粉紅許願隧道 + 聖誕老人燈光秀",
+              "每日燈光秀從16:00起亮燈",
+              "香草烘焙坊（著名大蒜麵包）",
+              "韓國最大的香草博物館",
+              "**官方開放日期1998年10月3日**（KTO確認）",
+              "**仙女故事燈光節使用300萬個LED燈泡** — 每年11月至3月17:00至22:00",
+              "**週三休館**；成人平日₩10,000 / 週末₩12,000"
             ],
             "timeUsed": [
-              "Garden walk through the themed sections",
-              "Lunch break at one of the on-site cafes (free choice; pay direct)",
-              "Optional workshop or museum visit",
-              "Evening light displays if the route timing allows"
+              "入場+導遊簡短介紹——約10分鐘",
+              "白天草本花園+主題村落漫步——約60–75分鐘",
+              "可選工藝體驗或草本麵包坊/咖啡館——約30分鐘",
+              "燈光節點燈時間（16:00後；11月至2月氣氛最佳，約30–45分鐘）",
+              "在車輛處集合"
             ],
-            "whyOnRoute": "Herb Island is the route's strongest single photo stop and works as a long midday anchor that balances the more compact lake and quarry stops.",
+            "whyOnRoute": "**將香草島安排在13:30，可在單次2.5小時停留內同時涵蓋日間香草園及16:00開始的燈光秀**——從行程中最具拍攝價值的目的地榨取最大收益。相比南怡島＋晨靜樹木園＋普蒂法國的京畿道行程，香草島提供**地中海主題建築＋140種香草植物＋全年燈光裝置**的三合一體驗，且遊客豐富度明顯更低。薰衣草高峰（6月中至7月中）是全年單一最強的拍攝時段。",
             "visitBasics": {
-              "hours": "10:00–22:00 (extended weekends/holidays)",
-              "closed": "Open year-round",
-              "admission": "Adult 9,000 KRW / Teen 8,000 KRW / Child 6,000 KRW (varies seasonally)",
-              "walking": "Easy — flat indoor and outdoor garden paths"
+              "hours": "週日至週五09:00/10:00–21:00/22:00；週六及節假日至23:00",
+              "closed": "全年開放",
+              "admission": "平日成人₩10,000/長者·兒童₩8,000；週末成人₩12,000",
+              "walking": "中等強度——寬闊主題花園與村落，地形起伏"
             },
             "convenience": {
-              "restroom": "Multiple restrooms throughout the park",
-              "parking": "Free parking available"
+              "restroom": "多處，有標識",
+              "parking": "節慶場地附近免費停車"
             },
             "smartNotes": {
-              "photo": "Santa Village interior; Venice boat with European-style buildings; LED flower field at night",
-              "facilities": "Multiple cafés, restaurants, herbal-product shops, perfume/candle DIY workshops",
-              "tip": "Visit late afternoon to catch both daytime gardens and evening illumination; combine with Pocheon Art Valley and Sanjeong Lake"
+              "photo": "粉色許願隧道（全年代表性景觀）。黃金時段聖誕村300餘雕像。",
+              "facilities": "草本麵包坊（大蒜麵包）、草本餐廳、咖啡館、紀念品/護膚品商店。",
+              "tip": "建議14:00–15:00到達，先欣賞白天花園，再留下來觀看16:00點燈儀式。"
             },
             "_poi_meta": {
               "poi_key": "herb_island",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "note": "Operational details based on aggregated tour info"
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Korea Tourism Organization (VisitKorea — Herb Island official listing + Wednesday closure note + admission schedule)",
+                "Pocheon City Tourism Office (pocheon.go.kr — Sinbuk-myeon attractions cluster including Herb Island + Hot Springs + Art Valley)",
+                "Gyeonggi Province Official Blog (gyeonggido-korea.com — Light Fairy Tale Festival 3M LED + 17:00-22:00 schedule)",
+                "Herb Island Operator Official Site (herbisland.co.kr — own corpus on 1998 opening + 340-herb museum)",
+                "Visit Gyeonggi (ggtour.or.kr — provincial tourism portal on Pocheon herb-themed attraction cluster)"
+              ]
             }
           },
           {
             "number": 3,
             "time": "16:30",
-            "duration": "75 min",
-            "name": "Pocheon Art Valley",
-            "category": "Quarry-Turned-Art-Park with Monorail",
-            "description": "A former granite quarry transformed into an art-and-nature park. A monorail carries visitors up the hillside to the dramatic Cheonjuho Lake, an emerald-green lake nestled inside the old quarry walls, surrounded by sculpture installations and an observatory. The site has appeared in many K-dramas and music videos thanks to its cinematic cliff-and-lake setting.",
-            "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=800&q=80",
+            "duration": "75分鐘",
+            "name": "抱川藝術谷",
+            "category": "設有單軌鐵路的採石場改造藝術公園",
+            "description": "這是當日最具震撼畫面效果的壓軸景點——**抱川藝術谷**坐落在一個1970年代活躍花崗巖採石場的遺址上，抱川石曾從這裡開採，用於建設**青瓦臺（總統官邸）、國會大廈和仁川國際機場**等重要地標。採石場於**2003年廢棄**，2005年抱川市啟動了韓國**首個廢棄採石場生態修複計劃**，並於**2009年重新對外開放**，截至2014年已累計突破**100萬人次**。景色中心是**天柱湖（泉珠湖）** — 一座在前採石場坑底自然形成的翡翠/碧藍色泉水湖，海拔約340公尺，四周環繞著**50公尺高的垂直花崗巖峭壁**。420公尺單軌列車（約5分鐘；成人來回₩4,500）攀升至頂部花園。韓劇拍攝記錄：《藍色大海的傳說》、《步步驚心：麗》、《韓版花遊記》。",
             "highlights": [
-              "Monorail ride up to the quarry observatory",
-              "Cheonjuho Lake: emerald water inside dramatic cliff walls",
-              "Outdoor sculpture installations along the trail",
-              "K-drama and music-video filming location"
+              "韓國首個廢棄1970年代花崗巖採石場生態修複計劃 — 抱川石曾用於建設青瓦臺、國會大廈、仁川機場",
+              "採石場2003年廢棄；2005至2011年修複；2009年開放（截至2014年超100萬人次）",
+              "天柱湖 — 海拔340公尺翡翠泉水湖，四周環繞50公尺垂直花崗巖峭壁",
+              "420公尺單軌列車抵達頂部花園（成人來回₩4,500）",
+              "韓劇拍攝：《藍色大海的傳說》、《步步驚心：麗》、《韓版花遊記》",
+              "天文科學博物館（2014年8月）、湖水音樂臺（300人容量）",
+              "**韓國首個廢棄花崗巖採石場生態修複計劃**（2005至2011年；2009年開放）",
+              "**抱川石花崗巖原料來源地**：青瓦臺、國會大廈、仁川機場",
+              "**入場費**：成人₩5,000 + 單軌來回₩4,500"
             ],
             "timeUsed": [
-              "Monorail ride to the quarry top",
-              "Walk around Cheonjuho Lake and observatory",
-              "Sculpture trail and photo points",
-              "Return by monorail or walking trail"
+              "購票+單軌乘車——約10分鐘",
+              "單軌上行（約5分鐘）→希望天空花園+天文科學館",
+              "湖泊觀景臺+湖畔露臺拍攝天柱湖代表性照片",
+              "Healing Forest 散步道下行步行 (~10-15 min)",
+              "可選咖啡休息（展望咖啡館 — 抱川藝術谷入場時領取的紙幣券可用於折扣）",
+              "在車輛處集合"
             ],
-            "whyOnRoute": "Closing at Pocheon Art Valley gives the day a strong dramatic finish—the quarry-and-lake setting is unlike anything else on the route and adds a true 'photo wow' moment before the return drive.",
+            "whyOnRoute": "**抱川藝術谷以行程中最具戲劇性的單一景觀作為全日壓軸**——前採石場內碧翠色天柱湖＋垂直花崗巖崖壁，秋季紅葉或冬季結冰均極具景色沖擊力。與全首爾日行程範圍內的其他任何景點相比，採石場＋湖泊的地景在Seoul圈內獨一無二。單軌列車消化爬坡，讓行動能力各異的賓客均可到達採石場觀景臺。",
             "visitBasics": {
-              "hours": "Mar–Oct: Mon–Thu 09:00–19:00 (last entry 18:00); Fri/Sat/holidays 09:00–22:00 (last entry 20:00); Sun 09:00–20:00 (last entry 19:00). Nov–Feb: 09:00–18:00 (last entry 17:00)",
-              "closed": "Open year-round",
-              "admission": "Adult 5,000 KRW / Teen 3,000 KRW / Child 1,500 KRW (free for seniors 65+, preschoolers); monorail one-way 3,500 KRW (round-trip 4,500 KRW) additional",
-              "walking": "Moderate — walking up takes 10–15 min; spiral stairs at Sky Park (NOT stroller-friendly); lake area is flat"
+              "hours": "09:00–19:00（最晚入場約17:30）；季節性調整",
+              "closed": "全年開放",
+              "admission": "成人₩5,000/兒童（7–12歲）₩1,500；單軌成人往返₩4,500",
+              "walking": "中等強度——底部至頂部有坡度（推薦乘單軌）"
             },
             "convenience": {
-              "restroom": "Available at entrance, monorail station, and main park",
-              "parking": "Free parking available"
+              "restroom": "底部售票處及頂部花園區",
+              "parking": "免費停車；抱川出發約每2小時一班直達巴士"
             },
             "smartNotes": {
-              "photo": "Lake from main viewing platform with cliff backdrop; Sky Park panorama; K-drama scene recreations",
-              "facilities": "Café in middle of park; ticket booth gives 2,000 KRW Pocheon Art Valley currency for food/drink discounts",
-              "tip": "Sky Park spiral stairs NOT wheelchair/stroller accessible; monorail recommended for mobility-challenged visitors; swimming in lake prohibited"
+              "photo": "從主湖畔露臺俯瞰天柱湖——翡翠水色與峭壁背景的代表性構圖。",
+              "facilities": "瞭望咖啡館（持藝術谷代金券可享折扣）。",
+              "tip": "乘單軌上山，沿療愈森林步道下山（約15分鐘）可欣賞更多景色。"
             },
             "_poi_meta": {
               "poi_key": "pocheon_art_valley",
               "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
               "sources": [
-                "VisitKorea",
-                "PolyglotPetra",
-                "Creatrip",
-                "Soul of Seoul"
-              ],
-              "verified_date": "2026-04-27"
+                "Pocheon Art Valley Official Site (artvalley.pcfac.or.kr — own corpus on Hosur Concert Hall specs + monorail logistics + drama-filming history)",
+                "Korea Tourism Organization (VisitKorea — Pocheon Art Valley listing + ecological-restoration history)",
+                "Pocheon City Tourism Office (pocheon.go.kr — Sinbuk-myeon attractions + Pocheonseok granite history)",
+                "Hantan Geopark Official (hantangeopark.kr — UNESCO Global Geopark archive on 1980s Pocheon quarry photos)",
+                "Inquirer Lifestyle / Korea Times (Cheong Wa Dae + National Assembly + Incheon Airport granite-source historical reporting)"
+              ]
             }
           }
         ]
@@ -1315,50 +1347,41 @@
       "props": {
         "routeFlowStops": [
           {
-            "id": "01",
-            "name": "Sanjeong Lake",
+            "name": "三井湖",
+            "type": "origin",
             "theme": "Mountain Lake"
           },
           {
-            "id": "02",
-            "name": "Herb Island",
+            "name": "香草島樂園草本樂園",
+            "type": "meal",
             "theme": "Garden & Lunch"
           },
           {
-            "id": "03",
-            "name": "Art Valley",
+            "name": "藝術谷",
+            "type": "return",
             "theme": "Quarry Finale"
           }
         ],
         "routePhases": [
           {
-            "label": "Morning",
-            "range": "1",
-            "theme": "Lakeside Opener",
-            "bgClass": "bg-sky-50/70",
-            "textClass": "text-sky-700",
-            "dotClass": "bg-sky-500"
+            "phase": "湖畔開場",
+            "duration": "第1站",
+            "description": "上午：湖畔開幕"
           },
           {
-            "label": "Midday",
-            "range": "2",
-            "theme": "Herb Garden & Lunch",
-            "bgClass": "bg-emerald-50/70",
-            "textClass": "text-emerald-700",
-            "dotClass": "bg-emerald-500"
+            "phase": "香草園＋午餐",
+            "duration": "第2站",
+            "description": "中午：草本花園與午餐"
           },
           {
-            "label": "Afternoon",
-            "range": "3",
-            "theme": "Art Valley Finale",
-            "bgClass": "bg-amber-50/70",
-            "textClass": "text-amber-700",
-            "dotClass": "bg-amber-500"
+            "phase": "藝術谷壓軸",
+            "duration": "第3站",
+            "description": "下午：藝術谷收尾"
           }
         ],
         "routeShapeIntro": {
-          "title": "How this day moves",
-          "subtitle": "Pickup at Seoul meeting points around 08:00 to 09:00, then a 1.5-hour drive northeast to Pocheon. Lake first for calm morning light, Herb Island for lunch and the longest stop, Art Valley to close the day. Return to Seoul typically 18:30 to 19:30."
+          "title": "行程路線一覽",
+          "subtitle": "在首爾集合點約08:00至09:00接送，隨後向東北行駛1.5小時抵達抱川。先遊三井湖享受清晨寧靜的光線，香草島樂園作為最長的一站兼午餐，最後以藝術谷收尾。約18:00至19:00返回首爾。"
         }
       }
     },
@@ -1369,79 +1392,79 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "Couples and honeymooners wanting a calmer alternative to Nami Island",
-            "Photographers chasing seasonal flower scenes (lavender, pink muhly)",
-            "Adult families and multi-generational groups",
-            "Travelers who want a less crowded Gyeonggi day-trip",
-            "Visitors who enjoy slow walks and garden atmosphere"
+            "尋求南怡島替代選擇的情侶與蜜月旅客",
+            "追逐季節性花卉景色的攝影愛好者（薰衣草、粉黛亂子草）",
+            "成人家庭與多代同遊",
+            "希望遊覽人潮較少的京畿道日行程的旅客",
+            "喜歡慢節奏步行與花園氛圍的旅客"
           ],
           "routeLogicSections": [
             {
-              "title": "Why Pocheon over Gapyeong",
+              "title": "為何選擇抱川而非加平",
               "icon": "tree-pine",
               "iconBg": "bg-emerald-50/80",
               "iconColor": "text-emerald-600",
               "items": [
                 {
-                  "label": "Less crowded than Nami Island",
-                  "detail": "Gapyeong's Nami-Morning Calm-Petite France loop is increasingly busy. Pocheon's lakes and gardens carry similar nature appeal with significantly lighter crowds."
+                  "label": "比南怡島人潮少",
+                  "detail": "加平的南怡島＋晨靜樹木園＋普蒂法國路線人流日益增加。抱川的湖泊與花園擁有相似的自然吸引力，但遊客豐富度明顯更低。"
                 },
                 {
-                  "label": "Stronger seasonal variety",
-                  "detail": "Spring strawberry farms, summer lavender, autumn pink muhly, and winter ice cliffs each give the route a clearly different identity by month."
+                  "label": "更強的季節多樣性",
+                  "detail": "春季草莓農場、夏季薰衣草、秋季粉黛亂子草、冬季冰壁——每個月份都讓路線具有截然不同的面貌。"
                 },
                 {
-                  "label": "Art Valley adds a unique geological angle",
-                  "detail": "The quarry-and-lake setting at Pocheon Art Valley does not exist anywhere else within day-trip distance of Seoul."
+                  "label": "藝術谷增添獨特地質角度",
+                  "detail": "抱川藝術谷的採石場＋湖泊地景在首爾日行程距離內獨一無二，其他地方找不到同等替代。"
                 }
               ]
             },
             {
-              "title": "How the walking load actually feels",
+              "title": "步行負擔的真實感受",
               "icon": "footprints",
               "iconBg": "bg-amber-50/80",
               "iconColor": "text-amber-600",
               "items": [
                 {
-                  "label": "All three stops are mostly easy",
-                  "detail": "This is one of the most senior-friendly day-trips from Seoul, with paved paths, optional shorter routes, and the monorail option at Art Valley."
+                  "label": "三個景點均以輕鬆步行為主",
+                  "detail": "這是首爾出發日行程中對年長旅客最友善的路線之一，設有鋪設步道、可選短路線及藝術谷的單軌列車選項。"
                 },
                 {
-                  "label": "Sanjeong Lake offers a half-loop option",
-                  "detail": "The full 4 km perimeter is moderate, but the most photogenic boardwalk section can be done as a 25-minute walk."
+                  "label": "山井湖提供半圈短路線",
+                  "detail": "完整4公里環湖屬中等強度，但最具拍攝價值的棧橋路段可以25分鐘步行完成。"
                 },
                 {
-                  "label": "Art Valley walking is optional",
-                  "detail": "The monorail handles the elevation gain; walking the trail is for travelers who want extra time among the sculptures."
+                  "label": "藝術谷步行為可選",
+                  "detail": "單軌列車負責爬坡；選擇步行的旅客可在雕塑間多花時間漫步。"
                 }
               ]
             },
             {
-              "title": "When weather and seasons shift",
+              "title": "天氣與季節變化時的應對",
               "icon": "cloud-rain",
               "iconBg": "bg-slate-50/80",
               "iconColor": "text-slate-600",
               "items": [
                 {
-                  "label": "Seasonal substitutions are common",
-                  "detail": "Some operator versions add Bidulginang Cascade in spring/autumn, an apple farm in October, a strawberry farm in winter, or an ice-wall cafe in deep winter."
+                  "label": "季節性替代安排常見",
+                  "detail": "部分合作業者版本在春秋加入碧桃尼瀑布、10月增設蘋果農場、冬季安排草莓農場或冰壁咖啡廳。"
                 },
                 {
-                  "label": "Wednesday Herb Island closure",
-                  "detail": "Herb Island is closed on some Wednesdays. Operators typically substitute Sanjeong Lake extension or Pocheon Art Valley with extra time."
+                  "label": "香草島週三休館",
+                  "detail": "香草島部分週三休館。合作業者通常以延長山井湖時間或增加藝術谷時間替代。若出遊日期為週三，建議確認運營狀態。"
                 },
                 {
-                  "label": "Winter visit logistics",
-                  "detail": "Duck-sled activities at Sanjeong Lake depend on safe ice conditions, which have become less reliable in recent winters due to warming trends."
+                  "label": "冬季遊覽注意事項",
+                  "detail": "山井湖鴨型雪橇活動依賴安全冰況，近年因暖冬趨勢，可靠性有所降低。"
                 }
               ]
             }
           ],
           "lessIdealFor": [
-            "Travelers wanting iconic UNESCO landmarks (try Suwon Hwaseong instead)",
-            "Visitors wanting a high-energy or shopping-heavy day",
-            "Anyone needing a fully indoor rainy-day plan",
-            "Families with very young children needing playground-style entertainment"
+            "追逐UNESCO著名地標的旅客（建議改選水原華城）",
+            "希望以購物或高能量活動為主的旅客",
+            "需要全程室內雨天備案的旅客",
+            "帶有幼童且需要遊樂場式娛樂的家庭"
           ]
         }
       }
@@ -1454,114 +1477,107 @@
         "practicalAccordionItems": [
           {
             "id": "pickup",
-            "title": "Pickup & drop-off",
-            "preview": "Seoul meeting points; 08:00 to 09:00 departure",
+            "title": "接送與下車地點",
+            "preview": "首爾集合點；07:50至09:00出發",
             "content": [
-              "Pickup typically from Hongik University Station (Exit 4), Myeongdong Shinsegae Duty Free, and Dongdaemun History & Culture Park Station (Exit 10)",
-              "Departure typically 07:50 to 09:00 from the first meeting point",
-              "Please arrive at least 10 minutes early at your selected meeting point",
-              "Drop-off at the same Seoul meeting points",
-              "Expected return between 18:30 and 19:30 depending on traffic",
-              "This is a fixed-route group format; travelers must reach the meeting point themselves"
+              "接送點通常為弘大入口口站（4號出口）、明洞新世界免稅店及東大門歷史文化公園站（10號出口）",
+              "第一個集合點通常07:50至09:00出發",
+              "請在您所選集合點提早至少10分鐘到達",
+              "返回時在同一首爾集合點下車",
+              "預計18:30至19:30返回，視交通狀況而定",
+              "本行程為固定路線團體格式，旅客需自行前往集合點"
             ]
           },
           {
             "id": "walking",
-            "title": "Walking & terrain",
-            "preview": "Easy to moderate; one of the gentler day-trips from Seoul",
+            "title": "步行強度與地形",
+            "preview": "輕鬆至中等難度；首爾日行程中最輕鬆的路線之一",
             "content": [
-              "Sanjeong Lake: easy paved trail with optional half-loop for shorter walking",
-              "Herb Island: easy garden paths with light slopes",
-              "Pocheon Art Valley: moderate uphill walking, but a monorail handles the elevation gain",
-              "Comfortable walking shoes are recommended; the route is partially stroller-friendly",
-              "Restrooms available at all three stops"
+              "山井湖：輕鬆鋪設步道，可選半圈短路線",
+              "香草島：輕鬆花園步道，地勢起伏輕微",
+              "抱川藝術谷：中等強度上坡步行，但單軌列車負責爬坡部分",
+              "建議穿著舒適步行鞋；路線部分路段適合嬰兒車",
+              "三個景點均設有廁所"
             ]
           },
           {
             "id": "weather",
-            "title": "Weather policy",
-            "preview": "Strong seasonal variety; substitutions are common",
+            "title": "天候政策",
+            "preview": "季節性變化豐富；常有替代安排",
             "content": [
-              "Spring (March to June): cherry blossoms, lavender approaching peak, optional strawberry farm",
-              "Summer (June to August): peak lavender at Herb Island in mid-June to July; expect humidity and possible rain",
-              "Autumn (September to November): pink muhly grass, silver grass at Sanjeong, foliage at Art Valley",
-              "Winter (December to February): potential ice activities at Sanjeong (weather-dependent), Herb Island lights still operate, optional ice-wall cafe",
-              "Light rain: tour usually proceeds; heavy rain may shorten outdoor stops"
+              "春季（3至6月）：賞櫻、薰衣草即將達到高峰、可選草莓農場",
+              "夏季（6至8月）：香草島薰衣草6月中至7月高峰；預期潮溼及可能的梅雨",
+              "秋季（9至11月）：香草島粉黛亂子草、山井湖銀芒草、藝術谷紅葉",
+              "冬季（12至2月）：可選冰上活動（視天氣決定）、香草島燈光節仍照常舉辦",
+              "小雨：行程通常繼續；大雨可能縮短戶外停留時間"
             ]
           },
           {
             "id": "wear",
-            "title": "What to wear & bring",
-            "preview": "Walking shoes, layers, and seasonal extras",
+            "title": "穿著與攜帶物品",
+            "preview": "步行鞋、分層穿搭及季節性備品",
             "content": [
-              "Comfortable walking shoes with grip",
-              "Layered clothing for mountain temperature changes",
-              "Light jacket or windbreaker (cooler than central Seoul, especially at Sanjeong Lake)",
-              "Sun protection in summer; warm jacket and gloves in winter",
-              "Camera or phone for the strong photo opportunities at all three stops"
+              "防滑舒適步行鞋",
+              "因應山區氣溫變化的分層穿搭",
+              "輕薄外套或防風衣（比首爾市中心涼爽，尤其山井湖一帶）",
+              "夏季備防曬用品；冬季備保暖外套及手套",
+              "三個景點均有強烈攝影機會，相機∕手機必備"
             ]
           },
           {
             "id": "included",
-            "title": "What's included",
-            "preview": "Guide, transport, and admissions included; lunch pay direct",
+            "title": "費用包含項目",
+            "preview": "含導遊、交通及景點門票；午餐現場自費",
             "variant": "included",
             "content": [
-              "Professional English-speaking guide",
-              "Round-trip transport from Seoul (small-group vehicle)",
-              "Sanjeong Lake entry (free)",
-              "Herb Island admission",
-              "Pocheon Art Valley admission and monorail",
-              "Lunch is not included; pay directly at Herb Island restaurants",
-              "Optional workshops at Herb Island (perfume, candle, bread) are not included",
-              "Optional duck boat or duck sled at Sanjeong Lake is not included",
-              "Personal shopping is not included",
-              "Guide gratuities are optional"
+              "專業英語導遊",
+              "首爾來回交通（小型團體車輛）",
+              "山井湖入場（免費）",
+              "香草島入場費",
+              "抱川藝術谷入場費及單軌列車票",
+              "午餐不含，在香草島餐廳現場支付",
+              "香草島可選工作坊（香水、蠟燭、麵包製作）不含",
+              "山井湖可選鴨型船或冬季鴨型雪橇不含",
+              "個人購物費用不含",
+              "導遊小費為自願性質"
             ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "Live weather integration"
+            "label": "即時天氣連動"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "Updated daily"
-          }
+            "label": "每日更新"
+          },
+          "_seasonalSummary": "無"
         },
         "seasonalVariations": [
           {
-            "name": "Spring",
-            "icon": "flower",
-            "description": "Cherry blossoms ring Sanjeong Lake in early April; spring greenery returns to Art Valley. Strawberry farms are still in season through June on some operator variants.",
-            "tag": "Strawberry season",
-            "bgClass": "bg-spring",
-            "iconColor": "text-pink-500"
+            "season": "春季",
+            "title": "草莓季",
+            "description": "四月初山井湖畔賞櫻；春日新綠重返藝術谷。部分合作業者版本包含草莓農場體驗，延至六月。",
+            "icon": "flower"
           },
           {
-            "name": "Summer",
-            "icon": "sun",
-            "description": "Peak lavender at Herb Island from mid-June to late July is the strongest single photo window of the year for this route. Expect humidity and possible monsoon rain.",
-            "tag": "Lavender peak",
-            "bgClass": "bg-summer",
-            "iconColor": "text-yellow-500"
+            "season": "夏季",
+            "title": "薰衣草綻放期",
+            "description": "香草島薰衣草6月中至7月下旬盛開，是全年單一最強拍攝時段。預期潮溼和可能的梅雨。",
+            "icon": "sun"
           },
           {
-            "name": "Autumn",
-            "icon": "leaf",
-            "description": "Pink muhly grass at Herb Island and silver grass at Sanjeong Lake make autumn the most photogenic all-round season. Apple-picking variants run mid-October to November.",
-            "tag": "Pink muhly season",
-            "bgClass": "bg-autumn",
-            "iconColor": "text-orange-500"
+            "season": "秋季",
+            "title": "粉黛草季節",
+            "description": "香草島粉黛亂子草及山井湖銀芒草讓秋季成為全年最具拍攝價值的季節。蘋果採摘活動在部分版本的10月至11月推出。",
+            "icon": "leaf"
           },
           {
-            "name": "Winter",
-            "icon": "snowflake",
-            "description": "Herb Island's evening lights and Santa Village shine; Sanjeong Lake's duck-sled and ice activities depend on safe ice conditions. Ice-wall cafe variants run in deep winter.",
-            "tag": "Lights & ice season",
-            "bgClass": "bg-winter",
-            "iconColor": "text-sky-500"
+            "season": "冬季",
+            "title": "燈光與冰雪季",
+            "description": "香草島燈光節及聖誕村；山井湖鴨型雪橇和冰上活動視安全冰況而定。冰壁咖啡廳版本在深冬推出。",
+            "icon": "snowflake"
           }
         ]
       }
@@ -1574,56 +1590,65 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local operator",
-            "description": "Authorized Korean tour operator with full insurance",
+            "title": "當地持照合法業者",
+            "description": "持牌韓國旅遊合作業者，備有完整保險",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600"
+            "iconColor": "text-emerald-600",
+            "body": "持牌韓國旅遊合作業者，備有完整保險"
           },
           {
             "icon": "route",
-            "title": "Route specialists",
-            "description": "Hand-tuned itinerary, not a generic loop",
+            "title": "路線專家",
+            "description": "精心構成的行程，而非千篇一律的路線",
             "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600"
+            "iconColor": "text-sky-600",
+            "body": "精心構成的行程，而非千篇一律的路線"
           },
           {
             "icon": "users",
-            "title": "Curated group size",
-            "description": "Right-sized for the route",
+            "title": "精心控制團體人數",
+            "description": "精準控制人數的小型團體格式",
             "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600"
+            "iconColor": "text-amber-600",
+            "body": "精準控制人數的小型團體格式"
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "Immediately",
-            "title": "Instant Confirmation",
-            "detail": "Booking confirmation with itinerary summary"
+            "timing": "即時通知",
+            "title": "即時確認",
+            "detail": "您將收到含行程摘要的預訂確認通知。",
+            "description": "您將收到含行程摘要的預訂確認通知。"
           },
           {
-            "timing": "12 hours before",
-            "title": "12-Hour Reminder",
-            "detail": "Weather update and any route adjustments"
+            "timing": "出發前12小時",
+            "title": "出發前12小時提醒",
+            "detail": "出發前分享天氣更新及任何路線調整。",
+            "description": "出發前分享天氣更新及任何路線調整。"
           },
           {
-            "timing": "Evening before",
-            "title": "Final Pickup Info",
-            "detail": "Exact pickup time and driver contact"
+            "timing": "前一晚",
+            "title": "最終接送資訊",
+            "detail": "確認確切集合時間及司機∕導遊聯絡方式。",
+            "description": "確認確切集合時間及司機∕導遊聯絡方式。"
           },
           {
-            "timing": "Morning of tour",
-            "title": "Day-of Route Notes",
-            "detail": "Morning briefing based on live conditions"
+            "timing": "行程當天早晨",
+            "title": "當日路線說明",
+            "detail": "出發當天早上根據最新現場狀況提供簡報。",
+            "description": "出發當天早上根據最新現場狀況提供簡報。"
           },
           {
-            "timing": "During tour",
-            "title": "Stop-by-Stop Tips",
-            "detail": "Real-time guidance at each location"
+            "timing": "行程途中",
+            "title": "景點逐一說明",
+            "detail": "每個景點提供即時現場導覽。",
+            "description": "每個景點提供即時現場導覽。"
           },
           {
-            "timing": "After tour",
-            "title": "Post-tour Support",
-            "detail": "Follow-up and recommendations"
+            "timing": "行程結束後",
+            "title": "行程後支援",
+            "detail": "行程結束後提供後續建議及額外資訊。",
+            "description": "行程結束後提供後續建議及額外資訊。"
           }
         ]
       }
@@ -1636,58 +1661,58 @@
         "staticQuestions": [
           {
             "id": "q1",
-            "question": "How is this different from a Nami Island day-trip?",
-            "answer": "Both are Gyeonggi day-trips from Seoul, but Pocheon trades Nami's K-drama crowds for gardens and a quarry park. You get more space, less queueing for ferries, and a quieter walking pace. Photographers and travelers wanting calmer scenery prefer Pocheon. First-time Korea visitors hunting Nami's metasequoia path or Winter Sonata filming locations should still pick the Nami tour."
+            "question": "這與南怡島日行程有何不同？",
+            "answer": "兩者都是首爾出發的京畿道日行程，但抱川以花園和採石場公園取代南怡島的韓劇人潮。您可享受更大的空間、更少的輪渡排隊和更安靜的步行節奏。喜歡平靜風景的攝影愛好者和旅客通常偏好抱川。如果您是初次到韓國、專程追逐南怡島落羽松步道或《冬季戀歌》取景地，仍建議選南怡島行程。"
           },
           {
             "id": "q2",
-            "question": "When does the lavender bloom at Herb Island?",
-            "answer": "Mid-June to late July is the peak window — roughly four to six weeks of full bloom. Pink muhly grass replaces lavender from late September through October. Outside these windows the herb gardens still display 140+ herb varieties year-round and the Mediterranean architecture is photogenic in any season."
+            "question": "香草島的薰衣草何時盛開？",
+            "answer": "6月中至7月下旬是盛開高峰——大約四至六週的滿開期。粉黛亂子草從9月下旬至10月接替薰衣草。時段之外，香草園全年展示140種以上香草植物，地中海建築在任何季節均具有拍攝價值。"
           },
           {
             "id": "q3",
-            "question": "What if Herb Island is closed on a Wednesday?",
-            "answer": "Herb Island closes for maintenance on some Wednesdays — not all. When this happens the operator typically extends time at Sanjeong Lake, adds Pocheon Art Valley extra time, or substitutes Bidulginang Cascade. If your travel date is a Wednesday, confirm operating status at booking; the operator will notify if a substitution is required."
+            "question": "如果香草島週三休館怎麼辦？",
+            "answer": "香草島部分週三休館，並非每週。遇到此情況，合作業者通常延長山井湖停留時間、增加抱川藝術谷時間，或以碧桃尼瀑布替代。若出遊日期為週三，請在預訂時確認運營狀態；如需替換，合作業者將提前通知。"
           },
           {
             "id": "q4",
-            "question": "How does the monorail at Pocheon Art Valley work?",
-            "answer": "The monorail is optional and runs from the entrance up to the quarry observatory. One-way fare is 3,500 KRW paid on-site (not included in the tour price); round-trip is 4,500 KRW. The walking alternative is a 10-15 minute paved climb. Most travelers ride up and walk down to save time and money."
+            "question": "抱川藝術谷的單軌列車如何使用？",
+            "answer": "單軌列車為可選項目，從入口沿線上升至採石場觀景臺。現場購買單程票₩3,500，來回票₩4,500（不含在行程費用中）。步行替代路線約需10至15分鐘上坡路程。多數旅客選擇搭車上去、步行下來以節省時間和費用。"
           },
           {
             "id": "q5",
-            "question": "Is this tour worthwhile in winter?",
-            "answer": "Yes — winter is one of the strongest seasons here. Sanjeong Lake offers duck-sleds and ice-fishing when the lake freezes (typically late December through February). Herb Island runs an evening light festival and the year-round Santa Village. Pocheon Art Valley's Cheonjuho Lake often partially freezes for striking emerald-and-ice photos. Layered winter clothing is essential."
+            "question": "冬季來值得嗎？",
+            "answer": "值得——冬季是此行程最強的季節之一。山井湖結冰時（通常12月下旬至2月）可玩鴨型雪橇和冰上活動。香草島舉辦年度燈光節，全年設有聖誕村。抱川藝術谷天柱湖常局部結冰，形成翠綠＋冰雪的絕美拍攝構圖。冬季必備分層保暖衣物。"
           },
           {
             "id": "q6",
-            "question": "How long is the Sanjeong Lake walk?",
-            "answer": "The full 4 km perimeter trail is mostly flat and takes about 75 minutes at a relaxed pace. There is also a half-loop option of about 2 km (25-30 minutes) that hits the most photogenic boardwalk section if you'd rather save energy for Herb Island and Pocheon Art Valley later in the day."
+            "question": "山井湖的步道有多長？",
+            "answer": "完整4公里環湖步道以輕鬆節奏大約需75分鐘，地勢平坦。也有約2公里（25至30分鐘）的半圈短路線，涵蓋最具拍攝價值的棧橋路段，如果您想為香草島和藝術谷保留體力，這是更好的選擇。"
           },
           {
             "id": "first-time",
-            "question": "Is this a good choice for first-time visitors to Pocheon (Seoul Day Trip)?",
-            "answer": "It works for first-timers, though it's more of a curated route than a greatest-hits loop."
+            "question": "對於初次遊覽抱川的旅客，這是好選擇嗎？",
+            "answer": "適合初次遊覽，但更偏向推薦路線而非「必遊名勝」式行程。"
           },
           {
             "id": "walking",
-            "question": "Is the walking difficult?",
-            "answer": "Mostly easy walking throughout. Sanjeong Lake is a flat lakeside path (full loop 4 km, half-loop 2 km option). Herb Island is flat garden paths with light slopes. Pocheon Art Valley is the most active section: 10-15 minutes uphill walk to the quarry observatory (or take the monorail), plus optional spiral stairs at the Sky Park (not stroller-friendly). The lake area itself is flat."
+            "question": "步行難度高嗎？",
+            "answer": "全程以輕鬆步行為主。山井湖為平坦湖畔小徑（完整4公里，可選2公里半圈）。香草島為平坦花園步道，地勢起伏輕微。抱川藝術谷是最活躍的路段：步行至採石場觀景臺約10至15分鐘上坡（或搭單軌列車），加上天空公園可選螺旋梯（不適合嬰兒車）。湖畔區本身地勢平坦。"
           },
           {
             "id": "family",
-            "question": "Is this tour suitable for families?",
-            "answer": "Yes — comfortable for most families. Sanjeong Lake's pedal boats and amusement zone are kid favorites. Herb Island has perfume-making and herb-bread workshops. Pocheon Art Valley's monorail is a hit with children. The Sky Park spiral stairs are not stroller-friendly; otherwise the route is one of the easier Seoul day-trips for families."
+            "question": "這個行程適閤家庭嗎？",
+            "answer": "適合大多數家庭。山井湖的腳踏船和遊樂區是孩子最喜歡的環節。香草島有香水、麵包等工作坊。抱川藝術谷的單軌列車深受孩子歡迎。天空公園螺旋梯不適合嬰兒車；否則本路線是首爾出發日行程中較適閤家庭的選擇之一。"
           },
           {
             "id": "seniors",
-            "question": "Can older adults join comfortably?",
-            "answer": "Yes — pacing and walking are comfortable for active seniors. Sanjeong Lake offers a flat lakeside path with a half-loop option. Herb Island is paved garden paths with seating throughout. Pocheon Art Valley's monorail (4,500 KRW one-way) skips the uphill walk. Less ideal if wheelchair access is required at every stop — Sky Park spiral stairs and some quarry paths are not accessible."
+            "question": "年長者可以舒適地參加嗎？",
+            "answer": "適合——節奏和步行強度對活躍年長旅客相當友善。山井湖提供有半圈短路線的平坦湖畔小徑。香草島為鋪設花園步道，設有休息座椅。抱川藝術谷的單軌列車（單程₩4,500）可略過上坡步行。若每個景點都需要輪椅無障礙設施則較不理想——天空公園螺旋梯及部分採石場步道並不無障礙。"
           },
           {
             "id": "children",
-            "question": "What's the recommended minimum age?",
-            "answer": "Around age 6 — the day involves a long drive each way, the Pocheon Art Valley monorail or 10-15 minute walk-up, and the Sky Park spiral stairs (not stroller-friendly). Younger children can join with carriers; bring snacks and dress for cooler mountain temperatures. Sanjeong Lake's seasonal duck-pedal boats and Herb Island's Santa Village are the strongest kid moments."
+            "question": "建議的最低參加年齡是多少？",
+            "answer": "約6歲——全日行程包含長途來回車程、抱川藝術谷的單軌列車或10至15分鐘上坡步行，以及天空公園螺旋梯（不適合嬰兒車）。較小的孩子可用揹帶；請備零食並為山區較涼爽的溫度做好準備。山井湖季節性鴨型腳踏船和香草島聖誕村是最受小孩歡迎的環節。"
           }
         ]
       }
@@ -1737,16 +1762,16 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "可訂狀態會在付款步驟中確認。",
         "price": {
           "amountLabel": "55.80",
           "originalPriceUsd": 62,
           "salePriceUsd": 55.8,
           "discountPercent": 10,
           "currency": "USD",
-          "per": "person",
-          "priceSource": "getyourguide_t1168134",
-          "priceNote": "Original price 62 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+          "per": "人",
+          "priceSource": "direct_rate",
+          "priceNote": "價格以 AtoC Korea 官網直售價為準。"
         }
       }
     }
@@ -1770,14 +1795,14 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
       },
       "v17_batch9_enhancement": {
         "date": "2026-04-29",
-        "description": "Batch 9 deep enhancement — Seoul-Seoraksan-Sokcho + Pocheon Sanjeong/Herb/Art Valley pair. Single-POI fixed-itinerary methodology (batches 1-5, 8 style). Both tours are SMALL_GROUP — formula different from batch 7/8 private tours. All substantive stops enhanced with 1,000+ char descriptions weaving verified facts. matching_profile recalibrated to verified-fact 0-1 float scores. Charter-format dimensions previously null: private_tour_fit set to 0.05 (definitionally not private); customizable_route_fit set to 0.1 (small-group fixed itinerary); flexibility_fit set to 0.3 (small-group bus, fixed pickup/drop). Tour-specific: history_culture_fit Seoraksan 0.5 (Sinheungsa 652 + Gwongeumseong 1253 + Tongildaebul 1997) / Pocheon 0.4 (1925 reservoir + quarry restoration). Seoraksan tour: unesco_fit 0.2 → 0.4 (UNESCO Biosphere Reserve since 1982, Korea's only one); autumn_foliage_fit set to 1.0 (catalog-leading); mountain_fit set to 1.0 (catalog-leading); seasonal_fit 0.95. Pocheon tour: romantic_fit set to 0.85 (catalog-second-strongest after Nami tour 0.95); seasonal_fit 0.85; family_fit 0.8 → 0.85. 6 new POIs added to KB (v1.11 → v1.12): seoraksan_national_park, sokcho_tourist_fishery_market, sokcho_beach, sanjeong_lake, herb_island, pocheon_art_valley. KB POI count: 62 → 68.",
+        "description": "Batch 9 deep enhancement — Seoul-Seoraksan-Sokcho + Pocheon Sanjeong/Herb/Art Valley pair. Single-POI fixed-itinerary methodology (batches 1-5, 8 style). Both tours are SMALL_GROUP — formula different from batch 7/8 private tours. All substantive stops enhanced with 1,000+ char descriptions weaving verified facts. product profile recalibrated to verified-fact 0-1 float scores. Charter-format dimensions previously null: private_tour_fit set to 0.05 (definitionally not private); customizable_route_fit set to 0.1 (small-group fixed itinerary); flexibility_fit set to 0.3 (small-group bus, fixed pickup/drop). Tour-specific: history_culture_fit Seoraksan 0.5 (Sinheungsa 652 + Gwongeumseong 1253 + Tongildaebul 1997) / Pocheon 0.4 (1925 reservoir + quarry restoration). Seoraksan tour: unesco_fit 0.2 → 0.4 (UNESCO Biosphere Reserve since 1982, Korea's only one); autumn_foliage_fit set to 1.0 (catalog-leading); mountain_fit set to 1.0 (catalog-leading); seasonal_fit 0.95. Pocheon tour: romantic_fit set to 0.85 (catalog-second-strongest after Nami tour 0.95); seasonal_fit 0.85; family_fit 0.8 → 0.85. 6 new POIs added to KB (v1.11 → v1.12): seoraksan_national_park, sokcho_tourist_fishery_market, sokcho_beach, sanjeong_lake, herb_island, pocheon_art_valley. KB POI count: 62 → 68.",
         "_score_audit": {
           "_methodology": "0-1 float scale per Phase 1 standard. Both tours are SMALL_GROUP (not private) — formula different from Batch 7/8 private tours. Charter-format dimensions previously null on these tours: private_tour_fit set to 0.05 (definitionally not private); customizable_route_fit 0.1 (small-group fixed itinerary - no menu of routes); flexibility_fit 0.3 (small-group bus, fixed pickup/drop, fixed stops). history_culture_fit set per content: Seoraksan tour 0.5 (Sinheungsa Silla 652 + Gwongeumseong 1253 legend); Pocheon tour 0.4 (Sanjeong 1925 reservoir + Art Valley quarry-history). Time-weighted indoor_ratio re-computed per Fix 1 methodology using verified per-POI indoor_ratio_at_stop values.",
           "deltas_applied": {
@@ -1832,17 +1857,17 @@
               "reasoning": "Verified — Sanjeong Lake fully outdoor; Herb Island has indoor village and Healing Center fallbacks; Art Valley monorail covered. Mixed exposure. 0.55."
             },
             "scenic_level": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.95,
               "reasoning": "Verified — strong scenic content (mountain-circled lake + Mediterranean herbs + emerald quarry lake) but not at UNESCO World Heritage scale. Slight markdown to 0.95."
             },
             "photo_level": {
-              "old": 1,
-              "new": 1,
+              "old": 1.0,
+              "new": 1.0,
               "reasoning": "Verified maintained — Sanjeong Lake fog reflection + Herb Island pink wish tunnel / illumination + Cheonjuho emerald cliff lake. Strong photographic content. Maintained at 1.0."
             },
             "nature_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.9,
               "reasoning": "Verified — strong nature (lake + herbs + restored quarry) but Herb Island's themed-park structure is partly artificial. Slight markdown to 0.9."
             },
@@ -1872,8 +1897,8 @@
               "reasoning": "Verified — Pocheon-style ribs (Idong Galbi) and freshwater snail are signature regional foods, but the tour itself is light on food-focused stops (Herb Island has Mediterranean cuisine but is primarily decorative). Slight markdown to 0.55."
             },
             "small_group_fit": {
-              "old": 1,
-              "new": 1,
+              "old": 1.0,
+              "new": 1.0,
               "reasoning": "Verified maintained — small-group minicoach format. Maintained at 1.0."
             },
             "bus_fit": {
