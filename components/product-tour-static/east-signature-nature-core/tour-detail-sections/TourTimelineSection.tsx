@@ -34,13 +34,13 @@ function StopCard({
   const admission = stop.visitBasics?.admission;
   const showTicketsIncluded = !!admission && !FREE_ADMISSION_PATTERNS.test(admission);
 
-  // Directional-light cream pillow — desaturated cream gradient, sharp white inset edge on
-  // top+left, diffused dark inset on bottom+right, and an offset bottom-right outer drop so the
-  // card reads as lit from the upper-left like the reference photo.
+  // Directional-light pearl pillow — brightened pearl/slate gradient, sharp white inset edge on
+  // top+left, diffused cool-shadow inset on bottom+right, and an offset bottom-right outer drop
+  // so the card reads as lit from the upper-left while staying noticeably lighter than cream.
   const accent = {
-    bg: "bg-gradient-to-br from-[#fdfbf7] via-[#f7f3eb] to-[#eee8d8]",
-    glow: "shadow-[inset_12px_12px_48px_rgba(255,255,255,0.95),inset_-4px_-4px_12px_rgba(40,30,20,0.18),0_3px_6px_rgba(40,30,20,0.06),8px_32px_64px_-20px_rgba(40,30,20,0.32)]",
-    glowHover: "hover:shadow-[inset_12px_12px_54px_rgba(255,255,255,1),inset_-4px_-4px_14px_rgba(40,30,20,0.22),0_5px_10px_rgba(40,30,20,0.08),12px_48px_88px_-20px_rgba(40,30,20,0.42)]",
+    bg: "bg-gradient-to-br from-white via-[#f7f9fc] to-[#e6ecf3]",
+    glow: "shadow-[inset_12px_12px_48px_rgba(255,255,255,0.98),inset_-4px_-4px_12px_rgba(30,41,59,0.10),0_3px_6px_rgba(30,41,59,0.05),8px_32px_64px_-20px_rgba(30,41,59,0.22)]",
+    glowHover: "hover:shadow-[inset_12px_12px_54px_rgba(255,255,255,1),inset_-4px_-4px_14px_rgba(30,41,59,0.14),0_5px_10px_rgba(30,41,59,0.07),12px_48px_88px_-20px_rgba(30,41,59,0.30)]",
   };
 
   return (
@@ -53,11 +53,11 @@ function StopCard({
         className="absolute left-0 top-1 flex h-10 w-10 items-center justify-center rounded-full text-[13px] font-semibold tabular-nums tracking-[0.02em] ring-[3px] ring-white"
         style={{
           background:
-            "radial-gradient(circle at 30% 25%, #fdfaf3 0%, #f3ead7 55%, #d8caa8 100%)",
+            "radial-gradient(circle at 30% 25%, #ffffff 0%, #f1f5f9 55%, #c8d2e0 100%)",
           boxShadow:
-            "inset 0 2px 3px rgba(255,255,255,0.7), inset 0 -3px 5px rgba(120,95,60,0.22), 0 2px 4px rgba(120,95,60,0.12), 0 8px 18px -4px rgba(120,95,60,0.2)",
-          color: "#78350f",
-          textShadow: "0 1px 1px rgba(120,53,15,0.16)",
+            "inset 0 2px 3px rgba(255,255,255,0.9), inset 0 -3px 5px rgba(51,65,85,0.18), 0 2px 4px rgba(51,65,85,0.10), 0 8px 18px -4px rgba(51,65,85,0.18)",
+          color: "#1e293b",
+          textShadow: "0 1px 1px rgba(15,23,42,0.12)",
         }}
       >
         {String(stop.number).padStart(2, "0")}
