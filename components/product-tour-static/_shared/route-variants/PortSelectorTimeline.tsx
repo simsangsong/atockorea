@@ -28,46 +28,53 @@ function VariantStopCard({
   onClick: () => void;
 }) {
   return (
-    <div className="relative pl-12">
+    <div className="relative pl-11">
       {stop.number < totalStops && (
-        <div className="absolute left-[19px] top-[52px] bottom-0 w-px bg-gradient-to-b from-border to-transparent" />
+        <div className="absolute left-[17.5px] top-[48px] bottom-0 w-px bg-gradient-to-b from-slate-300/60 to-transparent" />
       )}
 
-      <div className="absolute left-0 top-1 flex h-10 w-10 items-center justify-center rounded-full bg-foreground text-white text-sm font-semibold shadow-lg ring-[3px] ring-white">
+      <div
+        className="absolute left-0 top-1.5 flex h-9 w-9 items-center justify-center rounded-full text-[12px] font-medium tabular-nums tracking-[0.04em] ring-1 ring-white"
+        style={{
+          background: "linear-gradient(140deg, #ffffff 0%, #f1f5f9 100%)",
+          boxShadow:
+            "0 1px 2px rgba(15,23,42,0.06), 0 4px 12px -4px rgba(15,23,42,0.10), inset 0 0.5px 0 rgba(255,255,255,0.9)",
+          color: "#334155",
+        }}
+      >
         {String(stop.number).padStart(2, "0")}
       </div>
 
-      <div className="pb-5">
+      <div className="pb-3">
         <button
           type="button"
           onClick={onClick}
           className={cn(
-            "w-full text-left rounded-xl bg-white border border-border p-4 transition-all duration-200",
-            "shadow-premium hover:shadow-premium-elevated hover:border-primary/10",
+            "group relative w-full text-left rounded-2xl bg-white p-3.5 transition-all duration-300 ease-out",
+            "ring-1 ring-slate-900/[0.06]",
+            "shadow-[0_1px_2px_rgba(15,23,42,0.04),0_6px_20px_-10px_rgba(15,23,42,0.10)]",
+            "hover:-translate-y-[1px] hover:ring-slate-900/[0.10]",
+            "hover:shadow-[0_2px_4px_rgba(15,23,42,0.06),0_12px_28px_-10px_rgba(15,23,42,0.14)]",
           )}
         >
           <div className="flex items-start justify-between gap-3">
             <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                <Clock className="h-3.5 w-3.5 text-muted-foreground" />
-                <span className="font-semibold text-foreground">{stop.duration}</span>
+              <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
+                <Clock className="h-3 w-3" />
+                <span className="font-medium text-slate-700">{stop.duration}</span>
               </div>
-              <h3 className="mt-2 text-base font-semibold text-foreground tracking-tight">{stop.name}</h3>
-              <span className="inline-block mt-2 px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground bg-muted/80 rounded-md">
+              <h3 className="mt-1 text-[15px] font-semibold text-slate-900 tracking-tight leading-snug">{stop.name}</h3>
+              <span className="inline-block mt-1.5 px-2 py-0.5 text-[10px] font-medium text-slate-500 bg-slate-50 rounded-md ring-1 ring-slate-900/[0.04]">
                 {stop.category}
               </span>
               {stop.highlights && stop.highlights.length > 0 && (
-                <p className="mt-2.5 flex items-start gap-2 text-[12.5px] leading-snug text-muted-foreground">
-                  <span aria-hidden className="mt-[6px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                <p className="mt-2 flex items-start gap-2 text-[12px] leading-snug text-slate-500">
+                  <span aria-hidden className="mt-[5px] h-1 w-1 flex-shrink-0 rounded-full bg-slate-400" />
                   <span className="line-clamp-1">{stop.highlights[0]}</span>
                 </p>
               )}
             </div>
-            <div className="flex flex-shrink-0 flex-col items-end gap-2">
-              <div className="rounded-full bg-muted/60 p-1.5">
-                <ChevronRight className="h-4 w-4 text-muted-foreground" />
-              </div>
-            </div>
+            <ChevronRight className="h-4 w-4 mt-0.5 flex-shrink-0 text-slate-400 group-hover:text-slate-600 transition-colors" />
           </div>
         </button>
       </div>
