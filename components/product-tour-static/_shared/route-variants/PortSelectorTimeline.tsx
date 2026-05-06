@@ -51,11 +51,10 @@ function VariantStopCard({
           onClick={onClick}
           className={cn(
             "group relative w-full text-left rounded-2xl p-3.5 transition-all duration-300 ease-out",
-            "bg-gradient-to-br from-white via-white to-[#f5f7fa]",
-            "ring-1 ring-slate-900/[0.06]",
-            "shadow-[inset_6px_6px_14px_rgba(255,255,255,0.95),inset_-3px_-3px_10px_rgba(30,41,59,0.05),0_1px_2px_rgba(15,23,42,0.04),0_6px_20px_-10px_rgba(15,23,42,0.10)]",
-            "hover:-translate-y-[1px] hover:ring-slate-900/[0.10]",
-            "hover:shadow-[inset_7px_7px_16px_rgba(255,255,255,1),inset_-3px_-3px_12px_rgba(30,41,59,0.07),0_2px_4px_rgba(15,23,42,0.06),0_12px_28px_-10px_rgba(15,23,42,0.14)]",
+            "bg-white ring-1 ring-slate-900/[0.07]",
+            "shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.16)]",
+            "hover:-translate-y-[1px] hover:ring-slate-900/[0.11]",
+            "hover:shadow-[0_2px_4px_rgba(15,23,42,0.05),0_6px_14px_-2px_rgba(15,23,42,0.09),0_24px_48px_-14px_rgba(15,23,42,0.22)]",
           )}
         >
           <div className="flex items-start justify-between gap-3">

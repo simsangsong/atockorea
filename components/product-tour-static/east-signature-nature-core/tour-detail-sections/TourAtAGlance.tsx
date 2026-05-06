@@ -34,9 +34,9 @@ export function TourAtAGlance({ glanceItems, sectionUi }: TourAtAGlanceProps) {
       <div
         className={cn(
           "relative overflow-hidden rounded-2xl",
-          "bg-gradient-to-br from-white via-white to-[#f5f7fa]",
-          "ring-1 ring-slate-900/[0.06]",
-          "shadow-[inset_6px_6px_14px_rgba(255,255,255,0.95),inset_-3px_-3px_10px_rgba(30,41,59,0.05),0_1px_2px_rgba(15,23,42,0.04),0_8px_24px_-12px_rgba(15,23,42,0.10)]",
+          "bg-white",
+          "ring-1 ring-slate-900/[0.07]",
+          "shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.16)]",
         )}
       >
         <ul className="divide-y divide-slate-100 px-4">

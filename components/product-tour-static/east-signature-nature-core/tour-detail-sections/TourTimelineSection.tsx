@@ -34,16 +34,14 @@ function StopCard({
   const admission = stop.visitBasics?.admission;
   const showTicketsIncluded = !!admission && !FREE_ADMISSION_PATTERNS.test(admission);
 
-  // Elegant minimal card — almost-white surface with a whisper of directional volume. Subtle
-  // gradient (top-left brightest → bottom-right slightly cooler) is reinforced by a soft white
-  // inset wash on top-left and a soft slate inset wash on bottom-right. Pillow depth without
-  // looking puffy. Hairline ring + single soft drop carry the floating effect.
+  // Elegant minimal card — pure white body with a refined hairline border and a layered drop
+  // shadow (close + mid + diffused) that lets the card float without inner shadows.
   const accent = {
-    bg: "bg-gradient-to-br from-white via-white to-[#f5f7fa]",
+    bg: "bg-white",
     glow:
-      "shadow-[inset_6px_6px_14px_rgba(255,255,255,0.95),inset_-3px_-3px_10px_rgba(30,41,59,0.05),0_1px_2px_rgba(15,23,42,0.04),0_6px_20px_-10px_rgba(15,23,42,0.10)] ring-1 ring-slate-900/[0.06]",
+      "ring-1 ring-slate-900/[0.07] shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.16)]",
     glowHover:
-      "hover:shadow-[inset_7px_7px_16px_rgba(255,255,255,1),inset_-3px_-3px_12px_rgba(30,41,59,0.07),0_2px_4px_rgba(15,23,42,0.06),0_12px_28px_-10px_rgba(15,23,42,0.14)] hover:ring-slate-900/[0.10]",
+      "hover:ring-slate-900/[0.11] hover:shadow-[0_2px_4px_rgba(15,23,42,0.05),0_6px_14px_-2px_rgba(15,23,42,0.09),0_24px_48px_-14px_rgba(15,23,42,0.22)]",
   };
 
   return (
