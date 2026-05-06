@@ -34,61 +34,59 @@ function StopCard({
   const admission = stop.visitBasics?.admission;
   const showTicketsIncluded = !!admission && !FREE_ADMISSION_PATTERNS.test(admission);
 
-  // Directional-light pearl pillow — brightened pearl/slate gradient, sharp white inset edge on
-  // top+left, diffused cool-shadow inset on bottom+right, and an offset bottom-right outer drop
-  // so the card reads as lit from the upper-left while staying noticeably lighter than cream.
+  // Elegant minimal card — pure white surface with hairline ring + a single soft drop. No
+  // neumorphic gradient inside the body; depth comes from a quiet ring + low-opacity shadow that
+  // tightens slightly on hover. Reads premium and compact rather than puffy.
   const accent = {
-    bg: "bg-gradient-to-br from-white via-[#f7f9fc] to-[#e6ecf3]",
-    glow: "shadow-[inset_12px_12px_48px_rgba(255,255,255,0.98),inset_-4px_-4px_12px_rgba(30,41,59,0.10),0_3px_6px_rgba(30,41,59,0.05),8px_32px_64px_-20px_rgba(30,41,59,0.22)]",
-    glowHover: "hover:shadow-[inset_12px_12px_54px_rgba(255,255,255,1),inset_-4px_-4px_14px_rgba(30,41,59,0.14),0_5px_10px_rgba(30,41,59,0.07),12px_48px_88px_-20px_rgba(30,41,59,0.30)]",
+    bg: "bg-white",
+    glow: "shadow-[0_1px_2px_rgba(15,23,42,0.04),0_6px_20px_-10px_rgba(15,23,42,0.10)] ring-1 ring-slate-900/[0.06]",
+    glowHover: "hover:shadow-[0_2px_4px_rgba(15,23,42,0.06),0_12px_28px_-10px_rgba(15,23,42,0.14)] hover:ring-slate-900/[0.10]",
   };
 
   return (
-    <div className="relative pl-12">
+    <div className="relative pl-11">
       {stop.number < totalStops && (
-        <div className="absolute left-[19px] top-[52px] bottom-0 w-px bg-gradient-to-b from-border/60 to-transparent" />
+        <div className="absolute left-[17.5px] top-[48px] bottom-0 w-px bg-gradient-to-b from-slate-300/60 to-transparent" />
       )}
 
       <div
-        className="absolute left-0 top-1 flex h-10 w-10 items-center justify-center rounded-full text-[13px] font-semibold tabular-nums tracking-[0.02em] ring-[3px] ring-white"
+        className="absolute left-0 top-1.5 flex h-9 w-9 items-center justify-center rounded-full text-[12px] font-medium tabular-nums tracking-[0.04em] ring-1 ring-white"
         style={{
-          background:
-            "radial-gradient(circle at 30% 25%, #ffffff 0%, #f1f5f9 55%, #c8d2e0 100%)",
+          background: "linear-gradient(140deg, #ffffff 0%, #f1f5f9 100%)",
           boxShadow:
-            "inset 0 2px 3px rgba(255,255,255,0.9), inset 0 -3px 5px rgba(51,65,85,0.18), 0 2px 4px rgba(51,65,85,0.10), 0 8px 18px -4px rgba(51,65,85,0.18)",
-          color: "#1e293b",
-          textShadow: "0 1px 1px rgba(15,23,42,0.12)",
+            "0 1px 2px rgba(15,23,42,0.06), 0 4px 12px -4px rgba(15,23,42,0.10), inset 0 0.5px 0 rgba(255,255,255,0.9)",
+          color: "#334155",
         }}
       >
         {String(stop.number).padStart(2, "0")}
       </div>
 
-      <div className="pb-5">
+      <div className="pb-3">
         <button
           type="button"
           onClick={onClick}
           className={cn(
-            "group relative w-full text-left rounded-[22px] overflow-hidden transition-all duration-500 ease-out",
+            "group relative w-full text-left rounded-2xl overflow-hidden transition-all duration-300 ease-out",
             accent.bg,
             accent.glow,
-            "hover:-translate-y-[3px]",
+            "hover:-translate-y-[1px]",
             accent.glowHover,
           )}
         >
           {/* Spot photos first — filled from English POI name search in authoring JSON */}
           {photos.length > 0 && (
-            <div className="relative flex gap-1.5 px-4 pt-4 pb-2 overflow-x-auto scrollbar-hide">
+            <div className="relative flex gap-1.5 px-3.5 pt-3.5 pb-1.5 overflow-x-auto scrollbar-hide">
               {photos.map((src, i) => (
                 <div
                   key={`${src}-${i}`}
-                  className="flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-muted ring-1 ring-border/40 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_4px_10px_-4px_rgba(26,35,50,0.16)]"
+                  className="flex-shrink-0 w-20 h-14 rounded-md overflow-hidden bg-muted ring-1 ring-slate-900/5"
                 >
                   <img
                     src={src}
                     alt=""
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
               ))}
@@ -96,32 +94,30 @@ function StopCard({
           )}
 
           {/* Header info */}
-          <div className={cn("relative px-4 pb-4", photos.length > 0 ? "pt-2" : "pt-4 pb-4")}>
+          <div className={cn("relative px-3.5 pb-3.5", photos.length > 0 ? "pt-2" : "pt-3.5")}>
             <div className="flex items-start justify-between gap-3">
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
                   <Clock className="h-3 w-3" />
-                  {stop.time && <span className="font-semibold text-foreground tabular-nums">{stop.time}</span>}
-                  {stop.time && stop.duration && <span className="text-border">·</span>}
+                  {stop.time && <span className="font-medium text-slate-700 tabular-nums">{stop.time}</span>}
+                  {stop.time && stop.duration && <span className="text-slate-300">·</span>}
                   {stop.duration && <span className="tabular-nums">{stop.duration}</span>}
                 </div>
-                <h3 className="mt-1.5 text-base font-semibold text-foreground tracking-tight">{stop.name}</h3>
-                <div className="flex flex-wrap items-center gap-2 mt-2">
+                <h3 className="mt-1 text-[15px] font-semibold text-slate-900 tracking-tight leading-snug">{stop.name}</h3>
+                <div className="flex flex-wrap items-center gap-1.5 mt-1.5">
                   {stop.category && (
-                    <span className="inline-block px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground bg-muted/80 rounded-md">
+                    <span className="inline-block px-2 py-0.5 text-[10px] font-medium text-slate-500 bg-slate-50 rounded-md ring-1 ring-slate-900/[0.04]">
                       {stop.category}
                     </span>
                   )}
                   {showTicketsIncluded && (
-                    <span className="inline-block px-2.5 py-0.5 text-[10px] font-medium text-primary bg-primary/10 rounded-md ring-1 ring-primary/15">
+                    <span className="inline-block px-2 py-0.5 text-[10px] font-medium text-primary bg-primary/[0.06] rounded-md ring-1 ring-primary/15">
                       {ticketsIncludedLabel ?? "Tickets included"}
                     </span>
                   )}
                 </div>
               </div>
-              <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-muted/40 transition-all duration-200 group-hover:bg-primary/10">
-                <ChevronRight className="h-4 w-4 text-muted-foreground/60 group-hover:text-primary transition-colors" />
-              </div>
+              <ChevronRight className="h-4 w-4 mt-0.5 flex-shrink-0 text-slate-400 group-hover:text-slate-600 transition-colors" />
             </div>
           </div>
         </button>
