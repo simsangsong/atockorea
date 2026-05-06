@@ -33,14 +33,13 @@ export function TourAtAGlance({ glanceItems, sectionUi }: TourAtAGlanceProps) {
 
       <div
         className={cn(
-          "relative overflow-hidden rounded-2xl ring-1",
-          "bg-gradient-to-br from-[#fcf9f4] via-[#fefcf8] to-[#f8f4ec]",
-          "ring-amber-100/40",
-          "shadow-[0_2px_4px_rgba(26,35,50,0.05),0_6px_14px_-4px_rgba(26,35,50,0.08),0_22px_44px_-18px_rgba(26,35,50,0.22),0_12px_24px_-12px_rgba(26,35,50,0.14)]",
+          "relative overflow-hidden rounded-2xl",
+          "bg-white",
+          "ring-1 ring-slate-900/[0.06]",
+          "shadow-[0_1px_2px_rgba(15,23,42,0.04),0_8px_24px_-12px_rgba(15,23,42,0.10)]",
         )}
       >
-        <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
-        <ul className="relative divide-y divide-border/35 px-4 sm:px-5">
+        <ul className="divide-y divide-slate-100 px-4">
           {glanceItems.map((item, idx) => {
             const filled = clampLevel(item.level);
             const hasLevel = filled > 0;
@@ -48,18 +47,18 @@ export function TourAtAGlance({ glanceItems, sectionUi }: TourAtAGlanceProps) {
             return (
               <li
                 key={item.label}
-                className="flex items-center justify-between gap-4 py-3 sm:py-3.5"
+                className="flex items-center justify-between gap-4 py-2.5"
               >
                 <span className="flex items-center gap-2.5">
                   <span aria-hidden className={cn("h-1.5 w-1.5 flex-shrink-0 rounded-full", accentBg)} />
-                  <span className="text-[14px] font-medium tracking-[-0.005em] text-foreground sm:text-[14.5px]">
+                  <span className="text-[13.5px] font-medium tracking-[-0.005em] text-slate-900">
                     {item.label}
                   </span>
                 </span>
 
                 {hasLevel ? (
                   <span
-                    className="flex items-center gap-1.5"
+                    className="flex items-center gap-1"
                     role="img"
                     aria-label={`${item.value} (${filled}/${MAX_LEVEL})`}
                   >
@@ -71,15 +70,15 @@ export function TourAtAGlance({ glanceItems, sectionUi }: TourAtAGlanceProps) {
                           aria-hidden
                           className={
                             isFilled
-                              ? cn("h-[7px] w-[7px] rounded-full", accentBg)
-                              : "h-[7px] w-[7px] rounded-full border border-foreground/25 bg-transparent"
+                              ? cn("h-[6px] w-[6px] rounded-full", accentBg)
+                              : "h-[6px] w-[6px] rounded-full bg-slate-200"
                           }
                         />
                       );
                     })}
                   </span>
                 ) : (
-                  <span className="text-[12px] font-medium tracking-[0.02em] text-muted-foreground">
+                  <span className="text-[12px] font-medium tracking-[0.02em] text-slate-500">
                     {item.value}
                   </span>
                 )}
