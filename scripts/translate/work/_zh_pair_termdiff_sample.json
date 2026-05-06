@@ -1,0 +1,363 @@
+sample size: 36
+[
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:sokcho_tourist_fishery_market",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 生魚中心的活魚水箱;煎鍋上的魷魚血腸;中央入口的多彩'SOKCHO'階梯;Hyuntaenae 12 號攤位的黃底招牌;彩色年糕與紫菜包飯。 | zh-TW: 生魚片中心的活魚缸；魷魚血腸於鍋上煎香的瞬間；中央入口的彩色「SOKCHO」階梯；Hyuntaenae 12 號攤位的黃色招牌；五彩繽紛的米糕與紫菜飯捲。",
+    "detail": "diffs (zh→zh-TW): [('水箱煎鍋上的', '缸'), ('', '於鍋上煎香的瞬間'), ('色年', '繽紛的米')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:sokcho_tourist_fishery_market",
+    "field": "highlights[2]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 魷魚血腸(束草式)——整隻魷魚塞粉絲 / 米飯,蛋液煎制 | zh-TW: 魷魚血腸（束草特色）——整隻魷魚塞入冬粉／糯米，再以蛋液煎香",
+    "detail": "diffs (zh→zh-TW): [('絲/', '／糯'), ('飯', '，再以')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:sokcho_tourist_fishery_market",
+    "field": "highlights[5]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 毗鄰 gaetbae 渡船至 Abai 村(200 韓元,韓劇《藍色生死戀》取景地) | zh-TW: 鄰接「갯배」渡船前往阿爸村落（200 韓元，韓劇《藍色生死戀》拍攝地）",
+    "detail": "diffs (zh→zh-TW): [('gaetbae', '接갯배'), ('至Abai', '前往阿爸'), ('取景', '拍攝')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:sokcho_tourist_fishery_market",
+    "field": "highlights[6]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: **500 餘攤位橫跨 2 層 + 地下生魚中心**(Tripadvisor + KTO 確認)——每日 08:00 開市,免費入場;生魚中心每月第二個週三休市 | zh-TW: **地上 2 層＋地下生魚片中心 500＋ 攤位**（Tripadvisor 與 KTO 確認）——每日 08:00 開市，免費入場；生魚片中心每月第 2 週週三公休",
+    "detail": "diffs (zh→zh-TW): [('500餘攤位橫跨', '地上'), ('', '500＋攤位'), ('二個', '2週')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:third_infiltration_tunnel",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 隧道內嚴禁拍照——下行前相機與手機必須存入儲物櫃。地面 DMZ 主題雕塑、紀念門拱與隧道入口建築外景可自由拍攝。請勿攜帶無法放入小型儲物櫃的貴重物品。 | zh-TW: 隧道內**禁止拍照**——相機與手機必須在下行前寄放於置物櫃內。地面上的 DMZ 主題雕塑、紀念拱門、隧道入口建築外觀則可自由拍攝。請勿攜帶不能放入小型置物櫃的貴重物品。",
+    "detail": "diffs (zh→zh-TW): [('下行前', '**'), ('存入儲', '在下行前寄放於置'), ('無法', '不能')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:third_infiltration_tunnel",
+    "field": "highlights[2]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 設計可讓每小時 30,000 名部隊入侵首爾;朝方曾在牆面僞刷煤層以遮掩 | zh-TW: 設計每小時可運送約 30,000 名部隊侵首爾;牆上偽裝塗抹煤炭以製造煤礦假象",
+    "detail": "diffs (zh→zh-TW): [('', '可運送約'), ('朝方曾在', ''), ('面僞刷', '上偽裝塗抹'), ('遮掩', '製造煤礦假象')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:third_infiltration_tunnel",
+    "field": "highlights[0]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 隧道全長 1.635 公里,深 73 米——已發現的 4 條隧道中距首爾最近(44 公里) | zh-TW: 全長 1.635 公里,深入地下 73 公尺——是發現的 4 條隧道中最接近首爾(44 公里)的一條",
+    "detail": "diffs (zh→zh-TW): [('', '入地下'), ('米已', '公尺是'), ('距', '最接近'), ('', '的一條')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:third_infiltration_tunnel",
+    "field": "highlights[5]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: **隧道尺寸**:最大高度 1.95 米 × 寬 2.1 米(維基百科確認)——身高較高者須低頭通過 358 米的訪客段;**總體延伸入朝鮮境內 1,200 米 + 軍事分界線以南 435 米** | zh-TW: **隧道尺寸**:1.95 公尺最高×2.1 公尺寬(維基百科確認)——較高的訪客在 358 公尺的訪客段需彎腰前進;**深入北韓 1,200 公尺+軍事分界線南側 435 公",
+    "detail": "diffs (zh→zh-TW): [('最大高度', ''), ('米', '公尺最高'), ('米', '公尺寬'), ('者須低頭通過', '的訪客在'), ('', '需彎腰前進')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:pocheon_art_valley",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 湖畔主露臺俯瞰天柱湖是經典畫面——翡翠湖水映襯垂直花崗岩崖。湖畔觀景臺亭可取得高視角。冬季冰封湖尤爲出色。捕捉韓劇場景(《藍色大海的傳說》、《步步驚心:麗》、《花遊記》)。音樂廳附近的採石射孔是採礦時代留下的唯一物理痕跡。 | zh-TW: 從湖畔主露台拍攝天柱湖是經典畫面——翡翠湖水襯著垂直花崗岩崖壁。湖之觀景亭可拍攝俯瞰角度。冬季結冰湖面別具特色。韓劇場景巡禮（《藍色海洋的傳說》、《步",
+    "detail": "diffs (zh→zh-TW): [('臺俯瞰', '台拍攝'), ('取得高視', '拍攝俯瞰'), ('尤爲出', '面別具特'), ('留下的', '')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:pocheon_art_valley",
+    "field": "highlights[2]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 天柱湖——海拔 340 米的翡翠泉水湖,環繞 50 米垂直花崗岩崖 | zh-TW: 天柱湖——海拔 340 公尺翡翠泉水湖，四周圍繞 50 公尺垂直花崗岩崖壁",
+    "detail": "diffs (zh→zh-TW): [('米的', '公尺'), ('環', '，四周圍')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:pocheon_art_valley",
+    "field": "highlights[0]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 韓國首個 1970 年代廢棄花崗岩採石場生態修復項目——抱川石曾用於青瓦臺、國會議事堂、仁川機場 | zh-TW: 韓國首例廢棄 1970 年代花崗岩採石場生態復育計畫——抱川石曾用於青瓦台、國會議事堂、仁川機場",
+    "detail": "diffs (zh→zh-TW): [('個', '例廢棄'), ('項目', '育計畫')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:pocheon_art_valley",
+    "field": "highlights[6]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: **韓國首個廢棄花崗岩採石場生態修復項目**(2005-2011 修復;2009 年開園)——其修復模式現已被韓國其他市政府研究借鑑 | zh-TW: **韓國首例廢棄花崗岩採石場生態復育計畫**（2005–2011 年復育；2009 年開放）——復育模式現已成為韓國其他地方政府的研究案例",
+    "detail": "diffs (zh→zh-TW): [('項目', '育計畫'), ('園其修', '放'), ('借鑑', '案例')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gwangjang_market",
+    "field": "visitBasics.admission",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 免費入場;按購按付(美食攤位多數僅收現金) | zh-TW: 免費入場；現買現付（多數美食攤僅收現金）",
+    "detail": "diffs (zh→zh-TW): [('按購按', '現買現'), ('位多數', '')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gwangjang_market",
+    "field": "highlights[0]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 1905 年開市——韓國 **首座** 永久性傳統市場 | zh-TW: 1905 年開市——韓國 **第一個** 常設傳統市場",
+    "detail": "diffs (zh→zh-TW): [('首座', '第一個'), ('永久性', '常設')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gwangjang_market",
+    "field": "smartNotes.facilities",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 許多攤位後方設有小型堂食區。多語言菜單牌。部分支持刷卡,但建議按現金準備。最近的 ATM 在鍾路 5 街地鐵站 7 號出口附近。 | zh-TW: 許多攤位後方設有小型座位區。多語言菜單。部分攤位現可刷卡，但請以現金為主。鍾路 5 街地鐵站 7 號出口附近有 ATM。",
+    "detail": "diffs (zh→zh-TW): [('堂食', '座位'), ('支持', '攤位現可'), ('建議按', '請以'), ('準備最近的ATM在', '為主'), ('', '有ATM')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gwangjang_market",
+    "field": "visitBasics.walking",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 輕鬆——帶頂棚巷道平整;舒適步行鞋更便於擠過狹窄凳位 | zh-TW: 難度輕鬆——平坦覆蓋式巷弄；建議穿著舒適鞋款，攤位座椅間通道較窄",
+    "detail": "diffs (zh→zh-TW): [('帶頂棚', '平坦覆蓋式'), ('道平整', '弄建議穿著'), ('更便於擠過狹', '款，攤位座椅間通道較')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gamaksan_red_bridge",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 10 月中旬至 11 月初的紅葉映襯紅橋是經典畫面。橋中央俯瞰雪馬裏溪谷。從對岸廣角拍攝紅橋跨越山間的全景。 | zh-TW: 10 月中至 11 月初紅橋襯著秋葉是經典畫面。橋中央俯瞰薛馬里溪谷。從對岸的廣角鏡頭可拍出紅橋與山體的整體構圖。",
+    "detail": "diffs (zh→zh-TW): [('的紅葉映襯', ''), ('', '襯著秋葉'), ('', '鏡頭可'), ('全景', '整體構圖')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gamaksan_red_bridge",
+    "field": "highlights[2]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 寬 1.5 米;承載約 900 名成年人;設計抗 30 m/s 強風與 7 級地震 | zh-TW: 寬 1.5 公尺；可承載約 900 名成人；設計可承受 30 m/s 風速與 7 級地震",
+    "detail": "diffs (zh→zh-TW): [('米', '公尺可'), ('抗', '可承受')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gamaksan_red_bridge",
+    "field": "highlights[0]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: '格洛斯特英雄橋'——獻給英國陸軍第 1 營格洛斯特團(1951 年 4 月臨津江戰役) | zh-TW: 「格洛斯特英雄橋」——紀念英軍格洛斯特郡團第 1 營（1951 年 4 月臨津江戰役）",
+    "detail": "diffs (zh→zh-TW): [('獻給', '紀念'), ('第1營', ''), ('', '第1營')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gamaksan_red_bridge",
+    "field": "highlights[5]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: **2018 年 3 月正式開放**,由坡州市長李仁載發起市民捐款活動籌資建造,主題口號'自由非免費——以血換之' | zh-TW: **正式於 2018 年 3 月開通**，由坡州市長李仁載發起市民捐款活動籌建，標語為「自由不是免費的——它是用鮮血換來的」",
+    "detail": "diffs (zh→zh-TW): [('', '正式於'), ('造主題口號', '，標語為'), ('以', '的它是用鮮')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:petite_france",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 粉彩木構屋舍與青翠山景爲標誌構圖。山頂觀景臺是最佳廣角位置。韓劇場景搜尋是粉絲的必備項目(聖埃克蘇佩裏建築 = 《來自星星的你》關鍵場景)。 | zh-TW: 彩色木構建築群襯著青翠山景為招牌畫面。山頂觀景台是寬幅構圖的最佳點。韓劇場景探訪是粉絲導覽活動（聖修伯里館＝《來自星星的你》關鍵場景）。",
+    "detail": "diffs (zh→zh-TW): [('屋舍與', '建築群襯著'), ('爲標誌構圖', '為招牌畫面'), ('', '寬幅構圖的'), ('廣角位置', '點'), ('搜尋', '探訪')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:petite_france",
+    "field": "visitBasics.admission",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 成人₩12,000 / 青少年₩8,500 / 兒童₩7,500(小法國村+意大利村聯票成人₩19,500) | zh-TW: 成人 12,000 韓元／青少年 8,500／兒童 7,500 韓元（小法國＋義大利村套票成人 19,500 韓元）",
+    "detail": "diffs (zh→zh-TW): [('/', '韓元／'), ('村+意', '＋義')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:petite_france",
+    "field": "highlights[2]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 八音盒館:200年曆史的八音盒收藏;木偶劇場每日表演 | zh-TW: Orgel 音樂盒館：200 年古董音樂盒收藏；提線木偶劇場每日演出",
+    "detail": "diffs (zh→zh-TW): [('八', 'Orgel'), ('曆史的八', '古董')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:petite_france",
+    "field": "highlights[0]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 2008年7月開村;16棟法式建築圍繞\"小王子\"(聖埃克蘇佩裏,1943)主題 | zh-TW: 2008 年 7 月開幕；以《小王子》（聖修伯里，1943）為主題的 16 棟法式建築",
+    "detail": "diffs (zh→zh-TW): [('村', '幕以《小王子》聖修伯里，1943為主題的'), ('圍繞小王子聖埃克蘇佩裏1943主題', '')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:imjingak_peace_park",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 彈痕累累的長湍站蒸汽機車是最具感染力的單張照片。自由橋欄杆上系滿彩色祈願帶。和平之窗\"風之丘\"風車陣的色彩對比最佳。 | zh-TW: 長湍站布滿彈孔的蒸汽火車頭是最動人的單張畫面。自由橋圍籬上繫滿彩色祈願帶。和平 Nuri 風之丘的彩色風車陣形成強烈色彩對比。",
+    "detail": "diffs (zh→zh-TW): [('彈痕累累的', ''), ('', '布滿彈孔的'), ('具感染力', '動人'), ('照片', '畫面'), ('欄杆', '圍籬')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:imjingak_peace_park",
+    "field": "highlights[2]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 彈痕累累的長湍站蒸汽機車(2004年文化遺產),京義鐵路被毀路段的遺物 | zh-TW: 布滿彈孔的長湍站蒸汽火車頭（2004 年文化財）——位於斷裂的京義線鐵軌上",
+    "detail": "diffs (zh→zh-TW): [('痕累累', '孔'), ('遺產', '財位於斷裂的'), ('路被毀路段的遺物', '軌上')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:imjingak_peace_park",
+    "field": "highlights[0]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 望拜壇 —— 故鄉在北的韓國離散家庭每逢春節與中秋向北行祭禮 | zh-TW: 望拜壇——自北方故鄉離散的韓國家庭，每年農曆春節與中秋向北行祭拜禮",
+    "detail": "diffs (zh→zh-TW): [('', '自北方'), ('在北', '離散'), ('逢', '年農曆')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:imjingak_peace_park",
+    "field": "highlights[5]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: **距首爾市政府56 km**至臨津閣(韓國旅遊發展局官方數據);距軍事分界線7 km —— 1號國道上最近的可由平民進入的地點 | zh-TW: **距首爾市政廳 56 公里** 至臨津閣亭（韓國觀光公社官方數據）；距軍事分界線 7 公里——1 號國道上民眾可抵達的最近點",
+    "detail": "diffs (zh→zh-TW): [('km', '公里'), ('旅遊發展局', '觀光公社'), ('km', '公里'), ('', '民眾可抵達的'), ('的可由平民進入的地', '')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:garden_of_morning_calm",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 春(4月櫻花)、夏(滿目青翠)、秋(10月至11月初秋葉)、冬(日落後燈光節)各有不同觀感。燈光節期間的黃昏光之隧道爲標誌影像。 | zh-TW: 春季（4 月櫻花）、夏季（蓊鬱綠意）、秋季（10 月至 11 月初紅葉）、冬季（日落後的燈節）各具不同攝影樣貌。燈節期間黃昏時分的光之隧道是招牌畫面。",
+    "detail": "diffs (zh→zh-TW): [('滿目青翠', '季蓊鬱綠意'), ('觀感', '攝影樣貌'), ('', '時分的'), ('爲標誌影像', '是招牌畫面')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:garden_of_morning_calm",
+    "field": "visitBasics.admission",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 成人11,000韓元 / 65歲以上長者9,000韓元 / 13–18歲青少年8,500韓元 / 3–12歲兒童7,500韓元(憑票優惠相鄰動物園2,000韓元) | zh-TW: 成人 11,000 韓元／65 歲以上長者 9,000 韓元／青少年 13–18 歲 8,500 韓元／兒童 3–12 歲 7,500 韓元（持票者於鄰近動物園可享 2,000 韓元優惠）",
+    "detail": "diffs (zh→zh-TW): [('/', '／青少年'), ('青少年', ''), ('/', '／兒童'), ('優惠相', '者於')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:garden_of_morning_calm",
+    "field": "highlights[0]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 韓國招牌私家樹木園 —— 33萬平方米,約5,000種植物 | zh-TW: 韓國代表性私人樹木園——330,000 平方公尺、約 5,000 種植物",
+    "detail": "diffs (zh→zh-TW): [('招牌', '代表性'), ('萬', '0000')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:garden_of_morning_calm",
+    "field": "highlights[5]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: **1992年構思 / 1994年購地 / 1996年5月11日開園**:三育大學園藝系韓相敬教授與夫人親自設計與栽培,早期資金困難時甚至賣掉家宅 | zh-TW: **1992 年構思／1994 年購地／1996 年 5 月 11 日開園**：創辦人韓相敬教授（三育大學園藝學系）與夫人親自設計與栽植整座庭園，初期財務困頓時甚至賣掉自家房屋",
+    "detail": "diffs (zh→zh-TW): [('', '創辦人韓相敬教授'), ('韓相敬教授', ''), ('培早', '植整座庭園，初'), ('資金', '財務')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:insadong",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: Ssamzigil螺旋內庭+樓頂露臺。帶韓紙屏風的傳統茶館內飾。韓紙工坊演示中。韓服配飾店裏韓國婚色絲線扎束。週末步行街全景。 | zh-TW: Ssamzigil 螺旋內部與屋頂露台。傳統茶屋的韓紙窗景。韓紙工坊示範中。韓服飾品店裡的傳統婚禮繡線束。週末步行專用街景。",
+    "detail": "diffs (zh→zh-TW): [('庭+樓', '部與屋'), ('臺帶韓紙屏風的', '台'), ('館內飾', '屋的韓紙窗景'), ('裏韓國', '裡的傳統'), ('色絲', '禮繡')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:insadong",
+    "field": "visitBasics.admission",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 免費入街;消費與茶館按需付費 | zh-TW: 免費入街；購物與茶屋採用後付費",
+    "detail": "diffs (zh→zh-TW): [('消費', '購物'), ('館按需', '屋採用後')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:insadong",
+    "field": "highlights[5]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 附近的鉢盂供養 —— 韓國唯一獲米其林星的佛教寺院料理 | zh-TW: 缽盂供養——附近的韓國唯一米其林星級佛教寺廟料理餐廳",
+    "detail": "diffs (zh→zh-TW): [('', '缽盂供養'), ('鉢盂供養', '')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:insadong",
+    "field": "highlights[6]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 週末(週六+週日)全街人車分流 | zh-TW: 週末（週六＋週日）為步行專用街",
+    "detail": "diffs (zh→zh-TW): [('全', '為步行專用'), ('人車分流', '')]",
+    "suggested_fix": null
+  }
+]

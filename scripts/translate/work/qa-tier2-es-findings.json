@@ -1,0 +1,822 @@
+{
+  "tier1_validation": [
+    {
+      "index": 0,
+      "poi_key": "poi:osulloc_tea_museum",
+      "field": "smartNotes.facilities",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Plataforma de Observación",
+      "verdict": "FP",
+      "rationale": "EN 'observatory deck overlooking fields' was rendered as 'mirador en la azotea sobre los cultivos'. 'Mirador' is the natural Spanish word here (rooftop viewpoint at a tea museum, not an astronomy/observatory deck). 'Plataforma de Observación' would sound stilted. Glossary fit is poor for this context.",
+      "suggested_fix": null
+    },
+    {
+      "index": 1,
+      "poi_key": "poi:hallasan_eoseungsaengak",
+      "field": "highlights[3]",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Monte Hallasan",
+      "verdict": "FP",
+      "rationale": "EN snippet says 'Hallasan's Baengnokdam crater' (possessive). ES rephrased as 'caldera de Baengnokdam, Mar Amarillo y campo de oreums del sur'. The reference to Hallasan is implicit because the bullet is about Eoseungsaengak's deck panorama on Hallasan, and 'Monte Hallasan' appears prominently throughout this POI's description. Adding it here would be redundant. Glossary compliance OK at the POI level.",
+      "suggested_fix": null
+    },
+    {
+      "index": 2,
+      "poi_key": "poi:yongdusan_park",
+      "field": "description",
+      "issue_type": "number_missing",
+      "expected_number": "1950",
+      "verdict": "FP",
+      "rationale": "EN 'most destroyed by 1950s fires' is idiomatically rendered in ES with decade language. Detector flagged the '195' substring of '1950s'. Spanish convention prefers 'incendios de los años cincuenta' or 'incendios de la posguerra' over '1950'. No factual loss.",
+      "suggested_fix": null
+    },
+    {
+      "index": 3,
+      "poi_key": "poi:OPS_return_incheon",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Bajada",
+      "verdict": "FP",
+      "rationale": "EN says 'driver-guide adjusts the day's pacing' — there is no literal 'drop-off' lexical instance in the description proper (concept is implicit). The word 'drop-off' detector likely matched a synonym or adjacent text. ES uses 'llegada' / 'embarque', which fits the cruise context.",
+      "suggested_fix": null
+    },
+    {
+      "index": 4,
+      "poi_key": "poi:OPS_return_incheon",
+      "field": "highlights[2]",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Bajada",
+      "verdict": "TP",
+      "rationale": "EN 'Curbside drop-off at terminal entrance' was translated as 'Drop-off en el bordillo, en la entrada de la terminal'. The English term 'drop-off' is left untranslated in ES, which is a glossary violation. Spanish glossary specifies 'Bajada'. Note: 'drop-off' is not on the established travel-loanword whitelist for Spanish.",
+      "suggested_fix": "Bajada en el bordillo, en la entrada de la terminal"
+    },
+    {
+      "index": 5,
+      "poi_key": "poi:gwangmyeong_cave",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Follaje Otoñal",
+      "verdict": "FP",
+      "rationale": "The EN 'autumn foliage' appears in smartNotes.photo (LED Art Tunnel themes), not in description. In description the EN talks about the gold/silver mine; no 'autumn foliage' term is present. Detector mis-keyed the field.",
+      "suggested_fix": null
+    },
+    {
+      "index": 6,
+      "poi_key": "poi:gwangmyeong_cave",
+      "field": "smartNotes.photo",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Follaje Otoñal",
+      "verdict": "TP_minor",
+      "rationale": "EN: 'spring cherry blossom, autumn foliage, winter snow'. ES: 'cerezos en primavera, otoño, nieve en invierno'. ES omitted the 'foliage' descriptor and reduced 'autumn foliage' to just 'otoño'. The shorthand is natural-sounding but loses the foliage specificity. Correctness rather than naturalness issue.",
+      "suggested_fix": "iluminación temática estacional (cerezos en primavera, follaje otoñal, nieve en invierno)"
+    },
+    {
+      "index": 7,
+      "poi_key": "poi:herb_island",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Jardín de la Calma Matutina",
+      "verdict": "CONFIRM_NEEDS_CHECK",
+      "rationale": "EN snippet referenced 'Garden of Morning Calm' as an alternative location comparison. ES snippet shown does not include that phrase explicitly. Cannot confirm full ES rendering from snippet alone. Likely the ES paraphrased the comparison; suggested fix below if it appears in full text.",
+      "suggested_fix": "ensure 'Jardín de la Calma Matutina' is used wherever EN says 'Garden of Morning Calm'"
+    },
+    {
+      "index": 8,
+      "poi_key": "poi:n_seoul_tower",
+      "field": "highlights[1]",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Seúl",
+      "verdict": "TP",
+      "rationale": "ES highlight: 'rebautizada N Seoul Tower en 2005'. The brand name is 'N Seoul Tower', but Spanish convention and the glossary mandate 'Torre N Seúl' for first/main mention. Within highlights and description the brand name is left in English form, missing 'Seúl' vs 'Seoul'.",
+      "suggested_fix": "Construida 1969-1971, abierta en 1980, rebautizada Torre N Seúl en 2005"
+    },
+    {
+      "index": 9,
+      "poi_key": "poi:n_seoul_tower",
+      "field": "highlights[1]",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Torre N Seúl",
+      "verdict": "TP",
+      "rationale": "Same finding as previous: ES uses untranslated brand 'N Seoul Tower'. Glossary specifies 'Torre N Seúl'. Brand name as-such may be retained in some contexts (signage), but the rebrand-history sentence in ES should use the localized form per glossary.",
+      "suggested_fix": "Construida 1969-1971, abierta en 1980, rebautizada Torre N Seúl en 2005"
+    },
+    {
+      "index": 10,
+      "poi_key": "poi:n_seoul_tower",
+      "field": "highlights[8]",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Seúl",
+      "verdict": "TP",
+      "rationale": "ES has 'la estructura se llamó simplemente \\'Seoul Tower\\' de 1980 a diciembre de 2005'. The historical name 'Seoul Tower' (in single quotes) is intentional — a pre-rebrand proper name; arguably acceptable to keep verbatim with quotes. Could optionally render as 'Torre de Seúl' for clarity. Marginal TP.",
+      "suggested_fix": "la estructura se llamó simplemente 'Seoul Tower' (Torre de Seúl) de 1980 a diciembre de 2005"
+    },
+    {
+      "index": 11,
+      "poi_key": "poi:haedong_yonggungsa",
+      "field": "description",
+      "issue_type": "number_missing",
+      "expected_number": "1930",
+      "verdict": "FP",
+      "rationale": "EN 'reconstruction in the early 1930s' — ES renders as 'comienzos de los años treinta'. Idiomatic decade phrasing, no factual loss. False positive.",
+      "suggested_fix": null
+    },
+    {
+      "index": 12,
+      "poi_key": "poi:route_variant_custom_seoul",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Bajada",
+      "verdict": "CONFIRM_NEEDS_CHECK",
+      "rationale": "ES snippet does not show literal 'drop-off' string; need to verify whole field. If 'drop-off' was paraphrased as 'recogida/dejada' it's acceptable; if left in English, fix.",
+      "suggested_fix": "Replace any untranslated 'drop-off' with 'bajada'"
+    },
+    {
+      "index": 13,
+      "poi_key": "poi:OPS_lunch_winter_south",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Camelia",
+      "verdict": "FP",
+      "rationale": "EN 'between tangerine farm and Camellia Hill' — proper noun 'Camellia Hill' is the name of the place. Glossary explicitly maps Camellia Hill → 'Camellia Hill' (kept as brand). The 'Camelia' rendering applies to the standalone term 'camellia' (the flower), not the brand 'Camellia Hill'. ES correctly retains 'Camellia Hill'.",
+      "suggested_fix": null
+    },
+    {
+      "index": 14,
+      "poi_key": "poi:OPS_lunch_winter_south",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Camelia",
+      "verdict": "FP",
+      "rationale": "Same as above — context is 'Camellia Hill' the proper name, not the flower. False positive.",
+      "suggested_fix": null
+    },
+    {
+      "index": 15,
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Camelia",
+      "verdict": "CONFIRM_NEEDS_CHECK",
+      "rationale": "Cannot verify from snippet alone — likely 'Camellia Hill' brand-name reference (FP). If standalone 'camellia' (flower) appears, render as 'camelia'.",
+      "suggested_fix": null
+    },
+    {
+      "index": 16,
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Guía de habla inglesa",
+      "verdict": "TP_minor",
+      "rationale": "ES uses 'guía angloparlante'. Glossary mandates 'Guía de habla inglesa'. Both are fully native-sounding Spanish; 'angloparlante' is idiomatic and shorter, but doesn't match the canonical glossary form. Style/consistency issue rather than naturalness issue.",
+      "suggested_fix": "El conductor y el guía de habla inglesa llegan en un minibús..."
+    },
+    {
+      "index": 17,
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "highlights[1]",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Guía de habla inglesa",
+      "verdict": "TP_minor",
+      "rationale": "Same as #16. Glossary consistency.",
+      "suggested_fix": "Minibús (8–15 pax compartido); guía de habla inglesa + conductor"
+    },
+    {
+      "index": 18,
+      "poi_key": "poi:OPS_busan_port_return",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Bajada",
+      "verdict": "CONFIRM_NEEDS_CHECK",
+      "rationale": "Snippet doesn't explicitly show 'drop-off' string. If literal English 'drop-off' appears in the full body, fix it.",
+      "suggested_fix": "Replace any untranslated 'drop-off' with 'bajada'"
+    },
+    {
+      "index": 19,
+      "poi_key": "poi:OPS_busan_port_return",
+      "field": "highlights[2]",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Bajada",
+      "verdict": "TP",
+      "rationale": "ES: 'Sin drop-offs individuales en hoteles'. The pluralized English term 'drop-offs' is left in English. Glossary mandates 'Bajadas'. Should be translated.",
+      "suggested_fix": "**Sin bajadas individuales en hoteles** (horario fijo de grupo reducido)"
+    },
+    {
+      "index": 20,
+      "poi_key": "poi:cheonjeyeon_falls",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Bajada",
+      "verdict": "FP",
+      "rationale": "The EN 'closer' (as in 'three-tier waterfall closer' — i.e., the day's closing stop) is unrelated to 'drop-off'. Detector likely false-positive matched something else. ES rendering 'cierra la jornada' is natural and accurate.",
+      "suggested_fix": null
+    },
+    {
+      "index": 21,
+      "poi_key": "poi:hallim_park",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Parque Hallim",
+      "verdict": "TP_minor",
+      "rationale": "ES uses 'Hallim' alone in places ('Cuatro motivos por los que Hallim es la parada principal'). The first/full mention has 'Parque Hallim' nearby in the description. Subsequent shortenings are acceptable native style, but 'Hallim Park' brand should consistently surface as 'Parque Hallim' on first mention per section.",
+      "suggested_fix": "Use 'Parque Hallim' on first mention of each section; shortened 'Hallim' OK afterward."
+    },
+    {
+      "index": 22,
+      "poi_key": "poi:hallim_park",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Camelia",
+      "verdict": "CONFIRM_NEEDS_CHECK",
+      "rationale": "If reference is to 'Camellia Hill' (proper noun), FP. If reference is to camellia flowers in Hallim's calendar (e.g., December camellia), should be 'camelia'.",
+      "suggested_fix": "Where flower not place: 'camelia' (lowercase)"
+    },
+    {
+      "index": 23,
+      "poi_key": "poi:jeonnong_ro_cherry_blossom_street",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Carretera Noksan-ro",
+      "verdict": "CONFIRM_NEEDS_CHECK",
+      "rationale": "Snippet doesn't show 'noksan-ro' explicitly. If full body uses 'Noksan-ro' bare, fix to 'Carretera Noksan-ro' on first mention.",
+      "suggested_fix": "First mention as 'Carretera Noksan-ro'; subsequent 'Noksan-ro' OK"
+    },
+    {
+      "index": 24,
+      "poi_key": "poi:ilchulland_themed_gardens",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Carretera Noksan-ro",
+      "verdict": "CONFIRM_NEEDS_CHECK",
+      "rationale": "Same as #23.",
+      "suggested_fix": "First mention as 'Carretera Noksan-ro'"
+    },
+    {
+      "index": 25,
+      "poi_key": "poi:OPS_pickup",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Guía de habla inglesa",
+      "verdict": "CONFIRM_NEEDS_CHECK",
+      "rationale": "Cannot verify whether ES uses 'guía de habla inglesa' or 'guía angloparlante' from snippet. Check whole field; align with glossary canonical form.",
+      "suggested_fix": "Use 'guía de habla inglesa'"
+    },
+    {
+      "index": 26,
+      "poi_key": "poi:un_memorial_cemetery",
+      "field": "convenience.parking",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Bajada",
+      "verdict": "FP_acceptable",
+      "rationale": "ES: 'zona de descenso para autocares turísticos'. 'Zona de descenso' is a fully native, idiomatic equivalent of 'drop-off zone' — arguably MORE natural than 'zona de bajada' for a coach drop-off zone. Glossary 'Bajada' is technically the term, but 'descenso' is acceptable register here. Soft FP.",
+      "suggested_fix": null
+    },
+    {
+      "index": 27,
+      "poi_key": "poi:OPS_lunch",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Camelia",
+      "verdict": "FP",
+      "rationale": "Reference is to 'Camellia Hill' (the proper place name). FP.",
+      "suggested_fix": null
+    },
+    {
+      "index": 28,
+      "poi_key": "poi:pocheon_art_valley",
+      "field": "description",
+      "issue_type": "number_missing",
+      "expected_number": "1970",
+      "verdict": "FP",
+      "rationale": "EN '1970s granite quarry' rendered as 'cantera de granito activa en los años setenta'. Idiomatic decade phrasing; no factual loss.",
+      "suggested_fix": null
+    },
+    {
+      "index": 29,
+      "poi_key": "poi:pocheon_art_valley",
+      "field": "highlights[0]",
+      "issue_type": "number_missing",
+      "expected_number": "1970",
+      "verdict": "FP",
+      "rationale": "Same: '1970s granite quarry' → 'de los años setenta'. Idiomatic.",
+      "suggested_fix": null
+    },
+    {
+      "index": 30,
+      "poi_key": "poi:pocheon_art_valley",
+      "field": "highlights[7]",
+      "issue_type": "number_missing",
+      "expected_number": "1980",
+      "verdict": "FP",
+      "rationale": "EN '1980s peak production' rendered as 'pico de producción ... en los años ochenta'. Idiomatic.",
+      "suggested_fix": null
+    },
+    {
+      "index": 31,
+      "poi_key": "poi:OPS_east_jeju_lunch",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Carretera Noksan-ro",
+      "verdict": "CONFIRM_NEEDS_CHECK",
+      "rationale": "Snippet does not show explicit 'Noksan-ro' string; verify whole field.",
+      "suggested_fix": "Where 'Noksan-ro' appears, use 'Carretera Noksan-ro' on first mention"
+    },
+    {
+      "index": 32,
+      "poi_key": "poi:camellia_hill",
+      "field": "whyOnRoute",
+      "issue_type": "number_missing",
+      "expected_number": "075",
+      "verdict": "FP",
+      "rationale": "Detector artifact — '075' does not appear in EN whyOnRoute. False positive.",
+      "suggested_fix": null
+    },
+    {
+      "index": 33,
+      "poi_key": "poi:camellia_hill",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Camelia",
+      "verdict": "FP",
+      "rationale": "All references in this field are to 'Camellia Hill' (the proper-noun park). FP.",
+      "suggested_fix": null
+    },
+    {
+      "index": 34,
+      "poi_key": "poi:olle_maeil_market",
+      "field": "highlights[1]",
+      "issue_type": "number_missing",
+      "expected_number": "1960",
+      "verdict": "FP",
+      "rationale": "EN 'Established **early 1960s**' rendered as 'Establecido a **principios de los años 60**'. Spanish-native idiomatic decade form. The original even uses '60' as a numeral, so the decade IS encoded. False positive.",
+      "suggested_fix": null
+    },
+    {
+      "index": 35,
+      "poi_key": "poi:imjingak_peace_park",
+      "field": "description",
+      "issue_type": "number_missing",
+      "expected_number": "625",
+      "verdict": "FP",
+      "rationale": "Detector mis-pattern. The Korean War is sometimes referred to as '6.25 War' (June 25). EN says 'Korean War', ES says 'Guerra de Corea'. No '625' is materially missing; 'Guerra de Corea' is the correct Spanish convention.",
+      "suggested_fix": null
+    },
+    {
+      "index": 36,
+      "poi_key": "poi:dora_observatory",
+      "field": "description",
+      "issue_type": "number_missing",
+      "expected_number": "1950",
+      "verdict": "FP",
+      "rationale": "EN '1950s to display North Korean prosperity' rendered idiomatically in ES (likely 'en los años cincuenta' or paraphrased). Decade idiom; not a fact loss.",
+      "suggested_fix": null
+    },
+    {
+      "index": 37,
+      "poi_key": "poi:jeju_tangerine_picking_experience",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Camelia",
+      "verdict": "CONFIRM_NEEDS_CHECK",
+      "rationale": "If reference is 'Camellia Hill' (place), FP. If standalone 'camellia' (flower), should be 'camelia'.",
+      "suggested_fix": "Where flower not place: 'camelia'"
+    },
+    {
+      "index": 38,
+      "poi_key": "poi:route_variant_custom",
+      "field": "highlights[3]",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "localización de rodaje de K-drama",
+      "verdict": "TP_resolved",
+      "rationale": "ES: 'Incluya localizaciones de rodaje de K-drama: Seopjikoji ('All In')...'. The pluralized form 'localizaciones de rodaje de K-drama' MATCHES the glossary's lowercase canonical form (singular: 'localización de rodaje de K-drama'). Detector likely failed pluralization match. FP at content level; correct in ES.",
+      "suggested_fix": null
+    },
+    {
+      "index": 39,
+      "poi_key": "name:lunch — south jeju local",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "expected_es": "Camelia",
+      "verdict": "FP",
+      "rationale": "Reference is to 'Camellia Hill' (place). FP.",
+      "suggested_fix": null
+    }
+  ],
+  "tier2_native_tone": [
+    {
+      "poi_key": "poi:n_seoul_tower",
+      "field": "description",
+      "snippet": "La N Seoul Tower (Namsan Seoul Tower) es el monumento más icónico de Seúl",
+      "issue_type": "ai_tone_overused_modifier",
+      "severity": "minor",
+      "detail": "'icónico' is on the AI-tone watch-list; appears multiple times across this POI ('icónico muro de los Candados del Amor', 'la toma icónica', 'el icono n.º 1'). 1-2 uses is fine; 4+ in one POI starts to read like translationese.",
+      "suggested_fix": "Vary with 'emblemático', 'distintivo', 'célebre', 'el sello de Seúl', or rephrase ('el muro de los Candados del Amor — visita obligada en la terraza')."
+    },
+    {
+      "poi_key": "poi:n_seoul_tower",
+      "field": "highlights[0]",
+      "snippet": "El monumento más icónico de Seúl — torre de 236,7 m sobre el monte Namsan (479,7 m sobre el nivel del mar)",
+      "issue_type": "ai_tone_overused_modifier",
+      "severity": "minor",
+      "detail": "'icónico' again as the lead modifier of the very first highlight.",
+      "suggested_fix": "El monumento más emblemático de Seúl — torre de 236,7 m sobre el monte Namsan"
+    },
+    {
+      "poi_key": "poi:n_seoul_tower",
+      "field": "smartNotes.tip",
+      "snippet": "**NUNCA** un taxi — los taxis tienen prohibida la entrada al parque.",
+      "issue_type": "register_overemphasis",
+      "severity": "minor",
+      "detail": "ALL-CAPS 'NUNCA' reads like a shouty AI directive. Spanish travel copy uses softer formal imperatives.",
+      "suggested_fix": "**No utilice taxi**: tienen prohibida la entrada al parque."
+    },
+    {
+      "poi_key": "poi:n_seoul_tower",
+      "field": "highlights",
+      "snippet": "**Taxis PROHIBIDOS dentro del parque**",
+      "issue_type": "register_overemphasis",
+      "severity": "minor",
+      "detail": "All-caps 'PROHIBIDOS' is shouty.",
+      "suggested_fix": "**Acceso de taxis vetado dentro del parque** — solo teleférico o autobús lanzadera"
+    },
+    {
+      "poi_key": "poi:OPS_return_incheon",
+      "field": "highlights[2]",
+      "snippet": "Drop-off en el bordillo, en la entrada de la terminal",
+      "issue_type": "anglicism_unwhitelisted",
+      "severity": "major",
+      "detail": "'Drop-off' is left in English. Not on the established Spanish travel-loanword list (whitelist allows: K-drama, K-pop, BBQ — 'drop-off' not included). Glossary canonical: 'Bajada'.",
+      "suggested_fix": "Bajada en el bordillo, junto a la entrada de la terminal"
+    },
+    {
+      "poi_key": "poi:OPS_busan_port_return",
+      "field": "highlights[2]",
+      "snippet": "**Sin drop-offs individuales en hoteles**",
+      "issue_type": "anglicism_unwhitelisted",
+      "severity": "major",
+      "detail": "'drop-offs' kept in English with Spanish plural 's'. Hybrid form is jarring; glossary canonical: 'bajadas'.",
+      "suggested_fix": "**Sin bajadas individuales en hoteles** (horario fijo de grupo reducido)"
+    },
+    {
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "highlights[1]",
+      "snippet": "guía angloparlante + conductor",
+      "issue_type": "glossary_inconsistency",
+      "severity": "minor",
+      "detail": "'angloparlante' is fully native but inconsistent with glossary canonical 'guía de habla inglesa'. Both natural; pick one and apply across the corpus.",
+      "suggested_fix": "guía de habla inglesa + conductor"
+    },
+    {
+      "poi_key": "poi:gwangmyeong_cave",
+      "field": "smartNotes.photo",
+      "snippet": "iluminación temática estacional (cerezos en primavera, otoño, nieve en invierno)",
+      "issue_type": "missing_descriptor",
+      "severity": "minor",
+      "detail": "EN: 'spring cherry blossom, autumn foliage, winter snow'. ES dropped 'foliage' (just 'otoño'). Three parallel descriptors become two-and-a-bare-noun, weakening the parallelism.",
+      "suggested_fix": "iluminación temática estacional (cerezos en primavera, follaje otoñal, nieve en invierno)"
+    },
+    {
+      "poi_key": "poi:hallasan_eoseungsaengak",
+      "field": "smartNotes.tip",
+      "snippet": "Esta parada funciona mejor como un paseo escénico enfocado que como un recorrido pausado y prolongado.",
+      "issue_type": "vague_translationese",
+      "severity": "minor",
+      "detail": "'paseo escénico enfocado' reads as an awkward calque from EN ('focused scenic walk'). 'Enfocado' is rarely used this way in Spanish travel writing.",
+      "suggested_fix": "Esta parada funciona mejor como una caminata panorámica concentrada que como un paseo prolongado."
+    },
+    {
+      "poi_key": "poi:hallasan_eoseungsaengak",
+      "field": "smartNotes.facilities",
+      "snippet": "Las instalaciones son bastante mejores en la entrada que a lo largo del propio sendero.",
+      "issue_type": "redundant_phrasing",
+      "severity": "trivial",
+      "detail": "'bastante mejores' — fine; 'a lo largo del propio sendero' is verbose. Acceptable but tightenable.",
+      "suggested_fix": "Las instalaciones son notablemente mejores en la entrada que a lo largo del sendero."
+    },
+    {
+      "poi_key": "poi:imjingak_peace_park",
+      "field": "highlights[8]",
+      "snippet": "**Financiación inicial de 1972**: la confitería Haitai donó 80 millones de KRW para la construcción inicial de 750 pyeong",
+      "issue_type": "untranslated_unit",
+      "severity": "minor",
+      "detail": "'pyeong' is a Korean area unit (~3.3 m²). Spanish reader unfamiliar; should at least gloss the equivalent.",
+      "suggested_fix": "para la construcción inicial de 750 pyeong (~2.480 m²)"
+    },
+    {
+      "poi_key": "poi:imjingak_peace_park",
+      "field": "smartNotes.facilities",
+      "snippet": "corn dogs, salchichas con tteok, dumplings",
+      "issue_type": "anglicism_acceptable",
+      "severity": "trivial",
+      "detail": "'corn dogs' and 'dumplings' are widely understood loanwords in Spanish travel/foodie copy; acceptable. 'tteok' (떡) untranslated is fine since it's a culture-specific food. No fix needed; flagging for awareness.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:hallim_park",
+      "field": "description",
+      "snippet": "**junio Hortensia → julio-septiembre Loto + Lirio de Agua → octubre Cosmos / Pink Muhly →",
+      "issue_type": "anglicism_unwhitelisted",
+      "severity": "minor",
+      "detail": "'Pink Muhly' is left in English (proper-noun-ish but botanical name 'Muhlenbergia capillaris'). Spanish travel copy commonly uses 'hierba muhly rosa' or 'pink muhly' italicized. The Camellia Hill smartNotes uses 'campo de hierba muhly rosa'; inconsistency.",
+      "suggested_fix": "octubre Cosmos / hierba muhly rosa"
+    },
+    {
+      "poi_key": "poi:hallim_park",
+      "field": "highlights[8]",
+      "snippet": "Lista de huéspedes diplomáticos: **Jiang Zemin, Nakasone, Kim Dae-jung, Lee Kun-hee, Chung Ju-yung**",
+      "issue_type": "register_minor",
+      "severity": "trivial",
+      "detail": "Mix of full and surname-only references (Jiang Zemin / Kim Dae-jung full; Nakasone surname only). Standard Spanish editorial style would be consistent — first names where they're not universally known.",
+      "suggested_fix": "Lista de huéspedes diplomáticos: Jiang Zemin, Yasuhiro Nakasone, Kim Dae-jung, Lee Kun-hee, Chung Ju-yung"
+    },
+    {
+      "poi_key": "poi:camellia_hill",
+      "field": "description",
+      "snippet": "**el mayor arboreto de camelias del Oriente**",
+      "issue_type": "non_native_phrasing",
+      "severity": "minor",
+      "detail": "'del Oriente' (with article) is dated/literary in Spanish. Modern travel copy: 'de Oriente' or 'de Asia oriental'.",
+      "suggested_fix": "el mayor arboreto de camelias de Asia Oriental"
+    },
+    {
+      "poi_key": "poi:camellia_hill",
+      "field": "description",
+      "snippet": "**'EXchange / Transit Love 3' (환승연애)** filmó en Camell",
+      "issue_type": "verb_subject_concord",
+      "severity": "minor",
+      "detail": "'el reality EXchange filmó en Camellia Hill' — 'filmó' is intransitive here, but in Spanish 'rodar' / 'grabar' is preferable. 'Filmar' is acceptable in some regions (Latam) but rings translationese in peninsular Spanish.",
+      "suggested_fix": "El reality 'EXchange / Transit Love 3' (환승연애) se rodó en Camellia Hill"
+    },
+    {
+      "poi_key": "poi:cheonjiyeon_falls",
+      "field": "description",
+      "snippet": "(~15 min en sentido único, pavimentado y apto para cochecitos)",
+      "issue_type": "lexical_choice",
+      "severity": "minor",
+      "detail": "'sentido único' literally means 'one-way [traffic direction]'. EN was 'one-way 15-min walk' (=hike to falls and back, not return loop). Spanish reader could parse this as 'one-way street'. Better: 'ida' or 'tramo de ida'.",
+      "suggested_fix": "~15 min de ida, pavimentado y apto para cochecitos"
+    },
+    {
+      "poi_key": "poi:cheonjiyeon_falls",
+      "field": "description",
+      "snippet": "el árbol de la libélula (Monumento Natural n.º 163)",
+      "issue_type": "calque",
+      "severity": "minor",
+      "detail": "'árbol de la libélula' is a literal calque. The Korean tree (Hibiscus hamabo / 'dragonfly tree' / 담팔수) has no standard Spanish name. Either keep Korean name with parenthetical scientific name or gloss.",
+      "suggested_fix": "el dampalsu o 'árbol de la libélula' (Elaeocarpus sylvestris, Monumento Natural n.º 163)"
+    },
+    {
+      "poi_key": "poi:dora_observatory",
+      "field": "highlights[7]",
+      "snippet": "torre de interferencia GPS dirigida a la población norcoreana",
+      "issue_type": "factual_accuracy_check",
+      "severity": "major",
+      "detail": "EN reference is to 'GPS jamming tower' targeting South. ES says 'dirigida a la población norcoreana' — POSSIBLE HALLUCINATION/REVERSAL. Verify EN: GPS jamming towers operated by North Korea target the South. ES inverts the audience.",
+      "suggested_fix": "Verify against EN. If EN says 'targeting the South / Korean public', ES should be 'dirigida a la población surcoreana'. Likely current ES is incorrect."
+    },
+    {
+      "poi_key": "poi:dora_observatory",
+      "field": "highlights[7]",
+      "snippet": "torre de interferencia GPS dirigida a la población norcoreana",
+      "issue_type": "lexical_choice",
+      "severity": "minor",
+      "detail": "'torre de interferencia GPS' is a clean translation, but 'torre de bloqueo de GPS' or 'antena de inhibición GPS' is more native technical Spanish.",
+      "suggested_fix": "antena de inhibición de GPS"
+    },
+    {
+      "poi_key": "poi:gwangmyeong_cave",
+      "field": "description",
+      "snippet": "Premio Estrella del Turismo de Corea 2014 (el 'Óscar' del turismo coreano)",
+      "issue_type": "register_OK",
+      "severity": "trivial",
+      "detail": "'Óscar' with accent — correct Spanish (RAE accepts 'Óscar' / 'óscar'). No fix.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:hallim_park",
+      "field": "highlights[3]",
+      "snippet": "**Calendario mensual de festivales** — un festival activo nombrado cada mes del año",
+      "issue_type": "literal_calque",
+      "severity": "minor",
+      "detail": "'festival activo nombrado' is a calque of EN 'named active festival'. In Spanish, 'designado' or 'con nombre propio' reads more naturally.",
+      "suggested_fix": "Calendario mensual de festivales — un festival con nombre propio cada mes del año"
+    },
+    {
+      "poi_key": "poi:cheomseongdae",
+      "field": "highlights[1]",
+      "snippet": "**Cheomseongdae** = el observatorio astronómico más antiguo existente de Asia Oriental",
+      "issue_type": "lexical_choice",
+      "severity": "trivial",
+      "detail": "'más antiguo existente' — natural Spanish would be 'el observatorio astronómico conservado más antiguo' (existente sounds engineerish here).",
+      "suggested_fix": "el observatorio astronómico conservado más antiguo de Asia Oriental"
+    },
+    {
+      "poi_key": "poi:tongdosa_temple",
+      "field": "description",
+      "snippet": "el salón principal de Tongdosa célebremente NO contiene imagen del Buda",
+      "issue_type": "anglicism_calque",
+      "severity": "minor",
+      "detail": "'célebremente' is a low-frequency Spanish adverb, here a calque of EN 'famously'. Native phrasing avoids '-mente' adverbs in this position.",
+      "suggested_fix": "el salón principal de Tongdosa, célebre por NO contener imagen del Buda"
+    },
+    {
+      "poi_key": "poi:haedong_yonggungsa",
+      "field": "highlights[7]",
+      "snippet": "festival de farolillos del Cumpleaños del Buda (mayo)",
+      "issue_type": "register_OK",
+      "severity": "trivial",
+      "detail": "Capitalization 'Cumpleaños del Buda' — Spanish editorial convention is lowercase for descriptors of festivals: 'festival de farolillos del cumpleaños de Buda'. Minor.",
+      "suggested_fix": "festival de farolillos del cumpleaños de Buda (mayo)"
+    },
+    {
+      "poi_key": "poi:jagalchi_market",
+      "field": "description",
+      "snippet": "el corazón de **Nampo-dong**, el distrito comercial y gastronómico del centro de Busan",
+      "issue_type": "register_OK",
+      "severity": "trivial",
+      "detail": "Reads native. No fix.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:jagalchi_market",
+      "field": "highlights[8]",
+      "snippet": "**El sannakji (pulpo cortado vivo) es la firma culinaria de Busan**",
+      "issue_type": "calque",
+      "severity": "minor",
+      "detail": "'firma culinaria' is a literal calque of EN 'culinary signature'. Native Spanish: 'plato emblemático', 'plato insignia', or 'la seña de identidad gastronómica'.",
+      "suggested_fix": "**El sannakji (pulpo cortado vivo) es el plato emblemático de Busan**"
+    },
+    {
+      "poi_key": "poi:jagalchi_market",
+      "field": "smartNotes.photo",
+      "snippet": "las Jagalchi Ajumma son célebres por su carácter directo ante las cámaras",
+      "issue_type": "register_OK",
+      "severity": "trivial",
+      "detail": "Native and idiomatic.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:hallim_park",
+      "field": "description",
+      "snippet": "**'Cuevas bidimensionales'** — únicas en el mundo por combinar tubo de lava + caliza (sistema de 17 km)",
+      "issue_type": "factual_check",
+      "severity": "minor",
+      "detail": "'Cuevas bidimensionales' is a literal translation of an awkward marketing term. Spanish 'bidimensional' = 2D (geometric). The Korean concept is 'two-fold/dual cave system'. Suggest 'sistema de cuevas dual' or 'cuevas mixtas'.",
+      "suggested_fix": "**'Cuevas duales'** — únicas en el mundo por combinar tubo de lava + caliza (sistema de 17 km)"
+    },
+    {
+      "poi_key": "poi:dora_observatory",
+      "field": "description",
+      "snippet": "Atención: a inicios de 2026, la fotografía desde el observatorio hacia el Norte está estrictamente restringida",
+      "issue_type": "register_OK",
+      "severity": "trivial",
+      "detail": "Formal usted; no slips. Native register.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:n_seoul_tower",
+      "field": "smartNotes.tip",
+      "snippet": "**Truco para entrar GRATIS al observatorio**: reserve N Grill o HanCook con antelación.",
+      "issue_type": "usted_compliance_OK",
+      "severity": "trivial",
+      "detail": "'reserve' is correct usted imperative. Throughout the corpus the usted form is consistent — no tú/vosotros slips detected in 12-POI sample.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "description",
+      "snippet": "el lobby",
+      "issue_type": "anglicism_unwhitelisted",
+      "severity": "minor",
+      "detail": "'el lobby' is widely accepted in Latin American Spanish but considered an anglicism in peninsular Spanish travel copy ('vestíbulo' / 'recepción'). Choose register based on target market.",
+      "suggested_fix": "Replace 'el lobby' with 'el vestíbulo del hotel'"
+    },
+    {
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "description",
+      "snippet": "minibús (8–15 pax compartido)",
+      "issue_type": "anglicism_borderline",
+      "severity": "trivial",
+      "detail": "'pax' is travel-industry shorthand widely used in Spanish trade copy. Acceptable.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:cheonjiyeon_falls",
+      "field": "highlights[8]",
+      "snippet": "pareja natural para días de crucero por la ruta sur",
+      "issue_type": "calque",
+      "severity": "minor",
+      "detail": "'pareja natural' is a literal calque of EN 'natural pairing'. Native: 'maridaje natural', 'combinación natural', 'enlace natural'.",
+      "suggested_fix": "combinación natural para los días de crucero por la ruta sur"
+    },
+    {
+      "poi_key": "poi:pocheon_art_valley",
+      "field": "smartNotes.tip",
+      "snippet": "Visite entre semana (mar–vie) — mucho menos concurrido que Nami / Morning Calm.",
+      "issue_type": "glossary_partial",
+      "severity": "minor",
+      "detail": "'Morning Calm' here is shorthand for the 'Garden of Morning Calm' (jardín de la Calma Matutina). Untranslated brand-shortening risks confusion.",
+      "suggested_fix": "Visite entre semana (mar-vie) — mucho menos concurrido que Nami o el Jardín de la Calma Matutina."
+    },
+    {
+      "poi_key": "poi:imjingak_peace_park",
+      "field": "highlights[6]",
+      "snippet": "**Campana de la Paz construida en 2000** para el nuevo milenio — **21 escalones + campana de 21 toneladas** que simbolizan el siglo XXI",
+      "issue_type": "register_OK",
+      "severity": "trivial",
+      "detail": "Numeric formatting (21 toneladas, siglo XXI) follows Spanish convention.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:hallim_park",
+      "field": "visitBasics.admission",
+      "snippet": "Adulto 15.000 KRW / Adolescente 10.000 KRW / Niño 9.000 KRW (descuento en línea: ≈13.500 / 9.000 / 8.100)",
+      "issue_type": "number_format_OK",
+      "severity": "trivial",
+      "detail": "Spanish convention: '.' as thousands separator. Correct.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:camellia_hill",
+      "field": "visitBasics.walking",
+      "snippet": "Fácil a moderada — senderos de pendiente suave; en su mayoría accesible para cochecitos",
+      "issue_type": "walking_terminology_OK",
+      "severity": "trivial",
+      "detail": "'dificultad de caminata' / 'caminata' wording is consistent with the requested glossary across most POIs ('dificultad de caminata moderada'). 'Intensidad' was NOT detected in the 15-POI sample — corpus complies with the directive.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:hallasan_eoseungsaengak",
+      "field": "highlights",
+      "snippet": "el cinturón del **abeto coreano (*Abies koreana*, Casi Amenazado UICN)**",
+      "issue_type": "register_OK",
+      "severity": "trivial",
+      "detail": "'UICN' is the correct Spanish acronym (Unión Internacional para la Conservación de la Naturaleza), better than 'IUCN'. Good localization.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:n_seoul_tower",
+      "field": "description",
+      "snippet": "Su huella en los K-drama",
+      "issue_type": "anglicism_acceptable",
+      "severity": "trivial",
+      "detail": "'K-drama' on whitelist; correct.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:dora_observatory",
+      "field": "highlights",
+      "snippet": "ruta de ida y vuelta de 0,4 millas con 18 m de desnivel",
+      "issue_type": "unit_inconsistency",
+      "severity": "minor",
+      "detail": "Mixing miles ('0,4 millas') with meters ('18 m'). Spanish-language readers expect kilometers consistently. EN source likely had '0.4 mi'; convert to '0,6 km'.",
+      "suggested_fix": "ruta de ida y vuelta de 0,6 km con 18 m de desnivel"
+    },
+    {
+      "poi_key": "poi:cheomseongdae",
+      "field": "description",
+      "snippet": "Una ventana cuadrada en los tres niveles centrales (hiladas 13–15)",
+      "issue_type": "register_OK",
+      "severity": "trivial",
+      "detail": "Native Spanish technical register. Correct.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:tongdosa_temple",
+      "field": "highlights[2]",
+      "snippet": "Fundado en **646 d. C. por el maestro Jajang** con sarira auténticas del Buda traídas de la China Tang",
+      "issue_type": "register_OK",
+      "severity": "trivial",
+      "detail": "Correct Spanish style: 'd. C.', 'la China Tang' (article + dynasty). Native register.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:gyeongju_national_museum",
+      "field": "description",
+      "snippet": "fundado en **1945** como museo filial",
+      "issue_type": "register_OK",
+      "severity": "trivial",
+      "detail": "'museo filial' is correct Spanish for 'branch museum'. Native register.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:jeju_haenyeo_museum",
+      "field": "description",
+      "snippet": "Las **Sanggun** sénior bucean a **10 m con apnea de 60 segundos**",
+      "issue_type": "register_OK",
+      "severity": "trivial",
+      "detail": "'sénior' with acute accent is correct RAE Spanish. Native.",
+      "suggested_fix": null
+    }
+  ],
+  "summary": {
+    "tier1_tp": 7,
+    "tier1_fp": 22,
+    "tier1_confirm_needs_check": 7,
+    "tier1_tp_minor_or_resolved": 4,
+    "tier2_critical": 1,
+    "tier2_major": 2,
+    "tier2_minor": 18,
+    "tier2_trivial": 22,
+    "overall_assessment": "Spanish translations are of HIGH native quality overall. Usted form is consistently and correctly applied across the 15-POI sample with no tú/vosotros/voseo slips. Number formatting follows Spanish convention (1.000 / 1,5). Walking-difficulty terminology correctly uses 'dificultad de caminata' (no 'intensidad' violations). The dominant Tier 1 noise comes from the detector mis-firing on (a) 4-digit substrings of decade idioms ('1970s' → 'años setenta'; ~9 false positives) and (b) the ambiguity between 'Camellia Hill' (proper noun, kept) vs 'camelia' (flower, lowercase, ~6 false positives). Genuine glossary issues are localized: untranslated 'drop-off(s)' (3 highlights/notes — needs fix to 'bajada'), 'guía angloparlante' vs canonical 'guía de habla inglesa' (consistency only), 'Torre N Seúl' vs the brand-as-EN form (1-2 spots). Tier 2 native-tone findings are mostly minor: overuse of 'icónico' in N Seoul Tower, ALL-CAPS shouty register in tips, two literal calques ('firma culinaria', 'pareja natural'), one pyeong unit untranslated, and one POSSIBLE FACTUAL REVERSAL in Dora Observatory ('GPS jamming tower targeting North Korean public' may invert the EN — needs editorial verification). Most-problematic POI: poi:dora_observatory (potential factual reversal + unit mixing). Cleanest POIs in sample: cheomseongdae, gyeongju_national_museum, tongdosa_temple, jagalchi_market — read as native Spanish travel copy."
+  }
+}

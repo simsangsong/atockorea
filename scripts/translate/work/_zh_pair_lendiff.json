@@ -1,0 +1,632 @@
+[
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:osulloc_tea_museum",
+    "field": "visitBasics.walking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 輕鬆——博物館地面平坦，茶園路徑適合嬰兒車通行；步道維護良好 | zh-TW: 輕鬆 — 博物館平坦、茶園適合嬰兒車；步道維護良好",
+    "detail": "length_ratio=0.26",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:hyeopjae_beach",
+    "field": "highlights[5]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: **松林 (Songlim) 林蔭帶** + 免費露營地 | zh-TW: **松林背景** + 免費露營場",
+    "detail": "length_ratio=0.36",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:OPS_return_incheon",
+    "field": "highlights[2]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 碼頭門口下車 | zh-TW: 於碼頭入口路邊放客",
+    "detail": "length_ratio=0.33",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:suwon_nammun_market",
+    "field": "highlights[4]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 龍城通雞 (1972) ——被引用最多的通雞店 | zh-TW: Yong-seong통닭（1972）— 最常被點名的통닭名店",
+    "detail": "length_ratio=0.32",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:cheomseongdae",
+    "field": "convenience.parking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 瞻星臺收費停車場 + 大陵苑正門收費停車場 (各自獨立) | zh-TW: 瞻星台與大陵苑各有付費停車場（分開）",
+    "detail": "length_ratio=0.30",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:herb_island",
+    "field": "smartNotes.facilities",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 香草烘焙坊 (香蒜麪包)、香草料理餐廳、香草咖啡廳、紀念品 / 護膚品店、療愈中心SPA、手作工坊、香草博物館。 | zh-TW: Herb Bakery（香蒜麵包）、香草料理餐廳、香草咖啡廳、紀念品／保養品店、Healing Center spa、手作工作坊、香草博物館。",
+    "detail": "length_ratio=0.25",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:herb_island",
+    "field": "convenience.restroom",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 多處洗手間，標識清晰 | zh-TW: 多處，標示清楚",
+    "detail": "length_ratio=0.30",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:haedong_yonggungsa",
+    "field": "highlights[5]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: **海水觀音大佛** (海上慈悲菩薩) ——拍攝率最高的崖上景觀 | zh-TW: **海水觀音大佛** — 最熱門的崖頂取景",
+    "detail": "length_ratio=0.31",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "name:lunch (jeju local restaurant)",
+    "field": "highlights[2]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: **黑豬 (Heuk-doeji)** 全年皆宜——文化遺產資料第5號 (2015年) | zh-TW: **黑豬肉**全年 — 2015年文化遺產資料第5號",
+    "detail": "length_ratio=0.30",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "name:drop-off (5 points across jeju city)",
+    "field": "highlights[4]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 大巴全程 Wi-Fi | zh-TW: 遊覽車全程提供 Wi-Fi",
+    "detail": "length_ratio=0.27",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:hallim_park",
+    "field": "convenience.restroom",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 園區內分佈多間洗手間 | zh-TW: 公園內多處設有",
+    "detail": "length_ratio=0.30",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:hueree_natural_park",
+    "field": "convenience.restroom",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 園區內分佈多間洗手間 | zh-TW: 公園內多處設有",
+    "detail": "length_ratio=0.30",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:hallasan_eorimok_trail",
+    "field": "convenience.restroom",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 遊客中心設有洗手間 | zh-TW: 遊客中心設有",
+    "detail": "length_ratio=0.33",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:jeju_stone_park",
+    "field": "visitBasics.closed",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 週一 | zh-TW: 週一公休",
+    "detail": "length_ratio=0.50",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:jeju_stone_park",
+    "field": "convenience.restroom",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 入口與園內設施處均設洗手間 | zh-TW: 入口與設施內均有",
+    "detail": "length_ratio=0.38",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:jeju_stone_park",
+    "field": "convenience.parking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 園區設有停車場 | zh-TW: 提供停車",
+    "detail": "length_ratio=0.43",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:ilchulland_themed_gardens",
+    "field": "highlights[1]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: **'응태석'(Eung Tae-seok)** = 傳說中的'下蛋之石'——求子求女民俗 | zh-TW: **「應太石(응태석)」**=傳說中「會生蛋的石頭」——求子民俗",
+    "detail": "length_ratio=0.27",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:ilchulland_themed_gardens",
+    "field": "convenience.parking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 園區設有停車場 | zh-TW: 提供停車",
+    "detail": "length_ratio=0.43",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:OPS_lunch_customizable",
+    "field": "visitBasics.walking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 輕鬆——視餐廳而定 | zh-TW: 輕鬆——依場地",
+    "detail": "length_ratio=0.29",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:OPS_lunch_customizable",
+    "field": "convenience.parking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 停車由司機兼嚮導單獨安排 | zh-TW: 司機導遊另行處理",
+    "detail": "length_ratio=0.33",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "name:lunch — seogwipo / jungmun",
+    "field": "convenience.parking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 餐廳設有停車場 | zh-TW: 提供停車",
+    "detail": "length_ratio=0.43",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:OPS_pickup",
+    "field": "highlights[1]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 西向東順序最大限度縮短上午大巴里程 | zh-TW: 西至東順序縮短早晨車程",
+    "detail": "length_ratio=0.35",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:hamdeok_seoubong_beach",
+    "field": "visitBasics.walking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 輕鬆——沙灘平整;犀牛峯徒步爲中等(有臺階) | zh-TW: 難度輕鬆——海灘為平坦沙地；犀牛峰登山難度中等（含階梯）",
+    "detail": "length_ratio=0.26",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:OPS_lunch",
+    "field": "highlights[2]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 招牌選項:**galchi-jorim、heuk-dwaeji bulgogi、Mom-guk(地方菜)、拌飯** | zh-TW: 招牌選項：**白帶魚燉煮、黑豬肉烤肉、海藻湯（地方特色）、石鍋拌飯**",
+    "detail": "length_ratio=0.38",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:OPS_lunch",
+    "field": "convenience.parking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 可用 | zh-TW: 可停車",
+    "detail": "length_ratio=0.33",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:sokcho_tourist_fishery_market",
+    "field": "highlights[3]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: Abai sundae——朝鮮咸鏡道血腸,源自朝鮮戰爭難民傳承 | zh-TW: 阿爸血腸——北韓咸鏡道血腸，韓戰難民飲食遺產",
+    "detail": "length_ratio=0.26",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gamaksan_red_bridge",
+    "field": "visitBasics.admission",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 橋免費 | zh-TW: 橋面通行免費",
+    "detail": "length_ratio=0.50",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:sokcho_beach",
+    "field": "highlights[2]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 海路沿線松林背景(涼蔭步道) | zh-TW: Haeoreum 路沿線韓國松林背景（清涼遮蔭步道）",
+    "detail": "length_ratio=0.48",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gwangjang_market",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 石磨與豬油鍋上煎制的 bindaetteok——經典畫面。Mayak gimbap 現卷櫃檯。Cham Sundae 18 號 yukhoe 拼盤。懸掛的乾魚  | zh-TW: 綠豆煎餅在石磨上現煎（豬油鍋）——經典畫面。藥膏紫菜飯捲的捲製檯。18 號參血腸的生牛肉膾盤。懸掛魚乾／海帶展示。覆蓋式巷弄的俯瞰視角。",
+    "detail": "length_ratio=0.27",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gwangjang_market",
+    "field": "highlights[2]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: Bindaetteok(綠豆煎餅——市場標誌菜,豬油鍋煎制) | zh-TW: 綠豆煎餅（市場代表料理，以豬油煎成）",
+    "detail": "length_ratio=0.36",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gwangjang_market",
+    "field": "convenience.restroom",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 市場內(有指示) | zh-TW: 市場建築內（標示清楚）",
+    "detail": "length_ratio=0.33",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gwangjang_market",
+    "field": "highlights[3]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: Mayak gimbap('毒品紫菜卷'——令人上癮的迷你紫菜卷) | zh-TW: 藥膏紫菜飯捲（一口大小、令人上癮的紫菜飯捲）",
+    "detail": "length_ratio=0.27",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gwangjang_market",
+    "field": "highlights[4]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: Yukhoe(韓式生牛肉韃靼)——18 號 Cham Sundae 攤位 | zh-TW: 18 號參血腸的生牛肉膾（韓式生牛肉拌）",
+    "detail": "length_ratio=0.39",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:noksan_ro_gasiri_blossom_road",
+    "field": "visitBasics.walking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 輕鬆至中等 | zh-TW: 難度輕鬆至中等",
+    "detail": "length_ratio=0.29",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:noksan_ro_gasiri_blossom_road",
+    "field": "visitBasics.hours",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 開放(白晝) | zh-TW: 全天開放（白天）",
+    "detail": "length_ratio=0.33",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:route_variant_gapyeong_loop",
+    "field": "convenience.restroom",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 各站點均有 | zh-TW: 所有景點皆設有",
+    "detail": "length_ratio=0.29",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:route_variant_gapyeong_loop",
+    "field": "convenience.parking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 司機兼導遊統籌處理 | zh-TW: 由司機導遊處理所有停車事宜",
+    "detail": "length_ratio=0.31",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:jeongbang_falls",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 下方礁岩區適合氛圍感畫面,但腳下與水霧會讓現場體驗更具挑戰。 | zh-TW: 瀑布下方岩石區可拍出氛圍感的畫面，但腳下踩點與海水飛沫可能讓體驗比想像中更費力。",
+    "detail": "length_ratio=0.28",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:jeongbang_falls",
+    "field": "visitBasics.walking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 中等,含階梯 | zh-TW: 難度中等，含階梯",
+    "detail": "length_ratio=0.38",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:jeongbang_falls",
+    "field": "convenience.parking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 可用 | zh-TW: 可停車",
+    "detail": "length_ratio=0.33",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "name:lunch — east coast local",
+    "field": "smartNotes.facilities",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 餐廳設施一般夠用。 | zh-TW: 餐廳設施一般而言已足夠。",
+    "detail": "length_ratio=0.27",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "name:lunch — east coast local",
+    "field": "highlights[1]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 夏季(6–9 月)**Mulhoe (물회)**,冬季 **galchi-jorim** 輪換 | zh-TW: 夏季（6–9 月）**物膾（물회）**、冬季 **白帶魚燉煮** 輪替",
+    "detail": "length_ratio=0.27",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "name:lunch — east coast local",
+    "field": "convenience.parking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 可用 | zh-TW: 可停車",
+    "detail": "length_ratio=0.33",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "name:lunch — east coast local",
+    "field": "visitBasics.closed",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 依 venue 而異 | zh-TW: 依餐廳而定",
+    "detail": "length_ratio=0.38",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "name:lunch — daejeong / andeok local",
+    "field": "highlights[3]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: **Heuk-doeji** 全年皆宜——文化遺產資料第 5 號(2015) | zh-TW: 全年 **黑豬**——文化遺產資料 5 號（2015 年）",
+    "detail": "length_ratio=0.30",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:OPS_east_jeju_lunch",
+    "field": "convenience.parking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 可用 | zh-TW: 可停車",
+    "detail": "length_ratio=0.33",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gangjeong_cruise_port",
+    "field": "highlights[6]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 從此港出發南線行程爲必選 —— 至城山日出峯單程70分鐘以上 | zh-TW: 由此港出發必走南線——城山單程 70 分鐘以上",
+    "detail": "length_ratio=0.27",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:camellia_hill",
+    "field": "convenience.parking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 免費停車 | zh-TW: 提供免費停車",
+    "detail": "length_ratio=0.33",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gyeongbokgung_palace",
+    "field": "visitBasics.walking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 中等 —— 平地寬闊;主要建築羣約需步行1.5–2 km | zh-TW: 中等難度——園區地勢平坦但廣闊；主要建築群步行距離約 1.5–2 公里",
+    "detail": "length_ratio=0.28",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gyeongbokgung_palace",
+    "field": "convenience.parking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 有限;光化門設有旅遊大巴下客區 | zh-TW: 車位有限；旅遊巴士可於光化門附近下客區停靠",
+    "detail": "length_ratio=0.30",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:woljeonggyo_bridge",
+    "field": "convenience.parking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 北岸有大巴停車;南岸禁停 | zh-TW: 北岸設有大型車停車場；南岸禁止停車",
+    "detail": "length_ratio=0.31",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:olle_maeil_market",
+    "field": "highlights[6]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: **Omegisul米黍酒**品鑑(城邑釀造) | zh-TW: **五穀米酒** 試飲（城邑釀製）",
+    "detail": "length_ratio=0.33",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:garden_of_morning_calm",
+    "field": "convenience.restroom",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 多處,有指示牌 | zh-TW: 多處設有，皆有指標",
+    "detail": "length_ratio=0.33",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:dora_observatory",
+    "field": "visitBasics.walking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 易 —— 大巴抵達入口;新建築樓層平整 | zh-TW: 輕鬆——巴士抵達展望台入口；新建築內樓層平坦",
+    "detail": "length_ratio=0.26",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:sanjeong_lake",
+    "field": "highlights[4]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 湖區步行免費;水上活動單獨計費 | zh-TW: 湖區免費；活動另計",
+    "detail": "length_ratio=0.43",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:insadong",
+    "field": "highlights[2]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 傳統茶館(전통찻집):沐淵、秀然山房感受古典茶禮 | zh-TW: 傳統茶屋（전통찻집）：木蓮（Mokyeon）、秀演山房（Suyeonsanbang）享受古典茶禮體驗",
+    "detail": "length_ratio=0.52",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:insadong",
+    "field": "highlights[0]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 首爾的傳統工藝與文化主街 | zh-TW: 首爾首屈一指的傳統工藝與文化購物街",
+    "detail": "length_ratio=0.29",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:songaksan",
+    "field": "visitBasics.walking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 中等 —— 往返1.5小時,木階+土路 | zh-TW: 中等難度——往返健行約 1.5 小時；木棧階梯與土路",
+    "detail": "length_ratio=0.35",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:songaksan",
+    "field": "convenience.parking",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 免費停車 | zh-TW: 提供免費停車",
+    "detail": "length_ratio=0.33",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:route_variant_dmz_paju",
+    "field": "highlights[3]",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 坡州高級奧特萊斯:230餘國際品牌,25–50%折扣;樂天高級奧特萊斯鄰近,另有約150個品牌 | zh-TW: 坡州 Premium Outlets：230 餘國際品牌 25–50% 折扣；鄰接樂天 Premium Outlets 另約 150 個品牌",
+    "detail": "length_ratio=0.26",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:route_variant_dmz_paju",
+    "field": "visitBasics.closed",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: DMZ週一閉園,軍事行動期間關閉;奧特萊斯全年開放 | zh-TW: DMZ 觀光區週一公休＋軍事任務需要時關閉；坡州 Outlets 全年開放",
+    "detail": "length_ratio=0.30",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "name:lunch — seogwipo local",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 由於當日多以風景爲主,美食照可豐富視覺節奏。 | zh-TW: 由於當日多以山水風景為主，美食照能為路線的視覺節奏帶來變化。",
+    "detail": "length_ratio=0.31",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "name:lunch — seogwipo local",
+    "field": "convenience.restroom",
+    "issue_type": "zh_zhtw_length_diff",
+    "severity": "minor",
+    "snippet": "zh: 餐廳內 | zh-TW: 餐廳內設有",
+    "detail": "length_ratio=0.40",
+    "suggested_fix": null
+  }
+]

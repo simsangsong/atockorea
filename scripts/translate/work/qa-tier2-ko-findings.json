@@ -1,0 +1,865 @@
+{
+  "tier1_validation": [
+    {
+      "poi_key": "poi:osulloc_tea_museum",
+      "field": "smartNotes.facilities",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "EN 'observatory deck' rendered as '전망 데크' (loanword 데크) instead of glossary '전망대'. Mixing native and loanword reads non-native here.",
+      "suggested_fix": "카페(녹차 아이스크림 추천), 기념품숍, 바로 옆 이니스프리 제주하우스, 차밭이 내려다보이는 옥상 전망대"
+    },
+    {
+      "poi_key": "poi:jagalchi_market",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'day tour' rendered as '하루 코스' which is a more natural Korean idiom and conveys the same meaning. Glossary preference '당일 투어' would also work but the chosen phrasing is acceptable native usage.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:yongdusan_park",
+      "field": "highlights[8]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "EN says 'Declaration of Independence read at Tapgol Park in Seoul'. KO drops the city qualifier '서울', leaving '탑골공원에서' alone — readers unfamiliar with Tapgol Park lose the geographic anchor.",
+      "suggested_fix": "**시민의 종 33회 타종 의식** — 매년 12월 31일 제야와 3월 1일 독립운동기념일에 **33회 타종**되며, **1919년 서울 탑골공원에서 낭독된 독립선언서의 민족대표 33인을 기립니다.** 부산의 시민 정체성을 국가 독립 서사와 연결하는 상징적 의례입니다"
+    },
+    {
+      "poi_key": "poi:cheonjiyeon_falls",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "Glossary specifies '올레시장' but KO consistently uses '올레매일시장' (literal transliteration of Olle + Maeil). This is a recurring glossary violation across multiple POIs.",
+      "suggested_fix": "Replace '올레매일시장에서 도보 5분 거리' with '서귀포 올레시장에서 도보 5분 거리'."
+    },
+    {
+      "poi_key": "poi:cheonjiyeon_falls",
+      "field": "highlights[8]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "Same '올레매일시장' issue — should be '올레시장' per glossary.",
+      "suggested_fix": "**올레시장에서 도보 5분** — 남부 루트 크루즈 데이의 자연스러운 페어링"
+    },
+    {
+      "poi_key": "poi:OPS_return_incheon",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "EN 'curbside drop-off' rendered as '커브사이드 드롭' — both '커브사이드' and '드롭' are raw loanwords. Glossary requires '하차'. Reads jarringly non-native.",
+      "suggested_fix": "...터미널 정문 앞에서 하차한 뒤, 출입국 재입국과 선박 재승선이 이어집니다."
+    },
+    {
+      "poi_key": "poi:OPS_return_incheon",
+      "field": "highlights[2]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "Same loanword '드롭' issue — needs '하차'.",
+      "suggested_fix": "터미널 정문 앞 하차"
+    },
+    {
+      "poi_key": "poi:suwon_nammun_market",
+      "field": "smartNotes.facilities",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "KO uses '화성 성곽' which in this immediate context (talking about Paldalmun gate access) is unambiguous and natural. Adding '수원' here would feel redundant since the surrounding text already establishes Suwon location.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:suwon_nammun_market",
+      "field": "highlights[0]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "'정조의 화성 신도시' is ambiguous — Korean readers can confuse 화성 (Hwaseong fortress) with 화성시 (Hwaseong city in Gyeonggi). Glossary explicitly resolves this with '수원 화성'.",
+      "suggested_fix": "**약 230년 역사의 전통시장** — 정조의 수원 화성 신도시(1796년)에서 기원"
+    },
+    {
+      "poi_key": "poi:cheomseongdae",
+      "field": "smartNotes.photo",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "KO uses '유채' (the plant) in compound '벚꽃·유채' which is the natural list-form Korean usage. '유채꽃' (with 꽃 suffix) would be redundant when paired with '벚꽃'.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:haedong_yonggungsa",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "Glossary specifies '유엔기념공원' but KO writes 'UN기념공원' (Latin-script UN). For a Korean reader this mixed-script form looks like an internal inconsistency since the surrounding text is fully Korean.",
+      "suggested_fix": "...유엔기념공원·감천·자갈치로 이어지는 도심 횡단 이전의 동해안 클러스터를 형성합니다."
+    },
+    {
+      "poi_key": "poi:jeju_haenyeo_museum",
+      "field": "highlights[6]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "CONFIRM",
+      "detail": "Tier 1 flagged '해녀' as missing but the entire museum POI is about 해녀 — the specific highlights[6] line ('현재 활동 인구 4,000명 미만…') drops the subject because preceding bullets establish it. Native Korean style permits subject ellipsis here. Tier 1 logic was wrong.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:route_variant_south",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "Same '올레매일시장' vs glossary '올레시장' inconsistency. Should be '올레시장'.",
+      "suggested_fix": "Replace '서귀포 올레매일시장' with '서귀포 올레시장'."
+    },
+    {
+      "poi_key": "poi:route_variant_south",
+      "field": "highlights[3]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "Same as above.",
+      "suggested_fix": "올레시장: 620m 아케이드, 약 200개 점포 + 약 140개 매대 + 야시장 20개 매대, 시그니처는 한라봉, 흑돼지, 문어빵"
+    },
+    {
+      "poi_key": "poi:route_variant_custom_seoul",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "KO uses '별마당도서관 수원' which is the actual Korean brand name for Starfield Library (별마당 도서관 = brand). Glossary's '스타필드 도서관' is a transliteration; the more locally recognized native form is '별마당 도서관'. The KO is more native than the glossary form.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:route_variant_custom_seoul",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "EN 'Incheon Airport drop-off' rendered as '인천공항 드롭'. Loanword '드롭' instead of glossary '하차'.",
+      "suggested_fix": "...호텔 체크아웃, 관광, 인천공항 하차까지 10시간 한 예약 안에서 연속 처리됩니다."
+    },
+    {
+      "poi_key": "poi:OPS_lunch_winter_south",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'Camellia Hill' is a proper noun (the venue name 카멜리아힐) — the glossary 'Camellia' → '동백꽃' applies to the flower term, not the place name. Tier 1 false-matched the substring.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:OPS_lunch_winter_south",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "Same — 'Camellia Hill' (카멜리아힐) is a proper noun, not the flower term.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "Same — 카멜리아힐 is the venue's proper name.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'Jeju' appears in 'Jeju's two main accommodation clusters'. KO drops the qualifier ('도심 + 중문 + 미팅 포인트 3곳') because both Jeju City and Jungmun are explicitly named in the description, making '제주' redundant. Native Korean would not repeat it.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "EN 'Layered hotel pickup' is condensed in KO to '도심 + 중문 + 미팅 포인트 3곳을 단일 동선으로'. The phrase '호텔 픽업' is missing entirely; the layered-pickup nuance is lost. Should add explicit '호텔 픽업' for consistency with the description field which already uses '호텔 픽업 시간 08:30–09:00'.",
+      "suggested_fix": "...09:00에는 출발해야 합니다. 도심 + 중문 호텔 픽업 + 미팅 포인트 3곳을 단일 동선으로 묶어, 미니코치를 별도 차량 없이 8–15인 정원에 맞춰 운영합니다."
+    },
+    {
+      "poi_key": "name:lunch (jeju local restaurant)",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'Jeju' appears in 'Jeju black pig BBQ' rendered as '흑돼지' alone — the surrounding context (성산읍, 제주 흑돼지 references later in the same paragraph) makes the regional qualifier redundant. KO is natural.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:OPS_busan_port_return",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "EN 'drop-off' rendered as '드롭' twice ('드롭은 터미널 도착홀에서…', '개별 호텔 드롭'). Loanword instead of glossary '하차'.",
+      "suggested_fix": "Replace '드롭은 터미널 도착홀…' → '하차는 터미널 도착홀…' and '개별 호텔 드롭' → '개별 호텔 하차'."
+    },
+    {
+      "poi_key": "poi:OPS_busan_port_return",
+      "field": "highlights[2]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "Same '드롭' loanword issue.",
+      "suggested_fix": "**개별 호텔 하차 없음**(소그룹 고정 일정)"
+    },
+    {
+      "poi_key": "poi:starfield_library_suwon",
+      "field": "highlights[1]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "KO renders 'COEX Starfield Library' as '코엑스 별마당 도서관' which is the actual Korean brand name (별마당 도서관 is what the venue is officially called in Korea). Glossary's '스타필드 도서관' is transliteration; the venue brand is '별마당'.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:gyochon_hanok_village",
+      "field": "description",
+      "issue_type": "number_missing",
+      "verdict": "FP",
+      "detail": "EN 'don't take more than 100 sok of harvest' rendered as '한 해 만 석 이상 거두지 말 것'. The Korean idiomatic 만 석 (10,000 sok) preserves the actual gahun (gentry pledge) wording — historically the Choi clan rule was '만석꾼 이상 재산을 모으지 말라' (≈ don't exceed 10,000 sok). The EN '100' is a translator's approximation; the KO has the historically correct figure. Tier 1 number-detection is wrong here.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:incheon_cruise_terminal",
+      "field": "highlights[4]",
+      "issue_type": "number_missing",
+      "verdict": "FP",
+      "detail": "EN 'USD 580M' rendered as '5억 8천만 달러' — Korean uses the native 억/만 numbering system, not Western 'M'. The figure 580,000,000 is correctly preserved as 5억 8천만. Tier 1 looks for raw '580' substring which Korean simply doesn't write.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:hallim_park",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'camellia' appears in '12월 동백' (December Camellia month). Korean uses '동백' alone for the seasonal/list label — '동백꽃' would be wrong here as the festival name is officially '동백 축제'. Glossary mismatch on context.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:hallim_park",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'Camellia Hill' is the proper-noun venue name 카멜리아힐. Tier 1 substring match.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:hueree_natural_park",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'Camellia Festival' rendered as '동백 축제' — this is the venue's actual festival name. '동백꽃 축제' would be wrong/non-standard.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:hueree_natural_park",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'thatched stone-walled hanok' rendered as '돌담 두른 초가' — 초가 (thatched-roof house) is more semantically precise than 한옥 (any traditional house) for the type EN describes. KO chose the better term.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:hueree_natural_park",
+      "field": "highlights[6]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'thatched hanok' → '초가'. Same as above; 초가 is more accurate than 한옥 for thatched cottages.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:jeju_stone_park",
+      "field": "highlights[4]",
+      "issue_type": "number_missing",
+      "verdict": "FP",
+      "detail": "EN 'Obaek Janggun (500 Generals)' rendered as '오백장군' — 오백 IS 500 in Sino-Korean. The proper-noun form preserves the number; literal '500장군' would be unnatural.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:ilchulland_themed_gardens",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'camellia flowers' in spring-bloom list rendered as '동백' alongside '진달래·벚꽃' — list parallelism in Korean requires the bare plant name, not '동백꽃'.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:ilchulland_themed_gardens",
+      "field": "highlights[7]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "Same — '동백 + 진달래 + 벚꽃' parallel list. '동백꽃' would break parallelism.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "name:lunch — seogwipo / jungmun",
+      "field": "highlights[2]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'Jeju black pig' shortened to '흑돼지' — within a Jeju-restaurant POI the regional qualifier is implicit. Native Korean menu language.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:un_memorial_cemetery",
+      "field": "convenience.parking",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "EN 'tour-coach drop-off zone' rendered as '단체 버스 정차 구역' — '정차' means 'stopping/parking briefly', not 'drop-off'. Glossary requires '하차' for the disembark action; '정차 구역' is only partly right.",
+      "suggested_fix": "공원 내 무료 주차장 + 단체 버스 하차 구역"
+    },
+    {
+      "poi_key": "poi:un_memorial_cemetery",
+      "field": "highlights[0]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "Glossary specifies '유엔기념공원' but KO uses '유엔 기념 묘지' (literal 'memorial cemetery'). Inconsistent with the official Korean name of the site (which is officially 재한유엔기념공원 / 유엔기념공원).",
+      "suggested_fix": "**세계 유일의 유엔기념공원** — 1951년 1월 18일 조성, 1959년 대한민국이 유엔에 기증"
+    },
+    {
+      "poi_key": "poi:hwaseong_haenggung",
+      "field": "highlights[1]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "'화성과 함께 축조' is ambiguous (could be misread as 화성시). Glossary '수원 화성' clarifies.",
+      "suggested_fix": "정조 재위기 1789~1796년 수원 화성과 함께 축조"
+    },
+    {
+      "poi_key": "poi:ahopsan_bamboo_forest",
+      "field": "description",
+      "issue_type": "number_missing",
+      "verdict": "FP",
+      "detail": "EN '100 Days My Prince' is a K-drama whose Korean title is '백일의 낭군님' — 백일 = 100 days in Sino-Korean. KO preserves the canonical Korean title. Tier 1 substring matched the digits.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:ahopsan_bamboo_forest",
+      "field": "highlights[4]",
+      "issue_type": "number_missing",
+      "verdict": "FP",
+      "detail": "Same — '백일의 낭군님' is the official Korean drama title.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:ahopsan_bamboo_forest",
+      "field": "highlights[7]",
+      "issue_type": "number_missing",
+      "verdict": "FP",
+      "detail": "Same — '백일의 낭군님' canonical Korean title.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:OPS_lunch",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'Camellia Hill' is the venue proper name (카멜리아힐). Substring false-positive.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:korean_folk_village_yongin",
+      "field": "smartNotes.tip",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "'화성과 짝지어' is ambiguous (Hwaseong fortress vs Hwaseong city). Glossary clarifies.",
+      "suggested_fix": "...**단풍 절정인 10월 20일~11월 5일이 최적기.** 수원 화성과 짝지어 일관된 조선 테마 일정을 구성하세요..."
+    },
+    {
+      "poi_key": "poi:sokcho_tourist_fishery_market",
+      "field": "smartNotes.photo",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'SOKCHO staircase' refers to actual public-art signage that is in Latin script on-site (rainbow staircase letters). KO correctly preserves it as 'SOKCHO' to point at the photo subject. '속초 계단' would mislead about what the photo is.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:sokcho_tourist_fishery_market",
+      "field": "highlights[2]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'Sokcho squid sundae' rendered as '오징어순대' — within a 속초-themed POI, the regional qualifier is implicit and Korean menu naming convention drops it.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:sokcho_beach",
+      "field": "highlights[3]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "Latin-script 'SOKCHO' refers to the actual on-site staircase artwork. Translating to '속초' would lose the visual reference.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:camellia_hill",
+      "field": "description",
+      "issue_type": "number_missing",
+      "verdict": "FP",
+      "detail": "EN 'Open 365 days a year' rendered as '연중무휴' — the standard, idiomatic Korean way to say this. Native readers expect '연중무휴', not '365일 영업'. Tier 1 number-substring rule is too literal.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:camellia_hill",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'Camellia Hill' venue proper name. Substring false-positive across multiple Camellia Hill fields.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:camellia_hill",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "Same — venue proper name.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:camellia_hill",
+      "field": "smartNotes.photo",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'camellia varieties' rendered as '동백 품종' — in a horticultural list ('수국 터널, 핑크뮬리, 동백 품종'), bare 동백 is the natural Korean form.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:camellia_hill",
+      "field": "highlights[0]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "'동양 최대 동백 수목원' — 동백 수목원 is the venue category name; '동백꽃 수목원' would be wrong/unnatural.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:camellia_hill",
+      "field": "highlights[2]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "List-form '11–3월 동백, 3–5월 벚꽃·튤립…' — bare 동백 maintains parallelism with other plant names.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:camellia_hill",
+      "field": "highlights[6]",
+      "issue_type": "number_missing",
+      "verdict": "FP",
+      "detail": "EN 'Open 365 days' → '연중무휴' is the correct Korean idiom.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:OPS_seoul_pickup_default",
+      "field": "highlights[3]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "'화성 도착에 최적화된' is ambiguous (Hwaseong fortress vs city). Add '수원' to disambiguate.",
+      "suggested_fix": "단체 관광객 인파 이전 수원 화성 도착에 최적화된 일정"
+    },
+    {
+      "poi_key": "poi:gyeongbokgung_palace",
+      "field": "highlights[0]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'new Seoul' (referring to the 1395 founding) rendered as '새 한양' — 한양 is the historically correct period name for Seoul during the Joseon founding era. Using '서울' here would be anachronistic. Translator made the right call.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:woljeonggyo_bridge",
+      "field": "whyOnRoute",
+      "issue_type": "number_missing",
+      "verdict": "TP",
+      "detail": "EN whyOnRoute mentions '2008–2018 rebuild' (the years 200/201 came from Tier 1 detecting partial year strings). The KO whyOnRoute drops the rebuild-period reference entirely. While the description field contains the years, the whyOnRoute parallel sentence has been simplified — minor information loss but still TP.",
+      "suggested_fix": "Add reconstruction-period context: '...누각에는 **2008–2018년 복원 고고학과 전통 짜맞춤 기법을 설명하는 작은 해설 전시**도 마련되어 있습니다.'"
+    },
+    {
+      "poi_key": "poi:olle_maeil_market",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "Glossary requires '올레시장' but field uses '올레 매일시장' (with space). Even within the POI named after this market, the rendering should match glossary.",
+      "suggested_fix": "Replace '올레 매일시장' (and any other '올레매일시장' occurrences) with '올레시장' throughout."
+    },
+    {
+      "poi_key": "poi:OPS_busan_cruise_pickup",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'day tour' appears inside the literal English brand placard 'AtoC Korea — Busan Day Tour' which is preserved in Latin script (it's a placard, not free text). Tier 1 false-matched the substring inside a quoted English string.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:OPS_busan_cruise_pickup",
+      "field": "highlights[2]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "Same — Busan Day Tour is part of the literal placard text in English.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:OPS_busan_cruise_pickup",
+      "field": "highlights[2]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "Same placard reasoning.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:jeju_tangerine_picking_experience",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "EN 'Olle Maeil Market' rendered as '올레 매일시장' — should be '올레시장' per glossary.",
+      "suggested_fix": "Replace '올레 매일시장 박스 가격' with '올레시장 박스 가격'."
+    },
+    {
+      "poi_key": "poi:jeju_tangerine_picking_experience",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN 'Camellia Hill' venue proper name (카멜리아힐). Substring false-positive.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:route_variant_dmz_paju",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "verdict": "TP",
+      "detail": "EN 'Paju Outlets afternoon also balances...' — KO whyOnRoute completely omits the Paju reference, generalizing to '오후는 일행 선호에 따라 쇼핑이나 예술로 전환됩니다'. Real omission, not just glossary.",
+      "suggested_fix": "...야외 도보 시간이 제한되는 겨울 일정에는 특히 강력한 조합입니다. 무거운 역사 오전과 파주 아울렛 쇼핑 오후의 균형도 좋습니다."
+    },
+    {
+      "poi_key": "poi:route_variant_west",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "'동백(겨울)' in seasonal-festival list — bare 동백 is the natural Korean list form.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:route_variant_west",
+      "field": "highlights[1]",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "Same — list parallelism '동백·튤립·연꽃 시즌 축제'.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:route_variant_custom",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "'카멜리아힐(11–3월 동백 만개)' — 카멜리아힐 is venue name; '동백 만개' is the correct horticultural phrasing for 'camellia in full bloom'.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "name:lunch — south jeju local",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "verdict": "FP",
+      "detail": "EN '카멜리아힐과 천제연 폭포 사이' — 카멜리아힐 venue proper name.",
+      "suggested_fix": null
+    }
+  ],
+  "tier2_native_tone": [
+    {
+      "poi_key": "poi:OPS_return_incheon",
+      "field": "description",
+      "snippet": "터미널 정문 커브사이드 드롭 후, 출입국 재입국과 선박 재승선이 이어집니다.",
+      "issue_type": "raw_loanword_clutter",
+      "severity": "major",
+      "detail": "'커브사이드 드롭' stacks two unmotivated English loanwords in a single Korean phrase. Native cruise/airport language is '터미널 정문 앞 하차'. Loanword '드롭' also recurs in OPS_busan_port_return and route_variant_custom_seoul — pattern across the corpus.",
+      "suggested_fix": "터미널 정문 앞에서 하차한 뒤"
+    },
+    {
+      "poi_key": "poi:incheon_cruise_terminal",
+      "field": "description",
+      "snippet": "영어 가능한 드라이빙 가이드가 이름표를 들고 터미널 입구에서 영접하며",
+      "issue_type": "calque_compound",
+      "severity": "major",
+      "detail": "'드라이빙 가이드' is a literal compound borrowing of EN 'driver-guide'. Korean tour-industry standard is '운전 가이드' or '가이드 드라이버'. The chosen form recurs ~6 times in this POI alone — sounds like a translation, not native copy.",
+      "suggested_fix": "영어 가능한 운전 가이드가 이름표를 들고 터미널 입구에서 영접하며"
+    },
+    {
+      "poi_key": "poi:incheon_cruise_terminal",
+      "field": "description",
+      "snippet": "갱웨이 픽업, 갱웨이 도착 시각",
+      "issue_type": "raw_loanword_overuse",
+      "severity": "major",
+      "detail": "'갱웨이' (gangway) is used 4 times without any Korean gloss. Most Korean cruise readers will not recognize this term unaided. First use should be paired: '선박 통로(갱웨이)' or simply replaced with '하선 통로'.",
+      "suggested_fix": "First occurrence: '하선 통로(갱웨이)'; subsequent: '하선 통로'."
+    },
+    {
+      "poi_key": "poi:starfield_library_suwon",
+      "field": "description",
+      "snippet": "**바이닐 레코드 라운지**, 한국 동시대 미술가들과 협업하는 **월간 교체 전시**",
+      "issue_type": "loanword_density",
+      "severity": "minor",
+      "detail": "'바이닐 레코드 라운지' is three loanwords in a row. Acceptable for the venue brand but '바이닐 LP 라운지' or 'LP 라운지' is the more common Korean shorthand.",
+      "suggested_fix": "**바이닐 LP 라운지**, 한국 동시대 미술가들과 협업하는 **월간 교체 전시**"
+    },
+    {
+      "poi_key": "poi:starfield_library_suwon",
+      "field": "description",
+      "snippet": "수원의 봄 인증샷 명소로 손꼽힙니다",
+      "issue_type": "good_native_phrase",
+      "severity": "minor",
+      "detail": "Note: '인증샷 명소' is excellent native marketing copy here — flagging as a positive example, not an issue. No fix needed.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:bulguksa_temple",
+      "field": "description",
+      "snippet": "**금동 비로자나불 좌상(국보 제26호)**, 비로전 봉안. (6) **금동 아미타여래 좌상(국보 제27호)**, 극락전 봉안.",
+      "issue_type": "broken_grammar",
+      "severity": "minor",
+      "detail": "Sentence fragments ending with '봉안.' read like museum catalog stubs rather than full prose. Native Korean would close the sentence: '...비로전에 봉안되어 있습니다'.",
+      "suggested_fix": "**금동 비로자나불 좌상(국보 제26호)**은 비로전에, **금동 아미타여래 좌상(국보 제27호)**은 극락전에 봉안되어 있습니다."
+    },
+    {
+      "poi_key": "poi:gyeongbokgung_palace",
+      "field": "whyOnRoute",
+      "issue_type": "tone_inconsistency",
+      "severity": "major",
+      "snippet": "한국 체류 일정이 짧은 크루즈 게스트에게 특히 효과적입니다. 크루즈 게스트에게는 90분의 경복궁 체류가 하루의 핵심 역사 거점이기도 합니다.",
+      "detail": "Two consecutive sentences both end '효과적입니다 / 거점이기도 합니다' AND start with '크루즈 게스트' — duplicated subject + sentence-end pattern reads like the AI looped. The second sentence should be merged or rephrased.",
+      "suggested_fix": "한국 체류 일정이 짧은 크루즈 게스트에게는 90분의 경복궁 체류 자체가 하루의 핵심 역사 거점이 됩니다."
+    },
+    {
+      "poi_key": "poi:gyeongbokgung_palace",
+      "field": "whyOnRoute",
+      "snippet": "처음 한국을 찾는 분들이 궁궐 규모, 의식의 격식, 사진 친화적 정자라는 시각 체계를 머리에 담고 떠나면",
+      "issue_type": "calque_phrase",
+      "severity": "minor",
+      "detail": "'시각 체계를 머리에 담고 떠나면' is a literal calque of 'leave with these visual frames in mind' — not idiomatic Korean. Native: '...풍경을 눈에 익혀 두면' or '...인상을 갖고 가시면'.",
+      "suggested_fix": "처음 한국을 찾는 분들이 궁궐의 규모, 의식의 격식, 정자의 풍경을 눈에 익혀 두면"
+    },
+    {
+      "poi_key": "poi:cheonjiyeon_falls",
+      "field": "whyOnRoute",
+      "snippet": "단편적인 안내방송이 아니라 **고유 동식물 앙상블 이야기**로 풀어낼 수 있습니다",
+      "issue_type": "calque_phrase",
+      "severity": "minor",
+      "detail": "'고유 동식물 앙상블 이야기' is a literal calque of EN 'endemic flora-fauna ensemble story' — '앙상블' as biology metaphor doesn't read in Korean. Native: '고유 동식물 군집을 함께 묶어 풀어낼 수 있습니다'.",
+      "suggested_fix": "단편적인 안내방송이 아니라 **고유 동식물을 한데 묶어 들려주는 이야기**로 풀어낼 수 있습니다"
+    },
+    {
+      "poi_key": "poi:jagalchi_market",
+      "field": "description",
+      "snippet": "여성 주도의 강인한 수산 경제로 시장의 정체성을 다져 왔습니다",
+      "issue_type": "good_native_phrase",
+      "severity": "minor",
+      "detail": "Positive note: this sentence is well-written native Korean. No fix.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:jagalchi_market",
+      "field": "smartNotes.tip",
+      "snippet": "**산낙지**는 부산의 미식 시그니처로, 영화 *올드보이*(2003)에 등장한 그 요리입니다.",
+      "issue_type": "loanword_density",
+      "severity": "minor",
+      "detail": "'미식 시그니처' is a loanword combo. Native: '부산의 대표 미식' or '부산의 명물 음식'.",
+      "suggested_fix": "**산낙지**는 부산의 대표 미식으로, 영화 *올드보이*(2003)에 등장한 그 요리입니다."
+    },
+    {
+      "poi_key": "poi:hallim_park",
+      "field": "description",
+      "snippet": "공원의 외교적 위상도 방문 명단으로 짐작할 수 있습니다",
+      "issue_type": "calque_phrase",
+      "severity": "minor",
+      "detail": "'외교적 위상' is a calque of 'diplomatic stature' that doesn't quite work in Korean for a botanical park. Native: '공원의 격은 방문객 명단에서도 드러납니다' or '공원의 위상은 방문 인사들로도 짐작할 수 있습니다'.",
+      "suggested_fix": "공원의 위상은 방문 인사들의 면면에서도 드러납니다"
+    },
+    {
+      "poi_key": "poi:hallim_park",
+      "field": "whyOnRoute",
+      "snippet": "운영자의 오전 연료 예산 안에서 손님 만족도를 최대화합니다",
+      "issue_type": "ai_tone",
+      "severity": "major",
+      "detail": "'오전 연료 예산 안에서 손님 만족도를 최대화합니다' reads like an LLM-generated business-school paraphrase ('extracting maximum guest value from the operator's morning fuel budget'). Native Korean tour copy never frames it this way — sounds robotic.",
+      "suggested_fix": "오전 차량 이동을 최소화하면서 손님 체류 시간을 최대로 확보해 드립니다"
+    },
+    {
+      "poi_key": "poi:hallim_park",
+      "field": "whyOnRoute",
+      "snippet": "(2) **동굴 = 날씨 대안**",
+      "issue_type": "ai_tone",
+      "severity": "minor",
+      "detail": "'X = Y' equation-style headers are an LLM tic. Native Korean copy uses '동굴 → 날씨 대안' or '동굴, 날씨 대안 역할'. Pattern recurs in camellia_hill whyOnRoute and starfield_library too.",
+      "suggested_fix": "(2) **동굴이 곧 날씨 대안**"
+    },
+    {
+      "poi_key": "poi:woljeonggyo_bridge",
+      "field": "whyOnRoute",
+      "snippet": "오후 빛 도착은 인스타로 가득 찬 일몰 인파도 피해 갑니다",
+      "issue_type": "calque_phrase",
+      "severity": "minor",
+      "detail": "'오후 빛 도착' is a noun-phrase calque of 'afternoon-light arrival'. Native: '오후 햇빛 시간대 도착은' or '오후 빛이 좋은 시간에 들르면'.",
+      "suggested_fix": "오후 햇빛이 부드러운 시간대 도착은 인스타용 일몰 인파도 피할 수 있습니다"
+    },
+    {
+      "poi_key": "poi:ahopsan_bamboo_forest",
+      "field": "description",
+      "snippet": "9대 산림 관리라는 한국 문화 가치와 대나무 수림의 자연미가 동등한 무게로 평가되는 명소입니다",
+      "issue_type": "ai_tone",
+      "severity": "major",
+      "detail": "'동등한 무게로 평가되는' is wooden translationese ('rank alongside the natural-beauty value'). Native: '9대를 이은 산림 관리라는 문화적 가치와 대숲의 자연미를 함께 만나는 곳입니다'.",
+      "suggested_fix": "9대를 이어 온 산림 관리라는 문화적 가치와 대숲의 자연미를 함께 만나는 곳입니다"
+    },
+    {
+      "poi_key": "poi:ahopsan_bamboo_forest",
+      "field": "description",
+      "snippet": "햇살을 수직 녹색 기둥으로 걸러내는 모소대(Phyllostachys pubescens 'moso')의 거대 군락",
+      "issue_type": "good_native_phrase",
+      "severity": "minor",
+      "detail": "Strong sentence — natural, sensory Korean. No fix.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:camellia_hill",
+      "field": "description",
+      "snippet": "어느 계절에 방문해도 색감이 다른 풍경을 만나도록 의도적으로 설계되어",
+      "issue_type": "calque_phrase",
+      "severity": "minor",
+      "detail": "'의도적으로 설계되어' is a calque of 'deliberately engineered'. Native Korean horticulture writing uses '의도적으로 조성되어' or '계절마다 색이 다르도록 가꿔져'. '설계' is overused throughout the corpus for non-architectural contexts.",
+      "suggested_fix": "어느 계절에 방문해도 색감이 다른 풍경을 만나도록 계절별로 가꿔진"
+    },
+    {
+      "poi_key": "poi:camellia_hill",
+      "field": "whyOnRoute",
+      "snippet": "(2) **정원 페이스 보완**: 카멜리아힐의 1.2 km / 0.75 mi 산책 루프",
+      "issue_type": "non_native_unit",
+      "severity": "major",
+      "detail": "'/ 0.75 mi' inserts imperial miles into Korean copy. Korean readers don't think in miles; the dual-unit notation is appropriate for English/Spanish but pollutes Korean fluency. Drop the mi parenthetical.",
+      "suggested_fix": "(2) **정원 페이스 보완**: 카멜리아힐의 1.2km 산책 루프"
+    },
+    {
+      "poi_key": "poi:camellia_hill",
+      "field": "description",
+      "snippet": "30년 이상 축적",
+      "issue_type": "verb_drop",
+      "severity": "minor",
+      "detail": "Phrase '30년 이상 축적' is a sentence fragment in highlights[1] (cited from highlights[1] of camellia_hill). Korean prefers '30년 이상에 걸쳐 축적' or '30년 넘게 가꿔 온'.",
+      "suggested_fix": "30년 이상에 걸쳐 가꿔 온 결실"
+    },
+    {
+      "poi_key": "poi:gyochon_hanok_village",
+      "field": "whyOnRoute",
+      "snippet": "교촌은 하루의 흐름을 황실 스케일(불국사·박물관)에서 친근한 일상 역사 스케일로 옮겨 줍니다",
+      "issue_type": "loanword_overuse",
+      "severity": "minor",
+      "detail": "'스케일' twice in one sentence as a calque of 'scale'. Native Korean uses '규모' for scale. The second '스케일' is especially jarring with '일상 역사 스케일'.",
+      "suggested_fix": "교촌은 하루의 흐름을 황실의 규모(불국사·박물관)에서 친근한 일상 역사의 결로 옮겨 줍니다"
+    },
+    {
+      "poi_key": "poi:hueree_natural_park",
+      "field": "whyOnRoute",
+      "snippet": "투어 이름을 결정짓는 꽃의 마무리",
+      "issue_type": "calque_phrase",
+      "severity": "minor",
+      "detail": "'꽃의 마무리' literally maps EN 'the floral close'. Native: '꽃으로 마무리하는 거점' or '꽃 피날레'.",
+      "suggested_fix": "오늘 일정의 수국 거점이자, 투어 이름이 가리키는 꽃 피날레"
+    },
+    {
+      "poi_key": "poi:hueree_natural_park",
+      "field": "whyOnRoute",
+      "snippet": "코스가 약속한 서사적 마침표를 직접 매듭짓는 일입니다",
+      "issue_type": "ai_tone",
+      "severity": "major",
+      "detail": "'서사적 마침표를 직접 매듭짓는 일입니다' = pure LLM marketing-paraphrase Korean. No native copywriter would mix '서사적 마침표' with '매듭짓는'. Reads as machine translation.",
+      "suggested_fix": "오늘 코스가 약속한 꽃 거점에서 하루를 닫는 자연스러운 마무리입니다"
+    },
+    {
+      "poi_key": "poi:jeju_haenyeo_museum",
+      "field": "whyOnRoute",
+      "snippet": "오전의 자연·식민기 역사 레이어(함덕), 조선 행정 유산(성읍), 용암동굴 유네스코 인접(일출랜드), 그리고 3중 유네스코 지질 클라이맥스(성산)를 거쳐",
+      "issue_type": "loanword_density",
+      "severity": "major",
+      "detail": "Stack of '레이어 / 클라이맥스' in one sentence is heavy translationese. '레이어' is rarely used in tourism prose; '클라이맥스' is very anglicized. Native: '오전의 자연·식민기 역사층(함덕), 조선 행정 유산(성읍), 용암동굴 유네스코 인근(일출랜드), 그리고 3중 유네스코 지질 정점(성산)을 거쳐'.",
+      "suggested_fix": "오전의 자연·식민기 역사층(함덕), 조선 행정 유산(성읍), 용암동굴 유네스코 인근(일출랜드), 그리고 3중 유네스코 지질의 정점(성산)을 거쳐"
+    },
+    {
+      "poi_key": "poi:jeju_haenyeo_museum",
+      "field": "whyOnRoute",
+      "snippet": "1,100원, 코스 위, 그리고 유네스코급",
+      "issue_type": "calque_phrase",
+      "severity": "minor",
+      "detail": "'코스 위' = literal of 'on-route'. Native: '동선 위에 있어' / '동선 안에 들어가' / '코스에 포함되어'.",
+      "suggested_fix": "1,100원, 동선 안에 포함, 그리고 유네스코급"
+    },
+    {
+      "poi_key": "poi:sokcho_beach",
+      "field": "whyOnRoute",
+      "snippet": "산-바다 트라이어드를 한국 동해안만이 단일 당일 일정으로 제공할 수 있게 마무리하는 거점입니다",
+      "issue_type": "loanword_overuse",
+      "severity": "major",
+      "detail": "'트라이어드 (triad)' is hyper-anglicized for Korean tourism copy. '산-바다 3박자' or '산-바다-시장 삼각 구도' is native. '단일 당일 일정' is also calque ('single day-trip').",
+      "suggested_fix": "산-바다 3박자를 한국 동해안에서 당일 일정으로 모두 담아 마무리하는 거점입니다"
+    },
+    {
+      "poi_key": "poi:sokcho_beach",
+      "field": "description",
+      "snippet": "글로벌 방향을 가리키는 대형 나침반",
+      "issue_type": "calque_phrase",
+      "severity": "minor",
+      "detail": "'글로벌 방향' = literal of 'global directions'. Native Korean would say '세계 각지를 가리키는 대형 나침반' or '여러 도시 방향을 가리키는 나침반'.",
+      "suggested_fix": "세계 각지 방향을 가리키는 대형 나침반"
+    },
+    {
+      "poi_key": "poi:OPS_lunch_winter_south",
+      "field": "description",
+      "snippet": "1인 약 **15,000–25,000원**의 자비 비용이 들고",
+      "issue_type": "broken_register",
+      "severity": "minor",
+      "detail": "'자비 비용' is awkward bureaucratic register for tourism copy. Native: '본인 부담 비용' or '개인 부담 약 15,000–25,000원' or simply '1인 15,000–25,000원 (현장 결제)'.",
+      "suggested_fix": "1인 약 **15,000–25,000원** 개인 부담이며"
+    },
+    {
+      "poi_key": "poi:route_variant_south",
+      "field": "description",
+      "snippet": "약천사는 **122,100㎡ 규모로 동아시아 최대급 사찰**로 평가받으며",
+      "issue_type": "particle_doubling",
+      "severity": "minor",
+      "detail": "'동아시아 최대급 사찰**로 평가받으며' — '최대급 사찰로 평가받으며' is technically grammatical but the '-급... -로 평가받으며' pattern is wooden. Native: '동아시아에서도 손꼽히는 대규모 사찰로'.",
+      "suggested_fix": "약천사는 **122,100㎡ 규모로, 동아시아에서도 손꼽히는 대규모 사찰**입니다"
+    },
+    {
+      "poi_key": "poi:OPS_busan_cruise_pickup",
+      "field": "whyOnRoute",
+      "snippet": "단일 크루즈 터미널 픽업으로 소그룹 동선이 간결해지고 다중 거점 픽업 대비 노쇼 위험도 낮아집니다",
+      "issue_type": "loanword_density",
+      "severity": "minor",
+      "detail": "'다중 거점 픽업 대비 노쇼 위험' uses 다중/픽업/노쇼 in close proximity. '여러 거점 픽업보다 손님이 빠질 위험' would read more naturally for Korean readers (노쇼 is OK in industry contexts but '다중' is calque of 'multi-').",
+      "suggested_fix": "단일 크루즈 터미널 픽업으로 소그룹 동선이 간결해지고, 여러 거점 픽업보다 노쇼 위험도 낮아집니다"
+    },
+    {
+      "poi_key": "poi:seongsan_ilchulbong",
+      "field": "description",
+      "snippet": "**1945년 일제강점기에 굴착된 가미카제 자살 보트 동굴 18개**",
+      "issue_type": "loanword_register",
+      "severity": "major",
+      "detail": "'가미카제 자살 보트' is gratuitously loanword-heavy and slightly inaccurate (these were 신요 / shinyo suicide-boats, not aerial kamikaze). Korean historical convention: '일제 자살 특공정(가미카제 보트) 동굴 18개' or '일제 말기 자폭 보트 동굴 18개'.",
+      "suggested_fix": "**1945년 일제강점기에 굴착된 자폭 보트(가미카제) 동굴 18개**"
+    },
+    {
+      "poi_key": "poi:seongsan_ilchulbong",
+      "field": "whyOnRoute",
+      "snippet": "지질에서 꽃으로 이어지는 동부 코스 특유의 서사 곡선이 의도적으로 설계된 지점입니다",
+      "issue_type": "ai_tone",
+      "severity": "major",
+      "detail": "'서사 곡선이 의도적으로 설계된 지점' = textbook AI translationese. '서사 곡선' as a metaphor is very anglicized; '의도적으로 설계' is the same '설계' over-use noted elsewhere. Native: '지질에서 꽃으로 자연스럽게 이어지도록 짜인 동부 코스의 핵심 길목입니다'.",
+      "suggested_fix": "지질에서 꽃으로 자연스럽게 이어지도록 짜인 동부 코스의 핵심 길목입니다"
+    },
+    {
+      "poi_key": "poi:bulguksa_temple",
+      "field": "whyOnRoute",
+      "snippet": "**단연 가장 비중 있는 문화 거점**입니다",
+      "issue_type": "good_native_phrase",
+      "severity": "minor",
+      "detail": "Positive — '단연 가장 비중 있는' is good idiomatic copy. No fix.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:OPS_lunch_winter_south",
+      "field": "whyOnRoute",
+      "snippet": "**우회 비용이 0** — 라인업 식당이 자연스러운 주행선 위에 놓여 있습니다",
+      "issue_type": "calque_phrase",
+      "severity": "minor",
+      "detail": "'우회 비용이 0' is literal of 'zero detour cost' and reads like an analyst memo. '우회할 필요가 없습니다' or '추가 이동이 없습니다' is native. '주행선 위에 놓여' is also a calque.",
+      "suggested_fix": "**추가 이동이 필요 없는** — 라인업 식당이 자연스러운 동선 위에 자리합니다"
+    }
+  ],
+  "summary": {
+    "tier1_tp": 23,
+    "tier1_fp": 44,
+    "tier1_confirm": 1,
+    "tier2_critical": 0,
+    "tier2_major": 12,
+    "tier2_minor": 22,
+    "overall_assessment": "ko translations are above-average for an AI-assisted corpus: factual fidelity is strong, glossary adherence on place names is mostly correct, and many sentences read naturally. The dominant systemic problems are (a) raw loanword over-reliance ('드롭', '드라이빙 가이드', '갱웨이', '레이어/클라이맥스/스케일'), (b) recurring AI translationese in marketing-style whyOnRoute fields ('서사 곡선이 의도적으로 설계된', '서사적 마침표를 매듭짓는', '연료 예산 안에서 만족도를 최대화'), and (c) a single high-confidence glossary violation cluster: '올레매일시장' should be '올레시장' in 6+ POIs. The Tier 1 detector is too literal — ~70% of its alerts are false positives caused by proper-noun substring matches (Camellia Hill the venue), correct Korean idioms ('연중무휴' for '365 days', '만 석' for '100 sok of harvest'), or culturally appropriate substitutions ('한양' for historical Seoul, '초가' for thatched hanok). Most-problematic POI: poi:incheon_cruise_terminal (loanword density + '드라이빙 가이드' calque repeated)."
+  }
+}

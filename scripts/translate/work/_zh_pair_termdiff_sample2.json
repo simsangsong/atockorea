@@ -1,0 +1,163 @@
+sample size: 16
+[
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:nami_island",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 水杉大道是《冬季戀歌》經典構圖——秋季(10 月底至 11 月初金黃)或冬季(雪景)效果最佳。南岸的'戀人銀杏樹小徑'更幽靜,出片同樣精彩。白孔雀偶爾出現在'戀人小徑'附近。 | zh-TW: 水杉大道為世界知名的《冬季戀歌》取景畫面——秋季(10 月底至 11 月初金黃)或冬季(雪景)最佳。南側的銀杏戀人巷較少人潮,同樣上鏡。罕見的白孔雀偶爾出現在戀人巷附近。",
+    "detail": "diffs (zh→zh-TW): [('是', '為世界知名的'), ('經典構圖', '取景畫面'), ('銀杏樹小徑更幽靜出片', '巷較少人潮'), ('精彩', '上鏡罕見的')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:nami_island",
+    "field": "visitBasics.admission",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 南怡共和國簽證費(含往返輪渡):普通 19,000 韓元 / 優惠 16,000 韓元(70 歲以上長者、初高中生)/ 特殊 13,000 韓元(36 個月以上至小學兒童 + 早鳥 08:00 班次);20 人以上團體享 9 折 | zh-TW: 南怡共和國 VISA 入境費(含來回渡輪):一般票 19,000 韓元/優惠票 16,000 韓元(70 歲以上長者、國中與高中生)/特別票 1",
+    "detail": "diffs (zh→zh-TW): [('簽證', 'VISA入境'), ('往返', '來回渡'), ('渡普通', '一般票'), ('初', '國中與'), ('學兒童+早鳥', '')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:n_seoul_tower",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 夜晚以首爾天際線爲背景的塔樓是經典構圖——塔基的全景廣場免費開放，畫面幾乎可媲美付費觀景臺。露臺上的愛情鎖牆。從觀景臺窗口看日落。 | zh-TW: 塔身搭配首爾夜景的畫面是經典視覺 — 塔基的全景平台**免費**，視野幾乎與付費觀景台相當。露台愛情鎖牆。觀景台落地窗看夕陽。",
+    "detail": "diffs (zh→zh-TW): [('夜晚以', '塔身搭配'), ('天際線爲背', '夜'), ('塔樓', '畫面'), ('構圖', '視覺'), ('廣場', '平台**')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:n_seoul_tower",
+    "field": "highlights[2]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 外國遊客調查 (2012) 韓國第一旅遊景點；年訪客約1,200萬 | zh-TW: 外籍旅客調查韓國第一景點（2012）；年訪客1,200萬人次",
+    "detail": "diffs (zh→zh-TW): [('國遊', '籍旅'), ('', '韓國第一景點'), ('韓國第一旅遊景點', '')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:haedong_yonggungsa",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 靠海一側的日出巖；大雄殿旁階梯可拍到經典的海與寺合景；從崖上海水觀音像取景，可一覽寺院與東海的廣角畫面 | zh-TW: 海邊邊緣的日出岩；大雄殿旁的階梯可拍出經典海與寺的構圖；上崖的海水觀音可取廣角寺院＋東海全景",
+    "detail": "diffs (zh→zh-TW): [('一側', '邊邊緣'), ('合景從', '的構圖上'), ('景，可一覽', '廣角'), ('的廣角畫面', '全景')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:haedong_yonggungsa",
+    "field": "highlights[2]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: **1974年由正巖主持依乘龍觀音夢境更名爲海東龍宮寺** | zh-TW: **1974年更名為海東龍宮寺**，紀念淨庵和尚的觀音乘龍異象",
+    "detail": "diffs (zh→zh-TW): [('由正巖主持依乘龍觀音夢境', ''), ('', '，紀念淨庵和尚的觀音乘龍異象')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gwangmyeong_cave",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: **LED藝術隧道** 的季節性燈光主題 (春櫻、秋紅、冬雪) ——拍照率最高的區域。**41米巨龍 (勇茂)** ——社交媒體爆款。**熒光壁畫** 在UV燈下顯影。**酒窖牆** 上展示的韓國本土酒莊酒標。 | zh-TW: **LED藝術隧道**依季節變換主題燈光（春櫻、秋楓、冬雪） — 最熱門攝影區。**41公尺龍（龍麻路）** — 社群媒體爆紅熱點。**螢光壁畫**於UV燈下顯現",
+    "detail": "diffs (zh→zh-TW): [('性', '變換主題'), ('拍照率', ''), ('高的', '熱門攝影'), ('米巨', '公尺'), ('勇茂', '龍麻路')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gwangmyeong_cave",
+    "field": "highlights[2]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: **2014年榮獲韓國旅遊之星大獎** (韓國旅遊業的奧斯卡) | zh-TW: **獲頒2014年韓國觀光之星獎**（韓國觀光界的奧斯卡）",
+    "detail": "diffs (zh→zh-TW): [('旅遊', '觀光'), ('旅遊業', '觀光界')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:herb_island",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 粉色許願隧道 (全年招牌)。聖誕老人村300餘尊塑像在黃金時段。威尼斯村貢多拉。11–2月聖誕燈光秀 (17:00後最佳)。4–6月薰衣草田。秋季粉黛草。 | zh-TW: 粉紅許願隧道（全年招牌）。聖誕老人村300多座雕像於黃金時段。威尼斯村貢多拉。聖誕主題燈光秀11–2月（17:00後最佳）。薰衣草田4–6月。粉紅芒草秋季登場。",
+    "detail": "diffs (zh→zh-TW): [('餘尊塑', '多座雕'), ('', '聖誕主題燈光秀'), ('聖誕燈光秀', ''), ('', '薰衣草田'), ('薰衣', '粉紅芒')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:herb_island",
+    "field": "highlights[0]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: **1998年開園**；約82英畝 / 330,000 m² 地中海香草花園 (250餘種) | zh-TW: 1998年開幕；約82英畝／330,000平方公尺地中海香草園（250多種）",
+    "detail": "diffs (zh→zh-TW): [('園**', '幕'), ('m²', '平方公尺')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:sanjeong_lake",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 湖與山倒影 —— 春秋晨霧時最佳。鳴聲山坡10月中至11月初的銀芒。中段浮橋。冬季雪橇視角。秋葉環湖。 | zh-TW: 湖面映山倒影——晨霧（春／秋）效果最佳。10 月中至 11 月初的明聖山銀芒草坡。環湖中段浮橋。冬季結冰湖面雪橇景。湖畔環繞的秋葉。",
+    "detail": "diffs (zh→zh-TW): [('時', '春／秋效果'), ('鳴聲山坡', ''), ('', '明聖山'), ('', '草坡環湖'), ('', '結冰湖面')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:sanjeong_lake",
+    "field": "visitBasics.admission",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 湖區/步道免費;水上活動、雪橇、遊樂園單獨計費 | zh-TW: 湖區與步道免費；遊船、雪橇、遊樂場另行收費",
+    "detail": "diffs (zh→zh-TW): [('水上活動', '遊船'), ('園單獨計', '場另行收')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:bukchon_hanok_village",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: **北村八景**——其中 6 號觀景點(桂洞路)適合拍攝經典的韓屋瓦頂搭配 N 首爾塔的畫面。穿韓服的遊客與瓦頂屋脊爲構圖主體。Ssamzigil 文化巷(南端通往仁寺洞的有頂購物街)。 | zh-TW: **北村八景(8 個著名觀景點)**——其中第 6 景的桂洞街,是經典的「韓屋屋脊+N 首爾塔」畫面。穿著韓服在瓦頂山牆前拍照效果絕佳。仁寺洞南端入口的「Ssamzigil」文化巷(有屋",
+    "detail": "diffs (zh→zh-TW): [('', '8個著名觀景點'), ('路適合拍攝', '街是'), ('瓦頂搭配', '屋脊+'), ('的遊客與', '在'), ('屋脊爲構圖主體', '山牆前拍照效果絕佳仁寺洞南端入口的')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:bukchon_hanok_village",
+    "field": "smartNotes.facilities",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 安國站 2 號出口附近的遊客中心提供多語種地圖。村內分佈有咖啡館、傳統茶屋、由韓屋改造的咖啡館。攝影區有標識。 | zh-TW: 安國站 2 號出口附近的觀光諮詢中心提供多語地圖。村內散布咖啡廳、傳統茶屋,以及韓屋改造的咖啡空間。拍照點皆有標示。",
+    "detail": "diffs (zh→zh-TW): [('遊客', '觀光諮詢'), ('分佈有', '散布'), ('館攝影區', '空間拍照點皆')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gyeongbokgung_palace",
+    "field": "smartNotes.photo",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 光化門日出/黃金時段。王宮守門將交接儀式10:00 + 14:00。慶會樓倒影於蓮花池。香遠亭的廊橋在春櫻或秋葉中。勤政殿石階前的韓服身影。 | zh-TW: 光化門日出或黃金時刻；王室守門將交接儀式 10:00＋14:00；慶會樓於蓮花池中的倒影；香遠亭拱橋的春櫻或秋葉；勤政殿階前的韓服身影。",
+    "detail": "diffs (zh→zh-TW): [('', '中的倒影'), ('廊橋在', '')]",
+    "suggested_fix": null
+  },
+  {
+    "locale": "zh-pair",
+    "poi_key": "poi:gyeongbokgung_palace",
+    "field": "highlights[2]",
+    "issue_type": "zh_zhtw_term_diff",
+    "severity": "minor",
+    "snippet": "zh: 慶會樓(48根石柱立於蓮花池上的樓閣,曾用於王室宴饗) | zh-TW: 慶會樓（蓮花池上的 48 根石柱亭，王室宴會場所）",
+    "detail": "diffs (zh→zh-TW): [('', '蓮花池上的'), ('立於蓮花池上的樓閣曾用於', '亭，'), ('饗', '會場所')]",
+    "suggested_fix": null
+  }
+]

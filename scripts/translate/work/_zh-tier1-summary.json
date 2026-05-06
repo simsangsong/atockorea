@@ -1,0 +1,785 @@
+[
+ {
+  "i": 0,
+  "poi": "poi:hallasan_eoseungsaengak",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"eoseungsaengak trail\" present, but expected \"御乘生岳登山道\" not in target",
+  "snippet": "**御乘生岳 (어승생악, 海拔1,169 m)** 是 **汉拿山 (한라산, 1,950 m)** 西麓的一座寄生火山锥 (오름 / *oreum*) ——汉拿山为韩国第一高峰，也是济州的地质核心。汉拿山身披 **罕见的多重头衔**：*"
+ },
+ {
+  "i": 1,
+  "poi": "poi:hallasan_eoseungsaengak",
+  "field": "whyOnRoute",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"unesco world heritage\" present, but expected \"联合国教科文组织世界遗产\" not in target",
+  "snippet": "**西南线开篇锚点**。从汉拿山起步可奠定济州地质基底，但与同系列高光环线 (东海岸逆时针方向) 不同，本线在下山后 **转向西与西南** ——直奔南岸柱状节理，再到南部天帝渊，转入O'sulloc茶园，最后 **西行至涯月迎接日落收官**"
+ },
+ {
+  "i": 2,
+  "poi": "poi:hallasan_eoseungsaengak",
+  "field": "highlights[0]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"unesco world heritage\" present, but expected \"联合国教科文组织世界遗产\" not in target",
+  "snippet": "**汉拿山 = 韩国唯一拥有三重自然头衔的胜地**：2007年世界遗产 + 2002年生物圈 + 1970年国立公园"
+ },
+ {
+  "i": 3,
+  "poi": "poi:OPS_return_incheon",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"drop-off\" present, but expected \"下车点\" not in target",
+  "snippet": "私人专车返程仁川邮轮码头，行车60–90分钟——您的司机兼向导会全程动态调节当日节奏，确保在所属邮轮全员登船时间前90分钟以上抵达。这一缓冲既能吸纳仁川–首尔高速公路上偶发的拥堵 (虽不常见但仍有可能)，也让您从容办理韩国再入境手续。专车直"
+ },
+ {
+  "i": 4,
+  "poi": "poi:OPS_return_incheon",
+  "field": "highlights[2]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"drop-off\" present, but expected \"下车点\" not in target",
+  "snippet": "码头门口下车"
+ },
+ {
+  "i": 5,
+  "poi": "poi:gwangmyeong_cave",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"autumn foliage\" present, but expected \"秋叶\" not in target",
+  "snippet": "**光明洞窟 (광명동굴)** ——前身为 **1912年日据时期开采的金、银、铜、锌矿**，连续运营60年至1972年关停。运营期间累计产出黄金52 kg、白银6,070 kg、铜1,247吨、锌3,247吨——是日据时代从韩国掠夺矿产资"
+ },
+ {
+  "i": 6,
+  "poi": "poi:gwangmyeong_cave",
+  "field": "smartNotes.photo",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"cherry blossom\" present, but expected \"樱花\" not in target",
+  "snippet": "**LED艺术隧道** 的季节性灯光主题 (春樱、秋红、冬雪) ——拍照率最高的区域。**41米巨龙 (勇茂)** ——社交媒体爆款。**荧光壁画** 在UV灯下显影。**酒窖墙** 上展示的韩国本土酒庄酒标。"
+ },
+ {
+  "i": 7,
+  "poi": "poi:gwangmyeong_cave",
+  "field": "smartNotes.photo",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"autumn foliage\" present, but expected \"秋叶\" not in target",
+  "snippet": "**LED艺术隧道** 的季节性灯光主题 (春樱、秋红、冬雪) ——拍照率最高的区域。**41米巨龙 (勇茂)** ——社交媒体爆款。**荧光壁画** 在UV灯下显影。**酒窖墙** 上展示的韩国本土酒庄酒标。"
+ },
+ {
+  "i": 8,
+  "poi": "poi:tongdosa_temple",
+  "field": "whyOnRoute",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"day trip\" present, but expected \"一日游\" not in target",
+  "snippet": "本线 **联合国教科文组织世界遗产的季节锚点** ——通度寺慈藏梅比韩国樱花季提前3–4周绽放，让本行程在3月初 (年份不同略有差异) 实际成为 **梅花到樱花的连贯赏花日**。该寺也是东南部唯一可从釜山一日往返的世界遗产山寺 (海印寺需3"
+ },
+ {
+  "i": 9,
+  "poi": "poi:suwon_nammun_market",
+  "field": "description",
+  "type": "excess_latin_tokens",
+  "sev": "minor",
+  "detail": "unwhitelisted Latin tokens: ['Nammun', 'Rodeo', 'SBA', 'Tongdak', 'Wang-Galbi', 'tteokbokki', 'eomuk', 'hotteok'] (and 1 more)",
+  "snippet": "**水原南门市场 (수원남문시장)** ——位于 **八达门 (팔달문，水原华城南门)** 正南的历史商圈。市场名直译为'南门市场'(Nammun=南门)；起源可追溯至 **18世纪末** ——正祖大王修筑华城 (1794–1796) 期间"
+ },
+ {
+  "i": 10,
+  "poi": "poi:aewol_cafe_street",
+  "field": "description",
+  "type": "excess_latin_tokens",
+  "sev": "minor",
+  "detail": "unwhitelisted Latin tokens: ['Gonae', 'Bomnal', \"Randy's\", 'Donuts', 'Knotted', 'Haejigae', 'the', 'Sunset'] (and 3 more)",
+  "snippet": "**涯月咖啡街 (애월 카페거리)** 是济州西北岸涯月邑沿 **咸潭海岸散步路 (한담해안산책로)** 展开的 **5 km海滨咖啡带** ——韩国最密集的'海景咖啡厅'集聚地，从咸潭海滩到郭支海滩之间的崖畔短带上挤入了30余家设计感咖啡"
+ },
+ {
+  "i": 11,
+  "poi": "poi:aewol_cafe_street",
+  "field": "highlights[4]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"aewol\" present, but expected \"涯月\" not in target",
+  "snippet": "轮换招牌咖啡厅：**Randy's Donuts**、**Cafe Knotted**、**Haejigae咖啡**、**Aewol the Sunset**"
+ },
+ {
+  "i": 12,
+  "poi": "poi:haedong_yonggungsa",
+  "field": "description",
+  "type": "number_missing",
+  "sev": "major",
+  "detail": "EN numbers not in target: ['100']",
+  "snippet": "**海东龙宫寺 (해동 용궁사) ——韩国最负盛名的海滨佛寺** ——坐落于釜山东北岸机张郡的临海岩崖之上，是韩国少数不在山间的大型寺院之一。原由 **高丽王朝1376年高僧懒翁慧勤 (나옹 혜근，1320–1376) 创建** ——他既是"
+ },
+ {
+  "i": 13,
+  "poi": "poi:haedong_yonggungsa",
+  "field": "whyOnRoute",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"un memorial cemetery\" present, but expected \"联合国纪念公墓\" not in target",
+  "snippet": "本线的标志性锚点——釜山拍摄率最高的寺院，650年历史，且为韩国少有的海边佛寺。10:00抵达正好赶在大型旅游车涌入潮 (一般11:00开始) 之前，108阶下行与海水观音观景点都还能从容步行、无需排队。东北岸的位置又与南面的青沙浦蓝线公园"
+ },
+ {
+  "i": 14,
+  "poi": "poi:haedong_yonggungsa",
+  "field": "convenience.parking",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"busan\" present, but expected \"釜山\" not in target",
+  "snippet": "海东龙宫寺停车场 (收费，依Visit Busan官方信息)"
+ },
+ {
+  "i": 15,
+  "poi": "poi:jeju_haenyeo_museum",
+  "field": "highlights[6]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"haenyeo\" present, but expected \"海女\" not in target",
+  "snippet": "**现役不足4,000人** ——多为70岁以上；行业人口持续萎缩"
+ },
+ {
+  "i": 16,
+  "poi": "poi:route_variant_south",
+  "field": "highlights[1]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"jusangjeolli cliff\" present, but expected \"柱状节理海岸\" not in target",
+  "snippet": "大浦柱状节理：1 km六角玄武岩柱海岸，柱高可达30–40 m，联合国教科文组织世界地质公园；门票约2,000韩元"
+ },
+ {
+  "i": 17,
+  "poi": "poi:route_variant_custom_seoul",
+  "field": "whyOnRoute",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"drop-off\" present, but expected \"下车点\" not in target",
+  "snippet": "四条线路中最具弹性的一条。最适合二度造访首尔的客人、有特定兴趣 (K-pop、韩剧、摄影、美食、亲子、深度历史) 的旅行者，以及4–9人小团 (按车计价相较跟团明显倾向私人包车)。当天航班场景尤其适合——10小时可一并涵盖酒店退房、观光与仁"
+ },
+ {
+  "i": 18,
+  "poi": "poi:OPS_pickup_winter_southwest",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"english-speaking guide\" present, but expected \"英语导游\" not in target",
+  "snippet": "**酒店接送时间窗08:30–09:00**，覆盖指定的济州市区或中文一带酒店。司机与英语向导驾驶 **小型大巴 (8–15人共乘)** 前往，于酒店大堂举牌相迎；运营方24小时联系电话在预订时即提供。接送范围含济州市区中心酒店 (Mais"
+ },
+ {
+  "i": 19,
+  "poi": "poi:OPS_pickup_winter_southwest",
+  "field": "whyOnRoute",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"hotel pickup\" present, but expected \"酒店接送\" not in target",
+  "snippet": "**接送时间为汉拿山登顶时段服务** ——御林木冬季最迟入场约11:30 (其他季节约12:30)，因此当天必须09:00前出发，确保团队在入场截止前拥有完整的徒步时间。分层接送 (市区 + 中文 + 三处集合点) 让一辆小巴在单趟扫过济州"
+ },
+ {
+  "i": 20,
+  "poi": "poi:OPS_pickup_winter_southwest",
+  "field": "highlights[1]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"english-speaking guide\" present, but expected \"英语导游\" not in target",
+  "snippet": "小型大巴 (8–15人共乘)；英语向导 + 司机"
+ },
+ {
+  "i": 21,
+  "poi": "name:lunch (jeju local restaurant)",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"jeju\" present, but expected \"济州\" not in target",
+  "snippet": "**日出乐园至城山日出峰之间60分钟的中场休整** ——城山邑沿港餐厅街每日承接当地海产上岸。轮换默认菜色：夏季 (6–9月) **凉拌生鱼汤 (물회，mulhoe)**、冬季 (10–2月) **带鱼炖菜 (갈치조림)** 或全年皆宜的 "
+ },
+ {
+  "i": 22,
+  "poi": "poi:OPS_busan_port_return",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"drop-off\" present, but expected \"下车点\" not in target",
+  "snippet": "小团车将您送回 **行程出发的同一邮轮码头** ——大型邮轮停靠的釜山港国际邮轮码头 (东三) 或中型邮轮的釜山港国际客运码头 (草梁) ——确保 **比全员登船时间提前60–90分钟** 抵达。下车地点位于码头到达大厅，邮轮公司一般在此提"
+ },
+ {
+  "i": 23,
+  "poi": "poi:OPS_busan_port_return",
+  "field": "highlights[2]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"drop-off\" present, but expected \"下车点\" not in target",
+  "snippet": "**不为个人绕行至酒店** (小团固定时刻)"
+ },
+ {
+  "i": 24,
+  "poi": "poi:taejongdae",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"hydrangea festival\" present, but expected \"绣球花节\" not in target",
+  "snippet": "**太宗台(태종대)——釜山纪念物第 28 号**(与五六岛共同列入)——位于 **影岛最南端的天然公园**,得名于 **新罗第 29 代王太宗武烈王(604–661 年)**,相传他在 **统一三国** 之后曾在此练习箭术。最具代表性的地"
+ },
+ {
+  "i": 25,
+  "poi": "poi:taejongdae",
+  "field": "smartNotes.tip",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"hydrangea festival\" present, but expected \"绣球花节\" not in target",
+  "snippet": "请避免吃力的 4.3 公里全程徒步——乘搭 **Danubi 观光列车** 完成 5 站环线。**太宗寺绣球花庆典** 通常于 6 月底至 7 月初举办。灯塔区台阶陡峭——不适合婴儿车。"
+ },
+ {
+  "i": 26,
+  "poi": "poi:taejongdae",
+  "field": "highlights[8]",
+  "type": "number_missing",
+  "sev": "major",
+  "detail": "EN numbers not in target: ['100000']",
+  "snippet": "**年度绣球花文化庆典** 于太宗寺举办(6 月底至 7 月初),吸引 10 万余人前来观赏园内的大叶绣球花海"
+ },
+ {
+  "i": 27,
+  "poi": "poi:gyochon_hanok_village",
+  "field": "convenience.parking",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"drop-off\" present, but expected \"下车点\" not in target",
+  "snippet": "西侧入口设有大巴下客停车场(免费)"
+ },
+ {
+  "i": 28,
+  "poi": "name:drop-off (5 points across jeju city)",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"drop-off\" present, but expected \"下车点\" not in target",
+  "snippet": "**下车流程与早晨接送对应,并增设一个备选点**:挟才 → 经西海岸 1132 号公路抵达济州市(约 40 分钟车程)。下车顺序:下贵洞(最靠近西海岸返程动线)→ 济州国际机场 → 济州市厅 → 选用的莲洞 / 老衡洞 → 东门传统市场。预"
+ },
+ {
+  "i": 29,
+  "poi": "poi:waujeongsa_temple",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"autumn foliage\" present, but expected \"秋叶\" not in target",
+  "snippet": "**卧牛精舍(와우정사)**——**1970 年由海登大师(해등 큰스님)创建**,作为朝鲜战争(1950–1953)半岛分裂后,与本山失联的朝鲜半岛北方佛教僧侣的安身之所。寺院最初名为'千佛千一寺',意为'千零一佛之寺',致敬韩国统一祈愿"
+ },
+ {
+  "i": 30,
+  "poi": "poi:waujeongsa_temple",
+  "field": "smartNotes.tip",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"cherry blossom\" present, but expected \"樱花\" not in target",
+  "snippet": "**免费入场**——相较其他主要韩国寺院,性价比突出。**与传统寺院差异化**——请向客人解释这并非朝鲜时期寺院,而是 **1970 年建造的折衷泛亚统一祈愿寺**。**最佳摄影季节**:春樱(4 月)或秋叶(10 月底–11 月初)。请着"
+ },
+ {
+  "i": 31,
+  "poi": "poi:waujeongsa_temple",
+  "field": "highlights[9]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"cherry blossom\" present, but expected \"樱花\" not in target",
+  "snippet": "春樱 / 秋叶——摄影旺季"
+ },
+ {
+  "i": 32,
+  "poi": "poi:hallim_park",
+  "field": "whyOnRoute",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"hydrangea festival\" present, but expected \"绣球花节\" not in target",
+  "snippet": "**当日的绣球花核心站点——也是西南环线的身份代表。** 翰林公园在 10:30 锚定上午晚段并安排 120 分钟充裕停留,基于四点考量。(1)**绣球花季对位**:6 月正是翰林公园月度日历中的 **绣球花庆典月**——翰林是当日三处绣球"
+ },
+ {
+  "i": 33,
+  "poi": "poi:hallim_park",
+  "field": "smartNotes.photo",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"hydrangea festival\" present, but expected \"绣球花节\" not in target",
+  "snippet": "绣球花庆典(6 月)与粉黛乱子草(10 月)是摄影旺季;熔岩洞穴配合石钟乳灯光独具一格"
+ },
+ {
+  "i": 34,
+  "poi": "poi:hallim_park",
+  "field": "highlights[2]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"hydrangea festival\" present, but expected \"绣球花节\" not in target",
+  "snippet": "**6 月绣球花庆典**——园区招牌的 6 月锚点"
+ },
+ {
+  "i": 35,
+  "poi": "poi:hueree_natural_park",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"hydrangea festival\" present, but expected \"绣球花节\" not in target",
+  "snippet": "**休爱里自然生活公园(휴애리 자연생활공원)** 是位于汉拿山南麓的全年花园,以 **'岛中之岛'** 为品牌——将济州的季节花卉日历压缩进一座 **以汉拿山为背景** 的园区。园区在年内轮换 **五大命名庆典**:**梅花庆典**(2 "
+ },
+ {
+  "i": 36,
+  "poi": "poi:hueree_natural_park",
+  "field": "whyOnRoute",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"hydrangea festival\" present, but expected \"绣球花节\" not in target",
+  "snippet": "**当日的绣球花核心站点,也是为整条线路命名的花卉收尾。** 休爱里于 15:50 作为收官实质性站点,基于四点考量。(1)**晚间光线 + 绣球花颜色**:休爱里室外绣球花田面朝西南,以汉拿山为可见地平线背景;15:50–17:05 窗口"
+ },
+ {
+  "i": 37,
+  "poi": "poi:hueree_natural_park",
+  "field": "highlights[2]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"hydrangea festival\" present, but expected \"绣球花节\" not in target",
+  "snippet": "**春季绣球花庆典**(4 月初–6 月中)+ **夏季绣球花庆典**(6 月盛花–7 月初)+ **欧洲绣球花庆典**(7 月中–8 月)"
+ },
+ {
+  "i": 38,
+  "poi": "poi:jeju_stone_park",
+  "field": "description",
+  "type": "number_missing",
+  "sev": "major",
+  "detail": "EN numbers not in target: ['300000']",
+  "snippet": "**济州石头文化公园(제주 돌문화공원,Jeju Dolmunhwa Gongwon)** 是位于朝天的 **30 万坪(约 99 万平方米)露天博物馆**,致力于呈现济州的开天创世神话:**雪门台姥姥(설문대 할망,巨人女神)** 的传说"
+ },
+ {
+  "i": 39,
+  "poi": "poi:jeju_stone_park",
+  "field": "whyOnRoute",
+  "type": "number_missing",
+  "sev": "major",
+  "detail": "EN numbers not in target: ['300000']",
+  "snippet": "**东线神话与文化的开篇核心。** 同主题精选环线在汉拿山 UNESCO 地质处开篇,本'自然主线'路线则以汉拿山的 **神话起源故事** 开篇——同一座火山岛,以口传创世而非 UNESCO 地质来呈现。将雪门台姥姥设为当日叙事的首章,意味"
+ },
+ {
+  "i": 40,
+  "poi": "poi:jeju_stone_park",
+  "field": "highlights[0]",
+  "type": "number_missing",
+  "sev": "major",
+  "detail": "EN numbers not in target: ['300000']",
+  "snippet": "**30 万坪露天博物馆**——济州规模最大的火山岩文化遗产地"
+ },
+ {
+  "i": 41,
+  "poi": "poi:jeju_stone_park",
+  "field": "highlights[4]",
+  "type": "number_missing",
+  "sev": "major",
+  "detail": "EN numbers not in target: ['500']",
+  "snippet": "**五百将军画廊**——以神话为灵感的石雕阵列"
+ },
+ {
+  "i": 42,
+  "poi": "poi:OPS_pickup",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"english-speaking guide\" present, but expected \"英语导游\" not in target",
+  "snippet": "**接送整合于济州市的四个标准接送点**,以保持上午紧凑、东行出发顺畅:**济州国际机场(제주공항)** 适合当日抵达或机场片区酒店住客(Hidden Cliff、Maison Glad、Lotte City 等);**济州市厅(제주시청)"
+ },
+ {
+  "i": 43,
+  "poi": "name:drop-off (2 points + dongmun market)",
+  "field": "highlights[4]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"drop-off\" present, but expected \"下车点\" not in target",
+  "snippet": "下车顺序与早晨接送对称对应"
+ },
+ {
+  "i": 44,
+  "poi": "poi:ilchulland_micheon_cave",
+  "field": "description",
+  "type": "number_missing",
+  "sev": "major",
+  "detail": "EN numbers not in target: ['400000']",
+  "snippet": "**日出乐园 (일출랜드)** 是位于城山的 **40 万平方米自然主题公园**,**2002 年开业**,围绕 **美川窟 (미천굴)** 熔岩洞而建——这是一条 **总长 1,700 米的熔岩洞**,其中 **365 米经人工平整后开放"
+ },
+ {
+  "i": 45,
+  "poi": "poi:ilchulland_micheon_cave",
+  "field": "highlights[4]",
+  "type": "number_missing",
+  "sev": "major",
+  "detail": "EN numbers not in target: ['400000']",
+  "snippet": "**40 万平方米园区**——盆景、仙人掌、雕塑、传统村、足浴咖啡馆"
+ },
+ {
+  "i": 46,
+  "poi": "poi:OPS_return",
+  "field": "whyOnRoute",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"drop-off\" present, but expected \"下车点\" not in target",
+  "snippet": "**东线环线的运营收尾。** 反向接送的顺序意味着大巴自东侧进入市区时自然先抵东门,再向西依次经过市厅 + 机场 + 下贵——全程不走回头路。送返时段也是导游在车上收集反馈卡的最佳时机,此时全员仍在车内,当日体验记忆犹新。"
+ },
+ {
+  "i": 47,
+  "poi": "poi:un_memorial_cemetery",
+  "field": "convenience.parking",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"drop-off\" present, but expected \"下车点\" not in target",
+  "snippet": "园区内免费停车 + 旅游大巴下客区"
+ },
+ {
+  "i": 48,
+  "poi": "poi:ahopsan_bamboo_forest",
+  "field": "description",
+  "type": "number_missing",
+  "sev": "major",
+  "detail": "EN numbers not in target: ['100']",
+  "snippet": "**阿洪山竹林 (아홉산숲, '九山之林')** 是位于 **釜山东北机张郡** 的 **52 万平方米私家遗产林**,**由南平文氏家族九代人守护约 400 年**——文氏家族在 **1592–1598 年壬辰倭乱后** 迁居此谷,自此世"
+ },
+ {
+  "i": 49,
+  "poi": "poi:ahopsan_bamboo_forest",
+  "field": "highlights[4]",
+  "type": "number_missing",
+  "sev": "major",
+  "detail": "EN numbers not in target: ['100']",
+  "snippet": "包含 **《群盗》(2014)、《侠女:刀的记忆》(2015)、《步步惊心:丽》(2016)、《百日的郎君》(2018)、《The King:永远的君主》(2020)**"
+ },
+ {
+  "i": 50,
+  "poi": "poi:ahopsan_bamboo_forest",
+  "field": "highlights[7]",
+  "type": "number_missing",
+  "sev": "major",
+  "detail": "EN numbers not in target: ['100']",
+  "snippet": "**《The King:永远的君主》(2020) 取景地** + 《步步惊心:丽》(2016) + 《群盗》(2014) + 《百日的郎君》(2018)——韩剧文化遗产打卡地"
+ },
+ {
+  "i": 51,
+  "poi": "poi:OPS_lunch",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"jeju black pork\" present, but expected \"济州黑猪肉\" not in target",
+  "snippet": "**午餐安排在翰林 / 涯月尾段 / 安德走廊的当地济州式餐厅**,从运营方甄选的家族式名单中选取,该名单经审核 **支持英语友好菜单、特殊饮食(应需提供素食 + 清真友好的鸡肉 / 海鲜选项)与西海岸济州特色菜**,团体价格公道。典型选择"
+ },
+ {
+  "i": 52,
+  "poi": "poi:korean_folk_village_yongin",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"seoul\" present, but expected \"首尔\" not in target",
+  "snippet": "**韩国民俗村 (한국민속촌, 龙仁) — 韩国首个、规模最大的传统民俗文化露天博物馆**,占地约 991,735 平方米(245 英亩 / 30 万坪),坐落于龙仁市自然山谷之中,距水原车程约 30 分钟。**260 多座按朝鲜王朝晚期复"
+ },
+ {
+  "i": 53,
+  "poi": "poi:sokcho_tourist_fishery_market",
+  "field": "description",
+  "type": "excess_latin_tokens",
+  "sev": "minor",
+  "detail": "unwhitelisted Latin tokens: ['Jungang', 'Hanaro', 'Mart', 'dakgangjeong', 'sundae', 'jeotgal', 'dakgangjeong', 'Manseok'] (and 15 more)",
+  "snippet": "雪岳山结束后,沿 7 / 7-1 路公交走廊向东下行 15 分钟进入束草市区,在该市最具代表性的传统市场用餐。市场的官方更名为 **束草观光水产市场**——但许多店招仍使用其原名'束草中央市场'(Sokcho Jungang Market)"
+ },
+ {
+  "i": 54,
+  "poi": "poi:sokcho_tourist_fishery_market",
+  "field": "whyOnRoute",
+  "type": "excess_latin_tokens",
+  "sev": "minor",
+  "detail": "unwhitelisted Latin tokens: ['dakgangjeong', 'Abai', 'gaetbae', 'abai', 'sundae', 'ojingeo', 'sundae', 'gajami'] (and 1 more)",
+  "snippet": "束草市场是行程目录中最具说服力的'山海食物转场'——离开雪岳山的山寺氛围 10 分钟之内,旅客就能品尝到东海岸最具特色的渔港午餐。相较于大浦港生鱼街备选的优势在于:市场的全天候室内结构 + 适合外带的 dakgangjeong 形式可吸纳小"
+ },
+ {
+  "i": 55,
+  "poi": "poi:sokcho_tourist_fishery_market",
+  "field": "smartNotes.photo",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"sokcho\" present, but expected \"束草\" not in target",
+  "snippet": "生鱼中心的活鱼水箱;煎锅上的鱿鱼血肠;中央入口的多彩'SOKCHO'阶梯;Hyuntaenae 12 号摊位的黄底招牌;彩色年糕与紫菜包饭。"
+ },
+ {
+  "i": 56,
+  "poi": "poi:gamaksan_red_bridge",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"autumn foliage\" present, but expected \"秋叶\" not in target",
+  "snippet": "午餐之后,行程从厚重的历史转向山间风光。感岳山摇晃桥——正式名称为 **'格洛斯特英雄桥 (Gloucester Heroes Bridge)'**,以纪念 1951 年 4 月在临津江战役中以寡敌众、英勇抵抗中国部队的英国陆军第 1 营格"
+ },
+ {
+  "i": 57,
+  "poi": "poi:gamaksan_red_bridge",
+  "field": "smartNotes.photo",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"autumn foliage\" present, but expected \"秋叶\" not in target",
+  "snippet": "10 月中旬至 11 月初的红叶映衬红桥是经典画面。桥中央俯瞰雪马里溪谷。从对岸广角拍摄红桥跨越山间的全景。"
+ },
+ {
+  "i": 58,
+  "poi": "poi:gamaksan_red_bridge",
+  "field": "highlights[4]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"autumn foliage\" present, but expected \"秋叶\" not in target",
+  "snippet": "10 月下旬至 11 月上旬红叶季最佳(红枫 + 金橡林映衬红桥)"
+ },
+ {
+  "i": 59,
+  "poi": "poi:sokcho_beach",
+  "field": "whyOnRoute",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"sokcho beach\" present, but expected \"束草海水浴场\" not in target",
+  "snippet": "束草海滩是当日的第三大支柱——完成 **唯韩国东海岸可在一日内串联的'雪岳山 → 束草渔港 → 东海岸海滩'三联**。相较于南面的洛山海水浴场,选择束草海滩的原因在于其与观光水产市场和长途汽车客运站之间均可步行抵达,免去额外 15 分钟车程"
+ },
+ {
+  "i": 60,
+  "poi": "poi:sokcho_beach",
+  "field": "smartNotes.tip",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"sokcho\" present, but expected \"束草\" not in target",
+  "snippet": "游泳体验最佳时段:7 月 4 日 - 8 月初(含夜泳 19:00-21:00)。拍照与漫步最佳:春 / 秋季(气候温和、人潮较少)。北段(摩天轮一带)比南段更热闹。即便夏季亦风强——请备防风外套。如在 12 月底 / 1 月初出行,可与新"
+ },
+ {
+  "i": 61,
+  "poi": "poi:sokcho_beach",
+  "field": "highlights[3]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"sokcho\" present, but expected \"束草\" not in target",
+  "snippet": "公共艺术:SOKCHO 阶梯、ㅅㅊ 韩文字母、海豚雕塑、T 形栈桥心之树"
+ },
+ {
+  "i": 62,
+  "poi": "poi:gwangjang_market",
+  "field": "description",
+  "type": "excess_latin_tokens",
+  "sev": "minor",
+  "detail": "unwhitelisted Latin tokens: ['Anthony', 'Bourdain', 'Parts', 'Unknown', 'Netflix', 'Food', 'Asia', 'bindaetteok'] (and 10 more)",
+  "snippet": "广藏市场——1905 年开市,韩国首座永久性传统市场——位于钟路区,自北村向东约 10 分钟车程,是首尔最受拍照的街头美食巷,因 Anthony Bourdain《Parts Unknown》首尔篇及 Netflix《Street Food"
+ },
+ {
+  "i": 63,
+  "poi": "poi:gwangjang_market",
+  "field": "highlights[7]",
+  "type": "excess_latin_tokens",
+  "sev": "minor",
+  "detail": "unwhitelisted Latin tokens: ['Anthony', 'Bourdain', 'Parts', 'Unknown', 'CNN', 'Netflix', 'Food', 'Asia'] (and 1 more)",
+  "snippet": "**Anthony Bourdain《Parts Unknown》首尔篇(CNN,2015 年 6 月 21 日)** + **Netflix《Street Food: Asia》(2019)** = 让广藏跻身国际美食朝圣地;在 Bour"
+ },
+ {
+  "i": 64,
+  "poi": "poi:noksan_ro_gasiri_blossom_road",
+  "field": "description",
+  "type": "excess_latin_tokens",
+  "sev": "minor",
+  "detail": "unwhitelisted Latin tokens: ['Jorangmal', 'Ttarabi', 'Maeum', 'Ttarabi', 'Keunsasumi', 'Yujae-kkot', 'Netflix', 'KBS'] (and 1 more)",
+  "snippet": "**鹿山路 (녹산로)**,位于 **加时里村 (가시리,西归浦市表善面)**,是 **'济州最美春日之路'**,亦为 **'韩国 100 条最美道路'** 之一——一条 **10 公里的乡间车道,粉色王樱花与黄色油菜花同时盛放**,这种色"
+ },
+ {
+  "i": 65,
+  "poi": "poi:route_variant_east",
+  "field": "smartNotes.facilities",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"hamdeok beach\" present, but expected \"咸德海水浴场\" not in target",
+  "snippet": "城山港与咸德海滩是最强的用餐枢纽;东线食物密度明显胜于西线。海女现做的生鱼片是当地海鲜的招牌。"
+ },
+ {
+  "i": 66,
+  "poi": "poi:route_variant_east",
+  "field": "smartNotes.tip",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"hamdeok beach\" present, but expected \"咸德海水浴场\" not in target",
+  "snippet": "城山山顶攀登是路线对长者或低体力旅客的瓶颈——山脚观景同样可行。若预订时万丈窟仍未开放,司机兼导游会替换为山君不离火山口或咸德海滩。安排牛岛船班至少在日落前 4 小时为宜。"
+ },
+ {
+  "i": 67,
+  "poi": "poi:OPS_dropoff_winter_southwest",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"drop-off\" present, but expected \"下车点\" not in target",
+  "snippet": "**返回原接送酒店**,涵盖济州市与中文区住宿。从天帝渊瀑布(中文)出发的回程线路分流——**中文区酒店先行下车**(距瀑布约 5 分钟),迷你巴随后沿 1135 号公路前往济州市(约 50 分钟)。下车通常 **回到原接送酒店大堂**;在"
+ },
+ {
+  "i": 68,
+  "poi": "poi:OPS_dropoff_winter_southwest",
+  "field": "whyOnRoute",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"drop-off\" present, but expected \"下车点\" not in target",
+  "snippet": "**下车时间 17:30 → 18:30 抵达** 与济州市和中文区的 **冬日傍晚晚餐窗口** 衔接——客人完整保留晚间于酒店用餐或继续探索的时间。先送中文(就近)、后送济州市的拆分,基于 8–15 人小团中客人通常按约 30/70 分布"
+ },
+ {
+  "i": 69,
+  "poi": "poi:OPS_east_jeju_lunch",
+  "field": "highlights[1]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"jeju black pork\" present, but expected \"济州黑猪肉\" not in target",
+  "snippet": "**鲍鱼石锅饭**(济州海女招牌)或 **济州黑猪五花肉**"
+ },
+ {
+  "i": 70,
+  "poi": "poi:OPS_busan_cruise_return",
+  "field": "whyOnRoute",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"drop-off\" present, but expected \"下车点\" not in target",
+  "snippet": "无中途停靠的直返,可保护全员登船的缓冲。30 分钟可应对从南浦洞返回任一码头的最坏高峰路况;路况轻松时则可更早抵达(下车时间可按您倾向的抵港时间优化)。"
+ },
+ {
+  "i": 71,
+  "poi": "poi:gyeongbokgung_palace",
+  "field": "convenience.parking",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"drop-off\" present, but expected \"下车点\" not in target",
+  "snippet": "有限;光化门设有旅游大巴下客区"
+ },
+ {
+  "i": 72,
+  "poi": "poi:gyeongbokgung_palace",
+  "field": "smartNotes.photo",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"cherry blossom\" present, but expected \"樱花\" not in target",
+  "snippet": "光化门日出/黄金时段。王宫守门将交接仪式10:00 + 14:00。庆会楼倒影于莲花池。香远亭的廊桥在春樱或秋叶中。勤政殿石阶前的韩服身影。"
+ },
+ {
+  "i": 73,
+  "poi": "poi:woljeonggyo_bridge",
+  "field": "description",
+  "type": "number_missing",
+  "sev": "major",
+  "detail": "EN numbers not in target: ['100']",
+  "snippet": "**月精桥(월정교)**是**韩国最大的全木结构桥**——根据**《三国史记》**记载,原桥**建于公元760年(新罗第35代景德王时期)**,为统一新罗时期的覆顶桥。桥在朝鲜王朝时期失存(可能毁于洪水或火灾)。**1984–1986年**"
+ },
+ {
+  "i": 74,
+  "poi": "poi:woljeonggyo_bridge",
+  "field": "highlights[5]",
+  "type": "number_missing",
+  "sev": "major",
+  "detail": "EN numbers not in target: ['100']",
+  "snippet": "**\"2025–2026韩国百大旅游胜地\"** —— 文化体育观光部"
+ },
+ {
+  "i": 75,
+  "poi": "poi:OPS_busan_cruise_pickup",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"day tour\" present, but expected \"一日游\" not in target",
+  "snippet": "行程从**釜山港国际邮轮码头到达大厅(影岛区东三洞)**(大型邮轮停靠处)开始,中型邮轮与轮渡则于**忠壮大路206号(草梁洞)的釜山港国际旅客码头**接送。釜山港国际旅客码头是**亚洲第二大旅客码头**,仅次于上海(于**2015年8月3"
+ },
+ {
+  "i": 76,
+  "poi": "poi:OPS_busan_cruise_pickup",
+  "field": "highlights[2]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"busan\" present, but expected \"釜山\" not in target",
+  "snippet": "导游手持\"AtoC Korea — Busan Day Tour\"姓名牌"
+ },
+ {
+  "i": 77,
+  "poi": "poi:OPS_busan_cruise_pickup",
+  "field": "highlights[2]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"day tour\" present, but expected \"一日游\" not in target",
+  "snippet": "导游手持\"AtoC Korea — Busan Day Tour\"姓名牌"
+ },
+ {
+  "i": 78,
+  "poi": "poi:imjingak_peace_park",
+  "field": "highlights[3]",
+  "type": "number_missing",
+  "sev": "major",
+  "detail": "EN numbers not in target: ['20000']",
+  "snippet": "和平之窗\"风之丘\" —— 两万人草坪上的数千支彩色风车(标志拍摄点)"
+ },
+ {
+  "i": 79,
+  "poi": "poi:jeju_tangerine_picking_experience",
+  "field": "whyOnRoute",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"tangerine picking\" present, but expected \"橘子采摘体验\" not in target",
+  "snippet": "**橘子采摘是当日的招牌冬季农业体验锚点**——本行程之所以叫\"汉拿峰盛期\"也正源于此(12月中至1月中)的盛期窗口。安排为当日**第三站**(汉拿山下山后、午餐前的12:00),正好利用客人徒步后的食欲——园内现摘现吃量大方,许多客人在午"
+ },
+ {
+  "i": 80,
+  "poi": "poi:route_variant_dmz_paju",
+  "field": "visitBasics.closed",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"paju\" present, but expected \"坡州\" not in target",
+  "snippet": "DMZ周一闭园,军事行动期间关闭;奥特莱斯全年开放"
+ },
+ {
+  "i": 81,
+  "poi": "poi:route_variant_dmz_paju",
+  "field": "visitBasics.admission",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"paju\" present, but expected \"坡州\" not in target",
+  "snippet": "DMZ联票约12,000韩元(第三隧道+都拉山展望台+都拉山站);奥特莱斯免费入场。DMZ需护照——司机导游协助。"
+ },
+ {
+  "i": 82,
+  "poi": "poi:route_variant_dmz_paju",
+  "field": "visitBasics.walking",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"paju\" present, but expected \"坡州\" not in target",
+  "snippet": "中等 —— 第三隧道下行斜坡是最吃力的一段(73 m斜坡;单轨电车往返约9,000韩元);奥特莱斯为平坦户外购物场"
+ },
+ {
+  "i": 83,
+  "poi": "poi:route_variant_west",
+  "field": "description",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"camellia\" present, but expected \"茶花\" not in target",
+  "snippet": "最放松、最Instagram友好的路线,锚定在济州西海岸的浅色沙滩、亚热带植物园与茶田。挟才海水浴场提供济州的标志画面——绿松石色浅滩、白色贝壳碎沙、远处的飞扬岛。翰林公园(与海滩相连)是10万平方米的园艺园,园内有挟才与双龙熔岩洞窟,并按"
+ },
+ {
+  "i": 84,
+  "poi": "poi:route_variant_west",
+  "field": "smartNotes.tip",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"hallim park\" present, but expected \"翰林公园\" not in target",
+  "snippet": "若您只能选一日济州天气备弹一致的路线,本路线是首选——翰林洞窟与O'sulloc室内博物馆可填补雨天约3小时的室内时间。建议以涯月日落咖啡馆收尾,早上预订位子。"
+ },
+ {
+  "i": 85,
+  "poi": "poi:route_variant_west",
+  "field": "highlights[1]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"camellia\" present, but expected \"茶花\" not in target",
+  "snippet": "翰林公园:10万平方米亚热带园林,内含挟才/双龙熔岩洞窟,并设山茶/郁金香/莲花的时令花节;成人约₩12,000"
+ },
+ {
+  "i": 86,
+  "poi": "poi:route_variant_custom",
+  "field": "highlights[3]",
+  "type": "glossary_term_missing",
+  "sev": "major",
+  "detail": "EN term \"k-drama filming location\" present, but expected \"韩剧取景地\" not in target",
+  "snippet": "搭配韩剧取景:涉地可支(《All In》)、挟才一带(《花样男子》)、天地渊(《Big》)"
+ }
+]

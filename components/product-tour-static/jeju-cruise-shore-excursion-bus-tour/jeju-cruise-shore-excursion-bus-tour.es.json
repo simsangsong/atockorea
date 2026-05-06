@@ -766,15 +766,15 @@
         {
           "name": "Recogida en Terminal de Cruceros Gangjeong (Seogwipo — sur)",
           "category": "Recogida y logística del crucero",
-          "description": "Su conductor y guía de habla inglesa recibirá al grupo en la **Terminal de Cruceros de Gangjeong**, en la costa sur de Seogwipo. La recogida se programa **30 minutos después del desembarque anunciado**. Gangjeong cuenta con dos muelles para cruceros grandes, por lo que en días con dos barcos puede haber más movimiento; el guía llega con antelación y espera con un cartel con el nombre del grupo. Cuando el barco atraca en Gangjeong, se utiliza la **ruta sur**, ya que ir hasta Seongsan Ilchulbong consumiría demasiado tiempo de escala.",
+          "description": "Su conductor y guía de habla inglesa recibirán a su grupo en la **Terminal de Cruceros del Puerto de Gangjeong** (강정 크루즈항 / 서귀포 크루즈터미널 — UN/LOCODE **KRSPO**), oficialmente el **'Puerto Civil-Militar de Jeju para el Turismo Hermoso'** (제주 민군복합형관광미항), situado en el pueblo de Gangjeong, en la costa sur de Seogwipo. La terminal se inauguró en **febrero de 2016** y las operaciones de pasajeros de crucero comenzaron en **2017**. A diferencia del más pequeño Puerto de Jeju (norte), Gangjeong dispone de **DOS atraques para cruceros** — el **Rompeolas Occidental (atraques 11–12, 420 m, 12–15 m de calado, capacidad para 220.000 toneladas)** y el **Rompeolas Sur (atraques 21–22, 690 m, 17 m de calado, capacidad para 220.000 toneladas)** — capaces de atender **dos grandes cruceros simultáneamente**. La recogida se programa **30 minutos después del despacho oficial de su barco**, con el conductor portando un cartel en inglés y coreano. El vehículo se estaciona en el **aparcamiento exterior con 53 plazas para autobuses** (que se llena rápidamente cuando ambos atraques están ocupados — los guías llegan con antelación los días de doble atraque). A partir del **1 de mayo de 2025**, **Adora Magic City inició su semi-base de operaciones en Gangjeong** con 33 viajes de ida y vuelta previstos hasta finales de 2025 (rutas de 5–6 días Shanghái ↔ Jeju ↔ Japón, con 60–120 pasajeros coreanos por viaje), reforzando el perfil del puerto entre las navieras nacionales e internacionales. La terminal ofrece **mejor accesibilidad para sillas de ruedas que el Puerto de Jeju (norte)** según VisitKorea — interior plano, pasillos rodantes y ascensores en todo el edificio. Si los huéspedes desembarcan en Gangjeong, el **itinerario sur** es obligatorio: el trayecto al norte hasta el Pico Seongsan Ilchulbong supera los **70 minutos en un solo sentido**, lo que consume el día.",
           "highlights": [
-            "**Dos atraques × 220.000 ton** — gestiona 2 cruceros simultáneamente",
-            "Recogida 30 min después de la autorización de desembarque; guía de habla inglesa con cartel con el nombre en la sala de llegadas",
-            "Puerto de **'Complejo Civil-Militar para el Bello Turismo'** — abierto feb 2016",
-            "**Aparcamiento exterior para 53 autocares** — se llena rápido en días de doble barco",
-            "**Mejor accesibilidad en silla de ruedas** que Puerto Jeju norte",
-            "**Adora Magic City semihomeport desde el 1 mayo 2025** — 33 rotaciones previstas",
-            "El itinerario sur es obligatorio desde este puerto — Seongsan está a 70+ min"
+            "**Dos atraques × 220.000 toneladas de capacidad** — atiende 2 cruceros simultáneamente",
+            "Recogida 30 min tras el despacho; guía de habla inglesa con cartel identificativo en la sala de llegadas",
+            "Oficialmente **'Puerto Civil-Militar para el Turismo Hermoso'** — inaugurado en febrero de 2016",
+            "**Aparcamiento exterior de 53 plazas para autobuses** — se llena pronto los días de doble atraque; los guías llegan con antelación",
+            "Mejor **accesibilidad para sillas de ruedas** que el Puerto de Jeju (norte) — interior plano, ascensores",
+            "**Adora Magic City con semi-base desde el 1 de mayo de 2025** — 33 viajes de ida y vuelta previstos",
+            "El itinerario sur es obligatorio desde este puerto — Seongsan está a más de 70 min en un solo sentido"
           ],
           "_poi_meta": {
             "poi_key": "gangjeong_cruise_port",
@@ -791,7 +791,7 @@
           "number": 1,
           "time": "Llegada del crucero + 30 min",
           "duration": "30 min",
-          "whyOnRoute": "**Gangjeong es el único punto de origen viable para la ruta sur** — su capacidad de doble amarre de 220.000 ton lo convierte en el puerto de cruceros para buques más grandes."
+          "whyOnRoute": "**Recogida en grupo pequeño en Gangjeong** — el puerto de doble atraque y 220.000 toneladas atiende a cruceros de mayor tamaño (semi-base de Adora Magic City desde el 1 de mayo de 2025; Costa, MSC, Royal Caribbean), y el **minibús de 8–15 pasajeros** del producto en grupo pequeño no tiene restricción de aparcamiento en la zona de 53 plazas, incluso los días de doble atraque cuando el aparcamiento se llena con vehículos de tours en autocar. La bienvenida personalizada incluye confirmar las preferencias del día (duración en el humedal Hallasan 1100, ritmo del sendero Cheonjiyeon, prioridades gastronómicas en el Mercado Olle). La **mejor accesibilidad para sillas de ruedas** de Gangjeong frente al Puerto de Jeju (norte) lo convierte en la ruta sur preferida para grupos pequeños con consideraciones de movilidad."
         },
         {
           "number": 2,
@@ -875,14 +875,14 @@
         {
           "name": "Almuerzo cerca del Mercado Olle Maeil (Seogwipo)",
           "category": "Almuerzo",
-          "description": "**Parada de almuerzo en Seogwipo** en un restaurante verificado por el guía dentro o adyacente al Mercado Maeil Olle de Seogwipo.",
+          "description": "**Almuerzo en Seogwipo** en un restaurante con servicio de mesa validado por el guía, **dentro o junto al Mercado Olle Maeil de Seogwipo**, aprovechando la densidad gastronómica del mercado antes de la visita vespertina a la Cascada Cheonjiyeon (5 min a pie). **Dos opciones típicas** según las preferencias del grupo: **(1) Sashimi de pez sable (galchi) o galchi a la parrilla** — captura diaria de la costa este vendida en los puestos del mercado y con preparaciones de mesa dentro de la galería; o **(2) Barbacoa de cerdo negro** (제주 흑돼지) — el ingrediente distintivo de Jeju (cerdo negro autóctono, Monumento Natural desde 2015). **Bibimbap** con verduras de temporada de Jeju y **Mom-guk** (sopa de algas de Jeju) son las opciones estándar para vegetarianos. La duración del almuerzo es de **~60 minutos**, ajustada al ritmo de los cruceristas. Bebidas: té de cebada (gratis), **cerveza Jeju** (~₩6.000), **soju Hallasan** (~₩5.000) o **omegisul** (licor de mijo y arroz, receta tradicional de Seongeup, vendido en los puestos autorizados del mercado). Todos los locales de la rotación aceptan **principales tarjetas + KRW en efectivo**; cartas con foto en inglés/chino estándar. El almuerzo **NO está incluido** en el precio del crucero — coste habitual **₩15.000–25.000/pax**; mejora con almuerzo incluido disponible al reservar. Tras la comida, el flujo natural es **5 min a pie → entrada de la Cascada Cheonjiyeon → recorrido suave de 1 km por el cañón**, lo que convierte esta parada en la transición almuerzo-atracción más eficiente del catálogo para excursiones de crucero.",
           "highlights": [
-            "Restaurante verificado dentro / adyacente al **Mercado Olle Maeil**",
-            "**Sashimi de galchi**, **BBQ de cerdo negro**, o Bibimbap vegetariano + Mom-guk",
-            "~60 min — encaja en el itinerario de crucero",
-            "**5 min a pie al sendero de Cheonjiyeon**",
-            "Degustaciones de **Omegisul** disponibles",
-            "**Almuerzo NO incluido** — ₩15.000-25.000 por persona"
+            "Mesa con servicio dentro o junto al **Mercado Olle Maeil**, validada por el guía",
+            "**Sashimi de galchi**, **barbacoa de cerdo negro** o opciones vegetarianas Bibimbap + Mom-guk",
+            "~60 min de duración — encaja con el ritmo de los cruceristas",
+            "**5 min a pie hasta la entrada de la Cascada Cheonjiyeon** — flujo almuerzo-atracción más eficiente",
+            "Cata de **omegisul** (licor de mijo y arroz de Seongeup) disponible",
+            "**Almuerzo NO incluido** — ₩15.000–25.000/pax por cuenta del huésped"
           ],
           "_poi_meta": {
             "poi_key": "OPS_lunch_seogwipo_olle",
@@ -897,22 +897,22 @@
           "number": 4,
           "time": "≈ 12:15",
           "duration": "60 min",
-          "whyOnRoute": "**El almuerzo en el Mercado Maeil Olle de Seogwipo** es la ventaja de eficiencia de la ruta sur — el mercado está a **5 minutos a pie del sendero de la Cascada Cheonjiyeon**."
+          "whyOnRoute": "**Almuerzo en grupo reducido en el Mercado Olle Maeil** — la ventana de 75 min permite a los huéspedes **recorrer los puestos antes de sentarse a comer** (la práctica habitual de los autobuses turísticos invierte este orden), con el guía ayudando a degustar hallabong / cheonhyehyang, probar el licor omegisul y hacer cola en la Panadería Jeseong para los bollos de pulpo, mientras compran para llevar. El guía permanece con el grupo durante la comida, asesorando sobre sashimi de galchi frente a galchi a la parrilla, recomendando qué puesto de cerdo negro tiene el corte más fresco del día y traduciendo a vendedores familiares que no hablan inglés. Después, **5 min a pie hasta la entrada de la Cascada Cheonjiyeon** — el formato de grupo reducido convierte ese desplazamiento en un paseo sin prisa, no en un movimiento contado por el jefe de grupo."
         },
         {
           "name": "Cascada Cheonjiyeon (cascada del casco antiguo de Seogwipo)",
           "category": "Atracción natural y Monumento Natural",
-          "description": "**Cascada Cheonjiyeon** es la más cercana al puerto de las dos famosas cascadas de Seogwipo.",
+          "description": "**Las cascadas Cheonjiyeon** (천지연 폭포 — literalmente 'cascadas donde se encuentran cielo y tierra') son las más cercanas al puerto de las dos cascadas célebres de Seogwipo y **NO deben confundirse con las cascadas Cheonjeyeon** (천제연 — las cataratas de tres niveles del 'Estanque del Emperador Celestial' en Jungmun, a unos 15 minutos al oeste). El salto de un solo nivel se precipita **22 m de alto y 12 m de ancho hacia una poza esmeralda de 20 m de profundidad** al final de un **suave sendero ribereño de 1 km** (~15 min en sentido único, pavimentado y apto para cochecitos) que sigue una garganta subtropical densamente poblada de **plantas raras**: el **árbol de la libélula** (Monumento Natural n.º 163), helechos **Crepidomanes makinoi** aferrados a las paredes basálticas y decenas de especies endémicas protegidas como **Monumento Natural n.º 379** (cataratas + hábitat circundante en su conjunto). La poza inferior es el hábitat protegido de la **anguila Mutae** (마부태 / 무태 — *Anguilla marmorata*, la anguila moteada), a su vez **Monumento Natural n.º 27** — una especie nocturna cuyo movimiento bajo la iluminación nocturna es una de las escenas distintivas de Cheonjiyeon. La entrada cuesta **₩2.000 adultos / ₩1.000 niños** (una de las paradas naturales más asequibles de Jeju); horario **09:00–22:00 (último acceso 21:30)** — el **programa de iluminación nocturna 19:00–22:00** es exclusivo entre las cascadas de Jeju y convierte las paredes de la garganta y el salto en un espectáculo de luz jade-esmeralda, a menudo combinado con escalas de crucero con noche a bordo. La cabecera del sendero está **a 5 minutos a pie del Mercado Olle Maeil**, lo que convierte ambas paradas en una pareja natural en excursiones de un día desde el puerto de Gangjeong. En días claros, la **isla Munseom** (a 3 km mar adentro — primer parque marino de Corea, designado en 1994) es visible desde el mirador de las cascadas, y los acantilados basálticos de la garganta exhiben la misma estratigrafía de coladas de lava de la ladera del Hallasan que los acantilados de Daepo Jusangjeolli.",
           "highlights": [
-            "**Cascada de 22 m × 12 m → poza esmeralda de 20 m de profundidad** — la cascada representativa de Seogwipo",
-            "**NO es Cheonjeyeon** — diferentes cascadas, diferente desfiladero",
-            "**Monumento Natural N.° 379**",
-            "Hábitat de la **anguila mutae (Monumento Natural N.° 27)**",
-            "**Árbol de la libélula (Monumento Natural N.° 163)** + helechos Crepidomanes",
-            "**1 km de sendero pavimentado (~15 min)** — apto para cochecitos/silla de ruedas",
-            "**₩2.000 / ₩1.000 de entrada** (09:00-22:00; última entrada 21:30)",
-            "**Iluminación nocturna 19:00-22:00** — única entre las cascadas de Jeju",
-            "**5 min a pie del Mercado Olle Maeil**"
+            "**Salto de un solo nivel de 22 m × 12 m a una poza esmeralda de 20 m** — la cascada emblema de Seogwipo",
+            "**NO es Cheonjeyeon (천제연)** — cascadas distintas, otra garganta, ~15 min al oeste en Jungmun",
+            "**Monumento Natural n.º 379** (cascadas + hábitat de flora endémica en conjunto)",
+            "Hábitat de la **anguila Mutae (Monumento Natural n.º 27)** — anguila moteada nocturna bajo iluminación",
+            "**Árbol de la libélula (Monumento Natural n.º 163)** + helechos Crepidomanes makinoi en la garganta",
+            "Sendero pavimentado suave de **1 km (~15 min)** — apto para cochecitos y sillas de ruedas",
+            "**Entrada ₩2.000 / ₩1.000** (09:00–22:00; último acceso 21:30)",
+            "**Iluminación nocturna 19:00–22:00** — exclusiva entre las cascadas de Jeju",
+            "**A 5 min a pie del Mercado Olle Maeil** — pareja natural para días de crucero por la ruta sur"
           ],
           "_poi_meta": {
             "poi_key": "cheonjiyeon_falls",
@@ -929,22 +929,22 @@
           "number": 5,
           "time": "≈ 13:30",
           "duration": "60 min",
-          "whyOnRoute": "**Las Cascadas Cheonjiyeon** rematan la ruta sur con un **sendero fluvial de 1 km** (pavimentado, apto para cochecitos) y una cascada de 22 m."
+          "whyOnRoute": "**Cheonjiyeon con la profundidad de un grupo reducido** — la ventana de 75 minutos (frente a los 60 del bus) cubre todo el **sendero ribereño de 1 km a ritmo de observación**, prestando atención al **árbol de la libélula (Monumento Natural n.º 163)**, los helechos **Crepidomanes makinoi** sobre el basalto y (al anochecer en cruceros con noche a bordo) el hábitat de la **anguila Mutae (Monumento Natural n.º 27)** bajo iluminación nocturna. Tres Monumentos Naturales se acumulan en un único enclave — y la narración del grupo reducido permite al guía presentarlos como un **relato estructurado del conjunto faunístico endémico**, no como menciones sueltas por megafonía. **Importante**: estas son **Cheonjiyeon (천지연)**, NO **Cheonjeyeon (천제연 — las de tres niveles en Jungmun)** — los nombres confunden a quienes vienen por primera vez, y el formato de grupo reducido da al guía tiempo explícito para hacer la distinción con la estratigrafía de la garganta a la vista."
         },
         {
           "name": "Mercado Maeil Olle (Mercado Maeil Olle de Seogwipo)",
           "category": "Mercado tradicional y gastronomía",
-          "description": "**Seogwipo Maeil Olle Market** es el **mayor mercado tradicional del sur de Jeju**.",
+          "description": "**El Mercado Seogwipo Maeil Olle** (서귀포 매일올레시장) es **el mayor mercado tradicional del sur de Jeju** y el ancla gastronómica y de compras más cercana al puerto de cruceros de Gangjeong (~10 min en coche). Establecido a **principios de la década de 1960**, hoy ocupa una **galería cubierta de 620 m con ~200 tiendas y ~140 puestos**, todo bajo un techo translúcido retráctil que mantiene a los compradores secos durante los frecuentes chubascos de Jeju. El nombre **'Maeil Olle'** combina *Maeil* ('todos los días' — abierto a diario, sin cierre fijo) con *Olle* (la famosa red de senderos de Jeju — el Sendero 6 pasa cerca de la entrada del mercado y el Sendero 7 conecta hacia el sur con la Cascada Cheonjiyeon y el paseo marítimo de Seogwipo). Productos estrella: los **panecillos de pulpo de la Pastelería Jeseong** (de fama local, con colas a partir de las 10:00); los **cítricos hallabong + cheonhyehyang** en invierno (diciembre–marzo, los célebres híbridos de mandarina de Jeju); el **sashimi fresco de pez sable (galchi)**; los **pinchos de cerdo negro**; **Mom-guk** (sopa tradicional de algas de Jeju); y **Omegisul** (licor de mijo y arroz destilado en Seongeup, vendido aquí en botellas para cata). El horario aproximado es de **07:00 a 21:00** (variable por puesto), y muchos vendedores antiguos aceptan solo efectivo, aunque los puestos modernos con TPV y devolución de impuestos se han multiplicado desde 2018. El mercado está a **5 minutos a pie del inicio del sendero de la Cascada Cheonjiyeon**, lo que convierte la combinación Cheonjiyeon + Olle en un binomio natural de almuerzo y paseo — los guías suelen programar la comida (mariscos de Jeju o cerdo negro) en uno de los puestos con mesas antes de la visita a la cascada, aprovechando la densidad gastronómica antes de bajar la comida en el barranco.",
           "highlights": [
-            "**El mayor mercado tradicional del sur de Jeju** — 620 m de arcada, ~200 tiendas",
-            "Establecido a **principios de los 60** — más de 60 años de tradición",
-            "Los **Cursos 6 y 7 del Olle Trail** pasan cerca de la entrada",
-            "**Bollos de pulpo de la Panadería Jeseong** — favorito local de culto",
-            "**Hallabong + mandarina cheonhyehyang** de temporada (dic-mar)",
-            "Sashimi de galchi, brochetas de cerdo negro, Mom-guk (sopa de algas de Jeju)",
-            "Degustaciones de **Omegisul** (elaborado en Seongeup)",
-            "**Techo retráctil translúcido** — arcada cubierta, compras a cualquier tiempo",
-            "**5 min a pie al sendero de Cheonjiyeon**"
+            "**Mayor mercado tradicional del sur de Jeju** — galería de 620 m, ~200 tiendas, ~140 puestos",
+            "Establecido a **principios de los años 60** — más de 60 años de tradición ininterrumpida",
+            "**Senderos Olle 6 y 7** pasan cerca de la entrada del mercado",
+            "**Panecillos de pulpo de la Pastelería Jeseong** — culto local, colas desde las 10:00",
+            "**Cítricos hallabong + cheonhyehyang** en temporada (dic–mar) — híbridos de mandarina de Jeju",
+            "Sashimi de pez sable (galchi), pinchos de cerdo negro, Mom-guk (sopa de algas de Jeju)",
+            "**Catas de Omegisul**, licor de mijo y arroz (destilado en Seongeup)",
+            "**Techo translúcido retráctil** — galería cubierta, compras a prueba de inclemencias",
+            "**5 min a pie del inicio del sendero de la Cascada Cheonjiyeon** — binomio natural de almuerzo y paseo"
           ],
           "_poi_meta": {
             "poi_key": "olle_maeil_market",
@@ -961,19 +961,20 @@
           "number": 6,
           "time": "≈ 14:45",
           "duration": "45 min",
-          "whyOnRoute": "**Regreso final al Mercado Olle Maeil** para compras de último momento — cajas de mandarina hallabong/cheonhyehyang (dic-mar), productos de cerdo negro."
+          "whyOnRoute": "**Paso de regreso en grupo pequeño por el Mercado Olle Maeil** — la ventana de 60 min (frente a 45 en autobús) permite a los huéspedes hacer compras de último momento bien meditadas: cajas de hallabong premium para regalo, botellas de Omegisul de presentación, los famosos **panecillos de pulpo de la Pastelería Jeseong** (las colas pueden superar los 30 min — el grupo pequeño puede guardar el lugar mientras otros pasean) y recuerdos elegibles para devolución de impuestos. La **galería cubierta de 620 m con ~140 puestos** ofrece densidad gastronómica suficiente para que el guía recomiende puestos concretos por producto (cheonhyehyang en el Vendedor X; mezcla para mom-guk en el Vendedor Y), aprovechando una profundidad de conocimiento local que el formato de autobús no puede igualar. **La mayoría de los puestos aceptan Visa/Mastercard** desde 2018, algo importante para cruceristas con KRW agotados."
         },
         {
           "name": "Regreso al Terminal de Cruceros Gangjeong (Seogwipo — sur)",
           "category": "Regreso al crucero y subida a bordo",
-          "description": "Trayecto de vuelta al **Terminal de Cruceros del Puerto Gangjeong** en el pueblo de Gangjeong, Seogwipo.",
+          "description": "Su conductor y guía de habla inglesa recibirán a su grupo en la **Terminal de Cruceros del Puerto de Gangjeong** (강정 크루즈항 / 서귀포 크루즈터미널 — UN/LOCODE **KRSPO**), oficialmente el **'Puerto Civil-Militar de Jeju para el Turismo Hermoso'** (제주 민군복합형관광미항), situado en el pueblo de Gangjeong, en la costa sur de Seogwipo. La terminal se inauguró en **febrero de 2016** y las operaciones de pasajeros de crucero comenzaron en **2017**. A diferencia del más pequeño Puerto de Jeju (norte), Gangjeong dispone de **DOS atraques para cruceros** — el **Rompeolas Occidental (atraques 11–12, 420 m, 12–15 m de calado, capacidad para 220.000 toneladas)** y el **Rompeolas Sur (atraques 21–22, 690 m, 17 m de calado, capacidad para 220.000 toneladas)** — capaces de atender **dos grandes cruceros simultáneamente**. La recogida se programa **30 minutos después del despacho oficial de su barco**, con el conductor portando un cartel en inglés y coreano. El vehículo se estaciona en el **aparcamiento exterior con 53 plazas para autobuses** (que se llena rápidamente cuando ambos atraques están ocupados — los guías llegan con antelación los días de doble atraque). A partir del **1 de mayo de 2025**, **Adora Magic City inició su semi-base de operaciones en Gangjeong** con 33 viajes de ida y vuelta previstos hasta finales de 2025 (rutas de 5–6 días Shanghái ↔ Jeju ↔ Japón, con 60–120 pasajeros coreanos por viaje), reforzando el perfil del puerto entre las navieras nacionales e internacionales. La terminal ofrece **mejor accesibilidad para sillas de ruedas que el Puerto de Jeju (norte)** según VisitKorea — interior plano, pasillos rodantes y ascensores en todo el edificio. Si los huéspedes desembarcan en Gangjeong, el **itinerario sur** es obligatorio: el trayecto al norte hasta el Pico Seongsan Ilchulbong supera los **70 minutos en un solo sentido**, lo que consume el día.",
           "highlights": [
-            "**Bajada 60+ min antes del embarque** — estándar del sector de cruceros",
-            "Desde Mercado Olle/zona Cheonjiyeon: ~10-15 min en coche",
-            "Desde Hallasan 1100: ~35 min de descenso por la Ruta 1100",
-            "Asistencia con equipaje en la entrada del terminal",
-            "**Bus Limusina 800/800-1** Gangjeong → Aeropuerto de Jeju",
-            "Centro de información turística, cambio de divisas, contador de devolución de impuestos"
+            "**Dos atraques × 220.000 toneladas de capacidad** — atiende 2 cruceros simultáneamente",
+            "Recogida 30 min tras el despacho; guía de habla inglesa con cartel identificativo en la sala de llegadas",
+            "Oficialmente **'Puerto Civil-Militar para el Turismo Hermoso'** — inaugurado en febrero de 2016",
+            "**Aparcamiento exterior de 53 plazas para autobuses** — se llena pronto los días de doble atraque; los guías llegan con antelación",
+            "Mejor **accesibilidad para sillas de ruedas** que el Puerto de Jeju (norte) — interior plano, ascensores",
+            "**Adora Magic City con semi-base desde el 1 de mayo de 2025** — 33 viajes de ida y vuelta previstos",
+            "El itinerario sur es obligatorio desde este puerto — Seongsan está a más de 70 min en un solo sentido"
           ],
           "_poi_meta": {
             "poi_key": "gangjeong_cruise_port",
@@ -990,7 +991,7 @@
           "number": 7,
           "time": "≈ 15:45 → llega al puerto ≈ 16:00",
           "duration": "15 min de trayecto + 60 min de margen",
-          "whyOnRoute": "**El regreso de crucero más corto del catálogo** — del Mercado Olle al puerto Gangjeong son **~15 minutos** en autocar."
+          "whyOnRoute": "**Recogida en grupo pequeño en Gangjeong** — el puerto de doble atraque y 220.000 toneladas atiende a cruceros de mayor tamaño (semi-base de Adora Magic City desde el 1 de mayo de 2025; Costa, MSC, Royal Caribbean), y el **minibús de 8–15 pasajeros** del producto en grupo pequeño no tiene restricción de aparcamiento en la zona de 53 plazas, incluso los días de doble atraque cuando el aparcamiento se llena con vehículos de tours en autocar. La bienvenida personalizada incluye confirmar las preferencias del día (duración en el humedal Hallasan 1100, ritmo del sendero Cheonjiyeon, prioridades gastronómicas en el Mercado Olle). La **mejor accesibilidad para sillas de ruedas** de Gangjeong frente al Puerto de Jeju (norte) lo convierte en la ruta sur preferida para grupos pequeños con consideraciones de movilidad."
         }
       ],
       "routeFlowStops": [

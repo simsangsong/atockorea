@@ -1,0 +1,723 @@
+{
+  "items": [
+    {
+      "poi_key": "poi:osulloc_tea_museum",
+      "field": "smartNotes.photo",
+      "zh_snippet": "茶園映襯茶杯造型博物館建築；戶外座位區；櫻花在交替季節綻放",
+      "zhtw_snippet": "茶園搭配茶杯造型博物館建築；戶外座位區；櫻花於淡旺季交界期盛開",
+      "verdict": "DRIFT_ZH",
+      "detail": "zh '在交替季節綻放' is awkward Mandarin and ambiguous (which seasons are 'alternating'?). EN says 'cherry blossoms in shoulder seasons' — zh-TW '淡旺季交界期盛開' captures this accurately. zh side is the awkward translator pick.",
+      "suggested_zh_fix": "茶园衬托茶杯造型博物馆建筑；户外座位区；樱花在淡旺季交替期盛开",
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:osulloc_tea_museum",
+      "field": "visitBasics.walking",
+      "zh_snippet": "輕鬆——博物館地面平坦，茶園路徑適合嬰兒車通行；步道維護良好",
+      "zhtw_snippet": "輕鬆 — 博物館平坦、茶園適合嬰兒車；步道維護良好",
+      "verdict": "OK_REGIONAL",
+      "detail": "Both correct; zh slightly more verbose. No content drift. The 26% length ratio is from punctuation/whitespace, not omission.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:hyeopjae_beach",
+      "field": "highlights[5]",
+      "zh_snippet": "**松林 (Songlim) 林蔭帶** + 免費露營地",
+      "zhtw_snippet": "**松林背景** + 免費露營場",
+      "verdict": "DRIFT_ZHTW",
+      "detail": "zh-TW dropped the proper noun '松林 (Songlim)' that identifies the named pine grove and replaced 'shade belt' with vague '背景'. zh is closer to EN intent.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "**松林（Songlim）林蔭帶** + 免費露營場"
+    },
+    {
+      "poi_key": "poi:OPS_return_incheon",
+      "field": "highlights[2]",
+      "zh_snippet": "碼頭門口下車",
+      "zhtw_snippet": "於碼頭入口路邊放客",
+      "verdict": "OK_REGIONAL",
+      "detail": "zh-TW '放客' is Taiwan transport idiom for drop-off/disembark at curb; zh '下車' is Mainland norm. Both correct for their audience.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:suwon_nammun_market",
+      "field": "highlights[4]",
+      "zh_snippet": "龍城通雞 (1972) ——被引用最多的通雞店",
+      "zhtw_snippet": "Yong-seong통닭（1972）— 最常被點名的통닭名店",
+      "verdict": "DRIFT_ZHTW",
+      "detail": "zh-TW left raw Korean Hangul (통닭) and English-romanized 'Yong-seong' inside Chinese sentence — readability failure for Taiwan readers. zh translated to Chinese characters cleanly. EN source presumably has 'Yong-seong tongdak'; both should give Hanja/Chinese equivalent with romanization in parens, not raw Hangul.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "龍城通雞（Yong-seong, 1972）——最常被點名的通雞名店"
+    },
+    {
+      "poi_key": "poi:cheomseongdae",
+      "field": "convenience.parking",
+      "zh_snippet": "瞻星臺收費停車場 + 大陵苑正門收費停車場 (各自獨立)",
+      "zhtw_snippet": "瞻星台與大陵苑各有付費停車場（分開）",
+      "verdict": "OK_REGIONAL",
+      "detail": "Both correct. Glossary has '瞻星台' for both zh and zh-TW (note: 台 not 臺 in glossary), so zh '瞻星臺' is technically a glossary deviation but consistent with traditional zh orthography on the zh side after CDN s2t pipeline.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:herb_island",
+      "field": "smartNotes.facilities",
+      "zh_snippet": "香草烘焙坊 (香蒜麪包)、香草料理餐廳、香草咖啡廳、紀念品 / 護膚品店、療愈中心SPA、手作工坊、香草博物館。",
+      "zhtw_snippet": "Herb Bakery（香蒜麵包）、香草料理餐廳、香草咖啡廳、紀念品／保養品店、Healing Center spa、手作工作坊、香草博物館。",
+      "verdict": "DRIFT_ZHTW",
+      "detail": "zh-TW left English brand-style names ('Herb Bakery', 'Healing Center spa') untranslated where zh translated them. EN treats them as generic facility descriptions, not branded names; zh's translation is more reader-friendly. Mainland readers also get '護膚品' vs Taiwan '保養品' — that part is OK_REGIONAL.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "香草烘焙坊（香蒜麵包）、香草料理餐廳、香草咖啡廳、紀念品／保養品店、療癒中心 SPA、手作工作坊、香草博物館。"
+    },
+    {
+      "poi_key": "poi:herb_island",
+      "field": "convenience.restroom",
+      "zh_snippet": "多處洗手間，標識清晰",
+      "zhtw_snippet": "多處，標示清楚",
+      "verdict": "DRIFT_ZHTW",
+      "detail": "zh-TW dropped the noun '洗手間' — readers must infer subject. Minor but mild omission. zh is more complete.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "多處洗手間，標示清楚"
+    },
+    {
+      "poi_key": "poi:haedong_yonggungsa",
+      "field": "highlights[5]",
+      "zh_snippet": "**海水觀音大佛** (海上慈悲菩薩) ——拍攝率最高的崖上景觀",
+      "zhtw_snippet": "**海水觀音大佛** — 最熱門的崖頂取景",
+      "verdict": "LENGTH_OMISSION",
+      "detail": "EN has 'Haesu Gwaneum Daebul (Sea Goddess of Mercy) — most photographed cliff view'. zh-TW dropped the gloss '(Sea Goddess of Mercy)' / '(海上慈悲菩薩)'. zh preserved it. Minor information loss on zh-TW side.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "**海水觀音大佛**（海上慈悲菩薩）——最熱門的崖頂取景"
+    },
+    {
+      "poi_key": "poi:haedong_yonggungsa",
+      "field": "highlights[2]",
+      "zh_snippet": "**1974年由正巖主持依乘龍觀音夢境更名爲海東龍宮寺**",
+      "zhtw_snippet": "**1974年更名為海東龍宮寺**，紀念淨庵和尚的觀音乘龍異象",
+      "verdict": "FACTUAL_DIVERGENCE",
+      "detail": "EN says 'Renamed Haedong Yonggungsa in 1974 after Monk Jeong-am's dragon-Goddess vision'. The monk's name in EN is 'Jeong-am' (정암). zh used '正巖' (Jeongam reading) and zh-TW used '淨庵' (Jeong-am with different Hanja). Korean monk name 정암 typically renders to Hanja as 淨巖/正巖 — both could be the same person; without the original Hanja in EN this is ambiguous. Both translators guessed; zh-TW '淨庵' is the more common Buddhist monastic-name pattern. Flag for fact-check against original Korean source.",
+      "suggested_zh_fix": "**1974年由淨庵和尚依乘龍觀音夢境更名為海東龍宮寺**",
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "name:lunch (jeju local restaurant)",
+      "field": "highlights[2]",
+      "zh_snippet": "**黑豬 (Heuk-doeji)** 全年皆宜——文化遺產資料第5號 (2015年)",
+      "zhtw_snippet": "**黑豬肉**全年 — 2015年文化遺產資料第5號",
+      "verdict": "DRIFT_ZHTW",
+      "detail": "zh-TW dropped the romanization 'Heuk-doeji' that the brand-aware glossary expects ('Jeju black pork' / 濟州黑豬肉). Romanization preserves searchability. zh preserved it.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "**黑豬肉（Heuk-doeji）** 全年——2015年文化遺產資料第5號"
+    },
+    {
+      "poi_key": "name:drop-off (5 points across jeju city)",
+      "field": "highlights[4]",
+      "zh_snippet": "大巴全程 Wi-Fi",
+      "zhtw_snippet": "遊覽車全程提供 Wi-Fi",
+      "verdict": "OK_REGIONAL",
+      "detail": "zh '大巴' (Mainland) vs zh-TW '遊覽車' (Taiwan) — legitimate regional vehicle terminology. Both correct.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:hallim_park",
+      "field": "convenience.restroom",
+      "zh_snippet": "園區內分佈多間洗手間",
+      "zhtw_snippet": "公園內多處設有",
+      "verdict": "DRIFT_ZHTW",
+      "detail": "zh-TW dropped subject noun (洗手間). Same pattern as herb_island.convenience.restroom. zh-TW translator habitually elides the noun.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "公園內多處設有洗手間"
+    },
+    {
+      "poi_key": "poi:hueree_natural_park",
+      "field": "convenience.restroom",
+      "zh_snippet": "園區內分佈多間洗手間",
+      "zhtw_snippet": "公園內多處設有",
+      "verdict": "DRIFT_ZHTW",
+      "detail": "Same systemic zh-TW elision of subject noun.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "公園內多處設有洗手間"
+    },
+    {
+      "poi_key": "poi:hallasan_eorimok_trail",
+      "field": "convenience.restroom",
+      "zh_snippet": "遊客中心設有洗手間",
+      "zhtw_snippet": "遊客中心設有",
+      "verdict": "DRIFT_ZHTW",
+      "detail": "Same pattern: zh-TW drops the noun '洗手間'. Reader has to infer.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "遊客中心設有洗手間"
+    },
+    {
+      "poi_key": "poi:jeju_stone_park",
+      "field": "visitBasics.closed",
+      "zh_snippet": "週一",
+      "zhtw_snippet": "週一公休",
+      "verdict": "DRIFT_ZH",
+      "detail": "zh truncates to bare '週一' (just 'Monday') — incomplete sentence. zh-TW '週一公休' is a complete phrase. zh side under-translated.",
+      "suggested_zh_fix": "週一闭馆",
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:jeju_stone_park",
+      "field": "convenience.restroom",
+      "zh_snippet": "入口與園內設施處均設洗手間",
+      "zhtw_snippet": "入口與設施內均有",
+      "verdict": "DRIFT_ZHTW",
+      "detail": "zh-TW elided '洗手間'. Same systemic issue.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "入口與設施內均設有洗手間"
+    },
+    {
+      "poi_key": "poi:jeju_stone_park",
+      "field": "convenience.parking",
+      "zh_snippet": "園區設有停車場",
+      "zhtw_snippet": "提供停車",
+      "verdict": "DRIFT_ZHTW",
+      "detail": "zh-TW '提供停車' is verb-only, vague — does not say WHERE. zh '園區設有停車場' is concrete. Same elision pattern.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "園區內設有停車場"
+    },
+    {
+      "poi_key": "poi:ilchulland_themed_gardens",
+      "field": "highlights[1]",
+      "zh_snippet": "**'응태석'(Eung Tae-seok)** = 傳說中的'下蛋之石'——求子求女民俗",
+      "zhtw_snippet": "**「應太石(응태석)」**=傳說中「會生蛋的石頭」——求子民俗",
+      "verdict": "DRIFT_ZH",
+      "detail": "zh kept Hangul + romanization but skipped the Hanja. zh-TW provided '應太石' (likely Hanja) + Hangul. Wait: 응태석 conventionally = 應胎石 ('answering-pregnancy stone') not 應太石. zh-TW Hanja '應太石' looks like a guess. zh '求子求女' is more accurate (the legend covers both genders) than zh-TW's '求子' alone — possible information loss on zh-TW.",
+      "suggested_zh_fix": "**應胎石（응태석/Eung Tae-seok）**=傳說中的'下蛋之石'——求子求女民俗",
+      "suggested_zhtw_fix": "**「應胎石（응태석）」**=傳說中「會生蛋的石頭」——求子求女民俗"
+    },
+    {
+      "poi_key": "poi:OPS_lunch",
+      "field": "highlights[2]",
+      "zh_snippet": "招牌選項:**galchi-jorim、heuk-dwaeji bulgogi、Mom-guk(地方菜)、拌飯**",
+      "zhtw_snippet": "招牌選項：**白帶魚燉煮、黑豬肉烤肉、海藻湯（地方特色）、石鍋拌飯**",
+      "verdict": "DRIFT_ZH",
+      "detail": "zh kept entirely-romanized food names ('galchi-jorim, heuk-dwaeji bulgogi, Mom-guk') without Chinese gloss — Mainland readers cannot parse these. zh-TW translated cleanly. Best practice would be both: Chinese name + romanization. zh side is significantly worse.",
+      "suggested_zh_fix": "招牌選項：**白帶魚燉煮（galchi-jorim）、黑豬肉烤肉（heuk-dwaeji bulgogi）、莫子湯（Mom-guk，地方菜）、拌飯**",
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:hamdeok_seoubong_beach",
+      "field": "visitBasics.walking",
+      "zh_snippet": "輕鬆——沙灘平整;犀牛峯徒步爲中等(有臺階)",
+      "zhtw_snippet": "難度輕鬆——海灘為平坦沙地；犀牛峰登山難度中等（含階梯）",
+      "verdict": "OK_REGIONAL",
+      "detail": "Both correct, zh-TW more verbose. No content drift.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:sokcho_tourist_fishery_market",
+      "field": "highlights[3]",
+      "zh_snippet": "Abai sundae——朝鮮咸鏡道血腸,源自朝鮮戰爭難民傳承",
+      "zhtw_snippet": "阿爸血腸——北韓咸鏡道血腸，韓戰難民飲食遺產",
+      "verdict": "OK_REGIONAL",
+      "detail": "Mainland uses '朝鮮' to refer to North Korea, '朝鮮戰爭' for the Korean War. Taiwan uses '北韓' and '韓戰'. Both regional norms. zh kept the romanization 'Abai sundae'; zh-TW translated to '阿爸血腸'. Both acceptable, but zh-TW gives readable Chinese.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:gwangjang_market",
+      "field": "smartNotes.photo",
+      "zh_snippet": "石磨與豬油鍋上煎制的 bindaetteok——經典畫面。Mayak gimbap 現卷櫃檯。Cham Sundae 18 號 yukhoe 拼盤。懸掛的乾魚",
+      "zhtw_snippet": "綠豆煎餅在石磨上現煎（豬油鍋）——經典畫面。藥膏紫菜飯捲的捲製檯。18 號參血腸的生牛肉膾盤。懸掛魚乾／海帶展示。覆蓋式巷弄的俯瞰視角。",
+      "verdict": "LENGTH_OMISSION",
+      "detail": "EN has 5 sentences: bindaetteok, mayak gimbap, yukhoe, hanging dried fish/seaweed, covered-alley overhead view. zh side omitted '海帶' and the entire final sentence '覆蓋式巷弄的俯瞰視角'. zh-TW preserved everything. zh dropped factual content.",
+      "suggested_zh_fix": "石磨与猪油锅上煎制的 bindaetteok——经典画面。Mayak gimbap 现卷柜台。Cham Sundae 18 号 yukhoe 拼盘。悬挂的干鱼/海带展示。带顶巷道的俯瞰视角。",
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:gwangjang_market",
+      "field": "highlights[3]",
+      "zh_snippet": "Mayak gimbap('毒品紫菜卷'——令人上癮的迷你紫菜卷)",
+      "zhtw_snippet": "藥膏紫菜飯捲（一口大小、令人上癮的紫菜飯捲）",
+      "verdict": "DRIFT_ZHTW",
+      "detail": "EN: 'Mayak gimbap (drug gimbap)'. Korean 마약김밥 means 'drug/narcotic gimbap' (addictive). zh '毒品紫菜卷' captures the meaning. zh-TW '藥膏' = 'medicinal salve/ointment' — wrong meaning entirely. This is a translation error.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "麻藥紫菜飯捲（一口大小、令人上癮的紫菜飯捲）"
+    },
+    {
+      "poi_key": "poi:gwangjang_market",
+      "field": "highlights[4]",
+      "zh_snippet": "Yukhoe(韓式生牛肉韃靼)——18 號 Cham Sundae 攤位",
+      "zhtw_snippet": "18 號參血腸的生牛肉膾（韓式生牛肉拌）",
+      "verdict": "DRIFT_ZHTW",
+      "detail": "EN: 'Yukhoe (Korean-style raw beef tartare) at Cham Sundae stall #18'. zh-TW translated 'Cham Sundae' as '參血腸' (interpreted as 'ginseng blood-sausage') — but Cham Sundae here is the proper-noun stall NAME, not a description. zh kept it as a brand. Also zh-TW '韓式生牛肉拌' is incomplete — '拌' is a verb not noun ('tartare' should be '韃靼' or '生拌'). Two errors.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "Yukhoe（韓式生牛肉韃靼／生肉膾）——Cham Sundae 18 號攤位"
+    },
+    {
+      "poi_key": "poi:gwangjang_market",
+      "field": "highlights[0]",
+      "zh_snippet": "1905 年開市——韓國 **首座** 永久性傳統市場",
+      "zhtw_snippet": "1905 年開市——韓國 **第一個** 常設傳統市場",
+      "verdict": "OK_REGIONAL",
+      "detail": "Both translations are correct, register difference. zh '首座' is more formal Mainland written style; zh-TW '第一個' is conversational Taiwan style.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:gwangjang_market",
+      "field": "smartNotes.facilities",
+      "zh_snippet": "許多攤位後方設有小型堂食區。多語言菜單牌。部分支持刷卡,但建議按現金準備。最近的 ATM 在鍾路 5 街地鐵站 7 號出口附近。",
+      "zhtw_snippet": "許多攤位後方設有小型座位區。多語言菜單。部分攤位現可刷卡，但請以現金為主。鍾路 5 街地鐵站 7 號出口附近有 ATM。",
+      "verdict": "OK_REGIONAL",
+      "detail": "Mainland '堂食' (eat-in dining) vs Taiwan '座位' — both fine. Information equivalent.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:gwangjang_market",
+      "field": "visitBasics.walking",
+      "zh_snippet": "輕鬆——帶頂棚巷道平整;舒適步行鞋更便於擠過狹窄凳位",
+      "zhtw_snippet": "難度輕鬆——平坦覆蓋式巷弄；建議穿著舒適鞋款，攤位座椅間通道較窄",
+      "verdict": "OK_REGIONAL",
+      "detail": "Both convey same info. Mainland '帶頂棚巷道' vs Taiwan '覆蓋式巷弄' — both correct register.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:third_infiltration_tunnel",
+      "field": "highlights[0]",
+      "zh_snippet": "隧道全長 1.635 公里,深 73 米——已發現的 4 條隧道中距首爾最近(44 公里)",
+      "zhtw_snippet": "全長 1.635 公里,深入地下 73 公尺——是發現的 4 條隧道中最接近首爾(44 公里)的一條",
+      "verdict": "OK_REGIONAL",
+      "detail": "zh '米' (Mainland meter) vs zh-TW '公尺' (Taiwan meter) — standard regional unit difference. Same facts.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:third_infiltration_tunnel",
+      "field": "highlights[2]",
+      "zh_snippet": "設計可讓每小時 30,000 名部隊入侵首爾;朝方曾在牆面僞刷煤層以遮掩",
+      "zhtw_snippet": "設計每小時可運送約 30,000 名部隊侵首爾;牆上偽裝塗抹煤炭以製造煤礦假象",
+      "verdict": "OK_REGIONAL",
+      "detail": "zh '入侵' (invade — has stronger condemnation) vs zh-TW '侵' (alone is awkward). zh '朝方' makes the political agent explicit, zh-TW dropped agent. EN: 'Designed for ~30,000 troops/hour to invade Seoul; walls falsely painted with coal in N.K. cover-up attempt'. EN explicitly attributes the cover-up to North Korea (N.K.); zh-TW dropped the agent attribution. Mild factual softening on zh-TW.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "設計每小時可運送約 30,000 名部隊侵入首爾；北韓在牆面偽裝塗抹煤炭以製造煤礦假象"
+    },
+    {
+      "poi_key": "poi:third_infiltration_tunnel",
+      "field": "highlights[5]",
+      "zh_snippet": "**隧道尺寸**:最大高度 1.95 米 × 寬 2.1 米——身高較高者須低頭通過 358 米的訪客段",
+      "zhtw_snippet": "**隧道尺寸**:1.95 公尺最高×2.1 公尺寬——較高的訪客在 358 公尺的訪客段需彎腰前進",
+      "verdict": "OK_REGIONAL",
+      "detail": "Same facts. Unit + word-order regional preference.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:pocheon_art_valley",
+      "field": "highlights[0]",
+      "zh_snippet": "韓國首個 1970 年代廢棄花崗岩採石場生態修復項目",
+      "zhtw_snippet": "韓國首例廢棄 1970 年代花崗岩採石場生態復育計畫",
+      "verdict": "OK_REGIONAL",
+      "detail": "Mainland '項目/修復' vs Taiwan '計畫/復育' — standard regional preference. Same facts.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:gamaksan_red_bridge",
+      "field": "highlights[0]",
+      "zh_snippet": "'格洛斯特英雄橋'——獻給英國陸軍第 1 營格洛斯特團(1951 年 4 月臨津江戰役)",
+      "zhtw_snippet": "「格洛斯特英雄橋」——紀念英軍格洛斯特郡團第 1 營（1951 年 4 月臨津江戰役）",
+      "verdict": "OK_REGIONAL",
+      "detail": "Same facts; word order and verb '獻給' vs '紀念' both convey 'commemorating'. Note zh-TW has more accurate '格洛斯特郡團' (Gloucestershire Regiment) — Gloucestershire is a county not just 'Gloucester'. Slight zh-TW edge in regimental-name accuracy but neither is wrong enough to flag.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:gamaksan_red_bridge",
+      "field": "highlights[5]",
+      "zh_snippet": "**2018 年 3 月正式開放**,由坡州市長李仁載發起市民捐款活動籌資建造,主題口號'自由非免費——以血換之'",
+      "zhtw_snippet": "**正式於 2018 年 3 月開通**，由坡州市長李仁載發起市民捐款活動籌建，標語為「自由不是免費的——它是用鮮血換來的」",
+      "verdict": "OK_REGIONAL",
+      "detail": "Both correct; zh translated 'Freedom is not free — paid in blood' as a tight 4-character classical-style proverb; zh-TW gave a colloquial expansion. Both natural for their audiences.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:petite_france",
+      "field": "highlights[2]",
+      "zh_snippet": "八音盒館:200年曆史的八音盒收藏;木偶劇場每日表演",
+      "zhtw_snippet": "Orgel 音樂盒館：200 年古董音樂盒收藏；提線木偶劇場每日演出",
+      "verdict": "DRIFT_ZHTW",
+      "detail": "EN: 'Orgel Music Box Hall'. Mainland convention is to translate '八音盒' (music box) — established term. Taiwan also has '音樂盒' but 'Orgel' (German loanword via Japanese) is mostly limited to specialty stores; using bare 'Orgel' here is jargon-heavy and reduces accessibility. zh translated cleanly. zh-TW is awkward.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "音樂盒館（Orgel）：200 年古董音樂盒收藏；提線木偶劇場每日演出"
+    },
+    {
+      "poi_key": "poi:imjingak_peace_park",
+      "field": "highlights[5]",
+      "zh_snippet": "**距首爾市政府56 km**至臨津閣(韓國旅遊發展局官方數據);距軍事分界線7 km",
+      "zhtw_snippet": "**距首爾市政廳 56 公里** 至臨津閣亭（韓國觀光公社官方數據）；距軍事分界線 7 公里",
+      "verdict": "GLOSSARY_VIOLATION",
+      "detail": "EN: 'Korea Tourism Organization' (KTO). The official name of this agency in Chinese is '韓國觀光公社' / '韩国观光公社' (used by KTO itself in zh and zh-TW promotional materials). zh used '韓國旅遊發展局' which is a Mainland-style descriptive translation but is NOT the agency's actual name. zh-TW '韓國觀光公社' is correct. Glossary doesn't list this org, but the official name is well-known. zh side error.",
+      "suggested_zh_fix": "**距首尔市政府56 km**至临津阁(韩国观光公社官方数据);距军事分界线7 km",
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:imjingak_peace_park",
+      "field": "highlights[2]",
+      "zh_snippet": "彈痕累累的長湍站蒸汽機車(2004年文化遺產),京義鐵路被毀路段的遺物",
+      "zhtw_snippet": "布滿彈孔的長湍站蒸汽火車頭（2004 年文化財）——位於斷裂的京義線鐵軌上",
+      "verdict": "OK_REGIONAL",
+      "detail": "Mainland '蒸汽機車/文化遺產' vs Taiwan '蒸汽火車頭/文化財' — both correct regional terms. ('文化財' is Japanese-origin term used in Korean and Taiwan academic register.) Facts equivalent.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:imjingak_peace_park",
+      "field": "highlights[0]",
+      "zh_snippet": "望拜壇 —— 故鄉在北的韓國離散家庭每逢春節與中秋向北行祭禮",
+      "zhtw_snippet": "望拜壇——自北方故鄉離散的韓國家庭，每年農曆春節與中秋向北行祭拜禮",
+      "verdict": "OK_REGIONAL",
+      "detail": "Both correct. EN says 'Lunar New Year and Chuseok' — zh-TW added '農曆' (lunar) for clarity, fully accurate. Both fine.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:garden_of_morning_calm",
+      "field": "highlights[0]",
+      "zh_snippet": "韓國招牌私家樹木園 —— 33萬平方米,約5,000種植物",
+      "zhtw_snippet": "韓國代表性私人樹木園——330,000 平方公尺、約 5,000 種植物",
+      "verdict": "OK_REGIONAL",
+      "detail": "Mainland '招牌/私家/萬' vs Taiwan '代表性/私人/全數字'. Same facts.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:garden_of_morning_calm",
+      "field": "highlights[5]",
+      "zh_snippet": "**1992年構思 / 1994年購地 / 1996年5月11日開園**:三育大學園藝系韓相敬教授與夫人親自設計與栽培,早期資金困難時甚至賣掉家宅",
+      "zhtw_snippet": "**1992 年構思／1994 年購地／1996 年 5 月 11 日開園**：創辦人韓相敬教授（三育大學園藝學系）與夫人親自設計與栽植整座庭園，初期財務困頓時甚至賣掉自家房屋",
+      "verdict": "OK_REGIONAL",
+      "detail": "Same facts. zh-TW added '創辦人' for explicit role; zh implicit. No drift.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:insadong",
+      "field": "highlights[5]",
+      "zh_snippet": "附近的鉢盂供養 —— 韓國唯一獲米其林星的佛教寺院料理",
+      "zhtw_snippet": "缽盂供養——附近的韓國唯一米其林星級佛教寺廟料理餐廳",
+      "verdict": "OK_REGIONAL",
+      "detail": "zh '鉢' vs zh-TW '缽' — both are valid Chinese characters for the Korean 발우공양 (Balwoo Gongyang). '缽' is the more standard modern character; '鉢' is a variant. Both readable. No drift.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:insadong",
+      "field": "highlights[2]",
+      "zh_snippet": "傳統茶館(전통찻집):沐淵、秀然山房感受古典茶禮",
+      "zhtw_snippet": "傳統茶屋（전통찻집）：木蓮（Mokyeon）、秀演山房（Suyeonsanbang）享受古典茶禮體驗",
+      "verdict": "FACTUAL_DIVERGENCE",
+      "detail": "Two specific tea-house names: zh wrote '沐淵、秀然山房', zh-TW wrote '木蓮（Mokyeon）、秀演山房（Suyeonsanbang）'. These are different Hanja for the same Korean names. The well-known Insadong tea house is 수연산방 (壽硯山房 / Suyeon Sanbang) — zh-TW's '秀演' (Suyeon) is closer to romanization, zh's '秀然' is incorrect. The other tea house in Insadong is 다도 / 목련 (Mongnyeon / Mokryeon) — zh-TW '木蓮' (Mokryeon = magnolia) appears more standard than zh '沐淵'. zh side has likely-wrong Hanja transliterations for both proper names.",
+      "suggested_zh_fix": "传统茶馆(전통찻집):木莲(Mokyeon)、秀演山房(Suyeonsanbang)感受古典茶礼",
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:insadong",
+      "field": "highlights[0]",
+      "zh_snippet": "首爾的傳統工藝與文化主街",
+      "zhtw_snippet": "首爾首屈一指的傳統工藝與文化購物街",
+      "verdict": "OK_REGIONAL",
+      "detail": "Both correct. zh-TW '首屈一指' is a stronger claim ('foremost'); zh '主街' is descriptive ('main street'). EN: 'Seoul's premier traditional crafts and culture shopping street' — zh-TW closer to 'premier'. zh slightly under-strong but not wrong.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:nami_island",
+      "field": "smartNotes.photo",
+      "zh_snippet": "水杉大道是《冬季戀歌》經典構圖——秋季金黃或冬季雪景效果最佳。南岸的'戀人銀杏樹小徑'更幽靜,出片同樣精彩。白孔雀偶爾出現在'戀人小徑'附近。",
+      "zhtw_snippet": "水杉大道為世界知名的《冬季戀歌》取景畫面——秋季或冬季最佳。南側的銀杏戀人巷較少人潮,同樣上鏡。罕見的白孔雀偶爾出現在戀人巷附近。",
+      "verdict": "OK_REGIONAL",
+      "detail": "Both convey same content. zh-TW added '世界知名的' and '罕見的' which match EN ('world-famous', 'Albino peacock'). zh slightly more concise but not omitting facts.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:n_seoul_tower",
+      "field": "highlights[2]",
+      "zh_snippet": "外國遊客調查 (2012) 韓國第一旅遊景點；年訪客約1,200萬",
+      "zhtw_snippet": "外籍旅客調查韓國第一景點（2012）；年訪客1,200萬人次",
+      "verdict": "OK_REGIONAL",
+      "detail": "Same facts. Mainland '外國遊客' / Taiwan '外籍旅客' — both correct.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:gwangmyeong_cave",
+      "field": "smartNotes.photo",
+      "zh_snippet": "**41米巨龍 (勇茂)**",
+      "zhtw_snippet": "**41公尺龍（龍麻路）**",
+      "verdict": "FACTUAL_DIVERGENCE",
+      "detail": "EN: '41-meter fiberglass dragon (Yongmaru)'. The proper noun is '용마루' (Yongmaru) which means 'roof ridge' in Korean (also a common dragon-themed name). The correct Hanja is 龍마루 — '마루' is pure Korean (no Hanja), so transliteration should be '龍馬路' or simply keep romanization 'Yongmaru'. zh '勇茂' (Yongmao) is a wrong reading. zh-TW '龍麻路' is also a guess (麻路 ≠ 마루). Best practice: '龍/Yongmaru' or '龍馬路 (Yongmaru)'. Both translators invented Hanja.",
+      "suggested_zh_fix": "**41米龙 (Yongmaru/龙马路)**",
+      "suggested_zhtw_fix": "**41公尺龍（Yongmaru／龍馬路）**"
+    },
+    {
+      "poi_key": "poi:gwangmyeong_cave",
+      "field": "highlights[2]",
+      "zh_snippet": "**2014年榮獲韓國旅遊之星大獎** (韓國旅遊業的奧斯卡)",
+      "zhtw_snippet": "**獲頒2014年韓國觀光之星獎**（韓國觀光界的奧斯卡）",
+      "verdict": "DRIFT_ZH",
+      "detail": "EN: 'Korea Tourism Star Award'. Korea Tourism Organization's official Chinese rendering uses '觀光/观光' across both Mainland and Taiwan promotional materials. The award name in official KTO Chinese-language materials is '韓國觀光之星'. zh '旅遊之星' is the Mainland-natural translation but inconsistent with KTO official naming. Same applies to '旅遊業 vs 觀光界'. Minor (the descriptive term '旅遊' is widely understood in Mainland), but zh-TW more aligned with KTO official.",
+      "suggested_zh_fix": "**2014年荣获韩国观光之星大奖** (韩国旅游业的奥斯卡)",
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:herb_island",
+      "field": "highlights[0]",
+      "zh_snippet": "**1998年開園**；約82英畝 / 330,000 m² 地中海香草花園 (250餘種)",
+      "zhtw_snippet": "1998年開幕；約82英畝／330,000平方公尺地中海香草園（250多種）",
+      "verdict": "OK_REGIONAL",
+      "detail": "Same facts. Markdown bold formatting present in zh, missing in zh-TW — minor formatting drift. Could be considered DRIFT_ZHTW for losing emphasis but not vocabulary.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "**1998年開幕**；約82英畝／330,000平方公尺地中海香草園（250多種）"
+    },
+    {
+      "poi_key": "poi:sanjeong_lake",
+      "field": "smartNotes.photo",
+      "zh_snippet": "湖與山倒影 —— 春秋晨霧時最佳。鳴聲山坡10月中至11月初的銀芒。中段浮橋。冬季雪橇視角。秋葉環湖。",
+      "zhtw_snippet": "湖面映山倒影——晨霧（春／秋）效果最佳。10 月中至 11 月初的明聖山銀芒草坡。環湖中段浮橋。冬季結冰湖面雪橇景。湖畔環繞的秋葉。",
+      "verdict": "FACTUAL_DIVERGENCE",
+      "detail": "zh wrote '鳴聲山' (Mingshengshan), zh-TW wrote '明聖山' (Mingshengshan, different Hanja). The mountain near Sanjeong Lake is 명성산 (鳴聲山 'Mountain of Crying Voices', after a horse legend) — zh has correct Hanja, zh-TW guessed wrong characters. zh-TW factual error on proper noun.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "湖面映山倒影——晨霧（春／秋）效果最佳。10 月中至 11 月初的鳴聲山銀芒草坡。環湖中段浮橋。冬季結冰湖面雪橇景。湖畔環繞的秋葉。"
+    },
+    {
+      "poi_key": "poi:bukchon_hanok_village",
+      "field": "smartNotes.facilities",
+      "zh_snippet": "安國站 2 號出口附近的遊客中心提供多語種地圖。村內分佈有咖啡館、傳統茶屋、由韓屋改造的咖啡館。",
+      "zhtw_snippet": "安國站 2 號出口附近的觀光諮詢中心提供多語地圖。村內散布咖啡廳、傳統茶屋,以及韓屋改造的咖啡空間。",
+      "verdict": "OK_REGIONAL",
+      "detail": "Mainland '遊客中心' vs Taiwan '觀光諮詢中心' — both correct (Taiwan official term is 觀光諮詢中心 for tourism info booths).",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:gyeongbokgung_palace",
+      "field": "highlights[2]",
+      "zh_snippet": "慶會樓(48根石柱立於蓮花池上的樓閣,曾用於王室宴饗)",
+      "zhtw_snippet": "慶會樓（蓮花池上的 48 根石柱亭，王室宴會場所）",
+      "verdict": "OK_REGIONAL",
+      "detail": "Same facts. Both correct.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:cheomseongdae",
+      "field": "convenience.parking",
+      "zh_snippet": "瞻星臺收費停車場 + 大陵苑正門收費停車場 (各自獨立)",
+      "zhtw_snippet": "瞻星台與大陵苑各有付費停車場（分開）",
+      "verdict": "GLOSSARY_VIOLATION",
+      "detail": "Glossary specifies '瞻星台' (no 臺) for both zh and zh-TW. zh used the variant '瞻星臺' which is a glossary deviation. (Also note glossary expects '大陵苑' which both used correctly.)",
+      "suggested_zh_fix": "瞻星台收费停车场 + 大陵苑正门收费停车场 (各自独立)",
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:dora_observatory",
+      "field": "visitBasics.walking",
+      "zh_snippet": "易 —— 大巴抵達入口;新建築樓層平整",
+      "zhtw_snippet": "輕鬆——巴士抵達展望台入口；新建築內樓層平坦",
+      "verdict": "OK_REGIONAL",
+      "detail": "Both correct.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:gyeongbokgung_palace",
+      "field": "convenience.parking",
+      "zh_snippet": "有限;光化門設有旅遊大巴下客區",
+      "zhtw_snippet": "車位有限；旅遊巴士可於光化門附近下客區停靠",
+      "verdict": "OK_REGIONAL",
+      "detail": "Both correct.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:woljeonggyo_bridge",
+      "field": "convenience.parking",
+      "zh_snippet": "北岸有大巴停車;南岸禁停",
+      "zhtw_snippet": "北岸設有大型車停車場；南岸禁止停車",
+      "verdict": "OK_REGIONAL",
+      "detail": "Same facts.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:olle_maeil_market",
+      "field": "highlights[6]",
+      "zh_snippet": "**Omegisul米黍酒**品鑑(城邑釀造)",
+      "zhtw_snippet": "**五穀米酒** 試飲（城邑釀製）",
+      "verdict": "FACTUAL_DIVERGENCE",
+      "detail": "오메기술 (Omegisul) is a TRADITIONAL JEJU MILLET WINE — specifically made from foxtail/proso millet (Korean: 좁쌀) and sometimes barley. It is NOT '五穀米酒' (five-grain rice wine — that's 오곡주, completely different). zh '米黍酒' (rice-millet wine) is closer but still uses 米 (rice) which is not the primary ingredient. Best Chinese rendering is '小米酒' or transliteration 'Omegisul'. zh-TW translation is factually wrong.",
+      "suggested_zh_fix": "**Omegisul（小米酒/黍酒）**品鉴（城邑酿造）",
+      "suggested_zhtw_fix": "**Omegisul（小米酒）** 試飲（城邑釀製）"
+    },
+    {
+      "poi_key": "poi:gangjeong_cruise_port",
+      "field": "highlights[6]",
+      "zh_snippet": "從此港出發南線行程爲必選 —— 至城山日出峯單程70分鐘以上",
+      "zhtw_snippet": "由此港出發必走南線——城山單程 70 分鐘以上",
+      "verdict": "OK_REGIONAL",
+      "detail": "Both correct.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:route_variant_dmz_paju",
+      "field": "highlights[3]",
+      "zh_snippet": "坡州高級奧特萊斯:230餘國際品牌,25–50%折扣;樂天高級奧特萊斯鄰近,另有約150個品牌",
+      "zhtw_snippet": "坡州 Premium Outlets：230 餘國際品牌 25–50% 折扣；鄰接樂天 Premium Outlets 另約 150 個品牌",
+      "verdict": "OK_REGIONAL",
+      "detail": "Mainland convention translates 'Premium Outlets' to '高級奧特萊斯' (奧特萊斯 = phonetic for outlets). Taiwan keeps English 'Premium Outlets'. Both standard.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:OPS_lunch_customizable",
+      "field": "convenience.parking",
+      "zh_snippet": "停車由司機兼嚮導單獨安排",
+      "zhtw_snippet": "司機導遊另行處理",
+      "verdict": "DRIFT_ZHTW",
+      "detail": "zh-TW elided subject '停車' — sentence becomes vague ('the driver-guide handles separately' — what?). zh is concrete.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "停車由司機導遊另行處理"
+    },
+    {
+      "poi_key": "poi:OPS_lunch",
+      "field": "convenience.parking",
+      "zh_snippet": "可用",
+      "zhtw_snippet": "可停車",
+      "verdict": "DRIFT_ZH",
+      "detail": "zh '可用' is too generic — could mean 'available' for anything. EN context is 'parking: available'. zh-TW '可停車' is more concrete and matches the field semantics.",
+      "suggested_zh_fix": "可停车",
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:jeongbang_falls",
+      "field": "convenience.parking",
+      "zh_snippet": "可用",
+      "zhtw_snippet": "可停車",
+      "verdict": "DRIFT_ZH",
+      "detail": "Same as above — zh under-translated.",
+      "suggested_zh_fix": "可停车",
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "name:lunch — east coast local",
+      "field": "convenience.parking",
+      "zh_snippet": "可用",
+      "zhtw_snippet": "可停車",
+      "verdict": "DRIFT_ZH",
+      "detail": "Same systemic issue — zh translator habitually used vague '可用'.",
+      "suggested_zh_fix": "可停车",
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:OPS_east_jeju_lunch",
+      "field": "convenience.parking",
+      "zh_snippet": "可用",
+      "zhtw_snippet": "可停車",
+      "verdict": "DRIFT_ZH",
+      "detail": "Same systemic '可用' issue on zh side.",
+      "suggested_zh_fix": "可停车",
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:gamaksan_red_bridge",
+      "field": "visitBasics.admission",
+      "zh_snippet": "橋免費",
+      "zhtw_snippet": "橋面通行免費",
+      "verdict": "OK_REGIONAL",
+      "detail": "Both convey free admission. zh terse, zh-TW expanded. No drift.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:sokcho_beach",
+      "field": "highlights[2]",
+      "zh_snippet": "海路沿線松林背景(涼蔭步道)",
+      "zhtw_snippet": "Haeoreum 路沿線韓國松林背景（清涼遮蔭步道）",
+      "verdict": "DRIFT_ZH",
+      "detail": "EN likely refers to 'Haeoreum-ro' (해오름로) — a specific named road. zh translated as generic '海路' (sea-road, common noun) losing the proper-noun specificity. zh-TW kept the proper-noun romanization. zh side dropped a fact.",
+      "suggested_zh_fix": "Haeoreum 路沿线韩国松树林背景(凉荫步道)",
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:sokcho_tourist_fishery_market",
+      "field": "highlights[5]",
+      "zh_snippet": "毗鄰 gaetbae 渡船至 Abai 村(200 韓元,韓劇《藍色生死戀》取景地)",
+      "zhtw_snippet": "鄰接「갯배」渡船前往阿爸村落（200 韓元，韓劇《藍色生死戀》拍攝地）",
+      "verdict": "DRIFT_ZHTW",
+      "detail": "zh-TW left bare Hangul '갯배' inside a Chinese sentence — Taiwan readers cannot decode it. zh used the romanization 'gaetbae' which at least transliterates. Glossary K-drama term is '韓劇取景地' / '韩剧取景地' — zh used '取景地' (matches glossary), zh-TW used '拍攝地' (DRIFT from glossary, though synonymous).",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": "鄰接 gaetbae（갯배）渡船前往阿爸村落（200 韓元，韓劇《藍色生死戀》取景地）"
+    },
+    {
+      "poi_key": "poi:nami_island",
+      "field": "smartNotes.photo (drama term)",
+      "zh_snippet": "...《冬季戀歌》經典構圖...",
+      "zhtw_snippet": "...世界知名的《冬季戀歌》取景畫面...",
+      "verdict": "OK_REGIONAL",
+      "detail": "Both use natural phrasing. Drama-location glossary term '韓劇取景地' not directly invoked here since this isn't a generic 'K-drama filming location' label — it's a specific drama-location reference. No glossary violation.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:petite_france",
+      "field": "smartNotes.photo",
+      "zh_snippet": "...聖埃克蘇佩裏建築 = 《來自星星的你》關鍵場景",
+      "zhtw_snippet": "...聖修伯里館＝《來自星星的你》關鍵場景",
+      "verdict": "OK_REGIONAL",
+      "detail": "Mainland '聖埃克蘇佩裏' vs Taiwan '聖修伯里' — both standard regional renderings of 'Saint-Exupéry'. Both correct.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "poi:petite_france",
+      "field": "highlights[0]",
+      "zh_snippet": "2008年7月開村;16棟法式建築圍繞\"小王子\"(聖埃克蘇佩裏,1943)主題",
+      "zhtw_snippet": "2008 年 7 月開幕；以《小王子》（聖修伯里，1943）為主題的 16 棟法式建築",
+      "verdict": "OK_REGIONAL",
+      "detail": "Same facts. Translator name regional difference.",
+      "suggested_zh_fix": null,
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "name:lunch — east coast local",
+      "field": "highlights[1]",
+      "zh_snippet": "夏季(6–9 月)**Mulhoe (물회)**,冬季 **galchi-jorim** 輪換",
+      "zhtw_snippet": "夏季（6–9 月）**物膾（물회）**、冬季 **白帶魚燉煮** 輪替",
+      "verdict": "DRIFT_ZH",
+      "detail": "zh kept 'galchi-jorim' as bare romanization where zh-TW translated to '白帶魚燉煮' (cutlassfish stew). Mainland readers cannot decode 'galchi-jorim'. Same pattern as OPS_lunch. zh-TW translated; zh did not.",
+      "suggested_zh_fix": "夏季(6–9 月)**Mulhoe (물회/凉拌鱼)**,冬季 **galchi-jorim (带鱼炖菜)** 轮换",
+      "suggested_zhtw_fix": null
+    },
+    {
+      "poi_key": "name:lunch — daejeong / andeok local",
+      "field": "highlights[3]",
+      "zh_snippet": "**Heuk-doeji** 全年皆宜——文化遺產資料第 5 號(2015)",
+      "zhtw_snippet": "全年 **黑豬**——文化遺產資料 5 號（2015 年）",
+      "verdict": "DRIFT_ZH",
+      "detail": "Glossary expects '濟州黑豬肉' / '济州黑猪肉' for 'Jeju black pork'. zh kept only the romanization 'Heuk-doeji' without Chinese — Mainland readers cannot read it. zh-TW gave '黑豬' (matches glossary's regional half). zh side glossary-noncompliant + readability fail.",
+      "suggested_zh_fix": "**黑猪 (Heuk-doeji)** 全年皆宜——文化遗产资料第 5 号(2015)",
+      "suggested_zhtw_fix": null
+    }
+  ],
+  "summary": {
+    "ok_regional": 35,
+    "drift_zh": 12,
+    "drift_zhtw": 15,
+    "glossary_violation": 2,
+    "factual_divergence": 5,
+    "length_omission": 2,
+    "overall_assessment": "zh and zh-TW are largely consistent; the majority of Tier 1 'differences' are legitimate regional-vocabulary variation (米/公尺, 大巴/遊覽車, 旅遊/觀光, 朝鮮/北韓) or stylistic register, not errors. Real problems cluster in two systemic patterns: (1) the zh translator habitually leaves Korean food / proper nouns as bare romanization (Heuk-doeji, galchi-jorim, Mom-guk, Omegisul as zh '米黍酒') and uses overly terse one-word convenience answers (可用, 週一) — Mainland readers lose information; (2) the zh-TW translator habitually elides subject nouns in convenience fields (洗手間, 停車場 dropped in restroom/parking lines), invents Hanja for Korean proper nouns when unsure (龍麻路 for Yongmaru, 明聖山 for 鳴聲山, 應太石 for 應胎石), and made one outright meaning error (藥膏 for 마약 'narcotic' — should be 麻藥). Factual fidelity to EN is generally good, but a handful of proper-noun and food-name renderings warrant a fact-check pass against Korean Hanja sources. The most divergent POI is poi:gwangjang_market, where zh-TW has a real meaning error (藥膏紫菜飯捲) and where zh dropped the final sentence in smartNotes.photo."
+  }
+}

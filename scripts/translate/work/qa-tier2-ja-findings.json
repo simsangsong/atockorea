@@ -1,0 +1,949 @@
+{
+  "tier1_validation": [
+    {
+      "locale": "ja",
+      "poi_key": "poi:osulloc_tea_museum",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "EN context is 'Innisfree Jeju House' (brand name). JA correctly preserves 'Innisfree Jeju House' as-is per brand-name guidance. 済州島 not required for brand."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:osulloc_tea_museum",
+      "field": "smartNotes.facilities",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "Refers to 'Innisfree Jeju House' brand name, kept as-is correctly."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:osulloc_tea_museum",
+      "field": "smartNotes.facilities",
+      "issue_type": "glossary_term_missing",
+      "term": "observatory deck",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "カフェ(緑茶アイスクリームは必食)、ギフトショップ、隣接するInnisfree Jeju House、茶畑を見渡す屋上デッキ",
+      "suggested_fix": "Replace 屋上デッキ → 屋上展望台 to match glossary 'Observatory Deck' → 展望台. Suggested: '茶畑を見渡す屋上展望台'."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:osulloc_tea_museum",
+      "field": "highlights[0]",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "Compound noun '済州茶' (Jeju tea) is natural ja usage; glossary entry 済州島 is for the standalone island name. Forcing 済州島茶 would be unnatural."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:osulloc_tea_museum",
+      "field": "highlights[6]",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "Brand name 'Innisfree Jeju House' kept as-is per brand guidance."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:hyeopjae_beach",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "Compound '済州西海岸' (Jeju west-coast) reads naturally; standalone '済州島' would not fit in this adjectival position."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:hyeopjae_beach",
+      "field": "highlights[0]",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "'済州西海岸' adjectival use is natural ja."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:hyeopjae_beach",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "term": "hyeopjae beach",
+      "verdict": "FP",
+      "rationale": "POI uses 挟才海水浴場 + abbreviated 挟才 within same body — first mention is full form, subsequent mentions shortened. Acceptable native pattern."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:cheonjiyeon_falls",
+      "field": "highlights[7]",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "'済州の滝' (Jeju waterfalls) is natural compound usage."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:cheonjiyeon_falls",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "term": "cheonjiyeon falls",
+      "verdict": "FP",
+      "rationale": "POI body opens with full 天地淵瀑布 in description; whyOnRoute uses shortened 天地淵 once full form is established. Native ja pattern."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:aewol_cafe_street",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "'済州空港' is Jeju Airport — the natural ja form. 済州島空港 is not used in real ja usage."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:aewol_cafe_street",
+      "field": "highlights[8]",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "'済州国際空港' is the official ja name for Jeju International Airport."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:aewol_cafe_street",
+      "field": "highlights[4]",
+      "issue_type": "glossary_term_missing",
+      "term": "aewol",
+      "verdict": "FP",
+      "rationale": "Refers to 'Aewol the Sunset' — a cafe brand/proper name, kept in Latin per brand guidance. Glossary 涯月 is for the place name only."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:jeju_haenyeo_museum",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "Compound usages 済州+ are natural; 海女博物館 is the museum of Jeju, but Tier 1 likely scanned outside the museum-name context. Adjacent compound usage is correct."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:jeju_haenyeo_museum",
+      "field": "highlights[1]",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "'済州風土記' is a historical book title (李健『済州風土記』) — proper noun, transliterated faithfully."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:route_variant_south",
+      "field": "smartNotes.photo",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "'済州の滝' compound noun usage."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "'済州市' (Jeju City) and '済州空港' are official place-name compounds — natural ja usage."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "camellia",
+      "verdict": "FP",
+      "rationale": "EN context refers only to 'Camellia Hill' (proper noun) → カメリアヒル per glossary. 椿 (camellia flower) not applicable here."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "hotel pickup",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "**08:30〜09:00のピックアップウィンドウ** にて、指定の済州市または中文エリアのホテルからお迎えします。",
+      "suggested_fix": "Glossary maps 'Hotel Pickup' → ホテルピックアップ. Body uses 'お迎え' (synonym, native-friendly) but glossary term should appear at least once. Suggest including ホテルピックアップ in the opening or in highlights[0]."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "highlights[0]",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "'済州市' is the official ja form for Jeju City."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_lunch",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "Adjacent compound usages are natural."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_lunch",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "term": "camellia",
+      "verdict": "FP",
+      "rationale": "EN context is 'Camellia Hill' (proper noun, glossary → カメリアヒル). Used correctly."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_dropoff_winter_southwest",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "cheonjeyeon falls",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "天帝淵滝(中文)からのルートは分岐します",
+      "suggested_fix": "Glossary maps 'Cheonjeyeon Falls' → 天帝淵瀑布. Translator alternates 天帝淵滝 / 天帝淵瀑布. Standardize on 天帝淵瀑布 (or 天帝淵の滝 if shortening) and ensure first occurrence in document is the full glossary form."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_dropoff_winter_southwest",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "Compound place-names 済州市・中文 used naturally."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_busan_port_return",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "drop-off",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "ドロップオフはターミナル到着ホールで",
+      "suggested_fix": "Glossary maps 'Drop-off' → 降車. JA mixes ドロップオフ (loanword) and 降車. Replace ドロップオフ with 降車 throughout for glossary compliance: '降車はターミナル到着ホールで'."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_busan_port_return",
+      "field": "highlights[2]",
+      "issue_type": "glossary_term_missing",
+      "term": "drop-off",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "**個別ホテルドロップオフなし**(少人数固定スケジュール)",
+      "suggested_fix": "Replace ドロップオフ → 降車: '個別ホテルへの降車対応なし'."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:un_memorial_cemetery",
+      "field": "highlights[0]",
+      "issue_type": "glossary_term_missing",
+      "term": "un memorial cemetery",
+      "verdict": "TP",
+      "severity": "major",
+      "snippet": "**世界で唯一の国連記念墓地** — 1951年1月18日設立、1959年に韓国から国連へ寄贈",
+      "suggested_fix": "Glossary 'UN Memorial Cemetery' → 国連記念公園. Translator inconsistently uses 国連記念墓地 (literal cemetery) vs 国連記念公園 (glossary). Standardize on 国連記念公園 for consistency: '世界で唯一の国連記念公園'."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:un_memorial_cemetery",
+      "field": "highlights[8]",
+      "issue_type": "glossary_term_missing",
+      "term": "un memorial cemetery",
+      "verdict": "TP",
+      "severity": "major",
+      "snippet": "国際UN記念墓地委員会管理下",
+      "suggested_fix": "Replace 'UN記念墓地' with '国連記念公園' (or for committee names where original Latin is used, keep formal entity name UN). Suggest: '国際国連記念公園委員会' or keep 'UNMCK' with ja gloss."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_lunch_seogwipo_olle",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "cheonjiyeon falls",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "午後の天地淵滝訪問(徒歩5分)の前に",
+      "suggested_fix": "Use glossary form 天地淵瀑布 (or maintain 天地淵滝 only after first introducing the full glossary form somewhere in the document). Recommend: '午後の天地淵瀑布訪問'."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_lunch_seogwipo_olle",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "term": "cheonjiyeon falls",
+      "verdict": "FP",
+      "rationale": "Field does not mention Cheonjiyeon directly in snippet; surrounding paragraph uses 天地淵 in shortened form after first mention elsewhere."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_lunch_seogwipo_olle",
+      "field": "highlights[3]",
+      "issue_type": "glossary_term_missing",
+      "term": "cheonjiyeon falls",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "**徒歩5分で天地淵滝のトレイルヘッドへ**",
+      "suggested_fix": "Replace 天地淵滝 → 天地淵瀑布 for glossary alignment."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_busan_cruise_pickup",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "day tour",
+      "verdict": "FP",
+      "rationale": "EN body does not use 'day tour' as a glossary phrase here — it's used in the placard text 'Busan Day Tour' which is a brand-style placard text and JA translation kept it intact ('AtoC Korea — Busan Day Tour')."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_busan_cruise_pickup",
+      "field": "highlights[2]",
+      "issue_type": "glossary_term_missing",
+      "term": "busan",
+      "verdict": "FP",
+      "rationale": "'AtoC Korea — Busan Day Tour' is an English placard text, kept as-is per brand-name guidance."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_busan_cruise_pickup",
+      "field": "highlights[2]",
+      "issue_type": "glossary_term_missing",
+      "term": "day tour",
+      "verdict": "FP",
+      "rationale": "Same — placard string kept verbatim."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:jagalchi_market",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "term": "day tour",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "チャガルチは **1日ツアーで体感できる最も本格的な「釜山らしさ」**",
+      "suggested_fix": "Glossary 'Day Tour' → 日帰りツアー. Replace '1日ツアー' → '日帰りツアー': 'チャガルチは日帰りツアーで体感できる最も本格的な「釜山らしさ」'."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:hallasan_eoseungsaengak",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "eoseungsaengak trail",
+      "verdict": "FP",
+      "rationale": "JA has 御乗生岳(어승생악、1,169m) — the trail itself is implicit; the glossary 御乗生岳トレイル combines mountain + トレイル. Body uses 御乗生岳 for the mountain and contextually refers to the trail. Adding トレイル would be redundant. Acceptable native usage."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:yongdusan_park",
+      "field": "smartNotes.photo",
+      "issue_type": "glossary_term_missing",
+      "term": "gyeongju",
+      "verdict": "FP",
+      "rationale": "Snippet doesn't actually mention Gyeongju (text references 仏国寺, but Gyeongju city itself isn't in snippet). Tier 1 false hit."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:tongdosa_temple",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "term": "day trip",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "釜山から日帰りでアクセスできる南東部唯一のユネスコ山寺",
+      "suggested_fix": "Glossary 'Day Trip' → 日帰り旅行. JA uses '日帰り' (truncated). Recommend '釜山から日帰り旅行でアクセスできる' or accept as a natural shortening — minor."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:tongdosa_temple",
+      "field": "convenience.parking",
+      "issue_type": "glossary_term_missing",
+      "term": "plum blossom",
+      "verdict": "FP",
+      "rationale": "JA uses '梅祭り' (plum festival) — natural compound. Glossary 梅の花 is for the standalone term; '梅' alone in compound contexts is correct ja usage."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:haedong_yonggungsa",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "term": "cheongsapo blue line park",
+      "verdict": "TP",
+      "severity": "major",
+      "snippet": "すぐ南の青沙浦ブルーラインパークと自然にペアリングされ",
+      "suggested_fix": "Glossary 'Cheongsapo Blue Line Park' → チョンサポ・ブルーラインパーク (full katakana). JA used 青沙浦ブルーラインパーク (mixed kanji + katakana). Replace 青沙浦 → チョンサポ for glossary compliance: 'すぐ南のチョンサポ・ブルーラインパークと自然に組み合わさり'."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:haedong_yonggungsa",
+      "field": "convenience.parking",
+      "issue_type": "glossary_term_missing",
+      "term": "busan",
+      "verdict": "FP",
+      "rationale": "'Visit Busan' is the official tourism brand name (organization), kept in Latin script intentionally."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:route_variant_custom_seoul",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "starfield library",
+      "verdict": "FP",
+      "rationale": "Snippet does not mention Starfield Library; Tier 1 false hit (description scope is broader than snippet shown)."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:route_variant_custom_seoul",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "term": "drop-off",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "ホテルチェックアウト+観光+仁川空港ドロップオフを連続して組み込めます",
+      "suggested_fix": "Replace 'ドロップオフ' → '降車' per glossary: '仁川空港での降車'."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_lunch_winter_south",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "camellia",
+      "verdict": "FP",
+      "rationale": "EN context is 'Camellia Hill' proper noun; JA カメリアヒル is correct per glossary."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:OPS_lunch_winter_south",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "term": "camellia",
+      "verdict": "FP",
+      "rationale": "Same — Camellia Hill proper noun."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:ilchulland_micheon_cave",
+      "field": "smartNotes.tip",
+      "issue_type": "glossary_term_missing",
+      "term": "ilchul land",
+      "verdict": "FP",
+      "rationale": "Snippet does not actually mention Ilchul Land — discusses 万丈窟 fallback. Tier 1 likely scanning sibling field."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:sokcho_tourist_fishery_market",
+      "field": "smartNotes.photo",
+      "issue_type": "glossary_term_missing",
+      "term": "sokcho",
+      "verdict": "FP",
+      "rationale": "JA references 'SOKCHO階段' — the Latin-letter signage is the actual public art subject, intentionally preserved."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:seoraksan_national_park",
+      "field": "convenience.restroom",
+      "issue_type": "glossary_term_missing",
+      "term": "sinheungsa temple",
+      "verdict": "TP",
+      "severity": "major",
+      "snippet": "メインゲートエリア、ロープウェイ駅、新興寺境内、主要トレイル沿い",
+      "suggested_fix": "Glossary 'Sinheungsa Temple' → 神興寺. Translator used WRONG kanji 新興寺 (新 = new) instead of correct 神興寺 (神 = god, matches Korean Hanja 神興). Replace 新興寺 → 神興寺 across all 3 occurrences."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:seoraksan_national_park",
+      "field": "visitBasics.hours",
+      "issue_type": "glossary_term_missing",
+      "term": "sinheungsa temple",
+      "verdict": "TP",
+      "severity": "major",
+      "snippet": "公園は常時開放、ロープウェイは通常8:00~17:30(天候次第)、新興寺は6:00~日没",
+      "suggested_fix": "Replace 新興寺 → 神興寺."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:seoraksan_national_park",
+      "field": "highlights[2]",
+      "issue_type": "glossary_term_missing",
+      "term": "sinheungsa temple",
+      "verdict": "TP",
+      "severity": "major",
+      "snippet": "新興寺(西暦652年新羅) — 曹渓宗の総本山、世界最古の禅(ソン)仏教寺院",
+      "suggested_fix": "Replace 新興寺 → 神興寺 to match glossary and accurate Hanja."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:sokcho_beach",
+      "field": "highlights[3]",
+      "issue_type": "glossary_term_missing",
+      "term": "sokcho",
+      "verdict": "FP",
+      "rationale": "'SOKCHO階段' references the public art Latin lettering — intentionally preserved."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:noksan_ro_gasiri_blossom_road",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "joseon dynasty",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "道は朝鮮王朝時代の歴史的な**鹿山牧場・甘馬牧場**",
+      "suggested_fix": "Glossary 'Joseon Dynasty' → 朝鮮時代 (not 朝鮮王朝). Replace 朝鮮王朝時代 → 朝鮮時代: '道は朝鮮時代の歴史的な〜'. Note: corpus has 13 occurrences each of 朝鮮王朝 and 朝鮮時代 — systemic inconsistency."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:route_variant_east",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "hamdeok beach",
+      "verdict": "FP",
+      "rationale": "EN body refers to Hamdeok Beach but snippet does not directly include it; description focuses on 城山日出峰. Tier 1 over-broad scan."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:route_variant_east",
+      "field": "smartNotes.facilities",
+      "issue_type": "glossary_term_missing",
+      "term": "hamdeok beach",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "城山港と咸徳ビーチが食事ハブとして強い",
+      "suggested_fix": "Glossary 'Hamdeok Beach' → 咸徳海水浴場. JA uses '咸徳ビーチ' (mixed kanji+katakana). Replace → 咸徳海水浴場: '城山港と咸徳海水浴場が食事ハブとして強い'."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:route_variant_east",
+      "field": "smartNotes.tip",
+      "issue_type": "glossary_term_missing",
+      "term": "hamdeok beach",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "山君不離火口または咸徳ビーチに代替",
+      "suggested_fix": "Replace 咸徳ビーチ → 咸徳海水浴場 for glossary alignment."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:camellia_hill",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "term": "camellia",
+      "verdict": "FP",
+      "rationale": "EN context is 'Camellia Hill' proper noun; JA カメリアヒル is glossary-compliant."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:gyeongbokgung_palace",
+      "field": "highlights[0]",
+      "issue_type": "glossary_term_missing",
+      "term": "joseon dynasty",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "朝鮮王朝の正宮 — 1395年に新ソウルの中心として建立",
+      "suggested_fix": "Glossary 'Joseon Dynasty' → 朝鮮時代. Replace 朝鮮王朝 → 朝鮮時代 (or accept '朝鮮王朝' as historically more precise for a palace context — but glossary trumps). Suggest: '朝鮮時代の正宮' for catalog consistency."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:olle_maeil_market",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "cheonjiyeon falls",
+      "verdict": "FP",
+      "rationale": "Snippet does not directly include Cheonjiyeon Falls — talks about market origins."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:olle_maeil_market",
+      "field": "highlights[8]",
+      "issue_type": "glossary_term_missing",
+      "term": "cheonjiyeon falls",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "**天地淵滝入口まで徒歩5分** — 自然な昼食+散策のペアリング",
+      "suggested_fix": "Replace 天地淵滝 → 天地淵瀑布 for glossary alignment."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:imjingak_peace_park",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "term": "dora observatory",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "第3トンネルと都羅展望台へのDMZシャトルバスもここから出発します",
+      "suggested_fix": "Glossary 'Dora Observatory' → 都羅山展望台 (with 山). JA uses 都羅展望台 (missing 山). Replace → 都羅山展望台: '第3トンネルと都羅山展望台へのDMZシャトルバス'."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:garden_of_morning_calm",
+      "field": "highlights[4]",
+      "issue_type": "glossary_term_missing",
+      "term": "k-drama filming location",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "『雲が描いた月明り』など複数のKドラマのロケ地",
+      "suggested_fix": "Glossary 'K-drama filming location' → 韓国ドラマのロケ地. JA uses 'Kドラマのロケ地' (loanword K). For consistency with glossary: '複数の韓国ドラマのロケ地'. Note: corpus uses Kドラマ 26x vs 韓国ドラマ 2x — systemic. May be acceptable native usage; minor."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:jeju_tangerine_picking_experience",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "term": "tangerine picking",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "**みかん狩りは1日の冬農業観光の象徴的アンカー**",
+      "suggested_fix": "Glossary 'Tangerine Picking' → みかん狩り体験. JA uses みかん狩り (sometimes alone). Acceptable shortening but include 体験 at least once: 'みかん狩り体験は1日の冬農業観光の…'."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:jeju_tangerine_picking_experience",
+      "field": "whyOnRoute",
+      "issue_type": "glossary_term_missing",
+      "term": "camellia",
+      "verdict": "FP",
+      "rationale": "Likely 'Camellia Hill' compound context."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:cheongsapo_blue_line_park",
+      "field": "highlights[0]",
+      "issue_type": "glossary_term_missing",
+      "term": "haeundae",
+      "verdict": "FP",
+      "rationale": "Snippet doesn't directly mention Haeundae; Tier 1 broader scan hit."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:route_variant_west",
+      "field": "visitBasics.admission",
+      "issue_type": "glossary_term_missing",
+      "term": "hyeopjae beach",
+      "verdict": "FP",
+      "rationale": "JA shortens to '挟才ビーチ無料' after first-mention full form. In an admission listing, brevity is acceptable."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "poi:route_variant_custom",
+      "field": "highlights[3]",
+      "issue_type": "glossary_term_missing",
+      "term": "k-drama filming location",
+      "verdict": "TP",
+      "severity": "minor",
+      "snippet": "Kドラマロケ地とペアリング:渉地コジ(『オールイン』)、挟才エリア(『花より男子』)、天地淵(『ビッグ』)",
+      "suggested_fix": "Glossary → 韓国ドラマのロケ地. Suggest: '韓国ドラマのロケ地と組み合わせ'. (See Garden of Morning Calm note about Kドラマ vs 韓国ドラマ corpus inconsistency.)"
+    },
+    {
+      "locale": "ja",
+      "poi_key": "name:lunch — south jeju local",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "camellia",
+      "verdict": "FP",
+      "rationale": "EN context is 'Camellia Hill' proper noun → カメリアヒル."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "name:pickup (4 points across jeju city)",
+      "field": "description",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju",
+      "verdict": "FP",
+      "rationale": "Compound place names 済州市内・済州空港・済州市庁 — natural ja forms."
+    },
+    {
+      "locale": "ja",
+      "poi_key": "_aggregated_jeju_compound_FP",
+      "field": "*",
+      "issue_type": "glossary_term_missing",
+      "term": "jeju (76 occurrences)",
+      "verdict": "FP",
+      "rationale": "Tier 1 flagged 76 'jeju' findings. After audit, ~70+ are FP because EN 'Jeju' appears in compound contexts (Jeju City→済州市, Jeju Airport→済州空港, Jeju tea→済州茶, Jeju coast→済州海岸, Jeju waterfall→済州の滝, Innisfree Jeju House→brand name kept). Standalone island reference 済州島 is used elsewhere correctly (62 hits in corpus). Tier 1 rule is over-strict. RECOMMENDATION: relax glossary check for 'Jeju' to allow 済州+compound or 済州島 standalone."
+    }
+  ],
+  "tier2_native_tone": [
+    {
+      "poi_key": "poi:osulloc_tea_museum",
+      "field": "whyOnRoute",
+      "snippet": "花以外の象徴的な立ち寄り先です。…(2) **屋内フィナーレ+休憩バッファ** — オソルロクのティーミュージアム+カフェは、**この日唯一の午後遅めの屋内ストップ** 。",
+      "issue_type": "ai_tone_loanword_overuse",
+      "severity": "major",
+      "detail": "AI-tone calque: 象徴的な, バッファ, ストップ, フィナーレ, アンカー all in one passage. Native ja tourism copy would use more 大和言葉/和語. Corpus stats: 象徴的な 16x, アンカー 27x, バッファ 16x, シグネチャー 21x, ローテーション 14x, ペアリング 10x, ピボット 5x — systemic over-reliance on direct EN→katakana calques.",
+      "suggested_fix": "Reduce English business-jargon calques. Examples: 'バッファ' → '余裕枠' or 'ゆとり時間'; 'アンカー' → '中心', '基点', '柱'; 'シグネチャー' → '看板', '代表的な'; 'ピボット' → '切り替え'; 'ローテーション' → '日替わり', '順番'. 'フィナーレ' is OK in tourism copy but should not appear in every POI."
+    },
+    {
+      "poi_key": "poi:osulloc_tea_museum",
+      "field": "description",
+      "snippet": "**designboomの「世界の美術館トップ10」** にも選出されました",
+      "issue_type": "non_native_idiom",
+      "severity": "minor",
+      "detail": "「designboomの『世界の美術館トップ10』」 reads slightly stiff. designboom is a publication, so 「米建築誌designboomの『世界の美術館トップ10』に選出」 or 「建築メディアdesignboomで『世界の美術館トップ10』に選ばれました」 would read more natively.",
+      "suggested_fix": "建築メディアdesignboomの「世界の美術館トップ10」に選出されました"
+    },
+    {
+      "poi_key": "poi:hyeopjae_beach",
+      "field": "description",
+      "snippet": "この2ビーチのペアリングは挟才を象徴する撮影スポットです。シグネチャーの眺めは **飛揚島(비양도)** —",
+      "issue_type": "ai_tone_loanword_overuse",
+      "severity": "major",
+      "detail": "「ペアリング」「シグネチャー」が立て続けに登場。観光案内文として直訳臭が強い。",
+      "suggested_fix": "「2つのビーチを並べた構図は挟才ならではの撮影スポット。代表的な眺めは飛揚島 —」のように和語化。"
+    },
+    {
+      "poi_key": "poi:hyeopjae_beach",
+      "field": "description",
+      "snippet": "**シルバーホワイトの砂浜** — 細かい砂に **砕けた貝殻+サンゴの破片** が混じり、朝鮮半島では珍しい光沢を放ちます",
+      "issue_type": "non_native_idiom",
+      "severity": "minor",
+      "detail": "「シルバーホワイト」は色名としては英語直訳。日本語の観光媒体では「銀白色の砂浜」「白銀の砂」の方が自然。",
+      "suggested_fix": "銀白色の砂浜 / 白銀色の砂浜"
+    },
+    {
+      "poi_key": "poi:cheonjiyeon_falls",
+      "field": "description",
+      "snippet": "**天地淵瀑布**(천지연 폭포 — 直訳「天と地が出会う淵の滝」)",
+      "issue_type": "calque_glossary",
+      "severity": "minor",
+      "detail": "EN literal '\"Sky-meeting-Land Falls\"' was translated 「天と地が出会う淵の滝」. The EN gloss is a hyphenated etymology label. JA reads OK but could be tightened.",
+      "suggested_fix": "「天と地が出会う淵」 (drop trailing 「の滝」 since 瀑布 already conveys the falls)。"
+    },
+    {
+      "poi_key": "poi:cheonjiyeon_falls",
+      "field": "description (and corpus-wide)",
+      "snippet": "天地淵瀑布 / 天地淵滝 / 天地淵 inconsistency (3/5/15 hits)",
+      "issue_type": "glossary_inconsistency_corpus_wide",
+      "severity": "major",
+      "detail": "天地淵瀑布 appears 3x, 天地淵滝 5x, 天地淵 (alone) 15x. Glossary mandates 天地淵瀑布. After first full mention, abbreviation OK, but mixing 滝/瀑布 in same document is inconsistent. Same applies to 天帝淵瀑布(4)/天帝淵滝(1)/天帝淵(12).",
+      "suggested_fix": "Standardize: first mention 天地淵瀑布 (per glossary), subsequent mentions either 天地淵 or repeat 天地淵瀑布. Eliminate 天地淵滝 form."
+    },
+    {
+      "poi_key": "poi:tongdosa_temple",
+      "field": "description",
+      "snippet": "唐から **歴史的な釈迦の真身舎利** — 袈裟、応器(鉢)、頭蓋骨の遺骨 — を奉じて帰国した直後に創建。これらの真身舎利は…",
+      "issue_type": "keitai_taigen_dome_mixing",
+      "severity": "minor",
+      "detail": "敬体（〜です/ます）と体言止め（「直後に創建。」「唯一無二の構造。」「大雄殿のみが残存。」）が混在。日本語の観光説明文では体言止めの多用は箇条書き的になり、まとまりに欠ける。",
+      "suggested_fix": "体言止め文を敬体に統一。例：「〜直後に創建されました。」「〜という唯一無二の構造です。」「大雄殿のみが残りました。」"
+    },
+    {
+      "poi_key": "poi:tongdosa_temple",
+      "field": "description",
+      "snippet": "韓国仏教の **三宝寺刹** の一つで、**仏(ブル)** を象徴する寺院です",
+      "issue_type": "glossary_consistency",
+      "severity": "minor",
+      "detail": "「仏(ブル)」のような括弧書きで原音表記を入れる方式は本コーパスで散発的。同じ朝鮮語専門用語でも「韓屋(ハノク)」「海女(ヘニョ)」のように glossary 形式に統一すべき。「仏(ブル)」は仏教の三宝の一般語なので原音表記不要。",
+      "suggested_fix": "「仏(ブル)を象徴する寺院」→「『仏』を象徴する寺院」 or 「仏宝の寺」"
+    },
+    {
+      "poi_key": "poi:olle_maeil_market",
+      "field": "description",
+      "snippet": "**「毎日オルレ」**の名前は、*毎日*(マイル — 定休…",
+      "issue_type": "calque_etymology_block",
+      "severity": "minor",
+      "detail": "EN had 'meaning *daily* (Mail — no closure days)'. JA preserved Latin script *Mail* but transliterated to 「マイル」 — Korean 매일 should be カナ表記「メイル」(韓国語 '매일' = '毎日' を 'メイル' と読む). 「マイル」 は誤読と紛らわしい。",
+      "suggested_fix": "「毎日(メイル) — 定休なしの意」 と修正。EN source itself contains the typo 'Mail' for '매일' — translator should correct to 「メイル」."
+    },
+    {
+      "poi_key": "poi:OPS_busan_port_return",
+      "field": "description, highlights",
+      "snippet": "ドロップオフはターミナル到着ホールで… / **個別ホテルドロップオフなし**",
+      "issue_type": "glossary_consistency_corpus",
+      "severity": "major",
+      "detail": "ドロップオフ (loanword) 5x vs 降車 (glossary) 18x in corpus — systemic mixing. Glossary mandates 降車.",
+      "suggested_fix": "全文書を通じて「ドロップオフ」を「降車」に統一。"
+    },
+    {
+      "poi_key": "poi:noksan_ro_gasiri_blossom_road",
+      "field": "description",
+      "snippet": "道は朝鮮王朝時代の歴史的な**鹿山牧場・甘馬牧場** — 朝鮮で最高の王室馬牧場 — を抜け、",
+      "issue_type": "glossary_consistency_corpus",
+      "severity": "major",
+      "detail": "朝鮮王朝 13x と 朝鮮時代 13x が均等に混在。glossary 'Joseon Dynasty' → 朝鮮時代 が指定。系統的な不整合。",
+      "suggested_fix": "全文書で「朝鮮王朝/朝鮮王朝時代」→「朝鮮時代」に統一。"
+    },
+    {
+      "poi_key": "poi:seoraksan_national_park",
+      "field": "highlights[2], visitBasics.hours, convenience.restroom",
+      "snippet": "新興寺(西暦652年新羅) — 曹渓宗の総本山",
+      "issue_type": "wrong_kanji_proper_noun",
+      "severity": "critical",
+      "detail": "Sinheungsa Temple の正しい漢字は 神興寺(神=god) — Korean Hanja 신흥사(神興寺). 翻訳者は 新興寺(新=new) と誤った漢字を使用。固有名詞の漢字誤りは校閲上 critical。",
+      "suggested_fix": "全 3 occurrences in this POI: 新興寺 → 神興寺。glossary remediation 必須。"
+    },
+    {
+      "poi_key": "poi:un_memorial_cemetery",
+      "field": "description, highlights",
+      "snippet": "国連記念墓地 / UN記念墓地 / 国連記念公園 が混在",
+      "issue_type": "glossary_consistency_within_poi",
+      "severity": "major",
+      "detail": "Glossary 'UN Memorial Cemetery' → 国連記念公園. しかし同 POI 内で 国連記念墓地 (literal 'cemetery') と UN記念墓地 (Latin/kanji mix) と 国連記念公園 が併存。読者の混乱を招く。",
+      "suggested_fix": "全文書で 国連記念公園 に統一。委員会名など固有名詞で「墓地」が必要な場合のみ例外として残し、その旨注記。"
+    },
+    {
+      "poi_key": "poi:imjingak_peace_park",
+      "field": "whyOnRoute",
+      "snippet": "第3トンネルと都羅展望台へのDMZシャトルバスもここから出発します",
+      "issue_type": "glossary_term_omission",
+      "severity": "minor",
+      "detail": "Glossary 'Dora Observatory' → 都羅山展望台. JA omitted 山. Correct ja form is 都羅山展望台 (the observatory is on Dora Mountain).",
+      "suggested_fix": "都羅展望台 → 都羅山展望台"
+    },
+    {
+      "poi_key": "poi:n_seoul_tower",
+      "field": "description, highlights, smartNotes.photo",
+      "snippet": "アイコニックなショット / アイコニックな愛の南京錠ウォール",
+      "issue_type": "ai_tone_loanword",
+      "severity": "minor",
+      "detail": "「アイコニック」 は近年広告コピーで増えているが、観光説明文としては 「象徴的」「定番」「代名詞」 のほうが日本語として自然。",
+      "suggested_fix": "「アイコニックなショット」→「定番のショット」「象徴的な眺め」 等に置換。"
+    },
+    {
+      "poi_key": "poi:haedong_yonggungsa",
+      "field": "whyOnRoute",
+      "snippet": "コースのアイコニックなアンカー — 釜山で最も撮影される寺院",
+      "issue_type": "ai_tone_loanword_double",
+      "severity": "major",
+      "detail": "「アイコニックなアンカー」 は二重の calque。和語化が望ましい。",
+      "suggested_fix": "「コースの代表的な拠点 —」 or 「コースの象徴的な立ち寄り先 —」"
+    },
+    {
+      "poi_key": "poi:hamdeok_seoubong_beach",
+      "field": "smartNotes.tip",
+      "snippet": "挾才や金寧海水浴場ほど混雑しません",
+      "issue_type": "wrong_kanji_variant",
+      "severity": "minor",
+      "detail": "「挾才」 (扌+夾) と glossary 「挟才」 (扌+夾の異体字) が POI 間で混在 (挾才 2x, 挟才 6x)。固有名詞は 1 つに統一すべき。glossary 表記は 挟才。",
+      "suggested_fix": "挾才 → 挟才 に統一。"
+    },
+    {
+      "poi_key": "poi:OPS_lunch",
+      "field": "whyOnRoute",
+      "snippet": "**バッファ吸収機能**も果たします — ピーク時の週末に翰林洞窟の行列が長引いても、昼食時間を50分に圧縮することで",
+      "issue_type": "ai_tone_jargon",
+      "severity": "major",
+      "detail": "「バッファ吸収機能」 は社内向け運用ジャーゴンの直訳。観光商品ページ（読み手は一般旅行者）には不適切。",
+      "suggested_fix": "「時間調整の余裕としても機能します」「行程の遅れを吸収する役割もあります」"
+    },
+    {
+      "poi_key": "name:pickup (4 points across jeju city)",
+      "field": "highlights[3]",
+      "snippet": "バイリンガル行程カード+最初の停車地でルート1100ブリーフィング",
+      "issue_type": "wrong_word_choice_stops",
+      "severity": "minor",
+      "detail": "「停車地」 は乗車・降車する停留所の意で、観光地としての立ち寄り先には合わない。glossary suggests 立ち寄り先 / スポット.",
+      "suggested_fix": "「最初の停車地」→「最初の立ち寄り先」 or 「最初のピックアップ地点」 (this case is pickup-specific, so 'ピックアップ地点' is contextually most accurate)."
+    },
+    {
+      "poi_key": "poi:korean_folk_village_yongin",
+      "field": "description",
+      "snippet": "(ソウル、京畿、黄海、平安、咸鏡、江原、忠清、全羅、慶尚、済州)",
+      "issue_type": "missing_classifier",
+      "severity": "minor",
+      "detail": "朝鮮八道+α の旧道名を列挙する箇所だが、日本語読者には 「黄海道」「平安道」など 「道」 を付けないと地名と認識しにくい。EN source likely '(Seoul, Gyeonggi, Hwanghae, …)' だが、ja では「道」を補うのが慣例。",
+      "suggested_fix": "「(ソウル、京畿道、黄海道、平安道、咸鏡道、江原道、忠清道、全羅道、慶尚道、済州道)」"
+    },
+    {
+      "poi_key": "poi:cheomseongdae",
+      "field": "description",
+      "snippet": "**新羅の善徳女王(在位632〜647年)** 即ち韓国初の女性君主の治世に建造されました",
+      "issue_type": "minor_historical_phrasing",
+      "severity": "minor",
+      "detail": "「即ち」 はやや堅い文語的表現で、観光文では 「すなわち」 のひらがな表記、または 「韓国初の女性君主である善徳女王」 の同格構文がより読みやすい。",
+      "suggested_fix": "「新羅の善徳女王(在位632〜647年、韓国初の女性君主)の治世に建造されました」"
+    },
+    {
+      "poi_key": "poi:pocheon_art_valley",
+      "field": "whyOnRoute",
+      "snippet": "本カタログ屈指の劇的な単一景観",
+      "issue_type": "non_native_phrasing",
+      "severity": "minor",
+      "detail": "「本カタログ屈指の」 は内部資料的言い回しで、消費者向けページでは違和感。",
+      "suggested_fix": "「当ツアーの中でも屈指の絶景スポット」 or 「数あるコースの中でも特に印象的な景観」"
+    },
+    {
+      "poi_key": "poi:gamcheon_culture_village (general note)",
+      "field": "*",
+      "snippet": "(corpus-wide)",
+      "issue_type": "loanword_overuse_systemic",
+      "severity": "major",
+      "detail": "Corpus-wide overuse of business-jargon katakana: アンカー(27), シグネチャー(21), バッファ(16), 象徴的な(16), ローテーション(14), ペアリング(10), ピボット(5). These are direct calques from English itinerary-design jargon. Native ja tourism copy uses 看板(=signature), 中心 / 拠点 / 柱(=anchor), ゆとり / 余裕(=buffer), 切り替え(=pivot), 順番 / 入れ替え(=rotation), 組み合わせ(=pairing).",
+      "suggested_fix": "Globally reduce these katakana terms by ~50% and substitute with 和語/漢語 equivalents. Keep 1-2 per POI for variety; eliminate stacking (e.g., 'アイコニックなアンカー')."
+    },
+    {
+      "poi_key": "poi:OPS_busan_cruise_pickup",
+      "field": "description",
+      "snippet": "**アジア第2位の旅客ターミナル**(上海に次ぐ)で、**2015年8月31日**開業、**年間旅客処理能力278万人**、合計92,945m²の5棟構成です",
+      "issue_type": "fact_density_translation_artifact",
+      "severity": "minor",
+      "detail": "Numerous specific facts. Verified against EN source — figures match. No hallucination. But sentence reads like a fact-list translation; could be reorganized for ja flow.",
+      "suggested_fix": "「アジア第2位の旅客ターミナル(1位は上海)。2015年8月31日に開業し、年間旅客処理能力は278万人、5棟構成で合計92,945m²にわたります。」"
+    },
+    {
+      "poi_key": "poi:hyeopjae_beach",
+      "field": "description",
+      "snippet": "**翰林港から20分のフェリー** でアクセスでき、現在 **韓国初の「カーボンフリーアイランド」認証プロセス** を進めています",
+      "issue_type": "non_native_phrasing",
+      "severity": "minor",
+      "detail": "「認証プロセスを進めています」 は EN 'undergoing certification' の直訳。ja ではより自然に「認証取得を目指して取り組み中」「認証を取得すべく整備中」など。",
+      "suggested_fix": "「韓国初の『カーボンフリーアイランド』認証取得を目指して取り組んでいます」"
+    },
+    {
+      "poi_key": "poi:OPS_lunch_winter_south",
+      "field": "description",
+      "snippet": "**ガイドが厳選した済州島南部のレストランでランチ** — 通常は西帰浦または安徳面エリアで、1日の地理的フローに合わせます",
+      "issue_type": "loanword_calque",
+      "severity": "minor",
+      "detail": "「地理的フロー」 は EN 'geographic flow' の直訳。日本語では「地理的な流れ」「移動の流れ」のほうが自然。",
+      "suggested_fix": "「1日の移動の流れに合わせて」"
+    },
+    {
+      "poi_key": "poi:noksan_ro_gasiri_blossom_road",
+      "field": "description",
+      "snippet": "**『刀の力で(原題: 苦くて、しまいに甘く)』(2024年Netflix)、**",
+      "issue_type": "potential_hallucination_or_title",
+      "severity": "major",
+      "detail": "EN source K-drama title needs verification. JA shows '『刀の力で(原題: 苦くて、しまいに甘く)』' which doesn't match a known 2024 Netflix Korean drama title. Translator may have confabulated a JA title from a literal EN gloss. Verify against canonical EN field and known JA distribution title.",
+      "suggested_fix": "Verify EN source POI 'noksan_ro_gasiri_blossom_road' description for the actual K-drama name; if EN says '쓴 맛 후엔 단 맛' or similar, use established JA distribution title (e.g., 『苦さの後の甘さ』). Mark as TRANSLATOR_VERIFY."
+    },
+    {
+      "poi_key": "poi:olle_maeil_market",
+      "field": "description",
+      "snippet": "オメギスル試飲、ジェソンベーカリーのタコパンの行列",
+      "issue_type": "transliteration_check",
+      "severity": "minor",
+      "detail": "「タコパン」(=octopus bread) — 韓国語 문어빵 / 타코빵 のうち、日本語観光媒体では 'タコパン' は確立した訳語ではない。混乱を招く可能性 (Mexican taco との混同)。",
+      "suggested_fix": "「ジェソンベーカリーの蛸パン(タコパン)の行列」 or just leave Hangul gloss: 「ジェソンベーカリーの「タコパン」(タコ風の形をしたパン)の行列」。"
+    },
+    {
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "description",
+      "snippet": "ドライバーと英語ガイドが **ミニコーチ(8〜15名共有)** で名札を持ってホテルロビーに到着",
+      "issue_type": "loanword_consistency",
+      "severity": "minor",
+      "detail": "「ミニコーチ」 は EN 'minicoach' の直訳。日本語では 「マイクロバス」 もしくは 「小型バス」 のほうが定着している。「コーチ」 は ja で 'coach (instructor)' の意で取られがち。",
+      "suggested_fix": "全コーパスで 「ミニコーチ」 → 「マイクロバス(8〜15名乗合)」 を検討。"
+    }
+  ],
+  "summary": {
+    "tier1_tp": 25,
+    "tier1_fp": 44,
+    "tier1_total_audited": 69,
+    "tier1_aggregated_jeju_FP_count": "~70 of 76 jeju findings are FP (Tier 1 over-strict on compound usages)",
+    "tier2_critical": 1,
+    "tier2_major": 8,
+    "tier2_minor": 20,
+    "tier2_total": 29,
+    "overall_assessment": "Japanese translations are content-faithful and largely native-grade in flow, but suffer from two systemic issues: (1) Heavy English-jargon katakana calques (アンカー/シグネチャー/バッファ/ペアリング/ローテーション/ピボット — collectively ~95 hits) reflecting the EN source's itinerary-design vocabulary leaking through; and (2) intra-corpus glossary inconsistency for several entries — 朝鮮王朝/朝鮮時代 (13/13 split), 天地淵滝/天地淵瀑布, ドロップオフ/降車 (5/18), Kドラマ/韓国ドラマ (26/2), 国連記念墓地/国連記念公園, 神興寺(correct)/新興寺(wrong kanji - critical). Tier 1 produced 127 findings, but ~76 are FALSE POSITIVES on 'jeju' because Tier 1's strict-match check did not whitelist natural compound usages (済州市/済州空港/済州茶/Innisfree Jeju House brand). The reason ja had highest glossary findings is therefore largely an artifact of the over-strict 'jeju' rule combined with (a) EN source heavily using 'Jeju' as adjective and (b) shorter glossary entries (済州島) not matching the natural compound forms. After filtering FPs, real ja glossary issues are ~25 — middle of pack, not worst. Most-problematic POI: poi:seoraksan_national_park (3 occurrences of WRONG kanji 新興寺 instead of 神興寺 — critical proper-noun error). Recommended remediation: (a) global pass to fix 神興寺 typo; (b) standardize 朝鮮時代 / 天地淵瀑布 / 降車 / 国連記念公園 / 都羅山展望台 / 咸徳海水浴場; (c) editorial pass to reduce katakana jargon by ~50%."
+  }
+}

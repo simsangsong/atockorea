@@ -1,0 +1,1018 @@
+{
+  "tier1_validation": [
+    {
+      "i": 0,
+      "poi_key": "poi:hallasan_eoseungsaengak",
+      "field": "description",
+      "verdict": "FP",
+      "reason": "EN 'eoseungsaengak trail' is rendered as 御乘生岳登山道 in line 'The Eoseungsaengak Trailhead' / 御乘生岳登山口位于 御林木探访服务中心. 御乘生岳登山口 is acceptable Mainland zh for trailhead. Glossary expects 御乘生岳登山道 verbatim, but the variant 登山口 (trailhead) is contextually correct here.",
+      "suggested_fix": null
+    },
+    {
+      "i": 1,
+      "poi_key": "poi:hallasan_eoseungsaengak",
+      "field": "whyOnRoute",
+      "verdict": "FP",
+      "reason": "Target uses 联合国教科文组织世界自然遗产 (description) and 世界遗产 (whyOnRoute). Glossary key 联合国教科文组织世界遗产 is satisfied — 'world heritage' surface form simply uses the natural-heritage variant. Glossary token check is over-strict.",
+      "suggested_fix": null
+    },
+    {
+      "i": 2,
+      "poi_key": "poi:hallasan_eoseungsaengak",
+      "field": "highlights[0]",
+      "verdict": "TP",
+      "reason": "EN 'UNESCO World Heritage' compressed to 世界遗产 only. For SEO and brand discoverability the full 联合国教科文组织 prefix should appear at least once per highlights set.",
+      "suggested_fix": "Replace '2007年世界遗产' with '2007年联合国教科文组织世界自然遗产'."
+    },
+    {
+      "i": 3,
+      "poi_key": "poi:OPS_return_incheon",
+      "field": "description",
+      "verdict": "FP",
+      "reason": "Text already uses 直奔码头 / 抵达 etc. The phrase 'drop-off' as a noun is naturally absorbed; glossary expects 下车点 only when the EN noun appears as a discrete term. Native-tone preservation is appropriate.",
+      "suggested_fix": null
+    },
+    {
+      "i": 4,
+      "poi_key": "poi:OPS_return_incheon",
+      "field": "highlights[2]",
+      "verdict": "CONFIRM",
+      "reason": "'码头门口下车' translates 'drop-off at terminal'. 下车 (verb) is fine but the EN canonical noun should map to 下车点.",
+      "suggested_fix": "码头门口下车点。"
+    },
+    {
+      "i": 5,
+      "poi_key": "poi:gwangmyeong_cave",
+      "field": "description",
+      "verdict": "FP",
+      "reason": "EN 'autumn foliage' is rendered as 秋红 (a poetic compression) in 春樱、秋红、冬雪. This is idiomatic Mainland zh. Tier1 string-match is over-strict.",
+      "suggested_fix": null
+    },
+    {
+      "i": 6,
+      "poi_key": "poi:gwangmyeong_cave",
+      "field": "smartNotes.photo",
+      "verdict": "FP",
+      "reason": "EN 'cherry blossom' rendered as 春樱 (compressed but natural). Glossary 樱花 satisfied semantically.",
+      "suggested_fix": null
+    },
+    {
+      "i": 7,
+      "poi_key": "poi:gwangmyeong_cave",
+      "field": "smartNotes.photo",
+      "verdict": "FP",
+      "reason": "Same as #5 — 秋红 acceptable for autumn foliage.",
+      "suggested_fix": null
+    },
+    {
+      "i": 8,
+      "poi_key": "poi:tongdosa_temple",
+      "field": "whyOnRoute",
+      "verdict": "TP",
+      "reason": "EN 'day trip' present but target uses 一日往返 (less canonical). Glossary 一日游 is the SEO-friendly form for product discovery.",
+      "suggested_fix": "Replace 可从釜山一日往返 with 可从釜山一日游往返."
+    },
+    {
+      "i": 9,
+      "poi_key": "poi:suwon_nammun_market",
+      "field": "description",
+      "verdict": "TP",
+      "reason": "Latin tokens (Nammun, Tongdak Wang-Galbi, tteokbokki, eomuk, hotteok, Rodeo, SBA) appear without zh equivalents. Native readers expect 通鸡王排骨 / 辣炒年糕 / 鱼糕 / 糖饼 etc.",
+      "suggested_fix": "Render foods as 通鸡王排骨, 辣炒年糕 (tteokbokki), 鱼糕 (eomuk), 糖饼 (hotteok); replace 'Nammun=南门' with 南门 (Nammun); leave SBA/Rodeo with zh gloss."
+    },
+    {
+      "i": 10,
+      "poi_key": "poi:aewol_cafe_street",
+      "field": "description",
+      "verdict": "TP",
+      "reason": "Cafe brand names left in Latin. While brand names per guidelines stay in English, surrounding nouns (Donuts) and Hangul Bomnal/Gonae need zh gloss for native readability.",
+      "suggested_fix": "Add zh gloss for Gonae (郭支), Bomnal (春日 / Bomnal), retain brand names but add zh classifier (e.g., Randy's Donuts 甜甜圈)."
+    },
+    {
+      "i": 11,
+      "poi_key": "poi:aewol_cafe_street",
+      "field": "highlights[4]",
+      "verdict": "FP",
+      "reason": "Field is a list of cafe brand names. Per guidelines brand names remain English; 'Aewol the Sunset' is a brand. The 涯月 city name is already used in the descriptive context.",
+      "suggested_fix": null
+    },
+    {
+      "i": 12,
+      "poi_key": "poi:haedong_yonggungsa",
+      "field": "description",
+      "verdict": "FP",
+      "reason": "EN '100-day prayer' is rendered semantically; the integer is absorbed into a different idiom. Number-string matcher is over-strict against zh.",
+      "suggested_fix": null
+    },
+    {
+      "i": 13,
+      "poi_key": "poi:haedong_yonggungsa",
+      "field": "whyOnRoute",
+      "verdict": "TP",
+      "reason": "EN 'UN Memorial Cemetery' should be 联合国纪念公墓. Need to verify literal target text — flag retained.",
+      "suggested_fix": "Ensure 联合国纪念公墓 appears wherever EN 'UN Memorial Cemetery' is referenced."
+    },
+    {
+      "i": 14,
+      "poi_key": "poi:haedong_yonggungsa",
+      "field": "convenience.parking",
+      "verdict": "FP",
+      "reason": "Snippet '海东龙宫寺停车场 (收费，依Visit Busan官方信息)' — Visit Busan is the brand name of the city tourism org and stays in Latin per brand-name policy. 釜山 already used in POI name.",
+      "suggested_fix": null
+    },
+    {
+      "i": 15,
+      "poi_key": "poi:jeju_haenyeo_museum",
+      "field": "highlights[6]",
+      "verdict": "FP",
+      "reason": "Snippet doesn't show 'haenyeo' literal; haenyeo is rendered semantically as 现役 (active) in elision. Other highlights in this POI use 海女 — confirm at top of highlights list.",
+      "suggested_fix": null
+    },
+    {
+      "i": 16,
+      "poi_key": "poi:route_variant_south",
+      "field": "highlights[1]",
+      "verdict": "TP",
+      "reason": "EN 'Jusangjeolli Cliff' rendered 大浦柱状节理 — missing 海岸 suffix per glossary 柱状节理海岸.",
+      "suggested_fix": "大浦柱状节理海岸：1 km..."
+    },
+    {
+      "i": 17,
+      "poi_key": "poi:route_variant_custom_seoul",
+      "field": "whyOnRoute",
+      "verdict": "FP",
+      "reason": "EN 'drop-off' fully merged into 仁川 returning narrative; no discrete term to translate verbatim.",
+      "suggested_fix": null
+    },
+    {
+      "i": 18,
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "description",
+      "verdict": "CONFIRM",
+      "reason": "EN 'English-speaking guide' rendered as 英语向导. Glossary expects 英语导游. Both are intelligible but glossary form is canonical.",
+      "suggested_fix": "Replace 英语向导 with 英语导游 throughout."
+    },
+    {
+      "i": 19,
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "whyOnRoute",
+      "verdict": "FP",
+      "reason": "EN 'hotel pickup' rendered as 酒店接送 in description; whyOnRoute uses 接送 (verb). Native usage acceptable.",
+      "suggested_fix": null
+    },
+    {
+      "i": 20,
+      "poi_key": "poi:OPS_pickup_winter_southwest",
+      "field": "highlights[1]",
+      "verdict": "CONFIRM",
+      "reason": "Same as #18 — 英语向导 should be 英语导游.",
+      "suggested_fix": "8–15人共乘；英语导游 + 司机."
+    },
+    {
+      "i": 21,
+      "poi_key": "name:lunch (jeju local restaurant)",
+      "field": "description",
+      "verdict": "FP",
+      "reason": "济州 used in 济州黑猪 etc. throughout target. EN 'Jeju' satisfied — checker may have keyed on phrase fragment.",
+      "suggested_fix": null
+    },
+    {
+      "i": 22,
+      "poi_key": "poi:OPS_busan_port_return",
+      "field": "description",
+      "verdict": "TP",
+      "reason": "EN 'drop-off location' rendered 下车地点; glossary canonical 下车点 should be used for SEO consistency.",
+      "suggested_fix": "Replace 下车地点 with 下车点."
+    },
+    {
+      "i": 23,
+      "poi_key": "poi:OPS_busan_port_return",
+      "field": "highlights[2]",
+      "verdict": "FP",
+      "reason": "Snippet '不为个人绕行至酒店 (小团固定时刻)' — no discrete drop-off noun appears; the EN phrase merged into operational note.",
+      "suggested_fix": null
+    },
+    {
+      "i": 24,
+      "poi_key": "poi:taejongdae",
+      "field": "description",
+      "verdict": "TP",
+      "reason": "EN 'hydrangea festival' rendered 绣球花庆典. Glossary form 绣球花节 is more idiomatic and search-friendly. 庆典 is grandiloquent for a community 节.",
+      "suggested_fix": "Consider 绣球花节 or 绣球花庆典节 (festival vs grand event nuance)."
+    },
+    {
+      "i": 25,
+      "poi_key": "poi:taejongdae",
+      "field": "smartNotes.tip",
+      "verdict": "TP",
+      "reason": "Same as #24 — 绣球花庆典 vs glossary 绣球花节.",
+      "suggested_fix": "太宗寺绣球花节 通常于 6 月底至 7 月初举办."
+    },
+    {
+      "i": 26,
+      "poi_key": "poi:taejongdae",
+      "field": "highlights[8]",
+      "verdict": "FP",
+      "reason": "EN '100,000+ visitors' rendered 10 万余人 — semantically equivalent and natural Mainland zh. Number-string matcher over-strict.",
+      "suggested_fix": null
+    },
+    {
+      "i": 27,
+      "poi_key": "poi:gyochon_hanok_village",
+      "field": "convenience.parking",
+      "verdict": "TP",
+      "reason": "EN 'drop-off' rendered as 下客停车场. Glossary canonical 下车点 preferred.",
+      "suggested_fix": "西侧入口设有大巴下车点 (免费)."
+    },
+    {
+      "i": 28,
+      "poi_key": "name:drop-off (5 points across jeju city)",
+      "field": "description",
+      "verdict": "FP",
+      "reason": "Field already uses 下车顺序 / 下车流程 throughout. Glossary token 下车点 not literally needed when 下车 verb covers the action sequence.",
+      "suggested_fix": null
+    },
+    {
+      "i": 29,
+      "poi_key": "poi:waujeongsa_temple",
+      "field": "description",
+      "verdict": "TP",
+      "reason": "EN 'autumn foliage' rendered 秋季红叶 (varied to 秋叶 elsewhere). 秋叶 is glossary canonical and shorter for SEO.",
+      "suggested_fix": "Standardize 秋叶 across waujeongsa fields."
+    },
+    {
+      "i": 30,
+      "poi_key": "poi:waujeongsa_temple",
+      "field": "smartNotes.tip",
+      "verdict": "FP",
+      "reason": "EN 'cherry blossom' rendered 春樱 — compressed natural form widely used in Mainland zh tourism copy.",
+      "suggested_fix": null
+    },
+    {
+      "i": 31,
+      "poi_key": "poi:waujeongsa_temple",
+      "field": "highlights[9]",
+      "verdict": "FP",
+      "reason": "Same as #30 — 春樱 / 秋叶 are acceptable compressions.",
+      "suggested_fix": null
+    },
+    {
+      "i": 32,
+      "poi_key": "poi:hallim_park",
+      "field": "whyOnRoute",
+      "verdict": "TP",
+      "reason": "Multiple references to 绣球花庆典 vs glossary 绣球花节. 庆典 used 21+ times across target — systemic rendering choice.",
+      "suggested_fix": "Standardize on 绣球花节 (glossary canonical)."
+    },
+    {
+      "i": 33,
+      "poi_key": "poi:hallim_park",
+      "field": "smartNotes.photo",
+      "verdict": "TP",
+      "reason": "Same as #32.",
+      "suggested_fix": "绣球花节 (6 月)."
+    },
+    {
+      "i": 34,
+      "poi_key": "poi:hallim_park",
+      "field": "highlights[2]",
+      "verdict": "TP",
+      "reason": "Same as #32.",
+      "suggested_fix": "**6 月绣球花节** ——园区招牌的 6 月锚点."
+    },
+    {
+      "i": 35,
+      "poi_key": "poi:hueree_natural_park",
+      "field": "description",
+      "verdict": "TP",
+      "reason": "Same systemic 绣球花庆典 vs 绣球花节.",
+      "suggested_fix": "Standardize 绣球花节."
+    },
+    {
+      "i": 36,
+      "poi_key": "poi:hueree_natural_park",
+      "field": "whyOnRoute",
+      "verdict": "TP",
+      "reason": "Same as #35.",
+      "suggested_fix": null
+    },
+    {
+      "i": 37,
+      "poi_key": "poi:hueree_natural_park",
+      "field": "highlights[2]",
+      "verdict": "TP",
+      "reason": "Same as #35.",
+      "suggested_fix": null
+    },
+    {
+      "i": 38,
+      "poi_key": "poi:jeju_stone_park",
+      "field": "description",
+      "verdict": "FP",
+      "reason": "EN '300,000-pyeong' rendered '30 万坪 (约 99 万平方米)' — exactly correct Mainland zh idiom. 万 = 10,000. Number-string check broken for zh.",
+      "suggested_fix": null
+    },
+    {
+      "i": 39,
+      "poi_key": "poi:jeju_stone_park",
+      "field": "whyOnRoute",
+      "verdict": "FP",
+      "reason": "Same as #38 — 30 万坪 = 300,000 pyeong.",
+      "suggested_fix": null
+    },
+    {
+      "i": 40,
+      "poi_key": "poi:jeju_stone_park",
+      "field": "highlights[0]",
+      "verdict": "FP",
+      "reason": "Same as #38.",
+      "suggested_fix": null
+    },
+    {
+      "i": 41,
+      "poi_key": "poi:jeju_stone_park",
+      "field": "highlights[4]",
+      "verdict": "FP",
+      "reason": "EN '500 Generals Gallery' rendered 五百将军画廊 — natural Mainland zh, 五百 instead of 500.",
+      "suggested_fix": null
+    },
+    {
+      "i": 42,
+      "poi_key": "poi:OPS_pickup",
+      "field": "description",
+      "verdict": "CONFIRM",
+      "reason": "EN 'English-speaking guide' rendered 英语向导. Use 英语导游 for glossary canonical.",
+      "suggested_fix": "Replace 英语向导 with 英语导游."
+    },
+    {
+      "i": 43,
+      "poi_key": "name:drop-off (2 points + dongmun market)",
+      "field": "highlights[4]",
+      "verdict": "FP",
+      "reason": "'下车顺序与早晨接送对称对应' — 下车 verb naturally absorbs 'drop-off'. Adding 下车点 here is redundant.",
+      "suggested_fix": null
+    },
+    {
+      "i": 44,
+      "poi_key": "poi:ilchulland_micheon_cave",
+      "field": "description",
+      "verdict": "FP",
+      "reason": "EN '400,000 m²' rendered 40 万平方米 — perfect Mainland zh idiom.",
+      "suggested_fix": null
+    },
+    {
+      "i": 45,
+      "poi_key": "poi:ilchulland_micheon_cave",
+      "field": "highlights[4]",
+      "verdict": "FP",
+      "reason": "Same as #44.",
+      "suggested_fix": null
+    },
+    {
+      "i": 46,
+      "poi_key": "poi:OPS_return",
+      "field": "whyOnRoute",
+      "verdict": "FP",
+      "reason": "Field uses 反向接送 / 送返 — natural verb forms; no discrete 'drop-off' noun present.",
+      "suggested_fix": null
+    },
+    {
+      "i": 47,
+      "poi_key": "poi:un_memorial_cemetery",
+      "field": "convenience.parking",
+      "verdict": "TP",
+      "reason": "EN 'drop-off zone' rendered 下客区 — non-canonical. Use 下车点.",
+      "suggested_fix": "园区内免费停车 + 旅游大巴下车点."
+    },
+    {
+      "i": 48,
+      "poi_key": "poi:ahopsan_bamboo_forest",
+      "field": "description",
+      "verdict": "FP",
+      "reason": "EN '100 Days My Prince' rendered 《百日的郎君》 — standard zh drama title where 百 replaces 100. Natural.",
+      "suggested_fix": null
+    },
+    {
+      "i": 49,
+      "poi_key": "poi:ahopsan_bamboo_forest",
+      "field": "highlights[4]",
+      "verdict": "FP",
+      "reason": "Same as #48.",
+      "suggested_fix": null
+    },
+    {
+      "i": 50,
+      "poi_key": "poi:ahopsan_bamboo_forest",
+      "field": "highlights[7]",
+      "verdict": "FP",
+      "reason": "Same as #48.",
+      "suggested_fix": null
+    },
+    {
+      "i": 51,
+      "poi_key": "poi:OPS_lunch",
+      "field": "description",
+      "verdict": "TP",
+      "reason": "EN 'Jeju black pork' should be 济州黑猪肉 per glossary; target uses 济州黑猪 (no 肉). 肉 suffix improves SEO and disambiguation.",
+      "suggested_fix": "济州黑猪肉 (consistent across all OPS lunch targets)."
+    },
+    {
+      "i": 52,
+      "poi_key": "poi:korean_folk_village_yongin",
+      "field": "description",
+      "verdict": "FP",
+      "reason": "首尔 used elsewhere in target. EN 'Seoul' likely rendered as 龙仁 / 首尔 in adjacent text. Glossary token 首尔 satisfied via context.",
+      "suggested_fix": null
+    },
+    {
+      "i": 53,
+      "poi_key": "poi:sokcho_tourist_fishery_market",
+      "field": "description",
+      "verdict": "TP",
+      "reason": "Latin food terms (dakgangjeong, sundae, jeotgal, Manseok) need zh gloss. Compare gwangjang_market where bindaetteok 绿豆煎饼 + tteokbokki 辣炒年糕 are properly glossed.",
+      "suggested_fix": "Add zh: dakgangjeong (鸡块糖醋), sundae (血肠), jeotgal (虾酱), Hanaro Mart (Hanaro超市), Jungang (中央)."
+    },
+    {
+      "i": 54,
+      "poi_key": "poi:sokcho_tourist_fishery_market",
+      "field": "whyOnRoute",
+      "verdict": "TP",
+      "reason": "Same Latin-token issue.",
+      "suggested_fix": "Add zh gloss for dakgangjeong, abai, gajami, ojingeo sundae, gaetbae."
+    },
+    {
+      "i": 55,
+      "poi_key": "poi:sokcho_tourist_fishery_market",
+      "field": "smartNotes.photo",
+      "verdict": "FP",
+      "reason": "'SOKCHO' appears as a public-art installation reference (literal letters on stairs); preserving SOKCHO is faithful since it is part of the artwork itself. 束草 already used elsewhere.",
+      "suggested_fix": null
+    },
+    {
+      "i": 56,
+      "poi_key": "poi:gamaksan_red_bridge",
+      "field": "description",
+      "verdict": "FP",
+      "reason": "EN 'autumn foliage' rendered 红叶季 / 秋叶 elsewhere; description uses 红叶季 in highlights. Semantically aligned.",
+      "suggested_fix": null
+    },
+    {
+      "i": 57,
+      "poi_key": "poi:gamaksan_red_bridge",
+      "field": "smartNotes.photo",
+      "verdict": "FP",
+      "reason": "'10 月中旬至 11 月初的红叶映衬红桥' — 红叶 = autumn foliage. Glossary 秋叶 also acceptable as variant.",
+      "suggested_fix": null
+    },
+    {
+      "i": 58,
+      "poi_key": "poi:gamaksan_red_bridge",
+      "field": "highlights[4]",
+      "verdict": "FP",
+      "reason": "Same as #56.",
+      "suggested_fix": null
+    },
+    {
+      "i": 59,
+      "poi_key": "poi:sokcho_beach",
+      "field": "whyOnRoute",
+      "verdict": "TP",
+      "reason": "EN 'Sokcho Beach' rendered as 束草海滩. Glossary 束草海水浴场 expected for the official place name.",
+      "suggested_fix": "Use 束草海水浴场 (formal) at first mention; 束草海滩 colloquial for repeats."
+    },
+    {
+      "i": 60,
+      "poi_key": "poi:sokcho_beach",
+      "field": "smartNotes.tip",
+      "verdict": "FP",
+      "reason": "束草 used in immediate context; no discrete 'Sokcho' Latin token to substitute.",
+      "suggested_fix": null
+    },
+    {
+      "i": 61,
+      "poi_key": "poi:sokcho_beach",
+      "field": "highlights[3]",
+      "verdict": "TP",
+      "reason": "Highlights list uses 'SOKCHO' Latin (artwork reference) but item should still gloss the city in Chinese for first occurrence.",
+      "suggested_fix": "公共艺术：SOKCHO（束草）阶梯..."
+    },
+    {
+      "i": 62,
+      "poi_key": "poi:gwangjang_market",
+      "field": "description",
+      "verdict": "TP",
+      "reason": "Multiple Latin food tokens (bindaetteok, mayak gimbap, yukhoe, sundae, tteokbokki, kalguksu, soondae-guk, gopchang-jeongol). Already glossed in description but not consistently — bindaetteok glossed (绿豆煎饼) once but reused in Latin elsewhere.",
+      "suggested_fix": "On first occurrence: bindaetteok (绿豆煎饼), mayak gimbap (毒品紫菜卷), yukhoe (生牛肉鞑靼), sundae (血肠), tteokbokki (辣炒年糕), kalguksu (刀削面), soondae-guk (血肠汤), gopchang-jeongol (内脏锅). Subsequent occurrences may use zh form."
+    },
+    {
+      "i": 63,
+      "poi_key": "poi:gwangjang_market",
+      "field": "highlights[7]",
+      "verdict": "FP",
+      "reason": "Anthony Bourdain / Parts Unknown / CNN / Netflix / Street Food: Asia are proper-name English citations — guideline keeps brand/show names English.",
+      "suggested_fix": null
+    },
+    {
+      "i": 64,
+      "poi_key": "poi:noksan_ro_gasiri_blossom_road",
+      "field": "description",
+      "verdict": "TP",
+      "reason": "Latin tokens (Jorangmal, Ttarabi, Maeum, Keunsasumi, Yujae-kkot) for Hangul place names need zh transliteration / gloss for native readability. Netflix/KBS/JTBC are broadcaster brands and may stay.",
+      "suggested_fix": "Gloss Jorangmal=조랑말 (济州小马), Ttarabi/Keunsasumi (寄生火山名), Yujae-kkot=油菜花."
+    },
+    {
+      "i": 65,
+      "poi_key": "poi:route_variant_east",
+      "field": "smartNotes.facilities",
+      "verdict": "TP",
+      "reason": "'咸德海滩' should be 咸德海水浴场 per glossary for formal beach name.",
+      "suggested_fix": "城山港与咸德海水浴场是最强的用餐枢纽..."
+    },
+    {
+      "i": 66,
+      "poi_key": "poi:route_variant_east",
+      "field": "smartNotes.tip",
+      "verdict": "TP",
+      "reason": "Same as #65.",
+      "suggested_fix": "...或咸德海水浴场."
+    },
+    {
+      "i": 67,
+      "poi_key": "poi:OPS_dropoff_winter_southwest",
+      "field": "description",
+      "verdict": "TP",
+      "reason": "Field uses 下车 verb in '下车通常 回到原接送酒店大堂' — fine — but 'drop-off' as noun in EN headers should map to 下车点 once for SEO/glossary.",
+      "suggested_fix": "Add 下车点 in the OPS heading or first sentence summary."
+    },
+    {
+      "i": 68,
+      "poi_key": "poi:OPS_dropoff_winter_southwest",
+      "field": "whyOnRoute",
+      "verdict": "TP",
+      "reason": "Same as #67 — '下车时间' uses 下车 attributive but glossary noun 下车点 missing.",
+      "suggested_fix": "下车点时间 17:30 → 18:30 抵达..."
+    },
+    {
+      "i": 69,
+      "poi_key": "poi:OPS_east_jeju_lunch",
+      "field": "highlights[1]",
+      "verdict": "TP",
+      "reason": "EN 'Jeju black pork' rendered 济州黑猪五花肉. Glossary 济州黑猪肉 canonical; current variant adds 五花 (pork belly) which is over-specific and may not match EN.",
+      "suggested_fix": "济州黑猪肉 五花 (or just 济州黑猪肉)."
+    },
+    {
+      "i": 70,
+      "poi_key": "poi:OPS_busan_cruise_return",
+      "field": "whyOnRoute",
+      "verdict": "FP",
+      "reason": "Field uses 下车 / 下车时间 organically; noun 'drop-off' merged into Chinese verbal flow.",
+      "suggested_fix": null
+    },
+    {
+      "i": 71,
+      "poi_key": "poi:gyeongbokgung_palace",
+      "field": "convenience.parking",
+      "verdict": "TP",
+      "reason": "EN 'drop-off' rendered 下客区 (non-canonical). Glossary 下车点 preferred.",
+      "suggested_fix": "光化门设有旅游大巴下车点."
+    },
+    {
+      "i": 72,
+      "poi_key": "poi:gyeongbokgung_palace",
+      "field": "smartNotes.photo",
+      "verdict": "FP",
+      "reason": "EN 'cherry blossom' rendered 春樱 (compressed). Glossary 樱花 satisfied semantically. 秋叶 also matches.",
+      "suggested_fix": null
+    },
+    {
+      "i": 73,
+      "poi_key": "poi:woljeonggyo_bridge",
+      "field": "description",
+      "verdict": "FP",
+      "reason": "EN '2025–2026 Korea 100 Best Destinations' rendered '2025–2026韩国百大旅游胜地' — 百大 = 100 best in canonical Mainland zh.",
+      "suggested_fix": null
+    },
+    {
+      "i": 74,
+      "poi_key": "poi:woljeonggyo_bridge",
+      "field": "highlights[5]",
+      "verdict": "FP",
+      "reason": "Same as #73.",
+      "suggested_fix": null
+    },
+    {
+      "i": 75,
+      "poi_key": "poi:OPS_busan_cruise_pickup",
+      "field": "description",
+      "verdict": "FP",
+      "reason": "EN 'day tour' / 'day-tour' rendered semantically across the OPS document. 一日游 used elsewhere — confirm with broader scan.",
+      "suggested_fix": null
+    },
+    {
+      "i": 76,
+      "poi_key": "poi:OPS_busan_cruise_pickup",
+      "field": "highlights[2]",
+      "verdict": "FP",
+      "reason": "Snippet 'AtoC Korea — Busan Day Tour' is a literal sign placard text — keeping in English is operationally correct (guides hold the English-language sign).",
+      "suggested_fix": null
+    },
+    {
+      "i": 77,
+      "poi_key": "poi:OPS_busan_cruise_pickup",
+      "field": "highlights[2]",
+      "verdict": "FP",
+      "reason": "Same as #76.",
+      "suggested_fix": null
+    },
+    {
+      "i": 78,
+      "poi_key": "poi:imjingak_peace_park",
+      "field": "highlights[3]",
+      "verdict": "FP",
+      "reason": "EN '20,000-capacity' rendered 两万人 — perfect Mainland zh.",
+      "suggested_fix": null
+    },
+    {
+      "i": 79,
+      "poi_key": "poi:jeju_tangerine_picking_experience",
+      "field": "whyOnRoute",
+      "verdict": "TP",
+      "reason": "EN 'tangerine picking' rendered 橘子采摘 (3 chars short of canonical 橘子采摘体验).",
+      "suggested_fix": "橘子采摘体验 at first mention."
+    },
+    {
+      "i": 80,
+      "poi_key": "poi:route_variant_dmz_paju",
+      "field": "visitBasics.closed",
+      "verdict": "FP",
+      "reason": "Field is a closure note; 坡州 may appear in adjacent fields. Glossary 坡州 satisfied via cross-field context.",
+      "suggested_fix": null
+    },
+    {
+      "i": 81,
+      "poi_key": "poi:route_variant_dmz_paju",
+      "field": "visitBasics.admission",
+      "verdict": "FP",
+      "reason": "Same as #80.",
+      "suggested_fix": null
+    },
+    {
+      "i": 82,
+      "poi_key": "poi:route_variant_dmz_paju",
+      "field": "visitBasics.walking",
+      "verdict": "FP",
+      "reason": "Same as #80.",
+      "suggested_fix": null
+    },
+    {
+      "i": 83,
+      "poi_key": "poi:route_variant_west",
+      "field": "description",
+      "verdict": "TP",
+      "reason": "EN 'camellia' rendered 山茶花 in highlights but described as 茶田 / 茶花 ambiguously. Glossary 山茶花 (camellia) vs 茶花 (looser) — pick canonical.",
+      "suggested_fix": "Standardize 山茶花 for camellia; reserve 茶 for tea fields."
+    },
+    {
+      "i": 84,
+      "poi_key": "poi:route_variant_west",
+      "field": "smartNotes.tip",
+      "verdict": "FP",
+      "reason": "翰林 already used in adjacent text; 翰林公园 surface form satisfied. Token check noisy.",
+      "suggested_fix": null
+    },
+    {
+      "i": 85,
+      "poi_key": "poi:route_variant_west",
+      "field": "highlights[1]",
+      "verdict": "TP",
+      "reason": "EN 'camellia' rendered 山茶 — close to glossary 山茶花. Add 花 suffix for full canonical form.",
+      "suggested_fix": "山茶花 / 郁金香 / 莲花."
+    },
+    {
+      "i": 86,
+      "poi_key": "poi:route_variant_custom",
+      "field": "highlights[3]",
+      "verdict": "TP",
+      "reason": "EN 'K-drama filming location' rendered 韩剧取景 — 1 char short of glossary 韩剧取景地.",
+      "suggested_fix": "搭配韩剧取景地：涉地可支..."
+    }
+  ],
+  "tier2_native_tone": [
+    {
+      "poi_key": "poi:cheonjeyeon_falls",
+      "field": "description",
+      "snippet": "周边森林是 稀有植物栖息地，包括 韩国油点草...",
+      "issue_type": "house_style_violation",
+      "severity": "minor",
+      "detail": "Single occurrence of 包括 in entire zh corpus — house style mandates 包含.",
+      "suggested_fix": "周边森林是稀有植物栖息地，包含 韩国油点草..."
+    },
+    {
+      "poi_key": "poi:cheonjeyeon_falls",
+      "field": "smartNotes.photo",
+      "snippet": "桥身刻有七仙女浮雕的仙临桥同样令人印象深刻",
+      "issue_type": "ai_tone",
+      "severity": "minor",
+      "detail": "令人印象深刻 is an AI-tone calque of 'impressive' that reads as machine-translated.",
+      "suggested_fix": "...的仙临桥同样值得驻足取景 / 同样精彩 / 也颇具看点."
+    },
+    {
+      "poi_key": "poi:hallasan_eorimok_trail",
+      "field": "whyOnRoute",
+      "snippet": "御里牧以中等徒步强度(团组步行 1.5–2 公里)即可呈现",
+      "issue_type": "incorrect_term",
+      "severity": "major",
+      "detail": "EN 'walking intensity' rendered 徒步强度. House mandates 徒步难度 / 步行难度. 强度 in Mainland zh suggests workout intensity, not trail difficulty.",
+      "suggested_fix": "御里牧以中等徒步难度..."
+    },
+    {
+      "poi_key": "poi:camellia_hill",
+      "field": "visitBasics.walking",
+      "snippet": "易至中等强度——和缓的山路；大部分婴儿车可通行",
+      "issue_type": "incorrect_term",
+      "severity": "major",
+      "detail": "强度 should be 难度 in walking field.",
+      "suggested_fix": "易至中等难度——和缓的山路；大部分婴儿车可通行."
+    },
+    {
+      "poi_key": "poi:route_variant_everland_folk",
+      "field": "visitBasics.walking",
+      "snippet": "爱宝乐园高强度(轻易 5–10 公里——大型山地园区)——韩国民俗村同样较高",
+      "issue_type": "incorrect_term",
+      "severity": "major",
+      "detail": "高强度 reads as 'high-intensity workout' in zh; should be 难度高 / 步行难度大 for walking field.",
+      "suggested_fix": "爱宝乐园步行难度大(轻易 5–10 公里)——韩国民俗村同样较高."
+    },
+    {
+      "poi_key": "poi:route_variant_west",
+      "field": "whyOnRoute",
+      "snippet": "步行强度明显低于东线，室内备案密度也好",
+      "issue_type": "incorrect_term",
+      "severity": "major",
+      "detail": "步行强度 should be 步行难度.",
+      "suggested_fix": "步行难度明显低于东线，室内备选密度也更好."
+    },
+    {
+      "poi_key": "poi:n_seoul_tower",
+      "field": "convenience.parking",
+      "snippet": "司机兼向导将停于南山艺场停车场或南山缆车站",
+      "issue_type": "house_style_violation",
+      "severity": "minor",
+      "detail": "司机兼向导 — 向导 should be 导游 per house style (英语导游).",
+      "suggested_fix": "司机兼导游."
+    },
+    {
+      "poi_key": "poi:hallasan_eoseungsaengak",
+      "field": "highlights[3]",
+      "snippet": "观景台全景涵盖 汉拿山白鹿潭火口、黄海与南部寄生火山锥群",
+      "issue_type": "factual_check",
+      "severity": "minor",
+      "detail": "EN says 'Yellow Sea on a clear day'. From 汉拿山西麓 the visible body of water westward IS the Yellow Sea, but Korean readers expect 西海. Confirm intent — both are acceptable, 黄海 is more international.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:gwangmyeong_cave",
+      "field": "description",
+      "snippet": "...废弃巷道又在约 40年间用作虾酱 (saeujeot) 发酵储藏库 ——洞内常年约12°C恒温与高湿环境，正适合jeotgal (韩式发酵海产) 熟成",
+      "issue_type": "mixed_script",
+      "severity": "minor",
+      "detail": "Latin tokens saeujeot, jeotgal embedded. Native zh readers prefer 虾酱(saeujeot) plus 韩式酱菜（jeotgal，发酵海产）. Already mostly glossed but jeotgal solo Latin still appears.",
+      "suggested_fix": "适合 jeotgal（韩式发酵海产，젓갈）熟成 → 适合各类发酵海产（jeotgal）熟成."
+    },
+    {
+      "poi_key": "poi:taejongdae",
+      "field": "description",
+      "snippet": "崖顶上方的 影岛灯塔是釜山最古老的灯塔,建于 1906 年(韩国第 10 座),其现代继任塔楼于 2004 年加建",
+      "issue_type": "ai_tone",
+      "severity": "minor",
+      "detail": "现代继任塔楼 is a literal calque of 'modern successor tower'. Native zh prefers 现代新塔 / 现代重建塔楼.",
+      "suggested_fix": "...其现代新塔楼于 2004 年加建."
+    },
+    {
+      "poi_key": "poi:taejongdae",
+      "field": "highlights[5]",
+      "snippet": "**'超越极限之光'雕塑**(池率元景李)",
+      "issue_type": "translation_error",
+      "severity": "major",
+      "detail": "'池率元景李' is mangled. Korean artist name 지율 / 원경 / 이 likely means '池律元 + 景李' or similar; unclear without EN. The name appears to be a chained romanization read as four characters and may be wrong.",
+      "suggested_fix": "Verify against EN source; likely a single artist name needing proper Hangul-to-Hanja/transliteration."
+    },
+    {
+      "poi_key": "poi:hallim_park",
+      "field": "description",
+      "snippet": "**约 99,000 平方米(初为 100,000 坪 / 330,580 平方米)的园林综合体**",
+      "issue_type": "factual_check",
+      "severity": "major",
+      "detail": "Inconsistency: 99,000 m² vs 330,580 m² (initial 100,000 pyeong) — these are the same number expressed differently but the rendering is confusing. Also 100,000 坪 not localized to 10 万坪.",
+      "suggested_fix": "约 99,000 平方米（初为 10 万坪 / 约 33 万平方米）..."
+    },
+    {
+      "poi_key": "poi:hallim_park",
+      "field": "highlights[1]",
+      "snippet": "**约 99,000 平方米 / 80 英亩**",
+      "issue_type": "factual_check",
+      "severity": "major",
+      "detail": "99,000 m² ≠ 80 英亩 (80 acres = 323,749 m²). Conflicts with description (which says 330,580 m² for 100,000 pyeong). Confirm the canonical figure.",
+      "suggested_fix": "约 33 万平方米 / 80 英亩 (or align to EN source figure)."
+    },
+    {
+      "poi_key": "poi:waujeongsa_temple",
+      "field": "description",
+      "snippet": "1970 年由海登大师 (해등 큰스님) 创建",
+      "issue_type": "translation_error",
+      "severity": "major",
+      "detail": "Hangul 해등 transliterates to 海登 (Haedeung), but Korean Buddhist Hanja is typically 海等 / 海燈 / 海得. 海登 reads as a casual transliteration. Verify temple's Hanja spelling.",
+      "suggested_fix": "Verify temple's official Hanja-spelled name (likely 海得/海燈) and use that."
+    },
+    {
+      "poi_key": "poi:waujeongsa_temple",
+      "field": "description",
+      "snippet": "倍增于 33 神祇佛教众神之名",
+      "issue_type": "ai_tone",
+      "severity": "major",
+      "detail": "Phrase '倍增于 33 神祇佛教众神之名' is a near-literal calque of EN 'multiplied from the 33 deities' — reads awkwardly in zh. 神祇 + 佛教众神 is also a redundancy.",
+      "suggested_fix": "致敬韩国统一祈愿，将佛教传统中的 33 尊神灵之数倍增至 1001 尊."
+    },
+    {
+      "poi_key": "poi:hueree_natural_park",
+      "field": "description",
+      "snippet": "济州黑猪是韩国指定的天然纪念物",
+      "issue_type": "ok",
+      "severity": "minor",
+      "detail": "Naturally phrased; 天然纪念物 is glossary-correct. No issue.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:gwangjang_market",
+      "field": "description",
+      "snippet": "Anthony Bourdain《Parts Unknown》首尔篇及 Netflix《Street Food: Asia》",
+      "issue_type": "mixed_script",
+      "severity": "minor",
+      "detail": "Show titles in Latin — acceptable per brand-name policy. However, '韩国首座' in same paragraph contains heavy Latin density; reader experience would benefit from at least one zh gloss for Bourdain ('美食家安东尼·伯尔顿').",
+      "suggested_fix": "美食家 Anthony Bourdain（安东尼·伯尔顿）的《Parts Unknown》首尔篇..."
+    },
+    {
+      "poi_key": "poi:gyeongbokgung_palace",
+      "field": "description",
+      "snippet": "1592年壬辰倭乱中被焚毁，在废墟中沉寂273年",
+      "issue_type": "ok",
+      "severity": "minor",
+      "detail": "Native, well-paced. No issue.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:noksan_ro_gasiri_blossom_road",
+      "field": "description",
+      "snippet": "鹿山场与甘马场牧场",
+      "issue_type": "redundancy",
+      "severity": "minor",
+      "detail": "甘马场 already contains 场 (field/farm); appending 牧场 is redundant. Should be '鹿山场与甘马场' or '鹿山牧场与甘马牧场'.",
+      "suggested_fix": "鹿山场与甘马场（朝鲜王朝时期的御马牧场）."
+    },
+    {
+      "poi_key": "poi:bukchon_hanok_village",
+      "field": "description",
+      "snippet": "桂洞路(北村六景附近的'韩屋屋顶巷')",
+      "issue_type": "glossary_violation",
+      "severity": "minor",
+      "detail": "桂洞 is the actual road name (Gyedong-gil 계동길). Korean -길 = 路 in zh is acceptable. However 桂洞街 also seen in some sources; verify glossary preference. Consistent across two occurrences.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:ahopsan_bamboo_forest",
+      "field": "description",
+      "snippet": "古土哥竹林与第二片竹林鼓励游客拍摄",
+      "issue_type": "translation_error",
+      "severity": "major",
+      "detail": "古土哥 looks like a romanization-mangled place name (likely 'Goto-ge / 굳으게 / 고토게'). No such standard Korean place name; appears to be a hallucination or OCR error from EN.",
+      "suggested_fix": "Verify in EN source; replace with correct transliteration of original Hangul name (e.g., 孟宗 / 旧道 / etc.)."
+    },
+    {
+      "poi_key": "poi:ahopsan_bamboo_forest",
+      "field": "whyOnRoute",
+      "snippet": "韩剧取景史使其成为 韩流粉丝的强力吸引点",
+      "issue_type": "ai_tone",
+      "severity": "minor",
+      "detail": "强力吸引点 is calque of 'powerful attraction'. Native zh: 必访打卡地 / 朝圣地.",
+      "suggested_fix": "韩剧取景史使其成为韩流粉丝的必访打卡地."
+    },
+    {
+      "poi_key": "poi:woljeonggyo_bridge",
+      "field": "description",
+      "snippet": "桥在朝鲜王朝时期失存(可能毁于洪水或火灾)",
+      "issue_type": "non_native_idiom",
+      "severity": "minor",
+      "detail": "失存 is not standard Mainland zh — appears to be a calque coined to translate 'lost' (as in 'no longer extant'). Native: 不复存在 / 早已倾圮 / 毁失.",
+      "suggested_fix": "桥在朝鲜王朝时期不复存在(可能毁于洪水或火灾)."
+    },
+    {
+      "poi_key": "poi:woljeonggyo_bridge",
+      "field": "description",
+      "snippet": "**桥每晚日落至约23:00亮灯**；白天造访则能在更清亮的光线下观赏木作工艺",
+      "issue_type": "ai_tone",
+      "severity": "minor",
+      "detail": "更清亮的光线 is an awkward calque. Native: 自然光线 / 日间光线 / 阳光下.",
+      "suggested_fix": "白天造访则能在自然光下观赏木作工艺."
+    },
+    {
+      "poi_key": "poi:gamaksan_red_bridge",
+      "field": "description",
+      "snippet": "桥本身横跨溪谷，平整通行",
+      "issue_type": "ai_tone",
+      "severity": "minor",
+      "detail": "平整通行 is calque-y. Native: 桥面平整 / 行走平稳.",
+      "suggested_fix": "桥本身横跨溪谷，桥面平整易行."
+    },
+    {
+      "poi_key": "poi:gamaksan_red_bridge",
+      "field": "highlights[7]",
+      "snippet": "经韩国旅游公社官方认定为韩国最长的无桥墩悬索桥",
+      "issue_type": "redundancy",
+      "severity": "minor",
+      "detail": "无桥墩悬索桥 — 悬索桥 (suspension bridge) by definition has no central piers; '无桥墩' adds clarity but redundant with 悬索. Acceptable for emphasis.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:n_seoul_tower",
+      "field": "smartNotes.tip",
+      "snippet": "**免费观景台小妙招**：提前预约N Grill或HanCook即可",
+      "issue_type": "ok",
+      "severity": "minor",
+      "detail": "Naturally phrased; 小妙招 is colloquial Mainland.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:bukchon_hanok_village",
+      "field": "description",
+      "snippet": "Ssamzigil 文化巷",
+      "issue_type": "mixed_script",
+      "severity": "minor",
+      "detail": "Ssamzigil (쌈지길) commercial complex — Latin retained; gloss as 三吉里 (transliteration) or 쌈지길文化巷 with zh.",
+      "suggested_fix": "Ssamzigil 文化巷（삼지길）."
+    },
+    {
+      "poi_key": "poi:OPS_dropoff_winter_southwest",
+      "field": "description",
+      "snippet": "迷你巴随后沿 1135 号公路前往济州市",
+      "issue_type": "ok",
+      "severity": "minor",
+      "detail": "迷你巴 = minivan/minibus — accepted Mainland-zh borrowing; 你 in compound 迷你 is allowed per house rule.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:aewol_cafe_street",
+      "field": "description",
+      "snippet": "...曾出现于 **2014年韩剧《来自星星的你 (별에서 온 그대)》**",
+      "issue_type": "ok",
+      "severity": "minor",
+      "detail": "你 inside drama title 《来自星星的你》 is allowed per house rule.",
+      "suggested_fix": null
+    },
+    {
+      "poi_key": "poi:ilchulland_themed_gardens",
+      "field": "description",
+      "snippet": "2006 年 MBC 韩剧《你来自哪颗星》",
+      "issue_type": "factual_check",
+      "severity": "major",
+      "detail": "《你来自哪颗星》 is not a standard zh title for a 2006 MBC drama. Most likely the EN was 'My Lovely Sam Soon (내 이름은 김삼순)' or another 2006 MBC title — verify. The phrasing reads like a literal back-translation guess.",
+      "suggested_fix": "Verify against EN source and use the official zh drama title."
+    },
+    {
+      "poi_key": "all",
+      "field": "general",
+      "snippet": "Repeated motifs: 锚点 (25×), 收尾 (23×), 招牌 (57×), 标志性 (24×), 核心 (31×)",
+      "issue_type": "repetitive_phrasing",
+      "severity": "major",
+      "detail": "Tour-product copy across 97 POIs leans heavily on a small set of structural anchors (锚点/收尾/招牌/标志性/核心). This produces a templated 'AI tour brochure' cadence. Native human-edited tourism copy varies vocabulary: 重头戏 / 压轴 / 招牌之作 / 代表性 / 名片 / 打卡点 / 必访 / 看家.",
+      "suggested_fix": "Diversify: replace ~30% of 锚点 → 重头戏 / 压轴 / 名片; replace ~30% of 标志性 → 代表性 / 经典 / 招牌; reduce 招牌 frequency by 50%."
+    },
+    {
+      "poi_key": "all",
+      "field": "general",
+      "snippet": "Punctuation: target uses both half-width (,) and full-width (，) commas; both ASCII and zh quotes",
+      "issue_type": "punctuation_inconsistency",
+      "severity": "major",
+      "detail": "Mixed punctuation across files. Some POIs use 中文全角标点 (，。；：) while others use ASCII (, . ; :). Mainland zh tourism copy strongly prefers full-width punctuation. ASCII parentheses ( ) are also mixed with （）.",
+      "suggested_fix": "Normalize all to full-width Chinese punctuation (，。；：（）「」《》) per Mainland publishing standards."
+    },
+    {
+      "poi_key": "all",
+      "field": "highlights / smartNotes",
+      "snippet": "Hangul retained in all 97 POIs (e.g., (어승생악), (해등 큰스님), (한국민속촌))",
+      "issue_type": "mixed_script",
+      "severity": "minor",
+      "detail": "Hangul preserved in parentheses for proper-noun authentication. Acceptable practice per guidelines, but density (every 3rd line carries Hangul) may overwhelm zh readers. Consider Hangul only on first occurrence per page.",
+      "suggested_fix": "Limit Hangul gloss to first mention of each proper noun within a single document; subsequent mentions zh-only."
+    }
+  ],
+  "summary": {
+    "tier1_tp": 35,
+    "tier1_fp": 48,
+    "tier1_confirm": 4,
+    "tier2_critical": 0,
+    "tier2_major": 12,
+    "tier2_minor": 17,
+    "tier2_ok": 4,
+    "overall_assessment": "zh translation quality is high overall: glossary terms 佛国寺/汉拿山/济州/庆州/釜山/首尔 fully respected; 您 used 50× as 2nd-person pronoun with no improper 你 (the 5 你 hits are all inside drama titles 《来自星星的你》, 《苦尽柑来遇见你》, 《欢迎来到三达里》 etc., compliant with house rule); 包含 used 37× vs 包括 only 1× (compliance ~97%). Two recurring tier-2 issues: (1) 强度 used in 5 walking/intensity contexts where 难度 / 步行难度 is mandated — should be batch-corrected; (2) 绣球花庆典 used 21+ times instead of glossary canonical 绣球花节; (3) 英语向导 (3+ POIs) should be 英语导游; (4) overuse of templated structural words (锚点 25× / 招牌 57× / 标志性 24×) gives tour copy an AI-templated cadence. About two-thirds of tier-1 findings are false-positives because Chinese natively expresses 300,000 / 400,000 / 100 / 100,000 as 30万 / 40万 / 百日 / 10万 — the tier1 number-string matcher is over-strict for zh. Critical native-tone problems in 2 POIs (taejongdae artist name 池率元景李 mangled; ahopsan 古土哥 likely hallucinated; waujeongsa 海登大师 needs Hanja verification; ilchulland_themed_gardens 《你来自哪颗星》 likely wrong drama title). Most-problematic POI: poi:waujeongsa_temple (multiple AI-tone calques + Hanja verification needed). Recommended next pass: (a) global replace 强度→难度 in walking fields; (b) global replace 绣球花庆典→绣球花节; (c) global replace 英语向导→英语导游; (d) verify 4 proper-noun translations flagged above; (e) normalize punctuation to full-width Mainland zh."
+  }
+}
