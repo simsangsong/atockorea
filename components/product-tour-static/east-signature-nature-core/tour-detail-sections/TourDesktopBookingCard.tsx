@@ -2,8 +2,25 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import DatePicker from "react-datepicker";
+import dynamic from "next/dynamic";
 import { enUS } from "date-fns/locale/en-US";
+
+/**
+ * react-datepicker is a heavy module (calendar engine + locales) that we don't
+ * need until the right rail is interactive. Dynamic import + ssr:false defers
+ * its JS chunk until after first paint and keeps it out of the SSR HTML, where
+ * it would otherwise bloat hydration on every tour-product page render.
+ *
+ * The CSS stays as a static import below (small, paints empty calendar shell
+ * during the brief async load) — only the JS engine is deferred.
+ */
+const DatePicker = dynamic(
+  () => import("@/components/product-tour-static/_shared/LazyDatePicker"),
+  {
+    ssr: false,
+    loading: () => <div className="card-premium-calendar-wrap--compact h-[260px]" aria-hidden />,
+  },
+);
 import { ko } from "date-fns/locale/ko";
 import { zhCN } from "date-fns/locale/zh-CN";
 import { isSameDay } from "date-fns";
@@ -77,13 +94,18 @@ export function TourDesktopBookingCard({
   const selectedDate = useMemo(() => ymdToLocalDate(dateYmd), [dateYmd]);
   const datePickerLocale = preferredLanguage === "ko" ? ko : preferredLanguage === "zh" ? zhCN : enUS;
 
-  /** Auto-check availability whenever date or guests change. */
+  /**
+   * Auto-check availability whenever date or guests change. Debounced 300ms so
+   * rapid clicks (e.g. dragging the guest stepper, picking through dates) don't
+   * fire a request per keystroke — the previous version sent up to 5 fetches
+   * per second under aggressive interaction.
+   */
   useEffect(() => {
     if (!checkout?.tourId) return;
     if (!dateYmd || dateYmd < minYmd) return;
 
     let cancelled = false;
-    (async () => {
+    const timer = window.setTimeout(async () => {
       setAvailability({ status: "checking" });
       try {
         const res = await fetch(
@@ -114,9 +136,10 @@ export function TourDesktopBookingCard({
       } catch {
         if (!cancelled) setAvailability({ status: "idle" });
       }
-    })();
+    }, 300);
     return () => {
       cancelled = true;
+      window.clearTimeout(timer);
     };
   }, [checkout?.tourId, dateYmd, guestCount, minYmd]);
 

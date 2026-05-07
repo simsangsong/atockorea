@@ -149,7 +149,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
 
               <div
                 className={cn(
-                  "grid transition-all duration-300 ease-out",
+                  "grid transition-[grid-template-rows] duration-300 ease-out",
                   showLessIdeal ? "mt-2.5 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
                 )}
               >
@@ -196,7 +196,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
           </div>
           <div
             className={cn(
-              "flex-shrink-0 rounded-full p-1.5 transition-all duration-200",
+              "flex-shrink-0 rounded-full p-1.5 transition-[transform,background-color] duration-200",
               showLogic ? "rotate-180 bg-primary/10" : "bg-muted/60",
             )}
           >
@@ -204,7 +204,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
           </div>
         </button>
 
-        <div className={cn("grid transition-all duration-300 ease-out", showLogic ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
+        <div className={cn("grid transition-[grid-template-rows] duration-300 ease-out", showLogic ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
           <div className="overflow-hidden">
             <div className="tour-fit-route-logic-inner space-y-4 border-t border-border/60 p-4">
               {(whyTourWorks.routeLogicSections ?? []).map((section) => {

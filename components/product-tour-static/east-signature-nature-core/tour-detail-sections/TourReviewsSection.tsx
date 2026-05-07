@@ -40,11 +40,19 @@ function ReviewCard({ review, sectionUi }: { review: Review; sectionUi: TourProd
   const shouldTruncate = reviewText.length > 200;
 
   return (
-    <div className="card-premium p-5 transition-all duration-200 hover:shadow-premium-elevated">
+    <div className="card-premium p-5 transition-shadow duration-200 hover:shadow-premium-elevated">
       <div className="flex items-start gap-3.5">
         {review.avatar ? (
           // eslint-disable-next-line @next/next/no-img-element -- Supabase public avatar URL; sized at authoring time
-          <img src={review.avatar} alt={review.author} className="h-11 w-11 rounded-full object-cover ring-2 ring-border" />
+          <img
+            src={review.avatar}
+            alt={review.author}
+            width={44}
+            height={44}
+            loading="lazy"
+            decoding="async"
+            className="h-11 w-11 rounded-full object-cover ring-2 ring-border"
+          />
         ) : (
           <div className="h-11 w-11 rounded-full bg-muted ring-2 ring-border flex items-center justify-center text-sm font-semibold text-muted-foreground">
             {review.author.slice(0, 1)}
@@ -111,6 +119,10 @@ function ReviewCard({ review, sectionUi }: { review: Review; sectionUi: TourProd
               key={i}
               src={photo}
               alt={`Review photo ${i + 1}`}
+              width={112}
+              height={80}
+              loading="lazy"
+              decoding="async"
               className="h-20 w-28 flex-shrink-0 rounded-lg object-cover"
             />
           ))}

@@ -34,13 +34,13 @@ export function TourFaqSection({ staticQuestions, sectionUi }: TourFaqSectionPro
             >
               <h3 className="text-sm font-medium text-foreground pr-4 leading-snug">{q.question}</h3>
               <div
-                className={cn("flex-shrink-0 p-1 rounded-full transition-all duration-200", expandedId === q.id ? "bg-primary/10 rotate-180" : "")}
+                className={cn("flex-shrink-0 p-1 rounded-full transition-[transform,background-color] duration-200", expandedId === q.id ? "bg-primary/10 rotate-180" : "")}
               >
                 <ChevronDown className={cn("h-4 w-4 transition-colors", expandedId === q.id ? "text-primary" : "text-muted-foreground")} />
               </div>
             </button>
 
-            <div className={cn("grid transition-all duration-200 ease-out", expandedId === q.id ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
+            <div className={cn("grid transition-[grid-template-rows] duration-200 ease-out", expandedId === q.id ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
               <div className="overflow-hidden">
                 <div className="px-4 pb-5">
                   <p className="text-sm text-muted-foreground leading-[1.7]">{q.answer}</p>
@@ -60,13 +60,13 @@ export function TourFaqSection({ staticQuestions, sectionUi }: TourFaqSectionPro
                 ? sectionUi.faqShowFewer
                 : sectionUi.faqMoreQuestionsTemplate.replace("{count}", String(moreQuestions.length))}
             </span>
-            <div className={cn("flex-shrink-0 p-1 rounded-full transition-all duration-200", showMore ? "bg-primary/10 rotate-180" : "")}>
+            <div className={cn("flex-shrink-0 p-1 rounded-full transition-[transform,background-color] duration-200", showMore ? "bg-primary/10 rotate-180" : "")}>
               <ChevronDown className="h-4 w-4 text-primary" />
             </div>
           </button>
         </div>
 
-        <div className={cn("grid transition-all duration-300 ease-out", showMore ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
+        <div className={cn("grid transition-[grid-template-rows] duration-300 ease-out", showMore ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
           <div className="overflow-hidden divide-y divide-border/60">
             {moreQuestions.map((q) => (
               <div key={q.id}>
@@ -76,13 +76,13 @@ export function TourFaqSection({ staticQuestions, sectionUi }: TourFaqSectionPro
                 >
                   <h3 className="text-sm font-medium text-foreground pr-4 leading-snug">{q.question}</h3>
                   <div
-                    className={cn("flex-shrink-0 p-1 rounded-full transition-all duration-200", expandedId === q.id ? "bg-primary/10 rotate-180" : "")}
+                    className={cn("flex-shrink-0 p-1 rounded-full transition-[transform,background-color] duration-200", expandedId === q.id ? "bg-primary/10 rotate-180" : "")}
                   >
                     <ChevronDown className={cn("h-4 w-4 transition-colors", expandedId === q.id ? "text-primary" : "text-muted-foreground")} />
                   </div>
                 </button>
 
-                <div className={cn("grid transition-all duration-200 ease-out", expandedId === q.id ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
+                <div className={cn("grid transition-[grid-template-rows] duration-200 ease-out", expandedId === q.id ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
                   <div className="overflow-hidden">
                     <div className="px-4 pb-4">
                       <p className="text-sm text-muted-foreground leading-relaxed">{q.answer}</p>

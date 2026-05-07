@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { cookies } from "next/headers";
 import { Inter, Playfair_Display } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 // home-v2.css and home-v2-fidelity.css are imported by components/home/HomeMainBody so they
 // only ship on the homepage route. home-premium.css remains in globals.css because its
@@ -98,6 +99,12 @@ export default async function RootLayout({
           </ErrorBoundary>
         </Suspense>
         <Toaster position="top-center" closeButton richColors />
+        {/*
+         * Vercel Speed Insights — RUM (real user monitoring) for FCP/LCP/TBT/CLS.
+         * Already in package.json; mounting it here begins data collection on Vercel
+         * deploy. Self-contained: no opt-out impact, ~3KB script, no UI footprint.
+         */}
+        <SpeedInsights />
       </body>
     </html>
   );
