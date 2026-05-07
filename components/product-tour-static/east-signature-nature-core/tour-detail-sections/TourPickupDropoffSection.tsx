@@ -96,13 +96,13 @@ export function TourPickupDropoffSection({
         </p>
       </div>
 
-      {/* Map preview — Google Maps embed (no API key needed) */}
+      {/* Map preview — Google Maps embed (no API key needed). Same shell as TourAtAGlance / day-flow. */}
       <div
         className={cn(
-          "relative overflow-hidden rounded-2xl ring-1",
-          "bg-gradient-to-br from-[#fdfbf6] via-[#fefdfa] to-[#f9f6ef]",
-          "ring-stone-200/45",
-          "shadow-[0_2px_4px_rgba(26,35,50,0.04),0_6px_14px_-4px_rgba(26,35,50,0.07),0_18px_36px_-18px_rgba(26,35,50,0.16)]",
+          "relative overflow-hidden rounded-2xl",
+          "bg-white",
+          "ring-1 ring-slate-900/[0.07]",
+          "shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.16)]",
         )}
       >
         <iframe
@@ -118,18 +118,16 @@ export function TourPickupDropoffSection({
         </div>
       </div>
 
-      {/* Pickup card — premium warm ivory surface with copper number badges */}
+      {/* Pickup card — premium-minimal shell, copper accents preserved on the badges only. */}
       {pickupPoints.length > 0 && (
         <div
           className={cn(
-            "relative overflow-hidden rounded-2xl ring-1",
-            "bg-gradient-to-br from-[#fdfbf6] via-[#fefdfa] to-[#f9f6ef]",
-            "ring-stone-200/45",
-            "shadow-[0_2px_4px_rgba(26,35,50,0.04),0_6px_14px_-4px_rgba(26,35,50,0.07),0_18px_36px_-18px_rgba(26,35,50,0.16)]",
+            "relative overflow-hidden rounded-2xl",
+            "bg-white",
+            "ring-1 ring-slate-900/[0.07]",
+            "shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.16)]",
           )}
         >
-          <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-white/55 to-transparent" />
-
           {/* Pickup header strip */}
           <div className="relative flex items-center justify-between gap-3 border-b border-stone-200/50 px-4 py-3 sm:px-5">
             <div className="flex min-w-0 items-center gap-2.5">

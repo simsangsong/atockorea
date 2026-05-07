@@ -6,9 +6,6 @@ export type TourDayFlowSectionProps = Pick<
   "routeFlowStops" | "routePhases" | "routeShapeIntro" | "sectionUi" | "itineraryStops"
 >;
 
-/** Stop circle ring — muted stone tone for a quiet, premium look (no per-phase rainbow). */
-const STOP_RING_COLOR = "ring-stone-200/70";
-
 type FlexFlowStop = { id?: string; type?: string; name: string; theme?: string };
 
 export function TourDayFlowSection({ routeFlowStops, routeShapeIntro, itineraryStops }: TourDayFlowSectionProps) {
@@ -20,21 +17,19 @@ export function TourDayFlowSection({ routeFlowStops, routeShapeIntro, itineraryS
         <h2 className="text-lg font-semibold text-foreground tracking-tight">{routeShapeIntro.title}</h2>
       </div>
 
-      {/* Quiet premium flow card — soft ivory wash, hairline ring, low-key shadow. */}
+      {/* Premium-minimal flow card — same shell as TourAtAGlance / TourTimelineSection. */}
       <div
         className={cn(
-          "relative overflow-hidden rounded-2xl ring-1",
-          "bg-gradient-to-br from-[#fdfbf6] via-[#fefdfa] to-[#f9f6ef]",
-          "ring-stone-200/45",
-          "shadow-[0_1px_2px_rgba(26,35,50,0.03),0_3px_8px_-3px_rgba(26,35,50,0.06)]",
+          "relative overflow-hidden rounded-2xl",
+          "bg-white",
+          "ring-1 ring-slate-900/[0.07]",
+          "shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.16)]",
         )}
       >
-        <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-white/40 to-transparent" />
         <div className="relative overflow-x-auto scrollbar-hide">
-          <div className="flex items-start gap-1 min-w-max px-4 py-5">
+          <div className="flex items-start gap-0.5 min-w-max px-4 py-5">
             {flexStops.map((stop, i) => {
               const stopId = stop.id ?? stop.type ?? String(i + 1).padStart(2, "0");
-              const ring = STOP_RING_COLOR;
               const photoUrl = itineraryStops?.[i]?.image;
               return (
                 <div key={`${stopId}-${i}`} className="flex items-start">
@@ -42,9 +37,9 @@ export function TourDayFlowSection({ routeFlowStops, routeShapeIntro, itineraryS
                     <div className="relative">
                       <div
                         className={cn(
-                          "h-12 w-12 rounded-full ring-2 ring-offset-2 ring-offset-white overflow-hidden bg-muted",
-                          "shadow-[0_1px_2px_rgba(26,35,50,0.06),0_4px_12px_-4px_rgba(26,35,50,0.18)]",
-                          ring,
+                          "h-12 w-12 rounded-full ring-1 ring-offset-2 ring-offset-white overflow-hidden bg-slate-50",
+                          "ring-slate-900/[0.08]",
+                          "shadow-[0_1px_2px_rgba(15,23,42,0.06),0_4px_10px_-3px_rgba(15,23,42,0.14),0_10px_20px_-8px_rgba(15,23,42,0.10)]",
                         )}
                       >
                         {photoUrl ? (
@@ -62,16 +57,18 @@ export function TourDayFlowSection({ routeFlowStops, routeShapeIntro, itineraryS
                         )}
                       </div>
                     </div>
-                    <span className="mt-2 w-full text-[11px] font-semibold text-foreground tracking-tight text-center leading-tight line-clamp-2 break-words">
+                    <span className="mt-2 w-full text-[11.5px] font-semibold text-slate-900 tracking-[-0.005em] text-center leading-tight line-clamp-2 break-words">
                       {stop.name}
                     </span>
                     {stop.theme ? (
-                      <span className="w-full text-[10px] text-muted-foreground text-center leading-tight line-clamp-1 break-words">{stop.theme}</span>
+                      <span className="mt-0.5 w-full text-[10.5px] text-slate-500 text-center leading-tight line-clamp-1 break-words">{stop.theme}</span>
                     ) : null}
                   </div>
                   {i < flexStops.length - 1 ? (
-                    <div className="flex h-12 items-center pt-2">
-                      <div className="h-px w-5 bg-gradient-to-r from-border/70 via-border to-border/70" />
+                    <div className="flex h-12 items-center pt-2 gap-[3px] px-0.5">
+                      <span aria-hidden className="h-[3px] w-[3px] rounded-full bg-slate-300" />
+                      <span aria-hidden className="h-[3px] w-[3px] rounded-full bg-slate-300" />
+                      <span aria-hidden className="h-[3px] w-[3px] rounded-full bg-slate-300" />
                     </div>
                   ) : null}
                 </div>
