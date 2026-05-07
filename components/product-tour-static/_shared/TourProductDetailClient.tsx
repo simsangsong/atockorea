@@ -13,6 +13,7 @@ import {
   TourFaqSection,
   TourFitSection,
   TourHeroSection,
+  TourIncludedSection,
   TourPickupDropoffSection,
   TourPracticalDetails,
   TourRecommendationsSection,
@@ -135,6 +136,15 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
             </div>
           </section>
         ) : null}
+
+        <section id="included" className="mx-3 mt-6 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
+            <TourIncludedSection
+              practicalAccordionItems={vm.practicalAccordionItems}
+              sectionUi={vm.sectionUi}
+            />
+          </div>
+        </section>
 
         <section id="details" className="mx-3 mt-6 lg:mx-0">
           <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">

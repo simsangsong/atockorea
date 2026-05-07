@@ -12,6 +12,8 @@ export { TourDayFlowSection } from "./TourDayFlowSection";
 export type { TourDayFlowSectionProps } from "./TourDayFlowSection";
 export { TourPickupDropoffSection } from "./TourPickupDropoffSection";
 export type { TourPickupDropoffSectionProps } from "./TourPickupDropoffSection";
+export { TourIncludedSection } from "./TourIncludedSection";
+export type { TourIncludedSectionProps } from "./TourIncludedSection";
 export { TourFitSection } from "./TourFitSection";
 export type { TourFitSectionProps } from "./TourFitSection";
 export { TourPracticalDetails } from "./TourPracticalDetails";
