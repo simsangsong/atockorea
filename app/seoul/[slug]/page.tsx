@@ -1,43 +1,16 @@
-// app/seoul/[slug]/page.tsx
-import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
 
-const seoulTourData: Record<string, any> = {
-  "seoul-palace-market-tour": {
-    title: "Seoul Palace & Market Tour",
-    duration: "Half day",
-    price: "from US$69 / person",
-  },
-  "seoul-culture-village-tour": {
-    title: "Seoul Culture Village & Traditional Experience",
-    duration: "Full day",
-    price: "from US$75 / person",
-  },
-};
-
-type Props = {
+/**
+ * Legacy `/seoul/<slug>` route — unified under `/tour-product/<slug>` so every
+ * tour product detail page shares the v2 background + card system. The 308
+ * redirect lives in next.config.js (middleware layer); this server-side
+ * redirect is a defense-in-depth fallback in case the rewrite slips through.
+ */
+export default async function LegacySeoulSlugRedirect({
+  params,
+}: {
   params: Promise<{ slug: string }>;
-};
-
-export default async function SeoulSlugPage({ params }: Props) {
+}) {
   const { slug } = await params;
-  const tour = seoulTourData[slug];
-
-  if (!tour) return notFound();
-
-  return (
-    <div className="mx-auto max-w-3xl px-4 py-4">
-      <h1 className="text-[18px] font-bold text-gray-800 sm:text-[22px] mb-2 leading-tight">{tour.title}</h1>
-
-      <p className="text-[12px] text-gray-600 mb-4">
-        ⏱ {tour.duration} · {tour.price}
-      </p>
-
-      <div className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-gray-100">
-        <p className="text-[13px] text-gray-700">
-          This is a sample Seoul tour detail page.
-        </p>
-      </div>
-    </div>
-  );
+  redirect(`/tour-product/${slug}`);
 }
-

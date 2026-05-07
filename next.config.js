@@ -56,6 +56,32 @@ const nextConfig = {
         destination: '/:locale/tour-product/east-signature-nature-core',
         permanent: true,
       },
+      /**
+       * Legacy city detail routes (`/jeju/<slug>`, `/seoul/<slug>`, `/busan/<slug>`)
+       * unify under the canonical `/tour-product/<slug>` template so every product
+       * detail page shares the v2 background + card system. The `/<city>` index
+       * pages (no slug) keep their own list view — only `:slug` segments redirect.
+       * If the slug isn't a registered tour product, the catch-all page calls
+       * `notFound()` as before.
+       */
+      { source: '/jeju/:slug', destination: '/tour-product/:slug', permanent: true },
+      { source: '/seoul/:slug', destination: '/tour-product/:slug', permanent: true },
+      { source: '/busan/:slug', destination: '/tour-product/:slug', permanent: true },
+      {
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/jeju/:slug',
+        destination: '/:locale/tour-product/:slug',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/seoul/:slug',
+        destination: '/:locale/tour-product/:slug',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/busan/:slug',
+        destination: '/:locale/tour-product/:slug',
+        permanent: true,
+      },
     ];
   },
   generateBuildId: async () => `build-${Date.now()}`,
