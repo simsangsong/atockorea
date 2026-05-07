@@ -48,6 +48,29 @@ export default async function RootLayout({
 
   return (
     <html lang={htmlLang} className="font-sans" suppressHydrationWarning>
+      <head>
+        {/* Preconnect to webfont CDNs so DNS + TLS finish before the stylesheet links resolve. */}
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/*
+         * Pretendard (Korean) — moved out of globals.css @import to remove the CSS-level
+         * waterfall. The CSS itself is ~3 KB and uses unicode-range to fetch woff2 only
+         * when matching glyphs are needed.
+         */}
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+        />
+        {/*
+         * CJK full weights for ja / zh-CN / zh-TW. Google Fonts splits each language's
+         * woff2 by unicode-range, so a Korean visitor doesn't pay for Japanese glyphs.
+         */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap"
+        />
+      </head>
       <body className={`${inter.variable} ${playfairDisplay.variable} font-sans antialiased`}>
         <script
           type="application/ld+json"

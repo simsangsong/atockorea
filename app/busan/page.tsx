@@ -1,10 +1,6 @@
 // app/busan/page.tsx
 import TourCard, { Tour } from "../../components/TourCard";
 
-// Force dynamic rendering to avoid I18nProvider issues during static generation
-export const dynamic = 'force-dynamic';
-
-
 const busanTours: Tour[] = [
   {
     slug: "jeju-eastern-unesco-spots-day-tour",

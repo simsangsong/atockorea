@@ -272,7 +272,7 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
               animate={{ maxHeight: 520, opacity: 1 }}
               exit={{ maxHeight: 0, opacity: 0 }}
               transition={{ duration: 0.78, ease: drawerEase }}
-              className="tour-booking-drawer-panel pointer-events-auto overflow-hidden border-t border-border/90 shadow-[0_-16px_48px_rgba(26,35,50,0.14)] backdrop-blur-xl"
+              className="tour-booking-drawer-panel pointer-events-auto overflow-hidden border-t border-border/90 shadow-[0_-16px_48px_rgba(26,35,50,0.14)] backdrop-blur-md"
             >
               <div className="mx-auto flex max-h-[min(62vh,520px)] w-full max-w-3xl flex-col overflow-hidden">
                 <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-3 py-2.5 sm:px-5">

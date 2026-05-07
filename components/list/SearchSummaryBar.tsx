@@ -36,7 +36,7 @@ export function SearchSummaryBar({
     'inline-flex items-center rounded-full border border-slate-200/80 bg-white/88 px-3 py-1.5 text-[11px] font-medium text-slate-600 shadow-[0_8px_22px_-18px_rgba(15,23,42,0.32)]';
 
   return (
-    <div className="flex flex-wrap items-center gap-2 rounded-[1.4rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.82)_0%,rgba(248,250,252,0.7)_100%)] px-3 py-2.5 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.34)] backdrop-blur-xl">
+    <div className="flex flex-wrap items-center gap-2 rounded-[1.4rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.82)_0%,rgba(248,250,252,0.7)_100%)] px-3 py-2.5 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.34)] backdrop-blur-md">
       <span className="inline-flex items-center rounded-full border border-slate-300/80 bg-slate-900 px-3 py-1.5 text-[11px] font-semibold text-white shadow-[0_12px_24px_-18px_rgba(15,23,42,0.55)]">
         {countStr}
       </span>

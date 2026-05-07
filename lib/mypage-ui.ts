@@ -37,7 +37,7 @@ export const MYPAGE_SURFACE_PAGE = cn(
 /** 리스트·내부 타일 */
 export const MYPAGE_SURFACE = cn(
   "rounded-2xl border border-white/70",
-  "bg-white/75 backdrop-blur-xl backdrop-saturate-150",
+  "bg-white/85 backdrop-blur-md",
   "shadow-[0_6px_28px_-10px_rgba(15,23,42,0.1),0_2px_10px_-4px_rgba(15,23,42,0.06),inset_0_1px_0_0_rgba(255,255,255,0.82)]",
 );
 

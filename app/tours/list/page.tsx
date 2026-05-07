@@ -412,7 +412,7 @@ export default function ToursListPage() {
     <SitePageShell>
       <main className="pb-24">
         {/* Sticky filter bar */}
-        <div className="sticky top-0 z-30 isolate border-b border-white/55 bg-white/72 backdrop-blur-xl shadow-[0_1px_0_rgba(15,23,42,0.04)] [padding-top:env(safe-area-inset-top)]">
+        <div className="sticky top-0 z-30 isolate border-b border-white/55 bg-white/72 backdrop-blur-md shadow-[0_1px_0_rgba(15,23,42,0.04)] [padding-top:env(safe-area-inset-top)]">
           <div className="mx-auto max-w-5xl px-3 sm:px-4">
             {/* Desktop: single row */}
             <div className="hidden h-[52px] items-center gap-2 lg:flex">
@@ -504,7 +504,7 @@ export default function ToursListPage() {
                   <div
                     role="dialog"
                     aria-label={t('toursList.priceAriaLabel')}
-                    className="absolute right-0 top-[calc(100%+8px)] z-40 flex items-center gap-2 rounded-2xl border border-white/85 bg-white/95 p-3 shadow-[0_24px_56px_-22px_rgba(15,23,42,0.36)] backdrop-blur-xl"
+                    className="absolute right-0 top-[calc(100%+8px)] z-40 flex items-center gap-2 rounded-2xl border border-white/85 bg-white/95 p-3 shadow-[0_24px_56px_-22px_rgba(15,23,42,0.36)] backdrop-blur-md"
                   >
                     <input
                       value={minPrice}
@@ -684,7 +684,7 @@ export default function ToursListPage() {
                   <div
                     role="dialog"
                     aria-label={t('toursList.priceAriaLabel')}
-                    className="absolute left-0 right-0 top-[calc(100%+6px)] z-40 flex items-center gap-2 rounded-2xl border border-white/85 bg-white/95 p-3 shadow-[0_24px_56px_-22px_rgba(15,23,42,0.36)] backdrop-blur-xl"
+                    className="absolute left-0 right-0 top-[calc(100%+6px)] z-40 flex items-center gap-2 rounded-2xl border border-white/85 bg-white/95 p-3 shadow-[0_24px_56px_-22px_rgba(15,23,42,0.36)] backdrop-blur-md"
                   >
                     <input
                       value={minPrice}

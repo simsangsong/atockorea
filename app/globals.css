@@ -1,6 +1,12 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
-/* CJK: full-weight webfonts (next/font Noto + subsets:["latin"] は漢字をほぼ載せないため、ここで明示ロード) */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap");
+/*
+ * Webfont CSS @imports were here (Pretendard + Noto Sans JP/SC/TC). They forced a
+ * second-wave network round-trip — the browser had to parse this file before it could
+ * even discover the font CSS — pushing FCP back several hundred ms.
+ *
+ * Moved to <link rel="stylesheet"> in app/layout.tsx so the preload scanner can fetch
+ * them in parallel with the rest of the document, plus added <link rel="preconnect">
+ * for the font CDN hosts.
+ */
 
 @tailwind base;
 @tailwind components;

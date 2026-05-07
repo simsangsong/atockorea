@@ -193,8 +193,10 @@
       rgba(236, 248, 244, 0.58) 72%,
       rgba(242, 246, 252, 0.62) 100%
     );
-    backdrop-filter: blur(22px) saturate(1.22);
-    -webkit-backdrop-filter: blur(22px) saturate(1.22);
+    /* Was blur(22px) saturate(1.22) — gaussian blur cost is O(radius²); 22→10 cuts the
+       per-frame compositing budget by ~5x without losing the frosted look. */
+    backdrop-filter: blur(10px) saturate(1.1);
+    -webkit-backdrop-filter: blur(10px) saturate(1.1);
   }
 
   /* Frosted section panels (hero intent, comparison, small-group shell, final CTA) */
@@ -205,7 +207,7 @@
     box-shadow:
       var(--home-shadow-panel),
       0 0 0 1px rgba(15, 23, 42, 0.035);
-    @apply backdrop-blur-xl;
+    @apply backdrop-blur-md;
   }
 
   /* Soft elevated neutral card (trust, how-it-works steps, book inner) */
@@ -250,7 +252,7 @@
       var(--home-shadow-panel-refinement),
       inset 0 1px 0 rgba(255, 255, 255, 1),
       inset 0 0 0 1px rgba(255, 255, 255, 0.38);
-    @apply backdrop-blur-xl;
+    @apply backdrop-blur-md;
   }
 
   .home-panel-pricing-story {
@@ -266,7 +268,7 @@
       var(--home-shadow-panel-pricing),
       inset 0 1px 0 rgba(255, 255, 255, 1),
       inset 0 0 0 1px rgba(255, 255, 255, 0.36);
-    @apply backdrop-blur-xl;
+    @apply backdrop-blur-md;
   }
 
   /** Homepage tier ladder — editorial module (less float than scenic offer cards) */
@@ -299,7 +301,7 @@
       var(--home-shadow-panel-closing),
       inset 0 1px 0 rgba(255, 255, 255, 1),
       inset 0 0 0 1px rgba(255, 255, 255, 0.4);
-    @apply backdrop-blur-xl;
+    @apply backdrop-blur-md;
   }
 
   .home-neutral-process {

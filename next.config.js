@@ -105,6 +105,18 @@ const nextConfig = {
   // Experimental features for better performance
   experimental: {
     // optimizeCss: true, // Disabled due to critters module requirement
+    /**
+     * Tree-shake named imports from large packages so unused exports are dropped at
+     * build time. Without this, `import { ShieldCheck } from "lucide-react"` still
+     * pulls the full barrel; with it, only the requested members ship to the client.
+     * Big wins here: framer-motion, recharts, lucide-react (577 icons), Google Maps.
+     */
+    optimizePackageImports: [
+      'lucide-react',
+      'framer-motion',
+      'recharts',
+      '@react-google-maps/api',
+    ],
   },
 }
 

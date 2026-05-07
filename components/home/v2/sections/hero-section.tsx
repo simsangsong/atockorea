@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
@@ -14,6 +14,7 @@ import {
   HOME_V2_HERO_VIDEO_POSTER,
   HOME_V2_SHARED_COASTAL_VIDEO_MP4,
 } from "@/lib/home/home-v2-visual-media";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
 
 /** Same split as legacy `HeroPremium` (calmer ATF). */
@@ -44,6 +45,46 @@ export function HeroSection() {
   const [chipsExpanded, setChipsExpanded] = useState(false);
   const [intentExpanded, setIntentExpanded] = useState(false);
   const intentInputRef = useRef<HTMLTextAreaElement>(null);
+
+  /**
+   * ATF video — bandwidth-aware mounting:
+   * 1) Mobile (<768px) skips the video entirely; static poster only.
+   * 2) Desktop defers <video> mount ~1s past first paint so the hero photo + planner
+   *    win the bandwidth race for LCP. preload="none" + only-then play() avoids
+   *    eager network fetches even on slow connections.
+   * 3) IntersectionObserver pauses playback when the hero scrolls out (battery + data).
+   */
+  const heroSectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const isMdOrUp = useMediaQuery("(min-width: 768px)");
+  const [shouldMountVideo, setShouldMountVideo] = useState(false);
+
+  useEffect(() => {
+    if (!isMdOrUp) return;
+    const id = window.setTimeout(() => setShouldMountVideo(true), 1000);
+    return () => window.clearTimeout(id);
+  }, [isMdOrUp]);
+
+  useEffect(() => {
+    if (!shouldMountVideo) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const video = videoRef.current;
+        if (!video) return;
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.25 },
+    );
+    const el = heroSectionRef.current;
+    if (el) observer.observe(el);
+    return () => {
+      if (el) observer.unobserve(el);
+    };
+  }, [shouldMountVideo]);
 
   const styleChipOptions = useMemo(
     () =>
@@ -78,11 +119,11 @@ export function HeroSection() {
   const chipLooksSelected = useCallback((label: string) => intent.includes(label), [intent]);
 
   return (
-    <section className="relative flex flex-col" data-home-hero>
+    <section ref={heroSectionRef} className="relative flex flex-col" data-home-hero>
       {/* ~40% taller than 18/19/24vh (was read as “half” on some viewports; more ATF for photo+video). */}
       <div className="relative min-h-[25.2vh] sm:min-h-[26.6vh] md:min-h-[33.6vh] flex flex-col justify-end overflow-hidden pb-3 md:pb-5">
         <div className="absolute inset-0">
-          {/* Static photo layer — always in DOM; video stacks above when playback works. */}
+          {/* Static photo layer — always in DOM; video stacks above when it mounts. */}
           <Image
             src={HOME_V2_HERO_VIDEO_POSTER}
             alt=""
@@ -92,17 +133,19 @@ export function HeroSection() {
             className="object-cover"
             aria-hidden
           />
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster={HOME_V2_HERO_VIDEO_POSTER}
-            className="absolute inset-0 z-[1] h-full w-full object-cover"
-            aria-hidden
-          >
-            <source src={HOME_V2_SHARED_COASTAL_VIDEO_MP4} type="video/mp4" />
-          </video>
+          {shouldMountVideo ? (
+            <video
+              ref={videoRef}
+              muted
+              loop
+              playsInline
+              preload="none"
+              className="absolute inset-0 z-[1] h-full w-full object-cover"
+              aria-hidden
+            >
+              <source src={HOME_V2_SHARED_COASTAL_VIDEO_MP4} type="video/mp4" />
+            </video>
+          ) : null}
           <div className="absolute inset-0 z-[2] bg-black/[0.46]" aria-hidden />
           <div
             className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] h-7 bg-gradient-to-t from-[#faf9f7] to-transparent md:h-9"

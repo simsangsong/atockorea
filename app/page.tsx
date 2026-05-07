@@ -2,8 +2,12 @@ import { HomeMainBody } from '@/components/home/HomeMainBody';
 import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
-// Force dynamic rendering to avoid I18nProvider issues during static generation
-export const dynamic = 'force-dynamic';
+/**
+ * No `export const dynamic` here — the page itself is static. The root layout calls
+ * `await cookies()` so this route still renders dynamically at the layout level, but
+ * removing the explicit `force-dynamic` lets Next opt into PPR / streaming once the
+ * layout-level cookie read is reworked (tracked separately).
+ */
 
 export const metadata = generateSEOMetadata({
   title: 'AtoC Korea - Licensed Korea-based Platform for Day Tours',
