@@ -72,8 +72,15 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       typeParam === 'private' || typeParam === 'join' || typeParam === 'bus' ? typeParam : null;
     const limit = parseInt(searchParams.get('limit') || '100');
     const offset = parseInt(searchParams.get('offset') || '0');
-    /** Omit nested pickup_points rows — list/card UIs only need counts; avoids huge joins. */
-    const compactList = searchParams.get('compact') === '1';
+    /**
+     * Compact response is the default — list/card UIs (tours/list page,
+     * TourSectionRow, featured-products-showcase, TourList, mypage saved tours)
+     * never read pickup_points, and shipping the nested join meant ~5KB of dead
+     * payload per tour × N tours per request. Detail surfaces that genuinely need
+     * the pickup roster opt in with `?compact=0`. The dedicated `/api/tours/[id]`
+     * route is unaffected — it always returns full data.
+     */
+    const compactList = searchParams.get('compact') !== '0';
 
     // Build query
     const pickupJoin = `
