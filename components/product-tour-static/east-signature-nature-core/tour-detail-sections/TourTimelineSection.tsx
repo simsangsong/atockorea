@@ -67,7 +67,9 @@ function StopCard({
           type="button"
           onClick={onClick}
           className={cn(
-            "group relative w-full text-left rounded-2xl overflow-hidden transition-all duration-300 ease-out",
+            // transition limited to GPU-composite-only props — `transition-all` was repainting
+            // ring/border on every scroll-triggered repaint pass.
+            "group relative w-full text-left rounded-2xl overflow-hidden transition-[transform,box-shadow] duration-300 ease-out",
             accent.bg,
             accent.glow,
             "hover:-translate-y-[1px]",
@@ -80,14 +82,16 @@ function StopCard({
               {photos.map((src, i) => (
                 <div
                   key={`${src}-${i}`}
-                  className="flex-shrink-0 w-20 h-14 rounded-md overflow-hidden bg-muted ring-1 ring-slate-900/5"
+                  className="flex-shrink-0 w-20 h-14 rounded-md overflow-hidden bg-slate-100 ring-1 ring-slate-900/5"
                 >
                   <img
                     src={src}
                     alt=""
+                    width={80}
+                    height={56}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               ))}

@@ -17,25 +17,64 @@ export function TourTabsNav({ subnavItems }: TourTabsNavProps) {
 
   const subnavScrollSpyKey = subnavItems.map((item) => item.id).join("|");
 
+  /**
+   * isPastHero — single boolean transition (false→true or true→false). The previous
+   * implementation called setState on every scroll event (60+/sec). rAF-throttle
+   * collapses the burst, and the value-comparison guard suppresses redundant
+   * setState — only one render per actual transition.
+   */
   useEffect(() => {
-    const handleScroll = () => {
-      setIsPastHero(window.scrollY > 32);
-      const sections = subnavItems.map((item) => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + SCROLL_OFFSET_PX;
+    let frameQueued = false;
+    let lastValue = false;
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(subnavItems[i].id);
-          break;
+    const onScroll = () => {
+      if (frameQueued) return;
+      frameQueued = true;
+      requestAnimationFrame(() => {
+        const next = window.scrollY > 32;
+        if (next !== lastValue) {
+          lastValue = next;
+          setIsPastHero(next);
         }
-      }
+        frameQueued = false;
+      });
     };
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-    /* subnavItems omitted on purpose: stable `subnavScrollSpyKey` avoids re-binding listeners
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  /**
+   * activeSection — replaced the per-scroll `getElementById` + `offsetTop` loop
+   * (which forced layout on every scroll event for every sub-section) with an
+   * IntersectionObserver. Native, runs off the main thread, and only fires on
+   * actual visibility transitions. The rootMargin shrinks the active "band" to
+   * a thin slice just under the sticky nav so exactly one section wins at a time.
+   */
+  useEffect(() => {
+    const sectionEls = subnavItems
+      .map((item) => document.getElementById(item.id))
+      .filter((el): el is HTMLElement => el !== null);
+    if (sectionEls.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        }
+      },
+      {
+        rootMargin: `-${SCROLL_OFFSET_PX}px 0px -75% 0px`,
+        threshold: 0,
+      },
+    );
+
+    sectionEls.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+    /* subnavItems omitted on purpose: stable `subnavScrollSpyKey` avoids re-binding the observer
        when the parent passes a new array reference each render. */
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [subnavScrollSpyKey]);

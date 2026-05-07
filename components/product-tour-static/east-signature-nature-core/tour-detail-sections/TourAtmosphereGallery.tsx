@@ -63,25 +63,19 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
         <button
           type="button"
           onClick={() => openLightbox(0)}
-          className="group relative w-full aspect-[16/9] rounded-2xl overflow-hidden ring-1 ring-border/60 shadow-[0_2px_4px_rgba(26,35,50,0.06),0_18px_50px_-18px_rgba(26,35,50,0.30)] transition-all duration-500 hover:shadow-[0_3px_6px_rgba(26,35,50,0.08),0_28px_64px_-20px_rgba(26,35,50,0.38)] hover:ring-border"
+          className="group relative w-full aspect-[16/9] rounded-2xl overflow-hidden ring-1 ring-border/60 shadow-[0_2px_4px_rgba(26,35,50,0.06),0_18px_50px_-18px_rgba(26,35,50,0.30)] transition-shadow duration-500 hover:shadow-[0_3px_6px_rgba(26,35,50,0.08),0_28px_64px_-20px_rgba(26,35,50,0.38)] hover:ring-border"
         >
           <img
             src={featuredItem.src}
             alt={featuredItem.alt ?? ""}
             loading="eager"
             decoding="async"
-            className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
+            className="h-full w-full object-cover"
           />
-          {/* Layered cinematic gradient — bottom dark, side warmth, soft top vignette */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/75 via-[#0c1622]/15 via-50% to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-900/[0.06] via-transparent to-[#0c1622]/15" />
-          <div
-            aria-hidden
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: "radial-gradient(ellipse 110% 70% at 50% 100%, rgba(12,22,34,0.30) 0%, transparent 55%)",
-            }}
-          />
+          {/* Single bottom-dark vignette — replaces the previous 3-layer stack (one
+              `to-t`, one `to-br`, one radial ellipse) which was forcing a fresh GPU
+              composite on every scroll-paint pass for an aspect-16/9 element. */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/70 via-[#0c1622]/10 via-60% to-transparent" />
           {/* Inner highlight rim — premium glass feel */}
           <div aria-hidden className="absolute inset-0 pointer-events-none rounded-2xl ring-1 ring-inset ring-white/15" />
 
@@ -114,7 +108,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
               type="button"
               key={item.id}
               onClick={() => openLightbox(index + 1)}
-              className="group relative flex-shrink-0 w-[110px] rounded-xl overflow-hidden ring-1 ring-border/50 shadow-[0_1px_2px_rgba(26,35,50,0.05),0_10px_24px_-12px_rgba(26,35,50,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:ring-border hover:shadow-[0_2px_4px_rgba(26,35,50,0.06),0_16px_32px_-14px_rgba(26,35,50,0.28)]"
+              className="group relative flex-shrink-0 w-[110px] rounded-xl overflow-hidden ring-1 ring-border/50 shadow-[0_1px_2px_rgba(26,35,50,0.05),0_10px_24px_-12px_rgba(26,35,50,0.22)] transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:ring-border hover:shadow-[0_2px_4px_rgba(26,35,50,0.06),0_16px_32px_-14px_rgba(26,35,50,0.28)]"
             >
               <div className="aspect-[4/3] relative">
                 <img
