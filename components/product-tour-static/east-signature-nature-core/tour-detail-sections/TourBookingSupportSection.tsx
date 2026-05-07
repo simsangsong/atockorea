@@ -178,7 +178,7 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
         <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.bookingSupportSubtitle}</p>
       </div>
 
-      <div className="grid grid-cols-3 gap-2.5">
+      <div className="grid grid-cols-3 gap-2">
         {trustItems.map((item) => {
           const Icon = TRUST_ICONS[item.icon as keyof typeof TRUST_ICONS] ?? DEFAULT_TRUST_ICON;
           const theme = TRUST_THEMES[item.icon as keyof typeof TRUST_THEMES] ?? TRUST_THEME_FALLBACK;
@@ -186,9 +186,9 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
             <div
               key={item.title}
               className={cn(
-                "group relative overflow-hidden rounded-xl p-4 ring-1 transition-all duration-300",
-                "shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_28px_-14px_rgba(26,35,50,0.16)]",
-                "hover:-translate-y-[1px] hover:shadow-[0_2px_4px_rgba(26,35,50,0.05),0_16px_36px_-14px_rgba(26,35,50,0.22)]",
+                "group relative overflow-hidden rounded-xl p-3 ring-1 transition-all duration-300",
+                "shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_14px_-4px_rgba(0,0,0,0.07)]",
+                "hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(0,0,0,0.06),0_8px_20px_-4px_rgba(0,0,0,0.10)]",
                 theme.card,
                 theme.ring,
               )}
@@ -196,14 +196,14 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
               <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
               <div
                 className={cn(
-                  "relative mb-2.5 flex h-9 w-9 items-center justify-center rounded-full ring-1 transition-transform duration-300 group-hover:scale-[1.06]",
+                  "relative mb-2 flex h-7 w-7 items-center justify-center rounded-full ring-1 transition-transform duration-300 group-hover:scale-[1.06]",
                   theme.iconRing,
                 )}
               >
-                <Icon className={cn("h-4 w-4", theme.iconColor)} strokeWidth={1.8} />
+                <Icon className={cn("h-3.5 w-3.5", theme.iconColor)} strokeWidth={1.8} />
               </div>
-              <h3 className="relative text-[13px] font-semibold tracking-tight text-foreground leading-snug">{item.title}</h3>
-              <p className="relative mt-1 text-[11px] text-muted-foreground leading-relaxed">{item.description}</p>
+              <h3 className="relative text-[12px] font-semibold tracking-tight text-foreground leading-snug">{item.title}</h3>
+              <p className="relative mt-0.5 text-[11px] text-muted-foreground leading-relaxed">{item.description}</p>
             </div>
           );
         })}

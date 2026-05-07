@@ -38,22 +38,20 @@ function StopCard({
   // shadow (close + mid + diffused) that lets the card float without inner shadows.
   const accent = {
     bg: "bg-white",
-    glow:
-      "ring-1 ring-slate-900/[0.07] shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.16)]",
-    glowHover:
-      "hover:ring-slate-900/[0.11] hover:shadow-[0_2px_4px_rgba(15,23,42,0.05),0_6px_14px_-2px_rgba(15,23,42,0.09),0_24px_48px_-14px_rgba(15,23,42,0.22)]",
+    glow: "shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)] transition-all duration-200",
+    glowHover: "hover:shadow-[0_2px_6px_rgba(0,0,0,0.06),0_8px_20px_-4px_rgba(0,0,0,0.09)] hover:-translate-y-px",
   };
 
   return (
-    <div className="relative pl-11">
+    <div className="relative -ml-2 pl-9">
       {stop.number < totalStops && (
-        <div className="absolute left-[17.5px] top-[48px] bottom-0 w-px bg-gradient-to-b from-slate-300/60 to-transparent" />
+        <div className="absolute left-[16px] top-[48px] bottom-0 w-px bg-gradient-to-b from-slate-200/40 to-transparent" />
       )}
 
       <div
         className="absolute left-0 top-1.5 flex h-9 w-9 items-center justify-center rounded-full text-[12px] font-medium tabular-nums tracking-[0.04em] ring-1 ring-white"
         style={{
-          background: "linear-gradient(140deg, #ffffff 0%, #f1f5f9 100%)",
+          background: "#ffffff",
           boxShadow:
             "0 1px 2px rgba(15,23,42,0.06), 0 4px 12px -4px rgba(15,23,42,0.10), inset 0 0.5px 0 rgba(255,255,255,0.9)",
           color: "#334155",
@@ -62,7 +60,7 @@ function StopCard({
         {String(stop.number).padStart(2, "0")}
       </div>
 
-      <div className="pb-3">
+      <div className="pb-5">
         <button
           type="button"
           onClick={onClick}
@@ -111,7 +109,7 @@ function StopCard({
                 <h3 className="mt-1 text-[15px] font-semibold text-slate-900 tracking-tight leading-snug">{stop.name}</h3>
                 <div className="flex flex-wrap items-center gap-1.5 mt-1.5">
                   {stop.category && (
-                    <span className="inline-block px-2 py-0.5 text-[10px] font-medium text-slate-500 bg-slate-50 rounded-md ring-1 ring-slate-900/[0.04]">
+                    <span className="text-[10px] font-medium text-slate-400 tracking-wide">
                       {stop.category}
                     </span>
                   )}
