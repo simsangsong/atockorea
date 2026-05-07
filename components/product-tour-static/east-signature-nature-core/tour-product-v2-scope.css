@@ -30,6 +30,9 @@
   --sand-blush: #fcf9f6;
   --cloud-gray: #faf9f8;
 
+  /* Section background system: white ↔ section-alt alternation, neutral & premium */
+  --section-alt: #f7f7f8;
+
   --spring-blossom: #fdf8f9;
   --summer-breeze: #f6fafa;
   --autumn-gold: #fdfaf6;
@@ -126,6 +129,10 @@ html[lang="ko"] .tour-product-v2-static-root .tour-hero-headline-line {
   background-color: var(--cloud-gray);
 }
 
+.tour-product-v2-static-root .bg-section-alt {
+  background-color: var(--section-alt);
+}
+
 .tour-product-v2-static-root .bg-spring {
   background-color: var(--spring-blossom);
 }
@@ -154,10 +161,12 @@ html[lang="ko"] .tour-product-v2-static-root .tour-hero-headline-line {
 }
 
 .tour-product-v2-static-root .card-premium {
-  background-color: var(--card);
-  border: 1px solid var(--border);
+  background: #ffffff;
+  border: none;
   border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.03),
+    0 4px 12px -2px rgba(0, 0, 0, 0.055);
 }
 
 .tour-product-v2-static-root .card-hero {
@@ -458,7 +467,12 @@ html[lang="ko"] .tour-product-v2-static-root .tour-hero-headline-line {
   letter-spacing: -0.01em;
 }
 
-/* ────────────── Hero slide auto-cycle + Ken Burns ────────────── */
+/* ────────────── Hero slide auto-cycle + Ken Burns ──────────────
+ * Slide transitions: incoming slide enters with a small horizontal translate
+ * and a gentle scale, the outgoing slide drifts the other way under it. With
+ * the long crossfade duration this reads as a smooth, premium slide rather
+ * than a hard cut. Once the active slide settles, ken-burns drift takes over.
+ */
 @keyframes tour-hero-ken-burns {
   0% {
     transform: scale(1.04) translate3d(0, 0, 0);
@@ -475,14 +489,22 @@ html[lang="ko"] .tour-product-v2-static-root .tour-hero-headline-line {
   inset: 0;
   background-size: cover;
   opacity: 0;
-  transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1);
-  transform: scale(1.04);
+  transition:
+    opacity 1300ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1400ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translate3d(4%, 0, 0) scale(1.06);
   will-change: opacity, transform;
+}
+
+.tour-product-v2-static-root .tour-hero-slide--prev {
+  opacity: 0;
+  transform: translate3d(-4%, 0, 0) scale(1.06);
 }
 
 .tour-product-v2-static-root .tour-hero-slide--active {
   opacity: 1;
-  animation: tour-hero-ken-burns 9s ease-in-out infinite alternate;
+  transform: translate3d(0, 0, 0) scale(1.04);
+  animation: tour-hero-ken-burns 9s ease-in-out 1300ms infinite alternate;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -492,6 +514,10 @@ html[lang="ko"] .tour-product-v2-static-root .tour-hero-headline-line {
   }
   .tour-product-v2-static-root .tour-hero-slide {
     transition: opacity 400ms ease-out;
+    transform: scale(1.04);
+  }
+  .tour-product-v2-static-root .tour-hero-slide--prev {
+    transform: scale(1.04);
   }
 }
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Clock, Compass, Footprints, Heart, Share2, Star } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
@@ -68,11 +68,17 @@ export function TourHeroSection({
 
   const slides = hero.images && hero.images.length > 0 ? hero.images : [hero.imageUrl];
   const [activeSlideIdx, setActiveSlideIdx] = useState(0);
+  // Track the previous slide so its CSS class can pull it leftward as the new
+  // slide enters from the right — gives the crossfade a real slide character.
+  const prevSlideIdxRef = useRef(-1);
 
   useEffect(() => {
     if (slides.length <= 1) return;
     const id = window.setInterval(() => {
-      setActiveSlideIdx((i) => (i + 1) % slides.length);
+      setActiveSlideIdx((i) => {
+        prevSlideIdxRef.current = i;
+        return (i + 1) % slides.length;
+      });
     }, 6500);
     return () => window.clearInterval(id);
   }, [slides.length]);
@@ -85,7 +91,11 @@ export function TourHeroSection({
           <div
             key={`${url}-${idx}`}
             aria-hidden={idx !== activeSlideIdx}
-            className={cn("tour-hero-slide", idx === activeSlideIdx && "tour-hero-slide--active")}
+            className={cn(
+              "tour-hero-slide",
+              idx === activeSlideIdx && "tour-hero-slide--active",
+              idx === prevSlideIdxRef.current && idx !== activeSlideIdx && "tour-hero-slide--prev",
+            )}
             style={{
               backgroundImage: safeCssBackgroundUrl(url),
               backgroundPosition: hero.imagePosition,
@@ -123,9 +133,7 @@ export function TourHeroSection({
           aria-hidden
           className="pointer-events-none absolute inset-0 -z-10"
           style={{
-            background:
-              "linear-gradient(180deg, #fff5f6 0%, #fff9f9 55%, #fdfbfa 100%), radial-gradient(ellipse 95% 70% at 25% 0%, rgba(255,206,212,0.55) 0%, rgba(255,255,255,0) 70%)",
-            backgroundBlendMode: "multiply, normal",
+            background: "#ffffff",
           }}
         />
 

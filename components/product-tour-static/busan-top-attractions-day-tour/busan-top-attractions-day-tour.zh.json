@@ -957,7 +957,7 @@
     "destination_region": "korea_mainland",
     "region_type": "busan_city",
     "vehicle_type": "coach",
-    "duration_hours": 9.0,
+    "duration_hours": 9,
     "region_tags": [
       "busan_haeundae",
       "busan_gijang",
@@ -983,27 +983,27 @@
     "pace_level": 0.7,
     "walking_level": 0.85,
     "scenic_level": 0.9,
-    "photo_level": 1.0,
+    "photo_level": 1,
     "culture_level": 0.95,
     "relax_level": 0.5,
-    "first_time_fit": 1.0,
+    "first_time_fit": 1,
     "family_fit": 0.85,
     "senior_fit": 0.7,
     "couple_fit": 0.95,
     "solo_traveler_fit": 0.9,
     "active_traveler_fit": 0.8,
-    "adult_family_fit": 1.0,
+    "adult_family_fit": 1,
     "family_with_teens_fit": 0.95,
     "young_kids_fit": 0.55,
     "senior_active_fit": 0.7,
     "senior_general_fit": 0.55,
     "mobility_friendly_fit": 0.4,
     "stroller_fit": 0.4,
-    "one_day_fit": 1.0,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.3,
     "rain_fit": 0.5,
     "value_for_money_fit": 0.95,
-    "iconic_landmark_fit": 1.0,
+    "iconic_landmark_fit": 1,
     "cafe_fit": 0.6,
     "food_fit": 0.8,
     "nature_fit": 0.8,
@@ -1011,7 +1011,7 @@
     "nightlife_fit": 0.2,
     "shopping_fit": 0.4,
     "no_shopping_fit": 0.5,
-    "local_culture_fit": 1.0,
+    "local_culture_fit": 1,
     "storytelling_fit": 0.8,
     "unesco_fit": 0.2,
     "intangible_heritage_fit": 0.2,
@@ -1020,9 +1020,9 @@
     "comfort_level": 0.6,
     "budget_fit": 0.85,
     "premium_fit": 0.3,
-    "small_group_fit": 1.0,
+    "small_group_fit": 1,
     "private_fit": 0.05,
-    "bus_fit": 1.0,
+    "bus_fit": 1,
     "price_band": "mid",
     "pickup_base": "busan_central",
     "return_time_band": "18:00-19:00",
@@ -1068,40 +1068,40 @@
     "private_tour_fit": 0.05,
     "customizable_route_fit": 0.1,
     "flexibility_fit": 0.3,
-    "fixed_itinerary_fit": 1.0,
-    "buddhist_temple_fit": 1.0,
-    "scenic_temple_fit": 1.0,
-    "coastal_temple_fit": 1.0,
-    "seaside_temple_fit": 1.0,
-    "war_memorial_fit": 1.0,
-    "korean_war_history_fit": 1.0,
-    "mural_village_fit": 1.0,
-    "fish_market_fit": 1.0,
-    "market_fit": 1.0,
+    "fixed_itinerary_fit": 1,
+    "buddhist_temple_fit": 1,
+    "scenic_temple_fit": 1,
+    "coastal_temple_fit": 1,
+    "seaside_temple_fit": 1,
+    "war_memorial_fit": 1,
+    "korean_war_history_fit": 1,
+    "mural_village_fit": 1,
+    "fish_market_fit": 1,
+    "market_fit": 1,
     "street_food_fit": 0.9,
-    "skywalk_fit": 1.0,
+    "skywalk_fit": 1,
     "sky_capsule_fit": 0.7,
-    "coastal_railway_fit": 1.0,
-    "history_culture_fit": 1.0,
+    "coastal_railway_fit": 1,
+    "history_culture_fit": 1,
     "k_drama_filming_fit": 0.5,
     "religious_history_fit": 0.85,
     "premium_dining_fit": 0.3,
     "seasonal_fit": 0.85,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "busan_signature_route_fit": 1.0,
-    "skywalk_coastal_railway_fit": 1.0,
-    "first_time_busan_fit": 1.0,
-    "no_inter_city_travel_fit": 1.0,
+    "busan_signature_route_fit": 1,
+    "skywalk_coastal_railway_fit": 1,
+    "first_time_busan_fit": 1,
+    "no_inter_city_travel_fit": 1,
     "differentiates_from_busan_gyeongju_routes": true,
     "deep_history_traveler_fit_minimum": 0.7,
     "english_speaking_guide_provided": true,
@@ -2164,41 +2164,65 @@
     }
   ],
   "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
+    "departure": [
       {
+        "order": 1,
+        "time": "08:30",
         "name": "西面站4号出口",
-        "time": "08:30"
+        "type": "station",
+        "lat": 35.1577,
+        "lng": 129.0592
       },
       {
-        "name": "釜山站4号出口（不是KTX检票口）",
-        "time": "08:50"
+        "order": 2,
+        "time": "08:50",
+        "name": "Busan Station Exit 4 (not the KTX gate)",
+        "type": "station",
+        "lat": 35.1152,
+        "lng": 129.0421
       },
       {
+        "order": 3,
+        "time": "09:30",
         "name": "海云台站5号出口",
-        "time": "09:30"
+        "type": "station",
+        "lat": 35.1628,
+        "lng": 129.1603
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
-        "name": "南浦洞 / 札嘎其（最后一个景点站）",
-        "approx_time": "≈ 17:50"
+        "order": 1,
+        "name": "南浦洞/扎嘎其",
+        "type": "station",
+        "lat": 35.0978,
+        "lng": 129.0286
       },
       {
+        "order": 2,
         "name": "釜山站4号出口",
-        "approx_time": "≈ 18:10"
+        "type": "station",
+        "lat": 35.1152,
+        "lng": 129.0421
       },
       {
+        "order": 3,
         "name": "西面站4号出口",
-        "approx_time": "≈ 18:30"
+        "type": "station",
+        "lat": 35.1577,
+        "lng": 129.0592
       },
       {
+        "order": 4,
         "name": "海云台站5号出口",
-        "approx_time": "≈ 19:00"
+        "type": "station",
+        "lat": 35.1628,
+        "lng": 129.1603
       }
     ],
-    "hotel_pickup_available": false,
-    "notes": "预订时请选择距离酒店最近的集合出口。返程会按路线顺序依次下车；在西面（08:30）上车的客人行程最长（约10小时），在海云台上车的客人行程最短（约9.5小时）。"
+    "notes": [
+      "Choose the pickup exit closest to your hotel at booking. Drop-offs are sequential along the return route; passengers boarding at Seomyeon (08:30) experience the longest day (≈10 hours), Haeundae passengers the shortest (≈9.5 hours)."
+    ]
   },
   "itinerary_variants": [],
   "_publication": {

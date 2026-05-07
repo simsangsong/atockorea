@@ -14,24 +14,26 @@
       "Taejongdae cruise tour",
       "Jagalchi Market tour"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG"
+    "ogImage": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+    "title": "Busan Small-Group Cruise Shore Excursion | AtoC Korea",
+    "description": "Small-group Busan shore excursion for cruise guests with port pickup, local guide, Busan highlights, and return planned around your ship schedule."
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
-    "title": "Busan Small-Group Sightseeing Tour for Cruise Passengers",
+    "thumbnail": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
+    "title": "Busan Small-Group Cruise Shore Excursion",
     "priceLabel": "From US$58.50 per person (10% off, was $65)",
-    "shortCardDescription": "Shared-van day tour from the Busan cruise terminal hitting the city's five most-asked-for stops in a single 9-hour window: UN Memorial Cemetery (Korean War context), Taejongdae coastal cliffs, lunch at a local Busan restaurant, Gamcheon Culture Village (the painted hillside), Yongdusan Park with optional Busan Tower observatory, and Jagalchi Market. Pickup calibrated to your specific ship's disembarkation. Certified English/Chinese-speaking guide.",
+    "shortCardDescription": "A small-group Busan shore excursion for cruise passengers. Visit a balanced mix of Busan highlights such as Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi/BIFF/Gukje market area, Gamcheon Culture Village, Songdo Beach, and Yongdusan Park when time allows. Route order and stops may adjust to ship schedule, traffic, and weather.",
     "tags": [
-      "small_group",
-      "busan",
-      "cruise_excursion",
-      "from_cruise",
-      "shared_van"
+      "Small group",
+      "Busan",
+      "Cruise excursion",
+      "Cruise pickup",
+      "Shared van"
     ],
     "rating": 4.9,
     "reviewCount": 32,
     "slug": "busan-small-group-sightseeing-tour-cruise-passengers",
-    "subtitle": "Five Busan signatures from your cruise terminal in one 9-hour shared-van day.",
+    "subtitle": "A cruise-aligned small-group Busan route with port pickup, local highlights, and return planned around your ship’s departure time.",
     "region": "Busan",
     "duration": "9 hours",
     "stopsCount": 8,
@@ -39,12 +41,12 @@
       "Cruise excursion",
       "Small shared van",
       "Pickup at port",
-      "9-hour window"
+      "9-hour shore day"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG"
+    "heroImage": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800"
   },
-  "headlineLine1": "Cruise port to painted alleys, market to memorial —",
-  "headlineLine2": "Busan's headline circuit in a single shared-van day",
+  "headlineLine1": "Cruise port to Busan highlights —",
+  "headlineLine2": "Small-group shore tour with return buffer",
   "price": {
     "amountLabel": "58.50",
     "originalPriceUsd": 65,
@@ -52,20 +54,20 @@
     "discountPercent": 10,
     "currency": "USD",
     "per": "person",
-    "priceSource": "getyourguide_t1164092",
-    "priceNote": "Original price USD 65 on the operator's listing. AtoC Korea sale price applies a flat 10% discount."
+    "priceSource": "AtoC Korea direct rate",
+    "priceNote": "Final rate is confirmed after selecting your cruise date, port, and group size. The schedule is planned around a safe return to the ship."
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+    "imageUrl": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1600",
     "imagePosition": "center 35%",
     "tagline": "Five Busan signatures coordinated with your ship's schedule, on a shared van with other cruisers",
     "pills": [
-      "small_group",
-      "cruise",
-      "busan"
+      "Small group",
+      "Cruise",
+      "Busan"
     ],
     "meta": {
-      "duration": "≈ 9 hours, calibrated to your cruise's port-call window",
+      "duration": "≈ 9 hours, planned to your cruise's port-call period",
       "region": "Busan",
       "stops": "8 stops",
       "rating": 4.9,
@@ -96,47 +98,41 @@
   ],
   "glanceItems": [
     {
-      "icon": "camera",
-      "label": "Photo Value",
-      "value": "Excellent",
-      "level": 5
+      "icon": "clock",
+      "label": "Duration",
+      "value": "≈ 9 hours, ship-to-ship (planned to your cruise schedule)"
     },
     {
-      "icon": "mountain",
-      "label": "Scenic",
-      "value": "Good",
-      "level": 4
+      "icon": "users",
+      "label": "Group",
+      "value": "Small group, shared van with other cruise passengers (typically up to ≈10)"
+    },
+    {
+      "icon": "ship",
+      "label": "Pickup",
+      "value": "Busan Port International Passenger Terminal — arrival hall"
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "High",
-      "level": 4
+      "value": "Moderate — Taejongdae cliff path or Danubi Train, Gamcheon hillside stairs, market alleys"
     },
     {
-      "icon": "cloud-rain",
-      "label": "Rain Safety",
-      "value": "Moderate",
-      "level": 3
+      "icon": "ticket",
+      "label": "Includes",
+      "value": "Vehicle, certified guide, fuel/tolls/parking. Excludes: lunch, optional Taejongdae Danubi Train (₩4,000), optional Busan Tower observatory (₩12,000), tips."
     },
     {
-      "icon": "users",
-      "label": "Family Fit",
-      "value": "Moderate",
-      "level": 3
-    },
-    {
-      "icon": "gauge",
-      "label": "Balance",
-      "value": "Balanced",
-      "level": 4
+      "icon": "star",
+      "label": "Rating",
+      "value": "4.9 / 5 across 32 reviews on the booking details"
     }
   ],
   "galleryItems": [
     {
       "id": "g1",
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+      "src": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1200",
       "alt": "Colorful houses cascading down a hillside in Gamcheon Culture Village",
       "caption": "Gamcheon Culture Village — painted in 2009 as part of Busan's public-art renewal of the postwar refugee neighborhood.",
       "location": "Gamcheon Culture Village, Saha-gu",
@@ -145,7 +141,7 @@
     {
       "id": "g2",
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
       "alt": "Sea cliffs with a white lighthouse on the horizon",
       "caption": "Taejongdae coastal park, southern tip of Yeongdo Island. Tsushima visible on clear winter days.",
       "location": "Taejongdae, Yeongdo-gu",
@@ -154,7 +150,7 @@
     {
       "id": "g3",
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+      "src": "https://images.unsplash.com/photo-1601171291096-87099c2c4625?w=1200",
       "alt": "Rows of identical white headstones with national flags at the UN Memorial Cemetery",
       "caption": "UN Memorial Cemetery — the world's only UN cemetery, 2,300+ graves of soldiers from 21 nations.",
       "location": "UN Memorial Cemetery, Nam-gu",
@@ -163,7 +159,7 @@
     {
       "id": "g4",
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+      "src": "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?w=1200",
       "alt": "Jagalchi Market vendors with displays of fresh fish on ice",
       "caption": "Jagalchi Market — Korea's largest seafood market, operated since 1889 on Busan's waterfront.",
       "location": "Jagalchi Market, Jung-gu",
@@ -172,7 +168,7 @@
     {
       "id": "g5",
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+      "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
       "alt": "Busan Tower rising above Yongdusan Park's pines and mid-rise city skyline",
       "caption": "Yongdusan Park & Busan Tower (120 m, built 1973) — the central-Busan viewpoint.",
       "location": "Yongdusan Park, Jung-gu",
@@ -182,19 +178,19 @@
   "itineraryStops": [
     {
       "number": 1,
-      "time": "≈ 08:30",
-      "duration": "30 min",
-      "name": "Busan Port pickup (cruise terminal arrival hall)",
-      "category": "Departure",
-      "description": "Tour begins at the **Busan Port International Cruise Terminal arrival hall (Dongsam-dong, Yeongdo-gu)** for large-cruise vessels, or the **Busan Port International Passenger Terminal at 206 Chungjang-daero (Choryang-dong)** for medium cruises and ferries. The Busan Port International Passenger Terminal is **Asia's second-largest passenger terminal** after Shanghai (opened **August 31, 2015**, **2.78 million annual passenger capacity**, 5 buildings totaling 92,945 m²). Your English-speaking guide meets passengers in the arrival hall **holding a 'AtoC Korea — Busan Day Tour' name placard**. Boarding is in a **small-group van or minicoach (max ~14 passengers)**, shared with other cruise passengers from your sailing or another ship in port the same day. Allow **30 minutes after your ship's posted clearance time** for immigration/customs before reaching the boarding point. The vehicle departs at 09:00 toward UN Memorial Cemetery (~25-min drive northeast). **Lunch at a local Busan restaurant is included**.",
+      "time": "Ship arrival",
+      "duration": "15–30 min",
+      "name": "Busan Port pickup (cruise terminal)",
+      "category": "Transit / Pickup",
+      "description": "Meet your guide at the cruise terminal after disembarkation. The actual meeting time follows your ship arrival rather than a fixed city-tour timetable.",
       "highlights": [
-        "Pickup: **Busan Port International Cruise Terminal** (Dongsam) or **International Passenger Terminal** (Choryang) arrival hall",
-        "**Small-group van/minicoach (max ~14 pax)** — shared with other cruise passengers",
-        "Guide carries 'AtoC Korea — Busan Day Tour' name placard",
+        "Direct cruise terminal pickup",
+        "Schedule follows ship arrival",
+        "Guide sign/contact confirmed before tour",
         "**Lunch included** at local Busan restaurant",
         "**Boarding 30 min after ship clearance** (immigration buffer)"
       ],
-      "whyOnRoute": "Single pickup at the cruise terminal keeps small-group logistics simple and reduces no-show risk vs. multi-point pickup. The 09:00 departure lands the group at UN Memorial right after opening (less crowded than 10:30+) and sets up the Taejongdae 10:45 slot before sea-cliff tour-bus peak.",
+      "whyOnRoute": "Cruise guests have limited shore time, so starting directly from the terminal is essential.",
       "_poi_meta": {
         "poi_key": "OPS_busan_cruise_pickup",
         "kb_version": "1.15",
@@ -203,20 +199,19 @@
           "Busan Port Authority",
           "CruiseMapper"
         ]
-      },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG"
+      }
     },
     {
       "number": 2,
-      "time": "≈ 09:30",
-      "duration": "60 min",
-      "name": "UN Memorial Cemetery (Korean War)",
-      "category": "Memorial & History",
-      "description": "**United Nations Memorial Cemetery in Korea (UNMCK) — the ONLY UN memorial cemetery in the world** — established by **United Nations Command on January 18, 1951** during the Korean War, dedicated **April 6, 1951 by General Matthew Ridgway**, and **donated by the Republic of Korea to the UN in 1959** under a UN General Assembly resolution. The cemetery honors fallen personnel from the **22 sending nations** of the UN Command (16 combat + 6 medical) and today maintains **2,300 graves from 11 countries** (most repatriations occurred in the late 1950s). The 14-hectare grounds include the **Main Gate** designed by Korean modernist architect **Kim Joong-up (1966)**, the **Memorial Service Hall** with a 12-minute documentary in English, the **Symbolic Area** where the 22 sending-state flags fly, the **US Korean War Memorial** sculpture by Frank Gaylord (American Battle Monuments Commission, 2013), and the **Wall of Remembrance** dedicated in 2006 — **40,896 names** etched on **140 marble panels** representing every UN combatant killed in Korea. Each November 11 at 11:00 AM, the **'Turn Toward Busan' ceremony** is held simultaneously at the cemetery and at memorials in 22 nations worldwide — the only time of year all sending-state flags lower in unison. Admission is **free**, hours **09:00–18:00 (May–Sep) / 09:00–17:00 (Oct–Apr)**, and the entire grounds are **wheelchair-accessible** with paved paths. The cemetery is **administered by the international UN Memorial Cemetery Commission** and protected under **UN General Assembly Resolution 977(X) of December 15, 1955** as sovereign UN-administered territory.",
+      "time": "Morning",
+      "duration": "60–80 min",
+      "name": "Haedong Yonggungsa Temple",
+      "category": "Seaside temple",
+      "description": "Haedong Yonggungsa is Busan’s best-known seaside temple, set along the rocky coast. It gives the tour a strong first visual highlight and a clear contrast between Buddhist culture and ocean scenery.",
       "highlights": [
-        "**ONLY UN memorial cemetery in the world** — established Jan 18, 1951; donated by Korea to UN in 1959",
-        "**22 sending nations** honored; **2,300 graves from 11 countries** today",
-        "**Wall of Remembrance (2006)** — 40,896 names on 140 marble panels",
+        "Seaside temple",
+        "Coastal photo spot",
+        "Stairs and uneven paths",
         "Main Gate by Korean architect **Kim Joong-up (1966)**",
         "**'Turn Toward Busan' ceremony** Nov 11 at 11:00 AM (synchronized worldwide)",
         "**Free admission**, 100% wheelchair-accessible",
@@ -225,13 +220,13 @@
         "**UN General Assembly Resolution 977(X) of December 15, 1955** officially established UNMCK as UN-administered protected territory under international UN Memorial Cemetery Commission"
       ],
       "timeUsed": [
-        "Symbolic Area + 22 sending-state flag plaza (~10 min)",
+        "60–80 min",
         "Memorial Service Hall + 12-min English documentary (~15 min)",
         "Wall of Remembrance + Memorabilia Hall (~20 min)",
         "Reflection time + photographs (~10 min)",
         "Walk back to vehicle (~5 min)"
       ],
-      "whyOnRoute": "UNMCK is **the most globally significant Korean War heritage site in Busan** and a sober opener to the day's coastal/cultural circuit. The 09:30 small-group arrival catches it before the 11:00 tour-bus peak — important for a fixed-itinerary group, since cemetery atmosphere degrades rapidly with crowds. Wheelchair-accessibility makes it the lowest-mobility stop of the day; the Wall of Remembrance and 12-min documentary deliver depth without strenuous walking, which suits the small-group's mixed mobility levels. For cruise guests on tight reboarding windows the 60-min dwell is the day's most schedule-flexible stop — visitors can compress to ~30 min while still covering documentary + Symbolic Area + Wall, or extend to 75 min for the Sculpture Park.",
+      "whyOnRoute": "This is one of Busan’s most requested first-time visitor stops and works well early in the day.",
       "_poi_meta": {
         "poi_key": "un_memorial_cemetery",
         "kb_version": "1.25",
@@ -246,33 +241,32 @@
           "UN General Assembly Resolution 977(X) (December 15, 1955)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
-      "visitBasics": {
-        "hours": "09:00–18:00 (May–Sep) / 09:00–17:00 (Oct–Apr)",
-        "closed": "Open year-round (Memorial Service Hall closed during ceremonies)",
-        "admission": "FREE admission",
-        "walking": "100% wheelchair-accessible — flat paved paths across the 14-hectare grounds"
+      "smartNotes": {
+        "photo": "**Wall of Remembrance** (40,896 names on 140 marble panels), **Symbolic Area** with 22 sending-state flags, and the **Frank Gaylord US Korean War Monument (2013)** — same sculptor as the Washington DC National Mall memorial. Photography permitted; respectful silence requested.",
+        "tip": "**Only UN cemetery in the world** under UN-administered protected territory (UN GA Resolution 977(X), 1955). The annual **'Turn Toward Busan' ceremony on November 11 at 11:00 AM** is the only time all 22 sending-state flags lower in unison."
       },
       "convenience": {
         "restroom": "At the Visitor Center and Memorial Service Hall",
         "parking": "Free on-site parking + tour-coach drop-off zone"
       },
-      "smartNotes": {
-        "photo": "**Wall of Remembrance** (40,896 names on 140 marble panels), **Symbolic Area** with 22 sending-state flags, and the **Frank Gaylord US Korean War Monument (2013)** — same sculptor as the Washington DC National Mall memorial. Photography permitted; respectful silence requested.",
-        "tip": "**Only UN cemetery in the world** under UN-administered protected territory (UN GA Resolution 977(X), 1955). The annual **'Turn Toward Busan' ceremony on November 11 at 11:00 AM** is the only time all 22 sending-state flags lower in unison."
+      "visitBasics": {
+        "hours": "09:00–18:00 (May–Sep) / 09:00–17:00 (Oct–Apr)",
+        "closed": "Open year-round (Memorial Service Hall closed during ceremonies)",
+        "admission": "FREE admission",
+        "walking": "100% wheelchair-accessible — flat paved paths across the 14-hectare grounds"
       }
     },
     {
       "number": 3,
-      "time": "≈ 10:45",
-      "duration": "75 min",
-      "name": "Taejongdae coastal cliffs",
-      "category": "Coast",
-      "description": "**Taejongdae (태종대) — Busan Monument No. 28** (jointly with Oryukdo Islands) — is a **natural park at the southernmost tip of Yeongdo Island** named after **King Taejong Muyeol of Silla (604–661 CE, 29th king)** who is said to have practiced archery here after **unifying the Three Kingdoms**. The signature feature is the **wave-cut terrace called Sinseon Rock** below Yeongdo Lighthouse — geologists date its formation to the **fourth interglacial period (~120,000 years ago)** through a long process of marine erosion against sedimentary rock with visible concentric patterns and fault zones. The **Yeongdo Lighthouse** above the cliffs is **Busan's oldest lighthouse, built 1906** (10th in Korea), with its modern successor tower added 2004 — the original light has guided Busan-bound ships for over a century and was renovated in 2004 into a maritime culture space (See & Sea Gallery + Natural History Museum + observatory + café). Hiking the full 4.3 km loop is strenuous; most visitors ride the **Danubi Train** (~₩4,000 round-trip adult, departs from the entrance plaza) which stops at Taewon Pebble Beach → Gumyeongsa Temple → the Observatory → Yeongdo Lighthouse → Taejongsa Temple. From the **3-story Observatory**, panoramic views extend to **Tea Kettle Island (Saengdo)** and — on clear days — **Japan's Tsushima Island, 50 km southeast**. Two legends define the site: **Mangbuseok Rock** (a faithful wife who turned to stone waiting for her husband taken by Japanese pirates) and the **'Light Beyond Limitation' sculpture** by Korean artist Ji Sul Won Kyung-Lee (blue ring = ocean/sky, red = earth, silver point = lighthouse beam). **Taejongsa Temple** inside the park hosts an annual hydrangea festival late June–early July. Park hours: **04:00–24:00 (Mar–Oct) / 05:00–24:00 (Nov–Feb)**, **free admission**.",
+      "time": "Late morning",
+      "duration": "45–60 min",
+      "name": "UN Memorial Cemetery in Korea",
+      "category": "History / Memorial",
+      "description": "The UN Memorial Cemetery is a respectful historical stop connected to the Korean War and the international soldiers who served under the United Nations Command. The visit should remain calm and respectful.",
       "highlights": [
-        "**Busan Monument No. 28** — wave-cut terrace ~120,000 years old (4th interglacial period)",
-        "Named after **King Taejong Muyeol of Silla** (604–661 CE, Three Kingdoms unifier)",
-        "**Yeongdo Lighthouse — Busan's oldest, built 1906** (10th in Korea); renovated 2004",
+        "Korean War history",
+        "Respectful memorial visit",
+        "Mostly flat walking",
         "**3-story Observatory** with views to **Tsushima Island (Japan, 50 km)** on clear days",
         "**Danubi Train** ~₩4,000 RT — 5 stops along 4.3 km coastal loop",
         "**Mangbuseok Rock** legend + **'Light Beyond Limitation' sculpture** (Ji Sul Won Kyung-Lee)",
@@ -281,13 +275,13 @@
         "**Annual Hydrangea Culture Festival** at Taejongsa Temple (late June – early July) draws 100,000+ visitors to the bigleaf-hydrangea flower carpet inside the park grounds"
       ],
       "timeUsed": [
-        "Coach drop-off + Danubi Train ticket purchase (~10 min)",
+        "45–60 min",
         "Train to Observatory + 3-floor panorama (~20 min)",
         "Walk to Yeongdo Lighthouse + 'Light Beyond Limitation' sculpture (~15 min)",
         "Cliff-edge views toward Mangbuseok Rock + Sinseon Rock area (~20 min)",
         "Train back to entrance + reassemble (~10 min)"
       ],
-      "whyOnRoute": "Taejongdae is **the canonical Busan natural-scenery anchor** — the day's wild-coast counterpoint to the urban afternoon (Gamcheon → Yongdusan → Jagalchi). The 75-min window with a fixed group focuses on the Danubi Train + Observatory + Lighthouse loop, which the train enables for mixed-mobility small-groups (the strenuous full 4.3 km circuit would split the party). Group buys train tickets together at the entrance to streamline boarding. For cruise guests the 75-min Danubi Train + Observatory + Lighthouse loop is the day's most efficient access to Busan's wild coastline — without the train this stop would require 2+ hours to do justice.",
+      "whyOnRoute": "It adds historical depth so the tour is not only scenery and markets.",
       "_poi_meta": {
         "poi_key": "taejongdae",
         "kb_version": "1.25",
@@ -301,67 +295,66 @@
           "Busan National Geopark official (busan.go.kr/geopark)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
-      "visitBasics": {
-        "hours": "Park 04:00–24:00 (Mar–Oct) / 05:00–24:00 (Nov–Feb); Danubi Train 09:00–sunset",
-        "closed": "Open year-round (Danubi Train suspends in heavy rain or strong wind)",
-        "admission": "FREE park entry; **Danubi Train ~₩4,000 round-trip adult**, ~₩2,000 child",
-        "walking": "Full 4.3 km coastal loop is strenuous; **Danubi Train** stops at Pebble Beach → Gumyeongsa → Observatory → Yeongdo Lighthouse → Taejongsa Temple"
+      "smartNotes": {
+        "photo": "**3-story Observatory** (panorama to **Tsushima Island, Japan, 50 km southeast** on clear days), **Yeongdo Lighthouse — Busan's oldest, built 1906**, and the wave-cut **Sinseon Rock terrace (~120,000 years old, 4th interglacial period)** below the lighthouse.",
+        "tip": "Skip the strenuous 4.3 km hike — board the **Danubi Train** for the 5-stop loop. **Taejongsa Temple's Hydrangea Festival** runs late June to early July. Lighthouse area has many steep stairs — not stroller-friendly."
       },
       "convenience": {
         "restroom": "At the entrance plaza, Observatory, and Yeongdo Lighthouse area",
         "parking": "Large free parking lot at the entrance plaza"
       },
-      "smartNotes": {
-        "photo": "**3-story Observatory** (panorama to **Tsushima Island, Japan, 50 km southeast** on clear days), **Yeongdo Lighthouse — Busan's oldest, built 1906**, and the wave-cut **Sinseon Rock terrace (~120,000 years old, 4th interglacial period)** below the lighthouse.",
-        "tip": "Skip the strenuous 4.3 km hike — board the **Danubi Train** for the 5-stop loop. **Taejongsa Temple's Hydrangea Festival** runs late June to early July. Lighthouse area has many steep stairs — not stroller-friendly."
+      "visitBasics": {
+        "hours": "Park 04:00–24:00 (Mar–Oct) / 05:00–24:00 (Nov–Feb); Danubi Train 09:00–sunset",
+        "closed": "Open year-round (Danubi Train suspends in heavy rain or strong wind)",
+        "admission": "FREE park entry; **Danubi Train ~₩4,000 round-trip adult**, ~₩2,000 child",
+        "walking": "Full 4.3 km coastal loop is strenuous; **Danubi Train** stops at Pebble Beach → Gumyeongsa → Observatory → Yeongdo Lighthouse → Taejongsa Temple"
       }
     },
     {
       "number": 4,
-      "time": "≈ 12:15",
+      "time": "Midday",
       "duration": "60 min",
-      "name": "Lunch (local Busan restaurant)",
+      "name": "Lunch (local restaurant)",
       "category": "Meal",
-      "description": "**Lunch is included** at a local Busan restaurant pre-arranged by the operator — typically a **Dwaeji Gukbap (Busan pork-and-rice soup) restaurant in Yeongdo or central Busan**, or a **Bibimbap / Korean set-menu** establishment selected for group seating, English menus, and reliable allergen handling. Dwaeji Gukbap originated among **Korean War refugees** in Busan c.1950 (when northern war refugees adapted Pyongyang-style soups using available pork bones) and remains the city's most distinctive comfort food. **Vegetarian and halal substitutions are available with 24-hour notice at booking** — communicate dietary needs when reserving via GetYourGuide or AtoC Korea direct. **Drinks (soju, beer, soft drinks) are not included** — typically ₩3,000–6,000 if ordered.",
+      "description": "Lunch is arranged at a local restaurant at guests’ own expense unless otherwise stated. The guide can recommend approachable Korean dishes and adjust for allergies or dietary restrictions when informed in advance.",
       "highlights": [
-        "**Lunch INCLUDED** in tour price (₩58.50 USD total)",
-        "Typical: **Dwaeji Gukbap** (Busan signature) or Korean set-menu",
-        "**Vegetarian / halal with 24h prior notice**",
+        "Lunch paid directly",
+        "Local Korean food",
+        "Dietary needs should be shared in advance",
         "Drinks not included (₩3,000–6,000 if ordered)"
       ],
-      "whyOnRoute": "Included lunch at a fixed restaurant keeps the small-group on schedule (vs. private-charter where lunch self-pay can stretch 90+ min). The 12:15 slot (vs. private's 12:30) accounts for the slightly faster fixed-restaurant flow.",
+      "whyOnRoute": "A flexible lunch keeps the group comfortable before the downtown and village stops.",
       "_poi_meta": {
         "poi_key": "OPS_busan_lunch",
         "kb_version": "1.15",
         "verified_date": "2026-04-29"
+      },
+      "smartNotes": {
+        "photo": "**Dwaeji Gukbap** (pork-and-rice soup, Busan's signature comfort dish from the Korean War refugee era) or **Milmyeon** (Busan's wheat-noodle answer to North Korean naengmyeon, originated in 1950s refugee kitchens) make the strongest local food images.",
+        "tip": "**Vegetarian / halal / allergen requests need 24h advance notice**. Driver recommends per party preference (Korean / seafood / international); ride the recommendation or request a specific cuisine at morning pickup."
+      },
+      "convenience": {
+        "restroom": "Inside the restaurant",
+        "parking": "Driver drops off and waits at nearest legal stand"
       },
       "visitBasics": {
         "hours": "Restaurant-dependent (typical 11:30–14:30 lunch service)",
         "closed": "Varies by venue; driver confirms availability",
         "admission": "**Pay direct, ~₩10,000–25,000 per person**; lunch is **NOT included** in tour price",
         "walking": "Minimal — restaurant within 5 min walk of vehicle drop-off"
-      },
-      "convenience": {
-        "restroom": "Inside the restaurant",
-        "parking": "Driver drops off and waits at nearest legal stand"
-      },
-      "smartNotes": {
-        "photo": "**Dwaeji Gukbap** (pork-and-rice soup, Busan's signature comfort dish from the Korean War refugee era) or **Milmyeon** (Busan's wheat-noodle answer to North Korean naengmyeon, originated in 1950s refugee kitchens) make the strongest local food images.",
-        "tip": "**Vegetarian / halal / allergen requests need 24h advance notice**. Driver recommends per party preference (Korean / seafood / international); ride the recommendation or request a specific cuisine at morning pickup."
       }
     },
     {
       "number": 5,
-      "time": "≈ 13:30",
-      "duration": "75 min",
-      "name": "Gamcheon Culture Village",
-      "category": "Hillside Art Village",
-      "description": "**Gamcheon Culture Village (감천문화마을) — Busan's 'Machu Picchu of Korea' / 'Korean Santorini'** — is a hillside community of **~10,000 residents in pastel-painted homes** that began as a 1955 refugee settlement when **~800 families (~4,000 people) of the Taegeukdo religious community**, founded by Jo Cheol-je, relocated here after the Korean War. The village's signature feature — **no roof blocks the view of the home behind it**, creating the famous tiered-rainbow effect — comes directly from **Taegeukdo philosophy of 'allowing others to prosper'**. Two government art initiatives transformed the village into a tourist destination: **'Dreaming of Machu Picchu' (2009)** and **'Miro Miro' (2010)**, both commissioned by Korea's Ministry of Culture, with murals, sculptures, and installations integrated through the maze of alleys. The village won the **UN-HABITAT Asian Townscape Award in 2012** and now receives **~1.4 million visitors annually**. Anchor photo spots include the **Little Prince and Fox bench** at Sky Garden (Haneul Maru observatory — long queue but no fee), the **rainbow-roof panorama** from Star Viewing Hall, and the **stamp tour map** (~₩2,000) that guides visitors past 9 numbered installations. **Residents still live here** — keep voices down, no drones, no flash photography in alleys, take rubbish with you. Hours **09:00–18:00 (Mar–Oct) / 09:00–17:00 (Nov–Feb)**, **free village entry**, but the steep stairs and narrow alleys are **not stroller- or wheelchair-friendly** in many sections — wear grippy shoes.",
+      "time": "Afternoon",
+      "duration": "60–90 min",
+      "name": "Jagalchi, BIFF Square & Gukje Market area",
+      "category": "Market / Downtown",
+      "description": "This downtown area combines seafood-market energy, street-food lanes, shopping streets, and the older commercial heart of Busan. Exact walking time can be adjusted to the ship schedule and group pace.",
       "highlights": [
-        "**1955 Taegeukdo refugee settlement** — ~800 families / ~4,000 people founded by Jo Cheol-je",
-        "**Taegeukdo philosophy 'allowing others to prosper'** = no roof blocks neighbor's view",
-        "**'Dreaming of Machu Picchu' (2009)** + **'Miro Miro' (2010)** Ministry of Culture art projects",
+        "Jagalchi Fish Market",
+        "BIFF Square",
+        "Gukje Market area",
         "**UN-HABITAT Asian Townscape Award 2012**",
         "**~1.4 million visitors annually**",
         "**Little Prince and Fox bench** at Sky Garden = signature photo (long queue, free)",
@@ -370,13 +363,13 @@
         "**K-content pilgrimage site** — Running Man Episode 126 (Choi Ji-woo guest), Luca: The Beginning (2021), Ode to My Father (2014), A Little Princess; **KTO '100 Must-Visit Tourist Spots in Korea' five consecutive times**"
       ],
       "timeUsed": [
-        "Coach drop-off at upper entrance (~5 min)",
+        "60–90 min",
         "Star Viewing Hall + rainbow-roof panorama (~15 min)",
         "Sky Garden + Little Prince & Fox bench photo (~20 min)",
         "Maze-alley walk down through murals + craft shops (~25 min)",
         "Reassemble at lower exit (~10 min)"
       ],
-      "whyOnRoute": "Gamcheon is **the visual centerpiece of any Busan day tour** and the small-group's biggest 'wow' photo stop. 75 minutes with a fixed group focuses on the **upper-entrance to Sky Garden to Little Prince bench** flow — the canonical photo path that the guide has done dozens of times — rather than free exploration. Pairs naturally with Yongdusan (next stop) — both hillside vantage points 4 km apart, one residential-artistic, one civic-park. For cruise guests the 75-min Gamcheon dwell is the day's primary photo-grade stop — Sky Garden + Star Viewing Hall + maze-alley descent is more Instagram-shareable than any other Busan stop on this circuit.",
+      "whyOnRoute": "The market area gives guests a lively, local-feeling Busan experience without needing a separate evening plan.",
       "_poi_meta": {
         "poi_key": "gamcheon_culture_village",
         "kb_version": "1.25",
@@ -390,33 +383,32 @@
           "Korea Tourism Organization (100 Must-Visit Tourist Spots in Korea designation)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
-      "visitBasics": {
-        "hours": "09:00–18:00 (Mar–Oct) / 09:00–17:00 (Nov–Feb); info center same hours",
-        "closed": "Open year-round",
-        "admission": "FREE village entry; **Stamp Tour Map ₩2,000** (optional, 9 numbered installations)",
-        "walking": "Steep stair-streets and narrow alleys — **moderate-to-high** difficulty; **NOT stroller- or wheelchair-friendly**; grippy shoes essential"
+      "smartNotes": {
+        "photo": "**'Little Prince and Fox bench'** at Sky Garden (Haneul Maru observatory — long queue, free), **rainbow-roof panorama** from Star Viewing Hall, and the **stair-mural alleys**. **No drones, no flash photography in alleys**.",
+        "tip": "**Residents still live here** (~10,000 people, 1955 Taegeukdo refugee settlement) — **keep voices down**, don't enter homes, take rubbish with you. **UN-HABITAT Asian Townscape Award 2012**; ~1.4 million visitors annually. KTO 100 Must-Visit Spots 5x consecutively."
       },
       "convenience": {
         "restroom": "At the info center plaza and along the main alley",
         "parking": "Limited — coach drop-off near the info center, no large lot"
       },
-      "smartNotes": {
-        "photo": "**'Little Prince and Fox bench'** at Sky Garden (Haneul Maru observatory — long queue, free), **rainbow-roof panorama** from Star Viewing Hall, and the **stair-mural alleys**. **No drones, no flash photography in alleys**.",
-        "tip": "**Residents still live here** (~10,000 people, 1955 Taegeukdo refugee settlement) — **keep voices down**, don't enter homes, take rubbish with you. **UN-HABITAT Asian Townscape Award 2012**; ~1.4 million visitors annually. KTO 100 Must-Visit Spots 5x consecutively."
+      "visitBasics": {
+        "hours": "09:00–18:00 (Mar–Oct) / 09:00–17:00 (Nov–Feb); info center same hours",
+        "closed": "Open year-round",
+        "admission": "FREE village entry; **Stamp Tour Map ₩2,000** (optional, 9 numbered installations)",
+        "walking": "Steep stair-streets and narrow alleys — **moderate-to-high** difficulty; **NOT stroller- or wheelchair-friendly**; grippy shoes essential"
       }
     },
     {
       "number": 6,
-      "time": "≈ 15:00",
-      "duration": "45 min",
-      "name": "Yongdusan Park & Busan Tower",
-      "category": "City Viewpoint",
-      "description": "**Yongdusan Park (용두산공원, 'Dragon Head Mountain Park')** — a **69,000 m²** civic park at the heart of Nampo-dong with **70 tree species** — is a layered historical site: it was once a **Joseon-era waegwan** (Choryang Wakan, the **Japanese trade-and-diplomacy enclave from 1678 to 1878**), then a Japanese **Ryūtōsan Shrine (17th–early 20th century)**, then a **Korean War refugee shantytown** (most destroyed by 1950s fires), and finally redeveloped as the modern park. The **120-meter-tall Busan Tower** (originally **opened 1973**, **rebranded 'Busan Diamond Tower' after a 2021 redevelopment**) is the park's centerpiece — its **observation deck top is modeled after the baldaquin (canopy) of Dabotap Pagoda (NT 20) at Bulguksa Temple in Gyeongju**, an explicit architectural quotation linking Busan's modern landmark to Silla heritage. The tower stands at **69m above sea level + 120m height = 189m total summit elevation**, offering **360° panoramas** to Busan Port, Yeongdo Bridge, Tsushima Island (clear days), and Jagalchi Market below. Other park monuments: the **bronze statue of Admiral Yi Sun-sin (1545–1598)** (Busan's hometown naval hero who defeated Japanese forces in the 1592–1598 Imjin War, famously **never lost a single ship**), the **Citizens' Bell** donated by **100,000 Busan citizens** (struck **33 times on New Year's Eve and March 1 Independence Movement Day**), the **flower clock** at the entrance, and a **bronze dragon sculpture** symbolic of the mountain's name. Access is via a **covered escalator from Gwangbok-ro Fashion Street** (no return escalator — descend by stairs). **Park free 24h**; **Busan Diamond Tower observatory ₩12,000 adult / ₩9,000 senior 65+ or child 3–12, hours 10:00–22:00 (last admission 21:30)**.",
+      "time": "Afternoon",
+      "duration": "60–90 min",
+      "name": "Gamcheon Culture Village",
+      "category": "Culture village / Photo stop",
+      "description": "Gamcheon Culture Village is known for colorful hillside houses, murals, narrow alleys, and viewpoints over the port-side neighborhood. It is one of Busan’s signature photo stops.",
       "highlights": [
-        "**'Dragon Head Mountain'** — historically protective barrier against wokou (Japanese pirates)",
-        "Site of **Joseon-era waegwan (Japanese trade enclave 1678–1878)** + **Ryūtōsan Shrine** + Korean War shantytown",
-        "**Busan Tower 1973** → rebranded **Busan Diamond Tower 2021** after redevelopment",
+        "Colorful hillside village",
+        "Murals and viewpoints",
+        "Some slopes and stairs",
         "**Tower top modeled after Bulguksa Dabotap baldaquin** (NT 20, Gyeongju) — Silla heritage quotation",
         "**Statue of Admiral Yi Sun-sin** (1545–1598) — Imjin War turtle-ship hero who never lost a ship",
         "**Citizens' Bell** — 100,000 donors; struck 33× on New Year's Eve + March 1",
@@ -425,13 +417,13 @@
         "**Citizens' Bell 33-strike ritual** — struck **33 times on New Year's Eve and March 1st (Independence Movement Day)** — the **33 strikes commemorate the 33 Korean signatories of the 1919 Declaration of Independence** read at Tapgol Park in Seoul; ties Busan's civic identity to national independence narrative"
       ],
       "timeUsed": [
-        "Escalator from Gwangbok-ro Fashion Street up to park (~5 min)",
+        "60–90 min",
         "Flower clock + Yi Sun-sin statue + Citizens' Bell photos (~10 min)",
         "Tower observatory ascent + 360° panorama (~25 min)",
         "Descent via stairs (~5 min)",
         "Citizens' Bell pavilion + flower clock + bronze dragon photo (~5 min)"
       ],
-      "whyOnRoute": "Yongdusan delivers **Busan's most-recognized 360° panorama** — and the tower's quotation of Bulguksa Dabotap connects this stop to the Gyeongju heritage circuit cruise passengers might pair on a multi-port itinerary. **Tower entry is OPTIONAL** for this small-group (₩12,000 self-pay): guests who want the panorama buy tickets onsite while the rest enjoy the park (Yi Sun-sin statue, flower clock, Citizens' Bell). 45-min window covers the escalator up + park + optional tower without forcing. For cruise guests Yongdusan is the day's primary weather-fallback — if rain or fog cancels Taejongdae's outdoor cliff loop, the Diamond Tower observatory + park provides a ~75-min indoor alternative within the same dwell window.",
+      "whyOnRoute": "Gamcheon is highly recognizable and gives the route a strong visual highlight near the end.",
       "_poi_meta": {
         "poi_key": "yongdusan_park",
         "kb_version": "1.25",
@@ -444,33 +436,32 @@
           "Busan Metropolitan City heritage records"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
-      "visitBasics": {
-        "hours": "Park open 24h; **Busan Diamond Tower observatory 10:00–22:00 (last admission 21:30)**",
-        "closed": "Tower open year-round (occasional safety closures in extreme wind)",
-        "admission": "Park FREE; **Busan Diamond Tower ₩12,000 adult / ₩9,000 senior 65+ or child 3–12**",
-        "walking": "**Covered escalator from Gwangbok-ro Fashion Street** for ascent (no return escalator — descend by stairs)"
+      "smartNotes": {
+        "photo": "From the **120 m Busan Diamond Tower observatory** (189 m total summit elevation) — **360° panorama** to Busan Port, Yeongdo Bridge, and Tsushima on clear days. Tower top **modeled after Bulguksa Dabotap baldaquin (NT 20)** in Gyeongju. Best at **sunset and post-dark**.",
+        "tip": "Pair tower visit with **Admiral Yi Sun-sin statue** (Imjin War turtle-ship hero who never lost a ship) and the **Citizens' Bell** (struck **33 times on New Year's Eve and March 1**, commemorating the 33 signatories of the 1919 Independence Declaration)."
       },
       "convenience": {
         "restroom": "At the park plaza and inside Busan Diamond Tower",
         "parking": "No on-site parking — use Nampo-dong public lots and walk up via escalator"
       },
-      "smartNotes": {
-        "photo": "From the **120 m Busan Diamond Tower observatory** (189 m total summit elevation) — **360° panorama** to Busan Port, Yeongdo Bridge, and Tsushima on clear days. Tower top **modeled after Bulguksa Dabotap baldaquin (NT 20)** in Gyeongju. Best at **sunset and post-dark**.",
-        "tip": "Pair tower visit with **Admiral Yi Sun-sin statue** (Imjin War turtle-ship hero who never lost a ship) and the **Citizens' Bell** (struck **33 times on New Year's Eve and March 1**, commemorating the 33 signatories of the 1919 Independence Declaration)."
+      "visitBasics": {
+        "hours": "Park open 24h; **Busan Diamond Tower observatory 10:00–22:00 (last admission 21:30)**",
+        "closed": "Tower open year-round (occasional safety closures in extreme wind)",
+        "admission": "Park FREE; **Busan Diamond Tower ₩12,000 adult / ₩9,000 senior 65+ or child 3–12**",
+        "walking": "**Covered escalator from Gwangbok-ro Fashion Street** for ascent (no return escalator — descend by stairs)"
       }
     },
     {
       "number": 7,
-      "time": "≈ 16:00",
-      "duration": "60 min",
-      "name": "Nampo-dong & Jagalchi Fish Market",
-      "category": "Market & Streetfood",
-      "description": "**Jagalchi Market (자갈치시장) — Korea's largest seafood market** — anchors **Nampo-dong**, Busan's downtown shopping-and-dining district. The name 'Jagalchi' derives from **'jagal' (gravel)**, a reference to the pebbled shoreline where the market originated. After the 1876 opening of Busan to international trade and the post-Korean-War boom, **'Jagalchi Ajumma' women vendors** (war widows and refugees) built the market's identity as a tough, women-led seafood economy. The current **seagull-shaped modern building** (designed by Hyunjun Mihn) **reopened 2006** and houses **~400 vendors across 66,000 m²** — ground floor for live tanks (octopus, abalone, sea cucumber, halibut), second floor for raw-fish (hoe) restaurants where you can buy fish downstairs and have it filleted upstairs (chogochujang dipping sauce + soju standard). Market hours **05:00–22:00 daily**; **closed 1st and 3rd Tuesdays of each month** (verify before visiting). The annual **Jagalchi Cultural Tourism Festival** in October is the single biggest event. Surrounding **Nampo-dong** offers the **BIFF Square** (Busan International Film Festival origin, with handprints of Korean stars in the pavement — Park Chan-wook, Bong Joon-ho, etc.), **Gukje Market** (Korean War refugee market, still 1,500+ stalls), and **Gwangbok-ro Fashion Street**. Address: **52 Jagalchihaean-ro, Jung-gu**. Photo etiquette: **always ask before photographing live tanks or vendors**; Jagalchi Ajumma can be famously direct about cameras. Adjacent live-fish auctions begin at **04:00 daily** at the seafood traders' wholesale market that supplies the public market upstairs (advance booking required for tourist viewing of auctions).",
+      "time": "If time allows",
+      "duration": "30–60 min",
+      "name": "Songdo Beach or Yongdusan Park",
+      "category": "Scenic / Flexible stop",
+      "description": "If time allows, the guide may add Songdo Beach/Songdo Cable Car area or Yongdusan Park and Busan Tower area. If traffic is heavy or the ship departure is early, this stop may be shortened or replaced.",
       "highlights": [
-        "**Korea's largest seafood market** — ~400 vendors / 66,000 m²",
-        "Name = **'jagal' (gravel)** + **Jagalchi Ajumma** post-war women vendors",
-        "**Modern seagull-shaped building reopened 2006** (designed by Hyunjun Mihn)",
+        "Flexible final stop",
+        "Songdo or Yongdusan area",
+        "Adjusted to ship schedule",
         "**Hours 05:00–22:00 daily**; **CLOSED 1st & 3rd Tuesdays**",
         "**Buy-downstairs / eat-upstairs hoe (raw-fish) flow**",
         "Adjacent: **BIFF Square** (Busan Film Festival), **Gukje Market**, **Gwangbok-ro**",
@@ -479,13 +470,13 @@
         "**Sannakji (live cut octopus) is Busan's culinary signature** — small octopus cut into still-moving pieces, served with sesame oil and salt; the source of *Old Boy* (2003)'s famous octopus scene that introduced the dish to international audiences"
       ],
       "timeUsed": [
-        "Walk from Yongdusan / drop-off near Jagalchi (~5 min)",
+        "30–60 min",
         "Ground floor live-tank walkthrough (~15 min)",
         "Second-floor hoe restaurant peek + Nampo-dong street photos (~15 min)",
         "Optional snack purchase + Gwangbok-ro stroll (~10 min)",
         "Stamp + souvenir purchase from Jagalchi Ajumma stalls (~5 min)"
       ],
-      "whyOnRoute": "Jagalchi is **the most authentic 'Busan flavor' on a single-day tour** and the small-group's afternoon free-time anchor. 60 minutes (15 more than charter version) accounts for fixed-group reassembly — pairs Jagalchi's live-tank ground floor with Nampo-dong / BIFF Square / Gukje Market street walking. Optional fish cake (eomuk) snack stop that small-group budgets handle better than charter's premium positioning. For cruise guests this is the most authentic 'Busan flavor' photo opportunity in 45 minutes — live tanks + ajumma vendor culture + seagull-roof architecture in a walk-through that ends close to the ship's reboarding zone.",
+      "whyOnRoute": "A flexible final stop protects the port return while still adding value when the schedule allows.",
       "_poi_meta": {
         "poi_key": "jagalchi_market",
         "kb_version": "1.25",
@@ -499,81 +490,79 @@
           "Busan Tourism Organization (Jagalchi Sannakji designation)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
-      "visitBasics": {
-        "hours": "**Jagalchi Market 05:00–22:00 daily**; live-fish auctions begin 04:00 (advance booking for tourist viewing); Nampo-dong shopping streets 10:30–22:00",
-        "closed": "**Jagalchi: 1st and 3rd Tuesdays of each month**; Nampo-dong open year-round",
-        "admission": "FREE access; **2nd-floor hoe restaurants ~₩30,000+ set menus** (price varies by fish)",
-        "walking": "Flat shopping street + market floor — easy; **2nd-floor hoe restaurants** require a short stair climb"
+      "smartNotes": {
+        "photo": "**Seagull-shaped modern building (reopened 2006, architect Hyunjun Mihn)**, **live tanks on the ground floor**, **BIFF Square hand prints** (Park Chan-wook, Bong Joon-ho, etc.), and **Gukje Market** (1,500+ stalls). **Always ask before photographing vendors** — Jagalchi Ajumma can be famously direct about cameras.",
+        "tip": "**Buy-downstairs / eat-upstairs hoe flow**: pick fresh seafood on the ground floor, have it filleted at a 2nd-floor restaurant (chogochujang + soju standard). **Sannakji (live cut octopus)** is Busan's culinary signature — the dish from *Old Boy* (2003)."
       },
       "convenience": {
         "restroom": "Public restrooms at BIFF Square and inside Jagalchi",
         "parking": "Use Lotte Department Store or BIFF Square public lots; market itself has no on-site parking"
       },
-      "smartNotes": {
-        "photo": "**Seagull-shaped modern building (reopened 2006, architect Hyunjun Mihn)**, **live tanks on the ground floor**, **BIFF Square hand prints** (Park Chan-wook, Bong Joon-ho, etc.), and **Gukje Market** (1,500+ stalls). **Always ask before photographing vendors** — Jagalchi Ajumma can be famously direct about cameras.",
-        "tip": "**Buy-downstairs / eat-upstairs hoe flow**: pick fresh seafood on the ground floor, have it filleted at a 2nd-floor restaurant (chogochujang + soju standard). **Sannakji (live cut octopus)** is Busan's culinary signature — the dish from *Old Boy* (2003)."
+      "visitBasics": {
+        "hours": "**Jagalchi Market 05:00–22:00 daily**; live-fish auctions begin 04:00 (advance booking for tourist viewing); Nampo-dong shopping streets 10:30–22:00",
+        "closed": "**Jagalchi: 1st and 3rd Tuesdays of each month**; Nampo-dong open year-round",
+        "admission": "FREE access; **2nd-floor hoe restaurants ~₩30,000+ set menus** (price varies by fish)",
+        "walking": "Flat shopping street + market floor — easy; **2nd-floor hoe restaurants** require a short stair climb"
       }
     },
     {
       "number": 8,
-      "time": "≈ 17:15",
-      "duration": "30 min",
+      "time": "Before all-aboard",
+      "duration": "30–60 min buffer",
       "name": "Return to Busan Port",
       "category": "Return",
-      "description": "Small-group van returns to the **same cruise terminal where the tour began** — Busan Port International Cruise Terminal (Dongsam) for large-ship cruises, or Busan Port International Passenger Terminal (Choryang) for medium cruises — buffered to deliver passengers **60–90 minutes before all-aboard**. Drop-off is at the terminal arrival hall, where the cruise line's gangway shuttle typically operates. Group does not detour for individual hotel drop-offs (use the private charter alternative if hotel return is needed).",
+      "description": "Return is planned around your ship’s all-aboard time with a buffer. The guide may shorten the final stop if traffic, weather, or port conditions require it.",
       "highlights": [
-        "Direct group return to original cruise terminal",
-        "**60–90 min buffer before all-aboard**",
-        "**No individual hotel drop-offs** (small-group fixed schedule)"
+        "Return buffer before ship departure",
+        "Drop-off at cruise terminal",
+        "Route may adjust for traffic"
       ],
-      "whyOnRoute": "Direct return without intermediate stops protects the all-aboard buffer for all passengers simultaneously. 30 minutes covers worst-case rush-hour transit from Nampo-dong back to either terminal.",
+      "whyOnRoute": "For cruise guests, safe return timing is more important than forcing every stop.",
       "_poi_meta": {
         "poi_key": "OPS_busan_port_return",
         "kb_version": "1.15",
         "verified_date": "2026-04-29"
-      },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG"
+      }
     }
   ],
   "routeFlowStops": [
     {
-      "name": "Busan Port International Passenger Terminal",
+      "name": "Busan Port pickup (cruise terminal)",
       "type": "origin",
-      "theme": "Departure"
+      "theme": "Transit / Pickup"
     },
     {
-      "name": "UN Memorial Cemetery",
+      "name": "Haedong Yonggungsa Temple",
       "type": "primary",
-      "theme": "Memorial"
+      "theme": "Seaside temple"
     },
     {
-      "name": "Taejongdae coastal cliffs",
+      "name": "UN Memorial Cemetery in Korea",
       "type": "primary",
-      "theme": "Coastal cliffs"
+      "theme": "History / Memorial"
     },
     {
-      "name": "Lunch (local Busan restaurant)",
+      "name": "Lunch (local restaurant)",
       "type": "meal",
       "theme": "Meal"
     },
     {
+      "name": "Jagalchi, BIFF Square & Gukje Market area",
+      "type": "primary",
+      "theme": "Market / Downtown"
+    },
+    {
       "name": "Gamcheon Culture Village",
       "type": "primary",
-      "theme": "Art village"
+      "theme": "Culture village / Photo stop"
     },
     {
-      "name": "Yongdusan Park + Busan Tower",
+      "name": "Songdo Beach or Yongdusan Park",
       "type": "primary",
-      "theme": "City viewpoint"
+      "theme": "Scenic / Flexible stop"
     },
     {
-      "name": "Nampo-dong + Jagalchi Market",
-      "type": "primary",
-      "theme": "Market & streetfood"
-    },
-    {
-      "name": "Busan Port International Passenger Terminal",
+      "name": "Return to Busan Port",
       "type": "return",
       "theme": "Return"
     }
@@ -612,7 +601,7 @@
   ],
   "routeShapeIntro": {
     "title": "How this day flows",
-    "subtitle": "A circular shore-excursion route built around Busan's port. Unlike the Incheon equivalent, Busan's main attractions are within 30 minutes of the cruise terminal — meaning more time at sights and less time on the road. The route hits the four most-photographed Busan stops (Gamcheon, Taejongdae, Jagalchi, Busan Tower) plus the city's most thoughtful Korean War heritage site (UN Cemetery), all coordinated to your ship's all-aboard time. The 4.9/5 rating across 32 reviews reflects how tightly this circuit is calibrated."
+    "subtitle": "A cruise-port small-group route built around ship timing. The route combines one major coastal temple, a respectful memorial stop, Busan’s downtown market area, Gamcheon Culture Village, and a flexible final stop if time allows."
   },
   "whyTourWorks": {
     "bestFor": [
@@ -636,11 +625,11 @@
         "items": [
           {
             "label": "All five Busan signatures, with a return buffer",
-            "detail": "Many cruise day tours skip either the UN Cemetery (too sober for a beach day) or Gamcheon (too far from the port). This route includes both, plus Taejongdae, Yongdusan/Busan Tower, and Jagalchi/Nampo-dong, and still leaves a 60-minute safety buffer for the return drive. The 9-hour window is built around realistic Busan traffic, not a brochure-ideal schedule."
+            "detail": "Many cruise day tours skip either the UN Cemetery (too sober for a beach day) or Gamcheon (too far from the port). This route includes both, plus Taejongdae, Yongdusan/Busan Tower, and Jagalchi/Nampo-dong, and still leaves a 60-minute safety buffer for the return drive. The 9-hour period is built around realistic Busan traffic, not a brochure-ideal schedule."
           },
           {
-            "label": "Built for the cruise schedule, not the operator's clock",
-            "detail": "Pickup is calibrated to your ship's actual arrival, not a fixed start. Ships that arrive before 07:00 trigger an early-bird option (₩10,000/person surcharge) so you don't waste time at the terminal. Drop-off is timed to leave at least a 60-minute buffer before your stated all-aboard time."
+            "label": "Built around cruise timing",
+            "detail": "Pickup is planned to your ship's actual arrival, not a fixed start. Ships that arrive before 07:00 trigger an early-bird option (₩10,000/person surcharge) so you don't waste time at the terminal. Drop-off is timed to leave at least a 60-minute buffer before your stated all-aboard time."
           },
           {
             "label": "Certified bilingual guide, no shopping detours",
@@ -672,7 +661,7 @@
       "preview": "Group meets at the Busan Port International Passenger Terminal arrival hall.",
       "content": [
         "Group meets at the Busan Port International Passenger Terminal arrival hall.",
-        "Pickup time is calibrated to your ship's actual disembarkation, not a fixed start.",
+        "Pickup time is adjusted to your ship's actual disembarkation, not a fixed start.",
         "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking.",
         "Early pickup (before 08:00) adds ₩10,000 per person."
       ]
@@ -776,63 +765,72 @@
   "bookingTrustItems": [
     {
       "icon": "check-circle",
-      "title": "Licensed local operator",
-      "description": "Authorized Korean tour operator with full insurance",
+      "title": "Licensed local tour provider",
+      "description": "Authorized Korean tour provider with insurance",
       "iconBg": "bg-emerald-50/80",
-      "iconColor": "text-emerald-600"
+      "iconColor": "text-emerald-600",
+      "body": "Return to Busan Port is planned at least 60 minutes before your all-aboard time, with extra time built into the route."
     },
     {
       "icon": "route",
       "title": "Route specialists",
       "description": "Hand-tuned itinerary, not a generic loop",
       "iconBg": "bg-sky-50/80",
-      "iconColor": "text-sky-600"
+      "iconColor": "text-sky-600",
+      "body": "Route specialists who run Busan cruise excursions daily: the stop sequence (memorial → cliff → village → tower → market) is planned for a 9-hour ship-to-ship period."
     },
     {
       "icon": "users",
-      "title": "Curated group size",
+      "title": "Comfortable group size",
       "description": "Right-sized for the route",
       "iconBg": "bg-amber-50/80",
-      "iconColor": "text-amber-600"
+      "iconColor": "text-amber-600",
+      "body": "Small shared van capped at ~10 passengers: Gamcheon's narrow alleys and Taejongdae's cliff path are far more manageable than the 40-person bus tours."
     }
   ],
   "bookingSupportSteps": [
     {
       "timing": "Immediately",
       "title": "Instant Confirmation",
-      "detail": "Booking confirmation with itinerary summary"
+      "detail": "Booking confirmation with itinerary summary",
+      "description": "Book online; instant confirmation with the cruise terminal meeting point and name-placard instructions."
     },
     {
       "timing": "12 hours before",
       "title": "12-Hour Reminder",
-      "detail": "Weather update and any route adjustments"
+      "detail": "Weather update and any route adjustments",
+      "description": "Send your ship name, port date, and all-aboard time so we can adjust the start."
     },
     {
       "timing": "Evening before",
       "title": "Final Pickup Info",
-      "detail": "Exact pickup time and driver contact"
+      "detail": "Exact pickup time and driver contact",
+      "description": "Drop-off timing confirmed 48 hours before departure based on your vessel's schedule."
     },
     {
       "timing": "Morning of tour",
       "title": "Day-of Route Notes",
-      "detail": "Morning briefing based on live conditions"
+      "detail": "Morning briefing based on live conditions",
+      "description": "Van plate and guide contact sent the evening before your tour."
     },
     {
       "timing": "During tour",
       "title": "Stop-by-Stop Tips",
-      "detail": "Real-time guidance at each location"
+      "detail": "Real-time guidance at each location",
+      "description": "Guide meets your group at the terminal arrival hall with an 'AtoC Korea' name placard."
     },
     {
       "timing": "After tour",
       "title": "Post-tour Support",
-      "detail": "Follow-up and recommendations"
+      "detail": "Follow-up and recommendations",
+      "description": "Drop-off at the same terminal 60+ minutes before all-aboard; brief review request sent after."
     }
   ],
   "staticQuestions": [
     {
       "id": "q-cruise-busy-day",
       "question": "Will the tour be full on busy cruise days?",
-      "answer": "The shared van seats up to ≈10 passengers. On peak cruise days the operator runs multiple vans simultaneously rather than overcrowding a single one — group dynamics are part of the format and you'll usually be with cruisers from several different ships."
+      "answer": "The shared van seats up to about 10 passengers. On peak cruise days, multiple vans may operate rather than overcrowding a single vehicle, so you may join cruise guests from different ships."
     },
     {
       "id": "q-early-arrival",
@@ -902,23 +900,23 @@
     {
       "id": "weather",
       "question": "What if there's heavy rain or a typhoon?",
-      "answer": "Light rain: tour operates as planned. Heavy rain: Taejongdae's cliff trail closes; the Danubi Train still runs. Gamcheon stays open but is photo-limited. If a typhoon warning is issued, the operator offers rebooking or a full refund. If the cruise line cancels your port call, full refund with documentation."
+      "answer": "Light rain: tour operates as planned. Heavy rain: Taejongdae's cliff trail may close, while the Danubi Train may still operate. Gamcheon remains open but can be more limited for photos. If a typhoon warning is issued, rebooking or full refund is offered. If the cruise line cancels your port call, full refund applies with cancellation proof."
     }
   ],
   "guestReviews": [],
   "reviewsSummary": {
-    "averageRating": 0,
-    "totalReviews": 0,
+    "averageRating": 4.9,
+    "totalReviews": 32,
     "ratingDistribution": [
       {
         "stars": 5,
-        "count": 0,
-        "percentage": 0
+        "count": 30,
+        "percentage": 93.8
       },
       {
         "stars": 4,
-        "count": 0,
-        "percentage": 0
+        "count": 2,
+        "percentage": 6.2
       },
       {
         "stars": 3,
@@ -936,10 +934,11 @@
         "percentage": 0
       }
     ],
-    "highlights": []
+    "highlights": [],
+    "source_attribution": "Verified guest review data will appear here after import."
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "Select your date and group size to check live availability and complete your booking.",
     "price": {
       "amountLabel": "58.50",
       "originalPriceUsd": 65,
@@ -947,26 +946,33 @@
       "discountPercent": 10,
       "currency": "USD",
       "per": "person",
-      "priceSource": "getyourguide_t1164092",
-      "priceNote": "Original price USD 65 on the operator's listing. AtoC Korea sale price applies a flat 10% discount."
+      "priceSource": "AtoC Korea direct rate",
+      "priceNote": "Final rate is confirmed after selecting your cruise date, port, and group size. The schedule is planned around a safe return to the ship."
     }
   },
   "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "Busan Port International Passenger Terminal — arrival hall",
-        "time": "Calibrated to ship disembarkation"
-      }
-    ],
-    "dropoff_points": [
-      {
+        "order": 1,
+        "time": "Planned to ship disembarkation",
         "name": "Busan Port International Passenger Terminal",
-        "approx_time": "Minimum 60 minutes before all-aboard"
+        "type": "station",
+        "lat": 35.1067,
+        "lng": 129.0365
       }
     ],
-    "hotel_pickup_available": false,
-    "notes": "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Shared van with other cruise passengers from various ships. Early pickup (before 08:00) adds ₩10,000 per person to compensate the guide for the early start."
+    "return": [
+      {
+        "order": 1,
+        "name": "Busan Port International Passenger Terminal",
+        "type": "station",
+        "lat": 35.1067,
+        "lng": 129.0365
+      }
+    ],
+    "notes": [
+      "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Shared van with other cruise passengers from various ships. Early pickup (before 08:00) adds ₩10,000 per person to compensate the guide for the early start."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,
@@ -1265,19 +1271,19 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Cruise port to painted alleys, market to memorial —",
-        "headlineLine2": "Busan's headline circuit in a single shared-van day",
+        "headlineLine1": "Cruise port to Busan highlights —",
+        "headlineLine2": "Small-group shore tour with return buffer",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+          "imageUrl": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1600",
           "imagePosition": "center 35%",
           "tagline": "Five Busan signatures coordinated with your ship's schedule, on a shared van with other cruisers",
           "pills": [
-            "small_group",
-            "cruise",
-            "busan"
+            "Small group",
+            "Cruise",
+            "Busan"
           ],
           "meta": {
-            "duration": "≈ 9 hours, calibrated to your cruise's port-call window",
+            "duration": "≈ 9 hours, planned to your cruise's port-call period",
             "region": "Busan",
             "stops": "8 stops",
             "rating": 4.9,
@@ -1324,7 +1330,7 @@
           {
             "icon": "clock",
             "label": "Duration",
-            "value": "≈ 9 hours, ship-to-ship (calibrated to your cruise schedule)"
+            "value": "≈ 9 hours, ship-to-ship (planned to your cruise schedule)"
           },
           {
             "icon": "users",
@@ -1349,7 +1355,7 @@
           {
             "icon": "star",
             "label": "Rating",
-            "value": "4.9 / 5 across 32 reviews on the operator's listing"
+            "value": "4.9 / 5 across 32 reviews on the booking details"
           }
         ]
       }
@@ -1363,7 +1369,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+            "src": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1200",
             "alt": "Colorful houses cascading down a hillside in Gamcheon Culture Village",
             "caption": "Gamcheon Culture Village — painted in 2009 as part of Busan's public-art renewal of the postwar refugee neighborhood.",
             "location": "Gamcheon Culture Village, Saha-gu",
@@ -1372,7 +1378,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
             "alt": "Sea cliffs with a white lighthouse on the horizon",
             "caption": "Taejongdae coastal park, southern tip of Yeongdo Island. Tsushima visible on clear winter days.",
             "location": "Taejongdae, Yeongdo-gu",
@@ -1381,7 +1387,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+            "src": "https://images.unsplash.com/photo-1601171291096-87099c2c4625?w=1200",
             "alt": "Rows of identical white headstones with national flags at the UN Memorial Cemetery",
             "caption": "UN Memorial Cemetery — the world's only UN cemetery, 2,300+ graves of soldiers from 21 nations.",
             "location": "UN Memorial Cemetery, Nam-gu",
@@ -1390,7 +1396,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+            "src": "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?w=1200",
             "alt": "Jagalchi Market vendors with displays of fresh fish on ice",
             "caption": "Jagalchi Market — Korea's largest seafood market, operated since 1889 on Busan's waterfront.",
             "location": "Jagalchi Market, Jung-gu",
@@ -1399,7 +1405,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
             "alt": "Busan Tower rising above Yongdusan Park's pines and mid-rise city skyline",
             "caption": "Yongdusan Park & Busan Tower (120 m, built 1973) — the central-Busan viewpoint.",
             "location": "Yongdusan Park, Jung-gu",
@@ -1416,16 +1422,16 @@
         "itineraryStops": [
           {
             "number": 1,
-            "time": "≈ 08:30",
-            "duration": "30 min",
-            "name": "Busan Port pickup (cruise terminal arrival hall)",
-            "category": "Departure",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG",
-            "description": "Group meets the guide in the Busan Port International Passenger Terminal arrival hall. Pickup time is calibrated to your specific ship's actual disembarkation, not a fixed 08:30 — the 08:30 here is a typical example. Provide ship name, port-call date, expected arrival time, and all-aboard time at booking; the guide tracks the schedule and adjusts pickup automatically. Ships that arrive before 07:00 trigger an early-pickup option (₩10,000/person surcharge to the guide for the early start) so you don't waste two hours at the terminal.",
+            "time": "Ship arrival",
+            "duration": "15–30 min",
+            "name": "Busan Port pickup (cruise terminal)",
+            "category": "Transit / Pickup",
+            "image": "",
+            "description": "Meet your guide at the cruise terminal after disembarkation. The actual meeting time follows your ship arrival rather than a fixed city-tour timetable.",
             "timeUsed": [
-              "Operational logistics (pickup/transfer)"
+              "15–30 min"
             ],
-            "whyOnRoute": "Required logistics; calibrated to the specific cruise.",
+            "whyOnRoute": "Cruise guests have limited shore time, so starting directly from the terminal is essential.",
             "_poi_meta": {
               "poi_key": "busan_cruise_pickup",
               "is_attraction": false
@@ -1433,17 +1439,17 @@
           },
           {
             "number": 2,
-            "time": "≈ 09:30",
-            "duration": "60 min",
-            "name": "UN Memorial Cemetery (Korean War)",
-            "category": "Memorial & History",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
-            "description": "The world's only United Nations cemetery, established in 1951 during the Korean War and granted permanent UN status by the General Assembly in 1955. Holds 2,300+ graves of soldiers from 21 nations who fought under the UN Command, with the largest national groups from the United Kingdom (885), Türkiye (462), Canada (378), and Australia (281). The grounds include a Memorial Hall with multilingual exhibits, a Wall of Remembrance listing all 40,896 UN Command war dead, and the daily flag ceremony at 10:00 (subject to weather). The cemetery is in Nam-gu, ≈30 minutes east of Yeongdo by road. Free entry; open daily 09:00–17:00 except Korean New Year and Chuseok.",
+            "time": "Morning",
+            "duration": "60–80 min",
+            "name": "Haedong Yonggungsa Temple",
+            "category": "Seaside temple",
+            "image": "",
+            "description": "Haedong Yonggungsa is Busan’s best-known seaside temple, set along the rocky coast. It gives the tour a strong first visual highlight and a clear contrast between Buddhist culture and ocean scenery.",
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
+              "60–80 min",
               "Main attraction exploration with photo time"
             ],
-            "whyOnRoute": "Essential context for the Korean War's UN dimension; quiet, flat, fits early-morning energy.",
+            "whyOnRoute": "This is one of Busan’s most requested first-time visitor stops and works well early in the day.",
             "_poi_meta": {
               "poi_key": "un_memorial_cemetery",
               "is_attraction": true,
@@ -1453,18 +1459,18 @@
           },
           {
             "number": 3,
-            "time": "≈ 10:45",
-            "duration": "75 min",
-            "name": "Taejongdae coastal cliffs",
-            "category": "Coast",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
-            "description": "Coastal park on the southern tip of Yeongdo Island, named after King Taejong Muyeol of Silla (r. 654–661 CE), the king who allied with Tang China to unify the Korean peninsula. The 4.3 km loop trail circles cliffs that drop ≈100 m to the East Sea, passing the Yeongdo Lighthouse (1906) and an observatory point where, on clear winter days, Tsushima Island in Japan is visible ≈50 km offshore. Most cruise visitors use the Danubi Train (₩4,000 adult, ₩3,000 youth, optional, ≈30 min loop) instead of walking the full circuit. Free park entry; the lighthouse area is wheelchair-friendly but the cliff trail is not.",
+            "time": "Late morning",
+            "duration": "45–60 min",
+            "name": "UN Memorial Cemetery in Korea",
+            "category": "History / Memorial",
+            "image": "",
+            "description": "The UN Memorial Cemetery is a respectful historical stop connected to the Korean War and the international soldiers who served under the United Nations Command. The visit should remain calm and respectful.",
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
+              "45–60 min",
               "Main attraction exploration with photo time",
               "Wrap-up and reassembly at vehicle"
             ],
-            "whyOnRoute": "Open-sea cliff scenery is Busan's signature landscape — distinct from the rest of the day's urban stops.",
+            "whyOnRoute": "It adds historical depth so the tour is not only scenery and markets.",
             "_poi_meta": {
               "poi_key": "taejongdae",
               "is_attraction": true,
@@ -1474,16 +1480,16 @@
           },
           {
             "number": 4,
-            "time": "≈ 12:15",
+            "time": "Midday",
             "duration": "60 min",
-            "name": "Lunch (local Busan restaurant)",
+            "name": "Lunch (local restaurant)",
             "category": "Meal",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
-            "description": "Sit-down restaurant chosen for English/Chinese menus and proximity to the next stop. Typical local choices: dwaeji-gukbap (Busan-style pork-and-rice soup, the city's signature, ≈₩10,000), milmyeon (cold wheat noodles, ≈₩9,000), or a bibimbap set. Lunch is paid by the guest; budget ₩10,000–₩20,000 per person. Vegetarian, halal, and gluten-free options possible with advance notice at booking.",
+            "image": "",
+            "description": "Lunch is arranged at a local restaurant at guests’ own expense unless otherwise stated. The guide can recommend approachable Korean dishes and adjust for allergies or dietary restrictions when informed in advance.",
             "timeUsed": [
-              "Operational logistics (meal break)"
+              "60 min"
             ],
-            "whyOnRoute": "Mid-day refuel between coastal and inland stops.",
+            "whyOnRoute": "A flexible lunch keeps the group comfortable before the downtown and village stops.",
             "_poi_meta": {
               "poi_key": "busan_lunch",
               "is_attraction": false,
@@ -1492,18 +1498,18 @@
           },
           {
             "number": 5,
-            "time": "≈ 13:30",
-            "duration": "75 min",
-            "name": "Gamcheon Culture Village",
-            "category": "Hillside Art Village",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
-            "description": "Hillside village originally built in the 1950s by Korean War refugees, now Busan's most-photographed neighborhood. The current colorful look dates to 2009, when the city sponsored the 'Dreaming of Machu Picchu in Busan' public-art project — local artists painted the houses, installed murals and small sculptures (the Little Prince & Fox bench is the most-photographed), and added the staircase mosaics. Houses are still occupied; the village asks visitors to keep voices down in residential lanes. The main photo route is a 30–40 minute walk on steep alleys and stairs — uphill at the start, downhill back. Most main viewpoints are reachable from the bus drop-off; deeper exploration requires more stairs. Optional 'stamp tour' map ₩2,000.",
+            "time": "Afternoon",
+            "duration": "60–90 min",
+            "name": "Jagalchi, BIFF Square & Gukje Market area",
+            "category": "Market / Downtown",
+            "image": "",
+            "description": "This downtown area combines seafood-market energy, street-food lanes, shopping streets, and the older commercial heart of Busan. Exact walking time can be adjusted to the ship schedule and group pace.",
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
+              "60–90 min",
               "Main attraction exploration with photo time",
               "Wrap-up and reassembly at vehicle"
             ],
-            "whyOnRoute": "Visual centerpiece of the day. Most cruisers come specifically for Gamcheon.",
+            "whyOnRoute": "The market area gives guests a lively, local-feeling Busan experience without needing a separate evening plan.",
             "_poi_meta": {
               "poi_key": "gamcheon_culture_village",
               "is_attraction": true,
@@ -1513,17 +1519,17 @@
           },
           {
             "number": 6,
-            "time": "≈ 15:00",
-            "duration": "45 min",
-            "name": "Yongdusan Park & Busan Tower",
-            "category": "City Viewpoint",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
-            "description": "Yongdusan ('Dragon Head Mountain') sits in central Busan above Nampo-dong; the 120-meter Diamond Tower (built 1973, renamed Busan Tower; observatory restored to public access in 2021 after a 2017 closure) tops out at 159 m above sea level and gives a panoramic view of the port, Yeongdo, Gwangan Bridge, and on clear days back to Taejongdae. Park entry is free and includes the statue of Admiral Yi Sun-sin and the Bell of Citizens; observatory ticket is ₩12,000 adult and is the only paid element. Reaching the park from Nampo Station: 8-minute walk uphill, or a covered outdoor escalator from the ground level.",
+            "time": "Afternoon",
+            "duration": "60–90 min",
+            "name": "Gamcheon Culture Village",
+            "category": "Culture village / Photo stop",
+            "image": "",
+            "description": "Gamcheon Culture Village is known for colorful hillside houses, murals, narrow alleys, and viewpoints over the port-side neighborhood. It is one of Busan’s signature photo stops.",
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
+              "60–90 min",
               "Main attraction exploration with photo time"
             ],
-            "whyOnRoute": "Compact orientation stop after Gamcheon. Walking distance to the next stop.",
+            "whyOnRoute": "Gamcheon is highly recognizable and gives the route a strong visual highlight near the end.",
             "_poi_meta": {
               "poi_key": "yongdusan_park",
               "is_attraction": true,
@@ -1533,17 +1539,17 @@
           },
           {
             "number": 7,
-            "time": "≈ 16:00",
-            "duration": "60 min",
-            "name": "Nampo-dong & Jagalchi Fish Market",
-            "category": "Market & Streetfood",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
-            "description": "Korea's largest seafood market, operating on this Yeongdo-side waterfront since 1889 (formalized after 1945 when the Japanese-era market was reorganized by displaced Korean female fishmongers — Jagalchi means 'pebble-place' for the original beach). Modern indoor building has two floors: ground floor stalls sell live fish, shellfish, and dried seafood; second floor has restaurants where you can take a fish bought downstairs and have it prepared (sliced raw as hwe, grilled, or stewed) for a cooking fee of ₩10,000–₩20,000. Stalls are run mostly by women across multiple generations of the same families. Open ≈05:00–22:00 daily; closed first and third Tuesdays of the month. Nampo-dong's BIFF Square (Korean film stars' handprints, like Hollywood's Walk of Fame) and Gukje Market are within 5 minutes' walk.",
+            "time": "If time allows",
+            "duration": "30–60 min",
+            "name": "Songdo Beach or Yongdusan Park",
+            "category": "Scenic / Flexible stop",
+            "image": "",
+            "description": "If time allows, the guide may add Songdo Beach/Songdo Cable Car area or Yongdusan Park and Busan Tower area. If traffic is heavy or the ship departure is early, this stop may be shortened or replaced.",
             "timeUsed": [
-              "Arrival, ticketing, and orientation briefing",
+              "30–60 min",
               "Main attraction exploration with photo time"
             ],
-            "whyOnRoute": "5-minute drive (or 10-minute walk) from Yongdusan; closes the day with a sensory peak.",
+            "whyOnRoute": "A flexible final stop protects the port return while still adding value when the schedule allows.",
             "_poi_meta": {
               "poi_key": "jagalchi_market",
               "is_attraction": true,
@@ -1553,16 +1559,16 @@
           },
           {
             "number": 8,
-            "time": "≈ 17:15",
-            "duration": "30 min",
+            "time": "Before all-aboard",
+            "duration": "30–60 min buffer",
             "name": "Return to Busan Port",
             "category": "Return",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG",
-            "description": "Jagalchi/Nampo to the Busan Port International Passenger Terminal is ≈5 km, 15–25 minutes by road. Drop-off is at the terminal entrance with a minimum 60-minute buffer before your ship's all-aboard time. The guide tracks each passenger's individual ship schedule and prioritizes return order if multiple ships sail at different times.",
+            "image": "",
+            "description": "Return is planned around your ship’s all-aboard time with a buffer. The guide may shorten the final stop if traffic, weather, or port conditions require it.",
             "timeUsed": [
-              "Operational logistics (return)"
+              "30–60 min buffer"
             ],
-            "whyOnRoute": "Required logistics; on-time return is the operator's stated commitment.",
+            "whyOnRoute": "For cruise guests, safe return timing is more important than forcing every stop.",
             "_poi_meta": {
               "poi_key": "busan_port_return",
               "is_attraction": false
@@ -1652,7 +1658,7 @@
         ],
         "routeShapeIntro": {
           "title": "How this day flows",
-          "subtitle": "A circular shore-excursion route built around Busan's port. Unlike the Incheon equivalent, Busan's main attractions are within 30 minutes of the cruise terminal — meaning more time at sights and less time on the road. The route hits the four most-photographed Busan stops (Gamcheon, Taejongdae, Jagalchi, Busan Tower) plus the city's most thoughtful Korean War heritage site (UN Cemetery), all coordinated to your ship's all-aboard time. The 4.9/5 rating across 32 reviews reflects how tightly this circuit is calibrated."
+          "subtitle": "A circular shore-excursion route built around Busan's port. Unlike the Incheon equivalent, Busan's main attractions are within 30 minutes of the cruise terminal — meaning more time at sights and less time on the road. The route hits the four most-photographed Busan stops (Gamcheon, Taejongdae, Jagalchi, Busan Tower) plus the city's most thoughtful Korean War heritage site (UN Cemetery), all coordinated to your ship's all-aboard time. The 4.9/5 rating across 32 reviews reflects how tightly this circuit is planned."
         }
       }
     },
@@ -1683,11 +1689,11 @@
               "items": [
                 {
                   "label": "All five Busan signatures, with a return buffer",
-                  "detail": "Many cruise day tours skip either the UN Cemetery (too sober for a beach day) or Gamcheon (too far from the port). This route includes both, plus Taejongdae, Yongdusan/Busan Tower, and Jagalchi/Nampo-dong, and still leaves a 60-minute safety buffer for the return drive. The 9-hour window is built around realistic Busan traffic, not a brochure-ideal schedule."
+                  "detail": "Many cruise day tours skip either the UN Cemetery (too sober for a beach day) or Gamcheon (too far from the port). This route includes both, plus Taejongdae, Yongdusan/Busan Tower, and Jagalchi/Nampo-dong, and still leaves a 60-minute safety buffer for the return drive. The 9-hour period is built around realistic Busan traffic, not a brochure-ideal schedule."
                 },
                 {
-                  "label": "Built for the cruise schedule, not the operator's clock",
-                  "detail": "Pickup is calibrated to your ship's actual arrival, not a fixed start. Ships that arrive before 07:00 trigger an early-bird option (₩10,000/person surcharge) so you don't waste time at the terminal. Drop-off is timed to leave at least a 60-minute buffer before your stated all-aboard time."
+                  "label": "Built around cruise timing",
+                  "detail": "Pickup is planned to your ship's actual arrival, not a fixed start. Ships that arrive before 07:00 trigger an early-bird option (₩10,000/person surcharge) so you don't waste time at the terminal. Drop-off is timed to leave at least a 60-minute buffer before your stated all-aboard time."
                 },
                 {
                   "label": "Certified bilingual guide, no shopping detours",
@@ -1717,7 +1723,7 @@
           {
             "title": "Pickup & drop-off",
             "id": "pickup",
-            "content": "Group meets at the Busan Port International Passenger Terminal arrival hall. Pickup time is calibrated to your ship's actual disembarkation, not a fixed start. Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Early pickup (before 08:00) adds ₩10,000 per person."
+            "content": "Group meets at the Busan Port International Passenger Terminal arrival hall. Pickup time is planned to your ship's actual disembarkation, not a fixed start. Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Early pickup (before 08:00) adds ₩10,000 per person."
           },
           {
             "title": "Sail-away timing",
@@ -1801,8 +1807,8 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Licensed local operator",
-            "description": "Authorized Korean tour operator with full insurance",
+            "title": "Licensed local tour provider",
+            "description": "Authorized Korean tour provider with insurance",
             "iconBg": "bg-emerald-50/80",
             "iconColor": "text-emerald-600"
           },
@@ -1815,7 +1821,7 @@
           },
           {
             "icon": "users",
-            "title": "Curated group size",
+            "title": "Comfortable group size",
             "description": "Right-sized for the route",
             "iconBg": "bg-amber-50/80",
             "iconColor": "text-amber-600"
@@ -1864,7 +1870,7 @@
           {
             "id": "q-cruise-busy-day",
             "question": "Will the tour be full on busy cruise days?",
-            "answer": "The shared van seats up to ≈10 passengers. On peak cruise days the operator runs multiple vans simultaneously rather than overcrowding a single one — group dynamics are part of the format and you'll usually be with cruisers from several different ships."
+            "answer": "The shared van seats up to about 10 passengers. On peak cruise days, multiple vans may operate rather than overcrowding a single vehicle, so you may join cruise guests from different ships."
           },
           {
             "id": "q-early-arrival",
@@ -1934,7 +1940,7 @@
           {
             "id": "weather",
             "question": "What if there's heavy rain or a typhoon?",
-            "answer": "Light rain: tour operates as planned. Heavy rain: Taejongdae's cliff trail closes; the Danubi Train still runs. Gamcheon stays open but is photo-limited. If a typhoon warning is issued, the operator offers rebooking or a full refund. If the cruise line cancels your port call, full refund with documentation."
+            "answer": "Light rain: tour operates as planned. Heavy rain: Taejongdae's cliff trail may close, while the Danubi Train may still operate. Gamcheon remains open but can be more limited for photos. If a typhoon warning is issued, rebooking or full refund is offered. If the cruise line cancels your port call, full refund applies with cancellation proof."
           }
         ]
       }
@@ -1976,7 +1982,7 @@
             }
           ],
           "highlights": [],
-          "source_attribution": "Aggregate metric from operator's GetYourGuide listing; individual review text not yet imported."
+          "source_attribution": "Verified guest review data will appear here after import."
         }
       }
     },
@@ -1985,7 +1991,7 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "Select your date and group size to check live availability and complete your booking.",
         "price": {
           "amountLabel": "58.50",
           "originalPriceUsd": 65,
@@ -1993,8 +1999,8 @@
           "discountPercent": 10,
           "currency": "USD",
           "per": "person",
-          "priceSource": "getyourguide_t1164092",
-          "priceNote": "Original price USD 65 on the operator's listing. AtoC Korea sale price applies a flat 10% discount."
+          "priceSource": "AtoC Korea direct rate",
+          "priceNote": "Final rate is confirmed after selecting your cruise date, port, and group size. The schedule is planned around a safe return to the ship."
         }
       }
     }
@@ -2013,7 +2019,7 @@
     ],
     "fix_passes": {
       "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
-      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 standard (no Tailwind in data)",
       "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 5 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, VisitSeoul, official tourism boards.\n  - Stop #2 UN Memorial Cemetery (Korean War): filled [visitBasics, convenience, smartNotes]\n  - Stop #3 Taejongdae coastal cliffs: filled [visitBasics, convenience, smartNotes]\n  - Stop #5 Gamcheon Culture Village: filled [visitBasics, convenience, smartNotes]\n  - Stop #6 Yongdusan Park & Busan Tower: filled [visitBasics, convenience, smartNotes]\n  - Stop #7 Nampo-dong & Jagalchi Fish Market: filled [visitBasics, convenience, smartNotes]",

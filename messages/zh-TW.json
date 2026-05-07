@@ -718,7 +718,12 @@
           "imageErrorBody": "無法載入行程預覽圖。請確認網路後再試。",
           "tryAgain": "重試",
           "matchMetaRowRatingAria": "5 分制 {rating} 分，根據 {count} 則公開評價",
-          "groupMaxParam": "最多{n}人"
+          "groupMaxParam": "最多{n}人",
+          "emptyBadge": "行程配對預覽",
+          "emptyTitle": "描述您的行程，找到最適合您的方案",
+          "emptyBody": "告訴我們您的偏好，我們將立即為您配對最佳方案 — 通常在3秒內。",
+          "emptyStartCta": "開始配對",
+          "emptyFooter": "配對結果旁還會顯示私人及傳統巴士選項。"
         },
         "destinations": {
           "eyebrow": "精選目的地",
@@ -870,7 +875,7 @@
           "reviewCardStarsAria": "滿分 5 分，{rating} 分"
         },
         "finalCtaBlock": {
-          "title": "準備更聰明地規劃濟州行程了嗎？",
+          "title": "準備更聰明地規劃韓國行程了嗎？",
           "subtitle": "從偏好出發，找到最適合您的行程類型。",
           "trust1RatedParam": "{rating} 分",
           "trust1Fallback": "深受客人喜愛",

@@ -59,7 +59,7 @@ export function DestinationCard({
 
       {badge ? (
         <div className="absolute right-3 top-3 max-w-[min(92%,240px)] text-right">
-          <div className="inline-flex max-w-full items-start gap-1.5 rounded-xl border border-white/25 bg-white/12 px-2.5 py-1.5 text-left text-[10px] font-semibold leading-snug tracking-wide text-white shadow-[0_10px_30px_-12px_rgba(0,0,0,0.55)] backdrop-blur-md md:text-[11px]">
+          <div className="hidden md:inline-flex max-w-full items-start gap-1.5 rounded-xl border border-white/25 bg-white/12 px-2.5 py-1.5 text-left text-[11px] font-semibold leading-snug tracking-wide text-white shadow-[0_10px_30px_-12px_rgba(0,0,0,0.55)] backdrop-blur-md">
             <span className="mt-0.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(52,211,153,0.25)]" aria-hidden />
             <span className="min-w-0 line-clamp-2">{badge}</span>
           </div>

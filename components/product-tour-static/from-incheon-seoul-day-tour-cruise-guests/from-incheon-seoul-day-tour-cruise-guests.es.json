@@ -861,21 +861,28 @@
     }
   },
   "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "Terminal Internacional de Pasajeros del Puerto de Incheon — sala de llegadas (Songdo)",
-        "time": "Ajustado a la hora de desembarque del barco"
+        "order": 1,
+        "time": "Calibrated to ship disembarkation",
+        "name": "Terminal de Cruceros de Incheon (Songdo)",
+        "type": "station",
+        "lat": 37.4703,
+        "lng": 126.64
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
-        "name": "Terminal Internacional de Pasajeros del Puerto de Incheon",
-        "approx_time": "Mínimo 60 minutos antes de la hora límite de embarque"
+        "order": 1,
+        "name": "Terminal de Cruceros de Incheon",
+        "type": "station",
+        "lat": 37.4703,
+        "lng": 126.64
       }
     ],
-    "hotel_pickup_available": false,
-    "notes": "Indique el nombre del barco, la fecha de escala, la hora prevista de desembarque y la hora límite de regreso a bordo. El guía revisa el horario del crucero y controla el regreso al puerto."
+    "notes": [
+      "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Shared van with other cruise passengers from various ships. The guide tracks each passenger's individual ship schedule; if multiple ships sail at different times, earliest-sailing passengers are dropped first."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,
@@ -886,7 +893,7 @@
     "destination_region": "korea_mainland",
     "region_type": "seoul_with_incheon_origin",
     "vehicle_type": "minicoach",
-    "duration_hours": 9.0,
+    "duration_hours": 9,
     "region_tags": [
       "seoul_jongno",
       "seoul_central"
@@ -906,35 +913,35 @@
     "pace_level": 0.8,
     "walking_level": 0.75,
     "scenic_level": 0.7,
-    "photo_level": 1.0,
-    "culture_level": 1.0,
+    "photo_level": 1,
+    "culture_level": 1,
     "relax_level": 0.6,
     "first_time_fit": 0.95,
     "family_fit": 0.7,
     "senior_fit": 0.4,
-    "couple_fit": 1.0,
-    "solo_traveler_fit": 1.0,
+    "couple_fit": 1,
+    "solo_traveler_fit": 1,
     "active_traveler_fit": 0.6,
-    "adult_family_fit": 1.0,
-    "family_with_teens_fit": 1.0,
+    "adult_family_fit": 1,
+    "family_with_teens_fit": 1,
     "young_kids_fit": 0.8,
     "senior_active_fit": 0.4,
     "senior_general_fit": 0.4,
     "mobility_friendly_fit": 0.4,
     "stroller_fit": 0.2,
-    "one_day_fit": 1.0,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.2,
     "rain_fit": 0.6,
-    "value_for_money_fit": 1.0,
-    "iconic_landmark_fit": 1.0,
+    "value_for_money_fit": 1,
+    "iconic_landmark_fit": 1,
     "cafe_fit": 0.4,
-    "food_fit": 1.0,
+    "food_fit": 1,
     "nature_fit": 0.2,
     "beach_fit": 0.2,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.75,
     "no_shopping_fit": 0.6,
-    "local_culture_fit": 1.0,
+    "local_culture_fit": 1,
     "storytelling_fit": 0.85,
     "unesco_fit": 0.3,
     "intangible_heritage_fit": 0.6,
@@ -943,9 +950,9 @@
     "comfort_level": 0.6,
     "budget_fit": 0.8,
     "premium_fit": 0.2,
-    "small_group_fit": 1.0,
+    "small_group_fit": 1,
     "private_fit": 0.2,
-    "bus_fit": 1.0,
+    "bus_fit": 1,
     "price_band": "mid",
     "pickup_base": "incheon_cruise_terminal",
     "return_time_band": "17:00-18:30",
@@ -986,50 +993,50 @@
     "private_tour_fit": 0.05,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
-    "cruise_passenger_fit": 1.0,
+    "cruise_passenger_fit": 1,
     "history_culture_fit": 0.85,
-    "royal_palace_fit": 1.0,
-    "hanok_fit": 1.0,
-    "street_food_fit": 1.0,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "royal_palace_fit": 1,
+    "hanok_fit": 1,
+    "street_food_fit": 1,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "cruise_market_segment_fit": 1.0,
-    "cruise_shore_excursion_fit": 1.0,
-    "incheon_port_pickup_fit": 1.0,
-    "cruise_reboarding_safety_buffer_fit": 1.0,
+    "cruise_market_segment_fit": 1,
+    "cruise_shore_excursion_fit": 1,
+    "incheon_port_pickup_fit": 1,
+    "cruise_reboarding_safety_buffer_fit": 1,
     "weather_fallback_dense_fit": 0.7,
-    "instagram_dense_route_fit": 1.0,
-    "small_group_format_fit": 1.0,
-    "affordable_cruise_excursion_fit": 1.0,
-    "mixed_pax_sociability_fit": 1.0,
-    "fixed_schedule_format_fit": 1.0,
-    "solo_traveler_friendly_fit": 1.0,
+    "instagram_dense_route_fit": 1,
+    "small_group_format_fit": 1,
+    "affordable_cruise_excursion_fit": 1,
+    "mixed_pax_sociability_fit": 1,
+    "fixed_schedule_format_fit": 1,
+    "solo_traveler_friendly_fit": 1,
     "differentiates_from_incheon_seoul_charter_cruise_pair_partner": true,
-    "inter_city_cruise_excursion_fit": 1.0,
-    "incheon_to_seoul_journey_fit": 1.0,
-    "incheon_seoul_cruise_pair_fit": 1.0,
-    "seoul_signature_route_fit": 1.0,
-    "seoul_first_time_visitor_fit": 1.0,
-    "joseon_dynasty_palace_visit_fit": 1.0,
-    "royal_guard_changing_ceremony_fit": 1.0,
-    "hanok_village_visit_fit": 1.0,
-    "traditional_food_market_visit_fit": 1.0,
-    "anthony_bourdain_parts_unknown_anchor_fit": 1.0,
-    "traditional_crafts_shopping_fit": 1.0,
+    "inter_city_cruise_excursion_fit": 1,
+    "incheon_to_seoul_journey_fit": 1,
+    "incheon_seoul_cruise_pair_fit": 1,
+    "seoul_signature_route_fit": 1,
+    "seoul_first_time_visitor_fit": 1,
+    "joseon_dynasty_palace_visit_fit": 1,
+    "royal_guard_changing_ceremony_fit": 1,
+    "hanok_village_visit_fit": 1,
+    "traditional_food_market_visit_fit": 1,
+    "anthony_bourdain_parts_unknown_anchor_fit": 1,
+    "traditional_crafts_shopping_fit": 1,
     "five_grand_palaces_anchor_count": 1,
-    "seoul_food_pilgrimage_fit": 1.0,
-    "morning_palace_pacing_fit": 1.0,
-    "lunch_at_traditional_market_fit": 1.0,
-    "afternoon_crafts_browsing_fit": 1.0,
+    "seoul_food_pilgrimage_fit": 1,
+    "morning_palace_pacing_fit": 1,
+    "lunch_at_traditional_market_fit": 1,
+    "afternoon_crafts_browsing_fit": 1,
     "differentiates_from_incheon_seoul_tower_route": true,
     "differentiates_from_busan_charter_cruise_pair_partner": true,
     "differentiates_from_busan_small_group_cruise_pair_partner": true,
@@ -2044,7 +2051,7 @@
             },
             "cruise_passenger_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — purpose-built excursión en tierra for cruise guests. Was unset. Catalog-leading."
             },
             "first_time_fit": {
@@ -2059,22 +2066,22 @@
             },
             "royal_palace_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Gyeongbokgung is THE royal palace stop. Was unset. Maximum 1.0."
             },
             "hanok_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Bukchon is Seoul's largest preserved hanok district (~900 homes). Was unset. Maximum 1.0."
             },
             "street_food_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Gwangjang Market is Korea's most iconic street food destination (Bourdain-famous). Was unset. Maximum 1.0."
             },
             "iconic_landmark_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Maintained — Gyeongbokgung is Seoul's #1 iconic landmark."
             },
             "walking_level": {
@@ -2103,8 +2110,8 @@
               "reasoning": "VERIFIED — palace + market + crafts is family-friendly; the 9-hr day with extensive walking is moderate for younger kids. Upward to 0.7."
             },
             "food_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Maintained — Gwangjang lunch is the day's centerpiece."
             },
             "shopping_fit": {
@@ -2118,8 +2125,8 @@
               "reasoning": "Maintained — small-group shared van is mid-tier value, not premium."
             },
             "value_for_money_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Maintained — 9-hr Seoul highlights tour at small-group pricing = catalog-leading value."
             },
             "scenic_level": {
@@ -2128,18 +2135,18 @@
               "reasoning": "VERIFIED — Bukchon hanok rooflines + Gyeongbokgung pavilions + N-Seoul-Tower-from-Bukchon view. Urban-scenic. Upward to 0.7."
             },
             "photo_level": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Maintained — palace + Bukchon roofline + Gwangjang stalls = Seoul's highest photo density."
             },
             "small_group_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Maintained — small-group minicoach format."
             },
             "bus_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Maintained — minicoach."
             },
             "unesco_fit": {

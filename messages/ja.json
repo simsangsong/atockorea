@@ -718,7 +718,12 @@
           "imageErrorBody": "プレビュー画像を読み込めませんでした。接続を確認のうえ再試行してください。",
           "tryAgain": "再試行",
           "matchMetaRowRatingAria": "5点満点中{rating}、公開口コミ{count}件に基づく",
-          "groupMaxParam": "最大{n}名"
+          "groupMaxParam": "最大{n}名",
+          "emptyBadge": "マッチプレビュー",
+          "emptyTitle": "上で旅行の希望を入力すると、最適なツアーが見つかります",
+          "emptyBody": "ご希望をお伝えください。最もぴったりなツアーをすぐにご提案します — 通常3秒以内に。",
+          "emptyStartCta": "マッチングを開始",
+          "emptyFooter": "プライベートや一般バスのオプションも合わせて表示されます。"
         },
         "destinations": {
           "eyebrow": "厳選エリア",
@@ -870,7 +875,7 @@
           "reviewCardStarsAria": "5点満点中 {rating}"
         },
         "finalCtaBlock": {
-          "title": "もっと賢く済州旅行を計画しますか？",
+          "title": "もっと賢く韓国旅行を計画しますか？",
           "subtitle": "好みから始めて、合うスタイルのツアーを選びましょう。",
           "trust1RatedParam": "評価 {rating}",
           "trust1Fallback": "ゲストに選ばれた体験",

@@ -7,7 +7,7 @@
  * @see https://www.visitjeju.net/kr/visitJejuApi (활용가이드 PDF)
  */
 
-export const VISIT_JEJU_SEARCHLIST_PATH = "/vsjApi/contents/searchlist";
+export const VISIT_JEJU_SEARCHLIST_PATH = "/vsjApi/contents/searchList";
 
 export type VisitJejuSearchParams = {
   locale?: string;

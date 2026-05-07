@@ -198,7 +198,10 @@
         "东门接送 ~09:30 — 5分钟",
         "沿1100号公路南行前往湿地 — 约50分钟"
       ],
-      "whyOnRoute": "四个接送点覆盖济州市主要酒店＋交通枢纽，无需让宾客横穿城市。西→东顺序接送让巴士约10:20抵达1100高地湿地——避开尖峰人流，并保留早晨最佳光线。"
+      "whyOnRoute": "四个接送点覆盖济州市主要酒店＋交通枢纽，无需让宾客横穿城市。西→东顺序接送让巴士约10:20抵达1100高地湿地——避开尖峰人流，并保留早晨最佳光线。",
+      "smartNotes": {},
+      "convenience": {},
+      "visitBasics": {}
     },
     {
       "number": 2,
@@ -237,6 +240,21 @@
           "Mt Halla Visitor Centre — visitor management documentation",
           "Jeju Special Self-Governing Province — Wetland Protected Area designation 2009"
         ]
+      },
+      "smartNotes": {
+        "photo": "Boardwalk leading into the wetland with Hallasan in the distance is the iconic shot; autumn (October) gives golden grass colors",
+        "facilities": "Visitor center with snacks and information",
+        "tip": "Bring layers — temperature is 5–10°C cooler than coastal Jeju; check road conditions in winter; combine with Cheonjeyeon Falls if descending south"
+      },
+      "convenience": {
+        "restroom": "Available at visitor center",
+        "parking": "Free parking at visitor center"
+      },
+      "visitBasics": {
+        "hours": "Open 24 hours (boardwalk); visitor center 09:00–18:00",
+        "closed": "1100 Highway may close temporarily during heavy snow (Dec–Feb)",
+        "admission": "Free",
+        "walking": "Easy — 1 km wooden boardwalk; flat, accessible"
       }
     },
     {
@@ -277,6 +295,21 @@
           "VisitJeju — Daepo Jusangjeolli official listing",
           "Korea Geological Survey — Jeju volcanic flow chronology"
         ]
+      },
+      "smartNotes": {
+        "photo": "Best with high tide and rough seas — waves smashing into the columns make dramatic shots; golden hour gives best column-color contrast",
+        "facilities": "Small geological exhibition near entrance; souvenir shop",
+        "tip": "Get there before 11am or after 4pm to avoid tour-bus crowds; combine with Jungmun Saekdal Beach (5 min) for a half-day"
+      },
+      "convenience": {
+        "restroom": "At entrance/visitor center",
+        "parking": "Available near entrance"
+      },
+      "visitBasics": {
+        "hours": "09:00–18:00 (summer extended)",
+        "closed": "Open year-round (weather-dependent)",
+        "admission": "Adult 2,000 KRW / Child 1,000 KRW (low fee)",
+        "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
       }
     },
     {
@@ -300,7 +333,10 @@
         "点餐 + 用餐 — 约45分钟",
         "大巴前往松岳山登山口 — 约10分钟"
       ],
-      "whyOnRoute": "大静邑定位意味着午餐后10分钟即可抵达松岳山。白带鱼加上蕨菜辣牛肉汤是大静∕安德传统，均源自大静地区（大静是朝鲜时代济州三大行政中心之一），饮食身份认同与地理定位自然契合。"
+      "whyOnRoute": "大静邑定位意味着午餐后10分钟即可抵达松岳山。白带鱼加上蕨菜辣牛肉汤是大静∕安德传统，均源自大静地区（大静是朝鲜时代济州三大行政中心之一），饮食身份认同与地理定位自然契合。",
+      "smartNotes": {},
+      "convenience": {},
+      "visitBasics": {}
     },
     {
       "number": 5,
@@ -542,7 +578,10 @@
         "→ 机场 — 10分钟，下车 — 5分钟",
         "→ 市政府 + 连洞 + 东门 — 依次下车"
       ],
-      "whyOnRoute": "河暨优先下车，因1132号公路从挟才返回时途经济州市西部郊区。机场下车可应当晚有航班的旅客（约19:10，末班机21:30前充裕）。东门市场下车 = 可选晚餐站。"
+      "whyOnRoute": "河暨优先下车，因1132号公路从挟才返回时途经济州市西部郊区。机场下车可应当晚有航班的旅客（约19:10，末班机21:30前充裕）。东门市场下车 = 可选晚餐站。",
+      "smartNotes": {},
+      "convenience": {},
+      "visitBasics": {}
     }
   ],
   "routeFlowStops": [
@@ -979,49 +1018,84 @@
     }
   },
   "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "Ocean Suites济州（08:30）",
-        "time": "08:30"
-      },
-      {
-        "name": "济州机场3号门3楼国内出发厅（08:45）",
-        "time": "08:45"
-      },
-      {
-        "name": "LOTTE City Hotel济州（08:55）",
-        "time": "08:55"
-      },
-      {
-        "name": "新罗免税店济州（09:05）",
-        "time": "09:05"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "新罗免税店济州店",
-        "approx_time": "≈ 19:00"
-      },
-      {
-        "name": "济州乐天城市酒店",
-        "approx_time": "≈ 19:00"
-      },
-      {
-        "name": "济州国际机场",
-        "approx_time": "≈ 19:00"
-      },
-      {
+        "order": 1,
+        "time": "08:30",
         "name": "济州海洋套房酒店",
-        "approx_time": "≈ 19:05"
+        "type": "hotel",
+        "note": "请在酒店大堂等候，导游手持AtoCKorea标牌。",
+        "lat": 33.4944,
+        "lng": 126.4808
       },
       {
-        "name": "东门传统市场（仅下车）",
-        "approx_time": "≈ 19:15"
+        "order": 2,
+        "time": "08:45",
+        "name": "济州国际机场（3F，3号门）",
+        "type": "airport",
+        "note": "3楼出发区，请跟随指示牌前往3号门。",
+        "lat": 33.5108,
+        "lng": 126.4932
+      },
+      {
+        "order": 3,
+        "time": "08:55",
+        "name": "乐天城市酒店济州",
+        "type": "hotel",
+        "note": "请在主大堂等候，导游会呼叫您的姓名。",
+        "lat": 33.4963,
+        "lng": 126.4865
+      },
+      {
+        "order": 4,
+        "time": "09:05",
+        "name": "新罗免税店（济州店）",
+        "type": "shopping",
+        "note": "在新罗免税店济州店正门外与导游会合。",
+        "lat": 33.4958,
+        "lng": 126.5252
       }
     ],
-    "hotel_pickup_available": false,
-    "notes": "本行程采用与其他济州小团行程相同的4个接送点。由于最后一站在西部挟才海岸，返程下车时间可能比南部UNESCO路线稍晚（约19:00前后）。"
+    "return": [
+      {
+        "order": 1,
+        "name": "济州海洋套房酒店",
+        "type": "hotel",
+        "lat": 33.4944,
+        "lng": 126.4808
+      },
+      {
+        "order": 2,
+        "name": "济州国际机场（3F，3号门）",
+        "type": "airport",
+        "lat": 33.5108,
+        "lng": 126.4932
+      },
+      {
+        "order": 3,
+        "name": "乐天城市酒店济州",
+        "type": "hotel",
+        "lat": 33.4963,
+        "lng": 126.4865
+      },
+      {
+        "order": 4,
+        "name": "新罗免税店（济州店）",
+        "type": "shopping",
+        "lat": 33.4958,
+        "lng": 126.5252
+      },
+      {
+        "order": 5,
+        "name": "东门传统市场",
+        "type": "market",
+        "lat": 33.5136,
+        "lng": 126.5296
+      }
+    ],
+    "notes": [
+      "返回通常在17:30–18:00左右。"
+    ]
   },
   "matching_profile": {
     "profile_version": 6,
@@ -1032,7 +1106,7 @@
     "destination_region": "jeju",
     "region_type": "jeju_west_south",
     "vehicle_type": "minicoach",
-    "duration_hours": 9.0,
+    "duration_hours": 9,
     "region_tags": [
       "jeju_west",
       "jeju_south"
@@ -1061,40 +1135,40 @@
     "first_time_fit": 0.95,
     "family_fit": 0.6,
     "senior_fit": 0.55,
-    "couple_fit": 1.0,
+    "couple_fit": 1,
     "solo_traveler_fit": 0.9,
     "active_traveler_fit": 0.6,
     "adult_family_fit": 0.8,
-    "family_with_teens_fit": 1.0,
+    "family_with_teens_fit": 1,
     "young_kids_fit": 0.85,
     "senior_active_fit": 0.6,
     "senior_general_fit": 0.6,
     "mobility_friendly_fit": 0.55,
     "stroller_fit": 0.55,
-    "one_day_fit": 1.0,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.5,
     "rain_fit": 0.4,
     "value_for_money_fit": 0.95,
     "iconic_landmark_fit": 0.85,
     "cafe_fit": 0.8,
     "food_fit": 0.6,
-    "nature_fit": 1.0,
+    "nature_fit": 1,
     "beach_fit": 0.85,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.2,
-    "no_shopping_fit": 1.0,
+    "no_shopping_fit": 1,
     "local_culture_fit": 0.6,
     "storytelling_fit": 0.8,
-    "unesco_fit": 1.0,
+    "unesco_fit": 1,
     "intangible_heritage_fit": 0.45,
     "indoor_ratio": 0.15,
     "weather_sensitivity": 0.75,
     "comfort_level": 0.8,
     "budget_fit": 0.8,
     "premium_fit": 0.4,
-    "small_group_fit": 1.0,
+    "small_group_fit": 1,
     "private_fit": 0.2,
-    "bus_fit": 1.0,
+    "bus_fit": 1,
     "price_band": "mid",
     "pickup_base": "jeju_city",
     "return_time_band": "17:00-18:30",
@@ -1135,56 +1209,56 @@
     ],
     "profile_format": "small_group_fixed_itinerary",
     "private_tour_fit": 0.05,
-    "fixed_itinerary_fit": 1.0,
+    "fixed_itinerary_fit": 1,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
     "first_time_jeju_fit": 0.85,
     "south_jeju_fit": 0.95,
-    "southwest_jeju_fit": 1.0,
-    "west_jeju_fit": 1.0,
+    "southwest_jeju_fit": 1,
+    "west_jeju_fit": 1,
     "central_jeju_fit": 0.9,
     "north_jeju_fit": 0.4,
     "east_jeju_fit": 0.05,
-    "west_south_authentic_fit": 1.0,
-    "alpine_to_coastal_fit": 1.0,
-    "world_natural_heritage_fit": 1.0,
-    "biosphere_reserve_fit": 1.0,
-    "global_geopark_fit": 1.0,
-    "ramsar_wetland_fit": 1.0,
-    "quadruple_designation_fit": 1.0,
+    "west_south_authentic_fit": 1,
+    "alpine_to_coastal_fit": 1,
+    "world_natural_heritage_fit": 1,
+    "biosphere_reserve_fit": 1,
+    "global_geopark_fit": 1,
+    "ramsar_wetland_fit": 1,
+    "quadruple_designation_fit": 1,
     "natural_monument_anchor_count": 2,
-    "alpine_wetland_fit": 1.0,
-    "1100m_alpine_fit": 1.0,
-    "volcano_geology_fit": 1.0,
-    "double_crater_fit": 1.0,
-    "parasitic_cone_fit": 1.0,
-    "columnar_jointing_fit": 1.0,
-    "ninety_nine_peaks_fit": 1.0,
-    "shield_volcano_fit": 1.0,
-    "endemic_species_fit": 1.0,
-    "wwii_history_fit": 1.0,
+    "alpine_wetland_fit": 1,
+    "1100m_alpine_fit": 1,
+    "volcano_geology_fit": 1,
+    "double_crater_fit": 1,
+    "parasitic_cone_fit": 1,
+    "columnar_jointing_fit": 1,
+    "ninety_nine_peaks_fit": 1,
+    "shield_volcano_fit": 1,
+    "endemic_species_fit": 1,
+    "wwii_history_fit": 1,
     "japanese_colonial_history_fit": 0.95,
-    "kamikaze_shelter_history_fit": 1.0,
-    "top_10_beach_fit": 1.0,
-    "twin_beach_fit": 1.0,
-    "silvery_white_sand_fit": 1.0,
-    "emerald_water_fit": 1.0,
-    "biyangdo_panorama_fit": 1.0,
-    "carbon_free_island_fit": 1.0,
-    "west_coast_sunset_fit": 1.0,
-    "sunset_anchor_fit": 1.0,
+    "kamikaze_shelter_history_fit": 1,
+    "top_10_beach_fit": 1,
+    "twin_beach_fit": 1,
+    "silvery_white_sand_fit": 1,
+    "emerald_water_fit": 1,
+    "biyangdo_panorama_fit": 1,
+    "carbon_free_island_fit": 1,
+    "west_coast_sunset_fit": 1,
+    "sunset_anchor_fit": 1,
     "tidal_pool_fit": 0.85,
-    "olle_trail_fit": 1.0,
-    "tea_culture_fit": 1.0,
-    "tea_lover_fit": 1.0,
-    "amorepacific_brand_fit": 1.0,
+    "olle_trail_fit": 1,
+    "tea_culture_fit": 1,
+    "tea_lover_fit": 1,
+    "amorepacific_brand_fit": 1,
     "korean_folklore_fit": 0.85,
     "mythology_fit": 0.85,
     "walking_level_fit": 0.75,
     "stair_climbing_fit": 0.5,
     "trail_walking_fit": 0.95,
     "elevation_gain_total_m": 100,
-    "moderate_mobility_fit": 1.0,
+    "moderate_mobility_fit": 1,
     "low_intensity_fit": 0.85,
     "senior_friendly_fit": 0.9,
     "stroller_friendly_fit": 0.75,
@@ -1197,87 +1271,87 @@
     "senior_couple_fit": 0.95,
     "honeymoon_fit": 0.95,
     "history_lover_fit": 0.95,
-    "geology_enthusiast_fit": 1.0,
-    "ramsar_enthusiast_fit": 1.0,
+    "geology_enthusiast_fit": 1,
+    "ramsar_enthusiast_fit": 1,
     "wildlife_enthusiast_fit": 0.95,
     "k_drama_fan_fit": 0.55,
-    "photographer_fit": 1.0,
-    "instagrammable_fit": 1.0,
-    "sunset_photographer_fit": 1.0,
-    "alpine_traveler_fit": 1.0,
+    "photographer_fit": 1,
+    "instagrammable_fit": 1,
+    "sunset_photographer_fit": 1,
+    "alpine_traveler_fit": 1,
     "group_size_min": 2,
     "group_size_max": 14,
-    "small_group_van_fit": 1.0,
+    "small_group_van_fit": 1,
     "calm_pace_fit": 0.9,
     "active_pace_fit": 0.7,
     "checkbox_sightseeing_fit": 0.6,
     "deep_dwell_fit": 0.85,
-    "balanced_pace_fit": 1.0,
-    "varied_terrain_fit": 1.0,
-    "ten_hour_full_day_fit": 1.0,
-    "language_english_fit": 1.0,
+    "balanced_pace_fit": 1,
+    "varied_terrain_fit": 1,
+    "ten_hour_full_day_fit": 1,
+    "language_english_fit": 1,
     "language_chinese_fit": 0.9,
     "language_japanese_fit": 0.65,
-    "english_guide_fit": 1.0,
-    "ramsar_guide_fit": 1.0,
-    "spring_fit": 1.0,
-    "summer_fit": 1.0,
-    "autumn_fit": 1.0,
+    "english_guide_fit": 1,
+    "ramsar_guide_fit": 1,
+    "spring_fit": 1,
+    "summer_fit": 1,
+    "autumn_fit": 1,
     "winter_fit": 0.7,
     "all_year_fit": 0.9,
     "off_season_fit": 0.75,
     "monsoon_fit": 0.65,
     "best_season_summer_fit": 0.95,
     "winter_route_1100_caveat": true,
-    "autumn_foliage_anchor_fit": 1.0,
+    "autumn_foliage_anchor_fit": 1,
     "indoor_anchor_fit": 0.3,
     "wind_sensitivity": 0.85,
     "indoor_fallback_anchor_count": 1,
     "early_start_fit": 0.85,
     "late_finish_fit": 0.95,
-    "full_day_fit": 1.0,
+    "full_day_fit": 1,
     "half_day_fit": 0.05,
-    "value_priced_fit": 1.0,
-    "budget_traveler_fit": 1.0,
+    "value_priced_fit": 1,
+    "budget_traveler_fit": 1,
     "free_admission_anchor_count": 4,
     "total_admission_krw_per_adult": 4500,
     "off_beaten_path_fit": 0.7,
     "crowd_avoidance_fit": 0.7,
     "tourist_circuit_fit": 0.85,
     "instagram_anchor_count": 6,
-    "minicoach_fit": 1.0,
+    "minicoach_fit": 1,
     "max_pax_per_vehicle": 14,
-    "jeju_city_pickup_fit": 1.0,
-    "airport_pickup_fit": 1.0,
+    "jeju_city_pickup_fit": 1,
+    "airport_pickup_fit": 1,
     "airport_drop_compatible_fit": 0.85,
-    "five_pickup_drop_points_fit": 1.0,
+    "five_pickup_drop_points_fit": 1,
     "cruise_shore_excursion_fit": 0.5,
     "cruise_passenger_fit": 0.65,
     "korean_food_fit": 0.95,
-    "jeju_local_cuisine_fit": 1.0,
-    "galchi_fit": 1.0,
-    "gosari_yukgaejang_fit": 1.0,
+    "jeju_local_cuisine_fit": 1,
+    "galchi_fit": 1,
+    "gosari_yukgaejang_fit": 1,
     "mulhoe_fit": 0.85,
     "black_pig_heritage_fit": 0.85,
     "seafood_fit": 0.95,
     "vegetarian_friendly_fit": 0.75,
     "halal_friendly_fit": 0.65,
-    "tea_tasting_fit": 1.0,
-    "mountain_fern_cuisine_fit": 1.0,
+    "tea_tasting_fit": 1,
+    "mountain_fern_cuisine_fit": 1,
     "photo_anchor_count": 6,
     "drone_friendly_fit": 0.6,
-    "sunset_photo_anchor_fit": 1.0,
+    "sunset_photo_anchor_fit": 1,
     "stair_anchor_count": 1,
     "barrier_free_anchor_fit": 0.85,
     "accessibility_focus_fit": 0.95,
     "is_anchor_for_west_south_authentic": true,
     "catalog_position": "west_south_jeju_authentic_loop",
     "competing_tours_count": 4,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
@@ -2364,7 +2438,7 @@
           "_methodology": "0-1 float scale. Indoor ratio computed time-weighted per Jason's methodology.",
           "deltas_applied": {
             "unesco_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified: 2 UNESCO-related stops — 1100 Wetland (inside Hallasan UNESCO + Ramsar) + Jusangjeolli (UNESCO Global Geopark). Songaksan, Cheonjeyeon, O'sulloc, Hyeopjae are non-UNESCO. 2/7 = 0.85 (strong UNESCO presence but not pure)."
             },
@@ -2384,7 +2458,7 @@
               "reasoning": "Verified: 7 hero shots — wetland boardwalk + Hallasan, basalt columns, Songaksan with Sanbangsan + Marado, nymph bridge, tea fields, Biyangdo + emerald water. Among most photogenic Jeju routes."
             },
             "iconic_landmark_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified: 3 universally iconic (Jusangjeolli, O'sulloc, Hyeopjae); 1100 Wetland regionally known; Songaksan + Cheonjeyeon famous to Jeju visitors. 0.85 calibrated."
             },
@@ -2424,12 +2498,12 @@
               "reasoning": "UPGRADED — Hyeopjae IS the dedicated beach finale (one of Jeju's iconic west-coast beaches). 0.85 reflects beach as a major route theme."
             },
             "first_time_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "Verified: covers UNESCO mountain wetland + columnar geopark + coastal trail + waterfall + tea + beach = 6 distinct Jeju essentials in one day. 0.95 — excellent first-Jeju overview, particularly comprehensive for natural-heritage focus."
             },
             "value_for_money_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "Verified fees: 1100 Wetland free + Jusangjeolli ₩2,000 + Songaksan free + Cheonjeyeon ₩2,500 + O'sulloc free + Hyeopjae free = ~₩4,500 total per adult. Lowest fee load in catalog (vs Camellia Hill ₩12,000 in southern-top tour). 0.95 — excellent value."
             },
@@ -2449,8 +2523,8 @@
               "reasoning": "Verified: O'sulloc tea + Cheonjeyeon legend + Songaksan WWII memorial. Most of route is natural heritage. 0.55 calibrated."
             },
             "nature_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "VERIFIED 1.0 — every stop is nature-anchored: Ramsar wetland, basalt cliff, coastal volcanic cone, waterfall, tea fields, beach + offshore island. Strongest nature-fit tour in catalogue."
             }
           }

@@ -756,33 +756,47 @@
     }
   },
   "pickup_dropoff": {
-    "type": "hotel_pickup",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "Any central Seoul hotel",
+        "order": 1,
         "time": "08:00–09:00",
-        "note": "Door-to-door pickup at any hotel within the supported area."
+        "name": "Your Seoul hotel (door-to-door)",
+        "type": "hotel",
+        "note": "Door-to-door pickup at any hotel within the supported area.",
+        "lat": 37.5665,
+        "lng": 126.978
       },
       {
-        "name": "Incheon Airport (optional)",
+        "order": 2,
         "time": "08:00–09:00",
-        "note": "Incheon and Gimpo airport pickups available on request; counts inside the 10-hour window."
+        "name": "Incheon International Airport (optional)",
+        "type": "airport",
+        "note": "Incheon and Gimpo airport pickups available on request; counts inside the 10-hour window.",
+        "lat": 37.4602,
+        "lng": 126.4407
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
-        "name": "Any central Seoul hotel",
-        "approx_time": "≈ 18:00–19:00",
-        "note": "Drop-off at the same hotel or any address within the supported area."
+        "order": 1,
+        "name": "Your Seoul hotel (door-to-door)",
+        "type": "hotel",
+        "note": "Drop-off at the same hotel or any address within the supported area.",
+        "lat": 37.5665,
+        "lng": 126.978
       },
       {
-        "name": "Incheon Airport (optional)",
-        "approx_time": "≈ 18:00–19:00",
-        "note": "Same-day departure drop-off available; counts inside the service window."
+        "order": 2,
+        "name": "Incheon International Airport (optional)",
+        "type": "airport",
+        "note": "Same-day departure drop-off available; counts inside the service window.",
+        "lat": 37.4602,
+        "lng": 126.4407
       }
     ],
-    "hotel_pickup_available": true,
-    "notes": "Please wait at the hotel lobby 10 minutes before the agreed departure time. The 10-hour service window starts from your pickup time. Reschedule requests should be made at least 2 days before the original reservation date. Overtime is charged at 30,000 KRW per hour, cash to driver, subject to driver availability."
+    "notes": [
+      "Please wait at the hotel lobby 10 minutes before the agreed departure time. The 10-hour service window starts from your pickup time. Reschedule requests should be made at least 2 days before the original reservation date. Overtime is charged at 30,000 KRW per hour, cash to driver, subject to driver availability."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,

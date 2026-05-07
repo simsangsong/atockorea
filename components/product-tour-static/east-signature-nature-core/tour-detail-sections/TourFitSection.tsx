@@ -95,7 +95,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
         <p className="mt-1.5 text-[13px] leading-relaxed tracking-wide text-muted-foreground">{sectionUi.fitSubtitle}</p>
       </div>
 
-      <div className="tour-fit-premium-card card-premium tour-why-tour-works-card relative overflow-hidden p-4 sm:p-5">
+      <div className="tour-fit-premium-card tour-why-tour-works-card relative overflow-hidden p-4 sm:p-5 rounded-[24px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
         <span aria-hidden className="tour-fit-premium-card__sheen" />
         <div className="relative">
           <div className="flex items-center gap-2 mb-2.5">
@@ -184,7 +184,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
         </div>
       </div>
 
-      <div className="card-premium tour-why-tour-works-card overflow-hidden">
+      <div className="tour-why-tour-works-card overflow-hidden rounded-[24px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
         <button
           type="button"
           onClick={() => setShowLogic(!showLogic)}

@@ -33,10 +33,9 @@ export function TourAtAGlance({ glanceItems, sectionUi }: TourAtAGlanceProps) {
 
       <div
         className={cn(
-          "relative overflow-hidden rounded-2xl",
+          "relative overflow-hidden rounded-[26px]",
           "bg-white",
-          "ring-1 ring-slate-900/[0.07]",
-          "shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.16)]",
+          "shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]",
         )}
       >
         <ul className="divide-y divide-slate-100 px-4">

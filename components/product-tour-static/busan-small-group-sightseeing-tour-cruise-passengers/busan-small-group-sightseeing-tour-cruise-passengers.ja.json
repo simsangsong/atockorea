@@ -292,6 +292,20 @@
           "Yeongdo Lighthouse archive (1906 records)",
           "Busan National Geopark official (busan.go.kr/geopark)"
         ]
+      },
+      "smartNotes": {
+        "photo": "**3階展望台**（晴天時に南東50 kmの**対馬**まで展望）、**釜山最古の影島灯台（1906年建造）**、灯台下の約12万年前第4間氷期に形成された**神仙岩波食台**。",
+        "tip": "4.3 km歩行コースの代わりに**ダヌビ列車**5駅周回がおすすめ。**太宗寺の紫陽花祭り**は6月下旬〜7月上旬。灯台周辺は急な階段多く、ベビーカー不向き。"
+      },
+      "convenience": {
+        "restroom": "入口広場、展望台、影島灯台付近",
+        "parking": "入口広場の大型無料駐車場"
+      },
+      "visitBasics": {
+        "hours": "公園 04:00–24:00（3–10月）／ 05:00–24:00（11–2月）；ダヌビ列車 09:00～日没",
+        "closed": "通年営業（強風・大雨時はダヌビ列車運休）",
+        "admission": "公園無料；**ダヌビ列車 大人 約₩4,000 往復**、子供 約₩2,000",
+        "walking": "4.3 km海岸周回は本格的；**ダヌビ列車**：磯辺 → 求命寺 → 展望台 → 影島灯台 → 太宗寺"
       }
     },
     {
@@ -317,7 +331,21 @@
       "timeUsed": [
         "コーチで昼食会場へ — 約10分",
         "注文＋食事 — 約45分"
-      ]
+      ],
+      "smartNotes": {
+        "photo": "**テジクッパ**（朝鮮戦争避難民時代由来の釜山名物）または**ミルミョン**（1950年代避難民厨房発祥の釜山風冷麺）が釜山の食写真として最も映える。",
+        "tip": "**ベジタリアン・ハラール・アレルゲン対応は24時間前の事前共有**必須。ドライバーが好み（韓食・海鮮・洋食）で推薦 — 推薦に乗るかピックアップ時に希望伝達。"
+      },
+      "convenience": {
+        "restroom": "店内",
+        "parking": "ドライバーが最寄りの合法停車地点で待機"
+      },
+      "visitBasics": {
+        "hours": "店舗により異なる（通常11:30–14:30の昼営業）",
+        "closed": "店舗により異なる；ドライバーが営業確認",
+        "admission": "**現地払い、1人 約₩10,000–25,000**；昼食はツアー料金に**含まれず**",
+        "walking": "ほぼなし — 車両降車地点から徒歩5分以内"
+      }
     },
     {
       "number": 5,
@@ -350,6 +378,20 @@
           "Korea Tourism Organization",
           "Korea Tourism Organization (100 Must-Visit Tourist Spots in Korea designation)"
         ]
+      },
+      "smartNotes": {
+        "photo": "**「星の王子さまとキツネのベンチ」**（ハヌルマル展望台、長い列、無料）、星見展望台の**虹色屋根パノラマ**、**壁画の階段路地**。**ドローン・路地でのフラッシュ撮影禁止**。",
+        "tip": "**約1万人の住民が暮らす集落**（1955年太極道避難定着地） — **静粛**、家屋立入禁止、ゴミ持ち帰り。**2012 UN-HABITATアジア都市景観賞**、年間約140万人来訪、韓国観光公社100選5回連続選定。"
+      },
+      "convenience": {
+        "restroom": "案内所広場およびメイン路地",
+        "parking": "限定的 — 案内所付近で乗降、大型駐車場なし"
+      },
+      "visitBasics": {
+        "hours": "09:00–18:00（3–10月）／ 09:00–17:00（11–2月）；案内所同じ",
+        "closed": "年中無休",
+        "admission": "村は無料；**スタンプツアー地図 ₩2,000**（任意、9番号のインスタレーション案内）",
+        "walking": "急な階段・路地 — **やや難**；**ベビーカー・車椅子不向き**；滑りにくい靴必須"
       }
     },
     {
@@ -878,17 +920,17 @@
       {
         "stars": 3,
         "count": 0,
-        "percentage": 0.0
+        "percentage": 0
       },
       {
         "stars": 2,
         "count": 0,
-        "percentage": 0.0
+        "percentage": 0
       },
       {
         "stars": 1,
         "count": 0,
-        "percentage": 0.0
+        "percentage": 0
       }
     ],
     "highlights": [],
@@ -908,21 +950,28 @@
     }
   },
   "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "釜山港国際旅客ターミナル — 到着ホール",
-        "time": "船の下船時間に合わせて調整"
-      }
-    ],
-    "dropoff_points": [
-      {
+        "order": 1,
+        "time": "Planned to ship disembarkation",
         "name": "釜山港国際旅客ターミナル",
-        "approx_time": "最終乗船時刻の少なくとも60分前。クルーズ船の最終乗船時刻に間に合うよう、出港時刻の少なくとも60〜90分前に港へ戻ることを最優先に行程を調整します。交通状況、天候、入国・下船手続きの遅れがある場合は、観光地での滞在時間を短縮してでも、安全な帰港と時間内の再乗船を優先します。"
+        "type": "station",
+        "lat": 35.1067,
+        "lng": 129.0365
       }
     ],
-    "hotel_pickup_available": false,
-    "notes": "予約時に船名、寄港日、下船予定時刻、最終乗船時刻をお知らせください。ガイドが各船のスケジュールを確認し、港への戻り時間を管理します。クルーズ船の最終乗船時刻に間に合うよう、出港時刻の少なくとも60〜90分前に港へ戻ることを最優先に行程を調整します。交通状況、天候、入国・下船手続きの遅れがある場合は、観光地での滞在時間を短縮してでも、安全な帰港と時間内の再乗船を優先します。"
+    "return": [
+      {
+        "order": 1,
+        "name": "釜山港国際旅客ターミナル",
+        "type": "station",
+        "lat": 35.1067,
+        "lng": 129.0365
+      }
+    ],
+    "notes": [
+      "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Shared van with other cruise passengers from various ships. Early pickup (before 08:00) adds ₩10,000 per person to compensate the guide for the early start."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,
@@ -933,7 +982,7 @@
     "destination_region": "korea_mainland",
     "region_type": "busan_city",
     "vehicle_type": "minicoach",
-    "duration_hours": 9.0,
+    "duration_hours": 9,
     "region_tags": [
       "busan_haeundae",
       "busan_jung_gu",
@@ -955,37 +1004,37 @@
     ],
     "pace_level": 0.8,
     "walking_level": 0.8,
-    "scenic_level": 1.0,
-    "photo_level": 1.0,
+    "scenic_level": 1,
+    "photo_level": 1,
     "culture_level": 0.8,
     "relax_level": 0.6,
-    "first_time_fit": 1.0,
+    "first_time_fit": 1,
     "family_fit": 0.6,
     "senior_fit": 0.4,
-    "couple_fit": 1.0,
-    "solo_traveler_fit": 1.0,
+    "couple_fit": 1,
+    "solo_traveler_fit": 1,
     "active_traveler_fit": 0.8,
     "adult_family_fit": 0.8,
-    "family_with_teens_fit": 1.0,
+    "family_with_teens_fit": 1,
     "young_kids_fit": 0.8,
     "senior_active_fit": 0.6,
     "senior_general_fit": 0.4,
     "mobility_friendly_fit": 0.4,
     "stroller_fit": 0.2,
-    "one_day_fit": 1.0,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.2,
     "rain_fit": 0.6,
-    "value_for_money_fit": 1.0,
-    "iconic_landmark_fit": 1.0,
+    "value_for_money_fit": 1,
+    "iconic_landmark_fit": 1,
     "cafe_fit": 0.8,
-    "food_fit": 1.0,
+    "food_fit": 1,
     "nature_fit": 0.6,
     "beach_fit": 0.4,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.6,
     "no_shopping_fit": 0.6,
     "local_culture_fit": 0.8,
-    "storytelling_fit": 1.0,
+    "storytelling_fit": 1,
     "unesco_fit": 0.2,
     "intangible_heritage_fit": 0.2,
     "indoor_ratio": 0.15,
@@ -993,9 +1042,9 @@
     "comfort_level": 0.8,
     "budget_fit": 0.85,
     "premium_fit": 0.1,
-    "small_group_fit": 1.0,
+    "small_group_fit": 1,
     "private_fit": 0.2,
-    "bus_fit": 1.0,
+    "bus_fit": 1,
     "price_band": "mid",
     "pickup_base": "busan_cruise_terminal",
     "return_time_band": "17:00-18:30",
@@ -1035,101 +1084,101 @@
       "jagalchi_market"
     ],
     "private_tour_fit": 0.05,
-    "shared_tour_fit": 1.0,
+    "shared_tour_fit": 1,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
-    "solo_fit": 1.0,
+    "solo_fit": 1,
     "family_with_kids_fit": 0.7,
     "small_party_fit": 0.85,
     "large_group_fit": 0.3,
-    "first_time_busan_fit": 1.0,
+    "first_time_busan_fit": 1,
     "repeat_visitor_fit": 0.4,
-    "cruise_passenger_fit": 1.0,
+    "cruise_passenger_fit": 1,
     "non_cruise_day_tripper_fit": 0.3,
-    "korean_war_history_fit": 1.0,
-    "war_memorial_fit": 1.0,
-    "un_heritage_fit": 1.0,
+    "korean_war_history_fit": 1,
+    "war_memorial_fit": 1,
+    "un_heritage_fit": 1,
     "wheelchair_accessible_anchor_fit": 0.5,
-    "buddhist_temple_fit": 0.0,
+    "buddhist_temple_fit": 0,
     "joseon_era_fit": 0.4,
     "silla_heritage_fit": 0.2,
     "modern_korean_history_fit": 0.85,
-    "coastal_fit": 1.0,
-    "coastal_cliff_fit": 1.0,
-    "coastal_lighthouse_fit": 1.0,
-    "city_viewpoint_fit": 1.0,
-    "panoramic_view_fit": 1.0,
-    "skywalk_fit": 0.0,
+    "coastal_fit": 1,
+    "coastal_cliff_fit": 1,
+    "coastal_lighthouse_fit": 1,
+    "city_viewpoint_fit": 1,
+    "panoramic_view_fit": 1,
+    "skywalk_fit": 0,
     "mountain_fit": 0.3,
     "forest_fit": 0.5,
     "geological_heritage_fit": 0.85,
-    "mural_village_fit": 1.0,
-    "hillside_village_fit": 1.0,
+    "mural_village_fit": 1,
+    "hillside_village_fit": 1,
     "art_immersive_fit": 0.85,
-    "photo_friendly_fit": 1.0,
-    "instagrammable_fit": 1.0,
-    "hanok_village_fit": 0.0,
-    "fish_market_fit": 1.0,
-    "seafood_fit": 1.0,
+    "photo_friendly_fit": 1,
+    "instagrammable_fit": 1,
+    "hanok_village_fit": 0,
+    "fish_market_fit": 1,
+    "seafood_fit": 1,
     "street_food_fit": 0.85,
-    "market_fit": 1.0,
-    "lunch_included_fit": 1.0,
-    "lunch_self_pay_fit": 0.0,
+    "market_fit": 1,
+    "lunch_included_fit": 1,
+    "lunch_self_pay_fit": 0,
     "walking_intensity": 0.7,
     "stairs_intensity": 0.85,
     "elderly_friendly_fit": 0.4,
     "stroller_friendly_fit": 0.3,
     "compact_route_fit": 0.7,
     "all_day_fit": 0.85,
-    "half_day_fit": 0.0,
+    "half_day_fit": 0,
     "private_vehicle_fit": 0.05,
-    "minicoach_fit": 1.0,
+    "minicoach_fit": 1,
     "public_transit_alternative_fit": 0.3,
-    "english_guide_fit": 1.0,
-    "korean_only_fit": 0.0,
+    "english_guide_fit": 1,
+    "korean_only_fit": 0,
     "multilingual_fit": 0.6,
     "spring_fit": 0.95,
     "summer_fit": 0.85,
-    "autumn_fit": 1.0,
+    "autumn_fit": 1,
     "winter_fit": 0.7,
     "rainy_day_fit": 0.4,
     "luxury_fit": 0.05,
-    "value_priced_fit": 1.0,
+    "value_priced_fit": 1,
     "scenic_intensity": 0.95,
-    "iconic_landmarks_fit": 1.0,
+    "iconic_landmarks_fit": 1,
     "off_beaten_path_fit": 0.3,
-    "cruise_shore_excursion_fit": 1.0,
-    "value_cruise_excursion_fit": 1.0,
-    "downtown_busan_fit": 1.0,
-    "yongdusan_landmark_fit": 1.0,
+    "cruise_shore_excursion_fit": 1,
+    "value_cruise_excursion_fit": 1,
+    "downtown_busan_fit": 1,
+    "yongdusan_landmark_fit": 1,
     "diamond_tower_fit": 0.85,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "cruise_market_segment_fit": 1.0,
-    "busan_port_pickup_fit": 1.0,
-    "cruise_reboarding_safety_buffer_fit": 1.0,
-    "weather_fallback_dense_fit": 1.0,
-    "instagram_dense_route_fit": 1.0,
-    "small_group_format_fit": 1.0,
-    "affordable_cruise_excursion_fit": 1.0,
-    "mixed_pax_sociability_fit": 1.0,
-    "fixed_schedule_format_fit": 1.0,
-    "solo_traveler_friendly_fit": 1.0,
+    "cruise_market_segment_fit": 1,
+    "busan_port_pickup_fit": 1,
+    "cruise_reboarding_safety_buffer_fit": 1,
+    "weather_fallback_dense_fit": 1,
+    "instagram_dense_route_fit": 1,
+    "small_group_format_fit": 1,
+    "affordable_cruise_excursion_fit": 1,
+    "mixed_pax_sociability_fit": 1,
+    "fixed_schedule_format_fit": 1,
+    "solo_traveler_friendly_fit": 1,
     "differentiates_from_busan_charter_cruise_pair_partner": true,
-    "busan_signature_route_fit": 1.0,
-    "seaside_temple_fit": 0.0,
-    "natural_geopark_fit": 1.0,
-    "city_panorama_tower_fit": 1.0,
-    "no_inter_city_travel_fit": 1.0,
+    "busan_signature_route_fit": 1,
+    "seaside_temple_fit": 0,
+    "natural_geopark_fit": 1,
+    "city_panorama_tower_fit": 1,
+    "no_inter_city_travel_fit": 1,
     "differentiates_from_busan_gyeongju_routes": true,
     "available_months_signature": [
       1,
@@ -2057,17 +2106,17 @@
             {
               "stars": 3,
               "count": 0,
-              "percentage": 0.0
+              "percentage": 0
             },
             {
               "stars": 2,
               "count": 0,
-              "percentage": 0.0
+              "percentage": 0
             },
             {
               "stars": 1,
               "count": 0,
-              "percentage": 0.0
+              "percentage": 0
             }
           ],
           "highlights": [],

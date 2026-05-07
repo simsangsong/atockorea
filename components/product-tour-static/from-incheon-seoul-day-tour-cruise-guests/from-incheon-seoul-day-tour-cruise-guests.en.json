@@ -858,21 +858,28 @@
     }
   },
   "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "Incheon Port International Passenger Terminal — arrival hall (Songdo)",
-        "time": "Calibrated to ship disembarkation"
+        "order": 1,
+        "time": "Calibrated to ship disembarkation",
+        "name": "Incheon Cruise Terminal (Songdo)",
+        "type": "station",
+        "lat": 37.4703,
+        "lng": 126.64
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
-        "name": "Incheon Port International Passenger Terminal",
-        "approx_time": "Minimum 60 minutes before all-aboard"
+        "order": 1,
+        "name": "Incheon Cruise Terminal",
+        "type": "station",
+        "lat": 37.4703,
+        "lng": 126.64
       }
     ],
-    "hotel_pickup_available": false,
-    "notes": "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Shared van with other cruise passengers from various ships. The guide tracks each passenger's individual ship schedule; if multiple ships sail at different times, earliest-sailing passengers are dropped first."
+    "notes": [
+      "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Shared van with other cruise passengers from various ships. The guide tracks each passenger's individual ship schedule; if multiple ships sail at different times, earliest-sailing passengers are dropped first."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,

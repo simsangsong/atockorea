@@ -90,6 +90,10 @@ export type TourProductSectionUiV1 = {
   pickupTrustFooter?: string;
   dropoffReturnHeading?: string;
   pickupApproximateLabel?: string;
+  /** Pickup locations map section (rendered below timeline). */
+  pickupMapTitle?: string;
+  pickupMapSubtitle?: string;
+  pickupMapDirectionsLabel?: string;
   /** Recommendations / "You might also like" section copy. */
   recommendationsEyebrow?: string;
   recommendationsTitle?: string;
@@ -169,6 +173,9 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
   dropoffReturnNote: "Return to pickup points available on request",
   portSelectorEyebrow: "Choose your docking port",
   portSelectorCtaPrefix: "Docking at",
+  pickupMapTitle: "Pickup locations",
+  pickupMapSubtitle: "Tap a stop on the map or a card below for directions and photos.",
+  pickupMapDirectionsLabel: "View on Google Maps",
 };
 
 /** 정적 번들 한국어 — DB `detail_payload.sectionUi` 없을 때 Jeju 등에서 사용 */
@@ -244,6 +251,9 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_KO: TourProductSectionUiV1 = {
   recommendationsSubtitle: "템포도, 강조점도 달라요. 각자 하루를 만듭니다.",
   recommendationsFromLabel: "최저",
   ticketsIncludedLabel: "입장권 포함",
+  pickupMapTitle: "픽업 위치",
+  pickupMapSubtitle: "지도에서 또는 아래 카드를 탭하면 길찾기와 사진을 볼 수 있습니다.",
+  pickupMapDirectionsLabel: "Google Maps에서 보기",
 };
 
 /** 정적 번들 日本語 */
@@ -319,6 +329,9 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_JA: TourProductSectionUiV1 = {
   recommendationsSubtitle: "テンポも見どころも別もの。それぞれが一日になります。",
   recommendationsFromLabel: "から",
   ticketsIncludedLabel: "入場料込み",
+  pickupMapTitle: "乗車場所",
+  pickupMapSubtitle: "地図またはカードをタップして経路と写真をご確認ください。",
+  pickupMapDirectionsLabel: "Google Mapsで見る",
 };
 
 /** 简体中文 UI */
@@ -392,6 +405,9 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH: TourProductSectionUiV1 = {
   recommendationsSubtitle: "节奏不同，重点不同。每一条都是一天的故事。",
   recommendationsFromLabel: "起价",
   ticketsIncludedLabel: "含门票",
+  pickupMapTitle: "接送地点",
+  pickupMapSubtitle: "在地图或下方卡片上点击，可查看路线和照片。",
+  pickupMapDirectionsLabel: "在Google Maps中查看",
 };
 
 /** 繁體中文 UI */
@@ -465,6 +481,9 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH_TW: TourProductSectionUiV1 = {
   recommendationsSubtitle: "節奏不同，重點不同。每一條都是一天的故事。",
   recommendationsFromLabel: "起價",
   ticketsIncludedLabel: "含門票",
+  pickupMapTitle: "接送地點",
+  pickupMapSubtitle: "在地圖或下方卡片上點擊，可查看路線和照片。",
+  pickupMapDirectionsLabel: "在Google Maps中查看",
 };
 
 /** UI en español */
@@ -540,6 +559,9 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ES: TourProductSectionUiV1 = {
   recommendationsSubtitle: "Ritmo distinto, énfasis distinto. Cada uno es su propio día.",
   recommendationsFromLabel: "desde",
   ticketsIncludedLabel: "Entrada incluida",
+  pickupMapTitle: "Puntos de recogida",
+  pickupMapSubtitle: "Toca un punto en el mapa o una tarjeta para ver la ruta y fotos.",
+  pickupMapDirectionsLabel: "Ver en Google Maps",
 };
 
 function pickSectionUiKeys(raw: unknown): Partial<TourProductSectionUiV1> {

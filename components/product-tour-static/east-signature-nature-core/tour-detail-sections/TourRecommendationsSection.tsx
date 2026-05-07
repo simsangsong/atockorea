@@ -51,10 +51,9 @@ export function TourRecommendationsSection({ recommendations, sectionUi }: TourR
             <Link
               key={rec.slug}
               href={hrefStaticTourProductDetail(rec.slug)}
-              className="group relative flex-shrink-0 snap-start overflow-hidden rounded-2xl bg-gradient-to-br from-white via-[#fdfbf6] to-[#f9f4ec] shadow-[0_2px_4px_rgba(26,35,50,0.05),0_6px_14px_-4px_rgba(26,35,50,0.08),0_22px_44px_-18px_rgba(26,35,50,0.20),0_12px_24px_-12px_rgba(26,35,50,0.12)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_3px_6px_rgba(26,35,50,0.07),0_10px_20px_-4px_rgba(26,35,50,0.12),0_32px_60px_-18px_rgba(26,35,50,0.30),0_18px_34px_-12px_rgba(26,35,50,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-300/60 focus-visible:ring-offset-2"
+              className="group relative flex-shrink-0 snap-start overflow-hidden rounded-2xl bg-white ring-1 ring-slate-900/[0.07] shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.16)] transition-all duration-300 hover:-translate-y-1 hover:ring-slate-900/[0.11] hover:shadow-[0_2px_4px_rgba(15,23,42,0.05),0_6px_14px_-2px_rgba(15,23,42,0.09),0_24px_48px_-14px_rgba(15,23,42,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-300/60 focus-visible:ring-offset-2"
               style={{ width: "calc(78vw - 16px)", maxWidth: "300px" }}
             >
-              <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-white/55 to-transparent z-[1]" />
               <div className="relative h-44 overflow-hidden bg-muted/40">
                 {imageSrc ? (
                   <img

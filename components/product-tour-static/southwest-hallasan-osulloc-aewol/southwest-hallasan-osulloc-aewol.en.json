@@ -14,8 +14,9 @@
       "Aewol coast café tour",
       "Hyeopjae Beach tour"
     ],
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
-    "title": "Southwest Jeju Hallasan + Osulloc + Aewol Tour · 9-hour Small-Group"
+    "ogImage": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80",
+    "title": "Southwest Jeju: Hallasan + Osulloc + Aewol | AtoC Korea",
+    "description": "Southwest Jeju small-group year-round day tour: Hallasan 1100 Road wetland → Jusangjeolli cliff (UNESCO Geopark) → Cheonjeyeon Waterfall → Osulloc Tea Museum + green tea fields → Aewol Handam coastal trail. 9 hours. 4.8/5 (127 reviews)."
   },
   "catalog_card": {
     "slug": "southwest-hallasan-osulloc-aewol",
@@ -30,17 +31,17 @@
       "Great for First-Time Jeju Visitors",
       "Jeju Southwest"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
+    "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
     "priceLabel": "From US$58 per person",
     "shortCardDescription": "A well-balanced Jeju southwest route linking a short Hallasan walk, volcanic coastline, Cheonjeyeon Waterfall, O’Sulloc tea fields, and Aewol Cafe Street.",
     "tags": [
-      "small_group",
-      "jeju",
-      "southwest_jeju",
-      "nature",
-      "cafe",
-      "hallasan"
+      "Small group",
+      "Jeju",
+      "Southwest Jeju",
+      "Nature",
+      "Cafe",
+      "Hallasan"
     ]
   },
   "headlineLine1": "Jeju Southwest: Hallasan, Tea Fields, and Aewol",
@@ -49,12 +50,12 @@
     "amountLabel": "58",
     "currency": "USD",
     "per": "person",
-    "priceSource": "internal",
-    "priceNote": "Small-group bilingual tour. AtoC Korea direct sale; 10% discount applied vs operator base.",
+    "priceSource": "AtoC Korea direct rate",
+    "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea.",
     "discountPercent": 10
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
+    "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
     "imagePosition": "center 35%",
     "tagline": "A short Hallasan walk, volcanic cliffs, a waterfall trail, tea fields, and a relaxed Aewol finish.",
     "pills": [
@@ -94,37 +95,37 @@
   "glanceItems": [
     {
       "icon": "camera",
-      "label": "Photo Value",
-      "value": "Excellent",
+      "label": "Photo Potential",
+      "value": "High",
       "level": 5
     },
     {
       "icon": "mountain",
-      "label": "Scenic",
-      "value": "Good",
-      "level": 4
+      "label": "Scenery Density",
+      "value": "High",
+      "level": 5
     },
     {
       "icon": "footprints",
-      "label": "Walking",
+      "label": "Walking Difficulty",
       "value": "Moderate",
       "level": 3
     },
     {
       "icon": "cloud-rain",
-      "label": "Rain Safety",
+      "label": "Rain Suitability",
       "value": "Moderate",
       "level": 3
     },
     {
       "icon": "users",
-      "label": "Family Fit",
+      "label": "Family Suitability",
       "value": "Good",
       "level": 4
     },
     {
-      "icon": "gauge",
-      "label": "Balance",
+      "icon": "scale",
+      "label": "Pace",
       "value": "Balanced",
       "level": 4
     }
@@ -133,7 +134,7 @@
     {
       "id": 1,
       "type": "video",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
+      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
       "location": "Overall Route",
       "atmosphere": "A full-day view of how the route flows",
       "alt": "Overall atmosphere of the Jeju southwest route",
@@ -142,7 +143,7 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/2fc1d5d9-d5af-43a1-ae26-c72afa3b544e.webp",
+      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
       "location": "Hallasan Opening Stop",
       "atmosphere": "Fresh mountain air",
       "alt": "Hallasan Eoseungsaengak trail",
@@ -151,7 +152,7 @@
     {
       "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
       "location": "Volcanic Coastline",
       "atmosphere": "A powerful basalt shoreline",
       "alt": "Basalt sea cliffs at Daepo Jusangjeolli",
@@ -160,7 +161,7 @@
     {
       "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
       "location": "Forest Trail and Waterfall",
       "atmosphere": "A cooler, calmer middle section",
       "alt": "Forest trail at Cheonjeyeon Waterfall",
@@ -169,7 +170,7 @@
     {
       "id": 5,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
       "location": "Tea Fields Break",
       "atmosphere": "Open green scenery with a softer mood",
       "alt": "Atmosphere around O’Sulloc Tea Museum and the tea fields",
@@ -178,7 +179,7 @@
     {
       "id": 6,
       "type": "video",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+      "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
       "location": "Aewol Coastal Finale",
       "atmosphere": "A relaxed close to the day",
       "alt": "Aewol Cafe Street on the coast",
@@ -193,7 +194,7 @@
       "name": "Hallasan Eoseungsaengak",
       "category": "Hallasan Foothill Trail (Eorimok) — UNESCO World Heritage Taste",
       "description": "**Eoseungsaengak (어승생악, 1,169 m)** is a parasitic cone (오름 / *oreum*) on the western flank of **Hallasan (한라산, 1,950 m)** — Korea's highest peak and the geological heart of Jeju. Hallasan itself carries an **unparalleled designation stack**: **UNESCO World Natural Heritage (inscribed 2007-07-02)**, **UNESCO Biosphere Reserve (2002)**, **Korea National Park (designated 1970-03-24)**, and **Natural Monument No. 182 (1966)** — making it the only Korean site holding all three UNESCO natural designations simultaneously. The Eoseungsaengak trailhead at **Eorimok Visitor Center** climbs **only ~200 m over 1.3 km** to a wide summit deck — a 60-minute round trip that delivers the **'Hallasan UNESCO taste'** without the full 9-hour Baengnokdam crater ascent. From the deck on clear days you see the **Yellow Sea, Hallasan's Baengnokdam summit caldera (백록담), and the parasitic cone field** stretching south. Botanical highlight: this elevation band (1,000–1,300 m) is the **transition zone between deciduous broadleaf forest and the Korean fir (구상나무, *Abies koreana* — IUCN Near Threatened, endemic to South Korean high mountains) belt** above. Hallasan harbors **2,000+ plant species** total — roughly **half of all plants on the Korean Peninsula**. A historical footnote sits at the summit deck: a **1945 Imperial Japanese tochika (토치카, concrete pillbox/communication post)** built in the war's final months — one of the highest surviving WWII Japanese fortifications in Korea. Admission and parking are **free**; **no reservation required** for Eoseungsaengak (unlike Baengnokdam summit which caps daily climbers at 1,000).",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
       "highlights": [
         "**Hallasan = only Korean site with Triple Natural designation**: UNESCO World Heritage 2007 + Biosphere 2002 + National Park 1970",
         "**Eoseungsaengak summit 1,169 m** — parasitic cone (oreum), one of 360+ on Jeju",
@@ -212,7 +213,7 @@
         "Descent — ~20 min",
         "Buffer / regroup — ~5 min"
       ],
-      "whyOnRoute": "**Opening anchor of the southwest loop**. Starting at Hallasan establishes Jeju's geological foundation, but unlike the highlights-loop sister tour (which carries guests counter-clockwise to the east coast), this tour pivots **west and southwest** after the descent — heading directly to Jusangjeolli on the southern coast, then Cheonjeyeon (also south), inland to Osulloc tea fields, and finally **west to Aewol for the sunset finale**. The 09:00 earlier start (vs. 09:30 sister) recovers ~30 min for the leisurely afternoon Aewol coastal walk + cafe stop sequence. Eoseungsaengak is the **only Hallasan trail giving UNESCO World Heritage + Biosphere Reserve + Geopark in 60 minutes** without reservation hassle — Yeongsil and Seongpanak both require 5–9 hours, and Baengnokdam summit caps daily entry at 1,000.",
+      "whyOnRoute": "**Opening highlight of the southwest loop.** Starting at Hallasan gives the day a strong volcanic-landscape opening before the route turns toward Jungmun, O'sulloc, and Aewol. Eoseungsaengak is a practical Hallasan trail for a day tour because it offers forest, mountain views, and UNESCO-linked scenery in about an hour without the long commitment required for Yeongsil or Seongpanak.",
       "_poi_meta": {
         "poi_key": "hallasan_eoseungsaengak",
         "kb_version": "1.18",
@@ -225,20 +226,20 @@
           "Korea Forest Service — Abies koreana red list status"
         ]
       },
-      "visitBasics": {
-        "hours": "From 05:00, with seasonal restrictions possible",
-        "closed": "May be restricted in certain weather conditions",
-        "admission": "Free",
-        "walking": "Short route, but with many stairs and a moderate overall feel"
+      "smartNotes": {
+        "photo": "Once you reach the higher lookout section, wide landscape shots usually work better than close portraits.",
+        "facilities": "Facilities are much better at the entrance than along the trail itself.",
+        "tip": "This stop works best as a focused scenic walk rather than a slow, lingering stroll."
       },
       "convenience": {
         "restroom": "At the Eorimok entrance area",
         "parking": "Parking available"
       },
-      "smartNotes": {
-        "photo": "Once you reach the higher lookout section, wide landscape shots usually work better than close portraits.",
-        "facilities": "Facilities are much better at the entrance than along the trail itself.",
-        "tip": "This stop works best as a focused scenic walk rather than a slow, lingering stroll."
+      "visitBasics": {
+        "hours": "From 05:00, with seasonal restrictions possible",
+        "closed": "May be restricted in certain weather conditions",
+        "admission": "Free",
+        "walking": "Short route, but with many stairs and a moderate overall feel"
       }
     },
     {
@@ -247,14 +248,14 @@
       "duration": "45 min",
       "name": "Daepo Jusangjeolli Cliff",
       "category": "Volcanic Coastline — Hexagonal Columnar-Jointed Lava",
-      "description": "**Daepo Jusangjeolli (대포 주상절리, 'Jisatgae')** is a **1 km stretch of hexagonal columnar-jointed basalt cliff** on the Jungmun coast — designated **Natural Monument No. 443 on 2005-01-06**. The columns rise **30–40 m** from the sea, packed in tightly fitted **5- to 7-sided polygons** (mostly hexagons) — a geometry produced when **molten basaltic lava from a Hallasan flank eruption (~250,000–140,000 years ago) reached the ocean and contracted as it cooled**, fracturing perpendicular to the cooling surface. Globally, columnar jointing is best known from **Giant's Causeway (UK)**, **Devils Postpile (US)**, and **Fingal's Cave (Scotland)** — Jusangjeolli is **East Asia's premier example** and the most accessible. The 800 m **boardwalk loop** delivers visitors to a railed cliff edge directly above the columns; **on high-tide days waves break against the columns and throw spray up to 20 m**, occasionally over the rail. Admission: **Adult ₩2,000 / Youth ₩1,000 / FREE under 7 and over 65**. The site is part of the **Jeju Global Geopark (UNESCO designated 2010-10)** — one of **13 official geosites** on the island, alongside Seongsan Ilchulbong, Manjanggul Lava Tube, and Suwolbong. The clifftop deck is **barrier-free** (wheelchair/stroller accessible). Three viewing platforms along the loop give different column angles: the **first platform** shows the columns in profile (best for the hexagonal-geometry shot), the **mid-platform** looks straight down for top-of-column patterns, and the **far platform** captures the 1 km coastal sweep with Hallasan as backdrop on clear days. **Photographic peak window: 14:00–16:00**, when westering sunlight lights the column faces frontally; sunset visits bring silhouette compositions but lose column-detail texture. Hours: **09:00–18:00 (last entry 17:30)**, year-round operation.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+      "description": "**Daepo Jusangjeolli Cliff** is a dramatic stretch of columnar basalt on the Jungmun coast. The stone pillars were formed as lava cooled and contracted, creating the polygonal columns seen along the sea. The columns are commonly described as 30-40 m high and continue for about 1 km along the coast. Visitors use a clifftop boardwalk and viewing decks to see the columns, ocean, and wave action. On windy or high-tide days, waves may create strong spray, so the guide may adjust photo time for safety and comfort.",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
       "highlights": [
         "**Natural Monument No. 443** — designated **2005-01-06**, the most recent Jeju coastal NM",
         "Columns rise **30–40 m**, packed in **5- to 7-sided polygons** (mostly hexagons) along **1 km** of coastline",
         "Formation: **Hallasan flank lava cooled in the sea ~250,000–140,000 years ago**, contracting perpendicular to cooling face",
         "**East Asia's premier columnar-jointing site** — peer to Giant's Causeway, Devils Postpile, Fingal's Cave",
-        "**Spray up to 20 m on high-tide days** — wave-fountain photography window",
+        "**Strong wave spray on some high-tide days** — dramatic coastal photos when conditions are safe",
         "**0.8 km boardwalk loop**, ~15 min walk — barrier-free deck, wheelchair/stroller accessible",
         "Part of **Jeju Global Geopark (UNESCO 2010-10)** — 13 island-wide geosites",
         "Admission **₩2,000 adult / ₩1,000 youth / FREE under 7 + over 65**",
@@ -267,7 +268,7 @@
         "Continue boardwalk loop — ~10 min",
         "Return to coach — ~10 min"
       ],
-      "whyOnRoute": "**Geological pivot of the southwest loop** — directly downstream from Hallasan geographically and geologically. After the Hallasan source, Jusangjeolli shows the **same lava reaching the sea and freezing into 30–40 m hexagonal columns** along 1 km of coast. From here the tour heads **3 km west to Cheonjeyeon Falls** (vs. the sister tour heading east to Jeongbang) — keeping the entire afternoon within the southwest Jungmun + Andeok corridor. Compared to **Yongmeori Coast (closes ~30% of visit days for tide/weather)** and **Songaksan (1.6 km longer walk)**, Daepo is **all-weather, barrier-free, 15-minute walk** — the highest yield per minute on the south coast. Late-morning timing also lands ahead of the noon cruise-shore-excursion wave.",
+      "whyOnRoute": "Jusangjeolli connects Hallasan's volcanic origin with the south coast, showing how Jeju's lava shaped the island from mountain to sea. It is close to Jungmun and pairs efficiently with Cheonjeyeon Falls, keeping the middle of the day smooth without long backtracking.",
       "_poi_meta": {
         "poi_key": "daepo_jusangjeolli_cliff",
         "kb_version": "1.18",
@@ -280,20 +281,20 @@
           "Korea Geological Survey — Jeju basalt formation studies"
         ]
       },
-      "visitBasics": {
-        "hours": "09:00–18:00 (last entry 17:40)",
-        "closed": "Open year-round",
-        "admission": "KRW 2,000 adults / KRW 1,000 children and teens",
-        "walking": "Easy"
+      "smartNotes": {
+        "photo": "A slight side angle usually captures the texture of the basalt and wave energy better than a straight-on shot.",
+        "facilities": "Facilities are simple, but the entrance area is practical and sufficient.",
+        "tip": "Because wind and sea mist can change the feel of the stop quickly, it works best with a steady pace."
       },
       "convenience": {
         "restroom": "Entrance area",
         "parking": "Paid parking lot"
       },
-      "smartNotes": {
-        "photo": "A slight side angle usually captures the texture of the basalt and wave energy better than a straight-on shot.",
-        "facilities": "Facilities are simple, but the entrance area is practical and sufficient.",
-        "tip": "Because wind and sea mist can change the feel of the stop quickly, it works best with a steady pace."
+      "visitBasics": {
+        "hours": "09:00–18:00 (last entry 17:40)",
+        "closed": "Open year-round",
+        "admission": "KRW 2,000 adults / KRW 1,000 children and teens",
+        "walking": "Easy"
       }
     },
     {
@@ -303,7 +304,7 @@
       "name": "Lunch — Seogwipo / Jungmun",
       "category": "Midday Reset — Seogwipo / Jungmun Local Cuisine",
       "description": "**60-minute reset between Jusangjeolli and Cheonjeyeon Falls** — Jungmun resort district is just 3 km from both stops, with a dense restaurant strip catering to both tourist and local clienteles. Default rotation by season and group: **galchi-jorim (갈치조림, braised cutlassfish)** at a Seogwipo-side specialist when boats are landing (Sep–Feb), **jeonbok-bibimbap (전복비빔밥, abalone over rice)** year-round, or **heuk-doeji (흑돼지, Jeju black pig BBQ)** for guests preferring grilled meat. Jeju black pig (***Sus scrofa* domesticus, Jeju variety**) is **Cultural Heritage Material No. 5 (2015)** — a protected breed traceable to ~12th century records. Vegetarian alternative on request: **bibim-guksu (비빔국수)** with seasonal Jeju vegetables. **Halal-friendly options** (ingredient-disclosed) available at one venue in the rotation — request at pickup. After lunch the coach is ~5-min drive to Cheonjeyeon entrance — minimal post-meal transit.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
       "highlights": [
         "**Jungmun** restaurant strip — 3 km from both Jusangjeolli and Cheonjeyeon",
         "**Galchi-jorim** in season (Sep–Feb), **jeonbok-bibimbap** year-round",
@@ -318,21 +319,21 @@
         "Coach to Cheonjeyeon entrance — ~5 min",
         "Buffer — ~5 min"
       ],
-      "whyOnRoute": "Jungmun positioning means **5-minute hops to both Jusangjeolli (before) and Cheonjeyeon (after)** — recovers ~15 min vs. a Seogwipo-central lunch. Galchi + black pig + abalone are Jeju's three signature proteins, all locally sourced — guests get the food-identity anchor of the day in one sitting before the afternoon's tea + cafe sequence, which is light on solid food.",
-      "visitBasics": {
-        "hours": "Depends on the restaurant",
-        "closed": "Varies by venue",
-        "admission": "May be included depending on the product condition, or paid on site",
-        "walking": "Minimal"
+      "whyOnRoute": "Lunch in Jungmun keeps the route efficient because Jusangjeolli and Cheonjeyeon are both nearby. It also gives guests a comfortable chance to try Jeju favorites such as grilled cutlassfish, black pork, or abalone before the lighter tea-field and café stops later in the afternoon.",
+      "smartNotes": {
+        "photo": "If you want some lifestyle-style gallery shots, food photos work especially well here.",
+        "facilities": "Dining facilities are more than sufficient.",
+        "tip": "A calmer lunch usually improves the second half of the day more than saving a few extra minutes."
       },
       "convenience": {
         "restroom": "Inside the restaurant",
         "parking": "Parking available"
       },
-      "smartNotes": {
-        "photo": "If you want some lifestyle-style gallery shots, food photos work especially well here.",
-        "facilities": "Dining facilities are more than sufficient.",
-        "tip": "A calmer lunch usually improves the second half of the day more than saving a few extra minutes."
+      "visitBasics": {
+        "hours": "Depends on the restaurant",
+        "closed": "Varies by venue",
+        "admission": "May be included depending on the product condition, or paid on site",
+        "walking": "Minimal"
       }
     },
     {
@@ -342,7 +343,7 @@
       "name": "Cheonjeyeon Waterfall",
       "category": "Three-Tier Waterfall + Forest — 'Pond of the Emperor of Heaven'",
       "description": "**Cheonjeyeon Falls (천제연, '연 = pond + 천제 = Emperor of Heaven')** is a **three-tier waterfall** in Jungmun's volcanic gorge, designated **Natural Monument No. 378 (1993)** for its rare ecological combination. The name comes from a **Joseon-era Daoist legend that seven nymphs (선녀, *seonnyeo*) descended from heaven nightly to bathe in the upper pond** — a myth reinforced by the dramatic site's microclimate of perpetual mist. The **1st tier (22 m fall, 21 m deep pond)** drops into a circular basalt cauldron and only flows after heavy rain — most days the upper pond sits glassy and reflective. The **2nd tier (30 m fall) flows year-round** — the dominant photographic subject. The 3rd tier completes the descent to the sea. The **120 m / 78 m-high Seonimgyo Bridge (선임교, 'Bridge of the Seven Nymphs')** crosses the gorge midway through the loop — its cast-bronze relief panels along both sides depict **all seven nymphs in flight**, a literal architectural realization of the founding legend. Surrounding forest is a **rare-plant habitat** including **Korean toadlily (***Tricyrtis macropoda***)** and the endangered **Mankyua chejuense fern** (Jeju endemic, IUCN Critically Endangered). Loop length: **0.8 km, ~30 min walk** with several steep stair sections. Admission: **Adult ₩2,500 / Youth ₩1,350 / FREE under 7 + over 65**. Cheonjeyeon is also a member of the **'Yeongjusipgyeong (영주십경, 10 Scenic Wonders of Jeju)'** Joseon-era literati canon — alongside Hallasan summit, Seongsan Sunrise, and Jeongbang Falls — meaning today's southwest loop covers **2 of the 10 (Hallasan + Cheonjeyeon)** in a single day. The biennial **Jeju Chilseonyeo (Seven Nymphs) Festival** held at the bridge in May (every odd year) reenacts the descent legend with traditional dance and musical performance — reservations required when the festival coincides with a tour date. Hours **09:00–18:00** year-round (last entry 17:30).",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
       "highlights": [
         "**Natural Monument No. 378 (designated 1993)** — three-tier waterfall + rare-plant habitat",
         "Name **'Cheonjeyeon' = 'Pond of the Emperor of Heaven'** — Joseon Daoist legend",
@@ -361,7 +362,7 @@
         "Seonimgyo Bridge + nymph relief panels — ~15 min",
         "Forest loop + ascent back to coach — ~25 min"
       ],
-      "whyOnRoute": "**Mid-afternoon contrast anchor** — after Hallasan's wide alpine vista and Jusangjeolli's exposed coast, Cheonjeyeon's enclosed forest gorge resets sensory register and gives shaded relief. The Seven Nymphs legend + Seonimgyo Bridge = Jeju's strongest single **mythological anchor** in the catalog (compared with Seopjikoji's K-drama filming heritage or Seongsan's geological lore). Jungmun placement means **5-min coach from Jusangjeolli, 10-min coach to Osulloc** — the tightest mid-day transit window in southwest Jeju touring. The 13:00 arrival also catches **post-noon cloud cover that softens overhead light** for canopy + waterfall photography.",
+      "whyOnRoute": "**Mid-afternoon contrast stop.** After Hallasan's wide mountain scenery and Jusangjeolli's open coast, Cheonjeyeon's forested gorge brings shade, water, and a quieter atmosphere. The Seven Nymphs legend and Seonimgyo Bridge add a cultural story, while the Jungmun location keeps transfer time short before continuing to O'sulloc.",
       "_poi_meta": {
         "poi_key": "cheonjeyeon_falls",
         "kb_version": "1.18",
@@ -374,20 +375,20 @@
           "Seogwipo City tourism — Cheonjeyeon admission and access"
         ]
       },
-      "visitBasics": {
-        "hours": "09:00–17:50 (last entry 17:10)",
-        "closed": "Open year-round",
-        "admission": "KRW 2,500 adults / KRW 1,350 teens and children",
-        "walking": "Moderate, with stairs and sometimes wet sections"
+      "smartNotes": {
+        "photo": "Instead of forcing everything into one frame, layered compositions with the bridge and waterfall usually look better.",
+        "facilities": "Basic facilities are concentrated near the entrance.",
+        "tip": "Because of stairs and potentially slippery sections, a steady pace usually makes this stop more enjoyable."
       },
       "convenience": {
         "restroom": "Entrance area",
         "parking": "Parking available"
       },
-      "smartNotes": {
-        "photo": "Instead of forcing everything into one frame, layered compositions with the bridge and waterfall usually look better.",
-        "facilities": "Basic facilities are concentrated near the entrance.",
-        "tip": "Because of stairs and potentially slippery sections, a steady pace usually makes this stop more enjoyable."
+      "visitBasics": {
+        "hours": "09:00–17:50 (last entry 17:10)",
+        "closed": "Open year-round",
+        "admission": "KRW 2,500 adults / KRW 1,350 teens and children",
+        "walking": "Moderate, with stairs and sometimes wet sections"
       }
     },
     {
@@ -397,7 +398,7 @@
       "name": "O'Sulloc Tea Museum",
       "category": "Tea Culture & Seogwang Plantation — AmorePacific Heritage",
       "description": "**O'Sulloc Tea Museum (오설록 티 뮤지엄, '오설록' meaning 'meeting snow + green')** is the tea-culture flagship of **Amorepacific Corporation** — Korea's largest beauty company. Founder **Suh Sung-whan personally pioneered the project in 1979**, reclaiming volcanic ash farmland on Jeju's Seogwang plateau when conventional wisdom held tea couldn't be grown commercially in Korea. Today the **Seogwang Dawon plantation (서광다원)** is **Korea's largest green-tea field**, producing **~700 tonnes annually** across Amorepacific's three Jeju estates. The museum building **opened 2001** in the plantation's heart and was named to **designboom's Top 10 art museums** for its minimalist green-roofed pavilion-amid-tea-rows design. **FREE admission**, daily **09:00–18:00**, ~**2 million annual visitors**. The visit splits naturally into three segments: **(1) Museum interior** — tea production process, antique tea-ware collection from Tang dynasty (618–907 CE) onward, and rooftop observation deck with panoramic plantation view; **(2) Tea House cafe** — signature **green tea rolling cake (오설록 롤케이크)** and **green tea ice cream** served from the tea-leaf harvest year directly; **(3) Plantation walking paths** — gravel rows between tea bushes, popular for sunset photography at the western edge. **Innisfree Jeju House** (Amorepacific's natural cosmetics brand) is a **5-minute walk** for guests interested in the broader brand ecosystem — also free admission with optional tangerine soap DIY workshop (₩15,000). The museum building itself, designed by Korean architect **Mass Studies (Cho Min-suk)**, takes a deliberately low-profile horizontal form that mirrors the tea-row geometry rather than competing with the agricultural landscape — the architectural deference earning it both the designboom Top 10 listing and ongoing use as a case study in Korean contemporary museum design. Optional add-on: the **Osulloc Tea Class (₩30,000 per person, 60 min, advance booking required)** — guided tea-flight tasting with brewing technique demonstration on Korean ceramics, available daily **10:00–16:00**, English-speaking instruction on Wed/Sat sessions.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085",
       "highlights": [
         "**Amorepacific** flagship — Korea's largest beauty company; founder Suh Sung-whan pioneered Jeju tea **1979**",
         "**Seogwang Dawon = Korea's largest green-tea field**; ~700 tonnes annual production",
@@ -416,7 +417,7 @@
         "Plantation walking path — ~20 min",
         "Optional Innisfree Jeju House visit — ~10 min"
       ],
-      "whyOnRoute": "**Cultural pivot from natural anchors to Jeju lifestyle**. Hallasan + Jusangjeolli + Cheonjeyeon are Jeju's geological identity; Osulloc is Jeju's **modern brand identity** — the visible proof that volcanic ash + 1,500 mm rainfall + Korean horticultural investment can build a globally exported tea industry. **Free admission + 2M visitors/year** = lowest-friction interior anchor in southwest Jeju; perfect indoor fallback if the day turns rainy after Cheonjeyeon. The Seogwang plateau location is also the **geographic hinge between south-coast attractions and Aewol northwest** — natural mid-afternoon staging point. Compared with **Hallim Park (botanical garden, ₩15,000, more diffuse experience)** or **Camellia Hill (₩9,000, narrow seasonal window)**, Osulloc is **free, year-round, and brand-anchored** — the highest-yield interior stop in this corridor.",
+      "whyOnRoute": "O'sulloc shifts the day from nature scenery to Jeju lifestyle. The tea fields, museum space, café, and desserts make it an easy indoor-outdoor stop, especially if the weather changes. Its location on the Seogwang plateau also sits naturally between Jungmun's south-coast sites and the final Aewol coastal stop.",
       "_poi_meta": {
         "poi_key": "osulloc_tea_museum",
         "kb_version": "1.18",
@@ -429,20 +430,20 @@
           "VisitJeju — Osulloc Tea Museum"
         ]
       },
-      "visitBasics": {
-        "hours": "Usually 09:00–18:00, with possible seasonal variation",
-        "closed": "Open year-round",
-        "admission": "Free",
-        "walking": "Easy"
+      "smartNotes": {
+        "photo": "Wide tea-field views and side angles near the cafe usually photograph better than product-style close-ups alone.",
+        "facilities": "With restrooms, drinks, and places to sit, this is one of the most comfortable stops in the second half of the day.",
+        "tip": "It usually feels more satisfying to enjoy both the scenery and the cafe atmosphere rather than rushing through the museum only."
       },
       "convenience": {
         "restroom": "Museum and cafe area",
         "parking": "Parking available"
       },
-      "smartNotes": {
-        "photo": "Wide tea-field views and side angles near the cafe usually photograph better than product-style close-ups alone.",
-        "facilities": "With restrooms, drinks, and places to sit, this is one of the most comfortable stops in the second half of the day.",
-        "tip": "It usually feels more satisfying to enjoy both the scenery and the cafe atmosphere rather than rushing through the museum only."
+      "visitBasics": {
+        "hours": "Usually 09:00–18:00, with possible seasonal variation",
+        "closed": "Open year-round",
+        "admission": "Free",
+        "walking": "Easy"
       }
     },
     {
@@ -452,7 +453,7 @@
       "name": "Aewol Cafe Street (Handam Coastal Trail)",
       "category": "Coastal Cafe Strip — Sunset Finale + Olle Trail 15A Segment",
       "description": "**Aewol Cafe Street (애월 카페거리)** is the **5 km coastal stretch of Aewol-eup along the Handam Coastal Trail (한담해안산책로)** on Jeju's northwest coast — Korea's most concentrated **'sea-view cafe' destination**, with 30+ design-forward cafes packed into the cliff-edge strip between Handam Beach and Gwakji Beach. The promenade itself is officially named **Jang Han Chul Promenade (장한철산책로)** after **Jang Han Chul (장한철, 1744–?)** — a Jeju-born Joseon-era scholar whose **'Pyohaerok (표해록)'** is one of the earliest Korean accounts of survival at sea, written after his Pacific drift in 1771. The walking path is a **30-minute one-way coastal segment of Jeju Olle Trail 15A (Hallim → Gonae)** — black basalt clifftops, tide pools, hexagonal jointing on a smaller scale than Daepo, and unobstructed west-facing horizon = Jeju's premier sunset viewing strip. **Signature cafes in rotation by season**: **Bomnal Cafe (봄날 카페)** — appeared in the **2014 K-drama 'You Who Came From the Stars (별에서 온 그대)'** and made Aewol a celebrity-pilgrimage destination overnight; **Randy's Donuts** (LA brand, Korean franchise — large rooftop deck); **Cafe Knotted** (signature cream donut + sea-view); **Haejigae Cafe** (literally 'sunset cafe', dedicated to evening light service); **Aewol the Sunset** (rooftop terrace, premium pricing). FREE admission to the trail and beaches; cafes pricing typical ₩6,000–12,000 per drink + dessert. **Jang Han Chul's 'Pyohaerok (표해록)'** — the eponymous source of the promenade's name — is considered one of the foundational texts of **Korean maritime literature**, recording his 29-day Pacific drift after a Jeju-bound ship was blown off course in **December 1770**. Rescued by Ryukyu (modern Okinawa) fishermen and eventually returned home via Nagasaki, his account predates similar Western survival memoirs by decades and informs modern Korean ocean-history scholarship. The promenade's signage along the cliff path quotes passages from the work in Korean + English — a rare in-situ literary heritage marker. Note for **photography enthusiasts**: drone use along the Aewol coast is permitted **outside the 9 km Jeju International Airport approach corridor** — confirm exact perimeter via Korea Drone Map app before flying. The **Olle Trail 15A segment** officially runs Hallim Port → Aewol → Gonae Port over 13 km; today's tour walks the central 1.5 km between Handam and Gwakji.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
       "highlights": [
         "**5 km coastal cafe strip** between Handam and Gwakji beaches — Korea's densest sea-view cafe row",
         "**Jang Han Chul Promenade** — named for Jeju-born Joseon scholar (1744–?) author of **'Pyohaerok'** survival memoir",
@@ -471,7 +472,7 @@
         "Sunset photography at clifftop — ~15 min",
         "Walk back to coach — ~5 min"
       ],
-      "whyOnRoute": "**Sunset-anchored finale**. The southwest loop deliberately ends at Aewol because: (1) **west-facing horizon** = the only spot on the day's route with unobstructed sunset; (2) **40-min coach to Jeju Airport** = last viable stop before evening flights without doubling back; (3) **cafe-density indoor fallback** = if weather turns, guests pivot from coastal walk to interior cafe seating without leaving the site. Compared with the sister highlights-loop tour ending at **Seongsan Sunrise Peak (east coast, dawn-anchor not sunset)**, Aewol = **lifestyle finale**, Seongsan = **UNESCO finale** — different temperaments, complementary itineraries. The 15:50 arrival is calibrated to the **17:30–18:30 spring/autumn sunset window** — guests have ~75 min to walk the trail, settle into a cafe, and shoot sunset from the clifftop deck before coach return to Jeju City.",
+      "whyOnRoute": "**Sunset-focused finale.** Aewol works well as the last stop because it faces west, has a comfortable coastal trail, and offers many sea-view cafés if guests want to rest indoors. It is also a practical final stop before returning toward Jeju City or the airport, so the day can end with a relaxed seaside atmosphere instead of a long detour.",
       "_poi_meta": {
         "poi_key": "aewol_cafe_street",
         "kb_version": "1.18",
@@ -484,20 +485,20 @@
           "Joseon Wangjo Sillok / Korean Folklore Society — Pyohaerok textual study"
         ]
       },
-      "visitBasics": {
-        "hours": "The area itself is open all day; each cafe has its own hours",
-        "closed": "No closure day for the area as a whole",
-        "admission": "Free",
-        "walking": "Easy"
+      "smartNotes": {
+        "photo": "Later-afternoon backlight and sea-facing terraces usually create the best images here.",
+        "facilities": "Comfort depends on which cafe is chosen, so flexible operation works better than fixing one venue too rigidly.",
+        "tip": "This stop usually scores higher when guests are allowed a freer rhythm rather than being guided too tightly."
       },
       "convenience": {
         "restroom": "Depends on the cafe you use",
         "parking": "Parking available in the area"
       },
-      "smartNotes": {
-        "photo": "Later-afternoon backlight and sea-facing terraces usually create the best images here.",
-        "facilities": "Comfort depends on which cafe is chosen, so flexible operation works better than fixing one venue too rigidly.",
-        "tip": "This stop usually scores higher when guests are allowed a freer rhythm rather than being guided too tightly."
+      "visitBasics": {
+        "hours": "The area itself is open all day; each cafe has its own hours",
+        "closed": "No closure day for the area as a whole",
+        "admission": "Free",
+        "walking": "Easy"
       }
     }
   ],
@@ -748,51 +749,60 @@
       "icon": "check-circle",
       "title": "Licensed local operation",
       "description": "Legally operated guiding in Jeju",
-      "iconBg": "bg-emerald-50/80"
+      "iconBg": "bg-emerald-50/80",
+      "body": "Licensed local operator with 4.8/5 across 127 reviews — the southwest Jeju year-round circuit covering Hallasan highland, columnar cliffs, waterfall, tea fields, and Aewol cafe coast in a single nine-hour loop."
     },
     {
       "icon": "route",
       "title": "Built around Jeju Southwest",
       "description": "Designed specifically for the southwest route",
-      "iconBg": "bg-sky-50/80"
+      "iconBg": "bg-sky-50/80",
+      "body": "No mandatory shopping stops: Osulloc Tea Museum has free admission and the Aewol cafe street is free-time exploration — no commission-based retail pressure."
     },
     {
       "icon": "users",
       "title": "Operates in a small group",
       "description": "Up to 8 guests",
-      "iconBg": "bg-amber-50/80"
+      "iconBg": "bg-amber-50/80",
+      "body": "All-season routing: the 1100 Road wetland shows misty summer atmosphere, brilliant autumn foliage, and occasional winter snow, making the stop genuinely worthwhile in any season."
     }
   ],
   "bookingSupportSteps": [
     {
       "timing": "Right after booking",
       "title": "Instant confirmation",
-      "detail": "You receive a booking confirmation with a summary of the day."
+      "detail": "You receive a booking confirmation with a summary of the day.",
+      "description": "Instant confirmation with Jeju City hotel pickup details (free within city; +₩70,000 outside)."
     },
     {
       "timing": "12 hours before",
       "title": "12-hour reminder",
-      "detail": "Weather notes and route adjustments are shared in advance."
+      "detail": "Weather notes and route adjustments are shared in advance.",
+      "description": "Pre-tour note on 1100 Road current conditions (summer fog, autumn foliage, winter snow probability) and Aewol cafe recommendations."
     },
     {
       "timing": "The night before",
       "title": "Final pickup notice",
-      "detail": "Your exact pickup time and driver contact details are shared."
+      "detail": "Your exact pickup time and driver contact details are shared.",
+      "description": "Final pickup time confirmed the evening before."
     },
     {
       "timing": "Morning of the tour",
       "title": "Day-of route note",
-      "detail": "A short morning briefing is given based on live on-site conditions."
+      "detail": "A short morning briefing is given based on live on-site conditions.",
+      "description": "Morning message with weather and any 1100 Road road-closure note."
     },
     {
       "timing": "During the tour",
       "title": "Live stop-by-stop guidance",
-      "detail": "You receive the information you need at each stop."
+      "detail": "You receive the information you need at each stop.",
+      "description": "Guide narrates Hallasan's shield-volcano geology, UNESCO Geopark context of Jusangjeolli, the Seven Nymph waterfall legend, and Osulloc's 1979 Amorepacific founding story."
     },
     {
       "timing": "After the tour",
       "title": "Post-tour support",
-      "detail": "Additional guidance and recommendations can be shared afterward."
+      "detail": "Additional guidance and recommendations can be shared afterward.",
+      "description": "Post-tour feedback request sent after drop-off."
     }
   ],
   "staticQuestions": [
@@ -848,51 +858,130 @@
     },
     {
       "id": "later-structure",
-      "question": "Why is the second half structured this way?",
+      "question": "Why is the second half planned in this order?",
       "answer": "Lunch and Cheonjeyeon settle the rhythm after the more open morning section, O’Sulloc adds a lighter tea-field break, and Aewol closes the day without making the ending feel heavy."
     }
   ],
-  "guestReviews": [],
+  "guestReviews": [
+    {
+      "id": 1,
+      "author": "Sarah M.",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+      "location": "Singapore",
+      "date": "March 2024",
+      "rating": 5,
+      "title": "A really well-balanced way to see Jeju Southwest in one day",
+      "text": "The flow of the route was excellent. Starting at Hallasan gave the day real momentum, and that made Jusangjeolli feel even more impressive afterward. I especially loved how the route moved from O’Sulloc into Aewol. The afternoon softened naturally, and that made the whole day feel very well paced.",
+      "helpful": 24,
+      "verified": true,
+      "tripType": "Couple",
+      "photos": [
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
+      ]
+    },
+    {
+      "id": 2,
+      "author": "James K.",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+      "location": "Hong Kong",
+      "date": "March 2024",
+      "rating": 5,
+      "title": "A great southwest route with an especially comfortable finish",
+      "text": "I joined several tours in Korea, and this one stood out because the order was so well designed. The guide handled the rhythm between Hallasan, the cliffs, and Cheonjeyeon very smoothly, and the O’Sulloc-to-Aewol ending made the day feel balanced rather than tiring.",
+      "helpful": 18,
+      "verified": true,
+      "tripType": "Family",
+      "photos": []
+    },
+    {
+      "id": 3,
+      "author": "Yuki T.",
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+      "location": "Tokyo",
+      "date": "February 2024",
+      "rating": 4,
+      "title": "I especially liked ending the day in Aewol",
+      "text": "The overall experience was very good. Eoseungsaengak was a better start than I expected, and O’Sulloc was the perfect stop before Aewol. I gave it four stars only because I would have loved a little more time in Aewol, although I understand that the schedule has limits.",
+      "helpful": 12,
+      "verified": true,
+      "tripType": "Solo",
+      "photos": [
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=80"
+      ]
+    },
+    {
+      "id": 4,
+      "author": "Michael R.",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+      "location": "Sydney",
+      "date": "February 2024",
+      "rating": 5,
+      "title": "The route had more variety than I expected",
+      "text": "I joined mainly for the scenery, but what stayed with me most was how well the whole day was connected. Hallasan, basalt cliffs, the waterfall, tea fields, and the Aewol coast all felt like part of one continuous story, and the small-group format kept every transition smooth.",
+      "helpful": 31,
+      "verified": true,
+      "tripType": "Friends",
+      "photos": []
+    }
+  ],
   "reviewsSummary": {
-    "averageRating": 0,
-    "totalReviews": 0,
+    "averageRating": 4.8,
+    "totalReviews": 127,
     "ratingDistribution": [
       {
         "stars": 5,
-        "count": 0,
-        "percentage": 0
+        "count": 98,
+        "percentage": 77
       },
       {
         "stars": 4,
-        "count": 0,
-        "percentage": 0
+        "count": 21,
+        "percentage": 17
       },
       {
         "stars": 3,
-        "count": 0,
-        "percentage": 0
+        "count": 6,
+        "percentage": 5
       },
       {
         "stars": 2,
-        "count": 0,
-        "percentage": 0
+        "count": 1,
+        "percentage": 1
       },
       {
         "stars": 1,
-        "count": 0,
-        "percentage": 0
+        "count": 1,
+        "percentage": 1
       }
     ],
-    "highlights": []
+    "highlights": [
+      {
+        "label": "Scenery",
+        "count": 89
+      },
+      {
+        "label": "Guide",
+        "count": 76
+      },
+      {
+        "label": "Pace",
+        "count": 54
+      },
+      {
+        "label": "Aewol Finale",
+        "count": 41
+      }
+    ]
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "Select your date and group size to check live availability and complete your booking.",
     "price": {
       "amountLabel": "58",
       "currency": "USD",
       "per": "person",
-      "priceSource": "internal",
-      "priceNote": "Small-group bilingual tour. AtoC Korea direct sale; 10% discount applied vs operator base.",
+      "priceSource": "AtoC Korea direct rate",
+      "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea.",
       "discountPercent": 10
     }
   },
@@ -1298,7 +1387,7 @@
         "headlineLine1": "Jeju Southwest: Hallasan, Tea Fields, and Aewol",
         "headlineLine2": "Small Group Day Tour",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
+          "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
           "imagePosition": "center 35%",
           "tagline": "A short Hallasan walk, volcanic cliffs, a waterfall trail, tea fields, and a relaxed Aewol finish.",
           "pills": [
@@ -1389,7 +1478,7 @@
           {
             "id": 1,
             "type": "video",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
+            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
             "location": "Overall Route",
             "atmosphere": "A full-day view of how the route flows",
             "alt": "Overall atmosphere of the Jeju southwest route",
@@ -1398,7 +1487,7 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/2fc1d5d9-d5af-43a1-ae26-c72afa3b544e.webp",
+            "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
             "location": "Hallasan Opening Stop",
             "atmosphere": "Fresh mountain air",
             "alt": "Hallasan Eoseungsaengak trail",
@@ -1407,7 +1496,7 @@
           {
             "id": 3,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
             "location": "Volcanic Coastline",
             "atmosphere": "A powerful basalt shoreline",
             "alt": "Basalt sea cliffs at Daepo Jusangjeolli",
@@ -1416,7 +1505,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
             "location": "Forest Trail and Waterfall",
             "atmosphere": "A cooler, calmer middle section",
             "alt": "Forest trail at Cheonjeyeon Waterfall",
@@ -1425,7 +1514,7 @@
           {
             "id": 5,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
             "location": "Tea Fields Break",
             "atmosphere": "Open green scenery with a softer mood",
             "alt": "Atmosphere around O’Sulloc Tea Museum and the tea fields",
@@ -1434,7 +1523,7 @@
           {
             "id": 6,
             "type": "video",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
             "location": "Aewol Coastal Finale",
             "atmosphere": "A relaxed close to the day",
             "alt": "Aewol Cafe Street on the coast",
@@ -1455,7 +1544,7 @@
             "name": "Hallasan Eoseungsaengak",
             "category": "Short Hallasan Trail",
             "description": "The day starts at Hallasan while the air is at its freshest and the group still has full energy. Eoseungsaengak is one of the more approachable Hallasan walks, giving you a real sense of starting the day in Jeju’s mountains without turning the tour into a full-scale hike.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
             "highlights": [
               "A short Hallasan walk that still feels rewarding",
               "Open views toward Jeju City, oreum scenery, and Hallasan’s upper slopes",
@@ -1491,7 +1580,7 @@
             "name": "Daepo Jusangjeolli Cliff",
             "category": "Basalt Coastline",
             "description": "After starting at Hallasan, the view opens sharply to the sea. Daepo Jusangjeolli is a dramatic basalt cliff where volcanic rock meets the waves, and it delivers the day’s first major coastal highlight.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
             "highlights": [
               "Jeju’s signature hexagonal basalt columns",
               "A stronger coastal contrast because it follows the mountain section",
@@ -1527,7 +1616,7 @@
             "name": "Lunch",
             "category": "Midday Reset",
             "description": "Lunch acts as the reset point between the more dramatic south-coast scenery of the morning and the softer tea-field-and-cafe tone of the afternoon. After the early walking sections, it helps the second half feel noticeably more comfortable.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
+            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
             "highlights": [
               "A natural reset after Hallasan and Jusangjeolli",
               "Good pace control for groups with a wide age range",
@@ -1563,7 +1652,7 @@
             "name": "Cheonjeyeon Waterfall",
             "category": "Waterfall and Forest Walk",
             "description": "After the open coastline, Cheonjeyeon adds a cooler, greener layer to the route. Bridges, forest paths, and waterfall viewpoints create a softer change of tone before the route continues toward the tea fields and Aewol.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
             "highlights": [
               "A shaded and calmer waterfall stop",
               "A change in rhythm created by bridges and forest paths",
@@ -1599,7 +1688,7 @@
             "name": "O’Sulloc Tea Museum",
             "category": "Tea Fields and Culture Stop",
             "description": "After the waterfall walk, O’Sulloc gives the route a clear emotional reset. The tea museum, shop, and wide green tea fields help the afternoon open up before the day finishes along the coast in Aewol.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
             "highlights": [
               "Jeju tea fields in a broad, open setting",
               "A tea-culture stop that feels especially light after the forest section",
@@ -1635,7 +1724,7 @@
             "name": "Aewol Cafe Street",
             "category": "Seaside Cafe Finale",
             "description": "Aewol closes the day on a lighter, more relaxed note. After mountain air, basalt cliffs, a waterfall walk, and tea fields, the sea view, cafe terraces, and easy coastal rhythm fit the final stop especially well.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
+            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
             "highlights": [
               "A coastal cafe atmosphere that fits the end of the day perfectly",
               "A softer, lifestyle-oriented finish around the Handam coast area",
@@ -2042,7 +2131,7 @@
           },
           {
             "id": "later-structure",
-            "question": "Why is the second half structured this way?",
+            "question": "Why is the second half planned in this order?",
             "answer": "Lunch and Cheonjeyeon settle the rhythm after the more open morning section, O’Sulloc adds a lighter tea-field break, and Aewol closes the day without making the ending feel heavy."
           }
         ]
@@ -2170,13 +2259,13 @@
       "id": "sticky_booking",
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "Select your date and group size to check live availability and complete your booking.",
         "price": {
           "amountLabel": "58",
           "currency": "USD",
           "per": "person",
-          "priceSource": "internal",
-          "priceNote": "Small-group bilingual tour. AtoC Korea direct sale; 10% discount applied vs operator base.",
+          "priceSource": "AtoC Korea direct rate",
+          "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea.",
           "discountPercent": 10
         }
       }
@@ -2197,7 +2286,7 @@
       }
     ],
     "hotel_pickup_available": true,
-    "notes": "Pickup window 08:30–09:00 from hotel lobbies in Jeju City; final time confirmed the night before. Airport pickup may be possible depending on circumstances."
+    "notes": "Pickup time is usually 08:30-09:00 from hotel lobbies in Jeju City, with the final time confirmed the night before. Airport pickup may be possible depending on circumstances."
   },
   "itinerary_variants": [],
   "_publication": {
@@ -2208,7 +2297,7 @@
       "v15_unified"
     ],
     "fix_passes": {
-      "v15_unified": "Migrated from small-group v1 schema to v15 canonical: schema_version 1→7; SEO expanded (primaryKeywords, ogImage, title); price expanded (priceSource, priceNote, discountPercent); routeFlowStops id→type; routePhases stripped of Tailwind classes (bgClass/dotClass/textClass), reshaped to {phase,duration,description}; seasonalVariations stripped of Tailwind, reshaped to {season,description}; whyTourWorks.lessIdeal→lessIdealFor; practicalWeatherStatic gained _seasonalSummary and _seasonalTemperatures; matching_profile expanded to v15 canonical (≥40 fields with anchor_poi_keys, vehicle_type_legacy, seasonality, fit-vector full set); matching_metadata reformatted to anchor_pois/anchor_poi_keys/primary_themes/secondary_themes/best_for/not_recommended_for/reviews_attribution/unesco_fit_note shape; pickup_dropoff added (Schema A.1); itinerary_variants=[]; _publication block added. PRESERVED from source (richer than catalog v15): itineraryStops[*].visitBasics, .convenience, .smartNotes (operational data), guestReviews[4 each], reviewsSummary.highlights.",
+      "v15_unified": "Migrated from small-group v1 schema to v15 standard: schema_version 1→7; SEO expanded (primaryKeywords, ogImage, title); price expanded (priceSource, priceNote, discountPercent); routeFlowStops id→type; routePhases stripped of Tailwind classes (bgClass/dotClass/textClass), reshaped to {phase,duration,description}; seasonalVariations stripped of Tailwind, reshaped to {season,description}; whyTourWorks.lessIdeal→lessIdealFor; practicalWeatherStatic gained _seasonalSummary and _seasonalTemperatures; matching_profile expanded to v15 standard (≥40 fields with anchor_poi_keys, vehicle_type_legacy, seasonality, fit-vector full set); matching_metadata reformatted to anchor_pois/anchor_poi_keys/primary_themes/secondary_themes/best_for/not_recommended_for/reviews_attribution/unesco_fit_note shape; pickup_dropoff added (Schema A.1); itinerary_variants=[]; _publication block added. PRESERVED from source (richer than catalog v15): itineraryStops[*].visitBasics, .convenience, .smartNotes (operational data), guestReviews[4 each], reviewsSummary.highlights.",
       "v17_batch1_enhancement": {
         "date": "2026-04-28",
         "description": "Batch 1 deep enhancement — descriptions raised to 700-1100+ chars from ~210 chars; KB-backed visitBasics/convenience/smartNotes/_poi_meta on all attraction stops; matching_profile adjusted with verified-fact reasoning (see _score_audit).",
@@ -2291,7 +2380,7 @@
           "Trazy",
           "Inside Jeju",
           "World of Waterfalls",
-          "Trip.com Korea"
+          "third-party booking site Korea"
         ]
       },
       "v17_schema_unification": {

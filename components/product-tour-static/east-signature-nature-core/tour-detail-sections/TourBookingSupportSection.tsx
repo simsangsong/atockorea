@@ -203,7 +203,6 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
                 <Icon className={cn("h-3.5 w-3.5", theme.iconColor)} strokeWidth={1.8} />
               </div>
               <h3 className="relative text-[12px] font-semibold tracking-tight text-foreground leading-snug">{item.title}</h3>
-              <p className="relative mt-0.5 text-[11px] text-muted-foreground leading-relaxed">{item.description}</p>
             </div>
           );
         })}

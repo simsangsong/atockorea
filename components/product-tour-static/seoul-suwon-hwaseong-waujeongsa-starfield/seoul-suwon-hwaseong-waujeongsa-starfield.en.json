@@ -744,31 +744,47 @@
     }
   },
   "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "Hongik University Station Exit 4",
+        "order": 1,
         "time": "08:30",
-        "note": "First Seoul meeting point; please arrive 10 minutes early."
+        "name": "Hongik Univ. Station (Exit 4)",
+        "type": "station",
+        "note": "First Seoul meeting point; please arrive 10 minutes early.",
+        "lat": 37.5573,
+        "lng": 126.925
       },
       {
-        "name": "Myeongdong Station",
+        "order": 2,
         "time": "09:00",
-        "note": "Second Seoul meeting point."
+        "name": "Myeongdong Station",
+        "type": "station",
+        "note": "Second Seoul meeting point.",
+        "lat": 37.5636,
+        "lng": 126.9847
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
+        "order": 1,
         "name": "Myeongdong Station",
-        "note": "Standard Seoul drop-off point."
+        "type": "station",
+        "note": "Standard Seoul drop-off point.",
+        "lat": 37.5636,
+        "lng": 126.9847
       },
       {
-        "name": "Hongik University Station",
-        "note": "Standard Seoul drop-off point."
+        "order": 2,
+        "name": "Hongik Univ. Station",
+        "type": "station",
+        "note": "Standard Seoul drop-off point.",
+        "lat": 37.5573,
+        "lng": 126.925
       }
     ],
-    "hotel_pickup_available": false,
-    "notes": "Return time depends on traffic and is typically between 18:00 and 19:00. Drop-off order may be adjusted slightly for operational efficiency. Please arrive at least 10 minutes early at your selected meeting point. This is a fixed-meeting-point format, not hotel pickup."
+    "notes": [
+      "Return time depends on traffic and is typically between 18:00 and 19:00. Drop-off order may be adjusted slightly for operational efficiency. Please arrive at least 10 minutes early at your selected meeting point. This is a fixed-meeting-point format, not hotel pickup."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,

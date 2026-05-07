@@ -805,29 +805,43 @@
     }
   },
   "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "弘大入口駅8番出口",
-        "time": "07:00"
+        "order": 1,
+        "time": "07:00",
+        "name": "弘大入口駅 8番出口",
+        "type": "station",
+        "lat": 37.5573,
+        "lng": 126.925
       },
       {
-        "name": "明洞駅4番出口",
-        "time": "07:30"
+        "order": 2,
+        "time": "07:30",
+        "name": "明洞駅 4番出口",
+        "type": "station",
+        "lat": 37.5636,
+        "lng": 126.9847
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
-        "name": "弘大入口駅8番出口",
-        "approx_time": "19:00"
+        "order": 1,
+        "name": "弘大入口駅 8番出口",
+        "type": "station",
+        "lat": 37.5573,
+        "lng": 126.925
       },
       {
-        "name": "明洞駅4番出口",
-        "approx_time": "19:00"
+        "order": 2,
+        "name": "明洞駅 4番出口",
+        "type": "station",
+        "lat": 37.5636,
+        "lng": 126.9847
       }
     ],
-    "hotel_pickup_available": false,
-    "notes": "10分前までにお越しください。遅刻の場合は参加できず、返金不可となる場合があります。"
+    "notes": [
+      "Arrive 10 minutes early. Latecomers cannot be accommodated and are non-refundable."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,
@@ -838,7 +852,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gangwon_seoraksan",
     "vehicle_type": "coach",
-    "duration_hours": 12.0,
+    "duration_hours": 12,
     "region_tags": [
       "gangwon_seoraksan",
       "gangwon_sokcho"
@@ -859,15 +873,15 @@
     ],
     "pace_level": 0.6,
     "walking_level": 0.65,
-    "scenic_level": 1.0,
-    "photo_level": 1.0,
+    "scenic_level": 1,
+    "photo_level": 1,
     "culture_level": 0.4,
     "relax_level": 0.6,
     "first_time_fit": 0.85,
     "family_fit": 0.65,
     "senior_fit": 0.4,
-    "couple_fit": 1.0,
-    "solo_traveler_fit": 1.0,
+    "couple_fit": 1,
+    "solo_traveler_fit": 1,
     "active_traveler_fit": 0.8,
     "adult_family_fit": 0.8,
     "family_with_teens_fit": 0.8,
@@ -880,10 +894,10 @@
     "same_day_flight_fit": 0.2,
     "rain_fit": 0.6,
     "value_for_money_fit": 0.85,
-    "iconic_landmark_fit": 1.0,
+    "iconic_landmark_fit": 1,
     "cafe_fit": 0.4,
-    "food_fit": 1.0,
-    "nature_fit": 1.0,
+    "food_fit": 1,
+    "nature_fit": 1,
     "beach_fit": 0.85,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.4,
@@ -897,9 +911,9 @@
     "comfort_level": 0.6,
     "budget_fit": 0.6,
     "premium_fit": 0.4,
-    "small_group_fit": 1.0,
+    "small_group_fit": 1,
     "private_fit": 0.2,
-    "bus_fit": 1.0,
+    "bus_fit": 1,
     "price_band": "mid",
     "pickup_base": "seoul_central",
     "return_time_band": "20:00-21:30",
@@ -939,46 +953,46 @@
     "customizable_route_fit": 0.1,
     "flexibility_fit": 0.3,
     "history_culture_fit": 0.5,
-    "autumn_foliage_fit": 1.0,
-    "mountain_fit": 1.0,
+    "autumn_foliage_fit": 1,
+    "mountain_fit": 1,
     "seasonal_fit": 0.95,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "seoul_day_trip_pair_fit": 1.0,
-    "seoul_central_hotel_pickup_fit": 1.0,
-    "return_to_seoul_central_fit": 1.0,
-    "day_trip_2_3_hour_drive_each_way_fit": 1.0,
-    "small_group_format_fit": 1.0,
-    "fixed_schedule_format_fit": 1.0,
-    "affordable_format_vs_charter_fit": 1.0,
-    "solo_traveler_friendly_fit": 1.0,
-    "mountain_to_ocean_pivot_fit": 1.0,
-    "unesco_biosphere_reserve_visit_fit": 1.0,
-    "iucn_green_list_protected_area_fit": 1.0,
-    "iucn_category_ii_national_park_fit": 1.0,
-    "third_highest_peak_in_korea_anchor_fit": 1.0,
-    "world_largest_seated_bronze_buddha_fit": 1.0,
-    "jogye_order_zen_temple_visit_fit": 1.0,
-    "long_tailed_goral_conservation_anchor_fit": 1.0,
-    "endangered_species_special_protection_zone_fit": 1.0,
-    "seoul_to_east_sea_inje_yangyang_tunnel_fit": 1.0,
-    "north_korean_diaspora_food_fit": 1.0,
-    "abai_village_korean_war_refugee_fit": 1.0,
-    "korea_only_remaining_displaced_settlement_fit": 1.0,
-    "korea_only_beach_ferris_wheel_fit": 1.0,
-    "sokcho_eye_ferris_wheel_anchor_fit": 1.0,
-    "dakgangjeong_invention_origin_market_fit": 1.0,
-    "sulbbang_sokcho_only_specialty_fit": 1.0,
-    "east_sea_coastal_market_fit": 1.0,
+    "seoul_day_trip_pair_fit": 1,
+    "seoul_central_hotel_pickup_fit": 1,
+    "return_to_seoul_central_fit": 1,
+    "day_trip_2_3_hour_drive_each_way_fit": 1,
+    "small_group_format_fit": 1,
+    "fixed_schedule_format_fit": 1,
+    "affordable_format_vs_charter_fit": 1,
+    "solo_traveler_friendly_fit": 1,
+    "mountain_to_ocean_pivot_fit": 1,
+    "unesco_biosphere_reserve_visit_fit": 1,
+    "iucn_green_list_protected_area_fit": 1,
+    "iucn_category_ii_national_park_fit": 1,
+    "third_highest_peak_in_korea_anchor_fit": 1,
+    "world_largest_seated_bronze_buddha_fit": 1,
+    "jogye_order_zen_temple_visit_fit": 1,
+    "long_tailed_goral_conservation_anchor_fit": 1,
+    "endangered_species_special_protection_zone_fit": 1,
+    "seoul_to_east_sea_inje_yangyang_tunnel_fit": 1,
+    "north_korean_diaspora_food_fit": 1,
+    "abai_village_korean_war_refugee_fit": 1,
+    "korea_only_remaining_displaced_settlement_fit": 1,
+    "korea_only_beach_ferris_wheel_fit": 1,
+    "sokcho_eye_ferris_wheel_anchor_fit": 1,
+    "dakgangjeong_invention_origin_market_fit": 1,
+    "sulbbang_sokcho_only_specialty_fit": 1,
+    "east_sea_coastal_market_fit": 1,
     "differentiates_from_dmz_day_trip": true,
     "differentiates_from_nami_morning_calm_petite_france": true,
     "differentiates_from_pocheon_three_pillar_day_trip": true,
@@ -1926,8 +1940,8 @@
               "reasoning": "VERIFIED higher — Seoraksan IS a UNESCO Biosphere Reserve since August 1982 (Korea's only one). NOT a World Heritage Site (only on tentative list). Calibrated up to 0.4 — Biosphere Reserve carries weight but isn't the World Heritage gold standard."
             },
             "iconic_landmark_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified maintained — Korea's #1 most-loved national park, world's largest seated bronze Buddha. Maintained at 1.0."
             },
             "first_time_fit": {
@@ -1946,33 +1960,33 @@
               "reasoning": "VERIFIED — Fix 1 time-weighted: Seoul departure 15 × 1.0 (transit) = 15, Seoraksan 180 × 0.05 = 9, Sokcho Market 75 × 0.5 = 37.5, Sokcho Beach 75 × 0.0 = 0, Lunch 30 × 0.9 = 27, Return 150 × 1.0 = 150, transit-other 195 × 1.0 = 195. Total indoor 433.5 / 720 min = 0.60 with full transit; substantive only 73.5 / 360 = 0.20. Catalog value 0.15 (slight upward from prior 0.10 — better reflects market interior weight)."
             },
             "weather_sensitivity": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.9,
               "reasoning": "Verified — Seoraksan cable car closes in high wind / heavy rain / fog (no view); Sokcho Beach is fully exposed; Sokcho Market is the only weather-protected fallback. Heavy-outdoor day. Slight markdown to 0.9 (very high but Sokcho Market provides partial fallback)."
             },
             "scenic_level": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified maintained — Korea's most iconic mountain + East Sea coast. Maintained at 1.0."
             },
             "photo_level": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified maintained — Tongildaebul Buddha + cable-car panorama + East Sea + Sokcho Eye Ferris Wheel. Maintained at 1.0."
             },
             "nature_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified maintained — Korea's first UNESCO Biosphere Reserve. Maintained at 1.0."
             },
             "autumn_foliage_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Seoraksan autumn foliage (October-early November) is Korea's most famous foliage destination, with cable-car-framed granite peaks. Was unset. Maximum 1.0."
             },
             "mountain_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Daecheongbong 1,708m (Korea's 3rd highest), 30 peaks, Ulsanbawi granite formation. Catalog-leading mountain content. Was unset. Maximum 1.0."
             },
             "seasonal_fit": {
@@ -1986,18 +2000,18 @@
               "reasoning": "VERIFIED — Sokcho Beach is one of Korea's representative East Sea beaches (75-min stop). Slight upward from 0.8 to 0.85 — beach is included but not the day's centerpiece (Seoraksan is)."
             },
             "food_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified maintained — Sokcho Tourist Fishery Market is Gangwon's signature food market (dakgangjeong, squid sundae, abai sundae). Maintained at 1.0."
             },
             "small_group_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified maintained — small-group coach format with driver-guide. Maintained at 1.0."
             },
             "bus_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified maintained — coach vehicle. Maintained at 1.0."
             },
             "premium_fit": {

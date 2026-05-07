@@ -718,7 +718,12 @@
           "imageErrorBody": "无法加载行程预览图。请检查网络后重试。",
           "tryAgain": "重试",
           "matchMetaRowRatingAria": "5 分制 {rating} 分，基于 {count} 条公开评价",
-          "groupMaxParam": "最多{n}人"
+          "groupMaxParam": "最多{n}人",
+          "emptyBadge": "行程匹配预览",
+          "emptyTitle": "描述您的行程，找到最适合您的方案",
+          "emptyBody": "告诉我们您的偏好，我们将立即为您匹配最佳方案 — 通常在3秒内。",
+          "emptyStartCta": "开始匹配",
+          "emptyFooter": "匹配结果旁还会显示私人和传统巴士选项。"
         },
         "destinations": {
           "eyebrow": "精选目的地",
@@ -870,7 +875,7 @@
           "reviewCardStarsAria": "5 分制 {rating} 分"
         },
         "finalCtaBlock": {
-          "title": "准备更聪明地规划济州行程了吗？",
+          "title": "准备更聪明地规划韩国行程了吗？",
           "subtitle": "从偏好出发，找到最适合您的行程类型。",
           "trust1RatedParam": "{rating} 分",
           "trust1Fallback": "深受客人喜爱",

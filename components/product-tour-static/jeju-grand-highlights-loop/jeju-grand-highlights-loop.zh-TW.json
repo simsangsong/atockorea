@@ -97,32 +97,38 @@
     {
       "icon": "camera",
       "label": "拍照潛力",
-      "value": "高"
+      "value": "高",
+      "level": 5
     },
     {
       "icon": "mountain",
       "label": "景點豐富度",
-      "value": "極高"
+      "value": "極高",
+      "level": 5
     },
     {
       "icon": "footprints",
       "label": "步行強度",
-      "value": "中等偏高"
+      "value": "中等偏高",
+      "level": 4
     },
     {
       "icon": "cloud-rain",
       "label": "雨天適合度",
-      "value": "中等"
+      "value": "中等",
+      "level": 3
     },
     {
       "icon": "users",
       "label": "親子適合度",
-      "value": "中等"
+      "value": "中等",
+      "level": 3
     },
     {
       "icon": "gauge",
       "label": "行程節奏",
-      "value": "緊湊"
+      "value": "緊湊",
+      "level": 3
     }
   ],
   "galleryItems": [
@@ -262,6 +268,21 @@
           "VisitJeju — Daepo Jusangjeolli",
           "Korea Geological Survey — Jeju basalt formation studies"
         ]
+      },
+      "smartNotes": {
+        "photo": "Wave direction, spray, and side light can change the mood quickly, so wide coastal framing works especially well here.",
+        "facilities": "The entrance area is well equipped, and the viewpoint path itself is relatively straightforward.",
+        "tip": "Even on a sunny day, the coast usually feels colder and windier than inland Jeju."
+      },
+      "convenience": {
+        "restroom": "Entrance area",
+        "parking": "Parking available (paid lot)"
+      },
+      "visitBasics": {
+        "hours": "09:00–18:00 (last entry 17:40)",
+        "closed": "Open year-round",
+        "admission": "KRW 2,000 adults / KRW 1,000 children and teens",
+        "walking": "Easy to moderate"
       }
     },
     {
@@ -286,7 +307,22 @@
         "步行至正房瀑布入口 — 約5分鐘",
         "集合時間 — 約5分鐘"
       ],
-      "whyOnRoute": "西歸浦的市中心位置讓**正房瀑布成為下一個步行可達的景點**（午餐與第4站之間無需搭車）——相較於中文地區的午餐，節省約15分鐘行程時間。白帶魚 + 黑豬 + 鮑魚是濟州三大代表性食材，均在當地捕撈或飼養——旅客一頓飯即可完整體驗全日的飲食文化。用餐節奏也讓旅客在下午攀登城山日出峰前，得以稍作喘息，恢複上午漢拏山與海岸步行的體力。"
+      "whyOnRoute": "西歸浦的市中心位置讓**正房瀑布成為下一個步行可達的景點**（午餐與第4站之間無需搭車）——相較於中文地區的午餐，節省約15分鐘行程時間。白帶魚 + 黑豬 + 鮑魚是濟州三大代表性食材，均在當地捕撈或飼養——旅客一頓飯即可完整體驗全日的飲食文化。用餐節奏也讓旅客在下午攀登城山日出峰前，得以稍作喘息，恢複上午漢拏山與海岸步行的體力。",
+      "smartNotes": {
+        "photo": "Since most of the day centers on landscapes, food photos can help vary the visual rhythm of the route.",
+        "facilities": "Dining-related facilities are usually more than sufficient.",
+        "tip": "It is better to eat at a comfortable pace here than to rush and lose energy for the afternoon."
+      },
+      "convenience": {
+        "restroom": "Inside the restaurant",
+        "parking": "Parking available"
+      },
+      "visitBasics": {
+        "hours": "Depends on restaurant operating hours",
+        "closed": "Varies by venue",
+        "admission": "Meal is paid on site unless otherwise specified",
+        "walking": "Minimal"
+      }
     },
     {
       "number": 4,
@@ -377,6 +413,21 @@
           "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
           "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
         ]
+      },
+      "smartNotes": {
+        "photo": "Rather than photographing only the summit, wider compositions that include both the crater and coastline usually feel more rewarding.",
+        "facilities": "Facilities at the base area are well developed.",
+        "tip": "Crowds, weather, and group fitness level can all affect how demanding and satisfying the summit experience feels."
+      },
+      "convenience": {
+        "restroom": "Lower area and surrounding facilities",
+        "parking": "Large parking lot available"
+      },
+      "visitBasics": {
+        "hours": "Paid entry hours may vary by season",
+        "closed": "Closed on the first Monday of each month (or the following day if it falls on a public holiday)",
+        "admission": "KRW 5,000 adults / KRW 2,500 children",
+        "walking": "Moderate to moderately demanding if you choose to summit"
       }
     }
   ],
@@ -794,24 +845,24 @@
       "jusangjeolli",
       "hallim_park"
     ],
-    "pace_level": 1.0,
+    "pace_level": 1,
     "walking_level": 0.8,
-    "scenic_level": 1.0,
-    "photo_level": 1.0,
+    "scenic_level": 1,
+    "photo_level": 1,
     "culture_level": 0.4,
     "relax_level": 0.4,
-    "first_time_fit": 1.0,
+    "first_time_fit": 1,
     "family_fit": 0.8,
     "senior_fit": 0.6,
-    "couple_fit": 1.0,
+    "couple_fit": 1,
     "active_traveler_fit": 0.8,
-    "one_day_fit": 1.0,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.4,
     "rain_fit": 0.5,
-    "value_for_money_fit": 1.0,
-    "iconic_landmark_fit": 1.0,
+    "value_for_money_fit": 1,
+    "iconic_landmark_fit": 1,
     "cafe_fit": 0.2,
-    "adult_family_fit": 1.0,
+    "adult_family_fit": 1,
     "young_kids_fit": 0.5,
     "senior_active_fit": 0.8,
     "senior_general_fit": 0.6,
@@ -825,7 +876,7 @@
     "comfort_level": 0.4,
     "budget_fit": 0.6,
     "premium_fit": 0.5,
-    "small_group_fit": 1.0,
+    "small_group_fit": 1,
     "private_fit": 0.2,
     "bus_fit": 0.2,
     "price_band": "mid",
@@ -882,116 +933,116 @@
     "destination_region": "jeju",
     "vehicle_type": "minicoach",
     "vehicle_type_legacy": "minicoach",
-    "duration_hours": 10.0,
+    "duration_hours": 10,
     "anchor_poi_keys": [
       "seongsan_ilchulbong",
       "manjanggul_cave",
       "jusangjeolli"
     ],
     "pickup_base_normalized": "jeju_city",
-    "unesco_fit": 1.0,
-    "family_with_teens_fit": 1.0,
+    "unesco_fit": 1,
+    "family_with_teens_fit": 1,
     "solo_traveler_fit": 0.85,
     "food_fit": 0.6,
-    "nature_fit": 1.0,
+    "nature_fit": 1,
     "beach_fit": 0.6,
     "nightlife_fit": 0.2,
-    "no_shopping_fit": 1.0,
+    "no_shopping_fit": 1,
     "intangible_heritage_fit": 0.85,
     "seasonality": "year_round",
     "profile_format": "small_group_fixed_itinerary",
     "private_tour_fit": 0.05,
-    "fixed_itinerary_fit": 1.0,
+    "fixed_itinerary_fit": 1,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
-    "first_time_jeju_fit": 1.0,
-    "jeju_highlights_fit": 1.0,
-    "island_wide_fit": 1.0,
+    "first_time_jeju_fit": 1,
+    "jeju_highlights_fit": 1,
+    "island_wide_fit": 1,
     "north_jeju_fit": 0.85,
-    "south_jeju_fit": 1.0,
-    "east_jeju_fit": 1.0,
+    "south_jeju_fit": 1,
+    "east_jeju_fit": 1,
     "west_jeju_fit": 0.3,
     "central_jeju_fit": 0.6,
-    "unesco_taste_fit": 1.0,
-    "world_natural_heritage_fit": 1.0,
-    "biosphere_reserve_fit": 1.0,
-    "global_geopark_fit": 1.0,
-    "triple_unesco_fit": 1.0,
-    "volcano_geology_fit": 1.0,
-    "columnar_jointing_fit": 1.0,
+    "unesco_taste_fit": 1,
+    "world_natural_heritage_fit": 1,
+    "biosphere_reserve_fit": 1,
+    "global_geopark_fit": 1,
+    "triple_unesco_fit": 1,
+    "volcano_geology_fit": 1,
+    "columnar_jointing_fit": 1,
     "parasitic_cone_fit": 0.95,
-    "tuff_cone_fit": 1.0,
-    "surtseyan_eruption_fit": 1.0,
+    "tuff_cone_fit": 1,
+    "surtseyan_eruption_fit": 1,
     "lava_flow_fit": 0.9,
-    "shield_volcano_fit": 1.0,
-    "geological_education_fit": 1.0,
+    "shield_volcano_fit": 1,
+    "geological_education_fit": 1,
     "natural_monument_anchor_count": 3,
-    "waterfall_fit": 1.0,
-    "coastal_waterfall_fit": 1.0,
-    "ocean_falling_waterfall_fit": 1.0,
-    "asia_unique_landform_fit": 1.0,
+    "waterfall_fit": 1,
+    "coastal_waterfall_fit": 1,
+    "ocean_falling_waterfall_fit": 1,
+    "asia_unique_landform_fit": 1,
     "haenyeo_culture_fit": 0.85,
     "wwii_history_fit": 0.7,
     "japanese_colonial_history_fit": 0.7,
     "qin_dynasty_legend_fit": 0.85,
     "place_name_etymology_fit": 0.85,
-    "yeongjusipgyeong_fit": 1.0,
+    "yeongjusipgyeong_fit": 1,
     "korean_fir_belt_fit": 0.85,
     "endemic_flora_fit": 0.85,
     "biodiversity_fit": 0.95,
-    "national_park_fit": 1.0,
+    "national_park_fit": 1,
     "nature_walk_fit": 0.85,
     "scenic_drive_fit": 0.95,
-    "coastal_cliff_fit": 1.0,
-    "ocean_view_fit": 1.0,
+    "coastal_cliff_fit": 1,
+    "ocean_view_fit": 1,
     "tide_dependent_fit": 0.7,
     "high_tide_spectacle_fit": 0.85,
     "walking_level_fit": 0.65,
     "stair_climbing_fit": 0.6,
     "trail_walking_fit": 0.85,
     "elevation_gain_total_m": 340,
-    "moderate_mobility_fit": 1.0,
+    "moderate_mobility_fit": 1,
     "low_intensity_fit": 0.85,
     "senior_friendly_fit": 0.7,
     "stroller_friendly_fit": 0.4,
     "wheelchair_accessible_anchor_fit": 0.4,
     "first_time_korea_fit": 0.85,
-    "first_time_jeju_priority_fit": 1.0,
+    "first_time_jeju_priority_fit": 1,
     "small_family_fit": 0.85,
     "senior_couple_fit": 0.85,
     "honeymoon_fit": 0.9,
     "history_lover_fit": 0.85,
-    "geology_enthusiast_fit": 1.0,
-    "photographer_fit": 1.0,
-    "instagrammable_fit": 1.0,
+    "geology_enthusiast_fit": 1,
+    "photographer_fit": 1,
+    "instagrammable_fit": 1,
     "group_size_min": 2,
     "group_size_max": 14,
-    "small_group_van_fit": 1.0,
+    "small_group_van_fit": 1,
     "calm_pace_fit": 0.7,
     "active_pace_fit": 0.85,
     "checkbox_sightseeing_fit": 0.4,
     "deep_dwell_fit": 0.85,
-    "balanced_pace_fit": 1.0,
-    "language_english_fit": 1.0,
+    "balanced_pace_fit": 1,
+    "language_english_fit": 1,
     "language_chinese_fit": 0.85,
     "language_japanese_fit": 0.5,
-    "english_guide_fit": 1.0,
-    "geology_guide_fit": 1.0,
-    "spring_fit": 1.0,
+    "english_guide_fit": 1,
+    "geology_guide_fit": 1,
+    "spring_fit": 1,
     "summer_fit": 0.85,
-    "autumn_fit": 1.0,
+    "autumn_fit": 1,
     "winter_fit": 0.7,
     "all_year_fit": 0.85,
     "off_season_fit": 0.6,
     "monsoon_fit": 0.55,
-    "best_season_spring_fit": 1.0,
-    "best_season_autumn_fit": 1.0,
+    "best_season_spring_fit": 1,
+    "best_season_autumn_fit": 1,
     "indoor_anchor_fit": 0.05,
     "fog_sensitivity": 0.6,
     "wind_sensitivity": 0.5,
     "early_start_fit": 0.85,
     "late_finish_fit": 0.7,
-    "full_day_fit": 1.0,
+    "full_day_fit": 1,
     "half_day_fit": 0.05,
     "value_priced_fit": 0.95,
     "budget_traveler_fit": 0.85,
@@ -999,15 +1050,15 @@
     "total_admission_krw_per_adult": 9000,
     "off_beaten_path_fit": 0.4,
     "crowd_avoidance_fit": 0.4,
-    "tourist_circuit_fit": 1.0,
-    "minicoach_fit": 1.0,
+    "tourist_circuit_fit": 1,
+    "minicoach_fit": 1,
     "max_pax_per_vehicle": 14,
-    "jeju_city_pickup_fit": 1.0,
+    "jeju_city_pickup_fit": 1,
     "seogwipo_pickup_fit": 0.85,
     "cruise_shore_excursion_fit": 0.55,
     "cruise_passenger_fit": 0.6,
     "korean_food_fit": 0.95,
-    "jeju_local_cuisine_fit": 1.0,
+    "jeju_local_cuisine_fit": 1,
     "galchi_fit": 0.95,
     "black_pig_heritage_fit": 0.85,
     "seafood_fit": 0.95,
@@ -1022,11 +1073,11 @@
     "is_anchor_for_first_time_jeju": true,
     "catalog_position": "first_time_jeju_intro_loop",
     "competing_tours_count": 3,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
@@ -1891,21 +1942,84 @@
     }
   ],
   "pickup_dropoff": {
-    "type": "hotel_lobby",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "濟州市各飯店大廳",
-        "time": "08:00–08:30"
+        "order": 1,
+        "time": "08:30",
+        "name": "濟州海洋套房飯店",
+        "type": "hotel",
+        "note": "請在飯店大廳等候，導遊持有AtoCKorea標牌。",
+        "lat": 33.4944,
+        "lng": 126.4808
+      },
+      {
+        "order": 2,
+        "time": "08:45",
+        "name": "濟州國際機場（3F，3號門）",
+        "type": "airport",
+        "note": "3樓出發區，請跟隨指示牌前往3號門。",
+        "lat": 33.5108,
+        "lng": 126.4932
+      },
+      {
+        "order": 3,
+        "time": "08:55",
+        "name": "樂天城市飯店濟州",
+        "type": "hotel",
+        "note": "請在主大廳等候，導遊會呼叫您的姓名。",
+        "lat": 33.4963,
+        "lng": 126.4865
+      },
+      {
+        "order": 4,
+        "time": "09:05",
+        "name": "新羅免稅店（濟州店）",
+        "type": "shopping",
+        "note": "在新羅免稅店濟州店正門外與導遊會合。",
+        "lat": 33.4958,
+        "lng": 126.5252
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
-        "name": "返回濟州市飯店",
-        "approx_time": "≈ 18:00–18:30"
+        "order": 1,
+        "name": "濟州海洋套房飯店",
+        "type": "hotel",
+        "lat": 33.4944,
+        "lng": 126.4808
+      },
+      {
+        "order": 2,
+        "name": "濟州國際機場（3F，3號門）",
+        "type": "airport",
+        "lat": 33.5108,
+        "lng": 126.4932
+      },
+      {
+        "order": 3,
+        "name": "樂天城市飯店濟州",
+        "type": "hotel",
+        "lat": 33.4963,
+        "lng": 126.4865
+      },
+      {
+        "order": 4,
+        "name": "新羅免稅店（濟州店）",
+        "type": "shopping",
+        "lat": 33.4958,
+        "lng": 126.5252
+      },
+      {
+        "order": 5,
+        "name": "東門傳統市場",
+        "type": "market",
+        "lat": 33.5136,
+        "lng": 126.5296
       }
     ],
-    "hotel_pickup_available": true,
-    "notes": "因10小時全島路線而提早接送（08:00至08:30）；最終時間於前一晚確認。視情況可能提供機場接送。"
+    "notes": [
+      "返回通常在17:30–18:00左右。"
+    ]
   },
   "itinerary_variants": [],
   "_publication": {

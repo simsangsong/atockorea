@@ -201,7 +201,10 @@
         "東門接送 ~09:30 — 5分鐘",
         "沿1100號公路南行前往漢拿山 — 約50分鐘"
       ],
-      "whyOnRoute": "四個接送點覆蓋濟州市的飯店＋交通樞紐地帶（機場、市中心、舊市區、市場區），無需讓賓客橫穿城市。西→東接送順序讓巴士在約09:30抵達漢拏山，搶在遊客人潮之前。"
+      "whyOnRoute": "四個接送點覆蓋濟州市的飯店＋交通樞紐地帶（機場、市中心、舊市區、市場區），無需讓賓客橫穿城市。西→東接送順序讓巴士在約09:30抵達漢拏山，搶在遊客人潮之前。",
+      "smartNotes": {},
+      "convenience": {},
+      "visitBasics": {}
     },
     {
       "number": 2,
@@ -334,7 +337,10 @@
         "點餐 + 用餐 — 約45分鐘",
         "大巴前往天帝淵瀑布 — 約10分鐘"
       ],
-      "whyOnRoute": "南海岸定位意味著午餐後10分鐘即可抵達天帝淵瀑布——保留下午的拍照時機時機。白帶魚同時也是南濟州的地區特色（濟州是韓國最大白帶魚捕撈港），地理定位為午餐增添飲食身份認同。"
+      "whyOnRoute": "南海岸定位意味著午餐後10分鐘即可抵達天帝淵瀑布——保留下午的拍照時機時機。白帶魚同時也是南濟州的地區特色（濟州是韓國最大白帶魚捕撈港），地理定位為午餐增添飲食身份認同。",
+      "smartNotes": {},
+      "convenience": {},
+      "visitBasics": {}
     },
     {
       "number": 5,
@@ -429,6 +435,21 @@
           "VisitJeju — Daepo Jusangjeolli official listing",
           "Korea Geological Survey — Jeju volcanic flow chronology"
         ]
+      },
+      "smartNotes": {
+        "photo": "Best with high tide and rough seas — waves smashing into the columns make dramatic shots; golden hour gives best column-color contrast",
+        "facilities": "Small geological exhibition near entrance; souvenir shop",
+        "tip": "Get there before 11am or after 4pm to avoid tour-bus crowds; combine with Jungmun Saekdal Beach (5 min) for a half-day"
+      },
+      "convenience": {
+        "restroom": "At entrance/visitor center",
+        "parking": "Available near entrance"
+      },
+      "visitBasics": {
+        "hours": "09:00–18:00 (summer extended)",
+        "closed": "Open year-round (weather-dependent)",
+        "admission": "Adult 2,000 KRW / Child 1,000 KRW (low fee)",
+        "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
       }
     },
     {
@@ -506,7 +527,10 @@
         "→ 市政府 — 10分鐘，下車 — 5分鐘",
         "→ 連洞 → 涯邑 → 機場 — 依次下車"
       ],
-      "whyOnRoute": "東門市場下車 = 可選的晚餐停留。市政廳＋涯月洞＋河暨覆蓋飯店區賓客。機場下車適合當晚有晚班機的旅客（濟州國際機場末班機約21:30 = 可行）。距雪綠茶至機場40分鐘車程。"
+      "whyOnRoute": "東門市場下車 = 可選的晚餐停留。市政廳＋涯月洞＋河暨覆蓋飯店區賓客。機場下車適合當晚有晚班機的旅客（濟州國際機場末班機約21:30 = 可行）。距雪綠茶至機場40分鐘車程。",
+      "smartNotes": {},
+      "convenience": {},
+      "visitBasics": {}
     }
   ],
   "routeFlowStops": [
@@ -876,7 +900,7 @@
       {
         "stars": 4,
         "count": 39,
-        "percentage": 6.0
+        "percentage": 6
       },
       {
         "stars": 3,
@@ -910,49 +934,84 @@
     }
   },
   "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "Ocean Suites濟州（08:30）",
-        "time": "08:30"
-      },
-      {
-        "name": "濟州機場3號門3樓國內出發廳（08:45）",
-        "time": "08:45"
-      },
-      {
-        "name": "LOTTE City Hotel濟州（08:55）",
-        "time": "08:55"
-      },
-      {
-        "name": "新羅免稅店濟州（09:05）",
-        "time": "09:05"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "新羅免稅店濟州店",
-        "approx_time": "≈ 17:30"
-      },
-      {
-        "name": "濟州樂天城市飯店",
-        "approx_time": "≈ 17:35"
-      },
-      {
-        "name": "濟州國際機場",
-        "approx_time": "≈ 17:40"
-      },
-      {
+        "order": 1,
+        "time": "08:30",
         "name": "濟州海洋套房飯店",
-        "approx_time": "≈ 17:45"
+        "type": "hotel",
+        "note": "請在飯店大廳等候，導遊持有AtoCKorea標牌。",
+        "lat": 33.4944,
+        "lng": 126.4808
       },
       {
-        "name": "東門傳統市場（僅下車）",
-        "approx_time": "≈ 18:00"
+        "order": 2,
+        "time": "08:45",
+        "name": "濟州國際機場（3F，3號門）",
+        "type": "airport",
+        "note": "3樓出發區，請跟隨指示牌前往3號門。",
+        "lat": 33.5108,
+        "lng": 126.4932
+      },
+      {
+        "order": 3,
+        "time": "08:55",
+        "name": "樂天城市飯店濟州",
+        "type": "hotel",
+        "note": "請在主大廳等候，導遊會呼叫您的姓名。",
+        "lat": 33.4963,
+        "lng": 126.4865
+      },
+      {
+        "order": 4,
+        "time": "09:05",
+        "name": "新羅免稅店（濟州店）",
+        "type": "shopping",
+        "note": "在新羅免稅店濟州店正門外與導遊會合。",
+        "lat": 33.4958,
+        "lng": 126.5252
       }
     ],
-    "hotel_pickup_available": false,
-    "notes": "四個接送點：Ocean Suites（08:30）→ 濟州機場3號門（08:45）→ LOTTE City Hotel（08:55）→ 新羅免稅店（09:05）。請提早10分鐘到達，遲到超過10分鐘恕不候車。返回時五個下車點，約17:30至18:00。"
+    "return": [
+      {
+        "order": 1,
+        "name": "濟州海洋套房飯店",
+        "type": "hotel",
+        "lat": 33.4944,
+        "lng": 126.4808
+      },
+      {
+        "order": 2,
+        "name": "濟州國際機場（3F，3號門）",
+        "type": "airport",
+        "lat": 33.5108,
+        "lng": 126.4932
+      },
+      {
+        "order": 3,
+        "name": "樂天城市飯店濟州",
+        "type": "hotel",
+        "lat": 33.4963,
+        "lng": 126.4865
+      },
+      {
+        "order": 4,
+        "name": "新羅免稅店（濟州店）",
+        "type": "shopping",
+        "lat": 33.4958,
+        "lng": 126.5252
+      },
+      {
+        "order": 5,
+        "name": "東門傳統市場",
+        "type": "market",
+        "lat": 33.5136,
+        "lng": 126.5296
+      }
+    ],
+    "notes": [
+      "返回通常在17:30–18:00左右。"
+    ]
   },
   "matching_profile": {
     "profile_version": 6,
@@ -963,7 +1022,7 @@
     "destination_region": "jeju",
     "region_type": "jeju_south",
     "vehicle_type": "minicoach",
-    "duration_hours": 9.0,
+    "duration_hours": 9,
     "region_tags": [
       "jeju_south",
       "jeju_seogwipo"
@@ -991,40 +1050,40 @@
     "first_time_fit": 0.95,
     "family_fit": 0.6,
     "senior_fit": 0.55,
-    "couple_fit": 1.0,
+    "couple_fit": 1,
     "solo_traveler_fit": 0.9,
     "active_traveler_fit": 0.8,
     "adult_family_fit": 0.8,
-    "family_with_teens_fit": 1.0,
+    "family_with_teens_fit": 1,
     "young_kids_fit": 0.85,
     "senior_active_fit": 0.6,
     "senior_general_fit": 0.4,
     "mobility_friendly_fit": 0.55,
     "stroller_fit": 0.5,
-    "one_day_fit": 1.0,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.7,
     "rain_fit": 0.6,
     "value_for_money_fit": 0.85,
     "iconic_landmark_fit": 0.85,
     "cafe_fit": 0.4,
     "food_fit": 0.6,
-    "nature_fit": 1.0,
+    "nature_fit": 1,
     "beach_fit": 0.2,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.2,
-    "no_shopping_fit": 1.0,
+    "no_shopping_fit": 1,
     "local_culture_fit": 0.6,
-    "storytelling_fit": 1.0,
-    "unesco_fit": 1.0,
+    "storytelling_fit": 1,
+    "unesco_fit": 1,
     "intangible_heritage_fit": 0.55,
     "indoor_ratio": 0.25,
     "weather_sensitivity": 0.6,
     "comfort_level": 0.6,
-    "budget_fit": 1.0,
+    "budget_fit": 1,
     "premium_fit": 0.5,
-    "small_group_fit": 1.0,
+    "small_group_fit": 1,
     "private_fit": 0.2,
-    "bus_fit": 1.0,
+    "bus_fit": 1,
     "price_band": "budget",
     "pickup_base": "jeju_city",
     "return_time_band": "17:00-18:30",
@@ -1065,54 +1124,54 @@
     ],
     "profile_format": "small_group_fixed_itinerary",
     "private_tour_fit": 0.05,
-    "fixed_itinerary_fit": 1.0,
+    "fixed_itinerary_fit": 1,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
     "first_time_jeju_fit": 0.95,
-    "south_jeju_fit": 1.0,
-    "southwest_jeju_fit": 1.0,
+    "south_jeju_fit": 1,
+    "southwest_jeju_fit": 1,
     "central_jeju_fit": 0.85,
     "north_jeju_fit": 0.3,
     "east_jeju_fit": 0.05,
     "west_jeju_fit": 0.5,
-    "south_unesco_focused_fit": 1.0,
-    "south_jeju_signature_fit": 1.0,
-    "unesco_focused_tour_fit": 1.0,
-    "unesco_taste_fit": 1.0,
+    "south_unesco_focused_fit": 1,
+    "south_jeju_signature_fit": 1,
+    "unesco_focused_tour_fit": 1,
+    "unesco_taste_fit": 1,
     "unesco_anchor_count": 5,
-    "world_natural_heritage_fit": 1.0,
-    "biosphere_reserve_fit": 1.0,
-    "global_geopark_fit": 1.0,
+    "world_natural_heritage_fit": 1,
+    "biosphere_reserve_fit": 1,
+    "global_geopark_fit": 1,
     "natural_monument_anchor_count": 3,
-    "triple_natural_designation_fit": 1.0,
-    "volcano_geology_fit": 1.0,
-    "columnar_jointing_fit": 1.0,
+    "triple_natural_designation_fit": 1,
+    "volcano_geology_fit": 1,
+    "columnar_jointing_fit": 1,
     "tuff_cone_fit": 0.6,
-    "ocean_falling_waterfall_fit": 0.0,
+    "ocean_falling_waterfall_fit": 0,
     "asia_unique_landform_fit": 0.95,
-    "shield_volcano_fit": 1.0,
-    "botanical_garden_fit": 1.0,
-    "camellia_arboretum_fit": 1.0,
-    "year_round_bloom_fit": 1.0,
-    "largest_in_east_fit": 1.0,
-    "themed_garden_fit": 1.0,
-    "flower_lover_fit": 1.0,
+    "shield_volcano_fit": 1,
+    "botanical_garden_fit": 1,
+    "camellia_arboretum_fit": 1,
+    "year_round_bloom_fit": 1,
+    "largest_in_east_fit": 1,
+    "themed_garden_fit": 1,
+    "flower_lover_fit": 1,
     "hydrangea_season_anchor_fit": 0.85,
-    "tea_culture_fit": 1.0,
-    "tea_lover_fit": 1.0,
-    "amorepacific_brand_fit": 1.0,
+    "tea_culture_fit": 1,
+    "tea_lover_fit": 1,
+    "amorepacific_brand_fit": 1,
     "korean_traditional_architecture_fit": 0.4,
     "k_drama_filming_fit": 0.7,
-    "k_reality_filming_fit": 1.0,
+    "k_reality_filming_fit": 1,
     "mythology_fit": 0.85,
     "korean_folklore_fit": 0.85,
-    "qin_dynasty_legend_fit": 0.0,
+    "qin_dynasty_legend_fit": 0,
     "yeongjusipgyeong_fit": 0.7,
     "walking_level_fit": 0.7,
     "stair_climbing_fit": 0.55,
     "trail_walking_fit": 0.85,
     "elevation_gain_total_m": 200,
-    "moderate_mobility_fit": 1.0,
+    "moderate_mobility_fit": 1,
     "low_intensity_fit": 0.75,
     "senior_friendly_fit": 0.85,
     "stroller_friendly_fit": 0.65,
@@ -1122,44 +1181,44 @@
     "small_family_fit": 0.95,
     "young_kids_friendly_fit": 0.85,
     "senior_couple_fit": 0.95,
-    "honeymoon_fit": 1.0,
+    "honeymoon_fit": 1,
     "history_lover_fit": 0.85,
-    "geology_enthusiast_fit": 1.0,
-    "botanical_enthusiast_fit": 1.0,
-    "tea_enthusiast_fit": 1.0,
+    "geology_enthusiast_fit": 1,
+    "botanical_enthusiast_fit": 1,
+    "tea_enthusiast_fit": 1,
     "k_drama_fan_fit": 0.7,
-    "photographer_fit": 1.0,
-    "instagrammable_fit": 1.0,
+    "photographer_fit": 1,
+    "instagrammable_fit": 1,
     "group_size_min": 2,
     "group_size_max": 14,
-    "small_group_van_fit": 1.0,
+    "small_group_van_fit": 1,
     "calm_pace_fit": 0.95,
     "active_pace_fit": 0.55,
     "checkbox_sightseeing_fit": 0.85,
     "deep_dwell_fit": 0.85,
-    "balanced_pace_fit": 1.0,
-    "varied_terrain_fit": 1.0,
-    "language_english_fit": 1.0,
+    "balanced_pace_fit": 1,
+    "varied_terrain_fit": 1,
+    "language_english_fit": 1,
     "language_chinese_fit": 0.95,
     "language_japanese_fit": 0.7,
-    "english_guide_fit": 1.0,
-    "botanical_guide_fit": 1.0,
-    "spring_fit": 1.0,
+    "english_guide_fit": 1,
+    "botanical_guide_fit": 1,
+    "spring_fit": 1,
     "summer_fit": 0.95,
-    "autumn_fit": 1.0,
+    "autumn_fit": 1,
     "winter_fit": 0.85,
-    "all_year_fit": 1.0,
+    "all_year_fit": 1,
     "off_season_fit": 0.85,
     "monsoon_fit": 0.7,
     "best_season_winter_fit": 0.95,
-    "camellia_season_anchor_fit": 1.0,
-    "year_round_attraction_fit": 1.0,
+    "camellia_season_anchor_fit": 1,
+    "year_round_attraction_fit": 1,
     "indoor_anchor_fit": 0.5,
     "wind_sensitivity": 0.55,
     "indoor_fallback_anchor_count": 2,
     "early_start_fit": 0.85,
     "late_finish_fit": 0.7,
-    "full_day_fit": 1.0,
+    "full_day_fit": 1,
     "half_day_fit": 0.05,
     "value_priced_fit": 0.85,
     "budget_traveler_fit": 0.7,
@@ -1167,26 +1226,26 @@
     "total_admission_krw_per_adult": 16500,
     "off_beaten_path_fit": 0.4,
     "crowd_avoidance_fit": 0.4,
-    "tourist_circuit_fit": 1.0,
+    "tourist_circuit_fit": 1,
     "instagram_anchor_count": 5,
-    "minicoach_fit": 1.0,
+    "minicoach_fit": 1,
     "max_pax_per_vehicle": 14,
-    "jeju_city_pickup_fit": 1.0,
-    "airport_pickup_fit": 1.0,
-    "airport_drop_compatible_fit": 1.0,
+    "jeju_city_pickup_fit": 1,
+    "airport_pickup_fit": 1,
+    "airport_drop_compatible_fit": 1,
     "dongmun_market_drop_fit": 0.95,
-    "five_pickup_drop_points_fit": 1.0,
+    "five_pickup_drop_points_fit": 1,
     "cruise_shore_excursion_fit": 0.55,
     "cruise_passenger_fit": 0.7,
     "korean_food_fit": 0.95,
-    "jeju_local_cuisine_fit": 1.0,
-    "galchi_fit": 1.0,
+    "jeju_local_cuisine_fit": 1,
+    "galchi_fit": 1,
     "mulhoe_fit": 0.85,
     "black_pig_heritage_fit": 0.85,
     "seafood_fit": 0.95,
     "vegetarian_friendly_fit": 0.75,
     "halal_friendly_fit": 0.65,
-    "tea_tasting_fit": 1.0,
+    "tea_tasting_fit": 1,
     "photo_anchor_count": 5,
     "drone_friendly_fit": 0.5,
     "filming_location_fit": 0.85,
@@ -1196,11 +1255,11 @@
     "is_anchor_for_south_jeju_unesco": true,
     "catalog_position": "south_jeju_unesco_signature_loop",
     "competing_tours_count": 4,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
@@ -2140,7 +2199,7 @@
             {
               "stars": 4,
               "count": 39,
-              "percentage": 6.0
+              "percentage": 6
             },
             {
               "stars": 3,
@@ -2213,7 +2272,7 @@
           "_methodology": "0-1 float scale. Indoor ratio computed time-weighted from KB indoor_ratio_at_stop values per Jason's correction methodology.",
           "deltas_applied": {
             "unesco_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "Verified: 2 of 6 stops directly UNESCO — Hallasan UNESCO World Heritage (Eoseungsaengak gateway) + Daepo Jusangjeolli is on UNESCO Global Geopark list. Cheonjeyeon Falls + O'sulloc + Camellia Hill are non-UNESCO. 0.95 reflects strong UNESCO core but not pure UNESCO loop."
             },
@@ -2233,7 +2292,7 @@
               "reasoning": "Verified: 6 hero-image spots — Hallasan summit ridge, window-frame camellia (Camellia Hill signature), Seonimgyo nymph bridge over Cheonjeyeon, hexagonal basalt columns, O'sulloc tea fields. 0.95 calibrated."
             },
             "iconic_landmark_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified: 3 of 6 stops universally iconic (Hallasan, Jusangjeolli, O'sulloc); Camellia Hill regionally iconic; Cheonjeyeon Falls famous. 0.85 calibrated."
             },
@@ -2268,12 +2327,12 @@
               "reasoning": "Verified: only Cheonjeyeon Falls has direct intangible heritage (Chilseonyeo Festival, Seven Nymphs legend). Hallasan and Jusangjeolli are natural heritage but not intangible. O'sulloc tea ceremony has cultural significance but not registered intangible heritage. 0.55 calibrated."
             },
             "first_time_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "Verified: covers Hallasan UNESCO + columnar geopark + iconic waterfall + tea culture + flower garden — 5 distinct Jeju essentials. 0.95 is excellent first-Jeju overview but slightly missing food/beach themes."
             },
             "value_for_money_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified fees: Camellia Hill ₩12,000 + others mostly free or ₩2,000. Total ~₩14,000 attraction fees per adult. Strong value but Camellia Hill is the cost driver. 0.85 calibrated."
             },

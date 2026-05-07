@@ -21,6 +21,12 @@ export type PickupDropoffPoint = {
   name: string;
   type?: PickupDropoffPointType;
   note?: string;
+  lat?: number;
+  lng?: number;
+  /** Short landmark or floor/gate description shown on map card */
+  locationDetail?: string;
+  /** Absolute URL to a photo of the meeting point */
+  photo?: string;
 };
 
 export type PickupDropoffSection = {

@@ -286,6 +286,21 @@
           "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
           "Jeju Folklore Society — Omegisul brewing tradition documentation"
         ]
+      },
+      "smartNotes": {
+        "photo": "Stone walls (dolhareubang grandfathers), thatched-roof houses with smoke holes, and traditional doors are iconic Jeju shots",
+        "facilities": "Visitor information center at entrance; English maps available",
+        "tip": "Hire a free volunteer guide at the entrance for cultural context; respect that residents actually live here — don't enter homes uninvited"
+      },
+      "convenience": {
+        "restroom": "Public restrooms at village entrance",
+        "parking": "Free parking near entrance"
+      },
+      "visitBasics": {
+        "hours": "Open 24 hours (outdoor village); shops typically 09:00–17:00",
+        "closed": "Open year-round",
+        "admission": "Free for general village; some private homes charge for guided visits",
+        "walking": "Easy — flat dirt and stone paths through the village"
       }
     },
     {
@@ -356,6 +371,21 @@
           "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
           "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
         ]
+      },
+      "smartNotes": {
+        "photo": "Summit view of Hallasan to the west and Udo island to the north on clear days; haenyeo black-sand beach view from descending path",
+        "facilities": "Café (Fritz Coffee 1.3km away has best exterior views of the peak); ferry to Udo Island from Seongsan Port (1.5km/15 min walk)",
+        "tip": "All stairs but well-maintained — manageable in casual clothes; family-friendly with rest stops; sunrise visits popular but crowds gather pre-dawn"
+      },
+      "convenience": {
+        "restroom": "Available at entrance and base",
+        "parking": "Large free parking lot"
+      },
+      "visitBasics": {
+        "hours": "Mar–Apr & Sep–Oct: 05:00–19:00; May–Aug: 04:30–20:00; Nov–Feb: 06:00–18:00 (last ticketing 1 hour before closing)",
+        "closed": "Open year-round (weather closures possible)",
+        "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
+        "walking": "Moderate — 20–30 min steady stair climb (≈600 stairs); benches every few minutes for rest"
       }
     },
     {
@@ -862,37 +892,84 @@
     }
   },
   "pickup_dropoff": {
-    "type": "hotel_pickup",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "Hotel dentro de la ciudad de Jeju",
-        "time": "≈08:30 (free)"
+        "order": 1,
+        "time": "08:30",
+        "name": "Ocean Suites Jeju Hotel",
+        "type": "hotel",
+        "note": "Reúnase en el lobby del hotel. El guía lleva un cartel de AtoCKorea.",
+        "lat": 33.4944,
+        "lng": 126.4808
       },
       {
-        "name": "Hotel fuera de la ciudad de Jeju (Seogwipo/Aewol/Seongsan)",
-        "time": "Recogida más temprana; suplemento de ₩70.000"
+        "order": 2,
+        "time": "08:45",
+        "name": "Aeropuerto Internacional de Jeju (3F, Puerta 3)",
+        "type": "airport",
+        "note": "Área de salidas en el 3er piso. Siga las señales hacia la Puerta 3.",
+        "lat": 33.5108,
+        "lng": 126.4932
       },
       {
-        "name": "Aeropuerto Internacional de Jeju",
-        "time": "≈08:30"
+        "order": 3,
+        "time": "08:55",
+        "name": "LOTTE City Hotel Jeju",
+        "type": "hotel",
+        "note": "Espere en el lobby principal. El guía le llamará por su nombre.",
+        "lat": 33.4963,
+        "lng": 126.4865
+      },
+      {
+        "order": 4,
+        "time": "09:05",
+        "name": "Shilla Duty Free (Tienda Jeju)",
+        "type": "shopping",
+        "note": "Reúnase fuera de la entrada principal de Shilla Duty Free, sucursal Jeju.",
+        "lat": 33.4958,
+        "lng": 126.5252
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
-        "name": "Hotel en la ciudad de Jeju",
-        "approx_time": "≈18:00"
+        "order": 1,
+        "name": "Ocean Suites Jeju Hotel",
+        "type": "hotel",
+        "lat": 33.4944,
+        "lng": 126.4808
       },
       {
-        "name": "Mercado Tradicional Dongmun",
-        "approx_time": "≈18:00"
+        "order": 2,
+        "name": "Aeropuerto Internacional de Jeju (3F, Puerta 3)",
+        "type": "airport",
+        "lat": 33.5108,
+        "lng": 126.4932
       },
       {
-        "name": "Aeropuerto de Jeju",
-        "approx_time": "≈18:00"
+        "order": 3,
+        "name": "LOTTE City Hotel Jeju",
+        "type": "hotel",
+        "lat": 33.4963,
+        "lng": 126.4865
+      },
+      {
+        "order": 4,
+        "name": "Shilla Duty Free (Tienda Jeju)",
+        "type": "shopping",
+        "lat": 33.4958,
+        "lng": 126.5252
+      },
+      {
+        "order": 5,
+        "name": "Mercado Tradicional de Dongmun",
+        "type": "market",
+        "lat": 33.5136,
+        "lng": 126.5296
       }
     ],
-    "hotel_pickup_available": true,
-    "notes": "Recogida gratuita en la ciudad de Jeju. La recogida fuera de la ciudad añade ₩70.000. Las paradas de hortensias solo se visitan durante la floración, de finales de mayo a mediados de julio, con pico habitual a mediados de junio; confirme antes de reservar."
+    "notes": [
+      "El regreso suele ser alrededor de las 17:30–18:00."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,
@@ -903,7 +980,7 @@
     "destination_region": "jeju",
     "region_type": "jeju_east",
     "vehicle_type": "minicoach",
-    "duration_hours": 9.0,
+    "duration_hours": 9,
     "region_tags": [
       "jeju_east",
       "jeju_namwon"
@@ -933,17 +1010,17 @@
     "first_time_fit": 0.85,
     "family_fit": 0.7,
     "senior_fit": 0.6,
-    "couple_fit": 1.0,
+    "couple_fit": 1,
     "solo_traveler_fit": 0.95,
     "active_traveler_fit": 0.85,
     "adult_family_fit": 0.9,
-    "family_with_teens_fit": 1.0,
+    "family_with_teens_fit": 1,
     "young_kids_fit": 0.45,
     "senior_active_fit": 0.6,
     "senior_general_fit": 0.4,
     "mobility_friendly_fit": 0.4,
     "stroller_fit": 0.4,
-    "one_day_fit": 1.0,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.4,
     "rain_fit": 0.5,
     "value_for_money_fit": 0.75,
@@ -954,7 +1031,7 @@
     "beach_fit": 0.65,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.2,
-    "no_shopping_fit": 1.0,
+    "no_shopping_fit": 1,
     "local_culture_fit": 0.8,
     "storytelling_fit": 0.8,
     "unesco_fit": 0.95,
@@ -964,9 +1041,9 @@
     "comfort_level": 0.6,
     "budget_fit": 0.6,
     "premium_fit": 0.4,
-    "small_group_fit": 1.0,
+    "small_group_fit": 1,
     "private_fit": 0.2,
-    "bus_fit": 1.0,
+    "bus_fit": 1,
     "price_band": "mid",
     "pickup_base": "jeju_city",
     "return_time_band": "17:00-18:30",
@@ -1007,7 +1084,7 @@
     ],
     "profile_format": "small_group_fixed_itinerary",
     "private_tour_fit": 0.05,
-    "fixed_itinerary_fit": 1.0,
+    "fixed_itinerary_fit": 1,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
     "first_time_jeju_fit": 0.85,
@@ -1015,40 +1092,40 @@
     "southwest_jeju_fit": 0.1,
     "central_jeju_fit": 0.5,
     "north_jeju_fit": 0.4,
-    "east_jeju_fit": 1.0,
+    "east_jeju_fit": 1,
     "west_jeju_fit": 0.05,
-    "east_jeju_signature_fit": 1.0,
-    "east_unesco_focused_fit": 1.0,
-    "east_coast_corridor_fit": 1.0,
+    "east_jeju_signature_fit": 1,
+    "east_unesco_focused_fit": 1,
+    "east_coast_corridor_fit": 1,
     "unesco_focused_tour_fit": 0.7,
-    "unesco_taste_fit": 1.0,
+    "unesco_taste_fit": 1,
     "unesco_anchor_count": 1,
-    "unesco_world_heritage_fit": 1.0,
-    "unesco_geopark_fit": 1.0,
-    "unesco_biosphere_fit": 1.0,
-    "unesco_triple_anchor_fit": 1.0,
-    "national_folklore_heritage_fit": 1.0,
-    "joseon_heritage_fit": 1.0,
-    "natural_monument_fit": 1.0,
+    "unesco_world_heritage_fit": 1,
+    "unesco_geopark_fit": 1,
+    "unesco_biosphere_fit": 1,
+    "unesco_triple_anchor_fit": 1,
+    "national_folklore_heritage_fit": 1,
+    "joseon_heritage_fit": 1,
+    "natural_monument_fit": 1,
     "natural_monument_anchor_count": 2,
     "hydrangea_festival_anchor_count": 2,
-    "summer_flowers_hydrangea_fit": 1.0,
-    "june_peak_floral_fit": 1.0,
-    "early_summer_jeju_fit": 1.0,
+    "summer_flowers_hydrangea_fit": 1,
+    "june_peak_floral_fit": 1,
+    "early_summer_jeju_fit": 1,
     "named_seasonal_festival_anchor_count": 2,
-    "year_round_flower_park_fit": 1.0,
+    "year_round_flower_park_fit": 1,
     "garden_anchor_count": 2,
     "hydrangea_tunnel_visit": false,
-    "hydrangea_greenhouse_fallback_fit": 1.0,
+    "hydrangea_greenhouse_fallback_fit": 1,
     "multi_garden_pairing_fit": 0.7,
-    "unesco_plus_floral_combo_fit": 1.0,
+    "unesco_plus_floral_combo_fit": 1,
     "lava_tube_visit": true,
     "lava_tube_anchor_count": 1,
-    "manjanggul_alternate_fit": 1.0,
-    "tuff_cone_climb_fit": 1.0,
-    "volcanic_geology_fit": 1.0,
-    "volcano_climb_fit": 1.0,
-    "rim_view_fit": 1.0,
+    "manjanggul_alternate_fit": 1,
+    "tuff_cone_climb_fit": 1,
+    "volcanic_geology_fit": 1,
+    "volcano_climb_fit": 1,
+    "rim_view_fit": 1,
     "stair_climb_demand": 0.7,
     "physical_demand_level": 0.55,
     "leisure_traveler_fit": 0.6,
@@ -1057,13 +1134,13 @@
     "teen_kids_fit": 0.85,
     "senior_low_mobility_fit": 0.3,
     "wheelchair_fit": 0.05,
-    "pet_friendly_fit": 0.0,
-    "instagram_traveler_fit": 1.0,
-    "photographer_fit": 1.0,
+    "pet_friendly_fit": 0,
+    "instagram_traveler_fit": 1,
+    "photographer_fit": 1,
     "cultural_traveler_fit": 0.95,
     "botanical_enthusiast_fit": 0.95,
     "nature_lover_fit": 0.95,
-    "english_speaking_market_fit": 1.0,
+    "english_speaking_market_fit": 1,
     "mandarin_speaking_market_fit": 0.7,
     "japanese_speaking_market_fit": 0.7,
     "korean_speaking_market_fit": 0.05,
@@ -1071,7 +1148,7 @@
     "singapore_market_fit": 0.95,
     "hong_kong_market_fit": 0.95,
     "china_diaspora_overseas_market_fit": 0.9,
-    "china_mainland_market_fit": 0.0,
+    "china_mainland_market_fit": 0,
     "southeast_asia_market_fit": 0.85,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
@@ -1081,7 +1158,7 @@
     "per_pax_pricing_tier": "mid",
     "group_size_max": 14,
     "group_size_min": 4,
-    "lunch_included_fit": 0.0,
+    "lunch_included_fit": 0,
     "ticket_inclusion_fit": 0.5,
     "english_guide_included": true,
     "hotel_pickup_included": true,
@@ -1106,8 +1183,8 @@
     "snow_closure_risk": 0.05,
     "typhoon_disruption_risk_summer": 0.25,
     "signature_photo_count": 5,
-    "wide_landscape_fit": 1.0,
-    "macro_floral_fit": 1.0,
+    "wide_landscape_fit": 1,
+    "macro_floral_fit": 1,
     "wedding_photo_fit": 0.85,
     "couple_portrait_fit": 0.95,
     "instagram_anchor_count": 4,
@@ -1125,7 +1202,7 @@
       "vi",
       "es"
     ],
-    "korea_domestic_market_fit": 0.0,
+    "korea_domestic_market_fit": 0,
     "se_asia_market_fit": 0.95,
     "japan_market_fit": 0.85
   },
@@ -2064,7 +2141,7 @@
           "_methodology": "0-1 float scale. Indoor ratio computed time-weighted with Fix 1 methodology applied to Seongeup (30%) and Ilchul Land (30%).",
           "deltas_applied": {
             "unesco_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified: Seongsan = UNESCO World Heritage. Tour name says 'Seongeup UNESCO' but Seongeup is Korean National Folklore Cultural Heritage, NOT UNESCO. 1/6 stops actually UNESCO. 0.85 reflects strong cultural-heritage anchor + 1 UNESCO."
             },
@@ -2079,12 +2156,12 @@
               "reasoning": "Verified: Hamdeok 0.5 km flat, Seongeup ~1 km flat olle, Seongsan photo+optional climb, Micheon 365 m flat, Ilchul Land 1 km flat, Hueree 1.5–2 km flat. Total ~5 km flat. 0.55 calibrated — gentler than mechanical 0.6."
             },
             "scenic_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified: 6 distinct landscapes (turquoise beach, Joseon walled town, UNESCO peak, lava tube + gardens, hydrangea fields). 0.85 — strong but not catalog-leading (west-south tour at 0.95)."
             },
             "photo_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.9,
               "reasoning": "Verified: 6 hero shots + dedicated festival photography (hydrangea Hueree). 0.90 calibrated."
             },
@@ -2099,7 +2176,7 @@
               "reasoning": "CORRECTION using time-weighted method (Fix 1 + Batch 4 methodology): 105.75 indoor / 390 total = 0.27 with lunch; 57.75 / 330 = 0.18 without. Catalog 0.20 represents both. Mechanical 0.4 overstated."
             },
             "weather_sensitivity": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "VERIFIED 0.85 — hydrangea blooms are weather-affected; outdoor stops dominate; Hamdeok beach + Seongsan exposed. Higher than typical because of hydrangea festival's bloom-window dependency."
             },
@@ -2109,7 +2186,7 @@
               "reasoning": "DOWNGRADED — Hueree's hydrangea greenhouse is rain refuge, Micheon Cave + Seongeup hanok provide partial shelter. But Hamdeok + Seongsan + outdoor hydrangea fields all rain-vulnerable. 0.50 verified."
             },
             "first_time_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified: covers Jeju's iconic UNESCO + folk heritage + flower festival diversity. Season-locked (May–August primary). 0.85 — strong first-Jeju summer overview."
             },
@@ -2139,12 +2216,12 @@
               "reasoning": "UPGRADED — Hamdeok IS the beach component (Top 3 Jeju). Mechanical 0.4 understated. 0.65 calibrated."
             },
             "culture_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.75,
               "reasoning": "Verified: Seongeup 600-year town + Seongsan haenyeo demo + Hueree Jeju Cultural Village (traditional hanok). 3 cultural anchors, 3 nature/garden anchors. 0.75 calibrated."
             },
             "nature_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified: beach + UNESCO peak + flower park + lava tube. Strong but not catalog-leading because of substantial cultural component. 0.85."
             }

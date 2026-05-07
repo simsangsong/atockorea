@@ -25,7 +25,7 @@ export function TourFaqSection({ staticQuestions, sectionUi }: TourFaqSectionPro
         <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.faqSubtitle}</p>
       </div>
 
-      <div className="card-premium overflow-hidden divide-y divide-border/60">
+      <div className="overflow-hidden divide-y divide-border/60 rounded-[26px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
         {mainQuestions.map((q) => (
           <div key={q.id}>
             <button

@@ -260,8 +260,8 @@ export function TourPracticalDetails({
                   key={displayName}
                   className={cn(
                     "group relative shrink-0 snap-start overflow-hidden rounded-xl p-4 ring-1 transition-all duration-300",
-                    "shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_28px_-14px_rgba(26,35,50,0.16)]",
-                    "hover:-translate-y-[1px] hover:shadow-[0_2px_4px_rgba(26,35,50,0.05),0_16px_36px_-14px_rgba(26,35,50,0.22)]",
+                    "shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_14px_-4px_rgba(0,0,0,0.07)]",
+                    "hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(0,0,0,0.06),0_8px_20px_-4px_rgba(0,0,0,0.10)]",
                     "w-[min(280px,calc(100vw-3.5rem))] sm:w-[min(280px,calc(100%-1rem))]",
                     theme.card,
                     theme.ring,

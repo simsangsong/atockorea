@@ -244,7 +244,7 @@ export function TourDesktopBookingCard({
     !canBook || busy || availability.status === "checking" || availability.status === "unavailable";
 
   return (
-    <div className="card-premium overflow-visible rounded-2xl border border-border bg-white p-5 shadow-elevated">
+    <div className="overflow-visible rounded-[28px] border border-slate-200/70 bg-white/90 backdrop-blur-sm p-5 shadow-[var(--home-shadow-neutral-card)] ring-1 ring-white/80">
       {/* Price header — bold, no italic, color via currency token */}
       <div className="mb-4">
         {selectedPortLabel ? (

@@ -94,7 +94,8 @@
     {
       "icon": "camera",
       "label": "写真価値",
-      "value": "非常に高い"
+      "value": "非常に高い",
+      "level": 5
     },
     {
       "icon": "flower",
@@ -119,7 +120,8 @@
     {
       "icon": "footprints",
       "label": "歩行",
-      "value": "軽〜中程度"
+      "value": "軽〜中程度",
+      "level": 2
     }
   ],
   "galleryItems": [
@@ -259,6 +261,21 @@
           "Hallim Park ticket page (cave system + 'two-dimensional caves' classification + Natural Monument designation)",
           "https://www.expatolife.com/hallim-park-jeju-island-south-korea/ — Expatolife Hallim Park guide (cave dimensions + 17 km lava-tube system)"
         ]
+      },
+      "smartNotes": {
+        "photo": "Hydrangea Festival (June) and pink muhly (October) are peak photo seasons; lava caves with stalactite lighting are unique",
+        "facilities": "On-site restaurants, gift shop, cave museum",
+        "tip": "Last entry 90 minutes before closing; closing time depends on sunset; pair with Hyeopjae Beach (5–10 min walk)"
+      },
+      "convenience": {
+        "restroom": "Multiple restrooms throughout the park",
+        "parking": "Free parking on site"
+      },
+      "visitBasics": {
+        "hours": "Mar–May 09:00–18:30; Jun–Aug 09:00–19:00; Sep–Oct 09:00–18:30; Nov–Feb 09:00–17:30 (last admission 1 hour before close)",
+        "closed": "Open year-round",
+        "admission": "Adult 15,000 KRW / Teen 10,000 KRW / Child 9,000 KRW (online discount: ≈13,500 / 9,000 / 8,100)",
+        "walking": "Moderate — 2–3 hours of walking through 9 garden zones; mostly flat"
       }
     },
     {
@@ -334,6 +351,21 @@
           "https://heritage.unesco.or.kr/jeju-volcanic-island-and-lava-tubes/ — Korea National Heritage Service Jeju Volcanic listing",
           "https://www.peek.com/seogwipo-si-jeju-do-south-korea/r0an9mv/jeju-island-hydrangeas-a-floral-paradise/a067e9nx — Peek 'Jeju Island Hydrangeas' tour itinerary documenting the compound-stop pattern"
         ]
+      },
+      "smartNotes": {
+        "photo": "Best with high tide and rough seas — waves smashing into the columns make dramatic shots; golden hour gives best column-color contrast",
+        "tip": "Get there before 11am or after 4pm to avoid tour-bus crowds; combine with Jungmun Saekdal Beach (5 min) for a half-day",
+        "facilities": "Small geological exhibition near entrance; souvenir shop"
+      },
+      "convenience": {
+        "restroom": "At entrance/visitor center",
+        "parking": "Available near entrance"
+      },
+      "visitBasics": {
+        "hours": "09:00–18:00 (summer extended)",
+        "closed": "Open year-round (weather-dependent)",
+        "admission": "Jusangjeolli: Adult 2,000 / Child 1,000. Cheonjeyeon: Adult 2,500 / Child 1,350. Combined ≈4,500 KRW per adult.",
+        "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
       }
     },
     {
@@ -827,7 +859,7 @@
     "destination_region": "jeju",
     "region_type": "jeju_southwest",
     "vehicle_type": "minicoach",
-    "duration_hours": 9.0,
+    "duration_hours": 9,
     "region_tags": [
       "jeju_west",
       "jeju_southwest"
@@ -856,13 +888,13 @@
     "pace_level": 0.55,
     "walking_level": 0.55,
     "scenic_level": 0.95,
-    "photo_level": 1.0,
+    "photo_level": 1,
     "culture_level": 0.6,
     "relax_level": 0.85,
     "first_time_fit": 0.85,
     "family_fit": 0.95,
     "senior_fit": 0.85,
-    "couple_fit": 1.0,
+    "couple_fit": 1,
     "solo_traveler_fit": 0.85,
     "active_traveler_fit": 0.6,
     "adult_family_fit": 0.95,
@@ -893,9 +925,9 @@
     "comfort_level": 0.8,
     "budget_fit": 0.6,
     "premium_fit": 0.6,
-    "small_group_fit": 1.0,
+    "small_group_fit": 1,
     "private_fit": 0.2,
-    "bus_fit": 1.0,
+    "bus_fit": 1,
     "price_band": "mid",
     "pickup_base": "jeju_city",
     "return_time_band": "17:30-18:00",
@@ -936,83 +968,83 @@
     ],
     "profile_format": "small_group_fixed_itinerary",
     "private_tour_fit": 0.05,
-    "fixed_itinerary_fit": 1.0,
+    "fixed_itinerary_fit": 1,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
     "first_time_jeju_fit": 0.95,
-    "south_jeju_fit": 1.0,
-    "southwest_jeju_fit": 1.0,
+    "south_jeju_fit": 1,
+    "southwest_jeju_fit": 1,
     "central_jeju_fit": 0.6,
     "north_jeju_fit": 0.3,
     "east_jeju_fit": 0.05,
-    "west_jeju_fit": 1.0,
-    "west_coast_corridor_fit": 1.0,
-    "southwest_signature_fit": 1.0,
-    "jungmun_anchor_fit": 1.0,
-    "hallim_anchor_fit": 1.0,
+    "west_jeju_fit": 1,
+    "west_coast_corridor_fit": 1,
+    "southwest_signature_fit": 1,
+    "jungmun_anchor_fit": 1,
+    "hallim_anchor_fit": 1,
     "unesco_focused_tour_fit": 0.5,
     "unesco_taste_fit": 0.85,
-    "unesco_geopark_fit": 1.0,
+    "unesco_geopark_fit": 1,
     "unesco_world_heritage_fit": 0.5,
-    "natural_monument_fit": 1.0,
+    "natural_monument_fit": 1,
     "natural_monument_anchor_count": 2,
     "compound_stop_count": 1,
     "hydrangea_festival_anchor_count": 3,
-    "summer_flowers_hydrangea_fit": 1.0,
-    "june_peak_floral_fit": 1.0,
-    "early_summer_jeju_fit": 1.0,
+    "summer_flowers_hydrangea_fit": 1,
+    "june_peak_floral_fit": 1,
+    "early_summer_jeju_fit": 1,
     "named_seasonal_festival_anchor_count": 2,
-    "year_round_flower_park_fit": 1.0,
+    "year_round_flower_park_fit": 1,
     "garden_anchor_count": 3,
     "hydrangea_tunnel_visit": true,
     "hydrangea_greenhouse_fallback_fit": 0.5,
-    "multi_garden_pairing_fit": 1.0,
+    "multi_garden_pairing_fit": 1,
     "unesco_plus_floral_combo_fit": 0.7,
-    "tea_garden_finale_fit": 1.0,
+    "tea_garden_finale_fit": 1,
     "lava_tube_visit": true,
     "lava_tube_anchor_count": 2,
-    "two_dimensional_caves_fit": 1.0,
-    "columnar_joint_anchor_fit": 1.0,
-    "waterfall_anchor_fit": 1.0,
-    "tuff_cone_climb_fit": 0.0,
-    "volcanic_geology_fit": 1.0,
-    "rim_view_fit": 0.0,
-    "biyangdo_island_view_fit": 1.0,
+    "two_dimensional_caves_fit": 1,
+    "columnar_joint_anchor_fit": 1,
+    "waterfall_anchor_fit": 1,
+    "tuff_cone_climb_fit": 0,
+    "volcanic_geology_fit": 1,
+    "rim_view_fit": 0,
+    "biyangdo_island_view_fit": 1,
     "stair_climb_demand": 0.2,
     "physical_demand_level": 0.4,
     "leisure_traveler_fit": 0.95,
-    "honeymoon_fit": 1.0,
-    "wedding_photo_fit": 1.0,
+    "honeymoon_fit": 1,
+    "wedding_photo_fit": 1,
     "teen_kids_fit": 0.95,
     "senior_low_mobility_fit": 0.6,
     "wheelchair_fit": 0.45,
-    "pet_friendly_fit": 0.0,
-    "instagram_traveler_fit": 1.0,
-    "photographer_fit": 1.0,
+    "pet_friendly_fit": 0,
+    "instagram_traveler_fit": 1,
+    "photographer_fit": 1,
     "cultural_traveler_fit": 0.6,
-    "botanical_enthusiast_fit": 1.0,
-    "nature_lover_fit": 1.0,
-    "tea_culture_enthusiast_fit": 1.0,
-    "english_speaking_market_fit": 1.0,
+    "botanical_enthusiast_fit": 1,
+    "nature_lover_fit": 1,
+    "tea_culture_enthusiast_fit": 1,
+    "english_speaking_market_fit": 1,
     "mandarin_speaking_market_fit": 0.7,
     "japanese_speaking_market_fit": 0.7,
     "korean_speaking_market_fit": 0.05,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
-    "china_mainland_market_fit": 0.0,
+    "china_mainland_market_fit": 0,
     "southeast_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.9,
     "latin_america_market_fit": 0.75,
-    "honeymooner_global_market_fit": 1.0,
+    "honeymooner_global_market_fit": 1,
     "price_tier": "mid",
     "per_pax_pricing_tier": "mid",
     "group_size_max": 14,
     "group_size_min": 4,
-    "lunch_included_fit": 0.0,
+    "lunch_included_fit": 0,
     "ticket_inclusion_fit": 0.5,
     "english_guide_included": true,
     "hotel_pickup_included": true,
@@ -1034,13 +1066,13 @@
       "January",
       "February"
     ],
-    "snow_closure_risk": 0.0,
+    "snow_closure_risk": 0,
     "typhoon_disruption_risk_summer": 0.25,
     "signature_photo_count": 6,
-    "wide_landscape_fit": 1.0,
-    "macro_floral_fit": 1.0,
+    "wide_landscape_fit": 1,
+    "macro_floral_fit": 1,
     "hydrangea_tunnel_signature_photo": true,
-    "couple_portrait_fit": 1.0,
+    "couple_portrait_fit": 1,
     "instagram_anchor_count": 5,
     "kdrama_filming_location_count": 0,
     "differentiates_from_east_hydrangea_route": true,
@@ -1056,7 +1088,7 @@
       "vi",
       "es"
     ],
-    "korea_domestic_market_fit": 0.0,
+    "korea_domestic_market_fit": 0,
     "se_asia_market_fit": 0.95,
     "japan_market_fit": 0.85
   },
@@ -1968,37 +2000,84 @@
     }
   ],
   "pickup_dropoff": {
-    "type": "hotel_pickup",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "済州市内ホテル",
-        "time": "約08:30（無料）"
+        "order": 1,
+        "time": "08:30",
+        "name": "オーシャンスイーツ済州ホテル",
+        "type": "hotel",
+        "note": "ホテルロビーでお待ちください。ガイドはAtoCKoreaのサインを持っています。",
+        "lat": 33.4944,
+        "lng": 126.4808
       },
       {
-        "name": "済州市外ホテル（西帰浦・涯月・城山）",
-        "time": "早朝ピックアップ。追加料金 ₩70,000"
+        "order": 2,
+        "time": "08:45",
+        "name": "済州国際空港（3F 3番ゲート）",
+        "type": "airport",
+        "note": "3階出発エリア。3番ゲートの案内板に従ってください。",
+        "lat": 33.5108,
+        "lng": 126.4932
       },
       {
-        "name": "済州国際空港",
-        "time": "≈08:30"
+        "order": 3,
+        "time": "08:55",
+        "name": "ロッテシティホテル済州",
+        "type": "hotel",
+        "note": "メインロビーでお待ちください。ガイドがお名前をお呼びします。",
+        "lat": 33.4963,
+        "lng": 126.4865
+      },
+      {
+        "order": 4,
+        "time": "09:05",
+        "name": "新羅免税店 済州店",
+        "type": "shopping",
+        "note": "新羅免税店済州店のメインエントランス前でお会いしましょう。",
+        "lat": 33.4958,
+        "lng": 126.5252
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
-        "name": "済州市内ホテル",
-        "approx_time": "≈18:00"
+        "order": 1,
+        "name": "オーシャンスイーツ済州ホテル",
+        "type": "hotel",
+        "lat": 33.4944,
+        "lng": 126.4808
       },
       {
-        "name": "東門伝統市場",
-        "approx_time": "≈18:00"
+        "order": 2,
+        "name": "済州国際空港（3F 3番ゲート）",
+        "type": "airport",
+        "lat": 33.5108,
+        "lng": 126.4932
       },
       {
-        "name": "済州空港",
-        "approx_time": "≈18:00"
+        "order": 3,
+        "name": "ロッテシティホテル済州",
+        "type": "hotel",
+        "lat": 33.4963,
+        "lng": 126.4865
+      },
+      {
+        "order": 4,
+        "name": "新羅免税店 済州店",
+        "type": "shopping",
+        "lat": 33.4958,
+        "lng": 126.5252
+      },
+      {
+        "order": 5,
+        "name": "東門在来市場",
+        "type": "market",
+        "lat": 33.5136,
+        "lng": 126.5296
       }
     ],
-    "hotel_pickup_available": true,
-    "notes": "済州市内のお迎えは無料です。市外送迎は₩70,000の追加料金がかかります。紫陽花見どころは5月下旬〜7月中旬の開花期のみ訪問し、見頃は例年6月中旬です。予約前に開花状況をご確認ください。"
+    "notes": [
+      "帰着は通常17:30〜18:00頃となります。"
+    ]
   },
   "itinerary_variants": [],
   "priceSource": {
@@ -2036,7 +2115,7 @@
           "_methodology": "0-1 float scale. Indoor ratio computed time-weighted with Fix 1 methodology.",
           "deltas_applied": {
             "unesco_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.45,
               "reasoning": "Verified — NO direct UNESCO World Heritage stops on this tour. Hallim Park caves are Korean National Monument (No. 236), NOT UNESCO. Jusangjeolli is Korean Natural Monument (No. 443), NOT UNESCO. Cheonjeyeon, Hyeopjae, Camellia Hill, Osulloc are non-UNESCO. Mechanical 1.0 was overstated. 0.45 reflects strong national-heritage anchors but no direct UNESCO."
             },
@@ -2046,12 +2125,12 @@
               "reasoning": "Verified: Hyeopjae photo-stop (minimal), Hallim 1.5-3 km flat with cave ducking, Jusangjeolli 0.5 km boardwalk, Cheonjeyeon ~150 stairs to mid falls, Camellia Hill ~1.5 km flat, Osulloc 0.5 km. Total ~5 km mostly flat with one stair section. 0.50 calibrated."
             },
             "scenic_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.9,
               "reasoning": "Verified: turquoise beach + 9-area botanical garden + 2 lava-tube caves + columnar basalt cliff + three-tier waterfall + camellia hydrangea tunnel + green tea fields. 7 distinct landscapes — among catalog's most diverse. 0.90 calibrated."
             },
             "photo_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "Verified: 6+ hero shots — Hyeopjae beach + Hallim caves/folk village + Jusangjeolli columns + Cheonjeyeon nymphs + Camellia hydrangea tunnel + Osulloc fields. Catalog-leading photo density. 0.95."
             },
@@ -2066,7 +2145,7 @@
               "reasoning": "CORRECTION using time-weighted method (Fix 1 methodology): 108 indoor / 405 total = 0.27 with lunch; 60/345 = 0.17 without. Catalog value 0.20 represents both. Mechanical 0.4 overstated."
             },
             "weather_sensitivity": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "VERIFIED 0.85 — hydrangea bloom timing weather-dependent; Hyeopjae + Jusangjeolli + Camellia Hill + Osulloc all primarily outdoor. Hallim caves provide partial weather refuge."
             },
@@ -2076,7 +2155,7 @@
               "reasoning": "Hallim caves (~600m total) + Osulloc indoor museum + restaurant lunch provide refuge. But majority of stops outdoor. 0.55 calibrated."
             },
             "first_time_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified: covers 7 distinct Jeju landscapes — among the most representative single-day southwest summaries. Season-specific to summer for hydrangea. 0.85."
             },
@@ -2111,7 +2190,7 @@
               "reasoning": "Verified: Hallim Folk Village + Cheonjeyeon Seven Nymphs legend + Osulloc tea heritage. 3/6 cultural anchors. 0.55."
             },
             "nature_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.9,
               "reasoning": "Verified: beach + botanical garden + caves + columnar cliff + waterfall + flower park + tea fields. Catalog-leading nature density. 0.90."
             },

@@ -987,29 +987,43 @@
     }
   },
   "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "Hongik University Station Exit 8",
-        "time": "08:00"
+        "order": 1,
+        "time": "08:00",
+        "name": "Hongik Univ. Station (Exit 8)",
+        "type": "station",
+        "lat": 37.5573,
+        "lng": 126.925
       },
       {
-        "name": "Myeongdong Station Exit 2 or 4",
-        "time": "08:30"
+        "order": 2,
+        "time": "08:30",
+        "name": "Myeongdong Station (Exit 2 or 4)",
+        "type": "station",
+        "lat": 37.5636,
+        "lng": 126.9847
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
-        "name": "Hongik University Station Exit 8",
-        "approx_time": "17:30"
+        "order": 1,
+        "name": "Hongik Univ. Station (Exit 8)",
+        "type": "station",
+        "lat": 37.5573,
+        "lng": 126.925
       },
       {
-        "name": "Myeongdong Station Exit 4",
-        "approx_time": "17:30"
+        "order": 2,
+        "name": "Myeongdong Station (Exit 4)",
+        "type": "station",
+        "lat": 37.5636,
+        "lng": 126.9847
       }
     ],
-    "hotel_pickup_available": false,
-    "notes": "Arrive 10 minutes early. Latecomers cannot be accommodated and are non-refundable. Tour does not operate on Mondays (Gwangmyeong Cave closed)."
+    "notes": [
+      "Arrive 10 minutes early. Latecomers cannot be accommodated and are non-refundable. Tour does not operate on Mondays (Gwangmyeong Cave closed)."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,

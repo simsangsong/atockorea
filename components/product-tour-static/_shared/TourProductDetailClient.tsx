@@ -1,5 +1,4 @@
 "use client";
-
 import { useMemo, useState } from "react";
 import { Headphones, ShieldCheck, Zap } from "lucide-react";
 
@@ -55,9 +54,9 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
   const productTitle = `${vm.headlineLine1} ${vm.headlineLine2}`.replace(/\s+/g, " ").trim();
   const supportQuickChips = useMemo(() => pickAssistantQuickChipsFromViewModel(vm, 4), [vm]);
   return (
-    <div className="tour-product-v2-static-root min-h-screen bg-background">
+    <div className="tour-product-v2-static-root min-h-screen bg-white">
       <div className="lg:mx-auto lg:grid lg:max-w-6xl lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-8 lg:px-6">
-        <main className="lg:min-w-0">
+        <main className="lg:min-w-0 pb-6">
           <TourHeroSection
             headlineLine1={vm.headlineLine1}
             headlineLine2={vm.headlineLine2}
@@ -89,13 +88,13 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
 
           <TourTabsNav subnavItems={vm.subnavItems} />
 
-        <section id="overview" className="bg-warm-ivory">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-10">
+        <section id="overview" className="mx-3 mt-6 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-8">
             <TourAtAGlance glanceItems={vm.glanceItems} sectionUi={vm.sectionUi} />
           </div>
         </section>
 
-        <section className="bg-soft-pearl">
+        <section className="mx-3 mt-6 lg:mx-0">
           <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
             <TourAtmosphereGallery galleryItems={vm.galleryItems} sectionUi={vm.sectionUi} />
           </div>
@@ -103,55 +102,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
 
         <section
           id="itinerary"
-          className="relative overflow-hidden"
-          style={{
-            background: [
-              // Organic flowing blobs — varied sizes (small/medium/large), varied aspect ratios (tall/wide/round),
-              // scattered irregularly. No stripes. Saturation reduced ~30% (alpha × 0.7) from previous step.
-
-              // ===== YEONDU (chartreuse) — varied scales =====
-              // large flowing blob
-              "radial-gradient(ellipse 36% 22% at 18% 12%, rgba(178, 215, 110, 0.095) 0%, rgba(178, 215, 110, 0.030) 38%, transparent 68%)",
-              // tall organic shape
-              "radial-gradient(ellipse 12% 28% at 62% 30%, rgba(180, 218, 115, 0.090) 0%, rgba(180, 218, 115, 0.028) 40%, transparent 70%)",
-              // small accent
-              "radial-gradient(ellipse 9% 7% at 88% 18%, rgba(172, 210, 100, 0.083) 0%, rgba(172, 210, 100, 0.028) 36%, transparent 65%)",
-              // medium round-ish
-              "radial-gradient(ellipse 24% 18% at 38% 62%, rgba(184, 220, 118, 0.084) 0%, rgba(184, 220, 118, 0.030) 40%, transparent 70%)",
-              // wide soft ribbon
-              "radial-gradient(ellipse 30% 11% at 76% 78%, rgba(176, 214, 108, 0.080) 0%, rgba(176, 214, 108, 0.028) 42%, transparent 72%)",
-              // tiny dot
-              "radial-gradient(ellipse 7% 9% at 12% 78%, rgba(178, 216, 112, 0.084) 0%, rgba(178, 216, 112, 0.028) 35%, transparent 65%)",
-
-              // ===== FRESH GREEN — varied scales =====
-              // large drifting blob (top)
-              "radial-gradient(ellipse 32% 18% at 50% 6%, rgba(140, 205, 135, 0.095) 0%, rgba(140, 205, 135, 0.030) 38%, transparent 68%)",
-              // medium oval
-              "radial-gradient(ellipse 22% 26% at 8% 44%, rgba(146, 208, 138, 0.090) 0%, rgba(146, 208, 138, 0.030) 40%, transparent 70%)",
-              // small irregular
-              "radial-gradient(ellipse 11% 8% at 56% 48%, rgba(152, 210, 144, 0.090) 0%, rgba(152, 210, 144, 0.028) 38%, transparent 68%)",
-              // wide low ribbon
-              "radial-gradient(ellipse 28% 13% at 90% 56%, rgba(138, 204, 132, 0.084) 0%, rgba(138, 204, 132, 0.028) 40%, transparent 72%)",
-              // tall narrow
-              "radial-gradient(ellipse 10% 24% at 22% 92%, rgba(150, 210, 142, 0.084) 0%, rgba(150, 210, 142, 0.028) 40%, transparent 70%)",
-              // medium roundish
-              "radial-gradient(ellipse 18% 20% at 70% 14%, rgba(144, 207, 136, 0.084) 0%, rgba(144, 207, 136, 0.028) 38%, transparent 70%)",
-
-              // ===== MINT (cooler accent) — small/varied =====
-              "radial-gradient(ellipse 26% 9% at 30% 28%, rgba(125, 210, 175, 0.078) 0%, rgba(125, 210, 175, 0.024) 42%, transparent 72%)",
-              "radial-gradient(ellipse 8% 14% at 84% 64%, rgba(130, 212, 178, 0.078) 0%, rgba(130, 212, 178, 0.024) 38%, transparent 68%)",
-              "radial-gradient(ellipse 16% 10% at 50% 84%, rgba(128, 212, 176, 0.072) 0%, rgba(128, 212, 176, 0.024) 40%, transparent 70%)",
-
-              // ===== ORANGE accents — small irregular =====
-              "radial-gradient(ellipse 8% 12% at 16% 56%, rgba(255, 150, 70, 0.095) 0%, rgba(255, 150, 70, 0.030) 36%, transparent 62%)",
-              "radial-gradient(ellipse 11% 7% at 80% 90%, rgba(255, 158, 80, 0.090) 0%, rgba(255, 158, 80, 0.030) 36%, transparent 62%)",
-              "radial-gradient(ellipse 6% 9% at 66% 6%, rgba(255, 145, 65, 0.084) 0%, rgba(255, 145, 65, 0.028) 36%, transparent 62%)",
-              "radial-gradient(ellipse 14% 8% at 4% 26%, rgba(255, 152, 72, 0.078) 0%, rgba(255, 152, 72, 0.026) 38%, transparent 65%)",
-
-              // pure-white base
-              "linear-gradient(180deg, #ffffff 0%, #ffffff 100%)",
-            ].join(", "),
-          }}
+          className="mx-3 mt-6 lg:mx-0"
         >
           <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-10 pb-4 space-y-9">
             <TourDayFlowSection
@@ -162,7 +113,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
               itineraryStops={vm.itineraryStops}
             />
           </div>
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-2 pb-7">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-2 pb-6">
             <TourTimelineSection
               itineraryStops={vm.itineraryStops}
               sectionUi={vm.sectionUi}
@@ -175,25 +126,24 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
         </section>
 
         {vm.pickup_dropoff ? (
-          <section id="pickup-dropoff" className="bg-warm-ivory">
-            <div className="mx-auto max-w-2xl px-4 sm:px-5 py-7">
+          <section id="pickup-dropoff" className="mx-3 mt-6 lg:mx-0">
+            <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
               <TourPickupDropoffSection
                 pickup_dropoff={vm.pickup_dropoff}
                 sectionUi={vm.sectionUi}
-                regionLabel={vm.hero?.meta?.region}
               />
             </div>
           </section>
         ) : null}
 
-        <section id="details" className="bg-sand-blush">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-7">
+        <section id="details" className="mx-3 mt-6 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
             <TourFitSection whyTourWorks={vm.whyTourWorks} sectionUi={vm.sectionUi} />
           </div>
         </section>
 
-        <section className="bg-soft-pearl">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-7">
+        <section className="mx-3 mt-6 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
             <TourPracticalDetails
               practicalAccordionItems={vm.practicalAccordionItems}
               practicalWeatherStatic={vm.practicalWeatherStatic}
@@ -203,8 +153,8 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           </div>
         </section>
 
-        <section className="bg-mist-blue">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-7">
+        <section className="mx-3 mt-6 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
             <TourBookingSupportSection
               bookingTrustItems={vm.bookingTrustItems}
               bookingSupportSteps={vm.bookingSupportSteps}
@@ -213,14 +163,14 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           </div>
         </section>
 
-        <section id="faq" className="bg-warm-ivory">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-7">
+        <section id="faq" className="mx-3 mt-6 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
             <TourFaqSection staticQuestions={vm.staticQuestions} sectionUi={vm.sectionUi} />
           </div>
         </section>
 
-        <section id="reviews" className="bg-cloud-gray">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-7">
+        <section id="reviews" className="mx-3 mt-6 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
             <TourReviewsSection
               guestReviews={vm.guestReviews}
               reviewsSummary={vm.reviewsSummary}
@@ -230,12 +180,13 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
         </section>
 
         {recommendations && recommendations.length > 0 ? (
-          <section className="bg-warm-ivory">
-            <div className="mx-auto max-w-2xl px-4 sm:px-5 py-7">
+          <section className="mx-3 mt-6 lg:mx-0">
+            <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
               <TourRecommendationsSection recommendations={recommendations} sectionUi={vm.sectionUi} />
             </div>
           </section>
         ) : null}
+
         </main>
 
         {/* Desktop right-rail booking card — sticks under the global header */}

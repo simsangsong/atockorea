@@ -2233,28 +2233,84 @@
     }
   ],
   "pickup_dropoff": {
-    "type": "hotel_pickup",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "Hotel lobby pickup within Jeju City",
-        "note": "Free; provide hotel name and pickup time at booking. Default first pickup window 08:30–09:00.",
-        "region": "Jeju City"
+        "order": 1,
+        "time": "08:30",
+        "name": "Ocean Suites Jeju Hotel",
+        "type": "hotel",
+        "note": "Meet in the hotel lobby — guide holds an AtoCKorea sign.",
+        "lat": 33.4944,
+        "lng": 126.4808
       },
       {
-        "name": "Hotel lobby pickup from Seogwipo or Aewol",
-        "note": "Available with surcharge — confirm rate at booking.",
-        "region": "Seogwipo / Aewol"
-      }
-    ],
-    "dropoff_points": [
+        "order": 2,
+        "time": "08:45",
+        "name": "Jeju International Airport (3F, Gate 3)",
+        "type": "airport",
+        "note": "3rd floor departures area. Follow signs to Gate 3.",
+        "lat": 33.5108,
+        "lng": 126.4932
+      },
       {
-        "name": "Drop-off at Jeju City hotels",
-        "note": "Standard return ≈ 17:30–18:00.",
-        "region": "Jeju City"
+        "order": 3,
+        "time": "08:55",
+        "name": "LOTTE City Hotel Jeju",
+        "type": "hotel",
+        "note": "Wait in the main lobby — guide will call you by name.",
+        "lat": 33.4963,
+        "lng": 126.4865
+      },
+      {
+        "order": 4,
+        "time": "09:05",
+        "name": "Shilla Duty Free (Jeju Store)",
+        "type": "shopping",
+        "note": "Meet outside the main entrance of Shilla Duty Free, Jeju branch.",
+        "lat": 33.4958,
+        "lng": 126.5252
       }
     ],
-    "hotel_pickup_available": true,
-    "notes": "Spring-only operation: late March to early April. Outside the bloom window we recommend the year-round Eastern UNESCO tour instead."
+    "return": [
+      {
+        "order": 1,
+        "name": "Ocean Suites Jeju Hotel",
+        "type": "hotel",
+        "lat": 33.4944,
+        "lng": 126.4808
+      },
+      {
+        "order": 2,
+        "name": "Jeju International Airport (3F, Gate 3)",
+        "type": "airport",
+        "lat": 33.5108,
+        "lng": 126.4932
+      },
+      {
+        "order": 3,
+        "name": "LOTTE City Hotel Jeju",
+        "type": "hotel",
+        "lat": 33.4963,
+        "lng": 126.4865
+      },
+      {
+        "order": 4,
+        "name": "Shilla Duty Free (Jeju Store)",
+        "type": "shopping",
+        "lat": 33.4958,
+        "lng": 126.5252
+      },
+      {
+        "order": 5,
+        "name": "Dongmun Traditional Market",
+        "type": "market",
+        "lat": 33.5136,
+        "lng": 126.5296
+      }
+    ],
+    "notes": [
+      "Return usually runs around 17:30–18:00."
+    ]
   },
   "itinerary_variants": [],
   "priceSource": {

@@ -761,33 +761,47 @@
     }
   },
   "pickup_dropoff": {
-    "type": "hotel_pickup",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "首爾市中心各飯店大廳",
+        "order": 1,
         "time": "08:00–09:00",
-        "note": "支援區域內飯店門到門接送"
+        "name": "首爾市區飯店（上門接送）",
+        "type": "hotel",
+        "note": "Door-to-door pickup at any hotel within the supported area.",
+        "lat": 37.5665,
+        "lng": 126.978
       },
       {
-        "name": "仁川機場（可選）",
+        "order": 2,
         "time": "08:00–09:00",
-        "note": "可按需安排仁川或金浦機場接送，計入10小時服務時間內。"
+        "name": "仁川國際機場（可選）",
+        "type": "airport",
+        "note": "Incheon and Gimpo airport pickups available on request; counts inside the 10-hour window.",
+        "lat": 37.4602,
+        "lng": 126.4407
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
-        "name": "首爾市中心任一飯店",
-        "approx_time": "≈ 18:00–19:00",
-        "note": "可在同一飯店或支援區域內指定地址下車"
+        "order": 1,
+        "name": "首爾市區飯店（上門接送）",
+        "type": "hotel",
+        "note": "Drop-off at the same hotel or any address within the supported area.",
+        "lat": 37.5665,
+        "lng": 126.978
       },
       {
-        "name": "仁川機場（可選）",
-        "approx_time": "≈ 18:00–19:00",
-        "note": "可安排當天離境下車，時間計入服務時長。"
+        "order": 2,
+        "name": "仁川國際機場（可選）",
+        "type": "airport",
+        "note": "Same-day departure drop-off available; counts inside the service window.",
+        "lat": 37.4602,
+        "lng": 126.4407
       }
     ],
-    "hotel_pickup_available": true,
-    "notes": "首爾市中心地區（明洞、弘大、東大門、仁寺洞、梨泰院等）飯店免費接送。請在約定出發時間前10分鐘在大廳等候。仁川機場接送可加收₩100,000附加費。"
+    "notes": [
+      "Please wait at the hotel lobby 10 minutes before the agreed departure time. The 10-hour service window starts from your pickup time. Reschedule requests should be made at least 2 days before the original reservation date. Overtime is charged at 30,000 KRW per hour, cash to driver, subject to driver availability."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,
@@ -798,7 +812,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gyeonggi_mixed",
     "vehicle_type": "private_vehicle",
-    "duration_hours": 10.0,
+    "duration_hours": 10,
     "region_tags": [
       "seoul_capital",
       "seoul_city",
@@ -837,26 +851,26 @@
     "scenic_level": 0.8,
     "photo_level": 0.8,
     "culture_level": 0.8,
-    "relax_level": 1.0,
+    "relax_level": 1,
     "first_time_fit": 0.85,
-    "family_fit": 1.0,
-    "senior_fit": 1.0,
-    "couple_fit": 1.0,
+    "family_fit": 1,
+    "senior_fit": 1,
+    "couple_fit": 1,
     "solo_traveler_fit": 0.6,
     "active_traveler_fit": 0.8,
-    "adult_family_fit": 1.0,
+    "adult_family_fit": 1,
     "family_with_teens_fit": 0.8,
-    "young_kids_fit": 1.0,
-    "senior_active_fit": 1.0,
-    "senior_general_fit": 1.0,
-    "mobility_friendly_fit": 1.0,
-    "stroller_fit": 1.0,
-    "one_day_fit": 1.0,
+    "young_kids_fit": 1,
+    "senior_active_fit": 1,
+    "senior_general_fit": 1,
+    "mobility_friendly_fit": 1,
+    "stroller_fit": 1,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.8,
     "rain_fit": 0.8,
     "value_for_money_fit": 0.55,
     "iconic_landmark_fit": 0.85,
-    "cafe_fit": 1.0,
+    "cafe_fit": 1,
     "food_fit": 0.6,
     "nature_fit": 0.8,
     "beach_fit": 0.2,
@@ -866,14 +880,14 @@
     "local_culture_fit": 0.8,
     "storytelling_fit": 0.8,
     "unesco_fit": 0.3,
-    "intangible_heritage_fit": 1.0,
+    "intangible_heritage_fit": 1,
     "indoor_ratio": 0.4,
     "weather_sensitivity": 0.5,
-    "comfort_level": 1.0,
+    "comfort_level": 1,
     "budget_fit": 0.4,
-    "premium_fit": 1.0,
+    "premium_fit": 1,
     "small_group_fit": 0.15,
-    "private_fit": 1.0,
+    "private_fit": 1,
     "bus_fit": 0.05,
     "price_band": "premium",
     "pickup_base": "seoul_downtown",
@@ -926,14 +940,14 @@
       "dmz_general",
       "paju_premium_outlets"
     ],
-    "private_tour_fit": 1.0,
-    "customizable_route_fit": 1.0,
-    "flexibility_fit": 1.0,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "private_tour_fit": 1,
+    "customizable_route_fit": 1,
+    "flexibility_fit": 1,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
@@ -1826,17 +1840,17 @@
           "deltas_applied": {
             "private_tour_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Both tours are per-vehicle private charters by definition. Was previously None (unset)."
             },
             "customizable_route_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Three recommended routes plus a fully custom option. Both tours fully customizable. Was previously None."
             },
             "flexibility_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Driver-guide adapts pacing, order, lunch, optional add-ons (Udo ferry, Smart Queue). Was previously None."
             },
             "small_group_fit": {
@@ -1885,18 +1899,18 @@
               "reasoning": "VERIFIED — calibrated up from 0.40. Route 1 (Gapyeong outdoor gardens + island) has high weather sensitivity. Route 2 has indoor DMZ + Paju Outlets fallback. Route 3 Everland is outdoor theme park. Average ~0.50."
             },
             "shopping_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.7,
               "reasoning": "VERIFIED — only Route 2 (Paju Outlets) has flagship shopping. Routes 1, 3 have minimal shopping. Custom Route can max if specifically requested. Weighted ~0.70, materially lower than the previous 1.0 which assumed Route 2 always selected."
             },
             "family_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified — Routes 1 and 3 are best-in-class for families with kids. Route 2 less so but still doable. Maintained at 1.0."
             },
             "premium_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified — private vehicle + flexible itinerary + driver-guide = top of premium scale. Maintained at 1.0."
             },
             "value_for_money_fit": {

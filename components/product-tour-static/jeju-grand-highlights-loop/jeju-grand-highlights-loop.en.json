@@ -14,8 +14,9 @@
       "Cheonjiyeon Falls tour",
       "Jusangjeolli tour"
     ],
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-    "title": "Jeju Grand Highlights Loop · 10-hour Small-Group · UNESCO + Waterfalls + Cliffs"
+    "ogImage": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80",
+    "title": "Jeju Grand Highlights Loop · UNESCO + Falls + Cliffs | AtoC",
+    "description": "Jeju full-island highlights small-group day tour: Hallasan highland → Daepo Jusangjeolli cliff → Jeongbang Waterfall → Seongsan Ilchulbong (UNESCO). 10 hours, small group, certified guide. Best for first-time visitors."
   },
   "catalog_card": {
     "slug": "jeju-grand-highlights-loop",
@@ -30,16 +31,16 @@
       "Best for One-Day Visitors",
       "Fast-Paced Highlights"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+    "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
     "priceLabel": "From US$78 per person",
     "shortCardDescription": "A high-efficiency Jeju full-island route for travelers with limited time, linking Hallasan, the south coast, and Seongsan Ilchulbong in one day.",
     "tags": [
-      "small_group",
-      "jeju",
-      "island_wide",
-      "unesco",
-      "first_time_friendly",
+      "Small group",
+      "Jeju",
+      "Island-wide",
+      "UNESCO",
+      "First-time friendly",
       "highlights"
     ]
   },
@@ -49,12 +50,12 @@
     "amountLabel": "78",
     "currency": "USD",
     "per": "person",
-    "priceSource": "internal",
-    "priceNote": "Small-group bilingual full-island tour. AtoC Korea direct sale; 10% discount applied vs operator base.",
+    "priceSource": "AtoC Korea direct rate",
+    "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea.",
     "discountPercent": 10
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+    "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
     "imagePosition": "center 35%",
     "tagline": "Built for travelers with limited time, this high-density route covers Hallasan, dramatic south-coast scenery, a waterfall, and Seongsan Ilchulbong in one day.",
     "pills": [
@@ -95,37 +96,37 @@
   "glanceItems": [
     {
       "icon": "camera",
-      "label": "Photo Value",
+      "label": "Photo Potential",
       "value": "High",
       "level": 5
     },
     {
       "icon": "mountain",
-      "label": "Scenic",
-      "value": "High",
+      "label": "Scenery Density",
+      "value": "Very High",
       "level": 5
     },
     {
       "icon": "footprints",
-      "label": "Walking",
-      "value": "High",
+      "label": "Walking Difficulty",
+      "value": "Moderate to High",
       "level": 4
     },
     {
       "icon": "cloud-rain",
-      "label": "Rain Safety",
+      "label": "Rain Suitability",
       "value": "Moderate",
       "level": 3
     },
     {
       "icon": "users",
-      "label": "Family Fit",
+      "label": "Family Suitability",
       "value": "Moderate",
       "level": 3
     },
     {
       "icon": "gauge",
-      "label": "Balance",
+      "label": "Pace",
       "value": "Fast",
       "level": 3
     }
@@ -134,7 +135,7 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
       "location": "Overall Route",
       "atmosphere": "See Jeju’s signature landscapes in a single day",
       "alt": "Overall atmosphere of a Jeju highlights day tour",
@@ -143,7 +144,7 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
       "location": "Hallasan Opening Stop",
       "atmosphere": "Crisp mountain air at higher elevation",
       "alt": "Atmosphere of the Hallasan Eoseungsaengak trail",
@@ -152,7 +153,7 @@
     {
       "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
       "location": "Jusangjeolli Coast",
       "atmosphere": "A dramatic contrast of waves and cliffs",
       "alt": "Daepo Jusangjeolli Cliff on Jeju’s coast",
@@ -161,7 +162,7 @@
     {
       "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
       "location": "Waterfall by the Sea",
       "atmosphere": "A change of texture in the afternoon route",
       "alt": "Coastal scenery at Jeongbang Waterfall",
@@ -170,7 +171,7 @@
     {
       "id": 5,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+      "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
       "location": "Crater Finale",
       "atmosphere": "A symbolic closing view with real impact",
       "alt": "Seongsan Ilchulbong crater and coastline",
@@ -185,7 +186,7 @@
       "name": "Hallasan Eoseungsaengak",
       "category": "Hallasan Foothill Trail (Eorimok) — UNESCO World Heritage Taste",
       "description": "**Eoseungsaengak (어승생악, 1,169 m)** is a parasitic cone (오름 / *oreum*) on the western flank of **Hallasan (한라산, 1,950 m)** — Korea's highest peak and the geological heart of Jeju. Hallasan itself carries an **unparalleled designation stack**: **UNESCO World Natural Heritage (inscribed 2007-07-02)**, **UNESCO Biosphere Reserve (2002)**, **Korea National Park (designated 1970-03-24)**, and **Natural Monument No. 182 (1966)** — making it the only Korean site holding all three UNESCO natural designations simultaneously. The Eoseungsaengak trailhead at **Eorimok Visitor Center** climbs **only ~200 m over 1.3 km** to a wide summit deck — a 60-minute round trip that delivers the **'Hallasan UNESCO taste'** without the full 9-hour Baengnokdam crater ascent. From the deck on clear days you see the **Yellow Sea, Hallasan's Baengnokdam summit caldera (백록담), and the parasitic cone field** stretching south. Botanical highlight: this elevation band (1,000–1,300 m) is the **transition zone between deciduous broadleaf forest and the Korean fir (구상나무, *Abies koreana* — IUCN Near Threatened, endemic to South Korean high mountains) belt** above. Hallasan harbors **2,000+ plant species** total — roughly **half of all plants on the Korean Peninsula**. A historical footnote sits at the summit deck: a **1945 Imperial Japanese tochika (토치카, concrete pillbox/communication post)** built in the war's final months — one of the highest surviving WWII Japanese fortifications in Korea. Admission and parking are **free**; **no reservation required** for Eoseungsaengak (unlike Baengnokdam summit which caps daily climbers at 1,000).",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
       "highlights": [
         "**Hallasan = only Korean site with Triple Natural designation**: UNESCO World Heritage 2007 + Biosphere 2002 + National Park 1970",
         "**Eoseungsaengak summit 1,169 m** — parasitic cone (oreum), one of 360+ on Jeju",
@@ -204,7 +205,7 @@
         "Descent — ~20 min",
         "Buffer / regroup — ~5 min"
       ],
-      "whyOnRoute": "**Opening anchor of the highlights loop**. Starting at Hallasan establishes Jeju's geological identity *first* — the entire island is one shield-volcano flank, and every subsequent stop (Jusangjeolli columnar lava → Jeongbang ocean-falling waterfall → Seongsan tuff cone) is a downstream expression of the same Hallasan eruptive history guests just looked at. Eoseungsaengak is the **only Hallasan trail that gives UNESCO World Heritage + Biosphere Reserve + Geopark in one spot**, in 60 minutes, without reservation hassle — the Yeongsil and Seongpanak trails both require **5–9 hours** and Baengnokdam summit caps daily entry at 1,000. For a first-time Jeju guest this is the highest-yield Hallasan introduction in the catalog. The early 09:30 start also beats the 11:00 cloud cap that frequently rolls over Hallasan in spring/summer.",
+      "whyOnRoute": "**Opening highlight of the full-island loop.** Starting at Hallasan gives guests the clearest first impression of Jeju's volcanic identity before the route moves to the south coast and then across to Seongsan. Eoseungsaengak is a practical Hallasan introduction because it offers forest, altitude, and viewpoint scenery without the full-day commitment of the major summit trails. The morning timing also helps avoid some of the cloud and crowd buildup that can appear later in the day.",
       "_poi_meta": {
         "poi_key": "hallasan_eoseungsaengak",
         "kb_version": "1.18",
@@ -217,33 +218,21 @@
           "Korea Forest Service — Abies koreana red list status"
         ]
       },
-      "visitBasics": {
-        "hours": "From 05:00, with possible seasonal restrictions",
-        "closed": "May be restricted in severe weather",
-        "admission": "Free",
-        "walking": "Moderate incline"
-      },
-      "convenience": {
-        "restroom": "At the trail entrance",
-        "parking": "Parking available"
-      },
       "smartNotes": {
         "photo": "In clear weather, wide shots of the ridge and distant views usually work better than tight portraits.",
         "facilities": "Basic facilities are mainly concentrated near the entrance area.",
         "tip": "Especially after rain or in colder seasons, grip and warmth matter more here than at most other stops."
       },
-      "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-        "https://images.unsplash.com/photo-1696440869866-b90626f1bf7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1590085309112-f67167e8da6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665071407550-57acf1755a72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1666328756682-ab6ad7a4df03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665688523217-852dde114c46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1593726222205-21404ff4e5fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1657938143548-dbc1e39fcf4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1664004922437-cf175d580b9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080"
-      ]
+      "convenience": {
+        "restroom": "At the trail entrance",
+        "parking": "Parking available"
+      },
+      "visitBasics": {
+        "hours": "From 05:00, with possible seasonal restrictions",
+        "closed": "May be restricted in severe weather",
+        "admission": "Free",
+        "walking": "Moderate incline"
+      }
     },
     {
       "number": 2,
@@ -251,14 +240,14 @@
       "duration": "45 min",
       "name": "Daepo Jusangjeolli Cliff",
       "category": "Volcanic Coastline — Hexagonal Columnar-Jointed Lava",
-      "description": "**Daepo Jusangjeolli (대포 주상절리, 'Jisatgae')** is a **1 km stretch of hexagonal columnar-jointed basalt cliff** on the Jungmun coast — designated **Natural Monument No. 443 on 2005-01-06**. The columns rise **30–40 m** from the sea, packed in tightly fitted **5- to 7-sided polygons** (mostly hexagons) — a geometry produced when **molten basaltic lava from a Hallasan flank eruption (~250,000–140,000 years ago) reached the ocean and contracted as it cooled**, fracturing perpendicular to the cooling surface. Globally, columnar jointing is best known from **Giant's Causeway (UK)**, **Devils Postpile (US)**, and **Fingal's Cave (Scotland)** — Jusangjeolli is **East Asia's premier example** and the most accessible. The 800 m **boardwalk loop** delivers visitors to a railed cliff edge directly above the columns; **on high-tide days waves break against the columns and throw spray up to 20 m**, occasionally over the rail. Admission: **Adult ₩2,000 / Youth ₩1,000 / FREE under 7 and over 65**. The site is part of the **Jeju Global Geopark (UNESCO designated 2010-10)** — one of **13 official geosites** on the island, alongside Seongsan Ilchulbong, Manjanggul Lava Tube, and Suwolbong. The clifftop deck is **barrier-free** (wheelchair/stroller accessible). Three viewing platforms along the loop give different column angles: the **first platform** shows the columns in profile (best for the hexagonal-geometry shot), the **mid-platform** looks straight down for top-of-column patterns, and the **far platform** captures the 1 km coastal sweep with Hallasan as backdrop on clear days. **Photographic peak window: 14:00–16:00**, when westering sunlight lights the column faces frontally; sunset visits bring silhouette compositions but lose column-detail texture. Hours: **09:00–18:00 (last entry 17:30)**, year-round operation.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+      "description": "**Daepo Jusangjeolli Cliff (대포 주상절리)** is one of Jeju's clearest examples of columnar basalt along the coast. Lava from Hallasan-area volcanic activity cooled and contracted into tightly packed polygonal stone columns, creating the dramatic cliff line now viewed from a safe seaside deck. The columns rise above the waves on the Jungmun coast and are especially photogenic when the sea is active. The visit is short, high-impact, and easier than a long coastal hike, making it a strong stop for mixed-age groups. Walking is mostly on maintained paths and viewing platforms, but wind and sea spray can vary by weather and tide.",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
       "highlights": [
         "**Natural Monument No. 443** — designated **2005-01-06**, the most recent Jeju coastal NM",
         "Columns rise **30–40 m**, packed in **5- to 7-sided polygons** (mostly hexagons) along **1 km** of coastline",
         "Formation: **Hallasan flank lava cooled in the sea ~250,000–140,000 years ago**, contracting perpendicular to cooling face",
         "**East Asia's premier columnar-jointing site** — peer to Giant's Causeway, Devils Postpile, Fingal's Cave",
-        "**Spray up to 20 m on high-tide days** — wave-fountain photography window",
+        "Wave-spray photos may be possible when the tide and wind conditions are right",
         "**0.8 km boardwalk loop**, ~15 min walk — barrier-free deck, wheelchair/stroller accessible",
         "Part of **Jeju Global Geopark (UNESCO 2010-10)** — 13 island-wide geosites",
         "Admission **₩2,000 adult / ₩1,000 youth / FREE under 7 + over 65**",
@@ -271,7 +260,7 @@
         "Continue boardwalk loop — ~10 min",
         "Return to coach — ~10 min"
       ],
-      "whyOnRoute": "**The 'columnar lava' anchor of the loop**. After Hallasan establishes the eruptive source, Jusangjeolli shows the **same lava reaching the sea and freezing into geometry** — a continuous geologic story across 30 km of coast. Jungmun is the natural pivot from the southwest coast back east toward Jeongbang and Seongsan, so this stop also serves as the geographic hinge. Compared with **Yongmeori Coast (closes for high tide / weather, ~30% of visit days)** or **Songaksan (1.6 km longer walk, less concentrated columns)**, Daepo is **all-weather, barrier-free, and 15-minute walk from coach** — the highest yield per minute on the south coast. The 11:15 arrival window also lands **ahead of the noon cruise-shore-excursion wave** that crowds the deck after 12:15.",
+      "whyOnRoute": "**Jusangjeolli gives the loop its south-coast geology moment.** After the Hallasan highland opening, the route drops to the coast so guests can see how Jeju's volcanic story appears at sea level. The stop is short, scenic, and easy to fit before lunch, with strong photos from the viewing platforms and no long hike required.",
       "_poi_meta": {
         "poi_key": "daepo_jusangjeolli_cliff",
         "kb_version": "1.18",
@@ -284,33 +273,21 @@
           "Korea Geological Survey — Jeju basalt formation studies"
         ]
       },
-      "visitBasics": {
-        "hours": "09:00–18:00 (last entry 17:40)",
-        "closed": "Open year-round",
-        "admission": "KRW 2,000 adults / KRW 1,000 children and teens",
-        "walking": "Easy to moderate"
-      },
-      "convenience": {
-        "restroom": "Entrance area",
-        "parking": "Parking available (paid lot)"
-      },
       "smartNotes": {
         "photo": "Wave direction, spray, and side light can change the mood quickly, so wide coastal framing works especially well here.",
         "facilities": "The entrance area is well equipped, and the viewpoint path itself is relatively straightforward.",
         "tip": "Even on a sunny day, the coast usually feels colder and windier than inland Jeju."
       },
-      "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-        "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
-      ]
+      "convenience": {
+        "restroom": "Entrance area",
+        "parking": "Parking available (paid lot)"
+      },
+      "visitBasics": {
+        "hours": "09:00–18:00 (last entry 17:40)",
+        "closed": "Open year-round",
+        "admission": "KRW 2,000 adults / KRW 1,000 children and teens",
+        "walking": "Easy to moderate"
+      }
     },
     {
       "number": 3,
@@ -319,7 +296,7 @@
       "name": "Lunch — Seogwipo Local",
       "category": "Midday Reset — Seogwipo Local Cuisine",
       "description": "**60-minute reset in central Seogwipo (서귀포)** — Jeju's southern city, famous for fresh seafood landed at **Seogwipo Maeil Olle Market (서귀포매일올레시장)** and the abalone-rich coast. Default rotation depending on season and group size: **galchi-jorim (갈치조림, braised cutlassfish stew)** at a Seogwipo specialist when boats are landing in season (Sep–Feb), **jeonbok-bibimbap (전복비빔밥, abalone over rice)** year-round at a market-facing eatery, or **heuk-doeji gui (흑돼지구이, Jeju black pig BBQ)** for guests preferring grilled meat. Black pig (***Sus scrofa* domesticus, Jeju black variety**) was designated **Cultural Heritage Material No. 5 (2015)** and remains a Jeju protected breed. Vegetarian alternative on request: **bibim-guksu (비빔국수, cold spicy noodles)** with seasonal vegetables. The lunch spot is **a 5-minute walk from Jeongbang Falls** — guests with appetite for a quick post-lunch coffee can stop at the market's tea/cafe row before continuing on foot.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
       "highlights": [
         "Central **Seogwipo** — Jeju's southern fishing/seafood capital",
         "**Galchi-jorim (cutlassfish)** in season (Sep–Feb), **jeonbok-bibimbap** year-round",
@@ -334,25 +311,22 @@
         "Walk to Jeongbang Falls entrance — ~5 min",
         "Buffer — ~5 min"
       ],
-      "whyOnRoute": "Seogwipo central placement makes **Jeongbang Falls the next stop on foot** (no coach transit between lunch and stop 4) — recovers ~15 minutes vs. a Jungmun-area lunch. Galchi + black pig + abalone are Jeju's three signature proteins, all locally landed/raised — guests get the food-identity anchor of the day in one sitting. Pace also breaks the morning's Hallasan + cliff walking before the afternoon Seongsan climb.",
-      "visitBasics": {
-        "hours": "Depends on restaurant operating hours",
-        "closed": "Varies by venue",
-        "admission": "Meal is paid on site unless otherwise specified",
-        "walking": "Minimal"
-      },
-      "convenience": {
-        "restroom": "Inside the restaurant",
-        "parking": "Parking available"
-      },
+      "whyOnRoute": "**Lunch in central Seogwipo resets the pace before the afternoon route.** The area gives access to local Jeju dishes and keeps the group close to Jeongbang Falls, reducing unnecessary backtracking. This placement helps balance the morning's walking with enough energy for the longer move toward Seongsan later in the day.",
       "smartNotes": {
         "photo": "Since most of the day centers on landscapes, food photos can help vary the visual rhythm of the route.",
         "facilities": "Dining-related facilities are usually more than sufficient.",
         "tip": "It is better to eat at a comfortable pace here than to rush and lose energy for the afternoon."
       },
-      "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp"
-      ]
+      "convenience": {
+        "restroom": "Inside the restaurant",
+        "parking": "Parking available"
+      },
+      "visitBasics": {
+        "hours": "Depends on restaurant operating hours",
+        "closed": "Varies by venue",
+        "admission": "Meal is paid on site unless otherwise specified",
+        "walking": "Minimal"
+      }
     },
     {
       "number": 4,
@@ -361,7 +335,7 @@
       "name": "Jeongbang Waterfall",
       "category": "Coastal Waterfall — Falls Directly Into Ocean (Asia Unique)",
       "description": "**Jeongbang Falls (정방폭포, 'falls that drop straight to sea')** is the **only waterfall in Asia that falls directly into the ocean** — a **23 m vertical drop** straight off a basalt cliff into the Pacific, no intermediate pool, no riverbed mouth. The cascade is **8 m wide** with a 5 m base pool that reaches the open sea on every tide. This single geographic distinction is why Jeongbang is one of the **'Yeongjusipgyeong (영주십경, 10 Scenic Wonders of Jeju)'** — a Joseon-era literati canon of the island's most poetic landscapes. The Yeongjusipgyeong list, codified by **18th-century Confucian scholar Lee Won-jo (이원조)**, also includes Seongsan Sunrise, Hallasan summit, and Cheonjeyeon — meaning today's loop covers **3 of the 10** in a single day. Carved on the cliff face beside the falls is the inscription **'Seobulgwacha (서불과차, Seobul Headed Back West)'**, attributed to **Xu Fu (서복)**, the legendary Qin-dynasty alchemist sent by **Emperor Qin Shi Huang (~219 BCE)** to find the elixir of immortality. Local lore says he passed through here on his way home — the inscription is the etymological root of the place name **'Seogwipo' (서귀포, 'where Seo headed back')**. Access is via **130 stone steps** down to the cove (steepish — knee-friendly footwear recommended). Admission: **Adult ₩2,000 / Youth ₩1,000 / FREE under 7 and over 65**. The thunderous spray-cooled microclimate at the base is a noted summer relief spot. **Local haenyeo (해녀, women divers — UNESCO Intangible Cultural Heritage 2016)** sometimes sell fresh sea urchin, abalone, and conch directly at the cove on calm-sea days — a rare photographic opportunity to see the diving community at work outside their formal museum context.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
       "highlights": [
         "**Asia's only waterfall falling directly into the ocean** — 23 m vertical drop, no riverbed",
         "Falls are **8 m wide** with a 5 m base pool flushing into the Pacific each tide",
@@ -380,7 +354,7 @@
         "Ascent back to coach — ~10 min",
         "Buffer — ~5 min"
       ],
-      "whyOnRoute": "Jeongbang is the **only stop on the loop where geology, mythology, and place-name etymology converge in one frame** — the ocean-falling cascade explains 'Seogwipo' as literally as a place-name can be explained. Compared with **Cheonjeyeon (3-tier inland falls, ~3 km north)** the visit is **shorter, more dramatic, and walkable from lunch** — Cheonjeyeon requires a Jungmun detour and 30+ min on its forest loop. The 13:35 afternoon timing also catches the sun-on-falls window (14:00–14:30) for photography. From here the coach heads east on Route 1132 toward Seongsan — a 65-minute coastal drive showcasing the **eastern Jeju oreum field** through the windows.",
+      "whyOnRoute": "**Jeongbang Falls adds a dramatic south-coast waterfall stop after lunch.** It is close to central Seogwipo, so the visit fits the route without a long detour. The sea-facing waterfall, basalt cliff, and short but steeper access path create a strong contrast with the earlier Hallasan and Jusangjeolli stops before the route continues east.",
       "_poi_meta": {
         "poi_key": "jeongbang_falls",
         "kb_version": "1.18",
@@ -393,30 +367,21 @@
           "Jeju Folklore Records — Xu Fu / Seobulgwacha inscription study"
         ]
       },
-      "visitBasics": {
-        "hours": "09:00–17:20",
-        "closed": "Open year-round",
-        "admission": "KRW 2,000 adults / KRW 1,000 children",
-        "walking": "Moderate, with stairs"
-      },
-      "convenience": {
-        "restroom": "Entrance area",
-        "parking": "Parking available"
-      },
       "smartNotes": {
         "photo": "The rocky area below works well for atmosphere-rich shots, but footing and sea spray can make the experience feel more demanding.",
         "facilities": "Basic facilities are located near the entrance.",
         "tip": "Because of the stairs and rocky path, it usually feels more physically active on site than it appears on the map."
       },
-      "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-        "https://images.unsplash.com/photo-1674606042265-c9f03a77e286?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1674606055132-15e511a3ac2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1761303505953-df6647dd3a46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1562680829-7927493f7a50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080"
-      ]
+      "convenience": {
+        "restroom": "Entrance area",
+        "parking": "Parking available"
+      },
+      "visitBasics": {
+        "hours": "09:00–17:20",
+        "closed": "Open year-round",
+        "admission": "KRW 2,000 adults / KRW 1,000 children",
+        "walking": "Moderate, with stairs"
+      }
     },
     {
       "number": 5,
@@ -425,7 +390,7 @@
       "name": "Seongsan Ilchulbong",
       "category": "UNESCO Tuff Cone — Sunrise Peak (Triple UNESCO Designation)",
       "description": "**Seongsan Ilchulbong (성산일출봉, 'Sunrise Peak')** is a **5,000-year-old Surtseyan-type hydrovolcanic tuff cone** — a rare landform created when an underwater basalt eruption broke the sea surface, the magma met seawater, and the resulting steam-explosive ash built a **182 m fortress-shaped crater** rim instead of a typical lava cone. The result is what UNESCO formally calls **'an exceptional example of an emergent Surtseyan-type volcanic edifice'**. The crater is **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** that local lore likens to a stone crown. Seongsan carries the **Triple UNESCO designation**: **World Natural Heritage (inscribed 2007-07-02)** as part of the **'Jeju Volcanic Island and Lava Tubes' property**, **Biosphere Reserve (2002)**, and **Global Geopark (2010-10)** — a stack matched only by Hallasan itself among Korean sites. **18 Imperial Japanese WWII caves** (kamikaze suicide-boat shelters, 1945) are tunneled into the seaward base. Trail: **0.8 km one-way, ~140 m elevation gain, 60 min round trip** on wide stone steps. **Haenyeo (해녀) demonstrations** run **daily at 13:30 and 15:00** at the rocky cove below the cone — Jeju women divers (UNESCO Intangible Cultural Heritage 2016) descend without scuba gear. Admission updated **April 2025**: **Adult ₩5,000 / Youth+Child ₩2,500 / Group adult ₩1,600**, free under 7 and over 65. The summit deck is also part of the **Yeongjusipgyeong (Jeju 10 Scenic Wonders) canon**, and remains Korea's premier **annual New Year sunrise pilgrimage** destination — 50,000+ visitors ascend before dawn on January 1, with municipal sunrise-festival programming since 1995. **Udo Island (우도, 'Cow Island')** — Korea's largest secondary volcanic island — is clearly visible 4 km offshore from the summit, accessible by **15-min ferry from Seongsan Port** (₩10,500 round-trip) for guests with extra time on a different itinerary.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
       "highlights": [
         "**Triple UNESCO**: World Heritage 2007-07-02 + Biosphere Reserve 2002 + Global Geopark 2010-10",
         "**5,000 years old** — Surtseyan-type hydrovolcanic eruption, magma-meets-seawater steam-explosive birth",
@@ -444,7 +409,7 @@
         "Descent — ~20 min",
         "Optional haenyeo viewing at base (15:00 demo) — ~10 min"
       ],
-      "whyOnRoute": "**Closing anchor of the highlights loop** — the strongest single UNESCO concentration on the island and the only spot on the day where guests stand on a **5,000-year-old hydrovolcanic edifice** with the **island, sea, and Hallasan all visible at once**. Geographically east-coast finale, geologically the **third volcanic chapter** after Hallasan source and Jusangjeolli columnar lava. Late-afternoon arrival (15:25) hits the **15:00 haenyeo demonstration** at the base before the climb, captures the **soft golden-hour light on the crater rim around 16:30**, and clears the summit before the **19:00 park closing**. Spring/autumn evenings bonus: descent timing puts guests in the **Sunrise Peak village** for dinner / coach return as the rim catches sunset color from the west. Compared with sunrise visits (popular but require 04:30 departures and lose the daylight loop), an afternoon Seongsan trades sunrise spectacle for a full island-wide UNESCO day.",
+      "whyOnRoute": "**Seongsan Ilchulbong is the closing highlight of the full-island loop.** Ending here gives the day a strong east-coast finish after Hallasan, the south-coast cliffs, lunch, and Jeongbang Falls. The tuff cone is one of Jeju's most recognizable volcanic landscapes, and the late-afternoon timing often gives softer light for photos. Guests can choose the crater walk if conditions and fitness allow, or enjoy the lower viewing areas at a gentler pace.",
       "_poi_meta": {
         "poi_key": "seongsan_ilchulbong",
         "kb_version": "1.18",
@@ -457,33 +422,21 @@
           "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
         ]
       },
-      "visitBasics": {
-        "hours": "Paid entry hours may vary by season",
-        "closed": "Closed on the first Monday of each month (or the following day if it falls on a public holiday)",
-        "admission": "KRW 5,000 adults / KRW 2,500 children",
-        "walking": "Moderate to moderately demanding if you choose to summit"
-      },
-      "convenience": {
-        "restroom": "Lower area and surrounding facilities",
-        "parking": "Large parking lot available"
-      },
       "smartNotes": {
         "photo": "Rather than photographing only the summit, wider compositions that include both the crater and coastline usually feel more rewarding.",
         "facilities": "Facilities at the base area are well developed.",
         "tip": "Crowds, weather, and group fitness level can all affect how demanding and satisfying the summit experience feels."
       },
-      "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-        "https://images.unsplash.com/photo-1616798249081-30877e213b16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1593104197164-96718e943b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1584263577189-f86c4b105154?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1710006876254-48250c2dbcfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1584802530491-65fad8b1b92c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1743685889737-d699283d139c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080"
-      ]
+      "convenience": {
+        "restroom": "Lower area and surrounding facilities",
+        "parking": "Large parking lot available"
+      },
+      "visitBasics": {
+        "hours": "Paid entry hours may vary by season",
+        "closed": "Closed on the first Monday of each month (or the following day if it falls on a public holiday)",
+        "admission": "KRW 5,000 adults / KRW 2,500 children",
+        "walking": "Moderate to moderately demanding if you choose to summit"
+      }
     }
   ],
   "routeFlowStops": [
@@ -738,51 +691,60 @@
       "icon": "clock-3",
       "title": "Maximizes what you can see in one day",
       "description": "Designed for travelers with limited time",
-      "iconBg": "bg-emerald-50/80"
+      "iconBg": "bg-emerald-50/80",
+      "body": "Licensed local operator designing this loop specifically for travelers who have one day and want Jeju's most recognizable landmarks — UNESCO volcano, natural monument cliffs, and waterfalls — in a single circuit."
     },
     {
       "icon": "mountain",
       "title": "Focused on iconic landmarks",
       "description": "From Hallasan all the way to Seongsan",
-      "iconBg": "bg-sky-50/80"
+      "iconBg": "bg-sky-50/80",
+      "body": "Route specialists who have run the full-island loop hundreds of times — stop sequence minimizes backtracking and aligns midday arrivals at Jusangjeolli with optimal tide and light."
     },
     {
       "icon": "users",
       "title": "Small-group operation",
       "description": "Better able to adapt to road and on-site conditions",
-      "iconBg": "bg-amber-50/80"
+      "iconBg": "bg-amber-50/80",
+      "body": "Small-group format keeps the day flexible — guide can extend dwell at Seongsan if the haenyeo demonstration aligns."
     }
   ],
   "bookingSupportSteps": [
     {
       "timing": "After booking",
       "title": "Instant confirmation",
-      "detail": "A booking confirmation is sent with a summary of the route."
+      "detail": "A booking confirmation is sent with a summary of the route.",
+      "description": "Instant confirmation with Jeju City hotel pickup details."
     },
     {
       "timing": "12 hours before",
       "title": "Pre-departure reminder",
-      "detail": "Weather notes and route adjustment guidance are shared in advance."
+      "detail": "Weather notes and route adjustment guidance are shared in advance.",
+      "description": "Pre-tour note on Seongsan rim conditions and Jeongbang Waterfall access."
     },
     {
       "timing": "The night before",
       "title": "Final pickup notice",
-      "detail": "You receive your exact pickup time and contact details."
+      "detail": "You receive your exact pickup time and contact details.",
+      "description": "Final pickup time confirmed the evening before."
     },
     {
       "timing": "Morning of departure",
       "title": "Day-of route note",
-      "detail": "Any latest on-site updates are briefly shared before departure."
+      "detail": "Any latest on-site updates are briefly shared before departure.",
+      "description": "Morning message with weather summary and any adjustment."
     },
     {
       "timing": "During the tour",
       "title": "Stop-by-stop guidance",
-      "detail": "Key information is shared at each stop as needed."
+      "detail": "Key information is shared at each stop as needed.",
+      "description": "Guide narrates Hallasan's shield-volcano geology, columnar joint formation at Jusangjeolli, and Seongsan's Surtseyan-eruption birth story."
     },
     {
       "timing": "After the tour",
       "title": "Post-tour support",
-      "detail": "Follow-up support and additional recommendations are available if needed."
+      "detail": "Follow-up support and additional recommendations are available if needed.",
+      "description": "Post-tour feedback request sent after return."
     }
   ],
   "staticQuestions": [
@@ -856,13 +818,13 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "Select your date and group size to check live availability and complete your booking.",
     "price": {
       "amountLabel": "78",
       "currency": "USD",
       "per": "person",
-      "priceSource": "internal",
-      "priceNote": "Small-group bilingual full-island tour. AtoC Korea direct sale; 10% discount applied vs operator base.",
+      "priceSource": "AtoC Korea direct rate",
+      "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea.",
       "discountPercent": 10
     }
   },
@@ -1198,7 +1160,7 @@
         "private_tour_fit=0.05": "Format is small-group fixed itinerary only",
         "wheelchair_accessible_anchor_fit=0.4": "Hallasan trail + Jeongbang 130 steps + Seongsan ascent block wheelchair access",
         "off_season_fit=0.6": "Winter Hallasan accessibility caveat + cone summit cold",
-        "rain_fit=0.5": "All 4 substantive stops are outdoor; no indoor fallback anchor",
+        "rain_fit=0.5": "All 4 substantive stops are outdoor; no indoor alternative anchor",
         "west_jeju_fit=0.3": "Loop deliberately excludes west (covered by sister tour southwest-hallasan-osulloc-aewol)"
       }
     },
@@ -1236,7 +1198,7 @@
         "headlineLine1": "Jeju Grand Highlights Loop",
         "headlineLine2": "Small Group Day Tour",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+          "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
           "imagePosition": "center 35%",
           "tagline": "Built for travelers with limited time, this high-density route covers Hallasan, dramatic south-coast scenery, a waterfall, and Seongsan Ilchulbong in one day.",
           "pills": [
@@ -1328,7 +1290,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
             "location": "Overall Route",
             "atmosphere": "See Jeju’s signature landscapes in a single day",
             "alt": "Overall atmosphere of a Jeju highlights day tour",
@@ -1337,7 +1299,7 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
             "location": "Hallasan Opening Stop",
             "atmosphere": "Crisp mountain air at higher elevation",
             "alt": "Atmosphere of the Hallasan Eoseungsaengak trail",
@@ -1346,7 +1308,7 @@
           {
             "id": 3,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
             "location": "Jusangjeolli Coast",
             "atmosphere": "A dramatic contrast of waves and cliffs",
             "alt": "Daepo Jusangjeolli Cliff on Jeju’s coast",
@@ -1355,7 +1317,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
             "location": "Waterfall by the Sea",
             "atmosphere": "A change of texture in the afternoon route",
             "alt": "Coastal scenery at Jeongbang Waterfall",
@@ -1364,7 +1326,7 @@
           {
             "id": 5,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
             "location": "Crater Finale",
             "atmosphere": "A symbolic closing view with real impact",
             "alt": "Seongsan Ilchulbong crater and coastline",
@@ -1381,11 +1343,11 @@
           {
             "number": 1,
             "time": "09:30",
-            "duration": "70 min",
+            "duration": "75 min",
             "name": "Hallasan Eoseungsaengak",
-            "category": "Hallasan Foothill Trail",
-            "description": "The day begins in the clear highland air of Hallasan. Eoseungsaengak links forest trail, volcanic slope, and lookout points, giving the route a strong opening from the very first stop.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "category": "Hallasan Foothill Trail (Eorimok) — UNESCO World Heritage Taste",
+            "description": "**Eoseungsaengak (어승생악, 1,169 m)** is a parasitic cone (오름 / *oreum*) on the western flank of **Hallasan (한라산, 1,950 m)** — Korea's highest peak and the geological heart of Jeju. Hallasan itself carries an **unparalleled designation stack**: **UNESCO World Natural Heritage (inscribed 2007-07-02)**, **UNESCO Biosphere Reserve (2002)**, **Korea National Park (designated 1970-03-24)**, and **Natural Monument No. 182 (1966)** — making it the only Korean site holding all three UNESCO natural designations simultaneously. The Eoseungsaengak trailhead at **Eorimok Visitor Center** climbs **only ~200 m over 1.3 km** to a wide summit deck — a 60-minute round trip that delivers the **'Hallasan UNESCO taste'** without the full 9-hour Baengnokdam crater ascent. From the deck on clear days you see the **Yellow Sea, Hallasan's Baengnokdam summit caldera (백록담), and the parasitic cone field** stretching south. Botanical highlight: this elevation band (1,000–1,300 m) is the **transition zone between deciduous broadleaf forest and the Korean fir (구상나무, *Abies koreana* — IUCN Near Threatened, endemic to South Korean high mountains) belt** above. Hallasan harbors **2,000+ plant species** total — roughly **half of all plants on the Korean Peninsula**. A historical footnote sits at the summit deck: a **1945 Imperial Japanese tochika (토치카, concrete pillbox/communication post)** built in the war's final months — one of the highest surviving WWII Japanese fortifications in Korea. Admission and parking are **free**; **no reservation required** for Eoseungsaengak (unlike Baengnokdam summit which caps daily climbers at 1,000).",
+            "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
             "highlights": [
               "One of Hallasan’s most approachable signature viewpoints",
               "A refreshing start built around forest trail and mountain air",
@@ -1397,7 +1359,7 @@
               "Main uphill walk toward the viewpoint",
               "Short photo and rest stop before heading down"
             ],
-            "whyOnRoute": "Starting here builds altitude, energy, and a strong sense of Hallasan before the route turns toward the south coast.",
+            "whyOnRoute": "**Opening highlight of the full-island loop.** Starting at Hallasan gives guests the clearest first impression of Jeju's volcanic identity before the route moves to the south coast and then across to Seongsan. Eoseungsaengak is a practical Hallasan introduction because it offers forest, altitude, and viewpoint scenery without the full-day commitment of the major summit trails. The morning timing also helps avoid some of the cloud and crowd buildup that can appear later in the day.",
             "visitBasics": {
               "hours": "From 05:00, with possible seasonal restrictions",
               "closed": "May be restricted in severe weather",
@@ -1412,28 +1374,16 @@
               "photo": "In clear weather, wide shots of the ridge and distant views usually work better than tight portraits.",
               "facilities": "Basic facilities are mainly concentrated near the entrance area.",
               "tip": "Especially after rain or in colder seasons, grip and warmth matter more here than at most other stops."
-            },
-            "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-              "https://images.unsplash.com/photo-1696440869866-b90626f1bf7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1590085309112-f67167e8da6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1665071407550-57acf1755a72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1666328756682-ab6ad7a4df03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1665688523217-852dde114c46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1593726222205-21404ff4e5fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1657938143548-dbc1e39fcf4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1664004922437-cf175d580b9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080"
-            ]
+            }
           },
           {
             "number": 2,
             "time": "11:15",
-            "duration": "40 min",
+            "duration": "45 min",
             "name": "Daepo Jusangjeolli Cliff",
-            "category": "Basalt Coastline",
-            "description": "After coming down from Hallasan, the mood shifts sharply on the south coast. Waves, basalt columns, and cliffside contrast make this a high-impact stop that quickly raises the visual intensity of the day before lunch.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "category": "Volcanic Coastline — Hexagonal Columnar-Jointed Lava",
+            "description": "**Daepo Jusangjeolli Cliff (대포 주상절리)** is one of Jeju's clearest examples of columnar basalt along the coast. Lava from Hallasan-area volcanic activity cooled and contracted into tightly packed polygonal stone columns, creating the dramatic cliff line now viewed from a safe seaside deck. The columns rise above the waves on the Jungmun coast and are especially photogenic when the sea is active. The visit is short, high-impact, and easier than a long coastal hike, making it a strong stop for mixed-age groups. Walking is mostly on maintained paths and viewing platforms, but wind and sea spray can vary by weather and tide.",
+            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
             "highlights": [
               "Hexagonal basalt columns stretching along the shoreline",
               "A striking sea-cliff contrast after the Hallasan section",
@@ -1445,7 +1395,7 @@
               "Walk to the main coastal viewpoint",
               "Photo stop and return to the meeting point"
             ],
-            "whyOnRoute": "It captures the visual identity of Jeju’s south coast without adding another long walking segment to the morning.",
+            "whyOnRoute": "**Jusangjeolli gives the loop its south-coast geology moment.** After the Hallasan highland opening, the route drops to the coast so guests can see how Jeju's volcanic story appears at sea level. The stop is short, scenic, and easy to fit before lunch, with strong photos from the viewing platforms and no long hike required.",
             "visitBasics": {
               "hours": "09:00–18:00 (last entry 17:40)",
               "closed": "Open year-round",
@@ -1460,28 +1410,16 @@
               "photo": "Wave direction, spray, and side light can change the mood quickly, so wide coastal framing works especially well here.",
               "facilities": "The entrance area is well equipped, and the viewpoint path itself is relatively straightforward.",
               "tip": "Even on a sunny day, the coast usually feels colder and windier than inland Jeju."
-            },
-            "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-              "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
-            ]
+            }
           },
           {
             "number": 3,
             "time": "12:15",
             "duration": "60 min",
-            "name": "Lunch",
-            "category": "Lunch Stop",
-            "description": "This is not just a break in the schedule. It is the key reset point that helps preserve energy for Jeongbang Waterfall and Seongsan Ilchulbong in the second half of the day.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "name": "Lunch — Seogwipo Local",
+            "category": "Midday Reset — Seogwipo Local Cuisine",
+            "description": "**60-minute reset in central Seogwipo (서귀포)** — Jeju's southern city, famous for fresh seafood landed at **Seogwipo Maeil Olle Market (서귀포매일올레시장)** and the abalone-rich coast. Default rotation depending on season and group size: **galchi-jorim (갈치조림, braised cutlassfish stew)** at a Seogwipo specialist when boats are landing in season (Sep–Feb), **jeonbok-bibimbap (전복비빔밥, abalone over rice)** year-round at a market-facing eatery, or **heuk-doeji gui (흑돼지구이, Jeju black pig BBQ)** for guests preferring grilled meat. Black pig (***Sus scrofa* domesticus, Jeju black variety**) was designated **Cultural Heritage Material No. 5 (2015)** and remains a Jeju protected breed. Vegetarian alternative on request: **bibim-guksu (비빔국수, cold spicy noodles)** with seasonal vegetables. The lunch spot is **a 5-minute walk from Jeongbang Falls** — guests with appetite for a quick post-lunch coffee can stop at the market's tea/cafe row before continuing on foot.",
+            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
             "highlights": [
               "A clearly defined recovery point in a fast-moving route",
               "Time to reset energy before heading east",
@@ -1493,7 +1431,7 @@
               "Meal and short break",
               "Prepare to depart for the afternoon route"
             ],
-            "whyOnRoute": "Placing lunch here helps stabilize the second half of the day so the route does not feel like pure transit.",
+            "whyOnRoute": "**Lunch in central Seogwipo resets the pace before the afternoon route.** The area gives access to local Jeju dishes and keeps the group close to Jeongbang Falls, reducing unnecessary backtracking. This placement helps balance the morning's walking with enough energy for the longer move toward Seongsan later in the day.",
             "visitBasics": {
               "hours": "Depends on restaurant operating hours",
               "closed": "Varies by venue",
@@ -1508,19 +1446,16 @@
               "photo": "Since most of the day centers on landscapes, food photos can help vary the visual rhythm of the route.",
               "facilities": "Dining-related facilities are usually more than sufficient.",
               "tip": "It is better to eat at a comfortable pace here than to rush and lose energy for the afternoon."
-            },
-            "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp"
-            ]
+            }
           },
           {
             "number": 4,
             "time": "13:35",
-            "duration": "50 min",
+            "duration": "60 min",
             "name": "Jeongbang Waterfall",
-            "category": "Waterfall Meeting the Sea",
-            "description": "After lunch, Jeongbang Waterfall adds a very different texture to the route. Stone steps, sea mist, and a waterfall dropping toward the coast create one of South Jeju’s most distinctive landscapes.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "category": "Coastal Waterfall — Falls Directly Into Ocean (Asia Unique)",
+            "description": "**Jeongbang Falls (정방폭포, 'falls that drop straight to sea')** is the **only waterfall in Asia that falls directly into the ocean** — a **23 m vertical drop** straight off a basalt cliff into the Pacific, no intermediate pool, no riverbed mouth. The cascade is **8 m wide** with a 5 m base pool that reaches the open sea on every tide. This single geographic distinction is why Jeongbang is one of the **'Yeongjusipgyeong (영주십경, 10 Scenic Wonders of Jeju)'** — a Joseon-era literati canon of the island's most poetic landscapes. The Yeongjusipgyeong list, codified by **18th-century Confucian scholar Lee Won-jo (이원조)**, also includes Seongsan Sunrise, Hallasan summit, and Cheonjeyeon — meaning today's loop covers **3 of the 10** in a single day. Carved on the cliff face beside the falls is the inscription **'Seobulgwacha (서불과차, Seobul Headed Back West)'**, attributed to **Xu Fu (서복)**, the legendary Qin-dynasty alchemist sent by **Emperor Qin Shi Huang (~219 BCE)** to find the elixir of immortality. Local lore says he passed through here on his way home — the inscription is the etymological root of the place name **'Seogwipo' (서귀포, 'where Seo headed back')**. Access is via **130 stone steps** down to the cove (steepish — knee-friendly footwear recommended). Admission: **Adult ₩2,000 / Youth ₩1,000 / FREE under 7 and over 65**. The thunderous spray-cooled microclimate at the base is a noted summer relief spot. **Local haenyeo (해녀, women divers — UNESCO Intangible Cultural Heritage 2016)** sometimes sell fresh sea urchin, abalone, and conch directly at the cove on calm-sea days — a rare photographic opportunity to see the diving community at work outside their formal museum context.",
+            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
             "highlights": [
               "A compact scene where waterfall and rocky shore sit in the same frame",
               "A noticeable shift in atmosphere after lunch",
@@ -1532,7 +1467,7 @@
               "Visit to the main waterfall zone",
               "Photo stop, short rest, and return"
             ],
-            "whyOnRoute": "It deepens the impression of the south coast one more time before the longer drive toward Seongsan.",
+            "whyOnRoute": "**Jeongbang Falls adds a dramatic south-coast waterfall stop after lunch.** It is close to central Seogwipo, so the visit fits the route without a long detour. The sea-facing waterfall, basalt cliff, and short but steeper access path create a strong contrast with the earlier Hallasan and Jusangjeolli stops before the route continues east.",
             "visitBasics": {
               "hours": "09:00–17:20",
               "closed": "Open year-round",
@@ -1547,25 +1482,16 @@
               "photo": "The rocky area below works well for atmosphere-rich shots, but footing and sea spray can make the experience feel more demanding.",
               "facilities": "Basic facilities are located near the entrance.",
               "tip": "Because of the stairs and rocky path, it usually feels more physically active on site than it appears on the map."
-            },
-            "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-              "https://images.unsplash.com/photo-1674606042265-c9f03a77e286?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1674606055132-15e511a3ac2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1761303505953-df6647dd3a46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1562680829-7927493f7a50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080"
-            ]
+            }
           },
           {
             "number": 5,
             "time": "15:25",
-            "duration": "70 min",
+            "duration": "90 min",
             "name": "Seongsan Ilchulbong",
-            "category": "Volcanic Crater Finale",
-            "description": "Ending with Seongsan Ilchulbong gives this route its clearest signature finish. After Hallasan, the south coast, and Jeongbang Waterfall, closing the day at one of Jeju’s most iconic landmarks makes the full route feel complete.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "category": "UNESCO Tuff Cone — Sunrise Peak (Triple UNESCO Designation)",
+            "description": "**Seongsan Ilchulbong (성산일출봉, 'Sunrise Peak')** is a **5,000-year-old Surtseyan-type hydrovolcanic tuff cone** — a rare landform created when an underwater basalt eruption broke the sea surface, the magma met seawater, and the resulting steam-explosive ash built a **182 m fortress-shaped crater** rim instead of a typical lava cone. The result is what UNESCO formally calls **'an exceptional example of an emergent Surtseyan-type volcanic edifice'**. The crater is **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** that local lore likens to a stone crown. Seongsan carries the **Triple UNESCO designation**: **World Natural Heritage (inscribed 2007-07-02)** as part of the **'Jeju Volcanic Island and Lava Tubes' property**, **Biosphere Reserve (2002)**, and **Global Geopark (2010-10)** — a stack matched only by Hallasan itself among Korean sites. **18 Imperial Japanese WWII caves** (kamikaze suicide-boat shelters, 1945) are tunneled into the seaward base. Trail: **0.8 km one-way, ~140 m elevation gain, 60 min round trip** on wide stone steps. **Haenyeo (해녀) demonstrations** run **daily at 13:30 and 15:00** at the rocky cove below the cone — Jeju women divers (UNESCO Intangible Cultural Heritage 2016) descend without scuba gear. Admission updated **April 2025**: **Adult ₩5,000 / Youth+Child ₩2,500 / Group adult ₩1,600**, free under 7 and over 65. The summit deck is also part of the **Yeongjusipgyeong (Jeju 10 Scenic Wonders) canon**, and remains Korea's premier **annual New Year sunrise pilgrimage** destination — 50,000+ visitors ascend before dawn on January 1, with municipal sunrise-festival programming since 1995. **Udo Island (우도, 'Cow Island')** — Korea's largest secondary volcanic island — is clearly visible 4 km offshore from the summit, accessible by **15-min ferry from Seongsan Port** (₩10,500 round-trip) for guests with extra time on a different itinerary.",
+            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
             "highlights": [
               "Jeju’s signature landmark as the closing stop",
               "A strong visual payoff at the end of a high-density day",
@@ -1577,7 +1503,7 @@
               "Main walk or lower-viewpoint option",
               "Photo stop, regroup, and depart for Jeju City"
             ],
-            "whyOnRoute": "It is the most symbolic place to end the day and the stop that makes the route feel like a true full-island Jeju highlights journey.",
+            "whyOnRoute": "**Seongsan Ilchulbong is the closing highlight of the full-island loop.** Ending here gives the day a strong east-coast finish after Hallasan, the south-coast cliffs, lunch, and Jeongbang Falls. The tuff cone is one of Jeju's most recognizable volcanic landscapes, and the late-afternoon timing often gives softer light for photos. Guests can choose the crater walk if conditions and fitness allow, or enjoy the lower viewing areas at a gentler pace.",
             "visitBasics": {
               "hours": "Paid entry hours may vary by season",
               "closed": "Closed on the first Monday of each month (or the following day if it falls on a public holiday)",
@@ -1592,19 +1518,7 @@
               "photo": "Rather than photographing only the summit, wider compositions that include both the crater and coastline usually feel more rewarding.",
               "facilities": "Facilities at the base area are well developed.",
               "tip": "Crowds, weather, and group fitness level can all affect how demanding and satisfying the summit experience feels."
-            },
-            "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-              "https://images.unsplash.com/photo-1616798249081-30877e213b16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1593104197164-96718e943b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1584263577189-f86c4b105154?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1710006876254-48250c2dbcfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1584802530491-65fad8b1b92c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1743685889737-d699283d139c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080"
-            ]
+            }
           }
         ]
       }
@@ -2018,34 +1932,97 @@
       "id": "sticky_booking",
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "Select your date and group size to check live availability and complete your booking.",
         "price": {
           "amountLabel": "78",
           "currency": "USD",
           "per": "person",
-          "priceSource": "internal",
-          "priceNote": "Small-group bilingual full-island tour. AtoC Korea direct sale; 10% discount applied vs operator base.",
+          "priceSource": "AtoC Korea direct rate",
+          "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea.",
           "discountPercent": 10
         }
       }
     }
   ],
   "pickup_dropoff": {
-    "type": "hotel_lobby",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "Jeju City hotel lobbies",
-        "time": "08:00–08:30"
+        "order": 1,
+        "time": "08:30",
+        "name": "Ocean Suites Jeju Hotel",
+        "type": "hotel",
+        "note": "Meet in the hotel lobby — guide holds an AtoCKorea sign.",
+        "lat": 33.4944,
+        "lng": 126.4808
+      },
+      {
+        "order": 2,
+        "time": "08:45",
+        "name": "Jeju International Airport (3F, Gate 3)",
+        "type": "airport",
+        "note": "3rd floor departures area. Follow signs to Gate 3.",
+        "lat": 33.5108,
+        "lng": 126.4932
+      },
+      {
+        "order": 3,
+        "time": "08:55",
+        "name": "LOTTE City Hotel Jeju",
+        "type": "hotel",
+        "note": "Wait in the main lobby — guide will call you by name.",
+        "lat": 33.4963,
+        "lng": 126.4865
+      },
+      {
+        "order": 4,
+        "time": "09:05",
+        "name": "Shilla Duty Free (Jeju Store)",
+        "type": "shopping",
+        "note": "Meet outside the main entrance of Shilla Duty Free, Jeju branch.",
+        "lat": 33.4958,
+        "lng": 126.5252
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
-        "name": "Jeju City hotels (return)",
-        "approx_time": "≈ 18:00–18:30"
+        "order": 1,
+        "name": "Ocean Suites Jeju Hotel",
+        "type": "hotel",
+        "lat": 33.4944,
+        "lng": 126.4808
+      },
+      {
+        "order": 2,
+        "name": "Jeju International Airport (3F, Gate 3)",
+        "type": "airport",
+        "lat": 33.5108,
+        "lng": 126.4932
+      },
+      {
+        "order": 3,
+        "name": "LOTTE City Hotel Jeju",
+        "type": "hotel",
+        "lat": 33.4963,
+        "lng": 126.4865
+      },
+      {
+        "order": 4,
+        "name": "Shilla Duty Free (Jeju Store)",
+        "type": "shopping",
+        "lat": 33.4958,
+        "lng": 126.5252
+      },
+      {
+        "order": 5,
+        "name": "Dongmun Traditional Market",
+        "type": "market",
+        "lat": 33.5136,
+        "lng": 126.5296
       }
     ],
-    "hotel_pickup_available": true,
-    "notes": "Earlier pickup (08:00–08:30) due to 10-hour full-island route; final time confirmed the night before. Airport pickup may be possible depending on circumstances."
+    "notes": [
+      "Return usually runs around 17:30–18:00."
+    ]
   },
   "itinerary_variants": [],
   "_publication": {
@@ -2056,7 +2033,7 @@
       "v15_unified"
     ],
     "fix_passes": {
-      "v15_unified": "Migrated from small-group v1 schema to v15 canonical: schema_version 1→7; SEO expanded (primaryKeywords, ogImage, title); price expanded (priceSource, priceNote, discountPercent); routeFlowStops id→type; routePhases stripped of Tailwind classes (bgClass/dotClass/textClass), reshaped to {phase,duration,description}; seasonalVariations stripped of Tailwind, reshaped to {season,description}; whyTourWorks.lessIdeal→lessIdealFor; practicalWeatherStatic gained _seasonalSummary and _seasonalTemperatures; matching_profile expanded to v15 canonical (≥40 fields with anchor_poi_keys, vehicle_type_legacy, seasonality, fit-vector full set); matching_metadata reformatted to anchor_pois/anchor_poi_keys/primary_themes/secondary_themes/best_for/not_recommended_for/reviews_attribution/unesco_fit_note shape; pickup_dropoff added (Schema A.1); itinerary_variants=[]; _publication block added. PRESERVED from source (richer than catalog v15): itineraryStops[*].visitBasics, .convenience, .smartNotes (operational data), guestReviews[4 each], reviewsSummary.highlights.",
+      "v15_unified": "Migrated from small-group v1 schema to v15 standard: schema_version 1→7; SEO expanded (primaryKeywords, ogImage, title); price expanded (priceSource, priceNote, discountPercent); routeFlowStops id→type; routePhases stripped of Tailwind classes (bgClass/dotClass/textClass), reshaped to {phase,duration,description}; seasonalVariations stripped of Tailwind, reshaped to {season,description}; whyTourWorks.lessIdeal→lessIdealFor; practicalWeatherStatic gained _seasonalSummary and _seasonalTemperatures; matching_profile expanded to v15 standard (≥40 fields with anchor_poi_keys, vehicle_type_legacy, seasonality, fit-vector full set); matching_metadata reformatted to anchor_pois/anchor_poi_keys/primary_themes/secondary_themes/best_for/not_recommended_for/reviews_attribution/unesco_fit_note shape; pickup_dropoff added (Schema A.1); itinerary_variants=[]; _publication block added. PRESERVED from source (richer than catalog v15): itineraryStops[*].visitBasics, .convenience, .smartNotes (operational data), guestReviews[4 each], reviewsSummary.highlights.",
       "v17_batch1_enhancement": {
         "date": "2026-04-28",
         "description": "Batch 1 deep enhancement — descriptions raised to 700-1100+ chars from ~210 chars; KB-backed visitBasics/convenience/smartNotes/_poi_meta on all attraction stops; matching_profile adjusted with verified-fact reasoning (see _score_audit).",
@@ -2145,7 +2122,7 @@
           "Trazy",
           "Inside Jeju",
           "World of Waterfalls",
-          "Trip.com Korea"
+          "third-party booking site Korea"
         ]
       },
       "v17_schema_unification": {

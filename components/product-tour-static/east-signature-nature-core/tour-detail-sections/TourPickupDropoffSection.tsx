@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useEffect, useRef, useState, type ComponentType } from "react";
+import { Fragment, useState, type ComponentType } from "react";
 import {
   ArrowRight,
   Building2,
@@ -8,7 +8,6 @@ import {
   CheckCircle2,
   ChevronDown,
   Clock3,
-  MapPin,
   Navigation,
   Plane,
   ShoppingBag,
@@ -45,44 +44,13 @@ function inferReturnBand(notes: string[] | undefined): string | null {
 export type TourPickupDropoffSectionProps = {
   pickup_dropoff?: PickupDropoffSection;
   sectionUi: TourProductSectionUiV1;
-  /** Optional region label used for the embedded map search query. */
-  regionLabel?: string;
 };
 
 export function TourPickupDropoffSection({
   pickup_dropoff,
   sectionUi,
-  regionLabel,
 }: TourPickupDropoffSectionProps) {
   const [expandedOrder, setExpandedOrder] = useState<number | null>(null);
-
-  /**
-   * Google Maps iframe defers mount until the map card enters the viewport.
-   * `loading="lazy"` alone still pulls hundreds of KB of Google JS the moment
-   * the section becomes visible; gating the iframe element itself behind an
-   * IntersectionObserver means the request is never made for visitors who
-   * leave before reaching this section. Once mounted we don't unmount — no
-   * point paying the cost twice if the user scrolls back up.
-   */
-  const mapWrapRef = useRef<HTMLDivElement>(null);
-  const [mapMounted, setMapMounted] = useState(false);
-
-  useEffect(() => {
-    if (mapMounted) return;
-    const el = mapWrapRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setMapMounted(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "200px 0px" },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [mapMounted]);
 
   if (!pickup_dropoff) return null;
   const pickupPoints = pickup_dropoff.departure ?? [];
@@ -94,17 +62,6 @@ export function TourPickupDropoffSection({
   const range = firstPickup?.time && lastPickup?.time ? `${firstPickup.time} – ${lastPickup.time}` : firstPickup?.time ?? "";
   const returnBand = inferReturnBand(pickup_dropoff.notes);
   const lastDropoff = dropoffPoints[dropoffPoints.length - 1];
-
-  const mapQueryRaw = regionLabel
-    ? `${firstPickup?.name ?? ""} ${regionLabel}`.trim()
-    : firstPickup?.name
-      ? `${firstPickup.name}, Jeju, South Korea`
-      : "Jeju City, South Korea";
-  const mapQuery = encodeURIComponent(mapQueryRaw);
-
-  const mapBadgeText = (sectionUi.pickupMapBadgeTemplate ?? "{pickup} pickup · {dropoff} drop-off")
-    .replace("{pickup}", String(pickupPoints.length))
-    .replace("{dropoff}", String(dropoffPoints.length));
 
   const routeDepartsText = lastPickup?.time
     ? (sectionUi.pickupRouteDepartsTemplate ?? "Route departs after final pickup at {time}").replace(
@@ -122,38 +79,6 @@ export function TourPickupDropoffSection({
         <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
           {sectionUi.pickupDropoffSubtitle ?? "Hotel pickup included. Tap any location for details."}
         </p>
-      </div>
-
-      {/* Map preview — Google Maps embed (no API key needed). Same shell as TourAtAGlance / day-flow. */}
-      <div
-        ref={mapWrapRef}
-        className={cn(
-          "relative overflow-hidden rounded-2xl",
-          "bg-white",
-          "ring-1 ring-slate-900/[0.07]",
-          "shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.16)]",
-        )}
-      >
-        {mapMounted ? (
-          <iframe
-            title="Pickup & drop-off area map"
-            src={`https://maps.google.com/maps?q=${mapQuery}&t=&z=11&ie=UTF8&iwloc=&output=embed`}
-            className="block h-44 w-full border-0 sm:h-52"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        ) : (
-          // Lightweight pre-mount placeholder — preserves layout (h-44 / sm:h-52) so the
-          // intersection observer fires from the right offset and there is no shift on swap.
-          <div
-            aria-hidden
-            className="block h-44 w-full sm:h-52 bg-gradient-to-br from-slate-50 via-white to-slate-100"
-          />
-        )}
-        <div className="pointer-events-none absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-foreground/80 shadow-sm ring-1 ring-stone-200/60 backdrop-blur-sm">
-          <MapPin className="h-3 w-3 text-rose-500" strokeWidth={2.2} />
-          {mapBadgeText}
-        </div>
       </div>
 
       {/* Pickup card — premium-minimal shell, copper accents preserved on the badges only. */}

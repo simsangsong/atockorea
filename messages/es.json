@@ -718,7 +718,12 @@
           "imageErrorBody": "No pudimos cargar la imagen de vista previa. Comprueba la conexión e inténtalo de nuevo.",
           "tryAgain": "Reintentar",
           "matchMetaRowRatingAria": "Valoración {rating} de 5 según {count} reseñas públicas",
-          "groupMaxParam": "Máx. {n}"
+          "groupMaxParam": "Máx. {n}",
+          "emptyBadge": "Vista previa de tu recomendación",
+          "emptyTitle": "Describe tu viaje arriba para ver tu mejor opción",
+          "emptyBody": "Cuéntanos lo que más te importa y encontraremos la mejor opción para ti — generalmente en menos de 3 segundos.",
+          "emptyStartCta": "Empezar a buscar",
+          "emptyFooter": "Las opciones de autobús privado y tradicional también se muestran junto a la recomendación."
         },
         "destinations": {
           "eyebrow": "DESTINOS",
@@ -870,7 +875,7 @@
           "reviewCardStarsAria": "{rating} de 5 estrellas"
         },
         "finalCtaBlock": {
-          "title": "¿Listo para planear Jeju de forma más inteligente?",
+          "title": "¿Listo para planear tu viaje a Corea de forma más inteligente?",
           "subtitle": "Empieza con tus preferencias y descubre el estilo de tour que encaja contigo.",
           "trust1RatedParam": "{rating} de valoración",
           "trust1Fallback": "Experiencias valoradas",

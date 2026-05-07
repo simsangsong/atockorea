@@ -14,7 +14,7 @@
       "済州初訪問者ツアー",
       "済州石文化公園"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80",
+    "ogImage": "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=1200&q=85&fm=jpg&fit=crop",
     "title": "東済州火山・海岸・民俗村ツアー | AtoC Korea",
     "description": "東済州の火山地形・海岸・民俗文化を一日で巡る少人数ツアー：済州石文化公園→ソプチコジ（東岬）→城山日出峰（ユネスコ）→密川洞窟→城邑民俗村。4.8/5（127件）。"
   },
@@ -31,8 +31,8 @@
       "初訪問者向け",
       "東済州代表的な"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
-    "thumbnail": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80",
+    "heroImage": "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=1920&q=85&fm=jpg&fit=crop",
+    "thumbnail": "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=600&q=85&fm=jpg&fit=crop",
     "priceLabel": "お一人様US$58〜",
     "shortCardDescription": "石の文化と火山の背景から始まり、海岸と城山日出峰を経て、日出ランドと城邑民俗村で締めくくる、東済州の一日を丁寧に構成したルートです。初めて済州を訪れる方に最適な6見どころ構成。",
     "tags": [
@@ -55,8 +55,15 @@
     "discountPercent": 10
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=1920&q=85&fm=jpg&fit=crop",
     "imagePosition": "center 35%",
+    "images": [
+      "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=1920&q=85&fm=jpg&fit=crop",
+      "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
+      "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
+      "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
+      "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/bfc943f0-5372-4a9f-8d07-97c3793808db.webp"
+    ],
     "tagline": "石の文化と開けた海岸から火山火口、溶岩洞窟の植物園、伝統的な村まで — 初めて済州を訪れる方のために組まれた、バランスの良い東済州ルートです。",
     "pills": [
       "初訪問者向け",
@@ -97,88 +104,94 @@
     {
       "icon": "camera",
       "label": "写真映え度",
-      "value": "高い"
+      "value": "高い",
+      "level": 5
     },
     {
       "icon": "mountain",
       "label": "景観の充実度",
-      "value": "高い"
+      "value": "高い",
+      "level": 5
     },
     {
       "icon": "footprints",
       "label": "歩行難易度",
-      "value": "中程度"
+      "value": "中程度",
+      "level": 3
     },
     {
       "icon": "cloud-rain",
       "label": "雨天適性",
-      "value": "まずまず"
+      "value": "まずまず",
+      "level": 3
     },
     {
       "icon": "users",
       "label": "ファミリー適性",
-      "value": "良好"
+      "value": "良好",
+      "level": 4
     },
     {
       "icon": "gauge",
       "label": "ペース",
-      "value": "バランス型"
+      "value": "バランス型",
+      "level": 4
     }
   ],
   "galleryItems": [
     {
       "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1200&q=80",
-      "location": "東済州全体ルート概要",
-      "atmosphere": "ゆっくりと展開し、一日を通じて意味をなすルート",
-      "alt": "済州石文化公園の広大な野外展示に並ぶ玄武岩の石像群",
-      "caption": "済州石文化公園 — 済州の石文化と 伝える99万m²の野外博物館"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
+      "location": "城山日出峰",
+      "atmosphere": "一日を貫くトリプルユネスコの火山ハイライト",
+      "alt": "東済州の海から立ち上がる城山日出峰の火山火口",
+      "caption": "城山日出峰 — トリプルユネスコの火山火口"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
-      "location": "済州石文化公園 — 石文化の入口",
-      "atmosphere": "静かな地質学的な一日の始まり",
-      "alt": "ソプチコジ（東岬）の岬先端から望む青い東シナ海と方頭浦灯台",
-      "caption": "ソプチコジ（東岬）— 済州東海岸の火山岬と2.1kmの遊歩道"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/21/e5f84397-91c4-4a31-91b2-4bfd618b9259.webp",
+      "location": "石の文化のオープニング",
+      "atmosphere": "済州の創世神話で静かに始まる一日",
+      "alt": "済州石文化公園の広大な野外展示",
+      "caption": "済州石文化公園 — 30万坪の火山岩遺産"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-      "location": "日出ランド溶岩チューブ庭園",
-      "atmosphere": "洞窟の後の、より涼しく閉じた空間のコントラスト",
-      "alt": "城山日出峰のユネスコ世界自然遺産の火山火口を見渡す山頂からの眺望",
-      "caption": "城山日出峰（ソンサン・イルチュルボン）— ユネスコ三重指定の済州シンボル"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
+      "location": "岬と菜の花",
+      "atmosphere": "春の菜の花が斜面を染めるソプチコジの代表的風景",
+      "alt": "ソプチコジの春の菜の花畑と方頭浦灯台",
+      "caption": "ソプチコジ — 火山岬と春の菜の花"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=800&q=80",
-      "location": "城邑民俗村 — 一日のフィナーレ",
-      "atmosphere": "生きた朝鮮時代の村落で穏やかにフィナーレ",
-      "alt": "ツアーで訪れる密川洞窟（日出ランド）— 万丈窟閉鎖中の溶岩トンネル体験の風景",
-      "caption": "密川洞窟（日出ランド）— 万丈窟閉鎖中の溶岩トンネル体験"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
+      "location": "溶岩洞窟",
+      "atmosphere": "火口の後に味わう、ひんやりと閉じた地下空間",
+      "alt": "日出ランド密川洞窟の内部",
+      "caption": "密川洞窟 — 万丈窟系列の溶岩洞窟"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
-      "location": "城山日出峰 — クレーターと海岸",
-      "atmosphere": "一日最強の火山見どころ",
-      "alt": "城邑民俗村の玄武岩の石垣と茅葺き屋根が並ぶ朝鮮時代の村の路地",
-      "caption": "城邑民俗村 — 1423年創建の朝鮮時代の「生きた」城下町"
+      "src": "https://live.staticflickr.com/65535/53953518745_a91884d6e2_b.jpg",
+      "location": "民俗村のフィナーレ",
+      "atmosphere": "500年の暮らしの痕跡が残る穏やかなフィナーレ",
+      "alt": "朝鮮時代の城下町 — 城邑民俗村",
+      "caption": "城邑民俗村 — 1423年創建の朝鮮時代の城下町"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80",
-      "location": "東済州の開放的な海岸線",
-      "atmosphere": "一日の視野を変える海風と開放的な眺め",
-      "alt": "ツアーで訪れる東済州の開放的な海岸線の風景",
-      "caption": "東済州の開放的な海岸線"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
+      "location": "開放的な海岸線",
+      "atmosphere": "海風と開けた景色がルートの空気を変える海岸区間",
+      "alt": "城山〜細花の東済州海岸ロード",
+      "caption": "東済州海岸ロード — 城山から細花へ"
     }
   ],
   "itineraryStops": [
@@ -189,7 +202,7 @@
       "name": "済州石文化公園（石の文化公園）",
       "category": "文化施設 — 済州の石文化と創世神話",
       "description": "**済州石文化公園**は済州市朝天邑に位置する**約99万m²の野外博物館**です。済州の創世神話である**（ソルムンデ・ハルマン）の伝説**をテーマに、漢拏山（ハルラサン）と済州の360以上あるオルム（寄生火山）の成り立ちを伝えています。玄武岩の石像・石垣・伝統建築・済州固有の植物群が一体となった広大な公園で、済州の火山地形と石文化の文脈を学ぶ理想的な出発点です。",
-      "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/21/e5f84397-91c4-4a31-91b2-4bfd618b9259.webp",
       "highlights": [
         "**99万m²の野外博物館** — 済州最大の火山石文化遺産見どころ",
         "**の神話** — 済州の創世伝説、漢拏山とオルムの起源",
@@ -215,6 +228,72 @@
           "Korea Folklore Society — Seolmundae Halmang oral tradition records",
           "Architectural Institute of Korea — Mother's Room sculpture/architecture documentation"
         ]
+      },
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202408/21/e5f84397-91c4-4a31-91b2-4bfd618b9259.webp",
+        "https://live.staticflickr.com/5169/5253866706_da8d7baece_b.jpg",
+        "https://live.staticflickr.com/3889/14903943000_95000fe4f7_b.jpg",
+        "https://live.staticflickr.com/8473/8102835443_5ef6694602_b.jpg",
+        "https://live.staticflickr.com/3860/15090595635_248700f647_b.jpg",
+        "https://images.unsplash.com/photo-1619166719537-a4bbb89b483d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxkb2xoYXJldWJhbmclMjBKZWp1JTIwc3RvbmUlMjBzdGF0dWV8ZW58MHwwfHx8MTc3ODA3ODMwOXww&ixlib=rb-4.1.0&q=80&w=1080"
+      ],
+      "imageCredits": [
+        {
+          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/21/e5f84397-91c4-4a31-91b2-4bfd618b9259.webp",
+          "source": "visitjeju",
+          "title": "제주돌문화공원"
+        },
+        {
+          "url": "https://live.staticflickr.com/5169/5253866706_da8d7baece_b.jpg",
+          "source": "flickr",
+          "author": "golbenge (골뱅이)",
+          "license": "CC BY-SA 2.0",
+          "sourceUrl": "https://www.flickr.com/photos/59899594@N00/5253866706",
+          "title": "돌하르방 (Dolhareubang)"
+        },
+        {
+          "url": "https://live.staticflickr.com/3889/14903943000_95000fe4f7_b.jpg",
+          "source": "flickr",
+          "author": "amanderson2",
+          "license": "CC BY 2.0",
+          "sourceUrl": "https://www.flickr.com/photos/49399018@N00/14903943000",
+          "title": "Dolharubang the grandfather stones Jeju Stone Park Korea"
+        },
+        {
+          "url": "https://live.staticflickr.com/8473/8102835443_5ef6694602_b.jpg",
+          "source": "flickr",
+          "author": "whyyan",
+          "license": "CC BY 2.0",
+          "sourceUrl": "https://www.flickr.com/photos/84804694@N06/8102835443",
+          "title": "Jeju Stone Park"
+        },
+        {
+          "url": "https://live.staticflickr.com/3860/15090595635_248700f647_b.jpg",
+          "source": "flickr",
+          "author": "amanderson2",
+          "license": "CC BY 2.0",
+          "sourceUrl": "https://www.flickr.com/photos/49399018@N00/15090595635",
+          "title": "An original Dolharubang one of 48  Jeju Stone Park Korea"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1619166719537-a4bbb89b483d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxkb2xoYXJldWJhbmclMjBKZWp1JTIwc3RvbmUlMjBzdGF0dWV8ZW58MHwwfHx8MTc3ODA3ODMwOXww&ixlib=rb-4.1.0&q=80&w=1080",
+          "source": "unsplash"
+        }
+      ],
+      "smartNotes": {
+        "photo": "Wider landscape compositions usually work better here than close-up portrait shots.",
+        "facilities": "Among the early stops, this one generally has the strongest restroom and indoor facility setup.",
+        "tip": "This stop works best as a calm, grounded opening rather than a rushed check-in-and-leave photo stop."
+      },
+      "convenience": {
+        "restroom": "At the entrance and inside the facilities",
+        "parking": "Parking available"
+      },
+      "visitBasics": {
+        "hours": "09:00–18:00",
+        "closed": "Mondays",
+        "admission": "KRW 5,000 adults / KRW 3,500 teens",
+        "walking": "Easy to moderate"
       }
     },
     {
@@ -224,7 +303,7 @@
       "name": "ソプチコジ— 東岬",
       "category": "自然景観 — 済州東海岸の火山岬",
       "description": "**ソプチコジ**は、済州東海岸に細長く突き出た火山性の岬です。地名は「ソプチ（狭い土地、またはこの地域の古い地名）」と、「コジ（岬を意味する済州方言）」に由来すると説明されます。海岸遊歩道からは城山日出峰を正面に望み、黒い玄武岩の崖と青い海が続きます。ドラマ『オールイン』などのロケ地としても知られ、岬の先には灯台と朝鮮時代の烽火台跡があります。海風が強いことが多いため、歩きやすい靴と羽織ものをご用意ください。",
-      "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
       "highlights": [
         "**2.1kmの岬遊歩道**（標高差わずか14m）— 車椅子・ベビーカー対応区間あり",
         "**パンデュポ灯台** — 八角形、4秒ごとに点灯、赤い火山丘陵（ブルグン・オルム）の頂上",
@@ -251,6 +330,42 @@
           "Tadao Ando Architect & Associates — Phoenix Island project documentation",
           "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
         ]
+      },
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
+        "https://api.cdn.visitjeju.net/photomng/imgpath/201908/08/9d19a7d3-97a8-4999-b849-123e46fc88bc.webp",
+        "https://pixabay.com/get/g58bbbe80bb67eb0a32a6e60a6931f0e77d2b2c342b890c9aaf73e87edffcf3af7cedd6ca98cbae1e5fe157fd6658ce642a1c0c5ca621591b1f85cec6e987313d_1280.jpg"
+      ],
+      "imageCredits": [
+        {
+          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
+          "source": "visitjeju",
+          "title": "섭지코지"
+        },
+        {
+          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201908/08/9d19a7d3-97a8-4999-b849-123e46fc88bc.webp",
+          "source": "visitjeju",
+          "title": "신양섭지해수욕장"
+        },
+        {
+          "url": "https://pixabay.com/get/g58bbbe80bb67eb0a32a6e60a6931f0e77d2b2c342b890c9aaf73e87edffcf3af7cedd6ca98cbae1e5fe157fd6658ce642a1c0c5ca621591b1f85cec6e987313d_1280.jpg",
+          "source": "pixabay"
+        }
+      ],
+      "smartNotes": {
+        "photo": "Because the sky is wide and the wind is strong, side angles and wider framing often look better than straightforward posed shots.",
+        "facilities": "Facilities are limited, with restrooms mainly near the entrance zone.",
+        "tip": "Compared with the previous stop, this section feels much more exposed to wind and sun."
+      },
+      "convenience": {
+        "restroom": "Near the entrance area",
+        "parking": "Parking available"
+      },
+      "visitBasics": {
+        "hours": "Open 24 hours",
+        "closed": "Open year-round",
+        "admission": "Free",
+        "walking": "Easy to moderate"
       }
     },
     {
@@ -271,7 +386,22 @@
         "注文 + 食事 — 約45分",
         "城山日出峰（山頂往復） — 約75〜90分"
       ],
-      "whyOnRoute": "ソプチコジと城山日出峰の間の自然な中間地点。午後の最もアクティブな見どころ（城山日出峰）に備えた体力回復のための理想的な休憩です。"
+      "whyOnRoute": "ソプチコジと城山日出峰の間の自然な中間地点。午後の最もアクティブな見どころ（城山日出峰）に備えた体力回復のための理想的な休憩です。",
+      "smartNotes": {
+        "photo": "If you want food photos, local Jeju dishes usually make the strongest images.",
+        "facilities": "Restaurant facilities are generally sufficient.",
+        "tip": "The most important function here is to reset the pace well, not to compress the schedule as much as possible."
+      },
+      "convenience": {
+        "restroom": "Inside the restaurant",
+        "parking": "Parking available"
+      },
+      "visitBasics": {
+        "hours": "Depends on the restaurant",
+        "closed": "Varies by venue",
+        "admission": "Included or paid on site depending on product setup",
+        "walking": "Minimal"
+      }
     },
     {
       "number": 4,
@@ -280,7 +410,7 @@
       "name": "城山日出峰（ユネスコ世界自然遺産）",
       "category": "ユネスコ自然遺産 — 済州のシンボル",
       "description": "**城山日出峰**は**5,000年前の水成噴火（スルツェイ式）で誕生した火山凝灰岩丘（タフコーン）**です。**ユネスコ世界自然遺産（2007年）・済州道ユネスコ生物圏保護区（2002年）・ユネスコ世界地質公園（2010年）**という三重の指定を受けています。標高180mの山頂には直径90mの火口が広がり、外洋に面した絶壁と済州島の田園風景を一望できます。山頂登頂は約600段の急な石段（30分）ですが任意です。",
-      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
       "highlights": [
         "**ユネスコ三重指定**：世界自然遺産（2007年）・生物圏保護区（2002年）・世界地質公園（2010年）",
         "**5,000年前** — 水成噴火（スルツェイ式）による誕生",
@@ -307,6 +437,89 @@
           "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
           "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
         ]
+      },
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
+        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/bfc943f0-5372-4a9f-8d07-97c3793808db.webp",
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202306/19/51f1c895-032f-4b18-9e47-a1a0cb21511f.webp",
+        "https://live.staticflickr.com/65535/53953518745_a91884d6e2_b.jpg",
+        "https://live.staticflickr.com/5247/5370777099_5053f69108_b.jpg",
+        "https://live.staticflickr.com/5169/5370774765_8c1e200d19_b.jpg",
+        "https://live.staticflickr.com/5089/5370768533_3662b7d908_b.jpg",
+        "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBzdW5yaXNlJTIwY3JhdGVyfGVufDB8MHx8fDE3NzgwNzgzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://pixabay.com/get/gd4d8b6155182b4d2c2fc04952137adb1e3dc7431b2f950f7a50ba799393e122c3edd772a230b42cc71890517bd0898cbd5e207a844e1dafba34600088b9ab2c0_1280.jpg"
+      ],
+      "imageCredits": [
+        {
+          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
+          "source": "visitjeju",
+          "title": "성산일출봉(UNESCO 세계자연유산)"
+        },
+        {
+          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/bfc943f0-5372-4a9f-8d07-97c3793808db.webp",
+          "source": "visitjeju",
+          "title": "성산~세화 해안도로"
+        },
+        {
+          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202306/19/51f1c895-032f-4b18-9e47-a1a0cb21511f.webp",
+          "source": "visitjeju",
+          "title": "성산스쿠버리조트"
+        },
+        {
+          "url": "https://live.staticflickr.com/65535/53953518745_a91884d6e2_b.jpg",
+          "source": "flickr",
+          "author": "xiquinhosilva",
+          "license": "CC BY 2.0",
+          "sourceUrl": "https://www.flickr.com/photos/7138083@N04/53953518745",
+          "title": "Seongsan Ilchulbong"
+        },
+        {
+          "url": "https://live.staticflickr.com/5247/5370777099_5053f69108_b.jpg",
+          "source": "flickr",
+          "author": "-Jérôme-",
+          "license": "CC BY 2.0",
+          "sourceUrl": "https://www.flickr.com/photos/76474448@N00/5370777099",
+          "title": "Presqu'ile volcanique"
+        },
+        {
+          "url": "https://live.staticflickr.com/5169/5370774765_8c1e200d19_b.jpg",
+          "source": "flickr",
+          "author": "-Jérôme-",
+          "license": "CC BY 2.0",
+          "sourceUrl": "https://www.flickr.com/photos/76474448@N00/5370774765",
+          "title": "Après la lave, la végétation"
+        },
+        {
+          "url": "https://live.staticflickr.com/5089/5370768533_3662b7d908_b.jpg",
+          "source": "flickr",
+          "author": "-Jérôme-",
+          "license": "CC BY 2.0",
+          "sourceUrl": "https://www.flickr.com/photos/76474448@N00/5370768533",
+          "title": "La caldera"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBzdW5yaXNlJTIwY3JhdGVyfGVufDB8MHx8fDE3NzgwNzgzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+          "source": "unsplash"
+        },
+        {
+          "url": "https://pixabay.com/get/gd4d8b6155182b4d2c2fc04952137adb1e3dc7431b2f950f7a50ba799393e122c3edd772a230b42cc71890517bd0898cbd5e207a844e1dafba34600088b9ab2c0_1280.jpg",
+          "source": "pixabay"
+        }
+      ],
+      "smartNotes": {
+        "photo": "Wide-angle framing that includes both the crater and coastline usually feels stronger than summit selfies alone.",
+        "facilities": "Facilities are more developed near the base and more basic higher up.",
+        "tip": "Wind, crowd levels, and group fitness can all shift this stop toward more walking, more viewing, or more haenyeo-focused time."
+      },
+      "convenience": {
+        "restroom": "At the base area and some upper sections",
+        "parking": "Large parking lot available"
+      },
+      "visitBasics": {
+        "hours": "Varies by season; last ticketing is typically 1 hour before closing",
+        "closed": "First Monday of each month (or the following day if Monday is a holiday)",
+        "admission": "KRW 5,000 adults / KRW 2,500 teens and children",
+        "walking": "Moderate, or moderately demanding if the group chooses the summit"
       }
     },
     {
@@ -316,7 +529,7 @@
       "name": "日出ランド（密川洞窟溶岩トンネル）",
       "category": "地質 — 溶岩トンネル体験",
       "description": "**日出ランド (일출랜드)** は城山に位置する**40万m²の自然テーマパーク**で、**2002年**にオープンしました。中心となるのは**美川窟 (미천굴)** という溶岩洞窟で、**全長1,700mのうち365mが人工的に整地され見学可能な区間**として開放されています(所要約25分)。この洞窟は**ユネスコ世界自然遺産である万丈窟と同じ溶岩洞窟系**に属し、**万丈窟が保全工事や荒天(台風・凍結)で閉鎖される際の代替訪問先**として機能しています。万丈窟が自然のままの不整地の床を残し本来の地質体験を提供するのに対し、美川窟は床を整地することで**高齢の方、ベビーカー利用のご家族、移動に制限のあるお客様も安心して見学できる**ように工夫されています。これは溶岩洞窟体験をより幅広い層に届けるための意図的な設計判断です。洞窟内部は**七色の装飾照明(金・銀・銅・赤・黒・青・白)**で岩の造形を浮かび上がらせており、純粋な地質愛好家からは賛否両論があるものの、一般のお客様の写真撮影には実用的です。洞窟外には**水蓮公園、復元された伝統的な済州村落、野生花盆栽園、サボテン温室、彫刻通り、足湯カフェ(アロマフットスパ)**が広がり、**済州島で唯一、館内にムスリム祈祷室を備えた観光施設**でもあります(意図的なアクセシビリティ投資です)。ドラマロケ地としては**『ランニングマン』(런닝맨, SBS)第89話(不思議の国のアリスをテーマにした2012年放送回)**が知られています。入場料は**大人₩12,000 / 青少年₩9,000 / 子ども₩7,000**。**屋内30%(洞窟+温室)/屋外70%(園内)**の構成で、天候に応じた柔軟なプランニングがしやすい点も特徴です。",
-      "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
       "highlights": [
         "**全長1,700m**の溶岩洞窟、**365mの開放区間**(約25分の歩行)",
         "**万丈窟ユネスコ代替地** — 同じ溶岩洞窟系で、万丈窟閉鎖時に開放",
@@ -362,7 +575,70 @@
         "closed": "日出ランドの運営スケジュールに準ずる — 運営者にご確認ください",
         "admission": "日出ランド入場料に含まれる — 料金は運営者にご確認ください",
         "walking": "難易度はやや高め — 洞窟入口へ階段を下り、年間通じて約12℃、洞窟区間は凹凸のある火山岩の床面"
-      }
+      },
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202205/30/8d1fb97b-1ad0-48cc-9aa0-2ec519e9575c.webp",
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202112/21/5d2e84f4-d58b-4fa0-b7bb-a2f32cf63428.webp",
+        "https://live.staticflickr.com/65535/53953062566_80ce9e16af_b.jpg",
+        "https://live.staticflickr.com/7534/27767696885_e3b15614a5_b.jpg",
+        "https://live.staticflickr.com/7430/27733577536_8ecebd8480_b.jpg",
+        "https://live.staticflickr.com/7262/27733580686_b5c66c7b9d_b.jpg",
+        "https://images.unsplash.com/photo-1596617345904-f0b8677f5a8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZWp1JTIwbGF2YSUyMGNhdmUlMjBhdG1vc3BoZXJpY3xlbnwwfDB8fHwxNzc4MDc4NDI3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+      ],
+      "imageCredits": [
+        {
+          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
+          "source": "visitjeju",
+          "title": "일출랜드 아트센터"
+        },
+        {
+          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202205/30/8d1fb97b-1ad0-48cc-9aa0-2ec519e9575c.webp",
+          "source": "visitjeju",
+          "title": "일출랜드"
+        },
+        {
+          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202112/21/5d2e84f4-d58b-4fa0-b7bb-a2f32cf63428.webp",
+          "source": "visitjeju",
+          "title": "미천굴"
+        },
+        {
+          "url": "https://live.staticflickr.com/65535/53953062566_80ce9e16af_b.jpg",
+          "source": "flickr",
+          "author": "xiquinhosilva",
+          "license": "CC BY 2.0",
+          "sourceUrl": "https://www.flickr.com/photos/7138083@N04/53953062566",
+          "title": "Jeju Volcanic Island and Lava Tubes"
+        },
+        {
+          "url": "https://live.staticflickr.com/7534/27767696885_e3b15614a5_b.jpg",
+          "source": "flickr",
+          "author": "lnevay",
+          "license": "CC BY-SA 2.0",
+          "sourceUrl": "https://www.flickr.com/photos/98901717@N08/27767696885",
+          "title": "Manjanggul Cave"
+        },
+        {
+          "url": "https://live.staticflickr.com/7430/27733577536_8ecebd8480_b.jpg",
+          "source": "flickr",
+          "author": "lnevay",
+          "license": "CC BY-SA 2.0",
+          "sourceUrl": "https://www.flickr.com/photos/98901717@N08/27733577536",
+          "title": "Manjanggul Cave"
+        },
+        {
+          "url": "https://live.staticflickr.com/7262/27733580686_b5c66c7b9d_b.jpg",
+          "source": "flickr",
+          "author": "lnevay",
+          "license": "CC BY-SA 2.0",
+          "sourceUrl": "https://www.flickr.com/photos/98901717@N08/27733580686",
+          "title": "Manjanggul Cave"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1596617345904-f0b8677f5a8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZWp1JTIwbGF2YSUyMGNhdmUlMjBhdG1vc3BoZXJpY3xlbnwwfDB8fHwxNzc4MDc4NDI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+          "source": "unsplash"
+        }
+      ]
     },
     {
       "number": 6,
@@ -371,7 +647,7 @@
       "name": "城邑民俗村（朝鮮時代の生きた村）",
       "category": "文化遺産 — 朝鮮時代の生きた城下町",
       "description": "**城邑民俗村**は**1423年、世宗大王の治世に築かれた朝鮮時代の生きた城下町**です。1914年まで約500年にわたって行政の中枢として機能し、玄武岩の城壁（邑城）の内側に**伝統的な建造物110棟**が今なお住居として使われています。済州独自の茅葺き屋根・玄武岩の石垣・風で傾いた老木が圧倒的な保存状態で残る国指定民俗文化財です。入場無料。",
-      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
       "highlights": [
         "**1423年創建** — 世宗大王による行政中心地、**1914年まで約500年**存続",
         "**110棟**の伝統建造物が現存する「生きた」民俗村",
@@ -398,6 +674,62 @@
           "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
           "Jeju Folklore Society — Omegisul brewing tradition documentation"
         ]
+      },
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
+        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/d3665aa5-bb00-472d-9886-06e3337d9515.webp",
+        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/69a0bd54-97fa-49b5-b59e-5986b8e48ecf.webp",
+        "https://live.staticflickr.com/1446/25727012660_f652a7494e_b.jpg",
+        "https://images.unsplash.com/photo-1777543331241-a80f9cd409ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxLb3JlYW4lMjB0cmFkaXRpb25hbCUyMHZpbGxhZ2UlMjB0aGF0Y2hlZHxlbnwwfDB8fHwxNzc4MDc4NDYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://pixabay.com/get/gc781d5c3ef50ea89a6bdfedaf270b199fd3a4168f2358667c660d28ef8ba7257108f84be87a22e9ce96ff035aca4ebb68139baf8cc26b7a22e47a28e931e9591_1280.jpg"
+      ],
+      "imageCredits": [
+        {
+          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
+          "source": "visitjeju",
+          "title": "성읍민속마을"
+        },
+        {
+          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/d3665aa5-bb00-472d-9886-06e3337d9515.webp",
+          "source": "visitjeju",
+          "title": "성읍목장"
+        },
+        {
+          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/69a0bd54-97fa-49b5-b59e-5986b8e48ecf.webp",
+          "source": "visitjeju",
+          "title": "성읍승마장"
+        },
+        {
+          "url": "https://live.staticflickr.com/1446/25727012660_f652a7494e_b.jpg",
+          "source": "flickr",
+          "author": "anokarina",
+          "license": "CC BY-SA 2.0",
+          "sourceUrl": "https://www.flickr.com/photos/30760976@N04/25727012660",
+          "title": "“Living is Easy with Eyes Closed.” ―John Lennon 🌴"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1777543331241-a80f9cd409ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxLb3JlYW4lMjB0cmFkaXRpb25hbCUyMHZpbGxhZ2UlMjB0aGF0Y2hlZHxlbnwwfDB8fHwxNzc4MDc4NDYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+          "source": "unsplash"
+        },
+        {
+          "url": "https://pixabay.com/get/gc781d5c3ef50ea89a6bdfedaf270b199fd3a4168f2358667c660d28ef8ba7257108f84be87a22e9ce96ff035aca4ebb68139baf8cc26b7a22e47a28e931e9591_1280.jpg",
+          "source": "pixabay"
+        }
+      ],
+      "smartNotes": {
+        "photo": "Narrow lanes, roof lines, and stone-wall textures often make more rewarding images than broad centered compositions.",
+        "facilities": "Facilities inside the village are basic.",
+        "tip": "The less rushed this stop feels, the better the whole day tends to land emotionally."
+      },
+      "convenience": {
+        "restroom": "Near the village center",
+        "parking": "Parking available nearby"
+      },
+      "visitBasics": {
+        "hours": "10:00–17:00",
+        "closed": "Open year-round",
+        "admission": "Free (except some hands-on programs)",
+        "walking": "Easy and mostly flat"
       }
     }
   ],
@@ -973,7 +1305,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1200&q=80",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
             "location": "東済州全体ルート概要",
             "atmosphere": "ゆっくりと展開し、一日を通じて意味をなすルート",
             "alt": "済州石文化公園の広大な野外展示に並ぶ玄武岩の石像群",
@@ -982,7 +1314,7 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/21/e5f84397-91c4-4a31-91b2-4bfd618b9259.webp",
             "location": "済州石文化公園 — 石文化の入口",
             "atmosphere": "静かな地質学的な一日の始まり",
             "alt": "ソプチコジ（東岬）の岬先端から望む青い東シナ海と方頭浦灯台",
@@ -991,7 +1323,7 @@
           {
             "id": 3,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
             "location": "日出ランド溶岩チューブ庭園",
             "atmosphere": "洞窟の後の、より涼しく閉じた空間のコントラスト",
             "alt": "城山日出峰のユネスコ世界自然遺産の火山火口を見渡す山頂からの眺望",
@@ -1000,7 +1332,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=800&q=80",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
             "location": "城邑民俗村 — 一日のフィナーレ",
             "atmosphere": "生きた朝鮮時代の村落で穏やかにフィナーレ",
             "alt": "ツアーで訪れる密川洞窟（日出ランド）— 万丈窟閉鎖中の溶岩トンネル体験の風景",
@@ -1009,7 +1341,7 @@
           {
             "id": 5,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
+            "src": "https://live.staticflickr.com/65535/53953518745_a91884d6e2_b.jpg",
             "location": "城山日出峰 — クレーターと海岸",
             "atmosphere": "一日最強の火山見どころ",
             "alt": "城邑民俗村の玄武岩の石垣と茅葺き屋根が並ぶ朝鮮時代の村の路地",
@@ -1018,7 +1350,7 @@
           {
             "id": 6,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
             "location": "東済州の開放的な海岸線",
             "atmosphere": "一日の視野を変える海風と開放的な眺め",
             "alt": "ツアーで訪れる東済州の開放的な海岸線の風景",
@@ -1039,7 +1371,7 @@
             "name": "済州石文化公園（石の文化公園）",
             "category": "文化施設 — 済州の石文化と創世神話",
             "description": "**済州石文化公園**は済州市朝天邑に位置する**約99万m²の野外博物館**です。済州の創世神話である**（ソルムンデ・ハルマン）の伝説**をテーマに、漢拏山（ハルラサン）と済州の360以上あるオルム（寄生火山）の成り立ちを伝えています。玄武岩の石像・石垣・伝統建築・済州固有の植物群が一体となった広大な公園で、済州の火山地形と石文化の文脈を学ぶ理想的な出発点です。",
-            "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/21/e5f84397-91c4-4a31-91b2-4bfd618b9259.webp",
             "highlights": [
               "**99万m²の野外博物館** — 済州最大の火山石文化遺産見どころ",
               "**の神話** — 済州の創世伝説、漢拏山とオルムの起源",
@@ -1065,7 +1397,58 @@
                 "Korea Folklore Society — Seolmundae Halmang oral tradition records",
                 "Architectural Institute of Korea — Mother's Room sculpture/architecture documentation"
               ]
-            }
+            },
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202408/21/e5f84397-91c4-4a31-91b2-4bfd618b9259.webp",
+              "https://live.staticflickr.com/5169/5253866706_da8d7baece_b.jpg",
+              "https://live.staticflickr.com/3889/14903943000_95000fe4f7_b.jpg",
+              "https://live.staticflickr.com/8473/8102835443_5ef6694602_b.jpg",
+              "https://live.staticflickr.com/3860/15090595635_248700f647_b.jpg",
+              "https://images.unsplash.com/photo-1619166719537-a4bbb89b483d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxkb2xoYXJldWJhbmclMjBKZWp1JTIwc3RvbmUlMjBzdGF0dWV8ZW58MHwwfHx8MTc3ODA3ODMwOXww&ixlib=rb-4.1.0&q=80&w=1080"
+            ],
+            "imageCredits": [
+              {
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/21/e5f84397-91c4-4a31-91b2-4bfd618b9259.webp",
+                "source": "visitjeju",
+                "title": "제주돌문화공원"
+              },
+              {
+                "url": "https://live.staticflickr.com/5169/5253866706_da8d7baece_b.jpg",
+                "source": "flickr",
+                "author": "golbenge (골뱅이)",
+                "license": "CC BY-SA 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/59899594@N00/5253866706",
+                "title": "돌하르방 (Dolhareubang)"
+              },
+              {
+                "url": "https://live.staticflickr.com/3889/14903943000_95000fe4f7_b.jpg",
+                "source": "flickr",
+                "author": "amanderson2",
+                "license": "CC BY 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/49399018@N00/14903943000",
+                "title": "Dolharubang the grandfather stones Jeju Stone Park Korea"
+              },
+              {
+                "url": "https://live.staticflickr.com/8473/8102835443_5ef6694602_b.jpg",
+                "source": "flickr",
+                "author": "whyyan",
+                "license": "CC BY 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/84804694@N06/8102835443",
+                "title": "Jeju Stone Park"
+              },
+              {
+                "url": "https://live.staticflickr.com/3860/15090595635_248700f647_b.jpg",
+                "source": "flickr",
+                "author": "amanderson2",
+                "license": "CC BY 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/49399018@N00/15090595635",
+                "title": "An original Dolharubang one of 48  Jeju Stone Park Korea"
+              },
+              {
+                "url": "https://images.unsplash.com/photo-1619166719537-a4bbb89b483d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxkb2xoYXJldWJhbmclMjBKZWp1JTIwc3RvbmUlMjBzdGF0dWV8ZW58MHwwfHx8MTc3ODA3ODMwOXww&ixlib=rb-4.1.0&q=80&w=1080",
+                "source": "unsplash"
+              }
+            ]
           },
           {
             "number": 2,
@@ -1074,7 +1457,7 @@
             "name": "ソプチコジ— 東岬",
             "category": "自然景観 — 済州東海岸の火山岬",
             "description": "**ソプチコジ**は、済州東海岸に細長く突き出た火山性の岬です。地名は「ソプチ（狭い土地、またはこの地域の古い地名）」と、「コジ（岬を意味する済州方言）」に由来すると説明されます。海岸遊歩道からは城山日出峰を正面に望み、黒い玄武岩の崖と青い海が続きます。ドラマ『オールイン』などのロケ地としても知られ、岬の先には灯台と朝鮮時代の烽火台跡があります。海風が強いことが多いため、歩きやすい靴と羽織ものをご用意ください。",
-            "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
             "highlights": [
               "**2.1kmの岬遊歩道**（標高差わずか14m）— 車椅子・ベビーカー対応区間あり",
               "**パンデュポ灯台** — 八角形、4秒ごとに点灯、赤い火山丘陵（ブルグン・オルム）の頂上",
@@ -1101,7 +1484,28 @@
                 "Tadao Ando Architect & Associates — Phoenix Island project documentation",
                 "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
               ]
-            }
+            },
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
+              "https://api.cdn.visitjeju.net/photomng/imgpath/201908/08/9d19a7d3-97a8-4999-b849-123e46fc88bc.webp",
+              "https://pixabay.com/get/g58bbbe80bb67eb0a32a6e60a6931f0e77d2b2c342b890c9aaf73e87edffcf3af7cedd6ca98cbae1e5fe157fd6658ce642a1c0c5ca621591b1f85cec6e987313d_1280.jpg"
+            ],
+            "imageCredits": [
+              {
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
+                "source": "visitjeju",
+                "title": "섭지코지"
+              },
+              {
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201908/08/9d19a7d3-97a8-4999-b849-123e46fc88bc.webp",
+                "source": "visitjeju",
+                "title": "신양섭지해수욕장"
+              },
+              {
+                "url": "https://pixabay.com/get/g58bbbe80bb67eb0a32a6e60a6931f0e77d2b2c342b890c9aaf73e87edffcf3af7cedd6ca98cbae1e5fe157fd6658ce642a1c0c5ca621591b1f85cec6e987313d_1280.jpg",
+                "source": "pixabay"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1130,7 +1534,7 @@
             "name": "城山日出峰（ユネスコ世界自然遺産）",
             "category": "ユネスコ自然遺産 — 済州のシンボル",
             "description": "**城山日出峰**は**5,000年前の水成噴火（スルツェイ式）で誕生した火山凝灰岩丘（タフコーン）**です。**ユネスコ世界自然遺産（2007年）・済州道ユネスコ生物圏保護区（2002年）・ユネスコ世界地質公園（2010年）**という三重の指定を受けています。標高180mの山頂には直径90mの火口が広がり、外洋に面した絶壁と済州島の田園風景を一望できます。山頂登頂は約600段の急な石段（30分）ですが任意です。",
-            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
             "highlights": [
               "**ユネスコ三重指定**：世界自然遺産（2007年）・生物圏保護区（2002年）・世界地質公園（2010年）",
               "**5,000年前** — 水成噴火（スルツェイ式）による誕生",
@@ -1157,7 +1561,75 @@
                 "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
                 "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
               ]
-            }
+            },
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
+              "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/bfc943f0-5372-4a9f-8d07-97c3793808db.webp",
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202306/19/51f1c895-032f-4b18-9e47-a1a0cb21511f.webp",
+              "https://live.staticflickr.com/65535/53953518745_a91884d6e2_b.jpg",
+              "https://live.staticflickr.com/5247/5370777099_5053f69108_b.jpg",
+              "https://live.staticflickr.com/5169/5370774765_8c1e200d19_b.jpg",
+              "https://live.staticflickr.com/5089/5370768533_3662b7d908_b.jpg",
+              "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBzdW5yaXNlJTIwY3JhdGVyfGVufDB8MHx8fDE3NzgwNzgzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://pixabay.com/get/gd4d8b6155182b4d2c2fc04952137adb1e3dc7431b2f950f7a50ba799393e122c3edd772a230b42cc71890517bd0898cbd5e207a844e1dafba34600088b9ab2c0_1280.jpg"
+            ],
+            "imageCredits": [
+              {
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
+                "source": "visitjeju",
+                "title": "성산일출봉(UNESCO 세계자연유산)"
+              },
+              {
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/bfc943f0-5372-4a9f-8d07-97c3793808db.webp",
+                "source": "visitjeju",
+                "title": "성산~세화 해안도로"
+              },
+              {
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202306/19/51f1c895-032f-4b18-9e47-a1a0cb21511f.webp",
+                "source": "visitjeju",
+                "title": "성산스쿠버리조트"
+              },
+              {
+                "url": "https://live.staticflickr.com/65535/53953518745_a91884d6e2_b.jpg",
+                "source": "flickr",
+                "author": "xiquinhosilva",
+                "license": "CC BY 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/7138083@N04/53953518745",
+                "title": "Seongsan Ilchulbong"
+              },
+              {
+                "url": "https://live.staticflickr.com/5247/5370777099_5053f69108_b.jpg",
+                "source": "flickr",
+                "author": "-Jérôme-",
+                "license": "CC BY 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/76474448@N00/5370777099",
+                "title": "Presqu'ile volcanique"
+              },
+              {
+                "url": "https://live.staticflickr.com/5169/5370774765_8c1e200d19_b.jpg",
+                "source": "flickr",
+                "author": "-Jérôme-",
+                "license": "CC BY 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/76474448@N00/5370774765",
+                "title": "Après la lave, la végétation"
+              },
+              {
+                "url": "https://live.staticflickr.com/5089/5370768533_3662b7d908_b.jpg",
+                "source": "flickr",
+                "author": "-Jérôme-",
+                "license": "CC BY 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/76474448@N00/5370768533",
+                "title": "La caldera"
+              },
+              {
+                "url": "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBzdW5yaXNlJTIwY3JhdGVyfGVufDB8MHx8fDE3NzgwNzgzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+                "source": "unsplash"
+              },
+              {
+                "url": "https://pixabay.com/get/gd4d8b6155182b4d2c2fc04952137adb1e3dc7431b2f950f7a50ba799393e122c3edd772a230b42cc71890517bd0898cbd5e207a844e1dafba34600088b9ab2c0_1280.jpg",
+                "source": "pixabay"
+              }
+            ]
           },
           {
             "number": 5,
@@ -1166,7 +1638,7 @@
             "name": "日出ランド（密川洞窟溶岩トンネル）",
             "category": "地質 — 溶岩トンネル体験",
             "description": "**日出ランド**は2002年開園の**40万m²の自然テーマパーク**で、万丈窟と同一の溶岩トンネル一帯にに構築されています。メインアトラクションの**密川洞窟**は総延長1,700m（公開区間365m）の溶岩トンネルで、7色のLED演出照明が施されています。万丈窟閉鎖中の現在、最も信頼性の高い溶岩体験として役立っています。",
-            "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
             "highlights": [
               "**総延長1,700m**の溶岩トンネル。**公開区間365m**（約25分の見学）",
               "**万丈窟代替** — 同一の溶岩トンネル体系",
@@ -1192,7 +1664,70 @@
                 "SBS Variety Archive — Running Man Episode 89 (2012)",
                 "Jeju Tourism Organization — accessibility-friendly attraction registry"
               ]
-            }
+            },
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202205/30/8d1fb97b-1ad0-48cc-9aa0-2ec519e9575c.webp",
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202112/21/5d2e84f4-d58b-4fa0-b7bb-a2f32cf63428.webp",
+              "https://live.staticflickr.com/65535/53953062566_80ce9e16af_b.jpg",
+              "https://live.staticflickr.com/7534/27767696885_e3b15614a5_b.jpg",
+              "https://live.staticflickr.com/7430/27733577536_8ecebd8480_b.jpg",
+              "https://live.staticflickr.com/7262/27733580686_b5c66c7b9d_b.jpg",
+              "https://images.unsplash.com/photo-1596617345904-f0b8677f5a8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZWp1JTIwbGF2YSUyMGNhdmUlMjBhdG1vc3BoZXJpY3xlbnwwfDB8fHwxNzc4MDc4NDI3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+            ],
+            "imageCredits": [
+              {
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
+                "source": "visitjeju",
+                "title": "일출랜드 아트센터"
+              },
+              {
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202205/30/8d1fb97b-1ad0-48cc-9aa0-2ec519e9575c.webp",
+                "source": "visitjeju",
+                "title": "일출랜드"
+              },
+              {
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202112/21/5d2e84f4-d58b-4fa0-b7bb-a2f32cf63428.webp",
+                "source": "visitjeju",
+                "title": "미천굴"
+              },
+              {
+                "url": "https://live.staticflickr.com/65535/53953062566_80ce9e16af_b.jpg",
+                "source": "flickr",
+                "author": "xiquinhosilva",
+                "license": "CC BY 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/7138083@N04/53953062566",
+                "title": "Jeju Volcanic Island and Lava Tubes"
+              },
+              {
+                "url": "https://live.staticflickr.com/7534/27767696885_e3b15614a5_b.jpg",
+                "source": "flickr",
+                "author": "lnevay",
+                "license": "CC BY-SA 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/98901717@N08/27767696885",
+                "title": "Manjanggul Cave"
+              },
+              {
+                "url": "https://live.staticflickr.com/7430/27733577536_8ecebd8480_b.jpg",
+                "source": "flickr",
+                "author": "lnevay",
+                "license": "CC BY-SA 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/98901717@N08/27733577536",
+                "title": "Manjanggul Cave"
+              },
+              {
+                "url": "https://live.staticflickr.com/7262/27733580686_b5c66c7b9d_b.jpg",
+                "source": "flickr",
+                "author": "lnevay",
+                "license": "CC BY-SA 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/98901717@N08/27733580686",
+                "title": "Manjanggul Cave"
+              },
+              {
+                "url": "https://images.unsplash.com/photo-1596617345904-f0b8677f5a8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZWp1JTIwbGF2YSUyMGNhdmUlMjBhdG1vc3BoZXJpY3xlbnwwfDB8fHwxNzc4MDc4NDI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+                "source": "unsplash"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1201,7 +1736,7 @@
             "name": "城邑民俗村（朝鮮時代の生きた村）",
             "category": "文化遺産 — 朝鮮時代の生きた城下町",
             "description": "**城邑民俗村**は**1423年、世宗大王の治世に築かれた朝鮮時代の生きた城下町**です。1914年まで約500年にわたって行政の中枢として機能し、玄武岩の城壁（邑城）の内側に**伝統的な建造物110棟**が今なお住居として使われています。済州独自の茅葺き屋根・玄武岩の石垣・風で傾いた老木が圧倒的な保存状態で残る国指定民俗文化財です。入場無料。",
-            "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
             "highlights": [
               "**1423年創建** — 世宗大王による行政中心地、**1914年まで約500年**存続",
               "**110棟**の伝統建造物が現存する「生きた」民俗村",
@@ -1228,7 +1763,48 @@
                 "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
                 "Jeju Folklore Society — Omegisul brewing tradition documentation"
               ]
-            }
+            },
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
+              "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/d3665aa5-bb00-472d-9886-06e3337d9515.webp",
+              "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/69a0bd54-97fa-49b5-b59e-5986b8e48ecf.webp",
+              "https://live.staticflickr.com/1446/25727012660_f652a7494e_b.jpg",
+              "https://images.unsplash.com/photo-1777543331241-a80f9cd409ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxLb3JlYW4lMjB0cmFkaXRpb25hbCUyMHZpbGxhZ2UlMjB0aGF0Y2hlZHxlbnwwfDB8fHwxNzc4MDc4NDYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://pixabay.com/get/gc781d5c3ef50ea89a6bdfedaf270b199fd3a4168f2358667c660d28ef8ba7257108f84be87a22e9ce96ff035aca4ebb68139baf8cc26b7a22e47a28e931e9591_1280.jpg"
+            ],
+            "imageCredits": [
+              {
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
+                "source": "visitjeju",
+                "title": "성읍민속마을"
+              },
+              {
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/d3665aa5-bb00-472d-9886-06e3337d9515.webp",
+                "source": "visitjeju",
+                "title": "성읍목장"
+              },
+              {
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/69a0bd54-97fa-49b5-b59e-5986b8e48ecf.webp",
+                "source": "visitjeju",
+                "title": "성읍승마장"
+              },
+              {
+                "url": "https://live.staticflickr.com/1446/25727012660_f652a7494e_b.jpg",
+                "source": "flickr",
+                "author": "anokarina",
+                "license": "CC BY-SA 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/30760976@N04/25727012660",
+                "title": "“Living is Easy with Eyes Closed.” ―John Lennon 🌴"
+              },
+              {
+                "url": "https://images.unsplash.com/photo-1777543331241-a80f9cd409ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxLb3JlYW4lMjB0cmFkaXRpb25hbCUyMHZpbGxhZ2UlMjB0aGF0Y2hlZHxlbnwwfDB8fHwxNzc4MDc4NDYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+                "source": "unsplash"
+              },
+              {
+                "url": "https://pixabay.com/get/gc781d5c3ef50ea89a6bdfedaf270b199fd3a4168f2358667c660d28ef8ba7257108f84be87a22e9ce96ff035aca4ebb68139baf8cc26b7a22e47a28e931e9591_1280.jpg",
+                "source": "pixabay"
+              }
+            ]
           }
         ]
       }
@@ -1782,13 +2358,13 @@
     "senior_fit": 0.6,
     "couple_fit": 0.95,
     "active_traveler_fit": 0.8,
-    "one_day_fit": 1.0,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.4,
     "rain_fit": 0.55,
     "value_for_money_fit": 0.85,
     "iconic_landmark_fit": 0.9,
     "cafe_fit": 0.4,
-    "adult_family_fit": 1.0,
+    "adult_family_fit": 1,
     "young_kids_fit": 0.7,
     "senior_active_fit": 0.8,
     "senior_general_fit": 0.6,
@@ -1796,13 +2372,13 @@
     "stroller_fit": 0.45,
     "indoor_ratio": 0.3,
     "weather_sensitivity": 0.55,
-    "local_culture_fit": 1.0,
+    "local_culture_fit": 1,
     "shopping_fit": 0.2,
-    "storytelling_fit": 1.0,
+    "storytelling_fit": 1,
     "comfort_level": 0.6,
     "budget_fit": 0.8,
     "premium_fit": 0.5,
-    "small_group_fit": 1.0,
+    "small_group_fit": 1,
     "private_fit": 0.2,
     "bus_fit": 0.2,
     "price_band": "mid",
@@ -1858,7 +2434,7 @@
     "destination_region": "jeju",
     "vehicle_type": "minicoach",
     "vehicle_type_legacy": "minicoach",
-    "duration_hours": 9.0,
+    "duration_hours": 9,
     "anchor_poi_keys": [
       "seongsan_ilchulbong",
       "manjanggul_cave",
@@ -1866,67 +2442,67 @@
     ],
     "pickup_base_normalized": "jeju_city",
     "unesco_fit": 0.85,
-    "family_with_teens_fit": 1.0,
+    "family_with_teens_fit": 1,
     "solo_traveler_fit": 0.85,
     "food_fit": 0.6,
-    "nature_fit": 1.0,
+    "nature_fit": 1,
     "beach_fit": 0.8,
     "nightlife_fit": 0.2,
-    "no_shopping_fit": 1.0,
+    "no_shopping_fit": 1,
     "intangible_heritage_fit": 0.75,
     "seasonality": "year_round",
     "profile_format": "small_group_fixed_itinerary",
     "private_tour_fit": 0.05,
-    "fixed_itinerary_fit": 1.0,
+    "fixed_itinerary_fit": 1,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
     "first_time_jeju_fit": 0.85,
-    "east_jeju_fit": 1.0,
+    "east_jeju_fit": 1,
     "north_jeju_fit": 0.5,
     "south_jeju_fit": 0.4,
     "west_jeju_fit": 0.05,
     "central_jeju_fit": 0.6,
-    "east_signature_fit": 1.0,
-    "east_nature_core_fit": 1.0,
+    "east_signature_fit": 1,
+    "east_nature_core_fit": 1,
     "unesco_taste_fit": 0.85,
     "world_natural_heritage_fit": 0.85,
     "biosphere_reserve_fit": 0.7,
     "global_geopark_fit": 0.95,
     "triple_unesco_fit": 0.95,
-    "lava_tube_unesco_adjacent_fit": 1.0,
-    "volcano_geology_fit": 1.0,
-    "tuff_cone_fit": 1.0,
-    "lava_tube_fit": 1.0,
+    "lava_tube_unesco_adjacent_fit": 1,
+    "volcano_geology_fit": 1,
+    "tuff_cone_fit": 1,
+    "lava_tube_fit": 1,
     "volcanic_neck_fit": 0.85,
     "parasitic_cone_fit": 0.95,
-    "shield_volcano_fit": 1.0,
+    "shield_volcano_fit": 1,
     "natural_monument_anchor_count": 3,
-    "mythology_fit": 1.0,
-    "seolmundae_halmang_fit": 1.0,
-    "creation_myth_fit": 1.0,
+    "mythology_fit": 1,
+    "seolmundae_halmang_fit": 1,
+    "creation_myth_fit": 1,
     "korean_oral_tradition_fit": 0.95,
-    "joseon_heritage_fit": 1.0,
-    "joseon_walled_town_fit": 1.0,
+    "joseon_heritage_fit": 1,
+    "joseon_walled_town_fit": 1,
     "feng_shui_design_fit": 0.95,
     "yeondae_beacon_fit": 0.95,
-    "korean_folklore_fit": 1.0,
+    "korean_folklore_fit": 1,
     "k_drama_filming_fit": 0.95,
     "k_drama_anchor_count": 4,
-    "tadao_ando_architecture_fit": 1.0,
-    "pulitzer_architecture_fit": 1.0,
-    "concrete_minimalism_fit": 1.0,
-    "contemporary_architecture_fit": 1.0,
-    "korean_traditional_architecture_fit": 1.0,
-    "hanok_village_fit": 1.0,
+    "tadao_ando_architecture_fit": 1,
+    "pulitzer_architecture_fit": 1,
+    "concrete_minimalism_fit": 1,
+    "contemporary_architecture_fit": 1,
+    "korean_traditional_architecture_fit": 1,
+    "hanok_village_fit": 1,
     "thatched_roof_fit": 0.85,
     "lighthouse_anchor_fit": 0.95,
-    "coastal_cape_fit": 1.0,
+    "coastal_cape_fit": 1,
     "cliff_walk_fit": 0.95,
-    "ocean_view_fit": 1.0,
-    "coastal_cliff_fit": 1.0,
-    "park_anchor_fit": 1.0,
-    "outdoor_museum_fit": 1.0,
-    "stone_culture_fit": 1.0,
+    "ocean_view_fit": 1,
+    "coastal_cliff_fit": 1,
+    "park_anchor_fit": 1,
+    "outdoor_museum_fit": 1,
+    "stone_culture_fit": 1,
     "bonsai_garden_fit": 0.7,
     "cactus_greenhouse_fit": 0.7,
     "sculpture_garden_fit": 0.85,
@@ -1936,55 +2512,55 @@
     "stair_climbing_fit": 0.6,
     "trail_walking_fit": 0.85,
     "elevation_gain_total_m": 154,
-    "moderate_mobility_fit": 1.0,
+    "moderate_mobility_fit": 1,
     "low_intensity_fit": 0.7,
     "senior_friendly_fit": 0.75,
     "stroller_friendly_fit": 0.6,
     "wheelchair_accessible_anchor_fit": 0.55,
     "mobility_limited_friendly_fit": 0.7,
-    "muslim_prayer_facility_fit": 1.0,
+    "muslim_prayer_facility_fit": 1,
     "first_time_korea_fit": 0.85,
     "small_family_fit": 0.95,
     "young_kids_friendly_fit": 0.85,
     "senior_couple_fit": 0.85,
     "honeymoon_fit": 0.85,
-    "history_lover_fit": 1.0,
+    "history_lover_fit": 1,
     "geology_enthusiast_fit": 0.95,
-    "mythology_lover_fit": 1.0,
-    "k_drama_fan_fit": 1.0,
-    "architecture_enthusiast_fit": 1.0,
-    "photographer_fit": 1.0,
-    "instagrammable_fit": 1.0,
+    "mythology_lover_fit": 1,
+    "k_drama_fan_fit": 1,
+    "architecture_enthusiast_fit": 1,
+    "photographer_fit": 1,
+    "instagrammable_fit": 1,
     "group_size_min": 2,
     "group_size_max": 14,
-    "small_group_van_fit": 1.0,
+    "small_group_van_fit": 1,
     "calm_pace_fit": 0.85,
     "active_pace_fit": 0.7,
     "checkbox_sightseeing_fit": 0.4,
     "deep_dwell_fit": 0.95,
-    "balanced_pace_fit": 1.0,
-    "varied_terrain_fit": 1.0,
-    "language_english_fit": 1.0,
+    "balanced_pace_fit": 1,
+    "varied_terrain_fit": 1,
+    "language_english_fit": 1,
     "language_chinese_fit": 0.85,
     "language_japanese_fit": 0.5,
-    "english_guide_fit": 1.0,
-    "mythology_guide_fit": 1.0,
-    "spring_fit": 1.0,
+    "english_guide_fit": 1,
+    "mythology_guide_fit": 1,
+    "spring_fit": 1,
     "summer_fit": 0.85,
     "autumn_fit": 0.95,
     "winter_fit": 0.7,
     "all_year_fit": 0.85,
     "off_season_fit": 0.65,
     "monsoon_fit": 0.55,
-    "best_season_spring_fit": 1.0,
-    "canola_season_anchor_fit": 1.0,
+    "best_season_spring_fit": 1,
+    "canola_season_anchor_fit": 1,
     "hydrangea_season_anchor_fit": 0.85,
     "indoor_anchor_fit": 0.65,
     "wind_sensitivity": 0.55,
     "indoor_fallback_anchor_count": 3,
     "early_start_fit": 0.85,
     "late_finish_fit": 0.7,
-    "full_day_fit": 1.0,
+    "full_day_fit": 1,
     "half_day_fit": 0.05,
     "value_priced_fit": 0.85,
     "budget_traveler_fit": 0.85,
@@ -1994,35 +2570,35 @@
     "crowd_avoidance_fit": 0.6,
     "tourist_circuit_fit": 0.85,
     "instagram_anchor_count": 5,
-    "minicoach_fit": 1.0,
+    "minicoach_fit": 1,
     "max_pax_per_vehicle": 14,
-    "jeju_city_pickup_fit": 1.0,
+    "jeju_city_pickup_fit": 1,
     "seogwipo_pickup_fit": 0.85,
     "cruise_shore_excursion_fit": 0.5,
     "cruise_passenger_fit": 0.6,
     "korean_food_fit": 0.95,
-    "jeju_local_cuisine_fit": 1.0,
+    "jeju_local_cuisine_fit": 1,
     "mulhoe_fit": 0.95,
     "galchi_fit": 0.85,
     "black_pig_heritage_fit": 0.85,
     "seafood_fit": 0.95,
     "vegetarian_friendly_fit": 0.75,
     "halal_friendly_fit": 0.65,
-    "omegisul_tasting_fit": 1.0,
+    "omegisul_tasting_fit": 1,
     "photo_anchor_count": 5,
     "drone_friendly_fit": 0.55,
-    "filming_location_fit": 1.0,
+    "filming_location_fit": 1,
     "stair_anchor_count": 1,
     "barrier_free_anchor_fit": 0.7,
-    "accessibility_focus_fit": 1.0,
+    "accessibility_focus_fit": 1,
     "is_anchor_for_east_jeju_signature": true,
     "catalog_position": "east_jeju_signature_nature_core",
     "competing_tours_count": 3,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
@@ -2170,7 +2746,7 @@
           "_methodology": "0-1 float scale (post Phase 1 unification). Each score grounded in verified facts from KB v1.4 sources.",
           "deltas_applied": {
             "unesco_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified: 1 of 5 attractions is full UNESCO WHS (Seongsan, 'Jeju Volcanic Island & Lava Tubes'). Stone Park has volcanic-stone heritage value (not UNESCO designated). Seongeup is National Folklore Cultural Heritage (Korean designation, NOT UNESCO). Ilchul Land's Micheon Cave is a Natural Monument but not UNESCO. So 1/5 verified UNESCO = 0.85 (lowering from mechanical 1.0 to fact-grounded 0.85)."
             },
@@ -2185,7 +2761,7 @@
               "reasoning": "UPGRADED 0.6→0.65 with verified totals: Stone Park Course 1 (~1.5 km flat), Seopjikoji (2.1 km out-and-back + lighthouse stairs), Seongsan (0.8 km + 140 m gain via 300-500 wooden steps), Ilchul Land (~1 km park + 365 m cave), Seongeup (~1 km olle alleys flat). Total ~6.5 km + Seongsan elevation. Slightly more demanding than mechanical 0.6 due to Seongsan."
             },
             "iconic_landmark_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.9,
               "reasoning": "Verified: Seongsan + Seopjikoji = nationally iconic; Stone Park + Seongeup = regionally iconic; Ilchul Land = secondary. 0.9 (lowering from mechanical 1.0) — only 2 of 5 are universally must-see Jeju landmarks."
             },
@@ -2210,7 +2786,7 @@
               "reasoning": "Slightly UPGRADED 0.6→0.65: Stone Park has 3 indoor exhibition halls (rain refuge), Ilchul Land's cave is fully indoor and stays cool/dry, Seongeup has covered houses. Only Seopjikoji and Seongsan are heavily rain-affected. Verified balance = 0.65."
             },
             "value_for_money_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "DOWNGRADED 1.0→0.85 with verified fees: Stone Park ₩5,000 + Seopjikoji free + Seongsan ₩2,000 + Ilchul Land ₩12,000 + Seongeup free = ~₩19,000/adult attraction fees. Higher than Grand Highlights (~₩6,000) due to Ilchul Land's premium. Still good value but not exceptional. 0.85 calibrated."
             },
@@ -2231,7 +2807,7 @@
               "reasoning": "UPGRADED 0.8→0.9 with verified iconic shots: Sky Pond (Stone Park), Bangdupo Lighthouse + Bulgeun Oreum (Seopjikoji), 99-rim crater (Seongsan), 7-color lit cave (Ilchul Land), 600-year zelkova trees + thatched hanok (Seongeup). 5 distinct hero images in one route."
             },
             "first_time_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "Verified: covers volcanic geology + UNESCO peak + culture + lava tube + folk village = 5 distinct Jeju essentials in one day. 0.95 is excellent first-Jeju overview."
             }

@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   Bath,
@@ -8,9 +8,12 @@ import {
   Camera,
   Car,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Clock,
   Footprints,
   Lightbulb,
+  Maximize2,
   MapPin,
   Sparkles,
   Ticket,
@@ -53,6 +56,12 @@ export type TourStopDrawerStop = {
 };
 
 const drawerEase = [0.16, 1, 0.3, 1] as const;
+
+const heroSlideVariants = {
+  enter: (direction: number) => ({ opacity: 0, x: direction * 24, scale: 1.02 }),
+  center: { opacity: 1, x: 0, scale: 1 },
+  exit: (direction: number) => ({ opacity: 0, x: -direction * 24, scale: 1.02 }),
+};
 
 /** Inline `**bold**` → `<strong>` parser. Authors write descriptions/highlights
  *  in light markdown; this turns the markers into typographic emphasis instead
@@ -328,6 +337,14 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
   const [whyExpanded, setWhyExpanded] = useState(false);
   const [descModalOpen, setDescModalOpen] = useState(false);
   const [prevStopNumber, setPrevStopNumber] = useState(stop?.number);
+  // Hero slideshow state — activeImageIndex drives which photo shows in the
+  // top hero crossfade; lightboxIndex is independent so opening the lightbox
+  // doesn't rewind the inline hero.
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [imageDirection, setImageDirection] = useState(1);
+  const prevImageIndexRef = useRef(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   /**
    * React-recommended "adjusting state on prop change" pattern: reset compact
@@ -339,6 +356,11 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
     setHighlightsExpanded(false);
     setWhyExpanded(false);
     setDescModalOpen(false);
+    setActiveImageIndex(0);
+    prevImageIndexRef.current = 0;
+    setImageDirection(1);
+    setLightboxOpen(false);
+    setLightboxIndex(0);
   }
 
   // Esc closes the description modal first, then the drawer.
@@ -360,7 +382,51 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
     : stop?.image
       ? [stop.image]
       : [];
-  const stripPhotos = galleryPhotos.length > 1 ? galleryPhotos.slice(1) : [];
+  const activeImage = galleryPhotos[activeImageIndex] ?? galleryPhotos[0];
+
+  const setActiveImage = useCallback((nextIndex: number) => {
+    if (nextIndex === prevImageIndexRef.current) return;
+    setImageDirection(nextIndex > prevImageIndexRef.current ? 1 : -1);
+    prevImageIndexRef.current = nextIndex;
+    setActiveImageIndex(nextIndex);
+  }, []);
+
+  const openImageLightbox = useCallback(() => {
+    if (galleryPhotos.length === 0) return;
+    setLightboxIndex(activeImageIndex);
+    setLightboxOpen(true);
+  }, [activeImageIndex, galleryPhotos.length]);
+
+  const closeImageLightbox = useCallback(() => setLightboxOpen(false), []);
+  const lightboxNext = useCallback(
+    () => setLightboxIndex((prev) => (prev + 1) % galleryPhotos.length),
+    [galleryPhotos.length],
+  );
+  const lightboxPrev = useCallback(
+    () => setLightboxIndex((prev) => (prev - 1 + galleryPhotos.length) % galleryPhotos.length),
+    [galleryPhotos.length],
+  );
+
+  // Lightbox keyboard nav (Esc / Arrows). Capture phase + stopPropagation so
+  // Esc closes the lightbox without also closing the drawer behind it.
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        e.stopPropagation();
+        closeImageLightbox();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        lightboxNext();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        lightboxPrev();
+      }
+    };
+    window.addEventListener("keydown", onKey, true);
+    return () => window.removeEventListener("keydown", onKey, true);
+  }, [lightboxOpen, closeImageLightbox, lightboxNext, lightboxPrev]);
 
   useEffect(() => {
     if (!open) return;
@@ -404,22 +470,51 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
             transition={{ duration: 0.42, ease: drawerEase }}
             className="fixed bottom-0 right-0 top-0 z-[71] flex w-full max-w-[520px] flex-col bg-white shadow-[0_0_60px_rgba(12,22,34,0.18)]"
           >
-            {/* Hero image area with stop number badge + close button overlay */}
-            <div className="relative h-56 flex-shrink-0 overflow-hidden bg-muted">
-              {stop.image ? (
-                <img
-                  src={stop.image}
-                  alt={stop.name}
-                  className="h-full w-full object-cover"
-                  loading="eager"
-                  decoding="async"
-                />
-              ) : null}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/55 via-[#0c1622]/10 to-transparent" />
+            {/* Hero image area — slide+fade crossfade between photos. The image
+                surface itself is the click target for the lightbox; the close
+                button sits as a sibling so it doesn't nest inside another button. */}
+            <div className="group relative h-56 flex-shrink-0 overflow-hidden bg-muted">
+              <button
+                type="button"
+                onClick={openImageLightbox}
+                aria-label={galleryPhotos.length > 0 ? "View photo full size" : "Photo"}
+                disabled={galleryPhotos.length === 0}
+                className="absolute inset-0 block h-full w-full text-left disabled:cursor-default"
+              >
+                {activeImage ? (
+                  <AnimatePresence initial={false} custom={imageDirection} mode="popLayout">
+                    <motion.img
+                      key={`${activeImage}-${activeImageIndex}`}
+                      src={activeImage}
+                      alt={stop.name}
+                      loading="eager"
+                      decoding="async"
+                      custom={imageDirection}
+                      variants={heroSlideVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      transition={{ duration: 0.5, ease: drawerEase }}
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                  </AnimatePresence>
+                ) : null}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/55 via-[#0c1622]/10 to-transparent pointer-events-none" />
+              </button>
 
-              <div className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white text-sm font-semibold text-foreground shadow-lg ring-[3px] ring-white/70">
+              <div className="pointer-events-none absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white text-sm font-semibold text-foreground shadow-lg ring-[3px] ring-white/70">
                 {String(stop.number).padStart(2, "0")}
               </div>
+
+              {galleryPhotos.length > 1 && (
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute right-16 top-4 flex h-9 items-center gap-1.5 rounded-full bg-white/85 px-2.5 text-[11px] font-semibold tabular-nums text-foreground shadow-md backdrop-blur-md transition-transform duration-200 group-hover:scale-[1.03]"
+                >
+                  <Maximize2 className="h-3 w-3" strokeWidth={2.25} />
+                  {activeImageIndex + 1}/{galleryPhotos.length}
+                </span>
+              )}
 
               <button
                 type="button"
@@ -431,31 +526,47 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
               </button>
 
               {stop.duration && (
-                <div className="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-foreground shadow-md backdrop-blur-sm">
+                <div className="pointer-events-none absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-foreground shadow-md backdrop-blur-sm">
                   <Clock className="h-3.5 w-3.5 text-primary" strokeWidth={2} />
                   {stop.duration}
                 </div>
               )}
             </div>
 
-            {/* Mini gallery strip — horizontal scroll under hero (extra photos beyond cover) */}
-            {stripPhotos.length > 0 && (
+            {/* Photo selector strip — clicking a thumbnail crossfades the hero
+                above, with a clear "active" affordance on the current thumb. */}
+            {galleryPhotos.length > 1 && (
               <div className="flex-shrink-0 border-b border-border/50 bg-white">
                 <div className="flex gap-1.5 overflow-x-auto scrollbar-hide px-5 py-2.5">
-                  {stripPhotos.map((src, i) => (
-                    <div
-                      key={`${src}-${i}`}
-                      className="flex-shrink-0 h-16 w-24 overflow-hidden rounded-lg bg-muted ring-1 ring-border/40 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_4px_10px_-4px_rgba(26,35,50,0.16)]"
-                    >
-                      <img
-                        src={src}
-                        alt=""
-                        loading="lazy"
-                        decoding="async"
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                  ))}
+                  {galleryPhotos.map((src, i) => {
+                    const isActive = i === activeImageIndex;
+                    return (
+                      <button
+                        type="button"
+                        key={`${src}-${i}`}
+                        onClick={() => setActiveImage(i)}
+                        aria-pressed={isActive}
+                        aria-label={`Show photo ${i + 1}`}
+                        className={cn(
+                          "flex-shrink-0 h-16 w-24 overflow-hidden rounded-lg bg-muted transition-all duration-300",
+                          isActive
+                            ? "ring-2 ring-primary/85 ring-offset-2 ring-offset-white shadow-[0_2px_4px_rgba(26,35,50,0.08),0_10px_24px_-12px_rgba(26,35,50,0.30)] -translate-y-0.5"
+                            : "ring-1 ring-border/40 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_4px_10px_-4px_rgba(26,35,50,0.16)] hover:ring-border hover:-translate-y-0.5",
+                        )}
+                      >
+                        <img
+                          src={src}
+                          alt=""
+                          loading="lazy"
+                          decoding="async"
+                          className={cn(
+                            "h-full w-full object-cover transition-transform duration-500",
+                            isActive ? "scale-[1.04]" : "hover:scale-[1.05]",
+                          )}
+                        />
+                      </button>
+                    );
+                  })}
                   <div className="flex-shrink-0 w-1" aria-hidden />
                 </div>
               </div>
@@ -738,22 +849,36 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
                   onClick={() => setDescModalOpen(false)}
                   aria-hidden
                 />
+                {/* Position wrapper — Tailwind handles fixed + desktop centering.
+                    framer-motion only animates `opacity` here so it doesn't write
+                    inline `transform`, which would otherwise override Tailwind's
+                    `sm:-translate-x-1/2 sm:-translate-y-1/2` on desktop and push
+                    the card off-screen to the right. */}
                 <motion.div
                   key="tour-stop-desc-modal"
                   role="dialog"
                   aria-modal="true"
                   aria-label={`${stop.name} — ${sectionUi.stopFullDescriptionTitle ?? "Full description"}`}
-                  initial={{ opacity: 0, y: 32 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 32 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={{ duration: 0.32, ease: drawerEase }}
                   className={cn(
-                    "fixed z-[81] flex flex-col overflow-hidden bg-white",
-                    "shadow-[0_-12px_40px_rgba(12,22,34,0.18),0_-4px_12px_rgba(12,22,34,0.10)]",
-                    // Mobile: bottom sheet — full width, anchored to bottom, rounded top
-                    "bottom-0 left-0 right-0 max-h-[88dvh] rounded-t-2xl",
+                    "fixed z-[81] flex max-h-[88dvh]",
+                    // Mobile: bottom sheet — full width, anchored to bottom
+                    "bottom-0 left-0 right-0",
                     // Desktop (sm+): centered card
-                    "sm:bottom-auto sm:left-1/2 sm:right-auto sm:top-1/2 sm:max-h-[88dvh] sm:w-[min(640px,calc(100vw-2rem))] sm:-translate-x-1/2 sm:-translate-y-1/2 sm:rounded-2xl",
+                    "sm:bottom-auto sm:left-1/2 sm:right-auto sm:top-1/2 sm:w-[min(640px,calc(100vw-2rem))] sm:-translate-x-1/2 sm:-translate-y-1/2",
+                  )}
+                >
+                <motion.div
+                  initial={{ y: 32 }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.32, ease: drawerEase }}
+                  className={cn(
+                    "flex w-full flex-col overflow-hidden bg-white max-h-[88dvh]",
+                    "shadow-[0_-12px_40px_rgba(12,22,34,0.18),0_-4px_12px_rgba(12,22,34,0.10)]",
+                    "rounded-t-2xl sm:rounded-2xl",
                     "sm:shadow-[0_30px_80px_rgba(12,22,34,0.30),0_8px_20px_rgba(12,22,34,0.18)] sm:ring-1 sm:ring-border/60",
                   )}
                 >
@@ -799,7 +924,113 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
                     </article>
                   </div>
                 </motion.div>
+                </motion.div>
               </>
+            )}
+          </AnimatePresence>
+
+          {/* Fullscreen photo lightbox — opens when the stop hero image is tapped. */}
+          <AnimatePresence>
+            {lightboxOpen && galleryPhotos.length > 0 && (
+              <motion.div
+                key="tour-stop-image-lightbox"
+                role="dialog"
+                aria-modal="true"
+                aria-label={`${stop.name} — photos`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.28, ease: drawerEase }}
+                className="fixed inset-0 z-[90] flex items-center justify-center bg-[#0c1622]/95 backdrop-blur-sm"
+                onClick={closeImageLightbox}
+              >
+                <div className="absolute left-4 top-4 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold tabular-nums text-white">
+                  {lightboxIndex + 1} / {galleryPhotos.length}
+                </div>
+
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    closeImageLightbox();
+                  }}
+                  aria-label="Close"
+                  className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+
+                {galleryPhotos.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        lightboxPrev();
+                      }}
+                      aria-label="Previous"
+                      className="absolute left-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        lightboxNext();
+                      }}
+                      aria-label="Next"
+                      className="absolute right-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                  </>
+                )}
+
+                <div
+                  className="relative mx-4 max-h-[82vh] max-w-5xl"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <AnimatePresence initial={false} mode="popLayout">
+                    <motion.img
+                      key={lightboxIndex}
+                      src={galleryPhotos[lightboxIndex]}
+                      alt={stop.name}
+                      decoding="async"
+                      initial={{ opacity: 0, scale: 0.985 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.985 }}
+                      transition={{ duration: 0.32, ease: drawerEase }}
+                      className="max-h-[82vh] w-auto rounded-xl shadow-2xl"
+                    />
+                  </AnimatePresence>
+                </div>
+
+                {galleryPhotos.length > 1 && (
+                  <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 px-4">
+                    {galleryPhotos.map((src, i) => (
+                      <button
+                        type="button"
+                        key={`${src}-${i}`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setLightboxIndex(i);
+                        }}
+                        aria-label={`View photo ${i + 1}`}
+                        aria-current={i === lightboxIndex ? "true" : undefined}
+                        className={cn(
+                          "h-8 w-12 overflow-hidden rounded-md transition-all",
+                          i === lightboxIndex
+                            ? "ring-2 ring-white ring-offset-2 ring-offset-[#0c1622]"
+                            : "opacity-50 hover:opacity-80",
+                        )}
+                      >
+                        <img src={src} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </motion.div>
             )}
           </AnimatePresence>
         </>

@@ -69,13 +69,13 @@ export function DestinationsShowcase() {
               {t("premium.v2.destinations.eyebrow")}
             </span>
           </div>
-          <h2 className="mx-auto mb-3 max-w-2xl text-balance text-[1.35rem] font-semibold leading-snug tracking-[-0.02em] text-slate-900 md:mb-4 md:text-[1.85rem] md:leading-[1.2] lg:text-[2.15rem]">
+          <h2 className="mx-auto mb-3 max-w-2xl text-balance text-[1.35rem] font-bold leading-snug tracking-[-0.025em] text-slate-900 md:mb-4 md:text-[1.85rem] md:leading-[1.2] lg:text-[2.15rem]">
             {t("premium.v2.destinations.title")}{" "}
-            <span className="bg-gradient-to-r from-amber-800 via-amber-700 to-orange-900/90 bg-clip-text font-semibold text-transparent">
+            <span className="bg-gradient-to-r from-amber-800 via-amber-700 to-orange-900/90 bg-clip-text font-bold text-transparent">
               {t("premium.v2.destinations.titleAccent")}
             </span>
           </h2>
-          <p className="mx-auto max-w-md text-[14px] leading-relaxed text-slate-500 md:max-w-lg md:text-[15px] md:leading-[1.65]">
+          <p className="mx-auto max-w-md text-[14px] font-medium leading-relaxed text-slate-500 md:max-w-lg md:text-[15px] md:leading-[1.65]">
             {t("premium.v2.destinations.subtitle")}
           </p>
         </div>

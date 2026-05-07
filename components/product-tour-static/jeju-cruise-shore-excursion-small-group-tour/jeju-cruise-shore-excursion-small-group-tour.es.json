@@ -99,32 +99,38 @@
     {
       "icon": "camera",
       "label": "Valor fotográfico",
-      "value": "Muy alto"
+      "value": "Muy alto",
+      "level": 5
     },
     {
       "icon": "mountain",
       "label": "Escénico",
-      "value": "Muy alto"
+      "value": "Muy alto",
+      "level": 5
     },
     {
       "icon": "footprints",
       "label": "Caminata",
-      "value": "Moderado"
+      "value": "Moderado",
+      "level": 3
     },
     {
       "icon": "cloud-rain",
       "label": "Seguridad con lluvia",
-      "value": "Moderado"
+      "value": "Moderado",
+      "level": 3
     },
     {
       "icon": "users",
       "label": "Adecuado para familias",
-      "value": "Alto"
+      "value": "Alto",
+      "level": 5
     },
     {
       "icon": "scale",
       "label": "Ritmo",
-      "value": "Equilibrado"
+      "value": "Equilibrado",
+      "level": 4
     }
   ],
   "galleryItems": [
@@ -211,7 +217,17 @@
       "number": 1,
       "time": "Llegada del crucero + 30 min",
       "duration": "30 min",
-      "whyOnRoute": "**Recogida de crucero en grupo pequeño (máx. 8-15 personas)** en la Terminal Internacional de Pasajeros."
+      "whyOnRoute": "**Recogida de crucero en grupo pequeño (máx. 8-15 personas)** en la Terminal Internacional de Pasajeros.",
+      "smartNotes": {
+        "tip": "Arrive 5–10 minutes before scheduled pickup; bring photo ID for cruise/DMZ tours"
+      },
+      "convenience": {
+        "restroom": "At meeting point (subway station / hotel lobby / port terminal)",
+        "parking": "N/A for guests — vehicle-side pickup"
+      },
+      "visitBasics": {
+        "walking": "Minimal"
+      }
     },
     {
       "number": 2,
@@ -251,6 +267,21 @@
           "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
           "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
         ]
+      },
+      "smartNotes": {
+        "tip": "All stairs but well-maintained — manageable in casual clothes; family-friendly with rest stops; sunrise visits popular but crowds gather pre-dawn",
+        "photo": "Summit view of Hallasan to the west and Udo island to the north on clear days; haenyeo black-sand beach view from descending path",
+        "facilities": "Café (Fritz Coffee 1.3km away has best exterior views of the peak); ferry to Udo Island from Seongsan Port (1.5km/15 min walk)"
+      },
+      "convenience": {
+        "restroom": "Available at entrance and base",
+        "parking": "Large free parking lot"
+      },
+      "visitBasics": {
+        "hours": "Mar–Apr & Sep–Oct: 05:00–19:00; May–Aug: 04:30–20:00; Nov–Feb: 06:00–18:00 (last ticketing 1 hour before closing)",
+        "closed": "Open year-round (weather closures possible)",
+        "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
+        "walking": "Moderate — 20–30 min steady stair climb (≈ 600 stairs); benches every few minutes for rest"
       }
     },
     {
@@ -291,6 +322,21 @@
           "Tadao Ando Architect & Associates — Phoenix Island project documentation",
           "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
         ]
+      },
+      "smartNotes": {
+        "photo": "The lighthouse with cliff backdrop is iconic; canola fields with Seongsan Ilchulbong in distance is the spring signature shot",
+        "facilities": "Aqua Planet Jeju aquarium and several cafés on site",
+        "tip": "Combine with Seongsan Ilchulbong visit (10 min drive); spring (canola) and autumn (eulalia grass) are peak photo seasons"
+      },
+      "convenience": {
+        "restroom": "Available at parking lot and Aqua Planet area",
+        "parking": "Free parking available"
+      },
+      "visitBasics": {
+        "hours": "Open 24 hours (outdoor cape)",
+        "closed": "Open year-round",
+        "admission": "Free",
+        "walking": "Easy to moderate — flat coastal walkway; total loop ≈ 1 hour"
       }
     },
     {
@@ -318,7 +364,20 @@
       "number": 4,
       "time": "≈ 12:30",
       "duration": "75 min",
-      "whyOnRoute": "**Experiencia de almuerzo en grupo pequeño** — tiempo previsto de 75 min (vs 60 min en tour en autocar)."
+      "whyOnRoute": "**Experiencia de almuerzo en grupo pequeño** — tiempo previsto de 75 min (vs 60 min en tour en autocar).",
+      "smartNotes": {
+        "tip": "Inform guide of any dietary restrictions (vegetarian, halal, allergies) at booking; cash and major cards typically accepted"
+      },
+      "convenience": {
+        "restroom": "Available at restaurant",
+        "parking": "Tour vehicle parks at or near restaurant"
+      },
+      "visitBasics": {
+        "hours": "Per restaurant operating hours (typically 11:30–14:00 lunch service)",
+        "closed": "Per restaurant schedule",
+        "admission": "Lunch separate (typically 12,000–25,000 KRW per person; not included in tour price)",
+        "walking": "Minimal — direct restaurant entry"
+      }
     },
     {
       "number": 5,
@@ -359,6 +418,21 @@
           "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
           "Jeju Folklore Society — Omegisul brewing tradition documentation"
         ]
+      },
+      "smartNotes": {
+        "photo": "Stone walls (dolhareubang grandfathers), thatched-roof houses with smoke holes, and traditional doors are iconic Jeju shots",
+        "facilities": "Visitor information center at entrance; English maps available",
+        "tip": "Hire a free volunteer guide at the entrance for cultural context; respect that residents actually live here — don't enter homes uninvited"
+      },
+      "convenience": {
+        "restroom": "Public restrooms at village entrance",
+        "parking": "Free parking near entrance"
+      },
+      "visitBasics": {
+        "hours": "Open 24 hours (outdoor village); shops typically 09:00–17:00",
+        "closed": "Open year-round",
+        "admission": "Free for general village; some private homes charge for guided visits",
+        "walking": "Easy — flat dirt and stone paths through the village"
       }
     },
     {
@@ -388,7 +462,20 @@
       "number": 6,
       "time": "≈ 15:30 → arrive port ≈ 16:45",
       "duration": "75 min de trayecto + 60 min de margen",
-      "whyOnRoute": "**Trayecto de regreso en grupo pequeño** con presencia conversacional del guía."
+      "whyOnRoute": "**Trayecto de regreso en grupo pequeño** con presencia conversacional del guía.",
+      "smartNotes": {
+        "tip": "Confirm exact drop-off location with guide before journey begins; cruise tours coordinate with ship departure schedule"
+      },
+      "convenience": {
+        "restroom": "At drop-off point",
+        "parking": "N/A"
+      },
+      "visitBasics": {
+        "hours": "Per drop-off schedule (see hero / glanceItems for return time band)",
+        "closed": "N/A",
+        "admission": "N/A",
+        "walking": "Minimal — direct vehicle disembarking"
+      }
     }
   ],
   "routeFlowStops": [
@@ -465,7 +552,7 @@
         "iconic_landmarks",
         "first_time_friendly"
       ],
-      "scenic_level_in_variant": 1.0,
+      "scenic_level_in_variant": 1,
       "walking_level_in_variant": 0.6,
       "indoor_ratio_in_variant": 0.15,
       "weather_sensitivity_in_variant": 0.8,
@@ -758,7 +845,7 @@
         "market",
         "shopping"
       ],
-      "scenic_level_in_variant": 1.0,
+      "scenic_level_in_variant": 1,
       "walking_level_in_variant": 0.6,
       "indoor_ratio_in_variant": 0.25,
       "weather_sensitivity_in_variant": 0.6,
@@ -1309,33 +1396,84 @@
     }
   },
   "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "Terminal de cruceros de Jeju (norte)",
-        "note": "Meet at customs exit",
-        "port_id": "jeju_port"
+        "order": 1,
+        "time": "08:30",
+        "name": "Ocean Suites Jeju Hotel",
+        "type": "hotel",
+        "note": "Reúnase en el lobby del hotel. El guía lleva un cartel de AtoCKorea.",
+        "lat": 33.4944,
+        "lng": 126.4808
       },
       {
-        "name": "Terminal de cruceros de Gangjeong (sur, Seogwipo)",
-        "note": "Meet at customs exit",
-        "port_id": "gangjeong_port"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "Terminal de cruceros de Jeju (norte)",
-        "note": "Regreso a la misma terminal de cruceros de la recogida",
-        "port_id": "jeju_port"
+        "order": 2,
+        "time": "08:45",
+        "name": "Aeropuerto Internacional de Jeju (3F, Puerta 3)",
+        "type": "airport",
+        "note": "Área de salidas en el 3er piso. Siga las señales hacia la Puerta 3.",
+        "lat": 33.5108,
+        "lng": 126.4932
       },
       {
-        "name": "Terminal de cruceros de Gangjeong (sur, Seogwipo)",
-        "note": "Regreso a la misma terminal de cruceros de la recogida",
-        "port_id": "gangjeong_port"
+        "order": 3,
+        "time": "08:55",
+        "name": "LOTTE City Hotel Jeju",
+        "type": "hotel",
+        "note": "Espere en el lobby principal. El guía le llamará por su nombre.",
+        "lat": 33.4963,
+        "lng": 126.4865
+      },
+      {
+        "order": 4,
+        "time": "09:05",
+        "name": "Shilla Duty Free (Tienda Jeju)",
+        "type": "shopping",
+        "note": "Reúnase fuera de la entrada principal de Shilla Duty Free, sucursal Jeju.",
+        "lat": 33.4958,
+        "lng": 126.5252
       }
     ],
-    "hotel_pickup_available": false,
-    "notes": "El puerto se confirma al reservar según el itinerario del crucero. La ruta se asigna a la versión este o sur más adecuada según el muelle real y el tiempo disponible en tierra."
+    "return": [
+      {
+        "order": 1,
+        "name": "Ocean Suites Jeju Hotel",
+        "type": "hotel",
+        "lat": 33.4944,
+        "lng": 126.4808
+      },
+      {
+        "order": 2,
+        "name": "Aeropuerto Internacional de Jeju (3F, Puerta 3)",
+        "type": "airport",
+        "lat": 33.5108,
+        "lng": 126.4932
+      },
+      {
+        "order": 3,
+        "name": "LOTTE City Hotel Jeju",
+        "type": "hotel",
+        "lat": 33.4963,
+        "lng": 126.4865
+      },
+      {
+        "order": 4,
+        "name": "Shilla Duty Free (Tienda Jeju)",
+        "type": "shopping",
+        "lat": 33.4958,
+        "lng": 126.5252
+      },
+      {
+        "order": 5,
+        "name": "Mercado Tradicional de Dongmun",
+        "type": "market",
+        "lat": 33.5136,
+        "lng": 126.5296
+      }
+    ],
+    "notes": [
+      "El regreso suele ser alrededor de las 17:30–18:00."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,
@@ -1346,7 +1484,7 @@
     "destination_region": "jeju",
     "region_type": "island_full",
     "vehicle_type": "minicoach",
-    "duration_hours": 8.0,
+    "duration_hours": 8,
     "region_tags": [
       "jeju_east",
       "jeju_south",
@@ -1398,7 +1536,7 @@
     "senior_general_fit": 0.6,
     "mobility_friendly_fit": 0.55,
     "stroller_fit": 0.5,
-    "one_day_fit": 1.0,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.95,
     "rain_fit": 0.45,
     "value_for_money_fit": 0.65,
@@ -1419,7 +1557,7 @@
     "comfort_level": 0.75,
     "budget_fit": 0.6,
     "premium_fit": 0.75,
-    "small_group_fit": 1.0,
+    "small_group_fit": 1,
     "private_fit": 0.15,
     "bus_fit": 0.2,
     "price_band": "mid",
@@ -1469,15 +1607,15 @@
       "seongeup_folk_village",
       "jeju_cruise_port"
     ],
-    "cruise_shore_excursion_fit": 1.0,
+    "cruise_shore_excursion_fit": 1,
     "cruise_shore_excursion_value_fit": 0.5,
-    "cruise_shore_excursion_scenic_fit": 1.0,
-    "cruise_shore_excursion_intimacy_fit": 1.0,
-    "cruise_disembarkation_window_fit": 1.0,
-    "cruise_morning_arrival_compatible_fit": 1.0,
-    "cruise_8_hour_window_fit": 1.0,
-    "cruise_all_aboard_60min_buffer_fit": 1.0,
-    "cruise_port_aware_routing_fit": 1.0,
+    "cruise_shore_excursion_scenic_fit": 1,
+    "cruise_shore_excursion_intimacy_fit": 1,
+    "cruise_disembarkation_window_fit": 1,
+    "cruise_morning_arrival_compatible_fit": 1,
+    "cruise_8_hour_window_fit": 1,
+    "cruise_all_aboard_60min_buffer_fit": 1,
+    "cruise_port_aware_routing_fit": 1,
     "supports_jeju_port_north_variant": true,
     "supports_gangjeong_port_south_variant": true,
     "max_concurrent_ships_supported": 2,
@@ -1486,35 +1624,35 @@
     "group_size_min": 4,
     "group_size_max": 15,
     "group_size_typical": 10,
-    "shared_vehicle_fit": 1.0,
+    "shared_vehicle_fit": 1,
     "vehicle_comfort_level": 0.85,
-    "minicoach_comfort_floor_fit": 1.0,
-    "ac_vehicle_fit": 1.0,
-    "luggage_storage_in_vehicle_fit": 1.0,
+    "minicoach_comfort_floor_fit": 1,
+    "ac_vehicle_fit": 1,
+    "luggage_storage_in_vehicle_fit": 1,
     "wheelchair_access_capable_with_advance_notice": true,
     "customizable_route_fit": 0.15,
-    "fixed_itinerary_fit": 1.0,
+    "fixed_itinerary_fit": 1,
     "flexibility_fit": 0.45,
     "predictable_schedule_fit": 0.9,
-    "photo_pacing_flexibility_fit": 1.0,
-    "individual_attention_fit": 1.0,
+    "photo_pacing_flexibility_fit": 1,
+    "individual_attention_fit": 1,
     "guide_to_guest_ratio_min": 0.067,
     "guide_to_guest_ratio_max": 0.25,
-    "first_time_jeju_fit": 1.0,
+    "first_time_jeju_fit": 1,
     "unesco_focused_tour_fit": 0.9,
-    "triple_unesco_fit": 1.0,
-    "unesco_world_heritage_fit": 1.0,
-    "unesco_biosphere_fit": 1.0,
-    "unesco_geopark_fit": 1.0,
-    "ramsar_wetland_fit": 1.0,
+    "triple_unesco_fit": 1,
+    "unesco_world_heritage_fit": 1,
+    "unesco_biosphere_fit": 1,
+    "unesco_geopark_fit": 1,
+    "ramsar_wetland_fit": 1,
     "natural_monument_count_visited": 5,
-    "columnar_jointing_fit": 1.0,
-    "tuff_cone_fit": 1.0,
-    "single_eruption_landform_fit": 1.0,
-    "joseon_walled_town_fit": 1.0,
-    "folk_village_anchor_fit": 1.0,
-    "tadao_ando_architecture_fit": 1.0,
-    "pulitzer_architecture_fit": 1.0,
+    "columnar_jointing_fit": 1,
+    "tuff_cone_fit": 1,
+    "single_eruption_landform_fit": 1,
+    "joseon_walled_town_fit": 1,
+    "folk_village_anchor_fit": 1,
+    "tadao_ando_architecture_fit": 1,
+    "pulitzer_architecture_fit": 1,
     "k_drama_filming_locations_count": 5,
     "natural_park_visit": true,
     "waterfall_visit": true,
@@ -1531,38 +1669,38 @@
     "child_friendly_fit": 0.8,
     "mobility_limited_friendly_fit": 0.7,
     "rainy_day_friendly_fit": 0.7,
-    "sunrise_peak_silhouette_photo_fit": 1.0,
-    "columnar_joint_close_up_photo_fit": 1.0,
-    "wetland_alpine_landscape_photo_fit": 1.0,
-    "village_stone_culture_photo_fit": 1.0,
-    "waterfall_emerald_pool_photo_fit": 1.0,
-    "market_food_photo_fit": 1.0,
-    "k_drama_location_photo_fit": 1.0,
-    "tadao_ando_close_up_photo_fit": 1.0,
+    "sunrise_peak_silhouette_photo_fit": 1,
+    "columnar_joint_close_up_photo_fit": 1,
+    "wetland_alpine_landscape_photo_fit": 1,
+    "village_stone_culture_photo_fit": 1,
+    "waterfall_emerald_pool_photo_fit": 1,
+    "market_food_photo_fit": 1,
+    "k_drama_location_photo_fit": 1,
+    "tadao_ando_close_up_photo_fit": 1,
     "differentiates_from_bus_cruise_tour": true,
     "intimacy_advantage_vs_bus": true,
     "photo_flexibility_advantage_vs_bus": true,
     "guide_depth_advantage_vs_bus": true,
     "value_disadvantage_vs_bus": true,
-    "premium_pricing_tier_fit": 1.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "premium_pricing_tier_fit": 1,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
-    "china_mainland_market_fit": 0.0,
+    "china_mainland_market_fit": 0,
     "us_market_fit": 0.95,
     "europe_market_fit": 0.95,
     "australia_market_fit": 0.95,
     "se_asia_market_fit": 0.9,
-    "korea_domestic_market_fit": 0.0,
-    "cruise_market_segment_fit": 1.0,
-    "cruise_premium_segment_fit": 1.0,
+    "korea_domestic_market_fit": 0,
+    "cruise_market_segment_fit": 1,
+    "cruise_premium_segment_fit": 1,
     "english_speaking_guide_provided": true,
     "chinese_speaking_guide_available_on_advance_notice": true,
     "japanese_speaking_guide_available_on_advance_notice": true,
     "honeymoon_couple_fit": 0.85,
     "anniversary_couple_fit": 0.85,
-    "photo_enthusiast_fit": 1.0,
+    "photo_enthusiast_fit": 1,
     "luxury_traveler_fit": 0.85,
     "cross_batch_reuse_count_substantive_stops": 3,
     "fresh_authored_substantive_stops_count": 2,
@@ -2578,12 +2716,12 @@
               "reasoning": "VERIFIED HIGH — both variants hit major UNESCO sites. Variant 0 (Jeju Port): Seongsan Ilchulbong = TRIPLE UNESCO (World Natural Heritage 2007 + Biosphere Reserve + Global Geopark) + Haenyeo ICH demos. Variant 1 (Gangjeong): Hallasan UNESCO World Heritage + Biosphere Reserve + Jusangjeolli Global Geopark. Both variants reliably deliver UNESCO content. 0.85 reflects this consistent delivery. Note: Seongeup is NOT UNESCO (national folklore only). Olle Market and Cheonjiyeon are not UNESCO. Score reflects weighted average of UNESCO density in both variants."
             },
             "scenic_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "VERIFIED — Variant 0: volcanic crater + coastal cape + folk village. Variant 1: alpine wetland + columnar basalt + waterfall + market. Both deliver catalog-leading scenic diversity. 0.95 calibrated."
             },
             "photo_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "Verified — UNESCO crater, columnar basalt, subtropical falls, thatched-roof village, market food shots. Highly photogenic but not the absolute top (no flower festivals). 0.95 calibrated."
             },
@@ -2618,14 +2756,14 @@
               "reasoning": "UPGRADED — cruise day for first-time Jeju visitors is the ARCHETYPE use case for this product. Both variants deliver the iconic Jeju vista appropriate to the docking port. 0.95 — near-maximum first-time fit."
             },
             "same_day_flight_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "Cruise tour ends 16:30-17:30 at port; not at airport. Bus #100 from Jeju Port to airport is direct (~30 min). For the Gangjeong variant, airport transfer is ~50 min via Limousine 800. Both variants support same-day onward travel for guests leaving the cruise mid-itinerary, but it's tighter from Gangjeong. Aggregate 0.95."
             },
             "small_group_fit_smallgroup": {
               "field": "small_group_fit",
-              "old_smallgroup": 1.0,
-              "new_smallgroup": 1.0,
+              "old_smallgroup": 1,
+              "new_smallgroup": 1,
               "old_bus": 0.2,
               "new_bus": 0.2,
               "reasoning": "Per-tour: small_group tour = 1.0 (small group format defines this product); bus tour = 0.2 (large coach format is the OTHER product). Format fixed by tour SKU."
@@ -2634,8 +2772,8 @@
               "field": "bus_fit",
               "old_smallgroup": 0.2,
               "new_smallgroup": 0.2,
-              "old_bus": 1.0,
-              "new_bus": 1.0,
+              "old_bus": 1,
+              "new_bus": 1,
               "reasoning": "Per-tour: small_group tour bus_fit = 0.2; bus tour bus_fit = 1.0."
             },
             "private_fit": {
@@ -2720,8 +2858,8 @@
               "reasoning": "Cruise day infrastructure is comfort-optimized — paved/boardwalk trails, climate-controlled vehicles, restaurant lunch, terminal facilities. 0.75 aggregate."
             },
             "duration_hours": {
-              "old": 8.0,
-              "new": 8.0,
+              "old": 8,
+              "new": 8,
               "reasoning": "Confirmed 8h duration for both variants — within cruise day buffer."
             },
             "min_recommended_age": {
