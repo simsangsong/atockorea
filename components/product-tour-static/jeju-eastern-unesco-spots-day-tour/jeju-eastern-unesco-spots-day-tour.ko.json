@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
     "title": "제주 동부 유네스코 명소 일일 투어",
-    "priceLabel": "가격은 예약 시 확인",
+    "priceLabel": "",
     "shortCardDescription": "제주 동부 유네스코 및 핵심 명소를 9시간 소그룹으로 일주하는 투어입니다. 함덕 서우봉해변, 성읍민속마을(유네스코), 미천굴 용암동굴(만장굴 운영 중단 기간 대체), 성산일출봉(유네스코 세계자연유산), 해녀박물관(유네스코 해녀문화) 포함. 전 입장료 포함, 공인 가이드, 1,148건 기준 4.9/5 평점.",
     "tags": [
       "소그룹",
@@ -31,8 +31,8 @@
       "가성비 좋음",
       "입장료 포함"
     ],
-    "rating": 4.9,
-    "reviewCount": 1148,
+    "rating": 0,
+    "reviewCount": 0,
     "slug": "jeju-eastern-unesco-spots-day-tour",
     "subtitle": "소그룹 미니버스, 영어·중국어 가이드 — 함덕해변·성읍민속마을·미천굴·성산일출봉(유네스코)·해녀박물관을 9시간 동부 루프로 일주합니다.",
     "region": "동제주",
@@ -54,9 +54,9 @@
     "amountLabel": "",
     "currency": "USD",
     "per": "인",
-    "priceSource": "direct_rate",
-    "priceNote": "리스팅 스니펫에서 소그룹 가격 미확정. 자매 상품(남제주 루트) 기준.",
-    "discountPercent": 10
+    "priceSource": "",
+    "priceNote": "",
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
@@ -1001,9 +1001,9 @@
       "amountLabel": "",
       "currency": "USD",
       "per": "인",
-      "priceSource": "direct_rate",
-      "priceNote": "소그룹 가격은 아직 상품 정보에서 확정되지 않았습니다. 자매 상품인 남부 유네스코 코스는 1인 43달러 기준입니다. 가격 확정 후 AtoC Korea 직접 판매가는 10% 할인이 적용됩니다.",
-      "discountPercent": 10
+      "priceSource": "",
+      "priceNote": "",
+      "discountPercent": null
     }
   },
   "pickup_dropoff": {

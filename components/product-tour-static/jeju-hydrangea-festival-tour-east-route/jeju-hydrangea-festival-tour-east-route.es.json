@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
     "title": "Tour Festival de Hortensias Jeju Este: Seongsan, Ilchul Land y Parque Hueree",
-    "priceLabel": "Consulte el precio al reservar",
+    "priceLabel": "",
     "shortCardDescription": "El azul del verano de Jeju en un día: Playa Hamdeok (aguas esmeralda) → Aldea Folclórica Seongeup (1423) → Seongsan Ilchulbong (triple UNESCO) → Ilchul Land (Festival de Hortensias + Cueva Micheon) → Parque Natural Hueree (el mayor espectáculo de hortensias del sur de Jeju). Solo temporada de hortensias (junio-agosto). Grupo pequeño, recogida en hotel.",
     "tags": [
       "grupo reducido",
@@ -54,9 +54,9 @@
     "amountLabel": "",
     "currency": "USD",
     "per": "persona",
-    "priceSource": "direct_rate",
-    "priceNote": "Precio de grupo pequeño aún no confirmado. Consultar el precio comparable.",
-    "discountPercent": 10
+    "priceSource": "",
+    "priceNote": "",
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
@@ -962,9 +962,9 @@
       "amountLabel": "",
       "currency": "USD",
       "per": "persona",
-      "priceSource": "direct_rate",
-      "priceNote": "El precio del grupo reducido aún no está confirmado en la ficha. El tour hermano, nuestra ruta de hortensias por el oeste y sur, cuesta aproximadamente 89–96 USD por persona. Una vez confirmado, el precio directo de AtoC Korea aplica un 10% de descuento fijo.",
-      "discountPercent": 10
+      "priceSource": "",
+      "priceNote": "",
+      "discountPercent": null
     }
   },
   "pickup_dropoff": {

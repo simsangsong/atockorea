@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
     "title": "济州东部UNESCO景点一日游",
-    "priceLabel": "价格因投行而异 — 请于预订时确认",
+    "priceLabel": "",
     "shortCardDescription": "涵盖东济州UNESCO及代表性景点的小团一日游：济州石文化公园、城山日出峰（UNESCO）、涉地可支海岸、万丈窟熔岩洞穴（UNESCO）及私人马场体验。通过合理安排游览顺序，尽量避开旺季人流。",
     "tags": [
       "小团",
@@ -31,8 +31,8 @@
       "性价比高",
       "含门票"
     ],
-    "rating": 4.9,
-    "reviewCount": 1148,
+    "rating": 0,
+    "reviewCount": 0,
     "slug": "jeju-eastern-unesco-spots-day-tour",
     "subtitle": "含英文/中文导游的小团迷您巴士——9小时东济州环线，覆盖顶级UNESCO景点。",
     "region": "济州东部",
@@ -54,9 +54,9 @@
     "amountLabel": "",
     "currency": "USD",
     "per": "人",
-    "priceSource": "direct_rate",
-    "priceNote": "小团票价尚未确认。姊妹南部UNESCO行程（同一旅游服务团队）为43美元；东部行程定价相近。确认后，AtoC Korea直售价格享9折优惠。",
-    "discountPercent": 10
+    "priceSource": "",
+    "priceNote": "",
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
@@ -999,9 +999,9 @@
       "amountLabel": "",
       "currency": "USD",
       "per": "人",
-      "priceSource": "direct_rate",
-      "priceNote": "小团价格尚未在商品信息中确认。姊妹产品南部UNESCO路线为每人43美元。确认后，AtoC Korea官网直售价将按九折执行。",
-      "discountPercent": 10
+      "priceSource": "",
+      "priceNote": "",
+      "discountPercent": null
     }
   },
   "pickup_dropoff": {

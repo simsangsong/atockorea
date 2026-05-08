@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
     "title": "济州绣球花节一日游：东部路线",
-    "priceLabel": "价格因投行而异 — 请于预订时确认",
+    "priceLabel": "",
     "shortCardDescription": "夏季限定东济州小团一日游，以岛内绣球花节庆为主题：城山日出峰（UNESCO）、山房山绣球花节、涉地可支海岸及成音浦港游船。6月下旬至7月下旬运营，正值绣球花盛放期。",
     "tags": [
       "小团",
@@ -56,9 +56,9 @@
     "amountLabel": "",
     "currency": "USD",
     "per": "人",
-    "priceSource": "direct_rate",
-    "priceNote": "小团票价尚未确认。姊妹西南绣球花行程约89至96美元。确认后，AtoC Korea直售价格享9折优惠。",
-    "discountPercent": 10
+    "priceSource": "",
+    "priceNote": "",
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
@@ -1011,9 +1011,9 @@
       "amountLabel": "",
       "currency": "USD",
       "per": "人",
-      "priceSource": "direct_rate",
-      "priceNote": "小团价格尚未在商品信息中确认。姊妹产品（西南部绣球花路线）约为每人89–96美元。确认后，AtoC Korea官网直售价将按九折执行。",
-      "discountPercent": 10
+      "priceSource": "",
+      "priceNote": "",
+      "discountPercent": null
     }
   },
   "pickup_dropoff": {

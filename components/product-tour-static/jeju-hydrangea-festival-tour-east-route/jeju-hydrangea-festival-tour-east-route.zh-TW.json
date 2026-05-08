@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
     "title": "濟州繡球花節一日遊：東部路線",
-    "priceLabel": "價格因投行而異 — 請於預訂時確認",
+    "priceLabel": "",
     "shortCardDescription": "夏季限定東濟州小團體一日遊，以島內繡球花節慶為主題：城山日出峰（UNESCO）、山房山繡球花節、涉地可支海岸及成音浦港遊船。6月下旬至7月下旬運營，正值繡球花盛放期。",
     "tags": [
       "小團",
@@ -56,9 +56,9 @@
     "amountLabel": "",
     "currency": "USD",
     "per": "人",
-    "priceSource": "direct_rate",
-    "priceNote": "小團體票價尚未確認。姊妹西南繡球花行程約89至96美元。確認後，AtoC Korea直售價格享9折優惠。",
-    "discountPercent": 10
+    "priceSource": "",
+    "priceNote": "",
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
@@ -1011,9 +1011,9 @@
       "amountLabel": "",
       "currency": "USD",
       "per": "人",
-      "priceSource": "direct_rate",
-      "priceNote": "小團價格尚未在商品資訊中確認。姊妹產品（西南部繡球花路線）約為每人89–96美元。確認後，AtoC Korea官網直售價將按九折計算。",
-      "discountPercent": 10
+      "priceSource": "",
+      "priceNote": "",
+      "discountPercent": null
     }
   },
   "pickup_dropoff": {

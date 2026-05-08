@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
     "title": "済州東部ユネスコ世界遺産日帰りツアー",
-    "priceLabel": "料金は予約時にご確認ください",
+    "priceLabel": "",
     "shortCardDescription": "東済州のユネスコ遺産見どころを9時間で巡る少人数日帰りツアー。咸徳ビーチ、城邑民俗村（ユネスコ）、密川洞窟溶岩トンネル（万丈窟閉鎖中の代替見どころ）、城山日出峰（ユネスコ自然遺産）、海女博物館を一日で網羅。全入場料込み、英語・中国語対応の認定ガイド付き。1,148件のクチコミで4.9/5の高評価。",
     "tags": [
       "少人数ツアー",
@@ -31,8 +31,8 @@
       "お得な価格",
       "入場料込み"
     ],
-    "rating": 4.9,
-    "reviewCount": 1148,
+    "rating": 0,
+    "reviewCount": 0,
     "slug": "jeju-eastern-unesco-spots-day-tour",
     "subtitle": "英語・中国語ガイド付き少人数・ミニコーチ — 咸徳、城邑、密川洞窟、城山日出峰、海女博物館を巡る9時間の東済州ループ",
     "region": "東済州",
@@ -54,9 +54,9 @@
     "amountLabel": "",
     "currency": "USD",
     "per": "人",
-    "priceSource": "direct_rate",
-    "priceNote": "少人数ツアー。AtoC Korea直販価格。詳細は予約時にご確認ください。",
-    "discountPercent": 10
+    "priceSource": "",
+    "priceNote": "",
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
@@ -993,9 +993,9 @@
       "amountLabel": "",
       "currency": "USD",
       "per": "人",
-      "priceSource": "direct_rate",
-      "priceNote": "少人数ツアーの価格は掲載情報上まだ確定していません。姉妹商品である南部ユネスココースは1名43米ドルです。確定後、AtoC Koreaの直販価格には10%割引が適用されます。",
-      "discountPercent": 10
+      "priceSource": "",
+      "priceNote": "",
+      "discountPercent": null
     }
   },
   "pickup_dropoff": {

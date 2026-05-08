@@ -20,7 +20,7 @@
   "catalog_card": {
     "thumbnail": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
     "title": "제주 동부 수국 축제 소그룹 투어",
-    "priceLabel": "가격은 예약 시 확인",
+    "priceLabel": "",
     "shortCardDescription": "제주 동부 수국 시즌 한정(5월 말~7월 중순) 소그룹 투어. 함덕해변, 성읍민속마을(유네스코), 성산일출봉(유네스코), 일출랜드 수국 축제+미천굴, 휴애리 자연생활공원 수국 포함.",
     "tags": [
       "소그룹",
@@ -55,9 +55,9 @@
     "amountLabel": "",
     "currency": "USD",
     "per": "인",
-    "priceSource": "direct_rate",
-    "priceNote": "리스팅 스니펫에서 소그룹 가격 미확정. 자매 투어(서쪽 루트) 기준.",
-    "discountPercent": 10
+    "priceSource": "",
+    "priceNote": "",
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
@@ -1010,9 +1010,9 @@
       "amountLabel": "",
       "currency": "USD",
       "per": "인",
-      "priceSource": "direct_rate",
-      "priceNote": "소그룹 가격은 아직 상품 정보에서 확정되지 않았습니다. 자매 상품인 서남부 수국 코스는 1인 약 89~96달러입니다. 가격 확정 후 AtoC Korea 직접 판매가는 10% 할인이 적용됩니다.",
-      "discountPercent": 10
+      "priceSource": "",
+      "priceNote": "",
+      "discountPercent": null
     }
   },
   "pickup_dropoff": {
